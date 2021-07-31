@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Ranger training -->
+
+  <TM_RangerTraining.label>漫游者训练</TM_RangerTraining.label>
+  <TM_RangerTraining.description>用来升级漫游者特性。此能力只需要在训练完成后使用。</TM_RangerTraining.description>
+
+
+  <!-- Bow Training -->
+
+  <TM_BowTraining.label>弓箭训练</TM_BowTraining.label>
+  <TM_BowTraining.description>用来升级漫游者被动增益。此能力仅需要在提升弓箭精通时使用。</TM_BowTraining.description>
+
+
+  <!-- Poison Trap -->
+
+  <TM_PoisonTrap.label>毒素陷阱</TM_PoisonTrap.label>
+  <TM_PoisonTrap.description>漫游者使用一瓶德鲁伊毒素用来放置一个木制陷阱。陷阱没有持续时间， 但是漫游者可以放置的毒素陷阱是有上限的。</TM_PoisonTrap.description>
+
+
+  <!-- Animal Friend -->
+
+  <TM_AnimalFriend.label>动物伙伴</TM_AnimalFriend.label>
+  <TM_AnimalFriend.description>在野外， 漫游者可以与野生动物绑定契约. 漫游者只能绑定一份契约; 绑定一份新的契约会使现存的契约失效并且失去契约的动物会永远地离开. 契约升级后需要重新绑定才能生效。契约动物获得的身体强化同样会应用于此动物的同类， 作为回报， 契约动物会帮助漫游者做任何它可以做到的事情。</TM_AnimalFriend.description>
+
+
+  <!-- Arrow storm -->
+
+  <TM_ArrowStorm.label>箭雨风暴</TM_ArrowStorm.label>
+  <TM_ArrowStorm.description>在目标区域降下暴雨般的箭矢。</TM_ArrowStorm.description>
+
+  <TM_ArrowStorm_I.label>箭雨风暴 (I)</TM_ArrowStorm_I.label>
+  <TM_ArrowStorm_I.description>在目标区域降下暴雨般的箭矢。</TM_ArrowStorm_I.description>
+
+  <TM_ArrowStorm_II.label>箭雨风暴 (II)</TM_ArrowStorm_II.label>
+  <TM_ArrowStorm_II.description>在目标区域降下暴雨般的箭矢。</TM_ArrowStorm_II.description>
+
+  <TM_ArrowStorm_III.label>箭雨风暴 (III)</TM_ArrowStorm_III.label>
+  <TM_ArrowStorm_III.description>在目标区域降下暴雨般的箭矢。</TM_ArrowStorm_III.description>
+
+
+</LanguageData>

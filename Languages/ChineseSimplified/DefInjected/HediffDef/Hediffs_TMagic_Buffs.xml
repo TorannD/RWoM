@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Uncertainty.label>前途渺茫</TM_Uncertainty.label>
+
+
+  <!-- Soothing Breeze -->
+
+  <SoothingBreeze_I.label>抚慰之风 (I)</SoothingBreeze_I.label>
+  <SoothingBreeze_I.stages.0.label>受到祝福</SoothingBreeze_I.stages.0.label>
+
+  <SoothingBreeze_II.label>抚慰之风 (II)</SoothingBreeze_II.label>
+  <SoothingBreeze_II.stages.0.label>受到祝福</SoothingBreeze_II.stages.0.label>
+
+  <SoothingBreeze_III.label>抚慰之风 (III)</SoothingBreeze_III.label>
+  <SoothingBreeze_III.stages.0.label>受到祝福</SoothingBreeze_III.stages.0.label>
+
+
+  <!-- Ray of Hope -->
+
+  <RayofHope_I.label>希望之光 (I)</RayofHope_I.label>
+  <RayofHope_I.stages.0.label>受到祝福</RayofHope_I.stages.0.label>
+
+  <RayofHope_II.label>希望之光 (II)</RayofHope_II.label>
+  <RayofHope_II.stages.0.label>受到祝福</RayofHope_II.stages.0.label>
+
+  <RayofHope_III.label>希望之光 (III)</RayofHope_III.label>
+  <RayofHope_III.stages.0.label>受到祝福</RayofHope_III.stages.0.label>
+
+  <AMP_I.label>激励 (I)</AMP_I.label>
+  <AMP_I.stages.0.label>受到祝福</AMP_I.stages.0.label>
+
+  <AMP_II.label>激励 (II)</AMP_II.label>
+  <AMP_II.stages.0.label>受到祝福</AMP_II.stages.0.label>
+
+  <AMP_III.label>激励 (III)</AMP_III.label>
+  <AMP_III.stages.0.label>受到祝福</AMP_III.stages.0.label>
+
+  <Shadow_I.label>暗影随形 (I)</Shadow_I.label>
+  <Shadow_I.stages.0.label>受到祝福</Shadow_I.stages.0.label>
+
+  <Shadow_II.label>暗影随形 (II)</Shadow_II.label>
+  <Shadow_II.stages.0.label>受到祝福</Shadow_II.stages.0.label>
+
+  <Shadow_III.label>暗影随形 (III)</Shadow_III.label>
+  <Shadow_III.stages.0.label>受到祝福</Shadow_III.stages.0.label>
+
+
+  <!-- Bestow Might -->
+
+  <BestowMightHD.label>授予力量</BestowMightHD.label>
+  <BestowMightHD.stages.0.label>I</BestowMightHD.stages.0.label>
+
+  <BestowMightHD_I.label>授予力量</BestowMightHD_I.label>
+  <BestowMightHD_I.stages.0.label>II</BestowMightHD_I.stages.0.label>
+
+  <BestowMightHD_II.label>授予力量</BestowMightHD_II.label>
+  <BestowMightHD_II.stages.0.label>III</BestowMightHD_II.stages.0.label>
+
+  <BestowMightHD_III.label>授予力量</BestowMightHD_III.label>
+  <BestowMightHD_III.stages.0.label>IV</BestowMightHD_III.stages.0.label>
+
+
+  <!-- Ranger Pet Bond -->
+
+  <TM_RangerBondHD.label>漫游者契约</TM_RangerBondHD.label>
+  <TM_RangerBondHD.stages.0.label>I</TM_RangerBondHD.stages.0.label>
+  <TM_RangerBondHD.stages.1.label>II</TM_RangerBondHD.stages.1.label>
+  <TM_RangerBondHD.stages.2.label>III</TM_RangerBondHD.stages.2.label>
+  <TM_RangerBondHD.stages.3.label>IV</TM_RangerBondHD.stages.3.label>
+
+
+  <!-- Shield -->
+
+  <TM_HediffShield.label>护盾</TM_HediffShield.label>
+
+
+  <!-- Sprint -->
+
+  <TM_HediffSprint_I.label>冲刺 (I)</TM_HediffSprint_I.label>
+  <TM_HediffSprint_II.label>冲刺 (II)</TM_HediffSprint_II.label>
+  <TM_HediffSprint_III.label>冲刺 (III)</TM_HediffSprint_III.label>
+  <TM_HediffInvulnerable.label>绝对防御</TM_HediffInvulnerable.label>
+  <TM_HediffTimedInvulnerable.label>Invulnerable</TM_HediffTimedInvulnerable.label>
+  <TM_HediffFortitude.label>刚毅</TM_HediffFortitude.label>
+  <TM_ManaShieldHD.label>法力护盾</TM_ManaShieldHD.label>
+
+
+  <!-- Blind -->
+
+  <TM_Blind.label>盲目</TM_Blind.label>
+  <TM_Blind.stages.0.label>盲目</TM_Blind.stages.0.label>
+  <TM_Blind.stages.1.label>II</TM_Blind.stages.1.label>
+  <TM_Blind.stages.2.label>III</TM_Blind.stages.2.label>
+
+  <TM_Regeneration.label>重生</TM_Regeneration.label>
+  <TM_Regeneration_I.label>重生 (I)</TM_Regeneration_I.label>
+  <TM_Regeneration_II.label>重生 (II)</TM_Regeneration_II.label>
+  <TM_Regeneration_III.label>重生 (III)</TM_Regeneration_III.label>
+
+  <TM_BladeArtHD.label>刀剑艺术</TM_BladeArtHD.label>
+  <TM_BladeArtHD.stages.0.label>I</TM_BladeArtHD.stages.0.label>
+  <TM_BladeArtHD.stages.1.label>II</TM_BladeArtHD.stages.1.label>
+  <TM_BladeArtHD.stages.2.label>III</TM_BladeArtHD.stages.2.label>
+  <TM_BladeArtHD.stages.3.label>IV</TM_BladeArtHD.stages.3.label>
+
+  <TM_BowTrainingHD.label>弓箭精通</TM_BowTrainingHD.label>
+  <TM_BowTrainingHD.stages.0.label>I</TM_BowTrainingHD.stages.0.label>
+  <TM_BowTrainingHD.stages.1.label>II</TM_BowTrainingHD.stages.1.label>
+  <TM_BowTrainingHD.stages.2.label>III</TM_BowTrainingHD.stages.2.label>
+  <TM_BowTrainingHD.stages.3.label>IV</TM_BowTrainingHD.stages.3.label>
+
+  <SpellMendingHD.label>拼补</SpellMendingHD.label>
+  <SpellMendingHD.stages.0.label>激活</SpellMendingHD.stages.0.label>
+
+
+  <!-- Resurrection Debuff -->
+
+  <TM_ResurrectionHD.label>复活虚弱</TM_ResurrectionHD.label>
+  <TM_ResurrectionHD.stages.0.label>I</TM_ResurrectionHD.stages.0.label>
+  <TM_ResurrectionHD.stages.1.label>II</TM_ResurrectionHD.stages.1.label>
+  <TM_ResurrectionHD.stages.2.label>III</TM_ResurrectionHD.stages.2.label>
+
+
+  <!--<TM_HediffSprint.label>冲刺</TM_HediffSprint.label>-->
+
+</LanguageData>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Portal.label>传送门</TM_Portal.label>
+  <TM_Portal.description>通过传送门可以瞬间旅行到达另一个传送门所在的地方。</TM_Portal.description>
+  <TM_Portal_Blueprint.label>传送门（蓝图）</TM_Portal_Blueprint.label>
+  <TM_Portal_Frame.label>传送门（建造中）</TM_Portal_Frame.label>
+  <TM_Portal_Frame.description>通过传送门可以瞬间旅行到达另一个传送门所在的地方。</TM_Portal_Frame.description>
+
+  <TM_ElementalRift.label>元素裂隙</TM_ElementalRift.label>
+  <TM_ElementalRift.description>裂隙由凶猛的元素生物们造成。</TM_ElementalRift.description>
+
+  <TM_InvisBldg.label>地图夹</TM_InvisBldg.label>
+  <TM_InvisBldg.description>地图夹</TM_InvisBldg.description>
+
+
+</LanguageData>

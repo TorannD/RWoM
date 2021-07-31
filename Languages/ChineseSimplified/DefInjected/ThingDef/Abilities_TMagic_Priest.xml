@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- priest projectile -->
+
+  <TM_Projectile_Priest.label>神圣一击</TM_Projectile_Priest.label>
+
+
+  <!-- Healing Circle -->
+
+  <TM_Projectile_HealingCircle.label>治愈之环</TM_Projectile_HealingCircle.label>
+  <TM_Projectile_HealingCircle_I.label>治愈之环</TM_Projectile_HealingCircle_I.label>
+  <TM_Projectile_HealingCircle_II.label>治愈之环</TM_Projectile_HealingCircle_II.label>
+  <TM_Projectile_HealingCircle_III.label>治愈之环</TM_Projectile_HealingCircle_III.label>
+
+
+  <!-- Resurrection -->
+
+  <Projectile_Resurrection.label>英雄不朽</Projectile_Resurrection.label>
+
+
+</LanguageData>

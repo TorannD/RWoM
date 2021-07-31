@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Sprint start -->
+
+  <TM_Sprint.label>冲刺</TM_Sprint.label>
+  <TM_Sprint.description>激活或停用持续性战技:冲刺 - 拥有更快的移动速度但更容易变得疲劳. 需要30%的体力维持此效果。</TM_Sprint.description>
+
+  <TM_Sprint_I.label>冲刺</TM_Sprint_I.label>
+  <TM_Sprint_I.description>激活或停用持续性战技:冲刺 - 拥有更快的移动速度但更容易变得疲劳. 需要30%的体力维持此效果。</TM_Sprint_I.description>
+
+  <TM_Sprint_II.label>冲刺</TM_Sprint_II.label>
+  <TM_Sprint_II.description>激活或停用持续性战技:冲刺 - 拥有更快的移动速度但更容易变得疲劳. 需要30%的体力维持此效果。</TM_Sprint_II.description>
+
+  <TM_Sprint_III.label>冲刺</TM_Sprint_III.label>
+  <TM_Sprint_III.description>激活或停用持续性战技:冲刺 - 拥有更快的移动速度但更容易变得疲劳. 需要30%的体力维持此效果。</TM_Sprint_III.description>
+
+
+  <!-- Fortitude start -->
+
+  <TM_Fortitude.label刚毅</TM_Fortitude.label>
+  <TM_Fortitude.description>减轻受到每一击的伤害.
+基础减免: 2</TM_Fortitude.description>
+
+
+  <!-- Grapple Start -->
+
+  <TM_Grapple.label>钩爪</TM_Grapple.label>
+  <TM_Grapple.description>释放强力的钩爪将敌人抓到斗士面前， 随后用扫堂腿将敌人打倒在地.
+施放时间: 1s
+射程: 16</TM_Grapple.description>
+
+  <TM_Grapple_I.label>钩爪</TM_Grapple_I.label>
+  <TM_Grapple_I.description>释放强力的钩爪将敌人抓到斗士面前， 随后用扫堂腿将敌人打倒在地.
+施放时间: 0.6s
+射程: 19</TM_Grapple_I.description>
+
+  <TM_Grapple_II.label>钩爪</TM_Grapple_II.label>
+  <TM_Grapple_II.description>释放强力的钩爪将敌人抓到斗士面前， 随后用扫堂腿将敌人打倒在地.
+施放时间: 0.4s
+射程: 22</TM_Grapple_II.description>
+
+  <TM_Grapple_III.label>钩爪</TM_Grapple_III.label>
+  <TM_Grapple_III.description>释放强力的钩爪将敌人抓到斗士面前， 随后用扫堂腿将敌人打倒在地.
+施放时间: 0.2s
+射程: 25</TM_Grapple_III.description>
+
+
+  <!-- Cleave Start -->
+
+  <TM_Cleave.label>顺劈斩</TM_Cleave.label>
+  <TM_Cleave.description>进行一次强力的疾风骤雨般的攻击， 伤害目标及其周围的生物。</TM_Cleave.description>
+
+
+  <!-- Whirlwind -->
+
+  <TM_Whirlwind.label>旋风斩</TM_Whirlwind.label>
+  <TM_Whirlwind.description>斗士进行一次疯狂地攻击， 用力向前跳跃化身钢铁与死亡的旋风。</TM_Whirlwind.description>
+
+
+</LanguageData>

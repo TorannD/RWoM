@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- blade focus -->
+
+  <Projectile_BladeFocus.label>剑之专注</Projectile_BladeFocus.label>
+
+
+  <!-- blade art start -->
+
+  <Projectile_BladeArt.label>刀剑艺术</Projectile_BladeArt.label>
+
+
+  <!-- BladeSpin Start -->
+
+  <Projectile_BladeSpin.label>剑刃回旋</Projectile_BladeSpin.label>
+
+
+  <!-- Seismic Slash Start -->
+
+  <Projectile_SeismicSlash.label>地裂斩</Projectile_SeismicSlash.label>
+
+
+  <!-- Phase Strike Start -->
+
+  <Projectile_PhaseStrike.label>相位打击</Projectile_PhaseStrike.label>
+
+
+</LanguageData>

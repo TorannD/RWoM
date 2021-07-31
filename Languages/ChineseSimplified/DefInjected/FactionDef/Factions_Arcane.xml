@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Seers.label>秘能信徒</Seers.label>
+  <Seers.description>这个一个鲜为人知的教派。他们掌握着某些神秘的技术但又不依赖于它. 信徒们会使用简单的工具和火器.\n\n他们在生存问题面前会选择与其他派系合作，但没有人知道他们到底在追求着什么.\n\n据小道消息， 他们拥有关于制造和使用具有神秘力量的人工制品的能力。</Seers.description>
+  <Seers.pawnsPlural>先知</Seers.pawnsPlural>
+  <Seers.leaderTitle>法师之王</Seers.leaderTitle>
+
+
+</LanguageData>

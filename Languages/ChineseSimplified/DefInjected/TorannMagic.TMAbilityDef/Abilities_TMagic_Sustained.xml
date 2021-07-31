@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Gear Repair -->
+
+  <TM_GearRepair.label>装备维护</TM_GearRepair.label>
+  <TM_GearRepair.description>激活或停用持续性战技:装备维护 - 缓慢地维修装备的服装和武器. 需要20%的体力来维持此战技。</TM_GearRepair.description>
+
+
+  <!-- Inner Healing -->
+
+  <TM_InnerHealing.label>内在治疗</TM_InnerHealing.label>
+  <TM_InnerHealing.description>激活或停用持续性战技:深入治疗 - 牺牲身体能量用来提升治愈率和疾病免疫力. 需要10%的体力来维持此战技。</TM_InnerHealing.description>
+
+
+  <!-- Heavy Blow -->
+
+  <TM_HeavyBlow.label>强力打击</TM_HeavyBlow.label>
+  <TM_HeavyBlow.description>激活或停用持续性战技:强力打击 - 增加所有攻击的伤害20%. 需要30%的体力来维持此战技。</TM_HeavyBlow.description>
+
+
+  <!-- Strong Back -->
+
+  <TM_StrongBack.label>强壮后背</TM_StrongBack.label>
+  <TM_StrongBack.description>激活或停用持续性战技:强壮后背 - 增加搬运量40和携带量30%， 但是会增加10%的疲劳率. 需要10%的体力来维持此战技。</TM_StrongBack.description>
+
+
+  <!-- Thick Skin -->
+
+  <TM_ThickSkin.label>石化皮肤</TM_ThickSkin.label>
+  <TM_ThickSkin.description>激活或停用持续性战技:石化皮肤 - 提升所有的护甲值10%并且略微提高适宜温度. 需要30%的体力来维持此战技。</TM_ThickSkin.description>
+
+
+  <!-- Fighters Focus -->
+
+  <TM_FightersFocus.label>战斗专注</TM_FightersFocus.label>
+  <TM_FightersFocus.description>激活或停用持续性战技:战斗专注 - 降低精神崩溃阈值5%和疼痛休克阈值20%. 需要15%的体力来维持此战技。</TM_FightersFocus.description>
+
+
+</LanguageData>

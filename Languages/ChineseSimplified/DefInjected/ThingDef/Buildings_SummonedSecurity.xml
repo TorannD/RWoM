@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_PoisonTrap.label>毒药陷阱</TM_PoisonTrap.label>
+  <TM_PoisonTrap.description>一个由刺和细绳组成的陷阱， 它可以完美地与地形贴合从而骗过未经训练的眼睛， 但是它的气味会给动物们一个明显的警告. 当一个受害者触发陷阱，德鲁伊之毒的粒子将会排放到空气中. 这种毒同时用来伤害和使受害者失去行动能力。</TM_PoisonTrap.description>
+
+  <TM_ManaMine.label>魔法地雷</TM_ManaMine.label>
+  <TM_ManaMine.description>将魔力与物质压缩造成极强的爆炸. 心灵之蔓的力量会从地雷中扩展; 当一个受害者惊扰到这些心灵之蔓， 它将会瓦解领域内的一切并触发地雷。2.4米 爆炸半径。</TM_ManaMine.description>
+
+  <TM_ManaMine_I.label>魔法地雷</TM_ManaMine_I.label>
+  <TM_ManaMine_I.description>将魔力与物质压缩造成极强的爆炸. 心灵之蔓的力量会从地雷中扩展; 当一个受害者惊扰到这些心灵之蔓， 它将会瓦解领域内的一切并触发地雷。2.9米 爆炸半径。</TM_ManaMine_I.description>
+
+  <TM_ManaMine_II.label>魔法地雷</TM_ManaMine_II.label>
+  <TM_ManaMine_II.description>将魔力与物质压缩造成极强的爆炸. 心灵之蔓的力量会从地雷中扩展; 当一个受害者惊扰到这些心灵之蔓， 它将会瓦解领域内的一切并触发地雷。3.8米 爆炸半径。</TM_ManaMine_II.description>
+
+  <TM_ManaMine_III.label>魔法地雷</TM_ManaMine_III.label>
+  <TM_ManaMine_III.description>将魔力与物质压缩造成极强的爆炸. 心灵之蔓的力量会从地雷中扩展; 当一个受害者惊扰到这些心灵之蔓， 它将会瓦解领域内的一切并触发地雷。4.7米 爆炸半径。</TM_ManaMine_III.description>
+
+  <DefensePylon.label>魔法防御塔</DefensePylon.label>
+  <DefensePylon.description>一个魔法防御塔. 通过魔法能量局限化来组建一个底座， 然后将奥术能量聚集于焦点发射爆炸能量射线。</DefensePylon.description>
+  <DefensePylon_Blueprint_Install.label>魔法防御塔（蓝图）</DefensePylon_Blueprint_Install.label>
+
+  <Launcher_DefensePylon.label>能量焦点</Launcher_DefensePylon.label>
+  <Launcher_DefensePylon.description>奥术防御塔的焦点， 可以收集和发射爆炸魔法能量射线。</Launcher_DefensePylon.description>
+
+  <Bullet_DefensePylon.label>魔法能量聚集</Bullet_DefensePylon.label>
+
+  <DefensePylon_I.label>魔法防御塔 (I)</DefensePylon_I.label>
+  <DefensePylon_I.description>A 魔法防御塔. 通过魔法能量局限化来组建一个底座， 然后将奥术能量聚集于焦点发射爆炸能量射线。</DefensePylon_I.description>
+  <DefensePylon_I_Blueprint_Install.label>魔法防御塔 (I) (蓝图)</DefensePylon_I_Blueprint_Install.label>
+
+  <Launcher_DefensePylon_I.label>能量焦点</Launcher_DefensePylon_I.label>
+  <Launcher_DefensePylon_I.description>量聚集于焦点发射爆奥术防御塔的焦点， 可以收集和发射爆炸魔法能量射线。</Launcher_DefensePylon_I.description>
+
+  <DefensePylon_II.label>魔法防御塔 (II)</DefensePylon_II.label>
+  <DefensePylon_II.description>A 魔法防御塔. 通过魔法能量局限化来组建一个底座， 然后将奥术能量聚集于焦点发射爆炸能量射线。</DefensePylon_II.description>
+  <DefensePylon_II_Blueprint_Install.label>魔法防御塔 (II) (蓝图)</DefensePylon_II_Blueprint_Install.label>
+
+  <Launcher_DefensePylon_II.label>能量焦点</Launcher_DefensePylon_II.label>
+  <Launcher_DefensePylon_II.description>量聚集于焦点发射爆奥术防御塔的焦点， 可以收集和发射爆炸魔法能量射线。</Launcher_DefensePylon_II.description>
+
+  <DefensePylon_III.label>魔法防御塔 (III)</DefensePylon_III.label>
+  <DefensePylon_III.description>A 魔法防御塔. 通过魔法能量局限化来组建一个底座， 然后将奥术能量聚集于焦点发射爆炸能量射线。</DefensePylon_III.description>
+  <DefensePylon_III_Blueprint_Install.label>魔法防御塔 (III) (蓝图)</DefensePylon_III_Blueprint_Install.label>
+
+  <Launcher_DefensePylon_III.label>能量焦点</Launcher_DefensePylon_III.label>
+  <Launcher_DefensePylon_III.description>量聚集于焦点发射爆奥术防御塔的焦点， 可以收集和发射爆炸魔法能量射线。</Launcher_DefensePylon_III.description>
+
+
+  <!-- Magic Walls -->
+
+  <TM_ArcaneBarrier.label>奥术障碍</TM_ArcaneBarrier.label>
+  <TM_ArcaneBarrier.description>通过固化奥术能量制造一堵无法通过的墙, 用来提供保护或者制造一个障碍.</TM_ArcaneBarrier.description>
+
+
+</LanguageData>

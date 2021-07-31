@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Learning interactions -->
+
+  <TM_MagicLore.label>谈论魔法理论与实践</TM_MagicLore.label>
+  <TM_MagicLore.logRulesInitiator.rulesStrings.0>r_logentry->辅导 [INITIATOR_nameDef] 魔法知识.</TM_MagicLore.logRulesInitiator.rulesStrings.0>
+  <TM_MagicLore.logRulesRecipient.rulesStrings.0>r_logentry->跟随 [RECIPIENT_nameDef] 学习魔法理论.</TM_MagicLore.logRulesRecipient.rulesStrings.0>
+
+  <TM_MightLore.label>谈论战斗技巧</TM_MightLore.label>
+  <TM_MightLore.logRulesInitiator.rulesStrings.0>r_logentry->传授 [INITIATOR_nameDef] 战斗技巧.</TM_MightLore.logRulesInitiator.rulesStrings.0>
+  <TM_MightLore.logRulesRecipient.rulesStrings.0>r_logentry->跟随 [RECIPIENT_nameDef] 学习战斗技巧.</TM_MightLore.logRulesRecipient.rulesStrings.0>
+
+
+  <!-- Social interactions -->
+
+  <TM_EntertainID.label>款待</TM_EntertainID.label>
+  <TM_EntertainID.logRulesInitiator.rulesStrings.0>r_logentry->款待 [INITIATOR_nameDef].</TM_EntertainID.logRulesInitiator.rulesStrings.0>
+  <TM_EntertainID.logRulesRecipient.rulesStrings.0>r_logentry->受到 [RECIPIENT_nameDef] 款待.</TM_EntertainID.logRulesRecipient.rulesStrings.0>
+
+  <TM_EntertainAuraID.label>款待</TM_EntertainAuraID.label>
+  <TM_EntertainAuraID.logRulesInitiator.rulesStrings.0>r_logentry->与 [INITIATOR_nameDef] 进行愉快交流.</TM_EntertainAuraID.logRulesInitiator.rulesStrings.0>
+  <TM_EntertainAuraID.logRulesRecipient.rulesStrings.0>r_logentry->与 [RECIPIENT_nameDef] 进行愉快交流.</TM_EntertainAuraID.logRulesRecipient.rulesStrings.0>
+
+
+</LanguageData>

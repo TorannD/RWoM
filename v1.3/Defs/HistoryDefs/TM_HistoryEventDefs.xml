@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <HistoryEventDef>
+    <defName>TM_OffensiveMagic</defName>
+    <label>offensive or vulgar use of magic</label>
+  </HistoryEventDef>
+
+</Defs>

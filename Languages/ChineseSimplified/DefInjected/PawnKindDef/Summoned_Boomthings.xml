@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Torann Magic波皮 thingdef -->
+
+  <TM_Poppi.label>波皮</TM_Poppi.label>
+  <TM_Poppi.labelPlural>波皮群</TM_Poppi.labelPlural>
+  <TM_Poppi.lifeStages.0.label>波皮</TM_Poppi.lifeStages.0.label>
+  <TM_Poppi.lifeStages.0.labelPlural>波皮</TM_Poppi.lifeStages.0.labelPlural>
+  <TM_Poppi.lifeStages.0.labelMale>雄性波皮</TM_Poppi.lifeStages.0.labelMale>
+  <TM_Poppi.lifeStages.0.labelMalePlural>雄性波皮群</TM_Poppi.lifeStages.0.labelMalePlural>
+  <TM_Poppi.lifeStages.0.labelFemale>雌性波皮</TM_Poppi.lifeStages.0.labelFemale>
+  <TM_Poppi.lifeStages.0.labelFemalePlural>雌性波皮群</TM_Poppi.lifeStages.0.labelFemalePlural>
+  <TM_Poppi.lifeStages.1.label>波皮</TM_Poppi.lifeStages.1.label>
+  <TM_Poppi.lifeStages.1.labelPlural>波皮</TM_Poppi.lifeStages.1.labelPlural>
+  <TM_Poppi.lifeStages.1.labelMale>雄性波皮</TM_Poppi.lifeStages.1.labelMale>
+  <TM_Poppi.lifeStages.1.labelMalePlural>雄性波皮群</TM_Poppi.lifeStages.1.labelMalePlural>
+  <TM_Poppi.lifeStages.1.labelFemale>雌性波皮</TM_Poppi.lifeStages.1.labelFemale>
+  <TM_Poppi.lifeStages.1.labelFemalePlural>雌性波皮群</TM_Poppi.lifeStages.1.labelFemalePlural>
+  <TM_Poppi.lifeStages.2.label>波皮</TM_Poppi.lifeStages.2.label>
+  <TM_Poppi.lifeStages.2.labelPlural>波皮</TM_Poppi.lifeStages.2.labelPlural>
+  <TM_Poppi.lifeStages.2.labelMale>雄性波皮</TM_Poppi.lifeStages.2.labelMale>
+  <TM_Poppi.lifeStages.2.labelMalePlural>雄性波皮群</TM_Poppi.lifeStages.2.labelMalePlural>
+  <TM_Poppi.lifeStages.2.labelFemale>雌性波皮</TM_Poppi.lifeStages.2.labelFemale>
+  <TM_Poppi.lifeStages.2.labelFemalePlural>雌性波皮群</TM_Poppi.lifeStages.2.labelFemalePlural>
+  <TM_Poppi.labelMale>雄性波皮</TM_Poppi.labelMale>
+  <TM_Poppi.labelMalePlural>雄性波皮群</TM_Poppi.labelMalePlural>
+  <TM_Poppi.labelFemale>雌性波皮</TM_Poppi.labelFemale>
+  <TM_Poppi.labelFemalePlural>雌性波皮群</TM_Poppi.labelFemalePlural>
+
+
+</LanguageData>

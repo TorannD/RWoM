@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <UnfinishedArcane.label>未完成的残缺手稿</UnfinishedArcane.label>
+  <UnfinishedArcane.description>将尘封的魔法奥秘书写进奥术手册中...</UnfinishedArcane.description>
+  <UnfinishedArcane.comps.1.useLabel>书写</UnfinishedArcane.comps.1.useLabel>
+
+  <UnfinishedAdvArcane.label>未完成的奥术之书</UnfinishedAdvArcane.label>
+  <UnfinishedAdvArcane.description>将尘封的魔法奥秘书写进奥术手册中...</UnfinishedAdvArcane.description>
+  <UnfinishedAdvArcane.comps.1.useLabel>书写</UnfinishedAdvArcane.comps.1.useLabel>
+
+  <UnfinishedMartial.label>未完成的战争之书</UnfinishedMartial.label>
+  <UnfinishedMartial.description>将尘封的战争秘密书写进一本书中...</UnfinishedMartial.description>
+  <UnfinishedMartial.comps.1.useLabel>书写</UnfinishedMartial.comps.1.useLabel>
+
+
+</LanguageData>

@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Raise Undead -->
+
+  <TM_RaiseUndead.label>死者苏生</TM_RaiseUndead.label>
+  <TM_RaiseUndead.description>将生物的尸体复活为不死者。不死者会一直受制于死灵法师.
+但是控制每一个不死人都需要死灵法师降低30%的基础魔法回复速度作为代价。维持不死动物只花费15%.
+死灵法师可以控制的不死者没有上限，但当当死灵法师没有足够的法力维持它们时，失去控制的不死者会被解散.
+</TM_RaiseUndead.description>
+
+  <TM_DismissUndead.label>解散所有不死者</TM_DismissUndead.label>
+  <TM_DismissUndead.description>解散一名不死者。</TM_DismissUndead.description>
+
+
+  <!-- death mark -->
+
+  <TM_DeathMark.label>死亡印记</TM_DeathMark.label>
+  <TM_DeathMark.description>对一个目标施放死亡印记。如果成功， 该目标将会死亡并重生为不死者直到死亡印记失效.
+该技能有很高的被抵抗率并且对友军同样有效。但对机械体无效.
+最多目标: 2
+吟唱时间: 3s
+冷却时间: 120s
+射程: 20</TM_DeathMark.description>
+
+  <TM_DeathMark_I.label>死亡印记 (I)</TM_DeathMark_I.label>
+  <TM_DeathMark_I.description>对一个目标施放死亡印记。如果成功， 该目标将会死亡并重生为不死者直到死亡印记失效.
+该技能有很高的被抵抗率并且对友军同样有效。但对机械体无效.
+最多目标: 3
+吟唱时间: 2.5s
+冷却时间: 90s
+射程: 24</TM_DeathMark_I.description>
+
+  <TM_DeathMark_II.label>死亡印记 (II)</TM_DeathMark_II.label>
+  <TM_DeathMark_II.description>对一个目标施放死亡印记。如果成功， 该目标将会死亡并重生为不死者直到死亡印记失效.
+该技能有很高的被抵抗率并且对友军同样有效。但对机械体无效.
+最多目标: 4
+吟唱时间: 2s
+冷却时间: 60s
+射程: 28</TM_DeathMark_II.description>
+
+  <TM_DeathMark_III.label>死亡印记 (III)</TM_DeathMark_III.label>
+  <TM_DeathMark_III.description>对一个目标施放死亡印记。如果成功， 该目标将会死亡并重生为不死者直到死亡印记失效.
+该技能有很高的被抵抗率并且对友军同样有效。但对机械体无效.
+最多目标: 5
+吟唱时间: 1.8s
+冷却时间: 45s
+射程: 30</TM_DeathMark_III.description>
+
+
+  <!-- fog of torment -->
+
+  <TM_FogOfTorment.label>窒息之雾</TM_FogOfTorment.label>
+  <TM_FogOfTorment.description>创造一片烟雾缓慢伤害其中的生物。不死者不受影响并会缓慢恢复生命。</TM_FogOfTorment.description>
+
+
+  <!-- consume corpse -->
+
+  <TM_ConsumeCorpse.label>攥取死亡</TM_ConsumeCorpse.label>
+  <TM_ConsumeCorpse.description>榨干一具尸体或一名不死者的剩余价值来恢复法力. 除了属于尸体的所有物质(肉/皮)会被毁灭，其他的东西例如装备物品等都会被保留下来.
+法力消耗: 3%
+射程: 50
+冷却时间: 30s
+吟唱时间: 2s</TM_ConsumeCorpse.description>
+
+  <TM_ConsumeCorpse_I.label>攥取死亡 (I)</TM_ConsumeCorpse_I.label>
+  <TM_ConsumeCorpse_I.description>榨干一具尸体或一名不死者的剩余价值来恢复法力. 除了属于尸体的所有物质(肉/皮)会被毁灭，其他的东西例如装备物品等都会被保留下来.
+法力消耗: 2.5%
+射程: 60
+冷却时间: 25s
+吟唱时间: 1.8s</TM_ConsumeCorpse_I.description>
+
+  <TM_ConsumeCorpse_II.label>攥取死亡 (II)</TM_ConsumeCorpse_II.label>
+  <TM_ConsumeCorpse_II.description>榨干一具尸体或一名不死者的剩余价值来恢复法力. 除了属于尸体的所有物质(肉/皮)会被毁灭，其他的东西例如装备物品等都会被保留下来.
+法力消耗: 2%
+射程: 70
+冷却时间: 20s
+吟唱时间: 1.5s</TM_ConsumeCorpse_II.description>
+
+  <TM_ConsumeCorpse_III.label>攥取死亡 (III)</TM_ConsumeCorpse_III.label>
+  <TM_ConsumeCorpse_III.description>榨干一具尸体或一名不死者的剩余价值来恢复法力. 除了属于尸体的所有物质(肉/皮)会被毁灭，其他的东西例如装备物品等都会被保留下来.
+法力消耗: 1.5%
+射程: 80
+冷却时间: 15s
+吟唱时间: 1.2s</TM_ConsumeCorpse_III.description>
+
+
+  <!-- corpse explosion -->
+
+  <TM_CorpseExplosion.label>尸爆术</TM_CorpseExplosion.label>
+  <TM_CorpseExplosion.description>将奥术能量和化学物质混合注入进尸体中，短暂的延迟后使尸体发生爆炸。装备不会由于爆炸被自动摧毁，但有可能由于爆炸而受损.
+法力消耗: 20%
+射程: 40
+冷却时间: 10s
+吟唱时间: 2s</TM_CorpseExplosion.description>
+
+  <TM_CorpseExplosion_I.label>尸爆术 (I)</TM_CorpseExplosion_I.label>
+  <TM_CorpseExplosion_I.description>将奥术能量和化学物质混合注入进尸体中，短暂的延迟后使尸体发生爆炸。装备不会由于爆炸被自动摧毁，但有可能由于爆炸而受损.
+法力消耗: 22%
+射程: 50
+冷却时间: 7s
+吟唱时间: 1.5s</TM_CorpseExplosion_I.description>
+
+  <TM_CorpseExplosion_II.label>尸爆术 (II)</TM_CorpseExplosion_II.label>
+  <TM_CorpseExplosion_II.description>将奥术能量和化学物质混合注入进尸体中，短暂的延迟后使尸体发生爆炸。装备不会由于爆炸被自动摧毁，但有可能由于爆炸而受损.
+法力消耗: 24%
+射程: 60
+冷却时间: 5s
+吟唱时间: 1s</TM_CorpseExplosion_II.description>
+
+  <TM_CorpseExplosion_III.label>尸爆术 (III)</TM_CorpseExplosion_III.label>
+  <TM_CorpseExplosion_III.description>将奥术能量和化学物质混合注入进尸体中，短暂的延迟后使尸体发生爆炸。装备不会由于爆炸被自动摧毁，但有可能由于爆炸而受损.
+法力消耗: 25%
+射程: 70
+冷却时间: 4s
+吟唱时间: .5s</TM_CorpseExplosion_III.description>
+
+
+  <!-- Lich Form -->
+
+  <TM_LichForm.label>巫妖形态</TM_LichForm.label>
+  <TM_LichForm.description>将死灵法师转换为永恒存在的不死巫妖的形态并获得奥术能量增幅. 一旦使用后就没有退路了.
+		
+增幅: 
+法力最大值: +50%
+法力恢复速度: +50%
+获得非自然疾病的抗性, 伤害抗性, 生命恢复以及不再需要食物和休息.
+得到能力: 飞行
+得到能力: 死亡螺旋
+
+惩罚:
+无法再进行涉及到照顾, 社交, 动物, 灭火, 艺术, 简易工作和技术工作.
+移动速度: -2.0 格/秒</TM_LichForm.description>
+
+
+  <!-- Death Bolt -->
+
+  <TM_DeathBolt.label>死亡螺旋</TM_DeathBolt.label>
+  <TM_DeathBolt.description>激活伴随死亡之力的螺旋能量; 对冲击范围内的所有生物造成极大的痛苦.
+
+爆炸半径: 1.6米
+冷却时间: 15s
+螺旋数量: 2
+射程: 40</TM_DeathBolt.description>
+
+  <TM_DeathBolt_I.label>死亡螺旋 (I)</TM_DeathBolt_I.label>
+  <TM_DeathBolt_I.description>激活伴随死亡之力的螺旋能量; 对冲击范围内的所有生物造成极大的痛苦.
+
+爆炸半径: 2米
+冷却时间: 14s
+Bolts: 2
+射程: 40</TM_DeathBolt_I.description>
+
+  <TM_DeathBolt_II.label>死亡螺旋 (II)</TM_DeathBolt_II.label>
+  <TM_DeathBolt_II.description>激活伴随死亡之力的螺旋能量; 对冲击范围内的所有生物造成极大的痛苦.
+
+爆炸半径: 2米
+冷却时间: 13s
+Bolts: 3
+射程 40</TM_DeathBolt_II.description>
+
+  <TM_DeathBolt_III.label>死亡螺旋 (III)</TM_DeathBolt_III.label>
+  <TM_DeathBolt_III.description>激活伴随死亡之力的螺旋能量; 对冲击范围内的所有生物造成极大的痛苦.
+
+爆炸半径: 2.4米
+冷却时间: 12s
+Bolts: 3
+射程: 50</TM_DeathBolt_III.description>
+
+
+</LanguageData>

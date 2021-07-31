@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Raise Undead -->
+
+  <Projectile_RaiseUndead.label>死者苏生</Projectile_RaiseUndead.label>
+
+
+  <!-- death mark -->
+
+  <Projectile_DeathMark.label>死亡印记</Projectile_DeathMark.label>
+
+
+  <!-- fog of torment -->
+
+  <Projectile_FogOfTorment.label>窒息之雾</Projectile_FogOfTorment.label>
+
+
+  <!-- consume corpse -->
+
+  <Projectile_ConsumeCorpse.label>攥取死亡</Projectile_ConsumeCorpse.label>
+
+
+  <!-- corpse explosion -->
+
+  <Projectile_CorpseExplosion.label>尸爆术</Projectile_CorpseExplosion.label>
+
+
+  <!-- Death Bolt -->
+
+  <Projectile_DeathBolt.label>死亡螺旋</Projectile_DeathBolt.label>
+  <Projectile_DeathBolt_I.label>死亡螺旋</Projectile_DeathBolt_I.label>
+  <Projectile_DeathBolt_II.label>死亡螺旋</Projectile_DeathBolt_II.label>
+  <Projectile_DeathBolt_III.label>死亡螺旋</Projectile_DeathBolt_III.label>
+  <FlyingObject_DeathBolt.label>爆发</FlyingObject_DeathBolt.label>
+
+
+</LanguageData>

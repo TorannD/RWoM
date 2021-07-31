@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Partial Scripts -->
+
+  <BookOfQuestion.label>神秘的手稿: ???</BookOfQuestion.label>
+  <BookOfQuestion.description>教会一个有天赋的生物如何驾驭魔法的力量..。</BookOfQuestion.description>
+  <BookOfQuestion.comps.1.useLabel>阅读</BookOfQuestion.comps.1.useLabel>
+
+  <Torn_BookOfInnerFire.label>手稿残页: 火系</Torn_BookOfInnerFire.label>
+  <Torn_BookOfInnerFire.description>教会一个有天赋的生物如何驾驭火元素。
+这种手稿并不完整，阅读者可能并不能从中学到火系魔法。</Torn_BookOfInnerFire.description>
+  <Torn_BookOfInnerFire.comps.1.useLabel>阅读</Torn_BookOfInnerFire.comps.1.useLabel>
+
+  <Torn_BookOfHeartOfFrost.label>手稿残页: 水系</Torn_BookOfHeartOfFrost.label>
+  <Torn_BookOfHeartOfFrost.description>教会一个有天赋的生物如何驾驭水元素。
+这种手稿并不完整，阅读者可能并不能从中学到水系魔法。</Torn_BookOfHeartOfFrost.description>
+  <Torn_BookOfHeartOfFrost.comps.1.useLabel>阅读</Torn_BookOfHeartOfFrost.comps.1.useLabel>
+
+  <Torn_BookOfStormBorn.label>手稿残页: 雷系</Torn_BookOfStormBorn.label>
+  <Torn_BookOfStormBorn.description>教会一个有天赋的生物如何驾驭雷元素。
+这种手稿并不完整，阅读者可能并不能从中学到雷系魔法。</Torn_BookOfStormBorn.description>
+  <Torn_BookOfStormBorn.comps.1.useLabel>阅读</Torn_BookOfStormBorn.comps.1.useLabel>
+
+  <Torn_BookOfArcanist.label>手稿残页: 奥术</Torn_BookOfArcanist.label>
+  <Torn_BookOfArcanist.description>教会一个有天赋的生物如何驾驭 奥术之力。
+这种手稿并不完整，阅读者可能并不能从中学到奥术魔法。</Torn_BookOfArcanist.description>
+  <Torn_BookOfArcanist.comps.1.useLabel>阅读</Torn_BookOfArcanist.comps.1.useLabel>
+
+  <Torn_BookOfValiant.label>手稿残页: 神圣</Torn_BookOfValiant.label>
+  <Torn_BookOfValiant.description>教会一个有天赋的生物如何驾驭神圣之力。
+这种手稿并不完整，阅读者可能并不能从中学到神圣系魔法。</Torn_BookOfValiant.description>
+  <Torn_BookOfValiant.comps.1.useLabel>阅读</Torn_BookOfValiant.comps.1.useLabel>
+
+  <Torn_BookOfSummoner.label>手稿残页: 召唤</Torn_BookOfSummoner.label>
+  <Torn_BookOfSummoner.description>教会有一个有天赋的生物如何召唤和与其他位面的元素互动。
+这种手稿并不完整，阅读者可能并不能从中学到召唤系魔法。</Torn_BookOfSummoner.description>
+  <Torn_BookOfSummoner.comps.1.useLabel>阅读</Torn_BookOfSummoner.comps.1.useLabel>
+
+  <Torn_BookOfNature.label>手稿残页: 自然</Torn_BookOfNature.label>
+  <Torn_BookOfNature.description>教会一个有天赋的生物如何驾驭自然元素。
+这种手稿并不完整，阅读者可能并不能从中学到德鲁伊魔法。</Torn_BookOfNature.description>
+  <Torn_BookOfNature.comps.1.useLabel>阅读</Torn_BookOfNature.comps.1.useLabel>
+
+  <Torn_BookOfUndead.label>手稿残页: 巫术</Torn_BookOfUndead.label>
+  <Torn_BookOfUndead.description>教会一个有天赋的生物如何操纵生命与死亡之力。
+这种手稿并不完整，阅读者可能并不能从中学到巫术魔法。</Torn_BookOfUndead.description>
+  <Torn_BookOfUndead.comps.1.useLabel>阅读</Torn_BookOfUndead.comps.1.useLabel>
+
+  <Torn_BookOfPriest.label>手稿残页: 牧师</Torn_BookOfPriest.label>
+  <Torn_BookOfPriest.description>教会一个有天赋的生物如何给予生命与治愈之力.
+这种手稿并不完整，阅读者可能并不能从中学到治愈系魔法。</Torn_BookOfPriest.description>
+  <Torn_BookOfPriest.comps.1.useLabel>阅读</Torn_BookOfPriest.comps.1.useLabel>
+
+  <Torn_BookOfBard.label>手稿残页: 吟游诗人</Torn_BookOfBard.label>
+  <Torn_BookOfBard.description>教会一个有天赋的生物如何成为一名专业的吟游诗人. 吟游诗人不具备进行简易劳动的能力, 此工作类型将被禁用.
+这种手稿并不完整，阅读者可能并不能从中学到吟游诗人的特殊能力.</Torn_BookOfBard.description>
+  <Torn_BookOfBard.comps.1.useLabel>阅读</Torn_BookOfBard.comps.1.useLabel>
+
+
+  <!-- Arcane Scripts -->
+
+  <BookOfInnerFire.label>神秘残章: 火系</BookOfInnerFire.label>
+  <BookOfInnerFire.description>教会一个有天赋的生物如何驾驭火元素。</BookOfInnerFire.description>
+  <BookOfInnerFire.comps.1.useLabel>阅读</BookOfInnerFire.comps.1.useLabel>
+
+  <BookOfHeartOfFrost.label>神秘残章: 水系</BookOfHeartOfFrost.label>
+  <BookOfHeartOfFrost.description>教会一个有天赋的生物如何驾驭水元素。</BookOfHeartOfFrost.description>
+  <BookOfHeartOfFrost.comps.1.useLabel>阅读</BookOfHeartOfFrost.comps.1.useLabel>
+
+  <BookOfStormBorn.label>神秘残章: 雷系</BookOfStormBorn.label>
+  <BookOfStormBorn.description>教会一个有天赋的生物如何驾驭雷元素。</BookOfStormBorn.description>
+  <BookOfStormBorn.comps.1.useLabel>阅读</BookOfStormBorn.comps.1.useLabel>
+
+  <BookOfArcanist.label>神秘残章: 奥术</BookOfArcanist.label>
+  <BookOfArcanist.description>教会一个有天赋的生物如何驾驭奥术之力。</BookOfArcanist.description>
+  <BookOfArcanist.comps.1.useLabel>阅读</BookOfArcanist.comps.1.useLabel>
+
+  <BookOfValiant.label>神圣残章: 圣骑士</BookOfValiant.label>
+  <BookOfValiant.description>教会一个有天赋的生物如何成为圣骑士。</BookOfValiant.description>
+  <BookOfValiant.comps.1.useLabel>阅读</BookOfValiant.comps.1.useLabel>
+
+  <BookOfSummoner.label>神秘残章: 召唤师</BookOfSummoner.label>
+  <BookOfSummoner.description>教会一个有天赋的生物如何成为召唤师。</BookOfSummoner.description>
+  <BookOfSummoner.comps.1.useLabel>阅读</BookOfSummoner.comps.1.useLabel>
+
+  <BookOfDruid.label>神秘残章: 德鲁伊</BookOfDruid.label>
+  <BookOfDruid.description>教会一个有天赋的生物如何成为德鲁伊。</BookOfDruid.description>
+  <BookOfDruid.comps.1.useLabel>阅读</BookOfDruid.comps.1.useLabel>
+
+  <BookOfNecromancer.label>神秘残章: 死灵法师</BookOfNecromancer.label>
+  <BookOfNecromancer.description>教会一个有天赋的生物如何成为死灵法师</BookOfNecromancer.description>
+  <BookOfNecromancer.comps.1.useLabel>阅读</BookOfNecromancer.comps.1.useLabel>
+
+  <BookOfPriest.label>神秘残章: 牧师</BookOfPriest.label>
+  <BookOfPriest.description>教会一个有天赋的生物如何成为牧师</BookOfPriest.description>
+  <BookOfPriest.comps.1.useLabel>阅读</BookOfPriest.comps.1.useLabel>
+
+  <BookOfBard.label>Arcane Script: Bard</BookOfBard.label>
+  <BookOfBard.description>Teaches a gifted pawn how to become a Bard. Bards are incapable of dumb labor and this work type will be disabled.</BookOfBard.description>
+  <BookOfBard.comps.1.useLabel>Read</BookOfBard.comps.1.useLabel>
+
+
+  <!-- Combat Forms -->
+
+  <BookOfGladiator.label>战斗指南: 斗士</BookOfGladiator.label>
+  <BookOfGladiator.description>教会一个可以熟练运用身体能力的生物如何以斗士的能力进行战斗。</BookOfGladiator.description>
+  <BookOfGladiator.comps.1.useLabel>阅读</BookOfGladiator.comps.1.useLabel>
+
+  <BookOfSniper.label>战斗指南: 狙击手</BookOfSniper.label>
+  <BookOfSniper.description>教会一个可以熟练运用身体能力的生物如何以狙击手的能力进行战斗。</BookOfSniper.description>
+  <BookOfSniper.comps.1.useLabel>阅读</BookOfSniper.comps.1.useLabel>
+
+  <BookOfBladedancer.label>战斗指南: 刀锋舞者</BookOfBladedancer.label>
+  <BookOfBladedancer.description>教会一个可以熟练运用身体能力的生物如何成为刀锋舞者</BookOfBladedancer.description>
+  <BookOfBladedancer.comps.1.useLabel>阅读</BookOfBladedancer.comps.1.useLabel>
+
+  <BookOfRanger.label>战斗指南: 漫游者</BookOfRanger.label>
+  <BookOfRanger.description>教会一个可以熟练运用身体能力的生物如何成为漫游者</BookOfRanger.description>
+  <BookOfRanger.comps.1.useLabel>阅读</BookOfRanger.comps.1.useLabel>
+
+
+  <!-- Magic Spells - Single -->
+
+  <SpellOf_Rain.label>法师技能: 降雨术</SpellOf_Rain.label>
+  <SpellOf_Rain.description>教会一名魔法师如何操控空气中的能量来引发一场短暂的降雨。</SpellOf_Rain.description>
+  <SpellOf_Rain.comps.1.useLabel>阅读</SpellOf_Rain.comps.1.useLabel>
+
+  <SpellOf_Blink.label>法师技能: 闪烁</SpellOf_Blink.label>
+  <SpellOf_Blink.description>教会一名魔法师如何使奥术之力互相连结， 允许其进行短距离的高速移动。</SpellOf_Blink.description>
+  <SpellOf_Blink.comps.1.useLabel>阅读</SpellOf_Blink.comps.1.useLabel>
+
+  <SpellOf_Teleport.label>法师技能: 传送</SpellOf_Teleport.label>
+  <SpellOf_Teleport.description>教会一名魔法师如何操纵能量使用奥术次元之力， 允许其创建一个传送门来进行传送。</SpellOf_Teleport.description>
+  <SpellOf_Teleport.comps.1.useLabel>阅读</SpellOf_Teleport.comps.1.useLabel>
+
+  <SpellOf_Heal.label>法师技能: 治愈</SpellOf_Heal.label>
+  <SpellOf_Heal.description>教会一名魔法师如何奇妙地操控奥术能量来治愈伤口。</SpellOf_Heal.description>
+  <SpellOf_Heal.comps.1.useLabel>阅读</SpellOf_Heal.comps.1.useLabel>
+
+  <SpellOf_Heater.label>法师技能: 聚集热能</SpellOf_Heater.label>
+  <SpellOf_Heater.description>教会一名魔法师如何创造一个连接火元素位面的窗口， 创建一个临时的热源。</SpellOf_Heater.description>
+  <SpellOf_Heater.comps.1.useLabel>阅读</SpellOf_Heater.comps.1.useLabel>
+
+  <SpellOf_PowerNode.label>法师技能: 电源节点</SpellOf_PowerNode.label>
+  <SpellOf_PowerNode.description>教会一名魔法师如何创造一个可以将奥术能量转化为电力的电源节点. 将其放置在电力网旁边可以提供600W电力。</SpellOf_PowerNode.description>
+  <SpellOf_PowerNode.comps.1.useLabel>阅读</SpellOf_PowerNode.comps.1.useLabel>
+
+  <SpellOf_Cooler.label>法师技能: 驱散热能</SpellOf_Cooler.label>
+  <SpellOf_Cooler.description>教会一名魔法师如何创造一个连结冰位面的窗口， 创造一个临时的冷源。</SpellOf_Cooler.description>
+  <SpellOf_Cooler.comps.1.useLabel>阅读</SpellOf_Cooler.comps.1.useLabel>
+
+  <SpellOf_Sunlight.label>法师技能: Sun Light</SpellOf_Sunlight.label>
+  <SpellOf_Sunlight.description>Teaches a magic user how to create a dimensional pocket that emits a steady stream of sunlight strong enough to grow plants. Sun Light must be sustained by the mage that creates it and will reduce maximum mana and mana regeneration rate.</SpellOf_Sunlight.description>
+  <SpellOf_Sunlight.comps.1.useLabel>Read</SpellOf_Sunlight.comps.1.useLabel>
+
+  <SpellOf_DryGround.label>火系技能: 魔力蒸腾</SpellOf_DryGround.label>
+  <SpellOf_DryGround.description>教会一名火系魔法师如何引导火元素位面的力量， 使一小块土地的绝大多数水分蒸发。</SpellOf_DryGround.description>
+  <SpellOf_DryGround.comps.1.useLabel>阅读</SpellOf_DryGround.comps.1.useLabel>
+
+  <SpellOf_WetGround.label>冰系技能: 滋润大地</SpellOf_WetGround.label>
+  <SpellOf_WetGround.description>教会一名冰系魔法师如何使土地充满水分和养分， 把沙地转换成可以种植的土壤。</SpellOf_WetGround.description>
+  <SpellOf_WetGround.comps.1.useLabel>阅读</SpellOf_WetGround.comps.1.useLabel>
+
+  <SpellOf_ChargeBattery.label>雷系技能: 电池充能</SpellOf_ChargeBattery.label>
+  <SpellOf_ChargeBattery.description>教会一名雷系魔法师如何通过灌输魔法能量给电池充能.
+产生 400Wd。</SpellOf_ChargeBattery.description>
+  <SpellOf_ChargeBattery.comps.1.useLabel>阅读</SpellOf_ChargeBattery.comps.1.useLabel>
+
+  <SpellOf_SmokeCloud.label>法师技能: 烟云蔽日</SpellOf_SmokeCloud.label>
+  <SpellOf_SmokeCloud.description>教会一名魔法师如何点燃空气中的粒子来创造一道烟幕， 暂时隐蔽目标区域。</SpellOf_SmokeCloud.description>
+  <SpellOf_SmokeCloud.comps.1.useLabel>阅读</SpellOf_SmokeCloud.comps.1.useLabel>
+
+  <SpellOf_Extinguish.label>法师技能: 熄灭</SpellOf_Extinguish.label>
+  <SpellOf_Extinguish.description>教会一名魔法师如何驱散目标区域的火元素， 熄灭火焰。</SpellOf_Extinguish.description>
+  <SpellOf_Extinguish.comps.1.useLabel>阅读</SpellOf_Extinguish.comps.1.useLabel>
+
+  <SpellOf_CauterizeWound.label>法师技能: 烧灼伤口</SpellOf_CauterizeWound.label>
+  <SpellOf_CauterizeWound.description>教会一名火系魔法师如何运用火元素清洁和封闭伤口 - 可能会留下烧伤疤痕.</SpellOf_CauterizeWound.description>
+  <SpellOf_CauterizeWound.comps.1.useLabel>阅读</SpellOf_CauterizeWound.comps.1.useLabel>
+
+  <SpellOf_EMP.label>法师技能: 电磁脉冲</SpellOf_EMP.label>
+  <SpellOf_EMP.description>教会一名魔法师如何在指定区域产生一次电磁脉冲爆炸。</SpellOf_EMP.description>
+  <SpellOf_EMP.comps.1.useLabel>阅读</SpellOf_EMP.comps.1.useLabel>
+
+  <SpellOf_Firestorm.label>火系技能: 火焰风暴</SpellOf_Firestorm.label>
+  <SpellOf_Firestorm.description>教会一名火系魔法师如何运用狂暴的火元素形成风暴烧焦土地。</SpellOf_Firestorm.description>
+  <SpellOf_Firestorm.comps.1.useLabel>阅读</SpellOf_Firestorm.comps.1.useLabel>
+
+  <SpellOf_Blizzard.label>冰系技能: 暴风雪</SpellOf_Blizzard.label>
+  <SpellOf_Blizzard.description>教会一名冰系魔法师如何唤起一阵暴风雪并且让敌人在冰雪中被埋葬。</SpellOf_Blizzard.description>
+  <SpellOf_Blizzard.comps.1.useLabel>阅读</SpellOf_Blizzard.comps.1.useLabel>
+
+  <SpellOf_EyeOfTheStorm.label>雷系技能: 风暴之眼</SpellOf_EyeOfTheStorm.label>
+  <SpellOf_EyeOfTheStorm.description>教会一名雷系魔法师如何将狂怒的雷元素压缩成一个小球并且按照预定轨道发射出去。</SpellOf_EyeOfTheStorm.description>
+  <SpellOf_EyeOfTheStorm.comps.1.useLabel>阅读</SpellOf_EyeOfTheStorm.comps.1.useLabel>
+
+  <SpellOf_SummonMinion.label>法师技能: 召唤仆从</SpellOf_SummonMinion.label>
+  <SpellOf_SummonMinion.description>教会一名魔法师如何召唤一名其他位面的仆从来帮助魔法师完成基本的工作。</SpellOf_SummonMinion.description>
+  <SpellOf_SummonMinion.comps.1.useLabel>阅读</SpellOf_SummonMinion.comps.1.useLabel>
+
+  <SpellOf_FertileLands.label>德鲁伊技能: 大地祝福</SpellOf_FertileLands.label>
+  <SpellOf_FertileLands.description>教会一名德鲁伊如何祝福一片土地使其肥沃度增加.</SpellOf_FertileLands.description>
+  <SpellOf_FertileLands.comps.1.useLabel>阅读</SpellOf_FertileLands.comps.1.useLabel>
+
+  <SpellOf_SpellMending.label>法师技能: 拼补</SpellOf_SpellMending.label>
+  <SpellOf_SpellMending.description>教会一名法师如何改造和修理人身上的装备.</SpellOf_SpellMending.description>
+  <SpellOf_SpellMending.comps.1.useLabel>阅读</SpellOf_SpellMending.comps.1.useLabel>
+
+  <SpellOf_TransferMana.label>法师技能: 法力转移</SpellOf_TransferMana.label>
+  <SpellOf_TransferMana.description>教会一名魔法师如何将法力转移给其他魔法师。 如果这些魔法能量被灌输在一个没有魔力的受术者身上， 受术者的物理属性将会得到暂时性的增强。</SpellOf_TransferMana.description>
+  <SpellOf_TransferMana.comps.1.useLabel>阅读</SpellOf_TransferMana.comps.1.useLabel>
+
+  <SpellOf_SiphonMana.label>法师技能: 法力虹吸</SpellOf_SiphonMana.label>
+  <SpellOf_SiphonMana.description>教会一名魔法师如何从其他魔法师那里吸取魔力。如果被用在没有魔力的受术者身上，如果被用来没有魔力的生物身上， 他们的物理属性将被极大的削弱(不会获得法力)。在极端情况下有致死的风险。</SpellOf_SiphonMana.description>
+  <SpellOf_SiphonMana.comps.1.useLabel>阅读</SpellOf_SiphonMana.comps.1.useLabel>
+
+  <SpellOf_RegrowLimb.label>德鲁伊技能: 再生术</SpellOf_RegrowLimb.label>
+  <SpellOf_RegrowLimb.description>教会一名德鲁伊如何结合自然之力，奥术之力与医疗技能来再生肢体。</SpellOf_RegrowLimb.description>
+  <SpellOf_RegrowLimb.comps.1.useLabel>阅读</SpellOf_RegrowLimb.comps.1.useLabel>
+
+  <SpellOf_ManaShield.label>法师技能: 法力护盾</SpellOf_ManaShield.label>
+  <SpellOf_ManaShield.description>教会一名魔法师如何使用法力创造一道屏障来保护自己的身体不受伤害。</SpellOf_ManaShield.description>
+  <SpellOf_ManaShield.comps.1.useLabel>阅读</SpellOf_ManaShield.comps.1.useLabel>
+
+  <SpellOf_FoldReality.label>奥术技能: 空间之门</SpellOf_FoldReality.label>
+  <SpellOf_FoldReality.description>教会一名奥术魔法师如何折叠空间，在殖民地之间打开一道临时的窗口。</SpellOf_FoldReality.description>
+  <SpellOf_FoldReality.comps.1.useLabel>阅读</SpellOf_FoldReality.comps.1.useLabel>
+
+  <SpellOf_Resurrection.label>牧师技能: 英雄不朽</SpellOf_Resurrection.label>
+  <SpellOf_Resurrection.description>教会一名牧师如何使已故不久的死者重新焕发生机。</SpellOf_Resurrection.description>
+  <SpellOf_Resurrection.comps.1.useLabel>阅读</SpellOf_Resurrection.comps.1.useLabel>
+
+  <SpellOf_HolyWrath.label>圣骑士技能: 神圣狂怒</SpellOf_HolyWrath.label>
+  <SpellOf_HolyWrath.description>教会一名圣骑士如何引导神之怒攻击敌人.</SpellOf_HolyWrath.description>
+  <SpellOf_HolyWrath.comps.1.useLabel>阅读</SpellOf_HolyWrath.comps.1.useLabel>
+
+  <SpellOf_LichForm.label>死灵法师技能: 巫妖形态</SpellOf_LichForm.label>
+  <SpellOf_LichForm.description>教会一名死灵法师如何转换成为巫妖形态.</SpellOf_LichForm.description>
+  <SpellOf_LichForm.comps.1.useLabel>阅读</SpellOf_LichForm.comps.1.useLabel>
+
+  <SpellOf_SummonPoppi.label>召唤师技能: 召唤波皮</SpellOf_SummonPoppi.label>
+  <SpellOf_SummonPoppi.description>教会一名召唤师如何召唤一群可爱又蠢萌的波皮.</SpellOf_SummonPoppi.description>
+  <SpellOf_SummonPoppi.comps.1.useLabel>阅读</SpellOf_SummonPoppi.comps.1.useLabel>
+
+  <SpellOf_BattleHymn.label>吟游诗人技能: 战斗之歌</SpellOf_BattleHymn.label>
+  <SpellOf_BattleHymn.description>教会一名吟游诗人如何演奏战斗之歌.</SpellOf_BattleHymn.description>
+  <SpellOf_BattleHymn.comps.1.useLabel>阅读</SpellOf_BattleHymn.comps.1.useLabel>
+
+
+  <!-- Fighter Skills - Single -->
+
+  <SkillOf_Sprint.label>战技: 冲刺</SkillOf_Sprint.label>
+  <SkillOf_Sprint.description>教会一名战士如何获得并维持更快的移动速度。</SkillOf_Sprint.description>
+  <SkillOf_Sprint.comps.1.useLabel>阅读</SkillOf_Sprint.comps.1.useLabel>
+
+  <SkillOf_GearRepair.label>战技: 装备维护</SkillOf_GearRepair.label>
+  <SkillOf_GearRepair.description>教会一名战士如何更有效地维修破损的装备。</SkillOf_GearRepair.description>
+  <SkillOf_GearRepair.comps.1.useLabel>阅读</SkillOf_GearRepair.comps.1.useLabel>
+
+  <SkillOf_InnerHealing.label>战技: 深入治疗</SkillOf_InnerHealing.label>
+  <SkillOf_InnerHealing.description>教会一名战士如何专注于提高治愈率和疾病免疫力。</SkillOf_InnerHealing.description>
+  <SkillOf_InnerHealing.comps.1.useLabel>阅读</SkillOf_InnerHealing.comps.1.useLabel>
+
+  <SkillOf_HeavyBlow.label>战技: 强力打击</SkillOf_HeavyBlow.label>
+  <SkillOf_HeavyBlow.description>教会一名战士如何训练来加强每次攻击的威力。</SkillOf_HeavyBlow.description>
+  <SkillOf_HeavyBlow.comps.1.useLabel>阅读</SkillOf_HeavyBlow.comps.1.useLabel>
+
+  <SkillOf_StrongBack.label>战技: 强壮后背</SkillOf_StrongBack.label>
+  <SkillOf_StrongBack.description>教会一名战士如何搬运更多的物品。</SkillOf_StrongBack.description>
+  <SkillOf_StrongBack.comps.1.useLabel>阅读</SkillOf_StrongBack.comps.1.useLabel>
+
+  <SkillOf_ThickSkin.label>战技: 石化皮肤</SkillOf_ThickSkin.label>
+  <SkillOf_ThickSkin.description>教会一名战士如何使护甲变得更为坚硬并略微提升适宜温度。</SkillOf_ThickSkin.description>
+  <SkillOf_ThickSkin.comps.1.useLabel>阅读</SkillOf_ThickSkin.comps.1.useLabel>
+
+  <SkillOf_FightersFocus.label>战技: 战斗专注</SkillOf_FightersFocus.label>
+  <SkillOf_FightersFocus.description>教会一名战士如何更有效地释放身心压力。</SkillOf_FightersFocus.description>
+  <SkillOf_FightersFocus.comps.1.useLabel>阅读</SkillOf_FightersFocus.comps.1.useLabel>
+
+
+  <!-- Gems of Insight -->
+
+  <GemstoneOfInsight_Might.label>身体洞察宝石</GemstoneOfInsight_Might.label>
+  <GemstoneOfInsight_Might.description>为使用者附加战士特性.	
+
+**注意: 如果人物有超过7个特性, 使用此物品会随机替换掉一个人物特性. 并且已有法师或战士特性的人物无法使用**</GemstoneOfInsight_Might.description>
+  <GemstoneOfInsight_Might.comps.1.useLabel>使用</GemstoneOfInsight_Might.comps.1.useLabel>
+
+  <GemstoneOfInsight_Magic.label>奥术洞察宝石</GemstoneOfInsight_Magic.label>
+  <GemstoneOfInsight_Magic.description>为使用者附加法师特性. 
+	
+**注意: 如果人物有超过7个特性, 使用此物品会随机替换掉一个人物特性. 并且已有法师或战士特性的人物无法使用**</GemstoneOfInsight_Magic.description>
+  <GemstoneOfInsight_Magic.comps.1.useLabel>使用</GemstoneOfInsight_Magic.comps.1.useLabel>
+
+
+</LanguageData>

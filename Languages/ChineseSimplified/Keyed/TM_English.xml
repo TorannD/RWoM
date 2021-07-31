@@ -1,0 +1,701 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+
+  <!-- Notification messages  -->
+  <TM_NotEnoughMana>{0} 使用此需要更多的法力值.</TM_NotEnoughMana>
+  <TM_NotEnoughStamina>{0} 没有足够的体力使用该技能.</TM_NotEnoughStamina>
+  <MentalStateByPsyker>{0} 被精神攻击击倒.</MentalStateByPsyker>
+
+  <TM_InvalidTarget>{0} 没有找到可以释放 {1} 的目标.</TM_InvalidTarget>
+  <InvalidPortal>传送门的位置无效 - 目标区域必须可以用于建造并且没有阻挡物.</InvalidPortal>
+  <InvalidMine>召唤地雷的位置无效 - 目标地点必须是有效并且没有阻挡物的.</InvalidMine>
+  <InvalidSummon>试图在无效位置进行召唤 - 目标地点必须是有效并且没有阻挡物的.</InvalidSummon>
+  <PylonDeSpawn>魔力凝聚而成的防御塔已过期并开始崩解.</PylonDeSpawn>
+  <MineDeSpawn>魔力凝聚而成的魔法地雷的能量已经枯竭，地雷会安全地消失.</MineDeSpawn>
+  <MinionFled>你的一个仆人已经逃离这个位面.</MinionFled>
+  <NotArcaneBook>该图书类型并非神秘残章!</NotArcaneBook>
+  <NotGiftedPawn>该生物没有魔法天赋并且无法使用该物品.</NotGiftedPawn>
+  <NotCombatBook>该图书类型并非战斗指南!</NotCombatBook>
+  <NotPhyAdeptPawn>该生物通过学习战斗指南并没有获得身体特性.</NotPhyAdeptPawn>
+  <CannotLearnSpell>无法对该生物使用技能.</CannotLearnSpell>
+  <CannotLearnSkill>技能无法对此目标使用.</CannotLearnSkill>
+  <NotMageToLearnSpell>该生物没有与奥术之力协调，因此不能学习卷轴中的内容.</NotMageToLearnSpell>
+  <NotFighterToLearnSkill>此生物没有学习过战斗指南因此从此卷轴中习得战技.</NotFighterToLearnSkill>
+  <InvalidBattery>技能使用失败, 无法检测到与该建筑的共同之处(不是电池).</InvalidBattery>
+  <NotABuilding>技能使用失败: 目标并非建筑.</NotABuilding>
+  <NotRightTerrainType>无法改变这种类型的土地.</NotRightTerrainType>
+  <TerraformFailed>无法改变土地类型.</TerraformFailed>
+  <TerraformNotSandOrGravel>无法改变土地类型, 必须是沙地或石地.</TerraformNotSandOrGravel>
+  <PortalCollapseFinal>传送门已经崩塌!</PortalCollapseFinal>
+  <PortalCollapseIn>传送门将在 {0}秒 后崩塌.</PortalCollapseIn>
+  <InvalidTargetLocation>目标位置不可用.</InvalidTargetLocation>
+  <MustHaveRangedWeapon>{0} 没有装备可用的远程武器.  {0} 必须装备远程武器才可使用此技能.</MustHaveRangedWeapon>
+  <MustHaveGunpowderWeapon>{0} 没有装备可用的远程武器.  {0} 必须装备一个更加强大的武器才能使用此技能.</MustHaveGunpowderWeapon>
+  <MustHaveMeleeWeapon>{0} 没有装备可用的近战武器.  {0} 必须装备一个近战武器才能使用此技能.</MustHaveMeleeWeapon>
+  <TM_ShieldBlockingPowers>{0} 必须装备 {1} 才能使用此技能.</TM_ShieldBlockingPowers>
+  <TM_OutOfRange>目标区域超出射程.</TM_OutOfRange>
+  <TM_OutOfLOS>施法失败, 目标在 {0} 处不可见 .</TM_OutOfLOS>
+  <TM_NothingToRegenerate>再生术没有有效目标.</TM_NothingToRegenerate>
+  <TM_CureDiseaseTypeFail>无法治愈此类疾病.</TM_CureDiseaseTypeFail>
+  <TM_CantSummonSelf>无法召唤自己.</TM_CantSummonSelf>
+  <TM_UndeadCollapsed>{0} 没有足够的法力维持 {1}. {1} 已经开始解体并化作魔力反哺 {0}.</TM_UndeadCollapsed>
+  <TM_ResistedSpell>抵抗!</TM_ResistedSpell>
+  <TM_CannotUseOnLiving>此技能无法对生物使用.</TM_CannotUseOnLiving>
+  <TM_CannontConsumeCorpseType>无法攥取该尸体的能量.</TM_CannontConsumeCorpseType>
+  <TM_InvalidCorpseType>此尸体无法用于攥取死亡.</TM_InvalidCorpseType>
+  <TM_Learn>学会</TM_Learn>
+  <TM_GatewayBeyondMaximumRange>目标无法到达传送门.</TM_GatewayBeyondMaximumRange>
+  <TM_InvalidGatewaySelection>目标不可被用于传送门.</TM_InvalidGatewaySelection>
+  <TM_InvalidGatewayNotOccupied>传送门只可用在被殖民者占据的地方使用.</TM_InvalidGatewayNotOccupied>
+  <TM_Exception>当{0}试图使用 {1} 时出现了异常 - 停止尝试使用技能并将法力返还.</TM_Exception>
+  <TM_ExceptionClose>当尝试关闭 {0} 时出现了异常 - 技能被终止.</TM_ExceptionClose>
+  <TM_ExceptionTick>在 {} 期间出现了异常 - 技能被立即终止.</TM_ExceptionTick>
+  <TM_InvalidResurrection>{0} 没有找到可以复活的目标.</TM_InvalidResurrection>
+  <TM_ResurrectionTargetExpired>因为死亡时间过长, 无法复活此目标.</TM_ResurrectionTargetExpired>
+  <MustHaveBow>{0} 装备着 {1}, {0} 必须装备弓来使用此技能.</MustHaveBow>
+  <TM_BondedAnimalRelease>在 {0} 与 {1} 之间的契约已到期, {0} 消失在荒野中.</TM_BondedAnimalRelease>
+  <TM_AnimalIncapableOfBond>{0} 没有足够的智力等级与 {1} 签订契约.</TM_AnimalIncapableOfBond>
+  <TM_FailedRangerBond>{1} 与 {0} 契约失败 - {2}% 成功率</TM_FailedRangerBond>
+  <TM_RangerNotExperienced>以当前的共鸣等级 {1} 不会与 {0} 建立契约.</TM_RangerNotExperienced>
+  <TM_TooManyTraps>{0} 受限于 {1} 的陷阱, 最旧的陷阱被移除.</TM_TooManyTraps>
+  <TM_SummonedCreatureLimitExceeded>{0} 超出了召唤生物的数量上限, 最早召唤的生物将被解散.</TM_SummonedCreatureLimitExceeded>
+  <TM_NoMinionToDismiss>{0} 没有召唤仆从.</TM_NoMinionToDismiss>
+  <TM_NoValidUndeadToDismiss>此目标并非是可以被解散的不死者.</TM_NoValidUndeadToDismiss>
+  <TM_CannotUseGemOfInsight>{0} 已拥有一个魔法或战斗特性，所以无法使用此宝石.</TM_CannotUseGemOfInsight>
+  <TM_ItemUseFailed>使用物品失败, 由于: {0}</TM_ItemUseFailed>
+  <TM_SunlightCollapse>日光衰竭, {0} 已无法继续维持它.</TM_SunlightCollapse>
+  <TM_DamageAbsorbedAll>吸收</TM_DamageAbsorbedAll>
+  <TM_DamageAbsorbed>已吸收 ({0} - {1})</TM_DamageAbsorbed>
+  <TM_NotSocialCapable>{0} 无法进行社交活动因此无法成为一名吟游诗人.</TM_NotSocialCapable>
+  <TM_CleaveChance>顺劈斩概率 {0}%</TM_CleaveChance>
+  <TM_WhirlwindDamage>旋风斩每秒伤害: {0}</TM_WhirlwindDamage>
+  <TM_WeaponDamage>{0} 伤害: {1}</TM_WeaponDamage>
+  <TM_AntiArmorDamage>{0} 伤害: {1}; 对机械族额外伤害: {2}</TM_AntiArmorDamage>
+  <TM_ArrowStormDamage>{0} 伤害: {1}; 射击精度: {2}%</TM_ArrowStormDamage>
+  <riftChallenge>元素裂隙难度:</riftChallenge>
+
+  <!-- Surgery Failed letters -->
+  <LetterLabelRegrowthSurgeryFail>手术失败</LetterLabelRegrowthSurgeryFail>
+  <LetterRegrowthSurgeryFail>{0} 刚刚 {1} 尝试对 {2} 做的手术失败了， 因为 {4} {3}.\n\n为了成功进行手术, 请注意以下条件:\n\n1. 医生必须是一名受训的德鲁伊\n2. 德鲁伊必须掌握再生肢体的能力.\n3. 进行成功地手术需要一枚生命之种.\n4. 德鲁伊必须拥有至少90%的法力值.\n5. 这些条件都满足后，手术成功与否与德鲁伊的医疗技能也有关联.\n\n祝你好运, 达瓦里希!</LetterRegrowthSurgeryFail>
+  <TM_NotMagicUser>不是魔法师</TM_NotMagicUser>
+  <TM_NoRegrowthSpell>还未学习再生肢体的技能</TM_NoRegrowthSpell>
+  <TM_InsufficientManaForSurgery>没有足够的法力值完成手术 - 需要至少90%的法力值</TM_InsufficientManaForSurgery>
+
+  <!-- Caravan Request letters -->
+  <LetterLabelArcaneScriptCaravan>旅行队请求</LetterLabelArcaneScriptCaravan>
+  <LetterArcaneScriptCaravan>附近的一个基地, {0}, 联系你并提出一项特殊的交易请求. 他们想要购买:\n\n  {1}\n\n作为回报, 他们提供:\n\n  {2}\n\n这个请求过期于: {3}\n\n可以通过向他们派出一支商队来完成此项交易. 你可以通过在世界地图点击 {0} 重复查看交易请求.</LetterArcaneScriptCaravan>
+
+  <!-- Mod Settings -->
+  <XPMultiplier>魔法师经验获取倍率</XPMultiplier>
+  <NeedMultiplier>法力获取倍率</NeedMultiplier>
+  <AICanCast>AI使用技能</AICanCast>
+  <AIHardMode>AI增强模式</AIHardMode>
+  <DeathRadius>AI 魔法师自爆半径</DeathRadius>
+  <AIMarking>AI 显示魔法师标记</AIMarking>
+  <baseMageChance>魔法师先驱者共性: </baseMageChance>
+  <baseFighterChance>战士先驱者共性: </baseFighterChance>
+  <advMageChance>魔法师共性: </advMageChance>
+  <advFighterChance>战士共性: </advFighterChance>
+  <DeathExplosionMin>最低伤害</DeathExplosionMin>
+  <DeathExplosionMax>最高伤害</DeathExplosionMax>
+  <MagicyteChance>魔法原石掉率</MagicyteChance>
+  <showAbilitiesOnMultiSelect>选中多个单位时显示技能菜单</showAbilitiesOnMultiSelect>
+
+  <!-- Magic Ability Point Descriptions -->
+  <TM_global_regen_pwr>头脑清晰</TM_global_regen_pwr>
+  <TM_global_regen_pwr_desc>每级提升法力回复速度5%.</TM_global_regen_pwr_desc>
+  <TM_global_eff_pwr>专注</TM_global_eff_pwr>
+  <TM_global_eff_pwr_desc>每级额外降低施法蓝耗3%.</TM_global_eff_pwr_desc>
+  <TM_global_spirit_pwr>鼓舞</TM_global_spirit_pwr>
+  <TM_global_spirit_pwr_desc>每技能等级提高最大法力值2%.</TM_global_spirit_pwr_desc>
+
+  <TM_global_refresh_pwr>强身健体</TM_global_refresh_pwr>
+  <TM_global_refresh_pwr_desc>每级提升体力回复速度5%.</TM_global_refresh_pwr_desc>
+  <TM_global_seff_pwr>身体协调</TM_global_seff_pwr>
+  <TM_global_seff_pwr_desc>每级额外降低体力消耗5%.</TM_global_seff_pwr_desc>
+  <TM_global_strength_pwr>力量训练</TM_global_strength_pwr>
+  <TM_global_strength_pwr_desc>每级额外提升5%近战伤害.</TM_global_strength_pwr_desc>
+  <TM_global_endurance_pwr>忍耐力</TM_global_endurance_pwr>
+  <TM_global_endurance_pwr_desc>每级提高最大体力值2%.</TM_global_endurance_pwr_desc>
+
+  <TM_RayofHope_eff>希望之光增强</TM_RayofHope_eff>
+  <TM_RayofHope_eff_desc>降低希望之光的法力消耗10%.</TM_RayofHope_eff_desc>
+  <TM_Firebolt_pwr_desc>每级提升火系伤害7点.</TM_Firebolt_pwr_desc>
+  <TM_Firebolt_eff_desc>每级降低火系技能法力消耗10%.</TM_Firebolt_eff_desc>
+  <TM_Fireclaw_pwr_desc>提升焰爪的伤害.
+一级: 5
+二级: 14
+三级: 24</TM_Fireclaw_pwr_desc>
+  <TM_Fireclaw_eff_desc>每级降低法力消耗12%.</TM_Fireclaw_eff_desc>
+  <TM_Fireclaw_ver_desc>在1级和2级时增加额外的焰爪, 3级时提升焰爪攻击半径.</TM_Fireclaw_ver_desc>
+  <TM_Fireball_pwr_desc>每级增加两次二次爆炸的次数.</TM_Fireball_pwr_desc>
+  <TM_Fireball_eff_desc>每级降低法力消耗10%.</TM_Fireball_eff_desc>
+  <TM_Fireball_ver_desc>火球术可以造成恐惧效果，并在3级时提升该能力的效果.</TM_Fireball_ver_desc>
+  <TM_Firestorm_pwr_desc>每技能等级提升释放出天火流星的概率100%.
+每技能等级增加火焰风暴半径0.25.
+每技能等级提升释放出小流星的概率10%.</TM_Firestorm_pwr_desc>
+  <TM_Firestorm_eff_desc>每级降低法力消耗10%.</TM_Firestorm_eff_desc>
+  <TM_Firestorm_ver_desc>每技能等级提升火焰风暴持续时间20%.
+每技能等级增加火焰风暴半径0.25.
+增加流星撞击时产生的碎片数量.</TM_Firestorm_ver_desc>
+
+  <TM_Firebolt_pwr>火弹术改良</TM_Firebolt_pwr>
+  <TM_Firebolt_eff>火弹术增强</TM_Firebolt_eff>
+  <TM_Fireclaw_pwr>焰爪改良</TM_Fireclaw_pwr>
+  <TM_Fireclaw_eff>焰爪增强</TM_Fireclaw_eff>
+  <TM_Fireclaw_ver>焰爪功能性增强</TM_Fireclaw_ver>
+  <TM_Fireball_pwr>火球术改良</TM_Fireball_pwr>
+  <TM_Fireball_eff>火球术增强</TM_Fireball_eff>
+  <TM_Fireball_ver>火球术功能性增强</TM_Fireball_ver>
+  <TM_Firestorm_pwr>火焰风暴改良</TM_Firestorm_pwr>
+  <TM_Firestorm_eff>火焰风暴增强</TM_Firestorm_eff>
+  <TM_Firestorm_ver>火焰风暴功能性增强</TM_Firestorm_ver>
+
+  <TM_Soothe_eff_desc>每级降低平静术基础法力消耗10%.</TM_Soothe_eff_desc>
+  <TM_Rainmaker_eff_desc>&gt;每级降低唤雨者基础法力消耗15%.</TM_Rainmaker_eff_desc>
+  <TM_Icebolt_pwr_desc>增强冰箭术的不稳定能量, 提升其所有碎片的速度和杀伤力，每级提升18点.</TM_Icebolt_pwr_desc>
+  <TM_Icebolt_eff_desc>每级降低冰箭术基础法力消耗10%.</TM_Icebolt_eff_desc>
+  <TM_Icebolt_ver_desc>使冰箭更为凝聚和巨大, 随着等级(1-6)的提升会产生更多的碎片攻击.</TM_Icebolt_ver_desc>
+  <TM_FrostRay_eff_desc>每级降低霜冻之寒基础法力消耗 Frost Ray by 10% .</TM_FrostRay_eff_desc>
+  <TM_Snowball_pwr_desc>增加冰雪术的范围, 每级增加影响范围0.4和最高4点伤害.</TM_Snowball_pwr_desc>
+  <TM_Snowball_eff_desc>每级降低冰雪术基础法力消耗8%.</TM_Snowball_eff_desc>
+  <TM_Snowball_ver_desc>使冰雪术的力量更为凝聚, 增加二次冰雪陷阱的范围和影响.</TM_Snowball_ver_desc>
+  <TM_Blizzard_pwr_desc>每技能等级提高冰晶碎片和冰雪术的释放频率20%.
+每技能等级增加暴风雪半径0.5.</TM_Blizzard_pwr_desc>
+  <TM_Blizzard_eff_desc>每级降低暴风雪基础法力消耗10%.</TM_Blizzard_eff_desc>
+  <TM_Blizzard_ver_desc>每级增加暴风雪的持续时间20%.
+每技能等级增加暴风雪半径0.5.</TM_Blizzard_ver_desc>
+
+  <TM_Soothe_eff>平静术增强</TM_Soothe_eff>
+  <TM_Rainmaker_eff>唤雨者增强</TM_Rainmaker_eff>
+  <TM_Icebolt_eff>冰箭术增强</TM_Icebolt_eff>
+  <TM_Icebolt_pwr>冰箭术改良</TM_Icebolt_pwr>
+  <TM_Icebolt_ver>冰箭术功能性增强</TM_Icebolt_ver>
+  <TM_FrostRay_eff>霜冻之寒 增强</TM_FrostRay_eff>
+  <TM_Snowball_eff>冰雪术增强</TM_Snowball_eff>
+  <TM_Snowball_pwr>冰雪术改良</TM_Snowball_pwr>
+  <TM_Snowball_ver>冰雪术功能性增强</TM_Snowball_ver>
+  <TM_Blizzard_eff>暴风雪增强</TM_Blizzard_eff>
+  <TM_Blizzard_pwr>暴风雪改良</TM_Blizzard_pwr>
+  <TM_Blizzard_ver>暴风雪功能性增强</TM_Blizzard_ver>
+
+  <TM_AMP_eff_desc>每级降低AWP基础法力消耗10%.</TM_AMP_eff_desc>
+  <TM_LightningBolt_pwr_desc>每级提升电闪雷鸣的基础伤害9点.</TM_LightningBolt_pwr_desc>
+  <TM_LightningBolt_eff_desc>每级降低电闪雷鸣基础法力消耗8%.</TM_LightningBolt_eff_desc>
+  <TM_LightningBolt_ver_desc>随着等级提升(1-4)二次闪电攻击的概率.</TM_LightningBolt_ver_desc>
+  <TM_LightningCloud_eff_desc>每级降低天丛云雷基础法力消耗8%.</TM_LightningCloud_eff_desc>
+  <TM_LightningCloud_pwr_desc>每级提升天丛云雷的电击伤害1点.</TM_LightningCloud_pwr_desc>
+  <TM_LightningCloud_ver_desc>每级提升天丛云雷的持续时间6秒.</TM_LightningCloud_ver_desc>
+  <TM_LightningStorm_eff_desc>每级降低闪电风暴基础法力消耗5%.</TM_LightningStorm_eff_desc>
+  <TM_LightningStorm_pwr_desc>每级提升闪电攻击的频率20%, 并且显著增强每次攻击的伤害.</TM_LightningStorm_pwr_desc>
+  <TM_LightningStorm_ver_desc>每级提升闪电风暴的持续时间3.3秒， 并增大影响范围和增强效果.</TM_LightningStorm_ver_desc>
+  <TM_EyeOfTheStorm_eff_desc>聚集空气中的能量化作创造风暴的燃料.  每技能等级降低法力消耗5%.</TM_EyeOfTheStorm_eff_desc>
+  <TM_EyeOfTheStorm_pwr_desc>每级提升风暴之眼的闪电攻击频率20%, 并且提升每一击的伤害25%.</TM_EyeOfTheStorm_pwr_desc>
+  <TM_EyeOfTheStorm_ver_desc>每技能等级增大攻击半径1. 基础半径为5.</TM_EyeOfTheStorm_ver_desc>
+
+
+  <TM_AMP_eff>AMP增强</TM_AMP_eff>
+  <TM_LightningBolt_eff>电闪雷鸣增强</TM_LightningBolt_eff>
+  <TM_LightningBolt_pwr>电闪雷鸣改良</TM_LightningBolt_pwr>
+  <TM_LightningBolt_ver>电闪雷鸣功能性增强</TM_LightningBolt_ver>
+  <TM_LightningCloud_eff>天丛云雷增强</TM_LightningCloud_eff>
+  <TM_LightningCloud_pwr>天丛云雷改良</TM_LightningCloud_pwr>
+  <TM_LightningCloud_ver>天丛云雷功能性增强</TM_LightningCloud_ver>
+  <TM_LightningStorm_eff>闪电风暴增强</TM_LightningStorm_eff>
+  <TM_LightningStorm_pwr>闪电风暴改良</TM_LightningStorm_pwr>
+  <TM_LightningStorm_ver>闪电风暴功能性增强</TM_LightningStorm_ver>
+  <TM_EyeOfTheStorm_eff>大气改良耗尽</TM_EyeOfTheStorm_eff>
+  <TM_EyeOfTheStorm_pwr>撕裂大地</TM_EyeOfTheStorm_pwr>
+  <TM_EyeOfTheStorm_ver>完美风暴</TM_EyeOfTheStorm_ver>
+
+  <TM_Shadow_eff_desc>每级降低暗影随形基础法力消耗10%.</TM_Shadow_eff_desc>
+  <TM_Blink_eff_desc>每级降低闪烁基础法力消耗15%.</TM_Blink_eff_desc>
+  <TM_Summon_eff_desc>每级降低召唤基础法力消耗15%.</TM_Summon_eff_desc>
+  <TM_MagicMissile_eff_desc>每级降低魔法飞弹基础法力消耗.</TM_MagicMissile_eff_desc>
+  <TM_Teleport_eff_desc>每级降低传送基础法力消耗.</TM_Teleport_eff_desc>
+  <TM_Teleport_pwr_desc>给传送点注入更多的能量, 每级提升允许传送距离33%.
+每级允许增加传送门持续时间20秒.</TM_Teleport_pwr_desc>
+  <TM_Teleport_ver_desc>改良传送方法, 每级允许提升运输容量400, 三级时为600.  
+每级允许传送门多存在20秒.</TM_Teleport_ver_desc>
+  <TM_FoldReality_eff_desc>每技能等级降低空间扭曲法力消耗8%.</TM_FoldReality_eff_desc>
+
+  <TM_Shadow_eff>暗影随形增强</TM_Shadow_eff>
+  <TM_MagicMissile_eff>魔法飞弹增强</TM_MagicMissile_eff>
+  <TM_Blink_eff>闪烁增强</TM_Blink_eff>
+  <TM_Summon_eff>召唤增强</TM_Summon_eff>
+  <TM_Teleport_eff>传送增强</TM_Teleport_eff>
+  <TM_Teleport_pwr>传送改良</TM_Teleport_pwr>
+  <TM_Teleport_ver>传送功能性增强</TM_Teleport_ver>
+  <TM_FoldReality_eff>空间扭曲增强</TM_FoldReality_eff>
+
+  <TM_Heal_eff_desc>每级降低圣光术基础法力消耗10%.</TM_Heal_eff_desc>
+  <TM_Heal_pwr_desc>每级提升每个伤口的治疗效果3点.</TM_Heal_pwr_desc>
+  <TM_Heal_ver_desc>每级增加1个最大可治愈伤口数.</TM_Heal_ver_desc>
+  <TM_Shield_eff_desc>每级降低神佑之盾基础法力消耗10%.</TM_Shield_eff_desc>
+  <TM_ValiantCharge_eff_desc>每级降低基础法力消耗神圣附体10%.</TM_ValiantCharge_eff_desc>
+  <TM_ValiantCharge_pwr_desc>随等级提升神圣附体的伤害1-10点.</TM_ValiantCharge_pwr_desc>
+  <TM_ValiantCharge_ver_desc>提高冲击力, 增大攻击翻译和产生更多的碎片.
+二级时可以眩晕敌人.</TM_ValiantCharge_ver_desc>
+  <TM_Overwhelm_eff_desc>每级降低圣光压制基础法力消耗10%.</TM_Overwhelm_eff_desc>
+  <TM_Overwhelm_pwr_desc>提升圣光压制的伤害潜力.</TM_Overwhelm_pwr_desc>
+  <TM_Overwhelm_ver_desc>一级和三级时可召唤更强大的符号.
+二级时圣光压制可以眩晕敌人, 并在三级时提升眩晕效果.</TM_Overwhelm_ver_desc>
+  <TM_HolyWrath_eff_desc>降低圣光压制基础法力消耗5%.</TM_HolyWrath_eff_desc>
+  <TM_HolyWrath_pwr_desc>每技能等级提升需要2点技能点. 技能等级会提高攻击次数. 基础攻击速度为3次.</TM_HolyWrath_pwr_desc>
+  <TM_HolyWrath_ver_desc>每技能等级提升需要2点技能点.
+一级: 在圣光压制范围内的友军会获得暂时的无敌状态
+二级: 友军会获得微量的治疗
+三级: 圣光压制在使用时所有友军都会获得以上效果</TM_HolyWrath_ver_desc>
+
+
+  <TM_Heal_eff>圣光术增强</TM_Heal_eff>
+  <TM_Heal_pwr>圣光术改良</TM_Heal_pwr>
+  <TM_Heal_ver>圣光术功能性增强</TM_Heal_ver>
+  <TM_Shield_eff>神佑之盾增强</TM_Shield_eff>
+  <TM_ValiantCharge_eff>神圣附体增强</TM_ValiantCharge_eff>
+  <TM_ValiantCharge_pwr>神圣附体改良</TM_ValiantCharge_pwr>
+  <TM_ValiantCharge_ver>神圣附体功能性增强</TM_ValiantCharge_ver>
+  <TM_Overwhelm_eff>圣光压制增强</TM_Overwhelm_eff>
+  <TM_Overwhelm_pwr>圣光压制改良</TM_Overwhelm_pwr>
+  <TM_Overwhelm_ver>圣光压制功能性增强</TM_Overwhelm_ver>
+  <TM_HolyWrath_eff>纯净之心</TM_HolyWrath_eff>
+  <TM_HolyWrath_pwr>神圣复仇</TM_HolyWrath_pwr>
+  <TM_HolyWrath_ver>救赎</TM_HolyWrath_ver>
+
+  <TM_SummonMinion_eff_desc>降低召唤仆从的法力消耗10%. 同时降低维护费用10%.</TM_SummonMinion_eff_desc>
+  <TM_SummonMinion_pwr_desc>提升被召唤的仆从的数量或者力量.
+零级: 召唤一名仆从.
+一级: 召唤两名仆从.
+二级: 召唤一名强力仆从.
+三级: 召唤两名强力仆从.</TM_SummonMinion_pwr_desc>
+  <TM_SummonMinion_ver_desc>每技能点增加召唤持续时间10分钟. 基础持续时间为20分钟.</TM_SummonMinion_ver_desc>
+  <TM_SummonPylon_eff_desc>降低召唤防御塔的法力消耗10%.</TM_SummonPylon_eff_desc>
+  <TM_SummonPylon_pwr_desc>提升魔法防御塔的射程和伤害.</TM_SummonPylon_pwr_desc>
+  <TM_SummonPylon_ver_desc>每技能点增加召唤持续时间1分钟. 基础持续时间为2分钟.</TM_SummonPylon_ver_desc>
+  <TM_SummonExplosive_eff_desc>每技能等级降低放置魔法地雷的法力消耗15%.</TM_SummonExplosive_eff_desc>
+  <TM_SummonExplosive_pwr_desc>每技能等级提升地雷的威力25%.
+每技能等级提升爆炸半径25%.</TM_SummonExplosive_pwr_desc>
+  <TM_SummonExplosive_ver_desc>没技能点增加魔法地雷保持稳定的持续时间1分钟. 基础持续时间为2分钟. 如果过期魔法地雷将失去造成伤害的能力.</TM_SummonExplosive_ver_desc>
+  <TM_SummonElemental_eff_desc>每级降低元素召唤的法力消耗8%.</TM_SummonElemental_eff_desc>
+  <TM_SummonElemental_pwr_desc>提升被召唤的元素生物的力量.
+在三级时: 此技能可以额外召唤两个小型元素.</TM_SummonElemental_pwr_desc>
+  <TM_SummonElemental_ver_desc>每技能点增加持续时间15秒. 基础持续时间为30秒.</TM_SummonElemental_ver_desc>
+  <TM_SummonPoppi_eff_desc>每技能点降低召唤波皮的法力消耗5%, 但实际上, 谁能为快乐定价呢?</TM_SummonPoppi_eff_desc>
+  <TM_SummonPoppi_pwr_desc>更多的波皮, 使所有人感到舒适.</TM_SummonPoppi_pwr_desc>
+  <TM_SummonPoppi_ver_desc>在那些波皮周围闲逛会招致多次爆炸冲击.</TM_SummonPoppi_ver_desc>
+
+  <TM_SummonMinion_eff>仆从增强</TM_SummonMinion_eff>
+  <TM_SummonMinion_pwr>仆从改良</TM_SummonMinion_pwr>
+  <TM_SummonMinion_ver>仆从持续时间</TM_SummonMinion_ver>
+  <TM_SummonPylon_eff>魔法防御塔增强</TM_SummonPylon_eff>
+  <TM_SummonPylon_pwr>魔法防御塔改良</TM_SummonPylon_pwr>
+  <TM_SummonPylon_ver>魔法防御塔持续时间</TM_SummonPylon_ver>
+  <TM_SummonExplosive_eff>魔法地雷增强</TM_SummonExplosive_eff>
+  <TM_SummonExplosive_pwr>魔法地雷改良</TM_SummonExplosive_pwr>
+  <TM_SummonExplosive_ver>魔法地雷持续时间</TM_SummonExplosive_ver>
+  <TM_SummonElemental_eff>元素增强</TM_SummonElemental_eff>
+  <TM_SummonElemental_pwr>元素改良</TM_SummonElemental_pwr>
+  <TM_SummonElemental_ver>元素持续时间</TM_SummonElemental_ver>
+  <TM_SummonPoppi_eff>波皮狂热者</TM_SummonPoppi_eff>
+  <TM_SummonPoppi_pwr>全部抓住</TM_SummonPoppi_pwr>
+  <TM_SummonPoppi_ver>舒适催化</TM_SummonPoppi_ver>
+
+  <TM_Poison_eff_desc>每技能等级降低施毒术法力消耗10%.</TM_Poison_eff_desc>
+  <TM_Poison_pwr_desc>每技能等级提升噬施毒术致死性25%.</TM_Poison_pwr_desc>
+  <TM_Poison_ver_desc>提升施毒术严重级别的最小值和最大值.  严重等级可以影响生物的战斗和移动能力. 每级也会提升施毒术持续时间10%.
+零级: (10%-40%), 持续时间 45秒
+一级: (20%-60%), 持续时间 49.5秒
+二级: (30%-80%), 持续时间 54秒
+三级: (40%-80%), 持续时间 58.5秒</TM_Poison_ver_desc>
+  <TM_SootheAnimal_eff_desc>每技能等级降低诱骗动物的法力消耗10%.</TM_SootheAnimal_eff_desc>
+  <TM_SootheAnimal_pwr_desc>动物在被激动时获得奥术增强效果, 被抚慰时获得奥术减益效果.  技能等级会影响这些效果的强度, 技能为零级时没有影响.</TM_SootheAnimal_pwr_desc>
+  <TM_Regenerate_eff_desc>每技能等级降低再生术的法力消耗10%.</TM_Regenerate_eff_desc>
+  <TM_Regenerate_pwr_desc>每级提升再生术的治疗效果1.5点.  基础再生值为2点.</TM_Regenerate_pwr_desc>
+  <TM_Regenerate_ver_desc>每技能等级增加再生术的持续时间, 持续时间在一定范围内是随机的:
+零级: 16s - 50s
+一级: 33s - 100s
+二级: 50s - 150s
+三级: 67s - 200s</TM_Regenerate_ver_desc>
+  <TM_CureDisease_eff_desc>每技能等级降低治愈疾病的法力消耗12%.</TM_CureDisease_eff_desc>
+  <TM_CureDisease_pwr_desc>提升治愈疾病的技能效果. 在较高的技能等级时, 此技能更会像其描述的那样是治愈而不是缓解疾病.
+零级: 50%概率失败; 如果成功将降低疾病的严重级别1.
+一级: 总是会成功; 20%概率降低严重级别2.
+二级: 75%概率降低严重级别2.
+三级: 66%概率降低严重级别2, 33%概率降低严重级别3. </TM_CureDisease_pwr_desc>
+  <TM_CureDisease_ver_desc>研究疾病可以使德鲁伊有能力治愈更多的疑难杂症.
+零级: 流感以及伤口感染
+一级: 肠道蠕虫和疟疾
+二级: 嗜睡症和肌肉寄生虫
+三级: 瘟疫</TM_CureDisease_ver_desc>
+  <TM_RegrowLimb_eff_desc>每技能等级降低再生肢体（手术）的法力需求8%.  再生不会受到全局法力消耗降低效果的影响.</TM_RegrowLimb_eff_desc>
+
+  <TM_Poison_eff>施毒术增强</TM_Poison_eff>
+  <TM_Poison_pwr>施毒术强度</TM_Poison_pwr>
+  <TM_Poison_ver>施毒术减益</TM_Poison_ver>
+  <TM_SootheAnimal_eff>诱惑增强</TM_SootheAnimal_eff>
+  <TM_SootheAnimal_pwr>加强控制</TM_SootheAnimal_pwr>
+  <TM_Regenerate_eff>再生术增强</TM_Regenerate_eff>
+  <TM_Regenerate_pwr>强力再生术</TM_Regenerate_pwr>
+  <TM_Regenerate_ver>持久再生</TM_Regenerate_ver>
+  <TM_CureDisease_eff>治愈疾病增强</TM_CureDisease_eff>
+  <TM_CureDisease_pwr>治愈疾病改良</TM_CureDisease_pwr>
+  <TM_CureDisease_ver>病理知识</TM_CureDisease_ver>
+  <TM_RegrowLimb_eff>精通再生</TM_RegrowLimb_eff>
+
+  <TM_RaiseUndead_eff_desc>每技能等级降低死者苏生的法力消耗5%. 每技能等级降低不死者维护费用10%.</TM_RaiseUndead_eff_desc>
+  <TM_RaiseUndead_pwr_desc>每技能等级可以创造的不死者的数量增加1.
+零级: 2
+一级: 3
+二级: 4
+三级: 5</TM_RaiseUndead_pwr_desc>
+  <TM_RaiseUndead_ver_desc>每技能等级增加不死者移动和行动速度5%.</TM_RaiseUndead_ver_desc>
+  <TM_DeathMark_ver_desc>每级降低印记被激活的等待时间2秒.
+零级: 15秒
+一级: 13秒
+二级: 11秒
+三级: 9秒</TM_DeathMark_ver_desc>
+  <TM_DeathMark_eff_desc>每技能等级降低死亡印记的法力消耗8%.</TM_DeathMark_eff_desc>
+  <TM_DeathMark_pwr_desc>每技能等级提高死亡印记产生效果的概率10%.
+零级: 20%
+一级: 30%
+二级: 40%
+三级: 50%</TM_DeathMark_pwr_desc>
+  <TM_FogOfTorment_eff_desc>每技能等级降低窒息之雾的法力消耗10%.</TM_FogOfTorment_eff_desc>
+  <TM_FogOfTorment_pwr_desc>每技能等级提升窒息之雾的伤害和减益效果.  同时每技能等级会提升不死者受治疗量50%.</TM_FogOfTorment_pwr_desc>
+  <TM_FogOfTorment_ver_desc>增加持续时间, 降低窒息之雾产生效果和增大影响范围的时间.
+零级: 半径 6, 产生影响/3s, 持续时间 30秒
+一级: 半径 7, 产生影响/2.7s, 持续时间 36秒
+二级: 半径 8, 产生影响/2.4s, 持续时间 42秒
+三级: 半径 9, 产生影响/2.1s, 持续时间 48秒</TM_FogOfTorment_ver_desc>
+  <TM_ConsumeCorpse_eff_desc>每技能等级提升攥取死亡的法力恢复值10%.</TM_ConsumeCorpse_eff_desc>
+  <TM_ConsumeCorpse_ver_desc>攥取死亡同时会治愈施法者身体上的创伤.  
+治疗量的多少会受到尸体类型 (人类或动物) 和被攥取的尸体或不死者的新鲜度的影响.</TM_ConsumeCorpse_ver_desc>
+  <TM_CorpseExplosion_pwr_desc>每技能等级提升尸爆术伤害5点. 同时增大爆炸半径10%.
+零级: 18-30
+一级: 23-35
+二级: 28-40
+三级: 32-45</TM_CorpseExplosion_pwr_desc>
+  <TM_CorpseExplosion_eff_desc>每技能等级降低尸爆术法力消耗8%.</TM_CorpseExplosion_eff_desc>
+  <TM_CorpseExplosion_ver_desc>每技能点降低爆炸延迟1秒. 同时增大爆炸半径10%.</TM_CorpseExplosion_ver_desc>
+  <TM_DeathBolt_pwr_desc>提升死亡螺旋的伤害每级需要5点技能点并且每三级会扩大黑暗的扩散范围.
+零级: 18-35; 黑暗扩散: 12-24
+一级: 23-40; 黑暗扩散: 15-27
+二级: 28-45; 黑暗扩散: 18-30
+三级: 33-50; 黑暗扩散: 21-33</TM_DeathBolt_pwr_desc>
+  <TM_DeathBolt_eff_desc>每技能等级降低死亡螺旋法力消耗6%.</TM_DeathBolt_eff_desc>
+  <TM_DeathBolt_ver_desc>黑暗会从源点进一步扩散.</TM_DeathBolt_ver_desc>
+
+  <TM_RaiseUndead_eff>逃避死亡</TM_RaiseUndead_eff>
+  <TM_RaiseUndead_pwr>强力创造</TM_RaiseUndead_pwr>
+  <TM_RaiseUndead_ver>激励不死者</TM_RaiseUndead_ver>
+  <TM_DeathMark_ver>燃烧印记</TM_DeathMark_ver>
+  <TM_DeathMark_eff>强效印记</TM_DeathMark_eff>
+  <TM_DeathMark_pwr>穿透印记</TM_DeathMark_pwr>
+  <TM_FogOfTorment_eff>恶意之风</TM_FogOfTorment_eff>
+  <TM_FogOfTorment_pwr>死亡折磨</TM_FogOfTorment_pwr>
+  <TM_FogOfTorment_ver>雾之梦魇</TM_FogOfTorment_ver>
+  <TM_ConsumeCorpse_eff>贪婪攥取</TM_ConsumeCorpse_eff>
+  <TM_ConsumeCorpse_ver>剥夺生命</TM_ConsumeCorpse_ver>
+  <TM_CorpseExplosion_pwr>猛烈爆炸</TM_CorpseExplosion_pwr>
+  <TM_CorpseExplosion_eff>死灵精通</TM_CorpseExplosion_eff>
+  <TM_CorpseExplosion_ver>毒素精通</TM_CorpseExplosion_ver>
+  <TM_DeathBolt_pwr>亵渎之力</TM_DeathBolt_pwr>
+  <TM_DeathBolt_eff>永恒之识</TM_DeathBolt_eff>
+  <TM_DeathBolt_ver>黑暗扩散</TM_DeathBolt_ver>
+
+  <TM_AdvancedHeal_eff_desc>每级降低强效治疗的法力消耗12%.</TM_AdvancedHeal_eff_desc>
+  <TM_AdvancedHeal_ver_desc>每级增加最大可治愈伤口数1.</TM_AdvancedHeal_ver_desc>
+  <TM_AdvancedHeal_pwr_desc>每级提升受治愈伤口的治疗效果5点.</TM_AdvancedHeal_pwr_desc>
+  <TM_Purify_eff_desc>每级降低净化术的法力消8%.</TM_Purify_eff_desc>
+  <TM_Purify_ver_desc>增加每次使用技能可治愈的小疾病的数量. 技能升级可以允许更多种类的疾病被净化:
+零级: 
+身体 - 白内障, 听力受损, 毒素积累
+成瘾品 - 大烟, 酒精
+一级:
+身体 - 失明, 哮喘, 肝硬化, 中度化学损伤
+成瘾品 - 活力水, 清醒丸
+二级:
+身体 - 虚弱, 背痛, 癌症, 重度化学损伤
+成瘾品 - 精神药物
+三级:
+身体 - 大脑和心脏状况
+成瘾品 - 所有药品的成瘾症状包括路西法</TM_Purify_ver_desc>
+  <TM_Purify_pwr_desc>提高净化术的效果.
+治愈疤痕的治疗效果为2x技能等级+2; 治愈大脑损伤需要技能等级在1或1级以上, 并且每技能等级可以增加一点治疗效果.\n\n
+身体状态例如失明和癌症可以被治愈或缓解, 治疗效果取决于技能等级. 如果净化之力不足以完全治愈这些状态, 多次使用可以缓解, 随后治愈这些状态.\n\n
+每技能点提升治疗药物上瘾的治疗效果; 完全地治愈上瘾症状可能需要多次使用此技能.</TM_Purify_pwr_desc>
+  <TM_HealingCircle_eff_desc>每技能点降低治愈之环的法力消耗8%.</TM_HealingCircle_eff_desc>
+  <TM_HealingCircle_ver_desc>增加每阵波动可以治愈的伤口数. 同时每技能点增加治愈之环持续时间.
+零级: 1处伤口
+一级: 2处伤口
+二级: 3处伤口
+三级: 4处伤口</TM_HealingCircle_ver_desc>
+  <TM_HealingCircle_pwr_desc>增加每个愈合伤口的治疗效果. 同时每技能点增加治愈之环持续时间3秒.
+零级: 4点生命
+一级: 6点生命
+二级: 8点生命
+三级: 10点生命</TM_HealingCircle_pwr_desc>
+  <TM_BestowMight_eff_desc>每技能点降低授予力量的法力消耗8%.</TM_BestowMight_eff_desc>
+  <TM_Resurrection_eff_desc>每技能等级降低英雄不朽的法力消耗5%.</TM_Resurrection_eff_desc>
+  <TM_Resurrection_ver_desc>每级提升消除复活副作用的效果例如致盲和精神错乱的概率33%.  基础概率为0%.</TM_Resurrection_ver_desc>
+
+  <TM_AdvancedHeal_eff>治愈精通</TM_AdvancedHeal_eff>
+  <TM_AdvancedHeal_ver>深度治愈</TM_AdvancedHeal_ver>
+  <TM_AdvancedHeal_pwr>治愈改良</TM_AdvancedHeal_pwr>
+  <TM_Purify_eff>神圣净化</TM_Purify_eff>
+  <TM_Purify_ver>全面净化</TM_Purify_ver>
+  <TM_Purify_pwr>火焰净化</TM_Purify_pwr>
+  <TM_HealingCircle_eff>强效治愈</TM_HealingCircle_eff>
+  <TM_HealingCircle_ver>涨潮</TM_HealingCircle_ver>
+  <TM_HealingCircle_pwr>抚慰之波</TM_HealingCircle_pwr>
+  <TM_BestowMight_eff>熟练祝福</TM_BestowMight_eff>
+  <TM_Resurrection_ver>柔和复苏</TM_Resurrection_ver>
+  <TM_Resurrection_eff>指引之光</TM_Resurrection_eff>
+
+
+  <TM_BardTraining_pwr_desc>将吟游诗人的特性提升到下一个等级. 杂耍者 -> 表演者 -> 艺人 -> 吟游诗人. 需要2点技能点训练.</TM_BardTraining_pwr_desc>
+  <TM_Entertain_ver_desc>提升与其他殖民者进行畅快交谈的概率.</TM_Entertain_ver_desc>
+  <TM_Entertain_pwr_desc>提搞吟游诗人希望进行社交活动的频率.</TM_Entertain_pwr_desc>
+  <TM_Inspire_ver_desc>吟游诗人学会了激励和鼓舞殖民者们的方法.
+零级: 可激发出一般的灵感
+一级: 可激发出资源获取灵感
+二级: 可激发出学习和社交类的灵感
+三级: 可激发出魔法或战技类的灵感.</TM_Inspire_ver_desc>
+  <TM_Inspire_pwr_desc>提高吟游诗人试图去激励其他殖民者的可能性（译者注：可能与社交关系高低有关）.</TM_Inspire_pwr_desc>
+  <TM_Lullaby_eff_desc>每技能点降低催眠曲的法力消耗8%.</TM_Lullaby_eff_desc>
+  <TM_Lullaby_pwr_desc>每技能点提升催眠曲成功概率10%.
+零级: 40%
+一级: 50%
+二级: 60%
+三级: 70%</TM_Lullaby_pwr_desc>
+  <TM_Lullaby_ver_desc>催眠曲会降低受影响者的意识 - 即使催眠曲被抵抗依然有效.
+零级: 无
+一级: -10% 意识
+二级: -15% 意识
+三级: -20% 意识</TM_Lullaby_ver_desc>
+  <TM_BattleHymn_eff_desc>每技能等级降低使用和维持战斗圣歌的法力消耗6%.</TM_BattleHymn_eff_desc>
+  <TM_BattleHymn_ver_desc>每技能点提升战斗圣歌影响范围2米 (基础值为11米). 同时提升战斗圣歌持续时间0.5秒 (基础值为5秒).</TM_BattleHymn_ver_desc>
+  <TM_BattleHymn_pwr_desc>每技能点提升每一篇战斗圣歌的效果12%, 当该技能保持激活状态时会循环触发.</TM_BattleHymn_pwr_desc>
+
+  <TM_BardTraining_pwr>吟游诗人训练</TM_BardTraining_pwr>
+  <TM_Entertain_ver>开怀大笑</TM_Entertain_ver>
+  <TM_Entertain_pwr>即兴演奏</TM_Entertain_pwr>
+  <TM_Inspire_ver>剧作家</TM_Inspire_ver>
+  <TM_Inspire_pwr>魅力非凡</TM_Inspire_pwr>
+  <TM_Lullaby_eff>灵巧之手</TM_Lullaby_eff>
+  <TM_Lullaby_pwr>催眠之虫</TM_Lullaby_pwr>
+  <TM_Lullaby_ver>共鸣之音</TM_Lullaby_ver>
+  <TM_BattleHymn_ver>靡靡之音</TM_BattleHymn_ver>
+  <TM_BattleHymn_eff>声乐家</TM_BattleHymn_eff>
+  <TM_BattleHymn_pwr>英勇合唱</TM_BattleHymn_pwr>
+
+  <!-- Might Ability Point Descriptions -->
+
+  <TM_Sprint_eff_desc>降低冲刺的基础体力消耗20%.</TM_Sprint_eff_desc>
+  <TM_Sprint_pwr_desc>提升冲刺速度的同时会更容易感到疲倦.
+零级: 速度 +30%, 疲劳 +40%
+一级: 速度 +40%, 疲劳 +45%
+二级: 速度 +50%, 疲劳 +50%
+三级: 速度 +60%, 疲劳 +55%</TM_Sprint_pwr_desc>
+  <TM_Fortitude_pwr_desc>每技能等级提高2点减免伤害.</TM_Fortitude_pwr_desc>
+  <TM_Fortitude_ver_desc>每级可提升0.2%的转换率, 以体力消耗抵消受到的伤害.
+体力抵消伤害会优先于减伤(刚毅)触发.
+基础转换率为0.5%体力值抵消1点伤害.</TM_Fortitude_ver_desc>
+  <TM_Grapple_eff_desc>每级降低抓钩的基础体力消耗20%.</TM_Grapple_eff_desc>
+  <TM_Cleave_eff_desc>降低顺劈斩的基础体力消耗15%.</TM_Cleave_eff_desc>
+  <TM_Cleave_pwr_desc>每技能等级提高顺劈斩伤害10%.</TM_Cleave_pwr_desc>
+  <TM_Cleave_ver_desc>每级提升顺劈斩双重攻击的概率15%.
+基础概率为0%.</TM_Cleave_ver_desc>
+  <TM_Whirlwind_pwr_desc>根据武器的品质提高旋风斩的伤害.</TM_Whirlwind_pwr_desc>
+  <TM_Whirlwind_eff_desc>每技能等级降低旋风斩基础法力消耗15%.</TM_Whirlwind_eff_desc>
+  <TM_Whirlwind_ver_desc>每技能等级增加5%的概率可以在攻击时击倒敌人.
+基础概率为0%.</TM_Whirlwind_ver_desc>
+
+  <TM_Sprint_eff>冲刺增强</TM_Sprint_eff>
+  <TM_Sprint_pwr>冲刺改良</TM_Sprint_pwr>
+  <TM_Fortitude_pwr>刚毅改良</TM_Fortitude_pwr>
+  <TM_Fortitude_ver>刚毅功能性增强</TM_Fortitude_ver>
+  <TM_Grapple_eff>抓钩增强</TM_Grapple_eff>
+  <TM_Cleave_pwr>顺劈斩改良</TM_Cleave_pwr>
+  <TM_Cleave_eff>顺劈斩增强</TM_Cleave_eff>
+  <TM_Cleave_ver>顺劈斩功能性增强</TM_Cleave_ver>
+  <TM_Whirlwind_pwr>旋风斩改良</TM_Whirlwind_pwr>
+  <TM_Whirlwind_eff>旋风斩增强</TM_Whirlwind_eff>
+  <TM_Whirlwind_ver>旋风斩功能性增强</TM_Whirlwind_ver>
+
+  <TM_SniperFocus_pwr_desc>作为狙击手的高强度训练. 每级需要2个技能点训练.
+零级: Accuracy +3, 瞄准延迟 -10%, 移动速度 +10%
+一级: Accuracy +7, 瞄准延迟 -15%, 移动速度 +15%
+二级: Accuracy +11, 瞄准延迟 -22%, 移动速度 +20%
+三级: Accuracy +15, 瞄准延迟 -30%, 移动速度 +25%</TM_SniperFocus_pwr_desc>
+  <TM_DisablingShot_eff_desc>D每技能等级降低残废射击的体力消耗12%.</TM_DisablingShot_eff_desc>
+  <TM_DisablingShot_ver_desc>残废之箭现在有双倍的麻痹效果, 目标身中残废之箭后毒素会迅速发挥作用使其移动速度会明显降低.  经过大量的训练和研究后, 狙击手将学会如何提升麻痹毒素的威力.
+零级: 没有效果
+一级: 10-15s (轻效)
+二级: 20-25s (中效)
+三级: 30-45s (强效)</TM_DisablingShot_ver_desc>
+  <TM_Headshot_pwr_desc>提高子弹的转速, 导致会有更高的概率对要害器官造成破坏.  每技能点可以增加爆头一击的伤害10%.</TM_Headshot_pwr_desc>
+  <TM_Headshot_eff_desc>每技能等级降低爆头一击的基础体力消耗10%.</TM_Headshot_eff_desc>
+  <TM_Headshot_ver_desc>每当狙击手爆头击杀一名目标时, 肾上腺素会暴涨并恢复一定量的体力.
+零级: 无
+一级: 10% 体力回复
+二级: 20% 体力回复
+三级: 30% 体力回复</TM_Headshot_ver_desc>
+  <TM_AntiArmor_pwr_desc>使用纳米机器人强化爆裂子弹的威力, 提高对护甲的伤害.</TM_AntiArmor_pwr_desc>
+  <TM_AntiArmor_eff_desc>每技能等级降低破甲的基础体力消耗10%.</TM_AntiArmor_eff_desc>
+  <TM_AntiArmor_ver_desc>增加爆裂子弹的数量以及碎片的威力.  如果受击目标没有装备护甲, 子弹将不会发生爆炸.</TM_AntiArmor_ver_desc>
+
+  <TM_SniperFocus_pwr>狙击训练</TM_SniperFocus_pwr>
+  <TM_DisablingShot_eff>体力消耗</TM_DisablingShot_eff>
+  <TM_DisablingShot_ver>镇定痛苦</TM_DisablingShot_ver>
+  <TM_Headshot_pwr>弹药改良</TM_Headshot_pwr>
+  <TM_Headshot_eff>体力消耗</TM_Headshot_eff>
+  <TM_Headshot_ver>肾上腺素</TM_Headshot_ver>
+  <TM_AntiArmor_pwr>纳米机器人</TM_AntiArmor_pwr>
+  <TM_AntiArmor_eff>体力消耗</TM_AntiArmor_eff>
+  <TM_AntiArmor_ver>爆裂子弹</TM_AntiArmor_ver>
+
+  <TM_BladeFocus_pwr_desc>作为刀锋舞者的高强度训练. 每级需要2个技能点训练.
+零级: 近战命中率 +3, 移动速度 +0.15, 精神崩溃阈值 -3%
+一级: 近战命中率 +6, 移动速度 +0.20, 精神崩溃阈值 -5%
+二级: 近战命中率 +10, 移动速度 +0.30, 精神崩溃阈值 -8%, 疼痛承受力 +5%
+三级: 近战命中率 +15, 移动速度 +0.40, 精神崩溃阈值 -10%, 疼痛承受力 +10%</TM_BladeFocus_pwr_desc>
+  <TM_BladeArt_pwr_desc>提高对身体的掌控能力. 每级需要2个技能点训练.
+零级: 移动速度 +10%, 操作能力 +10%
+一级: 移动速度 +15%, 操作能力 +15%
+二级: 移动速度 +20%, 操作能力 +20%, 呼吸能力 +10%
+三级: 移动速度 +25%, 操作能力 +25%, 呼吸能力 +15%, 血液循环 +10%</TM_BladeArt_pwr_desc>
+  <TM_SeismicSlash_pwr_desc>每级提升地裂斩的伤害10%.</TM_SeismicSlash_pwr_desc>
+  <TM_SeismicSlash_eff_desc>每技能点降低地裂斩的体力消耗10%.</TM_SeismicSlash_eff_desc>
+  <TM_SeismicSlash_ver_desc>随着等级增强地裂斩的攻击效果.</TM_SeismicSlash_ver_desc>
+  <TM_BladeSpin_pwr_desc>每技能等级增加攻击次数1.  基础攻击次数为2.
+每级增加剑刃回旋的命中率4%.  基础概率为50%.</TM_BladeSpin_pwr_desc>
+  <TM_BladeSpin_eff_desc>每技能点降低剑刃回旋的体力消耗10%.</TM_BladeSpin_eff_desc>
+  <TM_BladeSpin_ver_desc>每技能等级增加剑刃回旋的半径0.5.  基础半径为2.
+每级提高剑刃回旋命中率4%.  基础概率为50%.</TM_BladeSpin_ver_desc>
+  <TM_PhaseStrike_pwr_desc>每技能等级提升暴击率15%.  基础概率为10%.  暴击将造成3倍伤害.</TM_PhaseStrike_pwr_desc>
+  <TM_PhaseStrike_eff_desc>每技能点降低相位打击的体力消耗8%.</TM_PhaseStrike_eff_desc>
+  <TM_PhaseStrike_ver_desc>每技能等级增加相位打击的半径0.5.</TM_PhaseStrike_ver_desc>
+
+  <TM_BladeFocus_pwr>剑术精通</TM_BladeFocus_pwr>
+  <TM_BladeArt_pwr>强身健体</TM_BladeArt_pwr>
+  <TM_SeismicSlash_pwr>强力波动</TM_SeismicSlash_pwr>
+  <TM_SeismicSlash_eff>遮影步</TM_SeismicSlash_eff>
+  <TM_SeismicSlash_ver>扩大波动</TM_SeismicSlash_ver>
+  <TM_BladeSpin_pwr>锋利剑刃</TM_BladeSpin_pwr>
+  <TM_BladeSpin_eff>灵巧攻击</TM_BladeSpin_eff>
+  <TM_BladeSpin_ver>战技改良</TM_BladeSpin_ver>
+  <TM_PhaseStrike_pwr>相位强击</TM_PhaseStrike_pwr>
+  <TM_PhaseStrike_eff>相位攻击</TM_PhaseStrike_eff>
+  <TM_PhaseStrike_ver>相位剑影</TM_PhaseStrike_ver>
+
+
+  <TM_RangerTraining_pwr_desc>漫游者的高强度训练. 每级需要2个技能点训练.
+零级: 移动速度 +0.2c/s, 免疫力 +20%, 舒适温度 +-10, 瞄准延迟 -15%
+一级: 移动速度 +0.3c/s, 免疫力 +30%, 舒适温度 +-15, 瞄准延迟 -20%
+二级: 移动速度 +0.4c/s, 免疫力 +40%, 舒适温度 +-20, 瞄准延迟 -30%
+三级: 移动速度 +0.5c/s, 免疫力 +50%, 舒适温度 +-25, 瞄准延迟 -40%</TM_RangerTraining_pwr_desc>
+  <TM_BowTraining_pwr_desc>提升使用弓箭的技能, 每级需要2点技能点来训练.
+零级: +20% 装备弓时造成的伤害, +20% 视力, +20% 听力
+一级: +40% 装备弓时造成的伤害, +40% 视力, +40% 听力
+二级: +60% 装备弓时造成的伤害, +60% 视力, +60% 听力, +15% 呼吸能力
+三级: +80% 装备弓时造成的伤害, +80% 视力, +80% 听力, +25% 呼吸能力, +10% 血液过滤</TM_BowTraining_pwr_desc>
+  <TM_PoisonTrap_ver_desc>每级增加漫游者可以保持激活的陷阱数1. 基础最大值为2.</TM_PoisonTrap_ver_desc>
+  <TM_AnimalFriend_pwr_desc>如果漫游者与动物之间的共鸣压制过它们的野性, 漫游者就可以与其契约. 共鸣同样会提高契约的成功率.</TM_AnimalFriend_pwr_desc>
+  <TM_AnimalFriend_eff_desc>每技能点降低动物契约的体力消耗15%.</TM_AnimalFriend_eff_desc>
+  <TM_AnimalFriend_ver_desc>增强漫游者与动物之间契约的效果.
+零级: 移动速度+20%, 操作能力 +20%, 闪避概率 +15%
+一级: 移动速度+30%, 操作能力 +30%, 血液循环 +20%, 闪避概率 +20%
+二级: 移动速度+40%, 操作能力 +40%, 血液循环 +30%, 闪避概率 +27%
+三级: 移动速度+50%, 操作能力 +50%, 血液循环 +40%, 闪避概率 +35%</TM_AnimalFriend_ver_desc>
+  <TM_ArrowStorm_pwr_desc>每技能点提高每箭的伤害10%.</TM_ArrowStorm_pwr_desc>
+  <TM_ArrowStorm_eff_desc>每技能点降低箭雨风暴的体力消耗8%.</TM_ArrowStorm_eff_desc>
+  <TM_ArrowStorm_ver_desc>每技能等级提升箭雨风暴的命中率5%.  这个增强是格外的, 比如命中率是60%, 该技能两级是会提高命中率到70%.  此技能精确度取决于所持弓箭的精确度.</TM_ArrowStorm_ver_desc>
+
+  <TM_RangerTraining_pwr>漫游者训练</TM_RangerTraining_pwr>
+  <TM_BowTraining_pwr>弓箭精通</TM_BowTraining_pwr>
+  <TM_PoisonTrap_ver>更多陷阱</TM_PoisonTrap_ver>
+  <TM_AnimalFriend_pwr>动物共鸣</TM_AnimalFriend_pwr>
+  <TM_AnimalFriend_eff>平静私语</TM_AnimalFriend_eff>
+  <TM_AnimalFriend_ver>契约增强</TM_AnimalFriend_ver>
+  <TM_ArrowStorm_pwr>锯齿刃箭</TM_ArrowStorm_pwr>
+  <TM_ArrowStorm_eff>优雅吸引</TM_ArrowStorm_eff>
+  <TM_ArrowStorm_ver>鉴定不移</TM_ArrowStorm_ver>
+
+  <!-- UI -->
+  <TM_TabMagic>魔法</TM_TabMagic>
+  <TM_TabMight>战技</TM_TabMight>
+  <TM_Header>魔法</TM_Header>
+  <TM_HeaderMight>战技</TM_HeaderMight>
+  <TM_Level>等级</TM_Level>
+  <TM_Spells>魔法技能</TM_Spells>
+  <TM_Skills>战斗技能</TM_Skills>
+  <TM_PointsAvail>可用技能点</TM_PointsAvail>
+  <TM_MagicXPDesc>人物使用魔法时可以获得魔法经验值.  经验获取量与技能的难度相关联.  如果人物的法力值处于最大状态, 他们也会缓慢地获得经验值.</TM_MagicXPDesc>
+  <TM_MightXPDesc>人物使用战技时可以获得战技经验值.  经验获取量与技能的难度相关联.  如果人物处于充分休息状态, 他们也会缓慢地 获得经验值.</TM_MightXPDesc>
+
+  <TM_CheckPointsForMoreInfo>将鼠标悬停在技能属性上可以获得更多关于技能提升的信息.</TM_CheckPointsForMoreInfo>
+  <TM_MagicLevelUp>{0} 对魔法有了更深层次理解并且可以学习一个新的魔法技能了.</TM_MagicLevelUp>
+  <TM_MightLevelUp>{0} 变得更加强大并准备好学习一个新的战技了.</TM_MightLevelUp>
+  <TM_NotEnoughAbilityPoints>需要 {1} 技能点. 此人物只有 {0}.</TM_NotEnoughAbilityPoints>
+
+  <TM_Power>闪电风暴改良</TM_Power>
+  <TM_Efficiency>闪电风暴增益</TM_Efficiency>
+  <TM_Versatility>闪电风暴功能性增强</TM_Versatility>
+
+  <TM_MasterSpellLocked>尚未解锁: 学习 {0} 需要使用一个大师级卷轴</TM_MasterSpellLocked>
+
+  <!-- ========== Button Tooltips ========== -->
+  <Poppi_fuelGrowth>化学提取物</Poppi_fuelGrowth>
+
+  <!-- ========== Button Tooltips ========== -->
+
+  <TM_AbilityDescBaseManaCost>基础法力消耗: {0} </TM_AbilityDescBaseManaCost>
+  <TM_AbilityDescAdjustedManaCost>当前法力消耗: {0} </TM_AbilityDescAdjustedManaCost>
+  <TM_AbilityDescBaseStaminaCost>基础体力消耗: {0} </TM_AbilityDescBaseStaminaCost>
+  <TM_AbilityDescAdjustedStaminaCost>当前体力消耗: {0} </TM_AbilityDescAdjustedStaminaCost>
+  <TM_AbilityDescPortalTime>传送门在 {0}秒 后崩塌.</TM_AbilityDescPortalTime>
+  <TM_AbilityDescSummonDuration>召唤持续时间: {0}秒.</TM_AbilityDescSummonDuration>
+  <TM_AdjustedCooldown>当前冷却时间: {0}秒</TM_AdjustedCooldown>
+
+  <!-- ========== Building Menu's ========== -->
+
+  <TM_SelectPortalDestination>激活传送门</TM_SelectPortalDestination>
+  <TM_UsePortal>使用传送门</TM_UsePortal>
+  <TM_DeactivatePortal>停用传送门</TM_DeactivatePortal>
+  <TM_ChargePortal>为传送门充能: {0}%</TM_ChargePortal>
+  <TM_CommandMakePortalStockpileDesc>为传送门储备能量.  当传送物品时, 传送门会消耗其中的能量并传送所有物品.</TM_CommandMakePortalStockpileDesc>
+  <TM_CommandMakePortalStockpileLabel>传送门储备能量</TM_CommandMakePortalStockpileLabel>
+  <TM_PortalStockpile>传送物品</TM_PortalStockpile>
+  <TM_PortalFailed>{0} 使用传送门失败 - 如果此情况一直存在, 请尝试停用传送门并重新设置目的地.</TM_PortalFailed>
+  <TM_PortalDestinationInvalid>目的地位置不可用, 目的地必须是一个已知的,可见的和玩家控制的地方.</TM_PortalDestinationInvalid>
+  <TM_NoValidPortalDestination>选择的传送门目的地无效, 没有分配任务并正在退出.</TM_NoValidPortalDestination>
+
+  <!-- ============ Enchanting Menu's =============-->
+  <TabEnchantment>施法</TabEnchantment>
+  <TM_DropGem>丢弃 {0}</TM_DropGem>
+  <TM_PickupGem>装备 {0} 用来施法</TM_PickupGem>
+  <TM_CannotReach>无法到达</TM_CannotReach>
+  <TM_EnchantItem>使用魔法 {0}</TM_EnchantItem>
+  <TM_CannotDrop>无法丢弃 {0}</TM_CannotDrop>
+  <TM_NeedManaForEnchant>魔法: 0.5法力值的 {0} </TM_NeedManaForEnchant>
+
+  <!-- ============ Enchantment Labels =============-->
+  <TM_MaxMPLabel>提高最大法力值: {0}%</TM_MaxMPLabel>
+  <TM_MPRegenRateLabel>提升法力回复速度: {0}%</TM_MPRegenRateLabel>
+  <TM_CoolDownLabel>技能冷却缩减: {0}%</TM_CoolDownLabel>
+  <TM_MPCostLabel>降低法力消耗: {0}%</TM_MPCostLabel>
+  <TM_XPGainLabel>增加经验值获取: {0}%</TM_XPGainLabel>
+  <TM_ArcaneResLabel>魔法抗性: {0}%</TM_ArcaneResLabel>
+  <TM_ArcaneDmgLabel>法术强度: {0}%</TM_ArcaneDmgLabel>
+  <TM_ArcaneSpectre>魔法幽魂</TM_ArcaneSpectre>
+  <TM_PhantomShift>幽魂转换</TM_PhantomShift>
+
+  <!-- ============ Floating Text =============-->
+  <TM_Enchanted>施法!</TM_Enchanted>
+
+  <!--<TM_增强>闪电风暴增强</TM_增强>-->
+  <!--<TM_功能性增强>闪电风暴功能性增强</TM_功能性增强>-->
+
+</LanguageData>

@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Melee Weapons -->
+
+  <TM_ThrumboAxe.label>撼地斧</TM_ThrumboAxe.label>
+  <TM_ThrumboAxe.description>一个由敲击兽角和魔法原石制成的握柄组合而成的斧子. 此握柄中存储着奥术能量并且会在撼地斧被挥舞时转化为物理力量, 其强大的力量甚至可以一击将数个敌人劈成两半. 此斧握柄上同样铭刻着神秘的符文来增强使用者的奥术能量.</TM_ThrumboAxe.description>
+  <TM_ThrumboAxe.tools.0.label>持有</TM_ThrumboAxe.tools.0.label>
+  <TM_ThrumboAxe.tools.1.label>劈砍</TM_ThrumboAxe.tools.1.label>
+  <TM_ThrumboAxe.tools.2.label>角</TM_ThrumboAxe.tools.2.label>
+
+
+  <!-- Fire Wand -->
+
+  <Projectile_FireWand.label>火焰法杖</Projectile_FireWand.label>
+
+  <TM_FireWand.label>火焰法杖</TM_FireWand.label>
+  <TM_FireWand.description>一柄会缓慢地将奥术能量转化为火元素之力的法杖. 法杖作为一种集中精神的工具使法师可以更好的发挥他们的先天力量.</TM_FireWand.description>
+  <TM_FireWand.tools.0.label>法杖</TM_FireWand.tools.0.label>
+
+
+  <!-- Ice Wand -->
+
+  <Projectile_IceWand.label>冰霜法杖</Projectile_IceWand.label>
+
+  <TM_IceWand.label>冰霜法杖</TM_IceWand.label>
+  <TM_IceWand.description>一柄会缓慢地将奥术能量转化为冰元素之力的法杖. 法杖作为一种集中精神的工具使法师可以更好的发挥他们的先天力量.</TM_IceWand.description>
+  <TM_IceWand.tools.0.label>法杖</TM_IceWand.tools.0.label>
+
+
+  <!-- Lightning Wand -->
+
+  <Projectile_LightningWand.label>雷霆法杖</Projectile_LightningWand.label>
+
+  <TM_LightningWand.label>雷霆法杖</TM_LightningWand.label>
+  <TM_LightningWand.description>一柄会缓慢地将奥术能量转化为雷元素之力的法杖. 法杖作为一种集中精神的工具使法师可以更好的发挥他们的先天力量.</TM_LightningWand.description>
+  <TM_LightningWand.tools.0.label>法杖</TM_LightningWand.tools.0.label>
+
+
+  <!-- Staff of Blazing Power -->
+
+  <!--[Duplicated] <Projectile_BlazingPower.label>blazing power</Projectile_BlazingPower.label>-->
+
+  <TM_BlazingPowerStaff.label>闪耀权杖</TM_BlazingPowerStaff.label>
+  <TM_BlazingPowerStaff.description>一柄可以与使用者建立精神链接的权杖, 可以用来发射一连串的闪耀飞弹或者创造一堵可以偏折飞弹的障碍墙. 魔法师会使用此权杖施法技能威力会得到极大的增强, 但在凡人手中只是一根棍子而已.</TM_BlazingPowerStaff.description>
+  <TM_BlazingPowerStaff.tools.0.label>杖身</TM_BlazingPowerStaff.tools.0.label>
+  <TM_BlazingPowerStaff.tools.1.label>杖首</TM_BlazingPowerStaff.tools.1.label>
+
+  <Projectile_BlazingPower.label>闪耀之力</Projectile_BlazingPower.label>
+
+  <TM_DefenderStaff.label>守护者权杖</TM_DefenderStaff.label>
+  <TM_DefenderStaff.description>一柄由古代锻造技术打造而成的权杖, 周身有显而易见的智慧光环. 使用此权杖可以进入精神世界并且允许使用者与他们的祖先灵体进行交流并祈求他们展现自己的力量. 进行这个行为所花费的能量来自于灵体本身因此不需要消耗法师的法力, 但灵体在被重复召唤之前需要一定的时间休息.</TM_DefenderStaff.description>
+  <TM_DefenderStaff.tools.0.label>杖身</TM_DefenderStaff.tools.0.label>
+  <TM_DefenderStaff.tools.1.label>杖首</TM_DefenderStaff.tools.1.label>
+
+
+  <!-- Seer ring - Fire -->
+
+  <Projectile_SeerRing_Fire.label>火元素</Projectile_SeerRing_Fire.label>
+
+  <Seer_FireRing.label>火元素指环</Seer_FireRing.label>
+  <Seer_FireRing.description>一件古老的造物可以与使用者绑定，使元素之力在宿主体内流转. 如果宿主与元素环分离， 绑定契约将会无效化并使元素环毁坏。</Seer_FireRing.description>
+  <Seer_FireRing.tools.0.label>元素掌握</Seer_FireRing.tools.0.label>
+
+
+  <!-- Seer ring - Ice -->
+
+  <Projectile_SeerRing_Ice.label>冰元素</Projectile_SeerRing_Ice.label>
+
+  <Seer_IceRing.label>冰元素指环</Seer_IceRing.label>
+  <Seer_IceRing.description>一件古老的造物可以与使用者绑定，使元素之力在宿主体内流转. 如果宿主与元素环分离， 绑定契约将会无效化并使元素环毁坏。</Seer_IceRing.description>
+  <Seer_IceRing.tools.0.label>元素掌握</Seer_IceRing.tools.0.label>
+
+
+  <!-- Seer ring - Lightning -->
+
+  <Laser_SeerRing_Lightning.label>雷元素</Laser_SeerRing_Lightning.label>
+
+  <Seer_LightningRing.label>雷元素指环</Seer_LightningRing.label>
+  <Seer_LightningRing.description>一件古老的造物可以与使用者绑定，使元素之力在宿主体内流转. 如果宿主与元素环分离， 绑定契约将会无效化并使元素环毁坏。</Seer_LightningRing.description>
+  <Seer_LightningRing.tools.0.label>元素掌握</Seer_LightningRing.tools.0.label>
+
+
+</LanguageData>

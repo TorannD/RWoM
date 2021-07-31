@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Misc jobs -->
+
+  <PlacePoisonTrap.reportString>放置毒素陷阱。</PlacePoisonTrap.reportString>
+  <JobDriver_SleepNow.reportString>睡眠 (催眠).</JobDriver_SleepNow.reportString>
+  <JobDriver_Entertain.reportString>款待.</JobDriver_Entertain.reportString>
+
+
+</LanguageData>

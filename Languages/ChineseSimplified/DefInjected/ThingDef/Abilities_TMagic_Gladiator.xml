@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Sprint start -->
+
+  <TM_Gladiator_Sprint.label>冲刺</TM_Gladiator_Sprint.label>
+
+
+  <!-- Fortitude start -->
+
+  <TM_Gladiator_Fortitude.label>刚毅</TM_Gladiator_Fortitude.label>
+
+
+  <!-- Grapple Start -->
+
+  <Projectile_Grapple.label>抓钩</Projectile_Grapple.label>
+
+
+  <!-- Cleave Start -->
+
+  <Projectile_Cleave.label>顺劈斩</Projectile_Cleave.label>
+
+
+  <!-- Whirlwind -->
+
+  <FlyingObject_Whirlwind.label>飞行目标</FlyingObject_Whirlwind.label>
+  <Projectile_Whirlwind.label>旋风斩</Projectile_Whirlwind.label>
+
+
+</LanguageData>

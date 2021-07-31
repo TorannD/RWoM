@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Advanced Heal -->
+
+  <TM_AdvancedHeal.label>强效治疗</TM_AdvancedHeal.label>
+  <TM_AdvancedHeal.description>祈求圣光的力量更好地治愈目标的伤口。</TM_AdvancedHeal.description>
+
+
+  <!-- Purify -->
+
+  <TM_Purify.label>净化术</TM_Purify.label>
+  <TM_Purify.description>祈求圣光的力量消除身体的疤痕，抚慰精神与灵魂。</TM_Purify.description>
+
+
+  <!-- Healing Circle -->
+
+  <TM_HealingCircle.label>治愈之环</TM_HealingCircle.label>
+  <TM_HealingCircle.description>创造一个可以为友军恢复生命的领域治愈之环.
+圆环半径: 3
+范围: 30</TM_HealingCircle.description>
+
+  <TM_HealingCircle_I.label>治愈之环 (I)</TM_HealingCircle_I.label>
+  <TM_HealingCircle_I.description>治愈之环.
+圆环半径: 4
+范围: 35</TM_HealingCircle_I.description>
+
+  <TM_HealingCircle_II.label>治愈之环 (II)</TM_HealingCircle_II.label>
+  <TM_HealingCircle_II.description>治愈之环.
+圆环半径: 5.5
+范围: 40</TM_HealingCircle_II.description>
+
+  <TM_HealingCircle_III.label>治愈之环 (III)</TM_HealingCircle_III.label>
+  <TM_HealingCircle_III.description>治愈之环.
+圆环半径: 7
+范围: 45</TM_HealingCircle_III.description>
+
+
+  <!-- Bestow Might -->
+
+  <TM_BestowMight.label>激励</TM_BestowMight.label>
+  <TM_BestowMight.description>祝福: 使单体目标获得强化身体力量的增益.
+持续时间: 		30-40s
+体力: 	+40%
+身体需求: 	+50%
+疼痛:		-40%</TM_BestowMight.description>
+
+  <TM_BestowMight_I.label>激励 (I)</TM_BestowMight_I.label>
+  <TM_BestowMight_I.description>祝福: 使单体目标获得强化身体力量的增益.
+持续时间: 		50-60s
+体力: 	+60%
+身体需求: 	+60%
+疼痛:		-50%</TM_BestowMight_I.description>
+
+  <TM_BestowMight_II.label>激励 (II)</TM_BestowMight_II.label>
+  <TM_BestowMight_II.description>祝福: 使单体目标获得强化身体力量的增益.
+持续时间: 		50-60s
+体力: 	+80%
+身体需求: 	+70%
+疼痛:		-60%</TM_BestowMight_II.description>
+
+  <TM_BestowMight_III.label>激励 (III)</TM_BestowMight_III.label>
+  <TM_BestowMight_III.description>祝福: 使单体目标获得强化身体力量的增益.
+持续时间: 		100-115s
+体力: 	~+100%
+身体需求: 	+100%
+疼痛:		-70%</TM_BestowMight_III.description>
+
+
+  <!-- Resurrection -->
+
+  <TM_Resurrection.label>英雄不朽</TM_Resurrection.label>
+  <TM_Resurrection.description>使一名死去不久的生物重新焕发生机。</TM_Resurrection.description>
+
+
+</LanguageData>

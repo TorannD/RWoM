@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- base -->
+
+  <Regrowth.label>再生肢体 (限定德鲁伊, 需要消耗90%法力)</Regrowth.label>
+  <Regrowth.description>使用德鲁伊的神力再生肢体.</Regrowth.description>
+  <Regrowth.jobString>再生肢体.</Regrowth.jobString>
+
+
+  <!--<RegrowArm.label>再生臂（德鲁伊限定，需要90%的法力值）</RegrowArm.label>-->
+  <!--<RegrowArm.description>通过使用德鲁伊的力量再生一只胳膊。</RegrowArm.description>-->
+  <!--<RegrowArm.jobString>再生臂。</RegrowArm.jobString>-->
+  <!--<RegrowHand.label>再生手（德鲁伊限定，需要90%的法力值）</RegrowHand.label>-->
+  <!--<RegrowHand.description>通过德鲁伊的力量再生一只手。</RegrowHand.description>-->
+  <!--<RegrowHand.jobString>再生手。</RegrowHand.jobString>-->
+  <!--<RegrowLeg.label>再生腿（德鲁伊限定，需要90%的法力值）</RegrowLeg.label>-->
+  <!--<RegrowLeg.description>通过德鲁伊的力量再生一条腿。</RegrowLeg.description>-->
+  <!--<RegrowLeg.jobString>再生腿。</RegrowLeg.jobString>-->
+  <!--<RegrowFoot.label>再生足（德鲁伊限定，需要90%的法力值）</RegrowFoot.label>-->
+  <!--<RegrowFoot.description>通过德鲁伊的力量再生一只脚。</RegrowFoot.description>-->
+  <!--<RegrowFoot.jobString>再生足。</RegrowFoot.jobString>-->
+
+</LanguageData>

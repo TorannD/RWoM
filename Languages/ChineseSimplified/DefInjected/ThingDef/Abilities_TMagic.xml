@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- AMP start -->
+
+  <Buff_AMP.label>AWP</Buff_AMP.label>
+
+
+  <!-- Shadow start -->
+
+  <Buff_Shadow.label>暗影随形</Buff_Shadow.label>
+
+
+  <!-- Soothe start -->
+
+  <Buff_Soothe.label>抚慰之风</Buff_Soothe.label>
+
+
+  <!-- Ray of Hope start -->
+
+  <Buff_RayofHope.label>希望之光</Buff_RayofHope.label>
+
+
+  <!-- Lightning Cloud -->
+
+  <Projectile_LightningCloud.label>天丛云雷</Projectile_LightningCloud.label>
+
+
+  <!-- Lightning Bolt -->
+
+  <Laser_LightningBolt.label>电闪雷鸣</Laser_LightningBolt.label>
+
+
+  <!-- FrostRay -->
+
+  <Laser_FrostRay.label>冰冻射线</Laser_FrostRay.label>
+
+
+  <!-- Blizzard -->
+
+  <Projectile_Blizzard.label>暴风雪</Projectile_Blizzard.label>
+
+
+  <!-- Firestorm -->
+
+  <Projectile_Firestorm.label>火焰风暴</Projectile_Firestorm.label>
+
+
+  <!-- Fireball -->
+
+  <Projectile_Fireball.label>火球术</Projectile_Fireball.label>
+
+
+  <!-- Fire Claw -->
+
+  <Projectile_Fireclaw.label>焰爪</Projectile_Fireclaw.label>
+
+
+  <!-- Snowball -->
+
+  <Projectile_Snowball.label>雪球术</Projectile_Snowball.label>
+
+
+  <!-- Magic Missile -->
+
+  <Projectile_MagicMissile.label>魔法飞弹</Projectile_MagicMissile.label>
+
+
+  <!-- Icebolt -->
+
+  <Projectile_Icebolt.label>冰箭术</Projectile_Icebolt.label>
+
+
+  <!-- Firebolt -->
+
+  <Projectile_Firebolt.label>燃烧之箭</Projectile_Firebolt.label>
+
+
+  <!-- Lightning Storm -->
+
+  <Projectile_LightningStorm.label>闪电风暴</Projectile_LightningStorm.label>
+
+
+  <!-- Teleport start -->
+
+  <Projectile_Teleport.label>传送</Projectile_Teleport.label>
+
+
+  <!-- Blink Start -->
+
+  <Projectile_Blink.label>闪烁</Projectile_Blink.label>
+
+
+  <!-- Summon Start -->
+
+  <Projectile_Summon.label>召唤</Projectile_Summon.label>
+  <TM_SummonedPawn.label>飞行目标</TM_SummonedPawn.label>
+  <MovingObject.label>移动目标</MovingObject.label>
+
+
+  <!-- Rainmaker Start -->
+
+  <Projectile_Rainmaker.label>唤雨者</Projectile_Rainmaker.label>
+
+
+  <!-- Eye of the Storm -->
+
+  <FlyingObject_EyeOfTheStorm.label>飞行目标</FlyingObject_EyeOfTheStorm.label>
+  <Projectile_EyeOfTheStorm.label>风暴之眼</Projectile_EyeOfTheStorm.label>
+
+
+  <!-- Fold Reality -->
+
+  <Projectile_FoldReality.label>空间扭曲</Projectile_FoldReality.label>
+
+
+</LanguageData>

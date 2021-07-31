@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Heal start -->
+
+  <TM_Paladin_Heal.label>圣光术</TM_Paladin_Heal.label>
+
+
+  <!-- Shield start -->
+
+  <TM_Paladin_Shield.label>神佑之盾</TM_Paladin_Shield.label>
+
+
+  <!-- Valiant Charge -->
+
+  <FlyingObject_ValiantCharge.label>飞行目标</FlyingObject_ValiantCharge.label>
+  <Projectile_ValiantCharge.label>旋风冲击</Projectile_ValiantCharge.label>
+
+
+  <!-- Overwhelm start -->
+
+  <TM_Paladin_Overwhelm.label>圣光压制</TM_Paladin_Overwhelm.label>
+
+
+  <!-- Holy Wrath -->
+
+  <Projectile_HolyWrath.label>神圣狂怒</Projectile_HolyWrath.label>
+
+
+</LanguageData>

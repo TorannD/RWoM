@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- executions and prisoner deaths -->
+
+  <RangerSoldBondedPet.stages.0.label>契约动物被卖</RangerSoldBondedPet.stages.0.label>
+  <RangerSoldBondedPet.stages.0.description>我默许了我的契约动物被卖做奴隶, 短时间内我无法被动物王国所原谅. (当此状态激活时动物契约会被解除)</RangerSoldBondedPet.stages.0.description>
+
+  <RangerPetDied.stages.0.label>契约生物死亡</RangerPetDied.stages.0.label>
+  <RangerPetDied.stages.0.description>我忠诚的动物伙伴去世了. 那种感觉就像我失去了一部分灵魂.</RangerPetDied.stages.0.description>
+
+
+</LanguageData>

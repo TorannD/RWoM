@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_LullabyHD.label>催眠曲</TM_LullabyHD.label>
+  <TM_LullabyHD.stages.0.label>I</TM_LullabyHD.stages.0.label>
+  <TM_LullabyHD.stages.1.label>II</TM_LullabyHD.stages.1.label>
+  <TM_LullabyHD.stages.2.label>III</TM_LullabyHD.stages.2.label>
+  <TM_LullabyHD.stages.3.label>IV</TM_LullabyHD.stages.3.label>
+
+  <TM_InspirationalHD.label>灵感迸发</TM_InspirationalHD.label>
+  <TM_InspirationalHD.stages.0.label>吟游诗人</TM_InspirationalHD.stages.0.label>
+
+  <TM_EntertainingHD.label>款待</TM_EntertainingHD.label>
+  <TM_EntertainingHD.stages.0.label>吟游诗人</TM_EntertainingHD.stages.0.label>
+
+  <TM_SingBattleHymnHD.label>战斗圣歌</TM_SingBattleHymnHD.label>
+  <TM_SingBattleHymnHD.stages.0.label>吟游诗人</TM_SingBattleHymnHD.stages.0.label>
+
+
+  <!-- Battle hymn -->
+
+  <TM_BattleHymnHD.label>战斗之歌</TM_BattleHymnHD.label>
+  <TM_BattleHymnHD.stages.0.label>I</TM_BattleHymnHD.stages.0.label>
+  <TM_BattleHymnHD.stages.1.label>II</TM_BattleHymnHD.stages.1.label>
+  <TM_BattleHymnHD.stages.2.label>III</TM_BattleHymnHD.stages.2.label>
+  <TM_BattleHymnHD.stages.3.label>IV</TM_BattleHymnHD.stages.3.label>
+  <TM_BattleHymnHD.stages.4.label>V</TM_BattleHymnHD.stages.4.label>
+  <TM_BattleHymnHD.stages.5.label>VI</TM_BattleHymnHD.stages.5.label>
+  <TM_BattleHymnHD.stages.6.label>VII</TM_BattleHymnHD.stages.6.label>
+  <TM_BattleHymnHD.stages.7.label>VIII</TM_BattleHymnHD.stages.7.label>
+  <TM_BattleHymnHD.stages.8.label>IX</TM_BattleHymnHD.stages.8.label>
+  <TM_BattleHymnHD.stages.9.label>X</TM_BattleHymnHD.stages.9.label>
+
+
+</LanguageData>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <ManaPotionHigh.label>奥术沉醉</ManaPotionHigh.label>
+
+
+  <!-- Mana potion addiction -->
+
+  <ManaPotionTolerance.label>魔法药剂耐受</ManaPotionTolerance.label>
+  <ManaPotionTolerance.stages.0.label>些微</ManaPotionTolerance.stages.0.label>
+  <ManaPotionTolerance.stages.1.label>轻度</ManaPotionTolerance.stages.1.label>
+  <ManaPotionTolerance.stages.2.label>中度</ManaPotionTolerance.stages.2.label>
+  <ManaPotionTolerance.stages.3.label>重度</ManaPotionTolerance.stages.3.label>
+
+  <ManaPotionAddiction.label>魔法药剂成瘾</ManaPotionAddiction.label>
+  <ManaPotionAddiction.stages.1.label>戒断反应</ManaPotionAddiction.stages.1.label>
+
+
+</LanguageData>

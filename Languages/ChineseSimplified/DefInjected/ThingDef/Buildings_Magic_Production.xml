@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Work tables -->
+
+  <TableGemcutting.label>宝石加工台</TableGemcutting.label>
+  <TableGemcutting.description>一个用来加工魔法石的工作台</TableGemcutting.description>
+  <TableGemcutting_Blueprint.label>宝石加工台 (蓝图)</TableGemcutting_Blueprint.label>
+  <TableGemcutting_Frame.label>宝石加工台 (建造中)</TableGemcutting_Frame.label>
+  <TableGemcutting_Frame.description>一个用来加工魔法石的工作台</TableGemcutting_Frame.description>
+
+  <TableMagicPrinter.label>刻绘台</TableMagicPrinter.label>
+  <TableMagicPrinter.description>一个用来制作书籍和卷轴的印刷台.</TableMagicPrinter.description>
+  <TableMagicPrinter_Blueprint.label>刻绘台 (蓝图)</TableMagicPrinter_Blueprint.label>
+  <TableMagicPrinter_Frame.label>刻绘台 (建造中)</TableMagicPrinter_Frame.label>
+  <TableMagicPrinter_Frame.description>一个用来制作书籍和卷轴的印刷台.</TableMagicPrinter_Frame.description>
+
+
+</LanguageData>

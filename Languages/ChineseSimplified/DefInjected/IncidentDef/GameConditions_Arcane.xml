@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <ManaDrain.label>法力流失</ManaDrain.label>
+  <ManaDrain.letterText>行星的天象导致了魔法的逐渐衰落。所有与魔法力量协调的生物会缓慢地失去力量。</ManaDrain.letterText>
+  <ManaDrain.letterLabel>法力流失</ManaDrain.letterLabel>
+
+  <ManaSurge.label>法力涌动</ManaSurge.label>
+  <ManaSurge.letterText>行星的天象导致了魔力激增。所有与魔法力量协调的生物，法力会得到一定量的增长。</ManaSurge.letterText>
+  <ManaSurge.letterLabel>法力涌动</ManaSurge.letterLabel>
+
+  <Disease_ManaSickness.label>法力反噬</Disease_ManaSickness.label>
+  <Disease_ManaSickness.letterText>{0} 已经得病了 {1}.\n\n确保你有一个医疗用床和医生. 确保 {2} 得到适当的治疗和尽量在床上修养一段时间。在这期间 {0} 不会获得法力值。</Disease_ManaSickness.letterText>
+  <Disease_ManaSickness.letterLabel>法力反噬</Disease_ManaSickness.letterLabel>
+
+  <ElementalAssault.label>元素袭击</ElementalAssault.label>
+  <ElementalAssault.letterText>不怀好意的元素体们在你的世界打开了一道缺口并准备派遣袭击队伍通过这道缝隙。</ElementalAssault.letterText>
+  <ElementalAssault.letterLabel>元素袭击</ElementalAssault.letterLabel>
+
+
+</LanguageData>

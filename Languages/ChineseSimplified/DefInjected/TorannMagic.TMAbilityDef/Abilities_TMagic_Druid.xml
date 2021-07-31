@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- poison -->
+
+  <TM_Poison.label>施毒术</TM_Poison.label>
+  <TM_Poison.description>快速施放毒素使其进入目标血液。受术者移动的越多， 距离死亡就越近一步。对机械体无效。</TM_Poison.description>
+
+
+  <!-- soothe animal -->
+
+  <TM_SootheAnimal.label>诱惑动物</TM_SootheAnimal.label>
+  <TM_SootheAnimal.description>通过对自然的掌控， 德鲁伊可以压制动物的情绪状态。这个能力有两个作用 - 如果动物处于平常状态， 将会刺激其进入狂暴状态; 如果该动物已经处于狂暴状态了， 该法术可以使其冷静下来。</TM_SootheAnimal.description>
+
+  <TM_SootheAnimal_I.label>诱惑动物 (I)</TM_SootheAnimal_I.label>
+  <TM_SootheAnimal_I.description>通过对自然的掌控， 德鲁伊可以压制动物的情绪状态。这个能力有两个作用 - 如果动物处于平常状态， 将会刺激其进入狂暴状态; 如果该动物已经处于狂暴状态了， 该法术可以使其冷静下来。</TM_SootheAnimal_I.description>
+
+  <TM_SootheAnimal_II.label>诱惑动物 (II)</TM_SootheAnimal_II.label>
+  <TM_SootheAnimal_II.description>通过对自然的掌控， 德鲁伊可以压制动物的情绪状态。这个能力有两个作用 - 如果动物处于平常状态， 将会刺激其进入狂暴状态; 如果该动物已经处于狂暴状态了， 该法术可以使其冷静下来。</TM_SootheAnimal_II.description>
+
+  <TM_SootheAnimal_III.label>诱惑动物 (III)</TM_SootheAnimal_III.label>
+  <TM_SootheAnimal_III.description>通过对自然的掌控， 德鲁伊可以压制动物的情绪状态。这个能力有两个作用 - 如果动物处于平常状态， 将会刺激其进入狂暴状态; 如果该动物已经处于狂暴状态了， 该法术可以使其冷静下来。</TM_SootheAnimal_III.description>
+
+
+  <!-- regenerate -->
+
+  <TM_Regenerate.label>再生术</TM_Regenerate.label>
+  <TM_Regenerate.description>启动自然再生能力， 随着时间的推移可以继续工作甚至回复到受伤之前的状态，如果有足够的时间。只能治愈身体的伤口并且无法再生已彻底毁掉的身体部分。</TM_Regenerate.description>
+
+
+  <!-- cure disease -->
+
+  <TM_CureDisease.label>治愈疾病</TM_CureDisease.label>
+  <TM_CureDisease.description>有治愈大多数疾病和感染的潜力。</TM_CureDisease.description>
+
+
+  <!-- regrow limb -->
+
+  <TM_RegrowLimb.label>再生肢体</TM_RegrowLimb.label>
+  <TM_RegrowLimb.description>创造生命之种用来再生肢体， 召唤一粒生命之种和收集两瓶魔法药剂， 然后在手术选项卡选择病人身上想要再生的肢体。请确保德鲁伊(或者其他拥有该技能的)可以执行手术命令 。</TM_RegrowLimb.description>
+
+
+</LanguageData>

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Minion Race -->
+
+  <TM_MinionR.label>仆从</TM_MinionR.label>
+  <TM_MinionR.description>仆从是一群顽皮，懒惰且残忍的懦夫，它们来自一个悲惨的位面。他们看上去就像是长着一双眼睛的漂浮肉球。它们拥有又短又小的胳膊， 嘴上永远挂着险恶的微笑， 它们有两到三只角.
+他们可以一直漂浮着的原因并不被人所知， 但人们只能猜错这与他们所到之处带来的强烈的，腐烂气息有一些关系.
+它们的实用性有待商榷; 他们掌握一点战斗的技巧但会在战斗一段时间后逃跑。他们可以做一些简单的工作比如搬运和清洁(虽然他们对于“清洁”的含义有一些误解)。然而， 它们看上去更喜欢叼着烟在电视附近闲逛而不是从事任何生产工作.
+他们可以通过诱骗轻易地召唤过来... 额， 训练过的魔法师， 作为回报，偶尔需要从它们的“恶魔老板”手中给它们一些休息时间， 它们就会更愿意帮助这个地方“解决问题”.
+偶尔， 它们会表现出去撞击物体的渴望，这时候可以(通常)被说服去击碎附近的石头.
+如果任务对于它们太难了或者它们感到厌烦了， 它们就会逃回到它们来的地方。</TM_MinionR.description>
+  <TM_MinionR.tools.0.label>角</TM_MinionR.tools.0.label>
+  <TM_MinionR.tools.1.label>啃噬</TM_MinionR.tools.1.label>
+  <TM_MinionR_Leather.label>仆从的皮</TM_MinionR_Leather.label>
+  <TM_MinionR_Leather.description>仆从的皮</TM_MinionR_Leather.description>
+  <TM_MinionR_Leather.stuffProps.stuffAdjective>仆从的皮</TM_MinionR_Leather.stuffProps.stuffAdjective>
+  <TM_MinionR_Meat.label>仆从的肉</TM_MinionR_Meat.label>
+  <TM_MinionR_Meat.description>仆从的肉</TM_MinionR_Meat.description>
+  <TM_MinionR_Corpse.label>仆从的尸体</TM_MinionR_Corpse.label>
+  <TM_MinionR_Corpse.description>仆从的尸体</TM_MinionR_Corpse.description>
+
+  <TM_GreaterMinionR.label>强力仆从</TM_GreaterMinionR.label>
+  <TM_GreaterMinionR.description>仆从是一群顽皮，懒惰且残忍的懦夫，它们来自一个悲惨的位面。他们看上去就像是长着一双眼睛的漂浮肉球。它们拥有又短又小的胳膊， 嘴上永远挂着险恶的微笑， 它们有两到三只角.
+他们可以一直漂浮着的原因并不被人所知， 但人们只能猜错这与他们所到之处带来的强烈的，腐烂气息有一些关系.
+它们的实用性有待商榷; 他们掌握一点战斗的技巧但会在战斗一段时间后逃跑。他们可以做一些简单的工作比如搬运和清洁(虽然他们对于“清洁”的含义有一些误解)。然而， 它们看上去更喜欢叼着烟在电视附近闲逛而不是从事任何生产工作.
+他们可以通过诱骗轻易地召唤过来... 额， 训练过的魔法师， 作为回报，偶尔需要从它们的“恶魔老板”手中给它们一些休息时间， 它们就会更愿意帮助这个地方“解决问题”.
+偶尔， 它们会表现出去撞击物体的渴望，这时候可以(通常)被说服去击碎附近的石头.
+如果任务对于它们太难了或者它们感到厌烦了， 它们就会逃回到它们来的地方。</TM_GreaterMinionR.description>
+  <TM_GreaterMinionR.tools.0.label>角</TM_GreaterMinionR.tools.0.label>
+  <TM_GreaterMinionR.tools.1.label>啃噬</TM_GreaterMinionR.tools.1.label>
+  <TM_GreaterMinionR_Leather.label>强力仆从的皮</TM_GreaterMinionR_Leather.label>
+  <TM_GreaterMinionR_Leather.description>强力仆从的皮</TM_GreaterMinionR_Leather.description>
+  <TM_GreaterMinionR_Leather.stuffProps.stuffAdjective>强力仆从的皮</TM_GreaterMinionR_Leather.stuffProps.stuffAdjective>
+  <TM_GreaterMinionR_Meat.label>强力仆从的肉</TM_GreaterMinionR_Meat.label>
+  <TM_GreaterMinionR_Meat.description>强力仆从的肉</TM_GreaterMinionR_Meat.description>
+  <TM_GreaterMinionR_Corpse.label>强力仆从的尸体</TM_GreaterMinionR_Corpse.label>
+  <TM_GreaterMinionR_Corpse.description>强力仆从的尸体</TM_GreaterMinionR_Corpse.description>
+
+  <TM_InvisMinionR.label>强力仆从</TM_InvisMinionR.label>
+  <TM_InvisMinionR.description>仆从是一群顽皮，懒惰且残忍的懦夫，它们来自一个悲惨的位面。他们看上去就像是长着一双眼睛的漂浮肉球。它们拥有又短又小的胳膊， 嘴上永远挂着险恶的微笑， 它们有两到三只角.
+他们可以一直漂浮着的原因并不被人所知， 但人们只能猜错这与他们所到之处带来的强烈的，腐烂气息有一些关系.
+它们的实用性有待商榷; 他们掌握一点战斗的技巧但会在战斗一段时间后逃跑。他们可以做一些简单的工作比如搬运和清洁(虽然他们对于“清洁”的含义有一些误解)。然而， 它们看上去更喜欢叼着烟在电视附近闲逛而不是从事任何生产工作.
+他们可以通过诱骗轻易地召唤过来... 额， 训练过的魔法师， 作为回报，偶尔需要从它们的“恶魔老板”手中给它们一些休息时间， 它们就会更愿意帮助这个地方“解决问题”.
+偶尔， 它们会表现出去撞击物体的渴望，这时候可以(通常)被说服去击碎附近的石头.
+如果任务对于它们太难了或者它们感到厌烦了， 它们就会逃回到它们来的地方</TM_InvisMinionR.description>
+  <TM_InvisMinionR.tools.0.label>角</TM_InvisMinionR.tools.0.label>
+  <TM_InvisMinionR.tools.1.label>啃噬</TM_InvisMinionR.tools.1.label>
+  <TM_InvisMinionR_Leather.label>强力仆从的皮</TM_InvisMinionR_Leather.label>
+  <TM_InvisMinionR_Leather.description>强力仆从的皮</TM_InvisMinionR_Leather.description>
+  <TM_InvisMinionR_Leather.stuffProps.stuffAdjective>强力仆从的皮</TM_InvisMinionR_Leather.stuffProps.stuffAdjective>
+  <TM_InvisMinionR_Meat.label>强力仆从的肉</TM_InvisMinionR_Meat.label>
+  <TM_InvisMinionR_Meat.description>强力仆从的肉</TM_InvisMinionR_Meat.description>
+  <TM_InvisMinionR_Corpse.label>强力仆从的尸体</TM_InvisMinionR_Corpse.label>
+  <TM_InvisMinionR_Corpse.description>强力仆从的尸体</TM_InvisMinionR_Corpse.description>
+
+
+</LanguageData>

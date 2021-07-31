@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Learning interactions -->
+
+  <TM_MagicLoreTD.stages.0.label>得到奥术知识</TM_MagicLoreTD.stages.0.label>
+  <TM_MagicLoreTD.stages.0.description>我被一个强力法师的话语启发了, 现在我只需要把这些知识应用于实践中...</TM_MagicLoreTD.stages.0.description>
+
+  <TM_MightLoreTD.stages.0.label>得到战斗经验</TM_MightLoreTD.stages.0.label>
+  <TM_MightLoreTD.stages.0.description>一个老练的战士教导了我如何提升战斗技巧.</TM_MightLoreTD.stages.0.description>
+
+
+  <!-- Social interactions -->
+
+  <TM_EntertainedTD.stages.0.label>招待</TM_EntertainedTD.stages.0.label>
+  <TM_EntertainedTD.stages.0.description>这个地方还不错; 这的人会使我忘记烦恼并笑看人生.</TM_EntertainedTD.stages.0.description>
+
+  <TM_EntertainedAuraTD.stages.0.label>社交娱乐</TM_EntertainedAuraTD.stages.0.label>
+  <TM_EntertainedAuraTD.stages.0.description>与其他人的交谈真是太有趣啦.</TM_EntertainedAuraTD.stages.0.description>
+
+  <TM_EntertainerAuraTD.stages.0.label>社交互动</TM_EntertainerAuraTD.stages.0.label>
+  <TM_EntertainerAuraTD.stages.0.description>我真的很喜欢和周围人互动, 为其他人带来快乐会使我感到幸福.</TM_EntertainerAuraTD.stages.0.description>
+
+
+</LanguageData>

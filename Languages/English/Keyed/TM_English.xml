@@ -1,0 +1,1961 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+<!-- Notification messages  -->
+<TM_NotEnoughMana>{0} needs more mana to cast this spell.</TM_NotEnoughMana>
+<TM_NotEnoughBlood>{0} has not sacrificed enough blood to cast this spell.</TM_NotEnoughBlood>
+<TM_NotEnoughMaxMana>{0} does not have the mana reserves to sustain {1}</TM_NotEnoughMaxMana>
+<TM_NotEnoughStamina>{0} does not have enough stamina to execute this ability.</TM_NotEnoughStamina>
+<TM_NotEnoughPsionicEnergy>{0} does not have enough psionic energy for {1}.</TM_NotEnoughPsionicEnergy>
+<TM_NotEnoughChi>{0} does not have enough ch'i to execute this ability.</TM_NotEnoughChi>
+<TM_NotEnoughEnergy>{0} does not have enough {1} to execute this ability.</TM_NotEnoughEnergy>
+<MentalStateByPsyker>{0} overcome by a psychic assault.</MentalStateByPsyker>
+
+<TM_InvalidTarget>{0} found no valid target for ability {1}.</TM_InvalidTarget>
+<InvalidPortal>Invalid portal location - target position, and all adjacent positions, must be valid and free of debris.</InvalidPortal>
+<InvalidMine>Invalid summoned mine location - target position must be valid and free of debris.</InvalidMine>
+<InvalidSummon>Attempted a summoning at an invalid location - target position must be valid and free of debris.</InvalidSummon>
+<PylonDeSpawn>Mana cohesion holding a defensive pylon together has expired and the pylon has dissolved.</PylonDeSpawn>
+<MineDeSpawn>Mana cohesion holding a mana mine together has deteriorated and the mana mine has safely dissolved.</MineDeSpawn>
+<MinionFled>One of your minions has fled back to its plane of existence.</MinionFled>
+<NotArcaneBook>Book type not recognized as arcane script!</NotArcaneBook>
+<NotGiftedPawn>{0} does not have the Magically Gifted trait and cannot make use of this item.</NotGiftedPawn>
+<NotCombatBook>Book type not recognized as a combat form!</NotCombatBook>
+<NotPhyAdeptPawn>Pawn does not possess the Physically Adept trait and cannot learn this combat form.</NotPhyAdeptPawn>
+<CannotLearnSpell>Spell cannot be applied to this pawn.</CannotLearnSpell>
+<CannotLearnSkill>Skill cannot be applied to this pawn.</CannotLearnSkill>
+<NotMageToLearnSpell>Pawn is not attuned to with arcane forces and cannot learn the contents of this scroll.</NotMageToLearnSpell>
+<NotFighterToLearnSkill>Pawn is not trained in a combat form and cannot apply the techniques from this scroll.</NotFighterToLearnSkill>
+<InvalidBattery>The spell failed, could not detect a common ground with the building (not a battery).</InvalidBattery>
+<NotABuilding>Spell failed: target was not a building.</NotABuilding>
+<NotRightTerrainType>Unable to transform this type of land.</NotRightTerrainType>
+<TerraformFailed>Unable to transform land.</TerraformFailed>
+<TerraformNotSandOrGravel>Unable to transform land, must be sand or gravel.</TerraformNotSandOrGravel>
+<PortalCollapseFinal>Portal has collapsed!</PortalCollapseFinal>
+<PortalCollapseIn>Portal collapses in {0} seconds.</PortalCollapseIn>
+<InvalidTargetLocation>Invalid target location.</InvalidTargetLocation>
+<MustHaveRangedWeapon>{0} does not have a valid ranged weapon equipped. {0} must equip a ranged weapon to use this skill.</MustHaveRangedWeapon>
+<MustBeUnarmed>{0} must be unarmed to execute {1}</MustBeUnarmed>
+<MustHaveGunpowderWeapon>{0} does not have a valid ranged weapon equipped. {0} must equip a more advanced weapon to use this skill.</MustHaveGunpowderWeapon>
+<MustHaveMeleeWeapon>{0} does not have a valid melee weapon equipped. {0} must equip a melee weapon to use this skill.</MustHaveMeleeWeapon>
+<TM_ShieldBlockingPowers>{0} must unequip {1} to use this ability.</TM_ShieldBlockingPowers>
+<TM_OutOfRange>Target location is out of range.</TM_OutOfRange>
+<TM_OutOfLOS>Ability failed, target was not visible to {0}.</TM_OutOfLOS>
+<TM_NothingToRegenerate>No valid target found for Regeneration.</TM_NothingToRegenerate> 
+<TM_CureDiseaseTypeFail>Unable to cure this type of disease.</TM_CureDiseaseTypeFail>
+<TM_CantSummonSelf>Cannot summon self.</TM_CantSummonSelf>
+<TM_UndeadCollapsed>{0} does not have the mana to sustain {1}. {1} has disintegrated into mana to replenish {0}.</TM_UndeadCollapsed>
+<TM_ResistedSpell>Resisted!</TM_ResistedSpell>
+<TM_CannotUseOnLiving>This spell cannot be used on the living.</TM_CannotUseOnLiving>
+<TM_CannontConsumeCorpseType>Cannot consume this type of corpse.</TM_CannontConsumeCorpseType>
+<TM_InvalidCorpseType>Corpse type is invalid for Consume Corpse.</TM_InvalidCorpseType>
+<TM_Learn>Learn</TM_Learn>
+<TM_GatewayBeyondMaximumRange>Target tile is beyond reach of Gateway.</TM_GatewayBeyondMaximumRange>
+<TM_InvalidGatewaySelection>Invalid target tile for Gateway.</TM_InvalidGatewaySelection>
+<TM_InvalidGatewayNotOccupied>Gateway can only be used on map tiles occupied by colonists.</TM_InvalidGatewayNotOccupied>
+<TM_Exception>An exception has been throw by {0} while trying to cast {1} - restoring mana and exiting ability attempt.</TM_Exception>
+<TM_ExceptionClose>An exception has been thrown while trying to close {0} - ending ability.</TM_ExceptionClose>
+<TM_ExceptionTick>An exception has been thrown during {0} - ending ability immediately.</TM_ExceptionTick>
+<TM_InvalidResurrection>{0} was unable to find a valid target for Resurrection.</TM_InvalidResurrection>
+<TM_ResurrectionTargetExpired>Resurrection cannot restore this body, it has expired and can no longer sustain life.</TM_ResurrectionTargetExpired>
+<MustHaveBow>{0} is armed with a {1}, {0} must use a bow to use this ability.</MustHaveBow>
+<TM_BondedAnimalRelease>The bond between {0} and {1} has ended and {0} has disappeared into the wild.</TM_BondedAnimalRelease>
+<TM_BondedAnimalReleaseToColony>The bond between {0} and {1} has ended but {0} has chosen to remain in the colony.</TM_BondedAnimalReleaseToColony>
+<TM_AnimalIncapableOfBond>{0} does not have the intelligence to form a bond with {1}.</TM_AnimalIncapableOfBond>
+<TM_AnimalAlreadyHasBond>{0} has already formed a bond with another ranger.</TM_AnimalAlreadyHasBond>
+<TM_FailedRangerBond>{1} has failed to bond with {0} - {2}&#37; chance</TM_FailedRangerBond>
+<TM_RangerNotExperienced>{1} is unable to establish a bond with {0}. {0} has a wildness of {2}&#37; and {1} can only bond with a creature with {3}&#37; or lower. This can be increased by investing points in "Animal Empathy".</TM_RangerNotExperienced>
+<TM_TooManyTraps>{0} is limited to {1} traps, removing oldest trap.</TM_TooManyTraps>
+<TM_SummonedCreatureLimitExceeded>{0} has exceeded the max number of summoned creatures, dismissing oldest summon.</TM_SummonedCreatureLimitExceeded>
+<TM_NoMinionToDismiss>{0} has no summoned minions.</TM_NoMinionToDismiss>
+<TM_NoGuardianSpiritToDismiss>{0} has no guardian spirit to dismiss.</TM_NoGuardianSpiritToDismiss>
+<TM_NoValidUndeadToDismiss>Target is not a valid target for dismiss undead.</TM_NoValidUndeadToDismiss>
+<TM_CannotUseGemOfInsight>{0} already possesses an arcane or combat trait, or is an undead, and cannot make use of this gemstone.</TM_CannotUseGemOfInsight>
+<TM_ItemUseFailed>Attempted to use an item and failed, reason: {0}</TM_ItemUseFailed>
+<TM_SunlightCollapse>A sun light has collapsed, {0} was unable to sustain it.</TM_SunlightCollapse>
+<TM_DamageAbsorbedAll>Absorbed</TM_DamageAbsorbedAll>
+<TM_DamageAbsorbed>Absorbed ({0} - {1})</TM_DamageAbsorbed>
+<TM_NotSocialCapable>{0} is incapable of social activity and cannot become a bard.</TM_NotSocialCapable>
+<TM_CleaveChance>Cleave chance {0}&#37;</TM_CleaveChance>
+<TM_WhirlwindDamage>Whirlwind damage per hit: {0}</TM_WhirlwindDamage>
+<TM_WeaponDamage>{0} damage: {1}</TM_WeaponDamage>
+<TM_CritChance>{0} critical hit: {1}</TM_CritChance>
+<TM_AntiArmorDamage>{0} damage: {1}; additional damage to mechanoids: {2}</TM_AntiArmorDamage>
+<TM_ArrowStormDamage>{0} damage: {1}; accuracy: {2}&#37;</TM_ArrowStormDamage>
+<TM_LastManaGainPct>Mana Gain: {0}/5s</TM_LastManaGainPct>
+<TM_LastStaminaGainPct>Stamina Gain: {0}/5s</TM_LastStaminaGainPct>
+<TM_AssaultPending>Elementals are coming through the rift!</TM_AssaultPending>
+<TM_MimicFailed>{0} is unable to copy an ability from this target.</TM_MimicFailed>
+<TM_CannotPossess>It is not possible for {0} to possess a {1}.</TM_CannotPossess>
+<TM_CannotPossessNow>It is not possible for {0} to possess {1} in its current state.</TM_CannotPossessNow>
+<TM_PossessedCaughtStealing>{0} is blaming you for trying to steal from {1}! \n\nThey have condemned your vile manipulation and thievery and are now hostile to your faction.</TM_PossessedCaughtStealing>
+<TM_LetterLabelPossessedCaughtStealing>Caught Stealing!</TM_LetterLabelPossessedCaughtStealing>
+<TM_CannotSoulBondUndead>{0} cannot create a soul bond with the undead.</TM_CannotSoulBondUndead>
+<TM_CannotSoulBondThing>Unable to create a soul bond with the target. {0} is only able to benefit from a soul bond with a living pawn possessing a familiar soul.</TM_CannotSoulBondThing>
+<TM_NothingToDominate>No valid target found for Dominate.</TM_NothingToDominate>
+<TM_CannotSoulBondUnwilling>Unable to create a soul bond with {1}. {0} can only form a soul bond with a willing pawn (same faction).</TM_CannotSoulBondUnwilling>
+<TM_CannotSoulBondAnother>{0} cannot form a soul bond with {1}. {1} already sustains this type of bond with another.</TM_CannotSoulBondAnother>
+<TM_PsychicSensitivity>Psychic sensitivity: {0}</TM_PsychicSensitivity>
+<TM_WarlockEmpathyDesc>I can feel the emotions of those around me.</TM_WarlockEmpathyDesc>
+<TM_WarlockEmpathyOverwhelmed>The emotions of those around me are overwhelming, I need to get away from all these people or find a way to mute these emotions.</TM_WarlockEmpathyOverwhelmed>
+<TM_Icon_Undead>Animated Undead</TM_Icon_Undead>
+<TM_Icon_Mage>Magic Class</TM_Icon_Mage>
+<TM_Icon_Fighter>Combat Class</TM_Icon_Fighter>
+<TM_Icon_Custom>Custom Class</TM_Icon_Custom>
+<TM_NotPsychicSensitive>{0} attempted to become a psionic but does not seem to have the psychic sensitivity required to manifest psionic power.</TM_NotPsychicSensitive>
+<TM_TooManyStoneskins>{0} can only sustain stoneskin defenses on {1} pawns. {0} is currently defending {2} with stoneskin.</TM_TooManyStoneskins>
+<TM_NoSpritesToDismiss>{0} has no detected earth sprites - resetting ability parameters.</TM_NoSpritesToDismiss>
+<TM_SentinelDeSpawn>{0} has crumbled to dust without mana to sustain it.</TM_SentinelDeSpawn>
+<TM_TooManySentinels>{0} is limited to {1} sentinels, removing oldest sentinel.</TM_TooManySentinels>
+<TM_NoSpawnSentinelOnBuilding>{0} cannot create a sentinel on top of an existing building.</TM_NoSpawnSentinelOnBuilding>
+<TM_SentinelCannotReturn>The sentinel belonging to {0} could not return to its designated position, it is no longer reachable. The sentinel has dissolved into dust.</TM_SentinelCannotReturn>
+<TM_AugmentationsToggleDesc>Enables or disables the automatic use of augmentations. If disabled, the psionic will never use augmentation skills.</TM_AugmentationsToggleDesc>
+<TM_AugmentationsEnabled>Augments Enabled</TM_AugmentationsEnabled>
+<TM_AugmentationsDisabled>Augments Disabled</TM_AugmentationsDisabled>
+<TM_MindAttackToggleDesc>Enables or disables the automatic use of mental attacks.</TM_MindAttackToggleDesc>
+<TM_MindAttackEnabled>Mental Attack Enabled</TM_MindAttackEnabled>
+<TM_MindAttackDisabled>Mental Attack Disabled</TM_MindAttackDisabled>
+<TM_CleaveToggleDesc>Enables or disables the automatic use of gladiator Cleave; this ability only triggers in melee combat.</TM_CleaveToggleDesc>
+<TM_CleaveEnabled>Cleave Enabled</TM_CleaveEnabled>
+<TM_CleaveDisabled>Cleave Disabled</TM_CleaveDisabled>
+<TM_CQCToggleDesc>Enables or disables the automatic use of CQC; this ability only triggers in melee combat.</TM_CQCToggleDesc>
+<TM_CQCEnabled>CQC Enabled</TM_CQCEnabled>
+<TM_CQCDisabled>CQC Disabled</TM_CQCDisabled>
+<TM_CanNotTeachMagic>{0} is unable to mentor {1} in magic since {1} is not a mage.</TM_CanNotTeachMagic>
+<TM_CanNotTeachCombat>{0} is unable to train {1} in combat since {1} is not a fighter.</TM_CanNotTeachCombat>
+<TM_CanNotTeachMagicDislike>{0} refuses to mentor {1} in magic due to the opinion {0} has of {1}.</TM_CanNotTeachMagicDislike>
+<TM_CanNotTeachCombatDislike>{0} refuses to train {1} in combat due to the opinion {0} has of {1}.</TM_CanNotTeachCombatDislike>
+<TM_TechnoBitToggleDesc>Enables or disables the techno-bit, when disabled, the techno-bit will not perform any action.</TM_TechnoBitToggleDesc>
+<TM_TechnoBitEnabled>Techno-Bit Enabled</TM_TechnoBitEnabled>
+<TM_TechnoBitDisabled>Techno-Bit Disabled</TM_TechnoBitDisabled>
+<TM_ElementalShotToggleDesc>Enables or disables the elemental shot. When enabled, weapon projectiles will occasionally have elemental properties attached to the projectile. Elemental rounds consume small amounts of mana.</TM_ElementalShotToggleDesc>
+<TM_AnimalHasAllegience>This animal is already committed to another cause.</TM_AnimalHasAllegience>
+<TM_TechnoBitRepair>Repair</TM_TechnoBitRepair>
+<TM_TechnoBitRepairDesc>Toggles the repair function of the techno-bit.</TM_TechnoBitRepairDesc>
+<TM_FoundNoReplicateTarget>Unable to detect a valid item to replicate.</TM_FoundNoReplicateTarget>
+<TM_FoundNoReplicateRecipe>Unable to determine a design or recipe for {0}.</TM_FoundNoReplicateRecipe>
+<TM_NotEnoughHate>{0} does not have enough Hate to use {1}.</TM_NotEnoughHate>
+<TM_ReplicatedUnrecognizedIngredient>{0} contains an unspecified ingredient and cannot be replicated.</TM_ReplicatedUnrecognizedIngredient>
+<TM_NoExternalBodyPartsCanBleed>{0} has no body part to draw blood from.</TM_NoExternalBodyPartsCanBleed>
+<TM_NoThingToTransmutate>{0} found no resources to transmutate at the target location.</TM_NoThingToTransmutate>
+<TM_UnableToTransmutate>{0} is unable to transmutate {1}.</TM_UnableToTransmutate>
+<TM_TransmutationLostCohesion>The material of {0} lost cohesion during transmutation and disintegrated.</TM_TransmutationLostCohesion>
+<TM_CancelPolymorph>Cancel Shapeshift</TM_CancelPolymorph>
+<TM_CancelPolymorphDesc>Returns the caster to their original form prior to shape shifting.</TM_CancelPolymorphDesc>
+<TM_NoMeleeWeaponToEnchant>No melee weapon found on {0} to enchant.</TM_NoMeleeWeaponToEnchant>
+<TM_CannotEnchantArtifact>{0} is unable to enchant {1}, this item cannot be enchanted further.</TM_CannotEnchantArtifact>
+<TM_BrokenOutOfMentalState>{0} has broken out of mental state {1} with help from a mind ward.</TM_BrokenOutOfMentalState>
+<TM_InsufficientMaterialForArtifact>Not enough {0} to create an enchanters stone.</TM_InsufficientMaterialForArtifact>
+<TM_CannotCreateStone>{0} is not yet able to create an artifact from {1}.</TM_CannotCreateStone>
+<TM_CannotMimicBloodMage>Blood mage abilities can not be copied.</TM_CannotMimicBloodMage>
+<TM_ViolentCannotEquip>{0} is capable of violence and cannot equip {1}</TM_ViolentCannotEquip>
+<TM_TraitorOrbRecruit>{0} has successfully convicted {1} to join your cause using the Orb of the Traitor.\n\nThe use of vile magic against {2} has angered {3} and reduced your standing with them by {4} by {5}.</TM_TraitorOrbRecruit>
+<TM_InsufficientManaForJob>Not enough mana to start job: need 50, have {0}</TM_InsufficientManaForJob>
+<TM_NoTraitsApplied>Unable to apply any traits to {0}, the Orb of Souls can only apply traits that do not conflict with pre-existing traits.</TM_NoTraitsApplied>
+<TM_NothingEnchanted>{0} was unable to improve the enchantments on {1} using a {2}</TM_NothingEnchanted>
+<TM_Taunting>Taunting!</TM_Taunting>
+<TM_CeaseToExist>{0} has ceased to exist...</TM_CeaseToExist>
+<TM_EndingGameCondition>{0} has successfully ended the {1}.</TM_EndingGameCondition>
+<TM_GameConditionChanged>{0} has inadvertently changed {1} into a {2}!</TM_GameConditionChanged>
+<TM_GameConditionMadePermanent>The {0} has become permanent.</TM_GameConditionMadePermanent>
+<TM_GameConditionAdded>{0} has caused a(n) {1} while attempting to alter {2}.</TM_GameConditionAdded> 
+<TM_AlterGameConditionFailed>{0} has failed to alter the {1}.</TM_AlterGameConditionFailed>
+<TM_PredictionFeelsConfident>{0} feels confident that {1} has averted the {2}.</TM_PredictionFeelsConfident>
+<TM_PredictionFeelsUnsure>{0} is unsure if {1} has had any affect on the {2} prediction.</TM_PredictionFeelsUnsure>
+<TM_PredictionUnease>{0} feels uneasy about {1} changes made to the {2} prediction, perhaps something has gone awry...</TM_PredictionUnease>
+<TM_PredictionTerrified>{0} is terrified, {1} feels sure something disastrous is about to happen...</TM_PredictionTerrified>
+<TM_StatsReport_Undead>Undead: No Value</TM_StatsReport_Undead>
+<TM_IncompatibleWeapon>Incompatible weapon for this ability.</TM_IncompatibleWeapon>
+<TM_BondedPawnNotSpawned>Unable to link to bonded pawn {0}, soul in transition.</TM_BondedPawnNotSpawned>
+<TM_WildSurge>Wild Surge: {0}!</TM_WildSurge>
+<TM_CasterMute>{0} cannot cast spells while muted.</TM_CasterMute>
+<TM_IgnoredOrder>Ignored order</TM_IgnoredOrder>
+<TM_MustHaveWeaponType>{0} is armed with a {1}, {0} must equip a {2} to use this ability.</TM_MustHaveWeaponType>
+<TM_SuppressingFireCount>Shots fired: {0}</TM_SuppressingFireCount>
+<TM_BuckshotFireCount>Buckshot pellets: {0}</TM_BuckshotFireCount>
+<TM_LendColonist_UndeadFail>You're sending us dead bodies - Is this some kind of joke!?</TM_LendColonist_UndeadFail>
+<TM_AlreadyLearnedAbility>{0} has already learned {1}.</TM_AlreadyLearnedAbility>
+<TM_NotEnoughManaToSustain>{0} does not have enough mana to sustain {1}.</TM_NotEnoughManaToSustain>
+<TM_CannotCastUnderRoof>{0} is unable to use {1} from under a roof.</TM_CannotCastUnderRoof>
+<TM_UnableToTravel>Unable to travel to this destination.</TM_UnableToTravel>
+<TM_SelectTargetOnMap>{0}: select target on map...</TM_SelectTargetOnMap>
+<TM_AbandoningMap>Your pawns are abandoning {0}, do you want to remove the map?</TM_AbandoningMap>
+<TM_IncompatibleWeaponType>{0} cannot use {1} - incompatible weapon.</TM_IncompatibleWeaponType>
+<TM_SpiritAnimalChange>{0}'s spirit animal has changed from {1} to {2}.</TM_SpiritAnimalChange>
+<TM_InvalidAction>{0} cannot use {1} - invalid parameters.</TM_InvalidAction>
+
+<!-- Surgery Failed letters -->
+<LetterLabelRegrowthSurgeryFail>Surgery Failed</LetterLabelRegrowthSurgeryFail>
+<LetterRegrowthSurgeryFail>{0} just attempted to perform {1} on {2} but failed because {4} {3}.\n\nIn order to successfully perform this surgery, the following conditions must be met:\n\n1. Surgeon must be a Druid\n2. The druid must have learned the Regrow Limb spell.\n3. You must have a Seed of Life as an ingredient to perform the surgery.\n4. The druid must have 90 or more mana at the time of the surgery.\n5. After all these conditions are met, the druid must still perform the surgery successfully, which depends on their medical skill.\n\nGood luck, mage!</LetterRegrowthSurgeryFail>
+<TM_NotMagicUser>is not a magic user</TM_NotMagicUser>
+<TM_NoRegrowthSpell>has not learned the spell Regrow Limb</TM_NoRegrowthSpell>
+<TM_InsufficientManaForSurgery>did not have enough mana to complete the operation - 90 or greater is required</TM_InsufficientManaForSurgery>
+
+<!-- Caravan Request letters -->
+<LetterLabelArcaneScriptCaravan>Caravan request</LetterLabelArcaneScriptCaravan>
+<LetterArcaneScriptCaravan>A nearby settlement, {0}, contacts you with a special trade request. They would like to purchase:\n\n  {1}\n\nIn return, they offer:\n\n  {2}\n\nThis request expires after: {3}\n\nIf you want to make the trade, send a caravan with the requested supplies. You can review this offer by selecting {0} on the world map.</LetterArcaneScriptCaravan>
+
+<!-- Magic circle failed letters -->
+<LetterLabelRitualFail>Ritual failed</LetterLabelRitualFail>
+<LetterRitualFail>Your mages have failed to activate group ritual {0}. This ritual has a {1}&#37; success chance. All resources were lost.</LetterRitualFail>
+<LetterRitualFailDamage>Your mages have failed to activate group ritual {0} and suffered from a backlash of magic for up to {2} damage. This ritual has a {1}&#37; success chance. All resources were lost.</LetterRitualFailDamage>
+
+<!-- Prediction letters -->
+<TM_PredictionLetter>Prediction: {0}</TM_PredictionLetter>
+<TM_PredictionText>{0} has predicted a {1} will occur within the next {2} hours.</TM_PredictionText>
+
+<!-- Mod Settings -->
+<XPMultiplier>Mage XP gain multiplier</XPMultiplier>
+<NeedMultiplier>Mana gain multiplier</NeedMultiplier>
+<AICanCast>AI use abilities</AICanCast>
+<AIHardMode>AI hard mode</AIHardMode>
+<DeathRadius>AI mage death retaliation radius</DeathRadius>
+<AIMarking>AI mage marking</AIMarking>
+<AIFighterMarking>AI fighter marking</AIFighterMarking>
+<AIFriendlyMarking>Mark controlled pawns</AIFriendlyMarking>
+<baseMageChance>Mage precursor commonality: </baseMageChance>
+<baseFighterChance>Fighter precursor commonality: </baseFighterChance>
+<advMageChance>Mage commonality: </advMageChance>
+<advFighterChance>Fighter commonality: </advFighterChance>
+<DeathExplosionMin>minimum damage</DeathExplosionMin>
+<DeathExplosionMax>maximum damage</DeathExplosionMax>
+<DeathExplosionField>{0}</DeathExplosionField>
+<MagicyteChance>Magicyte Drop Chance</MagicyteChance>
+<showAbilitiesOnMultiSelect>Show abilities when selecting multiple pawns</showAbilitiesOnMultiSelect>
+<showMagicGizmo>Show mana/stamina/psi energy as gizmo</showMagicGizmo>
+<TM_enableAutocast>Enable auto-cast</TM_enableAutocast>
+<TM_autocastUndraftedThreshold>Minimum energy % for auto-cast (undrafted)</TM_autocastUndraftedThreshold>
+<TM_autocastDraftedThreshold>Minimum energy % for auto-cast (drafted)</TM_autocastDraftedThreshold>
+<TM_autocastEvaluationFrequency>Autocast evaluation frequency</TM_autocastEvaluationFrequency>
+<showLevelUpMessage>Show level up messages</showLevelUpMessage>
+<showUndeadPawnChange>Change undead pawn appearance</showUndeadPawnChange>
+<showUndeadAnimalChange>Change undead animal appearance</showUndeadAnimalChange>
+<unrestrictedBloodTypesForBloodMagic>Unrestricted blood types for blood magic</unrestrictedBloodTypesForBloodMagic>
+<showClassIconOnColonistBar>Show class icon on colonist bar</showClassIconOnColonistBar>
+<classIconSize>Class icon size</classIconSize>
+<TM_AggressiveAICasting>Aggressive AI Casting</TM_AggressiveAICasting>
+<TM_ParacyteSoftCap>Paracyte Soft Cap: </TM_ParacyteSoftCap>
+<TM_ParacyteMagesCount>Mages count against soft cap (2ea)</TM_ParacyteMagesCount>
+<TM_UndeadUpkeepMultiplier>Undead upkeep cost</TM_UndeadUpkeepMultiplier>
+<TM_autocastAnimals>Autocast targets animals</TM_autocastAnimals>
+<TM_UnrestrictedWeaponCopy>Unrestricted Techno-Weapons</TM_UnrestrictedWeaponCopy>
+<TM_DeathRetaliationIsLethal>Death retaliation always lethal</TM_DeathRetaliationIsLethal>
+<TM_DeathRetaliationChance>Death retaliation chance</TM_DeathRetaliationChance>
+<TM_DeathRetaliationDelay>Death retaliation delay factor</TM_DeathRetaliationDelay>
+<TM_shrinkIcons>Shrink Icons</TM_shrinkIcons>
+
+<!-- Mod Settings Class options -->
+<supportTraitChance>Supporting Trait Commonality</supportTraitChance>
+<TM_ClassWarning>**Change class settings only when starting a new game**</TM_ClassWarning>
+<TM_RequiresRestart>**Any change requires a game restart**</TM_RequiresRestart>
+<TM_ClassOptions>Enabled Classes</TM_ClassOptions>
+<TM_EnabledMages>Mages</TM_EnabledMages>
+<TM_EnabledFighters>Fighters</TM_EnabledFighters>
+<TM_Arcanist>Arcanist</TM_Arcanist>
+<TM_FireMage>Fire Mage</TM_FireMage>
+<TM_IceMage>Ice Mage</TM_IceMage>
+<TM_LitMage>Lightning Mage</TM_LitMage>
+<TM_Geomancer>Geomancer</TM_Geomancer>
+<TM_Druid>Druid</TM_Druid>
+<TM_Paladin>Paladin</TM_Paladin>
+<TM_Priest>Priest</TM_Priest>
+<TM_Bard>Bard</TM_Bard>
+<TM_Summoner>Summoner</TM_Summoner>
+<TM_Necromancer>Necromancer</TM_Necromancer>
+<TM_Demonkin>Demonkin</TM_Demonkin>
+<TM_Gladiator>Gladiator</TM_Gladiator>
+<TM_Bladedancer>Bladedancer</TM_Bladedancer>
+<TM_Sniper>Sniper</TM_Sniper>
+<TM_Ranger>Ranger</TM_Ranger>
+<TM_Faceless>Faceless</TM_Faceless>
+<TM_Psionic>Psionic</TM_Psionic>
+<TM_Technomancer>Technomancer</TM_Technomancer>
+<TM_DeathKnight>Death Knight</TM_DeathKnight>
+<TM_BloodMage>Blood Mage</TM_BloodMage>
+<TM_Enchanter>Enchanter</TM_Enchanter>
+<TM_Chronomancer>Chronomancer</TM_Chronomancer>
+<TM_Monk>Monk</TM_Monk>
+<TM_Wanderer>Wanderer</TM_Wanderer>
+<TM_Wayfarer>Wayfarer</TM_Wayfarer>
+<TM_ChaosMage>Chaos Mage</TM_ChaosMage>
+<TM_Commander>Commander</TM_Commander>
+<TM_SuperSoldier>Super Soldier</TM_SuperSoldier>
+<TM_ArcaneConduit>Arcane Conduit</TM_ArcaneConduit>
+<TM_ManaWell>Mana Well</TM_ManaWell>
+<TM_Boundless>Boundless</TM_Boundless>
+<TM_Brightmage>Brightmage</TM_Brightmage>
+<TM_Shaman>Shaman</TM_Shaman>
+<TM_Shadow>Shadow</TM_Shadow>
+<TM_CustomClasses>Custom Classes</TM_CustomClasses>
+
+<!-- Mod Settings event options -->
+<TM_EventOptions>Event Options</TM_EventOptions>
+<riftChallenge>Elemental Rift Difficulty:</riftChallenge>
+<lichChallenge>Wandering Lich Difficulty:</lichChallenge>
+<demonChallenge>Demon Assault Difficulty:</demonChallenge>
+
+<!-- Mod setings faction options -->
+<TM_FactionOptions>Faction Options</TM_FactionOptions>
+
+<!-- Mod Settings extra options -->
+<TM_ExtraOptions>Extra Options</TM_ExtraOptions>
+
+<!-- Magic Ability Point Descriptions -->
+<TM_global_regen_pwr>Clarity</TM_global_regen_pwr>
+<TM_global_regen_pwr_desc>Increases the rate mana is recovered by 5% per level.</TM_global_regen_pwr_desc>
+<TM_global_eff_pwr>Focus</TM_global_eff_pwr>
+<TM_global_eff_pwr_desc>Decreases the mana cost of all abilities by an additional 2.5% per level.</TM_global_eff_pwr_desc>
+<TM_global_spirit_pwr>Spirit</TM_global_spirit_pwr>
+<TM_global_spirit_pwr_desc>Increase maximum mana by 4 per skill level.</TM_global_spirit_pwr_desc>
+
+<TM_global_refresh_pwr>Fitness</TM_global_refresh_pwr>
+<TM_global_refresh_pwr_desc>Increases the rate stamina is recovered by 5% per level.</TM_global_refresh_pwr_desc>
+<TM_global_seff_pwr>Coordination</TM_global_seff_pwr>
+<TM_global_seff_pwr_desc>Decreases the stamina cost of all abilities by an additional 3% per level.</TM_global_seff_pwr_desc>
+<TM_global_strength_pwr>Strength</TM_global_strength_pwr>
+<TM_global_strength_pwr_desc>Increases the damage of combat abilities by 5% per level.</TM_global_strength_pwr_desc>
+<TM_global_endurance_pwr>Endurance</TM_global_endurance_pwr>
+<TM_global_endurance_pwr_desc>Increases maximum stamina by 4 per level.</TM_global_endurance_pwr_desc>
+
+<TM_WandererCraft_pwr_desc>Each skill point:
+Ability power: +1%
+Ability resistance: +2%</TM_WandererCraft_pwr_desc>
+<TM_WandererCraft_eff_desc>Each skill point:
+Ability cost: -1%
+XP gain: +2%</TM_WandererCraft_eff_desc>
+<TM_WandererCraft_ver_desc>Each skill point:
+Ability cooldown: -1%
+Mana regeneration: +1%
+Max mana: +2%</TM_WandererCraft_ver_desc>
+<TM_Cantrips_pwr_desc>Adds additional power to cantrips:
+Level 1: Smokecloud causes blindness to enemies
+Level 2: Arcane bolt minimum burst count increased to 2
+Level 3: Dirt Devil moves 33% faster
+Level 4: Extinguish causes damage to elementals and high damage to demons
+Level 5: Teleport, Heal, and Summon Minion gain power level 1 class improvements
+Level 6: Transfer mana and Siphon mana always apply buffs/debuffs 
+Level 7: Arcane bolt minimum burst count increased to 3
+Level 8: Spell Mending reparation speed increased by 25%
+Level 9: Lightning Trap triggered effect lasts longer and creates a sheet of snow
+Level 10: Teleport, Heal, and Summon Minion gain power level 2 class improvements
+Level 11: Arcane Heater spits fire at enemies
+Level 12: Arcane Cooler slows movement of nearby enemies
+Level 13: Power Node shocks nearby enemies
+Level 14: Rain causes a violent thunderstorm (instead of rain) where lightning strikes focus on enemies
+Level 15: Teleport, Heal, and Summon Minion gain power level 3 class improvements</TM_Cantrips_pwr_desc>
+<TM_Cantrips_eff_desc>Decrease max MP upkeep costs by 3% and energy regeneration penalties by 3% per skill point.
+Level 15: Wanderer gains stamina and can learn Might classless abilities.</TM_Cantrips_eff_desc>
+<TM_Cantrips_ver_desc>Adds additional utility or versatility to cantrips:
+Level 1: Blink stuns enemies around the target area
+Level 2: Smokecloud radius is expanded by 2 cells
+Level 3: Increases the efficiency of mana shield by 25%
+Level 4: Dirt Devil lasts 25% longer
+Level 5: Teleport, Heal, and Summon Minion gain versatility level 1 class improvements
+Level 6: Arcane Cooler, Arcane Heater, and Power Node apply minor buffs
+Level 7: Increases the efficiency of mana shield by 40%
+Level 8: Spell Mending doesn't apply a debuff on the target
+Level 9: Arcane Cooler, Arcane Heater, and Power Node apply additional buffs
+Level 10: Teleport, Heal, and Summon Minion gain versatility level 2 class improvements
+Level 11: Blur evasion chance increased from 20% to 30%
+Level 12: Invisibility has 25% increased duration and applies a self heal when activated
+Level 13: Magelight will fire a lightning bolt at enemies within 24 cells every 7-13 seconds
+Level 14: EMP has a 40% chance to attempt Sabotage to robots and mechanoids
+Level 15: Teleport, Heal, and Summon Minion gain versatility level 3 class improvements</TM_Cantrips_ver_desc>
+
+<TM_WandererCraft_pwr>Experimentation</TM_WandererCraft_pwr>
+<TM_WandererCraft_eff>Prodigy</TM_WandererCraft_eff>
+<TM_WandererCraft_ver>Expanded Mind</TM_WandererCraft_ver>
+<TM_Cantrips_pwr>Cantrips Power</TM_Cantrips_pwr>
+<TM_Cantrips_eff>Cantrips Efficiency</TM_Cantrips_eff>
+<TM_Cantrips_ver>Cantrips Versatility</TM_Cantrips_ver>
+
+<TM_RayofHope_eff>Inner Fire Efficiency</TM_RayofHope_eff>
+<TM_RayofHope_eff_desc>Decreases the mana upkeep cost of Inner Fire by 8% per level.</TM_RayofHope_eff_desc>
+<TM_Firebolt_pwr_desc>Increases Firebolt damage by 5 per level.</TM_Firebolt_pwr_desc>
+<TM_Firebolt_eff_desc>Decreases mana cost of Firebolt by 10% per level.</TM_Firebolt_eff_desc>
+<TM_Fireclaw_pwr_desc>Increases damage done by each strand of Fireclaw by 4 per skill level.
+Level 1: 4
+Level 2: 8
+Level 3: 12</TM_Fireclaw_pwr_desc>
+<TM_Fireclaw_eff_desc>Decrease mana cost by 10% per level.</TM_Fireclaw_eff_desc>
+<TM_Fireclaw_ver_desc>Adds additional claws at levels 1 and 2, expands claw strike radius at level 3.</TM_Fireclaw_ver_desc>
+<TM_Fireball_pwr_desc>Increases the number of secondary explosions by 3 per level.</TM_Fireball_pwr_desc>
+<TM_Fireball_eff_desc>Decrease mana cost by 8% per level.</TM_Fireball_eff_desc>
+<TM_Fireball_ver_desc>Fireball causes Terror at level 1; levels 2 and 3 increase Terror potency. Terror lowers the enemies ability to fight effectively and may cause them to flee in panic.</TM_Fireball_ver_desc>
+<TM_Firestorm_pwr_desc>Increases the frequency of all meteor types.
+Increases Firestorm radius by .25 per skill level.</TM_Firestorm_pwr_desc>
+<TM_Firestorm_eff_desc>Decrease mana cost by 5% per level.</TM_Firestorm_eff_desc>
+<TM_Firestorm_ver_desc>Increases the duration of Firestorm by 1 second per skill level.
+Increases Firestorm radius by .25 per skill level.
+Increases amount of shrapnel create by meteor impacts.</TM_Firestorm_ver_desc>
+
+<TM_Firebolt_pwr>Firebolt Power</TM_Firebolt_pwr>
+<TM_Firebolt_eff>Firebolt Efficiency</TM_Firebolt_eff>
+<TM_Fireclaw_pwr>Fireclaw Power</TM_Fireclaw_pwr>
+<TM_Fireclaw_eff>Fireclaw Efficiency</TM_Fireclaw_eff>
+<TM_Fireclaw_ver>Fireclaw Versatility</TM_Fireclaw_ver>
+<TM_Fireball_pwr>Fireball Power</TM_Fireball_pwr>
+<TM_Fireball_eff>Fireball Efficiency</TM_Fireball_eff>
+<TM_Fireball_ver>Fireball Versatility</TM_Fireball_ver>
+<TM_Firestorm_pwr>Firestorm Power</TM_Firestorm_pwr>
+<TM_Firestorm_eff>Firestorm Efficiency</TM_Firestorm_eff>
+<TM_Firestorm_ver>Firestorm Versatility</TM_Firestorm_ver>
+
+<TM_Soothe_eff_desc>Decreases the mana upkeep cost of Soothe by 8% per level.</TM_Soothe_eff_desc>
+<TM_Rainmaker_eff_desc>Decreases mana cost of Rainmaker by 15% per level of base mana cost.</TM_Rainmaker_eff_desc>
+<TM_Icebolt_pwr_desc>Increases lethality of Icebolt by pre-fragmenting the bolt into razor sharp shards.
+Level 0: 2 to 5 damage per shard
+Level 1: 4 to 9 damage per shard
+Level 2: 6 to 13 damage per shard
+Level 3: 8 to 17 damage per shard</TM_Icebolt_pwr_desc>
+<TM_Icebolt_eff_desc>Decreases mana cost of Icebolt by 8% per level of base mana cost.</TM_Icebolt_eff_desc>
+<TM_Icebolt_ver_desc>Increases the compression and size of Icebolt, each skill level increases the number of ice shards upon impact.
+Level 0: 2 to 3 shards
+Level 1: 3 to 8 shards
+Level 2: 4 to 14 shards
+Level 3: 5 to 20 shards</TM_Icebolt_ver_desc>
+<TM_FrostRay_eff_desc>Decreases mana cost of Frost Ray by 8% of base mana cost.</TM_FrostRay_eff_desc>
+<TM_Snowball_pwr_desc>Increases the size of the Snowball, causing an increase in impact area by .7 cells per level and increases damage up to 3 per level.</TM_Snowball_pwr_desc>
+<TM_Snowball_eff_desc>Decreases mana cost of Snowball by 8% per level of base mana cost.</TM_Snowball_eff_desc>
+<TM_Snowball_ver_desc>Increases the compression of Snowball which amplifies the number and force of secondary fragments that are thrown nearby the impact point.
+Level 0: None
+Level 1: 4 fragments
+Level 2: 8 fragments
+Level 3: 12 fragments</TM_Snowball_ver_desc>
+<TM_Blizzard_pwr_desc>Increases the frequency of iceshards and snowballs.
+Increases the radius of blizzard by .5 per skill level.</TM_Blizzard_pwr_desc>
+<TM_Blizzard_eff_desc>Decreases mana cost of Blizzard by 8% per level of base mana cost.</TM_Blizzard_eff_desc>
+<TM_Blizzard_ver_desc>Increases the duration of blizzard by 1.5 seconds per level.
+Increases the radius of blizzard by .5 per skill level.</TM_Blizzard_ver_desc>
+
+<TM_Soothe_eff>Soothe Efficiency</TM_Soothe_eff>
+<TM_Rainmaker_eff>Rainmaker Efficiency</TM_Rainmaker_eff>
+<TM_Icebolt_eff>Icebolt Efficiency</TM_Icebolt_eff>
+<TM_Icebolt_pwr>Icebolt Power</TM_Icebolt_pwr>
+<TM_Icebolt_ver>Icebolt Versatility</TM_Icebolt_ver>
+<TM_FrostRay_eff>Frost Ray Efficiency</TM_FrostRay_eff>
+<TM_Snowball_eff>Snowball Efficiency</TM_Snowball_eff>
+<TM_Snowball_pwr>Snowball Power</TM_Snowball_pwr>
+<TM_Snowball_ver>Snowball Versatility</TM_Snowball_ver>
+<TM_Blizzard_eff>Blizzard Efficiency</TM_Blizzard_eff>
+<TM_Blizzard_pwr>Blizzard Power</TM_Blizzard_pwr>
+<TM_Blizzard_ver>Blizzard Versatility</TM_Blizzard_ver>
+
+<TM_AMP_eff_desc>Decreases mana cost of AMP by 8% per level of base mana cost.</TM_AMP_eff_desc>
+<TM_LightningBolt_pwr_desc>Increases raw damage of Lightning Bolt by 6 per level.</TM_LightningBolt_pwr_desc>
+<TM_LightningBolt_eff_desc>Decreases mana cost of Lightning Bolt by 8% of base mana cost.</TM_LightningBolt_eff_desc>
+<TM_LightningBolt_ver_desc>Increases the possibility of secondary lightning strikes by 1 to 4 per level.</TM_LightningBolt_ver_desc>
+<TM_LightningCloud_eff_desc>Decreases mana cost of Lightning Cloud by 6% of base mana cost.</TM_LightningCloud_eff_desc>
+<TM_LightningCloud_pwr_desc>Increases the shock damage of Lightning Cloud by 1 per level.</TM_LightningCloud_pwr_desc>
+<TM_LightningCloud_ver_desc>Increases duration of Lightning Cloud by 2 seconds per level.</TM_LightningCloud_ver_desc>
+<TM_LightningStorm_eff_desc>Decreases mana cost of Lightning Storm by 6% of base mana cost.</TM_LightningStorm_eff_desc>
+<TM_LightningStorm_pwr_desc>Increases the frequency of lightning strikes by 20% per level and slightly increases the damage of each strike.</TM_LightningStorm_pwr_desc>
+<TM_LightningStorm_ver_desc>Increases duration of Lightning Storm by 1s per level and expands the area of effect.</TM_LightningStorm_ver_desc>
+<TM_EyeOfTheStorm_eff_desc>Uses energy in the atmosphere to fuel creation of the storm.  Reduces mana cost by 5% per skill level.</TM_EyeOfTheStorm_eff_desc>
+<TM_EyeOfTheStorm_pwr_desc>Increases the frequency the eye's lightning strikes by 20% per level and increases the damage of each strike by 20%.</TM_EyeOfTheStorm_pwr_desc>
+<TM_EyeOfTheStorm_ver_desc>Expands the strike radius by 1 for each skill level.  Base radius is 5.</TM_EyeOfTheStorm_ver_desc>
+
+
+<TM_AMP_eff>AMP Efficiency</TM_AMP_eff>
+<TM_LightningBolt_eff>Lightning Bolt Efficiency</TM_LightningBolt_eff>
+<TM_LightningBolt_pwr>Lightning Bolt Power</TM_LightningBolt_pwr>
+<TM_LightningBolt_ver>Lightning Bolt Versatility</TM_LightningBolt_ver>
+<TM_LightningCloud_eff>Lightning Cloud Efficiency</TM_LightningCloud_eff>
+<TM_LightningCloud_pwr>Lightning Cloud Power</TM_LightningCloud_pwr>
+<TM_LightningCloud_ver>Lightning Cloud Versatility</TM_LightningCloud_ver>
+<TM_LightningStorm_eff>Lightning Storm Efficiency</TM_LightningStorm_eff>
+<TM_LightningStorm_pwr>Lightning Storm Power</TM_LightningStorm_pwr>
+<TM_LightningStorm_ver>Lightning Storm Versatility</TM_LightningStorm_ver>
+<TM_EyeOfTheStorm_eff>Drain Atmosphere</TM_EyeOfTheStorm_eff>
+<TM_EyeOfTheStorm_pwr>Rend Earth</TM_EyeOfTheStorm_pwr>
+<TM_EyeOfTheStorm_ver>Perfect Storm</TM_EyeOfTheStorm_ver>
+
+<TM_Shadow_eff_desc>Decreases the mana upkeep cost of Shadow by 8% per level.</TM_Shadow_eff_desc>
+<TM_Blink_eff_desc>Decreases mana cost of Blink by 10% per level of base mana cost.</TM_Blink_eff_desc>
+<TM_Summon_eff_desc>Decreases mana cost of Summon by 10% per level of base mana cost.</TM_Summon_eff_desc>
+<TM_MagicMissile_eff_desc>Decreases mana cost of Magic Missile by 8% of base mana cost.</TM_MagicMissile_eff_desc>
+<TM_Teleport_eff_desc>Decreases mana cost of Teleport by 10% per level of base mana cost.</TM_Teleport_eff_desc>
+<TM_Teleport_pwr_desc>Draws more energy into the teleporter, allowing 33% further travel distance per level.
+Allows the portal to be held open 20s longer per level.</TM_Teleport_pwr_desc>
+<TM_Teleport_ver_desc>Refines the transport process, adding 400 transportation capacity per skill level, 600 at level 3.  
+Allows the portal to be held open 20s longer per level.</TM_Teleport_ver_desc>
+<TM_FoldReality_eff_desc>Decreases mana cost to Fold Reality by 6% per skill level.</TM_FoldReality_eff_desc>
+
+<TM_Shadow_eff>Shadow Efficiency</TM_Shadow_eff>
+<TM_MagicMissile_eff>Magic Missile Efficiency</TM_MagicMissile_eff>
+<TM_Blink_eff>Blink Efficiency</TM_Blink_eff>
+<TM_Summon_eff>Summon Efficiency</TM_Summon_eff>
+<TM_Teleport_eff>Teleport Efficiency</TM_Teleport_eff>
+<TM_Teleport_pwr>Teleport Power</TM_Teleport_pwr>
+<TM_Teleport_ver>Teleport Versatility</TM_Teleport_ver>
+<TM_FoldReality_eff>Fold Reality Efficiency</TM_FoldReality_eff>
+
+<TM_P_RayofHope_eff_desc>Decreases the mana upkeep cost of Ray of Hope by 8% per level.</TM_P_RayofHope_eff_desc>
+<TM_Heal_eff_desc>Decreases mana cost of Heal by 7% of base mana cost.</TM_Heal_eff_desc>
+<TM_Heal_pwr_desc>Increases the amount each wound is healed by 2 points per level.</TM_Heal_pwr_desc>
+<TM_Heal_ver_desc>Increases the maximum number of wounds that can be healed per spell by 1 per level.</TM_Heal_ver_desc>
+<TM_Shield_eff_desc>Decreases mana cost of Shield by 8% of base mana cost.</TM_Shield_eff_desc>
+<TM_ValiantCharge_eff_desc>Decreases mana cost of Valiant Charge by 8% of base mana cost.</TM_ValiantCharge_eff_desc>
+<TM_ValiantCharge_pwr_desc>Increases damage of Valiant Charge by 1 to 4 per level.</TM_ValiantCharge_pwr_desc>
+<TM_ValiantCharge_ver_desc>Increase the force of impact, expanding the size of impact and amount of debris.
+Can stun at level 2.</TM_ValiantCharge_ver_desc>
+<TM_Overwhelm_eff_desc>Decreases mana cost of Overwhelm by 10% of base mana cost.</TM_Overwhelm_eff_desc>
+<TM_Overwhelm_pwr_desc>Increases damage potential of overwhelm.</TM_Overwhelm_pwr_desc>
+<TM_Overwhelm_ver_desc>Summons more powerful symbols at level 1 and 3.
+Overwhelm can stun at level 2 and improved stun at level 3.</TM_Overwhelm_ver_desc>
+<TM_HolyWrath_eff_desc>Decreases mana cost of Holy Wrath by 5% of base mana cost.</TM_HolyWrath_eff_desc>
+<TM_HolyWrath_pwr_desc>Requires 2 ability points per skill level. Increases number of strikes by 1 per skill level. Base number of strikes is 5.</TM_HolyWrath_pwr_desc>
+<TM_HolyWrath_ver_desc>Requires 2 ability points per skill level.
+Level 1: allies within the field of Holy Wrath become temporarily invulnerable
+Level 2: allies are healed for a small amount
+Level 3: Holy Wrath bestows might to all allies within the effect</TM_HolyWrath_ver_desc>
+
+
+<TM_P_RayofHope_eff>Ray of Hope Efficiency</TM_P_RayofHope_eff>
+<TM_Heal_eff>Heal Efficiency</TM_Heal_eff>
+<TM_Heal_pwr>Heal Power</TM_Heal_pwr>
+<TM_Heal_ver>Heal Versatility</TM_Heal_ver>
+<TM_Shield_eff>Shield Efficiency</TM_Shield_eff>
+<TM_ValiantCharge_eff>Valiant Charge Efficiency</TM_ValiantCharge_eff>
+<TM_ValiantCharge_pwr>Valiant Charge Power</TM_ValiantCharge_pwr>
+<TM_ValiantCharge_ver>Valiant Charge Versatility</TM_ValiantCharge_ver>
+<TM_Overwhelm_eff>Overwhelm Efficiency</TM_Overwhelm_eff>
+<TM_Overwhelm_pwr>Overwhelm Power</TM_Overwhelm_pwr>
+<TM_Overwhelm_ver>Overwhelm Versatility</TM_Overwhelm_ver>
+<TM_HolyWrath_eff>Purity of Heart</TM_HolyWrath_eff>
+<TM_HolyWrath_pwr>Holy Vengeance</TM_HolyWrath_pwr>
+<TM_HolyWrath_ver>Redemption</TM_HolyWrath_ver>
+
+<TM_SummonMinion_eff_desc>Decreases mana cost to summon minions by 10% of base mana cost. Also reduces upkeep cost by 10%.</TM_SummonMinion_eff_desc>
+<TM_SummonMinion_pwr_desc>Increases the number or power of minions summoned.
+Level 0: summons one minion.
+Level 1: summons two minions.
+Level 2: summons one greater minion.
+Level 3: summons two greater minions.</TM_SummonMinion_pwr_desc>
+<TM_SummonMinion_ver_desc>Increases the duration of the summoning by 10m per skill point.  Base duration is 20m.</TM_SummonMinion_ver_desc>
+<TM_SummonPylon_eff_desc>Decreases mana cost to summon a defensive pylon by 8% of base mana cost.</TM_SummonPylon_eff_desc>
+<TM_SummonPylon_pwr_desc>Increases the range and power of the defensive pylon created.</TM_SummonPylon_pwr_desc>
+<TM_SummonPylon_ver_desc>Increases the duration of the summoning by 2m per skill point. Base duration is 4m.</TM_SummonPylon_ver_desc>
+<TM_SummonExplosive_eff_desc>Decreases mana cost to create a mana mine by 8% of per skill level.</TM_SummonExplosive_eff_desc>
+<TM_SummonExplosive_pwr_desc>Increases the power of the mine by 20% per skill level.
+Increases explosion radius by 20% per skill level.</TM_SummonExplosive_pwr_desc>
+<TM_SummonExplosive_ver_desc>Increases the duration the mana mine remains stable by 2m per skill point. Base duration is 4m. Mana mine will harmlessly dissolve if the timer expires.</TM_SummonExplosive_ver_desc>
+<TM_SummonElemental_eff_desc>Decreases mana cost to summon an elemental by 6% of base mana cost.</TM_SummonElemental_eff_desc>
+<TM_SummonElemental_pwr_desc>Increases the power of the elemental summoned.
+At rank 3: summons two lesser elementals to accompany your primary summon.</TM_SummonElemental_pwr_desc>
+<TM_SummonElemental_ver_desc>Increases the duration of the summoning by 15s per skill point.  Base duration is 30s.</TM_SummonElemental_ver_desc>
+<TM_SummonPoppi_eff_desc>Decreases mana cost to summon a band of poppi by 5% each skill point, but really, who can put a price on happiness?</TM_SummonPoppi_eff_desc>
+<TM_SummonPoppi_pwr_desc>Even more poppi, snuggles for everyone.</TM_SummonPoppi_pwr_desc>
+<TM_SummonPoppi_ver_desc>Hanging out with those poppi is even more of a blast.</TM_SummonPoppi_ver_desc>
+
+<TM_SummonMinion_eff>Coercion</TM_SummonMinion_eff>
+<TM_SummonMinion_pwr>Enticing Offer</TM_SummonMinion_pwr>
+<TM_SummonMinion_ver>Taskmaster</TM_SummonMinion_ver>
+<TM_SummonPylon_eff>Arcane Molding</TM_SummonPylon_eff>
+<TM_SummonPylon_pwr>Improved Pylons</TM_SummonPylon_pwr>
+<TM_SummonPylon_ver>Durable Pylons</TM_SummonPylon_ver>
+<TM_SummonExplosive_eff>Adept Creation</TM_SummonExplosive_eff>
+<TM_SummonExplosive_pwr>Improved Reactor</TM_SummonExplosive_pwr>
+<TM_SummonExplosive_ver>Durable Mines</TM_SummonExplosive_ver>
+<TM_SummonElemental_eff>Elemental Affinity</TM_SummonElemental_eff>
+<TM_SummonElemental_pwr>Planes Walker</TM_SummonElemental_pwr>
+<TM_SummonElemental_ver>Words of Binding</TM_SummonElemental_ver>
+<TM_SummonPoppi_eff>Poppi Enthusiast</TM_SummonPoppi_eff>
+<TM_SummonPoppi_pwr>Catch Them All</TM_SummonPoppi_pwr>
+<TM_SummonPoppi_ver>Snuggle Catalyst</TM_SummonPoppi_ver>
+
+<TM_Poison_eff_desc>Reduces the cost of Poison by 10% per skill level.</TM_Poison_eff_desc>
+<TM_Poison_pwr_desc>Increases the potency of poison, dealing 25% more per skill level for each square the victim moves.</TM_Poison_pwr_desc>
+<TM_Poison_ver_desc>Increases the minimum and maximum severity levels of poison.  Severity levels cause reduction in fighting and moving capacities. Also increases duration of poison by 10% per level.
+Level 0: (10%-40%), Duration 45s
+Level 1: (20%-60%), Duration 49.5s
+Level 2: (30%-80%), Duration 54s
+Level 3: (40%-80%), Duration 58.5s</TM_Poison_ver_desc>
+<TM_SootheAnimal_eff_desc>Reduces the cost of Beguile Animal by 10% per skill level.</TM_SootheAnimal_eff_desc>
+<TM_SootheAnimal_pwr_desc>Animals will receive arcane buffs when enraged, and arcane debuffs when pacified.  Skill level determines the strength of these modifiers, no modifiers occur at skill level 0.</TM_SootheAnimal_pwr_desc>
+<TM_Regenerate_eff_desc>Reduces the cost of Regeneration by 7% per skill level.</TM_Regenerate_eff_desc>
+<TM_Regenerate_pwr_desc>Increases the amount regeneration heals each tick by .5 health per level.  Base regeneration is 4 health.</TM_Regenerate_pwr_desc>
+<TM_Regenerate_ver_desc>Increases the duration of regeneration per skill level, duration is random between stated values:
+Level 0: 16s - 50s
+Level 1: 33s - 100s
+Level 2: 50s - 150s
+Level 3: 67s - 200s</TM_Regenerate_ver_desc>
+<TM_CureDisease_eff_desc>Reduces the cost of Cure Disease by 10% per skill level.</TM_CureDisease_eff_desc>
+<TM_CureDisease_pwr_desc>Improves the effectiveness of Cure Disease. The higher the skill level, the more likely the spell cures the disease instead of reducing it.
+Level 0: 75% success chance
+Level 1: 100% success chance on understood diseases (Disease Knowledge)
+Level 2: Boost disease immunity of the target by 15% for 3 days
+Level 3: Boost disease immunity of the target by 25% for 5 days</TM_CureDisease_pwr_desc>
+<TM_CureDisease_ver_desc>Study of diseases allows the druid to cure more advanced maladies.
+Level 0: Flu and Wound Infections
+Level 1: Gut Worms, Food Poisoning, and Malaria
+Level 2: Sleeping Sickness, Muscle Parasites and Scaria
+Level 3: The Plague and Blood Rot</TM_CureDisease_ver_desc>
+<TM_RegrowLimb_eff_desc>Reduces the mana required to regrow limbs (surgery) by 6% per skill level.  Regrowth is unaffected by global mana cost reductions.</TM_RegrowLimb_eff_desc>
+
+<TM_Poison_eff>Extraction Methods</TM_Poison_eff>
+<TM_Poison_pwr>Poison Potency</TM_Poison_pwr>
+<TM_Poison_ver>Weakened Limbs</TM_Poison_ver>
+<TM_SootheAnimal_eff>Beguiling Nature</TM_SootheAnimal_eff>
+<TM_SootheAnimal_pwr>Augmented Control</TM_SootheAnimal_pwr>
+<TM_Regenerate_eff>Efficient Regeneration</TM_Regenerate_eff>
+<TM_Regenerate_pwr>Intensified Regeneration</TM_Regenerate_pwr>
+<TM_Regenerate_ver>Enduring Regeneration</TM_Regenerate_ver>
+<TM_CureDisease_eff>Natural Healing</TM_CureDisease_eff>
+<TM_CureDisease_pwr>Effective Treatment</TM_CureDisease_pwr>
+<TM_CureDisease_ver>Disease Knowledge</TM_CureDisease_ver>
+<TM_RegrowLimb_eff>Regrowth Mastery</TM_RegrowLimb_eff>
+
+<TM_RaiseUndead_eff_desc>Reduces mana cost of Raise Undead by 5% per skill level. Reduces cost to maintain undead by 10% per skill level.</TM_RaiseUndead_eff_desc>
+<TM_RaiseUndead_pwr_desc>Increases the number of undead that can be created with each spell by 1 per skill level and increases their learned skills by 10% per skill point.
+Level 0: 2
+Level 1: 3
+Level 2: 4
+Level 3: 5</TM_RaiseUndead_pwr_desc>
+<TM_RaiseUndead_ver_desc>Undead movement and action speed increases by 5% per skill level.</TM_RaiseUndead_ver_desc>
+<TM_DeathMark_ver_desc>Death Mark can cause terror and berserk afflictions. Each skill point increases the chance to apply an additional affliction by 10%.</TM_DeathMark_ver_desc>
+<TM_DeathMark_eff_desc>Reduces mana cost of Death Mark by 8% per skill level.</TM_DeathMark_eff_desc>
+<TM_DeathMark_pwr_desc>Increases the severity of Death Mark by 50% per skill level.</TM_DeathMark_pwr_desc>
+<TM_FogOfTorment_eff_desc>Reduces mana cost of Fog of Torment by 8% per skill level.</TM_FogOfTorment_eff_desc>
+<TM_FogOfTorment_pwr_desc>Increases damage and penalties caused by fog of torment by 33% per skill level.  Also increases the amount undead are healed by 50% per skill level.
+Level 0: 2-4 damage, 2 healing 
+Level 1: 3-5 damage, 3 healing
+Level 2: 4-6 damage, 4 healing
+Level 3: 5-7 damage, 5 healing</TM_FogOfTorment_pwr_desc>
+<TM_FogOfTorment_ver_desc>Increases the duration, reduces time between effects, and expands the radius of Fog of Torment.
+Level 0: radius 6, effect/2s, duration 24s
+Level 1: radius 7, effect/1.7s, duration 27s
+Level 2: radius 8, effect/1.4s, duration 30s
+Level 3: radius 9, effect/1.1s, duration 33s</TM_FogOfTorment_ver_desc>
+<TM_ConsumeCorpse_eff_desc>Increases mana restored by Consume Corpse by 7% per skill level.</TM_ConsumeCorpse_eff_desc>
+<TM_ConsumeCorpse_ver_desc>Consume corpse also heals the physical wounds of the caster.  
+The amount of health varies based on type (human or animal) and freshness of the corpse or undead being consumed.</TM_ConsumeCorpse_ver_desc>
+<TM_CorpseExplosion_pwr_desc>Increases the damage of Corpse Explosion by 5 per skill level.  Also increases the explosion radius by 10%.
+Level 0: 18-30
+Level 1: 23-35
+Level 2: 28-40
+Level 3: 32-45</TM_CorpseExplosion_pwr_desc>
+<TM_CorpseExplosion_eff_desc>Reduces mana cost of Corpse Explosion by 8% per skill level.</TM_CorpseExplosion_eff_desc>
+<TM_CorpseExplosion_ver_desc>Reduces explosion delay by 1s per skill point.  Also increases the explosion radius by 10%.</TM_CorpseExplosion_ver_desc>
+<TM_DeathBolt_pwr_desc>Increases the damage of Death Bolt by 5 per skill level and Spreading Darkness by 3 per skill level.
+Level 0: 18-35; Spreading Darkness: 12-24
+Level 1: 23-40; Spreading Darkness: 15-27
+Level 2: 28-45; Spreading Darkness: 18-30
+Level 3: 33-50; Spreading Darkness: 21-33</TM_DeathBolt_pwr_desc>
+<TM_DeathBolt_eff_desc>Reduces mana cost of Death Bolt by 6% per skill level.</TM_DeathBolt_eff_desc>
+<TM_DeathBolt_ver_desc>Darkness spreads further from the point of impact.</TM_DeathBolt_ver_desc>
+
+<TM_RaiseUndead_eff>Cheating Death</TM_RaiseUndead_eff>
+<TM_RaiseUndead_pwr>Powered Creation</TM_RaiseUndead_pwr>
+<TM_RaiseUndead_ver>Hastened Undead</TM_RaiseUndead_ver>
+<TM_DeathMark_ver>Withering Curse</TM_DeathMark_ver>
+<TM_DeathMark_eff>Efficient Mark</TM_DeathMark_eff>
+<TM_DeathMark_pwr>Overwhelming Mark</TM_DeathMark_pwr>
+<TM_FogOfTorment_eff>Unnatural Wind</TM_FogOfTorment_eff>
+<TM_FogOfTorment_pwr>Deadly Torment</TM_FogOfTorment_pwr>
+<TM_FogOfTorment_ver>Lingering Fog</TM_FogOfTorment_ver>
+<TM_ConsumeCorpse_eff>Greedy Consumption</TM_ConsumeCorpse_eff>
+<TM_ConsumeCorpse_ver>Healing Consumption</TM_ConsumeCorpse_ver>
+<TM_CorpseExplosion_pwr>Violent Explosion</TM_CorpseExplosion_pwr>
+<TM_CorpseExplosion_eff>Corpse Mastery</TM_CorpseExplosion_eff>
+<TM_CorpseExplosion_ver>Volatile Toxins</TM_CorpseExplosion_ver>
+<TM_DeathBolt_pwr>Unholy Might</TM_DeathBolt_pwr>
+<TM_DeathBolt_eff>Eternal Learning</TM_DeathBolt_eff>
+<TM_DeathBolt_ver>Spreading Darkness</TM_DeathBolt_ver>
+
+<TM_AdvancedHeal_eff_desc>Reduces mana cost of Advanced Heal by 8% per level.</TM_AdvancedHeal_eff_desc>
+<TM_AdvancedHeal_ver_desc>Increases the maximum number of wounds healed by 1 per level.</TM_AdvancedHeal_ver_desc>
+<TM_AdvancedHeal_pwr_desc>Increases the amount each wound is healed by 3 points per level.</TM_AdvancedHeal_pwr_desc>
+<TM_Purify_eff_desc>Reduces the mana cost of Purify by 6% per level.</TM_Purify_eff_desc>
+<TM_Purify_ver_desc>Increases number of ailments that can be cured per use. Skill increase expands the types of ailments that can be purified:
+Level 0: 
+Physical - Cataracts, Hearing Loss, Toxic buildup
+Drug Addictions - Smokeleaf, Alcohol
+Level 1:
+Physical - Blindness, Asthma, Cirrhosis, Moderate chemical damage
+Drug Addictions - Go-Juice, WakeUp
+Level 2:
+Physical - Frailty, Bad back, Carcinoma, Severe chemical damage 
+Drug - Psychite
+Level 3:
+Physical - brain, heart and paralysis conditions
+Drug - Any addiction including Luciferium</TM_Purify_ver_desc>
+<TM_Purify_pwr_desc>Increases effectiveness of Purify.
+Scars are healed by 2 points + 2x skill level; Brain injuries require a skill level of 1 or greater and heals 1 point per skill level.\n\n
+Physical conditions such as blindness or carcinoma are healed or reduced, depending on skill level. If the power of purify is not enough to cure the condition outright, multiple uses of purify can be used to reduce, then cure the condition.\n\n
+Each skill point increases the effectiveness in overcoming a drug addiction; may require multiple uses to completely overcome an addiction.</TM_Purify_pwr_desc>
+<TM_HealingCircle_eff_desc>Reduces mana cost of Healing Circle by 7% per skill point.</TM_HealingCircle_eff_desc>
+<TM_HealingCircle_ver_desc>Increases number of injuries that can be healed per wave. Also increases the duration of Healing Circle by 3s per skill point.
+Level 0: 1 injury
+Level 1: 2 injuries
+Level 2: 3 injuries
+Level 3: 4 injuries</TM_HealingCircle_ver_desc>
+<TM_HealingCircle_pwr_desc>Increases amount each wound is healed. Also increases the duration of Healing Circle by 3s per skill point.
+Level 0: 10 health
+Level 1: 12 health
+Level 2: 14 health
+Level 3: 16 health
+Level 4: 18 health</TM_HealingCircle_pwr_desc>
+<TM_BestowMight_eff_desc>Reduces mana cost of Bestow Might by 8% per skill point.</TM_BestowMight_eff_desc>
+<TM_Resurrection_eff_desc>Reduces mana cost of Resurrection by 5% per skill level and reduces the amount of skill experience lost by 2% per skill level.</TM_Resurrection_eff_desc>
+<TM_Resurrection_ver_desc>Increases the chance to prevent resurrection side effects by 10% and reduces skill loss by 10% per skill level.</TM_Resurrection_ver_desc>
+
+<TM_AdvancedHeal_eff>Efficient Healing</TM_AdvancedHeal_eff>
+<TM_AdvancedHeal_ver>Deep Healing</TM_AdvancedHeal_ver>
+<TM_AdvancedHeal_pwr>Healing Power</TM_AdvancedHeal_pwr>
+<TM_Purify_eff>Unquestioned Purity</TM_Purify_eff>
+<TM_Purify_ver>Comprehensive Purity</TM_Purify_ver>
+<TM_Purify_pwr>Burning Purity</TM_Purify_pwr>
+<TM_HealingCircle_eff>Efficient Circle</TM_HealingCircle_eff>
+<TM_HealingCircle_ver>High Tide</TM_HealingCircle_ver>
+<TM_HealingCircle_pwr>Soothing Waves</TM_HealingCircle_pwr>
+<TM_BestowMight_eff>Practiced Blessing</TM_BestowMight_eff>
+<TM_Resurrection_ver>Graceful Resurrection</TM_Resurrection_ver>
+<TM_Resurrection_eff>Guiding Light</TM_Resurrection_eff>
+
+
+<TM_BardTraining_pwr_desc>Advances the Bard trait to the next level. Entertainer -> Performer -> Minstrel -> Bard. Requires 2 points to train.</TM_BardTraining_pwr_desc>
+<TM_Entertain_ver_desc>Increases the chance to have favorable conversations with other colonists.</TM_Entertain_ver_desc>
+<TM_Entertain_pwr_desc>Increases how often the bard is willing to have social interaction.</TM_Entertain_pwr_desc>
+<TM_Inspire_ver_desc>The bard learns new ways to inspire colonists.
+Level 0: may cause common inspirations
+Level 1: may cause resource frenzy inspirations
+Level 2: may cause learning and social inspirations
+Level 3: may cause heroic inspirations for magic or might classes.</TM_Inspire_ver_desc>
+<TM_Inspire_pwr_desc>Increases how often the bard will attempt to inspire fellow colonists.</TM_Inspire_pwr_desc>
+<TM_Lullaby_eff_desc>Reduces mana cost of Lullaby by 8% per skill point.</TM_Lullaby_eff_desc>
+<TM_Lullaby_pwr_desc>Increases chance lullaby is effective by 10% per skill point.
+Level 0: 40%
+Level 1: 50%
+Level 2: 60%
+Level 3: 70%</TM_Lullaby_pwr_desc>
+<TM_Lullaby_ver_desc>Lullaby reduces the consciousness of effected pawns - works even if lullaby was resisted.
+Level 0: N/A
+Level 1: -10% consciousness
+Level 2: -15% consciousness
+Level 3: -20% consciousness</TM_Lullaby_ver_desc>
+<TM_BattleHymn_eff_desc>Reduces mana cost to use and maintain Battle Hymn by 6% per skill level.</TM_BattleHymn_eff_desc>
+<TM_BattleHymn_ver_desc>Increases range of battle hymn by 3m per skill point (base 17m). Also increases the tempo of battle hymn by .5s (5s base).</TM_BattleHymn_ver_desc>
+<TM_BattleHymn_pwr_desc>Increases the effects of battle hymn 12% per skill point for each verse (iteration) it remains active and increases the chance of invoking an inspiration by 1%.</TM_BattleHymn_pwr_desc>
+
+<TM_BardTraining_pwr>Bard Training</TM_BardTraining_pwr>
+<TM_Entertain_ver>Abundant Laughter</TM_Entertain_ver>
+<TM_Entertain_pwr>Improvisation</TM_Entertain_pwr>
+<TM_Inspire_ver>Playwright</TM_Inspire_ver>
+<TM_Inspire_pwr>Charisma</TM_Inspire_pwr>
+<TM_Lullaby_eff>Deft Hands</TM_Lullaby_eff>
+<TM_Lullaby_pwr>Ear-worm</TM_Lullaby_pwr>
+<TM_Lullaby_ver>Resonance</TM_Lullaby_ver>
+<TM_BattleHymn_ver>Lingering Note</TM_BattleHymn_ver>
+<TM_BattleHymn_eff>Vocalist</TM_BattleHymn_eff>
+<TM_BattleHymn_pwr>Heroic Chorus</TM_BattleHymn_pwr>
+
+<TM_SoulBond_pwr_desc>Increases the benefit of Soul Bond to the demonkin.</TM_SoulBond_pwr_desc>
+<TM_SoulBond_eff_desc>Decreases the mana cost to use Shadow Step and Shadow Call by 10% per skill point.</TM_SoulBond_eff_desc>
+<TM_SoulBond_ver_desc>Decreases the burden of Soul Bond on the host.</TM_SoulBond_ver_desc>
+<TM_ShadowBolt_ver_desc>Increases the proximity damage and radius of Shadow Bolt.</TM_ShadowBolt_ver_desc>
+<TM_ShadowBolt_pwr_desc>Increases the direct damage of Shadow Bolt by 10% and size and damage of the shadow aftershock by 25% per skill level.</TM_ShadowBolt_pwr_desc>
+<TM_ShadowBolt_eff_desc>Decreases mana cost of Shadow Bolt by 8% per skill level.</TM_ShadowBolt_eff_desc>
+<TM_Dominate_ver_desc>Deepens Domination's shadow, increasing the duration of Dominate and the infection radius.
+Level 0: 15-30s, 3cell radius
+Level 1: 25-40s, 4cell radius
+Level 2: 35-50s, 5cell radius
+Level 3: 45-60s, 6cell radius</TM_Dominate_ver_desc>
+<TM_Dominate_pwr_desc>Increases the power of dominate and increases the frequency that it spreads. Succubi decrease physical and combat capabilities; Warlock increase the type and frequency of mental breaks as well as reducing consciousness levels.</TM_Dominate_pwr_desc>
+<TM_Dominate_eff_desc>Decreases the mana cost of Dominate by 6% and reduces the severity cost to propagate dominate to another host by 20%.</TM_Dominate_eff_desc>
+<TM_Attraction_eff_desc>Reduces mana cost of Attraction by 8% per skill point.</TM_Attraction_eff_desc>
+<TM_Attraction_pwr_desc>Increases the radius of Attraction by 1.5cells per skill level.</TM_Attraction_pwr_desc>
+<TM_Attraction_ver_desc>Increases the duration of the Attraction well by 2s and its slow duration by 25% per skill level.</TM_Attraction_ver_desc>
+<TM_Repulsion_eff_desc>Reduces mana cost of Repulsion by 8% per skill point.</TM_Repulsion_eff_desc>
+<TM_Repulsion_pwr_desc>Increases the force of Repulsion by 20% per skill level. The amount of force applied to a pawn is proportional to their distance to the center.</TM_Repulsion_pwr_desc>
+<TM_Repulsion_ver_desc>Applies damage based on the amount of force acting on the pawn. This damage is applied only to enemies.
+Level 0: 0%
+Level 1: 20%
+Level 2: 40%
+Level 3: 60%</TM_Repulsion_ver_desc>
+<TM_Scorn_eff_desc>Reduces mana cost of Scorn by 6% per skill point.</TM_Scorn_eff_desc>
+<TM_Scorn_ver_desc>Increases impact radius of Scorn by 1cell per skill point. Base 7 cell radius. 
+Also increases the power of the partial demonic transformation.</TM_Scorn_ver_desc>
+<TM_Scorn_pwr_desc>Increases the damage of Scorn by 15% per skill level. 
+Also increases the power of the demonic damage shield by 25%. Base shield absorbs 60 damage.</TM_Scorn_pwr_desc>
+<TM_PsychicShock_eff_desc>Reduces mana cost of Psychic Shock by 6% per skill point.</TM_PsychicShock_eff_desc>
+<TM_PsychicShock_ver_desc>Increases the radius of Psychic Shock and any secondary pulses by 1cell. Base radius is 6.</TM_PsychicShock_ver_desc>
+<TM_PsychicShock_pwr_desc>Increases the damage of psychic assault by 1 point per skill level.</TM_PsychicShock_pwr_desc>
+
+<TM_SoulBond_pwr>Amplified Bond</TM_SoulBond_pwr>
+<TM_SoulBond_eff>Soul Link</TM_SoulBond_eff>
+<TM_SoulBond_ver>Soul Buffer</TM_SoulBond_ver>
+<TM_ShadowBolt_ver>Expanding Darkness</TM_ShadowBolt_ver>
+<TM_ShadowBolt_pwr>Ravenous Shadow</TM_ShadowBolt_pwr>
+<TM_ShadowBolt_eff>Heart of Darkness</TM_ShadowBolt_eff>
+<TM_Dominate_ver>Impending Doom</TM_Dominate_ver>
+<TM_Dominate_pwr>Pitch Black</TM_Dominate_pwr>
+<TM_Dominate_eff>Shadow Command</TM_Dominate_eff>
+<TM_Attraction_eff>Beckoning Shadow</TM_Attraction_eff>
+<TM_Attraction_pwr>Open the Abyss</TM_Attraction_pwr>
+<TM_Attraction_ver>Shadow Claws</TM_Attraction_ver>
+<TM_Repulsion_eff>Deft Mind</TM_Repulsion_eff>
+<TM_Repulsion_pwr>Willpower</TM_Repulsion_pwr>
+<TM_Repulsion_ver>Violent Dispersion</TM_Repulsion_ver>
+<TM_Scorn_ver>Spite</TM_Scorn_ver>
+<TM_Scorn_eff>Demon Blood</TM_Scorn_eff>
+<TM_Scorn_pwr>Fury</TM_Scorn_pwr>
+<TM_PsychicShock_ver>Insanity</TM_PsychicShock_ver>
+<TM_PsychicShock_eff>Mentalist</TM_PsychicShock_eff>
+<TM_PsychicShock_pwr>Dominant Will</TM_PsychicShock_pwr>
+
+<TM_Stoneskin_pwr_desc>Increases the number of attacks Stoneskin mitigates before wearing off.
+Level 0: 4 attacks
+Level 1: 5 attacks
+Level 2: 6 attacks
+Level 3: 7 attacks</TM_Stoneskin_pwr_desc>
+<TM_Stoneskin_eff_desc>Reduces the mana upkeep cost for each instance of Stoneskin by 2.
+Level 0: -15 max mana
+Level 1: -13 max mana
+Level 2: -11 max mana
+Level 3: -9 max mana</TM_Stoneskin_eff_desc>
+<TM_Stoneskin_ver_desc>Increases the max number of Stoneskin instances the Geomancer can maintain. The Geomancer must also have sufficient mana reserves to maintain each spell.
+Level 0: 2
+Level 1: 3
+Level 2: 4
+Level 3: 5</TM_Stoneskin_ver_desc>
+<TM_Encase_pwr_desc>Uses sturdier types of stone making it more difficult to break through.</TM_Encase_pwr_desc>
+<TM_Encase_eff_desc>Reduces the stamina cost required to use Encase by 8% per skill level.</TM_Encase_eff_desc>
+<TM_Encase_ver_desc>Increases the duration of Encase by 4s per skill level.
+Level 0: 30s
+Level 1: 34s
+Level 2: 38s
+Level 3: 42s</TM_Encase_ver_desc>
+<TM_EarthSprites_pwr_desc>Increases the speed at which Earth Sprites work by 20% per skill level. This skill can be raised to level 5.</TM_EarthSprites_pwr_desc>
+<TM_EarthSprites_eff_desc>Reduces the initial mana required to cast Earth Sprites by 6% per skill level.</TM_EarthSprites_eff_desc>
+<TM_EarthSprites_ver_desc>Reduces mana regeneration drained by earth sprites by 7% per skill level.
+Level 0: -60% mana regeneration
+Level 1: -53% mana regeneration
+Level 2: -46% mana regeneration
+Level 3: -39% mana regeneration</TM_EarthSprites_ver_desc>
+<TM_EarthernHammer_pwr_desc>Increases the amount of weight the Geomancer is able to manipulate. Pulling subterranean stones requires 3 weight; throwing nearby surface stones requires 1 weight.
+Level 0: 8 weight
+Level 1: 10 weight
+Level 2: 12 weight
+Level 3: 14 weight</TM_EarthernHammer_pwr_desc>
+<TM_EarthernHammer_eff_desc>Decreases mana cost of EarthernHammer by 6% per skill level.</TM_EarthernHammer_eff_desc>
+<TM_EarthernHammer_ver_desc>Reduces the time between each throw and reduces the duration of stun applied to the caster.</TM_EarthernHammer_ver_desc>
+<TM_Sentinel_pwr_desc>Increases the combat power of a sentinel. Requires 2 ability points to level.
+Level 0 (lesser sentinel): Power 12, Armor 45%, Speed 3.2c/s, Health 75%
+Level 1 (sentinel): Power 14, Armor 51%, Speed 4c/s, Health 100%
+Level 2 (greater sentinel): Power 16, Armor 55%, Speed 4.8c/s, Health 125%</TM_Sentinel_pwr_desc>
+<TM_Sentinel_eff_desc>Decreases the upkeep cost for each sentinel.
+Level 0: -20 max mana
+Level 1: -18 max mana
+Level 2: -16 max mana
+Level 3: -15 max mana</TM_Sentinel_eff_desc>
+<TM_Sentinel_ver_desc>Increases the maximum number of sentinels a Geomancer can maintain at a given time. The Geomancer must also have sufficient mana reserves to maintain each sentinel.
+Level 0: 2
+Level 1: 3
+Level 2: 4
+Level 3: 5</TM_Sentinel_ver_desc>
+<TM_Meteor_eff_desc>Decreases mana cost of Meteor by 5% of base cost per skill level.</TM_Meteor_eff_desc>
+<TM_Meteor_ver_desc>Increases the chance that cells adjacent to the meteorites core also contain precious minerals.
+Level 0: 0%
+Level 1: 15%
+Level 2: 30%
+Level 3: 45%</TM_Meteor_ver_desc>
+
+<TM_Stoneskin_pwr>Layered Defense</TM_Stoneskin_pwr>
+<TM_Stoneskin_eff>Familiar Skin</TM_Stoneskin_eff>
+<TM_Stoneskin_ver>Shared Skin</TM_Stoneskin_ver>
+<TM_Encase_pwr>Unyielding Stone</TM_Encase_pwr>
+<TM_Encase_eff>Mold Maker</TM_Encase_eff>
+<TM_Encase_ver>Enduring Stone</TM_Encase_ver>
+<TM_EarthSprites_pwr>Spriggan Might</TM_EarthSprites_pwr>
+<TM_EarthSprites_eff>Fickle Fey</TM_EarthSprites_eff>
+<TM_EarthSprites_ver>Mana Deviant</TM_EarthSprites_ver>
+<TM_EarthernHammer_pwr>Heavy Metal</TM_EarthernHammer_pwr>
+<TM_EarthernHammer_eff>Loose Soil</TM_EarthernHammer_eff>
+<TM_EarthernHammer_ver>Altered Gravity</TM_EarthernHammer_ver>
+<TM_Sentinel_pwr>Master Craftsman</TM_Sentinel_pwr>
+<TM_Sentinel_eff>Heart of Stone</TM_Sentinel_eff>
+<TM_Sentinel_ver>Rule of Law</TM_Sentinel_ver>
+<TM_Meteor_eff>Earth Shaker</TM_Meteor_eff>
+<TM_Meteor_ver>Heart of Gold</TM_Meteor_ver>
+
+<TM_TechnoBit_pwr_desc>The techno-bit converts mana from the technomancer fire bursts of micro lasers at the technomancer's target. Each skill level increases the range and decreases firing delay and mana cost per attack.
+Level 0: 25 range, 3 shots every 3s, 6 mana
+Level 5: 30 range, 4 shots every 2.75s, 5.5 mana
+Level 10: 35 range, 5 shots every 2.5s, 5 mana
+Level 15: 40 range, 6 shots every 2.25s, 4.5 mana</TM_TechnoBit_pwr_desc>
+<TM_TechnoBit_eff_desc>Increases the amount, frequency, and search radius of repairs while decreasing the mana cost to perform repairs.
+
+Repair frequency is increased while drafted.</TM_TechnoBit_eff_desc>
+<TM_TechnoBit_ver_desc>Improves user interface to the techno-bit allowing it to increase its support to the technomancer during construction, crafting, and mining tasks while simultaneously decreasing energy (mana) cost.
+
+Effectiveness boosted by 10% per skill point.  Decreases mana cost by 2% per skill point.</TM_TechnoBit_ver_desc>
+<TM_TechnoTurret_pwr_desc>Increases burst shot count by .4 per level.
+Decreases warmup time by 2% per level.
+Increases accuracy in all range categories by 1% per level.</TM_TechnoTurret_pwr_desc>
+<TM_TechnoTurret_eff_desc>Increases Mark-IV hit-points by 10 per level.
+Reduces mana cost of rockets and mortars by 3% per level.
+Reduces the amount of neural feedback caused when deactivated due to its failsafe.</TM_TechnoTurret_eff_desc>
+<TM_TechnoTurret_ver_desc>Adds and improves weapon systems for the Mark-IV turret.
+Increases turret auto-cannon fire range by 1 per level
+Level 5: Adds a rocket launcher; additional levels increase rate of fire
+Level 10: Fires 2 rockets; adds a small mortar system; additional levels increase mortar range and rate of fire
+Level 15: Fires 3 rockets</TM_TechnoTurret_ver_desc>
+<TM_TechnoWeapon_pwr_desc>Enhances all aspects of the engineered weapon for each skill level: damage, range, warmup time and cooldown time improved by 2%, all accuracies improved by 1%, and increases number of shots per burst by 2% (rounded to nearest integer).</TM_TechnoWeapon_pwr_desc>
+<TM_TechnoWeapon_eff_desc>Enhances all aspects of nano stimulant.</TM_TechnoWeapon_eff_desc>
+<TM_TechnoWeapon_ver_desc>Increases chance of generating an elemental shot by 1% (base 20%) and reduces mana consumes per shot by 4% per skill level. This skill can be toggled.
+
+Fire shot: generates a non-flammable explosion (2 mana)
+
+Ice shot: any body-part hit loses efficiency (1.5 mana)
+
+Lightning shot: stuns the target (1 mana)</TM_TechnoWeapon_ver_desc>
+<TM_TechnoShield_pwr_desc>Adds capacitors that surge when deflecting incoming projectiles; increases the amount of energy that can be deflected.</TM_TechnoShield_pwr_desc>
+<TM_TechnoShield_eff_desc>Decreases mana cost to generate a kinetic field by 6% per skill point.</TM_TechnoShield_eff_desc>
+<TM_TechnoShield_ver_desc>Increases the amount of energy available to the kinetic shield by 30pts per skill level. Base 110pts.</TM_TechnoShield_ver_desc>
+<TM_Sabotage_pwr_desc>Increases the effect of sabotage.</TM_Sabotage_pwr_desc>
+<TM_Sabotage_eff_desc>Decreases the mana cost of sabotage by 6% per skill level.</TM_Sabotage_eff_desc>
+<TM_Sabotage_ver_desc>Increases the probability sabotage is successful by 10%. Base 50%.</TM_Sabotage_ver_desc>
+<TM_Overdrive_pwr_desc>Increases the effect and duration of Overdrive.</TM_Overdrive_pwr_desc>
+<TM_Overdrive_eff_desc>Decreases mana cost of Overdrive by 8% of base cost per skill level.</TM_Overdrive_eff_desc>
+<TM_Overdrive_ver_desc>Reduces the frequency and damage caused to subsystems and increases the duration of overdrive.</TM_Overdrive_ver_desc>
+<TM_OrbitalStrike_pwr_desc>Increases explosion damage by 20% per skill level. Base 25 damage.</TM_OrbitalStrike_pwr_desc>
+<TM_OrbitalStrike_eff_desc>Decreases mana cost of OrbitalStrike by 5% of base cost per skill level.</TM_OrbitalStrike_eff_desc>
+<TM_OrbitalStrike_ver_desc>Reduces the time required for orbital bombardment systems to align on the target coordinates.</TM_OrbitalStrike_ver_desc>
+
+<TM_TechnoBit_pwr>Offensive Protocol</TM_TechnoBit_pwr>
+<TM_TechnoBit_eff>Repair Protocol</TM_TechnoBit_eff>
+<TM_TechnoBit_ver>Neural Interface</TM_TechnoBit_ver>
+<TM_TechnoTurret_pwr>Firepower</TM_TechnoTurret_pwr>
+<TM_TechnoTurret_eff>Durability</TM_TechnoTurret_eff>
+<TM_TechnoTurret_ver>Weaponization</TM_TechnoTurret_ver>
+<TM_TechnoWeapon_pwr>Enhanced Weaponry</TM_TechnoWeapon_pwr>
+<TM_TechnoWeapon_eff>Nanite Injection</TM_TechnoWeapon_eff>
+<TM_TechnoWeapon_ver>Elemental Shot</TM_TechnoWeapon_ver>
+<TM_TechnoShield_pwr>Kinetic Capacitors</TM_TechnoShield_pwr>
+<TM_TechnoShield_eff>Power Cycler</TM_TechnoShield_eff>
+<TM_TechnoShield_ver>Reciprocating Fields</TM_TechnoShield_ver>
+<TM_Sabotage_pwr>Hacking Routine</TM_Sabotage_pwr>
+<TM_Sabotage_eff>Redundant Connections</TM_Sabotage_eff>
+<TM_Sabotage_ver>Coding Guru</TM_Sabotage_ver>
+<TM_Overdrive_pwr>Overclock</TM_Overdrive_pwr>
+<TM_Overdrive_eff>Clean Power</TM_Overdrive_eff>
+<TM_Overdrive_ver>Damage Control</TM_Overdrive_ver>
+<TM_OrbitalStrike_pwr>Overkill</TM_OrbitalStrike_pwr>
+<TM_OrbitalStrike_eff>Calculated Alignment</TM_OrbitalStrike_eff>
+<TM_OrbitalStrike_ver>Authorization Bypass</TM_OrbitalStrike_ver>
+
+<TM_BloodGift_pwr_desc>Increases the damage of all blood magic by 10% per skill point.</TM_BloodGift_pwr_desc>
+<TM_BloodGift_eff_desc>Reduces the mana cost of blood sacrifice by 6% per skill point and reduces the blood cost of all blood magic by 3% per skill point.</TM_BloodGift_eff_desc>
+<TM_BloodGift_ver_desc>Increases the amount of blood magic gained when using blood sacrifice or through bleeding by 10%. Increased skill levels allows the blood mage to draw fresh blood from the ground:
+Level 0: none
+Level 1: 1cell radius
+Level 2: 3cell radius
+Level 3: 5cell radius</TM_BloodGift_ver_desc>
+<TM_IgniteBlood_pwr_desc>Increases the damage of Ignite Blood by 12% per skill level.</TM_IgniteBlood_pwr_desc>
+<TM_IgniteBlood_eff_desc>Reduces the blood magic cost required to use Ignite Blood by 6% per skill level.</TM_IgniteBlood_eff_desc>
+<TM_IgniteBlood_ver_desc>Increases the burn rate of Ignite Blood by 15% per skill point. This affects how fast flames spread and how quickly flames pulse.</TM_IgniteBlood_ver_desc>
+<TM_BloodForBlood_pwr_desc>Increases the duration of Blood For Blood by 10%.</TM_BloodForBlood_pwr_desc>
+<TM_BloodForBlood_eff_desc>Reduces the blood magic cost required to use Blood For Blood by 6% per skill level.</TM_BloodForBlood_eff_desc>
+<TM_BloodForBlood_ver_desc>Increase the amount healed by Blood For Blood by 0.35 pts each skill level. Base 1 pt. 
+
+Each tick of Blood For Blood can emit a healing wave generated from the caster that will heal any nearby, friendly pawns. Each skill level also increases the radius of healing pulse:
+Level 0: none
+Level 1: 1cell radius
+Level 2: 2cell radius
+Level 3: 3cell radius</TM_BloodForBlood_ver_desc>
+<TM_BloodShield_pwr_desc>Increases the strength of the blood shield by 10% per skill point.</TM_BloodShield_pwr_desc>
+<TM_BloodShield_eff_desc>Decreases blood magic cost required to use Blood Shield by 6% per skill level.</TM_BloodShield_eff_desc>
+<TM_BloodShield_ver_desc>Increases the amount of healing generated by blood shield by 15% per skill level.</TM_BloodShield_ver_desc>
+<TM_Rend_pwr_desc>Increases the damage of rend by 15% per skill point.</TM_Rend_pwr_desc>
+<TM_Rend_eff_desc>Decreases the blood magic cost required to use Rend by 5% per skill level.</TM_Rend_eff_desc>
+<TM_Rend_ver_desc>Increases the duration of rend by 20% per skill level and increases the amount of blood created.</TM_Rend_ver_desc>
+<TM_BloodMoon_pwr_desc>Deepen the night and call forth more powerful blood terrors, increasing their size and damage by 15% per skill level.</TM_BloodMoon_pwr_desc>
+<TM_BloodMoon_eff_desc>Blood terrors eagerly await your call, decreasing the blood magic required to to use Blood Moon by 4% per skill point and increases blood terror attack frequency by 5%.</TM_BloodMoon_eff_desc>
+<TM_BloodMoon_ver_desc>Extend the duration of Blood Moon by 10% per skill point.</TM_BloodMoon_ver_desc>
+
+<TM_BloodGift_pwr>Blood Is Power</TM_BloodGift_pwr>
+<TM_BloodGift_eff>Blood Sacrifice</TM_BloodGift_eff>
+<TM_BloodGift_ver>Pure Blood</TM_BloodGift_ver>
+<TM_IgniteBlood_pwr>Hemorrhage</TM_IgniteBlood_pwr>
+<TM_IgniteBlood_eff>Blood Spark</TM_IgniteBlood_eff>
+<TM_IgniteBlood_ver>Wildfire</TM_IgniteBlood_ver>
+<TM_BloodForBlood_pwr>Hemophilia</TM_BloodForBlood_pwr>
+<TM_BloodForBlood_eff>Blood Ties</TM_BloodForBlood_eff>
+<TM_BloodForBlood_ver>Life Pulse</TM_BloodForBlood_ver>
+<TM_BloodShield_pwr>Thickened Blood</TM_BloodShield_pwr>
+<TM_BloodShield_eff>Blood Rush</TM_BloodShield_eff>
+<TM_BloodShield_ver>Coagulate Wounds</TM_BloodShield_ver>
+<TM_Rend_pwr>Serrated Edge</TM_Rend_pwr>
+<TM_Rend_eff>Mystic Claw</TM_Rend_eff>
+<TM_Rend_ver>Thousand Cuts</TM_Rend_ver>
+<TM_BloodMoon_pwr>Full Moon</TM_BloodMoon_pwr>
+<TM_BloodMoon_eff>Hunger</TM_BloodMoon_eff>
+<TM_BloodMoon_ver>Endless Night</TM_BloodMoon_ver>
+
+<TM_EnchantedBody_pwr_desc>Increases the power of Enchanted Body and Enchanted Aura by ~33% per skill level.</TM_EnchantedBody_pwr_desc>
+<TM_EnchantedBody_eff_desc>Reduces mana upkeep cost of Enchanted Body and Enchanted Aura by 20% per skill level.</TM_EnchantedBody_eff_desc>
+<TM_EnchantedBody_ver_desc>Reduces the mana regeneration penalty of Enchanted Body and Enchanted Aura by 20% per skill level.</TM_EnchantedBody_ver_desc>
+<TM_Transmutate_pwr_desc>Decreases the amount of value lost by 5% per skill level when performing a transmutation. Base conversion value is 70%.
+Transmuting equipment will degrade the equipment:
+Level 0: -20% HP
+Level 1: -10% HP
+Level 2: no degradation
+Level 3: +10% HP
+
+Equipment will disintegrate if it degrades below 0 durability. Equipment transmutations will always remove 'tainted.'</TM_Transmutate_pwr_desc>
+<TM_Transmutate_eff_desc>Reduces the mana cost required to use Transmutate by 12% per skill level.</TM_Transmutate_eff_desc>
+<TM_Transmutate_ver_desc>Transmutation can be performed on more complex material.
+Level 0: Raw resources (stone, steel, silver, etc)
+Level 1: Foods (meat, rice, meals) - will always convert to pemmican or nutrient paste
+Level 2: Corpses - will always convert to nutrient paste
+Level 3: Equipment - applies to equipment made from stuff; randomly transmutes to stuff in the same category.
+Equipment made only from set material will be repaired by 30% + 10% * Conversion Rate skill level. Using transmutate while creatively inspired will improve the quality of an item but ends the inspiration.</TM_Transmutate_ver_desc> 
+<TM_EnchanterStone_eff_desc>Reduces the mana required to cast Enchanter's Stone by 10% and reduces max MP upkeep by 2 mana per skill level .</TM_EnchanterStone_eff_desc>
+<TM_EnchanterStone_ver_desc>Allows the enchanter to create artifacts out of more resources types. This skill requires 2 ability points to train.
+Level 0: stone chunks (slate, sandstone, limestone, marble, granite)
+Level 1: steel, silver, *iron
+Level 2: herbal medicine, jade, wood
+Level 3: gold, magicyte</TM_EnchanterStone_ver_desc>
+<TM_EnchantWeapon_pwr_desc>Increases the power of the weapon enchantment.
+Fire: +33% average damage
+Ice: +25% average damage
+Stun: +25% stun duration
+Dark: +10% application chance</TM_EnchantWeapon_pwr_desc>
+<TM_EnchantWeapon_eff_desc>Decreases mana cost of Enchant Weapon by 10% per skill level.</TM_EnchantWeapon_eff_desc>
+<TM_Polymorph_pwr_desc>Reduces targets chance to resist. Resistance is affected by the arcane resistance and psychic sensitivity of the target. May enrage (berserk) enemies.
+
+Resistance chance prior to modifiers:
+Level 0: Pawn 50%, Mechanoid 0%
+Level 1: Pawn 60%, Mechanoid 20%, enrage 20%
+Level 2: Pawn 70%, Mechanoid 40%, enrage 40%
+Level 3: Pawn 80%, Mechanoid 60%, enrage 50%</TM_Polymorph_pwr_desc>
+<TM_Polymorph_eff_desc>Decrease the cost to cast Polymorph by 6% per skill level.</TM_Polymorph_eff_desc>
+<TM_Polymorph_ver_desc>Increases the duration of polymorph and applies more control over the creature combat powers for enemies and allies. This skill requires 2 ability points to train.
+Level 0: Duration 30s, enemy 100 / ally 60
+Level 1: Duration 40s, enemy 80 / ally 100
+Level 2: Duration 50s, enemy 60 / ally 160
+Level 3: Permanent, enemy 60 / ally 200</TM_Polymorph_ver_desc>
+<TM_Shapeshift_pwr_desc>The enchanter takes some liberties to improve the physical traits of the creature they shapeshift into. Learn to further enhance physical power while shape-shifted. This skill requires 2 ability points to train.
+Level 0: physical +25%, attack speed +10%, armor +10%
+Level 1: physical +35%, attack speed +10%, armor +15%
+Level 2: physical +40%, attack speed +15%, armor +15%
+Level 3: physical +50%, attack speed +15%, armor +20%
+</TM_Shapeshift_pwr_desc>
+<TM_Shapeshift_eff_desc>Decreases mana cost of Shapeshift by 5% of base cost per skill level. Increases duration by 20%. This skill requires 2 ability points to train.
+Level 3: shapeshift is permanent until canceled.</TM_Shapeshift_eff_desc>
+<TM_Shapeshift_ver_desc>Shapeshift into creatures with higher combat power. Min/Max values are multiplied by Arcane Power. This skill requires 2 ability points to train.
+Level 0: min 80, max 250
+Level 1: min 120, max 320
+Level 2: min 150, max 420
+Level 3: min 200, max 500; unlocks access to Shapeshift: Dire Wolf</TM_Shapeshift_ver_desc>
+
+<TM_EnchantedBody_pwr>Mind Over Body</TM_EnchantedBody_pwr>
+<TM_EnchantedBody_eff>Compliant Form</TM_EnchantedBody_eff>
+<TM_EnchantedBody_ver>Adaption</TM_EnchantedBody_ver>
+<TM_Transmutate_pwr>Conversion Rate</TM_Transmutate_pwr>
+<TM_Transmutate_eff>Transformation Cost</TM_Transmutate_eff>
+<TM_Transmutate_ver>Material Application</TM_Transmutate_ver>
+<TM_EnchanterStone_eff>Sub-Atomic Control</TM_EnchanterStone_eff>
+<TM_EnchanterStone_ver>Material Matters</TM_EnchanterStone_ver>
+<TM_EnchantWeapon_pwr>Elemental Edge</TM_EnchantWeapon_pwr>
+<TM_EnchantWeapon_eff>Elemental Weaving</TM_EnchantWeapon_eff>
+<TM_Polymorph_pwr>Reduce Resistance</TM_Polymorph_pwr>
+<TM_Polymorph_eff>Seamless</TM_Polymorph_eff> 
+<TM_Polymorph_ver>Loose Ends</TM_Polymorph_ver>
+<TM_Shapeshift_pwr>Enhanced Form</TM_Shapeshift_pwr>
+<TM_Shapeshift_eff>Enduring Transformation</TM_Shapeshift_eff>
+<TM_Shapeshift_ver>Natural Selection</TM_Shapeshift_ver>
+
+<TM_Prediction_pwr_desc>Applies the power of prediction to safeguard the chronomancer.
+This skill reduces the amount of mental focus required to retain a precognitive state while simultaneously increasing reaction speed to predicted dangers.
+
+Level 0: -24% Consciousness, -10% aiming delay, +3% mental break threshold, +5% melee dodge chance, 5% chance to predict and avoid physical attacks
+
+Level 5: -10% Consciousness, -20% aiming delay, +6% mental break threshold, +15% melee dodge chance, 55% chance to predict and avoid physical attacks</TM_Prediction_pwr_desc>
+<TM_Prediction_eff_desc>Reduces amount of mana regeneration required to maintain Prediction.
+
+Level 0: -50% mana regeneration
+Level 1: -45% mana regeneration
+Level 2: -40% mana regeneration
+Level 3: -35% mana regeneration</TM_Prediction_eff_desc>
+<TM_Prediction_ver_desc>Increases chance to predict an event by 5% per skill level. Each chronomancer can only predict 1 event at a time.
+
+Level 0: 25%
+Level 1: 30%
+Level 2: 35%
+Level 3: 40%</TM_Prediction_ver_desc>
+<TM_AlterFate_pwr_desc>Increases the chance of favorable results when using Alter Fate. The primary objective when altering fate is to prevent the prediction; at level 3, it is possible to undo environmental conditions (heat wave, flash storm, etc) for a short period after they occur.
+
+Level 0: 25% prevention chance
+Level 1: 30% prevention chance
+Level 2: 35% prevention chance
+Level 3: 40% prevention chance; alter environmental conditions</TM_AlterFate_pwr_desc>
+<TM_AlterFate_eff_desc>Reduces the mana cost required to use Alter Fate by 10% per skill level.</TM_AlterFate_eff_desc>
+<TM_AccelerateTime_eff_desc>Reduces the mana required to cast Accelerate Time by 8% per skill level.</TM_AccelerateTime_eff_desc>
+<TM_AccelerateTime_ver_desc>Increases the potential to accelerate time by increasing the maximum number of enemy targets, reducing resist chance, and increasing duration of the time field.
+
+Level 0: 2 targets, 50% success rate, 100% duration
+Level 1: 3 targets, 60% success rate, 110% duration
+Level 2: 4 targets, 70% success rate, 120% duration
+Level 3: 5 targets, 80% success rate, 130% duration</TM_AccelerateTime_ver_desc>
+<TM_AccelerateTime_pwr_desc>Increases the potency of Accelerate Time.
+
+Pawns will age 10% faster, enemy pawns will begin to suffer from age related ailments at a younger age, and other conditions affecting health are accelerated. Also deteriorates equipment by an additional 100 durability.</TM_AccelerateTime_pwr_desc>
+<TM_ReverseTime_pwr_desc>Increases the potency of Reverse Time.
+Increases the amount of rot, decay, or equipment damage that is reverted, increases reversal rate of health conditions, and increases the efficacy of the reversal field surrounding the pawn.</TM_ReverseTime_pwr_desc>
+<TM_ReverseTime_eff_desc>Decreases mana cost of Reverse Time by 8% per skill level.</TM_ReverseTime_eff_desc>
+<TM_ReverseTime_ver_desc>Increases success chance and duration of Reverse Time by 10% per skill level.
+
+At skill level 3, may be used on a recently deceased (~2hrs game time) pawn to attempt to revert the physical conditions that caused death.</TM_ReverseTime_ver_desc>
+<TM_ChronostaticField_pwr_desc>Increases duration of Chronostatic Field by 20% per skill level. Base duration 26s.</TM_ChronostaticField_pwr_desc>
+<TM_ChronostaticField_eff_desc>Decrease the cost to cast Chronostatic Field by 6% per skill level.</TM_ChronostaticField_eff_desc>
+<TM_ChronostaticField_ver_desc>Decrease chance Chronostatic Field will be resisted by 10% per skill level. Resist chance is modified by caster spell power and target resistances.
+
+Level 0: 60%
+Level 1: 70%
+Level 2: 80%
+Level 3: 90%</TM_ChronostaticField_ver_desc>
+<TM_Recall_pwr_desc>Automates recall.
+
+Level 0: manual activation only
+Level 1: 50% chance to trigger on death
+Level 2: 50% chance to trigger on down
+Level 3: 100% chance to trigger on death or down</TM_Recall_pwr_desc>
+<TM_Recall_eff_desc>Reduces upkeep cost by 8% per skill level.
+
+Level 0: max MP -40, mana regen -30%
+Level 1: max MP -36.8, mana regen -27.6%
+Level 2: max MP -33.2, mana regen -25.2%
+Level 3: max MP -30.4, mana regen -22.8%</TM_Recall_eff_desc>
+<TM_Recall_ver_desc>Increases duration a time marker will remain active by 4 game hours per skill level.
+
+Level 0: 20hrs
+Level 1: 24hrs
+Level 2: 28hrs
+Level 3: 32hrs</TM_Recall_ver_desc>
+
+<TM_Prediction_pwr>Prime Cognition</TM_Prediction_pwr>
+<TM_Prediction_eff>River of Time</TM_Prediction_eff>
+<TM_Prediction_ver>Third Eye</TM_Prediction_ver>
+<TM_AlterFate_pwr>Soothsayer</TM_AlterFate_pwr>
+<TM_AlterFate_eff>Subtlety</TM_AlterFate_eff>
+<TM_AccelerateTime_pwr>Relativity</TM_AccelerateTime_pwr>
+<TM_AccelerateTime_eff>Forward Manipulator</TM_AccelerateTime_eff>
+<TM_AccelerateTime_ver>Mutability</TM_AccelerateTime_ver>
+<TM_ReverseTime_pwr>Rewrite History</TM_ReverseTime_pwr>
+<TM_ReverseTime_eff>Reverse Manipulator</TM_ReverseTime_eff>
+<TM_ReverseTime_ver>Denial</TM_ReverseTime_ver>
+<TM_ChronostaticField_pwr>Time Loop</TM_ChronostaticField_pwr>
+<TM_ChronostaticField_eff>Good Timing</TM_ChronostaticField_eff> 
+<TM_ChronostaticField_ver>Time Catcher</TM_ChronostaticField_ver>
+<TM_Recall_pwr>Insurance</TM_Recall_pwr>
+<TM_Recall_eff>Perfect Recall</TM_Recall_eff>
+<TM_Recall_ver>Impression</TM_Recall_ver>
+
+<TM_ChaosTradition_pwr_desc>Increases the chance wild magic has a beneficial surge and decreases the chance of backfiring. Does not change neutral events which is always 3%. Requires 2 skill points to train.
+
+Level 0: (+)2%  : (-)5%
+Level 1: (+)3% : (-)4%
+Level 2: (+)4% : (-)3%
+Level 3: (+)5% : (-)2%</TM_ChaosTradition_pwr_desc>
+<TM_ChaosTradition_eff_desc>Chaos Mages thrive on change - each skill level brings added benefits when Chaos Tradition is used. Requires 2 skill points to train.
+
+Level 0: changes all learned abilities
+Level 1: gains a +8 mood boost for 24hrs
+Level 2: gains 25 mana
+Level 3: applies a stacking buff that increases stats</TM_ChaosTradition_eff_desc>
+<TM_ChaosTradition_ver_desc>Increases the number of abilities the Chaos Mage is able to learn through Chaos Tradition. Chaos Tradition is never removed. Requires 2 skill points to train.
+
+Level 0: 2 abilities
+Level 1: 3 abilities
+Level 2: 4 abilities
+Level 3: 5 abilities</TM_ChaosTradition_ver_desc>
+
+<TM_ChaosTradition_pwr>Chaos Flux</TM_ChaosTradition_pwr>
+<TM_ChaosTradition_eff>Mercurial</TM_ChaosTradition_eff>
+<TM_ChaosTradition_ver>Protean</TM_ChaosTradition_ver>  
+
+<TM_LightLance_pwr_desc>Increases the duration of Light Lance by 8% and damage by 15% per skill level.</TM_LightLance_pwr_desc>
+<TM_LightLance_eff_desc>Reduces the energy cost of Light Lance by 8% per skill level.</TM_LightLance_eff_desc>
+<TM_LightLance_ver_desc>Increases the radius of Light Lance by 15% per skill level.</TM_LightLance_ver_desc>
+<TM_Sunfire_pwr_desc>Increases Sunfire damage by 25% and armor penetration by 10% per skillpoint.</TM_Sunfire_pwr_desc>
+<TM_Sunfire_eff_desc>Reduces the energy cost of Sunfire by 6% per skill level.</TM_Sunfire_eff_desc>
+<TM_Sunfire_ver_desc>Increases the number of beams produced by 4 per skill level and extends the average beam duration by 10%.</TM_Sunfire_ver_desc>
+<TM_LightBurst_pwr_desc>Each skill level increases the light density resulting in a 15% improvement to the effective radius, sensory damage, and disorientation caused by each burst of light.</TM_LightBurst_pwr_desc>
+<TM_LightBurst_eff_desc>Reduces mana cost by 8% per skill point.</TM_LightBurst_eff_desc>
+<TM_LightBurst_ver_desc>Increases the number of light bursts and modifies the burst to affect mechanoid sensors.
+Level 0: 2 light bursts
+Level 1: 3 light bursts
+Level 2: 3 light bursts, affects mechanoids
+Level 3: 4 light bursts, affects mechanoids</TM_LightBurst_ver_desc>
+<TM_LightSkip_pwr_desc>Adds additional abilities with expanded application. Costs 2 points to level.
+Rank 0: Light Skip - same map, self only
+Rank 1: Mass Light Skip - same map, AoE around caster
+Rank 2: Global Light Skip - global, AoE around caster</TM_LightSkip_pwr_desc>
+<TM_LightSkip_eff_desc>Reduces energy cost of Light Skip by 8% per skill level.</TM_LightSkip_eff_desc>
+<TM_Refraction_pwr_desc>Increases the accuracy of mirrored projectiles by 20% and decreases the accuracy of refracted projectiles by 15%.</TM_Refraction_pwr_desc>
+<TM_Refraction_eff_desc>Decreases the energy cost of Refraction by 6% per skill level.</TM_Refraction_eff_desc>
+<TM_Refraction_ver_desc>Increases the duration of the Refraction wall by 10% (2.5s) per skill level.</TM_Refraction_ver_desc>
+<TM_SpiritOfLight_pwr_desc>SoL: increases damage by 3% and max attack range by 1 per skill level.</TM_SpiritOfLight_pwr_desc>
+<TM_SpiritOfLight_eff_desc>Summoner: Reduces upkeep costs by 2% per skill level.
+SoL: reduces light energy costs for the Spirit of Light by 1% per skill level.</TM_SpiritOfLight_eff_desc>
+<TM_SpiritOfLight_ver_desc>SoL: increases max light energy by 4 per skill level and light energy absorption by 3% per skill level.</TM_SpiritOfLight_ver_desc>
+
+<TM_LightLance_pwr>Piercing Light</TM_LightLance_pwr>
+<TM_LightLance_eff>Magnification</TM_LightLance_eff>
+<TM_LightLance_ver>Burning Radiation</TM_LightLance_ver>
+<TM_Sunfire_pwr>Deep Burn</TM_Sunfire_pwr>
+<TM_Sunfire_eff>Solar Powered</TM_Sunfire_eff>
+<TM_Sunfire_ver>Steady Burn</TM_Sunfire_ver>
+<TM_LightBurst_pwr>Lux</TM_LightBurst_pwr>
+<TM_LightBurst_eff>Lens</TM_LightBurst_eff>
+<TM_LightBurst_ver>Lumen</TM_LightBurst_ver>
+<TM_LightSkip_pwr>Relativity</TM_LightSkip_pwr>
+<TM_LightSkip_eff>Riding The Wave</TM_LightSkip_eff>
+<TM_Refraction_pwr>Refraction Coefficient</TM_Refraction_pwr>
+<TM_Refraction_eff>Spraying LED</TM_Refraction_eff> 
+<TM_Refraction_ver>Dying Light</TM_Refraction_ver>
+<TM_SpiritOfLight_pwr>Emission</TM_SpiritOfLight_pwr>
+<TM_SpiritOfLight_eff>Sustainment</TM_SpiritOfLight_eff>
+<TM_SpiritOfLight_ver>Absorption</TM_SpiritOfLight_ver>
+
+<TM_Totems_pwr_desc>Increases the power of totems by 3%
+Lightning Totem: Increases range and damage
+Earth Totem: Increases stagger frequency and duration
+Healing Totem: Increases range and heal amount</TM_Totems_pwr_desc>
+<TM_Totems_eff_desc>Reduces the mana cost to create a totem by 2% per skill level.</TM_Totems_eff_desc>
+<TM_Totems_ver_desc>Increases the duration of totems by 5% per skill point; base duration is 1 game hour.</TM_Totems_ver_desc>
+<TM_ChainLightning_pwr_desc>Increases Chain Lighting damage by 10% per skill point.</TM_ChainLightning_pwr_desc>
+<TM_ChainLightning_eff_desc>Reduces mana cost by 6% per skill point.</TM_ChainLightning_eff_desc>
+<TM_ChainLightning_ver_desc>Increases the number of times chain lightning will fork or bounce by 1 per skill point.</TM_ChainLightning_ver_desc>
+<TM_Enrage_pwr_desc>Increases the severity of Enrage by .05 per skill point. Base severity is .25, max severity is .5</TM_Enrage_pwr_desc>
+<TM_Enrage_eff_desc>Reduces mana cost of Enrage by 6% per skill point.</TM_Enrage_eff_desc>
+<TM_Enrage_ver_desc>Reduces the amount of emotions consumed by Enrage; at level 3, Enrage can also consume Joy (Recreation) to greatly increase its duration.</TM_Enrage_ver_desc>
+<TM_Hex_pwr_desc>Increases chance to apply hex by 10%, base 40% chance.</TM_Hex_pwr_desc>
+<TM_Hex_eff_desc>Reduces mana cost of Hex by 6% per skill point.</TM_Hex_eff_desc>
+<TM_Hex_ver_desc>Increases the power of effects applied to hexed targets.</TM_Hex_ver_desc>
+<TM_SpiritWolves_pwr_desc>Spirit wolves gain enrage when summoned. Each skill point increases the effects of enrage.</TM_SpiritWolves_pwr_desc>
+<TM_SpiritWolves_eff_desc>Reduces mana cost to manifest Spirit Wolves by 6% and increases duration by 2s per skill point.</TM_SpiritWolves_eff_desc>
+<TM_SpiritWolves_ver_desc>Increases the number of wolves summoned by 1 per skill level.</TM_SpiritWolves_ver_desc>
+<TM_GuardianSpirit_pwr_desc>Increases the potency of Guardian Spirit abilities:
+Spirit Bear: Increased taunt targets (4 -> 9), taunt chance (60% -> 78%), and taunt range (15 -> 21); increase damage mitigation (4 -> 7)
+Spirit Mongoose: Increases shadow strike damage (11 -> 16) and crit chance (40% -> 65%); increases duration of invisibility (1.5s -> 2.5s) and haste (2s -> 3s) following a shadow strike
+Spirit Crow: Increases hex chance (50% -> 75%); increases the effectiveness of "Crows Insight" mental buff Psychic Sensitivity and Research speed (20% -> 30%)</TM_GuardianSpirit_pwr_desc>
+<TM_GuardianSpirit_eff_desc>Reduces casting cost, max MP upkeep cost, and mana regeneration cost of the Spirit Guardian by 6% per skill point.</TM_GuardianSpirit_eff_desc>
+<TM_GuardianSpirit_ver_desc>Increases the effectiveness of the Spirit Guardian's spirit bond to increase movement, manipulation, healing rate, ignore pain, and dodge rate by 10% per skill point.</TM_GuardianSpirit_ver_desc>
+
+<TM_Totems_pwr>Totem Master</TM_Totems_pwr>
+<TM_Totems_eff>Totem Bearer</TM_Totems_eff>
+<TM_Totems_ver>Durability</TM_Totems_ver>
+<TM_ChainLightning_pwr>Storm Father</TM_ChainLightning_pwr>
+<TM_ChainLightning_eff>Electric Atmosphere</TM_ChainLightning_eff>
+<TM_ChainLightning_ver>Laced Lightning</TM_ChainLightning_ver>
+<TM_Enrage_pwr>Unstoppable Rage</TM_Enrage_pwr>
+<TM_Enrage_eff>Provocateur</TM_Enrage_eff>
+<TM_Enrage_ver>Cold Rage</TM_Enrage_ver>
+<TM_Hex_pwr>Hexer</TM_Hex_pwr>
+<TM_Hex_eff>Incantations</TM_Hex_eff>
+<TM_Hex_ver>Manifest Iao</TM_Hex_ver>
+<TM_SpiritWolves_pwr>Northern Haunt</TM_SpiritWolves_pwr>
+<TM_SpiritWolves_eff>Spirit Howl</TM_SpiritWolves_eff> 
+<TM_SpiritWolves_ver>Pack Leader</TM_SpiritWolves_ver>
+<TM_GuardianSpirit_pwr>Manifest Guardian</TM_GuardianSpirit_pwr>
+<TM_GuardianSpirit_eff>Spirit Link</TM_GuardianSpirit_eff>
+<TM_GuardianSpirit_ver>Spirit Bond</TM_GuardianSpirit_ver>
+
+<!-- Might Ability Point Descriptions -->
+
+<TM_WayfarerCraft_pwr_desc>Each skill point:
+Ability power: +1%
+Ability resistance: +2%</TM_WayfarerCraft_pwr_desc>
+<TM_WayfarerCraft_eff_desc>Each skill point:
+Ability cost: -1%
+XP gain: +2%</TM_WayfarerCraft_eff_desc>
+<TM_WayfarerCraft_ver_desc>Each skill point:
+Ability cooldown: -1%
+Stamina regeneration: +1%
+Max SP: +2%</TM_WayfarerCraft_ver_desc>
+<TM_FieldTraining_pwr_desc>Adds additional power to combat abilities:
+Level 1: Heavy Blow increases damage by 25%
+Level 2: Pommel Strike chance to down an enemy is doubled (non-lethal)
+Level 3: Throwing Knife applies an instant sedative to prisoners or poison to hostile pawns
+Level 4: Burning Fury intensity is increased by 50%
+Level 5: Sprint increases movement by 40%
+Level 6: Heavy Blow increases damage by 27.5%
+Level 7: Fighters Focus has a 20% chance to disarm a target during a successful melee attack
+Level 8: Tempest Strike gains a 20% damage bonus
+Level 9: Increases power of Legion to level 1
+Level 10: Sprint increases movement by 50%
+Level 11: Heavy Blow increases damage by 30%
+Level 12: Throwing Knife throws 3 knives instead of one
+Level 13: Increases power of Legion to Level 2
+Level 14: Burning Fury intensity is increased by 100%
+Level 15: Sprint increases movement by 60%</TM_FieldTraining_pwr_desc>
+<TM_FieldTraining_eff_desc>Decrease max SP upkeep costs by 3% and energy regeneration penalties by 3% per skill point.
+Level 15: Wayfarer gains mana and can learn mage cantrips.</TM_FieldTraining_eff_desc>
+<TM_FieldTraining_ver_desc>Adds additional utility or versatility to combat abilities:
+Level 1: Fighters Focus reduces rest loss by 20%
+Level 2: Thick Skin increases resistances by 12%
+Level 3: Strong Back increases mining speed by 20%
+Level 4: Inner Healing recovery rate increased by 65%
+Level 5: Gear Repair will remove tainted from fully repaired equipment
+Level 6: Gain access to the Legion ability
+Level 7: Thick Skin increases resistances by 14%
+Level 8: Strong Back increases construction speed by 20%
+Level 9: Increases versatility of Legion to level 1
+Level 10: When gear repair is active, a wayfarer will repair the gear of other pawns during casual interaction
+Level 11: Inner healing will slowly heal scars and other permanent injuries
+Level 12: Thick Skin increases resistances by 15% and grows barbs that can injure a melee attacker
+Level 13: Increases versatility of Legion to level 2
+Level 14: Burning Fury stamina consumption is reduced by 35%
+Level 15: Tempest strike consumes 25% less stamina per attack</TM_FieldTraining_ver_desc>
+
+<TM_WayfarerCraft_pwr>Enhancement</TM_WayfarerCraft_pwr>
+<TM_WayfarerCraft_eff>Mastermind</TM_WayfarerCraft_eff>
+<TM_WayfarerCraft_ver>Endurance</TM_WayfarerCraft_ver>
+<TM_FieldTraining_pwr>Lethality</TM_FieldTraining_pwr>
+<TM_FieldTraining_eff>Balance</TM_FieldTraining_eff>
+<TM_FieldTraining_ver>Survival</TM_FieldTraining_ver>
+
+<TM_Sprint_eff_desc>Reduces the stamina cost required to sustain Sprint by 4.5 stamina per skill level.</TM_Sprint_eff_desc>
+<TM_Sprint_pwr_desc>Increases the speed of sprint but also increases physical drain.
+Level 0: speed +30%, tiredness +40%
+Level 1: speed +40%, tiredness +45%
+Level 2: speed +50%, tiredness +50%
+Level 3: speed +60%, tiredness +55%</TM_Sprint_pwr_desc>
+<TM_Fortitude_pwr_desc>Increases the amount of damage mitigation by 1 per skill level.</TM_Fortitude_pwr_desc>
+<TM_Fortitude_ver_desc>Increases damage to stamina conversion by .5 stamina per dmage for each level.
+Conversion occurs pre mitigation.
+Base conversion rate is 1 stamina for 1 damage.</TM_Fortitude_ver_desc>
+<TM_Grapple_eff_desc>Decreases stamina cost of Grapple by 10% per level of base stamina cost.</TM_Grapple_eff_desc>
+<TM_Cleave_eff_desc>Decreases stamina Cleave consumes when it triggers by 10% of base stamina cost.</TM_Cleave_eff_desc>
+<TM_Cleave_pwr_desc>Cleave hits enemies near the target based on a percentage of the original damage done to the target.
+Level 0: 35%
+Level 1: 40%
+Level 2: 45%
+Level 3: 50%</TM_Cleave_pwr_desc>
+<TM_Cleave_ver_desc>Increases chance for cleave to double-strike by 15% per level.
+Base chance is 0%.</TM_Cleave_ver_desc>
+<TM_Whirlwind_pwr_desc>Increases Whirlwind damage by 10% per skill level.</TM_Whirlwind_pwr_desc>
+<TM_Whirlwind_eff_desc>Decreases stamina cost of Whirlwind by 15% of base cost per skill level.</TM_Whirlwind_eff_desc>
+<TM_Whirlwind_ver_desc>Adds a chance to knockdown enemies by 5% (per hit) for each skill level.
+Base chance is 0%.</TM_Whirlwind_ver_desc>
+
+<TM_Sprint_eff>Sprint Efficiency</TM_Sprint_eff>
+<TM_Sprint_pwr>Sprint Power</TM_Sprint_pwr>
+<TM_Fortitude_pwr>Fortitude Power</TM_Fortitude_pwr>
+<TM_Fortitude_ver>Fortitude Versatility</TM_Fortitude_ver>
+<TM_Grapple_eff>Grapple Efficiency</TM_Grapple_eff>
+<TM_Cleave_pwr>Cleave Power</TM_Cleave_pwr>
+<TM_Cleave_eff>Cleave Efficiency</TM_Cleave_eff>
+<TM_Cleave_ver>Cleave Versatility</TM_Cleave_ver>
+<TM_Whirlwind_pwr>Whirlwind Power</TM_Whirlwind_pwr>
+<TM_Whirlwind_eff>Whirlwind Efficiency</TM_Whirlwind_eff>
+<TM_Whirlwind_ver>Whirlwind Versatility</TM_Whirlwind_ver>
+
+<TM_SniperFocus_pwr_desc>Advances training as a Sniper. Each level requires 2 skill points to train.
+Level 0: Accuracy +3, Aiming delay -10%, Movement +10%
+Level 1: Accuracy +7, Aiming delay -15%, Movement +15%
+Level 2: Accuracy +11, Aiming delay -22%, Movement +20%
+Level 3: Accuracy +15, Aiming delay -30%, Movement +25%</TM_SniperFocus_pwr_desc>
+<TM_DisablingShot_eff_desc>Decreases the stamina cost of Disabling Shot by 10% per skill level.</TM_DisablingShot_eff_desc>
+<TM_DisablingShot_ver_desc>Disabling rounds now double as a tranquilizer by include fast acting sedatives that significantly slow movement speed after the target recovers from the shot. Through trial and error and research (mostly trial and error) the sniper learns the right dose for this sedative.
+Level 0: No sedative
+Level 1: 10-15s (weak)
+Level 2: 20-25s (moderate)
+Level 3: 30-45s (strong)</TM_DisablingShot_ver_desc>
+<TM_Headshot_pwr_desc>Improved ammo increases the velocity of rounds, resulting in greater likelihood of destroying a vital organ. Headshot gains 10% damage per skill point.</TM_Headshot_pwr_desc>
+<TM_Headshot_eff_desc>Decreases stamina cost of Headshot by 10% of base cost per skill level.</TM_Headshot_eff_desc>
+<TM_Headshot_ver_desc>The sniper gains a burst of adrenaline that restores some stamina each time headshot kills a target.
+Level 0: None
+Level 1: 10% stamina restored
+Level 2: 20% stamina restored
+Level 3: 30% stamina restored</TM_Headshot_ver_desc>
+<TM_AntiArmor_pwr_desc>Improves the nanites used in Anti Armor rounds, increasing damage to armored targets by an additional 50% per skill point.</TM_AntiArmor_pwr_desc>
+<TM_AntiArmor_eff_desc>Decreases stamina cost of Anti Armor by 10% of base cost per skill level.</TM_AntiArmor_eff_desc>
+<TM_AntiArmor_ver_desc>Increases the number and power of fragments caused by explosive rounds. Rounds do not explode if the target is not armored.</TM_AntiArmor_ver_desc>
+<TM_ShadowSlayer_pwr_desc>Increases the damage each shot deals by 2 per skill level while invisibility is active.</TM_ShadowSlayer_pwr_desc>
+<TM_ShadowSlayer_eff_desc>Decreases stamina cost to activate the shadow slayer cloak by 6% per skill level.</TM_ShadowSlayer_eff_desc>
+<TM_ShadowSlayer_ver_desc>Increases duration of the shadow slayer cloaking field by 3 seconds per skill level. 40s default duration.</TM_ShadowSlayer_ver_desc>
+
+<TM_SniperFocus_pwr>Sniper Training</TM_SniperFocus_pwr>
+<TM_DisablingShot_eff>Stamina Cost</TM_DisablingShot_eff>
+<TM_DisablingShot_ver>Sedative Potency</TM_DisablingShot_ver>
+<TM_Headshot_pwr>Improved Ammo</TM_Headshot_pwr>
+<TM_Headshot_eff>Stamina Cost</TM_Headshot_eff>
+<TM_Headshot_ver>Adrenaline</TM_Headshot_ver>
+<TM_AntiArmor_pwr>Nanites</TM_AntiArmor_pwr>
+<TM_AntiArmor_eff>Stamina Cost</TM_AntiArmor_eff>
+<TM_AntiArmor_ver>Explosive Rounds</TM_AntiArmor_ver>
+<TM_ShadowSlayer_pwr>Stealth Advantage</TM_ShadowSlayer_pwr>
+<TM_ShadowSlayer_eff>Prediction Caching</TM_ShadowSlayer_eff>
+<TM_ShadowSlayer_ver>Software Upgrade</TM_ShadowSlayer_ver>
+
+<TM_BladeFocus_pwr_desc>Advances training as a bladedancer. Each level requires 2 skill points to train and upgrades the class trait.
+Level 0: Melee Hit Chance +3, Movement +0.15, Mental Break Threshold -3%
+Level 1: Melee Hit Chance +6, Movement +0.20, Mental Break Threshold -5%
+Level 2: Melee Hit Chance +10, Movement +0.30, Mental Break Threshold -8%, Pain Threshold +5%
+Level 3: Melee Hit Chance +15, Movement +0.40, Mental Break Threshold -10%, Pain Threshold +10%</TM_BladeFocus_pwr_desc>
+<TM_BladeArt_pwr_desc>Improves mastery over the body.  Each level requires 2 skill points to train.
+Level 0: Movement +10%, Manipulation +10%
+Level 1: Movement +15%, Manipulation +15%
+Level 2: Movement +20%, Manipulation +20%, Breathing +10%
+Level 3: Movement +25%, Manipulation +25%, Breathing +15%, Blood Circulation +10%</TM_BladeArt_pwr_desc>
+<TM_SeismicSlash_pwr_desc>Increases the damage of Seismic Slash by 10% per level.</TM_SeismicSlash_pwr_desc>
+<TM_SeismicSlash_eff_desc>Decreases the stamina cost of Seismic Slash by 10% per skill point.</TM_SeismicSlash_eff_desc>
+<TM_SeismicSlash_ver_desc>Increases the number of strikes adjacent to the strike line by 2 per level.  Base level checks 2 adjacent squares, max level will check all 8 adjacent squares.
+If nothing is occupying the square, the adjacent strike his nothing.</TM_SeismicSlash_ver_desc>
+<TM_BladeSpin_pwr_desc>Increases the number of strikes by 1 per skill level.  Base number of strikes is 2.
+Increases the hit chance of Blade Spin by 4% per level.  Base is 50%.</TM_BladeSpin_pwr_desc>
+<TM_BladeSpin_eff_desc>Decreases the stamina cost of Blade Spin by 10% per skill point.</TM_BladeSpin_eff_desc>
+<TM_BladeSpin_ver_desc>Increases the radius of Blade Spin by .5 squares per skill level.  Base radius is 2 squares.
+Increases the hit chance of Blade Spin by 4% per level.  Base is 50%.</TM_BladeSpin_ver_desc>
+<TM_PhaseStrike_pwr_desc>Increases chance to critical strike by 15% per skill level.  Base chance is 10%.  Critical strikes deal 3x damage.</TM_PhaseStrike_pwr_desc>
+<TM_PhaseStrike_eff_desc>Decreases the stamina cost of Phase Strike by 8% per skill point.</TM_PhaseStrike_eff_desc>
+<TM_PhaseStrike_ver_desc>Increases the radius of phased strike by .5 squares per skill level.</TM_PhaseStrike_ver_desc>
+
+<TM_BladeFocus_pwr>Blade Mastery</TM_BladeFocus_pwr>
+<TM_BladeArt_pwr>Body Mastery</TM_BladeArt_pwr>
+<TM_SeismicSlash_pwr>Forceful Wave</TM_SeismicSlash_pwr>
+<TM_SeismicSlash_eff>Flawless Movements</TM_SeismicSlash_eff>
+<TM_SeismicSlash_ver>Expanding Wave</TM_SeismicSlash_ver>
+<TM_BladeSpin_pwr>Sharpened Blade</TM_BladeSpin_pwr>
+<TM_BladeSpin_eff>Effortless Strike</TM_BladeSpin_eff>
+<TM_BladeSpin_ver>Improved Reach</TM_BladeSpin_ver>
+<TM_PhaseStrike_pwr>Critical Phase</TM_PhaseStrike_pwr>
+<TM_PhaseStrike_eff>Dimension Blade</TM_PhaseStrike_eff>
+<TM_PhaseStrike_ver>Phased Reach</TM_PhaseStrike_ver>
+
+<TM_RangerTraining_pwr_desc>Advances training as a ranger. Each level requires 2 skill points to train and upgrades the class trait.
+Level 0: Move Speed +0.2c/s, Immunity +20%, Temperature comfort +-10, Aiming Delay -15%
+Level 1: Move Speed +0.3c/s, Immunity +30%, Temperature comfort +-15, Aiming Delay -20%
+Level 2: Move Speed +0.4c/s, Immunity +40%, Temperature comfort +-20, Aiming Delay -30%
+Level 3: Move Speed +0.5c/s, Immunity +50%, Temperature comfort +-25, Aiming Delay -40%</TM_RangerTraining_pwr_desc>
+<TM_BowTraining_pwr_desc>Increases skill in bows.  Each level requires 2 skill points to train.
+Level 0: +20% damage w/ bows, +20% Sight, +20% Hearing
+Level 1: +40% damage w/ bows, +40% Sight, +40% Hearing
+Level 2: +60% damage w/ bows, +60% Sight, +60% Hearing, +15% Breathing
+Level 3: +80% damage w/ bows, +80% Sight, +80% Hearing, +25% Breathing, +10% Blood filtration</TM_BowTraining_pwr_desc>
+<TM_PoisonTrap_ver_desc>Increases the number of active traps the ranger can have by 1 per level. Base maximum is 2.</TM_PoisonTrap_ver_desc>
+<TM_AnimalFriend_pwr_desc>The ranger can only bond with an animal if they have an empathy level that exceeds the wildness of the animal. Empathy also increases the chance of bonding with an animal and decreases the chance the animal turns manhunter.
+Level 0: up to 70% wildness, 40% manhunter
+Level 1: up to 80% wildness, 35% manhunter
+Level 2: up to 90% wildness, 30% manhunter
+Level 3: up to 100% wildness, 25% manhunter</TM_AnimalFriend_pwr_desc>
+<TM_AnimalFriend_eff_desc>Decreases the stamina cost to use and maintain Animal Bond by 15% per skill point.</TM_AnimalFriend_eff_desc>
+<TM_AnimalFriend_ver_desc>Increases the power of the bond between the ranger and animal kin.
+Level 0: Moving +20%, Manipulation +20%, Dodge chance +15%
+Level 1: Moving +30%, Manipulation +30%, Blood pumping +20%, Dodge chance +20%
+Level 2: Moving +40%, Manipulation +40%, Blood pumping +30%, Dodge chance +27%
+Level 3: Moving +50%, Manipulation +50%, Blood pumping +40%, Dodge chance +35%</TM_AnimalFriend_ver_desc>
+<TM_ArrowStorm_pwr_desc>Increases the damage of each arrow by 10% per skill point.</TM_ArrowStorm_pwr_desc>
+<TM_ArrowStorm_eff_desc>Decreases the stamina cost of Arrow Storm by 8% per skill point.</TM_ArrowStorm_eff_desc>
+<TM_ArrowStorm_ver_desc>Increases the accuracy of Arrow Storm by 5% per skill level.  This is additive, so if the accuracy is 60%, 2 skill levels would increase the accuracy to 70%. Accuracy is derived from the accuracy of the equipped bow.</TM_ArrowStorm_ver_desc>
+
+<TM_RangerTraining_pwr>Ranger Training</TM_RangerTraining_pwr>
+<TM_BowTraining_pwr>Bow Mastery</TM_BowTraining_pwr>
+<TM_PoisonTrap_ver>More Traps</TM_PoisonTrap_ver>
+<TM_AnimalFriend_pwr>Animal Empathy</TM_AnimalFriend_pwr>
+<TM_AnimalFriend_eff>Calming Whisper</TM_AnimalFriend_eff>
+<TM_AnimalFriend_ver>Augmented Bond</TM_AnimalFriend_ver>
+<TM_ArrowStorm_pwr>Notched Arrows</TM_ArrowStorm_pwr>
+<TM_ArrowStorm_eff>Smooth Draw</TM_ArrowStorm_eff>
+<TM_ArrowStorm_ver>Unwavering Focus</TM_ArrowStorm_ver>
+
+<TM_Disguise_eff_desc>Reduces the stamina cost required to apply Deception by 10% per skill level.</TM_Disguise_eff_desc>
+<TM_Disguise_pwr_desc>Reduce the movement penalty while performing visual deception:
+Level 0: -40% movement
+Level 1: -20% movement
+Level 2: 0% movement
+Level 3: +20% movement</TM_Disguise_pwr_desc>
+<TM_Disguise_ver_desc>Increases the duration of Deception by 8s per skill level. Deception lasts 30s by default.</TM_Disguise_ver_desc>
+<TM_Mimic_pwr_desc>This power level is applied to any ability the faceless mimics.</TM_Mimic_pwr_desc>
+<TM_Mimic_eff_desc>Reduces the stamina cost required to Mimic another pawn by 8% per skill level.</TM_Mimic_eff_desc>
+<TM_Mimic_ver_desc>This versatility level is applied to any ability the faceless mimics.</TM_Mimic_ver_desc>
+<TM_Transpose_eff_desc>Decreases stamina cost of Transpose by 8% per level of base stamina cost.</TM_Transpose_eff_desc>
+<TM_Transpose_ver_desc>Level 1: the faceless is no longer disoriented following a transposition. The faceless gains 3 seconds of reversal.
+Level 2: friendly targets are no longer disoriented following a transposition. The faceless gains 4 seconds of reversal.
+Level 3: transpose no longer requires the target to be visible to the faceless. The faceless gains 5 seconds of reversal.</TM_Transpose_ver_desc>
+<TM_Reversal_eff_desc>Decreases stamina cost of Reversal by 10% per skill level.</TM_Reversal_eff_desc>
+<TM_Reversal_pwr_desc>Increases the duration of Reversal by 2s per skill level. Reversal lasts 8s by default.</TM_Reversal_pwr_desc>
+<TM_Reversal_ver_desc>Reversal siphons off a portion of kinetic energy to restore the stamina and life of the user.</TM_Reversal_ver_desc>
+<TM_Possess_pwr_desc>Increases the duration of possession by 5s per skill level. Possession lasts 20s by default.</TM_Possess_pwr_desc>
+<TM_Possess_eff_desc>Decreases stamina cost of Possess by 6% of base cost per skill level.</TM_Possess_eff_desc>
+<TM_Possess_ver_desc>Reduces the penalties when possessing an enemy pawn or increases the bonuses when possessing a friendly pawn.</TM_Possess_ver_desc>
+
+<TM_Disguise_eff>Patchwork Cloak</TM_Disguise_eff>
+<TM_Disguise_ver>Mask of Deception</TM_Disguise_ver>
+<TM_Disguise_pwr>Body Mirroring</TM_Disguise_pwr>
+<TM_Mimic_pwr>Powered Mimicry</TM_Mimic_pwr>
+<TM_Mimic_eff>Nimble Mind</TM_Mimic_eff>
+<TM_Mimic_ver>Versatile Mimicry</TM_Mimic_ver>
+<TM_Transpose_eff>Common Ground</TM_Transpose_eff>
+<TM_Transpose_ver>Extrapolation</TM_Transpose_ver>
+<TM_Reversal_pwr>Sustained Reversal</TM_Reversal_pwr>
+<TM_Reversal_eff>Applied Momentum</TM_Reversal_eff>
+<TM_Reversal_ver>Kinetic Absorption</TM_Reversal_ver>
+<TM_Possess_pwr>Mind Maze</TM_Possess_pwr>
+<TM_Possess_eff>Dominant Will</TM_Possess_eff>
+<TM_Possess_ver>Synchronization</TM_Possess_ver>
+
+
+<TM_PsionicAugmentation_eff_desc>By injecting psionic power into their legs and core, a psionic is able to rapidly accelerate their movement for a short time. 
+
+In combat, this augmentation allows the psionic to rapidly propel themselves short distances and transfer that energy as a form of attack at the impact location. Psionics are shielded in a barrier while performing this psionic leap.
+This attack occurs only if the psionic is drafted and unarmed.
+Training in this skill improves the leap distance and impact force.
+
+Out of combat, the psionic will infuse their stride with mental energy, drastically increasing movement speed for a short time. This ability only occurs when the psionic is near maximum psionic energy and has a work target at a sufficient distance. This will not interrupt ongoing tasks.
+Training in this skill improves duration and movement speed.
+
+Both augmentations occur automatically. This skill requires 2 ability points to level.</TM_PsionicAugmentation_eff_desc>
+<TM_PsionicAugmentation_pwr_desc>By reinforcing physical strength with psionic power, a psionic is able to increase the speed and strength of their actions.
+
+In combat, the this ability reinforces melee attacks with psionic energy, giving the psionic the ability to deliver a massive blow that can knock back or stun an opponent. 
+This attack only occurs during melee when the psionic is unarmed.
+Training in this skill increases the damage output and frequency of blows that apply knock back or stun.
+
+Out of combat, the psionic greatly accelerates the movement of their hands, drastically increasing manipulation. This ability only occurs with the psionic is near maximum psionic energy and is performing work that benefits from manipulation. This will not interrupt ongoing tasks.
+Training in this skill improves duration and the amount manipulation is boosted.
+
+Both augmentations occur automatically. This skill requires 2 ability points to level.</TM_PsionicAugmentation_pwr_desc>
+<TM_PsionicAugmentation_ver_desc>The psionic focuses their psionic energy to crush an opponent with raw power. This only occurs in combat, but can be used in cohesion with other combat capabilities.
+This ability has a minimum target range of 5 cells.
+Training in this skill improves the maximum range, damage, and reduces the psionic energy required to perform the attack.
+
+This augmentation occurs automatically but must be trained in at least once to become active. This skill requires 2 ability points to level.</TM_PsionicAugmentation_ver_desc>
+<TM_PsionicBarrier_pwr_desc>Projectiles deflected by barrier have a chance to drain stamina instead of psionic energy. Each level improves this chance by 15%.
+Level 0: 0%
+Level 1: 15%
+Level 2: 30%
+Level 3: 45%</TM_PsionicBarrier_pwr_desc>
+<TM_PsionicBarrier_eff_desc>Reduces the amount of psionic energy drained when deflecting a projectile by 10% per skill point.</TM_PsionicBarrier_eff_desc>
+<TM_PsionicBarrier_ver_desc>Increases the radius of barrier by 3/4th a cell per skill point. Default radius is 2.5 cells.</TM_PsionicBarrier_ver_desc>
+<TM_PsionicBlast_pwr_desc>Power up psi blast, each level increases damage by 15%.</TM_PsionicBlast_pwr_desc>
+<TM_PsionicBlast_eff_desc>Decreases stamina cost of Psionic Blast by 8% per level of base stamina cost.</TM_PsionicBlast_eff_desc>
+<TM_PsionicBlast_ver_desc>Increases the chance to project multiple blasts by 4% per level and reduces the psionic energy drained for each additional blast by 1.</TM_PsionicBlast_ver_desc>
+<TM_PsionicDash_eff_desc>Decreases stamina cost of Psionic Dash by 10% and reduces psionic energy cost by 1 per skill level.</TM_PsionicDash_eff_desc>
+<TM_PsionicDash_pwr_desc>Increases all damage output by psionic dash by 10% per skill level.</TM_PsionicDash_pwr_desc>
+<TM_PsionicDash_ver_desc>Increase the number of steps taken during while dashing by 1 per skill level.</TM_PsionicDash_ver_desc>
+<TM_PsionicStorm_pwr_desc>Increases the damage of each psionic blast used during psionic storm by 10% per skill point.</TM_PsionicStorm_pwr_desc>
+<TM_PsionicStorm_eff_desc>Reduces the minimum required psionic energy to use psionic storm by 5 per skill level.
+Level 0: 65
+Level 1: 60
+Level 2: 55
+Level 3: 50</TM_PsionicStorm_eff_desc>
+<TM_PsionicStorm_ver_desc>Increases the rate of fire by 10% per skill point.</TM_PsionicStorm_ver_desc>
+
+<TM_PsionicAugmentation_eff>Augment Movement</TM_PsionicAugmentation_eff>
+<TM_PsionicAugmentation_ver>Augment Mind</TM_PsionicAugmentation_ver>
+<TM_PsionicAugmentation_pwr>Augment Manipulation</TM_PsionicAugmentation_pwr>
+<TM_PsionicBarrier_pwr>Energy Symbiosis</TM_PsionicBarrier_pwr>
+<TM_PsionicBarrier_eff>Energy Conservation</TM_PsionicBarrier_eff>
+<TM_PsionicBarrier_ver>Barrier Size</TM_PsionicBarrier_ver>
+<TM_PsionicBlast_pwr>Psi-a Wreck-en</TM_PsionicBlast_pwr>
+<TM_PsionicBlast_eff>Mind and Body</TM_PsionicBlast_eff>
+<TM_PsionicBlast_ver>Energy Flood</TM_PsionicBlast_ver>
+<TM_PsionicDash_pwr>Super Psionic</TM_PsionicDash_pwr>
+<TM_PsionicDash_eff>Sprinter</TM_PsionicDash_eff>
+<TM_PsionicDash_ver>Long Dash</TM_PsionicDash_ver>
+<TM_PsionicStorm_pwr>Destructive Will</TM_PsionicStorm_pwr>
+<TM_PsionicStorm_eff>Mental Reserves</TM_PsionicStorm_eff>
+<TM_PsionicStorm_ver>Unrelenting Storm</TM_PsionicStorm_ver>
+
+<TM_Shroud_pwr_desc>Increases the defensive bonuses and retaliation damage of Shroud of Darkness by roughly 20% per skill point. (actual amount varies depending on level of hate)</TM_Shroud_pwr_desc>
+<TM_Shroud_eff_desc>Increases the amount of Hate generated when the Death Knight is wounded by 10%.  
+
+Reduces the amount of hate consumed when Shroud of Darkness nullifies a projectile by 25% or retaliates against a melee attacker by 12%.</TM_Shroud_eff_desc>
+<TM_Shroud_ver_desc>Increases the chances for Shroud of Darkness to retaliate by 10% per skill point, or nullify a projectile by 6% per skill point.
+Base retaliation chance: 0%
+Base nullification chance: 30%</TM_Shroud_ver_desc>
+<TM_WaveOfFear_pwr_desc>Affected pawns are beset by a debilitating fear that increases aiming time and decreases movement and armor vs dark and light attacks. Training in this skill increases the effect and duration of this debuff.</TM_WaveOfFear_pwr_desc>
+<TM_WaveOfFear_eff_desc>Reduces the stamina and hate costs for Wave of Fear by 10% per skill level.</TM_WaveOfFear_eff_desc>
+<TM_WaveOfFear_ver_desc>Increases the Wave of Fear effect radius by .8 cells per skill point. Default radius is 4 cells. 
+
+The radius is further increase by .7 cells per every 10% of Hate.</TM_WaveOfFear_ver_desc>
+<TM_Spite_pwr_desc>Increase Spite damage by 10% per skill level.</TM_Spite_pwr_desc>
+<TM_Spite_eff_desc>Decreases stamina cost of Spite by 10% per skill level.</TM_Spite_eff_desc>
+<TM_Spite_ver_desc>Increases the chance Spite will overwhelm the emotions of the target, stunning them for a brief period.
+Level 0: 0%
+Level 1: 15%
+Level 2: 30%
+Level 3: 45%</TM_Spite_ver_desc>
+<TM_LifeSteal_pwr_desc>Melee attacks life steal 15% of the damage dealt; each skill level increases the amount by 2%</TM_LifeSteal_pwr_desc>
+<TM_LifeSteal_eff_desc>Steals stamina and generates hate proportional to damage dealt.
+Level 0: 0%
+Level 1: 5%
+Level 2: 10%
+Level 3: 15%</TM_LifeSteal_eff_desc>
+<TM_LifeSteal_ver_desc>Each strike can heal a nearby ally (within 3 cells) by a % of damage dealt per skill level.
+Level 0: 0%
+Level 1: 11%
+Level 2: 12%
+Level 3: 13%</TM_LifeSteal_ver_desc>
+<TM_GraveBlade_pwr_desc>Increases the damage of each grave blade by 12% per skill level.</TM_GraveBlade_pwr_desc>
+<TM_GraveBlade_eff_desc>Reduces the stamina cost of Grave Blade by 8% per skill level.</TM_GraveBlade_eff_desc>
+<TM_GraveBlade_ver_desc>Each strike has a 10% chance per skill point heal the caster by half the damage dealt and/or induce fear in the target.</TM_GraveBlade_ver_desc>
+
+<TM_Shroud_pwr>Darkest Knight</TM_Shroud_pwr>
+<TM_Shroud_eff>Billowing Hate</TM_Shroud_eff>
+<TM_Shroud_ver>Clinging Darkness</TM_Shroud_ver>
+<TM_WaveOfFear_pwr>Incite Terror</TM_WaveOfFear_pwr>
+<TM_WaveOfFear_eff>Icy Hatred</TM_WaveOfFear_eff>
+<TM_WaveOfFear_ver>Contagion</TM_WaveOfFear_ver>
+<TM_Spite_pwr>Intensity</TM_Spite_pwr>
+<TM_Spite_eff>Unrelenting</TM_Spite_eff>
+<TM_Spite_ver>Staggering</TM_Spite_ver>
+<TM_LifeSteal_pwr>Unquenchable Hate</TM_LifeSteal_pwr>
+<TM_LifeSteal_eff>Double Tap</TM_LifeSteal_eff>
+<TM_LifeSteal_ver>Proximity Heal</TM_LifeSteal_ver>
+<TM_GraveBlade_pwr>At Death's Door</TM_GraveBlade_pwr>
+<TM_GraveBlade_eff>Ferryman</TM_GraveBlade_eff>
+<TM_GraveBlade_ver>Blood and Spirit</TM_GraveBlade_ver>
+
+<TM_Chi_pwr_desc>Increases maximum amount of energy burned by 20%. Base max is 50 energy.
+Affected pawns take .4 damage per energy burned and are stunned.</TM_Chi_pwr_desc>
+<TM_Chi_eff_desc>Reduces the amount of ch'i required to use ch'i abilities by 6% per skill point.</TM_Chi_eff_desc>
+<TM_Chi_ver_desc>Decreases ch'i decay by 20% per skill point.</TM_Chi_ver_desc>
+<TM_MindOverBody_pwr_desc>Applies an additional stack of the Monk's passive buff (Mind Over Body) per skill level</TM_MindOverBody_pwr_desc>
+<TM_MindOverBody_ver_desc>Increases the maximum damage mitigation by 2 per skill level. Damage mitigation is reduced by 1 for each kg of apparel weight.
+Level 0: 7 damage
+Level 1: 9 damage
+Level 2: 11 damage
+Level 3: 13 damage</TM_MindOverBody_ver_desc>
+<TM_Meditate_pwr_desc>Increases regeneration rates for wounds, diseases and addictions by 10% per skill level.</TM_Meditate_pwr_desc>
+<TM_Meditate_eff_desc>Increases ch'i gained during meditation by 10% per skill level.</TM_Meditate_eff_desc>
+<TM_Meditate_ver_desc>Increases rest, joy and mood bonus gain while meditating by 10%.</TM_Meditate_ver_desc>
+<TM_TigerStrike_pwr_desc>Increases damage of Tiger Strike by 15% per skill level and increases passive chance to multi-strike by 5% (base 30%)</TM_TigerStrike_pwr_desc>
+<TM_TigerStrike_eff_desc>Decreases ch'i and stamina cost of Tiger Strike by 10%</TM_TigerStrike_eff_desc>
+<TM_TigerStrike_ver_desc>Each skill level adds 1 additional attack to Tiger Strike. Each skill level also adds a chance to apply bonus attacks.
+Level 0: Physical only
+Level 1: Stun (10% per strike)
+Level 2: Draining (40% per strike)
+Level 3: Lethal Blow (10% per strike)
+
+Draining attacks will absorb energy (mana, stamina) and convert it to ch'i
+Lethal Blow targets a vital bodypart and strikes it with a precise attack that deals an additional 40% damage</TM_TigerStrike_ver_desc>
+<TM_DragonStrike_pwr_desc>Increases the damage of Dragon Strike by 10% per skill level.</TM_DragonStrike_pwr_desc>
+<TM_DragonStrike_eff_desc>Reduces the stamina and ch'i cost of Dragon Strike by 10% per skill level.</TM_DragonStrike_eff_desc>
+<TM_DragonStrike_ver_desc>Increases passive chance that Dragon Strike will trigger by 5% per skill level. Base 30%. Only triggers when confronted with multiple opponents. Also increases the distance Dragon Strike knocks back a nearby target by 15% per skill level.</TM_DragonStrike_ver_desc>
+<TM_ThunderStrike_pwr_desc>Increases the damage of Thunder Strike by 12% per skill level.</TM_ThunderStrike_pwr_desc>
+<TM_ThunderStrike_eff_desc>Reduces the ch'i cost of Thunder Strike by 10% per skill level.</TM_ThunderStrike_eff_desc>
+<TM_ThunderStrike_ver_desc>Increased charge creates additional bolts that fork outward from the Monk in a fan pattern.</TM_ThunderStrike_ver_desc>
+
+<TM_Chi_pwr>Disrupting Burst</TM_Chi_pwr>
+<TM_Chi_eff>Life Sieve</TM_Chi_eff>
+<TM_Chi_ver>Spirit Capacitor</TM_Chi_ver>
+<TM_MindOverBody_pwr>Martial Arts</TM_MindOverBody_pwr>
+<TM_MindOverBody_ver>Ignore Damage</TM_MindOverBody_ver>
+<TM_Meditate_pwr>Cleansing Meditation</TM_Meditate_pwr>
+<TM_Meditate_eff>Deep Meditation</TM_Meditate_eff>
+<TM_Meditate_ver>Renewing Meditation</TM_Meditate_ver>
+<TM_TigerStrike_pwr>Tiger's Fury</TM_TigerStrike_pwr>
+<TM_TigerStrike_eff>Flowing Stance</TM_TigerStrike_eff>
+<TM_TigerStrike_ver>Tiger's Cunning</TM_TigerStrike_ver>
+<TM_DragonStrike_pwr>Dragon's Fury</TM_DragonStrike_pwr>
+<TM_DragonStrike_eff>Lurking Dragon</TM_DragonStrike_eff>
+<TM_DragonStrike_ver>Winged Feet</TM_DragonStrike_ver>
+<TM_ThunderStrike_pwr>Thunder's Fury</TM_ThunderStrike_pwr>
+<TM_ThunderStrike_eff>Electric Spirit</TM_ThunderStrike_eff>
+<TM_ThunderStrike_ver>Shatter</TM_ThunderStrike_ver>
+
+<TM_ProvisionerAura_pwr_desc>Increases the effectiveness of all aspects of Commander's provisions.</TM_ProvisionerAura_pwr_desc>
+<TM_ProvisionerAura_eff_desc>Reduces energy activation cost and upkeep cost by 12.5% per skill point.</TM_ProvisionerAura_eff_desc>
+<TM_ProvisionerAura_ver_desc>Expands the scope of provisions.
+Level 0: reduces rest and food decay
+Level 1: maintains equipped weapons and gear
+Level 2: improves natural health regeneration
+Level 3: adds a 15% boost to stamina and mana regeneration</TM_ProvisionerAura_ver_desc>
+<TM_TaskMasterAura_pwr_desc>Increases the work effectiveness of pawns under a task master.</TM_TaskMasterAura_pwr_desc>
+<TM_TaskMasterAura_eff_desc>Reduces energy activation cost and upkeep cost by 11% per skill point.</TM_TaskMasterAura_eff_desc>
+<TM_TaskMasterAura_ver_desc>Increases the reach of the Task Master Aura by 2 cells per skill point; base reach is 15c. Increases the frequency the effect is applied by 5%.</TM_TaskMasterAura_ver_desc>
+<TM_CommanderAura_pwr_desc>Improves effect of Commander's Aura and reduces the amount of time between motivational speeches by 10%.</TM_CommanderAura_pwr_desc>
+<TM_CommanderAura_eff_desc>Reduces energy activation cost and upkeep cost by 10% per skill point.</TM_CommanderAura_eff_desc>
+<TM_CommanderAura_ver_desc>Increases the reach of Commander's Aura by 2 cells per skill point; base reach is 15c. Increases duration of aura effect on pawns by 10% per skill point; base duration is .5hrs (game time).</TM_CommanderAura_ver_desc>
+<TM_StayAlert_pwr_desc>Increases the amount of rest gained by each affected pawn by 10% per skill level and extends the duration pawns stay alert. This is a flat bonus, unaffected by the number of pawns receiving the order.</TM_StayAlert_pwr_desc>
+<TM_StayAlert_eff_desc>Reduces the stamina required to order Stay Alert! by 10% per skill level.</TM_StayAlert_eff_desc>
+<TM_MoveOut_pwr_desc>Increases the movement bonus by 10% per skill level. This is a flat bonus, unaffected by the number of pawns receiving the order.</TM_MoveOut_pwr_desc>
+<TM_MoveOut_eff_desc>Reduces the stamina required to order Move Out! by 10% per skill level.</TM_MoveOut_eff_desc>
+<TM_HoldTheLine_pwr_desc>Increases the effectiveness of Hold The Line and increases the amount each affected pawn is shielded. This is a flat bonus, unaffected by the number of pawns receiving the order.</TM_HoldTheLine_pwr_desc>
+<TM_HoldTheLine_eff_desc>Reduces the stamina required to order Hold The Line! by 10% per skill level.</TM_HoldTheLine_eff_desc>
+
+<TM_ProvisionerAura_pwr>Adept Accounting</TM_ProvisionerAura_pwr>
+<TM_ProvisionerAura_eff>Efficient Manager</TM_ProvisionerAura_eff>
+<TM_ProvisionerAura_ver>Supply Broker</TM_ProvisionerAura_ver>
+<TM_TaskMasterAura_pwr>Drill Master</TM_TaskMasterAura_pwr>
+<TM_TaskMasterAura_eff>Greater Good</TM_TaskMasterAura_eff>
+<TM_TaskMasterAura_ver>Voice Projection</TM_TaskMasterAura_ver>
+<TM_CommanderAura_pwr>Visionary Leader</TM_CommanderAura_pwr>
+<TM_CommanderAura_eff>Mask of the Commander</TM_CommanderAura_eff>
+<TM_CommanderAura_ver>Motivating Personality</TM_CommanderAura_ver>
+<TM_StayAlert_pwr>Command Authority</TM_StayAlert_pwr>
+<TM_StayAlert_eff>Command Presence</TM_StayAlert_eff>
+<TM_MoveOut_pwr>Command Authority</TM_MoveOut_pwr>
+<TM_MoveOut_eff>Command Presence</TM_MoveOut_eff>
+<TM_HoldTheLine_pwr>Command Authority</TM_HoldTheLine_pwr>
+<TM_HoldTheLine_eff>Command Presence</TM_HoldTheLine_eff>
+
+<TM_PistolSpec_pwr_desc>Equipped pistols gain the following improvements for each skill level:
+Damage 		+3%
+Shot Count 	+2%
+Cooldown 	-2.5%
+Warmup 		-2.5%
+Burst Time 	-3%
+Range 		+1%
+Acc. Short 	+1.5%
+Acc. Medium	+0.5%</TM_PistolSpec_pwr_desc>
+<TM_PistolSpec_eff_desc>Increases chance to ignore cooldown after each pistol shot burst.
+Level 0: 25%
+Level 1: 30%
+Level 2: 35%
+Level 3: 40%</TM_PistolSpec_eff_desc>
+<TM_PistolSpec_ver_desc>Improves the Pistol Whip ability.
+Level 0: (Stun) 6-9 damage, (Blunt) 6-8 damage, 35% chance to disarm
+Level 1: (Stun) 7-10 damage, (Blunt) 7-9 damage, 40% chance to disarm, -10% energy cost
+Level 2: (Stun) 8-11 damage, (Blunt) 8-10 damage, 45% chance to disarm, -20% energy cost
+Level 3: (Stun) 9-12 damage, (Blunt) 9-11 damage, 50% chance to disarm, -30% energy cost</TM_PistolSpec_ver_desc>
+<TM_RifleSpec_pwr_desc>Equipped rifles gain the following improvements for each skill level:
+Damage 		+1%
+Shot Count 	+3%
+Cooldown 	-1%
+Warmup 		-1%
+Burst Time 	-2%
+Range 		+2%
+Acc. Short 	+1%
+Acc. Medium	+1%
+Acc. Long	+1%</TM_RifleSpec_pwr_desc>
+<TM_RifleSpec_eff_desc>Increases round count of Suppressing Fire by 12.5% and reduces energy cost by 8% per skill level.</TM_RifleSpec_eff_desc>
+<TM_RifleSpec_ver_desc>Increases explosion damage of the Mk203 Grenade Launcher by 1.5 and reduces energy cost by 8% per skill level.</TM_RifleSpec_ver_desc>
+<TM_ShotgunSpec_pwr_desc>Equipped shotguns gain the following improvements for each skill level:
+Damage 		+2%
+Cooldown 	-3%
+Warmup 		-3%
+Burst Time 	-2%
+Range 		+1%
+Acc. Touch	+1%
+Acc. Short 	+1.5%
+Acc. Medium	+0.5%</TM_ShotgunSpec_pwr_desc>
+<TM_ShotgunSpec_eff_desc>Increases pellet count of Buckshot by 3 and reduces energy cost by 8% per skill level.</TM_ShotgunSpec_eff_desc>
+<TM_ShotgunSpec_ver_desc>Increases damage of Breaching Charge by 15% and reduces energy cost by 8% per skill level.</TM_ShotgunSpec_ver_desc>
+<TM_CQC_pwr_desc>Increases damage of CQC strike by 2 per skill level. Base 10-14 damage.</TM_CQC_pwr_desc>
+<TM_CQC_eff_desc>Reduces energy cost to use CQC by 10% per skill level.</TM_CQC_eff_desc>
+<TM_CQC_ver_desc>Increases chance to perform a CQC attack:
+Level 0: 20%
+Level 1: 25%
+Level 2: 28%
+Level 3: 30%</TM_CQC_ver_desc>
+<TM_FirstAid_pwr_desc>Increases number of wounds tended by 1 per skill level. Base 2 wounds tended.</TM_FirstAid_pwr_desc>
+<TM_FirstAid_eff_desc>Reduces energy cost to use Self Aid by 10% per skill level.</TM_FirstAid_eff_desc>
+<TM_FirstAid_ver_desc>Improves the tend quality of Self Aid
+Level 0: 0-40%
+Level 1: 10-50%
+Level 2: 20-60%
+Level 3: 30-70%</TM_FirstAid_ver_desc>
+<TM_60mmMortar_pwr_desc>Increases blast damage and radius.
+Level 0: 14-20 damage, 2c radius
+Level 1: 15-22 damage, 2.35c radius
+Level 2: 16-24 damage, 2.7c radius
+Level 3: 17-26 damage, 3.05c radius</TM_60mmMortar_pwr_desc>
+<TM_60mmMortar_eff_desc>Reduces energy cost to deploy a 60mm Mortar system by 8% and increases accuracy by 10% per skill level .</TM_60mmMortar_eff_desc>
+<TM_60mmMortar_ver_desc>Increases the max range and reduces the delay between rounds. Rank 3 increases round count to 4.</TM_60mmMortar_ver_desc>
+
+<TM_PistolSpec_pwr>Pistol Specialization</TM_PistolSpec_pwr>
+<TM_PistolSpec_eff>Double Tap</TM_PistolSpec_eff>
+<TM_PistolSpec_ver>Pistol Whip</TM_PistolSpec_ver>
+<TM_RifleSpec_pwr>Rifle Specialization</TM_RifleSpec_pwr>
+<TM_RifleSpec_eff>Bullet Storm</TM_RifleSpec_eff>
+<TM_RifleSpec_ver>Grenadier</TM_RifleSpec_ver>
+<TM_ShotgunSpec_pwr>Shotgun Specialization</TM_ShotgunSpec_pwr>
+<TM_ShotgunSpec_eff>Shell Shock</TM_ShotgunSpec_eff>
+<TM_ShotgunSpec_ver>Shape Charge</TM_ShotgunSpec_ver>
+<TM_CQC_pwr>Force</TM_CQC_pwr>
+<TM_CQC_eff>Quickness</TM_CQC_eff>
+<TM_CQC_ver>Balance</TM_CQC_ver>
+<TM_FirstAid_pwr>Troll's Blood</TM_FirstAid_pwr>
+<TM_FirstAid_eff>Natural Tendency</TM_FirstAid_eff>
+<TM_FirstAid_ver>Second Skin</TM_FirstAid_ver>
+<TM_60mmMortar_pwr>High Explosive</TM_60mmMortar_pwr>
+<TM_60mmMortar_eff>Mortar Expert</TM_60mmMortar_eff>
+<TM_60mmMortar_ver>Quality Shells</TM_60mmMortar_ver>
+
+<TM_ShadowWalk_pwr_desc>Applies a short duration invisibility to the caster after performing Shadow Walk.
+Level 0: N/A
+Level 1: 2s invisibility
+Level 2: 3s invisibility
+Level 3: 4s invisibility</TM_ShadowWalk_pwr_desc>
+<TM_ShadowWalk_eff_desc>Reduces the amount of mana required to use shadow walk by 8% per skill point.</TM_ShadowWalk_eff_desc>
+<TM_ShadowWalk_ver_desc>Creates an excess of shadow for restoration and protection for the caster and friendly target pawns.
+Level 0: N/A
+Level 1: heals the caster
+Level 2: heals the target
+Level 3: briefly cloaks the target</TM_ShadowWalk_ver_desc>
+<TM_ShadowStrike_pwr_desc>Increases damage of shadow strike by 5% per skill point.</TM_ShadowStrike_pwr_desc>
+<TM_ShadowStrike_eff_desc>Reduces stamina cost by 4% per skill point.</TM_ShadowStrike_eff_desc>
+<TM_ShadowStrike_ver_desc>Adds survivability and lethality to shadow strike:
+Level 0: N/A
+Level 1: gain 2s of invisibility
+Level 2: invisibility +1s
+Level 3: initiates shadow strike with a splash of nightshade that applies nightshade toxin to all enemies 2m around the target
+Level 4: increases toxin severity
+Level 5: splash radius +1m</TM_ShadowStrike_ver_desc>
+<TM_Nightshade_pwr_desc>Increases toxic severity of each attack by 20% per skill point.</TM_Nightshade_pwr_desc>
+<TM_Nightshade_eff_desc>Reduces nightshade upkeep cost by 6% per skill point.</TM_Nightshade_eff_desc>
+<TM_Nightshade_ver_desc>Increases maximum amount of nightshade toxin doses by 20% per skill point.</TM_Nightshade_ver_desc>
+<TM_VeilOfShadows_pwr_desc>Increases duration of invisibility and shadow fog by 1s per skill point. Grants 10s of invisibility by default.</TM_VeilOfShadows_pwr_desc>
+<TM_VeilOfShadows_eff_desc>Reduces stamina cost of Veil of Shadows by 6% per skill point.</TM_VeilOfShadows_eff_desc>
+<TM_VeilOfShadows_ver_desc>Increases radius of shadow fog by 10% per skill point and cloak of shadows also applies movement and manipulation bonuses of 20% per skill point.</TM_VeilOfShadows_ver_desc>
+
+<TM_ShadowWalk_pwr>Lingering Shadow</TM_ShadowWalk_pwr>
+<TM_ShadowWalk_eff>Contrast</TM_ShadowWalk_eff>
+<TM_ShadowWalk_ver>Shadow's Caress</TM_ShadowWalk_ver>
+<TM_ShadowStrike_pwr>Vicious Strikes</TM_ShadowStrike_pwr>
+<TM_ShadowStrike_eff>Hidden Approach</TM_ShadowStrike_eff>
+<TM_ShadowStrike_ver>Toxic Shadow</TM_ShadowStrike_ver>
+<TM_Nightshade_pwr>Toxin Potency</TM_Nightshade_pwr>
+<TM_Nightshade_eff>Forager</TM_Nightshade_eff>
+<TM_Nightshade_ver>Toxic Reserves</TM_Nightshade_ver>
+<TM_VeilOfShadows_pwr>Clinging Shadow</TM_VeilOfShadows_pwr>
+<TM_VeilOfShadows_eff>Shadow Saint</TM_VeilOfShadows_eff>
+<TM_VeilOfShadows_ver>Overwhelming Darkness</TM_VeilOfShadows_ver>
+
+<TM_Taunt_pwr>Challenger</TM_Taunt_pwr>
+<TM_Taunt_eff>Book of Insults</TM_Taunt_eff>
+<TM_Taunt_ver>Bellowing Roar</TM_Taunt_ver>
+<TM_Taunt_pwr_desc>Increases the chance taunt is successful and max number of targets.
+Level 0: 60%, 5 targets max
+Level 1: 65%, 6 targets max
+Level 2: 70%, 7 targets max
+Level 3: 75%, 8 targets max</TM_Taunt_pwr_desc>
+<TM_Taunt_eff_desc>Reduces energy cost by 10% per skill level.</TM_Taunt_eff_desc>
+<TM_Taunt_ver_desc>Increases the radius of taunt by 2 cells; default is 15 cells.</TM_Taunt_ver_desc>
+
+<TM_Explosion_pwr>Destruction</TM_Explosion_pwr>
+<TM_Explosion_eff>Chant</TM_Explosion_eff>
+<TM_Explosion_ver>Ocular Refinement</TM_Explosion_ver>
+<TM_Explosion_pwr_desc>Increases damage of Explosion by 2% per skill level.</TM_Explosion_pwr_desc>
+<TM_Explosion_eff_desc>Reduces energy cost of Explosion by 1% per skill level.</TM_Explosion_eff_desc>
+<TM_Explosion_ver_desc>Reduces the time it takes Explosion to activate by 1% and increases the radius of Explosion by 1 cells at levels 10/20/30; default is 12 cells.</TM_Explosion_ver_desc>
+
+<TM_MedicalSupply_ver>Capacity</TM_MedicalSupply_ver>
+<TM_MedicalSupply_ver_desc>Increases the maximum amount of Medical Supply carried by 10 per skill level.</TM_MedicalSupply_ver_desc>
+<TM_Medigel_eff>Combat Medic</TM_Medigel_eff>
+<TM_Medigel_eff_desc>Reduces the energy cost of Medigel by 5% per skill level.</TM_Medigel_eff_desc>
+<TM_CombatDrugs_pwr>Potency</TM_CombatDrugs_pwr>
+<TM_CombatDrugs_pwr_desc>Increases the number of effects applied:
+Level 0: 1 effect
+Level 1: 2 effects
+Level 2: 3 effects
+Level 3: all 4 effects</TM_CombatDrugs_pwr_desc>
+<TM_CombatDrugs_ver>Stabilization</TM_CombatDrugs_ver>
+<TM_CombatDrugs_ver_desc>Lasts 120s plus 20s per skill level.</TM_CombatDrugs_ver_desc>
+
+<!-- UI -->
+<TM_TabMagic>Magic</TM_TabMagic>
+<TM_TabMight>Might</TM_TabMight>
+<TM_TabCustom>Class</TM_TabCustom>
+<TM_Header>magic</TM_Header>
+<TM_HeaderMight>might</TM_HeaderMight>
+<TM_Level>level</TM_Level>
+<TM_Spells>magic spells</TM_Spells>
+<TM_Skills>might skills</TM_Skills>
+<TM_PointsAvail>Points Available</TM_PointsAvail>
+<TM_MagicXPDesc>Magic XP is gained as characters use spells.  XP gain is equivalent to the difficulty of the spell.  Characters will also gain XP slowly if they are at max mana.</TM_MagicXPDesc>
+<TM_MightXPDesc>Might XP is gained as characters use combat skills.  XP gain is equivalent to the difficulty of the skill.  Characters will also gain XP slowly if they are fully rested.</TM_MightXPDesc>
+
+<TM_CheckPointsForMoreInfo>Hover your mouse over skill attributes for more information on improvements.</TM_CheckPointsForMoreInfo>
+<TM_MagicLevelUp>{0} has gained a deeper understanding of magic and can train a new magic skill.</TM_MagicLevelUp>
+<TM_MightLevelUp>{0} has grown stronger and is ready to develop a combat skill.</TM_MightLevelUp>
+<TM_NotEnoughAbilityPoints>Requires {1} ability points. Pawn has {0}.</TM_NotEnoughAbilityPoints>
+
+<TM_Power>Lightning Storm power</TM_Power>
+<TM_Efficiency>Lightning Storm Efficiency</TM_Efficiency>
+<TM_Versatility>Lightning Storm versatility</TM_Versatility>
+
+<TM_TechnomancerPathWarning>**Only one technomancy path can be chosen; once a path is selected all other paths will be closed**</TM_TechnomancerPathWarning>
+<TM_SuperSoldierPathWarning>**Only one weapon specialization can be chosen; once a path is selected all other paths will be closed**</TM_SuperSoldierPathWarning>
+<TM_SpellLocked>Locked: learn {0} using a scroll</TM_SpellLocked>
+<TM_MasterSpellLocked>Locked: learn {0} using a master scroll</TM_MasterSpellLocked>
+
+<!-- ========== Button Tooltips ========== -->
+<Poppi_fuelGrowth>Chemical extraction</Poppi_fuelGrowth>
+<TM_ArmorHarmony>Virtue</TM_ArmorHarmony>
+
+<!-- ========== Button Tooltips ========== -->
+
+<TM_AbilityDescBaseManaCost>Base Mana Cost: {0} </TM_AbilityDescBaseManaCost>
+<TM_AbilityDescAdjustedManaCost>Adjusted Mana Cost: {0} </TM_AbilityDescAdjustedManaCost>
+<TM_AbilityDescBaseStaminaCost>Base Stamina Cost: {0} </TM_AbilityDescBaseStaminaCost>
+<TM_AbilityDescAdjustedStaminaCost>Adjusted Stamina Cost: {0} </TM_AbilityDescAdjustedStaminaCost>
+<TM_AbilityDescBaseBloodCost>Base Blood Cost: {0} </TM_AbilityDescBaseBloodCost>
+<TM_AbilityDescAdjustedBloodCost>Adjusted Blood Cost: {0} </TM_AbilityDescAdjustedBloodCost>
+<TM_AbilityDescBaseChiCost>Base Chi Cost: {0} </TM_AbilityDescBaseChiCost>
+<TM_AbilityDescAdjustedChiCost>Adjusted Chi Cost: {0} </TM_AbilityDescAdjustedChiCost>
+<TM_AbilityDescPortalTime>Portal collapse in {0} seconds</TM_AbilityDescPortalTime>
+<TM_AbilityDescSummonDuration>Summon duration: {0} seconds</TM_AbilityDescSummonDuration>
+<TM_AdjustedCooldown>Adjusted Cooldown: {0} seconds</TM_AdjustedCooldown>
+<TM_PsionicInitialCost>Initial Psionic Energy Cost: {0}</TM_PsionicInitialCost>
+<TM_PsionicBlastAddCost>Subsequent Blast Energy Cost: {0}</TM_PsionicBlastAddCost>
+<TM_RequiresHateAmount>Required Hate: {0}</TM_RequiresHateAmount>
+<TM_PsionicBarrierMaintenanceCost></TM_PsionicBarrierMaintenanceCost>
+<TM_PsionicBarrierConversionRate></TM_PsionicBarrierConversionRate>
+<TM_Replicate>Replication Scan</TM_Replicate>
+<TM_ReplicateDesc>The Arcane Forge is capable of scanning a single item and replicating its design. If successful, the forge stores the design blueprints of the scanned item and the item can then be crafted at the forge.\n\nReplicated items require the same material as the standard item to craft, but any research requirements or crafting skill requirements are bypassed. All replicated items require a high intelligence to reproduce and the forge can only be operated by a mage.\n\n*Admin note: the forge can perform scans at no cost, but the active design is replaced by the default recipe if the game is reloaded.\n\nReplication has no use limit, but is benefits most when used to create items you do not have the research to create, to alter the crafting requirements, to take advantage of the dramatically increased crafting speed of the arcane forge or to benefit from the quality bonus when operated by a high level mage.</TM_ReplicateDesc>
+<TM_ReplicateDisabled>Replication Disabled</TM_ReplicateDisabled>
+<TM_ReplicateDisabledDesc>Clear bills related to replication and allow a new replication.</TM_ReplicateDisabledDesc>
+<TM_PromoteWanderer>Promote To Wanderer</TM_PromoteWanderer>
+<TM_PromoteWandererDesc>Promotes the Gifted pawn to the Wanderer class. The Wanderer has no class abilities but can learn all classless standalone abilities (cantrips) using scrolls, and can improve cantrips beyond their normal potential.
+
+*To become a mage class, the pawn must read a torn arcane script or arcane tome.*
+
+**Once promoted, the pawn cannot become another mage class, the decision is permanent and cannot be reverted - this includes the Wanderer class.**</TM_PromoteWandererDesc>
+<TM_PromoteWayfarer>Promote To Wayfarer</TM_PromoteWayfarer>
+<TM_PromoteWayfarerDesc>Promotes the Gifted pawn to the Wayfarer class. The Wayfarer has no class abilities but can learn all classless standalone abilities using scrolls, and can improve combat abilities beyond their normal potential.
+
+*To become a might class, the pawn must read a book teaching a Combat Form.*
+
+**Once promoted, the pawn cannot become another fighter class, the decision is permanent and cannot be reverted - this includes the Wayfarer class.**</TM_PromoteWayfarerDesc>
+
+<!-- ========== Building Menu's ========== -->
+
+<TM_SelectPortalDestination>Activate Portal</TM_SelectPortalDestination>
+<TM_UsePortal>Use Portal</TM_UsePortal>
+<TM_DeactivatePortal>Deactivate Portal</TM_DeactivatePortal>
+<TM_ChargePortal>Charge Portal: {0}&#37;</TM_ChargePortal>
+<TM_CommandMakePortalStockpileDesc>Creates a stockpile around the portal. When transporting items, the portal will move all items within this stockpile.</TM_CommandMakePortalStockpileDesc>
+<TM_CommandMakePortalStockpileLabel>Portal stockpile</TM_CommandMakePortalStockpileLabel>
+<TM_PortalStockpile>Transport Items</TM_PortalStockpile>
+<TM_PortalFailed>{0} failed when attempting to use the portal - if this persists, try deactivating the portal and resetting the target location.</TM_PortalFailed>
+<TM_PortalDestinationInvalid>Invalid destination cell - destination must be a known, visible, and player occupied map.</TM_PortalDestinationInvalid>
+<TM_NoValidPortalDestination>No valid portal destination selected, exiting without assignment.</TM_NoValidPortalDestination>
+<TM_PortalNoGatewayLearned>{0} has not mastered the Gateway spell</TM_PortalNoGatewayLearned>
+<TM_NeedManaToActivatePortal>Activate: {0} of .70 mana</TM_NeedManaToActivatePortal>
+<TM_ChargeManaStorage>Charge: {0}&#37;</TM_ChargeManaStorage>
+
+<!-- ============ Enchanting Menu's =============-->
+<TabEnchantment>Enchanted</TabEnchantment>
+<TM_DropGem>Drop {0}</TM_DropGem>
+<TM_PickupGem>Equip {0} for enchanting</TM_PickupGem>
+<TM_CannotReach>Cannot reach</TM_CannotReach>
+<TM_EnchantItem>Enchant {0}</TM_EnchantItem>
+<TM_CannotDrop>Cannot drop {0}</TM_CannotDrop>
+<TM_NeedManaForEnchant>Enchantment: {0} of .5 mana</TM_NeedManaForEnchant>
+
+<!-- ============ Enchantment Labels =============-->
+<TM_MaxMPLabel>Max Energy Increase: {0}&#37;</TM_MaxMPLabel>
+<TM_MPRegenRateLabel>Energy Regen Increase: {0}&#37;</TM_MPRegenRateLabel>
+<TM_CoolDownLabel>Ability Cooldown Reduction: {0}&#37;</TM_CoolDownLabel>
+<TM_MPCostLabel>Ability Cost Reduction: {0}&#37;</TM_MPCostLabel>
+<TM_XPGainLabel>XP Gain Increase: {0}&#37;</TM_XPGainLabel>
+<TM_ArcaneResLabel>Ability Resistance: {0}&#37;</TM_ArcaneResLabel>
+<TM_ArcaneDmgLabel>Ability Bonus: {0}&#37;</TM_ArcaneDmgLabel>
+<TM_ArcaneSpectre>Arcane Spectre</TM_ArcaneSpectre>
+<TM_PhantomShift>Phantom Shift</TM_PhantomShift>
+<TM_ArcalleumCooldown>Arcalleum Cooldown: {0}&#37;</TM_ArcalleumCooldown>
+<TM_EA_Hediff>{0}: {1} {2}&#37; on hit</TM_EA_Hediff>
+<TM_EA_Damage>{0}: {1}-{2} {3} damage {4}&#37; on hit</TM_EA_Damage>
+
+<!-- ============ Floating Text =============-->
+<TM_Enchanted>Enchanted!</TM_Enchanted>
+
+</LanguageData>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_HediffEnchantment_maxMP.label>魔法 - 最大法力值:</TM_HediffEnchantment_maxMP.label>
+  <TM_HediffEnchantment_maxMP.stages.0.label></TM_HediffEnchantment_maxMP.stages.0.label>
+
+  <TM_HediffEnchantment_coolDown.label>魔法 - 冷却时间:</TM_HediffEnchantment_coolDown.label>
+  <TM_HediffEnchantment_coolDown.stages.0.label></TM_HediffEnchantment_coolDown.stages.0.label>
+
+  <TM_HediffEnchantment_mpCost.label>魔法 - 法力消耗:</TM_HediffEnchantment_mpCost.label>
+  <TM_HediffEnchantment_mpCost.stages.0.label></TM_HediffEnchantment_mpCost.stages.0.label>
+
+  <TM_HediffEnchantment_mpRegenRate.label>魔法 - 法力回复:</TM_HediffEnchantment_mpRegenRate.label>
+  <TM_HediffEnchantment_mpRegenRate.stages.0.label></TM_HediffEnchantment_mpRegenRate.stages.0.label>
+
+  <TM_HediffEnchantment_xpGain.label>魔法 - 经验获取:</TM_HediffEnchantment_xpGain.label>
+  <TM_HediffEnchantment_xpGain.stages.0.label></TM_HediffEnchantment_xpGain.stages.0.label>
+
+  <TM_HediffEnchantment_arcaneRes.label>魔法抗性:</TM_HediffEnchantment_arcaneRes.label>
+  <TM_HediffEnchantment_arcaneRes.stages.0.label></TM_HediffEnchantment_arcaneRes.stages.0.label>
+
+  <TM_HediffEnchantment_arcaneDmg.label>法术强度:</TM_HediffEnchantment_arcaneDmg.label>
+  <TM_HediffEnchantment_arcaneDmg.stages.0.label></TM_HediffEnchantment_arcaneDmg.stages.0.label>
+
+  <TM_HediffEnchantment_arcaneSpectre.label>魔法幽魂</TM_HediffEnchantment_arcaneSpectre.label>
+  <TM_HediffEnchantment_arcaneSpectre.stages.0.label></TM_HediffEnchantment_arcaneSpectre.stages.0.label>
+
+  <TM_HediffEnchantment_phantomShift.label>幽魂转换</TM_HediffEnchantment_phantomShift.label>
+  <TM_HediffEnchantment_phantomShift.stages.0.label></TM_HediffEnchantment_phantomShift.stages.0.label>
+
+
+</LanguageData>

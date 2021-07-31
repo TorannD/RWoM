@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- arms -->
+
+  <TM_ArmRegrowth.label>再生臂</TM_ArmRegrowth.label>
+  <TM_ArmRegrowth.comps.1.tools.0.label>再生臂</TM_ArmRegrowth.comps.1.tools.0.label>
+  <TM_ArmRegrowth.stages.0.label>根</TM_ArmRegrowth.stages.0.label>
+  <TM_ArmRegrowth.stages.1.label>慢速</TM_ArmRegrowth.stages.1.label>
+  <TM_ArmRegrowth.stages.2.label>中速</TM_ArmRegrowth.stages.2.label>
+  <TM_ArmRegrowth.stages.3.label>快速</TM_ArmRegrowth.stages.3.label>
+
+  <TM_HandRegrowth.label>再生手</TM_HandRegrowth.label>
+  <TM_HandRegrowth.comps.1.tools.0.label>再生手</TM_HandRegrowth.comps.1.tools.0.label>
+  <TM_HandRegrowth.stages.0.label>根</TM_HandRegrowth.stages.0.label>
+  <TM_HandRegrowth.stages.1.label>慢速</TM_HandRegrowth.stages.1.label>
+  <TM_HandRegrowth.stages.2.label>中速</TM_HandRegrowth.stages.2.label>
+  <TM_HandRegrowth.stages.3.label>快速</TM_HandRegrowth.stages.3.label>
+
+  <TM_FingerRegrowth.label>再生手指</TM_FingerRegrowth.label>
+  <TM_FingerRegrowth.stages.0.label>指根</TM_FingerRegrowth.stages.0.label>
+  <TM_FingerRegrowth.stages.1.label>再生</TM_FingerRegrowth.stages.1.label>
+
+  <TM_ToeRegrowth.label>再生脚趾</TM_ToeRegrowth.label>
+  <TM_ToeRegrowth.stages.0.label>指根</TM_ToeRegrowth.stages.0.label>
+  <TM_ToeRegrowth.stages.1.label>再生</TM_ToeRegrowth.stages.1.label>
+
+  <TM_EyeRegrowth.label>再生眼</TM_EyeRegrowth.label>
+  <TM_EyeRegrowth.stages.0.label>浑浊</TM_EyeRegrowth.stages.0.label>
+  <TM_EyeRegrowth.stages.1.label>朦胧</TM_EyeRegrowth.stages.1.label>
+  <TM_EyeRegrowth.stages.2.label>再生</TM_EyeRegrowth.stages.2.label>
+  <TM_EyeRegrowth.stages.3.label>强化</TM_EyeRegrowth.stages.3.label>
+
+  <TM_EarRegrowth.label>再生耳</TM_EarRegrowth.label>
+  <TM_EarRegrowth.stages.0.label>构造中</TM_EarRegrowth.stages.0.label>
+  <TM_EarRegrowth.stages.1.label>生长中</TM_EarRegrowth.stages.1.label>
+  <TM_EarRegrowth.stages.2.label>再生</TM_EarRegrowth.stages.2.label>
+  <TM_EarRegrowth.stages.3.label>强化</TM_EarRegrowth.stages.3.label>
+
+  <TM_LegRegrowth.label>再生腿</TM_LegRegrowth.label>
+  <TM_LegRegrowth.stages.0.label>根</TM_LegRegrowth.stages.0.label>
+  <TM_LegRegrowth.stages.1.label>慢速</TM_LegRegrowth.stages.1.label>
+  <TM_LegRegrowth.stages.2.label>中速</TM_LegRegrowth.stages.2.label>
+  <TM_LegRegrowth.stages.3.label>快速</TM_LegRegrowth.stages.3.label>
+
+  <TM_FootRegrowth.label>再生足</TM_FootRegrowth.label>
+  <TM_FootRegrowth.stages.0.label>根</TM_FootRegrowth.stages.0.label>
+  <TM_FootRegrowth.stages.1.label>慢速</TM_FootRegrowth.stages.1.label>
+  <TM_FootRegrowth.stages.2.label>中速</TM_FootRegrowth.stages.2.label>
+  <TM_FootRegrowth.stages.3.label>快速</TM_FootRegrowth.stages.3.label>
+
+  <TM_StandardRegrowth.label>再生部分</TM_StandardRegrowth.label>
+  <TM_StandardRegrowth.stages.0.label>构造中</TM_StandardRegrowth.stages.0.label>
+  <TM_StandardRegrowth.stages.1.label>再生</TM_StandardRegrowth.stages.1.label>
+
+  <TM_JawRegrowth.label>再生颌</TM_JawRegrowth.label>
+  <TM_JawRegrowth.stages.0.label>构造中</TM_JawRegrowth.stages.0.label>
+  <TM_JawRegrowth.stages.1.label>生长中</TM_JawRegrowth.stages.1.label>
+  <TM_JawRegrowth.stages.2.label>再生</TM_JawRegrowth.stages.2.label>
+  <TM_JawRegrowth.stages.3.label>强化</TM_JawRegrowth.stages.3.label>
+
+  <TM_HeartRegrowth.label>野性之心</TM_HeartRegrowth.label>
+  <TM_HeartRegrowth.stages.0.label>再构造中</TM_HeartRegrowth.stages.0.label>
+  <TM_HeartRegrowth.stages.1.label>新生长</TM_HeartRegrowth.stages.1.label>
+  <TM_HeartRegrowth.stages.2.label>融合中</TM_HeartRegrowth.stages.2.label>
+  <TM_HeartRegrowth.stages.3.label>缠绕</TM_HeartRegrowth.stages.3.label>
+
+  <TM_LungRegrowth.label>再生肺</TM_LungRegrowth.label>
+  <TM_LungRegrowth.stages.0.label>构造中</TM_LungRegrowth.stages.0.label>
+  <TM_LungRegrowth.stages.1.label>生长中</TM_LungRegrowth.stages.1.label>
+  <TM_LungRegrowth.stages.2.label>再生</TM_LungRegrowth.stages.2.label>
+  <TM_LungRegrowth.stages.3.label>强化</TM_LungRegrowth.stages.3.label>
+
+  <TM_KidneyRegrowth.label>再生肾</TM_KidneyRegrowth.label>
+  <TM_KidneyRegrowth.stages.0.label>构造中</TM_KidneyRegrowth.stages.0.label>
+  <TM_KidneyRegrowth.stages.1.label>生长中</TM_KidneyRegrowth.stages.1.label>
+  <TM_KidneyRegrowth.stages.2.label>再生</TM_KidneyRegrowth.stages.2.label>
+  <TM_KidneyRegrowth.stages.3.label>强化</TM_KidneyRegrowth.stages.3.label>
+
+  <TM_LiverRegrowth.label>再生肝</TM_LiverRegrowth.label>
+  <TM_LiverRegrowth.stages.0.label>构造中</TM_LiverRegrowth.stages.0.label>
+  <TM_LiverRegrowth.stages.1.label>生长中</TM_LiverRegrowth.stages.1.label>
+  <TM_LiverRegrowth.stages.2.label>再生</TM_LiverRegrowth.stages.2.label>
+  <TM_LiverRegrowth.stages.3.label>强化</TM_LiverRegrowth.stages.3.label>
+
+  <TM_StomachRegrowth.label>再生胃</TM_StomachRegrowth.label>
+  <TM_StomachRegrowth.stages.0.label>构造中</TM_StomachRegrowth.stages.0.label>
+  <TM_StomachRegrowth.stages.1.label>生长中</TM_StomachRegrowth.stages.1.label>
+  <TM_StomachRegrowth.stages.2.label>再生</TM_StomachRegrowth.stages.2.label>
+
+  <TM_SpineRegrowth.label>脊椎融合</TM_SpineRegrowth.label>
+  <TM_SpineRegrowth.stages.0.label>再构造中</TM_SpineRegrowth.stages.0.label>
+  <TM_SpineRegrowth.stages.1.label>新生长</TM_SpineRegrowth.stages.1.label>
+  <TM_SpineRegrowth.stages.2.label>融合中</TM_SpineRegrowth.stages.2.label>
+  <TM_SpineRegrowth.stages.3.label>缠绕</TM_SpineRegrowth.stages.3.label>
+
+
+</LanguageData>

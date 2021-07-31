@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <ID_Introspection.label>内省</ID_Introspection.label>
+  <ID_Introspection.beginLetter>{0}开始内省了. HECAP在接下来的24小时内会获得双倍的学习速度.</ID_Introspection.beginLetter>
+  <ID_Introspection.beginLetterLabel>灵感: 内省</ID_Introspection.beginLetterLabel>
+  <ID_Introspection.endMessage>{0}不再内省了.(内省)</ID_Introspection.endMessage>
+  <ID_Introspection.baseInspectLine>灵感: 内省</ID_Introspection.baseInspectLine>
+
+  <ID_ManaRegen.label>法力再生</ID_ManaRegen.label>
+  <ID_ManaRegen.beginLetter>{0}开始内省了. HECAP在接下来的24小时内会获得双倍的法力恢复速度.</ID_ManaRegen.beginLetter>
+  <ID_ManaRegen.beginLetterLabel>灵感: 法力再生</ID_ManaRegen.beginLetterLabel>
+  <ID_ManaRegen.endMessage>{0}不再内省了 (法力再生).</ID_ManaRegen.endMessage>
+  <ID_ManaRegen.baseInspectLine>灵感: 法力再生</ID_ManaRegen.baseInspectLine>
+
+  <ID_Outgoing.label>外向</ID_Outgoing.label>
+  <ID_Outgoing.beginLetter>{0}开始内省了. HECAP在接下来的24小时内会更喜欢进行积极的社交活动.</ID_Outgoing.beginLetter>
+  <ID_Outgoing.beginLetterLabel>灵感: 社交活动</ID_Outgoing.beginLetterLabel>
+  <ID_Outgoing.endMessage>{0}不再内省了 (社交活动).</ID_Outgoing.endMessage>
+  <ID_Outgoing.baseInspectLine>灵感: 外向</ID_Outgoing.baseInspectLine>
+
+  <ID_MiningFrenzy.label>挖矿狂热</ID_MiningFrenzy.label>
+  <ID_MiningFrenzy.beginLetter>{0}开始内省了. HECAP在接下来的24小时内挖矿速度增加25%并且矿物资源产出增加25%.</ID_MiningFrenzy.beginLetter>
+  <ID_MiningFrenzy.beginLetterLabel>灵感: 挖矿狂热</ID_MiningFrenzy.beginLetterLabel>
+  <ID_MiningFrenzy.endMessage>{0}不再内省了 (挖矿狂热).</ID_MiningFrenzy.endMessage>
+  <ID_MiningFrenzy.baseInspectLine>灵感: 挖矿狂热</ID_MiningFrenzy.baseInspectLine>
+
+  <ID_FarmingFrenzy.label>种植狂热</ID_FarmingFrenzy.label>
+  <ID_FarmingFrenzy.beginLetter>{0}开始内省了. HECAP在接下来的24小时内收获速度增加25%并且农作物产出增加25%.</ID_FarmingFrenzy.beginLetter>
+  <ID_FarmingFrenzy.beginLetterLabel>灵感: 种植狂热</ID_FarmingFrenzy.beginLetterLabel>
+  <ID_FarmingFrenzy.endMessage>{0}不再内省了 (种植狂热).</ID_FarmingFrenzy.endMessage>
+  <ID_FarmingFrenzy.baseInspectLine>灵感: 种植狂热</ID_FarmingFrenzy.baseInspectLine>
+
+  <ID_Champion.label>英雄</ID_Champion.label>
+  <ID_Champion.beginLetter>{0}受到吟游诗人的影响开始内省了. HECAP在接下来的24小时内会梦想成为吟游诗人故事中的英雄而更加努力.</ID_Champion.beginLetter>
+  <ID_Champion.beginLetterLabel>灵感: 英雄</ID_Champion.beginLetterLabel>
+  <ID_Champion.endMessage>{0}不再内省了 (英雄).</ID_Champion.endMessage>
+  <ID_Champion.baseInspectLine>灵感: 英雄</ID_Champion.baseInspectLine>
+
+
+</LanguageData>

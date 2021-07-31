@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Tranquilizer_HD.label>麻痹</TM_Tranquilizer_HD.label>
+  <TM_Tranquilizer_HD.stages.0.label>缓慢</TM_Tranquilizer_HD.stages.0.label>
+  <TM_Tranquilizer_HD.stages.1.label>迟钝</TM_Tranquilizer_HD.stages.1.label>
+  <TM_Tranquilizer_HD.stages.2.label>麻痹</TM_Tranquilizer_HD.stages.2.label>
+
+  <TM_Slow_HD.label>迟缓</TM_Slow_HD.label>
+  <TM_Slow_HD.stages.0.label>轻度</TM_Slow_HD.stages.0.label>
+  <TM_Slow_HD.stages.1.label>中度</TM_Slow_HD.stages.1.label>
+  <TM_Slow_HD.stages.2.label>重度</TM_Slow_HD.stages.2.label>
+
+
+</LanguageData>

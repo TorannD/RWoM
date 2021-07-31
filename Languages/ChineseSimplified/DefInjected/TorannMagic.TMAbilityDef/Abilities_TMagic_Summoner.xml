@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Summon Minion Start -->
+
+  <TM_SummonMinion.label>召唤仆从</TM_SummonMinion.label>
+  <TM_SummonMinion.description>召唤仆从来做日常的工作。</TM_SummonMinion.description>
+
+  <TM_DismissMinion.label>解散仆从</TM_DismissMinion.label>
+  <TM_DismissMinion.description>解散一名召唤仆从。</TM_DismissMinion.description>
+
+
+  <!-- Summon pylon Start -->
+
+  <TM_SummonPylon.label>召唤魔法防御塔</TM_SummonPylon.label>
+  <TM_SummonPylon.description>在指定位置召唤一座自动魔法防御塔。该塔会将奥术能量压缩在一点并发射爆炸能量射线。当维系塔与物理世界的链接断掉时， 该塔会失去作用并回到魔法能量的形态。如果该塔被破坏， 会造成破坏性的影响。</TM_SummonPylon.description>
+
+
+  <!-- Summon explosive Start -->
+
+  <TM_SummonExplosive.label>召唤魔法地雷</TM_SummonExplosive.label>
+  <TM_SummonExplosive.description>在指定位置创造一个由法力绳索维系的地雷。如果法力绳索的能量耗尽，该地雷将会失去作用并回到魔法能量的形态。</TM_SummonExplosive.description>
+
+
+  <!-- Summon Elemental Start -->
+
+  <TM_SummonElemental.label>元素召唤</TM_SummonElemental.label>
+  <TM_SummonElemental.description>从力量位面召唤一个巨大且怪异的元素生物来碾压你的敌人。这些生物会守卫在一个地点并立即嘲讽附近的一个敌人。然而， 如果附近没有敌人， 它们往往很快就会感到厌烦并逐渐偏离召唤它们的位置。它们无法做仆人的工作类似 "搬运" 或者 "清洁，" 因为它们认为这些工作应该由低等的生物来完成。由于召唤魔法的原因， 该元素提只能在现实世界停留一小段时间。元素的种类是随机的。</TM_SummonElemental.description>
+
+
+  <!-- Summon Poppi Start -->
+
+  <TM_SummonPoppi.label>召唤波皮</TM_SummonPoppi.label>
+  <TM_SummonPoppi.description>从疯狂之门中召唤出一群堕落的波皮.</TM_SummonPoppi.description>
+
+
+</LanguageData>

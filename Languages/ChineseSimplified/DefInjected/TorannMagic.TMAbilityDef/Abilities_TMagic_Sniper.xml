@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Sniper focus -->
+
+  <TM_SniperFocus.label>狙击手训练</TM_SniperFocus.label>
+  <TM_SniperFocus.description>使用此项能力提升你的狙击手特性。该技能只需要在训练完成后使用。</TM_SniperFocus.description>
+
+
+  <!-- Headshot start -->
+
+  <TM_Headshot.label>爆头一击</TM_Headshot.label>
+  <TM_Headshot.description>一次瞄准敌人头部或心脏的致命射击。对类人生物和非类人生物同样有效。爆头成功率会随着敌人要害部位护甲的增加而降低。</TM_Headshot.description>
+
+
+  <!-- Disabling shot start -->
+
+  <TM_DisablingShot.label>残废射击</TM_DisablingShot.label>
+  <TM_DisablingShot.description>一次目的在于使目标失去行动能力而不是死亡的射击. 狙击手会瞄准非要害器官并射出带有麻痹效果的箭矢， 目标会短暂地瘫痪几秒钟。对穿戴护甲的目标无效.
+	射程: 20
+	射击延迟: 2.5s
+	冷却时间 45s</TM_DisablingShot.description>
+
+  <TM_DisablingShot_I.label>残废射击 (I)</TM_DisablingShot_I.label>
+  <TM_DisablingShot_I.description>一次目的在于使目标失去行动能力而不是死亡的射击. 狙击手会瞄准非要害器官并射出带有麻痹效果的箭矢， 目标会短暂地瘫痪几秒钟。对穿戴护甲的目标无效.
+	射程: 22
+	射击延迟: 2.3s
+	冷却时间 43s</TM_DisablingShot_I.description>
+
+  <TM_DisablingShot_II.label>残废射击 (II)</TM_DisablingShot_II.label>
+  <TM_DisablingShot_II.description>一次目的在于使目标失去行动能力而不是死亡的射击. 狙击手会瞄准非要害器官并射出带有麻痹效果的箭矢， 目标会短暂地瘫痪几秒钟。对穿戴护甲的目标无效.
+	射程: 25
+	射击延迟: 2.1s
+	冷却时间 41s</TM_DisablingShot_II.description>
+
+  <TM_DisablingShot_III.label>残废射击 (III)</TM_DisablingShot_III.label>
+  <TM_DisablingShot_III.description>一次目的在于使目标失去行动能力而不是死亡的射击. 狙击手会瞄准非要害器官并射出带有麻痹效果的箭矢， 目标会短暂地瘫痪几秒钟。对穿戴护甲的目标无效.
+	射程: 27
+	射击延迟: 2s
+	冷却时间 40s</TM_DisablingShot_III.description>
+
+
+  <!-- Anti Armor -->
+
+  <TM_AntiArmor.label>破甲</TM_AntiArmor.label>
+  <TM_AntiArmor.description>狙击手在特殊情况下会使用破甲弹。当装填破甲弹后， 在其接触到护甲时会释放一种纳米机器人使护甲支离破碎。对于韧性较高的目标破甲效果将大打折扣。</TM_AntiArmor.description>
+
+
+</LanguageData>

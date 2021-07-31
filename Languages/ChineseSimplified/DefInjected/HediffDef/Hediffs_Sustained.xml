@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Gear Repair -->
+
+  <TM_HediffGearRepair.label>装备维护</TM_HediffGearRepair.label>
+  <TM_HediffGearRepair.stages.0.label>I</TM_HediffGearRepair.stages.0.label>
+
+
+  <!-- Inner Healing -->
+
+  <TM_HediffInnerHealing.label>内在治疗</TM_HediffInnerHealing.label>
+  <TM_HediffInnerHealing.stages.0.label>I</TM_HediffInnerHealing.stages.0.label>
+
+
+  <!-- Heavy Blow -->
+
+  <TM_HediffHeavyBlow.label>强力打击</TM_HediffHeavyBlow.label>
+  <TM_HediffHeavyBlow.stages.0.label>I</TM_HediffHeavyBlow.stages.0.label>
+
+
+  <!-- Strong Back -->
+
+  <TM_HediffStrongBack.label>强壮后背</TM_HediffStrongBack.label>
+  <TM_HediffStrongBack.stages.0.label>I</TM_HediffStrongBack.stages.0.label>
+
+
+  <!-- Thick Skin -->
+
+  <TM_HediffThickSkin.label>石化皮肤</TM_HediffThickSkin.label>
+  <TM_HediffThickSkin.stages.0.label>I</TM_HediffThickSkin.stages.0.label>
+
+  <TM_HediffFightersFocus.label>战斗专注</TM_HediffFightersFocus.label>
+  <TM_HediffFightersFocus.stages.0.label>I</TM_HediffFightersFocus.stages.0.label>
+
+
+  <!-- Sprint -->
+
+  <TM_HediffSprint.label>冲刺</TM_HediffSprint.label>
+  <TM_HediffSprint.stages.0.label>I</TM_HediffSprint.stages.0.label>
+  <TM_HediffSprint.stages.1.label>II</TM_HediffSprint.stages.1.label>
+  <TM_HediffSprint.stages.2.label>III</TM_HediffSprint.stages.2.label>
+  <TM_HediffSprint.stages.3.label>IV</TM_HediffSprint.stages.3.label>
+
+
+</LanguageData>

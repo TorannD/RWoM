@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Teleporter.label>传送点</TM_Teleporter.label>
+  <TM_Teleporter.description>一个传送平台用来控制传送仓一个传送平台用来控制传送仓。</TM_Teleporter.description>
+
+  <TM_Teleporter_I.label>传送点 (I)</TM_Teleporter_I.label>
+  <TM_Teleporter_I.description>一个传送平台用来控制传送仓。</TM_Teleporter_I.description>
+
+  <TM_Teleporter_II.label>传送点 (II)</TM_Teleporter_II.label>
+  <TM_Teleporter_II.description>一个传送平台用来控制传送仓。</TM_Teleporter_II.description>
+
+  <TM_Teleporter_III.label>传送点 (III)</TM_Teleporter_III.label>
+  <TM_Teleporter_III.description>一个传送平台用来控制传送仓。</TM_Teleporter_III.description>
+
+  <TM_TeleportPod.label>传送仓</TM_TeleportPod.label>
+  <TM_TeleportPod.description>大且单调的圆筒被魔法师们用来在两个地点之间迅速运输。</TM_TeleportPod.description>
+
+  <TM_TeleportPod_I.label>传送仓 (I)</TM_TeleportPod_I.label>
+  <TM_TeleportPod_I.description>大且单调的圆筒被魔法师们用来在两个地点之间迅速运输。</TM_TeleportPod_I.description>
+
+  <TM_TeleportPod_II.label>传送仓 (II)</TM_TeleportPod_II.label>
+  <TM_TeleportPod_II.description>大且单调的圆筒被魔法师们用来在两个地点之间迅速运输。</TM_TeleportPod_II.description>
+
+  <TM_TeleportPod_III.label>传送仓 (III)</TM_TeleportPod_III.label>
+  <TM_TeleportPod_III.description>大且单调的圆筒被魔法师们用来在两个地点之间迅速运输。</TM_TeleportPod_III.description>
+
+  <Portfuel.label>传送门燃料</Portfuel.label>
+  <Portfuel.description>奥术能量被储备成燃料. 用来给传送门充能。</Portfuel.description>
+
+  <TM_Heater.label>魔法加热器</TM_Heater.label>
+  <TM_Heater.description>主动接近这个星球的火元素可以被用来加热有限的空间。也同样可以用来做一些简单的饭。持续3天时间。</TM_Heater.description>
+
+  <TM_Cooler.label>魔法冷却器</TM_Cooler.label>
+  <TM_Cooler.description>主动接近这个星球的冰元素可以被用来冷却有限的空间。</TM_Cooler.description>
+
+  <TM_PowerNode.label>奥术电源节点</TM_PowerNode.label>
+  <TM_PowerNode.description>一个可以在限定时间内提供电力的奥术能量节点。</TM_PowerNode.description>
+
+  <TM_Sunlight.label>日光术</TM_Sunlight.label>
+  <TM_Sunlight.description>从空间口袋中持续释放光源使农作物茁壮成长.</TM_Sunlight.description>
+
+
+</LanguageData>

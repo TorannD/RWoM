@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!--[Duplicated] <TM_Undead.label>undead</TM_Undead.label>-->
+  <!--[Duplicated] <TM_Undead.labelPlural>undeads</TM_Undead.labelPlural>-->
+
+  <SeerDefender.label>魔法守护者</SeerDefender.label>
+  <SeerDefender.labelPlural>魔法守护者们</SeerDefender.labelPlural>
+
+
+</LanguageData>

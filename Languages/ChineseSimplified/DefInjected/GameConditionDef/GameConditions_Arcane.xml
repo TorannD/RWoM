@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <ManaDrain.label>法力流失</ManaDrain.label>
+  <ManaDrain.description>行星的天象导致了魔法能量的逐渐衰落。所有与魔法力量协调的生物会缓慢地失去力量。</ManaDrain.description>
+  <ManaDrain.endMessage>魔力回复到了正常状态。</ManaDrain.endMessage>
+
+  <ManaSurge.label>魔力涌动</ManaSurge.label>
+  <ManaSurge.description>行星的天象导致了魔力变得汹涌澎湃。所有与魔法力量协调的生物，法力会得到一定量的增长。</ManaSurge.description>
+  <ManaSurge.endMessage>魔力回复到了正常状态。</ManaSurge.endMessage>
+
+  <ElementalAssault.label>元素袭击</ElementalAssault.label>
+  <ElementalAssault.description>不怀好意的元素体们在你的世界打开了一道缺口并准备派遣袭击队伍通过这道缝隙。</ElementalAssault.description>
+  <ElementalAssault.endMessage>裂隙关闭了。</ElementalAssault.endMessage>
+
+
+</LanguageData>

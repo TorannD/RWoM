@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Bard Training -->
+
+  <TM_BardTraining.label>吟游诗人训练</TM_BardTraining.label>
+  <TM_BardTraining.description>通过进行表演, 喜剧, 社交和鼓舞来磨砺吟游诗人的能力.</TM_BardTraining.description>
+
+
+  <!-- Entertain -->
+
+  <TM_Entertain.label>招待</TM_Entertain.label>
+  <TM_Entertain.description>使用各种方法娱乐周围的朋友. 该技能由一个被动技能和一个主动技能组成. 被动技能允许吟游诗人在交谈中娱乐其他的殖民者.
+
+该指令可以控制技能开启或关闭.
+	
+激活此能力后会覆盖整个殖民地并且允许吟游诗人发掘到处于烦恼中的殖民者并试图让他们感到快乐. 当招待成功时吟游诗人会如何法师一般获得经验点数. 保持开启此能力会降低最大法力值30%. 吟游诗人的演奏作为一种工作类型存在, 因此会根据"监管"工作的优先级来进行招待.</TM_Entertain.description>
+
+
+  <!-- Inspire -->
+
+  <TM_Inspire.label>鼓舞</TM_Inspire.label>
+  <TM_Inspire.description>吟游诗人会鼓舞周围的友军, 此技能会一直保持开启状态.</TM_Inspire.description>
+
+
+  <!-- Lullaby -->
+
+  <TM_Lullaby.label>催眠曲</TM_Lullaby.label>
+  <TM_Lullaby.description>弹奏出舒缓的音乐使目标区域的生物失去意识并陷入沉睡中. 对机械体无效.</TM_Lullaby.description>
+
+  <TM_Lullaby_I.label>催眠曲 (I)</TM_Lullaby_I.label>
+  <TM_Lullaby_I.description>弹奏出舒缓的音乐使目标区域的生物失去意识并陷入沉睡中.</TM_Lullaby_I.description>
+
+  <TM_Lullaby_II.label>催眠曲 (II)</TM_Lullaby_II.label>
+  <TM_Lullaby_II.description>弹奏出舒缓的音乐使目标区域的生物失去意识并陷入沉睡中.</TM_Lullaby_II.description>
+
+  <TM_Lullaby_III.label>催眠曲</TM_Lullaby_III.label>
+  <TM_Lullaby_III.description>弹奏出舒缓的音乐使目标区域的生物失去意识并陷入沉睡中.</TM_Lullaby_III.description>
+
+
+  <!-- Battle Hymn -->
+
+  <TM_BattleHymn.label>战斗之曲</TM_BattleHymn.label>
+  <TM_BattleHymn.description>演奏一曲图森破来鼓舞周围的友军. 每一篇诗歌都会进一步加强友军的战斗能力. 每一篇诗歌额外消耗9%的法力 (通过训练可降低). 通过使用技能来控制开启或关闭.</TM_BattleHymn.description>
+
+
+</LanguageData>

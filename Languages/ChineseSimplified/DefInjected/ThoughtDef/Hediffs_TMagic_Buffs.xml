@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Soothing Breeze -->
+
+  <SoothingBreeze_I.stages.0.label>受到祝福</SoothingBreeze_I.stages.0.label>
+  <SoothingBreeze_I.stages.0.description>一些东西使我获得了平静， 我的思维更加清晰并且我会花费更少的精力在愚蠢的问题上。</SoothingBreeze_I.stages.0.description>
+
+  <SoothingBreeze_II.stages.0.label>受到祝福</SoothingBreeze_II.stages.0.label>
+  <SoothingBreeze_II.stages.0.description>伴随着身后的微风， 我感觉很平静， 放松和专注， 我拥有了继续前进的精力.。</SoothingBreeze_II.stages.0.description>
+
+  <SoothingBreeze_III.stages.0.label>受到祝福</SoothingBreeze_III.stages.0.label>
+  <SoothingBreeze_III.stages.0.description>所有的烦躁思绪都被洗刷干净了， 我感到前所未有的专注并且有自信完美地执行所有任务。</SoothingBreeze_III.stages.0.description>
+
+
+  <!-- Ray of Hope -->
+
+  <RayofHope_I.stages.0.label>受到祝福</RayofHope_I.stages.0.label>
+  <RayofHope_I.stages.0.description>我现在拥有了一线希望!</RayofHope_I.stages.0.description>
+
+  <RayofHope_II.stages.0.label>受到祝福</RayofHope_II.stages.0.label>
+  <RayofHope_II.stages.0.description>一道希望之光打破了我黑暗的心境， 我终于感觉到我们还有机会。</RayofHope_II.stages.0.description>
+
+  <RayofHope_III.stages.0.label>受到祝福</RayofHope_III.stages.0.label>
+  <RayofHope_III.stages.0.description>所有降临在我们身上的不幸都被灿烂的光芒燃烧殆尽， 我拥有了突发的一股活力并且感觉十分美妙!</RayofHope_III.stages.0.description>
+
+  <AMP_I.stages.0.label>受到祝福</AMP_I.stages.0.label>
+  <AMP_I.stages.0.description>我感觉不错。这比像一滩烂泥一样强。</AMP_I.stages.0.description>
+
+  <AMP_II.stages.0.label>受到祝福</AMP_II.stages.0.label>
+  <AMP_II.stages.0.description>真是不可思议!  我可以如风般奔跑，如狮子般搏斗， 我无人可挡!</AMP_II.stages.0.description>
+
+  <AMP_III.stages.0.label>受到祝福</AMP_III.stages.0.label>
+  <AMP_III.stages.0.description>我沐浴在这股力量中， 我感觉自己可以一往无前。</AMP_III.stages.0.description>
+
+  <Shadow_I.stages.0.label>受到祝福</Shadow_I.stages.0.label>
+  <Shadow_I.stages.0.description>我感觉后颈有些刺痛， 就像我一直在被注视着... 令人毛骨悚然。</Shadow_I.stages.0.description>
+
+  <Shadow_II.stages.0.label>受到祝福</Shadow_II.stages.0.label>
+  <Shadow_II.stages.0.description>我一直可以在我的视线之外看到一些东西， 那种感觉就像什么东西在我背后，把我架在刀刃上一样。</Shadow_II.stages.0.description>
+
+  <Shadow_III.stages.0.label>受到祝福</Shadow_III.stages.0.label>
+  <Shadow_III.stages.0.description>这有其他的东西就在我旁边， 帮助我做一切事情。它甚至比我更早知道要做什么。我疯了么?!</Shadow_III.stages.0.description>
+
+
+  <!-- Blind -->
+
+  <TM_Blind.stages.0.label>盲目</TM_Blind.stages.0.label>
+  <TM_Blind.stages.0.description>这曾有一道闪光出现，它代表什么... 我无法... 我不想看到任何东西!</TM_Blind.stages.0.description>
+
+
+</LanguageData>

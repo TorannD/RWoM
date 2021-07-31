@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Projectile_TM_SpawnThing.label>创造魔法物品</Projectile_TM_SpawnThing.label>
+
+
+  <!-- Light Node -->
+
+  <Projectile_Sunlight.label>魔法光源</Projectile_Sunlight.label>
+
+
+  <!-- Remove Moisture -->
+
+  <Projectile_DryGround.label>魔力蒸腾</Projectile_DryGround.label>
+
+
+  <!-- Add Moisture -->
+
+  <Projectile_WetGround.label>降雨术</Projectile_WetGround.label>
+
+
+  <!-- Charge Battery -->
+
+  <Projectile_ChargeBattery.label>电池充能</Projectile_ChargeBattery.label>
+
+
+  <!-- Smoke Cloud -->
+
+  <Projectile_SmokeCloud.label>烟云蔽日</Projectile_SmokeCloud.label>
+
+
+  <!-- Extinguish -->
+
+  <Projectile_Extinguish.label>熄灭术</Projectile_Extinguish.label>
+
+
+  <!-- EMP -->
+
+  <Projectile_EMP.label>电磁脉冲</Projectile_EMP.label>
+
+
+  <!-- Transfer mana -->
+
+  <Projectile_TransferMana.label>法力转移</Projectile_TransferMana.label>
+
+
+  <!-- siphon mana -->
+
+  <Projectile_SiphonMana.label>法力虹吸</Projectile_SiphonMana.label>
+
+
+  <!-- Flight -->
+
+  <FlyingObject_Flight.label>飞行目标</FlyingObject_Flight.label>
+  <Projectile_Flight.label>飞行</Projectile_Flight.label>
+
+
+  <!-- Fertile land -->
+
+  <Projectile_FertileLands.label>大地祝福</Projectile_FertileLands.label>
+
+
+</LanguageData>

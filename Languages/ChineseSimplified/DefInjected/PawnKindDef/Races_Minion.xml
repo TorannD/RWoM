@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Minion Race -->
+
+  <TM_Minion.label>仆从</TM_Minion.label>
+  <TM_Minion.labelPlural>仆从们</TM_Minion.labelPlural>
+  <TM_Minion.lifeStages.0.label>仆从</TM_Minion.lifeStages.0.label>
+  <TM_Minion.lifeStages.0.labelPlural>仆从们</TM_Minion.lifeStages.0.labelPlural>
+
+  <TM_GreaterMinion.label>强力仆从</TM_GreaterMinion.label>
+  <TM_GreaterMinion.labelPlural>强力仆从们</TM_GreaterMinion.labelPlural>
+  <TM_GreaterMinion.lifeStages.0.label>强力仆从</TM_GreaterMinion.lifeStages.0.label>
+  <TM_GreaterMinion.lifeStages.0.labelPlural>强力仆从们</TM_GreaterMinion.lifeStages.0.labelPlural>
+
+  <TM_InvisMinion.label>隐形仆从</TM_InvisMinion.label>
+  <TM_InvisMinion.labelPlural>隐形仆从们</TM_InvisMinion.labelPlural>
+  <TM_InvisMinion.lifeStages.0.label>隐形仆从</TM_InvisMinion.lifeStages.0.label>
+  <TM_InvisMinion.lifeStages.0.labelPlural>隐形仆从们</TM_InvisMinion.lifeStages.0.labelPlural>
+
+
+</LanguageData>

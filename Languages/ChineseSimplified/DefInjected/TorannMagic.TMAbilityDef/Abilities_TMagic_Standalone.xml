@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Heater -->
+
+  <TM_Heater.label>魔法热源</TM_Heater.label>
+  <TM_Heater.description>创造一个连接火元素位面的容器， 容器会一直散发热能。法术的能量可以维持容器运作几天的时间。</TM_Heater.description>
+
+
+  <!-- Cooler -->
+
+  <TM_Cooler.label>魔法冷源</TM_Cooler.label>
+  <TM_Cooler.description>创造一个连接冰元素位面的容器， 容器会一直散发寒气。法术的能量可以维持容器运作几天的时间。</TM_Cooler.description>
+
+
+  <!-- Power Node -->
+
+  <TM_PowerNode.label>奥术电源节点</TM_PowerNode.label>
+  <TM_PowerNode.description>创造一个可以缓慢释放奥术能量并转化为电力的能量节点. 可以作为电源使用。</TM_PowerNode.description>
+
+
+  <!-- Light Node -->
+
+  <TM_Sunlight.label>日光术</TM_Sunlight.label>
+  <TM_Sunlight.description>创造一个足以使作物生长的光源. 这个光源必须由魔法师维持 - 当处于激活状态时降低法力最大值以及法力恢复速度40%.</TM_Sunlight.description>
+
+  <TM_DismissSunlight.label>关闭日光术</TM_DismissSunlight.label>
+  <TM_DismissSunlight.description>停止释放日光术</TM_DismissSunlight.description>
+
+
+  <!-- Remove Moisture -->
+
+  <TM_DryGround.label>魔力蒸腾</TM_DryGround.label>
+  <TM_DryGround.description>引导热能使目标区域的大多数水分被蒸发。只作用于泥地。</TM_DryGround.description>
+
+
+  <!-- Add Moisture -->
+
+  <TM_WetGround.label>滋润大地</TM_WetGround.label>
+  <TM_WetGround.description>引导水的力量把沙地变为可种植的土壤。</TM_WetGround.description>
+
+
+  <!-- Charge Battery -->
+
+  <TM_ChargeBattery.label>电池充能</TM_ChargeBattery.label>
+  <TM_ChargeBattery.description>将魔法能量转换为电能。该法术只能用于给电池充电。产生 400Wd。</TM_ChargeBattery.description>
+
+
+  <!-- Smoke Cloud -->
+
+  <TM_SmokeCloud.label>烟云蔽日</TM_SmokeCloud.label>
+  <TM_SmokeCloud.description>通过点燃空气中的灰尘粒子产生一道烟幕来隐藏一片区域。</TM_SmokeCloud.description>
+
+
+  <!-- Extinguish -->
+
+  <TM_Extinguish.label>熄灭</TM_Extinguish.label>
+  <TM_Extinguish.description>将火元素从指定区域驱散， 立即熄灭目标区域的火焰。</TM_Extinguish.description>
+
+
+  <!-- EMP -->
+
+  <TM_EMP.label>电磁脉冲</TM_EMP.label>
+  <TM_EMP.description>在指定地点制造一场电磁脉冲爆炸， 在短时间内瘫痪所有机械体。</TM_EMP.description>
+
+
+  <!-- Transfer mana -->
+
+  <TM_TransferMana.label>法力转移</TM_TransferMana.label>
+  <TM_TransferMana.description>将魔法能量转移给其他生物. 非魔法师的受术者会产生明显的效果， 其身体能力将会在短期内得到增强。在法术等级极高的情况下有致伤甚至致死的风险。</TM_TransferMana.description>
+
+
+  <!-- siphon mana -->
+
+  <TM_SiphonMana.label>法力虹吸</TM_SiphonMana.label>
+  <TM_SiphonMana.description>从其他生物处吸取法力. 非魔法师的受术者的身体能力反而会大幅度下降。如果生命力过于枯竭会有致死的风险。</TM_SiphonMana.description>
+
+
+  <!-- mana shield -->
+
+  <TM_ManaShield.label>法力护盾</TM_ManaShield.label>
+  <TM_ManaShield.description>召唤一层法力护盾来抵消魔法师受到的伤害. 每 1 点伤害需要耗费 1% 的法力。当法力不足以抵消受到的伤害时护盾会崩溃。当护盾在激活状态时再次释放该技能会取消护盾效果。可以与护盾腰带一起使用。请不要主动在施法过程中进行妨碍。</TM_ManaShield.description>
+
+
+  <!-- summoned wall -->
+
+  <TM_ArcaneBarrier.label>奥术障碍</TM_ArcaneBarrier.label>
+  <TM_ArcaneBarrier.description>在指定地点创造一堵水平于施法者的奥术障碍墙. 此物体会存在60秒钟.</TM_ArcaneBarrier.description>
+
+
+  <!-- Flight -->
+
+  <TM_Flight.label>飞行</TM_Flight.label>
+  <TM_Flight.description>快速飞行到目标地点.</TM_Flight.description>
+
+
+  <!-- Fertile land -->
+
+  <TM_FertileLands.label>大地祝福</TM_FertileLands.label>
+  <TM_FertileLands.description>德鲁伊使用神力祝福一片土地并提升其肥沃度. 维持此技能会降低德鲁伊法力恢复速度40%. 德鲁伊同一时间只能祝福一片区域.</TM_FertileLands.description>
+
+  <TM_DismissFertileLands.label>关闭大地祝福</TM_DismissFertileLands.label>
+  <TM_DismissFertileLands.description>使存在于土地中的德鲁伊神力消散.</TM_DismissFertileLands.description>
+
+
+  <!-- Spell Mending -->
+
+  <TM_SpellMending.label>拼补</TM_SpellMending.label>
+  <TM_SpellMending.description>对目标使用技能会缓慢修复其身上的装备耐久度. 修复耐久度需要装备被穿戴在身上才可以进行. 这会对受影响生物造成负担并降低其身体行动力. 拼补能量会在几小时后消散.</TM_SpellMending.description>
+
+
+  <!-- Cauterize Wound -->
+
+  <TM_CauterizeWound.label>烧灼伤口</TM_CauterizeWound.label>
+  <TM_CauterizeWound.description>火魔法师祈求元素之力立即烧灼封闭病人的伤口. 然而可能会留下烧伤疤痕.</TM_CauterizeWound.description>
+
+
+</LanguageData>

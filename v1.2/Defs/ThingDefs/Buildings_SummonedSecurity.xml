@@ -1,0 +1,1254 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+  <ThingDef Name="TrapSummonedExplosiveBase" ParentName="TM_BuildingBase" Abstract="True">
+    <thingClass>TorannMagic.Building_ExplosiveProximityTrap</thingClass>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <damageData>
+        <rect>(0.1,0,0.8,0.3)</rect>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <drawerType>RealtimeOnly</drawerType>
+    <rotatable>false</rotatable>
+	<tradeability>None</tradeability>
+    <tickerType>Normal</tickerType>
+    <stealable>false</stealable>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <WorkToBuild>20000</WorkToBuild>
+      <Beauty>-4</Beauty>
+      <TrapSpringChance>0.9</TrapSpringChance>
+    </statBases>
+<!--     <designationCategory>Security</designationCategory> -->
+    <building>
+	  <expandHomeArea>false</expandHomeArea>
+      <isTrap>true</isTrap>
+	  <deconstructible>false</deconstructible>
+	  <claimable>false</claimable>
+	  <repairable>false</repairable>
+	  <isPlayerEjectable>false</isPlayerEjectable>
+    </building>
+    <constructionSkillPrerequisite>20</constructionSkillPrerequisite>
+	<resourcesFractionWhenDeconstructed>0</resourcesFractionWhenDeconstructed>
+	<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+	<researchPrerequisites>
+
+    </researchPrerequisites>
+  </ThingDef>
+  
+  <ThingDef Name="PoisonTrapBase" ParentName="TM_BuildingBase" Abstract="True">
+    <thingClass>TorannMagic.Building_PoisonTrap</thingClass>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <damageData>
+        <rect>(0.1,0,0.8,0.3)</rect>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>LowPlant</altitudeLayer>
+    <drawerType>RealtimeOnly</drawerType>
+    <rotatable>false</rotatable>
+	<tradeability>None</tradeability>
+    <tickerType>Normal</tickerType>
+    <stealable>false</stealable>
+    <statBases>
+      <MaxHitPoints>400</MaxHitPoints>
+      <WorkToBuild>20000</WorkToBuild>
+      <Beauty>-4</Beauty>
+      <TrapSpringChance>0.95</TrapSpringChance>
+    </statBases>
+<!--     <designationCategory>Security</designationCategory> -->
+    <building>
+	  <expandHomeArea>false</expandHomeArea>
+      <isTrap>true</isTrap>
+	  <deconstructible>false</deconstructible>
+	  <claimable>false</claimable>
+	  <repairable>false</repairable>
+	  <isPlayerEjectable>false</isPlayerEjectable>
+    </building>
+    <constructionSkillPrerequisite>20</constructionSkillPrerequisite>
+	<resourcesFractionWhenDeconstructed>0</resourcesFractionWhenDeconstructed>
+	<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+  </ThingDef>
+  
+  <ThingDef ParentName="PoisonTrapBase">
+    <defName>TM_PoisonTrap</defName>
+    <label>Poison Trap</label>
+    <description>A trap created from sticks and twine, it blends seamlessly with the terrain to the untrained eye, but is scented to be an unmistakable warning to animals. Particles of druidic poison are discharged into the air when a victim triggers the trap. The poison is toxic and serves to both injure and disable the victim.</description>
+    <graphicData>
+      <texPath>Other/PoisonTrap</texPath>
+    </graphicData>
+<!--     <designationHotKey>Misc7</designationHotKey> -->
+  </ThingDef>
+  
+  <ThingDef Name="LightningTrapBase" ParentName="TM_BuildingBase" Abstract="True">
+    <thingClass>TorannMagic.Building_LightningTrap</thingClass>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <damageData>
+        <rect>(0.1,0,0.8,0.3)</rect>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>LowPlant</altitudeLayer>
+    <drawerType>RealtimeOnly</drawerType>
+    <rotatable>false</rotatable>
+	<tradeability>None</tradeability>
+    <tickerType>Normal</tickerType>
+    <stealable>false</stealable>	
+    <statBases>
+      <MaxHitPoints>800</MaxHitPoints>
+      <WorkToBuild>20000</WorkToBuild>
+      <Beauty>-4</Beauty>
+      <TrapSpringChance>0.95</TrapSpringChance>
+    </statBases>
+<!--     <designationCategory>Security</designationCategory> -->
+    <building>
+	  <expandHomeArea>false</expandHomeArea>
+      <isTrap>true</isTrap>
+	  <deconstructible>false</deconstructible>
+	  <claimable>false</claimable>
+	  <repairable>false</repairable>
+	  <isPlayerEjectable>false</isPlayerEjectable>
+    </building>
+    <constructionSkillPrerequisite>20</constructionSkillPrerequisite>
+	<resourcesFractionWhenDeconstructed>0</resourcesFractionWhenDeconstructed>
+	<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+  </ThingDef>
+  
+  <ThingDef ParentName="LightningTrapBase">
+    <defName>TM_Trap_Lightning</defName>
+    <label>Lightning Trap</label>
+    <description>A trap created by containing elemental lightning inside an arcane barrier; it releases it's bottled energy whenever an enemy disturbs a nearby arcane strand.</description>
+    <graphicData>
+      <texPath>Other/LightningTrap</texPath>
+	  <drawSize>(.6, .6)</drawSize>
+    </graphicData>
+	<comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>.4</explosiveRadius>
+        <explosiveDamageType>TM_ManaMine</explosiveDamageType>
+		<damageAmountBase>4</damageAmountBase>
+        <startWickHitPointsPercent>0.1</startWickHitPointsPercent>
+		<damageFalloff>true</damageFalloff>
+		<chanceToStartFire>0.0</chanceToStartFire>
+        <wickTicks>
+          <min>1</min>
+          <max>3</max>
+        </wickTicks>
+      </li>
+	  <li Class="TorannMagic.CompProperties_Summoned"></li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="TrapSummonedExplosiveBase">
+    <defName>TM_ManaMine</defName>
+    <label>Mana Mine</label>
+    <description>A powerful explosive created by compressing mana and matter. Tendrils of psychic power extend from the mine; when a victim disturbs the psychic strand, it collapses the containment field and detonates the mine.  2.4m explosive radius.</description>
+    <graphicData>
+      <texPath>Other/ManaMine</texPath>
+    </graphicData>
+    <costList>
+      <ManaPotion>4</ManaPotion>
+    </costList>
+<!--     <designationHotKey>Misc7</designationHotKey> -->
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>2.4</explosiveRadius>
+        <explosiveDamageType>TM_ManaMine</explosiveDamageType>
+		<damageAmountBase>24</damageAmountBase>
+        <startWickHitPointsPercent>0.2</startWickHitPointsPercent>
+		<damageFalloff>true</damageFalloff>
+		<chanceToStartFire>0.0</chanceToStartFire>
+        <wickTicks>
+          <min>5</min>
+          <max>30</max>
+        </wickTicks>
+      </li>
+	  <li Class="TorannMagic.CompProperties_Summoned"></li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="TrapSummonedExplosiveBase">
+    <defName>TM_ManaMine_I</defName>
+    <label>Mana Mine</label>
+    <description>A powerful explosive created by compressing mana and matter. Tendrils of psychic power extend from the mine; when a victim disturbs the psychic strand, it collapses the containment field and detonates the mine.  2.9m explosive radius.</description>
+    <graphicData>
+      <texPath>Other/ManaMine</texPath>
+    </graphicData>
+    <costList>
+      <ManaPotion>4</ManaPotion>
+    </costList>
+<!--     <designationHotKey>Misc7</designationHotKey> -->
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>2.7</explosiveRadius>
+        <explosiveDamageType>TM_ManaMine</explosiveDamageType>
+		<damageAmountBase>29</damageAmountBase>
+        <startWickHitPointsPercent>0.2</startWickHitPointsPercent>
+		<damageFalloff>true</damageFalloff>
+		<chanceToStartFire>0.0</chanceToStartFire>
+        <wickTicks>
+          <min>10</min>
+          <max>40</max>
+        </wickTicks>
+      </li>
+	  <li Class="TorannMagic.CompProperties_Summoned"></li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="TrapSummonedExplosiveBase">
+    <defName>TM_ManaMine_II</defName>
+    <label>Mana Mine</label>
+    <description>A powerful explosive created by compressing mana and matter. Tendrils of psychic power extend from the mine; when a victim disturbs the psychic strand, it collapses the containment field and detonates the mine.  3.8m explosive radius.</description>
+    <graphicData>
+      <texPath>Other/ManaMine</texPath>
+    </graphicData>
+    <costList>
+      <ManaPotion>4</ManaPotion>
+    </costList>
+<!--     <designationHotKey>Misc7</designationHotKey> -->
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>3.1</explosiveRadius>
+        <explosiveDamageType>TM_ManaMine</explosiveDamageType>
+		<damageAmountBase>35</damageAmountBase>
+        <startWickHitPointsPercent>0.2</startWickHitPointsPercent>
+		<damageFalloff>true</damageFalloff>
+		<chanceToStartFire>0.0</chanceToStartFire>
+        <wickTicks>
+          <min>15</min>
+          <max>45</max>
+        </wickTicks>
+      </li>
+	  <li Class="TorannMagic.CompProperties_Summoned"></li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="TrapSummonedExplosiveBase">
+    <defName>TM_ManaMine_III</defName>
+    <label>Mana Mine</label>
+    <description>A powerful explosive created by compressing mana and matter. Tendrils of psychic power extend from the mine; when a victim disturbs the psychic strand, it collapses the containment field and detonates the mine.  4.7m explosive radius.</description>
+    <graphicData>
+      <texPath>Other/ManaMine</texPath>
+    </graphicData>
+    <costList>
+      <ManaPotion>4</ManaPotion>
+    </costList>
+<!--     <designationHotKey>Misc7</designationHotKey> -->
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>3.6</explosiveRadius>
+        <explosiveDamageType>TM_ManaMine</explosiveDamageType>
+		<damageAmountBase>40</damageAmountBase>
+        <startWickHitPointsPercent>0.2</startWickHitPointsPercent>
+		<damageFalloff>true</damageFalloff>
+		<explosionEffect>GiantExplosion</explosionEffect>
+		<explosionSound>Explosion_GiantBomb</explosionSound>
+		<chanceToStartFire>0.0</chanceToStartFire>
+        <wickTicks>
+          <min>15</min>
+          <max>50</max>
+        </wickTicks>
+      </li>
+	  <li Class="TorannMagic.CompProperties_Summoned"></li>
+    </comps>
+  </ThingDef>
+
+<ThingDef ParentName="TM_BuildingBase">
+    <defName>DefensePylon</defName>
+    <label>magical defense pylon</label>
+    <thingClass>Building_TurretGun</thingClass>
+    <graphicData>
+      <texPath>Other/defense_pylon_base</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>false</rotatable>
+	<tradeability>None</tradeability>
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <WorkToBuild>25000</WorkToBuild>
+      <Mass>5</Mass>
+      <Beauty>10</Beauty>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>1.4</explosiveRadius>
+        <explosiveDamageType>TM_ManaMine</explosiveDamageType>
+        <chanceNeverExplodeFromDamage>0</chanceNeverExplodeFromDamage>
+      </li>
+	  <li Class="TorannMagic.CompProperties_Summoned"></li>
+    </comps>
+    <description>A magical defense pylon. Created by materializing magical energy to form a base, and then channeling arcane current into a focal point that emits bursts of raw energy.</description>
+<!--     <passability>PassThroughOnly</passability> -->
+	<passability>Impassable</passability>
+<!--     <pathCost>50</pathCost> -->
+    <fillPercent>0.4</fillPercent>
+    <castEdgeShadows>true</castEdgeShadows>
+    <hasTooltip>false</hasTooltip>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <costStuffCount>75</costStuffCount>
+    <costList>
+
+    </costList>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+<!--     <designationCategory>Security</designationCategory> -->
+    <specialDisplayRadius>32</specialDisplayRadius>
+    <building>
+			<ai_combatDangerous>true</ai_combatDangerous>
+      <turretGunDef>Launcher_DefensePylon</turretGunDef>
+      <turretBurstCooldownTime>1.6</turretBurstCooldownTime>
+      <!-- <turretTopGraphicPath>Other/defense_pylon_top</turretTopGraphicPath> -->
+	  <expandHomeArea>false</expandHomeArea>
+	  <deconstructible>false</deconstructible>
+	  <claimable>false</claimable>
+	  <repairable>false</repairable>
+	  <isPlayerEjectable>false</isPlayerEjectable>
+    </building>
+<!--     <designationHotKey>Misc2</designationHotKey> -->
+	<resourcesFractionWhenDeconstructed>0</resourcesFractionWhenDeconstructed>
+	<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+	<researchPrerequisites>
+    </researchPrerequisites>
+  </ThingDef>
+
+  <ThingDef ParentName="TM_BaseHumanGun">
+    <defName>Launcher_DefensePylon</defName>
+    <label>energy focus point</label>
+    <graphicData>
+      <texPath>Other/defense_pylon_top</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <menuHidden>true</menuHidden>
+    <description>Focal point of an arcane defense pylon, capable of collecting and emitting bursts of raw magical energy.</description>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <useHitPoints>false</useHitPoints>
+    <statBases>
+      <AccuracyTouch>0.65</AccuracyTouch>
+      <AccuracyShort>0.50</AccuracyShort>
+      <AccuracyMedium>0.44</AccuracyMedium>
+      <AccuracyLong>0.30</AccuracyLong>
+      <RangedWeapon_Cooldown>0.6</RangedWeapon_Cooldown>
+	  <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+	  <Mass>10</Mass>
+    </statBases>
+    <weaponTags>
+      <li>DefensePylon</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_DefensePylon</defaultProjectile>
+        <warmupTime>1.5</warmupTime>
+        <range>32</range>
+        <ticksBetweenBurstShots>6</ticksBetweenBurstShots>
+        <burstShotCount>4</burstShotCount>
+        <soundCast>GunShotA</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>3</muzzleFlashScale>
+      </li>
+    </verbs>
+  </ThingDef>
+  
+  <ThingDef ParentName="TM_BaseBullet">
+    <defName>Bullet_DefensePylon</defName>
+    <label>focused magical energy</label>
+    <graphicData>
+      <texPath>Spells/bullet_defense_pylon</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>TM_MagicMissile_Weak</damageDef>
+      <damageAmountBase>8</damageAmountBase>
+      <speed>70</speed>
+    </projectile>
+  </ThingDef>
+  
+  <ThingDef ParentName="TM_BuildingBase">
+    <defName>DefensePylon_I</defName>
+    <label>magical defense pylon (I)</label>
+    <thingClass>Building_TurretGun</thingClass>
+    <graphicData>
+      <texPath>Other/defense_pylon_base</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2.2,2.2)</drawSize>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>false</rotatable>
+	<tradeability>None</tradeability>
+    <statBases>
+      <MaxHitPoints>140</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <WorkToBuild>25000</WorkToBuild>
+      <Mass>5</Mass>
+      <Beauty>10</Beauty>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>1.6</explosiveRadius>
+        <explosiveDamageType>TM_ManaMine</explosiveDamageType>
+        <chanceNeverExplodeFromDamage>0</chanceNeverExplodeFromDamage>
+      </li>
+	  <li Class="TorannMagic.CompProperties_Summoned"></li>
+    </comps>
+    <description>A magical defense pylon. Created by materializing magical energy to form a base, and then channeling arcane current into a focal point that emits bursts of raw energy.</description>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <castEdgeShadows>true</castEdgeShadows>
+    <hasTooltip>true</hasTooltip>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <costStuffCount>75</costStuffCount>
+    <costList>
+
+    </costList>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+<!--     <designationCategory>Security</designationCategory> -->
+    <specialDisplayRadius>36</specialDisplayRadius>
+    <building>
+			<ai_combatDangerous>true</ai_combatDangerous>
+      <turretGunDef>Launcher_DefensePylon_I</turretGunDef>
+      <turretBurstCooldownTime>1.6</turretBurstCooldownTime>
+      <!-- <turretTopGraphicPath>Other/defense_pylon_top</turretTopGraphicPath> -->
+	  <expandHomeArea>false</expandHomeArea>
+	  <deconstructible>false</deconstructible>
+	  <claimable>false</claimable>
+	  <repairable>false</repairable>
+	  <isPlayerEjectable>false</isPlayerEjectable>
+    </building>
+	<resourcesFractionWhenDeconstructed>0</resourcesFractionWhenDeconstructed>
+	<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+<!--     <designationHotKey>Misc2</designationHotKey> -->
+	<researchPrerequisites>
+
+    </researchPrerequisites>
+  </ThingDef>
+
+  <ThingDef ParentName="TM_BaseHumanGun">
+    <defName>Launcher_DefensePylon_I</defName>
+    <label>energy focus point</label>
+    <graphicData>
+      <texPath>Other/defense_pylon_top</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <menuHidden>true</menuHidden>
+    <description>Focal point of an arcane defense pylon, capable of collecting and emitting bursts of raw magical energy.</description>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <useHitPoints>false</useHitPoints>
+    <statBases>
+      <AccuracyTouch>0.67</AccuracyTouch>
+      <AccuracyShort>0.52</AccuracyShort>
+      <AccuracyMedium>0.46</AccuracyMedium>
+      <AccuracyLong>0.32</AccuracyLong>
+      <RangedWeapon_Cooldown>0.6</RangedWeapon_Cooldown>
+      <DeteriorationRate>0</DeteriorationRate>
+	  <Flammability>0</Flammability>
+	  <Mass>10</Mass>
+    </statBases>
+    <weaponTags>
+      <li>DefensePylon_I</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_DefensePylon</defaultProjectile>
+        <warmupTime>1.5</warmupTime>
+        <range>36</range>
+        <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+        <burstShotCount>5</burstShotCount>
+        <soundCast>GunShotA</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>4</muzzleFlashScale>
+      </li>
+    </verbs>
+  </ThingDef>
+  
+  <ThingDef ParentName="TM_BuildingBase">
+    <defName>DefensePylon_II</defName>
+    <label>magical defense pylon (II)</label>
+    <thingClass>Building_TurretGun</thingClass>
+    <graphicData>
+      <texPath>Other/defense_pylon_base</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2.3,2.3)</drawSize>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>false</rotatable>
+	<tradeability>None</tradeability>
+    <statBases>
+      <MaxHitPoints>160</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <WorkToBuild>25000</WorkToBuild>
+      <Mass>5</Mass>
+      <Beauty>10</Beauty>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>1.9</explosiveRadius>
+        <explosiveDamageType>TM_ManaMine</explosiveDamageType>
+        <chanceNeverExplodeFromDamage>0</chanceNeverExplodeFromDamage>
+      </li>
+	  <li Class="TorannMagic.CompProperties_Summoned"></li>
+    </comps>
+    <description>A magical defense pylon. Created by materializing magical energy to form a base, and then channeling arcane current into a focal point that emits bursts of raw energy.</description>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <castEdgeShadows>true</castEdgeShadows>
+    <hasTooltip>true</hasTooltip>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <costStuffCount>75</costStuffCount>
+    <costList>
+
+    </costList>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+<!--     <designationCategory>Security</designationCategory> -->
+    <specialDisplayRadius>40</specialDisplayRadius>
+    <building>
+			<ai_combatDangerous>true</ai_combatDangerous>
+      <turretGunDef>Launcher_DefensePylon_II</turretGunDef>
+      <turretBurstCooldownTime>1.6</turretBurstCooldownTime>
+      <!-- <turretTopGraphicPath>Other/defense_pylon_top</turretTopGraphicPath> -->
+	  <expandHomeArea>false</expandHomeArea>
+	  <deconstructible>false</deconstructible>
+	  <claimable>false</claimable>
+	  <repairable>false</repairable>
+	  <isPlayerEjectable>false</isPlayerEjectable>
+    </building>
+	<resourcesFractionWhenDeconstructed>0</resourcesFractionWhenDeconstructed>
+	<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+<!--     <designationHotKey>Misc2</designationHotKey> -->
+	<researchPrerequisites>
+    </researchPrerequisites>
+  </ThingDef>
+
+  <ThingDef ParentName="TM_BaseHumanGun">
+    <defName>Launcher_DefensePylon_II</defName>
+    <label>energy focus point</label>
+    <graphicData>
+      <texPath>Other/defense_pylon_top</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <menuHidden>true</menuHidden>
+    <description>Focal point of an arcane defense pylon, capable of collecting and emitting bursts of raw magical energy.</description>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <useHitPoints>false</useHitPoints>
+    <statBases>
+      <AccuracyTouch>0.69</AccuracyTouch>
+      <AccuracyShort>0.54</AccuracyShort>
+      <AccuracyMedium>0.48</AccuracyMedium>
+      <AccuracyLong>0.34</AccuracyLong>
+      <RangedWeapon_Cooldown>0.6</RangedWeapon_Cooldown>
+      <DeteriorationRate>0</DeteriorationRate>
+	  <Flammability>0</Flammability>
+	  <Mass>10</Mass>
+    </statBases>
+    <weaponTags>
+      <li>DefensePylon_II</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_DefensePylon</defaultProjectile>
+        <warmupTime>1.5</warmupTime>
+        <range>40</range>
+        <ticksBetweenBurstShots>4</ticksBetweenBurstShots>
+        <burstShotCount>6</burstShotCount>
+        <soundCast>GunShotA</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>5</muzzleFlashScale>
+      </li>
+    </verbs>
+  </ThingDef>
+  
+    <ThingDef ParentName="TM_BuildingBase">
+    <defName>DefensePylon_III</defName>
+    <label>magical defense pylon (III)</label>
+    <thingClass>Building_TurretGun</thingClass>
+    <graphicData>
+      <texPath>Other/defense_pylon_base</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2.5,2.5)</drawSize>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>false</rotatable>
+	<tradeability>None</tradeability>
+    <statBases>
+      <MaxHitPoints>180</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <WorkToBuild>25000</WorkToBuild>
+      <Mass>5</Mass>
+      <Beauty>10</Beauty>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>2.2</explosiveRadius>
+        <explosiveDamageType>TM_ManaMine</explosiveDamageType>
+        <chanceNeverExplodeFromDamage>0</chanceNeverExplodeFromDamage>
+      </li>
+	  <li Class="TorannMagic.CompProperties_Summoned"></li>
+    </comps>
+    <description>A magical defense pylon. Created by materializing magical energy to form a base, and then channeling arcane current into a focal point that emits bursts of raw energy.</description>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <castEdgeShadows>true</castEdgeShadows>
+    <hasTooltip>true</hasTooltip>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <costStuffCount>75</costStuffCount>
+    <costList>
+
+    </costList>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+
+    <specialDisplayRadius>44</specialDisplayRadius>
+    <building>
+			<ai_combatDangerous>true</ai_combatDangerous>
+      <turretGunDef>Launcher_DefensePylon_III</turretGunDef>
+      <turretBurstCooldownTime>1.6</turretBurstCooldownTime>
+      <!-- <turretTopGraphicPath>Other/defense_pylon_top</turretTopGraphicPath> -->
+	  <expandHomeArea>false</expandHomeArea>
+	  <deconstructible>false</deconstructible>
+	  <claimable>false</claimable>
+	  <repairable>false</repairable>
+	  <isPlayerEjectable>false</isPlayerEjectable>
+    </building>
+	<resourcesFractionWhenDeconstructed>0</resourcesFractionWhenDeconstructed>
+	<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+<!-- 	    <designationCategory>Security</designationCategory> -->
+<!--     <designationHotKey>Misc2</designationHotKey> -->
+	<researchPrerequisites>
+
+    </researchPrerequisites>
+  </ThingDef>
+
+  <ThingDef ParentName="TM_BaseHumanGun">
+    <defName>Launcher_DefensePylon_III</defName>
+    <label>energy focus point</label>
+    <graphicData>
+      <texPath>Other/defense_pylon_top</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <menuHidden>true</menuHidden>
+    <description>Focal point of an arcane defense pylon, capable of collecting and emitting bursts of raw magical energy.</description>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <useHitPoints>false</useHitPoints>
+    <statBases>
+      <AccuracyTouch>0.71</AccuracyTouch>
+      <AccuracyShort>0.56</AccuracyShort>
+      <AccuracyMedium>0.50</AccuracyMedium>
+      <AccuracyLong>0.36</AccuracyLong>
+      <RangedWeapon_Cooldown>0.6</RangedWeapon_Cooldown>
+      <DeteriorationRate>0</DeteriorationRate>
+	  <Flammability>0</Flammability>
+	  <Mass>10</Mass>
+    </statBases>
+    <weaponTags>
+      <li>DefensePylon_III</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_DefensePylon</defaultProjectile>
+        <warmupTime>1.5</warmupTime>
+        <range>44</range>
+        <ticksBetweenBurstShots>3</ticksBetweenBurstShots>
+        <burstShotCount>7</burstShotCount>
+        <soundCast>GunShotA</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>6</muzzleFlashScale>
+      </li>
+    </verbs>
+  </ThingDef>
+  
+<!--========================= Magic Walls =============================-->
+
+
+  <ThingDef ParentName="TM_BuildingBase" Name="TM_ArcaneBarrier">
+    <defName>TM_ArcaneBarrier</defName>
+    <label>arcane barrier</label>
+    <thingClass>TorannMagic.Building_TMBarrier</thingClass>
+    <category>Building</category>
+    <description>An impassable wall made from solidified arcane power. Provides protection or creates an impassable barrier.</description>
+    <graphicData>
+<!--       <texPath>Other/manawall</texPath> -->
+	  <texPath>Spells/invis</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <damageData>
+        <rect>(0.1,0,0.8,0.3)</rect>
+      </damageData>
+    </graphicData>
+<!--     <blueprintGraphicData>
+      <texPath>Other/manawall</texPath>
+    </blueprintGraphicData>
+    <uiIconPath>Other/manawall</uiIconPath> -->
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <WorkToBuild>150</WorkToBuild>
+      <Flammability>0</Flammability>
+    </statBases>
+    <costStuffCount>5</costStuffCount>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>1</fillPercent>
+    <coversFloor>true</coversFloor>
+    <placingDraggableDimensions>1</placingDraggableDimensions>
+    <tickerType>Normal</tickerType>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <holdsRoof>false</holdsRoof>
+    <designationCategory>
+	
+	</designationCategory>
+    <staticSunShadowHeight>0</staticSunShadowHeight>
+    <blockLight>false</blockLight>
+    <canOverlapZones>false</canOverlapZones>
+    <stuffCategories>
+      <li>Stony</li>
+    </stuffCategories>
+    <building>
+      <isInert>true</isInert>
+	  <expandHomeArea>false</expandHomeArea>
+      <isTrap>true</isTrap>
+	  <deconstructible>false</deconstructible>
+	  <claimable>false</claimable>
+	  <repairable>false</repairable>
+	  <isPlayerEjectable>false</isPlayerEjectable>
+    </building>
+    <damageMultipliers>
+      <li>
+        <damageDef>Bomb</damageDef>
+        <multiplier>2</multiplier>
+      </li>
+    </damageMultipliers>
+    <designationHotKey>Misc3</designationHotKey>
+	<comps>
+	  <li Class="CompProperties_Glower">
+        <glowRadius>1</glowRadius>
+        <glowColor>(60,0,120,0)</glowColor>
+      </li>
+      <li Class="CompProperties_Lifespan">
+        <lifespanTicks>3600</lifespanTicks>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <!--========================= Techno Turret =============================-->
+  
+  <ThingDef Name="TM_TechnoTurret_Base" ParentName="TM_BuildingBase">
+    <defName>TM_TechnoTurret_Base</defName>
+    <label>Mark-IV</label>
+	<description>The Mark-IV is a deployable turret that provides the firepower of a heavy weapon system. It uses miniaturization to allow the user to easily transport the system when not in use. The key component of the Mark-IV is the matter converter that uses raw energy to repair and resupply the turret when in a miniaturized state, allowing a nominal energy to matter conversion. However, even using plasteel and hyperweave to strengthen the weapon system, the material was simply unable to withstand the pressure placed on it during the conversion process and was high susceptible to breakdown and component failure.
+	
+Technomancers have since adapted the system and use their control over arcane energy to provide the turret with ammunition while deployed and energy for repairs and the miniaturization process.
+
+Due to its weight, the Mark-IV cannot be moved while deployed.</description>
+    <thingClass>TorannMagic.Building_TechnoTurret</thingClass>
+    <graphicData>
+      <texPath>Other/TechnoTurret_Base</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+	<hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(0,0,0)</interactionCellOffset>
+    <stealable>false</stealable>
+	<tradeability>None</tradeability>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <WorkToBuild>3000</WorkToBuild>
+      <Mass>150</Mass>
+      <Beauty>-20</Beauty>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <comps>
+	  <li Class="CompProperties_Mannable">
+        <manWorkType>Violent</manWorkType>
+      </li>
+	  <li Class="TorannMagic.CompProperties_Summoned"></li>
+    </comps>    
+    <size>(1,1)</size>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.4</fillPercent>
+    <hasTooltip>false</hasTooltip>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <costStuffCount>120</costStuffCount>
+    <costList>
+    </costList>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <specialDisplayRadius>40</specialDisplayRadius>
+    <building>
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <turretGunDef>Gun_Mark-IV</turretGunDef>
+      <turretBurstCooldownTime>4.2</turretBurstCooldownTime>
+      <!-- <turretTopGraphicPath>Other/TechnoTurret1</turretTopGraphicPath> -->
+	  <turretTopDrawSize>1.8</turretTopDrawSize>
+	  <expandHomeArea>false</expandHomeArea>
+	  <deconstructible>false</deconstructible>
+	  <claimable>false</claimable>
+	  <repairable>false</repairable>
+	  <isPlayerEjectable>false</isPlayerEjectable>
+    </building>
+	<resourcesFractionWhenDeconstructed>0</resourcesFractionWhenDeconstructed>
+	<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <researchPrerequisites>
+    </researchPrerequisites>
+  </ThingDef>
+  
+  <ThingDef ParentName="TM_TechnoTurret_Base">
+    <defName>TM_TechnoTurret_Base_RL</defName>    
+    <building>
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <turretGunDef>Gun_Mark-IV_RL</turretGunDef>
+      <turretBurstCooldownTime>4</turretBurstCooldownTime>
+      <!-- <turretTopGraphicPath>Other/TechnoTurret_RL</turretTopGraphicPath> -->
+	  <turretTopDrawSize>1.8</turretTopDrawSize>
+	  <expandHomeArea>false</expandHomeArea>
+	  <deconstructible>false</deconstructible>
+	  <claimable>false</claimable>
+	  <repairable>false</repairable>
+	  <isPlayerEjectable>false</isPlayerEjectable>
+    </building>
+  </ThingDef>
+
+  <ThingDef ParentName="TM_TechnoTurret_Base">
+    <defName>TM_TechnoTurret_Base_RL_MTR</defName>    
+    <building>
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <turretGunDef>Gun_Mark-IV_RL_MTR</turretGunDef>
+      <turretBurstCooldownTime>3.8</turretBurstCooldownTime>
+      <!-- <turretTopGraphicPath>Other/TechnoTurret_RL_MTR</turretTopGraphicPath> -->
+	  <turretTopDrawSize>1.8</turretTopDrawSize>
+	  <expandHomeArea>false</expandHomeArea>
+	  <deconstructible>false</deconstructible>
+	  <claimable>false</claimable>
+	  <repairable>false</repairable>
+	  <isPlayerEjectable>false</isPlayerEjectable>
+    </building>
+  </ThingDef>
+
+  <ThingDef ParentName="TM_BaseBullet">
+    <defName>Bullet_Mark-IV</defName>
+    <label>Mark-IV round</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>8</damageAmountBase>
+      <speed>90</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef Name= "TM_BaseTechnoTurret" ParentName="TM_BaseHumanGun">
+    <defName>Gun_Mark-IV</defName>
+    <label>Mark-IV weapon system</label>
+    <graphicData>
+      <texPath>Other/TechnoTurret1</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <menuHidden>true</menuHidden>
+    <description>Mark-IV weapon system barrel and firing controls.</description>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+	<useHitPoints>false</useHitPoints>
+    <statBases>
+      <AccuracyTouch>0.80</AccuracyTouch>
+      <AccuracyShort>0.75</AccuracyShort>
+      <AccuracyMedium>0.65</AccuracyMedium>
+      <AccuracyLong>0.35</AccuracyLong>
+      <RangedWeapon_Cooldown>0.55</RangedWeapon_Cooldown>
+	  <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+	  <Mass>10</Mass>
+    </statBases>
+    <weaponTags>
+      <li>TurretGun</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_Mark-IV</defaultProjectile>
+        <warmupTime>1.5</warmupTime>
+        <range>45</range>
+        <ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+        <burstShotCount>6</burstShotCount>
+        <soundCast>Shot_Revolver</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>11</muzzleFlashScale>
+      </li>
+    </verbs>
+  </ThingDef>
+  
+  <ThingDef ParentName="TM_BaseTechnoTurret">
+    <defName>Gun_Mark-IV_RL</defName>
+    <graphicData>
+      <texPath>Other/TechnoTurret_RL</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>(3,3)</drawSize>
+    </graphicData>    
+  </ThingDef>
+  
+  <ThingDef ParentName="TM_BaseTechnoTurret">
+    <defName>Gun_Mark-IV_RL_MTR</defName>
+    <graphicData>
+      <texPath>Other/TechnoTurret_RL_MTR</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>(3,3)</drawSize>
+    </graphicData>    
+  </ThingDef>
+  
+  <ThingDef ParentName="FlyingObject_Advanced">
+	   <defName>FlyingObject_RocketSmall</defName>
+	   <label>small rocket</label>
+	   <graphicData>
+			<texPath>Spells/rocket_small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	</ThingDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_Shell_TechnoTurretExplosive</defName>
+    <label>HE shell</label>
+    <graphicData>
+      <texPath>Spells/TT_Shell</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>TM_PersonnelBombDD</damageDef>
+      <!-- damage amount is the damage def default -->
+      <speed>60</speed>
+      <explosionRadius>2</explosionRadius>
+      <flyOverhead>true</flyOverhead>
+      <soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+      <soundExplode>MortarBomb_Explode</soundExplode>
+      <soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+      <soundAmbient>MortarRound_Ambient</soundAmbient>
+    </projectile>
+  </ThingDef>
+  
+  
+  <!--========================= 60mm Mortar =============================-->
+  
+  <ThingDef Name="TM_60mmMortar_Base" ParentName="TM_BuildingBase">
+    <defName>TM_60mmMortar_Base</defName>
+    <label>60mm Mortar Tube</label>
+	<description>60mm Mortar is a personally transportable and deployable indirect fire system. Due to the weight of the system, the shells are typically distributed for transport. The system is intended for indirect fire and only amateurs attempt to use the system for direct lay as it is both inaccurate and exposes the mortar-man. 
+	
+	The range and firepower of the system are limited compared to stationary systems due the containment capacity of the mortar tube and the blast cartridge.</description>
+    <thingClass>TorannMagic.Building_60mmMortar</thingClass>
+    <graphicData>
+      <texPath>Other/60mmMortar_Pod</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+	<hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(0,0,0)</interactionCellOffset>
+    <stealable>false</stealable>
+	<tradeability>None</tradeability>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <WorkToBuild>3000</WorkToBuild>
+      <Mass>150</Mass>
+      <Beauty>-20</Beauty>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <comps>
+	  <li Class="CompProperties_Mannable">
+        <manWorkType>Violent</manWorkType>
+      </li>
+	  <li Class="TorannMagic.CompProperties_Summoned"></li>
+    </comps>    
+    <size>(1,1)</size>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>0.4</fillPercent>
+    <hasTooltip>false</hasTooltip>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <costStuffCount>120</costStuffCount>
+    <costList>
+    </costList>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <building>
+      <ai_combatDangerous>true</ai_combatDangerous>
+	  <expandHomeArea>false</expandHomeArea>
+	  <deconstructible>false</deconstructible>
+	  <claimable>false</claimable>
+	  <repairable>false</repairable>
+	  <isPlayerEjectable>false</isPlayerEjectable>
+    </building>
+	<resourcesFractionWhenDeconstructed>0</resourcesFractionWhenDeconstructed>
+	<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <researchPrerequisites>
+    </researchPrerequisites>
+  </ThingDef>
+  
+  <ThingDef ParentName="FlyingObject_Advanced">
+   <defName>FlyingObject_60mmMortar</defName>
+   <label>60mm mortar</label>
+   <graphicData>
+		<texPath>Spells/TT_Shell</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+	</graphicData>
+  </ThingDef>
+  
+<!--========================= Lightning Totem =============================-->
+  
+  <ThingDef ParentName="TM_BuildingBase">
+    <defName>TM_LightningTotem</defName>
+    <label>Lightning Totem</label>
+    <thingClass>TorannMagic.Building_TMTotem_Lightning</thingClass>
+    <graphicData>
+      <texPath>Other/totem_claw</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <shaderType>CutoutComplex</shaderType>
+      <drawSize>(1.6,2.4)</drawSize>
+	  <shadowData>
+          <volume>(0.3, 0.3, 0.3)</volume>
+          <offset>(0,0,-0.32)</offset>
+      </shadowData>
+<!--       <damageData>
+        <rect>(0,0,3,1.8)</rect>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData> -->
+    </graphicData>
+	<tickerType>Normal</tickerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <blockWind>false</blockWind>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>0</fillPercent>
+    <canOverlapZones>false</canOverlapZones>
+	<tradeability>None</tradeability>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <WorkToBuild>8000</WorkToBuild>
+      <Flammability>1</Flammability>
+    </statBases>
+    <description>A shamanic totem decorated with elaborate, eccentric carvings and crackling with elemental lightning.</description>
+	<drawerType>MapMeshAndRealTime</drawerType>
+	<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+	<resourcesFractionWhenDeconstructed>0</resourcesFractionWhenDeconstructed>
+	<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <size>(1,1)</size>
+    <costList>
+      <WoodLog>5</WoodLog>  
+    </costList>
+	<stuffCategories>
+      <li>Stony</li>
+    </stuffCategories>
+    <hasInteractionCell>false</hasInteractionCell>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+<!--     <designationCategory>Misc</designationCategory> -->
+	<building>
+		<ai_chillDestination>false</ai_chillDestination>
+		<claimable>false</claimable>
+		<deconstructible>false</deconstructible>
+		<expandHomeArea>false</expandHomeArea>
+	</building>
+    <staticSunShadowHeight>0.0</staticSunShadowHeight>
+    <designationHotKey>Misc3</designationHotKey>
+	<comps>
+	  <li Class="TorannMagic.CompProperties_Summoned"></li>
+    </comps>  
+  </ThingDef>
+  
+  
+<!--========================= Healing Totem =============================-->
+  
+  <ThingDef ParentName="TM_BuildingBase">
+    <defName>TM_HealingTotem</defName>
+    <label>Healing Totem</label>
+    <thingClass>TorannMagic.Building_TMTotem_Healing</thingClass>
+    <graphicData>
+      <texPath>Other/totem_wing</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <shaderType>CutoutComplex</shaderType>
+      <drawSize>(1.6,2.4)</drawSize>
+	  <shadowData>
+          <volume>(0.3, 0.3, 0.3)</volume>
+          <offset>(0,0,-0.32)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0,0,3,1.8)</rect>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+	<tickerType>Normal</tickerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <blockWind>false</blockWind>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>1</fillPercent>
+    <canOverlapZones>false</canOverlapZones>
+	<tradeability>None</tradeability>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>8000</WorkToBuild>
+      <Flammability>1</Flammability>
+    </statBases>
+    <description>A shamanic totem decorated with flowing, complimentary shapes. The healing totem is able to attract friendly spirits who will restore vigor and health to nearby allies.</description>
+	<drawerType>MapMeshAndRealTime</drawerType>
+	<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+	<resourcesFractionWhenDeconstructed>0</resourcesFractionWhenDeconstructed>
+	<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <size>(1,1)</size>
+    <costList>
+      <WoodLog>5</WoodLog>  
+    </costList>
+	<stuffCategories>
+      <li>Stony</li>
+    </stuffCategories>
+    <hasInteractionCell>false</hasInteractionCell>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+<!--     <designationCategory>Misc</designationCategory> -->
+	<building>
+		<ai_chillDestination>false</ai_chillDestination>
+		<claimable>false</claimable>
+		<deconstructible>false</deconstructible>
+		<expandHomeArea>false</expandHomeArea>
+	</building>
+    <staticSunShadowHeight>0.0</staticSunShadowHeight>
+    <designationHotKey>Misc3</designationHotKey>
+	<comps>
+	  <li Class="TorannMagic.CompProperties_Summoned"></li>
+    </comps> 
+  </ThingDef>
+  
+  
+<!--========================= Earth Totem =============================-->
+  
+  <ThingDef ParentName="TM_BuildingBase">
+    <defName>TM_EarthTotem</defName>
+    <label>Earth Totem</label>
+    <thingClass>TorannMagic.Building_TMTotem_Earth</thingClass>
+    <graphicData>
+      <texPath>Other/totem_monolith</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <shaderType>CutoutComplex</shaderType>
+      <drawSize>(1.6,2.4)</drawSize>
+	  <shadowData>
+          <volume>(0.3, 0.3, 0.3)</volume>
+          <offset>(0,0,-0.32)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0,0,3,1.8)</rect>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+	<tickerType>Normal</tickerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <blockWind>false</blockWind>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>1</fillPercent>
+    <canOverlapZones>false</canOverlapZones>
+	<tradeability>None</tradeability>
+    <statBases>
+      <MaxHitPoints>400</MaxHitPoints>
+      <WorkToBuild>8000</WorkToBuild>
+      <Flammability>1</Flammability>
+    </statBases>
+    <description>A shamanic totem decorated with symmetric carvings and exudes a sense of solidarity. The totem's connection to the earth allows it to cause seismic waves that stagger nearby enemies.</description>
+	<drawerType>MapMeshAndRealTime</drawerType>
+	<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+	<resourcesFractionWhenDeconstructed>0</resourcesFractionWhenDeconstructed>
+	<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <size>(1,1)</size>
+    <costList>
+      <WoodLog>5</WoodLog>  
+    </costList>
+	<stuffCategories>
+      <li>Stony</li>
+    </stuffCategories>
+    <hasInteractionCell>false</hasInteractionCell>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+<!--     <designationCategory>Misc</designationCategory> -->
+	<building>
+		<ai_chillDestination>false</ai_chillDestination>
+		<claimable>false</claimable>
+		<deconstructible>false</deconstructible>
+		<expandHomeArea>false</expandHomeArea>
+	</building>
+    <staticSunShadowHeight>0.0</staticSunShadowHeight>
+    <designationHotKey>Misc3</designationHotKey>
+	<comps>
+	  <li Class="TorannMagic.CompProperties_Summoned"></li>
+    </comps> 
+  </ThingDef>
+  
+</Defs>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Research into magic -->
+
+  <TM_Portals.label>传送门</TM_Portals.label>
+  <TM_Portals.description>允许建造一个传送门 - 一个强大的造物，使在殖民地之间瞬间移动变得可能.\n\n要求一个受过训练的奥术法师来激活传送门。</TM_Portals.description>
+
+  <TM_Enchanting.label>附魔</TM_Enchanting.label>
+  <TM_Enchanting.description>允许建造研究台以及打造第一排的附魔。</TM_Enchanting.description>
+
+  <TM_AdvancedEnchanting.label>高级附魔</TM_AdvancedEnchanting.label>
+  <TM_AdvancedEnchanting.description>允许打造第二排的附魔。</TM_AdvancedEnchanting.description>
+
+  <TM_ExpertEnchanting.label>专业附魔</TM_ExpertEnchanting.label>
+  <TM_ExpertEnchanting.description>允许打造第三排的附魔。</TM_ExpertEnchanting.description>
+
+  <TM_MagicyteRefining.label>魔法原石加工</TM_MagicyteRefining.label>
+  <TM_MagicyteRefining.description>允许宝石工匠把魔法原石磨碎成粉并可以用来吸收。</TM_MagicyteRefining.description>
+
+  <TM_MagicScribing.label>刻绘</TM_MagicScribing.label>
+  <TM_MagicScribing.description>将墨汁与魔法原石粉末混合并用于刻绘新的具有魔法能量的卷轴和书籍.</TM_MagicScribing.description>
+
+  <TM_AdvancedScribing.label>高级刻绘</TM_AdvancedScribing.label>
+  <TM_AdvancedScribing.description>允许殖民者使用更优质的材料刻绘出更高等级的卷轴和书籍.</TM_AdvancedScribing.description>
+
+  <TM_MasterScribing.label>大师级刻绘</TM_MasterScribing.label>
+  <TM_MasterScribing.description>允许刻绘大师级技能.</TM_MasterScribing.description>
+
+  <TM_ArcaneCrafting.label>奥术打造</TM_ArcaneCrafting.label>
+  <TM_ArcaneCrafting.description>理解链接奥术与肉体的能量并运用其打造出洞察宝石.</TM_ArcaneCrafting.description>
+
+  <TM_ArcaneApparel.label>魔法装备</TM_ArcaneApparel.label>
+  <TM_ArcaneApparel.description>允许重铸出具有魔法属性的装备.</TM_ArcaneApparel.description>
+
+  <TM_ArcaneArtifacts.label>奥术制品</TM_ArcaneArtifacts.label>
+  <TM_ArcaneArtifacts.description>通过广泛地研究掌握如何制造出奥术制品.</TM_ArcaneArtifacts.description>
+
+
+</LanguageData>

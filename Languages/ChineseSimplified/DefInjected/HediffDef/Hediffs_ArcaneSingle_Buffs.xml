@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Movement.label>奥术冲刺</TM_Movement.label>
+  <TM_Movement.stages.0.label>I</TM_Movement.stages.0.label>
+  <TM_Movement.stages.1.label>II</TM_Movement.stages.1.label>
+  <TM_Movement.stages.2.label>III</TM_Movement.stages.2.label>
+  <TM_Movement.stages.3.label>IV</TM_Movement.stages.3.label>
+  <TM_Movement.stages.4.label>爆发</TM_Movement.stages.4.label>
+
+  <TM_Manipulation.label>奥术灵巧</TM_Manipulation.label>
+  <TM_Manipulation.stages.0.label>I</TM_Manipulation.stages.0.label>
+  <TM_Manipulation.stages.1.label>II</TM_Manipulation.stages.1.label>
+  <TM_Manipulation.stages.2.label>III</TM_Manipulation.stages.2.label>
+  <TM_Manipulation.stages.3.label>IV</TM_Manipulation.stages.3.label>
+  <TM_Manipulation.stages.4.label>爆发</TM_Manipulation.stages.4.label>
+
+  <TM_Breathing.label>奥术呼吸</TM_Breathing.label>
+  <TM_Breathing.stages.0.label>I</TM_Breathing.stages.0.label>
+  <TM_Breathing.stages.1.label>II</TM_Breathing.stages.1.label>
+  <TM_Breathing.stages.2.label>III</TM_Breathing.stages.2.label>
+  <TM_Breathing.stages.3.label>IV</TM_Breathing.stages.3.label>
+  <TM_Breathing.stages.4.label>爆发</TM_Breathing.stages.4.label>
+
+  <TM_Sight.label>奥术之眼</TM_Sight.label>
+  <TM_Sight.stages.0.label>I</TM_Sight.stages.0.label>
+  <TM_Sight.stages.1.label>II</TM_Sight.stages.1.label>
+  <TM_Sight.stages.2.label>III</TM_Sight.stages.2.label>
+  <TM_Sight.stages.3.label>IV</TM_Sight.stages.3.label>
+  <TM_Sight.stages.4.label>爆发</TM_Sight.stages.4.label>
+
+  <TM_AntiMovement.label>奥术迟缓</TM_AntiMovement.label>
+  <TM_AntiMovement.stages.0.label>I</TM_AntiMovement.stages.0.label>
+  <TM_AntiMovement.stages.1.label>II</TM_AntiMovement.stages.1.label>
+  <TM_AntiMovement.stages.2.label>III</TM_AntiMovement.stages.2.label>
+  <TM_AntiMovement.stages.3.label>IV</TM_AntiMovement.stages.3.label>
+  <TM_AntiMovement.stages.4.label>爆发</TM_AntiMovement.stages.4.label>
+
+  <TM_AntiManipulation.label>奥术残废</TM_AntiManipulation.label>
+  <TM_AntiManipulation.stages.0.label>I</TM_AntiManipulation.stages.0.label>
+  <TM_AntiManipulation.stages.1.label>II</TM_AntiManipulation.stages.1.label>
+  <TM_AntiManipulation.stages.2.label>III</TM_AntiManipulation.stages.2.label>
+  <TM_AntiManipulation.stages.3.label>IV</TM_AntiManipulation.stages.3.label>
+  <TM_AntiManipulation.stages.4.label>爆发</TM_AntiManipulation.stages.4.label>
+
+  <TM_AntiBreathing.label>奥术窒息</TM_AntiBreathing.label>
+  <TM_AntiBreathing.stages.0.label>I</TM_AntiBreathing.stages.0.label>
+  <TM_AntiBreathing.stages.1.label>II</TM_AntiBreathing.stages.1.label>
+  <TM_AntiBreathing.stages.2.label>III</TM_AntiBreathing.stages.2.label>
+  <TM_AntiBreathing.stages.3.label>IV</TM_AntiBreathing.stages.3.label>
+  <TM_AntiBreathing.stages.4.label>爆发</TM_AntiBreathing.stages.4.label>
+
+  <TM_AntiSight.label>奥术致盲</TM_AntiSight.label>
+  <TM_AntiSight.stages.0.label>I</TM_AntiSight.stages.0.label>
+  <TM_AntiSight.stages.1.label>II</TM_AntiSight.stages.1.label>
+  <TM_AntiSight.stages.2.label>III</TM_AntiSight.stages.2.label>
+  <TM_AntiSight.stages.3.label>IV</TM_AntiSight.stages.3.label>
+  <TM_AntiSight.stages.4.label>爆发</TM_AntiSight.stages.4.label>
+
+
+</LanguageData>

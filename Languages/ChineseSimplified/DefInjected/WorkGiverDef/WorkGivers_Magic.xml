@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Gemcutting -->
+
+  <DoBillsGemcutting.label>在宝石加工台完成清单</DoBillsGemcutting.label>
+  <DoBillsGemcutting.verb>打造</DoBillsGemcutting.verb>
+  <DoBillsGemcutting.gerund>宝石加工</DoBillsGemcutting.gerund>
+
+
+  <!-- Printing -->
+
+  <DoBillsPrintingPress.label>在刻绘台完成清单</DoBillsPrintingPress.label>
+  <DoBillsPrintingPress.verb>打造</DoBillsPrintingPress.verb>
+  <DoBillsPrintingPress.gerund>刻绘中</DoBillsPrintingPress.gerund>
+
+
+  <!-- Bard Entertain -->
+
+  <DoEntertain.label>招待殖民者</DoEntertain.label>
+  <DoEntertain.verb>招待</DoEntertain.verb>
+  <DoEntertain.gerund>招待中</DoEntertain.gerund>
+
+
+</LanguageData>

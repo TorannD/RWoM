@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- <HediffDef ParentName="TM_InjuryBase" Name="CleaveInjuryBase" Abstract="True">
+    <hediffClass>TorannMagic.Hediff_CleaveInjury</hediffClass>
+    <tendable>true</tendable>
+    <displayWound>true</displayWound>
+  </HediffDef>
+	
+  <ToolCapacityDef>
+    <defName>TM_ThrumboCleave</defName>
+    <label>cleaving</label>
+  </ToolCapacityDef> -->
+
+  <TM_ThrumboCleave.label>顺劈斩</TM_ThrumboCleave.label>
+  <TM_ThrumboCleave.comps.0.labelTendedWell>包扎</TM_ThrumboCleave.comps.0.labelTendedWell>
+  <TM_ThrumboCleave.comps.0.labelTendedWellInner>缝合</TM_ThrumboCleave.comps.0.labelTendedWellInner>
+  <TM_ThrumboCleave.comps.0.labelSolidTendedWell>安置</TM_ThrumboCleave.comps.0.labelSolidTendedWell>
+  <TM_ThrumboCleave.comps.2.oldLabel>疤痕</TM_ThrumboCleave.comps.2.oldLabel>
+  <TM_ThrumboCleave.injuryProps.destroyedLabel>切坏</TM_ThrumboCleave.injuryProps.destroyedLabel>
+  <TM_ThrumboCleave.injuryProps.destroyedOutLabel>切掉</TM_ThrumboCleave.injuryProps.destroyedOutLabel>
+  <TM_ThrumboCleave.labelNoun>巨大伤口</TM_ThrumboCleave.labelNoun>
+
+  <TM_BlazingPowerHD.label>闪耀之力</TM_BlazingPowerHD.label>
+  <TM_BlazingPowerHD.comps.0.labelTendedWell>包扎</TM_BlazingPowerHD.comps.0.labelTendedWell>
+  <TM_BlazingPowerHD.comps.0.labelTendedWellInner>缝合</TM_BlazingPowerHD.comps.0.labelTendedWellInner>
+  <TM_BlazingPowerHD.comps.0.labelSolidTendedWell>安置</TM_BlazingPowerHD.comps.0.labelSolidTendedWell>
+  <TM_BlazingPowerHD.comps.1.oldLabel>被闪耀之力摧毁</TM_BlazingPowerHD.comps.1.oldLabel>
+  <TM_BlazingPowerHD.injuryProps.destroyedLabel>毁坏</TM_BlazingPowerHD.injuryProps.destroyedLabel>
+  <TM_BlazingPowerHD.injuryProps.destroyedOutLabel>毁掉</TM_BlazingPowerHD.injuryProps.destroyedOutLabel>
+
+  <TM_Holy.label>神罚天降</TM_Holy.label>
+  <TM_Holy.comps.0.labelTendedWell>包扎</TM_Holy.comps.0.labelTendedWell>
+  <TM_Holy.comps.0.labelTendedWellInner>缝合</TM_Holy.comps.0.labelTendedWellInner>
+  <TM_Holy.comps.0.labelSolidTendedWell>安置</TM_Holy.comps.0.labelSolidTendedWell>
+  <TM_Holy.comps.1.oldLabel>被神力消灭</TM_Holy.comps.1.oldLabel>
+  <TM_Holy.injuryProps.destroyedLabel>燃坏</TM_Holy.injuryProps.destroyedLabel>
+  <TM_Holy.injuryProps.destroyedOutLabel>烧尽</TM_Holy.injuryProps.destroyedOutLabel>
+
+  <TM_MagicMissile.label>魔法飞弹</TM_MagicMissile.label>
+  <TM_MagicMissile.comps.0.labelTendedWell>包扎</TM_MagicMissile.comps.0.labelTendedWell>
+  <TM_MagicMissile.comps.0.labelTendedWellInner>缝合</TM_MagicMissile.comps.0.labelTendedWellInner>
+  <TM_MagicMissile.comps.0.labelSolidTendedWell>安置</TM_MagicMissile.comps.0.labelSolidTendedWell>
+  <TM_MagicMissile.comps.1.oldLabel>被奥术接触</TM_MagicMissile.comps.1.oldLabel>
+  <TM_MagicMissile.injuryProps.destroyedLabel>毁坏</TM_MagicMissile.injuryProps.destroyedLabel>
+  <TM_MagicMissile.injuryProps.destroyedOutLabel>切断</TM_MagicMissile.injuryProps.destroyedOutLabel>
+
+  <TM_ManaMine.label>魔力爆发</TM_ManaMine.label>
+  <TM_ManaMine.comps.0.labelTendedWell>包扎</TM_ManaMine.comps.0.labelTendedWell>
+  <TM_ManaMine.comps.0.labelTendedWellInner>缝合</TM_ManaMine.comps.0.labelTendedWellInner>
+  <TM_ManaMine.comps.0.labelSolidTendedWell>安置</TM_ManaMine.comps.0.labelSolidTendedWell>
+  <TM_ManaMine.comps.1.oldLabel>被魔力消灭</TM_ManaMine.comps.1.oldLabel>
+  <TM_ManaMine.injuryProps.destroyedLabel>枯萎</TM_ManaMine.injuryProps.destroyedLabel>
+  <TM_ManaMine.injuryProps.destroyedOutLabel>烧坏</TM_ManaMine.injuryProps.destroyedOutLabel>
+
+  <TM_Firebolt.label>燃烧之箭</TM_Firebolt.label>
+  <TM_Firebolt.comps.0.labelTendedWell>包扎</TM_Firebolt.comps.0.labelTendedWell>
+  <TM_Firebolt.comps.0.labelTendedWellInner>缝合</TM_Firebolt.comps.0.labelTendedWellInner>
+  <TM_Firebolt.comps.0.labelSolidTendedWell>安置</TM_Firebolt.comps.0.labelSolidTendedWell>
+  <TM_Firebolt.comps.1.oldLabel>烧伤疤痕</TM_Firebolt.comps.1.oldLabel>
+  <TM_Firebolt.injuryProps.destroyedLabel>烧掉</TM_Firebolt.injuryProps.destroyedLabel>
+  <TM_Firebolt.injuryProps.destroyedOutLabel>烧坏</TM_Firebolt.injuryProps.destroyedOutLabel>
+
+  <TM_LightningCloud.label>天丛云雷</TM_LightningCloud.label>
+  <TM_LightningCloud.comps.0.labelTendedWell>包扎</TM_LightningCloud.comps.0.labelTendedWell>
+  <TM_LightningCloud.comps.0.labelTendedWellInner>缝合</TM_LightningCloud.comps.0.labelTendedWellInner>
+  <TM_LightningCloud.comps.0.labelSolidTendedWell>安置</TM_LightningCloud.comps.0.labelSolidTendedWell>
+  <TM_LightningCloud.comps.1.oldLabel>触电致死</TM_LightningCloud.comps.1.oldLabel>
+  <TM_LightningCloud.injuryProps.destroyedLabel>融化</TM_LightningCloud.injuryProps.destroyedLabel>
+  <TM_LightningCloud.injuryProps.destroyedOutLabel>烧坏</TM_LightningCloud.injuryProps.destroyedOutLabel>
+
+  <TM_Lightning.label>闪电冲击</TM_Lightning.label>
+  <TM_Lightning.comps.0.labelTendedWell>包扎</TM_Lightning.comps.0.labelTendedWell>
+  <TM_Lightning.comps.0.labelTendedWellInner>缝合</TM_Lightning.comps.0.labelTendedWellInner>
+  <TM_Lightning.comps.0.labelSolidTendedWell>安置</TM_Lightning.comps.0.labelSolidTendedWell>
+  <TM_Lightning.comps.1.oldLabel>闪电打击</TM_Lightning.comps.1.oldLabel>
+  <TM_Lightning.injuryProps.destroyedLabel>融化</TM_Lightning.injuryProps.destroyedLabel>
+  <TM_Lightning.injuryProps.destroyedOutLabel>烧坏</TM_Lightning.injuryProps.destroyedOutLabel>
+
+  <FrostRay.label>霜冻之寒</FrostRay.label>
+  <FrostRay.comps.0.labelTendedWell>包扎</FrostRay.comps.0.labelTendedWell>
+  <FrostRay.comps.0.labelTendedWellInner>缝合</FrostRay.comps.0.labelTendedWellInner>
+  <FrostRay.comps.0.labelSolidTendedWell>安置</FrostRay.comps.0.labelSolidTendedWell>
+  <FrostRay.comps.1.oldLabel>冻疤</FrostRay.comps.1.oldLabel>
+  <FrostRay.injuryProps.destroyedLabel>冻坏</FrostRay.injuryProps.destroyedLabel>
+  <FrostRay.injuryProps.destroyedOutLabel>破碎</FrostRay.injuryProps.destroyedOutLabel>
+
+  <Snowball.label>雪球术</Snowball.label>
+  <Snowball.comps.0.labelTendedWell>包扎</Snowball.comps.0.labelTendedWell>
+  <Snowball.comps.0.labelTendedWellInner>缝合</Snowball.comps.0.labelTendedWellInner>
+  <Snowball.comps.0.labelSolidTendedWell>安置</Snowball.comps.0.labelSolidTendedWell>
+  <Snowball.comps.1.oldLabel>冻伤疤痕</Snowball.comps.1.oldLabel>
+  <Snowball.injuryProps.destroyedLabel>冻坏</Snowball.injuryProps.destroyedLabel>
+  <Snowball.injuryProps.destroyedOutLabel>破碎</Snowball.injuryProps.destroyedOutLabel>
+
+  <Blizzard.label>暴风雪</Blizzard.label>
+  <Blizzard.comps.0.labelTendedWell>包扎</Blizzard.comps.0.labelTendedWell>
+  <Blizzard.comps.0.labelTendedWellInner>缝合</Blizzard.comps.0.labelTendedWellInner>
+  <Blizzard.comps.0.labelSolidTendedWell>安置</Blizzard.comps.0.labelSolidTendedWell>
+  <Blizzard.comps.1.oldLabel>死于波包风云</Blizzard.comps.1.oldLabel>
+  <Blizzard.injuryProps.destroyedLabel>冰冻</Blizzard.injuryProps.destroyedLabel>
+  <Blizzard.injuryProps.destroyedOutLabel>破碎</Blizzard.injuryProps.destroyedOutLabel>
+
+  <Iceshard.label>冰晶碎片</Iceshard.label>
+  <Iceshard.comps.0.labelTendedWell>包扎</Iceshard.comps.0.labelTendedWell>
+  <Iceshard.comps.0.labelTendedWellInner>缝合</Iceshard.comps.0.labelTendedWellInner>
+  <Iceshard.comps.0.labelSolidTendedWell>安置</Iceshard.comps.0.labelSolidTendedWell>
+  <Iceshard.comps.1.oldLabel>冰晶碎片疤痕</Iceshard.comps.1.oldLabel>
+  <Iceshard.injuryProps.destroyedLabel>切碎</Iceshard.injuryProps.destroyedLabel>
+  <Iceshard.injuryProps.destroyedOutLabel>切掉</Iceshard.injuryProps.destroyedOutLabel>
+
+  <TM_GrapplingHook.label>抓钩</TM_GrapplingHook.label>
+  <TM_GrapplingHook.comps.0.labelTendedWell>包扎</TM_GrapplingHook.comps.0.labelTendedWell>
+  <TM_GrapplingHook.comps.0.labelTendedWellInner>缝合</TM_GrapplingHook.comps.0.labelTendedWellInner>
+  <TM_GrapplingHook.comps.0.labelSolidTendedWell>安置</TM_GrapplingHook.comps.0.labelSolidTendedWell>
+  <TM_GrapplingHook.comps.2.oldLabel>撕破</TM_GrapplingHook.comps.2.oldLabel>
+  <TM_GrapplingHook.injuryProps.destroyedLabel>撕破</TM_GrapplingHook.injuryProps.destroyedLabel>
+  <TM_GrapplingHook.injuryProps.destroyedOutLabel>扯下</TM_GrapplingHook.injuryProps.destroyedOutLabel>
+
+  <TM_Whirlwind_Knockdown.label>旋风斩</TM_Whirlwind_Knockdown.label>
+  <TM_Whirlwind_Knockdown.comps.0.labelTendedWell>包扎</TM_Whirlwind_Knockdown.comps.0.labelTendedWell>
+  <TM_Whirlwind_Knockdown.comps.0.labelTendedWellInner>缝合</TM_Whirlwind_Knockdown.comps.0.labelTendedWellInner>
+  <TM_Whirlwind_Knockdown.comps.0.labelSolidTendedWell>安置</TM_Whirlwind_Knockdown.comps.0.labelSolidTendedWell>
+  <TM_Whirlwind_Knockdown.comps.2.oldLabel>切开</TM_Whirlwind_Knockdown.comps.2.oldLabel>
+  <TM_Whirlwind_Knockdown.injuryProps.destroyedLabel>切开</TM_Whirlwind_Knockdown.injuryProps.destroyedLabel>
+  <TM_Whirlwind_Knockdown.injuryProps.destroyedOutLabel>切断</TM_Whirlwind_Knockdown.injuryProps.destroyedOutLabel>
+
+  <TM_DisablingShot_HD.label>残废射击</TM_DisablingShot_HD.label>
+  <TM_DisablingShot_HD.comps.0.labelTendedWell>包扎</TM_DisablingShot_HD.comps.0.labelTendedWell>
+  <TM_DisablingShot_HD.comps.0.labelTendedWellInner>缝合</TM_DisablingShot_HD.comps.0.labelTendedWellInner>
+  <TM_DisablingShot_HD.comps.0.labelSolidTendedWell>安置</TM_DisablingShot_HD.comps.0.labelSolidTendedWell>
+  <TM_DisablingShot_HD.comps.2.oldLabel>射伤</TM_DisablingShot_HD.comps.2.oldLabel>
+  <TM_DisablingShot_HD.injuryProps.destroyedLabel>射伤</TM_DisablingShot_HD.injuryProps.destroyedLabel>
+  <TM_DisablingShot_HD.injuryProps.destroyedOutLabel>射毁</TM_DisablingShot_HD.injuryProps.destroyedOutLabel>
+
+  <TM_arcaneSpectre.label>灵魂切割</TM_arcaneSpectre.label>
+  <TM_arcaneSpectre.comps.0.labelTendedWell>包扎</TM_arcaneSpectre.comps.0.labelTendedWell>
+  <TM_arcaneSpectre.comps.0.labelTendedWellInner>缝合</TM_arcaneSpectre.comps.0.labelTendedWellInner>
+  <TM_arcaneSpectre.comps.0.labelSolidTendedWell>安置</TM_arcaneSpectre.comps.0.labelSolidTendedWell>
+  <TM_arcaneSpectre.comps.2.oldLabel>苍白疤痕</TM_arcaneSpectre.comps.2.oldLabel>
+  <TM_arcaneSpectre.injuryProps.destroyedLabel>切坏f</TM_arcaneSpectre.injuryProps.destroyedLabel>
+  <TM_arcaneSpectre.injuryProps.destroyedOutLabel>切掉</TM_arcaneSpectre.injuryProps.destroyedOutLabel>
+  <TM_arcaneSpectre.labelNoun>伤口</TM_arcaneSpectre.labelNoun>
+
+
+  <!--[Core] <Misc.label>杂项</Misc.label>-->
+  <!--[Core] <Misc.comps.0.labelTendedWell>已包扎</Misc.comps.0.labelTendedWell>-->
+  <!--[Core] <Misc.comps.0.labelTendedWellInner>已缝合</Misc.comps.0.labelTendedWellInner>-->
+  <!--[Core] <Misc.comps.0.labelSolidTendedWell>已固定</Misc.comps.0.labelSolidTendedWell>-->
+  <!--[Core] <Misc.injuryProps.destroyedLabel>已丧失功能</Misc.injuryProps.destroyedLabel>-->
+
+</LanguageData>

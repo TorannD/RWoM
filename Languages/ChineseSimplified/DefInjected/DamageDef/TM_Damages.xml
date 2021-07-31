@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Torann Magic Damage Defs -->
+
+  <TM_BlazingPower.label>闪耀之力</TM_BlazingPower.label>
+  <TM_BlazingPower.deathMessage>{0} 被闪耀之力淹没.</TM_BlazingPower.deathMessage>
+
+  <TM_Holy.label>神罚</TM_Holy.label>
+  <TM_Holy.deathMessage>{0} 被神罚消灭。</TM_Holy.deathMessage>
+
+  <TM_Death.label>死亡一指</TM_Death.label>
+  <TM_Death.deathMessage>{0} 被死神带走。</TM_Death.deathMessage>
+
+  <TM_Torment.label>痛苦术</TM_Torment.label>
+  <TM_Torment.deathMessage>{0} 在痛苦中消磨殆尽。</TM_Torment.deathMessage>
+
+  <TM_DeathBolt.label>死亡螺旋</TM_DeathBolt.label>
+  <TM_DeathBolt.deathMessage>{0} 在痛苦中死去.</TM_DeathBolt.deathMessage>
+
+  <TM_CorpseExplosion.label>尸爆术</TM_CorpseExplosion.label>
+  <TM_CorpseExplosion.deathMessage>{0} 被爆炸的尸体消灭。</TM_CorpseExplosion.deathMessage>
+
+  <TM_Overwhelm.label>神圣之力</TM_Overwhelm.label>
+  <TM_Overwhelm.deathMessage>{0} 被神圣之力消灭。</TM_Overwhelm.deathMessage>
+
+  <TM_Heal_I.label>圣光术 (I)</TM_Heal_I.label>
+  <TM_Heal_I.deathMessage>{0} 被击杀。</TM_Heal_I.deathMessage>
+
+  <TM_MagicMissile.label>奥术飞弹</TM_MagicMissile.label>
+  <TM_MagicMissile.deathMessage>{0} 被奥术能量消灭。</TM_MagicMissile.deathMessage>
+
+  <TM_MagicMissile_Weak.label>魔法能量</TM_MagicMissile_Weak.label>
+  <TM_MagicMissile_Weak.deathMessage>{0} 被奥术能量消灭。</TM_MagicMissile_Weak.deathMessage>
+
+  <TM_ManaMine.label>魔法地雷</TM_ManaMine.label>
+  <TM_ManaMine.deathMessage>{0} 被奥术能量消灭。</TM_ManaMine.deathMessage>
+
+  <TM_Fireball_I.label>火系魔法</TM_Fireball_I.label>
+  <TM_Fireball_I.deathMessage>{0} 被火元素消灭。</TM_Fireball_I.deathMessage>
+
+  <TM_Fireball_II.label>火系魔法</TM_Fireball_II.label>
+  <TM_Fireball_II.deathMessage>{0} 被火元素消灭。</TM_Fireball_II.deathMessage>
+
+  <TM_Fireball_III.label>火系魔法</TM_Fireball_III.label>
+  <TM_Fireball_III.deathMessage>{0} 被火元素消灭。</TM_Fireball_III.deathMessage>
+
+  <TM_Firestorm_Tiny.label>火系魔法c</TM_Firestorm_Tiny.label>
+  <TM_Firestorm_Tiny.deathMessage>{0} 被火元素消灭。</TM_Firestorm_Tiny.deathMessage>
+
+  <TM_Firestorm_Small.label>火系魔法</TM_Firestorm_Small.label>
+  <TM_Firestorm_Small.deathMessage>{0}被火元素消灭。</TM_Firestorm_Small.deathMessage>
+
+  <TM_Firestorm_Large.label>火系魔法</TM_Firestorm_Large.label>
+  <TM_Firestorm_Large.deathMessage>{0} 被火元素消灭。</TM_Firestorm_Large.deathMessage>
+
+  <TM_Blizzard_Small.label>冰系魔法</TM_Blizzard_Small.label>
+  <TM_Blizzard_Small.deathMessage>{0} 在暴风雪中被冻成冰块。</TM_Blizzard_Small.deathMessage>
+
+  <TM_Blizzard_Large.label>冰系魔法</TM_Blizzard_Large.label>
+  <TM_Blizzard_Large.deathMessage>{0} 在暴风雪中被冻成冰块。</TM_Blizzard_Large.deathMessage>
+
+  <TM_Lightning.label>雷系魔法</TM_Lightning.label>
+  <TM_Lightning.deathMessage>{0} 被雷元素消灭。</TM_Lightning.deathMessage>
+
+  <TM_LightningCloud.label>雷系魔法</TM_LightningCloud.label>
+  <TM_LightningCloud.deathMessage>{0} 被雷元素消灭。</TM_LightningCloud.deathMessage>
+
+  <FrostRay.label>霜冻之寒</FrostRay.label>
+  <FrostRay.deathMessage>{0} 被冻成冰块。</FrostRay.deathMessage>
+
+  <Snowball.label>雪球术</Snowball.label>
+  <Snowball.deathMessage>{0} 被冻成冰块。</Snowball.deathMessage>
+
+  <Iceshard.label>冰晶碎片</Iceshard.label>
+  <Iceshard.deathMessage>{0} 被冰晶切碎。</Iceshard.deathMessage>
+
+  <Firebolt.label>燃烧之箭</Firebolt.label>
+  <Firebolt.deathMessage>{0} 在火焰中燃烧殆尽。</Firebolt.deathMessage>
+
+  <RayofHope.label>魔力强化</RayofHope.label>
+  <RayofHope.deathMessage>{0} 神秘地死去d。</RayofHope.deathMessage>
+
+  <SoothingBreeze.label>魔法增益</SoothingBreeze.label>
+  <SoothingBreeze.deathMessage>{0} 神秘地死去。</SoothingBreeze.deathMessage>
+
+  <AMP.label>魔法增益</AMP.label>
+  <AMP.deathMessage>{0} 神秘地死去。</AMP.deathMessage>
+
+  <Shadow.label>魔法增益</Shadow.label>
+  <Shadow.deathMessage>{0} 神秘地死去。</Shadow.deathMessage>
+
+  <TM_GrapplingHook.label>抓钩</TM_GrapplingHook.label>
+  <TM_GrapplingHook.deathMessage>{0} 被撕裂成几块。</TM_GrapplingHook.deathMessage>
+
+  <TM_Whirlwind.label>旋风斩</TM_Whirlwind.label>
+  <TM_Whirlwind.deathMessage>{0} 被击杀。</TM_Whirlwind.deathMessage>
+
+  <TM_Cleave.label>顺劈斩</TM_Cleave.label>
+  <TM_Cleave.deathMessage>{0} 被猛烈地攻击撕成两半。</TM_Cleave.deathMessage>
+
+  <TM_Headshot.label>爆头</TM_Headshot.label>
+  <TM_Headshot.deathMessage>{0} 被一击爆头。</TM_Headshot.deathMessage>
+
+  <TM_DisablingShot.label>残废射击</TM_DisablingShot.label>
+  <TM_DisablingShot.deathMessage>{0} 由于残废射击而死..。</TM_DisablingShot.deathMessage>
+
+  <TM_Tranquilizer.label>残废射击</TM_Tranquilizer.label>
+  <TM_Tranquilizer.deathMessage>{0} 死于残废射击..。</TM_Tranquilizer.deathMessage>
+
+  <TM_Poison.label>施毒术</TM_Poison.label>
+  <TM_Poison.deathMessage>{0} 死于中毒。</TM_Poison.deathMessage>
+
+  <TM_PhaseStrike.label>相位打击</TM_PhaseStrike.label>
+  <TM_PhaseStrike.deathMessage>{0} 被切成碎片。</TM_PhaseStrike.deathMessage>
+
+  <TM_Arrow.label>箭雨风暴</TM_Arrow.label>
+  <TM_Arrow.deathMessage>{0} 被射成刺猬。</TM_Arrow.deathMessage>
+
+  <TM_Shrapnel.label>超远程射击</TM_Shrapnel.label>
+  <TM_Shrapnel.deathMessage>{0} 被射成刺猬。</TM_Shrapnel.deathMessage>
+
+  <TM_ArcaneSpectre.label>魔法幽魂</TM_ArcaneSpectre.label>
+  <TM_ArcaneSpectre.deathMessage>{0} 被灵体击杀</TM_ArcaneSpectre.deathMessage>
+
+
+</LanguageData>

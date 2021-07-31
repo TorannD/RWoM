@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Firestorm_Large.label>火焰风暴 (大型)</TM_Firestorm_Large.label>
+  <TM_Firestorm_Small.label>火焰风暴 (小型)</TM_Firestorm_Small.label>
+  <TM_Firestorm_Tiny.label>火焰风暴 (微型)</TM_Firestorm_Tiny.label>
+  <TM_Blizzard_Tiny.label>暴风雪(微型)</TM_Blizzard_Tiny.label>
+  <TM_Blizzard_Small.label>暴风雪(小型)</TM_Blizzard_Small.label>
+  <TM_Blizzard_Large.label>暴风雪 (大型)</TM_Blizzard_Large.label>
+  <TM_ArrowStorm.label>箭雨风暴</TM_ArrowStorm.label>
+
+
+</LanguageData>

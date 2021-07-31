@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Enchanting jobs -->
+
+  <JobDriver_RemoveEnchantingGem.reportString>脱下附魔物品TargetA</JobDriver_RemoveEnchantingGem.reportString>
+  <JobDriver_AddEnchantingGem.reportString>为了附魔而装备TargetA</JobDriver_AddEnchantingGem.reportString>
+  <JobDriver_EnchantItem.reportString>附魔TargetA</JobDriver_EnchantItem.reportString>
+
+
+</LanguageData>

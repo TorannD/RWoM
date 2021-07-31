@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Icebolt -->
+
+  <TM_Elemental_Icebolt.label>元素冰箭</TM_Elemental_Icebolt.label>
+  <TM_Elemental_Icebolt.description>元素冰箭会将敌人切割成碎片, 在一小片区域内造成数次切割伤害.</TM_Elemental_Icebolt.description>
+
+
+  <!-- Firebolt -->
+
+  <TM_Elemental_Firebolt.label>燃烧之箭</TM_Elemental_Firebolt.label>
+  <TM_Elemental_Firebolt.description>燃烧魔法能量, 向目标地点发射燃烧之箭.</TM_Elemental_Firebolt.description>
+
+
+</LanguageData>

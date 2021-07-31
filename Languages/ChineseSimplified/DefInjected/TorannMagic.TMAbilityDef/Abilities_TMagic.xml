@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- <ThingDef Class="TorannMagic.TMAbilityDef" ParentName="BaseAbility"> -->
+
+  <TM_AMP.label>AMP</TM_AMP.label>
+  <TM_AMP.description>祝福: 由魔法能量获得增益 - 又叫做 "AMP."  短时间内大幅度增强身体能力， 作为代价会增加身体的压力.
+持续时间: 		30-40s
+身体能力: 	~+30%
+身体需求: 	+40%
+疼痛:		-20%</TM_AMP.description>
+
+  <TM_AMP_I.label>AMP</TM_AMP_I.label>
+  <TM_AMP_I.description>祝福: 由魔法能量获得增益 - 又叫做 "AMP."  短时间内大幅度增强身体能力， 作为代价会增加身体的压力.
+持续时间: 		30-40s
+身体能力: 	~+30%
+身体需求: 	+40%
+疼痛:		-50%</TM_AMP_I.description>
+
+  <TM_AMP_II.label>AMP</TM_AMP_II.label>
+  <TM_AMP_II.description>祝福: 由魔法能量获得增益 - 又叫做 "AMP."  短时间内大幅度增强身体能力， 作为代价会增加身体的压力.
+持续时间: 		50-60s
+身体能力: 	~+75%
+身体需求: 	+60%
+疼痛:		-80%</TM_AMP_II.description>
+
+  <TM_AMP_III.label>AMP</TM_AMP_III.label>
+  <TM_AMP_III.description>祝福: 由魔法能量获得增益 - 又叫做 "AMP."  短时间内大幅度增强身体能力， 作为代价会增加身体的压力.
+持续时间: 		50-60s
+身体能力: 	~+150%
+身体需求: 	+100%</TM_AMP_III.description>
+
+
+  <!-- Shadow start -->
+
+  <TM_Shadow.label>暗影随形</TM_Shadow.label>
+  <TM_Shadow.description>祝福: 使用奥术增益工作者。召唤一个影子工人用来提高工作者的效率. 80%成功率.
+持续时间:		500-600s
+身体能力: 	+20%
+身体需求: 	-10%
+心情降低:	-4</TM_Shadow.description>
+
+  <TM_Shadow_I.label>暗影随形</TM_Shadow_I.label>
+  <TM_Shadow_I.description>祝福: 使用奥术增益工作者。召唤一个影子工人用来提高工作者的效率.
+持续时间:		500-600s
+身体能力: 	+20%
+身体需求: 	-10%
+心情降低:	-4</TM_Shadow_I.description>
+
+  <TM_Shadow_II.label>暗影随形</TM_Shadow_II.label>
+  <TM_Shadow_II.description>祝福: 使用奥术增益工作者。召唤一个影子工人用来提高工作者的效率.
+持续时间:		1100-1250s
+身体能力: 	+40%
+身体需求: 	-15%
+心情降低:	-6</TM_Shadow_II.description>
+
+  <TM_Shadow_III.label>暗影随形</TM_Shadow_III.label>
+  <TM_Shadow_III.description>祝福: 使用奥术增益工作者。召唤一个影子工人用来提高工作者的效率.
+持续时间:		1100-1250s
+身体能力: 	+60%
+身体需求: 	-30%
+心情降低:	-8</TM_Shadow_III.description>
+
+
+  <!-- Soothe start -->
+
+  <TM_Soothe.label>抚慰之风</TM_Soothe.label>
+  <TM_Soothe.description>祝福: 一阵用来解决烦恼和抚慰心情的风. 80%成功率.
+持续时间:		100-117s
+身体能力: 	+10%
+身体需求: 	-12%
+疼痛:		-20%
+近战能力:		-10%
+心情提升:	+8</TM_Soothe.description>
+
+  <TM_Soothe_I.label>抚慰之风</TM_Soothe_I.label>
+  <TM_Soothe_I.description>祝福: 一阵用来解决烦恼和抚慰心情的风.
+持续时间:		100-117s
+身体能力: 	+10%
+身体需求: 	-12%
+疼痛:		-20%
+近战能力:		-10%
+心情提升:	+8</TM_Soothe_I.description>
+
+  <TM_Soothe_II.label>抚慰之风</TM_Soothe_II.label>
+  <TM_Soothe_II.description>祝福: 一阵用来释放压力和集中精神的风.
+持续时间:		200-223s
+身体能力: 	+18%
+身体需求: 	-25%
+疼痛:		-40%
+近战能力:		-20%
+心情提升:	+14</TM_Soothe_II.description>
+
+  <TM_Soothe_III.label>抚慰之风</TM_Soothe_III.label>
+  <TM_Soothe_III.description>祝福: 一阵用来释放压力和集中精神的风.
+持续时间:		500-600s
+身体能力: 	+25%
+身体需求: 	-35%
+疼痛:		-60%
+近战能力:		-30%
+心情提升:	+20</TM_Soothe_III.description>
+
+
+  <!-- Ray of Hope start -->
+
+  <TM_RayofHope.label>希望之光</TM_RayofHope.label>
+  <TM_RayofHope.description>Blessing: 希望之光 energizes and motivates the soul of any it touches. 80% success rate.
+持续时间:		100-117s
+身体能力: 	+10%
+身体需求: 	-10%
+疼痛:		-10%
+近战能力:		+30%
+心情提升:	+4</TM_RayofHope.description>
+
+  <TM_RayofHope_I.label>希望之光</TM_RayofHope_I.label>
+  <TM_RayofHope_I.description>祝福: 希望之光会激励其触碰到的灵魂.
+持续时间:		100-117s
+身体能力: 	+10%
+身体需求: 	-10%
+疼痛:		-10%
+近战能力:		+30%
+心情提升:	+4</TM_RayofHope_I.description>
+
+  <TM_RayofHope_II.label>希望之光</TM_RayofHope_II.label>
+  <TM_RayofHope_II.description>祝福: 希望之光会激励其触碰到的灵魂.
+持续时间:		200-223s
+身体能力: 	+23%
+身体需求: 	-23%
+疼痛:		-20%
+近战能力:		+20%
+心情提升:	+8</TM_RayofHope_II.description>
+
+  <TM_RayofHope_III.label>希望之光</TM_RayofHope_III.label>
+  <TM_RayofHope_III.description>祝福: 希望之光会激励其触碰到的灵魂.
+持续时间:		500-600s
+身体能力: 	+35%
+身体需求: 	-25%
+疼痛:		-30%
+近战能力:		+5%
+心情提升:	+12</TM_RayofHope_III.description>
+
+
+  <!-- Lightning Cloud -->
+
+  <TM_LightningCloud.label>天丛云雷</TM_LightningCloud.label>
+  <TM_LightningCloud.description>使一片区域内充斥着雷电能量。无差别伤害和眩晕其中的任何目标。</TM_LightningCloud.description>
+
+
+  <!-- Lightning Bolt -->
+
+  <TM_LightningBolt.label>电闪雷鸣</TM_LightningBolt.label>
+  <TM_LightningBolt.description>召唤雷电攻击你的目标。</TM_LightningBolt.description>
+
+
+  <!-- FrostRay -->
+
+  <TM_FrostRay.label>霜冻之寒</TM_FrostRay.label>
+  <TM_FrostRay.description>发射一股极寒粒子射线伤害并冰冻目标.
+充能时间: 15s
+射程: 24
+攻击次数: 1</TM_FrostRay.description>
+
+  <TM_FrostRay_I.label>霜冻之寒</TM_FrostRay_I.label>
+  <TM_FrostRay_I.description>发射一股极寒粒子射线伤害并冰冻目标.
+充能时间: 12s
+射程: 28
+攻击次数: 1</TM_FrostRay_I.description>
+
+  <TM_FrostRay_II.label>霜冻之寒</TM_FrostRay_II.label>
+  <TM_FrostRay_II.description>发射一股极寒粒子射线伤害并冰冻目标.
+充能时间: 10s
+射程: 32
+攻击次数: 2</TM_FrostRay_II.description>
+
+  <TM_FrostRay_III.label>霜冻之寒</TM_FrostRay_III.label>
+  <TM_FrostRay_III.description>发射一股极寒粒子射线伤害并冰冻目标.
+充能时间: 6s
+射程: 36
+攻击次数: 3</TM_FrostRay_III.description>
+
+
+  <!-- Blizzard -->
+
+  <TM_Blizzard.label>暴风雪</TM_Blizzard.label>
+  <TM_Blizzard.description>召唤死亡的暴风雪降临将你的敌人埋葬在冰雪中。</TM_Blizzard.description>
+
+
+  <!-- Firestorm -->
+
+  <TM_Firestorm.label>火焰风暴</TM_Firestorm.label>
+  <TM_Firestorm.description>召唤火元素风暴与死亡流星暴。</TM_Firestorm.description>
+
+
+  <!-- Fireball -->
+
+  <TM_Fireball.label>火球术</TM_Fireball.label>
+  <TM_Fireball.description>发射一团巨大且缓慢的火球。在目标区域造成严重破坏并产生火灾。</TM_Fireball.description>
+
+
+  <!-- Fire Claw -->
+
+  <TM_Fireclaw.label>焰爪</TM_Fireclaw.label>
+  <TM_Fireclaw.description>创造由绚丽的流焰组成的火柱贯穿你的敌人， 其所过之处只会剩下火焰与毁灭。</TM_Fireclaw.description>
+
+
+  <!-- Snowball -->
+
+  <TM_Snowball.label>冰雪术</TM_Snowball.label>
+  <TM_Snowball.description>发射一个由冰雪组成的魔法球体并在到达目标区域时造成伤害和冰冻效果。</TM_Snowball.description>
+
+
+  <!-- Magic Missile -->
+
+  <TM_MagicMissile.label>魔法飞弹</TM_MagicMissile.label>
+  <TM_MagicMissile.description>向敌人发射一群魔法飞弹.
+混乱概率: 3%
+施法时间: 2.5s
+射程: 24
+攻击数量: 3.2s内16
+伤害: 4</TM_MagicMissile.description>
+
+  <TM_MagicMissile_I.label>魔法飞弹</TM_MagicMissile_I.label>
+  <TM_MagicMissile_I.description>向敌人发射一群魔法飞弹.
+混乱概率: 5%
+施法时间: 2s
+射程: 28
+攻击数量: 4s内24
+伤害: 5</TM_MagicMissile_I.description>
+
+  <TM_MagicMissile_II.label>魔法飞弹</TM_MagicMissile_II.label>
+  <TM_MagicMissile_II.description>向敌人发射一群魔法飞弹.
+混乱概率: 7%
+施法时间: 1.5s
+射程: 32
+攻击数量: 4s内30
+伤害: 6</TM_MagicMissile_II.description>
+
+  <TM_MagicMissile_III.label>魔法飞弹</TM_MagicMissile_III.label>
+  <TM_MagicMissile_III.description>向敌人发射一群魔法飞弹.
+混乱概率: 9%
+施法时间: 1s
+射程: 36
+攻击数量: 3.6s内38
+伤害: 7</TM_MagicMissile_III.description>
+
+
+  <!-- Icebolt -->
+
+  <TM_Icebolt.label>冰箭术</TM_Icebolt.label>
+  <TM_Icebolt.description>将冰元素凝结为箭射向敌人， 会如同玻璃一般切割并刺穿敌人的身体， 在较小区域内造成伤害和流血效果。</TM_Icebolt.description>
+
+
+  <!-- Firebolt -->
+
+  <TM_Firebolt.label>燃烧之箭</TM_Firebolt.label>
+  <TM_Firebolt.description>凝结魔法火焰并射向目标区域。</TM_Firebolt.description>
+
+
+  <!-- Lightning Storm -->
+
+  <TM_LightningStorm.label>闪电风暴</TM_LightningStorm.label>
+  <TM_LightningStorm.description>在目标区域创造一阵猛烈但无法控制的闪电风暴。</TM_LightningStorm.description>
+
+
+  <!-- Teleport start -->
+
+  <TM_Teleport.label>传送</TM_Teleport.label>
+  <TM_Teleport.description>大规模传送技能. 创造一个临时的远距离传送方式; 但是要小心， 传送门会在一小段事件后崩塌并在其周围产生爆炸。</TM_Teleport.description>
+
+
+  <!-- Blink Start -->
+
+  <TM_Blink.label>闪烁</TM_Blink.label>
+  <TM_Blink.description>施法者立即移动到指定位置.
+施法时间: 1s
+充能时间: 10s
+射程: 30</TM_Blink.description>
+
+  <TM_Blink_I.label>闪烁</TM_Blink_I.label>
+  <TM_Blink_I.description>施法者立即移动到指定位置.
+施法时间: 0.8s
+充能时间: 8s
+射程: 50</TM_Blink_I.description>
+
+  <TM_Blink_II.label>闪烁</TM_Blink_II.label>
+  <TM_Blink_II.description>施法者立即移动到指定位置.
+施法时间: 0.6s
+充能时间: 6s
+射程: 70</TM_Blink_II.description>
+
+  <TM_Blink_III.label>闪烁</TM_Blink_III.label>
+  <TM_Blink_III.description>施法者立即移动到指定位置.
+施法时间: 0.4s
+充能时间: 5s
+射程: 90</TM_Blink_III.description>
+
+
+  <!-- Summon Start -->
+
+  <TM_Summon.label>召唤</TM_Summon.label>
+  <TM_Summon.description>召唤目标到施法者的位置.
+施法时间: 1s
+充能时间: 15s
+射程: 60</TM_Summon.description>
+
+  <TM_Summon_I.label>召唤</TM_Summon_I.label>
+  <TM_Summon_I.description>召唤目标到施法者的位置.
+施法时间: 0.8s
+充能时间: 12s
+射程: 90</TM_Summon_I.description>
+
+  <TM_Summon_II.label>召唤</TM_Summon_II.label>
+  <TM_Summon_II.description>召唤目标到施法者的位置.
+施法时间: 0.6s
+充能时间: 10s
+射程: 120</TM_Summon_II.description>
+
+  <TM_Summon_III.label>召唤</TM_Summon_III.label>
+  <TM_Summon_III.description>召唤目标到施法者的位置.
+施法时间: 0.4s
+充能时间: 8s
+射程: 150</TM_Summon_III.description>
+
+
+  <!-- Rainmaker Start -->
+
+  <TM_Rainmaker.label>唤雨者</TM_Rainmaker.label>
+  <TM_Rainmaker.description>更改大气的环境从而达到下雨的目的。</TM_Rainmaker.description>
+
+
+  <!-- Eye of the Storm -->
+
+  <TM_EyeOfTheStorm.label>风暴之眼</TM_EyeOfTheStorm.label>
+  <TM_EyeOfTheStorm.description>施放一个纯粹的由闪电能量组成的球体， 所到之处万物俱灭。</TM_EyeOfTheStorm.description>
+
+
+  <!-- Fold Reality -->
+
+  <TM_FoldReality.label>空间扭曲</TM_FoldReality.label>
+  <TM_FoldReality.description>通过折叠空间在另一个由玩家控制的地方打开一个传送门并且立即移动目标点周围半径七格的生物和物品到施法者身旁。</TM_FoldReality.description>
+
+
+  <!-- MagicMissile -->
+
+</LanguageData>

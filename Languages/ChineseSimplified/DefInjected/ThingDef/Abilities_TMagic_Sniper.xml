@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Sniper focus -->
+
+  <Projectile_SniperFocus.label>狙击专注</Projectile_SniperFocus.label>
+
+
+  <!-- Headshot start -->
+
+  <Projectile_Headshot.label>爆头一击</Projectile_Headshot.label>
+
+
+  <!-- Disabling shot start -->
+
+  <Projectile_DisablingShot.label>残废射击</Projectile_DisablingShot.label>
+
+
+  <!-- Anti Armor -->
+
+  <Projectile_AntiArmor.label>破甲</Projectile_AntiArmor.label>
+
+
+</LanguageData>

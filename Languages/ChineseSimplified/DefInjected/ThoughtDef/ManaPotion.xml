@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <ManaPotionHigh.stages.0.label>魔力涌动</ManaPotionHigh.stages.0.label>
+  <ManaPotionHigh.stages.0.description>这种力量是具有压倒性的. 我感觉到宇宙的力量划过我的指尖， 但是它把我的骨头变成了灰烬。</ManaPotionHigh.stages.0.description>
+
+
+  <!-- Mana potion addiction -->
+
+  <ManaPotionWithdrawal.stages.1.label>法力流失</ManaPotionWithdrawal.stages.1.label>
+  <ManaPotionWithdrawal.stages.1.description>额啊... 一切都是如此的模糊. 我似乎无法控制自己的身体， 我感觉到了与现实世界地分离. 我需要进入灵魂的深处继续感受魔法的力量。</ManaPotionWithdrawal.stages.1.description>
+
+
+</LanguageData>

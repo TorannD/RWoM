@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Undead.label>不死者</TM_Undead.label>
+  <TM_Undead.description>一个由黑暗魔法支配的死人.</TM_Undead.description>
+  <TM_Undead.tools.0.label>左掌</TM_Undead.tools.0.label>
+  <TM_Undead.tools.1.label>又掌</TM_Undead.tools.1.label>
+  <TM_Undead.tools.2.label>头</TM_Undead.tools.2.label>
+  <TM_Undead_Leather.label>不死者的皮</TM_Undead_Leather.label>
+  <TM_Undead_Leather.description>不死者的皮</TM_Undead_Leather.description>
+  <TM_Undead_Leather.stuffProps.stuffAdjective>不死者的皮</TM_Undead_Leather.stuffProps.stuffAdjective>
+  <TM_Undead_Meat.label>不死者的肉</TM_Undead_Meat.label>
+  <TM_Undead_Meat.description>不死者的肉</TM_Undead_Meat.description>
+  <TM_Undead_Corpse.label>不死者的尸体</TM_Undead_Corpse.label>
+  <TM_Undead_Corpse.description>不死者的尸体</TM_Undead_Corpse.description>
+
+
+</LanguageData>

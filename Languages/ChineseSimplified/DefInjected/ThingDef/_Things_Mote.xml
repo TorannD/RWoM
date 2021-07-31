@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- These are Mote ThingDefs. Remain the same, DO NOT translate them. -->
+
+  <Mote_ManaPuff.label>Mote</Mote_ManaPuff.label>
+  <Mote_Note.label>Mote</Mote_Note.label>
+  <Mote_Twinkle.label>Mote</Mote_Twinkle.label>
+  <Mote_Flame.label>Mote</Mote_Flame.label>
+  <Mote_Exclamation.label>Mote</Mote_Exclamation.label>
+  <Mote_Barrier.label>Mote</Mote_Barrier.label>
+  <Mote_Enchanting.label>Mote</Mote_Enchanting.label>
+  <Mote_Siphon.label>Mote</Mote_Siphon.label>
+  <Mote_Poison.label>Mote</Mote_Poison.label>
+  <Mote_Disease.label>Mote</Mote_Disease.label>
+  <Mote_Bolt.label>Mote</Mote_Bolt.label>
+  <Mote_DiseaseExplosion.label>Mote</Mote_DiseaseExplosion.label>
+  <Mote_Regen.label>Mote</Mote_Regen.label>
+  <Mote_Arcane.label>Mote</Mote_Arcane.label>
+  <Mote_BloodSquirt.label>Mote</Mote_BloodSquirt.label>
+  <Mote_CrossStrike.label>Mote</Mote_CrossStrike.label>
+  <Mote_MultiStrike.label>Mote</Mote_MultiStrike.label>
+  <Mote_ScreamMote.label>Mote</Mote_ScreamMote.label>
+  <Mote_ArcaneDaggers.label>Mote</Mote_ArcaneDaggers.label>
+  <!--[Core] <Mote_Bombardment.label>Mote</Mote_Bombardment.label>-->
+  <Mote_PowerBeamBlue.label>Mote</Mote_PowerBeamBlue.label>
+  <Mote_PowerBeamGold.label>Mote</Mote_PowerBeamGold.label>
+
+
+  <!-- These are Mote ThingDefs. Remain the same， DO NOT translate them. -->
+
+</LanguageData>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- poison -->
+
+  <Projectile_Poison.label>施毒术</Projectile_Poison.label>
+
+
+  <!-- soothe animal -->
+
+  <Projectile_SootheAnimal.label>诱惑动物</Projectile_SootheAnimal.label>
+
+
+  <!-- regenerate -->
+
+  <Projectile_Regenerate.label>再生</Projectile_Regenerate.label>
+
+
+  <!-- cure disease -->
+
+  <Projectile_CureDisease.label>治愈疾病</Projectile_CureDisease.label>
+
+
+  <!-- regrow limb -->
+
+  <Projectile_RegrowLimb.label>再生肢体</Projectile_RegrowLimb.label>
+
+
+</LanguageData>

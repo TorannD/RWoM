@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Earth Elemental -->
+
+  <TM_LesserEarth_Elemental.label>小型土元素</TM_LesserEarth_Elemental.label>
+  <TM_LesserEarth_Elemental.labelPlural>小型土元素s</TM_LesserEarth_Elemental.labelPlural>
+  <TM_LesserEarth_Elemental.lifeStages.0.label>小型土元素</TM_LesserEarth_Elemental.lifeStages.0.label>
+  <TM_LesserEarth_Elemental.lifeStages.0.labelPlural>土元素群</TM_LesserEarth_Elemental.lifeStages.0.labelPlural>
+
+  <TM_Earth_Elemental.label>土元素</TM_Earth_Elemental.label>
+  <TM_Earth_Elemental.labelPlural>土元素群</TM_Earth_Elemental.labelPlural>
+  <TM_Earth_Elemental.lifeStages.0.label>土元素</TM_Earth_Elemental.lifeStages.0.label>
+  <TM_Earth_Elemental.lifeStages.0.labelPlural>土元素群</TM_Earth_Elemental.lifeStages.0.labelPlural>
+
+  <TM_GreaterEarth_Elemental.label>大型土元素</TM_GreaterEarth_Elemental.label>
+  <TM_GreaterEarth_Elemental.labelPlural>大型土元素群</TM_GreaterEarth_Elemental.labelPlural>
+  <TM_GreaterEarth_Elemental.lifeStages.0.label>大型土元素</TM_GreaterEarth_Elemental.lifeStages.0.label>
+  <TM_GreaterEarth_Elemental.lifeStages.0.labelPlural>大型土元素群</TM_GreaterEarth_Elemental.lifeStages.0.labelPlural>
+
+
+  <!-- Fire Elemental -->
+
+  <TM_LesserFire_Elemental.label>小型火元素</TM_LesserFire_Elemental.label>
+  <TM_LesserFire_Elemental.labelPlural>小型火元素群</TM_LesserFire_Elemental.labelPlural>
+  <TM_LesserFire_Elemental.lifeStages.0.label>小型火元素</TM_LesserFire_Elemental.lifeStages.0.label>
+  <TM_LesserFire_Elemental.lifeStages.0.labelPlural>小型火元素群</TM_LesserFire_Elemental.lifeStages.0.labelPlural>
+
+  <TM_Fire_Elemental.label>火元素</TM_Fire_Elemental.label>
+  <TM_Fire_Elemental.labelPlural>火元素群</TM_Fire_Elemental.labelPlural>
+  <TM_Fire_Elemental.lifeStages.0.label>火元素</TM_Fire_Elemental.lifeStages.0.label>
+  <TM_Fire_Elemental.lifeStages.0.labelPlural>火元素群</TM_Fire_Elemental.lifeStages.0.labelPlural>
+
+  <TM_GreaterFire_Elemental.label>大型火元素</TM_GreaterFire_Elemental.label>
+  <TM_GreaterFire_Elemental.labelPlural>大型火元素群</TM_GreaterFire_Elemental.labelPlural>
+  <TM_GreaterFire_Elemental.lifeStages.0.label>大型火元素</TM_GreaterFire_Elemental.lifeStages.0.label>
+  <TM_GreaterFire_Elemental.lifeStages.0.labelPlural>大型火元素群</TM_GreaterFire_Elemental.lifeStages.0.labelPlural>
+
+
+  <!-- Water Elemental -->
+
+  <TM_LesserWater_Elemental.label>小型水元素</TM_LesserWater_Elemental.label>
+  <TM_LesserWater_Elemental.labelPlural>小型水元素群</TM_LesserWater_Elemental.labelPlural>
+  <TM_LesserWater_Elemental.lifeStages.0.label>小型水元素</TM_LesserWater_Elemental.lifeStages.0.label>
+  <TM_LesserWater_Elemental.lifeStages.0.labelPlural>小型水元素群</TM_LesserWater_Elemental.lifeStages.0.labelPlural>
+
+  <TM_Water_Elemental.label>水元素</TM_Water_Elemental.label>
+  <TM_Water_Elemental.labelPlural>水元素群</TM_Water_Elemental.labelPlural>
+  <TM_Water_Elemental.lifeStages.0.label>水元素</TM_Water_Elemental.lifeStages.0.label>
+  <TM_Water_Elemental.lifeStages.0.labelPlural>水元素群</TM_Water_Elemental.lifeStages.0.labelPlural>
+
+  <TM_GreaterWater_Elemental.label>大型水元素</TM_GreaterWater_Elemental.label>
+  <TM_GreaterWater_Elemental.labelPlural>大型水元素群</TM_GreaterWater_Elemental.labelPlural>
+  <TM_GreaterWater_Elemental.lifeStages.0.label>大型水元素</TM_GreaterWater_Elemental.lifeStages.0.label>
+  <TM_GreaterWater_Elemental.lifeStages.0.labelPlural>大型水元素群</TM_GreaterWater_Elemental.lifeStages.0.labelPlural>
+
+
+  <!-- Wind Elemental -->
+
+  <TM_LesserWind_Elemental.label>小型风元素</TM_LesserWind_Elemental.label>
+  <TM_LesserWind_Elemental.labelPlural>小型风元素群</TM_LesserWind_Elemental.labelPlural>
+  <TM_LesserWind_Elemental.lifeStages.0.label>小型风元素</TM_LesserWind_Elemental.lifeStages.0.label>
+  <TM_LesserWind_Elemental.lifeStages.0.labelPlural>小型风元素群</TM_LesserWind_Elemental.lifeStages.0.labelPlural>
+
+  <TM_Wind_Elemental.label>风元素</TM_Wind_Elemental.label>
+  <TM_Wind_Elemental.labelPlural>风元素群</TM_Wind_Elemental.labelPlural>
+  <TM_Wind_Elemental.lifeStages.0.label>风元素</TM_Wind_Elemental.lifeStages.0.label>
+  <TM_Wind_Elemental.lifeStages.0.labelPlural>风元素群</TM_Wind_Elemental.lifeStages.0.labelPlural>
+
+  <TM_GreaterWind_Elemental.label>大型风元素</TM_GreaterWind_Elemental.label>
+  <TM_GreaterWind_Elemental.labelPlural>大型风元素群</TM_GreaterWind_Elemental.labelPlural>
+  <TM_GreaterWind_Elemental.lifeStages.0.label>大型风元素</TM_GreaterWind_Elemental.lifeStages.0.label>
+  <TM_GreaterWind_Elemental.lifeStages.0.labelPlural>大型风元素群</TM_GreaterWind_Elemental.lifeStages.0.labelPlural>
+
+
+</LanguageData>

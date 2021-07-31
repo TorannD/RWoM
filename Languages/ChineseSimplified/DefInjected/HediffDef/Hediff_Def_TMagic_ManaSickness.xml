@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_ManaSickness.label>法力反噬</TM_ManaSickness.label>
+  <TM_ManaSickness.stages.0.label>虚弱</TM_ManaSickness.stages.0.label>
+  <TM_ManaSickness.stages.1.label>衰竭</TM_ManaSickness.stages.1.label>
+  <TM_ManaSickness.stages.2.label>临近死亡</TM_ManaSickness.stages.2.label>
+
+  <TM_ArcaneSickness.label>奥术反噬</TM_ArcaneSickness.label>
+  <TM_ArcaneSickness.stages.0.label>轻度</TM_ArcaneSickness.stages.0.label>
+  <TM_ArcaneSickness.stages.1.label>轻度</TM_ArcaneSickness.stages.1.label>
+  <TM_ArcaneSickness.stages.2.label>中度</TM_ArcaneSickness.stages.2.label>
+  <TM_ArcaneSickness.stages.3.label>重度</TM_ArcaneSickness.stages.3.label>
+  <TM_ArcaneSickness.stages.4.label>极重</TM_ArcaneSickness.stages.4.label>
+  <TM_ArcaneSickness.stages.5.label>极重</TM_ArcaneSickness.stages.5.label>
+
+
+</LanguageData>

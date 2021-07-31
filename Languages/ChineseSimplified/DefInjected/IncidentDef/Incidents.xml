@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <ArcaneEnemyRaid.label>敌对的神秘袭击小队</ArcaneEnemyRaid.label>
+
+  <QuestArcaneCamp.label>法师海盗营地机会</QuestArcaneCamp.label>
+  <QuestArcaneCamp.letterText>{0}， {1} 的 {2}， 发送给我们消息.\n\n在一个附近露营点的海盗基地已经开始袭击我们的商队并且威胁要攻击我们的城镇，除非我们移交一件具有魔力的宝物. {1} 拜托请求你消灭那群海盗和摧毁他们的露营点， 那代表着需要消灭所有的敌人和炮塔.\n\n如果你成功了， 我们会欠下你的人情， 并且我们也会把那件宝物交给你... 它带来的麻烦比价值要大得多:\n\n{3}\n{4}\n{5}</QuestArcaneCamp.letterText>
+  <QuestArcaneCamp.letterLabel>神秘海盗</QuestArcaneCamp.letterLabel>
+
+
+</LanguageData>

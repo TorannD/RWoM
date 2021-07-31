@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Bases -->
+
+  <UnfinishedGem.label>未加工的宝石</UnfinishedGem.label>
+
+
+  <!-- Enchanting Gems -->
+
+  <TM_EStone_maxMP_minor.label>小型奥术宝石</TM_EStone_maxMP_minor.label>
+  <TM_EStone_maxMP_minor.description>一个可以用来对物品灌注魔法能量的宝石. 凝视这块石头会有一种奇怪的眩晕感， 宛如在凝视着深渊一般. 此宝石可以用来给物品灌注魔法能量， 任何装备着此类物品的魔法师将提高最大法力值5%。</TM_EStone_maxMP_minor.description>
+  <TM_EStone_maxMP_minor.stuffProps.stuffAdjective>小型奥术宝石</TM_EStone_maxMP_minor.stuffProps.stuffAdjective>
+
+  <TM_EStone_maxMP.label>中型奥术宝石</TM_EStone_maxMP.label>
+  <TM_EStone_maxMP.description>一个可以用来对物品灌注魔法能量的宝石. 凝视这块石头会有一种奇怪的眩晕感， 宛如在凝视着深渊一般. 此宝石可以用来给物品灌注魔法能量， 任何装备着此类物品的魔法师将提高最大法力值10%。</TM_EStone_maxMP.description>
+  <TM_EStone_maxMP.stuffProps.stuffAdjective>中型奥术宝石</TM_EStone_maxMP.stuffProps.stuffAdjective>
+
+  <TM_EStone_maxMP_major.label>大型奥术宝石</TM_EStone_maxMP_major.label>
+  <TM_EStone_maxMP_major.description>一个可以用来对物品灌注魔法能量的宝石. 凝视这块石头会有一种奇怪的眩晕感， 宛如在凝视着深渊一般. 此宝石可以用来给物品灌注魔法能量， 任何装备着此类物品的魔法师将提高最大法力值15%。</TM_EStone_maxMP_major.description>
+  <TM_EStone_maxMP_major.stuffProps.stuffAdjective>大型奥术宝石</TM_EStone_maxMP_major.stuffProps.stuffAdjective>
+
+  <TM_EStone_mpRegenRate_minor.label>小型再生宝石</TM_EStone_mpRegenRate_minor.label>
+  <TM_EStone_mpRegenRate_minor.description>一个可以用来对物品灌注魔法能量的宝石. 给物品灌注魔法能量后， 任何装备着此类物品的魔法师将提高法力回复速度5%。</TM_EStone_mpRegenRate_minor.description>
+  <TM_EStone_mpRegenRate_minor.stuffProps.stuffAdjective>小型再生宝石</TM_EStone_mpRegenRate_minor.stuffProps.stuffAdjective>
+
+  <TM_EStone_mpRegenRate.label>中型再生宝石</TM_EStone_mpRegenRate.label>
+  <TM_EStone_mpRegenRate.description>一个可以用来对物品灌注魔法能量的宝石. 给物品灌注魔法能量后， 任何装备着此类物品的魔法师将提高法力回复速度10%。</TM_EStone_mpRegenRate.description>
+  <TM_EStone_mpRegenRate.stuffProps.stuffAdjective>中型再生宝石</TM_EStone_mpRegenRate.stuffProps.stuffAdjective>
+
+  <TM_EStone_mpRegenRate_major.label>大型再生宝石</TM_EStone_mpRegenRate_major.label>
+  <TM_EStone_mpRegenRate_major.description>一个可以用来对物品灌注魔法能量的宝石. 给物品灌注魔法能量后， 任何装备着此类物品的魔法师将提高法力回复速度15%。</TM_EStone_mpRegenRate_major.description>
+  <TM_EStone_mpRegenRate_major.stuffProps.stuffAdjective>大型再生宝石</TM_EStone_mpRegenRate_major.stuffProps.stuffAdjective>
+
+  <TM_EStone_mpCost_minor.label>小型保存宝石</TM_EStone_mpCost_minor.label>
+  <TM_EStone_mpCost_minor.description>一个可以用来对物品灌注魔法能量的宝石. 给物品灌注魔法能量后， 任何装备着此类物品的魔法师将降低技能法力消耗3%。</TM_EStone_mpCost_minor.description>
+  <TM_EStone_mpCost_minor.stuffProps.stuffAdjective>小型保存宝石</TM_EStone_mpCost_minor.stuffProps.stuffAdjective>
+
+  <TM_EStone_mpCost.label>中型保存宝石</TM_EStone_mpCost.label>
+  <TM_EStone_mpCost.description>一个可以用来对物品灌注魔法能量的宝石. 给物品灌注魔法能量后， 任何装备着此类物品的魔法师将降低技能法力消耗5%。</TM_EStone_mpCost.description>
+  <TM_EStone_mpCost.stuffProps.stuffAdjective>中型保存宝石</TM_EStone_mpCost.stuffProps.stuffAdjective>
+
+  <TM_EStone_mpCost_major.label>大型保存宝石</TM_EStone_mpCost_major.label>
+  <TM_EStone_mpCost_major.description>一个可以用来对物品灌注魔法能量的宝石. 给物品灌注魔法能量后， 任何装备着此类物品的魔法师将降低技能法力消耗7%。</TM_EStone_mpCost_major.description>
+  <TM_EStone_mpCost_major.stuffProps.stuffAdjective>大型保存宝石</TM_EStone_mpCost_major.stuffProps.stuffAdjective>
+
+  <TM_EStone_coolDown_minor.label>小型加速宝石</TM_EStone_coolDown_minor.label>
+  <TM_EStone_coolDown_minor.description>一个可以用来对物品灌注魔法能量的宝石. 给物品灌注魔法能量后， 任何装备着此类物品的魔法师将加快技能冷却3%。</TM_EStone_coolDown_minor.description>
+  <TM_EStone_coolDown_minor.stuffProps.stuffAdjective>小型加速宝石</TM_EStone_coolDown_minor.stuffProps.stuffAdjective>
+
+  <TM_EStone_coolDown.label>中型加速宝石</TM_EStone_coolDown.label>
+  <TM_EStone_coolDown.description>一个可以用来对物品灌注魔法能量的宝石. 给物品灌注魔法能量后， 任何装备着此类物品的魔法师将加快技能冷却5%。</TM_EStone_coolDown.description>
+  <TM_EStone_coolDown.stuffProps.stuffAdjective>中型加速宝石</TM_EStone_coolDown.stuffProps.stuffAdjective>
+
+  <TM_EStone_coolDown_major.label>大型加速宝石</TM_EStone_coolDown_major.label>
+  <TM_EStone_coolDown_major.description>一个可以用来对物品灌注魔法能量的宝石. 给物品灌注魔法能量后， 任何装备着此类物品的魔法师将加快技能冷却7%。</TM_EStone_coolDown_major.description>
+  <TM_EStone_coolDown_major.stuffProps.stuffAdjective>大型加速宝石</TM_EStone_coolDown_major.stuffProps.stuffAdjective>
+
+  <TM_EStone_xpGain_minor.label>小型知识宝石</TM_EStone_xpGain_minor.label>
+  <TM_EStone_xpGain_minor.description>一个可以用来对物品灌注魔法能量的宝石. 给物品灌注魔法能量后， 此宝石可以帮助佩戴者储存技能的模拟气息， 允许魔法师更多的自我反省并加快经验值获取速度5%。</TM_EStone_xpGain_minor.description>
+  <TM_EStone_xpGain_minor.stuffProps.stuffAdjective>小型知识宝石</TM_EStone_xpGain_minor.stuffProps.stuffAdjective>
+
+  <TM_EStone_xpGain.label>中型知识宝石</TM_EStone_xpGain.label>
+  <TM_EStone_xpGain.description>一个可以用来对物品灌注魔法能量的宝石. 给物品灌注魔法能量后， 此宝石可以帮助佩戴者储存技能的模拟气息， 允许魔法师更多的自我反省并加快经验值获取速度10%。</TM_EStone_xpGain.description>
+  <TM_EStone_xpGain.stuffProps.stuffAdjective>中型知识宝石</TM_EStone_xpGain.stuffProps.stuffAdjective>
+
+  <TM_EStone_xpGain_major.label>大型知识宝石</TM_EStone_xpGain_major.label>
+  <TM_EStone_xpGain_major.description>一个可以用来对物品灌注魔法能量的宝石. 给物品灌注魔法能量后， 此宝石可以帮助佩戴者储存技能的模拟气息， 允许魔法师更多的自我反省并加快经验值获取速度15%。</TM_EStone_xpGain_major.description>
+  <TM_EStone_xpGain_major.stuffProps.stuffAdjective>大型知识宝石</TM_EStone_xpGain_major.stuffProps.stuffAdjective>
+
+  <TM_EStone_arcaneRes_minor.label>小型抗性宝石</TM_EStone_arcaneRes_minor.label>
+  <TM_EStone_arcaneRes_minor.description>一个可以用来对物品灌注魔法能量的宝石. 给物品灌注魔法能量后, 此宝石会创造一个可以吸收奥术能量的屏障, 降低受到的奥术攻击伤害10%.</TM_EStone_arcaneRes_minor.description>
+  <TM_EStone_arcaneRes_minor.stuffProps.stuffAdjective>小型抗性宝石</TM_EStone_arcaneRes_minor.stuffProps.stuffAdjective>
+
+  <TM_EStone_arcaneRes.label>抗性宝石</TM_EStone_arcaneRes.label>
+  <TM_EStone_arcaneRes.description>一个可以用来对物品灌注魔法能量的宝石. 给物品灌注魔法能量后, 此宝石会创造一个可以吸收奥术能量的屏障, 降低受到的奥术攻击伤害20%.</TM_EStone_arcaneRes.description>
+  <TM_EStone_arcaneRes.stuffProps.stuffAdjective>抗性宝石</TM_EStone_arcaneRes.stuffProps.stuffAdjective>
+
+  <TM_EStone_arcaneRes_major.label>大型抗性宝石</TM_EStone_arcaneRes_major.label>
+  <TM_EStone_arcaneRes_major.description>一个可以用来对物品灌注魔法能量的宝石. 给物品灌注魔法能量后, 此宝石会创造一个可以吸收奥术能量的屏障, 降低受到的奥术攻击伤害30%.</TM_EStone_arcaneRes_major.description>
+  <TM_EStone_arcaneRes_major.stuffProps.stuffAdjective>大型抗性宝石</TM_EStone_arcaneRes_major.stuffProps.stuffAdjective>
+
+  <TM_EStone_arcaneDmg_minor.label>小型力量宝石</TM_EStone_arcaneDmg_minor.label>
+  <TM_EStone_arcaneDmg_minor.description>一个可以用来对物品灌注魔法能量的宝石. 给物品灌注魔法能量后, 此附魔会增强魔法攻击的强度, 增加伤害输出4%.</TM_EStone_arcaneDmg_minor.description>
+  <TM_EStone_arcaneDmg_minor.stuffProps.stuffAdjective>小型力量宝石</TM_EStone_arcaneDmg_minor.stuffProps.stuffAdjective>
+
+  <TM_EStone_arcaneDmg.label>力量宝石</TM_EStone_arcaneDmg.label>
+  <TM_EStone_arcaneDmg.description>一个可以用来对物品灌注魔法能量的宝石. 给物品灌注魔法能量后, 此附魔会增强魔法攻击的强度, 增加伤害输出8%.</TM_EStone_arcaneDmg.description>
+  <TM_EStone_arcaneDmg.stuffProps.stuffAdjective>力量宝石</TM_EStone_arcaneDmg.stuffProps.stuffAdjective>
+
+  <TM_EStone_arcaneDmg_major.label>大型力量宝石</TM_EStone_arcaneDmg_major.label>
+  <TM_EStone_arcaneDmg_major.description>一个可以用来对物品灌注魔法能量的宝石. 给物品灌注魔法能量后, 此附魔会增强魔法攻击的强度, 增加伤害输出12%.</TM_EStone_arcaneDmg_major.description>
+  <TM_EStone_arcaneDmg_major.stuffProps.stuffAdjective>大型力量宝石</TM_EStone_arcaneDmg_major.stuffProps.stuffAdjective>
+
+
+  <!-- Raw Magicyte -->
+
+  <RawMagicyte.label>粗糙的魔法原石</RawMagicyte.label>
+  <RawMagicyte.description>一块看起来在自我缠绕着的石头， 拥有着玻璃般的外观， 在石头的中心似乎有一股神秘力量隐藏在其中. 它看似与挖掘地点附近的石头的构成一样， 但这种平凡的石头可以在黑暗中散发着点点微光， 并且当魔法师触碰石头时可以察觉到它在发射一种能量信号。</RawMagicyte.description>
+  <RawMagicyte.stuffProps.stuffAdjective>粗糙的魔法原石</RawMagicyte.stuffProps.stuffAdjective>
+
+
+</LanguageData>

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_UndeadHD.label>不死者</TM_UndeadHD.label>
+  <TM_UndeadHD.stages.0.label>I</TM_UndeadHD.stages.0.label>
+  <TM_UndeadHD.stages.1.label>II</TM_UndeadHD.stages.1.label>
+  <TM_UndeadHD.stages.2.label>III</TM_UndeadHD.stages.2.label>
+  <TM_UndeadHD.stages.3.label>IV</TM_UndeadHD.stages.3.label>
+
+  <TM_LichHD.label>巫妖</TM_LichHD.label>
+  <TM_LichHD.stages.0.label>不死者</TM_LichHD.stages.0.label>
+
+  <TM_UndeadAnimalHD.label>不死者</TM_UndeadAnimalHD.label>
+  <TM_UndeadAnimalHD.stages.0.label>I</TM_UndeadAnimalHD.stages.0.label>
+  <TM_UndeadAnimalHD.stages.1.label>II</TM_UndeadAnimalHD.stages.1.label>
+  <TM_UndeadAnimalHD.stages.2.label>III</TM_UndeadAnimalHD.stages.2.label>
+  <TM_UndeadAnimalHD.stages.3.label>IV</TM_UndeadAnimalHD.stages.3.label>
+
+  <TM_DeathMarkHD.label>死亡印记</TM_DeathMarkHD.label>
+
+  <TM_DeathMarkCurse.label>死亡印记</TM_DeathMarkCurse.label>
+  <TM_DeathMarkCurse.stages.0.label>笨拙</TM_DeathMarkCurse.stages.0.label>
+  <TM_DeathMarkCurse.stages.1.label>愚钝</TM_DeathMarkCurse.stages.1.label>
+  <TM_DeathMarkCurse.stages.2.label>诅咒</TM_DeathMarkCurse.stages.2.label>
+
+  <TM_TormentHD.label>折磨</TM_TormentHD.label>
+  <TM_TormentHD.comps.0.labelTendedWell>包扎</TM_TormentHD.comps.0.labelTendedWell>
+  <TM_TormentHD.comps.0.labelTendedWellInner>缝合</TM_TormentHD.comps.0.labelTendedWellInner>
+  <TM_TormentHD.comps.0.labelSolidTendedWell>安置</TM_TormentHD.comps.0.labelSolidTendedWell>
+  <TM_TormentHD.comps.1.oldLabel>意识模糊</TM_TormentHD.comps.1.oldLabel>
+  <TM_TormentHD.injuryProps.destroyedLabel>熔化</TM_TormentHD.injuryProps.destroyedLabel>
+  <TM_TormentHD.injuryProps.destroyedOutLabel>融化</TM_TormentHD.injuryProps.destroyedOutLabel>
+
+  <TM_DeathBoltHD.label>死亡螺旋</TM_DeathBoltHD.label>
+  <TM_DeathBoltHD.comps.0.labelTendedWell>包扎</TM_DeathBoltHD.comps.0.labelTendedWell>
+  <TM_DeathBoltHD.comps.0.labelTendedWellInner>缝合</TM_DeathBoltHD.comps.0.labelTendedWellInner>
+  <TM_DeathBoltHD.comps.0.labelSolidTendedWell>安置</TM_DeathBoltHD.comps.0.labelSolidTendedWell>
+  <TM_DeathBoltHD.comps.1.oldLabel>熔化</TM_DeathBoltHD.comps.1.oldLabel>
+  <TM_DeathBoltHD.injuryProps.destroyedLabel>融化掉</TM_DeathBoltHD.injuryProps.destroyedLabel>
+  <TM_DeathBoltHD.injuryProps.destroyedOutLabel>融化</TM_DeathBoltHD.injuryProps.destroyedOutLabel>
+
+  <TM_Torment_HD.label>饱受折磨</TM_Torment_HD.label>
+  <TM_Torment_HD.stages.0.label>疼痛</TM_Torment_HD.stages.0.label>
+  <TM_Torment_HD.stages.1.label>极痛</TM_Torment_HD.stages.1.label>
+  <TM_Torment_HD.stages.2.label>饱受折磨</TM_Torment_HD.stages.2.label>
+
+
+</LanguageData>

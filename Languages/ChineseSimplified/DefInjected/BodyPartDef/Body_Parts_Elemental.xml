@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Ele_Head.label>头颅</Ele_Head.label>
+  <Ele_Skull.label>颅骨</Ele_Skull.label>
+  <Ele_Brain.label>大脑</Ele_Brain.label>
+  <Ele_Heart.label>心脏</Ele_Heart.label>
+  <Ele_LeftArm.label>左臂</Ele_LeftArm.label>
+  <Ele_RightArm.label>右臂</Ele_RightArm.label>
+  <Ele_Horn.label>角</Ele_Horn.label>
+  <Ele_Eye.label>眼</Ele_Eye.label>
+  <Ele_LeftEar.label>左眼</Ele_LeftEar.label>
+  <Ele_RightEar.label>右眼</Ele_RightEar.label>
+  <Ele_Jaw.label>下颌</Ele_Jaw.label>
+  <Ele_Neck.label>颈部</Ele_Neck.label>
+  <Ele_Spine.label>脊椎</Ele_Spine.label>
+  <Ele_Abdomen.label>腹部</Ele_Abdomen.label>
+  <Ele_Chest.label>胸部</Ele_Chest.label>
+  <Ele_Base.label>基础移动速度</Ele_Base.label>
+
+
+</LanguageData>

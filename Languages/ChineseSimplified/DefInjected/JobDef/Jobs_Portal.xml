@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Portal jobs -->
+
+  <PortalDestination.reportString>设定传送门目的地。</PortalDestination.reportString>
+  <UsePortal.reportString>使用传送门。</UsePortal.reportString>
+  <DeactivatePortal.reportString>停用传送门。</DeactivatePortal.reportString>
+  <ChargePortal.reportString>充能传送门。</ChargePortal.reportString>
+  <PortalStockpile.reportString>发送物品。</PortalStockpile.reportString>
+
+
+</LanguageData>

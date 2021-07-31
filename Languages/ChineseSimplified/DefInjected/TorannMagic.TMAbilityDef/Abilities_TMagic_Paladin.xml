@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- <ThingDef Class="TorannMagic.TMAbilityDef" ParentName="BaseAbility"> -->
+
+  <TM_Heal.label>圣光术</TM_Heal.label>
+  <TM_Heal.description>祈求圣光的力量治愈目标的伤口。</TM_Heal.description>
+
+
+  <!-- Shield start -->
+
+  <TM_Shield.label>神佑之盾</TM_Shield.label>
+  <TM_Shield.description>保护圣骑士 50s 内免受伤害 或直到护盾被破坏.
+最多吸收40点伤害。</TM_Shield.description>
+
+  <TM_Shield_I.label>神佑之盾</TM_Shield_I.label>
+  <TM_Shield_I.description>保护圣骑士 50s 内免受伤害 或直到护盾被破坏.
+最多吸收60点伤害.
+降级再次充能的时间到 20s。</TM_Shield_I.description>
+
+  <TM_Shield_II.label>神佑之盾</TM_Shield_II.label>
+  <TM_Shield_II.description>保护圣骑士 50s 内免受伤害 或直到护盾被破坏.
+最多吸收100点伤害。</TM_Shield_II.description>
+
+  <TM_Shield_III.label>神佑之盾</TM_Shield_III.label>
+  <TM_Shield_III.description>保护圣骑士 50s 内免受伤害 或直到护盾被破坏.
+最多吸收130点伤害.
+降低再次充能的时间到 18s。</TM_Shield_III.description>
+
+
+  <!-- Valiant Charge -->
+
+  <TM_ValiantCharge.label>神圣附体</TM_ValiantCharge.label>
+  <TM_ValiantCharge.description>圣骑士展开圣洁之翼飞向目标区域， 落地过程中会一直释放神圣能量伤害周围的敌人。</TM_ValiantCharge.description>
+
+
+  <!-- Overwhelm start -->
+
+  <TM_Overwhelm.label>圣光压制</TM_Overwhelm.label>
+  <TM_Overwhelm.description>圣骑士向自身周围释放狂暴的神圣审判之力，对周围敌人造成大量伤害。</TM_Overwhelm.description>
+
+
+  <!-- Holy Wrath -->
+
+  <TM_HolyWrath.label>神圣之怒</TM_HolyWrath.label>
+  <TM_HolyWrath.description>在前方召唤神之怒降临.</TM_HolyWrath.description>
+
+
+</LanguageData>

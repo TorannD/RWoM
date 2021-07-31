@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Summon Minion Start -->
+
+  <Projectile_SummonMinion.label>召唤仆从</Projectile_SummonMinion.label>
+
+
+  <!-- Summon pylon Start -->
+
+  <Projectile_SummonPylon.label>召唤防御塔</Projectile_SummonPylon.label>
+
+
+  <!-- Summon explosive Start -->
+
+  <Projectile_SummonExplosive.label>召唤爆炸陷阱</Projectile_SummonExplosive.label>
+
+
+  <!-- Summon Elemental Start -->
+
+  <Projectile_SummonElemental.label>元素召唤</Projectile_SummonElemental.label>
+
+
+  <!-- Summon Poppi Start -->
+
+  <Projectile_SummonPoppi.label>召唤波皮</Projectile_SummonPoppi.label>
+
+
+</LanguageData>

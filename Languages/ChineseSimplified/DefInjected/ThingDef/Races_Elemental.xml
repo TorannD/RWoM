@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Earth Elemental -->
+
+  <TM_LesserEarth_ElementalR.label>小型土元素</TM_LesserEarth_ElementalR.label>
+  <TM_LesserEarth_ElementalR.description>土元素是行动缓慢且坚固的，由具有活性的石头创造而成。它们的藏身之处似乎是由石头和水晶以及泥地的地形构成。这种生物是所有元素生物里最坚定不移的， 它们会一直经受风吹雨打。虽然它只是一个小型元素， 它们看起来仍然比大多数类人生物要矮并且拥有着不俗的能力来保护它们的主人。</TM_LesserEarth_ElementalR.description>
+  <TM_LesserEarth_ElementalR.tools.0.label>左臂</TM_LesserEarth_ElementalR.tools.0.label>
+  <TM_LesserEarth_ElementalR.tools.1.label>右臂</TM_LesserEarth_ElementalR.tools.1.label>
+  <TM_LesserEarth_ElementalR.tools.2.label>角</TM_LesserEarth_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_LesserEarth_ElementalR_Corpse.label>小型土元素的尸体</TM_LesserEarth_ElementalR_Corpse.label>
+  <TM_LesserEarth_ElementalR_Corpse.description>小型土元素的尸体</TM_LesserEarth_ElementalR_Corpse.description>
+
+
+  <!-- Earth Elemental -->
+
+  <TM_Earth_ElementalR.label>土元素</TM_Earth_ElementalR.label>
+  <TM_Earth_ElementalR.description>土元素是行动缓慢且坚固的，由具有活性的石头创造而成。它们的藏身之处似乎是由石头和水晶以及泥地的地形构成。这种生物是所有元素生物里最坚定不移的， 它们会一直经受风吹雨打。这种生物用它们坚不可摧的皮肤使现代的坦克蒙羞。</TM_Earth_ElementalR.description>
+  <TM_Earth_ElementalR.tools.0.label>左臂</TM_Earth_ElementalR.tools.0.label>
+  <TM_Earth_ElementalR.tools.1.label>右臂</TM_Earth_ElementalR.tools.1.label>
+  <TM_Earth_ElementalR.tools.2.label>角</TM_Earth_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_Earth_ElementalR_Corpse.label>土元素的尸体</TM_Earth_ElementalR_Corpse.label>
+  <TM_Earth_ElementalR_Corpse.description>土元素的尸体</TM_Earth_ElementalR_Corpse.description>
+
+
+  <!-- Earth Elemental -->
+
+  <TM_GreaterEarth_ElementalR.label>大型土元素</TM_GreaterEarth_ElementalR.label>
+  <TM_GreaterEarth_ElementalR.description>土元素是行动缓慢且坚固的，由具有活性的石头创造而成。它们的藏身之处似乎是由石头和水晶以及泥地的地形构成. 它的嘴宛如一个洞穴并且在它的背上有一些小型的树和灌木丛，就好像它穿着一件由植物组成的外衣一样。这种生物是它们族群中的精英。它们的力量会一点点地碾碎你的敌人， 它们拥有唯一的机会就是赶紧跑。</TM_GreaterEarth_ElementalR.description>
+  <TM_GreaterEarth_ElementalR.tools.0.label>左臂</TM_GreaterEarth_ElementalR.tools.0.label>
+  <TM_GreaterEarth_ElementalR.tools.1.label>右臂</TM_GreaterEarth_ElementalR.tools.1.label>
+  <TM_GreaterEarth_ElementalR.tools.2.label>角</TM_GreaterEarth_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_GreaterEarth_ElementalR_Corpse.label>大型土元素的尸体</TM_GreaterEarth_ElementalR_Corpse.label>
+  <TM_GreaterEarth_ElementalR_Corpse.description>大型土元素的尸体</TM_GreaterEarth_ElementalR_Corpse.description>
+
+
+  <!-- Fire Elemental -->
+
+  <TM_LesserFire_ElementalR.label>小型火元素</TM_LesserFire_ElementalR.label>
+  <TM_LesserFire_ElementalR.description>由活性烈焰创造的火元素是十分爆裂的。它们在大自然十分快速且残忍， 它们专攻毁灭与破坏。火元素以油质和熔化的物质伴随着火和灰而成， 它们的皮肤看起来好像在流动一般， 它们会不断地融化和重组。即使是在自然界中的小型生物， 那眼睛闪烁的光芒也是它们在耐心耗尽之前对敌人的唯一警告。</TM_LesserFire_ElementalR.description>
+  <TM_LesserFire_ElementalR.tools.0.label>左臂</TM_LesserFire_ElementalR.tools.0.label>
+  <TM_LesserFire_ElementalR.tools.1.label>右臂</TM_LesserFire_ElementalR.tools.1.label>
+  <TM_LesserFire_ElementalR.tools.2.label>角</TM_LesserFire_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_LesserFire_ElementalR_Corpse.label>小型火元素的尸体</TM_LesserFire_ElementalR_Corpse.label>
+  <TM_LesserFire_ElementalR_Corpse.description>小型火元素的尸体</TM_LesserFire_ElementalR_Corpse.description>
+
+
+  <!-- Fire Elemental -->
+
+  <TM_Fire_ElementalR.label>火元素</TM_Fire_ElementalR.label>
+  <TM_Fire_ElementalR.description>由活性烈焰创造的火元素是十分爆裂的。它们在大自然十分快速且残忍， 它们专攻毁灭与破坏。火元素以油质和熔化的物质伴随着火和灰而成， 它们的皮肤看起来好像在流动一般， 它们会不断地融化和重组。这种生物有着看起来很恶毒的笑容... 敌人应该在玩火前谨慎思考。</TM_Fire_ElementalR.description>
+  <TM_Fire_ElementalR.tools.0.label>左臂</TM_Fire_ElementalR.tools.0.label>
+  <TM_Fire_ElementalR.tools.1.label>右臂</TM_Fire_ElementalR.tools.1.label>
+  <TM_Fire_ElementalR.tools.2.label>角</TM_Fire_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_Fire_ElementalR_Corpse.label>火元素的尸体</TM_Fire_ElementalR_Corpse.label>
+  <TM_Fire_ElementalR_Corpse.description>火元素的尸体</TM_Fire_ElementalR_Corpse.description>
+
+
+  <!-- Fire Elemental -->
+
+  <TM_GreaterFire_ElementalR.label>大型火元素</TM_GreaterFire_ElementalR.label>
+  <TM_GreaterFire_ElementalR.description>由活性烈焰创造的火元素是十分爆裂的。它们在大自然十分快速且残忍， 它们专攻毁灭与破坏。火元素以油质和熔化的物质伴随着火和灰而成， 它们的皮肤看起来好像在流动一般， 它们会不断地融化和重组。站在你面前的是毁灭之王， 戴着一顶由华丽的流焰组成的王冠. 它的胸前被一块冒着火焰的黑曜石装饰着。如果它单独注视着你，眼睛中的闪光代表着它即将释放它的无边怒火。</TM_GreaterFire_ElementalR.description>
+  <TM_GreaterFire_ElementalR.tools.0.label>左臂</TM_GreaterFire_ElementalR.tools.0.label>
+  <TM_GreaterFire_ElementalR.tools.1.label>右臂</TM_GreaterFire_ElementalR.tools.1.label>
+  <TM_GreaterFire_ElementalR.tools.2.label>角</TM_GreaterFire_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_GreaterFire_ElementalR_Corpse.label>大型火元素的尸体</TM_GreaterFire_ElementalR_Corpse.label>
+  <TM_GreaterFire_ElementalR_Corpse.description>大型火元素的尸体</TM_GreaterFire_ElementalR_Corpse.description>
+
+
+  <!-- Water Elemental -->
+
+  <TM_LesserWater_ElementalR.label>小型水元素</TM_LesserWater_ElementalR.label>
+  <TM_LesserWater_ElementalR.description>水元素由具有活性的水创造而成。它们是忍耐和孤独两种精神力量具现化的产物。它们以水旋涡的形态出现， 有时候看起来会以生物或者没用的物体的形态在水面上漂浮着。它们总是在运动中并且移动的时候看起来是以滑行的方式。站在你面前的这种生物只是小型体， 但仍会比你见过的最强大的敌人更冷酷无情。</TM_LesserWater_ElementalR.description>
+  <TM_LesserWater_ElementalR.tools.0.label>左臂</TM_LesserWater_ElementalR.tools.0.label>
+  <TM_LesserWater_ElementalR.tools.1.label>右臂</TM_LesserWater_ElementalR.tools.1.label>
+  <TM_LesserWater_ElementalR.tools.2.label>角</TM_LesserWater_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_LesserWater_ElementalR_Corpse.label>小型水元素的尸体</TM_LesserWater_ElementalR_Corpse.label>
+  <TM_LesserWater_ElementalR_Corpse.description>小型水元素的尸体</TM_LesserWater_ElementalR_Corpse.description>
+
+
+  <!-- Water Elemental -->
+
+  <TM_Water_ElementalR.label>水元素</TM_Water_ElementalR.label>
+  <TM_Water_ElementalR.description>水元素由具有活性的水创造而成。它们是忍耐和孤独两种精神力量具现化的产物。它们以水旋涡的形态出现， 有时候看起来会以生物或者没用的物体的形态在水面上漂浮着。它们总是在运动中并且移动的时候看起来是以滑行的方式。正在你面前的这种元素看起来很平静， 但你感觉到危险就隐藏在它的表面之下。</TM_Water_ElementalR.description>
+  <TM_Water_ElementalR.tools.0.label>左臂</TM_Water_ElementalR.tools.0.label>
+  <TM_Water_ElementalR.tools.1.label>右臂</TM_Water_ElementalR.tools.1.label>
+  <TM_Water_ElementalR.tools.2.label>角</TM_Water_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_Water_ElementalR_Corpse.label>水元素的尸体</TM_Water_ElementalR_Corpse.label>
+  <TM_Water_ElementalR_Corpse.description>水元素的尸体</TM_Water_ElementalR_Corpse.description>
+
+
+  <!-- Water Elemental -->
+
+  <TM_GreaterWater_ElementalR.label>大型水元素</TM_GreaterWater_ElementalR.label>
+  <TM_GreaterWater_ElementalR.description>水元素由具有活性的水创造而成。它们是忍耐和孤独两种精神力量具现化的产物。它们以水旋涡的形态出现， 有时候看起来会以生物或者没用的物体的形态在水面上漂浮着。它们总是在运动中并且移动的时候看起来是以滑行的方式。这种在你面前的庞大的元素生物拥有一双漩涡似的眼睛并且移动起来就像狂暴的巨浪一般。</TM_GreaterWater_ElementalR.description>
+  <TM_GreaterWater_ElementalR.tools.0.label>左臂</TM_GreaterWater_ElementalR.tools.0.label>
+  <TM_GreaterWater_ElementalR.tools.1.label>右臂</TM_GreaterWater_ElementalR.tools.1.label>
+  <TM_GreaterWater_ElementalR.tools.2.label>角</TM_GreaterWater_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_GreaterWater_ElementalR_Corpse.label>大型水元素的尸体</TM_GreaterWater_ElementalR_Corpse.label>
+  <TM_GreaterWater_ElementalR_Corpse.description>大型水元素的尸体</TM_GreaterWater_ElementalR_Corpse.description>
+
+
+  <!-- Wind Elemental -->
+
+  <TM_LesserWind_ElementalR.label>小型风元素</TM_LesserWind_ElementalR.label>
+  <TM_LesserWind_ElementalR.description>风元素由活性之风创造而成并且拥有出乎意料的速度和灵活性。它的身体形态总是在迅速地转换; 有时候是朦胧的烟雾， 其他时候是一道扭曲的旋风。可以看到这股气流勉强组成了一个人型生物的轮廓。但在少数情况下， 这种元素生物将会降下附有恶意的雨滴狠狠砸向它们的敌人。</TM_LesserWind_ElementalR.description>
+  <TM_LesserWind_ElementalR.tools.0.label>左臂</TM_LesserWind_ElementalR.tools.0.label>
+  <TM_LesserWind_ElementalR.tools.1.label>右臂</TM_LesserWind_ElementalR.tools.1.label>
+  <TM_LesserWind_ElementalR.tools.2.label>角</TM_LesserWind_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_LesserWind_ElementalR_Corpse.label>小型风元素的尸体</TM_LesserWind_ElementalR_Corpse.label>
+  <TM_LesserWind_ElementalR_Corpse.description>小型风元素的尸体</TM_LesserWind_ElementalR_Corpse.description>
+
+
+  <!-- Wind Elemental -->
+
+  <TM_Wind_ElementalR.label>风元素</TM_Wind_ElementalR.label>
+  <TM_Wind_ElementalR.description>风元素由活性之风创造而成并且拥有出乎意料的速度和灵活性。它的身体形态总是在迅速地转换; 有时候是朦胧的烟雾， 其他时候是一道扭曲的旋风。可以看到这股气流勉强组成了一个人型生物的轮廓。这种生物掌控着风暴的力量并且会毫无犹豫的将其施加在敌人身上。</TM_Wind_ElementalR.description>
+  <TM_Wind_ElementalR.tools.0.label>左臂</TM_Wind_ElementalR.tools.0.label>
+  <TM_Wind_ElementalR.tools.1.label>右臂</TM_Wind_ElementalR.tools.1.label>
+  <TM_Wind_ElementalR.tools.2.label>角</TM_Wind_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_Wind_ElementalR_Corpse.label>风元素的尸体</TM_Wind_ElementalR_Corpse.label>
+  <TM_Wind_ElementalR_Corpse.description>风元素的尸体</TM_Wind_ElementalR_Corpse.description>
+
+
+  <!-- Wind Elemental -->
+
+  <TM_GreaterWind_ElementalR.label>大型风元素</TM_GreaterWind_ElementalR.label>
+  <TM_GreaterWind_ElementalR.description>风元素由活性之风创造而成并且拥有出乎意料的速度和灵活性。它的身体形态总是在迅速地转换; 有时候是朦胧的烟雾， 其他时候是一道扭曲的旋风。可以看到这股气流勉强组成了一个人型生物的轮廓。毫无疑问的是在释放风暴的狂怒时这种生物即是至高无上的存在。</TM_GreaterWind_ElementalR.description>
+  <TM_GreaterWind_ElementalR.tools.0.label>左臂</TM_GreaterWind_ElementalR.tools.0.label>
+  <TM_GreaterWind_ElementalR.tools.1.label>右臂</TM_GreaterWind_ElementalR.tools.1.label>
+  <TM_GreaterWind_ElementalR.tools.2.label>角</TM_GreaterWind_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_GreaterWind_ElementalR_Corpse.label>大型风元素的尸体</TM_GreaterWind_ElementalR_Corpse.label>
+  <TM_GreaterWind_ElementalR_Corpse.description>大型风元素的尸体</TM_GreaterWind_ElementalR_Corpse.description>
+
+
+</LanguageData>

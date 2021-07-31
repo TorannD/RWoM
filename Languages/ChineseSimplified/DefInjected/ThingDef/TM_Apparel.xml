@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_MaestersCloak.label>漫游者斗篷</TM_MaestersCloak.label>
+  <TM_MaestersCloak.description>一个为旅行法师设计的斗篷, 用来提供魔法防护和加快奥术能量恢复速度. 此物品在打造过程中使用了特殊的宝石附魔方式使其拥有了很强的附魔效果.</TM_MaestersCloak.description>
+
+  <AncientMail.label>古代盔甲</AncientMail.label>
+  <AncientMail.description>以古代技能锻造的锁子甲, 拥有着平均水平以上的物理防御能力. 此盔甲设计了一组对称的蚀刻符文槽. 经过打造后这些符文会为穿戴者吸引古代能量并给予穿戴者造成格外奥术伤害的机会; 然而那是有代价的 - 所有技能都会需要更多的法力来施放 (这个不能细说), 并且穿戴者会受困于梦魇中并缓慢降低精神抵抗力.</AncientMail.description>
+
+  <DarkRobe.label>黑暗长袍</DarkRobe.label>
+  <DarkRobe.description>黑暗大魔法师所穿旧的长袍. 穿戴者会愿意牺牲自己的理智来换取神秘的力量.</DarkRobe.description>
+
+  <ArchMageRobe.label>奥术法师长袍</ArchMageRobe.label>
+  <ArchMageRobe.description>一件设计给最高级魔法师议会中长者的法袍. 它们十分轻便, 随风飘扬的部分像一只巨鸟身上的翅膀.</ArchMageRobe.description>
+
+  <DemonLordCloak.label>霸者长袍</DemonLordCloak.label>
+  <DemonLordCloak.description>一件被大量奥术能量充斥的斗篷, 人们认为它第一次被打造出来的目的是给予一位前往精神世界与恶魔交涉的黑骑士. 其构造导致穿戴者很难被观察者注意到, 人们称之为是一种叫做“视觉噪音”的东西导致的. 并且衣服上的波纹会以不规则的方式运动着仿佛脱离了自然的束缚一般. 少数在战场上穿戴过长袍的人发誓说这件衣服拥有了自己的意识并告诉穿戴者它是如何庇护着他们从某一次毁灭性的灾难中逃生的. 但其他人宣称他们什么都没有观察到除了偶尔会出现疯子傻瓜一般的幻觉. 由于这些描述, 人们开始传播说这件长袍拥有使穿戴者完全不会受到伤害的能力, 但目前没有任何人有可靠的证据证明这种能力真的存在.</DemonLordCloak.description>
+
+  <RoyalArmor.label>勇者战铠</RoyalArmor.label>
+  <RoyalArmor.description>一件蚀刻着神圣符号的护胸甲, 它被设计用来保护关键部位并且不会影响到移动. 据说在过往的岁月里被一位维护正义与怜悯的圣战士穿戴至破旧不堪. 但之后发生的事情被掩埋在了历史的尘埃中, 只有这件盔甲流传了下来.</RoyalArmor.description>
+
+  <HoodOfMadness.label>疯狂兜帽</HoodOfMadness.label>
+  <HoodOfMadness.description>一件著名的受诅咒的黑色兜帽, 尽管它拥有神奇的力量. 戴上兜帽的人会得到看见奥术能量的能力并且学会他们原本无法学会的东西. 这件兜帽的外貌以及隐藏其后的恐怖秘密让大多数人都对兜帽的穿戴者抱以怀疑态度. 同样地, 隐藏在兜帽中的双眼在看向周围人时也会闪烁着不信任的光芒.</HoodOfMadness.description>
+
+  <ArcaneHood.label>奥术兜帽</ArcaneHood.label>
+  <ArcaneHood.description>一件属于法师的物品, 轻便且舒适. 此物品在打造过程中使用了特殊的宝石附魔方式使其可以增强附魔效果.</ArcaneHood.description>
+
+
+</LanguageData>

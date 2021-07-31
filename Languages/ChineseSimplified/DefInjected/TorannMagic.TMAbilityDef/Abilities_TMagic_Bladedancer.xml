@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- blade focus -->
+
+  <TM_BladeFocus.label>剑术精通</TM_BladeFocus.label>
+  <TM_BladeFocus.description>使用这项能力提升刀锋舞者特性。这项能力只需要在训练完成后使用。</TM_BladeFocus.description>
+
+
+  <!-- blade art start -->
+
+  <TM_BladeArt.label>刀剑艺术</TM_BladeArt.label>
+  <TM_BladeArt.description>使用这项能力来提升刀锋舞者的被动增益。这项能力只需要在训练完成后使用。</TM_BladeArt.description>
+
+
+  <!-- BladeSpin Start -->
+
+  <TM_BladeSpin.label>剑刃回旋</TM_BladeSpin.label>
+  <TM_BladeSpin.description>刀锋舞者在一瞬间变得模糊， 疾风般攻击周围所有目标。</TM_BladeSpin.description>
+
+
+  <!-- Seismic Slash Start -->
+
+  <TM_SeismicSlash.label>地裂斩</TM_SeismicSlash.label>
+  <TM_SeismicSlash.description>操控冷酷的剑魂， 刀锋舞者释放一次可以撕裂空间的直线攻击。</TM_SeismicSlash.description>
+
+
+  <!-- Phase Strike Start -->
+
+  <TM_PhaseStrike.label>次元之刃</TM_PhaseStrike.label>
+  <TM_PhaseStrike.description>刀锋舞者与剑合为一体行走在现实之间， 在指定位置出现并对毫无戒心的敌人进行一次强力攻击。</TM_PhaseStrike.description>
+
+  <TM_PhaseStrike_I.label>次元之刃 (I)</TM_PhaseStrike_I.label>
+  <TM_PhaseStrike_I.description>刀锋舞者与剑合为一体行走在现实之间， 在指定位置出现并对毫无戒心的敌人进行一次强力攻击。</TM_PhaseStrike_I.description>
+
+  <TM_PhaseStrike_II.label>次元之刃 (II)</TM_PhaseStrike_II.label>
+  <TM_PhaseStrike_II.description>刀锋舞者与剑合为一体行走在现实之间， 在指定位置出现并对毫无戒心的敌人进行一次强力攻击。</TM_PhaseStrike_II.description>
+
+  <TM_PhaseStrike_III.label>次元之刃 (III)</TM_PhaseStrike_III.label>
+  <TM_PhaseStrike_III.description>刀锋舞者与剑合为一体行走在现实之间， 在指定位置出现并对毫无戒心的敌人进行一次强力攻击。</TM_PhaseStrike_III.description>
+
+
+</LanguageData>

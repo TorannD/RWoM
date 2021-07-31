@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Gifted.degreeDatas.0.label>魔法天赋</Gifted.degreeDatas.0.label>
+  <Gifted.degreeDatas.0.description>NAME拥有魔法天赋。</Gifted.degreeDatas.0.description>
+
+  <InnerFire.degreeDatas.0.label>火系魔法师</InnerFire.degreeDatas.0.label>
+  <InnerFire.degreeDatas.0.description>NAME与火元素协调。</InnerFire.degreeDatas.0.description>
+
+  <HeartOfFrost.degreeDatas.0.label>冰系魔法师</HeartOfFrost.degreeDatas.0.label>
+  <HeartOfFrost.degreeDatas.0.description>NAME与水元素协调。</HeartOfFrost.degreeDatas.0.description>
+
+  <StormBorn.degreeDatas.0.label>雷系魔法师</StormBorn.degreeDatas.0.label>
+  <StormBorn.degreeDatas.0.description>NAME与雷元素协调。</StormBorn.degreeDatas.0.description>
+
+  <Arcanist.degreeDatas.0.label>奥术法师</Arcanist.degreeDatas.0.label>
+  <Arcanist.degreeDatas.0.description>NAME与奥术之力协调。</Arcanist.degreeDatas.0.description>
+
+  <Druid.degreeDatas.0.label>德鲁伊</Druid.degreeDatas.0.label>
+  <Druid.degreeDatas.0.description>NAME与自然之力协调。</Druid.degreeDatas.0.description>
+
+  <Paladin.degreeDatas.0.label>圣骑士</Paladin.degreeDatas.0.label>
+  <Paladin.degreeDatas.0.description>NAME已经获得神圣之力。</Paladin.degreeDatas.0.description>
+
+  <Summoner.degreeDatas.0.label>召唤师</Summoner.degreeDatas.0.label>
+  <Summoner.degreeDatas.0.description>NAME可以从其他的位面召唤生命和具现化物体。</Summoner.degreeDatas.0.description>
+
+  <Necromancer.degreeDatas.0.label>死灵法师</Necromancer.degreeDatas.0.label>
+  <Necromancer.degreeDatas.0.description>NAME与死亡之力协调。</Necromancer.degreeDatas.0.description>
+
+  <Lich.degreeDatas.0.label>巫妖</Lich.degreeDatas.0.label>
+  <Lich.degreeDatas.0.description>NAME已转换成巫妖形态, 放弃生命以换取力量与不朽, 会选择雇佣卑微的不死者们完成工作.</Lich.degreeDatas.0.description>
+
+  <Priest.degreeDatas.0.label>牧师</Priest.degreeDatas.0.label>
+  <Priest.degreeDatas.0.description>NAME与生命和治愈之力相协调。</Priest.degreeDatas.0.description>
+
+  <Undead.degreeDatas.0.label>不死者</Undead.degreeDatas.0.label>
+  <Undead.degreeDatas.0.description>NAME 伴随着神秘的钟声从墓地中苏醒，HE 已忘记过去几乎一切事情，除了传火。</Undead.degreeDatas.0.description>
+
+  <TM_Bard.degreeDatas.0.label>杂耍者</TM_Bard.degreeDatas.0.label>
+  <TM_Bard.degreeDatas.0.description>NAME是一个天生的乐者, 会使所有在HIM身边的人减轻心理压力和鼓舞斗志.</TM_Bard.degreeDatas.0.description>
+  <TM_Bard.degreeDatas.1.label>演奏者</TM_Bard.degreeDatas.1.label>
+  <TM_Bard.degreeDatas.1.description>NAME是一名演奏者; 由于天赋能力的存在, HE开始有意识地承担起鼓舞其他殖民者的任务.</TM_Bard.degreeDatas.1.description>
+  <TM_Bard.degreeDatas.2.label>艺人</TM_Bard.degreeDatas.2.label>
+  <TM_Bard.degreeDatas.2.description>每一个人都喜欢围绕在NAME身边. HE在艺术与娱乐方面拥有极高的天赋,智慧以及才能并且会与几乎所有人建立良好的个人关系.</TM_Bard.degreeDatas.2.description>
+  <TM_Bard.degreeDatas.3.label>吟游诗人</TM_Bard.degreeDatas.3.label>
+  <TM_Bard.degreeDatas.3.description>NAME是一名艺术大师. 拥有无限的智慧, 灵巧的双手以及幽默感作为HIS武器并且HE是使用HIS武器的专家s.</TM_Bard.degreeDatas.3.description>
+
+  <PhysicalProdigy.degreeDatas.0.label>身体技巧</PhysicalProdigy.degreeDatas.0.label>
+  <PhysicalProdigy.degreeDatas.0.description>NAME善于掌控身体并且有潜力学习一些特殊的战斗方式。</PhysicalProdigy.degreeDatas.0.description>
+
+  <Gladiator.degreeDatas.0.label>斗士</Gladiator.degreeDatas.0.label>
+  <Gladiator.degreeDatas.0.description>NAME曾经学习过如何以斗士的方式进行战斗。</Gladiator.degreeDatas.0.description>
+
+  <Ranger.degreeDatas.0.label>樵夫</Ranger.degreeDatas.0.label>
+  <Ranger.degreeDatas.0.description>NAME 受训成为樵夫; 更喜欢保持沉默，使用弓作为致命武器并且会巧妙地运用地形武装自己， HE随时准备着保卫HIS土地免遭侵略者的破坏。</Ranger.degreeDatas.0.description>
+  <Ranger.degreeDatas.1.label>猎人</Ranger.degreeDatas.1.label>
+  <Ranger.degreeDatas.1.description>NAME是一名猎人; 他会熟练运用地形优势和弓箭来保卫HIS的土地免遭侵略者的破坏。</Ranger.degreeDatas.1.description>
+  <Ranger.degreeDatas.2.label>侦查者</Ranger.degreeDatas.2.label>
+  <Ranger.degreeDatas.2.description>NAME是一名侦察者; 在野外会感到舒适， 并且是殖民地的眼睛和耳朵。HE拥有关于运用地形优势的专门技术并且使用弓箭来保卫 HIS 土地免遭侵略者的破坏。</Ranger.degreeDatas.2.description>
+  <Ranger.degreeDatas.3.label>漫游者</Ranger.degreeDatas.3.label>
+  <Ranger.degreeDatas.3.description>NAME是一名漫游者; 荒野中的大师，拥有独门的手艺并且保卫着HIS土地.。</Ranger.degreeDatas.3.description>
+
+  <TM_Sniper.degreeDatas.0.label>神射手</TM_Sniper.degreeDatas.0.label>
+  <TM_Sniper.degreeDatas.0.description>NAME曾受训成为一个狙击手，擅长远距离精确打击，小型武器战斗。训练成一名狙击手导致 HIM 会逐渐疏远其他殖民者， 但 HE 并不在意。</TM_Sniper.degreeDatas.0.description>
+  <TM_Sniper.degreeDatas.1.label>狙击手</TM_Sniper.degreeDatas.1.label>
+  <TM_Sniper.degreeDatas.1.description>NAME曾受训成为一个狙击手，擅长远距离精确打击，小型武器战斗。训练成一名狙击手导致 HIM 会逐渐疏远其他殖民者， 但 HE 并不在意。</TM_Sniper.degreeDatas.1.description>
+  <TM_Sniper.degreeDatas.2.label>狙击大师</TM_Sniper.degreeDatas.2.label>
+  <TM_Sniper.degreeDatas.2.description>NAME是一个狙击大师，擅长远距离精确打击，小型武器战斗。成为一名狙击手会导致 HIM 避开其他殖民者， 他们不关心。</TM_Sniper.degreeDatas.2.description>
+  <TM_Sniper.degreeDatas.3.label>传奇狙击手</TM_Sniper.degreeDatas.3.label>
+  <TM_Sniper.degreeDatas.3.description>NAME是一个传奇狙击手，擅长远距离精确打击，小型武器战斗。其他的殖民者会避免与其对视并且在角落里窃窃私语 HE 是多么的危险。HE 很享受当其他人这样做时。</TM_Sniper.degreeDatas.3.description>
+
+  <Bladedancer.degreeDatas.0.label>刀锋舞者</Bladedancer.degreeDatas.0.label>
+  <Bladedancer.degreeDatas.0.description>NAME被训练成为使用剑刃的战士并且擅长于近身格斗。</Bladedancer.degreeDatas.0.description>
+  <Bladedancer.degreeDatas.1.label>熟练的刀锋舞者</Bladedancer.degreeDatas.1.label>
+  <Bladedancer.degreeDatas.1.description>NAME已训练成为用剑大师，十分擅长近身格斗。</Bladedancer.degreeDatas.1.description>
+  <Bladedancer.degreeDatas.2.label>刀锋舞者大师</Bladedancer.degreeDatas.2.label>
+  <Bladedancer.degreeDatas.2.description>NAME获得刀锋舞者称号，拥有更高级的近身格斗能力。观看刀锋舞者战斗就像在观看一场舞蹈， 从上一个动作到下一个动作，每一个动作都是精确并且完美的。</Bladedancer.degreeDatas.2.description>
+  <Bladedancer.degreeDatas.3.label>传奇刀锋舞者</Bladedancer.degreeDatas.3.label>
+  <Bladedancer.degreeDatas.3.description>NAME已成为传奇， HIS的近身格斗能力全边缘世界闻名。他的战斗技巧使他看起来他的每一次移动和攻击都只不过是他在胜利的画卷上落下的一笔而已。</Bladedancer.degreeDatas.3.description>
+
+
+</LanguageData>

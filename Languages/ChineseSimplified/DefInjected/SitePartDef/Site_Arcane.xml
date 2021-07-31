@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <ArcaneStashTreasure.label>宝物</ArcaneStashTreasure.label>
+  <ArcaneStashTreasure.description>一名未知的法师收集到一个珍贵物品的藏匿点。</ArcaneStashTreasure.description>
+
+  <ArcaneDefenders.label>神秘守卫</ArcaneDefenders.label>
+  <ArcaneDefenders.description>一种机械的力量专注地守护在这个地方。</ArcaneDefenders.description>
+
+  <ArcaneBanditSquad.label>神秘海盗小队</ArcaneBanditSquad.label>
+  <ArcaneBanditSquad.description>一小股海盗正在为了宝具疯狂狩猎。</ArcaneBanditSquad.description>
+
+  <EnemyRaidOnArrival.label>敌袭</EnemyRaidOnArrival.label>
+  <EnemyRaidOnArrival.description>在这个地方一个同样听说过奥术之力的敌对派系准备为了夺取你的力量前来挑战你!</EnemyRaidOnArrival.description>
+
+
+</LanguageData>

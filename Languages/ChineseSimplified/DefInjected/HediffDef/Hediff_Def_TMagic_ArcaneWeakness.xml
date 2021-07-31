@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_ArcaneWeakness.label>法力空虚</TM_ArcaneWeakness.label>
+  <TM_ArcaneWeakness.stages.0.label>虚弱</TM_ArcaneWeakness.stages.0.label>
+  <TM_ArcaneWeakness.stages.1.label>严重</TM_ArcaneWeakness.stages.1.label>
+  <TM_ArcaneWeakness.stages.2.label>耗尽</TM_ArcaneWeakness.stages.2.label>
+  <TM_ArcaneWeakness.stages.3.label>无法行动</TM_ArcaneWeakness.stages.3.label>
+
+
+</LanguageData>

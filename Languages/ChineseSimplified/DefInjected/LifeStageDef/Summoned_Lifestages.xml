@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_LesserElemental_Lifestage.label>小型元素</TM_LesserElemental_Lifestage.label>
+  <TM_Elemental_Lifestage.label>元素</TM_Elemental_Lifestage.label>
+  <TM_GreaterElemental_Lifestage.label>大型元素</TM_GreaterElemental_Lifestage.label>
+  <TM_Minion_Lifestage.label>仆从</TM_Minion_Lifestage.label>
+  <TM_GreaterMinion_Lifestage.label>强大仆从</TM_GreaterMinion_Lifestage.label>
+
+
+</LanguageData>

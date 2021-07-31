@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- affecting opinion -->
+
+  <TM_Undead.stages.0.label>不死者</TM_Undead.stages.0.label>
+  <TM_Necromancer.stages.0.label>死灵法师</TM_Necromancer.stages.0.label>
+  <TM_Lich.stages.0.label>lich</TM_Lich.stages.0.label>
+  <TM_HolierThanThou.stages.0.label>自负的魔法师</TM_HolierThanThou.stages.0.label>
+
+
+  <!-- affecting mood -->
+
+  <Thought_ObservedUndead.stages.0.label>观测到不死者</Thought_ObservedUndead.stages.0.label>
+  <Thought_ObservedUndead.stages.0.description>我厌恶成为下一个不死者. 我不愿意帮忙但是我认为... 在我死后也会发生这种情况?</Thought_ObservedUndead.stages.0.description>
+
+
+</LanguageData>

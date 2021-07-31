@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- leap as a flying object -->
+
+  <FlyingObject_Leap.label>跳跃</FlyingObject_Leap.label>
+
+
+  <!-- Torann Magic poppi thingdef -->
+
+  <TM_Poppi.label>波皮</TM_Poppi.label>
+  <TM_Poppi.description>具有很强迷惑性的可爱非凡的外表, 它们除了依偎在你的怀里和点亮你的生活外什么都不想做.</TM_Poppi.description>
+  <TM_Poppi.tools.0.label>依偎</TM_Poppi.tools.0.label>
+  <TM_Poppi_Leather.label>波皮的皮</TM_Poppi_Leather.label>
+  <TM_Poppi_Leather.description>波皮的皮</TM_Poppi_Leather.description>
+  <TM_Poppi_Leather.stuffProps.stuffAdjective>波皮的皮</TM_Poppi_Leather.stuffProps.stuffAdjective>
+  <TM_Poppi_Meat.label>波皮的肉</TM_Poppi_Meat.label>
+  <TM_Poppi_Meat.description>波皮的肉</TM_Poppi_Meat.description>
+  <TM_Poppi_Corpse.label>波皮的尸体</TM_Poppi_Corpse.label>
+  <TM_Poppi_Corpse.description>波皮的尸体</TM_Poppi_Corpse.description>
+
+
+</LanguageData>

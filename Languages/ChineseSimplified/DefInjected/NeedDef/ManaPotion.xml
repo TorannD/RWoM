@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Mana potion addiction -->
+
+  <Chemical_ManaPotion.label>魔法药剂</Chemical_ManaPotion.label>
+  <Chemical_ManaPotion.description>这个人开始沉迷于化学制品并且受到魔法药剂的影响，将会承受严重的戒断反应如果他不继续服用魔法药剂。</Chemical_ManaPotion.description>
+
+
+</LanguageData>

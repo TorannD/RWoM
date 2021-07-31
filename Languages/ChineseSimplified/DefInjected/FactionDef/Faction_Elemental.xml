@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_ElementalFaction.label>元素</TM_ElementalFaction.label>
+  <TM_ElementalFaction.description>元素灵体从它们的异界位面召唤而来。</TM_ElementalFaction.description>
+  <TM_ElementalFaction.fixedName>元素生物</TM_ElementalFaction.fixedName>
+  <TM_ElementalFaction.pawnsPlural>元素生物</TM_ElementalFaction.pawnsPlural>
+
+  <TM_SummonedFaction.label>召唤中</TM_SummonedFaction.label>
+  <TM_SummonedFaction.description>正在使用奥术能量从其他可能存在的维度或位面召唤。</TM_SummonedFaction.description>
+  <TM_SummonedFaction.fixedName>召唤</TM_SummonedFaction.fixedName>
+  <TM_SummonedFaction.pawnsPlural>召唤</TM_SummonedFaction.pawnsPlural>
+
+
+</LanguageData>
