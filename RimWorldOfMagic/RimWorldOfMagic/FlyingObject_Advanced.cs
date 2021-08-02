@@ -117,7 +117,7 @@ namespace TorannMagic
         {
             if (pawn != null)
             {
-                FleckMaker.ThrowDustPuff(pawn.Position, pawn.Map, Rand.Range(1.2f, 1.8f));
+                FleckMaker.ThrowDustPuff(this.origin, this.Map, Rand.Range(1.2f, 1.8f));
             }
             else
             {

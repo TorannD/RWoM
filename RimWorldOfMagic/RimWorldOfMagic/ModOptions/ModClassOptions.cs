@@ -614,6 +614,7 @@ namespace TorannMagic.ModOptions
             for (int i = 0; i < removedThings.Count(); i++)
             {
                 //Log.Message("removing " + removedThings[i].defName + " from def database");
+                removedThings[i].resourceReadoutPriority = ResourceCountPriority.Uncounted;
                 DefDatabase<ThingDef>.AllDefsListForReading.Remove(removedThings[i]);
             }
 

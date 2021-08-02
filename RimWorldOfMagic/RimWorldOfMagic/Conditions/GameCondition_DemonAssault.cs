@@ -410,7 +410,7 @@ namespace TorannMagic.Conditions
             {
                 wealthMultiplier = 2f;
             }
-            storytellerThreat = Find.Storyteller.difficulty.threatScale;
+            storytellerThreat = Mathf.Max(Find.Storyteller.difficulty.threatScale, 1f);
             ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
             eventDifficulty = Mathf.RoundToInt(settingsRef.demonAssaultChallenge);
             //Log.Message("wealth: " + wealth + " w_mult: " + wealthMultiplier + " threat scale: " + storytellerThreat + " event difficulty " + eventDifficulty);

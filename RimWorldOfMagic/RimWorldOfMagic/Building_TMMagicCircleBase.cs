@@ -574,7 +574,7 @@ namespace TorannMagic
                             int range = inc.countRange.RandomInRange;
                             for (int j = 0; j < range; j++)
                             {
-                                TryGenerateIncident(inc.resultIncident, this.Map, Mathf.RoundToInt(inc.incidentPoints * (1f+PointModifer)), inc.incidentHostile);
+                                TryGenerateIncident(inc.resultIncident, this.Map, Mathf.RoundToInt(inc.incidentPoints * (1f+PointModifer)), inc.incidentHostile, this.Position);
                             }
                         }
                     }
@@ -1121,7 +1121,7 @@ namespace TorannMagic
             map.weatherManager.TransitionTo(wd);
         }
 
-        public static void TryGenerateIncident(IncidentDef id, Map map, float points = 0f, bool hostile = false)
+        public static void TryGenerateIncident(IncidentDef id, Map map, float points = 0f, bool hostile = false, IntVec3 centerSpawn = default(IntVec3))
         {
             IncidentParms parms = StorytellerUtility.DefaultParmsNow(id.category, map);
             if (points != 0)

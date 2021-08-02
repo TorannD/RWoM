@@ -110,6 +110,13 @@ namespace TorannMagic
             fighterBookList.Add(TorannMagicDefOf.BookOfMonk);
             fighterBookList.Add(TorannMagicDefOf.BookOfCommander);
             fighterBookList.Add(TorannMagicDefOf.BookOfSuperSoldier);
+            foreach(TMDefs.TM_CustomClass cc in TM_ClassUtility.CustomClasses())
+            {
+                if (cc.isFighter && cc.fullScript != null)
+                {
+                    fighterBookList.Add(cc.fullScript);
+                }
+            }
             return fighterBookList;
         }
 

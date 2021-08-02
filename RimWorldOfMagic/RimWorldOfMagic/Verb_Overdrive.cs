@@ -110,7 +110,7 @@ namespace TorannMagic
             }
             else
             {
-                Log.Message("no thing targetted");
+                Log.Message("no thing targeted");
             }
             return true;
         }

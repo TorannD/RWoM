@@ -20,7 +20,7 @@ namespace TorannMagic
         public static bool IsRobotPawn(Pawn pawn)
         {
             bool flag_Core = pawn.RaceProps.IsMechanoid;
-            bool flag_AndroidTiers = (pawn.def.defName == "Android1Tier" || pawn.def.defName == "Android2Tier" || pawn.def.defName == "Android3Tier" || pawn.def.defName == "Android4Tier" || pawn.def.defName == "Android5Tier" || pawn.def.defName == "M7Mech" || pawn.def.defName == "MicroScyther");
+            bool flag_AndroidTiers = (pawn.def.defName.StartsWith("Android") || pawn.def.defName == "M7Mech" || pawn.def.defName == "MicroScyther");
             bool flag_Androids = pawn.RaceProps.FleshType.defName == "ChJDroid" || pawn.def.defName == "ChjAndroid";
             bool flag_AndroidClass = false;
             CompAbilityUserMight compMight = pawn.TryGetComp<CompAbilityUserMight>();
@@ -3622,7 +3622,7 @@ namespace TorannMagic
                             }
                         }
                     }
-                    target = potentialPawns.RandomElement();
+                    target = potentialPawns?.RandomElement();
                 }
                 else if (autocasting.GetTargetType == typeof(Building))
                 {
@@ -3660,7 +3660,7 @@ namespace TorannMagic
                             }
                         }
                     }
-                    target = potentialBuildings.RandomElement();
+                    target = potentialBuildings?.RandomElement();
                 }
                 else if (autocasting.GetTargetType == typeof(Corpse))
                 {
@@ -3668,7 +3668,7 @@ namespace TorannMagic
                                                                where (x.GetType() == typeof(Corpse) && (x.Position - caster.Position).LengthHorizontal >= autocasting.minRange &&
                                                                autocasting.maxRange > 0 ? (x.Position - caster.Position).LengthHorizontal <= autocasting.maxRange : true)
                                                                select x as Corpse;
-                    target = nearbyThings.RandomElement();
+                    target = nearbyThings?.RandomElement();
                 }
                 else if (autocasting.GetTargetType == typeof(ThingWithComps))
                 {
@@ -3677,7 +3677,7 @@ namespace TorannMagic
                                                       autocasting.maxRange > 0 ? (x.Position - caster.Position).LengthHorizontal <= autocasting.maxRange : true &&
                                                       autocasting.includeSelf ? true : x != caster)
                                                       select x as ThingWithComps;
-                    target = nearbyThings.RandomElement();
+                    target = nearbyThings?.RandomElement();
                 }
                 else
                 {
@@ -3686,7 +3686,7 @@ namespace TorannMagic
                                                       autocasting.maxRange > 0 ? (x.Position - caster.Position).LengthHorizontal <= autocasting.maxRange : true &&
                                                       autocasting.includeSelf ? true : x != caster)
                                                       select x;
-                    target = nearbyThings.RandomElement();
+                    target = nearbyThings?.RandomElement();
                 }
                 
             }

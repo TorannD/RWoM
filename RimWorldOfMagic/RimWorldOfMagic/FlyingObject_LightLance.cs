@@ -122,6 +122,7 @@ namespace TorannMagic
                 CompAbilityUserMagic comp = pawn.GetComp<CompAbilityUserMagic>();
                 if(comp != null)
                 {
+                    Log.Message("getting skills");
                     pwrVal = comp.MagicData.MagicPowerSkill_LightLance.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_LightLance_pwr").level;
                     verVal = comp.MagicData.MagicPowerSkill_LightLance.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_LightLance_ver").level;
                     this.radius += (verVal * .2f);
@@ -233,7 +234,7 @@ namespace TorannMagic
             {
                 if ((filteredTargets[i].DrawPos - this.ExactPosition).magnitude < this.radius)
                 {
-                    if (!(filteredTargets[i].Faction == Faction.OfPlayer && (filteredTargets[i].DrawPos - origin).magnitude > 2f))
+                    if (!(filteredTargets[i].Faction == Faction.OfPlayer && (filteredTargets[i].DrawPos - origin).magnitude < 2f))
                     {
                         targets.Add(filteredTargets[i]);
                     }

@@ -122,7 +122,8 @@ namespace TorannMagic
                         Hediff rec = enumerator.Current;
                         if (rec.TendableNow()) // && !currentTendable.IsPermanent()
                         {
-                            rec.Tended(1, 1);
+                            TM_Action.TendWithoutNotice(rec, 1f, 1f);
+                            //rec.Tended(1, 1);
                         }
                     }
                 }

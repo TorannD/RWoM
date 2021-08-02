@@ -183,6 +183,7 @@
 <TM_IncompatibleWeaponType>{0} cannot use {1} - incompatible weapon.</TM_IncompatibleWeaponType>
 <TM_SpiritAnimalChange>{0}'s spirit animal has changed from {1} to {2}.</TM_SpiritAnimalChange>
 <TM_InvalidAction>{0} cannot use {1} - invalid parameters.</TM_InvalidAction>
+<TM_InvalidAbility>{0} was unable to use {1}.</TM_InvalidAbility>
 
 <!-- Surgery Failed letters -->
 <LetterLabelRegrowthSurgeryFail>Surgery Failed</LetterLabelRegrowthSurgeryFail>

@@ -159,7 +159,7 @@ namespace TorannMagic
             {
                 if (Find.TickManager.TicksGame % 5 == 0)
                 {
-                    TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Heat, this.launchPosition.ToVector3Shifted(), this.Map, Rand.Range(.6f, 1f), .4f, .1f, .3f, Rand.Range(-200, 200), Rand.Range(5f, 7f), this.angle + Rand.Range(-15f, 15f), Rand.Range(0, 360));
+                    TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Heat, this.launchPosition.ToVector3Shifted(), this.Map, Rand.Range(.6f, 1.1f), .4f, .1f, .3f, Rand.Range(-200, 200), Rand.Range(5f, 9f), this.angle + Rand.Range(-15f, 15f), Rand.Range(0, 360));
                 }
             }
         }

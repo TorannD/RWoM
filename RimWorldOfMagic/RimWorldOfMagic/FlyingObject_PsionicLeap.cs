@@ -105,9 +105,9 @@ namespace TorannMagic
         {
             if (pawn != null)
             {
-                FleckMaker.Static(pawn.TrueCenter(), pawn.Map, FleckDefOf.ExplosionFlash, 12f);
+                FleckMaker.Static(this.origin, this.Map, FleckDefOf.ExplosionFlash, 12f);
                 SoundDefOf.Ambient_AltitudeWind.sustainFadeoutTime.Equals(30.0f);
-                FleckMaker.ThrowDustPuff(pawn.Position, pawn.Map, Rand.Range(1.2f, 1.8f));
+                FleckMaker.ThrowDustPuff(this.origin, this.Map, Rand.Range(1.2f, 1.8f));
                 TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_PsiCurrent, this.ExactPosition, this.Map, Rand.Range(.3f, .5f), .1f, 0f, .1f, 0, 4f, this.trueAngle, this.trueAngle);
                 TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_PsiCurrent, this.ExactPosition, this.Map, Rand.Range(.5f, .6f), .1f, .04f, .1f, 0, 7f, this.trueAngle, this.trueAngle);
                 TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_PsiCurrent, this.ExactPosition, this.Map, Rand.Range(.7f, .8f), .1f, .08f, .1f, 0, 10f, this.trueAngle, this.trueAngle);

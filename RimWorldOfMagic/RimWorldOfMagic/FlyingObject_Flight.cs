@@ -98,9 +98,9 @@ namespace TorannMagic
         {
             if (pawn != null)
             {
-                FleckMaker.Static(pawn.TrueCenter(), pawn.Map, FleckDefOf.ExplosionFlash, 12f);
+                FleckMaker.Static(this.origin, this.Map, FleckDefOf.ExplosionFlash, 4f);
                 SoundDefOf.Ambient_AltitudeWind.sustainFadeoutTime.Equals(30.0f);
-                FleckMaker.ThrowDustPuff(pawn.Position, pawn.Map, Rand.Range(1.2f, 1.8f));
+                FleckMaker.ThrowDustPuff(this.origin, this.Map, Rand.Range(2.4f, 3.6f));
             }
             //flyingThing.ThingID += Rand.Range(0, 2147).ToString();
         }

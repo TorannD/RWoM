@@ -132,40 +132,40 @@ namespace TorannMagic
 
         public void LaunchLightPod(int destinationTile, IntVec3 destinationCell, TransportPodsArrivalAction arrivalAction)
         {
-            //Map map = this.CasterPawn.Map;
-            //CreatePodGroup();
-            //podTList[0].TryRemoveLord(map);
-            //int groupID = podTList[0].groupID;
-            //for (int i = 0; i < podTList.Count; i++)
-            //{
-            //    ThingOwner directlyHeldThings = podTList[i].GetDirectlyHeldThings();
-            //    ActiveDropPod activeDropPod = (ActiveDropPod)ThingMaker.MakeThing(ThingDefOf.ActiveDropPod);
-            //    activeDropPod.Contents = new ActiveDropPodInfo();
-            //    activeDropPod.Contents.innerContainer.TryAddRangeOrTransfer(directlyHeldThings, canMergeWithExistingStacks: true, destroyLeftover: true);
-            //    WorldTransport.TM_DropPodLeaving obj = (WorldTransport.TM_DropPodLeaving)SkyfallerMaker.MakeSkyfaller(TorannMagicDefOf.TM_LightPodLeaving, activeDropPod);
-            //    obj.groupID = groupID;
-            //    obj.destinationTile = destinationTile;
-            //    obj.arrivalAction = arrivalAction;
-            //    obj.arrivalCell = destinationCell;
-            //    obj.draftFlag = this.draftFlag;
-            //    podTList[i].CleanUpLoadingVars(map);
-            //    podTList[i].parent.Destroy();
-            //    GenSpawn.Spawn(obj, podTList[i].parent.Position, map);
-            //}
-            //CameraJumper.TryHideWorld();
-            //if (!map.mapPawns.AnyColonistSpawned && !map.IsPlayerHome)
-            //{
-            //    StringBuilder stringBuilder = new StringBuilder();
-            //    stringBuilder.Append("TM_AbandoningMap".Translate(map.Parent.LabelCap));                    
-            //    Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation(stringBuilder.ToString(), delegate
-            //    {         
-            //        Settlement sm = map.Parent as Settlement;
-            //        WorldTransport.TM_DelayedDestroyMap ddm = new WorldTransport.TM_DelayedDestroyMap();
-            //        ddm.parent = sm;
-            //        ddm.delayTicks = 120;
-            //        sm.AllComps.Add(ddm);
-            //    }));                               
-            //}
+            Map map = this.CasterPawn.Map;
+            CreatePodGroup();
+            podTList[0].TryRemoveLord(map);
+            int groupID = podTList[0].groupID;
+            for (int i = 0; i < podTList.Count; i++)
+            {
+                ThingOwner directlyHeldThings = podTList[i].GetDirectlyHeldThings();
+                ActiveDropPod activeDropPod = (ActiveDropPod)ThingMaker.MakeThing(ThingDefOf.ActiveDropPod);
+                activeDropPod.Contents = new ActiveDropPodInfo();
+                activeDropPod.Contents.innerContainer.TryAddRangeOrTransfer(directlyHeldThings, canMergeWithExistingStacks: true, destroyLeftover: true);
+                WorldTransport.TM_DropPodLeaving obj = (WorldTransport.TM_DropPodLeaving)SkyfallerMaker.MakeSkyfaller(TorannMagicDefOf.TM_LightPodLeaving, activeDropPod);
+                obj.groupID = groupID;
+                obj.destinationTile = destinationTile;
+                obj.arrivalAction = arrivalAction;
+                obj.arrivalCell = destinationCell;
+                obj.draftFlag = this.draftFlag;
+                podTList[i].CleanUpLoadingVars(map);
+                podTList[i].parent.Destroy();
+                GenSpawn.Spawn(obj, podTList[i].parent.Position, map);
+            }
+            CameraJumper.TryHideWorld();
+            if (!map.mapPawns.AnyColonistSpawned && !map.IsPlayerHome)
+            {
+                StringBuilder stringBuilder = new StringBuilder();
+                stringBuilder.Append("TM_AbandoningMap".Translate(map.Parent.LabelCap));
+                Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation(stringBuilder.ToString(), delegate
+                {
+                    Settlement sm = map.Parent as Settlement;
+                    WorldTransport.TM_DelayedDestroyMap ddm = new WorldTransport.TM_DelayedDestroyMap();
+                    ddm.parent = sm;
+                    ddm.delayTicks = 120;
+                    sm.AllComps.Add(ddm);
+                }));
+            }
         }
 
         public IntVec3 GetRelativePositionOffset(IntVec3 targetCell, IntVec3 relativePosition, IntVec3 offsetPosition)

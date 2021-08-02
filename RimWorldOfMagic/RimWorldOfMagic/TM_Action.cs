@@ -1100,6 +1100,26 @@ namespace TorannMagic
             undead.TakeDamage(dinfo);
         }
 
+        public static void TendWithoutNotice(Hediff rec, float quality, float maxQuality)
+        {
+            HediffComp_TendDuration hdc_td = rec.TryGetComp<HediffComp_TendDuration>();
+            if (hdc_td != null)
+            {
+                hdc_td.tendQuality = Mathf.Clamp(quality + Rand.Range(-0.25f, 0.25f), 0f, maxQuality);
+                float ttq = Traverse.Create(root: hdc_td).Field(name: "totalTendQuality").GetValue<float>();
+                Traverse.Create(root: hdc_td).Field(name: "totalTendQuality").SetValue(ttq + hdc_td.tendQuality);
+                if (hdc_td.TProps.TendIsPermanent)
+                {
+                    hdc_td.tendTicksLeft = 1;
+                }
+                else
+                {
+                    hdc_td.tendTicksLeft = Mathf.Max(0, hdc_td.tendTicksLeft) + hdc_td.TProps.TendTicksFull;
+                }
+                rec.pawn.health.Notify_HediffChanged(hdc_td.parent);
+            }
+        }
+
         public static void DoEffecter(EffecterDef effecterDef, IntVec3 position, Map map)
         {
             Effecter effecter = effecterDef.Spawn();

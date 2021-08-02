@@ -74,7 +74,7 @@
 	<DamageDef ParentName="TM_LocalInjuryBase">
 		<defName>TM_Shadow</defName>
 		<label>Shadow</label>
-		<externalViolence>false</externalViolence>
+		<externalViolence>true</externalViolence>
 		<deathMessage>{0} was consumed by shadow.</deathMessage>
 		<hediff>TM_ShadowHD</hediff>
 		<harmAllLayersUntilOutside>false</harmAllLayersUntilOutside>
@@ -90,7 +90,7 @@
 	<DamageDef ParentName="TM_LocalInjuryBase">
 		<defName>TM_ChiBurn</defName>
 		<label>Ch'i burn</label>
-		<externalViolence>false</externalViolence>
+		<externalViolence>true</externalViolence>
 		<deathMessage>{0} was overwhelmed by spirit energy.</deathMessage>
 		<hediff>TM_ChiBurnHD</hediff>
 		<harmAllLayersUntilOutside>false</harmAllLayersUntilOutside>
@@ -260,6 +260,7 @@
     <harmsHealth>false</harmsHealth>
     <makesBlood>false</makesBlood>
     <canInterruptJobs>false</canInterruptJobs>
+	<externalViolence>false</externalViolence>
   </DamageDef>
   
   	<DamageDef ParentName="TM_LocalInjuryBase">
@@ -666,7 +667,7 @@
 	<DamageDef ParentName="TM_LocalInjuryBase">
 		<defName>TM_GrapplingHook</defName>
 		<label>Grappling Hook</label>
-		<externalViolence>true</externalViolence>
+		<externalViolence>false</externalViolence>
 		<canInterruptJobs>true</canInterruptJobs>
 		<makesBlood>true</makesBlood>
 		<hasForcefulImpact>true</hasForcefulImpact>

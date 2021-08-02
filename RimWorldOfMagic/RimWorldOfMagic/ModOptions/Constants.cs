@@ -82,6 +82,12 @@ namespace TorannMagic.ModOptions
 
         static List<Pawn> overdrivePawns = new List<Pawn>();
 
+        public static bool ClearOverdrivePawns()
+        {
+            overdrivePawns.Clear();
+            return overdrivePawns.Count == 0;
+        }
+
         public static List<Pawn> SetOverdrivePawnList(List<Pawn> value)
         {            
             if(overdrivePawns == null)

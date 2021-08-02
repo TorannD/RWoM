@@ -120,8 +120,8 @@ namespace TorannMagic
         {
             if (pawn != null)
             {
-                FleckMaker.Static(pawn.TrueCenter(), pawn.Map, FleckDefOf.ExplosionFlash, 12f);
-                FleckMaker.ThrowDustPuff(pawn.Position, pawn.Map, Rand.Range(1.2f, 1.8f));
+                FleckMaker.Static(this.origin, this.Map, FleckDefOf.ExplosionFlash, 6f);
+                FleckMaker.ThrowDustPuff(this.origin, this.Map, Rand.Range(1.2f, 1.8f));
             }
             GetVector();
             flyingThing.ThingID += Rand.Range(0, 214).ToString();
@@ -273,11 +273,11 @@ namespace TorannMagic
             bool flag = hitThing == null;
             if (flag)
             {
-                Pawn pawn;
-                bool flag2 = (pawn = (base.Position.GetThingList(base.Map).FirstOrDefault((Thing x) => x == this.assignedTarget) as Pawn)) != null;
+                Pawn pawn2;
+                bool flag2 = (pawn2 = (base.Position.GetThingList(base.Map).FirstOrDefault((Thing x) => x == this.assignedTarget) as Pawn)) != null;
                 if (flag2)
                 {
-                    hitThing = pawn;
+                    hitThing = pawn2;
                 }
             }        
             if(hitThing != null)
@@ -337,6 +337,7 @@ namespace TorannMagic
                         if (hitList[j] is Pawn && hitList[j] != this.pawn)
                         {
                             damageEntities(hitList[j], Mathf.RoundToInt((Rand.Range(this.def.projectile.GetDamageAmount(1,null) * .5f, this.def.projectile.GetDamageAmount(1,null) * .7f) * (float)(1f + .1 * pwrVal) * this.arcaneDmg)));
+
                         }
                     }
                 }
@@ -368,12 +369,13 @@ namespace TorannMagic
 
         public void damageEntities(Thing e, int amt)
         {
-            DamageInfo dinfo = new DamageInfo(TMDamageDefOf.DamageDefOf.TM_Shadow, amt, 2, (float)(1f - this.directionAngle/360f), this.pawn, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
-            bool flag = e != null;
-            if (flag)
-            {
-                e.TakeDamage(dinfo);
-            }
+            TM_Action.DamageEntities(e, null, amt, 2, TMDamageDefOf.DamageDefOf.TM_Shadow, this.pawn);
+            //DamageInfo dinfo = new DamageInfo(TMDamageDefOf.DamageDefOf.TM_Shadow, amt, 2, (float)(1f - this.directionAngle/360f), this.pawn, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
+            //bool flag = e != null;
+            //if (flag)
+            //{
+            //    e.TakeDamage(dinfo);
+            //}
         }
     }
 }

@@ -476,9 +476,9 @@ namespace TorannMagic
         {
             if (pawn != null)
             {
-                FleckMaker.Static(pawn.TrueCenter(), pawn.Map, FleckDefOf.ExplosionFlash, 1f);
+                FleckMaker.Static(this.origin, this.Map, FleckDefOf.ExplosionFlash, 1f);
                 SoundDefOf.Ambient_AltitudeWind.sustainFadeoutTime.Equals(30.0f);
-                FleckMaker.ThrowDustPuff(pawn.Position, pawn.Map, Rand.Range(1.2f, 1.8f));
+                FleckMaker.ThrowDustPuff(this.origin, this.Map, Rand.Range(1.2f, 1.8f));
                 UpdateSoLPower();
                 this.glower = new CompGlower();
                 gProps.glowColor = new ColorInt(255, 255, 180, 1);

@@ -5662,7 +5662,7 @@ namespace TorannMagic
                                 if (mp.autocasting.type == TMDefs.AutocastType.OnTarget && this.Pawn.CurJob.targetA != null && this.Pawn.CurJob.targetA.Thing != null)
                                 {
                                     LocalTargetInfo localTarget = TM_Calc.GetAutocastTarget(this.Pawn, mp.autocasting, this.Pawn.CurJob.targetA);
-                                    if (localTarget.IsValid)
+                                    if (localTarget != null && localTarget.IsValid)
                                     {
                                         Thing targetThing = localTarget.Thing;
                                         if (!(targetThing.GetType() == mp.autocasting.GetTargetType))
@@ -5702,7 +5702,7 @@ namespace TorannMagic
                                 if (mp.autocasting.type == TMDefs.AutocastType.OnSelf)
                                 {
                                     LocalTargetInfo localTarget = TM_Calc.GetAutocastTarget(this.Pawn, mp.autocasting, this.Pawn.CurJob.targetA);
-                                    if (localTarget.IsValid)
+                                    if (localTarget != null && localTarget.IsValid)
                                     {
                                         Pawn targetThing = localTarget.Pawn;
                                         if (!(targetThing.GetType() == mp.autocasting.GetTargetType))
@@ -5719,7 +5719,7 @@ namespace TorannMagic
                                 if (mp.autocasting.type == TMDefs.AutocastType.OnCell && this.Pawn.CurJob.targetA != null)
                                 {
                                     LocalTargetInfo localTarget = TM_Calc.GetAutocastTarget(this.Pawn, mp.autocasting, this.Pawn.CurJob.targetA);
-                                    if (localTarget.IsValid)
+                                    if (localTarget != null && localTarget.IsValid)
                                     {
                                         IntVec3 targetThing = localTarget.Cell;
                                         if (!(targetThing.GetType() == mp.autocasting.GetTargetType))
@@ -5748,7 +5748,7 @@ namespace TorannMagic
                                         mp.autocasting.maxRange = mp.abilityDef.MainVerb.range;
                                     }
                                     LocalTargetInfo localTarget = TM_Calc.GetAutocastTarget(this.Pawn, mp.autocasting, this.Pawn.CurJob.targetA);
-                                    if (localTarget.IsValid)
+                                    if (localTarget != null && localTarget.IsValid)
                                     {
                                         Thing targetThing = localTarget.Thing;
                                         if (!(targetThing.GetType() == mp.autocasting.GetTargetType))
@@ -6258,7 +6258,7 @@ namespace TorannMagic
                                 if (mp.autocasting.type == TMDefs.AutocastType.OnTarget && this.Pawn.TargetCurrentlyAimingAt != null && this.Pawn.TargetCurrentlyAimingAt.Thing != null)
                                 {
                                     LocalTargetInfo localTarget = TM_Calc.GetAutocastTarget(this.Pawn, mp.autocasting, this.Pawn.TargetCurrentlyAimingAt);
-                                    if (localTarget.IsValid)
+                                    if (localTarget != null && localTarget.IsValid)
                                     {
                                         Thing targetThing = localTarget.Thing;
                                         if (!(targetThing.GetType() == mp.autocasting.GetTargetType))
@@ -6298,7 +6298,7 @@ namespace TorannMagic
                                 if (mp.autocasting.type == TMDefs.AutocastType.OnSelf)
                                 {
                                     LocalTargetInfo localTarget = TM_Calc.GetAutocastTarget(this.Pawn, mp.autocasting, this.Pawn);
-                                    if (localTarget.IsValid)
+                                    if (localTarget != null && localTarget.IsValid)
                                     {
                                         Pawn targetThing = localTarget.Pawn;
                                         if (!(targetThing.GetType() == mp.autocasting.GetTargetType))
@@ -6315,7 +6315,7 @@ namespace TorannMagic
                                 if (mp.autocasting.type == TMDefs.AutocastType.OnCell && this.Pawn.TargetCurrentlyAimingAt != null)
                                 {
                                     LocalTargetInfo localTarget = TM_Calc.GetAutocastTarget(this.Pawn, mp.autocasting, this.Pawn.TargetCurrentlyAimingAt);
-                                    if (localTarget.IsValid)
+                                    if (localTarget != null && localTarget.IsValid)
                                     {
                                         IntVec3 targetThing = localTarget.Cell;
                                         if (!(targetThing.GetType() == mp.autocasting.GetTargetType))
@@ -6340,7 +6340,7 @@ namespace TorannMagic
                                 if (mp.autocasting.type == TMDefs.AutocastType.OnNearby)
                                 {
                                     LocalTargetInfo localTarget = TM_Calc.GetAutocastTarget(this.Pawn, mp.autocasting, this.Pawn.TargetCurrentlyAimingAt);
-                                    if (localTarget.IsValid)
+                                    if (localTarget != null && localTarget.IsValid)
                                     {
                                         Thing targetThing = localTarget.Thing;
                                         if (!(targetThing.GetType() == mp.autocasting.GetTargetType))
@@ -6701,7 +6701,7 @@ namespace TorannMagic
                                 if (mp.autocasting.type == TMDefs.AutocastType.OnTarget && currentTarget != null)
                                 {
                                     LocalTargetInfo localTarget = TM_Calc.GetAutocastTarget(this.Pawn, mp.autocasting, currentTarget);
-                                    if (localTarget.IsValid)
+                                    if (localTarget != null && localTarget.IsValid)
                                     {
                                         Thing targetThing = localTarget.Thing;
                                         if (!(targetThing.GetType() == mp.autocasting.GetTargetType))
@@ -6726,19 +6726,31 @@ namespace TorannMagic
                                             }
                                         }
                                         bool TN = mp.autocasting.targetNeutral && (targetThing.Faction == null || !targetThing.Faction.HostileTo(this.Pawn.Faction));
+                                        if (TN && targetThing is Pawn)
+                                        {
+                                            Pawn targetPawn = targetThing as Pawn;
+                                            if (targetPawn.Downed || targetPawn.IsPrisoner)
+                                            {
+                                                continue;
+                                            }
+                                            if (mp.abilityDef.MainVerb.isViolent && targetThing.Faction != null && !targetPawn.InMentalState)
+                                            {
+                                                continue;
+                                            }
+                                        }                                        
                                         bool TF = mp.autocasting.targetFriendly && targetThing.Faction == this.Pawn.Faction;
                                         if (!(TE || TN || TF))
                                         {
                                             continue;
                                         }
-                                        if (targetThing is Pawn)
-                                        {
-                                            Pawn targetPawn = targetThing as Pawn;
-                                            if (targetPawn.IsPrisoner)
-                                            {
-                                                continue;
-                                            }
-                                        }
+                                        //if (targetThing is Pawn)
+                                        //{
+                                        //    Pawn targetPawn = targetThing as Pawn;
+                                        //    if (targetPawn.IsPrisoner)
+                                        //    {
+                                        //        continue;
+                                        //    }
+                                        //}
                                         if (!mp.autocasting.ValidConditions(this.Pawn, targetThing))
                                         {
                                             continue;
@@ -6749,7 +6761,7 @@ namespace TorannMagic
                                 if (mp.autocasting.type == TMDefs.AutocastType.OnSelf)
                                 {
                                     LocalTargetInfo localTarget = TM_Calc.GetAutocastTarget(this.Pawn, mp.autocasting, this.Pawn);
-                                    if (localTarget.IsValid)
+                                    if (localTarget != null && localTarget.IsValid)
                                     {
                                         Pawn targetThing = localTarget.Pawn;
                                         if (!(targetThing.GetType() == mp.autocasting.GetTargetType))
@@ -6766,7 +6778,7 @@ namespace TorannMagic
                                 if (mp.autocasting.type == TMDefs.AutocastType.OnCell && currentTarget != null)
                                 {
                                     LocalTargetInfo localTarget = TM_Calc.GetAutocastTarget(this.Pawn, mp.autocasting, currentTarget);
-                                    if (localTarget.IsValid)
+                                    if (localTarget != null && localTarget.IsValid)
                                     {
                                         IntVec3 targetThing = localTarget.Cell;
                                         if (!(targetThing.GetType() == mp.autocasting.GetTargetType))
@@ -6791,7 +6803,7 @@ namespace TorannMagic
                                 if (mp.autocasting.type == TMDefs.AutocastType.OnNearby)
                                 {
                                     LocalTargetInfo localTarget = TM_Calc.GetAutocastTarget(this.Pawn, mp.autocasting, currentTarget);
-                                    if (localTarget.IsValid)
+                                    if (localTarget != null && localTarget.IsValid)
                                     {
                                         Thing targetThing = localTarget.Thing;
                                         if (!(targetThing.GetType() == mp.autocasting.GetTargetType))
@@ -6816,19 +6828,31 @@ namespace TorannMagic
                                             }
                                         }
                                         bool TN = mp.autocasting.targetNeutral && (targetThing.Faction == null || !targetThing.Faction.HostileTo(this.Pawn.Faction));
+                                        if (TN && targetThing is Pawn)
+                                        {
+                                            Pawn targetPawn = targetThing as Pawn;
+                                            if (targetPawn.Downed || targetPawn.IsPrisoner)
+                                            {
+                                                continue;
+                                            }
+                                            if (mp.abilityDef.MainVerb.isViolent && targetThing.Faction != null && !targetPawn.InMentalState)
+                                            {
+                                                continue;
+                                            }
+                                        }
                                         bool TF = mp.autocasting.targetFriendly && targetThing.Faction == this.Pawn.Faction;
                                         if (!(TE || TN || TF))
                                         {
                                             continue;
                                         }
-                                        if (targetThing is Pawn)
-                                        {
-                                            Pawn targetPawn = targetThing as Pawn;
-                                            if (targetPawn.IsPrisoner)
-                                            {
-                                                continue;
-                                            }
-                                        }
+                                        //if (targetThing is Pawn)
+                                        //{
+                                        //    Pawn targetPawn = targetThing as Pawn;
+                                        //    if (targetPawn.IsPrisoner)
+                                        //    {
+                                        //        continue;
+                                        //    }
+                                        //}
                                         if (!mp.autocasting.ValidConditions(this.Pawn, targetThing))
                                         {
                                             continue;
@@ -7291,6 +7315,7 @@ namespace TorannMagic
                 {
                     if (odPawns != null && odPawns.Contains(this.Pawn))
                     {
+                        ModOptions.Constants.ClearOverdrivePawns();
                         odPawns.Remove(this.Pawn);
                         ModOptions.Constants.SetOverdrivePawnList(odPawns);
                     }

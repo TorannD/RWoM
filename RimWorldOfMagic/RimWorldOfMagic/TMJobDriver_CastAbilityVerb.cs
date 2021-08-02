@@ -16,6 +16,9 @@ namespace TorannMagic
         public AbilityContext context => job.count == 1 ? AbilityContext.Player : AbilityContext.AI;
         public Verb_UseAbility verb = new Verb_UseAbility(); // = this.pawn.CurJob.verbToUse as Verb_UseAbility;
         private bool wildCheck = false;
+        bool cooldownFlag = false;
+        bool energyFlag = false;
+        bool validCastFlag = false;
 
         //public override bool TryMakePreToilReservations(bool errorOnFailed)
         //{
@@ -53,6 +56,40 @@ namespace TorannMagic
                 targetPawn = TargetThingA as Pawn;
             }
 
+            cooldownFlag = this.verb.Ability.CooldownTicksLeft > 0 ? true : false;
+            TMAbilityDef tmAbility = (TMAbilityDef)(this.verb.Ability.Def);
+            if(tmAbility.manaCost > 0)
+            {
+                CompAbilityUserMagic compMagic = this.pawn.TryGetComp<CompAbilityUserMagic>();
+                if(compMagic != null && compMagic.Mana != null)
+                {
+                    if(compMagic.ActualManaCost(tmAbility) > compMagic.Mana.CurLevel)
+                    {
+                        energyFlag = true;
+                    }
+                }
+                else
+                {
+                    energyFlag = true;
+                }
+            }
+            if (tmAbility.staminaCost > 0)
+            {
+                CompAbilityUserMight compMight = this.pawn.TryGetComp<CompAbilityUserMight>();
+                if (compMight != null && compMight.Stamina != null)
+                {
+                    if (compMight.ActualStaminaCost(tmAbility) > compMight.Stamina.CurLevel)
+                    {
+                        energyFlag = true;
+                    }
+                }
+                else
+                {
+                    energyFlag = true;
+                }
+            }
+            validCastFlag = cooldownFlag || energyFlag;
+
             if (targetPawn != null)
             {
                 //yield return Toils_Combat.CastVerb(TargetIndex.A, false);
@@ -76,27 +113,25 @@ namespace TorannMagic
                             //    RemoveMimicAbility(verb);
                             //}
 
-                            if (this.pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Psionic))
+                            if (this.pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Psionic) && !validCastFlag)
                             {
                                 PsionicEnergyCost(verb);
                             }
 
-                            if (this.pawn.story.traits.HasTrait(TorannMagicDefOf.DeathKnight))
+                            if (this.pawn.story.traits.HasTrait(TorannMagicDefOf.DeathKnight) && !validCastFlag)
                             {
                                 HateCost(verb);
                             }
-
-                            if (verb.Ability?.CooldownTicksLeft != -1)
+                            if (validCastFlag)
                             {
+                                Messages.Message("TM_InvalidAbility".Translate(this.pawn.LabelShort, this.verb.Ability.Def.label), MessageTypeDefOf.RejectInput, false);
                                 this.EndJobWith(JobCondition.Incompletable);
                             }
                         }
-
-
                         LocalTargetInfo target = combatToil.actor.jobs.curJob.GetTarget(TargetIndex.A);
-                        if (target != null)
+                        if (target != null && !validCastFlag) 
                         {
-                            verb.TryStartCastOn(target, false, true);
+                            verb.TryStartCastOn(target, false, true);                            
                         }
                         using (IEnumerator<Hediff> enumerator = this.pawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
                         {
@@ -219,6 +254,7 @@ namespace TorannMagic
                             //};
                             //yield return toil2;
                             this.duration = (int)((verb.verbProps.warmupTime * 60) * this.pawn.GetStatValue(StatDefOf.AimingDelayFactor, false));
+                            LocalTargetInfo target = base.TargetLocA;
                             Toil toil = new Toil();
                             toil.initAction = delegate
                             {
@@ -230,20 +266,21 @@ namespace TorannMagic
                                     //    RemoveMimicAbility(verb);                                        
                                     //}
 
-                                    if(this.pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Psionic))
+                                    if(this.pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Psionic) && !validCastFlag)
                                     {
                                         PsionicEnergyCost(verb);
                                     }
 
-                                    if (verb.Ability?.CooldownTicksLeft != -1)
+                                    if (validCastFlag)
                                     {
+                                        Messages.Message("TM_InvalidAbility".Translate(this.pawn.LabelShort, this.verb.Ability.Def.label), MessageTypeDefOf.RejectInput, false);
                                         this.EndJobWith(JobCondition.Incompletable);
                                     }
 
                                 }
-                                LocalTargetInfo target = toil.actor.jobs.curJob.GetTarget(TargetIndex.A); //TargetLocA;  //
+
                                 bool canFreeIntercept2 = false;
-                                if (target != null)
+                                if (target != null && !validCastFlag)
                                 {
                                     verb.TryStartCastOn(target, false, canFreeIntercept2);
                                 }

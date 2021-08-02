@@ -1876,31 +1876,36 @@ namespace TorannMagic
         //    }
         //}
 
-        public static void TurretGunTick_Overdrive_Postfix(Building_TurretGun __instance)
+        public static void TurretGunTick_Overdrive_Postfix(Building_TurretGun __instance, ref int ___burstCooldownTicksLeft, ref int ___burstWarmupTicksLeft)
         {
             Thing overdriveThing = __instance;
             if (!overdriveThing.DestroyedOrNull() && overdriveThing.Map != null)
             {
-                int burstCooldownTicksLeft = Traverse.Create(root: __instance).Field(name: "burstCooldownTicksLeft").GetValue<int>();
-                int burstWarmupTicksLeft = Traverse.Create(root: __instance).Field(name: "burstWarmupTicksLeft").GetValue<int>();
+                //int burstCooldownTicksLeft = Traverse.Create(root: __instance).Field(name: "burstCooldownTicksLeft").GetValue<int>();
+                //int burstWarmupTicksLeft = Traverse.Create(root: __instance).Field(name: "burstWarmupTicksLeft").GetValue<int>();
                 List<Pawn> mapPawns = ModOptions.Constants.GetOverdrivePawnList();
-                for (int i = 0; i < mapPawns.Count; i++)
+                if (mapPawns != null && mapPawns.Count > 0)
                 {
-                    Pawn pawn = mapPawns[i];
-                    if (!pawn.DestroyedOrNull() && pawn.RaceProps.Humanlike && pawn.story != null)
+                    for (int i = 0; i < mapPawns.Count; i++)
                     {
-                        CompAbilityUserMagic comp = pawn.GetComp<CompAbilityUserMagic>();
-                        if (comp.IsMagicUser && comp.overdriveBuilding != null)
+                        Pawn pawn = mapPawns[i];
+                        if (!pawn.DestroyedOrNull() && pawn.RaceProps.Humanlike && pawn.story != null)
                         {
-                            if (overdriveThing == comp.overdriveBuilding)
+                            CompAbilityUserMagic comp = pawn.GetComp<CompAbilityUserMagic>();
+                            if (comp.IsMagicUser && comp.overdriveBuilding != null)
                             {
-                                if (burstCooldownTicksLeft >= 5)
+                                if (overdriveThing == comp.overdriveBuilding)
                                 {
-                                    Traverse.Create(root: __instance).Field(name: "burstCooldownTicksLeft").SetValue(burstCooldownTicksLeft -= 1 + Rand.Range(0, comp.MagicData.MagicPowerSkill_Overdrive.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Overdrive_pwr").level));
-                                }
-                                if (burstWarmupTicksLeft >= 5)
-                                {
-                                    Traverse.Create(root: __instance).Field(name: "burstWarmupTicksLeft").SetValue(burstCooldownTicksLeft -= 5);
+                                    if (___burstCooldownTicksLeft >= 5)
+                                    {
+                                        //Traverse.Create(root: __instance).Field(name: "burstCooldownTicksLeft").SetValue(burstCooldownTicksLeft -= 1 + Rand.Range(0, comp.MagicData.MagicPowerSkill_Overdrive.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Overdrive_pwr").level));
+                                        ___burstCooldownTicksLeft -= 1 + Rand.Range(0, comp.MagicData.MagicPowerSkill_Overdrive.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Overdrive_pwr").level);
+                                    }
+                                    if (___burstWarmupTicksLeft >= 5)
+                                    {
+                                        //Traverse.Create(root: __instance).Field(name: "burstWarmupTicksLeft").SetValue(burstCooldownTicksLeft -= 5);
+                                        ___burstWarmupTicksLeft -= 5;
+                                    }
                                 }
                             }
                         }
@@ -2428,13 +2433,20 @@ namespace TorannMagic
         {
             public static bool Prefix(ref Pawn __instance)
             {
-                if (__instance != null && __instance.health != null && (__instance.health.hediffSet.HasHediff(TorannMagicDefOf.TM_UndeadHD) || __instance.health.hediffSet.HasHediff(TorannMagicDefOf.TM_UndeadAnimalHD)))
+                if (__instance != null)
                 {
-                    __instance.SetFaction(null, null);
-                }
-                if (__instance != null && __instance.RaceProps != null && __instance.RaceProps.DeathActionWorker.GetType() == typeof(DeathWorker_Poppi))
-                {
-                    __instance.SetFaction(null, null);
+                    if ( __instance.health != null && (__instance.health.hediffSet.HasHediff(TorannMagicDefOf.TM_UndeadHD) || __instance.health.hediffSet.HasHediff(TorannMagicDefOf.TM_UndeadAnimalHD)))
+                    {
+                        __instance.SetFaction(null, null);
+                    }
+                    if (__instance.RaceProps != null && __instance.RaceProps.DeathActionWorker.GetType() == typeof(DeathWorker_Poppi))
+                    {
+                        __instance.SetFaction(null, null);
+                    }
+                    if(__instance.def.thingClass == typeof(TMPawnSummoned))
+                    {
+                        __instance.SetFaction(null, null);
+                    }
                 }
                 return true;
 
@@ -4899,6 +4911,10 @@ namespace TorannMagic
                     if (thing != null)
                     {
                         GenPlace.TryPlaceThing(thing, __instance.pawn.Position, __instance.pawn.Map, ThingPlaceMode.Near, null);
+                        if(!__instance.pawn.Faction.IsPlayer)
+                        {
+                            thing.SetForbidden(true, false);
+                        }
                     }
                 }
             }

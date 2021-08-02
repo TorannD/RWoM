@@ -425,8 +425,8 @@ namespace TorannMagic.Conditions
                 wealthMultiplier = 2.5f;
             }
             ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-            geChance = 0.02f * wealthMultiplier * settingsRef.wanderingLichChallenge;
-            leChance = 0.14f * settingsRef.wanderingLichChallenge * wealthMultiplier;
+            geChance = 0.02f * wealthMultiplier * Mathf.Max(settingsRef.wanderingLichChallenge, 1f);
+            leChance = 0.14f * Mathf.Max(settingsRef.wanderingLichChallenge, 1f) * wealthMultiplier;
         }
 
         public void SpawnSkeletonMinions(IntVec3 center, int radius, Faction faction)
