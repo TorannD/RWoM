@@ -14,8 +14,7 @@
 	<minSeverity>0.001</minSeverity>
 	<maxSeverity>4.0</maxSeverity>
 	<disablesNeeds>
-		<li>Rest</li>
-		<li>Food</li>
+		<li>Rest</li>		
 		<li>Joy</li>
 		<li>Beauty</li>
 		<li>Comfort</li>
@@ -148,7 +147,6 @@
 	<initialSeverity>0.95</initialSeverity>
 	<disablesNeeds>
 		<li>Rest</li>
-		<li>Food</li>
 		<li>Joy</li>
 		<li>Beauty</li>
 		<li>Comfort</li>
@@ -189,7 +187,6 @@
 	<initialSeverity>0.95</initialSeverity>
 	<disablesNeeds>
 		<li>Rest</li>
-		<li>Food</li>
 	</disablesNeeds>
 	<isBad>false</isBad>
 	<comps>

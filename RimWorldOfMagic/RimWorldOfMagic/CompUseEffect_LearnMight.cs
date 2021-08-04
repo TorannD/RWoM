@@ -57,7 +57,7 @@ namespace TorannMagic
                     if (parent.def.defName == "BookOfGladiator")
                     {
                         FixTrait(user, user.story.traits.allTraits);
-                        user.story.traits.GainTrait(new Trait(TorannMagicDefOf.Gladiator, 4, false));
+                        user.story.traits.GainTrait(new Trait(TorannMagicDefOf.Gladiator, 0, false));
                         this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                         CompAbilityUserMight comp = user.GetComp<CompAbilityUserMight>();
                         comp.skill_Sprint = true;
@@ -83,13 +83,13 @@ namespace TorannMagic
                     else if (parent.def.defName == "BookOfFaceless")
                     {
                         FixTrait(user, user.story.traits.allTraits);
-                        user.story.traits.GainTrait(new Trait(TorannMagicDefOf.Faceless, 4, false));
+                        user.story.traits.GainTrait(new Trait(TorannMagicDefOf.Faceless, 0, false));
                         this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                     }
                     else if (parent.def.defName == "BookOfDeathKnight")
                     {
                         FixTrait(user, user.story.traits.allTraits);
-                        user.story.traits.GainTrait(new Trait(TorannMagicDefOf.DeathKnight, 4, false));
+                        user.story.traits.GainTrait(new Trait(TorannMagicDefOf.DeathKnight, 0, false));
                         this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                     }
                     else if (parent.def.defName == "BookOfPsionic")
@@ -97,13 +97,13 @@ namespace TorannMagic
                         if (user.GetStatValue(StatDefOf.PsychicSensitivity, false) > 1)
                         {
                             FixTrait(user, user.story.traits.allTraits);
-                            user.story.traits.GainTrait(new Trait(TorannMagicDefOf.TM_Psionic, 4, false));
+                            user.story.traits.GainTrait(new Trait(TorannMagicDefOf.TM_Psionic, 0, false));
                             this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                         }
                         else if (user.Map.GameConditionManager.ConditionIsActive(GameConditionDefOf.PsychicDrone) || user.Map.GameConditionManager.ConditionIsActive(GameConditionDefOf.PsychicSoothe))
                         {
                             FixTrait(user, user.story.traits.allTraits);
-                            user.story.traits.GainTrait(new Trait(TorannMagicDefOf.TM_Psionic, 4, false));
+                            user.story.traits.GainTrait(new Trait(TorannMagicDefOf.TM_Psionic, 0, false));
                             this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                         }
                         else
@@ -116,19 +116,19 @@ namespace TorannMagic
                     else if (parent.def == TorannMagicDefOf.BookOfMonk)
                     {
                         FixTrait(user, user.story.traits.allTraits);
-                        user.story.traits.GainTrait(new Trait(TorannMagicDefOf.TM_Monk, 4, false));
+                        user.story.traits.GainTrait(new Trait(TorannMagicDefOf.TM_Monk, 0, false));
                         this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                     }
                     else if (parent.def == TorannMagicDefOf.BookOfCommander)
                     {
                         FixTrait(user, user.story.traits.allTraits);
-                        user.story.traits.GainTrait(new Trait(TorannMagicDefOf.TM_Commander, 4, false));
+                        user.story.traits.GainTrait(new Trait(TorannMagicDefOf.TM_Commander, 0, false));
                         this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                     }
                     else if (parent.def == TorannMagicDefOf.BookOfSuperSoldier)
                     {
                         FixTrait(user, user.story.traits.allTraits);
-                        user.story.traits.GainTrait(new Trait(TorannMagicDefOf.TM_SuperSoldier, 4, false));
+                        user.story.traits.GainTrait(new Trait(TorannMagicDefOf.TM_SuperSoldier, 0, false));
                         if (user.health != null && user.health.hediffSet != null)
                         {
                             HealthUtility.AdjustSeverity(user, TorannMagicDefOf.TM_SS_SerumHD, .1f);

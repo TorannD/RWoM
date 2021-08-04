@@ -24,7 +24,7 @@ namespace TorannMagic
                 {
                     FixTrait(pawn, pawn.story.traits.allTraits);
                     AdjustPlayerSettings(pawn);
-                    pawn.story.traits.GainTrait(new Trait(TraitDef.Named("Lich"), 4, false));
+                    pawn.story.traits.GainTrait(new Trait(TraitDef.Named("Lich"), 0, false));
                     HealthUtility.AdjustSeverity(pawn, HediffDef.Named("TM_LichHD"), .5f);
                     for (int h = 0; h < 24; h++)
                     {

@@ -9,7 +9,7 @@
 		  <!-- Custom Class - the Shadow -->
 		  <li>		  
 			<classTrait>TM_TheShadow</classTrait>			<!-- Class Trait; if an existing class trait it used, it will OVERWRITE the class - do not disable overwritten classes in mod options -->
-			<traitDegree>4</traitDegree>					<!-- Trait degree, usually 4, but has to match the trait def -->
+			<traitDegree>0</traitDegree>					<!-- Trait degree, usually 0, but has to match the trait def -->
 			<classHediff></classHediff>						<!-- Class Hediff, used for various checks but usually not necessary if the ability is assigned; only required for "psionic" -->			
 			<classTexturePath>shadowFlame</classTexturePath><!-- unique class texture; icon appears on the colonist bar; searches the Textures/Other/ClassTextures mod folder -->
 			<classIconPath>CustomFlame</classIconPath>		<!-- assigns a unique class icon; this icon floats next to the class's head; searches the Textures/Other mod folder -->
@@ -55,7 +55,7 @@
 		  <!-- Brightmage -->
 		  <li>		  
 			<classTrait>TM_Brightmage</classTrait>			
-			<traitDegree>4</traitDegree>					
+			<traitDegree>0</traitDegree>					
 			<classHediff>TM_LightCapacitanceHD</classHediff>
 			<classTexturePath>brightMageMark</classTexturePath> 
 			<classIconPath>PsiMark</classIconPath>		
@@ -94,7 +94,7 @@
 		  <!-- Shaman -->
 		  <li>		  
 			<classTrait>TM_Shaman</classTrait>				
-			<traitDegree>4</traitDegree>					
+			<traitDegree>0</traitDegree>					
 			<classHediff></classHediff>								
 			<classTexturePath>shamanMageMark</classTexturePath> 
 			<classIconPath>MageMark</classIconPath>			

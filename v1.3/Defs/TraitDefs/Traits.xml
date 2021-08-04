@@ -164,7 +164,7 @@
             <li>
                 <label>magically gifted</label>
                 <description>[PAWN_nameDef] has a magical gift. [PAWN_pronoun] can harness this gift to become a mage by studying the mysterious secrets within an arcane script.</description>
-						<degree>2</degree>
+						<degree>0</degree>
                 <statOffsets>
                     <MoveSpeed>.10</MoveSpeed>
                     <MedicalTendSpeed>.1</MedicalTendSpeed>
@@ -223,7 +223,7 @@
 			<description>[PAWN_nameDef] is a wanderer; an outcast, half-breed mage class frequently dubbed a hedge-mage. [PAWN_possessive] carefree personality has kept [PAWN_possessive] from developing class abilities. Instead, [PAWN_pronoun] has learned to improve on a vast number of utility abilities that allow [PAWN_objective] to adapt to any situation.
 		
 Wanderers prefer the open road and gain a mood boost for being in a caravan. Caravans with a wanderer will ignore the movement penalties of any world tile. However, their wanderlust will cause them to suffer a mood penalty for remaining at a colony for too long.</description>
-			<degree>4</degree>
+			<degree>0</degree>
 				<statOffsets>
                     <MoveSpeed>.20</MoveSpeed>
 					<WorkSpeedGlobal>-0.10</WorkSpeedGlobal>
@@ -282,7 +282,7 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>
 			<label>Fire mage</label>
 			<description>[PAWN_nameDef] is attuned with the elements of fire.</description>
-			<degree>4</degree>
+			<degree>0</degree>
 				<statOffsets>
                     <MoveSpeed>.20</MoveSpeed>
 					<WorkSpeedGlobal>0.10</WorkSpeedGlobal>
@@ -342,7 +342,7 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>
 			<label>Ice mage</label>
 			<description>[PAWN_nameDef] is attuned with the elements of water.</description>
-			<degree>4</degree>
+			<degree>0</degree>
 				<statOffsets>
 					<MentalBreakThreshold>-0.10</MentalBreakThreshold>
 					<ResearchSpeed>0.20</ResearchSpeed>
@@ -401,7 +401,7 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>
 			<label>Lightning mage</label>
 			<description>[PAWN_nameDef] is attuned with the elements of lightning.</description>
-				<degree>4</degree>
+				<degree>0</degree>
 				<statOffsets>
 					<MoveSpeed>.20</MoveSpeed>
 					<WorkSpeedGlobal>0.10</WorkSpeedGlobal>
@@ -458,7 +458,7 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>
 			<label>Arcane mage</label>
 			<description>[PAWN_nameDef] is attuned with arcane forces, interacting directly with raw arcane power to move matter and energy at will.</description>
-			<degree>4</degree>
+			<degree>0</degree>
 			<statOffsets>
 				<ResearchSpeed>0.10</ResearchSpeed>
 				<GlobalLearningFactor>.20</GlobalLearningFactor>
@@ -519,7 +519,7 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>
 			<label>Druid</label>
 			<description>[PAWN_nameDef] is attuned with the forces of nature.</description>
-			<degree>4</degree>
+			<degree>0</degree>
 			<statOffsets>
 				<ImmunityGainSpeed>0.15</ImmunityGainSpeed>
 				<ToxicSensitivity>-0.20</ToxicSensitivity>
@@ -579,7 +579,7 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>
 			<label>Paladin</label>
 			<description>[PAWN_nameDef] has been bestowed with divine might and has sworn to uphold justice wherever [PAWN_pronoun] stands.</description>
-			<degree>4</degree>
+			<degree>0</degree>
 			<statOffsets>
 				<MoveSpeed>.10</MoveSpeed>
 				<ImmunityGainSpeed>.2</ImmunityGainSpeed>
@@ -637,7 +637,7 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>
 			<label>Summoner</label>
 			<description>[PAWN_nameDef] is able to summon beings and materialize objects from other planes of existence.</description>
-			<degree>4</degree>
+			<degree>0</degree>
 			<statOffsets>
 				<MoveSpeed>.10</MoveSpeed>
 				<ToxicSensitivity>0.10</ToxicSensitivity>
@@ -694,7 +694,7 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>
 			<label>Necromancer</label>
 			<description>[PAWN_nameDef] is attuned with the forces of death.</description>
-			<degree>4</degree>
+			<degree>0</degree>
 			<statOffsets>
 				<MoveSpeed>-0.3</MoveSpeed>
 				<ComfyTemperatureMin>-20</ComfyTemperatureMin>
@@ -763,7 +763,7 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>
 			<label>Lich</label>
 			<description>[PAWN_nameDef] has transformed into a lich, forsaking life in exchange for an power and an immortal existence, choosing to employ undead for menial tasks.</description>
-			<degree>4</degree>
+			<degree>0</degree>
 			<statOffsets>
 				<MoveSpeed>-2</MoveSpeed>
 				<ComfyTemperatureMin>-42</ComfyTemperatureMin>
@@ -849,7 +849,7 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>
 			<label>Priest</label>
 			<description>[PAWN_nameDef] is attuned with the forces of life and healing and has taken a vow against harming others.</description>
-			<degree>4</degree>
+			<degree>0</degree>
 			<statOffsets>
 				<MoveSpeed>0.15</MoveSpeed>
 				<ImmunityGainSpeed>0.2</ImmunityGainSpeed>
@@ -1021,7 +1021,7 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>
 			<label>Succubus</label>
 			<description>[PAWN_nameDef] has a strange genetic strain that grants her enhanced physical attributes. She is also extremely attractive with an exotic facial structure that captures the eye. A succubus is more likely to exploit her physical advantages and have others do her work for her. [PAWN_possessive] succubus charm has its disadvantages and can cause some to become jealous and even despise [PAWN_objective].</description>
-			<degree>4</degree>
+			<degree>0</degree>
 				<statOffsets>
                     <MoveSpeed>.20</MoveSpeed>
 					<WorkSpeedGlobal>-0.2</WorkSpeedGlobal>
@@ -1086,7 +1086,7 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>
 			<label>Warlock</label>
 			<description>[PAWN_nameDef] is a Warlock - able to manifest physical and demonic forces using his unique access to arcane power. The warlock shares the same genetic mixture as a succubus, but as a male, [PAWN_pronoun] is affected with mental enhancements that include clairvoyance and telekineses. The warlock can occasionally affect the outcome of a social interaction using their mental capabilities, regardless of how the interaction actually occurred.</description>
-			<degree>4</degree>
+			<degree>0</degree>
 				<statOffsets>
                     <MoveSpeed>-.10</MoveSpeed>
 					<WorkSpeedGlobal>-0.2</WorkSpeedGlobal>
@@ -1151,7 +1151,7 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>
 			<label>Geomancer</label>
 			<description>[PAWN_nameDef] is attuned with the earth and natural order, drawing power from the physical realm and intertwining it with arcane energy. [PAWN_pronoun] is capable of reinforcing physical elements, and bending them, as [PAWN_pronoun] needs.</description>
-			<degree>4</degree>
+			<degree>0</degree>
 			<statOffsets>
 				<MoveSpeed>-.10</MoveSpeed>
 				<ToxicSensitivity>-0.30</ToxicSensitivity>
@@ -1214,7 +1214,7 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>
 			<label>Technomancer</label>
 			<description>[PAWN_nameDef] has learned to see magic and science as two parts of the same force and is able to use arcane power to interface directly with components of technology. [PAWN_pronoun] is capable of manipulating objects with advanced mechanics, electronics, or computing it to achieve [PAWN_possessive] goals, but has difficulty interacting with biological systems.</description>
-			<degree>4</degree>
+			<degree>0</degree>
 			<statOffsets>
 				<SocialImpact>-0.30</SocialImpact>
 				<NegotiationAbility>-0.20</NegotiationAbility>
@@ -1279,7 +1279,7 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>
 			<label>Blood Mage</label>
 			<description>[PAWN_nameDef] is a blood mage and has consigned to the dark art of manipulating the life blood of living things as a means of increasing [PAWN_possessive] power.\n\nAs a blood mage, [PAWN_nameDef] has learned to control the life force within and command it to [PAWN_possessive] will. [PAWN_possessive] connection to life makes it easier to associate with other living things, but doesn't appreciate effort without immediate results.</description>
-			<degree>4</degree>
+			<degree>0</degree>
 			<statOffsets>
 				<SocialImpact>0.20</SocialImpact>
 				<NegotiationAbility>0.15</NegotiationAbility>
@@ -1339,7 +1339,7 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>
 			<label>Enchanter</label>
 			<description>[PAWN_nameDef] is an enchanter, attuned to the composition of matter and materials. [PAWN_pronoun] can manipulate matter to [PAWN_possessive] will, frequently in unnatural ways, and [PAWN_possessive] powers of transmutation can be permanent when sufficient effort is applied.</description>
-			<degree>4</degree>
+			<degree>0</degree>
 			<statOffsets>
 				<TameAnimalChance>-0.15</TameAnimalChance>
 				<TrainAnimalChance>-0.15</TrainAnimalChance>
@@ -1400,7 +1400,7 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>
 			<label>Chronomancer</label>
 			<description>[PAWN_nameDef] is a chronomancer. Through arcane sight, [PAWN_pronoun] is able to view reality as it once was and as it could be, and can manipulate objects between those realities.</description>
-			<degree>4</degree>
+			<degree>0</degree>
 			<statOffsets>
 				<GlobalLearningFactor>0.25</GlobalLearningFactor>
 				<ResearchSpeed>0.40</ResearchSpeed>				
@@ -1457,7 +1457,7 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>
 			<label>Chaos Mage</label>
 			<description>[PAWN_nameDef] has rejected all predefined magic paths and refuses to attribute objective reality in [PAWN_possessive] search for power; there are no truths, all magic is permitted. This tradition has enabled [PAWN_nameDef] to learn any type of magic, although [PAWN_pronoun] will never master any.</description>
-			<degree>4</degree>
+			<degree>0</degree>
 			<statOffsets>
 				<GlobalLearningFactor>0.25</GlobalLearningFactor>
 				<ResearchSpeed>-0.20</ResearchSpeed>				
@@ -1515,7 +1515,7 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>
 			<label>Shadow</label>
 			<description>[PAWN_nameDef] is a half-breed demon with an affinity for shadow magic. [PAWN_pronoun] has developed [PAWN_possessive] unique talents through combat training and physical conditioning making [PAWN_objective] the perfect assassin.</description>
-			<degree>4</degree>
+			<degree>0</degree>
 			<statOffsets>
 				<PsychicSensitivity>0.25</PsychicSensitivity>
 				<PainShockThreshold>.20</PainShockThreshold>
@@ -1578,7 +1578,7 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>
 			<label>Brightmage</label>
 			<description>[PAWN_nameDef] is a brightmage, able to harness the powers of light to purge evil. [PAWN_pronoun] approaches any task with an unrivaled fervor that usually places [PAWN_objective] at the forefront. Being a Brightmage introduces a dependency on the sun and light, because of this, [PAWN_nameDef] has developed an intense hatred for shadowy and dark caricatures.</description>
-			<degree>4</degree>
+			<degree>0</degree>
 			<statOffsets>
 				<PsychicSensitivity>0.15</PsychicSensitivity>
 				<MoveSpeed>.2</MoveSpeed>
@@ -1640,7 +1640,7 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>
 			<label>Shaman</label>
 			<description>Shamans take a more harmonious approach to arcane powers than most mages, choosing to pursue a path that works with the ebb and flow of magic to offset or enhance the natural order. [PAWN_nameDef] is kin to the spirit realm and more attuned to nature and its elements.</description>
-			<degree>4</degree>
+			<degree>0</degree>
 			<statOffsets>
 				<PsychicSensitivity>0.2</PsychicSensitivity>
 				<ToxicSensitivity>.30</ToxicSensitivity>
@@ -1703,7 +1703,7 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
             <li>
                 <label>physically adept</label>
                 <description>[PAWN_nameDef] is physically adept and has potential to learn special combat forms.</description>
-						<degree>2</degree>
+						<degree>0</degree>
                 <statOffsets>
                     <MoveSpeed>.20</MoveSpeed>
 					<WorkSpeedGlobal>0.20</WorkSpeedGlobal>
@@ -1762,7 +1762,7 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 			<description>[PAWN_nameDef] is a wayfarer; an self-disciplined fighter that excels at tricks and dirty fighting. [PAWN_possessive] carefree personality has kept [PAWN_objective] from developing class abilities. Instead, [PAWN_pronoun] has learned to improve a vast number of utility abilities that allow [PAWN_objective] to adapt to any situation.
 
 Wayfarers prefer the open road and will gain a mood boost for being in a caravan, and any caravan with a wayfarer will travel 25% faster. However, wayfarers will suffer a mood penalty if they remain at colony for too long.</description>
-			<degree>4</degree>
+			<degree>0</degree>
 				<statOffsets>
                     <MoveSpeed>.20</MoveSpeed>
 					<WorkSpeedGlobal>-0.10</WorkSpeedGlobal>
@@ -1821,7 +1821,7 @@ Wayfarers prefer the open road and will gain a mood boost for being in a caravan
 		  <li>
 			<label>Gladiator</label>
 			<description>[PAWN_nameDef] has learned how to train the Gladiator combat style.</description>
-			<degree>4</degree>
+			<degree>0</degree>
 				<statOffsets>
                     <MoveSpeed>.20</MoveSpeed>
 					<WorkSpeedGlobal>0.20</WorkSpeedGlobal>
@@ -2216,7 +2216,7 @@ Wayfarers prefer the open road and will gain a mood boost for being in a caravan
 		  <li>
 			<label>Faceless</label>
 			<description>[PAWN_nameDef] is a master of disguise and imitation; able to manipulate and capture the muscle and mental actions of another and release it as their own.</description>
-			<degree>4</degree>
+			<degree>0</degree>
 				<statOffsets>
                     <MoveSpeed>.15</MoveSpeed>
 					<WorkSpeedGlobal>0.1</WorkSpeedGlobal>
@@ -2282,7 +2282,7 @@ Wayfarers prefer the open road and will gain a mood boost for being in a caravan
 [PAWN_nameDef] has become less social since developing psionic powers, preferring to be unhindered by other pawns.
 
 *The regeneration rate of psionic energy is based on psychic sensitivity - reducing sensitivity to 0 will prevent psionic energy from regenerating.</description>
-			<degree>4</degree>
+			<degree>0</degree>
 				<statOffsets>
 					<SocialImpact>-0.25</SocialImpact>
 					<NegotiationAbility>-0.20</NegotiationAbility>
@@ -2342,7 +2342,7 @@ Wayfarers prefer the open road and will gain a mood boost for being in a caravan
 		  <li>
 			<label>Death Knight</label>
 			<description>[PAWN_nameDef] is a Death Knight - harbinger of doom and a representative of the ever approaching inevitability of death and decay. [PAWN_possessive] solemn attitude makes most pawns uneasy and even fewer approve of [PAWN_possessive] methods.</description>
-			<degree>4</degree>
+			<degree>0</degree>
 				<statOffsets>
 					<SocialImpact>-0.25</SocialImpact>
 					<NegotiationAbility>-0.25</NegotiationAbility>
@@ -2399,7 +2399,7 @@ Wayfarers prefer the open road and will gain a mood boost for being in a caravan
 		  <li>
 			<label>Monk</label>
 			<description>[PAWN_nameDef] is a Monk, dedicated to mastering Chi - the energy that connects all life in the universe. [PAWN_pronoun] harnesses Chi to create magical effects and exceed [PAWN_possessive] physical capabilities. [PAWN_nameDef] is also able to disrupt the Chi in others, affecting their command over spells and abilities.</description>
-			<degree>4</degree>
+			<degree>0</degree>
 				<statOffsets>
 					<MeleeDodgeChance>5</MeleeDodgeChance>
 					<MeleeHitChance>5</MeleeHitChance>
@@ -2462,7 +2462,7 @@ Wayfarers prefer the open road and will gain a mood boost for being in a caravan
 		  <li>
 			<label>Commander</label>
 			<description>As a Commander, [PAWN_nameDef] exhibits a charismatic personality and stalwart presence that makes other pawns want to follow [PAWN_possessive] lead. Commander's utilize the weight of their presence to inspire nearby pawns, and when that's not enough, they can issue orders that drive their followers to victory. Because [PAWN_nameDef] is used to everyone doing [PAWN_possessive] bidding, [PAWN_pronoun] considers menial tasks beneath [PAWN_possessive] status, and is generally a lackluster worker.</description>
-			<degree>4</degree>
+			<degree>0</degree>
 				<statOffsets>
 					<SocialImpact>+0.4</SocialImpact>
 					<NegotiationAbility>+0.3</NegotiationAbility>	
@@ -2519,7 +2519,7 @@ Wayfarers prefer the open road and will gain a mood boost for being in a caravan
 		  <li>
 			<label>Super Soldier</label>
 			<description>[PAWN_nameDef] is a highly trained Soldier, specializing in pistol, shotgun, or rifle weapons. [PAWN_possessive] weapon specialization is augmented by a standard set of combat training. Super Soldiers are trained to be aggressive and consider violence the natural solution to any argument.</description>
-			<degree>4</degree>
+			<degree>0</degree>
 				<statOffsets>
 					<ImmunityGainSpeed>.05</ImmunityGainSpeed>
 					<MoveSpeed>.1</MoveSpeed>

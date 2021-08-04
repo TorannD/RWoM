@@ -1361,14 +1361,14 @@ namespace TorannMagic
         public static void PromoteWanderer(Pawn pawn)
         {
             RemoveTrait(pawn, TorannMagicDefOf.TM_Gifted);
-            pawn.story.traits.GainTrait(new Trait(TorannMagicDefOf.TM_Wanderer, 4, false));
+            pawn.story.traits.GainTrait(new Trait(TorannMagicDefOf.TM_Wanderer, 0, false));
             pawn.needs.AddOrRemoveNeedsAsAppropriate();
         }
 
         public static void PromoteWayfarer(Pawn pawn)
         {
             RemoveTrait(pawn, TorannMagicDefOf.PhysicalProdigy);
-            pawn.story.traits.GainTrait(new Trait(TorannMagicDefOf.TM_Wayfarer, 4, false));
+            pawn.story.traits.GainTrait(new Trait(TorannMagicDefOf.TM_Wayfarer, 0, false));
             pawn.needs.AddOrRemoveNeedsAsAppropriate();
         }
 

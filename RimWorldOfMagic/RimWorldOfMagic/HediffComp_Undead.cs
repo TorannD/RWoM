@@ -73,7 +73,7 @@ namespace TorannMagic
                         {
                             this.parent.Severity = .5f + ver;
                         }
-                        if(this.Pawn.IsPrisoner || this.Pawn.Faction != linkedPawn.Faction || !this.Pawn.IsColonistPlayerControlled)
+                        if(this.Pawn.IsPrisoner || this.Pawn.Faction != linkedPawn.Faction)
                         {
                             base.Pawn.Kill(null, null);
                         }
@@ -99,7 +99,6 @@ namespace TorannMagic
                     this.Initialize();
                 }
             }
-
             if(Find.TickManager.TicksGame % 16 == 0)
             {
                 IEnumerable<Hediff> hdEnum = this.Pawn.health.hediffSet.GetHediffs<Hediff>();
@@ -112,7 +111,6 @@ namespace TorannMagic
                     }
                 }
             }
-
             if (Find.TickManager.TicksGame % 6000 == 0)
             {
                 TM_Action.UpdateAnimalTraining(base.Pawn);                
@@ -131,7 +129,6 @@ namespace TorannMagic
                 {
                     lichStrike++;
                 }
-
                 if (!necroValid && lichStrike > 2)
                 {
                     if (base.Pawn.Map != null)
@@ -146,13 +143,15 @@ namespace TorannMagic
                 }
                 else
                 {
-                    List<Need> needs = base.Pawn.needs.AllNeeds;
-                    for (int i = 0; i < needs.Count; i++)
-                    {
-                        if (needs[i].def == NeedDefOf.Food || needs[i].def == NeedDefOf.Joy || needs[i].def == NeedDefOf.Rest || needs[i].def.defName == "Mood" || needs[i].def.defName == "Beauty" ||
-                            needs[i].def.defName == "Comfort" || needs[i].def.defName == "Outdoors" || needs[i].def.defName == "RoomSize")
+                    List<Need> needs = base.Pawn?.needs?.AllNeeds;
+                    if (needs != null && needs.Count > 0)
+                    { 
+                        for (int i = 0; i < needs.Count; i++)
                         {
-                            needs[i].CurLevel = needs[i].MaxLevel;
+                            if (needs[i]?.def == NeedDefOf.Food || needs[i]?.def?.defName == "Mood")
+                            {
+                                needs[i].CurLevel = needs[i].MaxLevel;
+                            }
                         }
                     }
                     //if (base.Pawn.needs.food != null)
@@ -175,7 +174,6 @@ namespace TorannMagic
                     Pawn pawn = base.Pawn;
                     int num = 1;
                     int num2 = 1;
-
                     using (IEnumerator<BodyPartRecord> enumerator = pawn.health.hediffSet.GetInjuredParts().GetEnumerator())
                     {
                         while (enumerator.MoveNext())
@@ -213,7 +211,6 @@ namespace TorannMagic
                             }
                         }
                     }
-
                     using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.GetHediffsTendable().GetEnumerator())
                     {
                         while (enumerator.MoveNext())
@@ -226,7 +223,6 @@ namespace TorannMagic
                             }
                         }
                     }
-
                     using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
                     {
                         while (enumerator.MoveNext())
@@ -271,6 +267,11 @@ namespace TorannMagic
                     {
                         Traverse.Create(root: cp_m).Field(name: "fullness").SetValue(0);
                     }
+                    //if(this.Pawn.health?.State == PawnHealthState.Dead)
+                    //{
+                    //    Log.Message("1");
+                    //    Traverse.Create(root: this.Pawn).Field(name: "healthState").SetValue(PawnHealthState.Mobile);
+                    //}
                 }
             }
             

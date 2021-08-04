@@ -12,7 +12,7 @@ namespace TorannMagic.TMDefs
     {
         //Class Defining Trait
         public TraitDef classTrait = null;
-        public int traitDegree = 4;
+        public int traitDegree = 0;
         public string classIconPath = "";
         public Color classIconColor = new Color(1f,1f,1f);
         public string classTexturePath = "";

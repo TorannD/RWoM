@@ -8432,7 +8432,7 @@ namespace TorannMagic
             Scribe_Values.Look<int>(ref this.ticksTillRetaliation, "ticksTillRetaliation", 600, false);
             Scribe_Defs.Look<IncidentDef>(ref this.predictionIncidentDef, "predictionIncidentDef");
             Scribe_References.Look<Pawn>(ref this.soulBondPawn, "soulBondPawn", false);
-            Scribe_References.Look<Thing>(ref this.technoWeaponThing, "technoWeaponThing", false);
+            //Scribe_References.Look<Thing>(ref this.technoWeaponThing, "technoWeaponThing", false);
             Scribe_Defs.Look<ThingDef>(ref this.technoWeaponThingDef, "technoWeaponThingDef");
             Scribe_Values.Look<QualityCategory>(ref this.technoWeaponQC, "technoWeaponQC");
             Scribe_References.Look<Thing>(ref this.enchanterStone, "enchanterStone", false);
