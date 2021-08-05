@@ -267,11 +267,6 @@ namespace TorannMagic
                     {
                         Traverse.Create(root: cp_m).Field(name: "fullness").SetValue(0);
                     }
-                    //if(this.Pawn.health?.State == PawnHealthState.Dead)
-                    //{
-                    //    Log.Message("1");
-                    //    Traverse.Create(root: this.Pawn).Field(name: "healthState").SetValue(PawnHealthState.Mobile);
-                    //}
                 }
             }
             

@@ -325,15 +325,6 @@ namespace TorannMagic
         //    return false;
         //}
 
-        [HarmonyPatch(typeof(Pawn_HealthTracker), "SetDead", null)]
-        public class SetDead_Troubleshooting_Patch
-        {
-            public static void Prefix()
-            {
-                Log.Error("generated from...");
-            }
-        }
-
         [HarmonyPatch(typeof(PawnUtility), "GainComfortFromThingIfPossible", null)]
         public class GainComfortFromThingIfPossible_Manaweave_Patch
         {
