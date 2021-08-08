@@ -181,6 +181,11 @@ namespace TorannMagic
 
         public void PreDestroy()
         {
+            Thing resultThing = null;
+            if (this.carryTracker != null && this.carryTracker.CarriedThing != null)
+            {
+                this.carryTracker.TryDropCarriedThing(this.Position, ThingPlaceMode.Near, out resultThing);
+            }
             if (this.def.defName == "TM_MinionR" || this.def.defName == "TM_GreaterMinionR")
             {
                 try

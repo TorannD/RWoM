@@ -8,7 +8,7 @@ namespace TorannMagic
     public class DeathWorker_Spirit : DeathActionWorker
     {
         public override void PawnDied(Corpse corpse)
-        {
+        {            
             for (int i = 0; i < 3; i++)
             {
                 FleckMaker.ThrowSmoke(corpse.DrawPos, corpse.Map, Rand.Range(.5f, 1.1f));

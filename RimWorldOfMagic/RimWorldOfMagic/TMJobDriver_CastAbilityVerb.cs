@@ -37,13 +37,13 @@ namespace TorannMagic
         {
             yield return Toils_Misc.ThrowColonistAttackingMote(TargetIndex.A);
             this.verb = this.pawn.CurJob.verbToUse as Verb_UseAbility;
-            if (base.TargetA.HasThing && base.TargetA.Thing is Pawn && (!pawn.Position.InHorDistOf(base.TargetA.Cell, pawn.CurJob.verbToUse.verbProps.range) || !Verb.UseAbilityProps.canCastInMelee)) 
+            if (base.TargetA.HasThing && base.TargetA.Thing is Pawn && (!pawn.Position.InHorDistOf(base.TargetA.Cell, pawn.CurJob.verbToUse.verbProps.range) || !Verb.UseAbilityProps.canCastInMelee))
             {
                 //if (!base.GetActor().IsFighting() ? true : !verb.UseAbilityProps.canCastInMelee && !this.job.endIfCantShootTargetFromCurPos)
                 //{
-                    Toil toil = Toils_Combat.GotoCastPosition(TargetIndex.A);
-                    yield return toil;
-                    //toil = null;
+                Toil toil = Toils_Combat.GotoCastPosition(TargetIndex.A);
+                yield return toil;
+                //toil = null;
                 //}
             }
             if (this.Context == AbilityContext.Player)
@@ -57,37 +57,42 @@ namespace TorannMagic
             }
 
             cooldownFlag = this.verb.Ability.CooldownTicksLeft > 0 ? true : false;
-            TMAbilityDef tmAbility = (TMAbilityDef)(this.verb.Ability.Def);
-            if(tmAbility.manaCost > 0)
-            {
-                CompAbilityUserMagic compMagic = this.pawn.TryGetComp<CompAbilityUserMagic>();
-                if(compMagic != null && compMagic.Mana != null)
-                {
-                    if(compMagic.ActualManaCost(tmAbility) > compMagic.Mana.CurLevel)
-                    {
-                        energyFlag = true;
-                    }
-                }
-                else
-                {
-                    energyFlag = true;
-                }
-            }
-            if (tmAbility.staminaCost > 0)
-            {
+
+            if(this.verb.Ability.Def is TMAbilityDef)
+            { 
+                TMAbilityDef tmAbility = (TMAbilityDef)(this.verb.Ability.Def);
                 CompAbilityUserMight compMight = this.pawn.TryGetComp<CompAbilityUserMight>();
-                if (compMight != null && compMight.Stamina != null)
+                CompAbilityUserMagic compMagic = this.pawn.TryGetComp<CompAbilityUserMagic>();
+                if (tmAbility.manaCost > 0 && pawn.story != null && pawn.story.traits != null && !pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
                 {
-                    if (compMight.ActualStaminaCost(tmAbility) > compMight.Stamina.CurLevel)
+                    if (compMagic != null && compMagic.Mana != null)
+                    {
+                        if (compMagic.ActualManaCost(tmAbility) > compMagic.Mana.CurLevel)
+                        {
+                            energyFlag = true;
+                        }
+                    }
+                    else
                     {
                         energyFlag = true;
                     }
                 }
-                else
+                if (tmAbility.staminaCost > 0)
                 {
-                    energyFlag = true;
+                    if (compMight != null && compMight.Stamina != null)
+                    {
+                        if (compMight.ActualStaminaCost(tmAbility) > compMight.Stamina.CurLevel)
+                        {
+                            energyFlag = true;
+                        }
+                    }
+                    else
+                    {
+                        energyFlag = true;
+                    }
                 }
             }
+
             validCastFlag = cooldownFlag || energyFlag;
 
             if (targetPawn != null)

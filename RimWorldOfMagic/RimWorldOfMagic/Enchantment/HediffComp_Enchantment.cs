@@ -285,7 +285,7 @@ namespace TorannMagic.Enchantment
             }
             if (mitVal != 1f)
             {
-                txtMight = (mitVal* 100).ToString("0.##") + "%";                 
+                txtMight = (mitVal * 100).ToString("0.##") + "%";
             }
 
             if (txtMagic != "" && txtMight != "")

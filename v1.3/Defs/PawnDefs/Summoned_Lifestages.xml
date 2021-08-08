@@ -89,9 +89,9 @@
     <defName>TM_LesserSentinel_Lifestage</defName>
     <label>lesser sentinel</label>
 	<voxPitch>1.2</voxPitch>
-	<bodySizeFactor>.6</bodySizeFactor>
+	<bodySizeFactor>.7</bodySizeFactor>
 	<foodMaxFactor>1.5</foodMaxFactor>
-	<healthScaleFactor>.45</healthScaleFactor>
+	<healthScaleFactor>.6</healthScaleFactor>
     <statFactors>
       <MoveSpeed>0.8</MoveSpeed>
     </statFactors>
@@ -101,9 +101,9 @@
     <defName>TM_Sentinel_Lifestage</defName>
     <label>sentinel</label>
 	<voxPitch>1</voxPitch>
-	<bodySizeFactor>.7</bodySizeFactor>
+	<bodySizeFactor>.85</bodySizeFactor>
 	<foodMaxFactor>1</foodMaxFactor>
-	<healthScaleFactor>.57</healthScaleFactor>
+	<healthScaleFactor>.75</healthScaleFactor>
     <statFactors>
       <MoveSpeed>1</MoveSpeed>
     </statFactors>
@@ -113,9 +113,9 @@
     <defName>TM_GreaterSentinel_Lifestage</defName>
     <label>greater sentinel</label>
 	<voxPitch>.8</voxPitch>
-	<bodySizeFactor>.8</bodySizeFactor>
+	<bodySizeFactor>1</bodySizeFactor>
 	<foodMaxFactor>.8</foodMaxFactor>
-	<healthScaleFactor>.68</healthScaleFactor>
+	<healthScaleFactor>.9</healthScaleFactor>
     <statFactors>
       <MoveSpeed>1.2</MoveSpeed>
     </statFactors>

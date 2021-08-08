@@ -8,7 +8,8 @@ namespace TorannMagic
     public class Spirit_DeathWorker : DeathActionWorker
     {
         public override void PawnDied(Corpse corpse)
-        {            
+        {
+            
             if (corpse.Map != null)
             {
                 for (int i = 0; i < 3; i++)

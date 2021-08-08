@@ -732,8 +732,8 @@
       <graphicClass>Graphic_Multi</graphicClass>
       <drawSize>(1,1)</drawSize>
 	  <shadowData>
-          <volume>(0.3, 0.3, 0.3)</volume>
-          <offset>(0,0,-0.32)</offset>
+          <volume>(0.25, .2, 0.3)</volume>
+          <offset>(.35,0,-0.15)</offset>
       </shadowData>
       <damageData>
         <rect>(0,0,3,1.8)</rect>
@@ -745,7 +745,7 @@
     <altitudeLayer>Building</altitudeLayer>
     <passability>PassThroughOnly</passability>
     <blockWind>true</blockWind>
-    <castEdgeShadows>true</castEdgeShadows>
+    <castEdgeShadows>false</castEdgeShadows>
     <fillPercent>1</fillPercent>
     <canOverlapZones>false</canOverlapZones>
 	<tradeability>None</tradeability>

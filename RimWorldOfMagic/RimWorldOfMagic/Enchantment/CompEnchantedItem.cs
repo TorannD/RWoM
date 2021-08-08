@@ -349,6 +349,8 @@ namespace TorannMagic.Enchantment
             Scribe_Values.Look<bool>(ref this.hasEnchantment, "hasEnchantment", false, false);
             Scribe_Values.Look<bool>(ref this.initialized, "initialized", false, false);
             Scribe_Collections.Look<Trait>(ref this.SoulOrbTraits, "SoulOrbTraits", LookMode.Deep);
+            Scribe_Values.Look<int>(ref this.mightEssence, "mightEssence", 0, false);
+            Scribe_Values.Look<int>(ref this.magicEssence, "magicEssence", 0, false);
             //this.Props.ExposeData();
         }
 
