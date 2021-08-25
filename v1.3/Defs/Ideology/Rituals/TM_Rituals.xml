@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RitualBehaviorDef>
+    <defName>TM_SeverMagic</defName>
+    <durationTicks>666</durationTicks>
+    <workerClass>TorannMagic.Ideology.TM_RitualBehaviorWorker_SeverMagic</workerClass>
+    <spectatorFilter Class="TorannMagic.Ideology.TM_RitualSpectatorFilter_WillWitnessSeverMagic">
+      <description>Spectators must be willing to watch the event.</description>
+    </spectatorFilter>
+    <!-- <useVisualEffectsFromRoleIdIdeo>voidseekerId</useVisualEffectsFromRoleIdIdeo> -->
+    <roles>
+      <li Class="TorannMagic.Ideology.TM_RitualRoleVoidseeker">
+        <label>voidseeker</label>
+        <missingDesc>a voidseeker</missingDesc>
+        <id>voidseekerId</id>
+        <maxCount>1</maxCount>
+        <required>True</required>
+        <countsAsParticipant>False</countsAsParticipant>
+      </li>
+      <li Class="TorannMagic.Ideology.TM_RitualRoleMage">
+        <label>mage</label>
+        <missingDesc>a mage</missingDesc>
+        <id>mageId</id>
+        <maxCount>1</maxCount>
+        <required>True</required>
+        <countsAsParticipant>False</countsAsParticipant>
+        <ignoreBleeding>true</ignoreBleeding>
+      </li>
+    </roles>
+    <stages>
+      <li>
+        <defaultDuty>Spectate</defaultDuty>
+        <essential>True</essential>
+        <endTriggers>
+          <li Class="StageEndTrigger_RolesArrived">
+            <roleIds>
+              <li>voidseekerId</li>
+              <li>mageId</li>
+            </roleIds>
+          </li>
+        </endTriggers>
+        <roleBehaviors>
+          <li>
+            <roleId>voidseekerId</roleId>
+            <dutyDef>ArriveToCell</dutyDef>
+            <customPositions>
+              <li Class="RitualPosition_Lectern">
+                <maxDistanceToFocus>5</maxDistanceToFocus>
+              </li>
+              <li Class="RitualPosition_OnInteractionCell">
+                <facing>West</facing>
+              </li>
+            </customPositions>
+          </li>
+          <li>
+            <roleId>mageId</roleId>
+            <dutyDef>ArriveToCell</dutyDef>
+            <customPositions>
+              <li Class="RitualPosition_OnInteractionCell">
+                <offset>(-1,0,0)</offset>
+                <facing>South</facing>
+              </li>
+            </customPositions>
+          </li>
+        </roleBehaviors>
+      </li>
+      <li>
+        <defaultDuty>Spectate</defaultDuty>
+        <endTriggers>
+          <li Class="StageEndTrigger_DurationPercentage">
+            <percentage>0.95</percentage>
+          </li>
+        </endTriggers>
+        <roleBehaviors>
+          <li>
+            <roleId>voidseekerId</roleId>
+            <dutyDef>SpeakOnCellFacingSpectators</dutyDef>
+            <speakerInteraction>Speech_Execution</speakerInteraction>
+            <customPositions>
+              <li Class="RitualPosition_Lectern">
+                <maxDistanceToFocus>5</maxDistanceToFocus>
+              </li>
+              <li Class="RitualPosition_OnInteractionCell">
+                <facing>West</facing>
+              </li>
+            </customPositions>
+          </li>
+          <li>
+            <roleId>mageId</roleId>
+            <dutyDef>LayDownAwake</dutyDef>
+			<customPositions>
+              <li Class="RitualPosition_OnInteractionCell">
+                <offset>(-1,0,0)</offset>
+                <facing>South</facing>
+              </li>
+            </customPositions>
+          </li>
+        </roleBehaviors>
+      </li>
+      <li Class="RitualStage_InteractWithRole">
+        <targetId>mageId</targetId>
+        <defaultDuty>Spectate</defaultDuty>
+        <essential>True</essential>
+        <endTriggers>
+          <li Class="TorannMagic.Ideology.TM_StageEndTrigger_PawnNotMage">
+            <roleId>mageId</roleId>
+          </li>
+        </endTriggers>
+        <roleBehaviors>
+          <li>
+            <roleId>voidseekerId</roleId>
+            <dutyDef>TM_SeverMagic</dutyDef>
+            <customPositions>
+              <li Class="RitualPosition_Lectern">
+                <maxDistanceToFocus>5</maxDistanceToFocus>
+              </li>
+              <li Class="RitualPosition_OnInteractionCell">
+			  <offset>(1,0,1)</offset>
+                <facing>West</facing>
+              </li>
+            </customPositions>
+          </li>
+          <li>
+            <roleId>mageId</roleId>
+            <dutyDef>LayDownAwake</dutyDef>
+			<customPositions>
+              <li Class="RitualPosition_OnInteractionCell">
+                <offset>(1,0,0)</offset>
+                <facing>South</facing>
+              </li>
+            </customPositions>
+          </li>
+        </roleBehaviors>
+        <visualEffectDef>SacrificePrisoner</visualEffectDef>
+      </li>
+      <li>
+        <defaultDuty>Spectate</defaultDuty>
+        <endTriggers>
+          <li Class="StageEndTrigger_DurationPercentage">
+            <percentage>0.05</percentage>
+          </li>
+        </endTriggers>
+        <roleBehaviors>
+          <li>
+            <roleId>voidseekerId</roleId>
+            <dutyDef>SpeakOnCellFacingSpectators</dutyDef>
+            <speakerInteraction>Speech_Execution</speakerInteraction>
+            <customPositions>
+              <li Class="RitualPosition_OnInteractionCell" />
+            </customPositions>
+          </li>
+		  <li>
+            <roleId>mageId</roleId>
+            <dutyDef>ArriveToCell</dutyDef>
+			<customPositions>
+              <li Class="RitualPosition_OnInteractionCell">
+                <offset>(1,0,0)</offset>
+                <facing>East</facing>
+              </li>
+            </customPositions>
+          </li>
+        </roleBehaviors>
+      </li>
+    </stages>
+  </RitualBehaviorDef>
+  
+  <RitualPatternDef ParentName="MutilationBase">
+    <defName>TM_SeverenceRitual</defName>
+    <ritualBehavior>TM_SeverMagic</ritualBehavior>
+    <ritualExpectedPostfix>{0} {1} want to carry out the severence ritual as soon as possible.</ritualExpectedPostfix>
+    <ritualObligationTargetFilter>RitualSpotIdeogramOrAltar</ritualObligationTargetFilter>
+    <ritualOutcomeEffect>TM_SeverMagic</ritualOutcomeEffect>
+    <tags>
+      <li>TM_SeverMagic</li>
+    </tags>
+    <patternGroupTag>TM_SeverenceRitual</patternGroupTag>
+    <ritualObligationTriggers>
+      <li Class="TorannMagic.Ideology.TM_RitualObligationTrigger_SeverMagicProperties">
+        <mustBePlayerIdeo>true</mustBePlayerIdeo>
+      </li>
+    </ritualObligationTriggers>
+    <mergeGizmosForObligations>true</mergeGizmosForObligations>
+  </RitualPatternDef>
+  
+  <RitualOutcomeEffectDef>
+    <defName>TM_SeverMagic</defName>
+    <description>Spectating slaves will be 100% suppressed. Depending on ritual quality, participants will get between {MINMOOD} and {MAXMOOD} mood for {MOODDAYS} days.</description>
+    <workerClass>TorannMagic.Ideology.TM_RitualOutcomeEffectWorker_SeverMagic</workerClass>
+    <comps>
+	  <li Class="RitualOutcomeComp_RitualSeatPresent">
+        <qualityOffset>0.1</qualityOffset>
+      </li>
+	  <li Class="RitualOutcomeComp_RolePresentNotSubstituted">
+        <roleId>doer</roleId>
+        <label>moral guide present</label>
+        <qualityOffset>0.1</qualityOffset>
+      </li>
+      <li Class="RitualOutcomeComp_ParticipantCount">
+        <label>participant count</label>
+        <curve>
+          <points>
+            <li>(1, 0.1)</li>
+            <li>(4, 0.22)</li>
+            <li>(7, 0.4)</li>
+            <li>(12, 0.6)</li>
+          </points>
+        </curve>
+      </li>
+      <li Class="RitualOutcomeComp_RitualTargetDefs">
+        <defs>
+          <li>Ideogram</li>
+        </defs>
+        <allowAltars>true</allowAltars>
+        <label>started at altar or ideogram</label>
+        <qualityOffset>0.15</qualityOffset>
+        <expectedThingLabelTip>an altar or an ideogram</expectedThingLabelTip>
+      </li>
+	  <li Class="RitualOutcomeComp_RoomStat">
+        <label>room impressiveness</label>
+        <statDef>Impressiveness</statDef>
+        <curve>
+          <points>
+            <li>0,  0</li>
+            <li>50,  0.1</li>
+            <li>120, 0.2</li>
+			<li>500, 0.3</li>
+          </points>
+        </curve>
+      </li>
+    </comps>
+    <outcomeChances>
+      <li>
+        <label>Botched</label>
+        <chance>0.1</chance>
+        <memory>TM_Botched_SeverMagicTD</memory>
+        <positivityIndex>-2</positivityIndex>
+        <description>The {0} was botched. The voidseeker allowed the mage a chance to strike.</description>
+      </li>
+      <li>
+        <label>Lethal</label>
+        <chance>0.1</chance>
+        <memory>TM_Lethal_SeverMagicTD</memory>
+        <description>The {0} was lethal. While mages deserve no pity, the ritual was intended to sever the mage from magic, not kill it.</description>
+        <positivityIndex>-1</positivityIndex>
+      </li>
+      <li>
+        <label>Success</label>
+        <chance>0.65</chance>
+        <memory>TM_Success_SeverMagicTD</memory>
+        <description>The {0} was a success. The voidseeker effectively severed the mage's magic.</description>
+        <positivityIndex>1</positivityIndex>
+      </li>
+	  <li>
+        <label>Flawless</label>
+        <chance>0.15</chance>
+        <memory>TM_Flawless_SeverMagicTD</memory>
+        <description>The {0} was flawless - the ceremony reaffirmed our beliefs and brought compassion and freedom to the mage.</description>
+        <positivityIndex>2</positivityIndex>
+      </li>
+    </outcomeChances>
+  </RitualOutcomeEffectDef>
+
+</Defs>

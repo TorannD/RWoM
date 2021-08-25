@@ -343,6 +343,107 @@ namespace TorannMagic
             return false;
         }
 
+        public static int GetMagesInFactionCount(Faction faction, bool countSlaves = false)
+        {
+            if (faction == null)
+            {
+                return 0;
+            }
+            int num = 0;
+            foreach (Pawn p in PawnsFinder.AllMaps_SpawnedPawnsInFaction(faction))
+            {
+                if (IsMagicUser(p) && (p.IsSlave ? countSlaves : true))
+                {
+                    num++;
+                }
+            }
+            return num;
+        }
+
+        public static bool HasMageInFaction(Faction faction, bool countSlaves = false, bool countOnlySlaves = false)
+        {
+            if (faction == null)
+            {
+                return false;
+            }
+            foreach (Pawn p in PawnsFinder.AllMaps_SpawnedPawnsInFaction(faction))
+            {
+                if(countOnlySlaves)
+                {
+                    if(IsMagicUser(p) && p.IsSlave)
+                    {
+                        return true;
+                    }
+                }
+                else if (IsMagicUser(p) && p.IsSlave ? countSlaves : true)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static int GetFightersInFactionCount(Faction faction, bool countSlaves = false)
+        {
+            if (faction == null)
+            {
+                return 0;
+            }
+            int num = 0;
+            foreach (Pawn p in PawnsFinder.AllMaps_SpawnedPawnsInFaction(faction))
+            {
+                if (IsMightUser(p) && p.IsSlave ? countSlaves : true)
+                {
+                    num++;
+                }
+            }
+            return num;
+        }
+
+        public static bool HasFighterInFaction(Faction faction, bool countSlaves = false, bool countOnlySlaves = false)
+        {
+            if (faction == null)
+            {
+                return false;
+            }
+            foreach (Pawn p in PawnsFinder.AllMaps_SpawnedPawnsInFaction(faction))
+            {
+                if (countOnlySlaves)
+                {
+                    if (IsMagicUser(p) && p.IsSlave)
+                    {
+                        return true;
+                    }
+                }
+                else if (IsMightUser(p) && p.IsSlave ? countSlaves : true)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static Pawn GetPawnForSeverenceRetaliation(Faction f)
+        {
+            Pawn pawn = null;
+            List<Pawn> allPawns = PawnsFinder.AllMaps_SpawnedPawnsInFaction(f);
+            foreach(Pawn p in allPawns)
+            {
+                if(p.health.hediffSet.HasHediff(TorannMagicDefOf.TM_MagicSeverenceHD))
+                {
+                    TorannMagic.Ideology.HediffComp_MagicSeverence hd_ms = p.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_MagicSeverenceHD).TryGetComp<TorannMagic.Ideology.HediffComp_MagicSeverence>();
+                    if(hd_ms.selectableForRetaliation)
+                    {
+                        pawn = p;
+                        hd_ms.selectableForRetaliation = false;
+                        hd_ms.delayedMindburn = true;
+                        break;
+                    }
+                }
+            }
+            return pawn;
+        }
+
         public static bool IsPawnInjured(Pawn targetPawn, float minInjurySeverity = 0)
         {
             float injurySeverity = 0;

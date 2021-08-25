@@ -230,5 +230,41 @@
       <max>1</max>
     </durationDays>
   </IncidentDef>
+  
+  <GameConditionDef>
+    <defName>TM_ManaStorm</defName>
+    <conditionClass>TorannMagic.GameCondition_ManaStorm</conditionClass>
+    <label>mana storm</label>
+    <description>Chaotic forces are causing a dangerous mana storm. During a mana storm, attempts to use mana to realize magical intent external to the caster will harm the caster proportionally to the mana cost of the spell. This damage is applied before the spell incantation begins. Unformed used of mana and internal use of magic, such as the transfer of mana or dispelling an enchantment, remains unaffected. Magic circles or foci cannot be used during this event. While the mana storm is active, energy costs are halved and mana reduction limit is removed..</description>
+    <endMessage>Magic is returning to normal.</endMessage>
+    <letterText>Chaotic forces are causing a dangerous tide of mana.\n\nDuring a mana storm, attempts to use mana to realize magical intent external to the caster will harm the caster proportionally to the mana cost of the spell. This damage is applied before the spell incantation begins. Unformed used of mana and internal use of magic, such as the transfer of mana or dispelling an enchantment, remains unaffected. Magic circles or foci cannot be used during this event. While the mana storm is active, energy costs are halved and mana reduction limit is removed..</description>
+    <endMessage>Magic is returning to normal.</letterText>
+	<letterDef>NeutralEvent</letterDef>
+    <exclusiveConditions>
+      <li>TM_ManaStorm</li>
+    </exclusiveConditions>
+    <canBePermanent>true</canBePermanent>
+  </GameConditionDef>
+  
+  <IncidentDef>
+    <defName>TM_ManaStorm</defName>
+    <label>mana storm</label>
+		<category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_MakeGameCondition</workerClass>
+    <gameCondition>TM_ManaStorm</gameCondition>
+    <letterLabel>Mana storm</letterLabel>
+    <letterText>Chaotic forces are causing a dangerous tide of mana.\n\nDuring a mana storm, attempts to use mana to realize magical intent external to the caster will harm the caster proportionally to the mana cost of the spell. This damage is applied before the spell incantation begins. Unformed used of mana and internal use of magic, such as the transfer of mana or dispelling an enchantment, remains unaffected. Magic circles or foci cannot be used during this event. While the mana storm is active, energy costs are halved and mana reduction limit is removed.</description>
+    <endMessage>Magic is returning to normal.</letterText>
+    <letterDef>NeutralEvent</letterDef>
+    <baseChance>0.5</baseChance>
+    <minRefireDays>10</minRefireDays>
+    <durationDays>
+      <min>.4</min>
+      <max>1.6</max>
+    </durationDays>
+  </IncidentDef>  
 
 </Defs>

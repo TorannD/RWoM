@@ -207,6 +207,21 @@ namespace TorannMagic.SihvRMagicScrollScribe
             {
                 Messages.Message("NotPhyAdeptPawn".Translate(), MessageTypeDefOf.RejectInput);
             }
+            if (user.IsSlave)
+            {
+                if (Rand.Chance(.25f))
+                {
+                    Messages.Message("TM_SlaveScribeFail".Translate(
+                        tempPod.label,
+                        user.LabelShort
+                    ), MessageTypeDefOf.RejectInput);
+                    tempPod = null;
+                }
+                else
+                {
+                    tempPod = TM_Data.FighterBookList().RandomElement();
+                }
+            }
             if (tempPod != null)
             {
                 SihvSpawnThings.SpawnThingDefOfCountAt(tempPod, 1, new TargetInfo(currentPos, map));

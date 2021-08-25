@@ -383,16 +383,30 @@ namespace TorannMagic
             ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
             float geChance = 0.007f * wealthMultiplier;
             float riftChallenge = Mathf.Min(settingsRef.riftChallenge, 1f);
+            float difficultyMod = 1f;
+            if(riftChallenge >=3f)
+            {
+                difficultyMod = 1.1f;
+            }
+            else if(riftChallenge >= 2f)
+            {
+                difficultyMod = .8f;
+            }
+            else
+            {
+                difficultyMod = .65f;
+            }
+
             if (settingsRef.riftChallenge > 1 )
             {
-                geChance *= (.75f * riftChallenge);
+                geChance *= (difficultyMod * riftChallenge);
             }  
             else
             {
                 geChance = 0;
             }
-            float eChance = 0.035f * riftChallenge * (.75f*wealthMultiplier);
-            float leChance = 0.12f * riftChallenge * (.75f*wealthMultiplier);            
+            float eChance = 0.035f * riftChallenge * (difficultyMod*wealthMultiplier);
+            float leChance = 0.12f * riftChallenge * (difficultyMod*wealthMultiplier);            
 
             IntVec3 curCell;
             IEnumerable<IntVec3> targets = GenRadial.RadialCellsAround(this.Position, 3, true);

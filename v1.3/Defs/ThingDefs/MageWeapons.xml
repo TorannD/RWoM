@@ -24,6 +24,7 @@
 			<li>
 				<compClass>CompEquippable</compClass>
 			</li>
+			<li Class="CompProperties_Styleable"></li>
 		</comps>
 		<graphicData>
 			<onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
@@ -56,6 +57,7 @@
     <weaponTags>
       <li>MageAttack</li>
     </weaponTags>
+	<relicChance>0</relicChance>
   </ThingDef>
   
   <ThingDef Name="TM_BaseRangedMageWeapon" Abstract="True" ParentName="BaseMageWeapon">
@@ -130,6 +132,7 @@
   <ThingDef Name="TM_BaseWand" Abstract="True" ParentName="BaseMageWeapon">
 	<techLevel>Neolithic</techLevel>
 	<smeltable>true</smeltable>
+	<relicChance>.3</relicChance>
 	<thingCategories>
       <li>TM_MagicWeaponsFoci</li>
     </thingCategories>
@@ -191,6 +194,7 @@ Arcane Resistance: +20%</description>
     <weaponTags>
       <li>SeerSpearman</li>
     </weaponTags>
+	<relicChance>.5</relicChance>
 	<statBases>
       <WorkToMake>20000</WorkToMake>
 	  <MarketValue>800</MarketValue>
@@ -282,6 +286,7 @@ Arcane Resistance: +20%</description>
     <weaponTags>
       <li>SeerSpearman</li>
     </weaponTags>
+	<relicChance>.5</relicChance>
 	<statBases>
       <WorkToMake>5000</WorkToMake>
 	  <MarketValue>120</MarketValue>
@@ -387,6 +392,7 @@ Ability Cooldown: -10%</description>
 	<weaponTags>
       <li>SeerBowman</li>
     </weaponTags>
+	<relicChance>.5</relicChance>
     <statBases>
       <WorkToMake>12000</WorkToMake>
 	  <MarketValue>1250</MarketValue>
@@ -483,6 +489,7 @@ Cleaving Strike</description>
     <weaponTags>
 		<li>SeerElite</li>
     </weaponTags>
+	<relicChance>1.2</relicChance>
 	<statBases>
       <WorkToMake>60000</WorkToMake>
 	  <MarketValue>4650</MarketValue>
@@ -581,6 +588,7 @@ Haste on hit (25%)</description>
     <weaponTags>
 		<li>SeerElite</li>
     </weaponTags>
+	<relicChance>1.2</relicChance>
 	<statBases>
       <WorkToMake>40000</WorkToMake>
 	  <MarketValue>3500</MarketValue>
@@ -683,6 +691,7 @@ Cleaving Strike</description>
 		<drawSize>1.3</drawSize>
 	</graphicData>
 	<tradeability>Sellable</tradeability>
+	<relicChance>2</relicChance>
 	<statBases>
 	  <MarketValue>8000</MarketValue>
       <Mass>5</Mass>
@@ -804,6 +813,7 @@ Class XP Gain: -20%</description>
 	  <drawSize>1.2</drawSize>
     </graphicData>
     <soundInteract>Bow_Large</soundInteract>	
+	<relicChance>1.2</relicChance>
     <statBases>
       <WorkToMake>77700</WorkToMake>
 	  <MarketValue>4480</MarketValue>
@@ -906,6 +916,7 @@ Nightshade Toxin on hit (20%)</description>
     <weaponTags>
 		<li>SeerElite</li>
     </weaponTags>
+	<relicChance>1.2</relicChance>
 	<statBases>
       <WorkToMake>25000</WorkToMake>
 <!-- 	  <MarketValue>3500</MarketValue> -->
@@ -1262,6 +1273,7 @@ Augmentation adds ability: Arcane Barrier</description>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Interact_Revolver</soundInteract>	
+	<relicChance>1.5</relicChance>
     <statBases>
       <WorkToMake>77700</WorkToMake>
 	  <MarketValue>3350</MarketValue>
@@ -1399,7 +1411,8 @@ Damage Boost: +40%</description>
       <texPath>Items/weapons/staff_blazingpower_256</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-    <soundInteract>Interact_Revolver</soundInteract>	
+    <soundInteract>Interact_Revolver</soundInteract>
+	<relicChance>1.5</relicChance>	
     <statBases>
       <WorkToMake>77700</WorkToMake>
 	  <MarketValue>3750</MarketValue>

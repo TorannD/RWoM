@@ -65,7 +65,7 @@
     </researchPrerequisites>
   </ThingDef>
   
-  <ThingDef ParentName="TM_BuildingBase">
+  <ThingDef Name="TM_ElementalRift" ParentName="TM_BuildingBase">
     <defName>TM_ElementalRift</defName>
     <label>Elemental rift</label>
     <thingClass>TorannMagic.Building_TMElementalRift</thingClass>
@@ -110,11 +110,11 @@
     <hasInteractionCell>false</hasInteractionCell>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 <!--     <designationCategory>Misc</designationCategory> -->
-		<building>
-			<ai_chillDestination>false</ai_chillDestination>
-			<claimable>false</claimable>
-			<deconstructible>false</deconstructible>
-		</building>
+	<building>
+		<ai_chillDestination>false</ai_chillDestination>
+		<claimable>false</claimable>
+		<deconstructible>false</deconstructible>
+	</building>
     <comps>
 		<li Class="CompProperties_Explosive">
         <explosiveRadius>3.9</explosiveRadius>
@@ -124,6 +124,15 @@
     </comps>
     <staticSunShadowHeight>0.9</staticSunShadowHeight>
     <designationHotKey>Misc3</designationHotKey>
+  </ThingDef>
+  
+  <ThingDef ParentName="TM_ElementalRift">
+    <defName>TM_ElementalRift_Defenders</defName>
+    <label>Elemental rift</label>
+	<description>rift created by a voidseeker</description>
+    <thingClass>TorannMagic.Building_TMElementalRift_Defenders</thingClass>
+	<costList>	  
+    </costList>
   </ThingDef>
   
 </Defs>

@@ -1,7 +1,72 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_BlueSpireW</defName>
+    <graphicData>
+      <texPath>Motes/BlueSpireMote4</texPath>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.0</fadeInTime>
+      <solidTime>.2</solidTime>
+      <fadeOutTime>.1</fadeOutTime>
+    </mote>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_BlueSpireWs</defName>
+    <graphicData>
+      <texPath>Motes/BlueSpireMote3</texPath>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.0</fadeInTime>
+      <solidTime>.2</solidTime>
+      <fadeOutTime>.1</fadeOutTime>
+    </mote>
+  </ThingDef>
+
+    <ThingDef ParentName="MoteBase">
+    <defName>Mote_BlueSpireEs</defName>
+    <graphicData>
+      <texPath>Motes/BlueSpireMote2</texPath>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.0</fadeInTime>
+      <solidTime>.2</solidTime>
+      <fadeOutTime>.1</fadeOutTime>
+    </mote>
+  </ThingDef>
+  
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_BlueSpireE</defName>
+    <graphicData>
+      <texPath>Motes/BlueSpireMote1</texPath>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.0</fadeInTime>
+      <solidTime>.2</solidTime>
+      <fadeOutTime>.1</fadeOutTime>
+    </mote>
+  </ThingDef>
+
  <ThingDef ParentName="MoteBase">
+    <defName>Mote_BlueSwirl</defName>
+    <graphicData>
+      <texPath>Motes/BlueSwirlMote</texPath>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.1</fadeInTime>
+      <solidTime>.2</solidTime>
+      <fadeOutTime>.2</fadeOutTime>
+    </mote>
+  </ThingDef>
+  
+   <ThingDef ParentName="MoteBase">
     <defName>Mote_Base_Smoke</defName>
     <graphicData>
       <texPath>Things/Mote/Smoke</texPath>

@@ -138,6 +138,8 @@ namespace TorannMagic
         public static GameConditionDef ManaSurge;
         public static GameConditionDef DarkClouds;
         public static GameConditionDef DarkThunderstorm;
+        public static GameConditionDef TM_ManaStorm;
+        public static GameConditionDef TM_ElementalDefenders;
         public static HediffDef TM_ManaSickness;
         public static HediffDef TM_ArcaneSickness;
         public static HediffDef TM_ArcaneWeakness;
@@ -1135,6 +1137,11 @@ namespace TorannMagic
         public static ThingDef Mote_SpiritWolf_West;
         public static ThingDef Mote_Healing_Small;
         public static ThingDef Mote_Base_Smoke;
+        public static ThingDef Mote_BlueSpireE;
+        public static ThingDef Mote_BlueSpireEs;
+        public static ThingDef Mote_BlueSpireWs;
+        public static ThingDef Mote_BlueSpireW;
+        public static ThingDef Mote_BlueSwirl;
 
         public static ThingDef Projectile_FogOfTorment;        
 
@@ -1331,6 +1338,19 @@ namespace TorannMagic
 
         //HistoryEventDefs
         public static HistoryEventDef TM_OffensiveMagic;
+        public static HistoryEventDef TM_KilledMage;
+        public static HistoryEventDef TM_KilledFighter;
+        public static HistoryEventDef TM_UsedMagic;
+        public static HistoryEventDef TM_UsedManeuver;
+        public static HistoryEventDef TM_KilledHumanlike;
+        public static HistoryEventDef TM_SeverMagicEvent;
+
+        //Rituals
+        public static JobDef TM_SeverMagic;
+        public static HediffDef TM_MagicSeverenceHD;
+
+        //Precept Roles
+        public static PreceptDef TM_IdeoRole_VoidSeeker;
 
         //FleckDefs
         public static FleckDef ElectricalSpark;

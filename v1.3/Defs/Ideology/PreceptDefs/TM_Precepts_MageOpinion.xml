@@ -1,0 +1,1010 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Issue -->
+
+  <IssueDef>
+    <defName>TM_MageOpinion</defName>
+    <label>Magic</label>
+    <iconPath>Ideology/Mages</iconPath>
+	<allowMultiplePrecepts>true</allowMultiplePrecepts>
+  </IssueDef>
+
+<!-- Precepts -->
+
+ <!--  <PreceptDef Abstract="True" Name="PreceptRoleSingleBase">
+    <issue>IdeoRole</issue>
+    <preceptClass>Precept_RoleSingle</preceptClass>
+    <certaintyLossFactor>0.5</certaintyLossFactor>
+    <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
+    <roleRequirements>
+      <li Class="RoleRequirement_SameIdeo">
+        <labelKey>RoleRequirementLabelSameIdeo</labelKey>
+      </li>
+      <li Class="RoleRequirement_SupremeGender">
+        <labelKey>RoleRequirementLabelSupremeGender</labelKey>
+      </li>
+    </roleRequirements>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>IdeoRoleApparelRequirementNotMet</thought>
+      </li>
+    </comps>
+    <impact>Medium</impact>
+    <activationBelieverCount>3</activationBelieverCount>
+    <deactivationBelieverCount>1</deactivationBelieverCount>
+    <classicExtra>true</classicExtra>
+  </PreceptDef>  -->
+  
+<!-- Abhorrent -->
+
+  <PreceptDef>
+    <defName>TM_Mages_Abhorrent</defName>
+    <issue>TM_MageOpinion</issue>
+    <label>abhore magic</label>
+    <description>Magic is an abomination to be reviled and cleansed from existence. Mage's manipulation of energy goes against natural order. Killing an enemy mage is justified regardless of the circumstances. Allowing a free mage to reside in the colony is a mockery of our beliefs. Mages should be put to death quickly or enslaved until they can be disposed. The use of magic is absolutely forbidden.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>91</displayOrderInIssue>
+    <displayOrderInImpact>291</displayOrderInImpact>
+    <opposedWorkTypes>
+      <li>TM_Magic</li>
+    </opposedWorkTypes>
+	<requiredMemes>
+      <li>TM_Transcendent</li>
+    </requiredMemes>
+    <comps>
+	  <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>TM_KilledMage</eventDef>
+        <thought>TM_KilledMage_Abhorrent_Social</thought>
+      </li>
+	  <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>TM_KilledMage</eventDef>
+        <thought>TM_KilledMage_Abhorrent_Mood</thought>
+        <description>I killed a mage</description>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>TM_KilledMage</eventDef>
+        <thought>TM_KilledMage_Know_Abhorrent_Mood</thought>
+		<description>We killed a mage</description>
+      </li>
+	  <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>TM_UsedMagic</eventDef>
+        <thought>TM_MagicUse_Abhorrent_Social</thought>
+      </li>
+	  <li Class="PreceptComp_SituationalThought">
+        <thought>TM_MagicUse_Know_Abhorrent_Mood</thought>
+		<description>used magic</description>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>TM_MagesInColony_Abhorrent_Mood</thought>
+        <description>mage in colony</description>
+      </li>
+	  <li Class="PreceptComp_SituationalThought">
+        <thought>TM_MagesInColonySlave_Abhorrent_Mood</thought>
+        <description>mage in colony</description>
+      </li>
+	  <li Class="PreceptComp_SituationalThought">
+        <thought>TM_IsMage_Abhorrent_Social</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+  
+  <!-- Abhorrent Rituals -->
+  
+  <PreceptDef>
+    <defName>TM_SeverenceRitual</defName>
+    <label>sever magic</label>
+    <description>A voidseeker will sever magic from a target. The audience will watch as the voidseeker gives a sermon, severs the magic from a mage, and says some closing words. The target may attempt one last retaliation spell. If successful, the target will be free from magic.</description>
+    <issue>Ritual</issue>
+    <impact>Medium</impact>
+    <iconPath>Ideology/SeverMagic</iconPath>
+    <preceptClass>Precept_Ritual</preceptClass>
+    <ritualPatternBase>TM_SeverenceRitual</ritualPatternBase>
+    <allowDuplicates>true</allowDuplicates>
+    <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
+    <selectionWeight>1.0</selectionWeight>
+    <displayOrderInImpact>101</displayOrderInImpact>
+    <ignoreLimitsInEditMode>false</ignoreLimitsInEditMode>
+    <receivesExpectationsQualityOffset>true</receivesExpectationsQualityOffset>
+    <canGenerateAsSpecialPrecept>false</canGenerateAsSpecialPrecept>
+    <allowStackingRitualObligationAlerts>true</allowStackingRitualObligationAlerts>
+    <associatedMemes>
+      <li>TM_Transcendent</li>
+    </associatedMemes>
+    <requiredMemes>
+      <li>TM_Transcendent</li>
+    </requiredMemes>
+  </PreceptDef>
+  
+      <!-- Abhorrent Thoughts -->
+
+  <ThoughtDef>
+    <defName>TM_KilledMage_Abhorrent_Social</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>3</durationDays>
+    <stackLimit>1</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <nullifyingTraits>
+		  <li>InnerFire</li>
+		  <li>HeartOfFrost</li>
+		  <li>Arcanist</li>
+		  <li>StormBorn</li>
+		  <li>Summoner</li>
+		  <li>Druid</li>
+		  <li>Necromancer</li>
+		  <li>Priest</li>
+		  <li>Lich</li>
+		  <li>Succubus</li>
+		  <li>Warlock</li>
+		  <li>Geomancer</li>
+		  <li>Technomancer</li>
+		  <li>Enchanter</li>		  
+		  <li>BloodMage</li>
+		  <li>Chronomancer</li>
+		  <li>TM_Wanderer</li>
+		  <li>ChaosMage</li>
+		  <li>TM_TheShadow</li>
+		  <li>TM_Brightmage</li>
+		  <li>TM_Shaman</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>mage killer</label>
+        <baseOpinionOffset>40</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>TM_KilledMage_Abhorrent_Mood</defName>
+    <durationDays>3</durationDays>
+	<stackLimit>3</stackLimit>
+    <stages>
+      <li>
+        <label>killed a mage</label>
+        <description>I killed a mage! One less abberation to worry about.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+    <nullifyingTraits>
+		  <li>InnerFire</li>
+		  <li>HeartOfFrost</li>
+		  <li>Arcanist</li>
+		  <li>StormBorn</li>
+		  <li>Summoner</li>
+		  <li>Druid</li>
+		  <li>Necromancer</li>
+		  <li>Priest</li>
+		  <li>Lich</li>
+		  <li>Succubus</li>
+		  <li>Warlock</li>
+		  <li>Geomancer</li>
+		  <li>Technomancer</li>
+		  <li>Enchanter</li>		  
+		  <li>BloodMage</li>
+		  <li>Chronomancer</li>
+		  <li>TM_Wanderer</li>
+		  <li>ChaosMage</li>
+		  <li>TM_TheShadow</li>
+		  <li>TM_Brightmage</li>
+		  <li>TM_Shaman</li>
+    </nullifyingTraits>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>TM_KilledMage_Know_Abhorrent_Mood</defName>
+    <durationDays>3</durationDays>
+	<stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>we killed a mage</label>
+        <description>We killed a mage! Our colony will trimph over these abominations.</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+    <nullifyingTraits>
+		  <li>InnerFire</li>
+		  <li>HeartOfFrost</li>
+		  <li>Arcanist</li>
+		  <li>StormBorn</li>
+		  <li>Summoner</li>
+		  <li>Druid</li>
+		  <li>Necromancer</li>
+		  <li>Priest</li>
+		  <li>Lich</li>
+		  <li>Succubus</li>
+		  <li>Warlock</li>
+		  <li>Geomancer</li>
+		  <li>Technomancer</li>
+		  <li>Enchanter</li>		  
+		  <li>BloodMage</li>
+		  <li>Chronomancer</li>
+		  <li>TM_Wanderer</li>
+		  <li>ChaosMage</li>
+		  <li>TM_TheShadow</li>
+		  <li>TM_Brightmage</li>
+		  <li>TM_Shaman</li>
+    </nullifyingTraits>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>TM_MagicUse_Abhorrent_Social</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>3</durationDays>
+    <stackLimit>1</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <nullifyingTraits>
+		  <li>InnerFire</li>
+		  <li>HeartOfFrost</li>
+		  <li>Arcanist</li>
+		  <li>StormBorn</li>
+		  <li>Summoner</li>
+		  <li>Druid</li>
+		  <li>Necromancer</li>
+		  <li>Priest</li>
+		  <li>Lich</li>
+		  <li>Succubus</li>
+		  <li>Warlock</li>
+		  <li>Geomancer</li>
+		  <li>Technomancer</li>
+		  <li>Enchanter</li>		  
+		  <li>BloodMage</li>
+		  <li>Chronomancer</li>
+		  <li>TM_Wanderer</li>
+		  <li>ChaosMage</li>
+		  <li>TM_TheShadow</li>
+		  <li>TM_Brightmage</li>
+		  <li>TM_Shaman</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>used magic</label>
+        <baseOpinionOffset>-40</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>TM_MagicUse_Know_Abhorrent_Mood</defName>
+	<workerClass>TorannMagic.Ideology.ThoughtWorker_Precept_MagicUse_Know_Mood_Abhorrent</workerClass>
+    <stages>
+      <li>
+        <label>we used magic</label>
+        <description>Magic was used in our colony - what a disgusting, filthy act.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+    <nullifyingTraits>
+		  <li>InnerFire</li>
+		  <li>HeartOfFrost</li>
+		  <li>Arcanist</li>
+		  <li>StormBorn</li>
+		  <li>Summoner</li>
+		  <li>Druid</li>
+		  <li>Necromancer</li>
+		  <li>Priest</li>
+		  <li>Lich</li>
+		  <li>Succubus</li>
+		  <li>Warlock</li>
+		  <li>Geomancer</li>
+		  <li>Technomancer</li>
+		  <li>Enchanter</li>		  
+		  <li>BloodMage</li>
+		  <li>Chronomancer</li>
+		  <li>TM_Wanderer</li>
+		  <li>ChaosMage</li>
+		  <li>TM_TheShadow</li>
+		  <li>TM_Brightmage</li>
+		  <li>TM_Shaman</li>
+    </nullifyingTraits>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>TM_MagesInColony_Abhorrent_Mood</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>TorannMagic.Ideology.ThoughtWorker_Precept_MagesInColony_Mood_Abhorrent</workerClass>
+    <stages>
+	  <li>
+        <label>freedom from mages</label>
+        <description>Our colony is free from the abhorrent machinations of mages.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+      <li>
+        <label>mage abomination</label>
+        <description>A free mage was allowed into the colony; destroy or enslave the abomination!</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+	<nullifyingTraits>
+		  <li>InnerFire</li>
+		  <li>HeartOfFrost</li>
+		  <li>Arcanist</li>
+		  <li>StormBorn</li>
+		  <li>Summoner</li>
+		  <li>Druid</li>
+		  <li>Necromancer</li>
+		  <li>Priest</li>
+		  <li>Lich</li>
+		  <li>Succubus</li>
+		  <li>Warlock</li>
+		  <li>Geomancer</li>
+		  <li>Technomancer</li>
+		  <li>Enchanter</li>		  
+		  <li>BloodMage</li>
+		  <li>Chronomancer</li>
+		  <li>TM_Wanderer</li>
+		  <li>ChaosMage</li>
+		  <li>TM_TheShadow</li>
+		  <li>TM_Brightmage</li>
+		  <li>TM_Shaman</li>
+    </nullifyingTraits>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>TM_MagesInColonySlave_Abhorrent_Mood</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>TorannMagic.Ideology.ThoughtWorker_Precept_MagesInColonySlave_Mood_Abhorrent</workerClass>
+    <stages>
+      <li>
+        <label>slave mage</label>
+        <description>We have enslaved a mage; we don't need its magic, -it- is better off dead.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+	<nullifyingTraits>
+		  <li>InnerFire</li>
+		  <li>HeartOfFrost</li>
+		  <li>Arcanist</li>
+		  <li>StormBorn</li>
+		  <li>Summoner</li>
+		  <li>Druid</li>
+		  <li>Necromancer</li>
+		  <li>Priest</li>
+		  <li>Lich</li>
+		  <li>Succubus</li>
+		  <li>Warlock</li>
+		  <li>Geomancer</li>
+		  <li>Technomancer</li>
+		  <li>Enchanter</li>		  
+		  <li>BloodMage</li>
+		  <li>Chronomancer</li>
+		  <li>TM_Wanderer</li>
+		  <li>ChaosMage</li>
+		  <li>TM_TheShadow</li>
+		  <li>TM_Brightmage</li>
+		  <li>TM_Shaman</li>
+    </nullifyingTraits>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>TM_IsMage_Abhorrent_Social</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>TorannMagic.Ideology.ThoughtWorker_Precept_IsMage_Social_Abhorrent</workerClass>
+    <stages>
+      <li>
+        <label>mage</label>
+        <baseOpinionOffset>-80</baseOpinionOffset>
+      </li>
+    </stages>
+    <nullifyingTraits>
+	  <li>InnerFire</li>
+	  <li>HeartOfFrost</li>
+	  <li>Arcanist</li>
+	  <li>StormBorn</li>
+	  <li>Summoner</li>
+	  <li>Druid</li>
+	  <li>Necromancer</li>
+	  <li>Priest</li>
+	  <li>Lich</li>
+	  <li>Succubus</li>
+	  <li>Warlock</li>
+	  <li>Geomancer</li>
+	  <li>Technomancer</li>
+	  <li>Enchanter</li>		  
+	  <li>BloodMage</li>
+	  <li>Chronomancer</li>
+	  <li>TM_Wanderer</li>
+	  <li>ChaosMage</li>
+	  <li>TM_TheShadow</li>
+	  <li>TM_Brightmage</li>
+	  <li>TM_Shaman</li>
+    </nullifyingTraits>
+  </ThoughtDef>
+  
+<!-- Disapprove -->
+
+  <PreceptDef>
+    <defName>TM_Mages_Disapprove</defName>
+    <issue>TM_MageOpinion</issue>
+    <label>disapprove of magic</label>
+    <description>Reliance on an unknown and unpredictable source of power should be avoided. Science and technology are the future and their benefits can be enjoyed by all and contributed to by everyone. The colony should limit the number of free mages to 10% or less and only the most trusted of residents, and the number of spells should be limited to 5 a day. Mages should be made slaves to ensure they know their rightful place. Abiding by these rules will allow our colony to prosper and make everyone happier.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>92</displayOrderInIssue>
+    <displayOrderInImpact>292</displayOrderInImpact>
+	<requiredMemes>
+      <li>TM_Transcendent</li>
+    </requiredMemes>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>TM_MagicUse_Disapprove_Mood</thought>
+		<description>governed use of magic</description>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>TM_MagesInColony_Disapprove_Mood</thought>
+		<description>governed existence of mages</description>
+      </li>
+	  <li Class="PreceptComp_SituationalThought">
+        <thought>TM_IsMage_Disapprove_Social</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+  
+	<!-- Disapprove Thoughts -->
+  
+  <ThoughtDef>
+    <defName>TM_MagicUse_Disapprove_Mood</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>TorannMagic.Ideology.ThoughtWorker_Precept_MagicUse_Know_Mood_Disapprove</workerClass>
+    <stages>
+	  <li>
+        <label>magic use restricted</label>
+        <description>We're successfully limiting the use of magic.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+	  <li>
+        <label>too much magic</label>
+        <description>Too much magic is being used, this is not good for the colony.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+	  <li>
+        <label>excessive magic use</label>
+        <description>Way too much magic is being used!</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+      <li>
+        <label>magic dominance</label>
+        <description>Magic is utterly dominating the environment; our ideoligion is a sham.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+	<nullifyingTraits>
+		  <li>Technomancer</li>
+		  <li>ChaosMage</li>
+    </nullifyingTraits>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>TM_MagesInColony_Disapprove_Mood</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>TorannMagic.Ideology.ThoughtWorker_Precept_MagesInColony_Mood_Disapprove</workerClass>
+    <stages>
+	  <li>
+        <label>restricted mages</label>
+        <description>A tight reign is being kept on how many free mages are allowed in our colony.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+      <li>
+        <label>too many mages</label>
+        <description>There are too many free mages in the colony, this needs to be controlled quickly - make them slaves!</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+	  <li>
+        <label>excessive mages</label>
+        <description>The number of mages in the colony is excessive and out of control; we should immediately enslave all mages to restore good order and discipline.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+	  <li>
+        <label>rampant mage count</label>
+        <description>We've clearly failed at restricting the number of free mages in the colony.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+	  <li>
+        <label>mage majority</label>
+        <description>There are now more free mages than not; what are we even trying to accomplish?</description>
+        <baseMoodEffect>-12</baseMoodEffect>
+      </li>
+    </stages>
+	<nullifyingTraits>
+	  <li>InnerFire</li>
+	  <li>HeartOfFrost</li>
+	  <li>Arcanist</li>
+	  <li>StormBorn</li>
+	  <li>Summoner</li>
+	  <li>Druid</li>
+	  <li>Necromancer</li>
+	  <li>Priest</li>
+	  <li>Lich</li>
+	  <li>Succubus</li>
+	  <li>Warlock</li>
+	  <li>Geomancer</li>
+	  <li>Technomancer</li>
+	  <li>Enchanter</li>		  
+	  <li>BloodMage</li>
+	  <li>Chronomancer</li>
+	  <li>TM_Wanderer</li>
+	  <li>ChaosMage</li>
+	  <li>TM_TheShadow</li>
+	  <li>TM_Brightmage</li>
+	  <li>TM_Shaman</li>
+    </nullifyingTraits>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>TM_IsMage_Disapprove_Social</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>TorannMagic.Ideology.ThoughtWorker_Precept_IsMage_Social_Disapprove</workerClass>
+    <stages>
+      <li>
+        <label>mage</label>
+        <baseOpinionOffset>-25</baseOpinionOffset>
+      </li>
+    </stages>
+    <nullifyingTraits>
+	  <li>InnerFire</li>
+	  <li>HeartOfFrost</li>
+	  <li>Arcanist</li>
+	  <li>StormBorn</li>
+	  <li>Summoner</li>
+	  <li>Druid</li>
+	  <li>Necromancer</li>
+	  <li>Priest</li>
+	  <li>Lich</li>
+	  <li>Succubus</li>
+	  <li>Warlock</li>
+	  <li>Geomancer</li>
+	  <li>Technomancer</li>
+	  <li>Enchanter</li>		  
+	  <li>BloodMage</li>
+	  <li>Chronomancer</li>
+	  <li>TM_Wanderer</li>
+	  <li>ChaosMage</li>
+	  <li>TM_TheShadow</li>
+	  <li>TM_Brightmage</li>
+	  <li>TM_Shaman</li>
+    </nullifyingTraits>
+  </ThoughtDef>
+
+<!-- Neutral -->
+
+<!--   <PreceptDef>
+    <defName>TM_Mages_Neutral</defName>
+    <issue>TM_MageOpinion</issue>
+    <label>magic neutral</label>
+    <description>Magic is neither good nor evil, only a tool used by mages. Mages must use their abilities wisely, and are held accountable for their actions.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>93</displayOrderInIssue>
+    <displayOrderInImpact>293</displayOrderInImpact>
+    <comps>
+    </comps>
+  </PreceptDef> -->
+  
+<!-- Approve -->
+  
+  <PreceptDef>
+    <defName>TM_Mages_Approve</defName>
+    <issue>TM_MageOpinion</issue>
+    <label>approve of magic</label>
+    <description>Magic is a powerful and useful resource, we would be insane to discard its potential. Mages allow us to tap into this resource and can improve our quality of life. Because of their value to our colony, mages should be treated with respect similar to a noble. We should focus our efforts and increase our knowledge of this mysterious power.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>94</displayOrderInIssue>
+    <displayOrderInImpact>294</displayOrderInImpact>
+	<requiredMemes>
+      <li>TM_Transcendent</li>
+    </requiredMemes>
+    <comps>
+	  <li Class="PreceptComp_UnwillingToDo">
+        <eventDef>TM_SeverMagicEvent</eventDef>
+        <nullifyingTraits>
+          <li>Bloodlust</li>
+          <li>Psychopath</li>
+        </nullifyingTraits>
+      </li>
+	  <li Class="PreceptComp_SituationalThought">
+        <thought>TM_MagicUse_Know_Approve_Mood</thought>
+		<description>magic use</description>
+      </li>
+	  <li Class="PreceptComp_SituationalThought">
+        <thought>TM_MagicUse_Approve_Mood</thought>
+		<description>magic use</description>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>TM_MagesInColony_Approve_Mood</thought>
+		<description>mages in colony</description>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>TM_IsMage_Approve_Social</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+  
+  <!-- Approve Thoughts -->
+  
+  <ThoughtDef>
+    <defName>TM_MagicUse_Know_Approve_Mood</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>TorannMagic.Ideology.ThoughtWorker_Precept_MagicUse_Know_Mood_Approve</workerClass>
+    <stages>
+	  <li>
+        <label>magic absence</label>
+        <description>I haven't seen any magic recently; are my hopes misplaced?</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+	  <li>
+        <label>magic use</label>
+        <description>I saw some magic and it was amazing!</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+	  <li>
+        <label>magic abundance</label>
+        <description>I'm surrounded by powerful magic - our colony can surely withstand any challenge.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>TM_MagicUse_Approve_Mood</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>TorannMagic.Ideology.ThoughtWorker_Precept_MagicUse_Mood_Approve</workerClass>
+    <stages>
+	  <li>
+        <label>magic deprevation</label>
+        <description>I haven't used any magic recently; I feel out of touch with my power.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+	  <li>
+        <label>magic use</label>
+        <description>I used magic and it felt great.</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+	  <li>
+        <label>magic rush</label>
+        <description>magical energy is rushing through me, I feel like I could do anything!</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>TM_MagesInColony_Approve_Mood</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>TorannMagic.Ideology.ThoughtWorker_Precept_MagesInColony_Mood_Approve</workerClass>
+    <stages>
+	  <li>
+        <label>no mages</label>
+        <description>How can we rely on magic if we don't have a mage in the colony?</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+      <li>
+        <label>mages present</label>
+        <description>We have several mages in the colony who will guide us in the ways of magic.</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+	  <li>
+        <label>mages collective</label>
+        <description>The number of mages in the colony enriches many aspects of life.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+	  <li>
+        <label>abundant mages</label>
+        <description>Our colony is blessed with a large number of mages, our success is assured!</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+	  <li>
+        <label>mage dominance</label>
+        <description>The number of mages clearly demonstrates the superiority of our colony.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>TM_IsMage_Approve_Social</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>TorannMagic.Ideology.ThoughtWorker_Precept_IsMage_Social_Approve</workerClass>
+    <stages>
+      <li>
+        <label>mage</label>
+        <baseOpinionOffset>15</baseOpinionOffset>
+      </li>
+	  <li>
+        <label>mage kinship</label>
+        <baseOpinionOffset>5</baseOpinionOffset>
+      </li>
+	  <li>
+        <label>non-mage</label>
+        <baseOpinionOffset>-10</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+<!-- Venerated -->
+  
+  <PreceptDef>
+    <defName>TM_Mages_Venerated</defName>
+    <issue>TM_MageOpinion</issue>
+    <label>venerate magic</label>
+    <description>Magic is wonderous, mystical, powerful and infinite. It is capable of performing mundane tasks or obliterating our enemies in the blink of an eye. It is a source of both creation and destruction and worthy of reverence. Those who can tap into this power are blessed - touched by divinity - and are to be exalted above all others. Killing an enemy mage is abhorrent and should only be done as a last resort. Magic reveals the path to our salvation! Its use upholds our cause, and we must resolve ourselves to spread the blessing of magic to all.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>95</displayOrderInIssue>
+    <displayOrderInImpact>295</displayOrderInImpact>
+	<requiredMemes>
+      <li>TM_Transcendent</li>
+    </requiredMemes>
+    <comps>
+	  <li Class="PreceptComp_UnwillingToDo">
+        <eventDef>TM_SeverMagicEvent</eventDef>
+        <nullifyingTraits>
+          <li>Bloodlust</li>
+          <li>Psychopath</li>
+        </nullifyingTraits>
+      </li>
+	  <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>TM_KilledMage</eventDef>
+        <thought>TM_KilledMage_Venerated_Social</thought>
+      </li>
+	  <li Class="TorannMagic.Ideology.PreceptComp_SelfTookMemoryThought_KilledMage">
+        <eventDef>TM_KilledMage</eventDef>
+        <thought>TM_KilledMage_Venerated_Mood</thought>
+        <description>I killed a mage</description>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>TM_KilledMage</eventDef>
+        <thought>TM_KilledMage_Know_Venerated_Mood</thought>
+		<description>We killed a mage</description>
+      </li>
+	  <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>TM_UsedMagic</eventDef>
+        <thought>TM_MagicUse_Venerated_Social</thought>
+      </li>
+	  <li Class="PreceptComp_SituationalThought">
+        <!-- <eventDef>TM_UsedMagic</eventDef> -->
+        <thought>TM_MagicUse_Know_Venerated_Mood</thought>
+		<description>used magic</description>
+      </li>
+	  <li Class="PreceptComp_SituationalThought">
+        <!-- <eventDef>TM_UsedMagic</eventDef> -->
+        <thought>TM_MagicUse_Venerated_Mood</thought>
+		<description>magic use</description>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>TM_MagesInColony_Venerated_Mood</thought>
+        <description>mage in colony</description>
+      </li>
+	  <li Class="PreceptComp_SituationalThought">
+        <thought>TM_MagesPrisoner_Venerated_Mood</thought>
+        <description>mage prisoner or slave</description>
+      </li>
+	  <li Class="PreceptComp_SituationalThought">
+        <thought>TM_MagesSlave_Venerated_Mood</thought>
+        <description>mage prisoner or slave</description>
+      </li>
+	  <li Class="PreceptComp_SituationalThought">
+        <thought>TM_IsMage_Venerated_Social</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <!-- Venerated Thoughts -->
+
+  <ThoughtDef>
+    <defName>TM_KilledMage_Venerated_Social</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>5</durationDays>
+    <stackLimit>1</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <nullifyingTraits>
+		  <li>Psychopath</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>mage killer</label>
+        <baseOpinionOffset>-40</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>TM_KilledMage_Venerated_Mood</defName>
+	<thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>3</durationDays>
+	<stackLimit>3</stackLimit>
+    <stages>
+      <li>
+        <label>mage killer</label>
+        <description>I killed a being blessed with magic... how can I live with myself?</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+	  <li>
+        <label>mage slayer</label>
+        <description>I was forced to slay another mage and it weighs heavily on my conscience.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+    <nullifyingTraits>
+		  <li>Psychopath</li>
+    </nullifyingTraits>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>TM_KilledMage_Know_Venerated_Mood</defName>
+	<thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>3</durationDays>
+	<stackLimit>3</stackLimit>
+    <stages>
+      <li>
+        <label>killed a mage</label>
+        <description>We killed a mage; this goes against our prime ideoligion!</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+    <nullifyingTraits>
+		  <li>Psychopath</li>
+    </nullifyingTraits>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>TM_MagicUse_Venerated_Social</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>1</durationDays>
+    <stackLimit>1</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <nullifyingTraits>
+	  <li>InnerFire</li>
+	  <li>HeartOfFrost</li>
+	  <li>Arcanist</li>
+	  <li>StormBorn</li>
+	  <li>Summoner</li>
+	  <li>Druid</li>
+	  <li>Necromancer</li>
+	  <li>Priest</li>
+	  <li>Lich</li>
+	  <li>Succubus</li>
+	  <li>Warlock</li>
+	  <li>Geomancer</li>
+	  <li>Technomancer</li>
+	  <li>Enchanter</li>		  
+	  <li>BloodMage</li>
+	  <li>Chronomancer</li>
+	  <li>TM_Wanderer</li>
+	  <li>ChaosMage</li>
+	  <li>TM_TheShadow</li>
+	  <li>TM_Brightmage</li>
+	  <li>TM_Shaman</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>used magic</label>
+        <baseOpinionOffset>25</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>TM_MagicUse_Know_Venerated_Mood</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>TorannMagic.Ideology.ThoughtWorker_Precept_MagicUse_Know_Mood_Approve</workerClass>
+    <stages>
+	  <li>
+        <label>magic absence</label>
+        <description>I haven't seen any magic recently; its absence leaves me hollow.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+	  <li>
+        <label>magic use</label>
+        <description>I witnessed glorious magic!</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+	  <li>
+        <label>magic abundance</label>
+        <description>I'm in awe and terror by the power of magic!</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+	<nullifyingTraits>
+    </nullifyingTraits>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>TM_MagicUse_Venerated_Mood</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>TorannMagic.Ideology.ThoughtWorker_Precept_MagicUse_Mood_Approve</workerClass>
+    <stages>
+	  <li>
+        <label>magic deprevation</label>
+        <description>I haven't used any magic recently; I feel out of touch with my power.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+	  <li>
+        <label>magic use</label>
+        <description>I used magic; it's a core part of my being and reaffirms confidence in my superiority.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+	  <li>
+        <label>magic rush</label>
+        <description>magical energy is rushing through me, I feel like I could do anything!</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>TM_MagesInColony_Venerated_Mood</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>TorannMagic.Ideology.ThoughtWorker_Precept_MagesInColony_Mood_Approve</workerClass>
+    <stages>
+	  <li>
+        <label>no mages</label>
+        <description>Has magic forsaken us!?</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+      <li>
+        <label>mages present</label>
+        <description>Mages in our colony will guide us in our chosen path.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+	  <li>
+        <label>mages collective</label>
+        <description>Like a tapestry, the number of mages in the colony has begun to reveal a grand design.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+	  <li>
+        <label>abundant mages</label>
+        <description>Our colony is surely chosen for greatness while graced with this many mages; their combined power is indomitable.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+	  <li>
+        <label>mage dominance</label>
+        <description>The success of our colony is assured through the power of magic.</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>TM_MagesPrisoner_Venerated_Mood</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>TorannMagic.Ideology.ThoughtWorker_Precept_MagesPrisoner_Mood_Venerated</workerClass>
+    <stages>
+	  <li>
+        <label>mage prisoner</label>
+        <description>We've emprisoned a mage, are we sure our actions are justified?</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>TM_MagesSlave_Venerated_Mood</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>TorannMagic.Ideology.ThoughtWorker_Precept_MagesSlave_Mood_Venerated</workerClass>
+    <stages>
+      <li>
+        <label>mage slave</label>
+        <description>We've enslaved a mage, what a despicable act.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>TM_IsMage_Venerated_Social</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>TorannMagic.Ideology.ThoughtWorker_Precept_IsMage_Social_Approve</workerClass>
+    <stages>
+      <li>
+        <label>mage</label>
+        <baseOpinionOffset>35</baseOpinionOffset>
+      </li>
+	  <li>
+        <label>mage kinship</label>
+        <baseOpinionOffset>5</baseOpinionOffset>
+      </li>
+	  <li>
+        <label>non-mage</label>
+        <baseOpinionOffset>-25</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

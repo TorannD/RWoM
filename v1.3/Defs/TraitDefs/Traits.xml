@@ -762,7 +762,7 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		<degreeDatas>	
 		  <li>
 			<label>Lich</label>
-			<description>[PAWN_nameDef] has transformed into a lich, forsaking life in exchange for an power and an immortal existence, choosing to employ undead for menial tasks.</description>
+			<description>[PAWN_nameDef] has transformed into a lich, forsaking life in exchange for an power and an immortal existence. [PAWN_pronoun] disdains menial taks, choosing to employ undead for trivial matters.</description>
 			<degree>0</degree>
 			<statOffsets>
 				<MoveSpeed>-2</MoveSpeed>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+
+  <!--            SEVER MAGIC             -->
+  <ThoughtDef>
+    <defName>TM_Botched_SeverMagicTD</defName>
+    <thoughtClass>Thought_AttendedRitual</thoughtClass>
+    <durationDays>6</durationDays>
+    <stackLimit>3</stackLimit>
+    <stages>
+      <li>
+        <label>botched severence ritual</label>
+        <description>The severence ritual was botched and gave the mage a chance to retaliate.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>TM_Lethal_SeverMagicTD</defName>
+    <thoughtClass>Thought_AttendedRitual</thoughtClass>
+    <durationDays>6</durationDays>
+    <stackLimit>3</stackLimit>
+    <stages>
+      <li>
+        <label>lethal severence ritual</label>
+        <description>That ritual lacked order and the technique was terrible, killing the mage.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>TM_Success_SeverMagicTD</defName>
+    <thoughtClass>Thought_AttendedRitual</thoughtClass>
+    <durationDays>6</durationDays>
+    <stackLimit>3</stackLimit>
+    <stages>
+      <li>
+        <label>successful severence ritual</label>
+        <description>The severence ritual was a success, freeing us from the oppression of another mage.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>TM_Flawless_SeverMagicTD</defName>
+    <thoughtClass>Thought_AttendedRitual</thoughtClass>
+    <durationDays>6</durationDays>
+    <stackLimit>3</stackLimit>
+    <stages>
+      <li>
+        <label>flawless severence ritual</label>
+        <description>The chorus of voices, the intensity of the voidbringer, the look of inevitability on the face of the mage - nothing can stop our crusade!</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  
+  <HediffDef ParentName="LongBuffBase">
+    <defName>TM_MagicSeverenceHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+    <label>Magic Severence</label>
+	<description>This pawn has recently lost their connection to magic and will suffer from a loss of direction and purpose until they can fill the void with another purpose.</description>
+	<defaultLabelColor>(0.4,0.4,0.4)</defaultLabelColor>
+    <scenarioCanAdd>false</scenarioCanAdd>
+	<maxSeverity>1.0</maxSeverity>
+	<isBad>false</isBad>
+	<comps>
+	  <li>
+        <compClass>TorannMagic.Ideology.HediffComp_MagicSeverence</compClass>
+      </li>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-.3</severityPerDay>
+      </li>	  
+    </comps>
+    <stages>
+      <li>
+	    <label></label>
+		<minSeverity>.001</minSeverity>
+        <capMods>
+		  <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.1</offset>
+          </li>
+		  <li>
+            <capacity>Talking</capacity>
+            <offset>-0.25</offset>
+          </li>
+		  <li>
+            <capacity>Metabolism</capacity>
+            <offset>-0.2</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  <ThoughtDef>
+    <defName>TM_MagicSeverenceTD</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>TM_MagicSeverenceHD</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>Severed from magic</label>
+        <description>I've lost something that once defined who I was; I feel a mix of dispair and emptiness.</description>
+        <baseMoodEffect>-24</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

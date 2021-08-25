@@ -28,7 +28,7 @@
         <uiIconPath>UI/raiseundead</uiIconPath>
         <description>Raise undead from corpses. Only works on biological creatures that were once living. 
 
-Undead will remain under the Necromancers control indefinitely. Each undead human will incur a mana upkeep cost of 30% of base mana regeneration. Undead animals incur an upkeep cost of 15% for every 100 combat power.
+Undead will remain under the Necromancers control indefinitely. The necromancer will incur a mana upkeep cost of 30% of base mana regeneration for each undead, humanlike pawn. Undead animals incur an upkeep cost of 15% for every 100 combat power.
 
 There is no limit to the number of undead a necromancer may control, however, when the necromancer no longer has mana to maintain undead, they will automatically be consumed until the number of active undead is reduced to a manageable amount.</description>
         <manaCost>0.45</manaCost>
@@ -759,7 +759,7 @@ Cast time: .5s</description>
 Benefits: 
 Maximum Mana: +50
 Mana Regeneration: +50%
-Gains unnatural immunities to diseases, resistances to damage, health regeneration, and no longer needs food or rest.
+Gains unnatural immunities to diseases, resistances to damage, health regeneration, and is sustained by mana (no longer required to sleep or eat)
 Gains ability: Flight
 Gains ability: Death Bolt
 

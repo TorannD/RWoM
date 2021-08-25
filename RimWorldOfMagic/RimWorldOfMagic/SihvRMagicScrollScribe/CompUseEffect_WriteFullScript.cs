@@ -12,10 +12,11 @@ namespace TorannMagic.SihvRMagicScrollScribe
             IntVec3 currentPos = parent.PositionHeld;
             Map map = parent.Map;
             CompAbilityUserMagic comp = user.TryGetComp<CompAbilityUserMagic>();
+
             if (parent.def != null && comp != null && comp.customClass != null)
             {
                 tempPod = comp.customClass.fullScript;
-                this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);                
+                this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
             }
             else if (parent.def != null && user.story.traits.HasTrait(TorannMagicDefOf.InnerFire))
             {
@@ -116,17 +117,33 @@ namespace TorannMagic.SihvRMagicScrollScribe
             {
                 tempPod = TM_Data.MageBookList().RandomElement();
                 this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
-            }            
+            }
             else
             {
                 Messages.Message("NotGiftedPawn".Translate(
                         user.LabelShort
                     ), MessageTypeDefOf.RejectInput);
             }
-            if (tempPod != null)
+            if (user.IsSlave)
             {
+                if (Rand.Chance(.25f))
+                {
+                    Messages.Message("TM_SlaveScribeFail".Translate(
+                        tempPod.label,
+                        user.LabelShort
+                    ), MessageTypeDefOf.RejectInput);
+                    tempPod = null;
+                }
+                else
+                {
+                    tempPod = TM_Data.MageBookList().RandomElement();
+                }
+            }
+            if (tempPod != null)
+            {                
                 SihvSpawnThings.SpawnThingDefOfCountAt(tempPod, 1, new TargetInfo(currentPos, map));
             }
+
         }
     }
 }

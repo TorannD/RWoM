@@ -160,6 +160,21 @@ namespace TorannMagic
             }
         }
 
+        public static void TryCopyIdeo(Pawn sourcePawn, Pawn targetPawn)
+        {
+            if (ModsConfig.IdeologyActive && sourcePawn?.ideo != null && targetPawn?.ideo != null)
+            {
+                if (targetPawn.Ideo != sourcePawn.Ideo)
+                {
+                    targetPawn.ideo.SetIdeo(sourcePawn.Ideo);
+                }
+                if(targetPawn.ideo.Certainty != sourcePawn.ideo.Certainty)
+                {
+                    Traverse.Create(root: targetPawn.ideo).Field(name: "certainty").SetValue(sourcePawn.ideo.Certainty);
+                }
+            }
+        }
+
         public static void DoAction_TechnoWeaponCopy(Pawn caster, Thing thing, ThingDef td = null, QualityCategory _qc = QualityCategory.Normal)
         {
             CompAbilityUserMagic comp = caster.TryGetComp<CompAbilityUserMagic>();
@@ -1982,12 +1997,16 @@ namespace TorannMagic
             }
         }
 
-        public static void CreateMagicDeathEffect(Pawn pawn, IntVec3 pos)
+        public static void CreateMagicDeathEffect(Pawn pawn, IntVec3 pos, bool canCauseDeath = true, bool friendlyFire = false)
         {
             ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
             List<IntVec3> targets = new List<IntVec3>();
             List<Pawn> pawns = new List<Pawn>();
             int rnd = Rand.RangeInclusive(0, 6);
+            if(friendlyFire)
+            {
+                rnd = Rand.RangeInclusive(0, 4);
+            }
             switch (rnd)
             {
                 case 0: //Death explosion
@@ -2024,7 +2043,7 @@ namespace TorannMagic
                         }
                         if (victim != null)
                         {
-                            if (victim.Faction != faction || victim == pawn)
+                            if (friendlyFire || (victim.Faction != faction || victim == pawn))
                             {
                                 TM_Action.DamageEntities(victim, null, Rand.Range(12, 20), 1f, TMDamageDefOf.DamageDefOf.TM_Arcane, pawn);
                             }
@@ -2043,7 +2062,7 @@ namespace TorannMagic
                         {
                             if (pawns[i] != null && pawns[i].mindState != null && pawns[i].mindState.mentalStateHandler != null)
                             {
-                                if (pawns[i].Faction != pawn.Faction)
+                                if (pawns[i].Faction != pawn.Faction || friendlyFire)
                                 {
                                     if (Rand.Chance(TM_Calc.GetSpellSuccessChance(pawn, pawns[i], true)))
                                     {
@@ -2059,6 +2078,10 @@ namespace TorannMagic
                     break;
                 case 2: //Summon 4x firestorm skyfallers
                     Pawn targetF = TM_Calc.FindNearbyEnemy(pos, pawn.Map, pawn.Faction, 60, 10);
+                    if(friendlyFire)
+                    {
+                        targetF = pawn;
+                    }
                     if (targetF != null)
                     {
                         for (int i = 0; i < 4; i++)
@@ -2083,6 +2106,10 @@ namespace TorannMagic
                     break;
                 case 3: //summon 4x blizzard skyfallers
                     Pawn targetI = TM_Calc.FindNearbyEnemy(pos, pawn.Map, pawn.Faction, 70, 10);
+                    if(friendlyFire)
+                    {
+                        targetI = pawn;
+                    }
                     if (targetI != null)
                     {
                         for (int i = 0; i < 4; i++)
@@ -2107,7 +2134,7 @@ namespace TorannMagic
                     break;
                 case 4: //stun pulse
                     GenExplosion.DoExplosion(pos, pawn.Map, 6, DamageDefOf.Stun, pawn, 0, 0);
-                    pawns = TM_Calc.FindAllPawnsAround(pawn.Map, pos, 4f, pawn.Faction, false);
+                    pawns = TM_Calc.FindAllPawnsAround(pawn.Map, pos, 4f, pawn.Faction, friendlyFire);
                     if (pawns != null && pawns.Count > 0)
                     {
                         for (int i = 0; i < pawns.Count; i++)
@@ -2119,7 +2146,7 @@ namespace TorannMagic
                 case 5: //mana mine trap
                     AbilityUser.SpawnThings tempPod = new SpawnThings();
                     tempPod.def = ThingDef.Named("TM_ManaMine_III");
-                    tempPod.spawnCount = 1;
+                    tempPod.spawnCount = 1;                    
                     Projectile_SummonExplosive.SingleSpawnLoop(tempPod, pos, pawn.Map, pawn, 15000);
                     break;
                 case 6:  //Healing wave
@@ -2142,7 +2169,7 @@ namespace TorannMagic
                     }
                     break;
             }
-            if (settingsRef.deathRetaliationIsLethal && rnd < 6)
+            if (canCauseDeath && settingsRef.deathRetaliationIsLethal && rnd < 6)
             {
                 KillPawnByMindBurn(pawn);
             }

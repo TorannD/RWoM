@@ -260,7 +260,7 @@ Requires 40 mana to maintain and reduces mana regeneration by 30%; cast again to
         <uiIconPath>Spells/FrostRay</uiIconPath>
 		<description>Rapidly extending ray of super cooled particles that damages and freezes targets.
 		
-Recharge time: 15s
+Recharge time: 12s
 Range: 28
 Shots: 1</description>
         <manaCost>0.20</manaCost>
@@ -277,7 +277,7 @@ Shots: 1</description>
             <defaultProjectile>Laser_FrostRay</defaultProjectile>
             <abilityDef>TM_FrostRay</abilityDef>
             <warmupTime>1.5</warmupTime>
-            <SecondsToRecharge>15.0</SecondsToRecharge>
+            <SecondsToRecharge>12.0</SecondsToRecharge>
             <range>28</range>
             <burstShotCount>1</burstShotCount>
             <ticksBetweenBurstShots>3</ticksBetweenBurstShots>
@@ -301,7 +301,7 @@ Shots: 1</description>
         <uiIconPath>Spells/FrostRay</uiIconPath>
 		<description>Rapidly extending ray of super cooled particles that damages and freezes targets.
 		
-Recharge time: 12s
+Recharge time: 10s
 Range: 30
 Shots: 1</description>
         <manaCost>0.20</manaCost>
@@ -317,7 +317,7 @@ Shots: 1</description>
             <defaultProjectile>Laser_FrostRay</defaultProjectile>
             <abilityDef>TM_FrostRay_I</abilityDef>
             <warmupTime>1.5</warmupTime>
-            <SecondsToRecharge>12.0</SecondsToRecharge>
+            <SecondsToRecharge>10.0</SecondsToRecharge>
             <range>30</range>
             <burstShotCount>1</burstShotCount>
             <ticksBetweenBurstShots>3</ticksBetweenBurstShots>
@@ -341,7 +341,7 @@ Shots: 1</description>
         <uiIconPath>Spells/FrostRay</uiIconPath>
 		<description>Rapidly extending ray of super cooled particles that damages and freezes targets.
 		
-Recharge time: 10s
+Recharge time: 8s
 Range: 32
 Shots: 2</description>
         <manaCost>0.29</manaCost>
@@ -357,7 +357,7 @@ Shots: 2</description>
             <defaultProjectile>Laser_FrostRay</defaultProjectile>
             <abilityDef>TM_FrostRay_II</abilityDef>
             <warmupTime>1.8</warmupTime>
-            <SecondsToRecharge>10.0</SecondsToRecharge>
+            <SecondsToRecharge>8.0</SecondsToRecharge>
             <range>32</range>
             <burstShotCount>2</burstShotCount>
             <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
@@ -381,7 +381,7 @@ Shots: 2</description>
         <uiIconPath>Spells/FrostRay</uiIconPath>
 		<description>Rapidly extending ray of super cooled particles that damages and freezes targets.
 		
-Recharge time: 10s
+Recharge time: 8s
 Range: 34
 Shots: 3</description>
         <manaCost>0.34</manaCost>
@@ -397,7 +397,7 @@ Shots: 3</description>
             <defaultProjectile>Laser_FrostRay</defaultProjectile>
             <abilityDef>TM_FrostRay_III</abilityDef>
             <warmupTime>2.0</warmupTime>
-            <SecondsToRecharge>10.0</SecondsToRecharge>
+            <SecondsToRecharge>8.0</SecondsToRecharge>
             <range>34</range>
             <burstShotCount>3</burstShotCount>
             <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
@@ -456,7 +456,7 @@ Shots: 3</description>
             <defaultProjectile>Projectile_Snowball</defaultProjectile>
             <abilityDef>TM_Snowball</abilityDef>
             <warmupTime>1.5</warmupTime>
-            <SecondsToRecharge>20.0</SecondsToRecharge>
+            <SecondsToRecharge>15.0</SecondsToRecharge>
             <range>55</range>
             <burstShotCount>1</burstShotCount>
 			<forcedMissRadius>12.4</forcedMissRadius>
@@ -514,7 +514,7 @@ Shots: 3</description>
         <defaultProjectile>Projectile_Icebolt</defaultProjectile>
 		<abilityDef>TM_Icebolt</abilityDef>
         <warmupTime>1</warmupTime>
-        <SecondsToRecharge>12</SecondsToRecharge>
+        <SecondsToRecharge>8</SecondsToRecharge>
         <range>42</range>
         <soundCast>Shot_ChargeRifle</soundCast>
         <muzzleFlashScale>20</muzzleFlashScale>
@@ -627,7 +627,7 @@ Shots: 3</description>
         <label>Blizzard</label>
         <uiIconPath>UI/blizzard</uiIconPath>
         <description>Calls forth a deadly blizzard to bury your enemies in ice.</description>
-        <manaCost>0.70</manaCost>
+        <manaCost>0.60</manaCost>
 		<efficiencyReductionPercent>.05</efficiencyReductionPercent>
 		<learnItem>SpellOf_Blizzard</learnItem>
 		<learnChance>.08</learnChance>
@@ -641,8 +641,8 @@ Shots: 3</description>
             <defaultProjectile>Projectile_Blizzard</defaultProjectile>
             <abilityDef>TM_Blizzard</abilityDef>
             <warmupTime>2.0</warmupTime>
-            <SecondsToRecharge>120.0</SecondsToRecharge>
-            <range>80</range>
+            <SecondsToRecharge>60.0</SecondsToRecharge>
+            <range>100</range>
             <forcedMissRadius>50</forcedMissRadius>
             <burstShotCount>1</burstShotCount>
             <ticksBetweenBurstShots>15</ticksBetweenBurstShots>

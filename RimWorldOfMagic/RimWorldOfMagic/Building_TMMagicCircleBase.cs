@@ -444,7 +444,7 @@ namespace TorannMagic
 
                 if (this.IsPending)
                 {
-                    if (Find.TickManager.TicksGame % 81 == 0)
+                    if (Find.TickManager.TicksGame % 81 == 0 && !this.Map.gameConditionManager.ConditionIsActive(TorannMagicDefOf.TM_ManaStorm))
                     {
                         if(this.magicRecipeDef == null && this.ActiveJob != null)
                         {

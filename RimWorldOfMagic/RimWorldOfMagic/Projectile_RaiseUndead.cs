@@ -91,7 +91,14 @@ namespace TorannMagic
 
                                     if (!wasVampire)
                                     {
-                                        undeadPawn.SetFaction(pawn.Faction);
+                                        if (ModsConfig.IdeologyActive)
+                                        {
+                                            undeadPawn.guest.SetGuestStatus(pawn.Faction, GuestStatus.Slave);
+                                        }
+                                        if (undeadPawn.Faction != pawn.Faction)
+                                        {
+                                            undeadPawn.SetFaction(pawn.Faction);
+                                        }
                                         if (undeadPawn.Dead)
                                         {
                                             ResurrectionUtility.Resurrect(undeadPawn);
@@ -166,6 +173,7 @@ namespace TorannMagic
                                             }
                                             RemoveHediffsAddictionsAndPermanentInjuries(undeadPawn);
                                             RemovePsylinkAbilities(undeadPawn);
+                                            TM_Action.TryCopyIdeo(pawn, undeadPawn);
                                             HealthUtility.AdjustSeverity(undeadPawn, TorannMagicDefOf.TM_UndeadHD, -4f);
                                             HealthUtility.AdjustSeverity(undeadPawn, TorannMagicDefOf.TM_UndeadHD, .5f + ver.level);
                                             undeadPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_UndeadHD).TryGetComp<HediffComp_Undead>().linkedPawn = pawn;
@@ -186,6 +194,7 @@ namespace TorannMagic
                                                 Hediff hd = undeadPawn.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("DeathAcidifier"));
                                                 undeadPawn.health.RemoveHediff(hd);
                                             }
+                                            
                                             //Color undeadColor = new Color(.2f, .4f, 0);
                                             //undeadPawn.story.hairColor = undeadColor;
                                             //CompAbilityUserMagic undeadComp = undeadPawn.GetComp<CompAbilityUserMagic>();

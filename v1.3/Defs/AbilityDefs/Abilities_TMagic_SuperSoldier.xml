@@ -462,6 +462,7 @@ Weapon specializations apply automatically when a Super Soldier equips a weapon 
     </graphicData>
     <soundInteract>Interact_Autopistol</soundInteract>
 	<ignoreConfigErrors>true</ignoreConfigErrors>
+	<relicChance>0</relicChance>
     <statBases>
 	  <WorkToMake>400</WorkToMake>
       <Mass>1</Mass>
@@ -578,6 +579,7 @@ Weapon specializations apply automatically when a Super Soldier equips a weapon 
     </graphicData>
     <soundInteract>Interact_Rifle</soundInteract>
 	<ignoreConfigErrors>true</ignoreConfigErrors>
+	<relicChance>0</relicChance>
     <statBases>
 	  <WorkToMake>400</WorkToMake>
       <Mass>1</Mass>
@@ -694,6 +696,7 @@ Weapon specializations apply automatically when a Super Soldier equips a weapon 
     </graphicData>
     <soundInteract>Interact_Shotgun</soundInteract>
 	<ignoreConfigErrors>true</ignoreConfigErrors>
+	<relicChance>0</relicChance>
     <statBases>
 	  <WorkToMake>400</WorkToMake>
       <Mass>1</Mass>

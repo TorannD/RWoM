@@ -1,0 +1,54 @@
+﻿using RimWorld;
+using Verse;
+using System.Collections.Generic;
+
+namespace TorannMagic.Ideology
+{
+    public class TM_RitualRoleVoidseeker : RitualRole
+    {
+        public override bool AppliesToPawn(Pawn p, out string reason, LordJob_Ritual ritual = null, RitualRoleAssignments assignments = null, Precept_Ritual precept = null, bool skipReason = false)
+        {
+            reason = null;
+            if (!p.Faction.IsPlayerSafe())
+            {
+                if (!skipReason)
+                {
+                    reason = "MessageRitualRoleMustBeColonist".Translate(base.Label);
+                }
+                return false;
+            }
+            if (!p.RaceProps.Humanlike)
+            {
+                if (!skipReason)
+                {
+                    reason = "MessageRitualRoleMustBeHumanlike".Translate(base.LabelCap);
+                }
+                return false;
+            }
+            if (p.Ideo.GetRole(p) == null)
+            {
+                if (!skipReason)
+                {
+                    reason = "TM_MessageRitualRoleMustBeVoidseeker".Translate(base.LabelCap);
+                }
+                return false;
+            }
+            if (p.Ideo.GetRole(p).def != TorannMagicDefOf.TM_IdeoRole_VoidSeeker)
+            {
+                if (!skipReason)
+                {
+                    reason = "TM_MessageRitualRoleMustBeVoidseeker".Translate(base.LabelCap);
+                }
+                return false;
+            }
+            //must have exorcist role
+            return true;
+        }
+
+        public override bool AppliesToRole(Precept_Role role, out string reason, Precept_Ritual ritual = null, Pawn p = null, bool skipReason = false)
+        {
+            reason = null;
+            return false;
+        }
+    }
+}

@@ -53,6 +53,10 @@ namespace TorannMagic
         private void Initialize()
         {
             bool spawned = base.Pawn.Spawned;
+            if(this.Pawn.IsSlave)
+            {
+                this.Pawn.guest.SetGuestStatus(null);
+            }
             if (spawned)
             {
                 //FleckMaker.ThrowLightningGlow(base.Pawn.TrueCenter(), base.Pawn.Map, 3f);
@@ -117,13 +121,19 @@ namespace TorannMagic
             }
             bool flag4 = Find.TickManager.TicksGame % 600 == 0 && this.Pawn.def != TorannMagicDefOf.TM_SkeletonR && this.Pawn.def != TorannMagicDefOf.TM_GiantSkeletonR;
             if (flag4)
-            {
+            {                
                 UpdateHediff();
                 necroValid = false;
                 if (base.Pawn != null && !linkedPawn.DestroyedOrNull())
                 {
                     necroValid = true;
-                    lichStrike = 0; 
+                    lichStrike = 0;
+
+                    TM_Action.TryCopyIdeo(linkedPawn, this.Pawn);
+                    if (ModsConfig.IdeologyActive && this.Pawn.guest?.GuestStatus != GuestStatus.Slave)
+                    {                        
+                        this.Pawn.guest.SetGuestStatus(linkedPawn.Faction, GuestStatus.Slave);
+                    }
                 }
                 else
                 {

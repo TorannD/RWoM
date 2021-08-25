@@ -8,6 +8,7 @@ namespace TorannMagic.SihvRMagicScrollScribe
 
         public override void DoEffect(Pawn user)
         {
+
             ThingDef tempPod = null;
             IntVec3 currentPos = parent.PositionHeld;
             Map map = parent.Map;
@@ -111,7 +112,7 @@ namespace TorannMagic.SihvRMagicScrollScribe
             }
             else if (parent.def != null && (user.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted) || user.story.traits.HasTrait(TorannMagicDefOf.TM_Wanderer)))
             {
-                tempPod = ThingDef.Named("BookOfQuestion");
+                tempPod = TorannMagicDefOf.BookOfQuestion;
                 this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
             }
             else
@@ -120,10 +121,26 @@ namespace TorannMagic.SihvRMagicScrollScribe
                         user.LabelShort
                     ), MessageTypeDefOf.RejectInput);
             }
-            if (tempPod != null)
+            if (user.IsSlave)
             {
+                if(Rand.Chance(.25f))
+                {                   
+                    Messages.Message("TM_SlaveScribeFail".Translate(
+                        tempPod.label,
+                        user.LabelShort
+                    ), MessageTypeDefOf.RejectInput);
+                    tempPod = null;
+                }
+                else
+                {
+                    tempPod = TorannMagicDefOf.BookOfQuestion;
+                }
+            }
+            if (tempPod != null)
+            {                    
                 SihvSpawnThings.SpawnThingDefOfCountAt(tempPod, 1, new TargetInfo(currentPos, map));
             }
+
         }
     }
 }

@@ -9,6 +9,7 @@ using Verse;
 using Verse.AI;
 using Verse.Sound;
 using AbilityUserAI;
+using TorannMagic.Ideology;
 
 namespace TorannMagic
 {
@@ -42,6 +43,7 @@ namespace TorannMagic
         public float weaponDamage = 1;
         public float weaponCritChance = 0f;
         public LocalTargetInfo SecondTarget = null;
+        public List<TM_EventRecords> magicUsed = new List<TM_EventRecords>();
 
         private float IF_RayofHope_eff = 0.08f;
         private float IF_Firebolt_eff = 0.10f;
@@ -282,6 +284,28 @@ namespace TorannMagic
         private int previousHexedPawns = 0;
         public int nextEntertainTick = -1;
         public int nextSuccubusLovinTick = -1;
+
+        public List<TM_EventRecords> MagicUsed
+        {
+            get
+            {
+                if (magicUsed == null)
+                {
+                    magicUsed = new List<TM_EventRecords>();
+                    magicUsed.Clear();
+                }
+                return magicUsed;
+            }
+            set
+            {
+                if (magicUsed == null)
+                {
+                    magicUsed = new List<TM_EventRecords>();
+                    magicUsed.Clear();
+                }
+                magicUsed = value;
+            }
+        }
 
         public List<Pawn> StoneskinPawns
         {
@@ -1941,6 +1965,10 @@ namespace TorannMagic
                             {
                                 ResolveWarlockEmpathy();
                             }
+                        }
+                        if (Find.TickManager.TicksGame % 602 == 0)
+                        {
+                            ResolveMagicUseEvents();             
                         }
                         if (Find.TickManager.TicksGame % 2001 == 0)
                         {
@@ -5337,6 +5365,10 @@ namespace TorannMagic
                 adjustedManaCost = adjustedManaCost * 1.2f;
             }
 
+            if(this.Pawn.Map.gameConditionManager.ConditionIsActive(TorannMagicDefOf.TM_ManaStorm))
+            {
+                return Mathf.Max(adjustedManaCost *.5f, 0f);
+            }
             return Mathf.Max(adjustedManaCost, (.5f * magicDef.manaCost));
         }
 
@@ -5623,6 +5655,23 @@ namespace TorannMagic
             else
             {
                 this.ArcaneForging = false;
+            }
+        }
+
+        public void ResolveMagicUseEvents()
+        {
+            List<TM_EventRecords> tmpList = new List<TM_EventRecords>();
+            tmpList.Clear();
+            foreach(TM_EventRecords ev in MagicUsed)
+            {
+                if(Find.TickManager.TicksGame - 60000 > ev.eventTick)
+                {
+                    tmpList.Add(ev);
+                }
+            }
+            foreach(TM_EventRecords rem_ev in tmpList)
+            {
+                MagicUsed.Remove(rem_ev);
             }
         }
 

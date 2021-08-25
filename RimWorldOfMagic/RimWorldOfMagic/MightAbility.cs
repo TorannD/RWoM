@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using Verse;
 using UnityEngine;
+using TorannMagic.Ideology;
 
 namespace TorannMagic
 {
@@ -123,6 +124,10 @@ namespace TorannMagic
             bool flag = this.mightDef != null;
             if (flag)
             {
+                if (this.Pawn.IsColonist)
+                {
+                    Find.HistoryEventsManager.RecordEvent(new HistoryEvent(TorannMagicDefOf.TM_UsedManeuver, this.Pawn.Named(HistoryEventArgsNames.Doer)));
+                }
                 if (mightDef.consumeEnergy)
                 {
                     bool flag3 = this.MightUser.Stamina != null;
@@ -138,6 +143,11 @@ namespace TorannMagic
                         }
 
                         this.MightUser.MightUserXP += (int)((mightDef.staminaCost * 180) * this.MightUser.xpGain * settingsRef.xpMultiplier);
+
+                        TM_EventRecords er = new TM_EventRecords();
+                        er.eventPower = this.mightDef.manaCost;
+                        er.eventTick = Find.TickManager.TicksGame;
+                        this.MightUser.MightUsed.Add(er);                        
 
                     }
                     if (this.mightDef.chiCost != 0)

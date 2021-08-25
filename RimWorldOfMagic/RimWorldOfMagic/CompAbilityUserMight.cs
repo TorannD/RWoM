@@ -10,6 +10,7 @@ using Verse.AI;
 using UnityEngine;
 using System.Text;
 using CompDeflector;
+using TorannMagic.Ideology;
 
 namespace TorannMagic
 {
@@ -39,6 +40,7 @@ namespace TorannMagic
         public float weaponDamage = 1f;
         public float weaponCritChance = 0f;
         public bool shouldDrawPsionicShield = false;
+        public List<TM_EventRecords> mightUsed = new List<TM_EventRecords>();
 
         private float G_Sprint_eff = 0.20f;
         private float G_Grapple_eff = 0.10f;
@@ -146,6 +148,28 @@ namespace TorannMagic
                     this.mightData = new MightData(this);
                 }
                 return this.mightData;
+            }
+        }
+
+        public List<TM_EventRecords> MightUsed
+        {
+            get
+            {
+                if (mightUsed == null)
+                {
+                    mightUsed = new List<TM_EventRecords>();
+                    mightUsed.Clear();
+                }
+                return mightUsed;
+            }
+            set
+            {
+                if (mightUsed == null)
+                {
+                    mightUsed = new List<TM_EventRecords>();
+                    mightUsed.Clear();
+                }
+                mightUsed = value;
             }
         }
 
@@ -1127,6 +1151,10 @@ namespace TorannMagic
                         if(Find.TickManager.TicksGame % 301 == 0) //cache weapon damage for tooltip and damage calculations
                         {
                             this.weaponDamage = TM_Calc.GetSkillDamage(this.Pawn);
+                        }
+                        if (Find.TickManager.TicksGame % 602 == 0)
+                        {
+                            ResolveMightUseEvents();
                         }
                     }
                 }
@@ -3318,6 +3346,23 @@ namespace TorannMagic
         {
             reversalTarget.TakeDamage(reversal_dinfo);
             reversalTarget = null;
+        }
+
+        public void ResolveMightUseEvents()
+        {
+            List<TM_EventRecords> tmpList = new List<TM_EventRecords>();
+            tmpList.Clear();
+            foreach (TM_EventRecords ev in MightUsed)
+            {
+                if (Find.TickManager.TicksGame - 60000 > ev.eventTick)
+                {
+                    tmpList.Add(ev);
+                }
+            }
+            foreach (TM_EventRecords rem_ev in tmpList)
+            {
+                MightUsed.Remove(rem_ev);
+            }
         }
 
         public void ResolveAutoCast()

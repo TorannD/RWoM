@@ -701,6 +701,7 @@ Radius: 5.6</description>
     </graphicData>
     <soundInteract>Interact_ChargeRifle</soundInteract>
 	<ignoreConfigErrors>true</ignoreConfigErrors>
+	<relicChance>0</relicChance>
     <statBases>
 	  <WorkToMake>400</WorkToMake>
       <Mass>1</Mass>

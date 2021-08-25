@@ -28,7 +28,7 @@
     <ingestible>
       <joy>0.50</joy>
 	  <joyKind>Chemical</joyKind>
-      <drugCategory>Hard</drugCategory>
+      <drugCategory>Medical</drugCategory>
       <foodType>Processed, Fluid</foodType>
       <baseIngestTicks>60</baseIngestTicks>
       <ingestSound>Ingest_Inject</ingestSound>

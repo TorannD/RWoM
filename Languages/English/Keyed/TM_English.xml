@@ -184,6 +184,11 @@
 <TM_SpiritAnimalChange>{0}'s spirit animal has changed from {1} to {2}.</TM_SpiritAnimalChange>
 <TM_InvalidAction>{0} cannot use {1} - invalid parameters.</TM_InvalidAction>
 <TM_InvalidAbility>{0} was unable to use {1}.</TM_InvalidAbility>
+<TM_SlaveRefuses>{0} refuses to perform this action.</TM_SlaveRefuses>
+<TM_SlaveScribeFail>The {0} was ruined by {1} during the scribing process.</TM_SlaveScribeFail>
+<TM_MessageRitualRoleMustBeColonistOrPrisoner>{0} must be colonist or prisoner.</TM_MessageRitualRoleMustBeColonistOrPrisoner>
+<TM_MessageRitualRoleMustBeVoidseeker>{0} must be a void seeker.</TM_MessageRitualRoleMustBeVoidseeker>
+<TM_MessageRitualRoleMustBeMage>{0} must be a mage.</TM_MessageRitualRoleMustBeMage
 
 <!-- Surgery Failed letters -->
 <LetterLabelRegrowthSurgeryFail>Surgery Failed</LetterLabelRegrowthSurgeryFail>

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using Verse;
 using UnityEngine;
+using TorannMagic.Ideology;
 
 namespace TorannMagic
 {
@@ -114,6 +115,10 @@ namespace TorannMagic
             bool flag = this.magicDef != null;
             if (flag)
             {
+                if (this.Pawn.IsColonist)
+                {
+                    Find.HistoryEventsManager.RecordEvent(new HistoryEvent(TorannMagicDefOf.TM_UsedMagic, this.Pawn.Named(HistoryEventArgsNames.Doer), this.Pawn.Named(HistoryEventArgsNames.Subject), this.Pawn.Named(HistoryEventArgsNames.AffectedFaction), this.Pawn.Named(HistoryEventArgsNames.Victim)), true);
+                }
                 bool flag3 = this.MagicUser.Mana != null;
                 if (flag3)
                 {
@@ -129,7 +134,12 @@ namespace TorannMagic
                     if(this.magicDef != TorannMagicDefOf.TM_TransferMana && magicDef.abilityHediff == null)
                     {                        
                         this.MagicUser.MagicUserXP += (int)((magicDef.manaCost * 300) * this.MagicUser.xpGain * settingsRef.xpMultiplier);
-                    }                    
+                    }
+
+                    TM_EventRecords er = new TM_EventRecords();
+                    er.eventPower = this.magicDef.manaCost;
+                    er.eventTick = Find.TickManager.TicksGame;
+                    this.MagicUser.MagicUsed.Add(er);                    
                 }
                 else if (this.MagicUser.Pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
                 {
