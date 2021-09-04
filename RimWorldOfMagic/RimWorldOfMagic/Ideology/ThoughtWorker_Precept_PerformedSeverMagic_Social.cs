@@ -12,16 +12,19 @@ namespace TorannMagic.Ideology
     {
         protected override ThoughtState ShouldHaveThought(Pawn pawn, Pawn otherPawn)
         {
-            Thought_Memory tm = pawn.needs?.mood?.thoughts?.memories.GetFirstMemoryOfDef(TorannMagicDefOf.TM_SeverMagic_ForVeneratedTD);
-            if (tm != null && otherPawn.Ideo.GetRole(otherPawn).def == TorannMagicDefOf.TM_IdeoRole_VoidSeeker)
+            if (pawn.needs?.mood?.thoughts?.memories != null)
             {
-                return ThoughtState.ActiveAtStage(1);
+                Thought_Memory tm_ven = pawn.needs.mood.thoughts.memories.GetFirstMemoryOfDef(TorannMagicDefOf.TM_SeverMagic_ForVeneratedTD);
+                if (tm_ven != null && otherPawn.Ideo.GetRole(otherPawn)?.def == TorannMagicDefOf.TM_IdeoRole_VoidSeeker)
+                {
+                    return ThoughtState.ActiveAtStage(1);
+                }
+                Thought_Memory tm_apr = pawn.needs.mood.thoughts.memories.GetFirstMemoryOfDef(TorannMagicDefOf.TM_SeverMagic_ForApproveTD);
+                if (tm_apr != null && otherPawn.Ideo.GetRole(otherPawn)?.def == TorannMagicDefOf.TM_IdeoRole_VoidSeeker)
+                {
+                    return ThoughtState.ActiveAtStage(0);
+                }
             }
-            tm = pawn.needs?.mood?.thoughts?.memories.GetFirstMemoryOfDef(TorannMagicDefOf.TM_SeverMagic_ForApproveTD);
-            if (tm != null && otherPawn.Ideo.GetRole(otherPawn).def == TorannMagicDefOf.TM_IdeoRole_VoidSeeker)
-            {
-                return ThoughtState.ActiveAtStage(0);
-            }            
             return false;
         }
     }
