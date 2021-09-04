@@ -29,7 +29,7 @@ namespace TorannMagic.Ideology
             {
                 if (!skipReason)
                 {
-                    reason = "TM_MessageRitualRoleMustBeVoidseeker".Translate(base.LabelCap);
+                    reason = "TM_MessageRitualRoleMustBeVoidseeker".Translate(p.LabelShort);
                 }
                 return false;
             }
@@ -37,7 +37,7 @@ namespace TorannMagic.Ideology
             {
                 if (!skipReason)
                 {
-                    reason = "TM_MessageRitualRoleMustBeVoidseeker".Translate(base.LabelCap);
+                    reason = "TM_MessageRitualRoleMustBeVoidseeker".Translate(p.LabelShort);
                 }
                 return false;
             }

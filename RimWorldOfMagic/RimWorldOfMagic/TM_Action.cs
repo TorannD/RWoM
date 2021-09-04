@@ -57,6 +57,23 @@ namespace TorannMagic
             }
         }
 
+        public static Toil With_TM_Effects(this Toil toil, ThingDef moteDef, int frequency, float scale, float solidTime, float fadeIn, float fadeOut, int rotationRate, float velocity, float velocityAngle, float lookAngle)
+        {
+            toil.AddPreTickAction(delegate
+            {
+                if (toil.actor.Faction == Faction.OfPlayer && toil.actor.Map != null && Find.TickManager.TicksGame % frequency == 0)
+                {
+                    TM_MoteMaker.ThrowGenericMote(moteDef, toil.actor.DrawPos, toil.actor.Map, Rand.Range(.2f * scale, 1.1f * scale), Rand.Range(.75f * solidTime, 1.25f* solidTime), Rand.Range(.8f *fadeIn, 1.2f*fadeIn), Rand.Range(.8f * fadeOut, 1.2f * fadeOut), Mathf.RoundToInt(Rand.Range(.8f *rotationRate, 1.2f* rotationRate)), velocity, velocityAngle, Rand.Range(0,360));
+                }
+            });
+            toil.AddFinishAction(delegate
+            {
+                
+            });
+            return toil;
+        }            
+
+
         public static void DoMeleeReversal(DamageInfo dinfo, Pawn reflectingPawn)
         {
             Thing instigator = dinfo.Instigator;
@@ -108,7 +125,7 @@ namespace TorannMagic
             }
 
             //GiveReversalJob(dinfo);            
-        }
+        }        
 
         public static void DoReversalRandomTarget(DamageInfo dinfo, Pawn reflectingPawn, float minRange, float maxRange)
         {
@@ -1276,7 +1293,7 @@ namespace TorannMagic
             pawn.DeSpawn();
             GenPlace.TryPlaceThing(pawn, comp.recallPosition, comp.recallMap, ThingPlaceMode.Near);
             pawn.drafter.Drafted = draftFlag;
-            if (selectFlag)
+            if (selectFlag && ModOptions.Settings.Instance.cameraSnap)
             {
                 CameraJumper.TryJumpAndSelect(pawn);
             }
@@ -1568,7 +1585,10 @@ namespace TorannMagic
                         if (p.IsColonist)
                         {
                             p.drafter.Drafted = true;
-                            CameraJumper.TryJumpAndSelect(p);
+                            if (ModOptions.Settings.Instance.cameraSnap)
+                            {
+                                CameraJumper.TryJumpAndSelect(p);
+                            }
                         }
                         surgeText = "Teleportation";
                         ModOptions.Constants.SetPawnInFlight(false);

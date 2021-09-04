@@ -62,11 +62,15 @@ namespace TorannMagic.Ideology
                 text = text + "\n\n" + extraLetterText;
             }
             Find.LetterStack.ReceiveLetter("OutcomeLetterLabel".Translate(outcome.label.Named("OUTCOMELABEL"), jobRitual.Ritual.Label.Named("RITUALLABEL")), text, outcome.Positive ? LetterDefOf.RitualOutcomePositive : LetterDefOf.RitualOutcomeNegative, letterLookTargets);
+            List<Pawn> ritualPawns = new List<Pawn>();
+            ritualPawns.Clear();
             if (!outcome.Positive)
             {
                 Pawn p = TM_Calc.GetPawnForSeverenceRetaliation(Faction.OfPlayer);
+                
                 if (p != null)
                 {
+                    ritualPawns.Add(p);
                     if (outcome.positivityIndex == -2)
                     {
                         DoCatastrophicSeverMagicOutcome(p);
@@ -78,8 +82,49 @@ namespace TorannMagic.Ideology
                 Pawn p = TM_Calc.GetPawnForSeverenceRetaliation(Faction.OfPlayer);
                 if(p != null)
                 {
+                    ritualPawns.Add(p);
                     Hediff hd = p.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_MagicSeverenceHD);
                     p.health.RemoveHediff(hd);
+                }
+            }
+
+            bool flagApprove = false;
+            bool flagVenerated = false;
+            List<Pawn> colonyPawns = PawnsFinder.AllMaps_SpawnedPawnsInFaction(Faction.OfPlayer);
+            foreach (Pawn p in colonyPawns)
+            {
+                if (p.Ideo?.GetRole(p)?.def == TorannMagicDefOf.TM_IdeoRole_VoidSeeker)
+                {
+                    if (p.Ideo.HasPrecept(TorannMagicDefOf.TM_Mages_Approve))
+                    {
+                        flagApprove = true;
+                        ritualPawns.Add(p);
+                        break;
+                    }
+                    if (p.Ideo.HasPrecept(TorannMagicDefOf.TM_Mages_Venerated))
+                    {
+                        flagVenerated = true;
+                        ritualPawns.Add(p);
+                        break;
+                    }
+                }
+            }
+            if (flagApprove || flagVenerated)
+            {
+                List<Pawn> remainingPawns = colonyPawns.Except(ritualPawns).ToList();
+                foreach (Pawn p in remainingPawns)
+                {
+                    if (p.needs.mood?.thoughts?.memories != null)
+                    {
+                        if (flagApprove && p.Ideo.HasPrecept(TorannMagicDefOf.TM_Mages_Approve))
+                        {
+                            p.needs.mood.thoughts.memories.TryGainMemory(TorannMagicDefOf.TM_SeverMagic_ForApproveTD, null);
+                        }
+                        else if (flagVenerated && p.Ideo.HasPrecept(TorannMagicDefOf.TM_Mages_Venerated))
+                        {
+                            p.needs.mood.thoughts.memories.TryGainMemory(TorannMagicDefOf.TM_SeverMagic_ForVeneratedTD, null);
+                        }
+                    }
                 }
             }
         }

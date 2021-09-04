@@ -256,7 +256,10 @@ namespace TorannMagic
                 p.drafter.Drafted = true;
                 if (this.isSelected)
                 {
-                    CameraJumper.TryJumpAndSelect(p);
+                    if (ModOptions.Settings.Instance.cameraSnap)
+                    {
+                        CameraJumper.TryJumpAndSelect(p);
+                    }
                 }
                 if (this.oldjobTarget != null && !this.oldjobTarget.Destroyed)
                 {

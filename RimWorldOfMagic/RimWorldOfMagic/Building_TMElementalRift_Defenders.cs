@@ -349,8 +349,10 @@ namespace TorannMagic
             }
             while(elementalPawns.Count > 0)
             {
+                Pawn ele = elementalPawns[0];
                 FleckMaker.ThrowSmoke(elementalPawns[0].DrawPos, this.Map, 1.2f);
-                elementalPawns[0].Destroy(DestroyMode.Vanish);
+                ele.Destroy(DestroyMode.Vanish);
+                elementalPawns.Remove(ele);                
             }
             List<GameCondition> currentGameConditions = this.Map.gameConditionManager.ActiveConditions;
             for(int i =0; i < currentGameConditions.Count; i++)

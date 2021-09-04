@@ -45,6 +45,7 @@ namespace TorannMagic.ModOptions
         public bool deathRetaliationIsLethal = Settings.Instance.deathRetaliationIsLethal;
         public bool shrinkIcons = Settings.Instance.shrinkIcons;
         public Vector2 iconPosition = Settings.Instance.iconPosition;
+        public bool cameraSnap= Settings.Instance.cameraSnap;
 
         //autocast
         public bool autocastEnabled = Settings.Instance.autocastEnabled;

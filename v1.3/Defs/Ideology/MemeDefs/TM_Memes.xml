@@ -34,6 +34,14 @@
         <precept>TM_SeverenceRitual</precept>
         <pattern>TM_SeverenceRitual</pattern>
       </li>
+	  <li>
+        <precept>TM_BestowMagicRitual</precept>
+        <pattern>TM_GiftingRitual</pattern>
+      </li>
+	  <li>
+        <precept>TM_BestowClassRitual</precept>
+        <pattern>TM_BestowMagicClassRitual</pattern>
+      </li>
     </requiredRituals>
     <generalRules>
       <rulesStrings>
@@ -49,10 +57,11 @@
         <li>memeCreed->guild</li>
 		<li>memeCreed->chosen</li>
 		<li>memeCreed->masters</li>
-        <li>memeConcept->magical</li>
+        <li>memeConcept->magic</li>
 		<li>memeConcept->gifted</li>
 		<li>memeConcept->chosen</li>
 		<li>memeConcept->cursed</li>
+		<li>memeConcept->blighted</li>
         <li>memeLeaderNoun->archmage</li>
 		<li>memeLeaderNoun->master</li>
 		<li>memeLeaderNoun->wizard</li>

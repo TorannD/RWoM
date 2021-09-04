@@ -12,4 +12,26 @@
     </thinkNode>
   </DutyDef>
   
+  <DutyDef>
+    <defName>TM_BestowMagic</defName>
+    <hook>HighPriority</hook>
+    <socialModeMax>Off</socialModeMax>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="TorannMagic.Ideology.TM_JobGiver_BestowMagic"/>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+  
+  <DutyDef>
+    <defName>TM_BestowClass</defName>
+    <hook>HighPriority</hook>
+    <socialModeMax>Off</socialModeMax>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="TorannMagic.Ideology.TM_JobGiver_BestowClass"/>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+  
 </Defs>

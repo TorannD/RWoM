@@ -40,6 +40,7 @@ namespace TorannMagic.ModOptions
         public float undeadUpkeepMultiplier = 1f;
         public bool shrinkIcons = false;
         public Vector2 iconPosition = Vector2.zero;
+        public bool cameraSnap = true;
 
         //Death Retaliation
         public float deathRetaliationChance = 1f;
@@ -141,6 +142,7 @@ namespace TorannMagic.ModOptions
             Scribe_Values.Look<bool>(ref this.unrestrictedWeaponCopy, "unrestrictedWeaponCopy", false, false);
             Scribe_Values.Look<bool>(ref this.shrinkIcons, "shrinkIcons", false, false);
             Scribe_Values.Look<Vector2>(ref this.iconPosition, "iconPosition", default(Vector2));
+            Scribe_Values.Look<bool>(ref this.cameraSnap, "cameraSnap", true, false);
 
             Scribe_Values.Look<float>(ref this.deathExplosionRadius, "deathExplosionRadius", 3f, false);
             Scribe_Values.Look<int>(ref this.deathExplosionMin, "deathExplosionMin", 20, false);

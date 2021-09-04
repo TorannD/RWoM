@@ -140,7 +140,7 @@
         <baseInspectLine>Inspired: Enlightened</baseInspectLine>
     </InspirationDef>
 	
-	<HediffDef>
+  <HediffDef>
     <defName>TM_EnlightenedHD</defName>
 	<hediffClass>HediffWithComps</hediffClass>
     <defaultLabelColor>(1, 1, 1)</defaultLabelColor>
@@ -165,5 +165,25 @@
       </li>      
     </stages>
   </HediffDef>
+  
+  	<InspirationDef>
+        <defName>ID_ArcanePathways</defName>
+		<inspirationClass>TorannMagic.Thoughts.TM_Inspiration_ArcanePathway</inspirationClass>
+		<workerClass>TorannMagic.Thoughts.InspirationWorker_ArcanePathway</workerClass>
+        <label>arcane path</label>
+        <baseDurationDays>2</baseDurationDays>
+		<baseCommonality>1.5</baseCommonality>
+        <beginLetterLabel>Inspiration: arcane path</beginLetterLabel>
+        <beginLetter>{0} has seen a vision of arcane potential. [PAWN_pronoun] can achieve the power of a {1} with the assistance of a voidseeker. This ritual must be performed within two days or the inspiration will be lost.</beginLetter>
+        <beginLetterDef>PositiveEvent</beginLetterDef>
+		<allowedOnAnimals>false</allowedOnAnimals>
+		<allowedOnNonColonists>false</allowedOnNonColonists>
+        <endMessage>{0} can no longer reach an arcane path of a {1} through inspiration.</endMessage>
+        <baseInspectLine>Inspired: Arcane Path</baseInspectLine>
+		<statFactors>
+			<SocialIdeoSpreadFrequencyFactor>.2</SocialIdeoSpreadFrequencyFactor>
+			<ConversionPower>.2</ConversionPower>
+        </statFactors>
+    </InspirationDef>
 
 </Defs>

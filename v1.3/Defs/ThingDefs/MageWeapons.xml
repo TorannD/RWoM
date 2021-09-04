@@ -911,6 +911,7 @@ Nightshade Toxin on hit (20%)</description>
 		<graphicData>
 			<texPath>Items/weapons/demon_talon3</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
 			<drawSize>.8</drawSize>
 		</graphicData>
     <weaponTags>

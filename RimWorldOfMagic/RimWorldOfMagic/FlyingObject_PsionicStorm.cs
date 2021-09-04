@@ -245,7 +245,10 @@ namespace TorannMagic
                 if (p.IsColonist)
                 {
                     p.drafter.Drafted = true;
-                    CameraJumper.TryJumpAndSelect(p);
+                    if (ModOptions.Settings.Instance.cameraSnap)
+                    {
+                        CameraJumper.TryJumpAndSelect(p);
+                    }
                 }
                 this.Destroy(DestroyMode.Vanish);
             }
@@ -448,7 +451,10 @@ namespace TorannMagic
             if(p.IsColonist)
             {
                 p.drafter.Drafted = true;
-                CameraJumper.TryJumpAndSelect(p);
+                if (ModOptions.Settings.Instance.cameraSnap)
+                {
+                    CameraJumper.TryJumpAndSelect(p);
+                }
             }
             this.Destroy(DestroyMode.Vanish);
         }

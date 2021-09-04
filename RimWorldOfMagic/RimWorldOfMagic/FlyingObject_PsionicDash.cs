@@ -419,7 +419,10 @@ namespace TorannMagic
             if (p.IsColonist && this.drafted)
             {
                 p.drafter.Drafted = true;
-                CameraJumper.TryJumpAndSelect(p);
+                if (ModOptions.Settings.Instance.cameraSnap)
+                {
+                    CameraJumper.TryJumpAndSelect(p);
+                }
             }
             this.Destroy(DestroyMode.Vanish);
         }

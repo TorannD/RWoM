@@ -89,33 +89,6 @@
     </comps>
   </PreceptDef>
   
-  <!-- Abhorrent Rituals -->
-  
-  <PreceptDef>
-    <defName>TM_SeverenceRitual</defName>
-    <label>sever magic</label>
-    <description>A voidseeker will sever magic from a target. The audience will watch as the voidseeker gives a sermon, severs the magic from a mage, and says some closing words. The target may attempt one last retaliation spell. If successful, the target will be free from magic.</description>
-    <issue>Ritual</issue>
-    <impact>Medium</impact>
-    <iconPath>Ideology/SeverMagic</iconPath>
-    <preceptClass>Precept_Ritual</preceptClass>
-    <ritualPatternBase>TM_SeverenceRitual</ritualPatternBase>
-    <allowDuplicates>true</allowDuplicates>
-    <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
-    <selectionWeight>1.0</selectionWeight>
-    <displayOrderInImpact>101</displayOrderInImpact>
-    <ignoreLimitsInEditMode>false</ignoreLimitsInEditMode>
-    <receivesExpectationsQualityOffset>true</receivesExpectationsQualityOffset>
-    <canGenerateAsSpecialPrecept>false</canGenerateAsSpecialPrecept>
-    <allowStackingRitualObligationAlerts>true</allowStackingRitualObligationAlerts>
-    <associatedMemes>
-      <li>TM_Transcendent</li>
-    </associatedMemes>
-    <requiredMemes>
-      <li>TM_Transcendent</li>
-    </requiredMemes>
-  </PreceptDef>
-  
       <!-- Abhorrent Thoughts -->
 
   <ThoughtDef>
@@ -614,6 +587,10 @@
       <li Class="PreceptComp_SituationalThought">
         <thought>TM_IsMage_Approve_Social</thought>
       </li>
+	  <li Class="PreceptComp_SituationalThought">
+        <thought>TM_PerformedSeverenceRitual_Social</thought>
+        <description>performed sever magic</description>
+      </li>
     </comps>
   </PreceptDef>
   
@@ -718,6 +695,22 @@
     </stages>
   </ThoughtDef>
   
+  <ThoughtDef>
+    <defName>TM_PerformedSeverenceRitual_Social</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>TorannMagic.Ideology.ThoughtWorker_Precept_PerformedSeverMagic_Social</workerClass>
+    <stages>
+      <li>
+        <label>barbaric ritual</label>
+        <baseOpinionOffset>-60</baseOpinionOffset>
+      </li>
+	  <li>
+        <label>villainous ritual</label>
+        <baseOpinionOffset>-100</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
 <!-- Venerated -->
   
   <PreceptDef>
@@ -781,6 +774,10 @@
       </li>
 	  <li Class="PreceptComp_SituationalThought">
         <thought>TM_IsMage_Venerated_Social</thought>
+      </li>
+	  <li Class="PreceptComp_SituationalThought">
+        <thought>TM_PerformedSeverenceRitual_Social</thought>
+        <description>performed sever magic</description>
       </li>
     </comps>
   </PreceptDef>
@@ -1006,5 +1003,82 @@
       </li>
     </stages>
   </ThoughtDef>
+  
+    <!-- Transcendent Rituals -->
+  
+  <PreceptDef>
+    <defName>TM_SeverenceRitual</defName>
+    <label>sever magic</label>
+    <description>A voidseeker will sever magic from a target. The audience will watch as the voidseeker gives a unification speech, severs the magic from a mage, and says some closing words. The target may attempt one last retaliation spell if the ritual is poorly performed. If successful, the target will be free from magic.</description>
+    <issue>Ritual</issue>
+    <impact>Medium</impact>
+    <iconPath>Ideology/SeverMagic</iconPath>
+    <preceptClass>Precept_Ritual</preceptClass>
+    <ritualPatternBase>TM_SeverenceRitual</ritualPatternBase>
+    <allowDuplicates>true</allowDuplicates>
+    <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
+    <selectionWeight>1.0</selectionWeight>
+    <displayOrderInImpact>101</displayOrderInImpact>
+    <ignoreLimitsInEditMode>false</ignoreLimitsInEditMode>
+    <receivesExpectationsQualityOffset>true</receivesExpectationsQualityOffset>
+    <canGenerateAsSpecialPrecept>false</canGenerateAsSpecialPrecept>
+    <allowStackingRitualObligationAlerts>true</allowStackingRitualObligationAlerts>
+    <associatedMemes>
+      <li>TM_Transcendent</li>
+    </associatedMemes>
+    <requiredMemes>
+      <li>TM_Transcendent</li>
+    </requiredMemes>
+  </PreceptDef>
+  
+  <PreceptDef>
+    <defName>TM_BestowMagicRitual</defName>
+    <label>bestow magic</label>
+    <description>A voidseeker will attempt to bridge a connection between the target and magic. The audience will watch as the voidseeker says a few words of wisdom, attempts to bestows the spark of magic, and then says some closing words. This ritual may fail, and can only be performed on a specific date.</description>
+    <issue>Ritual</issue>
+    <impact>Medium</impact>
+    <iconPath>Ideology/MagicSpark</iconPath>
+    <preceptClass>Precept_Ritual</preceptClass>
+    <ritualPatternBase>TM_GiftingRitual</ritualPatternBase>
+    <allowDuplicates>true</allowDuplicates>
+    <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
+    <selectionWeight>1.0</selectionWeight>
+    <displayOrderInImpact>102</displayOrderInImpact>
+    <ignoreLimitsInEditMode>false</ignoreLimitsInEditMode>
+    <receivesExpectationsQualityOffset>true</receivesExpectationsQualityOffset>
+    <canGenerateAsSpecialPrecept>false</canGenerateAsSpecialPrecept>
+    <allowStackingRitualObligationAlerts>true</allowStackingRitualObligationAlerts>
+    <associatedMemes>
+      <li>TM_Transcendent</li>
+    </associatedMemes>
+    <requiredMemes>
+      <li>TM_Transcendent</li>
+    </requiredMemes>
+  </PreceptDef>
+  
+  <PreceptDef>
+    <defName>TM_BestowClassRitual</defName>
+    <label>arcane path</label>
+    <description>A voidseeker will guide a pawn possessing the gift of magic during a ritual to become a mage. The audience will watch as the mage attempts to realize their inspiration with the guidance of the voidseeker. The target may attempt one last retaliation spell. If successful, the target will acquire their inspired magic class.</description>
+    <issue>Ritual</issue>
+    <impact>Medium</impact>
+    <iconPath>Ideology/ArcaneInspiration</iconPath>
+    <preceptClass>Precept_Ritual</preceptClass>
+    <ritualPatternBase>TM_BestowMagicClassRitual</ritualPatternBase>
+    <allowDuplicates>true</allowDuplicates>
+    <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
+    <selectionWeight>1.0</selectionWeight>
+    <displayOrderInImpact>103</displayOrderInImpact>
+    <ignoreLimitsInEditMode>false</ignoreLimitsInEditMode>
+    <receivesExpectationsQualityOffset>true</receivesExpectationsQualityOffset>
+    <canGenerateAsSpecialPrecept>false</canGenerateAsSpecialPrecept>
+    <allowStackingRitualObligationAlerts>true</allowStackingRitualObligationAlerts>
+    <associatedMemes>
+      <li>TM_Transcendent</li>
+    </associatedMemes>
+    <requiredMemes>
+      <li>TM_Transcendent</li>
+    </requiredMemes>
+  </PreceptDef>
 
 </Defs>

@@ -2,6 +2,19 @@
 <Defs>
 
   <ThingDef ParentName="MoteBase">
+    <defName>Mote_ManaVortex</defName>
+    <graphicData>
+      <texPath>UI/manavortex_trans</texPath>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.0</fadeInTime>
+      <solidTime>.2</solidTime>
+      <fadeOutTime>.1</fadeOutTime>
+    </mote>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
     <defName>Mote_BlueSpireW</defName>
     <graphicData>
       <texPath>Motes/BlueSpireMote4</texPath>

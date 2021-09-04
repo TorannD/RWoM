@@ -119,7 +119,10 @@ namespace TorannMagic
                     caster.DeSpawn();
                     GenSpawn.Spawn(caster, targetPos, map);
                     caster.drafter.Drafted = draftFlag;
-                    CameraJumper.TryJumpAndSelect(caster);
+                    if (ModOptions.Settings.Instance.cameraSnap)
+                    {
+                        CameraJumper.TryJumpAndSelect(caster);
+                    }
                     ModOptions.Constants.SetPawnInFlight(false);
                     return true;
                 }
@@ -250,7 +253,10 @@ namespace TorannMagic
                     ModOptions.Constants.SetPawnInFlight(false);
                     if(selectedFlag)
                     {
-                        CameraJumper.TryJumpAndSelect(caster);
+                        if (ModOptions.Settings.Instance.cameraSnap)
+                        {
+                            CameraJumper.TryJumpAndSelect(caster);
+                        }
                     }
                 }
                 else

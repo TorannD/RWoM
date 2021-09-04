@@ -178,9 +178,9 @@ namespace TorannMagic.ModOptions
             num++;
             Rect rowRect13 = UIHelper.GetRowRect(rowRect12, rowHeight, num);
             Widgets.CheckboxLabeled(rowRect13, "TM_UnrestrictedWeaponCopy".Translate(), ref Settings.Instance.unrestrictedWeaponCopy, false);
-            //Rect rowRect13ShiftRight = UIHelper.GetRowRect(rowRect13, rowHeight, num);
-            //rowRect13ShiftRight.x += rowRect13.width + 56f;
-            //Settings.Instance.iconPosition.x = Widgets.HorizontalSlider(rowRect13ShiftRight, Settings.Instance.iconPosition.x, -UI.screenWidth/(5f), UI.screenWidth/(5f), false, "x offset " + Settings.Instance.iconPosition.x, "-", "+", 1f);
+            Rect rowRect13ShiftRight = UIHelper.GetRowRect(rowRect13, rowHeight, num);
+            rowRect13ShiftRight.x += rowRect13.width + 56f;
+            Widgets.CheckboxLabeled(rowRect13, "TM_CameraSnap".Translate(), ref Settings.Instance.cameraSnap, false);
             num++;
             Rect rowRect14 = UIHelper.GetRowRect(rowRect13, rowHeight, num);
             //Widgets.CheckboxLabeled(rowRect13, "TM_UnrestrictedWeaponCopy".Translate(), ref Settings.Instance.unrestrictedWeaponCopy, false);
@@ -235,6 +235,7 @@ namespace TorannMagic.ModOptions
                 Settings.Instance.deathRetaliationChance = 1f;
                 Settings.Instance.deathRetaliationDelayFactor = 1f;
                 Settings.Instance.shrinkIcons = false;
+                Settings.Instance.cameraSnap = true;
 
                 this.deathExplosionDmgMax = "50.0";
                 this.deathExplosionDmgMin = "20.0";

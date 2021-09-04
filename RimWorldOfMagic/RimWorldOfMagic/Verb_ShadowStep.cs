@@ -73,7 +73,10 @@ namespace TorannMagic
                         {
                             p.drafter.Drafted = true;
                         }
-                        CameraJumper.TryJumpAndSelect(p);
+                        if (ModOptions.Settings.Instance.cameraSnap)
+                        {
+                            CameraJumper.TryJumpAndSelect(p);
+                        }
                     }
                     catch
                     {

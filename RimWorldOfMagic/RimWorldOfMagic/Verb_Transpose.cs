@@ -81,7 +81,10 @@ namespace TorannMagic
                             GenSpawn.Spawn(targetPawn, cell, map);
                             p.drafter.Drafted = drafted;
                             targetPawn.drafter.Drafted = tDrafted;
-                            CameraJumper.TryJumpAndSelect(p);
+                            if (ModOptions.Settings.Instance.cameraSnap)
+                            {
+                                CameraJumper.TryJumpAndSelect(p);
+                            }
                             CompAbilityUserMight comp = this.CasterPawn.GetComp<CompAbilityUserMight>();
                             MightPowerSkill ver = comp.MightData.MightPowerSkill_Transpose.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Transpose_ver");
                             if (ver.level < 1)

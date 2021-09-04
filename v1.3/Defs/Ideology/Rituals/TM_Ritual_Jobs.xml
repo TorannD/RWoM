@@ -8,4 +8,18 @@
     <casualInterruptible>false</casualInterruptible>
   </JobDef>
   
+  <JobDef>
+    <defName>TM_BestowMagic</defName>
+    <driverClass>TorannMagic.Ideology.JobDriver_BestowMagic</driverClass>
+    <reportString>Bestow the gift of magic on TargetA.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  
+  <JobDef>
+    <defName>TM_BestowClass</defName>
+    <driverClass>TorannMagic.Ideology.JobDriver_BestowClass</driverClass>
+    <reportString>Guiding TargetA on their arcane path.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  
 </Defs>

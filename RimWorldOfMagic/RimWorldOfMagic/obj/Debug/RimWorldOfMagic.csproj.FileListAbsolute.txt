@@ -3,4 +3,4 @@ C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\RWoM\v1.3\Assemblies
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\RWoM\v1.3\Assemblies\TorannMagic.pdb
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\RWoM\RimWorldOfMagic\RimWorldOfMagic\obj\Debug\TorannMagic.dll
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\RWoM\RimWorldOfMagic\RimWorldOfMagic\obj\Debug\TorannMagic.pdb
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\RWoM\RimWorldOfMagic\RimWorldOfMagic\obj\Debug\RimWorldOfMagic.csprojAssemblyReference.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\RWoM\RimWorldOfMagic\RimWorldOfMagic\obj\Debug\RimWorldOfMagic.csproj.AssemblyReference.cache

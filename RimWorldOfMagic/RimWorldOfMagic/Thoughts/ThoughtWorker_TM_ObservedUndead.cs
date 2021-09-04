@@ -18,6 +18,10 @@ namespace TorannMagic.Thoughts
             {
                 return false;
             }
+            if(ModsConfig.IdeologyActive && pawn.Ideo.HasPrecept(TorannMagicDefOf.Corpses_DontCare))
+            {
+                return false;
+            }
             List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned;
             for (int i = 0; i < mapPawns.Count; i++)
             {

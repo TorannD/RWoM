@@ -36,6 +36,16 @@
     <defName>TM_SeverMagicEvent</defName>
     <label>severed a mage from magic</label>
   </HistoryEventDef>
+  
+  <HistoryEventDef>
+    <defName>TM_BestowMagicEvent</defName>
+    <label>granted the gift of magic</label>
+  </HistoryEventDef>
+  
+  <HistoryEventDef>
+    <defName>TM_BestowClassEvent</defName>
+    <label>inspired magic class</label>
+  </HistoryEventDef>
 
 
 </Defs>

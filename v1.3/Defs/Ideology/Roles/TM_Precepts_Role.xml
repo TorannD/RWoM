@@ -107,11 +107,8 @@
       </points>
     </roleApparelRequirementCountCurve>
     <grantedAbilities>
-<!--       <li>Convert</li>
-      <li>Counsel</li>
-      <li>Reassure</li>
-      <li>ConversionRitual</li>
-      <li>PreachHealth</li> -->
+      <li>TM_Start_ManaStorm</li>
+	  <li>TM_Start_ElementalDefenders</li>
     </grantedAbilities>
     <roleRequiredWorkTags><li>Social</li></roleRequiredWorkTags>
     <roleTags><li>Voidseeker</li></roleTags>
@@ -129,9 +126,10 @@
 		<li>firstPart->null-</li>
 		<li>firstPart->hidden-</li>
 		<li>firstPart->star-</li>
-		<li>firstPart->linked-</li>
+		<li>firstPart->link-</li>
 		<li>firstPart->soul-</li>
 		<li>firstPart->spirit-</li>
+		<li>firstPart->mind-</li>
         <li>secondPart->master</li>
         <li>secondPart->seeker</li>
         <li>secondPart->touched</li>

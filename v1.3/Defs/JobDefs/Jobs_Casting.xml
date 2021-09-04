@@ -16,5 +16,13 @@
     <alwaysShowWeapon>true</alwaysShowWeapon>
     <casualInterruptible>false</casualInterruptible>
   </JobDef>
+  
+  <JobDef>
+    <defName>TMCastIdeoAbility</defName>
+    <driverClass>TorannMagic.Ideology.JobDriver_CastIdeoAbility</driverClass>
+    <casualInterruptible>false</casualInterruptible>
+    <collideWithPawns>true</collideWithPawns>
+    <neverShowWeapon>true</neverShowWeapon>
+  </JobDef>
 
 </Defs>

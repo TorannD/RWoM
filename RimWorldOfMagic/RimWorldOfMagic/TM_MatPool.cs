@@ -29,7 +29,7 @@ namespace TorannMagic
         public static readonly Material doubleForkLightning = MaterialPool.MatFrom("Spells/LightningBolt", ShaderDatabase.MoteGlow);
         public static readonly Material multiForkLightning = MaterialPool.MatFrom("Spells/LightningBolt_w", ShaderDatabase.MoteGlow);
         public static readonly Material standardLightning = MatLoader.LoadMat("Weather/LightningBolt", -1);
-        public static readonly Material thinLightning = MaterialPool.MatFrom("Other/ThinLightningBolt", ShaderDatabase.MoteGlow);
+        public static readonly Material thinLightning = MaterialPool.MatFrom("Other/ThinLightningBolt", true);
 
         public static readonly Material opencloak_Female_north = MaterialPool.MatFrom("Equipment/opencloak_Female_north"); 
         public static readonly Material opencloak_Female_south = MaterialPool.MatFrom("Equipment/opencloak_Female_south");

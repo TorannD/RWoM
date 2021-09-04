@@ -13,7 +13,7 @@ namespace TorannMagic.Ideology
             {
                 if (!skipReason)
                 {
-                    reason = "TM_MessageRitualRoleMustBeColonistOrPrisoner".Translate(base.Label);
+                    reason = "TM_MessageRitualRoleMustBeColonistOrPrisoner".Translate(p.LabelShort);
                 }
                 return false;
             }
@@ -29,10 +29,10 @@ namespace TorannMagic.Ideology
             {
                 if (!skipReason)
                 {
-                    reason = "TM_MessageRitualRoleMustBeMage".Translate(base.Label);
+                    reason = "TM_MessageRitualRoleMustBeMage".Translate(p.LabelShort);
                 }
                 return false;
-            }
+            }            
             return true;
         }
 

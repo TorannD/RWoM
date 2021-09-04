@@ -21,18 +21,18 @@ namespace TorannMagic
             yield return Toils_Combat.CastVerb(TargetIndex.A, false);
             Toil toil1 = new Toil()
             {
-                initAction = () => {                    
-                        //if (curJob.UseAbilityProps.isViolent)
-                        //{
-                        //    JobDriver_CastAbilityVerb.CheckForAutoAttack(this.pawn);
-                        //}
-                    },
+                initAction = () => {
+                    pawn.pather.StopDead();
+                    //if (curJob.UseAbilityProps.isViolent)
+                    //{
+                    //    JobDriver_CastAbilityVerb.CheckForAutoAttack(this.pawn);
+                    //}
+                },
                 defaultCompleteMode = ToilCompleteMode.Instant                
             };
             yield return toil1;
             Toil toil = new Toil()
             {
-
                 initAction = () => verb.Ability.PostAbilityAttempt(),
                 defaultCompleteMode = ToilCompleteMode.Instant
             };

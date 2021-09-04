@@ -139,7 +139,6 @@ namespace TorannMagic
         public static GameConditionDef DarkClouds;
         public static GameConditionDef DarkThunderstorm;
         public static GameConditionDef TM_ManaStorm;
-        public static GameConditionDef TM_ElementalDefenders;
         public static HediffDef TM_ManaSickness;
         public static HediffDef TM_ArcaneSickness;
         public static HediffDef TM_ArcaneWeakness;
@@ -1142,6 +1141,7 @@ namespace TorannMagic
         public static ThingDef Mote_BlueSpireWs;
         public static ThingDef Mote_BlueSpireW;
         public static ThingDef Mote_BlueSwirl;
+        public static ThingDef Mote_ManaVortex;
 
         public static ThingDef Projectile_FogOfTorment;        
 
@@ -1269,6 +1269,7 @@ namespace TorannMagic
         public static InspirationDef Frenzy_Go;
         public static InspirationDef Frenzy_Shoot;
         public static InspirationDef ID_Enlightened;
+        public static InspirationDef ID_ArcanePathways;
 
         //Mental States
         public static MentalStateDef TM_Berserk;
@@ -1307,6 +1308,8 @@ namespace TorannMagic
         public static ThoughtDef TM_NeedTravel;
         //public static ThoughtDef AteMysteryMeatDirect;
         //public static ThoughtDef AteMysteryMeatAsIngredient;
+        public static ThoughtDef TM_SeverMagic_ForApproveTD;
+        public static ThoughtDef TM_SeverMagic_ForVeneratedTD;
 
         //WeatherDefs
         public static WeatherDef TM_HealingRainWD;
@@ -1344,10 +1347,22 @@ namespace TorannMagic
         public static HistoryEventDef TM_UsedManeuver;
         public static HistoryEventDef TM_KilledHumanlike;
         public static HistoryEventDef TM_SeverMagicEvent;
+        public static HistoryEventDef TM_BestowMagicEvent;
+        public static HistoryEventDef TM_BestowClassEvent;
 
         //Rituals
         public static JobDef TM_SeverMagic;
         public static HediffDef TM_MagicSeverenceHD;
+        public static JobDef TM_BestowMagic;
+        public static HediffDef TM_BestowMagicClassHD;
+        public static JobDef TM_BestowClass;
+
+        //Precept Defs
+        public static PreceptDef TM_Mages_Abhorrent;
+        public static PreceptDef TM_Mages_Disapprove;
+        public static PreceptDef TM_Mages_Approve;
+        public static PreceptDef TM_Mages_Venerated;
+        public static PreceptDef Corpses_DontCare;
 
         //Precept Roles
         public static PreceptDef TM_IdeoRole_VoidSeeker;

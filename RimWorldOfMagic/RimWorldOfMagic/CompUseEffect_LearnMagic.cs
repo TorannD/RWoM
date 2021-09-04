@@ -524,7 +524,7 @@ namespace TorannMagic
 
 		}
 
-        private void FixTrait(Pawn pawn, List<Trait> traits)
+        public static void FixTrait(Pawn pawn, List<Trait> traits)
         {
             TraitStart:;
             for (int i = 0; i < traits.Count; i++)
@@ -542,7 +542,7 @@ namespace TorannMagic
             }
         }
 
-        private void FixPriestSkills(Pawn pawn)
+        public static void FixPriestSkills(Pawn pawn)
         {
             SkillRecord skill;
             skill = pawn.skills.GetSkill(SkillDefOf.Shooting);
@@ -557,7 +557,7 @@ namespace TorannMagic
             }
         }
 
-        private void FixBardSkills(Pawn pawn)
+        public static void FixBardSkills(Pawn pawn)
         {
             SkillRecord skill;
             pawn.workSettings.SetPriority(TorannMagicDefOf.Cleaning, 0);

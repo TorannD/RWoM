@@ -187,8 +187,14 @@
 <TM_SlaveRefuses>{0} refuses to perform this action.</TM_SlaveRefuses>
 <TM_SlaveScribeFail>The {0} was ruined by {1} during the scribing process.</TM_SlaveScribeFail>
 <TM_MessageRitualRoleMustBeColonistOrPrisoner>{0} must be colonist or prisoner.</TM_MessageRitualRoleMustBeColonistOrPrisoner>
+<TM_MessageRitualRoleMustBeColonist>{0} must be a colonist.</TM_MessageRitualRoleMustBeColonist>
 <TM_MessageRitualRoleMustBeVoidseeker>{0} must be a void seeker.</TM_MessageRitualRoleMustBeVoidseeker>
-<TM_MessageRitualRoleMustBeMage>{0} must be a mage.</TM_MessageRitualRoleMustBeMage
+<TM_MessageRitualRoleMustBeMage>{0} must be a mage.</TM_MessageRitualRoleMustBeMage>
+<TM_MessageRitualRoleMustNotBeMage>{0} cannot already be a mage.</TM_MessageRitualRoleMustNotBeMage>
+<TM_MessageRitualRoleMustNotBeFighter>{0} cannot already be a fighter.</TM_MessageRitualRoleMustNotBeFighter>
+<TM_MessageRitualRoleCannotHaveTrait>{0} already has the {1} trait.</TM_MessageRitualRoleCannotHaveTrait>
+<TM_MessageRitualRoleMustHaveTrait>{0} must have the {1} trait.</TM_MessageRitualRoleMustHaveTrait>
+<TM_DoesNotHaveArcanePathwayInspiration>{0} no longer held an inspiration.</TM_DoesNotHaveArcanePathwayInspiration>
 
 <!-- Surgery Failed letters -->
 <LetterLabelRegrowthSurgeryFail>Surgery Failed</LetterLabelRegrowthSurgeryFail>
@@ -249,6 +255,7 @@
 <TM_DeathRetaliationChance>Death retaliation chance</TM_DeathRetaliationChance>
 <TM_DeathRetaliationDelay>Death retaliation delay factor</TM_DeathRetaliationDelay>
 <TM_shrinkIcons>Shrink Icons</TM_shrinkIcons>
+<TM_CameraSnap>Snap camera after teleport</TM_CameraSnap>
 
 <!-- Mod Settings Class options -->
 <supportTraitChance>Supporting Trait Commonality</supportTraitChance>

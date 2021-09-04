@@ -85,7 +85,10 @@ namespace TorannMagic
                                     }
                                 }
                             }
-                            CameraJumper.TryJumpAndSelect(p);                            
+                            if (ModOptions.Settings.Instance.cameraSnap)
+                            {
+                                CameraJumper.TryJumpAndSelect(p);
+                            }
                             ModOptions.Constants.SetPawnInFlight(false);
                         }
                         else

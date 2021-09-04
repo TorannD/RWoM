@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using RimWorld;
 using Verse;
+using HarmonyLib;
 
 namespace TorannMagic.Ideology
 {
@@ -17,8 +18,34 @@ namespace TorannMagic.Ideology
         {
             if(Find.TickManager.TicksGame >= nextObligationCheck)
             {
-                Recache();
-                nextObligationCheck = Find.TickManager.TicksGame + Rand.Range(300, 1200);
+                bool flag = false;
+                foreach (Pawn p in PawnsFinder.AllMaps_SpawnedPawnsInFaction(Faction.OfPlayer))
+                {
+                    if(p.Ideo?.GetRole(p)?.def == TorannMagicDefOf.TM_IdeoRole_VoidSeeker)
+                    {
+                        if(p.Ideo.HasPrecept(TorannMagicDefOf.TM_Mages_Abhorrent))
+                        {
+                            //List<Precept> pList = Traverse.Create(root: p.Ideo).Field(name: "precepts").GetValue<List<Precept>>();
+                            //foreach(Precept prec in pList)
+                            //{
+                            //    if(prec.def == TorannMagicDefOf.TM_Mages_Abhorrent)
+                            //    {
+                            //        Log.Message("prec name is " + prec.Label + " prec defname is " + prec.def.defName);
+
+                            //    }
+                            //}
+                            //Log.Message("true");
+                            flag = true;
+                            break;
+                        }
+                    }
+                }
+
+                if (flag)
+                {
+                    Recache();
+                }
+                nextObligationCheck = Find.TickManager.TicksGame + Rand.Range(1200, 2400);
             }
         }
 
