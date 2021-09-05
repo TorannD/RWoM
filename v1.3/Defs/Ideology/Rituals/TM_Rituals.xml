@@ -43,7 +43,7 @@
         <roleBehaviors>
           <li>
             <roleId>voidseekerId</roleId>
-            <dutyDef>ArriveToCell</dutyDef>
+            <dutyDef>TM_ArriveToCell</dutyDef>
             <customPositions>
               <li Class="RitualPosition_Lectern">
                 <maxDistanceToFocus>5</maxDistanceToFocus>
@@ -55,7 +55,7 @@
           </li>
           <li>
             <roleId>mageId</roleId>
-            <dutyDef>ArriveToCell</dutyDef>
+            <dutyDef>TM_ArriveToCell</dutyDef>
             <customPositions>
               <li Class="RitualPosition_OnInteractionCell">
                 <offset>(-1,0,0)</offset>
@@ -75,7 +75,7 @@
         <roleBehaviors>
           <li>
             <roleId>voidseekerId</roleId>
-            <dutyDef>SpeakOnCellFacingSpectators</dutyDef>
+            <dutyDef>TM_SpeakOnCellFacingSpectators</dutyDef>
             <speakerInteraction>TM_Speech_SeverMagic</speakerInteraction>
             <customPositions>
               <li Class="RitualPosition_Lectern">
@@ -88,7 +88,7 @@
           </li>
           <li>
             <roleId>mageId</roleId>
-            <dutyDef>LayDownAwake</dutyDef>
+            <dutyDef>TM_LayDownAwake</dutyDef>
 			<customPositions>
               <li Class="RitualPosition_OnInteractionCell">
                 <offset>(-1,0,0)</offset>
@@ -123,7 +123,7 @@
           </li>
           <li>
             <roleId>mageId</roleId>
-            <dutyDef>LayDownAwake</dutyDef>
+            <dutyDef>TM_LayDownAwake</dutyDef>
 			<customPositions>
               <li Class="RitualPosition_OnInteractionCell">
                 <offset>(1,0,0)</offset>
@@ -132,7 +132,6 @@
             </customPositions>
           </li>
         </roleBehaviors>
-        <visualEffectDef>SacrificePrisoner</visualEffectDef>
       </li>
       <li>
         <defaultDuty>Spectate</defaultDuty>
@@ -144,7 +143,7 @@
         <roleBehaviors>
           <li>
             <roleId>voidseekerId</roleId>
-            <dutyDef>SpeakOnCellFacingSpectators</dutyDef>
+            <dutyDef>TM_SpeakOnCellFacingSpectators</dutyDef>
             <speakerInteraction>TM_Speech_SeverMagic</speakerInteraction>
             <customPositions>
               <li Class="RitualPosition_OnInteractionCell" />
@@ -152,7 +151,7 @@
           </li>
 		  <li>
             <roleId>mageId</roleId>
-            <dutyDef>ArriveToCell</dutyDef>
+            <dutyDef>TM_ArriveToCell</dutyDef>
 			<customPositions>
               <li Class="RitualPosition_OnInteractionCell">
                 <offset>(1,0,0)</offset>
@@ -170,7 +169,7 @@
 	<nameMaker>NamerRitualMindMutilation</nameMaker>
     <ritualBehavior>TM_SeverMagic</ritualBehavior>
     <ritualExpectedPostfix>{0} {1} want to carry out the severence ritual as soon as possible.</ritualExpectedPostfix>
-    <ritualObligationTargetFilter>RitualSpotIdeogramOrAltar</ritualObligationTargetFilter>
+    <ritualObligationTargetFilter MayRequire="Ludeon.RimWorld.Ideology">RitualSpotIdeogramOrAltar</ritualObligationTargetFilter>
     <ritualOutcomeEffect>TM_SeverMagic</ritualOutcomeEffect>
     <tags>
       <li>TM_SeverMagic</li>
@@ -211,7 +210,7 @@
       </li>
       <li Class="RitualOutcomeComp_RitualTargetDefs">
         <defs>
-          <li>Ideogram</li>
+          <li MayRequire="Ludeon.RimWorld.Ideology">Ideogram</li>
         </defs>
         <allowAltars>true</allowAltars>
         <label>started at altar or ideogram</label>
@@ -308,7 +307,7 @@
         <roleBehaviors>
           <li>
             <roleId>voidseekerId</roleId>
-            <dutyDef>ArriveToCell</dutyDef>
+            <dutyDef>TM_ArriveToCell</dutyDef>
             <customPositions>
               <li Class="RitualPosition_OnInteractionCell">
                 <offset>(1,0,0)</offset>
@@ -318,7 +317,7 @@
           </li>
           <li>
             <roleId>mageId</roleId>
-            <dutyDef>ArriveToCell</dutyDef>
+            <dutyDef>TM_ArriveToCell</dutyDef>
             <customPositions>
               <li Class="RitualPosition_OnInteractionCell">
                 <offset>(0,0,0)</offset>
@@ -338,7 +337,7 @@
         <roleBehaviors>
           <li>
             <roleId>voidseekerId</roleId>
-            <dutyDef>SpeakOnCellFacingSpectators</dutyDef>
+            <dutyDef>TM_SpeakOnCellFacingSpectators</dutyDef>
             <speakerInteraction>TM_Speech_BestowMagic</speakerInteraction>
             <customPositions>
               <li Class="RitualPosition_OnInteractionCell">
@@ -349,7 +348,7 @@
           </li>
           <li>
             <roleId>mageId</roleId>
-            <dutyDef>ArriveToCell</dutyDef>
+            <dutyDef>TM_ArriveToCell</dutyDef>
 			<customPositions>
               <li Class="RitualPosition_OnInteractionCell">
                 <offset>(0,0,0)</offset>
@@ -389,7 +388,6 @@
             </customPositions>
           </li>
         </roleBehaviors>
-        <visualEffectDef>SacrificePrisoner</visualEffectDef>
       </li>
       <li>
         <defaultDuty>Spectate</defaultDuty>
@@ -401,7 +399,7 @@
         <roleBehaviors>
           <li>
             <roleId>voidseekerId</roleId>
-            <dutyDef>SpeakOnCellFacingSpectators</dutyDef>
+            <dutyDef>TM_SpeakOnCellFacingSpectators</dutyDef>
             <speakerInteraction>TM_Speech_BestowMagic</speakerInteraction>
             <customPositions>
               <li Class="RitualPosition_OnInteractionCell" />
@@ -409,7 +407,7 @@
           </li>
 		  <li>
             <roleId>mageId</roleId>
-            <dutyDef>ArriveToCell</dutyDef>
+            <dutyDef>TM_ArriveToCell</dutyDef>
 			<customPositions>
               <li Class="RitualPosition_OnInteractionCell">
                 <offset>(0,0,1)</offset>
@@ -427,18 +425,18 @@
 	<nameMaker>NamerRitualGifting</nameMaker>
     <ritualBehavior>TM_BestowMagic</ritualBehavior>
     <ritualExpectedPostfix>{0} {1} want to carry out the gifting ritual as soon as possible.</ritualExpectedPostfix>
-    <ritualObligationTargetFilter>RitualSpotIdeogramOrAltar</ritualObligationTargetFilter>
+    <ritualObligationTargetFilter MayRequire="Ludeon.RimWorld.Ideology">RitualSpotIdeogramOrAltar</ritualObligationTargetFilter>
     <ritualOutcomeEffect>TM_BestowMagic</ritualOutcomeEffect>
     <tags>
       <li>TM_BestowMagic</li>
     </tags>
     <patternGroupTag>TM_GiftingRitual</patternGroupTag>
 	<alwaysStartAnytime>true</alwaysStartAnytime>
-<!--     <ritualObligationTriggers>
+    <ritualObligationTriggers>
       <li Class="RitualObligationTrigger_DateProperties">
         <mustBePlayerIdeo>true</mustBePlayerIdeo>
       </li>
-    </ritualObligationTriggers> -->
+    </ritualObligationTriggers>
     <mergeGizmosForObligations>true</mergeGizmosForObligations>
   </RitualPatternDef>
   
@@ -468,7 +466,7 @@
       </li>
       <li Class="RitualOutcomeComp_RitualTargetDefs">
         <defs>
-          <li>Ideogram</li>
+          <li MayRequire="Ludeon.RimWorld.Ideology">Ideogram</li>
         </defs>
         <allowAltars>true</allowAltars>
         <label>started at altar or ideogram</label>
@@ -557,7 +555,7 @@
         <roleBehaviors>
           <li>
             <roleId>voidseekerId</roleId>
-            <dutyDef>ArriveToCell</dutyDef>
+            <dutyDef>TM_ArriveToCell</dutyDef>
             <customPositions>
               <li Class="RitualPosition_BesideThing">
               </li>
@@ -565,7 +563,7 @@
           </li>
           <li>
             <roleId>mageId</roleId>
-            <dutyDef>ArriveToCell</dutyDef>
+            <dutyDef>TM_ArriveToCell</dutyDef>
             <customPositions>
               <li Class="RitualPosition_OnInteractionCell">
                 <offset>(0,0,0)</offset>
@@ -585,7 +583,7 @@
         <roleBehaviors>
           <li>
             <roleId>voidseekerId</roleId>
-            <dutyDef>SpeakOnCellFacingSpectators</dutyDef>
+            <dutyDef>TM_SpeakOnCellFacingSpectators</dutyDef>
             <speakerInteraction>TM_Speech_BestowMagic</speakerInteraction>
             <customPositions>
                <li Class="RitualPosition_BesideThing">
@@ -633,7 +631,6 @@
             </customPositions>
           </li>
         </roleBehaviors>
-        <visualEffectDef>SacrificePrisoner</visualEffectDef>
       </li>
       <li>
         <defaultDuty>Spectate</defaultDuty>
@@ -645,7 +642,7 @@
         <roleBehaviors>
           <li>
             <roleId>voidseekerId</roleId>
-            <dutyDef>SpeakOnCellFacingSpectators</dutyDef>
+            <dutyDef>TM_SpeakOnCellFacingSpectators</dutyDef>
             <speakerInteraction>TM_Speech_BestowMagic</speakerInteraction>
             <customPositions>
                <li Class="RitualPosition_BesideThing"/>
@@ -653,7 +650,7 @@
           </li>
 		  <li>
             <roleId>mageId</roleId>
-            <dutyDef>ArriveToCell</dutyDef>
+            <dutyDef>TM_ArriveToCell</dutyDef>
 			<customPositions>
               <li Class="RitualPosition_OnInteractionCell">
                 <offset>(1,0,0)</offset>
@@ -671,7 +668,7 @@
 	<nameMaker>NamerRitualGifting</nameMaker>
     <ritualBehavior>TM_ArcanePathway</ritualBehavior>
     <ritualExpectedPostfix>{0} {1} want to carry out the arcane path ritual as soon as possible.</ritualExpectedPostfix>
-    <ritualObligationTargetFilter>RitualSpotIdeogramOrAltar</ritualObligationTargetFilter>
+    <ritualObligationTargetFilter MayRequire="Ludeon.RimWorld.Ideology">RitualSpotIdeogramOrAltar</ritualObligationTargetFilter>
     <ritualOutcomeEffect>TM_BestowMagicClass</ritualOutcomeEffect>
     <tags>
       <li>TM_BestowMagicClass</li>
@@ -711,7 +708,7 @@
       </li>
       <li Class="RitualOutcomeComp_RitualTargetDefs">
         <defs>
-          <li>Ideogram</li>
+          <li MayRequire="Ludeon.RimWorld.Ideology">Ideogram</li>
         </defs>
         <allowAltars>true</allowAltars>
         <label>started at altar or ideogram</label>

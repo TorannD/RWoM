@@ -181,8 +181,8 @@
         <endMessage>{0} can no longer reach an arcane path of a {1} through inspiration.</endMessage>
         <baseInspectLine>Inspired: Arcane Path</baseInspectLine>
 		<statFactors>
-			<SocialIdeoSpreadFrequencyFactor>.2</SocialIdeoSpreadFrequencyFactor>
-			<ConversionPower>.2</ConversionPower>
+			<SocialIdeoSpreadFrequencyFactor MayRequire="Ludeon.RimWorld.Ideology">.2</SocialIdeoSpreadFrequencyFactor>
+			<ConversionPower MayRequire="Ludeon.RimWorld.Ideology">.2</ConversionPower>
         </statFactors>
     </InspirationDef>
 

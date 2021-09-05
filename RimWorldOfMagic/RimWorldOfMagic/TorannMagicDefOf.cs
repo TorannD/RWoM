@@ -1362,7 +1362,6 @@ namespace TorannMagic
         public static PreceptDef TM_Mages_Disapprove;
         public static PreceptDef TM_Mages_Approve;
         public static PreceptDef TM_Mages_Venerated;
-        public static PreceptDef Corpses_DontCare;
 
         //Precept Roles
         public static PreceptDef TM_IdeoRole_VoidSeeker;

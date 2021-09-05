@@ -1,6 +1,7 @@
 ﻿using Verse;
 using RimWorld;
 using System.Collections.Generic;
+using HarmonyLib;
 
 namespace TorannMagic.Thoughts
 {
@@ -18,9 +19,16 @@ namespace TorannMagic.Thoughts
             {
                 return false;
             }
-            if(ModsConfig.IdeologyActive && pawn.Ideo.HasPrecept(TorannMagicDefOf.Corpses_DontCare))
+            if(ModsConfig.IdeologyActive)
             {
-                return false;
+                List<Precept> pList = Traverse.Create(root: pawn.Ideo).Field(name: "precepts").GetValue<List<Precept>>();
+                foreach (Precept prec in pList)
+                {
+                    if (prec.def.defName == "Corpses_DontCare")
+                    {
+                        return false;
+                    }
+                }                
             }
             List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned;
             for (int i = 0; i < mapPawns.Count; i++)

@@ -14,7 +14,7 @@
     <groupDef>TM_Voidseeker</groupDef>
     <iconPath>UI/manavortex</iconPath>
     <warmupMoteSocialSymbol>UI/manavortex</warmupMoteSocialSymbol>
-    <warmupSound>MoralistAbility_Warmup</warmupSound>
+    <warmupSound>TM_WindLowSD</warmupSound>
     <hotKey>Misc12</hotKey>
     <!-- <jobDef>CastAbilityOnThing</jobDef> -->
 	<jobDef>TMCastIdeoAbility</jobDef>
@@ -54,7 +54,7 @@
     <groupDef>TM_Voidseeker</groupDef>
     <iconPath>UI/manavortex_elemental</iconPath>
     <warmupMoteSocialSymbol>UI/manavortex_elemental</warmupMoteSocialSymbol>
-    <warmupSound>MoralistAbility_Warmup</warmupSound>
+    <warmupSound>TM_WindLowSD</warmupSound>
     <hotKey>Misc12</hotKey>
 	<jobDef>TMCastIdeoAbility</jobDef>
     <stunTargetWhileCasting>True</stunTargetWhileCasting>

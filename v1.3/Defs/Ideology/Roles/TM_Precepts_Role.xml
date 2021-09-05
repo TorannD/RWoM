@@ -1,7 +1,38 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <PreceptDef ParentName="PreceptRoleSingleBase">
+  <!-- Base -->
+  <IssueDef>
+    <defName>TM_IdeoRole</defName>
+    <label>role</label>
+    <allowMultiplePrecepts>true</allowMultiplePrecepts>
+  </IssueDef>
+  
+  <PreceptDef Abstract="True" Name="TM_PreceptRoleSingleBase">
+    <issue>TM_IdeoRole</issue>
+    <preceptClass>Precept_RoleSingle</preceptClass>
+    <certaintyLossFactor>0.5</certaintyLossFactor>
+    <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
+    <roleRequirements>
+      <li Class="RoleRequirement_SameIdeo">
+        <labelKey>RoleRequirementLabelSameIdeo</labelKey>
+      </li>
+      <li Class="RoleRequirement_SupremeGender">
+        <labelKey>RoleRequirementLabelSupremeGender</labelKey>
+      </li>
+    </roleRequirements>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought MayRequire="Ludeon.RimWorld.Ideology">IdeoRoleApparelRequirementNotMet</thought>
+      </li>
+    </comps>
+    <impact>Medium</impact>
+    <activationBelieverCount>3</activationBelieverCount>
+    <deactivationBelieverCount>1</deactivationBelieverCount>
+    <classicExtra>true</classicExtra>
+  </PreceptDef> 
+
+  <PreceptDef ParentName="TM_PreceptRoleSingleBase">
     <defName>TM_IdeoRole_VoidSeeker</defName>
 	<issue>TM_MageOpinion</issue>
     <label>Void seeker</label>
@@ -84,7 +115,7 @@
       </li>
       <li>
         <disallowedFactionCategoryTags><li>Tribal</li></disallowedFactionCategoryTags>
-        <anyMemeRequired><li>Transhumanist</li></anyMemeRequired>
+        <anyMemeRequired><li MayRequire="Ludeon.RimWorld.Ideology">Transhumanist</li></anyMemeRequired>
         <requirement>
           <bodyPartGroupsMatchAny>
             <li>UpperHead</li>

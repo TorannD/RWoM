@@ -8,7 +8,7 @@
     <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
     <symbol>Things/Mote/SpeechSymbols/Speech</symbol>
     <logRulesInitiator>
-      <include><li>SpeechUtility</li></include>
+      <include><li MayRequire="Ludeon.RimWorld.Ideology">SpeechUtility</li></include>
       <rulesStrings>
         <li>r_logentry->[INITIATOR_nameDef] [praised] [doing] [speechtopic].</li>
         <li>r_logentry(p=0.2)->[INITIATOR_nameDef] [crazy].</li>
@@ -51,7 +51,7 @@
     <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
     <symbol>Things/Mote/SpeechSymbols/Speech</symbol>
     <logRulesInitiator>
-      <include><li>SpeechUtility</li></include>
+      <include><li MayRequire="Ludeon.RimWorld.Ideology">SpeechUtility</li></include>
       <rulesStrings>
         <li>r_logentry->[INITIATOR_nameDef] [praised] [doing] [speechtopic].</li>
         <li>r_logentry(p=0.2)->[INITIATOR_nameDef] [crazy].</li>
