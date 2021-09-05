@@ -1807,15 +1807,18 @@ namespace TorannMagic
                 }
                 int transStackValue = Mathf.RoundToInt(transStackCount * transmutateThing.def.BaseMarketValue);
                 float newMatCount = 0;
-                IEnumerable<ThingDef> enumerable = from def in DefDatabase<ThingDef>.AllDefs
-                                                   where (def.BaseMarketValue > .1f && def.BaseMarketValue <= 100 && def != transmutateThing.def && ((def.stuffProps != null && def.stuffProps.categories != null && def.stuffProps.categories.Count > 0) || def.defName == "RawMagicyte") || def.IsWithinCategory(ThingCategoryDefOf.ResourcesRaw) || def.IsWithinCategory(ThingCategoryDefOf.Leathers))
+                IEnumerable<ThingDef> enumerable = from def in DefDatabase<ThingDef>.AllDefs.InRandomOrder()
+                                                   where (def.BaseMarketValue >= 1f && def.BaseMarketValue <= 200 && def != transmutateThing.def && ((def.stuffProps != null && def.stuffProps.categories != null && def.stuffProps.categories.Count > 0) || def.defName == "RawMagicyte") || def.IsWithinCategory(ThingCategoryDefOf.ResourcesRaw) || def.IsWithinCategory(ThingCategoryDefOf.Leathers))
                                                    select def;
-
+                ThingDef newThingDef = null;
                 foreach (ThingDef current in enumerable)
                 {
                     if (current != null && current.defName != null)
                     {
-                        newMatCount = transStackValue / current.BaseMarketValue;
+                        float newThingValue = current.BaseMarketValue < 1f ? 1f : current.BaseMarketValue;
+                        newMatCount = transStackValue / newThingValue;
+                        newThingDef = current;
+                        break;
                         //Log.Message("transumtation resource " + current.defName + " base value " + current.BaseMarketValue + " value count converts to " + newMatCount);
                     }
                 }
@@ -1828,13 +1831,14 @@ namespace TorannMagic
                     transmutateThing.SplitOff(transStackCount).Destroy(DestroyMode.Vanish);
                 }
                 Thing thing = null;
-                ThingDef newThingDef = enumerable.RandomElement();
-                newMatCount = Mathf.Max(transStackValue / newThingDef.BaseMarketValue, 1);
-                thing = ThingMaker.MakeThing(newThingDef);
-                thing.stackCount = Mathf.RoundToInt((.7f + (.05f * pwrVal)) * newMatCount);
-                if (newMatCount < 1)
+                if (newThingDef != null)
                 {
-                    newMatCount = 1;
+                    thing = ThingMaker.MakeThing(newThingDef);
+                    thing.stackCount = Mathf.RoundToInt((.7f + (.05f * pwrVal)) * newMatCount);
+                    if (newMatCount < 1)
+                    {
+                        newMatCount = 1;
+                    }
                 }
 
                 if (thing != null)

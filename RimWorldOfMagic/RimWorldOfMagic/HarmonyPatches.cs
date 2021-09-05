@@ -2672,7 +2672,7 @@ namespace TorannMagic
                         {
                             if (pawn.Map == null)
                             {
-                                Log.Message("Tried to do death retaliation in a null map.");
+                                //Log.Message("Tried to do death retaliation in a null map.");
                             }
                             else
                             {
@@ -5204,6 +5204,10 @@ namespace TorannMagic
         {
             if (pawn.IsColonist || (pawn.Faction != null && pawn.Faction.IsPlayer))
             {
+                if(ModsConfig.IdeologyActive && pawn.IsSlaveOfColony)
+                {
+                    return true;
+                }
                 __result = pawn.IsWorldPawn() && ThingOwnerUtility.AnyParentIs<ActiveDropPodInfo>(pawn);
                 return false;
             }

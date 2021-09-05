@@ -208,7 +208,7 @@ namespace TorannMagic
                     {
                         for (int i = 0; i < replicant.ingredients.Count; i++)
                         {
-                            if (replicant.ingredients[i].filter != null && replicant.ingredients[i].filter.ToString() != "ingredients")
+                            if (replicant.ingredients[i].filter != null && replicant.ingredients[i].filter.ToString() != "ingredients" && replicant.ingredients[i].IsFixedIngredient) //added fixed ingredients
                             {
                                 forgeRecipe.ingredients.Add(replicant.ingredients[i]);
                             }
