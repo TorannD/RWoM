@@ -325,6 +325,18 @@ namespace TorannMagic
         //    return false;
         //}
 
+        [HarmonyPatch(typeof(SlaveRebellionUtility), "CanParticipateInSlaveRebellion", null)]
+        public class Undead_DoNotPartcicipateInSlaveRebellion_Patch
+        {
+            public static void Postfix(Pawn pawn, ref bool __result)
+            {
+                if (__result && TM_Calc.IsUndeadNotVamp(pawn))
+                {
+                    __result = false;
+                }
+            }
+        }
+
         [HarmonyPatch(typeof(PawnCapacityUtility), "CalculatePartEfficiency", null)]
         public class CalculatePartEfficiency_NullCheck_Patch
         {

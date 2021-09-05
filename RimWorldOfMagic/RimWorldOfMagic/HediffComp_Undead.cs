@@ -129,10 +129,13 @@ namespace TorannMagic
                     necroValid = true;
                     lichStrike = 0;
 
-                    TM_Action.TryCopyIdeo(linkedPawn, this.Pawn);
-                    if (ModsConfig.IdeologyActive && this.Pawn.guest?.GuestStatus != GuestStatus.Slave)
-                    {                        
-                        this.Pawn.guest.SetGuestStatus(linkedPawn.Faction, GuestStatus.Slave);
+                    if (ModsConfig.IdeologyActive)
+                    {
+                        TM_Action.TryCopyIdeo(linkedPawn, this.Pawn);
+                        if (this.Pawn.guest?.GuestStatus != GuestStatus.Slave)
+                        {
+                            this.Pawn.guest.SetGuestStatus(linkedPawn.Faction, GuestStatus.Slave);
+                        }
                     }
                 }
                 else
@@ -158,7 +161,7 @@ namespace TorannMagic
                     { 
                         for (int i = 0; i < needs.Count; i++)
                         {
-                            if (needs[i]?.def == NeedDefOf.Food || needs[i]?.def?.defName == "Mood")
+                            if (needs[i]?.def == NeedDefOf.Food || needs[i]?.def?.defName == "Mood" || needs[i]?.def?.defName == "Suppression")
                             {
                                 needs[i].CurLevel = needs[i].MaxLevel;
                             }
