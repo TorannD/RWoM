@@ -325,6 +325,21 @@ namespace TorannMagic
         //    return false;
         //}
 
+        [HarmonyPatch(typeof(WorkGiver_Warden_EmancipateSlave), "JobOnThing", null)]
+        public class Undead_DoNotGiveEmancipateJob_Patch
+        {
+            public static bool Prefix(Pawn pawn, Thing t, ref Job __result)
+            {
+                Pawn p = t as Pawn;
+                if(p != null && ModsConfig.IdeologyActive && TM_Calc.IsUndeadNotVamp(p))
+                {
+                    __result = null;
+                    return false;
+                }
+                return true;
+            }
+        }
+
         [HarmonyPatch(typeof(SlaveRebellionUtility), "CanParticipateInSlaveRebellion", null)]
         public class Undead_DoNotPartcicipateInSlaveRebellion_Patch
         {
@@ -2489,7 +2504,7 @@ namespace TorannMagic
                     {
                         __instance.SetFaction(null, null);
                     }
-                    if(TM_Calc.IsMagicUser(__instance) && dinfo.HasValue && dinfo.Value.Instigator != null)
+                    if (TM_Calc.IsMagicUser(__instance) && dinfo.HasValue && dinfo.Value.Instigator != null)
                     {
                         Find.HistoryEventsManager.RecordEvent(new HistoryEvent(TorannMagicDefOf.TM_KilledMage, dinfo.Value.Instigator.Named(HistoryEventArgsNames.Doer), __instance.Named(HistoryEventArgsNames.Victim)));
                     }
@@ -2497,7 +2512,7 @@ namespace TorannMagic
                     {
                         Find.HistoryEventsManager.RecordEvent(new HistoryEvent(TorannMagicDefOf.TM_KilledFighter, dinfo.Value.Instigator.Named(HistoryEventArgsNames.Doer), __instance.Named(HistoryEventArgsNames.Victim)));
                     }
-                    if(__instance.RaceProps != null && __instance.RaceProps.Humanlike && !__instance.Faction.IsPlayer && dinfo.HasValue && dinfo.Value.Instigator != null && dinfo.Value.Instigator.Faction.IsPlayer)
+                    if (__instance.RaceProps != null && __instance.RaceProps.Humanlike && __instance.Faction != null && !__instance.Faction.IsPlayer && dinfo.HasValue && dinfo.Value.Instigator != null && dinfo.Value.Instigator.Faction.IsPlayer)
                     {
                         Find.HistoryEventsManager.RecordEvent(new HistoryEvent(TorannMagicDefOf.TM_KilledHumanlike, dinfo.Value.Instigator.Named(HistoryEventArgsNames.Doer), __instance.Named(HistoryEventArgsNames.Victim)));
                     }

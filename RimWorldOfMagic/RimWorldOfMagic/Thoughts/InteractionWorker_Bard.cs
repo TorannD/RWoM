@@ -10,22 +10,21 @@ namespace TorannMagic.Thoughts
         public override float RandomSelectionWeight(Pawn initiator, Pawn recipient)
         {
             CompAbilityUserMagic compInit = initiator.GetComp<CompAbilityUserMagic>();
-            bool flag = !initiator.IsColonist || !recipient.IsColonist;
-            float result;            
+            bool flag = !initiator.IsColonist || !recipient.IsColonist || compInit is null;
+            float result = 0f;            
             if (flag)
             {
                 result = 0f;
             }
             else
             {
-                bool flag2 = !compInit.IsMagicUser;
-                if (flag2)
+                if (!TM_Calc.IsMagicUser(initiator))
                 {
                     result = 0f;
                 }
                 else
                 {
-                    if(compInit.Pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Bard))
+                    if(initiator.story != null && initiator.story.traits != null && initiator.story.traits.HasTrait(TorannMagicDefOf.TM_Bard))
                     {
                         if (initiator.jobs.curDriver.asleep)
                         {

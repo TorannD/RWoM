@@ -1059,7 +1059,7 @@
   <PreceptDef>
     <defName>TM_BestowClassRitual</defName>
     <label>arcane path</label>
-    <description>A voidseeker will guide a pawn possessing the gift of magic during a ritual to become a mage. The audience will watch as the mage attempts to realize their inspiration with the guidance of the voidseeker. The target may attempt one last retaliation spell. If successful, the target will acquire their inspired magic class.</description>
+    <description>A voidseeker will guide a pawn possessing the gift of magic during a ritual to become a mage. The audience will watch as the mage attempts to realize their inspiration with the guidance of the voidseeker. Upon completion, the target will acquire their inspired magic class.</description>
     <issue>Ritual</issue>
     <impact>Medium</impact>
     <iconPath>Ideology/ArcaneInspiration</iconPath>

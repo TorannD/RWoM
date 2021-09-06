@@ -19,16 +19,19 @@ namespace TorannMagic.Thoughts
             {
                 return false;
             }
-            if(ModsConfig.IdeologyActive)
+            if(ModsConfig.IdeologyActive && pawn.Ideo != null)
             {
                 List<Precept> pList = Traverse.Create(root: pawn.Ideo).Field(name: "precepts").GetValue<List<Precept>>();
-                foreach (Precept prec in pList)
+                if (pList != null)
                 {
-                    if (prec.def.defName == "Corpses_DontCare")
+                    foreach (Precept prec in pList)
                     {
-                        return false;
+                        if (prec.def.defName == "Corpses_DontCare")
+                        {
+                            return false;
+                        }
                     }
-                }                
+                }
             }
             List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned;
             for (int i = 0; i < mapPawns.Count; i++)

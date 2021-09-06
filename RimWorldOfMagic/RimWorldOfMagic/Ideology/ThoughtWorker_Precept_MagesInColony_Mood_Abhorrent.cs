@@ -13,8 +13,9 @@ namespace TorannMagic.Ideology
         protected override ThoughtState ShouldHaveThought(Pawn p)
         {
             if (p.IsColonist && !p.IsPrisoner && !p.IsSlave && !p.IsQuestLodger() && TM_Calc.HasMageInFaction(p.Faction, false))
-            {
+            {                
                 return ThoughtState.ActiveAtStage(1);
+                
             }
             else
             {

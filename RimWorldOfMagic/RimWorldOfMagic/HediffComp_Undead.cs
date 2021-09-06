@@ -120,7 +120,7 @@ namespace TorannMagic
                 TM_Action.UpdateAnimalTraining(base.Pawn);                
             }
             bool flag4 = Find.TickManager.TicksGame % 600 == 0 && this.Pawn.def != TorannMagicDefOf.TM_SkeletonR && this.Pawn.def != TorannMagicDefOf.TM_GiantSkeletonR;
-            if (flag4)
+            if (flag4 && !this.Pawn.Dead)
             {                
                 UpdateHediff();
                 necroValid = false;
@@ -129,7 +129,7 @@ namespace TorannMagic
                     necroValid = true;
                     lichStrike = 0;
 
-                    if (ModsConfig.IdeologyActive)
+                    if (ModsConfig.IdeologyActive && !this.Pawn.Downed)
                     {
                         TM_Action.TryCopyIdeo(linkedPawn, this.Pawn);
                         if (this.Pawn.guest?.GuestStatus != GuestStatus.Slave)
@@ -147,12 +147,8 @@ namespace TorannMagic
                     if (base.Pawn.Map != null)
                     {
                         TM_MoteMaker.ThrowScreamMote(base.Pawn.Position.ToVector3(), base.Pawn.Map, .8f, 255, 255, 255);
-                        base.Pawn.Kill(null, null);
                     }
-                    else
-                    {
-                        base.Pawn.Kill(null, null);
-                    }
+                    base.Pawn.Kill(null, null);
                 }
                 else
                 {
