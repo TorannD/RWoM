@@ -12,16 +12,9 @@ namespace TorannMagic.Ideology
     {
         protected override ThoughtState ShouldHaveThought(Pawn p)
         {
-            if (p.IsColonist && !p.IsPrisoner && !p.IsSlave && !p.IsQuestLodger())
+            if (p.IsColonist && !p.IsPrisoner && !p.IsSlave && !p.IsQuestLodger() && TM_Calc.HasMageInFaction(p.Faction, false, true))
             {
-                List<Pawn> tmpList = PawnsFinder.AllMaps_SpawnedPawnsInFaction(p.Faction);
-                foreach(Pawn otherPawn in tmpList)
-                {
-                    if(otherPawn.IsSlave)
-                    {
-                        return true;
-                    }
-                }
+                return ThoughtState.ActiveAtStage(0);
             }
             return false;
         }

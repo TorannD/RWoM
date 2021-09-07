@@ -90,11 +90,7 @@ namespace TorannMagic
                                     }
 
                                     if (!wasVampire)
-                                    {
-                                        if (ModsConfig.IdeologyActive)
-                                        {
-                                            undeadPawn.guest.SetGuestStatus(pawn.Faction, GuestStatus.Slave);
-                                        }
+                                    {                                        
                                         if (undeadPawn.Faction != pawn.Faction)
                                         {
                                             undeadPawn.SetFaction(pawn.Faction);
@@ -158,6 +154,10 @@ namespace TorannMagic
                                         }
                                         else if (undeadPawn.story != null && undeadPawn.story.traits != null && undeadPawn.needs != null && undeadPawn.playerSettings != null)
                                         {
+                                            if (ModsConfig.IdeologyActive && undeadPawn.guest != null)
+                                            {
+                                                undeadPawn.guest.SetGuestStatus(pawn.Faction, GuestStatus.Slave);
+                                            }
 
                                             CompAbilityUserMagic compMagic = undeadPawn.GetComp<CompAbilityUserMagic>();
                                             if (compMagic != null && TM_Calc.IsMagicUser(undeadPawn)) //(compMagic.IsMagicUser && !undeadPawn.story.traits.HasTrait(TorannMagicDefOf.Faceless)) || 

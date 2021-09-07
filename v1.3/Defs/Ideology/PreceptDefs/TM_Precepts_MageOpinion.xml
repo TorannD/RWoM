@@ -602,9 +602,9 @@
     <workerClass>TorannMagic.Ideology.ThoughtWorker_Precept_MagicUse_Know_Mood_Approve</workerClass>
     <stages>
 	  <li>
-        <label>magic absence</label>
-        <description>I haven't seen any magic recently; are my hopes misplaced?</description>
-        <baseMoodEffect>-2</baseMoodEffect>
+        <label>magic abundance</label>
+        <description>I'm surrounded by powerful magic - our colony can surely withstand any challenge.</description>
+        <baseMoodEffect>3</baseMoodEffect>
       </li>
 	  <li>
         <label>magic use</label>
@@ -612,10 +612,10 @@
         <baseMoodEffect>2</baseMoodEffect>
       </li>
 	  <li>
-        <label>magic abundance</label>
-        <description>I'm surrounded by powerful magic - our colony can surely withstand any challenge.</description>
-        <baseMoodEffect>3</baseMoodEffect>
-      </li>
+        <label>magic absence</label>
+        <description>I haven't seen any magic recently; are my hopes misplaced?</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>	  
     </stages>
   </ThoughtDef>
   
@@ -625,19 +625,19 @@
     <workerClass>TorannMagic.Ideology.ThoughtWorker_Precept_MagicUse_Mood_Approve</workerClass>
     <stages>
 	  <li>
-        <label>magic deprevation</label>
-        <description>I haven't used any magic recently; I feel out of touch with my power.</description>
-        <baseMoodEffect>-3</baseMoodEffect>
-      </li>
+        <label>magic rush</label>
+        <description>magical energy is rushing through me, I feel like I could do anything!</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>	  
 	  <li>
         <label>magic use</label>
         <description>I used magic and it felt great.</description>
         <baseMoodEffect>1</baseMoodEffect>
       </li>
 	  <li>
-        <label>magic rush</label>
-        <description>magical energy is rushing through me, I feel like I could do anything!</description>
-        <baseMoodEffect>3</baseMoodEffect>
+        <label>magic deprevation</label>
+        <description>I haven't used any magic recently; I feel out of touch with my power.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
       </li>
     </stages>
   </ThoughtDef>
@@ -648,29 +648,29 @@
     <workerClass>TorannMagic.Ideology.ThoughtWorker_Precept_MagesInColony_Mood_Approve</workerClass>
     <stages>
 	  <li>
-        <label>no mages</label>
-        <description>How can we rely on magic if we don't have a mage in the colony?</description>
-        <baseMoodEffect>-3</baseMoodEffect>
+        <label>mage dominance</label>
+        <description>The number of mages clearly demonstrates the superiority of our colony.</description>
+        <baseMoodEffect>3</baseMoodEffect>
       </li>
-      <li>
-        <label>mages present</label>
-        <description>We have several mages in the colony who will guide us in the ways of magic.</description>
-        <baseMoodEffect>1</baseMoodEffect>
-      </li>
+	  <li>
+        <label>abundant mages</label>
+        <description>Our colony is blessed with a large number of mages, our success is assured!</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>  
 	  <li>
         <label>mages collective</label>
         <description>The number of mages in the colony enriches many aspects of life.</description>
         <baseMoodEffect>2</baseMoodEffect>
       </li>
 	  <li>
-        <label>abundant mages</label>
-        <description>Our colony is blessed with a large number of mages, our success is assured!</description>
-        <baseMoodEffect>2</baseMoodEffect>
+        <label>mages present</label>
+        <description>We have several mages in the colony who will guide us in the ways of magic.</description>
+        <baseMoodEffect>1</baseMoodEffect>
       </li>
 	  <li>
-        <label>mage dominance</label>
-        <description>The number of mages clearly demonstrates the superiority of our colony.</description>
-        <baseMoodEffect>3</baseMoodEffect>
+        <label>no mages</label>
+        <description>How can we rely on magic if we don't have a mage in the colony?</description>
+        <baseMoodEffect>-3</baseMoodEffect>
       </li>
     </stages>
   </ThoughtDef>
@@ -758,7 +758,7 @@
 	  <li Class="PreceptComp_SituationalThought">
         <!-- <eventDef>TM_UsedMagic</eventDef> -->
         <thought>TM_MagicUse_Venerated_Mood</thought>
-		<description>magic use</description>
+		<description>witness magic</description>
       </li>
       <li Class="PreceptComp_SituationalThought">
         <thought>TM_MagesInColony_Venerated_Mood</thought>
@@ -766,11 +766,11 @@
       </li>
 	  <li Class="PreceptComp_SituationalThought">
         <thought>TM_MagesPrisoner_Venerated_Mood</thought>
-        <description>mage prisoner or slave</description>
+        <description>mage prisoner</description>
       </li>
 	  <li Class="PreceptComp_SituationalThought">
         <thought>TM_MagesSlave_Venerated_Mood</thought>
-        <description>mage prisoner or slave</description>
+        <description>mage slave</description>
       </li>
 	  <li Class="PreceptComp_SituationalThought">
         <thought>TM_IsMage_Venerated_Social</thought>
@@ -882,20 +882,20 @@
     <thoughtClass>Thought_Situational</thoughtClass>
     <workerClass>TorannMagic.Ideology.ThoughtWorker_Precept_MagicUse_Know_Mood_Approve</workerClass>
     <stages>
-	  <li>
-        <label>magic absence</label>
-        <description>I haven't seen any magic recently; its absence leaves me hollow.</description>
-        <baseMoodEffect>-3</baseMoodEffect>
-      </li>
+	<li>
+        <label>magic abundance</label>
+        <description>I'm in awe and terror by the power of magic!</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>	  
 	  <li>
         <label>magic use</label>
         <description>I witnessed glorious magic!</description>
         <baseMoodEffect>3</baseMoodEffect>
       </li>
 	  <li>
-        <label>magic abundance</label>
-        <description>I'm in awe and terror by the power of magic!</description>
-        <baseMoodEffect>4</baseMoodEffect>
+        <label>magic absence</label>
+        <description>I haven't seen any magic recently; its absence leaves me hollow.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
       </li>
     </stages>
 	<nullifyingTraits>
@@ -906,11 +906,11 @@
     <defName>TM_MagicUse_Venerated_Mood</defName>
     <thoughtClass>Thought_Situational</thoughtClass>
     <workerClass>TorannMagic.Ideology.ThoughtWorker_Precept_MagicUse_Mood_Approve</workerClass>
-    <stages>
+    <stages>	
 	  <li>
-        <label>magic deprevation</label>
-        <description>I haven't used any magic recently; I feel out of touch with my power.</description>
-        <baseMoodEffect>-3</baseMoodEffect>
+        <label>magic rush</label>
+        <description>magical energy is rushing through me, I feel like I could do anything!</description>
+        <baseMoodEffect>3</baseMoodEffect>
       </li>
 	  <li>
         <label>magic use</label>
@@ -918,10 +918,10 @@
         <baseMoodEffect>2</baseMoodEffect>
       </li>
 	  <li>
-        <label>magic rush</label>
-        <description>magical energy is rushing through me, I feel like I could do anything!</description>
-        <baseMoodEffect>3</baseMoodEffect>
-      </li>
+        <label>magic deprevation</label>
+        <description>I haven't used any magic recently; I feel out of touch with my power.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>	  
     </stages>
   </ThoughtDef>
   
@@ -931,14 +931,14 @@
     <workerClass>TorannMagic.Ideology.ThoughtWorker_Precept_MagesInColony_Mood_Approve</workerClass>
     <stages>
 	  <li>
-        <label>no mages</label>
-        <description>Has magic forsaken us!?</description>
-        <baseMoodEffect>-3</baseMoodEffect>
+        <label>mage dominance</label>
+        <description>The success of our colony is assured through the power of magic.</description>
+        <baseMoodEffect>4</baseMoodEffect>
       </li>
       <li>
-        <label>mages present</label>
-        <description>Mages in our colony will guide us in our chosen path.</description>
-        <baseMoodEffect>2</baseMoodEffect>
+        <label>abundant mages</label>
+        <description>Our colony is surely chosen for greatness while graced with this many mages; their combined power is indomitable.</description>
+        <baseMoodEffect>3</baseMoodEffect>
       </li>
 	  <li>
         <label>mages collective</label>
@@ -946,14 +946,14 @@
         <baseMoodEffect>2</baseMoodEffect>
       </li>
 	  <li>
-        <label>abundant mages</label>
-        <description>Our colony is surely chosen for greatness while graced with this many mages; their combined power is indomitable.</description>
-        <baseMoodEffect>3</baseMoodEffect>
+        <label>mages present</label>
+        <description>Mages in our colony will guide us in our chosen path.</description>
+        <baseMoodEffect>2</baseMoodEffect>
       </li>
 	  <li>
-        <label>mage dominance</label>
-        <description>The success of our colony is assured through the power of magic.</description>
-        <baseMoodEffect>4</baseMoodEffect>
+        <label>no mages</label>
+        <description>Has magic forsaken us!?</description>
+        <baseMoodEffect>-3</baseMoodEffect>
       </li>
     </stages>
   </ThoughtDef>

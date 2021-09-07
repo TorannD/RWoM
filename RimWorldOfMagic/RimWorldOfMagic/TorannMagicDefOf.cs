@@ -191,12 +191,11 @@ namespace TorannMagic
         //public static SitePartDef EnemyRaidOnArrival;
         public static SitePartDef ArcaneBanditSquad;
         //public static IncidentDef ArcaneEnemyRaid;
-        
+
         public static TraitDef TM_Gifted;
         public static TraitDef TM_OKWithDeath;
         public static TraitDef TM_ManaWellTD;
         public static TraitDef TM_ArcaneConduitTD;
-        
 
         //Wanderer
         public static TraitDef TM_Wanderer;
@@ -701,6 +700,9 @@ namespace TorannMagic
         public static HediffDef TM_BirdflightHD;
         public static PawnKindDef TM_SpiritWolf;
         public static ThingDef TM_SpiritWolfR;
+
+        //Golemancer
+        //public static TraitDef TM_Golemancer;
 
         //Shadow
         public static TraitDef TM_TheShadow;

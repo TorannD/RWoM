@@ -2,6 +2,7 @@
 using RimWorld;
 using System.Collections.Generic;
 using HarmonyLib;
+using System.Linq;
 
 namespace TorannMagic.Thoughts
 {
@@ -19,19 +20,13 @@ namespace TorannMagic.Thoughts
             {
                 return false;
             }
-            if(ModsConfig.IdeologyActive && pawn.Ideo != null)
-            {
-                List<Precept> pList = Traverse.Create(root: pawn.Ideo).Field(name: "precepts").GetValue<List<Precept>>();
-                if (pList != null)
+            if (ModsConfig.IdeologyActive && pawn.Ideo != null)
+            {                       
+                Precept p = pawn.Ideo.GetAllPreceptsOfType<Precept>().FirstOrDefault((Precept x) => x.def.defName == "Corpses_DontCare");
+                if(p != null)
                 {
-                    foreach (Precept prec in pList)
-                    {
-                        if (prec.def.defName == "Corpses_DontCare")
-                        {
-                            return false;
-                        }
-                    }
-                }
+                    return false;
+                }                
             }
             List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned;
             for (int i = 0; i < mapPawns.Count; i++)

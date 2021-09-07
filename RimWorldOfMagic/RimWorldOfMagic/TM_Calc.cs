@@ -375,7 +375,7 @@ namespace TorannMagic
                         return true;
                     }
                 }
-                else if (IsMagicUser(p) && p.IsSlave ? countSlaves : true)
+                else if (IsMagicUser(p) && p.IsSlave ? countSlaves : false)
                 {
                     return true;
                 }

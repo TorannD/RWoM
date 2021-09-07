@@ -17,7 +17,7 @@ namespace TorannMagic.Ideology
                 int eventsInLast24 = Find.HistoryEventsManager.GetRecentCountWithinTicks(TorannMagicDefOf.TM_UsedMagic, 60000);
                 if (eventsInLast24 > 12)
                 {
-                    return ThoughtState.ActiveAtStage(2);
+                    return ThoughtState.ActiveAtStage(0);
                 }
                 else if (eventsInLast24 > 0)
                 {
@@ -25,7 +25,7 @@ namespace TorannMagic.Ideology
                 }
                 else
                 {
-                    return ThoughtState.ActiveAtStage(0);
+                    return ThoughtState.ActiveAtStage(2);
                 }
             }
             

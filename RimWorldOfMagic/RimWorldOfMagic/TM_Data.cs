@@ -213,6 +213,19 @@ namespace TorannMagic
             }
         }
 
+        public static List<TraitDef> AllClassConflictTraits
+        {
+            get
+            {
+                List<TraitDef> allClassConflictTraits = new List<TraitDef>();
+                allClassConflictTraits.Clear();
+                allClassConflictTraits.AddRange(AllClassTraits);
+                allClassConflictTraits.Add(TorannMagicDefOf.TM_Gifted);
+                AllClassConflictTraits.Add(TorannMagicDefOf.PhysicalProdigy);
+                return allClassConflictTraits;
+            }
+        }
+
         public static List<ThingDef> MagicFociList()
         {
             List<ThingDef> magicFocis = new List<ThingDef>();

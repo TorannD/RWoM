@@ -22,7 +22,7 @@ namespace TorannMagic.Ideology
                 }
                 if (totalPower > 2f)
                 {
-                    return ThoughtState.ActiveAtStage(2);
+                    return ThoughtState.ActiveAtStage(0);
                 }
                 else if(totalPower > 0f)
                 {
@@ -30,7 +30,7 @@ namespace TorannMagic.Ideology
                 }
                 else
                 {
-                    return ThoughtState.ActiveAtStage(0);
+                    return ThoughtState.ActiveAtStage(2);
                 }
             }
             return false;

@@ -18,11 +18,11 @@ namespace TorannMagic.Ideology
                 int mageCount = TM_Calc.GetMagesInFactionCount(p.Faction, false);
                 if (mageCount > 15)
                 {
-                    return ThoughtState.ActiveAtStage(4);
+                    return ThoughtState.ActiveAtStage(0);
                 }
                 else if (mageCount > 7)
                 {
-                    return ThoughtState.ActiveAtStage(3);
+                    return ThoughtState.ActiveAtStage(1);
                 }
                 else if(mageCount > 3)
                 {
@@ -30,11 +30,11 @@ namespace TorannMagic.Ideology
                 }
                 else if (mageCount > 0)
                 {
-                    return ThoughtState.ActiveAtStage(1);
+                    return ThoughtState.ActiveAtStage(3);
                 }
                 else
                 {
-                    return ThoughtState.ActiveAtStage(0);
+                    return ThoughtState.ActiveAtStage(4);
                 }
             }
             return false;

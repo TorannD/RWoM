@@ -12,12 +12,12 @@ namespace TorannMagic.Ideology
     {
         protected override ThoughtState ShouldHaveThought(Pawn p)
         {
-            if (p.IsColonist && !p.IsPrisoner && !p.IsSlave && !p.IsQuestLodger())
+            if (p.IsColonist && !p.IsPrisoner && !p.IsSlave && !p.IsQuestLodger() && p.Map != null)
             {
-                List<Pawn> tmpList = PawnsFinder.AllMaps_SpawnedPawnsInFaction(p.Faction);
+                List<Pawn> tmpList = p.Map.mapPawns.AllPawnsSpawned;
                 foreach(Pawn otherPawn in tmpList)
                 {
-                    if(otherPawn.IsPrisoner)
+                    if(otherPawn.IsPrisoner && TM_Calc.IsMagicUser(otherPawn))
                     {
                         return true;
                     }

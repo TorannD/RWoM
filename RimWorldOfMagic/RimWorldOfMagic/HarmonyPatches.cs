@@ -67,6 +67,10 @@ namespace TorannMagic
                  new HarmonyMethod(patchType, nameof(PawnEquipment_Drop_Postfix)), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(Pawn_EquipmentTracker), "AddEquipment"), null,
                  new HarmonyMethod(patchType, nameof(PawnEquipment_Add_Postfix)), null);
+            //harmonyInstance.Patch(AccessTools.Method(typeof(TraitDef), "ConflictsWith", new Type[]
+            //    {
+            //        typeof(TraitDef)
+            //    }), null, new HarmonyMethod(patchType, nameof(TraitConflicts_TM_Collection_Postfix)), null);
             //harmonyInstance.Patch(AccessTools.Method(typeof(Pawn_ApparelTracker), "Notify_ApparelAdded"), null, new HarmonyMethod(typeof(TorannMagicMod), "Notify_ApparelAdded_PostFix"));
             //harmonyInstance.Patch(AccessTools.Method(typeof(Pawn_ApparelTracker), "Notify_ApparelRemoved"), null, new HarmonyMethod(typeof(TorannMagicMod), "Notify_ApparelRemoved_PostFix"));
 
@@ -324,6 +328,21 @@ namespace TorannMagic
         //    __result = job;
         //    return false;
         //}
+
+        public static bool Get_WindSpeed(WindManager __instance, ref float __result)
+        {
+            Map map = Traverse.Create(root: __instance).Field(name: "map").GetValue<Map>();
+            if (map != null)
+            {
+                MagicMapComponent mmc = map.GetComponent<MagicMapComponent>();
+                if (mmc != null && mmc.windSpeedEndTick > Find.TickManager.TicksGame)
+                {
+                    __result = mmc.windSpeed;
+                    return false;
+                }
+            }
+            return true;
+        }
 
         [HarmonyPatch(typeof(WorkGiver_Warden_EmancipateSlave), "JobOnThing", null)]
         public class Undead_DoNotGiveEmancipateJob_Patch
@@ -612,21 +631,6 @@ namespace TorannMagic
                     }
                 }
             }
-        }
-
-        public static bool Get_WindSpeed(WindManager __instance, ref float __result)
-        {
-            Map map = Traverse.Create(root: __instance).Field(name: "map").GetValue<Map>();
-            if (map != null)
-            {
-                MagicMapComponent mmc = map.GetComponent<MagicMapComponent>();
-                if (mmc != null && mmc.windSpeedEndTick > Find.TickManager.TicksGame)
-                {
-                    __result = mmc.windSpeed;
-                    return false;
-                }
-            }
-            return true;
         }
 
         [HarmonyPatch(typeof(Reward_Items), "InitFromValue", null)]
