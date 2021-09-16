@@ -12,6 +12,7 @@ using AbilityUser;
 using TorannMagic.Enchantment;
 using System.Text;
 using TorannMagic.TMDefs;
+using System.Reflection;
 
 namespace TorannMagic
 {
@@ -378,6 +379,30 @@ namespace TorannMagic
                 else if (IsMagicUser(p) && p.IsSlave ? countSlaves : false)
                 {
                     return true;
+                }
+            }
+            return false;
+        }
+
+        public static bool HasRuneCarverOnMap(Faction faction, Map map, bool countSlaves = false)
+        {
+            if (faction == null)
+            {
+                return false;
+            }
+            foreach (Pawn p in map.mapPawns.AllPawnsSpawned)
+            {
+                if(IsMagicUser(p) && p.IsSlave ? countSlaves : false)
+                {
+                    CompAbilityUserMagic comp = p.TryGetComp<CompAbilityUserMagic>();
+                    if(comp!= null && comp.MagicData != null)
+                    {
+                        MagicPower mp = comp.MagicData.ReturnMatchingMagicPower(TorannMagicDefOf.TM_RuneCarving);
+                        if(mp != null && mp.learned)
+                        {
+                            return true;
+                        }                            
+                    }
                 }
             }
             return false;

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+ 
+<Defs>
+
+	<TorannMagic.TM_GolemDef Name="Golem_List">
+		<defName>TM_Golems</defName>
+		<golems>		
+		  <li>
+			<golemDef>TM_MechaGolem</golemDef>
+			<golemKindDef>TM_MechaGolemK</golemKindDef>
+			<golemWorkstationDef>TM_MechaGolem_Workstation</golemWorkstationDef>
+			<upgrades>
+			  <li>
+			    <name>max energy</name>
+				<recipe>TM_Mecha-Golem_EnergyCell</recipe>
+				<bodypart>Mecha_Core</bodypart>
+				<partRequiresUpgrade>false</partRequiresUpgrade>
+				<hediff>TM_Mecha-Golem_EnergyUpgradeHD</hediff>
+				<maxLevel>3</maxLevel>
+				<workstationCapacity>EnergyMax</workstationCapacity>
+			  </li>
+			</upgrades>
+		  </li>	
+		</golems>			
+	</TorannMagic.TM_GolemDef>		
+
+</Defs>
+	

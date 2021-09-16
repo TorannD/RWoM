@@ -717,6 +717,28 @@ This arcane script is incomplete and the reader may not be able to learn some, o
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
   </ThingDef>
+  
+  <ThingDef ParentName="Partial_ArcaneScriptBase">
+    <defName>Torn_BookOfGolemancy</defName>
+    <label>Torn Script: Golemancer</label>
+    <thingClass>ThingWithComps</thingClass>
+    <description>Teaches a gifted pawn how to become a golemancer; a reclusive mage that channels arcane energy into mundane objects using sigils and runes.</description>
+	<category>Item</category>
+	<selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+	<alwaysHaulable>true</alwaysHaulable>
+	<resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <tradeNeverStack>true</tradeNeverStack>
+    <useHitPoints>true</useHitPoints>
+	<comps>
+      <li Class="CompProperties_Forbiddable" />
+    </comps>
+	<rotatable>false</rotatable>
+    <graphicData>
+      <texPath>Books/torn_golemancer</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
 
   <!--=============== Arcane Scripts ====================-->
 
@@ -1167,6 +1189,28 @@ This arcane script is incomplete and the reader may not be able to learn some, o
 	<rotatable>false</rotatable>
     <graphicData>
       <texPath>Books/shaman2</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+  
+  <ThingDef ParentName="ArcaneScriptBase">
+    <defName>BookOfGolemancy</defName>
+    <label>Arcane Tome: Golemancer</label>
+    <thingClass>ThingWithComps</thingClass>
+    <description>Teaches a gifted pawn how to become a golemancer; a reclusive mage that channels arcane energy into mundane objects using sigils and runes.</description>
+	<category>Item</category>
+	<selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+	<alwaysHaulable>true</alwaysHaulable>	
+	<resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <tradeNeverStack>true</tradeNeverStack>
+    <useHitPoints>true</useHitPoints>
+	<comps>
+      <li Class="CompProperties_Forbiddable" />
+    </comps>
+	<rotatable>false</rotatable>
+    <graphicData>
+      <texPath>Books/golemancer</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
   </ThingDef>
@@ -3655,6 +3699,54 @@ Produces 400Wd adjusted by ability power.</description>
 	<rotatable>false</rotatable>
     <graphicData>
       <texPath>Books/scroll_power</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+
+  </ThingDef>
+  
+  <ThingDef ParentName="ArcaneSpellBase">
+    <defName>SpellOf_LivingWall</defName>
+    <label>Golemancer Spell: Living Wall</label>
+    <thingClass>ThingWithComps</thingClass>
+    <description>Teaches a golemancer how to imbue a continuous wall with a will of its own.</description>
+	<category>Item</category>
+	<selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+	<alwaysHaulable>true</alwaysHaulable>
+	
+	<resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <tradeNeverStack>true</tradeNeverStack>
+    <useHitPoints>true</useHitPoints>
+	<statBases>
+      <MarketValue>2200</MarketValue>
+	</statBases>
+	<comps>
+      <li Class="CompProperties_Forbiddable" />
+    </comps>
+	<costList>
+		<RawMagicyte>360</RawMagicyte>
+		<DevilstrandCloth>100</DevilstrandCloth>
+	</costList>
+	<recipeMaker>		    
+		<workAmount>4000</workAmount>
+		<workSpeedStat>WorkSpeedGlobal</workSpeedStat>
+		<workSkill>Intellectual</workSkill>
+		<recipeUsers>
+			<li>TableMagicPrinter</li>
+		</recipeUsers>
+		<effectWorking>Smelt</effectWorking>
+		<unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+		<skillRequirements>
+			<Crafting>4</Crafting>
+			<Intellectual>10</Intellectual>
+		</skillRequirements>
+		<researchPrerequisite>
+			<li>TM_MasterScribing</li>
+		</researchPrerequisite>
+	</recipeMaker>
+	<rotatable>false</rotatable>
+    <graphicData>
+      <texPath>Books/scroll_lit</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
 

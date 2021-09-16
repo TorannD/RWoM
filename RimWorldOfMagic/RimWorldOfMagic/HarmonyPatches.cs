@@ -329,6 +329,33 @@ namespace TorannMagic
         //    return false;
         //}
 
+        [HarmonyPatch(typeof(GenRecipe), "MakeRecipeProducts", null)]
+        public class GolemRecipe_Action_Patch
+        {
+            public static bool Prefix(RecipeDef recipeDef, Pawn worker, List<Thing> ingredients, Thing dominantIngredient, IBillGiver billGiver, ref IEnumerable<Thing> __result)
+            {
+                Building_TMGolemBase golem_building = billGiver as Building_TMGolemBase;
+                if (golem_building != null && golem_building.Golem != null && golem_building.Golem.upgrades != null && golem_building.Golem.upgrades.Count > 0)
+                {
+                    if (golem_building.CanUpgrade(recipeDef))
+                    {
+                        golem_building.IncreaseUpgrade_Recipe(recipeDef);                        
+                    }
+                    else
+                    {
+                        Messages.Message("TM_MaxGolemUpgradeReached".Translate(recipeDef.label), MessageTypeDefOf.RejectInput);
+                        foreach(Thing ing in ingredients)
+                        {
+                            Thing t = ThingMaker.MakeThing(ing.def, null);
+                            t.stackCount = ing.stackCount;
+                            GenPlace.TryPlaceThing(t, golem_building.InteractionCell, golem_building.Map, ThingPlaceMode.Near);
+                        }
+                    }
+                }
+                return true;
+            }
+        }
+
         public static bool Get_WindSpeed(WindManager __instance, ref float __result)
         {
             Map map = Traverse.Create(root: __instance).Field(name: "map").GetValue<Map>();
@@ -6150,6 +6177,62 @@ namespace TorannMagic
                         }
                     }
                 }
+            }
+        }
+
+        [HarmonyPatch(typeof(WorkGiver_DoBill), "JobOnThing", null)]
+        public static class RuneCarving_WorkGiver_Patch
+        {
+            public static void Postfix(ref Job __result, Pawn pawn, Thing thing, bool forced = false)
+            {
+                if (!((__result == null || pawn == null || thing == null) | forced))
+                {
+                    IBillGiver billGiver = thing as IBillGiver;
+                    if (billGiver != null)
+                    {
+                        Bill bill = __result.bill;
+                        if (bill != null)
+                        {
+                            RecipeDef recipe = bill.recipe;
+                            if (recipe != null && ConfirmRuneCarving(pawn, billGiver, recipe))
+                            {
+                                __result = null;
+                            }
+                        }
+                    }
+                }
+            }
+
+            private static bool ConfirmRuneCarving(Pawn pawn, IBillGiver billGiver, RecipeDef recipe)
+            {
+                if (recipe == null || !recipe.IsSurgery)
+                {
+                    return false;
+                }
+                if (!(recipe == TorannMagicDefOf.TM_RuneCarveBodyPart))
+                {
+                    return false;
+                }
+                return !IsCapableRuneCarver(pawn, recipe);
+            }
+
+            private static bool IsCapableRuneCarver(Pawn p, RecipeDef recipe)
+            {
+                if (p.RaceProps.Humanlike && p.skills != null)
+                {
+                    CompAbilityUserMagic comp = p.GetComp<CompAbilityUserMagic>();
+                    if (p.workSettings.WorkIsActive(WorkTypeDefOf.Doctor) && comp != null && (p.story.traits.HasTrait(TorannMagicDefOf.TM_Golemancer) || TM_ClassUtility.ClassHasAbility(TorannMagicDefOf.TM_RuneCarving, comp, null)))
+                    {
+                        if (comp.MagicData.MagicPowersGolemancer.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_RuneCarving).learned && recipe.PawnSatisfiesSkillRequirements(p) && p.health.capacities.CapableOf(PawnCapacityDefOf.Manipulation) && p.health.capacities.CapableOf(PawnCapacityDefOf.Moving))
+                        {
+                            if (comp.Mana.CurLevel > TorannMagicDefOf.TM_RuneCarving.manaCost)
+                            {
+                                return true;
+                            }
+                        }
+                    }
+                }
+                return false;
             }
         }
 

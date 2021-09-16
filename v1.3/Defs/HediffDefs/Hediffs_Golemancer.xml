@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <HediffDef >
+    <defName>TM_RuneCarvedPartHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+	<label>Rune carved</label>
+	<description>Empowers a bodypart with magical energy.</description>
+    <defaultLabelColor>(1,0.6,0.3)</defaultLabelColor>
+    <scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<minSeverity>0.001</minSeverity>
+	<maxSeverity>4.0</maxSeverity>
+	<isBad>false</isBad>
+	<initialSeverity>.5</initialSeverity>
+	<priceImpact>true</priceImpact>
+	<priceOffset>.25</priceOffset>
+	<stages>
+      <li>
+        <label>Runic (I)</label>
+        <minSeverity>0.001</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<partEfficiencyOffset>.2</partEfficiencyOffset>
+      </li>
+	  <li>
+        <label>Runic (II)</label>
+        <minSeverity>1</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<partEfficiencyOffset>.22</partEfficiencyOffset>
+      </li>	
+	  <li>
+        <label>Runic (III)</label>
+        <minSeverity>2</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<partEfficiencyOffset>.24</partEfficiencyOffset>
+      </li>	
+	  <li>
+        <label>Runic (IV)</label>
+        <minSeverity>3</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<partEfficiencyOffset>.25</partEfficiencyOffset>
+      </li>		  
+	</stages>
+  </HediffDef>
+  
+</Defs>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RecipeDef Name="Golem_Recipe_Base" Abstract="True">
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+	<workSkill>Crafting</workSkill>
+	<workSkillLearnFactor>1</workSkillLearnFactor>
+    <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+	<recipeUsers>
+		<li>TM_MechaGolem_Workstation</li>
+	</recipeUsers>
+  </RecipeDef>
+  
+</Defs>

@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+  <BodyPartDef>
+    <defName>Mecha_Body</defName>
+    <label>body</label>
+    <hitPoints>150</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+	<bleedRate>0</bleedRate>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Mecha_Back</defName>
+    <label>back plate</label>
+    <hitPoints>150</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+	<bleedRate>0</bleedRate>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Mecha_Spine</defName>
+    <label>spinal-pathway</label>
+    <hitPoints>60</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+	<bleedRate>0</bleedRate>
+    <tags>
+      <li>Spine</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Mecha_Abdomen</defName>
+    <label>abdomen</label>
+    <hitPoints>60</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>false</solid>
+	<bleedRate>0</bleedRate>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Mecha_EnergyCompactor</defName>
+    <label>energy compactor</label>
+    <hitPoints>40</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+	<bleedRate>0</bleedRate>
+    <beautyRelated>false</beautyRelated>
+    <tags>
+      <li>EatingSource</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Mecha_Chest</defName>
+    <label>chest plate</label>
+    <hitPoints>200</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>false</solid>
+	<bleedRate>0</bleedRate>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Mecha_Core</defName>
+    <label>energy core</label>
+    <hitPoints>30</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <bleedRate>0</bleedRate>
+    <skinCovered>false</skinCovered>
+    <tags>
+      <li>BloodPumpingSource</li>
+      <li>BloodFiltrationSource</li>
+      <li>MetabolismSource</li>
+      <li>BreathingSource</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Mecha_Neck</defName>
+    <label>gorget</label>
+    <hitPoints>50</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <bleedRate>0</bleedRate>
+    <skinCovered>true</skinCovered>
+<!--     <tags>
+      <li>BreathingPathway</li>
+      <li>EatingPathway</li>
+      <li>TalkingPathway</li>
+    </tags> -->
+    <canSuggestAmputation>false</canSuggestAmputation>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>Mecha_Head</defName>
+    <label>head frame</label>
+    <hitPoints>80</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>true</skinCovered>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<bleedRate>0</bleedRate>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>Mecha_SkullPlate</defName>
+    <label>skull plate</label>
+    <hitPoints>60</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+	<bleedRate>0</bleedRate>
+    <canSuggestAmputation>false</canSuggestAmputation>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>Mecha_AI</defName>
+    <label>AI core</label>
+    <hitPoints>8</hitPoints>
+    <permanentInjuryChanceFactor>1</permanentInjuryChanceFactor>
+	<bleedRate>0</bleedRate>
+    <skinCovered>false</skinCovered>
+    <tags>
+      <li>ConsciousnessSource</li>
+    </tags>
+    <canSuggestAmputation>false</canSuggestAmputation>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Mecha_Optics</defName>
+    <label>optics</label>
+    <hitPoints>30</hitPoints>
+    <skinCovered>false</skinCovered>
+	<frostbiteVulnerability>.1</frostbiteVulnerability>
+    <beautyRelated>true</beautyRelated>
+	<socketed>true</socketed>
+	<bleedRate>0</bleedRate>
+    <tags>
+      <li>SightSource</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Mecha_Sensors</defName>
+    <label>sensors</label>
+    <hitPoints>32</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<frostbiteVulnerability>.1</frostbiteVulnerability>
+    <skinCovered>false</skinCovered>
+    <beautyRelated>true</beautyRelated>
+	<bleedRate>0</bleedRate>
+    <tags>
+      <li>HearingSource</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>Mecha_Transmitter</defName>
+    <label>transmitters</label>
+    <hitPoints>24</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<frostbiteVulnerability>.1</frostbiteVulnerability>
+    <skinCovered>false</skinCovered>
+    <beautyRelated>true</beautyRelated>
+	<bleedRate>0</bleedRate>
+    <tags>
+      <li>TalkingSource</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Mecha_LeftShoulder</defName>
+    <label>left shoulder</label>
+    <hitPoints>80</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<bleedRate>0</bleedRate>
+    <skinCovered>false</skinCovered>
+    <tags>
+      <li>ManipulationLimbSegment</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Mecha_LeftArm</defName>
+    <label>left arm</label>
+    <hitPoints>80</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<bleedRate>0</bleedRate>
+    <skinCovered>false</skinCovered>
+    <tags>
+      <li>ManipulationLimbCore</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Mecha_LeftArm_Attachment</defName>
+    <label>left arm attachment</label>
+    <hitPoints>40</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<bleedRate>0</bleedRate>
+    <skinCovered>false</skinCovered>
+  </BodyPartDef>
+  
+  <BodyPartGroupDef>
+    <defName>Mecha_LeftArm</defName>
+    <label>left arm</label>
+	<listOrder>101</listOrder>
+  </BodyPartGroupDef>
+  
+  <BodyPartGroupDef>
+    <defName>Mecha_LeftArm_Attachment</defName>
+    <label>left arm attachment</label>
+	<listOrder>102</listOrder>
+  </BodyPartGroupDef>
+  
+  <BodyPartDef>
+    <defName>Mecha_RightShoulder</defName>
+    <label>right shoulder</label>
+    <hitPoints>80</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<bleedRate>0</bleedRate>
+    <skinCovered>false</skinCovered>
+    <tags>
+      <li>ManipulationLimbSegment</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>Mecha_RightArm</defName>
+    <label>right arm</label>
+    <hitPoints>100</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<bleedRate>0</bleedRate>
+    <skinCovered>false</skinCovered>
+    <tags>
+      <li>ManipulationLimbCore</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Mecha_RightArm_Attachment</defName>
+    <label>right arm attachment</label>
+    <hitPoints>40</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<bleedRate>0</bleedRate>
+    <skinCovered>false</skinCovered>
+  </BodyPartDef>
+  
+  <BodyPartGroupDef>
+    <defName>Mecha_RightArm</defName>
+    <label>right arm</label>
+	<listOrder>103</listOrder>
+  </BodyPartGroupDef>
+  
+  <BodyPartGroupDef>
+    <defName>Mecha_RightArm_Attachment</defName>
+    <label>left arm attachment</label>
+	<listOrder>104</listOrder>
+  </BodyPartGroupDef>
+  
+  <BodyPartDef>
+    <defName>Mecha_Base</defName>
+    <label>Mechanical movement base</label>
+    <hitPoints>120</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+	<bleedRate>0</bleedRate>
+    <tags>
+      <li>MovingLimbCore</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartGroupDef>
+    <defName>Mecha_Base</defName>
+    <label>body</label>
+	<listOrder>105</listOrder>
+  </BodyPartGroupDef>
+  
+</Defs>

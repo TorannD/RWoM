@@ -9,6 +9,10 @@ namespace TorannMagic.Ideology
         public override bool AppliesToPawn(Pawn p, out string reason, LordJob_Ritual ritual = null, RitualRoleAssignments assignments = null, Precept_Ritual precept = null, bool skipReason = false)
         {
             reason = null;
+            if (p == null || p.Faction == null || p.RaceProps == null || p.story == null || p.story.traits == null || p.Ideo == null)
+            {
+                return false;
+            }
             if (!p.Faction.IsPlayerSafe())
             {
                 if (!skipReason)
@@ -22,6 +26,14 @@ namespace TorannMagic.Ideology
                 if (!skipReason)
                 {
                     reason = "MessageRitualRoleMustBeHumanlike".Translate(base.LabelCap);
+                }
+                return false;
+            }
+            if(TM_Calc.IsUndeadNotVamp(p))
+            {
+                if (!skipReason)
+                {
+                    reason = "TM_MessageRitualRoleCannotBeUndead".Translate(base.LabelCap);
                 }
                 return false;
             }

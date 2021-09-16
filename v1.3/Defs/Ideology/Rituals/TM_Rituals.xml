@@ -530,9 +530,9 @@
         <required>True</required>
         <countsAsParticipant>True</countsAsParticipant>
       </li>
-      <li Class="TorannMagic.Ideology.TM_RitualRoleGifted">
-        <label>gifted</label>
-        <missingDesc>a colonist with the gifted trait</missingDesc>
+      <li Class="TorannMagic.Ideology.TM_RitualRoleGiftedInspired">
+        <label>inspired gifted</label>
+        <missingDesc>a colonist with the gifted trait inspired to become a mage class</missingDesc>
         <id>mageId</id>
         <maxCount>1</maxCount>
         <required>True</required>
@@ -674,6 +674,7 @@
       <li>TM_BestowMagicClass</li>
     </tags>
     <patternGroupTag>TM_BestowMagicClassRitual</patternGroupTag>
+	<alwaysStartAnytime>true</alwaysStartAnytime>
 <!--     <ritualObligationTriggers>
       <li Class="TorannMagic.Ideology.TM_RitualObligationTrigger_BestowMagicClassProperties">
         <mustBePlayerIdeo>true</mustBePlayerIdeo>

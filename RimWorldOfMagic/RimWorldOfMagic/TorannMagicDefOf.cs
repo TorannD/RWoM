@@ -53,6 +53,8 @@ namespace TorannMagic
         public static ThingDef Torn_BookOfTheSun;
         public static ThingDef Torn_BookOfShamanism;
         public static ThingDef BookOfShamanism;
+        public static ThingDef Torn_BookOfGolemancy;
+        public static ThingDef BookOfGolemancy;
 
         public static ThingDef BookOfQuestion;
 
@@ -115,6 +117,7 @@ namespace TorannMagic
         public static ThingDef SpellOf_GuardianSpirit;
         public static ThingDef SpellOf_ShieldOther;
         public static ThingDef SpellOf_Discord;
+        public static ThingDef SpellOf_LivingWall;
 
         public static ThingDef SkillOf_Sprint;
         public static ThingDef SkillOf_GearRepair;
@@ -702,7 +705,25 @@ namespace TorannMagic
         public static ThingDef TM_SpiritWolfR;
 
         //Golemancer
-        //public static TraitDef TM_Golemancer;
+        public static TraitDef TM_Golemancer;
+
+        public static TMAbilityDef TM_Golemancy;
+        public static TMAbilityDef TM_RuneCarving;
+        public static HediffDef TM_RuneCarvedPartHD;
+        public static StatDef TM_RuneCarvingEfficiency;
+        public static EffecterDef TM_RuneCarving_EffecterED;
+        public static RecipeDef TM_RuneCarveBodyPart;
+        public static TMAbilityDef TM_Branding;
+        //public static HediffDef TM_SiphonBrandHD;
+        //public static HediffDef TM_FitnessBrandHD;
+        //public static HediffDef TM_HealthBrandHD;
+        //public static HediffDef TM_EmotionBrandHD;
+        //public static HediffDef TM_VitalityBrandHD;
+        //public static HediffDef TM_ProtectionBrandHD;
+        //public static HediffDef TM_AwarenessBrandHD;
+        public static TMAbilityDef TM_SigilSurge;
+        public static TMAbilityDef TM_SigilDrain;
+        public static TMAbilityDef TM_LivingWall;
 
         //Shadow
         public static TraitDef TM_TheShadow;
@@ -1371,5 +1392,11 @@ namespace TorannMagic
         //FleckDefs
         public static FleckDef ElectricalSpark;
         public static FleckDef SparkFlash;
+
+        //Golems
+        public static ThingDef TM_MechaGolem;
+        public static PawnKindDef TM_MechaGolemK;
+        public static ThingDef TM_MechaGolem_Workstation;
+
     }
 }

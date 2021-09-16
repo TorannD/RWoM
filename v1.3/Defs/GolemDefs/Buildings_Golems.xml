@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef Name="TM_GolemBuildingBase" ParentName="TM_BuildingBase" Abstract="True">
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+	<selectable>true</selectable>
+	<destroyable>true</destroyable>
+    <rotatable>true</rotatable>
+	<neverMultiSelect>true</neverMultiSelect>
+	<drawerType>MapMeshAndRealTime</drawerType>
+    <thingClass>TorannMagic.Building_TMGolemBase</thingClass>
+    <tickerType>Normal</tickerType>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <thingCategories>
+      <li>BuildingsSpecial</li>
+    </thingCategories>
+	<statBases>
+		<SellPriceFactor>0.5</SellPriceFactor>
+		<MaxHitPoints>1000</MaxHitPoints>
+        <Flammability>.5</Flammability>
+	</statBases>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Sculpt</soundWorking>
+      <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+    </recipeMaker>
+	<inspectorTabs>
+      <li>ITab_Bills</li>
+      <li>TorannMagic.ITab_GolemUpgrades</li>
+    </inspectorTabs>
+    <holdsRoof>false</holdsRoof>
+    <staticSunShadowHeight>0</staticSunShadowHeight>
+    <blockLight>false</blockLight>
+	<blockWind>false</blockWind>
+    <castEdgeShadows>false</castEdgeShadows>
+    <coversFloor>false</coversFloor>
+    <canOverlapZones>false</canOverlapZones>
+	<building>
+	  <isInert>true</isInert>
+	  <canPlaceOverWall>false</canPlaceOverWall>
+	  <expandHomeArea>false</expandHomeArea>
+      <isTrap>false</isTrap>
+	  <deconstructible>true</deconstructible>
+	  <claimable>false</claimable>
+	  <repairable>true</repairable>
+	  <isPlayerEjectable>false</isPlayerEjectable>
+    </building>
+	<hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <surfaceType>Item</surfaceType>
+	<comps>
+		<li>
+			<compClass>CompReportWorkSpeed</compClass>
+		</li>
+	</comps>
+	<placeWorkers>
+		<li>PlaceWorker_ReportWorkSpeedPenalties</li>
+	</placeWorkers>
+  </ThingDef>
+  
+  <ThingDef ParentName="TM_GolemBuildingBase">
+    <defName>TM_MechaGolem_Workstation</defName>
+    <label>dormant mecha-golem</label>
+    <description>A dormant mecha-golem. While dormant, the golem may be modified or upgraded. The mecha-golem recharges energy slowly on its own but access to power sources will increaase the recharge speed.</description>
+    <castEdgeShadows>true</castEdgeShadows>
+    <graphicData>
+      <texPath>Golems/Mecha/Mecha-Golem_Workstation</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+	  <shaderType>CutoutComplex</shaderType>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <fillPercent>0.5</fillPercent>
+    <rotatable>true</rotatable>
+    <statBases>
+      <MaxHitPoints>1000</MaxHitPoints>  <!--edit build costs-->
+      <Mass>200</Mass>
+      <Beauty>5</Beauty>
+      <WorkToMake>300</WorkToMake>
+    </statBases>
+	<recipeMaker>
+      <unfinishedThingDef>TM_UnfinishedMechaGolem</unfinishedThingDef>
+      <recipeUsers>
+        <li>TableMachining</li>
+	  </recipeUsers>      
+    </recipeMaker>
+	<costList>
+	  <Steel>10</Steel>
+	  <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+	<comps>
+      <li Class="TorannMagic.CompProperties_GolemEnergyHandler">
+        <storedEnergyMax>1000</storedEnergyMax>
+		<storedEnergyMaxUpgradeIncrease>500</storedEnergyMaxUpgradeIncrease>
+		<storedEnergyMaxUpgrades>3</storedEnergyMaxUpgrades>
+        <conversionEfficiency>0.5</conversionEfficiency>
+		<conversionEfficiencyUpgradeIncrease>.1</conversionEfficiencyUpgradeIncrease>
+		<conversionEfficiencyMaxUpgrades>3</conversionEfficiencyMaxUpgrades>
+		<selfChargePerHour>50</selfChargePerHour>
+        <shortCircuitInRain>false</shortCircuitInRain>
+        <transmitsPower>true</transmitsPower>
+		<electricalConverter>true</electricalConverter>
+		<energyColor>(.4, .65, 1)</energyColor>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="UnfinishedBase">
+    <defName>TM_UnfinishedMechaGolem</defName>
+    <label>unfinished mecha-golem</label>
+    <description>An unfinished mecha-golem.</description>
+	<statBases>
+      <Flammability>0.2</Flammability>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Item/Unfinished/UnfinishedTechArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>	
+	  <drawSize>(1,1)</drawSize>	  
+    </graphicData>
+	<stuffCategories Inherit="false" />
+  </ThingDef>
+  
+</Defs>

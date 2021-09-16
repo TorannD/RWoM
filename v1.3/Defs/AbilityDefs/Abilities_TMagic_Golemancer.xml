@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+   <!-- Golemancy -->
+	
+  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
+    <defName>TM_Golemancy</defName>
+    <label>Golemancy</label>
+    <uiIconPath>UI/golemancy</uiIconPath>
+    <description>Golemancy is the art of infusing magical energy that animates and conveys basic instruction to an object.</description>
+    <manaCost>0</manaCost>
+	<learnChance>1</learnChance>
+	<canCopy>false</canCopy>
+	<shouldInitialize>false</shouldInitialize>
+	<MainVerb Class="AbilityUser.VerbProperties_Ability">
+        <verbClass>TorannMagic.Verb_SB</verbClass>
+			<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+			<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+			<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+			<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Projectile_Default</defaultProjectile>
+		<abilityDef>TM_Golemancy</abilityDef>
+        <warmupTime>0</warmupTime>
+        <SecondsToRecharge>2</SecondsToRecharge>
+		<burstShotCount>1</burstShotCount>
+        <range>0</range>
+		<isViolent>false</isViolent>
+        <soundCast>Message_PositiveEvent</soundCast>
+        <muzzleFlashScale>20</muzzleFlashScale>
+		<AlwaysHits>true</AlwaysHits>
+        <isPrimary>false</isPrimary>		
+   	    <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+		<targetParams>
+		  <canTargetPawns>true</canTargetPawns>
+		  <canTargetBuildings>false</canTargetBuildings>
+		  <canTargetSelf>true</canTargetSelf>
+		  <canTargetLocations>false</canTargetLocations>
+		</targetParams>
+    </MainVerb>
+ </TorannMagic.TMAbilityDef>
+ 
+ 
+<!-- Rune Carving -->
+	
+  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
+    <defName>TM_RuneCarving</defName>
+    <label>rune carving</label>
+    <uiIconPath>UI/runecarving</uiIconPath>
+    <description>Rune carving is a magical art used to permanently instill magical power into an object. This process has long been performed to enscribe runes into equipment and weapons to bestow magical properties. The Golemancer uses a similar, but more delicate, process using runes to increase the efficacy of bodyparts. This process requires additional material resources.</description>
+    <manaCost>.8</manaCost>
+	<efficiencyReductionPercent>.1</efficiencyReductionPercent>
+	<canCopy>false</canCopy>
+	<shouldInitialize>false</shouldInitialize>
+	<MainVerb Class="AbilityUser.VerbProperties_Ability">
+        <verbClass>TorannMagic.Verb_SB</verbClass>
+			<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+			<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+			<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+			<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Projectile_Default</defaultProjectile>
+		<abilityDef>TM_RuneCarving</abilityDef>
+        <warmupTime>1</warmupTime>
+        <SecondsToRecharge>900</SecondsToRecharge>
+		<burstShotCount>1</burstShotCount>
+        <range>0</range>
+		<isViolent>false</isViolent>
+        <soundCast>Message_PositiveEvent</soundCast>
+        <muzzleFlashScale>20</muzzleFlashScale>
+		<AlwaysHits>true</AlwaysHits>
+        <isPrimary>false</isPrimary>
+		<targetParams>
+      	 <canTargetPawns>true</canTargetPawns>
+      	 <canTargetBuildings>false</canTargetBuildings>
+      	 <canTargetSelf>false</canTargetSelf>
+		 <canTargetLocations>false</canTargetLocations>
+        </targetParams>
+    </MainVerb>
+ </TorannMagic.TMAbilityDef>
+ 
+ <!-- Branding -->
+	
+  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
+    <defName>TM_Branding</defName>
+    <label>Branding</label>
+    <uiIconPath>UI/branding</uiIconPath>
+    <description>Branding is used to create a temporary, magical mark on a pawn in order to create a link between the caster and the marked pawn. Brands can be both beneficial or detremental to the marked, depending on the type of brand used. Multiple brands may be placed on a single pawn as long as each brand is a different type. A caster may create as many brands as they wish, but each brand subtracts from the energy regeneration of the caster. Brands will be dispelled if the caster runs out of mana. Brands are a unique type of spell, and each brand must be learned seperately. Skill in branding affects all types of brands.</description>
+    <manaCost>0</manaCost>
+	<efficiencyReductionPercent>.1</efficiencyReductionPercent>
+	<upkeepEfficiencyPercent>.03</upkeepEfficiencyPercent>
+	<canCopy>false</canCopy>
+	<shouldInitialize>false</shouldInitialize>
+	<MainVerb Class="AbilityUser.VerbProperties_Ability">
+        <verbClass>TorannMagic.Verb_SB</verbClass>
+			<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+			<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+			<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+			<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Projectile_Default</defaultProjectile>
+		<abilityDef>TM_Branding</abilityDef>
+        <warmupTime>1</warmupTime>
+        <SecondsToRecharge>0</SecondsToRecharge>
+		<burstShotCount>1</burstShotCount>
+        <range>0</range>
+		<isViolent>false</isViolent>
+        <soundCast>Message_PositiveEvent</soundCast>
+        <muzzleFlashScale>20</muzzleFlashScale>
+		<AlwaysHits>true</AlwaysHits>
+        <isPrimary>false</isPrimary>
+		<targetParams>
+      	 <canTargetPawns>true</canTargetPawns>
+      	 <canTargetBuildings>false</canTargetBuildings>
+      	 <canTargetSelf>false</canTargetSelf>
+		 <canTargetLocations>false</canTargetLocations>
+        </targetParams>
+    </MainVerb>
+ </TorannMagic.TMAbilityDef>
+ 
+   <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
+    <defName>TM_DispelBranding</defName>
+    <label>Dispels all brands</label>
+    <uiIconPath>UI/dismiss_spiritanimals</uiIconPath>
+    <description>Dispels all active brands.</description>
+    <manaCost>0.0</manaCost>
+	<shouldInitialize>false</shouldInitialize>
+	<MainVerb Class="AbilityUser.VerbProperties_Ability">
+        <verbClass>TorannMagic.Verb_DispelBranding</verbClass>
+			<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+			<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+			<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+			<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Projectile_Default</defaultProjectile>
+		<abilityDef>TM_DispelBranding</abilityDef>
+        <warmupTime>2</warmupTime>
+        <SecondsToRecharge>30</SecondsToRecharge>
+		<burstShotCount>1</burstShotCount>
+        <range>0</range>
+		<isViolent>false</isViolent>
+        <soundCast>TM_Gong</soundCast>
+        <muzzleFlashScale>10</muzzleFlashScale>
+		<AlwaysHits>true</AlwaysHits>
+        <isPrimary>false</isPrimary>
+		<AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+		<targetParams>
+      	 <canTargetPawns>true</canTargetPawns>
+      	 <canTargetBuildings>false</canTargetBuildings>
+      	 <canTargetSelf>true</canTargetSelf>
+		 <canTargetLocations>false</canTargetLocations>
+        </targetParams>
+    </MainVerb>
+ </TorannMagic.TMAbilityDef>
+ 
+ <!-- Sigil surge -->
+	
+  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
+    <defName>TM_SigilSurge</defName>
+    <label>Sigil surge</label>
+    <uiIconPath>UI/sigilsurge</uiIconPath>
+    <description>Activating this ability causes all brands to become super-charged. This ability causes moderate pain to the Golemancer and dramatically increases the energy drain of each brand.</description>
+    <manaCost>.1</manaCost>
+	<efficiencyReductionPercent>.1</efficiencyReductionPercent>
+	<upkeepEfficiencyPercent>.1</upkeepEfficiencyPercent>
+	<canCopy>false</canCopy>
+	<shouldInitialize>true</shouldInitialize>
+	<MainVerb Class="AbilityUser.VerbProperties_Ability">
+        <verbClass>TorannMagic.Verb_SigilSurge</verbClass>
+			<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+			<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+			<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+			<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Projectile_Default</defaultProjectile>
+		<abilityDef>TM_SigilSurge</abilityDef>
+        <warmupTime>1</warmupTime>
+        <SecondsToRecharge>10</SecondsToRecharge>
+		<burstShotCount>1</burstShotCount>
+        <range>0</range>
+		<isViolent>false</isViolent>
+        <soundCast>Message_PositiveEvent</soundCast>
+        <muzzleFlashScale>20</muzzleFlashScale>
+		<AlwaysHits>true</AlwaysHits>
+        <isPrimary>false</isPrimary>
+		<AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+		<targetParams>
+      	 <canTargetPawns>true</canTargetPawns>
+      	 <canTargetBuildings>false</canTargetBuildings>
+      	 <canTargetSelf>false</canTargetSelf>
+		 <canTargetLocations>false</canTargetLocations>
+        </targetParams>
+    </MainVerb>
+ </TorannMagic.TMAbilityDef>
+ 
+  <!-- Sigil drain -->
+	
+  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
+    <defName>TM_SigilDrain</defName>
+    <label>Sigil drain</label>
+    <uiIconPath>UI/sigildrain</uiIconPath>
+    <description>Activating this ability causes all brands to invert their effects, granting bonuses to the caster instead of the branded. This ability causes moderate pain to the branded and bonuses to the caster for each brand they control.</description>
+    <manaCost>.1</manaCost>
+	<efficiencyReductionPercent>.1</efficiencyReductionPercent>
+	<upkeepEfficiencyPercent>.1</upkeepEfficiencyPercent>
+	<canCopy>false</canCopy>
+	<shouldInitialize>true</shouldInitialize>
+	<MainVerb Class="AbilityUser.VerbProperties_Ability">
+        <verbClass>TorannMagic.Verb_SigilDrain</verbClass>
+			<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+			<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+			<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+			<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Projectile_Default</defaultProjectile>
+		<abilityDef>TM_SigilDrain</abilityDef>
+        <warmupTime>.5</warmupTime>
+        <SecondsToRecharge>10</SecondsToRecharge>
+		<burstShotCount>1</burstShotCount>
+        <range>0</range>
+		<isViolent>false</isViolent>
+        <soundCast>Message_PositiveEvent</soundCast>
+        <muzzleFlashScale>20</muzzleFlashScale>
+		<AlwaysHits>true</AlwaysHits>
+        <isPrimary>false</isPrimary>
+		<AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+		<targetParams>
+      	 <canTargetPawns>true</canTargetPawns>
+      	 <canTargetBuildings>false</canTargetBuildings>
+      	 <canTargetSelf>true</canTargetSelf>
+		 <canTargetLocations>false</canTargetLocations>
+        </targetParams>
+    </MainVerb>
+ </TorannMagic.TMAbilityDef>
+	
+	<!-- Living Wall -->
+   
+	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
+        <defName>TM_LivingWall</defName>
+        <label>Living wall</label>
+        <uiIconPath>UI/livingwall</uiIconPath>
+        <description>Enchants a wall with purpose allowing it to become semi-intelligent. The living wall will strike out at enemies within reach and will repair itself when damaged. The animated being within the wall may travel to any adjacent section of wall to perform these actions and treats an entire connected section of wall as an extension of itself. A caster can only maintain a single living wall, regardless of the size of the wall.</description>
+		<manaCost>0.40</manaCost>
+		<efficiencyReductionPercent>.06</efficiencyReductionPercent>
+		<upkeepEfficiencyPercent>.1</upkeepEfficiencyPercent>
+		<learnChance>.05</learnChance>
+		<canCopy>true</canCopy>
+        <MainVerb Class="AbilityUser.VerbProperties_Ability">
+            <verbClass>TorannMagic.Verb_LivingWall</verbClass>
+				<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+				<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+				<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+				<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+            <hasStandardCommand>true</hasStandardCommand>
+            <defaultProjectile>Projectile_Default</defaultProjectile>
+            <abilityDef>TM_LivingWall</abilityDef>
+            <warmupTime>5</warmupTime>
+            <SecondsToRecharge>300</SecondsToRecharge>
+            <range>10</range>
+            <burstShotCount>1</burstShotCount>
+            <soundCast>TM_Vibration</soundCast>
+			<soundCastTail>GunTail_Medium</soundCastTail>
+            <muzzleFlashScale>20</muzzleFlashScale>
+            <isPrimary>false</isPrimary>
+			<isViolent>false</isViolent>
+			<requiresLineOfSight>true</requiresLineOfSight>
+			<targetParams>
+                <canTargetPawns>false</canTargetPawns>
+                <canTargetBuildings>true</canTargetBuildings>
+                <canTargetSelf>false</canTargetSelf>
+                <canTargetLocations>true</canTargetLocations>
+            </targetParams>
+        </MainVerb>
+    </TorannMagic.TMAbilityDef>
+
+</Defs>

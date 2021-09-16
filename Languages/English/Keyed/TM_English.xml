@@ -195,6 +195,10 @@
 <TM_MessageRitualRoleCannotHaveTrait>{0} already has the {1} trait.</TM_MessageRitualRoleCannotHaveTrait>
 <TM_MessageRitualRoleMustHaveTrait>{0} must have the {1} trait.</TM_MessageRitualRoleMustHaveTrait>
 <TM_DoesNotHaveArcanePathwayInspiration>{0} no longer held an inspiration.</TM_DoesNotHaveArcanePathwayInspiration>
+<TM_MessageRitualRoleMustBeInspiredWith>{0} is not inspired with {1}.</TM_MessageRitualRoleMustBeInspiredWith>
+<TM_MessageRitualRoleCannotBeUndead>{0} cannot be undead.</TM_MessageRitualRoleCannotBeUndead>
+<TM_RuneCarving>rune engraving</TM_RuneCarving>
+<TM_MaxGolemUpgradeReached>The max {0} upgrade has already been reached; resources have been returned</TM_MaxGolemUpgradeReached>
 
 <!-- Surgery Failed letters -->
 <LetterLabelRegrowthSurgeryFail>Surgery Failed</LetterLabelRegrowthSurgeryFail>
@@ -202,6 +206,13 @@
 <TM_NotMagicUser>is not a magic user</TM_NotMagicUser>
 <TM_NoRegrowthSpell>has not learned the spell Regrow Limb</TM_NoRegrowthSpell>
 <TM_InsufficientManaForSurgery>did not have enough mana to complete the operation - 90 or greater is required</TM_InsufficientManaForSurgery>
+
+<LetterLabelRuneCarvingFail>Rune Carving Failed</LetterLabelRuneCarvingFail>
+<LetterRuneCarvingFail>{0} just attempted to perform {1} on {2} but failed because {4} {3}.\n\nIn order to successfully perform a rune carving, the following conditions must be met:\n\n1. Surgeon must be a Mage\n2. The mage must have learned the Rune Carving ability.\n3. You must have at least {5} mana to complete carving a rune.\n4. After all these conditions are met, the mage must still perform the carving successfully - rune carving success chance begins at 50% and increases based on medical skill, crafting skill and rune carving skill.</LetterRuneCarvingFail>
+<TM_NoRuneCarvingSpell>has not learned the spell Regrow Limb</TM_NoRuneCarvingSpell>
+<TM_InsufficientManaForCarving>did not have enough mana to complete the rune carving - {0} requires {1} or more.</TM_InsufficientManaForCarving>
+<TM_RuneCarvingFailed>{0} failed to successfully carve a rune for {1}'s {2} - success chance was {3}&#37;</TM_RuneCarvingFailed>
+<TM_CarvingFailedChance>Rune carving failed.</TM_CarvingFailedChance>
 
 <!-- Caravan Request letters -->
 <LetterLabelArcaneScriptCaravan>Caravan request</LetterLabelArcaneScriptCaravan>
@@ -1277,6 +1288,48 @@ Spirit Crow: Increases hex chance (50% -> 75%); increases the effectiveness of "
 <TM_GuardianSpirit_eff>Spirit Link</TM_GuardianSpirit_eff>
 <TM_GuardianSpirit_ver>Spirit Bond</TM_GuardianSpirit_ver>
 
+<TM_Golemancy_pwr_desc>Increases the power of Golemancy by 3%
+Lightning Totem: Increases range and damage
+Earth Totem: Increases stagger frequency and duration
+Healing Totem: Increases range and heal amount</TM_Golemancy_pwr_desc>
+<TM_Golemancy_eff_desc>Reduces the mana cost to create a totem by 2% per skill level.</TM_Golemancy_eff_desc>
+<TM_Golemancy_ver_desc>Increases the duration of Golemancy by 5% per skill point; base duration is 1 game hour.</TM_Golemancy_ver_desc>
+<TM_RuneCarving_pwr_desc>Increases Chain Lighting damage by 10% per skill point.</TM_RuneCarving_pwr_desc>
+<TM_RuneCarving_eff_desc>Reduces mana cost by 6% per skill point.</TM_RuneCarving_eff_desc>
+<TM_RuneCarving_ver_desc>Increases the number of times chain lightning will fork or bounce by 1 per skill point.</TM_RuneCarving_ver_desc>
+<TM_Branding_pwr_desc>Increases the severity of Branding by .05 per skill point. Base severity is .25, max severity is .5</TM_Branding_pwr_desc>
+<TM_Branding_eff_desc>Reduces mana cost of Branding by 6% per skill point.</TM_Branding_eff_desc>
+<TM_SigilSurge_pwr_desc>Increases chance to apply SigilSurge by 10%, base 40% chance.</TM_SigilSurge_pwr_desc>
+<TM_SigilSurge_eff_desc>Reduces mana cost of SigilSurge by 6% per skill point.</TM_SigilSurge_eff_desc>
+<TM_SigilSurge_ver_desc>Increases the power of effects applied to SigilSurgeed targets.</TM_SigilSurge_ver_desc>
+<TM_SigilDrain_pwr_desc>Spirit wolves gain Branding when summoned. Each skill point increases the effects of Branding.</TM_SigilDrain_pwr_desc>
+<TM_SigilDrain_eff_desc>Reduces mana cost to manifest Spirit Wolves by 6% and increases duration by 2s per skill point.</TM_SigilDrain_eff_desc>
+<TM_SigilDrain_ver_desc>Increases the number of wolves summoned by 1 per skill level.</TM_SigilDrain_ver_desc>
+<TM_LivingWall_pwr_desc>Increases the potency of Guardian Spirit abilities:
+Spirit Bear: Increased taunt targets (4 -> 9), taunt chance (60% -> 78%), and taunt range (15 -> 21); increase damage mitigation (4 -> 7)
+Spirit Mongoose: Increases shadow strike damage (11 -> 16) and crit chance (40% -> 65%); increases duration of invisibility (1.5s -> 2.5s) and haste (2s -> 3s) following a shadow strike
+Spirit Crow: Increases SigilSurge chance (50% -> 75%); increases the effectiveness of "Crows Insight" mental buff Psychic Sensitivity and Research speed (20% -> 30%)</TM_LivingWall_pwr_desc>
+<TM_LivingWall_eff_desc>Reduces casting cost, max MP upkeep cost, and mana regeneration cost of the Spirit Guardian by 6% per skill point.</TM_LivingWall_eff_desc>
+<TM_LivingWall_ver_desc>Increases the effectiveness of the Spirit Guardian's spirit bond to increase movement, manipulation, healing rate, ignore pain, and dodge rate by 10% per skill point.</TM_LivingWall_ver_desc>
+
+<TM_Golemancy_pwr>Augmentation</TM_Golemancy_pwr>
+<TM_Golemancy_eff>Power Conservation</TM_Golemancy_eff>
+<TM_Golemancy_ver>Tuning</TM_Golemancy_ver>
+<TM_RuneCarving_pwr>Deep Mark</TM_RuneCarving_pwr>
+<TM_RuneCarving_eff>Rune Master</TM_RuneCarving_eff>
+<TM_RuneCarving_ver>Steady Hands</TM_RuneCarving_ver>
+<TM_Branding_pwr>Intensity</TM_Branding_pwr>
+<TM_Branding_eff>Brand Master</TM_Branding_eff>
+<TM_SigilSurge_pwr>Surge Power</TM_SigilSurge_pwr>
+<TM_SigilSurge_eff>Surge Master</TM_SigilSurge_eff>
+<TM_SigilSurge_ver>Feedback Reduction</TM_SigilSurge_ver>
+<TM_SigilDrain_pwr>Drain Power</TM_SigilDrain_pwr>
+<TM_SigilDrain_eff>Drain Master</TM_SigilDrain_eff> 
+<TM_SigilDrain_ver>Feedback Filter</TM_SigilDrain_ver>
+<TM_LivingWall_pwr>Unbreakable</TM_LivingWall_pwr>
+<TM_LivingWall_eff>Unrelenting</TM_LivingWall_eff>
+<TM_LivingWall_ver>Unstoppable</TM_LivingWall_ver>
+
 <!-- Might Ability Point Descriptions -->
 
 <TM_WayfarerCraft_pwr_desc>Each skill point:
@@ -1928,6 +1981,8 @@ Level 3: all 4 effects</TM_CombatDrugs_pwr_desc>
 *To become a might class, the pawn must read a book teaching a Combat Form.*
 
 **Once promoted, the pawn cannot become another fighter class, the decision is permanent and cannot be reverted - this includes the Wayfarer class.**</TM_PromoteWayfarerDesc>
+<TM_ActivateGolem>Activate</TM_ActivateGolem>
+<TM_ActivateGolemDesc>Begins the process to activate the golem - after activating, the golem will move about as a normal pawn. Any upgrades or repairs being performed in the dormat state will be discarded.</TM_ActivateGolemDesc>
 
 <!-- ========== Building Menu's ========== -->
 
@@ -1953,6 +2008,9 @@ Level 3: all 4 effects</TM_CombatDrugs_pwr_desc>
 <TM_EnchantItem>Enchant {0}</TM_EnchantItem>
 <TM_CannotDrop>Cannot drop {0}</TM_CannotDrop>
 <TM_NeedManaForEnchant>Enchantment: {0} of .5 mana</TM_NeedManaForEnchant>
+
+<!-- ============ Golem Menu's ===================-->
+<TabGolemUpgrades>Upgrades</TabGolemUpgrades>
 
 <!-- ============ Enchantment Labels =============-->
 <TM_MaxMPLabel>Max Energy Increase: {0}&#37;</TM_MaxMPLabel>

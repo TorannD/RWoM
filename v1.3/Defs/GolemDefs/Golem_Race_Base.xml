@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef Name="TM_Golem_Base" Abstract="True">
+    <thingClass>Pawn</thingClass>
+    <category>Pawn</category>
+    <selectable>true</selectable>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Pawn</altitudeLayer>
+    <useHitPoints>false</useHitPoints>
+    <hasTooltip>true</hasTooltip>
+    <soundImpactDefault>BulletImpact_Flesh</soundImpactDefault>
+    <statBases>
+      <Mass>200</Mass>
+      <Flammability>0.6</Flammability>
+	  <ToxicSensitivity>0.5</ToxicSensitivity>
+    </statBases>
+	<race>
+      <needsRest>false</needsRest>
+      <hasGenders>false</hasGenders>
+      <foodType>None</foodType>
+      <lifeExpectancy>2500</lifeExpectancy>
+    </race>
+    <inspectorTabs>
+      <li>ITab_Pawn_Health</li>
+      <li>ITab_Pawn_Needs</li>
+      <li>ITab_Pawn_Character</li>
+      <li>ITab_Pawn_FormingCaravan</li>
+      <li>ITab_Pawn_Gear</li>
+      <li>ITab_Pawn_Log</li>
+    </inspectorTabs>
+    <comps>
+      <li>
+        <compClass>CompAttachBase</compClass>
+      </li>
+    </comps>
+    <drawGUIOverlay>true</drawGUIOverlay>
+  </ThingDef>
+  
+  <PawnKindDef Name="TM_GolemKind_Base" Abstract="True">
+    <aiAvoidCover>true</aiAvoidCover>
+    <destroyGearOnDrop>true</destroyGearOnDrop>
+  </PawnKindDef>
+  
+  
+  <ThingDef ParentName="TM_Golem_Base">
+    <defName>TM_MechaGolem</defName>
+    <label>mecha-golem</label>
+    <description>A golem, crafted from raw material and given basic autonomy through a combination of circutry and magic.</description>
+	<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <statBases>
+      <MarketValue>3000</MarketValue>
+      <MoveSpeed>3.6</MoveSpeed>
+      <ComfyTemperatureMin>-65</ComfyTemperatureMin>
+      <ComfyTemperatureMax>54</ComfyTemperatureMax>
+	  <ArmorRating_Blunt>0.18</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.56</ArmorRating_Sharp>
+	  <ArmorRating_Heat>1.25</ArmorRating_Heat>
+      <PsychicSensitivity>0</PsychicSensitivity>
+    </statBases>
+    <tools>
+      <li>
+        <label>body smash</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>22.5</power>
+        <cooldownTime>4</cooldownTime>
+        <linkedBodyPartsGroup>Mecha_Base</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>20</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>left fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>14.0</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Mecha_LeftArm</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+      <li>
+        <label>right fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>16.0</power>
+        <cooldownTime>2.3</cooldownTime>
+        <linkedBodyPartsGroup>Mecha_RightArm</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>      
+    </tools>
+    <race>
+      <thinkTreeMain>TM_GolemMain</thinkTreeMain>
+      <thinkTreeConstant>TM_GolemConstant</thinkTreeConstant>
+      <intelligence>ToolUser</intelligence>
+      <makesFootprints>true</makesFootprints>
+      <body>TM_Mecha-Golem</body>
+      <baseBodySize>1</baseBodySize>
+      <baseHealthScale>1</baseHealthScale>
+      <foodType>None</foodType>
+	  <bloodDef>Filth_MachineBits</bloodDef>
+	  <fleshType>Mechanoid</fleshType>
+      <lifeStageAges>
+        <li>
+          <def>TM_MechaGolemLS</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_MechanoidSlash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_MechanoidSlash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_MechanoidSlash_Miss</soundMeleeMiss>
+      <soundMeleeDodge>Pawn_MeleeDodge</soundMeleeDodge>
+      <specialShadowData>
+        <volume>(0.4, 0.8, 0.6)</volume>
+        <offset>(0,0,-0.3)</offset>
+      </specialShadowData>
+    </race>
+	<butcherProducts>
+<!--       <Steel>30</Steel>
+      <Plasteel>10</Plasteel> -->
+    </butcherProducts>
+  </ThingDef>
+  
+  <PawnKindDef Name="TM_MechaGolemKind" ParentName="TM_GolemKind_Base">
+  	<defName>TM_MechaGolemK</defName>
+    <race>TM_MechaGolem</race>
+    <label>mecha-golem</label>
+    <combatPower>500</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Golems/Mecha/Mecha-Golem</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3</drawSize>
+          <shadowData>
+            <volume>(0.4, 0.8, 0.6)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+  
+  <LifeStageDef>
+    <defName>TM_MechaGolemLS</defName>
+    <label>mecha-golem</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<foodMaxFactor>1</foodMaxFactor>
+	<healthScaleFactor>1</healthScaleFactor>
+    <statFactors>
+      <MoveSpeed>1.0</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  
+</Defs>

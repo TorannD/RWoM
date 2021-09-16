@@ -11,23 +11,6 @@ using HarmonyLib;
 
 namespace TorannMagic
 {
-    public struct Encase : IExposable
-    {
-        public IntVec3 position;
-        public TerrainDef terrain;
-
-        public Encase(IntVec3 pos, TerrainDef ter)
-        {
-            position = pos;
-            terrain = ter;
-        }
-
-        public void ExposeData()
-        {
-            Scribe_Defs.Look<TerrainDef>(ref this.terrain, "terrain");
-            Scribe_Values.Look<IntVec3>(ref this.position, "position", default(IntVec3), false);
-        }
-    }
 
     [StaticConstructorOnStartup]
     public class Projectile_Encase : Projectile_AbilityBase
@@ -42,10 +25,8 @@ namespace TorannMagic
         List<Thing> despawnedThingList = new List<Thing>();
         List<TerrainDef> terrainList = new List<TerrainDef>();
 
-        List<Encase> wall = new List<Encase>();
+        List<TMDefs.Encase> wall = new List<TMDefs.Encase>();
         Pawn caster;
-
-
 
         //unsaved variables
         ThingDef spawnDef = ThingDef.Named("Sandstone");
@@ -62,7 +43,7 @@ namespace TorannMagic
             Scribe_References.Look<Pawn>(ref this.caster, "caster", false);
             Scribe_Collections.Look<IntVec3>(ref this.wallPositions, "wallPositions", LookMode.Value);
             Scribe_Collections.Look<Thing>(ref this.despawnedThingList, "despawnedThingList", LookMode.Deep);
-            Scribe_Collections.Look<Encase>(ref this.wall, "wall", LookMode.Deep);
+            Scribe_Collections.Look<TMDefs.Encase>(ref this.wall, "wall", LookMode.Deep);
         }
 
         protected override void Impact(Thing hitThing)
@@ -113,7 +94,7 @@ namespace TorannMagic
                 this.wallPositions = outerCells.Except(innerCells).ToList();
                 for (int t = 0; t < wallPositions.Count(); t++)
                 {
-                    Encase temp = new Encase(wallPositions[t], wallPositions[t].GetTerrain(caster.Map));
+                    TMDefs.Encase temp = new TMDefs.Encase(wallPositions[t], wallPositions[t].GetTerrain(caster.Map));
                     wall.Add(temp);
                     this.terrainList.Add(wallPositions[t].GetTerrain(caster.Map));
                 }

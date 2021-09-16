@@ -133,6 +133,42 @@
 			<isAdvancedClass>false</isAdvancedClass>		
 			<shouldShow>false</shouldShow>
 		  </li>	
+		  		  <!-- Golemancer -->
+		  <li>		  
+			<classTrait>TM_Golemancer</classTrait>				
+			<traitDegree>0</traitDegree>					
+			<classHediff></classHediff>								
+			<classTexturePath>golemancerMageMark</classTexturePath> 
+			<classIconPath>MageMark</classIconPath>			
+			<classIconColor>(.6,0.4,.2)</classIconColor>		
+			<tornScript>Torn_BookOfGolemancy</tornScript>						
+			<fullScript>BookOfGolemancy</fullScript>			
+			
+			<classMageAbilities>	
+				<li>TM_Golemancy</li>
+				<li>TM_RuneCarving</li>
+				<li>TM_Branding</li>
+				<li>TM_SigilSurge</li>
+				<li>TM_SigilDrain</li>
+				<li>TM_LivingWall</li>
+			</classMageAbilities>
+			<learnableSpells>		
+				<li>SpellOf_LivingWall</li>			
+			</learnableSpells>								
+			
+			<classFighterAbilities>							
+			</classFighterAbilities>
+			<learnableSkills>								
+			</learnableSkills>
+			
+			<isMage>true</isMage>							
+			<isFighter>false</isFighter>					
+			<isNecromancer>false</isNecromancer>			
+			<isUndead>false</isUndead>										
+			<isAndroid>false</isAndroid>					
+			<isAdvancedClass>false</isAdvancedClass>		
+			<shouldShow>false</shouldShow>
+		  </li>	
 		</customClasses>			
 	</TorannMagic.TM_CustomClassDef>		
 

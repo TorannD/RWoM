@@ -1725,7 +1725,7 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		<degreeDatas>	
 		  <li>
 			<label>Golemancer</label>
-			<description>Golemancers consider themselves artists and prefer to weave their magic through powerful runes and sigils that are able to instill purpose into an object. [PAWN_nameDef] is no exception; [PAWN_pronoun] can create runes that enhance objects, drain emotions, and even animate material to form life-like and monstrous creatures. Golemancer's are most effective instilling power into lifeless objects and find it more difficult to convert mana to energy directly, increasing the mana cost of cantrips by 25%.</description>
+			<description>Golemancers prefer to weave their magic through powerful runes and sigils that are able to transfer purpose into an object. [PAWN_nameDef] is no exception; [PAWN_pronoun] can create runes that enhance basic mechanics, alter chemicals in biological matter, and animate mundae material into life-like, monstrous creatures. Golemancer's are most effective when channeling their magic through symbols and find it more difficult to convert mana to energy directly but are also have higher arcane resistances. Most golemancer's tend to find rocks more interesting than people and have little concern for cleanliness.</description>
 			<degree>0</degree>
 			<statOffsets>
 				<FilthRate>.5</FilthRate>
@@ -1735,9 +1735,15 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 				<WorkSpeedGlobal>0.1</WorkSpeedGlobal>		
 				<SmeltingSpeed>0.2</SmeltingSpeed>
 				<ConstructionSpeed>.2</ConstructionSpeed>
-			</statOffsets>
+			</statOffsets>			
 		  </li>
 		</degreeDatas>
+		<modExtensions>
+			<li Class="TorannMagic.TMDefs.DefModExtension_TraitEnchantments">
+				<mpCost>0.2</mpCost>
+				<arcaneRes>.20</arcaneRes>
+			</li>
+		</modExtensions>
 		<conflictingTraits>
 		  <li>InnerFire</li>
 		  <li>HeartOfFrost</li>

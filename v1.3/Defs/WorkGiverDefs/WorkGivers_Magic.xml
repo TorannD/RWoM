@@ -103,5 +103,24 @@
     </requiredCapacities>
     <prioritizeSustains>true</prioritizeSustains>
   </WorkGiverDef>
+  
+       <!-- ============= Golem Work Related ============= -->
+	   
+  <WorkGiverDef>
+    <defName>DoBillsGolemBuilding</defName>
+    <label>work on golem</label>
+    <giverClass>WorkGiver_DoBill</giverClass>
+    <workType>Crafting</workType>
+    <priorityInType>120</priorityInType>
+    <fixedBillGiverDefs>
+      <li>TM_MechaGolem_Workstation</li>
+    </fixedBillGiverDefs>
+    <verb>golem work</verb>
+    <gerund>working on golems</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
 
 </Defs>

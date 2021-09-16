@@ -277,6 +277,7 @@ namespace TorannMagic
         public bool recallSpell = false;
         public FlyingObject_SpiritOfLight SoL = null;
         public Pawn bondedSpirit = null;
+        public List<TMDefs.Branding> brandings = new List<TMDefs.Branding>();
 
         private Effecter powerEffecter = null;
         private int powerModifier = 0;
@@ -284,6 +285,38 @@ namespace TorannMagic
         private int previousHexedPawns = 0;
         public int nextEntertainTick = -1;
         public int nextSuccubusLovinTick = -1;
+
+        public List<TMDefs.Branding> Brandings
+        {
+            get
+            {
+                if (brandings == null)
+                {
+                    brandings = new List<TMDefs.Branding>();
+                    brandings.Clear();
+                }
+                List<TMDefs.Branding> tmpList = new List<TMDefs.Branding>();
+                tmpList.Clear();
+                foreach (TMDefs.Branding br in brandings)
+                {
+                    Pawn p = br.pawn;
+                    if (p.DestroyedOrNull() || p.Dead)
+                    {
+                        tmpList.Add(br);
+                    }
+                    Hediff hd = p.health?.hediffSet?.GetFirstHediffOfDef(br.hediffDef);
+                    if(hd == null)
+                    {
+                        tmpList.Add(br);
+                    }                    
+                }
+                for (int i = 0; i < tmpList.Count; i++)
+                {
+                    brandings.Remove(tmpList[i]);
+                }
+                return brandings;
+            }
+        }
 
         public List<TM_EventRecords> MagicUsed
         {
@@ -303,7 +336,7 @@ namespace TorannMagic
                     magicUsed = new List<TM_EventRecords>();
                     magicUsed.Clear();
                 }
-                magicUsed = value;
+                magicUsed = value;                
             }
         }
 

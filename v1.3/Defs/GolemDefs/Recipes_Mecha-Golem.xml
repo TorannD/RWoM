@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--================== Mecha Golem upgrade recipes ==================-->
+  
+  <RecipeDef ParentName="Golem_Recipe_Base">
+    <defName>TM_Mecha-Golem_EnergyCell</defName>
+    <label>power cell</label>
+    <description>Creates a power cell and installs it into a mecha-golem.</description>
+    <jobString>crafting power cell</jobString>
+<!-- 	<researchPrerequisite>TechPlasteelCrafting</researchPrerequisite>
+	<skillRequirements>
+	  <Intellectual>6</Intellectual>
+    </skillRequirements> -->
+	<workAmount>200</workAmount>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li> 
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+  
+</Defs>

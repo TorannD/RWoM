@@ -142,6 +142,7 @@ namespace TorannMagic
         public List<MagicPower> magicPowerShadow;
         public List<MagicPower> magicPowerBrightmage;
         public List<MagicPower> magicPowerShaman;
+        public List<MagicPower> magicPowerGolemancer;
 
         public List<MagicPower> magicPowerStandalone;        
 
@@ -279,6 +280,13 @@ namespace TorannMagic
         public List<MagicPowerSkill> magicPowerSkill_Hex;
         public List<MagicPowerSkill> magicPowerSkill_SpiritWolves;
         public List<MagicPowerSkill> magicPowerSkill_GuardianSpirit;
+
+        public List<MagicPowerSkill> magicPowerSkill_Golemancy;            
+        public List<MagicPowerSkill> magicPowerSkill_RuneCarving;
+        public List<MagicPowerSkill> magicPowerSkill_Branding;
+        public List<MagicPowerSkill> magicPowerSkill_SigilSurge;
+        public List<MagicPowerSkill> magicPowerSkill_SigilDrain;
+        public List<MagicPowerSkill> magicPowerSkill_LivingWall;
 
         public List<MagicPowerSkill> MagicPowerSkill_global_regen
         {
@@ -3244,7 +3252,146 @@ namespace TorannMagic
             }
         }
 
-
+        public List<MagicPower> MagicPowersGolemancer
+        {
+            get
+            {
+                bool flag = this.magicPowerGolemancer == null;
+                if (flag)
+                {
+                    this.magicPowerGolemancer = new List<MagicPower>
+                    {
+                        new MagicPower(new List<AbilityUser.AbilityDef>
+                        {
+                            TorannMagicDefOf.TM_Golemancy
+                        }),
+                        new MagicPower(new List<AbilityUser.AbilityDef>
+                        {
+                            TorannMagicDefOf.TM_RuneCarving
+                        }),
+                        new MagicPower(new List<AbilityUser.AbilityDef>
+                        {
+                            TorannMagicDefOf.TM_Branding
+                        }),
+                        new MagicPower(new List<AbilityUser.AbilityDef>
+                        {
+                            TorannMagicDefOf.TM_SigilSurge
+                        }),
+                        new MagicPower(new List<AbilityUser.AbilityDef>
+                        {
+                            TorannMagicDefOf.TM_SigilDrain
+                        }),
+                        new MagicPower(new List<AbilityUser.AbilityDef>
+                        {
+                            TorannMagicDefOf.TM_LivingWall
+                        }, true),
+                    };
+                }
+                return this.magicPowerGolemancer;
+            }
+        }
+        public List<MagicPowerSkill> MagicPowerSkill_Golemancy
+        {
+            get
+            {
+                bool flag = this.magicPowerSkill_Golemancy == null;
+                if (flag)
+                {
+                    this.magicPowerSkill_Golemancy = new List<MagicPowerSkill>
+                    {
+                        new MagicPowerSkill("TM_Golemancy_pwr", "TM_Golemancy_pwr_desc"), // power of golems, 15 ranks
+                        new MagicPowerSkill("TM_Golemancy_eff", "TM_Golemancy_eff_desc"), // mana cost to upkeep a golem, 15 ranks
+                        new MagicPowerSkill("TM_Golemancy_ver", "TM_Golemancy_ver_desc")  // abilities and skills available to a golem, 15 ranks
+                    };
+                }
+                return this.magicPowerSkill_Golemancy;
+            }
+        }
+        public List<MagicPowerSkill> MagicPowerSkill_RuneCarving
+        {
+            get
+            {
+                bool flag = this.magicPowerSkill_RuneCarving == null;
+                if (flag)
+                {
+                    this.magicPowerSkill_RuneCarving = new List<MagicPowerSkill>
+                    {
+                        new MagicPowerSkill("TM_RuneCarving_pwr", "TM_RuneCarving_pwr_desc"), // efficiency boost to parts, 3 ranks, 2 pt level cost
+                        new MagicPowerSkill("TM_RuneCarving_eff", "TM_RuneCarving_eff_desc"), // returns 10% mana per skill level
+                        new MagicPowerSkill("TM_RuneCarving_ver", "TM_RuneCarving_ver_desc")  // increases chance of success by 5%
+                    };
+                }
+                return this.magicPowerSkill_RuneCarving;
+            }
+        }
+        public List<MagicPowerSkill> MagicPowerSkill_Branding
+        {
+            get
+            {
+                bool flag = this.magicPowerSkill_Branding == null;
+                if (flag)
+                {
+                    this.magicPowerSkill_Branding = new List<MagicPowerSkill>
+                    {
+                        new MagicPowerSkill("TM_Branding_pwr", "TM_Branding_pwr_desc"), // severity, 5 ranks
+                        new MagicPowerSkill("TM_Branding_eff", "TM_Branding_eff_desc") // reduces upkeep cost, 5 ranks
+                        //new MagicPowerSkill("TM_Branding_ver", "TM_Branding_ver_desc")  // 
+                    };
+                }
+                return this.magicPowerSkill_Branding;
+            }
+        }
+        public List<MagicPowerSkill> MagicPowerSkill_SigilSurge
+        {
+            get
+            {
+                bool flag = this.magicPowerSkill_SigilSurge == null;
+                if (flag)
+                {
+                    this.magicPowerSkill_SigilSurge = new List<MagicPowerSkill>
+                    {
+                        new MagicPowerSkill("TM_SigilSurge_pwr", "TM_SigilSurge_pwr_desc"), // severity boot when active
+                        new MagicPowerSkill("TM_SigilSurge_eff", "TM_SigilSurge_eff_desc"), // reduces mana upkeep while active
+                        new MagicPowerSkill("TM_SigilSurge_ver", "TM_SigilSurge_ver_desc")  // reduces 'feedback' effects on golemancer (pain)
+                    };
+                }
+                return this.magicPowerSkill_SigilSurge;
+            }
+        }
+        public List<MagicPowerSkill> MagicPowerSkill_SigilDrain
+        {
+            get
+            {
+                bool flag = this.magicPowerSkill_SigilDrain == null;
+                if (flag)
+                {
+                    this.magicPowerSkill_SigilDrain = new List<MagicPowerSkill>
+                    {
+                        new MagicPowerSkill("TM_SigilDrain_pwr", "TM_SigilDrain_pwr_desc"), // bonus of drain effects on golemancer
+                        new MagicPowerSkill("TM_SigilDrain_eff", "TM_SigilDrain_eff_desc"), // reduces mana upkeep cost
+                        new MagicPowerSkill("TM_SigilDrain_ver", "TM_SigilDrain_ver_desc")  // reduces feedback effects on other pawn (pain)
+                    };
+                }
+                return this.magicPowerSkill_SigilDrain;
+            }
+        }
+        public List<MagicPowerSkill> MagicPowerSkill_LivingWall
+        {
+            get
+            {
+                bool flag = this.magicPowerSkill_LivingWall == null;
+                if (flag)
+                {
+                    this.magicPowerSkill_LivingWall = new List<MagicPowerSkill>
+                    {
+                        new MagicPowerSkill("TM_LivingWall_pwr", "TM_LivingWall_pwr_desc"), // power of living walls abilities 
+                        new MagicPowerSkill("TM_LivingWall_eff", "TM_LivingWall_eff_desc"), // mana upkeep cost
+                        new MagicPowerSkill("TM_LivingWall_ver", "TM_LivingWall_ver_desc")  // movement and action quickness
+                    };
+                }
+                return this.magicPowerSkill_LivingWall;
+            }
+        }
 
         public bool IsNecromancer
         {
@@ -3702,6 +3849,7 @@ namespace TorannMagic
                     allMagicPowersWithSkillsList.AddRange(this.MagicPowersShadow);
                     allMagicPowersWithSkillsList.AddRange(this.MagicPowersBrightmage);
                     allMagicPowersWithSkillsList.AddRange(this.MagicPowersShaman);
+                    allMagicPowersWithSkillsList.AddRange(this.MagicPowersGolemancer);
                 }
                 return allMagicPowersWithSkillsList;
             }
@@ -3850,6 +3998,12 @@ namespace TorannMagic
                     allMagicPowerSkillsList.AddRange(this.MagicPowerSkill_Hex);
                     allMagicPowerSkillsList.AddRange(this.MagicPowerSkill_SpiritWolves);
                     allMagicPowerSkillsList.AddRange(this.MagicPowerSkill_GuardianSpirit);
+                    allMagicPowerSkillsList.AddRange(this.MagicPowerSkill_Golemancy);
+                    allMagicPowerSkillsList.AddRange(this.MagicPowerSkill_RuneCarving);
+                    allMagicPowerSkillsList.AddRange(this.MagicPowerSkill_Branding);
+                    allMagicPowerSkillsList.AddRange(this.MagicPowerSkill_SigilSurge);
+                    allMagicPowerSkillsList.AddRange(this.MagicPowerSkill_SigilDrain);
+                    allMagicPowerSkillsList.AddRange(this.MagicPowerSkill_LivingWall);
                     allMagicPowerSkillsList.AddRange(this.MagicPowerSkill_Custom);
                 }
                 return allMagicPowerSkillsList;
@@ -3900,6 +4054,7 @@ namespace TorannMagic
             this.magicPowerShadow.Clear();
             this.magicPowerBrightmage.Clear();
             this.magicPowerShaman.Clear();
+            this.magicPowerGolemancer.Clear();
             this.magicPowerCustom.Clear();
             this.magicPawn = null;            
             this.initialized = false;           
@@ -4053,6 +4208,13 @@ namespace TorannMagic
             Scribe_Collections.Look<MagicPowerSkill>(ref this.magicPowerSkill_Enrage, "magicPowerSkill_Enrage", LookMode.Deep, new object[0]);
             Scribe_Collections.Look<MagicPowerSkill>(ref this.magicPowerSkill_Hex, "magicPowerSkill_Hex", LookMode.Deep, new object[0]);
             Scribe_Collections.Look<MagicPowerSkill>(ref this.magicPowerSkill_SpiritWolves, "magicPowerSkill_SpiritWolves", LookMode.Deep, new object[0]);
+            Scribe_Collections.Look<MagicPowerSkill>(ref this.magicPowerSkill_GuardianSpirit, "magicPowerSkill_GuardianSpirit", LookMode.Deep, new object[0]);
+            Scribe_Collections.Look<MagicPower>(ref this.magicPowerGolemancer, "magicPowerGolemancer", LookMode.Deep, new object[0]);
+            Scribe_Collections.Look<MagicPowerSkill>(ref this.magicPowerSkill_Golemancy, "magicPowerSkill_Golemancy", LookMode.Deep, new object[0]);
+            Scribe_Collections.Look<MagicPowerSkill>(ref this.magicPowerSkill_RuneCarving, "magicPowerSkill_RuneCarving", LookMode.Deep, new object[0]);
+            Scribe_Collections.Look<MagicPowerSkill>(ref this.magicPowerSkill_Branding, "magicPowerSkill_Branding", LookMode.Deep, new object[0]);
+            Scribe_Collections.Look<MagicPowerSkill>(ref this.magicPowerSkill_SigilSurge, "magicPowerSkill_SigilSurge", LookMode.Deep, new object[0]);
+            Scribe_Collections.Look<MagicPowerSkill>(ref this.magicPowerSkill_SigilDrain, "magicPowerSkill_SigilDrain", LookMode.Deep, new object[0]);
             Scribe_Collections.Look<MagicPowerSkill>(ref this.magicPowerSkill_GuardianSpirit, "magicPowerSkill_GuardianSpirit", LookMode.Deep, new object[0]);
 
         }

@@ -137,6 +137,10 @@ namespace TorannMagic
                             this.Pawn.guest.SetGuestStatus(linkedPawn.Faction, GuestStatus.Slave);
                         }
                     }
+                    if(base.Pawn.Faction != linkedPawn.Faction)
+                    {
+                        base.Pawn.Kill(null, null);
+                    }
                 }
                 else
                 {

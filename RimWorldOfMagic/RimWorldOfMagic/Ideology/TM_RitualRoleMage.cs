@@ -9,6 +9,10 @@ namespace TorannMagic.Ideology
         public override bool AppliesToPawn(Pawn p, out string reason, LordJob_Ritual ritual = null, RitualRoleAssignments assignments = null, Precept_Ritual precept = null, bool skipReason = false)
         {
             reason = null;
+            if (p == null || p.Faction == null || p.RaceProps == null || p.Ideo == null)
+            {
+                return false;
+            }
             if (!(p.Faction.IsPlayerSafe() || p.IsPrisoner))
             {
                 if (!skipReason)

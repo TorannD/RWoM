@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+
+<Defs>
+
+  <ThinkTreeDef>
+    <defName>TM_GolemMain</defName>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+		
+        <!-- Downed -->
+        <li Class="ThinkNode_Subtree">
+          <treeDef>Downed</treeDef>
+        </li>
+        <li Class="ThinkNode_Subtree">
+          <treeDef>TM_Golem_BurningResponse</treeDef>
+        </li>
+		
+		<!-- React to close melee threat -->
+        <li Class="JobGiver_ReactToCloseMeleeThreat" />
+		
+        <!-- Do a queued job -->
+        <li Class="ThinkNode_QueuedJob" />
+		
+		<!-- Forced goto -->
+        <li Class="ThinkNode_ConditionalForcedGoto">
+          <subNodes>
+            <li Class="ThinkNode_Tagger">
+              <tagToGive>Misc</tagToGive>
+              <subNodes>
+                <li Class="JobGiver_ForcedGoto" />
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+
+        <!-- Lord -->
+        <li Class="ThinkNode_Subtree">
+          <treeDef>LordDuty</treeDef>
+        </li>
+		
+		<!-- Unload your inventory -->
+		<li Class="ThinkNode_Tagger">
+		  <tagToGive>UnloadingOwnInventory</tagToGive>
+		  <subNodes>
+			<li Class="JobGiver_UnloadYourInventory" />
+		  </subNodes>
+		</li>	
+
+		<li Class="ThinkNode_ConditionalOfPlayerFaction">
+			<subNodes>
+				<li Class="ThinkNode_ConditionalShouldFollowMaster" >
+				  <subNodes>
+					<li Class="JobGiver_AIDefendMaster">
+					  <attackMeleeThreatEvenIfNotHostile>true</attackMeleeThreatEvenIfNotHostile>
+					</li>
+					<li Class="JobGiver_AIFollowMaster"/>
+					<li Class="JobGiver_WanderNearMaster" />
+				  </subNodes>
+				</li>
+				<li Class="ThinkNode_Subtree">
+				  <treeDef>TM_Golem_BehaviorCore</treeDef>
+				  <leaveJoinableLordIfIssuesJob>true</leaveJoinableLordIfIssuesJob>
+				</li>
+			</subNodes>
+		</li>
+
+        <!-- Idle -->
+        <li Class="ThinkNode_Tagger">
+          <tagToGive>Idle</tagToGive>
+          <subNodes>
+            <li Class="JobGiver_WanderAnywhere">
+              <maxDanger>Deadly</maxDanger>
+            </li>
+          </subNodes>
+        </li>
+        
+        <!-- Idle error -->
+        <li Class="JobGiver_IdleError"/>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+  
+  <ThinkTreeDef>
+    <defName>TM_GolemConstant</defName>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="ThinkNode_ConditionalCanDoConstantThinkTreeJobNow">
+          <subNodes>
+            <!-- Join auto joinable caravan -->
+            <li Class="ThinkNode_Subtree">
+              <treeDef>JoinAutoJoinableCaravan</treeDef>
+            </li>
+            
+            <!-- Hostility response -->
+            <li Class="JobGiver_ConfigurableHostilityResponse" />
+            
+            <!-- Lord directives -->
+            <li Class="ThinkNode_Subtree">
+              <treeDef>LordDutyConstant</treeDef>
+            </li>
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+  
+</Defs>
