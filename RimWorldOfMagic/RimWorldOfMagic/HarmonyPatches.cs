@@ -14,6 +14,8 @@ using Verse.Sound;
 using Verse.AI;
 using AbilityUserAI;
 using TorannMagic.Conditions;
+using TorannMagic.TMDefs;
+using TorannMagic.Golems;
 using RimWorld.QuestGen;
 
 namespace TorannMagic
@@ -79,6 +81,7 @@ namespace TorannMagic
             harmonyInstance.Patch(AccessTools.Method(typeof(Pawn_StanceTracker), "get_Staggered", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_Staggered", null), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(Verb_LaunchProjectile), "get_Projectile", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_Projectile_ES", null), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(WindManager), "get_WindSpeed", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_WindSpeed", null), null);
+            harmonyInstance.Patch(AccessTools.Method(typeof(MainTabWindow_Animals), "get_Pawns", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_GolemsAsAnimals", null), null);
 
             harmonyInstance.Patch(AccessTools.Method(typeof(GenDraw), "DrawRadiusRing", new Type[]
                 {
@@ -329,6 +332,19 @@ namespace TorannMagic
         //    return false;
         //}
 
+        //[HarmonyPatch(typeof(Verb_UseAbility), "TryLaunchProjectileCheck", null)]
+        //public class Troubleshooting_Patch
+        //{
+        //    public static bool Prefix(Verb_UseAbility __instance, ThingDef projectileDef, LocalTargetInfo launchTarget, VerbProperties ___verbProps, Thing ___caster, ref bool __result)
+        //    {
+        //        Log.Message("verb props " + ___verbProps);
+        //        Log.Message("caster " + ___caster);
+        //        Log.Message("launch taqrget " + launchTarget);
+        //        Log.Message("projectile def " + projectileDef);
+        //        return true;
+        //    }
+        //}
+
         [HarmonyPatch(typeof(GenRecipe), "MakeRecipeProducts", null)]
         public class GolemRecipe_Action_Patch
         {
@@ -356,12 +372,22 @@ namespace TorannMagic
             }
         }
 
-        public static bool Get_WindSpeed(WindManager __instance, ref float __result)
+        public static void Get_GolemsAsAnimals(MainTabWindow_Animals __instance, ref IEnumerable<Pawn> __result)
         {
-            Map map = Traverse.Create(root: __instance).Field(name: "map").GetValue<Map>();
-            if (map != null)
+            IEnumerable<Pawn> Golems = from p in Find.CurrentMap.mapPawns.PawnsInFaction(Faction.OfPlayer)
+                                       where p.def.thingClass == typeof(TMPawnGolem)
+                                       select p;
+            if (Golems != null)
             {
-                MagicMapComponent mmc = map.GetComponent<MagicMapComponent>();
+                __result.ToList().AddRange(Golems);
+            }
+        }
+
+        public static bool Get_WindSpeed(WindManager __instance, Map ___map, ref float __result)
+        {
+            if (___map != null)
+            {
+                MagicMapComponent mmc = ___map.GetComponent<MagicMapComponent>();
                 if (mmc != null && mmc.windSpeedEndTick > Find.TickManager.TicksGame)
                 {
                     __result = mmc.windSpeed;
@@ -1454,6 +1480,11 @@ namespace TorannMagic
             {
                 CompPolymorph cp = __instance.GetComp<CompPolymorph>();
                 if (cp != null && cp.Original != null && cp.Original.RaceProps.Humanlike)
+                {
+                    __result = true;
+                    return false;
+                }
+                if(__instance is TMPawnGolem)
                 {
                     __result = true;
                     return false;
@@ -5919,11 +5950,11 @@ namespace TorannMagic
         [HarmonyPatch(typeof(Pawn_NeedsTracker), "ShouldHaveNeed", null)]
         public static class Pawn_NeedsTracker_Patch
         {
-            public static FieldInfo pawn = typeof(Pawn_NeedsTracker).GetField("pawn", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.GetField);
-            public static bool Prefix(Pawn_NeedsTracker __instance, NeedDef nd, ref bool __result)
+            //public static FieldInfo pawn = typeof(Pawn_NeedsTracker).GetField("pawn", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.GetField);
+            public static bool Prefix(Pawn_NeedsTracker __instance, NeedDef nd, Pawn ___pawn, ref bool __result)
             {
-                Traverse traverse = Traverse.Create(__instance);
-                Pawn pawn = (Pawn)Pawn_NeedsTracker_Patch.pawn.GetValue(__instance);
+                //Traverse traverse = Traverse.Create(__instance);
+                Pawn pawn = ___pawn;
                 if (pawn != null)
                 {
                     if (nd.defName == "ROMV_Blood" && (pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_UndeadHD")) || pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_UndeadAnimalHD")) || pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_LichHD"))))
@@ -5946,11 +5977,20 @@ namespace TorannMagic
                         __result = false;
                         return false;
                     }
-                    //if(pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_UndeadHD")) || pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_UndeadAnimalHD")))
-                    //{
-                    //    __result = false;
-                    //    return false;
-                    //}
+                    foreach (TM_Golem g in TM_GolemUtility.Golems())
+                    {
+                        if (g.needs != null && g.needs.Count > 0)
+                        {
+                            foreach (NeedDef n in g.needs)
+                            {
+                                if (nd == n && pawn.def == g.golemDef)
+                                {
+                                    __result = true;
+                                    return false;
+                                }
+                            }
+                        }
+                    }
                 }
                 return true;
             }

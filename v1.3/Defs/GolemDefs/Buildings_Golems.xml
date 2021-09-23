@@ -12,7 +12,7 @@
     <rotatable>true</rotatable>
 	<neverMultiSelect>true</neverMultiSelect>
 	<drawerType>MapMeshAndRealTime</drawerType>
-    <thingClass>TorannMagic.Building_TMGolemBase</thingClass>
+    <thingClass>TorannMagic.Golems.Building_TMGolemBase</thingClass>
     <tickerType>Normal</tickerType>
     <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
     <thingCategories>
@@ -32,7 +32,7 @@
     </recipeMaker>
 	<inspectorTabs>
       <li>ITab_Bills</li>
-      <li>TorannMagic.ITab_GolemUpgrades</li>
+      <li>TorannMagic.Golems.ITab_GolemWorkstation</li>
     </inspectorTabs>
     <holdsRoof>false</holdsRoof>
     <staticSunShadowHeight>0</staticSunShadowHeight>
@@ -94,7 +94,7 @@
 	  <ComponentIndustrial>1</ComponentIndustrial>
     </costList>
 	<comps>
-      <li Class="TorannMagic.CompProperties_GolemEnergyHandler">
+      <li Class="TorannMagic.Golems.CompProperties_GolemEnergyHandler">
         <storedEnergyMax>1000</storedEnergyMax>
 		<storedEnergyMaxUpgradeIncrease>500</storedEnergyMaxUpgradeIncrease>
 		<storedEnergyMaxUpgrades>3</storedEnergyMaxUpgrades>

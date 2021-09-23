@@ -2,7 +2,7 @@
 <Defs>
 
   <ThingDef Name="TM_Golem_Base" Abstract="True">
-    <thingClass>Pawn</thingClass>
+    <thingClass>TorannMagic.Golems.TMPawnGolem</thingClass>
     <category>Pawn</category>
     <selectable>true</selectable>
     <tickerType>Normal</tickerType>
@@ -22,6 +22,7 @@
       <lifeExpectancy>2500</lifeExpectancy>
     </race>
     <inspectorTabs>
+	  <li>TorannMagic.Golems.ITab_GolemPawn</li>
       <li>ITab_Pawn_Health</li>
       <li>ITab_Pawn_Needs</li>
       <li>ITab_Pawn_Character</li>
@@ -86,6 +87,28 @@
         <linkedBodyPartsGroup>Mecha_LeftArm</linkedBodyPartsGroup>
         <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
       </li>
+	  <li>
+        <label>mecha-axe</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>24.0</power>
+		<armorPenetration>.5</armorPenetration>
+        <cooldownTime>1.2</cooldownTime>
+        <linkedBodyPartsGroup>Mecha_LeftArm_Axe</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+	  <li>
+        <label>mecha-sword</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>36.0</power>
+        <cooldownTime>2.4</cooldownTime>
+		<armorPenetration>1.15</armorPenetration>
+        <linkedBodyPartsGroup>Mecha_LeftArm_Sword</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
       <li>
         <label>right fist</label>
         <capacities>
@@ -95,19 +118,31 @@
         <cooldownTime>2.3</cooldownTime>
         <linkedBodyPartsGroup>Mecha_RightArm</linkedBodyPartsGroup>
         <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
-      </li>      
+      </li> 
+	  <li>
+        <label>mecha-hammer</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>30.0</power>
+        <cooldownTime>2</cooldownTime>
+		<armorPenetration>.2</armorPenetration>
+        <linkedBodyPartsGroup>Mecha_RightArm_Hammer</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>	  
     </tools>
     <race>
       <thinkTreeMain>TM_GolemMain</thinkTreeMain>
-      <thinkTreeConstant>TM_GolemConstant</thinkTreeConstant>
-      <intelligence>ToolUser</intelligence>
+      <thinkTreeConstant>TM_GolemConstant</thinkTreeConstant>      
       <makesFootprints>true</makesFootprints>
       <body>TM_Mecha-Golem</body>
       <baseBodySize>1</baseBodySize>
       <baseHealthScale>1</baseHealthScale>
       <foodType>None</foodType>
 	  <bloodDef>Filth_MachineBits</bloodDef>
-	  <fleshType>Mechanoid</fleshType>
+	  <intelligence>ToolUser</intelligence>
+	  <fleshType>TM_StoneFlesh</fleshType>
+	  <trainability>None</trainability>
       <lifeStageAges>
         <li>
           <def>TM_MechaGolemLS</def>
@@ -125,6 +160,10 @@
         <offset>(0,0,-0.3)</offset>
       </specialShadowData>
     </race>
+	<comps>
+	  <li Class="TorannMagic.Golems.CompProperties_Golem">
+	  </li>
+    </comps>
 	<butcherProducts>
 <!--       <Steel>30</Steel>
       <Plasteel>10</Plasteel> -->

@@ -1238,6 +1238,7 @@ namespace TorannMagic
         public static JobDef JobDriver_TM_GotoAndWait;
         public static JobDef JobDriver_GotoAndCast;
         public static JobDef JobDriver_Discord;
+        public static JobDef JobDriver_GolemDespawn;
 
         //Things
         public static ThingDef RawMagicyte;
@@ -1342,6 +1343,7 @@ namespace TorannMagic
 
         //NeedDefs
         public static NeedDef TM_Travel;
+        public static NeedDef TM_GolemEnergy;
 
         //Stats
         public static StatDef ArmorRating_Alignment;        
@@ -1397,6 +1399,7 @@ namespace TorannMagic
         public static ThingDef TM_MechaGolem;
         public static PawnKindDef TM_MechaGolemK;
         public static ThingDef TM_MechaGolem_Workstation;
+        //public static TMDefs.TM_GolemAbility TM_Golem_GatlingCannon;
 
     }
 }

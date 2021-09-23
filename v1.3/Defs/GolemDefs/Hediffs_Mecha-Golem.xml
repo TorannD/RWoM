@@ -31,4 +31,25 @@
 	</stages>
   </HediffDef>
   
+  <HediffDef ParentName="TM_Golem_ImplantHediffBase">
+    <defName>TM_Mecha-Golem_GatlingCannonHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+	<label>Gatling Cannon</label>
+	<description>A gatling cannon mounted to the right shoulder.</description>
+    <scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<maxSeverity>3</maxSeverity>
+	<isBad>false</isBad>
+	<initialSeverity>.5</initialSeverity>
+	<stages>
+      <li>
+        <label></label>
+        <minSeverity>0.001</minSeverity>
+		<becomeVisible>true</becomeVisible>
+      </li>
+	</stages>
+  </HediffDef>
+  
 </Defs>

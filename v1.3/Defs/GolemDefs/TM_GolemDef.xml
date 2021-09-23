@@ -10,6 +10,9 @@
 			<golemDef>TM_MechaGolem</golemDef>
 			<golemKindDef>TM_MechaGolemK</golemKindDef>
 			<golemWorkstationDef>TM_MechaGolem_Workstation</golemWorkstationDef>
+			<needs>
+			  <li>TM_GolemEnergy</li>
+			</needs>
 			<upgrades>
 			  <li>
 			    <name>max energy</name>
@@ -20,6 +23,23 @@
 				<maxLevel>3</maxLevel>
 				<workstationCapacity>EnergyMax</workstationCapacity>
 			  </li>
+			  <li>
+			    <name>mecha-axe</name>
+				<recipe>TM_Mecha-Golem_Axe</recipe>
+				<bodypart>Mecha_LeftArm_Axe</bodypart>
+				<partRequiresUpgrade>true</partRequiresUpgrade>
+				<maxLevel>1</maxLevel>
+			  </li>
+<!-- 			  <li>
+			    <name>mounted gatling cannon</name>
+				<recipe>TM_Mecha-Golem_GatlingCannonMount</recipe>
+				<bodypart>Mecha_RightShoulder</bodypart>
+				<partRequiresUpgrade>false</partRequiresUpgrade>
+				<hediff>TM_Mecha-Golem_GatlingCannonHD</hediff>
+				<ability>TM_Golem_GatlingCannon</ability>
+				<maxLevel>1</maxLevel>
+				<workstationCapacity>EnergyMax</workstationCapacity>
+			  </li> -->
 			</upgrades>
 		  </li>	
 		</golems>			

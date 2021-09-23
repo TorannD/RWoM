@@ -94,10 +94,17 @@
 					<coverage>0.08</coverage>
 					<parts>
 						<li>
-						  <def>Mecha_LeftArm_Attachment</def>
-						  <coverage>0.4</coverage>
+						  <def>Mecha_LeftArm_Axe</def>
+						  <coverage>0.1</coverage>
 						  <groups>
-							<li>Mecha_LeftArm_Attachment</li>
+							<li>Mecha_LeftArm_Axe</li>
+						  </groups>
+						</li>
+						<li>
+						  <def>Mecha_LeftArm_Sword</def>
+						  <coverage>0.1</coverage>
+						  <groups>
+							<li>Mecha_LeftArm_Sword</li>
 						  </groups>
 						</li>
 					</parts>
@@ -114,10 +121,10 @@
 					<coverage>0.08</coverage>
 					<parts>
 						<li>
-						  <def>Mecha_RightArm_Attachment</def>
-						  <coverage>0.4</coverage>
+						  <def>Mecha_RightArm_Hammer</def>
+						  <coverage>0.1</coverage>
 						  <groups>
-							<li>Mecha_RightArm_Attachment</li>
+							<li>Mecha_RightArm_Hammer</li>
 						  </groups>
 						</li>
 					</parts>

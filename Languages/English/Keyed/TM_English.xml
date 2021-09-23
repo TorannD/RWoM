@@ -199,6 +199,7 @@
 <TM_MessageRitualRoleCannotBeUndead>{0} cannot be undead.</TM_MessageRitualRoleCannotBeUndead>
 <TM_RuneCarving>rune engraving</TM_RuneCarving>
 <TM_MaxGolemUpgradeReached>The max {0} upgrade has already been reached; resources have been returned</TM_MaxGolemUpgradeReached>
+<TM_GolemCannotReturn>The golem could not return to its designated position, it not reachable or is occupied.</TM_GolemCannotReturn>
 
 <!-- Surgery Failed letters -->
 <LetterLabelRegrowthSurgeryFail>Surgery Failed</LetterLabelRegrowthSurgeryFail>
@@ -1981,8 +1982,17 @@ Level 3: all 4 effects</TM_CombatDrugs_pwr_desc>
 *To become a might class, the pawn must read a book teaching a Combat Form.*
 
 **Once promoted, the pawn cannot become another fighter class, the decision is permanent and cannot be reverted - this includes the Wayfarer class.**</TM_PromoteWayfarerDesc>
+
 <TM_ActivateGolem>Activate</TM_ActivateGolem>
 <TM_ActivateGolemDesc>Begins the process to activate the golem - after activating, the golem will move about as a normal pawn. Any upgrades or repairs being performed in the dormat state will be discarded.</TM_ActivateGolemDesc>
+<TM_DeActivateGolem>Deactivate</TM_DeActivateGolem>
+<TM_DeActivateGolemDesc>Orders the golem to become dormant. The golem will attempt to return to its assigned dormant location. If this location is unreachable, the golem will deactivate at its current location. If the location is available, issuing this command a second time will override the return command and immediately deactivate the golem at it's current position.</TM_DeActivateGolemDesc>
+<TM_AssignGolemRestPosition>Dormant position</TM_AssignGolemRestPosition>
+<TM_AssignGolemRestPositionDesc>Assigns the location the golem should deactivate.</TM_AssignGolemRestPositionDesc>
+<TM_GolemStationaryDefenseToggle>defense protocol</TM_GolemStationaryDefenseToggle>
+<TM_GolemStationaryDefenseToggleDesc>Toggles stationary defenses. The golem remains in a dormant state while using stationary defenses.</TM_GolemStationaryDefenseToggleDesc>
+<TM_GolemActiveDefenseToggle>engagement protocol</TM_GolemActiveDefenseToggle>
+<TM_GolemActiveDefenseToggleDesc>Toggles active defenses. The golem will activate if an enemy enters its threat range. Threat range may be adjusted a golem by selecting the dormant golem and opening the golem tab.</TM_GolemActiveDefenseToggleDesc>
 
 <!-- ========== Building Menu's ========== -->
 
@@ -2010,7 +2020,7 @@ Level 3: all 4 effects</TM_CombatDrugs_pwr_desc>
 <TM_NeedManaForEnchant>Enchantment: {0} of .5 mana</TM_NeedManaForEnchant>
 
 <!-- ============ Golem Menu's ===================-->
-<TabGolemUpgrades>Upgrades</TabGolemUpgrades>
+<TabGolem>Golem</TabGolem>
 
 <!-- ============ Enchantment Labels =============-->
 <TM_MaxMPLabel>Max Energy Increase: {0}&#37;</TM_MaxMPLabel>

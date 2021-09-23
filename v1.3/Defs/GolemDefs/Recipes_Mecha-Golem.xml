@@ -32,5 +32,35 @@
       </li>
     </ingredients>
   </RecipeDef>
+
+  <RecipeDef ParentName="Golem_Recipe_Base">
+    <defName>TM_Mecha-Golem_Axe</defName>
+    <label>mecha-axe</label>
+    <description>Forges an axe and mounts it to the right arm attachment.</description>
+    <jobString>crafting golem part</jobString>
+<!-- 	<researchPrerequisite>TechPlasteelCrafting</researchPrerequisite>
+	<skillRequirements>
+	  <Intellectual>6</Intellectual>
+    </skillRequirements> -->
+	<workAmount>200</workAmount>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li> 
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
   
 </Defs>

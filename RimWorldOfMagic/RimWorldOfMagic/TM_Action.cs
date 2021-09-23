@@ -872,7 +872,10 @@ namespace TorannMagic
         {
             TMPawnSummoned newPawn = (TMPawnSummoned)PawnGenerator.GeneratePawn(spawnables.kindDef, faction);
             newPawn.validSummoning = true;
-            newPawn.Spawner = caster;
+            if (caster != null)
+            {
+                newPawn.Spawner = caster;
+            }
             newPawn.Temporary = spawnables.temporary;
             newPawn.TicksToDestroy = duration;
             //Faction val = default(Faction);

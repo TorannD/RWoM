@@ -190,7 +190,7 @@
   <BodyPartDef>
     <defName>Mecha_LeftArm</defName>
     <label>left arm</label>
-    <hitPoints>80</hitPoints>
+    <hitPoints>100</hitPoints>
     <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
 	<bleedRate>0</bleedRate>
     <skinCovered>false</skinCovered>
@@ -200,9 +200,18 @@
   </BodyPartDef>
   
   <BodyPartDef>
-    <defName>Mecha_LeftArm_Attachment</defName>
-    <label>left arm attachment</label>
-    <hitPoints>40</hitPoints>
+    <defName>Mecha_LeftArm_Axe</defName>
+    <label>mecha-axe</label>
+    <hitPoints>200</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<bleedRate>0</bleedRate>
+    <skinCovered>false</skinCovered>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Mecha_LeftArm_Sword</defName>
+    <label>mecha-sword</label>
+    <hitPoints>200</hitPoints>
     <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
 	<bleedRate>0</bleedRate>
     <skinCovered>false</skinCovered>
@@ -215,9 +224,15 @@
   </BodyPartGroupDef>
   
   <BodyPartGroupDef>
-    <defName>Mecha_LeftArm_Attachment</defName>
-    <label>left arm attachment</label>
+    <defName>Mecha_LeftArm_Axe</defName>
+    <label>mecha-axe</label>
 	<listOrder>102</listOrder>
+  </BodyPartGroupDef>
+  
+  <BodyPartGroupDef>
+    <defName>Mecha_LeftArm_Sword</defName>
+    <label>mecha-sword</label>
+	<listOrder>106</listOrder>
   </BodyPartGroupDef>
   
   <BodyPartDef>
@@ -245,9 +260,9 @@
   </BodyPartDef>
   
   <BodyPartDef>
-    <defName>Mecha_RightArm_Attachment</defName>
-    <label>right arm attachment</label>
-    <hitPoints>40</hitPoints>
+    <defName>Mecha_RightArm_Hammer</defName>
+    <label>mecha-hammer</label>
+    <hitPoints>200</hitPoints>
     <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
 	<bleedRate>0</bleedRate>
     <skinCovered>false</skinCovered>
@@ -260,8 +275,8 @@
   </BodyPartGroupDef>
   
   <BodyPartGroupDef>
-    <defName>Mecha_RightArm_Attachment</defName>
-    <label>left arm attachment</label>
+    <defName>Mecha_RightArm_Hammer</defName>
+    <label>mecha-hammer</label>
 	<listOrder>104</listOrder>
   </BodyPartGroupDef>
   

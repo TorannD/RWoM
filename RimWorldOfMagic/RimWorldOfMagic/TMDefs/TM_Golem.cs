@@ -14,7 +14,10 @@ namespace TorannMagic.TMDefs
         public ThingDef golemDef;
         public PawnKindDef golemKindDef;
         public ThingDef golemWorkstationDef;
+        public ThingDef golemStuff;
+        public int activationTicks = 240;
 
         public List<TM_GolemUpgrade> upgrades;
+        public List<NeedDef> needs;
     }
 }

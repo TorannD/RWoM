@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+<!--   <TorannMagic.TMDefs.TM_GolemAbility>
+	<defName>TM_Golem_GatlingCannon</defName>
+	<label>Shoulder mounted gatling cannon for mecha-golem</label>
+	<displayWeapon>Gun_Minigun</displayWeapon>
+	<displaySize>.8</displaySize>
+	<displayOffsetSouth></displayOffsetSouth>
+	<displayOffsetNorth></displayOffsetNorth>
+	<displayOffsetEast></displayOffsetEast>
+	<displayOffsetWest></displayOffsetWest>
+	<displayRotation></displayRotation>
+	<displayOverBody>true</displayOverBody>
+	<rotationOffset>0</rotationOffset>
+	<warmupTicks>30</warmupTicks>
+	<cooldownTicks>300</cooldownTicks>
+	<warmupStuns>false</warmupStuns>
+	<burstCount>15</burstCount>
+	<ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+	<minRange>3</minRange>
+	<maxRange>40</maxRange>
+	<projectile>Bullet_Minigun</projectile>
+	<requiredNeed>TM_GolemEnergy</requiredNeed>
+	<needCost>10</needCost>
+	<requiredHediff></requiredHediff>
+	<hediffCost></hediffCost>
+  </TorannMagic.TMDefs.TM_GolemAbility> -->
+
+</Defs>

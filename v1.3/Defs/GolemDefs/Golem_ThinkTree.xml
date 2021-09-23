@@ -22,6 +22,19 @@
         <!-- Do a queued job -->
         <li Class="ThinkNode_QueuedJob" />
 		
+		<!-- Wait if drafted -->
+        <li Class="ThinkNode_ConditionalColonist">
+          <subNodes>
+            <li Class="ThinkNode_Tagger">
+              <tagToGive>DraftedOrder</tagToGive>
+              <subNodes>
+                <li Class="JobGiver_MoveToStandable" />
+                <li Class="JobGiver_Orders" />
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+		
 		<!-- Forced goto -->
         <li Class="ThinkNode_ConditionalForcedGoto">
           <subNodes>
@@ -88,9 +101,9 @@
         <li Class="ThinkNode_ConditionalCanDoConstantThinkTreeJobNow">
           <subNodes>
             <!-- Join auto joinable caravan -->
-            <li Class="ThinkNode_Subtree">
+<!--             <li Class="ThinkNode_Subtree">
               <treeDef>JoinAutoJoinableCaravan</treeDef>
-            </li>
+            </li> -->
             
             <!-- Hostility response -->
             <li Class="JobGiver_ConfigurableHostilityResponse" />
