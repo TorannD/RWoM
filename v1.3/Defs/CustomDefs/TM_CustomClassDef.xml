@@ -133,7 +133,7 @@
 			<isAdvancedClass>false</isAdvancedClass>		
 			<shouldShow>false</shouldShow>
 		  </li>	
-		  		  <!-- Golemancer -->
+		  <!-- Golemancer -->
 		  <li>		  
 			<classTrait>TM_Golemancer</classTrait>				
 			<traitDegree>0</traitDegree>					
@@ -152,7 +152,13 @@
 				<li>TM_SigilDrain</li>
 				<li>TM_LivingWall</li>
 			</classMageAbilities>
-			<learnableSpells>		
+			<learnableSpells>	
+				<li>SpellOf_BrandAwareness</li>		
+				<li>SpellOf_BrandProtection</li>	
+				<li>SpellOf_BrandVitality</li>	
+				<li>SpellOf_BrandEmotion</li>		
+				<li>SpellOf_BrandFitness</li>	
+				<li>SpellOf_BrandSiphon</li>
 				<li>SpellOf_LivingWall</li>			
 			</learnableSpells>								
 			

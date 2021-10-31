@@ -150,7 +150,7 @@ namespace TorannMagic
         {
             get
             {
-                return new SkyTarget(1f, TM_WeatherEvent_MeshGeneric.MeshSkyColors, 1f, 1f);
+                return new SkyTarget(1f, TM_WeatherEvent_MeshGeneric.MeshSkyColors, 1f, 0f);
             }
         }
 

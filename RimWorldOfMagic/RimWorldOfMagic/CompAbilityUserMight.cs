@@ -3382,8 +3382,6 @@ namespace TorannMagic
                     {
                         if (mp.learned && mp.autocast && mp.autocasting != null && mp.autocasting.mightUser && mp.autocasting.undrafted)
                         {
-                            //try
-                            //{ 
                             TMAbilityDef tmad = mp.TMabilityDefs[mp.level] as TMAbilityDef; // issues with index?
                             bool canUseWithEquippedWeapon = true;
                             bool canUseIfViolentAbility = this.Pawn.story.DisabledWorkTagsBackstoryAndTraits.HasFlag(WorkTags.Violent) ? !tmad.MainVerb.isViolent : true;
@@ -3400,7 +3398,7 @@ namespace TorannMagic
                                     if (localTarget != null && localTarget.IsValid)
                                     {
                                         Thing targetThing = localTarget.Thing;
-                                        if (!(targetThing.GetType() == mp.autocasting.GetTargetType))
+                                        if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
                                         {
                                             continue;
                                         }
@@ -3440,7 +3438,7 @@ namespace TorannMagic
                                     if (localTarget != null && localTarget.IsValid)
                                     {
                                         Pawn targetThing = localTarget.Pawn;
-                                        if (!(targetThing.GetType() == mp.autocasting.GetTargetType))
+                                        if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
                                         {
                                             continue;
                                         }
@@ -3457,7 +3455,7 @@ namespace TorannMagic
                                     if (localTarget != null && localTarget.IsValid)
                                     {
                                         IntVec3 targetThing = localTarget.Cell;
-                                        if (!(targetThing.GetType() == mp.autocasting.GetTargetType))
+                                        if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
                                         {
                                             continue;
                                         }
@@ -3482,7 +3480,7 @@ namespace TorannMagic
                                     if(localTarget != null && localTarget.IsValid)
                                     {
                                         Thing targetThing = localTarget.Thing;
-                                        if (!(targetThing.GetType() == mp.autocasting.GetTargetType))
+                                        if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
                                         {
                                             continue;
                                         }
@@ -3518,11 +3516,6 @@ namespace TorannMagic
                                 }
                                 if (castSuccess) goto AutoCastExit;
                             }
-                            //}
-                            //catch
-                            //{
-                            //    Log.Message("no index found at " + mp.level + " for " + mp.abilityDef.defName);
-                            //}
                         }
                     }
                     //Hunting only
@@ -3775,7 +3768,7 @@ namespace TorannMagic
                                     if (localTarget != null && localTarget.IsValid)
                                     {
                                         Thing targetThing = localTarget.Thing;
-                                        if (!(targetThing.GetType() == mp.autocasting.GetTargetType))
+                                        if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
                                         {
                                             continue;
                                         }
@@ -3815,7 +3808,7 @@ namespace TorannMagic
                                     if (localTarget != null && localTarget.IsValid)
                                     {
                                         Pawn targetThing = localTarget.Pawn;
-                                        if (!(targetThing.GetType() == mp.autocasting.GetTargetType))
+                                        if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
                                         {
                                             continue;
                                         }
@@ -3832,7 +3825,7 @@ namespace TorannMagic
                                     if (localTarget != null && localTarget.IsValid)
                                     {
                                         IntVec3 targetThing = localTarget.Cell;
-                                        if (!(targetThing.GetType() == mp.autocasting.GetTargetType))
+                                        if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
                                         {
                                             continue;
                                         }
@@ -3857,7 +3850,7 @@ namespace TorannMagic
                                     if (localTarget != null && localTarget.IsValid)
                                     {
                                         Thing targetThing = localTarget.Thing;
-                                        if (!(targetThing.GetType() == mp.autocasting.GetTargetType))
+                                        if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
                                         {
                                             continue;
                                         }
@@ -4229,7 +4222,7 @@ namespace TorannMagic
                                     if (localTarget != null && localTarget.IsValid)
                                     {
                                         Thing targetThing = localTarget.Thing;
-                                        if (!(targetThing.GetType() == mp.autocasting.GetTargetType))
+                                        if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
                                         {
                                             continue;
                                         }
@@ -4289,7 +4282,7 @@ namespace TorannMagic
                                     if (localTarget != null && localTarget.IsValid)
                                     {
                                         Pawn targetThing = localTarget.Pawn;
-                                        if (!(targetThing.GetType() == mp.autocasting.GetTargetType))
+                                        if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
                                         {
                                             continue;
                                         }
@@ -4306,7 +4299,7 @@ namespace TorannMagic
                                     if (localTarget != null && localTarget.IsValid)
                                     {
                                         IntVec3 targetThing = localTarget.Cell;
-                                        if (!(targetThing.GetType() == mp.autocasting.GetTargetType))
+                                        if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
                                         {
                                             continue;
                                         }
@@ -4331,7 +4324,7 @@ namespace TorannMagic
                                     if (localTarget != null && localTarget.IsValid)
                                     {
                                         Thing targetThing = localTarget.Thing;
-                                        if (!(targetThing.GetType() == mp.autocasting.GetTargetType))
+                                        if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
                                         {
                                             continue;
                                         }

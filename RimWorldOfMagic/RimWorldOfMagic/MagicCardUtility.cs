@@ -454,6 +454,8 @@ namespace TorannMagic
                         (200*compMagic.Mana.drainManaSickness).ToString("0.000"),
                         "\nParacytic drain: -",
                         (200*compMagic.Mana.paracyteCountReduction).ToString("0.000"),
+                        //"\nSigil drain: -",
+                        //(2*compMagic.Mana.drainSigils).ToString("0.000"),
                         "\nTotal mana upkeep: ",
                         (-200 *(compMagic.Mana.paracyteCountReduction + compMagic.Mana.drainManaSickness + compMagic.Mana.drainManaDrain + compMagic.Mana.drainUndead + compMagic.Mana.drainSprites + compMagic.Mana.drainMinion + compMagic.Mana.drainManaWeakness)).ToString("0.000"),
                         }), 398552);

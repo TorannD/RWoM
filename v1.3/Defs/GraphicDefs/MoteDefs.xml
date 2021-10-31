@@ -2,9 +2,48 @@
 <Defs>
 
   <ThingDef ParentName="MoteBase">
+    <defName>Mote_EvilEye</defName>
+    <graphicData>
+      <texPath>Motes/EvilEyeMote</texPath>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.15</fadeInTime>
+      <solidTime>.2</solidTime>
+      <fadeOutTime>.3</fadeOutTime>
+    </mote>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_WallSpike</defName>
+    <graphicData>
+      <texPath>Motes/livingwall_spikes</texPath>
+    </graphicData>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <mote>
+      <fadeInTime>0.25</fadeInTime>
+      <solidTime>.15</solidTime>
+      <fadeOutTime>.5</fadeOutTime>
+    </mote>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
     <defName>Mote_GlowingRune</defName>
     <graphicData>
       <texPath>Motes/glowingrune</texPath>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.25</fadeInTime>
+      <solidTime>.15</solidTime>
+      <fadeOutTime>.5</fadeOutTime>
+    </mote>
+  </ThingDef>
+  
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_GlowingRuneA</defName>
+    <graphicData>
+      <texPath>Motes/GlowingRune2</texPath>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer>
     <mote>
@@ -412,6 +451,19 @@
       <texPath>Motes/DirectionalDirt</texPath>
     </graphicData>
     <altitudeLayer>MoteLow</altitudeLayer>
+    <mote>
+      <fadeInTime>0.05</fadeInTime>
+      <solidTime>0.2</solidTime>
+      <fadeOutTime>0.5</fadeOutTime>
+    </mote>
+  </ThingDef>
+  
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_DirectionalDirtOverhead</defName>
+    <graphicData>
+      <texPath>Motes/DirectionalDirt</texPath>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
     <mote>
       <fadeInTime>0.05</fadeInTime>
       <solidTime>0.2</solidTime>
@@ -1303,8 +1355,8 @@
     <altitudeLayer>MoteOverhead</altitudeLayer>
     <mote>
       <fadeInTime>0.05</fadeInTime>
-      <solidTime>0.45</solidTime>
-      <fadeOutTime>0.05</fadeOutTime>
+      <solidTime>0.15</solidTime>
+      <fadeOutTime>0.1</fadeOutTime>
     </mote>
   </ThingDef>
   

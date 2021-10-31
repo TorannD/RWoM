@@ -199,7 +199,10 @@
 <TM_MessageRitualRoleCannotBeUndead>{0} cannot be undead.</TM_MessageRitualRoleCannotBeUndead>
 <TM_RuneCarving>rune engraving</TM_RuneCarving>
 <TM_MaxGolemUpgradeReached>The max {0} upgrade has already been reached; resources have been returned</TM_MaxGolemUpgradeReached>
+<TM_NoGolemPartToRestore>There were no missing parts for {0} to replace; resources have been returned</TM_NoGolemPartToRestore>
 <TM_GolemCannotReturn>The golem could not return to its designated position, it not reachable or is occupied.</TM_GolemCannotReturn>
+<TM_GolemPartReplaced>The {0} upgrade has replaced the {1} upgrade; only one upgrade of this type can occupy the {2}.</TM_GolemPartReplaced>
+<TM_UnfinishedThingNoProduct>Unfinished {0}</TM_UnfinishedThingNoProduct>
 
 <!-- Surgery Failed letters -->
 <LetterLabelRegrowthSurgeryFail>Surgery Failed</LetterLabelRegrowthSurgeryFail>
@@ -209,8 +212,8 @@
 <TM_InsufficientManaForSurgery>did not have enough mana to complete the operation - 90 or greater is required</TM_InsufficientManaForSurgery>
 
 <LetterLabelRuneCarvingFail>Rune Carving Failed</LetterLabelRuneCarvingFail>
-<LetterRuneCarvingFail>{0} just attempted to perform {1} on {2} but failed because {4} {3}.\n\nIn order to successfully perform a rune carving, the following conditions must be met:\n\n1. Surgeon must be a Mage\n2. The mage must have learned the Rune Carving ability.\n3. You must have at least {5} mana to complete carving a rune.\n4. After all these conditions are met, the mage must still perform the carving successfully - rune carving success chance begins at 50% and increases based on medical skill, crafting skill and rune carving skill.</LetterRuneCarvingFail>
-<TM_NoRuneCarvingSpell>has not learned the spell Regrow Limb</TM_NoRuneCarvingSpell>
+<LetterRuneCarvingFail>{0} just attempted to perform {1} on {2} but failed because {4} {3}.\n\nIn order to successfully perform a rune carving, the following conditions must be met:\n\n1. Surgeon must be a Mage\n2. The mage must have learned the Rune Carving ability.\n3. You must have at least {5} mana to complete carving a rune.\n4. The mage must be able to perform artistic and crafting.\n5.After all these conditions are met, the mage must still perform the carving successfully - rune carving success chance begins at 70% and increases based on crafting skill, artistic skill and rune carving skill.</LetterRuneCarvingFail>
+<TM_NoRuneCarvingSpell>is unable to carve runes</TM_NoRuneCarvingSpell>
 <TM_InsufficientManaForCarving>did not have enough mana to complete the rune carving - {0} requires {1} or more.</TM_InsufficientManaForCarving>
 <TM_RuneCarvingFailed>{0} failed to successfully carve a rune for {1}'s {2} - success chance was {3}&#37;</TM_RuneCarvingFailed>
 <TM_CarvingFailedChance>Rune carving failed.</TM_CarvingFailedChance>
@@ -1289,33 +1292,37 @@ Spirit Crow: Increases hex chance (50% -> 75%); increases the effectiveness of "
 <TM_GuardianSpirit_eff>Spirit Link</TM_GuardianSpirit_eff>
 <TM_GuardianSpirit_ver>Spirit Bond</TM_GuardianSpirit_ver>
 
-<TM_Golemancy_pwr_desc>Increases the power of Golemancy by 3%
-Lightning Totem: Increases range and damage
-Earth Totem: Increases stagger frequency and duration
-Healing Totem: Increases range and heal amount</TM_Golemancy_pwr_desc>
-<TM_Golemancy_eff_desc>Reduces the mana cost to create a totem by 2% per skill level.</TM_Golemancy_eff_desc>
-<TM_Golemancy_ver_desc>Increases the duration of Golemancy by 5% per skill point; base duration is 1 game hour.</TM_Golemancy_ver_desc>
-<TM_RuneCarving_pwr_desc>Increases Chain Lighting damage by 10% per skill point.</TM_RuneCarving_pwr_desc>
-<TM_RuneCarving_eff_desc>Reduces mana cost by 6% per skill point.</TM_RuneCarving_eff_desc>
-<TM_RuneCarving_ver_desc>Increases the number of times chain lightning will fork or bounce by 1 per skill point.</TM_RuneCarving_ver_desc>
-<TM_Branding_pwr_desc>Increases the severity of Branding by .05 per skill point. Base severity is .25, max severity is .5</TM_Branding_pwr_desc>
-<TM_Branding_eff_desc>Reduces mana cost of Branding by 6% per skill point.</TM_Branding_eff_desc>
-<TM_SigilSurge_pwr_desc>Increases chance to apply SigilSurge by 10%, base 40% chance.</TM_SigilSurge_pwr_desc>
-<TM_SigilSurge_eff_desc>Reduces mana cost of SigilSurge by 6% per skill point.</TM_SigilSurge_eff_desc>
-<TM_SigilSurge_ver_desc>Increases the power of effects applied to SigilSurgeed targets.</TM_SigilSurge_ver_desc>
-<TM_SigilDrain_pwr_desc>Spirit wolves gain Branding when summoned. Each skill point increases the effects of Branding.</TM_SigilDrain_pwr_desc>
-<TM_SigilDrain_eff_desc>Reduces mana cost to manifest Spirit Wolves by 6% and increases duration by 2s per skill point.</TM_SigilDrain_eff_desc>
-<TM_SigilDrain_ver_desc>Increases the number of wolves summoned by 1 per skill level.</TM_SigilDrain_ver_desc>
-<TM_LivingWall_pwr_desc>Increases the potency of Guardian Spirit abilities:
-Spirit Bear: Increased taunt targets (4 -> 9), taunt chance (60% -> 78%), and taunt range (15 -> 21); increase damage mitigation (4 -> 7)
-Spirit Mongoose: Increases shadow strike damage (11 -> 16) and crit chance (40% -> 65%); increases duration of invisibility (1.5s -> 2.5s) and haste (2s -> 3s) following a shadow strike
-Spirit Crow: Increases SigilSurge chance (50% -> 75%); increases the effectiveness of "Crows Insight" mental buff Psychic Sensitivity and Research speed (20% -> 30%)</TM_LivingWall_pwr_desc>
-<TM_LivingWall_eff_desc>Reduces casting cost, max MP upkeep cost, and mana regeneration cost of the Spirit Guardian by 6% per skill point.</TM_LivingWall_eff_desc>
-<TM_LivingWall_ver_desc>Increases the effectiveness of the Spirit Guardian's spirit bond to increase movement, manipulation, healing rate, ignore pain, and dodge rate by 10% per skill point.</TM_LivingWall_ver_desc>
+<TM_Golemancy_pwr_desc>Increases movement speed and damage reduction of the golem.
+Movement: +[10, 15, 19, 23, 26]%
+DR: [5, 9, 13, 17, 20]%</TM_Golemancy_pwr_desc>
+<TM_Golemancy_eff_desc>Increases the overall awareness of the golem.
+Consciousness: +[10, 15, 19, 23, 26]%</TM_Golemancy_eff_desc>
+<TM_Golemancy_ver_desc>Increases the productivity output of the golemancer.
+Work Speed: +[10, 15, 19, 23, 26]%
+Research Speed: +[10, 15, 19, 23, 26]%
+Injury Recovery: +[50, 60, 70, 80, 90]%</TM_Golemancy_ver_desc>
+<TM_RuneCarving_pwr_desc>Increases part efficiency bonus, but also increases difficulty. Requires 2 ability points to train.
+Level 0: 20% efficiency
+Level 1: 22% efficiency, -5% success chance
+Level 2: 24% efficiency, -10% success chance
+Level 3: 25% efficiency, -15% success chance</TM_RuneCarving_pwr_desc>
+<TM_RuneCarving_eff_desc>10% mana per skill point is returned after performing a rune engraving.</TM_RuneCarving_eff_desc>
+<TM_RuneCarving_ver_desc>Increases the chance of rune carving success by 10% per skill level.</TM_RuneCarving_ver_desc>
+<TM_Branding_pwr_desc>Increases the power of each brand.</TM_Branding_pwr_desc>
+<TM_Branding_eff_desc>Reduces the mana regeneration penalty by 10% per skill level.</TM_Branding_eff_desc>
+<TM_SigilSurge_pwr_desc>Raises the cap Sigil Surge can reach when active.</TM_SigilSurge_pwr_desc>
+<TM_SigilSurge_eff_desc>Reduces mana upkeep cost of Sigil Surge by 10% per skill point.</TM_SigilSurge_eff_desc>
+<TM_SigilSurge_ver_desc>Reduces the amount of pain suffered by the caster when sigil surging.</TM_SigilSurge_ver_desc>
+<TM_SigilDrain_pwr_desc>Increases the amount of brand energy absorbed by the caster for each applied brand when sigil draining.</TM_SigilDrain_pwr_desc>
+<TM_SigilDrain_eff_desc>Reduces mana upkeep cost of Sigil Drain by 20% per skill point.</TM_SigilDrain_eff_desc>
+<TM_SigilDrain_ver_desc>Reduces the amount of pain suffered by each branded pawn when sigil draining is active</TM_SigilDrain_ver_desc>
+<TM_LivingWall_pwr_desc>Increases the damage and range of living wall's primary attack mechanism</TM_LivingWall_pwr_desc>
+<TM_LivingWall_eff_desc>Reduces the maximum mana upkeep cost by 15% per skill level.</TM_LivingWall_eff_desc>
+<TM_LivingWall_ver_desc>Each skill point increases movement speed and frequency of attacks.</TM_LivingWall_ver_desc>
 
-<TM_Golemancy_pwr>Augmentation</TM_Golemancy_pwr>
-<TM_Golemancy_eff>Power Conservation</TM_Golemancy_eff>
-<TM_Golemancy_ver>Tuning</TM_Golemancy_ver>
+<TM_Golemancy_pwr>Frame Upgrade</TM_Golemancy_pwr>
+<TM_Golemancy_eff>Controller</TM_Golemancy_eff>
+<TM_Golemancy_ver>Mind Upgrade</TM_Golemancy_ver>
 <TM_RuneCarving_pwr>Deep Mark</TM_RuneCarving_pwr>
 <TM_RuneCarving_eff>Rune Master</TM_RuneCarving_eff>
 <TM_RuneCarving_ver>Steady Hands</TM_RuneCarving_ver>
@@ -1327,9 +1334,9 @@ Spirit Crow: Increases SigilSurge chance (50% -> 75%); increases the effectivene
 <TM_SigilDrain_pwr>Drain Power</TM_SigilDrain_pwr>
 <TM_SigilDrain_eff>Drain Master</TM_SigilDrain_eff> 
 <TM_SigilDrain_ver>Feedback Filter</TM_SigilDrain_ver>
-<TM_LivingWall_pwr>Unbreakable</TM_LivingWall_pwr>
+<TM_LivingWall_pwr>Unstoppable</TM_LivingWall_pwr>
 <TM_LivingWall_eff>Unrelenting</TM_LivingWall_eff>
-<TM_LivingWall_ver>Unstoppable</TM_LivingWall_ver>
+<TM_LivingWall_ver>Unbreakable</TM_LivingWall_ver>
 
 <!-- Might Ability Point Descriptions -->
 
@@ -1392,9 +1399,9 @@ Level 1: speed +40%, tiredness +45%
 Level 2: speed +50%, tiredness +50%
 Level 3: speed +60%, tiredness +55%</TM_Sprint_pwr_desc>
 <TM_Fortitude_pwr_desc>Increases the amount of damage mitigation by 1 per skill level.</TM_Fortitude_pwr_desc>
-<TM_Fortitude_ver_desc>Increases damage to stamina conversion by .5 stamina per dmage for each level.
-Conversion occurs pre mitigation.
-Base conversion rate is 1 stamina for 1 damage.</TM_Fortitude_ver_desc>
+<TM_Fortitude_ver_desc>Increases damage to stamina conversion by .5 stamina per damage for each level.
+Conversion occurs pre-mitigation.
+Base conversion rate is 1 stamina gain for 1 damage taken.</TM_Fortitude_ver_desc>
 <TM_Grapple_eff_desc>Decreases stamina cost of Grapple by 10% per level of base stamina cost.</TM_Grapple_eff_desc>
 <TM_Cleave_eff_desc>Decreases stamina Cleave consumes when it triggers by 10% of base stamina cost.</TM_Cleave_eff_desc>
 <TM_Cleave_pwr_desc>Cleave hits enemies near the target based on a percentage of the original damage done to the target.
@@ -1989,10 +1996,30 @@ Level 3: all 4 effects</TM_CombatDrugs_pwr_desc>
 <TM_DeActivateGolemDesc>Orders the golem to become dormant. The golem will attempt to return to its assigned dormant location. If this location is unreachable, the golem will deactivate at its current location. If the location is available, issuing this command a second time will override the return command and immediately deactivate the golem at it's current position.</TM_DeActivateGolemDesc>
 <TM_AssignGolemRestPosition>Dormant position</TM_AssignGolemRestPosition>
 <TM_AssignGolemRestPositionDesc>Assigns the location the golem should deactivate.</TM_AssignGolemRestPositionDesc>
+<TM_DormantPositionUnreachable>Selected position is unreachable or occupied - canceling</TM_DormantPositionUnreachable>
 <TM_GolemStationaryDefenseToggle>defense protocol</TM_GolemStationaryDefenseToggle>
 <TM_GolemStationaryDefenseToggleDesc>Toggles stationary defenses. The golem remains in a dormant state while using stationary defenses.</TM_GolemStationaryDefenseToggleDesc>
 <TM_GolemActiveDefenseToggle>engagement protocol</TM_GolemActiveDefenseToggle>
 <TM_GolemActiveDefenseToggleDesc>Toggles active defenses. The golem will activate if an enemy enters its threat range. Threat range may be adjusted a golem by selecting the dormant golem and opening the golem tab.</TM_GolemActiveDefenseToggleDesc>
+
+<TM_UpgradesVerbatum>Upgrades</TM_UpgradesVerbatum>
+<TM_GolemThreatRange>Threat range: </TM_GolemThreatRange>
+<TM_GolemThreatRangeDesc>Determines the distance the golem will detect and activate to engage a hostile target; this value also determines the distance an active golem will engage a threat. Setting this value to 0 will prevent a dormant golem from activating from a nearby threat.</TM_GolemThreatRangeDesc>
+<TM_GolemAbilityMinimum>Ability threshold: </TM_GolemAbilityMinimum>
+<TM_GolemAbilityMinimumDesc>Determines the minimum energy percent required to use abilities that cost energy; the golem will not use abilities that require energy if the energy percent is less than this value. Setting this value to 100% will disable ability use.</TM_GolemAbilityMinimumDesc>
+<TM_GolemRestMinimum>Rest threshold: </TM_GolemRestMinimum>
+<TM_GolemRestMinimumDesc>The energy percent that the golem will attempt to return to its dormant position to de-activate and recharge energy; the golem will de-activate at 0%.</TM_GolemRestMinimumDesc>
+<TM_GolemAwakenMinimum>Activate threshold: </TM_GolemAwakenMinimum>
+<TM_GolemAwakenMinimumDesc>The energy percent at which that the golem will activate to perform tasks; set to 0% to disable automatic activation.</TM_GolemAwakenMinimumDesc>
+<TM_GolemMasterDesc>Assigns a golemancer as the master of this golem; assigning a master allows the golem improved behavior to protect the assigned golemancer.</TM_GolemMasterDesc>
+<TM_GolemFollowsMaster>Follow master</TM_GolemFollowsMaster>
+<TM_GolemFollowsMasterDesc>When enabled, the golem will prioritize following and protecting its master above all other work related tasks.</TM_GolemFollowsMasterDesc>
+<TM_GolemDraftedFollow>Drafted only</TM_GolemDraftedFollow>
+<TM_GolemDraftedFollowDesc>Prioritizes protection of its assigned master above all other actions when the master is drafted; the master may direct the golem in combat similar to a released animal.</TM_GolemDraftedFollowDesc>
+<TM_GolemDormantWhenUpgrading>Stay dormant when upgrading</TM_GolemDormantWhenUpgrading>
+<TM_GolemDormantWhenUpgradingDesc>When enabled, the golem will remain in a dormant state if there are queued bills. A golem will always remain dormant when a bill is in progress (unfinished upgrade).</TM_GolemDormantWhenUpgradingDesc>
+<TM_GolemUseAbilitiesWhileDormant>Use abilities while dormant</TM_GolemUseAbilitiesWhileDormant>
+<TM_GolemUseAbilitiesWhileDormantDesc>When disabled, a dormant golem will never use abilities.</TM_GolemUseAbilitiesWhileDormantDesc>
 
 <!-- ========== Building Menu's ========== -->
 

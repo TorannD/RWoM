@@ -34,50 +34,67 @@
             </li>
           </subNodes>
         </li>
-		
-		<!-- Forced goto -->
-        <li Class="ThinkNode_ConditionalForcedGoto">
+
+		<!-- Should Despawn -->
+        <li Class="TorannMagic.Golems.ThinkNode_ConditionalShouldDespawn">
           <subNodes>
             <li Class="ThinkNode_Tagger">
               <tagToGive>Misc</tagToGive>
               <subNodes>
-                <li Class="JobGiver_ForcedGoto" />
+                <li Class="TorannMagic.Golems.JobGiver_GolemForceGotoDespawn" />
               </subNodes>
             </li>
           </subNodes>
-        </li>
+        </li>		
 
         <!-- Lord -->
         <li Class="ThinkNode_Subtree">
           <treeDef>LordDuty</treeDef>
         </li>
-		
-		<!-- Unload your inventory -->
-		<li Class="ThinkNode_Tagger">
-		  <tagToGive>UnloadingOwnInventory</tagToGive>
-		  <subNodes>
-			<li Class="JobGiver_UnloadYourInventory" />
-		  </subNodes>
-		</li>	
 
 		<li Class="ThinkNode_ConditionalOfPlayerFaction">
 			<subNodes>
-				<li Class="ThinkNode_ConditionalShouldFollowMaster" >
+				<li Class="TorannMagic.Golems.ThinkNode_GolemShouldFollowMaster" >
 				  <subNodes>
-					<li Class="JobGiver_AIDefendMaster">
-					  <attackMeleeThreatEvenIfNotHostile>true</attackMeleeThreatEvenIfNotHostile>
+					<li Class="TorannMagic.Golems.JobGiver_GolemDefendMaster">
+					  <attackMeleeThreatEvenIfNotHostile>false</attackMeleeThreatEvenIfNotHostile>
 					</li>
-					<li Class="JobGiver_AIFollowMaster"/>
-					<li Class="JobGiver_WanderNearMaster" />
+					<li Class="TorannMagic.Golems.JobGiver_GolemFollowMaster"/>
+					<li Class="TorannMagic.Golems.JobGiver_GolemWanderNearMaster" />
 				  </subNodes>
 				</li>
+				<!-- React to threat in engagement range -->
+				<li Class="TorannMagic.Golems.JobGiver_EngageThreatInRange" />				
+				<li Class="JobGiver_RescueNearby">
+				  <radius>75</radius>
+				</li>	
+				<li Class="TorannMagic.Golems.JobGiver_GolemSelfTend"/>
+				<!-- Unload your inventory -->
+				<li Class="ThinkNode_Tagger">
+				  <tagToGive>UnloadingOwnInventory</tagToGive>
+				  <subNodes>
+					<li Class="JobGiver_UnloadYourInventory" />
+				  </subNodes>
+				</li>					
 				<li Class="ThinkNode_Subtree">
 				  <treeDef>TM_Golem_BehaviorCore</treeDef>
 				  <leaveJoinableLordIfIssuesJob>true</leaveJoinableLordIfIssuesJob>
 				</li>
+				<li Class="JobGiver_SeekAllowedArea" />
+				<li Class="JobGiver_SeekSafeTemperature" />
+				<!-- Idle -->
+				<li Class="ThinkNode_Tagger">
+				  <tagToGive>Idle</tagToGive>
+				  <subNodes>
+					<li Class="JobGiver_WanderColony">
+					  <maxDanger>None</maxDanger>
+					  <ticksBetweenWandersRange>120~240</ticksBetweenWandersRange>
+					</li>
+				  </subNodes>
+				</li>
 			</subNodes>
 		</li>
-
+		
         <!-- Idle -->
         <li Class="ThinkNode_Tagger">
           <tagToGive>Idle</tagToGive>
@@ -108,6 +125,11 @@
             <!-- Hostility response -->
             <li Class="JobGiver_ConfigurableHostilityResponse" />
             
+			<!-- Join auto joinable caravan -->
+            <li Class="ThinkNode_Subtree">
+              <treeDef>JoinAutoJoinableCaravan</treeDef>
+            </li>
+			
             <!-- Lord directives -->
             <li Class="ThinkNode_Subtree">
               <treeDef>LordDutyConstant</treeDef>

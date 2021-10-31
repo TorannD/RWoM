@@ -15,32 +15,45 @@
             </li>
           </subNodes>
         </li>
+		<li Class="ThinkNode_ConditionalPawnKind">
+          <pawnKind>TM_FleshGolemK</pawnKind>
+          <subNodes>
+            <li Class="ThinkNode_Subtree">
+              <treeDef>TM_Golem_FleshBehavior</treeDef>
+              <leaveJoinableLordIfIssuesJob>true</leaveJoinableLordIfIssuesJob>
+            </li>
+          </subNodes>
+        </li>
       </subNodes>
     </thinkRoot>
   </ThinkTreeDef>
-  
-  
-<!-- 
-		<li Class="ThinkNode_Tagger">
-			<tagToGive>Misc</tagToGive>
-			<subNodes>
-				<li Class="JobGiver_Haul" />
-				<li Class="TorannMagic.JobGiver_AIClean" />
-			</subNodes>
-		</li> -->
 
-  <!--============= Main mecha-golem behavior ============-->
+<!--============= Main mecha-golem behavior ============-->
   
   <ThinkTreeDef>
     <defName>TM_Golem_MechaBehavior</defName>
     <thinkRoot Class="ThinkNode_Tagger">
       <tagToGive>Misc</tagToGive> <!-- note that JobGiver_Work will assign its own tag -->
       <subNodes>
-			<li Class="JobGiver_RescueNearby">
-			  <radius>60</radius>
-			</li>
-            <!-- <li Class="JobGiver_GetRest"/> -->
-            <!-- <li Class="JobGiver_Work"/> -->
+		<li Class="TorannMagic.Golems.JobGiver_GolemGetEnergy"/>
+		<li Class="TorannMagic.Golems.JobGiver_GolemJobs"/>
+		<li Class="JobGiver_Haul" />
+		<li Class="TorannMagic.JobGiver_AIClean" />
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+  
+<!--============= Main flesh golem behavior ============-->
+  
+  <ThinkTreeDef>
+    <defName>TM_Golem_FleshBehavior</defName>
+    <thinkRoot Class="ThinkNode_Tagger">
+      <tagToGive>Misc</tagToGive> <!-- note that JobGiver_Work will assign its own tag -->
+      <subNodes>
+		<li Class="TorannMagic.Golems.JobGiver_GolemGetEnergy"/>
+		<li Class="TorannMagic.Golems.JobGiver_GolemJobs"/>
+		<li Class="JobGiver_Haul" />
+		<li Class="TorannMagic.JobGiver_AIClean" />
       </subNodes>
     </thinkRoot>
   </ThinkTreeDef>
@@ -54,7 +67,18 @@
       <subNodes>
         <li Class="ThinkNode_Priority">
           <subNodes>
-            <li Class="JobGiver_ExtinguishSelf" />
+			<li Class="ThinkNode_ConditionalPawnKind">
+			  <pawnKind>TM_MechaGolemK</pawnKind>
+			  <subNodes>
+			    <li Class="TorannMagic.Golems.JobGiver_MechaGolemExtinguish" />
+			  </subNodes>
+			</li>
+			<li Class="ThinkNode_ConditionalPawnKind">
+			  <pawnKind>TM_FleshGolemK</pawnKind>
+			  <subNodes>
+			    <li Class="TorannMagic.Golems.JobGiver_FleshGolemExtinguish" />
+			  </subNodes>
+			</li>               
           </subNodes>
         </li>
       </subNodes>

@@ -612,6 +612,36 @@ namespace TorannMagic
             }
         }
 
+        public static void DamageEntities_AoE(DamageDef type, float amount, float armorPen, Pawn caster, Pawn target, Map map, float radius, bool friendlyFire = false, BodyPartRecord hitPart = null, ThingDef weapon = null, bool centerFalloff = false)
+        {
+            if(caster != null && target != null)
+            {
+                float amt = Rand.Range(.75f, 1.25f) * amount;
+                if (radius > 0)
+                {
+                    List<Pawn> targetList = TM_Calc.FindAllPawnsAround(map, target.Position, radius);
+                    if (targetList != null && targetList.Count > 0)
+                    {
+                        foreach (Pawn p in targetList)
+                        {
+                            if (centerFalloff)
+                            {
+                                amt = (.5f * amt) + (.5f * ((p.Position - target.Position).LengthHorizontal / radius));
+                            }
+                            if (friendlyFire || p.Faction != caster.Faction)
+                            {                                
+                                TM_Action.DamageEntities(p, hitPart, amt, armorPen, type, caster);
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    TM_Action.DamageEntities(target, hitPart, amt, armorPen, type, caster);
+                }
+            }
+        }
+
         public static void DoAction_ApplySplashDamage(DamageInfo dinfo, Pawn caster, Pawn target, Map map, int ver = 0)
         {
             bool multiplePawns = false;
@@ -1099,6 +1129,18 @@ namespace TorannMagic
             spawnthing.kindDef = assignDef;
             spawnthing.def = assignDef.race;
             return spawnthing;
+        }
+
+        public static void RemoveBodypart(Pawn p, BodyPartRecord part)
+        {
+            if(p != null && p.health != null && p.health.hediffSet != null)
+            {
+                HediffDef hediffDefFromDamage = HealthUtility.GetHediffDefFromDamage(TMDamageDefOf.DamageDefOf.TM_PartRemoval, p, part);
+                Hediff_Injury hediff_Injury = (Hediff_Injury)HediffMaker.MakeHediff(hediffDefFromDamage, p);
+                hediff_Injury.Part = part;
+                hediff_Injury.Severity = part.def.GetMaxHealth(p);
+                p.health.AddHediff(hediff_Injury);
+            }
         }
 
         public static void DamageEntities(Thing victim, BodyPartRecord hitPart, float amt, DamageDef type, Thing instigator)
@@ -1732,7 +1774,7 @@ namespace TorannMagic
                 vector.y = Altitudes.AltitudeFor(AltitudeLayer.MoteOverhead);
 
                 float angle = (float)Rand.Range(0, 360);
-                Vector3 s = new Vector3(1.7f, 1f, 1.7f);
+                Vector3 s = new Vector3(1.7f * shieldedPawn.Graphic.drawSize.magnitude, 1f, 1.7f * shieldedPawn.Graphic.drawSize.magnitude);
                 Matrix4x4 matrix = default(Matrix4x4);
                 matrix.SetTRS(vector, Quaternion.AngleAxis(angle, Vector3.up), s);
                 if (shieldedPawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_HediffShield) || shieldedPawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_HTLShieldHD) || shieldedPawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_MagicShieldHD))

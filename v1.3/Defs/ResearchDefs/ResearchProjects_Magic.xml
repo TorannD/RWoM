@@ -4,14 +4,25 @@
 	<!--========================= Research into magic ===================================-->
 	
 	<ResearchProjectDef>
+		<defName>TM_PlantCultivation</defName>
+		<label>cultivation</label>
+		<tab>TMagic</tab>
+		<description>Invest research into botany to gain an understanding of how to cultivate plants with properties relevant to magic and use their resources to supplement or fuel the arcane arts.</description>
+		<baseCost>1000</baseCost>
+		<techLevel>Neolithic</techLevel>
+		<researchViewX>0.0</researchViewX>
+		<researchViewY>0.0</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
 		<defName>TM_ArcaneConstruction</defName>
 		<label>arcane facilities</label>
 		<tab>TMagic</tab>
 		<description>Opens research into various facilities and workbenches that enabled the creation of unique magical items and effects.</description>
 		<baseCost>200</baseCost>
 		<techLevel>Neolithic</techLevel>
-		<researchViewX>5.0</researchViewX>
-		<researchViewY>0.0</researchViewY>
+		<researchViewX>0.0</researchViewX>
+		<researchViewY>1.0</researchViewY>
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
@@ -21,7 +32,7 @@
 		<description>Basic research on how arcane power is linked to the physical realm and to other mages.</description>
 		<baseCost>300</baseCost>
 		<techLevel>Neolithic</techLevel>
-		<researchViewX>5.0</researchViewX>
+		<researchViewX>1.0</researchViewX>
 		<researchViewY>1.0</researchViewY>
 		<prerequisites>
 			<li>TM_ArcaneConstruction</li>
@@ -35,8 +46,8 @@
 		<description>Advanced research on the geometry and symmetry of ley lines that enables magic users to combine their energy to create incredible effects.</description>
 		<baseCost>2000</baseCost>
 		<techLevel>Neolithic</techLevel>
-		<researchViewX>5.0</researchViewX>
-		<researchViewY>2.0</researchViewY>
+		<researchViewX>2.0</researchViewX>
+		<researchViewY>1.0</researchViewY>
 		<prerequisites>
 			<li>TM_ArcaneFundamentals</li>
 		</prerequisites>
@@ -49,7 +60,7 @@
 		<description>Allows the construction of a portal - a powerful artifact that enables instant travel between colonies.\n\nRequires an Arcane Mage trained in Gateways to activate.</description>
 		<baseCost>2000</baseCost>
 		<techLevel>Medieval</techLevel>
-		<researchViewX>6.0</researchViewX>
+		<researchViewX>1.0</researchViewX>
 		<researchViewY>0.0</researchViewY>
 		<prerequisites>
 			<li>TM_ArcaneConstruction</li>
@@ -63,22 +74,11 @@
 		<description>Develops ways to store mana.</description>
 		<baseCost>1000</baseCost>
 		<techLevel>Medieval</techLevel>
-		<researchViewX>6.0</researchViewX>
-		<researchViewY>1.0</researchViewY>
+		<researchViewX>1.0</researchViewX>
+		<researchViewY>0.5</researchViewY>
 		<prerequisites>
 			<li>TM_ArcaneConstruction</li>
 		</prerequisites>
-	</ResearchProjectDef>
-	
-	<ResearchProjectDef>
-		<defName>TM_PlantCultivation</defName>
-		<label>cultivation</label>
-		<tab>TMagic</tab>
-		<description>Invest research into botany to gain an understanding of how to cultivate plants with properties relevant to magic and use their resources to supplement or fuel the arcane arts.</description>
-		<baseCost>1000</baseCost>
-		<techLevel>Neolithic</techLevel>
-		<researchViewX>0.0</researchViewX>
-		<researchViewY>0.0</researchViewY>
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
@@ -88,8 +88,8 @@
 		<description>Develop the means of using arcane power to craft various items and equipment. Completion of this research will also reveal how to make Manaweave, a unique material that enhances arcane power.</description>
 		<baseCost>1500</baseCost>
 		<techLevel>Neolithic</techLevel>
-		<researchViewX>4.0</researchViewX>
-		<researchViewY>1.0</researchViewY>
+		<researchViewX>2.0</researchViewX>
+		<researchViewY>1.5</researchViewY>
 		<prerequisites>
 			<li>TM_ArcaneConstruction</li>
 			<li>TM_ArcaneCrafting</li>
@@ -103,105 +103,10 @@
 		<description>Enhances the Arcane Forge with a technique that allows it to extract the design from any craftable item and duplicate it at the forge.</description>
 		<baseCost>3000</baseCost>
 		<techLevel>Neolithic</techLevel>
-		<researchViewX>4.0</researchViewX>
-		<researchViewY>2.0</researchViewY>
+		<researchViewX>3.0</researchViewX>
+		<researchViewY>1.5</researchViewY>
 		<prerequisites>
 			<li>TM_ArcaneForging</li>
-		</prerequisites>
-	</ResearchProjectDef>
-	
-	<ResearchProjectDef>
-		<defName>TM_Enchanting</defName>
-		<label>enchanting</label>
-		<tab>TMagic</tab>
-		<description>Enables construction of the gemcutting bench and the crafting of tier I enchanting gems.</description>
-		<baseCost>1500</baseCost>
-		<techLevel>Neolithic</techLevel>
-		<prerequisites>
-			<li>TM_MagicyteRefining</li>
-		</prerequisites>
-		<researchViewX>1.0</researchViewX>
-		<researchViewY>0.0</researchViewY>
-	</ResearchProjectDef>
-	
-	<ResearchProjectDef>
-		<defName>TM_AdvancedEnchanting</defName>
-		<label>advanced enchanting</label>
-		<tab>TMagic</tab>
-		<description>Enables crafting to tier II enchanting gems.</description>
-		<baseCost>1000</baseCost>
-		<techLevel>Medieval</techLevel>
-		<researchViewX>1.0</researchViewX>
-		<researchViewY>1.0</researchViewY>
-		<prerequisites>
-			<li>TM_Enchanting</li>
-		</prerequisites>
-	</ResearchProjectDef>
-	
-	<ResearchProjectDef>
-		<defName>TM_ExpertEnchanting</defName>
-		<label>expert enchanting</label>
-		<tab>TMagic</tab>
-		<description>Enables crafting of tier III enchanting gems.</description>
-		<baseCost>1000</baseCost>
-		<techLevel>Medieval</techLevel>
-		<researchViewX>1.0</researchViewX>
-		<researchViewY>2.0</researchViewY>
-		<prerequisites>
-			<li>TM_AdvancedEnchanting</li>
-		</prerequisites>
-	</ResearchProjectDef>
-	
-	<ResearchProjectDef>
-		<defName>TM_MagicyteRefining</defName>
-		<label>magicyte refining</label>
-		<tab>TMagic</tab>
-		<description>Experimental research that identifies ways to use magicyte to create magical items. Develops a recipe to create mana potions at the drug lab.</description>
-		<baseCost>800</baseCost>
-		<techLevel>Neolithic</techLevel>
-		<researchViewX>2.0</researchViewX>
-		<researchViewY>0.0</researchViewY>
-	</ResearchProjectDef>
-	
-	<ResearchProjectDef>
-		<defName>TM_MagicScribing</defName>
-		<label>scribing</label>
-		<tab>TMagic</tab>
-		<description>Develop the knowledge to mix ink with powdered magicyte and apply it through specially design press capable of reproducing scrolls and books that can contain the power of magic comprehension.</description>
-		<baseCost>1500</baseCost>
-		<techLevel>Neolithic</techLevel>
-		<researchViewX>2.0</researchViewX>
-		<researchViewY>1.0</researchViewY>
-		<prerequisites>
-			<li>TM_MagicyteRefining</li>
-		</prerequisites>
-	</ResearchProjectDef>
-	
-	<ResearchProjectDef>
-		<defName>TM_AdvancedScribing</defName>
-		<label>advanced scribing</label>
-		<tab>TMagic</tab>
-		<description>Allows the use of higher quality material to develop more powerful books and scrolls.</description>
-		<baseCost>1000</baseCost>
-		<techLevel>Medieval</techLevel>
-		<researchViewX>2.0</researchViewX>
-		<researchViewY>2.0</researchViewY>
-		<prerequisites>
-			<li>TM_MagicScribing</li>
-		</prerequisites>
-	</ResearchProjectDef>
-	
-	<ResearchProjectDef>
-		<defName>TM_MasterScribing</defName>
-		<label>master scribing</label>
-		<tab>TMagic</tab>
-		<description>Allows the scribing of master spells.</description>
-		<baseCost>1000</baseCost>
-		<techLevel>Medieval</techLevel>
-		<researchViewX>2.0</researchViewX>
-		<researchViewY>3.0</researchViewY>
-		<prerequisites>
-			<li>TM_AdvancedScribing</li>
 		</prerequisites>
 	</ResearchProjectDef>
 	
@@ -212,8 +117,8 @@
 		<description>The first step in understanding the link between the arcane and physical. Enables construction of powerful gems of insight and magical equipment.</description>
 		<baseCost>1000</baseCost>
 		<techLevel>Neolithic</techLevel>
-		<researchViewX>3.0</researchViewX>
-		<researchViewY>0.0</researchViewY>
+		<researchViewX>1.0</researchViewX>
+		<researchViewY>2.0</researchViewY>
 		<prerequisites>
 			<li>TM_MagicyteRefining</li>
 		</prerequisites>
@@ -226,8 +131,8 @@
 		<description>Applies knowledge of arcane crafting and enchantments to learn how to recreate equipment with more powerful magical properties.</description>
 		<baseCost>1500</baseCost>
 		<techLevel>Neolithic</techLevel>
-		<researchViewX>3.0</researchViewX>
-		<researchViewY>1.0</researchViewY>
+		<researchViewX>2.0</researchViewX>
+		<researchViewY>2.0</researchViewY>
 		<prerequisites>
 			<li>TM_ArcaneCrafting</li>
 		</prerequisites>
@@ -244,6 +149,171 @@
 		<researchViewY>2.0</researchViewY>
 		<prerequisites>
 			<li>TM_ArcaneApparel</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>TM_MagicyteRefining</defName>
+		<label>magicyte refining</label>
+		<tab>TMagic</tab>
+		<description>Experimental research that identifies ways to use magicyte to create magical items. Develops recipes to create mana potions at the stove or gemcrafting table.</description>
+		<baseCost>800</baseCost>
+		<techLevel>Neolithic</techLevel>
+		<researchViewX>0.0</researchViewX>
+		<researchViewY>2.5</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>TM_MagicScribing</defName>
+		<label>scribing</label>
+		<tab>TMagic</tab>
+		<description>Develop the knowledge to mix ink with powdered magicyte and apply it through specially design press capable of reproducing scrolls and books that can contain the power of magic comprehension.</description>
+		<baseCost>1500</baseCost>
+		<techLevel>Neolithic</techLevel>
+		<researchViewX>1.0</researchViewX>
+		<researchViewY>2.5</researchViewY>
+		<prerequisites>
+			<li>TM_MagicyteRefining</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>TM_AdvancedScribing</defName>
+		<label>advanced scribing</label>
+		<tab>TMagic</tab>
+		<description>Allows the use of higher quality material to develop more powerful books and scrolls.</description>
+		<baseCost>1000</baseCost>
+		<techLevel>Medieval</techLevel>
+		<researchViewX>2.0</researchViewX>
+		<researchViewY>2.5</researchViewY>
+		<prerequisites>
+			<li>TM_MagicScribing</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>TM_MasterScribing</defName>
+		<label>master scribing</label>
+		<tab>TMagic</tab>
+		<description>Allows the scribing of master spells.</description>
+		<baseCost>1000</baseCost>
+		<techLevel>Medieval</techLevel>
+		<researchViewX>3.0</researchViewX>
+		<researchViewY>2.5</researchViewY>
+		<prerequisites>
+			<li>TM_AdvancedScribing</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>TM_Enchanting</defName>
+		<label>enchanting</label>
+		<tab>TMagic</tab>
+		<description>Enables construction of the gemcutting bench and the crafting of tier I enchanting gems.</description>
+		<baseCost>1500</baseCost>
+		<techLevel>Neolithic</techLevel>
+		<prerequisites>
+			<li>TM_MagicyteRefining</li>
+		</prerequisites>
+		<researchViewX>1.0</researchViewX>
+		<researchViewY>3</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>TM_AdvancedEnchanting</defName>
+		<label>advanced enchanting</label>
+		<tab>TMagic</tab>
+		<description>Enables crafting to tier II enchanting gems.</description>
+		<baseCost>1000</baseCost>
+		<techLevel>Medieval</techLevel>
+		<researchViewX>2.0</researchViewX>
+		<researchViewY>3</researchViewY>
+		<prerequisites>
+			<li>TM_Enchanting</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>TM_ExpertEnchanting</defName>
+		<label>expert enchanting</label>
+		<tab>TMagic</tab>
+		<description>Enables crafting of tier III enchanting gems.</description>
+		<baseCost>1000</baseCost>
+		<techLevel>Medieval</techLevel>
+		<researchViewX>3.0</researchViewX>
+		<researchViewY>3</researchViewY>
+		<prerequisites>
+			<li>TM_AdvancedEnchanting</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>TM_GolemCraftRD</defName>
+		<label>golem theory</label>
+		<tab>TMagic</tab>
+		<description>Golem crafting is a brand of enchanting that diverges from passive enhancements and researches theories of manipulating magical enchantments for active purposes. This research will develop concepts of how to apply active enhancements to create magical creatures.</description>
+		<baseCost>500</baseCost>
+		<techLevel>Neolithic</techLevel>
+		<researchViewX>2.0</researchViewX>
+		<researchViewY>3.5</researchViewY>
+		<prerequisites>
+			<li>TM_Enchanting</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>TM_MechaGolemRD</defName>
+		<label>mecha golem</label>
+		<tab>TMagic</tab>
+		<description>Combines electrical and mechanical engineering with golem craft to create a robotic golem. A machine table is expected to be required to craft the components of the mecha golem.</description>
+		<baseCost>2000</baseCost>
+		<techLevel>Neolithic</techLevel>
+		<researchViewX>3.0</researchViewX>
+		<researchViewY>3.5</researchViewY>
+		<prerequisites>
+			<li>TM_GolemCraftRD</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>TM_MechaGolemEquipmentRD</defName>
+		<label>mecha attachments</label>
+		<tab>TMagic</tab>
+		<description>Researches methods of crafting attachments and armor to further enhance the mecha golem.</description>
+		<baseCost>1500</baseCost>
+		<techLevel>Neolithic</techLevel>
+		<researchViewX>4.0</researchViewX>
+		<researchViewY>3.5</researchViewY>
+		<prerequisites>
+			<li>TM_MechaGolemRD</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>TM_FleshGolemRD</defName>
+		<label>flesh golem</label>
+		<tab>TMagic</tab>
+		<description>A biological approach to golems which researches how to mold the flesh and bones of dead organisms into a bipedal, animated construct. A simple butchers table should suffice for the crafting of a flesh golem.</description>
+		<baseCost>1000</baseCost>
+		<techLevel>Neolithic</techLevel>
+		<researchViewX>3.0</researchViewX>
+		<researchViewY>4</researchViewY>
+		<prerequisites>
+			<li>TM_GolemCraftRD</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>TM_FleshGolemEquipmentRD</defName>
+		<label>flesh attachments</label>
+		<tab>TMagic</tab>
+		<description>Researches weapons and armor that may be attached to a flesh golem for further enhancement or capabilities.</description>
+		<baseCost>1000</baseCost>
+		<techLevel>Neolithic</techLevel>
+		<researchViewX>4.0</researchViewX>
+		<researchViewY>4</researchViewY>
+		<prerequisites>
+			<li>TM_FleshGolemRD</li>
 		</prerequisites>
 	</ResearchProjectDef>
 

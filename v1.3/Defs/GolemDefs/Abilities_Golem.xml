@@ -2,30 +2,364 @@
 
 <Defs>
 
-<!--   <TorannMagic.TMDefs.TM_GolemAbility>
-	<defName>TM_Golem_GatlingCannon</defName>
-	<label>Shoulder mounted gatling cannon for mecha-golem</label>
-	<displayWeapon>Gun_Minigun</displayWeapon>
-	<displaySize>.8</displaySize>
-	<displayOffsetSouth></displayOffsetSouth>
-	<displayOffsetNorth></displayOffsetNorth>
-	<displayOffsetEast></displayOffsetEast>
-	<displayOffsetWest></displayOffsetWest>
-	<displayRotation></displayRotation>
-	<displayOverBody>true</displayOverBody>
-	<rotationOffset>0</rotationOffset>
+  <TorannMagic.TMDefs.TM_GolemAbilityDef>
+	<defName>TM_Mecha-Golem_GatlingCannon</defName>
+	<label>Shoulder mounted gatling cannon for mecha-golem</label>	
 	<warmupTicks>30</warmupTicks>
 	<cooldownTicks>300</cooldownTicks>
 	<warmupStuns>false</warmupStuns>
-	<burstCount>15</burstCount>
-	<ticksBetweenBurstShots>8</ticksBetweenBurstShots>
-	<minRange>3</minRange>
-	<maxRange>40</maxRange>
-	<projectile>Bullet_Minigun</projectile>
+	<burstCount>18</burstCount>
+	<ticksBetweenBurstShots>6</ticksBetweenBurstShots>
 	<requiredNeed>TM_GolemEnergy</requiredNeed>
+	<needCost>25</needCost>
+	<interruptsJob>false</interruptsJob>
+	<effects>
+	  <li Class="TorannMagic.Golems.CompProperties_GolemAbilityEffect_LaunchThing">
+        <thing>Bullet_Minigun</thing>
+        <missRadius>2</missRadius>
+        <hitChance>.185</hitChance>
+		<effectFlashScale>.6</effectFlashScale>	
+      </li>
+	</effects>
+	<autocasting>
+	  <type>OnNearby</type>
+	  <targetType>Pawn</targetType>
+	  <drafted>true</drafted>
+	  <minRange>3</minRange>
+	  <maxRange>40</maxRange>
+	  <undrafted>true</undrafted>
+	  <targetNeutral>false</targetNeutral>
+	  <targetEnemy>true</targetEnemy>
+	  <requiresLoS>true</requiresLoS>	  
+	</autocasting>
+  </TorannMagic.TMDefs.TM_GolemAbilityDef>
+  
+  <TorannMagic.TMDefs.TM_GolemAbilityDef>
+	<defName>TM_Mecha-Golem_MiningLaser</defName>
+	<label>Shoulder mounted mining laser for mecha-golem</label>	
+	<warmupTicks>30</warmupTicks>
+	<cooldownTicks>0</cooldownTicks>
+	<warmupStuns>false</warmupStuns>
+	<burstCount>4</burstCount>
+	<ticksBetweenBurstShots>6</ticksBetweenBurstShots>
+	<requiredNeed>TM_GolemEnergy</requiredNeed>
+	<needCost>20</needCost>
+	<interruptsJob>true</interruptsJob>
+	<jobDef>JobDriver_MechaMine</jobDef>
+  </TorannMagic.TMDefs.TM_GolemAbilityDef>
+  
+  <TorannMagic.TMDefs.TM_GolemAbilityDef>
+	<defName>TM_Mecha-Golem_HealSelf</defName>
+	<label>self-repair module</label>	
+	<warmupTicks>0</warmupTicks>
+	<cooldownTicks>360</cooldownTicks>
+	<warmupStuns>false</warmupStuns>
+	<burstCount>2</burstCount>
+	<ticksBetweenBurstShots>0</ticksBetweenBurstShots>
+	<requiredNeed>TM_GolemEnergy</requiredNeed>
+	<needCost>30</needCost>
+	<interruptsJob>false</interruptsJob>
+	<effects>
+	  <li Class="TorannMagic.Golems.CompProperties_GolemAbilityEffect_HealPawn">
+        <healAmount80>8</healAmount80>
+		<effectLevelModifier>.1</effectLevelModifier>
+		<effecter>TM_WaterShield_Effecter</effecter>
+		<effectTarget>OnTarget</effectTarget>
+      </li>
+	</effects>
+	<autocasting>
+	  <type>OnSelf</type>
+	  <targetType>Pawn</targetType>
+	  <drafted>true</drafted>
+	  <minRange>0</minRange>
+	  <maxRange>2</maxRange>
+	  <undrafted>true</undrafted>
+	  <targetNeutral>false</targetNeutral>
+	  <targetEnemy>false</targetEnemy>
+	  <requiresLoS>false</requiresLoS>	
+	  <includeSelf>true</includeSelf>
+	</autocasting>
+  </TorannMagic.TMDefs.TM_GolemAbilityDef>
+  
+  <TorannMagic.TMDefs.TM_GolemAbilityDef>
+	<defName>TM_Mecha-Golem_ShieldSelf</defName>
+	<label>energy shield module</label>	
+	<warmupTicks>40</warmupTicks>
+	<cooldownTicks>600</cooldownTicks>
+	<warmupStuns>false</warmupStuns>
+	<burstCount>1</burstCount>
+	<ticksBetweenBurstShots>0</ticksBetweenBurstShots>
+	<requiredNeed>TM_GolemEnergy</requiredNeed>
+	<needCost>50</needCost>
+	<interruptsJob>false</interruptsJob>
+	<effects>
+	  <li Class="TorannMagic.Golems.CompProperties_GolemAbilityEffect_ShieldPawn">
+        <shieldAmount80>120</shieldAmount80>
+		<effectLevelModifier>.2</effectLevelModifier>
+		<effecter>TM_EarthShield_Effecter</effecter>
+		<effectTarget>OnCaster</effectTarget>
+      </li>
+	</effects>
+	<autocasting>
+	  <type>OnSelf</type>
+	  <targetType>Pawn</targetType>
+	  <drafted>true</drafted>
+	  <minRange>0</minRange>
+	  <maxRange>2</maxRange>
+	  <undrafted>true</undrafted>
+	  <targetNeutral>false</targetNeutral>
+	  <targetEnemy>false</targetEnemy>
+	  <requiresLoS>false</requiresLoS>	
+	  <includeSelf>true</includeSelf>
+	  <advancedConditionDefs>
+	    <li>TM_1EnemyWithin30Cells</li>
+	  </advancedConditionDefs>
+	</autocasting>
+  </TorannMagic.TMDefs.TM_GolemAbilityDef>
+  
+  <TorannMagic.TMDefs.TM_GolemAbilityDef>
+	<defName>TM_Mecha-Golem_AbsorbFilth</defName>
+	<label>waste conversion</label>	
+	<warmupTicks>0</warmupTicks>
+	<cooldownTicks>240</cooldownTicks>
+	<warmupStuns>false</warmupStuns>
+	<burstCount>1</burstCount>
+	<ticksBetweenBurstShots>0</ticksBetweenBurstShots>
+	<requiredNeed>TM_GolemEnergy</requiredNeed>
+	<needCost>0</needCost>
+	<interruptsJob>false</interruptsJob>
+	<effects>
+	  <li Class="TorannMagic.Golems.CompProperties_GolemAbilityEffect_AbsorbFilth">
+        <energyPerFilth>4</energyPerFilth>
+		<effectLevelModifier>.1</effectLevelModifier>
+      </li>
+	</effects>
+	<autocasting>
+	  <type>OnSelf</type>
+	  <targetType>Pawn</targetType>
+	  <drafted>true</drafted>
+	  <minRange>0</minRange>
+	  <maxRange>1.8</maxRange>
+	  <undrafted>true</undrafted>
+	  <targetNeutral>false</targetNeutral>
+	  <targetEnemy>false</targetEnemy>
+	  <requiresLoS>false</requiresLoS>	
+	  <includeSelf>true</includeSelf>
+	</autocasting>
+  </TorannMagic.TMDefs.TM_GolemAbilityDef>
+  
+  <TorannMagic.TMDefs.TM_GolemAbilityDef>
+	<defName>TM_FleshGolem_BullCharge</defName>
+	<label>bull charge</label>	
+	<warmupTicks>0</warmupTicks>
+	<cooldownTicks>600</cooldownTicks>
+	<warmupStuns>false</warmupStuns>
+	<burstCount>1</burstCount>
+	<ticksBetweenBurstShots>0</ticksBetweenBurstShots>
+	<requiredNeed>TM_GolemRage</requiredNeed>
+	<needCost>5</needCost>
+	<interruptsJob>false</interruptsJob>
+	<effects>
+	  <li Class="TorannMagic.Golems.CompProperties_GolemAbilityEffect_ApplyHediff">
+        <hediff>TM_BullChargeHD</hediff>
+		<severity>.35</severity>
+		<canStack>false</canStack>
+		<effecter>TM_BullCharge_Effecter</effecter>
+		<effectTarget>OnCaster</effectTarget>
+      </li>
+	</effects>
+	<autocasting>
+	  <type>OnSelf</type>
+	  <targetType>Pawn</targetType>
+	  <drafted>true</drafted>
+	  <minRange>0</minRange>
+	  <maxRange>1.8</maxRange>
+	  <undrafted>true</undrafted>
+	  <targetNeutral>false</targetNeutral>
+	  <targetEnemy>false</targetEnemy>
+	  <requiresLoS>false</requiresLoS>	
+	  <includeSelf>true</includeSelf>
+	  <advancedConditionDefs>
+	    <li>TM_1EnemyWithin30Cells</li>
+	  </advancedConditionDefs>
+	</autocasting>
+  </TorannMagic.TMDefs.TM_GolemAbilityDef>
+  
+  <TorannMagic.TMDefs.TM_GolemAbilityDef>
+	<defName>TM_FleshGolem_LeftCleave</defName>
+	<label>cleave</label>	
+	<warmupTicks>0</warmupTicks>
+	<cooldownTicks>300</cooldownTicks>
+	<warmupStuns>false</warmupStuns>
+	<burstCount>1</burstCount>
+	<ticksBetweenBurstShots>0</ticksBetweenBurstShots>
+	<requiredNeed>TM_GolemRage</requiredNeed>
+	<needCost>15</needCost>
+	<interruptsJob>false</interruptsJob>
+	<jobDef>JobDriver_FleshHarvest</jobDef>
+	<priority>4</priority>
+	<effects>
+	  <li Class="TorannMagic.Golems.CompProperties_GolemAbilityEffect_ApplyDamage">
+        <damageType>Cut</damageType>
+		<damageAmount>16</damageAmount>
+		<splashRadius>2</splashRadius>
+		<mote>Mote_ClawSweep</mote>
+		<moteSize>.8</moteSize>
+		<randomMoteRotation>true</randomMoteRotation>
+		<effectTarget>OnTarget</effectTarget>
+      </li>
+	</effects>
+	<autocasting>
+	  <type>OnTarget</type>
+	  <targetType>Pawn</targetType>
+	  <drafted>true</drafted>
+	  <minRange>0</minRange>
+	  <maxRange>1.4</maxRange>
+	  <undrafted>true</undrafted>
+	  <targetNeutral>false</targetNeutral>
+	  <targetEnemy>true</targetEnemy>
+	  <requiresLoS>true</requiresLoS>	
+	</autocasting>
+  </TorannMagic.TMDefs.TM_GolemAbilityDef>
+  
+  <TorannMagic.TMDefs.TM_GolemAbilityDef>
+	<defName>TM_FleshGolem_RightCleave</defName>
+	<label>cleave</label>	
+	<warmupTicks>0</warmupTicks>
+	<cooldownTicks>300</cooldownTicks>
+	<warmupStuns>false</warmupStuns>
+	<burstCount>1</burstCount>
+	<ticksBetweenBurstShots>0</ticksBetweenBurstShots>
+	<requiredNeed>TM_GolemRage</requiredNeed>
+	<needCost>15</needCost>
+	<interruptsJob>false</interruptsJob>
+	<jobDef>JobDriver_FleshChop</jobDef>
+	<priority>5</priority>
+	<effects>
+	  <li Class="TorannMagic.Golems.CompProperties_GolemAbilityEffect_ApplyDamage">
+        <damageType>Cut</damageType>
+		<damageAmount>16</damageAmount>
+		<splashRadius>2</splashRadius>
+		<mote>Mote_ClawSweep</mote>
+		<moteSize>.8</moteSize>
+		<randomMoteRotation>true</randomMoteRotation>
+		<effectTarget>Between</effectTarget>
+      </li>
+	</effects>
+	<autocasting>
+	  <type>OnTarget</type>
+	  <targetType>Pawn</targetType>
+	  <drafted>true</drafted>
+	  <minRange>0</minRange>
+	  <maxRange>1.4</maxRange>
+	  <undrafted>true</undrafted>
+	  <targetNeutral>false</targetNeutral>
+	  <targetEnemy>true</targetEnemy>
+	  <requiresLoS>true</requiresLoS>	
+	</autocasting>
+  </TorannMagic.TMDefs.TM_GolemAbilityDef>
+  
+  <TorannMagic.TMDefs.TM_GolemAbilityDef>
+	<defName>TM_FleshGolem_Dismember</defName>
+	<label>dismember</label>	
+	<warmupTicks>0</warmupTicks>
+	<cooldownTicks>800</cooldownTicks>
+	<warmupStuns>false</warmupStuns>
+	<burstCount>1</burstCount>
+	<ticksBetweenBurstShots>0</ticksBetweenBurstShots>
+	<requiredNeed>TM_GolemRage</requiredNeed>
+	<needCost>25</needCost>
+	<interruptsJob>false</interruptsJob>
+	<priority>1</priority>
+	<effects>
+	  <li Class="TorannMagic.Golems.CompProperties_GolemAbilityEffect_Dismember">
+        <canDecapitate>true</canDecapitate>
+      </li>
+	</effects>
+	<autocasting>
+	  <type>OnTarget</type>
+	  <targetType>Pawn</targetType>
+	  <drafted>true</drafted>
+	  <minRange>0</minRange>
+	  <maxRange>1.4</maxRange>
+	  <undrafted>true</undrafted>
+	  <targetNeutral>false</targetNeutral>
+	  <targetEnemy>true</targetEnemy>
+	  <requiresLoS>true</requiresLoS>	
+	</autocasting>
+  </TorannMagic.TMDefs.TM_GolemAbilityDef>
+  
+  <TorannMagic.TMDefs.TM_GolemAbilityDef>
+	<defName>TM_FleshGolem_WingHaste</defName>
+	<label>haste</label>	
+	<warmupTicks>0</warmupTicks>
+	<cooldownTicks>360</cooldownTicks>
+	<warmupStuns>false</warmupStuns>
+	<burstCount>1</burstCount>
+	<ticksBetweenBurstShots>0</ticksBetweenBurstShots>
+	<requiredNeed>TM_GolemRage</requiredNeed>
+	<needCost>15</needCost>
+	<interruptsJob>false</interruptsJob>
+	<priority>2</priority>
+	<effects>
+	  <li Class="TorannMagic.Golems.CompProperties_GolemAbilityEffect_ApplyHediff">
+        <hediff>TM_SeverityHasteHD</hediff>
+		<severity>.003</severity>
+		<canStack>false</canStack>
+      </li>
+	</effects>
+	<autocasting>
+	  <type>OnSelf</type>
+	  <targetType>Pawn</targetType>
+	  <drafted>true</drafted>
+	  <minRange>0</minRange>
+	  <maxRange>3</maxRange>
+	  <undrafted>true</undrafted>
+	  <targetNeutral>false</targetNeutral>
+	  <targetEnemy>false</targetEnemy>
+	  <requiresLoS>false</requiresLoS>	
+	  <includeSelf>true</includeSelf>
+	  <advancedConditionDefs>
+	    <li>TM_1EnemyWithin3Cells</li>
+	  </advancedConditionDefs>
+	</autocasting>
+  </TorannMagic.TMDefs.TM_GolemAbilityDef>
+  
+  <TorannMagic.TMDefs.TM_GolemAbilityDef>
+	<defName>TM_FleshGolem_EyeCurse</defName>
+	<label>enfeeble</label>	
+	<warmupTicks>0</warmupTicks>
+	<cooldownTicks>260</cooldownTicks>
+	<warmupStuns>false</warmupStuns>
+	<burstCount>1</burstCount>
+	<ticksBetweenBurstShots>0</ticksBetweenBurstShots>
+	<requiredNeed>TM_GolemRage</requiredNeed>
 	<needCost>10</needCost>
-	<requiredHediff></requiredHediff>
-	<hediffCost></hediffCost>
-  </TorannMagic.TMDefs.TM_GolemAbility> -->
+	<interruptsJob>false</interruptsJob>
+	<priority>3</priority>
+	<effects>
+	  <li Class="TorannMagic.Golems.CompProperties_GolemAbilityEffect_ApplyHediff">
+        <hediff>TM_FrailtyCurseHD</hediff>
+		<severity>1</severity>
+		<canStack>true</canStack>
+		<mote>Mote_EvilEye</mote>
+		<moteSize>.6</moteSize>
+		<randomMoteRotation>false</randomMoteRotation>
+		<effectTarget>OnTarget</effectTarget>
+      </li>
+	</effects>
+	<autocasting>
+	  <type>OnNearby</type>
+	  <targetType>Pawn</targetType>
+	  <drafted>true</drafted>
+	  <minRange>0</minRange>
+	  <maxRange>40</maxRange>
+	  <undrafted>true</undrafted>
+	  <targetNeutral>false</targetNeutral>
+	  <targetEnemy>true</targetEnemy>
+	  <requiresLoS>true</requiresLoS>	
+	  <includeSelf>false</includeSelf>
+	</autocasting>
+  </TorannMagic.TMDefs.TM_GolemAbilityDef>
 
 </Defs>

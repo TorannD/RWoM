@@ -19,7 +19,24 @@ namespace TorannMagic.Golems
         }
 
         protected override IEnumerable<Toil> MakeNewToils()
-        {        
+        {
+            Toil gotoDespawn = new Toil()
+            {
+                initAction = () =>
+                {
+                    pawn.pather.StartPath(TargetA, PathEndMode.OnCell);
+                },
+                tickAction = () =>
+                {
+                    CompGolem cg = this.pawn.TryGetComp<CompGolem>();
+                    if(cg != null && cg.dormantPosition != TargetA.Cell)
+                    {
+                        this.EndJobWith(JobCondition.InterruptForced);
+                    }
+                },
+                defaultCompleteMode = ToilCompleteMode.PatherArrival
+            };
+            yield return gotoDespawn;
             Toil wait = Toils_General.WaitWith(TargetIndex.A, durationTicks, true, true);
             yield return wait;
             Toil despawn = new Toil()

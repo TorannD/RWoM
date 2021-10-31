@@ -35,7 +35,7 @@ namespace TorannMagic
 
         private static void MakeVerticesBase()
         {
-            int num = (int)Math.Ceiling((double)((Vector2.zero - TM_MeshMaker.lightningTop).magnitude / 0.25f));
+            int num = (int)Math.Ceiling((double)((Vector2.zero - TM_MeshMaker.lightningTop).magnitude / 0.20f));
             Vector2 b = TM_MeshMaker.lightningTop / (float)num;
             TM_MeshMaker.verts2D = new List<Vector2>();
             Vector2 vector = Vector2.zero;

@@ -125,6 +125,52 @@ namespace TorannMagic.TMDefs
             }
         }
 
+        public bool ValidType(Type targetType, LocalTargetInfo target)
+        {
+            if (target.Thing != null)
+            {
+                if (targetType == typeof(Pawn))
+                {
+                    if (target.Thing is Pawn)
+                    {
+                        return true;
+                    }
+                }
+                else if (targetType == typeof(ThingWithComps))
+                {
+                    if (target.Thing is ThingWithComps)
+                    {
+                        return true;
+                    }
+                }
+                else if (targetType == typeof(Building))
+                {
+                    if (target.Thing is Building)
+                    {
+                        return true;
+                    }
+                }
+                else if (targetType == typeof(Corpse))
+                {
+                    if (target.Thing is Corpse)
+                    {
+                        return true;
+                    }
+                }
+                else if(target.Thing != null)
+                {
+                    return true;
+                }
+                return false;
+
+            }
+            if (targetType == typeof(LocalTargetInfo))
+            {
+                return true;
+            }
+            return false;
+        }
+
         public void ExposeData()
         {
             Scribe_Values.Look<bool>(ref this.mightUser, "mightUser", false);
@@ -201,8 +247,8 @@ namespace TorannMagic.TMDefs
             List<Pawn> enemies = TM_Calc.FindPawnsNearTarget(caster, (int)con.valueB, cell, true);
             if (enemies != null)
             {
-                //Log.Message(enemies.Count + " found in range of " + cell);
-                return (con.invert ? enemies.Count <= con.valueA : enemies.Count > con.valueA);
+                Log.Message(enemies.Count + " found in range of " + cell);
+                return (con.invert ? enemies.Count < con.valueA : enemies.Count >= con.valueA);
             }
             return false;
         }

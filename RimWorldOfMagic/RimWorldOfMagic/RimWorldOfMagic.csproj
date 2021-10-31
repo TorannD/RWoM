@@ -99,6 +99,10 @@
       <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\..\..\..\..\Valheim\unstripped_corlib\UnityEngine.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbilityDecisionConditionalNode_EnemyTargetIsBuilding.cs" />
@@ -128,7 +132,43 @@
     <Compile Include="Building_TMTotem_Healing.cs" />
     <Compile Include="Building_TMTotem_Lightning.cs" />
     <Compile Include="Building_TM_DMP.cs" />
+    <Compile Include="FlyingObject_LivingWall.cs" />
     <Compile Include="Golems\Building_TMGolemBase.cs" />
+    <Compile Include="Golems\CompProperties_GolemAbilityEffect_Dismember.cs" />
+    <Compile Include="Golems\CompProperties_GolemAbilityEffect_ApplyDamage.cs" />
+    <Compile Include="Golems\CompProperties_GolemAbilityEffect_ApplyHediff.cs" />
+    <Compile Include="Golems\GolemWorkstationEffect_ApplyHediff.cs" />
+    <Compile Include="Golems\JobDriver_FleshHarvest.cs" />
+    <Compile Include="Golems\JobDriver_FleshChop.cs" />
+    <Compile Include="Golems\JobDriver_GolemSelfTend.cs" />
+    <Compile Include="Golems\JobGiver_FleshGolemExtinguish.cs" />
+    <Compile Include="Golems\JobGiver_GolemForceGotoDespawn.cs" />
+    <Compile Include="Golems\JobGiver_GolemSelfTend.cs" />
+    <Compile Include="Golems\Need_GolemRage.cs" />
+    <Compile Include="Golems\ThinkNode_ConditionalShouldDespawn.cs" />
+    <Compile Include="Golems\UnfinishedNoProductThing.cs" />
+    <Compile Include="Golems\CompProperties_GolemAbilityEffect_AbsorbFilth.cs" />
+    <Compile Include="Golems\CompProperties_GolemAbilityEffect_ShieldPawn.cs" />
+    <Compile Include="Golems\CompProperties_GolemAbilityEffect_LaunchThing.cs" />
+    <Compile Include="Golems\CompProperties_GolemAbilityEffect_HealPawn.cs" />
+    <Compile Include="Golems\CompProperties_GolemAbilityEffect.cs" />
+    <Compile Include="Golems\TM_GolemAbility.cs" />
+    <Compile Include="Golems\TM_GolemUpgrade.cs" />
+    <Compile Include="Golems\GolemAbilityUpgrade.cs" />
+    <Compile Include="Golems\GolemWorkstationEffect_RepairBuilding.cs" />
+    <Compile Include="Golems\GolemWorkstationEffect_RestorePart.cs" />
+    <Compile Include="Golems\JobDriver_MechaMine.cs" />
+    <Compile Include="Golems\JobGiver_MechaGolemExtinguish.cs" />
+    <Compile Include="Golems\JobGiver_GolemJobs.cs" />
+    <Compile Include="Golems\JobGiver_GolemGetEnergy.cs" />
+    <Compile Include="Golems\JobGiver_GolemWanderNearMaster.cs" />
+    <Compile Include="Golems\JobGiver_GolemFollowMaster.cs" />
+    <Compile Include="Golems\JobGiver_GolemDefendMaster.cs" />
+    <Compile Include="Golems\ThinkNode_GolemShouldFollowMaster.cs" />
+    <Compile Include="Golems\JobGiver_EngageThreatInRange.cs" />
+    <Compile Include="Golems\GolemWorkstationEffect_LaunchThing.cs" />
+    <Compile Include="Golems\GolemWorkstationEffect.cs" />
+    <Compile Include="Golems\GolemUtility.cs" />
     <Compile Include="Golems\GolemAbilityWorker.cs" />
     <Compile Include="Golems\CompGolemEnergyHandler.cs" />
     <Compile Include="Golems\CompProperties_GolemEnergyHandler.cs" />
@@ -136,9 +176,13 @@
     <Compile Include="Golems\CompGolem.cs" />
     <Compile Include="Golems\ITab_GolemPawn.cs" />
     <Compile Include="Golems\JobDriver_GolemDespawn.cs" />
-    <Compile Include="HediffComp_BrandingBase.cs" />
     <Compile Include="Golems\ITab_GolemWorkstation.cs" />
     <Compile Include="Golems\Need_GolemEnergy.cs" />
+    <Compile Include="HediffComp_BrandingProtection.cs" />
+    <Compile Include="HediffComp_BrandingEmotion.cs" />
+    <Compile Include="HediffComp_BrandingVitality.cs" />
+    <Compile Include="HediffComp_BrandingSiphon.cs" />
+    <Compile Include="HediffComp_BrandingBase.cs" />
     <Compile Include="Recipe_RuneCarving.cs" />
     <Compile Include="Command_LocalTargetInfo.cs" />
     <Compile Include="CompAbilityUserMagic.cs" />
@@ -564,9 +608,9 @@
     <Compile Include="TMAbilityDef.cs" />
     <Compile Include="TMDamageDefOf.cs" />
     <Compile Include="TMDefOf.cs" />
-    <Compile Include="TMDefs\TM_GolemAbility.cs" />
-    <Compile Include="TMDefs\TM_GolemUpgrade.cs" />
-    <Compile Include="TMDefs\TM_Golem.cs" />
+    <Compile Include="TMDefs\TM_GolemAbilityDef.cs" />
+    <Compile Include="TMDefs\TM_GolemUpgradeDef.cs" />
+    <Compile Include="Golems\TM_Golem.cs" />
     <Compile Include="TMDefs\TM_Structs.cs" />
     <Compile Include="TMDefs\DefModExtension_TraitEnchantments.cs" />
     <Compile Include="TMDefs\TM_Autocast.cs" />
@@ -587,11 +631,11 @@
     <Compile Include="TM_AutocastConditionDef.cs" />
     <Compile Include="TM_Calc.cs" />
     <Compile Include="TM_ChaosPower.cs" />
-    <Compile Include="TM_GolemUtility.cs" />
+    <Compile Include="Golems\TM_GolemUtility.cs" />
     <Compile Include="TM_ClassUtility.cs" />
     <Compile Include="TM_Command_Target.cs" />
     <Compile Include="TM_CopyAndLaunchProjectile.cs" />
-    <Compile Include="TM_GolemDef.cs" />
+    <Compile Include="TMDefs\TM_GolemDef.cs" />
     <Compile Include="TM_CustomClassDef.cs" />
     <Compile Include="TM_CustomDef.cs" />
     <Compile Include="TM_CustomPowerDef.cs" />
@@ -630,6 +674,11 @@
     <Compile Include="Verb_BLOS.cs" />
     <Compile Include="Verb_Blur.cs" />
     <Compile Include="Verb_BowTraining.cs" />
+    <Compile Include="Verb_BrandFitness.cs" />
+    <Compile Include="Verb_BrandAwareness.cs" />
+    <Compile Include="Verb_BrandEmotion.cs" />
+    <Compile Include="Verb_BrandProtection.cs" />
+    <Compile Include="Verb_BrandVitality.cs" />
     <Compile Include="Verb_BriarPatch.cs" />
     <Compile Include="Verb_Buckshot.cs" />
     <Compile Include="Verb_BurningFury.cs" />
@@ -657,8 +706,10 @@
     <Compile Include="Verb_DismissPowerNode.cs" />
     <Compile Include="Verb_DismissSunlight.cs" />
     <Compile Include="Verb_DismissUndead.cs" />
+    <Compile Include="Verb_DispelLivingWall.cs" />
     <Compile Include="Verb_DispelEnchantWeapon.cs" />
     <Compile Include="Verb_DispelBranding.cs" />
+    <Compile Include="Verb_BrandSiphon.cs" />
     <Compile Include="Verb_LivingWall.cs" />
     <Compile Include="Verb_SigilDrain.cs" />
     <Compile Include="Verb_SigilSurge.cs" />

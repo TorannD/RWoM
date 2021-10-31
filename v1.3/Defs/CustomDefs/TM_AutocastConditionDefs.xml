@@ -78,4 +78,30 @@
 			</autocastCondition>
 		</TorannMagic.TM_AutocastConditionDef>
 		
+		<TorannMagic.TM_AutocastConditionDef>							<!-- a condition check that looks to have at least 1 enemy nearby -->
+		    <defName>TM_1EnemyWithin30Cells</defName>					<!-- defName is the key to add into the field in CustomPowerDefs -->
+			<autocastCondition>
+				<conditionClass>EnemiesInRange</conditionClass>			<!-- type of condition: DamageTaken, HasNeed, HasHediff, EnemiesInRange, AlliesInRange, TargetDrafted -->
+				<hediffDefs></hediffDefs>									<!-- hediff defname, null by default -->
+				<needDefs></needDefs>										<!-- need defname, null by default, could be used to check for magic user eg TM_Mana -->
+				<valueA>1</valueA>										<!-- primary value used, in this case, number of enemies -->
+				<valueB>30</valueB>										<!-- secondary value used for range determination in xInRange where A is # of enemies and B is range (radius) around target -->
+				<valueC></valueC>										<!-- tertiary value, currently unused by any condition check -->
+				<invert>false</invert>									<!-- inverts the result -->
+			</autocastCondition>
+		</TorannMagic.TM_AutocastConditionDef>
+		
+		<TorannMagic.TM_AutocastConditionDef>							<!-- a condition check that looks to have at least 1 enemy nearby -->
+		    <defName>TM_1EnemyWithin3Cells</defName>					<!-- defName is the key to add into the field in CustomPowerDefs -->
+			<autocastCondition>
+				<conditionClass>EnemiesInRange</conditionClass>			<!-- type of condition: DamageTaken, HasNeed, HasHediff, EnemiesInRange, AlliesInRange, TargetDrafted -->
+				<hediffDefs></hediffDefs>									<!-- hediff defname, null by default -->
+				<needDefs></needDefs>										<!-- need defname, null by default, could be used to check for magic user eg TM_Mana -->
+				<valueA>1</valueA>										<!-- primary value used, in this case, number of enemies -->
+				<valueB>3</valueB>										<!-- secondary value used for range determination in xInRange where A is # of enemies and B is range (radius) around target -->
+				<valueC></valueC>										<!-- tertiary value, currently unused by any condition check -->
+				<invert>false</invert>									<!-- inverts the result -->
+			</autocastCondition>
+		</TorannMagic.TM_AutocastConditionDef>
+		
 </Defs>

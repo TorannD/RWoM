@@ -32,6 +32,11 @@
         <baseValue>0.75</baseValue>
         <bonusPerLevel>0.025</bonusPerLevel>
       </li>
+	  <li Class="SkillNeed_BaseBonus">
+        <skill>Artistic</skill>
+        <baseValue>0.8</baseValue>
+        <bonusPerLevel>0.03</bonusPerLevel>
+      </li>
     </skillNeedFactors>
   </StatDef>
 

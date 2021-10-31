@@ -40,6 +40,7 @@ namespace TorannMagic
             masterSpellList.Add(TorannMagicDefOf.SpellOf_Recall);
             masterSpellList.Add(TorannMagicDefOf.SpellOf_SpiritOfLight);
             masterSpellList.Add(TorannMagicDefOf.SpellOf_GuardianSpirit);
+            masterSpellList.Add(TorannMagicDefOf.SpellOf_LivingWall);
             return masterSpellList;
         }
 
@@ -80,7 +81,28 @@ namespace TorannMagic
                 restricted.Add(TorannMagicDefOf.SpellOf_GuardianSpirit);
                 restricted.Add(TorannMagicDefOf.SpellOf_Discord);
                 restricted.Add(TorannMagicDefOf.SpellOf_ShieldOther);
+                restricted.AddRange(RestrictedAbilitiesXML);
                 return restricted;
+            }
+        }
+
+        public static List<ThingDef> RestrictedAbilitiesXML
+        {
+            get
+            {
+                IEnumerable<TMAbilityDef> enumerable = from def in DefDatabase<TMAbilityDef>.AllDefs
+                                                   where (def.restrictedAbility)
+                                                   select def;
+                List<ThingDef> xmlRestrictedAbilities = new List<ThingDef>();
+                xmlRestrictedAbilities.Clear();
+                foreach(TMAbilityDef d in enumerable)
+                {
+                    if(d.restrictedAbility && d.learnItem != null)
+                    {
+                        xmlRestrictedAbilities.Add(d.learnItem);
+                    }
+                }
+                return xmlRestrictedAbilities.ToList();
             }
         }
 
@@ -176,6 +198,7 @@ namespace TorannMagic
                 magicTraits.Add(TorannMagicDefOf.TM_Wanderer);
                 magicTraits.Add(TorannMagicDefOf.TM_Brightmage);
                 magicTraits.Add(TorannMagicDefOf.TM_Shaman);
+                magicTraits.Add(TorannMagicDefOf.TM_Golemancer);
                 return magicTraits;
             }
         }

@@ -60,7 +60,7 @@ namespace TorannMagic
             for (int i = 0; i < this.TargetsAoE.Count; i++)
             {
                 Pawn newPawn = this.TargetsAoE[i].Thing as Pawn;
-                if(newPawn.RaceProps.IsFlesh)
+                if(newPawn != null && newPawn.RaceProps.IsFlesh)
                 {
                     if (Rand.Chance(.4f + (.1f * pwr.level) * TM_Calc.GetSpellSuccessChance(this.CasterPawn, newPawn, true)))
                     {
@@ -70,8 +70,10 @@ namespace TorannMagic
                         }
                         //
                         //newPawn.jobs.EndCurrentJob(JobCondition.InterruptForced);
-                        Job job = new Job(TorannMagicDefOf.JobDriver_SleepNow);
-                        newPawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
+                        newPawn.needs.rest.CurLevel = 0f;
+                        Job job = JobMaker.MakeJob(JobDefOf.LayDown, newPawn.Position);
+                        job.forceSleep = true;
+                        newPawn.jobs.StartJob(job, JobCondition.InterruptForced);
                         TM_MoteMaker.ThrowNoteMote(newPawn.DrawPos, newPawn.Map, Rand.Range(.3f, .8f));
                         TM_MoteMaker.ThrowNoteMote(newPawn.DrawPos, newPawn.Map, Rand.Range(.3f, .8f));
                         TM_MoteMaker.ThrowNoteMote(newPawn.DrawPos, newPawn.Map, Rand.Range(.3f, .8f));

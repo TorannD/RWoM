@@ -323,7 +323,7 @@ namespace TorannMagic
             }
         }
 
-        private void RemoveHediffsAddictionsAndPermanentInjuries(Pawn pawn)
+        public static void RemoveHediffsAddictionsAndPermanentInjuries(Pawn pawn)
         {
             List<Hediff> removeList = new List<Hediff>();
             removeList.Clear();

@@ -38,6 +38,7 @@ namespace TorannMagic
         public float drainStructures; //not used
         public float drainEnchantments; //not used
         public float drainEnergyHD;
+        public float drainSigils;
         public float modifiedManaGain;
         public float baseManaGain;
 
@@ -222,6 +223,19 @@ namespace TorannMagic
 
                         if (pawn.health != null && pawn.health.hediffSet != null)
                         {
+                            if(comp.BrandedPawns.Count > 0)
+                            {
+                                drainSigils = comp.BrandedPawns.Count * (TorannMagicDefOf.TM_Branding.upkeepRegenCost * (1f - (TorannMagicDefOf.TM_Branding.upkeepEfficiencyPercent * comp.MagicData.GetSkill_Efficiency(TorannMagicDefOf.TM_Branding).level)));
+                                if(comp.sigilSurging)
+                                {
+                                    drainSigils *= 3f;
+                                }
+                            }
+                            else
+                            {
+                                drainSigils = 0;
+                            }
+
                             Hediff hdRegen = pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_EnergyRegenHD);
                             if (hdRegen != null)
                             {
@@ -304,6 +318,7 @@ namespace TorannMagic
                             drainManaDrain = 0;
                             drainEnergyHD = 0;
                             drainSyrrium = 0;
+                            drainSigils = 0;
                         }
 
                         //Paracyte modifier

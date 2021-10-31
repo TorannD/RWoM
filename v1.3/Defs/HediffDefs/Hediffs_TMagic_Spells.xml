@@ -768,5 +768,47 @@
 			<destroyedOutLabel>burned out</destroyedOutLabel>
 	</injuryProps>
   </HediffDef>
+  
+  <HediffDef ParentName="TM_InjuryBase">
+	<defName>TM_Dismember</defName>
+	<label>dismember</label>
+	<description>An attack that tears a limb (or head) off a target.</description>
+    <labelNoun>a massive wound</labelNoun>
+	<displayWound>true</displayWound>
+    <comps>
+      <li Class="HediffCompProperties_TendDuration">
+        <labelTendedWell>bandaged</labelTendedWell>
+        <labelTendedWellInner>sutured</labelTendedWellInner>
+        <labelSolidTendedWell>set</labelSolidTendedWell>
+      </li>
+      <li Class="HediffCompProperties_Infecter">
+        <infectionChance>0.4</infectionChance>
+      </li>
+    </comps>
+	<injuryProps>
+		<painPerSeverity>0.08</painPerSeverity>
+		<averagePainPerSeverityPermanent>0.005</averagePainPerSeverityPermanent>
+		<bleedRate>0.25</bleedRate>
+		<canMerge>false</canMerge>
+		<destroyedLabel>torn off</destroyedLabel>
+		<destroyedOutLabel>torn out</destroyedOutLabel>
+	</injuryProps>
+  </HediffDef>
+  
+  <HediffDef ParentName="TM_InjuryBase">
+	<defName>TM_PartRemovalHD</defName>
+	<label>missing</label>
+	<description>A missing bodypart.</description>
+    <labelNoun>missing</labelNoun>
+	<displayWound>false</displayWound>
+	<injuryProps>
+		<painPerSeverity>0.00</painPerSeverity>
+		<averagePainPerSeverityPermanent>0.000</averagePainPerSeverityPermanent>
+		<bleedRate>0</bleedRate>
+		<canMerge>false</canMerge>
+		<destroyedLabel>missing</destroyedLabel>
+		<destroyedOutLabel>missing</destroyedOutLabel>
+	</injuryProps>
+  </HediffDef>
 
 </Defs>

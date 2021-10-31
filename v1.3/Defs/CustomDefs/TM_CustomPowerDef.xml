@@ -258,6 +258,66 @@
 		</customPower>
 	</TorannMagic.TM_CustomPowerDef>
 	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_SiphonBrand</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<abilityDefs>									<!-- only 1 ability so max level is 0 -->
+				<li>TM_SiphonBrand</li>
+			</abilityDefs>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_EmotionBrand</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<abilityDefs>									<!-- only 1 ability so max level is 0 -->
+				<li>TM_EmotionBrand</li>
+			</abilityDefs>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_VitalityBrand</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<abilityDefs>									<!-- only 1 ability so max level is 0 -->
+				<li>TM_VitalityBrand</li>
+			</abilityDefs>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_ProtectionBrand</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<abilityDefs>									<!-- only 1 ability so max level is 0 -->
+				<li>TM_ProtectionBrand</li>
+			</abilityDefs>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_AwarenessBrand</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<abilityDefs>									<!-- only 1 ability so max level is 0 -->
+				<li>TM_AwarenessBrand</li>
+			</abilityDefs>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_FitnessBrand</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<abilityDefs>									<!-- only 1 ability so max level is 0 -->
+				<li>TM_FitnessBrand</li>
+			</abilityDefs>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
 <!-- 	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
 		<defName>TM_ShadowSlayer</defName>	
 		<customPower>	

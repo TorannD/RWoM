@@ -14,43 +14,82 @@ namespace TorannMagic.Golems
     {
         private static readonly Vector2 EnergyBarSize = new Vector2(.32f, 0.18f);
         private float storedEnergyUpgradeCount = 0;
-        //private float storedEnergy = ;
         private float conversionEfficiencyUpgradeCount = 0;
+        private float energyRegenerationFactor = 1f;
+        private float storedEnergySaved;
 
         public static FieldInfo storedEnergyRef = typeof(CompGolemEnergyHandler).GetField("storedEnergy", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.GetField);
 
         public override void PostExposeData()
         {
+            if (Scribe.mode == LoadSaveMode.Saving)
+            {
+                storedEnergySaved = this.StoredEnergy;
+            }
             base.PostExposeData();
-            //Scribe_Values.Look(ref storedEnergy, "storedEnergy", 0f);
             Scribe_Values.Look(ref storedEnergyUpgradeCount, "storedEnergyUpgradeCount", 0f);
             Scribe_Values.Look(ref conversionEfficiencyUpgradeCount, "conversionEfficiencyUpgradeCount", 0f);
+            Scribe_Values.Look(ref energyRegenerationFactor, "energyRegenerationFactor", 1f);
+            if (Scribe.mode == LoadSaveMode.Saving)
+            {
+                SetEnergy(storedEnergySaved);
+            }
         }
 
-        //public float StoredEnergy
-        //{
-        //    get
-        //    {
-        //        return StoredEnergyRef = Mathf.Clamp(StoredEnergyRef, 0f, StoredEnergyMax);
-        //    }
-        //}
         public float StoredEnergyMax => Props.storedEnergyMax + (Props.storedEnergyMaxUpgradeIncrease * storedEnergyUpgradeCount);
         public new float StoredEnergyPct => StoredEnergy / StoredEnergyMax;
         public bool CanUpgrade_EnergyMax => storedEnergyUpgradeCount < Props.storedEnergyMaxUpgrades;
-        public void Upgrade_StoredEnergy()
+        public void Upgrade_StoredEnergy(int level)
         {
-            storedEnergyUpgradeCount++;
+            storedEnergyUpgradeCount = level;
+        }
+
+        public float ChargePerHour => Props.selfChargePerHour * energyRegenerationFactor;
+        public void Upgrade_RegenerationFactor(int level)
+        {
+            energyRegenerationFactor = 1f + ((float)level * Props.selfChargeUpgradeFactor);
         }
 
         public new void AddEnergy(float amount)
         {
-            Traverse.Create(root: this).Field(name: "storedEnergy").SetValue(Mathf.Clamp(StoredEnergy + (amount * ConversionEfficiency), 0f, StoredEnergyMax));
+            float adjAmount;
+            if(amount < 0)
+            {
+                adjAmount = amount / ConversionEfficiency;
+            }
+            else
+            {
+                adjAmount = amount * ConversionEfficiency;
+            }
+            Traverse.Create(root: this).Field(name: "storedEnergy").SetValue(Mathf.Clamp(StoredEnergy + adjAmount, 0f, StoredEnergyMax));
+        }
+
+        public void AddEnergyFlat(float amount)
+        {
+            Traverse.Create(root: this).Field(name: "storedEnergy").SetValue(Mathf.Clamp(StoredEnergy + amount, 0f, StoredEnergyMax));
+        }
+
+        public void SetEnergy(float amount)
+        {
+            Traverse.Create(root: this).Field(name: "storedEnergy").SetValue(Mathf.Clamp(amount, 0f, StoredEnergyMax));            
         }
 
         public float ConversionEfficiency => Props.conversionEfficiency + (Props.conversionEfficiencyUpgradeIncrease * conversionEfficiencyUpgradeCount);
-        public void Upgrade_ConversionEfficiency()
+        public void Upgrade_ConversionEfficiency(int level)
         {
-            conversionEfficiencyUpgradeCount++;
+            conversionEfficiencyUpgradeCount = level;
+        }
+
+        public new float AmountCanAccept
+        {
+            get
+            {
+                if(parent.IsBrokenDown())
+                {
+                    return 0f;
+                }
+                return (StoredEnergyMax - StoredEnergy) / ConversionEfficiency;
+            }
         }
 
         public new CompProperties_GolemEnergyHandler Props
@@ -74,7 +113,7 @@ namespace TorannMagic.Golems
 
         public void RegenPowerSelf()
         {
-            AddEnergy(Props.selfChargePerHour / 2500f);
+            AddEnergy(ChargePerHour / 2500f);
         }
 
         public override void PostDraw()
@@ -87,7 +126,7 @@ namespace TorannMagic.Golems
             r.size = EnergyBarSize;
             r.fillPercent = StoredEnergyPct;
             r.filledMat = SolidColorMaterials.SimpleSolidColorMaterial(Props.energyColor);
-            r.unfilledMat = SolidColorMaterials.SimpleSolidColorMaterial(Color.clear);// new Color(0.4f, 0.4f, 0.4f));
+            r.unfilledMat = SolidColorMaterials.SimpleSolidColorMaterial(Color.clear);
             r.margin = 0.15f;
             Rot4 rotation = parent.Rotation;
             rotation.Rotate(RotationDirection.Clockwise);
@@ -95,40 +134,15 @@ namespace TorannMagic.Golems
             GenDraw.DrawFillableBar(r);
         }
 
-        //public override string CompInspectStringExtra()
-        //{
-        //    string text = "PowerBatteryStored".Translate() + ": " + StoredEnergy.ToString("F0") + " / " + StoredEnergyMax.ToString("F0") + " Wd";
-        //    text += "\n" + "PowerBatteryEfficiency".Translate() + ": " + (ConversionEfficiency * 100f).ToString("F0") + "%";
-        //    return text + "\n" + base.CompInspectStringExtra();
-        //}
+        public override string CompInspectStringExtra()
+        {
+            string text = "PowerBatteryStored".Translate() + ": " + StoredEnergy.ToString("F0") + " / " + StoredEnergyMax.ToString("F0") + " Wd";
+            text += "\n" + "PowerBatteryEfficiency".Translate() + ": " + (ConversionEfficiency * 100f).ToString("F0") + "%";
+            return text;
+        }
 
-        //public override IEnumerable<Gizmo> CompGetGizmosExtra()
-        //{
-        //    foreach (Gizmo item in base.CompGetGizmosExtra())
-        //    {
-        //        yield return item;
-        //    }
-        //    if (Prefs.DevMode)
-        //    {
-        //        Command_Action command_Action = new Command_Action();
-        //        command_Action.defaultLabel = "DEBUG: Fill";
-        //        command_Action.action = delegate
-        //        {
-        //            AddEnergy(StoredEnergyMax);
-        //        };
-        //        yield return command_Action;
-        //        Command_Action command_Action2 = new Command_Action();
-        //        command_Action2.defaultLabel = "DEBUG: Empty";
-        //        command_Action2.action = delegate
-        //        {
-        //            StoredEnergy = 0f;
-        //        };
-        //        yield return command_Action2;
-        //    }
-        //}
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
-            //initializes after reload
             base.PostSpawnSetup(respawningAfterLoad);
         }
 

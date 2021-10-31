@@ -4,6 +4,7 @@ using System.Linq;
 using RimWorld;
 using AbilityUser;
 using Verse;
+using UnityEngine;
 
 
 namespace TorannMagic
@@ -17,13 +18,48 @@ namespace TorannMagic
 
             if (comp.IsMagicUser)
             {
-                if (comp.Brandings.Count > 0)
+                if (comp.BrandedPawns.Count > 0)
                 {
-                    foreach(TMDefs.Branding br in comp.Brandings)
+                    foreach(Pawn br in comp.BrandedPawns)
                     {
-                        br.pawn.health.RemoveHediff(br.pawn.health.hediffSet.GetFirstHediffOfDef(br.hediffDef));
+                        List<Hediff> brands = new List<Hediff>();
+                        brands.Clear();
+                        foreach(Hediff hd in br.health.hediffSet.hediffs)
+                        {
+                            HediffComp_BrandingBase hc_bb = hd.TryGetComp<HediffComp_BrandingBase>();
+                            if(hc_bb != null && hc_bb.BranderPawn == CasterPawn)
+                            {
+                                brands.Add(hd);
+                            }
+                        }
+                        
+                        if(brands != null && brands.Count > 0)
+                        {
+                            foreach(Hediff h in brands)
+                            {
+                                br.health.RemoveHediff(h);
+                            }
+                        }
+                        Effecter effect = EffecterDefOf.Skip_ExitNoDelay.Spawn();
+                        effect.Trigger(new TargetInfo(br), new TargetInfo(caster));
+                        effect.Cleanup();
                     }
-                    comp.brandings.Clear();
+                    Effecter effectExit = EffecterDefOf.Skip_EntryNoDelay.Spawn();
+                    effectExit.Trigger(new TargetInfo(this.CasterPawn), new TargetInfo(this.CasterPawn));
+                    effectExit.Cleanup();
+                    comp.brandedPawns.Clear();
+                    List<IntVec3> ring = TM_Calc.GetOuterRing(caster.Position, 1f, 2f);
+                    for (int i = 0; i < 16; i++)
+                    {
+                        Vector3 moteVec = ring.RandomElement().ToVector3Shifted();
+                        moteVec.x += Rand.Range(-.5f, .5f);
+                        moteVec.z += Rand.Range(-.5f, .5f);
+                        float angle = (Quaternion.AngleAxis(90, Vector3.up) * TM_Calc.GetVector(moteVec, caster.DrawPos)).ToAngleFlat();
+                        ThingDef mote = TorannMagicDefOf.Mote_Psi_Grayscale;
+                        mote.graphicData.color = Color.white;
+                        TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Psi_Yellow, moteVec, caster.Map, Rand.Range(.25f, .6f), .1f, .05f, .05f, 0, Rand.Range(4f, 6f), angle, angle);
+                    }
+                    FleckMaker.ThrowLightningGlow(caster.DrawPos, caster.Map, 1.2f);
                 }
             }
 

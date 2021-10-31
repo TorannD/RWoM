@@ -16,6 +16,7 @@ namespace TorannMagic.Golems
         public int conversionEfficiencyMaxUpgrades = 3;
 
         public float selfChargePerHour = 0f;
+        public float selfChargeUpgradeFactor = .1f;
 
         public Color energyColor = Color.blue;
 

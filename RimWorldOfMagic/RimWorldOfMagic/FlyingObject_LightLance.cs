@@ -122,7 +122,6 @@ namespace TorannMagic
                 CompAbilityUserMagic comp = pawn.GetComp<CompAbilityUserMagic>();
                 if(comp != null)
                 {
-                    Log.Message("getting skills");
                     pwrVal = comp.MagicData.MagicPowerSkill_LightLance.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_LightLance_pwr").level;
                     verVal = comp.MagicData.MagicPowerSkill_LightLance.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_LightLance_ver").level;
                     this.radius += (verVal * .2f);

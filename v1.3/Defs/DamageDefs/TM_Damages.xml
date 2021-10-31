@@ -1107,4 +1107,34 @@
     <combatLogRules>Damage_Bomb</combatLogRules>
   </DamageDef>
   
+  <DamageDef ParentName="TM_LocalInjuryBase">
+    <defName>TM_Dismember</defName>
+    <label>tear</label>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has been torn apart.</deathMessage>
+    <hediff>TM_Dismember</hediff>
+    <hediffSolid>Crack</hediffSolid>
+    <harmAllLayersUntilOutside>false</harmAllLayersUntilOutside>
+    <impactSoundType>Blunt</impactSoundType>
+    <armorCategory>Blunt</armorCategory>
+	<isExplosive>false</isExplosive>
+	<hasForcefulImpact>true</hasForcefulImpact>
+	<defaultArmorPenetration>999</defaultArmorPenetration>
+  </DamageDef>
+  
+  <DamageDef ParentName="TM_LocalInjuryBase">
+    <defName>TM_PartRemoval</defName>
+    <label>removed</label>
+    <externalViolence>false</externalViolence>
+    <deathMessage>{0} has been removed.</deathMessage>
+    <hediff>TM_PartRemovalHD</hediff>
+    <hediffSolid>Crack</hediffSolid>
+    <harmAllLayersUntilOutside>false</harmAllLayersUntilOutside>
+    <impactSoundType>Blunt</impactSoundType>
+    <armorCategory>Blunt</armorCategory>
+	<isExplosive>false</isExplosive>
+	<hasForcefulImpact>false</hasForcefulImpact>
+	<defaultArmorPenetration>999</defaultArmorPenetration>
+  </DamageDef>
+  
 </Defs>

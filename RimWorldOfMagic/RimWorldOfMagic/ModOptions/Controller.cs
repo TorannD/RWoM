@@ -70,7 +70,6 @@ namespace TorannMagic.ModOptions
                 Rect rect = new Rect(64f, 64f, 480, 640);
                 FactionOptionsWindow newWindow = new FactionOptionsWindow();
                 Find.WindowStack.Add(newWindow);
-
             }
             num++;
             Rect rowRect2 = UIHelper.GetRowRect(rowRect, rowHeight, num);

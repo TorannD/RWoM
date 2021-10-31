@@ -181,6 +181,22 @@ namespace TorannMagic
             return false;
         }
 
+        public static bool IsWall(Thing t)
+        {
+            if(t != null && t is Building)
+            {
+                Building b = t as Building;
+                if (b.def.passability == Traversability.Impassable && b.def.holdsRoof)
+                {
+                    if (t.def.defName.ToLower().Contains("wall") || (t.def.label.ToLower().Contains("wall")))
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
         public static bool IsMightUser(Pawn pawn)
         {
             if (pawn != null)
@@ -392,7 +408,7 @@ namespace TorannMagic
             }
             foreach (Pawn p in map.mapPawns.AllPawnsSpawned)
             {
-                if(IsMagicUser(p) && p.IsSlave ? countSlaves : false)
+                if(IsMagicUser(p) && p.IsSlave ? countSlaves : true)
                 {
                     CompAbilityUserMagic comp = p.TryGetComp<CompAbilityUserMagic>();
                     if(comp!= null && comp.MagicData != null)
@@ -406,6 +422,32 @@ namespace TorannMagic
                 }
             }
             return false;
+        }
+
+        public static List<Pawn> GolemancersInFaction(Faction faction)
+        {
+            if (faction == null)
+            {
+                return null;
+            }
+            List<Pawn> tmpList = new List<Pawn>();
+            tmpList.Clear();
+            foreach (Pawn p in PawnsFinder.AllMapsCaravansAndTravelingTransportPods_Alive_FreeColonists)
+            {
+                if (IsMagicUser(p))
+                {
+                    CompAbilityUserMagic comp = p.TryGetComp<CompAbilityUserMagic>();
+                    if (comp != null && comp.MagicData != null)
+                    {
+                        MagicPower mp = comp.MagicData.ReturnMatchingMagicPower(TorannMagicDefOf.TM_Golemancy);
+                        if (mp != null && mp.learned)
+                        {
+                            tmpList.Add(p);
+                        }
+                    }
+                }
+            }
+            return tmpList;
         }
 
         public static int GetFightersInFactionCount(Faction faction, bool countSlaves = false)
@@ -1455,6 +1497,33 @@ namespace TorannMagic
             {
                 return null;
             }
+        }
+
+        public static Building FindNearestWall(Map map, IntVec3 center, Faction faction = null)
+        {
+            List<Thing> mapBuildings = map.listerThings.AllThings.Where((Thing x) => x is Building && (x.Position - center).LengthHorizontal <= 1.4f).ToList();
+            if(mapBuildings != null && mapBuildings.Count > 0 )
+            {
+                foreach(Thing t in mapBuildings)
+                {
+                    Building b = t as Building;
+                    if(TM_Calc.IsWall(t))
+                    {
+                        if(faction != null)
+                        {
+                            if (faction == b.Faction)
+                            {
+                                return b;
+                            }
+                        }
+                        else
+                        {
+                            return b;
+                        }
+                    }
+                }
+            }
+            return null;
         }
 
         public static Thing GetTransmutableThingFromCell(IntVec3 cell, Pawn enchanter, out bool flagRawResource, out bool flagStuffItem, out bool flagNoStuffItem, out bool flagNutrition, out bool flagCorpse, bool manualCast = false)
@@ -3721,12 +3790,56 @@ namespace TorannMagic
             return true;            
         }
 
+        public static LocalTargetInfo FindClosestCellPlus1VisibleToTarget(Pawn p, LocalTargetInfo t, bool requireLoS = true)
+        {
+            LocalTargetInfo tmp = p.Position;
+            IntVec3 bestCell = p.Position;
+            for(int i =0;i < 8;i++)
+            {
+                IntVec3 cell = p.Position + GenAdj.AdjacentCells8WayRandomized()[i];
+                if (cell.Walkable(p.Map) && cell.Standable(p.Map))
+                {
+                    if ((cell - t.Cell).LengthHorizontal > (bestCell - t.Cell).LengthHorizontal)
+                    {
+                        if (requireLoS)
+                        {
+                            if (TM_Calc.HasLoSFromTo(cell, t, p, 0, 5f))
+                            {
+                                bestCell = cell;
+                            }
+                        }
+                        else
+                        {
+                            bestCell = cell;
+                        }
+                    }
+                }
+            }
+            tmp = bestCell;
+            
+            return tmp;
+        }
+
         public static LocalTargetInfo FindWalkableCellNextTo(IntVec3 cell, Map map)
         {
             List<IntVec3> cellList = GenAdjFast.AdjacentCells8Way(cell);
             for (int i = 0; i < cellList.Count; i++)
             {
                 if (cellList[i] != default(IntVec3) && cellList[i].InBounds(map) && cellList[i].Walkable(map) && !cellList[i].Fogged(map))
+                {
+                    cell = cellList[i];
+                    break;
+                }
+            }
+            return cell;
+        }
+
+        public static LocalTargetInfo FindValidCellWithinRange(IntVec3 cell, Map map, float range)
+        {
+            List<IntVec3> cellList = GenRadial.RadialCellsAround(cell, range, true).InRandomOrder().ToList();
+            for (int i = 0; i < cellList.Count; i++)
+            {
+                if (cellList[i] != default(IntVec3) && cellList[i].InBounds(map) && !cellList[i].Fogged(map))
                 {
                     cell = cellList[i];
                     break;
@@ -3794,7 +3907,7 @@ namespace TorannMagic
                             }
                         }
                     }
-                    target = potentialPawns?.RandomElement();
+                    target = potentialPawns.Count > 0 ? potentialPawns.RandomElement() : null;
                 }
                 else if (autocasting.GetTargetType == typeof(Building))
                 {
@@ -3832,7 +3945,7 @@ namespace TorannMagic
                             }
                         }
                     }
-                    target = potentialBuildings?.RandomElement();
+                    target = potentialBuildings.Count > 0 ? potentialBuildings.RandomElement() : null;
                 }
                 else if (autocasting.GetTargetType == typeof(Corpse))
                 {
@@ -3840,7 +3953,7 @@ namespace TorannMagic
                                                                where (x.GetType() == typeof(Corpse) && (x.Position - caster.Position).LengthHorizontal >= autocasting.minRange &&
                                                                autocasting.maxRange > 0 ? (x.Position - caster.Position).LengthHorizontal <= autocasting.maxRange : true)
                                                                select x as Corpse;
-                    target = nearbyThings?.RandomElement();
+                    target = nearbyThings?.Count() > 0 ? nearbyThings.RandomElement() : null;
                 }
                 else if (autocasting.GetTargetType == typeof(ThingWithComps))
                 {
@@ -3849,7 +3962,7 @@ namespace TorannMagic
                                                       autocasting.maxRange > 0 ? (x.Position - caster.Position).LengthHorizontal <= autocasting.maxRange : true &&
                                                       autocasting.includeSelf ? true : x != caster)
                                                       select x as ThingWithComps;
-                    target = nearbyThings?.RandomElement();
+                    target = nearbyThings?.Count() > 0 ? nearbyThings.RandomElement() : null;
                 }
                 else
                 {
@@ -3858,7 +3971,7 @@ namespace TorannMagic
                                                       autocasting.maxRange > 0 ? (x.Position - caster.Position).LengthHorizontal <= autocasting.maxRange : true &&
                                                       autocasting.includeSelf ? true : x != caster)
                                                       select x;
-                    target = nearbyThings?.RandomElement();
+                    target = nearbyThings?.Count() > 0 ? nearbyThings.RandomElement() : null;
                 }
                 
             }
@@ -3866,8 +3979,267 @@ namespace TorannMagic
             {
                 target = potentialTarget.Cell;
             }
-            
             return target;
+        }
+
+        public static List<Building> FindConnectedWalls(Building start, float maxAllowedDistance = 1.4f, float maxDistanceFromStart = 50, bool matchFaction = true)
+        {
+            Map map = start.Map;
+            List<Building> connectedBuildings = new List<Building>();
+            connectedBuildings.Clear();
+            connectedBuildings.Add(start);
+            List<Building> newBuildings = new List<Building>();
+            newBuildings.Clear();
+            newBuildings.Add(start);
+            //List<Building> lastList = new List<Building>();
+            //lastList.Clear();
+            //lastList.Add(start);
+            IEnumerable<Building> allThings = from def in map.listerThings.AllThings
+                                       where (def is Building && TM_Calc.IsWall(def) && (def.Position - start.Position).LengthHorizontal <= maxDistanceFromStart)
+                                       select def as Building;
+            List <Building> addedBuilding = new List<Building>();
+            for (int i = 0; i < 200; i++)
+            {                
+                addedBuilding.Clear();
+                foreach (Building b in newBuildings)
+                {
+                    foreach (Building t in allThings)
+                    {
+                        if ((t.Position - b.Position).LengthHorizontal <= maxAllowedDistance && !connectedBuildings.Contains(t))
+                        {
+                            connectedBuildings.Add(t);
+                            addedBuilding.Add(t);
+                        }
+                    }
+                    //IEnumerable<Building> tmpList = allThings.Except(connectedBuildings);
+                    //allThings = tmpList;
+                }
+                //lastList.Clear();
+                //lastList.AddRange(newBuildings);
+                newBuildings.Clear();
+                newBuildings.AddRange(addedBuilding);
+                if(newBuildings.Count <= 0)
+                {
+                    break;
+                }
+            }
+            //Log.Message("there are " + connectedBuildings.Count + " connected wall segments");
+            return connectedBuildings;
+        }
+
+        public static List<IntVec3> FindTPath(Thing from, Thing to,  Faction faction = null) //out List<IntVec3> connectedCells,
+        {
+            //use a structure to record path parameters
+            //look for any transmitter nearby 
+            //nearby transmitters are considered a possible path
+            //add nearby path to list of paths
+            //multiple nearby transmitters create a new path structure that gets enumerated
+            //terminate a paths if no nearby transmitter is found
+
+            Map map = from.Map;
+            List<IntVec3> allCells = new List<IntVec3>();
+            List<IntVec3> startList = new List<IntVec3>();
+            List<IntVec3> bestPath = new List<IntVec3>();
+            List<TPath> pathFinder = new List<TPath>();
+
+            allCells.Clear();
+            pathFinder.Clear();
+
+            startList.Add(from.Position);
+            pathFinder.Add(new TPath(0, 0, false, from.Position, startList));
+
+            bool pathFound = false;
+            int bestPathIndex = 0;
+
+            for (int i = 0; i < 300; i++) //fail after 300 path attempts
+            {
+                for (int j = 0; j < pathFinder.Count; j++)
+                {
+                    if (!pathFinder[j].ended)
+                    {
+                        List<IntVec3> cellList = GenRadial.RadialCellsAround(pathFinder[j].currentCell, 1f, true).ToList();
+                        List<IntVec3> validCells = new List<IntVec3>();
+                        validCells.Clear();
+                        //Log.Message("" + cellList.Count.ToString());
+                        for (int k = 0; k < cellList.Count; k++)
+                        {
+                            //CELLLIST is all the cells around the CURRENT cell.
+                            Building wall = CellWall(cellList[k], map);
+                            if (!allCells.Contains(cellList[k]) && wall != null)
+                            {
+                                if(faction != null)
+                                {
+                                    if(faction == wall.Faction)
+                                    {
+                                        allCells.Add(cellList[k]);
+                                        validCells.Add(cellList[k]);
+                                    }
+                                }
+                                else
+                                {
+                                    allCells.Add(cellList[k]);
+                                    validCells.Add(cellList[k]);
+                                }                                
+                            }
+                        }
+                        if (validCells.Count > 0)
+                        {
+                            //IF WE FOUND MORE THAN 1 "VALID" cell around the "CURRENTCELL" we loop through those cells
+                            for (int k = 0; k < validCells.Count; k++)
+                            {
+                                if (k == 0)
+                                {
+                                    //Check the first valid cell
+                                    //continue path in a single direction; additional possible paths create a branch
+                                    pathFinder[j].pathList.Add(validCells[k]);
+                                    pathFinder[j] = new TPath(pathFinder[j].pathParent, pathFinder[j].pathParentSplitIndex, false, validCells[k], pathFinder[j].pathList);
+
+                                    if (to.Position == validCells[k])
+                                    {
+                                        pathFound = true;
+                                        bestPathIndex = j;
+                                    }
+                                }
+                                else
+                                {
+                                    //create new paths
+                                    List<IntVec3> newList = new List<IntVec3>();
+                                    newList.Clear();
+                                    newList.Add(validCells[k]);
+                                    pathFinder.Add(new TPath(j, pathFinder[j].pathList.Count, false, validCells[k], newList));
+                                    if (to.Position == validCells[k])
+                                    {
+                                        pathFound = true;
+                                        bestPathIndex = j;
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            //end path
+                            pathFinder[j] = new TPath(pathFinder[j].pathParent, pathFinder[j].pathParentSplitIndex, true, pathFinder[j].currentCell, pathFinder[j].pathList);
+                        }
+                    }
+                }
+
+                if (pathFound)
+                {
+                    //Evaluate best path, reverse, and return
+                    bestPath = GetBestPath(pathFinder, bestPathIndex);
+                    break;
+                }
+            }
+            //connectedCells = allCells;
+            return bestPath;
+        }
+
+        public static Building CellWall(IntVec3 cell, Map map)
+        {
+            //Determines if a cell has a wall built on it
+            Building wall = null;
+            if (cell != default(IntVec3) && cell.InBounds(map))
+            {
+                List<Thing> tList = cell.GetThingList(map);
+                if(tList != null && tList.Count > 0)
+                {
+                    foreach(Thing t in tList)
+                    {
+                        if(IsWall(t))
+                        {
+                            wall = t as Building;
+                            break;
+                        }
+                    }
+                }
+            }
+            return wall;
+        }
+
+        public static List<IntVec3> GetBestPath(List<TPath> pathFinder, int index)
+        {
+            //Evaluates path structure from ending cell to start cell
+            //First evaluated path always uses full list
+            //Following paths can be branched; eliminate excess cells from those lists 
+            //by recording when the valid path branches
+            List<IntVec3> tracebackList = new List<IntVec3>();
+
+            tracebackList.Clear();
+
+            bool tracebackComplete = false;
+            int parentIndexCount = pathFinder[index].pathList.Count;
+
+            while (!tracebackComplete)
+            {
+                List<IntVec3> tmpTrace = new List<IntVec3>();
+                tmpTrace.Clear();
+                //ignore index 0 (starting point)
+                if (index != 0)
+                {
+                    for (int i = 0; i < parentIndexCount; i++)
+                    {
+                        //construct the reverse path
+                        tmpTrace.Add(pathFinder[index].pathList[i]);
+                    }
+                }
+
+                if (index == 0)
+                {
+                    //finished return path
+                    tracebackComplete = true;
+                }
+                else
+                {
+                    //construct valid reverse path from point path branches from parent
+                    tmpTrace.Reverse();
+                    tracebackList.AddRange(tmpTrace);
+                    parentIndexCount = pathFinder[index].pathParentSplitIndex;
+                    index = pathFinder[index].pathParent;
+                }
+            }
+            tracebackList.Reverse();
+            tracebackList = SnipPath(tracebackList);
+            return tracebackList;
+        }
+
+         public static List<IntVec3> SnipPath(List<IntVec3> tracebackList)
+        {
+            IntVec3 last1Cell = default(IntVec3);
+            IntVec3 last2Cell = default(IntVec3);
+            for (int i = 0; i < tracebackList.Count; i++)
+            {
+                if (i > 0)
+                {
+                    last1Cell = tracebackList[i - 1];
+                    if (i > 1)
+                    {
+                        last2Cell = tracebackList[i - 2];
+                    }
+                }
+
+                if (last1Cell != default(IntVec3) && last2Cell != default(IntVec3))
+                {
+                    if ((last2Cell - tracebackList[i]).LengthHorizontal <= (last1Cell - tracebackList[i]).LengthHorizontal)
+                    {
+                        tracebackList.Remove(last1Cell);
+                    }
+                }
+                last1Cell = default(IntVec3);
+                last2Cell = default(IntVec3);
+            }
+
+            return tracebackList;
+        }
+
+        public static List<Vector3> IntVec3List_To_Vector3List(List<IntVec3> intVecList)
+        {
+            List<Vector3> vector3List = new List<Vector3>();
+            vector3List.Clear();
+            for (int i = 0; i < intVecList.Count; i++)
+            {
+                vector3List.Add(intVecList[i].ToVector3Shifted());
+            }
+            return vector3List;
         }
     }
 }

@@ -52,31 +52,33 @@ namespace TorannMagic
                         {                            
                             newPower = true;
                         }
-                        
                         bool hasSkills = false;
                         if (current.customPower.skills != null)
                         {
                             foreach (TM_CustomSkill skill in current.customPower.skills)
                             {
-                                MagicPowerSkill mps = new MagicPowerSkill(skill.label, skill.description);
-                                mps.levelMax = skill.levelMax;
-                                mps.costToLevel = skill.costToLevel;
-                                if (!MagicPowerSkill_Custom.Any(b => b.label == mps.label) && !AllMagicPowerSkills.Any(b => b.label == mps.label))
+                                if (skill != null)
                                 {
-                                    MagicPowerSkill_Custom.Add(mps);
+                                    MagicPowerSkill mps = new MagicPowerSkill(skill.label, skill.description);
+                                    mps.levelMax = skill.levelMax;
+                                    mps.costToLevel = skill.costToLevel;
+                                    if (!MagicPowerSkill_Custom.Any(b => b.label == mps.label) && !AllMagicPowerSkills.Any(b => b.label == mps.label))
+                                    {
+                                        MagicPowerSkill_Custom.Add(mps);
+                                    }
+                                    hasSkills = true;
                                 }
-                                hasSkills = true;
                             }
                         }
                         if (newPower)
                         {
                             if (hasSkills)
                             {
-                                magicPowerCustom.Add(mp);
+                                MagicPowersCustom.Add(mp);
                             }
                             else
                             {
-                                magicPowerCustomStandalone.Add(mp);
+                                MagicPowersCustomStandalone.Add(mp);
                             }
                         }
                         if(hasSkills && current.customPower.chaosMageUseable)
@@ -3350,7 +3352,7 @@ namespace TorannMagic
                 {
                     this.magicPowerSkill_SigilSurge = new List<MagicPowerSkill>
                     {
-                        new MagicPowerSkill("TM_SigilSurge_pwr", "TM_SigilSurge_pwr_desc"), // severity boot when active
+                        new MagicPowerSkill("TM_SigilSurge_pwr", "TM_SigilSurge_pwr_desc"), // severity boost when active
                         new MagicPowerSkill("TM_SigilSurge_eff", "TM_SigilSurge_eff_desc"), // reduces mana upkeep while active
                         new MagicPowerSkill("TM_SigilSurge_ver", "TM_SigilSurge_ver_desc")  // reduces 'feedback' effects on golemancer (pain)
                     };

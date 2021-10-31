@@ -19,7 +19,7 @@ namespace TorannMagic
 			IEnumerable<BodyPartRecord> notMissingParts = from nmp in pawn.health.hediffSet.GetNotMissingParts()
 														  where nmp.coverageAbsWithChildren > nmp.coverageAbs && !nmp.IsCorePart && nmp.parent != null && nmp.depth == BodyPartDepth.Outside
 														  select nmp;
-			IEnumerable<BodyPartRecord> hediffParts = notMissingParts.Except(runeCarvedParts);
+            IEnumerable<BodyPartRecord> hediffParts = notMissingParts.Except(runeCarvedParts);
 
 			if (TM_Calc.HasRuneCarverOnMap(pawn.Faction, pawn.Map, true))
 			{
@@ -83,6 +83,14 @@ namespace TorannMagic
 				{
 					canRuneCarve = true;
 				}
+                if(surgeon.skills.GetSkill(SkillDefOf.Artistic).TotallyDisabled)
+                {
+                    canRuneCarve = false;
+                }
+                if(surgeon.skills.GetSkill(SkillDefOf.Crafting).TotallyDisabled)
+                {
+                    canRuneCarve = false;
+                }
 				if (canRuneCarve)
 				{
 					MagicPowerSkill eff = surgeon.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_RuneCarving.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_RuneCarving_eff");
@@ -105,17 +113,14 @@ namespace TorannMagic
 						), LetterDefOf.NegativeEvent, null);
 						return true;
 					}
-					else // rune carving success chance
-					{
-						float medChance = surgeon.GetStatValue(StatDefOf.MedicalSurgerySuccessChance);
-						Log.Message("surgery success chance " + medChance);
+					else // rune carving success chance is calculated by .7f * ([crafting] .75 + .025 * level) * ([artistic] .8 + .03 * level) - ([skill power] level * .05) + ([skill versatility] level * .1)
+                    // a pawn with 12 crafting, 6 art, 1 skill power, and 2 skill efficiency will have a 87.03% chance of success
+					{						
 						float runeChance = surgeon.GetStatValue(TorannMagicDefOf.TM_RuneCarvingEfficiency);
-						Log.Message("rune success chance " + runeChance);
-						float num = bill.recipe.surgerySuccessChanceFactor * medChance * runeChance;
+						float num = bill.recipe.surgerySuccessChanceFactor * runeChance;
 						int pwrVal = surgeon.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_RuneCarving.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_RuneCarving_pwr").level;
 						int verVal = surgeon.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_RuneCarving.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_RuneCarving_ver").level;
-						float successChance = num + (pwrVal * -.05f) + (verVal * .08f);
-						Log.Message("success chance " + successChance);
+						float successChance = num + (pwrVal * -.05f) + (verVal * .1f);
 						comp.Mana.CurLevel -= manaNeeded;
 						int xpGain = Mathf.RoundToInt(TorannMagicDefOf.TM_RuneCarving.manaCost * 180 * comp.xpGain);
 						comp.MagicUserXP += xpGain;
@@ -149,7 +154,7 @@ namespace TorannMagic
 					reason = "TM_NoRuneCarvingSpell".Translate();
 					Find.LetterStack.ReceiveLetter("LetterLabelRuneCarvingFail".Translate(), "LetterRuneCarvingFail".Translate(
 						surgeon.LabelCap,
-						this.recipe.defName,
+						this.recipe.label,
 						patient.Label,
 						reason,
 						surgeon.LabelShort,

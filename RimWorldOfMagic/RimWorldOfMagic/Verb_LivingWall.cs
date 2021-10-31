@@ -23,12 +23,11 @@ namespace TorannMagic
             {
                 return this.verbProps.targetParams.canTargetSelf;
             }
-            if (targ.IsValid && targ.CenterVector3.InBounds(base.CasterPawn.Map) && !targ.Cell.Fogged(base.CasterPawn.Map) && targ.Cell.Walkable(base.CasterPawn.Map))
+            if (targ.IsValid && targ.CenterVector3.InBounds(base.CasterPawn.Map) && !targ.Cell.Fogged(base.CasterPawn.Map))
             {
                 if ((root - targ.Cell).LengthHorizontal < this.verbProps.range)
                 {
-                    ShootLine shootLine;
-                    validTarg = this.TryFindShootLineFromTo(root, targ, out shootLine);
+                    return true;
                 }
                 else
                 {
@@ -49,6 +48,49 @@ namespace TorannMagic
             CompAbilityUserMagic comp = caster.TryGetComp<CompAbilityUserMagic>();
             verVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_LivingWall, "TM_LivingWall", "_ver", true);
             pwrVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_LivingWall, "TM_LivingWall", "_pwr", true);
+            if(comp != null)
+            {
+                List<Thing> tList = this.currentTarget.Cell.GetThingList(caster.Map);
+                if(tList != null && tList.Count > 0)
+                {
+                    bool wallDetected = false;
+                    foreach(Thing t in tList)
+                    {
+                        if(t.Faction == caster.Faction && TM_Calc.IsWall(t))
+                        {
+                            if(!comp.livingWall.DestroyedOrNull())
+                            {
+                                comp.livingWall.Destroy(DestroyMode.Vanish);
+                            }
+                            FleckMaker.ThrowLightningGlow(t.DrawPos, caster.Map, 1f);
+                            Thing launchedThing = new Thing()
+                            {
+                                def = TorannMagicDefOf.FlyingObject_LivingWall
+                            };
+                            Pawn casterPawn = base.CasterPawn;                            
+                            FlyingObject_LivingWall flyingObject = (FlyingObject_LivingWall)GenSpawn.Spawn(TorannMagicDefOf.FlyingObject_LivingWall, t.Position, this.CasterPawn.Map);
+                            List<Vector3> path = new List<Vector3>();
+                            Vector3 newVec = t.Position.ToVector3Shifted();
+                            path.Add(newVec);
+                            path.Add(newVec);
+                            flyingObject.ExactLaunch(null, 0, false, path, caster, newVec, t, launchedThing, 15+(3*verVal), 0);
+                            comp.livingWall = flyingObject;
+                            wallDetected = true;
+                            break;
+                        }
+                    }
+                    if(!wallDetected)
+                    {
+                        Messages.Message("TM_InvalidTarget".Translate(pawn.LabelShort, Ability.Def.label), MessageTypeDefOf.NegativeEvent);
+                        MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Living Wall: " + StringsToTranslate.AU_CastFailure, -1f);
+                    }
+                }
+                else
+                {
+                    Messages.Message("TM_InvalidTarget".Translate(pawn.LabelShort, Ability.Def.label), MessageTypeDefOf.NegativeEvent);
+                    MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Living Wall: " + StringsToTranslate.AU_CastFailure, -1f);
+                }
+            }
             
             return true;
         }

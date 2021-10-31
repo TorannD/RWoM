@@ -3,6 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using Verse;
+using RimWorld.Planet;
 
 namespace TorannMagic.Golems
 {
@@ -13,33 +14,56 @@ namespace TorannMagic.Golems
         private float needGain = 1f;
         private float needLoss = 1f;
 
-        public float maxEnergyBoost = 0f;
-        public float energyRegenBoost = 0f;
+        public float maxEnergy = 1000f;
+        public float energyEfficiency = .5f;
 
-        public float NeedLoss => needLoss - energyRegenBoost;
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look<float>(ref this.maxEnergy, "maxEnergy", 1000);
+            Scribe_Values.Look<float>(ref this.energyEfficiency, "energyEfficiency", .5f);
+        }
+
+        public float NeedLoss => needLoss - energyEfficiency;
 
         public override float MaxLevel
         {
             get
             {
-                return 1000f + maxEnergyBoost; 
+                return maxEnergy; 
             }
         }
+
+        public void AddEnergy(float amount)
+        {
+            CurLevel += (amount * energyEfficiency);
+        }
+
+        public float ActualNeedCost(float amount)
+        {
+            return amount / energyEfficiency;
+        }
+
+        public float CurEnergyPercent => Mathf.Clamp01(CurLevel / MaxLevel);
 
         public GolemEnergyCategory CurCategory
         {
             get
             {
-                bool flag = this.CurLevel < 250f;
+                bool flag = this.CurLevel < 100f;
                 GolemEnergyCategory result;
                 if (flag)
                 {
-                    result = GolemEnergyCategory.Low;
+                    result = GolemEnergyCategory.Critical;
                 }
                 else
                 {
-                    bool flag2 = this.CurLevel < 750f;
+                    bool flag2 = this.CurLevel < 250f;
                     if (flag2)
+                    {
+                        result = GolemEnergyCategory.Low;
+                    }
+                    else if(this.CurLevel < 750f)
                     {
                         result = GolemEnergyCategory.Medium;
                     }
@@ -60,6 +84,7 @@ namespace TorannMagic.Golems
 		{
             this.lastTick = -999;
             this.threshPercents = new List<float>();
+            this.threshPercents.Add((100f / this.MaxLevel));
             this.threshPercents.Add((250f / this.MaxLevel));
             this.threshPercents.Add((500f / this.MaxLevel));
             this.threshPercents.Add((750f / this.MaxLevel));
@@ -74,13 +99,28 @@ namespace TorannMagic.Golems
         {
             if(!base.IsFrozen)
             {
-                CurLevel -= NeedLoss;
+                if (InCaravan(pawn))
+                {
+                    Caravan car = pawn.ParentHolder as Caravan;
+                    if(car.NightResting)
+                    {
+                        CurLevel += ActualNeedCost(NeedLoss);
+                    }
+                    else
+                    {
+                        CurLevel -= ActualNeedCost(NeedLoss);
+                    }
+                }
+                else
+                {
+                    CurLevel -= ActualNeedCost(NeedLoss);
+                }
             }
-        }       
+        }
 
         public bool InCaravan(Pawn p)
         {
-            if(p.Map == null)
+            if (p.Map == null)
             {
                 if (p.ParentHolder.ToString().Contains("Caravan"))
                 {
@@ -93,6 +133,7 @@ namespace TorannMagic.Golems
 
     public enum GolemEnergyCategory
     {
+        Critical,
         Low,
         Medium,
         High

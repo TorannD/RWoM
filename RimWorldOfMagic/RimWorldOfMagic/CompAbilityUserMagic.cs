@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Threading;
 using RimWorld;
 using UnityEngine;
 using AbilityUser;
@@ -234,6 +235,8 @@ namespace TorannMagic
         private bool dismissLightningTrap = false;
         private bool shatterSentinel = false;
         private bool dismissGuardianSpirit = false;
+        private bool dispelLivingWall = false;
+        private bool dispelBrandings = false;
         public List<IntVec3> fertileLands = new List<IntVec3>();
         public Thing mageLightThing = null;
         public bool mageLightActive = false;
@@ -277,7 +280,11 @@ namespace TorannMagic
         public bool recallSpell = false;
         public FlyingObject_SpiritOfLight SoL = null;
         public Pawn bondedSpirit = null;
-        public List<TMDefs.Branding> brandings = new List<TMDefs.Branding>();
+        //public List<TMDefs.Branding> brandings = new List<TMDefs.Branding>();
+        public List<Pawn> brandedPawns = new List<Pawn>();
+        public bool sigilSurging = false;
+        public bool sigilDraining = false;
+        public FlyingObject_LivingWall livingWall = null;
 
         private Effecter powerEffecter = null;
         private int powerModifier = 0;
@@ -286,35 +293,64 @@ namespace TorannMagic
         public int nextEntertainTick = -1;
         public int nextSuccubusLovinTick = -1;
 
-        public List<TMDefs.Branding> Brandings
+        //public List<TMDefs.Branding> Brandings
+        //{
+        //    get
+        //    {
+        //        if (brandings == null)
+        //        {
+        //            brandings = new List<TMDefs.Branding>();
+        //            brandings.Clear();
+        //        }
+        //        List<TMDefs.Branding> tmpList = new List<TMDefs.Branding>();
+        //        tmpList.Clear();
+        //        foreach (TMDefs.Branding br in brandings)
+        //        {
+        //            Pawn p = br.pawn;
+        //            if (p.DestroyedOrNull() || p.Dead)
+        //            {
+        //                tmpList.Add(br);
+        //                continue;
+        //            }
+        //            Hediff hd = p.health?.hediffSet?.GetFirstHediffOfDef(br.hediffDef);
+        //            if(hd == null)
+        //            {
+        //                tmpList.Add(br);
+        //            }                    
+        //        }
+        //        for (int i = 0; i < tmpList.Count; i++)
+        //        {
+        //            brandings.Remove(tmpList[i]);
+        //        }
+        //        return brandings;
+        //    }
+        //}
+
+        public List<Pawn> BrandedPawns
         {
             get
             {
-                if (brandings == null)
+                if (brandedPawns == null)
                 {
-                    brandings = new List<TMDefs.Branding>();
-                    brandings.Clear();
+                    brandedPawns = new List<Pawn>();
+                    brandedPawns.Clear();
                 }
-                List<TMDefs.Branding> tmpList = new List<TMDefs.Branding>();
+                List<Pawn> tmpList = new List<Pawn>();
                 tmpList.Clear();
-                foreach (TMDefs.Branding br in brandings)
+                foreach (Pawn br in brandedPawns)
                 {
-                    Pawn p = br.pawn;
+                    Pawn p = br;
                     if (p.DestroyedOrNull() || p.Dead)
                     {
                         tmpList.Add(br);
+                        continue;
                     }
-                    Hediff hd = p.health?.hediffSet?.GetFirstHediffOfDef(br.hediffDef);
-                    if(hd == null)
-                    {
-                        tmpList.Add(br);
-                    }                    
                 }
                 for (int i = 0; i < tmpList.Count; i++)
                 {
-                    brandings.Remove(tmpList[i]);
+                    brandedPawns.Remove(tmpList[i]);
                 }
-                return brandings;
+                return brandedPawns;
             }
         }
 
@@ -1879,8 +1915,7 @@ namespace TorannMagic
                                     lastXPGain = this.age;
                                 }
                             }
-                            bool flag4 = Find.TickManager.TicksGame % 30 == 0;
-                            if (flag4)
+                            if (Find.TickManager.TicksGame % 30 == 0)
                             {
                                 bool flag5 = this.MagicUserXP > this.MagicUserXPTillNextLevel;
                                 if (flag5)
@@ -5747,7 +5782,7 @@ namespace TorannMagic
                                     if (localTarget != null && localTarget.IsValid)
                                     {
                                         Thing targetThing = localTarget.Thing;
-                                        if (!(targetThing.GetType() == mp.autocasting.GetTargetType))
+                                        if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
                                         {
                                             continue;
                                         }
@@ -5787,7 +5822,7 @@ namespace TorannMagic
                                     if (localTarget != null && localTarget.IsValid)
                                     {
                                         Pawn targetThing = localTarget.Pawn;
-                                        if (!(targetThing.GetType() == mp.autocasting.GetTargetType))
+                                        if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
                                         {
                                             continue;
                                         }
@@ -5804,7 +5839,7 @@ namespace TorannMagic
                                     if (localTarget != null && localTarget.IsValid)
                                     {
                                         IntVec3 targetThing = localTarget.Cell;
-                                        if (!(targetThing.GetType() == mp.autocasting.GetTargetType))
+                                        if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
                                         {
                                             continue;
                                         }
@@ -5833,7 +5868,7 @@ namespace TorannMagic
                                     if (localTarget != null && localTarget.IsValid)
                                     {
                                         Thing targetThing = localTarget.Thing;
-                                        if (!(targetThing.GetType() == mp.autocasting.GetTargetType))
+                                        if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
                                         {
                                             continue;
                                         }
@@ -6343,7 +6378,7 @@ namespace TorannMagic
                                     if (localTarget != null && localTarget.IsValid)
                                     {
                                         Thing targetThing = localTarget.Thing;
-                                        if (!(targetThing.GetType() == mp.autocasting.GetTargetType))
+                                        if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
                                         {
                                             continue;
                                         }
@@ -6383,7 +6418,7 @@ namespace TorannMagic
                                     if (localTarget != null && localTarget.IsValid)
                                     {
                                         Pawn targetThing = localTarget.Pawn;
-                                        if (!(targetThing.GetType() == mp.autocasting.GetTargetType))
+                                        if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
                                         {
                                             continue;
                                         }
@@ -6400,7 +6435,7 @@ namespace TorannMagic
                                     if (localTarget != null && localTarget.IsValid)
                                     {
                                         IntVec3 targetThing = localTarget.Cell;
-                                        if (!(targetThing.GetType() == mp.autocasting.GetTargetType))
+                                        if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
                                         {
                                             continue;
                                         }
@@ -6425,7 +6460,7 @@ namespace TorannMagic
                                     if (localTarget != null && localTarget.IsValid)
                                     {
                                         Thing targetThing = localTarget.Thing;
-                                        if (!(targetThing.GetType() == mp.autocasting.GetTargetType))
+                                        if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
                                         {
                                             continue;
                                         }
@@ -6786,7 +6821,7 @@ namespace TorannMagic
                                     if (localTarget != null && localTarget.IsValid)
                                     {
                                         Thing targetThing = localTarget.Thing;
-                                        if (!(targetThing.GetType() == mp.autocasting.GetTargetType))
+                                        if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
                                         {
                                             continue;
                                         }
@@ -6846,7 +6881,7 @@ namespace TorannMagic
                                     if (localTarget != null && localTarget.IsValid)
                                     {
                                         Pawn targetThing = localTarget.Pawn;
-                                        if (!(targetThing.GetType() == mp.autocasting.GetTargetType))
+                                        if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
                                         {
                                             continue;
                                         }
@@ -6863,7 +6898,7 @@ namespace TorannMagic
                                     if (localTarget != null && localTarget.IsValid)
                                     {
                                         IntVec3 targetThing = localTarget.Cell;
-                                        if (!(targetThing.GetType() == mp.autocasting.GetTargetType))
+                                        if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
                                         {
                                             continue;
                                         }
@@ -6888,7 +6923,7 @@ namespace TorannMagic
                                     if (localTarget != null && localTarget.IsValid)
                                     {
                                         Thing targetThing = localTarget.Thing;
-                                        if (!(targetThing.GetType() == mp.autocasting.GetTargetType))
+                                        if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
                                         {
                                             continue;
                                         }
@@ -7434,6 +7469,51 @@ namespace TorannMagic
 
         public void ResolveSustainers()
         {
+            if(this.BrandedPawns.Count > 0)
+            {
+                if(!this.dispelBrandings)
+                {
+                    this.AddPawnAbility(TorannMagicDefOf.TM_DispelBranding);
+                    this.dispelBrandings = true;
+                }
+                List<Pawn> tmpBrands = new List<Pawn>();
+                tmpBrands.Clear();
+                foreach(Pawn brand in this.BrandedPawns)
+                {
+                    if(brand.DestroyedOrNull() || brand.Dead)
+                    {
+                        tmpBrands.Add(brand);
+                    }
+                }
+                foreach(Pawn removeBrand in tmpBrands)
+                {
+                    BrandedPawns.Remove(removeBrand);
+                }
+                if(sigilSurging && this.Mana.CurLevel <= .01f)
+                {
+                    this.sigilSurging = false;
+                }
+            }
+            else if(dispelBrandings)
+            {
+                this.dispelBrandings = false;
+                this.RemovePawnAbility(TorannMagicDefOf.TM_DispelBranding);
+            }
+            if (this.livingWall != null)
+            {
+                if (!this.dispelLivingWall)
+                {
+                    this.dispelLivingWall = true;
+                    this.RemovePawnAbility(TorannMagicDefOf.TM_DispelLivingWall);
+                    this.AddPawnAbility(TorannMagicDefOf.TM_DispelLivingWall);
+                }
+            }
+            else if(this.dispelLivingWall)
+            {
+                this.dispelLivingWall = false;
+                this.RemovePawnAbility(TorannMagicDefOf.TM_DispelLivingWall);
+            }
+
             if (this.stoneskinPawns.Count() > 0)
             {
                 if (!this.dispelStoneskin)
@@ -7632,7 +7712,7 @@ namespace TorannMagic
                     this.mageLightThing = null;
                 }
                 this.mageLightSet = false;
-            }
+            }            
         }
 
         public void ResolveMinions()
@@ -7768,7 +7848,7 @@ namespace TorannMagic
                 {
                     this.predictionIncidentDef = null;
                     Find.Storyteller.incidentQueue.Clear();
-                    Log.Message("prediction failed to execute, clearing prediction");
+                    //Log.Message("prediction failed to execute, clearing prediction");
                 }
             }
 
@@ -8149,6 +8229,23 @@ namespace TorannMagic
                 {
                     _maxMPUpkeep += ((.2f - (.02f * heartofstone.level)) * this.summonedSentinels.Count);
                 }
+            }
+            if(this.BrandedPawns.Count > 0)
+            {
+                float brandCost = this.BrandedPawns.Count * (TorannMagicDefOf.TM_Branding.upkeepRegenCost * (1f - (TorannMagicDefOf.TM_Branding.upkeepEfficiencyPercent * this.MagicData.GetSkill_Efficiency(TorannMagicDefOf.TM_Branding).level)));
+                if(sigilSurging)
+                {
+                    brandCost *= (5f * (1f - (.1f * this.MagicData.GetSkill_Efficiency(TorannMagicDefOf.TM_SigilSurge).level)));
+                }
+                if(sigilDraining)
+                {
+                    brandCost *= (1.5f * (1f - (.2f * this.MagicData.GetSkill_Efficiency(TorannMagicDefOf.TM_SigilDrain).level)));
+                }
+                _mpRegenRateUpkeep += brandCost; 
+            }
+            if(this.livingWall != null && livingWall.Spawned)
+            {
+                _maxMPUpkeep += (TorannMagicDefOf.TM_LivingWall.upkeepEnergyCost * (1f - (TorannMagicDefOf.TM_LivingWall.upkeepEfficiencyPercent * this.MagicData.GetSkill_Efficiency(TorannMagicDefOf.TM_LivingWall).level)));
             }
             //Bonded spirit animal
             if (this.bondedSpirit != null)
@@ -8553,6 +8650,10 @@ namespace TorannMagic
             Scribe_References.Look<FlyingObject_SpiritOfLight>(ref SoL, "SoL", false);
             Scribe_Defs.Look<ThingDef>(ref this.guardianSpiritType, "guardianSpiritType");
             Scribe_References.Look<Pawn>(ref this.bondedSpirit, "bondedSpirit", false);
+            Scribe_Collections.Look<Pawn>(ref this.brandedPawns, "brandedPawns", LookMode.Reference);
+            Scribe_Values.Look<bool>(ref this.sigilSurging, "sigilSurging", false, false);
+            Scribe_Values.Look<bool>(ref this.sigilDraining, "sigilDraining", false, false);
+            Scribe_References.Look<FlyingObject_LivingWall>(ref this.livingWall, "livingWall");
             //
             Scribe_Deep.Look<MagicData>(ref this.magicData, "magicData", new object[]
             {

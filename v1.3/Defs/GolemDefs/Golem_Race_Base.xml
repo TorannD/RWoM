@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
+  <!-- MECHA GOLEM -->
   <ThingDef Name="TM_Golem_Base" Abstract="True">
     <thingClass>TorannMagic.Golems.TMPawnGolem</thingClass>
     <category>Pawn</category>
@@ -47,15 +48,15 @@
   <ThingDef ParentName="TM_Golem_Base">
     <defName>TM_MechaGolem</defName>
     <label>mecha-golem</label>
-    <description>A golem, crafted from raw material and given basic autonomy through a combination of circutry and magic.</description>
+    <description>A golem, crafted from raw material and given basic autonomy through a combination of circuitry and magic.</description>
 	<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
     <statBases>
       <MarketValue>3000</MarketValue>
-      <MoveSpeed>3.6</MoveSpeed>
+      <MoveSpeed>2.5</MoveSpeed>
       <ComfyTemperatureMin>-65</ComfyTemperatureMin>
       <ComfyTemperatureMax>54</ComfyTemperatureMax>
-	  <ArmorRating_Blunt>0.18</ArmorRating_Blunt>
-      <ArmorRating_Sharp>0.56</ArmorRating_Sharp>
+	  <ArmorRating_Blunt>0.22</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.86</ArmorRating_Sharp>
 	  <ArmorRating_Heat>1.25</ArmorRating_Heat>
       <PsychicSensitivity>0</PsychicSensitivity>
     </statBases>
@@ -137,11 +138,12 @@
       <makesFootprints>true</makesFootprints>
       <body>TM_Mecha-Golem</body>
       <baseBodySize>1</baseBodySize>
-      <baseHealthScale>1</baseHealthScale>
+      <baseHealthScale>3</baseHealthScale>
       <foodType>None</foodType>
 	  <bloodDef>Filth_MachineBits</bloodDef>
 	  <intelligence>ToolUser</intelligence>
-	  <fleshType>TM_StoneFlesh</fleshType>
+	  <fleshType>TM_MechaGolemFlesh</fleshType>
+	  <specificMeatDef>Steel</specificMeatDef>
 	  <trainability>None</trainability>
       <lifeStageAges>
         <li>
@@ -165,8 +167,9 @@
 	  </li>
     </comps>
 	<butcherProducts>
-<!--       <Steel>30</Steel>
-      <Plasteel>10</Plasteel> -->
+	  <Plasteel>100</Plasteel>
+	  <ComponentIndustrial>5</ComponentIndustrial>
+	  <ComponentSpacer>2</ComponentSpacer>
     </butcherProducts>
   </ThingDef>
   
@@ -195,10 +198,367 @@
     <label>mecha-golem</label>
 	<voxPitch>.1</voxPitch>
 	<bodySizeFactor>1.0</bodySizeFactor>
-	<foodMaxFactor>1</foodMaxFactor>
 	<healthScaleFactor>1</healthScaleFactor>
+	<marketValueFactor>1</marketValueFactor>
     <statFactors>
       <MoveSpeed>1.0</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  
+  <LifeStageDef>
+    <defName>TM_MechaGolemLS_FS1</defName>
+    <label>flame shard mecha-golem</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1.15</healthScaleFactor>
+	<marketValueFactor>1.1</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.15</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>TM_MechaGolemLS_FS2</defName>
+    <label>flame shard mecha-golem</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1.3</healthScaleFactor>
+	<marketValueFactor>1.2</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.3</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>TM_MechaGolemLS_FS3</defName>
+    <label>flame shard mecha-golem</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1.4</healthScaleFactor>
+	<marketValueFactor>1.3</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.4</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  
+  <LifeStageDef>
+    <defName>TM_MechaGolemLS_WS1</defName>
+    <label>water shard mecha-golem</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1.3</healthScaleFactor>
+	<marketValueFactor>1.1</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.1</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>TM_MechaGolemLS_WS2</defName>
+    <label>water shard mecha-golem</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1.5</healthScaleFactor>
+	<marketValueFactor>1.2</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.15</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>TM_MechaGolemLS_WS3</defName>
+    <label>water shard mecha-golem</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1.7</healthScaleFactor>
+	<marketValueFactor>1.3</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.2</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  
+  <LifeStageDef>
+    <defName>TM_MechaGolemLS_ES1</defName>
+    <label>earth shard mecha-golem</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1.4</healthScaleFactor>
+	<marketValueFactor>1.1</marketValueFactor>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>TM_MechaGolemLS_ES2</defName>
+    <label>earth shard mecha-golem</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1.8</healthScaleFactor>
+	<marketValueFactor>1.2</marketValueFactor>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>TM_MechaGolemLS_ES3</defName>
+    <label>earth shard mecha-golem</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>2.2</healthScaleFactor>
+	<marketValueFactor>1.3</marketValueFactor>
+  </LifeStageDef>
+  
+  <LifeStageDef>
+    <defName>TM_MechaGolemLS_LS1</defName>
+    <label>lightning shard mecha-golem</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1</healthScaleFactor>
+	<marketValueFactor>1.1</marketValueFactor>
+	<statFactors>
+      <MoveSpeed>1.25</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>TM_MechaGolemLS_LS2</defName>
+    <label>lightning shard mecha-golem</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1</healthScaleFactor>
+	<marketValueFactor>1.2</marketValueFactor>
+  </LifeStageDef>
+  <statFactors>
+      <MoveSpeed>1.5</MoveSpeed>
+    </statFactors>
+  <LifeStageDef>
+    <defName>TM_MechaGolemLS_LS3</defName>
+    <label>lightning shard mecha-golem</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1</healthScaleFactor>
+	<marketValueFactor>1.3</marketValueFactor>
+	<statFactors>
+      <MoveSpeed>1.75</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  
+  <!-- FLESH GOLEM -->
+  <ThingDef ParentName="TM_Golem_Base">
+    <defName>TM_FleshGolem</defName>
+    <label>flesh golem</label>
+    <description>A golem crafted from the flesh, bones and organs of other beings and given basic autonomy through a combination of bioengineering and magic.</description>
+	<soundImpactDefault>BulletImpact_Flesh</soundImpactDefault>
+    <statBases>
+      <MarketValue>2700</MarketValue>
+      <MoveSpeed>2.8</MoveSpeed>
+      <ComfyTemperatureMin>-50</ComfyTemperatureMin>
+      <ComfyTemperatureMax>40</ComfyTemperatureMax>
+	  <ArmorRating_Blunt>0.96</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.44</ArmorRating_Sharp>
+	  <ArmorRating_Heat>0.5</ArmorRating_Heat>
+      <PsychicSensitivity>1</PsychicSensitivity>
+    </statBases>
+    <tools>
+      <li>
+        <label>gore</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>32.2</power>
+        <cooldownTime>4</cooldownTime>
+        <linkedBodyPartsGroup>Flesh_Horns</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>14</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+		<chanceFactor>0.07</chanceFactor>
+        <soundMeleeHit>Pawn_Melee_HumanBite_Hit</soundMeleeHit>
+        <soundMeleeMiss>Pawn_Melee_HumanBite_Miss</soundMeleeMiss>
+      </li>
+	  <li>
+        <label>tusks</label>
+        <capacities>
+          <li>Bite</li>
+		  <li>Cut</li>
+        </capacities>
+        <power>28</power>
+        <cooldownTime>1.5</cooldownTime>
+        <linkedBodyPartsGroup>Flesh_Horns</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>18</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+		<chanceFactor>0.33</chanceFactor>
+        <soundMeleeHit>Pawn_Melee_HumanBite_Hit</soundMeleeHit>
+        <soundMeleeMiss>Pawn_Melee_HumanBite_Miss</soundMeleeMiss>
+      </li>
+      <li>
+        <label>left fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>12.0</power>
+        <cooldownTime>1.6</cooldownTime>
+        <linkedBodyPartsGroup>Flesh_Arms</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+	  <li>
+        <label>left guard</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>18.0</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Flesh_LeftArm_Brace</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+	  <li>
+        <label>left cleaver</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>24.0</power>
+		<armorPenetration>.4</armorPenetration>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Flesh_LeftArm_Cleaver</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+	  <li>
+        <label>right fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>12.0</power>
+        <cooldownTime>1.6</cooldownTime>
+        <linkedBodyPartsGroup>Flesh_Arms</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+	  <li>
+        <label>right guard</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>18.0</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Flesh_RightArm_Brace</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+	  <li>
+        <label>right cleaver</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>24.0</power>
+		<armorPenetration>.4</armorPenetration>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Flesh_RightArm_Cleaver</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>	  
+    </tools>
+    <race>
+      <thinkTreeMain>TM_GolemMain</thinkTreeMain>
+      <thinkTreeConstant>TM_GolemConstant</thinkTreeConstant>      
+      <makesFootprints>true</makesFootprints>
+      <body>TM_FleshGolem</body>
+      <baseBodySize>1</baseBodySize>
+      <baseHealthScale>2.2</baseHealthScale>
+      <foodType>None</foodType>
+	  <bloodDef>Filth_CorpseBile</bloodDef>
+	  <intelligence>ToolUser</intelligence>
+	  <fleshType>TM_Golem_Flesh</fleshType>
+	  <useMeatFrom>Human</useMeatFrom>
+	  <trainability>None</trainability>
+      <lifeStageAges>
+        <li>
+          <def>TM_FleshGolemLS</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+      <soundMeleeDodge>Pawn_MeleeDodge</soundMeleeDodge>
+      <specialShadowData>
+        <volume>(0.4, 0.8, 0.6)</volume>
+        <offset>(0,0,-0.3)</offset>
+      </specialShadowData>
+    </race>
+	<comps>
+	  <li Class="TorannMagic.Golems.CompProperties_Golem">
+	  </li>
+    </comps>
+	<ingredient>
+      <mergeCompatibilityTags>
+        <li>HumanMeat</li>
+      </mergeCompatibilityTags>
+    </ingredient>
+  </ThingDef>
+  
+  <PawnKindDef Name="TM_FleshGolemKind" ParentName="TM_GolemKind_Base">
+  	<defName>TM_FleshGolemK</defName>
+    <race>TM_FleshGolem</race>
+    <label>flesh-golem</label>
+    <combatPower>400</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Golems/Flesh/Flesh</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>4</drawSize>
+          <shadowData>
+            <volume>(0.4, 0.8, 0.6)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+  
+  <LifeStageDef>
+    <defName>TM_FleshGolemLS</defName>
+    <label>flesh golem</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1</healthScaleFactor>
+	<marketValueFactor>1</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.0</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  
+  <LifeStageDef>
+    <defName>TM_FleshGolemLS1</defName>
+    <label>flesh golem</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1.3</healthScaleFactor>
+	<marketValueFactor>1.2</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.2</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>TM_FleshGolemLS2</defName>
+    <label>flesh golem</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1.5</healthScaleFactor>
+	<marketValueFactor>1.35</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.35</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>TM_FleshGolemLS3</defName>
+    <label>flesh golem</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1.7</healthScaleFactor>
+	<marketValueFactor>1.5</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.5</MoveSpeed>
     </statFactors>
   </LifeStageDef>
   

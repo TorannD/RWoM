@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
+  <ThingDef Name="TM_UnfinishedGolemBase" Abstract="True">
+    <thingClass>TorannMagic.Golems.UnfinishedNoProductThing</thingClass>
+    <label>unfinished golem thing</label>
+    <description>An unfinished upgrade for a golem.</description>
+	<stuffCategories Inherit="false" />
+  </ThingDef>
+
+
   <ThingDef Name="TM_GolemBuildingBase" ParentName="TM_BuildingBase" Abstract="True">
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
     <passability>PassThroughOnly</passability>
@@ -67,7 +75,9 @@
   <ThingDef ParentName="TM_GolemBuildingBase">
     <defName>TM_MechaGolem_Workstation</defName>
     <label>dormant mecha-golem</label>
-    <description>A dormant mecha-golem. While dormant, the golem may be modified or upgraded. The mecha-golem recharges energy slowly on its own but access to power sources will increaase the recharge speed.</description>
+    <description>A dormant mecha-golem. Mecha golem design combines industrial engineering with magical attributes to bring to life a robotic construct. This golem can tap into existing power grids to speed charge rate. In addition to basic tasks such as hauling and cleaning, the mecha golem can be equipped with a mining laser to rapidly drill through mine-able rock. Mecha golems combine both industrial and simple weaponry and armor into its arsenal.
+	
+While dormant, the golem may be modified or upgraded. The mecha-golem recharges energy slowly on its own but access to power sources will increase the recharge speed. The golem may also provide energy to an electrical grid when there is an electrical deficit.</description>
     <castEdgeShadows>true</castEdgeShadows>
     <graphicData>
       <texPath>Golems/Mecha/Mecha-Golem_Workstation</texPath>
@@ -80,28 +90,35 @@
     <statBases>
       <MaxHitPoints>1000</MaxHitPoints>  <!--edit build costs-->
       <Mass>200</Mass>
-      <Beauty>5</Beauty>
-      <WorkToMake>300</WorkToMake>
+      <Beauty>2</Beauty>
+      <WorkToMake>20000</WorkToMake>
     </statBases>
 	<recipeMaker>
       <unfinishedThingDef>TM_UnfinishedMechaGolem</unfinishedThingDef>
       <recipeUsers>
         <li>TableMachining</li>
-	  </recipeUsers>      
+	  </recipeUsers>    
+	  <researchPrerequisite>TM_MechaGolemRD</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>6</Crafting>
+      </skillRequirements>	  
     </recipeMaker>
 	<costList>
-	  <Steel>10</Steel>
-	  <ComponentIndustrial>1</ComponentIndustrial>
+	  <Steel>150</Steel>
+	  <Plasteel>150</Plasteel>
+	  <ComponentIndustrial>10</ComponentIndustrial>
+	  <ComponentSpacer>4</ComponentSpacer>
     </costList>
 	<comps>
       <li Class="TorannMagic.Golems.CompProperties_GolemEnergyHandler">
-        <storedEnergyMax>1000</storedEnergyMax>
-		<storedEnergyMaxUpgradeIncrease>500</storedEnergyMaxUpgradeIncrease>
-		<storedEnergyMaxUpgrades>3</storedEnergyMaxUpgrades>
+        <storedEnergyMax>1200</storedEnergyMax>
+		<storedEnergyMaxUpgradeIncrease>600</storedEnergyMaxUpgradeIncrease>
+		<storedEnergyMaxUpgrades>5</storedEnergyMaxUpgrades>
         <conversionEfficiency>0.5</conversionEfficiency>
 		<conversionEfficiencyUpgradeIncrease>.1</conversionEfficiencyUpgradeIncrease>
-		<conversionEfficiencyMaxUpgrades>3</conversionEfficiencyMaxUpgrades>
+		<conversionEfficiencyMaxUpgrades>5</conversionEfficiencyMaxUpgrades>
 		<selfChargePerHour>50</selfChargePerHour>
+		<selfChargeUpgradeFactor>.2</selfChargeUpgradeFactor>
         <shortCircuitInRain>false</shortCircuitInRain>
         <transmitsPower>true</transmitsPower>
 		<electricalConverter>true</electricalConverter>
@@ -110,8 +127,8 @@
       <li Class="CompProperties_Flickable"/>
     </comps>
   </ThingDef>
-
-  <ThingDef ParentName="UnfinishedBase">
+  
+  <ThingDef ParentName="TM_UnfinishedGolemBase">
     <defName>TM_UnfinishedMechaGolem</defName>
     <label>unfinished mecha-golem</label>
     <description>An unfinished mecha-golem.</description>
@@ -125,5 +142,103 @@
     </graphicData>
 	<stuffCategories Inherit="false" />
   </ThingDef>
+  
+  <ThingDef ParentName="TM_UnfinishedGolemBase">
+    <defName>TM_UnfinishedMechaGolemUpgrade</defName>
+    <label>unfinished mecha-golem upgrade</label>
+    <description>An unfinished mecha-golem upgrade.</description>
+	<statBases>
+      <Flammability>0.2</Flammability>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Item/Unfinished/UnfinishedHealthItem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>	
+	  <drawSize>(1,1)</drawSize>	  
+    </graphicData>
+	<stuffCategories Inherit="false" />
+  </ThingDef>
+  
+  <ThingDef ParentName="TM_GolemBuildingBase">
+    <defName>TM_FleshGolem_Workstation</defName>
+    <label>dormant flesh golem</label>
+    <description>A dormant flesh golem. Flehs golems are a bipedal-like mass of organic matter, mostly comprised of body parts from deceased creatures. The flesh golem is a fearsome combatant with a variety of attacks and abilities that further increase its lethality. In addition to basic tasks such as hauling and cleaning, the flehs golem is able to use attached cleavers to harvest trees or plants. 
+	
+While dormant, the golem may be modified or upgraded. The flesh golem recharges energy slowly on its own but supplying it with fresh meat will increase the recharge speed.</description>
+    <castEdgeShadows>true</castEdgeShadows>
+    <graphicData>
+      <texPath>Golems/Flesh/FleshGolem_Workstation</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+	  <shaderType>CutoutComplex</shaderType>
+      <drawSize>(4,4)</drawSize>
+    </graphicData>
+    <fillPercent>0.5</fillPercent>
+    <rotatable>true</rotatable>
+    <statBases>
+      <MaxHitPoints>1200</MaxHitPoints>  <!--edit build costs-->
+      <Mass>200</Mass>
+      <Beauty>0</Beauty>
+      <WorkToMake>16000</WorkToMake>
+    </statBases>
+	<recipeMaker>
+      <unfinishedThingDef>TM_UnfinishedFleshGolem</unfinishedThingDef>
+      <recipeUsers>
+        <li>TableButcher</li>
+	  </recipeUsers>
+	  <researchPrerequisite>TM_FleshGolemRD</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>	        
+    </recipeMaker>
+	<costList>
+	  <Meat_Human>450</Meat_Human>
+    </costList>
+	<comps>
+      <li Class="TorannMagic.Golems.CompProperties_GolemEnergyHandler">
+        <storedEnergyMax>800</storedEnergyMax>
+		<storedEnergyMaxUpgradeIncrease>400</storedEnergyMaxUpgradeIncrease>
+		<storedEnergyMaxUpgrades>5</storedEnergyMaxUpgrades>
+        <conversionEfficiency>0.5</conversionEfficiency>
+		<conversionEfficiencyUpgradeIncrease>.1</conversionEfficiencyUpgradeIncrease>
+		<conversionEfficiencyMaxUpgrades>5</conversionEfficiencyMaxUpgrades>
+		<selfChargePerHour>100</selfChargePerHour>
+		<selfChargeUpgradeFactor>.2</selfChargeUpgradeFactor>
+        <shortCircuitInRain>false</shortCircuitInRain>
+        <transmitsPower>false</transmitsPower>
+		<electricalConverter>false</electricalConverter>
+		<energyColor>(.6, .1, 0)</energyColor>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="TM_UnfinishedGolemBase">
+    <defName>TM_UnfinishedFleshGolem</defName>
+    <label>unfinished flesh golem</label>
+    <description>An unfinished flesh golem.</description>
+	<statBases>
+      <Flammability>0.8</Flammability>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Item/Unfinished/UnfinishedSculpture</texPath>
+      <graphicClass>Graphic_Single</graphicClass>	
+	  <drawSize>(1,1)</drawSize>	  
+    </graphicData>
+	<stuffCategories Inherit="false" />
+  </ThingDef>
+  
+  <ThingDef ParentName="TM_UnfinishedGolemBase">
+    <defName>TM_UnfinishedFleshGolemUpgrade</defName>
+    <label>unfinished flesh golem upgrade</label>
+    <description>An unfinished flesh golem upgrade.</description>
+	<statBases>
+      <Flammability>0.8</Flammability>
+    </statBases>
+    <graphicData>
+      <texPath>Golems/Flesh/Flesh_Meat</texPath>
+      <graphicClass>Graphic_Single</graphicClass>	
+	  <drawSize>(1,1)</drawSize>	  
+    </graphicData>
+	<stuffCategories Inherit="false" />
+  </ThingDef>  
   
 </Defs>

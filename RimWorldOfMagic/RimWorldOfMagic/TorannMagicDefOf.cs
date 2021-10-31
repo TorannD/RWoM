@@ -117,6 +117,7 @@ namespace TorannMagic
         public static ThingDef SpellOf_GuardianSpirit;
         public static ThingDef SpellOf_ShieldOther;
         public static ThingDef SpellOf_Discord;
+        public static ThingDef SpellOf_BrandSiphon;
         public static ThingDef SpellOf_LivingWall;
 
         public static ThingDef SkillOf_Sprint;
@@ -708,22 +709,34 @@ namespace TorannMagic
         public static TraitDef TM_Golemancer;
 
         public static TMAbilityDef TM_Golemancy;
+        public static HediffDef TM_GolemancyVersatilityHD;
+        public static HediffDef TM_GolemancyPowerHD;
+        public static HediffDef TM_GolemancyEfficiencyHD;
         public static TMAbilityDef TM_RuneCarving;
         public static HediffDef TM_RuneCarvedPartHD;
         public static StatDef TM_RuneCarvingEfficiency;
         public static EffecterDef TM_RuneCarving_EffecterED;
         public static RecipeDef TM_RuneCarveBodyPart;
         public static TMAbilityDef TM_Branding;
-        //public static HediffDef TM_SiphonBrandHD;
-        //public static HediffDef TM_FitnessBrandHD;
-        //public static HediffDef TM_HealthBrandHD;
-        //public static HediffDef TM_EmotionBrandHD;
-        //public static HediffDef TM_VitalityBrandHD;
-        //public static HediffDef TM_ProtectionBrandHD;
-        //public static HediffDef TM_AwarenessBrandHD;
+        public static TMAbilityDef TM_SiphonBrand;
+        public static TMAbilityDef TM_DispelBranding;
+        public static HediffDef TM_SiphonBrandHD;
+        public static TMAbilityDef TM_FitnessBrand;
+        public static HediffDef TM_FitnessBrandHD;
+        public static TMAbilityDef TM_EmotionBrand;
+        public static HediffDef TM_EmotionBrandHD;
+        public static TMAbilityDef TM_VitalityBrand;
+        public static HediffDef TM_VitalityBrandHD;
+        public static TMAbilityDef TM_ProtectionBrand;
+        public static HediffDef TM_ProtectionBrandHD;
+        public static TMAbilityDef TM_AwarenessBrand;
+        public static HediffDef TM_AwarenessBrandHD;
         public static TMAbilityDef TM_SigilSurge;
         public static TMAbilityDef TM_SigilDrain;
+        public static HediffDef TM_SigilPainHD;
         public static TMAbilityDef TM_LivingWall;
+        public static ThingDef FlyingObject_LivingWall;
+        public static TMAbilityDef TM_DispelLivingWall;
 
         //Shadow
         public static TraitDef TM_TheShadow;
@@ -1150,6 +1163,7 @@ namespace TorannMagic
         public static ThingDef Mote_Holy;
         public static ThingDef Mote_LightBarrier;
         public static ThingDef Mote_DirectionalDirt;
+        public static ThingDef Mote_DirectionalDirtOverhead;
         public static ThingDef Mote_ExpandingFlame;
         public static ThingDef Mote_Hex;
         public static ThingDef Mote_BlackSmoke;
@@ -1165,6 +1179,8 @@ namespace TorannMagic
         public static ThingDef Mote_BlueSpireW;
         public static ThingDef Mote_BlueSwirl;
         public static ThingDef Mote_ManaVortex;
+        public static ThingDef Mote_GlowingRuneA;
+        public static ThingDef Mote_WallSpike;
 
         public static ThingDef Projectile_FogOfTorment;        
 
@@ -1197,7 +1213,7 @@ namespace TorannMagic
         public static EffecterDef TM_SmallMagicCircleED;
         public static EffecterDef TM_LightBurstED;
         public static EffecterDef TM_RageWaveED;
-        public static EffecterDef TM_ExplosionED;
+        public static EffecterDef TM_ExplosionED;        
 
         //psychast copies, used with tm_motemaker.makeoverlay
         //adjusts def values on each cast
@@ -1239,6 +1255,10 @@ namespace TorannMagic
         public static JobDef JobDriver_GotoAndCast;
         public static JobDef JobDriver_Discord;
         public static JobDef JobDriver_GolemDespawn;
+        public static JobDef JobDriver_MechaMine;
+        public static JobDef JobDriver_FleshHarvest;
+        public static JobDef JobDriver_FleshChop;
+        public static JobDef JobDriver_GolemSelfTend;
 
         //Things
         public static ThingDef RawMagicyte;
@@ -1343,7 +1363,6 @@ namespace TorannMagic
 
         //NeedDefs
         public static NeedDef TM_Travel;
-        public static NeedDef TM_GolemEnergy;
 
         //Stats
         public static StatDef ArmorRating_Alignment;        
@@ -1399,6 +1418,11 @@ namespace TorannMagic
         public static ThingDef TM_MechaGolem;
         public static PawnKindDef TM_MechaGolemK;
         public static ThingDef TM_MechaGolem_Workstation;
+        public static HediffDef TM_GolemHD;
+        public static HediffDef TM_BullChargeHD;
+        public static HediffDef TM_FleshGolem_BracerGuardHD;
+        public static NeedDef TM_GolemEnergy;
+        public static NeedDef TM_GolemRage;
         //public static TMDefs.TM_GolemAbility TM_Golem_GatlingCannon;
 
     }

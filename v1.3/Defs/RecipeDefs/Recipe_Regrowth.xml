@@ -88,7 +88,7 @@
 		<description>Use druidic powers to regrow body parts.</description>
 		<workerClass>TorannMagic.Recipe_RegrowUniversalBodyPart</workerClass>
 		<jobString>Regrowing body part.</jobString>
-		<workAmount>750</workAmount>
+		<workAmount>2000</workAmount>
 		<dontShowIfAnyIngredientMissing>true</dontShowIfAnyIngredientMissing>
 		<ingredients>
 			<li>

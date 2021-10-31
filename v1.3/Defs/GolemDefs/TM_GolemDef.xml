@@ -1,49 +1,78 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
- 
 <Defs>
 
-	<TorannMagic.TM_GolemDef Name="Golem_List">
-		<defName>TM_Golems</defName>
-		<golems>		
-		  <li>
-			<golemDef>TM_MechaGolem</golemDef>
-			<golemKindDef>TM_MechaGolemK</golemKindDef>
-			<golemWorkstationDef>TM_MechaGolem_Workstation</golemWorkstationDef>
-			<needs>
-			  <li>TM_GolemEnergy</li>
-			</needs>
-			<upgrades>
-			  <li>
-			    <name>max energy</name>
-				<recipe>TM_Mecha-Golem_EnergyCell</recipe>
-				<bodypart>Mecha_Core</bodypart>
-				<partRequiresUpgrade>false</partRequiresUpgrade>
-				<hediff>TM_Mecha-Golem_EnergyUpgradeHD</hediff>
-				<maxLevel>3</maxLevel>
-				<workstationCapacity>EnergyMax</workstationCapacity>
-			  </li>
-			  <li>
-			    <name>mecha-axe</name>
-				<recipe>TM_Mecha-Golem_Axe</recipe>
-				<bodypart>Mecha_LeftArm_Axe</bodypart>
-				<partRequiresUpgrade>true</partRequiresUpgrade>
-				<maxLevel>1</maxLevel>
-			  </li>
-<!-- 			  <li>
-			    <name>mounted gatling cannon</name>
-				<recipe>TM_Mecha-Golem_GatlingCannonMount</recipe>
-				<bodypart>Mecha_RightShoulder</bodypart>
-				<partRequiresUpgrade>false</partRequiresUpgrade>
-				<hediff>TM_Mecha-Golem_GatlingCannonHD</hediff>
-				<ability>TM_Golem_GatlingCannon</ability>
-				<maxLevel>1</maxLevel>
-				<workstationCapacity>EnergyMax</workstationCapacity>
-			  </li> -->
-			</upgrades>
-		  </li>	
-		</golems>			
-	</TorannMagic.TM_GolemDef>		
+	<TorannMagic.TMDefs.TM_GolemDef Name="TM_MechaGolem">
+		<defName>TM_Golem_Mecha</defName>
+		<golemDef>TM_MechaGolem</golemDef>
+		<golemKindDef>TM_MechaGolemK</golemKindDef>
+		<golemWorkstationDef>TM_MechaGolem_Workstation</golemWorkstationDef>
+		<activationTicks>240</activationTicks>
+		<processorEvaluationTicks>100</processorEvaluationTicks>
+		<needs>
+		  <li>TM_GolemEnergy</li>
+		</needs>
+		<hediffs>
+		  <li>TM_GolemHD</li>
+		</hediffs>
+		<upgrades>
+		  <li>TM_Golem_MechaRepair</li>
+		  <li>TM_Golem_MechaMaxEnergy</li>
+		  <li>TM_Golem_MechaEnergyEfficiency</li>
+		  <li>TM_Golem_MechaEnergyRate</li>
+		  <li>TM_Golem_MechaExtinguisher</li>
+		  <li>TM_Golem_MechaBallisticPlate</li>
+		  <li>TM_Golem_MechaAxe</li>
+		  <li>TM_Golem_MechaSword</li>
+		  <li>TM_Golem_MechaHammer</li>
+		  <li>TM_Golem_MechaGatlingCannon</li>
+		  <li>TM_Golem_MechaMiningLaser</li>
+		  <li>TM_Golem_MechaFlameCore</li>
+		  <li>TM_Golem_MechaWaterCore</li>
+		  <li>TM_Golem_MechaEarthCore</li>
+		  <li>TM_Golem_MechaLightningCore</li>
+		  <li>TM_Golem_MechaFlameShard</li>
+		  <li>TM_Golem_MechaWaterShard</li>
+		  <li>TM_Golem_MechaEarthShard</li>
+		  <li>TM_Golem_MechaLightningShard</li>
+		</upgrades>			
+	</TorannMagic.TMDefs.TM_GolemDef>
+
+	<TorannMagic.TMDefs.TM_GolemDef Name="TM_FleshGolem">
+		<defName>TM_Golem_Flesh</defName>
+		<golemDef>TM_FleshGolem</golemDef>
+		<golemKindDef>TM_FleshGolemK</golemKindDef>
+		<golemWorkstationDef>TM_FleshGolem_Workstation</golemWorkstationDef>
+		<activationTicks>180</activationTicks>
+		<processorEvaluationTicks>60</processorEvaluationTicks>
+		<needs>
+		  <li>TM_GolemEnergy</li>
+		  <li>TM_GolemRage</li>
+		</needs>
+		<hediffs>
+		  <li>TM_GolemHD</li>
+		</hediffs>
+		<upgrades>
+		  <li>TM_Golem_FleshRestore</li>
+		  <li>TM_Golem_FleshMaxEnergy</li>
+		  <li>TM_Golem_FleshEnergyEfficiency</li>
+		  <li>TM_Golem_FleshEnergyRate</li>
+		  <li>TM_Golem_FleshLifeStage</li>
+		  <li>TM_Golem_Flesh_LeftArmBrace</li>
+		  <li>TM_Golem_Flesh_RightArmBrace</li>
+		  <li>TM_Golem_Flesh_LeftArmCleaver</li>
+		  <li>TM_Golem_Flesh_RightArmCleaver</li>
+		  <li>TM_Golem_Flesh_Tusks</li>
+		  <li>TM_Golem_Flesh_Horns</li>
+		  <li>TM_Golem_Flesh_Wings</li>
+		  <li>TM_Golem_Flesh_EyesT1</li>
+		  <li>TM_Golem_Flesh_EyesT2</li>
+		  <li>TM_Golem_Flesh_SkullPlate</li>
+		  <li>TM_Golem_Flesh_ShoulderPlates</li>
+		  <li>TM_Golem_Flesh_ChestCage</li>
+		  <li>TM_Golem_Flesh_SpineGuard</li>
+		  <li>TM_Golem_Flesh_LegPlates</li>
+		</upgrades>			
+	</TorannMagic.TMDefs.TM_GolemDef>	
 
 </Defs>
-	
