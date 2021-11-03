@@ -345,6 +345,18 @@ namespace TorannMagic
         //    }
         //}
 
+        [HarmonyPatch(typeof(PawnGraphicSet), "ResolveAllGraphics", null)]
+        public class SkeletonSkull_Patch
+        {
+            private static void Postfix(ref PawnGraphicSet __instance)
+            {
+                if (__instance.pawn.RaceProps.Humanlike)
+                {
+                    __instance.skullGraphic = SkullDatabase.GetSkullFor(__instance.pawn.gender, __instance.pawn.story.crownType);
+                }
+            }
+        }
+
         [HarmonyPatch(typeof(FloatMenuMakerMap), "AddUndraftedOrders", null)]
         public class GolemUndraftedOrder_Patch
         {
