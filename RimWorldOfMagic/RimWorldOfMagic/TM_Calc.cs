@@ -1435,9 +1435,9 @@ namespace TorannMagic
             {
                 targetPawn = mapPawns[i];
                 if (targetPawn != null && !targetPawn.Dead && !targetPawn.Destroyed)
-                {
+                {                    
                     if (faction != null && !sameFaction)
-                    {
+                    {                        
                         if ((targetPawn.Position - center).LengthHorizontal <= radius)
                         {
                             if (targetPawn.Faction != null)
@@ -1464,10 +1464,13 @@ namespace TorannMagic
                         }
                     }
                     else if(faction != null && sameFaction)
-                    {
+                    {                        
                         if (targetPawn.Faction != null && targetPawn.Faction == faction && (targetPawn.Position - center).LengthHorizontal <= radius)
                         {
-                            pawnList.Add(targetPawn);
+                            if (!targetPawn.IsQuestLodger() && !targetPawn.IsQuestHelper())
+                            {
+                                pawnList.Add(targetPawn);
+                            } 
                             targetPawn = null;
                         }
                         else

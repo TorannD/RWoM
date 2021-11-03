@@ -2765,15 +2765,15 @@ namespace TorannMagic
             {
                 if (__instance != null)
                 {
-                    if ( __instance.health != null && (__instance.health.hediffSet.HasHediff(TorannMagicDefOf.TM_UndeadHD) || __instance.health.hediffSet.HasHediff(TorannMagicDefOf.TM_UndeadAnimalHD)))
+                    if ( __instance.health != null && __instance.Faction != null && (__instance.health.hediffSet.HasHediff(TorannMagicDefOf.TM_UndeadHD) || __instance.health.hediffSet.HasHediff(TorannMagicDefOf.TM_UndeadAnimalHD)))
                     {
                         __instance.SetFaction(null, null);
                     }
-                    if (__instance.RaceProps != null && __instance.RaceProps.DeathActionWorker.GetType() == typeof(DeathWorker_Poppi))
+                    if (__instance.RaceProps != null && __instance.Faction != null && __instance.RaceProps.DeathActionWorker.GetType() == typeof(DeathWorker_Poppi))
                     {
                         __instance.SetFaction(null, null);
                     }
-                    if(__instance.def.thingClass == typeof(TMPawnSummoned))
+                    if(__instance.def.thingClass == typeof(TMPawnSummoned) && __instance.Faction != null)
                     {
                         __instance.SetFaction(null, null);
                     }

@@ -129,23 +129,19 @@ namespace TorannMagic
                     necroValid = true;
                     lichStrike = 0;
 
-                    if (ModsConfig.IdeologyActive && !this.Pawn.Downed)
+                    if (ModsConfig.IdeologyActive && !this.Pawn.Downed && this.Pawn.guest != null)
                     {
                         TM_Action.TryCopyIdeo(linkedPawn, this.Pawn);
-                        if (this.Pawn.guest?.GuestStatus != GuestStatus.Slave)
+                        if (this.Pawn.guest.GuestStatus != GuestStatus.Slave)
                         {
                             this.Pawn.guest.SetGuestStatus(linkedPawn.Faction, GuestStatus.Slave);
                         }
-                    }
-                    if(base.Pawn.Faction != linkedPawn.Faction)
-                    {
-                        base.Pawn.Kill(null, null);
-                    }
+                    }                    
                 }
                 else
                 {
                     lichStrike++;
-                }
+                }                
                 if (!necroValid && lichStrike > 2)
                 {
                     if (base.Pawn.Map != null)

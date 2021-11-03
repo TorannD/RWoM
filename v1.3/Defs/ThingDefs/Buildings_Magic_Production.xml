@@ -346,6 +346,9 @@ Arcalleum: success chance +15%, refunds 25% of mana cost
       <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
 	  <expandHomeArea>true</expandHomeArea>
       <hasFuelingPort>false</hasFuelingPort>
+	  <buildingTags>
+        <li>RitualFocus</li>
+      </buildingTags>
     </building>
     <comps>
 	  <li Class="CompProperties_Refuelable">

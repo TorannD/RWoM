@@ -32,7 +32,7 @@
     <classicExtra>true</classicExtra>
   </PreceptDef> 
 
-  <PreceptDef ParentName="TM_PreceptRoleSingleBase">
+  <PreceptDef MayRequire="Ludeon.RimWorld.Ideology" ParentName="PreceptRoleSingleBase">
     <defName>TM_IdeoRole_VoidSeeker</defName>
 	<issue>TM_MageOpinion</issue>
     <label>Void seeker</label>
@@ -143,9 +143,9 @@
     </grantedAbilities>
     <roleRequiredWorkTags><li>Social</li></roleRequiredWorkTags>
     <roleTags><li>Voidseeker</li></roleTags>
-	<requiredMemes>
+<!-- 	<requiredMemes>
       <li>TM_Transcendent</li>
-    </requiredMemes>
+    </requiredMemes> -->
   </PreceptDef>
   
   <RulePackDef>

@@ -1219,5 +1219,23 @@ namespace TorannMagic
                 Thing thing = TM_Action.SingleSpawnLoop(caster, spawnables, position, caster.Map, duration, temporary, hostile, caster.Faction);                
             }
         }
+
+        public override IEnumerable<Gizmo> GetGizmos()
+        {
+            List<Gizmo> gizmoList = base.GetGizmos().ToList();
+            Command command = BuildCopyCommandUtility.BuildCopyCommand(def, base.Stuff);
+            if (command != null)
+            {
+                gizmoList.Add((Gizmo)command);
+            }
+            if (base.Faction == Faction.OfPlayer)
+            {
+                foreach (Command item in BuildRelatedCommandUtility.RelatedBuildCommands(def))
+                {
+                    gizmoList.Add((Gizmo)item);
+                }
+            }
+            return gizmoList;
+        }
     }
 }

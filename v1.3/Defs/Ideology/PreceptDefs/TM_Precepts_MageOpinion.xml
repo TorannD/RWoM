@@ -42,7 +42,7 @@
     <defName>TM_Mages_Abhorrent</defName>
     <issue>TM_MageOpinion</issue>
     <label>abhore magic</label>
-    <description>Magic is an abomination to be reviled and cleansed from existence. Mage's manipulation of energy goes against natural order. Killing an enemy mage is justified regardless of the circumstances. Allowing a free mage to reside in the colony is a mockery of our beliefs. Mages should be put to death quickly or enslaved until they can be disposed. The use of magic is absolutely forbidden.</description>
+    <description>Magic is an abomination to be reviled and cleansed from existence. Mage's manipulation of energy goes against natural order. Killing an enemy mage is justified regardless of the circumstances. Allowing a free mage to reside in the colony is a mockery of our beliefs. Mages should be put to death quickly or enslaved until they can be disposed. The use of magic is absolutely forbidden, and mages are hated.</description>
     <impact>High</impact>
     <displayOrderInIssue>91</displayOrderInIssue>
     <displayOrderInImpact>291</displayOrderInImpact>
@@ -390,7 +390,7 @@
     <defName>TM_Mages_Disapprove</defName>
     <issue>TM_MageOpinion</issue>
     <label>disapprove of magic</label>
-    <description>Reliance on an unknown and unpredictable source of power should be avoided. Science and technology are the future and their benefits can be enjoyed by all and contributed to by everyone. The colony should limit the number of free mages to 10% or less and only the most trusted of residents, and the number of spells should be limited to 5 a day. Mages should be made slaves to ensure they know their rightful place. Abiding by these rules will allow our colony to prosper and make everyone happier.</description>
+    <description>Reliance on an unknown and unpredictable source of power should be avoided. Science and technology are the future and their benefits can be enjoyed by all and contributed to by everyone. The colony should limit the number of free mages to 10% or less and only to the most vigilant of residents, and the number of spells should be limited to 5 a day. Mages should be made slaves to ensure they know their rightful place, and will always be viewed with minor disdain. Abiding by these rules will allow our colony to prosper and make everyone happier.</description>
     <impact>Medium</impact>
     <displayOrderInIssue>92</displayOrderInIssue>
     <displayOrderInImpact>292</displayOrderInImpact>
@@ -557,7 +557,7 @@
     <defName>TM_Mages_Approve</defName>
     <issue>TM_MageOpinion</issue>
     <label>approve of magic</label>
-    <description>Magic is a powerful and useful resource, we would be insane to discard its potential. Mages allow us to tap into this resource and can improve our quality of life. Because of their value to our colony, mages should be treated with respect similar to a noble. We should focus our efforts and increase our knowledge of this mysterious power.</description>
+    <description>Magic is a powerful and useful resource, we would be insane to discard its potential. Mages allow us to tap into this resource and can improve our quality of life. Because of their value to our colony, mages should be treated with respect similar to a noble. It is understood and tolerated if those with power hold those without in lesser esteem. We should focus our efforts and increase our knowledge of this mysterious power.</description>
     <impact>Medium</impact>
     <displayOrderInIssue>94</displayOrderInIssue>
     <displayOrderInImpact>294</displayOrderInImpact>
@@ -717,7 +717,7 @@
     <defName>TM_Mages_Venerated</defName>
     <issue>TM_MageOpinion</issue>
     <label>venerate magic</label>
-    <description>Magic is wonderous, mystical, powerful and infinite. It is capable of performing mundane tasks or obliterating our enemies in the blink of an eye. It is a source of both creation and destruction and worthy of reverence. Those who can tap into this power are blessed - touched by divinity - and are to be exalted above all others. Killing an enemy mage is abhorrent and should only be done as a last resort. Magic reveals the path to our salvation! Its use upholds our cause, and we must resolve ourselves to spread the blessing of magic to all.</description>
+    <description>Magic is wondrous, mystical, powerful and infinite. It is capable of performing mundane tasks or obliterating our enemies in the blink of an eye. It is a source of both creation and destruction and worthy of reverence. Those who can tap into this power are blessed - touched by divinity - and are to be exalted above all others. Killing an enemy mage is abhorrent and should only be done as a last resort. Mages are held in high regard, and those without magic are lesser beings. Magic reveals the path to our salvation! Its use upholds our cause, and we must resolve ourselves to spread the blessing of magic to all.</description>
     <impact>High</impact>
     <displayOrderInIssue>95</displayOrderInIssue>
     <displayOrderInImpact>295</displayOrderInImpact>

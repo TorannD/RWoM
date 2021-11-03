@@ -27,6 +27,16 @@
         <countsAsParticipant>False</countsAsParticipant>
         <ignoreBleeding>true</ignoreBleeding>
       </li>
+	  <li Class="RitualRoleTag">
+        <label>guide</label>
+        <tag>Moralist</tag>
+        <id>moralistId</id>
+        <precept>IdeoRole_Moralist</precept>
+        <required>False</required>
+        <substitutable>False</substitutable>
+        <maxCount>1</maxCount>
+        <countsAsParticipant>True</countsAsParticipant>
+      </li>
     </roles>
     <stages>
       <li>
@@ -193,7 +203,7 @@
         <qualityOffset>0.1</qualityOffset>
       </li>
 	  <li Class="RitualOutcomeComp_RolePresentNotSubstituted">
-        <roleId>doer</roleId>
+        <roleId>moralistId</roleId>
         <label>moral guide present</label>
         <qualityOffset>0.1</qualityOffset>
       </li>
@@ -290,6 +300,16 @@
         <required>True</required>
         <countsAsParticipant>True</countsAsParticipant>
         <ignoreBleeding>true</ignoreBleeding>
+      </li>
+	  <li Class="RitualRoleTag">
+        <label>guide</label>
+        <tag>Moralist</tag>
+        <id>moralistId</id>
+        <precept>IdeoRole_Moralist</precept>
+        <required>False</required>
+        <substitutable>False</substitutable>
+        <maxCount>1</maxCount>
+        <countsAsParticipant>True</countsAsParticipant>
       </li>
     </roles>
     <stages>
@@ -449,7 +469,7 @@
         <qualityOffset>0.1</qualityOffset>
       </li>
 	  <li Class="RitualOutcomeComp_RolePresentNotSubstituted">
-        <roleId>doer</roleId>
+        <roleId>moralistId</roleId>
         <label>moral guide present</label>
         <qualityOffset>0.1</qualityOffset>
       </li>
@@ -538,6 +558,16 @@
         <required>True</required>
         <countsAsParticipant>True</countsAsParticipant>
         <ignoreBleeding>true</ignoreBleeding>
+      </li>
+	  <li Class="RitualRoleTag">
+        <label>guide</label>
+        <tag>Moralist</tag>
+        <id>moralistId</id>
+        <precept>IdeoRole_Moralist</precept>
+        <required>False</required>
+        <substitutable>False</substitutable>
+        <maxCount>1</maxCount>
+        <countsAsParticipant>True</countsAsParticipant>
       </li>
     </roles>
     <stages>
@@ -692,7 +722,7 @@
         <qualityOffset>0.1</qualityOffset>
       </li>
 	  <li Class="RitualOutcomeComp_RolePresentNotSubstituted">
-        <roleId>doer</roleId>
+        <roleId>moralistId</roleId>
         <label>moral guide present</label>
         <qualityOffset>0.1</qualityOffset>
       </li>

@@ -77,8 +77,8 @@ namespace TorannMagic
                 List<Pawn> tmpList = TM_Calc.FindAllPawnsAround(this.CasterPawn.Map, launcherPosition, 5f, this.pawn.Faction, true);
                 for(int i = 0; i < tmpList.Count; i++)
                 {
-                    if(!tmpList[i].Position.Roofed(map))
-                    {
+                    if(!tmpList[i].Position.Roofed(map) )
+                    {                        
                         if (ModCheck.Validate.GiddyUp.Core_IsInitialized())
                         {
                             if (ModCheck.GiddyUp.IsMount(tmpList[i]))

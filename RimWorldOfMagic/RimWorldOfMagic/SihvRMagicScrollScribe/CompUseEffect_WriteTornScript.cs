@@ -13,7 +13,23 @@ namespace TorannMagic.SihvRMagicScrollScribe
             IntVec3 currentPos = parent.PositionHeld;
             Map map = parent.Map;
             CompAbilityUserMagic comp = user.TryGetComp<CompAbilityUserMagic>();
-            if (parent.def != null && comp != null && comp.customClass != null)
+            if (parent.def != null && comp != null && user.IsSlave && TM_Calc.IsMagicUser(user))
+            {                
+                if (Rand.Chance(.25f))
+                {
+                    Messages.Message("TM_SlaveScribeFail".Translate(
+                        parent.def.label,
+                        user.LabelShort
+                    ), MessageTypeDefOf.RejectInput);
+                    tempPod = null;
+                }
+                else
+                {
+                    tempPod = TorannMagicDefOf.BookOfQuestion;
+                }
+                this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
+            }
+            else if (parent.def != null && comp != null && comp.customClass != null)
             {
                 if (comp.customClass.tornScript != null)
                 {
@@ -121,21 +137,7 @@ namespace TorannMagic.SihvRMagicScrollScribe
                         user.LabelShort
                     ), MessageTypeDefOf.RejectInput);
             }
-            if (user.IsSlave)
-            {
-                if(Rand.Chance(.25f))
-                {                   
-                    Messages.Message("TM_SlaveScribeFail".Translate(
-                        tempPod.label,
-                        user.LabelShort
-                    ), MessageTypeDefOf.RejectInput);
-                    tempPod = null;
-                }
-                else
-                {
-                    tempPod = TorannMagicDefOf.BookOfQuestion;
-                }
-            }
+            
             if (tempPod != null)
             {                    
                 SihvSpawnThings.SpawnThingDefOfCountAt(tempPod, 1, new TargetInfo(currentPos, map));

@@ -139,7 +139,19 @@ namespace TorannMagic
                     TM_EventRecords er = new TM_EventRecords();
                     er.eventPower = this.magicDef.manaCost;
                     er.eventTick = Find.TickManager.TicksGame;
-                    this.MagicUser.MagicUsed.Add(er);                    
+                    this.MagicUser.MagicUsed.Add(er);      
+                    
+                    if(this.magicDef == TorannMagicDefOf.TM_TechnoWeapon && (this.Pawn.Downed || this.Pawn.Dead) && this.Pawn.Map != null)
+                    {
+                        foreach(Thing t in this.Pawn.Position.GetThingList(this.Pawn.Map))
+                        {
+                            if(t.def.defName.StartsWith("TM_TechnoWeapon"))
+                            {
+                                t.Destroy(DestroyMode.Vanish);
+                                break;
+                            }
+                        }
+                    }
                 }
                 else if (this.MagicUser.Pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
                 {

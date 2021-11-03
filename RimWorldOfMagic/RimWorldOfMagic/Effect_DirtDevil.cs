@@ -18,11 +18,8 @@ namespace TorannMagic
                 Thing dirtDevil = new Thing();
                 dirtDevil.def = TorannMagicDefOf.FlyingObject_DirtDevil;
                 Pawn casterPawn = base.CasterPawn;
-                LongEventHandler.QueueLongEvent(delegate
-                {
-                    FlyingObject_DirtDevil flyingObject = (FlyingObject_DirtDevil)GenSpawn.Spawn(ThingDef.Named("FlyingObject_DirtDevil"), this.CasterPawn.Position, this.CasterPawn.Map);
-                    flyingObject.Launch(this.CasterPawn, t.Cell, dirtDevil);
-                }, "LaunchingFlyer", false, null);
+                FlyingObject_DirtDevil flyingObject = (FlyingObject_DirtDevil)GenSpawn.Spawn(ThingDef.Named("FlyingObject_DirtDevil"), this.CasterPawn.Position, this.CasterPawn.Map);
+                flyingObject.Launch(this.CasterPawn, t.Cell, dirtDevil);
             }
         }
 

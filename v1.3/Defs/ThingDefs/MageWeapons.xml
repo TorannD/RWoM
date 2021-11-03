@@ -725,14 +725,14 @@ Cleaving Strike</description>
 		<li Class="CompDeflector.CompProperties_Deflector">
 		    <compClass>TorannMagic.Weapon.CompBPReflector</compClass>
 			<baseDeflectChance>0.3</baseDeflectChance>
-			<useManipulationInCalc>true</useManipulationInCalc>
+			<useManipulationInCalc>false</useManipulationInCalc>
 			<useSkillInCalc>true</useSkillInCalc>
 			<deflectSound>TM_MetalImpact</deflectSound>
 			<deflectSkill>Melee</deflectSkill>
 			<deflectRatePerSkillPoint>0.005</deflectRatePerSkillPoint>
             <canReflect>true</canReflect>
             <reflectSkill>Melee</reflectSkill>
-            <reflectRatePerSkillPoint>3</reflectRatePerSkillPoint>
+            <reflectRatePerSkillPoint>1</reflectRatePerSkillPoint>
 			<DeflectVerb Class="VerbProperties">
 				<verbClass>Verb_Shoot</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>

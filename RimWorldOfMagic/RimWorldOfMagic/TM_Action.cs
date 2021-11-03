@@ -287,10 +287,10 @@ namespace TorannMagic
                 {
                     //ignore
                 }
+
                 GenPlace.TryPlaceThing(technoWeapon, caster.Position, caster.Map, ThingPlaceMode.Direct, null, null);
                 Job job = new Job(JobDefOf.Equip, technoWeapon);
                 caster.jobs.TryTakeOrderedJob(job, JobTag.ChangingApparel);
-
             }
             else
             {
