@@ -8,19 +8,21 @@
     <allowMultiplePrecepts>true</allowMultiplePrecepts>
   </IssueDef>
   
-  <PreceptDef Abstract="True" Name="TM_PreceptRoleSingleBase">
-    <issue>TM_IdeoRole</issue>
-    <preceptClass>Precept_RoleSingle</preceptClass>
+  <PreceptDef Abstract="True" Name="TM_PreceptRoleVoidBase">
+    <!-- <issue>TM_IdeoRole</issue> -->
+    <preceptClass>TorannMagic.Ideology.TM_Precept_RoleVoidSeeker</preceptClass>
+	<createsRoleEmptyThought>False</createsRoleEmptyThought>
+	<canGenerateAsSpecialPrecept>false</canGenerateAsSpecialPrecept>
     <certaintyLossFactor>0.5</certaintyLossFactor>
     <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
-    <roleRequirements>
+<!--     <roleRequirements>
       <li Class="RoleRequirement_SameIdeo">
         <labelKey>RoleRequirementLabelSameIdeo</labelKey>
       </li>
       <li Class="RoleRequirement_SupremeGender">
         <labelKey>RoleRequirementLabelSupremeGender</labelKey>
       </li>
-    </roleRequirements>
+    </roleRequirements> -->
     <comps>
       <li Class="PreceptComp_SituationalThought">
         <thought MayRequire="Ludeon.RimWorld.Ideology">IdeoRoleApparelRequirementNotMet</thought>
@@ -30,11 +32,104 @@
     <activationBelieverCount>3</activationBelieverCount>
     <deactivationBelieverCount>1</deactivationBelieverCount>
     <classicExtra>true</classicExtra>
-  </PreceptDef> 
+  </PreceptDef>
 
-  <PreceptDef MayRequire="Ludeon.RimWorld.Ideology" ParentName="PreceptRoleSingleBase">
+  <PreceptDef Abstract="True" Name="TM_PreceptRoleMultiBase">
+    <issue MayRequire="Ludeon.RimWorld.Ideology">IdeoRole</issue>
+    <preceptClass>Precept_RoleMulti</preceptClass>
+    <createsRoleEmptyThought>False</createsRoleEmptyThought>
+    <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
+    <canGenerateAsSpecialPrecept>false</canGenerateAsSpecialPrecept>
+    <roleRequirements>
+      <li Class="RoleRequirement_SameIdeo">
+        <labelKey>RoleRequirementLabelSameIdeo</labelKey>
+      </li>
+    </roleRequirements>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought MayRequire="Ludeon.RimWorld.Ideology">IdeoRoleApparelRequirementNotMet</thought>
+      </li>
+    </comps>
+    <impact>Medium</impact>
+    <roleApparelRequirements>
+      <li>
+        <requirement>
+          <bodyPartGroupsMatchAny>
+            <li>UpperHead</li>
+            <li>FullHead</li>
+          </bodyPartGroupsMatchAny>
+          <requiredDefs>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Apparel_Headwrap</li>
+          </requiredDefs>
+        </requirement>
+      </li>
+      <li>
+        <requirement>
+          <bodyPartGroupsMatchAny>
+            <li>UpperHead</li>
+            <li>FullHead</li>
+          </bodyPartGroupsMatchAny>
+          <requiredDefs>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Apparel_Broadwrap</li>
+          </requiredDefs>
+        </requirement>
+      </li>
+      <li>
+        <requirement>
+          <bodyPartGroupsMatchAny>
+            <li>Torso</li>
+            <li>Neck</li>
+            <li>Shoulders</li>
+            <li>Arms</li>
+            <li>Legs</li>
+          </bodyPartGroupsMatchAny>
+          <requiredDefs>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Apparel_Robe</li>
+          </requiredDefs>
+        </requirement>
+      </li>
+      <li>
+        <requirement>
+          <bodyPartGroupsMatchAny>
+            <li>UpperHead</li>
+          </bodyPartGroupsMatchAny>
+          <requiredDefs>
+            <li>Apparel_HatHood</li>
+          </requiredDefs>
+        </requirement>
+      </li>
+      <li>
+        <requirement>
+          <bodyPartGroupsMatchAny>
+            <li>UpperHead</li>
+          </bodyPartGroupsMatchAny>
+          <requiredDefs>
+            <li>Apparel_BowlerHat</li>
+          </requiredDefs>
+        </requirement>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Royalty">
+        <requirement>
+          <bodyPartGroupsMatchAny>
+            <li>Torso</li>
+          </bodyPartGroupsMatchAny>
+          <requiredTags>
+            <li>Cape</li>
+          </requiredTags>
+        </requirement>
+      </li>
+    </roleApparelRequirements>
+    <roleApparelRequirementCountCurve>
+      <points>
+        <li>(0, 1)</li>
+        <li>(1, 1)</li>
+      </points>
+    </roleApparelRequirementCountCurve>
+  </PreceptDef>  
+
+  <PreceptDef ParentName="TM_PreceptRoleMultiBase">
     <defName>TM_IdeoRole_VoidSeeker</defName>
-	<issue>TM_MageOpinion</issue>
+	<preceptClass>TorannMagic.Ideology.TM_Precept_RoleVoidSeeker</preceptClass>
     <label>Void seeker</label>
     <description>A mysterious figure with abilities able to manipulate the connection to magic.</description>
     <iconPath>Ideology/Voidseeker</iconPath>
@@ -143,9 +238,9 @@
     </grantedAbilities>
     <roleRequiredWorkTags><li>Social</li></roleRequiredWorkTags>
     <roleTags><li>Voidseeker</li></roleTags>
-<!-- 	<requiredMemes>
+	<requiredMemes>
       <li>TM_Transcendent</li>
-    </requiredMemes> -->
+    </requiredMemes>
   </PreceptDef>
   
   <RulePackDef>

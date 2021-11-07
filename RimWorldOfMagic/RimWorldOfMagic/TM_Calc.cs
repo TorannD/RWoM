@@ -4244,5 +4244,21 @@ namespace TorannMagic
             }
             return vector3List;
         }
+
+        public static bool DangerMusicMode
+        {
+            get
+            {
+                List<Map> maps = Find.Maps;
+                for (int i = 0; i < maps.Count; i++)
+                {
+                    if (maps[i].dangerWatcher.DangerRating == StoryDanger.High)
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
+        }
     }
 }

@@ -183,6 +183,7 @@
     <Compile Include="HediffComp_BrandingVitality.cs" />
     <Compile Include="HediffComp_BrandingSiphon.cs" />
     <Compile Include="HediffComp_BrandingBase.cs" />
+    <Compile Include="Ideology\TM_Precept_RoleVoidSeeker.cs" />
     <Compile Include="Recipe_RuneCarving.cs" />
     <Compile Include="Command_LocalTargetInfo.cs" />
     <Compile Include="CompAbilityUserMagic.cs" />

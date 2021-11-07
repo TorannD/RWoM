@@ -89,7 +89,7 @@ namespace TorannMagic.Golems
                 Text.Font = GameFont.Small;
                 if (golem_building.GolemPawn != null)
                 {
-                    string tmpName = Widgets.TextField(rect2, golem_building.GolemPawn.LabelCap != "Blank" ? golem_building.GolemPawn.LabelCap : "");
+                    string tmpName = Widgets.TextField(rect2, golem_building.GolemPawn.LabelShortCap != "Blank" ? golem_building.GolemPawn.LabelShortCap : "");
                     if (tmpName != "")
                     {
                         golem_building.GolemPawn.Name = NameTriple.FromString(tmpName);

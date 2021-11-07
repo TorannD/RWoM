@@ -104,7 +104,7 @@ namespace TorannMagic.Golems
                 Rect rect2 = GetRowRect(rect, num, 10);
                 rect2.width -= 34f;
                 Text.Font = GameFont.Small;
-                string tmpName = Widgets.TextField(rect2, golem_pawn.LabelCap != "Blank" ? golem_pawn.LabelCap : "");
+                string tmpName = Widgets.TextField(rect2, golem_pawn.LabelShortCap != "Blank" ? golem_pawn.LabelShortCap : "");
                 if(tmpName != "")
                 {
                     golem_pawn.Name = NameTriple.FromString(tmpName);

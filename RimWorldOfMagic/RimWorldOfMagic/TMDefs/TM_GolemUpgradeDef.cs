@@ -16,6 +16,7 @@ namespace TorannMagic.TMDefs
         public RecipeDef recipe;
         public BodyPartDef bodypart;
         public HediffDef hediff;
+        public float hediffSeverityPerLevel = 1f;
         public TM_GolemAbilityDef ability;
         public int abilityUsedTick = 0;
         public BodyPartDef occupiedPart = null;

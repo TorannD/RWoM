@@ -31,7 +31,7 @@
         <label>guide</label>
         <tag>Moralist</tag>
         <id>moralistId</id>
-        <precept>IdeoRole_Moralist</precept>
+        <precept MayRequire="Ludeon.RimWorld.Ideology">IdeoRole_Moralist</precept>
         <required>False</required>
         <substitutable>False</substitutable>
         <maxCount>1</maxCount>
@@ -305,7 +305,7 @@
         <label>guide</label>
         <tag>Moralist</tag>
         <id>moralistId</id>
-        <precept>IdeoRole_Moralist</precept>
+        <precept MayRequire="Ludeon.RimWorld.Ideology">IdeoRole_Moralist</precept>
         <required>False</required>
         <substitutable>False</substitutable>
         <maxCount>1</maxCount>
@@ -563,7 +563,7 @@
         <label>guide</label>
         <tag>Moralist</tag>
         <id>moralistId</id>
-        <precept>IdeoRole_Moralist</precept>
+        <precept MayRequire="Ludeon.RimWorld.Ideology">IdeoRole_Moralist</precept>
         <required>False</required>
         <substitutable>False</substitutable>
         <maxCount>1</maxCount>

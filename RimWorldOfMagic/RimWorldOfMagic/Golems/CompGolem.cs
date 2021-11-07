@@ -367,7 +367,7 @@ namespace TorannMagic.Golems
                         if(gu.currentLevel > 0 && gu.golemUpgradeDef.bodypart == record.def && gu.golemUpgradeDef.hediff != null)
                         {
                             Hediff hd = HediffMaker.MakeHediff(gu.golemUpgradeDef.hediff, Pawn, record);
-                            hd.Severity = .5f + gu.currentLevel;
+                            hd.Severity = gu.golemUpgradeDef.hediff.initialSeverity + (gu.golemUpgradeDef.hediffSeverityPerLevel * gu.currentLevel);
                             Pawn.health.AddHediff(hd, record);
                         }
                     }

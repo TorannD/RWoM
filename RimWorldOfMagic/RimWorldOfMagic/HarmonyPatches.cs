@@ -345,6 +345,97 @@ namespace TorannMagic
         //    }
         //}
 
+        [HarmonyPatch(typeof(MusicManagerPlay), "AppropriateNow", null)]
+        public class MusicManager_RoyaltyNullCheck_Patch
+        {
+            private static bool Prefix(MusicManagerPlay __instance, SongDef song, Queue<SongDef> ___recentSongs, ref bool __result)
+            {
+                __result = false;
+                if (!song.playOnMap)
+                {
+                    return false;
+                }
+                if (TM_Calc.DangerMusicMode)
+                {
+                    if (!song.tense)
+                    {
+                        return false;
+                    }
+                }
+                else if (song.tense)
+                {
+                    return false;
+                }
+                Map map = Find.AnyPlayerHomeMap ?? Find.CurrentMap;
+                if (!song.allowedSeasons.NullOrEmpty())
+                {
+                    if (map == null)
+                    {
+                        return false;
+                    }
+                    if (!song.allowedSeasons.Contains(GenLocalDate.Season(map)))
+                    {
+                        return false;
+                    }
+                }
+                if (song.minRoyalTitle != null && !PawnsFinder.AllMapsCaravansAndTravelingTransportPods_Alive_Colonists.Any(delegate (Pawn p)
+                {
+                    if (p.royalty != null && p.royalty.AllTitlesForReading.Any() && p.royalty.MostSeniorTitle.def.seniority >= song.minRoyalTitle.seniority)
+                    {
+                        return true;
+                    }
+                    return false;
+                }))
+                {
+                    return false;
+                }
+                if (___recentSongs.Contains(song))
+                {
+                    return false;
+                }
+                if (song.allowedTimeOfDay != TimeOfDay.Any)
+                {
+                    if (map == null)
+                    {
+                        __result = true;
+                        return false;
+                    }
+                    if (song.allowedTimeOfDay == TimeOfDay.Night)
+                    {
+                        if (!(GenLocalDate.DayPercent(map) < 0.2f))
+                        {
+                            __result = GenLocalDate.DayPercent(map) > 0.7f;
+                            return false;
+                        }
+                        return true;
+                    }
+                    if (GenLocalDate.DayPercent(map) > 0.2f)
+                    {
+                        __result = GenLocalDate.DayPercent(map) < 0.7f;
+                        return false;
+                    }
+                    return false;
+                }
+                __result = true;
+                return false;
+            }
+        }
+
+        [HarmonyPatch(typeof(StatWorker), "IsDisabledFor", null)]
+        public class GolemStatWorker_Patch
+        {
+            private static bool Prefix(StatWorker __instance, Thing thing, StatDef ___stat, ref bool __result)
+            {
+                Pawn p = thing as Pawn;
+                if(p != null && p is TMPawnGolem)
+                {
+                    __result = false;
+                    return false;
+                }
+                return true;
+            }
+        }
+
         [HarmonyPatch(typeof(PawnGraphicSet), "ResolveAllGraphics", null)]
         public class SkeletonSkull_Patch
         {

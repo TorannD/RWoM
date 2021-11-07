@@ -54,7 +54,8 @@
 		<bodypart>Flesh_LeftArm_Brace</bodypart>		
 		<partRequiresUpgrade>true</partRequiresUpgrade>
 		<occupiedPart>Flesh_LeftArm</occupiedPart>
-		<hediff>TM_FleshGolem_BracerGuardHD</hediff>		
+		<hediff>TM_FleshGolem_BracerGuardHD</hediff>	
+		<hediffSeverityPerLevel>.1</hediffSeverityPerLevel>		
 		<maxLevel>1</maxLevel>
 <!-- 		<graphicsPath>Mecha/GolemAxe</graphicsPath>
 		<drawUndrafted>false</drawUndrafted>
@@ -93,6 +94,7 @@
 		<partRequiresUpgrade>true</partRequiresUpgrade>
 		<occupiedPart>Flesh_RightArm</occupiedPart>
 		<hediff>TM_FleshGolem_BracerGuardHD</hediff>
+		<hediffSeverityPerLevel>.1</hediffSeverityPerLevel>
 		<maxLevel>1</maxLevel>
 <!-- 		<graphicsPath>Mecha/GolemAxe</graphicsPath>
 		<drawUndrafted>false</drawUndrafted>

@@ -79,6 +79,15 @@ namespace TorannMagic.Golems
             {
                 this.guest = new Pawn_GuestTracker(this);
             }
+            if(this.story == null)
+            {
+                this.story = new Pawn_StoryTracker(this);
+                this.story.childhood = new Backstory();
+                this.story.childhood.baseDesc = "Crafted";
+                this.story.adulthood = new Backstory();
+                this.story.adulthood.baseDesc = "Crafted";
+                this.story.title = "Golem";
+            }
             base.Tick();
             if(Downed && !Dead)
             {

@@ -44,7 +44,7 @@ namespace TorannMagic
         protected override bool TryCastShot()
         {
             Pawn caster = this.CasterPawn;
-            Pawn pawn = this.currentTarget.Thing as Pawn;
+            //Pawn pawn = this.currentTarget.Thing as Pawn;
             CompAbilityUserMagic comp = caster.TryGetComp<CompAbilityUserMagic>();
             verVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_LivingWall, "TM_LivingWall", "_ver", true);
             pwrVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_LivingWall, "TM_LivingWall", "_pwr", true);
@@ -58,7 +58,7 @@ namespace TorannMagic
                     {
                         if(t.Faction == caster.Faction && TM_Calc.IsWall(t))
                         {
-                            if(!comp.livingWall.DestroyedOrNull())
+                            if(comp.livingWall != null && !comp.livingWall.DestroyedOrNull())
                             {
                                 comp.livingWall.Destroy(DestroyMode.Vanish);
                             }
@@ -81,14 +81,14 @@ namespace TorannMagic
                     }
                     if(!wallDetected)
                     {
-                        Messages.Message("TM_InvalidTarget".Translate(pawn.LabelShort, Ability.Def.label), MessageTypeDefOf.NegativeEvent);
-                        MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Living Wall: " + StringsToTranslate.AU_CastFailure, -1f);
+                        Messages.Message("TM_InvalidTarget".Translate(caster.LabelShort, Ability.Def.label), MessageTypeDefOf.NegativeEvent);
+                        MoteMaker.ThrowText(caster.DrawPos, caster.Map, "Living Wall: " + StringsToTranslate.AU_CastFailure, -1f);
                     }
                 }
                 else
                 {
-                    Messages.Message("TM_InvalidTarget".Translate(pawn.LabelShort, Ability.Def.label), MessageTypeDefOf.NegativeEvent);
-                    MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Living Wall: " + StringsToTranslate.AU_CastFailure, -1f);
+                    Messages.Message("TM_InvalidTarget".Translate(caster.LabelShort, Ability.Def.label), MessageTypeDefOf.NegativeEvent);
+                    MoteMaker.ThrowText(caster.DrawPos, caster.Map, "Living Wall: " + StringsToTranslate.AU_CastFailure, -1f);
                 }
             }
             

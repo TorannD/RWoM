@@ -75,6 +75,7 @@ namespace TorannMagic.ModOptions
         public bool ChaosMage = Settings.Instance.ChaosMage;
         public bool Brightmage = Settings.Instance.Brightmage;
         public bool Shaman = Settings.Instance.Shaman;
+        public bool Golemancer = Settings.Instance.Golemancer;
 
         public bool Gladiator = Settings.Instance.Gladiator;
         public bool Bladedancer = Settings.Instance.Bladedancer;

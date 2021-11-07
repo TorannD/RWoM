@@ -224,7 +224,7 @@
     <makesAlert>false</makesAlert>
 	<maxSeverity>1</maxSeverity>
 	<isBad>false</isBad>
-	<initialSeverity>.2</initialSeverity>
+	<initialSeverity>.1</initialSeverity>
 	<stages>
       <li>
         <label></label>

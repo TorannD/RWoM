@@ -26,7 +26,7 @@
 	  <li>TorannMagic.Golems.ITab_GolemPawn</li>
       <li>ITab_Pawn_Health</li>
       <li>ITab_Pawn_Needs</li>
-      <li>ITab_Pawn_Character</li>
+      <!-- <li>ITab_Pawn_Character</li> -->
       <li>ITab_Pawn_FormingCaravan</li>
       <li>ITab_Pawn_Gear</li>
       <li>ITab_Pawn_Log</li>

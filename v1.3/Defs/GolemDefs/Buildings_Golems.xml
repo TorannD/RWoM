@@ -161,7 +161,7 @@ While dormant, the golem may be modified or upgraded. The mecha-golem recharges 
   <ThingDef ParentName="TM_GolemBuildingBase">
     <defName>TM_FleshGolem_Workstation</defName>
     <label>dormant flesh golem</label>
-    <description>A dormant flesh golem. Flehs golems are a bipedal-like mass of organic matter, mostly comprised of body parts from deceased creatures. The flesh golem is a fearsome combatant with a variety of attacks and abilities that further increase its lethality. In addition to basic tasks such as hauling and cleaning, the flehs golem is able to use attached cleavers to harvest trees or plants. 
+    <description>A dormant flesh golem. Flesh golems are a bipedal-like mass of organic matter, mostly comprised of body parts from deceased creatures. The flesh golem is a fearsome combatant with a variety of attacks and abilities that further increase its lethality. In addition to basic tasks such as hauling and cleaning, the flesh golem is able to use attached cleavers to harvest trees or plants. 
 	
 While dormant, the golem may be modified or upgraded. The flesh golem recharges energy slowly on its own but supplying it with fresh meat will increase the recharge speed.</description>
     <castEdgeShadows>true</castEdgeShadows>
