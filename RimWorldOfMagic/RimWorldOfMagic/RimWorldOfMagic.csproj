@@ -145,6 +145,7 @@
     <Compile Include="Golems\JobGiver_GolemForceGotoDespawn.cs" />
     <Compile Include="Golems\JobGiver_GolemSelfTend.cs" />
     <Compile Include="Golems\Need_GolemRage.cs" />
+    <Compile Include="Golems\ThinkNode_ConditionalGolem.cs" />
     <Compile Include="Golems\ThinkNode_ConditionalShouldDespawn.cs" />
     <Compile Include="Golems\UnfinishedNoProductThing.cs" />
     <Compile Include="Golems\CompProperties_GolemAbilityEffect_AbsorbFilth.cs" />

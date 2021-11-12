@@ -88,6 +88,10 @@ namespace TorannMagic.Golems
                 this.story.adulthood.baseDesc = "Crafted";
                 this.story.title = "Golem";
             }
+            if (this.workSettings == null)
+            {
+                this.workSettings = new Pawn_WorkSettings(this);
+            }
             base.Tick();
             if(Downed && !Dead)
             {
@@ -221,9 +225,59 @@ namespace TorannMagic.Golems
             }
         }
 
+        public override void DrawGUIOverlay()
+        {
+            Drawer.ui.DrawPawnGUIOverlay();
+        }
+
+        public override void DrawExtraSelectionOverlays()
+        {
+            base.DrawExtraSelectionOverlays();
+            if (pather.curPath != null)
+            {
+                pather.curPath.DrawPath(this);
+            }
+            jobs.DrawLinesBetweenTargets();            
+        }
+
         public override IEnumerable<Gizmo> GetGizmos()
         {
             var gizmoList = base.GetGizmos().ToList();
+
+            if(drafter != null)
+            {
+                Command_Toggle command_Toggle = new Command_Toggle();
+                command_Toggle.hotKey = KeyBindingDefOf.Command_ColonistDraft;
+                command_Toggle.isActive = (() => Drafted);
+                command_Toggle.toggleAction = delegate
+                {
+                    this.drafter.Drafted = !Drafted;
+                    PlayerKnowledgeDatabase.KnowledgeDemonstrated(ConceptDefOf.Drafting, KnowledgeAmount.SpecificInteraction);
+                    if (Drafted)
+                    {
+                        LessonAutoActivator.TeachOpportunity(ConceptDefOf.QueueOrders, OpportunityType.GoodToKnow);
+                    }
+                };
+                command_Toggle.defaultDesc = "CommandToggleDraftDesc".Translate();
+                command_Toggle.icon = TexCommand.Draft;
+                command_Toggle.turnOnSound = SoundDefOf.DraftOn;
+                command_Toggle.turnOffSound = SoundDefOf.DraftOff;
+                command_Toggle.groupKey = 81729172;
+                command_Toggle.defaultLabel = (Drafted ? "CommandUndraftLabel" : "CommandDraftLabel").Translate();
+                if (this.Downed)
+                {
+                    command_Toggle.Disable("IsIncapped".Translate(this.LabelShort, this));
+                }
+                if (!Drafted)
+                {
+                    command_Toggle.tutorTag = "Draft";
+                }
+                else
+                {
+                    command_Toggle.tutorTag = "Undraft";
+                }
+                gizmoList.Add(command_Toggle);
+            }
 
             Command_Action command_Despawn = new Command_Action();
             command_Despawn.defaultLabel = "TM_DeActivateGolem".Translate();

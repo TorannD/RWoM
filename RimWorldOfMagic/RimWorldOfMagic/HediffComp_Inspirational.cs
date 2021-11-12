@@ -73,7 +73,7 @@ namespace TorannMagic
                 if(inspiredPawn != null && inspiredPawn.IsColonist && inspiredPawn.RaceProps.Humanlike && !inspiredPawn.Inspired && inspiredPawn != this.Pawn)
                 {
                     InspirationDef id = TM_Calc.GetRandomAvailableInspirationDef(inspiredPawn);
-                    bool flag1 = id.defName == "ID_MiningFrenzy" || id.defName == "ID_FarmingFrenzy";
+                    bool flag1 = id.defName == "ID_MiningFrenzy" || id.defName == "ID_FarmingFrenzy" || id == TorannMagicDefOf.ID_ArcanePathways;
                     bool flag2 = id.defName == "ID_Introspection" || id.defName == "ID_Outgoing";
                     bool flag3 = id.defName == "ID_ManaRegen" || id.defName == "ID_Champion";
                     Vector3 drawPosAbove = inspiredPawn.DrawPos;

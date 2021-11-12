@@ -23,7 +23,7 @@
         <li Class="ThinkNode_QueuedJob" />
 		
 		<!-- Wait if drafted -->
-        <li Class="ThinkNode_ConditionalColonist">
+        <li Class="TorannMagic.Golems.ThinkNode_ConditionalGolem">
           <subNodes>
             <li Class="ThinkNode_Tagger">
               <tagToGive>DraftedOrder</tagToGive>

@@ -81,6 +81,8 @@ namespace TorannMagic
             harmonyInstance.Patch(AccessTools.Method(typeof(Pawn_StanceTracker), "get_Staggered", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_Staggered", null), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(Verb_LaunchProjectile), "get_Projectile", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_Projectile_ES", null), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(WindManager), "get_WindSpeed", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_WindSpeed", null), null);
+            //harmonyInstance.Patch(AccessTools.Method(typeof(Pawn), "get_IsFreeColonist", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_IsFreeColonist_Golem", null));
+            //harmonyInstance.Patch(AccessTools.Method(typeof(RaceProperties), "get_Humanlike", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_Humanlike_Golem", null), null);
             //harmonyInstance.Patch(AccessTools.Method(typeof(MainTabWindow_Animals), "get_Pawns", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_GolemsAsAnimals", null), null);
 
             harmonyInstance.Patch(AccessTools.Method(typeof(GenDraw), "DrawRadiusRing", new Type[]
@@ -345,6 +347,24 @@ namespace TorannMagic
         //    }
         //}
 
+        //public static bool Get_Humanlike_Golem(RaceProperties __instance, ref bool __result)
+        //{
+        //    if (__instance.thinkTreeMain == TorannMagicDefOf.TM_GolemMain)
+        //    {
+        //        __result = false;
+        //        return false;
+        //    }
+        //    return true;
+        //}
+
+        //public static void Get_IsFreeColonist_Golem(Pawn __instance, ref bool __result)
+        //{
+        //    if(__result && __instance is TMPawnGolem)
+        //    {
+        //        __result = false;
+        //    }
+        //}
+
         [HarmonyPatch(typeof(MusicManagerPlay), "AppropriateNow", null)]
         public class MusicManager_RoyaltyNullCheck_Patch
         {
@@ -445,6 +465,20 @@ namespace TorannMagic
                 {
                     __instance.skullGraphic = SkullDatabase.GetSkullFor(__instance.pawn.gender, __instance.pawn.story.crownType);
                 }
+            }
+        }
+
+        [HarmonyPatch(typeof(FloatMenuMakerMap), "CanTakeOrder", null)]
+        public class GolemOrders_Patch
+        {
+            public static bool Prefix(Pawn pawn, ref bool __result)
+            {
+                if (pawn is TMPawnGolem && pawn.Faction == Faction.OfPlayerSilentFail)
+                {
+                    __result = true;
+                    return false;
+                }
+                return true;
             }
         }
 
@@ -1797,11 +1831,11 @@ namespace TorannMagic
                     __result = true;
                     return false;
                 }
-                if(__instance is TMPawnGolem)
-                {
-                    __result = true;
-                    return false;
-                }
+                //if(__instance is TMPawnGolem)
+                //{
+                //    __result = true;
+                //    return false;
+                //}
                 //__result = __instance.Faction != null && __instance.Faction.IsPlayer;
                 //return false;
             }

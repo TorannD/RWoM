@@ -2054,6 +2054,16 @@ namespace TorannMagic
                             DoDeathRetaliation();
                         }
                     }
+                    else
+                    {
+                        if(Find.TickManager.TicksGame % 2501 == 0 && base.Pawn.story != null && this.Pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted))
+                        {
+                            if(!this.Pawn.Inspired && this.Pawn.CurJobDef == JobDefOf.LayDownResting && Rand.Chance(.02f))
+                            {
+                                this.Pawn.mindState.inspirationHandler.TryStartInspiration(TorannMagicDefOf.ID_ArcanePathways);
+                            }
+                        }
+                    }
                 }
                 else
                 {

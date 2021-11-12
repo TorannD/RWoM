@@ -14,7 +14,7 @@ namespace TorannMagic.Golems
     {
         protected override bool Satisfied(Pawn pawn)
         {            
-            return pawn.TryGetComp<CompGolem>().shouldDespawn; ;
+            return pawn.TryGetComp<CompGolem>().shouldDespawn;
         }
     }
 }

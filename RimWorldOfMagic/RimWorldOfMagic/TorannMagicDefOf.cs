@@ -1418,6 +1418,7 @@ namespace TorannMagic
         public static ThingDef TM_MechaGolem;
         public static PawnKindDef TM_MechaGolemK;
         public static ThingDef TM_MechaGolem_Workstation;
+        public static ThinkTreeDef TM_GolemMain;
         public static HediffDef TM_GolemHD;
         public static HediffDef TM_BullChargeHD;
         public static HediffDef TM_FleshGolem_BracerGuardHD;
