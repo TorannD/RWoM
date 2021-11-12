@@ -15,7 +15,7 @@
     <defName>TM_Transcendent</defName>
     <label>transcendent</label>
     <description>Those with the ability to change their own fate are to be feared and respected; destroy them, follow behind them, or fall before them.</description>
-    <iconPath>Ideology/Transcendent</iconPath>
+    <iconPath>Ideology/Transcendent_a</iconPath>
     <groupDef>TM_MemeGroup</groupDef>
     <impact>2</impact>
     <renderOrder>91</renderOrder>
