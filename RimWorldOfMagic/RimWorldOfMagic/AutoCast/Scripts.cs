@@ -303,7 +303,7 @@ namespace TorannMagic.AutoCast
                     if (jobTarget.Thing != caster)
                     {
                         Job job = ability.GetJob(AbilityContext.AI, jobTarget);
-                        caster.jobs.TryTakeOrderedJob(job);
+                        DoJob.Execute(job, caster);
                         success = true;
                     }
                 }
@@ -325,7 +325,7 @@ namespace TorannMagic.AutoCast
                 {
                     Job job = ability.GetJob(AbilityContext.AI, jobTarget);
                     job.endIfCantShootTargetFromCurPos = true;
-                    caster.jobs.TryTakeOrderedJob(job);
+                    DoJob.Execute(job, caster);
                     success = true;
                 }
             }
@@ -367,7 +367,7 @@ namespace TorannMagic.AutoCast
                 {
                     Job job = ability.GetJob(AbilityContext.AI, jobTarget);
                     job.endIfCantShootTargetFromCurPos = true;
-                    caster.jobs.TryTakeOrderedJob(job);
+                    DoJob.Execute(job, caster);
                     success = true;
                 }
             }
@@ -388,7 +388,7 @@ namespace TorannMagic.AutoCast
                 {
                     Job job = ability.GetJob(AbilityContext.AI, jobTarget);
                     job.endIfCantShootTargetFromCurPos = true;
-                    caster.jobs.TryTakeOrderedJob(job);
+                    DoJob.Execute(job, caster);
                     success = true;
                 }
             }
@@ -409,7 +409,7 @@ namespace TorannMagic.AutoCast
                 {
                     Job job = ability.GetJob(AbilityContext.AI, jobTarget);
                     job.endIfCantShootTargetFromCurPos = true;
-                    caster.jobs.TryTakeOrderedJob(job);
+                    DoJob.Execute(job, caster);
                     success = true;
                 }
             }
@@ -439,7 +439,7 @@ namespace TorannMagic.AutoCast
                     if (jobTarget != null && jobTarget.Thing != null)
                     {
                         Job job = ability.GetJob(AbilityContext.AI, jobTarget);
-                        caster.jobs.TryTakeOrderedJob(job);
+                        caster.jobs.TryTakeOrderedJob(job);                        
                         success = true;
                     }
                 }
@@ -475,7 +475,7 @@ namespace TorannMagic.AutoCast
                 {
                     Job job = ability.GetJob(AbilityContext.AI, jobTarget);
                     job.endIfCantShootTargetFromCurPos = true;
-                    caster.jobs.TryTakeOrderedJob(job);
+                    DoJob.Execute(job, caster);
                     success = true;
                 }
             }
@@ -527,14 +527,14 @@ namespace TorannMagic.AutoCast
                         if(injurySeverity >= minSeverity)
                         {
                             Job job = ability.GetJob(AbilityContext.AI, jobTarget);
-                            caster.jobs.TryTakeOrderedJob(job);
+                            DoJob.Execute(job, caster);
                             success = true;
                         }                        
                     }
                     else
                     {
                         Job job = ability.GetJob(AbilityContext.AI, jobTarget);
-                        caster.jobs.TryTakeOrderedJob(job);
+                        DoJob.Execute(job, caster);
                         success = true;
                     }                    
                 }
@@ -618,7 +618,7 @@ namespace TorannMagic.AutoCast
                     if (distanceToTarget < (abilitydef.MainVerb.range * .9f) && jobTarget != null && jobTarget.Thing != null)
                     {
                         Job job = ability.GetJob(AbilityContext.AI, jobTarget);
-                        caster.jobs.TryTakeOrderedJob(job);
+                        DoJob.Execute(job, caster);
                         success = true;
                         TM_Action.TM_Toils.GotoAndWait(jobTarget.Thing as Pawn, caster, Mathf.RoundToInt(ability.Def.MainVerb.warmupTime * 60));
                     }
@@ -644,7 +644,7 @@ namespace TorannMagic.AutoCast
                     if (distanceToTarget < (abilitydef.MainVerb.range * .9f) && jobTarget != null && jobTarget.Thing != null)
                     {
                         Job job = ability.GetJob(AbilityContext.AI, jobTarget);
-                        caster.jobs.TryTakeOrderedJob(job);
+                        DoJob.Execute(job, caster);
                         success = true;
                         TM_Action.TM_Toils.GotoAndWait(jobTarget.Thing as Pawn, caster, Mathf.RoundToInt(ability.Def.MainVerb.warmupTime * 60));
                     }
@@ -678,14 +678,14 @@ namespace TorannMagic.AutoCast
                         {
                             Job job = ability.GetJob(AbilityContext.AI, jobTarget);
                             job.endIfCantShootTargetFromCurPos = true;
-                            caster.jobs.TryTakeOrderedJob(job);
+                            DoJob.Execute(job, caster);
                             success = true;
                         }
                     }
                     else
                     {
                         Job job = ability.GetJob(AbilityContext.AI, jobTarget);
-                        caster.jobs.TryTakeOrderedJob(job);
+                        DoJob.Execute(job, caster);
                         success = true;
                     }                    
                 }
@@ -717,7 +717,7 @@ namespace TorannMagic.AutoCast
                         if (targetPawn.health != null && targetPawn.health.hediffSet != null && !targetPawn.health.hediffSet.HasHediff(hediffDef, false))
                         {
                             Job job = ability.GetJob(AbilityContext.AI, jobTarget);
-                            caster.jobs.TryTakeOrderedJob(job);
+                            DoJob.Execute(job, caster);
                             success = true;
                             TM_Action.TM_Toils.GotoAndWait(jobTarget.Thing as Pawn, caster, Mathf.RoundToInt(ability.Def.MainVerb.warmupTime * 60));
                         }
@@ -746,7 +746,7 @@ namespace TorannMagic.AutoCast
                 if (distanceToTarget < (abilitydef.MainVerb.range * .9f) && jobTarget != null && jobTarget.Thing != null)
                 {
                     Job job = ability.GetJob(AbilityContext.AI, jobTarget);
-                    caster.jobs.TryTakeOrderedJob(job);
+                    DoJob.Execute(job, caster);
                     success = true;
                     TM_Action.TM_Toils.GotoAndWait(jobTarget.Thing as Pawn, caster, Mathf.RoundToInt(ability.Def.MainVerb.warmupTime * 60));
                 }
@@ -776,7 +776,7 @@ namespace TorannMagic.AutoCast
                     if (!targetPawn.health.hediffSet.HasHediff(hediffDef, false))
                     {
                         Job job = ability.GetJob(AbilityContext.AI, jobTarget);
-                        caster.jobs.TryTakeOrderedJob(job);
+                        DoJob.Execute(job, caster);
                         success = true;
                     }
                 }
@@ -804,7 +804,7 @@ namespace TorannMagic.AutoCast
                 {
                     Job job = ability.GetJob(AbilityContext.AI, jobTarget);
                     job.endIfCantShootTargetFromCurPos = true;
-                    caster.jobs.TryTakeOrderedJob(job);
+                    caster.jobs.TryTakeOrderedJob(job);                    
                     success = true;
                 }
             }
@@ -843,7 +843,7 @@ namespace TorannMagic.AutoCast
                 if (distanceToTarget < (abilitydef.MainVerb.range * .9f) && jobTarget != null && jobTarget.Thing != null)
                 {
                     Job job = ability.GetJob(AbilityContext.AI, jobTarget);
-                    caster.jobs.TryTakeOrderedJob(job);
+                    DoJob.Execute(job, caster);
                     success = true;
                 }
             }
@@ -866,7 +866,7 @@ namespace TorannMagic.AutoCast
                 if (distanceToTarget > minDistance && distanceToTarget < abilitydef.MainVerb.range && caster.CurJob.locomotionUrgency >= LocomotionUrgency.Jog && caster.CurJob.bill == null && distanceToTarget < 200)
                 {
                     Job job = ability.GetJob(AbilityContext.AI, jobTarget);
-                    caster.jobs.TryTakeOrderedJob(job);
+                    DoJob.Execute(job, caster);
                     success = true;
                 }
             }
@@ -906,7 +906,7 @@ namespace TorannMagic.AutoCast
                 if (injurySeverity != 0 && !(caster.health.hediffSet.HasHediff(HediffDef.Named("TM_HediffShield"))))
                 {
                     Job job = ability.GetJob(AbilityContext.AI, jobTarget);
-                    caster.jobs.TryTakeOrderedJob(job);
+                    DoJob.Execute(job, caster);
                     success = true;
                 }            
             }
@@ -924,7 +924,7 @@ namespace TorannMagic.AutoCast
             if (casterComp.Stamina.CurLevel >= casterComp.ActualStaminaCost(abilitydef) && ability.CooldownTicksLeft <= 0 && jobTarget != null)
             {
                 Job job = ability.GetJob(AbilityContext.AI, jobTarget);
-                caster.jobs.TryTakeOrderedJob(job);
+                DoJob.Execute(job, caster);
                 success = true;
             }
         }
@@ -941,7 +941,7 @@ namespace TorannMagic.AutoCast
             if (casterComp.Mana.CurLevel >= casterComp.ActualManaCost(abilitydef) && ability.CooldownTicksLeft <= 0 && jobTarget != null)
             {                
                 Job job = ability.GetJob(AbilityContext.AI, jobTarget);
-                caster.jobs.TryTakeOrderedJob(job);
+                DoJob.Execute(job, caster);
                 success = true;                
             }
         }
@@ -958,7 +958,7 @@ namespace TorannMagic.AutoCast
             if (casterComp.Mana.CurLevel >= casterComp.ActualManaCost(abilitydef) && ability.CooldownTicksLeft <= 0 && jobTarget != null)
             {
                 Job job = ability.GetJob(AbilityContext.AI, jobTarget);
-                caster.jobs.TryTakeOrderedJob(job);
+                DoJob.Execute(job, caster);
                 success = true;
             }
         }
@@ -1011,11 +1011,29 @@ namespace TorannMagic.AutoCast
                         if (!targetPawn.health.hediffSet.HasHediff(hediffDef, false) && tatteredApparel)
                         {
                             Job job = ability.GetJob(AbilityContext.AI, jobTarget);
-                            caster.jobs.TryTakeOrderedJob(job);
+                            DoJob.Execute(job, caster);
                             success = true;
                         }
                     }
                 }
+            }
+        }
+    }
+
+    public static class DoJob
+    {
+        public static void Execute(Job job, Pawn caster)
+        {
+            if (ModOptions.Settings.Instance.autocastQueueing && !caster.Drafted && caster.CurJobDef != JobDefOf.Hunt)
+            {
+                if (caster.jobs.jobQueue.Count < 1)
+                {
+                    caster.jobs.jobQueue.EnqueueLast(job, JobTag.DraftedOrder);
+                }
+            }
+            else
+            {
+                caster.jobs.TryTakeOrderedJob(job);
             }
         }
     }
@@ -1038,7 +1056,14 @@ namespace TorannMagic.AutoCast
                         if (targetPawn.IsColonist && targetPawnComp.MagicUserLevel < casterComp.MagicUserLevel && caster.relations.OpinionOf(targetPawn) >= 0)
                         {
                             Job job = ability.GetJob(AbilityContext.AI, jobTarget);
-                            caster.jobs.TryTakeOrderedJob(job);
+                            if (ModOptions.Settings.Instance.autocastQueueing)
+                            {
+                                caster.jobs.jobQueue.EnqueueLast(job, JobTag.DraftedOrder);
+                            }
+                            else
+                            {
+                                caster.jobs.TryTakeOrderedJob(job);
+                            }
                             success = true;
                         }
                     }
@@ -1065,7 +1090,14 @@ namespace TorannMagic.AutoCast
                         if (targetPawn.IsColonist && targetPawnComp.MightUserLevel < casterComp.MightUserLevel && caster.relations.OpinionOf(targetPawn) >= 0)
                         {
                             Job job = ability.GetJob(AbilityContext.AI, jobTarget);
-                            caster.jobs.TryTakeOrderedJob(job);
+                            if (ModOptions.Settings.Instance.autocastQueueing)
+                            {
+                                caster.jobs.jobQueue.EnqueueLast(job, JobTag.DraftedOrder);
+                            }
+                            else
+                            {
+                                caster.jobs.TryTakeOrderedJob(job);
+                            }
                             success = true;
                         }
                     }

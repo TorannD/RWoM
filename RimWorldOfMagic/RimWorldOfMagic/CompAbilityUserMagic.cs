@@ -285,6 +285,7 @@ namespace TorannMagic
         public bool sigilSurging = false;
         public bool sigilDraining = false;
         public FlyingObject_LivingWall livingWall = null;
+        public int lastChaosTraditionTick = 0;
 
         private Effecter powerEffecter = null;
         private int powerModifier = 0;
@@ -8644,6 +8645,7 @@ namespace TorannMagic
             Scribe_Values.Look<int>(ref this.nextEarthSpriteAction, "nextEarthSpriteAction", 0, false);
             Scribe_Collections.Look<IntVec3>(ref this.fertileLands, "fertileLands", LookMode.Value);
             Scribe_Values.Look<float>(ref this.maxMP, "maxMP", 1f, false);
+            Scribe_Values.Look<int>(ref this.lastChaosTraditionTick, "lastChaosTraditionTick", 0);
             //Scribe_Collections.Look<TM_ChaosPowers>(ref this.chaosPowers, "chaosPowers", LookMode.Deep, new object[0]);
             //Recall variables 
             Scribe_Values.Look<bool>(ref this.recallSet, "recallSet", false, false);

@@ -53,6 +53,7 @@ namespace TorannMagic.ModOptions
         public float autocastMinThreshold = Settings.Instance.autocastMinThreshold;
         public float autocastCombatMinThreshold = Settings.Instance.autocastCombatMinThreshold;
         public float autocastEvaluationFrequency = Settings.Instance.autocastEvaluationFrequency;
+        public bool autocastQueueing = Settings.Instance.autocastQueueing;
 
         //Class options
         public bool Arcanist = Settings.Instance.Arcanist;

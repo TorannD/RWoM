@@ -251,6 +251,8 @@
 <showAbilitiesOnMultiSelect>Show abilities when selecting multiple pawns</showAbilitiesOnMultiSelect>
 <showMagicGizmo>Show mana/stamina/psi energy as gizmo</showMagicGizmo>
 <TM_enableAutocast>Enable auto-cast</TM_enableAutocast>
+<TM_queueAutocast>Queue autocast jobs</TM_queueAutocast>
+<TM_queueAutocastDesc>Non-violent and un-drafted autocast jobs will be queued as the next job to perform instead of interrupting the current job. Queued abilities may become invalid or sub-optimal, depending on the duration of the delay. Some abilities, like blink, phase strike, or 'zone' based jobs are exempt.</TM_queueAutocastDesc>
 <TM_autocastUndraftedThreshold>Minimum energy % for auto-cast (undrafted)</TM_autocastUndraftedThreshold>
 <TM_autocastDraftedThreshold>Minimum energy % for auto-cast (drafted)</TM_autocastDraftedThreshold>
 <TM_autocastEvaluationFrequency>Autocast evaluation frequency</TM_autocastEvaluationFrequency>
@@ -1192,7 +1194,7 @@ Level 3: (+)5% : (-)2%</TM_ChaosTradition_pwr_desc>
 
 Level 0: changes all learned abilities
 Level 1: gains a +8 mood boost for 24hrs
-Level 2: gains 25 mana
+Level 2: gains up-to 40 mana
 Level 3: applies a stacking buff that increases stats</TM_ChaosTradition_eff_desc>
 <TM_ChaosTradition_ver_desc>Increases the number of abilities the Chaos Mage is able to learn through Chaos Tradition. Chaos Tradition is never removed. Requires 2 skill points to train.
 

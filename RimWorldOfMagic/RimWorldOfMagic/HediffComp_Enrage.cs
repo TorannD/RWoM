@@ -10,7 +10,9 @@ namespace TorannMagic
     class HediffComp_Enrage : HediffComp
     {
         public bool consumeJoy = false;
-        public float reductionFactor = 1f;        
+        public float reductionFactor = 1f;
+        private int lastDamageDealt = 0;
+        private bool initialized = false;
 
         //unsaved
         float reductionAmount = .04f;
@@ -44,7 +46,10 @@ namespace TorannMagic
             bool spawned = base.Pawn.Spawned;
             if (spawned)
             {
-
+                if(base.Pawn.records != null)
+                {
+                    lastDamageDealt = base.Pawn.records.GetAsInt(RecordDefOf.DamageDealt);
+                }
             }
         }
 
@@ -60,6 +65,11 @@ namespace TorannMagic
             {
                 if (base.Pawn.Spawned && this.Pawn.needs != null)
                 {
+                    if(!initialized)
+                    {
+                        initialized = true;
+                        Initialize();                        
+                    }
                     if(Find.TickManager.TicksGame % 8 == 0)
                     {
                         DrawEffects();
@@ -67,6 +77,15 @@ namespace TorannMagic
                     if (Find.TickManager.TicksGame % 155 == 0)
                     {
                         float tickCost = (reductionAmount * reductionFactor);
+                        float moodGain = 0f;
+                        if (base.Pawn.records != null)
+                        {
+                            int currentDamage = base.Pawn.records.GetAsInt(RecordDefOf.DamageDealt);
+                            int damageDiff = Mathf.Clamp(currentDamage - lastDamageDealt, 0, 100);
+                            moodGain = Mathf.Clamp(.001f * damageDiff, 0f, 1f);
+                            lastDamageDealt = currentDamage;
+                        }
+
                         for (int i = 0; i < this.Pawn.needs.AllNeeds.Count; i++)
                         {
                             Need n = this.Pawn.needs.AllNeeds[i];
@@ -76,11 +95,18 @@ namespace TorannMagic
                                 usedEmotions = true;
                                 break;
                             }
-                            if(n.def.defName == "Mood" && n.CurLevel >= tickCost)
+                            if(n.def.defName == "Mood")
                             {
-                                n.CurLevel -= tickCost;
-                                usedEmotions = true;
-                                break;
+                                if(moodGain != 0f)
+                                {
+                                    n.CurLevel += moodGain;
+                                }
+                                if (n.CurLevel >= tickCost)
+                                {
+                                    n.CurLevel -= tickCost;
+                                    usedEmotions = true;
+                                    break;
+                                }
                             }
                         }
                         if (!usedEmotions)
@@ -101,6 +127,16 @@ namespace TorannMagic
                     }
                 }
             }
+        }
+
+        public override void CompPostPostRemoved()
+        {
+            Need n = this.Pawn.needs.mood;
+            if(n != null && n.CurLevel < .4f)
+            {
+                n.CurLevel = .4f;
+            }
+            base.CompPostPostRemoved();
         }
 
         public void DrawEffects()

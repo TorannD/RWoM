@@ -56,6 +56,7 @@ namespace TorannMagic.ModOptions
         public float autocastMinThreshold = 0.7f;
         public float autocastCombatMinThreshold = 0.2f;
         public int autocastEvaluationFrequency = 180;
+        public bool autocastQueueing = false;
 
         //class options
         public bool Arcanist = true;
@@ -157,6 +158,7 @@ namespace TorannMagic.ModOptions
             Scribe_Values.Look<float>(ref this.autocastCombatMinThreshold, "autocastCombatMinThreshold", 0.2f, false);
             Scribe_Values.Look<int>(ref this.autocastEvaluationFrequency, "autocastEvaluationFrequency", 180, false);
             Scribe_Values.Look<bool>(ref this.autocastAnimals, "autocastAnimals", false, false);
+            Scribe_Values.Look<bool>(ref this.autocastQueueing, "autocastQueueing", false, false);
 
             Scribe_Values.Look<bool>(ref this.Arcanist, "Arcanist", true, false);
             Scribe_Values.Look<bool>(ref this.FireMage, "FireMage", true, false);

@@ -26,7 +26,7 @@ namespace TorannMagic
             CompAbilityUserMagic comp = this.CasterPawn.GetComp<CompAbilityUserMagic>();            
 
             if (this.CasterPawn != null && !this.CasterPawn.Downed && comp != null && comp.MagicData != null)
-            {
+            {                
                 pwrVal = comp.MagicData.MagicPowerSkill_ChaosTradition.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_ChaosTradition_pwr").level;
                 verVal = comp.MagicData.MagicPowerSkill_ChaosTradition.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_ChaosTradition_ver").level;
                 effVal = comp.MagicData.MagicPowerSkill_ChaosTradition.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_ChaosTradition_eff").level;
@@ -44,7 +44,12 @@ namespace TorannMagic
                 }
                 if(effVal >= 2)
                 {
-                    comp.Mana.CurLevel += .25f * comp.mpRegenRate;
+                    float manaReMod = 1f;
+                    if(Find.TickManager.TicksGame - comp.lastChaosTraditionTick < 57500)
+                    {
+                        manaReMod = (float)(Find.TickManager.TicksGame - comp.lastChaosTraditionTick) / 57500f;
+                    }
+                    comp.Mana.CurLevel += .4f * comp.mpRegenRate * manaReMod;
                 }
                 if(effVal >= 1)
                 { 
@@ -66,7 +71,7 @@ namespace TorannMagic
                 }
 
                 ClearSpellRemnants(comp);
-
+                comp.lastChaosTraditionTick = Find.TickManager.TicksGame;
             }
             else
             {

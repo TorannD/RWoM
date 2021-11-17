@@ -36,7 +36,7 @@ namespace TorannMagic.Golems
             if(job == TorannMagicDefOf.JobDriver_MechaMine)
             {
                 IEnumerable<Thing> tmpThings = from t in p.Map.listerThings.AllThings
-                                               where (t.def.mineable && !t.Fogged() && !t.IsForbidden(p) && t.Map.designationManager.HasMapDesignationAt(t.Position))
+                                               where (t.def.mineable && !t.Fogged() && !t.IsForbidden(p) && t.Map.designationManager.AllDesignationsOn(t).Any((Designation x) => x.def == DesignationDefOf.Mine))
                                                select t;
                 return tmpThings;   
             }

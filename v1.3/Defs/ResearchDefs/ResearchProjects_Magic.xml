@@ -271,6 +271,7 @@
 		<researchViewX>3.0</researchViewX>
 		<researchViewY>3.5</researchViewY>
 		<prerequisites>
+			<li>Machining</li>
 			<li>TM_GolemCraftRD</li>
 		</prerequisites>
 	</ResearchProjectDef>
