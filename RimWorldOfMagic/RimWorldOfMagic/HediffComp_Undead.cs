@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
@@ -17,6 +17,13 @@ namespace TorannMagic
         private bool initialized = false;
 
         public Pawn linkedPawn = null;
+        private static readonly string[] nonStandardNeedsToAutoFulfill = new[] { 
+            "Mood", 
+            "Suppression", 
+            "Bladder", //Dubs Bad Hygiene
+            "Hygiene", //Dubs Bad Hygiene
+            "DBHThirst" //Dubs Bad Hygiene
+        };
 
         public override void CompExposeData()
         {
@@ -157,7 +164,7 @@ namespace TorannMagic
                     { 
                         for (int i = 0; i < needs.Count; i++)
                         {
-                            if (needs[i]?.def == NeedDefOf.Food || needs[i]?.def?.defName == "Mood" || needs[i]?.def?.defName == "Suppression")
+                            if (needs[i]?.def == NeedDefOf.Food || nonStandardNeedsToAutoFulfill.Contains(needs[i]?.def?.defName))
                             {
                                 needs[i].CurLevel = needs[i].MaxLevel;
                             }
