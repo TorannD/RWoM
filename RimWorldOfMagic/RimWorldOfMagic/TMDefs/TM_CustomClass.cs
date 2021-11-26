@@ -19,6 +19,7 @@ namespace TorannMagic.TMDefs
 
         //Class Hediff
         public HediffDef classHediff = null;
+        public bool showHediffOnGizmo = false;
         public float hediffSeverity = 1f;
 
         //Class Abilities

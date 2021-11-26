@@ -316,6 +316,143 @@
 				<li>TM_FitnessBrand</li>
 			</abilityDefs>										
 		</customPower>
+	</TorannMagic.TM_CustomPowerDef>	
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_Empathy</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<abilityDefs>									
+				<li>TM_Empathy</li>
+			</abilityDefs>
+			<skills>
+				<li>
+					<label>TM_Empathy_pwr</label>
+					<description>TM_Empathy_pwr_desc</description>
+					<levelMax>5</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_Empathy_ver</label>
+					<description>TM_Empathy_ver_desc</description>
+					<levelMax>5</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_Empathy_eff</label>
+					<description>TM_Empathy_eff_desc</description>
+					<levelMax>5</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+			</skills>	
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_MindKiller</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<abilityDefs>									
+				<li>TM_MindKiller</li>
+			</abilityDefs>
+			<skills>
+				<li>
+					<label>TM_MindKiller_pwr</label>
+					<description>TM_MindKiller_pwr_desc</description>
+					<levelMax>5</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_MindKiller_ver</label>
+					<description>TM_MindKiller_ver_desc</description>
+					<levelMax>5</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_MindKiller_eff</label>
+					<description>TM_MindKiller_eff_desc</description>
+					<levelMax>5</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+			</skills>
+			<autocasting>									
+				<type>OnNearby</type>							
+				<targetType>Pawn</targetType>				
+				<mightUser>false</mightUser>				
+				<magicUser>true</magicUser>				
+				<drafted>false</drafted>					<!--only AI autocastable -->
+				<undrafted>false</undrafted>
+				<targetFriendly>false</targetFriendly>		
+				<targetNeutral>false</targetNeutral>		
+				<targetEnemy>true</targetEnemy>				<!--looks for a nearby enemy, then checks to see if there are 3 within 15cells -->
+				<requiresLoS>false</requiresLoS>			
+				<AIUsable>true</AIUsable>					
+				<includeSelf>false</includeSelf>			
+				<advancedConditionDefs>						
+					<li>TM_3EnemiesWithin15Cells</li>
+				</advancedConditionDefs>					
+			</autocasting>				
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_SuppressiveAura</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<abilityDefs>									
+				<li>TM_SuppressiveAura</li>
+			</abilityDefs>
+			<skills>
+				<li>
+					<label>TM_SuppressiveAura_pwr</label>
+					<description>TM_SuppressiveAura_pwr_desc</description>
+					<levelMax>5</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_SuppressiveAura_ver</label>
+					<description>TM_SuppressiveAura_ver_desc</description>
+					<levelMax>5</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_SuppressiveAura_eff</label>
+					<description>TM_SuppressiveAura_eff_desc</description>
+					<levelMax>5</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+			</skills>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_HarvestPassion</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<abilityDefs>									
+				<li>TM_HarvestPassion</li>
+			</abilityDefs>
+			<skills>
+				<li>
+					<label>TM_HarvestPassion_pwr</label>
+					<description>TM_HarvestPassion_pwr_desc</description>
+					<levelMax>5</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_HarvestPassion_ver</label>
+					<description>TM_HarvestPassion_ver_desc</description>
+					<levelMax>5</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_HarvestPassion_eff</label>
+					<description>TM_HarvestPassion_eff_desc</description>
+					<levelMax>5</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+			</skills>										
+		</customPower>
 	</TorannMagic.TM_CustomPowerDef>
 	
 <!-- 	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">

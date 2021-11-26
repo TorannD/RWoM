@@ -24,10 +24,13 @@ namespace TorannMagic
         private static readonly Texture2D FullBrightmageTex = SolidColorMaterials.NewSolidColorTexture(new Color(1f, .95f, .9f));
         private static readonly Texture2D FullSoLTex = SolidColorMaterials.NewSolidColorTexture(new Color(.9f, .8f, .2f));
 
+        private static Texture2D CustomTex;
+
         private static readonly Texture2D EmptyShieldBarTex = SolidColorMaterials.NewSolidColorTexture(Color.clear);
 
         public Pawn pawn;
         public Enchantment.CompEnchantedItem iComp = null;
+        HediffWithCompsExtra customHediff = null;           //must use custom hediff
 
         public override float GetWidth(float maxWidth)
         {
@@ -48,6 +51,24 @@ namespace TorannMagic
                 bool isBrightmage = pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_LightCapacitanceHD);
                 bool isMonk = pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_ChiHD, false);
                 bool isEnchantedItem = this.iComp != null;
+                bool isCustom = false;
+
+                if (customHediff == null || Find.TickManager.TicksGame % 303 == 0)
+                {
+                    if (isMage && compMagic.customClass != null && compMagic.customClass.classHediff != null && compMagic.customClass.showHediffOnGizmo)
+                    {
+                        isCustom = true;
+                        customHediff = pawn.health.hediffSet.GetFirstHediffOfDef(compMagic.customClass.classHediff) as HediffWithCompsExtra;
+                        CustomTex = SolidColorMaterials.NewSolidColorTexture(compMagic.customClass.classIconColor);
+                    }
+                    else if (isFighter && compMight.customClass != null && compMight.customClass.classHediff != null && compMight.customClass.showHediffOnGizmo)
+                    {
+                        isCustom = true;
+                        customHediff = pawn.health.hediffSet.GetFirstHediffOfDef(compMight.customClass.classHediff) as HediffWithCompsExtra;
+                        CustomTex = SolidColorMaterials.NewSolidColorTexture(compMight.customClass.classIconColor);
+                    }
+                }
+                
                 Hediff hediff = null;
                 for (int h = 0; h < pawn.health.hediffSet.hediffs.Count; h++)
                 {
@@ -110,6 +131,11 @@ namespace TorannMagic
                 {
                     barCount++;
                 }
+                if(isCustom)
+                {
+                    barCount++;
+                }
+
                 float barHeight;
                 float initialShift = 0;
                 float barSpacing = 0f;
@@ -141,6 +167,23 @@ namespace TorannMagic
                         float fillPercent = 0;
                         float yShift = initialShift;
                         Text.Anchor = TextAnchor.MiddleCenter;
+                        if(isCustom && customHediff != null)
+                        {
+                            rect2.y = rect.y + yShift;
+                            try
+                            {
+                                fillPercent = customHediff.Severity / customHediff.MaxSeverity;
+                                Widgets.FillableBar(rect2, fillPercent, Gizmo_EnergyStatus.CustomTex, Gizmo_EnergyStatus.EmptyShieldBarTex, false);
+                                Widgets.Label(rect2, "" + (customHediff.Severity).ToString("F0") + " / " + customHediff.MaxSeverity.ToString("F0"));
+                            }
+                            catch
+                            {
+                                fillPercent = 0f;
+                                Widgets.FillableBar(rect2, fillPercent, Gizmo_EnergyStatus.CustomTex, Gizmo_EnergyStatus.EmptyShieldBarTex, false);
+                                Widgets.Label(rect2, "");
+                            }
+                            yShift += (barHeight) + barSpacing;
+                        }
                         if (isPsionic)
                         {
                             rect2.y = rect.y + yShift;

@@ -80,6 +80,7 @@ namespace TorannMagic.ModOptions
         public bool Brightmage = true;
         public bool Shaman = true;
         public bool Golemancer = true;
+        public bool Empath = true;
 
         public bool Gladiator = true;
         public bool Bladedancer = true;
@@ -93,6 +94,7 @@ namespace TorannMagic.ModOptions
         public bool Commander = true;
         public bool SuperSoldier = true;
         public bool Shadow = true;
+        public bool Apothecary = true;
 
         public bool ArcaneConduit = true;
         public bool ManaWell = true;
@@ -193,6 +195,8 @@ namespace TorannMagic.ModOptions
             Scribe_Values.Look<bool>(ref this.Brightmage, "Brightmage", true, false);
             Scribe_Values.Look<bool>(ref this.Shaman, "Shaman", true, false);
             Scribe_Values.Look<bool>(ref this.Golemancer, "Golemancer", true, false);
+            Scribe_Values.Look<bool>(ref this.Empath, "Empath", true, false);
+            Scribe_Values.Look<bool>(ref this.Apothecary, "Apothecary", true, false);
             Scribe_Collections.Look(ref this.CustomClass, "CustomClass");
             Scribe_Values.Look<bool>(ref this.ManaWell, "ManaWell", true, false);
             Scribe_Values.Look<bool>(ref this.ArcaneConduit, "ArcaneConduit", true, false);

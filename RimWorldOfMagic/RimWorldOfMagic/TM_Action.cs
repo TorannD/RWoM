@@ -2744,7 +2744,7 @@ namespace TorannMagic
                     if (com.pawnAbility.Def == TorannMagicDefOf.TM_Soothe || com.pawnAbility.Def == TorannMagicDefOf.TM_Soothe_I || com.pawnAbility.Def == TorannMagicDefOf.TM_Soothe_II || com.pawnAbility.Def == TorannMagicDefOf.TM_Soothe_III)
                     {
                         magicPower = comp.MagicData.MagicPowersHoF.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == tmAbilityDef);
-                    }
+                    }                    
                     if (com.pawnAbility.Def == TorannMagicDefOf.TM_Prediction)
                     {
                         magicPower = comp.MagicData.MagicPowersC.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Prediction);
@@ -2976,6 +2976,10 @@ namespace TorannMagic
                             
                         }
                     }
+                    if (com.pawnAbility.Def == TorannMagicDefOf.TM_SuppressiveAura)
+                    {
+                        magicPower = comp.MagicData.MagicPowersCustom.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == tmAbilityDef);
+                    }
                     if (comp.MagicData.MagicPowersCustom != null)
                     {
                         foreach (MagicPower mp in comp.MagicData.MagicPowersCustom)
@@ -3039,7 +3043,7 @@ namespace TorannMagic
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
-                    }
+                    }                    
                     if (com.pawnAbility.Def == TorannMagicDefOf.TM_PhaseStrike || com.pawnAbility.Def == TorannMagicDefOf.TM_PhaseStrike_I || com.pawnAbility.Def == TorannMagicDefOf.TM_PhaseStrike_II || com.pawnAbility.Def == TorannMagicDefOf.TM_PhaseStrike_III)
                     {
                         mightPower = mightComp.MightData.MightPowersB.FirstOrDefault<MightPower>((MightPower x) => x.abilityDef == tmAbilityDef);

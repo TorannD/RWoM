@@ -44,9 +44,9 @@ namespace TorannMagic
             {
                 this.levelMax = 5;
             }
-            else if (false)
+            else if (newLabel.StartsWith("TM_Herbalist"))
             {
-                this.levelMax = 4;
+                this.levelMax = 10;
             }
             else
             {

@@ -179,6 +179,111 @@ namespace TorannMagic
             }
         }
 
+        public List<MightPower> mightPowerApothecary;
+        public List<MightPowerSkill> mightPowerSkill_Herbalist;
+        public List<MightPowerSkill> mightPowerSkill_PoisonFlask;
+        public List<MightPowerSkill> mightPowerSkill_Elixir;
+        public List<MightPowerSkill> mightPowerSkill_SoothingBalm;
+
+        public List<MightPower> MightPowersApothecary
+        {
+            get
+            {
+                bool flag = this.mightPowerApothecary == null;
+                if (flag)
+                {
+                    this.mightPowerApothecary = new List<MightPower>
+                    {
+                        new MightPower(new List<AbilityUser.AbilityDef>
+                        {
+                            TorannMagicDefOf.TM_Herbalist
+                        }),
+                        new MightPower(new List<AbilityUser.AbilityDef>
+                        {
+                            TorannMagicDefOf.TM_PoisonFlask
+                        }),
+                        new MightPower(new List<AbilityUser.AbilityDef>
+                        {
+                            TorannMagicDefOf.TM_Elixir
+                        }),
+                        new MightPower(new List<AbilityUser.AbilityDef>
+                        {
+                            TorannMagicDefOf.TM_SoothingBalm
+                        }),
+                    };
+                }
+                return this.mightPowerApothecary;
+            }
+        }
+        public List<MightPowerSkill> MightPowerSkill_Herbalist
+        {
+            get
+            {
+                bool flag = this.mightPowerSkill_Herbalist == null;
+                if (flag)
+                {
+                    this.mightPowerSkill_Herbalist = new List<MightPowerSkill>
+                    {
+                        new MightPowerSkill("TM_Herbalist_pwr", "TM_Herbalist_pwr_desc"), // increases maximum herb count by 10 per lvl
+                        new MightPowerSkill("TM_Herbalist_eff", "TM_Herbalist_eff_desc"), // ??
+                        new MightPowerSkill("TM_Herbalist_ver", "TM_Herbalist_ver_desc")  // increases amount of herbs gained per harvest by 5%
+                    };
+                }
+                return this.mightPowerSkill_Herbalist;
+            }
+        }
+        public List<MightPowerSkill> MightPowerSkill_PoisonFlask
+        {
+            get
+            {
+                bool flag = this.mightPowerSkill_PoisonFlask == null;
+                if (flag)
+                {
+                    this.mightPowerSkill_PoisonFlask = new List<MightPowerSkill>
+                    {
+                        new MightPowerSkill("TM_PoisonFlask_pwr", "TM_PoisonFlask_pwr_desc"), // duration of cloud
+                        new MightPowerSkill("TM_PoisonFlask_eff", "TM_PoisonFlask_eff_desc"), // herb efficiency
+                        new MightPowerSkill("TM_PoisonFlask_ver", "TM_PoisonFlask_ver_desc")  // radius of poison cloud
+                    };
+                }
+                return this.mightPowerSkill_PoisonFlask;
+            }
+        }
+        public List<MightPowerSkill> MightPowerSkill_Elixir
+        {
+            get
+            {
+                bool flag = this.mightPowerSkill_Elixir == null;
+                if (flag)
+                {
+                    this.mightPowerSkill_Elixir = new List<MightPowerSkill>
+                    {
+                        new MightPowerSkill("TM_Elixir_pwr", "TM_Elixir_pwr_desc"), // severity applied 
+                        new MightPowerSkill("TM_Elixir_eff", "TM_Elixir_eff_desc"), // reduces herb consumption
+                        new MightPowerSkill("TM_Elixir_ver", "TM_Elixir_ver_desc")  // variations of healing
+                    };
+                }
+                return this.mightPowerSkill_Elixir;
+            }
+        }
+        public List<MightPowerSkill> MightPowerSkill_SoothingBalm
+        {
+            get
+            {
+                bool flag = this.mightPowerSkill_SoothingBalm == null;
+                if (flag)
+                {
+                    this.mightPowerSkill_SoothingBalm = new List<MightPowerSkill>
+                    {
+                        new MightPowerSkill("TM_SoothingBalm_pwr", "TM_SoothingBalm_pwr_desc"), // severity applied
+                        new MightPowerSkill("TM_SoothingBalm_eff", "TM_SoothingBalm_eff_desc"), // herb efficiency
+                        new MightPowerSkill("TM_SoothingBalm_ver", "TM_SoothingBalm_ver_desc")  // ?
+                    };
+                }
+                return this.mightPowerSkill_SoothingBalm;
+            }
+        }
+
         public List<MightPower> mightPowerShadow;
         public List<MightPowerSkill> mightPowerSkill_ShadowStrike;
         public List<MightPowerSkill> mightPowerSkill_Nightshade;
@@ -1912,6 +2017,7 @@ namespace TorannMagic
                     allMightPowersWithSkills.AddRange(this.MightPowersC);
                     allMightPowersWithSkills.AddRange(this.MightPowersSS);
                     allMightPowersWithSkills.AddRange(this.MightPowersShadow);
+                    allMightPowersWithSkills.AddRange(this.MightPowersApothecary);
                 }
                 return allMightPowersWithSkills;
             }
@@ -1988,6 +2094,10 @@ namespace TorannMagic
                     allMightPowerSkills.AddRange(this.MightPowerSkill_ShadowStrike);
                     allMightPowerSkills.AddRange(this.MightPowerSkill_Nightshade);
                     allMightPowerSkills.AddRange(this.MightPowerSkill_VeilOfShadows);
+                    allMightPowerSkills.AddRange(this.MightPowerSkill_Herbalist);
+                    allMightPowerSkills.AddRange(this.MightPowerSkill_PoisonFlask);
+                    allMightPowerSkills.AddRange(this.MightPowerSkill_Elixir);
+                    allMightPowerSkills.AddRange(this.MightPowerSkill_SoothingBalm);
                     allMightPowerSkills.AddRange(this.MightPowerSkill_Custom);
                 }
                 return allMightPowerSkills;
@@ -2248,6 +2358,7 @@ namespace TorannMagic
             this.mightPowerC.Clear();
             this.mightPowerSS.Clear();
             this.mightPowerShadow.Clear();
+            this.mightPowerApothecary.Clear();
             this.mightPowerStandalone.Clear();
             this.mightPowerCustom.Clear();
             this.mightPawn = null;
@@ -2342,6 +2453,11 @@ namespace TorannMagic
             Scribe_Collections.Look<MightPowerSkill>(ref this.mightPowerSkill_ShadowStrike, "mightPowerSkill_ShadowStrike", (LookMode)2, new object[0]);
             Scribe_Collections.Look<MightPowerSkill>(ref this.mightPowerSkill_Nightshade, "mightPowerSkill_Nightshade", (LookMode)2, new object[0]);
             Scribe_Collections.Look<MightPowerSkill>(ref this.mightPowerSkill_VeilOfShadows, "mightPowerSkill_VeilOfShadows", (LookMode)2, new object[0]);
+            Scribe_Collections.Look<MightPower>(ref this.mightPowerApothecary, "mightPowerApothecary", (LookMode)2, new object[0]);
+            Scribe_Collections.Look<MightPowerSkill>(ref this.mightPowerSkill_Herbalist, "mightPowerSkill_Herbalist", (LookMode)2, new object[0]);
+            Scribe_Collections.Look<MightPowerSkill>(ref this.mightPowerSkill_PoisonFlask, "mightPowerSkill_PoisonFlask", (LookMode)2, new object[0]);
+            Scribe_Collections.Look<MightPowerSkill>(ref this.mightPowerSkill_Elixir, "mightPowerSkill_Elixir", (LookMode)2, new object[0]);
+            Scribe_Collections.Look<MightPowerSkill>(ref this.mightPowerSkill_SoothingBalm, "mightPowerSkill_SoothingBalm", (LookMode)2, new object[0]);
         }
     }
 }

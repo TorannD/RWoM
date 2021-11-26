@@ -1496,6 +1496,28 @@ This arcane script is incomplete and the reader may not be able to learn some, o
     </graphicData>
   </ThingDef>
   
+  <ThingDef ParentName="CombatFormBase">
+    <defName>BookOfApothecary</defName>
+    <label>Combat Style: Apothecary</label>
+    <thingClass>ThingWithComps</thingClass>
+    <description>Teaches a physically adept pawn how to become an apothecary.</description>
+	<category>Item</category>
+	<selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+	<alwaysHaulable>true</alwaysHaulable>	
+	<resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <tradeNeverStack>true</tradeNeverStack>
+    <useHitPoints>true</useHitPoints>
+	<comps>
+      <li Class="CompProperties_Forbiddable" />
+    </comps>
+	<rotatable>false</rotatable>
+    <graphicData>
+      <texPath>Books/apothecary</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+  
     <!--=============== Magic Spells - Single ====================-->
 
 	<ThingDef ParentName="ArcaneSpellBase">

@@ -261,6 +261,10 @@ namespace TorannMagic
                     {
                         mat = MaterialPool.MatFrom("Other/" + this.customClass.classIconPath.ToString());
                     }
+                    else if (this.customClass.classTexturePath != "")
+                    {
+                        mat = MaterialPool.MatFrom("Other/ClassTextures/" + this.customClass.classTexturePath, true);
+                    }
                     if (this.customClass.classIconColor != null)
                     {
                         mat.color = this.customClass.classIconColor;

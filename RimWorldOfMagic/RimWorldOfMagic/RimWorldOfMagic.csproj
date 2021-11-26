@@ -179,12 +179,19 @@
     <Compile Include="Golems\JobDriver_GolemDespawn.cs" />
     <Compile Include="Golems\ITab_GolemWorkstation.cs" />
     <Compile Include="Golems\Need_GolemEnergy.cs" />
+    <Compile Include="HediffComp_HarvestPassion.cs" />
+    <Compile Include="HediffComp_SupressiveAura.cs" />
+    <Compile Include="HediffComp_Empath.cs" />
+    <Compile Include="HeidffWithCompsExtra.cs" />
+    <Compile Include="Hediff_ApothecaryHerbs.cs" />
     <Compile Include="HediffComp_BrandingProtection.cs" />
     <Compile Include="HediffComp_BrandingEmotion.cs" />
     <Compile Include="HediffComp_BrandingVitality.cs" />
     <Compile Include="HediffComp_BrandingSiphon.cs" />
     <Compile Include="HediffComp_BrandingBase.cs" />
+    <Compile Include="HediffComp_HerbalElixir.cs" />
     <Compile Include="Ideology\TM_Precept_RoleVoidSeeker.cs" />
+    <Compile Include="Projectile_PoisonFlask.cs" />
     <Compile Include="Recipe_RuneCarving.cs" />
     <Compile Include="Command_LocalTargetInfo.cs" />
     <Compile Include="CompAbilityUserMagic.cs" />
@@ -713,7 +720,10 @@
     <Compile Include="Verb_DispelEnchantWeapon.cs" />
     <Compile Include="Verb_DispelBranding.cs" />
     <Compile Include="Verb_BrandSiphon.cs" />
+    <Compile Include="Verb_IncitePassion.cs" />
+    <Compile Include="Verb_SoothingBalm.cs" />
     <Compile Include="Verb_LivingWall.cs" />
+    <Compile Include="Verb_Elixir.cs" />
     <Compile Include="Verb_SigilDrain.cs" />
     <Compile Include="Verb_SigilSurge.cs" />
     <Compile Include="Verb_DispelStoneskin.cs" />
@@ -794,6 +804,7 @@
     <Compile Include="Verb_SoL_Equalize.cs" />
     <Compile Include="Verb_SootheAnimal.cs" />
     <Compile Include="Verb_SoulBond.cs" />
+    <Compile Include="Verb_HarvestPassion.cs" />
     <Compile Include="Verb_SpellMending.cs" />
     <Compile Include="Verb_Sprint.cs" />
     <Compile Include="Verb_Stoneskin.cs" />
@@ -806,6 +817,7 @@
     <Compile Include="Verb_SummonTotemHealing.cs" />
     <Compile Include="Verb_SummonTotemLightning.cs" />
     <Compile Include="Verb_SuppressingFire.cs" />
+    <Compile Include="Verb_MindKiller.cs" />
     <Compile Include="Verb_Taunt.cs" />
     <Compile Include="Verb_Teach.cs" />
     <Compile Include="Verb_TechnoShield.cs" />

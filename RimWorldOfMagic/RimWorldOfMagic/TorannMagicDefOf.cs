@@ -738,6 +738,23 @@ namespace TorannMagic
         public static ThingDef FlyingObject_LivingWall;
         public static TMAbilityDef TM_DispelLivingWall;
 
+        //Empath
+        public static TraitDef TM_Empath;
+
+        public static TMAbilityDef TM_Empathy;
+        public static HediffDef TM_EmpathHD;
+        public static TMAbilityDef TM_MindKiller;
+        public static HediffDef TM_MindKillerHD;
+        public static TMAbilityDef TM_HarvestPassion;
+        public static HediffDef TM_HarvestPassionHD;
+        public static TMAbilityDef TM_IncitePassion;
+        public static TMAbilityDef TM_SuppressiveAura;
+        public static HediffDef TM_SuppressiveAuraHD;
+        public static HediffDef TM_EmotionSuppressionHD;
+        public static ThoughtDef TM_PositiveEmpathyTD;
+        public static ThoughtDef TM_NegativeEmpathyTD;
+        public static ThoughtDef TM_EmotionalWeightTD;
+
         //Shadow
         public static TraitDef TM_TheShadow;
 
@@ -773,7 +790,18 @@ namespace TorannMagic
         public static TraitDef TM_Wayfarer;
 
         public static TMAbilityDef TM_WayfarerCraft;
-        public static TMAbilityDef TM_FieldTraining;        
+        public static TMAbilityDef TM_FieldTraining;
+
+        //Apothecary
+        public static TraitDef TM_Apothecary;
+
+        public static TMAbilityDef TM_Herbalist;
+        public static HediffDef TM_ApothecaryHerbsHD;
+        public static TMAbilityDef TM_PoisonFlask;
+        public static HediffDef TM_HerbalElixirHD;
+        public static TMAbilityDef TM_Elixir;
+        public static TMAbilityDef TM_SoothingBalm;
+        public static HediffDef TM_SoothingBalmHD;
 
         //Might (Gladiator)
         public static TraitDef Gladiator;
@@ -1181,7 +1209,10 @@ namespace TorannMagic
         public static ThingDef Mote_ManaVortex;
         public static ThingDef Mote_GlowingRuneA;
         public static ThingDef Mote_WallSpike;
-
+        public static ThingDef Mote_EnergyStream;
+        public static ThingDef Mote_RedSwirl;
+        public static ThingDef Mote_PurpleSmoke;
+        
         public static ThingDef Projectile_FogOfTorment;        
 
         public static EffecterDef GiantExplosion;
@@ -1213,7 +1244,8 @@ namespace TorannMagic
         public static EffecterDef TM_SmallMagicCircleED;
         public static EffecterDef TM_LightBurstED;
         public static EffecterDef TM_RageWaveED;
-        public static EffecterDef TM_ExplosionED;        
+        public static EffecterDef TM_ExplosionED;
+        public static EffecterDef TM_MKWaveED;
 
         //psychast copies, used with tm_motemaker.makeoverlay
         //adjusts def values on each cast
@@ -1302,6 +1334,8 @@ namespace TorannMagic
         public static SoundDef TM_WolfHowl;
         public static SoundDef TM_FireBurn;
         public static SoundDef TM_Roar;
+        public static SoundDef TM_Powerup;
+        public static SoundDef TM_Scream;
 
         //Inspirations
         public static InspirationDef ID_Champion;

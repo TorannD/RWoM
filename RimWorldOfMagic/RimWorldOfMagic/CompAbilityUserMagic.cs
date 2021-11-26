@@ -638,6 +638,10 @@ namespace TorannMagic
                 {
                     mat = MaterialPool.MatFrom("Other/" + this.customClass.classIconPath.ToString());
                 }
+                else if(this.customClass.classTexturePath != "")
+                {
+                    mat = MaterialPool.MatFrom("Other/ClassTextures/" + this.customClass.classTexturePath, true);
+                }
                 if (this.customClass.classIconColor != null)
                 {
                     mat.color = this.customClass.classIconColor;
@@ -8347,14 +8351,14 @@ namespace TorannMagic
                         }
                         if (ability == TorannMagicDefOf.TM_EnchantedAura || ability == TorannMagicDefOf.TM_EnchantedBody)
                         {
-                            skill = this.MagicData.GetSkill_Efficiency(TorannMagicDefOf.TM_EnchantedBody);
+                            level = this.MagicData.GetSkill_Efficiency(TorannMagicDefOf.TM_EnchantedBody).level;
                         }
 
                         _maxMPUpkeep += (ability.upkeepEnergyCost * (1f - (ability.upkeepEfficiencyPercent * level)));
 
                         if (ability == TorannMagicDefOf.TM_EnchantedAura || ability == TorannMagicDefOf.TM_EnchantedBody)
                         {
-                            skill = this.MagicData.GetSkill_Versatility(TorannMagicDefOf.TM_EnchantedBody);
+                            level = this.MagicData.GetSkill_Versatility(TorannMagicDefOf.TM_EnchantedBody).level;
                         }
                         _mpRegenRateUpkeep += (ability.upkeepRegenCost * (1f - (ability.upkeepEfficiencyPercent * level)));
                     }

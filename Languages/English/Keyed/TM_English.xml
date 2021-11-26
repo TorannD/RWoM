@@ -203,6 +203,8 @@
 <TM_GolemCannotReturn>The golem could not return to its designated position, it not reachable or is occupied.</TM_GolemCannotReturn>
 <TM_GolemPartReplaced>The {0} upgrade has replaced the {1} upgrade; only one upgrade of this type can occupy the {2}.</TM_GolemPartReplaced>
 <TM_UnfinishedThingNoProduct>Unfinished {0}</TM_UnfinishedThingNoProduct>
+<TM_NoPassionsToTransfer>No worthwhile passions found to transfer from {0} to {1}.</TM_NoPassionsToTransfer>
+<TM_MustHaveInspiration>{0} must have an inspiration to use {1}.</TM_MustHaveInspiration>
 
 <!-- Surgery Failed letters -->
 <LetterLabelRegrowthSurgeryFail>Surgery Failed</LetterLabelRegrowthSurgeryFail>
@@ -1341,6 +1343,36 @@ Level 3: 25% efficiency, -15% success chance</TM_RuneCarving_pwr_desc>
 <TM_LivingWall_eff>Unrelenting</TM_LivingWall_eff>
 <TM_LivingWall_ver>Unbreakable</TM_LivingWall_ver>
 
+<TM_Empathy_pwr_desc>Increases the willpower of the empath, decreasing the susceptibility of succumbing to their emotions and increasing the chance to transfer positive emotions.
+Mental Break Resistance: [0,5,9,12,13,15]%
+Positive Vibe Chance: [5,10,15,20,25]%</TM_Empathy_pwr_desc>
+<TM_Empathy_eff_desc>Increases range of empathy by 3c and frequency of emotional vibes by 2s per skill level. Default frequency is once every 21s.</TM_Empathy_eff_desc>
+<TM_Empathy_ver_desc>Increases spell penetration for all abilities by 5% per skill level.</TM_Empathy_ver_desc>
+<TM_MindKiller_pwr_desc>Increases maximum targets by 2 and overall strength of effects by 20% per skill level. At ranks 2+, friendly pawns will not be affected. Base target maximum is 8.</TM_MindKiller_pwr_desc>
+<TM_MindKiller_eff_desc>Reduces the amount of mood consumed for activation by 5% per skill level.</TM_MindKiller_eff_desc>
+<TM_MindKiller_ver_desc>Increases effect radius and success chance:
+Radius: [15,17,19,21]c
+Chance: [50,60,70,80]%</TM_MindKiller_ver_desc>
+<TM_SuppressiveAura_pwr_desc>Increases duration of emotion suppression by 20% and chance to allow positive emotions by 10% per skill level.</TM_SuppressiveAura_pwr_desc>
+<TM_SuppressiveAura_eff_desc>Increases the radius of suppressive aura by 15% per skill level; at level 3, the effects apply to all members of a caravan.</TM_SuppressiveAura_eff_desc>
+<TM_SuppressiveAura_ver_desc>Imitates feelings of joy and comfort to transfer to affected pawns; each skill level increases the amount of joy and comfort transferred.</TM_SuppressiveAura_ver_desc>
+<TM_HarvestPassion_pwr_desc>Increases the chance of harvesting a passion by 6% once the target's joy is exhausted. Base chance is 30% every 1s. The attempt will end once the casters joy is depleted.</TM_HarvestPassion_pwr_desc>
+<TM_HarvestPassion_eff_desc>Decreases the amount of the caster's joy is drained per iteration by 20% per skill level.</TM_HarvestPassion_eff_desc>
+<TM_HarvestPassion_ver_desc>Increases the amount of the target's joy is drained per iteration by 15% per skill level.</TM_HarvestPassion_ver_desc>
+
+<TM_Empathy_pwr>Positive Thinking</TM_Empathy_pwr>
+<TM_Empathy_eff>Group Therapy</TM_Empathy_eff>
+<TM_Empathy_ver>Open Book</TM_Empathy_ver>
+<TM_MindKiller_pwr>Suffocation</TM_MindKiller_pwr>
+<TM_MindKiller_eff>Steely Eyed</TM_MindKiller_eff>
+<TM_MindKiller_ver>Storm Control</TM_MindKiller_ver>
+<TM_SuppressiveAura_pwr>Lingering Suppression</TM_SuppressiveAura_pwr>
+<TM_SuppressiveAura_eff>Immense Aura</TM_SuppressiveAura_eff>
+<TM_SuppressiveAura_ver>Blissful Lie</TM_SuppressiveAura_ver>
+<TM_HarvestPassion_pwr>Passion Hunter</TM_HarvestPassion_pwr>
+<TM_HarvestPassion_eff>Bully</TM_HarvestPassion_eff>
+<TM_HarvestPassion_ver>Despair</TM_HarvestPassion_ver>
+
 <!-- Might Ability Point Descriptions -->
 
 <TM_WayfarerCraft_pwr_desc>Each skill point:
@@ -1896,6 +1928,38 @@ Level 5: splash radius +1m</TM_ShadowStrike_ver_desc>
 <TM_VeilOfShadows_eff>Shadow Saint</TM_VeilOfShadows_eff>
 <TM_VeilOfShadows_ver>Overwhelming Darkness</TM_VeilOfShadows_ver>
 
+<TM_Herbalist_pwr_desc>Increases the carrying capacity of apothecary herbs by 10 per skill level.</TM_Herbalist_pwr_desc>
+<TM_Herbalist_eff_desc>Reduces the rate ingredients expire by 10% per skill level.</TM_Herbalist_eff_desc>
+<TM_Herbalist_ver_desc>Increase the number of useful ingredients found during harvesting by 10% per skill level.</TM_Herbalist_ver_desc>
+<TM_PoisonFlask_pwr_desc>Increases the duration of the poison flask's fog by 1s per skill level. Base 6s.</TM_PoisonFlask_pwr_desc>
+<TM_PoisonFlask_eff_desc>Reduces amount of ingredients needed to create a poison flask by 8% per skill level.</TM_PoisonFlask_eff_desc>
+<TM_PoisonFlask_ver_desc>Increases the radius of poison flask's fog by .8c per skill level, Base 4c.</TM_PoisonFlask_ver_desc>
+<TM_Elixir_pwr_desc>Increases the duration of Elixir's potent stage by 2.4hrs.</TM_Elixir_pwr_desc>
+<TM_Elixir_eff_desc>Reduces ingredients to produce an Elixir by 8% per skill level.</TM_Elixir_eff_desc>
+<TM_Elixir_ver_desc>The herbal Elixir's benefits can be expanded with the right ingredients:
+Level 0: reduces rest decay and increases health regeneration while active
+Level 1: actively fights infections
+Level 2: actively fights diseases
+Level 3: slowly heals permanent injuries</TM_Elixir_ver_desc>
+<TM_SoothingBalm_pwr_desc>Increases the tend quality of treated wounds by 10% per skill level. Base 50-70%.</TM_SoothingBalm_pwr_desc>
+<TM_SoothingBalm_eff_desc>Reduces the amount of ingredients used to create soothing balm by 8% per skill level.</TM_SoothingBalm_eff_desc>
+<TM_SoothingBalm_ver_desc>Increases the number of wounds tended by soothing balm.</TM_SoothingBalm_ver_desc>
+
+<TM_Herbalist_pwr>Herbalist Bag</TM_Herbalist_pwr>
+<TM_Herbalist_eff>Preservation</TM_Herbalist_eff>
+<TM_Herbalist_ver>Forager</TM_Herbalist_ver>
+<TM_PoisonFlask_pwr>Lingering Cloud</TM_PoisonFlask_pwr>
+<TM_PoisonFlask_eff>Ingredient Efficiency</TM_PoisonFlask_eff>
+<TM_PoisonFlask_ver>Expanding Cloud</TM_PoisonFlask_ver>
+<TM_Elixir_pwr>Potency</TM_Elixir_pwr>
+<TM_Elixir_eff>Ingredient Efficiency</TM_Elixir_eff>
+<TM_Elixir_ver>Chemistry</TM_Elixir_ver>
+<TM_SoothingBalm_pwr>Tending Salve</TM_SoothingBalm_pwr>
+<TM_SoothingBalm_eff>Ingredient Efficiency</TM_SoothingBalm_eff>
+<TM_SoothingBalm_ver>Anesthetic</TM_SoothingBalm_ver>
+
+<TM_ApothecaryHerbsGizmoLabel>Herbs</TM_ApothecaryHerbsGizmoLabel>
+
 <TM_Taunt_pwr>Challenger</TM_Taunt_pwr>
 <TM_Taunt_eff>Book of Insults</TM_Taunt_eff>
 <TM_Taunt_ver>Bellowing Roar</TM_Taunt_ver>
@@ -1966,6 +2030,8 @@ Level 3: all 4 effects</TM_CombatDrugs_pwr_desc>
 <TM_AbilityDescAdjustedStaminaCost>Adjusted Stamina Cost: {0} </TM_AbilityDescAdjustedStaminaCost>
 <TM_AbilityDescBaseBloodCost>Base Blood Cost: {0} </TM_AbilityDescBaseBloodCost>
 <TM_AbilityDescAdjustedBloodCost>Adjusted Blood Cost: {0} </TM_AbilityDescAdjustedBloodCost>
+<TM_AbilityDescBaseResourceCost>Base {0} Cost: {1} </TM_AbilityDescBaseResourceCost>
+<TM_AbilityDescAdjustedResourceCost>Adjusted {0} Cost: {1} </TM_AbilityDescAdjustedResourceCost>
 <TM_AbilityDescBaseChiCost>Base Chi Cost: {0} </TM_AbilityDescBaseChiCost>
 <TM_AbilityDescAdjustedChiCost>Adjusted Chi Cost: {0} </TM_AbilityDescAdjustedChiCost>
 <TM_AbilityDescPortalTime>Portal collapse in {0} seconds</TM_AbilityDescPortalTime>

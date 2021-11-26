@@ -209,9 +209,17 @@ namespace TorannMagic.ModOptions
                 {
                     classEnabled = Settings.Instance.Golemancer;
                 }
+                if (cClass.classTrait == TorannMagicDefOf.TM_Empath)
+                {
+                    classEnabled = Settings.Instance.Empath;
+                }
                 if (cClass.classTrait == TorannMagicDefOf.TM_TheShadow)
                 {
                     classEnabled = Settings.Instance.Shadow;
+                }
+                if (cClass.classTrait == TorannMagicDefOf.TM_Apothecary)
+                {
+                    classEnabled = Settings.Instance.Apothecary;
                 }
                 if (cClass.shouldShow)
                 {                    

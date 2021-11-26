@@ -104,4 +104,17 @@
 			</autocastCondition>
 		</TorannMagic.TM_AutocastConditionDef>
 		
+		<TorannMagic.TM_AutocastConditionDef>							<!-- a condition check that looks for 3 enemies near the target - this will include the target enemy for target +2 -->
+		    <defName>TM_3EnemiesWithin15Cells</defName>					<!-- defName is the key to add into the field in CustomPowerDefs -->
+			<autocastCondition>
+				<conditionClass>EnemiesInRange</conditionClass>			<!-- type of condition: DamageTaken, HasNeed, HasHediff, EnemiesInRange, AlliesInRange, TargetDrafted -->
+				<hediffDefs></hediffDefs>									<!-- hediff defname, null by default -->
+				<needDefs></needDefs>										<!-- need defname, null by default, could be used to check for magic user eg TM_Mana -->
+				<valueA>3</valueA>										<!-- primary value used, in this case, number of enemies -->
+				<valueB>15</valueB>										<!-- secondary value used for range determination in xInRange where A is # of enemies and B is range (radius) around target -->
+				<valueC></valueC>										<!-- tertiary value, currently unused by any condition check -->
+				<invert>false</invert>									<!-- inverts the result -->
+			</autocastCondition>
+		</TorannMagic.TM_AutocastConditionDef>
+		
 </Defs>

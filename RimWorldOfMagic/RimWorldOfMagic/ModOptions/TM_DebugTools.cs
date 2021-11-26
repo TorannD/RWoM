@@ -103,6 +103,10 @@ namespace TorannMagic.ModOptions
                     {
                         rhd.Add(hd);
                     }
+                    if(TM_ClassUtility.CustomClassHediffs().Contains(hd.def))
+                    {
+                        rhd.Add(hd);
+                    }
                 }
             }
             foreach (Hediff hd in rhd)

@@ -13,6 +13,12 @@
     <stackLimit>8</stackLimit>
   </ThoughtDef>
   
+  <ThoughtDef Name="TM_MemoryStackable" Abstract="True">
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <stackedEffectMultiplier>1</stackedEffectMultiplier>
+    <stackLimit>10</stackLimit>
+  </ThoughtDef>
+  
   <!--=================== ah, the memories ===================-->
 
   <ThoughtDef ParentName="TM_MemoryOrder">

@@ -1,6 +1,74 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
+<!-- Mind Killer -->
+
+  <EffecterDef>
+    <defName>TM_MKWaveED</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>TM_Mote_MKWaveInner</moteDef>
+        <scale>
+          <min>1</min>
+          <max>1</max>
+        </scale>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>TM_Mote_MKWaveMiddle</moteDef>
+		<rotation>
+			<min>50</min>
+			<max>100</max>
+		</rotation>
+		<rotationRate>
+			<min>50</min>
+			<max>100</max>
+		</rotationRate>
+        <scale>
+          <min>10</min>
+          <max>10</max>
+        </scale>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>TM_Mote_MKWaveInner</defName>
+    <graphicData>
+      <texPath>Motes/PowerBeam</texPath>
+      <shaderType>MoteGlow</shaderType>
+	  <drawSize>(.4, .4)</drawSize>
+	  <color>(0.2,0,.4,1)</color>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <drawOffscreen>true</drawOffscreen>
+    <mote>
+      <fadeInTime>0.1</fadeInTime>
+      <solidTime>.1</solidTime>
+      <fadeOutTime>0.5</fadeOutTime>
+      <growthRate>350</growthRate>
+    </mote>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>TM_Mote_MKWaveMiddle</defName>
+    <graphicData>
+      <texPath>Motes/PowerBeamFragments</texPath>
+      <shaderType>MoteGlow</shaderType>
+	  <color>(.4,0,.8,1)</color>
+	  <drawSize>(10, 10)</drawSize>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <drawOffscreen>true</drawOffscreen>
+    <mote>
+      <fadeInTime>0.4</fadeInTime>
+      <solidTime>1</solidTime>
+      <fadeOutTime>2</fadeOutTime>
+      <growthRate>-25</growthRate>
+    </mote>
+  </ThingDef>
+
   <!-- Geolemancer rune carving -->
   
   <EffecterDef>

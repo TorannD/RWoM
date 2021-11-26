@@ -118,6 +118,8 @@
 		  </li>
 		</degreeDatas>	
 		<conflictingTraits>
+		  <li>TM_Empath</li>
+		  <li>TM_Apothecary</li>
 		  <li>PhysicalProdigy</li>
 		  <li>InnerFire</li>
 		  <li>HeartOfFrost</li>
@@ -176,6 +178,8 @@
             </li>
         </degreeDatas>
 		<conflictingTraits>
+		  <li>TM_Empath</li>
+		  <li>TM_Apothecary</li>
 		  <li>HeartOfFrost</li>
 		  <li>Arcanist</li>
 		  <li>StormBorn</li>
@@ -212,6 +216,75 @@
 		  <li>TM_Brightmage</li>
 		  <li>TM_Shaman</li>
 		  <li>TM_Golemancer</li>
+		</conflictingTraits>
+    </TraitDef>
+	
+	<TraitDef>
+        <defName>TM_Empath</defName>
+        <ignoreConfigErrors>true</ignoreConfigErrors>
+		<commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>Empath</label>
+                <description>[PAWN_nameDef] is an empath, able to feel and manipulate the emotions of those around [PAWN_objective]. [PAWN_possessive]'s abilities are tied to magic, but have affected [PAWN_objective] on a more innate level. However, with training, [PAWN_nameDef] can still become an adept magic user. For better or worse, empath's have a very strong presence and can easily read the presence of others; the effectiveness of their abilities are closely tied to their aptitude for overcoming another's defenses.</description>
+				<degree>0</degree>
+                <statOffsets>
+					<PsychicSensitivity>1</PsychicSensitivity>
+					<MentalBreakThreshold>0.1</MentalBreakThreshold>
+					<SocialImpact>0.5</SocialImpact>
+					<NegotiationAbility>.25</NegotiationAbility>
+					<TradePriceImprovement>.25</TradePriceImprovement>
+					<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">.4</CertaintyLossFactor>
+					<ConversionPower MayRequire="Ludeon.RimWorld.Ideology">.5</ConversionPower>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+		<modExtensions>
+            <li Class="TorannMagic.TMDefs.DefModExtension_TraitEnchantments">
+                <maxMP>-0.8</maxMP>
+                <mpRegenRate>-.5</mpRegenRate>
+            </li>
+        </modExtensions>
+		<conflictingTraits>
+		  <li>TM_Gifted</li>
+		  <li>TM_Apothecary</li>
+		  <li>HeartOfFrost</li>
+		  <li>Arcanist</li>
+		  <li>StormBorn</li>
+		  <li>InnerFire</li>
+		  <li>Paladin</li>
+		  <li>PhysicalProdigy</li>
+		  <li>Summoner</li>
+		  <li>Gladiator</li>
+		  <li>TM_Sniper</li>
+		  <li>Druid</li>
+		  <li>Bladedancer</li>
+		  <li>Necromancer</li>
+		  <li>Priest</li>
+		  <li>Ranger</li>
+		  <li>Lich</li>
+		  <li>TM_Bard</li>
+		  <li>Faceless</li>
+		  <li>TM_Psionic</li>
+		  <li>Succubus</li>
+		  <li>Warlock</li>
+		  <li>Geomancer</li>
+		  <li>Technomancer</li>
+		  <li>DeathKnight</li>
+		  <li>Enchanter</li>		  
+		  <li>BloodMage</li>
+		  <li>Chronomancer</li>
+		  <li>TM_Monk</li>
+		  <li>TM_Wanderer</li>
+		  <li>TM_Wayfarer</li>
+		  <li>ChaosMage</li>
+		  <li>TM_SuperSoldier</li>
+		  <li>TM_Commander</li>
+		  <li>TM_TheShadow</li>
+		  <li>TM_Brightmage</li>
+		  <li>TM_Shaman</li>
+		  <li>TM_Golemancer</li>
+		  <li>TM_Empath</li>
 		</conflictingTraits>
     </TraitDef>
 	
@@ -274,6 +347,8 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>TM_Brightmage</li>
 		  <li>TM_Shaman</li>
 		  <li>TM_Golemancer</li>
+		  <li>TM_Empath</li>
+		  <li>TM_Apothecary</li>
 		</conflictingTraits>	
 	</TraitDef> 
 	
@@ -335,6 +410,8 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>TM_Brightmage</li>
 		  <li>TM_Shaman</li>
 		  <li>TM_Golemancer</li>
+		  <li>TM_Empath</li>
+		  <li>TM_Apothecary</li>
 		</conflictingTraits>	
 	</TraitDef> 
 	
@@ -395,6 +472,8 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>TM_Brightmage</li>
 		  <li>TM_Shaman</li>
 		  <li>TM_Golemancer</li>
+		  <li>TM_Empath</li>
+		  <li>TM_Apothecary</li>
 		</conflictingTraits>	
 	</TraitDef> 
 	
@@ -453,6 +532,8 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>TM_Brightmage</li>
 		  <li>TM_Shaman</li>
 		  <li>TM_Golemancer</li>
+		  <li>TM_Empath</li>
+		  <li>TM_Apothecary</li>
 		</conflictingTraits>	
 	</TraitDef> 
 	
@@ -515,6 +596,8 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>TM_Brightmage</li>
 		  <li>TM_Shaman</li>
 		  <li>TM_Golemancer</li>
+		  <li>TM_Empath</li>
+		  <li>TM_Apothecary</li>
 		</conflictingTraits>	
 	</TraitDef>
 	
@@ -576,6 +659,8 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>TM_Brightmage</li>
 		  <li>TM_Shaman</li>
 		  <li>TM_Golemancer</li>
+		  <li>TM_Empath</li>
+		  <li>TM_Apothecary</li>
 		</conflictingTraits>	
 	</TraitDef>
 	
@@ -635,6 +720,8 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>TM_Brightmage</li>
 		  <li>TM_Shaman</li>
 		  <li>TM_Golemancer</li>
+		  <li>TM_Empath</li>
+		  <li>TM_Apothecary</li>
 		</conflictingTraits>	
 	</TraitDef>
 
@@ -693,6 +780,8 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>TM_Brightmage</li>
 		  <li>TM_Shaman</li>
 		  <li>TM_Golemancer</li>
+		  <li>TM_Empath</li>
+		  <li>TM_Apothecary</li>
 		</conflictingTraits>	
 	</TraitDef> 	
 	
@@ -754,6 +843,8 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>TM_Brightmage</li>
 		  <li>TM_Shaman</li>
 		  <li>TM_Golemancer</li>
+		  <li>TM_Empath</li>
+		  <li>TM_Apothecary</li>
 		</conflictingTraits>	
 	</TraitDef>
 	
@@ -847,6 +938,8 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>TM_Brightmage</li>
 		  <li>TM_Shaman</li>
 		  <li>TM_Golemancer</li>
+		  <li>TM_Empath</li>
+		  <li>TM_Apothecary</li>
 		</conflictingTraits>	
 	</TraitDef>
 	
@@ -918,6 +1011,8 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>TM_Brightmage</li>
 		  <li>TM_Shaman</li>
 		  <li>TM_Golemancer</li>
+		  <li>TM_Empath</li>
+		  <li>TM_Apothecary</li>
 		</conflictingTraits>	
 	</TraitDef>
 	
@@ -1024,6 +1119,8 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>TM_Brightmage</li>
 		  <li>TM_Shaman</li>
 		  <li>TM_Golemancer</li>
+		  <li>TM_Empath</li>
+		  <li>TM_Apothecary</li>
 		</conflictingTraits>	
 	</TraitDef>
 	
@@ -1090,6 +1187,8 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>TM_Brightmage</li>
 		  <li>TM_Shaman</li>
 		  <li>TM_Golemancer</li>
+		  <li>TM_Empath</li>
+		  <li>TM_Apothecary</li>
 		</conflictingTraits>	
 	</TraitDef>
 	
@@ -1156,6 +1255,8 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>TM_Brightmage</li>
 		  <li>TM_Shaman</li>
 		  <li>TM_Golemancer</li>
+		  <li>TM_Empath</li>
+		  <li>TM_Apothecary</li>
 		</conflictingTraits>	
 	</TraitDef>
 	
@@ -1220,6 +1321,8 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>TM_Brightmage</li>
 		  <li>TM_Shaman</li>
 		  <li>TM_Golemancer</li>
+		  <li>TM_Empath</li>
+		  <li>TM_Apothecary</li>
 		</conflictingTraits>	
 	</TraitDef>
 	
@@ -1286,6 +1389,8 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>TM_Brightmage</li>
 		  <li>TM_Shaman</li>
 		  <li>TM_Golemancer</li>
+		  <li>TM_Empath</li>
+		  <li>TM_Apothecary</li>
 		</conflictingTraits>	
 	</TraitDef>
 	
@@ -1347,6 +1452,8 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>TM_Brightmage</li>
 		  <li>TM_Shaman</li>
 		  <li>TM_Golemancer</li>
+		  <li>TM_Empath</li>
+		  <li>TM_Apothecary</li>
 		</conflictingTraits>	
 	</TraitDef>
 	
@@ -1409,6 +1516,8 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>TM_Brightmage</li>
 		  <li>TM_Shaman</li>
 		  <li>TM_Golemancer</li>
+		  <li>TM_Empath</li>
+		  <li>TM_Apothecary</li>
 		</conflictingTraits>	
 	</TraitDef>
 	
@@ -1467,6 +1576,8 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>TM_Brightmage</li>
 		  <li>TM_Shaman</li>
 		  <li>TM_Golemancer</li>
+		  <li>TM_Empath</li>
+		  <li>TM_Apothecary</li>
 		</conflictingTraits>	
 	</TraitDef>
 	
@@ -1524,7 +1635,9 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>TM_TheShadow</li>
 		  <li>TM_Brightmage</li>
 		  <li>TM_Shaman</li>	
-		<li>TM_Golemancer</li>		  
+		<li>TM_Golemancer</li>		
+		<li>TM_Empath</li>
+		  <li>TM_Apothecary</li>		
 		</conflictingTraits>	
 	</TraitDef>
 	
@@ -1590,6 +1703,8 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>TM_Brightmage</li>
 		  <li>TM_Shaman</li>
 		  <li>TM_Golemancer</li>
+		  <li>TM_Empath</li>
+		  <li>TM_Apothecary</li>
 		</conflictingTraits>	
 	</TraitDef>
 	
@@ -1653,6 +1768,8 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>TM_TheShadow</li>
 		  <li>TM_Shaman</li>
 		  <li>TM_Golemancer</li>
+		  <li>TM_Empath</li>
+		  <li>TM_Apothecary</li>
 		</conflictingTraits>	
 	</TraitDef>
 	
@@ -1714,7 +1831,9 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>ChaosMage</li>
 		  <li>TM_TheShadow</li>
 		  <li>TM_Brightmage</li>	
-		  <li>TM_Golemancer</li>		  
+		  <li>TM_Golemancer</li>	
+		  <li>TM_Empath</li>
+		  <li>TM_Apothecary</li>		  
 		</conflictingTraits>	
 	</TraitDef>
 	
@@ -1781,6 +1900,8 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>TM_TheShadow</li>
 		  <li>TM_Brightmage</li>
 		  <li>TM_Shaman</li>
+		  <li>TM_Empath</li>
+		  <li>TM_Apothecary</li>
 		</conflictingTraits>	
 	</TraitDef>
 	
@@ -1841,6 +1962,8 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		  <li>TM_Brightmage</li>
 		  <li>TM_Shaman</li>
 		  <li>TM_Golemancer</li>
+		  <li>TM_Empath</li>
+		  <li>TM_Apothecary</li>
 		</conflictingTraits>
     </TraitDef>
 	
@@ -1903,8 +2026,82 @@ Wayfarers prefer the open road and will gain a mood boost for being in a caravan
 		  <li>TM_Brightmage</li>
 		  <li>TM_Shaman</li>
 		  <li>TM_Golemancer</li>
+		  <li>TM_Empath</li>
+		  <li>TM_Apothecary</li>
 		</conflictingTraits>	
 	</TraitDef> 
+	
+	<TraitDef>
+        <defName>TM_Apothecary</defName>
+        <ignoreConfigErrors>false</ignoreConfigErrors>
+		<commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>Apothecary</label>
+                <description>[PAWN_nameDef] is an apothecary, trained in the preparation of medicines, balms, tinctures and drugs. [PAWN_possessive] profession exhibits strict discipline and dedication, and [PAWN_pronoun] has learned to apply [PAWN_possessive] discipline to more generic, physical skills. With training, [PAWN_pronoun] can become capable in many combat techniques to augment [PAWN_possessive] skill in herbs.</description>
+				<degree>0</degree>
+                <statOffsets>
+					<PlantWorkSpeed>.2</PlantWorkSpeed>
+					<FoodPoisonChance>-.025</FoodPoisonChance>
+					<DrugCookingSpeed>.2</DrugCookingSpeed>
+					<DrugSynthesisSpeed>.2</DrugSynthesisSpeed>
+					<MedicalTendQuality>.1</MedicalTendQuality>
+					<SmeltingSpeed>-.2</SmeltingSpeed>
+					<MiningSpeed>-.3</MiningSpeed>
+					<DeepDrillingSpeed>-.2</DeepDrillingSpeed>
+					<SmoothingSpeed>-.2</SmoothingSpeed>
+					<ConstructionSpeed>-.1</ConstructionSpeed>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+		<modExtensions>
+            <li Class="TorannMagic.TMDefs.DefModExtension_TraitEnchantments">
+                <maxSP>-0.8</maxSP>
+                <spRegenRate>-.9</spRegenRate>
+            </li>
+        </modExtensions>
+		<conflictingTraits>
+		  <li>TM_Gifted</li>
+		  <li>TM_Empath</li>
+		  <li>HeartOfFrost</li>
+		  <li>Arcanist</li>
+		  <li>StormBorn</li>
+		  <li>InnerFire</li>
+		  <li>Paladin</li>
+		  <li>PhysicalProdigy</li>
+		  <li>Summoner</li>
+		  <li>Gladiator</li>
+		  <li>TM_Sniper</li>
+		  <li>Druid</li>
+		  <li>Bladedancer</li>
+		  <li>Necromancer</li>
+		  <li>Priest</li>
+		  <li>Ranger</li>
+		  <li>Lich</li>
+		  <li>TM_Bard</li>
+		  <li>Faceless</li>
+		  <li>TM_Psionic</li>
+		  <li>Succubus</li>
+		  <li>Warlock</li>
+		  <li>Geomancer</li>
+		  <li>Technomancer</li>
+		  <li>DeathKnight</li>
+		  <li>Enchanter</li>		  
+		  <li>BloodMage</li>
+		  <li>Chronomancer</li>
+		  <li>TM_Monk</li>
+		  <li>TM_Wanderer</li>
+		  <li>TM_Wayfarer</li>
+		  <li>ChaosMage</li>
+		  <li>TM_SuperSoldier</li>
+		  <li>TM_Commander</li>
+		  <li>TM_TheShadow</li>
+		  <li>TM_Brightmage</li>
+		  <li>TM_Shaman</li>
+		  <li>TM_Golemancer</li>
+		  <li>TM_Empath</li>
+		</conflictingTraits>
+    </TraitDef>
 	
 	<TraitDef>
 		<defName>Gladiator</defName>
@@ -1969,6 +2166,8 @@ Wayfarers prefer the open road and will gain a mood boost for being in a caravan
 		  <li>TM_Brightmage</li>
 		  <li>TM_Shaman</li>
 		  <li>TM_Golemancer</li>
+		  <li>TM_Empath</li>
+		  <li>TM_Apothecary</li>
 		</conflictingTraits>	
 	</TraitDef>
 	
@@ -2092,6 +2291,8 @@ Wayfarers prefer the open road and will gain a mood boost for being in a caravan
 		  <li>TM_Brightmage</li>
 		  <li>TM_Shaman</li>
 		  <li>TM_Golemancer</li>
+		  <li>TM_Empath</li>
+		  <li>TM_Apothecary</li>
 		</conflictingTraits>	
 	</TraitDef>
 	
@@ -2198,6 +2399,8 @@ Wayfarers prefer the open road and will gain a mood boost for being in a caravan
 		  <li>TM_Brightmage</li>
 		  <li>TM_Shaman</li>
 		  <li>TM_Golemancer</li>
+		  <li>TM_Empath</li>
+		  <li>TM_Apothecary</li>
 		</conflictingTraits>	
 	</TraitDef>
 	
@@ -2302,6 +2505,8 @@ Wayfarers prefer the open road and will gain a mood boost for being in a caravan
 		  <li>TM_Brightmage</li>
 		  <li>TM_Shaman</li>
 		  <li>TM_Golemancer</li>
+		  <li>TM_Empath</li>
+		  <li>TM_Apothecary</li>
 		</conflictingTraits>	
 	</TraitDef>
 	
@@ -2365,6 +2570,8 @@ Wayfarers prefer the open road and will gain a mood boost for being in a caravan
 		  <li>TM_Brightmage</li>
 		  <li>TM_Shaman</li>
 		  <li>TM_Golemancer</li>
+		  <li>TM_Empath</li>
+		  <li>TM_Apothecary</li>
 		</conflictingTraits>	
 	</TraitDef>
 	
@@ -2430,6 +2637,8 @@ Wayfarers prefer the open road and will gain a mood boost for being in a caravan
 		  <li>TM_Brightmage</li>
 		  <li>TM_Shaman</li>
 		  <li>TM_Golemancer</li>
+		  <li>TM_Empath</li>
+		  <li>TM_Apothecary</li>
 		</conflictingTraits>	
 	</TraitDef>
 	
@@ -2488,6 +2697,8 @@ Wayfarers prefer the open road and will gain a mood boost for being in a caravan
 		  <li>TM_Brightmage</li>
 		  <li>TM_Shaman</li>
 		  <li>TM_Golemancer</li>
+		  <li>TM_Empath</li>
+		  <li>TM_Apothecary</li>
 		</conflictingTraits>	
 	</TraitDef>
 	
@@ -2549,6 +2760,8 @@ Wayfarers prefer the open road and will gain a mood boost for being in a caravan
 		  <li>TM_Brightmage</li>
 		  <li>TM_Shaman</li>
 		  <li>TM_Golemancer</li>
+		  <li>TM_Empath</li>
+		  <li>TM_Apothecary</li>
 		</conflictingTraits>	
 	</TraitDef>
 	
@@ -2610,6 +2823,8 @@ Wayfarers prefer the open road and will gain a mood boost for being in a caravan
 		  <li>TM_Brightmage</li>
 		  <li>TM_Shaman</li>
 		  <li>TM_Golemancer</li>
+		  <li>TM_Empath</li>
+		  <li>TM_Apothecary</li>
 		</conflictingTraits>	
 	</TraitDef>
 	
@@ -2672,6 +2887,8 @@ Wayfarers prefer the open road and will gain a mood boost for being in a caravan
 		  <li>TM_Brightmage</li>
 		  <li>TM_Shaman</li>
 		  <li>TM_Golemancer</li>
+		  <li>TM_Empath</li>
+		  <li>TM_Apothecary</li>
 		</conflictingTraits>	
 	</TraitDef>
 

@@ -99,6 +99,20 @@ namespace TorannMagic
             return -2;
         }
 
+        public static List<HediffDef> CustomClassHediffs()
+        {
+            List<HediffDef> hList = new List<HediffDef>();
+            hList.Clear();
+            foreach(TM_CustomClass cc in CustomClasses())
+            {
+                if(cc.classHediff != null)
+                {
+                    hList.Add(cc.classHediff);
+                }
+            }
+            return hList;
+        }
+
         public static List<MagicPowerSkill> GetAssociatedMagicPowerSkill(CompAbilityUserMagic comp, MagicPower power)
         {
             string str = power.TMabilityDefs.FirstOrDefault().defName.ToString() + "_";

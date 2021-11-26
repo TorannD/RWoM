@@ -337,6 +337,24 @@ namespace TorannMagic
             return false;
         }
 
+        public static bool IsEmpath(Pawn pawn)
+        {
+            if (pawn.story != null && pawn.story.traits != null && pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Empath))
+            {
+                return true;
+            }
+            if (pawn.health != null && pawn.health.hediffSet != null && pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_EmpathHD) != null)
+            {
+                return true;
+            }
+            CompAbilityUserMagic comp = pawn.TryGetComp<CompAbilityUserMagic>();
+            if(comp != null && comp.customClass != null && comp.customClass.classAbilities.Contains(TorannMagicDefOf.TM_Empathy))
+            {
+                return true;
+            }
+            return false;
+        }
+
         public static bool IsCrossClass(Pawn pawn, bool forMagic)
         {
             if (pawn.story != null && pawn.story.traits != null)
@@ -714,6 +732,38 @@ namespace TorannMagic
             {
                 targetPawn = mapPawns[i];
                 if (targetPawn != null && !targetPawn.Dead && !targetPawn.Destroyed && !targetPawn.Downed)
+                {
+                    if (targetPawn.Faction == faction && (pawn.Position - targetPawn.Position).LengthHorizontal <= radius)
+                    {
+                        pawnList.Add(targetPawn);
+                        targetPawn = null;
+                    }
+                    else
+                    {
+                        targetPawn = null;
+                    }
+                }
+            }
+            if (pawnList.Count > 0)
+            {
+                return pawnList.RandomElement();
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static Pawn FindNearbyOtherFactionPawn(Pawn pawn, Faction faction, int radius)
+        {
+            List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned;
+            List<Pawn> pawnList = new List<Pawn>();
+            Pawn targetPawn = null;
+            pawnList.Clear();
+            for (int i = 0; i < mapPawns.Count; i++)
+            {
+                targetPawn = mapPawns[i];
+                if (targetPawn != null && !targetPawn.Dead && !targetPawn.Destroyed && !targetPawn.Downed && targetPawn != pawn)
                 {
                     if (targetPawn.Faction == faction && (pawn.Position - targetPawn.Position).LengthHorizontal <= radius)
                     {
@@ -1719,6 +1769,10 @@ namespace TorannMagic
             if (compMagic != null)
             {
                 penetration += (compMagic.arcaneDmg - 1);
+                if(compMagic.MagicData != null && compMagic.MagicData.GetSkill_Versatility(TorannMagicDefOf.TM_Empathy) != null)
+                {
+                    penetration += compMagic.MagicData.GetSkill_Versatility(TorannMagicDefOf.TM_Empathy).level * .05f;
+                }
             }
 
             CompAbilityUserMight compMight = pawn.GetComp<CompAbilityUserMight>();

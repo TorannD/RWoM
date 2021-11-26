@@ -115,8 +115,9 @@ namespace TorannMagic
                     }
                 }
             }
-            if (Find.TickManager.TicksGame % 6000 == 0)
+            if (Find.TickManager.TicksGame % 6000 == 0 && linkedPawn != null)
             {
+                Find.HistoryEventsManager.RecordEvent(new HistoryEvent(TorannMagicDefOf.TM_UsedMagic, linkedPawn.Named(HistoryEventArgsNames.Doer), linkedPawn.Named(HistoryEventArgsNames.Subject), linkedPawn.Named(HistoryEventArgsNames.AffectedFaction), linkedPawn.Named(HistoryEventArgsNames.Victim)), true);
                 TM_Action.UpdateAnimalTraining(base.Pawn);                
             }
             bool flag4 = Find.TickManager.TicksGame % 600 == 0 && this.Pawn.def != TorannMagicDefOf.TM_SkeletonR && this.Pawn.def != TorannMagicDefOf.TM_GiantSkeletonR;

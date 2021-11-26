@@ -89,6 +89,7 @@ namespace TorannMagic
                                 CompAbilityUserMagic comp = this.Pawn.GetComp<CompAbilityUserMagic>();
                                 comp.MagicUserXP += Rand.Range(10, 15);
                             }
+                            Find.HistoryEventsManager.RecordEvent(new HistoryEvent(TorannMagicDefOf.TM_UsedMagic, this.Pawn.Named(HistoryEventArgsNames.Doer), this.Pawn.Named(HistoryEventArgsNames.Subject), this.Pawn.Named(HistoryEventArgsNames.AffectedFaction), this.Pawn.Named(HistoryEventArgsNames.Victim)), true);
                         }
                     }
                 }

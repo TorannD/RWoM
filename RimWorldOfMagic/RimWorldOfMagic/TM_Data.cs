@@ -199,6 +199,13 @@ namespace TorannMagic
                 magicTraits.Add(TorannMagicDefOf.TM_Brightmage);
                 magicTraits.Add(TorannMagicDefOf.TM_Shaman);
                 magicTraits.Add(TorannMagicDefOf.TM_Golemancer);
+                foreach (TMDefs.TM_CustomClass cc in TM_ClassUtility.CustomClasses())
+                {
+                    if (cc.isMage && !magicTraits.Contains(cc.classTrait))
+                    {
+                        magicTraits.Add(cc.classTrait);
+                    }
+                }
                 return magicTraits;
             }
         }
@@ -210,6 +217,7 @@ namespace TorannMagic
                 List<TraitDef> mightTraits = new List<TraitDef>();
                 mightTraits.Clear();
                 mightTraits.Add(TorannMagicDefOf.Bladedancer);
+                mightTraits.Add(TorannMagicDefOf.DeathKnight);
                 mightTraits.Add(TorannMagicDefOf.Gladiator);
                 mightTraits.Add(TorannMagicDefOf.Faceless);
                 mightTraits.Add(TorannMagicDefOf.TM_Sniper);
@@ -219,6 +227,13 @@ namespace TorannMagic
                 mightTraits.Add(TorannMagicDefOf.TM_Commander);
                 mightTraits.Add(TorannMagicDefOf.TM_SuperSoldier);
                 mightTraits.Add(TorannMagicDefOf.TM_Wayfarer);
+                foreach (TMDefs.TM_CustomClass cc in TM_ClassUtility.CustomClasses())
+                {
+                    if (cc.isFighter && !mightTraits.Contains(cc.classTrait))
+                    {
+                        mightTraits.Add(cc.classTrait);
+                    }
+                }
                 return mightTraits;
             }
         }
@@ -231,7 +246,7 @@ namespace TorannMagic
                 allClassTraits.Clear();
                 allClassTraits.AddRange(MightTraits);
                 allClassTraits.AddRange(MagicTraits);
-                allClassTraits.AddRange(TM_ClassUtility.CustomClassTraitDefs);
+                //allClassTraits.AddRange(TM_ClassUtility.CustomClassTraitDefs);
                 return allClassTraits;
             }
         }

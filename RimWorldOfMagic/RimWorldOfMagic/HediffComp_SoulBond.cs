@@ -63,6 +63,10 @@ namespace TorannMagic
             bool flag4 = Find.TickManager.TicksGame % 600 == 0;
             if (flag4)
             {
+                if(Find.TickManager.TicksGame % 3600 == 0)
+                {
+                    Find.HistoryEventsManager.RecordEvent(new HistoryEvent(TorannMagicDefOf.TM_UsedMagic, this.Pawn.Named(HistoryEventArgsNames.Doer), this.Pawn.Named(HistoryEventArgsNames.Subject), this.Pawn.Named(HistoryEventArgsNames.AffectedFaction), this.Pawn.Named(HistoryEventArgsNames.Victim)), true);
+                }
                 Pawn pawn = base.Pawn;
                 CompAbilityUserMagic comp = pawn.GetComp<CompAbilityUserMagic>();
                 Pawn soulPawn = comp.soulBondPawn;

@@ -11,6 +11,7 @@
 			<classTrait>TM_TheShadow</classTrait>			<!-- Class Trait; if an existing class trait it used, it will OVERWRITE the class - do not disable overwritten classes in mod options -->
 			<traitDegree>0</traitDegree>					<!-- Trait degree, usually 0, but has to match the trait def -->
 			<classHediff></classHediff>						<!-- Class Hediff, used for various checks but usually not necessary if the ability is assigned; only required for "psionic" -->			
+			<showHediffOnGizmo>false</showHediffOnGizmo>	<!-- displays the hediff value on the resource pool gizmo, hediff type MUST BE HediffWithCompsExtra -->
 			<classTexturePath>shadowFlame</classTexturePath><!-- unique class texture; icon appears on the colonist bar; searches the Textures/Other/ClassTextures mod folder -->
 			<classIconPath>CustomFlame</classIconPath>		<!-- assigns a unique class icon; this icon floats next to the class's head; searches the Textures/Other mod folder -->
 			<classIconColor>(.3,0,.6)</classIconColor>		<!-- color of the class mark in(r,g,b) format -->
@@ -161,6 +162,68 @@
 				<li>SpellOf_BrandSiphon</li>
 				<li>SpellOf_LivingWall</li>			
 			</learnableSpells>								
+			
+			<classFighterAbilities>							
+			</classFighterAbilities>
+			<learnableSkills>								
+			</learnableSkills>
+			
+			<isMage>true</isMage>							
+			<isFighter>false</isFighter>					
+			<isNecromancer>false</isNecromancer>			
+			<isUndead>false</isUndead>										
+			<isAndroid>false</isAndroid>					
+			<isAdvancedClass>false</isAdvancedClass>		
+			<shouldShow>false</shouldShow>
+		  </li>	
+		  <!-- Apothecary -->
+		  <li>		  
+			<classTrait>TM_Apothecary</classTrait>				
+			<traitDegree>0</traitDegree>					
+			<classHediff>TM_ApothecaryHerbsHD</classHediff>		
+			<showHediffOnGizmo>true</showHediffOnGizmo>
+			<classTexturePath>apothecaryFighterMark</classTexturePath> 	
+			<classIconColor>(.4,0.6,0)</classIconColor>
+			<fullScript>BookOfApothecary</fullScript>			
+			
+			<classFighterAbilities>	
+				<li>TM_Herbalist</li>
+				<li>TM_PoisonFlask</li>
+				<li>TM_Elixir</li>
+				<li>TM_SoothingBalm</li>
+			</classFighterAbilities>						
+			
+			<classMageAbilities>							
+			</classMageAbilities>
+			<learnableSkills>								
+			</learnableSkills>
+			
+			<isMage>false</isMage>							
+			<isFighter>true</isFighter>					
+			<isNecromancer>false</isNecromancer>			
+			<isUndead>false</isUndead>										
+			<isAndroid>false</isAndroid>					
+			<isAdvancedClass>false</isAdvancedClass>		
+			<shouldShow>false</shouldShow>
+		  </li>	
+		  <!-- Empath -->
+		  <li>		  
+			<classTrait>TM_Empath</classTrait>				
+			<traitDegree>0</traitDegree>	
+			<classHediff>TM_EmpathHD</classHediff>				
+			<classTexturePath>empathPsiMark</classTexturePath> 
+			<classIconPath>PsiMark</classIconPath>			
+			<classIconColor>(.8,0,1)</classIconColor>		
+			<tornScript></tornScript>						
+			<fullScript></fullScript>		<!--Empath cannot be learned, but the trait has a commonality; an empath is considered a mage immediately -->	
+			
+			<classMageAbilities>	
+				<li>TM_Empathy</li>
+				<li>TM_MindKiller</li>				
+				<li>TM_SuppressiveAura</li>
+				<li>TM_HarvestPassion</li>
+				<li>TM_IncitePassion</li>
+			</classMageAbilities>							
 			
 			<classFighterAbilities>							
 			</classFighterAbilities>

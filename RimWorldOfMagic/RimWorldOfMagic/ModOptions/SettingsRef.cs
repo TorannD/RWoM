@@ -77,6 +77,7 @@ namespace TorannMagic.ModOptions
         public bool Brightmage = Settings.Instance.Brightmage;
         public bool Shaman = Settings.Instance.Shaman;
         public bool Golemancer = Settings.Instance.Golemancer;
+        public bool Empath = Settings.Instance.Empath;
 
         public bool Gladiator = Settings.Instance.Gladiator;
         public bool Bladedancer = Settings.Instance.Bladedancer;
@@ -90,6 +91,7 @@ namespace TorannMagic.ModOptions
         public bool Commander = Settings.Instance.Commander;
         public bool SuperSoldier = Settings.Instance.SuperSoldier;
         public bool Shadow = Settings.Instance.Shadow;
+        public bool Apothecary = Settings.Instance.Apothecary;
 
         public bool ArcaneConduit = Settings.Instance.ArcaneConduit;
         public bool ManaWell = Settings.Instance.ManaWell;

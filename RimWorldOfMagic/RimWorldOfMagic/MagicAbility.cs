@@ -43,30 +43,24 @@ namespace TorannMagic
             }
         }
 
-        private float ActualNeedCost
+        private static float ActualNeedCost (TMAbilityDef magicDef, CompAbilityUserMagic magicUser)
         {
-            get
+            float num = 1f;
+            if (magicDef != null && magicUser.MagicData.GetSkill_Efficiency(magicDef) != null)
             {
-                float num = 1f;
-                if (magicDef != null)
-                {
-                    num = 1f - (magicDef.efficiencyReductionPercent * this.MagicUser.MagicData.GetSkill_Efficiency(magicDef).level);
-                }
-                return magicDef.needCost * num;
+                num = 1f - (magicDef.efficiencyReductionPercent * magicUser.MagicData.GetSkill_Efficiency(magicDef).level);
             }
+            return magicDef.needCost * num;            
         }
 
-        private float ActualHediffCost
+        private static float ActualHediffCost(TMAbilityDef magicDef, CompAbilityUserMagic magicUser)
         {
-            get
+            float num = 1f;
+            if (magicDef != null && magicUser.MagicData.GetSkill_Efficiency(magicDef) != null)
             {
-                float num = 1f;
-                if (magicDef != null)
-                {
-                    num = 1f - (magicDef.efficiencyReductionPercent * this.MagicUser.MagicData.GetSkill_Efficiency(magicDef).level);
-                }
-                return magicDef.hediffCost * num;
+                num = 1f - (magicDef.efficiencyReductionPercent * magicUser.MagicData.GetSkill_Efficiency(magicDef).level);
             }
+            return magicDef.hediffCost * num;            
         }
 
         private float ActualManaCost
@@ -169,7 +163,7 @@ namespace TorannMagic
                     if (this.Pawn.health != null && this.Pawn.health.hediffSet != null && this.Pawn.health.hediffSet.HasHediff(magicDef.requiredHediff))
                     {
                         Hediff hd = this.Pawn.health.hediffSet.GetFirstHediffOfDef(magicDef.requiredHediff);
-                        hd.Severity -= this.ActualHediffCost;
+                        hd.Severity -= ActualHediffCost(magicDef, this.MagicUser);
                         this.MagicUser.MagicUserXP += (int)((magicDef.hediffXPFactor * this.MagicUser.xpGain * settingsRef.xpMultiplier) * magicDef.hediffCost);
                     }
                     else
@@ -182,7 +176,7 @@ namespace TorannMagic
                     if (this.Pawn.needs != null && this.Pawn.needs.AllNeeds != null && this.Pawn.needs.TryGetNeed(this.magicDef.requiredNeed) != null)
                     {
                         Need nd = this.Pawn.needs.TryGetNeed(this.magicDef.requiredNeed);
-                        nd.CurLevel -= this.ActualNeedCost;
+                        nd.CurLevel -= ActualNeedCost(magicDef, this.MagicUser);
                         this.MagicUser.MagicUserXP += (int)((magicDef.needXPFactor * this.MagicUser.xpGain * settingsRef.xpMultiplier) * magicDef.needCost);
                     }
                     else
@@ -273,6 +267,22 @@ namespace TorannMagic
                         (magicAbilityDef.manaCost * 100).ToString("n1")
                     ) + "\n" + "TM_AbilityDescAdjustedStaminaCost".Translate(
                         (magicDef.manaCost * 100).ToString("n1")
+                    );
+                }
+                else if (magicAbilityDef.requiredHediff != null)
+                {
+                    text = "TM_AbilityDescBaseResourceCost".Translate(magicAbilityDef.requiredHediff.label,
+                        ((magicAbilityDef.hediffCost).ToString("n2"))
+                    ) + "\n" + "TM_AbilityDescAdjustedResourceCost".Translate(magicAbilityDef.requiredHediff.label,
+                        (ActualHediffCost(magicAbilityDef, this.MagicUser).ToString("n2"))
+                    );
+                }
+                else if (magicAbilityDef.requiredNeed != null)
+                {
+                    text = "TM_AbilityDescBaseResourceCost".Translate(magicAbilityDef.requiredNeed.label,
+                        (magicAbilityDef.needCost).ToString("n2")
+                    ) + "\n" + "TM_AbilityDescAdjustedResourceCost".Translate(magicAbilityDef.requiredNeed.label,
+                        (ActualNeedCost(magicAbilityDef, MagicUser).ToString("n2"))
                     );
                 }
                 else
@@ -367,7 +377,7 @@ namespace TorannMagic
                             result = false;
                             return result;
                         }
-                        bool flagNeed = magicDef.requiredNeed != null && this.MagicUser.Pawn.needs.TryGetNeed(magicDef.requiredNeed) != null && this.MagicUser.Pawn.needs.TryGetNeed(magicDef.requiredNeed).CurLevel > this.ActualNeedCost;
+                        bool flagNeed = magicDef.requiredNeed != null && this.MagicUser.Pawn.needs.TryGetNeed(magicDef.requiredNeed) != null && this.MagicUser.Pawn.needs.TryGetNeed(magicDef.requiredNeed).CurLevel < ActualNeedCost(magicDef, MagicUser);
                         if(flagNeed)
                         {
                             reason = "TM_NotEnoughEnergy".Translate(
@@ -377,7 +387,7 @@ namespace TorannMagic
                             result = false;
                             return result;
                         }
-                        bool flagHediff = magicDef.requiredHediff != null && this.MagicUser.Pawn.health.hediffSet.HasHediff(magicDef.requiredHediff) && this.MagicUser.Pawn.health.hediffSet.GetFirstHediffOfDef(magicDef.requiredHediff).Severity > this.ActualHediffCost;
+                        bool flagHediff = magicDef.requiredHediff != null && this.MagicUser.Pawn.health.hediffSet.HasHediff(magicDef.requiredHediff) && this.MagicUser.Pawn.health.hediffSet.GetFirstHediffOfDef(magicDef.requiredHediff).Severity < ActualHediffCost(magicDef, MagicUser);
                         if (flagHediff)
                         {
                             reason = "TM_NotEnoughEnergy".Translate(
@@ -408,6 +418,15 @@ namespace TorannMagic
                             base.Pawn.LabelShort,
                             tmad.label);
                         return false;
+                    }
+                    if (magicDef == TorannMagicDefOf.TM_HarvestPassion && !Pawn.Inspired)
+                    {
+                        reason = "TM_MustHaveInspiration".Translate(
+                                base.Pawn.LabelShort,
+                                magicDef.label
+                            );
+                        result = false;
+                        return result;
                     }
                 }
                 List<Apparel> wornApparel = base.Pawn.apparel.WornApparel;

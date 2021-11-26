@@ -14,7 +14,7 @@ namespace TorannMagic
         protected override bool TryCastShot()
         {
             bool flag = false;
-            CompAbilityUserMagic comp = this.CasterPawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = CasterPawn.GetComp<CompAbilityUserMagic>();
 
             if (comp != null && comp.IsMagicUser && comp.BrandedPawns != null)
             {
@@ -22,7 +22,7 @@ namespace TorannMagic
                 {
                     foreach(Pawn br in comp.BrandedPawns)
                     {
-                        if (br.health != null && br.health.hediffSet != null)
+                        if (br != null && br.health != null && br.health.hediffSet != null)
                         {
                             List<Hediff> brands = new List<Hediff>();
                             brands.Clear();
@@ -42,10 +42,10 @@ namespace TorannMagic
                                     br.health.RemoveHediff(h);
                                 }
                             }
-                            if (br.Map != null && caster.Map != null && br.Map == caster.Map)
+                            if (br.Map != null && CasterPawn.Map != null && br.Map == CasterPawn.Map)
                             {
                                 Effecter effect = EffecterDefOf.Skip_ExitNoDelay.Spawn();
-                                effect.Trigger(new TargetInfo(br), new TargetInfo(caster));
+                                effect.Trigger(new TargetInfo(br), new TargetInfo(CasterPawn));
                                 effect.Cleanup();
                             }
                         }
@@ -57,18 +57,18 @@ namespace TorannMagic
                         effectExit.Trigger(new TargetInfo(this.CasterPawn), new TargetInfo(this.CasterPawn));
                         effectExit.Cleanup();
 
-                        List<IntVec3> ring = TM_Calc.GetOuterRing(caster.Position, 1f, 2f);
+                        List<IntVec3> ring = TM_Calc.GetOuterRing(CasterPawn.Position, 1f, 2f);
                         for (int i = 0; i < 16; i++)
                         {
                             Vector3 moteVec = ring.RandomElement().ToVector3Shifted();
                             moteVec.x += Rand.Range(-.5f, .5f);
                             moteVec.z += Rand.Range(-.5f, .5f);
-                            float angle = (Quaternion.AngleAxis(90, Vector3.up) * TM_Calc.GetVector(moteVec, caster.DrawPos)).ToAngleFlat();
+                            float angle = (Quaternion.AngleAxis(90, Vector3.up) * TM_Calc.GetVector(moteVec, CasterPawn.DrawPos)).ToAngleFlat();
                             ThingDef mote = TorannMagicDefOf.Mote_Psi_Grayscale;
                             mote.graphicData.color = Color.white;
-                            TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Psi_Yellow, moteVec, caster.Map, Rand.Range(.25f, .6f), .1f, .05f, .05f, 0, Rand.Range(4f, 6f), angle, angle);
+                            TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Psi_Yellow, moteVec, CasterPawn.Map, Rand.Range(.25f, .6f), .1f, .05f, .05f, 0, Rand.Range(4f, 6f), angle, angle);
                         }
-                        FleckMaker.ThrowLightningGlow(caster.DrawPos, caster.Map, 1.2f);
+                        FleckMaker.ThrowLightningGlow(CasterPawn.DrawPos, CasterPawn.Map, 1.2f);
                     }                    
                 }
             }

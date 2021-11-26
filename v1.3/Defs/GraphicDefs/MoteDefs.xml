@@ -131,6 +131,19 @@
     </mote>
   </ThingDef>
   
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_RedSwirl</defName>
+    <graphicData>
+      <texPath>Motes/RedSwirlMote</texPath>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.1</fadeInTime>
+      <solidTime>.2</solidTime>
+      <fadeOutTime>.2</fadeOutTime>
+    </mote>
+  </ThingDef>
+  
    <ThingDef ParentName="MoteBase">
     <defName>Mote_Base_Smoke</defName>
     <graphicData>
@@ -509,6 +522,19 @@
       <fadeOutTime>0.5</fadeOutTime>
     </mote>
   </ThingDef>
+  
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_PurpleSmoke</defName>
+    <graphicData>
+      <texPath>Motes/PurpleSmokeMote</texPath>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.05</fadeInTime>
+      <solidTime>0.2</solidTime>
+      <fadeOutTime>0.5</fadeOutTime>
+    </mote>
+  </ThingDef>
 
   <ThingDef ParentName="MoteBase">
     <defName>Mote_TechnoShield</defName>
@@ -721,6 +747,19 @@
     <defName>Mote_ArcaneStream</defName>
     <graphicData>
       <texPath>Motes/ArcaneStreamMote</texPath>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.1</fadeInTime>
+      <solidTime>0.05</solidTime>
+      <fadeOutTime>0.1</fadeOutTime>
+    </mote>
+  </ThingDef>
+  
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_EnergyStream</defName>
+    <graphicData>
+      <texPath>Motes/EnergyStreamMote</texPath>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer>
     <mote>
