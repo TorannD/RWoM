@@ -4034,8 +4034,8 @@ namespace TorannMagic
                                 {
                                     this.RemovePawnAbility(tmad.childAbilities[k]);
                                 }
-                            }
-                            this.RemovePawnAbility(mp.TMabilityDefs[j]);
+                            }                            
+                            this.RemovePawnAbility(tmad);
                         }
                         mp.learned = false;
                     }
@@ -4062,12 +4062,14 @@ namespace TorannMagic
                                         this.RemovePawnAbility(tmad.childAbilities[k]);
                                     }
                                 }
+                                this.RemovePawnAbility(tmad);
                             }
-                            this.RemovePawnAbility(current.abilityDef);
                         }
                     }
                     this.RemovePawnAbility(TorannMagicDefOf.TM_EnchantedAura);
                     this.RemovePawnAbility(TorannMagicDefOf.TM_NanoStimulant);
+                    this.RemovePawnAbility(TorannMagicDefOf.TM_LightSkipMass);
+                    this.RemovePawnAbility(TorannMagicDefOf.TM_LightSkipGlobal);
                     this.spell_EnchantedAura = false;
                     this.spell_ShadowCall = false;
                     this.spell_ShadowStep = false;

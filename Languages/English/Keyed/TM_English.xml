@@ -319,6 +319,8 @@
 <TM_Shaman>Shaman</TM_Shaman>
 <TM_Shadow>Shadow</TM_Shadow>
 <TM_Golemancer>Golemancer</TM_Golemancer>
+<TM_Apothecary>Apothecary</TM_Apothecary>
+<TM_Empath>Empath</TM_Empath>
 <TM_CustomClasses>Custom Classes</TM_CustomClasses>
 
 <!-- Mod Settings event options -->

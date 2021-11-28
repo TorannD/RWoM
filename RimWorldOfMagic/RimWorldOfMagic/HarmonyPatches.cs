@@ -17,6 +17,8 @@ using TorannMagic.Conditions;
 using TorannMagic.TMDefs;
 using TorannMagic.Golems;
 using RimWorld.QuestGen;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
 
 namespace TorannMagic
 {
@@ -82,7 +84,7 @@ namespace TorannMagic
             harmonyInstance.Patch(AccessTools.Method(typeof(Verb_LaunchProjectile), "get_Projectile", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_Projectile_ES", null), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(WindManager), "get_WindSpeed", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_WindSpeed", null), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(MentalBreaker), "get_CanDoRandomMentalBreaks", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_CanDoRandomMentalBreaks", null), null);
-            //harmonyInstance.Patch(AccessTools.Method(typeof(Pawn), "get_IsFreeColonist", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_IsFreeColonist_Golem", null));
+            harmonyInstance.Patch(AccessTools.Method(typeof(Pawn), "get_IsFreeNonSlaveColonist", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_IsFreeNonSlaveColonist_Golem", null));
             //harmonyInstance.Patch(AccessTools.Method(typeof(RaceProperties), "get_Humanlike", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_Humanlike_Golem", null), null);
             //harmonyInstance.Patch(AccessTools.Method(typeof(MainTabWindow_Animals), "get_Pawns", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_GolemsAsAnimals", null), null);
 
@@ -358,26 +360,21 @@ namespace TorannMagic
         //    return true;
         //}
 
-        //public static void Get_IsFreeColonist_Golem(Pawn __instance, ref bool __result)
-        //{
-        //    if(__result && __instance is TMPawnGolem)
-        //    {
-        //        __result = false;
-        //    }
-        //}
-
-        //[HarmonyPatch(typeof(MemoryThoughtHandler), "TryGainMemory", new Type[]
-        //    {
-        //        typeof(Thought_Memory),
-        //        typeof(Pawn)
-        //    })]
-        //public class ThoughtMemorySuppression_Patch
-        //{
-        //    private static void Postfix(MemoryThoughtHandler __instance, Thought_Memory newThought, Pawn ___pawn, Pawn otherPawn)
-        //    {
-        //        Log.Message("" + ___pawn.LabelShort + " trying to gain memory " + newThought.def.defName);
-        //    }
-        //}
+        public static void Get_IsFreeNonSlaveColonist_Golem(Pawn __instance, ref bool __result)
+        {
+            if (__instance is TMPawnGolem)
+            {
+                try
+                {
+                    StackFrame sf = (new System.Diagnostics.StackTrace()).GetFrame(2);
+                    if (sf != null && sf.ToString().StartsWith("<AddPawnsSections>"))
+                    {
+                        __result = true;
+                    }
+                }
+                catch { }
+            }
+        }
 
         [HarmonyPatch(typeof(ThoughtUtility), "CanGetThought", null)]
         public class ThoughtSuppression_Patch
@@ -3301,22 +3298,22 @@ namespace TorannMagic
                                         if (wpn.def.Verbs.FirstOrDefault<VerbProperties>().defaultProjectile.projectile.damageDef.defName == "Arrow" || wpn.def.defName.Contains("Bow") || wpn.def.defName.Contains("bow") || wpn.def.Verbs.FirstOrDefault<VerbProperties>().defaultProjectile.projectile.damageDef.defName.Contains("Arrow") || wpn.def.Verbs.FirstOrDefault<VerbProperties>().defaultProjectile.projectile.damageDef.defName.Contains("arrow"))
                                         {
                                             Hediff hediff = ranger.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_BowTrainingHD);
-                                            float amt;
-                                            if (hediff.Severity >= 1)
+                                            float amt = dinfo.Amount;
+                                            if (hediff.Severity < 1)
+                                            {
+                                                amt = dinfo.Amount * 1.2f;
+                                            }
+                                            else if (hediff.Severity < 2)
                                             {
                                                 amt = dinfo.Amount * 1.4f;
                                             }
-                                            else if (hediff.Severity >= 2)
+                                            else if (hediff.Severity < 3)
                                             {
                                                 amt = dinfo.Amount * 1.6f;
                                             }
-                                            else if (hediff.Severity >= 3)
-                                            {
-                                                amt = dinfo.Amount * 1.8f;
-                                            }
                                             else
                                             {
-                                                amt = dinfo.Amount * 1.2f;
+                                                amt = dinfo.Amount * 1.8f;
                                             }
                                             dinfo.SetAmount(amt);
                                         }

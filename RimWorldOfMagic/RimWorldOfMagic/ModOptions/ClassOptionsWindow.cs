@@ -146,6 +146,9 @@ namespace TorannMagic.ModOptions
             num++;
             Rect rowRect11 = Controller.UIHelper.GetRowRect(rowRect10, rowHeight, num);
             Widgets.CheckboxLabeled(rowRect11, "TM_Demonkin".Translate(), ref Settings.Instance.Demonkin, false);
+            Rect rowRect11ShiftRight = Controller.UIHelper.GetRowRect(rowRect11, rowHeight, num);
+            rowRect11ShiftRight.x += rowRect.width + 98f;
+            Widgets.CheckboxLabeled(rowRect11ShiftRight, "TM_Apothecary".Translate(), ref Settings.Instance.Apothecary);
             num++;
             Rect rowRect12 = Controller.UIHelper.GetRowRect(rowRect11, rowHeight, num);
             Widgets.CheckboxLabeled(rowRect12, "TM_Technomancer".Translate(), ref Settings.Instance.Technomancer, false);
@@ -170,6 +173,9 @@ namespace TorannMagic.ModOptions
             num++;
             Rect rowRect21 = Controller.UIHelper.GetRowRect(rowRect18, rowHeight, num);
             Widgets.CheckboxLabeled(rowRect21, "TM_Golemancer".Translate(), ref Settings.Instance.Golemancer, false);
+            num++;
+            Rect rowRect22 = Controller.UIHelper.GetRowRect(rowRect21, rowHeight, num);
+            Widgets.CheckboxLabeled(rowRect22, "TM_Empath".Translate(), ref Settings.Instance.Empath, false);
             num++;
             Widgets.DrawLineHorizontal(inRect.x - 10f, rowHeight * num, inRect.width - 15f);
             num++;
@@ -201,25 +207,29 @@ namespace TorannMagic.ModOptions
                 {
                     classEnabled = Settings.Instance.Brightmage;
                 }
-                if(cClass.classTrait == TorannMagicDefOf.TM_Shaman)
+                else if(cClass.classTrait == TorannMagicDefOf.TM_Shaman)
                 {
                     classEnabled = Settings.Instance.Shaman;
                 }
-                if (cClass.classTrait == TorannMagicDefOf.TM_Golemancer)
+                else if (cClass.classTrait == TorannMagicDefOf.TM_Golemancer)
                 {
                     classEnabled = Settings.Instance.Golemancer;
                 }
-                if (cClass.classTrait == TorannMagicDefOf.TM_Empath)
+                else if (cClass.classTrait == TorannMagicDefOf.TM_Empath)
                 {
                     classEnabled = Settings.Instance.Empath;
                 }
-                if (cClass.classTrait == TorannMagicDefOf.TM_TheShadow)
+                else if (cClass.classTrait == TorannMagicDefOf.TM_TheShadow)
                 {
                     classEnabled = Settings.Instance.Shadow;
                 }
-                if (cClass.classTrait == TorannMagicDefOf.TM_Apothecary)
+                else if (cClass.classTrait == TorannMagicDefOf.TM_Apothecary)
                 {
                     classEnabled = Settings.Instance.Apothecary;
+                }
+                else if (cClass.classTrait == TorannMagicDefOf.TM_Empath)
+                {
+                    classEnabled = Settings.Instance.Empath;
                 }
                 if (cClass.shouldShow)
                 {                    

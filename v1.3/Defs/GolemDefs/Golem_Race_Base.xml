@@ -21,6 +21,7 @@
       <hasGenders>false</hasGenders>
       <foodType>None</foodType>
       <lifeExpectancy>2500</lifeExpectancy>
+	  <allowedOnCaravan>true</allowedOnCaravan>
     </race>
     <inspectorTabs>
 	  <li>TorannMagic.Golems.ITab_GolemPawn</li>

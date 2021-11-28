@@ -461,7 +461,7 @@ namespace TorannMagic.Golems
                     this.initialized = true;
                 }
 
-                if (this.Pawn.Spawned)
+                if (this.Pawn.Spawned && Pawn.Map != null)
                 {
                     if (!this.Pawn.Downed)
                     {                       
