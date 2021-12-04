@@ -22,7 +22,7 @@ namespace TorannMagic
                 {
                     foreach(Pawn br in comp.BrandedPawns)
                     {
-                        if (br != null && br.health != null && br.health.hediffSet != null)
+                        if (!br.DestroyedOrNull() && br.health != null && br.health.hediffSet != null)
                         {
                             List<Hediff> brands = new List<Hediff>();
                             brands.Clear();
@@ -58,15 +58,18 @@ namespace TorannMagic
                         effectExit.Cleanup();
 
                         List<IntVec3> ring = TM_Calc.GetOuterRing(CasterPawn.Position, 1f, 2f);
-                        for (int i = 0; i < 16; i++)
+                        if (ring != null && ring.Count > 2)
                         {
-                            Vector3 moteVec = ring.RandomElement().ToVector3Shifted();
-                            moteVec.x += Rand.Range(-.5f, .5f);
-                            moteVec.z += Rand.Range(-.5f, .5f);
-                            float angle = (Quaternion.AngleAxis(90, Vector3.up) * TM_Calc.GetVector(moteVec, CasterPawn.DrawPos)).ToAngleFlat();
-                            ThingDef mote = TorannMagicDefOf.Mote_Psi_Grayscale;
-                            mote.graphicData.color = Color.white;
-                            TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Psi_Yellow, moteVec, CasterPawn.Map, Rand.Range(.25f, .6f), .1f, .05f, .05f, 0, Rand.Range(4f, 6f), angle, angle);
+                            for (int i = 0; i < 16; i++)
+                            {
+                                Vector3 moteVec = ring.RandomElement().ToVector3Shifted();
+                                moteVec.x += Rand.Range(-.5f, .5f);
+                                moteVec.z += Rand.Range(-.5f, .5f);
+                                float angle = (Quaternion.AngleAxis(90, Vector3.up) * TM_Calc.GetVector(moteVec, CasterPawn.DrawPos)).ToAngleFlat();
+                                ThingDef mote = TorannMagicDefOf.Mote_Psi_Grayscale;
+                                mote.graphicData.color = Color.white;
+                                TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Psi_Yellow, moteVec, CasterPawn.Map, Rand.Range(.25f, .6f), .1f, .05f, .05f, 0, Rand.Range(4f, 6f), angle, angle);
+                            }
                         }
                         FleckMaker.ThrowLightningGlow(CasterPawn.DrawPos, CasterPawn.Map, 1.2f);
                     }                    

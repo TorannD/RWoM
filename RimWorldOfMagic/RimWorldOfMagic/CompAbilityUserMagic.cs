@@ -344,7 +344,6 @@ namespace TorannMagic
                     if (p.DestroyedOrNull() || p.Dead)
                     {
                         tmpList.Add(br);
-                        continue;
                     }
                 }
                 for (int i = 0; i < tmpList.Count; i++)
@@ -2481,6 +2480,21 @@ namespace TorannMagic
                         if (!abilityUser.health.hediffSet.HasHediff(TorannMagicDefOf.TM_Uncertainty, false) && !Rand.Chance(ability.learnChance))
                         {
                             this.MagicData.AllMagicPowers[z].learned = false;
+                        }
+                        if(ability == TorannMagicDefOf.TM_Branding)
+                        {
+                            int count = 0;
+                            while(count < 2)
+                            {
+                                TMAbilityDef tmpAbility = TM_Data.BrandList().RandomElement();
+                                MagicPower tmpPower = this.MagicData.ReturnMatchingMagicPower(tmpAbility);
+                                if(!tmpPower.learned)
+                                {
+                                    tmpPower.learned = true;
+                                    TryAddPawnAbility(tmpAbility);
+                                    count++;
+                                }
+                            }
                         }
                         if (this.MagicData.AllMagicPowers[z].learned)
                         {

@@ -112,12 +112,11 @@ namespace TorannMagic
                             }
                         }
                     }
-
-                    if (this.Pawn.Downed)
-                    {
+                    else
+                    { 
                         if (this.killNow > 100)
                         {
-                            DamageInfo dinfo = new DamageInfo(DamageDefOf.Blunt, 100, 0, (float)-1, this.sustainerPawn, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
+                            DamageInfo dinfo = new DamageInfo(DamageDefOf.Blunt, 100, 0, (float)-1, this.Pawn, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
                             this.Pawn.TakeDamage(dinfo);
                         }
                         this.killNow++;

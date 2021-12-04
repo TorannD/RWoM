@@ -41,7 +41,7 @@ Requires 40 mana to maintain and reduces mana regeneration by 30%; cast again to
 		<manaCost>0</manaCost>
 		<upkeepEnergyCost>.4</upkeepEnergyCost>
 		<upkeepRegenCost>.3</upkeepRegenCost>
-		<upkeepEfficiencyPercent>.08</upkeepEfficiencyPercent>
+		<upkeepEfficiencyPercent>.1</upkeepEfficiencyPercent>
 		<abilityHediff>TM_InnerFire_AuraHD</abilityHediff>
 		<learnChance>.3</learnChance>
         <MainVerb Class="AbilityUser.VerbProperties_Ability">
@@ -93,7 +93,7 @@ Requires 40 mana to maintain and reduces mana regeneration by 30%; cast again to
 		<manaCost>0</manaCost>
 		<upkeepEnergyCost>.4</upkeepEnergyCost>
 		<upkeepRegenCost>.3</upkeepRegenCost>
-		<upkeepEfficiencyPercent>.08</upkeepEfficiencyPercent>
+		<upkeepEfficiencyPercent>.1</upkeepEfficiencyPercent>
 		<abilityHediff>TM_InnerFire_AuraHD</abilityHediff>
 		<shouldInitialize>false</shouldInitialize>
         <MainVerb Class="AbilityUser.VerbProperties_Ability">
@@ -145,7 +145,7 @@ Requires 40 mana to maintain and reduces mana regeneration by 30%; cast again to
 		<manaCost>0</manaCost>
 		<upkeepEnergyCost>.4</upkeepEnergyCost>
 		<upkeepRegenCost>.3</upkeepRegenCost>
-		<upkeepEfficiencyPercent>.08</upkeepEfficiencyPercent>
+		<upkeepEfficiencyPercent>.1</upkeepEfficiencyPercent>
 		<abilityHediff>TM_InnerFire_AuraHD</abilityHediff>
 		<shouldInitialize>false</shouldInitialize>
         <MainVerb Class="AbilityUser.VerbProperties_Ability">
@@ -197,7 +197,7 @@ Requires 40 mana to maintain and reduces mana regeneration by 30%; cast again to
 		<manaCost>0</manaCost>
 		<upkeepEnergyCost>.4</upkeepEnergyCost>
 		<upkeepRegenCost>.3</upkeepRegenCost>
-		<upkeepEfficiencyPercent>.08</upkeepEfficiencyPercent>
+		<upkeepEfficiencyPercent>.1</upkeepEfficiencyPercent>
 		<abilityHediff>TM_InnerFire_AuraHD</abilityHediff>
 		<shouldInitialize>false</shouldInitialize>
         <MainVerb Class="AbilityUser.VerbProperties_Ability">

@@ -1745,11 +1745,14 @@ namespace TorannMagic
 
         public static void DisplayShieldHit(Pawn shieldedPawn, DamageInfo dinfo)
         {
-            DisplayShield(shieldedPawn, dinfo.Amount, dinfo.Angle);
+            if (shieldedPawn != null && shieldedPawn.Map != null && shieldedPawn.Spawned)
+            {
+                DisplayShield(shieldedPawn, dinfo.Amount, dinfo.Angle);
+            }
         }
 
         public static void DisplayShield(Pawn shieldedPawn, float amount, float angle = 0f)
-        {
+        {            
             Vector3 impactAngleVect;
             SoundDefOf.EnergyShield_AbsorbDamage.PlayOneShot(new TargetInfo(shieldedPawn.Position, shieldedPawn.Map, false));
             impactAngleVect = Vector3Utility.HorizontalVectorFromAngle(angle);
@@ -1766,7 +1769,7 @@ namespace TorannMagic
 
         private static void DrawShieldHit(Pawn shieldedPawn, float magnitude, Vector3 impactAngleVect)
         {
-            bool flag = !shieldedPawn.Dead && !shieldedPawn.Downed;
+            bool flag = !shieldedPawn.Dead && !shieldedPawn.Downed && shieldedPawn.Graphic != null && shieldedPawn.Graphic.drawSize != null;
             if (flag)
             {
                 float num = Mathf.Lerp(1.2f, 1.55f, magnitude);
@@ -2552,8 +2555,8 @@ namespace TorannMagic
 
         public static GizmoResult DrawAutoCastForGizmo(Command_PawnAbility com, Rect rect, bool shrink, GizmoResult oldResult)
         {
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-            if (settingsRef.autocastEnabled && com.pawnAbility.Def.defName.Contains("TM_"))
+            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();            
+            if (settingsRef.autocastEnabled && com.pawnAbility.Def.defName.StartsWith("TM_"))
             {
                 CompAbilityUserMagic comp = com.pawnAbility.Pawn.GetComp<CompAbilityUserMagic>();
                 CompAbilityUserMight mightComp = com.pawnAbility.Pawn.GetComp<CompAbilityUserMight>();
@@ -2606,21 +2609,33 @@ namespace TorannMagic
                 {
                     flag2 = true;
                 }
-                string labelCap = com.LabelCap;
-                if (!labelCap.NullOrEmpty() && !shrink)
+                if (!shrink)
                 {
-                    Text.Font = GameFont.Tiny;
-                    float num = Text.CalcHeight(labelCap, rect.width);
-                    num -= 2f;
-                    Rect rect3 = new Rect(rect.x, rect.yMax - num + 12f, rect.width, num);
-                    GUI.DrawTexture(rect3, TexUI.GrayTextBG);
-                    GUI.color = Color.white;
-                    Text.Anchor = TextAnchor.UpperCenter;
-                    Widgets.Label(rect3, labelCap);
-                    Text.Anchor = TextAnchor.UpperLeft;
+                    string topRightLabel = com.TopRightLabel;
+                    if (!topRightLabel.NullOrEmpty())
+                    {
+                        Vector2 vector2 = Text.CalcSize(topRightLabel);
+                        Rect position;
+                        Rect rect3 = position = new Rect(rect.xMax - vector2.x - 2f, rect.y + 3f, vector2.x, vector2.y);
+                        position.x -= 2f;
+                        position.width += 3f;
+                        Text.Anchor = TextAnchor.UpperRight;
+                        GUI.DrawTexture(position, TexUI.GrayTextBG);
+                        Widgets.Label(rect3, topRightLabel);
+                        Text.Anchor = TextAnchor.UpperLeft;
+                    }
+                    string labelCap = com.LabelCap;
+                    if (!labelCap.NullOrEmpty())
+                    {
+                        float num = Text.CalcHeight(labelCap, rect.width);
+                        Rect rect2 = new Rect(rect.x, rect.yMax - num + 12f, rect.width, num);
+                        GUI.DrawTexture(rect2, TexUI.GrayTextBG);
+                        Text.Anchor = TextAnchor.UpperCenter;
+                        Widgets.Label(rect2, labelCap);
+                        Text.Anchor = TextAnchor.UpperLeft;
+                    }
                     GUI.color = Color.white;
                 }
-                GUI.color = Color.white;
                 if (Mouse.IsOver(rect))
                 {
                     TipSignal tipSignal = com.Desc;
@@ -2658,8 +2673,7 @@ namespace TorannMagic
                         if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
                             magicPower.AutoCast = !magicPower.AutoCast;
-                            return new GizmoResult(GizmoState.Mouseover, null);
-                            
+                            return new GizmoResult(GizmoState.Mouseover, null);                            
                         }
                     }
                     if (com.pawnAbility.Def == TorannMagicDefOf.TM_Firebolt)
@@ -2669,8 +2683,7 @@ namespace TorannMagic
                         if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
                             magicPower.AutoCast = !magicPower.AutoCast;
-                            return new GizmoResult(GizmoState.Mouseover, null);
-                            
+                            return new GizmoResult(GizmoState.Mouseover, null);                            
                         }
                     }
                     if (com.pawnAbility.Def == TorannMagicDefOf.TM_Icebolt)

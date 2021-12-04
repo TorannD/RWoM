@@ -205,6 +205,7 @@
 <TM_UnfinishedThingNoProduct>Unfinished {0}</TM_UnfinishedThingNoProduct>
 <TM_NoPassionsToTransfer>No worthwhile passions found to transfer from {0} to {1}.</TM_NoPassionsToTransfer>
 <TM_MustHaveInspiration>{0} must have an inspiration to use {1}.</TM_MustHaveInspiration>
+<TM_BonusDamage>Bonus damage: {0}</TM_BonusDamage>
 
 <!-- Surgery Failed letters -->
 <LetterLabelRegrowthSurgeryFail>Surgery Failed</LetterLabelRegrowthSurgeryFail>
@@ -405,7 +406,7 @@ Level 15: Teleport, Heal, and Summon Minion gain versatility level 3 class impro
 <TM_Cantrips_ver>Cantrips Versatility</TM_Cantrips_ver>
 
 <TM_RayofHope_eff>Inner Fire Efficiency</TM_RayofHope_eff>
-<TM_RayofHope_eff_desc>Decreases the mana upkeep cost of Inner Fire by 8% per level.</TM_RayofHope_eff_desc>
+<TM_RayofHope_eff_desc>Decreases the mana and regeneration upkeep cost of Inner Fire by 10% per level.</TM_RayofHope_eff_desc>
 <TM_Firebolt_pwr_desc>Increases Firebolt damage by 5 per level.</TM_Firebolt_pwr_desc>
 <TM_Firebolt_eff_desc>Decreases mana cost of Firebolt by 10% per level.</TM_Firebolt_eff_desc>
 <TM_Fireclaw_pwr_desc>Increases damage done by each strand of Fireclaw by 4 per skill level.
@@ -436,7 +437,7 @@ Increases amount of shrapnel create by meteor impacts.</TM_Firestorm_ver_desc>
 <TM_Firestorm_eff>Firestorm Efficiency</TM_Firestorm_eff>
 <TM_Firestorm_ver>Firestorm Versatility</TM_Firestorm_ver>
 
-<TM_Soothe_eff_desc>Decreases the mana upkeep cost of Soothe by 8% per level.</TM_Soothe_eff_desc>
+<TM_Soothe_eff_desc>Decreases the mana and regeneration upkeep cost of Soothe by 10% per level.</TM_Soothe_eff_desc>
 <TM_Rainmaker_eff_desc>Decreases mana cost of Rainmaker by 15% per level of base mana cost.</TM_Rainmaker_eff_desc>
 <TM_Icebolt_pwr_desc>Increases lethality of Icebolt by pre-fragmenting the bolt into razor sharp shards.
 Level 0: 2 to 5 damage per shard
@@ -505,7 +506,7 @@ Increases the radius of blizzard by .5 per skill level.</TM_Blizzard_ver_desc>
 <TM_EyeOfTheStorm_pwr>Rend Earth</TM_EyeOfTheStorm_pwr>
 <TM_EyeOfTheStorm_ver>Perfect Storm</TM_EyeOfTheStorm_ver>
 
-<TM_Shadow_eff_desc>Decreases the mana upkeep cost of Shadow by 8% per level.</TM_Shadow_eff_desc>
+<TM_Shadow_eff_desc>Decreases the mana and regeneration upkeep cost of Shadow by 10% per level.</TM_Shadow_eff_desc>
 <TM_Blink_eff_desc>Decreases mana cost of Blink by 10% per level of base mana cost.</TM_Blink_eff_desc>
 <TM_Summon_eff_desc>Decreases mana cost of Summon by 10% per level of base mana cost.</TM_Summon_eff_desc>
 <TM_MagicMissile_eff_desc>Decreases mana cost of Magic Missile by 8% of base mana cost.</TM_MagicMissile_eff_desc>
@@ -525,7 +526,7 @@ Allows the portal to be held open 20s longer per level.</TM_Teleport_ver_desc>
 <TM_Teleport_ver>Teleport Versatility</TM_Teleport_ver>
 <TM_FoldReality_eff>Fold Reality Efficiency</TM_FoldReality_eff>
 
-<TM_P_RayofHope_eff_desc>Decreases the mana upkeep cost of Ray of Hope by 8% per level.</TM_P_RayofHope_eff_desc>
+<TM_P_RayofHope_eff_desc>Decreases the mana and regeneration upkeep cost of Ray of Hope by 10% per level.</TM_P_RayofHope_eff_desc>
 <TM_Heal_eff_desc>Decreases mana cost of Heal by 7% of base mana cost.</TM_Heal_eff_desc>
 <TM_Heal_pwr_desc>Increases the amount each wound is healed by 2 points per level.</TM_Heal_pwr_desc>
 <TM_Heal_ver_desc>Increases the maximum number of wounds that can be healed per spell by 1 per level.</TM_Heal_ver_desc>

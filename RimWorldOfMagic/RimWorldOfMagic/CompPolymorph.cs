@@ -240,7 +240,7 @@ namespace TorannMagic
         {
             if(this.original != null)
             {
-                CopyDamage(ParentPawn);
+                //CopyDamage(ParentPawn); removed for polymorph balance
                 SpawnOriginal(ParentPawn.Map);
                 ApplyDamage(original);
                 this.original = null;
@@ -357,17 +357,21 @@ namespace TorannMagic
         public void ApplyDamage(Pawn pawn)
         {
             List<BodyPartRecord> bodyparts = pawn.health.hediffSet.GetNotMissingParts().ToList();
-            for(int i =0; i < this.injuries.Count; i++)
-            {
-                try
-                {
-                    pawn.health.AddHediff(this.injuries[i], bodyparts.RandomElement());                    
-                }
-                catch
-                {
-                    //unable to add injury
-                }
-            }   
+            //Removed for polymorph balance
+            //if (injuries != null)
+            //{
+            //    for (int i = 0; i < this.injuries.Count; i++)
+            //    {
+            //        try
+            //        {
+            //            pawn.health.AddHediff(this.injuries[i], bodyparts.RandomElement());
+            //        }
+            //        catch
+            //        {
+            //            //unable to add injury
+            //        }
+            //    }
+            //}
             try
             {
                 if (pawn.story != null && pawn.story.traits != null && pawn.story.traits.HasTrait(TraitDefOf.Transhumanist))

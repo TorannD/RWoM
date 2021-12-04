@@ -54,7 +54,7 @@ namespace TorannMagic
 
         private void Initialize()
         {
-            bool spawned = base.Pawn.Spawned && Pawn.skills != null && !Pawn.Dead && Pawn.needs != null && Pawn.needs.joy != null;
+            bool spawned = base.Pawn.Spawned && Pawn.skills != null && !Pawn.Dead;
             if (spawned && !caster.DestroyedOrNull() && !caster.Dead && !caster.Downed)
             {                
                 CompAbilityUserMagic comp = caster.TryGetComp<CompAbilityUserMagic>();
@@ -130,7 +130,7 @@ namespace TorannMagic
                         DrawEffects();                            
                         if (Find.TickManager.TicksGame % 48 == 0)
                         {
-                            if (caster.needs.joy.CurLevel > .01f)
+                            if (caster.needs.joy != null && caster.needs.joy.CurLevel > .01f)
                             {
                                 if (Pawn.needs.joy != null)
                                 {

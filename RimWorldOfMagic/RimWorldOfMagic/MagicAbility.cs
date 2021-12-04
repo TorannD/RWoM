@@ -313,6 +313,13 @@ namespace TorannMagic
                     );
                 }
 
+                if(magicAbilityDef == TorannMagicDefOf.TM_Firebolt)
+                {
+                    text2 = "TM_BonusDamage".Translate(
+                        Mathf.RoundToInt((float)magicAbilityDef.MainVerb.defaultProjectile.projectile.GetDamageAmount(1, null) / 3f * (float)this.MagicUser.MagicData.MagicPowerSkill_Firebolt.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Firebolt_pwr").level)
+                    );
+                }
+
                 bool flag2 = text != "";
                 if (flag2)
                 {

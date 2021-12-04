@@ -264,6 +264,19 @@ namespace TorannMagic
             }
         }
 
+        public static List<TMAbilityDef> BrandList()
+        {
+            List<TMAbilityDef> tmpList = new List<TMAbilityDef>();
+            tmpList.Clear();
+            tmpList.Add(TorannMagicDefOf.TM_AwarenessBrand);
+            tmpList.Add(TorannMagicDefOf.TM_EmotionBrand);
+            tmpList.Add(TorannMagicDefOf.TM_FitnessBrand);
+            tmpList.Add(TorannMagicDefOf.TM_ProtectionBrand);
+            tmpList.Add(TorannMagicDefOf.TM_SiphonBrand);
+            tmpList.Add(TorannMagicDefOf.TM_VitalityBrand);
+            return tmpList;
+        }
+
         public static List<ThingDef> MagicFociList()
         {
             List<ThingDef> magicFocis = new List<ThingDef>();

@@ -360,6 +360,33 @@ namespace TorannMagic
         //    return true;
         //}
 
+        [HarmonyPatch(typeof(ThoughtWorker_Precept_HasAutomatedTurrets), "ResetStaticData", null)]
+        public class NoSummonedTurretsThought_Patch
+        {
+            private static void Postfix(ThoughtWorker_Precept_HasAutomatedTurrets __instance, ref List<ThingDef> ___automatedTurretDefs)
+            {
+                List<ThingDef> tmpList = new List<ThingDef>();
+                tmpList.Clear();
+                if(___automatedTurretDefs != null && ___automatedTurretDefs.Count > 0)
+                {
+                    foreach(ThingDef td in ___automatedTurretDefs)
+                    {
+                        if(td.defName.StartsWith("DefensePylon") || td.defName.StartsWith("TM_TechnoTurret"))
+                        {
+                            tmpList.Add(td);
+                        }
+                    }
+                    if(tmpList.Count > 0)
+                    {
+                        foreach(ThingDef td in tmpList)
+                        {
+                            ___automatedTurretDefs.Remove(td);
+                        }
+                    }
+                }
+            }
+        }
+
         public static void Get_IsFreeNonSlaveColonist_Golem(Pawn __instance, ref bool __result)
         {
             if (__instance is TMPawnGolem)
@@ -3271,7 +3298,7 @@ namespace TorannMagic
                         Pawn p = dinfo.Instigator as Pawn;
                         if (p.health != null && p.health.hediffSet != null)
                         {
-                            if (p.health.hediffSet.HasHediff(TorannMagicDefOf.TM_MindOverBodyHD) && dinfo.Def == DamageDefOf.Blunt && dinfo.Weapon.defName == "Human")
+                            if (p.health.hediffSet.HasHediff(TorannMagicDefOf.TM_MindOverBodyHD) && dinfo.Def == DamageDefOf.Blunt && dinfo.Weapon != null && dinfo.Weapon.defName == "Human")
                             {
                                 Hediff hediff = p.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_MindOverBodyHD);
                                 dinfo.SetAmount(Mathf.RoundToInt(dinfo.Amount + hediff.Severity + Rand.Range(0f, 3f)));
@@ -3283,21 +3310,17 @@ namespace TorannMagic
                                 Hediff hediff = p.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_EnrageHD);
                                 dinfo.SetAmount(Mathf.RoundToInt(dinfo.Amount * (1f + hediff.Severity)));
                             }
-                        }
 
-                        Pawn ranger = dinfo.Instigator as Pawn;
-                        if (ranger != null)
-                        {
-                            if (ranger.health.hediffSet.HasHediff(TorannMagicDefOf.TM_BowTrainingHD))
+                            if (p.equipment != null && p.equipment.Primary != null)
                             {
-                                if (ranger.equipment.Primary != null)
-                                {
-                                    Thing wpn = ranger.equipment.Primary;
-                                    if (wpn.def.IsRangedWeapon)
+                                Thing wpn = p.equipment.Primary;
+                                if (wpn.def.IsRangedWeapon)
+                                {                                    
+                                    if (p.health.hediffSet.HasHediff(TorannMagicDefOf.TM_BowTrainingHD))
                                     {
                                         if (wpn.def.Verbs.FirstOrDefault<VerbProperties>().defaultProjectile.projectile.damageDef.defName == "Arrow" || wpn.def.defName.Contains("Bow") || wpn.def.defName.Contains("bow") || wpn.def.Verbs.FirstOrDefault<VerbProperties>().defaultProjectile.projectile.damageDef.defName.Contains("Arrow") || wpn.def.Verbs.FirstOrDefault<VerbProperties>().defaultProjectile.projectile.damageDef.defName.Contains("arrow"))
                                         {
-                                            Hediff hediff = ranger.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_BowTrainingHD);
+                                            Hediff hediff = p.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_BowTrainingHD);
                                             float amt = dinfo.Amount;
                                             if (hediff.Severity < 1)
                                             {
@@ -3318,20 +3341,9 @@ namespace TorannMagic
                                             dinfo.SetAmount(amt);
                                         }
                                     }
-                                }
-                            }
-                        }
 
-                        Pawn shadowSlayer = dinfo.Instigator as Pawn;
-                        if (shadowSlayer != null)
-                        {
-                            CompAbilityUserMight compMight = shadowSlayer.TryGetComp<CompAbilityUserMight>();
-                            if (shadowSlayer.IsInvisible() && compMight != null && compMight.IsMightUser && compMight.MightData != null)
-                            {
-                                if (ranger.equipment?.Primary != null)
-                                {
-                                    Thing wpn = ranger.equipment.Primary;
-                                    if (wpn.def.IsRangedWeapon)
+                                    CompAbilityUserMight compMight = p.TryGetComp<CompAbilityUserMight>();
+                                    if (p.IsInvisible() && compMight != null && compMight.IsMightUser && compMight.MightData != null)
                                     {
                                         MightPowerSkill mps = compMight.MightData.GetSkill_Power(TorannMagicDefOf.TM_ShadowSlayer);
                                         if (mps != null)
@@ -3340,7 +3352,7 @@ namespace TorannMagic
                                             dinfo.SetAmount(dinfo.Amount + skillLevel);
                                         }
                                     }
-                                }
+                                }                           
                             }
                         }
                     }
@@ -6868,7 +6880,7 @@ namespace TorannMagic
                 if (ModOptions.Settings.Instance.autocastEnabled)
                 {
                     Command_PawnAbility com = __instance as Command_PawnAbility;
-                    if (com != null && com.pawnAbility != null && com.pawnAbility.Def.defName.Contains("TM_"))
+                    if (com != null && com.pawnAbility != null && com.pawnAbility.Def.defName.StartsWith("TM_"))
                     {
                         //Log.Message("patching command for pawn ability with butRect " + butRect.x + " " + butRect.y + " " + butRect.width + " " + butRect.height + " shrunk: " + shrunk);
                         __result = TM_Action.DrawAutoCastForGizmo(com, butRect, parms.shrunk, __result);
@@ -6885,10 +6897,10 @@ namespace TorannMagic
             public static bool Prefix(Command_PawnAbility __instance, Rect butRect, GizmoRenderParms parms, ref GizmoResult __result)
             {
                 ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                if (settingsRef.autocastEnabled && __instance.pawnAbility.Def.defName.Contains("TM_"))
+                if (settingsRef.autocastEnabled && __instance.pawnAbility.Def.defName.StartsWith("TM_"))
                 {
                     //Rect rect = new Rect(topLeft.x, topLeft.y, __instance.GetWidth(maxWidth), 75f);
-                    __result = TM_Action.DrawAutoCastForGizmo(__instance, butRect, false, __result);
+                    __result = TM_Action.DrawAutoCastForGizmo(__instance, butRect, parms.shrunk, __result);
                     return false;
                 }
                 return true;

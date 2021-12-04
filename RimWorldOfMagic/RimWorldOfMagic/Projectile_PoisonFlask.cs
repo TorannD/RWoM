@@ -67,9 +67,9 @@ namespace TorannMagic
                                     }
                                 }
                             }
-                            if (bprList != null && bprList.Count > 0)
+                            if (bprList != null && bprList.Count > 0 && caster != null)
                             {
-                                TM_Action.DamageEntities(victim, bprList.RandomElement(), Rand.Range(1f, 2f), 2f, TMDamageDefOf.DamageDefOf.TM_Poison, this);
+                                TM_Action.DamageEntities(victim, bprList.RandomElement(), Rand.Range(1f, 2f), 2f, TMDamageDefOf.DamageDefOf.TM_Poison, caster);
                             }
                         }
                     }

@@ -1036,7 +1036,7 @@ namespace TorannMagic
                             }
                         }
                         if (Find.TickManager.TicksGame % 60 == 0)
-                        {
+                        {                            
                             ResolveClassSkills();
                             //ResolveClassPassions(); currently disabled
                         }

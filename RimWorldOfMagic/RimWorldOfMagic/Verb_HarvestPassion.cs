@@ -50,6 +50,10 @@ namespace TorannMagic
                     HealthUtility.AdjustSeverity(hitPawn, TorannMagicDefOf.TM_HarvestPassionHD, .5f);
                     hitPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_HarvestPassionHD).TryGetComp<HediffComp_HarvestPassion>().caster = caster;
                     caster.mindState.inspirationHandler.EndInspiration(caster.Inspiration);
+                    if(!hitPawn.HostileTo(caster.Faction))
+                    {
+                        
+                    }
                 }
                 else
                 {

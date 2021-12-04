@@ -17,6 +17,18 @@ namespace TorannMagic.ModOptions
 {
     public static class TM_DebugTools
     {
+        [DebugAction("RWoM", "Spawn Scrolls", actionType =DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        public static void SpawnScrolls()
+        {
+            IEnumerable<ThingDef> enumerable = from def in DefDatabase<ThingDef>.AllDefs
+                                               where (def.defName.StartsWith("SpellOf_") || def.defName.StartsWith("SkillOf_"))
+                                               select def;
+            foreach(ThingDef d in enumerable)
+            {
+                DebugThingPlaceHelper.DebugSpawn(d, UI.MouseCell(), 1, false, null);
+            }
+        }
+
         [DebugAction("RWoM", "Remove Class", actionType = DebugActionType.ToolMapForPawns, allowedGameStates = AllowedGameStates.PlayingOnMap)]
         public static void RemoveClass(Pawn pawn)
         {
