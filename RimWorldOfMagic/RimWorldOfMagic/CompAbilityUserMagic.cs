@@ -1881,6 +1881,17 @@ namespace TorannMagic
                     this.AddPawnAbility(TorannMagicDefOf.TM_DismissFertileLands);
                 }
             }
+            for (int z = 0; z < this.MagicData.AllMagicPowers.Count; z++)
+            {
+                MagicPower mp = this.MagicData.AllMagicPowers[z];
+                if(mp.TMabilityDefs.Contains(TorannMagicDefOf.TM_Branding) && !this.Pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Golemancer))
+                {
+                    foreach(TMAbilityDef tm in TM_Data.BrandList())
+                    {
+                        RemovePawnAbility(tm);
+                    }
+                }
+            }
         }
 
         public override void CompTick()
@@ -2481,7 +2492,7 @@ namespace TorannMagic
                         {
                             this.MagicData.AllMagicPowers[z].learned = false;
                         }
-                        if(ability == TorannMagicDefOf.TM_Branding)
+                        if(ability == TorannMagicDefOf.TM_Branding && abilityUser.story.traits.HasTrait(TorannMagicDefOf.TM_Golemancer))
                         {
                             int count = 0;
                             while(count < 2)
