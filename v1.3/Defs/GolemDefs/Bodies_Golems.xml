@@ -498,4 +498,301 @@
 		</corePart>
 	</BodyDef>
 	
+	<!-- HOLLOW GOLEM -->
+	<!-- <BodyDef>
+		<defName>TM_HollowGolem</defName>
+		<label>hollow_golem</label>
+		<corePart>
+			<def>Hollow_Body</def>
+			<height>Middle</height>
+			<depth>Outside</depth>
+			<parts>
+				<li>
+					<def>Hollow_Back</def>
+					<coverage>0.14</coverage>
+					<depth>Outside</depth>
+					<parts>
+						<li>
+							<def>Hollow_Spine</def>
+							<coverage>0.3</coverage>
+							<depth>Inside</depth>
+						</li>
+					</parts>
+				</li>				
+				<li>
+					<def>Hollow_Abdomen</def>
+					<coverage>0.08</coverage>
+					<depth>Outside</depth>
+					<parts>
+						<li>
+							<def>Hollow_Guts</def>
+							<coverage>0.4</coverage>
+							<depth>Inside</depth>
+						</li>
+					</parts>
+				</li>
+				<li>
+					<def>Hollow_Chest</def>
+					<coverage>0.20</coverage>
+					<depth>Outside</depth>
+					<parts>
+						<li>
+							<def>Hollow_Heart</def>
+							<coverage>0.08</coverage>
+							<depth>Inside</depth>							
+						</li>
+						<li>
+						  <def>Hollow_Ribcage</def>
+						  <coverage>0.4</coverage>
+						  <depth>Inside</depth>
+						  <parts>
+							<li>
+							  <def>Hollow_Lung</def>
+							  <customLabel>left lung</customLabel>
+							  <coverage>0.4</coverage>
+							  <depth>Inside</depth>
+							</li>
+							<li>
+							  <def>Hollow_Lung</def>
+							  <customLabel>right lung</customLabel>
+							  <coverage>0.4</coverage>
+							  <depth>Inside</depth>
+							</li>
+						  </parts>
+						</li>						
+					</parts>
+				</li>
+				<li>
+					<def>Hollow_Neck</def>
+					<coverage>0.16</coverage>
+					<depth>Outside</depth>
+					<height>Top</height>
+					<parts>
+						<li>
+							<def>Hollow_Head</def>
+							<coverage>0.85</coverage>
+							<depth>Outside</depth>							
+							<parts>
+								<li>
+									<def>Hollow_Skull</def>
+									<coverage>0.50</coverage>
+									<depth>Inside</depth>
+									<parts>
+										<li>
+											<def>Hollow_Brain</def>
+											<coverage>0.25</coverage>
+											<depth>Inside</depth>
+										</li>
+									</parts>
+								</li>
+								<li>
+									<def>Hollow_Face</def>
+									<coverage>0.40</coverage>
+									<depth>Outside</depth>
+									<parts>
+										<li>
+											<def>Hollow_Eye</def>
+											<customLabel>left eye</customLabel>
+											<coverage>0.08</coverage>
+											<groups>
+												<li>Hollow_Eyes</li>
+											</groups>
+										</li>
+										<li>
+											<def>Hollow_Eye</def>
+											<customLabel>right eye</customLabel>
+											<coverage>0.08</coverage>
+											<groups>
+												<li>Hollow_Eyes</li>
+											</groups>
+										</li>										
+										<li>
+										  <def>Hollow_Ear</def>
+										  <customLabel>left ear</customLabel>
+										  <coverage>0.07</coverage>
+										</li>
+										<li>
+										  <def>Hollow_Ear</def>
+										  <customLabel>right ear</customLabel>
+										  <coverage>0.07</coverage>
+										</li>
+										<li>
+										  <def>Hollow_Nose</def>
+										  <coverage>0.10</coverage>
+										</li>
+										<li>
+										  <def>Hollow_Jaw</def>
+										  <coverage>0.14</coverage>
+										  <parts>
+											<li>
+											  <def>Hollow_Tongue</def>
+											  <coverage>0</coverage>
+											  <depth>Inside</depth>
+											</li>
+										  </parts>
+										</li>
+									</parts>
+								</li>
+							</parts>
+						</li>
+					</parts>
+				</li>
+				<li>
+					<def>Hollow_Shoulder</def>
+					<coverage>.09</coverage>
+					<customLabel>left shoulder</customLabel>
+					<woundAnchorTag>LeftShoulder</woundAnchorTag>
+					<parts>
+						<li>
+							<def>Hollow_LeftArm</def>
+							<customLabel>left arm</customLabel>
+							<coverage>0.6</coverage>
+							<parts>
+								<li>
+									<def>Hollow_Hand</def>
+									<customLabel>left hand</customLabel>
+									<coverage>0.45</coverage>
+									<height>Bottom</height>
+								</li>							
+							</parts>
+							<groups>
+								<li>Hollow_Arms</li>
+							</groups>
+						</li>			
+					</parts>
+				</li>
+				<li>
+					<def>Hollow_Shoulder</def>
+					<coverage>0.09</coverage>
+					<customLabel>right shoulder</customLabel>
+					<woundAnchorTag>RightShoulder</woundAnchorTag>
+					<parts>
+						<li>
+							<def>Hollow_RightArm</def>
+							<customLabel>right arm</customLabel>
+							<coverage>0.6</coverage>
+							<parts>
+								<li>
+									<def>Hollow_Hand</def>
+									<customLabel>right hand</customLabel>
+									<coverage>0.45</coverage>
+									<height>Bottom</height>
+								</li>							
+							</parts>
+							<groups>
+								<li>Hollow_Arms</li>
+							</groups>
+						</li>			
+					</parts>
+				</li>
+				<li>
+					<def>Hollow_Weapon</def>
+						<coverage>0.01</coverage>
+						<customLabel>weapon</customLabel>
+						<parts>
+							<li>
+								<def>Hollow_RightArm</def>
+								<customLabel>right arm</customLabel>
+								<coverage>0.6</coverage>
+								<parts>
+									<li>
+										<def>Hollow_Hand</def>
+										<customLabel>right hand</customLabel>
+										<coverage>0.45</coverage>
+										<height>Bottom</height>
+									</li>							
+								</parts>
+								<groups>
+									<li>Hollow_Arms</li>
+								</groups>
+							</li>			
+						</parts>
+				</li>
+				<li>
+				  <def>Hollow_Waist</def>
+				  <coverage>.19</coverage>
+				  <height>Bottom</height>
+				  <parts>
+					<li>
+					  <def>Hollow_Leg</def>
+					  <customLabel>left leg</customLabel>
+					  <coverage>0.14</coverage>
+					  <height>Bottom</height>
+					  <groups>
+						<li>Legs</li>
+					  </groups>
+					  <woundAnchorTag>LeftLeg</woundAnchorTag>
+					  <parts>
+						<li>
+						  <def>Hollow_Femur</def>
+						  <customLabel>left femur</customLabel>
+						  <coverage>0.1</coverage>
+						  <depth>Inside</depth>
+						  <groups>
+							<li>Legs</li>
+						  </groups>
+						</li>
+						<li>
+						  <def>Hollow_Tibia</def>
+						  <customLabel>left tibia</customLabel>
+						  <coverage>0.1</coverage>
+						  <depth>Inside</depth>
+						  <groups>
+							<li>Legs</li>
+						  </groups>
+						</li>
+						<li>
+						  <def>Hollow_Foot</def>
+						  <customLabel>left foot</customLabel>
+						  <coverage>0.1</coverage>
+						  <groups>
+							<li>Feet</li>
+						  </groups>					  
+						</li>
+					  </parts>
+					</li>
+					<li>
+					  <def>Hollow_Leg</def>
+					  <customLabel>right leg</customLabel>
+					  <coverage>0.14</coverage>
+					  <height>Bottom</height>
+					  <groups>
+						<li>Legs</li>
+					  </groups>
+					  <woundAnchorTag>RightLeg</woundAnchorTag>
+					  <parts>
+						<li>
+						  <def>Hollow_Femur</def>
+						  <customLabel>right femur</customLabel>
+						  <coverage>0.1</coverage>
+						  <depth>Inside</depth>
+						  <groups>
+							<li>Legs</li>
+						  </groups>
+						</li>
+						<li>
+						  <def>Hollow_Tibia</def>
+						  <customLabel>right tibia</customLabel>
+						  <coverage>0.1</coverage>
+						  <depth>Inside</depth>
+						  <groups>
+							<li>Legs</li>
+						  </groups>
+						</li>
+						<li>
+						  <def>Hollow_Foot</def>
+						  <customLabel>right foot</customLabel>
+						  <coverage>0.1</coverage>
+						  <groups>
+							<li>Feet</li>
+						  </groups>					  
+						</li>
+					  </parts>
+					</li>
+				  </parts>
+				</li>				
+			</parts>
+		</corePart>
+	</BodyDef> -->
+	
 </Defs>

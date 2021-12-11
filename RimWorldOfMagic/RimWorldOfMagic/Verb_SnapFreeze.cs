@@ -42,91 +42,97 @@ namespace TorannMagic
         {
             Pawn p = this.CasterPawn;
             Map map = this.CasterPawn.Map;
-            CompAbilityUserMagic comp = this.CasterPawn.GetComp<CompAbilityUserMagic>();
-            pawns.Clear();
-            plants.Clear();
-            GenClamor.DoClamor(p, this.UseAbilityProps.TargetAoEProperties.range, ClamorDefOf.Ability);
-            Effecter snapeFreezeED = TorannMagicDefOf.TM_SnapFreezeED.Spawn();
-            snapeFreezeED.Trigger(new TargetInfo(this.currentTarget.Cell, map, false), new TargetInfo(this.currentTarget.Cell, map, false));
-            snapeFreezeED.Cleanup();
-            SoundInfo info = SoundInfo.InMap(new TargetInfo(this.currentTarget.Cell, map, false), MaintenanceType.None);
-            info.pitchFactor = .4f;
-            info.volumeFactor = 1.2f;
-            TorannMagicDefOf.TM_WindLowSD.PlayOneShot(info);
-            TargetInfo ti = new TargetInfo(this.currentTarget.Cell, map, false);
-            TM_MoteMaker.MakeOverlay(ti, TorannMagicDefOf.TM_Mote_PsycastAreaEffect, map, Vector3.zero, 3f, 0f, .1f, .4f, 1.2f, -3f);
-            float classBonus = 1f;
-            if(p.story != null && p.story.traits != null && p.story.traits.HasTrait(TorannMagicDefOf.HeartOfFrost))
+            if (map != null)
             {
-                classBonus = 1.5f;
-            }
-            if (this.currentTarget != null && p != null && comp != null)
-            {
-                this.arcaneDmg = comp.arcaneDmg;
-                this.TargetsAoE.Clear();
-                this.FindTargets();
-                float energy = -125000 * this.arcaneDmg * classBonus;
-                GenTemperature.PushHeat(this.currentTarget.Cell, p.Map, energy);
-                for (int i = 0; i < pawns.Count; i++)
+                CompAbilityUserMagic comp = this.CasterPawn.GetComp<CompAbilityUserMagic>();
+                pawns.Clear();
+                plants.Clear();
+                GenClamor.DoClamor(p, this.UseAbilityProps.TargetAoEProperties.range, ClamorDefOf.Ability);
+                Effecter snapeFreezeED = TorannMagicDefOf.TM_SnapFreezeED.Spawn();
+                snapeFreezeED.Trigger(new TargetInfo(this.currentTarget.Cell, map, false), new TargetInfo(this.currentTarget.Cell, map, false));
+                snapeFreezeED.Cleanup();
+                SoundInfo info = SoundInfo.InMap(new TargetInfo(this.currentTarget.Cell, map, false), MaintenanceType.None);
+                info.pitchFactor = .4f;
+                info.volumeFactor = 1.2f;
+                TorannMagicDefOf.TM_WindLowSD.PlayOneShot(info);
+                TargetInfo ti = new TargetInfo(this.currentTarget.Cell, map, false);
+                TM_MoteMaker.MakeOverlay(ti, TorannMagicDefOf.TM_Mote_PsycastAreaEffect, map, Vector3.zero, 3f, 0f, .1f, .4f, 1.2f, -3f);
+                float classBonus = 1f;
+                if (p.story != null && p.story.traits != null && p.story.traits.HasTrait(TorannMagicDefOf.HeartOfFrost))
                 {
-                    if (!pawns[i].RaceProps.IsMechanoid && pawns[i].RaceProps.body.AllPartsVulnerableToFrostbite.Count > 0)
+                    classBonus = 1.5f;
+                }
+                if (this.currentTarget != null && p != null && comp != null)
+                {
+                    this.arcaneDmg = comp.arcaneDmg;
+                    this.TargetsAoE.Clear();
+                    this.FindTargets();
+                    float energy = -125000 * this.arcaneDmg * classBonus;
+                    GenTemperature.PushHeat(this.currentTarget.Cell, p.Map, energy);
+                    for (int i = 0; i < pawns.Count; i++)
                     {
-                        float distanceModifier = 1f / (pawns[i].Position - currentTarget.Cell).LengthHorizontal;
+                        if (!pawns[i].RaceProps.IsMechanoid && pawns[i].RaceProps.body.AllPartsVulnerableToFrostbite.Count > 0)
+                        {
+                            float distanceModifier = 1f / (pawns[i].Position - currentTarget.Cell).LengthHorizontal;
+                            if (distanceModifier > 1f)
+                            {
+                                distanceModifier = 1f;
+                            }
+                            int bites = Mathf.RoundToInt(Rand.Range(1f, 5f) * classBonus);
+                            for (int j = 0; j < bites; j++)
+                            {
+                                if (Rand.Chance(TM_Calc.GetSpellSuccessChance(this.CasterPawn, pawns[i], true)) && Rand.Chance(distanceModifier))
+                                {
+                                    TM_Action.DamageEntities(pawns[i], pawns[i].def.race.body.AllPartsVulnerableToFrostbite.RandomElement(), Rand.Range(10, 20) * distanceModifier, 1f, DamageDefOf.Frostbite, p);
+                                }
+                                if (Rand.Chance(TM_Calc.GetSpellSuccessChance(this.CasterPawn, pawns[i], true)) && Rand.Chance(distanceModifier))
+                                {
+                                    HealthUtility.AdjustSeverity(pawns[i], HediffDefOf.Hypothermia, distanceModifier / 5f);
+                                }
+                            }
+                        }
+                    }
+                    for (int i = 0; i < plants.Count; i++)
+                    {
+                        float distanceModifier = 1f / (plants[i].Position - currentTarget.Cell).LengthHorizontal;
                         if (distanceModifier > 1f)
                         {
                             distanceModifier = 1f;
                         }
-                        int bites = Mathf.RoundToInt(Rand.Range(1f, 5f) * classBonus);
-                        for (int j = 0; j < bites; j++)
+                        if (plants[i].def.plant != null && plants[i].def.plant.IsTree)
                         {
-                            if (Rand.Chance(TM_Calc.GetSpellSuccessChance(this.CasterPawn, pawns[i], true)) && Rand.Chance(distanceModifier))
+                            if (Rand.Chance(distanceModifier / 2f))
                             {
-                                TM_Action.DamageEntities(pawns[i], pawns[i].def.race.body.AllPartsVulnerableToFrostbite.RandomElement(), Rand.Range(10, 20) * distanceModifier, 1f, DamageDefOf.Frostbite, p);
-                            }
-                            if (Rand.Chance(TM_Calc.GetSpellSuccessChance(this.CasterPawn, pawns[i], true)) && Rand.Chance(distanceModifier))
-                            {
-                                HealthUtility.AdjustSeverity(pawns[i], HediffDefOf.Hypothermia, distanceModifier / 5f);
+                                plants[i].MakeLeafless(Plant.LeaflessCause.Cold);
                             }
                         }
-                    }
-                }
-                for (int i = 0; i < plants.Count; i++)
-                {
-                    float distanceModifier = 1f / (plants[i].Position - currentTarget.Cell).LengthHorizontal;
-                    if (distanceModifier > 1f)
-                    {
-                        distanceModifier = 1f;
-                    }
-                    if (plants[i].def.plant.IsTree)
-                    {
-                        if (Rand.Chance(distanceModifier / 2f))
+                        else
                         {
-                            plants[i].MakeLeafless(Plant.LeaflessCause.Cold);
+                            if (Rand.Chance(distanceModifier))
+                            {
+                                plants[i].MakeLeafless(Plant.LeaflessCause.Cold);
+                            }
+                        }
+                        plants[i].Notify_ColorChanged();
+                    }
+                    List<IntVec3> cellList = GenRadial.RadialCellsAround(this.currentTarget.Cell, this.UseAbilityProps.TargetAoEProperties.range, true).ToList();
+                    if (cellList != null && cellList.Count > 0 && map.weatherManager != null)
+                    {
+                        bool raining = map.weatherManager.RainRate > 0f || map.weatherManager.SnowRate > 0f;
+                        for (int i = 0; i < cellList.Count; i++)
+                        {
+                            cellList[i] = cellList[i].ClampInsideMap(map);
+                            SnowUtility.AddSnowRadial(cellList[i], map, 2.4f, Rand.Range(.08f, .13f));
+                            TM_MoteMaker.ThrowGenericFleck(FleckDefOf.AirPuff, cellList[i].ToVector3Shifted(), map, 2.5f, .05f, .05f, Rand.Range(2f, 3f), Rand.Range(-60, 60), .5f, -70, Rand.Range(0, 360));
+                        }
+                        List<IntVec3> windList = GenRadial.RadialCellsAround(this.currentTarget.Cell, this.UseAbilityProps.TargetAoEProperties.range + 1, true).Except(cellList).ToList();
+                        for (int i = 0; i < windList.Count; i++)
+                        {
+                            windList[i] = windList[i].ClampInsideMap(map);
+                            Vector3 angle = TM_Calc.GetVector(windList[i], this.currentTarget.Cell);
+                            TM_MoteMaker.ThrowGenericFleck(FleckDefOf.AirPuff, windList[i].ToVector3Shifted(), map, Rand.Range(1.2f, 2f), .45f, Rand.Range(0f, .25f), .5f, -200, Rand.Range(3, 5), (Quaternion.AngleAxis(90, Vector3.up) * angle).ToAngleFlat(), Rand.Range(0, 360));
                         }
                     }
-                    else
-                    {
-                        if (Rand.Chance(distanceModifier))
-                        {
-                            plants[i].MakeLeafless(Plant.LeaflessCause.Cold);
-                        }
-                    }
-                    plants[i].Notify_ColorChanged();
-                }
-                List<IntVec3> cellList = GenRadial.RadialCellsAround(this.currentTarget.Cell, this.UseAbilityProps.TargetAoEProperties.range, true).ToList();
-                bool raining = map.weatherManager.RainRate > 0f || map.weatherManager.SnowRate > 0f;
-                for (int i = 0; i < cellList.Count; i++)
-                {
-                    cellList[i] = cellList[i].ClampInsideMap(map);
-                    SnowUtility.AddSnowRadial(cellList[i], map, 2.4f, Rand.Range(.08f, .13f));
-                    TM_MoteMaker.ThrowGenericFleck(FleckDefOf.AirPuff, cellList[i].ToVector3Shifted(), map, 2.5f, .05f, .05f, Rand.Range(2f, 3f), Rand.Range(-60, 60), .5f, -70, Rand.Range(0, 360));
-                }
-                List<IntVec3> windList = GenRadial.RadialCellsAround(this.currentTarget.Cell, this.UseAbilityProps.TargetAoEProperties.range+1, true).Except(cellList).ToList();
-                for(int i = 0; i < windList.Count; i++)
-                {
-                    windList[i] = windList[i].ClampInsideMap(map);
-                    Vector3 angle = TM_Calc.GetVector(windList[i], this.currentTarget.Cell);
-                    TM_MoteMaker.ThrowGenericFleck(FleckDefOf.AirPuff, windList[i].ToVector3Shifted(), map, Rand.Range(1.2f, 2f), .45f, Rand.Range(0f, .25f), .5f, -200, Rand.Range(3, 5), (Quaternion.AngleAxis(90, Vector3.up) * angle).ToAngleFlat(), Rand.Range(0, 360));
                 }
             }
 

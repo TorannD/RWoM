@@ -49,13 +49,8 @@ namespace TorannMagic
 
                 if (casterComp != null && hitPawn.health != null && hitPawn.health.hediffSet != null && hitPawn != caster)
                 {
-                    Hediff oldBrand = hitPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_VitalityBrandHD);
-                    if(oldBrand != null)
-                    {
-                        HediffComp_BrandingVitality hd_br = oldBrand.TryGetComp<HediffComp_BrandingVitality>();
-                        CompAbilityUserMagic branderComp = hd_br.BranderPawn.TryGetComp<CompAbilityUserMagic>();
-                        branderComp.BrandedPawns.Remove(hitPawn);
-                    }
+                    RemoveOldBrand(hitPawn);
+
                     HealthUtility.AdjustSeverity(hitPawn, TorannMagicDefOf.TM_VitalityBrandHD, .05f);
                     casterComp.BrandedPawns.Add(hitPawn);
                     Hediff newBrand = hitPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_VitalityBrandHD);
@@ -81,6 +76,24 @@ namespace TorannMagic
 
             this.PostCastShot(flag, out flag);
             return flag;
-        }        
+        }       
+        
+        private void RemoveOldBrand(Pawn hitPawn)
+        {
+            Hediff oldBrand = hitPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_VitalityBrandHD);
+            if (oldBrand != null)
+            {
+                HediffComp_BrandingVitality hd_br = oldBrand.TryGetComp<HediffComp_BrandingVitality>();
+                if (hd_br != null && hd_br.BranderPawn != null && !hd_br.BranderPawn.DestroyedOrNull() && !hd_br.BranderPawn.Dead)
+                {
+                    CompAbilityUserMagic branderComp = hd_br.BranderPawn.TryGetComp<CompAbilityUserMagic>();
+                    if (branderComp != null && branderComp.BrandedPawns != null && branderComp.BrandedPawns.Contains(hitPawn))
+                    {
+                        branderComp.BrandedPawns.Remove(hitPawn);
+                    }
+                }
+                hitPawn.health.RemoveHediff(oldBrand);
+            }
+        }
     }
 }
