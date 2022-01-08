@@ -58,8 +58,8 @@ namespace TorannMagic
                         for (int i = 0; toApply.Count < amountToApply; ++i)
                         {
                             float rand = Rand.Value;
-                            Log.Message("rand: " + rand);
-                            Log.Message("target: " + (amountToApply - toApply.Count) / (float)(Effects.Count - i));
+                            //Log.Message("rand: " + rand);
+                            //Log.Message("target: " + (amountToApply - toApply.Count) / (float)(Effects.Count - i));
                             if (rand < (amountToApply - toApply.Count) / (float)(Effects.Count - i))
                             {
                                 toApply.Add(Effects[i]);

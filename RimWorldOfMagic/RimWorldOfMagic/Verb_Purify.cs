@@ -47,24 +47,27 @@ namespace TorannMagic
             Pawn caster = this.CasterPawn;
             Pawn pawn = this.currentTarget.Thing as Pawn;
             CompAbilityUserMagic comp = caster.GetComp<CompAbilityUserMagic>();
-            if (comp != null && !caster.story.traits.HasTrait(TorannMagicDefOf.Faceless))
-            {                
-                MagicPowerSkill pwr = comp.MagicData.MagicPowerSkill_Purify.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Purify_pwr");
-                MagicPowerSkill ver = comp.MagicData.MagicPowerSkill_Purify.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Purify_ver");
-                pwrVal = pwr.level;
-                verVal = ver.level;
-                arcaneDmg = comp.arcaneDmg;
-            }
-            else if (caster.story.traits.HasTrait(TorannMagicDefOf.Faceless))
-            {
+            arcaneDmg = comp.arcaneDmg;
+            pwrVal = TM_Calc.GetSkillPowerLevel(caster, this.Ability.Def as TMAbilityDef);
+            verVal = TM_Calc.GetSkillVersatilityLevel(caster, this.Ability.Def as TMAbilityDef);
+            //if (comp != null && !caster.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+            //{                
+            //    MagicPowerSkill pwr = comp.MagicData.MagicPowerSkill_Purify.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Purify_pwr");
+            //    MagicPowerSkill ver = comp.MagicData.MagicPowerSkill_Purify.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Purify_ver");
+            //    pwrVal = pwr.level;
+            //    verVal = ver.level;
+                
+            //}
+            //else if (caster.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+            //{
 
-                MightPowerSkill mpwr = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-                MightPowerSkill mver = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
-                pwrVal = mpwr.level;
-                verVal = mver.level;
-                arcaneDmg = caster.GetComp<CompAbilityUserMight>().mightPwr;
+            //    MightPowerSkill mpwr = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
+            //    MightPowerSkill mver = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
+            //    pwrVal = mpwr.level;
+            //    verVal = mver.level;
+            //    arcaneDmg = caster.GetComp<CompAbilityUserMight>().mightPwr;
 
-            }
+            //}
             bool flag = pawn != null && !pawn.Dead;
             if (flag)
             {

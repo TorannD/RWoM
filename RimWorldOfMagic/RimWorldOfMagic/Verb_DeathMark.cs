@@ -43,18 +43,20 @@ namespace TorannMagic
             bool result = false;
             Pawn p = this.CasterPawn;
             CompAbilityUserMagic comp = this.CasterPawn.GetComp<CompAbilityUserMagic>();
-            MagicPowerSkill pwr = comp.MagicData.MagicPowerSkill_DeathMark.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_DeathMark_pwr");
-            MagicPowerSkill ver = comp.MagicData.MagicPowerSkill_DeathMark.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_DeathMark_ver");
-            verVal = ver.level;
-            pwrVal = pwr.level;
-            this.arcaneDmg = comp.arcaneDmg;
-            if (p.story.traits.HasTrait(TorannMagicDefOf.Faceless))
-            {
-                MightPowerSkill mpwr = p.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-                MightPowerSkill mver = p.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
-                pwrVal = mpwr.level;
-                verVal = mver.level;
-            }
+            verVal = TM_Calc.GetSkillVersatilityLevel(p, this.Ability.Def as TMAbilityDef);
+            pwrVal = TM_Calc.GetSkillPowerLevel(p, this.Ability.Def as TMAbilityDef);
+            //MagicPowerSkill pwr = comp.MagicData.MagicPowerSkill_DeathMark.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_DeathMark_pwr");
+            //MagicPowerSkill ver = comp.MagicData.MagicPowerSkill_DeathMark.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_DeathMark_ver");
+            //verVal = ver.level;
+            //pwrVal = pwr.level;
+            //this.arcaneDmg = comp.arcaneDmg;
+            //if (p.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+            //{
+            //    MightPowerSkill mpwr = p.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
+            //    MightPowerSkill mver = p.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
+            //    pwrVal = mpwr.level;
+            //    verVal = mver.level;
+            //}
 
             if (this.currentTarget != null && base.CasterPawn != null)
             {

@@ -43,28 +43,31 @@ namespace TorannMagic
             Pawn p = this.CasterPawn;
             Pawn hitPawn = this.currentTarget.Thing as Pawn;
             CompAbilityUserMagic comp = this.CasterPawn.GetComp<CompAbilityUserMagic>();
-            MagicPowerSkill pwr = comp.MagicData.MagicPowerSkill_Dominate.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Dominate_pwr");
-            MagicPowerSkill ver = comp.MagicData.MagicPowerSkill_Dominate.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Dominate_ver");
-            MagicPowerSkill eff = comp.MagicData.MagicPowerSkill_Dominate.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Dominate_eff");
-            verVal = ver.level;
-            pwrVal = pwr.level;
-            effVal = eff.level;
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-            if(settingsRef.AIHardMode && !p.IsColonist)
-            {
-                verVal = 3;
-                pwrVal = 3;
-                effVal = 3;
-            }
-            if (p.story.traits.HasTrait(TorannMagicDefOf.Faceless))
-            {
-                MightPowerSkill mpwr = p.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-                MightPowerSkill mver = p.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
-                MightPowerSkill meff = p.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_eff");
-                pwrVal = mpwr.level;
-                verVal = mver.level;
-                effVal = meff.level;
-            }
+            verVal = TM_Calc.GetSkillVersatilityLevel(p, this.Ability.Def as TMAbilityDef, true);
+            pwrVal = TM_Calc.GetSkillPowerLevel(p, this.Ability.Def as TMAbilityDef);
+            effVal = TM_Calc.GetSkillEfficiencyLevel(p, this.Ability.Def as TMAbilityDef);
+            //MagicPowerSkill pwr = comp.MagicData.MagicPowerSkill_Dominate.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Dominate_pwr");
+            //MagicPowerSkill ver = comp.MagicData.MagicPowerSkill_Dominate.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Dominate_ver");
+            //MagicPowerSkill eff = comp.MagicData.MagicPowerSkill_Dominate.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Dominate_eff");
+            //verVal = ver.level;
+            //pwrVal = pwr.level;
+            //effVal = eff.level;
+            //ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+            //if(settingsRef.AIHardMode && !p.IsColonist)
+            //{
+            //    verVal = 3;
+            //    pwrVal = 3;
+            //    effVal = 3;
+            //}
+            //if (p.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+            //{
+            //    MightPowerSkill mpwr = p.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
+            //    MightPowerSkill mver = p.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
+            //    MightPowerSkill meff = p.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_eff");
+            //    pwrVal = mpwr.level;
+            //    verVal = mver.level;
+            //    effVal = meff.level;
+            //}
 
             if (this.currentTarget != null && p != null)
             {                

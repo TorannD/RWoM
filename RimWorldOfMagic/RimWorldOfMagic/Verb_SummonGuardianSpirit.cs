@@ -50,9 +50,12 @@ namespace TorannMagic
             Map map = caster.Map;
             IntVec3 cell = currentTarget.Cell;
             CompAbilityUserMagic comp = caster.TryGetComp<CompAbilityUserMagic>();
-            pwrVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_GuardianSpirit, "TM_GuardianSpirit", "_pwr", true);
-            verVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_GuardianSpirit, "TM_GuardianSpirit", "_ver", true);
-            effVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_GuardianSpirit, "TM_GuardianSpirit", "_eff", true);
+            //pwrVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_GuardianSpirit, "TM_GuardianSpirit", "_pwr", true);
+            //verVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_GuardianSpirit, "TM_GuardianSpirit", "_ver", true);
+            //effVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_GuardianSpirit, "TM_GuardianSpirit", "_eff", true);
+            pwrVal = TM_Calc.GetSkillPowerLevel(caster, this.Ability.Def as TMAbilityDef);
+            verVal = TM_Calc.GetSkillVersatilityLevel(caster, this.Ability.Def as TMAbilityDef);
+            effVal = TM_Calc.GetSkillEfficiencyLevel(caster, this.Ability.Def as TMAbilityDef);
 
             if (cell != null && (cell.IsValid && cell.Walkable(map)))
             {

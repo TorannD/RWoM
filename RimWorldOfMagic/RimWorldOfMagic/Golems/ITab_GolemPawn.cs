@@ -15,6 +15,7 @@ namespace TorannMagic.Golems
         private static readonly Vector2 WinSize = new Vector2(432f, 584f);
         private Vector2 scrollPosition = Vector2.zero;
         private string pawnMasterName = "None";
+        private bool abilityOptions = false;
 
         private static List<BodyPartDef> upgradesCoveringParts;
         private static List<BodyPartDef> UpgradesCoverParts
@@ -145,6 +146,15 @@ namespace TorannMagic.Golems
                 }
                 TooltipHandler.TipRegion(rectPawnMaster, "TM_GolemMasterDesc".Translate());
                 num += 2;
+                abilityOptions = Widgets.ButtonText(GetRowRect(rect2, num, 10), "TM_GolemAbilitiesButton".Translate(), true, false, true);
+                if (abilityOptions)
+                {
+                    Rect rectAbilities = new Rect(64f, 64f, 480, 600);
+                    GolemAbilitiesWindow newWindow = new GolemAbilitiesWindow();
+                    newWindow.cg = golem_pawn.Golem;
+                    Find.WindowStack.Add(newWindow);
+                }
+                num += 2;
 
                 Rect rectFollowMaster = GetRowRect(rect2, num);
                 rectFollowMaster.width = rect2.width / 2.2f;
@@ -154,6 +164,11 @@ namespace TorannMagic.Golems
                 rectFollowMasterDrafted.x += rectFollowMasterDrafted.width + 34f;
                 Widgets.CheckboxLabeled(rectFollowMasterDrafted, "TM_GolemDraftedFollow".Translate(), ref golem_pawn.Golem.followsMasterDrafted, false);
                 TooltipHandler.TipRegion(rectFollowMasterDrafted, "TM_GolemDraftedFollowDesc".Translate());
+                num += 2;
+                Rect rectShowDormantPos = GetRowRect(rect2, num);
+                rectShowDormantPos.width = rect2.width / 2.2f;
+                Widgets.CheckboxLabeled(rectShowDormantPos, "TM_GolemShowDormant".Translate(), ref golem_pawn.showDormantPosition, false);
+                TooltipHandler.TipRegion(rectShowDormantPos, "TM_GolemShowDormantDesc".Translate());
                 num += 2;
 
                 Rect rectStayDormant = GetRowRect(rect2, num);
@@ -201,6 +216,10 @@ namespace TorannMagic.Golems
                         if (gu.currentLevel == gu.golemUpgradeDef.maxLevel)
                         {
                             GUI.color = Color.cyan;
+                        }
+                        if(!gu.enabled)
+                        {
+                            GUI.color = Color.red;
                         }
 
                         upgrades = gu.golemUpgradeDef.label + ": " + gu.currentLevel + "/" + gu.golemUpgradeDef.maxLevel;

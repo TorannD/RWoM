@@ -21,8 +21,12 @@ namespace TorannMagic.TMDefs
         public int abilityUsedTick = 0;
         public BodyPartDef occupiedPart = null;
         public List<LifeStageDef> lifeStages = new List<LifeStageDef>();
+        public bool abilityToggle = false;
 
         public string graphicsPath;
+        public List<string> animationPath = new List<string>();
+        public bool randomAnimation = false;
+        public int changeAnimationTicks = 60;
         public ThingDef drawThing = null;
         public bool levelIncrementsGraphics = false;
         public Vector3 drawOffsetSouth = new Vector3(0, 0, 0);
@@ -38,7 +42,8 @@ namespace TorannMagic.TMDefs
         public float drawSize = 1f;
         public bool shouldRotate = false;
 
-        public bool partRequiresUpgrade = false;        
+        public bool partRequiresUpgrade = false;
+        public ThingDef verbProjectile = null;
         public int maxLevel = 1;
         public WorkstationCapacity workstationCapacity = WorkstationCapacity.None;
         public List<GolemWorkstationEffect> workstationEffects = new List<GolemWorkstationEffect>();

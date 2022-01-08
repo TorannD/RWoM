@@ -55,6 +55,9 @@ namespace TorannMagic.ModOptions
         public float autocastEvaluationFrequency = Settings.Instance.autocastEvaluationFrequency;
         public bool autocastQueueing = Settings.Instance.autocastQueueing;
 
+        //golem options
+        public bool showDormantFrames = Settings.Instance.showDormantFrames;
+
         //Class options
         public bool Arcanist = Settings.Instance.Arcanist;
         public bool FireMage = Settings.Instance.FireMage;

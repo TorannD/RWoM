@@ -42,7 +42,7 @@ namespace TorannMagic.Golems
 
         public virtual float LevelModifier => (1f + (effectLevelModifier * currentLevel));
 
-        public virtual void Apply(LocalTargetInfo target, Pawn caster, TM_GolemAbilityDef ability, float effectLevel = 1f)
+        public virtual void Apply(LocalTargetInfo target, Pawn caster, TM_GolemAbilityDef ability, float effectLevel = 1f, float effectBonus = 1f)
         {
             currentLevel = effectLevel;
             if (screenShakeIntensity > 0f)

@@ -262,6 +262,49 @@
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
+		<defName>TM_HollowGolemRD</defName>
+		<label>hollow golem</label>
+		<tab>TMagic</tab>
+		<description>A magical approach to golem crafting which researches how to animate raw energy. Crafting this type of golem will require an arcane forge.</description>
+		<baseCost>2000</baseCost>
+		<techLevel>Neolithic</techLevel>
+		<researchViewX>3.0</researchViewX>
+		<researchViewY>3.5</researchViewY>
+		<prerequisites>
+			<li>TM_GolemCraftRD</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>TM_HollowGolemEquipmentRD</defName>
+		<label>hollow equipment</label>
+		<tab>TMagic</tab>
+		<description>Researches weapons and armor that may be attached to a hollow golem for further enhancement or capabilities.</description>
+		<baseCost>2000</baseCost>
+		<techLevel>Neolithic</techLevel>
+		<researchViewX>4.0</researchViewX>
+		<researchViewY>3.5</researchViewY>
+		<prerequisites>
+			<li>TM_HollowGolemRD</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>TM_HollowGolemArtifactsRD</defName>
+		<label>hollow artifacts</label>
+		<tab>TMagic</tab>
+		<description>Research into the union of arcane artifacts with golem behavior allow the hollow golem to fuel artifacts with its own magical energy.</description>
+		<baseCost>2000</baseCost>
+		<techLevel>Neolithic</techLevel>
+		<researchViewX>5.0</researchViewX>
+		<researchViewY>3.5</researchViewY>
+		<prerequisites>
+			<li>TM_HollowGolemEquipmentRD</li>
+			<li>TM_ArcaneArtifacts</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
 		<defName>TM_MechaGolemRD</defName>
 		<label>mecha golem</label>
 		<tab>TMagic</tab>
@@ -269,7 +312,7 @@
 		<baseCost>2000</baseCost>
 		<techLevel>Neolithic</techLevel>
 		<researchViewX>3.0</researchViewX>
-		<researchViewY>3.5</researchViewY>
+		<researchViewY>4</researchViewY>
 		<prerequisites>
 			<li>Machining</li>
 			<li>TM_GolemCraftRD</li>
@@ -284,7 +327,7 @@
 		<baseCost>1500</baseCost>
 		<techLevel>Neolithic</techLevel>
 		<researchViewX>4.0</researchViewX>
-		<researchViewY>3.5</researchViewY>
+		<researchViewY>4</researchViewY>
 		<prerequisites>
 			<li>TM_MechaGolemRD</li>
 		</prerequisites>
@@ -298,7 +341,7 @@
 		<baseCost>1000</baseCost>
 		<techLevel>Neolithic</techLevel>
 		<researchViewX>3.0</researchViewX>
-		<researchViewY>4</researchViewY>
+		<researchViewY>4.5</researchViewY>
 		<prerequisites>
 			<li>TM_GolemCraftRD</li>
 		</prerequisites>
@@ -312,7 +355,7 @@
 		<baseCost>1000</baseCost>
 		<techLevel>Neolithic</techLevel>
 		<researchViewX>4.0</researchViewX>
-		<researchViewY>4</researchViewY>
+		<researchViewY>4.5</researchViewY>
 		<prerequisites>
 			<li>TM_FleshGolemRD</li>
 		</prerequisites>

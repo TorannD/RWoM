@@ -32,8 +32,8 @@ namespace TorannMagic
                 {
                     initialized = true;
                     CompAbilityUserMight comp = caster.GetComp<CompAbilityUserMight>();
-                    int verVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_PoisonFlask, "TM_PoisonFlask", "_ver", true);
-                    int pwrVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_PoisonFlask, "TM_PoisonFlask", "_pwr", true);
+                    int verVal = TM_Calc.GetSkillVersatilityLevel(caster, TorannMagicDefOf.TM_PoisonFlask, false);
+                    int pwrVal = TM_Calc.GetSkillPowerLevel(caster, TorannMagicDefOf.TM_PoisonFlask, false);
                     Map map = base.Map;
                     radius = this.def.projectile.explosionRadius + (.8f * verVal);
                     duration = 360 + (60 * pwrVal);

@@ -49,7 +49,8 @@ namespace TorannMagic
             int shots = 0;
             float weaponDamage = pawn.equipment.Primary.def.Verbs.FirstOrDefault().defaultProjectile.projectile.GetDamageAmount(pawn.equipment.Primary, null);
             float burstShots = pawn.equipment.Primary.def.Verbs.FirstOrDefault().burstShotCount;
-            shots = Mathf.RoundToInt(((50f / weaponDamage) + (2 * burstShots)) * (1.2f + .15f * TM_Calc.GetMightSkillLevel(pawn, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_RifleSpec, "TM_RifleSpec", "_eff", true)) * pawn.GetComp<CompAbilityUserMight>().mightPwr);
+            int effVal = TM_Calc.GetSkillEfficiencyLevel(pawn, TorannMagicDefOf.TM_RifleSpec);
+            shots = Mathf.RoundToInt(((50f / weaponDamage) + (2 * burstShots)) * (1.2f + .15f * effVal) * pawn.GetComp<CompAbilityUserMight>().mightPwr);
             return shots;
         }
     }

@@ -13,8 +13,6 @@ namespace TorannMagic
     public class Verb_BlankMind : Verb_UseAbility
     {
 
-        private int verVal;
-
         bool validTarg;
         //Used specifically for non-unique verbs that ignore LOS (can be used with shield belt)
         public override bool CanHitTargetFrom(IntVec3 root, LocalTargetInfo targ)
@@ -44,8 +42,7 @@ namespace TorannMagic
             this.TargetsAoE.Clear();
             //this.UpdateTargets();
             this.FindTargets();
-            MagicPowerSkill ver = base.CasterPawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_Rend.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Rend_ver");
-            verVal = ver.level;
+
             bool friendlyTarget = this.currentTarget != null && this.currentTarget.Thing != null && this.currentTarget.Thing.Faction != null && this.currentTarget.Thing.Faction == this.CasterPawn.Faction && this.currentTarget.Thing != this.CasterPawn;
             bool flag2 = (this.UseAbilityProps.AbilityTargetCategory != AbilityTargetCategory.TargetAoE && this.TargetsAoE.Count > 1) || friendlyTarget;
             if (flag2)

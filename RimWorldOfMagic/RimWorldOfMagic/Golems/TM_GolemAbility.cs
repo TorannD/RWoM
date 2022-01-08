@@ -14,6 +14,7 @@ namespace TorannMagic.Golems
     public class TM_GolemAbility : IExposable
     {
         public int lastUsedTick = 0;
+        public int currentLevel = 1;
         public TM_GolemAbilityDef golemAbilityDef;
 
         public bool AbilityReady
@@ -33,14 +34,16 @@ namespace TorannMagic.Golems
 
         }
 
-        public TM_GolemAbility(TM_GolemAbilityDef def)
+        public TM_GolemAbility(TM_GolemAbilityDef def, int level)
         {
             golemAbilityDef = def;
+            currentLevel = level;
         }
 
         public void ExposeData()
         {
             Scribe_Values.Look<int>(ref this.lastUsedTick, "lastUsedTick", 0);
+            Scribe_Values.Look<int>(ref this.currentLevel, "currentLevel", 1);
             Scribe_Defs.Look<TM_GolemAbilityDef>(ref this.golemAbilityDef, "golemAbilityDef");
         }
     }

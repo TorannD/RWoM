@@ -94,7 +94,7 @@
     <makesAlert>false</makesAlert>
 	<maxSeverity>1</maxSeverity>
 	<isBad>false</isBad>
-	<initialSeverity>.5</initialSeverity>
+	<initialSeverity>.1</initialSeverity>
 	<stages>
       <li>
         <label></label>
@@ -120,7 +120,7 @@
     <makesAlert>false</makesAlert>
 	<maxSeverity>3</maxSeverity>
 	<isBad>false</isBad>
-	<initialSeverity>.5</initialSeverity>
+	<initialSeverity>.1</initialSeverity>
 	<stages>
       <li>
         <label></label>
@@ -146,7 +146,7 @@
     <makesAlert>false</makesAlert>
 	<maxSeverity>3</maxSeverity>
 	<isBad>false</isBad>
-	<initialSeverity>.5</initialSeverity>
+	<initialSeverity>.1</initialSeverity>
 	<stages>
       <li>
         <label></label>
@@ -172,7 +172,7 @@
     <makesAlert>false</makesAlert>
 	<maxSeverity>3</maxSeverity>
 	<isBad>false</isBad>
-	<initialSeverity>.5</initialSeverity>
+	<initialSeverity>.1</initialSeverity>
 	<stages>
       <li>
         <label></label>
@@ -198,7 +198,7 @@
     <makesAlert>false</makesAlert>
 	<maxSeverity>3</maxSeverity>
 	<isBad>false</isBad>
-	<initialSeverity>.5</initialSeverity>
+	<initialSeverity>.1</initialSeverity>
 	<stages>
       <li>
         <label></label>
@@ -274,7 +274,7 @@
     <makesAlert>false</makesAlert>
 	<maxSeverity>1</maxSeverity>
 	<isBad>false</isBad>
-	<initialSeverity>.5</initialSeverity>
+	<initialSeverity>.1</initialSeverity>
 	<stages>
       <li>
         <label></label>

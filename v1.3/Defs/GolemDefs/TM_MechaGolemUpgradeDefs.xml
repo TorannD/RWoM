@@ -70,6 +70,7 @@ Move:	-[.3c,.5c,.6c]%</description>
 		<bodypart>Mecha_Body</bodypart>
 		<partRequiresUpgrade>false</partRequiresUpgrade>
 		<hediff>TM_Mecha-Golem_BallisticPlateHD</hediff>
+		<hediffSeverityPerLevel>.8</hediffSeverityPerLevel>
 		<graphicsPath>Mecha/BallisticPlate</graphicsPath>
 		<drawUndrafted>true</drawUndrafted>
 		<drawOnlyWhenActive>false</drawOnlyWhenActive>
@@ -137,7 +138,10 @@ Move:	-[.3c,.5c,.6c]%</description>
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
 		<defName>TM_Golem_MechaGatlingCannon</defName>
 		<label>Gatling cannon</label>
-		<description>Adds an ability that fires an attached gatling cannon.</description>
+		<description>Fires a 12 round burst of gunfire.
+Cooldown:	5s
+Energy Cost:	40
+Range: 		40</description>
 		<recipe>TM_Mecha-Golem_GatlingCannon</recipe>
 		<bodypart>Mecha_RightShoulder</bodypart>
 		<partRequiresUpgrade>false</partRequiresUpgrade>
@@ -174,7 +178,8 @@ Move:	-[.3c,.5c,.6c]%</description>
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
 		<defName>TM_Golem_MechaMiningLaser</defName>
 		<label>mining laser</label>
-		<description>Adds an ability that allows the golem to mine designated segments.</description>
+		<description>Allows the golem to mine designated wall segments.
+Energy Cost: 20</description>
 		<recipe>TM_Mecha-Golem_MiningLaser</recipe>
 		<bodypart>Mecha_LeftShoulder</bodypart>
 		<partRequiresUpgrade>false</partRequiresUpgrade>
@@ -194,16 +199,22 @@ Move:	-[.3c,.5c,.6c]%</description>
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
 		<defName>TM_Golem_MechaFlameCore</defName>
 		<label>flame core</label>
-		<description>Increases golem stats and adds an ability that burns away nearby filth.
+		<description>Passively increases golem stats and adds an ability that burns away nearby filth.
 Movement:	+[0.5c/0.9c/1.2c]
 Processing: 	+[10%/20%/30%]
 Ability Damage:	+[10%/20%/30%]
-Energy Cost:	+[10%/20%/30%]</description>
+Energy Cost:	+[10%/20%/30%]
+
+Cleaning Protocol
+Cooldown:	6s
+Range:	2c
+Energy Cost:	4 per filth</description>
 		<maxLevel>3</maxLevel>
 		<recipe>TM_Mecha-Golem_FlameCore</recipe>
 		<bodypart>Mecha_CoreProcessor</bodypart>
 		<partRequiresUpgrade>true</partRequiresUpgrade>
 		<hediff>TM_Mecha-Golem_FlameCoreHD</hediff>
+		<hediffSeverityPerLevel>.8</hediffSeverityPerLevel>
 		<graphicsPath>Mecha/FlameCore</graphicsPath>
 		<levelIncrementsGraphics>false</levelIncrementsGraphics>
 		<ability>TM_Mecha-Golem_AbsorbFilth</ability>
@@ -227,16 +238,22 @@ Energy Cost:	+[10%/20%/30%]</description>
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
 		<defName>TM_Golem_MechaWaterCore</defName>
 		<label>water core</label>
-		<description>Increases golem stats and adds an autonomous repair mechanism.
+		<description>Passively increases golem stats and adds an autonomous repair mechanism.
 Armor:		+[5%/10%/15%]
 Ability Cooldown:	-[10%/20%/30%]
 Healing Bonus:	+[100%/200%/300%]
-Energy Cost:	-[15%/30%/45%]</description>
+Energy Cost:	-[15%/30%/45%]
+
+Autonomous Repair
+Cooldown:	3s
+Energy Cost:	10(D), 30(A)
+Heal Amount:	8</description>
 		<maxLevel>3</maxLevel>
 		<recipe>TM_Mecha-Golem_WaterCore</recipe>
 		<bodypart>Mecha_CoreProcessor</bodypart>
 		<partRequiresUpgrade>true</partRequiresUpgrade>
 		<hediff>TM_Mecha-Golem_WaterCoreHD</hediff>
+		<hediffSeverityPerLevel>.8</hediffSeverityPerLevel>
 		<graphicsPath>Mecha/WaterCore</graphicsPath>
 		<levelIncrementsGraphics>false</levelIncrementsGraphics>
 		<ability>TM_Mecha-Golem_HealSelf</ability>
@@ -266,17 +283,23 @@ Energy Cost:	-[15%/30%/45%]</description>
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
 		<defName>TM_Golem_MechaEarthCore</defName>
 		<label>earth core</label>
-		<description>Increases golem stats and adds an ability that provides a shield.
+		<description>Passively increases golem stats and adds an ability that provides a shield.
 Armor:		+[10%/18%/25%]
 Ability Cooldown:	+[5%/10%/15%]
 Healing Bonus:	+[60%/120%/180%]
 Energy Cost:	+[5%/10%/15%]
-Processing: 	+[15%/30%/45%]</description>
+Processing: 	+[15%/30%/45%]
+
+Shield Protocol
+Cooldown:	10s
+Energy Cost:	10
+Shield Amount:	120</description>
 		<maxLevel>3</maxLevel>
 		<recipe>TM_Mecha-Golem_EarthCore</recipe>
 		<bodypart>Mecha_CoreProcessor</bodypart>
 		<partRequiresUpgrade>true</partRequiresUpgrade>
 		<hediff>TM_Mecha-Golem_EarthCoreHD</hediff>
+		<hediffSeverityPerLevel>.8</hediffSeverityPerLevel>
 		<graphicsPath>Mecha/EarthCore</graphicsPath>
 		<levelIncrementsGraphics>false</levelIncrementsGraphics>
 		<ability>TM_Mecha-Golem_ShieldSelf</ability>
@@ -300,7 +323,7 @@ Processing: 	+[15%/30%/45%]</description>
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
 		<defName>TM_Golem_MechaLightningCore</defName>
 		<label>lightning core</label>
-		<description>Increases golem stats and adds a reflexive electric discharge that stuns melee attackers.
+		<description>Passively increases golem stats and adds a reflexive coating to the golem's shell that produces an electric discharge that stuns melee attackers.
 Movement:	+[1.2c/1.8c/2.2c]
 Ability Cooldown:	-[15%/30%/45%]
 Energy Cost:	+[10%/20%/30%]
@@ -310,6 +333,7 @@ Processing: 	-[5%/10%/15%]</description>
 		<bodypart>Mecha_CoreProcessor</bodypart>
 		<partRequiresUpgrade>true</partRequiresUpgrade>
 		<hediff>TM_Mecha-Golem_LightningCoreHD</hediff>
+		<hediffSeverityPerLevel>.8</hediffSeverityPerLevel>
 		<graphicsPath>Mecha/LightningCore</graphicsPath>
 		<levelIncrementsGraphics>false</levelIncrementsGraphics>
 		<abilityModifiers>

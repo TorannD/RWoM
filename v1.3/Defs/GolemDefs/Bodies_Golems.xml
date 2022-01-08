@@ -16,8 +16,8 @@
 					<coverage>0.21</coverage>
 					<depth>Outside</depth>
 					<parts>
-						<li>
-							<def>Mecha_Spine</def>
+						<li>						
+							<def>Mecha_Spine</def>	
 							<coverage>0.4</coverage>
 							<depth>Inside</depth>
 						</li>
@@ -499,61 +499,76 @@
 	</BodyDef>
 	
 	<!-- HOLLOW GOLEM -->
-	<!-- <BodyDef>
+	<BodyDef>
 		<defName>TM_HollowGolem</defName>
 		<label>hollow_golem</label>
 		<corePart>
-			<def>Hollow_Body</def>
+			<def>Golem_Body</def>	<!-- coat of arms (fire, water, arcane, death) -->
 			<height>Middle</height>
 			<depth>Outside</depth>
 			<parts>
 				<li>
-					<def>Hollow_Back</def>
+					<def>Golem_Back</def>	<!-- cloak -->
 					<coverage>0.14</coverage>
 					<depth>Outside</depth>
 					<parts>
 						<li>
-							<def>Hollow_Spine</def>
+							<def>Golem_Spine</def> <!-- max energy -->
 							<coverage>0.3</coverage>
 							<depth>Inside</depth>
 						</li>
 					</parts>
 				</li>				
 				<li>
-					<def>Hollow_Abdomen</def>
+					<def>Golem_Abdomen</def>
 					<coverage>0.08</coverage>
 					<depth>Outside</depth>
 					<parts>
 						<li>
-							<def>Hollow_Guts</def>
+							<def>Golem_Guts</def>
 							<coverage>0.4</coverage>
 							<depth>Inside</depth>
 						</li>
 					</parts>
 				</li>
 				<li>
-					<def>Hollow_Chest</def>
+					<def>Golem_Chest</def>	<!-- breastplate -->
 					<coverage>0.20</coverage>
 					<depth>Outside</depth>
 					<parts>
 						<li>
-							<def>Hollow_Heart</def>
+							<def>Golem_Heart</def>	<!-- flames of devouring apathy, orb of extinguished flames -->
 							<coverage>0.08</coverage>
 							<depth>Inside</depth>							
 						</li>
 						<li>
-						  <def>Hollow_Ribcage</def>
+							<def>Hollow_Core</def>		<!-- elemental affinities - fire, water, arcane, death -->
+							<coverage>0.04</coverage>
+							<depth>Inside</depth>							
+						</li>
+						<li>
+							<def>Hollow_CoreSlotA</def>	<!-- energy efficiency -->
+							<coverage>0.01</coverage>
+							<depth>Inside</depth>							
+						</li>
+						<li>
+							<def>Hollow_CoreSlotB</def>	<!-- energy regen rate -->
+							<coverage>0.01</coverage>
+							<depth>Inside</depth>							
+						</li>
+						<li>
+						  <def>Golem_Ribcage</def>
 						  <coverage>0.4</coverage>
 						  <depth>Inside</depth>
 						  <parts>
 							<li>
-							  <def>Hollow_Lung</def>
+							  <def>Golem_Lung</def>
 							  <customLabel>left lung</customLabel>
 							  <coverage>0.4</coverage>
 							  <depth>Inside</depth>
 							</li>
 							<li>
-							  <def>Hollow_Lung</def>
+							  <def>Golem_Lung</def>
 							  <customLabel>right lung</customLabel>
 							  <coverage>0.4</coverage>
 							  <depth>Inside</depth>
@@ -563,69 +578,75 @@
 					</parts>
 				</li>
 				<li>
-					<def>Hollow_Neck</def>
+					<def>Golem_Neck</def>	<!-- protection gems - fire, ice, arcane, death -->
 					<coverage>0.16</coverage>
 					<depth>Outside</depth>
 					<height>Top</height>
 					<parts>
 						<li>
-							<def>Hollow_Head</def>
+							<def>Golem_Head</def>		<!-- helm -->
 							<coverage>0.85</coverage>
 							<depth>Outside</depth>							
 							<parts>
 								<li>
-									<def>Hollow_Skull</def>
+									<def>Golem_Skull</def>	<!-- crown -->
 									<coverage>0.50</coverage>
 									<depth>Inside</depth>
 									<parts>
 										<li>
-											<def>Hollow_Brain</def>
+											<def>Golem_Brain</def>
 											<coverage>0.25</coverage>
 											<depth>Inside</depth>
+											<groups>
+												<li>Hollow_Decay</li>
+											</groups>
 										</li>
 									</parts>
 								</li>
 								<li>
-									<def>Hollow_Face</def>
+									<def>Golem_Face</def>	<!-- focus gems - fire, ice, arcane, death -->
 									<coverage>0.40</coverage>
 									<depth>Outside</depth>
+									<groups>
+										<li>Hollow_FocusGems</li>
+									</groups>
 									<parts>
 										<li>
-											<def>Hollow_Eye</def>
+											<def>Golem_Eye</def>
 											<customLabel>left eye</customLabel>
 											<coverage>0.08</coverage>
 											<groups>
-												<li>Hollow_Eyes</li>
+												<li>Golem_Eyes</li>
 											</groups>
 										</li>
 										<li>
-											<def>Hollow_Eye</def>
+											<def>Golem_Eye</def>
 											<customLabel>right eye</customLabel>
 											<coverage>0.08</coverage>
 											<groups>
-												<li>Hollow_Eyes</li>
+												<li>Golem_Eyes</li>
 											</groups>
 										</li>										
 										<li>
-										  <def>Hollow_Ear</def>
+										  <def>Golem_Ear</def>
 										  <customLabel>left ear</customLabel>
 										  <coverage>0.07</coverage>
 										</li>
 										<li>
-										  <def>Hollow_Ear</def>
+										  <def>Golem_Ear</def>
 										  <customLabel>right ear</customLabel>
 										  <coverage>0.07</coverage>
 										</li>
 										<li>
-										  <def>Hollow_Nose</def>
+										  <def>Golem_Nose</def>
 										  <coverage>0.10</coverage>
 										</li>
 										<li>
-										  <def>Hollow_Jaw</def>
+										  <def>Golem_Jaw</def>
 										  <coverage>0.14</coverage>
 										  <parts>
 											<li>
-											  <def>Hollow_Tongue</def>
+											  <def>Golem_Tongue</def>
 											  <coverage>0</coverage>
 											  <depth>Inside</depth>
 											</li>
@@ -638,83 +659,80 @@
 					</parts>
 				</li>
 				<li>
-					<def>Hollow_Shoulder</def>
+					<def>Golem_Shoulder</def>		<!-- shoulders -->
 					<coverage>.09</coverage>
 					<customLabel>left shoulder</customLabel>
 					<woundAnchorTag>LeftShoulder</woundAnchorTag>
 					<parts>
 						<li>
-							<def>Hollow_LeftArm</def>
+							<def>Golem_LeftArm</def>
 							<customLabel>left arm</customLabel>
 							<coverage>0.6</coverage>
 							<parts>
 								<li>
-									<def>Hollow_Hand</def>
+									<def>Golem_Hand</def>
 									<customLabel>left hand</customLabel>
 									<coverage>0.45</coverage>
 									<height>Bottom</height>
 								</li>							
 							</parts>
 							<groups>
-								<li>Hollow_Arms</li>
+								<li>Hollow_Claws</li>
 							</groups>
 						</li>			
 					</parts>
 				</li>
 				<li>
-					<def>Hollow_Shoulder</def>
+					<def>Golem_Shoulder</def>	<!-- shoulders -->
 					<coverage>0.09</coverage>
 					<customLabel>right shoulder</customLabel>
 					<woundAnchorTag>RightShoulder</woundAnchorTag>
 					<parts>
 						<li>
-							<def>Hollow_RightArm</def>
+							<def>Golem_RightArm</def>
 							<customLabel>right arm</customLabel>
 							<coverage>0.6</coverage>
 							<parts>
 								<li>
-									<def>Hollow_Hand</def>
+									<def>Golem_Hand</def>
 									<customLabel>right hand</customLabel>
 									<coverage>0.45</coverage>
 									<height>Bottom</height>
 								</li>							
 							</parts>
 							<groups>
-								<li>Hollow_Arms</li>
+								<li>Hollow_Claws</li>
 							</groups>
 						</li>			
 					</parts>
 				</li>
 				<li>
 					<def>Hollow_Weapon</def>
-						<coverage>0.01</coverage>
-						<customLabel>weapon</customLabel>
-						<parts>
-							<li>
-								<def>Hollow_RightArm</def>
-								<customLabel>right arm</customLabel>
-								<coverage>0.6</coverage>
-								<parts>
-									<li>
-										<def>Hollow_Hand</def>
-										<customLabel>right hand</customLabel>
-										<coverage>0.45</coverage>
-										<height>Bottom</height>
-									</li>							
-								</parts>
-								<groups>
-									<li>Hollow_Arms</li>
-								</groups>
-							</li>			
-						</parts>
+					<coverage>0.0001</coverage>
+					<parts>
+						<li>
+						  <def>Hollow_Axe</def>	<!-- hollow axe -->
+						  <coverage>.1</coverage>
+						  <groups>
+							<li>Hollow_Axe</li>
+						  </groups>
+						</li>
+						<li>
+						  <def>Hollow_Staff</def>	<!-- hollow staff -->
+						  <coverage>.1</coverage>
+						  <groups>
+							<li>Hollow_Staff</li>
+						  </groups>
+						</li>
+					</parts>
 				</li>
 				<li>
-				  <def>Hollow_Waist</def>
+				  <def>Golem_Waist</def>
 				  <coverage>.19</coverage>
 				  <height>Bottom</height>
 				  <parts>
 					<li>
-					  <def>Hollow_Leg</def>
+					  <def>Golem_Leg</def>
 					  <customLabel>left leg</customLabel>
 					  <coverage>0.14</coverage>
 					  <height>Bottom</height>
@@ -724,7 +742,7 @@
 					  <woundAnchorTag>LeftLeg</woundAnchorTag>
 					  <parts>
 						<li>
-						  <def>Hollow_Femur</def>
+						  <def>Golem_Femur</def>
 						  <customLabel>left femur</customLabel>
 						  <coverage>0.1</coverage>
 						  <depth>Inside</depth>
@@ -733,7 +751,7 @@
 						  </groups>
 						</li>
 						<li>
-						  <def>Hollow_Tibia</def>
+						  <def>Golem_Tibia</def>
 						  <customLabel>left tibia</customLabel>
 						  <coverage>0.1</coverage>
 						  <depth>Inside</depth>
@@ -742,7 +760,7 @@
 						  </groups>
 						</li>
 						<li>
-						  <def>Hollow_Foot</def>
+						  <def>Golem_Foot</def>
 						  <customLabel>left foot</customLabel>
 						  <coverage>0.1</coverage>
 						  <groups>
@@ -752,7 +770,7 @@
 					  </parts>
 					</li>
 					<li>
-					  <def>Hollow_Leg</def>
+					  <def>Golem_Leg</def>
 					  <customLabel>right leg</customLabel>
 					  <coverage>0.14</coverage>
 					  <height>Bottom</height>
@@ -762,7 +780,7 @@
 					  <woundAnchorTag>RightLeg</woundAnchorTag>
 					  <parts>
 						<li>
-						  <def>Hollow_Femur</def>
+						  <def>Golem_Femur</def>
 						  <customLabel>right femur</customLabel>
 						  <coverage>0.1</coverage>
 						  <depth>Inside</depth>
@@ -771,7 +789,7 @@
 						  </groups>
 						</li>
 						<li>
-						  <def>Hollow_Tibia</def>
+						  <def>Golem_Tibia</def>
 						  <customLabel>right tibia</customLabel>
 						  <coverage>0.1</coverage>
 						  <depth>Inside</depth>
@@ -780,7 +798,7 @@
 						  </groups>
 						</li>
 						<li>
-						  <def>Hollow_Foot</def>
+						  <def>Golem_Foot</def>
 						  <customLabel>right foot</customLabel>
 						  <coverage>0.1</coverage>
 						  <groups>
@@ -793,6 +811,6 @@
 				</li>				
 			</parts>
 		</corePart>
-	</BodyDef> -->
+	</BodyDef>
 	
 </Defs>

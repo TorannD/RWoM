@@ -206,6 +206,9 @@
 <TM_NoPassionsToTransfer>No worthwhile passions found to transfer from {0} to {1}.</TM_NoPassionsToTransfer>
 <TM_MustHaveInspiration>{0} must have an inspiration to use {1}.</TM_MustHaveInspiration>
 <TM_BonusDamage>Bonus damage: {0}</TM_BonusDamage>
+<TM_NoRangedAttack>no ranged attack</TM_NoRangedAttack>
+<TM_GolemLight>Light</TM_GolemLight>
+<TM_GolemLightDesc>Toggle light</TM_GolemLightDesc>
 
 <!-- Surgery Failed letters -->
 <LetterLabelRegrowthSurgeryFail>Surgery Failed</LetterLabelRegrowthSurgeryFail>
@@ -330,7 +333,12 @@
 <lichChallenge>Wandering Lich Difficulty:</lichChallenge>
 <demonChallenge>Demon Assault Difficulty:</demonChallenge>
 
-<!-- Mod setings faction options -->
+<!-- Mod settings Golem options -->
+<TM_GolemOptions>Golem Options</TM_GolemOptions>
+<TM_GolemShowDormantFrameWhileActive>Show dormant frame</TM_GolemShowDormantFrameWhileActive>
+<TM_GolemShowDormantFrameWhileActiveDesc>Shows an outline of a dormant golem at their dormant position while the golem is active.</TM_GolemShowDormantFrameWhileActiveDesc>
+
+<!-- Mod settings faction options -->
 <TM_FactionOptions>Faction Options</TM_FactionOptions>
 
 <!-- Mod Settings extra options -->
@@ -2120,6 +2128,11 @@ Level 3: all 4 effects</TM_CombatDrugs_pwr_desc>
 
 <!-- ============ Golem Menu's ===================-->
 <TabGolem>Golem</TabGolem>
+<TM_GolemAbilities>{0}'s Abilities</TM_GolemAbilities>
+<TM_GolemAbilitiesButton>Abilities</TM_GolemAbilitiesButton>
+<TM_GolemAbilityEnabledDesc>Toggles use of {0}: {1}</TM_GolemAbilityEnabledDesc>
+<TM_GolemShowDormant>Show Dormant Frame</TM_GolemShowDormant>
+<TM_GolemShowDormantDesc>Shows a frame over this golem's dormant position. Use the mod options menu to toggle this for all golems.</TM_GolemShowDormantDesc>
 
 <!-- ============ Enchantment Labels =============-->
 <TM_MaxMPLabel>Max Energy Increase: {0}&#37;</TM_MaxMPLabel>

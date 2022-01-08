@@ -8733,11 +8733,11 @@ namespace TorannMagic
                                         base.AddPawnAbility(this.MagicData.AllMagicPowers[j].TMabilityDefs[level]);
                                         if (this.magicData.AllMagicPowers[j].TMabilityDefs[level] == TorannMagicDefOf.TM_LightSkip)
                                         {
-                                            if (TM_Calc.GetMagicSkillLevel(this.Pawn, this.magicData.MagicPowerSkill_LightSkip, "TM_LightSkip", "_pwr") >= 1)
+                                            if (TM_Calc.GetSkillPowerLevel(this.Pawn, TorannMagicDefOf.TM_LightSkip) >= 1)
                                             {
                                                 base.AddPawnAbility(TorannMagicDefOf.TM_LightSkipMass);
                                             }
-                                            if (TM_Calc.GetMagicSkillLevel(this.Pawn, this.magicData.MagicPowerSkill_LightSkip, "TM_LightSkip", "_pwr") >= 2)
+                                            if (TM_Calc.GetSkillPowerLevel(this.Pawn, TorannMagicDefOf.TM_LightSkip) >= 2)
                                             {
                                                 base.AddPawnAbility(TorannMagicDefOf.TM_LightSkipGlobal);
                                             }

@@ -69,7 +69,12 @@
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
 		<defName>TM_Golem_Flesh_LeftArmCleaver</defName>
 		<label>left arm cleaver</label>
-		<description>Allows the golem to harvest plants and enables an AoE cleave attack.</description>
+		<description>Allows the golem to harvest plants and enables an AoE cleave attack.
+		
+Cleave
+Rage Cost:	15
+Damage:	15
+Splash:	2c</description>
 		<recipe>TM_FleshGolem_LeftArm_Cleaver</recipe>
 		<bodypart>Flesh_LeftArm_Cleaver</bodypart>
 		<partRequiresUpgrade>true</partRequiresUpgrade>
@@ -108,7 +113,12 @@
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
 		<defName>TM_Golem_Flesh_RightArmCleaver</defName>
 		<label>right arm cleaver</label>
-		<description>Allows the golem to cut plants and enables an AoE cleave attack.</description>
+		<description>Allows the golem to cut plants and enables an AoE cleave attack.
+
+Cleave
+Rage Cost:	15
+Damage:	15
+Splash:	2c</description>
 		<recipe>TM_FleshGolem_RightArm_Cleaver</recipe>
 		<bodypart>Flesh_RightArm_Cleaver</bodypart>
 		<partRequiresUpgrade>true</partRequiresUpgrade>
@@ -144,7 +154,11 @@
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
 		<defName>TM_Golem_Flesh_Horns</defName>
 		<label>horns</label>
-		<description>Adds a piercing attack and charge ability.</description>
+		<description>Adds a piercing attack and charge ability.
+
+Bull Charge
+Rage Cost:	5
+Cooldown:	10s</description>
 		<recipe>TM_FleshGolem_Horns</recipe>
 		<bodypart>Flesh_Horns</bodypart>
 		<partRequiresUpgrade>true</partRequiresUpgrade>
@@ -167,6 +181,7 @@
 		<bodypart>Flesh_LowerEye</bodypart>
 		<partRequiresUpgrade>true</partRequiresUpgrade>
 		<hediff>TM_FleshGolem_EyesT1HD</hediff>
+		<hediffSeverityPerLevel>.8</hediffSeverityPerLevel>
 		<maxLevel>1</maxLevel>
 		<graphicsPath>Flesh/EyeT1</graphicsPath>
 		<drawUndrafted>true</drawUndrafted>
@@ -180,7 +195,12 @@
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
 		<defName>TM_Golem_Flesh_EyesT2</defName>
 		<label>evil eye</label>
-		<description>Enables an ability that terrifies and slows enemies.</description>
+		<description>Enables an ability that terrifies and slows enemies.
+
+Evil Eye
+Rage Cost:	10
+Cooldown:	2.2s
+Range:	40</description>
 		<recipe>TM_FleshGolem_EyesT2</recipe>
 		<bodypart>Flesh_EvilEye</bodypart>
 		<partRequiresUpgrade>true</partRequiresUpgrade>
@@ -198,11 +218,17 @@
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
 		<defName>TM_Golem_Flesh_Wings</defName>
 		<label>wings</label>
-		<description>Adds an ability that can grant the golem haste.</description>
+		<description>Adds an ability that can grant the golem haste.
+
+Haste
+Rage Cost:	15
+Cooldown:	6s
+Double attack and move speed</description>
 		<recipe>TM_FleshGolem_Wings</recipe>
 		<bodypart>Flesh_Wings</bodypart>
 		<partRequiresUpgrade>true</partRequiresUpgrade>
 		<hediff>TM_FleshGolem_HasteHD</hediff>
+		<hediffSeverityPerLevel>.8</hediffSeverityPerLevel>
 		<ability>TM_FleshGolem_WingHaste</ability>
 		<maxLevel>1</maxLevel>
 		<graphicsPath>Flesh/Wings</graphicsPath>
@@ -225,6 +251,7 @@ Heat:	8%</description>
 		<bodypart>Flesh_Skull</bodypart>
 		<partRequiresUpgrade>false</partRequiresUpgrade>
 		<hediff>TM_FleshGolem_SkullPlateHD</hediff>
+		<hediffSeverityPerLevel>.8</hediffSeverityPerLevel>
 		<maxLevel>1</maxLevel>
 		<graphicsPath>Flesh/Head</graphicsPath>
 		<drawUndrafted>true</drawUndrafted>
@@ -246,6 +273,7 @@ Heat:	10%</description>
 		<bodypart>Flesh_Shoulder</bodypart>
 		<partRequiresUpgrade>false</partRequiresUpgrade>
 		<hediff>TM_FleshGolem_ShoulderPlatesHD</hediff>
+		<hediffSeverityPerLevel>.8</hediffSeverityPerLevel>
 		<maxLevel>1</maxLevel>
 		<graphicsPath>Flesh/Shoulder</graphicsPath>
 		<drawUndrafted>true</drawUndrafted>
@@ -267,6 +295,7 @@ Heat:	5%</description>
 		<bodypart>Flesh_Chest</bodypart>
 		<partRequiresUpgrade>false</partRequiresUpgrade>
 		<hediff>TM_FleshGolem_ChestCageHD</hediff>
+		<hediffSeverityPerLevel>.8</hediffSeverityPerLevel>
 		<maxLevel>1</maxLevel>
 		<graphicsPath>Flesh/Chest</graphicsPath>
 		<drawUndrafted>true</drawUndrafted>
@@ -288,6 +317,7 @@ Heat:	5%</description>
 		<bodypart>Flesh_Back</bodypart>
 		<partRequiresUpgrade>false</partRequiresUpgrade>
 		<hediff>TM_FleshGolem_SpineGuardHD</hediff>
+		<hediffSeverityPerLevel>.8</hediffSeverityPerLevel>
 		<maxLevel>1</maxLevel>
 		<graphicsPath>Flesh/Back</graphicsPath>
 		<drawUndrafted>true</drawUndrafted>
@@ -309,6 +339,7 @@ Heat:	8%</description>
 		<bodypart>Flesh_Waist</bodypart>
 		<partRequiresUpgrade>false</partRequiresUpgrade>
 		<hediff>TM_FleshGolem_LegPlatesHD</hediff>
+		<hediffSeverityPerLevel>.8</hediffSeverityPerLevel>
 		<maxLevel>1</maxLevel>
 		<graphicsPath>Flesh/Legs</graphicsPath>
 		<drawUndrafted>true</drawUndrafted>
@@ -324,7 +355,12 @@ Heat:	8%</description>
 		<label>automaton power</label>
 		<description>Increases stats and adds the dismember ability.
 Movement:	+[20%/35%/50%]
-Health:		+[30%/50%/70%]</description>
+Health:		+[30%/50%/70%]
+
+Dismember
+Rage Cost:	25
+Cooldown:	13s
+Range:	1c</description>
 		<maxLevel>3</maxLevel>
 		<recipe>TM_FleshGolem_LifeStage</recipe>
 		<bodypart>Flesh_Heart</bodypart>

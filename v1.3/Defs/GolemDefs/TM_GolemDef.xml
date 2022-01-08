@@ -74,5 +74,53 @@
 		  <li>TM_Golem_Flesh_LegPlates</li>
 		</upgrades>			
 	</TorannMagic.TMDefs.TM_GolemDef>	
+	
+	<TorannMagic.TMDefs.TM_GolemDef Name="TM_HollowGolem">
+		<defName>TM_Golem_Hollow</defName>
+		<golemDef>TM_HollowGolem</golemDef>
+		<golemKindDef>TM_HollowGolemK</golemKindDef>
+		<golemWorkstationDef>TM_HollowGolem_Workstation</golemWorkstationDef>
+		<golemFramePath>Golems/Hollow/HollowGolem_Workstation_Frame</golemFramePath>
+		<activationTicks>300</activationTicks>
+		<processorEvaluationTicks>40</processorEvaluationTicks>
+		<needs>
+		  <li>TM_GolemEnergy</li>
+		</needs>
+		<hediffs>
+		  <li>TM_GolemHD</li>
+		</hediffs>
+		<upgrades>
+		  <li>TM_Golem_HollowRestore</li>
+		  <li>TM_Golem_HollowMaxEnergy</li>
+		  <li>TM_Golem_HollowEnergyEfficiency</li>
+		  <li>TM_Golem_HollowEnergyRate</li>
+		  <li>TM_Golem_HollowAxe</li>
+		  <li>TM_Golem_HollowStaff</li>
+		  <li>TM_Golem_HollowBreastPlate</li>
+		  <li>TM_Golem_HollowHelm</li>
+		  <li>TM_Golem_HollowShoulders</li>
+		  <li>TM_Golem_HollowCrown</li>
+		  <li>TM_Golem_HollowCloak</li>
+		  <li>TM_Golem_HollowPGFire</li>
+		  <li>TM_Golem_HollowPGIce</li>
+		  <li>TM_Golem_HollowPGArcane</li>
+		  <li>TM_Golem_HollowPGDeath</li>
+		  <li>TM_Golem_HollowPGDoom</li>
+		  <li>TM_Golem_HollowFGFire</li>
+		  <li>TM_Golem_HollowFGIce</li>
+		  <li>TM_Golem_HollowFGArcane</li>
+		  <li>TM_Golem_HollowFGDeath</li>
+		  <li>TM_HollowGolem_CoAFire</li>
+		  <li>TM_HollowGolem_CoAIce</li>
+		  <li>TM_HollowGolem_CoAArcane</li>
+		  <li>TM_HollowGolem_CoADeath</li>
+		  <li>TM_Golem_HollowAffinityFire</li>
+		  <li>TM_Golem_HollowAffinityIce</li>
+		  <li>TM_Golem_HollowAffinityArcane</li>
+		  <li>TM_Golem_HollowAffinityDeath</li>
+		  <li>TM_Golem_HollowOrbOfExtinguishedFlames</li>
+		  <li>TM_Golem_HollowFlamesOfDevouringApathy</li>
+		</upgrades>			
+	</TorannMagic.TMDefs.TM_GolemDef>
 
 </Defs>

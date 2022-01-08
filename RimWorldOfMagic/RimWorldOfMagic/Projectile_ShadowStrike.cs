@@ -55,7 +55,8 @@ namespace TorannMagic
                 this.initialized = true;
                 this.caster = this.launcher as Pawn;               
                 CompAbilityUserMight comp = caster.GetComp<CompAbilityUserMight>();
-                verVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_ShadowStrike, "TM_ShadowStrike", "_ver", true);                
+                //verVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_ShadowStrike, "TM_ShadowStrike", "_ver", true);    
+                verVal = TM_Calc.GetSkillVersatilityLevel(caster, TorannMagicDefOf.TM_ShadowStrike);
                 this.startPos = caster.Position;
                 this.age = 0;
                 this.weaponDamage = GetWeaponDmg(caster);

@@ -41,10 +41,12 @@ namespace TorannMagic
         protected override bool TryCastShot()
         {
             CompAbilityUserMagic comp = this.CasterPawn.GetComp<CompAbilityUserMagic>();
-            MagicPowerSkill eff = base.CasterPawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_EarthSprites.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_EarthSprites_eff");
-            MagicPowerSkill ver = base.CasterPawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_EarthSprites.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_EarthSprites_ver");
-            effVal = eff.level;
-            verVal = ver.level;
+            //MagicPowerSkill eff = base.CasterPawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_EarthSprites.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_EarthSprites_eff");
+            //MagicPowerSkill ver = base.CasterPawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_EarthSprites.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_EarthSprites_ver");
+            //effVal = eff.level;
+            //verVal = ver.level;
+            effVal = TM_Calc.GetSkillEfficiencyLevel(CasterPawn, Ability.Def as TMAbilityDef);
+            verVal = TM_Calc.GetSkillVersatilityLevel(CasterPawn, Ability.Def as TMAbilityDef);
 
             if(!(comp.maxMP < .6f - (.07f * verVal)))
             {

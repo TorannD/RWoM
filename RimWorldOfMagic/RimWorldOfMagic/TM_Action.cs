@@ -791,6 +791,26 @@ namespace TorannMagic
             }
         }
 
+        public static void HealAllSickness(Pawn p)
+        {
+            if (p != null && p.health != null && p.health.hediffSet != null)
+            {
+                List<Hediff> removeHediffs = new List<Hediff>();
+                removeHediffs.Clear();
+                foreach (Hediff h in p.health.hediffSet.hediffs)
+                {
+                    if(h.def.makesSickThought)
+                    {
+                        removeHediffs.Add(h);
+                    }
+                }
+                foreach(Hediff r in removeHediffs)
+                {
+                    p.health.RemoveHediff(r);
+                }
+            }
+        }
+
         public static Thing SingleSpawnLoop(Pawn caster, SpawnThings spawnables, IntVec3 position, Map map, int duration, bool temporary, bool hostile = false, Faction spawnableFaction = null, bool hasFaction = true, ThingDef makeFromStuff = null)
         {
             bool flag = spawnables.def != null;

@@ -23,9 +23,12 @@ namespace TorannMagic
             Map map = pawn.Map;
 
             CompAbilityUserMight comp = caster.TryGetComp<CompAbilityUserMight>();
-            pwrVal = TM_Calc.GetMightSkillLevel(pawn, comp.MightData.MightPowerSkill_60mmMortar, "TM_60mmMortar", "_pwr", true);
-            verVal = TM_Calc.GetMightSkillLevel(pawn, comp.MightData.MightPowerSkill_60mmMortar, "TM_60mmMortar", "_ver", true);
-            effVal = TM_Calc.GetMightSkillLevel(pawn, comp.MightData.MightPowerSkill_60mmMortar, "TM_60mmMortar", "_eff", true);
+            //pwrVal = TM_Calc.GetMightSkillLevel(pawn, comp.MightData.MightPowerSkill_60mmMortar, "TM_60mmMortar", "_pwr", true);
+            //verVal = TM_Calc.GetMightSkillLevel(pawn, comp.MightData.MightPowerSkill_60mmMortar, "TM_60mmMortar", "_ver", true);
+            //effVal = TM_Calc.GetMightSkillLevel(pawn, comp.MightData.MightPowerSkill_60mmMortar, "TM_60mmMortar", "_eff", true);
+            pwrVal = TM_Calc.GetSkillPowerLevel(pawn, this.Ability.Def as TMAbilityDef);
+            verVal = TM_Calc.GetSkillVersatilityLevel(pawn, this.Ability.Def as TMAbilityDef);
+            effVal = TM_Calc.GetSkillEfficiencyLevel(pawn, this.Ability.Def as TMAbilityDef);
 
             if ((pawn.Position.IsValid && pawn.Position.Standable(map)))
             {

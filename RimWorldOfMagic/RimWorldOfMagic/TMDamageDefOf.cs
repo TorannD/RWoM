@@ -104,6 +104,7 @@ namespace TorannMagic
 
             public static DamageDef TM_PainDD;
             public static DamageDef TM_DistortionDD;
+            public static DamageDef TM_DecayDD;
 
             public static DamageDef TM_PersonnelBombDD;
 

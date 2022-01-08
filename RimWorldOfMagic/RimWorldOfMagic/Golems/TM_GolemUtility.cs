@@ -81,5 +81,131 @@ namespace TorannMagic.Golems
             }
             return null;
         }
+
+        public static Action GetGolemMeleeAttackAction(Pawn pawn, LocalTargetInfo target, out string failStr)
+        {
+            failStr = "";
+            Pawn target2;
+            if (!pawn.Drafted)
+            {
+                failStr = "IsNotDraftedLower".Translate(pawn.LabelShort, pawn);
+            }
+            else if (target.IsValid && !pawn.CanReach(target, PathEndMode.Touch, Danger.Deadly))
+            {
+                failStr = "NoPath".Translate();
+            }
+            else if (pawn.meleeVerbs.TryGetMeleeVerb(target.Thing) == null)
+            {
+                failStr = "Incapable".Translate();
+            }
+            else if (pawn == target.Thing)
+            {
+                failStr = "CannotAttackSelf".Translate();
+            }
+            else if ((target2 = (target.Thing as Pawn)) != null && (pawn.InSameExtraFaction(target2, ExtraFactionType.HomeFaction) || pawn.InSameExtraFaction(target2, ExtraFactionType.MiniFaction)))
+            {
+                failStr = "CannotAttackSameFactionMember".Translate();
+            }
+            else
+            {
+                Pawn pawn2;
+                if ((pawn2 = (target.Thing as Pawn)) == null || !pawn2.RaceProps.Animal || !HistoryEventUtility.IsKillingInnocentAnimal(pawn, pawn2) || new HistoryEvent(HistoryEventDefOf.KilledInnocentAnimal, pawn.Named(HistoryEventArgsNames.Doer)).DoerWillingToDo())
+                {
+                    return delegate
+                    {
+                        Job job = JobMaker.MakeJob(JobDefOf.AttackMelee, target);
+                        Pawn pawn3 = target.Thing as Pawn;
+                        pawn.TryGetComp<CompGolem>().threatTarget = target.Thing;
+                        if (pawn3 != null)
+                        {
+                            job.killIncappedTarget = pawn3.Downed;
+                        }
+                        pawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
+                    };
+                }
+                failStr = "IdeoligionForbids".Translate();
+            }
+            failStr = failStr.CapitalizeFirst();
+            return null;
+        }
+
+        public static Action GetGolemRangedAttackAction(TMPawnGolem pawn, LocalTargetInfo target, out string failStr)
+        {
+            failStr = "";
+            List<Verb> tmpVerbs = pawn.ValidRangedVerbs();
+            if(tmpVerbs == null)
+            {
+                failStr = "TM_NoRangedAttack".Translate();
+                return null;
+            }
+            if(tmpVerbs.Count <= 0)
+            {
+                failStr = "TM_NoRangedAttack".Translate();
+                return null;
+            }
+            Verb primaryVerb = tmpVerbs.RandomElement();
+            if(primaryVerb == null)
+            {
+                failStr = "TM_NoRangedAttack".Translate();
+                return null;
+            }
+            Pawn target2;
+            Pawn victim;
+            if (!pawn.Drafted)
+            {
+                failStr = "IsNotDraftedLower".Translate(pawn.LabelShort, pawn);
+            }
+            else if (target.IsValid && !primaryVerb.CanHitTarget(target))
+            {
+                if (!pawn.Position.InHorDistOf(target.Cell, primaryVerb.verbProps.range))
+                {
+                    failStr = "OutOfRange".Translate();
+                }
+                float num = primaryVerb.verbProps.EffectiveMinRange(target, pawn);
+                if ((float)pawn.Position.DistanceToSquared(target.Cell) < num * num)
+                {
+                    failStr = "TooClose".Translate();
+                }
+                else
+                {
+                    failStr = "CannotHitTarget".Translate();
+                }
+            }
+            else if (pawn == target.Thing)
+            {
+                failStr = "CannotAttackSelf".Translate();
+            }
+            else if ((target2 = (target.Thing as Pawn)) != null && (pawn.InSameExtraFaction(target2, ExtraFactionType.HomeFaction) || pawn.InSameExtraFaction(target2, ExtraFactionType.MiniFaction)))
+            {
+                failStr = "CannotAttackSameFactionMember".Translate();
+            }
+            else if ((victim = (target.Thing as Pawn)) != null && HistoryEventUtility.IsKillingInnocentAnimal(pawn, victim) && !new HistoryEvent(HistoryEventDefOf.KilledInnocentAnimal, pawn.Named(HistoryEventArgsNames.Doer)).DoerWillingToDo())
+            {
+                failStr = "IdeoligionForbids".Translate();
+            }
+            else
+            {
+                Pawn pawn2;
+                if ((pawn2 = (target.Thing as Pawn)) == null || pawn.Ideo == null || !pawn.Ideo.IsVeneratedAnimal(pawn2) || new HistoryEvent(HistoryEventDefOf.HuntedVeneratedAnimal, pawn.Named(HistoryEventArgsNames.Doer)).DoerWillingToDo())
+                {
+                    return delegate
+                    {
+                        Job job = CreateRangedJob(pawn, target, primaryVerb);
+                        pawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
+                    };
+                }
+                failStr = "IdeoligionForbids".Translate();
+            }
+            failStr = failStr.CapitalizeFirst();
+            return null;
+        }
+
+        public static Job CreateRangedJob(TMPawnGolem pawn, LocalTargetInfo target, Verb attackVerb)
+        {
+            Job job = JobMaker.MakeJob(TorannMagicDefOf.JobDriver_GolemAttackStatic, target);
+            pawn.activeVerb = attackVerb;
+            pawn.TryGetComp<CompGolem>().threatTarget = target.Thing;
+            return job;
+        }
     }
 }

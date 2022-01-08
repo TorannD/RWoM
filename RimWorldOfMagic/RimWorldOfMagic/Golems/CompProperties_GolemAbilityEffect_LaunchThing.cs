@@ -27,7 +27,7 @@ namespace TorannMagic.Golems
             Scribe_Values.Look<float>(ref this.effectFlashScale, "effectFlashScale");
         }
 
-        public override void Apply(LocalTargetInfo target, Pawn caster, TM_GolemAbilityDef ability, float effectLevel = 1f)
+        public override void Apply(LocalTargetInfo target, Pawn caster, TM_GolemAbilityDef ability, float effectLevel = 1f, float effectBonus = 1f)
         {
             base.Apply(target, caster, ability);
             if (effectFlashScale > 0.01f)

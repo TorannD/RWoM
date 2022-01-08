@@ -1,0 +1,844 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+ 
+<Defs>
+
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_HollowRestore</defName>
+		<label>restore part</label>
+		<recipe>TM_HollowGolem_RepairComponent</recipe>
+		<maxLevel>0</maxLevel>
+		<workstationEffects>
+			<li Class="TorannMagic.Golems.GolemWorkstationEffect_RestorePart" />
+		</workstationEffects>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_HollowMaxEnergy</defName>
+		<label>mana cell</label>
+		<description>Increases maximum energy by 500 per level. Starting max energy is 2500.</description>
+		<recipe>TM_HollowGolem_EnergyCell</recipe>
+		<bodypart>Golem_Spine</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<maxLevel>5</maxLevel>
+		<workstationCapacity>EnergyMax</workstationCapacity>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_HollowEnergyEfficiency</defName>
+		<label>mana converter</label>
+		<description>Increases energy efficiency by 10% per level. Starting energy efficiency is 50%.</description>
+		<recipe>TM_HollowGolem_EnergyConverter</recipe>
+		<bodypart>Hollow_CoreSlotA</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<maxLevel>5</maxLevel>
+		<workstationCapacity>Efficiency</workstationCapacity>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_HollowEnergyRate</defName>
+		<label>mana attractor</label>
+		<description>Increases energy charge rate by 20% per level. Starting recharge rate is 30 energy/hour.</description>
+		<recipe>TM_HollowGolem_EnergyCharge</recipe>
+		<bodypart>Hollow_CoreSlotB</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<maxLevel>5</maxLevel>
+		<workstationCapacity>EnergyRegeneration</workstationCapacity>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_HollowAxe</defName>
+		<label>hollow axe</label>
+		<description>Adds a massive battle-axe that shears through multiple opponents with each swing. The hollowed axe occupies the weapon slot; only one weapon may be equipped.</description>
+		<recipe>TM_HollowGolem_Axe</recipe>
+		<bodypart>Hollow_Axe</bodypart>
+		<partRequiresUpgrade>true</partRequiresUpgrade>
+		<occupiedPart>Hollow_Weapon</occupiedPart>
+		<maxLevel>1</maxLevel>
+		<graphicsPath>Hollow/Hollow_Axe</graphicsPath>
+		<drawUndrafted>false</drawUndrafted>
+		<drawSize>1.8</drawSize>
+		<drawOffsetNorth>(0, .15, .25)</drawOffsetNorth>
+		<drawOffsetSouth>(0, -.15, .25)</drawOffsetSouth>
+		<drawOffsetEast>(-.42, -.01, .25)</drawOffsetEast>
+		<drawOffsetWest>(.42, -.01, .25)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_HollowStaff</defName>
+		<label>Hollow Staff</label>
+		<description>Enables a ranged, magical attack. The hollowed staff occupies the weapon slot; only one weapon may be equipped.</description>
+		<recipe>TM_HollowGolem_Staff</recipe>
+		<bodypart>Hollow_Staff</bodypart>
+		<partRequiresUpgrade>true</partRequiresUpgrade>
+		<occupiedPart>Hollow_Weapon</occupiedPart>
+		<verbProjectile>Projectile_BlazingPower</verbProjectile>
+		<maxLevel>1</maxLevel>
+		<graphicsPath>Hollow/Hollow_Staff</graphicsPath>
+		<drawUndrafted>false</drawUndrafted>
+		<drawSize>2</drawSize>
+		<drawOffsetNorth>(0, .15, .2)</drawOffsetNorth>
+		<drawOffsetSouth>(0, -.15, .2)</drawOffsetSouth>
+		<drawOffsetEast>(-.42, -.01, .2)</drawOffsetEast>
+		<drawOffsetWest>(.42, -.01, .2)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_HollowBreastPlate</defName>
+		<label>breastplate</label>
+		<description>Increases armor for the chest and torso:
+Blunt:	+21%
+Sharp:	+32%
+Heat:	+14%</description>
+		<maxLevel>1</maxLevel>
+		<recipe>TM_HollowGolem_Armor</recipe>
+		<bodypart>Golem_Chest</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<hediff>TM_HollowGolem_BreastPlateHD</hediff>
+		<hediffSeverityPerLevel>.8</hediffSeverityPerLevel>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_HollowHelm</defName>
+		<label>helmet</label>
+		<description>Protects the head and skull:
+Blunt:	+22%
+Sharp:	+7%
+Heat:	+9%</description>
+		<maxLevel>1</maxLevel>
+		<recipe>TM_HollowGolem_Helm</recipe>
+		<bodypart>Golem_Head</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<hediff>TM_HollowGolem_HelmHD</hediff>
+		<hediffSeverityPerLevel>.8</hediffSeverityPerLevel>
+		<graphicsPath>Hollow/Hollow_Helm</graphicsPath>
+		<levelIncrementsGraphics>false</levelIncrementsGraphics>
+		<drawUndrafted>true</drawUndrafted>
+		<drawOnlyWhenActive>false</drawOnlyWhenActive>
+		<drawSize>2.2</drawSize>
+		<shouldRotate>false</shouldRotate>
+		<drawOffsetNorth>(0, .1, 0)</drawOffsetNorth>
+		<drawOffsetSouth>(0, .1, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .1, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .1, 0)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+   <TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_HollowShoulders</defName>
+		<label>shoulder guards</label>
+		<description>Protects the shoulders, collar and neck:
+Blunt:	+8%
+Sharp:	+19%
+Heat:	+6%</description>
+		<maxLevel>1</maxLevel>
+		<recipe>TM_HollowGolem_Shoulder</recipe>
+		<bodypart>Golem_Shoulder</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<hediff>TM_HollowGolem_ShoulderHD</hediff>
+		<hediffSeverityPerLevel>.8</hediffSeverityPerLevel>
+		<graphicsPath>Hollow/Hollow_Shoulder</graphicsPath>
+		<levelIncrementsGraphics>false</levelIncrementsGraphics>
+		<drawUndrafted>true</drawUndrafted>
+		<drawOnlyWhenActive>false</drawOnlyWhenActive>
+		<drawSize>2.2</drawSize>
+		<shouldRotate>false</shouldRotate>
+		<drawOffsetNorth>(0, -.1, 0)</drawOffsetNorth>
+		<drawOffsetSouth>(0, -.1, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .1, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .1, 0)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_HollowCrown</defName>
+		<label>Crown of Awakening</label>
+		<description>Passively strengthens the will of the wearer to protect against magical attacks and offers minor physical protection. Active ability detects and nullify the magic of other spells.
+
+Spell Reflection
+Energy Cost:	50
+Cooldown:	6.6s
+Range:	100c
+Damage and radius varies based on mana cost of reflected spell</description>
+		<maxLevel>1</maxLevel>
+		<recipe>TM_HollowGolem_Crown</recipe>
+		<bodypart>Golem_Skull</bodypart>
+		<ability>TM_HollowGolem_Awakening</ability>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<hediff>TM_HollowGolem_CrownHD</hediff>
+		<hediffSeverityPerLevel>.8</hediffSeverityPerLevel>
+		<graphicsPath>Hollow/Hollow_Crown</graphicsPath>
+		<levelIncrementsGraphics>false</levelIncrementsGraphics>
+		<drawUndrafted>true</drawUndrafted>
+		<drawOnlyWhenActive>false</drawOnlyWhenActive>
+		<drawSize>2.2</drawSize>
+		<shouldRotate>false</shouldRotate>
+		<drawOffsetNorth>(0, .11, 0)</drawOffsetNorth>
+		<drawOffsetSouth>(0, .11, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .11, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .11, 0)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_HollowCloak</defName>
+		<label>Fade Cloak</label>
+		<description>The fade cloak passively increases the basic movement speed of the wearer while providing a small amount of protection. It also allows the wearer to instantly move to another location on the map by expending energy. If the wearer fades to a location near enemies, a decay blast will strike each enemy near the destination.
+
+Blunt:	+10%
+Sharp:	+5%
+Heat:	+15%
+Harmony: +5%
+Move Speed +.4c/s
+
+Faded Decay
+Energy Cost:	30
+Cooldown:	20s
+Min Range:	10c
+Max Range:	200c
+Decay Radius:	4c
+Hit Chance:	80%</description>
+		<maxLevel>1</maxLevel>
+		<ability>TM_HollowGolem_Fade</ability>
+		<recipe>TM_HollowGolem_Cloak</recipe>
+		<bodypart>Golem_Back</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<hediff>TM_HollowGolem_CloakHD</hediff>
+		<hediffSeverityPerLevel>.8</hediffSeverityPerLevel>
+		<graphicsPath>Hollow/Hollow_Cloak</graphicsPath>
+		<levelIncrementsGraphics>false</levelIncrementsGraphics>
+		<drawUndrafted>true</drawUndrafted>
+		<drawOnlyWhenActive>false</drawOnlyWhenActive>
+		<drawSize>2.2</drawSize>
+		<shouldRotate>false</shouldRotate>
+		<drawOffsetNorth>(0, .11, 0)</drawOffsetNorth>
+		<drawOffsetSouth>(0, .11, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .09, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .09, 0)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_HollowGolem_CoAFire</defName>
+		<label>Coat of Arms: Fire</label>
+		<description>Passively increases stats and improves decay touch to deal bonus 10 + 5*level burn damage:
+Movement:	+[0.2c/0.3c/0.35c]
+Heat Armor:	+[30%/50%/60%]
+Ability Cooldown:	-[10%/20%/30%]
+Processing:	+[10%/20%/30%]
+
+Absorb Fire
+Energy Cost:	0
+Cooldown:	4.2s
+Range:	2c
+Health restored per fire: 7</description>
+		<maxLevel>3</maxLevel>
+		<recipe>TM_HollowGolem_CoAFire</recipe>
+		<bodypart>Golem_Body</bodypart>
+		<occupiedPart>Golem_Body</occupiedPart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<ability>TM_HollowGolem_AbsorbFire</ability>
+		<hediff>TM_HollowGolem_CoAFireHD</hediff>
+		<hediffSeverityPerLevel>.8</hediffSeverityPerLevel>
+		<graphicsPath>Hollow/Hollow_CoAFire</graphicsPath>
+		<levelIncrementsGraphics>false</levelIncrementsGraphics>
+		<abilityModifiers>
+			<cooldownModifier>-.1</cooldownModifier>
+			<processingModifier>-.1</processingModifier>
+		</abilityModifiers>
+		<drawThing></drawThing>
+		<drawUndrafted>true</drawUndrafted>
+		<drawOnlyWhenActive>false</drawOnlyWhenActive>
+		<drawSize>2.2</drawSize>
+		<shouldRotate>false</shouldRotate>
+		<drawOffsetNorth>(0, .1, 0)</drawOffsetNorth>
+		<drawOffsetSouth>(0, .1, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .1, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .1, 0)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_HollowGolem_CoAIce</defName>
+		<label>Coat of Arms: Water</label>
+		<description>Passively increases stats and improves decay touch to heal the golem for 8 + 4*level and another nearby pawn for the same amount.
+Armor:		+[5%/10%/15%]
+Cooldown:	-[10%/20%/30%]
+Processing:	+[10%/20%/30%]</description>
+		<maxLevel>3</maxLevel>
+		<recipe>TM_HollowGolem_CoAIce</recipe>
+		<bodypart>Golem_Body</bodypart>
+		<occupiedPart>Golem_Body</occupiedPart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<hediff>TM_HollowGolem_CoAIceHD</hediff>
+		<hediffSeverityPerLevel>.8</hediffSeverityPerLevel>
+		<graphicsPath>Hollow/Hollow_CoAIce</graphicsPath>
+		<levelIncrementsGraphics>false</levelIncrementsGraphics>
+		<abilityModifiers>
+			<cooldownModifier>-.1</cooldownModifier>
+			<processingModifier>-.1</processingModifier>
+		</abilityModifiers>
+		<drawThing></drawThing>
+		<drawUndrafted>true</drawUndrafted>
+		<drawOnlyWhenActive>false</drawOnlyWhenActive>
+		<drawSize>2.2</drawSize>
+		<shouldRotate>false</shouldRotate>
+		<drawOffsetNorth>(0, .1, 0)</drawOffsetNorth>
+		<drawOffsetSouth>(0, .1, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .1, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .1, 0)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_HollowGolem_CoAArcane</defName>
+		<label>Coat of Arms: Arcane</label>
+		<description>Passively increases stats and improves decay touch to restore 20 + 5*level energy per hit.
+Ability Cooldown:	-[12%/24%/36%]
+Ability Damage:		+[10%/20%/30%]
+Processing:		+[15%/30%/45%]</description>
+		<maxLevel>3</maxLevel>
+		<recipe>TM_HollowGolem_CoAArcane</recipe>
+		<bodypart>Golem_Body</bodypart>
+		<occupiedPart>Golem_Body</occupiedPart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<graphicsPath>Hollow/Hollow_CoADark</graphicsPath>
+		<levelIncrementsGraphics>false</levelIncrementsGraphics>
+		<abilityModifiers>
+			<cooldownModifier>-.12</cooldownModifier>
+			<processingModifier>-.15</processingModifier>
+			<damageModifier>.1</damageModifier>
+		</abilityModifiers>
+		<drawThing></drawThing>
+		<drawUndrafted>true</drawUndrafted>
+		<drawOnlyWhenActive>false</drawOnlyWhenActive>
+		<drawSize>2.2</drawSize>
+		<shouldRotate>false</shouldRotate>
+		<drawOffsetNorth>(0, .1, 0)</drawOffsetNorth>
+		<drawOffsetSouth>(0, .1, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .1, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .1, 0)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_HollowGolem_CoADeath</defName>
+		<label>Coat of Arms: Death</label>
+		<description>Passively increases stats and improves decay touch to be 50% more effective and strike twice.
+Armor:		+[5%/10%/15%]
+Ability Cooldown:	-[8%/16%/24%]
+Ability Damage:	+[10%/20%/30%]
+Processing:	+[15%/30%/45%]</description>
+		<maxLevel>3</maxLevel>
+		<recipe>TM_HollowGolem_CoADeath</recipe>
+		<hediff>TM_HollowGolem_CoAIceHD</hediff>
+		<hediffSeverityPerLevel>.8</hediffSeverityPerLevel>
+		<bodypart>Golem_Body</bodypart>
+		<occupiedPart>Golem_Body</occupiedPart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<graphicsPath>Hollow/Hollow_CoADeath</graphicsPath>
+		<levelIncrementsGraphics>false</levelIncrementsGraphics>
+		<abilityModifiers>
+			<cooldownModifier>-.12</cooldownModifier>
+			<processingModifier>-.15</processingModifier>
+			<damageModifier>.1</damageModifier>
+		</abilityModifiers>
+		<drawThing></drawThing>
+		<drawUndrafted>true</drawUndrafted>
+		<drawOnlyWhenActive>false</drawOnlyWhenActive>
+		<drawSize>2.2</drawSize>
+		<shouldRotate>false</shouldRotate>
+		<drawOffsetNorth>(0, .1, 0)</drawOffsetNorth>
+		<drawOffsetSouth>(0, .1, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .1, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .1, 0)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>	
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_HollowPGFire</defName>
+		<label>Protection Gem: Fire</label>
+		<description>The Fire protection gem allows the golem to encase itself in fire with the Burning Fury shield. Burning Fury provides a 35% damage reduction to all attacks, cauterizes wounds, prevents being staggered, and burns nearby enemies.
+
+Energy Cost: 120
+Cooldown: 1200s
+Duration: 100s</description>
+		<maxLevel>1</maxLevel>
+		<recipe>TM_HollowGolem_PGFire</recipe>
+		<ability>TM_HollowGolem_BurningFury</ability>
+		<bodypart>Golem_Neck</bodypart>
+		<occupiedPart>Golem_Neck</occupiedPart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<graphicsPath>Hollow/Hollow_BGFire</graphicsPath>
+		<levelIncrementsGraphics>false</levelIncrementsGraphics>
+		<drawThing></drawThing>
+		<drawUndrafted>true</drawUndrafted>
+		<drawOnlyWhenActive>false</drawOnlyWhenActive>
+		<drawSize>2.2</drawSize>
+		<shouldRotate>false</shouldRotate>
+		<drawOffsetNorth>(0, .12, 0)</drawOffsetNorth>
+		<drawNorth>false</drawNorth>
+		<drawOffsetSouth>(0, .12, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .12, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .12, 0)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_HollowPGIce</defName>
+		<label>Protection Gem: Water</label>
+		<description>The Water protection gem allows the golem evade incoming attacks. The chance to evade an attack is proportional to the golem's energy percent. Each evasion reduces the golems energy by 5. This ability is persistent as long as the golem energy threshold is above the minimum required to use abilities.</description>
+		<maxLevel>1</maxLevel>
+		<recipe>TM_HollowGolem_PGWater</recipe>
+		<bodypart>Golem_Neck</bodypart>
+		<occupiedPart>Golem_Neck</occupiedPart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<abilityToggle>true</abilityToggle>
+		<graphicsPath>Hollow/Hollow_BGIce</graphicsPath>
+		<levelIncrementsGraphics>false</levelIncrementsGraphics>
+		<drawThing></drawThing>
+		<drawUndrafted>true</drawUndrafted>
+		<drawOnlyWhenActive>false</drawOnlyWhenActive>
+		<drawSize>2.2</drawSize>
+		<shouldRotate>false</shouldRotate>
+		<drawOffsetNorth>(0, .12, 0)</drawOffsetNorth>
+		<drawNorth>false</drawNorth>
+		<drawOffsetSouth>(0, .12, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .12, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .12, 0)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_HollowPGArcane</defName>
+		<label>Protection Gem: Arcane</label>
+		<description>The Arcane protection gem allows the golem to surround enemy ranged attackers with a reverse shield called Well of Despair. Well of Despair allows projectiles in but will block all projectiles out.
+		
+Energy Cost:	60
+Cooldown:	480
+Range:		50
+Duration:	20s</description>
+		<maxLevel>1</maxLevel>
+		<recipe>TM_HollowGolem_PGArcane</recipe>
+		<ability>TM_HollowGolem_WellOfDespair</ability>
+		<bodypart>Golem_Neck</bodypart>
+		<occupiedPart>Golem_Neck</occupiedPart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<graphicsPath>Hollow/Hollow_BGDark</graphicsPath>
+		<levelIncrementsGraphics>false</levelIncrementsGraphics>
+		<drawThing></drawThing>
+		<drawUndrafted>true</drawUndrafted>
+		<drawOnlyWhenActive>false</drawOnlyWhenActive>
+		<drawSize>2.2</drawSize>
+		<shouldRotate>false</shouldRotate>
+		<drawOffsetNorth>(0, .12, 0)</drawOffsetNorth>
+		<drawNorth>false</drawNorth>
+		<drawOffsetSouth>(0, .12, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .12, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .12, 0)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_HollowPGDeath</defName>
+		<label>Protection Gem: Death</label>
+		<description>The Death protection gem surrounds the golem with a cursed aura. Enemies within 15 cells can be stricken with a curse that degrades willpower and combat abilities. The energy cost is always 10 regardless of how many enemies are affected.
+		
+Aura Range:	15
+Pulse Rate:	12s
+Energy Cost:	10 energy per pulse</description>
+		<maxLevel>1</maxLevel>
+		<abilityToggle>true</abilityToggle>
+		<recipe>TM_HollowGolem_PGDeath</recipe>
+		<bodypart>Golem_Neck</bodypart>
+		<occupiedPart>Golem_Neck</occupiedPart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<graphicsPath>Hollow/Hollow_BGDeath</graphicsPath>
+		<levelIncrementsGraphics>false</levelIncrementsGraphics>
+		<drawThing></drawThing>
+		<drawUndrafted>true</drawUndrafted>
+		<drawOnlyWhenActive>false</drawOnlyWhenActive>
+		<drawSize>2.2</drawSize>
+		<shouldRotate>false</shouldRotate>
+		<drawOffsetNorth>(0, .12, 0)</drawOffsetNorth>
+		<drawNorth>false</drawNorth>
+		<drawOffsetSouth>(0, .12, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .12, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .12, 0)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_HollowPGDoom</defName>
+		<label>Protection Gem: Death's Abyss</label>
+		<description>The Death's Abyss protection gem curses enemies with the weight of their mortality. Enemies within 36 cells can be stricken with a movement slowing curse. 
+		
+Aura Range:	36
+Pulse Rate:	10s
+Energy Cost:	8 energy per pawn</description>
+		<maxLevel>1</maxLevel>
+		<recipe>TM_HollowGolem_PGDoom</recipe>
+		<bodypart>Golem_Neck</bodypart>
+		<hediff>TM_DoomFieldHD</hediff>
+		<abilityToggle>true</abilityToggle>
+		<occupiedPart>Golem_Neck</occupiedPart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<graphicsPath>Hollow/Hollow_BGDeathHead</graphicsPath>
+		<levelIncrementsGraphics>false</levelIncrementsGraphics>
+		<drawThing></drawThing>
+		<drawUndrafted>true</drawUndrafted>
+		<drawOnlyWhenActive>false</drawOnlyWhenActive>
+		<drawSize>2.2</drawSize>
+		<shouldRotate>false</shouldRotate>
+		<drawOffsetNorth>(0, .12, 0)</drawOffsetNorth>
+		<drawNorth>false</drawNorth>
+		<drawOffsetSouth>(0, .12, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .12, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .12, 0)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_HollowFGFire</defName>
+		<label>Focus Gem: Fire</label>
+		<description>The Fire focus gem allows the golem to concentrate elemental fire into a fierce burst of firebolts. Launches 16 firebolts at enemies within 8 cells of a target.
+
+Energy Cost: 40
+Min Range: 6
+Max Range: 50</description>
+		<maxLevel>1</maxLevel>
+		<verbProjectile>Projectile_FireBlossomBolt</verbProjectile>
+		<recipe>TM_HollowGolem_FGFire</recipe>
+		<bodypart>Golem_Face</bodypart>
+		<occupiedPart>Golem_Face</occupiedPart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<graphicsPath>Hollow/Hollow_HGFire</graphicsPath>
+		<levelIncrementsGraphics>false</levelIncrementsGraphics>
+		<drawThing></drawThing>
+		<drawUndrafted>true</drawUndrafted>
+		<drawOnlyWhenActive>false</drawOnlyWhenActive>
+		<drawSize>2.2</drawSize>
+		<shouldRotate>false</shouldRotate>
+		<drawOffsetNorth>(0, .12, 0)</drawOffsetNorth>
+		<drawNorth>false</drawNorth>
+		<drawOffsetSouth>(0, .12, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .12, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .12, 0)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_HollowFGIce</defName>
+		<label>Focus Gem: Ice</label>
+		<description>The Ice focus gem allows the golem to concentrate elemental ice into a rapid flow of icebolts. Launches 16 icebolts at enemies within 12 cells of a target.
+
+Energy Cost: 60
+Min Range: 10
+Max Range: 70</description>
+		<maxLevel>1</maxLevel>
+		<verbProjectile>Projectile_IceBlossomBolt</verbProjectile>
+		<recipe>TM_HollowGolem_FGIce</recipe>
+		<bodypart>Golem_Face</bodypart>
+		<occupiedPart>Golem_Face</occupiedPart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<graphicsPath>Hollow/Hollow_HGIce</graphicsPath>
+		<levelIncrementsGraphics>false</levelIncrementsGraphics>
+		<drawThing></drawThing>
+		<drawUndrafted>true</drawUndrafted>
+		<drawOnlyWhenActive>false</drawOnlyWhenActive>
+		<drawSize>2.2</drawSize>
+		<shouldRotate>false</shouldRotate>
+		<drawOffsetNorth>(0, .12, 0)</drawOffsetNorth>
+		<drawNorth>false</drawNorth>
+		<drawOffsetSouth>(0, .12, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .12, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .12, 0)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_HollowFGArcane</defName>
+		<label>Focus Gem: Arcane</label>
+		<description>The Arcane focus gem allows the golem to concentrate dark energy a massive shadow bolt. Launches a single, explosive shadowbolt at the target. Extreme range.
+
+Energy Cost: 50
+Min Range: 10
+Max Range: 150</description>
+		<maxLevel>1</maxLevel>
+		<verbProjectile>Projectile_DarkBolt</verbProjectile>
+		<recipe>TM_HollowGolem_FGArcane</recipe>
+		<bodypart>Golem_Face</bodypart>
+		<occupiedPart>Golem_Face</occupiedPart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<graphicsPath>Hollow/Hollow_HGDark</graphicsPath>
+		<levelIncrementsGraphics>false</levelIncrementsGraphics>
+		<drawThing></drawThing>
+		<drawUndrafted>true</drawUndrafted>
+		<drawOnlyWhenActive>false</drawOnlyWhenActive>
+		<drawSize>2.2</drawSize>
+		<shouldRotate>false</shouldRotate>
+		<drawOffsetNorth>(0, .12, 0)</drawOffsetNorth>
+		<drawNorth>false</drawNorth>
+		<drawOffsetSouth>(0, .12, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .12, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .12, 0)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_HollowFGDeath</defName>
+		<label>Focus Gem: Death</label>
+		<description>The Death focus gem surrounds the golem with a field radiating death energy. Periodically strikes nearby enemies. Gains a bonus strike when any pawn dies within 10 cells of the golem.
+
+Energy Cost: 20
+Range: 10</description>
+		<maxLevel>1</maxLevel>
+		<recipe>TM_HollowGolem_FGDeath</recipe>
+		<bodypart>Golem_Face</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<hediff>TM_DeathFieldHD</hediff>
+		<abilityToggle>true</abilityToggle>
+		<hediffSeverityPerLevel>.8</hediffSeverityPerLevel>
+		<graphicsPath>Hollow/Hollow_HGDeath</graphicsPath>
+		<levelIncrementsGraphics>false</levelIncrementsGraphics>
+		<drawUndrafted>true</drawUndrafted>
+		<drawOnlyWhenActive>false</drawOnlyWhenActive>
+		<drawSize>2.2</drawSize>
+		<shouldRotate>false</shouldRotate>
+		<drawOffsetNorth>(0, .12, 0)</drawOffsetNorth>
+		<drawNorth>false</drawNorth>
+		<drawOffsetSouth>(0, .12, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .12, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .12, 0)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_HollowAffinityFire</defName>
+		<label>fire affinity</label>
+		<description>The arcane energy within the hollow golem is entwined with elemental fire. Only one affinity is allowed per golem. This affinity causes the golem's eyes to glow reddish orange. Fire affinity grants the golem additional stats:
+Movement: +[25/40/50]%
+Health:	+[40/60/75]%</description>
+		<recipe>TM_HollowGolem_AffinityFire</recipe>
+		<bodypart>Hollow_Core</bodypart>
+		<partRequiresUpgrade>true</partRequiresUpgrade>
+		<occupiedPart>Hollow_Core</occupiedPart>
+		<graphicsPath>Hollow/Hollow_LSFire</graphicsPath>
+		<levelIncrementsGraphics>false</levelIncrementsGraphics>
+		<maxLevel>3</maxLevel>
+		<lifeStages>
+			<li>TM_HollowGolemLS</li>
+			<li>TM_HollowGolemLS_FA1</li>
+			<li>TM_HollowGolemLS_FA2</li>
+			<li>TM_HollowGolemLS_FA3</li>
+		</lifeStages>		
+		<drawThing></drawThing>
+		<shouldRotate>false</shouldRotate>
+		<drawOnlyWhenActive>false</drawOnlyWhenActive>
+		<drawUndrafted>true</drawUndrafted>
+		<drawSize>2.2</drawSize>
+		<drawOffsetNorth>(0,0,0)</drawOffsetNorth>
+		<drawNorth>false</drawNorth>
+		<drawOffsetSouth>(0,-.12,0)</drawOffsetSouth>
+		<drawOffsetEast>(0,-.12,0)</drawOffsetEast>
+		<drawOffsetWest>(0,-.12,0)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_HollowAffinityIce</defName>
+		<label>water affinity</label>
+		<description>The arcane energy within the hollow golem is entwined with elemental water. Only one affinity is allowed per golem. This affinity causes the golem's eyes to glow light blue. Water affinity grants the golem additional stats:
+Movement: +[20/30/35]%
+Health:	+[50/75/90]%</description>
+		<recipe>TM_HollowGolem_AffinityIce</recipe>
+		<bodypart>Hollow_Core</bodypart>
+		<partRequiresUpgrade>true</partRequiresUpgrade>
+		<occupiedPart>Hollow_Core</occupiedPart>
+		<graphicsPath>Hollow/Hollow_LSIce</graphicsPath>
+		<levelIncrementsGraphics>false</levelIncrementsGraphics>
+		<maxLevel>3</maxLevel>
+		<lifeStages>
+			<li>TM_HollowGolemLS</li>
+			<li>TM_HollowGolemLS_IA1</li>
+			<li>TM_HollowGolemLS_IA2</li>
+			<li>TM_HollowGolemLS_IA3</li>
+		</lifeStages>		
+		<drawThing></drawThing>
+		<shouldRotate>false</shouldRotate>
+		<drawOnlyWhenActive>false</drawOnlyWhenActive>
+		<drawUndrafted>true</drawUndrafted>
+		<drawSize>2.2</drawSize>
+		<drawOffsetNorth>(0,0,0)</drawOffsetNorth>
+		<drawNorth>false</drawNorth>
+		<drawOffsetSouth>(0,-.12,0)</drawOffsetSouth>
+		<drawOffsetEast>(0,-.12,0)</drawOffsetEast>
+		<drawOffsetWest>(0,-.12,0)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_HollowAffinityArcane</defName>
+		<label>arcane affinity</label>
+		<description>The arcane energy within the hollow golem is further enhanced. Only one affinity is allowed per golem. This affinity causes the golem's eyes to glow magenta. Arcane affinity grants the golem additional stats:
+Movement: +[15/25/30]%
+Health:	+[55/85/100]%</description>
+		<recipe>TM_HollowGolem_AffinityArcane</recipe>
+		<bodypart>Hollow_Core</bodypart>
+		<partRequiresUpgrade>true</partRequiresUpgrade>
+		<occupiedPart>Hollow_Core</occupiedPart>
+		<graphicsPath>Hollow/Hollow_LSDark</graphicsPath>
+		<levelIncrementsGraphics>false</levelIncrementsGraphics>
+		<maxLevel>3</maxLevel>
+		<lifeStages>
+			<li>TM_HollowGolemLS</li>
+			<li>TM_HollowGolemLS_AA1</li>
+			<li>TM_HollowGolemLS_AA2</li>
+			<li>TM_HollowGolemLS_AA3</li>
+		</lifeStages>		
+		<drawThing></drawThing>
+		<shouldRotate>false</shouldRotate>
+		<drawOnlyWhenActive>false</drawOnlyWhenActive>
+		<drawUndrafted>true</drawUndrafted>
+		<drawSize>2.2</drawSize>
+		<drawOffsetNorth>(0,0,0)</drawOffsetNorth>
+		<drawNorth>false</drawNorth>
+		<drawOffsetSouth>(0,-.12,0)</drawOffsetSouth>
+		<drawOffsetEast>(0,-.12,0)</drawOffsetEast>
+		<drawOffsetWest>(0,-.12,0)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_HollowAffinityDeath</defName>
+		<label>death affinity</label>
+		<description>The arcane energy within the hollow golem is entwined with death magic. Only one affinity is allowed per golem. This affinity causes the golem's eyes to glow green. Death affinity grants the golem additional stats:
+Movement: +[10/15/20]%
+Health:	+[65/90/110]%</description>
+		<recipe>TM_HollowGolem_AffinityDeath</recipe>
+		<bodypart>Hollow_Core</bodypart>
+		<partRequiresUpgrade>true</partRequiresUpgrade>
+		<occupiedPart>Hollow_Core</occupiedPart>
+		<graphicsPath>Hollow/Hollow_LSDeath</graphicsPath>
+		<levelIncrementsGraphics>false</levelIncrementsGraphics>
+		<maxLevel>3</maxLevel>
+		<lifeStages>
+			<li>TM_HollowGolemLS</li>
+			<li>TM_HollowGolemLS_DA1</li>
+			<li>TM_HollowGolemLS_DA2</li>
+			<li>TM_HollowGolemLS_DA3</li>
+		</lifeStages>		
+		<drawThing></drawThing>
+		<shouldRotate>false</shouldRotate>
+		<drawOnlyWhenActive>false</drawOnlyWhenActive>
+		<drawUndrafted>true</drawUndrafted>
+		<drawSize>2.2</drawSize>
+		<drawOffsetNorth>(0,0,0)</drawOffsetNorth>
+		<drawNorth>false</drawNorth>
+		<drawOffsetSouth>(0,-.12,0)</drawOffsetSouth>
+		<drawOffsetEast>(0,-.12,0)</drawOffsetEast>
+		<drawOffsetWest>(0,-.12,0)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_HollowOrbOfExtinguishedFlames</defName>
+		<label>Orb of Extinguished Flames</label>
+		<description>Gain points into the active research technology will increase for every pawn killed on the map. The orb can also be toggled to detect and consume any fire within 25 cells and emits a faint silver light. These effect are only active while the hollow golem is dormant.</description>
+		<maxLevel>1</maxLevel>
+		<recipe>TM_HollowGolem_OrbOfExtinguishedFlames</recipe>
+		<bodypart>Golem_Heart</bodypart>
+		<occupiedPart>Golem_Heart</occupiedPart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>		
+		<levelIncrementsGraphics>false</levelIncrementsGraphics>		
+		<drawThing></drawThing>
+		<drawUndrafted>false</drawUndrafted>
+		<drawOnlyWhenActive>false</drawOnlyWhenActive>
+		<drawSize>1.8</drawSize>
+		<changeAnimationTicks>5</changeAnimationTicks>
+		<animationPath>
+			<li>Hollow/HollowOrbA</li>
+			<li>Hollow/HollowOrbB</li>
+			<li>Hollow/HollowOrbC</li>
+			<li>Hollow/HollowOrbD</li>
+			<li>Hollow/HollowOrbE</li>
+			<li>Hollow/HollowOrbF</li>
+			<li>Hollow/HollowOrbG</li>
+			<li>Hollow/HollowOrbH</li>
+		</animationPath>
+		<shouldRotate>false</shouldRotate>		
+		<drawOffsetNorth>(0, -.01, -.1)</drawOffsetNorth>
+		<drawOffsetSouth>(0, -.01, -.1)</drawOffsetSouth>
+		<drawOffsetEast>(0, -.01, -.1)</drawOffsetEast>
+		<drawOffsetWest>(0, -.01, -.1)</drawOffsetWest>
+		<workstationEffects>
+		  <li Class="TorannMagic.Golems.GolemWorkstationEffect_Glow">
+			<glowRadius>6</glowRadius>
+			<glowColor>(100, 100, 127,0)</glowColor>			
+		  </li>
+		  <li Class="TorannMagic.Golems.GolemWorkstationEffect_DestroyFire">
+			<ticksTillNextEffect80>300</ticksTillNextEffect80>			
+			<maxRange>25</maxRange>
+			<firesPerIteration>3</firesPerIteration>
+		  </li>
+		</workstationEffects>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_HollowFlamesOfDevouringApathy</defName>
+		<label>Flames of Devouring Apathy</label>
+		<description>Actively regulates temperature and destroys any filth within 25 cells. Emits a faint mystical light. These effect are only active while the hollow golem is dormant.</description>
+		<maxLevel>1</maxLevel>
+		<recipe>TM_HollowGolem_FlamesOfDevouringApathy</recipe>
+		<bodypart>Golem_Heart</bodypart>
+		<occupiedPart>Golem_Heart</occupiedPart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<levelIncrementsGraphics>false</levelIncrementsGraphics>		
+		<drawThing></drawThing>
+		<drawUndrafted>false</drawUndrafted>
+		<drawOnlyWhenActive>false</drawOnlyWhenActive>
+		<drawSize>2</drawSize>
+		<shouldRotate>false</shouldRotate>
+		<changeAnimationTicks>13</changeAnimationTicks>
+		<animationPath>
+			<li>Hollow/HollowFlameA</li>
+			<li>Hollow/HollowFlameB</li>
+			<li>Hollow/HollowFlameC</li>
+		</animationPath>
+		<drawOffsetNorth>(0, -.01, 0)</drawOffsetNorth>
+		<drawOffsetSouth>(0, -.01, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, -.01, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, -.01, 0)</drawOffsetWest>
+		<workstationEffects>
+		  <li Class="TorannMagic.Golems.GolemWorkstationEffect_Glow">
+			<glowRadius>8</glowRadius>
+			<glowColor>(200, 80, 200,0)</glowColor>			
+		  </li>
+		  <li Class="TorannMagic.Golems.GolemWorkstationEffect_DestroyFilth">
+			<ticksTillNextEffect80>600</ticksTillNextEffect80>			
+			<maxRange>25</maxRange>
+			<filthPerIteration>3</filthPerIteration>
+		  </li>
+		  <li Class="TorannMagic.Golems.GolemWorkstationEffect_RegulateTemperature">
+			<ticksTillNextEffect80>360</ticksTillNextEffect80>	
+			<minHeat>-10</minHeat>			
+			<maxHeat>120</maxHeat>
+			<maxHeatAbsPerEffect>100</maxHeatAbsPerEffect>
+		  </li>
+		</workstationEffects> 
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+
+</Defs>
+
+<!--
+			    <label></label>
+				<maxLevel>1</maxLevel>
+				<recipe>TM_Mecha-Golem_</recipe>
+				<bodypart>Mecha_</bodypart>
+				<partRequiresUpgrade>true</partRequiresUpgrade>
+				<hediff></hediff>
+				<ability></ability>
+				<lifeStages>
+				</lifeStages>
+				<abilityModifier>
+					<damageModifier></damageModifier>
+					<cooldownModifier></cooldownModifier>
+					<energyCostModifier></energyCostModifier>
+					<durationModifier></durationModifier>
+					<healingModifier></healingModifier>
+					<processingModifier></processingModifier>
+				</abilityModifier>				
+				<graphicsPath>Mecha/</graphicsPath>
+				<levelIncrementsGraphics>false</levelIncrementsGraphics>
+				<drawThing></drawThing>
+				<drawUndrafted>true</drawUndrafted>
+				<drawOnlyWhenActive>false</drawOnlyWhenActive>
+				<drawSize>1</drawSize>
+				<shouldRotate>false</shouldRotate>
+				<drawOffsetNorth>(0, 0, 0)</drawOffsetNorth>
+				<drawOffsetSouth>(0, 0, 0)</drawOffsetSouth>
+				<drawOffsetEast>(0, 0, 0)</drawOffsetEast>
+				<drawOffsetWest>(0, 0, 0)</drawOffsetWest>
+				<workstationCapacity>None</workstationCapacity> 
+				<workstationEffects>
+				</workstationEffects>
+-->

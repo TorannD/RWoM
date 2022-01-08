@@ -27,12 +27,12 @@ namespace TorannMagic.Golems
             Scribe_Values.Look<float>(ref this.armorPenetration, "armorPenetration");
         }
 
-        public override void Apply(LocalTargetInfo target, Pawn caster, TM_GolemAbilityDef ability, float effectLevel = 1f)
+        public override void Apply(LocalTargetInfo target, Pawn caster, TM_GolemAbilityDef ability, float effectLevel = 1f, float effectBonus = 1f)
         {
             base.Apply(target, caster, ability);
             if (target.Thing != null && target.Thing is Pawn)
             {
-                TM_Action.DamageEntities_AoE(damageType, damageAmount * LevelModifier, armorPenetration, caster, target.Thing as Pawn, caster.Map, splashRadius);
+                TM_Action.DamageEntities_AoE(damageType, damageAmount * LevelModifier * effectBonus, armorPenetration * effectBonus, caster, target.Thing as Pawn, caster.Map, splashRadius);
             }
         }
 

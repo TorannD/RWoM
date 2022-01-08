@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System;
 using System.Linq;
 using UnityEngine;
+using TorannMagic.Golems;
 
 namespace TorannMagic
 {
@@ -59,7 +60,7 @@ namespace TorannMagic
             }
             if (!this.Pawn.DestroyedOrNull() && this.Pawn.Spawned && !this.Pawn.Downed)
             {
-                if(comp == null)
+                if(comp == null && TM_Calc.IsMightUser(this.Pawn))
                 {
                     comp = this.Pawn.GetComp<CompAbilityUserMight>();
                     int pwrVal = comp.MightData.MightPowerSkill_FieldTraining.FirstOrDefault((MightPowerSkill x) => x.label == "TM_FieldTraining_pwr").level;
@@ -83,6 +84,14 @@ namespace TorannMagic
                     {
                         comp.Stamina.CurLevel -= (.02f * this.drain);
                         if (comp.Stamina.CurLevel <= .001f)
+                        {
+                            this.removeNow = true;
+                        }
+                    }
+                    else if(Pawn is TMPawnGolem || Pawn is TMHollowGolem)
+                    {
+                        severityAdjustment -= .01f;
+                        if(this.parent.Severity <= .01f)
                         {
                             this.removeNow = true;
                         }

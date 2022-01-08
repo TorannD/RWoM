@@ -162,7 +162,6 @@ namespace TorannMagic.TMDefs
                     return true;
                 }
                 return false;
-
             }
             if (targetType == typeof(LocalTargetInfo))
             {

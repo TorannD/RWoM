@@ -39,7 +39,8 @@ namespace TorannMagic
                     int verVal = 0;
                     try
                     {
-                        verVal = TM_Calc.GetMightSkillLevel(pawn, comp.MightData.MightPowerSkill_PoisonTrap, "TM_PoisonTrap", "_ver", true);
+                        //verVal = TM_Calc.GetMightSkillLevel(pawn, comp.MightData.MightPowerSkill_PoisonTrap, "TM_PoisonTrap", "_ver", true);
+                        verVal = TM_Calc.GetSkillVersatilityLevel(pawn, TorannMagicDefOf.TM_PoisonTrap);
                         MightPowerSkill ver = pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_PoisonTrap.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PoisonTrap_ver");
                         //verVal = ver.level;
                         //if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))

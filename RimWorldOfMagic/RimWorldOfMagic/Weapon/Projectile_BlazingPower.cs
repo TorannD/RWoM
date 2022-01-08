@@ -21,7 +21,7 @@ namespace TorannMagic.Weapon
             if (pawn != null)
             {
                 CompAbilityUserMagic comp = pawn.GetComp<CompAbilityUserMagic>();
-                if (comp.IsMagicUser)
+                if (comp != null && comp.IsMagicUser)
                 {
                     this.arcaneDmg = comp.arcaneDmg;
                 }

@@ -38,31 +38,37 @@ namespace TorannMagic
         public virtual void Effect()
         {
             LocalTargetInfo t = this.currentTarget;
+            //
+            //MightPowerSkill pwr = comp.MightData.MightPowerSkill_DragonStrike.FirstOrDefault((MightPowerSkill x) => x.label == "TM_DragonStrike_pwr");
+            //int pwrVal = pwr.level;
+            //
+            //if (this.CasterPawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+            //{
+            //    MightPowerSkill mpwr = comp.MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
+            //    pwrVal = mpwr.level;
+            //}
+            Pawn casterPawn = base.CasterPawn;
             CompAbilityUserMight comp = this.CasterPawn.GetComp<CompAbilityUserMight>();
-            MightPowerSkill pwr = comp.MightData.MightPowerSkill_DragonStrike.FirstOrDefault((MightPowerSkill x) => x.label == "TM_DragonStrike_pwr");
-            int pwrVal = pwr.level;
-            MightPowerSkill str = comp.MightData.MightPowerSkill_global_strength.FirstOrDefault((MightPowerSkill x) => x.label == "TM_global_strength_pwr");
-            if (this.CasterPawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+            int pwrVal = TM_Calc.GetSkillPowerLevel(casterPawn, this.Ability.Def as TMAbilityDef, false);
+            if (comp != null)
             {
-                MightPowerSkill mpwr = comp.MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-                pwrVal = mpwr.level;
-            }
-            DamageInfo dinfo2 = new DamageInfo(TMDamageDefOf.DamageDefOf.TM_DragonStrike, Mathf.RoundToInt(Rand.Range(8f, 15f) * (1 + (.1f * pwrVal) + (.05f * str.level))), 0, (float)-1, this.CasterPawn, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
-            bool flag = t.Cell != default(IntVec3);
-            if (flag)
-            {
-                Pawn casterPawn = base.CasterPawn;
-                //this.Ability.PostAbilityAttempt();
-                if (ModCheck.Validate.GiddyUp.Core_IsInitialized())
+                MightPowerSkill str = comp.MightData.MightPowerSkill_global_strength.FirstOrDefault((MightPowerSkill x) => x.label == "TM_global_strength_pwr");
+                DamageInfo dinfo2 = new DamageInfo(TMDamageDefOf.DamageDefOf.TM_DragonStrike, Mathf.RoundToInt(Rand.Range(8f, 15f) * (1 + (.1f * pwrVal) + (.05f * str.level))), 0, (float)-1, this.CasterPawn, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
+                bool flag = t.Cell != default(IntVec3);
+                if (flag)
                 {
-                    ModCheck.GiddyUp.ForceDismount(base.CasterPawn);
-                }
+                    //this.Ability.PostAbilityAttempt();
+                    if (ModCheck.Validate.GiddyUp.Core_IsInitialized())
+                    {
+                        ModCheck.GiddyUp.ForceDismount(base.CasterPawn);
+                    }
 
-                LongEventHandler.QueueLongEvent(delegate
-                {
+                    //LongEventHandler.QueueLongEvent(delegate
+                    //{
                     FlyingObject_DragonStrike flyingObject = (FlyingObject_DragonStrike)GenSpawn.Spawn(ThingDef.Named("FlyingObject_DragonStrike"), this.CasterPawn.Position, this.CasterPawn.Map);
                     flyingObject.Launch(this.CasterPawn, t, this.CasterPawn, dinfo2);
-                }, "LaunchingFlyer", false, null);
+                    //}, "LaunchingFlyer", false, null);
+                }
             }
         }
 

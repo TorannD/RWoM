@@ -21,10 +21,10 @@ namespace TorannMagic.Golems
             Scribe_Values.Look<float>(ref this.healAmount80, "healAmount80");
         }
 
-        public override void Apply(LocalTargetInfo target, Pawn caster, TM_GolemAbilityDef ability, float effectLevel = 1f)
+        public override void Apply(LocalTargetInfo target, Pawn caster, TM_GolemAbilityDef ability, float effectLevel = 1f, float effectBonus = 1f)
         {
             base.Apply(target, caster, ability);
-            TM_Action.DoAction_HealPawn(caster, target.Thing as Pawn, 1, healAmount80 * Rand.Range(.8f, 1.2f) * LevelModifier);
+            TM_Action.DoAction_HealPawn(caster, target.Thing as Pawn, 1, healAmount80 * Rand.Range(.8f, 1.2f) * LevelModifier * effectBonus);
         }
 
         public override bool CanApplyOn(LocalTargetInfo target, Pawn caster, TM_GolemAbilityDef ability)

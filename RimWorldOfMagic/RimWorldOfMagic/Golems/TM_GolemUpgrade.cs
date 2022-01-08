@@ -14,7 +14,9 @@ namespace TorannMagic.Golems
     public class TM_GolemUpgrade : IExposable
     {
         public int currentLevel = 0;
+        public bool enabled = true;
         public TM_GolemUpgradeDef golemUpgradeDef;
+        public List<Material> animationMats = null;
 
         public TM_GolemUpgrade()
         {
@@ -26,9 +28,20 @@ namespace TorannMagic.Golems
             golemUpgradeDef = def;
         }
 
+        public void PopulateAnimationMaterial()
+        {
+            animationMats = new List<Material>();
+            animationMats.Clear();
+            for(int i = 0; i < golemUpgradeDef.animationPath.Count; i++)
+            {
+                animationMats.Add(MaterialPool.MatFrom("Golems/" + golemUpgradeDef.animationPath[i], ShaderDatabase.Transparent, Color.white));
+            }
+        }
+
         public void ExposeData()
         {
             Scribe_Values.Look<int>(ref this.currentLevel, "currentLevel", 0);
+            Scribe_Values.Look<bool>(ref this.enabled, "enabled", true);
             Scribe_Defs.Look<TM_GolemUpgradeDef>(ref this.golemUpgradeDef, "golemUpgradeDef");
         }
     }

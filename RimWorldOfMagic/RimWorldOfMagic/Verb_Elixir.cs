@@ -44,8 +44,8 @@ namespace TorannMagic
             Pawn caster = this.CasterPawn;
             CompAbilityUserMight comp = caster.TryGetComp<CompAbilityUserMight>();
 
-            int verVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_Elixir, "TM_Elixir", "_ver", true);
-            int pwrVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_Elixir, "TM_Elixir", "_pwr", true);
+            int verVal = TM_Calc.GetSkillVersatilityLevel(caster, this.Ability.Def as TMAbilityDef, false);
+            int pwrVal = TM_Calc.GetSkillPowerLevel(caster, this.Ability.Def as TMAbilityDef, false);
 
             try
             {

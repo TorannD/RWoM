@@ -29,19 +29,22 @@ namespace TorannMagic
             //this.UpdateTargets();
             FindTargets();
             CompAbilityUserMight comp = caster.GetComp<CompAbilityUserMight>();
+            pwrVal = TM_Calc.GetSkillPowerLevel(caster, this.Ability.Def as TMAbilityDef, true);
             if (this.Ability.Def == TorannMagicDefOf.TM_StayAlert || this.Ability.Def == TorannMagicDefOf.TM_StayAlert_I || this.Ability.Def == TorannMagicDefOf.TM_StayAlert_II || this.Ability.Def == TorannMagicDefOf.TM_StayAlert_III)
             {
-                pwrVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_StayAlert, "TM_StayAlert", "_pwr", true);
+                //pwrVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_StayAlert, "TM_StayAlert", "_pwr", true);
+                
                 flagSA = true;
             }
             if (this.Ability.Def == TorannMagicDefOf.TM_MoveOut || this.Ability.Def == TorannMagicDefOf.TM_MoveOut_I || this.Ability.Def == TorannMagicDefOf.TM_MoveOut_II || this.Ability.Def == TorannMagicDefOf.TM_MoveOut_III)
             {
-                pwrVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_MoveOut, "TM_MoveOut", "_pwr", true);
+                //pwrVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_MoveOut, "TM_MoveOut", "_pwr", true);
+                
                 flagMO = true;
             }
             if (this.Ability.Def == TorannMagicDefOf.TM_HoldTheLine || this.Ability.Def == TorannMagicDefOf.TM_HoldTheLine_I || this.Ability.Def == TorannMagicDefOf.TM_HoldTheLine_II || this.Ability.Def == TorannMagicDefOf.TM_HoldTheLine_III)
             {
-                pwrVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_HoldTheLine, "TM_HoldTheLine", "_pwr", true);
+                //pwrVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_HoldTheLine, "TM_HoldTheLine", "_pwr", true);
                 flagHTL = true;
             }
             Effecter OrderED = TorannMagicDefOf.TM_CommanderOrderED.Spawn();

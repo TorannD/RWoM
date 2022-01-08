@@ -79,7 +79,8 @@ namespace TorannMagic
                 {
                     if (comp != null)
                     {
-                        int ver = TM_Calc.GetMagicSkillLevel(linkedPawn, comp.MagicData.MagicPowerSkill_RaiseUndead, "TM_RaiseUndead", "_ver");
+                        //int ver = TM_Calc.GetMagicSkillLevel(linkedPawn, comp.MagicData.MagicPowerSkill_RaiseUndead, "TM_RaiseUndead", "_ver");
+                        int ver = TM_Calc.GetSkillVersatilityLevel(linkedPawn, TorannMagicDefOf.TM_RaiseUndead, false);
                         if (this.parent.Severity != ver + .5f)
                         {
                             this.parent.Severity = .5f + ver;

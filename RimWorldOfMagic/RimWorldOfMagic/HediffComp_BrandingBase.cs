@@ -129,20 +129,21 @@ namespace TorannMagic
                         if (comp.Mana.CurLevel >= .01f)
                         {
                             float brandSeverity = .125f;
-                            pwrVal = TM_Calc.GetMagicSkillLevel(branderPawn, comp.MagicData.MagicPowerSkill_Branding, "TM_Branding", "_pwr", true);                            
+                            //pwrVal = TM_Calc.GetMagicSkillLevel(branderPawn, comp.MagicData.MagicPowerSkill_Branding, "TM_Branding", "_pwr", true); 
+                            pwrVal = TM_Calc.GetSkillPowerLevel(BranderPawn, TorannMagicDefOf.TM_Branding, true);
                             brandSeverity += (.05f * pwrVal);
                             if (comp.sigilSurging)
                             {
-                                pwrVal = TM_Calc.GetMagicSkillLevel(branderPawn, comp.MagicData.MagicPowerSkill_SigilSurge, "TM_SigilSurge", "_pwr", true);
-                                verVal = TM_Calc.GetMagicSkillLevel(branderPawn, comp.MagicData.MagicPowerSkill_SigilSurge, "TM_SigilSurge", "_ver", true);
+                                pwrVal = TM_Calc.GetSkillPowerLevel(BranderPawn, TorannMagicDefOf.TM_SigilSurge, true);
+                                verVal = TM_Calc.GetSkillVersatilityLevel(BranderPawn, TorannMagicDefOf.TM_SigilSurge);
                                 brandSeverity += .4f + (.05f * pwrVal);
                                 HealthUtility.AdjustSeverity(branderPawn, TorannMagicDefOf.TM_SigilPainHD, brandSeverity * (.4f - (.04f * verVal)));                                    
                             }                                
 
                             if (comp.sigilDraining)
                             {
-                                pwrVal = TM_Calc.GetMagicSkillLevel(branderPawn, comp.MagicData.MagicPowerSkill_SigilDrain, "TM_SigilDrain", "_pwr", true);
-                                verVal = TM_Calc.GetMagicSkillLevel(branderPawn, comp.MagicData.MagicPowerSkill_SigilDrain, "TM_SigilDrain", "_ver", true);
+                                pwrVal = TM_Calc.GetSkillPowerLevel(BranderPawn, TorannMagicDefOf.TM_SigilDrain);
+                                verVal = TM_Calc.GetSkillVersatilityLevel(BranderPawn, TorannMagicDefOf.TM_SigilDrain);
                                 this.parent.Severity = .05f;
                                 HealthUtility.AdjustSeverity(branderPawn, this.Def, brandSeverity * .2f);
                                 HealthUtility.AdjustSeverity(base.Pawn, TorannMagicDefOf.TM_SigilPainHD, (.4f - (.04f * verVal)));

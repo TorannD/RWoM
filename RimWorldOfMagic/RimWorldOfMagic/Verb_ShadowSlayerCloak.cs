@@ -22,8 +22,10 @@ namespace TorannMagic
             if (flag)
             {
                 CompAbilityUserMight comp = caster.TryGetComp<CompAbilityUserMight>();
-                verVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_ShadowSlayer, "TM_ShadowSlayer", "_ver", true);
-                pwrVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_ShadowSlayer, "TM_ShadowSlayer", "_pwr", true);
+                //verVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_ShadowSlayer, "TM_ShadowSlayer", "_ver", true);
+                //pwrVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_ShadowSlayer, "TM_ShadowSlayer", "_pwr", true);
+                verVal = TM_Calc.GetSkillVersatilityLevel(caster, TorannMagicDefOf.TM_ShadowSlayer);
+                pwrVal = TM_Calc.GetSkillPowerLevel(caster, TorannMagicDefOf.TM_ShadowSlayer);
 
                 float sev = 40 + (comp.mightPwr * (3 * verVal));
                 HealthUtility.AdjustSeverity(caster, TorannMagicDefOf.TM_ShadowSlayerCloakHD, sev);

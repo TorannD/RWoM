@@ -227,7 +227,8 @@ namespace TorannMagic
                                 cleaveVictim.TakeDamage(dinfo);
                                 FleckMaker.ThrowMicroSparks(cleaveVictim.Position.ToVector3(), base.Map);
                                 CompAbilityUserMight comp = pawn.GetComp<CompAbilityUserMight>();
-                                verVal = TM_Calc.GetMightSkillLevel(pawn, comp.MightData.MightPowerSkill_Whirlwind, "TM_Whirlwind", "_ver", true);
+                                verVal = TM_Calc.GetSkillVersatilityLevel(pawn, TorannMagicDefOf.TM_Whirlwind);
+                                //verVal = TM_Calc.GetMightSkillLevel(pawn, comp.MightData.MightPowerSkill_Whirlwind, "TM_Whirlwind", "_ver", true);
                                 //MightPowerSkill ver = comp.MightData.MightPowerSkill_Whirlwind.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Whirlwind_ver");
                                 //verVal = ver.level;
                                 //if(pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
@@ -255,7 +256,8 @@ namespace TorannMagic
             
             CompAbilityUserMight comp = caster.GetComp<CompAbilityUserMight>();
             //MightPowerSkill pwr = comp.MightData.MightPowerSkill_Whirlwind.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Whirlwind_pwr");
-            pwrVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_Whirlwind, "TM_Whirlwind", "_pwr", true);
+            //pwrVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_Whirlwind, "TM_Whirlwind", "_pwr", true);
+            pwrVal = TM_Calc.GetSkillPowerLevel(caster, TorannMagicDefOf.TM_Whirlwind, true);
             float dmgNum = comp.weaponDamage;
 
             if (caster.equipment.Primary != null && caster.equipment.Primary.def.IsRangedWeapon)

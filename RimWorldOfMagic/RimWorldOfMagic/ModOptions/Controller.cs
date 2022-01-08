@@ -84,6 +84,16 @@ namespace TorannMagic.ModOptions
                 EventOptionsWindow newWindow = new EventOptionsWindow();
                 Find.WindowStack.Add(newWindow);
             }
+            Rect rowRect2ShiftRightPlus = UIHelper.GetRowRect(rowRect2, rowHeight, num);
+            rowRect2ShiftRightPlus.x += (rowRect2.width + rowRect2ShiftRight.width) + 56f;
+            rowRect2ShiftRightPlus.width /= 3;
+            factionOptions = Widgets.ButtonText(rowRect2ShiftRightPlus, "Golem Options", true, false, true);
+            if (factionOptions)
+            {
+                Rect rect = new Rect(64f, 64f, 480, 640);
+                GolemOptionsWindow newWindow = new GolemOptionsWindow();
+                Find.WindowStack.Add(newWindow);
+            }
             num++;
             Rect rowRect21 = UIHelper.GetRowRect(rowRect2, rowHeight, num);
             Settings.Instance.magicyteChance = Widgets.HorizontalSlider(rowRect21, Settings.Instance.magicyteChance, 0, .05f, false, "MagicyteChance".Translate() + " " + Settings.Instance.magicyteChance, "0%", "5%", .001f);

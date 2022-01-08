@@ -83,8 +83,8 @@ namespace TorannMagic
         public static int GetWeaponDmg(Pawn pawn)
         {
             CompAbilityUserMight comp = pawn.GetComp<CompAbilityUserMight>();
-            verVal = TM_Calc.GetMightSkillLevel(pawn, comp.MightData.MightPowerSkill_SeismicSlash, "TM_SeismicSlash", "_ver", true);
-            pwrVal = TM_Calc.GetMightSkillLevel(pawn, comp.MightData.MightPowerSkill_SeismicSlash, "TM_SeismicSlash", "_pwr", true);
+            verVal = TM_Calc.GetSkillVersatilityLevel(pawn, TorannMagicDefOf.TM_SeismicSlash, true);
+            pwrVal = TM_Calc.GetSkillPowerLevel(pawn, TorannMagicDefOf.TM_SeismicSlash);
             //MightPowerSkill pwr = comp.MightData.MightPowerSkill_SeismicSlash.FirstOrDefault((MightPowerSkill x) => x.label == "TM_SeismicSlash_pwr");
             //MightPowerSkill ver = comp.MightData.MightPowerSkill_SeismicSlash.FirstOrDefault((MightPowerSkill x) => x.label == "TM_SeismicSlash_ver");
             MightPowerSkill str = comp.MightData.MightPowerSkill_global_strength.FirstOrDefault((MightPowerSkill x) => x.label == "TM_global_strength_pwr");
@@ -109,8 +109,8 @@ namespace TorannMagic
         protected override bool TryCastShot()
         {
             CompAbilityUserMight comp = this.CasterPawn.GetComp<CompAbilityUserMight>();
-            MightPowerSkill ver = comp.MightData.MightPowerSkill_SeismicSlash.FirstOrDefault((MightPowerSkill x) => x.label == "TM_SeismicSlash_ver");
-            pwrVal = TM_Calc.GetMightSkillLevel(this.CasterPawn, comp.MightData.MightPowerSkill_SeismicSlash, "TM_SeismicSlash", "_pwr", true);
+            //MightPowerSkill ver = comp.MightData.MightPowerSkill_SeismicSlash.FirstOrDefault((MightPowerSkill x) => x.label == "TM_SeismicSlash_ver");
+            pwrVal = TM_Calc.GetSkillPowerLevel(CasterPawn, this.Ability.Def as TMAbilityDef);
             CellRect cellRect = CellRect.CenteredOn(base.CasterPawn.Position, 1);
             Map map = base.CasterPawn.Map;
             cellRect.ClipInsideMap(map);

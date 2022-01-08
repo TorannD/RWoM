@@ -48,9 +48,12 @@ namespace TorannMagic
             CompAbilityUserMagic comp = this.Pawn.GetComp<CompAbilityUserMagic>();
             if (spawned && comp != null && comp.IsMagicUser)
             {
-                bloodPwr = comp.MagicData.MagicPowerSkill_BloodGift.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_BloodGift_pwr").level;
-                bloodVer = comp.MagicData.MagicPowerSkill_BloodGift.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_BloodGift_ver").level;
-                bloodEff = comp.MagicData.MagicPowerSkill_BloodGift.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_BloodGift_eff").level;
+                //bloodPwr = comp.MagicData.MagicPowerSkill_BloodGift.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_BloodGift_pwr").level;
+                //bloodVer = comp.MagicData.MagicPowerSkill_BloodGift.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_BloodGift_ver").level;
+                //bloodEff = comp.MagicData.MagicPowerSkill_BloodGift.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_BloodGift_eff").level;
+                bloodPwr = TM_Calc.GetSkillPowerLevel(Pawn, TorannMagicDefOf.TM_BloodGift, false);
+                bloodVer = TM_Calc.GetSkillVersatilityLevel(Pawn, TorannMagicDefOf.TM_BloodGift, false);
+                bloodEff = TM_Calc.GetSkillEfficiencyLevel(Pawn, TorannMagicDefOf.TM_BloodGift, false);
                 this.arcaneDmg = comp.arcaneDmg;
             }
             else

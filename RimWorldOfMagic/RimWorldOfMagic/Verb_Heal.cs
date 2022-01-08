@@ -42,27 +42,29 @@ namespace TorannMagic
             //DamageWorker.DamageResult result = DamageWorker.DamageResult.MakeNew();
             Pawn caster = this.CasterPawn;
             CompAbilityUserMagic comp = caster.GetComp<CompAbilityUserMagic>();
-            pwrVal = caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_Heal.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Heal_pwr").level;
-            verVal = caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_Heal.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Heal_ver").level;
+            //pwrVal = caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_Heal.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Heal_pwr").level;
+            //verVal = caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_Heal.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Heal_ver").level;
+            pwrVal = TM_Calc.GetSkillPowerLevel(caster, this.Ability.Def as TMAbilityDef);
+            verVal = TM_Calc.GetSkillVersatilityLevel(caster, this.Ability.Def as TMAbilityDef);
             if(caster.story.traits.HasTrait(TorannMagicDefOf.Priest))
             {
                 pwrVal = caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_AdvancedHeal.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_AdvancedHeal_pwr").level;
                 verVal = caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_AdvancedHeal.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_AdvancedHeal_ver").level;
             }            
-            else if (caster.story.traits.HasTrait(TorannMagicDefOf.Faceless))
-            {
-                MightPowerSkill mpwr = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-                MightPowerSkill mver = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
-                pwrVal = mpwr.level;
-                verVal = mver.level;
-            }
-            else if (caster.story.traits.HasTrait(TorannMagicDefOf.TM_Wanderer) || (comp.customClass != null && comp.customClass.classMageAbilities.Contains(TorannMagicDefOf.TM_Cantrips)))
-            {
-                int tmpPwrVal = (int)((caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Cantrips_pwr").level) / 5);
-                int tmpVerVal = (int)((caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Cantrips_ver").level) / 5);
-                pwrVal = (tmpPwrVal > pwrVal) ? tmpPwrVal : pwrVal;
-                verVal = (tmpVerVal > verVal) ? tmpVerVal : verVal;
-            }
+            //else if (caster.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+            //{
+            //    MightPowerSkill mpwr = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
+            //    MightPowerSkill mver = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
+            //    pwrVal = mpwr.level;
+            //    verVal = mver.level;
+            //}
+            //else if (caster.story.traits.HasTrait(TorannMagicDefOf.TM_Wanderer) || (comp.customClass != null && comp.customClass.classMageAbilities.Contains(TorannMagicDefOf.TM_Cantrips)))
+            //{
+            //    int tmpPwrVal = (int)((caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Cantrips_pwr").level) / 5);
+            //    int tmpVerVal = (int)((caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Cantrips_ver").level) / 5);
+            //    pwrVal = (tmpPwrVal > pwrVal) ? tmpPwrVal : pwrVal;
+            //    verVal = (tmpVerVal > verVal) ? tmpVerVal : verVal;
+            //}
 
             Pawn pawn = (Pawn)this.currentTarget;
             bool flag = pawn != null && !pawn.Dead && !TM_Calc.IsUndead(pawn);

@@ -9,6 +9,7 @@ using Verse.AI;
 using UnityEngine;
 using TorannMagic.TMDefs;
 using AbilityUser;
+using Verse.Sound;
 
 namespace TorannMagic.Golems
 {
@@ -20,6 +21,8 @@ namespace TorannMagic.Golems
         private int nextEvaluationTick = 0;
         public float lastDrawRotation = 0f;
         public bool holdFire = false;
+        public float tempGoal = 21f;
+        public bool canRegulateTemp = false;
 
         private LocalTargetInfo threatTarget = null;
         private TargetingParameters targetingParameters = new TargetingParameters();
@@ -30,6 +33,47 @@ namespace TorannMagic.Golems
 
         private List<GolemWorkstationEffect> activeEffects = new List<GolemWorkstationEffect>();
 
+        CompProperties_Glower glowerProps = new CompProperties_Glower();
+        public CompGlower glower = null;
+        bool glowingInt = false;
+
+        public void InitializeGlower(ColorInt glowColor, float glowRadius)
+        {
+            this.glower = new CompGlower();          
+            glowerProps.glowColor = glowColor;
+            glowerProps.glowRadius = glowRadius;
+            glower.parent = this;
+            glower.Initialize(glowerProps);
+        }
+
+        public void ToggleGlowing()
+        {
+            if (this.Map != null && glower != null)
+            {
+                if (!glowingInt)
+                {
+                    GlowOff();
+                }
+                else
+                {
+                    GlowOn();               
+                }
+            }
+        }
+
+        public void GlowOff()
+        {
+            this.Map.mapDrawer.MapMeshDirty(this.Position, MapMeshFlag.Things);
+            this.Map.glowGrid.DeRegisterGlower(glower);
+        }
+
+        public void GlowOn()
+        {
+            this.Map.mapDrawer.MapMeshDirty(this.Position, MapMeshFlag.Things);
+            this.Map.glowGrid.RegisterGlower(glower);
+        }
+        
+
         public override void ExposeData()
         {
             base.ExposeData();
@@ -38,6 +82,8 @@ namespace TorannMagic.Golems
             Scribe_Values.Look<bool>(ref this.activating, "activating");
             Scribe_Values.Look<int>(ref this.activationAge, "activationAge", 0);
             Scribe_Deep.Look(ref innerContainer, "innerContainer", this);
+            Scribe_Values.Look<bool>(ref this.glowingInt, "glowingInt", false);
+            Scribe_Values.Look<float>(ref this.tempGoal, "tempGoal", 21f);
         }
 
         Thing IAttackTarget.Thing
@@ -301,7 +347,7 @@ namespace TorannMagic.Golems
             {
                 innerContainer.Clear();
                 TMPawnSummoned initGolem = SpawnGolem();               
-                innerContainer.TryAddOrTransfer(initGolem.SplitOff(1), false);             
+                innerContainer.TryAddOrTransfer(initGolem.SplitOff(1), false);                
             }
         }
 
@@ -338,7 +384,7 @@ namespace TorannMagic.Golems
                             if (gu.golemUpgradeDef.workstationCapacity == WorkstationCapacity.EnergyRegeneration)
                             {
                                 Energy.Upgrade_RegenerationFactor(gu.currentLevel);
-                            }
+                            }                            
                         }
                     }
                 }
@@ -397,7 +443,7 @@ namespace TorannMagic.Golems
                             {
                                 foreach (TM_GolemUpgrade gu in Upgrades)
                                 {
-                                    if (gu.currentLevel > 0 && gu.golemUpgradeDef.workstationEffects != null && gu.golemUpgradeDef.workstationEffects.Count > 0)
+                                    if (gu.currentLevel > 0 && gu.enabled && gu.golemUpgradeDef.workstationEffects != null && gu.golemUpgradeDef.workstationEffects.Count > 0)
                                     {
                                         foreach (GolemWorkstationEffect gwe in gu.golemUpgradeDef.workstationEffects)
                                         {
@@ -455,6 +501,10 @@ namespace TorannMagic.Golems
 
         public virtual TMPawnSummoned SpawnGolem()
         {
+            if (this.glower != null)
+            {
+                GlowOff();
+            }
             TMPawnSummoned spawnedThing = null;
             LifeStageDef lsDef = null;
             TM_Golem tmpGolem = null;
@@ -522,6 +572,7 @@ namespace TorannMagic.Golems
             return spawnedThing;
         }
 
+        private int drawIteration = 0;
 		public override void Draw()
 		{
 			base.Draw();
@@ -531,25 +582,84 @@ namespace TorannMagic.Golems
                 {
                     if (gu.currentLevel > 0)
                     {
-                        foreach (GolemWorkstationEffect gwe in gu.golemUpgradeDef.workstationEffects)
+                        if (gu.golemUpgradeDef.animationPath != null && gu.golemUpgradeDef.animationPath.Count > 0)
                         {
-                            if (gwe.alwaysDraw)
+                            if (gu.animationMats == null)
                             {
-                                Material mat = gu.golemUpgradeDef.drawThing.DrawMatSingle;
-                                float rotation = lastDrawRotation;
-                                if (this.threatTarget != null && this.threatTarget.Thing != null)
-                                {
-                                    rotation = TM_Calc.GetVector(this.DrawPos, this.threatTarget.Thing.DrawPos).ToAngleFlat();
-                                }
-                                Vector3 vector = this.DrawPos;
-                                vector.y = Altitudes.AltitudeFor(AltitudeLayer.BuildingOnTop);
-                                vector += gwe.drawOffset;
+                                gu.PopulateAnimationMaterial();
+                            }
+                            Vector3 vector = this.DrawPos;
+                            vector.y = this.DrawPos.y;
+                            if (this.Rotation == Rot4.North)
+                            {
+                                vector.y += gu.golemUpgradeDef.drawOffsetNorth.y;
+                                vector.x += gu.golemUpgradeDef.drawOffsetNorth.x;
+                                vector.z += gu.golemUpgradeDef.drawOffsetNorth.z;
+                            }
+                            else if (this.Rotation == Rot4.East)
+                            {
+                                vector.y += gu.golemUpgradeDef.drawOffsetEast.y;
+                                vector.x += gu.golemUpgradeDef.drawOffsetEast.x;
+                                vector.z += gu.golemUpgradeDef.drawOffsetEast.z;
+                            }
+                            else if (this.Rotation == Rot4.West)
+                            {
+                                vector.y += gu.golemUpgradeDef.drawOffsetWest.y;
+                                vector.x += gu.golemUpgradeDef.drawOffsetWest.x;
+                                vector.z += gu.golemUpgradeDef.drawOffsetWest.z;
+                            }
+                            else
+                            {
+                                vector.y += gu.golemUpgradeDef.drawOffsetSouth.y;
+                                vector.x += gu.golemUpgradeDef.drawOffsetSouth.x;
+                                vector.z += gu.golemUpgradeDef.drawOffsetSouth.z;
+                            }
 
-                                Vector3 s = new Vector3(gu.golemUpgradeDef.drawSize, this.DrawPos.y, gu.golemUpgradeDef.drawSize);
-                                Matrix4x4 matrix = default(Matrix4x4);
-                                Quaternion q = Quaternion.AngleAxis(rotation, Vector3.up);
-                                matrix.SetTRS(vector, q, s);
-                                Graphics.DrawMesh(MeshPool.plane10, matrix, mat, 0);
+                            if (Find.TickManager.TicksGame % gu.golemUpgradeDef.changeAnimationTicks == 0)
+                            {
+                                if (gu.golemUpgradeDef.randomAnimation)
+                                {
+                                    drawIteration = Rand.RangeInclusive(0, gu.animationMats.Count - 1);
+                                }
+                                else
+                                {
+                                    drawIteration++;
+                                    if (drawIteration >= gu.animationMats.Count)
+                                    {
+                                        drawIteration = 0;
+                                    }
+                                }
+                            }
+
+                            Material mat = gu.animationMats[drawIteration];
+
+                            Vector3 s = new Vector3(gu.golemUpgradeDef.drawSize, this.DrawPos.y, gu.golemUpgradeDef.drawSize);
+                            Matrix4x4 matrix = default(Matrix4x4);
+                            matrix.SetTRS(vector, Quaternion.identity, s);
+                            Graphics.DrawMesh(MeshPool.plane10, matrix, mat, 0);
+                        }
+                        else
+                        {
+                            foreach (GolemWorkstationEffect gwe in gu.golemUpgradeDef.workstationEffects)
+                            {
+                                if (gwe.alwaysDraw)
+                                {
+                                    Material mat = gu.golemUpgradeDef.drawThing.DrawMatSingle;
+                                    float rotation = lastDrawRotation;
+                                    if (this.threatTarget != null && this.threatTarget.Thing != null)
+                                    {
+                                        rotation = TM_Calc.GetVector(this.DrawPos, this.threatTarget.Thing.DrawPos).ToAngleFlat();
+                                    }
+                                    Vector3 vector = this.DrawPos;
+                                    vector.y = Altitudes.AltitudeFor(AltitudeLayer.BuildingOnTop);
+                                    vector += gwe.drawOffset;
+
+                                    Vector3 s = new Vector3(gu.golemUpgradeDef.drawSize, this.DrawPos.y, gu.golemUpgradeDef.drawSize);
+                                    Matrix4x4 matrix = default(Matrix4x4);
+                                    Quaternion q = Quaternion.AngleAxis(rotation, Vector3.up);
+                                    matrix.SetTRS(vector, q, s);
+                                    Graphics.DrawMesh(MeshPool.plane10, matrix, mat, 0);
+                                }
                             }
                         }
                     }
@@ -601,8 +711,112 @@ namespace TorannMagic.Golems
                     }
                 };
                 yield return command_Target;
+
+                if (glower != null)
+                {
+                    Command_Toggle command_Glow = new Command_Toggle();
+                    command_Glow.defaultLabel = "TM_GolemLight".Translate();
+                    command_Glow.defaultDesc = "TM_GolemLightDesc".Translate();
+                    command_Glow.icon = ContentFinder<Texture2D>.Get("UI/lightbulb");
+                    command_Glow.toggleAction = delegate
+                    {
+                        glowingInt = !glowingInt;
+                        ToggleGlowing();
+                    };
+                    command_Glow.isActive = (() => glowingInt);
+                    yield return (Gizmo)command_Glow;
+                }
+                if(canRegulateTemp)
+                {
+                    float offset = RoundedToCurrentTempModeOffset(-10f);
+                    Command_Action command_Temperature = new Command_Action();
+                    command_Temperature.action = delegate
+                    {
+                        InterfaceChangeTargetTemperature(offset);
+                    };
+                    command_Temperature.defaultLabel = offset.ToStringTemperatureOffset("F0");
+                    command_Temperature.defaultDesc = "CommandLowerTempDesc".Translate();
+                    command_Temperature.hotKey = KeyBindingDefOf.Misc5;
+                    command_Temperature.icon = ContentFinder<Texture2D>.Get("UI/Commands/TempLower");
+                    yield return (Gizmo)command_Temperature;
+                    float offset2 = RoundedToCurrentTempModeOffset(-1f);
+                    Command_Action command_Temperature2 = new Command_Action();
+                    command_Temperature2.action = delegate
+                    {
+                        InterfaceChangeTargetTemperature(offset2);
+                    };
+                    command_Temperature2.defaultLabel = offset2.ToStringTemperatureOffset("F0");
+                    command_Temperature2.defaultDesc = "CommandLowerTempDesc".Translate();
+                    command_Temperature2.hotKey = KeyBindingDefOf.Misc4;
+                    command_Temperature2.icon = ContentFinder<Texture2D>.Get("UI/Commands/TempLower");
+                    yield return (Gizmo)command_Temperature2;
+                    Command_Action command_Temperature3 = new Command_Action();
+                    command_Temperature3.action = delegate
+                    {
+                        tempGoal = 21f;
+                        SoundDefOf.Tick_Tiny.PlayOneShotOnCamera();
+                        ThrowCurrentTemperatureText();
+                    };
+                    command_Temperature3.defaultLabel = "CommandResetTemp".Translate();
+                    command_Temperature3.defaultDesc = "CommandResetTempDesc".Translate();
+                    command_Temperature3.hotKey = KeyBindingDefOf.Misc1;
+                    command_Temperature3.icon = ContentFinder<Texture2D>.Get("UI/Commands/TempReset");
+                    yield return (Gizmo)command_Temperature3;
+                    float offset3 = RoundedToCurrentTempModeOffset(1f);
+                    Command_Action command_Temperature4 = new Command_Action();
+                    command_Temperature4.action = delegate
+                    {
+                        InterfaceChangeTargetTemperature(offset3);
+                    };
+                    command_Temperature4.defaultLabel = "+" + offset3.ToStringTemperatureOffset("F0");
+                    command_Temperature4.defaultDesc = "CommandRaiseTempDesc".Translate();
+                    command_Temperature4.hotKey = KeyBindingDefOf.Misc2;
+                    command_Temperature4.icon = ContentFinder<Texture2D>.Get("UI/Commands/TempRaise");
+                    yield return (Gizmo)command_Temperature4;
+                    float offset4 = RoundedToCurrentTempModeOffset(10f);
+                    Command_Action command_Temperature5 = new Command_Action();
+                    command_Temperature5.action = delegate
+                    {
+                        InterfaceChangeTargetTemperature(offset4);
+                    };
+                    command_Temperature5.defaultLabel = "+" + offset4.ToStringTemperatureOffset("F0");
+                    command_Temperature5.defaultDesc = "CommandRaiseTempDesc".Translate();
+                    command_Temperature5.hotKey = KeyBindingDefOf.Misc3;
+                    command_Temperature5.icon = ContentFinder<Texture2D>.Get("UI/Commands/TempRaise");
+                    yield return (Gizmo)command_Temperature5;
+                }
             }            
         }
+
+        private float RoundedToCurrentTempModeOffset(float celsiusTemp)
+        {
+            return GenTemperature.ConvertTemperatureOffset((float)Mathf.RoundToInt(GenTemperature.CelsiusToOffset(celsiusTemp, Prefs.TemperatureMode)), Prefs.TemperatureMode, TemperatureDisplayMode.Celsius);
+        }
+
+        private void InterfaceChangeTargetTemperature(float offset)
+        {
+            SoundDefOf.DragSlider.PlayOneShotOnCamera();
+            tempGoal += offset;
+            tempGoal = Mathf.Clamp(tempGoal, -273.15f, 1000f);
+            ThrowCurrentTemperatureText();
+        }
+
+        private void ThrowCurrentTemperatureText()
+        {
+            MoteMaker.ThrowText(this.TrueCenter() + new Vector3(0.5f, 0f, 0.5f), this.Map, tempGoal.ToStringTemperature("F0"), Color.white);
+        }
+
+        public override string GetInspectString()
+        {
+            string baseStr = base.GetInspectString();
+            if (canRegulateTemp)
+            {
+                string tempString = "\n" + "TargetTemperature".Translate() + ": " + "\n" + tempGoal.ToStringTemperature("F0");
+                baseStr += tempString;
+            }
+            return baseStr;
+        }
+  
 
         private void DetermineThreats()
         {

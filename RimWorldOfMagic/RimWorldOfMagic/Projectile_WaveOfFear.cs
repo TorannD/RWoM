@@ -73,9 +73,9 @@ namespace TorannMagic
                 CompAbilityUserMight comp = caster.GetComp<CompAbilityUserMight>();
                 //pwrVal = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_WaveOfFear.FirstOrDefault((MightPowerSkill x) => x.label == "TM_WaveOfFear_pwr").level;
                 //verVal = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_WaveOfFear.FirstOrDefault((MightPowerSkill x) => x.label == "TM_WaveOfFear_ver").level;
-                verVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_WaveOfFear, "TM_WaveOfFear", "_ver", true);
-                pwrVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_WaveOfFear, "TM_WaveOfFear", "_pwr", true);
-                effVal = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_WaveOfFear.FirstOrDefault((MightPowerSkill x) => x.label == "TM_WaveOfFear_eff").level;
+                //verVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_WaveOfFear, "TM_WaveOfFear", "_ver", true);
+                //pwrVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_WaveOfFear, "TM_WaveOfFear", "_pwr", true);
+                //effVal = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_WaveOfFear.FirstOrDefault((MightPowerSkill x) => x.label == "TM_WaveOfFear_eff").level;
                 //if (caster.story.traits.HasTrait(TorannMagicDefOf.Faceless))
                 //{
                 //    MightPowerSkill mpwr = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
@@ -83,6 +83,9 @@ namespace TorannMagic
                 //    pwrVal = mpwr.level;
                 //    verVal = mver.level;
                 //}
+                pwrVal = TM_Calc.GetSkillPowerLevel(caster, TorannMagicDefOf.TM_WaveOfFear);
+                verVal = TM_Calc.GetSkillVersatilityLevel(caster, TorannMagicDefOf.TM_WaveOfFear);
+                effVal = TM_Calc.GetSkillEfficiencyLevel(caster, TorannMagicDefOf.TM_WaveOfFear);
                 this.arcaneDmg = comp.mightPwr;
                 ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
                 //if (!caster.IsColonist && settingsRef.AIHardMode)

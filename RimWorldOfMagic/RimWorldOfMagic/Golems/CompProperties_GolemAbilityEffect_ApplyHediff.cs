@@ -25,13 +25,13 @@ namespace TorannMagic.Golems
             Scribe_Values.Look<bool>(ref this.canStack, "canStack");
         }
 
-        public override void Apply(LocalTargetInfo target, Pawn caster, TM_GolemAbilityDef ability, float effectLevel = 1f)
+        public override void Apply(LocalTargetInfo target, Pawn caster, TM_GolemAbilityDef ability, float effectLevel = 1f, float effectBonus = 1f)
         {
             base.Apply(target, caster, ability);
             if (target.Thing != null && target.Thing is Pawn)
             {
                 Pawn p = target.Thing as Pawn;
-                HealthUtility.AdjustSeverity(p, hediff, severity * LevelModifier);
+                HealthUtility.AdjustSeverity(p, hediff, severity * LevelModifier * effectBonus);
             }
         }
 

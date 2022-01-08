@@ -17,7 +17,8 @@ namespace TorannMagic
             Pawn pawn = this.currentTarget.Thing as Pawn;
             int verVal = 0;
             CompAbilityUserMagic comp = pawn.GetComp<CompAbilityUserMagic>();
-            verVal = TM_Calc.GetMagicSkillLevel(CasterPawn, comp.MagicData.MagicPowerSkill_Hex, "TM_Hex", "_ver", true);
+            //verVal = TM_Calc.GetMagicSkillLevel(CasterPawn, comp.MagicData.MagicPowerSkill_Hex, "TM_Hex", "_ver", true);
+            verVal = TM_Calc.GetSkillVersatilityLevel(CasterPawn, TorannMagicDefOf.TM_Hex);
             if (comp != null && comp.HexedPawns.Count > 0)
             {
                 foreach(Pawn p in comp.HexedPawns)

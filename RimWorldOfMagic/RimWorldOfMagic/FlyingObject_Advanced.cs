@@ -24,6 +24,7 @@ namespace TorannMagic
 
         public ThingDef moteDef = null;
         public int moteFrequency = 0;
+        public float moteSize = 1f;
 
         public bool spinning = false;
         public float curveVariance = 0; // 0 = no curve
@@ -136,7 +137,7 @@ namespace TorannMagic
             this.Launch(launcher, base.Position.ToVector3Shifted(), targ, flyingThing, null);
         }
 
-        public void AdvancedLaunch(Thing launcher, ThingDef effectMote, int moteFrequencyTicks, float curveAmount, bool shouldSpin, Vector3 origin, LocalTargetInfo targ, Thing flyingThing, int flyingSpeed, bool isExplosion, int _impactDamage, float _impactRadius, DamageDef damageType, DamageInfo? newDamageInfo = null, int doubleVariance = 0, bool flyOverhead = false)
+        public void AdvancedLaunch(Thing launcher, ThingDef effectMote, int moteFrequencyTicks, float curveAmount, bool shouldSpin, Vector3 origin, LocalTargetInfo targ, Thing flyingThing, int flyingSpeed, bool isExplosion, int _impactDamage, float _impactRadius, DamageDef damageType, DamageInfo? newDamageInfo = null, int doubleVariance = 0, bool flyOverhead = false, float moteEffectSize = 1f)
         {
             this.fliesOverhead = flyOverhead;
             this.explosionDamage = _impactDamage;
@@ -145,6 +146,7 @@ namespace TorannMagic
             this.impactDamageType = damageType;
             this.moteFrequency = moteFrequencyTicks;
             this.moteDef = effectMote;
+            this.moteSize = moteEffectSize;
             this.curveVariance = curveAmount;
             this.spinning = shouldSpin;
             this.speed = flyingSpeed;
@@ -195,9 +197,12 @@ namespace TorannMagic
             initialVector.y = 0;
             float initialAngle = (initialVector).ToAngleFlat(); //Quaternion.AngleAxis(90, Vector3.up) *
             float curveAngle = variance;
-            if(doublesidedVariance == 0 && Rand.Chance(.5f))
-            { 
-                curveAngle = (-1) * variance;
+            if(doublesidedVariance == 0)
+            {
+                if (Rand.Chance(.5f))
+                {
+                    curveAngle = (-1) * variance;
+                }
             }
             else
             {
@@ -205,12 +210,12 @@ namespace TorannMagic
             }
 
             //calculate extra distance bolt travels around the ellipse
-            float a = .5f * Vector3.Distance(start, end);
+            float a = .47f * Vector3.Distance(start, end);
             float b = a * Mathf.Sin(.5f * Mathf.Deg2Rad * variance);
             float p = .5f * Mathf.PI * (3 * (a + b) - (Mathf.Sqrt((3 * a + b) * (a + 3 * b))));
                     
             float incrementalDistance = p / variancePoints; 
-            float incrementalAngle = (curveAngle / variancePoints) * 2f;
+            float incrementalAngle = (curveAngle / (float)variancePoints) * 2f;
             this.curvePoints.Add(this.trueOrigin);
             for(int i = 1; i <= (variancePoints + 1); i++)
             {
@@ -252,7 +257,7 @@ namespace TorannMagic
             else
             {
                 base.Position = this.ExactPosition.ToIntVec3();
-                if(Find.TickManager.TicksGame % 3 == 0)
+                if(moteDef == null && Find.TickManager.TicksGame % 3 == 0)
                 {
                     FleckMaker.ThrowDustPuff(base.Position, base.Map, Rand.Range(0.6f, .8f));
                 }               
@@ -312,17 +317,19 @@ namespace TorannMagic
                 }
                 else
                 {
-                    Graphics.DrawMesh(MeshPool.plane10, this.DrawPos, this.ExactRotation, this.flyingThing.def.DrawMatSingle, 0);
+                    Matrix4x4 matrix = new Matrix4x4();
+                    matrix.SetTRS(this.DrawPos, this.ExactRotation, new Vector3(this.Graphic.drawSize.x, 13f, this.Graphic.drawSize.y));
+                    Graphics.DrawMesh(MeshPool.plane10,matrix, this.flyingThing.def.DrawMatSingle, 0);
                 }
             }
-            else
-            {
-                Graphics.DrawMesh(MeshPool.plane10, this.DrawPos, this.ExactRotation, this.flyingThing.def.DrawMatSingle, 0);
-            }
+            //else
+            //{
+            //    Graphics.DrawMesh(MeshPool.plane10, this.DrawPos, this.ExactRotation, this.flyingThing.def.DrawMatSingle, 0);
+            //}
             base.Comps_PostDraw();
         }
 
-        private void DrawEffects(Vector3 effectVec)
+        public virtual void DrawEffects(Vector3 effectVec)
         {
             effectVec.x += Rand.Range(-0.4f, 0.4f);
             effectVec.z += Rand.Range(-0.4f, 0.4f);
@@ -368,6 +375,7 @@ namespace TorannMagic
             {
                 hitThing.TakeDamage(this.impactDamage.Value);
             }
+            ImpactOverride();
             if (this.flyingThing is Pawn)
             {
                 try
@@ -420,6 +428,11 @@ namespace TorannMagic
                 }
                 this.Destroy(DestroyMode.Vanish);
             }
+        }
+
+        public virtual void ImpactOverride()
+        {
+
         }
 
         public void damageEntities(Thing e, float d, DamageDef type)

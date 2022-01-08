@@ -39,6 +39,11 @@ namespace TorannMagic.Golems
             CurLevel += (amount * energyEfficiency);
         }
 
+        public void SubtractEnergy(float amount)
+        {
+            CurLevel -= (ActualNeedCost(amount));
+        }
+
         public float ActualNeedCost(float amount)
         {
             return amount / energyEfficiency;

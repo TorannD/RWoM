@@ -75,10 +75,10 @@ namespace TorannMagic.Golems
             {
                 return false;
             }
-            if(ability.autocasting == null)
-            {
-                return false;
-            }
+            //if(ability.autocasting == null)
+            //{
+            //    return false;
+            //}
             CompGolem cg = p.TryGetComp<CompGolem>();
             if (ability.requiredNeed != null)
             {
@@ -123,150 +123,164 @@ namespace TorannMagic.Golems
             if (CanUseAbility(golem, ability.golemAbilityDef))
             {
                 LocalTargetInfo currentTarget = golem.TargetCurrentlyAimingAt != null ? golem.TargetCurrentlyAimingAt : golem.CurJob.targetA;
-                if (ability.golemAbilityDef.autocasting.type == TMDefs.AutocastType.OnTarget && currentTarget != null)
+                if (ability.golemAbilityDef.autocasting != null)
                 {
-                    LocalTargetInfo localTarget = TM_Calc.GetAutocastTarget(golem, ability.golemAbilityDef.autocasting, currentTarget);
-                    if (localTarget != null && localTarget.IsValid)
+                    if (ability.golemAbilityDef.autocasting.type == TMDefs.AutocastType.OnTarget && currentTarget != null)
                     {
-                        Thing targetThing = localTarget.Thing;
-                        if (!ability.golemAbilityDef.autocasting.ValidType(ability.golemAbilityDef.autocasting.GetTargetType, localTarget))
+                        LocalTargetInfo localTarget = TM_Calc.GetAutocastTarget(golem, ability.golemAbilityDef.autocasting, currentTarget);
+                        if (localTarget != null && localTarget.IsValid)
                         {
-                            return;
-                        }
-                        if (ability.golemAbilityDef.autocasting.requiresLoS && !TM_Calc.HasLoSFromTo(golem.Position, targetThing, golem, ability.golemAbilityDef.autocasting.minRange, ability.golemAbilityDef.autocasting.maxRange) && targetThing != golem)
-                        {
-                            return;
-                        }
-                        if (ability.golemAbilityDef.autocasting.maxRange != 0f && ability.golemAbilityDef.autocasting.maxRange < (golem.Position - targetThing.Position).LengthHorizontal)
-                        {
-                            return;
-                        }
-                        bool TE = ability.golemAbilityDef.autocasting.targetEnemy && targetThing.Faction != null && targetThing.Faction.HostileTo(golem.Faction);
-                        if (TE && targetThing is Pawn)
-                        {
-                            Pawn targetPawn = targetThing as Pawn;
-                            if (targetPawn.Downed || targetPawn.IsPrisoner)
+                            Thing targetThing = localTarget.Thing;
+                            if (!ability.golemAbilityDef.autocasting.ValidType(ability.golemAbilityDef.autocasting.GetTargetType, localTarget))
                             {
                                 return;
                             }
-                        }
-                        bool TN = ability.golemAbilityDef.autocasting.targetNeutral && (targetThing.Faction == null || !targetThing.Faction.HostileTo(golem.Faction));
-                        if (TN && targetThing is Pawn)
-                        {
-                            Pawn targetPawn = targetThing as Pawn;
-                            if (targetPawn.Downed || targetPawn.IsPrisoner)
+                            if (ability.golemAbilityDef.autocasting.requiresLoS && !TM_Calc.HasLoSFromTo(golem.Position, targetThing, golem, ability.golemAbilityDef.autocasting.minRange, ability.golemAbilityDef.autocasting.maxRange) && targetThing != golem)
                             {
                                 return;
                             }
-                            if (ability.golemAbilityDef.isViolent && targetThing.Faction != null && !targetPawn.InMentalState)
+                            if (ability.golemAbilityDef.autocasting.maxRange != 0f && ability.golemAbilityDef.autocasting.maxRange < (golem.Position - targetThing.Position).LengthHorizontal)
                             {
                                 return;
                             }
+                            bool TE = ability.golemAbilityDef.autocasting.targetEnemy && targetThing.Faction != null && targetThing.Faction.HostileTo(golem.Faction);
+                            if (TE && targetThing is Pawn)
+                            {
+                                Pawn targetPawn = targetThing as Pawn;
+                                if (targetPawn.Downed || targetPawn.IsPrisoner)
+                                {
+                                    return;
+                                }
+                            }
+                            bool TN = ability.golemAbilityDef.autocasting.targetNeutral && (targetThing.Faction == null || !targetThing.Faction.HostileTo(golem.Faction));
+                            if (TN && targetThing is Pawn)
+                            {
+                                Pawn targetPawn = targetThing as Pawn;
+                                if (targetPawn.Downed || targetPawn.IsPrisoner)
+                                {
+                                    return;
+                                }
+                                if (ability.golemAbilityDef.isViolent && targetThing.Faction != null && !targetPawn.InMentalState)
+                                {
+                                    return;
+                                }
+                            }
+                            bool TF = ability.golemAbilityDef.autocasting.targetFriendly && targetThing.Faction == golem.Faction;
+                            if (!(TE || TN || TF))
+                            {
+                                return;
+                            }
+                            if (!ability.golemAbilityDef.autocasting.ValidConditions(golem, targetThing))
+                            {
+                                return;
+                            }
+                            comp.StartAbility(ability, targetThing);
                         }
-                        bool TF = ability.golemAbilityDef.autocasting.targetFriendly && targetThing.Faction == golem.Faction;
-                        if (!(TE || TN || TF))
+                    }
+                    if (ability.golemAbilityDef.autocasting.type == TMDefs.AutocastType.OnSelf)
+                    {
+                        LocalTargetInfo localTarget = TM_Calc.GetAutocastTarget(golem, ability.golemAbilityDef.autocasting, golem);
+                        if (localTarget != null && localTarget.IsValid)
                         {
-                            return;
+                            Pawn targetThing = localTarget.Pawn;
+                            if (!ability.golemAbilityDef.autocasting.ValidType(ability.golemAbilityDef.autocasting.GetTargetType, localTarget))
+                            {
+                                return;
+                            }
+                            if (!ability.golemAbilityDef.autocasting.ValidConditions(golem, targetThing))
+                            {
+                                return;
+                            }
+                            comp.StartAbility(ability, targetThing);
                         }
-                        if (!ability.golemAbilityDef.autocasting.ValidConditions(golem, targetThing))
+                    }
+                    if (ability.golemAbilityDef.autocasting.type == TMDefs.AutocastType.OnCell && currentTarget != null)
+                    {
+                        LocalTargetInfo localTarget = TM_Calc.GetAutocastTarget(golem, ability.golemAbilityDef.autocasting, currentTarget);
+                        if (localTarget != null && localTarget.IsValid)
                         {
-                            return;
+                            IntVec3 targetThing = localTarget.Cell;
+                            if (!ability.golemAbilityDef.autocasting.ValidType(ability.golemAbilityDef.autocasting.GetTargetType, localTarget))
+                            {
+                                return;
+                            }
+                            if (ability.golemAbilityDef.autocasting.requiresLoS && !TM_Calc.HasLoSFromTo(golem.Position, targetThing, golem, ability.golemAbilityDef.autocasting.minRange, ability.golemAbilityDef.autocasting.maxRange))
+                            {
+                                return;
+                            }
+                            if (ability.golemAbilityDef.autocasting.maxRange != 0f && ability.golemAbilityDef.autocasting.maxRange < (golem.Position - targetThing).LengthHorizontal)
+                            {
+                                return;
+                            }
+                            if (!ability.golemAbilityDef.autocasting.ValidConditions(golem, targetThing))
+                            {
+                                return;
+                            }
+                            comp.StartAbility(ability, targetThing);
                         }
-                        comp.StartAbility(ability, targetThing);
+                    }
+                    if (ability.golemAbilityDef.autocasting.type == TMDefs.AutocastType.OnNearby)
+                    {
+                        LocalTargetInfo localTarget = TM_Calc.GetAutocastTarget(golem, ability.golemAbilityDef.autocasting, currentTarget);
+                        if (localTarget != null && localTarget.IsValid)
+                        {
+                            Thing targetThing = localTarget.Thing;
+                            if (!ability.golemAbilityDef.autocasting.ValidType(ability.golemAbilityDef.autocasting.GetTargetType, localTarget))
+                            {
+                                return;
+                            }
+                            if (ability.golemAbilityDef.autocasting.requiresLoS && !TM_Calc.HasLoSFromTo(golem.Position, targetThing, golem, ability.golemAbilityDef.autocasting.minRange, ability.golemAbilityDef.autocasting.maxRange))
+                            {
+                                return;
+                            }
+                            if (ability.golemAbilityDef.autocasting.maxRange != 0f && ability.golemAbilityDef.autocasting.maxRange < (golem.Position - targetThing.Position).LengthHorizontal)
+                            {
+                                return;
+                            }
+                            bool TE = ability.golemAbilityDef.autocasting.targetEnemy && targetThing.Faction != null && targetThing.Faction.HostileTo(golem.Faction);
+                            if (TE && targetThing is Pawn)
+                            {
+                                Pawn targetPawn = targetThing as Pawn;
+                                if (targetPawn.Downed || targetPawn.IsPrisoner)
+                                {
+                                    return;
+                                }
+                            }
+                            bool TN = ability.golemAbilityDef.autocasting.targetNeutral && (targetThing.Faction == null || !targetThing.Faction.HostileTo(golem.Faction));
+                            if (TN && targetThing is Pawn)
+                            {
+                                Pawn targetPawn = targetThing as Pawn;
+                                if (targetPawn.Downed || targetPawn.IsPrisoner)
+                                {
+                                    return;
+                                }
+                                if (ability.golemAbilityDef.isViolent && targetThing.Faction != null && !targetPawn.InMentalState)
+                                {
+                                    return;
+                                }
+                            }
+                            bool TF = ability.golemAbilityDef.autocasting.targetFriendly && targetThing.Faction == golem.Faction;
+                            if (!(TE || TN || TF))
+                            {
+                                return;
+                            }
+                            if (!ability.golemAbilityDef.autocasting.ValidConditions(golem, targetThing))
+                            {
+                                return;
+                            }
+                            comp.StartAbility(ability, targetThing);
+                        }
                     }
                 }
-                if (ability.golemAbilityDef.autocasting.type == TMDefs.AutocastType.OnSelf)
+                else
                 {
-                    LocalTargetInfo localTarget = TM_Calc.GetAutocastTarget(golem, ability.golemAbilityDef.autocasting, golem);
-                    if (localTarget != null && localTarget.IsValid)
+                    foreach (CompProperties_GolemAbilityEffect effectDef in ability.golemAbilityDef.effects)
                     {
-                        Pawn targetThing = localTarget.Pawn;
-                        if (!ability.golemAbilityDef.autocasting.ValidType(ability.golemAbilityDef.autocasting.GetTargetType, localTarget))
+                        if (effectDef.CanApplyOn(currentTarget, golem, ability.golemAbilityDef))
                         {
-                            return;
+                            comp.StartAbility(ability, currentTarget);
+                            break;
                         }
-                        if (!ability.golemAbilityDef.autocasting.ValidConditions(golem, targetThing))
-                        {
-                            return;
-                        }
-                        comp.StartAbility(ability, targetThing);
-                    }
-                }
-                if (ability.golemAbilityDef.autocasting.type == TMDefs.AutocastType.OnCell && currentTarget != null)
-                {
-                    LocalTargetInfo localTarget = TM_Calc.GetAutocastTarget(golem, ability.golemAbilityDef.autocasting, currentTarget);
-                    if (localTarget != null && localTarget.IsValid)
-                    {
-                        IntVec3 targetThing = localTarget.Cell;
-                        if (!ability.golemAbilityDef.autocasting.ValidType(ability.golemAbilityDef.autocasting.GetTargetType, localTarget))
-                        {
-                            return;
-                        }
-                        if (ability.golemAbilityDef.autocasting.requiresLoS && !TM_Calc.HasLoSFromTo(golem.Position, targetThing, golem, ability.golemAbilityDef.autocasting.minRange, ability.golemAbilityDef.autocasting.maxRange))
-                        {
-                            return;
-                        }
-                        if (ability.golemAbilityDef.autocasting.maxRange != 0f && ability.golemAbilityDef.autocasting.maxRange < (golem.Position - targetThing).LengthHorizontal)
-                        {
-                            return;
-                        }
-                        if (!ability.golemAbilityDef.autocasting.ValidConditions(golem, targetThing))
-                        {
-                            return;
-                        }
-                        comp.StartAbility(ability, targetThing);
-                    }
-                }
-                if (ability.golemAbilityDef.autocasting.type == TMDefs.AutocastType.OnNearby)
-                {
-                    LocalTargetInfo localTarget = TM_Calc.GetAutocastTarget(golem, ability.golemAbilityDef.autocasting, currentTarget);
-                    if (localTarget != null && localTarget.IsValid)
-                    {
-                        Thing targetThing = localTarget.Thing;
-                        if (!ability.golemAbilityDef.autocasting.ValidType(ability.golemAbilityDef.autocasting.GetTargetType, localTarget))
-                        {
-                            return;
-                        }
-                        if (ability.golemAbilityDef.autocasting.requiresLoS && !TM_Calc.HasLoSFromTo(golem.Position, targetThing, golem, ability.golemAbilityDef.autocasting.minRange, ability.golemAbilityDef.autocasting.maxRange))
-                        {
-                            return;
-                        }
-                        if (ability.golemAbilityDef.autocasting.maxRange != 0f && ability.golemAbilityDef.autocasting.maxRange < (golem.Position - targetThing.Position).LengthHorizontal)
-                        {
-                            return;
-                        }
-                        bool TE = ability.golemAbilityDef.autocasting.targetEnemy && targetThing.Faction != null && targetThing.Faction.HostileTo(golem.Faction);
-                        if (TE && targetThing is Pawn)
-                        {
-                            Pawn targetPawn = targetThing as Pawn;
-                            if (targetPawn.Downed || targetPawn.IsPrisoner)
-                            {
-                                return;
-                            }
-                        }
-                        bool TN = ability.golemAbilityDef.autocasting.targetNeutral && (targetThing.Faction == null || !targetThing.Faction.HostileTo(golem.Faction));
-                        if (TN && targetThing is Pawn)
-                        {
-                            Pawn targetPawn = targetThing as Pawn;
-                            if (targetPawn.Downed || targetPawn.IsPrisoner)
-                            {
-                                return;
-                            }
-                            if (ability.golemAbilityDef.isViolent && targetThing.Faction != null && !targetPawn.InMentalState)
-                            {
-                                return;
-                            }
-                        }
-                        bool TF = ability.golemAbilityDef.autocasting.targetFriendly && targetThing.Faction == golem.Faction;
-                        if (!(TE || TN || TF))
-                        {
-                            return;
-                        }
-                        if (!ability.golemAbilityDef.autocasting.ValidConditions(golem, targetThing))
-                        {
-                            return;
-                        }
-                        comp.StartAbility(ability, targetThing);
                     }
                 }
             }

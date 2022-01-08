@@ -50,21 +50,23 @@ namespace TorannMagic
             Pawn pawn = this.currentTarget.Thing as Pawn;
 
             comp = caster.GetComp<CompAbilityUserMagic>();
-            MagicPowerSkill pwr = comp.MagicData.MagicPowerSkill_Stoneskin.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Stoneskin_pwr");
-            MagicPowerSkill ver = comp.MagicData.MagicPowerSkill_Stoneskin.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Stoneskin_ver");
-            pwrVal = pwr.level;
-            verVal = ver.level;
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-            if (caster.story.traits.HasTrait(TorannMagicDefOf.Faceless))
-            {
-                pwrVal = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr").level;
-                verVal = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver").level;
-            }
-            if (settingsRef.AIHardMode && !caster.IsColonist)
-            {
-                pwrVal = 3;
-                verVal = 3;
-            }
+            //MagicPowerSkill pwr = comp.MagicData.MagicPowerSkill_Stoneskin.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Stoneskin_pwr");
+            //MagicPowerSkill ver = comp.MagicData.MagicPowerSkill_Stoneskin.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Stoneskin_ver");
+            //pwrVal = pwr.level;
+            //verVal = ver.level;
+            //ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+            //if (caster.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+            //{
+            //    pwrVal = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr").level;
+            //    verVal = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver").level;
+            //}
+            //if (settingsRef.AIHardMode && !caster.IsColonist)
+            //{
+            //    pwrVal = 3;
+            //    verVal = 3;
+            //}
+            pwrVal = TM_Calc.GetSkillPowerLevel(caster, this.Ability.Def as TMAbilityDef);
+            verVal = TM_Calc.GetSkillVersatilityLevel(caster, this.Ability.Def as TMAbilityDef);
 
             if (pawn != null && pawn.health != null && pawn.health.hediffSet != null)
             {

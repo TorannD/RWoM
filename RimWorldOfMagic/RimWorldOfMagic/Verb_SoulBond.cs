@@ -49,10 +49,12 @@ namespace TorannMagic
             pawn = this.currentTarget.Thing as Pawn;
 
             CompAbilityUserMagic comp = caster.GetComp<CompAbilityUserMagic>();
-            MagicPowerSkill pwr = comp.MagicData.MagicPowerSkill_SoulBond.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_SoulBond_pwr");
-            MagicPowerSkill ver = comp.MagicData.MagicPowerSkill_SoulBond.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_SoulBond_ver");
-            verVal = ver.level;
-            pwrVal = pwr.level;
+            //MagicPowerSkill pwr = comp.MagicData.MagicPowerSkill_SoulBond.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_SoulBond_pwr");
+            //MagicPowerSkill ver = comp.MagicData.MagicPowerSkill_SoulBond.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_SoulBond_ver");
+            //verVal = ver.level;
+            //pwrVal = pwr.level;
+            verVal = TM_Calc.GetSkillVersatilityLevel(caster, this.Ability.Def as TMAbilityDef);
+            pwrVal = TM_Calc.GetSkillPowerLevel(caster, this.Ability.Def as TMAbilityDef);
 
             bool flag = pawn != null && !pawn.Dead && pawn.RaceProps.Humanlike && pawn != caster;
             if (flag)

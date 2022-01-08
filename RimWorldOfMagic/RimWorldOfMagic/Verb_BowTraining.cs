@@ -12,14 +12,14 @@ namespace TorannMagic
             Map map = base.CasterPawn.Map;
             Pawn pawn = base.CasterPawn;
             CompAbilityUserMight comp = pawn.GetComp<CompAbilityUserMight>();
-            MightPowerSkill pwr = pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_BowTraining.FirstOrDefault((MightPowerSkill x) => x.label == "TM_BowTraining_pwr");
+            int pwrVal = TM_Calc.GetSkillPowerLevel(pawn, this.Ability.Def as TMAbilityDef);
 
             if (pawn != null && !pawn.Dead)
             {
                 if (comp.IsMightUser)
                 {
                     HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_BowTrainingHD, -5f);
-                    HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_BowTrainingHD, (.5f) + pwr.level);
+                    HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_BowTrainingHD, (.5f) + pwrVal);
                     ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
                     if (!pawn.IsColonist && settingsRef.AIHardMode)
                     {

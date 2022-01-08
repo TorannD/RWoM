@@ -41,6 +41,25 @@ namespace TorannMagic.Golems
 
         private TM_Golem golem;  
 
+        public Thing ActiveThreat
+        {
+            get
+            {
+                if(threatTarget != null)
+                {
+                    if (threatTarget is Pawn)
+                    {
+                        Pawn p = threatTarget as Pawn;
+                        if(p.DestroyedOrNull() || p.Dead || p.Downed || p.Map == null)
+                        {
+                            threatTarget = null;
+                        }
+                    }
+                }
+                return threatTarget;
+            }
+        }
+
         //unsaved variables
         private bool initialized = false;
         public bool shouldDespawn = false;
@@ -170,6 +189,7 @@ namespace TorannMagic.Golems
         public LocalTargetInfo AbilityTarget => abilityTarget;
         public TM_GolemAbility ActiveAbility => activeAbility;
         public Need_GolemEnergy Energy => Pawn.needs.TryGetNeed(TorannMagicDefOf.TM_GolemEnergy) as Need_GolemEnergy;
+        public bool HasEnergyForAbilities => Energy.CurEnergyPercent > minEnergyPctForAbilities;
 
         public ThingOwner GetDirectlyHeldThings()
         {
@@ -222,6 +242,8 @@ namespace TorannMagic.Golems
                 return pawn;
             }
         }
+
+        public TMPawnGolem PawnGolem => Pawn as TMPawnGolem;
 
         public Building_TMGolemBase InnerWorkstation
         {
@@ -279,6 +301,7 @@ namespace TorannMagic.Golems
             ApplyUpgrades();
             ApplyDamages();
             DeSpawnGolemWorkstation();
+            PawnGolem.PostGolemActivate();
         }
 
         protected virtual void ClearHediffs()
@@ -315,7 +338,7 @@ namespace TorannMagic.Golems
         {
             ApplyUpgradeParts();
             ApplyUpgradeHediffs();
-            UpdateGolemStatus();
+            UpdateGolemStatus(true);
         }
 
         protected virtual void ApplyUpgradeParts()
@@ -375,13 +398,15 @@ namespace TorannMagic.Golems
             }
         }
 
-        protected virtual void UpdateGolemStatus()
+        protected virtual void UpdateGolemStatus(bool forceClear = false)
         {
-            if(abilityList == null)
+            if(abilityList == null || forceClear)
             {
                 abilityList = new List<TM_GolemAbility>();
                 abilityList.Clear();
             }
+
+            (Pawn as TMPawnGolem).ValidRangedVerbs(forceClear);
             
             foreach(TM_GolemUpgrade gu in Upgrades)
             {
@@ -410,17 +435,23 @@ namespace TorannMagic.Golems
                     {
                         if (gu.golemUpgradeDef.ability != null)
                         {
+                            TM_GolemAbility abilityToRemove = null;
                             bool abilityInList = false;
                             foreach (TM_GolemAbility ability in abilityList)
                             {
                                 if (ability.golemAbilityDef.defName == gu.golemUpgradeDef.ability.defName)
                                 {
+                                    abilityToRemove = ability;
                                     abilityInList = true;
                                 }
                             }
-                            if (!abilityInList)
+                            if (!abilityInList && gu.enabled)
                             {
-                                abilityList.Add(new TM_GolemAbility(gu.golemUpgradeDef.ability));
+                                abilityList.Add(new TM_GolemAbility(gu.golemUpgradeDef.ability, gu.currentLevel));
+                            }
+                            else if(abilityInList && !gu.enabled)
+                            {
+                                abilityList.Remove(abilityToRemove);
                             }
                         }
                     }
@@ -428,6 +459,7 @@ namespace TorannMagic.Golems
             }
             if (abilityList.Count > 1)
             {
+                //sort by priority, lowest priority listed first
                 var tmpAbilities = abilityList.OrderBy(t => t.golemAbilityDef.priority).ToList();
                 abilityList = tmpAbilities;
             }
@@ -572,6 +604,22 @@ namespace TorannMagic.Golems
                     mote.offsetZ = -0.5f;                    
                 }
             }
+            if(this.activeAbility.golemAbilityDef.tickMote != null && Find.TickManager.TicksGame % this.activeAbility.golemAbilityDef.tickMoteFrequency == 0)
+            {
+                float angle = Rand.Range(0f, 360f);
+                if(this.activeAbility.golemAbilityDef.tickMoteVelocityTowardsTarget != 0)
+                {
+                    angle = (Quaternion.AngleAxis(90, Vector3.up) * TM_Calc.GetVector(Pawn.DrawPos, abilityTarget.CenterVector3)).ToAngleFlat();
+                }
+                TM_MoteMaker.ThrowGenericMote(this.activeAbility.golemAbilityDef.tickMote, Pawn.DrawPos, Pawn.Map, this.activeAbility.golemAbilityDef.tickMoteSize,
+                    this.activeAbility.golemAbilityDef.tickMote.mote.solidTime,
+                    this.activeAbility.golemAbilityDef.tickMote.mote.fadeInTime,
+                    this.activeAbility.golemAbilityDef.tickMote.mote.fadeOutTime,
+                    Rand.Range(-50, 50),
+                    this.activeAbility.golemAbilityDef.tickMoteVelocityTowardsTarget,
+                    angle,
+                    Rand.Range(0, 360));
+            }
             if(this.abilityTick >= activeAbility.golemAbilityDef.warmupTicks)
             {
                 if(abilityBurstTick <= 0)
@@ -583,7 +631,8 @@ namespace TorannMagic.Golems
                         {
                             if (effectDef.CanApplyOn(abilityTarget, Pawn, activeAbility.golemAbilityDef))
                             {
-                                effectDef.Apply(abilityTarget, Pawn, activeAbility.golemAbilityDef);
+                                Log.Message(" " + activeAbility.golemAbilityDef.defName);
+                                effectDef.Apply(abilityTarget, Pawn, activeAbility.golemAbilityDef, activeAbility.currentLevel, DamageModifier);
                             }
                             else
                             {
@@ -660,8 +709,10 @@ namespace TorannMagic.Golems
             spawnedThing.Energy.SetEnergy(Energy.CurLevel);
             spawnedThing.tmpGolem = Pawn;
             spawnedThing.pauseFor = 300;
+            spawnedThing.ToggleGlowing();
             this.initialized = false;
             this.parent.DeSpawn(DestroyMode.Vanish);
+            PawnGolem.PostGolemDeActivate();
         }
 
         public override void PostDestroy(DestroyMode mode, Map previousMap)
@@ -672,12 +723,11 @@ namespace TorannMagic.Golems
         public override void PostPreApplyDamage(DamageInfo dinfo, out bool absorbed)
         {
             base.PostPreApplyDamage(dinfo, out absorbed);
-
         }
 
         public void TryUseAbilities()
         {
-            if (Energy.CurEnergyPercent > minEnergyPctForAbilities)
+            if (HasEnergyForAbilities && Pawn.CurJobDef != TorannMagicDefOf.JobDriver_GolemAbilityJob)
             {
                 if (abilityList != null && abilityList.Count > 0)
                 {

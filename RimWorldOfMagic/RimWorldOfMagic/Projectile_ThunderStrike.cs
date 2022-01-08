@@ -117,8 +117,10 @@ namespace TorannMagic
         {
             if (target != null && pawn != null)
             {
-                verVal = TM_Calc.GetMightSkillLevel(pawn, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_ThunderStrike, "TM_ThunderStrike", "_ver", true);
-                pwrVal = TM_Calc.GetMightSkillLevel(pawn, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_ThunderStrike, "TM_ThunderStrike", "_pwr", true);
+                verVal = TM_Calc.GetSkillVersatilityLevel(pawn, TorannMagicDefOf.TM_ThunderStrike, false);
+                pwrVal = TM_Calc.GetSkillPowerLevel(pawn, TorannMagicDefOf.TM_ThunderStrike, false);
+                //verVal = TM_Calc.GetMightSkillLevel(pawn, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_ThunderStrike, "TM_ThunderStrike", "_ver", true);
+                //pwrVal = TM_Calc.GetMightSkillLevel(pawn, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_ThunderStrike, "TM_ThunderStrike", "_pwr", true);
                 //this.verVal = pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_ThunderStrike.FirstOrDefault((MightPowerSkill x) => x.label == "TM_ThunderStrike_ver").level;
                 //this.pwrVal = pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_ThunderStrike.FirstOrDefault((MightPowerSkill x) => x.label == "TM_ThunderStrike_pwr").level;
                 //if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))

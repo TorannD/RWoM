@@ -81,7 +81,7 @@
 		<defaultDamage>10</defaultDamage>
 		<armorCategory>Dark</armorCategory>
 		<explosionSnowMeltAmount>.5</explosionSnowMeltAmount>
-		<explosionCellFleck>BlastExtinguisher</explosionCellFleck>
+		<explosionCellMote>Mote_ShadowCloud</explosionCellMote>
 		<explosionColorCenter>(.2, 0, .2)</explosionColorCenter>
 		<explosionColorEdge>(.3, 0.0, 0.6)</explosionColorEdge>
 		<soundExplosion>TM_SoftExplosion</soundExplosion>
@@ -1136,5 +1136,22 @@
 	<hasForcefulImpact>false</hasForcefulImpact>
 	<defaultArmorPenetration>999</defaultArmorPenetration>
   </DamageDef>
+  
+  <DamageDef ParentName="TM_LocalInjuryBase">
+		<defName>TM_DecayDD</defName>
+		<label>Decay</label>
+		<externalViolence>true</externalViolence>
+		<deathMessage>{0}'s body decayed.</deathMessage>
+		<hediff>TM_DecayDamage</hediff>
+		<harmAllLayersUntilOutside>false</harmAllLayersUntilOutside>
+		<defaultDamage>10</defaultDamage>
+		<armorCategory>Dark</armorCategory>
+		<explosionSnowMeltAmount>0</explosionSnowMeltAmount>
+		<explosionCellMote>Mote_Disease</explosionCellMote>
+		<explosionColorCenter>(0.27, 0.17, 0.28)</explosionColorCenter>
+		<explosionColorEdge>(0.44, 0.55, 0.16)</explosionColorEdge>
+		<hasForcefulImpact>false</hasForcefulImpact>
+		<soundExplosion>TM_SoftExplosion</soundExplosion>
+	</DamageDef>
   
 </Defs>

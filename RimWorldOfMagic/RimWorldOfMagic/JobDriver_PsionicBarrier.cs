@@ -29,7 +29,8 @@ namespace TorannMagic
         {
             CompAbilityUserMight comp = this.pawn.GetComp<CompAbilityUserMight>();
             float radius = 2.5f;
-            radius += (.75f * TM_Calc.GetMightSkillLevel(pawn, comp.MightData.MightPowerSkill_PsionicBarrier, "TM_PsionicBarrier", "_ver", true));
+            //radius += (.75f * TM_Calc.GetMightSkillLevel(pawn, comp.MightData.MightPowerSkill_PsionicBarrier, "TM_PsionicBarrier", "_ver", true));
+            radius += (.75f * TM_Calc.GetSkillVersatilityLevel(pawn, TorannMagicDefOf.TM_PsionicBarrier));
             //if (this.pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Psionic))
             //{
             //    radius = 2 + (.5f * comp.MightData.MightPowerSkill_PsionicBarrier.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PsionicBarrier_ver").level);

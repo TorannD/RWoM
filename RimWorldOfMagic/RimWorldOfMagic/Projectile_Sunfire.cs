@@ -73,8 +73,10 @@ namespace TorannMagic
             CompAbilityUserMagic comp = caster.GetComp<CompAbilityUserMagic>();
             if (comp != null && comp.MagicData != null)
             {
-                pwrVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_Sunfire, "TM_Sunfire", "_pwr", true);
-                verVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_Sunfire, "TM_Sunfire", "_ver", true);
+                //pwrVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_Sunfire, "TM_Sunfire", "_pwr", true);
+                //verVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_Sunfire, "TM_Sunfire", "_ver", true);
+                pwrVal = TM_Calc.GetSkillPowerLevel(caster, TorannMagicDefOf.TM_Sunfire);
+                verVal = TM_Calc.GetSkillVersatilityLevel(caster, TorannMagicDefOf.TM_Sunfire);
             }
             this.arcaneDmg = comp.arcaneDmg;
             if (caster.health.hediffSet.HasHediff(TorannMagicDefOf.TM_LightCapacitanceHD))

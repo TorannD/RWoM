@@ -54,7 +54,8 @@ namespace TorannMagic
                 CompAbilityUserMagic comp = base.CasterPawn.GetComp<CompAbilityUserMagic>();
                 if (comp != null)
                 {
-                    shotCount -= TM_Calc.GetMagicSkillLevel(base.CasterPawn, comp.MagicData.MagicPowerSkill_LightLance, "TM_LightLance", "_pwr", true);
+                    //shotCount -= TM_Calc.GetMagicSkillLevel(base.CasterPawn, comp.MagicData.MagicPowerSkill_LightLance, "TM_LightLance", "_pwr", true);
+                    shotCount = TM_Calc.GetSkillPowerLevel(base.CasterPawn, this.Ability.Def as TMAbilityDef, true);
                 }
                 if (base.CasterPawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_LightCapacitanceHD))
                 {

@@ -37,19 +37,22 @@ namespace TorannMagic
             if (spawned)
             {
                 CompAbilityUserMagic comp = this.Pawn.GetComp<CompAbilityUserMagic>();
-                MagicPowerSkill pwr = comp.MagicData.MagicPowerSkill_BattleHymn.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_BattleHymn_pwr");
-                MagicPowerSkill ver = comp.MagicData.MagicPowerSkill_BattleHymn.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_BattleHymn_ver");
-                MagicPowerSkill eff = comp.MagicData.MagicPowerSkill_BattleHymn.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_BattleHymn_eff");
-                this.verVal = ver.level;
-                this.pwrVal = pwr.level;
-                this.effVal = eff.level;
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                if (settingsRef.AIHardMode && !this.Pawn.IsColonist)
-                {
-                    pwrVal = 1;
-                    verVal = 1;
-                    effVal = 1;
-                }
+                pwrVal = TM_Calc.GetSkillPowerLevel(Pawn, TorannMagicDefOf.TM_BattleHymn);
+                verVal = TM_Calc.GetSkillVersatilityLevel(Pawn, TorannMagicDefOf.TM_BattleHymn);
+                effVal = TM_Calc.GetSkillEfficiencyLevel(Pawn, TorannMagicDefOf.TM_BattleHymn);
+                //MagicPowerSkill pwr = comp.MagicData.MagicPowerSkill_BattleHymn.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_BattleHymn_pwr");
+                //MagicPowerSkill ver = comp.MagicData.MagicPowerSkill_BattleHymn.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_BattleHymn_ver");
+                //MagicPowerSkill eff = comp.MagicData.MagicPowerSkill_BattleHymn.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_BattleHymn_eff");
+                //this.verVal = ver.level;
+                //this.pwrVal = pwr.level;
+                //this.effVal = eff.level;
+                //ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+                //if (settingsRef.AIHardMode && !this.Pawn.IsColonist)
+                //{
+                //    pwrVal = 1;
+                //    verVal = 1;
+                //    effVal = 1;
+                //}
                 this.chantRange = this.chantRange + (this.verVal * 3f);
                 this.chantFrequency = 300 - (30 * verVal);
             }

@@ -1195,6 +1195,7 @@ namespace TorannMagic
         public static ThingDef Mote_ExpandingFlame;
         public static ThingDef Mote_Hex;
         public static ThingDef Mote_BlackSmoke;
+        public static ThingDef Mote_BlackSmokeLow;
         public static ThingDef Mote_SpiritWolf_South;
         public static ThingDef Mote_SpiritWolf_North;
         public static ThingDef Mote_SpiritWolf_East;
@@ -1212,6 +1213,7 @@ namespace TorannMagic
         public static ThingDef Mote_EnergyStream;
         public static ThingDef Mote_RedSwirl;
         public static ThingDef Mote_PurpleSmoke;
+        public static ThingDef Mote_Psi_Black;
         
         public static ThingDef Projectile_FogOfTorment;        
 
@@ -1246,6 +1248,9 @@ namespace TorannMagic
         public static EffecterDef TM_RageWaveED;
         public static EffecterDef TM_ExplosionED;
         public static EffecterDef TM_MKWaveED;
+        public static EffecterDef TM_FadeEffecterED;
+        public static EffecterDef TM_FadeEffecter2ED;
+        public static EffecterDef TM_AttractionEffecterSmall;
 
         //psychast copies, used with tm_motemaker.makeoverlay
         //adjusts def values on each cast
@@ -1291,6 +1296,7 @@ namespace TorannMagic
         public static JobDef JobDriver_FleshHarvest;
         public static JobDef JobDriver_FleshChop;
         public static JobDef JobDriver_GolemSelfTend;
+        public static JobDef JobDriver_GolemAbilityJob;
 
         //Things
         public static ThingDef RawMagicyte;
@@ -1458,6 +1464,17 @@ namespace TorannMagic
         public static HediffDef TM_FleshGolem_BracerGuardHD;
         public static NeedDef TM_GolemEnergy;
         public static NeedDef TM_GolemRage;
+        public static ThingDef TM_HollowGolem;
+        public static PawnKindDef TM_HollowGolemK;
+        public static LifeStageDef TM_HollowGolemLS;        
+        public static HediffDef TM_DecayHD;
+        public static JobDef JobDriver_GolemAttackStatic;
+        public static ThingDef Mote_Golem_LSFA_South;
+        public static ThingDef Mote_Golem_LSFA_East;
+        public static ThingDef Mote_Golem_LSFA_West;
+        public static HediffDef TM_DeathFieldHD;
+        public static ThingDef TM_HollowGolem_Workstation;
+        public static TMDefs.TM_GolemUpgradeDef TM_Golem_HollowOrbOfExtinguishedFlames;
         //public static TMDefs.TM_GolemAbility TM_Golem_GatlingCannon;
 
     }

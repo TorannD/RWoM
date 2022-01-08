@@ -39,4 +39,19 @@
     <casualInterruptible>false</casualInterruptible>
   </JobDef>
   
+  <JobDef>
+    <defName>JobDriver_GolemAbilityJob</defName>
+    <driverClass>TorannMagic.Golems.JobDriver_GolemAbilityJob</driverClass>
+    <reportString>using ability</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  
+  <JobDef>
+    <defName>JobDriver_GolemAttackStatic</defName>
+    <driverClass>TorannMagic.Golems.JobDriver_GolemAttackStatic</driverClass>
+    <reportString>targeting TargetA.</reportString>
+	<casualInterruptible>false</casualInterruptible>
+    <collideWithPawns>true</collideWithPawns>
+  </JobDef>
+  
 </Defs>

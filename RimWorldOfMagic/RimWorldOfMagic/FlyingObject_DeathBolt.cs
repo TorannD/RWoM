@@ -172,16 +172,18 @@ namespace TorannMagic
                     }
                 }
                 this.arcaneDmg = comp.arcaneDmg;
-                MagicPowerSkill pwr = pawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_DeathBolt.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_DeathBolt_pwr");
-                MagicPowerSkill ver = pawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_DeathBolt.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_DeathBolt_ver");
-                verVal = ver.level;
-                pwrVal = pwr.level;
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                if (settingsRef.AIHardMode && !pawn.IsColonist)
-                {
-                    pwrVal = 1;
-                    verVal = 1;
-                }                
+                pwrVal = TM_Calc.GetSkillPowerLevel(pawn, TorannMagicDefOf.TM_DeathBolt, true);
+                verVal = TM_Calc.GetSkillVersatilityLevel(pawn, TorannMagicDefOf.TM_DeathBolt, true);
+                //MagicPowerSkill pwr = pawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_DeathBolt.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_DeathBolt_pwr");
+                //MagicPowerSkill ver = pawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_DeathBolt.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_DeathBolt_ver");
+                //verVal = ver.level;
+                //pwrVal = pwr.level;
+                //ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+                //if (settingsRef.AIHardMode && !pawn.IsColonist)
+                //{
+                //    pwrVal = 1;
+                //    verVal = 1;
+                //}                
             }      
             else if (this.pawn.def == TorannMagicDefOf.TM_SkeletonLichR)
             {

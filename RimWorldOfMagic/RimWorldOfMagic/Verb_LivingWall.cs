@@ -46,8 +46,10 @@ namespace TorannMagic
             Pawn caster = this.CasterPawn;
             //Pawn pawn = this.currentTarget.Thing as Pawn;
             CompAbilityUserMagic comp = caster.TryGetComp<CompAbilityUserMagic>();
-            verVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_LivingWall, "TM_LivingWall", "_ver", true);
-            pwrVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_LivingWall, "TM_LivingWall", "_pwr", true);
+            verVal = TM_Calc.GetSkillVersatilityLevel(caster, this.Ability.Def as TMAbilityDef);
+            pwrVal = TM_Calc.GetSkillPowerLevel(caster, this.Ability.Def as TMAbilityDef);
+            //verVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_LivingWall, "TM_LivingWall", "_ver", true);
+            //pwrVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_LivingWall, "TM_LivingWall", "_pwr", true);
             if(comp != null)
             {
                 List<Thing> tList = this.currentTarget.Cell.GetThingList(caster.Map);

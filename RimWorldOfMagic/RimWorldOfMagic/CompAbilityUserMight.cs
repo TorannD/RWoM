@@ -218,7 +218,7 @@ namespace TorannMagic
                 if (shouldDrawPsionicShield)
                 {
                     float radius = 2.5f;
-                    radius = 2.5f + (.75f * TM_Calc.GetMightSkillLevel(this.Pawn, this.MightData.MightPowerSkill_PsionicBarrier, "TM_PsionicBarrier", "_ver", true));
+                    radius = 2.5f + (.75f * TM_Calc.GetSkillVersatilityLevel(Pawn, TorannMagicDefOf.TM_PsionicBarrier, false));//TM_Calc.GetMightSkillLevel(this.Pawn, this.MightData.MightPowerSkill_PsionicBarrier, "TM_PsionicBarrier", "_ver", true));
                     float drawRadius = radius * .23f;
                     float num = Mathf.Lerp(drawRadius, 9.5f, drawRadius);
                     Vector3 vector = this.Pawn.CurJob.targetA.CenterVector3;

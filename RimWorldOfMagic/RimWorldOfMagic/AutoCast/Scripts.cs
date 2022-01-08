@@ -8,6 +8,8 @@ using Verse;
 using Verse.AI;
 using RimWorld;
 using AbilityUser;
+using TorannMagic.TMDefs;
+using TorannMagic.Golems;
 
 namespace TorannMagic.AutoCast
 {
@@ -1476,6 +1478,125 @@ namespace TorannMagic.AutoCast
                 if (!caster.Spawned)
                 {
                     GenSpawn.Spawn(p, casterCell, map);
+                }
+            }
+        }
+    }
+
+    public static class GolemBlink
+    {
+        public static void Evaluate(TMPawnGolem caster, TM_GolemAbilityDef ability, float minDistance, float maxDistance, out bool success)
+        {
+            success = false;
+            LocalTargetInfo jobTarget = caster.pather.Destination;
+            Thing carriedThing = null;
+            
+            if (!jobTarget.Cell.Walkable(caster.Map))
+            {
+                jobTarget = TM_Calc.FindWalkableCellNextTo(jobTarget.Cell, caster.Map);
+            }
+            float distanceToTarget = (jobTarget.Cell - caster.Position).LengthHorizontal;
+            Vector3 directionToTarget = TM_Calc.GetVector(caster.Position, jobTarget.Cell);
+            //Log.Message("" + caster.LabelShort + " job def is " + caster.CurJob.def.defName + " targetA " + caster.CurJob.targetA + " targetB " + caster.CurJob.targetB + " jobTarget " + jobTarget + " at distance " + distanceToTarget + " min distance " + minDistance + " at vector " + directionToTarget);
+            if (caster.carryTracker != null && caster.carryTracker.CarriedThing != null)
+            {
+                carriedThing = caster.carryTracker.CarriedThing;
+                //Log.Message("carrying: " + caster.carryTracker.CarriedThing.def.defName + " count " + caster.carryTracker.CarriedThing.stackCount);
+            }
+            if (distanceToTarget <= 400 && distanceToTarget > minDistance && caster.CurJob.locomotionUrgency >= LocomotionUrgency.Jog)
+            {
+                if (distanceToTarget <= maxDistance && jobTarget.Cell != default(IntVec3))
+                {
+                    //Log.Message("doing blink to thing");
+                    IntVec3 walkableCell = TM_Action.FindNearestWalkableCell(caster, jobTarget.Cell);
+                    if (TM_Calc.PawnCanOccupyCell(caster, walkableCell))
+                    {
+                        DoBlink(caster, ability, walkableCell, carriedThing);
+                        success = true;
+                    }
+                }
+                else
+                {
+                    IntVec3 blinkToCell = caster.Position + (directionToTarget * maxDistance).ToIntVec3();
+                    //Log.Message("doing partial blink to cell " + blinkToCell);
+                    bool canReach = false;
+                    bool isCloser = false;
+                    if (blinkToCell.Walkable(caster.Map))
+                    {
+                        try
+                        {
+                            canReach = caster.Map.reachability.CanReach(blinkToCell, jobTarget.Cell, PathEndMode.ClosestTouch, TraverseParms.For(TraverseMode.PassDoors));
+                        }
+                        catch
+                        {
+                            Log.Warning("failed path check");
+                        }
+
+                        if (canReach && blinkToCell.IsValid && blinkToCell.InBounds(caster.Map) && blinkToCell.Walkable(caster.Map) && !blinkToCell.Fogged(caster.Map))
+                        {
+                            PawnPath ppc = caster.Map.pathFinder.FindPath(caster.Position, jobTarget.Cell, TraverseParms.For(TraverseMode.PassDoors, Danger.Deadly), PathEndMode.ClosestTouch);
+                            float currentCost = ppc.TotalCost;
+                            float futureCost = currentCost;
+                            ppc.ReleaseToPool();
+
+                            PawnPath ppf = caster.Map.pathFinder.FindPath(blinkToCell, jobTarget.Cell, TraverseParms.For(TraverseMode.PassDoors, Danger.Deadly), PathEndMode.ClosestTouch);
+                            futureCost = ppf.TotalCost;
+                            ppf.ReleaseToPool();
+                            isCloser = currentCost > futureCost;
+
+                            if (isCloser)
+                            {
+                                DoBlink(caster, ability, blinkToCell, carriedThing);
+                                success = true;
+                            }
+                        }
+                    }
+                }                
+            }
+        }
+
+        private static void DoBlink(TMPawnGolem caster, TM_GolemAbilityDef ability, IntVec3 targetCell, Thing carriedThing)
+        {
+            Map map = caster.Map;
+            IntVec3 casterCell = caster.Position;
+            bool selectCaster = false;
+            if (Find.Selector.FirstSelectedObject == caster)
+            {
+                selectCaster = true;
+            }
+            try
+            {
+                for (int i = 0; i < 3; i++)
+                {
+                    TM_MoteMaker.ThrowGenericFleck(FleckDefOf.Smoke, caster.DrawPos, caster.Map, Rand.Range(.6f, 1f), .4f, .1f, Rand.Range(.8f, 1.2f), 0, Rand.Range(2, 3), Rand.Range(-30, 30), 0);
+                    TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Casting, caster.DrawPos, caster.Map, Rand.Range(1.4f, 2f), .2f, .05f, Rand.Range(.4f, .6f), Rand.Range(-200, 200), 0, 0, 0);
+                }
+
+                LocalTargetInfo pathEndTarget = caster.pather.Destination;
+                PathEndMode pem = Traverse.Create(root: caster.pather).Field(name: "peMode").GetValue<PathEndMode>();
+
+                caster.Position = targetCell;            
+                caster.pather.StopDead();
+                caster.pather.nextCell = targetCell;
+                caster.pather.nextCellCostLeft = 0f;
+                caster.pather.nextCellCostTotal = 1f;
+                caster.pather.StartPath(pathEndTarget, pem);
+
+                if (selectCaster)
+                {
+                    Find.Selector.Select(caster, false, true);
+                }
+                for (int i = 0; i < 3; i++)
+                {
+                    TM_MoteMaker.ThrowGenericFleck(FleckDefOf.Smoke, targetCell.ToVector3Shifted(), caster.Map, Rand.Range(.6f, 1f), .4f, .1f, Rand.Range(.8f, 1.2f), 0, Rand.Range(2, 3), Rand.Range(-30, 30), 0);
+                    TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Casting, targetCell.ToVector3Shifted(), caster.Map, Rand.Range(1.4f, 2f), .2f, .05f, Rand.Range(.4f, .6f), Rand.Range(-200, 200), 0, 0, 0);
+                }
+            }
+            catch
+            {
+                if (!caster.Spawned)
+                {
+                    GenSpawn.Spawn(caster, casterCell, map);
                 }
             }
         }

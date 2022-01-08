@@ -46,11 +46,11 @@ namespace TorannMagic
                     ModCheck.GiddyUp.ForceDismount(base.CasterPawn);
                 }
 
-                LongEventHandler.QueueLongEvent(delegate
-                {
+                //LongEventHandler.QueueLongEvent(delegate
+                //{
                     FlyingObject_Whirlwind flyingObject = (FlyingObject_Whirlwind)GenSpawn.Spawn(ThingDef.Named("FlyingObject_Whirlwind"), this.CasterPawn.Position, this.CasterPawn.Map);
                     flyingObject.Launch(this.CasterPawn, t.Cell, this.CasterPawn);
-                }, "LaunchingFlyer", false, null);                
+                //}, "LaunchingFlyer", false, null);                
             }
         }
 

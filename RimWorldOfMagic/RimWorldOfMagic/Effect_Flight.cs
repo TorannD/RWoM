@@ -43,11 +43,11 @@ namespace TorannMagic
                     ModCheck.GiddyUp.ForceDismount(base.CasterPawn);
                 }
                 base.CasterPawn.rotationTracker.Face(t.CenterVector3);
-                LongEventHandler.QueueLongEvent(delegate
-                {
+                //LongEventHandler.QueueLongEvent(delegate
+                //{
                     FlyingObject_Flight flyingObject = (FlyingObject_Flight)GenSpawn.Spawn(ThingDef.Named("FlyingObject_Flight"), this.CasterPawn.Position, this.CasterPawn.Map);
                     flyingObject.Launch(this.CasterPawn, t.Cell, base.CasterPawn);
-                }, "LaunchingFlyer", false, null);
+                //}, "LaunchingFlyer", false, null);
             }
         }
 

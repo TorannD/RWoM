@@ -51,10 +51,10 @@ namespace TorannMagic.Golems
             }
         }
 
-        public override void Apply(LocalTargetInfo target, Pawn caster, TM_GolemAbilityDef ability, float effectLevel = 1f)
+        public override void Apply(LocalTargetInfo target, Pawn caster, TM_GolemAbilityDef ability, float effectLevel = 1f, float effectBonus = 1f)
         {
             base.Apply(target, caster, ability);
-            AbsorbNearbyFilth(caster, ability.autocasting.maxRange * LevelModifier, energyPerFilth * LevelModifier);
+            AbsorbNearbyFilth(caster, ability.autocasting.maxRange * LevelModifier, energyPerFilth * LevelModifier * effectBonus);
         }
 
         public override bool CanApplyOn(LocalTargetInfo target, Pawn caster, TM_GolemAbilityDef ability)

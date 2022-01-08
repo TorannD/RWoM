@@ -241,4 +241,90 @@ While dormant, the golem may be modified or upgraded. The flesh golem recharges 
 	<stuffCategories Inherit="false" />
   </ThingDef>  
   
+  
+  <ThingDef ParentName="TM_GolemBuildingBase">
+    <defName>TM_HollowGolem_Workstation</defName>
+    <label>dormant hollow golem</label>
+    <description>A dormant hollow golem. Hollow golems are a combination of condensed mana tethered and protected by various pieces of armor. In it's dormant form, the hollow golem appears as an empty suite of armor. This golem draws on ambient mana to fuel itself which can cause an overall reduction, even negative, mana regeneration rates for mages. This reduction is combined with existing mages and paracyte thorn bushes. In addition to basic tasks such as hauling and cleaning, the hollow golem can be outfitted to provide light, increase research, and act as a mortar system. Being a creature of animated mana, they are able to harness multiple forms of magical energy, without suffering from human frailties.
+	
+While dormant, the golem may be modified or upgraded. The hollow golem recharges energy slowly on its own but may be toggled to receive mana from nearby mages.</description>
+    <castEdgeShadows>true</castEdgeShadows>
+    <graphicData>
+      <texPath>Golems/Hollow/HollowGolem_Workstation</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+	  <shaderType>CutoutComplex</shaderType>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <fillPercent>0.5</fillPercent>
+    <rotatable>true</rotatable>
+    <statBases>
+      <MaxHitPoints>1500</MaxHitPoints>  <!--edit build costs-->
+      <Mass>400</Mass>
+      <Beauty>50</Beauty>
+      <WorkToMake>50000</WorkToMake>
+    </statBases>
+	<recipeMaker>
+      <unfinishedThingDef>TM_UnfinishedHollowGolem</unfinishedThingDef>
+      <recipeUsers>
+        <li>TableArcaneForge</li>
+	  </recipeUsers>    
+	  <researchPrerequisite>TM_HollowGolemRD</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>6</Crafting>
+      </skillRequirements>	  
+    </recipeMaker>
+	<costList>
+	  <Steel>250</Steel>
+	  <Plasteel>150</Plasteel>
+	  <Silver>100</Silver>
+	  <RawMagicyte>400</RawMagicyte>
+    </costList>
+	<comps>
+      <li Class="TorannMagic.Golems.CompProperties_GolemEnergyHandler">
+        <storedEnergyMax>2500</storedEnergyMax>
+		<storedEnergyMaxUpgradeIncrease>500</storedEnergyMaxUpgradeIncrease>
+		<storedEnergyMaxUpgrades>5</storedEnergyMaxUpgrades>
+        <conversionEfficiency>0.5</conversionEfficiency>
+		<conversionEfficiencyUpgradeIncrease>.1</conversionEfficiencyUpgradeIncrease>
+		<conversionEfficiencyMaxUpgrades>5</conversionEfficiencyMaxUpgrades>
+		<selfChargePerHour>30</selfChargePerHour>
+		<selfChargeUpgradeFactor>.2</selfChargeUpgradeFactor>
+        <shortCircuitInRain>false</shortCircuitInRain>
+        <transmitsPower>false</transmitsPower>
+		<energyColor>(.4, 0, .4)</energyColor>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="TM_UnfinishedGolemBase">
+    <defName>TM_UnfinishedHollowGolem</defName>
+    <label>unfinished hollow golem</label>
+    <description>An unfinished hollow golem.</description>
+	<statBases>
+      <Flammability>0.2</Flammability>
+    </statBases>
+    <graphicData>
+      <texPath>Golems/Hollow/UnfinishedHollowGolem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>	
+	  <drawSize>(1,1)</drawSize>	  
+    </graphicData>
+	<stuffCategories Inherit="false" />
+  </ThingDef>
+  
+  <ThingDef ParentName="TM_UnfinishedGolemBase">
+    <defName>TM_UnfinishedHollowGolemUpgrade</defName>
+    <label>unfinished hollow golem upgrade</label>
+    <description>An unfinished hollow golem upgrade.</description>
+	<statBases>
+      <Flammability>0.2</Flammability>
+    </statBases>
+    <graphicData>
+      <texPath>Golems/Hollow/UnfinishedHollowUpgrade</texPath>
+      <graphicClass>Graphic_Single</graphicClass>	
+	  <drawSize>(.6,.6)</drawSize>	  
+    </graphicData>
+	<stuffCategories Inherit="false" />
+  </ThingDef>
+  
 </Defs>

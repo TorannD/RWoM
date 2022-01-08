@@ -66,8 +66,8 @@ namespace TorannMagic
             bool arg_40_0;
 
             CompAbilityUserMight comp = this.CasterPawn.GetComp<CompAbilityUserMight>();
-            verVal = TM_Calc.GetMightSkillLevel(this.CasterPawn, comp.MightData.MightPowerSkill_PhaseStrike, "TM_PhaseStrike", "_ver", true);
-            pwrVal = TM_Calc.GetMightSkillLevel(this.CasterPawn, comp.MightData.MightPowerSkill_PhaseStrike, "TM_PhaseStrike", "_pwr", true);
+            verVal = TM_Calc.GetSkillVersatilityLevel(CasterPawn, this.Ability.Def as TMAbilityDef);
+            pwrVal = TM_Calc.GetSkillPowerLevel(CasterPawn, this.Ability.Def as TMAbilityDef);
             //pwr = comp.MightData.MightPowerSkill_PhaseStrike.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PhaseStrike_pwr");
             //ver = comp.MightData.MightPowerSkill_PhaseStrike.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PhaseStrike_ver");
             //verVal = ver.level;

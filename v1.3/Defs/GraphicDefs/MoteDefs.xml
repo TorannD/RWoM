@@ -2,6 +2,43 @@
 <Defs>
 
   <ThingDef ParentName="MoteBase">
+    <defName>Mote_Golem_LSFA_South</defName>
+    <graphicData>
+      <texPath>Golems/Hollow/Hollow_LSFire_cem</texPath>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.01</fadeInTime>
+      <solidTime>.05</solidTime>
+      <fadeOutTime>.15</fadeOutTime>
+    </mote>
+  </ThingDef>
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_Golem_LSFA_East</defName>
+    <graphicData>
+      <texPath>Golems/Hollow/Hollow_LSFire_rem</texPath>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.01</fadeInTime>
+      <solidTime>.05</solidTime>
+      <fadeOutTime>.15</fadeOutTime>
+    </mote>
+  </ThingDef>
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_Golem_LSFA_West</defName>
+    <graphicData>
+      <texPath>Golems/Hollow/Hollow_LSFire_lem</texPath>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.01</fadeInTime>
+      <solidTime>.05</solidTime>
+      <fadeOutTime>.15</fadeOutTime>
+    </mote>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
     <defName>Mote_EvilEye</defName>
     <graphicData>
       <texPath>Motes/EvilEyeMote</texPath>
@@ -229,6 +266,19 @@
       <texPath>Motes/BlackSmoke</texPath>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.05</fadeInTime>
+      <solidTime>0.2</solidTime>
+      <fadeOutTime>0.5</fadeOutTime>
+    </mote>
+  </ThingDef>
+  
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_BlackSmokeLow</defName>
+    <graphicData>
+      <texPath>Motes/BlackSmoke</texPath>
+    </graphicData>
+    <altitudeLayer>MoteLow</altitudeLayer>
     <mote>
       <fadeInTime>0.05</fadeInTime>
       <solidTime>0.2</solidTime>
@@ -773,6 +823,19 @@
     <defName>Mote_Psi</defName>
     <graphicData>
       <texPath>Motes/PsiMote</texPath>
+    </graphicData>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <mote>
+      <fadeInTime>0.02</fadeInTime>
+      <solidTime>0.12</solidTime>
+      <fadeOutTime>0.10</fadeOutTime>
+    </mote>
+  </ThingDef>
+  
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_Psi_Black</defName>
+    <graphicData>
+      <texPath>Motes/PsiMote_Black</texPath>
     </graphicData>
     <altitudeLayer>MoteLow</altitudeLayer>
     <mote>

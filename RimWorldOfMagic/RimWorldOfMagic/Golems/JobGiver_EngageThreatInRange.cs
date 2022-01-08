@@ -43,6 +43,16 @@ namespace TorannMagic.Golems
             }
             if (!pawn.WorkTagIsDisabled(WorkTags.Violent))
             {
+                TMPawnGolem pg = pawn as TMPawnGolem;
+                if(pg.verbCommands != null && !pg.rangedToggle && pg.ValidRangedVerbs() != null && pg.ValidRangedVerbs().Count > 0)
+                {
+                    Verb v = pg.ValidRangedVerbs().RandomElement();
+                    if (v != null && (pg.Position - meleeThreat.Position).LengthHorizontal > v.verbProps.minRange)
+                    {
+                        return TM_GolemUtility.CreateRangedJob(pg, meleeThreat, v);
+                    }                    
+                }
+
                 Job job = JobMaker.MakeJob(JobDefOf.AttackMelee, meleeThreat);
                 job.maxNumMeleeAttacks = 1;
                 job.expiryInterval = 300;

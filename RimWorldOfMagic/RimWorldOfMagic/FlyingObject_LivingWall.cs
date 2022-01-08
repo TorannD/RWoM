@@ -516,8 +516,10 @@ namespace TorannMagic
             if (!CasterPawn.DestroyedOrNull() && !CasterPawn.Dead)
             {
                 CompAbilityUserMagic comp = CasterPawn.TryGetComp<CompAbilityUserMagic>();
-                int verVal = TM_Calc.GetMagicSkillLevel(CasterPawn, comp.MagicData.MagicPowerSkill_LivingWall, "TM_LivingWall", "_ver", true);
-                int pwrVal = TM_Calc.GetMagicSkillLevel(CasterPawn, comp.MagicData.MagicPowerSkill_LivingWall, "TM_LivingWall", "_pwr", true);
+                //int verVal = TM_Calc.GetMagicSkillLevel(CasterPawn, comp.MagicData.MagicPowerSkill_LivingWall, "TM_LivingWall", "_ver", true);
+                //int pwrVal = TM_Calc.GetMagicSkillLevel(CasterPawn, comp.MagicData.MagicPowerSkill_LivingWall, "TM_LivingWall", "_pwr", true);
+                int verVal = TM_Calc.GetSkillVersatilityLevel(CasterPawn, TorannMagicDefOf.TM_LivingWall, true);
+                int pwrVal = TM_Calc.GetSkillPowerLevel(CasterPawn, TorannMagicDefOf.TM_LivingWall, true);
                 this.speed = 15 + (3 * verVal);
                 this.searchEnemySpeed = 200 - (20 * verVal);
                 this.enemyDamage = 12 + pwrVal;

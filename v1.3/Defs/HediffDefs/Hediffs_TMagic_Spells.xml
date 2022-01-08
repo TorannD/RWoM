@@ -810,5 +810,30 @@
 		<destroyedOutLabel>missing</destroyedOutLabel>
 	</injuryProps>
   </HediffDef>
+  
+  <HediffDef ParentName="TM_InjuryBase">  
+    <defName>TM_DecayDamage</defName>
+    <label>Decay</label>
+	<description>Organic decay.</description>
+    <displayWound>true</displayWound>
+    <comps>
+      <li Class="HediffCompProperties_TendDuration">
+        <labelTendedWell>bandaged</labelTendedWell>
+        <labelTendedWellInner>tended</labelTendedWellInner>
+        <labelSolidTendedWell>treated</labelSolidTendedWell>
+      </li>
+      <li Class="HediffCompProperties_GetsPermanent">
+        <permanentLabel>lifeless</permanentLabel>
+      </li>
+    </comps>
+	<injuryProps>
+		<painPerSeverity>0.0075</painPerSeverity>
+		<averagePainPerSeverityPermanent>0.004</averagePainPerSeverityPermanent>
+		<bleedRate>0.0</bleedRate>
+		<canMerge>true</canMerge>
+		<destroyedLabel>lifeless</destroyedLabel>
+		<destroyedOutLabel>decayed</destroyedOutLabel>
+	</injuryProps>
+  </HediffDef>
 
 </Defs>

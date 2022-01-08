@@ -28,4 +28,12 @@
 	</recipeUsers>
   </RecipeDef>
   
+  <RecipeDef Name="HollowGolem_Recipe_Base" ParentName="Golem_Recipe_Base" Abstract="True">
+	<workSkillLearnFactor>.6</workSkillLearnFactor>
+    <unfinishedThingDef>TM_UnfinishedHollowGolemUpgrade</unfinishedThingDef>
+	<recipeUsers>
+		<li>TM_HollowGolem_Workstation</li>
+	</recipeUsers>
+  </RecipeDef>
+  
 </Defs>

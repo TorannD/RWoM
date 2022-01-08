@@ -50,19 +50,21 @@ namespace TorannMagic
             Pawn pawn = this.currentTarget.Thing as Pawn;
 
             comp = caster.GetComp<CompAbilityUserMagic>();
-            pwrVal = comp.MagicData.MagicPowerSkill_TechnoShield.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_TechnoShield_pwr").level;
-            verVal = comp.MagicData.MagicPowerSkill_TechnoShield.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_TechnoShield_ver").level;
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-            if (caster.story.traits.HasTrait(TorannMagicDefOf.Faceless))
-            {
-                pwrVal = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr").level;
-                verVal = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver").level;
-            }
-            if (settingsRef.AIHardMode && !caster.IsColonist)
-            {
-                pwrVal = 3;
-                verVal = 3;
-            }
+            //pwrVal = comp.MagicData.MagicPowerSkill_TechnoShield.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_TechnoShield_pwr").level;
+            //verVal = comp.MagicData.MagicPowerSkill_TechnoShield.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_TechnoShield_ver").level;
+            //ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+            //if (caster.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+            //{
+            //    pwrVal = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr").level;
+            //    verVal = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver").level;
+            //}
+            //if (settingsRef.AIHardMode && !caster.IsColonist)
+            //{
+            //    pwrVal = 3;
+            //    verVal = 3;
+            //}
+            pwrVal = TM_Calc.GetSkillPowerLevel(caster, this.Ability.Def as TMAbilityDef);
+            verVal = TM_Calc.GetSkillVersatilityLevel(caster, this.Ability.Def as TMAbilityDef);
 
             if (pawn != null)
             {

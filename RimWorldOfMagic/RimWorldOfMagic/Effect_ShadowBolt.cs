@@ -56,11 +56,11 @@ namespace TorannMagic
                     def = TorannMagicDefOf.FlyingObject_ShadowBolt
                 };
                 Pawn casterPawn = base.CasterPawn;
-                LongEventHandler.QueueLongEvent(delegate
-                {
+                //LongEventHandler.QueueLongEvent(delegate
+                //{
                     FlyingObject_ShadowBolt flyingObject = (FlyingObject_ShadowBolt)GenSpawn.Spawn(ThingDef.Named("FlyingObject_ShadowBolt"), this.CasterPawn.Position, this.CasterPawn.Map);
                     flyingObject.Launch(this.CasterPawn, t.Cell, launchedThing);
-                }, "LaunchingFlyer", false, null);
+                //}, "LaunchingFlyer", false, null);
             }
         }
 

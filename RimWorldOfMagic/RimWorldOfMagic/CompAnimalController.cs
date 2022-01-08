@@ -104,8 +104,8 @@ namespace TorannMagic
                         CompAbilityUserMagic comp = summonerPawn.TryGetComp<CompAbilityUserMagic>();
                         if (comp != null)
                         {
-                            verVal = TM_Calc.GetMagicSkillLevel(summonerPawn, comp.MagicData.MagicPowerSkill_GuardianSpirit, "TM_GuardianSpirit", "_ver", true);
-                            pwrVal = TM_Calc.GetMagicSkillLevel(summonerPawn, comp.MagicData.MagicPowerSkill_GuardianSpirit, "TM_GuardianSpirit", "_pwr", true);
+                            verVal = TM_Calc.GetSkillVersatilityLevel(summonerPawn, TorannMagicDefOf.TM_GuardianSpirit);
+                            pwrVal = TM_Calc.GetSkillPowerLevel(summonerPawn, TorannMagicDefOf.TM_GuardianSpirit);
                             tauntRange = 15 + pwrVal;
                             tauntTargetsMax = 4 + pwrVal;
                             tauntChance = .6f + (.03f * pwrVal);

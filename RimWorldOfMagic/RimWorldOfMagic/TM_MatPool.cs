@@ -30,6 +30,10 @@ namespace TorannMagic
         public static readonly Material multiForkLightning = MaterialPool.MatFrom("Spells/LightningBolt_w", ShaderDatabase.MoteGlow);
         public static readonly Material standardLightning = MatLoader.LoadMat("Weather/LightningBolt", -1);
         public static readonly Material thinLightning = MaterialPool.MatFrom("Other/ThinLightningBolt", true);
+        public static readonly Material thindeathlightning = MaterialPool.MatFrom("Other/ThinDeathBolt", true);
+        public static readonly Material deathlightning2 = MaterialPool.MatFrom("Other/green_bolt", true);
+        public static readonly Material deathlightning3 = MaterialPool.MatFrom("Other/green_bolt2", true);
+        public static readonly Material deathbeam = MaterialPool.MatFrom("Other/death_beam_endpoints", true);
         public static readonly Material light_laser_long = MaterialPool.MatFrom("Other/light_laser_long", ShaderDatabase.MoteGlow);
 
         public static readonly Material opencloak_Female_north = MaterialPool.MatFrom("Equipment/opencloak_Female_north"); 

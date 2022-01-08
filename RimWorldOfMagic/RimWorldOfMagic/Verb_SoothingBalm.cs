@@ -42,8 +42,8 @@ namespace TorannMagic
             Pawn caster = this.CasterPawn;
             CompAbilityUserMight comp = caster.TryGetComp<CompAbilityUserMight>();
 
-            int verVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_SoothingBalm, "TM_SoothingBalm", "_ver", true);
-            int pwrVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_SoothingBalm, "TM_SoothingBalm", "_pwr", true);
+            int verVal = TM_Calc.GetSkillVersatilityLevel(caster, TorannMagicDefOf.TM_SoothingBalm, false);
+            int pwrVal = TM_Calc.GetSkillPowerLevel(caster, TorannMagicDefOf.TM_SoothingBalm, false);
 
             try
             {

@@ -75,8 +75,10 @@ namespace TorannMagic
             {
                 caster = this.launcher as Pawn;
                 CompAbilityUserMagic comp = caster.GetComp<CompAbilityUserMagic>();
-                verVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_Custom, "TM_Explosion", "_ver", true);
-                pwrVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_Custom, "TM_Explosion", "_pwr", true);
+                //verVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_Custom, "TM_Explosion", "_ver", true);
+                //pwrVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_Custom, "TM_Explosion", "_pwr", true);
+                verVal = TM_Calc.GetSkillVersatilityLevel(caster, TorannMagicDefOf.TM_Explosion);
+                pwrVal = TM_Calc.GetSkillPowerLevel(caster, TorannMagicDefOf.TM_Explosion);
                 this.arcaneDmg = comp.arcaneDmg;
                 this.CheckSpawnSustainer();
                 this.strikePos = base.Position;

@@ -31,7 +31,7 @@ namespace TorannMagic
         public static int GetShotCount(Pawn pawn)
         {
             int shots = 0;
-            return shots = Mathf.RoundToInt((5 + TM_Calc.GetMightSkillLevel(pawn, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_ShotgunSpec, "TM_ShotgunSpec", "_eff", true)) * pawn.GetComp<CompAbilityUserMight>().mightPwr);
+            return shots = Mathf.RoundToInt((5 + TM_Calc.GetSkillEfficiencyLevel(pawn, TorannMagicDefOf.TM_ShotgunSpec, false)) * pawn.GetComp<CompAbilityUserMight>().mightPwr);
         }
     }
 }

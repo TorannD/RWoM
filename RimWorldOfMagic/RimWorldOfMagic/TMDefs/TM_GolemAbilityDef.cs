@@ -25,7 +25,15 @@ namespace TorannMagic.TMDefs
         public HediffDef requiredHediff = null; //golem has to have this need to use the ability
         public float hediffCost; //amount of hediff severity consumed to use ability
         public JobDef jobDef = null; //initiates a job
+        public int jobDuration = 60;
+        public int jobBurstCount = 1;
+        public int jobTicksBetweenBursts = 1;
+        public List<GolemAbilityEffect> jobEffect = new List<GolemAbilityEffect>(); //effect that occurs each burst of an ability job
         public ThingDef warmupMote; //throws this mote when the ability starts
+        public ThingDef tickMote = null; //throws this mote each tick frequency
+        public float tickMoteSize = 1f;
+        public int tickMoteFrequency = 10;
+        public float tickMoteVelocityTowardsTarget = 0;
         public bool isViolent = true;
         public List<CompProperties_GolemAbilityEffect> effects = new List<CompProperties_GolemAbilityEffect>();
 

@@ -1552,6 +1552,25 @@ namespace TorannMagic
             }
         }
 
+        public static List<Pawn> FindAllHostilePawnsAround(Map map, IntVec3 center, float radius, Faction faction)
+        {
+            List<Pawn> tmpList = FindAllPawnsAround(map, center, radius);
+            if(tmpList != null && tmpList.Count > 0)
+            {
+                List<Pawn> enemyList = new List<Pawn>();
+                enemyList.Clear();
+                foreach(Pawn p in tmpList)
+                {
+                    if(p.HostileTo(faction))
+                    {
+                        enemyList.Add(p);
+                    }
+                }
+                return enemyList;
+            }
+            return tmpList;
+        }
+
         public static Building FindNearestWall(Map map, IntVec3 center, Faction faction = null)
         {
             List<Thing> mapBuildings = map.listerThings.AllThings.Where((Thing x) => x is Building && (x.Position - center).LengthHorizontal <= 1.4f).ToList();
@@ -3147,77 +3166,214 @@ namespace TorannMagic
             return tempAbility;
         }
 
-        public static int GetMightSkillLevel(Pawn caster, List<MightPowerSkill> power, string skillLabel, string suffix, bool canCopy = true)
+        public static int GetSkillPowerLevel(Pawn caster, TMAbilityDef ability, bool canCopy = true)
         {
-            int val = 0;
-            string label = skillLabel + suffix;
-            CompAbilityUserMight comp = caster.GetComp<CompAbilityUserMight>();
-            var mps = power.FirstOrDefault((MightPowerSkill x) => x.label == label);
-            if (mps != null)
-            {
-                val = mps.level;
-                if (canCopy && val == 0)
-                {
-                    if (caster.story.traits.HasTrait(TorannMagicDefOf.Faceless))
-                    {
-                        label = "TM_Mimic" + suffix;
-                        val = comp.MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == label).level;
-                    }
-                    if ((caster.story.traits.HasTrait(TorannMagicDefOf.TM_Wayfarer) || (caster.story.traits.HasTrait(TorannMagicDefOf.ChaosMage) || (comp.customClass != null && comp.customClass.classFighterAbilities.Contains(TorannMagicDefOf.TM_FieldTraining))) && comp.MightData.MightPowersW.FirstOrDefault((MightPower x) => x.abilityDef == TorannMagicDefOf.TM_WayfarerCraft).learned))
-                    {
-                        label = "TM_FieldTraining" + suffix;
+            return GetSkillLevel(caster, ability, "_pwr", canCopy);
+        }
 
-                        if (comp.MightData.MightPowerSkill_FieldTraining.FirstOrDefault((MightPowerSkill x) => x.label == label).level >= 13)
-                        {
-                            val = 2;
-                        }
-                        else if (comp.MightData.MightPowerSkill_FieldTraining.FirstOrDefault((MightPowerSkill x) => x.label == label).level >= 9)
-                        {
-                            val = 1;
-                        }
+        public static int GetSkillVersatilityLevel(Pawn caster, TMAbilityDef ability, bool canCopy = true)
+        {
+            return GetSkillLevel(caster, ability, "_ver", canCopy);
+        }
+
+        public static int GetSkillEfficiencyLevel(Pawn caster, TMAbilityDef ability, bool canCopy = true)
+        {
+            return GetSkillLevel(caster, ability, "_eff", canCopy);
+        }
+
+        public static int GetSkillLevel(Pawn caster, TMAbilityDef ability, string suffix, bool canCopy = true)
+        {
+            int level = 0;
+            bool flagMagic = TM_Calc.IsMagicUser(caster);
+            bool flagMight = TM_Calc.IsMightUser(caster);            
+            
+            if(flagMagic && flagMight)
+            {
+                level = GetMagicSkillLevel(caster, ability, suffix, canCopy);
+                int tmpLevel = GetMightSkillLevel(caster, ability, suffix, canCopy);
+                level = level >= tmpLevel ? level : tmpLevel;
+            }
+            else if(flagMagic)
+            {
+                level = GetMagicSkillLevel(caster, ability, suffix, canCopy);
+            }
+            else if(flagMight)
+            {
+                level = GetMightSkillLevel(caster, ability, suffix, canCopy);
+            }
+            return level;
+        }
+
+        public static int GetMightSkillLevel(Pawn caster, TMAbilityDef ability, string suffix, bool canCopy) //, List<MightPowerSkill> power, string skillLabel, string suffix, bool canCopy = true)
+        {
+            MightPowerSkill mightSkill = null;
+            int level = 0;
+            CompAbilityUserMight comp = caster.TryGetComp<CompAbilityUserMight>();
+            if (comp != null && comp.MightData != null)
+            {
+                if (suffix == "_pwr")
+                {
+                    mightSkill = comp.MightData.GetSkill_Power(ability);
+                }
+                else if (suffix == "_ver")
+                {
+                    mightSkill = comp.MightData.GetSkill_Versatility(ability);
+                }
+                else if (suffix == "_eff")
+                {
+                    mightSkill = comp.MightData.GetSkill_Efficiency(ability);
+                }
+                else
+                {
+                    return 0;
+                }
+                if (mightSkill != null)
+                {
+                    level = mightSkill.level;
+                }
+                CompAbilityUserMight mimicComp = caster.TryGetComp<CompAbilityUserMight>();
+                if (canCopy && mimicComp != null && mimicComp.IsMightUser && ability == mimicComp.mimicAbility)
+                {
+                    string mimicLabel = "TM_Mimic" + suffix;
+                    level = mimicComp.MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == mimicLabel).level;
+                }
+                int ftLevel = 0;
+                if (suffix == "_pwr" || suffix == "_ver")
+                {
+                    string ftLabel = "TM_FieldTraining" + suffix;
+                    ftLevel = (int)(comp.MightData.MightPowerSkill_FieldTraining.FirstOrDefault((MightPowerSkill x) => x.label == ftLabel).level);
+                    if (ftLevel >= 13)
+                    {
+                        level = level >= 2 ? level : 2;
+                    }
+                    else if (ftLevel >= 9)
+                    {
+                        level = level >= 1 ? level : 1;
                     }
                 }
                 ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
                 if (settingsRef.AIHardMode && !caster.IsColonist)
                 {
-                    val = 3;
+                    level = 3;
                 }
             }
-            return val;
+            return level;
+
+            //int val = 0;
+            //string label = skillLabel + suffix;
+            //CompAbilityUserMight comp = caster.GetComp<CompAbilityUserMight>();
+            //var mps = power.FirstOrDefault((MightPowerSkill x) => x.label == label);
+            //if (mps != null)
+            //{
+            //    val = mps.level;
+            //    if (canCopy && val == 0)
+            //    {
+            //        if (caster.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+            //        {
+            //            label = "TM_Mimic" + suffix;
+            //            val = comp.MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == label).level;
+            //        }
+            //        if ((caster.story.traits.HasTrait(TorannMagicDefOf.TM_Wayfarer) || (caster.story.traits.HasTrait(TorannMagicDefOf.ChaosMage) || (comp.customClass != null && comp.customClass.classFighterAbilities.Contains(TorannMagicDefOf.TM_FieldTraining))) && comp.MightData.MightPowersW.FirstOrDefault((MightPower x) => x.abilityDef == TorannMagicDefOf.TM_WayfarerCraft).learned))
+            //        {
+            //            label = "TM_FieldTraining" + suffix;
+
+            //            if (comp.MightData.MightPowerSkill_FieldTraining.FirstOrDefault((MightPowerSkill x) => x.label == label).level >= 13)
+            //            {
+            //                val = 2;
+            //            }
+            //            else if (comp.MightData.MightPowerSkill_FieldTraining.FirstOrDefault((MightPowerSkill x) => x.label == label).level >= 9)
+            //            {
+            //                val = 1;
+            //            }
+            //        }
+            //    }
+            //    ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+            //    if (settingsRef.AIHardMode && !caster.IsColonist)
+            //    {
+            //        val = 3;
+            //    }
+            //}
+            //return val;
         }
 
-        public static int GetMagicSkillLevel(Pawn caster, List<MagicPowerSkill> power, string skillLabel, string suffix, bool canCopy = true)
+        public static int GetMagicSkillLevel(Pawn caster, TMAbilityDef ability, string suffix, bool canCopy) //, List<MagicPowerSkill> power, string skillLabel, string suffix, bool canCopy = true)
         {
-            int val = 0;
-            string label = skillLabel + suffix;
-            CompAbilityUserMagic comp = caster.GetComp<CompAbilityUserMagic>();
-            if (comp != null && comp.IsMagicUser)
+            MagicPowerSkill magicSkill = null;
+            int level = 0;
+            CompAbilityUserMagic comp = caster.TryGetComp<CompAbilityUserMagic>();
+            if (comp != null && comp.MagicData != null)
             {
-                var mps = power.FirstOrDefault((MagicPowerSkill x) => x.label == label);
-                if (mps != null)
+                if (suffix == "_pwr")
                 {
-                    val = mps.level;
-                    if (canCopy && val == 0)
-                    {
-                        if (caster.story.traits.HasTrait(TorannMagicDefOf.Faceless))
-                        {
-                            label = "TM_Mimic" + suffix;
-                            val = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == label).level;
-                        }
-                        if ((caster.story.traits.HasTrait(TorannMagicDefOf.TM_Wanderer) || (caster.story.traits.HasTrait(TorannMagicDefOf.ChaosMage) || (comp.customClass != null && comp.customClass.classMageAbilities.Contains(TorannMagicDefOf.TM_Cantrips))) && comp.MagicData.MagicPowersW.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Cantrips).learned))
-                        {
-                            label = "TM_Cantrips" + suffix;
-                            val = (int)((comp.MagicData.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == label).level) / 5);
-                        }
-                    }
-                    ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                    if (settingsRef.AIHardMode && !caster.IsColonist)
-                    {
-                        val = 3;
-                    }
+                    magicSkill = comp.MagicData.GetSkill_Power(ability);
+                }
+                else if (suffix == "_ver")
+                {
+                    magicSkill = comp.MagicData.GetSkill_Versatility(ability);
+                }
+                else if (suffix == "_eff")
+                {
+                    magicSkill = comp.MagicData.GetSkill_Efficiency(ability);
+                }
+                else
+                {
+                    return 0;
+                }
+                if (magicSkill != null)
+                {
+                    level = magicSkill.level;
+                }
+                CompAbilityUserMight mimicComp = caster.TryGetComp<CompAbilityUserMight>();
+                if (canCopy && mimicComp != null && mimicComp.IsMightUser && ability == mimicComp.mimicAbility)
+                {
+                    string mimicLabel = "TM_Mimic" + suffix;
+                    level = mimicComp.MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == mimicLabel).level;
+                }
+                int cantripLevel = 0;
+                if (suffix == "_pwr" || suffix == "_ver")
+                {
+                    string cantripLabel = "TM_Cantrips" + suffix;
+                    cantripLevel = (int)((comp.MagicData.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == cantripLabel).level) / 5);
+                }
+                level = cantripLevel > level ? cantripLevel : level;
+                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+                if (settingsRef.AIHardMode && !caster.IsColonist)
+                {
+                    level = 3;
                 }
             }
-            return val;
+            return level;
+
+            //int val = 0;
+            //string label = skillLabel + suffix;
+            //CompAbilityUserMagic comp = caster.GetComp<CompAbilityUserMagic>();
+            //if (comp != null && comp.IsMagicUser)
+            //{
+            //    var mps = power.FirstOrDefault((MagicPowerSkill x) => x.label == label);
+            //    if (mps != null)
+            //    {
+            //        val = mps.level;
+            //        if (canCopy && val == 0)
+            //        {
+            //            if (caster.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+            //            {
+            //                label = "TM_Mimic" + suffix;
+            //                val = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == label).level;
+            //            }
+            //            if ((caster.story.traits.HasTrait(TorannMagicDefOf.TM_Wanderer) || (caster.story.traits.HasTrait(TorannMagicDefOf.ChaosMage) || (comp.customClass != null && comp.customClass.classMageAbilities.Contains(TorannMagicDefOf.TM_Cantrips))) && comp.MagicData.MagicPowersW.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Cantrips).learned))
+            //            {
+            //                label = "TM_Cantrips" + suffix;
+            //                val = (int)((comp.MagicData.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == label).level) / 5);
+            //            }
+            //        }
+            //        ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+            //        if (settingsRef.AIHardMode && !caster.IsColonist)
+            //        {
+            //            val = 3;
+            //        }
+            //    }
+            //}
+            //return val;
         }
 
         public static bool IsIconAbility_02(AbilityUser.AbilityDef def)

@@ -52,7 +52,8 @@ namespace TorannMagic
         public static float GetWeaponAccuracy(Pawn pawn)
         {
             float weaponAccuracy = pawn.equipment.Primary.GetStatValue(StatDefOf.AccuracyMedium, true);
-            verVal = TM_Calc.GetMightSkillLevel(pawn, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_ArrowStorm, "TM_ArrowStorm", "_ver", true);
+            verVal = TM_Calc.GetSkillVersatilityLevel(pawn, TorannMagicDefOf.TM_ArrowStorm);
+            //verVal = TM_Calc.GetMightSkillLevel(pawn, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_ArrowStorm, "TM_ArrowStorm", "_ver", true);
             //MightPowerSkill ver = pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_ArrowStorm.FirstOrDefault((MightPowerSkill x) => x.label == "TM_ArrowStorm_ver");
             //verVal = ver.level;
             //if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
@@ -67,7 +68,8 @@ namespace TorannMagic
         public static int GetWeaponDmg(Pawn pawn)
         {
             CompAbilityUserMight comp = pawn.GetComp<CompAbilityUserMight>();
-            pwrVal = TM_Calc.GetMightSkillLevel(pawn, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_ArrowStorm, "TM_ArrowStorm", "_pwr", true);            
+            //pwrVal = TM_Calc.GetMightSkillLevel(pawn, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_ArrowStorm, "TM_ArrowStorm", "_pwr", true);   
+            pwrVal = TM_Calc.GetSkillPowerLevel(pawn, TorannMagicDefOf.TM_ArrowStorm);
 
             float dmg = comp.weaponDamage;
             ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();

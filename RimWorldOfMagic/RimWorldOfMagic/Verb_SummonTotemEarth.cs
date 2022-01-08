@@ -50,9 +50,12 @@ namespace TorannMagic
             Map map = caster.Map;
             IntVec3 cell = currentTarget.Cell;
             CompAbilityUserMagic comp = caster.TryGetComp<CompAbilityUserMagic>();
-            pwrVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_Totems, "TM_Totems", "_pwr", true);
-            verVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_Totems, "TM_Totems", "_ver", true);
-            effVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_Totems, "TM_Totems", "_eff", true);
+            //pwrVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_Totems, "TM_Totems", "_pwr", true);
+            //verVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_Totems, "TM_Totems", "_ver", true);
+            //effVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_Totems, "TM_Totems", "_eff", true);
+            pwrVal = TM_Calc.GetSkillPowerLevel(caster, TorannMagicDefOf.TM_Totems);
+            verVal = TM_Calc.GetSkillVersatilityLevel(caster, TorannMagicDefOf.TM_Totems);
+            effVal = TM_Calc.GetSkillEfficiencyLevel(caster, TorannMagicDefOf.TM_Totems);
             IntVec3 shiftPos = TM_Calc.GetEmptyCellForNewBuilding(cell, map, 2f, true, 0, true);
             if (shiftPos != null && (shiftPos.IsValid && shiftPos.Standable(map)))
             {
