@@ -116,8 +116,7 @@ namespace TorannMagic.Golems
                 v = pg.GetBestVerb;
             }
             if (v != null)
-            {
-                Log.Message("starting attack with verb " + v.verbProps.verbClass.ToString());
+            {               
                 attackVerb = v;                
                 pg.Golem.Energy.SubtractEnergy(v.verbProps.consumeFuelPerShot);
                 pg.drawTickFlag = v.verbProps.consumeFuelPerShot > 0;

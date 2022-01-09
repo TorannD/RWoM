@@ -435,10 +435,6 @@ namespace TorannMagic
 
         public void DoGlow()
         {
-            if(this.glower == null)
-            {
-                Log.Message("glower null");
-            }
             if (this.glower != null && glower.parent != null && this.Map != null)
             {
                 //Log.Message("glower not null, glow center " + glowCenter);

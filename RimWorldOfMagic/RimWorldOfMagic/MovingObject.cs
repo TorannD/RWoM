@@ -270,8 +270,7 @@ namespace TorannMagic
                     FleckMaker.ThrowDustPuff(originPos, pawn.Map, Rand.Range(1.2f, 1.8f));
                     XProb(target, pawn);
                     xProbOrigin = xProb;
-                    weaponDmg = GetWeaponDmg(pawn);
-                    Log.Message("Initialized with weapon damage of " + weaponDmg);
+                    weaponDmg = GetWeaponDmg(pawn);                   
                 }
             }
             else

@@ -98,14 +98,12 @@ namespace TorannMagic.Golems
             if(caster.CurJobDef == TorannMagicDefOf.JobDriver_GolemAttackStatic)
             {
                 return false;
-            }
-            Log.Message("locomotion is " + caster.CurJob.locomotionUrgency.ToString());
+            }           
             if(caster.CurJob.locomotionUrgency < LocomotionUrgency.Jog)
             {
                 return false;
             }
-            float distanceToTarget = (target.Cell - caster.Position).LengthHorizontal;
-            Log.Message("distance to target " + distanceToTarget);
+            float distanceToTarget = (target.Cell - caster.Position).LengthHorizontal;            
             if (distanceToTarget > maxDistance || distanceToTarget <= minDistance)
             {
                 return false;

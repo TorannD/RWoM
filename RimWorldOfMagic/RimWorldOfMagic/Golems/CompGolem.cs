@@ -630,8 +630,7 @@ namespace TorannMagic.Golems
                         foreach (CompProperties_GolemAbilityEffect effectDef in activeAbility.golemAbilityDef.effects)
                         {
                             if (effectDef.CanApplyOn(abilityTarget, Pawn, activeAbility.golemAbilityDef))
-                            {
-                                Log.Message(" " + activeAbility.golemAbilityDef.defName);
+                            {                               
                                 effectDef.Apply(abilityTarget, Pawn, activeAbility.golemAbilityDef, activeAbility.currentLevel, DamageModifier);
                             }
                             else

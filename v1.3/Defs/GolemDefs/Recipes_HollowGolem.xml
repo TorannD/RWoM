@@ -356,47 +356,28 @@ Duration:	100s
 Energy Cost:	50</description>
     <jobString>crafting golem part</jobString>
  	<researchPrerequisite>TM_HollowGolemArtifactsRD</researchPrerequisite>
-		<workAmount>30</workAmount>
-    <ingredients>
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>Steel</li>
-          </thingDefs>
-        </filter>
-        <count>10</count>
-      </li> 
-    </ingredients>
-	<!-- <skillRequirements>
-	  <Crafting>10</Crafting>
+	<skillRequirements>
+	  <Crafting>8</Crafting>
     </skillRequirements>
 	<workAmount>8000</workAmount>
-    <ingredients>
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>DemonLordCloak</li>
-          </thingDefs>
-        </filter>
-        <count>1</count>
-      </li> 
+    <ingredients>	  
 	  <li>
         <filter>
           <thingDefs>
             <li>RawMagicyte</li>
           </thingDefs>
         </filter>
-        <count>200</count>
+        <count>300</count>
       </li> 
 	  <li>
         <filter>
           <thingDefs>
-            <li>Silver</li>
+            <li>Gold</li>
           </thingDefs>
         </filter>
-        <count>50</count>
+        <count>20</count>
       </li> 
-    </ingredients> -->
+    </ingredients>
   </RecipeDef>  
   
   <RecipeDef ParentName="HollowGolem_Recipe_Base">
@@ -405,37 +386,18 @@ Energy Cost:	50</description>
     <description>Equips the golem with a water amulet which enables the golem to evade attacks. The chance to evade an attack is proportional to the golem's energy percent and reduces the golem's energy by 5 for each evasion.</description>
     <jobString>crafting golem part</jobString>
  	<researchPrerequisite>TM_HollowGolemArtifactsRD</researchPrerequisite>
-		<workAmount>30</workAmount>
-    <ingredients>
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>Steel</li>
-          </thingDefs>
-        </filter>
-        <count>10</count>
-      </li> 
-    </ingredients>
-	<!-- <skillRequirements>
-	  <Crafting>10</Crafting>
+	<skillRequirements>
+	  <Crafting>8</Crafting>
     </skillRequirements>
 	<workAmount>8000</workAmount>
-    <ingredients>
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>DemonLordCloak</li>
-          </thingDefs>
-        </filter>
-        <count>1</count>
-      </li> 
+    <ingredients>	  
 	  <li>
         <filter>
           <thingDefs>
             <li>RawMagicyte</li>
           </thingDefs>
         </filter>
-        <count>200</count>
+        <count>300</count>
       </li> 
 	  <li>
         <filter>
@@ -443,9 +405,9 @@ Energy Cost:	50</description>
             <li>Silver</li>
           </thingDefs>
         </filter>
-        <count>50</count>
+        <count>60</count>
       </li> 
-    </ingredients> -->
+    </ingredients>
   </RecipeDef>
   
   <RecipeDef ParentName="HollowGolem_Recipe_Base">
@@ -454,47 +416,20 @@ Energy Cost:	50</description>
     <description>Equips the golem with a arcane amulet which enables the Well of Despair ability. Well of Despair encases an area in a reverse shield which allows projectiles in but blocks projectiles from exiting.</description>
     <jobString>crafting golem part</jobString>
  	<researchPrerequisite>TM_HollowGolemArtifactsRD</researchPrerequisite>
-		<workAmount>30</workAmount>
-    <ingredients>
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>Steel</li>
-          </thingDefs>
-        </filter>
-        <count>10</count>
-      </li> 
-    </ingredients>
-	<!-- <skillRequirements>
-	  <Crafting>10</Crafting>
+	<skillRequirements>
+	  <Intellectual>6</Intellectual>
     </skillRequirements>
 	<workAmount>8000</workAmount>
-    <ingredients>
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>DemonLordCloak</li>
-          </thingDefs>
-        </filter>
-        <count>1</count>
-      </li> 
+    <ingredients>	  
 	  <li>
         <filter>
           <thingDefs>
             <li>RawMagicyte</li>
           </thingDefs>
         </filter>
-        <count>200</count>
-      </li> 
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>Silver</li>
-          </thingDefs>
-        </filter>
-        <count>50</count>
-      </li> 
-    </ingredients> -->
+        <count>400</count>
+      </li>	  
+    </ingredients>
   </RecipeDef>
   
   <RecipeDef ParentName="HollowGolem_Recipe_Base">
@@ -503,26 +438,15 @@ Energy Cost:	50</description>
     <description>Equips the golem with a death amulet which surrounds the golem with an aura of death. Nearby enemies can be stricken with a curse that degrades their willpower and ability to fight.</description>
     <jobString>crafting golem part</jobString>
  	<researchPrerequisite>TM_HollowGolemArtifactsRD</researchPrerequisite>
-		<workAmount>30</workAmount>
-    <ingredients>
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>Steel</li>
-          </thingDefs>
-        </filter>
-        <count>10</count>
-      </li> 
-    </ingredients>
-	<!-- <skillRequirements>
-	  <Crafting>10</Crafting>
+	<skillRequirements>
+	  <Intellectual>6</Intellectual>
     </skillRequirements>
 	<workAmount>8000</workAmount>
     <ingredients>
 	  <li>
         <filter>
           <thingDefs>
-            <li>DemonLordCloak</li>
+            <li>TM_Artifact_NecroticOrb</li>
           </thingDefs>
         </filter>
         <count>1</count>
@@ -533,17 +457,9 @@ Energy Cost:	50</description>
             <li>RawMagicyte</li>
           </thingDefs>
         </filter>
-        <count>200</count>
-      </li> 
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>Silver</li>
-          </thingDefs>
-        </filter>
         <count>50</count>
-      </li> 
-    </ingredients> -->
+      </li>
+    </ingredients>
   </RecipeDef>
   
   <RecipeDef ParentName="HollowGolem_Recipe_Base">
@@ -552,30 +468,11 @@ Energy Cost:	50</description>
     <description>Equips the golem with a death's abyss amulet which slows nearby enemies in a movement debilitating field. This effect can trigger every 15s and effects enemies within 30 cells.</description>
     <jobString>crafting golem part</jobString>
  	<researchPrerequisite>TM_HollowGolemArtifactsRD</researchPrerequisite>
-		<workAmount>30</workAmount>
-    <ingredients>
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>Steel</li>
-          </thingDefs>
-        </filter>
-        <count>10</count>
-      </li> 
-    </ingredients>
-	<!-- <skillRequirements>
-	  <Crafting>10</Crafting>
+	<skillRequirements>
+	  <Artistic>5</Artistic>
     </skillRequirements>
-	<workAmount>8000</workAmount>
+	<workAmount>10000</workAmount>
     <ingredients>
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>DemonLordCloak</li>
-          </thingDefs>
-        </filter>
-        <count>1</count>
-      </li> 
 	  <li>
         <filter>
           <thingDefs>
@@ -587,12 +484,12 @@ Energy Cost:	50</description>
 	  <li>
         <filter>
           <thingDefs>
-            <li>Silver</li>
+            <li>Jade</li>
           </thingDefs>
         </filter>
         <count>50</count>
       </li> 
-    </ingredients> -->
+    </ingredients>
   </RecipeDef>
   
   <RecipeDef ParentName="HollowGolem_Recipe_Base">
@@ -601,26 +498,15 @@ Energy Cost:	50</description>
     <description>Adorns the hollow golem with a fire element focus gem allowing it to use the fire blossom ability. Fire blossom creates 25 explosive firebolts and targets a cluster of enemies from 6 to 50 cells. Consumes 40 energy. Targets may catch fire. Only one focus gem may be attached.</description>
     <jobString>crafting golem part</jobString>
  	<researchPrerequisite>TM_HollowGolemArtifactsRD</researchPrerequisite>
-		<workAmount>30</workAmount>
-    <ingredients>
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>Steel</li>
-          </thingDefs>
-        </filter>
-        <count>10</count>
-      </li> 
-    </ingredients>
-	<!-- <skillRequirements>
-	  <Crafting>10</Crafting>
+	<skillRequirements>
+	  <Crafting>8</Crafting>
     </skillRequirements>
-	<workAmount>8000</workAmount>
-    <ingredients>
+	<workAmount>10000</workAmount>
+    <ingredients> 
 	  <li>
         <filter>
           <thingDefs>
-            <li>DemonLordCloak</li>
+            <li>TM_EStone_arcaneDmg_major</li>
           </thingDefs>
         </filter>
         <count>1</count>
@@ -628,20 +514,12 @@ Energy Cost:	50</description>
 	  <li>
         <filter>
           <thingDefs>
-            <li>RawMagicyte</li>
+            <li>Gold</li>
           </thingDefs>
         </filter>
-        <count>200</count>
+        <count>20</count>
       </li> 
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>Silver</li>
-          </thingDefs>
-        </filter>
-        <count>50</count>
-      </li> 
-    </ingredients> -->
+    </ingredients>
   </RecipeDef>
   
   <RecipeDef ParentName="HollowGolem_Recipe_Base">
@@ -650,26 +528,15 @@ Energy Cost:	50</description>
     <description>Adorns the hollow golem with a gem containing elemental water allowing it to use the ice blossom ability. Ice Blossom creates a burst of 20 ice shards and targets a cluster of enemies from 8 to 60 cells away. Costs 60 energy. Ice shards inflict high amounts of bleeding. Only one focus gem may be attached to a golem.</description>
     <jobString>crafting golem part</jobString>
  	<researchPrerequisite>TM_HollowGolemArtifactsRD</researchPrerequisite>
-		<workAmount>30</workAmount>
-    <ingredients>
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>Steel</li>
-          </thingDefs>
-        </filter>
-        <count>10</count>
-      </li> 
-    </ingredients>
-	<!-- <skillRequirements>
+	<skillRequirements>
 	  <Crafting>10</Crafting>
     </skillRequirements>
-	<workAmount>8000</workAmount>
+	<workAmount>10000</workAmount>
     <ingredients>
 	  <li>
         <filter>
           <thingDefs>
-            <li>DemonLordCloak</li>
+            <li>TM_EStone_arcaneRes_major</li>
           </thingDefs>
         </filter>
         <count>1</count>
@@ -677,20 +544,12 @@ Energy Cost:	50</description>
 	  <li>
         <filter>
           <thingDefs>
-            <li>RawMagicyte</li>
-          </thingDefs>
-        </filter>
-        <count>200</count>
-      </li> 
-	  <li>
-        <filter>
-          <thingDefs>
             <li>Silver</li>
           </thingDefs>
         </filter>
-        <count>50</count>
+        <count>60</count>
       </li> 
-    </ingredients> -->
+    </ingredients>
   </RecipeDef>
   
   <RecipeDef ParentName="HollowGolem_Recipe_Base">
@@ -699,38 +558,19 @@ Energy Cost:	50</description>
     <description>Adorns the hollow golem with a gem containing condense arcane energy, allowing it to create a concentrated bolt of dark energy. Darkbolt targets enemies up to 100 cells away. Costs 80 energy. Only one focus gem may be attached to a golem.</description>
     <jobString>crafting golem part</jobString>
  	<researchPrerequisite>TM_HollowGolemArtifactsRD</researchPrerequisite>
-		<workAmount>30</workAmount>
-    <ingredients>
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>Steel</li>
-          </thingDefs>
-        </filter>
-        <count>10</count>
-      </li> 
-    </ingredients>
-	<!-- <skillRequirements>
-	  <Crafting>10</Crafting>
+	<skillRequirements>
+	  <Intellectual>6</Intellectual>
     </skillRequirements>
-	<workAmount>8000</workAmount>
+	<workAmount>10000</workAmount>
     <ingredients>
 	  <li>
         <filter>
           <thingDefs>
-            <li>DemonLordCloak</li>
+            <li>TM_EStone_wonder</li>
           </thingDefs>
         </filter>
         <count>1</count>
-      </li> 
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>RawMagicyte</li>
-          </thingDefs>
-        </filter>
-        <count>200</count>
-      </li> 
+      </li>  
 	  <li>
         <filter>
           <thingDefs>
@@ -739,7 +579,7 @@ Energy Cost:	50</description>
         </filter>
         <count>50</count>
       </li> 
-    </ingredients> -->
+    </ingredients>
   </RecipeDef>
   
   <RecipeDef ParentName="HollowGolem_Recipe_Base">
@@ -748,26 +588,15 @@ Energy Cost:	50</description>
     <description>Adorns the hollow golem with a gem containing death's essence, surrounding the golem with a field radiating death. Death Field periodically strikes nearby enemies. This ability is the only focus gem that does not require casting. Targets enemies within 10 cells of the golem. Costs 20 energy but gains a free strike for any pawn that dies within the field. Only one focus gem may be attached to a golem.</description>
     <jobString>crafting golem part</jobString>
  	<researchPrerequisite>TM_HollowGolemArtifactsRD</researchPrerequisite>
-		<workAmount>30</workAmount>
-    <ingredients>
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>Steel</li>
-          </thingDefs>
-        </filter>
-        <count>10</count>
-      </li> 
-    </ingredients>
-	<!-- <skillRequirements>
-	  <Crafting>10</Crafting>
+	<skillRequirements>
+	  <Intellectual>6</Intellectual>
     </skillRequirements>
-	<workAmount>8000</workAmount>
+	<workAmount>10000</workAmount>
     <ingredients>
 	  <li>
         <filter>
           <thingDefs>
-            <li>DemonLordCloak</li>
+            <li>TM_EStone_coolDown_major</li>
           </thingDefs>
         </filter>
         <count>1</count>
@@ -775,20 +604,12 @@ Energy Cost:	50</description>
 	  <li>
         <filter>
           <thingDefs>
-            <li>RawMagicyte</li>
-          </thingDefs>
-        </filter>
-        <count>200</count>
-      </li> 
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>Silver</li>
+            <li>Jade</li>
           </thingDefs>
         </filter>
         <count>50</count>
       </li> 
-    </ingredients> -->
+    </ingredients>
   </RecipeDef>
   
   
@@ -798,21 +619,12 @@ Energy Cost:	50</description>
     <description>Equipping the hollow golem with the Orb of Extinguished Flames allows it to peek behind the veil of death to extract knowledge. Points into the active research technology will increase for every pawn killed on the map. The orb can also be toggled to detect and consume any fire within 25 cells and emits a faint silver light. These effect are only active while the hollow golem is dormant. The flames of devouring apathy and orb of extinguishing flames cannot be used together, these two upgrades share the same component slot.</description>
     <jobString>crafting golem part</jobString>
  	<researchPrerequisite>TM_HollowGolemArtifactsRD</researchPrerequisite>
-		<workAmount>30</workAmount>
-    <ingredients>
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>Steel</li>
-          </thingDefs>
-        </filter>
-        <count>10</count>
-      </li> 
-    </ingredients>
-	<!-- <skillRequirements>
-	  <Intellectual>12</Intellectual>
+	<skillRequirements>
+	  <Artistic>4</Artistic>
+	  <Construction>6</Construction>
+	  <Crafting>8</Crafting>
     </skillRequirements>
-	<workAmount>10000</workAmount>
+	<workAmount>15000</workAmount>
     <ingredients>
 	  <li>
         <filter>
@@ -830,7 +642,7 @@ Energy Cost:	50</description>
         </filter>
         <count>1</count>
       </li>
-    </ingredients> -->
+    </ingredients>
   </RecipeDef>
   
   <RecipeDef ParentName="HollowGolem_Recipe_Base">
@@ -839,21 +651,12 @@ Energy Cost:	50</description>
     <description>The Flames of Devouring Apathy grant a hollow golem the ability to regulate temperature. The flames will also consume any filth within 25 cells and emit a faint mystical light. These effect are only active while the hollow golem is dormant. The flames of devouring apathy and orb of extinguishing flames cannot be used together, these two upgrades share the same component slot.</description>
     <jobString>crafting golem part</jobString>
  	<researchPrerequisite>TM_HollowGolemArtifactsRD</researchPrerequisite>
-		<workAmount>30</workAmount>
-    <ingredients>
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>Steel</li>
-          </thingDefs>
-        </filter>
-        <count>10</count>
-      </li> 
-    </ingredients>
-	<!-- <skillRequirements>
-	  <Intellectual>12</Intellectual>
+	<skillRequirements>
+	  <Intellectual>4</Intellectual>
+	  <Construction>8</Construction>
+	  <Crafting>6</Crafting>
     </skillRequirements>
-	<workAmount>10000</workAmount>
+	<workAmount>15000</workAmount>
     <ingredients>
 	  <li>
         <filter>
@@ -871,7 +674,7 @@ Energy Cost:	50</description>
         </filter>
         <count>1</count>
       </li>
-    </ingredients> -->
+    </ingredients>
   </RecipeDef>
   
   <RecipeDef ParentName="HollowGolem_Recipe_Base">
@@ -886,19 +689,8 @@ Cooldown: 	-[10%/20%/30%]
 In addition, decay touch deals bonus burn damage and the golem can absorb nearby fire to restore health.</description>
     <jobString>crafting golem upgrade</jobString>
  	<researchPrerequisite>TM_HollowGolemEquipmentRD</researchPrerequisite>
-		<workAmount>30</workAmount>
-    <ingredients>
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>Steel</li>
-          </thingDefs>
-        </filter>
-        <count>10</count>
-      </li> 
-    </ingredients>
-	<!-- <skillRequirements>
-	  <Crafting>10</Crafting>
+	<skillRequirements>
+	  <Crafting>6</Crafting>
     </skillRequirements>
 	<workAmount>10000</workAmount>
     <ingredients>
@@ -913,20 +705,20 @@ In addition, decay touch deals bonus burn damage and the golem can absorb nearby
 	  <li>
         <filter>
           <thingDefs>
-            <li>ComponentSpacer</li>
+            <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>2</count>
+        <count>150</count>
       </li>
 	  <li>
         <filter>
           <thingDefs>
-            <li>Plasteel</li>
+            <li>AncientMail</li>
           </thingDefs>
         </filter>
-        <count>10</count>
+        <count>1</count>
       </li>
-    </ingredients> -->
+    </ingredients>
   </RecipeDef>
   
   <RecipeDef ParentName="HollowGolem_Recipe_Base">
@@ -940,47 +732,36 @@ Processing:	+[10%/20%/30%]
 In addition, decay touch heals the golem and one friendly pawn within 10 + 3*level cells for 10 + 4*level health.</description>
     <jobString>crafting golem upgrade</jobString>
  	<researchPrerequisite>TM_HollowGolemEquipmentRD</researchPrerequisite>
-		<workAmount>30</workAmount>
-    <ingredients>
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>Steel</li>
-          </thingDefs>
-        </filter>
-        <count>10</count>
-      </li> 
-    </ingredients>
-	<!-- <skillRequirements>
-	  <Crafting>10</Crafting>
+	<skillRequirements>
+	  <Crafting>6</Crafting>
     </skillRequirements>
 	<workAmount>10000</workAmount>
     <ingredients>
 	  <li>
         <filter>
           <thingDefs>
-            <li>Gold</li>
+            <li>Silver</li>
           </thingDefs>
         </filter>
-        <count>10</count>
+        <count>30</count>
       </li> 
 	  <li>
         <filter>
           <thingDefs>
-            <li>ComponentSpacer</li>
+            <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>2</count>
+        <count>150</count>
       </li>
 	  <li>
         <filter>
           <thingDefs>
-            <li>Plasteel</li>
+            <li>AncientMail</li>
           </thingDefs>
         </filter>
-        <count>10</count>
+        <count>1</count>
       </li>
-    </ingredients> -->
+    </ingredients>
   </RecipeDef>
   
   <RecipeDef ParentName="HollowGolem_Recipe_Base">
@@ -994,47 +775,36 @@ Processing: 	+[15%/30%/45%]
 In addition, decay touch restores 20 + 5*level energy per hit.</description>
     <jobString>crafting golem upgrade</jobString>
  	<researchPrerequisite>TM_HollowGolemEquipmentRD</researchPrerequisite>
-		<workAmount>30</workAmount>
-    <ingredients>
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>Steel</li>
-          </thingDefs>
-        </filter>
-        <count>10</count>
-      </li> 
-    </ingredients>
-	<!-- <skillRequirements>
-	  <Crafting>10</Crafting>
+	<skillRequirements>
+	  <Crafting>6</Crafting>
     </skillRequirements>
 	<workAmount>10000</workAmount>
     <ingredients>
 	  <li>
         <filter>
           <thingDefs>
-            <li>Gold</li>
+            <li>RawMagicyte</li>
           </thingDefs>
         </filter>
-        <count>10</count>
+        <count>100</count>
       </li> 
 	  <li>
         <filter>
           <thingDefs>
-            <li>ComponentSpacer</li>
+            <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>2</count>
+        <count>150</count>
       </li>
 	  <li>
         <filter>
           <thingDefs>
-            <li>Plasteel</li>
+            <li>AncientMail</li>
           </thingDefs>
         </filter>
-        <count>10</count>
+        <count>1</count>
       </li>
-    </ingredients> -->
+    </ingredients>
   </RecipeDef>
   
   <RecipeDef ParentName="HollowGolem_Recipe_Base">
@@ -1049,47 +819,36 @@ Processing:	-[5%/10%/15%]
 In addition, decay touch is 50% more effective and strikes twice.</description>
     <jobString>crafting golem upgrade</jobString>
  	<researchPrerequisite>TM_HollowGolemEquipmentRD</researchPrerequisite>
-		<workAmount>30</workAmount>
-    <ingredients>
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>Steel</li>
-          </thingDefs>
-        </filter>
-        <count>10</count>
-      </li> 
-    </ingredients>
-	<!-- <skillRequirements>
-	  <Crafting>10</Crafting>
+	<skillRequirements>
+	  <Crafting>6</Crafting>
     </skillRequirements>
 	<workAmount>10000</workAmount>
     <ingredients>
 	  <li>
         <filter>
           <thingDefs>
-            <li>Gold</li>
+            <li>Jade</li>
           </thingDefs>
         </filter>
-        <count>10</count>
+        <count>30</count>
       </li> 
 	  <li>
         <filter>
           <thingDefs>
-            <li>ComponentSpacer</li>
+            <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>2</count>
+        <count>150</count>
       </li>
 	  <li>
         <filter>
           <thingDefs>
-            <li>Plasteel</li>
+            <li>AncientMail</li>
           </thingDefs>
         </filter>
-        <count>10</count>
+        <count>1</count>
       </li>
-    </ingredients> -->
+    </ingredients>
   </RecipeDef>
   
    <RecipeDef ParentName="HollowGolem_Recipe_Base">
@@ -1099,20 +858,9 @@ In addition, decay touch is 50% more effective and strikes twice.</description>
 Movement:	+[25/40/50]%
 Health:	+[40/60/75]%</description>
     <jobString>applying elemental affinity</jobString>
-		<workAmount>30</workAmount>
-    <ingredients>
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>Steel</li>
-          </thingDefs>
-        </filter>
-        <count>10</count>
-      </li> 
-    </ingredients>
-	<!-- <skillRequirements>
-	  <Crafting>8</Crafting>
-	  <Intellectual>6</Intellectual>
+	<skillRequirements>
+	  <Crafting>6</Crafting>
+	  <Intellectual>4</Intellectual>
     </skillRequirements>
 	<workAmount>12000</workAmount>
     <ingredients>
@@ -1122,16 +870,8 @@ Health:	+[40/60/75]%</description>
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>125</count>
+        <count>100</count>
       </li> 
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>ComponentIndustrial</li>
-          </thingDefs>
-        </filter>
-        <count>1</count>
-      </li>
 	  <li>
         <filter>
           <thingDefs>
@@ -1148,7 +888,7 @@ Health:	+[40/60/75]%</description>
         </filter>
         <count>100</count>
       </li>
-    </ingredients> -->
+    </ingredients>
   </RecipeDef>
   
   <RecipeDef ParentName="HollowGolem_Recipe_Base">
@@ -1158,20 +898,9 @@ Health:	+[40/60/75]%</description>
 Movement:	+[20/30/35]%
 Health:	+[50/75/90]%</description>
     <jobString>applying elemental affinity</jobString>
-		<workAmount>30</workAmount>
-    <ingredients>
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>Steel</li>
-          </thingDefs>
-        </filter>
-        <count>10</count>
-      </li> 
-    </ingredients>
-	<!-- <skillRequirements>
+	<skillRequirements>
 	  <Crafting>6</Crafting>
-	  <Intellectual>8</Intellectual>
+	  <Intellectual>4</Intellectual>
     </skillRequirements>
 	<workAmount>12000</workAmount>
     <ingredients>
@@ -1181,16 +910,8 @@ Health:	+[50/75/90]%</description>
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>125</count>
+        <count>100</count>
       </li> 
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>ComponentIndustrial</li>
-          </thingDefs>
-        </filter>
-        <count>1</count>
-      </li>
 	  <li>
         <filter>
           <thingDefs>
@@ -1207,7 +928,7 @@ Health:	+[50/75/90]%</description>
         </filter>
         <count>50</count>
       </li>
-    </ingredients> -->
+    </ingredients>
   </RecipeDef>
   
   <RecipeDef ParentName="HollowGolem_Recipe_Base">
@@ -1217,20 +938,9 @@ Health:	+[50/75/90]%</description>
 Movement:	+[15/25/30]%
 Health:	+[55/85/100]%</description>
     <jobString>applying elemental affinity</jobString>
-		<workAmount>30</workAmount>
-    <ingredients>
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>Steel</li>
-          </thingDefs>
-        </filter>
-        <count>10</count>
-      </li> 
-    </ingredients>
-	<!-- <skillRequirements>
+	<skillRequirements>
 	  <Crafting>4</Crafting>
-	  <Intellectual>10</Intellectual>
+	  <Intellectual>6</Intellectual>
     </skillRequirements>
 	<workAmount>12000</workAmount>
     <ingredients>
@@ -1240,16 +950,8 @@ Health:	+[55/85/100]%</description>
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>200</count>
+        <count>100</count>
       </li> 
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>ComponentIndustrial</li>
-          </thingDefs>
-        </filter>
-        <count>1</count>
-      </li>
 	  <li>
         <filter>
           <thingDefs>
@@ -1261,12 +963,12 @@ Health:	+[55/85/100]%</description>
 	  <li>
         <filter>
           <thingDefs>
-            <li>WoodLog</li>
+            <li>TM_EStone_arcaneRes_minor</li>
           </thingDefs>
         </filter>
-        <count>250</count>
+        <count>1</count>
       </li>
-    </ingredients> -->
+    </ingredients>
   </RecipeDef>
   
   <RecipeDef ParentName="HollowGolem_Recipe_Base">
@@ -1276,7 +978,11 @@ Health:	+[55/85/100]%</description>
 Movement:	+[10/15/20]%
 Health:	+[65/90/110]%</description>
     <jobString>crafting golem upgrade</jobString>	
-		<workAmount>30</workAmount>
+	<skillRequirements>
+	  <Crafting>5</Crafting>
+	  <Intellectual>5</Intellectual>
+    </skillRequirements>
+	<workAmount>12000</workAmount>
     <ingredients>
 	  <li>
         <filter>
@@ -1284,31 +990,8 @@ Health:	+[65/90/110]%</description>
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>10</count>
+        <count>100</count>
       </li> 
-    </ingredients>
-	<!-- <skillRequirements>
-	  <Crafting>7</Crafting>
-	  <Intellectual>7</Intellectual>
-    </skillRequirements>
-	<workAmount>12000</workAmount>
-    <ingredients>
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>Silver</li>
-          </thingDefs>
-        </filter>
-        <count>25</count>
-      </li> 
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>ComponentIndustrial</li>
-          </thingDefs>
-        </filter>
-        <count>1</count>
-      </li>
 	  <li>
         <filter>
           <thingDefs>
@@ -1320,12 +1003,12 @@ Health:	+[65/90/110]%</description>
 	  <li>
         <filter>
           <thingDefs>
-            <li>Gold</li>
+            <li>HoodOfMadness</li>
           </thingDefs>
         </filter>
-        <count>15</count>
+        <count>1</count>
       </li>
-    </ingredients> -->
+    </ingredients>
   </RecipeDef>
   
 </Defs>

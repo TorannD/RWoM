@@ -245,8 +245,7 @@ namespace TorannMagic.TMDefs
         {
             List<Pawn> enemies = TM_Calc.FindPawnsNearTarget(caster, (int)con.valueB, cell, true);
             if (enemies != null)
-            {
-                Log.Message(enemies.Count + " found in range of " + cell);
+            {               
                 return (con.invert ? enemies.Count < con.valueA : enemies.Count >= con.valueA);
             }
             return false;
