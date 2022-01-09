@@ -44,7 +44,7 @@ namespace TorannMagic.ModOptions
             Text.Font = GameFont.Small;
             GUI.color = Color.white;
             Rect rect1 = new Rect(inRect);
-            rect1.width /= 2.2f;
+            rect1.width /= 1.2f;
             num+=2;
             Rect rowRect0 = Controller.UIHelper.GetRowRect(rect1, rowHeight, num);
             Widgets.CheckboxLabeled(rowRect0, "TM_GolemShowDormantFrameWhileActive".Translate(), ref Settings.Instance.showDormantFrames, false);
@@ -52,6 +52,10 @@ namespace TorannMagic.ModOptions
             //Rect rowRect0ShiftRight = Controller.UIHelper.GetRowRect(rowRect0, rowHeight, num);
             //rowRect0ShiftRight.x += rowRect0.width + 98f;
             //Widgets.CheckboxLabeled(rowRect0ShiftRight, "TM_Wayfarer".Translate(), ref Settings.Instance.Wayfayer, false);
+            num++;
+            Rect rowRect1 = Controller.UIHelper.GetRowRect(rect1, rowHeight, num);
+            Widgets.CheckboxLabeled(rowRect1, "TM_GolemShowColonistBar".Translate(), ref Settings.Instance.showGolemsOnColonistBar, false);
+            TooltipHandler.TipRegion(rowRect1, "TM_GolemShowColonistBarDesc".Translate());            
             num++;
             Rect rowRect99 = UIHelper.GetRowRect(rect1, rowHeight, num);
             rowRect99.width = 100f;

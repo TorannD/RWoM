@@ -677,12 +677,26 @@ namespace TorannMagic.Golems
             {
                 Command_Action command_Action = new Command_Action();
                 command_Action.defaultLabel = "TM_ActivateGolem".Translate();
-                command_Action.defaultDesc = "TM_ActivateGolemDesc".Translate();
+                command_Action.defaultDesc = "TM_ActivateGolemDesc".Translate(GolemDef.minimumEnergyPctToActivate.ToString("P1"));
+                if(Energy.StoredEnergyPct < GolemDef.minimumEnergyPctToActivate)
+                {
+                    command_Action.defaultDescPostfix = "\n"+"TM_ActivateGolemDisabled".Translate();
+                }                
                 command_Action.icon = ContentFinder<Texture2D>.Get("UI/MoveOut", true);
                 command_Action.action = delegate
                 {
-                    activating = !activating;
+                    if(Energy.StoredEnergyPct >= GolemDef.minimumEnergyPctToActivate)
+                    {
+                        activating = !activating;
+                    }
+                    else
+                    {
+                        Vector3 pos = this.DrawPos;
+                        pos.z += .2f;
+                        MoteMaker.ThrowText(pos, this.Map, "TM_GolemMinimumToActivate".Translate(Energy.StoredEnergyPct.ToString("P"), GolemDef.minimumEnergyPctToActivate.ToString("P1")), -1);                        
+                    }
                 };
+                command_Action.disabled = (Energy.StoredEnergyPct < GolemDef.minimumEnergyPctToActivate);
                 yield return command_Action;
 
                 Command_Toggle command_Toggle = new Command_Toggle();

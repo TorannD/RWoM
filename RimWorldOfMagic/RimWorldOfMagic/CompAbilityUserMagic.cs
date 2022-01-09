@@ -2491,22 +2491,7 @@ namespace TorannMagic
                         if (!abilityUser.health.hediffSet.HasHediff(TorannMagicDefOf.TM_Uncertainty, false) && !Rand.Chance(ability.learnChance))
                         {
                             this.MagicData.AllMagicPowers[z].learned = false;
-                        }
-                        if(ability == TorannMagicDefOf.TM_Branding && abilityUser.story.traits.HasTrait(TorannMagicDefOf.TM_Golemancer))
-                        {
-                            int count = 0;
-                            while(count < 2)
-                            {
-                                TMAbilityDef tmpAbility = TM_Data.BrandList().RandomElement();
-                                MagicPower tmpPower = this.MagicData.ReturnMatchingMagicPower(tmpAbility);
-                                if(!tmpPower.learned)
-                                {
-                                    tmpPower.learned = true;
-                                    TryAddPawnAbility(tmpAbility);
-                                    count++;
-                                }
-                            }
-                        }
+                        }                        
                         if (this.MagicData.AllMagicPowers[z].learned)
                         {
                             if (ability.shouldInitialize)
@@ -2525,6 +2510,26 @@ namespace TorannMagic
                             }
                         }                        
                     }
+                    MagicPower branding = this.MagicData.AllMagicPowers.FirstOrDefault((MagicPower p) => p.abilityDef == TorannMagicDefOf.TM_Branding);
+                    if(branding != null && branding.learned && abilityUser.story.traits.HasTrait(TorannMagicDefOf.TM_Golemancer))
+                    {
+                        int count = 0;
+                        while (count < 2)
+                        {
+                            TMAbilityDef tmpAbility = TM_Data.BrandList().RandomElement();
+                            for (int i = 0; i < this.MagicData.AllMagicPowers.Count; i++)
+                            {
+                                TMAbilityDef ad = (TMAbilityDef)this.MagicData.AllMagicPowers[i].abilityDef;
+                                if (!this.MagicData.AllMagicPowers[i].learned && ad == tmpAbility)
+                                {
+                                    count++;
+                                    this.MagicData.AllMagicPowers[i].learned = true;
+                                    this.RemovePawnAbility(ad);
+                                    this.TryAddPawnAbility(ad);
+                                }
+                            }
+                        }
+                    }                    
                     if (this.customClass.classHediff != null)
                     {
                         HealthUtility.AdjustSeverity(abilityUser, this.customClass.classHediff, this.customClass.hediffSeverity);
@@ -3557,9 +3562,9 @@ namespace TorannMagic
                     //        this.MagicData.AllMagicPowersWithSkills[j].learned = false;
                     //        this.RemovePawnAbility(this.MagicData.AllMagicPowersWithSkills[j].abilityDef);
                     //    }
-                    //}
+                    //}                   
                     for (int j = 0; j < this.MagicData.AllMagicPowers.Count; j++)
-                    {
+                    {                       
                         if (this.MagicData.AllMagicPowers[j].learned && !this.customClass.classMageAbilities.Contains(this.MagicData.AllMagicPowers[j].abilityDef))
                         {
                             this.RemovePawnAbility(this.MagicData.AllMagicPowers[j].abilityDef);

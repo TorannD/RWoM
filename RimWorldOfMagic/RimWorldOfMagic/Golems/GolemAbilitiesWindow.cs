@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 using UnityEngine;
 using Verse;
 using RimWorld;
+using System.Diagnostics;
 
 namespace TorannMagic.Golems
 {
@@ -33,45 +35,55 @@ namespace TorannMagic.Golems
 
         public override void Close(bool doCloseSound = true)
         {
-            foreach(TM_GolemUpgrade gu in upgrades)
+            try
             {
-                if(gu.golemUpgradeDef.defName == "TM_Golem_HollowPGIce")
+                if (upgrades != null && upgrades.Count > 0)
                 {
-                    TMHollowGolem hg = cg.PawnGolem as TMHollowGolem;
-                    if(hg != null)
+                    foreach (TM_GolemUpgrade gu in upgrades)
                     {
-                        hg.hasSlipStreamUpgrade = gu.enabled;
+                        if (gu.golemUpgradeDef.defName == "TM_Golem_HollowPGIce")
+                        {
+                            TMHollowGolem hg = cg.PawnGolem as TMHollowGolem;
+                            if (hg != null)
+                            {
+                                hg.hasSlipStreamUpgrade = gu.enabled;
+                            }
+                        }
+                        else if (gu.golemUpgradeDef.defName == "TM_Golem_HollowPGDeath")
+                        {
+                            TMHollowGolem hg = cg.PawnGolem as TMHollowGolem;
+                            if (hg != null)
+                            {
+                                hg.hasDeathCloakUpgrade = gu.enabled;
+                            }
+                        }
+                        else if (gu.golemUpgradeDef.defName == "TM_Golem_HollowPGDoom")
+                        {
+                            TMHollowGolem hg = cg.PawnGolem as TMHollowGolem;
+                            if (hg != null)
+                            {
+                                hg.doomFieldHediffEnabled = gu.enabled;
+                            }
+                        }
+                        else if (gu.golemUpgradeDef.defName == "TM_Golem_HollowFGDeath")
+                        {
+                            TMHollowGolem hg = cg.PawnGolem as TMHollowGolem;
+                            if (hg != null)
+                            {
+                                hg.deathFieldHediffEnabled = gu.enabled;
+                            }
+                        }
                     }
-                }
-                else if(gu.golemUpgradeDef.defName == "TM_Golem_HollowPGDeath")
-                {
-                    TMHollowGolem hg = cg.PawnGolem as TMHollowGolem;
-                    if (hg != null)
+                    if (cg != null && cg.PawnGolem != null && cg.PawnGolem.Spawned)
                     {
-                        hg.hasDeathCloakUpgrade = gu.enabled;
-                    }
-                }
-                else if(gu.golemUpgradeDef.defName == "TM_Golem_HollowPGDoom")
-                {
-                    TMHollowGolem hg = cg.PawnGolem as TMHollowGolem;
-                    if (hg != null)
-                    {
-                        hg.doomFieldHediffEnabled = gu.enabled;
-                    }
-                }
-                else if (gu.golemUpgradeDef.defName == "TM_Golem_HollowFGDeath")
-                {
-                    TMHollowGolem hg = cg.PawnGolem as TMHollowGolem;
-                    if (hg != null)
-                    {
-                        hg.deathFieldHediffEnabled = gu.enabled;
+                        cg.PawnGolem.verbCommands.Clear();
+                        cg.PawnGolem.ValidRangedVerbs(true);
                     }
                 }
             }
-            if (cg.PawnGolem != null && cg.PawnGolem.Spawned)
+            catch(NullReferenceException ex)
             {
-                cg.PawnGolem.verbCommands.Clear();
-                cg.PawnGolem.ValidRangedVerbs(true);
+                base.Close(doCloseSound);
             }
             base.Close(doCloseSound);
         }

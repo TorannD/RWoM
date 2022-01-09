@@ -93,6 +93,10 @@ namespace TorannMagic
                     mount = ModCheck.GiddyUp.GetMount(this.pawn);
                     ModCheck.GiddyUp.ForceDismount(pawn);                    
                 }
+                if(pawnToSkip.carryTracker != null && pawnToSkip.carryTracker.CarriedThing != null)
+                {
+                    pawnToSkip.carryTracker.TryDropCarriedThing(pawnToSkip.Position, ThingPlaceMode.Near, out Thing _);
+                }
                 Thing pod = ThingMaker.MakeThing(TorannMagicDefOf.TM_LightPod, null);
                 CompLaunchable podL = pod.TryGetComp<CompLaunchable>();
                 CompTransporter podT = podL.Transporter;

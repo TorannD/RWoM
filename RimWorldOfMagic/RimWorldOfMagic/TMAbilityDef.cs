@@ -35,6 +35,9 @@ namespace TorannMagic
         public HediffDef requiredHediff = null;
         public float hediffCost = 0f;
         public float hediffXPFactor = 100f;
+        public InspirationDef requiredInspiration = null;
+        public bool requiresAnyInspiration = false;
+        public bool consumesInspiration = true;
 
         public List<TMAbilityDef> childAbilities = new List<TMAbilityDef>();
 
@@ -140,6 +143,10 @@ namespace TorannMagic
                                 if (p.equipment.Primary.def.defName == str)
                                 {
                                     return (cacheRestriction = false);
+                                }
+                                else if(TM_Calc.IsUsingCustomWeaponCategory(p, str))
+                                {
+
                                 }
                             }
                         }

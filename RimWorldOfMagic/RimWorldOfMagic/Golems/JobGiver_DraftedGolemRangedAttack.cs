@@ -38,7 +38,7 @@ namespace TorannMagic.Golems
                 Golem.threatTarget = threat;
                 if (pg.verbCommands != null && threat != null && pg.ValidRangedVerbs().Count > 0)
                 {
-                    Verb v = pg.ValidRangedVerbs().RandomElement();
+                    Verb v = pg.GetBestVerb;
                     if (v != null && (pg.Position - threat.Position).LengthHorizontal > v.verbProps.minRange)
                     {
                         return TM_GolemUtility.CreateRangedJob(pg, threat, v);

@@ -110,6 +110,10 @@ namespace TorannMagic
                                     continue;
                                 }
                             }
+                            if (tmpList[i].carryTracker != null && tmpList[i].carryTracker.CarriedThing != null)
+                            {
+                                tmpList[i].carryTracker.TryDropCarriedThing(tmpList[i].Position, ThingPlaceMode.Near, out Thing _);
+                            }
                             pawnList.Add(tmpList[i]);
                         }
                     }

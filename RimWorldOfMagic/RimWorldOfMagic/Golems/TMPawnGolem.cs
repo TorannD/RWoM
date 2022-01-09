@@ -98,35 +98,9 @@ namespace TorannMagic.Golems
                 {
                     if((Golem.HasEnergyForAbilities || v.verbProps.consumeFuelPerShot == 0) && Golem.Energy.CurLevel > v.verbProps.consumeFuelPerShot)
                     {
-                        if (verbList == null)
+                        if ((v.LastShotTick + (v.verbProps.defaultCooldownTime * 60f)) < Find.TickManager.TicksGame)
                         {
-                            verbList = new List<GolemVerbTracker>();
-                            verbList.Clear();
-                            GolemVerbTracker gvt = new GolemVerbTracker(v, Find.TickManager.TicksGame);
-                            verbList.Add(gvt);
                             return v;
-                        }
-                        else
-                        {
-                            bool verbFound = false;
-                            for (int i = 0; i < verbList.Count; i++)
-                            {
-                                if(verbList[i].verb == v)
-                                {
-                                    if ((verbList[i].lastUsedTick + v.verbProps.defaultCooldownTime) < Find.TickManager.TicksGame)
-                                    {
-                                        verbList[i].lastUsedTick = Find.TickManager.TicksGame;
-                                        return v;
-                                    }
-                                    verbFound = true;
-                                }
-                            }
-                            if (!verbFound)
-                            {
-                                GolemVerbTracker gvtNew = new GolemVerbTracker(v, Find.TickManager.TicksGame);
-                                verbList.Add(gvtNew);
-                                return v;
-                            }
                         }
                     }
                 }
@@ -235,7 +209,7 @@ namespace TorannMagic.Golems
             {
                 Kill(null, null);
             }
-            else if(Find.TickManager.TicksGame % 121 == 0 && this.CurJobDef == JobDefOf.Wait_Combat && ValidRangedVerbs().Count > 0)
+            else if(Find.TickManager.TicksGame % 67 == 0 && this.CurJobDef == JobDefOf.Wait_Combat && ValidRangedVerbs().Count > 0)
             {
                 JobGiver_DraftedGolemRangedAttack jg = new JobGiver_DraftedGolemRangedAttack();
                 Job rangedAttack = jg.TryGetJob(this);                
@@ -470,7 +444,6 @@ namespace TorannMagic.Golems
 
         public override IEnumerable<Gizmo> GetGizmos()
         {
-
             var gizmoList = base.GetGizmos().ToList();
 
             if (drafter != null)
@@ -511,6 +484,7 @@ namespace TorannMagic.Golems
             command_Despawn.icon = ContentFinder<Texture2D>.Get("UI/golem_icon", true);
             command_Despawn.action = delegate
             {
+                this.drafter.Drafted = false;
                 if (Golem.shouldDespawn)
                 {
                     Golem.despawnNow = true;
@@ -520,7 +494,7 @@ namespace TorannMagic.Golems
                     if (Golem.dormantPosition.Walkable(this.Map) && Golem.dormantPosition.Standable(this.Map))
                     {
                         this.jobs.ClearQueuedJobs(true);
-                        this.jobs.StopAll();
+                        this.jobs.StopAll();                        
                         Golem.shouldDespawn = true;
                     }
                     else
@@ -563,6 +537,7 @@ namespace TorannMagic.Golems
                 foreach (Verb v in this.ValidRangedVerbs())
                 {
                     gizmoList.Add(GetCommandVerbs(v));
+                    //gizmoList.Add((Gizmo)CreateVerbTargetCommand(this, v));
                 }
                 Command_Toggle command_Toggle = new Command_Toggle();
                 command_Toggle.defaultLabel = "CommandHoldFire".Translate();

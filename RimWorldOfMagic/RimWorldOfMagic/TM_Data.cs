@@ -299,6 +299,20 @@ namespace TorannMagic
             return magicFocis;
         }
 
+        public static List<string> CustomWeaponCategoryList(string listDefName)
+        {
+            List<string> customWeaponDefNames = new List<string>();
+            customWeaponDefNames.Clear();
+            IEnumerable<WeaponCategoryList> enumerable = from def in DefDatabase<WeaponCategoryList>.AllDefs
+                                                         where (def.defName == listDefName)
+                                                         select def;
+            foreach(WeaponCategoryList wcl in enumerable)
+            {
+                customWeaponDefNames.AddRange(wcl.weaponDefNames);
+            }
+            return customWeaponDefNames;
+        }
+
         public static List<ThingDef> BowList()
         {
             List<ThingDef> bows = new List<ThingDef>();

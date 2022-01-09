@@ -57,10 +57,14 @@ namespace TorannMagic
             }
             if(Find.TickManager.TicksGame % 150 == 0)
             {
-                this.Severity -= .025f * (1f - (.1f * herbEff));
+                this.Severity -= .015f * (1f - (.1f * herbEff));
                 if(Find.TickManager.TicksGame % 3000 == 0)
                 {
                     Initialize();
+                }
+                if(this.pawn.CurJobDef.defName == "PruneGauranlenTree")
+                {
+                    this.Severity += .4f * (1f + (.1f * herbVer));
                 }
             }
         }        

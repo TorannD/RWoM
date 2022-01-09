@@ -16,22 +16,35 @@ namespace TorannMagic.Golems
         protected override Job TryGiveJob(Pawn pawn)
         {
             CompGolem cg = pawn.TryGetComp<CompGolem>();
-            Pawn meleeThreat = TM_Calc.FindNearbyEnemy(pawn, Mathf.RoundToInt(cg.threatRange));
+            TMPawnGolem pg = pawn as TMPawnGolem;
+            Thing meleeThreat = pg.TargetCurrentlyAimingAt.Thing;
+            if (meleeThreat == null)
+            {
+                meleeThreat = cg.ActiveThreat;
+                if (meleeThreat == null)
+                {
+                    meleeThreat = TM_Calc.FindNearbyEnemy(pawn, Mathf.RoundToInt(cg.threatRange));
+                }
+            }           
             if (meleeThreat == null)
             {
                 return null;
             }
-            if (meleeThreat.IsInvisible())
+            if (meleeThreat is Pawn)
             {
-                return null;
-            }
-            if (IsHunting(pawn, meleeThreat))
-            {
-                return null;
-            }
-            if (IsDueling(pawn, meleeThreat))
-            {
-                return null;
+                Pawn meleeThreatPawn = meleeThreat as Pawn;
+                if (meleeThreatPawn.IsInvisible())
+                {
+                    return null;
+                }
+                if (IsHunting(pawn, meleeThreatPawn))
+                {
+                    return null;
+                }
+                if (IsDueling(pawn, meleeThreatPawn))
+                {
+                    return null;
+                }
             }
             if (PawnUtility.PlayerForcedJobNowOrSoon(pawn))
             {
@@ -42,17 +55,16 @@ namespace TorannMagic.Golems
                 return null;
             }
             if (!pawn.WorkTagIsDisabled(WorkTags.Violent))
-            {
-                TMPawnGolem pg = pawn as TMPawnGolem;
+            {                
                 if(pg.verbCommands != null && !pg.rangedToggle && pg.ValidRangedVerbs() != null && pg.ValidRangedVerbs().Count > 0)
                 {
-                    Verb v = pg.ValidRangedVerbs().RandomElement();
+                    Verb v = pg.GetBestVerb;
                     if (v != null && (pg.Position - meleeThreat.Position).LengthHorizontal > v.verbProps.minRange)
                     {
                         return TM_GolemUtility.CreateRangedJob(pg, meleeThreat, v);
                     }                    
                 }
-
+                cg.threatTarget = meleeThreat;
                 Job job = JobMaker.MakeJob(JobDefOf.AttackMelee, meleeThreat);
                 job.maxNumMeleeAttacks = 1;
                 job.expiryInterval = 300;

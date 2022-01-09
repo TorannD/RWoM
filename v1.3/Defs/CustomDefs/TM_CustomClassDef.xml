@@ -32,6 +32,7 @@
 			</classMageAbilities>
 			<learnableSpells>								<!-- learnable magic related skills, allows access to class related cantrips eg briar patch, master spells, etc -->
 			</learnableSpells>								<!-- entries should match the defName of the item used to learn the spell, eg "SpellOf_BriarPatch" -->
+			<canLearnCantrips>true</canLearnCantrips>		<!-- allow the class to learn stand-alone or classless mage abilities and cantrips (blink, dirt devil, heal, etc  -->
 			
 			<classFighterAbilities>							<!-- all fighter abilities available to the class -->
 				<li>TM_ShadowStrike</li>
@@ -40,6 +41,7 @@
 			</classFighterAbilities>
 			<learnableSkills>								<!-- learnable might related skills - currently all learnable might skills are open to every class -->
 			</learnableSkills>
+			<canLearnKnacks>true</canLearnKnacks>			<!-- allow the class to learn stand-alone or classless fighter abilities (gear repair, strong back, sprint, etc  -->
 			
 			<isMage>true</isMage>							<!-- assigns mana need, validation to execute magic related tasks, and determines prerequisite trait to become this type of class -->
 			<isFighter>true</isFighter>						<!-- assigns stamina need, validation to execute might related tasks, and determines prerequisite trait to become this type of class -->

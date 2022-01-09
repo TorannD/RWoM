@@ -15,6 +15,7 @@ namespace TorannMagic.Golems
         public int activationTicks = 240;
         public int processorEvaluationTicks = 100;
         public int shardLevel = 0;
+        public float minimumEnergyPctToActivate = .1f;
 
         public ThingDef workstationDef = null;
         public ThingDef pawnDef = null;
@@ -31,6 +32,7 @@ namespace TorannMagic.Golems
             Scribe_Values.Look<int>(ref activationTicks, "activationTicks", 240);
             Scribe_Values.Look<int>(ref processorEvaluationTicks, "processorEvaluationTicks", 100);
             Scribe_Values.Look<int>(ref shardLevel, "shardLevel", 0);
+            Scribe_Values.Look<float>(ref minimumEnergyPctToActivate, "minimumEnergyPctToActivate", .1f);
             Scribe_Collections.Look<TM_GolemUpgrade>(ref upgrades, "upgrades", LookMode.Deep);
             Scribe_Collections.Look<NeedDef>(ref needs, "needs", LookMode.Def);
             Scribe_Collections.Look<HediffDef>(ref hediffs, "hediffs", LookMode.Def);
@@ -46,6 +48,7 @@ namespace TorannMagic.Golems
             TM_GolemDef gd = TM_GolemUtility.GetGolemDefFromThing(thing);
             activationTicks = gd.activationTicks;
             processorEvaluationTicks = gd.processorEvaluationTicks;
+            minimumEnergyPctToActivate = gd.minimumEnergyPctToActivate;
             workstationDef = gd.golemWorkstationDef;
             pawnDef = gd.golemDef;
             if (gd.golemFramePath != null)
@@ -69,6 +72,7 @@ namespace TorannMagic.Golems
             TM_GolemDef gd = TM_GolemUtility.GetGolemDefFromThing(thing);
             activationTicks = gd.activationTicks;
             processorEvaluationTicks = gd.processorEvaluationTicks;
+            minimumEnergyPctToActivate = gd.minimumEnergyPctToActivate;
             workstationDef = gd.golemWorkstationDef;
             pawnDef = gd.golemDef;
             if (gd.golemFramePath != null)
@@ -80,7 +84,7 @@ namespace TorannMagic.Golems
             needs.Clear();
             needs.AddRange(gd.needs);
             hediffs.Clear();
-            hediffs.AddRange(gd.hediffs);
+            hediffs.AddRange(gd.hediffs);            
         }
 
         public Material GetGolemFrameMat(Thing thing)

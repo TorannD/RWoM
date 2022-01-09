@@ -57,6 +57,7 @@ namespace TorannMagic.ModOptions
 
         //golem options
         public bool showDormantFrames = Settings.Instance.showDormantFrames;
+        public bool showGolemsOnColonistBar = Settings.Instance.showGolemsOnColonistBar;
 
         //Class options
         public bool Arcanist = Settings.Instance.Arcanist;

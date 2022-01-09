@@ -136,6 +136,8 @@
     <requiredNeed>Joy</requiredNeed>
 	<needCost>.1</needCost>
 	<needXPFactor>1000</needXPFactor>
+	<requiresAnyInspiration>true</requiresAnyInspiration>
+	<consumesInspiration>true</consumesInspiration>
 	<learnChance>.4</learnChance>
 	<canCopy>false</canCopy>
 	<shouldInitialize>true</shouldInitialize>

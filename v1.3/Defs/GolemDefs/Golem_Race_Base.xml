@@ -629,7 +629,7 @@
         <defaultProjectile>Projectile_BlazingPower</defaultProjectile>
 		<linkedBodyPartsGroup>Hollow_Staff</linkedBodyPartsGroup>
         <warmupTime>1</warmupTime>
-		<defaultCooldownTime>130</defaultCooldownTime>
+		<defaultCooldownTime>2.1</defaultCooldownTime>
 		<minRange>5</minRange>
         <range>40</range>		
         <soundCast>TM_Woosh</soundCast>
@@ -650,7 +650,7 @@
         <defaultProjectile>Projectile_FireBlossomBolt</defaultProjectile>
 		<linkedBodyPartsGroup>Hollow_FocusGems</linkedBodyPartsGroup>
         <warmupTime>2</warmupTime>
-		<defaultCooldownTime>610</defaultCooldownTime>
+		<defaultCooldownTime>10.1</defaultCooldownTime>
 		<minRange>6</minRange>
         <range>50</range>
 		<accuracyLong>.9</accuracyLong>

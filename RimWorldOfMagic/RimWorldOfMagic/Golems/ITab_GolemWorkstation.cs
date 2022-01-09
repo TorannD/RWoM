@@ -182,7 +182,7 @@ namespace TorannMagic.Golems
                     num += 2;
 
                     Rect rectAwakeMinimum = GetRowRect(rect2, num);
-                    golem_building.GolemComp.energyPctShouldAwaken = Widgets.HorizontalSlider(rectAwakeMinimum, golem_building.GolemComp.energyPctShouldAwaken, 0f, 1f, false, "TM_GolemAwakenMinimum".Translate() + " " + golem_building.GolemComp.energyPctShouldAwaken.ToString("P2"), "0%", "100%", .01f);
+                    golem_building.GolemComp.energyPctShouldAwaken = Widgets.HorizontalSlider(rectAwakeMinimum, golem_building.GolemComp.energyPctShouldAwaken, .1f, 1f, false, "TM_GolemAwakenMinimum".Translate() + " " + TM_GolemUtility.ShouldAwkenString(golem_building.GolemComp.energyPctShouldAwaken), "10%", "100%", .01f);
                     TooltipHandler.TipRegion(rectAwakeMinimum, "TM_GolemAwakenMinimumDesc".Translate());
                     num += 2;                    
                 }

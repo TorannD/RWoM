@@ -22,6 +22,10 @@ namespace TorannMagic
                     restrictedTraits = this.parent.def.GetModExtension<DefModExtension_LearnAbilityRequiredTraits>().traits;
                 }
                 bool hasRequiredTrait = true;
+                if(comp.customClass != null && !comp.customClass.canLearnCantrips)
+                {
+                    hasRequiredTrait = false;
+                }
                 if (restrictedTraits != null && restrictedTraits.Count > 0)
                 {
                     hasRequiredTrait = false;

@@ -310,7 +310,7 @@
 		<tab>TMagic</tab>
 		<description>Combines electrical and mechanical engineering with golem craft to create a robotic golem. A machine table is expected to be required to craft the components of the mecha golem.</description>
 		<baseCost>2000</baseCost>
-		<techLevel>Neolithic</techLevel>
+		<techLevel>Industrial</techLevel>
 		<researchViewX>3.0</researchViewX>
 		<researchViewY>4</researchViewY>
 		<prerequisites>
@@ -325,7 +325,7 @@
 		<tab>TMagic</tab>
 		<description>Researches methods of crafting attachments and armor to further enhance the mecha golem.</description>
 		<baseCost>1500</baseCost>
-		<techLevel>Neolithic</techLevel>
+		<techLevel>Industrial</techLevel>
 		<researchViewX>4.0</researchViewX>
 		<researchViewY>4</researchViewY>
 		<prerequisites>

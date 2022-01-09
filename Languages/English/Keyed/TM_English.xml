@@ -9,6 +9,10 @@
 <TM_NotEnoughPsionicEnergy>{0} does not have enough psionic energy for {1}.</TM_NotEnoughPsionicEnergy>
 <TM_NotEnoughChi>{0} does not have enough ch'i to execute this ability.</TM_NotEnoughChi>
 <TM_NotEnoughEnergy>{0} does not have enough {1} to execute this ability.</TM_NotEnoughEnergy>
+<TM_NoRequiredNeed>{0} does not have the {1} need required to execute this ability.</TM_NoRequiredNeed>
+<TM_NoRequiredHediff>{0} does not have the {1} health effect required to execute this ability.</TM_NoRequiredHediff>
+<TM_NoRequiredInspiration>{0} does not have the {1} inspiration required to execute this ability.</TM_NoRequiredInspiration>
+<TM_NotInspired>{0} is not inspired.</TM_NotInspired>
 <MentalStateByPsyker>{0} overcome by a psychic assault.</MentalStateByPsyker>
 
 <TM_InvalidTarget>{0} found no valid target for ability {1}.</TM_InvalidTarget>
@@ -209,6 +213,7 @@
 <TM_NoRangedAttack>no ranged attack</TM_NoRangedAttack>
 <TM_GolemLight>Light</TM_GolemLight>
 <TM_GolemLightDesc>Toggle light</TM_GolemLightDesc>
+<TM_GolemMinimumToActivate>Insufficient energy to activate: {0} of {1}</TM_GolemMinimumToActivate>
 
 <!-- Surgery Failed letters -->
 <LetterLabelRegrowthSurgeryFail>Surgery Failed</LetterLabelRegrowthSurgeryFail>
@@ -337,6 +342,8 @@
 <TM_GolemOptions>Golem Options</TM_GolemOptions>
 <TM_GolemShowDormantFrameWhileActive>Show dormant frame</TM_GolemShowDormantFrameWhileActive>
 <TM_GolemShowDormantFrameWhileActiveDesc>Shows an outline of a dormant golem at their dormant position while the golem is active.</TM_GolemShowDormantFrameWhileActiveDesc>
+<TM_GolemShowColonistBar>Show golems on colonist bar</TM_GolemShowColonistBar>
+<TM_GolemShowColonistBarDesc>When enabled, golems will appear on the colonist bar along with other colonists. Applies to all golem types.</TM_GolemShowColonistBarDesc>
 
 <!-- Mod settings faction options -->
 <TM_FactionOptions>Faction Options</TM_FactionOptions>
@@ -2071,9 +2078,10 @@ Level 3: all 4 effects</TM_CombatDrugs_pwr_desc>
 **Once promoted, the pawn cannot become another fighter class, the decision is permanent and cannot be reverted - this includes the Wayfarer class.**</TM_PromoteWayfarerDesc>
 
 <TM_ActivateGolem>Activate</TM_ActivateGolem>
-<TM_ActivateGolemDesc>Begins the process to activate the golem - after activating, the golem will move about as a normal pawn. Any upgrades or repairs being performed in the dormat state will be discarded.</TM_ActivateGolemDesc>
+<TM_ActivateGolemDesc>Begins the process to activate the golem - after activating, the golem will move about as a normal pawn. Any upgrades or repairs being performed in the dormant state will be discarded. Requires a minimum of {0} energy to activate.</TM_ActivateGolemDesc>
 <TM_DeActivateGolem>Deactivate</TM_DeActivateGolem>
 <TM_DeActivateGolemDesc>Orders the golem to become dormant. The golem will attempt to return to its assigned dormant location. If this location is unreachable, the golem will deactivate at its current location. If the location is available, issuing this command a second time will override the return command and immediately deactivate the golem at it's current position.</TM_DeActivateGolemDesc>
+<TM_ActivateGolemDisabled>Disabled - insufficient energy</TM_ActivateGolemDisabled>
 <TM_AssignGolemRestPosition>Dormant position</TM_AssignGolemRestPosition>
 <TM_AssignGolemRestPositionDesc>Assigns the location the golem should deactivate.</TM_AssignGolemRestPositionDesc>
 <TM_DormantPositionUnreachable>Selected position is unreachable or occupied - canceling</TM_DormantPositionUnreachable>
@@ -2088,9 +2096,9 @@ Level 3: all 4 effects</TM_CombatDrugs_pwr_desc>
 <TM_GolemAbilityMinimum>Ability threshold: </TM_GolemAbilityMinimum>
 <TM_GolemAbilityMinimumDesc>Determines the minimum energy percent required to use abilities that cost energy; the golem will not use abilities that require energy if the energy percent is less than this value. Setting this value to 100% will disable ability use.</TM_GolemAbilityMinimumDesc>
 <TM_GolemRestMinimum>Rest threshold: </TM_GolemRestMinimum>
-<TM_GolemRestMinimumDesc>The energy percent that the golem will attempt to return to its dormant position to de-activate and recharge energy; the golem will de-activate at 0%.</TM_GolemRestMinimumDesc>
+<TM_GolemRestMinimumDesc>The energy percent that the golem will attempt to return to its dormant position to de-activate and recharge energy; the golem will automatically de-activate at 0%.</TM_GolemRestMinimumDesc>
 <TM_GolemAwakenMinimum>Activate threshold: </TM_GolemAwakenMinimum>
-<TM_GolemAwakenMinimumDesc>The energy percent at which that the golem will activate to perform tasks; set to 0% to disable automatic activation.</TM_GolemAwakenMinimumDesc>
+<TM_GolemAwakenMinimumDesc>The energy percent at which that the golem will activate to perform tasks; set to 10% or less to disable automatic activation.</TM_GolemAwakenMinimumDesc>
 <TM_GolemMasterDesc>Assigns a golemancer as the master of this golem; assigning a master allows the golem improved behavior to protect the assigned golemancer.</TM_GolemMasterDesc>
 <TM_GolemFollowsMaster>Follow master</TM_GolemFollowsMaster>
 <TM_GolemFollowsMasterDesc>When enabled, the golem will prioritize following and protecting its master above all other work related tasks.</TM_GolemFollowsMasterDesc>
@@ -2133,6 +2141,7 @@ Level 3: all 4 effects</TM_CombatDrugs_pwr_desc>
 <TM_GolemAbilityEnabledDesc>Toggles use of {0}: {1}</TM_GolemAbilityEnabledDesc>
 <TM_GolemShowDormant>Show Dormant Frame</TM_GolemShowDormant>
 <TM_GolemShowDormantDesc>Shows a frame over this golem's dormant position. Use the mod options menu to toggle this for all golems.</TM_GolemShowDormantDesc>
+
 
 <!-- ============ Enchantment Labels =============-->
 <TM_MaxMPLabel>Max Energy Increase: {0}&#37;</TM_MaxMPLabel>

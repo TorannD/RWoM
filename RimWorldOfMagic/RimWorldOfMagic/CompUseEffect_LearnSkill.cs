@@ -21,6 +21,10 @@ namespace TorannMagic
                     restrictedTraits = this.parent.def.GetModExtension<DefModExtension_LearnAbilityRequiredTraits>().traits;
                 }
                 bool hasRequiredTrait = true;
+                if(comp.customClass != null && !comp.customClass.canLearnKnacks)
+                {
+                    hasRequiredTrait = false;
+                }
                 if (restrictedTraits != null && restrictedTraits.Count > 0)
                 {
                     hasRequiredTrait = false;
@@ -41,7 +45,7 @@ namespace TorannMagic
                         if (ad.learnItem == parent.def)
                         {                            
                             if (!TM_Data.RestrictedAbilities.Contains(parent.def) && !comp.MightData.AllMightPowers[i].learned && hasRequiredTrait)
-                            {
+                            {                                
                                 itemUsed = true;
                                 comp.MightData.AllMightPowers[i].learned = true;
                                 comp.InitializeSkill();

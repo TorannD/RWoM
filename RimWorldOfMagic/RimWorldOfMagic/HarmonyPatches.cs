@@ -18,7 +18,6 @@ using TorannMagic.TMDefs;
 using TorannMagic.Golems;
 using RimWorld.QuestGen;
 using System.Diagnostics;
-using System.Runtime.CompilerServices;
 
 namespace TorannMagic
 {
@@ -86,7 +85,7 @@ namespace TorannMagic
             harmonyInstance.Patch(AccessTools.Method(typeof(MentalBreaker), "get_CanDoRandomMentalBreaks", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_CanDoRandomMentalBreaks", null), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(Pawn), "get_IsFreeNonSlaveColonist", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_IsFreeNonSlaveColonist_Golem", null));
             //harmonyInstance.Patch(AccessTools.Method(typeof(RaceProperties), "get_Humanlike", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_Humanlike_Golem", null), null);
-            //harmonyInstance.Patch(AccessTools.Method(typeof(MainTabWindow_Animals), "get_Pawns", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_GolemsAsAnimals", null), null);
+            harmonyInstance.Patch(AccessTools.Method(typeof(MainTabWindow_Animals), "get_Pawns", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_GolemsAsAnimals", null), null);
 
             harmonyInstance.Patch(AccessTools.Method(typeof(GenDraw), "DrawRadiusRing", new Type[]
                 {
@@ -391,7 +390,7 @@ namespace TorannMagic
                     }
                 }
             }
-        }
+        }       
 
         public static void Get_IsFreeNonSlaveColonist_Golem(Pawn __instance, ref bool __result)
         {
@@ -864,16 +863,16 @@ namespace TorannMagic
             }
         }
 
-        //public static void Get_GolemsAsAnimals(MainTabWindow_Animals __instance, ref IEnumerable<Pawn> __result)
-        //{
-        //    IEnumerable<Pawn> Golems = from p in Find.CurrentMap.mapPawns.PawnsInFaction(Faction.OfPlayer)
-        //                               where p.def.thingClass == typeof(TMPawnGolem)
-        //                               select p;
-        //    if (Golems != null)
-        //    {
-        //        __result.ToList().AddRange(Golems);
-        //    }
-        //}
+        public static void Get_GolemsAsAnimals(MainTabWindow_Animals __instance, ref IEnumerable<Pawn> __result)
+        {
+            IEnumerable<Pawn> Golems = from p in Find.CurrentMap.mapPawns.PawnsInFaction(Faction.OfPlayer)
+                                       where p is TMPawnGolem
+                                       select p;
+            if (Golems != null)
+            {
+                __result.ToList().AddRange(Golems);
+            }
+        }
 
         public static bool Get_WindSpeed(WindManager __instance, Map ___map, ref float __result)
         {
@@ -1010,9 +1009,9 @@ namespace TorannMagic
 
         public static void GolemVerb_AdjustedCooldown_Postfix(VerbProperties __instance, Pawn attacker, ref float __result)
         {
-            if(attacker is TMPawnGolem && __instance != null && __instance.range >= 2 && __instance.defaultProjectile != null)
+            if (attacker is TMPawnGolem && __instance != null && __instance.range >= 2 && __instance.defaultProjectile != null)
             {
-                __result = 0;   
+                __result = .1f;
             }
         }
 
@@ -2719,7 +2718,7 @@ namespace TorannMagic
 
         public static bool Get_Staggered(Pawn_StanceTracker __instance, ref bool __result)
         {
-            if (__instance.pawn.def == TorannMagicDefOf.TM_DemonR)
+            if (__instance.pawn.def == TorannMagicDefOf.TM_DemonR || __instance.pawn.def == TorannMagicDefOf.TM_HollowGolem)
             {
                 __result = false;
                 return false;
@@ -2737,7 +2736,7 @@ namespace TorannMagic
 
         public static bool StaggerFor_Patch(Pawn_StanceTracker __instance, int ticks)
         {
-            if (__instance.pawn.def == TorannMagicDefOf.TM_DemonR)
+            if (__instance.pawn.def == TorannMagicDefOf.TM_DemonR || __instance.pawn.def == TorannMagicDefOf.TM_HollowGolem)
             {
                 return false;
             }
@@ -6224,6 +6223,30 @@ namespace TorannMagic
                     return false;
                 }
                 return true;
+            }
+        }
+
+        [HarmonyPatch(typeof(PlayerPawnsDisplayOrderUtility), "Sort", null)]
+        public class GolemColonistBarInjection_Patch
+        {
+            public static void Postfix(ref List<Pawn> pawns) 
+            {
+                if (ModOptions.Settings.Instance.showGolemsOnColonistBar)
+                {
+                    List<Map> maps = Find.Maps;
+                    foreach (Map m in maps)
+                    {
+                        List<Pawn> mapPawns = m.mapPawns.AllPawnsSpawned;
+                        foreach (Pawn p in mapPawns)
+                        {
+                            TMPawnGolem pg = p as TMPawnGolem;
+                            if (pg != null && pg.Faction.IsPlayer && !pawns.Contains(pg))
+                            {
+                                pawns.Add(pg);
+                            }
+                        }
+                    }
+                }
             }
         }
 

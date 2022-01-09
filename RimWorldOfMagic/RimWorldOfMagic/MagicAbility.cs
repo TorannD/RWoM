@@ -160,10 +160,10 @@ namespace TorannMagic
                 }
                 if (magicDef.requiredHediff != null)
                 {
-                    if (this.Pawn.health != null && this.Pawn.health.hediffSet != null && this.Pawn.health.hediffSet.HasHediff(magicDef.requiredHediff))
+                    Hediff reqHediff = TM_Calc.GetLinkedHediff(this.Pawn, magicDef.requiredHediff);
+                    if (reqHediff != null)
                     {
-                        Hediff hd = this.Pawn.health.hediffSet.GetFirstHediffOfDef(magicDef.requiredHediff);
-                        hd.Severity -= ActualHediffCost(magicDef, this.MagicUser);
+                        reqHediff.Severity -= ActualHediffCost(magicDef, this.MagicUser);
                         this.MagicUser.MagicUserXP += (int)((magicDef.hediffXPFactor * this.MagicUser.xpGain * settingsRef.xpMultiplier) * magicDef.hediffCost);
                     }
                     else
@@ -182,6 +182,13 @@ namespace TorannMagic
                     else
                     {
                         Log.Warning("" + this.Pawn.LabelShort + " attempted to use an ability requiring the need " + magicDef.requiredNeed.label + " but does not have the need; should never happen since we required the need to use the ability.");
+                    }
+                }
+                if((magicDef.requiredInspiration != null || magicDef.requiresAnyInspiration) && magicDef.consumesInspiration)
+                {
+                    if (this.Pawn.mindState != null && this.Pawn.mindState.inspirationHandler != null && this.Pawn.Inspiration != null)
+                    {
+                        this.Pawn.mindState.inspirationHandler.EndInspiration(this.Pawn.Inspiration);
                     }
                 }
             }                       
@@ -384,25 +391,89 @@ namespace TorannMagic
                             result = false;
                             return result;
                         }
-                        bool flagNeed = magicDef.requiredNeed != null && this.MagicUser.Pawn.needs.TryGetNeed(magicDef.requiredNeed) != null && this.MagicUser.Pawn.needs.TryGetNeed(magicDef.requiredNeed).CurLevel < ActualNeedCost(magicDef, MagicUser);
+                        bool flagNeed = magicDef.requiredNeed != null; ;
                         if(flagNeed)
                         {
-                            reason = "TM_NotEnoughEnergy".Translate(
-                                base.Pawn.LabelShort,
-                                magicDef.requiredNeed.label
-                            );
-                            result = false;
-                            return result;
+                            if (this.MagicUser.Pawn.needs.TryGetNeed(magicDef.requiredNeed) != null)
+                            {
+                                if(this.MagicUser.Pawn.needs.TryGetNeed(magicDef.requiredNeed).CurLevel < ActualNeedCost(magicDef, MagicUser))
+                                {
+                                    reason = "TM_NotEnoughEnergy".Translate(
+                                        base.Pawn.LabelShort,
+                                        magicDef.requiredNeed.label
+                                    );
+                                    result = false;
+                                    return result;
+                                }
+                                //passes need requirements
+                            }
+                            else
+                            {
+                                reason = "TM_NoRequiredNeed".Translate(
+                                    base.Pawn.LabelShort,
+                                    magicDef.requiredNeed.label
+                                );
+                                result = false;
+                                return result;
+                            }
                         }
-                        bool flagHediff = magicDef.requiredHediff != null && this.MagicUser.Pawn.health.hediffSet.HasHediff(magicDef.requiredHediff) && this.MagicUser.Pawn.health.hediffSet.GetFirstHediffOfDef(magicDef.requiredHediff).Severity < ActualHediffCost(magicDef, MagicUser);
+
+                        bool flagHediff = magicDef.requiredHediff != null;
                         if (flagHediff)
                         {
-                            reason = "TM_NotEnoughEnergy".Translate(
-                                base.Pawn.LabelShort,
-                                magicDef.requiredHediff.label
-                            );
-                            result = false;
-                            return result;
+                            Hediff reqHediff = TM_Calc.GetLinkedHediff(base.Pawn, magicDef.requiredHediff);
+                            if (reqHediff != null)
+                            {
+                                if (reqHediff.Severity < ActualHediffCost(magicDef, MagicUser))
+                                {
+                                    reason = "TM_NotEnoughEnergy".Translate(
+                                        base.Pawn.LabelShort,
+                                        magicDef.requiredHediff.label
+                                    );
+                                    result = false;
+                                    return result;
+                                }
+                                //passes hediff requirements
+                            }
+                            else
+                            {
+                                reason = "TM_NoRequiredHediff".Translate(
+                                    base.Pawn.LabelShort,
+                                    magicDef.requiredNeed.label
+                                );
+                                result = false;
+                                return result;
+                            }                            
+                        }
+
+                        bool flagInspiration = magicDef.requiredInspiration != null;
+                        if (flagInspiration)
+                        {
+                            if (base.Pawn.mindState != null && base.Pawn.mindState.inspirationHandler != null && base.Pawn.InspirationDef != null && base.Pawn.mindState.inspirationHandler.CurStateDef == magicDef.requiredInspiration)
+                            {
+                                //passes hediff requirements
+                            }
+                            else
+                            {
+                                reason = "TM_NoRequiredInspiration".Translate(
+                                        base.Pawn.LabelShort,
+                                        magicDef.requiredInspiration.label
+                                    );
+                                result = false;
+                                return result;
+                            }
+                        }
+
+                        if (magicDef.requiresAnyInspiration)
+                        {
+                            if (!base.Pawn.Inspired)
+                            {
+                                reason = "TM_NotInspired".Translate(
+                                        base.Pawn.LabelShort
+                                    );
+                                result = false;
+                                return result;
+                            }
                         }
                     }
                     else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
@@ -426,15 +497,15 @@ namespace TorannMagic
                             tmad.label);
                         return false;
                     }
-                    if (magicDef == TorannMagicDefOf.TM_HarvestPassion && !Pawn.Inspired)
-                    {
-                        reason = "TM_MustHaveInspiration".Translate(
-                                base.Pawn.LabelShort,
-                                magicDef.label
-                            );
-                        result = false;
-                        return result;
-                    }
+                    //if (magicDef == TorannMagicDefOf.TM_HarvestPassion && !Pawn.Inspired)
+                    //{
+                    //    reason = "TM_MustHaveInspiration".Translate(
+                    //            base.Pawn.LabelShort,
+                    //            magicDef.label
+                    //        );
+                    //    result = false;
+                    //    return result;
+                    //}
                 }
                 List<Apparel> wornApparel = base.Pawn.apparel.WornApparel;
                 for (int i = 0; i < wornApparel.Count; i++)

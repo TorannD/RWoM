@@ -207,5 +207,14 @@ namespace TorannMagic.Golems
             pawn.TryGetComp<CompGolem>().threatTarget = target.Thing;
             return job;
         }
+
+        public static string ShouldAwkenString(float pct)
+        {
+            if (pct < .1f)
+            {
+                return "Never";
+            }
+            return pct.ToString("P2");
+        }
     }
 }

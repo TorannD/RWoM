@@ -626,7 +626,7 @@
 	  <requiresLoS>false</requiresLoS>	
 	  <includeSelf>true</includeSelf>
 	  <advancedConditionDefs>
-	    <li>TM_1EnemyWithin30Cells</li>
+	    <li>TM_1EnemyWithin15Cells</li>
 	  </advancedConditionDefs>
 	</autocasting>
   </TorannMagic.TMDefs.TM_GolemAbilityDef>

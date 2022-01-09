@@ -7,6 +7,7 @@
 		<golemDef>TM_MechaGolem</golemDef>
 		<golemKindDef>TM_MechaGolemK</golemKindDef>
 		<golemWorkstationDef>TM_MechaGolem_Workstation</golemWorkstationDef>
+		<golemFramePath>Golems/Mecha/Mecha-Golem_Workstation_Frame</golemFramePath>
 		<activationTicks>240</activationTicks>
 		<processorEvaluationTicks>100</processorEvaluationTicks>
 		<needs>
@@ -43,6 +44,7 @@
 		<golemDef>TM_FleshGolem</golemDef>
 		<golemKindDef>TM_FleshGolemK</golemKindDef>
 		<golemWorkstationDef>TM_FleshGolem_Workstation</golemWorkstationDef>
+		<golemFramePath>Golems/Flesh/FleshGolem_Workstation_Frame</golemFramePath>
 		<activationTicks>180</activationTicks>
 		<processorEvaluationTicks>60</processorEvaluationTicks>
 		<needs>

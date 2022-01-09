@@ -27,7 +27,7 @@ namespace TorannMagic
         {
             get
             {
-                bool flag = this.magicPowerCustom == null || !this.customPowersInitialized;
+                bool flag = this.magicPowerCustom == null;// || !this.customPowersInitialized;
                 if (flag)
                 {
                     this.customPowersInitialized = true;
@@ -74,14 +74,14 @@ namespace TorannMagic
                         {
                             if (hasSkills)
                             {
-                                MagicPowersCustom.Add(mp);
+                                magicPowerCustom.Add(mp);
                             }
-                            else
+                            else if(!MagicPowersCustomStandalone.Any((a => a.GetAbilityDef(0) == mp.GetAbilityDef(0))))
                             {
                                 MagicPowersCustomStandalone.Add(mp);
                             }
                         }
-                        if(hasSkills && current.customPower.chaosMageUseable)
+                        if(hasSkills && current.customPower.chaosMageUseable && !AllMagicPowersForChaosMage.Contains(mp))
                         {
                             this.AllMagicPowersForChaosMage.Add(mp);
                         }

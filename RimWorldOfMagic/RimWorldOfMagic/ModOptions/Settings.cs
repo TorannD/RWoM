@@ -60,6 +60,7 @@ namespace TorannMagic.ModOptions
 
         //Golem options
         public bool showDormantFrames = false;
+        public bool showGolemsOnColonistBar = false;
 
         //class options
         public bool Arcanist = true;
@@ -166,6 +167,7 @@ namespace TorannMagic.ModOptions
             Scribe_Values.Look<bool>(ref this.autocastQueueing, "autocastQueueing", false, false);
 
             Scribe_Values.Look<bool>(ref this.showDormantFrames, "showDormantFrames", false, false);
+            Scribe_Values.Look<bool>(ref this.showGolemsOnColonistBar, "showGolemsOnColonistBar", false, false);
 
             Scribe_Values.Look<bool>(ref this.Arcanist, "Arcanist", true, false);
             Scribe_Values.Look<bool>(ref this.FireMage, "FireMage", true, false);

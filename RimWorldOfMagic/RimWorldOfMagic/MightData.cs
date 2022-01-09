@@ -27,7 +27,7 @@ namespace TorannMagic
         {
             get
             {
-                bool flag = this.mightPowerCustom == null || !this.customPowersInitialized;
+                bool flag = this.mightPowerCustom == null; // || !this.customPowersInitialized;
                 if (flag)
                 {
                     this.customPowersInitialized = true;
@@ -50,8 +50,7 @@ namespace TorannMagic
                         if (!mightPowerCustom.Any(a => a.GetAbilityDef(0) == mp.GetAbilityDef(0)))
                         {
                             newPower = true;
-                        } 
-                        
+                        }                         
                         bool hasSkills = false;
                         if (current.customPower.skills != null)
                         {
@@ -73,7 +72,7 @@ namespace TorannMagic
                             {
                                 mightPowerCustom.Add(mp);
                             }
-                            else
+                            else if(!MightPowersCustomStandalone.Any((a => a.GetAbilityDef(0) == mp.GetAbilityDef(0))))
                             {
                                 mightPowerCustomStandalone.Add(mp);
                             }

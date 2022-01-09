@@ -4,7 +4,7 @@
 
   <HediffDef >
     <defName>TM_HateHD</defName>
-	<hediffClass>HediffWithComps</hediffClass>
+	<hediffClass>TorannMagic.HediffWithCompsExtra</hediffClass>
 	<label>Hate</label>
 	<description>Accounts for the unique energy and abilities utilized by a death knight.</description>
     <defaultLabelColor>(0.6,0,0.0)</defaultLabelColor>
@@ -92,7 +92,7 @@
   
   <HediffDef >
     <defName>TM_HateHD_I</defName>
-	<hediffClass>HediffWithComps</hediffClass>
+	<hediffClass>TorannMagic.HediffWithCompsExtra</hediffClass>
 	<label>Hate</label>
 	<description>Accounts for the unique energy and abilities utilized by a death knight.</description>
     <defaultLabelColor>(0.6,0,0.0)</defaultLabelColor>
@@ -180,7 +180,7 @@
   
   <HediffDef >
     <defName>TM_HateHD_II</defName>
-	<hediffClass>HediffWithComps</hediffClass>
+	<hediffClass>TorannMagic.HediffWithCompsExtra</hediffClass>
 	<label>Hate</label>
 	<description>Accounts for the unique energy and abilities utilized by a death knight.</description>
     <defaultLabelColor>(0.6,0,0.0)</defaultLabelColor>
@@ -268,7 +268,7 @@
   
   <HediffDef >
     <defName>TM_HateHD_III</defName>
-	<hediffClass>HediffWithComps</hediffClass>
+	<hediffClass>TorannMagic.HediffWithCompsExtra</hediffClass>
 	<label>Hate</label>
 	<description>Accounts for the unique energy and abilities utilized by a death knight.</description>
     <defaultLabelColor>(0.6,0,0.0)</defaultLabelColor>
@@ -356,7 +356,7 @@
   
   <HediffDef >
     <defName>TM_HateHD_IV</defName>
-	<hediffClass>HediffWithComps</hediffClass>
+	<hediffClass>TorannMagic.HediffWithCompsExtra</hediffClass>
 	<label>Hate</label>
 	<description>Accounts for the unique energy and abilities utilized by a death knight.</description>
     <defaultLabelColor>(0.6,0,0.0)</defaultLabelColor>
@@ -444,7 +444,7 @@
   
   <HediffDef >
     <defName>TM_HateHD_V</defName>
-	<hediffClass>HediffWithComps</hediffClass>
+	<hediffClass>TorannMagic.HediffWithCompsExtra</hediffClass>
 	<label>Hate</label>
 	<description>Accounts for the unique energy and abilities utilized by a death knight.</description>
     <defaultLabelColor>(0.6,0,0.0)</defaultLabelColor>

@@ -43,6 +43,10 @@ namespace TorannMagic.Golems
                     TMPawnGolem gp = pawn as TMPawnGolem;
                     attackVerb = gp.activeVerb;
                 }
+                if(this.job.verbToUse != null)
+                {
+                    attackVerb = this.job.verbToUse;
+                }
                 pawn.pather.StopDead();
             };
             init.tickAction = delegate
@@ -106,9 +110,14 @@ namespace TorannMagic.Golems
                 return false;
             }
             TMPawnGolem pg = pawn as TMPawnGolem;
-            Verb v = pg.GetBestVerb;            
+            Verb v = verb != null ? verb : pg.GetBestVerb;     
+            if((v.LastShotTick + (v.verbProps.defaultCooldownTime * 60)) >= Find.TickManager.TicksGame)
+            {
+                v = pg.GetBestVerb;
+            }
             if (v != null)
             {
+                Log.Message("starting attack with verb " + v.verbProps.verbClass.ToString());
                 attackVerb = v;                
                 pg.Golem.Energy.SubtractEnergy(v.verbProps.consumeFuelPerShot);
                 pg.drawTickFlag = v.verbProps.consumeFuelPerShot > 0;

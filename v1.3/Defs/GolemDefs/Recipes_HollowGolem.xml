@@ -8,18 +8,6 @@
     <label>Part restoration</label>
     <description>Replaces missing golem parts that do not require an upgrade.</description>
     <jobString>crafting golem part</jobString>
-	<workAmount>30</workAmount>
-    <ingredients>
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>Steel</li>
-          </thingDefs>
-        </filter>
-        <count>10</count>
-      </li> 
-    </ingredients>
-<!-- 	<researchPrerequisite>TM_MechaGolemEquipmentRD</researchPrerequisite>
 	<skillRequirements>
 	  <Intellectual>6</Intellectual>
     </skillRequirements>
@@ -41,7 +29,7 @@
         </filter>
         <count>50</count>
       </li>
-    </ingredients> -->
+    </ingredients>
   </RecipeDef>
   
   <RecipeDef ParentName="HollowGolem_Recipe_Base">
@@ -49,18 +37,7 @@
     <label>mana cell</label>
     <description>Creates a mana pocket for storing additional mana.</description>
     <jobString>creating mana pocket</jobString>
-	<workAmount>30</workAmount>
-    <ingredients>
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>Steel</li>
-          </thingDefs>
-        </filter>
-        <count>10</count>
-      </li> 
-    </ingredients>
-	<!-- <workAmount>3000</workAmount>
+	<workAmount>3000</workAmount>
     <ingredients>
 	  <li>
         <filter>
@@ -86,26 +63,15 @@
         </filter>
         <count>10</count>
       </li>
-    </ingredients> -->
+    </ingredients>
   </RecipeDef>
   
   <RecipeDef ParentName="HollowGolem_Recipe_Base">
     <defName>TM_HollowGolem_EnergyConverter</defName>
     <label>mana converter</label>
     <description>Increases the efficiency of mana absorbed and used by the golem by 10%.</description>
-    <jobString>crafting mana filter</jobString>
-	<workAmount>30</workAmount>
-    <ingredients>
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>Steel</li>
-          </thingDefs>
-        </filter>
-        <count>10</count>
-      </li> 
-    </ingredients>
-	<!-- <workAmount>3000</workAmount>
+    <jobString>crafting mana filter</jobString>	
+	<workAmount>3000</workAmount>
     <ingredients>
 	  <li>
         <filter>
@@ -123,26 +89,15 @@
         </filter>
         <count>250</count>
       </li>
-    </ingredients> -->
+    </ingredients>
   </RecipeDef>
   
   <RecipeDef ParentName="HollowGolem_Recipe_Base">
     <defName>TM_HollowGolem_EnergyCharge</defName>
     <label>mana polarity</label>
     <description>Increases the mana regeneration rate of the golem by 6 per hour.</description>
-    <jobString>aligning mana polarities</jobString>
-	<workAmount>30</workAmount>
-    <ingredients>
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>Steel</li>
-          </thingDefs>
-        </filter>
-        <count>10</count>
-      </li> 
-    </ingredients>
-	<!-- <workAmount>3000</workAmount>
+    <jobString>aligning mana polarities</jobString>	
+	<workAmount>3000</workAmount>
     <ingredients>
 	  <li>
         <filter>
@@ -160,7 +115,7 @@
         </filter>
         <count>50</count>
       </li>
-    </ingredients> -->
+    </ingredients>
   </RecipeDef>
 
   <RecipeDef ParentName="HollowGolem_Recipe_Base">
@@ -169,18 +124,7 @@
     <description>Fuses a thrumbo axe to the arcane extremities of the hollow golem. When swung, this axe releases a wave of arcane energy that is capable cleaving through multiple foes and almost any armor.</description>
     <jobString>crafting hollow axe</jobString>
  	<researchPrerequisite>TM_HollowGolemEquipmentRD</researchPrerequisite>
-		<workAmount>30</workAmount>
-    <ingredients>
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>Steel</li>
-          </thingDefs>
-        </filter>
-        <count>10</count>
-      </li> 
-    </ingredients>
-	<!-- <skillRequirements>
+	<skillRequirements>
 	  <Crafting>10</Crafting>
     </skillRequirements>
 	<workAmount>8000</workAmount>
@@ -209,27 +153,16 @@
         </filter>
         <count>1</count>
       </li>
-    </ingredients> -->
+    </ingredients>
   </RecipeDef>
   
     <RecipeDef ParentName="HollowGolem_Recipe_Base">
     <defName>TM_HollowGolem_Staff</defName>
     <label>Hollowed Staff</label>
-    <description>Fuses a staff of blazing power and staff of the defender to the hollow golem creating the hollowed staff. The hollow golem can use this staff to launch magical projectiles without consuming energy.</description>
+    <description>Fuses a staff of blazing power and staff of the defender to the hollow golem, creating the hollowed staff. The hollow golem can use this staff to launch magical projectiles without consuming energy.</description>
     <jobString>crafting hollow staff</jobString>
- 	<researchPrerequisite>TM_HollowGolemArtifactsRD</researchPrerequisite>
-		<workAmount>30</workAmount>
-    <ingredients>
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>Steel</li>
-          </thingDefs>
-        </filter>
-        <count>10</count>
-      </li> 
-    </ingredients>
-	<!-- <skillRequirements>
+ 	<researchPrerequisite>TM_HollowGolemArtifactsRD</researchPrerequisite>	
+	<skillRequirements>
 	  <Crafting>6</Crafting>
 	  <Intellectual>8</Intellectual>
     </skillRequirements>
@@ -251,7 +184,7 @@
         </filter>
         <count>1</count>
       </li> 
-    </ingredients> -->
+    </ingredients>
   </RecipeDef> 
   
   <RecipeDef ParentName="HollowGolem_Recipe_Base">
@@ -263,18 +196,7 @@ Sharp:	+32%
 Heat:	+14%</description>
     <jobString>crafting golem part</jobString>
  	<researchPrerequisite>TM_HollowGolemEquipmentRD</researchPrerequisite>
-		<workAmount>30</workAmount>
-    <ingredients>
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>Steel</li>
-          </thingDefs>
-        </filter>
-        <count>10</count>
-      </li> 
-    </ingredients>
-	<!-- <skillRequirements>
+	<skillRequirements>
 	  <Crafting>10</Crafting>
     </skillRequirements>
 	<workAmount>12000</workAmount>
@@ -287,7 +209,7 @@ Heat:	+14%</description>
         </filter>
         <count>330</count>
       </li> 
-    </ingredients> -->
+    </ingredients>
   </RecipeDef>
   
   <RecipeDef ParentName="HollowGolem_Recipe_Base">
@@ -299,18 +221,7 @@ Sharp:	+7%
 Heat:	+9%</description>
     <jobString>crafting golem part</jobString>
  	<researchPrerequisite>TM_HollowGolemEquipmentRD</researchPrerequisite>
-		<workAmount>30</workAmount>
-    <ingredients>
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>Steel</li>
-          </thingDefs>
-        </filter>
-        <count>10</count>
-      </li> 
-    </ingredients>
-	<!-- <skillRequirements>
+	<skillRequirements>
 	  <Crafting>10</Crafting>
     </skillRequirements>
 	<workAmount>8000</workAmount>
@@ -323,7 +234,7 @@ Heat:	+9%</description>
         </filter>
         <count>190</count>
       </li> 
-    </ingredients> -->
+    </ingredients>
   </RecipeDef>
   
   <RecipeDef ParentName="HollowGolem_Recipe_Base">
@@ -335,18 +246,7 @@ Sharp:	+19%
 Heat:	+6%</description>
     <jobString>crafting golem part</jobString>
  	<researchPrerequisite>TM_HollowGolemEquipmentRD</researchPrerequisite>
-		<workAmount>30</workAmount>
-    <ingredients>
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>Steel</li>
-          </thingDefs>
-        </filter>
-        <count>10</count>
-      </li> 
-    </ingredients>
-	<!-- <skillRequirements>
+	<skillRequirements>
 	  <Crafting>10</Crafting>
     </skillRequirements>
 	<workAmount>8000</workAmount>
@@ -359,7 +259,7 @@ Heat:	+6%</description>
         </filter>
         <count>160</count>
       </li> 
-    </ingredients> -->
+    </ingredients>
   </RecipeDef>
   
   <RecipeDef ParentName="HollowGolem_Recipe_Base">
@@ -368,18 +268,7 @@ Heat:	+6%</description>
     <description>Equips the hollow golem with the Crown of Awakening which allows it to detect and nullify magic of other pawns.</description>
     <jobString>crafting golem part</jobString>
  	<researchPrerequisite>TM_HollowGolemEquipmentRD</researchPrerequisite>
-		<workAmount>30</workAmount>
-    <ingredients>
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>Steel</li>
-          </thingDefs>
-        </filter>
-        <count>10</count>
-      </li> 
-    </ingredients>
-	<!-- <skillRequirements>
+	<skillRequirements>
 	  <Crafting>14</Crafting>
     </skillRequirements>
 	<workAmount>15000</workAmount>
@@ -408,7 +297,7 @@ Heat:	+6%</description>
         </filter>
         <count>10</count>
       </li> 
-    </ingredients> -->
+    </ingredients>
   </RecipeDef>
   
   <RecipeDef ParentName="HollowGolem_Recipe_Base">
@@ -425,18 +314,7 @@ Move Speed +.4c/s
 Ability: Fade</description>
     <jobString>crafting golem part</jobString>
  	<researchPrerequisite>TM_HollowGolemArtifactsRD</researchPrerequisite>
-		<workAmount>30</workAmount>
-    <ingredients>
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>Steel</li>
-          </thingDefs>
-        </filter>
-        <count>10</count>
-      </li> 
-    </ingredients>
-	<!-- <skillRequirements>
+	<skillRequirements>
 	  <Crafting>10</Crafting>
     </skillRequirements>
 	<workAmount>8000</workAmount>
@@ -465,7 +343,7 @@ Ability: Fade</description>
         </filter>
         <count>50</count>
       </li> 
-    </ingredients> -->
+    </ingredients>
   </RecipeDef>
   
   <RecipeDef ParentName="HollowGolem_Recipe_Base">

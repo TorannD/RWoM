@@ -513,7 +513,7 @@ namespace TorannMagic.Golems
                             UpdateGolemancerStatus();
                         }
 
-                        if (this.ShouldDespawnNow && !Pawn.IsBurning())
+                        if ((this.ShouldDespawnNow && !Pawn.IsBurning()) || Energy.CurLevel <= .1f)
                         {
                             DeSpawnGolem();
                             this.shouldDespawn = false;

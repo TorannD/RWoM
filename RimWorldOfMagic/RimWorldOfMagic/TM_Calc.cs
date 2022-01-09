@@ -181,6 +181,33 @@ namespace TorannMagic
             return false;
         }
 
+        public static Hediff GetLinkedHediff(Pawn p, HediffDef starter)
+        {
+            if(starter == null)
+            {
+                return null;
+            }
+            Hediff outHediff = null;
+            if(p != null && p.health != null && p.health.hediffSet != null)
+            {
+                if(p.health.hediffSet.HasHediff(starter, false))
+                {
+                    return p.health.hediffSet.GetFirstHediffOfDef(starter);
+                }
+                else
+                {
+                    foreach(Hediff h in p.health.hediffSet.hediffs)
+                    {
+                        if(h.def.defName.StartsWith(starter.defName))
+                        {
+                            return h;
+                        }
+                    }
+                }
+            }
+            return outHediff;
+        }
+
         public static bool IsWall(Thing t)
         {
             if(t != null && t is Building)
@@ -3745,6 +3772,21 @@ namespace TorannMagic
                     result = true;
                 }
                 else if (TM_Data.MagicFociList().Contains(wpn.def))
+                {
+                    //Log.Message("weapon found in custom defnames");
+                    result = true;
+                }
+            }
+            return result;
+        }
+
+        public static bool IsUsingCustomWeaponCategory(Pawn p, string str)
+        {
+            bool result = false;
+            if (p != null && p.equipment != null && p.equipment.Primary != null)
+            {
+                Thing wpn = p.equipment.Primary;
+                if (TM_Data.CustomWeaponCategoryList(str).Contains(wpn.def.defName))
                 {
                     //Log.Message("weapon found in custom defnames");
                     result = true;

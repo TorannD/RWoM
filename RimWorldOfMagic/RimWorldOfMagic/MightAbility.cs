@@ -153,10 +153,10 @@ namespace TorannMagic
                     }
                     if(mightDef.requiredHediff != null)
                     {
-                        if(this.Pawn.health != null && this.Pawn.health.hediffSet != null && this.Pawn.health.hediffSet.HasHediff(mightDef.requiredHediff))
+                        Hediff reqHediff = TM_Calc.GetLinkedHediff(this.Pawn, mightDef.requiredHediff);
+                        if (reqHediff != null)
                         {
-                            Hediff hd = this.Pawn.health.hediffSet.GetFirstHediffOfDef(mightDef.requiredHediff);
-                            hd.Severity -= ActualHediffCost(mightDef, this.MightUser);
+                            reqHediff.Severity -= ActualHediffCost(mightDef, this.MightUser);
                             this.MightUser.MightUserXP += (int)((mightDef.hediffXPFactor * this.MightUser.xpGain * settingsRef.xpMultiplier) * mightDef.hediffCost);
                         }
                         else
@@ -176,6 +176,10 @@ namespace TorannMagic
                         {
                             Log.Warning("" + this.Pawn.LabelShort + " attempted to use an ability requiring the need " + mightDef.requiredNeed.label + " but does not have the need; should never happen since we required the need to use the ability.");
                         }
+                    }
+                    if ((mightDef.requiredInspiration != null || mightDef.requiresAnyInspiration) && mightDef.consumesInspiration)
+                    {
+                        this.Pawn.mindState.inspirationHandler.EndInspiration(this.Pawn.Inspiration);
                     }
                 }
             }
@@ -479,35 +483,91 @@ namespace TorannMagic
                                 return result;
                             }
                         }
-                        bool flagNeed = mightDef.requiredNeed != null && this.MightUser.Pawn.needs.TryGetNeed(mightDef.requiredNeed) != null && this.MightUser.Pawn.needs.TryGetNeed(mightDef.requiredNeed).CurLevel < ActualNeedCost(mightDef, MightUser);
+                        bool flagNeed = mightDef.requiredNeed != null;
                         if (flagNeed)
                         {
-                            reason = "TM_NotEnoughEnergy".Translate(
-                                base.Pawn.LabelShort,
-                                mightDef.requiredNeed.label
-                            );
-                            result = false;
-                            return result;
-                        }
-                        bool flagHediff = mightDef.requiredHediff != null && this.MightUser.Pawn.health.hediffSet.HasHediff(mightDef.requiredHediff) && this.MightUser.Pawn.health.hediffSet.GetFirstHediffOfDef(mightDef.requiredHediff).Severity < ActualHediffCost(mightDef, MightUser);
+                            if (this.MightUser.Pawn.needs.TryGetNeed(mightDef.requiredNeed) != null)
+                            {
+                                if (this.MightUser.Pawn.needs.TryGetNeed(mightDef.requiredNeed).CurLevel < ActualNeedCost(mightDef, MightUser))
+                                {
+                                    reason = "TM_NotEnoughEnergy".Translate(
+                                        base.Pawn.LabelShort,
+                                        mightDef.requiredNeed.label
+                                    );
+                                    result = false;
+                                    return result;
+                                }
+                                //passes need requirements
+                            }
+                            else
+                            {
+                                reason = "TM_NoRequiredNeed".Translate(
+                                        base.Pawn.LabelShort,
+                                        mightDef.requiredNeed.label
+                                    );
+                                result = false;
+                                return result;
+                            }                            
+                        }                        
+                       
+                        bool flagHediff = mightDef.requiredHediff != null;
                         if (flagHediff)
                         {
-                            reason = "TM_NotEnoughEnergy".Translate(
-                                base.Pawn.LabelShort,
-                                mightDef.requiredHediff.label
-                            );
-                            result = false;
-                            return result;
+                            Hediff reqHediff = TM_Calc.GetLinkedHediff(base.Pawn, mightDef.requiredHediff);
+                            if (reqHediff != null)
+                            {
+                                if (reqHediff.Severity < ActualHediffCost(mightDef, MightUser))
+                                {
+                                    reason = "TM_NotEnoughEnergy".Translate(
+                                        base.Pawn.LabelShort,
+                                        mightDef.requiredHediff.label
+                                    );
+                                    result = false;
+                                    return result;
+                                }
+                                //passes hediff requirements
+                            }
+                            else
+                            {
+                                reason = "TM_NoRequiredHediff".Translate(
+                                        base.Pawn.LabelShort,
+                                        mightDef.requiredHediff.label
+                                    );
+                                result = false;
+                                return result;
+                            }
                         }
-                    }
-                    if(mightDef == TorannMagicDefOf.TM_HarvestPassion && !Pawn.Inspired)
-                    {
-                        reason = "TM_MustHaveInspiration".Translate(
-                                base.Pawn.LabelShort,
-                                mightDef.label
-                            );
-                        result = false;
-                        return result;
+                        
+                        bool flagInspiration = mightDef.requiredInspiration != null;
+                        if (flagInspiration)
+                        {
+                            if (base.Pawn.mindState.inspirationHandler != null && base.Pawn.mindState.inspirationHandler.CurStateDef == mightDef.requiredInspiration)
+                            {                                
+                                //passes hediff requirements
+                            }
+                            else
+                            {
+                                reason = "TM_NoRequiredInspiration".Translate(
+                                        base.Pawn.LabelShort
+                                    );
+                                result = false;
+                                return result;
+                            }
+                        }
+
+                        if(mightDef.requiresAnyInspiration)
+                        {
+                            if(!base.Pawn.Inspired)
+                            {
+                                reason = "TM_NotInspired".Translate(
+                                        base.Pawn.LabelShort,
+                                        mightDef.requiredInspiration.label
+                                    );
+                                result = false;
+                                return result;
+                            }
+                        }
+                        
                     }
                 }
                 if(MightUser.specWpnRegNum == -1 && 
