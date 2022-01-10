@@ -63,11 +63,11 @@ namespace TorannMagic
                         ModCheck.GiddyUp.ForceDismount(base.CasterPawn);
                     }
 
-                    //LongEventHandler.QueueLongEvent(delegate
-                    //{
-                    FlyingObject_DragonStrike flyingObject = (FlyingObject_DragonStrike)GenSpawn.Spawn(ThingDef.Named("FlyingObject_DragonStrike"), this.CasterPawn.Position, this.CasterPawn.Map);
+                    LongEventHandler.QueueLongEvent(delegate
+                    {
+                        FlyingObject_DragonStrike flyingObject = (FlyingObject_DragonStrike)GenSpawn.Spawn(ThingDef.Named("FlyingObject_DragonStrike"), this.CasterPawn.Position, this.CasterPawn.Map);
                     flyingObject.Launch(this.CasterPawn, t, this.CasterPawn, dinfo2);
-                    //}, "LaunchingFlyer", false, null);
+                    }, "LaunchingFlyer", false, null);
                 }
             }
         }

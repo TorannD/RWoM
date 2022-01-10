@@ -54,11 +54,11 @@ namespace TorannMagic
                 Thing eyeThing = new Thing();
                 eyeThing.def = TorannMagicDefOf.FlyingObject_EyeOfTheStorm;
                 Pawn casterPawn = base.CasterPawn;
-                //LongEventHandler.QueueLongEvent(delegate
-                //{
+                LongEventHandler.QueueLongEvent(delegate
+                {
                     FlyingObject_EyeOfTheStorm flyingObject = (FlyingObject_EyeOfTheStorm)GenSpawn.Spawn(ThingDef.Named("FlyingObject_EyeOfTheStorm"), this.CasterPawn.Position, this.CasterPawn.Map);
                     flyingObject.Launch(this.CasterPawn, t.Cell, eyeThing);
-                //}, "LaunchingFlyer", false, null);
+                }, "LaunchingFlyer", false, null);
             }
         }
 

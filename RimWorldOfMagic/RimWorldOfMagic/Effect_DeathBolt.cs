@@ -56,11 +56,11 @@ namespace TorannMagic
                     def = TorannMagicDefOf.FlyingObject_DeathBolt
                 };
                 Pawn casterPawn = base.CasterPawn;
-                //LongEventHandler.QueueLongEvent(delegate
-                //{
+                LongEventHandler.QueueLongEvent(delegate
+                {
                     FlyingObject_DeathBolt flyingObject = (FlyingObject_DeathBolt)GenSpawn.Spawn(ThingDef.Named("FlyingObject_DeathBolt"), this.CasterPawn.Position, this.CasterPawn.Map);
                     flyingObject.Launch(this.CasterPawn, t.Cell, launchedThing);
-                //}, "LaunchingFlyer", false, null);
+                }, "LaunchingFlyer", false, null);
             }
         }
 
