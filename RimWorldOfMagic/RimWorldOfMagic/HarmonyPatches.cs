@@ -578,7 +578,7 @@ namespace TorannMagic
         {
             private static void Postfix(Pawn_JobTracker __instance,  ref bool __result)
             {
-                if(__instance.curJob.def == TorannMagicDefOf.JobDriver_GolemAbilityJob)
+                if(__result && __instance != null && __instance.curJob != null && __instance.curJob.def == TorannMagicDefOf.JobDriver_GolemAbilityJob)
                 {
                     __result = false;
                 }

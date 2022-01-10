@@ -41,10 +41,6 @@ namespace TorannMagic
                 herbVer = comp.MightData.MightPowerSkill_Herbalist.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Herbalist_ver").level;
                 herbEff = comp.MightData.MightPowerSkill_Herbalist.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Herbalist_eff").level;
             }
-            else
-            {
-                this.removeNow = true;
-            }
         }
 
         public override void PostTick()

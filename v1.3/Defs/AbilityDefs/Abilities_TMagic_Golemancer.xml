@@ -10,7 +10,9 @@
     <uiIconPath>UI/golemancy</uiIconPath>
     <description>Golemancy is the art of infusing magical energy into an object through the use of runes or markings that create a link to the caster. This energy link is commonly used for to achieve the purpose of object animation, energy conversion, or information gathering.
 
-Both the golem and golemancer gain a boost to their capabilities when paired. A golem may only be assigned to one pawn, but multiple golems may be assigned to a single pawn. Golemancy benefits only apply to an assigned golem.</description>
+Both the golem and golemancer gain a boost to their capabilities when paired. A golem may only be assigned to one pawn, but multiple golems may be assigned to a single pawn. Golemancy benefits only apply to an assigned golem.
+
+Golems may be crafted from their respective workbenches after the appropriate research is complete. Check the research tab for each golem type and their corresponding workbench.</description>
     <manaCost>0</manaCost>
 	<learnChance>1</learnChance>
 	<canCopy>false</canCopy>
@@ -52,7 +54,9 @@ Both the golem and golemancer gain a boost to their capabilities when paired. A 
     <uiIconPath>UI/runecarving</uiIconPath>
     <description>Rune carving is a magical art used to permanently instill magical power into an object. This process has long been performed to inscribe runes into equipment and weapons to bestow magical properties. The Golemancer uses a similar, but more delicate, process using runes to increase the efficacy of bodyparts. While only specific parts may be enhanced through rune carving, any variation of those parts can be enhanced. 
 
-Rune carving requires additional material resources in a marked stockpile: 225 magicyte, 2 mana potions, and 1 medicine. Successful rune carving is determined by the golemancer's skill in crafting, art, and ability skill. Medical work must also be enabled for the caster since rune carving is a form of a medical operation. Rune carving will never be successful if either crafting or artistic skill is disabled.</description>
+Rune carving requires additional material resources in a marked stockpile: 225 magicyte, 2 mana potions, and 1 medicine. Successful rune carving is determined by the golemancer's skill in crafting, art, and ability skill. Medical work must also be enabled for the caster since rune carving is a form of a medical operation. Rune carving will never be successful if either crafting or artistic skill is disabled.
+
+To apply runes, select the pawn you wish to inscribe and create the rune carving surgery under their health options. All components must be available before the surgery option will appear.</description>
     <manaCost>.8</manaCost>
 	<efficiencyReductionPercent>.1</efficiencyReductionPercent>
 	<canCopy>false</canCopy>
