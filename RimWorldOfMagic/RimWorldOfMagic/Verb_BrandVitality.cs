@@ -45,7 +45,7 @@ namespace TorannMagic
             if(hitPawn != null && hitPawn.RaceProps != null)
             {
                 CompAbilityUserMagic casterComp = caster.TryGetComp<CompAbilityUserMagic>();
-                CompAbilityUserMagic targetComp = hitPawn.TryGetComp<CompAbilityUserMagic>();
+                //CompAbilityUserMagic targetComp = hitPawn.TryGetComp<CompAbilityUserMagic>();
 
                 if (casterComp != null && hitPawn.health != null && hitPawn.health.hediffSet != null && hitPawn != caster)
                 {
@@ -54,8 +54,10 @@ namespace TorannMagic
                     HealthUtility.AdjustSeverity(hitPawn, TorannMagicDefOf.TM_VitalityBrandHD, .05f);
                     casterComp.BrandedPawns.Add(hitPawn);
                     Hediff newBrand = hitPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_VitalityBrandHD);
-                    newBrand.TryGetComp<HediffComp_BrandingVitality>().BranderPawn = caster;
-
+                    if (newBrand != null && newBrand.TryGetComp<HediffComp_BrandingVitality>() != null)
+                    {
+                        newBrand.TryGetComp<HediffComp_BrandingVitality>().BranderPawn = caster;
+                    }
                     Effecter effect = EffecterDefOf.Skip_EntryNoDelay.Spawn();
                     effect.Trigger(new TargetInfo(caster), new TargetInfo(hitPawn));
                     effect.Cleanup();

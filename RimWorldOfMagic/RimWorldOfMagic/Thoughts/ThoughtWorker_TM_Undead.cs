@@ -26,6 +26,14 @@ namespace TorannMagic.Thoughts
                 {
                     return false;
                 }
+                if(!ThoughtUtility.CanGetThought(pawn, TorannMagicDefOf.ObservedLayingCorpse))
+                {
+                    return false;
+                }
+                if(!ThoughtUtility.CanGetThought(pawn, TorannMagicDefOf.ObservedLayingRottingCorpse))
+                {
+                    return false;
+                }
             }
             return true;
         }

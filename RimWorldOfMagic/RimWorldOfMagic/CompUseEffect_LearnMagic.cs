@@ -491,7 +491,8 @@ namespace TorannMagic
                                     break;
                                 case int val when rnd > baseClassCount:
                                     val = val - baseClassCount - 1;
-                                    user.story.traits.GainTrait(new Trait(TM_ClassUtility.CustomClasses()[val].classTrait, TM_ClassUtility.CustomClasses()[val].traitDegree));
+                                    TMDefs.TM_CustomClass cc = TM_ClassUtility.GetRandomCustomMage();
+                                    user.story.traits.GainTrait(new Trait(cc.classTrait, cc.traitDegree));
                                     break;
 
                             }

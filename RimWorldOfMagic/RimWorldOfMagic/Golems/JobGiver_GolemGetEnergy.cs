@@ -32,29 +32,30 @@ namespace TorannMagic.Golems
             {
                 return 0f;
             }
-            if ((int)energy.CurCategory > (int)minCategory)
+            if (energy.CurCategory == GolemEnergyCategory.Critical)
             {
-                return 0f;
-            }
-            if (energy.CurLevelPercentage > maxLevelPercentage)
-            {
-                return 0f;
-            }
-            Lord lord = pawn.GetLord();
-            if (lord != null && !lord.CurLordToil.AllowSatisfyLongNeeds)
-            {
-                return 0f;
-            }
-            float curLevel = energy.CurInstantLevelPercentage;
+                return 10f;
+            }            
+            float curLevel = energy.CurLevelPercentage;
             CompGolem Golem = pawn.TryGetComp<CompGolem>();
-            if(Golem != null && curLevel < Golem.energyPctShouldRest)
+            if (Golem != null && curLevel < Golem.energyPctShouldRest)
             {
                 return 8f;
             }
-            if(energy.CurCategory == GolemEnergyCategory.Critical)
-            {
-                return 10f;
-            }          
+            //Lord lord = pawn.GetLord();
+            //if (lord != null && !lord.CurLordToil.AllowSatisfyLongNeeds)
+            //{
+            //    return 0f;
+            //}
+            //if ((int)energy.CurCategory > (int)minCategory)
+            //{
+            //    return 0f;
+            //}
+            //if (energy.CurLevelPercentage > maxLevelPercentage)
+            //{
+            //    return 0f;
+            //}
+            return 0f;         
             throw new NotImplementedException();
         }
 
@@ -62,7 +63,7 @@ namespace TorannMagic.Golems
         {
             CompGolem Golem = pawn.TryGetComp<CompGolem>();
             Need_GolemEnergy energy = pawn.needs.TryGetNeed(TorannMagicDefOf.TM_GolemEnergy) as Need_GolemEnergy;
-            if (energy == null || Golem == null || (int)energy.CurCategory > (int)minCategory || energy.CurLevelPercentage > maxLevelPercentage)
+            if (energy == null || Golem == null || energy.CurLevelPercentage >= Golem.energyPctShouldRest || energy.CurLevelPercentage > maxLevelPercentage)
             {
                 return null;
             }

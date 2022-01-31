@@ -17,13 +17,15 @@ namespace TorannMagic.Golems
         public float maxHeat = 100;
         public float minHeat = -100;
         public float maxHeatAbsPerEffect = 200;
+        public bool canHeat = true;
+        public bool canCool = true;
 
         public override void StartEffect(Building_TMGolemBase golem_building, TM_GolemUpgrade upgrade, float effectLevel = 1)
-        {
-            base.StartEffect(golem_building, upgrade, effectLevel);
+        {            
             golem_building.canRegulateTemp = true;
             if (CanPushHeat(golem_building))
             {
+                base.StartEffect(golem_building, upgrade, effectLevel);
                 GenTemperature.PushHeat(parent.PositionHeld, parent.MapHeld, maxHeatAbsPerEffect * HeatMultiplier(golem_building));
             }
         }
@@ -37,6 +39,14 @@ namespace TorannMagic.Golems
 
         private bool CanPushHeat(Building_TMGolemBase golem_building)
         {
+            if(golem_building.AmbientTemperature <= golem_building.tempGoal && !canHeat)
+            {
+                return false;
+            }
+            if(golem_building.AmbientTemperature >= golem_building.tempGoal && !canCool)
+            {
+                return false;
+            }
             if(golem_building.AmbientTemperature >= maxHeat)
             {
                 return false;

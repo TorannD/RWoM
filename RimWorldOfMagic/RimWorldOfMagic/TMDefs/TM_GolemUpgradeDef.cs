@@ -13,7 +13,8 @@ namespace TorannMagic.TMDefs
     public class TM_GolemUpgradeDef : Def
     {
         //Golem upgrade 
-        public RecipeDef recipe;
+        public RecipeDef recipe = null;
+        public List<RecipeDef> recipeList = null;
         public BodyPartDef bodypart;
         public HediffDef hediff;
         public float hediffSeverityPerLevel = 1f;
@@ -48,6 +49,7 @@ namespace TorannMagic.TMDefs
         public WorkstationCapacity workstationCapacity = WorkstationCapacity.None;
         public List<GolemWorkstationEffect> workstationEffects = new List<GolemWorkstationEffect>();
         public GolemAbilityUpgrade abilityModifiers = null;
+        public List<RecipeDef> upgradeEnablesRecipes = new List<RecipeDef>();
 
         public BodyPartDef OccupiedPart => occupiedPart != null ? occupiedPart : bodypart;        
     }

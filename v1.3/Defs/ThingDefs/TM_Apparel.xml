@@ -748,8 +748,8 @@ Ability Damage: +20%</description>
 		<xpGainTier>Crafted</xpGainTier>
 		<arcaneRes>0.15</arcaneRes>
 		<arcaneResTier>Minor</arcaneResTier>
-		<arcaneDmg>0.10</arcaneDmg>
-		<arcaneDmgTier>Minor</arcaneDmgTier>
+		<arcaneDmg>0.20</arcaneDmg>
+		<arcaneDmgTier>Crafted</arcaneDmgTier>
 	  </li>
 	</comps>
   </ThingDef>

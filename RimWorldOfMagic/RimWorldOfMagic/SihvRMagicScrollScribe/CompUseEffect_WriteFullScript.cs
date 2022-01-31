@@ -15,25 +15,16 @@ namespace TorannMagic.SihvRMagicScrollScribe
 
             if (parent.def != null && comp != null)
             {
-                if (user.IsSlave && TM_Calc.IsMagicUser(user))
+                if (user.IsSlave)
                 {                    
-                    if (Rand.Chance(.25f))
-                    {
-                        Messages.Message("TM_SlaveScribeFail".Translate(
-                            parent.def.label,
-                            user.LabelShort
-                        ), MessageTypeDefOf.RejectInput);
-                        tempPod = null;
-                    }
-                    else
-                    {
-                        tempPod = TM_Data.MageBookList().RandomElement();
-                    }
-                    this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
+                    Messages.Message("TM_SlaveScribeFail".Translate(
+                        parent.def.label
+                    ), MessageTypeDefOf.RejectInput);
+                    tempPod = null;
                 }
                 else
                 {
-                    if (comp.customClass != null)
+                    if (comp.customClass != null && comp.customClass.fullScript != null)
                     {
                         tempPod = comp.customClass.fullScript;
                         this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
@@ -133,7 +124,7 @@ namespace TorannMagic.SihvRMagicScrollScribe
                         tempPod = TorannMagicDefOf.BookOfShamanism;
                         this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                     }
-                    else if (parent.def != null && (user.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted) || user.story.traits.HasTrait(TorannMagicDefOf.TM_Wanderer)))
+                    else if (parent.def != null && (user.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted) || user.story.traits.HasTrait(TorannMagicDefOf.TM_Wanderer) || TM_Calc.IsMagicUser(user)))
                     {
                         tempPod = TM_Data.MageBookList().RandomElement();
                         this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);

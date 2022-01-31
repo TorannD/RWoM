@@ -21,27 +21,18 @@ namespace TorannMagic
         protected override bool TryCastShot()
         {
             Pawn caster = base.CasterPawn;
-            Pawn pawn = this.currentTarget.Thing as Pawn;
-
-            bool flag = pawn != null && !pawn.Dead;
+            //Pawn pawn = this.currentTarget.Thing as Pawn;
+            Log.Message("mindkiller");
+            bool flag = caster != null && !caster.Dead && !caster.Downed;
             if (flag)
             {
-
-                CompAbilityUserMight comp = caster.GetComp<CompAbilityUserMight>();
+                CompAbilityUserMagic comp = caster.GetComp<CompAbilityUserMagic>();
                 int pwrVal = 0;
                 int verVal = 0;
-                if (comp != null && comp.MightData != null)
+                if (comp != null && comp.MagicData != null)
                 {
                     pwrVal = TM_Calc.GetSkillPowerLevel(caster, this.Ability.Def as TMAbilityDef, false);
                     verVal = TM_Calc.GetSkillVersatilityLevel(caster, this.Ability.Def as TMAbilityDef, false);
-                    //if (comp.MightData.GetSkill_Power(this.Ability.Def as TMAbilityDef) != null)
-                    //{
-                    //    pwrVal = comp.MightData.GetSkill_Power(this.Ability.Def as TMAbilityDef).level;
-                    //}
-                    //if (comp.MightData.GetSkill_Versatility(this.Ability.Def as TMAbilityDef) != null)
-                    //{
-                    //    verVal = comp.MightData.GetSkill_Versatility(this.Ability.Def as TMAbilityDef).level;
-                    //}
                 }
                 radius += (verVal * 2);
                 penetrationChance += (verVal * .1f);

@@ -2,6 +2,91 @@
 
 <Defs>
 
+	<TorannMagic.TMDefs.TM_GolemDef Name="TM_StoneGolem" Abstract="True">
+		<golemWorkstationDef>TM_StoneGolem_Workstation</golemWorkstationDef>
+		<golemFramePath>Golems/Stone/Stone_Workstation_frame</golemFramePath>
+		<activationTicks>600</activationTicks>
+		<processorEvaluationTicks>400</processorEvaluationTicks>
+		<needs>
+		  <li>TM_GolemEnergy</li>
+		</needs>
+		<hediffs>
+		  <li>TM_GolemHD</li>
+		</hediffs>	
+		<upgrades>
+		  <li>TM_Golem_StoneRepair</li>
+		  <li>TM_Golem_StoneMaxEnergy</li>
+		  <li>TM_Golem_StoneEnergyEfficiency</li>
+		  <li>TM_Golem_StoneEnergyRate</li>
+		  <li>TM_Golem_StoneHardening</li>		  
+		  <li>TM_Golem_StoneCompactor</li>
+		  <li>TM_Golem_StoneToBricks</li>
+		  <li>TM_Golem_StoneLifeStage</li>
+		</upgrades>			
+	</TorannMagic.TMDefs.TM_GolemDef>
+	
+	<TorannMagic.TMDefs.TM_GolemDef ParentName="TM_StoneGolem">
+		<defName>TM_Golem_Stone</defName>
+		<golemDef>TM_StoneGolem</golemDef>
+		<golemKindDef>TM_StoneGolemK</golemKindDef>		
+	</TorannMagic.TMDefs.TM_GolemDef>
+	
+	<TorannMagic.TMDefs.TM_GolemDef ParentName="TM_StoneGolem">
+		<defName>TM_Golem_Sandstone</defName>
+		<golemDef>TM_SandstoneGolem</golemDef>
+		<golemKindDef>TM_SandstoneGolemK</golemKindDef>		
+	</TorannMagic.TMDefs.TM_GolemDef>
+	
+	<TorannMagic.TMDefs.TM_GolemDef ParentName="TM_StoneGolem">
+		<defName>TM_Golem_Limestone</defName>
+		<golemDef>TM_LimestoneGolem</golemDef>
+		<golemKindDef>TM_LimestoneGolemK</golemKindDef>		
+	</TorannMagic.TMDefs.TM_GolemDef>
+	
+	<TorannMagic.TMDefs.TM_GolemDef ParentName="TM_StoneGolem">
+		<defName>TM_Golem_Granite</defName>
+		<golemDef>TM_GraniteGolem</golemDef>
+		<golemKindDef>TM_GraniteGolemK</golemKindDef>		
+	</TorannMagic.TMDefs.TM_GolemDef>
+	
+	<TorannMagic.TMDefs.TM_GolemDef ParentName="TM_StoneGolem">
+		<defName>TM_Golem_Slate</defName>
+		<golemDef>TM_SlateGolem</golemDef>
+		<golemKindDef>TM_SlateGolemK</golemKindDef>		
+	</TorannMagic.TMDefs.TM_GolemDef>
+	
+	<TorannMagic.TMDefs.TM_GolemDef ParentName="TM_StoneGolem">
+		<defName>TM_Golem_Marble</defName>
+		<golemDef>TM_MarbleGolem</golemDef>
+		<golemKindDef>TM_MarbleGolemK</golemKindDef>		
+	</TorannMagic.TMDefs.TM_GolemDef>
+	
+	<TorannMagic.TMDefs.TM_GolemDef Name="TM_MaharalGolem">
+		<defName>TM_Golem_Maharal</defName>
+		<golemDef>TM_MaharalGolem</golemDef>
+		<golemKindDef>TM_MaharalGolemK</golemKindDef>
+		<golemWorkstationDef>TM_MaharalGolem_Workstation</golemWorkstationDef>
+		<golemFramePath>Golems/Maharal/Maharal_Workstation_Frame</golemFramePath>
+		<activationTicks>300</activationTicks>
+		<processorEvaluationTicks>200</processorEvaluationTicks>
+		<needs>
+		  <li>TM_GolemEnergy</li>
+		</needs>
+		<hediffs>
+		  <li>TM_GolemHD</li>
+		</hediffs>
+		<upgrades>
+		  <li>TM_Golem_MaharalRepair</li>
+		  <li>TM_Golem_MaharalMaxEnergy</li>
+		  <li>TM_Golem_MaharalEnergyEfficiency</li>
+		  <li>TM_Golem_MaharalEnergyRate</li>
+		  <li>TM_Golem_MaharalArmor</li>
+		  <li>TM_Golem_MaharalHeat</li>
+		  <li>TM_Golem_MaharalPower</li>
+		  <li>TM_Golem_MaharalLifeStage</li>
+		</upgrades>			
+	</TorannMagic.TMDefs.TM_GolemDef>
+
 	<TorannMagic.TMDefs.TM_GolemDef Name="TM_MechaGolem">
 		<defName>TM_Golem_Mecha</defName>
 		<golemDef>TM_MechaGolem</golemDef>

@@ -405,6 +405,151 @@ namespace TorannMagic
             return false;
         }
 
+        public static bool HasResourcesForAbility(Pawn p, TMAbilityDef ability)
+        {
+            if(ability.manaCost > 0)
+            {
+                CompAbilityUserMagic comp = p.TryGetComp<CompAbilityUserMagic>();
+                if(comp == null)
+                {
+                    return false;
+                }
+                if(comp.Mana == null)
+                {
+                    return false;
+                }
+                if(comp.Mana.CurLevel < comp.ActualManaCost(ability))
+                {
+                    return false;
+                }
+            }
+            if(ability.staminaCost > 0)
+            {
+                CompAbilityUserMight comp = p.TryGetComp<CompAbilityUserMight>();
+                if (comp == null)
+                {
+                    return false;
+                }
+                if (comp.Stamina == null)
+                {
+                    return false;
+                }
+                if (comp.Stamina.CurLevel < comp.ActualStaminaCost(ability))
+                {
+                    return false;
+                }
+            }
+            if(ability.chiCost > 0)
+            {
+                CompAbilityUserMight comp = p.TryGetComp<CompAbilityUserMight>();
+                if (comp == null)
+                {
+                    return false;
+                }
+                if(p.health == null || p.health.hediffSet == null)
+                {
+                    return false;
+                }
+                Hediff chi = p.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_ChiHD);
+                if(chi == null)
+                {
+                    return false;
+                }
+                if(chi.Severity < comp.ActualChiCost(ability))
+                {
+                    return false;
+                }
+            }
+            if(ability.bloodCost > 0)
+            {
+                CompAbilityUserMagic comp = p.TryGetComp<CompAbilityUserMagic>();
+                if (comp == null)
+                {
+                    return false;
+                }
+                if (p.health == null || p.health.hediffSet == null)
+                {
+                    return false;
+                }
+                Hediff blood = p.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_BloodHD);
+                if (blood == null)
+                {
+                    return false;
+                }
+                MagicAbility ma = (MagicAbility)comp.AbilityData.AllPowers.FirstOrDefault((PawnAbility x) => x.Def == ability);
+                if(ma == null)
+                {
+                    return false;
+                }
+                if (blood.Severity < ma.ActualBloodCost)
+                {
+                    return false;
+                }
+            }
+            if(ability.requiredHediff != null)
+            {
+                if(p.health == null || p.health.hediffSet == null)
+                {
+                    return false;
+                }
+                Hediff hd = p.health.hediffSet.GetFirstHediffOfDef(ability.requiredHediff);
+                if (hd == null)
+                {
+                    return false;
+                }
+                if(hd.Severity < ability.hediffCost)
+                {
+                    return false;
+                }
+            }
+            if(ability.requiredNeed != null)
+            {
+                if(p.needs == null || p.needs.AllNeeds == null)
+                {
+                    return false;
+                }
+                Need nd = p.needs.TryGetNeed(ability.requiredNeed);
+                if(nd == null)
+                {
+                    return false;
+                }
+                if(nd.CurLevel < ability.needCost)
+                {
+                    return false;
+                }
+            }
+            if(ability.requiredWeaponsOrCategories != null && ability.requiredWeaponsOrCategories.Count > 0)
+            {
+                if(p.equipment == null)
+                {
+                    return false;
+                }
+                if(ability.IsRestrictedByEquipment(p))
+                {
+                    return false;
+                }
+            }
+            if(ability.requiredInspiration != null)
+            {
+                if(!p.Inspired)
+                {
+                    return false;
+                }
+                if(p.InspirationDef != ability.requiredInspiration)
+                {
+                    return false;
+                }
+            }
+            if(ability.requiresAnyInspiration)
+            {
+                if(!p.Inspired)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
         public static int GetMagesInFactionCount(Faction faction, bool countSlaves = false)
         {
             if (faction == null)
@@ -1331,37 +1476,37 @@ namespace TorannMagic
 
         public static List<Pawn> FindPawnsNearTarget(Pawn pawn, int radius, IntVec3 targetCell, bool hostile)
         {
-            List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned;
-            List<Pawn> pawnList = new List<Pawn>();
-            Pawn targetPawn = null;
-            pawnList.Clear();
-            for (int i = 0; i < mapPawns.Count; i++)
+            if (!pawn.DestroyedOrNull() && pawn.Spawned && pawn.Map != null)
             {
-                targetPawn = mapPawns[i];
-                if (targetPawn != null && !targetPawn.Dead && !targetPawn.Destroyed && !targetPawn.Downed)
+                List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned;
+                List<Pawn> pawnList = new List<Pawn>();
+                Pawn targetPawn = null;
+                pawnList.Clear();
+                for (int i = 0; i < mapPawns.Count; i++)
                 {
-                    if (targetPawn != pawn && (targetCell - targetPawn.Position).LengthHorizontal <= radius)
+                    targetPawn = mapPawns[i];
+                    if (targetPawn != null && !targetPawn.Dead && !targetPawn.Destroyed && !targetPawn.Downed)
                     {
-                        if (hostile && targetPawn.HostileTo(pawn.Faction))
+                        if (targetPawn != pawn && (targetCell - targetPawn.Position).LengthHorizontal <= radius)
                         {
-                            pawnList.Add(targetPawn);
+                            if (hostile && targetPawn.HostileTo(pawn.Faction))
+                            {
+                                pawnList.Add(targetPawn);
+                            }
+                            else if (!hostile && !targetPawn.HostileTo(pawn.Faction))
+                            {
+                                pawnList.Add(targetPawn);
+                            }
                         }
-                        else if(!hostile && !targetPawn.HostileTo(pawn.Faction))
-                        {
-                            pawnList.Add(targetPawn);
-                        }
+                        targetPawn = null;
                     }
-                    targetPawn = null;                    
+                }
+                if (pawnList.Count > 0)
+                {
+                    return pawnList;
                 }
             }
-            if (pawnList.Count > 0)
-            {
-                return pawnList;
-            }
-            else
-            {
-                return null;
-            }
+            return null;
         }
 
         public static bool HasLoSFromTo(IntVec3 root, LocalTargetInfo targ, Thing caster, float minRange, float maxRange)

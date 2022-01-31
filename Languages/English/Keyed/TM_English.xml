@@ -189,7 +189,7 @@
 <TM_InvalidAction>{0} cannot use {1} - invalid parameters.</TM_InvalidAction>
 <TM_InvalidAbility>{0} was unable to use {1}.</TM_InvalidAbility>
 <TM_SlaveRefuses>{0} refuses to perform this action.</TM_SlaveRefuses>
-<TM_SlaveScribeFail>The {0} was ruined by {1} during the scribing process.</TM_SlaveScribeFail>
+<TM_SlaveScribeFail>{0} is unable to transcribe written lore as a slave.</TM_SlaveScribeFail>
 <TM_MessageRitualRoleMustBeColonistOrPrisoner>{0} must be colonist or prisoner.</TM_MessageRitualRoleMustBeColonistOrPrisoner>
 <TM_MessageRitualRoleMustBeColonist>{0} must be a colonist.</TM_MessageRitualRoleMustBeColonist>
 <TM_MessageRitualRoleMustBeVoidseeker>{0} must be a void seeker.</TM_MessageRitualRoleMustBeVoidseeker>
@@ -204,6 +204,7 @@
 <TM_RuneCarving>rune engraving</TM_RuneCarving>
 <TM_MaxGolemUpgradeReached>The max {0} upgrade has already been reached; resources have been returned</TM_MaxGolemUpgradeReached>
 <TM_NoGolemPartToRestore>There were no missing parts for {0} to replace; resources have been returned</TM_NoGolemPartToRestore>
+<TM_GolemBillUnsuccessful>Unable to complete golem recipe {0}; resources have been returned</TM_GolemBillUnsuccessful>
 <TM_GolemCannotReturn>The golem could not return to its designated position, it not reachable or is occupied.</TM_GolemCannotReturn>
 <TM_GolemPartReplaced>The {0} upgrade has replaced the {1} upgrade; only one upgrade of this type can occupy the {2}.</TM_GolemPartReplaced>
 <TM_UnfinishedThingNoProduct>Unfinished {0}</TM_UnfinishedThingNoProduct>
@@ -214,6 +215,7 @@
 <TM_GolemLight>Light</TM_GolemLight>
 <TM_GolemLightDesc>Toggle light</TM_GolemLightDesc>
 <TM_GolemMinimumToActivate>Insufficient energy to activate: {0} of {1}</TM_GolemMinimumToActivate>
+<TM_GolemChargesRemaining>{0} actions remaining</TM_GolemChargesRemaining>
 
 <!-- Surgery Failed letters -->
 <LetterLabelRegrowthSurgeryFail>Surgery Failed</LetterLabelRegrowthSurgeryFail>
@@ -2108,6 +2110,11 @@ Level 3: all 4 effects</TM_CombatDrugs_pwr_desc>
 <TM_GolemDormantWhenUpgradingDesc>When enabled, the golem will remain in a dormant state if there are queued bills. A golem will always remain dormant when a bill is in progress (unfinished upgrade).</TM_GolemDormantWhenUpgradingDesc>
 <TM_GolemUseAbilitiesWhileDormant>Use abilities while dormant</TM_GolemUseAbilitiesWhileDormant>
 <TM_GolemUseAbilitiesWhileDormantDesc>When disabled, a dormant golem will never use abilities.</TM_GolemUseAbilitiesWhileDormantDesc>
+<TM_GolemRestrictedAggression>Restricted aggression</TM_GolemRestrictedAggression>
+<TM_GolemRestrictedAggressionDesc>When enabled, the golem will not activate or pursue targets through doors or beyond its allowed zone.</TM_GolemRestrictedAggressionDesc>
+<TM_GolemName>Golem name</TM_GolemName>
+<TM_GolemNameDesc>Change golem name</TM_GolemNameDesc>
+<TM_GolemMasterLabel>Golemancer</TM_GolemMasterLabel>
 
 <!-- ========== Building Menu's ========== -->
 
@@ -2139,7 +2146,7 @@ Level 3: all 4 effects</TM_CombatDrugs_pwr_desc>
 <TM_GolemAbilities>{0}'s Abilities</TM_GolemAbilities>
 <TM_GolemAbilitiesButton>Abilities</TM_GolemAbilitiesButton>
 <TM_GolemAbilityEnabledDesc>Toggles use of {0}: {1}</TM_GolemAbilityEnabledDesc>
-<TM_GolemShowDormant>Show Dormant Frame</TM_GolemShowDormant>
+<TM_GolemShowDormant>Show dormant frame</TM_GolemShowDormant>
 <TM_GolemShowDormantDesc>Shows a frame over this golem's dormant position. Use the mod options menu to toggle this for all golems.</TM_GolemShowDormantDesc>
 
 

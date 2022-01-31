@@ -236,8 +236,15 @@ namespace TorannMagic
                             Hediff rec = enumerator.Current;
                             if (rec.TendableNow()) // && !currentTendable.IsPermanent()
                             {
-                                TM_Action.TendWithoutNotice(rec, 1f, 1f);                                
-                                //rec.Tended(1, 1);
+                                if (rec.Bleeding && rec is Hediff_MissingPart)
+                                {
+                                    Traverse.Create(root: rec).Field(name: "isFreshInt").SetValue(false);
+                                    num--;
+                                }
+                                else
+                                {
+                                    TM_Action.TendWithoutNotice(rec, 1f, 1f);
+                                }
                             }
                         }
                     }

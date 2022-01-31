@@ -54,7 +54,10 @@ namespace TorannMagic
                     HealthUtility.AdjustSeverity(hitPawn, TorannMagicDefOf.TM_EmotionBrandHD, .05f);
                     casterComp.BrandedPawns.Add(hitPawn);
                     Hediff newBrand = hitPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_EmotionBrandHD);
-                    newBrand.TryGetComp<HediffComp_BrandingEmotion>().BranderPawn = caster;
+                    if (newBrand != null && newBrand.TryGetComp<HediffComp_BrandingEmotion>() != null)
+                    {
+                        newBrand.TryGetComp<HediffComp_BrandingEmotion>().BranderPawn = caster;
+                    }
 
                     Effecter effect = EffecterDefOf.Skip_EntryNoDelay.Spawn();
                     effect.Trigger(new TargetInfo(caster), new TargetInfo(hitPawn));

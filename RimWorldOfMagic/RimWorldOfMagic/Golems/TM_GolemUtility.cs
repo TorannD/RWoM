@@ -82,6 +82,46 @@ namespace TorannMagic.Golems
             return null;
         }
 
+        public static PawnKindDef GetStoneGolemKindDef(Thing thing)
+        {
+            PawnKindDef pkd = null;
+            IEnumerable<TM_GolemDef> tmpGolemDefs = from def in DefDatabase<TM_GolemDef>.AllDefs
+                                                    where (true)
+                                                    select def;
+            foreach (TM_GolemDef t in tmpGolemDefs)
+            {
+                if (t.golemWorkstationDef == thing.def)
+                {
+                    pkd = t.golemKindDef;
+                }
+            }
+            if (thing.Stuff != null)
+            {
+                Log.Message("stuff defname is " + thing.Stuff.defName);
+                if (thing.Stuff.defName == "BlocksSandstone")
+                {
+                    pkd = TorannMagicDefOf.TM_SandstoneGolemK;
+                }
+                else if (thing.Stuff.defName == "BlocksGranite")
+                {
+                    pkd = TorannMagicDefOf.TM_GraniteGolemK;
+                }
+                else if (thing.Stuff.defName == "BlocksLimestone")
+                {
+                    pkd = TorannMagicDefOf.TM_LimestoneGolemK;
+                }
+                else if (thing.Stuff.defName == "BlocksSlate")
+                {
+                    pkd = TorannMagicDefOf.TM_SlateGolemK;
+                }
+                else if (thing.Stuff.defName == "BlocksMarble")
+                {
+                    pkd = TorannMagicDefOf.TM_MarbleGolemK;
+                }
+            }
+            return pkd;
+        }
+
         public static Action GetGolemMeleeAttackAction(Pawn pawn, LocalTargetInfo target, out string failStr)
         {
             failStr = "";

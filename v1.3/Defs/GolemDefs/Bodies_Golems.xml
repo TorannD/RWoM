@@ -813,4 +813,434 @@
 		</corePart>
 	</BodyDef>
 	
+	<!-- STONE GOLEM -->
+	<BodyDef>
+		<defName>TM_StoneGolem</defName>
+		<label>stone_golem</label>
+		<corePart>
+			<def>Golem_Body</def>	<!-- coat of arms (fire, water, arcane, death) -->
+			<height>Middle</height>
+			<depth>Outside</depth>
+			<parts>
+				<li>
+					<def>Golem_Back</def>	<!-- cloak -->
+					<coverage>0.14</coverage>
+					<depth>Outside</depth>
+					<parts>
+						<li>
+							<def>Golem_Spine</def> <!-- max energy -->
+							<coverage>0.3</coverage>
+							<depth>Inside</depth>
+						</li>
+					</parts>
+				</li>				
+				<li>
+					<def>Golem_Abdomen</def>
+					<coverage>0.08</coverage>
+					<depth>Outside</depth>
+				</li>
+				<li>
+					<def>Golem_Chest</def>	
+					<coverage>0.20</coverage>
+					<depth>Outside</depth>
+					<parts>
+						<li>
+							<def>Golem_Heart</def>
+							<coverage>0.08</coverage>
+							<depth>Inside</depth>							
+						</li>
+						<li>
+							<def>Stone_Core</def>		
+							<coverage>0.04</coverage>
+							<depth>Inside</depth>							
+						</li>
+						<li>
+							<def>Stone_SlotA</def>	<!-- energy efficiency -->
+							<coverage>0.01</coverage>
+							<depth>Inside</depth>							
+						</li>
+						<li>
+							<def>Stone_SlotB</def>	<!-- energy regen rate -->
+							<coverage>0.01</coverage>
+							<depth>Inside</depth>							
+						</li>
+						<li>
+						  <def>Golem_Ribcage</def>
+						  <coverage>0.4</coverage>
+						  <depth>Inside</depth>
+						</li>						
+					</parts>
+				</li>
+				<li>
+					<def>Golem_Neck</def>	
+					<coverage>0.16</coverage>
+					<depth>Outside</depth>
+					<height>Top</height>
+					<parts>
+						<li>
+							<def>Golem_Head</def>		
+							<coverage>0.85</coverage>
+							<depth>Outside</depth>							
+							<parts>
+								<li>
+									<def>Golem_Skull</def>	
+									<coverage>0.50</coverage>
+									<depth>Inside</depth>
+									<parts>
+										<li>
+											<def>Golem_Brain</def>
+											<coverage>0.25</coverage>
+											<depth>Inside</depth>
+										</li>
+									</parts>
+								</li>
+								<li>
+									<def>Golem_Face</def>	
+									<coverage>0.40</coverage>
+									<depth>Outside</depth>
+									<parts>
+										<li>
+											<def>Golem_Eye</def>
+											<customLabel>left eye</customLabel>
+											<coverage>0.08</coverage>
+											<groups>
+												<li>Golem_Eyes</li>
+											</groups>
+										</li>
+										<li>
+											<def>Golem_Eye</def>
+											<customLabel>right eye</customLabel>
+											<coverage>0.08</coverage>
+											<groups>
+												<li>Golem_Eyes</li>
+											</groups>
+										</li>										
+										<li>
+										  <def>Golem_Nose</def>
+										  <coverage>0.10</coverage>
+										</li>
+										<li>
+										  <def>Golem_Jaw</def>
+										  <coverage>0.14</coverage>
+										</li>
+									</parts>
+								</li>
+							</parts>
+						</li>
+					</parts>
+				</li>
+				<li>
+					<def>Golem_Shoulder</def>		
+					<coverage>.09</coverage>
+					<customLabel>left shoulder</customLabel>
+					<woundAnchorTag>LeftShoulder</woundAnchorTag>
+					<parts>
+						<li>
+							<def>Golem_LeftArm</def>
+							<customLabel>left arm</customLabel>
+							<coverage>0.6</coverage>
+							<parts>
+								<li>
+									<def>Golem_Hand</def>
+									<customLabel>left hand</customLabel>
+									<coverage>0.45</coverage>
+									<height>Bottom</height>
+								</li>							
+							</parts>
+							<groups>
+								<li>Stone_Arms</li>
+							</groups>
+						</li>			
+					</parts>
+				</li>
+				<li>
+					<def>Golem_Shoulder</def>	
+					<coverage>0.09</coverage>
+					<customLabel>right shoulder</customLabel>
+					<woundAnchorTag>RightShoulder</woundAnchorTag>
+					<parts>
+						<li>
+							<def>Golem_RightArm</def>
+							<customLabel>right arm</customLabel>
+							<coverage>0.6</coverage>
+							<parts>
+								<li>
+									<def>Golem_Hand</def>
+									<customLabel>right hand</customLabel>
+									<coverage>0.45</coverage>
+									<height>Bottom</height>
+								</li>							
+							</parts>
+							<groups>
+								<li>Stone_Arms</li>
+							</groups>
+						</li>			
+					</parts>
+				</li>				
+				<li>
+				  <def>Golem_Waist</def>
+				  <coverage>.19</coverage>
+				  <height>Bottom</height>
+				  <parts>
+					<li>
+					  <def>Golem_Leg</def>
+					  <customLabel>left leg</customLabel>
+					  <coverage>0.14</coverage>
+					  <height>Bottom</height>
+					  <groups>
+						<li>Legs</li>
+					  </groups>
+					  <woundAnchorTag>LeftLeg</woundAnchorTag>
+					  <parts>						
+						<li>
+						  <def>Golem_Foot</def>
+						  <customLabel>left foot</customLabel>
+						  <coverage>0.25</coverage>
+						  <groups>
+							<li>Feet</li>
+						  </groups>					  
+						</li>
+					  </parts>
+					</li>
+					<li>
+					  <def>Golem_Leg</def>
+					  <customLabel>right leg</customLabel>
+					  <coverage>0.14</coverage>
+					  <height>Bottom</height>
+					  <groups>
+						<li>Legs</li>
+					  </groups>
+					  <woundAnchorTag>RightLeg</woundAnchorTag>
+					  <parts>						
+						<li>
+						  <def>Golem_Foot</def>
+						  <customLabel>right foot</customLabel>
+						  <coverage>0.25</coverage>
+						  <groups>
+							<li>Feet</li>
+						  </groups>					  
+						</li>
+					  </parts>
+					</li>
+				  </parts>
+				</li>				
+			</parts>
+		</corePart>
+	</BodyDef>
+	
+	<!-- MAHARAL GOLEM -->
+	<BodyDef>
+		<defName>TM_MaharalGolem</defName>
+		<label>maharal_golem</label>
+		<corePart>
+			<def>Golem_Body</def>	
+			<height>Middle</height>
+			<depth>Outside</depth>
+			<parts>
+				<li>
+					<def>Golem_Back</def>	
+					<coverage>0.14</coverage>
+					<depth>Outside</depth>
+					<parts>
+						<li>
+							<def>Golem_Spine</def> <!-- max energy -->
+							<coverage>0.3</coverage>
+							<depth>Inside</depth>
+						</li>
+					</parts>
+				</li>				
+				<li>
+					<def>Golem_Abdomen</def>		<!-- heat -->
+					<coverage>0.08</coverage>
+					<depth>Outside</depth>
+				</li>
+				<li>
+					<def>Golem_Chest</def>			<!-- armor -->
+					<coverage>0.20</coverage>
+					<depth>Outside</depth>
+					<parts>
+						<li>
+							<def>Golem_Heart</def> 		<!-- lifestage -->
+							<coverage>0.08</coverage>
+							<depth>Inside</depth>							
+						</li>
+						<li>
+							<def>Maharal_Core</def>		<!-- power -->
+							<coverage>0.04</coverage>
+							<depth>Inside</depth>							
+						</li>
+						<li>
+							<def>Maharal_SlotA</def>	<!-- energy efficiency -->
+							<coverage>0.01</coverage>
+							<depth>Inside</depth>							
+						</li>
+						<li>
+							<def>Maharal_SlotB</def>	<!-- energy regen rate -->
+							<coverage>0.01</coverage>
+							<depth>Inside</depth>							
+						</li>
+						<li>
+						  <def>Golem_Ribcage</def>
+						  <coverage>0.4</coverage>
+						  <depth>Inside</depth>
+						</li>						
+					</parts>
+				</li>
+				<li>
+					<def>Golem_Neck</def>	
+					<coverage>0.16</coverage>
+					<depth>Outside</depth>
+					<height>Top</height>
+					<parts>
+						<li>
+							<def>Golem_Head</def>		
+							<coverage>0.85</coverage>
+							<depth>Outside</depth>							
+							<parts>
+								<li>
+									<def>Golem_Skull</def>	
+									<coverage>0.50</coverage>
+									<depth>Inside</depth>
+									<parts>
+										<li>
+											<def>Golem_Brain</def>
+											<coverage>0.25</coverage>
+											<depth>Inside</depth>
+										</li>
+									</parts>
+								</li>
+								<li>
+									<def>Golem_Face</def>	
+									<coverage>0.40</coverage>
+									<depth>Outside</depth>
+									<parts>
+										<li>
+											<def>Golem_Eye</def>
+											<customLabel>left eye</customLabel>
+											<coverage>0.08</coverage>
+											<groups>
+												<li>Golem_Eyes</li>
+											</groups>
+										</li>
+										<li>
+											<def>Golem_Eye</def>
+											<customLabel>right eye</customLabel>
+											<coverage>0.08</coverage>
+											<groups>
+												<li>Golem_Eyes</li>
+											</groups>
+										</li>										
+										<li>
+										  <def>Golem_Nose</def>
+										  <coverage>0.10</coverage>
+										</li>
+										<li>
+										  <def>Golem_Jaw</def>
+										  <coverage>0.14</coverage>
+										</li>
+									</parts>
+								</li>
+							</parts>
+						</li>
+					</parts>
+				</li>
+				<li>
+					<def>Golem_Shoulder</def>		
+					<coverage>.09</coverage>
+					<customLabel>left shoulder</customLabel>
+					<woundAnchorTag>LeftShoulder</woundAnchorTag>
+					<parts>
+						<li>
+							<def>Golem_LeftArm</def>
+							<customLabel>left arm</customLabel>
+							<coverage>0.6</coverage>
+							<parts>
+								<li>
+									<def>Golem_Hand</def>
+									<customLabel>left hand</customLabel>
+									<coverage>0.45</coverage>
+									<height>Bottom</height>
+								</li>							
+							</parts>
+							<groups>
+								<li>Maharal_Arms</li>
+							</groups>
+						</li>			
+					</parts>
+				</li>
+				<li>
+					<def>Golem_Shoulder</def>	
+					<coverage>0.09</coverage>
+					<customLabel>right shoulder</customLabel>
+					<woundAnchorTag>RightShoulder</woundAnchorTag>
+					<parts>
+						<li>
+							<def>Golem_RightArm</def>
+							<customLabel>right arm</customLabel>
+							<coverage>0.6</coverage>
+							<parts>
+								<li>
+									<def>Golem_Hand</def>
+									<customLabel>right hand</customLabel>
+									<coverage>0.45</coverage>
+									<height>Bottom</height>
+								</li>							
+							</parts>
+							<groups>
+								<li>Maharal_Arms</li>
+							</groups>
+						</li>			
+					</parts>
+				</li>				
+				<li>
+				  <def>Golem_Waist</def>
+				  <coverage>.19</coverage>
+				  <height>Bottom</height>
+				  <parts>
+					<li>
+					  <def>Golem_Leg</def>
+					  <customLabel>left leg</customLabel>
+					  <coverage>0.14</coverage>
+					  <height>Bottom</height>
+					  <groups>
+						<li>Legs</li>
+					  </groups>
+					  <woundAnchorTag>LeftLeg</woundAnchorTag>
+					  <parts>						
+						<li>
+						  <def>Golem_Foot</def>
+						  <customLabel>left foot</customLabel>
+						  <coverage>0.25</coverage>
+						  <groups>
+							<li>Feet</li>
+						  </groups>					  
+						</li>
+					  </parts>
+					</li>
+					<li>
+					  <def>Golem_Leg</def>
+					  <customLabel>right leg</customLabel>
+					  <coverage>0.14</coverage>
+					  <height>Bottom</height>
+					  <groups>
+						<li>Legs</li>
+					  </groups>
+					  <woundAnchorTag>RightLeg</woundAnchorTag>
+					  <parts>						
+						<li>
+						  <def>Golem_Foot</def>
+						  <customLabel>right foot</customLabel>
+						  <coverage>0.25</coverage>
+						  <groups>
+							<li>Feet</li>
+						  </groups>					  
+						</li>
+					  </parts>
+					</li>
+				  </parts>
+				</li>				
+			</parts>
+		</corePart>
+	</BodyDef>
+	
 </Defs>

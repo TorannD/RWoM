@@ -40,9 +40,23 @@
 				<thingDefCountRange>3~5</thingDefCountRange>
 				<totalPriceRange>1200~2200</totalPriceRange>
 			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>ManaPotion</thingDef>
+				<countRange>10~25</countRange>
+			</li>
 			<li Class="StockGenerator_Tag">
 				<tradeTag>Arcane</tradeTag>
 				<thingDefCountRange>8~15</thingDefCountRange>
+				<countRange>1~1</countRange>
+			</li>
+			<li Class="StockGenerator_Tag">
+				<tradeTag>ArcaneSkillBooks</tradeTag>
+				<thingDefCountRange>2~5</thingDefCountRange>
+				<countRange>1~1</countRange>
+			</li>
+			<li Class="StockGenerator_Tag">
+				<tradeTag>ArcaneSrolls</tradeTag>
+				<thingDefCountRange>3~5</thingDefCountRange>
 				<countRange>1~1</countRange>
 			</li>
 			<li Class="StockGenerator_Tag">
@@ -108,6 +122,10 @@
 	  <li Class="StockGenerator_SingleDef">
 		<thingDef>Uranium</thingDef>
 		<countRange>200~500</countRange>
+	  </li>
+	  <li Class="StockGenerator_SingleDef">
+		<thingDef>ManaPotion</thingDef>
+		<countRange>15~30</countRange>
 	  </li>
 		<li Class="StockGenerator_Tag">
 			<tradeTag>RawArcane</tradeTag>
@@ -233,8 +251,18 @@
         <countRange>1~1</countRange>
       </li>
 	  <li Class="StockGenerator_Tag">
+        <tradeTag>ArcaneSkillBooks</tradeTag>
+        <thingDefCountRange>4~7</thingDefCountRange>
+        <countRange>1~1</countRange>
+      </li>
+	  <li Class="StockGenerator_Tag">
+        <tradeTag>ArcaneSrolls</tradeTag>
+        <thingDefCountRange>5~8</thingDefCountRange>
+        <countRange>1~1</countRange>
+      </li>
+	  <li Class="StockGenerator_Tag">
 		<tradeTag>Arcane</tradeTag>
-		<thingDefCountRange>8~16</thingDefCountRange>
+		<thingDefCountRange>5~10</thingDefCountRange>
 		<countRange>1~2</countRange>
 	  </li>
       <li Class="StockGenerator_Armor">

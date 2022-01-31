@@ -86,6 +86,7 @@ namespace TorannMagic
             harmonyInstance.Patch(AccessTools.Method(typeof(Pawn), "get_IsFreeNonSlaveColonist", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_IsFreeNonSlaveColonist_Golem", null));
             //harmonyInstance.Patch(AccessTools.Method(typeof(RaceProperties), "get_Humanlike", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_Humanlike_Golem", null), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(MainTabWindow_Animals), "get_Pawns", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_GolemsAsAnimals", null), null);
+            harmonyInstance.Patch(AccessTools.Method(typeof(RecipeDef), "get_AvailableNow", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_GolemsRecipeAvailable", null), null);
 
             harmonyInstance.Patch(AccessTools.Method(typeof(GenDraw), "DrawRadiusRing", new Type[]
                 {
@@ -364,6 +365,45 @@ namespace TorannMagic
         //    }
         //    return true;
         //}
+
+        [HarmonyPatch(typeof(CompPowerBattery), "DrawPower", null)]
+        public class DrawPower_Patch
+        {
+            private static void Postfix(CompPowerBattery __instance, float amount)
+            {
+                if(__instance.parent != null && __instance.parent is Building_TMGolemBase)
+                {
+                    Building_TMGolemBase gb = __instance.parent as Building_TMGolemBase;
+                    gb.Energy.DrawPowerNew(amount);
+                }
+            }
+        }
+
+        public static void Get_GolemsRecipeAvailable(RecipeDef __instance, ref bool __result)
+        {
+            if(__result)
+            {
+                Thing t = Find.Selector.SingleSelectedThing;
+                if(t is Building_TMGolemBase)
+                {
+                    Building_TMGolemBase gb = t as Building_TMGolemBase;
+                    foreach(TM_GolemUpgrade gu in gb.Upgrades)
+                    {
+                        if(gu.golemUpgradeDef.upgradeEnablesRecipes != null && gu.golemUpgradeDef.upgradeEnablesRecipes.Count > 0 && gu.golemUpgradeDef.upgradeEnablesRecipes.Contains(__instance))
+                        {
+                            if (gu.currentLevel == 0)
+                            {
+                                __result = false;
+                            }
+                        }
+                        if(gu.golemUpgradeDef.recipe != null && gu.golemUpgradeDef.maxLevel > 0 && gu.golemUpgradeDef.recipe == __instance && gu.currentLevel == gu.golemUpgradeDef.maxLevel)
+                        {
+                            __result = false;
+                        }
+                    }
+                }
+            }
+        }
 
         [HarmonyPatch(typeof(ThoughtWorker_Precept_HasAutomatedTurrets), "ResetStaticData", null)]
         public class NoSummonedTurretsThought_Patch
@@ -2134,7 +2174,7 @@ namespace TorannMagic
                         if (ModOptions.Constants.GetCloaksNorth().Contains(mat.mainTexture))
                         {
                             //loc.y += .00175f; //was 0.006f
-                            loc.y = 8.209f; //7.9961f;
+                            loc.y = 8.309f; //7.9961f; 8.209
                         }
 
                         if (drawNow)
@@ -2224,7 +2264,6 @@ namespace TorannMagic
             }
             return false;
         }
-
 
         public static bool CompRefuelable_DrawBar_Prefix(CompRefuelable __instance)
         {
@@ -3366,9 +3405,20 @@ namespace TorannMagic
                 absorbed = false;
                 if (instigator != null && !absorbed)
                 {
-                    if (__instance.health != null && __instance.health.hediffSet != null && __instance.health.hediffSet.HasHediff(TorannMagicDefOf.TM_BurningFuryHD, false))
+                    if (__instance.health != null && __instance.health.hediffSet != null)
                     {
-                        dinfo.SetAmount(dinfo.Amount * 0.65f);
+                        if (__instance.health.hediffSet.HasHediff(TorannMagicDefOf.TM_BurningFuryHD, false))
+                        {
+                            dinfo.SetAmount(dinfo.Amount * 0.65f);
+                        }
+                        if(__instance.health.hediffSet.HasHediff(TorannMagicDefOf.TM_FrailtyHD, false))
+                        {
+                            Hediff hd = __instance.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_FrailtyHD);
+                            if (hd != null)
+                            {
+                                dinfo.SetAmount(dinfo.Amount + (dinfo.Amount * hd.Severity));
+                            }
+                        }
                     }
                     if (dinfo.Def != null && dinfo.Instigator != null && dinfo.Instigator.Map != null && dinfo.Instigator is Pawn)
                     {
@@ -6661,16 +6711,19 @@ namespace TorannMagic
                                     else if (thing is Pawn)
                                     {
                                         Pawn p = thing as Pawn;
-                                        List<Pawn> plist = TM_Calc.FindPawnsNearTarget(p, Mathf.RoundToInt(enchantment.enchantmentAction.splashRadius), p.Position, enchantment.enchantmentAction.friendlyFire);
-                                        if (plist != null && plist.Count > 0)
+                                        if (enchantment.enchantmentAction.splashRadius > 0)
                                         {
-                                            for (int i = 0; i < plist.Count; i++)
+                                            List<Pawn> plist = TM_Calc.FindPawnsNearTarget(p, Mathf.RoundToInt(enchantment.enchantmentAction.splashRadius), p.Position, enchantment.enchantmentAction.friendlyFire);
+                                            if (plist != null && plist.Count > 0)
                                             {
-                                                HealthUtility.AdjustSeverity(plist[i], enchantment.enchantmentAction.hediffDef, enchantment.enchantmentAction.hediffSeverity);
-                                                if (enchantment.enchantmentAction.hediffDurationTicks != 0)
+                                                for (int i = 0; i < plist.Count; i++)
                                                 {
-                                                    HediffComp_Disappears hdc = plist[i].health.hediffSet.GetFirstHediffOfDef(enchantment.enchantmentAction.hediffDef).TryGetComp<HediffComp_Disappears>();
-                                                    hdc.ticksToDisappear = enchantment.enchantmentAction.hediffDurationTicks;
+                                                    HealthUtility.AdjustSeverity(plist[i], enchantment.enchantmentAction.hediffDef, enchantment.enchantmentAction.hediffSeverity);
+                                                    if (enchantment.enchantmentAction.hediffDurationTicks != 0)
+                                                    {
+                                                        HediffComp_Disappears hdc = plist[i].health.hediffSet.GetFirstHediffOfDef(enchantment.enchantmentAction.hediffDef).TryGetComp<HediffComp_Disappears>();
+                                                        hdc.ticksToDisappear = enchantment.enchantmentAction.hediffDurationTicks;
+                                                    }
                                                 }
                                             }
                                         }

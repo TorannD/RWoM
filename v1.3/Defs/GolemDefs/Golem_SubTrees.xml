@@ -24,6 +24,93 @@
             </li>
           </subNodes>
         </li>
+		<li Class="ThinkNode_ConditionalPawnKind">
+          <pawnKind>TM_HollowGolemK</pawnKind>
+          <subNodes>
+            <li Class="ThinkNode_Subtree">
+              <treeDef>TM_Golem_HollowBehavior</treeDef>
+              <leaveJoinableLordIfIssuesJob>true</leaveJoinableLordIfIssuesJob>
+            </li>
+          </subNodes>
+        </li>
+		<li Class="ThinkNode_ConditionalPawnKind">
+          <pawnKind>TM_StoneGolemK</pawnKind>
+          <subNodes>
+            <li Class="ThinkNode_Subtree">
+              <treeDef>TM_Golem_StoneBehavior</treeDef>
+              <leaveJoinableLordIfIssuesJob>true</leaveJoinableLordIfIssuesJob>
+            </li>
+          </subNodes>
+        </li>
+		<li Class="ThinkNode_ConditionalPawnKind">
+          <pawnKind>TM_SandstoneGolemK</pawnKind>
+          <subNodes>
+            <li Class="ThinkNode_Subtree">
+              <treeDef>TM_Golem_StoneBehavior</treeDef>
+              <leaveJoinableLordIfIssuesJob>true</leaveJoinableLordIfIssuesJob>
+            </li>
+          </subNodes>
+        </li>
+		<li Class="ThinkNode_ConditionalPawnKind">
+          <pawnKind>TM_LimestoneGolemK</pawnKind>
+          <subNodes>
+            <li Class="ThinkNode_Subtree">
+              <treeDef>TM_Golem_StoneBehavior</treeDef>
+              <leaveJoinableLordIfIssuesJob>true</leaveJoinableLordIfIssuesJob>
+            </li>
+          </subNodes>
+        </li>
+		<li Class="ThinkNode_ConditionalPawnKind">
+          <pawnKind>TM_GraniteGolemK</pawnKind>
+          <subNodes>
+            <li Class="ThinkNode_Subtree">
+              <treeDef>TM_Golem_StoneBehavior</treeDef>
+              <leaveJoinableLordIfIssuesJob>true</leaveJoinableLordIfIssuesJob>
+            </li>
+          </subNodes>
+        </li>
+		<li Class="ThinkNode_ConditionalPawnKind">
+          <pawnKind>TM_SlateGolemK</pawnKind>
+          <subNodes>
+            <li Class="ThinkNode_Subtree">
+              <treeDef>TM_Golem_StoneBehavior</treeDef>
+              <leaveJoinableLordIfIssuesJob>true</leaveJoinableLordIfIssuesJob>
+            </li>
+          </subNodes>
+        </li>
+		<li Class="ThinkNode_ConditionalPawnKind">
+          <pawnKind>TM_MarbleGolemK</pawnKind>
+          <subNodes>
+            <li Class="ThinkNode_Subtree">
+              <treeDef>TM_Golem_StoneBehavior</treeDef>
+              <leaveJoinableLordIfIssuesJob>true</leaveJoinableLordIfIssuesJob>
+            </li>
+          </subNodes>
+        </li>
+		<li Class="ThinkNode_ConditionalPawnKind">
+          <pawnKind>TM_MaharalGolemK</pawnKind>
+          <subNodes>
+            <li Class="ThinkNode_Subtree">
+              <treeDef>TM_Golem_MaharalBehavior</treeDef>
+              <leaveJoinableLordIfIssuesJob>true</leaveJoinableLordIfIssuesJob>
+            </li>
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+  
+  <!--============= Main maharal golem behavior ============-->
+  
+  <ThinkTreeDef>
+    <defName>TM_Golem_MaharalBehavior</defName>
+    <thinkRoot Class="ThinkNode_Tagger">
+      <tagToGive>Misc</tagToGive> <!-- note that JobGiver_Work will assign its own tag -->
+      <subNodes>
+		<li Class="TorannMagic.Golems.JobGiver_GolemGetEnergy"/>
+		<li Class="TorannMagic.Golems.JobGiver_GolemJobs"/>
+		<li Class="JobGiver_Haul" />
+		<li Class="TorannMagic.JobGiver_AIClean" />
       </subNodes>
     </thinkRoot>
   </ThinkTreeDef>
@@ -57,7 +144,36 @@
       </subNodes>
     </thinkRoot>
   </ThinkTreeDef>
-
+  
+  
+<!--============= Main hollow golem behavior ============-->
+  
+  <ThinkTreeDef>
+    <defName>TM_Golem_HollowBehavior</defName>
+    <thinkRoot Class="ThinkNode_Tagger">
+      <tagToGive>Misc</tagToGive> <!-- note that JobGiver_Work will assign its own tag -->
+      <subNodes>
+		<li Class="TorannMagic.Golems.JobGiver_GolemGetEnergy"/>
+		<li Class="JobGiver_Haul" />
+		<li Class="TorannMagic.JobGiver_AIClean" />
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+  
+<!--============= Main stone golem behavior ============-->
+  
+  <ThinkTreeDef>
+    <defName>TM_Golem_StoneBehavior</defName>
+    <thinkRoot Class="ThinkNode_Tagger">
+      <tagToGive>Misc</tagToGive> <!-- note that JobGiver_Work will assign its own tag -->
+      <subNodes>
+		<li Class="TorannMagic.Golems.JobGiver_GolemGetEnergy"/>
+		<li Class="TorannMagic.Golems.JobGiver_GolemJobs"/>
+		<li Class="JobGiver_Haul" />
+		<li Class="TorannMagic.JobGiver_AIClean" />
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
   
   <!--============= Burning ============-->
   

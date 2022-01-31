@@ -251,7 +251,7 @@
 		<defName>TM_GolemCraftRD</defName>
 		<label>golem theory</label>
 		<tab>TMagic</tab>
-		<description>Golem crafting is a brand of enchanting that diverges from passive enhancements and researches theories of manipulating magical enchantments for active purposes. This research will develop concepts of how to apply active enhancements to create magical creatures.</description>
+		<description>Golem crafting is a brand of enchanting that diverges from passive enhancements and researches theories of manipulating magical enchantments for active purposes. This research will develop concepts of how to apply active enhancements to create magical creatures. This research enables construction of the stone and maharal golems at the stonecutter's table. The maharal golem can also be created at a crafting spot.</description>
 		<baseCost>500</baseCost>
 		<techLevel>Neolithic</techLevel>
 		<researchViewX>2.0</researchViewX>

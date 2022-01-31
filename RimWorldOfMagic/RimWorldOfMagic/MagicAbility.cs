@@ -29,7 +29,7 @@ namespace TorannMagic
             }
         }
 
-        private float ActualBloodCost
+        public float ActualBloodCost
         {
             get
             {
@@ -43,7 +43,7 @@ namespace TorannMagic
             }
         }
 
-        private static float ActualNeedCost (TMAbilityDef magicDef, CompAbilityUserMagic magicUser)
+        public static float ActualNeedCost (TMAbilityDef magicDef, CompAbilityUserMagic magicUser)
         {
             float num = 1f;
             if (magicDef != null && magicUser.MagicData.GetSkill_Efficiency(magicDef) != null)
@@ -53,7 +53,7 @@ namespace TorannMagic
             return magicDef.needCost * num;            
         }
 
-        private static float ActualHediffCost(TMAbilityDef magicDef, CompAbilityUserMagic magicUser)
+        public static float ActualHediffCost(TMAbilityDef magicDef, CompAbilityUserMagic magicUser)
         {
             float num = 1f;
             if (magicDef != null && magicUser.MagicData.GetSkill_Efficiency(magicDef) != null)

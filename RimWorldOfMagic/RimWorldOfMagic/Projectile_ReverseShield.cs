@@ -13,6 +13,7 @@ using RimWorld;
 
 namespace TorannMagic
 {
+    [StaticConstructorOnStartup]
     public class Projectile_ReverseShield : Projectile_AbilityBase
     {
 

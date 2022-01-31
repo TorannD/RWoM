@@ -29,6 +29,22 @@ namespace TorannMagic.Ideology
                 }
                 return false;
             }
+            if (TM_Calc.IsUndeadNotVamp(p))
+            {
+                if (!skipReason)
+                {
+                    reason = "TM_MessageRitualRoleCannotBeUndead".Translate(base.LabelCap);
+                }
+                return false;
+            }
+            if(!p.IsFreeNonSlaveColonist)
+            {
+                if (!skipReason)
+                {
+                    reason = "Cannot be a slave";
+                }
+                return false;
+            }
             if (p.Ideo.GetRole(p) == null)
             {
                 if (!skipReason)

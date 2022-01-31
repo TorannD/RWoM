@@ -5816,7 +5816,7 @@ namespace TorannMagic
                             TMAbilityDef tmad = mp.TMabilityDefs[mp.level] as TMAbilityDef; // issues with index?
                             bool canUseWithEquippedWeapon = true;
                             bool canUseIfViolentAbility = this.Pawn.story.DisabledWorkTagsBackstoryAndTraits.HasFlag(WorkTags.Violent) ? !tmad.MainVerb.isViolent : true;
-                            if (tmad.requiredWeaponsOrCategories != null && tmad.IsRestrictedByEquipment(this.Pawn))
+                            if(!TM_Calc.HasResourcesForAbility(this.Pawn, tmad))
                             {
                                 continue;
                             }
@@ -6412,7 +6412,7 @@ namespace TorannMagic
                             TMAbilityDef tmad = mp.TMabilityDefs[mp.level] as TMAbilityDef; // issues with index?
                             bool canUseWithEquippedWeapon = true;
                             bool canUseIfViolentAbility = this.Pawn.story.DisabledWorkTagsBackstoryAndTraits.HasFlag(WorkTags.Violent) ? !tmad.MainVerb.isViolent : true;
-                            if (tmad.requiredWeaponsOrCategories != null && tmad.IsRestrictedByEquipment(this.Pawn))
+                            if (!TM_Calc.HasResourcesForAbility(this.Pawn, tmad))
                             {
                                 continue;
                             }
@@ -6854,14 +6854,14 @@ namespace TorannMagic
                             TMAbilityDef tmad = mp.TMabilityDefs[mp.level] as TMAbilityDef; // issues with index?
                             bool canUseWithEquippedWeapon = true;
                             bool canUseIfViolentAbility = this.Pawn.story.DisabledWorkTagsBackstoryAndTraits.HasFlag(WorkTags.Violent) ? !tmad.MainVerb.isViolent : true;
-                            if (tmad.requiredWeaponsOrCategories != null && tmad.IsRestrictedByEquipment(this.Pawn))
+                            if (!TM_Calc.HasResourcesForAbility(this.Pawn, tmad))
                             {
                                 continue;
                             }
                             if (canUseWithEquippedWeapon && canUseIfViolentAbility)
                             {
                                 PawnAbility ability = this.AbilityData.Powers.FirstOrDefault((PawnAbility x) => x.Def == tmad);
-                                LocalTargetInfo currentTarget = this.Pawn.TargetCurrentlyAimingAt != null ? this.Pawn.TargetCurrentlyAimingAt : this.Pawn.CurJob.targetA;
+                                LocalTargetInfo currentTarget = this.Pawn.TargetCurrentlyAimingAt != null ? this.Pawn.TargetCurrentlyAimingAt : (this.Pawn.CurJob != null ? this.Pawn.CurJob.targetA : null);
                                 if (mp.autocasting.type == TMDefs.AutocastType.OnTarget && currentTarget != null)
                                 {
                                     LocalTargetInfo localTarget = TM_Calc.GetAutocastTarget(this.Pawn, mp.autocasting, currentTarget);
@@ -9961,8 +9961,8 @@ namespace TorannMagic
                 foreach (MagicPower mp in this.MagicData.MagicPowersCustom)
                 {
                     foreach (TM_CustomPowerDef mpDef in mpDefs)
-                    {
-                        if (mpDef.customPower.abilityDefs.FirstOrDefault().ToString() == mp.GetAbilityDef(0).ToString())
+                    {                        
+                        if (mpDef.customPower.abilityDefs[0].ToString() == mp.GetAbilityDef(0).ToString())
                         {
                             if (mpDef.customPower.autocasting != null)
                             {

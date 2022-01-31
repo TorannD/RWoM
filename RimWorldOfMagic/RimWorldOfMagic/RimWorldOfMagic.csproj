@@ -132,8 +132,13 @@
     <Compile Include="Building_TMTotem_Healing.cs" />
     <Compile Include="Building_TMTotem_Lightning.cs" />
     <Compile Include="Building_TM_DMP.cs" />
+    <Compile Include="DeathWorker_Sentinel.cs" />
+    <Compile Include="Golems\GolemNameWindow.cs" />
+    <Compile Include="HediffComp_SeverityPercent.cs" />
+    <Compile Include="JobGiver_AIAbilityUser.cs" />
     <Compile Include="FlyingObject_Advanced_Icebolt.cs" />
     <Compile Include="FlyingObject_LivingWall.cs" />
+    <Compile Include="Golems\Building_TMGolemStone.cs" />
     <Compile Include="Golems\Building_TMGolemBase.cs" />
     <Compile Include="Golems\GolemAbilitiesWindow.cs" />
     <Compile Include="Golems\GolemDrawClass.cs" />
@@ -141,7 +146,9 @@
     <Compile Include="Golems\CompProperties_GolemAbilityEffect_AbsorbFire.cs" />
     <Compile Include="Golems\CompProperties_GolemAbilityEffect_Awakening.cs" />
     <Compile Include="Golems\CompProperties_GolemAbilityEffect_Fade.cs" />
+    <Compile Include="Golems\GolemWorkstationEffect_CreateItem.cs" />
     <Compile Include="Golems\GolemWorkstationEffect_DestroyFilth.cs" />
+    <Compile Include="Golems\GolemWorkstationEffect_EnableMaharalPower.cs" />
     <Compile Include="Golems\GolemWorkstationEffect_RegulateTemperature.cs" />
     <Compile Include="Golems\GolemWorkstationEffect_DestroyFire.cs" />
     <Compile Include="Golems\GolemWorkstationEffect_Glow.cs" />
@@ -197,6 +204,7 @@
     <Compile Include="Golems\JobDriver_GolemDespawn.cs" />
     <Compile Include="Golems\ITab_GolemWorkstation.cs" />
     <Compile Include="Golems\Need_GolemEnergy.cs" />
+    <Compile Include="Golems\Verb_GolemSmash.cs" />
     <Compile Include="Golems\Verb_GolemShoot.cs" />
     <Compile Include="Golems\Verb_DarkBolt.cs" />
     <Compile Include="Golems\Verb_FireBlossom.cs" />
@@ -268,7 +276,7 @@
     <Compile Include="DeathWorker_Demon.cs" />
     <Compile Include="DeathWorker_Elemental.cs" />
     <Compile Include="DeathWorker_Poppi.cs" />
-    <Compile Include="DeathWorker_Sentinel.cs" />
+    <Compile Include="DeathWorker_StoneGolem.cs" />
     <Compile Include="DeathWorker_Skeletal.cs" />
     <Compile Include="DeathWorker_Spirit.cs" />
     <Compile Include="DefModExtension_LearnAbilityRequiredTraits.cs" />
@@ -648,6 +656,7 @@
     <Compile Include="TMDamageDefOf.cs" />
     <Compile Include="TMDefOf.cs" />
     <Compile Include="TMDefs\TM_GolemAbilityDef.cs" />
+    <Compile Include="TMDefs\TM_GolemItemRecipeDef.cs" />
     <Compile Include="TMDefs\TM_GolemUpgradeDef.cs" />
     <Compile Include="Golems\TM_Golem.cs" />
     <Compile Include="TMDefs\TM_Structs.cs" />
@@ -750,6 +759,7 @@
     <Compile Include="Verb_DispelBranding.cs" />
     <Compile Include="Verb_BrandSiphon.cs" />
     <Compile Include="Verb_IncitePassion.cs" />
+    <Compile Include="Verb_MeleeSlam.cs" />
     <Compile Include="Verb_SoothingBalm.cs" />
     <Compile Include="Verb_LivingWall.cs" />
     <Compile Include="Verb_Elixir.cs" />

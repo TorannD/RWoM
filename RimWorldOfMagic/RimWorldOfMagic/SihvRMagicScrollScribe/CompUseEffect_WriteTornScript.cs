@@ -13,23 +13,14 @@ namespace TorannMagic.SihvRMagicScrollScribe
             IntVec3 currentPos = parent.PositionHeld;
             Map map = parent.Map;
             CompAbilityUserMagic comp = user.TryGetComp<CompAbilityUserMagic>();
-            if (parent.def != null && comp != null && user.IsSlave && TM_Calc.IsMagicUser(user))
-            {                
-                if (Rand.Chance(.25f))
-                {
-                    Messages.Message("TM_SlaveScribeFail".Translate(
-                        parent.def.label,
-                        user.LabelShort
+            if (parent.def != null && comp != null && user.IsSlave)
+            {
+                Messages.Message("TM_SlaveScribeFail".Translate(
+                        parent.def.label
                     ), MessageTypeDefOf.RejectInput);
-                    tempPod = null;
-                }
-                else
-                {
-                    tempPod = TorannMagicDefOf.BookOfQuestion;
-                }
-                this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
+                tempPod = null;
             }
-            else if (parent.def != null && comp != null && comp.customClass != null)
+            else if (parent.def != null && comp != null && comp.customClass != null && (comp.customClass.tornScript != null || comp.customClass.fullScript != null))
             {
                 if (comp.customClass.tornScript != null)
                 {
@@ -126,7 +117,7 @@ namespace TorannMagic.SihvRMagicScrollScribe
                 tempPod = TorannMagicDefOf.Torn_BookOfChaos;
                 this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
             }
-            else if (parent.def != null && (user.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted) || user.story.traits.HasTrait(TorannMagicDefOf.TM_Wanderer)))
+            else if (parent.def != null && (user.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted) || user.story.traits.HasTrait(TorannMagicDefOf.TM_Wanderer) || user.story.traits.HasTrait(TorannMagicDefOf.TM_Empath)))
             {
                 tempPod = TorannMagicDefOf.BookOfQuestion;
                 this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);

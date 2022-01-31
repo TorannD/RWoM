@@ -15,6 +15,7 @@ namespace TorannMagic.Golems
         private static readonly Vector2 WinSize = new Vector2(432f, 550f);
         private Vector2 scrollPosition = Vector2.zero;
         private bool abilityOptions = false;
+        private bool changeName = false;
 
         private string pawnMasterName = "None";
 
@@ -90,19 +91,32 @@ namespace TorannMagic.Golems
                 Text.Font = GameFont.Small;
                 if (golem_building.GolemPawn != null)
                 {
-                    string tmpName = Widgets.TextField(rect2, golem_building.GolemPawn.LabelShortCap != "Blank" ? golem_building.GolemPawn.LabelShortCap : "");
-                    if (tmpName != "")
+                    Rect rectNameLabel = new Rect(rect2.x, rect2.y, 100f, 28f);
+                    Widgets.Label(rectNameLabel, "TM_GolemName".Translate());
+                    string tmpName = golem_building.GolemPawn.LabelShortCap;
+                    Rect rectNameButton = new Rect(rect2.x + 110, rect2.y, 254f, rectNameLabel.height);
+                    changeName = Widgets.ButtonText(rectNameButton, tmpName, true, false, true);
+                    if (changeName)
                     {
-                        golem_building.GolemPawn.Name = NameTriple.FromString(tmpName);
+                        GolemNameWindow newWindow = new GolemNameWindow();
+                        newWindow.cg = golem_building.GolemComp;
+                        newWindow.golemName = golem_building.GolemPawn.Name.ToStringShort;
+                        Find.WindowStack.Add(newWindow);
                     }
-                    else
-                    {
-                        golem_building.GolemPawn.Name = NameTriple.FromString("Blank");
-                    }
+                    //string tmpName = Widgets.TextField(rect2, golem_building.GolemPawn.LabelShortCap != "Blank" ? golem_building.GolemPawn.LabelShortCap : "");
+                    //if (tmpName != "")
+                    //{
+                    //    golem_building.GolemPawn.Name = NameTriple.FromString(tmpName);
+                    //}
+                    //else
+                    //{
+                    //    golem_building.GolemPawn.Name = NameTriple.FromString("Blank");
+                    //}
                     num += 2;
-
-                    Rect rectPawnMaster = GetRowRect(rect2, num, 10);
-                    if(Widgets.ButtonText(rectPawnMaster, pawnMasterName))
+                    Rect rectMasterLabel = GetRowRect(rectNameLabel, num, 10);
+                    Widgets.Label(rectMasterLabel, "TM_GolemMasterLabel".Translate());
+                    Rect rectPawnMaster = GetRowRect(rectNameButton, num, 10);
+                    if (Widgets.ButtonText(rectPawnMaster, pawnMasterName))
                     {
                         List<string> tmpPawns = new List<string>();
                         tmpPawns.Add("None");
@@ -135,7 +149,6 @@ namespace TorannMagic.Golems
                     abilityOptions = Widgets.ButtonText(GetRowRect(rect2, num, 10), "TM_GolemAbilitiesButton".Translate(), true, false, true);
                     if (abilityOptions)
                     {
-                        Rect rectAbilities = new Rect(64f, 64f, 480, 600);
                         GolemAbilitiesWindow newWindow = new GolemAbilitiesWindow();
                         newWindow.cg = golem_building.GolemComp;
                         Find.WindowStack.Add(newWindow);
@@ -155,6 +168,10 @@ namespace TorannMagic.Golems
                     rectShowDormantPos.width = rect2.width / 2.2f;
                     Widgets.CheckboxLabeled(rectShowDormantPos, "TM_GolemShowDormant".Translate(), ref golem_building.GolemPawn.showDormantPosition, false);
                     TooltipHandler.TipRegion(rectShowDormantPos, "TM_GolemShowDormantDesc".Translate());
+                    Rect rectRestrictedAggression = rectShowDormantPos;
+                    rectRestrictedAggression.x += rectRestrictedAggression.width + 34f;
+                    Widgets.CheckboxLabeled(rectRestrictedAggression, "TM_GolemRestrictedAggression".Translate(), ref golem_building.GolemComp.checkThreatPath, false);
+                    TooltipHandler.TipRegion(rectRestrictedAggression, "TM_GolemRestrictedAggressionDesc".Translate());
                     num += 2;
 
                     Rect rectStayDormant = GetRowRect(rect2, num);

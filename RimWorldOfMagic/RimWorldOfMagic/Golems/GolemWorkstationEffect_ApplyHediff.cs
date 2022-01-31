@@ -43,7 +43,7 @@ namespace TorannMagic.Golems
 
         public override bool CanDoEffect(Building_TMGolemBase golem_building)
         {
-            if (target != null && target.HasThing && !golem_building.holdFire && golem_building.TargetIsValid(golem_building, target.Thing))
+            if (target != null && target.HasThing && !golem_building.holdFire && golem_building.GolemComp.TargetIsValid(golem_building, target.Thing))
             {
                 Pawn p = target.Thing as Pawn;
                 if(p == null)

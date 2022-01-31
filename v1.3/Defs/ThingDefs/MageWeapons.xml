@@ -671,6 +671,213 @@ Haste on hit (25%)</description>
     </tools>
   </ThingDef>
   
+  <!-- Glory Maul -->
+  <ThingDef ParentName="TM_BaseMeleeMageWeapon">
+		<defName>TM_GloryMaul</defName>
+		<label>Glory Maul</label>
+		<description>A one handed mace designed for effectiveness against a variety of foes. The head of the Glory Maul has a blunt, end shaped with a jagged formation to condense the weight of a blow to several points, and is balanced on the other end against a curved talon's spike used to puncture thick armor. The Glory Maul is so named for its enchantment, which can grant the wielder with a powerful blessing of might.
+		
+This weapon is enchanted and provides additional benefits to trained mages and fighters:
+Max Energy: +20%
+Arcane Resistance: +20%
+Damage Boost: +10%
+Bestow Might on hit (15%)</description>
+		<graphicData>
+			<texPath>Items/weapons/GloryMaul_Weapon_Blunt</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>1</drawSize>
+		</graphicData>
+    <weaponTags>
+		<li>SeerElite</li>
+    </weaponTags>
+	<relicChance>1.2</relicChance>
+	<statBases>
+      <WorkToMake>30000</WorkToMake>
+      <Mass>6</Mass>
+	  <MaxHitPoints>600</MaxHitPoints>
+	  <Flammability>0</Flammability>
+	  <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <costList>
+	  <Silver>25</Silver>
+	  <RawMagicyte>200</RawMagicyte>
+	  <Leather_Plain>30</Leather_Plain>
+    </costList>
+	<costStuffCount>250</costStuffCount>
+	<stuffCategories>
+		<li>Metallic</li>
+	</stuffCategories>
+	<recipeMaker>
+	  <workSpeedStat>WorkSpeedGlobal</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+	  <effectWorking>Smelt</effectWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+	  <recipeUsers>
+        <li>ElectricSmithy</li>
+        <li>FueledSmithy</li>
+		<li>TableArcaneForge</li>
+      </recipeUsers>
+      <workAmount>35000</workAmount>
+	  <skillRequirements>
+			<Crafting>6</Crafting>
+	  </skillRequirements>
+	  <researchPrerequisite>
+			<li>TM_ArcaneApparel</li>
+	  </researchPrerequisite>
+    </recipeMaker>	
+	<comps>
+		<li Class = "TorannMagic.Enchantment.CompProperties_EnchantedItem">
+		  <hasEnchantment>true</hasEnchantment>
+		  <maxMP>0.20</maxMP>
+		  <maxMPTier>Standard</maxMPTier>
+		  <arcaneRes>0.20</arcaneRes>
+		  <arcaneResTier>Standard</arcaneResTier>	
+		  <arcaneDmg>0.10</arcaneDmg>
+		  <arcaneDmgTier>Standard</arcaneDmgTier>
+		  <enchantedAction>
+			<type>ApplyHediff</type>
+			<actionLabel>Bestow Might</actionLabel>
+			<onSelf>true</onSelf>
+			<hediffDef>BestowMightHD_I</hediffDef>
+			<hediffSeverity>.5</hediffSeverity>
+			<hediffChance>.15</hediffChance>
+		  </enchantedAction>
+		</li>
+	</comps>
+	<equippedAngleOffset>-66</equippedAngleOffset>
+    <tools>
+      <li>
+        <label>talon spike</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>14</power>
+        <cooldownTime>1.4</cooldownTime>
+		<armorPenetration>.8</armorPenetration>
+      </li>
+	  <li>
+	    <label>crush</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>16</power>
+        <cooldownTime>1.4</cooldownTime>
+		<armorPenetration>0.1</armorPenetration>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  <!-- Decimation -->
+  <ThingDef ParentName="TM_BaseMeleeMageWeapon">
+		<defName>TM_Decimation</defName>
+		<label>Decimation</label>
+		<description>A two handed mace so heavily enchanted that it tears apart the cohesion of any material it strikes. It is forged seemingly from a single piece of metal and wielded from a handle wrapped in simple leather. Finely etched runes cover the surface of the mace, making it appear almost delicate. When held, the quality of the design is apparent, with perfect balance and solid handling despite the authoritative finality of its weight. Each blow has a chance to inflict frailty on the target, causing it to take more damage from subsequent attacks.
+		
+This weapon is enchanted and provides additional benefits to trained mages and fighters:
+Max Energy: +40%
+Arcane Resistance: +40%
+Damage Boost: +30%
+Frailty on hit (50%)</description>
+		<graphicData>
+			<texPath>Items/weapons/RunicMace_Weapon_Blunt</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>1.2</drawSize>
+		</graphicData>
+    <weaponTags>
+		<li>SeerElite</li>
+    </weaponTags>
+	<relicChance>1.2</relicChance>
+	<statBases>
+      <WorkToMake>50000</WorkToMake>
+      <Mass>15</Mass>
+	  <MaxHitPoints>1000</MaxHitPoints>
+	  <Flammability>0</Flammability>
+	  <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <costList>
+	  <Silver>50</Silver>
+	  <RawMagicyte>500</RawMagicyte>
+	  <Leather_Plain>50</Leather_Plain>
+    </costList>
+	<costStuffCount>400</costStuffCount>
+	<stuffCategories>
+		<li>Metallic</li>
+	</stuffCategories>
+	<recipeMaker>
+	  <workSpeedStat>WorkSpeedGlobal</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+	  <effectWorking>Smelt</effectWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+	  <recipeUsers>
+        <li>ElectricSmithy</li>
+        <li>FueledSmithy</li>
+		<li>TableArcaneForge</li>
+      </recipeUsers>
+      <workAmount>50000</workAmount>
+	  <skillRequirements>
+			<Crafting>10</Crafting>
+	  </skillRequirements>
+	  <researchPrerequisite>
+			<li>TM_ArcaneArtifacts</li>
+	  </researchPrerequisite>
+    </recipeMaker>	
+	<comps>
+		<li Class = "TorannMagic.Enchantment.CompProperties_EnchantedItem">
+		  <hasEnchantment>true</hasEnchantment>
+		  <maxMP>0.40</maxMP>
+		  <maxMPTier>Crafted</maxMPTier>
+		  <arcaneRes>0.40</arcaneRes>
+		  <arcaneResTier>Crafted</arcaneResTier>	
+		  <arcaneDmg>0.30</arcaneDmg>
+		  <arcaneDmgTier>Crafted</arcaneDmgTier>
+		  <enchantedAction>
+			<type>ApplyHediff</type>
+			<actionLabel>Sunder</actionLabel>
+			<onSelf>false</onSelf>
+			<hediffDef>TM_FrailtyHD</hediffDef>
+			<hediffSeverity>.3</hediffSeverity>
+			<hediffChance>.50</hediffChance>
+		  </enchantedAction>
+		</li>
+		<li>
+		  <compClass>CompOversizedWeapon.CompOversizedWeapon</compClass>
+		</li>
+	</comps>
+	<equippedAngleOffset>-24</equippedAngleOffset>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>.6</cooldownTime>
+		<armorPenetration>0</armorPenetration>
+		<chanceFactor>.4</chanceFactor>
+      </li>
+	  <li>
+	    <label>crush</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>26</power>
+        <cooldownTime>1.8</cooldownTime>
+		<armorPenetration>0.2</armorPenetration>
+      </li>
+<!-- 	  <li>
+        <label>slam</label>
+        <capacities>
+          <li>TM_DecimationSlam</li>
+        </capacities>
+        <power>22</power>
+        <cooldownTime>2</cooldownTime>
+		<chanceFactor>1.2</chanceFactor>
+      </li> -->
+    </tools>
+  </ThingDef>
+  
   <!-- The rune blade -->
   <ThingDef ParentName="TM_BaseMeleeMageWeapon">
 		<defName>TM_Ruunbled</defName>

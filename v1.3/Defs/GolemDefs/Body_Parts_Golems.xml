@@ -1425,4 +1425,98 @@
 	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>    
   </BodyPartDef>
   
+  <!-- STONE GOLEM -->
+  
+  <BodyPartGroupDef>
+    <defName>Stone_Arms</defName>
+    <label>arms</label>
+	<listOrder>101</listOrder>
+  </BodyPartGroupDef>
+  
+  <BodyPartDef>
+    <defName>Stone_Core</defName>
+    <label>stone core</label>
+    <hitPoints>20</hitPoints>
+	<skinCovered>false</skinCovered>
+	<solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>1</permanentInjuryChanceFactor>    
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Stone_SlotA</defName>
+    <label>stone core(a)</label>
+    <hitPoints>10</hitPoints>
+	<skinCovered>false</skinCovered>
+	<solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>    
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Stone_SlotB</defName>
+    <label>stone core(b)</label>
+    <hitPoints>10</hitPoints>
+	<skinCovered>false</skinCovered>
+	<solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>    
+  </BodyPartDef>
+  
+  <!-- MAHARAL GOLEM -->
+  
+  <BodyPartGroupDef>
+    <defName>Maharal_Arms</defName>
+    <label>arms</label>
+	<listOrder>101</listOrder>
+  </BodyPartGroupDef>
+  
+  <BodyPartDef>
+    <defName>Maharal_Core</defName>
+    <label>maharal core</label>
+    <hitPoints>20</hitPoints>
+	<skinCovered>false</skinCovered>
+	<solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>1</permanentInjuryChanceFactor>    
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Maharal_SlotA</defName>
+    <label>maharal core(a)</label>
+    <hitPoints>10</hitPoints>
+	<skinCovered>false</skinCovered>
+	<solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>    
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Maharal_SlotB</defName>
+    <label>maharal core(b)</label>
+    <hitPoints>10</hitPoints>
+	<skinCovered>false</skinCovered>
+	<solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>    
+  </BodyPartDef>
+  
 </Defs>

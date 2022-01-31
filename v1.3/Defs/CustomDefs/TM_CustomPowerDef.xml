@@ -387,7 +387,8 @@
 				<targetEnemy>true</targetEnemy>				<!--looks for a nearby enemy, then checks to see if there are 3 within 15cells -->
 				<requiresLoS>false</requiresLoS>			
 				<AIUsable>true</AIUsable>					
-				<includeSelf>false</includeSelf>			
+				<includeSelf>false</includeSelf>
+				<maxRange>15</maxRange>
 				<advancedConditionDefs>						
 					<li>TM_3EnemiesWithin15Cells</li>
 				</advancedConditionDefs>					

@@ -19,6 +19,25 @@
     <combatLogRulesMiss>Maneuver_Slash_MeleeMiss</combatLogRulesMiss>
     <combatLogRulesDodge>Maneuver_Slash_MeleeDodge</combatLogRulesDodge>
   </ManeuverDef>
+  
+  <ToolCapacityDef>
+    <defName>TM_DecimationSlam</defName>
+    <label>power slam</label>
+  </ToolCapacityDef>
+  
+  <ManeuverDef>
+	<defName>TM_Slam</defName>
+    <requiredCapacity>TM_DecimationSlam</requiredCapacity>
+    <verb>
+      <verbClass>TorannMagic.Verb_MeleeSlam</verbClass>
+      <meleeDamageDef>Blunt</meleeDamageDef>
+    </verb>
+    <logEntryDef>MeleeAttack</logEntryDef>
+    <combatLogRulesHit>Maneuver_Smash_MeleeHit</combatLogRulesHit>
+    <combatLogRulesDeflect>Maneuver_Smash_MeleeDeflect</combatLogRulesDeflect>
+    <combatLogRulesMiss>Maneuver_Smash_MeleeMiss</combatLogRulesMiss>
+    <combatLogRulesDodge>Maneuver_Smash_MeleeDodge</combatLogRulesDodge>
+  </ManeuverDef>
  
   
 </Defs>

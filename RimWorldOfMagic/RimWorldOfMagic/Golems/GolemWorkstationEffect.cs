@@ -23,6 +23,7 @@ namespace TorannMagic.Golems
         public bool requiresTarget = false;
         public float effectLevelModifier = 0f;
         public Vector3 drawOffset = new Vector3(0, 0, 0);
+        public List<TM_GolemItemRecipeDef> recipes = new List<TM_GolemItemRecipeDef>();
 
         public LocalTargetInfo target = null;
         public Building_TMGolemBase parent;
@@ -30,6 +31,8 @@ namespace TorannMagic.Golems
         public int startTick = 0;
         public int nextEffectTick = 0;
         public float currentLevel;
+        public int effectFrequency = 0;
+        public int chargesRequired = 0;
 
         public bool EffectActive => (startTick + effectDuration) > Find.TickManager.TicksGame;
 

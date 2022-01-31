@@ -19,9 +19,12 @@ namespace TorannMagic.Golems
         public float selfChargeUpgradeFactor = .1f;
 
         public Color energyColor = Color.blue;
+        public float energyBarOffsetX = 0f;
+        public float energyBarOffsetY = 0f;
 
         public bool electricalConverter = false;
         public bool manaConverter = false;
+        public bool canDrawPower = false;
 
         public CompProperties_GolemEnergyHandler()
         {

@@ -17,21 +17,12 @@ namespace TorannMagic.SihvRMagicScrollScribe
             List<TMDefs.TM_CustomClass> cFighters = TM_ClassUtility.CustomFighterClasses;
             
             CompAbilityUserMight comp = user.TryGetComp<CompAbilityUserMight>();
-            if (parent.def != null && comp != null && user.IsSlave && TM_Calc.IsMightUser(user))
+            if (parent.def != null && comp != null && user.IsSlave)
             {
-                if (Rand.Chance(.25f))
-                {
-                    Messages.Message("TM_SlaveScribeFail".Translate(
-                        parent.def.label,
-                        user.LabelShort
+                Messages.Message("TM_SlaveScribeFail".Translate(
+                        parent.def.label
                     ), MessageTypeDefOf.RejectInput);
-                    tempPod = null;
-                }
-                else
-                {
-                    tempPod = TM_Data.FighterBookList().RandomElement();
-                }
-                this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
+                tempPod = null;
             }
             else if(parent.def != null && comp != null && comp.customClass != null)
             {

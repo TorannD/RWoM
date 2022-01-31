@@ -29,6 +29,14 @@ namespace TorannMagic.Ideology
                 }
                 return false;
             }
+            if(TM_Calc.IsUndeadNotVamp(p))
+            {
+                if (!skipReason)
+                {
+                    reason = "TM_MessageRitualRoleCannotBeUndead".Translate(p.LabelShort);
+                }
+                return false;
+            }
             if(!p.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted))
             {
                 if (!skipReason)

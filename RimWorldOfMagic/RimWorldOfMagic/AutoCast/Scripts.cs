@@ -1012,7 +1012,7 @@ namespace TorannMagic.AutoCast
                         }
                         if (!targetPawn.health.hediffSet.HasHediff(hediffDef, false) && tatteredApparel)
                         {
-                            Job job = ability.GetJob(AbilityContext.AI, jobTarget);
+                            Job job = ability.GetJob(AbilityContext.AI, jobTarget);                            
                             DoJob.Execute(job, caster);
                             success = true;
                         }
@@ -1026,7 +1026,7 @@ namespace TorannMagic.AutoCast
     {
         public static void Execute(Job job, Pawn caster)
         {
-            if (ModOptions.Settings.Instance.autocastQueueing && !caster.Drafted && caster.CurJobDef != JobDefOf.Hunt)
+            if (caster.IsColonist && ModOptions.Settings.Instance.autocastQueueing && !caster.Drafted && caster.CurJobDef != JobDefOf.Hunt)
             {
                 if (caster.jobs.jobQueue.Count < 1)
                 {
@@ -1035,7 +1035,7 @@ namespace TorannMagic.AutoCast
             }
             else
             {
-                caster.jobs.TryTakeOrderedJob(job);
+                caster.jobs.TryTakeOrderedJob(job);                
             }
         }
     }

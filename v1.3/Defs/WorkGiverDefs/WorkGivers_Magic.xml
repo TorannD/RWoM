@@ -116,6 +116,8 @@
       <li>TM_MechaGolem_Workstation</li>
 	  <li>TM_FleshGolem_Workstation</li>
 	  <li>TM_HollowGolem_Workstation</li>
+	  <li>TM_StoneGolem_Workstation</li>
+	  <li>TM_MaharalGolem_Workstation</li>
     </fixedBillGiverDefs>
     <verb>golem work</verb>
     <gerund>working on golems</gerund>

@@ -10,6 +10,7 @@ using UnityEngine;
 using TorannMagic.TMDefs;
 using AbilityUser;
 using Verse.Sound;
+using HarmonyLib;
 
 namespace TorannMagic.Golems
 {
@@ -19,10 +20,13 @@ namespace TorannMagic.Golems
 		private bool activating = false;
         private bool initialized = false;
         private int nextEvaluationTick = 0;
+        private int nextEffectTick = 0;
         public float lastDrawRotation = 0f;
         public bool holdFire = false;
         public float tempGoal = 21f;
         public bool canRegulateTemp = false;
+        public int abilityCharges = 0;
+        public List<TM_GolemItemRecipeDef> creationRecipes = new List<TM_GolemItemRecipeDef>();
 
         private LocalTargetInfo threatTarget = null;
         private TargetingParameters targetingParameters = new TargetingParameters();
@@ -36,6 +40,8 @@ namespace TorannMagic.Golems
         CompProperties_Glower glowerProps = new CompProperties_Glower();
         public CompGlower glower = null;
         bool glowingInt = false;
+
+        public override bool TransmitsPowerNow => Energy.CanDrawPower;
 
         public void InitializeGlower(ColorInt glowColor, float glowRadius)
         {
@@ -84,6 +90,8 @@ namespace TorannMagic.Golems
             Scribe_Deep.Look(ref innerContainer, "innerContainer", this);
             Scribe_Values.Look<bool>(ref this.glowingInt, "glowingInt", false);
             Scribe_Values.Look<float>(ref this.tempGoal, "tempGoal", 21f);
+            Scribe_Values.Look<int>(ref this.abilityCharges, "abilityCharges", 0);
+            Scribe_Collections.Look<TM_GolemItemRecipeDef>(ref this.creationRecipes, "creationRecipes", LookMode.Def);
         }
 
         Thing IAttackTarget.Thing
@@ -197,9 +205,19 @@ namespace TorannMagic.Golems
         {
             foreach (TM_GolemUpgrade gu in Upgrades)
             {
-                if (gu.golemUpgradeDef.recipe == rec)
+                if (gu.golemUpgradeDef.recipe != null)
                 {
-                    return gu.golemUpgradeDef.maxLevel != 0;
+                    if (gu.golemUpgradeDef.recipe == rec)
+                    {
+                        return gu.golemUpgradeDef.maxLevel != 0;
+                    }
+                }
+                else if(gu.golemUpgradeDef.recipeList != null && gu.golemUpgradeDef.recipeList.Count > 0)
+                {
+                    if(gu.golemUpgradeDef.recipeList.Contains(rec))
+                    {                        
+                        return gu.golemUpgradeDef.maxLevel != 0;
+                    }
                 }
             }
             return true;
@@ -219,6 +237,10 @@ namespace TorannMagic.Golems
 
         public bool CanActivate()
         {
+            if(!this.Spawned || this.Map == null || this.Position == null || this.GolemComp == null)
+            {
+                return false;
+            }
             List<Thing> tmpList = this.Position.GetThingList(this.Map);
             if(tmpList != null && tmpList.Count > 0)
             {
@@ -310,19 +332,54 @@ namespace TorannMagic.Golems
         {
             foreach (TM_GolemUpgrade gu in Upgrades)
             {
-                if (gu.golemUpgradeDef.recipe == rec)
+                if (gu.golemUpgradeDef.recipe != null)
                 {
-                    if(gu.golemUpgradeDef.workstationEffects != null && gu.golemUpgradeDef.workstationEffects.Count > 0)
+                    if (gu.golemUpgradeDef.recipe == rec)
                     {
-                        foreach(GolemWorkstationEffect effect in gu.golemUpgradeDef.workstationEffects)
+                        if (gu.golemUpgradeDef.workstationEffects != null && gu.golemUpgradeDef.workstationEffects.Count > 0)
                         {
-                            if(effect.CanDoEffect(this))
+                            foreach (GolemWorkstationEffect effect in gu.golemUpgradeDef.workstationEffects)
                             {
-                                effect.StartEffect(this, gu);
+                                if (effect.CanDoEffect(this))
+                                {
+                                    effect.StartEffect(this, gu);
+                                }
+                                else
+                                {
+                                    Messages.Message("TM_GolemBillUnsuccessful".Translate(rec.label), MessageTypeDefOf.RejectInput);
+                                    foreach (Thing ing in ingredients)
+                                    {
+                                        Thing t = ThingMaker.MakeThing(ing.def, null);
+                                        t.stackCount = ing.stackCount;
+                                        GenPlace.TryPlaceThing(t, this.InteractionCell, this.Map, ThingPlaceMode.Near);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                else if(gu.golemUpgradeDef.recipeList != null && gu.golemUpgradeDef.recipeList.Count > 0)
+                {
+                    if (gu.golemUpgradeDef.workstationEffects != null && gu.golemUpgradeDef.workstationEffects.Count > 0)
+                    {
+                        foreach (GolemWorkstationEffect effect in gu.golemUpgradeDef.workstationEffects)
+                        {
+                            if (effect.recipes != null && effect.recipes.Count > 0)
+                            {
+                                foreach (Thing t in ingredients)
+                                {
+                                    TM_GolemItemRecipeDef gird = effect.recipes.FirstOrDefault((TM_GolemItemRecipeDef g) => g.inputThing != null && g.inputThing == t.def);
+                                    if (gird != null)
+                                    {
+                                        this.abilityCharges += gird.inputCharges;
+                                        this.creationRecipes.Add(gird);
+                                        break;
+                                    }
+                                }
                             }
                             else
                             {
-                                Messages.Message("TM_NoGolemPartToRestore".Translate(rec.label), MessageTypeDefOf.RejectInput);
+                                Messages.Message("TM_GolemBillUnsuccessful".Translate(rec.label), MessageTypeDefOf.RejectInput);
                                 foreach (Thing ing in ingredients)
                                 {
                                     Thing t = ThingMaker.MakeThing(ing.def, null);
@@ -422,11 +479,15 @@ namespace TorannMagic.Golems
                         }                        
                     }
                     else
-                    {
-                        if (Find.TickManager.TicksGame > this.nextEvaluationTick)
+                    {                        
+                        if (this.abilityCharges > 0 && this.creationRecipes.Count > 0)
                         {
+                            DoGolemWorkingEffect();
+                        }                        
+                        if (Find.TickManager.TicksGame > this.nextEvaluationTick)
+                        {                            
                             nextEvaluationTick = Mathf.RoundToInt(Find.TickManager.TicksGame + (Rand.Range(.8f, 1.2f) * GolemDef.processorEvaluationTicks * GolemComp.ProcessingModifier));
-                            if (!TargetIsValid(this, threatTarget))
+                            if (!GolemComp.TargetIsValid(this, threatTarget))
                             {
                                 threatTarget = null;
                             }
@@ -458,9 +519,21 @@ namespace TorannMagic.Golems
                                             }
                                         }
                                     }
+                                    else if(this.abilityCharges > 0 && gu.golemUpgradeDef.maxLevel == 0 && this.creationRecipes != null && this.creationRecipes.Count > 0)
+                                    {
+                                        foreach(GolemWorkstationEffect gwe in gu.golemUpgradeDef.workstationEffects)
+                                        {
+                                            if(gwe.chargesRequired > 0 && gwe.chargesRequired <= this.abilityCharges && Find.TickManager.TicksGame > this.nextEffectTick)
+                                            {
+                                                this.nextEffectTick = Find.TickManager.TicksGame + gwe.effectFrequency;
+                                                this.abilityCharges -= gwe.chargesRequired;                                                
+                                                gwe.ContinueEffect(this);
+                                            }
+                                        }
+                                    }
                                 }
                             }
-                            if (this.Energy.StoredEnergyPct >= GolemComp.energyPctShouldAwaken && GolemComp.energyPctShouldAwaken != 0f && CanActivate())
+                            if (this.Energy.StoredEnergyPct >= GolemComp.energyPctShouldAwaken && GolemComp.energyPctShouldAwaken > .1f && CanActivate())
                             {
                                 this.activating = true;
                             }
@@ -475,7 +548,7 @@ namespace TorannMagic.Golems
                         {
                             if (effect.EffectActive)
                             {
-                                if (effect.requiresTarget && !TargetIsValid(this, threatTarget))
+                                if (effect.requiresTarget && !GolemComp.TargetIsValid(this, threatTarget))
                                 {
                                     tmpList.Add(effect);
                                     continue;
@@ -498,6 +571,11 @@ namespace TorannMagic.Golems
                 }
             }
 		}
+
+        public virtual void DoGolemWorkingEffect()
+        {
+
+        }
 
         public virtual TMPawnSummoned SpawnGolem()
         {
@@ -531,8 +609,8 @@ namespace TorannMagic.Golems
             else
             {
                 AbilityUser.SpawnThings spawnables = new SpawnThings();
-                spawnables.def = TM_GolemUtility.GetGolemDefFromThing(this).golemDef;
-                spawnables.kindDef = TM_GolemUtility.GetGolemDefFromThing(this).golemKindDef;
+                spawnables.def = GetGolemThingDef;
+                spawnables.kindDef = GetGolemKindDef;
                 if (lsDef != null)
                 {
                     spawnables.def.race.lifeStageAges.FirstOrDefault().def = lsDef;
@@ -541,7 +619,7 @@ namespace TorannMagic.Golems
                 
                 bool flag = spawnables.def != null;
                 if (flag)
-                {
+                {                    
                     spawnedThing = TM_Action.SingleSpawnLoop(null, spawnables, this.Position, this.Map, 0, false, false, this.Faction) as TMPawnSummoned;
                     spawnedThing.validSummoning = true;
                     spawnedThing.ageTracker.AgeBiologicalTicks = 0;
@@ -557,6 +635,14 @@ namespace TorannMagic.Golems
                     cg.dormantPosition = this.Position;
                     cg.dormantRotation = this.Rotation;
                     cg.dormantMap = this.Map;
+                    if (cg.GolemName.ToString() != "Blank")
+                    {
+                        spawnedThing.Name = cg.GolemName;
+                    }
+                    else
+                    {
+                        cg.GolemName = spawnedThing.Name;
+                    }
                     if (tmpGolem != null)
                     {
                         cg.Golem = tmpGolem;
@@ -571,6 +657,9 @@ namespace TorannMagic.Golems
             }
             return spawnedThing;
         }
+
+        public virtual ThingDef GetGolemThingDef => TM_GolemUtility.GetGolemDefFromThing(this).golemDef;
+        public virtual PawnKindDef GetGolemKindDef => TM_GolemUtility.GetGolemDefFromThing(this).golemKindDef;
 
         private int drawIteration = 0;
 		public override void Draw()
@@ -696,7 +785,7 @@ namespace TorannMagic.Golems
                         MoteMaker.ThrowText(pos, this.Map, "TM_GolemMinimumToActivate".Translate(Energy.StoredEnergyPct.ToString("P"), GolemDef.minimumEnergyPctToActivate.ToString("P1")), -1);                        
                     }
                 };
-                command_Action.disabled = (Energy.StoredEnergyPct < GolemDef.minimumEnergyPctToActivate);
+                command_Action.disabled = (Energy.StoredEnergyPct < GolemDef.minimumEnergyPctToActivate) || pauseFor > 0;
                 yield return command_Action;
 
                 Command_Toggle command_Toggle = new Command_Toggle();
@@ -719,7 +808,7 @@ namespace TorannMagic.Golems
                 command_Target.icon = TexCommand.Attack;
                 command_Target.action = delegate (LocalTargetInfo target)
                 {
-                    if (TargetIsValid(this, target))
+                    if (GolemComp.TargetIsValid(this, target))
                     {
                         threatTarget = target;
                     }
@@ -828,6 +917,26 @@ namespace TorannMagic.Golems
                 string tempString = "\n" + "TargetTemperature".Translate() + ": " + "\n" + tempGoal.ToStringTemperature("F0");
                 baseStr += tempString;
             }
+            if(this.abilityCharges > 0 && this.creationRecipes != null && this.creationRecipes.Count > 0)
+            {
+                foreach(TM_GolemUpgrade gu in Upgrades)
+                {
+                    if(gu.golemUpgradeDef.workstationEffects != null && gu.golemUpgradeDef.workstationEffects.Count > 0)
+                    {
+                        foreach(GolemWorkstationEffect gwe in gu.golemUpgradeDef.workstationEffects)
+                        {
+                            if(gwe.chargesRequired > 0)
+                            {
+                                string tempString = "\n" + gu.golemUpgradeDef.label + " " + this.creationRecipes[0].outputThing.label;
+                                baseStr += tempString;
+                            }
+                        }
+                    }
+                }
+                string chargeString = "\n" + "TM_GolemChargesRemaining".Translate(this.abilityCharges);
+                baseStr += chargeString;
+            }
+            
             return baseStr;
         }
   
@@ -840,7 +949,7 @@ namespace TorannMagic.Golems
                 List<Pawn> allPawns = this.Map.mapPawns.AllPawnsSpawned.InRandomOrder().ToList();
                 for (int i = 0; i < allPawns.Count(); i++)
                 {
-                    if (TargetIsValid(this, allPawns[i]))
+                    if (GolemComp.TargetIsValid(this, allPawns[i]))
                     {
                         this.threatTarget = allPawns[i];
                         break;                                              
@@ -851,43 +960,6 @@ namespace TorannMagic.Golems
             {
                 //Log.Message("Error processing threats" + ex);
             }
-        }
-
-        public bool TargetIsValid(Thing source, LocalTargetInfo target)
-        {
-            if (target == null)
-            {
-                return false;
-            }
-            if (target.HasThing)
-            {
-                Thing targetThing = target.Thing;                
-                if (targetThing.DestroyedOrNull())
-                {
-                    return false;
-                }
-                if (!targetThing.Spawned)
-                {
-                    return false;
-                }
-                if (targetThing is Pawn)
-                {
-                    if ((targetThing as Pawn).Dead || (targetThing as Pawn).Downed)
-                    {
-                        return false;
-                    }
-                }
-                if (!GenHostility.HostileTo(source, targetThing))
-                {
-                    return false;
-                }
-            }
-            if (target.Cell.DistanceToEdge(this.Map) < 8)
-            {
-                return false;
-            }
-            
-            return true;
-        }
+        }        
     }
 }

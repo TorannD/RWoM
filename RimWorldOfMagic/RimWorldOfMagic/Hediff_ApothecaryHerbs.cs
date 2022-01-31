@@ -35,7 +35,7 @@ namespace TorannMagic
         {
             bool spawned = pawn.Spawned;
             CompAbilityUserMight comp = pawn.GetComp<CompAbilityUserMight>();
-            if (spawned && comp != null)
+            if (comp != null)
             {
                 herbPwr = comp.MightData.MightPowerSkill_Herbalist.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Herbalist_pwr").level;
                 herbVer = comp.MightData.MightPowerSkill_Herbalist.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Herbalist_ver").level;
@@ -58,7 +58,7 @@ namespace TorannMagic
                 {
                     Initialize();
                 }
-                if(this.pawn.CurJobDef.defName == "PruneGauranlenTree")
+                if(this.pawn.CurJob != null && this.pawn.CurJobDef.defName == "PruneGauranlenTree")
                 {
                     this.Severity += .4f * (1f + (.1f * herbVer));
                 }

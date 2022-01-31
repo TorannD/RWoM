@@ -20,19 +20,6 @@ namespace TorannMagic
         bool energyFlag = false;
         bool validCastFlag = false;
 
-        //public override bool TryMakePreToilReservations(bool errorOnFailed)
-        //{
-        //    if(TargetA.Thing != null)
-        //    {
-        //        return true;
-        //    }
-        //    if (pawn.Reserve(TargetA, this.job, 1, 1, null, errorOnFailed))
-        //    {
-        //        return true;
-        //    }
-        //    return false;
-        //}
-
         protected override IEnumerable<Toil> MakeNewToils()
         {
             yield return Toils_Misc.ThrowColonistAttackingMote(TargetIndex.A);
@@ -63,6 +50,14 @@ namespace TorannMagic
                 TMAbilityDef tmAbility = (TMAbilityDef)(this.verb.Ability.Def);
                 CompAbilityUserMight compMight = this.pawn.TryGetComp<CompAbilityUserMight>();
                 CompAbilityUserMagic compMagic = this.pawn.TryGetComp<CompAbilityUserMagic>();
+                //if (compMagic != null)
+                //{
+                //    compMagic.AIAbilityJob = null;
+                //}
+                //if (compMight != null && false)
+                //{
+                //    //compMight.AIAbilityJob = null;
+                //}
                 if (tmAbility.manaCost > 0 && pawn.story != null && pawn.story.traits != null && !pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
                 {
                     if(this.pawn.Map.gameConditionManager.ConditionIsActive(TorannMagicDefOf.TM_ManaStorm))

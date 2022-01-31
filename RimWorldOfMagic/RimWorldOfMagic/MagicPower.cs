@@ -13,7 +13,7 @@ namespace TorannMagic
 
         public int ticksUntilNextCast = -1;
 
-        public int level;
+        public int level = 0;
         public bool learned = false;
         public bool autocast = false;
         public int learnCost = 2;
@@ -65,15 +65,19 @@ namespace TorannMagic
             get
             {
                 SetMaxLevel();
-                if (level <= 0)
+                if (TMabilityDefs != null && TMabilityDefs.Count > 0)
                 {
-                    return this.TMabilityDefs[0];
+                    if (level <= 0)
+                    {
+                        return this.TMabilityDefs[0];
+                    }
+                    else if (level >= maxLevel)
+                    {
+                        return this.TMabilityDefs[maxLevel];
+                    }
+                    return this.TMabilityDefs[level];
                 }
-                else if (level >= maxLevel)
-                {
-                    return this.TMabilityDefs[maxLevel];
-                }
-                return this.TMabilityDefs[level];                
+                return null;
             }
         }
 

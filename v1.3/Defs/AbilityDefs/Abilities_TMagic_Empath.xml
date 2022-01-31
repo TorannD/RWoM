@@ -68,7 +68,7 @@
         <warmupTime>.5</warmupTime>
         <SecondsToRecharge>5</SecondsToRecharge>
 		<burstShotCount>1</burstShotCount>
-        <range>0</range>
+        <range>15</range>
 		<isViolent>true</isViolent>
         <soundCast>TM_Vibration</soundCast>
         <muzzleFlashScale>5</muzzleFlashScale>

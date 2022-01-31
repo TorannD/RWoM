@@ -50,7 +50,7 @@ namespace TorannMagic.Golems
 
         public override bool CanDoEffect(Building_TMGolemBase golem_building)
         {
-            if (target != null && target.HasThing && !golem_building.holdFire && golem_building.TargetIsValid(golem_building, target.Thing) && (target.Cell - golem_building.Position).LengthHorizontal <= maxRange && (target.Cell - golem_building.Position).LengthHorizontal >= minRange)
+            if (target != null && target.HasThing && !golem_building.holdFire && golem_building.GolemComp.TargetIsValid(golem_building, target.Thing) && (target.Cell - golem_building.Position).LengthHorizontal <= maxRange && (target.Cell - golem_building.Position).LengthHorizontal >= minRange)
             {
                 return base.CanDoEffect(golem_building);
             }

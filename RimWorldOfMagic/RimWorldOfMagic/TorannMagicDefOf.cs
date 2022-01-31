@@ -1062,12 +1062,13 @@ namespace TorannMagic
         public static TMAbilityDef TM_Taunt;
         public static HediffDef TM_TauntHD;
         public static TMAbilityDef TM_Discord;
+        public static HediffDef TM_FrailtyHD;
 
         public static HediffDef TM_Sight;
         public static HediffDef TM_Breathing;
         public static HediffDef TM_Manipulation;
         public static HediffDef TM_Movement;
-        public static HediffDef TM_HasteHD;
+        public static HediffDef TM_HasteHD;        
 
         public static HediffDef TM_AntiSight;
         public static HediffDef TM_AntiBreathing;
@@ -1394,6 +1395,8 @@ namespace TorannMagic
         //public static ThoughtDef AteMysteryMeatAsIngredient;
         public static ThoughtDef TM_SeverMagic_ForApproveTD;
         public static ThoughtDef TM_SeverMagic_ForVeneratedTD;
+        public static ThoughtDef ObservedLayingCorpse;
+        public static ThoughtDef ObservedLayingRottingCorpse;
 
         //WeatherDefs
         public static WeatherDef TM_HealingRainWD;
@@ -1475,7 +1478,18 @@ namespace TorannMagic
         public static HediffDef TM_DeathFieldHD;
         public static ThingDef TM_HollowGolem_Workstation;
         public static TMDefs.TM_GolemUpgradeDef TM_Golem_HollowOrbOfExtinguishedFlames;
+        public static ThingDef TM_StoneGolem;
+        public static ThingDef TM_SandstoneGolem;
+        public static ThingDef TM_LimestoneGolem;
+        public static ThingDef TM_SlateGolem;
+        public static ThingDef TM_MarbleGolem;
+        public static ThingDef TM_GraniteGolem;
+        public static PawnKindDef TM_StoneGolemK;
+        public static PawnKindDef TM_SandstoneGolemK;
+        public static PawnKindDef TM_LimestoneGolemK;
+        public static PawnKindDef TM_SlateGolemK;
+        public static PawnKindDef TM_MarbleGolemK;
+        public static PawnKindDef TM_GraniteGolemK;
         //public static TMDefs.TM_GolemAbility TM_Golem_GatlingCannon;
-
     }
 }

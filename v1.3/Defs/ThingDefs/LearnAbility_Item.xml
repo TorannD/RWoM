@@ -41,6 +41,7 @@
     </thingCategories>
     <tradeTags>
 	  <li>Arcane</li>
+	  <li>ArcaneSkillBooks</li>
     </tradeTags>
 	<tradeability>All</tradeability>
 	<drawGUIOverlay>true</drawGUIOverlay>
@@ -74,6 +75,7 @@
     <tradeTags>
 	  <li>Artifacts</li>
 	  <li>Arcane</li>
+	  <li>ArcaneSkillBooks</li>
     </tradeTags>
 	<tradeability>All</tradeability>
 	<drawGUIOverlay>true</drawGUIOverlay>
@@ -107,6 +109,7 @@
     <tradeTags>      
       <li>Artifact</li>
 	  <li>Arcane</li>
+	  <li>ArcaneSkillBooks</li>
     </tradeTags>
 	<tradeability>All</tradeability>
 	<drawGUIOverlay>true</drawGUIOverlay>
@@ -177,6 +180,7 @@
       <li>Artifact</li>
 	  <li>BodyPartOrImplant</li>
 	  <li>Arcane</li>
+	  <li>ArcaneSrolls</li>
     </tradeTags>
 	<tradeability>All</tradeability>
 	<drawGUIOverlay>true</drawGUIOverlay>
@@ -211,6 +215,7 @@
       <li>Artifact</li>
 	  <li>BodyPartOrImplant</li>
 	  <li>Arcane</li>
+	  <li>ArcaneSrolls</li>
     </tradeTags>
 	<tradeability>All</tradeability>
 	<drawGUIOverlay>true</drawGUIOverlay>

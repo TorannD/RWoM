@@ -261,7 +261,7 @@ In addition, this upgrade allows the flesh golem to use their rage to tear the l
   <RecipeDef ParentName="FleshGolem_Recipe_Base">
     <defName>TM_FleshGolem_LeftArm_Cleaver</defName>
     <label>craft golem left cleaver</label>
-    <description>Adds a metallic cleaver to the arm of a flesh golem, adding a cutting attack and improving harvesting speed.</description>
+    <description>Adds a metallic cleaver to the arm of a flesh golem, enabling an AoE cutting attack and allows the golem the ability to harvest plants and trees.</description>
     <jobString>crafting golem cleaver</jobString>
 	<researchPrerequisite>TM_FleshGolemEquipmentRD</researchPrerequisite>
 <!-- 	<skillRequirements>
@@ -291,7 +291,7 @@ In addition, this upgrade allows the flesh golem to use their rage to tear the l
   <RecipeDef ParentName="FleshGolem_Recipe_Base">
     <defName>TM_FleshGolem_RightArm_Cleaver</defName>
     <label>craft golem right cleaver</label>
-    <description>Adds a metallic cleaver to the arm of a flesh golem, adding a cutting attack and improving harvesting speed.</description>
+    <description>Adds a metallic cleaver to the arm of a flesh golem, enabling an AoE cutting attack and allows the golem the ability to cut down plants and trees.</description>
     <jobString>crafting golem cleaver</jobString>
 	<researchPrerequisite>TM_FleshGolemEquipmentRD</researchPrerequisite>
 <!-- 	<skillRequirements>

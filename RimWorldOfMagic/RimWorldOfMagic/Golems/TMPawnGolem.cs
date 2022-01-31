@@ -377,13 +377,14 @@ namespace TorannMagic.Golems
             {
                 if(frameMatInt != null)
                 {
+                    
                     Vector3 vector = this.Golem.dormantPosition.ToVector3Shifted();
                     vector.y = Altitudes.AltitudeFor(AltitudeLayer.Blueprint);                    
                     Vector3 s = new Vector3(Golem.dormantThing.def.graphicData.drawSize.x, this.DrawPos.y, Golem.dormantThing.def.graphicData.drawSize.y);
                     Matrix4x4 matrix = default(Matrix4x4);
                     Quaternion q = Quaternion.identity;
                     matrix.SetTRS(vector, q, s);
-                    Graphics.DrawMesh(MeshPool.plane10, matrix, frameMatInt, 0);                    
+                    Graphics.DrawMesh(MeshPool.plane10, matrix, frameMatInt, 0);  
                 }
                 else if(Golem.Golem.GetGolemFrameMat(this) != null)
                 {

@@ -17,7 +17,9 @@ namespace TorannMagic.Golems
         private float conversionEfficiencyUpgradeCount = 0;
         private float energyRegenerationFactor = 1f;
         private float storedEnergySaved;
+        public bool canDrawPower = false;
 
+        public bool CanDrawPower => canDrawPower || Props.canDrawPower;
         public static FieldInfo storedEnergyRef = typeof(CompGolemEnergyHandler).GetField("storedEnergy", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.GetField);
 
         public override void PostExposeData()
@@ -88,6 +90,10 @@ namespace TorannMagic.Golems
                 {
                     return 0f;
                 }
+                if(!Props.electricalConverter)
+                {
+                    return 0f;
+                }
                 return (StoredEnergyMax - StoredEnergy) / ConversionEfficiency;
             }
         }
@@ -107,8 +113,37 @@ namespace TorannMagic.Golems
 
         public override void CompTick()
         {
-            base.CompTick();
+            if (CanDrawPower)
+            {                
+                base.CompTick();              
+            }
             RegenPowerSelf();
+        }
+
+        public void DrawPowerNew(float amount)
+        {
+            SetEnergy(StoredEnergy - amount);
+            if (StoredEnergy < 0f)
+            {
+                Log.Error("Drawing power we don't have from " + parent);
+                SetEnergy(0);
+            }
+            if(StoredEnergy < 5)
+            {
+                if(this.canDrawPower)
+                {
+                    this.canDrawPower = false;
+                    parent.Map.powerNetManager.Notfiy_TransmitterTransmitsPowerNowChanged(this);
+                }
+            }
+            if(!parent.GetComp<CompFlickable>().SwitchIsOn)
+            {
+                if (this.canDrawPower)
+                {
+                    this.canDrawPower = false;
+                    parent.Map.powerNetManager.Notfiy_TransmitterTransmitsPowerNowChanged(this);
+                }
+            }
         }
 
         public void RegenPowerSelf()
@@ -121,8 +156,8 @@ namespace TorannMagic.Golems
             base.PostDraw();
             GenDraw.FillableBarRequest r = default(GenDraw.FillableBarRequest);
             r.center = parent.DrawPos;
-            r.center.x += .01f;
-            r.center.z += -.25f;
+            r.center.x += Props.energyBarOffsetX;
+            r.center.z += Props.energyBarOffsetY;
             r.size = EnergyBarSize;
             r.fillPercent = StoredEnergyPct;
             r.filledMat = SolidColorMaterials.SimpleSolidColorMaterial(Props.energyColor);
