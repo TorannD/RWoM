@@ -13,6 +13,7 @@ using TorannMagic.Enchantment;
 using System.Text;
 using TorannMagic.TMDefs;
 using System.Reflection;
+using TorannMagic.Golems;
 
 namespace TorannMagic
 {
@@ -167,6 +168,44 @@ namespace TorannMagic
                 }
                 bool isUndeadNotVamp = (TM_Calc.IsUndead(pawn) && !flag_Vamp);
                 return isUndeadNotVamp;
+            }
+            return false;
+        }
+
+        public static bool IsGolem(Pawn p)
+        {
+            if(p != null)
+            {
+                TMPawnGolem pg = p as TMPawnGolem;
+                if(pg != null)
+                {
+                    return true;
+                }
+                CompGolem cg = p.TryGetComp<CompGolem>();
+                if(cg != null)
+                {
+                    return true;
+                }
+                if(p.health != null && p.health.hediffSet != null)
+                {
+                    if(p.health.hediffSet.HasHediff(TorannMagicDefOf.TM_GolemHD))
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        public static bool IsGolemBuilding(Thing b)
+        {
+            if(b != null && b is Building)
+            {
+                Building_TMGolemBase gb = b as Building_TMGolemBase;
+                if(gb != null)
+                {
+                    return true;
+                }
             }
             return false;
         }

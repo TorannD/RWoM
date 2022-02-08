@@ -133,7 +133,16 @@
     <Compile Include="Building_TMTotem_Lightning.cs" />
     <Compile Include="Building_TM_DMP.cs" />
     <Compile Include="DeathWorker_Sentinel.cs" />
+    <Compile Include="Golems\PawnColumnWorker_GolemActive.cs" />
+    <Compile Include="Golems\PawnColumnWorker_GolemAge.cs" />
+    <Compile Include="Golems\PawnColumnWorker_GolemMaster.cs" />
+    <Compile Include="Golems\PawnColumnWorker_GolemRestPercent.cs" />
+    <Compile Include="Golems\PawnColumnWorker_GolemAwakenPercent.cs" />
+    <Compile Include="Golems\PawnColumnWorker_GolemNeeds.cs" />
+    <Compile Include="Golems\PawnColumnWorker_GolemThreatRange.cs" />
+    <Compile Include="Golems\MainTabWindow_Golems.cs" />
     <Compile Include="Golems\GolemNameWindow.cs" />
+    <Compile Include="Golems\JobGiver_GolemExtinguishSelf.cs" />
     <Compile Include="HediffComp_SeverityPercent.cs" />
     <Compile Include="JobGiver_AIAbilityUser.cs" />
     <Compile Include="FlyingObject_Advanced_Icebolt.cs" />

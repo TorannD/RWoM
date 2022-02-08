@@ -76,10 +76,10 @@ Move:	-[.3c,.5c,.6c]%</description>
 		<drawOnlyWhenActive>false</drawOnlyWhenActive>
 		<drawSize>3</drawSize>
 		<shouldRotate>false</shouldRotate>
-		<drawOffsetNorth>(0, .5, 0)</drawOffsetNorth>
-		<drawOffsetSouth>(0, .5, 0)</drawOffsetSouth>
-		<drawOffsetEast>(0, .5, 0)</drawOffsetEast>
-		<drawOffsetWest>(0, .5, 0)</drawOffsetWest>
+		<drawOffsetNorth>(0, .005, 0)</drawOffsetNorth>
+		<drawOffsetSouth>(0, .005, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .005, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .005, 0)</drawOffsetWest>
 	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
 	
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
@@ -94,10 +94,10 @@ Move:	-[.3c,.5c,.6c]%</description>
 		<graphicsPath>Mecha/GolemAxe</graphicsPath>
 		<drawUndrafted>false</drawUndrafted>
 		<drawSize>1.8</drawSize>
-		<drawOffsetNorth>(-.6, -1, .4)</drawOffsetNorth>
-		<drawOffsetSouth>(.6, 1, .4)</drawOffsetSouth>
-		<drawOffsetEast>(.8, -1, .4)</drawOffsetEast>
-		<drawOffsetWest>(-.8, 1, .4)</drawOffsetWest>
+		<drawOffsetNorth>(-.6, -.01, .4)</drawOffsetNorth>
+		<drawOffsetSouth>(.6, .01, .4)</drawOffsetSouth>
+		<drawOffsetEast>(.8, -.01, .4)</drawOffsetEast>
+		<drawOffsetWest>(-.8, .01, .4)</drawOffsetWest>
 	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
 
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
@@ -112,10 +112,10 @@ Move:	-[.3c,.5c,.6c]%</description>
 		<graphicsPath>Mecha/GolemSword</graphicsPath>
 		<drawUndrafted>false</drawUndrafted>
 		<drawSize>1.8</drawSize>
-		<drawOffsetNorth>(-.6, -1, .4)</drawOffsetNorth>
-		<drawOffsetSouth>(.6, 1, .4)</drawOffsetSouth>
-		<drawOffsetEast>(.8, -1, .4)</drawOffsetEast>
-		<drawOffsetWest>(-.8, 1, .4)</drawOffsetWest>
+		<drawOffsetNorth>(-.6, -.01, .4)</drawOffsetNorth>
+		<drawOffsetSouth>(.6, .01, .4)</drawOffsetSouth>
+		<drawOffsetEast>(.8, -.01, .4)</drawOffsetEast>
+		<drawOffsetWest>(-.8, .01, .4)</drawOffsetWest>
 	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
 	
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
@@ -129,10 +129,10 @@ Move:	-[.3c,.5c,.6c]%</description>
 		<graphicsPath>Mecha/GolemHammer</graphicsPath>
 		<drawUndrafted>false</drawUndrafted>
 		<drawSize>1.8</drawSize>
-		<drawOffsetNorth>(.6, -1, .4)</drawOffsetNorth>
-		<drawOffsetSouth>(-.6, 1, .4)</drawOffsetSouth>
-		<drawOffsetEast>(.8, 1, .4)</drawOffsetEast>
-		<drawOffsetWest>(-.8, -1, .4)</drawOffsetWest>
+		<drawOffsetNorth>(.6, -.01, .4)</drawOffsetNorth>
+		<drawOffsetSouth>(-.6, .01, .4)</drawOffsetSouth>
+		<drawOffsetEast>(.8, .01, .4)</drawOffsetEast>
+		<drawOffsetWest>(-.8, -.01, .4)</drawOffsetWest>
 	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
 
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
@@ -152,10 +152,10 @@ Range: 		40</description>
 		<drawOnlyWhenActive>true</drawOnlyWhenActive>
 		<drawUndrafted>false</drawUndrafted>
 		<drawSize>1.2</drawSize>
-		<drawOffsetNorth>(.7,-1,.1)</drawOffsetNorth>
-		<drawOffsetSouth>(-.7,1,.1)</drawOffsetSouth>
-		<drawOffsetEast>(-.2,1,.1)</drawOffsetEast>
-		<drawOffsetWest>(.2,-1,.1)</drawOffsetWest>
+		<drawOffsetNorth>(.7,-.01,.1)</drawOffsetNorth>
+		<drawOffsetSouth>(-.7,.01,.1)</drawOffsetSouth>
+		<drawOffsetEast>(-.2,.01,.1)</drawOffsetEast>
+		<drawOffsetWest>(.2,-.01,.1)</drawOffsetWest>
 		<workstationEffects>
 		  <li Class="TorannMagic.Golems.GolemWorkstationEffect_LaunchThing">
 			<ticksTillNextEffect80>300</ticksTillNextEffect80>
@@ -170,7 +170,7 @@ Range: 		40</description>
 			<maxRange>40</maxRange>
 			<minRange>0</minRange>
 			<alwaysDraw>false</alwaysDraw> <!-- looks goofy, need a better inactive appearance to mount weapons -->
-			<drawOffset>(0, .5, .3)</drawOffset>
+			<drawOffset>(0, .005, .3)</drawOffset>
 		  </li>
 		</workstationEffects>
 	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
@@ -190,10 +190,10 @@ Energy Cost: 20</description>
 		<drawOnlyWhenActive>true</drawOnlyWhenActive>
 		<drawUndrafted>false</drawUndrafted>
 		<drawSize>1.2</drawSize>
-		<drawOffsetNorth>(-.7,1,.8)</drawOffsetNorth>
-		<drawOffsetSouth>(.7,1,.8)</drawOffsetSouth>
-		<drawOffsetEast>(.2,1,.8)</drawOffsetEast>
-		<drawOffsetWest>(-.2,-1,.8)</drawOffsetWest>
+		<drawOffsetNorth>(-.7,.01,.8)</drawOffsetNorth>
+		<drawOffsetSouth>(.7,.01,.8)</drawOffsetSouth>
+		<drawOffsetEast>(.2,.01,.8)</drawOffsetEast>
+		<drawOffsetWest>(-.2,-.01,.8)</drawOffsetWest>
 	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
 	
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
@@ -228,10 +228,10 @@ Energy Cost:	4 per filth</description>
 		<drawOnlyWhenActive>false</drawOnlyWhenActive>
 		<drawSize>3</drawSize>
 		<shouldRotate>false</shouldRotate>
-		<drawOffsetNorth>(0, .8, 0)</drawOffsetNorth>
-		<drawOffsetSouth>(0, .8, 0)</drawOffsetSouth>
-		<drawOffsetEast>(0, .8, 0)</drawOffsetEast>
-		<drawOffsetWest>(0, .8, 0)</drawOffsetWest>
+		<drawOffsetNorth>(0, .008, 0)</drawOffsetNorth>
+		<drawOffsetSouth>(0, .008, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .008, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .008, 0)</drawOffsetWest>
 		<workstationCapacity>None</workstationCapacity> 
 	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
 
@@ -267,10 +267,10 @@ Heal Amount:	8</description>
 		<drawOnlyWhenActive>false</drawOnlyWhenActive>
 		<drawSize>3</drawSize>
 		<shouldRotate>false</shouldRotate>
-		<drawOffsetNorth>(0, .8, 0)</drawOffsetNorth>
-		<drawOffsetSouth>(0, .8, 0)</drawOffsetSouth>
-		<drawOffsetEast>(0, .8, 0)</drawOffsetEast>
-		<drawOffsetWest>(0, .8, 0)</drawOffsetWest>
+		<drawOffsetNorth>(0, .008, 0)</drawOffsetNorth>
+		<drawOffsetSouth>(0, .008, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .008, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .008, 0)</drawOffsetWest>
 		<workstationEffects>
 		  <li Class="TorannMagic.Golems.GolemWorkstationEffect_RepairBuilding">
 			<ticksTillNextEffect80>180</ticksTillNextEffect80>
@@ -314,10 +314,10 @@ Shield Amount:	120</description>
 		<drawOnlyWhenActive>false</drawOnlyWhenActive>
 		<drawSize>3</drawSize>
 		<shouldRotate>false</shouldRotate>
-		<drawOffsetNorth>(0, .8, 0)</drawOffsetNorth>
-		<drawOffsetSouth>(0, .8, 0)</drawOffsetSouth>
-		<drawOffsetEast>(0, .8, 0)</drawOffsetEast>
-		<drawOffsetWest>(0, .8, 0)</drawOffsetWest>
+		<drawOffsetNorth>(0, .008, 0)</drawOffsetNorth>
+		<drawOffsetSouth>(0, .008, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .008, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .008, 0)</drawOffsetWest>
 	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
 	
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
@@ -346,10 +346,10 @@ Processing: 	-[5%/10%/15%]</description>
 		<drawOnlyWhenActive>false</drawOnlyWhenActive>
 		<drawSize>3</drawSize>
 		<shouldRotate>false</shouldRotate>
-		<drawOffsetNorth>(0, .8, 0)</drawOffsetNorth>
-		<drawOffsetSouth>(0, .8, 0)</drawOffsetSouth>
-		<drawOffsetEast>(0, .8, 0)</drawOffsetEast>
-		<drawOffsetWest>(0, .8, 0)</drawOffsetWest>
+		<drawOffsetNorth>(0, .008, 0)</drawOffsetNorth>
+		<drawOffsetSouth>(0, .008, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .008, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .008, 0)</drawOffsetWest>
 	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
 	
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
@@ -376,11 +376,11 @@ Health:		+[15%/30%/40%]</description>
 		<drawOnlyWhenActive>false</drawOnlyWhenActive>
 		<drawSize>.45</drawSize>
 		<shouldRotate>false</shouldRotate>
-		<drawOffsetNorth>(0, -.6, -1.06)</drawOffsetNorth>
+		<drawOffsetNorth>(0, -.006, -1.06)</drawOffsetNorth>
 		<drawNorth>false</drawNorth>
-		<drawOffsetSouth>(0, .6, -1.1)</drawOffsetSouth>
-		<drawOffsetEast>(.37, -.1, -1.05)</drawOffsetEast>
-		<drawOffsetWest>(-.37, -.1, -1.05)</drawOffsetWest>
+		<drawOffsetSouth>(0, .006, -1.1)</drawOffsetSouth>
+		<drawOffsetEast>(.37, -.001, -1.05)</drawOffsetEast>
+		<drawOffsetWest>(-.37, -.001, -1.05)</drawOffsetWest>
 	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
 	
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
@@ -407,11 +407,11 @@ Health:		+[30%/50%/70%]</description>
 		<drawOnlyWhenActive>false</drawOnlyWhenActive>
 		<drawSize>.45</drawSize>
 		<shouldRotate>false</shouldRotate>
-		<drawOffsetNorth>(0, -.6, -1.06)</drawOffsetNorth>
+		<drawOffsetNorth>(0, -.006, -1.06)</drawOffsetNorth>
 		<drawNorth>false</drawNorth>
-		<drawOffsetSouth>(0, .6, -1.1)</drawOffsetSouth>
-		<drawOffsetEast>(.37, -.1, -1.05)</drawOffsetEast>
-		<drawOffsetWest>(-.37, -.1, -1.05)</drawOffsetWest>
+		<drawOffsetSouth>(0, .006, -1.1)</drawOffsetSouth>
+		<drawOffsetEast>(.37, -.001, -1.05)</drawOffsetEast>
+		<drawOffsetWest>(-.37, -.001, -1.05)</drawOffsetWest>
 	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
 	
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
@@ -437,11 +437,11 @@ Health:		+[40%/80%/120%]</description>
 		<drawOnlyWhenActive>false</drawOnlyWhenActive>
 		<drawSize>.45</drawSize>
 		<shouldRotate>false</shouldRotate>
-		<drawOffsetNorth>(0, -.6, -1.06)</drawOffsetNorth>
+		<drawOffsetNorth>(0, -.006, -1.06)</drawOffsetNorth>
 		<drawNorth>false</drawNorth>
-		<drawOffsetSouth>(0, .6, -1.1)</drawOffsetSouth>
-		<drawOffsetEast>(.37, -.1, -1.05)</drawOffsetEast>
-		<drawOffsetWest>(-.37, -.1, -1.05)</drawOffsetWest>
+		<drawOffsetSouth>(0, .006, -1.1)</drawOffsetSouth>
+		<drawOffsetEast>(.37, -.001, -1.05)</drawOffsetEast>
+		<drawOffsetWest>(-.37, -.001, -1.05)</drawOffsetWest>
 	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
 	
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
@@ -467,11 +467,11 @@ Movement:	+[25%/50%/75%]</description>
 		<drawOnlyWhenActive>false</drawOnlyWhenActive>
 		<drawSize>.45</drawSize>
 		<shouldRotate>false</shouldRotate>
-		<drawOffsetNorth>(0, -.6, -1.06)</drawOffsetNorth>
+		<drawOffsetNorth>(0, -.006, -1.06)</drawOffsetNorth>
 		<drawNorth>false</drawNorth>
-		<drawOffsetSouth>(0, .6, -1.1)</drawOffsetSouth>
-		<drawOffsetEast>(.37, -.1, -1.05)</drawOffsetEast>
-		<drawOffsetWest>(-.37, -.1, -1.05)</drawOffsetWest>
+		<drawOffsetSouth>(0, .006, -1.1)</drawOffsetSouth>
+		<drawOffsetEast>(.37, -.001, -1.05)</drawOffsetEast>
+		<drawOffsetWest>(-.37, -.001, -1.05)</drawOffsetWest>
 	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
 
 </Defs>

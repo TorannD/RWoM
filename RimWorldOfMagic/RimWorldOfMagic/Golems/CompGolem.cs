@@ -361,14 +361,21 @@ namespace TorannMagic.Golems
             if (Pawn.playerSettings != null)
             {
                 Pawn.playerSettings.hostilityResponse = HostilityResponseMode.Attack;
-                threatTarget = InnerWorkstation.ThreatTarget;
+                if (InnerWorkstation.ThreatTarget != null && (InnerWorkstation.ThreatTarget.Position - Pawn.Position).LengthHorizontal <= threatRange)
+                {
+                    threatTarget = InnerWorkstation.ThreatTarget;
+                }
+                else
+                {
+                    threatTarget = null;
+                }
             }
             actionTickAverage80 = 3 * Golem.processorEvaluationTicks;
             ClearHediffs();
             ApplyNeeds();
             ApplyUpgrades();
             ApplyDamages();            
-            DeSpawnGolemWorkstation();
+            DeSpawnGolemWorkstation();             
             PawnGolem.PostGolemActivate();
         }
 
@@ -542,7 +549,7 @@ namespace TorannMagic.Golems
         {
             if (!dormantThing.DestroyedOrNull() && dormantThing.Spawned)
             {
-                if(dormantThing.ThreatTarget != null)
+                if (dormantThing.ThreatTarget != null && (dormantThing.ThreatTarget.Position - Pawn.Position).LengthHorizontal <= threatRange)
                 {
                     Job job = new Job(JobDefOf.AttackMelee, dormantThing.ThreatTarget);
                     Pawn.jobs.StartJob(job, JobCondition.InterruptForced);

@@ -32,6 +32,10 @@ namespace TorannMagic.Golems
             {
                 return 0f;
             }
+            if(pawn.jobs != null && pawn.jobs.curJob.def == JobDefOf.AttackMelee)
+            {
+                return 0f;
+            }
             if (energy.CurCategory == GolemEnergyCategory.Critical)
             {
                 return 10f;
@@ -70,7 +74,16 @@ namespace TorannMagic.Golems
             if (pawn.Downed)
             {
                 return null;
-            }            
+            }
+            if (pawn.jobs != null && pawn.jobs.curJob != null && pawn.jobs.curJob.def == JobDefOf.AttackMelee)
+            {
+                return null;
+            }
+            Pawn threat = TM_Calc.FindNearbyEnemy(pawn, Mathf.RoundToInt(Golem.threatRange));
+            if(threat != null && Golem.TargetIsValid(pawn, threat))
+            {
+                return null;
+            }
             if (Golem.dormantMap == pawn.Map && Golem.dormantPosition.Walkable(pawn.Map) && Golem.dormantPosition.Standable(pawn.Map))
             {
                 Golem.shouldDespawn = true;

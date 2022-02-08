@@ -5,6 +5,7 @@ using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using HarmonyLib;
 
 namespace TorannMagic
 {
@@ -97,6 +98,16 @@ namespace TorannMagic
                                         }
                                         if (undeadPawn.Dead)
                                         {
+                                            //if(undeadPawn.workSettings != null && undeadPawn.story != null && undeadPawn.story.traits != null && undeadPawn.story.traits.HasTrait(TorannMagicDefOf.Undead))
+                                            //{
+                                            //    Log.Message("copying old priorities");
+                                            //    DefMap<WorkTypeDef, int> tmppriorities = Traverse.Create(root: undeadPawn.workSettings).Field(name: "priorities").GetValue<DefMap<WorkTypeDef, int>>();
+                                            //    priorities = new DefMap<WorkTypeDef, int>();
+                                            //    foreach(WorkTypeDef item in from w in DefDatabase<WorkTypeDef>.AllDefs select w)
+                                            //    {
+                                            //        priorities[item] = tmppriorities[item];
+                                            //    }                                                    
+                                            //}
                                             ResurrectionUtility.Resurrect(undeadPawn);
                                         }
                                         raisedPawns++;
@@ -214,6 +225,11 @@ namespace TorannMagic
                                             {
                                                 undeadPawn.timetable.SetAssignment(h, TimeAssignmentDefOf.Work);
                                             }
+                                            //if(priorities != null)
+                                            //{
+                                            //    Log.Message("loading priorities");
+                                            //    Traverse.Create(root: undeadPawn).Field(name: "priorities").SetValue(priorities);
+                                            //}
                                         }
                                     }
                                     else
@@ -261,7 +277,7 @@ namespace TorannMagic
             undeadPawn.skills.Learn(SkillDefOf.Animals, -100000000, true);
             undeadPawn.skills.Learn(SkillDefOf.Artistic, -100000000, true);
             undeadPawn.skills.Learn(SkillDefOf.Cooking, -100000000, true);
-            undeadPawn.skills.Learn(SkillDefOf.Cooking, Rand.Range(10000, 30000)*bonusSkill, true);
+            undeadPawn.skills.Learn(SkillDefOf.Cooking, Rand.Range(10000, 30000)*bonusSkill, true);            
             undeadPawn.skills.Learn(SkillDefOf.Crafting, -100000000, true);
             undeadPawn.skills.Learn(SkillDefOf.Crafting, Rand.Range(10000, 60000) * bonusSkill, true);
             undeadPawn.skills.Learn(SkillDefOf.Plants, -100000000, true);
@@ -281,7 +297,157 @@ namespace TorannMagic
             undeadPawn.workSettings.SetPriority(TorannMagicDefOf.Research, 0);
             undeadPawn.workSettings.SetPriority(TorannMagicDefOf.Art, 0);
             undeadPawn.workSettings.SetPriority(TorannMagicDefOf.PatientBedRest, 0);
-            
+
+            SetSmartWorkPriorities(undeadPawn);            
+        }
+
+        private static void SetSmartWorkPriorities(Pawn undeadPawn)
+        {
+            int numSkilled = 0;
+            foreach (SkillRecord s in undeadPawn.skills.skills)
+            {                
+                if (s.def == SkillDefOf.Cooking)
+                {
+                    if(s.Level >= 8)
+                    {
+                        numSkilled += 2;
+                        undeadPawn.workSettings.SetPriority(TorannMagicDefOf.Cooking, 1);
+                    }
+                    else if(s.Level > 6)
+                    {
+                        numSkilled++;
+                        undeadPawn.workSettings.SetPriority(TorannMagicDefOf.Cooking, 2);
+                    }
+                    else if (s.Level > 4)
+                    {
+                        undeadPawn.workSettings.SetPriority(TorannMagicDefOf.Cooking, 3);
+                    }
+                }
+                else if (s.def == SkillDefOf.Crafting)
+                {
+                    if (s.Level >= 9)
+                    {
+                        numSkilled += 2;
+                        undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Crafting, 1);
+                    }
+                    else if (s.Level > 7)
+                    {
+                        numSkilled++;
+                        undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Crafting, 2);
+                    }
+                    else if (s.Level > 4)
+                    {
+                        undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Crafting, 3);
+                    }
+                }
+                else if (s.def == SkillDefOf.Plants)
+                {
+                    if (s.Level >= 10)
+                    {
+                        numSkilled += 2;
+                        undeadPawn.workSettings.SetPriority(TorannMagicDefOf.PlantCutting, 1);
+                        undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Growing, 1);
+                    }
+                    else if (s.Level > 7)
+                    {
+                        numSkilled++;
+                        undeadPawn.workSettings.SetPriority(TorannMagicDefOf.PlantCutting, 2);
+                        undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Growing, 2);
+                    }
+                    else if (s.Level > 4)
+                    {
+                        undeadPawn.workSettings.SetPriority(TorannMagicDefOf.PlantCutting, 3);
+                        undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Growing, 3);
+                    }
+                    else
+                    {
+                        undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Growing, 4);
+                    }
+                }
+                else if (s.def == SkillDefOf.Mining)
+                {
+                    if (s.Level >= 10)
+                    {
+                        numSkilled += 2;
+                        undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Mining, 1);
+                    }
+                    else if (s.Level > 7)
+                    {
+                        numSkilled++;
+                        undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Mining, 2);
+                    }
+                    else if (s.Level > 5)
+                    {
+                        undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Mining, 3);
+                    }
+                    else
+                    {
+                        undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Mining, 4);
+                    }
+                }
+                else if(s.def == SkillDefOf.Construction)
+                {
+                    if (s.Level >= 10)
+                    {
+                        numSkilled += 2;
+                        undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Construction, 1);
+                    }
+                    else if (s.Level > 7)
+                    {
+                        numSkilled++;
+                        undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Construction, 2);
+                    }
+                    else if (s.Level > 4)
+                    {
+                        undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Construction, 3);
+                    }                    
+                }                
+            }
+            if (numSkilled <= 2)
+            {
+                if (Rand.Chance(.5f))
+                {
+                    undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Hauling, 1);
+                    undeadPawn.workSettings.SetPriority(TorannMagicDefOf.Cleaning, 2);
+                    undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Crafting, 2);
+                }
+                else
+                {
+                    undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Hauling, 2);
+                    undeadPawn.workSettings.SetPriority(TorannMagicDefOf.Cleaning, 1);
+                    undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Crafting, 2);
+                }
+            }
+            else if (numSkilled <= 5)
+            {
+                if (Rand.Chance(.5f))
+                {
+                    undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Hauling, 2);
+                    undeadPawn.workSettings.SetPriority(TorannMagicDefOf.Cleaning, 3);
+                    undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Crafting, 3);
+                }
+                else
+                {
+                    undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Hauling, 3);
+                    undeadPawn.workSettings.SetPriority(TorannMagicDefOf.Cleaning, 2);
+                    undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Crafting, 2);
+                }
+            }
+            else
+            {
+                if (Rand.Chance(.5f))
+                {
+                    undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Hauling, 3);
+                    undeadPawn.workSettings.SetPriority(TorannMagicDefOf.Cleaning, 4);
+                    undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Crafting, 3);
+                }
+                else
+                {
+                    undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Hauling, 4);
+                    undeadPawn.workSettings.SetPriority(TorannMagicDefOf.Cleaning, 3);
+                    undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Crafting, 4);
+                }
+            }
         }
 
         private void RemoveTraits(Pawn pawn, List<Trait> traits)

@@ -59,7 +59,7 @@ namespace TorannMagic.Golems
                 return null;
             }
             if (!pawn.WorkTagIsDisabled(WorkTags.Violent))
-            {                
+            {
                 if(pg.verbCommands != null && !pg.rangedToggle && pg.ValidRangedVerbs() != null && pg.ValidRangedVerbs().Count > 0)
                 {
                     Verb v = pg.GetBestVerb;

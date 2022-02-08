@@ -4220,6 +4220,12 @@ namespace TorannMagic
                     __result = ReachabilityImmediate.CanReachImmediate(root, targ, __instance.caster.Map, PathEndMode.Touch, null);
                     return false;
                 }
+                if(__instance.verbProps.range == 0)
+                {
+                    resultingLine = default(ShootLine);
+                    __result = true;
+                    return false;
+                }
                 if (__instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_Blink" ||
                     __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_BLOS" ||
                     __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_LightSkip" ||

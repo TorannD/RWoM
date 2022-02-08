@@ -10,6 +10,12 @@ namespace TorannMagic
     [StaticConstructorOnStartup]
     class HediffComp_Lich : HediffComp
     {
+        private static readonly string[] nonStandardNeedsToAutoFulfill = new[] {
+            "Bladder", //Dubs Bad Hygiene
+            "Hygiene", //Dubs Bad Hygiene
+            "DBHThirst" //Dubs Bad Hygiene
+        };
+
         private bool initializing = true;
         public string labelCap
         {
@@ -69,7 +75,7 @@ namespace TorannMagic
                 List<Need> needs = base.Pawn.needs.AllNeeds;
                 for (int i = 0; i < needs.Count; i++)
                 {
-                    if(needs[i].def.defName != "Joy" && needs[i].def.defName != "Mood" && needs[i].def.defName != "TM_Mana" && needs[i].def.defName != "TM_Stamina" && needs[i].def.defName != "ROMV_Blood")
+                    if(needs[i].def.defName != "Joy" && needs[i].def.defName != "Mood" && needs[i].def.defName != "TM_Mana" && needs[i].def.defName != "TM_Stamina" && needs[i].def.defName != "ROMV_Blood" || nonStandardNeedsToAutoFulfill.Contains(needs[i]?.def?.defName))
                     { 
                         needs[i].CurLevel = needs[i].MaxLevel;
                     }

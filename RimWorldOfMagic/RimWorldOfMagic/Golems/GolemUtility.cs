@@ -38,5 +38,40 @@ namespace TorannMagic.Golems
             }
             return null;
         }
+
+        public static void MasterButton(Rect inRect, string masterName, CompGolem cg)
+        {
+            if (cg != null)
+            {
+                if (Widgets.ButtonText(inRect, masterName))
+                {
+                    List<string> tmpPawns = new List<string>();
+                    tmpPawns.Add("None");
+                    foreach (Pawn p in TM_Calc.GolemancersInFaction(cg.PawnGolem.Faction).Where((Pawn x) => x != cg.pawnMaster))
+                    {
+                        tmpPawns.Add(p.LabelShort);
+                    }
+                    List<FloatMenuOption> list = new List<FloatMenuOption>();
+                    foreach (string pawnName in tmpPawns)
+                    {
+                        string text = pawnName;
+                        FloatMenuOption item = new FloatMenuOption(text, delegate
+                        {
+                            if (pawnName != masterName)
+                            {
+                                cg.pawnMaster = TM_Calc.GolemancersInFaction(cg.PawnGolem.Faction).FirstOrDefault((Pawn p) => p.LabelShort == pawnName);
+                            }
+                            if (pawnName == "None")
+                            {
+                                cg.pawnMaster = null;
+                            }
+                        });
+                        list.Add(item);
+                    }
+                    Find.WindowStack.Add(new FloatMenu(list));
+                }
+                TooltipHandler.TipRegion(inRect, "TM_GolemMasterDesc".Translate());
+            }
+        }
     }
 }

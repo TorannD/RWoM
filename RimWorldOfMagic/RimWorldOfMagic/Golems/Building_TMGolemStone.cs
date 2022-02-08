@@ -96,8 +96,8 @@ namespace TorannMagic.Golems
             {
                 Vector3 effectPos = this.DrawPos;
                 effectPos.x += Rand.Range(-.3f, .3f);
-                effectPos.z += .3f;
-                TM_MoteMaker.ThrowGenericFleck(FleckDefOf.DustPuffThick, effectPos, this.Map, Rand.Range(.5f, .8f), .4f, Rand.Range(0, .1f), Rand.Range(.4f, .6f), Rand.Range(10, 30), Rand.Range(.1f, .2f), Rand.Range(80, 100), Rand.Range(0, 360));
+                effectPos.z += .6f;
+                TM_MoteMaker.ThrowGenericFleck(FleckDefOf.DustPuffThick, effectPos, this.Map, Rand.Range(.5f, .8f), .4f, Rand.Range(0, .1f), Rand.Range(.4f, .6f), Rand.Range(10, 30), Rand.Range(.1f, .2f), Rand.Range(-10, 10), Rand.Range(0, 360));
             }
         }
 

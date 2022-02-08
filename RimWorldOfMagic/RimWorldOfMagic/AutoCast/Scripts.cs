@@ -1012,7 +1012,7 @@ namespace TorannMagic.AutoCast
                         }
                         if (!targetPawn.health.hediffSet.HasHediff(hediffDef, false) && tatteredApparel)
                         {
-                            Job job = ability.GetJob(AbilityContext.AI, jobTarget);                            
+                            Job job = ability.GetJob(AbilityContext.AI, jobTarget);   
                             DoJob.Execute(job, caster);
                             success = true;
                         }

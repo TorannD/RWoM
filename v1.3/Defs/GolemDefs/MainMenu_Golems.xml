@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <MainButtonDef>
+    <defName>TM_GolemButton</defName>
+    <label>golems</label>
+    <description>List and manage golems that belong to the colony.</description>
+    <tabWindowClass>TorannMagic.Golems.MainTabWindow_Golems</tabWindowClass>
+    <order>57</order>
+    <closesWorldView>true</closesWorldView>
+  </MainButtonDef>
+  
+  <PawnTableDef>
+    <defName>TM_Golems</defName>
+    <workerClass>PawnTable_PlayerPawns</workerClass>
+    <columns>
+      <li>Label</li>
+	  <li>GapTiny</li>
+      <li>TM_GolemAge</li>
+      <li>GapSmall</li>
+	  <li>TM_GolemActive</li>
+	  <li>GapTiny</li>
+	  <li>TM_GolemNeeds</li>
+	  <li>GapTiny</li>	  
+	  <li>TM_GolemThreatRange</li>
+	  <li>GapTiny</li>
+	  <li>TM_GolemRestPercent</li>
+	  <li>GapTiny</li>
+	  <li>TM_GolemAwakenPercent</li>
+	  <li>GapTiny</li>
+	  <li>TM_GolemMaster</li>
+      <li>RemainingSpace</li>
+    </columns>
+  </PawnTableDef>
+  
+  <PawnColumnDef>
+    <defName>TM_GolemAge</defName>
+    <workerClass>TorannMagic.Golems.PawnColumnWorker_GolemAge</workerClass>
+	<width>24</width>
+	<label>Age</label>
+  </PawnColumnDef>
+  
+  <PawnColumnDef>
+    <defName>TM_GolemActive</defName>
+    <workerClass>TorannMagic.Golems.PawnColumnWorker_GolemActive</workerClass>
+    <sortable>true</sortable>
+    <headerTip>Active state</headerTip>
+	<headerIcon>UI/golem_icon</headerIcon>
+  </PawnColumnDef>
+  
+  <PawnColumnDef>
+    <defName>TM_GolemNeeds</defName>
+    <workerClass>TorannMagic.Golems.PawnColumnWorker_GolemNeeds</workerClass>
+    <sortable>true</sortable>
+	<label>Energy</label>
+  </PawnColumnDef>
+  
+  <PawnColumnDef>
+    <defName>TM_GolemMaster</defName>
+    <workerClass>TorannMagic.Golems.PawnColumnWorker_GolemMaster</workerClass>
+    <sortable>true</sortable>
+	<label>Assigned to:</label>
+  </PawnColumnDef>
+  
+  <PawnColumnDef>
+    <defName>TM_GolemThreatRange</defName>
+    <workerClass>TorannMagic.Golems.PawnColumnWorker_GolemThreatRange</workerClass>
+    <sortable>true</sortable>
+    <headerIcon>UI/Icons/Animal/Hunt</headerIcon>
+    <headerTip></headerTip>
+  </PawnColumnDef>
+  
+  <PawnColumnDef>
+    <defName>TM_GolemRestPercent</defName>
+    <workerClass>TorannMagic.Golems.PawnColumnWorker_GolemRestPercent</workerClass>
+    <sortable>true</sortable>
+    <headerIcon>UI/Icons/Animal/FollowDrafted</headerIcon>
+    <headerTip></headerTip>
+  </PawnColumnDef>
+  
+  <PawnColumnDef>
+    <defName>TM_GolemAwakenPercent</defName>
+    <workerClass>TorannMagic.Golems.PawnColumnWorker_GolemAwakenPercent</workerClass>
+    <sortable>true</sortable>
+    <headerIcon>UI/Designators/ReleaseToTheWild</headerIcon>
+    <headerTip></headerTip>
+  </PawnColumnDef>
+
+</Defs>

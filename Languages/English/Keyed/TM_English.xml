@@ -2115,6 +2115,8 @@ Level 3: all 4 effects</TM_CombatDrugs_pwr_desc>
 <TM_GolemName>Golem name</TM_GolemName>
 <TM_GolemNameDesc>Change golem name</TM_GolemNameDesc>
 <TM_GolemMasterLabel>Golemancer</TM_GolemMasterLabel>
+<TM_ActivatesGolem_Time>Activates the golem - this typically takes a small amount of time. The golem will not be able to activate if it is undergoing upgrades.</TM_ActivatesGolem_Time>
+<TM_DeActivatesGolem_Time>Deactivates the golem - this will send the golem back to their resting position and may take some time.</TM_DeActivatesGolem_Time>
 
 <!-- ========== Building Menu's ========== -->
 

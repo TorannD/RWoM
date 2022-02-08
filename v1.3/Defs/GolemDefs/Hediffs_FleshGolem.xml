@@ -118,7 +118,7 @@
 	<makesSickThought>false</makesSickThought>
 	<tendable>false</tendable>
     <makesAlert>false</makesAlert>
-	<maxSeverity>3</maxSeverity>
+	<maxSeverity>1</maxSeverity>
 	<isBad>false</isBad>
 	<initialSeverity>.1</initialSeverity>
 	<stages>
@@ -144,7 +144,7 @@
 	<makesSickThought>false</makesSickThought>
 	<tendable>false</tendable>
     <makesAlert>false</makesAlert>
-	<maxSeverity>3</maxSeverity>
+	<maxSeverity>1</maxSeverity>
 	<isBad>false</isBad>
 	<initialSeverity>.1</initialSeverity>
 	<stages>
@@ -170,7 +170,7 @@
 	<makesSickThought>false</makesSickThought>
 	<tendable>false</tendable>
     <makesAlert>false</makesAlert>
-	<maxSeverity>3</maxSeverity>
+	<maxSeverity>1</maxSeverity>
 	<isBad>false</isBad>
 	<initialSeverity>.1</initialSeverity>
 	<stages>
@@ -196,7 +196,7 @@
 	<makesSickThought>false</makesSickThought>
 	<tendable>false</tendable>
     <makesAlert>false</makesAlert>
-	<maxSeverity>3</maxSeverity>
+	<maxSeverity>1</maxSeverity>
 	<isBad>false</isBad>
 	<initialSeverity>.1</initialSeverity>
 	<stages>

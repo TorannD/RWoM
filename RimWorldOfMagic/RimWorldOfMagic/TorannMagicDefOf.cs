@@ -1490,6 +1490,7 @@ namespace TorannMagic
         public static PawnKindDef TM_SlateGolemK;
         public static PawnKindDef TM_MarbleGolemK;
         public static PawnKindDef TM_GraniteGolemK;
+        public static PawnTableDef TM_Golems;
         //public static TMDefs.TM_GolemAbility TM_Golem_GatlingCannon;
     }
 }

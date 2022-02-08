@@ -94,9 +94,9 @@ Heat:	+[6,12,18]%</description>
 		<partRequiresUpgrade>false</partRequiresUpgrade>
 		<workstationEffects>
 		  <li Class="TorannMagic.Golems.GolemWorkstationEffect_CreateItem">
-			<effectFrequency>1000</effectFrequency>
+			<effectFrequency>2000</effectFrequency>
 			<chargesRequired>1</chargesRequired>
-			<energyCost>20</energyCost>
+			<energyCost>40</energyCost>
 			<recipes>
 				<li>TM_GolemMake_Sandstone</li>
 				<li>TM_GolemMake_Granite</li>

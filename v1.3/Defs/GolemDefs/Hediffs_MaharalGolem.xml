@@ -10,7 +10,7 @@
 	<makesSickThought>false</makesSickThought>
 	<tendable>false</tendable>
     <makesAlert>false</makesAlert>
-	<maxSeverity>1</maxSeverity>
+	<maxSeverity>3</maxSeverity>
 	<isBad>false</isBad>
 	<initialSeverity>.1</initialSeverity>
 	<stages>

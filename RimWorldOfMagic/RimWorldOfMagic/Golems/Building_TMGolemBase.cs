@@ -17,7 +17,7 @@ namespace TorannMagic.Golems
     public class Building_TMGolemBase : Building_WorkTable, IThingHolder, IAttackTarget, IAttackTargetSearcher
     {
         int activationAge = 0;
-		private bool activating = false;
+		public bool activating = false;
         private bool initialized = false;
         private int nextEvaluationTick = 0;
         private int nextEffectTick = 0;
@@ -500,7 +500,7 @@ namespace TorannMagic.Golems
                             {
                                 TM_Action.DoAction_HealPawn(null, p, 1, 2 * GolemComp.HealingModifier);
                             }
-                            if (GolemComp.useAbilitiesWhenDormant && CanActivate())
+                            if (GolemComp.useAbilitiesWhenDormant)
                             {
                                 foreach (TM_GolemUpgrade gu in Upgrades)
                                 {

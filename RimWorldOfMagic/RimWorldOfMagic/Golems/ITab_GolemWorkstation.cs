@@ -116,34 +116,35 @@ namespace TorannMagic.Golems
                     Rect rectMasterLabel = GetRowRect(rectNameLabel, num, 10);
                     Widgets.Label(rectMasterLabel, "TM_GolemMasterLabel".Translate());
                     Rect rectPawnMaster = GetRowRect(rectNameButton, num, 10);
-                    if (Widgets.ButtonText(rectPawnMaster, pawnMasterName))
-                    {
-                        List<string> tmpPawns = new List<string>();
-                        tmpPawns.Add("None");
-                        foreach (Pawn p in TM_Calc.GolemancersInFaction(golem_building.Faction).Where((Pawn x) => x != golem_building.GolemComp.pawnMaster))
-                        {
-                            tmpPawns.Add(p.LabelShort);
-                        }
-                        List<FloatMenuOption> list = new List<FloatMenuOption>();
-                        foreach(string pawnName in tmpPawns)
-                        {
-                            string text = pawnName;
-                            FloatMenuOption item = new FloatMenuOption(text, delegate
-                            {
-                                if(pawnName != pawnMasterName)
-                                {
-                                    golem_building.GolemComp.pawnMaster = TM_Calc.GolemancersInFaction(golem_building.Faction).FirstOrDefault((Pawn p) => p.LabelShort == pawnName);                                    
-                                }
-                                if(pawnName == "None")
-                                {
-                                    golem_building.GolemComp.pawnMaster = null;
-                                }
-                            });
-                            list.Add(item);
-                        }
-                        Find.WindowStack.Add(new FloatMenu(list));
-                    }
-                    TooltipHandler.TipRegion(rectPawnMaster, "TM_GolemMasterDesc".Translate());
+                    GolemUtility.MasterButton(rectPawnMaster, pawnMasterName, golem_building.GolemComp);
+                    //if (Widgets.ButtonText(rectPawnMaster, pawnMasterName))
+                    //{
+                    //    List<string> tmpPawns = new List<string>();
+                    //    tmpPawns.Add("None");
+                    //    foreach (Pawn p in TM_Calc.GolemancersInFaction(golem_building.Faction).Where((Pawn x) => x != golem_building.GolemComp.pawnMaster))
+                    //    {
+                    //        tmpPawns.Add(p.LabelShort);
+                    //    }
+                    //    List<FloatMenuOption> list = new List<FloatMenuOption>();
+                    //    foreach(string pawnName in tmpPawns)
+                    //    {
+                    //        string text = pawnName;
+                    //        FloatMenuOption item = new FloatMenuOption(text, delegate
+                    //        {
+                    //            if(pawnName != pawnMasterName)
+                    //            {
+                    //                golem_building.GolemComp.pawnMaster = TM_Calc.GolemancersInFaction(golem_building.Faction).FirstOrDefault((Pawn p) => p.LabelShort == pawnName);                                    
+                    //            }
+                    //            if(pawnName == "None")
+                    //            {
+                    //                golem_building.GolemComp.pawnMaster = null;
+                    //            }
+                    //        });
+                    //        list.Add(item);
+                    //    }
+                    //    Find.WindowStack.Add(new FloatMenu(list));
+                    //}
+                    //TooltipHandler.TipRegion(rectPawnMaster, "TM_GolemMasterDesc".Translate());
                     num += 2;
 
                     abilityOptions = Widgets.ButtonText(GetRowRect(rect2, num, 10), "TM_GolemAbilitiesButton".Translate(), true, false, true);

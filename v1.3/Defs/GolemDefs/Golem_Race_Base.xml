@@ -15,6 +15,9 @@
       <Flammability>0.6</Flammability>
 	  <ToxicSensitivity>0.5</ToxicSensitivity>
     </statBases>
+	<tradeTags>
+	  <li>AnimalInsectSpace</li>
+	</tradeTags>
 	<race>
       <needsRest>false</needsRest>
       <hasGenders>false</hasGenders>

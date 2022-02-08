@@ -194,7 +194,8 @@
 			  <subNodes>
 			    <li Class="TorannMagic.Golems.JobGiver_FleshGolemExtinguish" />
 			  </subNodes>
-			</li>               
+			</li>   
+			<li Class="TorannMagic.Golems.JobGiver_GolemExtinguishSelf" /> 
           </subNodes>
         </li>
       </subNodes>

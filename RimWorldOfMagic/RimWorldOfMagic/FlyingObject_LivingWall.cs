@@ -553,6 +553,10 @@ namespace TorannMagic
                     this.searchEnemyTick = Mathf.RoundToInt(Rand.Range(.4f, .6f) * this.searchEnemySpeed) + Find.TickManager.TicksGame;
                     AttackNearby();
                     RepairOccupiedWall();
+                    if(this.pawn.DestroyedOrNull() || this.pawn.Dead || this.pawn.Map != this.Map)
+                    {
+                        shouldDestroy = true;
+                    }
                 }
                 if (idleFor > 0)
                 {
