@@ -835,5 +835,33 @@
 		<destroyedOutLabel>decayed</destroyedOutLabel>
 	</injuryProps>
   </HediffDef>
+  
+  <HediffDef ParentName="TM_InjuryBase">
+		<defName>TM_SymbiosisDamage</defName>
+		<label>symbiosis</label>
+		<description>Damage inferred through a symbiosis connection.</description>
+    <labelNoun>symbiotic transfer</labelNoun>
+    <comps>
+      <li Class="HediffCompProperties_TendDuration">
+        <labelTendedWell>tended</labelTendedWell>
+        <labelTendedWellInner>tended</labelTendedWellInner>
+        <labelSolidTendedWell>set</labelSolidTendedWell>
+      </li>
+      <li Class="HediffCompProperties_Infecter">
+        <infectionChance>0</infectionChance>
+      </li>
+      <li Class="HediffCompProperties_GetsPermanent">
+        <permanentLabel>residual injury</permanentLabel>
+      </li>
+    </comps>
+		<injuryProps>
+			<painPerSeverity>0.00125</painPerSeverity>
+			<averagePainPerSeverityPermanent>0.00075</averagePainPerSeverityPermanent>
+			<bleedRate>0</bleedRate>
+			<canMerge>true</canMerge>
+			<destroyedLabel>destroyed</destroyedLabel>
+			<destroyedOutLabel>severed</destroyedOutLabel>
+		</injuryProps>
+	</HediffDef>
 
 </Defs>

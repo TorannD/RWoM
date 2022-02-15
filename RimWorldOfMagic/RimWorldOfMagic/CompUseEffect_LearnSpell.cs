@@ -11,23 +11,22 @@ namespace TorannMagic
         {
             CompAbilityUserMagic comp = user.GetComp<CompAbilityUserMagic>();
             MagicPower magicPower;
-
             if (parent.def != null && (TM_Calc.IsMagicUser(user) || TM_Calc.IsWanderer(user)))
-            {
+            {                
                 List<TraitDef> restrictedTraits = null;
                 if (this.parent.def.HasModExtension<DefModExtension_LearnAbilityRequiredTraits>())
-                {
+                {                    
                     restrictedTraits = new List<TraitDef>();
                     restrictedTraits.Clear();
                     restrictedTraits = this.parent.def.GetModExtension<DefModExtension_LearnAbilityRequiredTraits>().traits;
                 }
                 bool hasRequiredTrait = true;
                 if(comp.customClass != null && !comp.customClass.canLearnCantrips)
-                {
+                {                    
                     hasRequiredTrait = false;
                 }
                 if (restrictedTraits != null && restrictedTraits.Count > 0)
-                {
+                {                   
                     hasRequiredTrait = false;
                     foreach (TraitDef td in restrictedTraits)
                     {
@@ -36,17 +35,17 @@ namespace TorannMagic
                             hasRequiredTrait = true;
                         }
                     }
-                }
+                }                
                 if (comp.customClass != null)
                 {
-                    bool itemUsed = false;
+                    bool itemUsed = false;                   
                     for (int i = 0; i < comp.MagicData.AllMagicPowers.Count; i++)
                     {
-                        TMAbilityDef ad = (TMAbilityDef)comp.MagicData.AllMagicPowers[i].abilityDef;
+                        TMAbilityDef ad = (TMAbilityDef)comp.MagicData.AllMagicPowers[i].abilityDef;                        
                         if (ad.learnItem == parent.def)
-                        {                           
+                        {                            
                             if (!TM_Data.RestrictedAbilities.Contains(parent.def) && !comp.MagicData.AllMagicPowers[i].learned && hasRequiredTrait)
-                            {
+                            {                                
                                 itemUsed = true;
                                 comp.MagicData.AllMagicPowers[i].learned = true;
                                 if(ad.shouldInitialize)
@@ -59,8 +58,8 @@ namespace TorannMagic
                                 break;
                             }
                             else if ((TM_Data.RestrictedAbilities.Contains(parent.def) || hasRequiredTrait) && !comp.MagicData.AllMagicPowers[i].learned)
-                            {
-                                if(comp.customClass.learnableSpells.Contains(parent.def))
+                            {                                
+                                if (comp.customClass.learnableSpells.Contains(parent.def))
                                 {
                                     itemUsed = true;
                                     comp.MagicData.AllMagicPowers[i].learned = true;
@@ -80,7 +79,7 @@ namespace TorannMagic
                                 }
                             }                            
                             else
-                            {
+                            {                                
                                 if (!hasRequiredTrait)
                                 {
                                     Messages.Message("CannotLearnSpell".Translate(), MessageTypeDefOf.RejectInput);
@@ -103,13 +102,13 @@ namespace TorannMagic
                 }
                 else
                 {
-                    TMAbilityDef customSkill = null;
-                    for (int i = 0; i < comp.MagicData.MagicPowersCustom.Count; i++)
+                    TMAbilityDef customSkill = null;                    
+                    for (int i = 0; i < comp.MagicData.MagicPowersCustomAll.Count; i++)
                     {
-                        TMAbilityDef tempSkill = (TMAbilityDef)comp.MagicData.MagicPowersCustom[i].abilityDef;
+                        TMAbilityDef tempSkill = (TMAbilityDef)comp.MagicData.MagicPowersCustomAll[i].abilityDef;
                         if (tempSkill.learnItem != null && tempSkill.learnItem == parent.def)
                         {
-                            if (!comp.MagicData.MagicPowersCustom[i].learned)
+                            if (!comp.MagicData.MagicPowersCustomAll[i].learned)
                             {
                                 customSkill = tempSkill;
                                 break;
@@ -482,6 +481,13 @@ namespace TorannMagic
                             comp.InitializeSpell();
                             this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                         }
+                        else if (parent.def == TorannMagicDefOf.SpellOf_HeatShield && comp.spell_HeatShield == false && user.story.traits.HasTrait(TorannMagicDefOf.InnerFire))
+                        {
+                            comp.spell_HeatShield = true;
+                            comp.MagicData.ReturnMatchingMagicPower(TorannMagicDefOf.TM_HeatShield).learned = true;
+                            comp.InitializeSpell();
+                            this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
+                        }
                         else if (parent.def == TorannMagicDefOf.SpellOf_MageLight && comp.spell_MageLight == false)
                         {
                             comp.spell_MageLight = true;
@@ -504,7 +510,7 @@ namespace TorannMagic
                             this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                         }
                         else if (customSkill != null)
-                        {
+                        {                            
                             comp.MagicData.ReturnMatchingMagicPower(customSkill).learned = true;
                             comp.AddPawnAbility(customSkill);
                             comp.InitializeSpell();

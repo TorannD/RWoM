@@ -79,8 +79,14 @@ namespace TorannMagic
                             targetPawn.DeSpawn();
                             GenSpawn.Spawn(p, this.currentTarget.Cell, map);
                             GenSpawn.Spawn(targetPawn, cell, map);
-                            p.drafter.Drafted = drafted;
-                            targetPawn.drafter.Drafted = tDrafted;
+                            if (drafted)
+                            {
+                                p.drafter.Drafted = drafted;
+                            }
+                            if (tDrafted)
+                            {
+                                targetPawn.drafter.Drafted = tDrafted;
+                            }
                             if (ModOptions.Settings.Instance.cameraSnap)
                             {
                                 CameraJumper.TryJumpAndSelect(p);

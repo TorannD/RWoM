@@ -505,7 +505,7 @@
     <defName>TM_ChargeBattery</defName>
     <label>Charge Battery</label>
     <uiIconPath>UI/chargebattery</uiIconPath>
-    <description>Converts raw magic power into electrical energy. This spell can only be used on batteries. Generates 400Wd.</description>
+    <description>Converts raw magic power into electrical energy. This spell can only be used on batteries or golems. Generates 400Wd.</description>
     <manaCost>0.10</manaCost>
 	<learnItem>SpellOf_ChargeBattery</learnItem>
 	<MainVerb Class="AbilityUser.VerbProperties_Ability">
@@ -1988,6 +1988,126 @@ Effects include dizziness, nausea, vision and hearing loss, vomiting, inability 
                 <canTargetSelf>false</canTargetSelf>
                 <canTargetLocations>false</canTargetLocations>
             </targetParams>
+        </MainVerb>
+    </TorannMagic.TMAbilityDef>
+	
+	<!-- magic warddrobe -->	
+	
+	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
+        <defName>TM_MagicWardrobe</defName>
+        <label>Magic Wardrobe</label>
+        <uiIconPath>UI/magicwardrobe</uiIconPath>
+        <description>A simple ability that stores all equipped clothing in a dimensional pocket. When used again, the stored clothing becomes equipped and any current equipment becomes stored. Works for all apparel, but not weapons or held items. Useful for storing gear or for quickly swapping between equipment sets.</description>
+		<manaCost>0.15</manaCost>
+		<learnItem>SpellOf_MagicWardrobe</learnItem>
+        <MainVerb Class="AbilityUser.VerbProperties_Ability">
+            <verbClass>TorannMagic.Verb_MagicWardrobe</verbClass>
+				<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+				<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+				<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+				<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+            <hasStandardCommand>true</hasStandardCommand>
+			<requiresLineOfSight>false</requiresLineOfSight>
+            <defaultProjectile>Projectile_Default</defaultProjectile>
+            <abilityDef>TM_MagicWardrobe</abilityDef>
+            <warmupTime>3</warmupTime>
+            <SecondsToRecharge>60.0</SecondsToRecharge>
+            <range>0</range>
+            <burstShotCount>1</burstShotCount>
+            <soundCast>TM_Vibration</soundCast>
+			<soundCastTail>GunTail_Medium</soundCastTail>
+            <muzzleFlashScale>5</muzzleFlashScale>
+            <isPrimary>false</isPrimary>
+			<isViolent>false</isViolent>
+			<AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+			<targetParams>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetSelf>true</canTargetSelf>
+                <canTargetLocations>false</canTargetLocations>
+            </targetParams>
+        </MainVerb>
+    </TorannMagic.TMAbilityDef>
+	
+	<!-- heat shield -->	
+	
+	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
+        <defName>TM_HeatShield</defName>
+        <label>Heat Shield</label>
+        <uiIconPath>UI/heatshield</uiIconPath>
+        <description>Place a heat barrier on allies that provides 75% bonus protection against heat damage and prevents catching on fire. Effects up to 6 targets and lasts about 30 seconds.</description>
+		<manaCost>0.30</manaCost>
+		<learnItem>SpellOf_HeatShield</learnItem>
+        <MainVerb Class="AbilityUser.VerbProperties_Ability">
+            <verbClass>TorannMagic.Verb_HeatShield</verbClass>
+				<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+				<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+				<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+				<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+            <hasStandardCommand>true</hasStandardCommand>
+			<requiresLineOfSight>true</requiresLineOfSight>
+            <defaultProjectile>Projectile_Default</defaultProjectile>
+            <abilityDef>TM_HeatShield</abilityDef>
+            <warmupTime>2</warmupTime>
+            <SecondsToRecharge>300.0</SecondsToRecharge>
+            <range>30</range>
+            <burstShotCount>1</burstShotCount>
+            <soundCast>TM_Vibration</soundCast>
+			<soundCastTail>GunTail_Medium</soundCastTail>
+            <muzzleFlashScale>5</muzzleFlashScale>
+            <isPrimary>false</isPrimary>
+			<isViolent>false</isViolent>
+			<AbilityTargetCategory>TargetAoE</AbilityTargetCategory>
+			<TargetAoEProperties>
+                <targetClass>Pawn</targetClass>
+                <showRangeOnSelect>true</showRangeOnSelect>
+                <friendlyFire>true</friendlyFire>
+                <startsFromCaster>false</startsFromCaster>                
+                <range>6</range>
+            </TargetAoEProperties>			
+			<targetParams>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetSelf>true</canTargetSelf>
+                <canTargetLocations>true</canTargetLocations>
+            </targetParams>			
+        </MainVerb>
+    </TorannMagic.TMAbilityDef>
+	
+	<!-- alter storm -->	
+	
+	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
+        <defName>TM_AlterStorm</defName>
+        <label>Alter Storm</label>
+        <uiIconPath>UI/alterstorm</uiIconPath>
+        <description>Alters the weather to create new conditions. Rainy storms will be changed to healing rain. Snow will be changed to a hailstorm. The hailstorm can be partially controlled by directing the hail towards enemies on the map, but once this weather even is started it must run its course and cannot be influenced by rainmaker.</description>
+        <manaCost>0.40</manaCost>
+		<efficiencyReductionPercent>.10</efficiencyReductionPercent>
+		<learnItem>SpellOf_AlterStorm</learnItem>
+		<learnChance>0</learnChance>
+		<canCopy>true</canCopy>
+		<MainVerb Class="AbilityUser.VerbProperties_Ability">
+            <verbClass>TorannMagic.Verb_AlterStorm</verbClass>
+            <hasStandardCommand>true</hasStandardCommand>
+            <defaultProjectile>Projectile_Default</defaultProjectile>
+            <abilityDef>TM_AlterStorm</abilityDef>
+			<requiresLineOfSight>false</requiresLineOfSight>
+            <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+            <targetParams>
+			  <canTargetPawns>true</canTargetPawns>
+			  <canTargetBuildings>false</canTargetBuildings>
+			  <canTargetSelf>true</canTargetSelf>
+			  <canTargetLocations>false</canTargetLocations>
+			</targetParams>
+            <warmupTime>5</warmupTime>
+            <SecondsToRecharge>600</SecondsToRecharge>
+            <range>0</range>
+			<isViolent>false</isViolent>
+            <burstShotCount>1</burstShotCount>
+            <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+            <soundCast>Message_PositiveEvent</soundCast>
+            <muzzleFlashScale>20</muzzleFlashScale>
+            <isPrimary>false</isPrimary>
         </MainVerb>
     </TorannMagic.TMAbilityDef>
 

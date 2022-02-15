@@ -151,4 +151,90 @@
     </stages>
   </HediffDef>
   
+  <HediffDef>
+    <defName>TM_CursedHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.6, 0.25, .5)</defaultLabelColor>
+    <label>arcane curse</label>
+	<description>Arcane curse is a byproduct of the cursed trait. The cursed pawn is constantly affected by arcane weakness that will gradually increase until it is a persistent illness. The effects of the curse can be offset by using magic, however, the pain caused by the curse does provide a unique clarity. The curse can be lifted by removing the pawn's magical trait.</description>
+	<tendable>false</tendable>
+	<makesSickThought>false</makesSickThought>
+	<isBad>false</isBad>
+	<minSeverity>0.001</minSeverity>
+	<maxSeverity>20.0</maxSeverity>
+	<comps>
+      <li>
+        <compClass>TorannMagic.HediffComp_Cursed</compClass>
+      </li>	
+    </comps>
+	<modExtensions>
+		<li Class="TorannMagic.TMDefs.DefModExtension_HediffEnchantments">
+			<stages>
+				<li>
+					<minSeverity>.01</minSeverity>
+					<maxSeverity>5</maxSeverity>
+					<enchantments>
+						<mpRegenRate>.5</mpRegenRate>
+						<magicCooldown>-.2</magicCooldown>
+						<arcaneDmg>.2</arcaneDmg>
+						<maxMP>.2</maxMP>
+					</enchantments>
+				</li>
+				<li>
+					<minSeverity>5</minSeverity>
+					<maxSeverity>10</maxSeverity>
+					<enchantments>
+						<mpRegenRate>1</mpRegenRate>
+						<magicCooldown>-.3</magicCooldown>
+						<arcaneDmg>.4</arcaneDmg>
+						<maxMP>.35</maxMP>
+					</enchantments>
+				</li>
+				<li>
+					<minSeverity>10</minSeverity>
+					<maxSeverity>21</maxSeverity>
+					<enchantments>
+						<mpRegenRate>2</mpRegenRate>
+						<magicCooldown>-.4</magicCooldown>
+						<arcaneDmg>.75</arcaneDmg>
+						<maxMP>.6</maxMP>
+					</enchantments>
+				</li>
+			</stages>
+		</li>
+	</modExtensions>
+    <stages>
+      <li>
+        <label>faded</label>
+        <minSeverity>0.01</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.15</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>moderate</label>
+        <minSeverity>5</minSeverity>		
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.25</offset>
+          </li>
+        </capMods>
+      </li>
+	  <li>
+        <label>heightened</label>
+        <minSeverity>10</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.5</offset>
+          </li>
+        </capMods>
+      </li>	  
+    </stages>
+  </HediffDef>
+  
 </Defs>

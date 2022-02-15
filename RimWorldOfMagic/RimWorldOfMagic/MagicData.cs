@@ -38,7 +38,7 @@ namespace TorannMagic
                         this.magicPowerCustom = new List<MagicPower>();
                         this.magicPowerCustom.Clear();
                     }
-                    foreach(TM_CustomPowerDef current in enumerable)
+                    foreach (TM_CustomPowerDef current in enumerable)
                     {
                         bool newPower = false;
                         List<AbilityUser.AbilityDef> abilityList = current.customPower.abilityDefs;
@@ -49,7 +49,7 @@ namespace TorannMagic
                         mp.costToLevel = current.customPower.costToLevel;
                         mp.autocasting = current.customPower.autocasting;
                         if (!magicPowerCustom.Any(a => a.GetAbilityDef(0) == mp.GetAbilityDef(0)))
-                        {                            
+                        {
                             newPower = true;
                         }
                         bool hasSkills = false;
@@ -76,12 +76,12 @@ namespace TorannMagic
                             {
                                 magicPowerCustom.Add(mp);
                             }
-                            else if(!MagicPowersCustomStandalone.Any((a => a.GetAbilityDef(0) == mp.GetAbilityDef(0))))
+                            else if (!MagicPowersCustomStandalone.Any((a => a.GetAbilityDef(0) == mp.GetAbilityDef(0))))
                             {
                                 MagicPowersCustomStandalone.Add(mp);
                             }
                         }
-                        if(hasSkills && current.customPower.chaosMageUseable && !AllMagicPowersForChaosMage.Contains(mp))
+                        if (hasSkills && current.customPower.chaosMageUseable && !AllMagicPowersForChaosMage.Contains(mp))
                         {
                             this.AllMagicPowersForChaosMage.Add(mp);
                         }
@@ -104,6 +104,22 @@ namespace TorannMagic
                     this.magicPowerCustomStandalone.Clear();
                 }
                 return this.magicPowerCustomStandalone;
+            }
+        }
+
+        private List<MagicPower> magicPowerCustomAll;
+        public List<MagicPower> MagicPowersCustomAll
+        {
+            get
+            {
+                if(this.magicPowerCustomAll == null)
+                {
+                    this.magicPowerCustomAll = new List<MagicPower>();
+                    this.magicPowerCustomAll.Clear();
+                    this.magicPowerCustomAll.AddRange(MagicPowersCustom);
+                    this.magicPowerCustomAll.AddRange(MagicPowersCustomStandalone);
+                }
+                return magicPowerCustomAll;
             }
         }
 
@@ -506,6 +522,10 @@ namespace TorannMagic
                         new MagicPower(new List<AbilityUser.AbilityDef>
                         {
                             TorannMagicDefOf.TM_LightSkipGlobal
+                        }),
+                        new MagicPower(new List<AbilityUser.AbilityDef>
+                        {
+                            TorannMagicDefOf.TM_HeatShield
                         }),
                     };
                 }

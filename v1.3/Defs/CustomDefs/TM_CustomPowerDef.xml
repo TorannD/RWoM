@@ -456,6 +456,146 @@
 		</customPower>
 	</TorannMagic.TM_CustomPowerDef>
 	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_FadeEmotions</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<abilityDefs>									<!-- only 1 ability so max level is 0 -->
+				<li>TM_FadeEmotions</li>
+			</abilityDefs>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_Symbiosis</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<abilityDefs>									
+				<li>TM_Symbiosis</li>
+			</abilityDefs>
+			<skills>
+				<li>
+					<label>TM_Symbiosis_pwr</label>
+					<description>TM_Symbiosis_pwr_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_Symbiosis_eff</label>
+					<description>TM_Symbiosis_eff_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_Symbiosis_ver</label>
+					<description>TM_Symbiosis_ver_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+			</skills>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_FireSuppressionFlask</defName>	
+		<customPower>	
+			<forFighter>true</forFighter>
+			<maxLevel>3</maxLevel>
+			<abilityDefs>									<!-- only 1 ability so max level is 0 -->
+				<li>TM_FireSuppressionFlask</li>
+				<li>TM_FireSuppressionFlask_I</li>
+				<li>TM_FireSuppressionFlask_II</li>
+				<li>TM_FireSuppressionFlask_III</li>
+			</abilityDefs>
+			<skills>
+				<li>
+					<label>TM_FireSuppressionFlask_eff</label>
+					<description>TM_FireSuppressionFlask_eff_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+			</skills>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_HerbalClarity</defName>	
+		<customPower>	
+			<forFighter>true</forFighter>
+			<abilityDefs>									<!-- only 1 ability so max level is 0 -->
+				<li>TM_HerbalClarity</li>
+			</abilityDefs>
+			<autocasting>									
+				<type>OnNearby</type>							
+				<targetType>Pawn</targetType>				
+				<mightUser>true</mightUser>				
+				<magicUser>true</magicUser>				
+				<drafted>false</drafted>					
+				<undrafted>true</undrafted>
+				<targetFriendly>true</targetFriendly>		
+				<targetNeutral>false</targetNeutral>		
+				<targetEnemy>false</targetEnemy>				
+				<requiresLoS>false</requiresLoS>			
+				<AIUsable>false</AIUsable>					
+				<includeSelf>true</includeSelf>
+				<maxRange>15</maxRange>
+				<advancedConditionDefs>		
+					<li>TM_DoesNotHaveClarityHediff</li>
+					<li>TM_HasManaBelow20</li>
+				</advancedConditionDefs>					
+			</autocasting>
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_HerbalBliss</defName>	
+		<customPower>	
+			<forFighter>true</forFighter>
+			<abilityDefs>									<!-- only 1 ability so max level is 0 -->
+				<li>TM_HerbalBliss</li>
+			</abilityDefs>
+			<autocasting>									
+				<type>OnNearby</type>							
+				<targetType>Pawn</targetType>				
+				<mightUser>true</mightUser>				
+				<magicUser>true</magicUser>				
+				<drafted>false</drafted>					
+				<undrafted>true</undrafted>
+				<targetFriendly>true</targetFriendly>		
+				<targetNeutral>false</targetNeutral>		
+				<targetEnemy>false</targetEnemy>				
+				<requiresLoS>false</requiresLoS>			
+				<AIUsable>false</AIUsable>					
+				<includeSelf>true</includeSelf>
+				<maxRange>15</maxRange>
+				<advancedConditionDefs>			
+					<li>TM_DoesNotHaveBlissHediff</li>
+					<li>TM_HasMoodBelow5Percent</li>
+				</advancedConditionDefs>					
+			</autocasting>
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_MagicWardrobe</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<abilityDefs>									<!-- only 1 ability so max level is 0 -->
+				<li>TM_MagicWardrobe</li>
+			</abilityDefs>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_AlterStorm</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<abilityDefs>									<!-- only 1 ability so max level is 0 -->
+				<li>TM_AlterStorm</li>
+			</abilityDefs>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
 <!-- 	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
 		<defName>TM_ShadowSlayer</defName>	
 		<customPower>	

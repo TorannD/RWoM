@@ -74,6 +74,87 @@
 	</TraitDef>
 	
 	<TraitDef>
+		<defName>TM_FaeBloodTD</defName>
+		<ignoreConfigErrors>true</ignoreConfigErrors>
+		<commonality>0</commonality>	
+		<degreeDatas>	
+		  <li>
+			<label>Fae blood</label>
+			<description>[PAWN_nameDef] is a descendant of fae folk and has a natural connection to the arcane. [PAWN_possessive] arcane resistance is reduced by 40% but mana regeneration and maximum mana is increased by 20%. Spell costs are reduced by 10%.</description>
+			<degree>0</degree>
+		  </li>
+		</degreeDatas>	
+		<conflictingTraits>
+		  <li>TM_GiantsBloodTD</li>
+		</conflictingTraits>
+		<modExtensions>
+            <li Class="TorannMagic.TMDefs.DefModExtension_TraitEnchantments">
+                <arcaneRes>-0.4</arcaneRes>
+                <mpCost>-0.1</mpCost>
+				<maxMP>.2</maxMP>
+				<mpRegenRate>.2</mpRegenRate>
+            </li>
+        </modExtensions>		
+	</TraitDef>
+	
+	<TraitDef>
+		<defName>TM_GiantsBloodTD</defName>
+		<ignoreConfigErrors>true</ignoreConfigErrors>
+		<commonality>0</commonality>	
+		<degreeDatas>	
+		  <li>
+			<label>Giants blood</label>
+			<description>[PAWN_nameDef] is a descendant of giants - endowed with with great strength and stamina, though slow to recover. [PAWN_possessive] max stamina is increased by 80%, but stamina regeneration is reduced by 40%. Any attack made while using a melee weapon, or unarmed, deals an additional 25% damage.</description>
+			<degree>0</degree>
+		  </li>
+		</degreeDatas>	
+		<conflictingTraits>
+		  <li>TM_FaeBloodTD</li>
+		</conflictingTraits>
+		<modExtensions>
+            <li Class="TorannMagic.TMDefs.DefModExtension_TraitEnchantments">
+				<maxSP>.8</maxSP>
+				<spRegenRate>-.4</spRegenRate>
+            </li>
+        </modExtensions>		
+	</TraitDef>
+	
+	<TraitDef>
+		<defName>TM_EnlightenedTD</defName>
+		<ignoreConfigErrors>true</ignoreConfigErrors>
+		<commonality>0</commonality>	
+		<degreeDatas>	
+		  <li>
+			<label>Enlightened</label>
+			<description>[PAWN_nameDef] is blessed by magic, able to harness its power without suffering the full side-effects. Psychic sensitivity is increased by 50% and any magic ability used only incurs half the normal arcane weakness.</description>
+			<degree>0</degree>
+			<statOffsets>				
+				<PsychicSensitivity>0.50</PsychicSensitivity>
+			</statOffsets>
+		  </li>
+		</degreeDatas>	
+		<conflictingTraits>
+		  <li>TM_CursedTD</li>
+		</conflictingTraits>	
+	</TraitDef>
+	
+	<TraitDef>
+		<defName>TM_CursedTD</defName>
+		<ignoreConfigErrors>true</ignoreConfigErrors>
+		<commonality>0</commonality>	
+		<degreeDatas>	
+		  <li>
+			<label>Cursed</label>
+			<description>[PAWN_nameDef] is cursed by magic - tormented by the constant, burning rush of power through [PAWN_possessive] being, and can only gain relief through the release of arcane energy. [PAWN_nameDef] will slowly accumulate arcane weakness up until [PAWN_pronoun] would become catatonic, and may become catatonic at any point while at this threshold. Using magical abilities that would normally incur arcane weakness will instead proportionally reduce arcane weakness, as well as the effects of the curse.</description>
+			<degree>0</degree>
+		  </li>
+		</degreeDatas>	
+		<conflictingTraits>
+		  <li>TM_EnlightenedTD</li>
+		</conflictingTraits>	
+	</TraitDef>
+	
+	<TraitDef>
 		<defName>TM_OKWithDeath</defName>
 		<ignoreConfigErrors>true</ignoreConfigErrors>
 		<commonality>.1</commonality>	

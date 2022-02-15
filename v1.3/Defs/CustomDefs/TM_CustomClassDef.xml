@@ -193,11 +193,17 @@
 				<li>TM_PoisonFlask</li>
 				<li>TM_Elixir</li>
 				<li>TM_SoothingBalm</li>
+				<li>TM_FireSuppressionFlask</li>
+				<li>TM_FireSuppressionFlask_I</li>
+				<li>TM_FireSuppressionFlask_II</li>
+				<li>TM_FireSuppressionFlask_III</li>
 			</classFighterAbilities>						
 			
 			<classMageAbilities>							
 			</classMageAbilities>
-			<learnableSkills>								
+			<learnableSkills>
+				<li>SkillOf_HerbalClarity</li>
+				<li>SkillOf_HerbalBliss</li>
 			</learnableSkills>
 			
 			<isMage>false</isMage>							
@@ -225,11 +231,13 @@
 				<li>TM_SuppressiveAura</li>
 				<li>TM_HarvestPassion</li>
 				<li>TM_IncitePassion</li>
+				<li>TM_Symbiosis</li>
 			</classMageAbilities>							
 			
 			<classFighterAbilities>							
 			</classFighterAbilities>
-			<learnableSkills>								
+			<learnableSkills>		
+				<li>SpellOf_FadeEmotions</li>
 			</learnableSkills>
 			
 			<isMage>true</isMage>							

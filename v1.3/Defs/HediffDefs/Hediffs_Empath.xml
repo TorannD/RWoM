@@ -311,6 +311,153 @@
 		<becomeVisible>true</becomeVisible>
       </li>    	  
     </stages>
-  </HediffDef>  
+  </HediffDef>
+  
+  <HediffDef>
+    <defName>TM_SymbiosisHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(.8,0,1)</defaultLabelColor>
+    <label>symbiosis</label>
+	<description>The emotions and awareness of this pawn have been reinforced and fortified by the mind of an empath. For all intents and purposes, the mind of the empath is joined with this pawn - if this pawn dies then the empath will also die.</description>
+    <maxSeverity>4.0</maxSeverity>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<isBad>false</isBad>
+	<initialSeverity>.5</initialSeverity>
+	<comps>
+	  <li>
+        <compClass>TorannMagic.HediffComp_SymbiosisHost</compClass>
+      </li> 	  
+    </comps>
+    <stages>
+	  <li>
+        <label>I</label>
+        <minSeverity>.01</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<painFactor>.5</painFactor>
+		<statOffsets>
+		  <MentalBreakThreshold>-0.1</MentalBreakThreshold>
+		  <PsychicSensitivity>1</PsychicSensitivity>
+	    </statOffsets>
+		<capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>.6</offset>
+          </li>
+        </capMods>
+      </li>    	 
+	  <li>
+        <label>II</label>
+        <minSeverity>1</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<painFactor>.4</painFactor>
+		<statOffsets>
+		  <MentalBreakThreshold>-0.15</MentalBreakThreshold>
+		  <PsychicSensitivity>1.5</PsychicSensitivity>
+	    </statOffsets>
+		<capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>.9</offset>
+          </li>
+        </capMods>
+      </li>
+	  <li>
+        <label>III</label>
+        <minSeverity>2</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<painFactor>.3</painFactor>
+		<statOffsets>
+		  <MentalBreakThreshold>-0.18</MentalBreakThreshold>
+		  <PsychicSensitivity>1.8</PsychicSensitivity>
+	    </statOffsets>
+		<capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>1.1</offset>
+          </li>
+        </capMods>
+      </li>	 
+	  <li>
+        <label>IV</label>
+        <minSeverity>3</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<painFactor>.25</painFactor>
+		<statOffsets>
+		  <MentalBreakThreshold>-0.2</MentalBreakThreshold>
+		  <PsychicSensitivity>2</PsychicSensitivity>
+	    </statOffsets>
+		<capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>1.25</offset>
+          </li>
+        </capMods>
+      </li>	  
+    </stages>
+  </HediffDef> 
+  
+  <ThoughtDef>
+    <defName>TM_SymbiosisThought</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>TM_SymbiosisHD</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>symbiosis</label>
+        <description>Emotional fortitude provided by a symbiotic connection with an empath.</description>
+        <baseMoodEffect>40</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <HediffDef>
+    <defName>TM_OutOfBodyHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(.8,0,1)</defaultLabelColor>
+    <label>out of body</label>
+	<description>The emotions and awareness of this pawn have been attached to another pawn; this body is currently an empty shell.</description>
+    <maxSeverity>1.0</maxSeverity>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<isBad>false</isBad>
+	<initialSeverity>.5</initialSeverity>
+	<comps>
+	  <li>
+        <compClass>TorannMagic.HediffComp_SymbiosisCaster</compClass>
+      </li> 	  
+    </comps>
+    <stages>
+	  <li>
+        <label></label>
+        <minSeverity>0</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+			 <setMax>.1</setMax>
+          </li>
+        </capMods>
+      </li>    	  
+    </stages>
+  </HediffDef> 
+  
+  <ThoughtDef>
+    <defName>TM_OutOfBodyThought</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>TM_OutOfBodyHD</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>out of body</label>
+        <description>Emotional energy is being used to augment another pawn.</description>
+        <baseMoodEffect>-100</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
   
 </Defs>

@@ -27,25 +27,34 @@ namespace TorannMagic
 
                 if (map.mapTemperature.OutdoorTemp < 0)
                 {
-                    if (map.weatherManager.curWeather.defName == "SnowHard" || map.weatherManager.curWeather.defName == "SnowGentle")
+                    if (map.weatherManager.curWeather != TorannMagicDefOf.TM_HailstormWD)
                     {
-                        rainMakerDef = WeatherDef.Named("Clear");
-                        map.weatherManager.TransitionTo(rainMakerDef);
-                        return true;
-                    }
-                    else
-                    {
-                        if (Rand.Chance(.5f))
+                        if (map.weatherManager.curWeather.defName == "SnowHard" || map.weatherManager.curWeather.defName == "SnowGentle")
                         {
-                            rainMakerDef = WeatherDef.Named("SnowGentle");
+                            rainMakerDef = WeatherDef.Named("Clear");
+                            map.weatherManager.TransitionTo(rainMakerDef);
+                            return true;
                         }
                         else
                         {
-                            rainMakerDef = WeatherDef.Named("SnowHard");
+                            if (Rand.Chance(.5f))
+                            {
+                                rainMakerDef = WeatherDef.Named("SnowGentle");
+                            }
+                            else
+                            {
+                                rainMakerDef = WeatherDef.Named("SnowHard");
+                            }
+                            map.weatherDecider.DisableRainFor(0);
+                            map.weatherManager.TransitionTo(rainMakerDef);
+                            return true;
                         }
-                        map.weatherDecider.DisableRainFor(0);
-                        map.weatherManager.TransitionTo(rainMakerDef);
-                        return true;
+                    }
+                    else
+                    {
+                        Messages.Message("TM_CannotAlterWeatherType".Translate(
+                        TorannMagicDefOf.TM_HailstormWD.label
+                        ), MessageTypeDefOf.RejectInput);
                     }
                 }
                 else

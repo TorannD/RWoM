@@ -202,6 +202,7 @@
 <TM_MessageRitualRoleMustBeInspiredWith>{0} is not inspired with {1}.</TM_MessageRitualRoleMustBeInspiredWith>
 <TM_MessageRitualRoleCannotBeUndead>{0} cannot be undead.</TM_MessageRitualRoleCannotBeUndead>
 <TM_RuneCarving>rune engraving</TM_RuneCarving>
+<TM_ArcaneTatoo>arcane tattoo</TM_ArcaneTatoo>
 <TM_MaxGolemUpgradeReached>The max {0} upgrade has already been reached; resources have been returned</TM_MaxGolemUpgradeReached>
 <TM_NoGolemPartToRestore>There were no missing parts for {0} to replace; resources have been returned</TM_NoGolemPartToRestore>
 <TM_GolemBillUnsuccessful>Unable to complete golem recipe {0}; resources have been returned</TM_GolemBillUnsuccessful>
@@ -216,6 +217,8 @@
 <TM_GolemLightDesc>Toggle light</TM_GolemLightDesc>
 <TM_GolemMinimumToActivate>Insufficient energy to activate: {0} of {1}</TM_GolemMinimumToActivate>
 <TM_GolemChargesRemaining>{0} actions remaining</TM_GolemChargesRemaining>
+<TM_AlreadyHasSymbiote>{0} already has a symbiote.</TM_AlreadyHasSymbiote>
+<TM_CannotAlterWeatherType>Unable to create an alternate weather type from {0}</TM_CannotAlterWeatherType>
 
 <!-- Surgery Failed letters -->
 <LetterLabelRegrowthSurgeryFail>Surgery Failed</LetterLabelRegrowthSurgeryFail>
@@ -332,6 +335,10 @@
 <TM_Golemancer>Golemancer</TM_Golemancer>
 <TM_Apothecary>Apothecary</TM_Apothecary>
 <TM_Empath>Empath</TM_Empath>
+<TM_Enlightened>Enlightened</TM_Enlightened>
+<TM_Cursed>Cursed</TM_Cursed>
+<TM_FaeBlood>Fae Blood</TM_FaeBlood>
+<TM_GiantsBlood>Giants Blood</TM_GiantsBlood>
 <TM_CustomClasses>Custom Classes</TM_CustomClasses>
 
 <!-- Mod Settings event options -->
@@ -947,6 +954,7 @@ Effectiveness boosted by 10% per skill point.  Decreases mana cost by 2% per ski
 Decreases warmup time by 2% per level.
 Increases accuracy in all range categories by 1% per level.</TM_TechnoTurret_pwr_desc>
 <TM_TechnoTurret_eff_desc>Increases Mark-IV hit-points by 10 per level.
+Increases duration by 5 seconds per level.
 Reduces mana cost of rockets and mortars by 3% per level.
 Reduces the amount of neural feedback caused when deactivated due to its failsafe.</TM_TechnoTurret_eff_desc>
 <TM_TechnoTurret_ver_desc>Adds and improves weapon systems for the Mark-IV turret.
@@ -1049,12 +1057,13 @@ Level 3: 3cell radius</TM_BloodForBlood_ver_desc>
 <TM_EnchantedBody_pwr_desc>Increases the power of Enchanted Body and Enchanted Aura by ~33% per skill level.</TM_EnchantedBody_pwr_desc>
 <TM_EnchantedBody_eff_desc>Reduces mana upkeep cost of Enchanted Body and Enchanted Aura by 20% per skill level.</TM_EnchantedBody_eff_desc>
 <TM_EnchantedBody_ver_desc>Reduces the mana regeneration penalty of Enchanted Body and Enchanted Aura by 20% per skill level.</TM_EnchantedBody_ver_desc>
-<TM_Transmutate_pwr_desc>Decreases the amount of value lost by 5% per skill level when performing a transmutation. Base conversion value is 70%.
+<TM_Transmutate_pwr_desc>Decreases the amount of value lost by 5% per skill level when performing a transmutation on resources. Base conversion value is 70%.
+When transmuting equipment made from stuff, the converted stuff can be from 10% to 300% of the value of the original stuff, each level improves this range.
 Transmuting equipment will degrade the equipment:
-Level 0: -20% HP
-Level 1: -10% HP
-Level 2: no degradation
-Level 3: +10% HP
+Level 0: -20% HP, 10% -> 300% value
+Level 1: -10% HP, 20% -> 330% value
+Level 2: no degradation, 20% -> 360% value
+Level 3: +10% HP, 40% -> 390% value
 
 Equipment will disintegrate if it degrades below 0 durability. Equipment transmutations will always remove 'tainted.'</TM_Transmutate_pwr_desc>
 <TM_Transmutate_eff_desc>Reduces the mana cost required to use Transmutate by 12% per skill level.</TM_Transmutate_eff_desc>
@@ -1379,6 +1388,18 @@ Chance: [50,60,70,80]%</TM_MindKiller_ver_desc>
 <TM_HarvestPassion_pwr_desc>Increases the chance of harvesting a passion by 6% once the target's joy is exhausted. Base chance is 30% every 1s. The attempt will end once the casters joy is depleted.</TM_HarvestPassion_pwr_desc>
 <TM_HarvestPassion_eff_desc>Decreases the amount of the caster's joy is drained per iteration by 20% per skill level.</TM_HarvestPassion_eff_desc>
 <TM_HarvestPassion_ver_desc>Increases the amount of the target's joy is drained per iteration by 15% per skill level.</TM_HarvestPassion_ver_desc>
+<TM_Symbiosis_pwr_desc>Increases consciousness of the host pawn for each skill level.
+Level 0: +60%
+Level 1: +90%
+Level 2: +110%
+Level 3: +125%
+</TM_Symbiosis_pwr_desc>
+<TM_Symbiosis_eff_desc>Decreases mood cost to begin symbiosis by 35%.</TM_Symbiosis_eff_desc>
+<TM_Symbiosis_ver_desc>Increases the protective shell surrounding the host and decreases the percent of absorbed damage that is conferred to the symbiotes body.
+Level 0: 20% absorbed, 100% transferred
+Level 1: 25% absorbed, 80% transferred
+Level 2: 30% absorbed, 60% transferred
+Level 3: 35% absorbed, 50% transferred</TM_Symbiosis_ver_desc>
 
 <TM_Empathy_pwr>Positive Thinking</TM_Empathy_pwr>
 <TM_Empathy_eff>Group Therapy</TM_Empathy_eff>
@@ -1392,6 +1413,9 @@ Chance: [50,60,70,80]%</TM_MindKiller_ver_desc>
 <TM_HarvestPassion_pwr>Passion Hunter</TM_HarvestPassion_pwr>
 <TM_HarvestPassion_eff>Bully</TM_HarvestPassion_eff>
 <TM_HarvestPassion_ver>Despair</TM_HarvestPassion_ver>
+<TM_Symbiosis_pwr>Awareness</TM_Symbiosis_pwr>
+<TM_Symbiosis_eff>Commune</TM_Symbiosis_eff>
+<TM_Symbiosis_ver>Shell</TM_Symbiosis_ver>
 
 <!-- Might Ability Point Descriptions -->
 
@@ -1964,6 +1988,7 @@ Level 3: slowly heals permanent injuries</TM_Elixir_ver_desc>
 <TM_SoothingBalm_pwr_desc>Increases the tend quality of treated wounds by 10% per skill level. Base 50-70%.</TM_SoothingBalm_pwr_desc>
 <TM_SoothingBalm_eff_desc>Reduces the amount of ingredients used to create soothing balm by 8% per skill level.</TM_SoothingBalm_eff_desc>
 <TM_SoothingBalm_ver_desc>Increases the number of wounds tended by soothing balm.</TM_SoothingBalm_ver_desc>
+<TM_FireSuppressionFlask_eff_desc>Reduces amount of ingredients needed to create a poison flask by 15% per skill level.</TM_FireSuppressionFlask_eff_desc>
 
 <TM_Herbalist_pwr>Herbalist Bag</TM_Herbalist_pwr>
 <TM_Herbalist_eff>Preservation</TM_Herbalist_eff>
@@ -1977,6 +2002,7 @@ Level 3: slowly heals permanent injuries</TM_Elixir_ver_desc>
 <TM_SoothingBalm_pwr>Tending Salve</TM_SoothingBalm_pwr>
 <TM_SoothingBalm_eff>Ingredient Efficiency</TM_SoothingBalm_eff>
 <TM_SoothingBalm_ver>Anesthetic</TM_SoothingBalm_ver>
+<TM_FireSuppressionFlask_eff>Ingredient Efficiency</TM_FireSuppressionFlask_eff>
 
 <TM_ApothecaryHerbsGizmoLabel>Herbs</TM_ApothecaryHerbsGizmoLabel>
 

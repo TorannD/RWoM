@@ -130,9 +130,9 @@
     <defName>TM_ElementalRift_Defenders</defName>
     <label>Elemental rift</label>
 	<description>rift created by a voidseeker</description>
+	<resourcesFractionWhenDeconstructed>0</resourcesFractionWhenDeconstructed>
     <thingClass>TorannMagic.Building_TMElementalRift_Defenders</thingClass>
-	<costList>	  
-    </costList>
+	<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
   </ThingDef>
   
 </Defs>

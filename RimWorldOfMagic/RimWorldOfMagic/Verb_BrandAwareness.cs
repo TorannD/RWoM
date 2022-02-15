@@ -52,7 +52,10 @@ namespace TorannMagic
                     RemoveOldBrand(hitPawn);
 
                     HealthUtility.AdjustSeverity(hitPawn, TorannMagicDefOf.TM_AwarenessBrandHD, .05f);
-                    casterComp.BrandedPawns.Add(hitPawn);
+                    if (casterComp.BrandedPawns != null)
+                    {
+                        casterComp.BrandedPawns.Add(hitPawn);
+                    }
                     Hediff newBrand = hitPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_AwarenessBrandHD);
                     if (newBrand != null && newBrand.TryGetComp<HediffComp_BrandingBase>() != null)
                     {

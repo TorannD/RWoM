@@ -99,6 +99,22 @@ namespace TorannMagic
             }
         }
 
+        private List<MightPower> mightPowerCustomAll;
+        public List<MightPower> MightPowersCustomAll
+        {
+            get
+            {
+                if(mightPowerCustomAll == null)
+                {
+                    mightPowerCustomAll = new List<MightPower>();
+                    mightPowerCustomAll.Clear();
+                    mightPowerCustomAll.AddRange(MightPowersCustom);
+                    mightPowerCustomAll.AddRange(MightPowersCustomStandalone);                    
+                }
+                return mightPowerCustomAll;
+            }
+        }
+
         public List<MightPowerSkill> mightPowerSkill_Custom;
         public List<MightPowerSkill> MightPowerSkill_Custom
         {

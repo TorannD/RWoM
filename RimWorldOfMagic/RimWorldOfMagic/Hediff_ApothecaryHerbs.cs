@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
 using HarmonyLib;
+using RimWorld.Planet;
 
 namespace TorannMagic
 {
@@ -61,6 +62,15 @@ namespace TorannMagic
                 if(this.pawn.CurJob != null && this.pawn.CurJobDef.defName == "PruneGauranlenTree")
                 {
                     this.Severity += .4f * (1f + (.1f * herbVer));
+                }
+                if(this.pawn.Map == null && this.pawn.ParentHolder is Caravan)
+                {
+                    Caravan car = this.pawn.ParentHolder as Caravan;
+                    bool flag;
+                    if (!car.NightResting)
+                    {
+                        this.Severity += (ForagedFoodPerDayCalculator.GetBaseForagedNutritionPerDay(this.pawn, out flag)/50f) * (1f + (.05f * herbVer));
+                    }                    
                 }
             }
         }        

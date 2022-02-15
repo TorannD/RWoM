@@ -437,6 +437,24 @@
 	</DamageDef>
 	
 	<DamageDef ParentName="TM_LocalInjuryBase">
+		<defName>TM_HailDD</defName>
+		<label>Hail</label>
+		<externalViolence>true</externalViolence>
+		<deathMessage>{0} bludgeoned to death from hail.</deathMessage>
+		<hediff>Blizzard</hediff>
+		<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+		<defaultDamage>8</defaultDamage>
+		<armorCategory>Blunt</armorCategory>
+		<buildingDamageFactor>.5</buildingDamageFactor>
+		<explosionSnowMeltAmount>-2</explosionSnowMeltAmount>
+		<explosionCellFleck>SparkFlash</explosionCellFleck>
+		<explosionColorCenter>(0.0, 0.05, .5, 0.5)</explosionColorCenter>
+		<explosionColorEdge>(0.0, 0.15, 0.5, 0.6)</explosionColorEdge>
+		<explosionInteriorFleck>ElectricalSpark</explosionInteriorFleck>
+		<soundExplosion>TM_HailHitSD</soundExplosion>
+	</DamageDef>
+	
+	<DamageDef ParentName="TM_LocalInjuryBase">
 		<defName>TM_Blizzard_Small</defName>
 		<label>Ice Magic</label>
 		<externalViolence>true</externalViolence>
@@ -1152,6 +1170,19 @@
 		<explosionColorEdge>(0.44, 0.55, 0.16)</explosionColorEdge>
 		<hasForcefulImpact>false</hasForcefulImpact>
 		<soundExplosion>TM_SoftExplosion</soundExplosion>
+	</DamageDef>
+	
+	<DamageDef ParentName="TM_LocalInjuryBase">
+		<defName>TM_SymbiosisDD</defName>
+		<label>Symbiosis</label>
+		<externalViolence>true</externalViolence>
+		<deathMessage>{0} died with their symbiosis host.</deathMessage>
+		<hediff>TM_SymbiosisDamage</hediff>
+		<harmAllLayersUntilOutside>false</harmAllLayersUntilOutside>
+		<defaultDamage>1</defaultDamage>
+		<armorCategory>Dark</armorCategory>
+		<isExplosive>false</isExplosive>
+		<makesBlood>false</makesBlood>
 	</DamageDef>
   
 </Defs>

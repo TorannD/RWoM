@@ -382,6 +382,30 @@
       <speed>.9</speed>
     </skyfaller>
   </ThingDef>
+  
+  <ThingDef ParentName="TM_SkyfallerBase">
+    <defName>TM_Hail</defName>
+	<thingClass>TorannMagic.Skyfaller_Hail</thingClass>
+    <label>hail</label>
+    <size>(1, 1)</size>
+    <graphicData>
+      <texPath>Spells/hail</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>Transparent</shaderType>
+      <drawSize>(.85, .85)</drawSize>
+    </graphicData>
+    <skyfaller>
+      <shadowSize>(.2, .2)</shadowSize>
+      <explosionRadius>.4</explosionRadius>
+      <explosionDamage>TM_HailDD</explosionDamage>
+	  <explosionDamageFactor>1</explosionDamageFactor>
+      <rotateGraphicTowardsDirection>true</rotateGraphicTowardsDirection>
+      <speed>1.1</speed>
+	  <hitRoof>true</hitRoof>
+	  <!-- <movementType>Accelerate</movementType> -->
+	  <cameraShake>0</cameraShake>
+    </skyfaller>
+  </ThingDef>
 
 
 </Defs>

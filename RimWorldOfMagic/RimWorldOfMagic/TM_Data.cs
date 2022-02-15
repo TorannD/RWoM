@@ -61,6 +61,7 @@ namespace TorannMagic
                 restricted.Add(TorannMagicDefOf.SpellOf_FertileLands);
                 restricted.Add(TorannMagicDefOf.SpellOf_Firestorm);
                 restricted.Add(TorannMagicDefOf.SpellOf_FoldReality);
+                restricted.Add(TorannMagicDefOf.SpellOf_HeatShield);
                 restricted.Add(TorannMagicDefOf.SpellOf_HolyWrath);
                 restricted.Add(TorannMagicDefOf.SpellOf_LichForm);
                 restricted.Add(TorannMagicDefOf.SpellOf_MechaniteReprogramming);
@@ -245,7 +246,7 @@ namespace TorannMagic
                 List<TraitDef> allClassTraits = new List<TraitDef>();
                 allClassTraits.Clear();
                 allClassTraits.AddRange(MightTraits);
-                allClassTraits.AddRange(MagicTraits);
+                allClassTraits.AddRange(MagicTraits);                
                 //allClassTraits.AddRange(TM_ClassUtility.CustomClassTraitDefs);
                 return allClassTraits;
             }

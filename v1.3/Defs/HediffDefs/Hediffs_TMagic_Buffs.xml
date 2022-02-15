@@ -2913,4 +2913,39 @@
 	</stages>
   </HediffDef>
   
+  <HediffDef>
+    <defName>TM_HeatShieldHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+	<label>Heat shield</label>
+	<description>Increases heat resistance and cannot catch fire.</description>
+    <defaultLabelColor>(.8,.4,0)</defaultLabelColor>
+    <scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<minSeverity>0.1</minSeverity>
+	<maxSeverity>1</maxSeverity>
+	<isBad>false</isBad>
+	<initialSeverity>.5</initialSeverity>
+	<comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>
+          <min>1600</min>
+          <max>2000</max>
+        </disappearsAfterTicks>
+		<showRemainingTime>true</showRemainingTime>
+      </li> 
+    </comps>
+	<stages>
+      <li>
+        <label></label>
+        <minSeverity>0.001</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>		  
+		  <ArmorRating_Heat>.75</ArmorRating_Heat>		  
+		</statOffsets>
+	  </li>	  	  
+	</stages>
+  </HediffDef>
+  
 </Defs>

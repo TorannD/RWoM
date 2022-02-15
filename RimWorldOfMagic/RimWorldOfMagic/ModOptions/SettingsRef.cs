@@ -100,6 +100,10 @@ namespace TorannMagic.ModOptions
         public bool ArcaneConduit = Settings.Instance.ArcaneConduit;
         public bool ManaWell = Settings.Instance.ManaWell;
         public bool Boundless = Settings.Instance.Boundless;
+        public bool Enlightened = Settings.Instance.Enlightened;
+        public bool Cursed = Settings.Instance.Cursed;
+        public bool FaeBlood = Settings.Instance.FaeBlood;
+        public bool GiantsBlood = Settings.Instance.GiantsBlood;
 
         //faction settings
         public Dictionary<string, float> FactionFighterSettings = Settings.Instance.FactionFighterSettings;

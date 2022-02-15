@@ -30,6 +30,9 @@ namespace TorannMagic
         private int pwrVal = 0;
         private int effVal = 0;
 
+        public int age = 0;
+        public int duration = 3600;
+
         private bool MannedByColonist => mannableComp != null && mannableComp.ManningPawn != null && mannableComp.ManningPawn.Faction == Faction.OfPlayer;
         private bool MannedByNonColonist => mannableComp != null && mannableComp.ManningPawn != null && mannableComp.ManningPawn.Faction != Faction.OfPlayer;
         private bool PlayerControlled => (base.Faction == Faction.OfPlayer || MannedByColonist) && !MannedByNonColonist;
@@ -61,23 +64,24 @@ namespace TorannMagic
             Scribe_Values.Look<float>(ref this.mortarManaCost, "mortarManaCost", 0.1f, false);
             Scribe_Values.Look<Pawn>(ref this.manPawn, "manPawn");
             Scribe_Values.Look<IntVec3>(ref this.iCell, "iCell");
+            Scribe_Values.Look<int>(ref this.age, "age", 0);
+            Scribe_Values.Look<int>(ref this.duration, "duration", 3600);
         }
 
         public override void Tick()
         {
             base.Tick();
-
+            age++;
             //if (!manPawn.DestroyedOrNull() && !manPawn.Dead && !manPawn.Downed && manPawn.Position == this.InteractionCell)
-            if(Manned)
+            if(this.age <= this.duration)
             {
-
                 if (!initialized)
                 {
-                    comp = mannableComp.ManningPawn.GetComp<CompAbilityUserMagic>();
-                    this.verVal = mannableComp.ManningPawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_TechnoTurret.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_TechnoTurret_ver").level;
-                    this.pwrVal = mannableComp.ManningPawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_TechnoTurret.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_TechnoTurret_pwr").level;
-                    this.effVal = mannableComp.ManningPawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_TechnoTurret.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_TechnoTurret_eff").level;
-                    
+                    comp = manPawn.GetComp<CompAbilityUserMagic>();
+                    this.verVal = comp.MagicData.MagicPowerSkill_TechnoTurret.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_TechnoTurret_ver").level;
+                    this.pwrVal = comp.MagicData.MagicPowerSkill_TechnoTurret.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_TechnoTurret_pwr").level;
+                    this.effVal = comp.MagicData.MagicPowerSkill_TechnoTurret.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_TechnoTurret_eff").level;
+                    this.duration = 3600 + (300 * effVal);
                     if (this.verVal >= 5)
                     {
                         this.rocketTicksToFire = 600 - ((verVal - 5) * 20);
@@ -93,7 +97,7 @@ namespace TorannMagic
                     this.initialized = true;
                 }
 
-                if (!mannableComp.ManningPawn.DestroyedOrNull() && !mannableComp.ManningPawn.Dead && !mannableComp.ManningPawn.Downed)
+                if (!manPawn.DestroyedOrNull() && !manPawn.Dead && !manPawn.Downed && comp != null && comp.Mana != null)
                 {
                     if (this.verVal >= 5 && this.nextRocketFireTick < Find.TickManager.TicksGame && this.TargetCurrentlyAimingAt != null && comp.Mana.CurLevel >= this.rocketManaCost)
                     {
@@ -155,7 +159,7 @@ namespace TorannMagic
                         }
                     }
 
-                    if (CanExtractShell && MannedByColonist)
+                    if (CanExtractShell)
                     {
                         CompChangeableProjectile compChangeableProjectile = gun.TryGetComp<CompChangeableProjectile>();
                         if (!compChangeableProjectile.allowedShellsSettings.AllowedToAccept(compChangeableProjectile.LoadedShell))
@@ -175,7 +179,7 @@ namespace TorannMagic
                     {
                         ResetForcedTarget();
                     }
-                    if ((powerComp == null || powerComp.PowerOn) && (mannableComp == null || mannableComp.MannedNow) && base.Spawned)
+                    if ((powerComp == null || powerComp.PowerOn) && base.Spawned)
                     {
                         GunCompEq.verbTracker.VerbsTick();
                         if (!stunner.Stunned && AttackVerb.state != VerbState.Bursting)
@@ -262,12 +266,12 @@ namespace TorannMagic
 
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
         {
-            if (this.HitPoints < 1 && mannableComp != null && Manned)
+            if (this.HitPoints < 1 && manPawn != null && !manPawn.Dead)
             {
                 int rnd = Mathf.RoundToInt(Rand.Range(3, 5) - (.2f * this.effVal));
                 for (int i = 0; i < rnd; i++)
                 {
-                    TM_Action.DamageEntities(mannableComp.ManningPawn, null, Rand.Range(2f, 5f), DamageDefOf.Burn, this);
+                    TM_Action.DamageEntities(manPawn, null, Rand.Range(4f, 8f), DamageDefOf.Burn, this);
                 }
             }
             base.Destroy(mode);            

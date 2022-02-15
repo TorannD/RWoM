@@ -69,6 +69,7 @@
         <SecondsToRecharge>5</SecondsToRecharge>
 		<burstShotCount>1</burstShotCount>
         <range>15</range>
+		<requireLineOfSight>false</requireLineOfSight>
 		<isViolent>true</isViolent>
         <soundCast>TM_Vibration</soundCast>
         <muzzleFlashScale>5</muzzleFlashScale>
@@ -111,6 +112,7 @@
         <SecondsToRecharge>10</SecondsToRecharge>
 		<burstShotCount>1</burstShotCount>
         <range>0</range>
+		<requireLineOfSight>false</requireLineOfSight>
 		<isViolent>false</isViolent>
         <soundCast>Message_PositiveEvent</soundCast>
         <muzzleFlashScale>20</muzzleFlashScale>
@@ -203,6 +205,92 @@
         <muzzleFlashScale>20</muzzleFlashScale>
 		<AlwaysHits>true</AlwaysHits>
         <isPrimary>false</isPrimary>
+		<AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+		<targetParams>
+      	 <canTargetPawns>true</canTargetPawns>
+      	 <canTargetBuildings>false</canTargetBuildings>
+      	 <canTargetSelf>false</canTargetSelf>
+		 <canTargetLocations>false</canTargetLocations>
+        </targetParams>
+    </MainVerb>
+ </TorannMagic.TMAbilityDef>
+ 
+  <!-- Symbiosis -->
+
+  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
+    <defName>TM_Symbiosis</defName>
+    <label>Symbiosis</label>
+    <uiIconPath>UI/symbiosis</uiIconPath>
+    <description>Entwines the fate of the empath with the target. The empath will enter into a mentally vacant state, unable to control their own body as they project their will to reinforce the will of a target pawn. The empath will still maintain any pre-existing effects or aura's. The target will receive emotional fortitude and mental strength in return. The symbiote may experience physical after-effects of injuries taken by their host. If the host dies while the empath is a symbiote, the empath will also die. The symbiosis will only end when the empath's mood expires.</description>
+    <requiredNeed>Mood</requiredNeed>
+	<needCost>.1</needCost>
+	<needXPFactor>50</needXPFactor>
+	<learnChance>.4</learnChance>
+	<efficiencyReductionPercent>.35</efficiencyReductionPercent>
+	<canCopy>false</canCopy>
+	<shouldInitialize>true</shouldInitialize>	
+	<MainVerb Class="AbilityUser.VerbProperties_Ability">
+        <verbClass>TorannMagic.Verb_Symbiosis</verbClass>
+			<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+			<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+			<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+			<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Projectile_Default</defaultProjectile>
+		<abilityDef>TM_Symbiosis</abilityDef>
+        <warmupTime>3</warmupTime>
+        <SecondsToRecharge>1200</SecondsToRecharge>
+		<burstShotCount>1</burstShotCount>
+        <range>15</range>
+		<requireLineOfSight>false</requireLineOfSight>
+		<isViolent>false</isViolent>
+        <soundCast>TM_Vibration</soundCast>
+        <muzzleFlashScale>1</muzzleFlashScale>
+		<AlwaysHits>true</AlwaysHits>
+        <isPrimary>false</isPrimary>
+		<AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+		<targetParams>
+      	 <canTargetPawns>true</canTargetPawns>
+      	 <canTargetBuildings>false</canTargetBuildings>
+      	 <canTargetSelf>false</canTargetSelf>
+		 <canTargetLocations>false</canTargetLocations>
+        </targetParams>
+    </MainVerb>
+ </TorannMagic.TMAbilityDef>
+ 
+ <!-- Faded Emotions -->
+
+  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
+    <defName>TM_FadeEmotions</defName>
+    <label>Fade Emotion</label>
+    <uiIconPath>UI/emotionfade</uiIconPath>
+    <description>Reduces mood of the empath and the target to rid the target of negative memories. After the first memory, each additional negative memory will consume 30 mood from the target to be removed. The effect ends with the target has less than 30 mood or no remaining negative memories. The first memory always consumes 30 mood from the target. This ability has no affect on situational mood modifiers.</description>
+    <requiredNeed>Mood</requiredNeed>
+	<needCost>.2</needCost>
+	<needXPFactor>50</needXPFactor>
+	<learnChance>0</learnChance>
+	<canCopy>false</canCopy>
+	<shouldInitialize>true</shouldInitialize>
+	<learnItem>SpellOf_FadeEmotions</learnItem>
+	<MainVerb Class="AbilityUser.VerbProperties_Ability">
+        <verbClass>TorannMagic.Verb_FadeEmotions</verbClass>
+			<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+			<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+			<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+			<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Projectile_Default</defaultProjectile>
+		<abilityDef>TM_FadeEmotions</abilityDef>
+        <warmupTime>4</warmupTime>
+        <SecondsToRecharge>60</SecondsToRecharge>
+		<burstShotCount>1</burstShotCount>
+        <range>25</range>
+		<isViolent>false</isViolent>
+        <soundCast>TM_Vibration</soundCast>
+        <muzzleFlashScale>1</muzzleFlashScale>
+		<AlwaysHits>true</AlwaysHits>
+        <isPrimary>false</isPrimary>
+		<requireLineOfSight>false</requireLineOfSight>
 		<AbilityTargetCategory>TargetThing</AbilityTargetCategory>
 		<targetParams>
       	 <canTargetPawns>true</canTargetPawns>

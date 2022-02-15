@@ -1,6 +1,56 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
+<!-- Fire Mage Heatshield -->
+  
+  <EffecterDef>
+    <defName>TM_HeatShieldED</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>TM_Mote_HeatShield</moteDef>
+		<rotation>
+			<min>0</min>
+			<max>0</max>
+		</rotation>
+		<rotationRate>
+			<min>0</min>
+			<max>0</max>
+		</rotationRate>
+        <scale>
+          <min>4</min>
+          <max>4</max>
+        </scale>
+      </li>
+	  <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>TM_Mote_HeatShield</moteDef>
+        <scale>
+          <min>1</min>
+          <max>1</max>
+        </scale>
+      </li>
+    </children>
+  </EffecterDef>
+  
+  <ThingDef ParentName="MoteBase">
+    <defName>TM_Mote_HeatShield</defName>
+    <graphicData>
+      <texPath>Motes/FireShieldMote</texPath>
+      <shaderType>MoteGlow</shaderType>
+	  <color>(0.65,0.1,0.05)</color>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <drawOffscreen>true</drawOffscreen>
+    <mote>
+      <fadeInTime>0.01</fadeInTime>
+      <solidTime>0</solidTime>
+      <fadeOutTime>0.4</fadeOutTime>
+      <growthRate>-8</growthRate>
+	  <rotateTowardsTarget>false</rotateTowardsTarget>
+    </mote>
+  </ThingDef>
+
 <!-- Fade -->
 
   <EffecterDef>

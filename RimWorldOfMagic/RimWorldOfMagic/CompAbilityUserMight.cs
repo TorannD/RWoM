@@ -1906,14 +1906,14 @@ namespace TorannMagic
                     this.RemovePawnAbility(TorannMagicDefOf.TM_BreachingCharge);
                     this.AddPawnAbility(TorannMagicDefOf.TM_BreachingCharge);
                 }
-                if (this.IsMightUser && this.MightData.MightPowersCustom != null && this.MightData.MightPowersCustom.Count > 0)
+                if (this.IsMightUser && this.MightData.MightPowersCustomAll != null && this.MightData.MightPowersCustomAll.Count > 0)
                 {
-                    for (int j = 0; j < this.MightData.MightPowersCustom.Count; j++)
+                    for (int j = 0; j < this.MightData.MightPowersCustomAll.Count; j++)
                     {
-                        if (this.MightData.MightPowersCustom[j].learned)
+                        if (this.MightData.MightPowersCustomAll[j].learned)
                         {
-                            this.RemovePawnAbility(this.MightData.MightPowersCustom[j].abilityDef);
-                            this.AddPawnAbility(this.MightData.MightPowersCustom[j].abilityDef);
+                            this.RemovePawnAbility(this.MightData.MightPowersCustomAll[j].abilityDef);
+                            this.AddPawnAbility(this.MightData.MightPowersCustomAll[j].abilityDef);
                         }
                     }
                 }
@@ -3382,11 +3382,13 @@ namespace TorannMagic
                 bool isCustom = this.customIndex >= 0;
                 if (this.Pawn.drafter != null && !this.Pawn.Drafted && this.Stamina != null && this.Stamina.CurLevelPercentage >= settingsRef.autocastMinThreshold)
                 {
-                    foreach (MightPower mp in this.MightData.MightPowersCustom)
+                    foreach (MightPower mp in this.MightData.MightPowersCustomAll)
                     {
+                        //Log.Message("checking custom power " + mp.abilityDef.defName);
                         if (mp.learned && mp.autocast && mp.autocasting != null && mp.autocasting.mightUser && mp.autocasting.undrafted)
                         {
                             TMAbilityDef tmad = mp.TMabilityDefs[mp.level] as TMAbilityDef; // issues with index?
+                            //Log.Message("checking autocast for ability " + tmad.defName);
                             bool canUseWithEquippedWeapon = true;
                             bool canUseIfViolentAbility = this.Pawn.story.DisabledWorkTagsBackstoryAndTraits.HasFlag(WorkTags.Violent) ? !tmad.MainVerb.isViolent : true;
                             if (!TM_Calc.HasResourcesForAbility(this.Pawn, tmad))
@@ -3480,12 +3482,13 @@ namespace TorannMagic
                                 }
                                 if(mp.autocasting.type == TMDefs.AutocastType.OnNearby)
                                 {
+                                    //Log.Message("nearby autocast for " + tmad.defName);
                                     LocalTargetInfo localTarget = TM_Calc.GetAutocastTarget(this.Pawn, mp.autocasting, this.Pawn.CurJob.targetA);
                                     if(localTarget != null && localTarget.IsValid)
                                     {
                                         Thing targetThing = localTarget.Thing;
                                         if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
-                                        {
+                                        {                                            
                                             continue;
                                         }
                                         if (mp.autocasting.requiresLoS && !TM_Calc.HasLoSFromTo(this.Pawn.Position, targetThing, this.Pawn, mp.autocasting.minRange, ability.Def.MainVerb.range))
@@ -3493,7 +3496,7 @@ namespace TorannMagic
                                             continue;
                                         }
                                         if (mp.autocasting.maxRange != 0f && mp.autocasting.maxRange < (this.Pawn.Position - targetThing.Position).LengthHorizontal)
-                                        {
+                                        {                                            
                                             continue;
                                         }
                                         bool TE = mp.autocasting.targetEnemy && targetThing.Faction != null && targetThing.Faction.HostileTo(this.Pawn.Faction);
@@ -3508,11 +3511,11 @@ namespace TorannMagic
                                         bool TN = mp.autocasting.targetNeutral && (targetThing.Faction == null || !targetThing.Faction.HostileTo(this.Pawn.Faction));
                                         bool TF = mp.autocasting.targetFriendly && targetThing.Faction == this.Pawn.Faction;
                                         if (!(TE || TN || TF))
-                                        {
+                                        {                                            
                                             continue;
                                         }
                                         if (!mp.autocasting.ValidConditions(this.Pawn, targetThing))
-                                        {
+                                        {                                            
                                             continue;
                                         }
                                         AutoCast.CombatAbility_OnTarget.TryExecute(this, tmad, ability, mp, targetThing, mp.autocasting.minRange, out castSuccess);
@@ -4800,6 +4803,32 @@ namespace TorannMagic
                     _xpGain += e.xpGain;
                     _arcaneRes += e.arcaneRes;
                     _arcaneDmg += e.combatDmg;
+                }
+            }
+
+            //Determine hediff adjustments
+            foreach (Hediff hd in this.Pawn.health.hediffSet.hediffs)
+            {
+                if (hd.def.GetModExtension<TMDefs.DefModExtension_HediffEnchantments>() != null)
+                {
+                    foreach (TMDefs.HediffEnchantment hdStage in hd.def.GetModExtension<TMDefs.DefModExtension_HediffEnchantments>().stages)
+                    {
+                        if (hd.Severity >= hdStage.minSeverity && hd.Severity < hdStage.maxSeverity)
+                        {
+                            TMDefs.DefModExtension_TraitEnchantments e = hdStage.enchantments;
+                            if (e != null)
+                            {
+                                _maxSP += e.maxSP;
+                                _spCost += e.spCost;
+                                _spRegenRate += e.spRegenRate;
+                                _coolDown += e.mightCooldown;
+                                _xpGain += e.xpGain;
+                                _arcaneRes += e.arcaneRes;
+                                _arcaneDmg += e.arcaneDmg;
+                            }
+                            break;
+                        }
+                    }
                 }
             }
 

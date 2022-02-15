@@ -110,6 +110,9 @@ namespace TorannMagic
 
             public static DamageDef TM_Dismember;
             public static DamageDef TM_PartRemoval;
+
+            public static DamageDef TM_SymbiosisDD;
+            public static DamageDef TM_HailDD;
         }
     }
 }

@@ -134,7 +134,7 @@ To apply runes, select the pawn you wish to inscribe and create the rune carving
         <defName>TM_SiphonBrand</defName>
         <label>Brand: Siphon</label>
         <uiIconPath>UI/siphonbrand</uiIconPath>
-        <description>The siphon brand may be placed on another mage to periodically transfer mana to the caster.
+        <description>The siphon brand may be placed on another mage to periodically transfer their mana to the caster.
 		
 Brands are a semi-permanent form of magic typically created using some form of marking or engraving, much like a magical tattoo, that creates a link between two pawns. Brands require a constant flow of mana to maintain, however, the brand becomes dormant if the caster is unable to sustain the spell. The brand is removed if the caster dies or chooses to dispel the brand.</description>
 		<manaCost>0.05</manaCost>

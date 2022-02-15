@@ -191,6 +191,18 @@ namespace TorannMagic.ModOptions
             num++;
             Rect rowRect20 = Controller.UIHelper.GetRowRect(rowRect19, rowHeight, num); ;
             Widgets.CheckboxLabeled(rowRect20, "TM_ManaWell".Translate(), ref Settings.Instance.ManaWell, false);
+            Rect rowRect20ShiftRight = Controller.UIHelper.GetRowRect(rowRect20, rowHeight, num);
+            rowRect20ShiftRight.x += rowRect.width + 98f;
+            Widgets.CheckboxLabeled(rowRect20ShiftRight, "GiantsBlood".Translate(), ref Settings.Instance.GiantsBlood, false);
+            num++;
+            Rect rowRect20a = Controller.UIHelper.GetRowRect(rowRect20, rowHeight, num); ;
+            Widgets.CheckboxLabeled(rowRect20a, "TM_FaeBlood".Translate(), ref Settings.Instance.FaeBlood, false);
+            num++;
+            Rect rowRect20b = Controller.UIHelper.GetRowRect(rowRect20, rowHeight, num); ;
+            Widgets.CheckboxLabeled(rowRect20b, "TM_Enlightened".Translate(), ref Settings.Instance.Enlightened, false);
+            num++;
+            Rect rowRect20c = Controller.UIHelper.GetRowRect(rowRect20, rowHeight, num); ;
+            Widgets.CheckboxLabeled(rowRect20c, "TM_Cursed".Translate(), ref Settings.Instance.Cursed, false);
             num++;
             Widgets.DrawLineHorizontal(inRect.x - 10f, rowHeight * num, inRect.width - 15f);
             num++;

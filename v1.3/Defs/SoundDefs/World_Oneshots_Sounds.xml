@@ -2,6 +2,23 @@
 <Defs>
 
   <SoundDef>
+    <defName>TM_HailHitSD</defName>  
+    <context>MapOnly</context>
+    <maxSimultaneous>10</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Impact/PunchHitBuilding</clipFolderPath>
+          </li>
+        </grains>      
+        <volumeRange>5~10</volumeRange>      
+        <pitchRange>1.2~1.6</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
     <defName>TM_HissActivate</defName>
     <eventNames />
     <maxSimultaneous>10</maxSimultaneous>

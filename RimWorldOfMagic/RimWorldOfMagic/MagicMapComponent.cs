@@ -14,6 +14,7 @@ namespace TorannMagic
         public float windSpeed = 0f;
         public int windSpeedEndTick = 0;
         public bool allowAllIncidents = false;
+        public int weatherControlExpiration;
 
         public MagicMapComponent(Map map): base(map)
         {
@@ -26,6 +27,7 @@ namespace TorannMagic
             Scribe_Values.Look<float>(ref this.windSpeed, "windSpeed", 0f, false);
             Scribe_Values.Look<int>(ref this.windSpeedEndTick, "windSpeedEndTick", 0, false);
             Scribe_Values.Look<bool>(ref this.allowAllIncidents, "allowAllIncidents", false, false);
+            Scribe_Values.Look<int>(ref this.weatherControlExpiration, "weatherControlExpiration", 0, false);
         }
 
         public void ApplyComponentConditions(string condition, float value = 0f)

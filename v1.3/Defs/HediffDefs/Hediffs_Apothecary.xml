@@ -137,4 +137,126 @@
     </stages>
   </HediffDef>
   
+  <HediffDef>
+    <defName>TM_HerbalClarityHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0,0.5,1)</defaultLabelColor>
+    <label>Clarity</label>
+	<description>A potion that helps the consumer open themselves to the arcane. Mana regeneration is increased up to 300% and psychic sensitivity is increased up to 50%. Effects also decrease mental stability. The effects of this drug last several days but lose potency over time.</description>
+    <maxSeverity>3.0</maxSeverity>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<isBad>false</isBad>
+	<initialSeverity>3</initialSeverity>
+	<comps>
+	  <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-1</severityPerDay>
+      </li>
+    </comps>
+	<modExtensions>
+		<li Class="TorannMagic.TMDefs.DefModExtension_HediffEnchantments">
+			<stages>
+				<li>
+					<minSeverity>0</minSeverity>
+					<maxSeverity>1</maxSeverity>
+					<enchantments>
+						<mpRegenRate>1</mpRegenRate>
+					</enchantments>
+				</li>
+				<li>
+					<minSeverity>1</minSeverity>
+					<maxSeverity>2</maxSeverity>
+					<enchantments>
+						<mpRegenRate>2</mpRegenRate>
+					</enchantments>
+				</li>
+				<li>
+					<minSeverity>2</minSeverity>
+					<maxSeverity>3</maxSeverity>
+					<enchantments>
+						<mpRegenRate>3</mpRegenRate>
+					</enchantments>
+				</li>
+			</stages>
+		</li>
+	</modExtensions>
+    <stages>
+	  <li>
+        <label>fading</label>
+        <minSeverity>0</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>
+		  <MentalBreakThreshold>0.05</MentalBreakThreshold>
+		  <PsychicSensitivity>.3</PsychicSensitivity>
+	    </statOffsets>
+      </li>      
+	  <li>
+        <label>active</label>
+        <minSeverity>1</minSeverity>
+		<statOffsets>
+		  <MentalBreakThreshold>0.07</MentalBreakThreshold>
+		  <PsychicSensitivity>.4</PsychicSensitivity>
+	    </statOffsets>
+      </li>  
+	  <li>
+        <label>vibrant</label>
+        <minSeverity>2</minSeverity>
+		<statOffsets>
+		  <MentalBreakThreshold>0.09</MentalBreakThreshold>
+		  <PsychicSensitivity>.5</PsychicSensitivity>
+	    </statOffsets>
+      </li>  
+    </stages>
+  </HediffDef>
+  
+  <HediffDef>
+    <defName>TM_HerbalBlissHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0,.5,1)</defaultLabelColor>
+    <label>Bliss</label>
+	<description>Puts the user in a state of bliss, able to almost completely mask emotions and pain. This drug will cause the consumer to slowly lose skills, and skill gain while under the influence of this drug is heavily suppressed.</description>
+    <maxSeverity>1.0</maxSeverity>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<isBad>false</isBad>
+	<initialSeverity>1</initialSeverity>
+	<comps>
+	  <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-.2</severityPerDay>
+      </li>
+      <li>
+        <compClass>TorannMagic.HediffComp_HerbalBliss</compClass>
+      </li>	
+    </comps>
+    <stages>
+	  <li>
+        <label></label>
+        <minSeverity>0</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<painFactor>.1</painFactor>
+		<statOffsets>
+		  <GlobalLearningFactor>-.9</GlobalLearningFactor>
+	    </statOffsets>
+      </li>       
+    </stages>
+  </HediffDef>
+  
+   <ThoughtDef>
+    <defName>TM_BlissThought</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>TM_HerbalBlissHD</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>bliss</label>
+        <description>I'm in a state of wonderful, euphoric bliss.</description>
+        <baseMoodEffect>40</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
 </Defs>

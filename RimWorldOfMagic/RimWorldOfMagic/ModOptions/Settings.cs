@@ -103,6 +103,10 @@ namespace TorannMagic.ModOptions
         public bool ArcaneConduit = true;
         public bool ManaWell = true;
         public bool Boundless = true;
+        public bool Enlightened = true;
+        public bool Cursed = true;
+        public bool FaeBlood = true;
+        public bool GiantsBlood = true;
 
         //Faction settings
         public Dictionary<string, float> FactionFighterSettings = new Dictionary<string, float>();
@@ -208,6 +212,10 @@ namespace TorannMagic.ModOptions
             Scribe_Values.Look<bool>(ref this.ManaWell, "ManaWell", true, false);
             Scribe_Values.Look<bool>(ref this.ArcaneConduit, "ArcaneConduit", true, false);
             Scribe_Values.Look<bool>(ref this.Boundless, "Boundless", true, false);
+            Scribe_Values.Look<bool>(ref this.Enlightened, "Enlightened", true, false);
+            Scribe_Values.Look<bool>(ref this.Cursed, "Cursed", true, false);
+            Scribe_Values.Look<bool>(ref this.FaeBlood, "FaeBlood", true, false);
+            Scribe_Values.Look<bool>(ref this.GiantsBlood, "GiantsBlood", true, false);
             Scribe_Collections.Look(ref this.FactionFighterSettings, "FactionFighterSettings");
             Scribe_Collections.Look(ref this.FactionMageSettings, "FactionMageSettings");
         }

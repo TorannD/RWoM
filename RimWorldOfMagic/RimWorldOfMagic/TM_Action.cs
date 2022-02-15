@@ -1808,6 +1808,10 @@ namespace TorannMagic
                 {
                     Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.demonShieldMat, 0);
                 }
+                else if(shieldedPawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_SymbiosisHD) || shieldedPawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_OutOfBodyHD))
+                {
+                    Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.redShieldMat, 0);
+                }
                 else
                 {
                     Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.manaShieldMat, 0);
@@ -1917,10 +1921,16 @@ namespace TorannMagic
             }
             else if (flagStuffItem)
             {
-                //Log.Message("" + transmutateThing.LabelShort + " is made from " + transmutateThing.Stuff.label);
-                float transValue = transmutateThing.MarketValue;
+                float transValue = 1f;
+                if (transmutateThing.Stuff != null)
+                {
+                    transValue = transmutateThing.Stuff.BaseMarketValue;
+                }
+                //Log.Message("" + transmutateThing.LabelShort + " is made from " + transmutateThing.Stuff.label + " with a market value of " + transValue);
                 IEnumerable<ThingDef> enumerable = from def in DefDatabase<ThingDef>.AllDefs
-                                                   where (def.stuffProps != null && def.stuffProps.categories != null && def.stuffProps.categories.Contains(transmutateThing.Stuff.stuffProps.categories.RandomElement()))
+                                                   where (def.stuffProps != null && def.stuffProps.categories != null && 
+                                                   def.stuffProps.categories.Contains(transmutateThing.Stuff.stuffProps.categories.RandomElement()) &&
+                                                   def.BaseMarketValue <= (3f * transValue * (1f + (.1f * pwrVal))) && def.BaseMarketValue >= ((.1f + (.1f * pwrVal)) * transValue))
                                                    select def;
 
                 //foreach (ThingDef current in enumerable)
@@ -3013,9 +3023,9 @@ namespace TorannMagic
                     {
                         magicPower = comp.MagicData.MagicPowersCustom.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == tmAbilityDef);
                     }
-                    if (comp.MagicData.MagicPowersCustom != null)
+                    if (comp.MagicData.MagicPowersCustomAll != null)
                     {
-                        foreach (MagicPower mp in comp.MagicData.MagicPowersCustom)
+                        foreach (MagicPower mp in comp.MagicData.MagicPowersCustomAll)
                         {
                             if (mp.autocasting != null && mp.autocasting.type != TMDefs.AutocastType.Null && (mp.autocasting.drafted || mp.autocasting.undrafted))
                             {
@@ -3036,9 +3046,9 @@ namespace TorannMagic
                 if (mightComp != null && mightComp.MightData != null && com.pawnAbility.Def != null)
                 {
                     //might abilities
-                    if (mightComp.MightData.MightPowersCustom != null)
+                    if (mightComp.MightData.MightPowersCustomAll != null)
                     {
-                        foreach (MightPower mp in mightComp.MightData.MightPowersCustom)
+                        foreach (MightPower mp in mightComp.MightData.MightPowersCustomAll)
                         {
                             if (mp.autocasting != null && mp.autocasting.type != TMDefs.AutocastType.Null && (mp.autocasting.drafted || mp.autocasting.undrafted))
                             {

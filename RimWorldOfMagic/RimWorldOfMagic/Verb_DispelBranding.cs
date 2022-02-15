@@ -50,7 +50,7 @@ namespace TorannMagic
                             }
                         }
                     }
-                    comp.brandedPawns.Clear();
+                    comp.BrandedPawns.Clear();
                     if (CasterPawn.Map != null)
                     {
                         Effecter effectExit = EffecterDefOf.Skip_EntryNoDelay.Spawn();

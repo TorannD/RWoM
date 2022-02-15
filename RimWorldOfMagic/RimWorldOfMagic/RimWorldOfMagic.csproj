@@ -132,6 +132,8 @@
     <Compile Include="Building_TMTotem_Healing.cs" />
     <Compile Include="Building_TMTotem_Lightning.cs" />
     <Compile Include="Building_TM_DMP.cs" />
+    <Compile Include="Skyfaller_Hail.cs" />
+    <Compile Include="WeatherEvent_HailWave.cs" />
     <Compile Include="DeathWorker_Sentinel.cs" />
     <Compile Include="Golems\PawnColumnWorker_GolemActive.cs" />
     <Compile Include="Golems\PawnColumnWorker_GolemAge.cs" />
@@ -143,6 +145,10 @@
     <Compile Include="Golems\MainTabWindow_Golems.cs" />
     <Compile Include="Golems\GolemNameWindow.cs" />
     <Compile Include="Golems\JobGiver_GolemExtinguishSelf.cs" />
+    <Compile Include="HediffComp_HerbalBliss.cs" />
+    <Compile Include="HediffComp_SymbiosisCaster.cs" />
+    <Compile Include="HediffComp_SymbiosisHost.cs" />
+    <Compile Include="HediffComp_Cursed.cs" />
     <Compile Include="HediffComp_SeverityPercent.cs" />
     <Compile Include="JobGiver_AIAbilityUser.cs" />
     <Compile Include="FlyingObject_Advanced_Icebolt.cs" />
@@ -236,6 +242,7 @@
     <Compile Include="HediffComp_HerbalElixir.cs" />
     <Compile Include="Ideology\TM_Precept_RoleVoidSeeker.cs" />
     <Compile Include="ModOptions\GolemOptionsWindow.cs" />
+    <Compile Include="Projectile_FireSuppressionFlask.cs" />
     <Compile Include="Projectile_ReverseShield.cs" />
     <Compile Include="Projectile_PoisonFlask.cs" />
     <Compile Include="Recipe_RuneCarving.cs" />
@@ -664,6 +671,8 @@
     <Compile Include="TMAbilityDef.cs" />
     <Compile Include="TMDamageDefOf.cs" />
     <Compile Include="TMDefOf.cs" />
+    <Compile Include="TMDefs\HediffEnchantment.cs" />
+    <Compile Include="TMDefs\DefModExtension_HediffEnchantments.cs" />
     <Compile Include="TMDefs\TM_GolemAbilityDef.cs" />
     <Compile Include="TMDefs\TM_GolemItemRecipeDef.cs" />
     <Compile Include="TMDefs\TM_GolemUpgradeDef.cs" />
@@ -767,6 +776,11 @@
     <Compile Include="Verb_DispelEnchantWeapon.cs" />
     <Compile Include="Verb_DispelBranding.cs" />
     <Compile Include="Verb_BrandSiphon.cs" />
+    <Compile Include="Verb_FadeEmotions.cs" />
+    <Compile Include="Verb_MagicWardrobe.cs" />
+    <Compile Include="Verb_HeatShield.cs" />
+    <Compile Include="Verb_AlterStorm.cs" />
+    <Compile Include="Verb_Symbiosis.cs" />
     <Compile Include="Verb_IncitePassion.cs" />
     <Compile Include="Verb_MeleeSlam.cs" />
     <Compile Include="Verb_SoothingBalm.cs" />

@@ -38,8 +38,8 @@ namespace TorannMagic
                 verVal = mver.level;
             }
 
-            if ((pawn.Position.IsValid && pawn.Position.Standable(map)))
-            {
+            //if ((pawn.Position.IsValid && pawn.Position.Standable(map)))
+            //{
                 AbilityUser.SpawnThings tempPod = new SpawnThings();
                 IntVec3 shiftPos = pawn.Position;
 
@@ -72,7 +72,7 @@ namespace TorannMagic
                 tempPod.spawnCount = 1;
                 try
                 {
-                    this.turret = TM_Action.SingleSpawnLoop(pawn, tempPod, base.Position, map, 6000, true, false, pawn.Faction, true);
+                    this.turret = TM_Action.SingleSpawnLoop(pawn, tempPod, base.Position, map, 3600 + (300 * effVal), true, false, pawn.Faction, true);
                     this.turret.def.building.turretBurstCooldownTime = 4.5f - (.1f * pwrVal);
 
                     Building_TechnoTurret b_tt = this.turret as Building_TechnoTurret;
@@ -101,27 +101,27 @@ namespace TorannMagic
                         ));
                 }
 
-            }
-            else
-            {
-                Messages.Message("InvalidSummon".Translate(), MessageTypeDefOf.RejectInput);
-                comp.Mana.GainNeed(comp.ActualManaCost(TorannMagicDefOf.TM_TechnoTurret));
-            }
+            //}
+            //else
+            //{
+            //    Messages.Message("InvalidSummon".Translate(), MessageTypeDefOf.RejectInput);
+            //    comp.Mana.GainNeed(comp.ActualManaCost(TorannMagicDefOf.TM_TechnoTurret));
+            //}
 
 
-            if ((turret != null && turret.Spawned && turret.Position.IsValid))
-            {
-                //turret.def.interactionCellOffset = (this.launcher.Position - base.Position);          
+            //if ((turret != null && turret.Spawned && turret.Position.IsValid))
+            //{
+            //    //turret.def.interactionCellOffset = (this.launcher.Position - base.Position);          
                 
-                Job job = new Job(JobDefOf.ManTurret, turret);
-                pawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
+            //    Job job = new Job(JobDefOf.ManTurret, turret);
+            //    pawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
                 
-                //this.Ability.PostAbilityAttempt();
-            }
-            else
-            {
-                Log.Message("turret was null");
-            }
+            //    //this.Ability.PostAbilityAttempt();
+            //}
+            //else
+            //{
+            //    Log.Message("turret was null");
+            //}
             GenClamor.DoClamor(this, 2.1f, ClamorDefOf.Impact);
             Destroy();
             //base.Impact(hitThing);

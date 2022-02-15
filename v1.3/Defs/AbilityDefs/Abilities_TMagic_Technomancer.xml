@@ -142,9 +142,9 @@ Drafted: uses an internal focus-LED to fire micro lasers at the technomancers ta
     <defName>TM_TechnoTurret</defName>
     <label>Mark-IV Turret</label>
     <uiIconPath>Other/TechnoTurret</uiIconPath>
-    <description>Deploys and establishes a neural link to the Mark-IV turret. The Mark-IV is remotely controlled by the caster. After the turret is deployed,any activity or movement by the caster will break the neural link and miniaturize the Mark-IV weapon system. Rockets and mortars consume mana per shot.
+    <description>Deploys and establishes a neural link to the Mark-IV turret. The Mark-IV is remotely controlled by the caster. Rockets and mortars consume mana per shot.
 
-The Mark-IV will automatically miniaturize itself when it takes critical damage and can cause neural feedback to the technomancer manning the system.</description>
+The Mark-IV will automatically miniaturize itself when it takes critical damage and can cause neural feedback to the technomancer controlling the system.</description>
     <manaCost>0.5</manaCost>
 	<efficiencyReductionPercent>.02</efficiencyReductionPercent>
 		<learnChance>0</learnChance>

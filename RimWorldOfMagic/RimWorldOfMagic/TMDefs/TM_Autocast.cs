@@ -214,28 +214,106 @@ namespace TorannMagic.TMDefs
                 foreach(HediffDef hdd in con.hediffDefs)
                 {
                     Hediff hd = p.health.hediffSet.GetFirstHediffOfDef(hdd);
-                    if(hd != null && hd.Severity > con.valueA)
-                    {
-                        hasAnyHediff = true;
+                    if(hd != null)
+                    {                        
+                        if (con.valueA != 0)
+                        {
+                            if (hd.Severity >= con.valueA)
+                            {
+                                if (con.valueB != 0)
+                                {
+                                    if (hd.Severity <= con.valueB)
+                                    {
+                                        hasAnyHediff = true;
+                                    }
+                                    else
+                                    {
+                                        hasAnyHediff = false;
+                                    }
+                                }
+                                else
+                                {
+                                    hasAnyHediff = true;
+                                }
+                            }
+                            else
+                            {
+                                hasAnyHediff = false;
+                            }
+                        }
+                        else if (con.valueB != 0)
+                        {
+                            if (hd.Severity <= con.valueB)
+                            {
+                                hasAnyHediff = true;
+                            }
+                            else
+                            {
+                                hasAnyHediff = false;
+                            }
+                        }
+                        else
+                        {
+                            hasAnyHediff = true;
+                        }
                     }
-                }
+                }                
                 return (con.invert ? !hasAnyHediff : hasAnyHediff);
             }
             return false;
         }
 
         private bool HasNeed(TM_AutocastCondition con, Pawn p)
-        {
+        {            
             if (p != null && p.needs != null)
             {
                 bool hasAnyNeed = false;
                 foreach(Need n in p.needs.AllNeeds)
                 {
-                    if(n != null && con.needDefs.Contains(n.def) && n.CurLevel > con.valueA)
-                    {
-                        hasAnyNeed = true;
+                    if(n != null && con.needDefs.Contains(n.def))
+                    {                        
+                        if (con.valueA != 0)
+                        {                           
+                            if (n.CurLevel >= con.valueA)
+                            {
+                                if (con.valueB != 0)
+                                {
+                                    if (n.CurLevel <= con.valueB)
+                                    {
+                                        hasAnyNeed = true;
+                                    }
+                                    else
+                                    {
+                                        hasAnyNeed = false;
+                                    }
+                                }
+                                else
+                                {
+                                    hasAnyNeed = true;
+                                }
+                            }
+                            else
+                            {
+                                hasAnyNeed = false;
+                            }
+                        }
+                        else if (con.valueB != 0)
+                        {                           
+                            if (n.CurLevel <= con.valueB)
+                            {
+                                hasAnyNeed = true;
+                            }
+                            else
+                            {
+                                hasAnyNeed = false;
+                            }
+                        }
+                        else
+                        {
+                            hasAnyNeed = true;
+                        }
                     }
-                }
+                }                
                 return (con.invert ? !hasAnyNeed : hasAnyNeed);
             }
             return false;

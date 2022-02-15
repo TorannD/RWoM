@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using RimWorld;
 using Verse;
 using UnityEngine;
+using HarmonyLib;
 
 namespace TorannMagic
 {
@@ -14,17 +15,33 @@ namespace TorannMagic
 		public override IEnumerable<BodyPartRecord> GetPartsToApplyOn(Pawn pawn, RecipeDef recipe)
 		{
 			IEnumerable<BodyPartRecord> runeCarvedParts = from rch in pawn.health.hediffSet.GetHediffs<Hediff>()
-															where rch != null && rch.Part != null && rch.def == TorannMagicDefOf.TM_RuneCarvedPartHD
+															where rch != null && rch.Part != null && (rch.def == TorannMagicDefOf.TM_RuneCarvedPartHD || rch.def == TorannMagicDefOf.TM_ArcaneTatooPartHD)
 															select rch.Part;
 			IEnumerable<BodyPartRecord> notMissingParts = from nmp in pawn.health.hediffSet.GetNotMissingParts()
 														  where nmp.coverageAbsWithChildren > nmp.coverageAbs && !nmp.IsCorePart && nmp.parent != null && nmp.depth == BodyPartDepth.Outside
 														  select nmp;
-            IEnumerable<BodyPartRecord> hediffParts = notMissingParts.Except(runeCarvedParts);
+            IEnumerable<BodyPartRecord> coreParts = from cp in pawn.health.hediffSet.GetNotMissingParts()
+                                                          where cp.IsCorePart && cp.depth == BodyPartDepth.Outside
+                                                          select cp;
+            //foreach(BodyPartRecord bpr in coreParts)
+            //{
+            //    Log.Message("core part " + bpr.Label);
+            //}
+            //foreach (BodyPartRecord bpr in notMissingParts)
+            //{
+            //    Log.Message("normal rune carve part " + bpr.Label);
+            //}
+            
+            IEnumerable<BodyPartRecord> hediffParts = notMissingParts.Concat(coreParts).Except(runeCarvedParts);
 
 			if (TM_Calc.HasRuneCarverOnMap(pawn.Faction, pawn.Map, true))
 			{
-				foreach (BodyPartRecord part in notMissingParts)
+				foreach (BodyPartRecord part in hediffParts)
 				{
+                    if(coreParts.Contains(part))
+                    {
+                        yield return part;
+                    }
 					if (part != pawn.RaceProps.body.corePart && part.def.canSuggestAmputation && part.depth == BodyPartDepth.Outside)
 					{
 						yield return part;
@@ -179,10 +196,57 @@ namespace TorannMagic
 		public virtual void RunePart(Pawn pawn, Pawn carver, BodyPartRecord part)
 		{
 			int pwrVal = carver.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_RuneCarving.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_RuneCarving_pwr").level;
-			Hediff hd = HediffMaker.MakeHediff(TorannMagicDefOf.TM_RuneCarvedPartHD, pawn, part);
-			hd.Severity = .5f + pwrVal;
+            Hediff hd = null;
+            if (part.IsCorePart)
+            {
+                hd = HediffMaker.MakeHediff(TorannMagicDefOf.TM_ArcaneTatooPartHD, pawn, part);
+                hd.Severity = .5f + pwrVal;
+                if(ModsConfig.IdeologyActive)
+                {
+                    TattooDef tat = null;                    
+                    
+                    if (pawn.gender == Gender.Male)
+                    {
+                        IEnumerable<TattooDef> tatoos = from cp in DefDatabase<TattooDef>.AllDefs
+                                                        where (cp.styleGender == StyleGender.MaleUsually || cp.styleGender == StyleGender.Male) && cp.tattooType == TattooType.Body
+                                                        select cp;
+                        if(tatoos != null && tatoos.Count() > 0)
+                        {
+                            tat = tatoos.RandomElement();
+                        }
+                    }
+                    else if(pawn.gender == Gender.Female)
+                    {
+                        IEnumerable<TattooDef> tatoos = from cp in DefDatabase<TattooDef>.AllDefs
+                                                        where (cp.styleGender == StyleGender.Female || cp.styleGender == StyleGender.FemaleUsually) && cp.tattooType == TattooType.Body
+                                                        select cp;
+                        if (tatoos != null && tatoos.Count() > 0)
+                        {
+                            tat = tatoos.RandomElement();
+                        }
+                    }
+                    if((pawn.gender != Gender.Female && pawn.gender != Gender.Male) || tat == null)
+                    {
+                        IEnumerable<TattooDef> tatoos = from cp in DefDatabase<TattooDef>.AllDefs
+                                                        where cp.tattooType == TattooType.Body
+                                                        select cp;
+                        if (tatoos != null && tatoos.Count() > 0)
+                        {
+                            tat = tatoos.RandomElement();
+                        }
+                    }
+                                       
+                    pawn.style.BodyTattoo = tat;                    
+                    pawn.Drawer.renderer.graphics.SetAllGraphicsDirty();
+                    PortraitsCache.SetDirty(pawn);
+                }
+            }
+            else
+            {
+                hd = HediffMaker.MakeHediff(TorannMagicDefOf.TM_RuneCarvedPartHD, pawn, part);
+                hd.Severity = .5f + pwrVal;
+            }
 			pawn.health.AddHediff(hd, part, null, null);
-
 		}
 
 		public virtual void ApplyThoughts(Pawn pawn, Pawn billDoer)
@@ -199,6 +263,10 @@ namespace TorannMagic
 
 		public override string GetLabelWhenUsedOn(Pawn pawn, BodyPartRecord part)
 		{
+            if(part.IsCorePart)
+            {
+                return "TM_ArcaneTatoo".Translate();
+            }
 			return "TM_RuneCarving".Translate();
 		}
 	}

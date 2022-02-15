@@ -111,7 +111,7 @@ namespace TorannMagic.ModOptions
                         hd.def == TorannMagicDefOf.TM_LichHD || hd.def == TorannMagicDefOf.TM_ShapeshiftHD || hd.def == TorannMagicDefOf.TM_NightshadeHD ||  hd.def == TorannMagicDefOf.TM_HediffSprint || hd.def == TorannMagicDefOf.TM_SunderArmorHD ||
                         hd.def == TorannMagicDefOf.TM_ShadowSlayerCloakHD || hd.def == TorannMagicDefOf.TM_ManaShieldHD || hd.def == TorannMagicDefOf.TM_BlurHD ||  hd.def == TorannMagicDefOf.TM_InvisibilityHD ||
                         hd.def == TorannMagicDefOf.TM_HediffFightersFocus || hd.def == TorannMagicDefOf.TM_HediffThickSkin || hd.def == TorannMagicDefOf.TM_HediffStrongBack || hd.def == TorannMagicDefOf.TM_HediffGearRepair ||
-                        hd.def == TorannMagicDefOf.TM_HediffHeavyBlow || hd.def == TorannMagicDefOf.TM_BurningFuryHD)
+                        hd.def == TorannMagicDefOf.TM_HediffHeavyBlow || hd.def == TorannMagicDefOf.TM_BurningFuryHD || hd.def == TorannMagicDefOf.TM_CursedHD)
                     {
                         rhd.Add(hd);
                     }
@@ -137,8 +137,12 @@ namespace TorannMagic.ModOptions
                     {
                         pawn.story.traits.allTraits.Remove(pawn.story.traits.allTraits[j]);
                         break;
-                    }
+                    }                    
                 }
+            }
+            if(pawn.story.traits.HasTrait(TorannMagicDefOf.TM_CursedTD))
+            {
+                pawn.story.traits.RemoveTrait(pawn.story.traits.GetTrait(TorannMagicDefOf.TM_CursedTD));
             }
         }
 

@@ -121,6 +121,7 @@
     <alwaysHaulable>True</alwaysHaulable>
     <tickerType>Never</tickerType>
     <comps>
+	  <li Class="CompProperties_Styleable"></li>
       <li Class="CompProperties_Forbiddable"/>
       <li>
         <compClass>CompColorable</compClass>

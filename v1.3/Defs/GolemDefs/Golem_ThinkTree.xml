@@ -7,7 +7,7 @@
     <defName>TM_GolemMain</defName>
     <thinkRoot Class="ThinkNode_Priority">
       <subNodes>
-		
+	  
         <!-- Downed -->
         <li Class="ThinkNode_Subtree">
           <treeDef>Downed</treeDef>
@@ -18,6 +18,9 @@
 		
 		<!-- React to close melee threat -->
         <li Class="JobGiver_ReactToCloseMeleeThreat" />
+		
+		<!-- Do a queued job -->
+		<li Class="ThinkNode_QueuedJob" />
 
 		<!-- Wait if drafted -->
         <li Class="TorannMagic.Golems.ThinkNode_ConditionalGolem">
@@ -66,10 +69,8 @@
 				<li Class="JobGiver_RescueNearby">
 				  <radius>75</radius>
 				</li>	
-				<li Class="TorannMagic.Golems.JobGiver_GolemSelfTend"/>
+				<li Class="TorannMagic.Golems.JobGiver_GolemSelfTend"/>				
 				
-				<!-- Do a queued job -->
-				<li Class="ThinkNode_QueuedJob" />
 				<!-- Unload your inventory -->
 				<li Class="ThinkNode_Tagger">
 				  <tagToGive>UnloadingOwnInventory</tagToGive>

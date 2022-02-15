@@ -4696,5 +4696,20 @@ namespace TorannMagic
                 return false;
             }
         }
+
+        public static bool IsAlterableWeather(Map map, out WeatherDef w)
+        {
+            bool result = false;
+            w = null;
+            if (map != null && map.weatherManager != null && map.weatherManager.curWeather != null)
+            {
+                w = map.weatherManager.curWeather;
+                if (w.defName == "SnowHard" || w.defName == "SnowGentle" || w.defName == "Rain" || w.defName == "RainyThunderstorm" || w.defName == "FoggyRain")
+                {
+                    result = true;
+                }
+            }
+            return result;
+        }
     }
 }
