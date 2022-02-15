@@ -80,12 +80,12 @@
 		<li>UnlimitedHugs.HugsLib</li>
 		<li>jecrell.jecstools</li>
 	</loadAfter>
-	<description>Version 2.6.5.2
+	<description>Version 2.6.6.0
     This mod adds magic and class development to RimWorld.
 	
-A RimWorld of Magic adds 28 classes, each with unique abilities and play styles.
+A RimWorld of Magic adds a pawn class system, each with unique abilities and play styles.
 Classes are broken down into two arch-types - the fighter and the mage - which fill common fantasy roles like priests and necromancers.
 
-This mod also adds a robust set of supporting features such as enchantments, magical armor, weapons and artifacts, class agnostic spells, research trees, crafting tables, mythical creatures, portals, and more!
+This mod also adds a robust set of supporting features such as enchantments, magical armor, golems, weapons and artifacts, class agnostic spells, research trees, crafting tables, mythical creatures, portals, and more!
 	</description>
 </ModMetaData>

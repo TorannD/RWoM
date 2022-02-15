@@ -90,12 +90,12 @@ namespace TorannMagic
                 else
                 {
                     TMAbilityDef customSkill = null;
-                    for(int i = 0; i < comp.MightData.MightPowersCustom.Count; i++)
+                    for(int i = 0; i < comp.MightData.MightPowersCustomAll.Count; i++)
                     {
-                        TMAbilityDef tempSkill = (TMAbilityDef)comp.MightData.MightPowersCustom[i].abilityDef;
+                        TMAbilityDef tempSkill = (TMAbilityDef)comp.MightData.MightPowersCustomAll[i].abilityDef;
                         if(tempSkill.learnItem != null && tempSkill.learnItem == parent.def)
                         {
-                            if (!comp.MightData.MightPowersCustom[i].learned)
+                            if (!comp.MightData.MightPowersCustomAll[i].learned)
                             {
                                 customSkill = tempSkill;
                                 break;

@@ -145,7 +145,7 @@
 		<degreeDatas>	
 		  <li>
 			<label>Cursed</label>
-			<description>[PAWN_nameDef] is cursed by magic - tormented by the constant, burning rush of power through [PAWN_possessive] being, and can only gain relief through the release of arcane energy. [PAWN_nameDef] will slowly accumulate arcane weakness up until [PAWN_pronoun] would become catatonic, and may become catatonic at any point while at this threshold. Using magical abilities that would normally incur arcane weakness will instead proportionally reduce arcane weakness, as well as the effects of the curse.</description>
+			<description>[PAWN_nameDef] is cursed by magic - tormented by the constant, burning rush of power through [PAWN_possessive] being, and can only gain relief by expending arcane energy. [PAWN_nameDef] will slowly accumulate arcane weakness up until [PAWN_pronoun] would become catatonic, and may become catatonic at any point while at this threshold. Using magical abilities that would normally incur arcane weakness will instead proportionally reduce arcane weakness, as well as the effects of the curse.</description>
 			<degree>0</degree>
 		  </li>
 		</degreeDatas>	
