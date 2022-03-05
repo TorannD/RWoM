@@ -2322,14 +2322,9 @@ namespace TorannMagic
             return true;
         }
 
-        public static bool AutoUndrafter_Undead_Prefix(AutoUndrafter __instance)
+        public static bool AutoUndrafter_Undead_Prefix(AutoUndrafter __instance, Pawn ___pawn)
         {
-            Pawn pawn = Traverse.Create(root: __instance).Field(name: "pawn").GetValue<Pawn>();
-            if (pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_UndeadHD")))
-            {
-                return false;
-            }
-            return true;
+            return !___pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_UndeadHD"), false);
         }
 
         public static bool PawnRenderer_Blur_Prefix(PawnRenderer __instance, ref Vector3 drawLoc, Pawn ___pawn, Rot4? rotOverride = default(Rot4?), bool neverAimWeapon = false)
@@ -2837,6 +2832,7 @@ namespace TorannMagic
                 if (undeadCaravan[i].IsColonist && !(undeadCaravan[i].health.hediffSet.HasHediff(HediffDef.Named("TM_UndeadHD")) || undeadCaravan[i].health.hediffSet.HasHediff(HediffDef.Named("TM_UndeadAnimalHD")) || undeadCaravan[i].health.hediffSet.HasHediff(HediffDef.Named("TM_LichHD"))))
                 {
                     allUndead = false;
+                    break;
                 }
             }
             __result = !allUndead;
