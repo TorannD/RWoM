@@ -439,7 +439,7 @@ namespace TorannMagic
                             {
                                 reason = "TM_NoRequiredHediff".Translate(
                                     base.Pawn.LabelShort,
-                                    magicDef.requiredNeed.label
+                                    magicDef.requiredHediff.label
                                 );
                                 result = false;
                                 return result;

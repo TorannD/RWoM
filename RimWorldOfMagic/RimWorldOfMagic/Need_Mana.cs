@@ -521,7 +521,10 @@ namespace TorannMagic
 
                         this.lastGainPct = amount;
 
-                        comp.Mana.CurLevel = Mathf.Max(comp.Mana.CurLevel + amount, 0f);
+                        if (comp.Mana.CurLevel < MaxLevel)
+                        {
+                            comp.Mana.CurLevel = Mathf.Max(comp.Mana.CurLevel + amount, 0f);
+                        }
                         //comp.Mana.curLevelInt = Mathf.Clamp(comp.Mana.curLevelInt += amount, 0f, this.MaxLevel);
 
                         lastNeed = this.CurLevel;

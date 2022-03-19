@@ -450,6 +450,7 @@ namespace TorannMagic.Golems
             if (drafter != null)
             {
                 Command_Toggle command_Toggle = new Command_Toggle();
+                command_Toggle.hotKey = KeyBindingDefOf.Command_ColonistDraft;
                 command_Toggle.isActive = (() => Drafted);
                 command_Toggle.toggleAction = delegate
                 {

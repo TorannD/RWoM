@@ -2,6 +2,7 @@
 using System;
 using UnityEngine;
 using Verse;
+using System.Linq;
 
 namespace TorannMagic
 {
@@ -147,6 +148,5 @@ namespace TorannMagic
             MagicCardUtility.DrawMagicCard(rect, this.PawnToShowInfoAbout);
             
         }
-
     }
 }

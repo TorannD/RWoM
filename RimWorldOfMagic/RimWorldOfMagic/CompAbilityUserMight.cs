@@ -1202,12 +1202,14 @@ namespace TorannMagic
             }
         }
 
+        private int deathRetaliationDelayCount = 0;
         public void DoDeathRetaliation()
         {
             if (!this.Pawn.Downed || this.Pawn.Map == null || this.Pawn.IsPrisoner || this.Pawn.Faction == null || !this.Pawn.Faction.HostileTo(Faction.OfPlayerSilentFail))
             {
                 this.deathRetaliating = false;
                 this.canDeathRetaliate = false;
+                deathRetaliationDelayCount = 0;
             }
             if (this.canDeathRetaliate && this.deathRetaliating)
             {
@@ -1233,12 +1235,19 @@ namespace TorannMagic
                     TM_Action.CreateMightDeathEffect(this.Pawn, this.Pawn.Position);
                 }
             }
-            else if (this.canDeathRetaliate && Rand.Value < .04f)
+            else if (this.canDeathRetaliate)
             {
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                this.deathRetaliating = true;
-                this.ticksTillRetaliation = Mathf.RoundToInt(Rand.Range(400, 1200) * settingsRef.deathRetaliationDelayFactor);
-                this.deathRing = TM_Calc.GetOuterRing(this.Pawn.Position, 1f, 2f);
+                if (deathRetaliationDelayCount >= 20 && Rand.Value < .04f)
+                {
+                    ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+                    this.deathRetaliating = true;
+                    this.ticksTillRetaliation = Mathf.RoundToInt(Rand.Range(400, 1200) * settingsRef.deathRetaliationDelayFactor);
+                    this.deathRing = TM_Calc.GetOuterRing(this.Pawn.Position, 1f, 2f);
+                }
+                else
+                {
+                    deathRetaliationDelayCount++;
+                }
             }
         }
 
@@ -1340,8 +1349,8 @@ namespace TorannMagic
         {
             if (!cacheXPFL.ContainsKey(lvl))
             {
-                IntVec2 c1 = new IntVec2(0, 50);
-                IntVec2 c2 = new IntVec2(5, 40);
+                IntVec2 c1 = new IntVec2(0, 40);
+                IntVec2 c2 = new IntVec2(5, 30);
                 IntVec2 c3 = new IntVec2(15, 20);
                 IntVec2 c4 = new IntVec2(30, 10);
                 IntVec2 c5 = new IntVec2(200, 0);

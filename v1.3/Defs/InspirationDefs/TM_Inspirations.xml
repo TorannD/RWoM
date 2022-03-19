@@ -53,24 +53,24 @@
         <defName>ID_MiningFrenzy</defName>
 <!-- 		<workerClass>TorannMagic.Thoughts.Inspiration_ResourceFrenzy</workerClass> -->
         <label>mining frenzy</label>
-        <baseDurationDays>3</baseDurationDays>
+        <baseDurationDays>2</baseDurationDays>
 		<baseCommonality>0.8</baseCommonality>
         <beginLetterLabel>Inspiration: mining frenzy</beginLetterLabel>
-        <beginLetter>{0} has just been inspired. [PAWN_pronoun] will mine 50% faster and yield 50% more resources during mining for the next 72 hours.</beginLetter>
+        <beginLetter>{0} has just been inspired. [PAWN_pronoun] will mine 100% faster and yield 100% more resources during mining for the next 48 hours.</beginLetter>
         <beginLetterDef>PositiveEvent</beginLetterDef>
 		<allowedOnAnimals>false</allowedOnAnimals>
 		<allowedOnNonColonists>false</allowedOnNonColonists>
         <endMessage>{0} is no longer inspired (mining frenzy).</endMessage>
         <baseInspectLine>Inspired: Mining Frenzy</baseInspectLine>
 		<statFactors>
-            <MiningYield>1.50</MiningYield>
-			<MiningSpeed>1.50</MiningSpeed>
+            <MiningYield>2</MiningYield>
+			<MiningSpeed>2</MiningSpeed>
         </statFactors>
 		<requiredNonDisabledWorkTypes>
 			<li>Mining</li>
 		</requiredNonDisabledWorkTypes>
 		<requiredSkills>
-			<Mining>5</Mining>
+			<Mining>10</Mining>
 		</requiredSkills>
     </InspirationDef>
 	
@@ -78,24 +78,24 @@
         <defName>ID_FarmingFrenzy</defName>
 <!-- 		<workerClass>TorannMagic.Thoughts.Inspiration_ResourceFrenzy</workerClass> -->
         <label>farming frenzy</label>
-        <baseDurationDays>3</baseDurationDays>
+        <baseDurationDays>2</baseDurationDays>
 		<baseCommonality>0.8</baseCommonality>
         <beginLetterLabel>Inspiration: farming frenzy</beginLetterLabel>
-        <beginLetter>{0} has just been inspired. [PAWN_pronoun] will harvest crops 50% faster with 50% more yield during plant cutting jobs for the next 72 hours.</beginLetter>
+        <beginLetter>{0} has just been inspired. [PAWN_pronoun] will harvest crops 100% faster with 50% more yield during plant cutting jobs for the next 48 hours.</beginLetter>
         <beginLetterDef>PositiveEvent</beginLetterDef>
 		<allowedOnAnimals>false</allowedOnAnimals>
 		<allowedOnNonColonists>false</allowedOnNonColonists>
         <endMessage>{0} is no longer inspired (farming frenzy).</endMessage>
         <baseInspectLine>Inspired: Farming Frenzy</baseInspectLine>
 		<statFactors>
-            <PlantWorkSpeed>1.50</PlantWorkSpeed>
+            <PlantWorkSpeed>2</PlantWorkSpeed>
 			<PlantHarvestYield>1.50</PlantHarvestYield>
         </statFactors>
 		<requiredNonDisabledWorkTypes>
 			<li>PlantCutting</li>
 		</requiredNonDisabledWorkTypes>
 		<requiredSkills>
-			<Plants>5</Plants>
+			<Plants>10</Plants>
 		</requiredSkills>
     </InspirationDef>
 	

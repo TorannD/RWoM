@@ -70,12 +70,12 @@
 					<enchantments>
 						<mpRegenRate>.1</mpRegenRate>
 						<maxMP>.1</maxMP>
-						<magicCooldown>.05</magicCooldown>
-						<mpCost>.05</mpCost>
+						<magicCooldown>-.05</magicCooldown>
+						<mpCost>-.05</mpCost>
 						<maxSP>.1</maxSP>
 						<spRegenRate>.1</spRegenRate>
-						<mightCooldown>.05</mightCooldown>
-						<spCost>.05</spCost>			
+						<mightCooldown>-.05</mightCooldown>
+						<spCost>-.05</spCost>			
 						<xpGain>.1</xpGain>
 					</enchantments>
 				</li>
@@ -85,12 +85,12 @@
 					<enchantments>
 						<mpRegenRate>.11</mpRegenRate>
 						<maxMP>.11</maxMP>
-						<magicCooldown>.055</magicCooldown>
-						<mpCost>.055</mpCost>
+						<magicCooldown>-.055</magicCooldown>
+						<mpCost>-.055</mpCost>
 						<maxSP>.11</maxSP>
 						<spRegenRate>.11</spRegenRate>
-						<mightCooldown>.055</mightCooldown>
-						<spCost>.055</spCost>			
+						<mightCooldown>-.055</mightCooldown>
+						<spCost>-.055</spCost>			
 						<xpGain>.11</xpGain>
 					</enchantments>
 				</li>
@@ -100,12 +100,12 @@
 					<enchantments>
 						<mpRegenRate>.12</mpRegenRate>
 						<maxMP>.12</maxMP>
-						<magicCooldown>.06</magicCooldown>
-						<mpCost>.06</mpCost>
+						<magicCooldown>-.06</magicCooldown>
+						<mpCost>-.06</mpCost>
 						<maxSP>.12</maxSP>
 						<spRegenRate>.12</spRegenRate>
-						<mightCooldown>.06</mightCooldown>
-						<spCost>.06</spCost>			
+						<mightCooldown>-.06</mightCooldown>
+						<spCost>-.06</spCost>			
 						<xpGain>.12</xpGain>
 					</enchantments>
 				</li>
@@ -115,12 +115,12 @@
 					<enchantments>
 						<mpRegenRate>.125</mpRegenRate>
 						<maxMP>.125</maxMP>
-						<magicCooldown>.065</magicCooldown>
-						<mpCost>.065</mpCost>
+						<magicCooldown>-.065</magicCooldown>
+						<mpCost>-.065</mpCost>
 						<maxSP>.125</maxSP>
 						<spRegenRate>.125</spRegenRate>
-						<mightCooldown>.065</mightCooldown>
-						<spCost>.065</spCost>			
+						<mightCooldown>-.065</mightCooldown>
+						<spCost>-.065</spCost>			
 						<xpGain>.125</xpGain>
 					</enchantments>
 				</li>

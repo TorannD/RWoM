@@ -22,7 +22,6 @@ namespace TorannMagic
         {
             Pawn caster = base.CasterPawn;
             //Pawn pawn = this.currentTarget.Thing as Pawn;
-            Log.Message("mindkiller");
             bool flag = caster != null && !caster.Dead && !caster.Downed;
             if (flag)
             {

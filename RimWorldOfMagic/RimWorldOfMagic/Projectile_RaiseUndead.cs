@@ -401,8 +401,9 @@ namespace TorannMagic
                     {
                         undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Construction, 3);
                     }                    
-                }                
+                }                        
             }
+            undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Firefighter, 1);
             if (numSkilled <= 2)
             {
                 if (Rand.Chance(.5f))

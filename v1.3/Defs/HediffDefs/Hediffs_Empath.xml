@@ -120,7 +120,7 @@
 		<capMods>
 			<li>
 			  <capacity>Manipulation</capacity>
-			  <offset>-0.25</offset>
+			  <offset>-0.30</offset>
 			</li>
 		</capMods>
       </li>
@@ -131,13 +131,13 @@
 		<capMods>
 			<li>
 			  <capacity>Manipulation</capacity>
-			  <offset>-0.5</offset>
+			  <offset>-0.6</offset>
 			</li>
 		</capMods>
 		<mentalStateGivers>
 			<li>
 				<mentalState>WanderConfused</mentalState>
-				<mtbDays>1</mtbDays>
+				<mtbDays>.5</mtbDays>
 			</li>
 			<li>
 				<mentalState>Berserk</mentalState>
@@ -156,13 +156,13 @@
 		<capMods>
 			<li>
 			  <capacity>Manipulation</capacity>
-			  <offset>-0.7</offset>
+			  <offset>-0.75</offset>
 			</li>
 		</capMods>
 		<mentalStateGivers>
 			<li>
 				<mentalState>WanderConfused</mentalState>
-				<mtbDays>.5</mtbDays>
+				<mtbDays>.4</mtbDays>
 			</li>
 			<li>
 				<mentalState>Berserk</mentalState>

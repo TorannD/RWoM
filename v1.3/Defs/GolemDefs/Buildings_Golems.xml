@@ -393,7 +393,7 @@ While dormant, the golem may be modified or upgraded. The hollow golem recharges
         <conversionEfficiency>0.5</conversionEfficiency>
 		<conversionEfficiencyUpgradeIncrease>.1</conversionEfficiencyUpgradeIncrease>
 		<conversionEfficiencyMaxUpgrades>5</conversionEfficiencyMaxUpgrades>
-		<selfChargePerHour>20</selfChargePerHour>
+		<selfChargePerHour>30</selfChargePerHour>
 		<selfChargeUpgradeFactor>.2</selfChargeUpgradeFactor>
         <shortCircuitInRain>false</shortCircuitInRain>
         <transmitsPower>false</transmitsPower>
