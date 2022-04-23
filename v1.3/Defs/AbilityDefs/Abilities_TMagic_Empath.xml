@@ -48,7 +48,7 @@
     <defName>TM_MindKiller</defName>
     <label>Mind Killer</label>
     <uiIconPath>UI/MindKiller</uiIconPath>
-    <description>Releases an empathic wail that floods all nearby pawns with emotions. Reactions can vary, but most living organisms have difficulty dealing with the overwhelming surge of emotions. The higher an affected pawns mood, the more emotional energy is released. When untrained, this skill may affect nearby allies.</description>
+    <description>Releases an empathic wail that floods all nearby pawns with emotions. Reactions can vary, but most living organisms have difficulty dealing with the overwhelming surge of emotions. Can cause hostile pawns to go berserk. The higher an affected pawns mood, the more emotional energy is released. When untrained, this skill may affect nearby allies.</description>
     <requiredNeed>Mood</requiredNeed>
 	<needCost>.3</needCost>
 	<needXPFactor>250</needXPFactor>

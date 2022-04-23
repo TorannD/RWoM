@@ -265,7 +265,7 @@
       <li>
         <label>Emotion thief</label>
         <description>I have a deep sense of sadness and loss when depriving others of their ability to feel.</description>
-        <baseMoodEffect>-10</baseMoodEffect>
+        <baseMoodEffect>-8</baseMoodEffect>
       </li>
     </stages>
   </ThoughtDef>
@@ -281,7 +281,7 @@
         <label>Emotional baggage</label>
         <!-- generic benefit -->
         <description>Bearing the weight of everyone's emotions.</description>
-        <baseMoodEffect>-8</baseMoodEffect>
+        <baseMoodEffect>-6</baseMoodEffect>
       </li>
 	  </stages>
   </ThoughtDef>
@@ -344,7 +344,7 @@
 		<capMods>
           <li>
             <capacity>Consciousness</capacity>
-            <offset>.6</offset>
+            <offset>.7</offset>
           </li>
         </capMods>
       </li>    	 
@@ -360,7 +360,7 @@
 		<capMods>
           <li>
             <capacity>Consciousness</capacity>
-            <offset>.9</offset>
+            <offset>1</offset>
           </li>
         </capMods>
       </li>
@@ -376,7 +376,7 @@
 		<capMods>
           <li>
             <capacity>Consciousness</capacity>
-            <offset>1.1</offset>
+            <offset>1.25</offset>
           </li>
         </capMods>
       </li>	 
@@ -392,7 +392,7 @@
 		<capMods>
           <li>
             <capacity>Consciousness</capacity>
-            <offset>1.25</offset>
+            <offset>1.5</offset>
           </li>
         </capMods>
       </li>	  

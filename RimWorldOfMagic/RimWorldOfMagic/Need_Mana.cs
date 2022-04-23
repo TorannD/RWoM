@@ -223,9 +223,9 @@ namespace TorannMagic
 
                         if (pawn.health != null && pawn.health.hediffSet != null)
                         {
-                            if(comp.BrandedPawns.Count > 0)
+                            if(comp.BrandPawns != null && comp.BrandPawns.Count > 0)
                             {
-                                drainSigils = comp.BrandedPawns.Count * (TorannMagicDefOf.TM_Branding.upkeepRegenCost * (1f - (TorannMagicDefOf.TM_Branding.upkeepEfficiencyPercent * comp.MagicData.GetSkill_Efficiency(TorannMagicDefOf.TM_Branding).level)));
+                                drainSigils = comp.BrandPawns.Count * (TorannMagicDefOf.TM_Branding.upkeepRegenCost * (1f - (TorannMagicDefOf.TM_Branding.upkeepEfficiencyPercent * comp.MagicData.GetSkill_Efficiency(TorannMagicDefOf.TM_Branding).level)));
                                 if(comp.sigilSurging)
                                 {
                                     drainSigils *= 3f;

@@ -157,7 +157,22 @@ namespace TorannMagic
                         else
                         {
                             this.parent.Severity = .05f;
-                        }                        
+                        }  
+                        if(Rand.Chance(.05f))
+                        {
+                            bool non = false;
+                            for(int i =0; i < comp.BrandPawns.Count; i++)
+                            {
+                                if(comp.BrandPawns[i] == this.Pawn && comp.BrandDefs[i] == this.parent.def)
+                                {
+                                    non = true;
+                                }
+                            }
+                            if(!non)
+                            {
+                                this.shouldRemove = true;
+                            }
+                        }
                     }
                     else
                     {

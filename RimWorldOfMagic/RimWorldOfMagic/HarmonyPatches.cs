@@ -3443,7 +3443,7 @@ namespace TorannMagic
 
                                 DamageInfo dinfo2 = new DamageInfo(TMDamageDefOf.DamageDefOf.TM_SymbiosisDD, sAmt, 2, -1, dinfo.Instigator, dinfo.HitPart, null);
                                 hdh.symbiote.TakeDamage(dinfo2);
-                                dinfo.SetAmount(dinfo.Amount * (.8f - (.05f * verVal)));
+                                dinfo.SetAmount(dinfo.Amount * (.75f - (.05f * verVal)));
                                 if (__instance.Map != null)
                                 {
                                     TM_Action.DisplayShield(__instance, dinfo.Amount);
@@ -3460,7 +3460,7 @@ namespace TorannMagic
                             if (p.story.traits.HasTrait(TorannMagicDefOf.TM_GiantsBloodTD) && TM_Calc.IsUsingMelee(p))
                             {
                                 float amt = dinfo.Amount;
-                                amt *= .25f;
+                                amt *= 1.25f;
                                 dinfo.SetAmount(amt);
                             }
                         }

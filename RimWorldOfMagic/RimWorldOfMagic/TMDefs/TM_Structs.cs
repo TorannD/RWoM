@@ -28,23 +28,23 @@ namespace TorannMagic.TMDefs
         }
     }
 
-    public struct Branding : IExposable
-    {
-        public Pawn pawn;
-        public HediffDef hediffDef;
+    //public struct Branding : IExposable
+    //{
+    //    public Pawn pawn;
+    //    public HediffDef hediffDef;
 
-        public Branding(Pawn p, HediffDef hd_def)
-        {
-            pawn = p;
-            hediffDef = hd_def;
-        }
+    //    public Branding(Pawn p, HediffDef hd_def)
+    //    {
+    //        pawn = p;
+    //        hediffDef = hd_def;
+    //    }
 
-        public void ExposeData()
-        {
-            Scribe_Defs.Look<HediffDef>(ref this.hediffDef, "hediffDef");
-            Scribe_References.Look<Pawn>(ref this.pawn, "pawn", false);
-        }
-    }
+    //    public void ExposeData()
+    //    {
+    //        Scribe_Defs.Look<HediffDef>(ref this.hediffDef, "hediffDef");
+    //        Scribe_References.Look<Pawn>(ref this.pawn, "pawn", false);
+    //    }
+    //}
 
     //Path Struct
     public struct TPath

@@ -72,6 +72,8 @@ namespace TorannMagic
                 if (Find.TickManager.TicksGame % this.eventFrequency == 0)
                 {
                     Initialize();
+                    EmotionalInspiration(base.Pawn);                    
+
                     List<Pawn> pList = (from mp in Pawn.Map.mapPawns.AllPawnsSpawned
                                         where (mp != Pawn && !mp.Dead && (mp.Position - Pawn.Position).LengthHorizontal <= radius && mp.RaceProps != null && mp.RaceProps.IsFlesh && mp.RaceProps.Humanlike && mp.needs != null && mp.needs.mood != null)
                                         select mp).ToList();
@@ -130,6 +132,21 @@ namespace TorannMagic
                         }
                     }
                 } 
+            }
+        }
+
+        private void EmotionalInspiration(Pawn p)
+        {
+            if (Rand.Chance(.02f + (.01f * verVal)))
+            {
+                if (base.Pawn.mindState != null && base.Pawn.mindState.inspirationHandler != null && !base.Pawn.mindState.inspirationHandler.Inspired)
+                {
+                    InspirationDef ins = TM_Calc.GetRandomAvailableInspirationDef(base.Pawn);
+                    if (ins != null)
+                    {
+                        base.Pawn.mindState.inspirationHandler.TryStartInspiration(ins);
+                    }
+                }
             }
         }
 

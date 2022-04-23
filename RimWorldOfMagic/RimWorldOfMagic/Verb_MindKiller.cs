@@ -100,6 +100,10 @@ namespace TorannMagic
                                         TM_Action.DamageEntities(p, bpr, penChance + curLvl, 2f, TMDamageDefOf.DamageDefOf.TM_Shadow, caster);
                                     }
                                 }
+                                if(p.mindState != null && p.mindState.mentalStateHandler != null && p.Faction != caster.Faction && Rand.Chance(.2f + (.1f * pwrVal)))
+                                {
+                                    p.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Berserk);
+                                }
                             }
                         }
                     }

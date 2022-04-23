@@ -5,6 +5,7 @@ using RimWorld;
 using AbilityUser;
 using Verse;
 using UnityEngine;
+using TorannMagic.TMDefs;
 
 
 namespace TorannMagic
@@ -16,32 +17,21 @@ namespace TorannMagic
             bool flag = false;
             CompAbilityUserMagic comp = CasterPawn.GetComp<CompAbilityUserMagic>();
 
-            if (comp != null && comp.IsMagicUser && comp.BrandedPawns != null)
+            if (comp != null && comp.IsMagicUser && comp.BrandPawns != null && comp.BrandDefs != null)
             {
-                if (comp.BrandedPawns.Count > 0)
+                if (comp.BrandPawns.Count > 0)
                 {
-                    foreach(Pawn br in comp.BrandedPawns)
+                    for(int i=0; i < comp.BrandPawns.Count; i++)
                     {
-                        if (!br.DestroyedOrNull() && br.health != null && br.health.hediffSet != null)
+                        Pawn br = comp.BrandPawns[i];
+                        if (br != null && !br.DestroyedOrNull() && br.health != null && br.health.hediffSet != null)
                         {
-                            List<Hediff> brands = new List<Hediff>();
-                            brands.Clear();
-                            foreach (Hediff hd in br.health.hediffSet.hediffs)
+                            Hediff hd = br.health.hediffSet.GetFirstHediffOfDef(comp.BrandDefs[i]);
+                            if(hd != null)
                             {
-                                HediffComp_BrandingBase hc_bb = hd.TryGetComp<HediffComp_BrandingBase>();
-                                if (hc_bb != null && hc_bb.BranderPawn == CasterPawn)
-                                {
-                                    brands.Add(hd);
-                                }
+                                br.health.RemoveHediff(hd);
                             }
 
-                            if (brands != null && brands.Count > 0)
-                            {
-                                foreach (Hediff h in brands)
-                                {
-                                    br.health.RemoveHediff(h);
-                                }
-                            }
                             if (br.Map != null && CasterPawn.Map != null && br.Map == CasterPawn.Map)
                             {
                                 Effecter effect = EffecterDefOf.Skip_ExitNoDelay.Spawn();
@@ -50,7 +40,8 @@ namespace TorannMagic
                             }
                         }
                     }
-                    comp.BrandedPawns.Clear();
+                    comp.BrandPawns.Clear();
+                    comp.BrandDefs.Clear();
                     if (CasterPawn.Map != null)
                     {
                         Effecter effectExit = EffecterDefOf.Skip_EntryNoDelay.Spawn();

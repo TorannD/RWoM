@@ -42,24 +42,23 @@ namespace TorannMagic
             bool flag = false;
             Pawn caster = this.CasterPawn;
             Pawn hitPawn = this.currentTarget.Thing as Pawn;
-            if(hitPawn != null && hitPawn.RaceProps != null)
+
+            if(hitPawn != null && caster != null)
             {
                 CompAbilityUserMagic casterComp = caster.TryGetComp<CompAbilityUserMagic>();
-                CompAbilityUserMagic targetComp = hitPawn.TryGetComp<CompAbilityUserMagic>();
 
                 if (casterComp != null && hitPawn.health != null && hitPawn.health.hediffSet != null && hitPawn != caster)
                 {
-                    RemoveOldBrand(hitPawn);
+                    TM_Action.UpdateBrand(hitPawn, caster, casterComp, TorannMagicDefOf.TM_EmotionBrandHD);
 
-                    HealthUtility.AdjustSeverity(hitPawn, TorannMagicDefOf.TM_EmotionBrandHD, .05f);
-                    if (casterComp.BrandedPawns != null)
+                    Hediff hd = hitPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_EmotionBrandHD);
+                    if (hd != null)
                     {
-                        casterComp.BrandedPawns.Add(hitPawn);
-                    }
-                    Hediff newBrand = hitPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_EmotionBrandHD);
-                    if (newBrand != null && newBrand.TryGetComp<HediffComp_BrandingEmotion>() != null)
-                    {
-                        newBrand.TryGetComp<HediffComp_BrandingEmotion>().BranderPawn = caster;
+                        HediffComp_BrandingBase hdc = hd.TryGetComp<HediffComp_BrandingBase>();
+                        if (hdc != null)
+                        {
+                            hdc.BranderPawn = caster;
+                        }
                     }
 
                     Effecter effect = EffecterDefOf.Skip_EntryNoDelay.Spawn();
@@ -69,6 +68,21 @@ namespace TorannMagic
                     Effecter effectExit = EffecterDefOf.Skip_ExitNoDelay.Spawn();
                     effectExit.Trigger(new TargetInfo(hitPawn), new TargetInfo(hitPawn));
                     effectExit.Cleanup();
+
+                    //RemoveOldBrand(hitPawn);
+
+                    //HealthUtility.AdjustSeverity(hitPawn, TorannMagicDefOf.TM_EmotionBrandHD, .05f);
+                    //if (casterComp.BrandedPawns != null)
+                    //{
+                    //    casterComp.BrandedPawns.Add(hitPawn);
+                    //}
+                    //Hediff newBrand = hitPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_EmotionBrandHD);
+                    //if (newBrand != null && newBrand.TryGetComp<HediffComp_BrandingEmotion>() != null)
+                    //{
+                    //    newBrand.TryGetComp<HediffComp_BrandingEmotion>().BranderPawn = caster;
+                    //}
+
+
                 }
                 else
                 {
@@ -84,22 +98,22 @@ namespace TorannMagic
             return flag;
         }        
 
-        private void RemoveOldBrand(Pawn hitPawn)
-        {
-            Hediff oldBrand = hitPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_EmotionBrandHD);
-            if (oldBrand != null)
-            {
-                HediffComp_BrandingEmotion hd_br = oldBrand.TryGetComp<HediffComp_BrandingEmotion>();
-                if (hd_br != null && hd_br.BranderPawn != null && !hd_br.BranderPawn.DestroyedOrNull() && !hd_br.BranderPawn.Dead)
-                {
-                    CompAbilityUserMagic branderComp = hd_br.BranderPawn.TryGetComp<CompAbilityUserMagic>();
-                    if (branderComp != null && branderComp.BrandedPawns != null && branderComp.BrandedPawns.Contains(hitPawn))
-                    {
-                        branderComp.BrandedPawns.Remove(hitPawn);
-                    }
-                }
-                hitPawn.health.RemoveHediff(oldBrand);
-            }
-        }
+        //private void RemoveOldBrand(Pawn hitPawn)
+        //{
+        //    Hediff oldBrand = hitPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_EmotionBrandHD);
+        //    if (oldBrand != null)
+        //    {
+        //        HediffComp_BrandingEmotion hd_br = oldBrand.TryGetComp<HediffComp_BrandingEmotion>();
+        //        if (hd_br != null && hd_br.BranderPawn != null && !hd_br.BranderPawn.DestroyedOrNull() && !hd_br.BranderPawn.Dead)
+        //        {
+        //            CompAbilityUserMagic branderComp = hd_br.BranderPawn.TryGetComp<CompAbilityUserMagic>();
+        //            if (branderComp != null && branderComp.BrandedPawns != null && branderComp.BrandedPawns.Contains(hitPawn))
+        //            {
+        //                branderComp.BrandedPawns.Remove(hitPawn);
+        //            }
+        //        }
+        //        hitPawn.health.RemoveHediff(oldBrand);
+        //    }
+        //}
     }
 }

@@ -281,8 +281,10 @@ namespace TorannMagic
         public bool recallSpell = false;
         public FlyingObject_SpiritOfLight SoL = null;
         public Pawn bondedSpirit = null;
-        //public List<TMDefs.Branding> brandings = new List<TMDefs.Branding>();
+        //public List<TMDefs.TM_Branding> brandings = new List<TMDefs.TM_Branding>();
         public List<Pawn> brandedPawns = new List<Pawn>();
+        public List<Pawn> brands = new List<Pawn>();
+        public List<HediffDef> brandDefs = new List<HediffDef>();
         public bool sigilSurging = false;
         public bool sigilDraining = false;
         public FlyingObject_LivingWall livingWall = null;
@@ -296,65 +298,58 @@ namespace TorannMagic
         public int nextEntertainTick = -1;
         public int nextSuccubusLovinTick = -1;
 
-        //public List<TMDefs.Branding> Brandings
-        //{
-        //    get
-        //    {
-        //        if (brandings == null)
-        //        {
-        //            brandings = new List<TMDefs.Branding>();
-        //            brandings.Clear();
-        //        }
-        //        List<TMDefs.Branding> tmpList = new List<TMDefs.Branding>();
-        //        tmpList.Clear();
-        //        foreach (TMDefs.Branding br in brandings)
-        //        {
-        //            Pawn p = br.pawn;
-        //            if (p.DestroyedOrNull() || p.Dead)
-        //            {
-        //                tmpList.Add(br);
-        //                continue;
-        //            }
-        //            Hediff hd = p.health?.hediffSet?.GetFirstHediffOfDef(br.hediffDef);
-        //            if(hd == null)
-        //            {
-        //                tmpList.Add(br);
-        //            }                    
-        //        }
-        //        for (int i = 0; i < tmpList.Count; i++)
-        //        {
-        //            brandings.Remove(tmpList[i]);
-        //        }
-        //        return brandings;
-        //    }
-        //}
-
-        public List<Pawn> BrandedPawns
+        public List<Pawn> BrandPawns
         {
             get
             {
-                if (brandedPawns == null)
+                if (brands == null)
                 {
-                    brandedPawns = new List<Pawn>();
-                    brandedPawns.Clear();
+                    brands = new List<Pawn>();
+                    brands.Clear();
                 }
-                List<Pawn> tmpList = new List<Pawn>();
-                tmpList.Clear();
-                foreach (Pawn br in brandedPawns)
-                {
-                    Pawn p = br;
-                    if (p.DestroyedOrNull() || p.Dead)
-                    {
-                        tmpList.Add(br);
-                    }
-                }
-                for (int i = 0; i < tmpList.Count; i++)
-                {
-                    brandedPawns.Remove(tmpList[i]);
-                }
-                return brandedPawns;
+                return brands;
             }
         }
+
+        public List<HediffDef> BrandDefs
+        {
+            get
+            {
+                if (brandDefs == null)
+                {
+                    brandDefs = new List<HediffDef>();
+                    brandDefs.Clear();
+                }
+                return brandDefs;
+            }
+        }
+
+        //public List<Pawn> BrandedPawns
+        //{
+        //    get
+        //    {
+        //        if (brandedPawns == null)
+        //        {
+        //            brandedPawns = new List<Pawn>();
+        //            brandedPawns.Clear();
+        //        }
+        //        List<Pawn> tmpList = new List<Pawn>();
+        //        tmpList.Clear();
+        //        foreach (Pawn br in brandedPawns)
+        //        {
+        //            Pawn p = br;
+        //            if (p.DestroyedOrNull() || p.Dead)
+        //            {
+        //                tmpList.Add(br);
+        //            }
+        //        }
+        //        for (int i = 0; i < tmpList.Count; i++)
+        //        {
+        //            brandedPawns.Remove(tmpList[i]);
+        //        }
+        //        return brandedPawns;
+        //    }
+        //}
 
         public ThingOwner<ThingWithComps> MagicWardrobe
         {
@@ -7544,7 +7539,7 @@ namespace TorannMagic
 
         public void ResolveSustainers()
         {
-            if(this.BrandedPawns.Count > 0)
+            if(this.BrandPawns != null && this.BrandPawns.Count > 0)
             {
                 if(!this.dispelBrandings)
                 {
@@ -7553,16 +7548,15 @@ namespace TorannMagic
                 }
                 List<Pawn> tmpBrands = new List<Pawn>();
                 tmpBrands.Clear();
-                foreach(Pawn brand in this.BrandedPawns)
+                for(int i = 0; i < BrandPawns.Count; i++)
                 {
-                    if(brand.DestroyedOrNull() || brand.Dead)
+                    Pawn p = BrandPawns[i];
+                    if(p != null && (p.Destroyed || p.Dead))
                     {
-                        tmpBrands.Add(brand);
+                        BrandPawns.Remove(BrandPawns[i]);
+                        BrandDefs.Remove(BrandDefs[i]);
+                        break;
                     }
-                }
-                foreach(Pawn removeBrand in tmpBrands)
-                {
-                    BrandedPawns.Remove(removeBrand);
                 }
                 if(sigilSurging && this.Mana.CurLevel <= .01f)
                 {
@@ -8336,9 +8330,9 @@ namespace TorannMagic
                     _maxMPUpkeep += ((.2f - (.02f * heartofstone.level)) * this.summonedSentinels.Count);
                 }
             }
-            if(this.BrandedPawns.Count > 0)
+            if(this.BrandPawns != null && this.BrandPawns.Count > 0)
             {
-                float brandCost = this.BrandedPawns.Count * (TorannMagicDefOf.TM_Branding.upkeepRegenCost * (1f - (TorannMagicDefOf.TM_Branding.upkeepEfficiencyPercent * this.MagicData.GetSkill_Efficiency(TorannMagicDefOf.TM_Branding).level)));
+                float brandCost = this.BrandPawns.Count * (TorannMagicDefOf.TM_Branding.upkeepRegenCost * (1f - (TorannMagicDefOf.TM_Branding.upkeepEfficiencyPercent * this.MagicData.GetSkill_Efficiency(TorannMagicDefOf.TM_Branding).level)));
                 if(sigilSurging)
                 {
                     brandCost *= (5f * (1f - (.1f * this.MagicData.GetSkill_Efficiency(TorannMagicDefOf.TM_SigilSurge).level)));
@@ -8758,7 +8752,8 @@ namespace TorannMagic
             Scribe_References.Look<FlyingObject_SpiritOfLight>(ref SoL, "SoL", false);
             Scribe_Defs.Look<ThingDef>(ref this.guardianSpiritType, "guardianSpiritType");
             Scribe_References.Look<Pawn>(ref this.bondedSpirit, "bondedSpirit", false);
-            Scribe_Collections.Look<Pawn>(ref this.brandedPawns, "brandedPawns", LookMode.Reference);
+            Scribe_Collections.Look<Pawn>(ref this.brands, "brands", LookMode.Reference);
+            Scribe_Collections.Look<HediffDef>(ref this.brandDefs, "brandDefs", LookMode.Def);
             Scribe_Values.Look<bool>(ref this.sigilSurging, "sigilSurging", false, false);
             Scribe_Values.Look<bool>(ref this.sigilDraining, "sigilDraining", false, false);
             Scribe_References.Look<FlyingObject_LivingWall>(ref this.livingWall, "livingWall");

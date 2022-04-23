@@ -133,6 +133,7 @@
     <Compile Include="Building_TMTotem_Lightning.cs" />
     <Compile Include="Building_TM_DMP.cs" />
     <Compile Include="Skyfaller_Hail.cs" />
+    <Compile Include="TMDefs\TM_Branding.cs" />
     <Compile Include="WeatherEvent_HailWave.cs" />
     <Compile Include="DeathWorker_Sentinel.cs" />
     <Compile Include="Golems\PawnColumnWorker_GolemActive.cs" />
