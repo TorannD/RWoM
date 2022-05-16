@@ -727,4 +727,20 @@
     </subSounds>
   </SoundDef>
 
+  <SoundDef>
+    <defName>TM_Shot_DefensePylon</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>SFX/DefensePylon</clipFolderPath>
+          </li>
+        </grains>
+        <pitchRange>1~1.25</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
 </Defs>
