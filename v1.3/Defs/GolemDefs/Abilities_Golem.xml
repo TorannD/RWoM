@@ -18,7 +18,8 @@
         <thing>Bullet_Minigun</thing>
         <missRadius>2</missRadius>
         <hitChance>.185</hitChance>
-		<effectFlashScale>.6</effectFlashScale>	
+		<effectFlashScale>.6</effectFlashScale>
+		<requiresLoS>true</requiresLoS>
       </li>
 	</effects>
 	<autocasting>

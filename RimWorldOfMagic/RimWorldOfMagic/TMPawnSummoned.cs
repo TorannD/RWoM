@@ -141,7 +141,10 @@ namespace TorannMagic
                     if (flag3)
                     {
                         this.PreDestroy();
-                        this.Destroy(DestroyMode.Vanish);
+                        if (!this.Destroyed)
+                        {
+                            this.Destroy(DestroyMode.Vanish);
+                        }
                     }
                     CheckPawnState();
                     bool spawned = base.Spawned;
@@ -220,7 +223,7 @@ namespace TorannMagic
                         FleckMaker.ThrowSmoke(this.DrawPos, base.Map, Rand.Range(1f, 2f));
                         TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Ghost, this.DrawPos, base.Map, 1f, .25f, 0f, .25f, 0, Rand.Range(1f, 2f), 0, 0);
                     }
-                    else
+                    else if(this.holdingOwner != null && this.holdingOwner.Contains(this))
                     {
                         this.holdingOwner.Remove(this);
                     }                

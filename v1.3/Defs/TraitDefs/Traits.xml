@@ -1804,7 +1804,7 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 				<MeleeDodgeChance>10</MeleeDodgeChance>
 				<WorkSpeedGlobal>0.10</WorkSpeedGlobal>
 				<AimingDelayFactor>-0.25</AimingDelayFactor>
-				<ShootingAccuracyPawn>-35</ShootingAccuracyPawn>	
+				<ShootingAccuracyPawn>-15</ShootingAccuracyPawn>	
 				<SocialImpact>0.10</SocialImpact>
 				<ToxicSensitivity>+.30</ToxicSensitivity>
 				<CarryingCapacity>-30</CarryingCapacity>
@@ -2274,6 +2274,7 @@ Wayfarers prefer the open road and will gain a mood boost for being in a caravan
 					<ConstructionSpeed>-.10</ConstructionSpeed>
 					<TameAnimalChance>.10</TameAnimalChance>
 					<TrainAnimalChance>.10</TrainAnimalChance>
+					<ShootingAccuracyPawn>2</ShootingAccuracyPawn>
                 </statOffsets>
 		  </li>
 		  <li>
@@ -2293,6 +2294,7 @@ Wayfarers prefer the open road and will gain a mood boost for being in a caravan
 					<ConstructionSpeed>-.15</ConstructionSpeed>
 					<TameAnimalChance>.12</TameAnimalChance>
 					<TrainAnimalChance>.12</TrainAnimalChance>
+					<ShootingAccuracyPawn>3</ShootingAccuracyPawn>
                 </statOffsets>
 		  </li>
 		  <li>
@@ -2312,6 +2314,7 @@ Wayfarers prefer the open road and will gain a mood boost for being in a caravan
 					<ConstructionSpeed>-.18</ConstructionSpeed>
 					<TameAnimalChance>.14</TameAnimalChance>
 					<TrainAnimalChance>.14</TrainAnimalChance>
+					<ShootingAccuracyPawn>4</ShootingAccuracyPawn>
                 </statOffsets>
 		  </li>
 		  <li>
@@ -2331,6 +2334,7 @@ Wayfarers prefer the open road and will gain a mood boost for being in a caravan
 					<ConstructionSpeed>-.20</ConstructionSpeed>
 					<TameAnimalChance>.15</TameAnimalChance>
 					<TrainAnimalChance>.15</TrainAnimalChance>
+					<ShootingAccuracyPawn>5</ShootingAccuracyPawn>
 					
                 </statOffsets>
 		  </li>
@@ -2390,7 +2394,7 @@ Wayfarers prefer the open road and will gain a mood boost for being in a caravan
 				<statOffsets>
 					<MoveSpeed>.10</MoveSpeed>
                     <AimingDelayFactor>-0.10</AimingDelayFactor>
-					<ShootingAccuracyPawn>2</ShootingAccuracyPawn>
+					<ShootingAccuracyPawn>3</ShootingAccuracyPawn>
 					<ResearchSpeed>-0.10</ResearchSpeed>
 					<WorkSpeedGlobal>-.10</WorkSpeedGlobal>
 					<TameAnimalChance>-.10</TameAnimalChance>
@@ -2405,7 +2409,7 @@ Wayfarers prefer the open road and will gain a mood boost for being in a caravan
 				<statOffsets>
 					<MoveSpeed>.15</MoveSpeed>
                     <AimingDelayFactor>-0.15</AimingDelayFactor>
-					<ShootingAccuracyPawn>4</ShootingAccuracyPawn>
+					<ShootingAccuracyPawn>6</ShootingAccuracyPawn>
 					<ResearchSpeed>-0.13</ResearchSpeed>
 					<WorkSpeedGlobal>-.13</WorkSpeedGlobal>
 					<TameAnimalChance>-.13</TameAnimalChance>
@@ -2420,7 +2424,7 @@ Wayfarers prefer the open road and will gain a mood boost for being in a caravan
 				<statOffsets>
 					<MoveSpeed>.20</MoveSpeed>
                     <AimingDelayFactor>-0.22</AimingDelayFactor>
-					<ShootingAccuracyPawn>6</ShootingAccuracyPawn>
+					<ShootingAccuracyPawn>8</ShootingAccuracyPawn>
 					<ResearchSpeed>-0.15</ResearchSpeed>
 					<WorkSpeedGlobal>-.15</WorkSpeedGlobal>
 					<TameAnimalChance>-.15</TameAnimalChance>
@@ -2435,7 +2439,7 @@ Wayfarers prefer the open road and will gain a mood boost for being in a caravan
 				<statOffsets>
 					<MoveSpeed>.25</MoveSpeed>
                     <AimingDelayFactor>-0.30</AimingDelayFactor>
-					<ShootingAccuracyPawn>8</ShootingAccuracyPawn>
+					<ShootingAccuracyPawn>10</ShootingAccuracyPawn>
 					<ResearchSpeed>-0.16</ResearchSpeed>
 					<WorkSpeedGlobal>-.16</WorkSpeedGlobal>
 					<TameAnimalChance>-.16</TameAnimalChance>

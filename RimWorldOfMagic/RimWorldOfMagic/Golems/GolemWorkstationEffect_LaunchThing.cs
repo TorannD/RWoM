@@ -18,11 +18,13 @@ namespace TorannMagic.Golems
         public float missRadius;
         public float hitChance;
         public float maxRange;
-        public float minRange;        
+        public float minRange;
+        public bool requiresLoS;
 
         public override void ExposeData()
         {
             base.ExposeData();
+            Scribe_Values.Look<bool>(ref this.requiresLoS, "requiresLoS");
             Scribe_Values.Look<int>(ref this.ticksBetweenBursts, "ticksBetweenBursts");
             Scribe_Values.Look<float>(ref this.missRadius, "missRadius");
             Scribe_Values.Look<float>(ref this.hitChance, "hitChance");
@@ -52,6 +54,10 @@ namespace TorannMagic.Golems
         {
             if (target != null && target.HasThing && !golem_building.holdFire && golem_building.GolemComp.TargetIsValid(golem_building, target.Thing) && (target.Cell - golem_building.Position).LengthHorizontal <= maxRange && (target.Cell - golem_building.Position).LengthHorizontal >= minRange)
             {
+                if(requiresLoS && !TM_Calc.HasLoSFromTo(golem_building.Position, target, golem_building, minRange, maxRange))
+                {
+                    return false;
+                }
                 return base.CanDoEffect(golem_building);
             }
             return false;

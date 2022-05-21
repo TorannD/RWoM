@@ -772,8 +772,8 @@ namespace TorannMagic
             int result = -1;
             while(result < 0)
             {
-                int tmpIndex = Rand.RangeInclusive(0, TM_Data.MagicTraits.Count - 1);
-                TraitDef td = TM_Data.MagicTraits[tmpIndex];
+                int tmpIndex = Rand.RangeInclusive(0, TM_Data.EnabledMagicTraits.Count - 1);
+                TraitDef td = TM_Data.EnabledMagicTraits[tmpIndex];
                 if (td == TorannMagicDefOf.TM_Wanderer) { }
                 else if (td == TorannMagicDefOf.Lich) { }
                 else if (td == TorannMagicDefOf.Warlock && p.gender == Gender.Female) { }

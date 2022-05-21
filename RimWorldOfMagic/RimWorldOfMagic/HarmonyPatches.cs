@@ -54,7 +54,7 @@ namespace TorannMagic
                  new HarmonyMethod(patchType, nameof(TurretGunTick_Overdrive_Postfix)), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(CompRefuelable), "PostDraw"), new HarmonyMethod(patchType, nameof(CompRefuelable_DrawBar_Prefix)),
                  null, null);
-            harmonyInstance.Patch(AccessTools.Method(typeof(AutoUndrafter), "AutoUndraftTick"), new HarmonyMethod(patchType, nameof(AutoUndrafter_Undead_Prefix)),
+            harmonyInstance.Patch(AccessTools.Method(typeof(AutoUndrafter), "ShouldAutoUndraft"), new HarmonyMethod(patchType, nameof(AutoUndrafter_Undead_Prefix)),
                  null, null);
             harmonyInstance.Patch(AccessTools.Method(typeof(PawnUtility), "IsTravelingInTransportPodWorldObject"),
                  new HarmonyMethod(patchType, nameof(IsTravelingInTeleportPod_Prefix)), null);
@@ -2322,11 +2322,12 @@ namespace TorannMagic
             return true;
         }
 
-        public static bool AutoUndrafter_Undead_Prefix(AutoUndrafter __instance)
+        public static bool AutoUndrafter_Undead_Prefix(AutoUndrafter __instance, Pawn ___pawn, ref bool __result)
         {
-            Pawn pawn = Traverse.Create(root: __instance).Field(name: "pawn").GetValue<Pawn>();
-            if (pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_UndeadHD")))
+            //Pawn pawn = ___pawn; // Traverse.Create(root: __instance).Field(name: "pawn").GetValue<Pawn>();
+            if (TM_Calc.IsUndead(___pawn))
             {
+                __result = false;
                 return false;
             }
             return true;
@@ -2837,6 +2838,7 @@ namespace TorannMagic
                 if (undeadCaravan[i].IsColonist && !(undeadCaravan[i].health.hediffSet.HasHediff(HediffDef.Named("TM_UndeadHD")) || undeadCaravan[i].health.hediffSet.HasHediff(HediffDef.Named("TM_UndeadAnimalHD")) || undeadCaravan[i].health.hediffSet.HasHediff(HediffDef.Named("TM_LichHD"))))
                 {
                     allUndead = false;
+                    break;
                 }
             }
             __result = !allUndead;
@@ -5885,7 +5887,7 @@ namespace TorannMagic
                 IntVec3 c = IntVec3.FromVector3(clickPos);
                 Enchantment.CompEnchant comp = pawn.TryGetComp<Enchantment.CompEnchant>();
                 CompAbilityUserMagic pawnComp = pawn.TryGetComp<CompAbilityUserMagic>();
-                if (comp != null && pawnComp != null && pawnComp.IsMagicUser)
+                if (comp != null && pawnComp != null && pawnComp.IsMagicUser && pawn.story != null && pawn.story.traits != null && !pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
                 {
                     if (comp.enchantingContainer == null)
                     {

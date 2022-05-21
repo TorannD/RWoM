@@ -92,7 +92,7 @@ namespace TorannMagic
                 //{
                 //    pwrVal = 3;
                 //    verVal = 3;
-                //}
+                //}                
                 for (int h = 0; h < caster.health.hediffSet.hediffs.Count; h++)
                 {
                     if (caster.health.hediffSet.hediffs[h].def.defName.Contains("TM_HateHD"))
@@ -112,13 +112,15 @@ namespace TorannMagic
                 this.duration = Mathf.RoundToInt(this.radius * 10);
                 this.affectedPawns = new List<Pawn>();
                 this.affectedPawns.Clear();
-
-                SoundInfo info = SoundInfo.InMap(new TargetInfo(base.Position, this.Map, false), MaintenanceType.None);
-                TorannMagicDefOf.TM_GaspingAir.PlayOneShot(info);
-                Effecter FearWave = TorannMagicDefOf.TM_FearWave.Spawn();
-                FearWave.Trigger(new TargetInfo(caster.Position, caster.Map, false), new TargetInfo(base.Position, this.Map, false));
-                FearWave.Cleanup();
-                SearchAndFear();
+                if (this.Map != null)
+                {
+                    SoundInfo info = SoundInfo.InMap(new TargetInfo(base.Position, this.Map, false), MaintenanceType.None);
+                    TorannMagicDefOf.TM_GaspingAir.PlayOneShot(info);
+                    Effecter FearWave = TorannMagicDefOf.TM_FearWave.Spawn();
+                    FearWave.Trigger(new TargetInfo(caster.Position, caster.Map, false), new TargetInfo(base.Position, this.Map, false));
+                    FearWave.Cleanup();
+                    SearchAndFear();
+                }
                 this.initialized = true;
             }  
 
@@ -137,15 +139,18 @@ namespace TorannMagic
                 for (int i = 0; i < mapPawns.Count; i++)
                 {
                     Pawn victim = mapPawns[i];
-                    if (!victim.DestroyedOrNull() && !victim.Dead && victim.Map != null && !victim.Downed && victim.mindState != null && !victim.InMentalState && !this.affectedPawns.Contains(victim))
+                    if (!victim.DestroyedOrNull() && !victim.Dead && victim.Map != null && victim.health != null && victim.health.hediffSet != null && !victim.Downed && victim.mindState != null && !victim.InMentalState && !this.affectedPawns.Contains(victim))
                     {
                         if (victim.Faction != null && victim.Faction != caster.Faction && (victim.Position - caster.Position).LengthHorizontal < this.waveRange)
                         {
                             if (Rand.Chance(TM_Calc.GetSpellSuccessChance(caster, victim, true)))
                             {
                                 LocalTargetInfo t = new LocalTargetInfo(victim.Position + (6 * this.arcaneDmg * TM_Calc.GetVector(caster.DrawPos, victim.DrawPos)).ToIntVec3());
-                                Job job = new Job(JobDefOf.FleeAndCower, t);
-                                victim.jobs.TryTakeOrderedJob(job, JobTag.Misc);
+                                if (victim.jobs != null)
+                                {
+                                    Job job = new Job(JobDefOf.FleeAndCower, t);
+                                    victim.jobs.TryTakeOrderedJob(job, JobTag.Misc);
+                                }
                                 HealthUtility.AdjustSeverity(victim, HediffDef.Named("TM_WaveOfFearHD"), .5f + pwrVal);
                                 this.affectedPawns.Add(victim);
                             }

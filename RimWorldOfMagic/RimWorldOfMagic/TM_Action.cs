@@ -2112,6 +2112,7 @@ namespace TorannMagic
             switch (rnd)
             {
                 case 0: //Death explosion
+                    DefaultRetaliation:;
                     IntVec3 curCell;
                     Pawn victim = new Pawn();
 
@@ -2179,58 +2180,72 @@ namespace TorannMagic
                     }
                     break;
                 case 2: //Summon 4x firestorm skyfallers
-                    Pawn targetF = TM_Calc.FindNearbyEnemy(pos, pawn.Map, pawn.Faction, 60, 10);
+                    Pawn targetF = TM_Calc.FindNearbyEnemy(pos, pawn.Map, pawn.Faction, 40, 10);
                     if(friendlyFire)
                     {
                         targetF = pawn;
                     }
                     if (targetF != null)
                     {
-                        for (int i = 0; i < 4; i++)
+                        if (!targetF.Position.Roofed(pawn.Map))
                         {
-                            IntVec3 cell = targetF.Position;
-                            cell.x += Rand.Range(-2, 2);
-                            cell.z += Rand.Range(-2, 2);
-                            if (Rand.Chance(.6f))
+                            for (int i = 0; i < 4; i++)
                             {
-                                SkyfallerMaker.SpawnSkyfaller(TorannMagicDefOf.TM_Firestorm_Tiny, cell, pawn.Map);
+                                IntVec3 cell = targetF.Position;
+                                cell.x += Rand.Range(-2, 2);
+                                cell.z += Rand.Range(-2, 2);
+                                if (Rand.Chance(.6f))
+                                {
+                                    SkyfallerMaker.SpawnSkyfaller(TorannMagicDefOf.TM_Firestorm_Tiny, cell, pawn.Map);
+                                }
+                                else if (Rand.Chance(.4f))
+                                {
+                                    SkyfallerMaker.SpawnSkyfaller(TorannMagicDefOf.TM_Firestorm_Small, cell, pawn.Map);
+                                }
+                                else
+                                {
+                                    SkyfallerMaker.SpawnSkyfaller(TorannMagicDefOf.TM_Firestorm_Large, cell, pawn.Map);
+                                }
                             }
-                            else if (Rand.Chance(.4f))
-                            {
-                                SkyfallerMaker.SpawnSkyfaller(TorannMagicDefOf.TM_Firestorm_Small, cell, pawn.Map);
-                            }
-                            else
-                            {
-                                SkyfallerMaker.SpawnSkyfaller(TorannMagicDefOf.TM_Firestorm_Large, cell, pawn.Map);
-                            }
+                        }
+                        else
+                        {
+                            goto DefaultRetaliation;
                         }
                     }
                     break;
                 case 3: //summon 4x blizzard skyfallers
-                    Pawn targetI = TM_Calc.FindNearbyEnemy(pos, pawn.Map, pawn.Faction, 70, 10);
+                    Pawn targetI = TM_Calc.FindNearbyEnemy(pos, pawn.Map, pawn.Faction, 40, 10);
                     if(friendlyFire)
                     {
                         targetI = pawn;
                     }
                     if (targetI != null)
                     {
-                        for (int i = 0; i < 4; i++)
+                        if (!targetI.Position.Roofed(pawn.Map))
                         {
-                            IntVec3 cell = targetI.Position;
-                            cell.x += Rand.Range(-2, 2);
-                            cell.z += Rand.Range(-2, 2);
-                            if (Rand.Chance(.6f))
+                            for (int i = 0; i < 4; i++)
                             {
-                                SkyfallerMaker.SpawnSkyfaller(TorannMagicDefOf.TM_Blizzard_Tiny, cell, pawn.Map);
+                                IntVec3 cell = targetI.Position;
+                                cell.x += Rand.Range(-2, 2);
+                                cell.z += Rand.Range(-2, 2);
+                                if (Rand.Chance(.6f))
+                                {
+                                    SkyfallerMaker.SpawnSkyfaller(TorannMagicDefOf.TM_Blizzard_Tiny, cell, pawn.Map);
+                                }
+                                else if (Rand.Chance(.4f))
+                                {
+                                    SkyfallerMaker.SpawnSkyfaller(TorannMagicDefOf.TM_Blizzard_Small, cell, pawn.Map);
+                                }
+                                else
+                                {
+                                    SkyfallerMaker.SpawnSkyfaller(TorannMagicDefOf.TM_Blizzard_Large, cell, pawn.Map);
+                                }
                             }
-                            else if (Rand.Chance(.4f))
-                            {
-                                SkyfallerMaker.SpawnSkyfaller(TorannMagicDefOf.TM_Blizzard_Small, cell, pawn.Map);
-                            }
-                            else
-                            {
-                                SkyfallerMaker.SpawnSkyfaller(TorannMagicDefOf.TM_Blizzard_Large, cell, pawn.Map);
-                            }
+                        }
+                        else
+                        {
+                            goto DefaultRetaliation;
                         }
                     }
                     break;
@@ -3278,6 +3293,16 @@ namespace TorannMagic
                     if (com.pawnAbility.Def == TorannMagicDefOf.TM_Nightshade)
                     {
                         mightPower = mightComp.MightData.MightPowersShadow.FirstOrDefault<MightPower>((MightPower x) => x.abilityDef == TorannMagicDefOf.TM_Nightshade);
+                    }
+                    if (com.pawnAbility.Def == TorannMagicDefOf.TM_Elixir)
+                    {
+                        mightPower = mightComp.MightData.MightPowersApothecary.FirstOrDefault<MightPower>((MightPower x) => x.abilityDef == TorannMagicDefOf.TM_Elixir);
+                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        {
+                            mightPower.AutoCast = !mightPower.AutoCast;
+                            return new GizmoResult(GizmoState.Mouseover, null);
+
+                        }
                     }
                     if (com.pawnAbility.Def == TorannMagicDefOf.TM_TeachMight)
                     {

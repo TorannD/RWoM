@@ -79,7 +79,7 @@ namespace TorannMagic
                 }
             }
 
-            if (this.glower != null && glower.parent != null && comp != null)
+            if (oldPos != this.Pawn.Position && this.glower != null && glower.parent != null && comp != null)
             {
                 if (this.Pawn != null && this.Pawn.Map != null)
                 {
