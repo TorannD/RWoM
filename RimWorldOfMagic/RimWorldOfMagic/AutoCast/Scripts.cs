@@ -326,7 +326,7 @@ namespace TorannMagic.AutoCast
                 if (distanceToTarget >= minRange && jobTarget != null && jobTarget.Thing != null) //&& distanceToTarget < (abilitydef.MainVerb.range * .9f)
                 {                    
                     Job job = ability.GetJob(AbilityContext.AI, jobTarget);
-                    job.endIfCantShootTargetFromCurPos = true;
+                    job.endIfCantShootTargetFromCurPos = false;
                     DoJob.Execute(job, caster);
                     success = true;
                 }

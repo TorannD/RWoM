@@ -84,9 +84,9 @@
     <statBases>
 	  <Mass>400</Mass>
       <MoveSpeed>6.66</MoveSpeed>
-      <ArmorRating_Blunt>0.84</ArmorRating_Blunt>
-      <ArmorRating_Sharp>1.03</ArmorRating_Sharp>
-      <ArmorRating_Heat>1.21</ArmorRating_Heat>      
+      <ArmorRating_Blunt>0.86</ArmorRating_Blunt>
+      <ArmorRating_Sharp>1.14</ArmorRating_Sharp>
+      <ArmorRating_Heat>1.33</ArmorRating_Heat>      
     </statBases>
 	<tools>
       <li>
@@ -150,9 +150,9 @@
 	  </li>
     </comps>
 	<butcherProducts>
-      <RawMagicyte>120</RawMagicyte>
-	  <TM_Demonscale>80</TM_Demonscale>
-	  <TM_Demonhide>120</TM_Demonhide>
+      <RawMagicyte>320</RawMagicyte>
+	  <TM_Demonscale>120</TM_Demonscale>
+	  <TM_Demonhide>180</TM_Demonhide>
     </butcherProducts>
   </ThingDef>
  
@@ -190,9 +190,9 @@
     <statBases>
 	  <Mass>240</Mass>
       <MoveSpeed>6.66</MoveSpeed>
-      <ArmorRating_Blunt>0.74</ArmorRating_Blunt>
-      <ArmorRating_Sharp>.92</ArmorRating_Sharp>
-      <ArmorRating_Heat>1.16</ArmorRating_Heat>      
+      <ArmorRating_Blunt>0.76</ArmorRating_Blunt>
+      <ArmorRating_Sharp>1</ArmorRating_Sharp>
+      <ArmorRating_Heat>1.27</ArmorRating_Heat>      
     </statBases>
 	<tools>
       <li>
@@ -256,9 +256,9 @@
 	  </li>
     </comps>
 	<butcherProducts>
-      <RawMagicyte>60</RawMagicyte>
-	  <TM_Demonscale>30</TM_Demonscale>
-	  <TM_Demonhide>50</TM_Demonhide>
+      <RawMagicyte>180</RawMagicyte>
+	  <TM_Demonscale>50</TM_Demonscale>
+	  <TM_Demonhide>80</TM_Demonhide>
     </butcherProducts>
   </ThingDef>
  

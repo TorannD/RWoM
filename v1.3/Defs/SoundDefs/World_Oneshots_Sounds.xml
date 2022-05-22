@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-
+  
   <SoundDef>
     <defName>TM_HailHitSD</defName>  
     <context>MapOnly</context>
@@ -812,6 +812,22 @@
           <min>.7</min>
           <max>1</max>
         </pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>TM_Shot_DefensePylon</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>SFX/DefensePylon</clipFolderPath>
+          </li>
+        </grains>
+        <pitchRange>1~1.25</pitchRange>
       </li>
     </subSounds>
   </SoundDef>

@@ -145,10 +145,10 @@ Splash:	2c</description>
 		<graphicsPath>Flesh/Tusks</graphicsPath>
 		<drawUndrafted>true</drawUndrafted>
 		<drawSize>4</drawSize>
-		<drawOffsetNorth>(0, -.01, 0)</drawOffsetNorth>
-		<drawOffsetSouth>(0, .009, 0)</drawOffsetSouth>
-		<drawOffsetEast>(0, .009, 0)</drawOffsetEast>
-		<drawOffsetWest>(0, .009, 0)</drawOffsetWest>
+		<drawOffsetNorth>(0, -.02, 0)</drawOffsetNorth>
+		<drawOffsetSouth>(0, .018, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .018, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .018, 0)</drawOffsetWest>
 	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
 	
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
@@ -167,10 +167,10 @@ Cooldown:	10s</description>
 		<graphicsPath>Flesh/Horns</graphicsPath>
 		<drawUndrafted>true</drawUndrafted>
 		<drawSize>4</drawSize>
-		<drawOffsetNorth>(0, .009, 0)</drawOffsetNorth>
-		<drawOffsetSouth>(0, .009, 0)</drawOffsetSouth>
-		<drawOffsetEast>(0, .009, 0)</drawOffsetEast>
-		<drawOffsetWest>(0, .009, 0)</drawOffsetWest>
+		<drawOffsetNorth>(0, .018, 0)</drawOffsetNorth>
+		<drawOffsetSouth>(0, .018, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .018, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .018, 0)</drawOffsetWest>
 	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
 	
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
@@ -186,10 +186,10 @@ Cooldown:	10s</description>
 		<graphicsPath>Flesh/EyeT1</graphicsPath>
 		<drawUndrafted>true</drawUndrafted>
 		<drawSize>4</drawSize>
-		<drawOffsetNorth>(0, -.004, 0)</drawOffsetNorth>
-		<drawOffsetSouth>(0, .004, 0)</drawOffsetSouth>
-		<drawOffsetEast>(0, .004, 0)</drawOffsetEast>
-		<drawOffsetWest>(0, .004, 0)</drawOffsetWest>
+		<drawOffsetNorth>(0, -.012, 0)</drawOffsetNorth>
+		<drawOffsetSouth>(0, .012, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .012, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .012, 0)</drawOffsetWest>
 	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
 	
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
@@ -209,10 +209,10 @@ Range:	40</description>
 		<graphicsPath>Flesh/EyeT2</graphicsPath>
 		<drawUndrafted>true</drawUndrafted>
 		<drawSize>4</drawSize>
-		<drawOffsetNorth>(0, -.004, 0)</drawOffsetNorth>
-		<drawOffsetSouth>(0, .004, 0)</drawOffsetSouth>
-		<drawOffsetEast>(0, .004, 0)</drawOffsetEast>
-		<drawOffsetWest>(0, .004, 0)</drawOffsetWest>
+		<drawOffsetNorth>(0, -.012, 0)</drawOffsetNorth>
+		<drawOffsetSouth>(0, .012, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .012, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .012, 0)</drawOffsetWest>
 	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
 	
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
@@ -234,10 +234,10 @@ Double attack and move speed</description>
 		<graphicsPath>Flesh/Wings</graphicsPath>
 		<drawUndrafted>true</drawUndrafted>
 		<drawSize>4</drawSize>
-		<drawOffsetNorth>(0, .009, 0)</drawOffsetNorth>
-		<drawOffsetSouth>(0, -.009, 0)</drawOffsetSouth>
-		<drawOffsetEast>(0, -.002, 0)</drawOffsetEast>
-		<drawOffsetWest>(0, -.002, 0)</drawOffsetWest>
+		<drawOffsetNorth>(0, .018, 0)</drawOffsetNorth>
+		<drawOffsetSouth>(0, -.018, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, -.02, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, -.02, 0)</drawOffsetWest>
 	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
 	
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
@@ -256,10 +256,10 @@ Heat:	8%</description>
 		<graphicsPath>Flesh/Head</graphicsPath>
 		<drawUndrafted>true</drawUndrafted>
 		<drawSize>4</drawSize>
-		<drawOffsetNorth>(0, .008, 0)</drawOffsetNorth>
-		<drawOffsetSouth>(0, .008, 0)</drawOffsetSouth>
-		<drawOffsetEast>(0, .008, 0)</drawOffsetEast>
-		<drawOffsetWest>(0, .008, 0)</drawOffsetWest>
+		<drawOffsetNorth>(0, .016, 0)</drawOffsetNorth>
+		<drawOffsetSouth>(0, .016, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .016, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .016, 0)</drawOffsetWest>
 	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
 	
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
@@ -278,10 +278,10 @@ Heat:	10%</description>
 		<graphicsPath>Flesh/Shoulder</graphicsPath>
 		<drawUndrafted>true</drawUndrafted>
 		<drawSize>4</drawSize>
-		<drawOffsetNorth>(0, .0085, 0)</drawOffsetNorth>
-		<drawOffsetSouth>(0, .0085, 0)</drawOffsetSouth>
-		<drawOffsetEast>(0, .0085, 0)</drawOffsetEast>
-		<drawOffsetWest>(0, .0085, 0)</drawOffsetWest>
+		<drawOffsetNorth>(0, .017, 0)</drawOffsetNorth>
+		<drawOffsetSouth>(0, .017, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .017, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .017, 0)</drawOffsetWest>
 	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
 	
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
@@ -300,10 +300,10 @@ Heat:	5%</description>
 		<graphicsPath>Flesh/Chest</graphicsPath>
 		<drawUndrafted>true</drawUndrafted>
 		<drawSize>4</drawSize>
-		<drawOffsetNorth>(0, -.007, 0)</drawOffsetNorth>
-		<drawOffsetSouth>(0, .007, 0)</drawOffsetSouth>
-		<drawOffsetEast>(0, .007, 0)</drawOffsetEast>
-		<drawOffsetWest>(0, .007, 0)</drawOffsetWest>
+		<drawOffsetNorth>(0, -.014, 0)</drawOffsetNorth>
+		<drawOffsetSouth>(0, .014, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .014, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .014, 0)</drawOffsetWest>
 	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
 	
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
@@ -322,10 +322,10 @@ Heat:	5%</description>
 		<graphicsPath>Flesh/Back</graphicsPath>
 		<drawUndrafted>true</drawUndrafted>
 		<drawSize>4</drawSize>
-		<drawOffsetNorth>(0, .007, 0)</drawOffsetNorth>
-		<drawOffsetSouth>(0, -.007, 0)</drawOffsetSouth>
-		<drawOffsetEast>(0, -.007, 0)</drawOffsetEast>
-		<drawOffsetWest>(0, -.007, 0)</drawOffsetWest>
+		<drawOffsetNorth>(0, .014, 0)</drawOffsetNorth>
+		<drawOffsetSouth>(0, -.014, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, -.014, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, -.014, 0)</drawOffsetWest>
 	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
 	
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
@@ -344,10 +344,10 @@ Heat:	8%</description>
 		<graphicsPath>Flesh/Legs</graphicsPath>
 		<drawUndrafted>true</drawUndrafted>
 		<drawSize>4</drawSize>
-		<drawOffsetNorth>(0, .006, 0)</drawOffsetNorth>
-		<drawOffsetSouth>(0, .006, 0)</drawOffsetSouth>
-		<drawOffsetEast>(0, .006, 0)</drawOffsetEast>
-		<drawOffsetWest>(0, .006, 0)</drawOffsetWest>
+		<drawOffsetNorth>(0, .012, 0)</drawOffsetNorth>
+		<drawOffsetSouth>(0, .012, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .012, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .012, 0)</drawOffsetWest>
 	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
 	
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>

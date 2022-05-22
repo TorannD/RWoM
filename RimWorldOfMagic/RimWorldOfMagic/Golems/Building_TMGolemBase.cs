@@ -586,6 +586,33 @@ namespace TorannMagic.Golems
             TMPawnSummoned spawnedThing = null;
             LifeStageDef lsDef = null;
             TM_Golem tmpGolem = null;
+            
+            //temp variables
+            Pawn tempPawnMaster = null;
+            bool tempFollowMaster = false;
+            bool tempFollowsMasterDrafted = false;
+            float tempThreatRange = 40f;
+            Thing tempThreatTarget = null;
+            float tempEnergyPctShouldRest = .1f;
+            float tempMinEnergyPctForAbilities = .2f;
+            float tempEnergyPctShouldAwaken = 1f;
+            Name tempName = NameTriple.FromString("Blank");
+            bool loadTempGolem = false;
+            //
+
+            if (GolemComp != null)
+            {
+                tempPawnMaster = GolemComp.pawnMaster;
+                tempFollowMaster = GolemComp.followsMaster;
+                tempFollowsMasterDrafted = GolemComp.followsMasterDrafted;
+                tempThreatRange = GolemComp.threatRange;
+                tempThreatTarget = GolemComp.threatTarget;
+                tempEnergyPctShouldRest = GolemComp.energyPctShouldRest;
+                tempMinEnergyPctForAbilities = GolemComp.minEnergyPctForAbilities;
+                tempEnergyPctShouldAwaken = GolemComp.energyPctShouldAwaken;
+                tempName = GolemComp.GolemName;
+                loadTempGolem = true;
+            }
             if (Upgrades != null)
             {
                 foreach (TM_GolemUpgrade gu in Upgrades)
@@ -622,7 +649,7 @@ namespace TorannMagic.Golems
                 {                    
                     spawnedThing = TM_Action.SingleSpawnLoop(null, spawnables, this.Position, this.Map, 0, false, false, this.Faction) as TMPawnSummoned;
                     spawnedThing.validSummoning = true;
-                    spawnedThing.ageTracker.AgeBiologicalTicks = 0;
+                    spawnedThing.ageTracker.AgeBiologicalTicks = 0;                    
                     Projectile_RaiseUndead.RemoveHediffsAddictionsAndPermanentInjuries(spawnedThing);
                 }
             }
@@ -635,20 +662,29 @@ namespace TorannMagic.Golems
                     cg.dormantPosition = this.Position;
                     cg.dormantRotation = this.Rotation;
                     cg.dormantMap = this.Map;
-                    if (cg.GolemName.ToString() != "Blank")
+                    if (!cg.GolemName.ToString().Contains("Blank"))
                     {
                         spawnedThing.Name = cg.GolemName;
                     }
-                    else
-                    {
-                        cg.GolemName = spawnedThing.Name;
-                    }
+
                     if (tmpGolem != null)
                     {
                         cg.Golem = tmpGolem;
                     }
                     cg.age = 0;
                     innerContainer.ClearAndDestroyContents();
+                    if(loadTempGolem)
+                    {
+                        cg.GolemName = tempName;
+                        cg.pawnMaster = tempPawnMaster;
+                        cg.followsMaster = tempFollowMaster;
+                        cg.followsMasterDrafted = tempFollowsMasterDrafted;
+                        cg.threatRange = tempThreatRange;
+                        cg.threatTarget = tempThreatTarget;
+                        cg.energyPctShouldRest = tempEnergyPctShouldRest;
+                        cg.minEnergyPctForAbilities = tempMinEnergyPctForAbilities;
+                        cg.energyPctShouldAwaken = tempEnergyPctShouldAwaken;                      
+                    }
                 }
             }
             if(Find.Selector.SingleSelectedThing == this)

@@ -560,18 +560,18 @@ namespace TorannMagic
                 }
 
                 Enchantment.CompEnchant compEnchant = this.Pawn.GetComp<Enchantment.CompEnchant>();
-                try
-                {
+                //try
+                //{
                     if (this.IsMagicUser && compEnchant != null && compEnchant.enchantingContainer.Count > 0)
                     {
                         DrawEnchantMark();
                     }
-                }
-                catch
-                {
-                    Enchantment.CompProperties_Enchant newEnchantComp = new Enchantment.CompProperties_Enchant();
-                    this.Pawn.def.comps.Add(newEnchantComp);
-                }
+                //}
+                //catch
+                //{
+                //    Enchantment.CompProperties_Enchant newEnchantComp = new Enchantment.CompProperties_Enchant();
+                //    this.Pawn.def.comps.Add(newEnchantComp);
+                //}
             }
             base.PostDraw();
         }
@@ -5803,7 +5803,7 @@ namespace TorannMagic
             tmpList.Clear();
             foreach(TM_EventRecords ev in MagicUsed)
             {
-                if(Find.TickManager.TicksGame - 60000 > ev.eventTick)
+                if(Find.TickManager.TicksGame - 150000 > ev.eventTick)
                 {
                     tmpList.Add(ev);
                 }

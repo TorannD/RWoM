@@ -188,13 +188,13 @@ namespace TorannMagic
             Vector3 exactPosition = this.ExactPosition;
             this.ticksToImpact--;
             bool flag = !this.ExactPosition.InBounds(base.Map);
-            if (flag)
-            {
-                this.ticksToImpact++;
-                base.Position = this.ExactPosition.ToIntVec3();
-                this.Destroy(DestroyMode.Vanish);
-            }
-            else if (!this.ExactPosition.ToIntVec3().Walkable(base.Map))
+            //if (flag)
+            //{
+            //    this.ticksToImpact++;
+            //    base.Position = this.ExactPosition.ToIntVec3();
+            //    this.Destroy(DestroyMode.Vanish);
+            //}
+            if (flag || !this.ExactPosition.ToIntVec3().Walkable(base.Map) || this.ExactPosition.ToIntVec3().DistanceToEdge(base.Map) <= 1)
             {
                 this.earlyImpact = true;
                 this.ImpactSomething();

@@ -3751,14 +3751,14 @@ namespace TorannMagic
                         {
                             if (current.abilityDef != null && (current.abilityDef == this.mimicAbility || this.Pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Apothecary)))
                             {
-                                Pawn injuredPawn = TM_Calc.FindNearbyInjuredPawn(this.Pawn, 10, 2, false);
-                                if (current.abilityDef == TorannMagicDefOf.TM_Elixir && injuredPawn != null)
+                                Pawn injuredPawn = TM_Calc.FindNearbyInjuredPawn(this.Pawn, 12, 2, false);
+                                if (current.abilityDef == TorannMagicDefOf.TM_Elixir && injuredPawn != null && injuredPawn.health != null && injuredPawn.health.hediffSet != null && !injuredPawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_HerbalElixirHD))
                                 {
                                     MightPower mightPower = this.MightData.MightPowersApothecary.FirstOrDefault<MightPower>((MightPower x) => x.abilityDef == TorannMagicDefOf.TM_Elixir);
                                     if (mightPower != null && mightPower.autocast && !this.Pawn.CurJob.playerForced)
                                     {
                                         ability = this.AbilityData.Powers.FirstOrDefault((PawnAbility x) => x.Def == TorannMagicDefOf.TM_Elixir);
-                                        AutoCast.CombatAbility_OnTarget_LoS.TryExecute(this, TorannMagicDefOf.TM_Elixir, ability, current, injuredPawn, 0, out castSuccess);
+                                        AutoCast.CombatAbility_OnTarget.TryExecute(this, TorannMagicDefOf.TM_Elixir, ability, current, injuredPawn, 0, out castSuccess);
                                         //AutoCast.HealSelf.Evaluate(this, TorannMagicDefOf.TM_FirstAid, ability, mightPower, out castSuccess);
                                         if (castSuccess) goto AutoCastExit;
                                     }

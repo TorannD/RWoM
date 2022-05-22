@@ -422,7 +422,7 @@
 	  <li>
         <label>magic use restricted</label>
         <description>We're successfully limiting the use of magic.</description>
-        <baseMoodEffect>2</baseMoodEffect>
+        <baseMoodEffect>4</baseMoodEffect>
       </li>
 	  <li>
         <label>too much magic</label>
@@ -437,7 +437,7 @@
       <li>
         <label>magic dominance</label>
         <description>Magic is utterly dominating the environment; our ideoligion is a sham.</description>
-        <baseMoodEffect>-8</baseMoodEffect>
+        <baseMoodEffect>-6</baseMoodEffect>
       </li>
     </stages>
 	<nullifyingTraits>
@@ -454,7 +454,7 @@
 	  <li>
         <label>restricted mages</label>
         <description>A tight reign is being kept on how many free mages are allowed in our colony.</description>
-        <baseMoodEffect>3</baseMoodEffect>
+        <baseMoodEffect>5</baseMoodEffect>
       </li>
       <li>
         <label>too many mages</label>
@@ -464,17 +464,17 @@
 	  <li>
         <label>excessive mages</label>
         <description>The number of mages in the colony is excessive and out of control; we should immediately enslave all mages to restore good order and discipline.</description>
-        <baseMoodEffect>-5</baseMoodEffect>
+        <baseMoodEffect>-4</baseMoodEffect>
       </li>
 	  <li>
         <label>rampant mage count</label>
         <description>We've clearly failed at restricting the number of free mages in the colony.</description>
-        <baseMoodEffect>-8</baseMoodEffect>
+        <baseMoodEffect>-6</baseMoodEffect>
       </li>
 	  <li>
         <label>mage majority</label>
         <description>There are now more free mages than not; what are we even trying to accomplish?</description>
-        <baseMoodEffect>-12</baseMoodEffect>
+        <baseMoodEffect>-8</baseMoodEffect>
       </li>
     </stages>
 	<nullifyingTraits>
@@ -604,7 +604,7 @@
 	  <li>
         <label>magic abundance</label>
         <description>I'm surrounded by powerful magic - our colony can surely withstand any challenge.</description>
-        <baseMoodEffect>3</baseMoodEffect>
+        <baseMoodEffect>5</baseMoodEffect>
       </li>
 	  <li>
         <label>magic use</label>
@@ -627,12 +627,12 @@
 	  <li>
         <label>magic rush</label>
         <description>magical energy is rushing through me, I feel like I could do anything!</description>
-        <baseMoodEffect>3</baseMoodEffect>
+        <baseMoodEffect>5</baseMoodEffect>
       </li>	  
 	  <li>
         <label>magic use</label>
         <description>I used magic and it felt great.</description>
-        <baseMoodEffect>1</baseMoodEffect>
+        <baseMoodEffect>2</baseMoodEffect>
       </li>
 	  <li>
         <label>magic deprevation</label>
@@ -650,12 +650,12 @@
 	  <li>
         <label>mage dominance</label>
         <description>The number of mages clearly demonstrates the superiority of our colony.</description>
-        <baseMoodEffect>3</baseMoodEffect>
+        <baseMoodEffect>5</baseMoodEffect>
       </li>
 	  <li>
         <label>abundant mages</label>
         <description>Our colony is blessed with a large number of mages, our success is assured!</description>
-        <baseMoodEffect>2</baseMoodEffect>
+        <baseMoodEffect>3</baseMoodEffect>
       </li>  
 	  <li>
         <label>mages collective</label>
@@ -682,7 +682,7 @@
     <stages>
       <li>
         <label>mage</label>
-        <baseOpinionOffset>15</baseOpinionOffset>
+        <baseOpinionOffset>10</baseOpinionOffset>
       </li>
 	  <li>
         <label>mage kinship</label>
@@ -690,7 +690,7 @@
       </li>
 	  <li>
         <label>non-mage</label>
-        <baseOpinionOffset>-10</baseOpinionOffset>
+        <baseOpinionOffset>-5</baseOpinionOffset>
       </li>
     </stages>
   </ThoughtDef>
@@ -788,7 +788,7 @@
     <defName>TM_KilledMage_Venerated_Social</defName>
     <thoughtClass>Thought_MemorySocial</thoughtClass>
     <durationDays>5</durationDays>
-    <stackLimit>1</stackLimit>
+    <stackLimit>5</stackLimit>
     <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
     <nullifyingTraits>
 		  <li>Psychopath</li>
@@ -796,7 +796,7 @@
     <stages>
       <li>
         <label>mage killer</label>
-        <baseOpinionOffset>-40</baseOpinionOffset>
+        <baseOpinionOffset>-10</baseOpinionOffset>
       </li>
     </stages>
   </ThoughtDef>
@@ -872,7 +872,7 @@
     <stages>
       <li>
         <label>used magic</label>
-        <baseOpinionOffset>25</baseOpinionOffset>
+        <baseOpinionOffset>20</baseOpinionOffset>
       </li>
     </stages>
   </ThoughtDef>
@@ -885,12 +885,12 @@
 	<li>
         <label>magic abundance</label>
         <description>I'm in awe and terror by the power of magic!</description>
-        <baseMoodEffect>4</baseMoodEffect>
+        <baseMoodEffect>6</baseMoodEffect>
       </li>	  
 	  <li>
         <label>magic use</label>
         <description>I witnessed glorious magic!</description>
-        <baseMoodEffect>3</baseMoodEffect>
+        <baseMoodEffect>4</baseMoodEffect>
       </li>
 	  <li>
         <label>magic absence</label>
@@ -910,12 +910,12 @@
 	  <li>
         <label>magic rush</label>
         <description>magical energy is rushing through me, I feel like I could do anything!</description>
-        <baseMoodEffect>3</baseMoodEffect>
+        <baseMoodEffect>6</baseMoodEffect>
       </li>
 	  <li>
         <label>magic use</label>
         <description>I used magic; it's a core part of my being and reaffirms confidence in my superiority.</description>
-        <baseMoodEffect>2</baseMoodEffect>
+        <baseMoodEffect>4</baseMoodEffect>
       </li>
 	  <li>
         <label>magic deprevation</label>
@@ -933,17 +933,17 @@
 	  <li>
         <label>mage dominance</label>
         <description>The success of our colony is assured through the power of magic.</description>
-        <baseMoodEffect>4</baseMoodEffect>
+        <baseMoodEffect>8</baseMoodEffect>
       </li>
       <li>
         <label>abundant mages</label>
         <description>Our colony is surely chosen for greatness while graced with this many mages; their combined power is indomitable.</description>
-        <baseMoodEffect>3</baseMoodEffect>
+        <baseMoodEffect>6</baseMoodEffect>
       </li>
 	  <li>
         <label>mages collective</label>
         <description>Like a tapestry, the number of mages in the colony has begun to reveal a grand design.</description>
-        <baseMoodEffect>2</baseMoodEffect>
+        <baseMoodEffect>4</baseMoodEffect>
       </li>
 	  <li>
         <label>mages present</label>
@@ -991,15 +991,15 @@
     <stages>
       <li>
         <label>mage</label>
-        <baseOpinionOffset>35</baseOpinionOffset>
+        <baseOpinionOffset>25</baseOpinionOffset>
       </li>
 	  <li>
         <label>mage kinship</label>
-        <baseOpinionOffset>5</baseOpinionOffset>
+        <baseOpinionOffset>15</baseOpinionOffset>
       </li>
 	  <li>
         <label>non-mage</label>
-        <baseOpinionOffset>-25</baseOpinionOffset>
+        <baseOpinionOffset>-15</baseOpinionOffset>
       </li>
     </stages>
   </ThoughtDef>

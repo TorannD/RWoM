@@ -147,8 +147,8 @@
 <letterText>An ancient lich has wandered into the area and is preparing to assault your colony.\n\nLichs are powerful creatures by themselves, but their true strength resides in their ability to create animated undead from the corpses of the deceased.\n\nThis lich is an ancient being that despises all life, and your merry band of living -things- has so far resisted being snuffed out. It will actively seek to end your story of survival by creating a horde of undead to overwhelm your defenses.\n\nThe lich will periodically create new skeleton warriors to attack the colony; allowing the lich to complete a ritual near an exposed corpse will increase the chance skeleton giants are created. Ultimately, the lich will assault the colony itself, if waves of undead are unable to complete the task first.</letterText>
     <letterDef>ThreatBig</letterDef>	
     <baseChance>0.4</baseChance>
-    <minRefireDays>10</minRefireDays>
-	<earliestDay>90</earliestDay>
+    <minRefireDays>30</minRefireDays>
+	<earliestDay>250</earliestDay>
 	<minPopulation>6</minPopulation>
     <durationDays>
       <min>.4</min>

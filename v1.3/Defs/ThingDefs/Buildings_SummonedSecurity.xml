@@ -255,19 +255,25 @@
 	  <li Class="TorannMagic.CompProperties_Summoned"></li>
     </comps>
   </ThingDef>
+  
+  <!--========================= Defense Pylon =========================-->
+
+  <!-- Level 0 -->
 
 <ThingDef ParentName="TM_BuildingBase">
     <defName>DefensePylon</defName>
     <label>magical defense pylon</label>
     <thingClass>Building_TurretGun</thingClass>
     <graphicData>
-      <texPath>Other/defense_pylon_base</texPath>
+      <texPath>Other/DefensePylon_Base_Level0</texPath>
+      <shaderType>MoteGlow</shaderType>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(2,2)</drawSize>
       <damageData>
         <rect>(0.2,0.2,0.6,0.6)</rect>
       </damageData>
     </graphicData>
+	<uiIconPath>Other/DefensePylon_MenuIcon</uiIconPath>
     <altitudeLayer>Building</altitudeLayer>
     <stealable>false</stealable>
     <rotatable>false</rotatable>
@@ -289,18 +295,17 @@
 	  <li Class="TorannMagic.CompProperties_Summoned"></li>
     </comps>
     <description>A magical defense pylon. Created by materializing magical energy to form a base, and then channeling arcane current into a focal point that emits bursts of raw energy.</description>
-<!--     <passability>PassThroughOnly</passability> -->
-	<passability>Impassable</passability>
-<!--     <pathCost>50</pathCost> -->
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
     <fillPercent>0.4</fillPercent>
     <castEdgeShadows>true</castEdgeShadows>
-    <hasTooltip>false</hasTooltip>
-    <stuffCategories>
+    <hasTooltip>true</hasTooltip>
+    <!-- <stuffCategories>
       <li>Metallic</li>
     </stuffCategories>
-    <costStuffCount>75</costStuffCount>
+    <costStuffCount>75</costStuffCount> -->
     <costList>
-
+		<RawMagicyte>15</RawMagicyte>
     </costList>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
 <!--     <designationCategory>Security</designationCategory> -->
@@ -327,7 +332,7 @@
     <defName>Launcher_DefensePylon</defName>
     <label>energy focus point</label>
     <graphicData>
-      <texPath>Other/defense_pylon_top</texPath>
+      <texPath>Other/DefensePylon_Top</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <!-- <menuHidden>true</menuHidden> -->
@@ -342,9 +347,9 @@
       <AccuracyMedium>0.44</AccuracyMedium>
       <AccuracyLong>0.30</AccuracyLong>
       <RangedWeapon_Cooldown>0.6</RangedWeapon_Cooldown>
-	  <Flammability>0</Flammability>
+      <Flammability>0</Flammability>
       <DeteriorationRate>0</DeteriorationRate>
-	  <Mass>10</Mass>
+      <Mass>10</Mass>
     </statBases>
     <weaponTags>
       <li>DefensePylon</li>
@@ -358,18 +363,19 @@
         <range>32</range>
         <ticksBetweenBurstShots>6</ticksBetweenBurstShots>
         <burstShotCount>4</burstShotCount>
-        <soundCast>GunShotA</soundCast>
+        <soundCast>TM_Shot_DefensePylon</soundCast>
         <soundCastTail>GunTail_Light</soundCastTail>
         <muzzleFlashScale>3</muzzleFlashScale>
       </li>
     </verbs>
   </ThingDef>
-  
+
   <ThingDef ParentName="TM_BaseBullet">
     <defName>Bullet_DefensePylon</defName>
     <label>focused magical energy</label>
     <graphicData>
-      <texPath>Spells/bullet_defense_pylon</texPath>
+      <shaderType>MoteGlow</shaderType>
+      <texPath>Spells/DefensePylonCharge</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <projectile>
@@ -379,28 +385,30 @@
     </projectile>
   </ThingDef>
   
+  <!-- Level 1 -->
+
   <ThingDef ParentName="TM_BuildingBase">
     <defName>DefensePylon_I</defName>
     <label>magical defense pylon (I)</label>
     <thingClass>Building_TurretGun</thingClass>
     <graphicData>
-      <texPath>Other/defense_pylon_base</texPath>
+      <texPath>Other/DefensePylon_Base_Level1</texPath>
+      <shaderType>MoteGlow</shaderType>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(2.2,2.2)</drawSize>
+      <drawSize>(2,2)</drawSize>
       <damageData>
         <rect>(0.2,0.2,0.6,0.6)</rect>
       </damageData>
     </graphicData>
+    <uiIconPath>Other/DefensePylon_MenuIcon</uiIconPath>
     <altitudeLayer>Building</altitudeLayer>
     <stealable>false</stealable>
     <rotatable>false</rotatable>
-	<tradeability>None</tradeability>
+    <tradeability>None</tradeability>
     <statBases>
       <MaxHitPoints>140</MaxHitPoints>
       <Flammability>1.0</Flammability>
       <WorkToBuild>25000</WorkToBuild>
-      <Mass>5</Mass>
-      <Beauty>10</Beauty>
     </statBases>
     <tickerType>Normal</tickerType>
     <comps>
@@ -409,7 +417,7 @@
         <explosiveDamageType>TM_ManaMine</explosiveDamageType>
         <chanceNeverExplodeFromDamage>0</chanceNeverExplodeFromDamage>
       </li>
-	  <li Class="TorannMagic.CompProperties_Summoned"></li>
+      <li Class="TorannMagic.CompProperties_Summoned" />
     </comps>
     <description>A magical defense pylon. Created by materializing magical energy to form a base, and then channeling arcane current into a focal point that emits bursts of raw energy.</description>
     <passability>PassThroughOnly</passability>
@@ -417,43 +425,33 @@
     <fillPercent>0.4</fillPercent>
     <castEdgeShadows>true</castEdgeShadows>
     <hasTooltip>true</hasTooltip>
-    <stuffCategories>
-      <li>Metallic</li>
-    </stuffCategories>
-    <costStuffCount>75</costStuffCount>
-    <costList>
-
-    </costList>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-<!--     <designationCategory>Security</designationCategory> -->
+    <costList>
+      <RawMagicyte>50</RawMagicyte>
+    </costList>
     <specialDisplayRadius>36</specialDisplayRadius>
     <building>
-			<ai_combatDangerous>true</ai_combatDangerous>
       <turretGunDef>Launcher_DefensePylon_I</turretGunDef>
+      <ai_combatDangerous>true</ai_combatDangerous>
       <turretBurstCooldownTime>1.6</turretBurstCooldownTime>
-      <!-- <turretTopGraphicPath>Other/defense_pylon_top</turretTopGraphicPath> -->
-	  <expandHomeArea>false</expandHomeArea>
-	  <deconstructible>false</deconstructible>
-	  <claimable>false</claimable>
-	  <repairable>false</repairable>
-	  <isPlayerEjectable>false</isPlayerEjectable>
+      <expandHomeArea>false</expandHomeArea>
+      <deconstructible>false</deconstructible>
+      <claimable>false</claimable>
+      <repairable>false</repairable>
+      <isPlayerEjectable>false</isPlayerEjectable>
     </building>
-	<resourcesFractionWhenDeconstructed>0</resourcesFractionWhenDeconstructed>
-	<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
-<!--     <designationHotKey>Misc2</designationHotKey> -->
-	<researchPrerequisites>
-
-    </researchPrerequisites>
+    <resourcesFractionWhenDeconstructed>0</resourcesFractionWhenDeconstructed>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <researchPrerequisites />
   </ThingDef>
 
   <ThingDef ParentName="TM_BaseHumanGun">
     <defName>Launcher_DefensePylon_I</defName>
     <label>energy focus point</label>
     <graphicData>
-      <texPath>Other/defense_pylon_top</texPath>
+      <texPath>Other/DefensePylon_Top</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-    <!-- <menuHidden>true</menuHidden> -->
     <description>Focal point of an arcane defense pylon, capable of collecting and emitting bursts of raw magical energy.</description>
     <soundInteract>Interact_Rifle</soundInteract>
     <tradeability>None</tradeability>
@@ -464,10 +462,6 @@
       <AccuracyShort>0.52</AccuracyShort>
       <AccuracyMedium>0.46</AccuracyMedium>
       <AccuracyLong>0.32</AccuracyLong>
-      <RangedWeapon_Cooldown>0.6</RangedWeapon_Cooldown>
-      <DeteriorationRate>0</DeteriorationRate>
-	  <Flammability>0</Flammability>
-	  <Mass>10</Mass>
     </statBases>
     <weaponTags>
       <li>DefensePylon_I</li>
@@ -481,29 +475,33 @@
         <range>36</range>
         <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
         <burstShotCount>5</burstShotCount>
-        <soundCast>GunShotA</soundCast>
+        <soundCast>TM_Shot_DefensePylon</soundCast>
         <soundCastTail>GunTail_Light</soundCastTail>
         <muzzleFlashScale>4</muzzleFlashScale>
       </li>
     </verbs>
   </ThingDef>
-  
+
+  <!-- Level 2 -->
+
   <ThingDef ParentName="TM_BuildingBase">
     <defName>DefensePylon_II</defName>
     <label>magical defense pylon (II)</label>
     <thingClass>Building_TurretGun</thingClass>
     <graphicData>
-      <texPath>Other/defense_pylon_base</texPath>
+      <texPath>Other/DefensePylon_Base_Level2</texPath>
+      <shaderType>MoteGlow</shaderType>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(2.3,2.3)</drawSize>
+      <drawSize>(2,2)</drawSize>
       <damageData>
         <rect>(0.2,0.2,0.6,0.6)</rect>
       </damageData>
     </graphicData>
+    <uiIconPath>Other/DefensePylon_MenuIcon</uiIconPath>
     <altitudeLayer>Building</altitudeLayer>
     <stealable>false</stealable>
     <rotatable>false</rotatable>
-	<tradeability>None</tradeability>
+    <tradeability>None</tradeability>
     <statBases>
       <MaxHitPoints>160</MaxHitPoints>
       <Flammability>1.0</Flammability>
@@ -518,7 +516,7 @@
         <explosiveDamageType>TM_ManaMine</explosiveDamageType>
         <chanceNeverExplodeFromDamage>0</chanceNeverExplodeFromDamage>
       </li>
-	  <li Class="TorannMagic.CompProperties_Summoned"></li>
+      <li Class="TorannMagic.CompProperties_Summoned" />
     </comps>
     <description>A magical defense pylon. Created by materializing magical energy to form a base, and then channeling arcane current into a focal point that emits bursts of raw energy.</description>
     <passability>PassThroughOnly</passability>
@@ -526,42 +524,33 @@
     <fillPercent>0.4</fillPercent>
     <castEdgeShadows>true</castEdgeShadows>
     <hasTooltip>true</hasTooltip>
-    <stuffCategories>
-      <li>Metallic</li>
-    </stuffCategories>
-    <costStuffCount>75</costStuffCount>
-    <costList>
-
-    </costList>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-<!--     <designationCategory>Security</designationCategory> -->
+    <costList>
+      <RawMagicyte>50</RawMagicyte>
+    </costList>
     <specialDisplayRadius>40</specialDisplayRadius>
     <building>
-			<ai_combatDangerous>true</ai_combatDangerous>
       <turretGunDef>Launcher_DefensePylon_II</turretGunDef>
+      <ai_combatDangerous>true</ai_combatDangerous>
       <turretBurstCooldownTime>1.6</turretBurstCooldownTime>
-      <!-- <turretTopGraphicPath>Other/defense_pylon_top</turretTopGraphicPath> -->
-	  <expandHomeArea>false</expandHomeArea>
-	  <deconstructible>false</deconstructible>
-	  <claimable>false</claimable>
-	  <repairable>false</repairable>
-	  <isPlayerEjectable>false</isPlayerEjectable>
+      <expandHomeArea>false</expandHomeArea>
+      <deconstructible>false</deconstructible>
+      <claimable>false</claimable>
+      <repairable>false</repairable>
+      <isPlayerEjectable>false</isPlayerEjectable>
     </building>
-	<resourcesFractionWhenDeconstructed>0</resourcesFractionWhenDeconstructed>
-	<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
-<!--     <designationHotKey>Misc2</designationHotKey> -->
-	<researchPrerequisites>
-    </researchPrerequisites>
+    <resourcesFractionWhenDeconstructed>0</resourcesFractionWhenDeconstructed>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <researchPrerequisites />
   </ThingDef>
 
   <ThingDef ParentName="TM_BaseHumanGun">
     <defName>Launcher_DefensePylon_II</defName>
     <label>energy focus point</label>
     <graphicData>
-      <texPath>Other/defense_pylon_top</texPath>
+      <texPath>Other/DefensePylon_Top</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-    <!-- <menuHidden>true</menuHidden> -->
     <description>Focal point of an arcane defense pylon, capable of collecting and emitting bursts of raw magical energy.</description>
     <soundInteract>Interact_Rifle</soundInteract>
     <tradeability>None</tradeability>
@@ -573,9 +562,9 @@
       <AccuracyMedium>0.48</AccuracyMedium>
       <AccuracyLong>0.34</AccuracyLong>
       <RangedWeapon_Cooldown>0.6</RangedWeapon_Cooldown>
+      <Flammability>0</Flammability>
       <DeteriorationRate>0</DeteriorationRate>
-	  <Flammability>0</Flammability>
-	  <Mass>10</Mass>
+      <Mass>10</Mass>
     </statBases>
     <weaponTags>
       <li>DefensePylon_II</li>
@@ -589,29 +578,33 @@
         <range>40</range>
         <ticksBetweenBurstShots>4</ticksBetweenBurstShots>
         <burstShotCount>6</burstShotCount>
-        <soundCast>GunShotA</soundCast>
+        <soundCast>TM_Shot_DefensePylon</soundCast>
         <soundCastTail>GunTail_Light</soundCastTail>
         <muzzleFlashScale>5</muzzleFlashScale>
       </li>
     </verbs>
   </ThingDef>
-  
-    <ThingDef ParentName="TM_BuildingBase">
+
+  <!-- Level 3 -->
+
+  <ThingDef ParentName="TM_BuildingBase">
     <defName>DefensePylon_III</defName>
     <label>magical defense pylon (III)</label>
     <thingClass>Building_TurretGun</thingClass>
     <graphicData>
-      <texPath>Other/defense_pylon_base</texPath>
+      <texPath>Other/DefensePylon_Base_Level3</texPath>
+      <shaderType>MoteGlow</shaderType>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(2.5,2.5)</drawSize>
+      <drawSize>(2,2)</drawSize>
       <damageData>
         <rect>(0.2,0.2,0.6,0.6)</rect>
       </damageData>
     </graphicData>
+    <uiIconPath>Other/DefensePylon_MenuIcon</uiIconPath>
     <altitudeLayer>Building</altitudeLayer>
     <stealable>false</stealable>
     <rotatable>false</rotatable>
-	<tradeability>None</tradeability>
+    <tradeability>None</tradeability>
     <statBases>
       <MaxHitPoints>180</MaxHitPoints>
       <Flammability>1.0</Flammability>
@@ -626,7 +619,7 @@
         <explosiveDamageType>TM_ManaMine</explosiveDamageType>
         <chanceNeverExplodeFromDamage>0</chanceNeverExplodeFromDamage>
       </li>
-	  <li Class="TorannMagic.CompProperties_Summoned"></li>
+      <li Class="TorannMagic.CompProperties_Summoned" />
     </comps>
     <description>A magical defense pylon. Created by materializing magical energy to form a base, and then channeling arcane current into a focal point that emits bursts of raw energy.</description>
     <passability>PassThroughOnly</passability>
@@ -634,44 +627,33 @@
     <fillPercent>0.4</fillPercent>
     <castEdgeShadows>true</castEdgeShadows>
     <hasTooltip>true</hasTooltip>
-    <stuffCategories>
-      <li>Metallic</li>
-    </stuffCategories>
-    <costStuffCount>75</costStuffCount>
-    <costList>
-
-    </costList>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-
+    <costList>
+      <RawMagicyte>50</RawMagicyte>
+    </costList>
     <specialDisplayRadius>44</specialDisplayRadius>
     <building>
-			<ai_combatDangerous>true</ai_combatDangerous>
       <turretGunDef>Launcher_DefensePylon_III</turretGunDef>
+      <ai_combatDangerous>true</ai_combatDangerous>
       <turretBurstCooldownTime>1.6</turretBurstCooldownTime>
-      <!-- <turretTopGraphicPath>Other/defense_pylon_top</turretTopGraphicPath> -->
-	  <expandHomeArea>false</expandHomeArea>
-	  <deconstructible>false</deconstructible>
-	  <claimable>false</claimable>
-	  <repairable>false</repairable>
-	  <isPlayerEjectable>false</isPlayerEjectable>
+      <expandHomeArea>false</expandHomeArea>
+      <deconstructible>false</deconstructible>
+      <claimable>false</claimable>
+      <repairable>false</repairable>
+      <isPlayerEjectable>false</isPlayerEjectable>
     </building>
-	<resourcesFractionWhenDeconstructed>0</resourcesFractionWhenDeconstructed>
-	<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
-<!-- 	    <designationCategory>Security</designationCategory> -->
-<!--     <designationHotKey>Misc2</designationHotKey> -->
-	<researchPrerequisites>
-
-    </researchPrerequisites>
+    <resourcesFractionWhenDeconstructed>0</resourcesFractionWhenDeconstructed>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <researchPrerequisites />
   </ThingDef>
 
   <ThingDef ParentName="TM_BaseHumanGun">
     <defName>Launcher_DefensePylon_III</defName>
     <label>energy focus point</label>
     <graphicData>
-      <texPath>Other/defense_pylon_top</texPath>
+      <texPath>Other/DefensePylon_Top</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-    <!-- <menuHidden>true</menuHidden> -->
     <description>Focal point of an arcane defense pylon, capable of collecting and emitting bursts of raw magical energy.</description>
     <soundInteract>Interact_Rifle</soundInteract>
     <tradeability>None</tradeability>
@@ -683,9 +665,9 @@
       <AccuracyMedium>0.50</AccuracyMedium>
       <AccuracyLong>0.36</AccuracyLong>
       <RangedWeapon_Cooldown>0.6</RangedWeapon_Cooldown>
+      <Flammability>0</Flammability>
       <DeteriorationRate>0</DeteriorationRate>
-	  <Flammability>0</Flammability>
-	  <Mass>10</Mass>
+      <Mass>10</Mass>
     </statBases>
     <weaponTags>
       <li>DefensePylon_III</li>
@@ -699,7 +681,7 @@
         <range>44</range>
         <ticksBetweenBurstShots>3</ticksBetweenBurstShots>
         <burstShotCount>7</burstShotCount>
-        <soundCast>GunShotA</soundCast>
+        <soundCast>TM_Shot_DefensePylon</soundCast>
         <soundCastTail>GunTail_Light</soundCastTail>
         <muzzleFlashScale>6</muzzleFlashScale>
       </li>

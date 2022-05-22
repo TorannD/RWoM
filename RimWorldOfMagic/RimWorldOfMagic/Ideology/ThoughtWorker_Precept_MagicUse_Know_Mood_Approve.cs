@@ -14,12 +14,12 @@ namespace TorannMagic.Ideology
         {
             if (p.IsColonist && !p.IsPrisoner && !p.IsQuestLodger() && !TM_Calc.IsMagicUser(p))
             {
-                int eventsInLast24 = Find.HistoryEventsManager.GetRecentCountWithinTicks(TorannMagicDefOf.TM_UsedMagic, 60000);
-                if (eventsInLast24 > 12)
+                int eventsInLast60 = Find.HistoryEventsManager.GetRecentCountWithinTicks(TorannMagicDefOf.TM_UsedMagic, 150000);
+                if (eventsInLast60 > 12)
                 {
                     return ThoughtState.ActiveAtStage(0);
                 }
-                else if (eventsInLast24 > 0)
+                else if (eventsInLast60 > 0)
                 {
                     return ThoughtState.ActiveAtStage(1);
                 }

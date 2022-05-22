@@ -16,6 +16,7 @@ namespace TorannMagic
         List<Pawn> threatList = new List<Pawn>();
         List<Pawn> closeThreats = new List<Pawn>();
         List<Pawn> farThreats = new List<Pawn>();
+        List<Pawn> meleeThreats = new List<Pawn>();
         List<Building> buildingThreats = new List<Building>();
 
         public int nextRangedAttack = 0;
@@ -26,9 +27,11 @@ namespace TorannMagic
 
         private int rangedBurstShots = 0;
         private int rangedNextBurst = 0;
+        private float meleeRange = 1.4f;
         private LocalTargetInfo rangedTarget = null;
 
         private int age = -1;
+        private bool deathOnce = false;
 
         //private int actionReady = 0;
         //private int actionTick = 0;
@@ -350,7 +353,7 @@ namespace TorannMagic
                                     DoAoEAttack(this.Pawn.Position, true, 2f, DamageDefOf.Stun, Rand.Range(4, 8));
                                 }
 
-                                if (Rand.Chance(.2f) && this.farThreats.Count() > (3 * this.closeThreats.Count()))
+                                if (Rand.Chance(.2f) && this.farThreats.Count() > (5 * this.closeThreats.Count()))
                                 {
                                     this.Pawn.CurJob.targetA = this.farThreats.RandomElement();
                                 }
@@ -368,7 +371,7 @@ namespace TorannMagic
                                 }
                             }
 
-                            if(this.farThreats.Count() > 2 * this.closeThreats.Count() && Rand.Chance(.3f))
+                            if(this.farThreats.Count() > 2 * this.closeThreats.Count() && this.meleeThreats.Count() < 1 && Rand.Chance(.3f))
                             {
                                 Pawn randomRangedPawn = this.farThreats.RandomElement();
                                 if(this.NextChargeAttack < Find.TickManager.TicksGame)
@@ -445,10 +448,19 @@ namespace TorannMagic
 
                     if (this.Pawn.Downed && this.Pawn.def.defName == "TM_DemonR" && Find.TickManager.TicksGame % 18 == 0)
                     {
-                        CellRect cellRect = CellRect.CenteredOn(this.Pawn.Position, 3);
-                        cellRect.ClipInsideMap(this.Pawn.Map);
-                        GenExplosion.DoExplosion(cellRect.RandomCell, this.Pawn.Map, 2f, DamageDefOf.Burn, this.Pawn, Rand.Range(6, 12), -1, DamageDefOf.Bomb.soundExplosion, null, null, null, null, 0f, 1, false, null, 0f, 0, 0.2f, true);
-                        DamageEntities(this.Pawn, 10f, TMDamageDefOf.DamageDefOf.TM_Shadow, this.Pawn);
+                        if (!deathOnce)
+                        {
+                            CellRect cellRect = CellRect.CenteredOn(this.Pawn.Position, 3);
+                            cellRect.ClipInsideMap(this.Pawn.Map);
+                            GenExplosion.DoExplosion(cellRect.RandomCell, this.Pawn.Map, 2f, DamageDefOf.Burn, this.Pawn, Rand.Range(6, 12), -1, DamageDefOf.Bomb.soundExplosion, null, null, null, null, 0f, 1, false, null, 0f, 0, 0.2f, true);
+                            DamageEntities(this.Pawn, 10f, TMDamageDefOf.DamageDefOf.TM_Shadow, this.Pawn);
+                            deathOnce = true;
+                        }
+                        else if(!this.Pawn.Dead)
+                        {
+                            DamageInfo dinfo = new DamageInfo(TMDamageDefOf.DamageDefOf.TM_Spirit, 10, 2, (float)-1, this.Pawn, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
+                            this.Pawn.Kill(dinfo);
+                        }
                     }
                 }
             }
@@ -483,6 +495,7 @@ namespace TorannMagic
             {
                 this.closeThreats.Clear();
                 this.farThreats.Clear();
+                this.meleeThreats.Clear();
                 List<Pawn> allPawns = this.Pawn.Map.mapPawns.AllPawnsSpawned;
                 for (int i = 0; i < allPawns.Count(); i++)
                 {
@@ -496,7 +509,7 @@ namespace TorannMagic
                                 {
                                     this.closeThreats.Add(allPawns[i]);
                                 }
-                                if (allPawns[i].Faction == null && allPawns[i].InMentalState)
+                                else if (allPawns[i].Faction == null && allPawns[i].InMentalState)
                                 {
                                     this.closeThreats.Add(allPawns[i]);
                                 }
@@ -507,9 +520,20 @@ namespace TorannMagic
                                 {
                                     this.farThreats.Add(allPawns[i]);
                                 }
-                                if (allPawns[i].Faction == null && allPawns[i].InMentalState)
+                                else if (allPawns[i].Faction == null && allPawns[i].InMentalState)
                                 {
                                     this.farThreats.Add(allPawns[i]);                                    
+                                }
+                            }
+                            else if((allPawns[i].Position - this.Pawn.Position).LengthHorizontal <= this.meleeRange)
+                            {
+                                if (this.Pawn.Faction.HostileTo(allPawns[i].Faction))
+                                {
+                                    this.meleeThreats.Add(allPawns[i]);
+                                }
+                                else if (allPawns[i].Faction == null && allPawns[i].InMentalState)
+                                {
+                                    this.meleeThreats.Add(allPawns[i]);
                                 }
                             }
                         }

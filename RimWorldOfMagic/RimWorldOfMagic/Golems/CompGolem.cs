@@ -396,15 +396,18 @@ namespace TorannMagic.Golems
 
         protected virtual void ApplyNeeds()
         {
-            Need_GolemEnergy need_ge = Pawn.needs?.TryGetNeed(TorannMagicDefOf.TM_GolemEnergy) as Need_GolemEnergy;
-            if (need_ge != null)
+            if (Pawn.needs != null)
             {
-                CompGolemEnergyHandler cgeh = InnerWorkstation.Energy;
-                if (cgeh != null)
+                Need_GolemEnergy need_ge = Pawn.needs.TryGetNeed(TorannMagicDefOf.TM_GolemEnergy) as Need_GolemEnergy;
+                if (need_ge != null)
                 {
-                    need_ge.CurLevel = cgeh.StoredEnergy;
-                    need_ge.maxEnergy = cgeh.StoredEnergyMax;
-                    need_ge.energyEfficiency = cgeh.ConversionEfficiency;
+                    CompGolemEnergyHandler cgeh = InnerWorkstation.Energy;
+                    if (cgeh != null)
+                    {
+                        need_ge.CurLevel = cgeh.StoredEnergy;
+                        need_ge.maxEnergy = cgeh.StoredEnergyMax;
+                        need_ge.energyEfficiency = cgeh.ConversionEfficiency;
+                    }
                 }
             }
         }
