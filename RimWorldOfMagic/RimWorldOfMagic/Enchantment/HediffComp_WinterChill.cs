@@ -21,7 +21,7 @@ namespace TorannMagic.Enchantment
             }
             if (Pawn.Map != null && Pawn.Spawned)
             {
-                GenTemperature.PushHeat(Pawn.Position, Pawn.MapHeld, -10f);
+                GenTemperature.PushHeat(Pawn.Position, Pawn.MapHeld, -13f);
             }
         }        
     }
