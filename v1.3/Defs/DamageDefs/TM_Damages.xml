@@ -1184,5 +1184,19 @@
 		<isExplosive>false</isExplosive>
 		<makesBlood>false</makesBlood>
 	</DamageDef>
+	
+  <DamageDef ParentName="TM_LocalInjuryBase">
+    <defName>TM_FreezingWindsDD</defName>
+	<defaultDamage>10</defaultDamage>
+	<hediff>TM_Frozen</hediff>
+    <minDamageToFragment>3</minDamageToFragment>
+    <defaultStoppingPower>1.2</defaultStoppingPower>
+    <defaultArmorPenetration>0.5</defaultArmorPenetration>
+    <buildingDamageFactor>.1</buildingDamageFactor>
+    <plantDamageFactor>2</plantDamageFactor> 
+	<armorCategory>Heat</armorCategory>
+	<isExplosive>false</isExplosive>
+	<hasForcefulImpact>true</hasForcefulImpact>
+  </DamageDef>
   
 </Defs>

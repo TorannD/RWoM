@@ -245,7 +245,7 @@ namespace TorannMagic
                     {
                         magicTraits.Add(cc.classTrait);
                     }
-                }
+                }               
                 return magicTraits;
             }
         }

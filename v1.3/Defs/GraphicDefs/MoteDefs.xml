@@ -574,6 +574,20 @@
   </ThingDef>
   
   <ThingDef ParentName="MoteBase">
+    <defName>Mote_WhiteIce</defName>
+    <graphicData>
+      <texPath>Motes/IceMote</texPath>
+	  <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.05</fadeInTime>
+      <solidTime>0.2</solidTime>
+      <fadeOutTime>0.5</fadeOutTime>
+    </mote>
+  </ThingDef>
+  
+  <ThingDef ParentName="MoteBase">
     <defName>Mote_PurpleSmoke</defName>
     <graphicData>
       <texPath>Motes/PurpleSmokeMote</texPath>

@@ -299,7 +299,7 @@
   <ThingDef ParentName="TM_ArtifactBase">
     <defName>TM_Artifact_Sandstone</defName>
     <label>Charm of Rest</label>    
-    <description>A pendant enchanted with the essence of sandstone. This pendant improves its wearers quality of rest and prevents passerby's to disturb their slumber.</description>
+    <description>A pendant enchanted with the essence of sandstone. This pendant improves its wearers quality of rest and prevents a passerby from disturbing their slumber.</description>
     <graphicData> 
 		<texPath>Items/artifact_mindpendant</texPath>
 		<graphicClass>Graphic_Single</graphicClass> 

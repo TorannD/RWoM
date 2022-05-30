@@ -29,7 +29,7 @@ namespace TorannMagic.Ideology
         {
             Thoughts.TM_Inspiration_ArcanePathway inspiration = pawn.Inspiration as Thoughts.TM_Inspiration_ArcanePathway;
 
-            TraitDef td = TM_Data.MagicTraits[inspiration.mageIndex];
+            TraitDef td = TM_Data.EnabledMagicTraits[inspiration.mageIndex];
             if (td != null)
             {
                 CompUseEffect_LearnMagic.FixTrait(pawn, pawn.story.traits.allTraits);
@@ -41,7 +41,7 @@ namespace TorannMagic.Ideology
                 {
                     CompUseEffect_LearnMagic.FixBardSkills(pawn);
                 }
-                pawn.story.traits.GainTrait(new Trait(td, 0, false));
+                pawn.story.traits.GainTrait(new Trait(td, td.degreeDatas.FirstOrDefault().degree, false));
             }
         }
 

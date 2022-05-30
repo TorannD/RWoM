@@ -331,6 +331,31 @@
         <baseMoodEffect>-8</baseMoodEffect>
       </li>
     </stages>
-  </ThoughtDef>
+  </ThoughtDef>  
+  
+   <!-- Winter's Staff -->
+  
+   <HediffDef ParentName="BaseArtifactHD">
+    <defName>TM_WinterStaffHD</defName>
+	<label>Winter's Chill</label>
+	<description>Drains heat and energy from the body; prevents heat stroke. Mages only: lowers room temperature.</description>
+    <defaultLabelColor>(0.4,0.55,1)</defaultLabelColor>
+      <stages>
+        <li>
+			<minSeverity>.001</minSeverity>
+			<becomeVisible>true</becomeVisible>
+			<hungerRateFactor>1.1</hungerRateFactor>
+			<statOffsets>
+			  <ComfyTemperatureMin>10</ComfyTemperatureMin>
+			  <ComfyTemperatureMax>25</ComfyTemperatureMax>
+			</statOffsets>
+        </li>
+	 </stages>
+	<comps>
+      <li>
+        <compClass>TorannMagic.Enchantment.HediffComp_WinterChill</compClass>
+      </li>  
+    </comps>	 
+  </HediffDef>
   
 </Defs>

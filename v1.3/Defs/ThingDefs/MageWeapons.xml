@@ -183,7 +183,7 @@
 		<description>The elephant spear is crafted using the tusks of an elephant, and is typically a status symbol reserved for head hunters or leaders of a tribe. The shaft is engraved with minor enchantments, further boosting the combat abilities of the user.
 		
 This weapon is enchanted and provides additional benefits to trained mages and fighters:
-Max Energy: +10%
+Max Energy: +10
 Damage Boost: +10%
 Arcane Resistance: +20%</description>
 		<graphicData>
@@ -379,7 +379,7 @@ Arcane Resistance: +20%</description>
 The elephant bow is engraved with minor enchantments and is a preferred weapon by many experienced rangers and hunters.
 
 This weapon is enchanted and provides additional benefits to trained mages and fighters:
-Max Energy: +5%
+Max Energy: +5
 Energy Regen: +5%
 Damage Boost: +10%
 Ability Cooldown: -10%</description>
@@ -477,7 +477,7 @@ Ability Cooldown: -10%</description>
 		<description>An axe crafted using thrumbo horns that are fused together with a clasp made from magicyte. This clasp stores arcane potential and transfers it as physical force when the axe is swung, allowing it to deliver mighty blows capable of cleaving through multiple opponents. The shaft is also etched with magical runes to augment the wielder's power.
 		
 This weapon is enchanted and provides additional benefits to trained mages and fighters:
-Max Energy: +10%
+Max Energy: +10
 Damage Boost: +20%
 Arcane Resistance: +30%
 Cleaving Strike</description>
@@ -678,7 +678,7 @@ Haste on hit (25%)</description>
 		<description>A one handed mace designed for effectiveness against a variety of foes. The head of the Glory Maul has a blunt, end shaped with a jagged formation to condense the weight of a blow to several points, and is balanced on the other end against a curved talon's spike used to puncture thick armor. The Glory Maul is so named for its enchantment, which can grant the wielder with a powerful blessing of might.
 		
 This weapon is enchanted and provides additional benefits to trained mages and fighters:
-Max Energy: +20%
+Max Energy: +20
 Arcane Resistance: +20%
 Damage Boost: +10%
 Bestow Might on hit (15%)</description>
@@ -775,7 +775,7 @@ Bestow Might on hit (15%)</description>
 		<description>A two handed mace so heavily enchanted that it tears apart the cohesion of any material it strikes. It is forged seemingly from a single piece of metal and wielded from a handle wrapped in simple leather. Finely etched runes cover the surface of the mace, making it appear almost delicate. When held, the quality of the design is apparent, with perfect balance and solid handling despite the authoritative finality of its weight. Each blow has a chance to inflict frailty on the target, causing it to take more damage from subsequent attacks.
 		
 This weapon is enchanted and provides additional benefits to trained mages and fighters:
-Max Energy: +40%
+Max Energy: +40
 Arcane Resistance: +40%
 Damage Boost: +30%
 Frailty on hit (50%)</description>
@@ -1009,7 +1009,7 @@ Cleaving Strike</description>
     <description>A bow shaped from the horn of a Thrumbo. The horn is hallowed out to decrease the weight and softened by soaking it in a magicyte compound that adds a surprising suppleness to the horn. The bow is further enhanced with embedded enchantments and arcane engravings that travel the length of the bow. The bow is said to be almost sentient, able to determine the intended target through a mental link with the wielder. Arrows fired from this bow almost always hit their intended target. This effect does have a tendency to delude the users own capability, however.
 
 This weapon is enchanted and provides additional benefits to trained mages and fighters:
-Max Energy: +20%
+Max Energy: +20
 Energy Regen: +10%
 Damage Boost: +20%
 Ability Cooldown: -10%
@@ -1233,7 +1233,7 @@ Nightshade Toxin on hit (20%)</description>
     <description>A wand able to slowly convert nearby arcane energy into elemental fire. Wands are used as focusing tools to harness innate power more than as a weapon itself.
 	
 This weapon is enchanted and provides additional benefits to trained mages and fighters:
-Max Energy: +5%
+Max Energy: +5
 Energy Regen: +5%
 Damage Boost: +15%</description>
     <graphicData>
@@ -1317,7 +1317,7 @@ Damage Boost: +15%</description>
     <description>A wand able to slowly convert nearby arcane energy into elemental ice. Wands are used as focusing tools to harness innate power more than as a weapon itself.
 	
 This weapon is enchanted and provides additional benefits to trained mages and fighters:
-Max Energy: +5%
+Max Energy: +5
 Energy Regen: +5%
 Damage Boost: +15%</description>
     <graphicData>
@@ -1406,7 +1406,7 @@ Damage Boost: +15%</description>
     <description>A wand able to slowly convert nearby arcane energy into elemental lightning. Wands are used as focusing tools to harness innate power more than as a weapon itself.
 
 This weapon is enchanted and provides additional benefits to trained mages and fighters:
-Max Energy: +5%
+Max Energy: +5
 Energy Regen: +5%
 Damage Boost: +15%</description>
     <graphicData>
@@ -1471,11 +1471,11 @@ Damage Boost: +15%</description>
     <description>A staff crafted from an ancient design bearing a palpable aura of wisdom. This staff is able to tap into the spirit realm and allow the wielder to communicate with their ancestral spirits who can manifest their power in the form of a physical barrier. The energy to perform this action comes from the spirits themselves and does not draw energy from the user, though the spirits require time to rest between requests.
 
 This weapon is enchanted and provides additional benefits to trained mages and fighters:
-Max Energy: +30%
+Max Energy: +30
 Energy Regen: +20%
 Arcane Resistance: +20%
 
-Augmentation adds ability: Arcane Barrier</description>
+Ability: Arcane Barrier</description>
     <graphicData>
       <texPath>Items/weapons/staff_elements_256</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -1612,7 +1612,7 @@ Augmentation adds ability: Arcane Barrier</description>
     <description>A staff that creates a mental link with the wielder to harness focused energy that can be used to launch a stream of blazing projectiles or create a hardened barrier around the wielder that can deflect projectiles. Mages gain tremendous boosts to magical spells while wielding this staff but to a mundane pawn it is nothing but a blunt weapon.
 
 This weapon is enchanted and provides additional benefits to trained mages and fighters:
-Max Energy: +20%
+Max Energy: +20
 Energy Regen: +10%
 Damage Boost: +40%</description>
     <graphicData>
@@ -1727,23 +1727,165 @@ Damage Boost: +40%</description>
     </tools>
   </ThingDef>
   
-<!--   <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
-	<thingClass>TorannMagic.Weapon.Projectile_BlazingPower</thingClass>
-	<defName>Projectile_BlazingPower</defName>
-	<label>blazing power</label>
+  <!-- Staff of Winter's Reign -->	
+  
+  <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
+	<!-- <thingClass>TorannMagic.Weapon.Projectile_BlazingPower</thingClass> -->
+	<defName>Projectile_FreezingWinds</defName>
+	<label>freezing winds</label>
 	<graphicData>
-		<texPath>Spells/blazingpower</texPath>
+		<texPath>Motes/IceMote</texPath>
 		<graphicClass>Graphic_Single</graphicClass>
 		<shaderType>TransparentPostLight</shaderType>
 	</graphicData>
 	<projectile>
-		<damageDef>TM_BlazingPower</damageDef>
+		<damageDef>TM_FreezingWindsDD</damageDef>
 		<damageAmountBase>6</damageAmountBase>
-		<speed>66</speed>
-		<explosionRadius>.8</explosionRadius>
+		<speed>20</speed>
+		<explosionRadius>1.6</explosionRadius>
 		<postExplosionSpawnChance>1</postExplosionSpawnChance>
 	</projectile>
-  </ThingDef> -->
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseBullet" Name="FlyingObject_FreezingWinds">
+	   <defName>FlyingObject_FreezingWinds</defName>
+	   <thingClass>TorannMagic.Weapon.FlyingObject_FreezingWinds</thingClass>
+	   <label>freezing winds</label>
+	   <graphicData>
+			<texPath>Motes/IceMote</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+	   <projectile>
+			<flyOverhead>false</flyOverhead>
+			<damageDef>TM_FreezingWindsDD</damageDef>
+			<damageAmountBase>6</damageAmountBase>
+			<speed>20</speed>
+			<explosionRadius>1.6</explosionRadius>
+			<postExplosionSpawnChance>1</postExplosionSpawnChance>
+	   </projectile>
+	</ThingDef>
+  
+  <ThingDef ParentName="TM_BaseRangedMageFoci">
+    <defName>TM_WinterStaff</defName>
+    <label>Winter's Reign</label>
+    <description>A rod of blue steel adorned with a crown of crystal shards. The touch of this staff never warms, as if to remind the bearer of it's icy sovereignty. The power of the staff is two-fold - it greatly augments the innate magical power of a mage and is able to create a hailstorm in any environment. The power of the staff has its price - when held, the staff will drain heat and energy from the holder and, if held by a mage, expands this effect to the surrounding atmosphere. Only mages are able to project the power of this staff.
+
+This weapon is enchanted and provides additional benefits to trained mages and fighters:
+Max Energy: +80
+Ability Cooldown: -30%
+Arcane Resistance: +20%
+Arcane Damage: +50%
+
+Ability: Hailstorm</description>
+    <graphicData>
+      <texPath>Items/weapons/staff_winter</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Revolver</soundInteract>	
+	<relicChance>1.5</relicChance>
+    <statBases>
+      <WorkToMake>77700</WorkToMake>
+	  <MarketValue>4500</MarketValue>
+      <Mass>3.0</Mass>
+      <AccuracyTouch>0.88</AccuracyTouch>
+      <AccuracyShort>0.71</AccuracyShort>
+      <AccuracyMedium>0.66</AccuracyMedium>
+      <AccuracyLong>0.56</AccuracyLong>
+      <RangedWeapon_Cooldown>.05</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>200</Steel>	  
+	  <Silver>200</Silver>
+	  <Uranium>10</Uranium>
+	  <RawMagicyte>300</RawMagicyte>
+    </costList>
+	<recipeMaker>
+	  <workSpeedStat>WorkSpeedGlobal</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+	  <effectWorking>Smelt</effectWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+	  <recipeUsers>
+        <li>ElectricSmithy</li>
+        <li>FueledSmithy</li>
+		<li>CraftingSpot</li>
+		<li>TableArcaneForge</li>
+      </recipeUsers>
+      <workAmount>80000</workAmount>
+	  <skillRequirements>
+			<Intellectual>10</Intellectual>
+	  </skillRequirements>
+	  <researchPrerequisite>
+			<li>TM_ArcaneArtifacts</li>
+	  </researchPrerequisite>
+    </recipeMaker>	
+	<comps>
+		<li Class = "TorannMagic.Enchantment.CompProperties_EnchantedItem">
+		  <hasEnchantment>true</hasEnchantment>
+		  <hasAbility>true</hasAbility>
+		  <maxMP>0.80</maxMP>
+		  <maxMPTier>Crafted</maxMPTier>
+		  <coolDown>0.30</coolDown>
+		  <coolDownTier>Crafted</coolDownTier>
+		  <arcaneRes>0.20</arcaneRes>
+		  <arcaneResTier>Standard</arcaneResTier>		 
+		  <arcaneDmg>0.50</arcaneDmg>
+		  <arcaneDmgTier>Crafted</arcaneDmgTier>	
+		  <hediff>TM_WinterStaffHD</hediff>
+		  <hediffSeverity>1</hediffSeverity>		  
+		</li>
+		<li Class="AbilityUser.CompProperties_AbilityItem">
+		  <Abilities>
+			<li>TM_Weapon_WintersFury</li>
+		  </Abilities>
+		</li>
+		<li>
+		  <compClass>CompOversizedWeapon.CompOversizedWeapon</compClass>
+		</li>			
+	</comps>
+	<equippedAngleOffset>12</equippedAngleOffset>
+    <verbs>
+      <li>
+        <verbClass>TorannMagic.Weapon.Verb_FreezingWinds</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Projectile_FreezingWinds</defaultProjectile>
+		<onlyManualCast>true</onlyManualCast>
+        <warmupTime>0</warmupTime>
+        <range>30</range>
+        <soundCast>TM_Woosh</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>0</muzzleFlashScale>
+		<burstShotCount>1</burstShotCount>
+		<ticksBetweenBurstShots>15</ticksBetweenBurstShots>
+		<requireLineOfSight>true</requireLineOfSight>
+		<targetParams>
+			<canTargetItems>true</canTargetItems>
+			<canTargetPawns>true</canTargetPawns>
+			<canTargetBuildings>true</canTargetBuildings>
+			<canTargetSelf>false</canTargetSelf>
+			<canTargetLocations>true</canTargetLocations>
+		</targetParams>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>rod</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>1.6</cooldownTime>
+      </li>
+	  <li>
+        <label>staff head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>22</power>
+        <cooldownTime>1.9</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
   
     <!-- =======================  Rings   ============================ -->
   

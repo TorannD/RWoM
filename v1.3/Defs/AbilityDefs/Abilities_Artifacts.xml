@@ -107,5 +107,36 @@ Use of Conviction will destroy the orb.</description>
             </targetParams>
         </MainVerb>
     </AbilityUser.AbilityDef>
+	
+	<!-- winter's reign -->
+	
+	<TorannMagic.TMAbilityDef ParentName="BaseArtifactAbility">
+        <defName>TM_Weapon_WintersFury</defName>
+        <label>Winter's Fury</label>
+        <uiIconPath>UI/wintersfury</uiIconPath>
+        <description>Covers the map in rolling waves of dark, angry clouds carrying winters' biting scorn.</description>        
+		<MainVerb Class="AbilityUser.VerbProperties_Ability">
+            <verbClass>TorannMagic.Enchantment.Verb_WeaponWintersFury</verbClass>
+            <hasStandardCommand>true</hasStandardCommand>
+            <defaultProjectile>Projectile_Default</defaultProjectile>
+            <abilityDef>TM_Weapon_WintersFury</abilityDef>
+            <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+            <targetParams>
+			  <canTargetPawns>true</canTargetPawns>
+			  <canTargetBuildings>false</canTargetBuildings>
+			  <canTargetSelf>true</canTargetSelf>
+			  <canTargetLocations>false</canTargetLocations>
+			</targetParams>
+            <warmupTime>5</warmupTime>
+            <SecondsToRecharge>600000</SecondsToRecharge>
+            <range>0</range>
+			<isViolent>false</isViolent>
+            <burstShotCount>1</burstShotCount>
+            <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+            <soundCast>Message_PositiveEvent</soundCast>
+            <muzzleFlashScale>0</muzzleFlashScale>
+            <isPrimary>false</isPrimary>
+        </MainVerb>
+    </TorannMagic.TMAbilityDef>
 
 </Defs>

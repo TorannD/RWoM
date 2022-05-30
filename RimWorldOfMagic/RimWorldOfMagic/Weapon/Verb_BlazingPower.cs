@@ -9,19 +9,19 @@ namespace TorannMagic.Weapon
         protected override bool TryCastShot()
         {
             CompAbilityUserMagic comp = this.CasterPawn.TryGetComp<CompAbilityUserMagic>();
-            if(comp != null && comp.IsMagicUser)
+            if (comp != null && comp.IsMagicUser)
             {
                 return base.TryCastShot();
             }
-            else if(this.CasterPawn is TMHollowGolem)
+            else if (this.CasterPawn is TMHollowGolem)
             {
                 return base.TryCastShot();
             }
             else
-            {
-                MoteMaker.ThrowText(this.CasterPawn.DrawPos, this.CasterPawn.Map, "Failed", -1);
+            {                
+                MoteMaker.ThrowText(this.CasterPawn.DrawPos, this.CasterPawn.Map, "Failed", -1);                
                 return false;
-            }
+            }          
             
         }
     }

@@ -92,7 +92,7 @@ namespace TorannMagic.Enchantment
 
             if(initialized && !abilitiesInitialized)
             {
-                InitializeAbilities(this.parent as Apparel);
+                InitializeAbilities(this.parent);
             }
 
             if (!initialized)
@@ -170,34 +170,51 @@ namespace TorannMagic.Enchantment
 
                 this.initialized = true;
             }
-        }
+        }        
 
-        private void InitializeAbilities(Apparel abilityApparel)
+        private void InitializeAbilities(ThingWithComps abilityThing)
         {
-            if (abilityApparel != null && abilityApparel.Wearer != null)
+            if (abilityThing is Apparel)
             {
-                CompAbilityItem comp = abilityApparel.TryGetComp<CompAbilityItem>();
-                if (comp != null)
+                Apparel abilityApparel = abilityThing as Apparel;
+                if (abilityApparel != null && abilityApparel.Wearer != null)
                 {
-                    comp.Notify_Equipped(abilityApparel.Wearer);                   
+                    CompAbilityItem comp = abilityApparel.TryGetComp<CompAbilityItem>();
+                    if (comp != null)
+                    {
+                        comp.Notify_Equipped(abilityApparel.Wearer);
+                    }
+                    //AbilityUserMod.Notify_ApparelRemoved_PostFix(abilityApparel.Wearer.apparel, abilityApparel);
+                    //AbilityUserMod.Notify_ApparelAdded_PostFix(abilityApparel.Wearer.apparel, abilityApparel);
+                    this.abilitiesInitialized = true;
                 }
-                //AbilityUserMod.Notify_ApparelRemoved_PostFix(abilityApparel.Wearer.apparel, abilityApparel);
-                //AbilityUserMod.Notify_ApparelAdded_PostFix(abilityApparel.Wearer.apparel, abilityApparel);
-                this.abilitiesInitialized = true;
             }
+            else
+            {
+                if (abilityThing != null)
+                {
+                    CompAbilityItem comp = abilityThing.TryGetComp<CompAbilityItem>();
+                    if (comp != null)
+                    {
+                        comp.Notify_Equipped(WearingPawn);
+                    }
+                    this.abilitiesInitialized = true;
+                }
+            }
+            
         }
 
         public override void CompTickRare()
         {
             if (this.hediff != null)
             {
-                Apparel artifact = this.parent as Apparel;
+                Apparel artifact = this.parent as Apparel;                
                 if (artifact != null)
                 {
                     if (artifact.Wearer != null)
-                    {
+                    {                       
                         //Log.Message("" + artifact.LabelShort + " has holding owner " + artifact.Wearer.LabelShort);
-                        if(artifact.Wearer.health.hediffSet.GetFirstHediffOfDef(hediff, false) != null)
+                        if (artifact.Wearer.health.hediffSet.GetFirstHediffOfDef(hediff, false) != null)
                         {
 
                         }
@@ -213,6 +230,27 @@ namespace TorannMagic.Enchantment
                         }
                     }
                 }
+                Thing primary = this.parent as Thing;
+                if(primary != null && primary.ParentHolder is Pawn_EquipmentTracker)
+                {                    
+                    Pawn_EquipmentTracker pet = primary.ParentHolder as Pawn_EquipmentTracker;
+                    if(pet.pawn != null && pet.pawn.equipment != null && pet.pawn.equipment.Primary == primary)
+                    {
+                        if (pet.pawn.health.hediffSet.GetFirstHediffOfDef(hediff, false) != null)
+                        {
+
+                        }
+                        else
+                        {
+                            HealthUtility.AdjustSeverity(pet.pawn, hediff, hediffSeverity);
+                            HediffComp_EnchantedItem hdc = pet.pawn.health.hediffSet.GetFirstHediffOfDef(hediff, false).TryGetComp<HediffComp_EnchantedItem>();
+                            if (hdc != null)
+                            {
+                                hdc.enchantedWeapon = primary;
+                            }
+                        }
+                    }
+                }                
             }
             if (this.Props.hasAbility && !this.abilitiesInitialized)
             {
@@ -229,6 +267,16 @@ namespace TorannMagic.Enchantment
                     //this.MagicAbilities = new List<AbilityDef>();
                     //this.MagicAbilities.Clear();
                     // abilities;
+                }
+                ThingWithComps primary = this.parent as ThingWithComps;
+                if (primary != null && primary.ParentHolder is Pawn_EquipmentTracker)
+                {
+                    Pawn_EquipmentTracker pet = primary.ParentHolder as Pawn_EquipmentTracker;
+                    if (pet.pawn != null && pet.pawn.equipment != null && pet.pawn.equipment.Primary == primary)
+                    {
+                        this.InitializeAbilities(primary);
+                    }
+                    this.MagicAbilities = primary.GetComp<CompAbilityItem>().Props.Abilities;
                 }
             }
             if (GetEnchantedStuff_HediffDef != null)

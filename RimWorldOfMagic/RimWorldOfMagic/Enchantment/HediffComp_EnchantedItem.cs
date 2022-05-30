@@ -12,6 +12,7 @@ namespace TorannMagic.Enchantment
         public bool initialized = false;
         public bool removeNow = false;
         public Apparel enchantedItem;
+        public Thing enchantedWeapon;
 
         public int checkActiveRate = 60;
         public int hediffActionRate = 1;
@@ -63,6 +64,10 @@ namespace TorannMagic.Enchantment
                 {
                     return this.enchantedItem.def.label;
                 }
+                else if(this.enchantedWeapon != null && this.enchantedWeapon.def != null && this.enchantedWeapon.def.label != null)
+                {
+                    return this.enchantedWeapon.def.label;
+                }
                 else
                 {
                     return "";
@@ -97,7 +102,10 @@ namespace TorannMagic.Enchantment
             }
             if(Find.TickManager.TicksGame % this.checkActiveRate == 0)
             {
-                CheckActiveApparel();
+                if(CheckActiveApparel() && CheckActiveEquipment())
+                {
+                    this.removeNow = true;
+                }                
             }
             if(this.hediffActionRate != 0 && Find.TickManager.TicksGame % this.hediffActionRate == 0)
             {
@@ -105,7 +113,7 @@ namespace TorannMagic.Enchantment
             }
         }
         
-        public void CheckActiveApparel()
+        public bool CheckActiveApparel()
         {
             bool remove = true;
             List<Apparel> apparel = this.Pawn.apparel.WornApparel;
@@ -116,8 +124,18 @@ namespace TorannMagic.Enchantment
                     remove = false;
                 }
             }
+            return remove;
+        }
 
-            this.removeNow = remove;
+        public bool CheckActiveEquipment()
+        {
+            bool remove = true;
+            Thing primary = this.Pawn.equipment.Primary;
+            if (primary != null && primary == enchantedWeapon)
+            {                
+                remove = false;                
+            }
+            return remove;
         }
 
         public override bool CompShouldRemove => base.CompShouldRemove || this.removeNow;

@@ -138,6 +138,7 @@ namespace TorannMagic
         public static ThingDef FlyingObject_Spinning;
         public static ThingDef FlyingObject_DirtDevil;
         public static ThingDef FlyingObject_LightningTrap;
+        public static ThingDef FlyingObject_FreezingWinds;
 
         public static GameConditionDef ManaDrain;
         public static GameConditionDef ManaSurge;
@@ -1173,6 +1174,7 @@ namespace TorannMagic
         public static ThingDef Mote_Twinkle;
         public static ThingDef Mote_Flame;
         public static ThingDef Mote_Ice;
+        public static ThingDef Mote_WhiteIce;
         public static ThingDef Mote_Casting;
         public static ThingDef Mote_AntiCasting;
         public static ThingDef Mote_1sText;

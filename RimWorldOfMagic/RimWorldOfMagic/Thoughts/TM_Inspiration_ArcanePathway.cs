@@ -22,7 +22,7 @@ namespace TorannMagic.Thoughts
         {
             get
             {
-                TaggedString taggedString = def.beginLetter.Formatted(pawn.LabelShortCap, TM_Data.EnabledMagicTraits[mageIndex].degreeDatas[0].label).AdjustedFor(pawn);
+                TaggedString taggedString = def.beginLetter.Formatted(pawn.LabelShortCap, TM_Data.EnabledMagicTraits[mageIndex].degreeDatas[TM_Data.EnabledMagicTraits[mageIndex].degreeDatas.FirstOrDefault().degree].label).AdjustedFor(pawn);
                 if (!string.IsNullOrWhiteSpace(reason))
                 {
                     taggedString = reason.Formatted(pawn.LabelCap, TM_Data.EnabledMagicTraits[mageIndex].degreeDatas[0].LabelCap, pawn.Named("PAWN")).AdjustedFor(pawn) + "\n\n" + taggedString;
@@ -33,7 +33,7 @@ namespace TorannMagic.Thoughts
 
         public override void PostStart(bool sendLetter = true)
         {
-            mageIndex = TM_Calc.GetRandomAcceptableMagicClassIndex(pawn);
+            mageIndex = TM_Calc.GetRandomAcceptableMagicClassIndex(pawn);            
             base.PostStart(sendLetter);
         }
 
@@ -42,7 +42,7 @@ namespace TorannMagic.Thoughts
             get 
             {
                 int numTicks = (int)((def.baseDurationDays - AgeDays) * 60000f);
-                return def.baseInspectLine + " - " + TM_Data.EnabledMagicTraits[mageIndex].degreeDatas[0].label + " (" + "ExpiresIn".Translate() + ": " + numTicks.ToStringTicksToPeriod() + ")";
+                return def.baseInspectLine + " - " + TM_Data.EnabledMagicTraits[mageIndex].degreeDatas[TM_Data.EnabledMagicTraits[mageIndex].degreeDatas.FirstOrDefault().degree].label + " (" + "ExpiresIn".Translate() + ": " + numTicks.ToStringTicksToPeriod() + ")";
             }
         }
 
@@ -59,7 +59,7 @@ namespace TorannMagic.Thoughts
         {
             if (!def.endMessage.NullOrEmpty() && PawnUtility.ShouldSendNotificationAbout(pawn))
             {
-                Messages.Message(def.endMessage.Formatted(pawn.LabelCap, TM_Data.EnabledMagicTraits[mageIndex].degreeDatas[0].label, pawn.Named("PAWN")).AdjustedFor(pawn), pawn, MessageTypeDefOf.NeutralEvent);
+                Messages.Message(def.endMessage.Formatted(pawn.LabelCap, TM_Data.EnabledMagicTraits[mageIndex].degreeDatas[TM_Data.EnabledMagicTraits[mageIndex].degreeDatas.FirstOrDefault().degree].label, pawn.Named("PAWN")).AdjustedFor(pawn), pawn, MessageTypeDefOf.NeutralEvent);
             }
         }
     }

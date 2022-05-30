@@ -863,5 +863,44 @@
 			<destroyedOutLabel>severed</destroyedOutLabel>
 		</injuryProps>
 	</HediffDef>
+	
+  <HediffDef ParentName="TM_InjuryBase">
+    <defName>TM_Frozen</defName>
+    <label>freezing winds</label>
+	<description>Bitterly cold winds.</description>
+    <displayWound>false</displayWound>
+    <comps>
+      <li Class="HediffCompProperties_TendDuration">
+        <labelTendedWell>tended</labelTendedWell>
+        <labelTendedWellInner>tended</labelTendedWellInner>
+        <labelSolidTendedWell>tended</labelSolidTendedWell>
+      </li>
+      <li Class="HediffCompProperties_GetsPermanent">
+        <permanentLabel>frostbite</permanentLabel>
+      </li>
+    </comps>
+	<injuryProps>
+		<painPerSeverity>0.001</painPerSeverity>
+		<averagePainPerSeverityPermanent>0.001</averagePainPerSeverityPermanent>
+		<bleedRate>0</bleedRate>
+		<canMerge>true</canMerge>
+			<destroyedLabel>Frozen</destroyedLabel>
+			<destroyedOutLabel>Frozen</destroyedOutLabel>
+	</injuryProps>
+	<stages>
+		<li>
+		<capMods>
+			<li>
+				<capacity>Moving</capacity>
+				<offset>-0.02</offset>
+			</li>
+			<li>
+				<capacity>Manipulation</capacity>
+				<offset>-0.05</offset>
+			</li>
+		</capMods>
+		</li>
+	</stages>
+  </HediffDef>
 
 </Defs>
