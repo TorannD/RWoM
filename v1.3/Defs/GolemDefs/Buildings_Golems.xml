@@ -23,6 +23,7 @@
     <thingClass>TorannMagic.Golems.Building_TMGolemBase</thingClass>
     <tickerType>Normal</tickerType>
     <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+	<tradeability>None</tradeability>
     <thingCategories>
       <li>BuildingsSpecial</li>
     </thingCategories>

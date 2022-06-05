@@ -412,7 +412,7 @@ namespace TorannMagic.Golems
 		public override void Tick()
 		{
 			base.Tick();
-            if(!initialized)
+            if(!initialized && this.Map != null)
             {
                 Initialize();
                 initialized = true;

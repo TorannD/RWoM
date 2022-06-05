@@ -366,6 +366,23 @@ namespace TorannMagic
         //    return true;
         //}
 
+        [HarmonyPatch(typeof(Projectile), "Impact", null)]
+        public class Projectile_Impact_NoClamorForMagic_Patch
+        {
+            private static bool Prefix(Projectile __instance)
+            {                
+                if(__instance.ContentSource != null)
+                {
+                    if(__instance.ContentSource.PackageId == "kure.arom" || __instance.ContentSource.PackageId == "torann.arimworldofmagic")
+                    {
+                        __instance.Destroy();
+                        return false;
+                    }
+                }
+                return true;
+            }
+        }
+
         [HarmonyPatch(typeof(CompPowerBattery), "DrawPower", null)]
         public class DrawPower_Patch
         {
@@ -6361,12 +6378,12 @@ namespace TorannMagic
                     {
                         List<Pawn> mapPawns = m.mapPawns.AllPawnsSpawned;
                         foreach (Pawn p in mapPawns)
-                        {
+                        {                            
                             TMPawnGolem pg = p as TMPawnGolem;
-                            if (pg != null && pg.Faction.IsPlayer && !pawns.Contains(pg))
+                            if (pg != null && pg.Faction.IsPlayer && pawns != null && !pawns.Contains(pg) && pawns.Count > 0 && pawns[0].Map == pg.Map)
                             {
-                                pawns.Add(pg);
-                            }
+                                pawns.Add(pg);                               
+                            }                            
                         }
                     }
                 }

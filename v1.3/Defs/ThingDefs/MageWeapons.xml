@@ -1825,7 +1825,7 @@ Ability: Hailstorm</description>
 		  <hasAbility>true</hasAbility>
 		  <maxMP>0.80</maxMP>
 		  <maxMPTier>Crafted</maxMPTier>
-		  <coolDown>0.30</coolDown>
+		  <coolDown>-0.30</coolDown>
 		  <coolDownTier>Crafted</coolDownTier>
 		  <arcaneRes>0.20</arcaneRes>
 		  <arcaneResTier>Standard</arcaneResTier>		 
