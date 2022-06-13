@@ -1596,7 +1596,7 @@ namespace TorannMagic
                         cellList = GenRadial.RadialCellsAround(p.Position, 6, true).ToList();
                         for (int i = 0; i < cellList.Count; i++)
                         {
-                            if (cellList[i].IsValid && cellList[i].InBounds(p.Map))
+                            if (cellList[i].IsValid && cellList[i].InBoundsWithNullCheck(p.Map))
                             {
                                 List<Thing> thingList = cellList[i].GetThingList(p.Map);
                                 if (thingList != null && thingList.Count > 0)
@@ -2140,7 +2140,7 @@ namespace TorannMagic
                     for (int i = 0; i < targets.Count; i++)
                     {
                         curCell = targets.ToArray<IntVec3>()[i];
-                        if (curCell.InBounds(map) && curCell.IsValid)
+                        if (curCell.InBoundsWithNullCheck(map) && curCell.IsValid)
                         {
                             victim = curCell.GetFirstPawn(map);
                         }

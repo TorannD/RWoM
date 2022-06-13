@@ -264,7 +264,7 @@ namespace TorannMagic
         {
             this.nextChargeAttack = this.Props.chargeCooldownTicks + Find.TickManager.TicksGame;
             bool flag = t != null && t.DistanceToEdge(this.Pawn.Map) > 6;
-            if (flag && t.InBounds(this.Pawn.Map) && t.IsValid && t.Walkable(this.Pawn.Map) && Pawn.Position.DistanceTo(t) <= 60)
+            if (flag && t.InBoundsWithNullCheck(this.Pawn.Map) && t.IsValid && t.Walkable(this.Pawn.Map) && Pawn.Position.DistanceTo(t) <= 60)
             {
                 this.castingCompleteTick = Find.TickManager.TicksGame + this.Props.chargeAttackDelay;
                 this.flightTarget = t;
@@ -728,7 +728,7 @@ namespace TorannMagic
                         c.Destroy(DestroyMode.Vanish);
                     }
                 }
-                if (curCell.InBounds(map) && curCell.Walkable(map))
+                if (curCell.InBoundsWithNullCheck(map) && curCell.Walkable(map))
                 {
                     SpawnThings skeleton = new SpawnThings();
                     if (Rand.Chance(geChance + corpseMult))

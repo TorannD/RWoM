@@ -111,7 +111,7 @@ namespace TorannMagic.WorldTransport
             for (int i = 0; i < dropPods.Count; i++)
             {
                 IntVec3 result = default(IntVec3);
-                if (!exactCell || !(near.InBounds(map) && near.Walkable(map) && !near.Roofed(map)))
+                if (!exactCell || !(near.InBoundsWithNullCheck(map) && near.Walkable(map) && !near.Roofed(map)))
                 {                    
                     DropCellFinder.TryFindDropSpotNear(near, map, out result, allowFogged: false, canRoofPunch: true);
                 }

@@ -83,7 +83,7 @@ namespace TorannMagic
                     for (int j = 0; j < targets.Count(); j++)
                     {
                         IntVec3 curCell = targets.ToArray<IntVec3>()[j];
-                        if (curCell.IsValid && curCell.InBounds(pawn.Map))
+                        if (curCell.IsValid && curCell.InBoundsWithNullCheck(pawn.Map))
                         {
                             Vector3 angle = GetVector(explosionCenters[i], curCell);
                             if (explosionRadii[i] <= 3)

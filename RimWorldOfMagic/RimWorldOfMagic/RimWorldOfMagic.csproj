@@ -377,6 +377,7 @@
     <Compile Include="FlyingObject_TimeDelay.cs" />
     <Compile Include="FlyingObject_ValiantCharge.cs" />
     <Compile Include="FlyingObject_Whirlwind.cs" />
+    <Compile Include="GenGridExtensions.cs" />
     <Compile Include="Gizmo_EnergyStatus.cs" />
     <Compile Include="Gizmo_StatusBar.cs" />
     <Compile Include="HarmonyPatches.cs" />

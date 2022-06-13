@@ -36,7 +36,7 @@ namespace TorannMagic
                 curCell = targets.ToArray<IntVec3>()[i];
 
                 TM_MoteMaker.ThrowPoisonMote(curCell.ToVector3Shifted(), map, .3f);
-                if (curCell.InBounds(map))
+                if (curCell.InBoundsWithNullCheck(map))
                 { 
                     Corpse corpse = null;
                     List<Thing> thingList;

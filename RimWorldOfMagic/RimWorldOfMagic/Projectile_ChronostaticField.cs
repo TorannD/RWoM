@@ -91,7 +91,7 @@ namespace TorannMagic
             cellList = GenRadial.RadialCellsAround(base.Position, this.radius, true).ToList(); //this.radius instead of 2
             for (int i = 0; i < cellList.Count; i++)
             {
-                if (cellList[i].IsValid && cellList[i].InBounds(this.Map))
+                if (cellList[i].IsValid && cellList[i].InBoundsWithNullCheck(this.Map))
                 {
                     List<Thing> thingList = cellList[i].GetThingList(this.Map);
                     if (thingList != null && thingList.Count > 0)

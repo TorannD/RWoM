@@ -194,7 +194,7 @@ namespace TorannMagic
                 bool flag2 = this.ticksToImpact <= 0;
                 if (flag2)
                 {
-                    bool flag3 = this.DestinationCell.InBounds(base.Map);
+                    bool flag3 = this.DestinationCell.InBoundsWithNullCheck(base.Map);
                     if (flag3)
                     {
                         base.Position = this.DestinationCell;
@@ -292,7 +292,7 @@ namespace TorannMagic
                         {
                             Vector3 launchVector = TM_Calc.GetVector(this.origin, hitThing.Position.ToVector3());
                             IntVec3 projectedPosition = hitThing.Position + ((10f - distanceToTarget) * (1 + (.15f * verVal)) * launchVector).ToIntVec3();
-                            if (projectedPosition.IsValid && projectedPosition.InBounds(hitThing.Map))
+                            if (projectedPosition.IsValid && projectedPosition.InBoundsWithNullCheck(hitThing.Map))
                             {
                                 LaunchFlyingObect(projectedPosition, hitPawn, Mathf.RoundToInt(10f - distanceToTarget));
                             }

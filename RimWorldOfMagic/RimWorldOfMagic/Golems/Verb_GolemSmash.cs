@@ -26,7 +26,7 @@ namespace TorannMagic.Golems
                     for (int i = 0; i < targetCells.Count; i++)
                     {
                         curCell = targetCells[i];                        
-                        if (curCell.IsValid && curCell.InBounds(CasterPawn.Map))
+                        if (curCell.IsValid && curCell.InBoundsWithNullCheck(CasterPawn.Map))
                         {
                             float angle = (Quaternion.AngleAxis(90, Vector3.up) * TM_Calc.GetVector(target.Cell, curCell)).ToAngleFlat();
                             TM_MoteMaker.ThrowGenericFleck(FleckDefOf.DustPuffThick, target.CenterVector3, CasterPawn.Map, Rand.Range(.5f, .8f), Rand.Range(.3f, .5f), .1f, Rand.Range(.3f, .5f), 0, 1.5f, angle, Rand.Range(0, 360));

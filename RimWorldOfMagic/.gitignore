@@ -1,0 +1,7 @@
+# Ignore Rider generated folder (Main Dev uses Visual Studio and Rider can auto generate this folder)
+**/.idea/
+
+# ReSharper/Rider settings
+*.DotSettings.user
+
+*.cache

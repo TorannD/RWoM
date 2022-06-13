@@ -522,7 +522,7 @@ namespace TorannMagic.Golems
                 IntVec3 cell = infoTarget.Cell;
                 FleckMaker.ThrowAirPuffUp(infoTarget.CenterVector3, this.Map);
                 FleckMaker.ThrowHeatGlow(infoTarget.Cell, this.Map, 1f);
-                if (cell.IsValid && cell.InBounds(this.Map) && !cell.Fogged(this.Map) && cell.Standable(this.Map) && ReachabilityUtility.CanReach(this, infoTarget, PathEndMode.OnCell, Danger.Deadly, false, false, TraverseMode.ByPawn))
+                if (cell.IsValid && cell.InBoundsWithNullCheck(this.Map) && !cell.Fogged(this.Map) && cell.Standable(this.Map) && ReachabilityUtility.CanReach(this, infoTarget, PathEndMode.OnCell, Danger.Deadly, false, false, TraverseMode.ByPawn))
                 {
                     Golem.dormantPosition = cell;
                     Golem.dormantMap = this.Map;

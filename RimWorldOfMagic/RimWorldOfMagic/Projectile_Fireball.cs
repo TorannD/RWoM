@@ -45,7 +45,7 @@ namespace TorannMagic
             for (int i = 0; i < (pwrVal * 3); i++)
 			{
 				IntVec3 randomCell = cellRect.RandomCell;
-                if(randomCell.IsValid && randomCell.InBounds(map) && !randomCell.Fogged(map))
+                if(randomCell.IsValid && randomCell.InBoundsWithNullCheck(map) && !randomCell.Fogged(map))
                 {
                     this.FireExplosion(randomCell, map, 2.2f, ver);
                 }

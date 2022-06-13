@@ -85,7 +85,7 @@ namespace TorannMagic
                         {
                             curCell = targets.ToArray<IntVec3>()[i];
 
-                            if (curCell.InBounds(base.Map) && curCell.IsValid)
+                            if (curCell.InBoundsWithNullCheck(base.Map) && curCell.IsValid)
                             {
                                 Pawn victim = curCell.GetFirstPawn(base.Map);
                                 if (victim != null && !victim.Dead && victim.RaceProps.IsFlesh)

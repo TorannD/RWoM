@@ -160,7 +160,7 @@ namespace TorannMagic
                     IEnumerable<IntVec3> explosionCells = newExplosionCells.Except(oldExplosionCells);
                     foreach (IntVec3 cell in explosionCells)
                     {
-                        if (cell.InBounds(map))
+                        if (cell.InBoundsWithNullCheck(map))
                         {
                             Vector3 heading = (cell - centerCell).ToVector3();
                             float distance = heading.magnitude;

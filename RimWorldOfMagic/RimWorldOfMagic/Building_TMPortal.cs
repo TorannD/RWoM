@@ -260,7 +260,7 @@ namespace TorannMagic
         public static List<IntVec3> PortableCellsAround(IntVec3 pos, Map map)
         {
             Building_TMPortal.portableCells.Clear();
-            if (!pos.InBounds(map))
+            if (!pos.InBoundsWithNullCheck(map))
             {
                 return Building_TMPortal.portableCells;
 
@@ -298,7 +298,7 @@ namespace TorannMagic
                 for (int i = 0; i < targets.Count(); i++)
                 {
                     curCell = targets.ToArray<IntVec3>()[i];
-                    if (curCell.InBounds(this.Map) && curCell.IsValid)
+                    if (curCell.InBoundsWithNullCheck(this.Map) && curCell.IsValid)
                     {
                         Pawn interactingPawn = curCell.GetFirstPawn(this.Map);
                         if (interactingPawn != null)

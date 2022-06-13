@@ -128,7 +128,7 @@ namespace TorannMagic
                 for (int i = 0; i < 30; i++)
                 {
                     IntVec3 randomCell = cellList.RandomElement();
-                    if (randomCell.IsValid && randomCell.InBounds(pawn.Map) && !randomCell.Fogged(pawn.Map) && randomCell.Walkable(pawn.Map))
+                    if (randomCell.IsValid && randomCell.InBoundsWithNullCheck(pawn.Map) && !randomCell.Fogged(pawn.Map) && randomCell.Walkable(pawn.Map))
                     {
                         //FilthMaker.MakeFilth(randomCell, this.Map, ThingDefOf.Filth_Blood, 1);
                         //Log.Message("creating blood at " + randomCell);
@@ -185,7 +185,7 @@ namespace TorannMagic
                 List<IntVec3> cellList = GenRadial.RadialCellsAround(this.BF[i].position, .4f + this.BF[i].pulseCount, false).ToList();
                 for (int j = 0; j < cellList.Count; j++)
                 {
-                    if (cellList[j].IsValid && cellList[j].InBounds(this.Map))
+                    if (cellList[j].IsValid && cellList[j].InBoundsWithNullCheck(this.Map))
                     {
                         List<Thing> thingList = cellList[j].GetThingList(this.Map);
                         for (int k = 0; k < thingList.Count; k++)

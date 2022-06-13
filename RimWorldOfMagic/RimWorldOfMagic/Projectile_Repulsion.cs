@@ -100,14 +100,14 @@ namespace TorannMagic
                     curCell = cellList[i];
                     Vector3 angle = GetVector(base.Position, curCell);
                     TM_MoteMaker.ThrowArcaneWaveMote(curCell.ToVector3(), this.Map, .3f * (curCell - base.Position).LengthHorizontal, .1f, .05f, .3f, 0, 3, (Quaternion.AngleAxis(90, Vector3.up) * angle).ToAngleFlat(), (Quaternion.AngleAxis(90, Vector3.up) * angle).ToAngleFlat());
-                    if (curCell.IsValid && curCell.InBounds(this.Map))
+                    if (curCell.IsValid && curCell.InBoundsWithNullCheck(this.Map))
                     {
                         victim = curCell.GetFirstPawn(this.Map);
                         if (victim != null && !victim.Dead)
                         {
                             Vector3 launchVector = GetVector(base.Position, victim.Position);
                             IntVec3 projectedPosition = victim.Position + (force * launchVector).ToIntVec3();
-                            if (projectedPosition.IsValid && projectedPosition.InBounds(this.Map))
+                            if (projectedPosition.IsValid && projectedPosition.InBoundsWithNullCheck(this.Map))
                             {
                                 if (Rand.Chance(TM_Calc.GetSpellSuccessChance(pawn, victim, true)))
                                 {

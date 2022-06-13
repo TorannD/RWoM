@@ -200,7 +200,7 @@ namespace TorannMagic
         {
             List<IntVec3> cellRange = new List<IntVec3>();
             cellRange.Clear();
-            if (!pos.InBounds(map))
+            if (!pos.InBoundsWithNullCheck(map))
             {
                 return null;
             }

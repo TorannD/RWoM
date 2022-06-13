@@ -148,7 +148,7 @@ namespace TorannMagic
             {                
                 Pawn pawn = null;                
                 curCell = targets.ToArray<IntVec3>()[i];
-                if (curCell.InBounds(map) && curCell.IsValid)
+                if (curCell.InBoundsWithNullCheck(map) && curCell.IsValid)
                 {
                     pawn = curCell.GetFirstPawn(map);
                 }

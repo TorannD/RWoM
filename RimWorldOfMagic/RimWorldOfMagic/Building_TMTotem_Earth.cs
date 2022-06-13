@@ -43,7 +43,7 @@ namespace TorannMagic
                     for (int i = 0; i < targetCells.Count(); i++)
                     {
                         curCell = targetCells[i];
-                        if (curCell.IsValid && curCell.InBounds(this.Map))
+                        if (curCell.IsValid && curCell.InBoundsWithNullCheck(this.Map))
                         {
                             List<Thing> thingList = curCell.GetThingList(this.Map);
                             for (int j = 0; j < thingList.Count(); j++)

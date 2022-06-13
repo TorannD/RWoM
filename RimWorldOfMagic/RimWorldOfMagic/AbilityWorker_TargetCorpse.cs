@@ -40,7 +40,7 @@ namespace TorannMagic
             for (int i = 0; i < targets.Count(); i++)
             {
                 curCell = targets.ToArray<IntVec3>()[i];
-                if (curCell.InBounds(pawn.Map) && curCell.IsValid)
+                if (curCell.InBoundsWithNullCheck(pawn.Map) && curCell.IsValid)
                 {
                     List<Thing> thingList;
                     thingList = curCell.GetThingList(pawn.Map);
@@ -64,7 +64,7 @@ namespace TorannMagic
             for (int i = 0; i < targets.Count(); i++)
             {
                 curCell = targets.ToArray<IntVec3>()[i];
-                if (curCell.InBounds(pawn.Map) && curCell.IsValid)
+                if (curCell.InBoundsWithNullCheck(pawn.Map) && curCell.IsValid)
                 {
                     List<Thing> thingList;
                     thingList = curCell.GetThingList(pawn.Map);

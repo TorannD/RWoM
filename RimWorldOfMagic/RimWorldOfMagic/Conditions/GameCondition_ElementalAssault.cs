@@ -129,7 +129,7 @@ namespace TorannMagic.Conditions
 
         private bool IsGoodLocationForSpawn(IntVec3 loc)
         {
-            return loc.InBounds(base.SingleMap) && !loc.Roofed(base.SingleMap) && loc.Standable(base.SingleMap) && loc.IsValid && !loc.Fogged(base.SingleMap) && loc.Walkable(base.SingleMap);
+            return loc.InBoundsWithNullCheck(base.SingleMap) && !loc.Roofed(base.SingleMap) && loc.Standable(base.SingleMap) && loc.IsValid && !loc.Fogged(base.SingleMap) && loc.Walkable(base.SingleMap);
         }
 
         private bool IsGoodCenterLocation(IntVec2 loc)

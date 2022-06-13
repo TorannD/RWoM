@@ -625,7 +625,7 @@ namespace TorannMagic
                                     }
                                     else
                                     {
-                                        bool flag3 = this.DestinationCell.InBounds(base.Map);
+                                        bool flag3 = this.DestinationCell.InBoundsWithNullCheck(base.Map);
                                         if (flag3)
                                         {
                                             base.Position = this.DestinationCell;
@@ -636,7 +636,7 @@ namespace TorannMagic
                                 }
                                 else
                                 {
-                                    bool flag3 = this.DestinationCell.InBounds(base.Map);
+                                    bool flag3 = this.DestinationCell.InBoundsWithNullCheck(base.Map);
                                     if (flag3)
                                     {
                                         base.Position = this.DestinationCell;
