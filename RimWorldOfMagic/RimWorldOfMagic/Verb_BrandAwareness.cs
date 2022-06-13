@@ -41,34 +41,20 @@ namespace TorannMagic
         protected override bool TryCastShot()
         {
             bool flag = false;
-            Pawn caster = this.CasterPawn;
-            Pawn hitPawn = this.currentTarget.Thing as Pawn;
+            Pawn caster = this.CasterPawn;            
             
-            if(hitPawn != null && caster != null)
+            if(caster != null && this.CurrentTarget.HasThing && this.CurrentTarget.Thing is Pawn)
             {
+                Pawn hitPawn = this.currentTarget.Thing as Pawn;
                 CompAbilityUserMagic casterComp = caster.TryGetComp<CompAbilityUserMagic>();
 
                 if (casterComp != null && hitPawn.health != null && hitPawn.health.hediffSet != null && hitPawn != caster)
                 {
                     TM_Action.UpdateBrand(hitPawn, caster, casterComp, TorannMagicDefOf.TM_AwarenessBrandHD);
 
-                    Hediff hd = hitPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_AwarenessBrandHD);
-                    if (hd != null)
-                    {
-                        HediffComp_BrandingBase hdc = hd.TryGetComp<HediffComp_BrandingBase>();
-                        if (hdc != null)
-                        {
-                            hdc.BranderPawn = caster;
-                        }
-                    }
+                    UpdateHediffComp(hitPawn);
 
-                    Effecter effect = EffecterDefOf.Skip_EntryNoDelay.Spawn();
-                    effect.Trigger(new TargetInfo(caster), new TargetInfo(hitPawn));
-                    effect.Cleanup();
-
-                    Effecter effectExit = EffecterDefOf.Skip_ExitNoDelay.Spawn();
-                    effectExit.Trigger(new TargetInfo(hitPawn), new TargetInfo(hitPawn));
-                    effectExit.Cleanup();
+                    DoBrandingEffect(hitPawn);
                 }
                 else
                 {
@@ -82,7 +68,31 @@ namespace TorannMagic
 
             this.PostCastShot(flag, out flag);
             return flag;
-        }      
+        }
+
+        private void UpdateHediffComp(Pawn hitPawn)
+        {
+            Hediff hd = hitPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_AwarenessBrandHD);
+            if (hd != null)
+            {
+                HediffComp_BrandingBase hdc = hd.TryGetComp<HediffComp_BrandingBase>();
+                if (hdc != null)
+                {
+                    hdc.BranderPawn = this.CasterPawn;
+                }
+            }
+        }
+
+        private void DoBrandingEffect(Pawn hitPawn)
+        {
+            Effecter effect = EffecterDefOf.Skip_EntryNoDelay.Spawn();
+            effect.Trigger(new TargetInfo(this.CasterPawn), new TargetInfo(hitPawn));
+            effect.Cleanup();
+
+            Effecter effectExit = EffecterDefOf.Skip_ExitNoDelay.Spawn();
+            effectExit.Trigger(new TargetInfo(hitPawn), new TargetInfo(hitPawn));
+            effectExit.Cleanup();
+        }
 
         //private void ChangeExistingBrand(Pawn hitPawn, CompAbilityUserMagic casterComp)
         //{

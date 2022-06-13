@@ -173,7 +173,7 @@ namespace TorannMagic
                                 mote.offsetZ = -0.5f;
                             }
                         }
-                        if(Find.TickManager.TicksGame % 120 == 0)
+                        if (Find.TickManager.TicksGame % 120 == 0)
                         {
                             CheckAndTrain();
                         }

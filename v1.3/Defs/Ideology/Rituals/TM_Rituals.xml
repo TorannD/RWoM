@@ -178,7 +178,7 @@
     <defName>TM_SeverenceRitual</defName>
 	<nameMaker>NamerRitualMindMutilation</nameMaker>
     <ritualBehavior>TM_SeverMagic</ritualBehavior>
-    <ritualExpectedPostfix>{0} {1} want to carry out the severence ritual as soon as possible.</ritualExpectedPostfix>
+    <ritualExpectedDesc>{0} {1} want to carry out the severence ritual as soon as possible.</ritualExpectedDesc>
     <ritualObligationTargetFilter MayRequire="Ludeon.RimWorld.Ideology">RitualSpotIdeogramOrAltar</ritualObligationTargetFilter>
     <ritualOutcomeEffect>TM_SeverMagic</ritualOutcomeEffect>
     <tags>
@@ -444,7 +444,7 @@
     <defName>TM_GiftingRitual</defName>
 	<nameMaker>NamerRitualGifting</nameMaker>
     <ritualBehavior>TM_BestowMagic</ritualBehavior>
-    <ritualExpectedPostfix>{0} {1} want to carry out the gifting ritual as soon as possible.</ritualExpectedPostfix>
+    <ritualExpectedDesc>{0} {1} want to carry out the gifting ritual as soon as possible.</ritualExpectedDesc>
     <ritualObligationTargetFilter MayRequire="Ludeon.RimWorld.Ideology">RitualSpotIdeogramOrAltar</ritualObligationTargetFilter>
     <ritualOutcomeEffect>TM_BestowMagic</ritualOutcomeEffect>
     <tags>
@@ -697,7 +697,7 @@
     <defName>TM_BestowMagicClassRitual</defName>
 	<nameMaker>NamerRitualGifting</nameMaker>
     <ritualBehavior>TM_ArcanePathway</ritualBehavior>
-    <ritualExpectedPostfix>{0} {1} want to carry out the arcane path ritual as soon as possible.</ritualExpectedPostfix>
+    <ritualExpectedDesc>{0} {1} want to carry out the arcane path ritual as soon as possible.</ritualExpectedDesc>
     <ritualObligationTargetFilter MayRequire="Ludeon.RimWorld.Ideology">RitualSpotIdeogramOrAltar</ritualObligationTargetFilter>
     <ritualOutcomeEffect>TM_BestowMagicClass</ritualOutcomeEffect>
     <tags>

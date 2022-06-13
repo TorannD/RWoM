@@ -41,45 +41,38 @@ namespace TorannMagic
         {
             bool flag = false;
             Pawn caster = this.CasterPawn;
-            Pawn hitPawn = this.currentTarget.Thing as Pawn;
-            if(hitPawn != null && hitPawn.RaceProps != null && hitPawn.RaceProps.Humanlike && !TM_Calc.IsUndead(hitPawn) && caster != null && hitPawn != caster)
+            
+            if(caster != null && this.CurrentTarget.HasThing && this.CurrentTarget.Thing is Pawn)
             {
-                CompAbilityUserMagic casterComp = caster.TryGetComp<CompAbilityUserMagic>();
-                CompAbilityUserMagic targetComp = hitPawn.TryGetComp<CompAbilityUserMagic>();
-                if (casterComp != null && targetComp != null && targetComp.Mana != null && targetComp.IsMagicUser && hitPawn.health != null && hitPawn.health.hediffSet != null)
+                Pawn hitPawn = this.currentTarget.Thing as Pawn;
+                if (hitPawn.RaceProps != null && hitPawn.RaceProps.Humanlike && !TM_Calc.IsUndead(hitPawn) && hitPawn != caster)
                 {
-                    //RemoveOldBrand(hitPawn);
-
-                    //HealthUtility.AdjustSeverity(hitPawn, TorannMagicDefOf.TM_SiphonBrandHD, .05f);
-                    //if (casterComp.BrandedPawns != null)
-                    //{
-                    //    casterComp.BrandedPawns.Add(hitPawn);
-                    //}
-                    //Hediff newBrand = hitPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_SiphonBrandHD);
-                    //if (newBrand != null && newBrand.TryGetComp<HediffComp_BrandingSiphon>() != null)
-                    //{
-                    //    newBrand.TryGetComp<HediffComp_BrandingSiphon>().BranderPawn = caster;
-                    //}
-
-                    TM_Action.UpdateBrand(hitPawn, caster, casterComp, TorannMagicDefOf.TM_SiphonBrandHD);
-
-                    Hediff hd = hitPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_SiphonBrandHD);
-                    if (hd != null)
+                    CompAbilityUserMagic casterComp = caster.TryGetComp<CompAbilityUserMagic>();
+                    CompAbilityUserMagic targetComp = hitPawn.TryGetComp<CompAbilityUserMagic>();
+                    if (casterComp != null && targetComp != null && targetComp.Mana != null && targetComp.IsMagicUser && hitPawn.health != null && hitPawn.health.hediffSet != null)
                     {
-                        HediffComp_BrandingBase hdc = hd.TryGetComp<HediffComp_BrandingBase>();
-                        if (hdc != null)
-                        {
-                            hdc.BranderPawn = caster;
-                        }
+                        //RemoveOldBrand(hitPawn);
+
+                        //HealthUtility.AdjustSeverity(hitPawn, TorannMagicDefOf.TM_SiphonBrandHD, .05f);
+                        //if (casterComp.BrandedPawns != null)
+                        //{
+                        //    casterComp.BrandedPawns.Add(hitPawn);
+                        //}
+                        //Hediff newBrand = hitPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_SiphonBrandHD);
+                        //if (newBrand != null && newBrand.TryGetComp<HediffComp_BrandingSiphon>() != null)
+                        //{
+                        //    newBrand.TryGetComp<HediffComp_BrandingSiphon>().BranderPawn = caster;
+                        //}
+
+                        TM_Action.UpdateBrand(hitPawn, caster, casterComp, TorannMagicDefOf.TM_SiphonBrandHD);
+
+                        UpdateHediffComp(hitPawn);
+                        DoBrandingEffect(hitPawn);
                     }
-
-                    Effecter effect = EffecterDefOf.Skip_EntryNoDelay.Spawn();
-                    effect.Trigger(new TargetInfo(caster), new TargetInfo(hitPawn));
-                    effect.Cleanup();
-
-                    Effecter effectExit = EffecterDefOf.Skip_ExitNoDelay.Spawn();
-                    effectExit.Trigger(new TargetInfo(hitPawn), new TargetInfo(hitPawn));
-                    effectExit.Cleanup();
+                    else
+                    {
+                        Messages.Message("TM_InvalidTarget".Translate(CasterPawn.LabelShort, this.Ability.Def.label), MessageTypeDefOf.RejectInput);
+                    }
                 }
                 else
                 {
@@ -93,6 +86,30 @@ namespace TorannMagic
 
             this.PostCastShot(flag, out flag);
             return flag;
+        }
+
+        private void UpdateHediffComp(Pawn hitPawn)
+        {
+            Hediff hd = hitPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_SiphonBrandHD);
+            if (hd != null)
+            {
+                HediffComp_BrandingBase hdc = hd.TryGetComp<HediffComp_BrandingBase>();
+                if (hdc != null)
+                {
+                    hdc.BranderPawn = this.CasterPawn;
+                }
+            }
+        }
+
+        private void DoBrandingEffect(Pawn hitPawn)
+        {
+            Effecter effect = EffecterDefOf.Skip_EntryNoDelay.Spawn();
+            effect.Trigger(new TargetInfo(this.CasterPawn), new TargetInfo(hitPawn));
+            effect.Cleanup();
+
+            Effecter effectExit = EffecterDefOf.Skip_ExitNoDelay.Spawn();
+            effectExit.Trigger(new TargetInfo(hitPawn), new TargetInfo(hitPawn));
+            effectExit.Cleanup();
         }
 
         //private void RemoveOldBrand(Pawn hitPawn)

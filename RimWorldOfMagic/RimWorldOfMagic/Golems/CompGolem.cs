@@ -115,16 +115,19 @@ namespace TorannMagic.Golems
                     return false;
                 }
             }
-            if (target.Cell.DistanceToEdge(source.Map) < 8)
+            if (target.Thing != null && target.Thing.Map == Pawn.Map)
             {
-                return false;
+                if (target.Cell.DistanceToEdge(source.Map) < 8)
+                {
+                    return false;
+                }
+                if (checkThreatPath && !target.Cell.InAllowedArea(Pawn))
+                {
+                    return false;
+                }
+                return true;
             }
-            if (checkThreatPath && !target.Cell.InAllowedArea(Pawn))
-            {
-                return false;
-            }
-
-            return true;
+            return false;
         }
 
         //unsaved variables
@@ -565,7 +568,7 @@ namespace TorannMagic.Golems
         {
             if (this.age > 0)
             {
-                if (!this.initialized)
+                if (!this.initialized && InnerWorkstation != null)
                 {
                     Initialize();
                     this.initialized = true;

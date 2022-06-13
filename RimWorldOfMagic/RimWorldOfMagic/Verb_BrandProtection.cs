@@ -40,11 +40,11 @@ namespace TorannMagic
         protected override bool TryCastShot()
         {
             bool flag = false;
-            Pawn caster = this.CasterPawn;
-            Pawn hitPawn = this.currentTarget.Thing as Pawn;
+            Pawn caster = this.CasterPawn;            
 
-            if(hitPawn != null && caster != null)
+            if(caster != null && this.CurrentTarget.HasThing && this.CurrentTarget.Thing is Pawn)
             {
+                Pawn hitPawn = this.currentTarget.Thing as Pawn;
                 CompAbilityUserMagic casterComp = caster.TryGetComp<CompAbilityUserMagic>();
 
                 if (casterComp != null && hitPawn.health != null && hitPawn.health.hediffSet != null && hitPawn != caster)
@@ -64,26 +64,8 @@ namespace TorannMagic
 
                     TM_Action.UpdateBrand(hitPawn, caster, casterComp, TorannMagicDefOf.TM_ProtectionBrandHD);
 
-                    Hediff hd = hitPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_ProtectionBrandHD);
-                    if (hd != null)
-                    {
-                        HediffComp_BrandingBase hdc = hd.TryGetComp<HediffComp_BrandingBase>();
-                        if (hdc != null)
-                        {
-                            hdc.BranderPawn = caster;
-                        }
-                    }
-
-                    TargetInfo ti = new TargetInfo(hitPawn.Position, hitPawn.Map, false);
-                    TM_MoteMaker.MakeOverlay(ti, TorannMagicDefOf.TM_Mote_PsycastAreaEffect, hitPawn.Map, Vector3.zero, .1f, 0f, .1f, .3f, .3f, -2f);
-
-                    for (int i =0; i < 15; i++)
-                    {
-                        Vector3 drawPos = hitPawn.DrawPos;
-                        drawPos.x += Rand.Range(-.6f, .6f);
-                        drawPos.z += Rand.Range(-.6f, .6f);
-                        TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_GlowingRuneA, drawPos, hitPawn.Map, Rand.Range(.05f, .15f), Rand.Range(.2f, .3f), Rand.Range(.1f, .25f), Rand.Range(.2f, .7f), Rand.Range(-20, 20), 0f, 0f, Rand.Range(0, 360));
-                    }
+                    UpdateHediffComp(hitPawn);
+                    DoBrandEffect(hitPawn);
                 }
                 else
                 {
@@ -97,7 +79,34 @@ namespace TorannMagic
 
             this.PostCastShot(flag, out flag);
             return flag;
-        }   
+        }  
+
+        private void UpdateHediffComp(Pawn hitPawn)
+        {
+            Hediff hd = hitPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_ProtectionBrandHD);
+            if (hd != null)
+            {
+                HediffComp_BrandingBase hdc = hd.TryGetComp<HediffComp_BrandingBase>();
+                if (hdc != null)
+                {
+                    hdc.BranderPawn = this.CasterPawn;
+                }
+            }
+        }
+        
+        private void DoBrandEffect(Pawn hitPawn)
+        {
+            TargetInfo ti = new TargetInfo(hitPawn.Position, hitPawn.Map, false);
+            TM_MoteMaker.MakeOverlay(ti, TorannMagicDefOf.TM_Mote_PsycastAreaEffect, hitPawn.Map, Vector3.zero, .1f, 0f, .1f, .3f, .3f, -2f);
+
+            for (int i = 0; i < 15; i++)
+            {
+                Vector3 drawPos = hitPawn.DrawPos;
+                drawPos.x += Rand.Range(-.6f, .6f);
+                drawPos.z += Rand.Range(-.6f, .6f);
+                TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_GlowingRuneA, drawPos, hitPawn.Map, Rand.Range(.05f, .15f), Rand.Range(.2f, .3f), Rand.Range(.1f, .25f), Rand.Range(.2f, .7f), Rand.Range(-20, 20), 0f, 0f, Rand.Range(0, 360));
+            }
+        }
         
         //private void RemoveOldBrand(Pawn hitPawn)
         //{
