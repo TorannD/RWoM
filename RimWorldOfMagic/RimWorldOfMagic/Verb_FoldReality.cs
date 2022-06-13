@@ -79,7 +79,7 @@ namespace TorannMagic
                 portalTarget.canTargetFires = false;
                 portalTarget.canTargetBuildings = false;
                 portalTarget.canTargetItems = false;
-                portalTarget.validator = ((TargetInfo x) => x.IsValid && !x.Cell.Fogged(map) && x.Cell.InBounds(map) && x.Cell.Walkable(map));
+                portalTarget.validator = ((TargetInfo x) => x.IsValid && !x.Cell.Fogged(map) && x.Cell.InBoundsWithNullCheck(map) && x.Cell.Walkable(map));
                 Find.Targeter.BeginTargeting(portalTarget, delegate (LocalTargetInfo x)
                 {
 
@@ -142,7 +142,7 @@ namespace TorannMagic
             for (int i = 0; i < targets.Count(); i++)
             {
                 curCell = targets.ToArray<IntVec3>()[i];                
-                if (curCell.InBounds(map) && curCell.IsValid)
+                if (curCell.InBoundsWithNullCheck(map) && curCell.IsValid)
                 {
                     List<Thing> thingList = curCell.GetThingList(map);
                     for(int j = 0; j < thingList.Count(); j++)

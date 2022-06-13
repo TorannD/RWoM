@@ -80,7 +80,7 @@ namespace TorannMagic
             for (int i = 0; i < outsideRing.Count; i++)
             {
                 IntVec3 intVec = outsideRing[i];
-                if (intVec.IsValid && intVec.InBounds(map))
+                if (intVec.IsValid && intVec.InBoundsWithNullCheck(map))
                 {
                     Vector3 moteDirection = TM_Calc.GetVector(sentinel.DrawPos.ToIntVec3(), intVec);
                     TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Rubble, sentinel.DrawPos, map, Rand.Range(.3f, .6f), .2f, .02f, .05f, Rand.Range(-100, 100), Rand.Range(8f, 13f), (Quaternion.AngleAxis(90, Vector3.up) * moteDirection).ToAngleFlat(), 0);

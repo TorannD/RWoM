@@ -79,7 +79,7 @@ namespace TorannMagic
 				if (((this.boltDelay + this.lastStrike) < this.age))
 				{
 					IntVec3 randomCell = cellRect.RandomCell;
-                    if (randomCell.IsValid && randomCell.InBounds(base.Map))
+                    if (randomCell.IsValid && randomCell.InBoundsWithNullCheck(base.Map))
                     {
                         //Map.weatherManager.eventHandler.AddEvent(new WeatherEvent_LightningStrike(map, randomCell));
                         Map.weatherManager.eventHandler.AddEvent(new TM_WeatherEvent_MeshFlash(map, randomCell, TM_MatPool.standardLightning, DamageDefOf.Flame, this.launcher, -1, 1.9f, 1f, 1.5f));

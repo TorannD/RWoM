@@ -79,7 +79,7 @@ namespace TorannMagic
 
                 this.CheckSpawnSustainer();
 
-                if (curCell.InBounds(map))
+                if (curCell.InBoundsWithNullCheck(map))
                 {
                     Corpse corpse = null;
                     List<Thing> thingList;

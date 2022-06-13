@@ -91,7 +91,7 @@ namespace TorannMagic.Conditions
             int accuracy = 5 - eventDifficulty;
             rndPos.x += Rand.Range(-accuracy, accuracy);
             rndPos.z += Rand.Range(-accuracy, accuracy);
-            if (rndPos.IsValid && rndPos.InBounds(this.SingleMap) && rndPos.DistanceToEdge(this.SingleMap) > 6)
+            if (rndPos.IsValid && rndPos.InBoundsWithNullCheck(this.SingleMap) && rndPos.DistanceToEdge(this.SingleMap) > 6)
             {
                 if (eventDifficulty > 2 && Rand.Chance(eventDifficulty * .05f))
                 {
@@ -349,7 +349,7 @@ namespace TorannMagic.Conditions
 
         private bool IsGoodLocationForSpawn(IntVec3 loc)
         {
-            return loc.InBounds(base.SingleMap) && !loc.Roofed(base.SingleMap) && loc.Standable(base.SingleMap) && loc.IsValid && !loc.Fogged(base.SingleMap) && loc.Walkable(base.SingleMap);
+            return loc.InBoundsWithNullCheck(base.SingleMap) && !loc.Roofed(base.SingleMap) && loc.Standable(base.SingleMap) && loc.IsValid && !loc.Fogged(base.SingleMap) && loc.Walkable(base.SingleMap);
         }
 
         private bool IsGoodCenterLocation(IntVec2 loc)

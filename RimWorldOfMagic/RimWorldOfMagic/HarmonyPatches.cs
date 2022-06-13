@@ -207,22 +207,12 @@ namespace TorannMagic
                     typeof(bool),
                     typeof(bool)
                 }, null), null, new HarmonyMethod(typeof(TorannMagicMod), "TryStartCastOn_Prefix", null), null);
-            harmonyInstance.Patch(AccessTools.Method(typeof(GenGrid), "InBounds", new Type[]
-                {
-                    typeof(IntVec3),
-                    typeof(Map)
-                }, null), new HarmonyMethod(typeof(TorannMagicMod), "IntVec3Inbounds_NullCheck_Prefix", null), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(VerbProperties), "AdjustedCooldown", new Type[]
                 {
                     typeof(Tool),
                     typeof(Pawn),
                     typeof(Thing)
                 }, null), null, new HarmonyMethod(typeof(TorannMagicMod), "GolemVerb_AdjustedCooldown_Postfix", null), null);
-            //harmonyInstance.Patch(AccessTools.Method(typeof(GenGrid), "InBounds", new Type[]
-            //    {
-            //        typeof(IntVec3),
-            //        typeof(Map)
-            //    }, null), new HarmonyMethod(typeof(TorannMagicMod), "IntVec3Inbounds_NullCheck_Prefix", null), null);
             ////harmonyInstance.Patch(AccessTools.Method(typeof(AbilityUser.PawnAbility), "GetJob"),
             ////    new HarmonyMethod(typeof(TorannMagicMod), "PawnAbility_GetJob_Prefix"));
             ////harmonyInstance.Patch(AccessTools.Method(typeof(QuestNode_RaceProperty), "Matches", new Type[]
@@ -2260,16 +2250,6 @@ namespace TorannMagic
                     }
                 }
             }
-        }
-
-        public static bool IntVec3Inbounds_NullCheck_Prefix(IntVec3 c, Map map, ref bool __result)
-        {
-            if (c != null && map != null)
-            {
-                return true;
-            }
-            __result = false;
-            return false;
         }
 
         public static bool CompAbilityItem_Overlay_Prefix(CompAbilityItem __instance)

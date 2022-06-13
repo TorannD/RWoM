@@ -117,7 +117,7 @@ namespace TorannMagic
             this.strikeCells = GenRadial.RadialCellsAround(this.centerLoc, 7, true).ToList();
             for(int i =0; i < this.strikeCells.Count(); i++)
             {
-                if(!this.strikeCells[i].InBounds(this.pawn.Map) || !this.strikeCells[i].IsValid)
+                if(!this.strikeCells[i].InBoundsWithNullCheck(this.pawn.Map) || !this.strikeCells[i].IsValid)
                 {
                     this.strikeCells.Remove(this.strikeCells[i]);
                 }

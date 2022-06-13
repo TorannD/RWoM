@@ -176,7 +176,7 @@ namespace TorannMagic
                 bool flag2 = this.ticksToImpact <= 0;
                 if (flag2)
                 {
-                    bool flag3 = this.DestinationCell.InBounds(base.Map);
+                    bool flag3 = this.DestinationCell.InBoundsWithNullCheck(base.Map);
                     if (flag3)
                     {
                         base.Position = this.DestinationCell;
@@ -240,7 +240,7 @@ namespace TorannMagic
                 if (lastRadial != null && lastRadial.Count() > 0)
                 {
                     curCell = lastRadial.RandomElement();
-                    if (curCell.InBounds(base.Map) && curCell.IsValid)
+                    if (curCell.InBoundsWithNullCheck(base.Map) && curCell.IsValid)
                     {
                         ThingDef moteSmoke = TorannMagicDefOf.Mote_Base_Smoke;
                         if (Rand.Chance(.5f))
@@ -270,7 +270,7 @@ namespace TorannMagic
                 for (int i = 0; i < effectRadial.Count(); i++)
                 {
                     curCell = effectRadial.ToArray<IntVec3>()[i];
-                    if (curCell.InBounds(base.Map) && curCell.IsValid)
+                    if (curCell.InBoundsWithNullCheck(base.Map) && curCell.IsValid)
                     {
                         hitList = curCell.GetThingList(base.Map);
                         for (int j = 0; j < hitList.Count; j++)

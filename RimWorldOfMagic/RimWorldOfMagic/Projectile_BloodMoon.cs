@@ -105,13 +105,13 @@ namespace TorannMagic
 
                 this.CheckSpawnSustainer();
 
-                if (curCell.InBounds(map) && curCell.IsValid)
+                if (curCell.InBoundsWithNullCheck(map) && curCell.IsValid)
                 {
                     List<IntVec3> cellList = GenRadial.RadialCellsAround(base.Position, this.radius, true).ToList();
                     for (int i = 0; i < cellList.Count; i++)
                     {
                         curCell = cellList[i];
-                        if (curCell.InBounds(map) && curCell.IsValid)
+                        if (curCell.InBoundsWithNullCheck(map) && curCell.IsValid)
                         {
                             this.bloodCircleCells.Add(curCell);
                         }
@@ -122,7 +122,7 @@ namespace TorannMagic
                     for (int i = 0; i < cellList.Count; i++)
                     {
                         curCell = cellList[i];
-                        if (curCell.InBounds(map) && curCell.IsValid)
+                        if (curCell.InBoundsWithNullCheck(map) && curCell.IsValid)
                         {
                             outerRing.Add(curCell);
                         }

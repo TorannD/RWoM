@@ -182,7 +182,7 @@ namespace TorannMagic
             {
                 curCell = targets.ToArray<IntVec3>()[i];
                 FleckMaker.ThrowDustPuff(curCell, map, .2f);
-                if (curCell.InBounds(map) && curCell.IsValid)
+                if (curCell.InBoundsWithNullCheck(map) && curCell.IsValid)
                 {
                     victim = curCell.GetFirstPawn(map);
                 }

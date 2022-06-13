@@ -216,7 +216,7 @@ namespace TorannMagic
                 for (int i = 0; i < targetCells.Count(); i++)
                 {
                     curCell = targetCells[i];
-                    if (curCell.IsValid && curCell.InBounds(this.Pawn.Map))
+                    if (curCell.IsValid && curCell.InBoundsWithNullCheck(this.Pawn.Map))
                     {
                         if (isExplosion)
                         {
@@ -262,7 +262,7 @@ namespace TorannMagic
             for (int i = 0; i < targetCells.Count(); i++)
             {
                 curCell = targetCells[i];
-                if (curCell.IsValid && curCell.InBounds(this.Pawn.Map))
+                if (curCell.IsValid && curCell.InBoundsWithNullCheck(this.Pawn.Map))
                 {
                     Vector3 launchVector = TM_Calc.GetVector(this.Pawn.Position, curCell);
                     Pawn knockbackPawn = curCell.GetFirstPawn(this.Pawn.Map);
@@ -700,7 +700,7 @@ namespace TorannMagic
             returnThings.Clear();
             for (int i = 0; i < searchCells.Count(); i++)
             {
-                if (searchCells[i].IsValid && searchCells[i].InBounds(this.Pawn.Map))
+                if (searchCells[i].IsValid && searchCells[i].InBoundsWithNullCheck(this.Pawn.Map))
                 {
                     List<Thing> cellList = searchCells[i].GetThingList(this.Pawn.Map);
                     for (int j = 0; j<cellList.Count(); j++)

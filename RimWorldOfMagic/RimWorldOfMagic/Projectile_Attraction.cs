@@ -91,7 +91,7 @@ namespace TorannMagic
                 cellList = targets.ToList<IntVec3>();
                 for(int i = 0; i < cellList.Count(); i ++)
                 {
-                    if (cellList[i].IsValid && cellList[i].InBounds(pawn.Map))
+                    if (cellList[i].IsValid && cellList[i].InBoundsWithNullCheck(pawn.Map))
                     {
                         victim = cellList[i].GetFirstPawn(pawn.Map);
                         if (victim != null && !victim.Dead && !victim.Downed)
@@ -134,7 +134,7 @@ namespace TorannMagic
                 for (int i = 0; i < 3; i++)
                 {
                     curCell = cellList.RandomElement();
-                    if (curCell.IsValid && curCell.InBounds(base.Map))
+                    if (curCell.IsValid && curCell.InBoundsWithNullCheck(base.Map))
                     {
                         victim = curCell.GetFirstPawn(base.Map);
                         if (victim != null && !victim.Dead && victim.RaceProps.IsFlesh && victim != this.pawn)
@@ -155,7 +155,7 @@ namespace TorannMagic
                 for(int i =0; i < hediffCellList.Count(); i++)
                 {
                     curCell = hediffCellList[i];
-                    if (curCell.IsValid && curCell.InBounds(base.Map))
+                    if (curCell.IsValid && curCell.InBoundsWithNullCheck(base.Map))
                     {
                         victim = curCell.GetFirstPawn(base.Map);
                         if (victim != null && !victim.Dead && victim != this.pawn)

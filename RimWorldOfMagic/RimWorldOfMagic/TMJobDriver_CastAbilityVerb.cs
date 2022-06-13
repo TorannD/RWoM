@@ -249,7 +249,7 @@ namespace TorannMagic
             {                
                 if (verb != null && verb.verbProps != null && (pawn.Position - TargetLocA).LengthHorizontal < verb.verbProps.range)
                 {
-                    if (TargetLocA.IsValid && TargetLocA.InBounds(pawn.Map) && !TargetLocA.Fogged(pawn.Map))  //&& TargetLocA.Walkable(pawn.Map)
+                    if (TargetLocA.IsValid && TargetLocA.InBoundsWithNullCheck(pawn.Map) && !TargetLocA.Fogged(pawn.Map))  //&& TargetLocA.Walkable(pawn.Map)
                     {
                         ShootLine shootLine;
                         bool validTarg = verb.TryFindShootLineFromTo(pawn.Position, TargetLocA, out shootLine);
