@@ -1,4 +1,6 @@
 # Ignore Rider generated folder (Main Dev uses Visual Studio and Rider can auto generate this folder)
 **/.idea/
+# Assembly references are located in different locations per user
 *.csproj
+# Caches are generated and should not be in source control
 **/*.cache
