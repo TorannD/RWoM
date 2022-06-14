@@ -166,27 +166,26 @@ namespace TorannMagic
                 for (int i = 0; i < cellList.Count; i++)
                 {
                     Thing t = cellList[i];
-                    if (t is Projectile && t.def.defName != "Projectile_Refraction" && !(t is Mote))
+                    if (t is Projectile projectile && projectile.def.defName != "Projectile_Refraction")
                     {
-                        Projectile proj = t as Projectile;
-                        IntVec3 projOrigin = Traverse.Create(root: proj).Field(name: "origin").GetValue<Vector3>().ToIntVec3();
+                        IntVec3 projOrigin = Traverse.Create(root: projectile).Field(name: "origin").GetValue<Vector3>().ToIntVec3();
 
-                        if (proj != null && proj.Launcher != null && (proj.Launcher.Faction != null || proj.def.defName == "Projectile_LightLaser") && !proj.def.projectile.flyOverhead && !wallPositions.Contains(projOrigin))
+                        if (projectile.Launcher != null && (projectile.Launcher.Faction != null || projectile.def.defName == "Projectile_LightLaser") && !projectile.def.projectile.flyOverhead && !wallPositions.Contains(projOrigin))
                         {
-                            if (proj.Launcher.Faction != this.caster.Faction)
+                            if (projectile.Launcher.Faction != this.caster.Faction)
                             {
                                 Vector3 displayEffect = this.wallPositions[k].ToVector3Shifted();
                                 displayEffect.x += Rand.Range(-.2f, .2f);
                                 displayEffect.z += Rand.Range(-.2f, .2f);
                                 TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_LightBarrier, displayEffect, this.Map, .4f, .2f, .05f, .2f, 0, 0, 0, 0);
-                                IntVec3 targetVec = Traverse.Create(root: proj).Field(name: "destination").GetValue<Vector3>().ToIntVec3();
+                                IntVec3 targetVec = Traverse.Create(root: projectile).Field(name: "destination").GetValue<Vector3>().ToIntVec3();
                                 float targetRange = (this.Position - targetVec).LengthHorizontal;
-                                LocalTargetInfo initialTarget = proj.intendedTarget;
+                                LocalTargetInfo initialTarget = projectile.intendedTarget;
                                 targetVec.x += Mathf.RoundToInt(Rand.Range(-eMissVar, eMissVar) * targetRange);
                                 targetVec.z += Mathf.RoundToInt(Rand.Range(-eMissVar, eMissVar) * targetRange);
-                                TM_CopyAndLaunchProjectile.CopyAndLaunchThingFromPosition(proj.def, proj.Launcher, wallPositions[k], this.Map, targetVec, intendedTarget, ProjectileHitFlags.All, null);
-                                proj.Destroy(DestroyMode.Vanish);
-                                this.wallEnergy -= proj.def.projectile.GetDamageAmount(1f);
+                                TM_CopyAndLaunchProjectile.CopyAndLaunchThingFromPosition(projectile.def, projectile.Launcher, wallPositions[k], this.Map, targetVec, intendedTarget, ProjectileHitFlags.All, null);
+                                projectile.Destroy(DestroyMode.Vanish);
+                                this.wallEnergy -= projectile.def.projectile.GetDamageAmount(1f);
                             }
                             else
                             {
@@ -194,13 +193,13 @@ namespace TorannMagic
                                 displayEffect.x += Rand.Range(-.2f, .2f);
                                 displayEffect.z += Rand.Range(-.2f, .2f);
                                 TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_LightBarrier, displayEffect, this.Map, .4f, .2f, .05f, .2f, 0, 0, 0, 0);
-                                IntVec3 targetCell = proj.intendedTarget.Cell;
+                                IntVec3 targetCell = projectile.intendedTarget.Cell;
                                 float targetRange = (this.Position - targetCell).LengthHorizontal;
-                                LocalTargetInfo initialTarget = proj.intendedTarget;
+                                LocalTargetInfo initialTarget = projectile.intendedTarget;
                                 targetCell.x += Mathf.RoundToInt(Rand.Range(-fMissVar, fMissVar) * targetRange);
                                 targetCell.z += Mathf.RoundToInt(Rand.Range(-fMissVar, fMissVar) * targetRange);
-                                TM_CopyAndLaunchProjectile.CopyAndLaunchThingFromPosition(proj.def, proj.Launcher, wallPositions[k], this.Map, targetCell, initialTarget, ProjectileHitFlags.All);
-                                this.wallEnergy -= proj.def.projectile.GetDamageAmount(1f);
+                                TM_CopyAndLaunchProjectile.CopyAndLaunchThingFromPosition(projectile.def, projectile.Launcher, wallPositions[k], this.Map, targetCell, initialTarget, ProjectileHitFlags.All);
+                                this.wallEnergy -= projectile.def.projectile.GetDamageAmount(1f);
                             }
                         }
                     }

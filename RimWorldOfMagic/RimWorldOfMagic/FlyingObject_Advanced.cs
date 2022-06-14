@@ -394,18 +394,17 @@ namespace TorannMagic
                 hitThing.TakeDamage(this.impactDamage.Value);
             }
             ImpactOverride();
-            if (this.flyingThing is Pawn)
+            if (this.flyingThing is Pawn flyingPawn)
             {
                 try
                 {
                     SoundDefOf.Ambient_AltitudeWind.sustainFadeoutTime.Equals(30.0f);
 
-                    GenSpawn.Spawn(this.flyingThing, base.Position, base.Map);
-                    Pawn p = this.flyingThing as Pawn;
+                    GenSpawn.Spawn(flyingPawn, base.Position, base.Map);
                     if (this.earlyImpact)
                     {
-                        damageEntities(p, this.impactForce, DamageDefOf.Blunt);
-                        damageEntities(p, 2 * this.impactForce, DamageDefOf.Stun);
+                        damageEntities(flyingPawn, this.impactForce, DamageDefOf.Blunt);
+                        damageEntities(flyingPawn, 2 * this.impactForce, DamageDefOf.Stun);
                     }
                     this.Destroy(DestroyMode.Vanish);
                 }

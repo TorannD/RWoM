@@ -53,16 +53,15 @@ namespace TorannMagic
                             soulPawn = compS.polyHost;
                         }
                     }
-                    if (soulPawn.ParentHolder != null && soulPawn.ParentHolder is Caravan)
+                    if (soulPawn.ParentHolder is Caravan caravan)
                     {
                         //Log.Message("caravan detected");
                         //p.DeSpawn();
-                        Caravan van = soulPawn.ParentHolder as Caravan;
-                        van.RemovePawn(soulPawn);
+                        caravan.RemovePawn(soulPawn);
                         GenPlace.TryPlaceThing(soulPawn, this.CasterPawn.Position, this.CasterPawn.Map, ThingPlaceMode.Near);
-                        if(van.PawnsListForReading != null && van.PawnsListForReading.Count <= 0)
+                        if(caravan.PawnsListForReading != null && caravan.PawnsListForReading.Count <= 0)
                         {
-                            CaravanEnterMapUtility.Enter(van, this.CasterPawn.Map, CaravanEnterMode.Center, CaravanDropInventoryMode.DropInstantly, false);
+                            CaravanEnterMapUtility.Enter(caravan, this.CasterPawn.Map, CaravanEnterMode.Center, CaravanDropInventoryMode.DropInstantly, false);
                         }
                         
                         //Messages.Message("" + p.LabelShort + " has shadow stepped to a caravan with " + soulPawn.LabelShort, MessageTypeDefOf.NeutralEvent);

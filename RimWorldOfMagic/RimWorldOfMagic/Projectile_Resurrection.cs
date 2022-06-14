@@ -64,12 +64,11 @@ namespace TorannMagic
 
             if (!this.initialized)
             {
-                if (this.launcher is Pawn)
+                if (this.launcher is Pawn casterPawn)
                 {
-                    caster = this.launcher as Pawn;
-                    CompAbilityUserMagic comp = caster.GetComp<CompAbilityUserMagic>();
-                    MagicPowerSkill ver = caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_Resurrection.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Resurrection_ver");
-                    MagicPowerSkill pwr = caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_Resurrection.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Resurrection_eff");
+                    CompAbilityUserMagic comp = casterPawn.GetComp<CompAbilityUserMagic>();
+                    MagicPowerSkill ver = casterPawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_Resurrection.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Resurrection_ver");
+                    MagicPowerSkill pwr = casterPawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_Resurrection.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Resurrection_eff");
                     verVal = ver.level;
                     pwrVal = pwr.level;
                 }

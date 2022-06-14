@@ -63,11 +63,10 @@ namespace TorannMagic
                 {
                     this.Severity += .4f * (1f + (.1f * herbVer));
                 }
-                if(this.pawn.Map == null && this.pawn.ParentHolder is Caravan)
+                if(this.pawn.Map == null && this.pawn.ParentHolder is Caravan caravan)
                 {
-                    Caravan car = this.pawn.ParentHolder as Caravan;
                     bool flag;
-                    if (!car.NightResting)
+                    if (!caravan.NightResting)
                     {
                         this.Severity += (ForagedFoodPerDayCalculator.GetBaseForagedNutritionPerDay(this.pawn, out flag)/50f) * (1f + (.05f * herbVer));
                     }                    

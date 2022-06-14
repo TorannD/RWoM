@@ -249,12 +249,11 @@ namespace TorannMagic
 
         public static bool IsWall(Thing t)
         {
-            if(t != null && t is Building)
+            if(t is Building building)
             {
-                Building b = t as Building;
-                if (b.def.passability == Traversability.Impassable && b.def.holdsRoof)
+                if (building.def.passability == Traversability.Impassable && building.def.holdsRoof)
                 {
-                    if (t.def.defName.ToLower().Contains("wall") || (t.def.label.ToLower().Contains("wall")))
+                    if (building.def.defName.ToLower().Contains("wall") || (building.def.label.ToLower().Contains("wall")))
                     {
                         return true;
                     }
