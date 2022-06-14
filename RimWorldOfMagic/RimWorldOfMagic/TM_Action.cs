@@ -78,9 +78,8 @@ namespace TorannMagic
         {
             Thing instigator = dinfo.Instigator;
 
-            if (instigator is Pawn)
+            if (instigator is Pawn meleePawn)
             {
-                Pawn meleePawn = instigator as Pawn;
                 if ((dinfo.Weapon != null && dinfo.Weapon.IsMeleeWeapon) || dinfo.WeaponBodyPartGroup != null)
                 {
                     DamageInfo dinfo2 = new DamageInfo(dinfo.Def, dinfo.Amount, dinfo.ArmorPenetrationInt, dinfo.Angle, reflectingPawn, null, null, DamageInfo.SourceCategory.ThingOrUnknown, meleePawn);
@@ -93,17 +92,15 @@ namespace TorannMagic
         {
             Thing instigator = dinfo.Instigator;
 
-            if (instigator is Pawn)
+            if (instigator is Pawn shooterPawn)
             {
-                Pawn shooterPawn = instigator as Pawn;
                 if (dinfo.Weapon != null && !dinfo.Weapon.IsMeleeWeapon && dinfo.WeaponBodyPartGroup == null)
                 {
                     TM_CopyAndLaunchProjectile.CopyAndLaunchThing(shooterPawn.equipment.PrimaryEq.PrimaryVerb.verbProps.defaultProjectile, reflectingPawn, instigator, shooterPawn, ProjectileHitFlags.All, null);
                 }
             }
-            if (instigator is Building)
+            if (instigator is Building turret)
             {
-                Building turret = instigator as Building;
                 ThingDef projectile = null;
 
                 if (turret.def.building.turretGunDef != null)
@@ -131,9 +128,8 @@ namespace TorannMagic
         {
             Thing instigator = dinfo.Instigator;
 
-            if (instigator is Pawn)
+            if (instigator is Pawn shooterPawn)
             {
-                Pawn shooterPawn = instigator as Pawn;
                 if (dinfo.Weapon != null && !dinfo.Weapon.IsMeleeWeapon && dinfo.WeaponBodyPartGroup == null)
                 {
                     Pawn randomTarget = null;
@@ -144,9 +140,8 @@ namespace TorannMagic
                     }
                 }
             }
-            if (instigator is Building)
+            if (instigator is Building turret)
             {
-                Building turret = instigator as Building;
                 ThingDef projectile = null;
 
                 if (turret.def.building.turretGunDef != null)

@@ -194,13 +194,12 @@ namespace TorannMagic.TMDefs
         //Advanced condition cases
         private bool DamageTaken(TM_AutocastCondition con, Thing t)
         {
-            if (t is Pawn)
+            if (t is Pawn pawn)
             {
-                Pawn p = t as Pawn;
-                if (p != null && p.health != null && p.health.hediffSet != null)
+                if (pawn.health != null && pawn.health.hediffSet != null)
                 {
                     //Log.Message("pawn injured? " + TM_Calc.IsPawnInjured(p, con.valueA) + " invert is " + con.invert);
-                    return (con.invert ? !TM_Calc.IsPawnInjured(p, con.valueA) : TM_Calc.IsPawnInjured(p, con.valueA));
+                    return (con.invert ? !TM_Calc.IsPawnInjured(pawn, con.valueA) : TM_Calc.IsPawnInjured(pawn, con.valueA));
                 }
             }
             return false;

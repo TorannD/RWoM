@@ -349,17 +349,16 @@ namespace TorannMagic
                 if (this.flyingThing != null)
                 {
                     GenSpawn.Spawn(this.flyingThing, base.Position, base.Map);
-                    if (this.flyingThing is Pawn)
+                    if (this.flyingThing is Pawn flyingPawn)
                     {
-                        Pawn p = this.flyingThing as Pawn;
-                        if (p.IsColonist && this.drafted)
+                        if (flyingPawn.IsColonist && this.drafted)
                         {
-                            p.drafter.Drafted = true;
+                            flyingPawn.drafter.Drafted = true;
                         }
                         if (this.earlyImpact)
                         {
-                            damageEntities(p, this.impactForce, DamageDefOf.Blunt);
-                            damageEntities(p, this.impactForce, DamageDefOf.Stun);
+                            damageEntities(flyingPawn, this.impactForce, DamageDefOf.Blunt);
+                            damageEntities(flyingPawn, this.impactForce, DamageDefOf.Stun);
                         }
                     }
                     else if (flyingThing.def.thingCategories != null && (flyingThing.def.thingCategories.Contains(ThingCategoryDefOf.Chunks) || flyingThing.def.thingCategories.Contains(ThingCategoryDef.Named("StoneChunks"))))

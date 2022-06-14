@@ -109,9 +109,8 @@ namespace TorannMagic.Weapon
                     TM_MoteMaker.ThrowSparkFlashMote(drawPos, this.GetPawn.Map, 2f);
                     Thing thing = new Thing();
                     thing.def = dinfo.Weapon;
-                    if (instigator is Pawn)
+                    if (instigator is Pawn shooterPawn)
                     {
-                        Pawn shooterPawn = instigator as Pawn;
                         if (!dinfo.Weapon.IsMeleeWeapon && dinfo.WeaponBodyPartGroup == null)
                         {
                             TM_CopyAndLaunchProjectile.CopyAndLaunchThing(shooterPawn.equipment.PrimaryEq.PrimaryVerb.verbProps.defaultProjectile, this.GetPawn, instigator, shooterPawn, ProjectileHitFlags.IntendedTarget, null);

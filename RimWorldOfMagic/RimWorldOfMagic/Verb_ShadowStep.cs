@@ -49,12 +49,11 @@ namespace TorannMagic
                             soulPawnSpawned = true;
                         }
                     }
-                    if(soulPawn.ParentHolder != null && soulPawn.ParentHolder is Caravan)
+                    if(soulPawn.ParentHolder is Caravan caravan)
                     {
                         //Log.Message("caravan detected");
                         //p.DeSpawn();
-                        Caravan van = soulPawn.ParentHolder as Caravan;
-                        van.AddPawn(p, true);
+                        caravan.AddPawn(p, true);
                         Find.WorldPawns.PassToWorld(p);
                         p.Notify_PassedToWorld();
                         Messages.Message("" + p.LabelShort + " has shadow stepped to a caravan with " + soulPawn.LabelShort, MessageTypeDefOf.NeutralEvent);

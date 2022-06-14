@@ -56,9 +56,8 @@ namespace TorannMagic
         {
             bool result = false;
 
-            if (this.currentTarget != null && base.CasterPawn != null && this.currentTarget.Thing is Pawn)
+            if (this.currentTarget != null && base.CasterPawn != null && this.currentTarget.Thing is Pawn targetPawn)
             {
-                Pawn targetPawn = this.currentTarget.Thing as Pawn;
                 if (targetPawn.RaceProps.Humanlike)
                 {
                     CompAbilityUserMagic magicPawn = targetPawn.GetComp<CompAbilityUserMagic>();

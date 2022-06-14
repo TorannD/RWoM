@@ -252,18 +252,17 @@ namespace TorannMagic
             Map map = this.Pawn.Map;
             IntVec3 targetPos = target.Position;
             IntVec3 tmpPos = targetPos;
-            if (!target.DestroyedOrNull() && target is Pawn)
+            if (!target.DestroyedOrNull() && target is Pawn targetPawn)
             {
-                Pawn p = target as Pawn;
-                if (p.Rotation == Rot4.East)
+                if (targetPawn.Rotation == Rot4.East)
                 {
                     tmpPos.x--;
                 }
-                else if (p.Rotation == Rot4.West)
+                else if (targetPawn.Rotation == Rot4.West)
                 {
                     tmpPos.x++;
                 }
-                else if (p.Rotation == Rot4.North)
+                else if (targetPawn.Rotation == Rot4.North)
                 {
                     tmpPos.z--;
                 }
@@ -284,32 +283,31 @@ namespace TorannMagic
 
         public void DoStrike(Thing target)
         {
-            if (target != null && target is Pawn)
+            if (target != null && target is Pawn targetPawn)
             {
-                Pawn t = target as Pawn;
-                if (t.Faction == null || (t.Faction != null && t.Faction != this.Pawn.Faction))
+                if (targetPawn.Faction == null || (targetPawn.Faction != null && targetPawn.Faction != this.Pawn.Faction))
                 {
                     for (int i = 0; i < 4; i++)
                     {
-                        if (!t.DestroyedOrNull() && !t.Dead && t.Map != null)
+                        if (!targetPawn.DestroyedOrNull() && !targetPawn.Dead && targetPawn.Map != null)
                         {
                             int dmg = shadowStrikeDamage + pwrVal;
                             if (Rand.Chance(shadowStrikeCritChance))
                             {
                                 dmg *= 3;
                             }
-                            BodyPartRecord bpr = t.health.hediffSet.GetRandomNotMissingPart(DamageDefOf.Stab, BodyPartHeight.Undefined, BodyPartDepth.Outside);
-                            TM_Action.DamageEntities(target, bpr, dmg, Rand.Range(0f, .5f), DamageDefOf.Stab, this.Pawn);
-                            Vector3 rndPos = t.DrawPos;
+                            BodyPartRecord bpr = targetPawn.health.hediffSet.GetRandomNotMissingPart(DamageDefOf.Stab, BodyPartHeight.Undefined, BodyPartDepth.Outside);
+                            TM_Action.DamageEntities(targetPawn, bpr, dmg, Rand.Range(0f, .5f), DamageDefOf.Stab, this.Pawn);
+                            Vector3 rndPos = targetPawn.DrawPos;
                             rndPos.x += Rand.Range(-.2f, .2f);
                             rndPos.z += Rand.Range(-.2f, .2f);
-                            TM_MoteMaker.ThrowBloodSquirt(rndPos, t.Map, Rand.Range(.6f, 1f));
-                            TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_CrossStrike, rndPos, t.Map, Rand.Range(.6f, 1f), .4f, 0f, Rand.Range(.2f, .5f), 0, 0, 0, Rand.Range(0, 360));
+                            TM_MoteMaker.ThrowBloodSquirt(rndPos, targetPawn.Map, Rand.Range(.6f, 1f));
+                            TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_CrossStrike, rndPos, targetPawn.Map, Rand.Range(.6f, 1f), .4f, 0f, Rand.Range(.2f, .5f), 0, 0, 0, Rand.Range(0, 360));
                         }
                     }
-                    if (!t.DestroyedOrNull() && !t.Dead && !t.Downed)
+                    if (!targetPawn.DestroyedOrNull() && !targetPawn.Dead && !targetPawn.Downed)
                     {
-                        Job job = new Job(JobDefOf.AttackMelee, t);
+                        Job job = new Job(JobDefOf.AttackMelee, targetPawn);
                         this.Pawn.jobs.TryTakeOrderedJob(job);
                     }
                 }
@@ -419,9 +417,9 @@ namespace TorannMagic
             {
                 return false;
             }
-            if(target is Pawn)
+            if(target is Pawn targetPawn)
             {
-                return !(target as Pawn).Downed;
+                return !targetPawn.Downed;
             }
             if(target.Position.DistanceToEdge(this.Pawn.Map) < 8)
             {

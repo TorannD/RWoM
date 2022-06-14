@@ -39,9 +39,8 @@ namespace TorannMagic.Enchantment
             CompAbilityUserMagic comp = this.CasterPawn.GetComp<CompAbilityUserMagic>();
             if (this.currentTarget != null && base.CasterPawn != null && comp != null)
             {
-                if(this.currentTarget.Thing != null && this.currentTarget.Thing is Pawn)
+                if(this.currentTarget.Thing is Pawn traitor)
                 {
-                    Pawn traitor = this.currentTarget.Thing as Pawn;
                     if(traitor.Faction != null && traitor.Faction != this.CasterPawn.Faction && traitor.RaceProps.Humanlike)
                     {
                         if (Rand.Chance(TM_Calc.GetSpellSuccessChance(this.CasterPawn, traitor, true)))

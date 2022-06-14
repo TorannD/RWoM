@@ -30,9 +30,8 @@ namespace TorannMagic.Golems
             {
                 return null;
             }
-            if (meleeThreat is Pawn)
+            if (meleeThreat is Pawn meleeThreatPawn)
             {
-                Pawn meleeThreatPawn = meleeThreat as Pawn;
                 if (meleeThreatPawn.IsInvisible())
                 {
                     return null;

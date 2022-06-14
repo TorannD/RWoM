@@ -42,9 +42,8 @@ namespace TorannMagic.Enchantment
             bool result = false;
             if (this.currentTarget != null && base.CasterPawn != null)
             {
-                if(this.currentTarget.Thing != null && this.currentTarget.Thing is Pawn)
+                if(this.currentTarget.Thing is Pawn victim)
                 {
-                    Pawn victim = this.currentTarget.Thing as Pawn;
                     if(victim.Faction != null && victim.RaceProps.Humanlike && victim.story != null && victim.story.traits != null && victim.story.traits.allTraits.Count > 0 && !TM_Calc.IsUndead(victim))
                     {
                         if (Rand.Chance(TM_Calc.GetSpellSuccessChance(this.CasterPawn, victim, true)))

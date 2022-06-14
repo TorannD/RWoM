@@ -34,9 +34,8 @@ namespace TorannMagic
             }
             this.arcaneDmg = base.CasterPawn.GetComp<CompAbilityUserMagic>().arcaneDmg;
             this.arcaneDmg *= (1 + (.1f * bpwr.level));
-            if(this.currentTarget.Thing != null && this.currentTarget.Thing is Pawn)
+            if(this.currentTarget.Thing != null && this.currentTarget.Thing is Pawn victim)
             {
-                Pawn victim = this.currentTarget.Thing as Pawn;
                 if (victim.RaceProps.BloodDef != null && victim != this.CasterPawn)
                 {
                     for (int i = 0; i < 4; i++)

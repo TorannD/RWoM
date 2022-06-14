@@ -28,10 +28,9 @@ namespace TorannMagic.Golems
         public override void Apply(LocalTargetInfo target, Pawn caster, TM_GolemAbilityDef ability, float effectLevel = 1f, float effectBonus = 1f)
         {
             base.Apply(target, caster, ability);
-            if (target.Thing != null && target.Thing is Pawn)
+            if (target.Thing is Pawn pawn)
             {
-                Pawn p = target.Thing as Pawn;
-                HealthUtility.AdjustSeverity(p, hediff, severity * LevelModifier * effectBonus);
+                HealthUtility.AdjustSeverity(pawn, hediff, severity * LevelModifier * effectBonus);
             }
         }
 
@@ -41,30 +40,15 @@ namespace TorannMagic.Golems
             {
                 return false;
             }
-            if (target.Thing == null)
-            {
-                return false;
-            }
-            if (!(target.Thing is Pawn))
-            {
-                return false;
-            }
-            Pawn p = target.Thing as Pawn;
-            if (p.Dead)
-            {
-                return false;
-            }
-            if (p.health == null)
-            {
-                return false;
-            }
-            if (p.health.hediffSet == null)
+
+            Pawn pawn = target.Thing as Pawn;
+            if (pawn == null || pawn.Dead || pawn.health == null || pawn.health.hediffSet == null)
             {
                 return false;
             }
             if (!canStack)
             {
-                Hediff hd = p.health.hediffSet.GetFirstHediffOfDef(hediff);
+                Hediff hd = pawn.health.hediffSet.GetFirstHediffOfDef(hediff);
                 if (hd != null)
                 {
                     return false;

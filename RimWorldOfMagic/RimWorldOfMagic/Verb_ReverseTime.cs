@@ -220,9 +220,8 @@ namespace TorannMagic
         {
 
             thing.HitPoints = Mathf.Clamp(thing.HitPoints + Mathf.RoundToInt((200 + (100 * pwrVal)) * this.arcaneDmg), 0, thing.MaxHitPoints);
-            if (thing is Apparel)
+            if (thing is Apparel apparelThing)
             {
-                Apparel apparelThing = thing as Apparel;
                 if(apparelThing.WornByCorpse)
                 {
                     apparelThing.Notify_PawnResurrected();

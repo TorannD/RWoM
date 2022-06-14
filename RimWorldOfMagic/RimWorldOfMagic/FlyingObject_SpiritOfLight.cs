@@ -838,11 +838,10 @@ namespace TorannMagic
             }
             else if(solAction == SoLAction.BrightenDay)
             {
-                if(this.assignedTarget != null && this.assignedTarget is Pawn)
+                if(this.assignedTarget is Pawn assignedPawn)
                 {
-                    Pawn p = this.assignedTarget as Pawn;
                     ActualLightCost(6f);
-                    p.needs.mood.thoughts.memories.TryGainMemory(TorannMagicDefOf.TM_BrightDayTD);
+                    assignedPawn.needs.mood.thoughts.memories.TryGainMemory(TorannMagicDefOf.TM_BrightDayTD);
                     Action_CircleTarget(this.assignedTarget, out destTarget);
                     queuedAction = SoLAction.Returning;
                 }

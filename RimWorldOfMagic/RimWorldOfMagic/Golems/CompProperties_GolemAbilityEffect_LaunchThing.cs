@@ -51,10 +51,9 @@ namespace TorannMagic.Golems
             {
                 return false;
             }
-            if (target.Thing != null && target.Thing is Pawn)
+            if (target.Thing is Pawn pawn)
             {
-                Pawn p = target.Thing as Pawn;
-                if (p.Dead || p.Downed)
+                if (pawn.Dead || pawn.Downed)
                 {
                     return false;
                 }

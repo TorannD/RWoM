@@ -46,9 +46,8 @@ namespace TorannMagic
         {
             if (spinCheck)
             {
-                if (this.launcher is Pawn)
+                if (this.launcher is Pawn pawn)
                 {
-                    Pawn pawn = this.launcher as Pawn;
                     if (pawn.equipment != null && pawn.equipment.Primary != null)
                     {
                         ThingWithComps weaponComp = pawn.equipment.Primary;

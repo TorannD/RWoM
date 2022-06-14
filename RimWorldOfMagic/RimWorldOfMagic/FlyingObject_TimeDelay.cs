@@ -328,12 +328,11 @@ namespace TorannMagic
             if (this.Map != null)
             {
                 GenPlace.TryPlaceThing(this.flyingThing, base.Position, base.Map, ThingPlaceMode.Direct);
-                if (this.flyingThing is Pawn)
+                if (this.flyingThing is Pawn flyingPawn)
                 {
-                    Pawn p = this.flyingThing as Pawn;
-                    if (p.IsColonist && this.drafted && p.drafter != null)
+                    if (flyingPawn.IsColonist && this.drafted && flyingPawn.drafter != null)
                     {
-                        p.drafter.Drafted = true;
+                        flyingPawn.drafter.Drafted = true;
                     }
                 }
 

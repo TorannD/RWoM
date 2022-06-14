@@ -27,9 +27,8 @@ namespace TorannMagic
             //{
             Find.Targeter.targetingSource = verb;
             //}
-            if (this.verb.Ability.Def is TMAbilityDef)
+            if (this.verb.Ability.Def is TMAbilityDef tmAbility)
             {
-                TMAbilityDef tmAbility = (TMAbilityDef)(this.verb.Ability.Def);
                 CompAbilityUserMight compMight = this.pawn.TryGetComp<CompAbilityUserMight>();
                 CompAbilityUserMagic compMagic = this.pawn.TryGetComp<CompAbilityUserMagic>();
                 if (tmAbility.manaCost > 0 && pawn.story != null && pawn.story.traits != null && !pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
