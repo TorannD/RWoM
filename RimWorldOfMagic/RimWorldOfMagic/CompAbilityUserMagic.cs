@@ -5853,38 +5853,14 @@ namespace TorannMagic
                                     if (localTarget != null && localTarget.IsValid)
                                     {
                                         Thing targetThing = localTarget.Thing;
-                                        if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
+                                        if (this.CanTargetOtherPawn(mp, localTarget, ability,
+                                                (targetThing) =>
+                                                {
+                                                    return targetThing.Downed || targetThing.IsPrisonerInPrisonCell();
+                                                }))
                                         {
-                                            continue;
+                                            AutoCast.MagicAbility_OnTarget.TryExecute(this, tmad, ability, mp, targetThing, mp.autocasting.minRange, out castSuccess);
                                         }
-                                        if (mp.autocasting.requiresLoS && !TM_Calc.HasLoSFromTo(this.Pawn.Position, targetThing, this.Pawn, mp.autocasting.minRange, ability.Def.MainVerb.range))
-                                        {
-                                            continue;
-                                        }
-                                        if (mp.autocasting.maxRange != 0f && mp.autocasting.maxRange < (this.Pawn.Position - targetThing.Position).LengthHorizontal)
-                                        {
-                                            continue;
-                                        }
-                                        bool TE = mp.autocasting.targetEnemy && targetThing.Faction != null && targetThing.Faction.HostileTo(this.Pawn.Faction);
-                                        if (TE && targetThing is Pawn)
-                                        {
-                                            Pawn targetPawn = targetThing as Pawn;
-                                            if (targetPawn.Downed || targetPawn.IsPrisonerInPrisonCell())
-                                            {
-                                                continue;
-                                            }
-                                        }
-                                        bool TN = mp.autocasting.targetNeutral && (targetThing.Faction == null || !targetThing.Faction.HostileTo(this.Pawn.Faction));
-                                        bool TF = mp.autocasting.targetFriendly && targetThing.Faction == this.Pawn.Faction;
-                                        if (!(TE || TN || TF))
-                                        {
-                                            continue;
-                                        }
-                                        if (!mp.autocasting.ValidConditions(this.Pawn, targetThing))
-                                        {
-                                            continue;
-                                        }
-                                        AutoCast.MagicAbility_OnTarget.TryExecute(this, tmad, ability, mp, targetThing, mp.autocasting.minRange, out castSuccess);
                                     }
                                 }
                                 if (mp.autocasting.type == TMDefs.AutocastType.OnSelf)
@@ -5910,15 +5886,7 @@ namespace TorannMagic
                                     if (localTarget != null && localTarget.IsValid)
                                     {
                                         IntVec3 targetThing = localTarget.Cell;
-                                        if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
-                                        {
-                                            continue;
-                                        }
-                                        if (mp.autocasting.requiresLoS && !TM_Calc.HasLoSFromTo(this.Pawn.Position, targetThing, this.Pawn, mp.autocasting.minRange, ability.Def.MainVerb.range))
-                                        {
-                                            continue;
-                                        }
-                                        if (mp.autocasting.maxRange != 0f && mp.autocasting.maxRange < (this.Pawn.Position - targetThing).LengthHorizontal)
+                                        if (this.IsCastInRange(mp, localTarget, ability))
                                         {
                                             continue;
                                         }
@@ -5939,38 +5907,14 @@ namespace TorannMagic
                                     if (localTarget != null && localTarget.IsValid)
                                     {
                                         Thing targetThing = localTarget.Thing;
-                                        if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
+                                        if (this.CanTargetOtherPawn(mp, localTarget, ability,
+                                                (targetPawn) =>
+                                                {
+                                                    return targetPawn.Downed || targetPawn.IsPrisonerInPrisonCell();
+                                                }))
                                         {
-                                            continue;
+                                            AutoCast.MagicAbility_OnTarget.TryExecute(this, tmad, ability, mp, targetThing, mp.autocasting.minRange, out castSuccess);
                                         }
-                                        if (mp.autocasting.requiresLoS && !TM_Calc.HasLoSFromTo(this.Pawn.Position, targetThing, this.Pawn, mp.autocasting.minRange, ability.Def.MainVerb.range))
-                                        {
-                                            continue;
-                                        }
-                                        if (mp.autocasting.maxRange != 0f && mp.autocasting.maxRange < (this.Pawn.Position - targetThing.Position).LengthHorizontal)
-                                        {
-                                            continue;
-                                        }
-                                        bool TE = mp.autocasting.targetEnemy && targetThing.Faction != null && targetThing.Faction.HostileTo(this.Pawn.Faction);
-                                        if (TE && targetThing is Pawn)
-                                        {
-                                            Pawn targetPawn = targetThing as Pawn;
-                                            if (targetPawn.Downed || targetPawn.IsPrisonerInPrisonCell())
-                                            {
-                                                continue;
-                                            }
-                                        }
-                                        bool TN = mp.autocasting.targetNeutral && (targetThing.Faction == null || !targetThing.Faction.HostileTo(this.Pawn.Faction));
-                                        bool TF = mp.autocasting.targetFriendly && targetThing.Faction == this.Pawn.Faction;
-                                        if (!(TE || TN || TF))
-                                        {
-                                            continue;
-                                        }
-                                        if (!mp.autocasting.ValidConditions(this.Pawn, targetThing))
-                                        {
-                                            continue;
-                                        }
-                                        AutoCast.MagicAbility_OnTarget.TryExecute(this, tmad, ability, mp, targetThing, mp.autocasting.minRange, out castSuccess);
                                     }
                                 }
                                 if (castSuccess) goto AutoCastExit;
@@ -6449,38 +6393,14 @@ namespace TorannMagic
                                     if (localTarget != null && localTarget.IsValid)
                                     {
                                         Thing targetThing = localTarget.Thing;
-                                        if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
+                                        if (this.CanTargetOtherPawn(mp, localTarget, ability,
+                                                (targetPawn) =>
+                                                {
+                                                    return targetPawn.Downed || targetPawn.IsPrisonerInPrisonCell();
+                                                }))
                                         {
-                                            continue;
+                                            AutoCast.MagicAbility_OnTarget.TryExecute(this, tmad, ability, mp, targetThing, mp.autocasting.minRange, out castSuccess);
                                         }
-                                        if (mp.autocasting.requiresLoS && !TM_Calc.HasLoSFromTo(this.Pawn.Position, targetThing, this.Pawn, mp.autocasting.minRange, ability.Def.MainVerb.range))
-                                        {
-                                            continue;
-                                        }
-                                        if (mp.autocasting.maxRange != 0f && mp.autocasting.maxRange < (this.Pawn.Position - targetThing.Position).LengthHorizontal)
-                                        {
-                                            continue;
-                                        }
-                                        bool TE = mp.autocasting.targetEnemy && targetThing.Faction != null && targetThing.Faction.HostileTo(this.Pawn.Faction);
-                                        if (TE && targetThing is Pawn)
-                                        {
-                                            Pawn targetPawn = targetThing as Pawn;
-                                            if (targetPawn.Downed || targetPawn.IsPrisonerInPrisonCell())
-                                            {
-                                                continue;
-                                            }
-                                        }
-                                        bool TN = mp.autocasting.targetNeutral && (targetThing.Faction == null || !targetThing.Faction.HostileTo(this.Pawn.Faction));
-                                        bool TF = mp.autocasting.targetFriendly && targetThing.Faction == this.Pawn.Faction;
-                                        if (!(TE || TN || TF))
-                                        {
-                                            continue;
-                                        }
-                                        if (!mp.autocasting.ValidConditions(this.Pawn, targetThing))
-                                        {
-                                            continue;
-                                        }
-                                        AutoCast.MagicAbility_OnTarget.TryExecute(this, tmad, ability, mp, targetThing, mp.autocasting.minRange, out castSuccess);
                                     }
                                 }
                                 if (mp.autocasting.type == TMDefs.AutocastType.OnSelf)
@@ -6506,15 +6426,7 @@ namespace TorannMagic
                                     if (localTarget != null && localTarget.IsValid)
                                     {
                                         IntVec3 targetThing = localTarget.Cell;
-                                        if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
-                                        {
-                                            continue;
-                                        }
-                                        if (mp.autocasting.requiresLoS && !TM_Calc.HasLoSFromTo(this.Pawn.Position, targetThing, this.Pawn, mp.autocasting.minRange, ability.Def.MainVerb.range))
-                                        {
-                                            continue;
-                                        }
-                                        if (mp.autocasting.maxRange != 0f && mp.autocasting.maxRange < (this.Pawn.Position - targetThing).LengthHorizontal)
+                                        if (this.IsCastInRange(mp, localTarget, ability))
                                         {
                                             continue;
                                         }
@@ -6531,38 +6443,14 @@ namespace TorannMagic
                                     if (localTarget != null && localTarget.IsValid)
                                     {
                                         Thing targetThing = localTarget.Thing;
-                                        if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
+                                        if (this.CanTargetOtherPawn(mp, localTarget, ability,
+                                                (targetPawn) =>
+                                                {
+                                                    return targetPawn.Downed || targetPawn.IsPrisonerInPrisonCell();
+                                                }))
                                         {
-                                            continue;
+                                            AutoCast.MagicAbility_OnTarget.TryExecute(this, tmad, ability, mp, targetThing, mp.autocasting.minRange, out castSuccess);
                                         }
-                                        if (mp.autocasting.requiresLoS && !TM_Calc.HasLoSFromTo(this.Pawn.Position, targetThing, this.Pawn, mp.autocasting.minRange, ability.Def.MainVerb.range))
-                                        {
-                                            continue;
-                                        }
-                                        if (mp.autocasting.maxRange != 0f && mp.autocasting.maxRange < (this.Pawn.Position - targetThing.Position).LengthHorizontal)
-                                        {
-                                            continue;
-                                        }
-                                        bool TE = mp.autocasting.targetEnemy && targetThing.Faction != null && targetThing.Faction.HostileTo(this.Pawn.Faction);
-                                        if (TE && targetThing is Pawn)
-                                        {
-                                            Pawn targetPawn = targetThing as Pawn;
-                                            if (targetPawn.Downed || targetPawn.IsPrisonerInPrisonCell())
-                                            {
-                                                continue;
-                                            }
-                                        }
-                                        bool TN = mp.autocasting.targetNeutral && (targetThing.Faction == null || !targetThing.Faction.HostileTo(this.Pawn.Faction));
-                                        bool TF = mp.autocasting.targetFriendly && targetThing.Faction == this.Pawn.Faction;
-                                        if (!(TE || TN || TF))
-                                        {
-                                            continue;
-                                        }
-                                        if (!mp.autocasting.ValidConditions(this.Pawn, targetThing))
-                                        {
-                                            continue;
-                                        }
-                                        AutoCast.MagicAbility_OnTarget.TryExecute(this, tmad, ability, mp, targetThing, mp.autocasting.minRange, out castSuccess);
                                     }
                                 }
                                 if (castSuccess) goto AutoCastExit;
@@ -6891,58 +6779,18 @@ namespace TorannMagic
                                     if (localTarget != null && localTarget.IsValid)
                                     {
                                         Thing targetThing = localTarget.Thing;
-                                        if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
+                                        if (this.CanTargetOtherPawn(mp, localTarget, ability,
+                                                (targetPawn) => { return targetPawn.Downed || targetPawn.IsPrisoner; },
+                                                (targetPawn, power) =>
+                                                {
+                                                    return (targetPawn.Downed || targetPawn.IsPrisoner) ||
+                                                           (power.abilityDef.MainVerb.isViolent
+                                                            && targetPawn.Faction != null
+                                                            && !targetPawn.InMentalState);
+                                                }))
                                         {
-                                            continue;
+                                            AutoCast.MagicAbility_OnTarget.TryExecute(this, tmad, ability, mp, targetThing, mp.autocasting.minRange, out castSuccess);
                                         }
-                                        if (mp.autocasting.requiresLoS && !TM_Calc.HasLoSFromTo(this.Pawn.Position, targetThing, this.Pawn, mp.autocasting.minRange, ability.Def.MainVerb.range))
-                                        {
-                                            continue;
-                                        }
-                                        if (mp.autocasting.maxRange != 0f && mp.autocasting.maxRange < (this.Pawn.Position - targetThing.Position).LengthHorizontal)
-                                        {
-                                            continue;
-                                        }
-                                        bool TE = mp.autocasting.targetEnemy && targetThing.Faction != null && targetThing.Faction.HostileTo(this.Pawn.Faction);
-                                        if(TE && targetThing is Pawn)
-                                        {
-                                            Pawn targetPawn = targetThing as Pawn;
-                                            if(targetPawn.Downed || targetPawn.IsPrisoner)
-                                            {
-                                                continue;
-                                            }
-                                        }
-                                        bool TN = mp.autocasting.targetNeutral && (targetThing.Faction == null || !targetThing.Faction.HostileTo(this.Pawn.Faction));
-                                        if (TN && targetThing is Pawn)
-                                        {
-                                            Pawn targetPawn = targetThing as Pawn;
-                                            if (targetPawn.Downed || targetPawn.IsPrisoner)
-                                            {
-                                                continue;
-                                            }
-                                            if (mp.abilityDef.MainVerb.isViolent && targetThing.Faction != null && !targetPawn.InMentalState)
-                                            {
-                                                continue;
-                                            }
-                                        }                                        
-                                        bool TF = mp.autocasting.targetFriendly && targetThing.Faction == this.Pawn.Faction;
-                                        if (!(TE || TN || TF))
-                                        {
-                                            continue;
-                                        }
-                                        //if (targetThing is Pawn)
-                                        //{
-                                        //    Pawn targetPawn = targetThing as Pawn;
-                                        //    if (targetPawn.IsPrisoner)
-                                        //    {
-                                        //        continue;
-                                        //    }
-                                        //}
-                                        if (!mp.autocasting.ValidConditions(this.Pawn, targetThing))
-                                        {
-                                            continue;
-                                        }
-                                        AutoCast.MagicAbility_OnTarget.TryExecute(this, tmad, ability, mp, targetThing, mp.autocasting.minRange, out castSuccess);
                                     }
                                 }
                                 if (mp.autocasting.type == TMDefs.AutocastType.OnSelf)
@@ -6968,15 +6816,7 @@ namespace TorannMagic
                                     if (localTarget != null && localTarget.IsValid)
                                     {
                                         IntVec3 targetThing = localTarget.Cell;
-                                        if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
-                                        {
-                                            continue;
-                                        }
-                                        if (mp.autocasting.requiresLoS && !TM_Calc.HasLoSFromTo(this.Pawn.Position, targetThing, this.Pawn, mp.autocasting.minRange, ability.Def.MainVerb.range))
-                                        {
-                                            continue;
-                                        }
-                                        if (mp.autocasting.maxRange != 0f && mp.autocasting.maxRange < (this.Pawn.Position - targetThing).LengthHorizontal)
+                                        if (this.IsCastInRange(mp, localTarget, ability))
                                         {
                                             continue;
                                         }
@@ -6993,58 +6833,18 @@ namespace TorannMagic
                                     if (localTarget != null && localTarget.IsValid)
                                     {
                                         Thing targetThing = localTarget.Thing;
-                                        if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
+                                        if (this.CanTargetOtherPawn(mp, localTarget, ability,
+                                                (targetThing) => { return targetThing.Downed || targetThing.IsPrisoner;}, 
+                                                (targetThing, power) =>
+                                                {
+                                                    return (targetThing.Downed || targetThing.IsPrisoner) ||
+                                                           (power.abilityDef.MainVerb.isViolent &&
+                                                            targetThing.Faction != null && !targetThing.InMentalState);
+                                                }))
                                         {
-                                            continue;
+                                            AutoCast.MagicAbility_OnTarget.TryExecute(this, tmad, ability, mp, targetThing, mp.autocasting.minRange, out castSuccess);
                                         }
-                                        if (mp.autocasting.requiresLoS && !TM_Calc.HasLoSFromTo(this.Pawn.Position, targetThing, this.Pawn, mp.autocasting.minRange, ability.Def.MainVerb.range))
-                                        {
-                                            continue;
-                                        }
-                                        if (mp.autocasting.maxRange != 0f && mp.autocasting.maxRange < (this.Pawn.Position - targetThing.Position).LengthHorizontal)
-                                        {
-                                            continue;
-                                        }
-                                        bool TE = mp.autocasting.targetEnemy && targetThing.Faction != null && targetThing.Faction.HostileTo(this.Pawn.Faction);
-                                        if (TE && targetThing is Pawn)
-                                        {
-                                            Pawn targetPawn = targetThing as Pawn;
-                                            if (targetPawn.Downed || targetPawn.IsPrisoner)
-                                            {
-                                                continue;
-                                            }
-                                        }
-                                        bool TN = mp.autocasting.targetNeutral && (targetThing.Faction == null || !targetThing.Faction.HostileTo(this.Pawn.Faction));
-                                        if (TN && targetThing is Pawn)
-                                        {
-                                            Pawn targetPawn = targetThing as Pawn;
-                                            if (targetPawn.Downed || targetPawn.IsPrisoner)
-                                            {
-                                                continue;
-                                            }
-                                            if (mp.abilityDef.MainVerb.isViolent && targetThing.Faction != null && !targetPawn.InMentalState)
-                                            {
-                                                continue;
-                                            }
-                                        }
-                                        bool TF = mp.autocasting.targetFriendly && targetThing.Faction == this.Pawn.Faction;
-                                        if (!(TE || TN || TF))
-                                        {
-                                            continue;
-                                        }
-                                        //if (targetThing is Pawn)
-                                        //{
-                                        //    Pawn targetPawn = targetThing as Pawn;
-                                        //    if (targetPawn.IsPrisoner)
-                                        //    {
-                                        //        continue;
-                                        //    }
-                                        //}
-                                        if (!mp.autocasting.ValidConditions(this.Pawn, targetThing))
-                                        {
-                                            continue;
-                                        }
-                                        AutoCast.MagicAbility_OnTarget.TryExecute(this, tmad, ability, mp, targetThing, mp.autocasting.minRange, out castSuccess);
+                                        
                                     }
                                 }
                             }
