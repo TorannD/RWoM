@@ -5854,9 +5854,9 @@ namespace TorannMagic
                                     {
                                         Thing targetThing = localTarget.Thing;
                                         if (this.CanTargetOtherPawn(mp, localTarget, ability,
-                                                (targetThing) =>
+                                                (targetPawn) =>
                                                 {
-                                                    return targetThing.Downed || targetThing.IsPrisonerInPrisonCell();
+                                                    return targetPawn.Downed || targetPawn.IsPrisonerInPrisonCell();
                                                 }))
                                         {
                                             AutoCast.MagicAbility_OnTarget.TryExecute(this, tmad, ability, mp, targetThing, mp.autocasting.minRange, out castSuccess);
@@ -6834,12 +6834,12 @@ namespace TorannMagic
                                     {
                                         Thing targetThing = localTarget.Thing;
                                         if (this.CanTargetOtherPawn(mp, localTarget, ability,
-                                                (targetThing) => { return targetThing.Downed || targetThing.IsPrisoner;}, 
-                                                (targetThing, power) =>
+                                                (targetPawn) => { return targetPawn.Downed || targetPawn.IsPrisoner;}, 
+                                                (targetPawn, power) =>
                                                 {
-                                                    return (targetThing.Downed || targetThing.IsPrisoner) ||
+                                                    return (targetPawn.Downed || targetPawn.IsPrisoner) ||
                                                            (power.abilityDef.MainVerb.isViolent &&
-                                                            targetThing.Faction != null && !targetThing.InMentalState);
+                                                            targetPawn.Faction != null && !targetPawn.InMentalState);
                                                 }))
                                         {
                                             AutoCast.MagicAbility_OnTarget.TryExecute(this, tmad, ability, mp, targetThing, mp.autocasting.minRange, out castSuccess);

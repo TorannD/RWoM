@@ -4159,7 +4159,7 @@ namespace TorannMagic
                                                 {
                                                     return (targetPawn.Downed || targetPawn.IsPrisoner) ||
                                                            (power.abilityDef.MainVerb.isViolent &&
-                                                            targetThing.Faction != null && !targetPawn.InMentalState)
+                                                            targetThing.Faction != null && !targetPawn.InMentalState);
                                                 }))
                                         {
                                             AutoCast.CombatAbility_OnTarget.TryExecute(this, tmad, ability, mp, targetThing, mp.autocasting.minRange, out castSuccess);
@@ -4215,15 +4215,15 @@ namespace TorannMagic
                                     {
                                         Thing targetThing = localTarget.Thing;
                                         if (this.CanTargetOtherPawn(mp, localTarget, ability,
-                                                (targetPawn) => targetPawn.Downed),
-                                                (targetPawn, ability) =>
+                                                (targetPawn) => targetPawn.Downed,
+                                                (targetPawn, mpAbility) =>
                                                     {
                                                         return (targetPawn.Downed || targetPawn.IsPrisoner) ||
-                                                               (mp.abilityDef.MainVerb.isViolent 
-                                                                && targetThing.Faction != null 
+                                                               (mpAbility.abilityDef.MainVerb.isViolent
+                                                                && targetThing.Faction != null
                                                                 && !targetPawn.InMentalState);
                                                     }
-                                            )
+                                            ))
                                         {
                                             AutoCast.CombatAbility_OnTarget.TryExecute(this, tmad, ability, mp, targetThing, mp.autocasting.minRange, out castSuccess);
                                         }
