@@ -175,29 +175,24 @@ namespace TorannMagic
 
         public void SearchForTargets(IntVec3 center, float radius, Map map, Pawn pawn)
         {
-            Pawn victim = null;
-            IntVec3 curCell;            
             IEnumerable<IntVec3> targets = GenRadial.RadialCellsAround(center, radius, true);
-            for (int i = 0; i < targets.Count(); i++)
+            foreach (IntVec3 curCell in targets)
             {
-                curCell = targets.ToArray<IntVec3>()[i];
                 FleckMaker.ThrowDustPuff(curCell, map, .2f);
                 if (curCell.InBounds(map) && curCell.IsValid)
                 {
-                    victim = curCell.GetFirstPawn(map);
-                }
-
-                if (victim != null && victim.Faction != pawn.Faction)
-                {
-                    if(Rand.Chance(.1f + .15f*pwrVal))
+                    Pawn victim = curCell.GetFirstPawn(map);
+                    if (victim != null && victim.Faction != pawn.Faction)
                     {
-                        this.dmgNum *= 3;
-                        MoteMaker.ThrowText(victim.DrawPos, victim.Map, "Critical Hit", -1f);
+                        if(Rand.Chance(.1f + .15f*pwrVal))
+                        {
+                            this.dmgNum *= 3;
+                            MoteMaker.ThrowText(victim.DrawPos, victim.Map, "Critical Hit", -1f);
+                        }
+                        DrawStrike(center, victim.Position.ToVector3(), map);
+                        damageEntities(victim, null, this.dmgNum, TMDamageDefOf.DamageDefOf.TM_PhaseStrike);
                     }
-                    DrawStrike(center, victim.Position.ToVector3(), map);
-                    damageEntities(victim, null, this.dmgNum, TMDamageDefOf.DamageDefOf.TM_PhaseStrike);
                 }
-                targets.GetEnumerator().MoveNext();
             }
         }
 
