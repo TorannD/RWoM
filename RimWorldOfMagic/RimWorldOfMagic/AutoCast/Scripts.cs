@@ -593,10 +593,9 @@ namespace TorannMagic.AutoCast
                 if (pwr.level >= 2)
                 {
                     jobTarget = TM_Calc.FindNearbyAfflictedPawnAny(caster, (int)(abilitydef.MainVerb.range * .9f));
-                    if(jobTarget != null && jobTarget.Thing != null && jobTarget.Thing is Pawn)
+                    if(jobTarget != null && jobTarget.Thing is Pawn jobPawn)
                     {
-                        Pawn jobPawn = jobTarget.Thing as Pawn;
-                        if(jobPawn.health != null && jobPawn.health.hediffSet != null && !(jobPawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_DiseaseImmunityHD) || jobPawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_DiseaseImmunity2HD)))
+                        if(jobPawn.health != null && jobPawn.health?.hediffSet != null && !(jobPawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_DiseaseImmunityHD) || jobPawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_DiseaseImmunity2HD)))
                         {
 
                         }
@@ -673,9 +672,8 @@ namespace TorannMagic.AutoCast
                 float distanceToTarget = (jobTarget.Cell - caster.Position).LengthHorizontal;                
                 if (distanceToTarget < (abilitydef.MainVerb.range * .9f) && jobTarget != null && jobTarget.Thing != null)
                 {
-                    if (abilitydef == TorannMagicDefOf.TM_CauterizeWound && jobTarget.Thing is Pawn)
+                    if (abilitydef == TorannMagicDefOf.TM_CauterizeWound && jobTarget.Thing is Pawn targetPawn)
                     {
-                        Pawn targetPawn = jobTarget.Thing as Pawn;
                         if (targetPawn.health.HasHediffsNeedingTend(false))
                         {
                             Job job = ability.GetJob(AbilityContext.AI, jobTarget);
@@ -713,15 +711,14 @@ namespace TorannMagic.AutoCast
                 if (jobTarget != null)
                 {
                     float distanceToTarget = (jobTarget.Cell - caster.Position).LengthHorizontal;
-                    if (distanceToTarget < (abilitydef.MainVerb.range * .9f) && jobTarget.Thing != null && jobTarget.Thing is Pawn)
+                    if (distanceToTarget < (abilitydef.MainVerb.range * .9f) && jobTarget.Thing is Pawn targetPawn)
                     {
-                        Pawn targetPawn = jobTarget.Thing as Pawn;
                         if (targetPawn.health != null && targetPawn.health.hediffSet != null && !targetPawn.health.hediffSet.HasHediff(hediffDef, false))
                         {
                             Job job = ability.GetJob(AbilityContext.AI, jobTarget);
                             DoJob.Execute(job, caster);
                             success = true;
-                            TM_Action.TM_Toils.GotoAndWait(jobTarget.Thing as Pawn, caster, Mathf.RoundToInt(ability.Def.MainVerb.warmupTime * 60));
+                            TM_Action.TM_Toils.GotoAndWait(targetPawn, caster, Mathf.RoundToInt(ability.Def.MainVerb.warmupTime * 60));
                         }
                     }
                 }
@@ -772,9 +769,9 @@ namespace TorannMagic.AutoCast
                 Pawn caster = casterComp.Pawn;
                 LocalTargetInfo jobTarget = TM_Calc.FindNearbyEnemy(caster, (int)(abilitydef.MainVerb.range * .9f));
                 float distanceToTarget = (jobTarget.Cell - caster.Position).LengthHorizontal;
-                if (distanceToTarget > minRange && distanceToTarget < (abilitydef.MainVerb.range * .9f) && jobTarget != null && jobTarget.Thing != null && jobTarget.Thing is Pawn && TM_Calc.HasLoSFromTo(caster.Position, jobTarget, caster, 0, abilitydef.MainVerb.range))
+                if (
+                    distanceToTarget > minRange && distanceToTarget < (abilitydef.MainVerb.range * .9f) && jobTarget != null && jobTarget.Thing is Pawn targetPawn && TM_Calc.HasLoSFromTo(caster.Position, jobTarget, caster, 0, abilitydef.MainVerb.range))
                 {
-                    Pawn targetPawn = jobTarget.Thing as Pawn;
                     if (!targetPawn.health.hediffSet.HasHediff(hediffDef, false))
                     {
                         Job job = ability.GetJob(AbilityContext.AI, jobTarget);
@@ -976,9 +973,8 @@ namespace TorannMagic.AutoCast
                 Pawn caster = casterComp.Pawn;
                 LocalTargetInfo jobTarget = TM_Calc.FindNearbyPawn(caster, (int)(abilitydef.MainVerb.range * .9f));
                 float distanceToTarget = (jobTarget.Cell - caster.Position).LengthHorizontal;                
-                if (distanceToTarget < (abilitydef.MainVerb.range * .9f) && jobTarget != null && jobTarget.Thing != null && jobTarget.Thing is Pawn)
+                if (distanceToTarget < (abilitydef.MainVerb.range * .9f) && jobTarget != null && jobTarget.Thing is Pawn targetPawn)
                 {
-                    Pawn targetPawn = jobTarget.Thing as Pawn;
                     if (targetPawn.RaceProps.Humanlike && targetPawn.IsColonist)
                     {
                         bool tatteredApparel = false;
@@ -1049,9 +1045,8 @@ namespace TorannMagic.AutoCast
             {
                 Pawn caster = casterComp.Pawn;
                 LocalTargetInfo jobTarget = TM_Calc.FindNearbyMage(caster, (int)(abilitydef.MainVerb.range * 1.5f), false);
-                if (jobTarget != null && jobTarget.Thing != null && jobTarget.Thing is Pawn && (jobTarget.Cell - caster.Position).LengthHorizontal < (abilitydef.MainVerb.range * 1.5f))
+                if (jobTarget != null && jobTarget.Thing is Pawn targetPawn && (jobTarget.Cell - caster.Position).LengthHorizontal < (abilitydef.MainVerb.range * 1.5f))
                 {
-                    Pawn targetPawn = jobTarget.Thing as Pawn;
                     CompAbilityUserMagic targetPawnComp = targetPawn.GetComp<CompAbilityUserMagic>();
                     if (targetPawn.CurJobDef.joyKind != null || targetPawn.CurJobDef == JobDefOf.Wait_Wander || targetPawn.CurJobDef == JobDefOf.GotoWander)
                     {
@@ -1083,9 +1078,8 @@ namespace TorannMagic.AutoCast
             {
                 Pawn caster = casterComp.Pawn;
                 LocalTargetInfo jobTarget = TM_Calc.FindNearbyFighter(caster, (int)(abilitydef.MainVerb.range * 1.5f), false);
-                if (jobTarget != null && jobTarget.Thing != null && jobTarget.Thing is Pawn && (jobTarget.Cell - caster.Position).LengthHorizontal < (abilitydef.MainVerb.range * 1.5f))
+                if (jobTarget != null && jobTarget.Thing is Pawn targetPawn && (jobTarget.Cell - caster.Position).LengthHorizontal < (abilitydef.MainVerb.range * 1.5f))
                 {
-                    Pawn targetPawn = jobTarget.Thing as Pawn;
                     CompAbilityUserMight targetPawnComp = targetPawn.GetComp<CompAbilityUserMight>();
                     if ((targetPawn.CurJobDef.joyKind != null && targetPawn.CurJobDef != TorannMagicDefOf.JobDriver_TM_Meditate) || targetPawn.CurJobDef == JobDefOf.Wait_Wander || targetPawn.CurJobDef == JobDefOf.GotoWander)
                     {

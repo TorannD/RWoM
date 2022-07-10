@@ -460,10 +460,9 @@ namespace TorannMagic
                                             }
                                             TM_MoteMaker.ThrowBloodSquirt(current.Position.ToVector3Shifted(), current.Map, 2.5f);
                                         }
-                                        else if (current.ParentHolder != null && current.ParentHolder is Caravan)
+                                        else if (current.ParentHolder is Caravan caravan)
                                         {
-                                            Caravan van = current.ParentHolder as Caravan;                                            
-                                            van.RemovePawn(current);
+                                            caravan.RemovePawn(current);
                                         }
                                         current.Destroy();
                                         undeadCount--;

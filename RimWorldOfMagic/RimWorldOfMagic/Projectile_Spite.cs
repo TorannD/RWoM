@@ -40,9 +40,9 @@ namespace TorannMagic
                 verVal = 3;
             }
 
-            if(victim == null && this.intendedTarget != null && this.intendedTarget.Thing != null && this.intendedTarget.Thing is Pawn)
+            if(victim == null && this.intendedTarget != null && this.intendedTarget.Thing is Pawn intendedPawn)
             {
-                victim = this.intendedTarget.Thing as Pawn;
+                victim = intendedPawn;
             }
             
             if (victim != null)

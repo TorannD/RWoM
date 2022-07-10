@@ -33,13 +33,11 @@ namespace TorannMagic.Conditions
                 
                 for (int i = 0; i < allThings.Count; i++)
                 {
-                    Thing t = allThings[i];
-                    if(t != null && t is Corpse)
+                    if (allThings[i] is Corpse corpse)
                     {
-                        Corpse c = t as Corpse;
-                        if(c.InnerPawn.IsColonist && !c.IsDessicated())
+                        if(corpse.InnerPawn.IsColonist && !corpse.IsDessicated())
                         {
-                            potentialResurrection.Add(c);
+                            potentialResurrection.Add(corpse);
                         }
                     }
                 }

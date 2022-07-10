@@ -174,10 +174,9 @@ namespace TorannMagic.Enchantment
 
         private void InitializeAbilities(ThingWithComps abilityThing)
         {
-            if (abilityThing is Apparel)
+            if (abilityThing is Apparel abilityApparel)
             {
-                Apparel abilityApparel = abilityThing as Apparel;
-                if (abilityApparel != null && abilityApparel.Wearer != null)
+                if (abilityApparel.Wearer != null)
                 {
                     CompAbilityItem comp = abilityApparel.TryGetComp<CompAbilityItem>();
                     if (comp != null)
@@ -231,9 +230,8 @@ namespace TorannMagic.Enchantment
                     }
                 }
                 Thing primary = this.parent as Thing;
-                if(primary != null && primary.ParentHolder is Pawn_EquipmentTracker)
-                {                    
-                    Pawn_EquipmentTracker pet = primary.ParentHolder as Pawn_EquipmentTracker;
+                if(primary != null && primary.ParentHolder is Pawn_EquipmentTracker pet)
+                {
                     if(pet.pawn != null && pet.pawn.equipment != null && pet.pawn.equipment.Primary == primary)
                     {
                         if (pet.pawn.health.hediffSet.GetFirstHediffOfDef(hediff, false) != null)
@@ -269,9 +267,8 @@ namespace TorannMagic.Enchantment
                     // abilities;
                 }
                 ThingWithComps primary = this.parent as ThingWithComps;
-                if (primary != null && primary.ParentHolder is Pawn_EquipmentTracker)
+                if (primary != null && primary.ParentHolder is Pawn_EquipmentTracker pet)
                 {
-                    Pawn_EquipmentTracker pet = primary.ParentHolder as Pawn_EquipmentTracker;
                     if (pet.pawn != null && pet.pawn.equipment != null && pet.pawn.equipment.Primary == primary)
                     {
                         this.InitializeAbilities(primary);
