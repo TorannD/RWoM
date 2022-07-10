@@ -2269,9 +2269,9 @@ namespace TorannMagic
             }
             else if (pawn.ParentHolder.ToString().Contains("Caravan"))
             {
-                foreach (Pawn current in pawn.holdingOwner)
+                foreach (Thing currentThing in pawn.holdingOwner)
                 {
-                    if (current != null)
+                    if (currentThing is Pawn current)
                     {
                         if (current.RaceProps.Humanlike && current.Faction == pawn.Faction && current.apparel != null && current.apparel.WornApparelCount > 0)
                         {
