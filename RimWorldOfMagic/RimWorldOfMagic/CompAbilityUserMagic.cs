@@ -7001,7 +7001,7 @@ namespace TorannMagic
                         GenPlace.TryPlaceThing(thing, this.earthSprites, this.earthSpriteMap, ThingPlaceMode.Near, null);
                     }
                 }
-                if (curCell.InBounds(map) && curCell.IsValid && terrain != null)
+                if (curCell.InBoundsWithNullCheck(map) && curCell.IsValid && terrain != null)
                 {
                     if (terrain.defName == "MarshyTerrain" || terrain.defName == "Mud" || terrain.defName == "Marsh")
                     {

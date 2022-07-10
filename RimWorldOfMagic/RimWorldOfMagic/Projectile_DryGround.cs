@@ -27,7 +27,7 @@ namespace TorannMagic
                 {
                     curCell = cells.ToArray<IntVec3>()[i];
                     terrain = curCell.GetTerrain(map);
-                    if (curCell.InBounds(map) && curCell.IsValid && terrain.driesTo != null)
+                    if (curCell.InBoundsWithNullCheck(map) && curCell.IsValid && terrain.driesTo != null)
                     {
                         if (terrain.defName == "MarshyTerrain" || terrain.defName == "Mud" || terrain.defName == "Marsh")
                         {

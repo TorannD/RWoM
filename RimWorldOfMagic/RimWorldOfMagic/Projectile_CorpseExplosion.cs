@@ -66,7 +66,7 @@ namespace TorannMagic
                 CellRect cellRect = CellRect.CenteredOn(base.Position, 1);
                 cellRect.ClipInsideMap(map);
                 IntVec3 curCell = cellRect.CenterCell;
-                if (curCell.InBounds(map) && curCell.IsValid)
+                if (curCell.InBoundsWithNullCheck(map) && curCell.IsValid)
                 {
                     Pawn undead = curCell.GetFirstPawn(map);
                     bool flag = undead != null && !undead.Dead;

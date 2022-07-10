@@ -93,7 +93,7 @@ namespace TorannMagic
                     for (int i = 0; i < 3; i++)
                     {
                         randomCell = cellRect.RandomCell;
-                        if (randomCell.InBounds(map))
+                        if (randomCell.InBoundsWithNullCheck(map))
                         {
                             victim = randomCell.GetFirstPawn(map);
                             if (victim != null)

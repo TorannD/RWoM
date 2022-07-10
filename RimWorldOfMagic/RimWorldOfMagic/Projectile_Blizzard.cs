@@ -69,7 +69,7 @@ namespace TorannMagic
                 Initialize(map);
             }
             impactPos = cellRect.RandomCell;
-            if (this.age > lastStrikeLarge + Rand.Range(200 - (pwrVal * 30), duration/(4 + pwrVal)) && impactPos.Standable(map) && impactPos.InBounds(map) && impactPos.DistanceToEdge(map) >= 2)
+            if (this.age > lastStrikeLarge + Rand.Range(200 - (pwrVal * 30), duration/(4 + pwrVal)) && impactPos.Standable(map) && impactPos.InBoundsWithNullCheck(map) && impactPos.DistanceToEdge(map) >= 2)
             {
                 this.lastStrikeLarge = this.age;
                 SkyfallerMaker.SpawnSkyfaller(TorannMagicDefOf.TM_Blizzard_Large, impactPos, map);
@@ -79,7 +79,7 @@ namespace TorannMagic
                 snowCount++;
             }
             impactPos = cellRect.RandomCell;
-            if (this.age > lastStrikeTiny + Rand.Range(6-(pwrVal), 18-(2*pwrVal)) && impactPos.Standable(map) && impactPos.InBounds(map))
+            if (this.age > lastStrikeTiny + Rand.Range(6-(pwrVal), 18-(2*pwrVal)) && impactPos.Standable(map) && impactPos.InBoundsWithNullCheck(map))
             {
                 this.lastStrikeTiny = this.age;
                 SkyfallerMaker.SpawnSkyfaller(TorannMagicDefOf.TM_Blizzard_Tiny, impactPos, map);
@@ -89,7 +89,7 @@ namespace TorannMagic
                 snowCount++;
             }
             impactPos = cellRect.RandomCell;
-            if ( this.age > lastStrikeSmall + Rand.Range(30-(2*pwrVal), 60-(4*pwrVal)) && impactPos.Standable(map) && impactPos.InBounds(map))
+            if ( this.age > lastStrikeSmall + Rand.Range(30-(2*pwrVal), 60-(4*pwrVal)) && impactPos.Standable(map) && impactPos.InBoundsWithNullCheck(map))
             {
                 this.lastStrikeSmall = this.age;
                 SkyfallerMaker.SpawnSkyfaller(TorannMagicDefOf.TM_Blizzard_Small, impactPos, map);
@@ -136,7 +136,7 @@ namespace TorannMagic
             for (int i = 0; i < num; i++)
             {
                 IntVec3 intVec = center + GenRadial.RadialPattern[i];
-                if (intVec.InBounds(map))
+                if (intVec.InBoundsWithNullCheck(map))
                 {
                     float lengthHorizontal = (center - intVec).LengthHorizontal;
                     float num2 = 1f - lengthHorizontal / radius;

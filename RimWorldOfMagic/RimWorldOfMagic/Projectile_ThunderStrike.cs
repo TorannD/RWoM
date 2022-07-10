@@ -100,12 +100,12 @@ namespace TorannMagic
             if (directionOffset != default(Vector3))
             {
                 currentPos = (this.origin + directionOffset).ToIntVec3();
-                if (currentPos != default(IntVec3) && currentPos.IsValid && currentPos.InBounds(base.Map) && currentPos.Walkable(base.Map) && currentPos.DistanceToEdge(base.Map) > 3)
+                if (currentPos != default(IntVec3) && currentPos.IsValid && currentPos.InBoundsWithNullCheck(base.Map) && currentPos.Walkable(base.Map) && currentPos.DistanceToEdge(base.Map) > 3)
                 {
                     CellRect cellRect = CellRect.CenteredOn(currentPos, 1);
                     //cellRect.ClipInsideMap(base.Map);
                     IntVec3 rndCell = cellRect.RandomCell;
-                    if (rndCell != null && rndCell != default(IntVec3) && rndCell.IsValid && rndCell.InBounds(base.Map) && rndCell.Walkable(base.Map) && rndCell.DistanceToEdge(base.Map) > 3)
+                    if (rndCell != null && rndCell != default(IntVec3) && rndCell.IsValid && rndCell.InBoundsWithNullCheck(base.Map) && rndCell.Walkable(base.Map) && rndCell.DistanceToEdge(base.Map) > 3)
                     {
                         Map.weatherManager.eventHandler.AddEvent(new TM_WeatherEvent_MeshFlash(base.Map, rndCell, TM_MatPool.chiLightning, TMDamageDefOf.DamageDefOf.TM_ChiBurn, this.launcher, Mathf.RoundToInt(Rand.Range(8, 14) * (1 +(.12f * pwrVal)) * this.arcaneDmg), Rand.Range(1.5f, 2f)));
                     }

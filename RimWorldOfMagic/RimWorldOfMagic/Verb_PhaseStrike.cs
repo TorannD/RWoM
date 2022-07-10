@@ -179,7 +179,7 @@ namespace TorannMagic
             foreach (IntVec3 curCell in targets)
             {
                 FleckMaker.ThrowDustPuff(curCell, map, .2f);
-                if (curCell.InBounds(map) && curCell.IsValid)
+                if (curCell.InBoundsWithNullCheck(map) && curCell.IsValid)
                 {
                     Pawn victim = curCell.GetFirstPawn(map);
                     if (victim != null && victim.Faction != pawn.Faction)

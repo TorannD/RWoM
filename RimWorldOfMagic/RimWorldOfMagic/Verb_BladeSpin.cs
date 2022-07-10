@@ -116,7 +116,7 @@ namespace TorannMagic
             for (int i = 0; i < targets.Count(); i++)
             {
                 curCell = targets.ToArray<IntVec3>()[i];
-                if (curCell.InBounds(base.CasterPawn.Map) && curCell.IsValid)
+                if (curCell.InBoundsWithNullCheck(base.CasterPawn.Map) && curCell.IsValid)
                 {
                     victim = curCell.GetFirstPawn(map);
                 }
@@ -125,12 +125,7 @@ namespace TorannMagic
                 {
                     for (int j = 0; j < 2+pwrVal; j++)
                     {
-                        bool newTarg = false;
                         if (Rand.Chance(.5f + .04f*(pwrVal+verVal)))
-                        {
-                            newTarg = true;
-                        }
-                        if (newTarg)
                         {
                             DrawStrike(center, victim.Position.ToVector3(), map);
                             damageEntities(victim, null, GetWeaponDmg(this.CasterPawn), DamageDefOf.Cut);

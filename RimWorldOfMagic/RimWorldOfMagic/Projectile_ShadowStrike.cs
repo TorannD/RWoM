@@ -102,7 +102,7 @@ namespace TorannMagic
                 {
                     tmpPos.z++;
                 }
-                if(tmpPos.IsValid && tmpPos.InBounds(map) && tmpPos.Walkable(map))
+                if(tmpPos.IsValid && tmpPos.InBoundsWithNullCheck(map) && tmpPos.Walkable(map))
                 {
                     targetPos = tmpPos;
                 }

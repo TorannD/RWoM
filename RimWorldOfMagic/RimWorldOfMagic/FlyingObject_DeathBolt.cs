@@ -252,7 +252,7 @@ namespace TorannMagic
                 bool flag2 = this.ticksToImpact <= 0 && !impacted;
                 if (flag2)
                 {
-                    bool flag3 = this.DestinationCell.InBounds(base.Map);
+                    bool flag3 = this.DestinationCell.InBoundsWithNullCheck(base.Map);
                     if (flag3)
                     {
                         base.Position = this.DestinationCell;
@@ -268,14 +268,14 @@ namespace TorannMagic
                     CellRect cellRect = CellRect.CenteredOn(base.Position, 2);
                     cellRect.ClipInsideMap(base.Map);
                     IntVec3 spreadingDarknessCell;
-                    if(!(cellRect.CenterCell.GetTerrain(base.Map).passability == Traversability.Impassable) && !cellRect.CenterCell.IsValid || !cellRect.CenterCell.InBounds(base.Map))
+                    if(!(cellRect.CenterCell.GetTerrain(base.Map).passability == Traversability.Impassable) && !cellRect.CenterCell.IsValid || !cellRect.CenterCell.InBoundsWithNullCheck(base.Map))
                     {
                         this.ticksFollowingImpact = -1;
                     }
                     for (int i = 0; i < 2; i++)
                     {
                         spreadingDarknessCell = cellRect.RandomCell;
-                        if (spreadingDarknessCell.InBounds(base.Map) && spreadingDarknessCell.IsValid)
+                        if (spreadingDarknessCell.InBoundsWithNullCheck(base.Map) && spreadingDarknessCell.IsValid)
                         {
                             GenExplosion.DoExplosion(spreadingDarknessCell, base.Map, .4f, TMDamageDefOf.DamageDefOf.TM_DeathBolt, this.pawn, Mathf.RoundToInt((Rand.Range(.4f * this.def.projectile.GetDamageAmount(1, null), .8f * this.def.projectile.GetDamageAmount(1, null)) + (3f * pwrVal)) * this.arcaneDmg), 2, this.def.projectile.soundExplode, def, null, null, null, 0f, 1, false, null, 0f, 0, 0.0f, true);
                             TM_MoteMaker.ThrowDiseaseMote(base.Position.ToVector3Shifted(), base.Map, .6f);

@@ -104,7 +104,7 @@ namespace TorannMagic
                 //{
                 for(int k =0; k < wall.Count(); k++)
                 { 
-                    if(wall[k].position.IsValid && wall[k].position.InBounds(caster.Map) && !wall[k].position.Fogged(caster.Map) && !wall[k].position.InNoZoneEdgeArea(caster.Map))
+                    if(wall[k].position.IsValid && wall[k].position.InBoundsWithNullCheck(caster.Map) && !wall[k].position.Fogged(caster.Map) && !wall[k].position.InNoZoneEdgeArea(caster.Map))
                     //if (wallPositions[k].IsValid && wallPositions[k].InBounds(caster.Map) && !wallPositions[k].Fogged(caster.Map) && !wallPositions[k].InNoZoneEdgeArea(caster.Map))
                     {
                         if (wall[k].terrain.defName == "Marsh" || wall[k].terrain.defName == "WaterShallow" || wall[k].terrain.defName == "WaterMovingShallow" || wall[k].terrain.defName == "WaterOceanShallow" || wall[k].terrain.defName == "WaterMovingChestDeep")
