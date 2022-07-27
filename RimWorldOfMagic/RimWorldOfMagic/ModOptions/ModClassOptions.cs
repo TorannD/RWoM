@@ -46,6 +46,7 @@ namespace TorannMagic.ModOptions
             //Conflicting trait levelset
             List<TraitDef> customTraits = new List<TraitDef>();
             customTraits.Clear();
+            const string customIconType = "TM_Icon_Custom";
             for (int i = 0; i < TM_ClassUtility.CustomClasses().Count; i++)
             {
                 TMDefs.TM_CustomClass customClass = TM_ClassUtility.CustomClasses()[i];
@@ -61,8 +62,8 @@ namespace TorannMagic.ModOptions
                     {
                         customIcon = ContentFinder<Texture2D>.Get("Other/ClassTextures/" + customClass.classTexturePath, true);
                     }
+                    TraitIconMap.Set(customClass.classTrait, new TraitIconMap.TraitIconValue(customIcon, customIconType));
                     
-                    TraitIconMap.Set(customClass.classTrait, new TraitIconMap.TraitIconValue(customIcon, "TM_Icon_Custom"));
                     // Add custom trait to list for processing
                     customTraits.Add(customClass.classTrait);
                 }

@@ -7,7 +7,7 @@ namespace TorannMagic
     public static class TraitIconMap
     {
         // Data for ColonistBarColonistDrawer_Patch
-        private const string MageIcon = "TM_Icon_Mage";  // Use same strings in tuples for less memory usage
+        private const string MageIcon = "TM_Icon_Mage";
         private const string FighterIcon = "TM_Icon_Fighter";
         // Class to hold Values for below dictionary
         public class TraitIconValue
