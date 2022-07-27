@@ -135,7 +135,7 @@ namespace TorannMagic
                 IntVec3 cell = cellList[i];                
                 bldg = cell.GetFirstBuilding(this.CasterPawn.Map);
                 terrain = cell.GetTerrain(this.CasterPawn.Map);
-                if (cell.InBounds(this.CasterPawn.Map) && bldg == null && terrain == terrainDef)
+                if (cell.InBoundsWithNullCheck(this.CasterPawn.Map) && bldg == null && terrain == terrainDef)
                 {
                     this.CasterPawn.Map.terrainGrid.SetTerrain(cell, TerrainDef.Named("Gravel"));
                     FleckMaker.ThrowSmoke(cell.ToVector3Shifted(), this.CasterPawn.Map, Rand.Range(.8f, 1.2f));

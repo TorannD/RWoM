@@ -36,7 +36,7 @@ namespace TorannMagic
                 curCell = targets.ToArray<IntVec3>()[i];
 
                 TM_MoteMaker.ThrowPoisonMote(curCell.ToVector3Shifted(), map, .3f);
-                if (curCell.InBounds(map))
+                if (curCell.InBoundsWithNullCheck(map))
                 { 
                     Corpse corpse = null;
                     List<Thing> thingList;
@@ -238,10 +238,9 @@ namespace TorannMagic
                                     }
                                 }
                             }
-                            else if (corpseThing is Pawn)
+                            else if (corpseThing is Pawn undeadPawn)
                             {
-                                Pawn undeadPawn = corpseThing as Pawn;
-                                if(undeadPawn != pawn && !TM_Calc.IsNecromancer(undeadPawn) && TM_Calc.IsUndead(corpseThing as Pawn))
+                                if(undeadPawn != pawn && !TM_Calc.IsNecromancer(undeadPawn) && TM_Calc.IsUndead(undeadPawn))
                                 {
                                     RemoveHediffsAddictionsAndPermanentInjuries(undeadPawn);
                                     TM_MoteMaker.ThrowPoisonMote(curCell.ToVector3Shifted(), map, .6f);

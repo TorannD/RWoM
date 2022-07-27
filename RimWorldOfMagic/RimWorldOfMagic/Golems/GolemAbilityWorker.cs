@@ -116,6 +116,51 @@ namespace TorannMagic.Golems
             return true;
         }
 
+        private static bool IsValidOtherTarget(TMPawnGolem golem, TM_GolemAbility ability, LocalTargetInfo localTarget)
+        {
+            if (!ability.golemAbilityDef.autocasting.ValidType(ability.golemAbilityDef.autocasting.GetTargetType, localTarget))
+            {
+                return false;
+            }
+            
+            Thing targetThing = localTarget.Thing;
+            if (ability.golemAbilityDef.autocasting.requiresLoS && !TM_Calc.HasLoSFromTo(golem.Position, targetThing, golem, ability.golemAbilityDef.autocasting.minRange, ability.golemAbilityDef.autocasting.maxRange) && targetThing != golem)
+            {
+                return false;
+            }
+            if (ability.golemAbilityDef.autocasting.maxRange != 0f && ability.golemAbilityDef.autocasting.maxRange < (golem.Position - targetThing.Position).LengthHorizontal)
+            {
+                return false;
+            }
+            
+            // Autocast targeting early exit conditions
+            bool targetIsHostile = targetThing.Faction != null && targetThing.Faction.HostileTo(golem.Faction);
+            bool targetNeutral = ability.golemAbilityDef.autocasting.targetNeutral && !targetIsHostile;
+            bool targetEnemy = ability.golemAbilityDef.autocasting.targetEnemy && targetIsHostile;
+            if (targetThing is Pawn targetPawn)
+            {
+                if (targetEnemy && (targetPawn.Downed || targetPawn.IsPrisoner))
+                {
+                    return false;
+                }
+
+                if (targetNeutral)
+                {
+                    if (ability.golemAbilityDef.isViolent && targetThing.Faction != null && !targetPawn.InMentalState)
+                    {
+                        return false;
+                    }
+                }
+            }
+            
+            bool targetFriendly = ability.golemAbilityDef.autocasting.targetFriendly && targetThing.Faction == golem.Faction;
+            if (!(targetEnemy || targetNeutral || targetFriendly))
+            {
+                return false;
+            }
+            return ability.golemAbilityDef.autocasting.ValidConditions(golem, targetThing);
+        }
+
         public static void ResolveAbilityUse(TMPawnGolem golem, CompGolem comp, TM_GolemAbility ability, out bool success)
         {
             ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
@@ -128,53 +173,9 @@ namespace TorannMagic.Golems
                     if (ability.golemAbilityDef.autocasting.type == TMDefs.AutocastType.OnTarget && currentTarget != null)
                     {
                         LocalTargetInfo localTarget = TM_Calc.GetAutocastTarget(golem, ability.golemAbilityDef.autocasting, currentTarget);
-                        if (localTarget != null && localTarget.IsValid)
+                        if (localTarget != null && localTarget.IsValid && IsValidOtherTarget(golem, ability, localTarget))
                         {
-                            Thing targetThing = localTarget.Thing;
-                            if (!ability.golemAbilityDef.autocasting.ValidType(ability.golemAbilityDef.autocasting.GetTargetType, localTarget))
-                            {
-                                return;
-                            }
-                            if (ability.golemAbilityDef.autocasting.requiresLoS && !TM_Calc.HasLoSFromTo(golem.Position, targetThing, golem, ability.golemAbilityDef.autocasting.minRange, ability.golemAbilityDef.autocasting.maxRange) && targetThing != golem)
-                            {
-                                return;
-                            }
-                            if (ability.golemAbilityDef.autocasting.maxRange != 0f && ability.golemAbilityDef.autocasting.maxRange < (golem.Position - targetThing.Position).LengthHorizontal)
-                            {
-                                return;
-                            }
-                            bool TE = ability.golemAbilityDef.autocasting.targetEnemy && targetThing.Faction != null && targetThing.Faction.HostileTo(golem.Faction);
-                            if (TE && targetThing is Pawn)
-                            {
-                                Pawn targetPawn = targetThing as Pawn;
-                                if (targetPawn.Downed || targetPawn.IsPrisoner)
-                                {
-                                    return;
-                                }
-                            }
-                            bool TN = ability.golemAbilityDef.autocasting.targetNeutral && (targetThing.Faction == null || !targetThing.Faction.HostileTo(golem.Faction));
-                            if (TN && targetThing is Pawn)
-                            {
-                                Pawn targetPawn = targetThing as Pawn;
-                                if (targetPawn.Downed || targetPawn.IsPrisoner)
-                                {
-                                    return;
-                                }
-                                if (ability.golemAbilityDef.isViolent && targetThing.Faction != null && !targetPawn.InMentalState)
-                                {
-                                    return;
-                                }
-                            }
-                            bool TF = ability.golemAbilityDef.autocasting.targetFriendly && targetThing.Faction == golem.Faction;
-                            if (!(TE || TN || TF))
-                            {
-                                return;
-                            }
-                            if (!ability.golemAbilityDef.autocasting.ValidConditions(golem, targetThing))
-                            {
-                                return;
-                            }
-                            comp.StartAbility(ability, targetThing);
+                            comp.StartAbility(ability, localTarget.Thing);
                         }
                     }
                     if (ability.golemAbilityDef.autocasting.type == TMDefs.AutocastType.OnSelf)
@@ -222,53 +223,9 @@ namespace TorannMagic.Golems
                     if (ability.golemAbilityDef.autocasting.type == TMDefs.AutocastType.OnNearby)
                     {
                         LocalTargetInfo localTarget = TM_Calc.GetAutocastTarget(golem, ability.golemAbilityDef.autocasting, currentTarget);
-                        if (localTarget != null && localTarget.IsValid)
+                        if (localTarget != null && localTarget.IsValid && IsValidOtherTarget(golem, ability, localTarget))
                         {
-                            Thing targetThing = localTarget.Thing;
-                            if (!ability.golemAbilityDef.autocasting.ValidType(ability.golemAbilityDef.autocasting.GetTargetType, localTarget))
-                            {
-                                return;
-                            }
-                            if (ability.golemAbilityDef.autocasting.requiresLoS && !TM_Calc.HasLoSFromTo(golem.Position, targetThing, golem, ability.golemAbilityDef.autocasting.minRange, ability.golemAbilityDef.autocasting.maxRange))
-                            {
-                                return;
-                            }
-                            if (ability.golemAbilityDef.autocasting.maxRange != 0f && ability.golemAbilityDef.autocasting.maxRange < (golem.Position - targetThing.Position).LengthHorizontal)
-                            {
-                                return;
-                            }
-                            bool TE = ability.golemAbilityDef.autocasting.targetEnemy && targetThing.Faction != null && targetThing.Faction.HostileTo(golem.Faction);
-                            if (TE && targetThing is Pawn)
-                            {
-                                Pawn targetPawn = targetThing as Pawn;
-                                if (targetPawn.Downed || targetPawn.IsPrisoner)
-                                {
-                                    return;
-                                }
-                            }
-                            bool TN = ability.golemAbilityDef.autocasting.targetNeutral && (targetThing.Faction == null || !targetThing.Faction.HostileTo(golem.Faction));
-                            if (TN && targetThing is Pawn)
-                            {
-                                Pawn targetPawn = targetThing as Pawn;
-                                if (targetPawn.Downed || targetPawn.IsPrisoner)
-                                {
-                                    return;
-                                }
-                                if (ability.golemAbilityDef.isViolent && targetThing.Faction != null && !targetPawn.InMentalState)
-                                {
-                                    return;
-                                }
-                            }
-                            bool TF = ability.golemAbilityDef.autocasting.targetFriendly && targetThing.Faction == golem.Faction;
-                            if (!(TE || TN || TF))
-                            {
-                                return;
-                            }
-                            if (!ability.golemAbilityDef.autocasting.ValidConditions(golem, targetThing))
-                            {
-                                return;
-                            }
-                            comp.StartAbility(ability, targetThing);
+                            comp.StartAbility(ability, localTarget.Thing);
                         }
                     }
                 }

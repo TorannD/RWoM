@@ -92,7 +92,7 @@ namespace TorannMagic
             for (int j = 0; j < targets.Count; j++)
             {
                 IntVec3 curCell = targets[j];
-                if (map != null && curCell.IsValid && curCell.InBounds(map))
+                if (map != null && curCell.IsValid && curCell.InBoundsWithNullCheck(map))
                 {
                     HolyExplosion(pwrVal, verVal, curCell, map, 0.4f);
                 }

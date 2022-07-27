@@ -63,7 +63,7 @@ namespace TorannMagic
                 validCells.Clear();
                 foreach(IntVec3 c in cells)
                 {
-                    if(c.InBounds(map) && c.DistanceToEdge(map) > 2)
+                    if(c.InBoundsWithNullCheck(map) && c.DistanceToEdge(map) > 2)
                     {
                         if (c.Roofed(map))
                         {
@@ -79,7 +79,7 @@ namespace TorannMagic
                     }
                 }                
                 currentVec = currentVec + (2 *waveDirection);                
-                if(!currentVec.ToIntVec3().InBounds(map))
+                if(!currentVec.ToIntVec3().InBoundsWithNullCheck(map))
                 {                    
                     this.age = this.duration;
                 }

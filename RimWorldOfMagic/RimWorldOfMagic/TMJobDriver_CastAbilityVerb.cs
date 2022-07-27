@@ -43,11 +43,10 @@ namespace TorannMagic
                 targetPawn = TargetThingA as Pawn;
             }
 
-            cooldownFlag = this.verb.Ability.CooldownTicksLeft > 0 ? true : false;
+            cooldownFlag = this.verb.Ability.CooldownTicksLeft > 0;
 
-            if(this.verb.Ability.Def is TMAbilityDef)
+            if(this.verb.Ability.Def is TMAbilityDef tmAbilityDef)
             { 
-                TMAbilityDef tmAbility = (TMAbilityDef)(this.verb.Ability.Def);
                 CompAbilityUserMight compMight = this.pawn.TryGetComp<CompAbilityUserMight>();
                 CompAbilityUserMagic compMagic = this.pawn.TryGetComp<CompAbilityUserMagic>();
                 //if (compMagic != null)
@@ -58,13 +57,13 @@ namespace TorannMagic
                 //{
                 //    //compMight.AIAbilityJob = null;
                 //}
-                if (tmAbility.manaCost > 0 && pawn.story != null && pawn.story.traits != null && !pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+                if (tmAbilityDef.manaCost > 0 && pawn.story != null && pawn.story.traits != null && !pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
                 {
                     if(this.pawn.Map.gameConditionManager.ConditionIsActive(TorannMagicDefOf.TM_ManaStorm))
                     {
                         //DamageInfo dinfo2;
                         //BodyPartRecord vitalPart = null;
-                        int amt = Mathf.RoundToInt(compMagic.ActualManaCost(tmAbility) * 100f);
+                        int amt = Mathf.RoundToInt(compMagic.ActualManaCost(tmAbilityDef) * 100f);
                         //IEnumerable<BodyPartRecord> partSearch = pawn.def.race.body.AllParts;
                         //vitalPart = partSearch.FirstOrDefault<BodyPartRecord>((BodyPartRecord x) => x.def.tags.Contains(BodyPartTagDefOf.ConsciousnessSource));
                         //dinfo2 = new DamageInfo(TMDamageDefOf.DamageDefOf.TM_Arcane, amt, 10, 0, pawn as Thing, vitalPart, null, DamageInfo.SourceCategory.ThingOrUnknown);
@@ -77,7 +76,7 @@ namespace TorannMagic
                     }
                     if (compMagic != null && compMagic.Mana != null)
                     {
-                        if (compMagic.ActualManaCost(tmAbility) > compMagic.Mana.CurLevel)
+                        if (compMagic.ActualManaCost(tmAbilityDef) > compMagic.Mana.CurLevel)
                         {
                             energyFlag = true;
                         }
@@ -87,11 +86,11 @@ namespace TorannMagic
                         energyFlag = true;
                     }
                 }
-                if (tmAbility.staminaCost > 0)
+                if (tmAbilityDef.staminaCost > 0)
                 {
                     if (compMight != null && compMight.Stamina != null)
                     {
-                        if (compMight.ActualStaminaCost(tmAbility) > compMight.Stamina.CurLevel)
+                        if (compMight.ActualStaminaCost(tmAbilityDef) > compMight.Stamina.CurLevel)
                         {
                             energyFlag = true;
                         }
@@ -206,10 +205,9 @@ namespace TorannMagic
                         //bool inRange = (pawn.Position - TargetLocA).LengthHorizontal < verb.verbProps.range;
                         //if (inRange && validTarg)
                         //{
-                        if (verb != null && verb.Ability != null && verb.Ability.Def is TMAbilityDef)
-                        { 
-                            TMAbilityDef tmad = (TMAbilityDef)(verb.Ability.Def);
-                            if (tmad != null && tmad.relationsAdjustment != 0 && targetPawn.Faction != null && targetPawn.Faction != this.pawn.Faction && !targetPawn.Faction.HostileTo(this.pawn.Faction))
+                        if (verb != null && verb.Ability != null && verb.Ability.Def is TMAbilityDef tmad)
+                        {
+                            if (tmad.relationsAdjustment != 0 && targetPawn.Faction != null && targetPawn.Faction != this.pawn.Faction && !targetPawn.Faction.HostileTo(this.pawn.Faction))
                             {
                                 targetPawn.Faction.TryAffectGoodwillWith(this.pawn.Faction, tmad.relationsAdjustment, true, false, TorannMagicDefOf.TM_OffensiveMagic, null);
                             }
@@ -249,7 +247,7 @@ namespace TorannMagic
             {                
                 if (verb != null && verb.verbProps != null && (pawn.Position - TargetLocA).LengthHorizontal < verb.verbProps.range)
                 {
-                    if (TargetLocA.IsValid && TargetLocA.InBounds(pawn.Map) && !TargetLocA.Fogged(pawn.Map))  //&& TargetLocA.Walkable(pawn.Map)
+                    if (TargetLocA.IsValid && TargetLocA.InBoundsWithNullCheck(pawn.Map) && !TargetLocA.Fogged(pawn.Map))  //&& TargetLocA.Walkable(pawn.Map)
                     {
                         ShootLine shootLine;
                         bool validTarg = verb.TryFindShootLineFromTo(pawn.Position, TargetLocA, out shootLine);

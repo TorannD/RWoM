@@ -18,9 +18,8 @@ namespace TorannMagic
         public override void Tick()
         {
             base.Tick();
-            if(Find.TickManager.TicksGame % 2 == 0 && daggerCount > 0 && this.launcher != null && this.launcher is Pawn)
+            if(Find.TickManager.TicksGame % 2 == 0 && daggerCount > 0 && this.launcher is Pawn caster)
             {
-                Pawn caster = this.launcher as Pawn;
                 CompAbilityUserMight comp = caster.TryGetComp<CompAbilityUserMight>();
                 if(comp != null)
                 {

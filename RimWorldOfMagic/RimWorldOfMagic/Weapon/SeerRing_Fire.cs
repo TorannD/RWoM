@@ -31,7 +31,7 @@ namespace TorannMagic.Weapon
                 try
                 {
                     IntVec3 randomCell = cellRect.RandomCell;
-                    if (randomCell.IsValid && randomCell.InBounds(map))
+                    if (randomCell.IsValid && randomCell.InBoundsWithNullCheck(map))
                     {
                         this.FireExplosion(randomCell, map, 1f);
                     }

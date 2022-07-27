@@ -249,12 +249,11 @@ namespace TorannMagic
 
         public static bool IsWall(Thing t)
         {
-            if(t != null && t is Building)
+            if(t is Building building)
             {
-                Building b = t as Building;
-                if (b.def.passability == Traversability.Impassable && b.def.holdsRoof)
+                if (building.def.passability == Traversability.Impassable && building.def.holdsRoof)
                 {
-                    if (t.def.defName.ToLower().Contains("wall") || (t.def.label.ToLower().Contains("wall")))
+                    if (building.def.defName.ToLower().Contains("wall") || (building.def.label.ToLower().Contains("wall")))
                     {
                         return true;
                     }
@@ -1884,7 +1883,7 @@ namespace TorannMagic
                 IntVec3 tmp = currentPos;
                 tmp.x += (Rand.Range(-radius, radius));
                 tmp.z += Rand.Range(-radius, radius);
-                if (tmp.InBounds(pawn.Map) && tmp.IsValid && tmp.Walkable(pawn.Map) && tmp.DistanceToEdge(pawn.Map) > 8)
+                if (tmp.InBoundsWithNullCheck(pawn.Map) && tmp.IsValid && tmp.Walkable(pawn.Map) && tmp.DistanceToEdge(pawn.Map) > 8)
                 {
                     List<Pawn> threatCount = TM_Calc.FindPawnsNearTarget(pawn, 4, tmp, true);
                     if (threatCount != null)
@@ -1918,7 +1917,7 @@ namespace TorannMagic
             for (int k = 0; k < outerCells.Count; k++)
             {
                 IntVec3 wall = outerCells[k];
-                if (wall.IsValid && wall.InBounds(map) && !wall.Fogged(map) && wall.Standable(map) && (!wall.Roofed(map) || allowRoofed))
+                if (wall.IsValid && wall.InBoundsWithNullCheck(map) && !wall.Fogged(map) && wall.Standable(map) && (!wall.Roofed(map) || allowRoofed))
                 {
                     List<Thing> cellList = new List<Thing>();
                     try
@@ -2270,9 +2269,9 @@ namespace TorannMagic
             }
             else if (pawn.ParentHolder.ToString().Contains("Caravan"))
             {
-                foreach (Pawn current in pawn.holdingOwner)
+                foreach (Thing currentThing in pawn.holdingOwner)
                 {
-                    if (current != null)
+                    if (currentThing is Pawn current)
                     {
                         if (current.RaceProps.Humanlike && current.Faction == pawn.Faction && current.apparel != null && current.apparel.WornApparelCount > 0)
                         {
@@ -4264,7 +4263,7 @@ namespace TorannMagic
             List<IntVec3> cellList = GenAdjFast.AdjacentCells8Way(cell);
             for (int i = 0; i < cellList.Count; i++)
             {
-                if (cellList[i] != default(IntVec3) && cellList[i].InBounds(map) && cellList[i].Walkable(map) && !cellList[i].Fogged(map))
+                if (cellList[i] != default(IntVec3) && cellList[i].InBoundsWithNullCheck(map) && cellList[i].Walkable(map) && !cellList[i].Fogged(map))
                 {
                     cell = cellList[i];
                     break;
@@ -4278,7 +4277,7 @@ namespace TorannMagic
             List<IntVec3> cellList = GenRadial.RadialCellsAround(cell, range, true).InRandomOrder().ToList();
             for (int i = 0; i < cellList.Count; i++)
             {
-                if (cellList[i] != default(IntVec3) && cellList[i].InBounds(map) && !cellList[i].Fogged(map))
+                if (cellList[i] != default(IntVec3) && cellList[i].InBoundsWithNullCheck(map) && !cellList[i].Fogged(map))
                 {
                     cell = cellList[i];
                     break;
@@ -4577,7 +4576,7 @@ namespace TorannMagic
         {
             //Determines if a cell has a wall built on it
             Building wall = null;
-            if (cell != default(IntVec3) && cell.InBounds(map))
+            if (cell != default(IntVec3) && cell.InBoundsWithNullCheck(map))
             {
                 List<Thing> tList = cell.GetThingList(map);
                 if(tList != null && tList.Count > 0)

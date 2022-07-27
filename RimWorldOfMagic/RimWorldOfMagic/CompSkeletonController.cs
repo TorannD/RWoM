@@ -216,7 +216,7 @@ namespace TorannMagic
                 for (int i = 0; i < targetCells.Count(); i++)
                 {
                     curCell = targetCells[i];
-                    if (curCell.IsValid && curCell.InBounds(this.Pawn.Map))
+                    if (curCell.IsValid && curCell.InBoundsWithNullCheck(this.Pawn.Map))
                     {
                         if (isExplosion)
                         {
@@ -262,7 +262,7 @@ namespace TorannMagic
             for (int i = 0; i < targetCells.Count(); i++)
             {
                 curCell = targetCells[i];
-                if (curCell.IsValid && curCell.InBounds(this.Pawn.Map))
+                if (curCell.IsValid && curCell.InBoundsWithNullCheck(this.Pawn.Map))
                 {
                     Vector3 launchVector = TM_Calc.GetVector(this.Pawn.Position, curCell);
                     Pawn knockbackPawn = curCell.GetFirstPawn(this.Pawn.Map);
@@ -599,15 +599,11 @@ namespace TorannMagic
         public override void PostPreApplyDamage(DamageInfo dinfo, out bool absorbed)
         {
             base.PostPreApplyDamage(dinfo, out absorbed);
-            if(dinfo.Instigator != null)
+            if (dinfo.Instigator is Building instigatorThing)
             {
-                Thing instigatorThing = dinfo.Instigator;
-                if(instigatorThing is Building)
+                if (instigatorThing.Faction != null && instigatorThing.Faction != this.Pawn.Faction)
                 {
-                    if (instigatorThing.Faction != null && instigatorThing.Faction != this.Pawn.Faction)
-                    {
-                        this.buildingThreats.AddDistinct(instigatorThing as Building);
-                    }
+                    this.buildingThreats.AddDistinct(instigatorThing);
                 }
             }
         }
@@ -678,9 +674,9 @@ namespace TorannMagic
             {
                 return false;
             }
-            if(target is Pawn)
+            if(target is Pawn targetPawn)
             {
-                return !(target as Pawn).Downed;
+                return !targetPawn.Downed;
             }
             if(target.Position.DistanceToEdge(this.Pawn.Map) < 8)
             {
@@ -700,7 +696,7 @@ namespace TorannMagic
             returnThings.Clear();
             for (int i = 0; i < searchCells.Count(); i++)
             {
-                if (searchCells[i].IsValid && searchCells[i].InBounds(this.Pawn.Map))
+                if (searchCells[i].IsValid && searchCells[i].InBoundsWithNullCheck(this.Pawn.Map))
                 {
                     List<Thing> cellList = searchCells[i].GetThingList(this.Pawn.Map);
                     for (int j = 0; j<cellList.Count(); j++)

@@ -104,7 +104,7 @@ namespace TorannMagic
         public static List<IntVec3> PortableCellsAround(IntVec3 pos, Map map)
         {
             Building_TM_DMP.portableCells.Clear();
-            if (!pos.InBounds(map))
+            if (!pos.InBoundsWithNullCheck(map))
             {
                 return Building_TM_DMP.portableCells;
 

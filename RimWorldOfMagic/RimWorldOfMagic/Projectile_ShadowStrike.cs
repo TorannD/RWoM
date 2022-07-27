@@ -83,18 +83,17 @@ namespace TorannMagic
             this.startPos = caster.Position;
             IntVec3 targetPos = target.Position;
             IntVec3 tmpPos = targetPos;
-            if(!target.DestroyedOrNull() && target is Pawn)
+            if(!target.DestroyedOrNull() && target is Pawn pawn)
             {
-                Pawn p = target as Pawn;
-                if(p.Rotation == Rot4.East)
+                if(pawn.Rotation == Rot4.East)
                 {
                     tmpPos.x--;
                 }
-                else if(p.Rotation == Rot4.West)
+                else if(pawn.Rotation == Rot4.West)
                 {
                     tmpPos.x++;
                 }
-                else if(p.Rotation == Rot4.North)
+                else if(pawn.Rotation == Rot4.North)
                 {
                     tmpPos.z--;
                 }
@@ -102,7 +101,7 @@ namespace TorannMagic
                 {
                     tmpPos.z++;
                 }
-                if(tmpPos.IsValid && tmpPos.InBounds(map) && tmpPos.Walkable(map))
+                if(tmpPos.IsValid && tmpPos.InBoundsWithNullCheck(map) && tmpPos.Walkable(map))
                 {
                     targetPos = tmpPos;
                 }
@@ -142,10 +141,9 @@ namespace TorannMagic
 
         public void DoStrike(Thing target)
         {
-            if (target != null && target is Pawn)
+            if (target != null && target is Pawn targetPawn)
             {
-                Pawn t = target as Pawn;
-                if (t.Faction == null || (t.Faction != null && t.Faction != caster.Faction))
+                if (targetPawn.Faction == null || (targetPawn.Faction != null && targetPawn.Faction != caster.Faction))
                 {
                     //List<BodyPartRecord> partList = new List<BodyPartRecord>();
                     //partList.Clear();
@@ -159,26 +157,26 @@ namespace TorannMagic
                     //}
                     for (int i = 0; i < 4; i++)
                     {
-                        if (!t.DestroyedOrNull() && !t.Dead && t.Map != null)
+                        if (!targetPawn.DestroyedOrNull() && !targetPawn.Dead && targetPawn.Map != null)
                         {
                             int dmg = Mathf.RoundToInt(this.weaponDamage);
                             if (Rand.Chance(critChance))
                             {
                                 dmg *= 3;
                             }
-                            BodyPartRecord bpr = t.health.hediffSet.GetRandomNotMissingPart(DamageDefOf.Stab, BodyPartHeight.Undefined, BodyPartDepth.Outside);
-                            TM_Action.DamageEntities(target, bpr, dmg, Rand.Range(0f, .5f), DamageDefOf.Stab, this.caster);
-                            Vector3 rndPos = t.DrawPos;
+                            BodyPartRecord bpr = targetPawn.health.hediffSet.GetRandomNotMissingPart(DamageDefOf.Stab, BodyPartHeight.Undefined, BodyPartDepth.Outside);
+                            TM_Action.DamageEntities(targetPawn, bpr, dmg, Rand.Range(0f, .5f), DamageDefOf.Stab, this.caster);
+                            Vector3 rndPos = targetPawn.DrawPos;
                             rndPos.x += Rand.Range(-.2f, .2f);
                             rndPos.z += Rand.Range(-.2f, .2f);
-                            TM_MoteMaker.ThrowBloodSquirt(rndPos, t.Map, Rand.Range(.6f, 1f));
-                            TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_CrossStrike, rndPos, t.Map, Rand.Range(.6f, 1f), .4f, 0f, Rand.Range(.2f, .5f), 0, 0, 0, Rand.Range(0, 360));
+                            TM_MoteMaker.ThrowBloodSquirt(rndPos, targetPawn.Map, Rand.Range(.6f, 1f));
+                            TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_CrossStrike, rndPos, targetPawn.Map, Rand.Range(.6f, 1f), .4f, 0f, Rand.Range(.2f, .5f), 0, 0, 0, Rand.Range(0, 360));
                         }
                     }
-                    if (!t.DestroyedOrNull() && !t.Dead && !t.Downed && caster.IsColonist)
+                    if (!targetPawn.DestroyedOrNull() && !targetPawn.Dead && !targetPawn.Downed && caster.IsColonist)
                     {
                         caster.drafter.Drafted = true;
-                        Job job = new Job(JobDefOf.AttackMelee, t);
+                        Job job = new Job(JobDefOf.AttackMelee, targetPawn);
                         caster.jobs.TryTakeOrderedJob(job, JobTag.DraftedOrder);
                     }
                 }

@@ -184,7 +184,7 @@ namespace TorannMagic
 
         public void DamageCell(IntVec3 c, Pawn caster)
         {
-            if (c != default(IntVec3) && c.IsValid && c.InBounds(this.Map))
+            if (c != default(IntVec3) && c.IsValid && c.InBoundsWithNullCheck(this.Map))
             {
                 FleckMaker.ThrowLightningGlow(c.ToVector3Shifted(), this.Map, 1f);
                 List<Thing> thingList = c.GetThingList(this.Map);
