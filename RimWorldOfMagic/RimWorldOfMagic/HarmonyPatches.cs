@@ -18,6 +18,7 @@ using TorannMagic.TMDefs;
 using TorannMagic.Golems;
 using RimWorld.QuestGen;
 using System.Diagnostics;
+using TorannMagic.Utils;
 
 namespace TorannMagic
 {
