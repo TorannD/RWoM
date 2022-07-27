@@ -6395,231 +6395,65 @@ namespace TorannMagic
         {
             public static void Postfix(ColonistBarColonistDrawer __instance, ref Rect rect, Pawn colonist)
             {
-                if (!colonist.Dead)
+                if (colonist.Dead) return;
+
+                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+                if (colonist.health.hediffSet.HasHediff(HediffDef.Named("TM_UndeadHD")))
                 {
-                    ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                    if (colonist.health.hediffSet.HasHediff(HediffDef.Named("TM_UndeadHD")))
+                    float num = 20f * Find.ColonistBar.Scale * settingsRef.classIconSize;
+                    Vector2 vector = new Vector2(rect.x + 1f, rect.yMin + 1f);
+                    rect = new Rect(vector.x, vector.y, num, num);
+                    GUI.DrawTexture(rect, TM_MatPool.Icon_Undead);
+                    TooltipHandler.TipRegion(rect, "TM_Icon_Undead".Translate());
+                    vector.x += num;
+                }
+                else if (settingsRef.showClassIconOnColonistBar && colonist.story != null)
+                {
+                    // Create the shapes for the icon
+                    float num = 20f * Find.ColonistBar.Scale * settingsRef.classIconSize;
+                    Vector2 vector = new Vector2(rect.x + 1f, rect.yMin + 1f);
+                    rect = new Rect(vector.x, vector.y, num, num);
+                    // Check for custom classes
+                    CompAbilityUserMagic compMagic = colonist.TryGetComp<CompAbilityUserMagic>();
+                    if (compMagic != null && compMagic.customClass != null)
                     {
-                        float num = 20f * Find.ColonistBar.Scale * settingsRef.classIconSize;
-                        Vector2 vector = new Vector2(rect.x + 1f, rect.yMin + 1f);
-                        rect = new Rect(vector.x, vector.y, num, num);
-                        GUI.DrawTexture(rect, TM_MatPool.Icon_Undead);
-                        TooltipHandler.TipRegion(rect, "TM_Icon_Undead".Translate());
+                        Texture2D customIcon = TM_MatPool.DefaultCustomMageIcon;
+                        if (compMagic.customClass.classTexturePath != "")
+                        {
+                            customIcon = ContentFinder<Texture2D>.Get("Other/ClassTextures/" + compMagic.customClass.classTexturePath, true);
+                        }
+                        GUI.DrawTexture(rect, customIcon);
+                        TooltipHandler.TipRegion(rect, "TM_Icon_Custom".Translate());
                         vector.x += num;
-                        //rect = new Rect(vector.x, vector.y, num, num);
+                        return;
                     }
-                    else if (settingsRef.showClassIconOnColonistBar && colonist.story != null)
+                    CompAbilityUserMight compMight = colonist.TryGetComp<CompAbilityUserMight>();
+                    if (compMight != null && compMight.customClass != null)
                     {
-                        float num = 20f * Find.ColonistBar.Scale * settingsRef.classIconSize;
-                        Vector2 vector = new Vector2(rect.x + 1f, rect.yMin + 1f);
-                        rect = new Rect(vector.x, vector.y, num, num);
-                        CompAbilityUserMight compMight = colonist.TryGetComp<CompAbilityUserMight>();
-                        CompAbilityUserMagic compMagic = colonist.TryGetComp<CompAbilityUserMagic>();
-                        if (compMagic != null && compMagic.customClass != null)
+                        Texture2D customIcon = TM_MatPool.DefaultCustomFighterIcon;
+                        if (compMight.customClass.classTexturePath != "")
                         {
-                            Texture2D customIcon = ContentFinder<Texture2D>.Get("Other/ClassTextures/CustomMageMark", true);
-                            if (compMagic.customClass.classTexturePath != "")
-                            {
-                                customIcon = ContentFinder<Texture2D>.Get("Other/ClassTextures/" + compMagic.customClass.classTexturePath, true);
-                            }
-                            GUI.DrawTexture(rect, customIcon);
-                            TooltipHandler.TipRegion(rect, "TM_Icon_Custom".Translate());
-                            vector.x += num;
+                            customIcon = ContentFinder<Texture2D>.Get("Other/ClassTextures/" + compMight.customClass.classTexturePath, true);
                         }
-                        else if (compMight != null && compMight.customClass != null)
+                        GUI.DrawTexture(rect, customIcon);
+                        TooltipHandler.TipRegion(rect, "TM_Icon_Custom".Translate());
+                        vector.x += num;
+                    }
+                    // Otherwise use dictionary TraitIconMapping to apply the material and shape
+                    else
+                    {
+                        for (int i = 0; i < colonist.story.traits.allTraits.Count; i++)
                         {
-                            Texture2D customIcon = ContentFinder<Texture2D>.Get("Other/ClassTextures/CustomFighterMark", true);
-                            if (compMight.customClass.classTexturePath != "")
-                            {
-                                customIcon = ContentFinder<Texture2D>.Get("Other/ClassTextures/" + compMight.customClass.classTexturePath, true);
-                            }
-                            GUI.DrawTexture(rect, customIcon);
-                            TooltipHandler.TipRegion(rect, "TM_Icon_Custom".Translate());
-                            vector.x += num;
+                            TraitDef trait = colonist.story.traits.allTraits[i].def;
+                            if (!TraitIconMap.ContainsKey(trait)) continue;
 
+                            GUI.DrawTexture(rect, TraitIconMap.Get(trait).IconMaterial);
+                            TooltipHandler.TipRegion(rect, TraitIconMap.Get(trait).IconType.Translate());
+                            vector.x += num;
+                            return;
                         }
-                        else
-                        {
-
-                            if (colonist.story.traits.HasTrait(TorannMagicDefOf.InnerFire))
-                            {
-                                GUI.DrawTexture(rect, TM_MatPool.fireIcon);
-                                TooltipHandler.TipRegion(rect, "TM_Icon_Mage".Translate());
-                                vector.x += num;
-                            }
-                            else if (colonist.story.traits.HasTrait(TorannMagicDefOf.HeartOfFrost))
-                            {
-                                GUI.DrawTexture(rect, TM_MatPool.iceIcon);
-                                TooltipHandler.TipRegion(rect, "TM_Icon_Mage".Translate());
-                                vector.x += num;
-                            }
-                            else if (colonist.story.traits.HasTrait(TorannMagicDefOf.StormBorn))
-                            {
-                                GUI.DrawTexture(rect, TM_MatPool.lightningIcon);
-                                TooltipHandler.TipRegion(rect, "TM_Icon_Mage".Translate());
-                                vector.x += num;
-                            }
-                            else if (colonist.story.traits.HasTrait(TorannMagicDefOf.Arcanist))
-                            {
-                                GUI.DrawTexture(rect, TM_MatPool.arcanistIcon);
-                                TooltipHandler.TipRegion(rect, "TM_Icon_Mage".Translate());
-                                vector.x += num;
-                            }
-                            else if (colonist.story.traits.HasTrait(TorannMagicDefOf.Paladin))
-                            {
-                                GUI.DrawTexture(rect, TM_MatPool.paladinIcon);
-                                TooltipHandler.TipRegion(rect, "TM_Icon_Mage".Translate());
-                                vector.x += num;
-                            }
-                            else if (colonist.story.traits.HasTrait(TorannMagicDefOf.Summoner))
-                            {
-                                GUI.DrawTexture(rect, TM_MatPool.summonerIcon);
-                                TooltipHandler.TipRegion(rect, "TM_Icon_Mage".Translate());
-                                vector.x += num;
-                            }
-                            else if (colonist.story.traits.HasTrait(TorannMagicDefOf.Druid))
-                            {
-                                GUI.DrawTexture(rect, TM_MatPool.druidIcon);
-                                TooltipHandler.TipRegion(rect, "TM_Icon_Mage".Translate());
-                                vector.x += num;
-                            }
-                            else if (colonist.story.traits.HasTrait(TorannMagicDefOf.Necromancer) || colonist.story.traits.HasTrait(TorannMagicDefOf.Lich))
-                            {
-                                GUI.DrawTexture(rect, TM_MatPool.necroIcon);
-                                TooltipHandler.TipRegion(rect, "TM_Icon_Mage".Translate());
-                                vector.x += num;
-                            }
-                            else if (colonist.story.traits.HasTrait(TorannMagicDefOf.Priest))
-                            {
-                                GUI.DrawTexture(rect, TM_MatPool.priestIcon);
-                                TooltipHandler.TipRegion(rect, "TM_Icon_Mage".Translate());
-                                vector.x += num;
-                            }
-                            else if (colonist.story.traits.HasTrait(TorannMagicDefOf.TM_Bard))
-                            {
-                                GUI.DrawTexture(rect, TM_MatPool.bardIcon);
-                                TooltipHandler.TipRegion(rect, "TM_Icon_Mage".Translate());
-                                vector.x += num;
-                            }
-                            else if (colonist.story.traits.HasTrait(TorannMagicDefOf.Succubus) || colonist.story.traits.HasTrait(TorannMagicDefOf.Warlock))
-                            {
-                                GUI.DrawTexture(rect, TM_MatPool.demonkinIcon);
-                                TooltipHandler.TipRegion(rect, "TM_Icon_Mage".Translate());
-                                vector.x += num;
-                            }
-                            else if (colonist.story.traits.HasTrait(TorannMagicDefOf.Geomancer))
-                            {
-                                GUI.DrawTexture(rect, TM_MatPool.earthIcon);
-                                TooltipHandler.TipRegion(rect, "TM_Icon_Mage".Translate());
-                                vector.x += num;
-                            }
-                            else if (colonist.story.traits.HasTrait(TorannMagicDefOf.Technomancer))
-                            {
-                                GUI.DrawTexture(rect, TM_MatPool.technoIcon);
-                                TooltipHandler.TipRegion(rect, "TM_Icon_Mage".Translate());
-                                vector.x += num;
-                            }
-                            else if (colonist.story.traits.HasTrait(TorannMagicDefOf.BloodMage))
-                            {
-                                GUI.DrawTexture(rect, TM_MatPool.bloodmageIcon);
-                                TooltipHandler.TipRegion(rect, "TM_Icon_Mage".Translate());
-                                vector.x += num;
-                            }
-                            else if (colonist.story.traits.HasTrait(TorannMagicDefOf.Enchanter))
-                            {
-                                GUI.DrawTexture(rect, TM_MatPool.enchanterIcon);
-                                TooltipHandler.TipRegion(rect, "TM_Icon_Mage".Translate());
-                                vector.x += num;
-                            }
-                            else if (colonist.story.traits.HasTrait(TorannMagicDefOf.Chronomancer))
-                            {
-                                GUI.DrawTexture(rect, TM_MatPool.chronoIcon);
-                                TooltipHandler.TipRegion(rect, "TM_Icon_Mage".Translate());
-                                vector.x += num;
-                            }
-                            else if (colonist.story.traits.HasTrait(TorannMagicDefOf.Gladiator))
-                            {
-                                GUI.DrawTexture(rect, TM_MatPool.gladiatorIcon);
-                                TooltipHandler.TipRegion(rect, "TM_Icon_Fighter".Translate());
-                                vector.x += num;
-                            }
-                            else if (colonist.story.traits.HasTrait(TorannMagicDefOf.TM_Sniper))
-                            {
-                                GUI.DrawTexture(rect, TM_MatPool.sniperIcon);
-                                TooltipHandler.TipRegion(rect, "TM_Icon_Fighter".Translate());
-                                vector.x += num;
-                            }
-                            else if (colonist.story.traits.HasTrait(TorannMagicDefOf.Bladedancer))
-                            {
-                                GUI.DrawTexture(rect, TM_MatPool.bladedancerIcon);
-                                TooltipHandler.TipRegion(rect, "TM_Icon_Fighter".Translate());
-                                vector.x += num;
-                            }
-                            else if (colonist.story.traits.HasTrait(TorannMagicDefOf.Ranger))
-                            {
-                                GUI.DrawTexture(rect, TM_MatPool.rangerIcon);
-                                TooltipHandler.TipRegion(rect, "TM_Icon_Fighter".Translate());
-                                vector.x += num;
-                            }
-                            else if (colonist.story.traits.HasTrait(TorannMagicDefOf.Faceless))
-                            {
-                                GUI.DrawTexture(rect, TM_MatPool.facelessIcon);
-                                TooltipHandler.TipRegion(rect, "TM_Icon_Fighter".Translate());
-                                vector.x += num;
-                            }
-                            else if (colonist.story.traits.HasTrait(TorannMagicDefOf.TM_Psionic))
-                            {
-                                GUI.DrawTexture(rect, TM_MatPool.psiIcon);
-                                TooltipHandler.TipRegion(rect, "TM_Icon_Fighter".Translate());
-                                vector.x += num;
-                            }
-                            else if (colonist.story.traits.HasTrait(TorannMagicDefOf.DeathKnight))
-                            {
-                                GUI.DrawTexture(rect, TM_MatPool.deathknightIcon);
-                                TooltipHandler.TipRegion(rect, "TM_Icon_Fighter".Translate());
-                                vector.x += num;
-                            }
-                            else if (colonist.story.traits.HasTrait(TorannMagicDefOf.TM_Monk))
-                            {
-                                GUI.DrawTexture(rect, TM_MatPool.monkIcon);
-                                TooltipHandler.TipRegion(rect, "TM_Icon_Fighter".Translate());
-                                vector.x += num;
-                            }
-                            else if (colonist.story.traits.HasTrait(TorannMagicDefOf.TM_Wanderer))
-                            {
-                                GUI.DrawTexture(rect, TM_MatPool.wandererIcon);
-                                TooltipHandler.TipRegion(rect, "TM_Icon_Mage".Translate());
-                                vector.x += num;
-                            }
-                            else if (colonist.story.traits.HasTrait(TorannMagicDefOf.TM_Wayfarer))
-                            {
-                                GUI.DrawTexture(rect, TM_MatPool.wayfarerIcon);
-                                TooltipHandler.TipRegion(rect, "TM_Icon_Fighter".Translate());
-                                vector.x += num;
-                            }
-                            else if (colonist.story.traits.HasTrait(TorannMagicDefOf.ChaosMage))
-                            {
-                                GUI.DrawTexture(rect, TM_MatPool.chaosIcon);
-                                TooltipHandler.TipRegion(rect, "TM_Icon_Mage".Translate());
-                                vector.x += num;
-                            }
-                            else if (colonist.story.traits.HasTrait(TorannMagicDefOf.TM_Commander))
-                            {
-                                GUI.DrawTexture(rect, TM_MatPool.commanderIcon);
-                                TooltipHandler.TipRegion(rect, "TM_Icon_Fighter".Translate());
-                                vector.x += num;
-                            }
-                            else if (colonist.story.traits.HasTrait(TorannMagicDefOf.TM_SuperSoldier))
-                            {
-                                GUI.DrawTexture(rect, TM_MatPool.SSIcon);
-                                TooltipHandler.TipRegion(rect, "TM_Icon_Fighter".Translate());
-                                vector.x += num;
-                            }
-                        }
-                        //rect = new Rect(vector.x, vector.y, num, num);
                     }
                 }
-                //return true;
             }
         }
 
