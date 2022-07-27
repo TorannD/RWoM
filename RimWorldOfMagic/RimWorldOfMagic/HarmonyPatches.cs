@@ -6390,6 +6390,9 @@ namespace TorannMagic
             }
         }
 
+        private static readonly SimpleCache<int, TraitIconMap.TraitIconValue> ColonistBarColonistDrawerCache = 
+            new SimpleCache<int, TraitIconMap.TraitIconValue>(5);
+
         [HarmonyPatch(typeof(ColonistBarColonistDrawer), "DrawIcons", null)]
         public class ColonistBarColonistDrawer_Patch
         {
@@ -6398,62 +6401,68 @@ namespace TorannMagic
                 if (colonist.Dead) return;
 
                 ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                if (colonist.health.hediffSet.HasHediff(TorannMagicDefOf.TM_UndeadHD))
-                {
-                    float num = 20f * Find.ColonistBar.Scale * settingsRef.classIconSize;
-                    Vector2 vector = new Vector2(rect.x + 1f, rect.yMin + 1f);
-                    rect = new Rect(vector.x, vector.y, num, num);
-                    GUI.DrawTexture(rect, TM_MatPool.Icon_Undead);
-                    TooltipHandler.TipRegion(rect, "TM_Icon_Undead".Translate());
-                    vector.x += num;
-                }
-                else if (settingsRef.showClassIconOnColonistBar && colonist.story != null)
-                {
-                    // Create the shapes for the icon
-                    float num = 20f * Find.ColonistBar.Scale * settingsRef.classIconSize;
-                    Vector2 vector = new Vector2(rect.x + 1f, rect.yMin + 1f);
-                    rect = new Rect(vector.x, vector.y, num, num);
-                    // Check for custom classes
-                    CompAbilityUserMagic compMagic = colonist.TryGetComp<CompAbilityUserMagic>();
-                    if (compMagic != null && compMagic.customClass != null)
+                var traitIconValue = ColonistBarColonistDrawerCache.GetOrCreate(
+                    colonist.thingIDNumber,
+                    () =>
                     {
-                        Texture2D customIcon = TM_MatPool.DefaultCustomMageIcon;
-                        if (compMagic.customClass.classTexturePath != "")
+                        if (colonist.health.hediffSet.HasHediff(TorannMagicDefOf.TM_UndeadHD))
                         {
-                            customIcon = ContentFinder<Texture2D>.Get("Other/ClassTextures/" + compMagic.customClass.classTexturePath, true);
+                            return new TraitIconMap.TraitIconValue(TM_MatPool.Icon_Undead, "TM_Icon_Undead");
                         }
-                        GUI.DrawTexture(rect, customIcon);
-                        TooltipHandler.TipRegion(rect, "TM_Icon_Custom".Translate());
-                        vector.x += num;
-                        return;
-                    }
-                    CompAbilityUserMight compMight = colonist.TryGetComp<CompAbilityUserMight>();
-                    if (compMight != null && compMight.customClass != null)
-                    {
-                        Texture2D customIcon = TM_MatPool.DefaultCustomFighterIcon;
-                        if (compMight.customClass.classTexturePath != "")
+
+                        // Early exit condition
+                        if (!settingsRef.showClassIconOnColonistBar || colonist.story == null) return null;
+                        
+                        // Check custom classes
+                        CompAbilityUserMagic compMagic = colonist.TryGetComp<CompAbilityUserMagic>();
+                        if (compMagic != null && compMagic.customClass != null)
                         {
-                            customIcon = ContentFinder<Texture2D>.Get("Other/ClassTextures/" + compMight.customClass.classTexturePath, true);
+                            Texture2D customIcon = TM_MatPool.DefaultCustomMageIcon;
+                            if (compMagic.customClass.classTexturePath != "")
+                            {
+                                customIcon = ContentFinder<Texture2D>.Get("Other/ClassTextures/" + compMagic.customClass.classTexturePath, true);
+                            }
+
+                            return new TraitIconMap.TraitIconValue(customIcon, "TM_Icon_Custom");
                         }
-                        GUI.DrawTexture(rect, customIcon);
-                        TooltipHandler.TipRegion(rect, "TM_Icon_Custom".Translate());
-                        vector.x += num;
-                    }
-                    // Otherwise use dictionary TraitIconMapping to apply the material and shape
-                    else
-                    {
+                        CompAbilityUserMight compMight = colonist.TryGetComp<CompAbilityUserMight>();
+                        if (compMight != null && compMight.customClass != null)
+                        {
+                            Texture2D customIcon = TM_MatPool.DefaultCustomFighterIcon;
+                            if (compMight.customClass.classTexturePath != "")
+                            {
+                                customIcon = ContentFinder<Texture2D>.Get("Other/ClassTextures/" + compMight.customClass.classTexturePath, true);
+                            }
+                            
+                            return new TraitIconMap.TraitIconValue(customIcon, "TM_Icon_Custom");
+                        }
                         for (int i = 0; i < colonist.story.traits.allTraits.Count; i++)
                         {
                             TraitDef trait = colonist.story.traits.allTraits[i].def;
-                            if (!TraitIconMap.ContainsKey(trait)) continue;
-
-                            GUI.DrawTexture(rect, TraitIconMap.Get(trait).IconMaterial);
-                            TooltipHandler.TipRegion(rect, TraitIconMap.Get(trait).IconType.Translate());
-                            vector.x += num;
-                            return;
+                            if (TraitIconMap.ContainsKey(trait))
+                            {
+                                return new TraitIconMap.TraitIconValue(
+                                    TraitIconMap.Get(trait).IconMaterial,
+                                    TraitIconMap.Get(trait).IconType
+                                );
+                            }
                         }
-                    }
-                }
+
+                        return null;
+                    },
+                    5
+                );
+
+                // Skip rendering if there's nothing to render
+                if (traitIconValue == null) return;
+                
+                // Otherwise render away!
+                float num = 20f * Find.ColonistBar.Scale * settingsRef.classIconSize;
+                Vector2 vector = new Vector2(rect.x + 1f, rect.yMin + 1f);
+                rect = new Rect(vector.x, vector.y, num, num);
+                GUI.DrawTexture(rect, traitIconValue.IconMaterial);
+                TooltipHandler.TipRegion(rect, traitIconValue.IconType.Translate());
+                vector.x += num;
             }
         }
 
