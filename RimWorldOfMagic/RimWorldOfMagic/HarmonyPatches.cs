@@ -6398,7 +6398,7 @@ namespace TorannMagic
                 if (colonist.Dead) return;
 
                 ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                if (colonist.health.hediffSet.HasHediff(HediffDef.Named("TM_UndeadHD")))
+                if (colonist.health.hediffSet.HasHediff(TorannMagicDefOf.TM_UndeadHD))
                 {
                     float num = 20f * Find.ColonistBar.Scale * settingsRef.classIconSize;
                     Vector2 vector = new Vector2(rect.x + 1f, rect.yMin + 1f);
