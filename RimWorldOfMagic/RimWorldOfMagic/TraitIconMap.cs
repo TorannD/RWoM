@@ -21,8 +21,8 @@ namespace TorannMagic
                 IconType = iconType;
             }
         }
-        // Dictionary that maps TraitDef to their appropriate Icon material and Icon type
-        // TODO: dynamically add custom classes on load to allow for easier checks
+        // Dictionary that maps TraitDef to their appropriate Icon material and Icon type. Custom Classes are loaded
+        // via ModOptions.ModClassOptions.InitializeCustomClassActions
         private static readonly Dictionary<TraitDef, TraitIconValue> TraitIconMapping = new Dictionary<TraitDef, TraitIconValue>()
         {
             { TorannMagicDefOf.InnerFire, new TraitIconValue(TM_MatPool.fireIcon, MageIcon) },
@@ -60,6 +60,11 @@ namespace TorannMagic
         public static TraitIconValue Get(TraitDef traitDef)
         {
             return TraitIconMapping[traitDef];
+        }
+
+        public static void Set(TraitDef traitDef, TraitIconValue traitIconValue)
+        {
+            TraitIconMapping[traitDef] = traitIconValue;
         }
 
         public static bool ContainsKey(TraitDef traitDef)
