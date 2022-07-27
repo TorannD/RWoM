@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Verse;
 
-namespace TorannMagic
+namespace TorannMagic.Utils
 {
     public class SimpleCache<TKey, TValue>
     {

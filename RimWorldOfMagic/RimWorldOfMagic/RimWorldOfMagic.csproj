@@ -134,8 +134,8 @@
     <Compile Include="Building_TM_DMP.cs" />
     <Compile Include="Enchantment\HediffComp_WinterChill.cs" />
     <Compile Include="Enchantment\Verb_WeaponWintersFury.cs" />
-    <Compile Include="SimpleCache.cs" />
     <Compile Include="TraitIconMap.cs" />
+    <Compile Include="Utils\SimpleCache.cs" />
     <Compile Include="Weapon\FlyingObject_FreezingWinds.cs" />
     <Compile Include="Skyfaller_Hail.cs" />
     <Compile Include="TMDefs\TM_Branding.cs" />
