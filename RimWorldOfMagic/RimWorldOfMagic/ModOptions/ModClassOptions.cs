@@ -49,7 +49,23 @@ namespace TorannMagic.ModOptions
             for (int i = 0; i < TM_ClassUtility.CustomClasses().Count; i++)
             {
                 TMDefs.TM_CustomClass customClass = TM_ClassUtility.CustomClasses()[i];
-                customTraits.AddDistinct(customClass.classTrait);
+                if (customTraits.Contains(customClass.classTrait))
+                {
+                    Log.Warning($"RimWorld of Magic trait {customClass.classTrait} already added. This is likely a naming conflict between mods.");
+                }
+                else
+                {
+                    // Map the trait to the texture to avoid having to TryGetComp
+                    Texture2D customIcon = TM_MatPool.DefaultCustomMageIcon;
+                    if (customClass.classTexturePath != "")
+                    {
+                        customIcon = ContentFinder<Texture2D>.Get("Other/ClassTextures/" + customClass.classTexturePath, true);
+                    }
+                    
+                    TraitIconMap.Set(customClass.classTrait, new TraitIconMap.TraitIconValue(customIcon, "TM_Icon_Custom"));
+                    // Add custom trait to list for processing
+                    customTraits.Add(customClass.classTrait);
+                }
                 customClass.classTrait.conflictingTraits.AddRange(TM_Data.AllClassTraits);
             }
 

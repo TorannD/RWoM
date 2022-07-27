@@ -6413,29 +6413,6 @@ namespace TorannMagic
                         // Early exit condition
                         if (!settingsRef.showClassIconOnColonistBar || colonist.story == null) return null;
                         
-                        // Check custom classes
-                        CompAbilityUserMagic compMagic = colonist.TryGetComp<CompAbilityUserMagic>();
-                        if (compMagic != null && compMagic.customClass != null)
-                        {
-                            Texture2D customIcon = TM_MatPool.DefaultCustomMageIcon;
-                            if (compMagic.customClass.classTexturePath != "")
-                            {
-                                customIcon = ContentFinder<Texture2D>.Get("Other/ClassTextures/" + compMagic.customClass.classTexturePath, true);
-                            }
-
-                            return new TraitIconMap.TraitIconValue(customIcon, "TM_Icon_Custom");
-                        }
-                        CompAbilityUserMight compMight = colonist.TryGetComp<CompAbilityUserMight>();
-                        if (compMight != null && compMight.customClass != null)
-                        {
-                            Texture2D customIcon = TM_MatPool.DefaultCustomFighterIcon;
-                            if (compMight.customClass.classTexturePath != "")
-                            {
-                                customIcon = ContentFinder<Texture2D>.Get("Other/ClassTextures/" + compMight.customClass.classTexturePath, true);
-                            }
-                            
-                            return new TraitIconMap.TraitIconValue(customIcon, "TM_Icon_Custom");
-                        }
                         for (int i = 0; i < colonist.story.traits.allTraits.Count; i++)
                         {
                             TraitDef trait = colonist.story.traits.allTraits[i].def;
