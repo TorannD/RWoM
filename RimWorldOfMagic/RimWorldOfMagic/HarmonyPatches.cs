@@ -500,15 +500,10 @@ namespace TorannMagic
             }
         }
 
-        private static void Get_CanDoRandomMentalBreaks(MentalBreaker __instance, Pawn ___pawn, ref bool __result)
+        private static void Get_CanDoRandomMentalBreaks(MentalBreaker __instance, Pawn __pawn, ref bool __result)
         {
-            if(___pawn != null && __result)
-            {
-                if(___pawn.health != null && ___pawn.health.hediffSet != null && ___pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_EmotionSuppressionHD))
-                {
-                    __result = false;
-                }
-            }
+            if (__result && __pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_EmotionSuppressionHD))
+                __result = false;
         }        
 
         [HarmonyPatch(typeof(Plant), "PlantCollected", null)]
