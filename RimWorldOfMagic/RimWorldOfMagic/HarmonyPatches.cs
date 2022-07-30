@@ -2037,10 +2037,11 @@ namespace TorannMagic
             CompPolymorph cp = null;
             for (int i = 0; i < __instance.AllComps.Count; i++)
             {
-                if (__instance.AllComps[i] is CompPolymorph)
-                    cp = __instance.AllComps[i] as CompPolymorph;
+                if (!(__instance.AllComps[i] is CompPolymorph)) continue;
+                cp = __instance.AllComps[i] as CompPolymorph;
+                break;
             }
-            
+
             if (cp?.Original != null && cp.Original.RaceProps.Humanlike)
                 __result = true;
         }
