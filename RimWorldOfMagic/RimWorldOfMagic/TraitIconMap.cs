@@ -23,53 +23,53 @@ namespace TorannMagic
         }
         // Dictionary that maps TraitDef to their appropriate Icon material and Icon type. Custom Classes are loaded
         // via ModOptions.ModClassOptions.InitializeCustomClassActions
-        private static readonly Dictionary<TraitDef, TraitIconValue> TraitIconMapping = new Dictionary<TraitDef, TraitIconValue>()
+        private static readonly Dictionary<ushort, TraitIconValue> TraitIconMapping = new Dictionary<ushort, TraitIconValue>()
         {
-            { TorannMagicDefOf.InnerFire, new TraitIconValue(TM_MatPool.fireIcon, MageIcon) },
-            { TorannMagicDefOf.HeartOfFrost, new TraitIconValue(TM_MatPool.iceIcon, MageIcon) },
-            { TorannMagicDefOf.StormBorn, new TraitIconValue(TM_MatPool.lightningIcon, MageIcon) },
-            { TorannMagicDefOf.Arcanist, new TraitIconValue(TM_MatPool.arcanistIcon, MageIcon) },
-            { TorannMagicDefOf.Paladin, new TraitIconValue(TM_MatPool.paladinIcon, MageIcon) },
-            { TorannMagicDefOf.Summoner, new TraitIconValue(TM_MatPool.summonerIcon, MageIcon) },
-            { TorannMagicDefOf.Druid, new TraitIconValue(TM_MatPool.druidIcon, MageIcon) },
-            { TorannMagicDefOf.Necromancer, new TraitIconValue(TM_MatPool.necroIcon, MageIcon) },
-            { TorannMagicDefOf.Lich, new TraitIconValue(TM_MatPool.necroIcon, MageIcon) },
-            { TorannMagicDefOf.TM_Bard, new TraitIconValue(TM_MatPool.bardIcon, MageIcon) },
-            { TorannMagicDefOf.Succubus, new TraitIconValue(TM_MatPool.demonkinIcon, MageIcon) },
-            { TorannMagicDefOf.Warlock, new TraitIconValue(TM_MatPool.demonkinIcon, MageIcon) },
-            { TorannMagicDefOf.Geomancer, new TraitIconValue(TM_MatPool.earthIcon, MageIcon) },
-            { TorannMagicDefOf.Technomancer, new TraitIconValue(TM_MatPool.technoIcon, MageIcon) },
-            { TorannMagicDefOf.BloodMage, new TraitIconValue(TM_MatPool.bloodmageIcon, MageIcon) },
-            { TorannMagicDefOf.Enchanter, new TraitIconValue(TM_MatPool.enchanterIcon, MageIcon) },
-            { TorannMagicDefOf.Chronomancer, new TraitIconValue(TM_MatPool.chronoIcon, MageIcon) },
-            { TorannMagicDefOf.Gladiator, new TraitIconValue(TM_MatPool.gladiatorIcon, FighterIcon) },
-            { TorannMagicDefOf.TM_Sniper, new TraitIconValue(TM_MatPool.sniperIcon, FighterIcon) },
-            { TorannMagicDefOf.Bladedancer, new TraitIconValue(TM_MatPool.bladedancerIcon, FighterIcon) },
-            { TorannMagicDefOf.Ranger, new TraitIconValue(TM_MatPool.rangerIcon, FighterIcon) },
-            { TorannMagicDefOf.Faceless, new TraitIconValue(TM_MatPool.facelessIcon, FighterIcon) },
-            { TorannMagicDefOf.TM_Psionic, new TraitIconValue(TM_MatPool.psiIcon, FighterIcon) },
-            { TorannMagicDefOf.DeathKnight, new TraitIconValue(TM_MatPool.deathknightIcon, FighterIcon) },
-            { TorannMagicDefOf.TM_Monk, new TraitIconValue(TM_MatPool.monkIcon, FighterIcon) },
-            { TorannMagicDefOf.TM_Wanderer, new TraitIconValue(TM_MatPool.wandererIcon, MageIcon) },
-            { TorannMagicDefOf.TM_Wayfarer, new TraitIconValue(TM_MatPool.wayfarerIcon, FighterIcon) },
-            { TorannMagicDefOf.ChaosMage, new TraitIconValue(TM_MatPool.chaosIcon, MageIcon) },
-            { TorannMagicDefOf.TM_Commander, new TraitIconValue(TM_MatPool.commanderIcon, FighterIcon) },
-            { TorannMagicDefOf.TM_SuperSoldier, new TraitIconValue(TM_MatPool.SSIcon, FighterIcon) }
+            { TorannMagicDefOf.InnerFire.index, new TraitIconValue(TM_MatPool.fireIcon, MageIcon) },
+            { TorannMagicDefOf.HeartOfFrost.index, new TraitIconValue(TM_MatPool.iceIcon, MageIcon) },
+            { TorannMagicDefOf.StormBorn.index, new TraitIconValue(TM_MatPool.lightningIcon, MageIcon) },
+            { TorannMagicDefOf.Arcanist.index, new TraitIconValue(TM_MatPool.arcanistIcon, MageIcon) },
+            { TorannMagicDefOf.Paladin.index, new TraitIconValue(TM_MatPool.paladinIcon, MageIcon) },
+            { TorannMagicDefOf.Summoner.index, new TraitIconValue(TM_MatPool.summonerIcon, MageIcon) },
+            { TorannMagicDefOf.Druid.index, new TraitIconValue(TM_MatPool.druidIcon, MageIcon) },
+            { TorannMagicDefOf.Necromancer.index, new TraitIconValue(TM_MatPool.necroIcon, MageIcon) },
+            { TorannMagicDefOf.Lich.index, new TraitIconValue(TM_MatPool.necroIcon, MageIcon) },
+            { TorannMagicDefOf.TM_Bard.index, new TraitIconValue(TM_MatPool.bardIcon, MageIcon) },
+            { TorannMagicDefOf.Succubus.index, new TraitIconValue(TM_MatPool.demonkinIcon, MageIcon) },
+            { TorannMagicDefOf.Warlock.index, new TraitIconValue(TM_MatPool.demonkinIcon, MageIcon) },
+            { TorannMagicDefOf.Geomancer.index, new TraitIconValue(TM_MatPool.earthIcon, MageIcon) },
+            { TorannMagicDefOf.Technomancer.index, new TraitIconValue(TM_MatPool.technoIcon, MageIcon) },
+            { TorannMagicDefOf.BloodMage.index, new TraitIconValue(TM_MatPool.bloodmageIcon, MageIcon) },
+            { TorannMagicDefOf.Enchanter.index, new TraitIconValue(TM_MatPool.enchanterIcon, MageIcon) },
+            { TorannMagicDefOf.Chronomancer.index, new TraitIconValue(TM_MatPool.chronoIcon, MageIcon) },
+            { TorannMagicDefOf.Gladiator.index, new TraitIconValue(TM_MatPool.gladiatorIcon, FighterIcon) },
+            { TorannMagicDefOf.TM_Sniper.index, new TraitIconValue(TM_MatPool.sniperIcon, FighterIcon) },
+            { TorannMagicDefOf.Bladedancer.index, new TraitIconValue(TM_MatPool.bladedancerIcon, FighterIcon) },
+            { TorannMagicDefOf.Ranger.index, new TraitIconValue(TM_MatPool.rangerIcon, FighterIcon) },
+            { TorannMagicDefOf.Faceless.index, new TraitIconValue(TM_MatPool.facelessIcon, FighterIcon) },
+            { TorannMagicDefOf.TM_Psionic.index, new TraitIconValue(TM_MatPool.psiIcon, FighterIcon) },
+            { TorannMagicDefOf.DeathKnight.index, new TraitIconValue(TM_MatPool.deathknightIcon, FighterIcon) },
+            { TorannMagicDefOf.TM_Monk.index, new TraitIconValue(TM_MatPool.monkIcon, FighterIcon) },
+            { TorannMagicDefOf.TM_Wanderer.index, new TraitIconValue(TM_MatPool.wandererIcon, MageIcon) },
+            { TorannMagicDefOf.TM_Wayfarer.index, new TraitIconValue(TM_MatPool.wayfarerIcon, FighterIcon) },
+            { TorannMagicDefOf.ChaosMage.index, new TraitIconValue(TM_MatPool.chaosIcon, MageIcon) },
+            { TorannMagicDefOf.TM_Commander.index, new TraitIconValue(TM_MatPool.commanderIcon, FighterIcon) },
+            { TorannMagicDefOf.TM_SuperSoldier.index, new TraitIconValue(TM_MatPool.SSIcon, FighterIcon) }
         };
 
         public static TraitIconValue Get(TraitDef traitDef)
         {
-            return TraitIconMapping[traitDef];
+            return TraitIconMapping[traitDef.index];
         }
 
         public static void Set(TraitDef traitDef, TraitIconValue traitIconValue)
         {
-            TraitIconMapping[traitDef] = traitIconValue;
+            TraitIconMapping[traitDef.index] = traitIconValue;
         }
 
         public static bool ContainsKey(TraitDef traitDef)
         {
-            return TraitIconMapping.ContainsKey(traitDef);
+            return TraitIconMapping.ContainsKey(traitDef.index);
         }
     }
 }
