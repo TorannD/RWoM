@@ -2031,24 +2031,21 @@ namespace TorannMagic
 
         public static bool Get_IsColonist_Polymorphed(Pawn __instance, ref bool __result)
         {
-            Pawn p = __instance;
-            if (p != null && p.Faction == Faction.OfPlayerSilentFail)// __instance.GetComp<CompPolymorph>() != null && __instance.GetComp<CompPolymorph>().Original != null && __instance.GetComp<CompPolymorph>().Original.RaceProps.Humanlike)
+            if (__instance == null || __instance.Faction != Faction.OfPlayerSilentFail) return true;
+            
+            // TryGetComp but faster by avoiding generic isInst
+            CompPolymorph cp = null;
+            for (int i = 0; i < __instance.AllComps.Count; i++)
             {
-                CompPolymorph cp = __instance.GetComp<CompPolymorph>();
-                if (cp != null && cp.Original != null && cp.Original.RaceProps.Humanlike)
-                {
-                    __result = true;
-                    return false;
-                }
-                //if(__instance is TMPawnGolem)
-                //{
-                //    __result = true;
-                //    return false;
-                //}
-                //__result = __instance.Faction != null && __instance.Faction.IsPlayer;
-                //return false;
+                if (__instance.AllComps[i] is CompPolymorph)
+                    cp = __instance.AllComps[i] as CompPolymorph;
             }
-            return true;
+            
+            if (cp?.Original == null || !cp.Original.RaceProps.Humanlike) 
+                return true;
+            
+            __result = true;
+            return false;
         }
 
         [HarmonyPatch(typeof(FloatMenuMakerMap), "AddJobGiverWorkOrders", null)]
