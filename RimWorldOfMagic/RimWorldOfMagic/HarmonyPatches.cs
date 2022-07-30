@@ -2041,10 +2041,8 @@ namespace TorannMagic
                     cp = __instance.AllComps[i] as CompPolymorph;
             }
             
-            if (cp?.Original == null || !cp.Original.RaceProps.Humanlike) 
-                return;
-            
-            __result = true;
+            if (cp?.Original != null && cp.Original.RaceProps.Humanlike)
+                __result = true;
         }
 
         [HarmonyPatch(typeof(FloatMenuMakerMap), "AddJobGiverWorkOrders", null)]
