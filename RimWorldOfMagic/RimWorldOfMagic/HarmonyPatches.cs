@@ -2772,23 +2772,17 @@ namespace TorannMagic
                 }
             }
         }
-        
-        // Keep these two HashSets in memory to have faster checking for the below method since it is called often.
-        private static readonly HashSet<ThingDef> staggerExemptPawnDefs = new HashSet<ThingDef>{
-            TorannMagicDefOf.TM_DemonR, 
-            TorannMagicDefOf.TM_HollowGolem
-        };
-        private static readonly HashSet<HediffDef> staggerExemptHediffs = new HashSet<HediffDef>{
-            TorannMagicDefOf.TM_BurningFuryHD,
-            TorannMagicDefOf.TM_MoveOutHD,
-            TorannMagicDefOf.TM_EnrageHD
-        };
 
         public static bool Get_Staggered(Pawn_StanceTracker __instance, ref bool __result)
         {
             if (
-                !staggerExemptPawnDefs.Contains(__instance.pawn.def)
-                && !__instance.pawn.health.hediffSet.hediffs.Any(hd => staggerExemptHediffs.Contains(hd.def))
+                __instance.pawn.def != TorannMagicDefOf.TM_DemonR 
+                && __instance.pawn.def != TorannMagicDefOf.TM_HollowGolem
+                && !__instance.pawn.health.hediffSet.hediffs.Any(hd => 
+                    hd.def == TorannMagicDefOf.TM_BurningFuryHD
+                    || hd.def == TorannMagicDefOf.TM_MoveOutHD
+                    || hd.def == TorannMagicDefOf.TM_EnrageHD
+                )
             )
                 return true;
             
@@ -2798,15 +2792,9 @@ namespace TorannMagic
 
         public static bool StaggerFor_Patch(Pawn_StanceTracker __instance, int ticks)
         {
-            if (staggerExemptPawnDefs.Contains(__instance.pawn.def))
-            {
-                return false;
-            }
-            if (__instance.pawn.health != null && __instance.pawn.health.hediffSet != null && __instance.pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_BurningFuryHD))
-            {
-                return false;
-            }
-            return true;
+            return __instance.pawn.def != TorannMagicDefOf.TM_DemonR 
+                && __instance.pawn.def != TorannMagicDefOf.TM_HollowGolem 
+                && !__instance.pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_BurningFuryHD);
         }
 
         public static bool Get_Projectile_ES(Verb_LaunchProjectile __instance, ref ThingDef __result)
