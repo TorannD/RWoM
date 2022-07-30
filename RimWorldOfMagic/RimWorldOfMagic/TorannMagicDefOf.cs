@@ -936,6 +936,11 @@ namespace TorannMagic
         public static TraitDef DeathKnight;
 
         public static HediffDef TM_HateHD;
+        public static HediffDef TM_HateHD_I;
+        public static HediffDef TM_HateHD_II;
+        public static HediffDef TM_HateHD_III;
+        public static HediffDef TM_HateHD_IV;
+        public static HediffDef TM_HateHD_V;
         public static TMAbilityDef TM_Shroud;
         public static TMAbilityDef TM_WaveOfFear;
         public static HediffDef TM_WaveOfFearHD;

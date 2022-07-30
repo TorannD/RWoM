@@ -210,13 +210,40 @@ namespace TorannMagic
             return false;
         }
 
+        // Get first Hate Hediff encountered
+        public static Hediff GetHateHediff(Pawn pawn)
+        {
+            for (int i = 0; i < pawn.health.hediffSet.hediffs.Count; i++)
+            {
+                if (
+                    pawn.health.hediffSet.hediffs[i].def == TorannMagicDefOf.TM_HateHD
+                    || pawn.health.hediffSet.hediffs[i].def == TorannMagicDefOf.TM_HateHD_I
+                    || pawn.health.hediffSet.hediffs[i].def == TorannMagicDefOf.TM_HateHD_II
+                    || pawn.health.hediffSet.hediffs[i].def == TorannMagicDefOf.TM_HateHD_III
+                    || pawn.health.hediffSet.hediffs[i].def == TorannMagicDefOf.TM_HateHD_IV
+                    || pawn.health.hediffSet.hediffs[i].def == TorannMagicDefOf.TM_HateHD_V
+                )
+                    return pawn.health.hediffSet.hediffs[i];
+            }
+
+            return default;
+        }
+
         public static bool HasHateHediff(Pawn pawn)
         {
-            if(pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_HateHD_I"), false) || pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_HateHD_II"), false) || pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_HateHD_III"), false) ||
-                pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_HateHD"), false) || pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_HateHD_IV"), false) || pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_HateHD_V"), false))
+            for (int i = 0; i < pawn.health.hediffSet.hediffs.Count; i++)
             {
-                return true;
+                if (
+                    pawn.health.hediffSet.hediffs[i].def == TorannMagicDefOf.TM_HateHD
+                    || pawn.health.hediffSet.hediffs[i].def == TorannMagicDefOf.TM_HateHD_I
+                    || pawn.health.hediffSet.hediffs[i].def == TorannMagicDefOf.TM_HateHD_II
+                    || pawn.health.hediffSet.hediffs[i].def == TorannMagicDefOf.TM_HateHD_III
+                    || pawn.health.hediffSet.hediffs[i].def == TorannMagicDefOf.TM_HateHD_IV
+                    || pawn.health.hediffSet.hediffs[i].def == TorannMagicDefOf.TM_HateHD_V
+                )
+                    return true;
             }
+
             return false;
         }
 

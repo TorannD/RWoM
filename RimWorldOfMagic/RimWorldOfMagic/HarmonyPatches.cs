@@ -18,6 +18,7 @@ using TorannMagic.TMDefs;
 using TorannMagic.Golems;
 using RimWorld.QuestGen;
 using System.Diagnostics;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -3558,14 +3559,14 @@ namespace TorannMagic
                 Pawn pawn = (Pawn)PreApplyDamage_Patch.pawn.GetValue(__instance);
                 if (dinfo.Def != null && pawn != null && !pawn.Downed)
                 {
-                    if (pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_HediffTimedInvulnerable")))
+                    if (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_HediffTimedInvulnerable))
                     {
                         absorbed = true;
                         return false;
                     }
                     if (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_ArtifactBlockHD) && Rand.Chance(.4f))
                     {
-                        Thing instigator = dinfo.Instigator as Thing;
+                        Thing instigator = dinfo.Instigator;
                         if (instigator != null)
                         {
                             if ((dinfo.Weapon != null && !dinfo.Def.isExplosive) || dinfo.WeaponBodyPartGroup != null)
@@ -3598,7 +3599,7 @@ namespace TorannMagic
                         }
                         if(hd != null && Rand.Chance(hd.Severity * count))
                         {
-                            Thing instigator = dinfo.Instigator as Thing;
+                            Thing instigator = dinfo.Instigator;
                             if (instigator != null)
                             {
                                 if ((dinfo.Weapon != null && !dinfo.Def.isExplosive) || dinfo.WeaponBodyPartGroup != null)
@@ -3620,7 +3621,7 @@ namespace TorannMagic
                     }
                     if (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_ArtifactDeflectHD) && Rand.Chance(.3f))
                     {
-                        Thing instigator = dinfo.Instigator as Thing;
+                        Thing instigator = dinfo.Instigator;
                         if (instigator != null)
                         {
                             if ((dinfo.Weapon != null && !dinfo.Def.isExplosive) || dinfo.WeaponBodyPartGroup != null)
@@ -3656,7 +3657,7 @@ namespace TorannMagic
                     }
                     if ((pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_TechnoShieldHD) && dinfo.Amount <= 10) || (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_TechnoShieldHD_I) && dinfo.Amount <= 13) || (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_TechnoShieldHD_II) && dinfo.Amount <= 18) || (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_TechnoShieldHD_III) && dinfo.Amount <= 30))
                     {
-                        Thing instigator = dinfo.Instigator as Thing;
+                        Thing instigator = dinfo.Instigator;
                         if (instigator != null && dinfo.Weapon != null && dinfo.Weapon.IsRangedWeapon)
                         {
                             Vector3 drawPos = pawn.DrawPos;
@@ -3724,7 +3725,7 @@ namespace TorannMagic
                     if (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_BlurHD, false) && !dinfo.Def.isExplosive)
                     {
                         float blurVal = .2f;
-                        if (pawn.TryGetComp<CompAbilityUserMagic>()?.MagicData.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Cantrips_ver").level >= 11)
+                        if (pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Cantrips.First((MagicPowerSkill x) => x.label == "TM_Cantrips_ver").level >= 11)
                         {
                             blurVal = .3f;
                         }
@@ -3746,67 +3747,50 @@ namespace TorannMagic
                             return false;
                         }
                     }
-                    if (TM_Calc.HasHateHediff(pawn) && dinfo.Amount > 0)
+
+                    Hediff hateHediff = TM_Calc.GetHateHediff(pawn);
+                    if (hateHediff != null && dinfo.Amount > 0)
                     {
                         int hatePwr = 0;
                         int hateVer = 0;
                         int hateEff = 0;
 
-                        CompAbilityUserMight comp = pawn.GetComp<CompAbilityUserMight>();
+                        CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
                         if (comp != null && comp.IsMightUser)
                         {
-                            hatePwr = comp.MightData.MightPowerSkill_Shroud.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Shroud_pwr").level;
-                            hateVer = comp.MightData.MightPowerSkill_Shroud.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Shroud_ver").level;
-                            hateEff = comp.MightData.MightPowerSkill_Shroud.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Shroud_eff").level;
+                            hatePwr = comp.MightData.MightPowerSkill_Shroud.First((MightPowerSkill x) => x.label == "TM_Shroud_pwr").level;
+                            hateVer = comp.MightData.MightPowerSkill_Shroud.First((MightPowerSkill x) => x.label == "TM_Shroud_ver").level;
+                            hateEff = comp.MightData.MightPowerSkill_Shroud.First((MightPowerSkill x) => x.label == "TM_Shroud_eff").level;
                         }
 
-                        Hediff hediff = null;
-                        for (int h = 0; h < pawn.health.hediffSet.hediffs.Count; h++)
-                        {
-                            if (pawn.health.hediffSet.hediffs[h].def.defName.Contains("TM_HateHD"))
-                            {
-                                hediff = pawn.health.hediffSet.hediffs[h];
-                            }
-                        }
-
-                        HealthUtility.AdjustSeverity(pawn, hediff.def, (dinfo.Amount * (1 + (.1f * hateEff))));
-                        if (hediff != null && hediff.Severity >= 20 && Rand.Chance(.1f * hateVer) && dinfo.Instigator != null && dinfo.Instigator is Pawn && dinfo.Instigator != pawn && (dinfo.Instigator.Position - pawn.Position).LengthHorizontal < 2)
+                        HealthUtility.AdjustSeverity(pawn, hateHediff.def, (dinfo.Amount * (1 + (.1f * hateEff))));
+                        if (hateHediff.Severity >= 20 && Rand.Chance(.1f * hateVer) && dinfo.Instigator is Pawn && dinfo.Instigator != pawn && (dinfo.Instigator.Position - pawn.Position).LengthHorizontal < 2)
                         {
                             TM_Action.DamageEntities(dinfo.Instigator, null, (dinfo.Amount * (1 + .2f * hatePwr)), TMDamageDefOf.DamageDefOf.TM_Spirit, pawn);
                             TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_SpiritRetaliation, pawn.DrawPos, pawn.Map, Rand.Range(1f, 1.2f), Rand.Range(.1f, .15f), 0, Rand.Range(.1f, .2f), -600, 0, 0, Rand.Range(0, 360));
-                            HealthUtility.AdjustSeverity(pawn, hediff.def, -(dinfo.Amount * (.8f - (.1f * hateEff))));
+                            HealthUtility.AdjustSeverity(pawn, hateHediff.def, -(dinfo.Amount * (.8f - (.1f * hateEff))));
                         }
 
                     }
-                    if (dinfo.Instigator != null && dinfo.Instigator is Pawn)
+                    if (dinfo.Instigator is Pawn attacker)
                     {
-                        Pawn attacker = dinfo.Instigator as Pawn;
-                        CompAbilityUserMight comp = attacker.GetComp<CompAbilityUserMight>();
+                        CompAbilityUserMight comp = attacker.GetCompAbilityUserMight();
 
-                        if (attacker != null && !attacker.Destroyed && !attacker.Downed && !attacker.Dead && attacker != pawn && dinfo.Weapon != null && dinfo.Weapon.IsMeleeWeapon)
+                        if (!attacker.Destroyed && !attacker.Downed && !attacker.Dead && attacker != pawn && dinfo.Weapon != null && dinfo.Weapon.IsMeleeWeapon)
                         {
-                            if ((attacker.story != null && attacker.story.traits != null && attacker.story.traits.HasTrait(TorannMagicDefOf.DeathKnight)) || TM_ClassUtility.ClassHasAbility(TorannMagicDefOf.TM_LifeSteal, null, comp))
+                            if ((attacker.story?.traits != null && attacker.story.traits.HasTrait(TorannMagicDefOf.DeathKnight)) || TM_ClassUtility.ClassHasAbility(TorannMagicDefOf.TM_LifeSteal, null, comp))
                             {
-                                Hediff hediff = null;
-                                for (int h = 0; h < attacker.health.hediffSet.hediffs.Count; h++)
-                                {
-                                    if (attacker.health.hediffSet.hediffs[h].def.defName.Contains("TM_HateHD"))
-                                    {
-                                        hediff = attacker.health.hediffSet.hediffs[h];
-                                    }
-                                }
-                                //&& TM_Calc.HasHateHediff(attacker)
-                                int lifestealPwr = comp.MightData.MightPowerSkill_LifeSteal.FirstOrDefault((MightPowerSkill x) => x.label == "TM_LifeSteal_pwr").level;
-                                int lifestealEff = comp.MightData.MightPowerSkill_LifeSteal.FirstOrDefault((MightPowerSkill x) => x.label == "TM_LifeSteal_eff").level;
-                                int lifestealVer = comp.MightData.MightPowerSkill_LifeSteal.FirstOrDefault((MightPowerSkill x) => x.label == "TM_LifeSteal_ver").level;
+                                int lifestealPwr = comp.MightData.MightPowerSkill_LifeSteal.First((MightPowerSkill x) => x.label == "TM_LifeSteal_pwr").level;
+                                int lifestealEff = comp.MightData.MightPowerSkill_LifeSteal.First((MightPowerSkill x) => x.label == "TM_LifeSteal_eff").level;
+                                int lifestealVer = comp.MightData.MightPowerSkill_LifeSteal.First((MightPowerSkill x) => x.label == "TM_LifeSteal_ver").level;
 
                                 TM_Action.DoAction_HealPawn(attacker, attacker, 1, dinfo.Amount * (TorannMagicDefOf.TM_LifeSteal.weaponDamageFactor + (.02f * lifestealPwr)));
                                 TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Siphon, attacker.DrawPos, attacker.Map, 1f, .1f, .15f, .5f, 600, 0, 0, Rand.Range(0, 360));
                                 TM_MoteMaker.ThrowSiphonMote(attacker.DrawPos, attacker.Map, 1f);
 
-                                if (hediff != null && lifestealEff > 0)
+                                if (hateHediff != null && lifestealEff > 0)
                                 {
-                                    HealthUtility.AdjustSeverity(attacker, hediff.def, dinfo.Amount * (.25f + .05f * lifestealEff));
+                                    HealthUtility.AdjustSeverity(attacker, hateHediff.def, dinfo.Amount * (.25f + .05f * lifestealEff));
                                     comp.Stamina.CurLevel += (dinfo.Amount * (float)(.1f * lifestealEff)) / 100;
                                 }
                                 if (lifestealVer > 0)
@@ -3821,13 +3805,13 @@ namespace TorannMagic
                             }
                         }
                     }
-                    CompAbilityUserMagic compMagic = pawn.TryGetComp<CompAbilityUserMagic>();
-                    if (compMagic != null && compMagic.SoL != null && compMagic.SoL.solAction == SoLAction.Hovering)
+                    CompAbilityUserMagic compMagic = pawn.GetCompAbilityUserMagic();
+                    if (compMagic?.SoL != null && compMagic.SoL.solAction == SoLAction.Hovering)
                     {
                         FlyingObject_SpiritOfLight sol = compMagic.SoL;
                         if (sol.LightEnergy > (dinfo.Amount / 10f) && Rand.Chance(sol.LightEnergy / 100f))
                         {
-                            Thing instigator = dinfo.Instigator as Thing;
+                            Thing instigator = dinfo.Instigator;
                             if (instigator != null)
                             {
                                 if ((dinfo.Weapon != null && !dinfo.Def.isExplosive) || dinfo.WeaponBodyPartGroup != null)
@@ -3946,7 +3930,7 @@ namespace TorannMagic
                                     {
                                         MightPowerSkill pwr = comp.MightData.MightPowerSkill_CQC.FirstOrDefault((MightPowerSkill x) => x.label == "TM_CQC_pwr");
                                         MightPowerSkill str = comp.MightData.MightPowerSkill_global_strength.FirstOrDefault((MightPowerSkill x) => x.label == "TM_global_strength_pwr");
-                                        int verVal = comp.MightData.MightPowerSkill_CQC.FirstOrDefault((MightPowerSkill x) => x.label == "TM_CQC_ver").level;
+                                        int verVal = comp.MightData.MightPowerSkill_CQC.First((MightPowerSkill x) => x.label == "TM_CQC_ver").level;
                                         float cqcChance = .2f;
                                         if (verVal == 1)
                                         {
