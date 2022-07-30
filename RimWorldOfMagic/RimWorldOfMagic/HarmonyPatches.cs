@@ -2856,7 +2856,7 @@ namespace TorannMagic
         public static bool Get_NightResting_Undead(Caravan __instance, ref bool __result)
         {
             List<Pawn> caravan = __instance.PawnsListForReading;
-            bool anyLivingColonists = !caravan.Any(pawn => 
+            bool anyLivingColonists = caravan.Any(pawn => 
                 pawn.IsColonist 
                 && !pawn.health.hediffSet.hediffs.Any(hediff => UndeadHediffDefs.Contains(hediff.def))
             );
