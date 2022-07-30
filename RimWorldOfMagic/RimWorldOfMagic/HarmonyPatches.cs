@@ -2786,24 +2786,14 @@ namespace TorannMagic
 
         public static bool Get_Staggered(Pawn_StanceTracker __instance, ref bool __result)
         {
-            if (staggerExemptPawnDefs.Contains(__instance.pawn.def))
-            {
-                __result = false;
-                return false;
-            }
-            if (__instance.pawn.health != null && __instance.pawn.health.hediffSet != null)
-            {
-                var hediffs = __instance.pawn.health.hediffSet.hediffs;
-                for (int i = 0; i < hediffs.Count; i++)
-                {
-                    if (staggerExemptHediffs.Contains(hediffs[i].def))
-                    {
-                        __result = false;
-                        return false;
-                    }
-                }
-            }
-            return true;
+            if (
+                !staggerExemptPawnDefs.Contains(__instance.pawn.def)
+                && !__instance.pawn.health.hediffSet.hediffs.Any(hd => staggerExemptHediffs.Contains(hd.def))
+            )
+                return true;
+            
+            __result = false;
+            return false;
         }
 
         public static bool StaggerFor_Patch(Pawn_StanceTracker __instance, int ticks)
