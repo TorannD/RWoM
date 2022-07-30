@@ -2846,20 +2846,22 @@ namespace TorannMagic
             return true;
         }
 
+        private static readonly HashSet<HediffDef> UndeadHediffDefs = new HashSet<HediffDef>()
+        {
+            TorannMagicDefOf.TM_UndeadHD,
+            TorannMagicDefOf.TM_UndeadAnimalHD,
+            TorannMagicDefOf.TM_LichHD
+        };
+
         public static bool Get_NightResting_Undead(Caravan __instance, ref bool __result)
         {
-            List<Pawn> undeadCaravan = __instance.PawnsListForReading;
-            bool allUndead = true;
-            for (int i = 0; i < undeadCaravan.Count; i++)
-            {
-                if (undeadCaravan[i].IsColonist && !(undeadCaravan[i].health.hediffSet.HasHediff(HediffDef.Named("TM_UndeadHD")) || undeadCaravan[i].health.hediffSet.HasHediff(HediffDef.Named("TM_UndeadAnimalHD")) || undeadCaravan[i].health.hediffSet.HasHediff(HediffDef.Named("TM_LichHD"))))
-                {
-                    allUndead = false;
-                    break;
-                }
-            }
-            __result = !allUndead;
-            return !allUndead;
+            List<Pawn> caravan = __instance.PawnsListForReading;
+            bool anyLivingColonists = !caravan.Any(pawn => 
+                pawn.IsColonist 
+                && !pawn.health.hediffSet.hediffs.Any(hediff => UndeadHediffDefs.Contains(hediff.def))
+            );
+            __result = anyLivingColonists;
+            return anyLivingColonists;
         }
 
         [HarmonyPriority(2000)]
