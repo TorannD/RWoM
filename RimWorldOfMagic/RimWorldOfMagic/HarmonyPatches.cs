@@ -77,7 +77,7 @@ namespace TorannMagic
             //harmonyInstance.Patch(AccessTools.Method(typeof(Pawn_ApparelTracker), "Notify_ApparelAdded"), null, new HarmonyMethod(typeof(TorannMagicMod), "Notify_ApparelAdded_PostFix"));
             //harmonyInstance.Patch(AccessTools.Method(typeof(Pawn_ApparelTracker), "Notify_ApparelRemoved"), null, new HarmonyMethod(typeof(TorannMagicMod), "Notify_ApparelRemoved_PostFix"));
 
-            harmonyInstance.Patch(AccessTools.Method(typeof(Pawn), "get_IsColonist", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_IsColonist_Polymorphed", null), null);
+            harmonyInstance.Patch(AccessTools.Method(typeof(Pawn), "get_IsColonist", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_IsColonist_Polymorphed"), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(Caravan), "get_NightResting", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_NightResting_Undead", null), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(Pawn_StanceTracker), "get_Staggered", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_Staggered", null), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(Verb_LaunchProjectile), "get_Projectile", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_Projectile_ES", null), null);
@@ -2029,10 +2029,10 @@ namespace TorannMagic
             }
         }
 
-        public static bool Get_IsColonist_Polymorphed(Pawn __instance, ref bool __result)
+        public static void Get_IsColonist_Polymorphed(Pawn __instance, ref bool __result)
         {
-            if (__instance == null || __instance.Faction != Faction.OfPlayerSilentFail) return true;
-            
+            if (__instance.Faction != Faction.OfPlayerSilentFail || __result) return;
+
             // TryGetComp but faster by avoiding generic isInst
             CompPolymorph cp = null;
             for (int i = 0; i < __instance.AllComps.Count; i++)
@@ -2042,10 +2042,9 @@ namespace TorannMagic
             }
             
             if (cp?.Original == null || !cp.Original.RaceProps.Humanlike) 
-                return true;
+                return;
             
             __result = true;
-            return false;
         }
 
         [HarmonyPatch(typeof(FloatMenuMakerMap), "AddJobGiverWorkOrders", null)]
