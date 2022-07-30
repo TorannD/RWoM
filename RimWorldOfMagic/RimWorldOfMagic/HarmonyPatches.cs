@@ -79,7 +79,7 @@ namespace TorannMagic
 
             harmonyInstance.Patch(AccessTools.Method(typeof(Pawn), "get_IsColonist", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_IsColonist_Polymorphed", null), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(Caravan), "get_NightResting", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_NightResting_Undead", null), null);
-            harmonyInstance.Patch(AccessTools.Method(typeof(Pawn_StanceTracker), "get_Staggered", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_Staggered", null), null);
+            harmonyInstance.Patch(AccessTools.Method(typeof(Pawn_StanceTracker), "get_Staggered", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_Staggered", null));
             harmonyInstance.Patch(AccessTools.Method(typeof(Verb_LaunchProjectile), "get_Projectile", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_Projectile_ES", null), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(WindManager), "get_WindSpeed", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_WindSpeed", null), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(MentalBreaker), "get_CanDoRandomMentalBreaks", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_CanDoRandomMentalBreaks", null), null);
@@ -2773,21 +2773,19 @@ namespace TorannMagic
             }
         }
 
-        public static bool Get_Staggered(Pawn_StanceTracker __instance, ref bool __result)
+        public static void Get_Staggered(Pawn_StanceTracker __instance, ref bool __result)
         {
+            if (!__result) return;
             if (
-                __instance.pawn.def != TorannMagicDefOf.TM_DemonR 
-                && __instance.pawn.def != TorannMagicDefOf.TM_HollowGolem
-                && !__instance.pawn.health.hediffSet.hediffs.Any(hd => 
+                __instance.pawn.def == TorannMagicDefOf.TM_DemonR
+                || __instance.pawn.def == TorannMagicDefOf.TM_HollowGolem
+                || __instance.pawn.health.hediffSet.hediffs.Any(hd =>
                     hd.def == TorannMagicDefOf.TM_BurningFuryHD
                     || hd.def == TorannMagicDefOf.TM_MoveOutHD
                     || hd.def == TorannMagicDefOf.TM_EnrageHD
                 )
             )
-                return true;
-            
-            __result = false;
-            return false;
+                __result = false;
         }
 
         public static bool StaggerFor_Patch(Pawn_StanceTracker __instance, int ticks)
