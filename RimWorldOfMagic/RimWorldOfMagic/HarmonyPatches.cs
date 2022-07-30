@@ -2031,7 +2031,7 @@ namespace TorannMagic
 
         public static void Get_IsColonist_Polymorphed(Pawn __instance, ref bool __result)
         {
-            if (__instance.Faction != Faction.OfPlayerSilentFail || __result) return;
+            if (__instance.Faction == null || !__instance.Faction.IsPlayer || __result) return;
 
             // TryGetComp but faster by avoiding generic isInst
             CompPolymorph cp = null;
