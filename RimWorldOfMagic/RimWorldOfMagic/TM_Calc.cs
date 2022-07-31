@@ -75,78 +75,59 @@ namespace TorannMagic
 
         public static bool IsUndead(Pawn pawn)
         {
-            if (pawn != null)
+            if (pawn == null) return false;
+
+            if (pawn.health?.hediffSet != null && pawn.health.hediffSet.hediffs.Any(hediff =>
+                hediff.def == TorannMagicDefOf.TM_UndeadHD
+                || hediff.def == TorannMagicDefOf.TM_UndeadAnimalHD
+                || hediff.def == TorannMagicDefOf.TM_LichHD
+                || hediff.def == TorannMagicDefOf.TM_UndeadStageHD
+                || hediff.def.defName.StartsWith("ROM_Vamp")
+            ))
+                return true;
+
+            if (
+                pawn.def.defName == "SL_Runner"
+                || pawn.def.defName == "SL_Peon"
+                || pawn.def.defName == "SL_Archer"
+                || pawn.def.defName == "SL_Hero"
+                || pawn.def == TorannMagicDefOf.TM_GiantSkeletonR
+                || pawn.def == TorannMagicDefOf.TM_SkeletonR
+                || pawn.def == TorannMagicDefOf.TM_SkeletonLichR
+            )
+                return true;
+
+            if (pawn.story?.traits != null && pawn.story.traits.HasTrait(TorannMagicDefOf.Undead))
+                return true;
+
+            for (int i = 0; i < pawn.AllComps.Count; i++)
             {
-                bool flag_Hediff = false;
-                if (pawn.health != null && pawn.health.hediffSet != null)
+                if (pawn.AllComps[i] is CompAbilityUserMagicMightBase comp)
                 {
-                    if (pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_UndeadHD"), false) || pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_UndeadAnimalHD"), false) || pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_LichHD"), false) || pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_UndeadStageHD"), false))
-                    {
-                        flag_Hediff = true;
-                    }
-                    Hediff hediff = null;
-                    for (int i = 0; i < pawn.health.hediffSet.hediffs.Count; i++)
-                    {
-                        hediff = pawn.health.hediffSet.hediffs[i];
-                        if (hediff.def.defName.Contains("ROM_Vamp"))
-                        {
-                            flag_Hediff = true;
-                        }
-                    }
+                    if (comp.customClass != null && comp.customClass.isUndead)
+                        return true;
                 }
-                bool flag_DefName = false;
-                if (pawn.def.defName == "SL_Runner" || pawn.def.defName == "SL_Peon" || pawn.def.defName == "SL_Archer" || pawn.def.defName == "SL_Hero")
-                {
-                    flag_DefName = true;
-                }
-                if(pawn.def == TorannMagicDefOf.TM_GiantSkeletonR || pawn.def == TorannMagicDefOf.TM_SkeletonR || pawn.def == TorannMagicDefOf.TM_SkeletonLichR)
-                {
-                    flag_DefName = true;
-                }
-                bool flag_Trait = false;
-                if (pawn.story != null && pawn.story.traits != null)
-                {
-                    if (pawn.story.traits.HasTrait(TorannMagicDefOf.Undead))
-                    {
-                        flag_Trait = true;
-                    }
-                }
-                bool flag_UndeadClass = false;
-                CompAbilityUserMight compMight = pawn.TryGetComp<CompAbilityUserMight>();
-                if(compMight != null && compMight.customClass != null && compMight.customClass.isUndead)
-                {
-                    flag_UndeadClass = true;
-                }
-                CompAbilityUserMagic compMagic = pawn.TryGetComp<CompAbilityUserMagic>();
-                if (compMagic != null && compMagic.customClass != null && compMagic.customClass.isUndead)
-                {
-                    flag_UndeadClass = true;
-                }
-                bool isUndead = flag_Hediff || flag_DefName || flag_Trait || flag_UndeadClass;
-                return isUndead;
             }
+
             return false;
         }
 
         public static bool IsElemental(Pawn pawn)
         {
-            if (pawn != null)
-            {
-                bool flag_Def = false;
-                if (pawn.def != null)
-                {
-                    if (pawn.def == TorannMagicDefOf.TM_LesserEarth_ElementalR || pawn.def == TorannMagicDefOf.TM_LesserFire_ElementalR || pawn.def == TorannMagicDefOf.TM_LesserWater_ElementalR || pawn.def == TorannMagicDefOf.TM_LesserWind_ElementalR ||
-                        pawn.def == TorannMagicDefOf.TM_Earth_ElementalR || pawn.def == TorannMagicDefOf.TM_Fire_ElementalR || pawn.def == TorannMagicDefOf.TM_Water_ElementalR || pawn.def == TorannMagicDefOf.TM_Wind_ElementalR ||
-                        pawn.def == TorannMagicDefOf.TM_GreaterEarth_ElementalR || pawn.def == TorannMagicDefOf.TM_GreaterFire_ElementalR || pawn.def == TorannMagicDefOf.TM_GreaterWater_ElementalR || pawn.def == TorannMagicDefOf.TM_GreaterWind_ElementalR)
-                    {
-                        flag_Def = true;
-                    }
-                }
-
-                bool isElemental = flag_Def;
-                return isElemental;
-            }
-            return false;
+            return pawn?.def != null && (
+                pawn.def == TorannMagicDefOf.TM_LesserEarth_ElementalR
+                || pawn.def == TorannMagicDefOf.TM_LesserFire_ElementalR
+                || pawn.def == TorannMagicDefOf.TM_LesserWater_ElementalR
+                || pawn.def == TorannMagicDefOf.TM_LesserWind_ElementalR
+                || pawn.def == TorannMagicDefOf.TM_Earth_ElementalR
+                || pawn.def == TorannMagicDefOf.TM_Fire_ElementalR
+                || pawn.def == TorannMagicDefOf.TM_Water_ElementalR
+                || pawn.def == TorannMagicDefOf.TM_Wind_ElementalR
+                || pawn.def == TorannMagicDefOf.TM_GreaterEarth_ElementalR
+                || pawn.def == TorannMagicDefOf.TM_GreaterFire_ElementalR
+                || pawn.def == TorannMagicDefOf.TM_GreaterWater_ElementalR
+                || pawn.def == TorannMagicDefOf.TM_GreaterWind_ElementalR
+            );
         }
 
         public static bool IsUndeadNotVamp(Pawn pawn)

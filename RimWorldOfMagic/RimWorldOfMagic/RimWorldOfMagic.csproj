@@ -132,6 +132,7 @@
     <Compile Include="Building_TMTotem_Healing.cs" />
     <Compile Include="Building_TMTotem_Lightning.cs" />
     <Compile Include="Building_TM_DMP.cs" />
+    <Compile Include="CompAbilityUserMagicMightBase.cs" />
     <Compile Include="Enchantment\HediffComp_WinterChill.cs" />
     <Compile Include="Enchantment\Verb_WeaponWintersFury.cs" />
     <Compile Include="TraitIconMap.cs" />

@@ -57,12 +57,22 @@ namespace TorannMagic.ModOptions
                 else
                 {
                     // Map the trait to the texture to avoid having to TryGetComp
-                    Texture2D customIcon = TM_MatPool.DefaultCustomMageIcon;
+                    // Get material
+                    Material mat = TM_RenderQueue.fighterMarkMat;
+                    if (customClass.classIconPath != "")
+                        mat = MaterialPool.MatFrom("Other/" + customClass.classIconPath);
+                    else if (customClass.classTexturePath != "")
+                        mat = MaterialPool.MatFrom("Other/ClassTextures/" + customClass.classTexturePath, true);
+                    mat.color = customClass.classIconColor;
+
+                    // Get texture
+                    Texture2D customTexture = TM_MatPool.DefaultCustomMageIcon;
                     if (customClass.classTexturePath != "")
                     {
-                        customIcon = ContentFinder<Texture2D>.Get("Other/ClassTextures/" + customClass.classTexturePath, true);
+                        customTexture = ContentFinder<Texture2D>.Get("Other/ClassTextures/" + customClass.classTexturePath, true);
                     }
-                    TraitIconMap.Set(customClass.classTrait, new TraitIconMap.TraitIconValue(customIcon, customIconType));
+
+                    TraitIconMap.Set(customClass.classTrait, new TraitIconMap.TraitIconValue(mat, customTexture, customIconType));
                     
                     // Add custom trait to list for processing
                     customTraits.Add(customClass.classTrait);
