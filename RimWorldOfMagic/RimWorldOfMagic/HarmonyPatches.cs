@@ -6408,7 +6408,7 @@ namespace TorannMagic
                     {
                         if (colonist.health.hediffSet.HasHediff(TorannMagicDefOf.TM_UndeadHD))
                         {
-                            return new TraitIconMap.TraitIconValue(TM_MatPool.Icon_Undead, "TM_Icon_Undead");
+                            return new TraitIconMap.TraitIconValue(TM_RenderQueue.necroMarkMat, TM_MatPool.Icon_Undead, "TM_Icon_Undead");
                         }
 
                         // Early exit condition
@@ -6418,12 +6418,7 @@ namespace TorannMagic
                         {
                             TraitDef trait = colonist.story.traits.allTraits[i].def;
                             if (TraitIconMap.ContainsKey(trait))
-                            {
-                                return new TraitIconMap.TraitIconValue(
-                                    TraitIconMap.Get(trait).IconMaterial,
-                                    TraitIconMap.Get(trait).IconType
-                                );
-                            }
+                                return TraitIconMap.Get(trait);
                         }
 
                         return null;
@@ -6438,7 +6433,7 @@ namespace TorannMagic
                 float num = 20f * Find.ColonistBar.Scale * settingsRef.classIconSize;
                 Vector2 vector = new Vector2(rect.x + 1f, rect.yMin + 1f);
                 rect = new Rect(vector.x, vector.y, num, num);
-                GUI.DrawTexture(rect, traitIconValue.IconMaterial);
+                GUI.DrawTexture(rect, traitIconValue.IconTexture);
                 TooltipHandler.TipRegion(rect, traitIconValue.IconType.Translate());
                 vector.x += num;
             }
