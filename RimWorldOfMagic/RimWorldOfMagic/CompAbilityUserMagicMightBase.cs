@@ -27,7 +27,7 @@ namespace TorannMagic
         public float coolDown = 1;
         public float xpGain = 1;
 
-        private static readonly SimpleCache<int, Material> traitCache = new SimpleCache<int, Material>(5);
+        private static readonly SimpleCache<string, Material> traitCache = new SimpleCache<string, Material>(5);
 
         protected void DrawMark(Material material, Vector3 scale)
         {
@@ -46,7 +46,7 @@ namespace TorannMagic
         // Scan for a trait and draw mark if there is one that applies. If you know the trait, use the specific DrawMark above
         protected void DrawMark()
         {
-            Material material = traitCache.GetOrCreate(Pawn.thingIDNumber, () =>
+            Material material = traitCache.GetOrCreate(Pawn.ThingID, () =>
             {
                 Trait markTrait =
                     Pawn.story.traits.allTraits.FirstOrDefault(trait => TraitIconMap.ContainsKey(trait.def));
