@@ -6391,8 +6391,8 @@ namespace TorannMagic
             }
         }
 
-        private static readonly SimpleCache<int, TraitIconMap.TraitIconValue> ColonistBarColonistDrawerCache = 
-            new SimpleCache<int, TraitIconMap.TraitIconValue>(5);
+        private static readonly SimpleCache<string, TraitIconMap.TraitIconValue> ColonistBarColonistDrawerCache =
+            new SimpleCache<string, TraitIconMap.TraitIconValue>(5);
 
         [HarmonyPatch(typeof(ColonistBarColonistDrawer), "DrawIcons", null)]
         public class ColonistBarColonistDrawer_Patch
@@ -6403,7 +6403,7 @@ namespace TorannMagic
 
                 ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
                 var traitIconValue = ColonistBarColonistDrawerCache.GetOrCreate(
-                    colonist.thingIDNumber,
+                    colonist.ThingID,
                     () =>
                     {
                         if (colonist.health.hediffSet.HasHediff(TorannMagicDefOf.TM_UndeadHD))
