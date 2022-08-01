@@ -6,6 +6,7 @@ using AbilityUser;
 using Verse;
 using UnityEngine;
 using HarmonyLib;
+using TorannMagic.Extensions;
 
 
 namespace TorannMagic
@@ -39,7 +40,7 @@ namespace TorannMagic
         {
             Pawn caster = base.CasterPawn;
             Pawn pawn = this.currentTarget.Thing as Pawn;
-            CompAbilityUserMagic comp = caster.TryGetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
             bool flag = pawn != null && pawn.health != null && pawn.health.hediffSet != null && pawn.health.hediffSet.GetInjuredParts() != null;
             if (flag && comp != null)
             {

@@ -4,6 +4,7 @@ using Verse;
 using Verse.Sound;
 using AbilityUser;
 using System.Linq;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -13,7 +14,7 @@ namespace TorannMagic
         {
             Pawn caster = base.CasterPawn;
 
-            CompAbilityUserMagic comp = caster.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
             //MagicPowerSkill eff = comp.MagicData.MagicPowerSkill_TechnoWeapon.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_TechnoWeapon_eff");
             int effVal = TM_Calc.GetSkillEfficiencyLevel(caster, TorannMagicDefOf.TM_TechnoWeapon, false);
 

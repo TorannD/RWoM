@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Verse;
 using RimWorld;
+using TorannMagic.Extensions;
 using Verse.AI;
 using UnityEngine;
 
@@ -26,7 +27,7 @@ namespace TorannMagic
 
         protected override IEnumerable<Toil> MakeNewToils()
         {
-            CompAbilityUserMagic comp = this.pawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = this.pawn.GetCompAbilityUserMagic();
             Toil discordance = new Toil();
             Pawn target = this.TargetThingA as Pawn;
             discordance.initAction = delegate

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System;
 using RimWorld;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -75,9 +76,9 @@ namespace TorannMagic
             {
                 this.pawn = this.launcher as Pawn;
                 this.map = this.pawn.Map;                
-                CompAbilityUserMagic comp = pawn.GetComp<CompAbilityUserMagic>();
-                MagicPowerSkill pwr = pawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_Scorn.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Scorn_pwr");
-                MagicPowerSkill ver = pawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_Scorn.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Scorn_ver");
+                CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
+                MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Scorn.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Scorn_pwr");
+                MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Scorn.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Scorn_ver");
                 ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
                 pwrVal = pwr.level;
                 verVal = ver.level;

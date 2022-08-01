@@ -4,6 +4,7 @@ using AbilityUser;
 using UnityEngine;
 using System.Linq;
 using System.Collections.Generic;
+using TorannMagic.Extensions;
 using Verse.Sound;
 
 namespace TorannMagic
@@ -43,7 +44,7 @@ namespace TorannMagic
         {
             Pawn p = this.CasterPawn;
             Map map = this.CasterPawn.Map;
-            CompAbilityUserMagic comp = this.CasterPawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = this.CasterPawn.GetCompAbilityUserMagic();
             corpses.Clear();
             pawns.Clear();
             plants.Clear();

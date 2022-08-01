@@ -3,6 +3,7 @@ using System;
 using UnityEngine;
 using Verse;
 using System.Linq;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -49,7 +50,7 @@ namespace TorannMagic
                 bool flag = base.SelPawn.story != null && base.SelPawn.IsColonist;
                 if (flag)
                 {
-                    CompAbilityUserMagic compMagic = base.SelPawn.TryGetComp<CompAbilityUserMagic>();
+                    CompAbilityUserMagic compMagic = base.SelPawn.GetCompAbilityUserMagic();
                     if (compMagic != null && compMagic.customClass != null)
                     {
                         return true;

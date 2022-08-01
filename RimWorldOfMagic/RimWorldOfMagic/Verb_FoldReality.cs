@@ -7,6 +7,7 @@ using System.Linq;
 using UnityEngine;
 using Verse;
 using AbilityUser;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -21,7 +22,7 @@ namespace TorannMagic
         protected override bool TryCastShot()
         {
             Map map = base.CasterPawn.Map;
-            comp = this.CasterPawn.GetComp<CompAbilityUserMagic>();
+            comp = this.CasterPawn.GetCompAbilityUserMagic();
             StartChoosingDestination();
             return false;
         }

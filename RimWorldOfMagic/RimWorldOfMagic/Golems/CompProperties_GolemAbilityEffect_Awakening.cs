@@ -9,6 +9,7 @@ using UnityEngine;
 using Verse.Sound;
 using TorannMagic.TMDefs;
 using AbilityUser;
+using TorannMagic.Extensions;
 
 namespace TorannMagic.Golems
 {
@@ -65,7 +66,7 @@ namespace TorannMagic.Golems
                         }
 
                         verb.Ability.PostAbilityAttempt();
-                        CompAbilityUserMagic ecomp = enemyCaster.TryGetComp<CompAbilityUserMagic>();
+                        CompAbilityUserMagic ecomp = enemyCaster.GetCompAbilityUserMagic();
                         if (ecomp != null)
                         {
                             for (int j = 0; j < ecomp.AbilityData.AllPowers.Count; j++)

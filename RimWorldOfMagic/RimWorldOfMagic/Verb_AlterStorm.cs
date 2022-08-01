@@ -4,6 +4,7 @@ using Verse;
 using AbilityUser;
 using System.Linq;
 using TorannMagic.Conditions;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -15,7 +16,7 @@ namespace TorannMagic
         {
             Map map = base.CasterPawn.Map; 
             WeatherDef alterDef = new WeatherDef();
-            CompAbilityUserMagic comp = base.CasterPawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = base.CasterPawn.GetCompAbilityUserMagic();
             if (map != null && comp != null && comp.MagicData != null)
             {
                 WeatherDef w = null;

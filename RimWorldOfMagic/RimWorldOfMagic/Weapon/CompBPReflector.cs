@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using TorannMagic.Extensions;
 using Verse;
 using UnityEngine;
 
@@ -8,7 +9,7 @@ namespace TorannMagic.Weapon
     {
         public override Verb ReflectionHandler(Verb newVerb)
         {
-            CompAbilityUserMagic holder = GetPawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic holder = GetPawn.GetCompAbilityUserMagic();
             bool canReflect = this.Props.canReflect && holder.IsMagicUser;
             Verb result;
             if (canReflect)
@@ -87,7 +88,7 @@ namespace TorannMagic.Weapon
                     }
                     float deflectionChance = this.DeflectionChance;
                     float meleeSkill = GetPawn.skills.GetSkill(this.Props.deflectSkill).Level;
-                    CompAbilityUserMagic holder = GetPawn.GetComp<CompAbilityUserMagic>();
+                    CompAbilityUserMagic holder = GetPawn.GetCompAbilityUserMagic();
                     deflectionChance += (meleeSkill * this.Props.deflectRatePerSkillPoint);
                     if (holder != null && !holder.IsMagicUser && (this.parent.def.defName == "TM_DefenderStaff" || this.parent.def.defName == "TM_BlazingPowerStaff"))
                     {

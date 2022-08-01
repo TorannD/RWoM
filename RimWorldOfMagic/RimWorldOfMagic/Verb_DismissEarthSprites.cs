@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using AbilityUser;
+using TorannMagic.Extensions;
 using Verse;
 
 
@@ -14,7 +15,7 @@ namespace TorannMagic
         protected override bool TryCastShot()
         {
             bool flag = false;
-            CompAbilityUserMagic comp = this.CasterPawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = this.CasterPawn.GetCompAbilityUserMagic();
 
             if (comp.IsMagicUser)
             {

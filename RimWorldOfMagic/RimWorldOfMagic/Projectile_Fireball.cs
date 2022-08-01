@@ -2,6 +2,7 @@
 using RimWorld;
 using Verse;
 using System.Linq;
+using TorannMagic.Extensions;
 using UnityEngine;
 
 namespace TorannMagic
@@ -24,15 +25,15 @@ namespace TorannMagic
 			cellRect.ClipInsideMap(map);
             ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
             Pawn pawn = this.launcher as Pawn;
-            CompAbilityUserMagic comp = pawn.GetComp<CompAbilityUserMagic>();
-            MagicPowerSkill pwr = pawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_Fireball.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Fireball_pwr");
-            MagicPowerSkill ver = pawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_Fireball.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Fireball_ver");
+            CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
+            MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Fireball.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Fireball_pwr");
+            MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Fireball.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Fireball_ver");
             pwrVal = pwr.level;
             verVal = ver.level;
             if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
             {
-                MightPowerSkill mpwr = pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-                MightPowerSkill mver = pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
+                MightPowerSkill mpwr = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
+                MightPowerSkill mver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
                 pwrVal = mpwr.level;
                 verVal = mver.level;
             }

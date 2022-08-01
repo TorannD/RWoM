@@ -5,6 +5,7 @@ using System.Linq;
 using AbilityUser;
 using Verse;
 using RimWorld;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -42,17 +43,17 @@ namespace TorannMagic
             // power affects enumerator
             // DamageWorker.DamageResult result = DamageWorker.DamageResult.MakeNew();
             Pawn caster = this.CasterPawn;
-            CompAbilityUserMagic comp = caster.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
             pwrVal = TM_Calc.GetSkillPowerLevel(caster, this.Ability.Def as TMAbilityDef);
             verVal = TM_Calc.GetSkillVersatilityLevel(caster, this.Ability.Def as TMAbilityDef);
-            //MagicPowerSkill pwr = caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_AdvancedHeal.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_AdvancedHeal_pwr");
-            //MagicPowerSkill ver = caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_AdvancedHeal.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_AdvancedHeal_ver");
+            //MagicPowerSkill pwr = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_AdvancedHeal.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_AdvancedHeal_pwr");
+            //MagicPowerSkill ver = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_AdvancedHeal.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_AdvancedHeal_ver");
             //pwrVal = pwr.level;
             //verVal = ver.level;
             //if (caster.story.traits.HasTrait(TorannMagicDefOf.Faceless))
             //{
-            //    MightPowerSkill mpwr = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-            //    MightPowerSkill mver = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
+            //    MightPowerSkill mpwr = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
+            //    MightPowerSkill mver = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
             //    pwrVal = mpwr.level;
             //    verVal = mver.level;
             //}

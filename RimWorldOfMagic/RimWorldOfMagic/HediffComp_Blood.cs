@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
 using HarmonyLib;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -45,7 +46,7 @@ namespace TorannMagic
         private void Initialize()
         {
             bool spawned = base.Pawn.Spawned;
-            CompAbilityUserMagic comp = this.Pawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = this.Pawn.GetCompAbilityUserMagic();
             if (spawned && comp != null && comp.IsMagicUser)
             {
                 //bloodPwr = comp.MagicData.MagicPowerSkill_BloodGift.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_BloodGift_pwr").level;

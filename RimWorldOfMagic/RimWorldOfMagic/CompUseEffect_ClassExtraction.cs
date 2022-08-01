@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using TorannMagic.Enchantment;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -11,8 +12,8 @@ namespace TorannMagic
     {
         public override void DoEffect(Pawn user)
         {
-            CompAbilityUserMagic compMagic = user.GetComp<CompAbilityUserMagic>();
-            CompAbilityUserMight compMight = user.GetComp<CompAbilityUserMight>();
+            CompAbilityUserMagic compMagic = user.GetCompAbilityUserMagic();
+            CompAbilityUserMight compMight = user.GetCompAbilityUserMight();
             int essenceXP = 0;
             if(compMagic != null && compMagic.IsMagicUser && compMagic.MagicUserXP != 0 && compMagic.MagicData != null)
             {

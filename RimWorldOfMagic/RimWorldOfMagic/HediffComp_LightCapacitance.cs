@@ -2,6 +2,7 @@
 using Verse;
 using UnityEngine;
 using System.Collections.Generic;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -70,7 +71,7 @@ namespace TorannMagic
             {
                 if (base.Pawn.Spawned && base.Pawn.Map != null)
                 {
-                    CompAbilityUserMagic comp = base.Pawn.TryGetComp<CompAbilityUserMagic>();
+                    CompAbilityUserMagic comp = base.Pawn.GetCompAbilityUserMagic();
                     if (comp != null && comp.SoL != null)
                     {
                         return comp.SoL;

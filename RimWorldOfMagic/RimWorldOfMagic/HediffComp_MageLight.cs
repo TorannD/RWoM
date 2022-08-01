@@ -1,6 +1,7 @@
 ﻿using RimWorld;
 using Verse;
 using System.Linq;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -43,7 +44,7 @@ namespace TorannMagic
                 gProps.glowRadius = 7f;
                 glower.parent = this.Pawn;
                 glower.Initialize(gProps);
-                comp = base.Pawn.GetComp<CompAbilityUserMagic>();
+                comp = base.Pawn.GetCompAbilityUserMagic();
                 this.nextLightningTick = Find.TickManager.TicksGame + Rand.Range(400, 800);
             }
         }

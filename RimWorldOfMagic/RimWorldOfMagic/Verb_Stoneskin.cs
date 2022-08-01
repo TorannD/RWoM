@@ -5,6 +5,7 @@ using System.Linq;
 using Verse;
 using Verse.Sound;
 using AbilityUser;
+using TorannMagic.Extensions;
 using UnityEngine;
 using Verse.AI.Group;
 
@@ -49,7 +50,7 @@ namespace TorannMagic
             Pawn caster = base.CasterPawn;
             Pawn pawn = this.currentTarget.Thing as Pawn;
 
-            comp = caster.GetComp<CompAbilityUserMagic>();
+            comp = caster.GetCompAbilityUserMagic();
             //MagicPowerSkill pwr = comp.MagicData.MagicPowerSkill_Stoneskin.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Stoneskin_pwr");
             //MagicPowerSkill ver = comp.MagicData.MagicPowerSkill_Stoneskin.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Stoneskin_ver");
             //pwrVal = pwr.level;
@@ -57,8 +58,8 @@ namespace TorannMagic
             //ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
             //if (caster.story.traits.HasTrait(TorannMagicDefOf.Faceless))
             //{
-            //    pwrVal = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr").level;
-            //    verVal = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver").level;
+            //    pwrVal = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr").level;
+            //    verVal = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver").level;
             //}
             //if (settingsRef.AIHardMode && !caster.IsColonist)
             //{
@@ -76,7 +77,7 @@ namespace TorannMagic
                 List<Pawn> geomancers = enumerable.ToList();
                 for (int i = 0; i < geomancers.Count(); i++)
                 {
-                    CompAbilityUserMagic compGeo = geomancers[i].GetComp<CompAbilityUserMagic>();
+                    CompAbilityUserMagic compGeo = geomancers[i].GetCompAbilityUserMagic();
                     if(compGeo != null && compGeo.stoneskinPawns.Contains(pawn))
                     {
                         compGeo.stoneskinPawns.Remove(pawn);

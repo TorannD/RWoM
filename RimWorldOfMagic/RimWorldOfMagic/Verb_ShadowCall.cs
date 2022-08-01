@@ -5,6 +5,7 @@ using Verse;
 using AbilityUser;
 using UnityEngine;
 using System.Linq;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -16,7 +17,7 @@ namespace TorannMagic
         protected override bool TryCastShot()
         {
             bool result = false;
-            CompAbilityUserMagic comp = this.CasterPawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = this.CasterPawn.GetCompAbilityUserMagic();
             Pawn soulPawn = comp.soulBondPawn;
 
             if(soulPawn != null && !soulPawn.Dead && !soulPawn.Destroyed)

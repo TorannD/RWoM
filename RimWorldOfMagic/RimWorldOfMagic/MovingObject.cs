@@ -3,6 +3,7 @@ using UnityEngine;
 using Verse;
 using System.Linq;
 using System.Collections.Generic;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -191,7 +192,7 @@ namespace TorannMagic
                             {
                                 cleaveVictim.TakeDamage(dinfo);
                                 FleckMaker.ThrowMicroSparks(cleaveVictim.Position.ToVector3(), map);
-                                CompAbilityUserMight comp = caster.GetComp<CompAbilityUserMight>();
+                                CompAbilityUserMight comp = caster.GetCompAbilityUserMight();
                                 MightPowerSkill ver = comp.MightData.MightPowerSkill_Whirlwind.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Whirlwind_ver");
                                 DamageInfo dinfo2 = new DamageInfo(TMDamageDefOf.DamageDefOf.TM_Whirlwind, weaponDmg, 0, (float)-1, caster, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
                                 System.Random random = new System.Random();
@@ -211,7 +212,7 @@ namespace TorannMagic
         private int GetWeaponDmg(Pawn caster)
         {
             int dmgNum = 1;
-            CompAbilityUserMight comp = caster.GetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = caster.GetCompAbilityUserMight();
             MightPowerSkill pwr = comp.MightData.MightPowerSkill_Whirlwind.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Whirlwind_pwr");
             ThingWithComps arg_3C_0;
             if (caster == null)

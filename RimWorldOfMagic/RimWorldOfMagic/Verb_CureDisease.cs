@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using AbilityUser;
+using TorannMagic.Extensions;
 using Verse;
 using UnityEngine;
 
@@ -19,7 +20,7 @@ namespace TorannMagic
         {
             Pawn caster = base.CasterPawn;
             Pawn pawn = this.currentTarget.Thing as Pawn;
-            CompAbilityUserMagic comp = caster.TryGetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
             pwrVal = TM_Calc.GetSkillPowerLevel(caster, this.Ability.Def as TMAbilityDef);
             verVal = TM_Calc.GetSkillVersatilityLevel(caster, this.Ability.Def as TMAbilityDef);
 
@@ -27,11 +28,11 @@ namespace TorannMagic
             //MagicPowerSkill ver = comp.MagicData.MagicPowerSkill_CureDisease.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_CureDisease_ver");
             //verVal = ver.level;
             //pwrVal = pwr.level;
-            //this.arcaneDmg = caster.GetComp<CompAbilityUserMagic>().arcaneDmg;
+            //this.arcaneDmg = caster.GetCompAbilityUserMagic().arcaneDmg;
             //if (caster.story.traits.HasTrait(TorannMagicDefOf.Faceless))
             //{
-            //    MightPowerSkill mpwr = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-            //    MightPowerSkill mver = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
+            //    MightPowerSkill mpwr = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
+            //    MightPowerSkill mver = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
             //    pwrVal = mpwr.level;
             //    verVal = mver.level;
             //}

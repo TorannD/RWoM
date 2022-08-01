@@ -3,6 +3,7 @@ using RimWorld.Planet;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using TorannMagic.Extensions;
 using UnityEngine;
 using Verse;
 
@@ -23,7 +24,7 @@ namespace TorannMagic
                 {
                     break;
                 }
-                CompAbilityUserMagic comp = pawn.GetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
                 if (comp.IsMagicUser)
                 {
                     HediffGiverUtility.TryApply(pawn, this.def.diseaseIncident, this.def.diseasePartsToAffect, false, 1, null);
@@ -51,7 +52,7 @@ namespace TorannMagic
                 {
                     return false;
                 }
-                CompAbilityUserMagic comp = p.GetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = p.GetCompAbilityUserMagic();
                 if (comp != null && !comp.IsMagicUser)
                 {
                     return false;

@@ -2,6 +2,7 @@
 using Verse;
 using AbilityUser;
 using System.Linq;
+using TorannMagic.Extensions;
 
 
 namespace TorannMagic
@@ -43,9 +44,9 @@ namespace TorannMagic
         {
             
             pawn = this.launcher as Pawn;
-            CompAbilityUserMagic comp = pawn.GetComp<CompAbilityUserMagic>();
-            pwr = pawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_Firestorm.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Firestorm_pwr");
-            ver = pawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_Firestorm.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Firestorm_ver");
+            CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
+            pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Firestorm.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Firestorm_pwr");
+            ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Firestorm.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Firestorm_ver");
             ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
             pwrVal = pwr.level;
             verVal = ver.level;

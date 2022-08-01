@@ -5,6 +5,7 @@ using RimWorld;
 using AbilityUser;
 using Verse;
 using HarmonyLib;
+using TorannMagic.Extensions;
 using UnityEngine;
 
 
@@ -38,9 +39,9 @@ namespace TorannMagic
         protected override bool TryCastShot()
         {
             bool flag = false;
-            CompAbilityUserMight comp = base.CasterPawn.GetComp<CompAbilityUserMight>();
-            MightPowerSkill pwr = base.CasterPawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_AnimalFriend.FirstOrDefault((MightPowerSkill x) => x.label == "TM_AnimalFriend_pwr");
-            MightPowerSkill ver = base.CasterPawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_AnimalFriend.FirstOrDefault((MightPowerSkill x) => x.label == "TM_AnimalFriend_ver");
+            CompAbilityUserMight comp = base.CasterPawn.GetCompAbilityUserMight();
+            MightPowerSkill pwr = base.CasterPawn.GetCompAbilityUserMight().MightData.MightPowerSkill_AnimalFriend.FirstOrDefault((MightPowerSkill x) => x.label == "TM_AnimalFriend_pwr");
+            MightPowerSkill ver = base.CasterPawn.GetCompAbilityUserMight().MightData.MightPowerSkill_AnimalFriend.FirstOrDefault((MightPowerSkill x) => x.label == "TM_AnimalFriend_ver");
             Pawn pawn = this.CasterPawn;
             Pawn animal = this.currentTarget.Thing as Pawn;
 

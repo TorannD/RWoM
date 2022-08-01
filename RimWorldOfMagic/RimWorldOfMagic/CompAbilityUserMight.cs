@@ -10,6 +10,7 @@ using Verse.AI;
 using UnityEngine;
 using System.Text;
 using CompDeflector;
+using TorannMagic.Extensions;
 using TorannMagic.Ideology;
 
 namespace TorannMagic
@@ -245,7 +246,7 @@ namespace TorannMagic
 
             if (this.customClass != null)
             {
-                CompAbilityUserMagic mComp = this.Pawn.TryGetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic mComp = this.Pawn.GetCompAbilityUserMagic();
                 bool shouldDraw = true;
                 if(mComp != null)
                 {
@@ -3193,7 +3194,7 @@ namespace TorannMagic
         public void SiphonReversal(int verVal)
         {
             Pawn pawn = this.Pawn;
-            CompAbilityUserMight comp = pawn.GetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
             comp.Stamina.CurLevel += (.015f * verVal);         
             int num = 1 + verVal;
             using (IEnumerator<BodyPartRecord> enumerator = pawn.health.hediffSet.GetInjuredParts().GetEnumerator())
@@ -4449,7 +4450,7 @@ namespace TorannMagic
             {                
                 if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Bladedancer))
                 {
-                    MightPowerSkill bladefocus_pwr = this.Pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_BladeFocus.FirstOrDefault((MightPowerSkill x) => x.label == "TM_BladeFocus_pwr");
+                    MightPowerSkill bladefocus_pwr = this.Pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_BladeFocus.FirstOrDefault((MightPowerSkill x) => x.label == "TM_BladeFocus_pwr");
 
                     List<Trait> traits = this.Pawn.story.traits.allTraits;
                     for (int i = 0; i < traits.Count; i++)
@@ -4505,7 +4506,7 @@ namespace TorannMagic
 
                 if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Sniper))
                 {
-                    MightPowerSkill sniperfocus_pwr = this.Pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_SniperFocus.FirstOrDefault((MightPowerSkill x) => x.label == "TM_SniperFocus_pwr");
+                    MightPowerSkill sniperfocus_pwr = this.Pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_SniperFocus.FirstOrDefault((MightPowerSkill x) => x.label == "TM_SniperFocus_pwr");
 
                     List<Trait> traits = this.Pawn.story.traits.allTraits;
                     for (int i = 0; i < traits.Count; i++)
@@ -4533,7 +4534,7 @@ namespace TorannMagic
                 ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
                 if ((this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Bladedancer) || (this.customClass != null && this.customClass.classFighterAbilities.Contains(TorannMagicDefOf.TM_BladeArt))) && !this.Pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_BladeArtHD))
                 {
-                    MightPowerSkill bladeart_pwr = this.Pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_BladeArt.FirstOrDefault((MightPowerSkill x) => x.label == "TM_BladeArt_pwr");
+                    MightPowerSkill bladeart_pwr = this.Pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_BladeArt.FirstOrDefault((MightPowerSkill x) => x.label == "TM_BladeArt_pwr");
 
                     //HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_BladeArtHD, -5f);
                     HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_BladeArtHD, (.5f) + bladeart_pwr.level);
@@ -4544,7 +4545,7 @@ namespace TorannMagic
                 }
                 if ((this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Ranger) || (this.customClass != null && this.customClass.classFighterAbilities.Contains(TorannMagicDefOf.TM_BowTraining))))
                 {                    
-                    MightPowerSkill bowtraining_pwr = this.Pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_BowTraining.FirstOrDefault((MightPowerSkill x) => x.label == "TM_BowTraining_pwr");
+                    MightPowerSkill bowtraining_pwr = this.Pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_BowTraining.FirstOrDefault((MightPowerSkill x) => x.label == "TM_BowTraining_pwr");
                     if (!this.Pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_BowTrainingHD))
                     {
                         //HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_BowTrainingHD, -5f);
@@ -4564,7 +4565,7 @@ namespace TorannMagic
 
                         if (rec.def == TorannMagicDefOf.TM_BladeArtHD && this.Pawn.IsColonist)
                         {
-                            MightPowerSkill bladeart_pwr = this.Pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_BladeArt.FirstOrDefault((MightPowerSkill x) => x.label == "TM_BladeArt_pwr");
+                            MightPowerSkill bladeart_pwr = this.Pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_BladeArt.FirstOrDefault((MightPowerSkill x) => x.label == "TM_BladeArt_pwr");
                             if (rec.Severity < (float)(.5f + bladeart_pwr.level) || rec.Severity > (float)(.6f + bladeart_pwr.level))
                             {
                                 HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_BladeArtHD, -5f);
@@ -4576,7 +4577,7 @@ namespace TorannMagic
 
                         if (rec.def == TorannMagicDefOf.TM_BowTrainingHD && this.Pawn.IsColonist)
                         {
-                            MightPowerSkill bowtraining_pwr = this.Pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_BowTraining.FirstOrDefault((MightPowerSkill x) => x.label == "TM_BowTraining_pwr");
+                            MightPowerSkill bowtraining_pwr = this.Pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_BowTraining.FirstOrDefault((MightPowerSkill x) => x.label == "TM_BowTraining_pwr");
                             if (rec.Severity < (float)(.5f + bowtraining_pwr.level) || rec.Severity > (float)(.6f + bowtraining_pwr.level))
                             {
                                 HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_BowTrainingHD, -5f);

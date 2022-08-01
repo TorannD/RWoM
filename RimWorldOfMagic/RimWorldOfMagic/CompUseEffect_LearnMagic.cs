@@ -1,6 +1,7 @@
 ﻿using RimWorld;
 using Verse;
 using System.Collections.Generic;
+using TorannMagic.Extensions;
 using UnityEngine;
 
 
@@ -32,7 +33,7 @@ namespace TorannMagic
                             ApplyTraitAdjustments(user, TM_ClassUtility.CustomClasses()[i].classTrait);
                             //
                             this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
-                            CompAbilityUserMagic comp = user.TryGetComp<CompAbilityUserMagic>();
+                            CompAbilityUserMagic comp = user.GetCompAbilityUserMagic();
                             if (comp != null)
                             {
                                 comp.customIndex = i;
@@ -42,7 +43,7 @@ namespace TorannMagic
                             {
                                 Log.Message("failed to initialize custom magic class comp");
                             }
-                            CompAbilityUserMight mComp = user.TryGetComp<CompAbilityUserMight>();
+                            CompAbilityUserMight mComp = user.GetCompAbilityUserMight();
                             if (mComp != null && TM_ClassUtility.CustomClasses()[i].isFighter)
                             {
                                 mComp.customIndex = i;

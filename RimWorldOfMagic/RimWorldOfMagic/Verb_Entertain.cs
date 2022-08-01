@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using AbilityUser;
+using TorannMagic.Extensions;
 using Verse;
 using UnityEngine;
 
@@ -15,7 +16,7 @@ namespace TorannMagic
         {
             Pawn caster = base.CasterPawn;
             Pawn pawn = this.currentTarget.Thing as Pawn;
-            CompAbilityUserMagic comp = caster.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
             MagicPower magicPower = comp.MagicData.MagicPowersB.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Entertain);
             bool flag = pawn != null && !pawn.Dead;
             if (flag)

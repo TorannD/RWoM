@@ -2,6 +2,7 @@
 using Verse;
 using System.Collections.Generic;
 using System.Linq;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -9,7 +10,7 @@ namespace TorannMagic
     {
         public override void DoEffect(Pawn user)
         {
-            CompAbilityUserMagic comp = user.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = user.GetCompAbilityUserMagic();
 
             if (parent.def != null && (TM_Calc.IsMagicUser(user) || TM_Calc.IsWanderer(user)))
             {

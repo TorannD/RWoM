@@ -2,6 +2,7 @@
 using Verse;
 using AbilityUser;
 using System.Linq;
+using TorannMagic.Extensions;
 using UnityEngine;
 
 
@@ -41,9 +42,9 @@ namespace TorannMagic
         public void Initialize(Map map)
         {
             pawn = this.launcher as Pawn;
-            CompAbilityUserMagic comp = pawn.GetComp<CompAbilityUserMagic>();
-            pwr = pawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_Blizzard.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Blizzard_pwr");
-            ver = pawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_Blizzard.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Blizzard_ver");
+            CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
+            pwr = comp.MagicData.MagicPowerSkill_Blizzard.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Blizzard_pwr");
+            ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Blizzard.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Blizzard_ver");
             ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
             pwrVal = pwr.level;
             verVal = ver.level;

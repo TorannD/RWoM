@@ -6,6 +6,7 @@ using RimWorld;
 using UnityEngine;
 using Verse.AI;
 using AbilityUser;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -293,7 +294,7 @@ namespace TorannMagic
                         }
                     }
                 }
-                CompAbilityUserMagic comp = this.sustainerPawn.GetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = this.sustainerPawn.GetCompAbilityUserMagic();
                 comp.summonedSentinels.Remove(this.Pawn);
                 comp.summonedSentinels.Add(spawnedThing);
                 DamageInfo dinfo = new DamageInfo(DamageDefOf.Blunt, 10*healthDeficit, 0, (float)-1, this.Pawn, null, null, DamageInfo.SourceCategory.ThingOrUnknown);

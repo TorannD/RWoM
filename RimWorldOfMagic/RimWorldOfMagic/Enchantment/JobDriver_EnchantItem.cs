@@ -3,6 +3,7 @@ using Verse.AI;
 using Verse;
 using RimWorld;
 using System.Collections.Generic;
+using TorannMagic.Extensions;
 using Verse.Sound;
 
 namespace TorannMagic.Enchantment
@@ -118,7 +119,7 @@ namespace TorannMagic.Enchantment
             {
                 CompEnchantedItem enchantment = thing.TryGetComp<CompEnchantedItem>();            
                 CompEnchant enchantingItem = actor.TryGetComp<CompEnchant>();
-                CompAbilityUserMagic pawnComp = actor.TryGetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic pawnComp = actor.GetCompAbilityUserMagic();
                 if (enchantment != null && enchantingItem != null && enchanting.actor.jobs.curDriver.ticksLeftThisToil < 1)
                 {
                     if (EnchantItem(enchantingItem.enchantingContainer[0], enchantment))

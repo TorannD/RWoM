@@ -2,6 +2,7 @@
 using Verse;
 using System.Collections.Generic;
 using System.Linq;
+using TorannMagic.Extensions;
 using Verse.AI;
 
 namespace TorannMagic
@@ -85,7 +86,7 @@ namespace TorannMagic
         {
             if (!instigator.Dead && !instigator.Downed)
             {
-                MagicPowerSkill ver = instigator.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_RaiseUndead.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_RaiseUndead_ver");
+                MagicPowerSkill ver = instigator.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_RaiseUndead.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_RaiseUndead_ver");
                 undeadPawn.SetFaction(instigator.Faction);
                 IntVec3 screamPos = undeadPawn.Position;
                 screamPos.z += 2;
@@ -99,7 +100,7 @@ namespace TorannMagic
                     //RemoveTraits(undeadPawn, undeadPawn.story.traits.allTraits);
                     //RedoSkills(undeadPawn);
                     undeadPawn.story.traits.GainTrait(new Trait(TraitDef.Named("Undead"), 0, false));
-                    CompAbilityUserMagic undeadComp = undeadPawn.GetComp<CompAbilityUserMagic>();
+                    CompAbilityUserMagic undeadComp = undeadPawn.GetCompAbilityUserMagic();
                     if (undeadComp.IsMagicUser)
                     {
                         //undeadComp.ClearPowers();

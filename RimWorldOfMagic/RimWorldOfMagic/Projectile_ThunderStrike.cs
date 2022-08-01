@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Linq;
 using RimWorld;
 using System.Collections.Generic;
+using TorannMagic.Extensions;
 
 
 namespace TorannMagic
@@ -119,18 +120,18 @@ namespace TorannMagic
             {
                 verVal = TM_Calc.GetSkillVersatilityLevel(pawn, TorannMagicDefOf.TM_ThunderStrike, false);
                 pwrVal = TM_Calc.GetSkillPowerLevel(pawn, TorannMagicDefOf.TM_ThunderStrike, false);
-                //verVal = TM_Calc.GetMightSkillLevel(pawn, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_ThunderStrike, "TM_ThunderStrike", "_ver", true);
-                //pwrVal = TM_Calc.GetMightSkillLevel(pawn, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_ThunderStrike, "TM_ThunderStrike", "_pwr", true);
-                //this.verVal = pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_ThunderStrike.FirstOrDefault((MightPowerSkill x) => x.label == "TM_ThunderStrike_ver").level;
-                //this.pwrVal = pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_ThunderStrike.FirstOrDefault((MightPowerSkill x) => x.label == "TM_ThunderStrike_pwr").level;
+                //verVal = TM_Calc.GetMightSkillLevel(pawn, pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_ThunderStrike, "TM_ThunderStrike", "_ver", true);
+                //pwrVal = TM_Calc.GetMightSkillLevel(pawn, pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_ThunderStrike, "TM_ThunderStrike", "_pwr", true);
+                //this.verVal = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_ThunderStrike.FirstOrDefault((MightPowerSkill x) => x.label == "TM_ThunderStrike_ver").level;
+                //this.pwrVal = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_ThunderStrike.FirstOrDefault((MightPowerSkill x) => x.label == "TM_ThunderStrike_pwr").level;
                 //if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
                 //{
-                //    MightPowerSkill mver = pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
-                //    MightPowerSkill mpwr = pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
+                //    MightPowerSkill mver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
+                //    MightPowerSkill mpwr = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
                 //    verVal = mver.level;
                 //    pwrVal = mpwr.level;
                 //}
-                this.arcaneDmg = pawn.GetComp<CompAbilityUserMight>().mightPwr;
+                this.arcaneDmg = pawn.GetCompAbilityUserMight().mightPwr;
                 this.origin = pawn.Position.ToVector3Shifted();
                 this.destination = target.ToVector3Shifted();
                 this.direction = TM_Calc.GetVector(this.origin, this.destination);

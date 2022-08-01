@@ -5,6 +5,7 @@ using Verse;
 using UnityEngine;
 using AbilityUser;
 using System.Linq;
+using TorannMagic.Extensions;
 
 
 namespace TorannMagic
@@ -25,7 +26,7 @@ namespace TorannMagic
                 if(targetPawn != null)
                 {
                     float rnd = 2f;
-                    CompAbilityUserMight comp = this.CasterPawn.TryGetComp<CompAbilityUserMight>();
+                    CompAbilityUserMight comp = this.CasterPawn.GetCompAbilityUserMight();
                     if(comp != null)
                     {
                         if(comp.MightData.MightPowerSkill_FieldTraining.FirstOrDefault((MightPowerSkill x) => x.label == "TM_FieldTraining_pwr").level >= 2)

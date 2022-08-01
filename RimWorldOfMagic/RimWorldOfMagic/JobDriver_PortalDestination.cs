@@ -4,6 +4,7 @@ using Verse.AI;
 using Verse;
 using RimWorld;
 using RimWorld.Planet;
+using TorannMagic.Extensions;
 using UnityEngine;
 
 
@@ -101,7 +102,7 @@ namespace TorannMagic
                 Map myMap = portalBldg.Map;
                 Map map = mapParent.Map;
                 Current.Game.CurrentMap = map;
-                comp = pawn.GetComp<CompAbilityUserMagic>();
+                comp = pawn.GetCompAbilityUserMagic();
                 TargetingParameters portalTarget = new TargetingParameters();
                 portalTarget.canTargetLocations = true;
                 portalTarget.canTargetSelf = false;

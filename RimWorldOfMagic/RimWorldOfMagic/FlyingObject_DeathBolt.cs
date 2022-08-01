@@ -2,6 +2,7 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
+using TorannMagic.Extensions;
 using UnityEngine;
 using Verse;
 
@@ -120,7 +121,7 @@ namespace TorannMagic
                 FleckMaker.Static(this.origin, this.Map, FleckDefOf.ExplosionFlash, 12f);
                 SoundDefOf.Ambient_AltitudeWind.sustainFadeoutTime.Equals(30.0f);
                 FleckMaker.ThrowDustPuff(this.origin, this.Map, Rand.Range(1.2f, 1.8f));
-                CompAbilityUserMagic comp = pawn.GetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
                 if (comp != null && comp.PowerModifier > 0)
                 {
                     this.arcaneDmg += .2f;
@@ -146,7 +147,7 @@ namespace TorannMagic
         {
             bool spawned = flyingThing.Spawned;
             this.pawn = launcher as Pawn;
-            CompAbilityUserMagic comp = pawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
             if (comp != null)
             {
                 foreach (MagicPower current in comp.MagicData.MagicPowersN)
@@ -174,8 +175,8 @@ namespace TorannMagic
                 this.arcaneDmg = comp.arcaneDmg;
                 pwrVal = TM_Calc.GetSkillPowerLevel(pawn, TorannMagicDefOf.TM_DeathBolt, true);
                 verVal = TM_Calc.GetSkillVersatilityLevel(pawn, TorannMagicDefOf.TM_DeathBolt, true);
-                //MagicPowerSkill pwr = pawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_DeathBolt.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_DeathBolt_pwr");
-                //MagicPowerSkill ver = pawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_DeathBolt.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_DeathBolt_ver");
+                //MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_DeathBolt.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_DeathBolt_pwr");
+                //MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_DeathBolt.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_DeathBolt_ver");
                 //verVal = ver.level;
                 //pwrVal = pwr.level;
                 //ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();

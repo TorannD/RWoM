@@ -3,6 +3,7 @@ using Verse;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using TorannMagic.Extensions;
 using UnityEngine;
 
 namespace TorannMagic
@@ -40,10 +41,10 @@ namespace TorannMagic
             {
                 //FleckMaker.ThrowLightningGlow(base.Pawn.TrueCenter(), base.Pawn.Map, 3f);
                 Pawn caster = this.Pawn;
-                CompAbilityUserMagic comp = caster.GetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
                 if (comp != null)
                 {
-                    pwrVal = caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_Prediction.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Prediction_pwr").level;
+                    pwrVal = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Prediction.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Prediction_pwr").level;
                     this.parent.Severity = .5f + pwrVal;
                 }
             }
@@ -93,12 +94,12 @@ namespace TorannMagic
         {
             float sev = this.parent.Severity;
             Pawn caster = this.Pawn;
-            CompAbilityUserMagic comp = caster.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
             ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
 
             if (comp != null)
             {
-                pwrVal = caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_Prediction.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Prediction_pwr").level;
+                pwrVal = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Prediction.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Prediction_pwr").level;
                 if (sev <= 0)
                 {
                     this.removeNow = true;

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Verse;
 using RimWorld.Planet;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -56,10 +57,10 @@ namespace TorannMagic
         public override float CurLevel
         {            
             get => curLevelInt;
-            set => curLevelInt = Mathf.Clamp(value, 0f, 2f*this.pawn.GetComp<CompAbilityUserMagic>().maxMP);            
+            set => curLevelInt = Mathf.Clamp(value, 0f, 2f*this.pawn.GetCompAbilityUserMagic().maxMP);
         }
 
-        public override float MaxLevel => this.pawn.GetComp<CompAbilityUserMagic>().maxMP;
+        public override float MaxLevel => this.pawn.GetCompAbilityUserMagic().maxMP;
 
         public override void ExposeData()
         {
@@ -204,7 +205,7 @@ namespace TorannMagic
             if (!base.pawn.Dead && base.pawn.story != null && base.pawn.story.traits != null && !base.pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
             {                
                 Pawn pawn = base.pawn;
-                CompAbilityUserMagic comp = pawn.GetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
                 if (comp != null && comp.MagicData != null && comp.IsMagicUser && pawn.Faction != null)
                 {                    
                     if (!pawn.Faction.IsPlayer && pawn.Map != null)
@@ -216,7 +217,7 @@ namespace TorannMagic
                     else
                     {
                         ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();                        
-                        MagicPowerSkill manaRegen = pawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_global_regen.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_global_regen_pwr");
+                        MagicPowerSkill manaRegen = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_global_regen.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_global_regen_pwr");
                         this.baseManaGain = (amount * (0.0012f) * settingsRef.needMultiplier);
                         amount *= (((0.0012f * comp.mpRegenRate)) * settingsRef.needMultiplier);
                         this.modifiedManaGain = amount - this.baseManaGain;
@@ -334,7 +335,7 @@ namespace TorannMagic
                                 {
                                     if (mapPawns[i] != null && mapPawns[i].Spawned && !mapPawns[i].Dead && !mapPawns[i].AnimalOrWildMan())
                                     {
-                                        CompAbilityUserMagic mageCheck = mapPawns[i].GetComp<CompAbilityUserMagic>();
+                                        CompAbilityUserMagic mageCheck = mapPawns[i].GetCompAbilityUserMagic();
                                         if (mageCheck != null && mageCheck.IsMagicUser && !mapPawns[i].story.traits.HasTrait(TorannMagicDefOf.Faceless))
                                         {
                                             mageCount++;
@@ -359,7 +360,7 @@ namespace TorannMagic
                         //Summoned minion modifier
                         if (comp.summonedMinions.Count > 0)
                         {
-                            MagicPowerSkill summonerEff = pawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_SummonMinion.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_SummonMinion_eff");
+                            MagicPowerSkill summonerEff = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_SummonMinion.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_SummonMinion_eff");
                             this.drainMinion = (0.0012f * (comp.summonedMinions.Count * (.2f - (.01f * summonerEff.level))));
                             amount -= this.drainMinion;
                         }
@@ -371,7 +372,7 @@ namespace TorannMagic
                         //Earth sprite modifier
                         if(comp.earthSpriteType != 0)
                         {
-                            MagicPowerSkill manaDeviant = pawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_EarthSprites.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_EarthSprites_ver");
+                            MagicPowerSkill manaDeviant = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_EarthSprites.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_EarthSprites_ver");
                             this.drainSprites = (0.0012f * (.6f - (.07f * manaDeviant.level)));
                             amount -= this.drainSprites;
                         }
@@ -552,7 +553,7 @@ namespace TorannMagic
             //else
             //{                
             //    Pawn pawn = base.pawn;
-            //    CompAbilityUserMagic comp = pawn.GetComp<CompAbilityUserMagic>();
+            //    CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
             //    if (comp != null)
             //    {
             //        if (comp.IsMagicUser && comp.Mana != null)
@@ -570,7 +571,7 @@ namespace TorannMagic
 
         public void UseMagicPower(float amount)
         {
-            this.curLevelInt = Mathf.Clamp(this.curLevelInt - amount, 0f, 2f*this.pawn.GetComp<CompAbilityUserMagic>().maxMP);
+            this.curLevelInt = Mathf.Clamp(this.curLevelInt - amount, 0f, 2f*this.pawn.GetCompAbilityUserMagic().maxMP);
             if ((amount) > .25f && (amount) < .45f)
             {
                 //0.0 to 0.2 max

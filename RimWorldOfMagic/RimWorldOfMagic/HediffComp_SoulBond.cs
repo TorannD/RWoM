@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
+using TorannMagic.Extensions;
 using Verse;
 
 namespace TorannMagic
@@ -68,7 +69,7 @@ namespace TorannMagic
                     Find.HistoryEventsManager.RecordEvent(new HistoryEvent(TorannMagicDefOf.TM_UsedMagic, this.Pawn.Named(HistoryEventArgsNames.Doer), this.Pawn.Named(HistoryEventArgsNames.Subject), this.Pawn.Named(HistoryEventArgsNames.AffectedFaction), this.Pawn.Named(HistoryEventArgsNames.Victim)), true);
                 }
                 Pawn pawn = base.Pawn;
-                CompAbilityUserMagic comp = pawn.GetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
                 Pawn soulPawn = comp.soulBondPawn;
                 bondedPawn = soulPawn;
                 if(soulPawn != null)

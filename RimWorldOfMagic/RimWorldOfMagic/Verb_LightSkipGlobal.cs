@@ -7,6 +7,7 @@ using System;
 using RimWorld;
 using RimWorld.Planet;
 using System.Text;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -65,7 +66,7 @@ namespace TorannMagic
 
                 this.pawn = this.CasterPawn;
                 launcherPosition = this.CasterPawn.Position;
-                CompAbilityUserMagic comp = pawn.GetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
                 //pwrVal = TM_Calc.GetMagicSkillLevel(this.pawn, comp.MagicData.MagicPowerSkill_LightSkip, "TM_LightSkip", "_pwr", false);
                 pwrVal = TM_Calc.GetSkillPowerLevel(pawn, TorannMagicDefOf.TM_LightSkip, false);
                 this.arcaneDmg = comp.arcaneDmg;

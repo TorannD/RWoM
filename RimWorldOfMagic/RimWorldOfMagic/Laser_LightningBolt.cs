@@ -3,6 +3,7 @@ using Verse;
 using Verse.Sound;
 using AbilityUser;
 using System.Linq;
+using TorannMagic.Extensions;
 using UnityEngine;
 
 namespace TorannMagic
@@ -24,17 +25,17 @@ namespace TorannMagic
             
             if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
             {
-                MightPowerSkill mpwr = pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-                MightPowerSkill mver = pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
+                MightPowerSkill mpwr = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
+                MightPowerSkill mver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
                 pwrVal = mpwr.level;
                 verVal = mver.level;
-                this.arcaneDmg = pawn.GetComp<CompAbilityUserMight>().mightPwr;
+                this.arcaneDmg = pawn.GetCompAbilityUserMight().mightPwr;
             }
             else
             {
-                CompAbilityUserMagic comp = pawn.GetComp<CompAbilityUserMagic>();
-                MagicPowerSkill pwr = pawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_LightningBolt.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_LightningBolt_pwr");
-                MagicPowerSkill ver = pawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_LightningBolt.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_LightningBolt_ver");
+                CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
+                MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_LightningBolt.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_LightningBolt_pwr");
+                MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_LightningBolt.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_LightningBolt_ver");
                 pwrVal = pwr.level;
                 verVal = ver.level;
                 this.arcaneDmg = comp.arcaneDmg;

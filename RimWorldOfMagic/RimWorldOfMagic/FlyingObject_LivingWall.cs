@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Verse;
 using AbilityUser;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -515,7 +516,7 @@ namespace TorannMagic
         {
             if (!CasterPawn.DestroyedOrNull() && !CasterPawn.Dead)
             {
-                CompAbilityUserMagic comp = CasterPawn.TryGetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = CasterPawn.GetCompAbilityUserMagic();
                 //int verVal = TM_Calc.GetMagicSkillLevel(CasterPawn, comp.MagicData.MagicPowerSkill_LivingWall, "TM_LivingWall", "_ver", true);
                 //int pwrVal = TM_Calc.GetMagicSkillLevel(CasterPawn, comp.MagicData.MagicPowerSkill_LivingWall, "TM_LivingWall", "_pwr", true);
                 int verVal = TM_Calc.GetSkillVersatilityLevel(CasterPawn, TorannMagicDefOf.TM_LivingWall, true);

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using AbilityUser;
+using TorannMagic.Extensions;
 using Verse;
 using Verse.AI;
 using UnityEngine;
@@ -28,7 +29,7 @@ namespace TorannMagic
             this.TargetsAoE.Clear();
             //this.UpdateTargets();
             FindTargets();
-            CompAbilityUserMight comp = caster.GetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = caster.GetCompAbilityUserMight();
             pwrVal = TM_Calc.GetSkillPowerLevel(caster, this.Ability.Def as TMAbilityDef, true);
             if (this.Ability.Def == TorannMagicDefOf.TM_StayAlert || this.Ability.Def == TorannMagicDefOf.TM_StayAlert_I || this.Ability.Def == TorannMagicDefOf.TM_StayAlert_II || this.Ability.Def == TorannMagicDefOf.TM_StayAlert_III)
             {

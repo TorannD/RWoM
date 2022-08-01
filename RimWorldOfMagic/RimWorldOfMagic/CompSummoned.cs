@@ -1,5 +1,6 @@
 ﻿using Verse;
 using RimWorld;
+using TorannMagic.Extensions;
 using UnityEngine;
 
 namespace TorannMagic
@@ -37,7 +38,7 @@ namespace TorannMagic
         {
             get
             {
-                return spawner.GetComp<CompAbilityUserMagic>();
+                return spawner.GetCompAbilityUserMagic();
             }
         }
 

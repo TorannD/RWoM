@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Linq;
 using System;
 using RimWorld;
+using TorannMagic.Extensions;
 using Verse.Sound;
 
 namespace TorannMagic
@@ -43,7 +44,7 @@ namespace TorannMagic
             bool result = false;
             Pawn pawn = this.CasterPawn;
             Map map = this.CasterPawn.Map;
-            CompAbilityUserMight comp = pawn.GetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
             if (comp != null && comp.Stamina != null)
             {
                 for (int i = 0; i < 8; i++)

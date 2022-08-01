@@ -3,6 +3,7 @@ using Verse;
 using AbilityUser;
 using UnityEngine;
 using System.Linq;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -42,7 +43,7 @@ namespace TorannMagic
             bool result = false;
             Pawn p = this.CasterPawn;
             Pawn hitPawn = this.currentTarget.Thing as Pawn;
-            CompAbilityUserMagic comp = this.CasterPawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = this.CasterPawn.GetCompAbilityUserMagic();
             verVal = TM_Calc.GetSkillVersatilityLevel(p, this.Ability.Def as TMAbilityDef, true);
             pwrVal = TM_Calc.GetSkillPowerLevel(p, this.Ability.Def as TMAbilityDef);
             effVal = TM_Calc.GetSkillEfficiencyLevel(p, this.Ability.Def as TMAbilityDef);
@@ -61,9 +62,9 @@ namespace TorannMagic
             //}
             //if (p.story.traits.HasTrait(TorannMagicDefOf.Faceless))
             //{
-            //    MightPowerSkill mpwr = p.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-            //    MightPowerSkill mver = p.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
-            //    MightPowerSkill meff = p.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_eff");
+            //    MightPowerSkill mpwr = p.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
+            //    MightPowerSkill mver = p.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
+            //    MightPowerSkill meff = p.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_eff");
             //    pwrVal = mpwr.level;
             //    verVal = mver.level;
             //    effVal = meff.level;

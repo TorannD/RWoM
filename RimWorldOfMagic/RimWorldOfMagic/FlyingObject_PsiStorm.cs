@@ -2,6 +2,7 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
+using TorannMagic.Extensions;
 using UnityEngine;
 using Verse;
 using Verse.Sound;
@@ -140,11 +141,11 @@ namespace TorannMagic
             bool spawned = flyingThing.Spawned;
             pawn = launcher as Pawn;
             
-            CompAbilityUserMight comp = pawn.GetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
             ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
             this.arcaneDmg = comp.mightPwr;
-            //MightPowerSkill pwr = pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_PsionicStorm.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PsionicStorm_pwr");
-            //MightPowerSkill ver = pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_PsionicStorm.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PsionicStorm_ver");
+            //MightPowerSkill pwr = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_PsionicStorm.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PsionicStorm_pwr");
+            //MightPowerSkill ver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_PsionicStorm.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PsionicStorm_ver");
             //verVal = ver.level;
             //pwrVal = pwr.level;
             verVal = TM_Calc.GetSkillVersatilityLevel(pawn, TorannMagicDefOf.TM_PsionicStorm, false);

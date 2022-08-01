@@ -10,6 +10,7 @@ using System;
 using AbilityUser;
 using HarmonyLib;
 using TorannMagic.Enchantment;
+using TorannMagic.Extensions;
 using TorannMagic.TMDefs;
 
 namespace TorannMagic
@@ -194,7 +195,7 @@ namespace TorannMagic
 
         public static void DoAction_TechnoWeaponCopy(Pawn caster, Thing thing, ThingDef td = null, QualityCategory _qc = QualityCategory.Normal)
         {
-            CompAbilityUserMagic comp = caster.TryGetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
             ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
             bool destroyThingAtEnd = false;
             if (thing != null && comp != null)
@@ -304,7 +305,7 @@ namespace TorannMagic
 
         public static void DoAction_PistolSpecCopy(Pawn caster, ThingWithComps thing)
         {
-            CompAbilityUserMight comp = caster.TryGetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = caster.GetCompAbilityUserMight();
             ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
 
             if (thing != null && thing.def != null && thing.def.IsRangedWeapon)
@@ -405,7 +406,7 @@ namespace TorannMagic
 
         public static void DoAction_RifleSpecCopy(Pawn caster, ThingWithComps thing)
         {
-            CompAbilityUserMight comp = caster.TryGetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = caster.GetCompAbilityUserMight();
             ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
 
             if (thing != null && thing.def != null && thing.def.IsRangedWeapon)
@@ -506,7 +507,7 @@ namespace TorannMagic
         //public static void DoAction_ShotgunSpecCopy(Pawn caster, ThingDef thingDef, int wpnQuality, ThingDef stuff = null)
         public static void DoAction_ShotgunSpecCopy(Pawn caster, ThingWithComps thing)
         {
-            CompAbilityUserMight comp = caster.TryGetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = caster.GetCompAbilityUserMight();
             ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
 
             if (thing != null && thing.def != null && thing.def.IsRangedWeapon)
@@ -646,7 +647,7 @@ namespace TorannMagic
         {
             bool multiplePawns = false;
             bool flag = !dinfo.InstantPermanentInjury;
-            CompAbilityUserMight comp = caster.GetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = caster.GetCompAbilityUserMight();
             MightPowerSkill eff = comp.MightData.MightPowerSkill_DragonStrike.FirstOrDefault((MightPowerSkill x) => x.label == "TM_DragonStrike_eff");
             MightPowerSkill globalSkill = comp.MightData.MightPowerSkill_global_seff.FirstOrDefault((MightPowerSkill x) => x.label == "TM_global_seff_pwr");
             float actualStaminaCost = .1f * (1 - (.1f * eff.level) * (1 - (.03f * globalSkill.level)));
@@ -1384,7 +1385,7 @@ namespace TorannMagic
         {
             if (p != null)
             {
-                CompAbilityUserMagic comp = p.GetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = p.GetCompAbilityUserMagic();
                 ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
                 if (comp != null && comp.Mana != null)
                 {
@@ -1569,7 +1570,7 @@ namespace TorannMagic
                         {
                             if (TM_Calc.IsMagicUser(allPawns[i]))
                             {
-                                CompAbilityUserMagic apComp = allPawns[i].TryGetComp<CompAbilityUserMagic>();
+                                CompAbilityUserMagic apComp = allPawns[i].GetCompAbilityUserMagic();
                                 if (apComp != null)
                                 {
                                     for (int j = 0; j < apComp.AbilityData.AllPowers.Count; j++)
@@ -1821,7 +1822,7 @@ namespace TorannMagic
 
         public static void DoTransmutate(Pawn caster, Thing transmutateThing, bool flagNoStuffItem, bool flagRawResource, bool flagStuffItem, bool flagNutrition, bool flagCorpse)
         {
-            CompAbilityUserMagic comp = caster.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
             int pwrVal = comp.MagicData.MagicPowerSkill_Transmutate.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Transmutate_pwr").level;
             int verVal = comp.MagicData.MagicPowerSkill_Transmutate.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Transmutate_ver").level;
 
@@ -2603,8 +2604,8 @@ namespace TorannMagic
             ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();            
             if (settingsRef.autocastEnabled && com.pawnAbility.Def.defName.StartsWith("TM_"))
             {
-                CompAbilityUserMagic comp = com.pawnAbility.Pawn.GetComp<CompAbilityUserMagic>();
-                CompAbilityUserMight mightComp = com.pawnAbility.Pawn.GetComp<CompAbilityUserMight>();
+                CompAbilityUserMagic comp = com.pawnAbility.Pawn.GetCompAbilityUserMagic();
+                CompAbilityUserMight mightComp = com.pawnAbility.Pawn.GetCompAbilityUserMight();
                 MagicPower magicPower = null;
                 MightPower mightPower = null;
                 TMAbilityDef tmAbilityDef = com.pawnAbility.Def as TMAbilityDef;
@@ -3425,7 +3426,7 @@ namespace TorannMagic
                 HediffComp_BrandingBase hdc = hd_br.TryGetComp<HediffComp_BrandingBase>();
                 if (hdc != null && hdc.BranderPawn != null)
                 {
-                    CompAbilityUserMagic branderComp = hdc.BranderPawn.TryGetComp<CompAbilityUserMagic>();
+                    CompAbilityUserMagic branderComp = hdc.BranderPawn.GetCompAbilityUserMagic();
                     if (branderComp != null)
                     {
                         TMDefs.TM_Branding tmpBranding = null;

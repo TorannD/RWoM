@@ -2,6 +2,7 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
+using TorannMagic.Extensions;
 using UnityEngine;
 using Verse;
 
@@ -130,7 +131,7 @@ namespace TorannMagic
         {
             bool spawned = flyingThing.Spawned;
             pawn = launcher as Pawn;
-            CompAbilityUserMagic comp = pawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
             if (comp != null)
             {
                 if (comp.MagicData.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Cantrips_pwr").level >= 3)

@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using HarmonyLib;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -55,7 +56,7 @@ namespace TorannMagic
         {
             bool spawned = base.Pawn.Spawned;
             this.lastSeverity = this.parent.Severity;
-            CompAbilityUserMagic comp = this.linkedPawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = this.linkedPawn.GetCompAbilityUserMagic();
             if (spawned && comp != null && comp.IsMagicUser)
             {
                 bloodshieldVer = comp.MagicData.MagicPowerSkill_BloodShield.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_BloodShield_ver").level;

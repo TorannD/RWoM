@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using System;
+using TorannMagic.Extensions;
 
 namespace TorannMagic.Weapon
 {
@@ -41,7 +42,7 @@ namespace TorannMagic.Weapon
 
         protected override bool TryCastShot()
         {
-            CompAbilityUserMagic comp = this.CasterPawn.TryGetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = this.CasterPawn.GetCompAbilityUserMagic();
             if(comp != null && comp.IsMagicUser)
             {
                 LocalTargetInfo t = this.CurrentTarget;

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RimWorld;
+using TorannMagic.Extensions;
 using Verse;
 
 namespace TorannMagic.Ideology
@@ -14,7 +15,7 @@ namespace TorannMagic.Ideology
         {
             if (p.IsColonist && !p.IsPrisoner && !p.IsQuestLodger() && TM_Calc.IsMagicUser(p))
             {
-                CompAbilityUserMagic comp = p.TryGetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = p.GetCompAbilityUserMagic();
                 float totalPower = 0f;
                 foreach(TM_EventRecords er in comp.MagicUsed)
                 {

@@ -5,6 +5,7 @@ using System.Linq;
 using Verse;
 using Verse.Sound;
 using AbilityUser;
+using TorannMagic.Extensions;
 using UnityEngine;
 using Verse.AI.Group;
 
@@ -48,14 +49,14 @@ namespace TorannMagic
             Pawn caster = base.CasterPawn;
             Pawn pawn = this.currentTarget.Thing as Pawn;
 
-            comp = caster.GetComp<CompAbilityUserMagic>();
+            comp = caster.GetCompAbilityUserMagic();
             pwrVal = TM_Calc.GetSkillPowerLevel(caster, this.Ability.Def as TMAbilityDef);
             //MagicPowerSkill pwr = comp.MagicData.MagicPowerSkill_EnchantWeapon.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_EnchantWeapon_pwr");
             //pwrVal = pwr.level;
             //ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
             //if (caster.story.traits.HasTrait(TorannMagicDefOf.Faceless))
             //{
-            //    pwrVal = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr").level;
+            //    pwrVal = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr").level;
             //}
             //if (settingsRef.AIHardMode && !caster.IsColonist)
             //{
@@ -108,7 +109,7 @@ namespace TorannMagic
                 TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Shadow, pawn.DrawPos, pawn.Map, 1f, .2f, .1f, .8f, Rand.Range(-30, 30), .3f, Rand.Range(-30, 30), Rand.Range(0, 360));
             }
             HealthUtility.AdjustSeverity(pawn, hediff, .5f + pwrVal);
-            CompAbilityUserMagic comp = this.CasterPawn.GetComp<CompAbilityUserMagic>();            
+            CompAbilityUserMagic comp = this.CasterPawn.GetCompAbilityUserMagic();
             comp.weaponEnchants.Add(pawn);
             Hediff diff = pawn.health.hediffSet.GetFirstHediffOfDef(hediff, false);
             HediffComp_EnchantedWeapon ewComp = diff.TryGetComp<HediffComp_EnchantedWeapon>();
@@ -133,7 +134,7 @@ namespace TorannMagic
                         HediffComp_EnchantedWeapon ewComp = hediff.TryGetComp<HediffComp_EnchantedWeapon>();
                         if (ewComp != null)
                         {
-                            CompAbilityUserMagic comp = ewComp.enchanterPawn.GetComp<CompAbilityUserMagic>();
+                            CompAbilityUserMagic comp = ewComp.enchanterPawn.GetCompAbilityUserMagic();
                             if (comp != null)
                             {
                                 comp.weaponEnchants.Remove(pawn);

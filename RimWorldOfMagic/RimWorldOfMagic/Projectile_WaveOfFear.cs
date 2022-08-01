@@ -4,6 +4,7 @@ using AbilityUser;
 using System.Linq;
 using System.Collections.Generic;
 using System;
+using TorannMagic.Extensions;
 using UnityEngine;
 using Verse.Sound;
 using Verse.AI;
@@ -70,16 +71,16 @@ namespace TorannMagic
 
             if(!this.initialized)
             {
-                CompAbilityUserMight comp = caster.GetComp<CompAbilityUserMight>();
-                //pwrVal = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_WaveOfFear.FirstOrDefault((MightPowerSkill x) => x.label == "TM_WaveOfFear_pwr").level;
-                //verVal = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_WaveOfFear.FirstOrDefault((MightPowerSkill x) => x.label == "TM_WaveOfFear_ver").level;
+                CompAbilityUserMight comp = caster.GetCompAbilityUserMight();
+                //pwrVal = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_WaveOfFear.FirstOrDefault((MightPowerSkill x) => x.label == "TM_WaveOfFear_pwr").level;
+                //verVal = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_WaveOfFear.FirstOrDefault((MightPowerSkill x) => x.label == "TM_WaveOfFear_ver").level;
                 //verVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_WaveOfFear, "TM_WaveOfFear", "_ver", true);
                 //pwrVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_WaveOfFear, "TM_WaveOfFear", "_pwr", true);
-                //effVal = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_WaveOfFear.FirstOrDefault((MightPowerSkill x) => x.label == "TM_WaveOfFear_eff").level;
+                //effVal = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_WaveOfFear.FirstOrDefault((MightPowerSkill x) => x.label == "TM_WaveOfFear_eff").level;
                 //if (caster.story.traits.HasTrait(TorannMagicDefOf.Faceless))
                 //{
-                //    MightPowerSkill mpwr = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-                //    MightPowerSkill mver = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
+                //    MightPowerSkill mpwr = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
+                //    MightPowerSkill mver = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
                 //    pwrVal = mpwr.level;
                 //    verVal = mver.level;
                 //}

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using AbilityUser;
+using TorannMagic.Extensions;
 using Verse;
 using UnityEngine;
 
@@ -16,7 +17,7 @@ namespace TorannMagic
             Pawn caster = base.CasterPawn;
             Pawn pawn = this.currentTarget.Thing as Pawn;
 
-            CompAbilityUserMagic comp = pawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
             if(comp.IsMagicUser)
             {
                 if(comp.lightningTraps.Count > 0)

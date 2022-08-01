@@ -5,6 +5,7 @@ using System.Linq;
 using Verse;
 using Verse.Sound;
 using AbilityUser;
+using TorannMagic.Extensions;
 using UnityEngine;
 using Verse.AI.Group;
 
@@ -76,7 +77,7 @@ namespace TorannMagic
         private void Initialize()
         {
             this.casterPawn = this.launcher as Pawn;
-            this.comp = this.casterPawn.GetComp<CompAbilityUserMagic>();
+            this.comp = this.casterPawn.GetCompAbilityUserMagic();
             this.sacrificedPawn = comp.soulBondPawn;
             this.sacrificedPawn.TakeDamage(new DamageInfo(DamageDefOf.Stun, 50, 50, -1, null, null, null, DamageInfo.SourceCategory.ThingOrUnknown, this.sacrificedPawn));
             HealthUtility.AdjustSeverity(this.sacrificedPawn, HediffDef.Named("TM_HediffTimedInvulnerable"), 2);

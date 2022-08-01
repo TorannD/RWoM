@@ -1,5 +1,6 @@
 ﻿using Verse;
 using RimWorld;
+using TorannMagic.Extensions;
 using TorannMagic.Golems;
 
 namespace TorannMagic.Weapon
@@ -8,7 +9,7 @@ namespace TorannMagic.Weapon
     {
         protected override bool TryCastShot()
         {
-            CompAbilityUserMagic comp = this.CasterPawn.TryGetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = this.CasterPawn.GetCompAbilityUserMagic();
             if (comp != null && comp.IsMagicUser)
             {
                 return base.TryCastShot();

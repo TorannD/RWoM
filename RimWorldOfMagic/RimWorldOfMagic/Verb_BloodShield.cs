@@ -5,6 +5,7 @@ using System.Linq;
 using Verse;
 using Verse.Sound;
 using AbilityUser;
+using TorannMagic.Extensions;
 using UnityEngine;
 using Verse.AI.Group;
 
@@ -49,14 +50,14 @@ namespace TorannMagic
             Pawn caster = base.CasterPawn;
             Pawn pawn = this.currentTarget.Thing as Pawn;
 
-            comp = caster.GetComp<CompAbilityUserMagic>();
+            comp = caster.GetCompAbilityUserMagic();
             MagicPowerSkill bpwr = comp.MagicData.MagicPowerSkill_BloodGift.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_BloodGift_pwr");
             MagicPowerSkill pwr = comp.MagicData.MagicPowerSkill_BloodShield.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_BloodShield_pwr");
             pwrVal = pwr.level;
             ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
             if (caster.story.traits.HasTrait(TorannMagicDefOf.Faceless))
             {
-                pwrVal = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr").level;
+                pwrVal = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr").level;
             }
             if (settingsRef.AIHardMode && !caster.IsColonist)
             {

@@ -4,6 +4,7 @@ using Verse;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using TorannMagic.Extensions;
 using UnityEngine;
 
 namespace TorannMagic
@@ -86,16 +87,16 @@ namespace TorannMagic
                 this.BF.Clear();
                 ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
                 Pawn pawn = this.launcher as Pawn;
-                CompAbilityUserMagic comp = pawn.GetComp<CompAbilityUserMagic>();
-                MagicPowerSkill bpwr = pawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_BloodGift.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_BloodGift_pwr");
-                MagicPowerSkill pwr = pawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_IgniteBlood.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_IgniteBlood_pwr");
-                MagicPowerSkill ver = pawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_IgniteBlood.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_IgniteBlood_ver");
+                CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
+                MagicPowerSkill bpwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_BloodGift.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_BloodGift_pwr");
+                MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_IgniteBlood.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_IgniteBlood_pwr");
+                MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_IgniteBlood.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_IgniteBlood_ver");
                 pwrVal = pwr.level;
                 verVal = ver.level;
                 if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
                 {
-                    MightPowerSkill mpwr = pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-                    MightPowerSkill mver = pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
+                    MightPowerSkill mpwr = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
+                    MightPowerSkill mver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
                     pwrVal = mpwr.level;
                     verVal = mver.level;
                 }

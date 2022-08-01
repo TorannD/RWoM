@@ -1,6 +1,7 @@
 ﻿using RimWorld;
 using System;
 using System.Collections.Generic;
+using TorannMagic.Extensions;
 using Verse;
 
 namespace TorannMagic.Thoughts
@@ -9,7 +10,7 @@ namespace TorannMagic.Thoughts
     {
         public override float RandomSelectionWeight(Pawn initiator, Pawn recipient)
         {
-            CompAbilityUserMagic compInit = initiator.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic compInit = initiator.GetCompAbilityUserMagic();
             bool flag = !initiator.IsColonist || !recipient.IsColonist || compInit is null;
             float result = 0f;            
             if (flag)

@@ -5,6 +5,7 @@ using UnityEngine;
 using System.Linq;
 using System;
 using System.Collections.Generic;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -39,7 +40,7 @@ namespace TorannMagic
             bool result = false;
             Pawn p = this.CasterPawn;
             Pawn hitPawn = this.currentTarget.Thing as Pawn;
-            CompAbilityUserMagic comp = this.CasterPawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = this.CasterPawn.GetCompAbilityUserMagic();
             Faction hitPawnFaction = null;
 
             if (this.currentTarget != null && p != null)

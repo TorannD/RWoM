@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
+using TorannMagic.Extensions;
 using Verse;
 using UnityEngine;
 
@@ -14,8 +15,8 @@ namespace TorannMagic
         {
             if(parent.Severity >= .1f)
             {
-                CompAbilityUserMagic comp = this.Pawn.TryGetComp<CompAbilityUserMagic>();
-                CompAbilityUserMagic branderComp = BranderPawn.TryGetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = this.Pawn.GetCompAbilityUserMagic();
+                CompAbilityUserMagic branderComp = BranderPawn.GetCompAbilityUserMagic();
                 if(comp != null && comp.Mana != null && branderComp != null && branderComp.Mana != null)
                 {
                     float pwrAmt = .005f * this.parent.Severity;

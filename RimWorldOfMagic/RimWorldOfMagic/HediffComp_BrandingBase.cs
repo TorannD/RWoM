@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
+using TorannMagic.Extensions;
 using Verse;
 using UnityEngine;
 
@@ -118,7 +119,7 @@ namespace TorannMagic
                 CompAbilityUserMagic comp = null;
                 if(branderPawn != null)
                 {
-                    comp = branderPawn.TryGetComp<CompAbilityUserMagic>();
+                    comp = branderPawn.GetCompAbilityUserMagic();
                     if (!BranderPawn.DestroyedOrNull() && !BranderPawn.Dead && comp != null && comp.Mana != null)
                     {
                         if(BranderPawn.Downed)

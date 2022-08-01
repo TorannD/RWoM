@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using TorannMagic.Extensions;
 using UnityEngine;
 using Verse;
 
@@ -41,7 +42,7 @@ namespace TorannMagic
         {
             get
             {
-                return spawner.GetComp<CompAbilityUserMagic>();
+                return spawner.GetCompAbilityUserMagic();
             }
         }
 

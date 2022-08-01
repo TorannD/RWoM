@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using AbilityUser;
+using TorannMagic.Extensions;
 using Verse;
 using Verse.AI;
 using TorannMagic.TMDefs;
@@ -46,7 +47,7 @@ namespace TorannMagic
             if(caster != null && this.CurrentTarget.HasThing && this.CurrentTarget.Thing is Pawn)
             {
                 Pawn hitPawn = this.currentTarget.Thing as Pawn;
-                CompAbilityUserMagic casterComp = caster.TryGetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic casterComp = caster.GetCompAbilityUserMagic();
 
                 if (casterComp != null && hitPawn.health != null && hitPawn.health.hediffSet != null && hitPawn != caster)
                 {
@@ -104,7 +105,7 @@ namespace TorannMagic
         //        {
         //            if (!hd_br.BranderPawn.DestroyedOrNull())
         //            {
-        //                CompAbilityUserMagic branderComp = hd_br.BranderPawn.TryGetComp<CompAbilityUserMagic>();
+        //                CompAbilityUserMagic branderComp = hd_br.BranderPawn.GetCompAbilityUserMagic();
         //                if (branderComp != null && branderComp.BrandedPawns != null && branderComp.BrandedPawns.Contains(hitPawn))
         //                {
         //                    branderComp.BrandedPawns.Remove(hitPawn);

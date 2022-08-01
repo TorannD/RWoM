@@ -5,6 +5,7 @@ using AbilityUser;
 using System;
 using System.Linq;
 using System.Collections.Generic;
+using TorannMagic.Extensions;
 using UnityEngine;
 
 namespace TorannMagic
@@ -64,7 +65,7 @@ namespace TorannMagic
             if (!this.initialized)
             {
                 caster = this.launcher as Pawn;
-                CompAbilityUserMagic comp = caster.GetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
                 MagicPowerSkill pwr = comp.MagicData.MagicPowerSkill_HolyWrath.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_HolyWrath_pwr");
                 MagicPowerSkill ver = comp.MagicData.MagicPowerSkill_HolyWrath.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_HolyWrath_ver");
                 verVal = ver.level;
@@ -102,7 +103,7 @@ namespace TorannMagic
                 {
                     TM_MoteMaker.MakePowerBeamMoteColor(smitePos[j], base.Map, this.radius * 3f, 2f, .5f, .1f, .5f, colorInt.ToColor);
                     this.caster = this.launcher as Pawn;
-                    CompAbilityUserMagic comp = caster.GetComp<CompAbilityUserMagic>();
+                    CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
                     GenExplosion.DoExplosion(smitePos[j], map, 3f, TMDamageDefOf.DamageDefOf.TM_Overwhelm, this.launcher as Pawn, Mathf.RoundToInt((12 + TMDamageDefOf.DamageDefOf.TM_Overwhelm.defaultDamage + 3*pwrVal) * this.arcaneDmg), 0, TorannMagicDefOf.TM_Lightning, def, this.equipmentDef, null, null, 0f, 1, false, null, 0f, 1, 0f, false);
                 }
             }

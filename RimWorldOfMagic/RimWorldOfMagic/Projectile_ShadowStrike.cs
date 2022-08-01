@@ -6,6 +6,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System;
 using RimWorld;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -54,7 +55,7 @@ namespace TorannMagic
             {
                 this.initialized = true;
                 this.caster = this.launcher as Pawn;               
-                CompAbilityUserMight comp = caster.GetComp<CompAbilityUserMight>();
+                CompAbilityUserMight comp = caster.GetCompAbilityUserMight();
                 //verVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_ShadowStrike, "TM_ShadowStrike", "_ver", true);    
                 verVal = TM_Calc.GetSkillVersatilityLevel(caster, TorannMagicDefOf.TM_ShadowStrike);
                 this.startPos = caster.Position;
@@ -285,7 +286,7 @@ namespace TorannMagic
 
         public static int GetWeaponDmg(Pawn pawn)
         {
-            CompAbilityUserMight comp = pawn.GetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
             int pwrVal = comp.MightData.MightPowerSkill_ShadowStrike.FirstOrDefault((MightPowerSkill x) => x.label == "TM_ShadowStrike_pwr").level;
             float dmg = comp.weaponDamage;
             ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();

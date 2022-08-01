@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using Verse;
 using AbilityUser;
+using TorannMagic.Extensions;
 using UnityEngine;
 
 namespace TorannMagic.Enchantment
@@ -36,7 +37,7 @@ namespace TorannMagic.Enchantment
         protected override bool TryCastShot()
         {
             bool result = false;
-            CompAbilityUserMagic comp = this.CasterPawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = this.CasterPawn.GetCompAbilityUserMagic();
             if (this.currentTarget != null && base.CasterPawn != null && comp != null)
             {
                 if(this.currentTarget.Thing != null && this.currentTarget.Thing is Pawn)
@@ -121,7 +122,7 @@ namespace TorannMagic.Enchantment
                         }
                     }
                 }
-                CompAbilityUserMagic comp = this.CasterPawn.GetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = this.CasterPawn.GetCompAbilityUserMagic();
                 if(comp != null)
                 {
                     comp.RemovePawnAbility(TorannMagicDefOf.TM_Artifact_Conviction);

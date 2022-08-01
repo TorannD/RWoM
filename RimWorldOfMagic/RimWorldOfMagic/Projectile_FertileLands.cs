@@ -4,6 +4,7 @@ using AbilityUser;
 using System.Linq;
 using System.Collections.Generic;
 using System;
+using TorannMagic.Extensions;
 using UnityEngine;
 
 namespace TorannMagic
@@ -25,7 +26,7 @@ namespace TorannMagic
                 this.initialized = true;
             }
 
-            CompAbilityUserMagic comp = this.caster.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = this.caster.GetCompAbilityUserMagic();
             comp.fertileLands = new List<IntVec3>();
             comp.fertileLands.Clear();
             List<IntVec3> affectedCells = new List<IntVec3>();

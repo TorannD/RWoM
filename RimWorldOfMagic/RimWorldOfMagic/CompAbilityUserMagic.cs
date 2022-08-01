@@ -10,6 +10,7 @@ using Verse;
 using Verse.AI;
 using Verse.Sound;
 using AbilityUserAI;
+using TorannMagic.Extensions;
 using TorannMagic.Ideology;
 
 namespace TorannMagic
@@ -5463,7 +5464,7 @@ namespace TorannMagic
                 }
                 else if(this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
                 {
-                    CompAbilityUserMight compMight = this.Pawn.TryGetComp<CompAbilityUserMight>();
+                    CompAbilityUserMight compMight = this.Pawn.GetCompAbilityUserMight();
                     adjustedManaCost *= 1f - (magicDef.efficiencyReductionPercent * compMight.MightData.GetSkill_Efficiency(TorannMagicDefOf.TM_Mimic).level);
                 }
                 else
@@ -5823,7 +5824,7 @@ namespace TorannMagic
             //CompAbilityUserMight compMight = null;
             //if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
             //{
-            //    compMight = this.Pawn.TryGetComp<CompAbilityUserMight>();
+            //    compMight = this.Pawn.GetCompAbilityUserMight();
             //}
             if (settingsRef.autocastEnabled && this.Pawn.jobs != null && this.Pawn.CurJob != null && this.Pawn.CurJob.def != TorannMagicDefOf.TMCastAbilityVerb && this.Pawn.CurJob.def != TorannMagicDefOf.TMCastAbilitySelf && 
                 this.Pawn.CurJob.def != JobDefOf.Ingest && this.Pawn.CurJob.def != JobDefOf.ManTurret && this.Pawn.GetPosture() == PawnPosture.Standing && !this.Pawn.CurJob.playerForced && !this.Pawn.Map.GameConditionManager.ConditionIsActive(TorannMagicDefOf.ManaDrain) && !this.Pawn.Map.GameConditionManager.ConditionIsActive(TorannMagicDefOf.TM_ManaStorm))
@@ -8063,7 +8064,7 @@ namespace TorannMagic
             {
                 if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Bard))
                 {
-                    MagicPowerSkill bardtraining_pwr = this.Pawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_BardTraining.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_BardTraining_pwr");
+                    MagicPowerSkill bardtraining_pwr = this.Pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_BardTraining.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_BardTraining_pwr");
 
                     List<Trait> traits = this.Pawn.story.traits.allTraits;
                     for (int i = 0; i < traits.Count; i++)

@@ -3,6 +3,7 @@ using AbilityUser;
 using UnityEngine;
 using System.Linq;
 using RimWorld;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -50,7 +51,7 @@ namespace TorannMagic
             float weaponDamage = pawn.equipment.Primary.def.Verbs.FirstOrDefault().defaultProjectile.projectile.GetDamageAmount(pawn.equipment.Primary, null);
             float burstShots = pawn.equipment.Primary.def.Verbs.FirstOrDefault().burstShotCount;
             int effVal = TM_Calc.GetSkillEfficiencyLevel(pawn, TorannMagicDefOf.TM_RifleSpec);
-            shots = Mathf.RoundToInt(((50f / weaponDamage) + (2 * burstShots)) * (1.2f + .15f * effVal) * pawn.GetComp<CompAbilityUserMight>().mightPwr);
+            shots = Mathf.RoundToInt(((50f / weaponDamage) + (2 * burstShots)) * (1.2f + .15f * effVal) * pawn.GetCompAbilityUserMight().mightPwr);
             return shots;
         }
     }

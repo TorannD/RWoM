@@ -5,6 +5,7 @@ using AbilityUser;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -61,8 +62,8 @@ namespace TorannMagic
                 Pawn targetPawn = this.currentTarget.Thing as Pawn;
                 if (targetPawn.RaceProps.Humanlike)
                 {
-                    CompAbilityUserMagic magicPawn = targetPawn.GetComp<CompAbilityUserMagic>();
-                    CompAbilityUserMight mightPawn = targetPawn.GetComp<CompAbilityUserMight>();
+                    CompAbilityUserMagic magicPawn = targetPawn.GetCompAbilityUserMagic();
+                    CompAbilityUserMight mightPawn = targetPawn.GetCompAbilityUserMight();
                     bool copyMagic = false;
                     bool copyMight = false;
                     if(magicPawn != null && magicPawn.IsMagicUser)
@@ -79,8 +80,8 @@ namespace TorannMagic
                         copyMagic = false;
                     }
                     TMAbilityDef tempAbility = null;
-                    CompAbilityUserMight mightComp = this.CasterPawn.GetComp<CompAbilityUserMight>();
-                    CompAbilityUserMagic magicComp = this.CasterPawn.GetComp<CompAbilityUserMagic>();
+                    CompAbilityUserMight mightComp = this.CasterPawn.GetCompAbilityUserMight();
+                    CompAbilityUserMagic magicComp = this.CasterPawn.GetCompAbilityUserMagic();
 
                     if (copyMagic)
                     {

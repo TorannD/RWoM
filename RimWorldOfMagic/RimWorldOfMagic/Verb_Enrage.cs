@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using AbilityUser;
+using TorannMagic.Extensions;
 using Verse;
 using Verse.AI;
 
@@ -42,7 +43,7 @@ namespace TorannMagic
             bool flag = false;
             Pawn caster = this.CasterPawn;
             Pawn hitPawn = this.currentTarget.Thing as Pawn;
-            CompAbilityUserMagic comp = caster.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
             if (comp != null && comp.MagicData != null)
             {
                 //pwrVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_Enrage, "TM_Enrage", "_pwr", true);

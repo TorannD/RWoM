@@ -5,6 +5,7 @@ using RimWorld;
 using AbilityUser;
 using Verse;
 using HarmonyLib;
+using TorannMagic.Extensions;
 using UnityEngine;
 
 namespace TorannMagic
@@ -40,7 +41,7 @@ namespace TorannMagic
 
             Pawn pawn = this.currentTarget.Thing as Pawn;
             Pawn caster = this.CasterPawn;
-            CompAbilityUserMight comp = caster.TryGetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = caster.GetCompAbilityUserMight();
 
             int verVal = TM_Calc.GetSkillVersatilityLevel(caster, TorannMagicDefOf.TM_SoothingBalm, false);
             int pwrVal = TM_Calc.GetSkillPowerLevel(caster, TorannMagicDefOf.TM_SoothingBalm, false);

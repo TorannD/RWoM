@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using AbilityUser;
+using TorannMagic.Extensions;
 using Verse;
 
 
@@ -38,9 +39,9 @@ namespace TorannMagic
 
         protected override bool TryCastShot()
         {
-            CompAbilityUserMagic comp = this.CasterPawn.GetComp<CompAbilityUserMagic>();
-            MagicPowerSkill eff = base.CasterPawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_EnchanterStone.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_EnchanterStone_eff");
-            MagicPowerSkill ver = base.CasterPawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_EnchanterStone.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_EnchanterStone_ver");
+            CompAbilityUserMagic comp = this.CasterPawn.GetCompAbilityUserMagic();
+            MagicPowerSkill eff = base.CasterPawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_EnchanterStone.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_EnchanterStone_eff");
+            MagicPowerSkill ver = base.CasterPawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_EnchanterStone.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_EnchanterStone_ver");
             effVal = eff.level;
             verVal = ver.level;
 

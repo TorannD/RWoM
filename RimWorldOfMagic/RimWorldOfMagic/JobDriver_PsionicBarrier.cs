@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Verse;
 using RimWorld;
+using TorannMagic.Extensions;
 using Verse.AI;
 using UnityEngine;
 
@@ -27,7 +28,7 @@ namespace TorannMagic
 
         protected override IEnumerable<Toil> MakeNewToils()
         {
-            CompAbilityUserMight comp = this.pawn.GetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = this.pawn.GetCompAbilityUserMight();
             float radius = 2.5f;
             //radius += (.75f * TM_Calc.GetMightSkillLevel(pawn, comp.MightData.MightPowerSkill_PsionicBarrier, "TM_PsionicBarrier", "_ver", true));
             radius += (.75f * TM_Calc.GetSkillVersatilityLevel(pawn, TorannMagicDefOf.TM_PsionicBarrier));
@@ -123,7 +124,7 @@ namespace TorannMagic
             {
                 if(this.pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
                 {                    
-                    CompAbilityUserMight mightComp = this.pawn.GetComp<CompAbilityUserMight>();
+                    CompAbilityUserMight mightComp = this.pawn.GetCompAbilityUserMight();
                     if (mightComp.mimicAbility != null)
                     {
                         mightComp.RemovePawnAbility(mightComp.mimicAbility);
@@ -155,13 +156,13 @@ namespace TorannMagic
                             TM_MoteMaker.ThrowGenericFleck(FleckDefOf.LightningGlow, displayEffect, this.Map, projectileDamage / 8f, .2f, .1f, .3f, 0, 0, 0, Rand.Range(0, 360));
                             if(usePsionicEnergy)
                             {
-                                int eff = this.pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_PsionicBarrier.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PsionicBarrier_eff").level;
+                                int eff = this.pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_PsionicBarrier.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PsionicBarrier_eff").level;
                                 float sevReduct = (projectileDamage / (12 + eff));
                                 HealthUtility.AdjustSeverity(this.pawn, HediffDef.Named("TM_PsionicHD"), -sevReduct);
                             }
                             else
                             {
-                                this.pawn.GetComp<CompAbilityUserMight>().Stamina.CurLevel -= (projectileDamage / 600);
+                                this.pawn.GetCompAbilityUserMight().Stamina.CurLevel -= (projectileDamage / 600);
                             }
                             if(cellList[j].def.projectile.explosionRadius > 0 && cellList[j].def != TorannMagicDefOf.Projectile_FogOfTorment)
                             {

@@ -4,6 +4,7 @@ using Verse;
 using AbilityUser;
 using UnityEngine;
 using System.Collections.Generic;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -40,7 +41,7 @@ namespace TorannMagic
                 }
                 else
                 {
-                    CompAbilityUserMagic comp = pawn.TryGetComp<CompAbilityUserMagic>();
+                    CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
                     if (comp != null)
                     {
                         if (comp.maxMP >= TorannMagicDefOf.TM_Blur.upkeepEnergyCost)

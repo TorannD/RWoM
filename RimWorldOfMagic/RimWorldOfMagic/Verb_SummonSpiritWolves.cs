@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using AbilityUser;
+using TorannMagic.Extensions;
 using Verse.AI;
 using Verse;
 using UnityEngine;
@@ -50,7 +51,7 @@ namespace TorannMagic
             Map map = caster.Map;
             cellList.Clear();
             List<IntVec3> tmpList = GenRadial.RadialCellsAround(currentTarget.Cell, this.Projectile.projectile.explosionRadius, true).ToList();
-            CompAbilityUserMagic comp = caster.TryGetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
             //pwrVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_SpiritWolves, "TM_SpiritWolves", "_pwr", true);
             //verVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_SpiritWolves, "TM_SpiritWolves", "_ver", true);
             //effVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_SpiritWolves, "TM_SpiritWolves", "_eff", true);

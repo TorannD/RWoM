@@ -13,6 +13,7 @@ using TorannMagic.Enchantment;
 using System.Text;
 using TorannMagic.TMDefs;
 using System.Reflection;
+using TorannMagic.Extensions;
 using TorannMagic.Golems;
 
 namespace TorannMagic
@@ -25,12 +26,12 @@ namespace TorannMagic
             bool flag_AndroidTiers = (pawn.def.defName.StartsWith("Android") || pawn.def.defName == "M7Mech" || pawn.def.defName == "MicroScyther");
             bool flag_Androids = pawn.RaceProps.FleshType.defName == "ChJDroid" || pawn.def.defName == "ChjAndroid";
             bool flag_AndroidClass = false;
-            CompAbilityUserMight compMight = pawn.TryGetComp<CompAbilityUserMight>();
+            CompAbilityUserMight compMight = pawn.GetCompAbilityUserMight();
             if (compMight != null && compMight.customClass != null && compMight.customClass.isAndroid)
             {
                 flag_AndroidClass = true;
             }
-            CompAbilityUserMagic compMagic = pawn.TryGetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic compMagic = pawn.GetCompAbilityUserMagic();
             if (compMagic != null && compMagic.customClass != null && compMagic.customClass.isAndroid)
             {
                 flag_AndroidClass = true;
@@ -57,12 +58,12 @@ namespace TorannMagic
                     }
                 }
                 bool flag_Class = false;
-                CompAbilityUserMight compMight = pawn.TryGetComp<CompAbilityUserMight>();
+                CompAbilityUserMight compMight = pawn.GetCompAbilityUserMight();
                 if (compMight != null && compMight.customClass != null && compMight.customClass.isNecromancer)
                 {
                     flag_Class = true;
                 }
-                CompAbilityUserMagic compMagic = pawn.TryGetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic compMagic = pawn.GetCompAbilityUserMagic();
                 if (compMagic != null && compMagic.customClass != null && compMagic.customClass.isNecromancer)
                 {
                     flag_Class = true;
@@ -112,12 +113,12 @@ namespace TorannMagic
                     }
                 }
                 bool flag_UndeadClass = false;
-                CompAbilityUserMight compMight = pawn.TryGetComp<CompAbilityUserMight>();
+                CompAbilityUserMight compMight = pawn.GetCompAbilityUserMight();
                 if(compMight != null && compMight.customClass != null && compMight.customClass.isUndead)
                 {
                     flag_UndeadClass = true;
                 }
-                CompAbilityUserMagic compMagic = pawn.TryGetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic compMagic = pawn.GetCompAbilityUserMagic();
                 if (compMagic != null && compMagic.customClass != null && compMagic.customClass.isUndead)
                 {
                     flag_UndeadClass = true;
@@ -294,7 +295,7 @@ namespace TorannMagic
         {
             if (pawn != null)
             {
-                CompAbilityUserMight comp = pawn.TryGetComp<CompAbilityUserMight>();
+                CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
                 if (comp != null && comp.IsMightUser && comp.MightData != null && comp.Stamina != null)
                 {
                     return true;
@@ -337,7 +338,7 @@ namespace TorannMagic
                         return td;
                     }
                 }
-                CompAbilityUserMight comp = pawn.TryGetComp<CompAbilityUserMight>();
+                CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
                 if(comp != null && comp.customClass != null)
                 {
                     return comp.customClass.classTrait;
@@ -368,7 +369,7 @@ namespace TorannMagic
                 {
                     return false;
                 }
-                CompAbilityUserMagic comp = pawn.TryGetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
                 if(comp != null && comp.IsMagicUser && comp.MagicData != null && comp.Mana != null)
                 {
                     return true;
@@ -390,7 +391,7 @@ namespace TorannMagic
 
         public static bool IsWanderer(Pawn pawn)
         {
-            CompAbilityUserMight comp = pawn.TryGetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
             if (comp != null)
             {
                 if (pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Wanderer))
@@ -411,7 +412,7 @@ namespace TorannMagic
 
         public static bool IsWayfarer(Pawn pawn)
         {
-            CompAbilityUserMagic comp = pawn.TryGetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
             if (comp != null)
             {
                 if (pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Wayfarer))
@@ -440,7 +441,7 @@ namespace TorannMagic
             {
                 return true;
             }
-            CompAbilityUserMagic comp = pawn.TryGetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
             if(comp != null && comp.customClass != null && comp.customClass.classAbilities.Contains(TorannMagicDefOf.TM_Empathy))
             {
                 return true;
@@ -475,7 +476,7 @@ namespace TorannMagic
         {
             if(ability.manaCost > 0)
             {
-                CompAbilityUserMagic comp = p.TryGetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = p.GetCompAbilityUserMagic();
                 if(comp == null)
                 {
                     return false;
@@ -491,7 +492,7 @@ namespace TorannMagic
             }
             if(ability.staminaCost > 0)
             {
-                CompAbilityUserMight comp = p.TryGetComp<CompAbilityUserMight>();
+                CompAbilityUserMight comp = p.GetCompAbilityUserMight();
                 if (comp == null)
                 {
                     return false;
@@ -507,7 +508,7 @@ namespace TorannMagic
             }
             if(ability.chiCost > 0)
             {
-                CompAbilityUserMight comp = p.TryGetComp<CompAbilityUserMight>();
+                CompAbilityUserMight comp = p.GetCompAbilityUserMight();
                 if (comp == null)
                 {
                     return false;
@@ -528,7 +529,7 @@ namespace TorannMagic
             }
             if(ability.bloodCost > 0)
             {
-                CompAbilityUserMagic comp = p.TryGetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = p.GetCompAbilityUserMagic();
                 if (comp == null)
                 {
                     return false;
@@ -666,7 +667,7 @@ namespace TorannMagic
             {
                 if(IsMagicUser(p) && p.IsSlave ? countSlaves : true)
                 {
-                    CompAbilityUserMagic comp = p.TryGetComp<CompAbilityUserMagic>();
+                    CompAbilityUserMagic comp = p.GetCompAbilityUserMagic();
                     if(comp!= null && comp.MagicData != null)
                     {
                         MagicPower mp = comp.MagicData.ReturnMatchingMagicPower(TorannMagicDefOf.TM_RuneCarving);
@@ -692,7 +693,7 @@ namespace TorannMagic
             {
                 if (IsMagicUser(p))
                 {
-                    CompAbilityUserMagic comp = p.TryGetComp<CompAbilityUserMagic>();
+                    CompAbilityUserMagic comp = p.GetCompAbilityUserMagic();
                     if (comp != null && comp.MagicData != null)
                     {
                         MagicPower mp = comp.MagicData.ReturnMatchingMagicPower(TorannMagicDefOf.TM_Golemancy);
@@ -1039,7 +1040,7 @@ namespace TorannMagic
                     {
                         if (pawn != targetPawn && targetPawn.HostileTo(pawn.Faction) && (pawn.Position - targetPawn.Position).LengthHorizontal <= radius)
                         {
-                            CompAbilityUserMagic targetComp = targetPawn.GetComp<CompAbilityUserMagic>();
+                            CompAbilityUserMagic targetComp = targetPawn.GetCompAbilityUserMagic();
                             if (targetComp != null && targetComp.IsMagicUser && !TM_Calc.IsCrossClass(targetPawn, true))
                             {
                                 pawnList.Add(targetPawn);
@@ -1050,7 +1051,7 @@ namespace TorannMagic
                     {
                         if (pawn != targetPawn && !targetPawn.HostileTo(pawn.Faction) && (pawn.Position - targetPawn.Position).LengthHorizontal <= radius)
                         {
-                            CompAbilityUserMagic targetComp = targetPawn.GetComp<CompAbilityUserMagic>();
+                            CompAbilityUserMagic targetComp = targetPawn.GetCompAbilityUserMagic();
                             if (targetComp != null && targetComp.IsMagicUser && !TM_Calc.IsCrossClass(targetPawn, true))
                             {
                                 pawnList.Add(targetPawn);                                
@@ -1126,7 +1127,7 @@ namespace TorannMagic
                     {
                         if (targetPawn.HostileTo(pawn.Faction) && (pawn.Position - targetPawn.Position).LengthHorizontal <= radius)
                         {
-                            CompAbilityUserMight targetComp = targetPawn.GetComp<CompAbilityUserMight>();
+                            CompAbilityUserMight targetComp = targetPawn.GetCompAbilityUserMight();
                             if (targetComp != null && targetComp.IsMightUser && !TM_Calc.IsCrossClass(targetPawn, false))
                             {
                                 pawnList.Add(targetPawn);
@@ -1137,7 +1138,7 @@ namespace TorannMagic
                     {
                         if (pawn != targetPawn && !targetPawn.HostileTo(pawn.Faction) && (pawn.Position - targetPawn.Position).LengthHorizontal <= radius)
                         {
-                            CompAbilityUserMight targetComp = targetPawn.GetComp<CompAbilityUserMight>();
+                            CompAbilityUserMight targetComp = targetPawn.GetCompAbilityUserMight();
                             if (targetComp != null && targetComp.IsMightUser && !TM_Calc.IsCrossClass(targetPawn, false))
                             {
                                 pawnList.Add(targetPawn);
@@ -1838,9 +1839,9 @@ namespace TorannMagic
 
         public static Thing GetTransmutableThingFromCell(IntVec3 cell, Pawn enchanter, out bool flagRawResource, out bool flagStuffItem, out bool flagNoStuffItem, out bool flagNutrition, out bool flagCorpse, bool manualCast = false)
         {
-            CompAbilityUserMagic comp = enchanter.GetComp<CompAbilityUserMagic>();
-            int pwrVal = enchanter.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_Transmutate.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Transmutate_pwr").level;
-            int verVal = enchanter.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_Transmutate.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Transmutate_ver").level;
+            CompAbilityUserMagic comp = enchanter.GetCompAbilityUserMagic();
+            int pwrVal = enchanter.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Transmutate.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Transmutate_pwr").level;
+            int verVal = enchanter.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Transmutate.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Transmutate_ver").level;
 
             List<Thing> thingList = cell.GetThingList(enchanter.Map);
             Thing transmutateThing = null;
@@ -1994,13 +1995,13 @@ namespace TorannMagic
         public static float GetArcaneResistance(Pawn pawn, bool includePsychicSensitivity)
         {
             float resistance = 0;
-            CompAbilityUserMagic compMagic = pawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic compMagic = pawn.GetCompAbilityUserMagic();
             if(compMagic != null)
             {
                 resistance += (compMagic.arcaneRes - 1);
             }
 
-            CompAbilityUserMight compMight = pawn.GetComp<CompAbilityUserMight>();
+            CompAbilityUserMight compMight = pawn.GetCompAbilityUserMight();
             if(compMight != null)
             {
                 resistance += (compMight.arcaneRes - 1);
@@ -2022,7 +2023,7 @@ namespace TorannMagic
         public static float GetSpellPenetration(Pawn pawn)
         {
             float penetration = 0;
-            CompAbilityUserMagic compMagic = pawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic compMagic = pawn.GetCompAbilityUserMagic();
             if (compMagic != null)
             {
                 penetration += (compMagic.arcaneDmg - 1);
@@ -2032,7 +2033,7 @@ namespace TorannMagic
                 }
             }
 
-            CompAbilityUserMight compMight = pawn.GetComp<CompAbilityUserMight>();
+            CompAbilityUserMight compMight = pawn.GetCompAbilityUserMight();
             if (compMight != null && penetration == 0)
             {
                 penetration += (compMight.mightPwr - 1);
@@ -2332,8 +2333,8 @@ namespace TorannMagic
 
         public static TMAbilityDef GetCopiedMightAbility(Pawn targetPawn, Pawn caster)
         {
-            CompAbilityUserMight mightPawn = targetPawn.GetComp<CompAbilityUserMight>();
-            CompAbilityUserMight casterComp = caster.GetComp<CompAbilityUserMight>();
+            CompAbilityUserMight mightPawn = targetPawn.GetCompAbilityUserMight();
+            CompAbilityUserMight casterComp = caster.GetCompAbilityUserMight();
             TMAbilityDef tempAbility = null;
             if (mightPawn.customClass != null && mightPawn.customClass.isFighter)
             {
@@ -2362,7 +2363,7 @@ namespace TorannMagic
                     if (rnd == 0)
                     {
                         int level = mightPawn.MightData.MightPowersG[2].level;
-                        caster.GetComp<CompAbilityUserMight>().MightData.MightPowersG[2].level = level;
+                        caster.GetCompAbilityUserMight().MightData.MightPowersG[2].level = level;
                         switch (level)
                         {
                             case 0:
@@ -2394,7 +2395,7 @@ namespace TorannMagic
                     else if (rnd == 1)
                     {
                         int level = mightPawn.MightData.MightPowersS[2].level;
-                        caster.GetComp<CompAbilityUserMight>().MightData.MightPowersS[2].level = level;
+                        caster.GetCompAbilityUserMight().MightData.MightPowersS[2].level = level;
                         switch (level)
                         {
                             case 0:
@@ -2427,7 +2428,7 @@ namespace TorannMagic
                     else if (rnd == 1)
                     {
                         int level = mightPawn.MightData.MightPowersB[4].level;
-                        caster.GetComp<CompAbilityUserMight>().MightData.MightPowersB[4].level = level;
+                        caster.GetCompAbilityUserMight().MightData.MightPowersB[4].level = level;
                         switch (level)
                         {
                             case 0:
@@ -2455,7 +2456,7 @@ namespace TorannMagic
                     if (rnd == 0)
                     {
                         int level = mightPawn.MightData.MightPowersR[4].level;
-                        caster.GetComp<CompAbilityUserMight>().MightData.MightPowersR[4].level = level;
+                        caster.GetCompAbilityUserMight().MightData.MightPowersR[4].level = level;
                         switch (level)
                         {
                             case 0:
@@ -2483,7 +2484,7 @@ namespace TorannMagic
                     if ((rnd == 0 || rnd == 3) && caster.story.DisabledWorkTagsBackstoryAndTraits != WorkTags.Violent)
                     {
                         int level = mightPawn.MightData.MightPowersP[1].level;
-                        caster.GetComp<CompAbilityUserMight>().MightData.MightPowersP[1].level = level;
+                        caster.GetCompAbilityUserMight().MightData.MightPowersP[1].level = level;
                         switch (level)
                         {
                             case 0:
@@ -2507,7 +2508,7 @@ namespace TorannMagic
                     else
                     {
                         int level = mightPawn.MightData.MightPowersP[3].level;
-                        caster.GetComp<CompAbilityUserMight>().MightData.MightPowersP[3].level = level;
+                        caster.GetCompAbilityUserMight().MightData.MightPowersP[3].level = level;
                         switch (level)
                         {
                             case 0:
@@ -2529,7 +2530,7 @@ namespace TorannMagic
                     else
                     {
                         int level = mightPawn.MightData.MightPowersDK[4].level;
-                        caster.GetComp<CompAbilityUserMight>().MightData.MightPowersDK[4].level = level;
+                        caster.GetCompAbilityUserMight().MightData.MightPowersDK[4].level = level;
                         switch (level)
                         {
                             case 0:
@@ -2569,7 +2570,7 @@ namespace TorannMagic
                     if (rnd == 3)
                     {
                         int level = mightPawn.MightData.MightPowersC[3].level;
-                        caster.GetComp<CompAbilityUserMight>().MightData.MightPowersC[3].level = level;
+                        caster.GetCompAbilityUserMight().MightData.MightPowersC[3].level = level;
                         switch (level)
                         {
                             case 0:
@@ -2589,7 +2590,7 @@ namespace TorannMagic
                     else if (rnd == 4)
                     {
                         int level = mightPawn.MightData.MightPowersC[4].level;
-                        caster.GetComp<CompAbilityUserMight>().MightData.MightPowersC[4].level = level;
+                        caster.GetCompAbilityUserMight().MightData.MightPowersC[4].level = level;
                         switch (level)
                         {
                             case 0:
@@ -2609,7 +2610,7 @@ namespace TorannMagic
                     else
                     {
                         int level = mightPawn.MightData.MightPowersC[5].level;
-                        caster.GetComp<CompAbilityUserMight>().MightData.MightPowersC[5].level = level;
+                        caster.GetCompAbilityUserMight().MightData.MightPowersC[5].level = level;
                         switch (level)
                         {
                             case 0:
@@ -2649,8 +2650,8 @@ namespace TorannMagic
 
         public static TMAbilityDef GetCopiedMagicAbility(Pawn targetPawn, Pawn caster)
         {
-            CompAbilityUserMagic magicPawn = targetPawn.GetComp<CompAbilityUserMagic>();
-            CompAbilityUserMagic casterComp = caster.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic magicPawn = targetPawn.GetCompAbilityUserMagic();
+            CompAbilityUserMagic casterComp = caster.GetCompAbilityUserMagic();
             TMAbilityDef tempAbility = null;
             if (magicPawn.customClass != null && magicPawn.customClass.isMage)
             {
@@ -2683,7 +2684,7 @@ namespace TorannMagic
                             if (rnd == 0 && magicPawn.MagicData.MagicPowersA[rnd].learned)
                             {
                                 int level = magicPawn.MagicData.MagicPowersA[rnd].level;
-                                caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowersA[rnd].level = level;
+                                caster.GetCompAbilityUserMagic().MagicData.MagicPowersA[rnd].level = level;
                                 switch (level)
                                 {
                                     case 0:
@@ -2704,7 +2705,7 @@ namespace TorannMagic
                             else if (rnd == 1 && magicPawn.MagicData.MagicPowersA[rnd].learned && caster.story.DisabledWorkTagsBackstoryAndTraits != WorkTags.Violent)
                             {
                                 int level = magicPawn.MagicData.MagicPowersA[rnd].level;
-                                caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowersA[rnd].level = level;
+                                caster.GetCompAbilityUserMagic().MagicData.MagicPowersA[rnd].level = level;
                                 switch (level)
                                 {
                                     case 0:
@@ -2725,7 +2726,7 @@ namespace TorannMagic
                             else if (rnd == 2 && magicPawn.MagicData.MagicPowersA[rnd].learned)
                             {
                                 int level = magicPawn.MagicData.MagicPowersA[rnd].level;
-                                caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowersA[rnd].level = level;
+                                caster.GetCompAbilityUserMagic().MagicData.MagicPowersA[rnd].level = level;
                                 switch (level)
                                 {
                                     case 0:
@@ -2746,7 +2747,7 @@ namespace TorannMagic
                             else if (rnd == 3 && magicPawn.MagicData.MagicPowersA[rnd].learned)
                             {
                                 int level = magicPawn.MagicData.MagicPowersA[rnd].level;
-                                caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowersA[rnd].level = level;
+                                caster.GetCompAbilityUserMagic().MagicData.MagicPowersA[rnd].level = level;
                                 switch (level)
                                 {
                                     case 0:
@@ -2774,7 +2775,7 @@ namespace TorannMagic
                             if (rnd == 0 && magicPawn.MagicData.MagicPowersSB[rnd].learned)
                             {
                                 int level = magicPawn.MagicData.MagicPowersSB[rnd].level;
-                                caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowersSB[rnd].level = level;
+                                caster.GetCompAbilityUserMagic().MagicData.MagicPowersSB[rnd].level = level;
                                 switch (level)
                                 {
                                     case 0:
@@ -2817,7 +2818,7 @@ namespace TorannMagic
                             if (rnd == 0 && magicPawn.MagicData.MagicPowersIF[rnd].learned)
                             {
                                 int level = magicPawn.MagicData.MagicPowersIF[rnd].level;
-                                caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowersIF[rnd].level = level;
+                                caster.GetCompAbilityUserMagic().MagicData.MagicPowersIF[rnd].level = level;
                                 switch (level)
                                 {
                                     case 0:
@@ -2860,7 +2861,7 @@ namespace TorannMagic
                             if (rnd == 0 && magicPawn.MagicData.MagicPowersHoF[rnd].learned)
                             {
                                 int level = magicPawn.MagicData.MagicPowersHoF[rnd].level;
-                                caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowersHoF[rnd].level = level;
+                                caster.GetCompAbilityUserMagic().MagicData.MagicPowersHoF[rnd].level = level;
                                 switch (level)
                                 {
                                     case 0:
@@ -2891,7 +2892,7 @@ namespace TorannMagic
                             else if (rnd == 3 && magicPawn.MagicData.MagicPowersHoF[rnd].learned && caster.story.DisabledWorkTagsBackstoryAndTraits != WorkTags.Violent)
                             {
                                 int level = magicPawn.MagicData.MagicPowersHoF[rnd].level;
-                                caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowersHoF[rnd].level = level;
+                                caster.GetCompAbilityUserMagic().MagicData.MagicPowersHoF[rnd].level = level;
                                 switch (level)
                                 {
                                     case 0:
@@ -2929,7 +2930,7 @@ namespace TorannMagic
                             else if (rnd == 1 && magicPawn.MagicData.MagicPowersD[rnd].learned)
                             {
                                 int level = magicPawn.MagicData.MagicPowersD[rnd].level;
-                                caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowersD[rnd].level = level;
+                                caster.GetCompAbilityUserMagic().MagicData.MagicPowersD[rnd].level = level;
                                 switch (level)
                                 {
                                     case 0:
@@ -2967,7 +2968,7 @@ namespace TorannMagic
                             if (rnd == 1 && magicPawn.MagicData.MagicPowersN[rnd].learned && caster.story.DisabledWorkTagsBackstoryAndTraits != WorkTags.Violent)
                             {
                                 int level = magicPawn.MagicData.MagicPowersN[rnd].level;
-                                caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowersN[rnd].level = level;
+                                caster.GetCompAbilityUserMagic().MagicData.MagicPowersN[rnd].level = level;
                                 switch (level)
                                 {
                                     case 0:
@@ -2993,7 +2994,7 @@ namespace TorannMagic
                             else if (rnd == 3 && magicPawn.MagicData.MagicPowersN[rnd + 1].learned && caster.story.DisabledWorkTagsBackstoryAndTraits != WorkTags.Violent)
                             {
                                 int level = magicPawn.MagicData.MagicPowersN[rnd + 1].level;
-                                caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowersN[rnd + 1].level = level;
+                                caster.GetCompAbilityUserMagic().MagicData.MagicPowersN[rnd + 1].level = level;
                                 switch (level)
                                 {
                                     case 0:
@@ -3021,7 +3022,7 @@ namespace TorannMagic
                             if (rnd == 1 && magicPawn.MagicData.MagicPowersP[rnd].learned)
                             {
                                 int level = magicPawn.MagicData.MagicPowersP[rnd].level;
-                                caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowersP[rnd].level = level;
+                                caster.GetCompAbilityUserMagic().MagicData.MagicPowersP[rnd].level = level;
                                 switch (level)
                                 {
                                     case 0:
@@ -3064,7 +3065,7 @@ namespace TorannMagic
                             if (rnd == 3 && magicPawn.MagicData.MagicPowersPR[rnd].learned)
                             {
                                 int level = magicPawn.MagicData.MagicPowersPR[rnd].level;
-                                caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowersPR[rnd].level = level;
+                                caster.GetCompAbilityUserMagic().MagicData.MagicPowersPR[rnd].level = level;
                                 switch (level)
                                 {
                                     case 0:
@@ -3085,7 +3086,7 @@ namespace TorannMagic
                             else if (rnd == 2 && magicPawn.MagicData.MagicPowersPR[rnd].learned)
                             {
                                 int level = magicPawn.MagicData.MagicPowersPR[rnd].level;
-                                caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowersPR[rnd].level = level;
+                                caster.GetCompAbilityUserMagic().MagicData.MagicPowersPR[rnd].level = level;
                                 switch (level)
                                 {
                                     case 0:
@@ -3140,7 +3141,7 @@ namespace TorannMagic
                     else if (targetPawn.story.traits.HasTrait(TorannMagicDefOf.TM_Bard))
                     {
                         int level = magicPawn.MagicData.MagicPowersB[3].level;
-                        caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowersB[3].level = level;
+                        caster.GetCompAbilityUserMagic().MagicData.MagicPowersB[3].level = level;
                         switch (level)
                         {
                             case 0:
@@ -3165,7 +3166,7 @@ namespace TorannMagic
                             if (rnd == 1 && magicPawn.MagicData.MagicPowersWD[rnd].learned && caster.story.DisabledWorkTagsBackstoryAndTraits != WorkTags.Violent)
                             {
                                 int level = magicPawn.MagicData.MagicPowersWD[rnd].level;
-                                caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowersWD[rnd].level = level;
+                                caster.GetCompAbilityUserMagic().MagicData.MagicPowersWD[rnd].level = level;
                                 switch (level)
                                 {
                                     case 0:
@@ -3191,7 +3192,7 @@ namespace TorannMagic
                             else if (rnd == 3 && magicPawn.MagicData.MagicPowersWD[rnd].learned)
                             {
                                 int level = magicPawn.MagicData.MagicPowersWD[rnd].level;
-                                caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowersWD[rnd].level = level;
+                                caster.GetCompAbilityUserMagic().MagicData.MagicPowersWD[rnd].level = level;
                                 switch (level)
                                 {
                                     case 0:
@@ -3219,7 +3220,7 @@ namespace TorannMagic
                             if (rnd == 1 && magicPawn.MagicData.MagicPowersSD[rnd].learned && caster.story.DisabledWorkTagsBackstoryAndTraits != WorkTags.Violent)
                             {
                                 int level = magicPawn.MagicData.MagicPowersSD[rnd].level;
-                                caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowersSD[rnd].level = level;
+                                caster.GetCompAbilityUserMagic().MagicData.MagicPowersSD[rnd].level = level;
                                 switch (level)
                                 {
                                     case 0:
@@ -3245,7 +3246,7 @@ namespace TorannMagic
                             else if (rnd == 3 && magicPawn.MagicData.MagicPowersSD[rnd].learned)
                             {
                                 int level = magicPawn.MagicData.MagicPowersSD[rnd].level;
-                                caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowersSD[rnd].level = level;
+                                caster.GetCompAbilityUserMagic().MagicData.MagicPowersSD[rnd].level = level;
                                 switch (level)
                                 {
                                     case 0:
@@ -3282,7 +3283,7 @@ namespace TorannMagic
                             else if (rnd == 1 && magicPawn.MagicData.MagicPowersG[rnd].learned)
                             {
                                 int level = magicPawn.MagicData.MagicPowersG[rnd].level;
-                                caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowersG[rnd].level = level;
+                                caster.GetCompAbilityUserMagic().MagicData.MagicPowersG[rnd].level = level;
                                 switch (level)
                                 {
                                     case 0:
@@ -3336,7 +3337,7 @@ namespace TorannMagic
                             if (magicPawn.MagicData.MagicPowersE[4].learned)
                             {
                                 int level = magicPawn.MagicData.MagicPowersE[4].level;
-                                caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowersE[4].level = level;
+                                caster.GetCompAbilityUserMagic().MagicData.MagicPowersE[4].level = level;
                                 switch (level)
                                 {
                                     case 0:
@@ -3374,7 +3375,7 @@ namespace TorannMagic
                             else if (magicPawn.MagicData.MagicPowersC[4].learned)
                             {
                                 int level = magicPawn.MagicData.MagicPowersC[4].level;
-                                caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowersC[4].level = level;
+                                caster.GetCompAbilityUserMagic().MagicData.MagicPowersC[4].level = level;
                                 switch (level)
                                 {
                                     case 0:
@@ -3446,7 +3447,7 @@ namespace TorannMagic
         {
             MightPowerSkill mightSkill = null;
             int level = 0;
-            CompAbilityUserMight comp = caster.TryGetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = caster.GetCompAbilityUserMight();
             if (comp != null && comp.MightData != null)
             {
                 if (suffix == "_pwr")
@@ -3469,7 +3470,7 @@ namespace TorannMagic
                 {
                     level = mightSkill.level;
                 }
-                CompAbilityUserMight mimicComp = caster.TryGetComp<CompAbilityUserMight>();
+                CompAbilityUserMight mimicComp = caster.GetCompAbilityUserMight();
                 if (canCopy && mimicComp != null && mimicComp.IsMightUser && ability == mimicComp.mimicAbility)
                 {
                     string mimicLabel = "TM_Mimic" + suffix;
@@ -3499,7 +3500,7 @@ namespace TorannMagic
 
             //int val = 0;
             //string label = skillLabel + suffix;
-            //CompAbilityUserMight comp = caster.GetComp<CompAbilityUserMight>();
+            //CompAbilityUserMight comp = caster.GetCompAbilityUserMight();
             //var mps = power.FirstOrDefault((MightPowerSkill x) => x.label == label);
             //if (mps != null)
             //{
@@ -3538,7 +3539,7 @@ namespace TorannMagic
         {
             MagicPowerSkill magicSkill = null;
             int level = 0;
-            CompAbilityUserMagic comp = caster.TryGetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
             if (comp != null && comp.MagicData != null)
             {
                 if (suffix == "_pwr")
@@ -3561,7 +3562,7 @@ namespace TorannMagic
                 {
                     level = magicSkill.level;
                 }
-                CompAbilityUserMight mimicComp = caster.TryGetComp<CompAbilityUserMight>();
+                CompAbilityUserMight mimicComp = caster.GetCompAbilityUserMight();
                 if (canCopy && mimicComp != null && mimicComp.IsMightUser && ability == mimicComp.mimicAbility)
                 {
                     string mimicLabel = "TM_Mimic" + suffix;
@@ -3584,7 +3585,7 @@ namespace TorannMagic
 
             //int val = 0;
             //string label = skillLabel + suffix;
-            //CompAbilityUserMagic comp = caster.GetComp<CompAbilityUserMagic>();
+            //CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
             //if (comp != null && comp.IsMagicUser)
             //{
             //    var mps = power.FirstOrDefault((MagicPowerSkill x) => x.label == label);
@@ -3596,7 +3597,7 @@ namespace TorannMagic
             //            if (caster.story.traits.HasTrait(TorannMagicDefOf.Faceless))
             //            {
             //                label = "TM_Mimic" + suffix;
-            //                val = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == label).level;
+            //                val = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == label).level;
             //            }
             //            if ((caster.story.traits.HasTrait(TorannMagicDefOf.TM_Wanderer) || (caster.story.traits.HasTrait(TorannMagicDefOf.ChaosMage) || (comp.customClass != null && comp.customClass.classMageAbilities.Contains(TorannMagicDefOf.TM_Cantrips))) && comp.MagicData.MagicPowersW.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Cantrips).learned))
             //            {
@@ -3825,7 +3826,7 @@ namespace TorannMagic
             if (TM_Calc.IsUsingRanged(p))
             {
                 Thing wpn = p.equipment.Primary;
-                CompAbilityUserMight mightComp = p.TryGetComp<CompAbilityUserMight>();
+                CompAbilityUserMight mightComp = p.GetCompAbilityUserMight();
                 //Log.Message("" + p.LabelShort + " is using a " + wpn.def.defName);
                 if(mightComp != null && mightComp.equipmentContainer != null && mightComp.equipmentContainer.Count > 0)
                 {
@@ -3865,7 +3866,7 @@ namespace TorannMagic
             if (IsUsingRanged(p))
             {
                 Thing wpn = p.equipment.Primary;
-                CompAbilityUserMight mightComp = p.TryGetComp<CompAbilityUserMight>();
+                CompAbilityUserMight mightComp = p.GetCompAbilityUserMight();
                 //Log.Message("" + p.LabelShort + " is using a " + wpn.def.defName);
                 if (mightComp != null && mightComp.equipmentContainer != null && mightComp.equipmentContainer.Count > 0)
                 {
@@ -3905,7 +3906,7 @@ namespace TorannMagic
             if (IsUsingRanged(p))
             {
                 Thing wpn = p.equipment.Primary;
-                CompAbilityUserMight mightComp = p.TryGetComp<CompAbilityUserMight>();
+                CompAbilityUserMight mightComp = p.GetCompAbilityUserMight();
                 //Log.Message("" + p.LabelShort + " is using a " + wpn.def.defName);
                 if (mightComp != null && mightComp.equipmentContainer != null && mightComp.equipmentContainer.Count > 0)
                 {
@@ -3945,7 +3946,7 @@ namespace TorannMagic
             if (IsUsingRanged(p))
             {
                 Thing wpn = p.equipment.Primary;
-                CompAbilityUserMight mightComp = p.TryGetComp<CompAbilityUserMight>();
+                CompAbilityUserMight mightComp = p.GetCompAbilityUserMight();
                 //Log.Message("" + p.LabelShort + " is using a " + wpn.def.defName);
                 if (mightComp != null && mightComp.equipmentContainer != null && mightComp.equipmentContainer.Count > 0)
                 {
@@ -3971,7 +3972,7 @@ namespace TorannMagic
             if (p != null && p.equipment != null && p.equipment.Primary != null && p.equipment.Primary.def.IsRangedWeapon)
             {
                 Thing wpn = p.equipment.Primary;
-                CompAbilityUserMight mightComp = p.TryGetComp<CompAbilityUserMight>();
+                CompAbilityUserMight mightComp = p.GetCompAbilityUserMight();
                 //Log.Message("" + p.LabelShort + " is using a " + wpn.def.defName);
                 if (mightComp != null && mightComp.equipmentContainer != null && mightComp.equipmentContainer.Count > 0)
                 {
@@ -4010,8 +4011,8 @@ namespace TorannMagic
         {
             float result = 0;
 
-            CompAbilityUserMight compMight = p.GetComp<CompAbilityUserMight>();
-            CompAbilityUserMagic compMagic = p.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMight compMight = p.GetCompAbilityUserMight();
+            CompAbilityUserMagic compMagic = p.GetCompAbilityUserMagic();
             float strFactor = 1f;
             if (compMight != null && compMight.IsMightUser)
             {

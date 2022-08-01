@@ -3,6 +3,7 @@ using System;
 using Verse;
 using AbilityUser;
 using System.Linq;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -48,7 +49,7 @@ namespace TorannMagic
             caster = base.CasterPawn;
             pawn = this.currentTarget.Thing as Pawn;
 
-            CompAbilityUserMagic comp = caster.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
             //MagicPowerSkill pwr = comp.MagicData.MagicPowerSkill_SoulBond.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_SoulBond_pwr");
             //MagicPowerSkill ver = comp.MagicData.MagicPowerSkill_SoulBond.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_SoulBond_ver");
             //verVal = ver.level;

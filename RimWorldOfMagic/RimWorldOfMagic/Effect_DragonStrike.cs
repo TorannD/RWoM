@@ -2,6 +2,7 @@
 using AbilityUser;
 using RimWorld;
 using System.Linq;
+using TorannMagic.Extensions;
 using UnityEngine;
 
 namespace TorannMagic
@@ -48,7 +49,7 @@ namespace TorannMagic
             //    pwrVal = mpwr.level;
             //}
             Pawn casterPawn = base.CasterPawn;
-            CompAbilityUserMight comp = this.CasterPawn.GetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = this.CasterPawn.GetCompAbilityUserMight();
             int pwrVal = TM_Calc.GetSkillPowerLevel(casterPawn, this.Ability.Def as TMAbilityDef, false);
             if (comp != null)
             {

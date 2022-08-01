@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using HarmonyLib;
 using RimWorld.Planet;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -48,7 +49,7 @@ namespace TorannMagic
         private void Initialize()
         {
             bool spawned = base.Pawn.Spawned;
-            CompAbilityUserMagic comp = this.Pawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = this.Pawn.GetCompAbilityUserMagic();
             if (spawned && comp != null && comp.IsMagicUser)
             {
                 pwrVal = comp.MagicData.GetSkill_Power(TorannMagicDefOf.TM_SuppressiveAura).level;

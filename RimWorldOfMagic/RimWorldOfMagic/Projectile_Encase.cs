@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Verse.AI;
 using HarmonyLib;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -54,14 +55,14 @@ namespace TorannMagic
             if (!this.initialized)
             {
                 caster = this.launcher as Pawn;
-                CompAbilityUserMagic comp = caster.GetComp<CompAbilityUserMagic>();
-                pwrVal = caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_Encase.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Encase_pwr").level;
-                verVal = caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_Encase.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Encase_ver").level;
+                CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
+                pwrVal = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Encase.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Encase_pwr").level;
+                verVal = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Encase.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Encase_ver").level;
                 ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
                 if (caster.story.traits.HasTrait(TorannMagicDefOf.Faceless))
                 {
-                    pwrVal = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr").level;
-                    verVal = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver").level;
+                    pwrVal = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr").level;
+                    verVal = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver").level;
                 }
                 if (settingsRef.AIHardMode && !caster.IsColonist)
                 {

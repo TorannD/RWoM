@@ -2,6 +2,7 @@
 using AbilityUser;
 using Verse;
 using System.Linq;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -21,7 +22,7 @@ namespace TorannMagic
             IntVec3 arg_pos_1;
 
             Pawn pawn = this.launcher as Pawn;
-            comp = pawn.GetComp<CompAbilityUserMagic>();
+            comp = pawn.GetCompAbilityUserMagic();
 
             CellRect cellRect = CellRect.CenteredOn(base.Position, 1);
             cellRect.ClipInsideMap(map);

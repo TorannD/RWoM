@@ -4,6 +4,7 @@ using AbilityUser;
 using UnityEngine;
 using System.Linq;
 using System.Collections.Generic;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -57,17 +58,17 @@ namespace TorannMagic
             
             if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
             {
-                MightPowerSkill mpwr = pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-                MightPowerSkill mver = pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
+                MightPowerSkill mpwr = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
+                MightPowerSkill mver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
                 pwrVal = mpwr.level;
                 verVal = mver.level;
-                this.arcaneDmg = pawn.GetComp<CompAbilityUserMight>().mightPwr;
+                this.arcaneDmg = pawn.GetCompAbilityUserMight().mightPwr;
             }
             else
             {
-                CompAbilityUserMagic comp = pawn.GetComp<CompAbilityUserMagic>();
-                pwr = pawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_LightningCloud.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_LightningCloud_pwr");
-                ver = pawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_LightningCloud.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_LightningCloud_ver");
+                CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
+                pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_LightningCloud.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_LightningCloud_pwr");
+                ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_LightningCloud.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_LightningCloud_ver");
                 pwrVal = pwr.level;
                 verVal = ver.level;
                 this.arcaneDmg = comp.arcaneDmg;

@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Verse.AI;
 using HarmonyLib;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -90,7 +91,7 @@ namespace TorannMagic
         {
             if (caster != null)
             {
-                CompAbilityUserMagic comp = caster.GetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
                 //pwrVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_Refraction, "TM_Refraction", "_pwr", TorannMagicDefOf.TM_Refraction.canCopy);
                 //verVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_Refraction, "TM_Refraction", "_ver", TorannMagicDefOf.TM_Refraction.canCopy);
                 pwrVal = TM_Calc.GetSkillPowerLevel(caster, TorannMagicDefOf.TM_Refraction);

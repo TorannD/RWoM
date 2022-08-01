@@ -7,6 +7,7 @@ using Verse;
 using Verse.AI;
 using UnityEngine;
 using HarmonyLib;
+using TorannMagic.Extensions;
 
 
 namespace TorannMagic
@@ -48,17 +49,17 @@ namespace TorannMagic
         private void Initialize()
         {
             Pawn pawn = this.CasterPawn;
-            CompAbilityUserMagic comp = pawn.GetComp<CompAbilityUserMagic>();
-            //MagicPowerSkill pwr = pawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_ReverseTime.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_ReverseTime_pwr");
-            //MagicPowerSkill ver = pawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_ReverseTime.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_ReverseTime_ver");
+            CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
+            //MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_ReverseTime.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_ReverseTime_pwr");
+            //MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_ReverseTime.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_ReverseTime_ver");
             //ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
             //pwrVal = pwr.level;
             //verVal = ver.level;
             //arcaneDmg = comp.arcaneDmg;
             //if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
             //{
-            //    MightPowerSkill mpwr = pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-            //    MightPowerSkill mver = pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
+            //    MightPowerSkill mpwr = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
+            //    MightPowerSkill mver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
             //    pwrVal = mpwr.level;
             //    verVal = mver.level;
             //}

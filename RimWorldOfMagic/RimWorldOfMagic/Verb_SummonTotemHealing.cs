@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using AbilityUser;
+using TorannMagic.Extensions;
 using Verse.AI;
 using Verse;
 using UnityEngine;
@@ -49,7 +50,7 @@ namespace TorannMagic
             Pawn caster = base.CasterPawn;
             Map map = caster.Map;
             IntVec3 cell = currentTarget.Cell;
-            CompAbilityUserMagic comp = caster.TryGetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
             pwrVal = TM_Calc.GetSkillPowerLevel(caster, TorannMagicDefOf.TM_Totems);
             verVal = TM_Calc.GetSkillVersatilityLevel(caster, TorannMagicDefOf.TM_Totems);
             effVal = TM_Calc.GetSkillEfficiencyLevel(caster, TorannMagicDefOf.TM_Totems);

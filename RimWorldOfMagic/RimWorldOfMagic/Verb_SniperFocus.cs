@@ -5,6 +5,7 @@ using AbilityUser;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -14,8 +15,8 @@ namespace TorannMagic
         {
             Map map = base.CasterPawn.Map;
             Pawn pawn = base.CasterPawn;
-            CompAbilityUserMight comp = pawn.GetComp<CompAbilityUserMight>();
-            MightPowerSkill pwr = pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_SniperFocus.FirstOrDefault((MightPowerSkill x) => x.label == "TM_SniperFocus_pwr");
+            CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
+            MightPowerSkill pwr = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_SniperFocus.FirstOrDefault((MightPowerSkill x) => x.label == "TM_SniperFocus_pwr");
 
             List<Trait> traits = this.CasterPawn.story.traits.allTraits;
             for (int i = 0; i < traits.Count; i++)

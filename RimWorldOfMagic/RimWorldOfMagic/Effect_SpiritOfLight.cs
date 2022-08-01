@@ -2,6 +2,7 @@
 using AbilityUser;
 using System.Collections.Generic;
 using RimWorld;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {    
@@ -11,7 +12,7 @@ namespace TorannMagic
 
         public virtual void Effect()
         {
-            CompAbilityUserMagic comp = CasterPawn.TryGetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = CasterPawn.GetCompAbilityUserMagic();
             if (comp.SoL != null)
             {
                 comp.SoL.shouldDismiss = true;

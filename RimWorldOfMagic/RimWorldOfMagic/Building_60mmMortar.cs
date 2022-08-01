@@ -9,6 +9,7 @@ using Verse.AI;
 using UnityEngine;
 using Verse.Sound;
 using HarmonyLib;
+using TorannMagic.Extensions;
 
 
 namespace TorannMagic
@@ -65,10 +66,10 @@ namespace TorannMagic
 
                 if (!initialized)
                 {
-                    comp = mannableComp.ManningPawn.GetComp<CompAbilityUserMight>();
-                    this.verVal = mannableComp.ManningPawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_60mmMortar.FirstOrDefault((MightPowerSkill x) => x.label == "TM_60mmMortar_ver").level;
-                    this.pwrVal = mannableComp.ManningPawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_60mmMortar.FirstOrDefault((MightPowerSkill x) => x.label == "TM_60mmMortar_pwr").level;
-                    this.effVal = mannableComp.ManningPawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_60mmMortar.FirstOrDefault((MightPowerSkill x) => x.label == "TM_60mmMortar_eff").level;
+                    comp = mannableComp.ManningPawn.GetCompAbilityUserMight();
+                    this.verVal = mannableComp.ManningPawn.GetCompAbilityUserMight().MightData.MightPowerSkill_60mmMortar.FirstOrDefault((MightPowerSkill x) => x.label == "TM_60mmMortar_ver").level;
+                    this.pwrVal = mannableComp.ManningPawn.GetCompAbilityUserMight().MightData.MightPowerSkill_60mmMortar.FirstOrDefault((MightPowerSkill x) => x.label == "TM_60mmMortar_pwr").level;
+                    this.effVal = mannableComp.ManningPawn.GetCompAbilityUserMight().MightData.MightPowerSkill_60mmMortar.FirstOrDefault((MightPowerSkill x) => x.label == "TM_60mmMortar_eff").level;
                     this.mortarTicksToFire = Find.TickManager.TicksGame + (300);
                     this.mortarMaxRange += (verVal * 10);
                     if(verVal >= 3)

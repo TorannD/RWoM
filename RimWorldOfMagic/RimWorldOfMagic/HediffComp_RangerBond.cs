@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
+using TorannMagic.Extensions;
 using Verse;
 
 namespace TorannMagic
@@ -50,7 +51,7 @@ namespace TorannMagic
                 {
                     if (!mapPawns[i].DestroyedOrNull() && mapPawns[i].Spawned && !mapPawns[i].Downed && mapPawns[i].RaceProps.Humanlike)
                     {
-                        CompAbilityUserMight comp = mapPawns[i].GetComp<CompAbilityUserMight>();
+                        CompAbilityUserMight comp = mapPawns[i].GetCompAbilityUserMight();
                         if (comp.IsMightUser && comp.bondedPet != null)
                         {
                             if (comp.bondedPet == this.Pawn)
@@ -59,7 +60,7 @@ namespace TorannMagic
                                 break;
                             }
                         }
-                        CompAbilityUserMagic compMagic = mapPawns[i].GetComp<CompAbilityUserMagic>();
+                        CompAbilityUserMagic compMagic = mapPawns[i].GetCompAbilityUserMagic();
                         if(compMagic.IsMagicUser && compMagic.bondedSpirit != null)
                         {
                             if(compMagic.bondedSpirit == this.Pawn)
@@ -154,12 +155,12 @@ namespace TorannMagic
         private void UpdateBond()
         {
             int verVal = 0;
-            CompAbilityUserMight comp = this.bonderPawn.GetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = this.bonderPawn.GetCompAbilityUserMight();
             if (comp != null && comp.IsMightUser)
             {
                 verVal = comp.MightData.MightPowerSkill_AnimalFriend.FirstOrDefault((MightPowerSkill x) => x.label == "TM_AnimalFriend_ver").level;
             }
-            CompAbilityUserMagic compMagic = this.bonderPawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic compMagic = this.bonderPawn.GetCompAbilityUserMagic();
             if(compMagic != null && compMagic.IsMagicUser)
             {
                 verVal = compMagic.MagicData.MagicPowerSkill_GuardianSpirit.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_GuardianSpirit_ver").level;

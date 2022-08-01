@@ -4,6 +4,7 @@ using Verse;
 using AbilityUser;
 using UnityEngine;
 using System.Linq;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -91,7 +92,7 @@ namespace TorannMagic
                             {
                                 CameraJumper.TryJumpAndSelect(p);
                             }
-                            CompAbilityUserMight comp = this.CasterPawn.GetComp<CompAbilityUserMight>();
+                            CompAbilityUserMight comp = this.CasterPawn.GetCompAbilityUserMight();
                             MightPowerSkill ver = comp.MightData.MightPowerSkill_Transpose.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Transpose_ver");
                             if (ver.level < 1)
                             {

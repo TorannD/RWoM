@@ -4,6 +4,7 @@ using Verse;
 using RimWorld;
 using AbilityUser;
 using System.Linq;
+using TorannMagic.Extensions;
 using UnityEngine;
 
 namespace TorannMagic.Weapon
@@ -20,7 +21,7 @@ namespace TorannMagic.Weapon
             ThingDef def = this.def;
             if (pawn != null)
             {
-                CompAbilityUserMagic comp = pawn.GetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
                 if (comp != null && comp.IsMagicUser)
                 {
                     this.arcaneDmg = comp.arcaneDmg;

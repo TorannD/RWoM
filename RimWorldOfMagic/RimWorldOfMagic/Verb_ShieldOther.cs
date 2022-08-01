@@ -5,6 +5,7 @@ using System.Linq;
 using Verse;
 using Verse.Sound;
 using AbilityUser;
+using TorannMagic.Extensions;
 using UnityEngine;
 using Verse.AI.Group;
 
@@ -49,7 +50,7 @@ namespace TorannMagic
             Pawn caster = base.CasterPawn;
             Pawn pawn = this.currentTarget.Thing as Pawn;
 
-            comp = caster.GetComp<CompAbilityUserMagic>();
+            comp = caster.GetCompAbilityUserMagic();
 
 
             if (pawn != null)

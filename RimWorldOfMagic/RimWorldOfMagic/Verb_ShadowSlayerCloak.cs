@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using AbilityUser;
+using TorannMagic.Extensions;
 using Verse;
 using UnityEngine;
 
@@ -21,7 +22,7 @@ namespace TorannMagic
             bool flag = caster != null && !caster.Dead;
             if (flag)
             {
-                CompAbilityUserMight comp = caster.TryGetComp<CompAbilityUserMight>();
+                CompAbilityUserMight comp = caster.GetCompAbilityUserMight();
                 //verVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_ShadowSlayer, "TM_ShadowSlayer", "_ver", true);
                 //pwrVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_ShadowSlayer, "TM_ShadowSlayer", "_pwr", true);
                 verVal = TM_Calc.GetSkillVersatilityLevel(caster, TorannMagicDefOf.TM_ShadowSlayer);

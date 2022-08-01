@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using AbilityUser;
+using TorannMagic.Extensions;
 using Verse.AI;
 using Verse;
 using UnityEngine;
@@ -22,7 +23,7 @@ namespace TorannMagic
             Pawn pawn = base.CasterPawn;
             Map map = pawn.Map;
 
-            CompAbilityUserMight comp = caster.TryGetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
             //pwrVal = TM_Calc.GetMightSkillLevel(pawn, comp.MightData.MightPowerSkill_60mmMortar, "TM_60mmMortar", "_pwr", true);
             //verVal = TM_Calc.GetMightSkillLevel(pawn, comp.MightData.MightPowerSkill_60mmMortar, "TM_60mmMortar", "_ver", true);
             //effVal = TM_Calc.GetMightSkillLevel(pawn, comp.MightData.MightPowerSkill_60mmMortar, "TM_60mmMortar", "_eff", true);

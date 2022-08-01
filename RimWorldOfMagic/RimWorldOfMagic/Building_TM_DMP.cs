@@ -6,6 +6,7 @@ using Verse.AI;
 using System.Diagnostics;
 using UnityEngine;
 using RimWorld;
+using TorannMagic.Extensions;
 
 
 namespace TorannMagic
@@ -80,7 +81,7 @@ namespace TorannMagic
         public override IEnumerable<FloatMenuOption> GetFloatMenuOptions(Pawn myPawn)
         {
             List<FloatMenuOption> list = new List<FloatMenuOption>();
-            CompAbilityUserMagic comp = myPawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = myPawn.GetCompAbilityUserMagic();
             if (!myPawn.CanReach(this, PathEndMode.InteractionCell, Danger.Some, false, false, TraverseMode.ByPawn))
             {
                 list.Add(new FloatMenuOption("CannotUseNoPath".Translate(), null, MenuOptionPriority.Default, null, null, 0f, null, null));
@@ -158,7 +159,7 @@ namespace TorannMagic
                     pawn = mapPawns[i];
                     if(!pawn.DestroyedOrNull() && pawn.Spawned && !pawn.Dead && !pawn.Downed && pawn.RaceProps != null && !pawn.AnimalOrWildMan() && pawn.RaceProps.Humanlike && pawn.Faction != null && pawn.Faction == this.Faction)
                     {
-                        CompAbilityUserMagic comp = pawn.GetComp<CompAbilityUserMagic>();
+                        CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
                         float rangeToTarget = (pawn.Position - this.Position).LengthHorizontal;
                         if (pawn.drafter != null && TM_Calc.IsMagicUser(pawn) && rangeToTarget <= effectRadius && comp != null && comp.Mana != null)
                         {

@@ -5,6 +5,7 @@ using AbilityUser;
 using UnityEngine;
 using System.Linq;
 using System.Collections.Generic;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -50,7 +51,7 @@ namespace TorannMagic
 
         public static int GetWeaponDmg(Pawn pawn)
         {
-            CompAbilityUserMight comp = pawn.GetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
             MightPowerSkill str = comp.MightData.MightPowerSkill_global_strength.FirstOrDefault((MightPowerSkill x) => x.label == "TM_global_strength_pwr");
             ThingWithComps weaponComp = pawn.equipment.Primary;
             float weaponDPS = weaponComp.GetStatValue(StatDefOf.MeleeWeapon_AverageDPS, false) * .7f;
@@ -65,7 +66,7 @@ namespace TorannMagic
             bool result = false;
             bool arg_40_0;
 
-            CompAbilityUserMight comp = this.CasterPawn.GetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = this.CasterPawn.GetCompAbilityUserMight();
             verVal = TM_Calc.GetSkillVersatilityLevel(CasterPawn, this.Ability.Def as TMAbilityDef);
             pwrVal = TM_Calc.GetSkillPowerLevel(CasterPawn, this.Ability.Def as TMAbilityDef);
             //pwr = comp.MightData.MightPowerSkill_PhaseStrike.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PhaseStrike_pwr");

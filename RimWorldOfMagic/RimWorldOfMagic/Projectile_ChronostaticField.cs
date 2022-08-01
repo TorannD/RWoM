@@ -5,6 +5,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System;
 using RimWorld;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -59,7 +60,7 @@ namespace TorannMagic
             if (!this.initialized)
             {
                 this.casterPawn = this.launcher as Pawn;
-                CompAbilityUserMagic comp = casterPawn.GetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = casterPawn.GetCompAbilityUserMagic();
                 MagicPowerSkill pwr = comp.MagicData.MagicPowerSkill_ChronostaticField.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_ChronostaticField_pwr");
                 MagicPowerSkill ver = comp.MagicData.MagicPowerSkill_ChronostaticField.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_ChronostaticField_ver");
                 ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
@@ -67,8 +68,8 @@ namespace TorannMagic
                 verVal = ver.level;
                 if (this.casterPawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
                 {
-                    MightPowerSkill mpwr = casterPawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-                    MightPowerSkill mver = casterPawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
+                    MightPowerSkill mpwr = casterPawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
+                    MightPowerSkill mver = casterPawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
                     pwrVal = mpwr.level;
                     verVal = mver.level;
                 }

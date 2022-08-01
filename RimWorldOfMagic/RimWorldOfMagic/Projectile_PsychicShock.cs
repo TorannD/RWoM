@@ -4,6 +4,7 @@ using Verse;
 using AbilityUser;
 using UnityEngine;
 using System.Collections.Generic;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -48,9 +49,9 @@ namespace TorannMagic
             {
                 pawn = this.launcher as Pawn;
                 float psychicEnergy = pawn.GetStatValue(StatDefOf.PsychicSensitivity, false);
-                CompAbilityUserMagic comp = pawn.GetComp<CompAbilityUserMagic>();
-                MagicPowerSkill pwr = pawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_PsychicShock.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_PsychicShock_pwr");
-                MagicPowerSkill ver = pawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_PsychicShock.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_PsychicShock_ver");
+                CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
+                MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_PsychicShock.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_PsychicShock_pwr");
+                MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_PsychicShock.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_PsychicShock_ver");
                 ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
                 pwrVal = pwr.level;
                 verVal = ver.level;

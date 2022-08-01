@@ -2,6 +2,7 @@
 using Verse;
 using RimWorld;
 using System.Linq;
+using TorannMagic.Extensions;
 
 namespace TorannMagic.Thoughts
 {
@@ -25,7 +26,7 @@ namespace TorannMagic.Thoughts
                 }
                 if (other.health.hediffSet.HasHediff(TorannMagicDefOf.TM_EnchantedBodyHD, false))
                 {
-                    CompAbilityUserMagic comp = other.GetComp<CompAbilityUserMagic>();
+                    CompAbilityUserMagic comp = other.GetCompAbilityUserMagic();
 
                     if (comp != null)
                     {

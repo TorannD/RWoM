@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Verse;
 using AbilityUser;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -121,7 +122,7 @@ namespace TorannMagic
             bool spawned = flyingThing.Spawned;            
             pawn = launcher as Pawn;
             drafted = pawn.Drafted;
-            comp = pawn.GetComp<CompAbilityUserMagic>();
+            comp = pawn.GetCompAbilityUserMagic();
 
             if (spawned)
             {               

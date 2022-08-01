@@ -1,6 +1,7 @@
 ﻿using RimWorld;
 using Verse;
 using System.Collections.Generic;
+using TorannMagic.Extensions;
 
 
 namespace TorannMagic
@@ -32,7 +33,7 @@ namespace TorannMagic
                             ApplyTraitAdjustments(user, TM_ClassUtility.CustomClasses()[i].classTrait);
                             //
                             this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
-                            CompAbilityUserMight comp = user.TryGetComp<CompAbilityUserMight>();
+                            CompAbilityUserMight comp = user.GetCompAbilityUserMight();
                             if (comp != null)
                             {
                                 comp.customIndex = i;
@@ -42,7 +43,7 @@ namespace TorannMagic
                             {
                                 Log.Message("failed to initialize custom might class comp");
                             }
-                            CompAbilityUserMagic mComp = user.TryGetComp<CompAbilityUserMagic>();
+                            CompAbilityUserMagic mComp = user.GetCompAbilityUserMagic();
                             if(mComp != null && TM_ClassUtility.CustomClasses()[i].isMage)
                             {
                                 mComp.customIndex = i;
@@ -59,7 +60,7 @@ namespace TorannMagic
                         FixTrait(user, user.story.traits.allTraits);
                         user.story.traits.GainTrait(new Trait(TorannMagicDefOf.Gladiator, 0, false));
                         this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
-                        CompAbilityUserMight comp = user.GetComp<CompAbilityUserMight>();
+                        CompAbilityUserMight comp = user.GetCompAbilityUserMight();
                         comp.skill_Sprint = true;
                     }
                     else if (parent.def.defName == "BookOfSniper")

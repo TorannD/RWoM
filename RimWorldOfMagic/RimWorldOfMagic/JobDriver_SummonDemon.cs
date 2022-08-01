@@ -4,6 +4,7 @@ using RimWorld;
 using Verse;
 using AbilityUser;
 using System.Linq;
+using TorannMagic.Extensions;
 
 
 namespace TorannMagic
@@ -27,7 +28,7 @@ namespace TorannMagic
             {
                 initAction = () =>
                 {
-                    this.comp = this.pawn.GetComp<CompAbilityUserMagic>();
+                    this.comp = this.pawn.GetCompAbilityUserMagic();
                     this.markedPawn = comp.soulBondPawn;
                 },
                 tickAction = () =>

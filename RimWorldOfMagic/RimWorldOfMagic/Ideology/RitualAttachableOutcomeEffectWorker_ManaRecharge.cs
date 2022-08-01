@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse;
 using RimWorld;
+using TorannMagic.Extensions;
 
 namespace TorannMagic.Ideology
 {
@@ -24,7 +25,7 @@ namespace TorannMagic.Ideology
 			{
 				if(TM_Calc.IsMagicUser(key))
                 {
-					CompAbilityUserMagic comp = key.TryGetComp<CompAbilityUserMagic>();
+					CompAbilityUserMagic comp = key.GetCompAbilityUserMagic();
 					if(comp != null)
                     {
 						mageCount++;

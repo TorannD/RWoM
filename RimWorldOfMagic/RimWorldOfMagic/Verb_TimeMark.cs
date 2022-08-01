@@ -6,6 +6,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
 using HarmonyLib;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -20,7 +21,7 @@ namespace TorannMagic
         {
             bool result = false;
             map = this.CasterPawn.Map;
-            comp = this.CasterPawn.GetComp<CompAbilityUserMagic>();
+            comp = this.CasterPawn.GetCompAbilityUserMagic();
             MagicPowerSkill pwr = comp.MagicData.MagicPowerSkill_Recall.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Recall_pwr");
             pwrVal = pwr.level;
 

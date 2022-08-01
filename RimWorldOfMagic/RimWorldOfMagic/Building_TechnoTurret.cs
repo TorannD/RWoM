@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using RimWorld;
 using AbilityUser;
+using TorannMagic.Extensions;
 using Verse;
 using Verse.AI;
 using UnityEngine;
@@ -77,7 +78,7 @@ namespace TorannMagic
             {
                 if (!initialized)
                 {
-                    comp = manPawn.GetComp<CompAbilityUserMagic>();
+                    comp = manPawn.GetCompAbilityUserMagic();
                     this.verVal = comp.MagicData.MagicPowerSkill_TechnoTurret.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_TechnoTurret_ver").level;
                     this.pwrVal = comp.MagicData.MagicPowerSkill_TechnoTurret.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_TechnoTurret_pwr").level;
                     this.effVal = comp.MagicData.MagicPowerSkill_TechnoTurret.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_TechnoTurret_eff").level;

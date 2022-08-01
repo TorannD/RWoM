@@ -5,6 +5,7 @@ using Verse;
 using Verse.AI;
 using Verse.Sound;
 using RimWorld;
+using TorannMagic.Extensions;
 using UnityEngine;
 
 namespace TorannMagic
@@ -85,12 +86,12 @@ namespace TorannMagic
 
         private void DeterminePsionicHD()
         {
-            this.comp = this.Pawn.GetComp<CompAbilityUserMight>();
-            if (comp != null && comp.MightData != null)
+            this.comp = this.Pawn.GetCompAbilityUserMight();
+            if (comp?.MightData != null)
             {
-                this.PwrVal = this.Pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_PsionicAugmentation.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PsionicAugmentation_pwr").level;
-                this.EffVal = this.Pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_PsionicAugmentation.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PsionicAugmentation_eff").level;
-                this.VerVal = this.Pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_PsionicAugmentation.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PsionicAugmentation_ver").level;
+                this.PwrVal = this.comp.MightData.MightPowerSkill_PsionicAugmentation.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PsionicAugmentation_pwr").level;
+                this.EffVal = this.comp.MightData.MightPowerSkill_PsionicAugmentation.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PsionicAugmentation_eff").level;
+                this.VerVal = this.comp.MightData.MightPowerSkill_PsionicAugmentation.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PsionicAugmentation_ver").level;
             }
         }
 

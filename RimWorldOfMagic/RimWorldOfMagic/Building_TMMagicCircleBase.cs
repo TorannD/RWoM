@@ -7,6 +7,7 @@ using System.Diagnostics;
 using UnityEngine;
 using RimWorld;
 using AbilityUser;
+using TorannMagic.Extensions;
 
 
 namespace TorannMagic
@@ -655,7 +656,7 @@ namespace TorannMagic
                     for (int i =0; i < magePawnsInRange.Count; i++)
                     {
                         Pawn p = magePawnsInRange[i];
-                        CompAbilityUserMagic comp = p.GetComp<CompAbilityUserMagic>();
+                        CompAbilityUserMagic comp = p.GetCompAbilityUserMagic();
                         if (p.Spawned && !p.Drafted && !p.InMentalState && p.GetPosture() == PawnPosture.Standing && p.workSettings.WorkIsActive(TorannMagicDefOf.TM_Magic) && comp != null && comp.Mana != null && comp.Mana.CurLevel >= manaReq)
                         {
                             pawnsAble.Add(p);
@@ -696,7 +697,7 @@ namespace TorannMagic
         //                    for (int i = 0; i < magePawnsInRange.Count; i++)
         //                    {
         //                        Pawn p = magePawnsInRange[i];
-        //                        CompAbilityUserMagic comp = p.GetComp<CompAbilityUserMagic>();
+        //                        CompAbilityUserMagic comp = p.GetCompAbilityUserMagic();
         //                        if (p != abilityUser.Pawn && p.workSettings.WorkIsActive(TorannMagicDefOf.TM_Magic) && comp != null && comp.Mana != null && comp.Mana.CurLevel >= manaReq && p.GetPosture() == PawnPosture.Standing && !p.InMentalState)
         //                        {
         //                            //Log.Message("" + p.LabelShort + " available to work recipe " + mrDef.defName);
@@ -784,7 +785,7 @@ namespace TorannMagic
                         this.magicRecipeDef = allPawns[i].CurJob.bill.recipe as MagicRecipeDef;
                         //Log.Message("checking mages available: " + mages.Count);
                        
-                        //CanDoJob(allPawns[i].GetComp<CompAbilityUserMagic>(), allPawns[i].CurJob.bill.recipe as MagicRecipeDef, this);
+                        //CanDoJob(allPawns[i].GetCompAbilityUserMagic(), allPawns[i].CurJob.bill.recipe as MagicRecipeDef, this);
                     }
                 }
             }
@@ -796,7 +797,7 @@ namespace TorannMagic
             for (int i = 0; i < mages.Count; i++)
             {
                 //Log.Message("pawn " + i + " " + mages[i].LabelShort + " with job " + mages[i].CurJob);
-                CompAbilityUserMagic comp = mages[i].GetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = mages[i].GetCompAbilityUserMagic();
                 if (comp != null && comp.Mana != null )
                 {
                     //Log.Message("" + comp.Pawn.LabelShort + " is ready");

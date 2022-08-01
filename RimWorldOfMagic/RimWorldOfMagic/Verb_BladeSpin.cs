@@ -4,6 +4,7 @@ using UnityEngine;
 using RimWorld;
 using System.Linq;
 using System.Collections.Generic;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -46,7 +47,7 @@ namespace TorannMagic
 
         public static int GetWeaponDmg(Pawn pawn)
         {
-            CompAbilityUserMight comp = pawn.GetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
             MightPowerSkill str = comp.MightData.MightPowerSkill_global_strength.FirstOrDefault((MightPowerSkill x) => x.label == "TM_global_strength_pwr");
             int dmgNum = 0;
             ThingWithComps weaponComp = pawn.equipment.Primary;
@@ -61,7 +62,7 @@ namespace TorannMagic
         {            
             if (this.CasterPawn.equipment.Primary != null && !this.CasterPawn.equipment.Primary.def.IsRangedWeapon)
             {
-                CompAbilityUserMight comp = this.CasterPawn.GetComp<CompAbilityUserMight>();
+                CompAbilityUserMight comp = this.CasterPawn.GetCompAbilityUserMight();
                 //MightPowerSkill ver = comp.MightData.MightPowerSkill_SeismicSlash.FirstOrDefault((MightPowerSkill x) => x.label == "TM_SeismicSlash_ver");
                 //MightPowerSkill pwr = comp.MightData.MightPowerSkill_SeismicSlash.FirstOrDefault((MightPowerSkill x) => x.label == "TM_SeismicSlash_pwr");
                 //verVal = TM_Calc.GetMightSkillLevel(this.CasterPawn, comp.MightData.MightPowerSkill_BladeSpin, "TM_BladeSpin", "_ver", true);

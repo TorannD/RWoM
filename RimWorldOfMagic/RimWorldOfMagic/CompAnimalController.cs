@@ -7,6 +7,7 @@ using UnityEngine;
 using Verse.AI;
 using Verse.Sound;
 using AbilityUser;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -101,7 +102,7 @@ namespace TorannMagic
                 {
                     if (summonerPawn != null)
                     {
-                        CompAbilityUserMagic comp = summonerPawn.TryGetComp<CompAbilityUserMagic>();
+                        CompAbilityUserMagic comp = summonerPawn.GetCompAbilityUserMagic();
                         if (comp != null)
                         {
                             verVal = TM_Calc.GetSkillVersatilityLevel(summonerPawn, TorannMagicDefOf.TM_GuardianSpirit);
@@ -163,7 +164,7 @@ namespace TorannMagic
                                     if(Rand.Chance(hexChance))
                                     {
                                         HealthUtility.AdjustSeverity(p, TorannMagicDefOf.TM_HexHD, 1f);
-                                        CompAbilityUserMagic bondedMagicComp = this.summonerPawn.TryGetComp<CompAbilityUserMagic>();
+                                        CompAbilityUserMagic bondedMagicComp = this.summonerPawn.GetCompAbilityUserMagic();
 
                                         if (bondedMagicComp != null && !bondedMagicComp.HexedPawns.Contains(p) && bondedMagicComp.MagicData != null && bondedMagicComp.MagicData.MagicPowersShaman.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Hex).learned)
                                         {

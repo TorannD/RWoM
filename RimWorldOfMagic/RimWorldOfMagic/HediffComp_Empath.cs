@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
 using HarmonyLib;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -46,7 +47,7 @@ namespace TorannMagic
         private void Initialize()
         {
             bool spawned = base.Pawn.Spawned;
-            CompAbilityUserMagic comp = this.Pawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = this.Pawn.GetCompAbilityUserMagic();
             if (spawned && comp != null && comp.IsMagicUser && this.Pawn.needs.mood != null)
             {
                 pwrVal = comp.MagicData.GetSkill_Power(TorannMagicDefOf.TM_Empathy).level;

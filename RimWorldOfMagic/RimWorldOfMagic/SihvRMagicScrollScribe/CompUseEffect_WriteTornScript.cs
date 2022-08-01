@@ -1,4 +1,5 @@
 ﻿using RimWorld;
+using TorannMagic.Extensions;
 using Verse;
 
 namespace TorannMagic.SihvRMagicScrollScribe
@@ -12,7 +13,7 @@ namespace TorannMagic.SihvRMagicScrollScribe
             ThingDef tempPod = null;
             IntVec3 currentPos = parent.PositionHeld;
             Map map = parent.Map;
-            CompAbilityUserMagic comp = user.TryGetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = user.GetCompAbilityUserMagic();
             if (parent.def != null && comp != null && user.IsSlave)
             {
                 Messages.Message("TM_SlaveScribeFail".Translate(

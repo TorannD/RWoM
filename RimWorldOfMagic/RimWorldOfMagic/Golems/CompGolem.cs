@@ -9,6 +9,7 @@ using Verse.AI.Group;
 using AbilityUser;
 using TorannMagic.TMDefs;
 using HarmonyLib;
+using TorannMagic.Extensions;
 
 namespace TorannMagic.Golems
 {
@@ -609,7 +610,7 @@ namespace TorannMagic.Golems
         {
             if(!pawnMaster.DestroyedOrNull() && !pawnMaster.Dead)
             {
-                CompAbilityUserMagic masterComp = pawnMaster.TryGetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic masterComp = pawnMaster.GetCompAbilityUserMagic();
                 if(TM_Calc.IsMagicUser(pawnMaster) && masterComp != null && masterComp.MagicData != null && masterComp.MagicData.AllMagicPowersWithSkills.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Golemancy).learned)
                 {
                     float pSev = .5f + masterComp.MagicData.GetSkill_Power(TorannMagicDefOf.TM_Golemancy).level;

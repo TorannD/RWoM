@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using AbilityUser;
+using TorannMagic.Extensions;
 using Verse;
 using UnityEngine;
 
@@ -43,7 +44,7 @@ namespace TorannMagic
             Pawn caster = base.CasterPawn;
             Pawn target = this.currentTarget.Thing as Pawn;
             
-            CompAbilityUserMagic comp = caster.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
             if (comp.IsMagicUser && target != null)
             {
                 if (target.RaceProps.Humanlike)

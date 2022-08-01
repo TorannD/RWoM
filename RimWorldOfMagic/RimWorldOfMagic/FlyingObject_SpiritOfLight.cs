@@ -6,6 +6,7 @@ using UnityEngine;
 using Verse;
 using Verse.Sound;
 using HarmonyLib;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -462,7 +463,7 @@ namespace TorannMagic
         {
             if (!pawn.DestroyedOrNull())
             {
-                CompAbilityUserMagic comp = pawn.TryGetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
                 comp.SoL = null;
             }
             base.Destroy(mode);
@@ -495,7 +496,7 @@ namespace TorannMagic
         {
             if(!pawn.DestroyedOrNull() && pawn.Spawned)
             {
-                CompAbilityUserMagic comp = pawn.TryGetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
                 if(comp != null && comp.IsMagicUser)
                 {
                     //pwrVal = TM_Calc.GetMagicSkillLevel(pawn, comp.MagicData.MagicPowerSkill_SpiritOfLight, "TM_SpiritOfLight", "_pwr");

@@ -6,6 +6,7 @@ using Verse.AI;
 using System.Diagnostics;
 using UnityEngine;
 using RimWorld;
+using TorannMagic.Extensions;
 
 
 namespace TorannMagic
@@ -185,7 +186,7 @@ namespace TorannMagic
         public override IEnumerable<FloatMenuOption> GetFloatMenuOptions(Pawn myPawn)
         {
             List<FloatMenuOption> list = new List<FloatMenuOption>();
-            CompAbilityUserMagic comp = myPawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = myPawn.GetCompAbilityUserMagic();
             if (!myPawn.CanReach(this, PathEndMode.InteractionCell, Danger.Some, false, false, TraverseMode.ByPawn))
             {
                 list.Add(new FloatMenuOption("CannotUseNoPath".Translate(), null, MenuOptionPriority.Default, null, null, 0f, null, null));

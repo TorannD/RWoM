@@ -149,10 +149,10 @@ namespace TorannMagic
             bool spawned = flyingThing.Spawned;
             pawn = launcher as Pawn;
             this.speed = _speed;
-            //CompAbilityUserMagic comp = pawn.GetComp<CompAbilityUserMagic>();
+            //CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
             //this.arcaneDmg = comp.arcaneDmg;
-            //MagicPowerSkill pwr = pawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_EyeOfTheStorm.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_EyeOfTheStorm_pwr");
-            //MagicPowerSkill ver = pawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_EyeOfTheStorm.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_EyeOfTheStorm_ver");
+            //MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_EyeOfTheStorm.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_EyeOfTheStorm_pwr");
+            //MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_EyeOfTheStorm.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_EyeOfTheStorm_ver");
             //verVal = ver.level;
             //pwrVal = pwr.level;
             //ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();

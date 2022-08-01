@@ -3,6 +3,7 @@ using Verse;
 using System.Collections.Generic;
 using System;
 using System.Linq;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -74,7 +75,7 @@ namespace TorannMagic
             }
             else
             {
-                comp = this.Pawn.TryGetComp<CompAbilityUserMight>();
+                comp = this.Pawn.GetCompAbilityUserMight();
             }
         }
 

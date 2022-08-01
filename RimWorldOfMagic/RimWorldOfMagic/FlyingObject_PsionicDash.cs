@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using Verse;
 using AbilityUser;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -117,7 +118,7 @@ namespace TorannMagic
                 FleckMaker.Static(this.origin, this.Map, FleckDefOf.ExplosionFlash, 12f);
                 SoundDefOf.Ambient_AltitudeWind.sustainFadeoutTime.Equals(30.0f);
                 FleckMaker.ThrowDustPuff(this.origin, this.Map, Rand.Range(1.2f, 1.8f));
-                CompAbilityUserMight comp = pawn.GetComp<CompAbilityUserMight>();
+                CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
                 verVal = TM_Calc.GetSkillVersatilityLevel(pawn, TorannMagicDefOf.TM_PsionicDash, false);
                 pwrVal = TM_Calc.GetSkillPowerLevel(pawn, TorannMagicDefOf.TM_PsionicDash, false);
                 //verVal = TM_Calc.GetMightSkillLevel(pawn, comp.MightData.MightPowerSkill_PsionicDash, "TM_PsionicDash", "_ver", true);

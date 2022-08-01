@@ -1,6 +1,7 @@
 ﻿using System;
 using Verse;
 using RimWorld;
+using TorannMagic.Extensions;
 
 namespace TorannMagic.Thoughts
 {
@@ -10,7 +11,7 @@ namespace TorannMagic.Thoughts
         {
             bool baseInspiration = base.InspirationCanOccur(pawn);
             bool mightInspiration = false;
-            CompAbilityUserMight comp = pawn.GetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
             if(comp.IsMightUser)
             {
                 mightInspiration = true;

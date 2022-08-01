@@ -7,6 +7,7 @@ using Verse.AI;
 using RimWorld;
 using UnityEngine;
 using HarmonyLib;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -154,7 +155,7 @@ namespace TorannMagic
                         }
                         return RefuelWorkGiverUtility.RefuelJob(pawn, thing, forced);
                     }
-                    CompAbilityUserMagic compMagic = pawn.TryGetComp<CompAbilityUserMagic>();
+                    CompAbilityUserMagic compMagic = pawn.GetCompAbilityUserMagic();
                     if (compMagic != null && compMagic.Mana != null)
                     {
                         if (thing is Building_TMMagicCircle)
@@ -250,7 +251,7 @@ namespace TorannMagic
                         if (bill.recipe is MagicRecipeDef)
                         {
                             MagicRecipeDef magicRecipe = bill.recipe as MagicRecipeDef;
-                            CompAbilityUserMagic compMagic = pawn.TryGetComp<CompAbilityUserMagic>(); 
+                            CompAbilityUserMagic compMagic = pawn.GetCompAbilityUserMagic(); 
                             if(magicCircle.IsActive)
                             {
                                 issueBill = false;

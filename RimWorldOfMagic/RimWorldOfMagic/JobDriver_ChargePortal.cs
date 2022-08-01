@@ -3,6 +3,7 @@ using Verse.AI;
 using System;
 using Verse;
 using RimWorld;
+using TorannMagic.Extensions;
 using UnityEngine;
 
 
@@ -35,7 +36,7 @@ namespace TorannMagic
             this.FailOnDestroyedOrNull(building);
             Toil reserveTargetA = Toils_Reserve.Reserve(building);
             yield return reserveTargetA;
-            comp = this.pawn.GetComp<CompAbilityUserMagic>();
+            comp = this.pawn.GetCompAbilityUserMagic();
             portalBldg = TargetA.Thing as Building_TMPortal;
             arcaneCapacitor = TargetA.Thing as Building_TMArcaneCapacitor;
             dmp = TargetA.Thing as Building_TM_DMP;

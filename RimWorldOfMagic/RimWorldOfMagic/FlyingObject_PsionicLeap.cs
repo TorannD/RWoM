@@ -6,6 +6,7 @@ using UnityEngine;
 using Verse;
 using Verse.AI;
 using AbilityUser;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -136,7 +137,7 @@ namespace TorannMagic
             pawn = launcher as Pawn;
             this.oldjobTarget = pawn.CurJob.targetA.Thing;
             //Log.Message("pre leap target is " + this.oldjobTarget.LabelShort);
-            CompAbilityUserMight comp = pawn.GetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
             this.effVal = TM_Calc.GetSkillEfficiencyLevel(pawn, TorannMagicDefOf.TM_PsionicAugmentation, false); //comp.MightData.MightPowerSkill_PsionicAugmentation.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PsionicAugmentation_eff").level;
             if (spawned)
             {

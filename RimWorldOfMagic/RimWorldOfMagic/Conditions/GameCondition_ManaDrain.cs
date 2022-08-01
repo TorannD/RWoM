@@ -3,6 +3,7 @@ using RimWorld.Planet;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using TorannMagic.Extensions;
 using UnityEngine;
 using Verse;
 
@@ -38,7 +39,7 @@ namespace TorannMagic
                 pawn = victims.ToArray<Pawn>()[i];
                 if (pawn != null)
                 {
-                    CompAbilityUserMagic comp = pawn.GetComp<CompAbilityUserMagic>();
+                    CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
                     if (comp != null && comp.IsMagicUser && comp.Mana != null)
                     {
                         if ( comp.Mana.CurLevel == 1)

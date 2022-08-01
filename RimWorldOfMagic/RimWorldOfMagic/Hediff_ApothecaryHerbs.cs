@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using HarmonyLib;
 using RimWorld.Planet;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -35,7 +36,7 @@ namespace TorannMagic
         private void Initialize()
         {
             bool spawned = pawn.Spawned;
-            CompAbilityUserMight comp = pawn.GetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
             if (comp != null)
             {
                 herbPwr = comp.MightData.MightPowerSkill_Herbalist.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Herbalist_pwr").level;

@@ -4,6 +4,7 @@ using System.Linq;
 using Verse;
 using Verse.AI;
 using AbilityUser;
+using TorannMagic.Extensions;
 using UnityEngine;
 using Verse.AI.Group;
 
@@ -54,15 +55,15 @@ namespace TorannMagic
             {
                 SpawnThings spawnThing = new SpawnThings();
                 pawn = this.launcher as Pawn;
-                MagicPowerSkill pwr = pawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_SummonElemental.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_SummonElemental_pwr");
-                MagicPowerSkill ver = pawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_SummonElemental.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_SummonElemental_ver");
+                MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_SummonElemental.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_SummonElemental_pwr");
+                MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_SummonElemental.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_SummonElemental_ver");
                 ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
                 pwrVal = pwr.level;
                 verVal = ver.level;
                 if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
                 {
-                    MightPowerSkill mpwr = pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-                    MightPowerSkill mver = pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
+                    MightPowerSkill mpwr = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
+                    MightPowerSkill mver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
                     pwrVal = mpwr.level;
                     verVal = mver.level;
                 }
@@ -79,7 +80,7 @@ namespace TorannMagic
                 random = new System.Random();
  
                 duration += (verVal * 900);
-                duration = Mathf.RoundToInt(duration * pawn.GetComp<CompAbilityUserMagic>().arcaneDmg);
+                duration = Mathf.RoundToInt(duration * pawn.GetCompAbilityUserMagic().arcaneDmg);
 
                 int rnd = GenMath.RoundRandom(random.Next(0, 8));
                 if (rnd < 2)
@@ -342,7 +343,7 @@ namespace TorannMagic
                         }
                         catch
                         {
-                            pawn.GetComp<CompAbilityUserMagic>().Mana.CurLevel += pawn.GetComp<CompAbilityUserMagic>().ActualManaCost(TorannMagicDefOf.TM_SummonElemental);
+                            pawn.GetCompAbilityUserMagic().Mana.CurLevel += pawn.GetCompAbilityUserMagic().ActualManaCost(TorannMagicDefOf.TM_SummonElemental);
                             Log.Message("TM_Exception".Translate(
                                 pawn.LabelShort,
                                 this.def.defName

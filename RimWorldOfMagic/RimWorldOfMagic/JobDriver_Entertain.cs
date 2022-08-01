@@ -3,6 +3,7 @@ using Verse.AI;
 using Verse;
 using RimWorld;
 using System;
+using TorannMagic.Extensions;
 using UnityEngine;
 
 
@@ -31,7 +32,7 @@ namespace TorannMagic
 
         protected override IEnumerable<Toil> MakeNewToils()
         {
-            comp = pawn.GetComp<CompAbilityUserMagic>();
+            comp = pawn.GetCompAbilityUserMagic();
             yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.Touch);
             this.FailOnDowned(TargetIndex.A);
             this.FailOnMentalState(TargetIndex.A);

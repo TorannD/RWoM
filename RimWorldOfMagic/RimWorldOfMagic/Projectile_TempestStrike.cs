@@ -6,6 +6,7 @@ using RimWorld;
 using System.Collections.Generic;
 using System;
 using System.Linq;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -27,7 +28,7 @@ namespace TorannMagic
                 if (pawn != null)
                 {
                     Pawn victim = hitThing as Pawn;
-                    CompAbilityUserMight comp = pawn.GetComp<CompAbilityUserMight>();
+                    CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
 
                     if (victim != null && comp != null)
                     {
@@ -78,7 +79,7 @@ namespace TorannMagic
         {
             if (pawn != null)
             {
-                CompAbilityUserMight comp = pawn.GetComp<CompAbilityUserMight>();
+                CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
                 if (comp != null)
                 {
                     float dmgNum = 0;                    

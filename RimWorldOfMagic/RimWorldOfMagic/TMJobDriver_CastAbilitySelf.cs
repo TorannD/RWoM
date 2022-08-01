@@ -5,6 +5,7 @@ using System.Linq;
 using Verse;
 using Verse.AI;
 using AbilityUser;
+using TorannMagic.Extensions;
 using UnityEngine;
 
 namespace TorannMagic
@@ -30,8 +31,8 @@ namespace TorannMagic
             if (this.verb.Ability.Def is TMAbilityDef)
             {
                 TMAbilityDef tmAbility = (TMAbilityDef)(this.verb.Ability.Def);
-                CompAbilityUserMight compMight = this.pawn.TryGetComp<CompAbilityUserMight>();
-                CompAbilityUserMagic compMagic = this.pawn.TryGetComp<CompAbilityUserMagic>();
+                CompAbilityUserMight compMight = this.pawn.GetCompAbilityUserMight();
+                CompAbilityUserMagic compMagic = this.pawn.GetCompAbilityUserMagic();
                 if (tmAbility.manaCost > 0 && pawn.story != null && pawn.story.traits != null && !pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
                 {
                     if (this.pawn.Map.gameConditionManager.ConditionIsActive(TorannMagicDefOf.TM_ManaStorm))
@@ -124,7 +125,7 @@ namespace TorannMagic
                     if (this.pawn.story != null && this.pawn.story.traits != null && this.pawn.story.traits.HasTrait(TorannMagicDefOf.ChaosMage) && Rand.Chance(.1f))
                     {
                         verb.Ability.PostAbilityAttempt();
-                        TM_Action.DoWildSurge(this.pawn, this.pawn.GetComp<CompAbilityUserMagic>(), (MagicAbility)verb.Ability, (TMAbilityDef)verb.Ability.Def, TargetA);
+                        TM_Action.DoWildSurge(this.pawn, this.pawn.GetCompAbilityUserMagic(), (MagicAbility)verb.Ability, (TMAbilityDef)verb.Ability.Def, TargetA);
                         EndJobWith(JobCondition.InterruptForced);
                     }
                 }

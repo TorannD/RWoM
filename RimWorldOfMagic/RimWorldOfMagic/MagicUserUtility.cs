@@ -1,4 +1,5 @@
-﻿using Verse;
+﻿using TorannMagic.Extensions;
+using Verse;
 
 namespace TorannMagic
 {
@@ -7,7 +8,7 @@ namespace TorannMagic
         public static Need_Mana GetMana(Pawn pawn)
         {
             CompAbilityUserMagic comp;
-            bool flag = (comp = pawn.GetComp<CompAbilityUserMagic>()) != null;
+            bool flag = (comp = pawn.GetCompAbilityUserMagic()) != null;
             Need_Mana result;
             if (flag)
             {
@@ -23,7 +24,7 @@ namespace TorannMagic
         public static CompAbilityUserMagic GetMagicUser(Pawn pawn)
         {
             CompAbilityUserMagic comp;
-            bool flag = (comp = pawn.GetComp<CompAbilityUserMagic>()) != null;
+            bool flag = (comp = pawn.GetCompAbilityUserMagic()) != null;
             CompAbilityUserMagic result;
             if (flag)
             {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using AbilityUser;
+using TorannMagic.Extensions;
 using Verse;
 using UnityEngine;
 
@@ -38,9 +39,9 @@ namespace TorannMagic
         {
 
             Pawn caster = this.CasterPawn;
-            CompAbilityUserMagic comp = caster.GetComp<CompAbilityUserMagic>();
-            MagicPowerSkill ver = caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_ConsumeCorpse.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_ConsumeCorpse_ver");
-            MagicPowerSkill manaRegen = caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_global_regen.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_global_regen_pwr");
+            CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
+            MagicPowerSkill ver = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_ConsumeCorpse.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_ConsumeCorpse_ver");
+            MagicPowerSkill manaRegen = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_global_regen.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_global_regen_pwr");
 
             Thing undeadThing = this.currentTarget.Thing;
             if (undeadThing is Pawn)

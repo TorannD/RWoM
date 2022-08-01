@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TorannMagic.Extensions;
 using Verse;
 using Verse.AI;
 
@@ -12,12 +13,12 @@ namespace TorannMagic
     {
         public override float GetPriority(Pawn pawn)
         {
-            CompAbilityUserMagic magicComp = pawn.TryGetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic magicComp = pawn.GetCompAbilityUserMagic();
             if(magicComp != null)// && magicComp.AIAbilityJob != null)
             {
                 return 100f;
             }
-            CompAbilityUserMight mightComp = pawn.TryGetComp<CompAbilityUserMight>();
+            CompAbilityUserMight mightComp = pawn.GetCompAbilityUserMight();
             if(mightComp != null && false)
             {
 
@@ -27,14 +28,14 @@ namespace TorannMagic
 
         protected override Job TryGiveJob(Pawn pawn)
         {
-            CompAbilityUserMagic magicComp = pawn.TryGetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic magicComp = pawn.GetCompAbilityUserMagic();
             if (magicComp != null)// && magicComp.AIAbilityJob != null)
             {
                 Log.Message("giving ai job");
                 pawn.jobs.debugLog = true;
                 return null;
             }
-            CompAbilityUserMight mightComp = pawn.TryGetComp<CompAbilityUserMight>();
+            CompAbilityUserMight mightComp = pawn.GetCompAbilityUserMight();
             if (mightComp != null && false)
             {
 

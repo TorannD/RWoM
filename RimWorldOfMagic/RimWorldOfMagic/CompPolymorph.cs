@@ -5,6 +5,7 @@ using System.Linq;
 using UnityEngine;
 using Verse;
 using AbilityUser;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -66,7 +67,7 @@ namespace TorannMagic
         {
             get
             {                
-                return spawner.GetComp<CompAbilityUserMagic>();
+                return spawner.GetCompAbilityUserMagic();
             }
         }
 

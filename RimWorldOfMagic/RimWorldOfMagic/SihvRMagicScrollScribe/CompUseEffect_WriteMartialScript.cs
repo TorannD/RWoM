@@ -1,6 +1,7 @@
 ﻿using RimWorld;
 using Verse;
 using System.Collections.Generic;
+using TorannMagic.Extensions;
 using UnityEngine;
 using TorannMagic.TMDefs;
 
@@ -16,7 +17,7 @@ namespace TorannMagic.SihvRMagicScrollScribe
             Map map = parent.Map;
             List<TMDefs.TM_CustomClass> cFighters = TM_ClassUtility.CustomFighterClasses;
             
-            CompAbilityUserMight comp = user.TryGetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = user.GetCompAbilityUserMight();
             if (parent.def != null && comp != null && user.IsSlave)
             {
                 Messages.Message("TM_SlaveScribeFail".Translate(

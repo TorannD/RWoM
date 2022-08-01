@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
 using HarmonyLib;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -56,7 +57,7 @@ namespace TorannMagic
         private void Initialize()
         {
             bool spawned = base.Pawn.Spawned;
-            CompAbilityUserMight comp = this.Pawn.GetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = this.Pawn.GetCompAbilityUserMight();
             if (spawned && comp != null && comp.IsMightUser)
             {
                 pwrVal = comp.MightData.MightPowerSkill_Nightshade.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Nightshade_pwr").level;

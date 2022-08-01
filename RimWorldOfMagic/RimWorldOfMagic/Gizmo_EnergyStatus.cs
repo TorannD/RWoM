@@ -5,6 +5,7 @@ using System.Text;
 using Verse;
 using UnityEngine;
 using RimWorld;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -41,8 +42,8 @@ namespace TorannMagic
         {
             if (!pawn.DestroyedOrNull() && !pawn.Dead)
             {
-                CompAbilityUserMagic compMagic = pawn.GetComp<CompAbilityUserMagic>();
-                CompAbilityUserMight compMight = pawn.GetComp<CompAbilityUserMight>();
+                CompAbilityUserMagic compMagic = pawn.GetCompAbilityUserMagic();
+                CompAbilityUserMight compMight = pawn.GetCompAbilityUserMight();
 
                 bool isMage = compMagic.IsMagicUser && !pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless);
                 bool isFighter = compMight.IsMightUser;

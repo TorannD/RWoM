@@ -2,6 +2,7 @@
 using RimWorld;
 using System.Linq;
 using System.Text;
+using TorannMagic.Extensions;
 
 namespace TorannMagic.Enchantment
 {
@@ -94,8 +95,8 @@ namespace TorannMagic.Enchantment
             }
             if(Find.TickManager.TicksGame % 120 == 0)
             {
-                compMagic = this.Pawn.GetComp<CompAbilityUserMagic>();
-                compMight = this.Pawn.GetComp<CompAbilityUserMight>();
+                compMagic = this.Pawn.GetCompAbilityUserMagic();
+                compMight = this.Pawn.GetCompAbilityUserMight();
                 DetermineEnchantments();
             }
             if(Find.TickManager.TicksGame % 480 == 0 && this.enchantment == "unknown")

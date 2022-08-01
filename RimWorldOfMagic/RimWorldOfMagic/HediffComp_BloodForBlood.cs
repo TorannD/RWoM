@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using HarmonyLib;
+using TorannMagic.Extensions;
 
 namespace TorannMagic
 {
@@ -55,7 +56,7 @@ namespace TorannMagic
         private void Initialize()
         {
             bool spawned = base.Pawn.Spawned;
-            CompAbilityUserMagic comp = this.linkedPawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = this.linkedPawn.GetCompAbilityUserMagic();
             if(TM_Calc.GetBloodLossTypeDef(this.Pawn.health.hediffSet.hediffs) == null)
             {
                 HealthUtility.AdjustSeverity(this.Pawn, HediffDefOf.BloodLoss, .05f);
