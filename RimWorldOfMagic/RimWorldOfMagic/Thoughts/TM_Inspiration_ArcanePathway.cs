@@ -22,10 +22,11 @@ namespace TorannMagic.Thoughts
         {
             get
             {
-                TaggedString taggedString = def.beginLetter.Formatted(pawn.LabelShortCap, TM_Data.EnabledMagicTraits[mageIndex].degreeDatas[TM_Data.EnabledMagicTraits[mageIndex].degreeDatas.FirstOrDefault().degree].label).AdjustedFor(pawn);
+                TraitDef traitDef = TM_Data.EnabledMagicTraits[mageIndex];
+                TaggedString taggedString = def.beginLetter.Formatted(pawn.LabelShortCap, traitDef.degreeDatas[0].label).AdjustedFor(pawn);
                 if (!string.IsNullOrWhiteSpace(reason))
                 {
-                    taggedString = reason.Formatted(pawn.LabelCap, TM_Data.EnabledMagicTraits[mageIndex].degreeDatas[0].LabelCap, pawn.Named("PAWN")).AdjustedFor(pawn) + "\n\n" + taggedString;
+                    taggedString = reason.Formatted(pawn.LabelCap, traitDef.degreeDatas[0].LabelCap, pawn.Named("PAWN")).AdjustedFor(pawn) + "\n\n" + taggedString;
                 }
                 return taggedString;
             }
