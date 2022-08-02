@@ -2734,17 +2734,17 @@ namespace TorannMagic
                         i--;
                         hasFighterTrait = true;
                     }
-                    for (int j = 0; j < TM_ClassUtility.CustomClasses().Count; j++)
+                    for (int j = 0; j < TM_ClassUtility.CustomClasses.Count; j++)
                     {
-                        if (TM_ClassUtility.CustomClasses()[j].classTrait == pawnTraits[i].def)
+                        if (TM_ClassUtility.CustomClasses[j].classTrait == pawnTraits[i].def)
                         {
                             pawnTraits.Remove(pawnTraits[i]);
                             i--;
-                            if (TM_ClassUtility.CustomClasses()[j].isFighter)
+                            if (TM_ClassUtility.CustomClasses[j].isFighter)
                             {
                                 hasFighterTrait = true;
                             }
-                            if (TM_ClassUtility.CustomClasses()[j].isMage)
+                            if (TM_ClassUtility.CustomClasses[j].isMage)
                             {
                                 hasMagicTrait = true;
                             }

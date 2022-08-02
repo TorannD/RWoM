@@ -1498,14 +1498,14 @@ namespace TorannMagic
                     this.customIndex = TM_ClassUtility.IsCustomClassIndex(this.Pawn.story.traits.allTraits);
                     if (this.customIndex >= 0)
                     {
-                        if (!TM_ClassUtility.CustomClasses()[this.customIndex].isMage)
+                        if (!TM_ClassUtility.CustomClasses[this.customIndex].isMage)
                         {
                             this.customIndex = -1;
                             return false;
                         }
                         else
                         {
-                            this.customClass = TM_ClassUtility.CustomClasses()[this.customIndex];
+                            this.customClass = TM_ClassUtility.CustomClasses[this.customIndex];
                             return true;
                         }
                     }
@@ -8046,9 +8046,9 @@ namespace TorannMagic
                 int index = TM_ClassUtility.IsCustomClassIndex(abilityUser.story.traits.allTraits);
                 if (index >= 0)
                 {                    
-                    if (TM_ClassUtility.CustomClasses()[index].isMage)
+                    if (TM_ClassUtility.CustomClasses[index].isMage)
                     {
-                        this.customClass = TM_ClassUtility.CustomClasses()[index];
+                        this.customClass = TM_ClassUtility.CustomClasses[index];
                         this.customIndex = index;
                         for (int i = 0; i < this.customClass.classMageAbilities.Count; i++)
                         {                            

@@ -14,39 +14,39 @@ namespace TorannMagic
             if (parent.def != null)
             {
                 bool customClass = false;
-                for(int i = 0; i < TM_ClassUtility.CustomClasses().Count; i++)
+                for(int i = 0; i < TM_ClassUtility.CustomClasses.Count; i++)
                 {
-                    if ((TM_ClassUtility.CustomClasses()[i].isMage && user.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted)) || (TM_ClassUtility.CustomClasses()[i].isMage && TM_ClassUtility.CustomClasses()[i].isFighter && (user.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted) || user.story.traits.HasTrait(TorannMagicDefOf.PhysicalProdigy))))
+                    if ((TM_ClassUtility.CustomClasses[i].isMage && user.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted)) || (TM_ClassUtility.CustomClasses[i].isMage && TM_ClassUtility.CustomClasses[i].isFighter && (user.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted) || user.story.traits.HasTrait(TorannMagicDefOf.PhysicalProdigy))))
                     {
-                        if (parent.def == TM_ClassUtility.CustomClasses()[i].tornScript || parent.def == TM_ClassUtility.CustomClasses()[i].fullScript)
+                        if (parent.def == TM_ClassUtility.CustomClasses[i].tornScript || parent.def == TM_ClassUtility.CustomClasses[i].fullScript)
                         {
                             customClass = true;
-                            if (parent.def == TM_ClassUtility.CustomClasses()[i].fullScript)
+                            if (parent.def == TM_ClassUtility.CustomClasses[i].fullScript)
                             {
                                 HealthUtility.AdjustSeverity(user, TorannMagicDefOf.TM_Uncertainty, 0.2f);
                             }
 
-                            ApplyTrait(user, TM_ClassUtility.CustomClasses()[i].classTrait, TM_ClassUtility.CustomClasses()[i].traitDegree);
+                            ApplyTrait(user, TM_ClassUtility.CustomClasses[i].classTrait, TM_ClassUtility.CustomClasses[i].traitDegree);
                             
                             //Unique actions hook
-                            ApplyTraitAdjustments(user, TM_ClassUtility.CustomClasses()[i].classTrait);
+                            ApplyTraitAdjustments(user, TM_ClassUtility.CustomClasses[i].classTrait);
                             //
                             this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                             CompAbilityUserMagic comp = user.TryGetComp<CompAbilityUserMagic>();
                             if (comp != null)
                             {
                                 comp.customIndex = i;
-                                comp.customClass = TM_ClassUtility.CustomClasses()[i];
+                                comp.customClass = TM_ClassUtility.CustomClasses[i];
                             }
                             else
                             {
                                 Log.Message("failed to initialize custom magic class comp");
                             }
                             CompAbilityUserMight mComp = user.TryGetComp<CompAbilityUserMight>();
-                            if (mComp != null && TM_ClassUtility.CustomClasses()[i].isFighter)
+                            if (mComp != null && TM_ClassUtility.CustomClasses[i].isFighter)
                             {
                                 mComp.customIndex = i;
-                                mComp.customClass = TM_ClassUtility.CustomClasses()[i];
+                                mComp.customClass = TM_ClassUtility.CustomClasses[i];
                             }
                             break;
                         }

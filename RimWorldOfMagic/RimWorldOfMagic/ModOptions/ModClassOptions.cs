@@ -13,10 +13,11 @@ namespace TorannMagic.ModOptions
     {
         public ModClassOptions(ModContentPack mcp) : base(mcp)
         {
-            LongEventHandler.ExecuteWhenFinished(new Action(ModClassOptions.CheckForDisabledCustomClass));
-            LongEventHandler.ExecuteWhenFinished(new Action(ModClassOptions.RestrictClasses));
-            LongEventHandler.ExecuteWhenFinished(new Action(ModClassOptions.InitializeFactionSettings));
-            LongEventHandler.ExecuteWhenFinished(new Action(ModClassOptions.InitializeCustomClassActions));
+            LongEventHandler.ExecuteWhenFinished(TM_ClassUtility.LoadCustomClasses);
+            LongEventHandler.ExecuteWhenFinished(CheckForDisabledCustomClass);
+            LongEventHandler.ExecuteWhenFinished(RestrictClasses);
+            LongEventHandler.ExecuteWhenFinished(InitializeFactionSettings);
+            LongEventHandler.ExecuteWhenFinished(InitializeCustomClassActions);
         }
 
         private static void InitializeFactionSettings()
@@ -31,9 +32,9 @@ namespace TorannMagic.ModOptions
                 Settings.Instance.CustomClass = new Dictionary<string, bool>();
                 Settings.Instance.CustomClass.Clear();
             }
-            for (int i = 0; i < TM_ClassUtility.CustomClasses().Count; i++)
+            for (int i = 0; i < TM_ClassUtility.CustomClasses.Count; i++)
             {
-                TMDefs.TM_CustomClass customClass = TM_ClassUtility.CustomClasses()[i];
+                TMDefs.TM_CustomClass customClass = TM_ClassUtility.CustomClasses[i];
                 if(!Settings.Instance.CustomClass.Keys.Contains(customClass.classTrait.ToString()))
                 {
                     Settings.Instance.CustomClass.Add(customClass.classTrait.ToString(), true);
@@ -47,9 +48,9 @@ namespace TorannMagic.ModOptions
             List<TraitDef> customTraits = new List<TraitDef>();
             customTraits.Clear();
             const string customIconType = "TM_Icon_Custom";
-            for (int i = 0; i < TM_ClassUtility.CustomClasses().Count; i++)
+            for (int i = 0; i < TM_ClassUtility.CustomClasses.Count; i++)
             {
-                TMDefs.TM_CustomClass customClass = TM_ClassUtility.CustomClasses()[i];
+                TMDefs.TM_CustomClass customClass = TM_ClassUtility.CustomClasses[i];
                 if (customTraits.Contains(customClass.classTrait))
                 {
                     Log.Warning($"RimWorld of Magic trait {customClass.classTrait} already added. This is likely a naming conflict between mods.");
