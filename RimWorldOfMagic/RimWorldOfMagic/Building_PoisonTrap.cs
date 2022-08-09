@@ -11,15 +11,8 @@ using Verse.AI.Group;
 namespace TorannMagic
 {
     [StaticConstructorOnStartup]
-    public class Building_PoisonTrap : Building
+    public class Building_PoisonTrap : Building_ExplosiveProximityTrap
     {
-        private List<Pawn> touchingPawns = new List<Pawn>();
-
-        private const float KnowerSpringChance = 0.004f;
-        private const ushort KnowerPathFindCost = 800;
-        private const ushort KnowerPathWalkCost = 30;
-        private const float AnimalSpringChanceFactor = 0.1f;
-
         int age = -1;
         int duration = 480;
         int strikeDelay = 40;
@@ -34,14 +27,6 @@ namespace TorannMagic
 
         private static readonly Material trap_rearming = MaterialPool.MatFrom("Other/PoisonTrap_rearming");
         private static readonly MaterialPropertyBlock MatPropertyBlock = new MaterialPropertyBlock();
-
-        public virtual bool Armed
-        {
-            get
-            {
-                return true;
-            }
-        }
 
         public override void ExposeData()
         {
@@ -62,7 +47,7 @@ namespace TorannMagic
             if (rearming)
             {
                 Matrix4x4 matrix = default(Matrix4x4);
-                matrix.SetTRS(this.DrawPos, Quaternion.identity, new Vector3(1f, 1f, 1f));   //drawer for beam
+                matrix.SetTRS(DrawPos, Quaternion.identity, new Vector3(1f, 1f, 1f));   //drawer for beam
                 Graphics.DrawMesh(MeshPool.plane10, matrix, Building_PoisonTrap.trap_rearming, 0, null, 0, Building_PoisonTrap.MatPropertyBlock);
             }
             else
@@ -73,25 +58,25 @@ namespace TorannMagic
 
         public override void Tick()
         {
-            if (this.triggered)
+            if (triggered)
             {
-                if(this.age >= this.lastStrike + this.strikeDelay)
+                if(age >= lastStrike + strikeDelay)
                 {
                     try
                     {
                         IntVec3 curCell;
-                        IEnumerable<IntVec3> targets = GenRadial.RadialCellsAround(base.Position, this.radius, true);
+                        IEnumerable<IntVec3> targets = GenRadial.RadialCellsAround(Position, radius, true);
                         for (int i = 0; i < targets.Count(); i++)
                         {
-                            curCell = targets.ToArray<IntVec3>()[i];
+                            curCell = targets.ToArray()[i];
 
-                            if (curCell.InBoundsWithNullCheck(base.Map) && curCell.IsValid)
+                            if (curCell.InBoundsWithNullCheck(Map) && curCell.IsValid)
                             {
-                                Pawn victim = curCell.GetFirstPawn(base.Map);
+                                Pawn victim = curCell.GetFirstPawn(Map);
                                 if (victim != null && !victim.Dead && victim.RaceProps.IsFlesh)
                                 {
                                     BodyPartRecord bpr = null;
-                                    bpr = victim.def.race.body.AllParts.InRandomOrder().FirstOrDefault<BodyPartRecord>((BodyPartRecord x) => x.def.tags.Contains(BodyPartTagDefOf.BreathingSource));
+                                    bpr = victim.def.race.body.AllParts.InRandomOrder().FirstOrDefault(x => x.def.tags.Contains(BodyPartTagDefOf.BreathingSource));
                                     TM_Action.DamageEntities(victim, bpr, Rand.Range(1f, 2f), 2f, TMDamageDefOf.DamageDefOf.TM_Poison, this);
                                 }
                             }
@@ -100,12 +85,12 @@ namespace TorannMagic
                     catch
                     {
                         Log.Message("Debug: poison trap failed to process triggered event - terminating poison trap");
-                        this.Destroy(DestroyMode.Vanish);
+                        Destroy();
                     }
-                    this.lastStrike = this.age;
+                    lastStrike = age;
                 }
-                this.age++;
-                if(this.age > this.duration)
+                age++;
+                if(age > duration)
                 {
                     CheckForAgent();
                     if(destroyAfterUse)
@@ -114,19 +99,19 @@ namespace TorannMagic
                     }
                     else
                     {
-                        this.age = 0;
+                        age = 0;
                         triggered = false;
                         rearming = true;
-                        this.lastStrike = 0;
+                        lastStrike = 0;
                     }
                 }
             }
             else if(rearming)
             {
-                this.age++;
-                if(this.age > this.ticksTillReArm)
+                age++;
+                if(age > ticksTillReArm)
                 {
-                    this.age = 0;
+                    age = 0;
                     rearming = false;
                     triggered = false;
                 }
@@ -135,41 +120,41 @@ namespace TorannMagic
             {
                 try
                 { 
-                    if (this.Armed)
+                    if (Armed)
                     {
                         IntVec3 curCell;
                         IEnumerable<IntVec3> targets = GenRadial.RadialCellsAround(base.Position, 2, true);
                         for (int i = 0; i < targets.Count(); i++)
                         {
-                            curCell = targets.ToArray<IntVec3>()[i];
+                            curCell = targets.ToArray()[i];
                             List<Thing> thingList = curCell.GetThingList(base.Map);
                             for (int j = 0; j < thingList.Count; j++)
                             {
                                 Pawn pawn = thingList[j] as Pawn;
-                                if (pawn != null && !this.touchingPawns.Contains(pawn))
+                                if (pawn != null && !touchingPawns.Contains(pawn))
                                 {
-                                    if (!pawn.RaceProps.Animal && pawn.Faction != null && pawn.Faction != this.Faction && pawn.HostileTo(this.Faction))
+                                    if (!pawn.RaceProps.Animal && pawn.Faction != null && pawn.Faction != Faction && pawn.HostileTo(Faction))
                                     {
-                                        this.touchingPawns.Add(pawn);
-                                        this.CheckSpring(pawn);
+                                        touchingPawns.Add(pawn);
+                                        CheckSpring(pawn);
                                     }
                                 }
                             }
                         }
                     }
-                    for (int j = 0; j < this.touchingPawns.Count; j++)
+                    for (int j = 0; j < touchingPawns.Count; j++)
                     {
-                        Pawn pawn2 = this.touchingPawns[j];
+                        Pawn pawn2 = touchingPawns[j];
                         if (!pawn2.Spawned || pawn2.Position != base.Position)
                         {
-                            this.touchingPawns.Remove(pawn2);
+                            touchingPawns.Remove(pawn2);
                         }
                     }
                 }
                 catch
                 {
                     Log.Message("Debug: poison trap failed to process armed event - terminating poison trap");
-                    this.Destroy(DestroyMode.Vanish);
+                    Destroy();
                 }
             }
             base.Tick();
@@ -177,55 +162,45 @@ namespace TorannMagic
 
         private void CheckForAgent()
         {
-            this.destroyAfterUse = true;
-            List<Pawn> pList = this.Map.mapPawns.AllPawnsSpawned;
+            destroyAfterUse = true;
+            List<Pawn> pList = Map.mapPawns.AllPawnsSpawned;
             if (pList != null && pList.Count > 0)
             {
                 for (int i = 0; i < pList.Count; i++)
                 {
                     Pawn p = pList[i];
                     CompAbilityUserMight comp = p.GetCompAbilityUserMight();
-                    if(comp != null && comp.combatItems != null && comp.combatItems.Count > 0)
+                    if(comp?.combatItems != null && comp.combatItems.Count > 0)
                     {
                         if(comp.combatItems.Contains(this))
                         {
-                            this.destroyAfterUse = false;
+                            destroyAfterUse = false;
                         }
                     }
                 }
             }
         }
 
-        private void CheckSpring(Pawn p)
+        protected override void CheckSpring(Pawn p)
         {
-            if (Rand.Value < this.SpringChance(p))
-            {
-                this.Spring(p);
-                //if (p.Faction == Faction.OfPlayer || p.HostFaction == Faction.OfPlayer)
-                //{
-                //    Find.LetterStack.ReceiveLetter("LetterFriendlyTrapSprungLabel".Translate(
-                //        p.LabelShort
-                //    ), "LetterFriendlyTrapSprung".Translate(
-                //        p.LabelShort
-                //    ), LetterDefOf.NegativeEvent, new TargetInfo(base.Position, base.Map, false), null);
-                //}
-            }
+            if (Rand.Value < SpringChance(p))
+                Spring(p);
         }
 
-        public void Spring(Pawn p)
+        public override void Spring(Pawn p)
         {
             SoundDef.Named("DeadfallSpring").PlayOneShot(new TargetInfo(base.Position, base.Map, false));
             fog = TorannMagicDefOf.Fog_Poison;
-            fog.gas.expireSeconds.min = this.duration / 60;
-            fog.gas.expireSeconds.max = this.duration / 60;
-            GenExplosion.DoExplosion(base.Position, base.Map, this.radius, TMDamageDefOf.DamageDefOf.TM_Poison, this, 0, 0, SoundDef.Named("TinyBell"), def, null, null, fog, 1f, 1, false, null, 0f, 0, 0.0f, false);
-            this.triggered = true;
+            fog.gas.expireSeconds.min = duration / 60;
+            fog.gas.expireSeconds.max = duration / 60;
+            GenExplosion.DoExplosion(Position, Map, radius, TMDamageDefOf.DamageDefOf.TM_Poison, this, 0, 0, SoundDef.Named("TinyBell"), def, null, null, fog, 1f, 1, false, null, 0f, 0, 0.0f, false);
+            triggered = true;
         }
 
-        protected virtual float SpringChance(Pawn p)
+        protected override float SpringChance(Pawn p)
         {
             float num;
-            if (this.KnowsOfTrap(p))
+            if (KnowsOfTrap(p))
             {
                 num = 0.8f;
             }
@@ -241,9 +216,9 @@ namespace TorannMagic
             return Mathf.Clamp01(num);
         }
 
-        public bool KnowsOfTrap(Pawn p)
+        public new bool KnowsOfTrap(Pawn p)
         {
-            if (p.Faction != null && !p.Faction.HostileTo(base.Faction))
+            if (p.Faction != null && !p.Faction.HostileTo(Faction))
             {
                 return true;
             }
@@ -256,67 +231,12 @@ namespace TorannMagic
                 return true;
             }
             Lord lord = p.GetLord();
-            return p.RaceProps.Humanlike && lord != null && lord.LordJob is LordJob_FormAndSendCaravan;
-        }
-
-        public override ushort PathFindCostFor(Pawn p)
-        {
-            if (!this.Armed)
-            {
-                return 0;
-            }
-            if (this.KnowsOfTrap(p))
-            {
-                return 800;
-            }
-            return 0;
-        }
-
-        public override ushort PathWalkCostFor(Pawn p)
-        {
-            if (!this.Armed)
-            {
-                return 0;
-            }
-            if (this.KnowsOfTrap(p))
-            {
-                return 30;
-            }
-            return 0;
+            return p.RaceProps.Humanlike && lord?.LordJob is LordJob_FormAndSendCaravan;
         }
 
         public override bool IsDangerousFor(Pawn p)
         {
-            return this.Armed && this.KnowsOfTrap(p);
-        }
-
-        public override string GetInspectString()
-        {
-            string text = base.GetInspectString();
-            if (!text.NullOrEmpty())
-            {
-                text += "\n";
-            }
-            if (this.Armed)
-            {
-                text += "Trap Armed";
-            }
-            else
-            {
-                text += "Trap Not Armed";
-            }
-            return text;
-        }        
-
-        public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
-        {
-            Map map = base.Map;
-            base.Destroy(mode);
-            InstallBlueprintUtility.CancelBlueprintsFor(this);
-            if (mode == DestroyMode.Deconstruct)
-            {
-                SoundDef.Named("Building_Deconstructed").PlayOneShot(new TargetInfo(base.Position, map, false));
-            }
+            return Armed && KnowsOfTrap(p);
         }
     }
 }
