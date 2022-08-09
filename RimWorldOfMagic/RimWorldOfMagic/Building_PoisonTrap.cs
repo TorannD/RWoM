@@ -197,39 +197,23 @@ namespace TorannMagic
             triggered = true;
         }
 
-        protected override float SpringChance(Pawn p)
+        protected override float UnclampedSpringChance(Pawn p)
         {
-            float num;
-            if (KnowsOfTrap(p))
-            {
-                num = 0.8f;
-            }
-            else
-            {
-                num = this.GetStatValue(StatDefOf.TrapSpringChance, true);
-            }
-            num *= GenMath.LerpDouble(0.4f, 0.8f, 0f, 1f, p.BodySize);
+            float num = base.UnclampedSpringChance(p);
             if (p.RaceProps.Animal)
-            {
                 num *= 0.1f;
-            }
-            return Mathf.Clamp01(num);
+            return num;
         }
 
         public new bool KnowsOfTrap(Pawn p)
         {
-            if (p.Faction != null && !p.Faction.HostileTo(Faction))
-            {
+            if (
+                p.Faction != null && !p.Faction.HostileTo(Faction)
+                || p.Faction == null && p.RaceProps.Animal && !p.InAggroMentalState
+                || p.guest != null && p.guest.Released
+            )
                 return true;
-            }
-            if (p.Faction == null && p.RaceProps.Animal && !p.InAggroMentalState)
-            {
-                return true;
-            }
-            if (p.guest != null && p.guest.Released)
-            {
-                return true;
-            }
+
             Lord lord = p.GetLord();
             return p.RaceProps.Humanlike && lord?.LordJob is LordJob_FormAndSendCaravan;
         }

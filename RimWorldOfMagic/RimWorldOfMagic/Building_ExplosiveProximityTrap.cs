@@ -120,44 +120,31 @@ namespace TorannMagic
             trapSprung = true;
         }
 
+        // Helper function to allow overriding SpringChance BEFORE Mathf.Clamp01 is called on it.
+        protected virtual float UnclampedSpringChance(Pawn p)
+        {
+            float num = KnowsOfTrap(p) ? 0.8f : this.GetStatValue(StatDefOf.TrapSpringChance, true);
+            num *= GenMath.LerpDouble(0.4f, 0.8f, 0f, 1f, p.BodySize);
+            return num;
+        }
+
         protected override float SpringChance(Pawn p)
         {
-            float num;
-            if (KnowsOfTrap(p))
-            {
-                num = 0.8f;
-            }
-            else
-            {
-                num = this.GetStatValue(StatDefOf.TrapSpringChance, true);
-            }
-            num *= GenMath.LerpDouble(0.4f, 0.8f, 0f, 1f, p.BodySize);
+            float num = UnclampedSpringChance(p);
             return Mathf.Clamp01(num);
         }
 
         public override ushort PathFindCostFor(Pawn p)
         {
-            if (!Armed)
-            {
-                return 0;
-            }
-            if (KnowsOfTrap(p))
-            {
+            if (Armed && KnowsOfTrap(p))
                 return 800;
-            }
             return 0;
         }
 
         public override ushort PathWalkCostFor(Pawn p)
         {
-            if (!Armed)
-            {
-                return 0;
-            }
-            if (KnowsOfTrap(p))
-            {
+            if (Armed && KnowsOfTrap(p))
                 return 50;
-            }
             return 0;
         }
 
