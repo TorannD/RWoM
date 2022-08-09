@@ -1,19 +1,13 @@
-﻿using System;
-using RimWorld;
+﻿using RimWorld;
 using Verse;
 using Verse.Sound;
-using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
-using Verse.AI;
-using Verse.AI.Group;
 
 namespace TorannMagic
 {
     public class Building_LightningTrap : Building_ExplosiveProximityTrap
     {
-        public bool extendedTrap = false;
-        public bool iceTrap = false;
+        public bool extendedTrap;
+        public bool iceTrap;
 
         public override void ExposeData()
         {
@@ -41,11 +35,11 @@ namespace TorannMagic
                     def = TorannMagicDefOf.FlyingObject_LightningTrap
                 };
                 FlyingObject_LightningTrap flyingObject = (FlyingObject_LightningTrap)GenSpawn.Spawn(TorannMagicDefOf.FlyingObject_LightningTrap, Position, Map);
-                flyingObject.Launch(p, this.Position.ToVector3Shifted(), t.Cell, eyeThing, this.Faction, null, speed);
+                flyingObject.Launch(p, Position.ToVector3Shifted(), t.Cell, eyeThing, Faction, null, speed);
             }
             if(iceTrap)
             {
-                AddSnowRadial(this.Position, this.Map, 6, 1.1f);
+                AddSnowRadial(Position, Map, 6, 1.1f);
             }
         }
 
@@ -55,24 +49,22 @@ namespace TorannMagic
             for (int i = 0; i < num; i++)
             {
                 IntVec3 intVec = center + GenRadial.RadialPattern[i];
-                if (intVec.InBounds(map))
-                {
-                    float lengthHorizontal = (center - intVec).LengthHorizontal;
-                    float num2 = 1f - lengthHorizontal / radius;
-                    map.snowGrid.AddDepth(intVec, num2 * depth);
+                if (!intVec.InBounds(map)) continue;
 
-                }
+                float lengthHorizontal = (center - intVec).LengthHorizontal;
+                float num2 = 1f - lengthHorizontal / radius;
+                map.snowGrid.AddDepth(intVec, num2 * depth);
             }
         }
 
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
         {
-            Map map = base.Map;
+            Map map = Map;
             base.Destroy(mode);
             InstallBlueprintUtility.CancelBlueprintsFor(this);
             if (mode == DestroyMode.Deconstruct)
             {
-                SoundDef.Named("Building_Deconstructed").PlayOneShot(new TargetInfo(base.Position, map, false));
+                SoundDef.Named("Building_Deconstructed").PlayOneShot(new TargetInfo(Position, map));
             }
         }
     }

@@ -1,11 +1,9 @@
-﻿using System;
-using RimWorld;
+﻿using RimWorld;
 using Verse;
 using Verse.Sound;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using Verse.AI;
 using Verse.AI.Group;
 
 namespace TorannMagic
@@ -13,17 +11,17 @@ namespace TorannMagic
     [StaticConstructorOnStartup]
     public class Building_PoisonTrap : Building_ExplosiveProximityTrap
     {
-        int age = -1;
-        int duration = 480;
-        int strikeDelay = 40;
-        int lastStrike = 0;
-        bool triggered = false;
-        float radius = 3f;
-        int ticksTillReArm = 15000;
-        bool rearming = false;
-        ThingDef fog;
+        private int age = -1;
+        private int duration = 480;
+        private int strikeDelay = 40;
+        private int lastStrike;
+        private bool triggered;
+        private const float radius = 3f;
+        private const int ticksTillReArm = 15000;
+        private bool rearming;
+        private ThingDef fog;
 
-        public bool destroyAfterUse = false;
+        public bool destroyAfterUse;
 
         private static readonly Material trap_rearming = MaterialPool.MatFrom("Other/PoisonTrap_rearming");
         private static readonly MaterialPropertyBlock MatPropertyBlock = new MaterialPropertyBlock();
@@ -48,7 +46,7 @@ namespace TorannMagic
             {
                 Matrix4x4 matrix = default(Matrix4x4);
                 matrix.SetTRS(DrawPos, Quaternion.identity, new Vector3(1f, 1f, 1f));   //drawer for beam
-                Graphics.DrawMesh(MeshPool.plane10, matrix, Building_PoisonTrap.trap_rearming, 0, null, 0, Building_PoisonTrap.MatPropertyBlock);
+                Graphics.DrawMesh(MeshPool.plane10, matrix, trap_rearming, 0, null, 0, MatPropertyBlock);
             }
             else
             {
@@ -182,11 +180,11 @@ namespace TorannMagic
 
         public override void Spring(Pawn p)
         {
-            SoundDef.Named("DeadfallSpring").PlayOneShot(new TargetInfo(base.Position, base.Map, false));
+            SoundDef.Named("DeadfallSpring").PlayOneShot(new TargetInfo(Position, Map));
             fog = TorannMagicDefOf.Fog_Poison;
             fog.gas.expireSeconds.min = duration / 60;
             fog.gas.expireSeconds.max = duration / 60;
-            GenExplosion.DoExplosion(Position, Map, radius, TMDamageDefOf.DamageDefOf.TM_Poison, this, 0, 0, SoundDef.Named("TinyBell"), def, null, null, fog, 1f, 1, false, null, 0f, 0, 0.0f, false);
+            GenExplosion.DoExplosion(Position, Map, radius, TMDamageDefOf.DamageDefOf.TM_Poison, this, 0, 0, SoundDef.Named("TinyBell"), def, null, null, fog, 1f, 1, false, null, 0f, 0);
             triggered = true;
         }
 
