@@ -1,12 +1,8 @@
-﻿using System;
-using RimWorld;
+﻿using RimWorld;
 using Verse;
 using Verse.Sound;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using Verse.AI;
-using Verse.AI.Group;
 
 namespace TorannMagic
 {
@@ -20,7 +16,7 @@ namespace TorannMagic
         private const float AnimalSpringChanceFactor = 0.1f;
 
         private int trapSpringDelay = 30;
-        private bool trapSprung = false;
+        private bool trapSprung;
 
         private Pawn trapPawn = new Pawn();
 
@@ -59,13 +55,7 @@ namespace TorannMagic
             }
         }
 
-        public bool Armed
-        {
-            get
-            {
-                return !trapSprung;
-            }
-        }
+        public bool Armed => !trapSprung;
 
         public override void Tick()
         {
@@ -109,13 +99,13 @@ namespace TorannMagic
                     p.LabelShort
                 ), "LetterFriendlyTrapSprung".Translate(
                     p.LabelShort
-                ), LetterDefOf.NegativeEvent, new TargetInfo(Position, Map, false), null);
+                ), LetterDefOf.NegativeEvent, new TargetInfo(Position, Map));
             }
         }
 
         public new virtual void Spring(Pawn p)
         {
-            SoundDefOf.EnergyShield_Broken.PlayOneShot(new TargetInfo(Position, Map, false));
+            SoundDefOf.EnergyShield_Broken.PlayOneShot(new TargetInfo(Position, Map));
             trapPawn = p;
             trapSprung = true;
         }
@@ -123,7 +113,7 @@ namespace TorannMagic
         // Helper function to allow overriding SpringChance BEFORE Mathf.Clamp01 is called on it.
         protected virtual float UnclampedSpringChance(Pawn p)
         {
-            float num = KnowsOfTrap(p) ? 0.8f : this.GetStatValue(StatDefOf.TrapSpringChance, true);
+            float num = KnowsOfTrap(p) ? 0.8f : this.GetStatValue(StatDefOf.TrapSpringChance);
             num *= GenMath.LerpDouble(0.4f, 0.8f, 0f, 1f, p.BodySize);
             return num;
         }
@@ -177,7 +167,7 @@ namespace TorannMagic
             InstallBlueprintUtility.CancelBlueprintsFor(this);
             if (mode == DestroyMode.Deconstruct)
             {
-                SoundDef.Named("Building_Deconstructed").PlayOneShot(new TargetInfo(Position, Map, false));
+                SoundDef.Named("Building_Deconstructed").PlayOneShot(new TargetInfo(Position, Map));
             }
         }
 
