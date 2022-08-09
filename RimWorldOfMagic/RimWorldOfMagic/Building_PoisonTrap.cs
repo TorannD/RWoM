@@ -64,22 +64,17 @@ namespace TorannMagic
                 {
                     try
                     {
-                        IntVec3 curCell;
                         IEnumerable<IntVec3> targets = GenRadial.RadialCellsAround(Position, radius, true);
-                        for (int i = 0; i < targets.Count(); i++)
+                        foreach (IntVec3 curCell in targets)
                         {
-                            curCell = targets.ToArray()[i];
+                            if (!curCell.InBoundsWithNullCheck(Map) || !curCell.IsValid) continue;
 
-                            if (curCell.InBoundsWithNullCheck(Map) && curCell.IsValid)
-                            {
-                                Pawn victim = curCell.GetFirstPawn(Map);
-                                if (victim != null && !victim.Dead && victim.RaceProps.IsFlesh)
-                                {
-                                    BodyPartRecord bpr = null;
-                                    bpr = victim.def.race.body.AllParts.InRandomOrder().FirstOrDefault(x => x.def.tags.Contains(BodyPartTagDefOf.BreathingSource));
-                                    TM_Action.DamageEntities(victim, bpr, Rand.Range(1f, 2f), 2f, TMDamageDefOf.DamageDefOf.TM_Poison, this);
-                                }
-                            }
+                            Pawn victim = curCell.GetFirstPawn(Map);
+                            if (victim == null || victim.Dead || !victim.RaceProps.IsFlesh) continue;
+
+                            BodyPartRecord bpr = victim.def.race.body.AllParts.InRandomOrder().FirstOrDefault(
+                                x => x.def.tags.Contains(BodyPartTagDefOf.BreathingSource));
+                            TM_Action.DamageEntities(victim, bpr, Rand.Range(1f, 2f), 2f, TMDamageDefOf.DamageDefOf.TM_Poison, this);
                         }
                     }
                     catch
@@ -122,30 +117,31 @@ namespace TorannMagic
                 { 
                     if (Armed)
                     {
-                        IntVec3 curCell;
-                        IEnumerable<IntVec3> targets = GenRadial.RadialCellsAround(base.Position, 2, true);
-                        for (int i = 0; i < targets.Count(); i++)
+                        IEnumerable<IntVec3> targets = GenRadial.RadialCellsAround(Position, 2, true);
+                        foreach (IntVec3 curCell in targets)
                         {
-                            curCell = targets.ToArray()[i];
-                            List<Thing> thingList = curCell.GetThingList(base.Map);
+                            List<Thing> thingList = curCell.GetThingList(Map);
                             for (int j = 0; j < thingList.Count; j++)
                             {
                                 Pawn pawn = thingList[j] as Pawn;
-                                if (pawn != null && !touchingPawns.Contains(pawn))
-                                {
-                                    if (!pawn.RaceProps.Animal && pawn.Faction != null && pawn.Faction != Faction && pawn.HostileTo(Faction))
-                                    {
-                                        touchingPawns.Add(pawn);
-                                        CheckSpring(pawn);
-                                    }
-                                }
+                                if (
+                                    pawn == null
+                                    || pawn.RaceProps.Animal
+                                    || pawn.Faction == null
+                                    || pawn.Faction == Faction
+                                    || !pawn.HostileTo(Faction)
+                                    || touchingPawns.Contains(pawn)
+                                )
+                                    continue;
+                                touchingPawns.Add(pawn);
+                                CheckSpring(pawn);
                             }
                         }
                     }
                     for (int j = 0; j < touchingPawns.Count; j++)
                     {
                         Pawn pawn2 = touchingPawns[j];
-                        if (!pawn2.Spawned || pawn2.Position != base.Position)
+                        if (!pawn2.Spawned || pawn2.Position != Position)
                         {
                             touchingPawns.Remove(pawn2);
                         }
@@ -164,19 +160,16 @@ namespace TorannMagic
         {
             destroyAfterUse = true;
             List<Pawn> pList = Map.mapPawns.AllPawnsSpawned;
-            if (pList != null && pList.Count > 0)
+            if (pList == null || pList.Count <= 0) return;
+            for (int i = 0; i < pList.Count; i++)
             {
-                for (int i = 0; i < pList.Count; i++)
+                Pawn p = pList[i];
+                CompAbilityUserMight comp = p.GetCompAbilityUserMight();
+                if (comp?.combatItems == null || comp.combatItems.Count <= 0) continue;
+
+                if(comp.combatItems.Contains(this))
                 {
-                    Pawn p = pList[i];
-                    CompAbilityUserMight comp = p.GetCompAbilityUserMight();
-                    if(comp?.combatItems != null && comp.combatItems.Count > 0)
-                    {
-                        if(comp.combatItems.Contains(this))
-                        {
-                            destroyAfterUse = false;
-                        }
-                    }
+                    destroyAfterUse = false;
                 }
             }
         }
