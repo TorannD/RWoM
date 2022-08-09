@@ -22,12 +22,7 @@ namespace TorannMagic
         private int trapSpringDelay = 30;
         private bool trapSprung = false;
 
-        Pawn trapPawn = new Pawn();
-
-        protected override void SpringSub(Pawn p)
-        {
-            base.GetComp<CompExplosive>().StartWick(null);
-        }
+        private Pawn trapPawn = new Pawn();
 
         public override void ExposeData()
         {
@@ -35,17 +30,32 @@ namespace TorannMagic
             //Scribe_References.Look<Pawn>(ref this.trapPawn, "trapPawn", false);
         }
 
+        protected override void SpringSub(Pawn p)
+        {
+            for (int i = 0; i < AllComps.Count; i++)
+            {
+                if (AllComps[i] is CompExplosive comp)
+                {
+                    comp.StartWick();
+                    return;
+                }
+            }
+        }
+
         private void CheckPawn(IntVec3 position)
         {
-            List<Thing> thingList = position.GetThingList(base.Map);
+            List<Thing> thingList = position.GetThingList(Map);
             for (int i = 0; i < thingList.Count; i++)
             {
                 Pawn pawn = thingList[i] as Pawn;
-                if (pawn != null && pawn.Faction != this.Faction && pawn.HostileTo(this.Faction) && !this.touchingPawns.Contains(pawn))
-                {
-                    this.touchingPawns.Add(pawn);
-                    this.CheckSpring(pawn);
-                }
+                if (
+                    pawn == null
+                    || pawn.Faction == Faction
+                    || !pawn.HostileTo(Faction)
+                    || touchingPawns.Contains(pawn)) continue;
+
+                touchingPawns.Add(pawn);
+                CheckSpring(pawn);
             }
         }
 
@@ -53,68 +63,67 @@ namespace TorannMagic
         {
             get
             {
-                return !this.trapSprung;
+                return !trapSprung;
             }
         }
 
         public override void Tick()
         {
-            if (this.Armed)
+            if (Armed)
             {
-                CheckPawn(base.Position);
+                CheckPawn(Position);
                 for (int j = 0; j < 8; j++)
                 {
-                    IntVec3 intVec = this.Position + GenAdj.AdjacentCells[j];
+                    IntVec3 intVec = Position + GenAdj.AdjacentCells[j];
                     CheckPawn(intVec);
                 }
-                for (int j = 0; j < this.touchingPawns.Count; j++)
+                for (int j = 0; j < touchingPawns.Count; j++)
                 {
-                    Pawn pawn2 = this.touchingPawns[j];
-                    if (!pawn2.Spawned || pawn2.Position != base.Position)
+                    Pawn pawn2 = touchingPawns[j];
+                    if (!pawn2.Spawned || pawn2.Position != Position)
                     {
-                        this.touchingPawns.Remove(pawn2);
+                        touchingPawns.Remove(pawn2);
                     }
                 }
             }
             else
             {
-                this.trapSpringDelay--;
-                if (this.trapSpringDelay <= 0)
+                trapSpringDelay--;
+                if (trapSpringDelay <= 0)
                 {
-                    this.SpringSub(this.trapPawn);
+                    SpringSub(trapPawn);
                 }
             }
 
             base.Tick();
         }
 
-        private void CheckSpring(Pawn p)
+        // Allow override for disabling letter for Building_PoisonTrap
+        protected virtual void CheckSpring(Pawn p)
         {
-            if (Rand.Value < this.SpringChance(p))
+            if (!(Rand.Value < SpringChance(p))) return;
+            Spring(p);
+            if (p.Faction == Faction.OfPlayer || p.HostFaction == Faction.OfPlayer)
             {
-                this.Spring(p);
-                if (p.Faction == Faction.OfPlayer || p.HostFaction == Faction.OfPlayer)
-                {
-                    Find.LetterStack.ReceiveLetter("LetterFriendlyTrapSprungLabel".Translate(
-                        p.LabelShort
-                    ), "LetterFriendlyTrapSprung".Translate(
-                        p.LabelShort
-                    ), LetterDefOf.NegativeEvent, new TargetInfo(base.Position, base.Map, false), null);
-                }
+                Find.LetterStack.ReceiveLetter("LetterFriendlyTrapSprungLabel".Translate(
+                    p.LabelShort
+                ), "LetterFriendlyTrapSprung".Translate(
+                    p.LabelShort
+                ), LetterDefOf.NegativeEvent, new TargetInfo(Position, Map, false), null);
             }
         }
 
-        new public void Spring(Pawn p)
+        public new virtual void Spring(Pawn p)
         {
-            SoundDefOf.EnergyShield_Broken.PlayOneShot(new TargetInfo(base.Position, base.Map, false));
-            this.trapPawn = p;
-            this.trapSprung = true;
+            SoundDefOf.EnergyShield_Broken.PlayOneShot(new TargetInfo(Position, Map, false));
+            trapPawn = p;
+            trapSprung = true;
         }
 
         protected override float SpringChance(Pawn p)
         {
             float num;
-            if (this.KnowsOfTrap(p))
+            if (KnowsOfTrap(p))
             {
                 num = 0.8f;
             }
@@ -128,11 +137,11 @@ namespace TorannMagic
 
         public override ushort PathFindCostFor(Pawn p)
         {
-            if (!this.Armed)
+            if (!Armed)
             {
                 return 0;
             }
-            if (this.KnowsOfTrap(p))
+            if (KnowsOfTrap(p))
             {
                 return 800;
             }
@@ -141,11 +150,11 @@ namespace TorannMagic
 
         public override ushort PathWalkCostFor(Pawn p)
         {
-            if (!this.Armed)
+            if (!Armed)
             {
                 return 0;
             }
-            if (this.KnowsOfTrap(p))
+            if (KnowsOfTrap(p))
             {
                 return 50;
             }
@@ -154,7 +163,7 @@ namespace TorannMagic
 
         public override bool IsDangerousFor(Pawn p)
         {
-            return this.Armed && this.KnowsOfTrap(p) && p.Faction != this.Faction;
+            return Armed && KnowsOfTrap(p) && p.Faction != Faction;
         }
 
         public override string GetInspectString()
@@ -164,9 +173,9 @@ namespace TorannMagic
             {
                 text += "\n";
             }
-            if (this.Armed)
+            if (Armed)
             {
-                text += "Proximity Trap Armed";
+                text += "Trap Armed";
             }
             else
             {
@@ -177,13 +186,14 @@ namespace TorannMagic
 
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
         {
-            Map map = base.Map;
             base.Destroy(mode);
             InstallBlueprintUtility.CancelBlueprintsFor(this);
             if (mode == DestroyMode.Deconstruct)
             {
-                SoundDef.Named("Building_Deconstructed").PlayOneShot(new TargetInfo(base.Position, map, false));
+                SoundDef.Named("Building_Deconstructed").PlayOneShot(new TargetInfo(Position, Map, false));
             }
         }
+
+
     }
 }
