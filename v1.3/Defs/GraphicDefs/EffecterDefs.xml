@@ -1,6 +1,165 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
+<!-- Spirit Storm -->
+
+<EffecterDef>
+    <defName>TM_SpiritStormED</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>TM_Mote_StormSpinDown</moteDef>
+		<rotation>
+			<min>0</min>
+			<max>360</max>
+		</rotation>
+		<rotationRate>
+			<min>500</min>
+			<max>700</max>
+		</rotationRate>
+        <scale>
+          <min>2</min>
+          <max>2</max>
+        </scale>
+      </li>	  
+    </children>
+  </EffecterDef>
+  
+  <ThingDef ParentName="MoteBase">
+    <defName>TM_Mote_StormSpinDown</defName>
+    <graphicData>
+      <texPath>Motes/BlueSwirlMote</texPath>
+      <shaderType>MoteGlow</shaderType>
+	  <color>(0,.6,.6,1)</color>
+	  <drawSize>(4, 4)</drawSize>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <drawOffscreen>true</drawOffscreen>
+    <mote>
+      <fadeInTime>0.2</fadeInTime>
+      <solidTime>.3</solidTime>
+      <fadeOutTime>.8</fadeOutTime>
+      <growthRate>-3</growthRate>
+    </mote>
+  </ThingDef>
+
+<!-- Spirit Pulse -->
+<EffecterDef>
+    <defName>TM_SpiritPulseED</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>TM_Mote_SDWaveInner</moteDef>
+        <scale>
+          <min>1</min>
+          <max>1</max>
+        </scale>
+      </li>      
+    </children>
+  </EffecterDef>
+
+<!-- Spirit Distortion -->
+
+  <EffecterDef>
+    <defName>TM_SpiritDistortionED</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>TM_Mote_SDWaveInner</moteDef>
+        <scale>
+          <min>1</min>
+          <max>1</max>
+        </scale>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>TM_Mote_SDSpin</moteDef>
+		<rotation>
+			<min>0</min>
+			<max>360</max>
+		</rotation>
+		<rotationRate>
+			<min>500</min>
+			<max>500</max>
+		</rotationRate>
+        <scale>
+          <min>2</min>
+          <max>2</max>
+        </scale>
+      </li>
+	  <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>TM_Mote_SDSpinUp</moteDef>
+		<rotation>
+			<min>0</min>
+			<max>360</max>
+		</rotation>
+		<rotationRate>
+			<min>-500</min>
+			<max>-500</max>
+		</rotationRate>
+        <scale>
+          <min>2</min>
+          <max>2</max>
+        </scale>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>TM_Mote_SDWaveInner</defName>
+    <graphicData>
+      <texPath>Motes/PowerBeam</texPath>
+      <shaderType>MoteGlow</shaderType>
+	  <drawSize>(.4, .4)</drawSize>
+	  <color>(0,.6,.6,1)</color>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <drawOffscreen>true</drawOffscreen>
+    <mote>
+      <fadeInTime>0.1</fadeInTime>
+      <solidTime>.1</solidTime>
+      <fadeOutTime>0.2</fadeOutTime>
+      <growthRate>350</growthRate>
+    </mote>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>TM_Mote_SDSpin</defName>
+    <graphicData>
+      <texPath>Motes/BlueSwirlMote</texPath>
+      <shaderType>MoteGlow</shaderType>
+	  <color>(0,.6,.6,1)</color>
+	  <drawSize>(6, 6)</drawSize>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <drawOffscreen>true</drawOffscreen>
+    <mote>
+      <fadeInTime>0.4</fadeInTime>
+      <solidTime>.3</solidTime>
+      <fadeOutTime>.1</fadeOutTime>
+      <growthRate>-3</growthRate>
+    </mote>
+  </ThingDef>
+  
+  <ThingDef ParentName="MoteBase">
+    <defName>TM_Mote_SDSpinUp</defName>
+    <graphicData>
+      <texPath>Motes/BlueSwirlMote</texPath>
+      <shaderType>MoteGlow</shaderType>
+	  <color>(0,.6,.6,1)</color>
+	  <drawSize>(2, 2)</drawSize>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <drawOffscreen>true</drawOffscreen>
+    <mote>
+      <fadeInTime>0.4</fadeInTime>
+      <solidTime>.3</solidTime>
+      <fadeOutTime>.1</fadeOutTime>
+      <growthRate>3</growthRate>
+    </mote>
+  </ThingDef>
+
 <!-- Fire Mage Heatshield -->
   
   <EffecterDef>

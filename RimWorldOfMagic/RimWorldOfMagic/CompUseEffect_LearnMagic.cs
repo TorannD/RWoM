@@ -14,11 +14,33 @@ namespace TorannMagic
             if (parent.def != null)
             {
                 bool customClass = false;
-                for(int i = 0; i < TM_ClassUtility.CustomClasses().Count; i++)
+                bool advancedClass = false;
+                string failMessage = "";
+                CompAbilityUserMagic comp = user.TryGetComp<CompAbilityUserMagic>();
+                for (int i = 0; i < TM_ClassUtility.CustomClasses().Count; i++)
                 {
-                    if ((TM_ClassUtility.CustomClasses()[i].isMage && user.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted)) || (TM_ClassUtility.CustomClasses()[i].isMage && TM_ClassUtility.CustomClasses()[i].isFighter && (user.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted) || user.story.traits.HasTrait(TorannMagicDefOf.PhysicalProdigy))))
+                    TMDefs.TM_CustomClass cc = TM_ClassUtility.CustomClasses()[i];
+                    if (cc.isMage && cc.isAdvancedClass && comp != null)
                     {
-                        if (parent.def == TM_ClassUtility.CustomClasses()[i].tornScript || parent.def == TM_ClassUtility.CustomClasses()[i].fullScript)
+                        if (parent.def == cc.tornScript || parent.def == cc.fullScript)
+                        {
+                            if(TM_Calc.HasAdvancedMageRequirements(user, cc, out failMessage))
+                            {
+                                advancedClass = true;
+                                if (parent.def == cc.fullScript)
+                                {
+                                    HealthUtility.AdjustSeverity(user, TorannMagicDefOf.TM_Uncertainty, 0.2f);
+                                }
+                                ApplyAdvancedTrait(user, cc);
+                                this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
+                            }
+                            break;
+                        }
+                        
+                    }
+                    else if (cc.isMage && user.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted) || (cc.isMage && cc.isFighter && (user.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted) || user.story.traits.HasTrait(TorannMagicDefOf.PhysicalProdigy))))
+                    {
+                        if (parent.def == cc.tornScript || parent.def == TM_ClassUtility.CustomClasses()[i].fullScript)
                         {
                             customClass = true;
                             if (parent.def == TM_ClassUtility.CustomClasses()[i].fullScript)
@@ -27,12 +49,11 @@ namespace TorannMagic
                             }
 
                             ApplyTrait(user, TM_ClassUtility.CustomClasses()[i].classTrait, TM_ClassUtility.CustomClasses()[i].traitDegree);
-                            
+
                             //Unique actions hook
                             ApplyTraitAdjustments(user, TM_ClassUtility.CustomClasses()[i].classTrait);
                             //
                             this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
-                            CompAbilityUserMagic comp = user.TryGetComp<CompAbilityUserMagic>();
                             if (comp != null)
                             {
                                 comp.customIndex = i;
@@ -52,7 +73,7 @@ namespace TorannMagic
                         }
                     }
                 }
-                if (!customClass && user.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted))
+                if (!customClass && !advancedClass && user.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted))
                 {
                     if (parent.def.defName == "BookOfInnerFire" || parent.def.defName == "Torn_BookOfInnerFire")
                     {
@@ -509,21 +530,77 @@ namespace TorannMagic
                         Messages.Message("NotArcaneBook".Translate(), MessageTypeDefOf.RejectInput);
                     }
                 }
-                else if(!customClass && !user.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted))
+                else if(!customClass && !advancedClass && !user.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted))
                 {
-                    Messages.Message("NotGiftedPawn".Translate(
-                            user.LabelShort
-                        ), MessageTypeDefOf.RejectInput);
+                    if (failMessage != "")
+                    {
+                        Messages.Message("TM_UnableToLearnAdvancedClass".Translate(
+                                user.LabelShort,
+                                this.parent.def.label,
+                                failMessage
+                            ), MessageTypeDefOf.RejectInput);
+                    }
+                    else
+                    {
+                        Messages.Message("NotGiftedPawn".Translate(
+                                user.LabelShort
+                            ), MessageTypeDefOf.RejectInput);
+                    }
                 }
             }
             else
             {
-                Messages.Message("NotGiftedPawn".Translate(
-                        user.LabelShort
+                Messages.Message("TM_InvalidAction".Translate(
+                        user.LabelShort,
+                        "magic book"
                     ), MessageTypeDefOf.RejectInput);
             }
-
 		}
+
+        public static void ApplyAdvancedTrait(Pawn p, TMDefs.TM_CustomClass cc)
+        {
+            TraitDef trait = cc.classTrait;
+            if (trait == TorannMagicDefOf.Warlock || trait == TorannMagicDefOf.Succubus)
+            {
+                if (p.gender == Gender.Male)
+                {
+                    p.story.traits.GainTrait(new Trait(TorannMagicDefOf.Warlock, 0, false));
+                }
+                else if (p.gender == Gender.Female)
+                {
+                    p.story.traits.GainTrait(new Trait(TorannMagicDefOf.Succubus, 0, false));
+                }
+                else
+                {
+                    if (Rand.Chance(.5f))
+                    {
+                        p.story.traits.GainTrait(new Trait(TorannMagicDefOf.Succubus, 0, false));
+                    }
+                    else
+                    {
+                        p.story.traits.GainTrait(new Trait(TorannMagicDefOf.Warlock, 0, false));
+                    }
+                }
+            }
+            p.story.traits.GainTrait(new Trait(cc.classTrait, cc.traitDegree));            
+            
+            if (cc.advancedClassOptions != null && cc.advancedClassOptions.removesRequiredTrait)
+            {
+                List<Trait> pawnTraits = p.story.traits.allTraits;
+                foreach (TraitDef td in cc.advancedClassOptions.requiredTraits)
+                {
+                    foreach (Trait t in pawnTraits)
+                    {
+                        if(t.def == td)
+                        {
+                            p.story.traits.RemoveTrait(t);
+                            goto TraitGainEnd;
+                        }
+                    }
+                }
+            }            
+            TraitGainEnd:;
+        }
 
         public static void FixTrait(Pawn pawn, List<Trait> traits)
         {

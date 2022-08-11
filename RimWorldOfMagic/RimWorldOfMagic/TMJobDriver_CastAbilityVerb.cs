@@ -20,89 +20,97 @@ namespace TorannMagic
         bool energyFlag = false;
         bool validCastFlag = false;
 
+        public override void ExposeData()
+        {
+
+            base.ExposeData();
+        }
+
         protected override IEnumerable<Toil> MakeNewToils()
         {
-            yield return Toils_Misc.ThrowColonistAttackingMote(TargetIndex.A);
-            this.verb = this.pawn.CurJob.verbToUse as Verb_UseAbility;
-            if (base.TargetA.HasThing && base.TargetA.Thing is Pawn && (!pawn.Position.InHorDistOf(base.TargetA.Cell, pawn.CurJob.verbToUse.verbProps.range) || !Verb.UseAbilityProps.canCastInMelee))
-            {
-                //if (!base.GetActor().IsFighting() ? true : !verb.UseAbilityProps.canCastInMelee && !this.job.endIfCantShootTargetFromCurPos)
-                //{
-                Toil toil = Toils_Combat.GotoCastPosition(TargetIndex.A);
-                yield return toil;
-                //toil = null;
-                //}
-            }
-            if (this.Context == AbilityContext.Player)
-            {
-                Find.Targeter.targetingSource = this.verb;
-            }
+            yield return Toils_Misc.ThrowColonistAttackingMote(TargetIndex.A);            
             Pawn targetPawn = null;
-            if (this.TargetThingA != null)
+            this.verb = this.pawn.CurJob.verbToUse as Verb_UseAbility;
+            if(this.verb != null)
             {
-                targetPawn = TargetThingA as Pawn;
-            }
-
-            cooldownFlag = this.verb.Ability.CooldownTicksLeft > 0 ? true : false;
-
-            if(this.verb.Ability.Def is TMAbilityDef)
-            { 
-                TMAbilityDef tmAbility = (TMAbilityDef)(this.verb.Ability.Def);
-                CompAbilityUserMight compMight = this.pawn.TryGetComp<CompAbilityUserMight>();
-                CompAbilityUserMagic compMagic = this.pawn.TryGetComp<CompAbilityUserMagic>();
-                //if (compMagic != null)
-                //{
-                //    compMagic.AIAbilityJob = null;
-                //}
-                //if (compMight != null && false)
-                //{
-                //    //compMight.AIAbilityJob = null;
-                //}
-                if (tmAbility.manaCost > 0 && pawn.story != null && pawn.story.traits != null && !pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+                if (base.TargetA.HasThing && base.TargetA.Thing is Pawn && (!pawn.Position.InHorDistOf(base.TargetA.Cell, pawn.CurJob.verbToUse.verbProps.range) || !Verb.UseAbilityProps.canCastInMelee))
                 {
-                    if(this.pawn.Map.gameConditionManager.ConditionIsActive(TorannMagicDefOf.TM_ManaStorm))
+                    //if (!base.GetActor().IsFighting() ? true : !verb.UseAbilityProps.canCastInMelee && !this.job.endIfCantShootTargetFromCurPos)
+                    //{
+                    Toil toil = Toils_Combat.GotoCastPosition(TargetIndex.A);
+                    yield return toil;
+                    //toil = null;
+                    //}
+                }
+                if (this.Context == AbilityContext.Player)
+                {
+                    Find.Targeter.targetingSource = this.verb;
+                }
+                if (this.TargetThingA != null)
+                {
+                    targetPawn = TargetThingA as Pawn;
+                }
+
+                cooldownFlag = this.verb.Ability.CooldownTicksLeft > 0 ? true : false;
+
+                if (this.verb.Ability.Def is TMAbilityDef)
+                {
+                    TMAbilityDef tmAbility = (TMAbilityDef)(this.verb.Ability.Def);
+                    CompAbilityUserMight compMight = this.pawn.TryGetComp<CompAbilityUserMight>();
+                    CompAbilityUserMagic compMagic = this.pawn.TryGetComp<CompAbilityUserMagic>();
+                    //if (compMagic != null)
+                    //{
+                    //    compMagic.AIAbilityJob = null;
+                    //}
+                    //if (compMight != null && false)
+                    //{
+                    //    //compMight.AIAbilityJob = null;
+                    //}
+                    if (tmAbility.manaCost > 0 && pawn.story != null && pawn.story.traits != null && !pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
                     {
-                        //DamageInfo dinfo2;
-                        //BodyPartRecord vitalPart = null;
-                        int amt = Mathf.RoundToInt(compMagic.ActualManaCost(tmAbility) * 100f);
-                        //IEnumerable<BodyPartRecord> partSearch = pawn.def.race.body.AllParts;
-                        //vitalPart = partSearch.FirstOrDefault<BodyPartRecord>((BodyPartRecord x) => x.def.tags.Contains(BodyPartTagDefOf.ConsciousnessSource));
-                        //dinfo2 = new DamageInfo(TMDamageDefOf.DamageDefOf.TM_Arcane, amt, 10, 0, pawn as Thing, vitalPart, null, DamageInfo.SourceCategory.ThingOrUnknown);
-                        //dinfo2.SetAllowDamagePropagation(false);
-                        //pawn.TakeDamage(dinfo2);
-                        if (amt > 5)
+                        if (this.pawn.Map.gameConditionManager.ConditionIsActive(TorannMagicDefOf.TM_ManaStorm))
                         {
-                            this.pawn.Map.weatherManager.eventHandler.AddEvent(new TM_WeatherEvent_MeshFlash(this.Map, this.pawn.Position, TM_MatPool.blackLightning, TMDamageDefOf.DamageDefOf.TM_Arcane, this.pawn, amt, Mathf.Clamp((float)amt/5f, 1f, 5f)));
+                            //DamageInfo dinfo2;
+                            //BodyPartRecord vitalPart = null;
+                            int amt = Mathf.RoundToInt(compMagic.ActualManaCost(tmAbility) * 100f);
+                            //IEnumerable<BodyPartRecord> partSearch = pawn.def.race.body.AllParts;
+                            //vitalPart = partSearch.FirstOrDefault<BodyPartRecord>((BodyPartRecord x) => x.def.tags.Contains(BodyPartTagDefOf.ConsciousnessSource));
+                            //dinfo2 = new DamageInfo(TMDamageDefOf.DamageDefOf.TM_Arcane, amt, 10, 0, pawn as Thing, vitalPart, null, DamageInfo.SourceCategory.ThingOrUnknown);
+                            //dinfo2.SetAllowDamagePropagation(false);
+                            //pawn.TakeDamage(dinfo2);
+                            if (amt > 5)
+                            {
+                                this.pawn.Map.weatherManager.eventHandler.AddEvent(new TM_WeatherEvent_MeshFlash(this.Map, this.pawn.Position, TM_MatPool.blackLightning, TMDamageDefOf.DamageDefOf.TM_Arcane, this.pawn, amt, Mathf.Clamp((float)amt / 5f, 1f, 5f)));
+                            }
                         }
-                    }
-                    if (compMagic != null && compMagic.Mana != null)
-                    {
-                        if (compMagic.ActualManaCost(tmAbility) > compMagic.Mana.CurLevel)
+                        if (compMagic != null && compMagic.Mana != null)
+                        {
+                            if (compMagic.ActualManaCost(tmAbility) > compMagic.Mana.CurLevel)
+                            {
+                                energyFlag = true;
+                            }
+                        }
+                        else
                         {
                             energyFlag = true;
                         }
                     }
-                    else
+                    if (tmAbility.staminaCost > 0)
                     {
-                        energyFlag = true;
-                    }
-                }
-                if (tmAbility.staminaCost > 0)
-                {
-                    if (compMight != null && compMight.Stamina != null)
-                    {
-                        if (compMight.ActualStaminaCost(tmAbility) > compMight.Stamina.CurLevel)
+                        if (compMight != null && compMight.Stamina != null)
+                        {
+                            if (compMight.ActualStaminaCost(tmAbility) > compMight.Stamina.CurLevel)
+                            {
+                                energyFlag = true;
+                            }
+                        }
+                        else
                         {
                             energyFlag = true;
                         }
                     }
-                    else
-                    {
-                        energyFlag = true;
-                    }
                 }
             }
-            
 
             validCastFlag = cooldownFlag || energyFlag;
 
@@ -117,7 +125,7 @@ namespace TorannMagic
                 //JobDriver curDriver = this.pawn.jobs.curDriver;
                 combatToil.initAction = delegate
                 {
-                    this.verb = combatToil.actor.jobs.curJob.verbToUse as Verb_UseAbility;
+                    this.verb = combatToil.actor.jobs.curJob.verbToUse as Verb_UseAbility;                    
                     if (verb != null && verb.verbProps != null)
                     {
                         this.duration = (int)((this.verb.verbProps.warmupTime * 60) * this.pawn.GetStatValue(StatDefOf.AimingDelayFactor, false));
@@ -249,7 +257,7 @@ namespace TorannMagic
             {                
                 if (verb != null && verb.verbProps != null && (pawn.Position - TargetLocA).LengthHorizontal < verb.verbProps.range)
                 {
-                    if (TargetLocA.IsValid && TargetLocA.InBounds(pawn.Map) && !TargetLocA.Fogged(pawn.Map))  //&& TargetLocA.Walkable(pawn.Map)
+                    if (TargetLocA.IsValid && TargetLocA.InBoundsWithNullCheck(pawn.Map) && !TargetLocA.Fogged(pawn.Map))  //&& TargetLocA.Walkable(pawn.Map)
                     {
                         ShootLine shootLine;
                         bool validTarg = verb.TryFindShootLineFromTo(pawn.Position, TargetLocA, out shootLine);

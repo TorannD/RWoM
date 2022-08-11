@@ -17,7 +17,7 @@ namespace TorannMagic
 
         public override bool CanHitTargetFrom(IntVec3 root, LocalTargetInfo targ)
         {            
-            if ( targ.IsValid && targ.CenterVector3.InBounds(base.CasterPawn.Map) && !targ.Cell.Fogged(base.CasterPawn.Map) && targ.Cell.Walkable(base.CasterPawn.Map))
+            if ( targ.IsValid && targ.CenterVector3.InBoundsWithNullCheck(base.CasterPawn.Map) && !targ.Cell.Fogged(base.CasterPawn.Map) && targ.Cell.Walkable(base.CasterPawn.Map))
             {
                 if ((root - targ.Cell).LengthHorizontal < this.verbProps.range)
                 {
@@ -45,7 +45,7 @@ namespace TorannMagic
             {
                 IntVec3 arg_29_0 = this.currentTarget.Cell;
                 Vector3 vector = this.currentTarget.CenterVector3;
-                flag = this.currentTarget.Cell.IsValid && vector.InBounds(base.CasterPawn.Map) && this.currentTarget.Thing != null && this.currentTarget.Thing is Pawn;
+                flag = this.currentTarget.Cell.IsValid && vector.InBoundsWithNullCheck(base.CasterPawn.Map) && this.currentTarget.Thing != null && this.currentTarget.Thing is Pawn;
             }
 
             if (flag)

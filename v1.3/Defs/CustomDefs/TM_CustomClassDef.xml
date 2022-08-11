@@ -52,8 +52,17 @@
 			<isUndead>false</isUndead>						<!-- counts as an undead for light magic damage, assign class hediff "TM_Undead" or "TM_LichHD" for undead health benefits; -->
 															<!-- class with undead hediffs will instantly die if no necromancer is available to sustain -->
 			<isAndroid>false</isAndroid>					<!-- class counts as an android for various spell checks -->
-			<isAdvancedClass>false</isAdvancedClass>		<!-- shifts all class related functions into a separate, advanced tab (WIP/future use) -->
-			<shouldShow>false</shouldShow>
+			<isAdvancedClass>false</isAdvancedClass>		<!-- designates the custom class as a secondary or bonus class that can be used along with a base class -->
+			<advancedClassOptions>							<!-- list of options for advanced classes; only checked when isAdvancedClass is true -->
+				<requiresBaseClass>false</requiresBaseClass><!-- must have a base class (any) prior to gaining the advanced class -->
+				<canSpawnWithClass>false</canSpawnWithClass><!-- determines if the advanced class will ever show up on a randomly generated pawn; if false, the class will only be available via the class torn/full scripts -->
+				<removesRequiredTrait>false</removesRequiredTrait> <!-- first matching trait is removed when adv. class is gained -->
+				<requiredTraits>							<!-- pawn must have at least one of the requiredTraits gain the advanced class; an empty list allows any class -->
+				</requiredTraits>							<!-- does not requireBaseClass to be true to restrict the adv. class -->
+				<disallowedTraits>							<!-- the pawn cannot have any of the disallowed traits to gain the advanced class -->
+				</disallowedTraits>							<!-- does not requireBaseClass to be true -->
+			</advancedClassOptions>							<!-- in the event a pawn matches both required traits and disallowed traits, the disallowed trait wins -->
+			<shouldShow>false</shouldShow>					<!-- this should always be true for a mod add-on -->
 		  </li>		  
 		  <!-- Brightmage -->
 		  <li>		  
@@ -248,6 +257,94 @@
 			<isAdvancedClass>false</isAdvancedClass>		
 			<shouldShow>false</shouldShow>
 		  </li>	
+		  <!-- Possessor -->
+		  <li>		  
+			<classTrait>TM_Possessor</classTrait>				
+			<traitDegree>0</traitDegree>					
+			<classHediff></classHediff>								
+			<classTexturePath></classTexturePath> 
+			<classIconPath></classIconPath>			
+			<classIconColor>(0,0.6,.6)</classIconColor>		
+			<tornScript></tornScript>						
+			<fullScript></fullScript>			
+			<classMageAbilities>	
+				<li>TM_SpiritPossession</li>
+				<li>TM_SpiritDrain</li>
+				<li>TM_DistortSpirit</li>
+				<li>TM_DistortSpirit_I</li>
+				<li>TM_DistortSpirit_II</li>
+				<li>TM_DistortSpirit_III</li>
+				<li>TM_SummonSpiritAnimalMass</li>
+				<li>TM_SpiritRally</li>
+				<li>TM_SpiritRally_I</li>
+				<li>TM_SpiritRally_II</li>
+				<li>TM_SpiritRally_III</li>
+				<li>TM_SpiritStorm</li>
+			</classMageAbilities>
+			<learnableSpells>							
+			</learnableSpells>								
+			
+			<classFighterAbilities>							
+			</classFighterAbilities>
+			<learnableSkills>								
+			</learnableSkills>
+			
+			<isMage>true</isMage>							
+			<isFighter>false</isFighter>					
+			<isNecromancer>false</isNecromancer>			
+			<isUndead>false</isUndead>										
+			<isAndroid>false</isAndroid>					
+			<isAdvancedClass>false</isAdvancedClass>		
+			<shouldShow>false</shouldShow>
+		  </li>
+		  <!-- Possessed (possessor as advanced class) -->
+		  <li>		  
+			<classTrait>TM_Possessed</classTrait>				
+			<traitDegree>0</traitDegree>					
+			<classHediff></classHediff>								
+			<classTexturePath></classTexturePath> 
+			<classIconPath></classIconPath>			
+			<classIconColor>(0,0.6,.6)</classIconColor>		
+			<tornScript></tornScript>						
+			<fullScript></fullScript>			
+			<classMageAbilities>
+				<li>TM_SpiritDrain</li>
+				<li>TM_DistortSpirit</li>
+				<li>TM_DistortSpirit_I</li>
+				<li>TM_DistortSpirit_II</li>
+				<li>TM_DistortSpirit_III</li>
+				<li>TM_SummonSpiritAnimalMass</li>
+				<li>TM_SpiritRally</li>
+				<li>TM_SpiritRally_I</li>
+				<li>TM_SpiritRally_II</li>
+				<li>TM_SpiritRally_III</li>
+				<li>TM_SpiritStorm</li>
+			</classMageAbilities>
+			<learnableSpells>							
+			</learnableSpells>								
+			
+			<classFighterAbilities>							
+			</classFighterAbilities>
+			<learnableSkills>								
+			</learnableSkills>
+			
+			<isMage>true</isMage>							
+			<isFighter>false</isFighter>					
+			<isNecromancer>false</isNecromancer>			
+			<isUndead>false</isUndead>										
+			<isAndroid>false</isAndroid>					
+			<isAdvancedClass>true</isAdvancedClass>	
+			<advancedClassOptions>							
+				<requiresBaseClass>false</requiresBaseClass>	<!-- any possessed pawn gains this class, even if they were not a mage/fighter -->
+				<canSpawnWithClass>false</canSpawnWithClass>	<!-- only gained via possession mechanic -->
+				<removesRequiredTrait>false</removesRequiredTrait>	<!-- does not remove an existing trait -->
+				<requiredTraits>								<!-- does not require any other class or trait -->
+				</requiredTraits>							
+				<disallowedTraits>								<!-- no restrictions -->
+				</disallowedTraits>						
+			</advancedClassOptions>			
+			<shouldShow>false</shouldShow>
+		  </li>
 		</customClasses>			
 	</TorannMagic.TM_CustomClassDef>		
 

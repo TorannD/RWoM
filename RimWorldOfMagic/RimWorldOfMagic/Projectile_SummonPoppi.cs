@@ -59,7 +59,7 @@ namespace TorannMagic
                 for (int i = 0; i < 4 + pwrVal; i++)
                 {
                     centerCell = cellRect.RandomCell;
-                    if (centerCell.IsValid && centerCell.InBounds(pawn.Map) && centerCell.Standable(pawn.Map) && !centerCell.Fogged(pawn.Map))
+                    if (centerCell.IsValid && centerCell.InBoundsWithNullCheck(pawn.Map) && centerCell.Standable(pawn.Map) && !centerCell.Fogged(pawn.Map))
                     {
                         spawnThing.factionDef = TorannMagicDefOf.TM_ElementalFaction;
                         spawnThing.spawnCount = 1;

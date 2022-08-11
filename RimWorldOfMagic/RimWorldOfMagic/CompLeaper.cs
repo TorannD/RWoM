@@ -100,7 +100,7 @@ namespace TorannMagic
                                 //    Pawn bounceTarget = null;
 
                                 //    curCell = targets.ToArray<IntVec3>()[i];
-                                //    if (curCell.InBounds(this.Pawn.Map) && curCell.IsValid)
+                                //    if (curCell.InBoundsWithNullCheck(this.Pawn.Map) && curCell.IsValid)
                                 //    {
                                 //        bounceTarget = curCell.GetFirstPawn(this.Pawn.Map);
                                 //        if (bounceTarget != null && bounceTarget != target && !bounceTarget.Downed && !bounceTarget.Dead && bounceTarget.RaceProps != null)
@@ -197,7 +197,7 @@ namespace TorannMagic
         private bool CanHitTargetFrom(IntVec3 pawn, LocalTargetInfo target)
         {
             bool result = false;
-            if (target.IsValid && target.CenterVector3.InBounds(this.Pawn.Map) && !target.Cell.Fogged(this.Pawn.Map) && target.Cell.Walkable(this.Pawn.Map))
+            if (target.IsValid && target.CenterVector3.InBoundsWithNullCheck(this.Pawn.Map) && !target.Cell.Fogged(this.Pawn.Map) && target.Cell.Walkable(this.Pawn.Map))
             {
                 ShootLine shootLine;
                 result = this.TryFindShootLineFromTo(pawn, target, out shootLine);                

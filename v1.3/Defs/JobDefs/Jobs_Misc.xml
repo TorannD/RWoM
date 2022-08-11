@@ -111,4 +111,11 @@
     <casualInterruptible>false</casualInterruptible>
   </JobDef>
   
+  <JobDef>
+    <defName>JobDriver_SpiritDrain</defName>
+    <driverClass>TorannMagic.JobDriver_SpiritDrain</driverClass>
+    <reportString>draining spirit</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  
 </Defs>

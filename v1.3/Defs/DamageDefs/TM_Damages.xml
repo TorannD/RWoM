@@ -106,7 +106,7 @@
 	<DamageDef ParentName="TM_LocalInjuryBase">
 		<defName>TM_ChiFist</defName>
 		<label>strike</label>
-		<externalViolence>false</externalViolence>
+		<externalViolence>true</externalViolence>
 		<deathMessage>{0} was taken down by martial arts.</deathMessage>
 		<hediff>TM_ChiFistHD</hediff>
 		<harmAllLayersUntilOutside>false</harmAllLayersUntilOutside>
@@ -1049,6 +1049,7 @@
     <hediff>TM_ToxinHD</hediff>
     <harmAllLayersUntilOutside>false</harmAllLayersUntilOutside>
     <hasForcefulImpact>false</hasForcefulImpact>
+	<externalViolence>true</externalViolence>
     <canInterruptJobs>false</canInterruptJobs>
 	<makesBlood>false</makesBlood>
     <impactSoundType />
@@ -1116,6 +1117,7 @@
     <defaultArmorPenetration>0.25</defaultArmorPenetration>
     <buildingDamageFactor>.1</buildingDamageFactor>
     <plantDamageFactor>.1</plantDamageFactor>
+	<externalViolence>true</externalViolence>
     <explosionAffectOutsidePartsOnly>false</explosionAffectOutsidePartsOnly>
     <explosionHeatEnergyPerCell>5</explosionHeatEnergyPerCell>
     <explosionCellFleck>BlastDry</explosionCellFleck>
@@ -1197,6 +1199,7 @@
 	<armorCategory>Heat</armorCategory>
 	<isExplosive>false</isExplosive>
 	<hasForcefulImpact>true</hasForcefulImpact>
+	<externalViolence>true</externalViolence>
   </DamageDef>
   
 </Defs>

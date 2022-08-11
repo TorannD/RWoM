@@ -931,6 +931,60 @@ Fail backlash: 12</description>
   </TorannMagic.MagicRecipeDef>
   
   <TorannMagic.MagicRecipeDef ParentName="TM_MagicRecipeBase">
+    <defName>TM_SummonSpiritMR</defName>
+    <label>Conjuration: possessor spirit</label>
+    <description>Summons a wandering spirit.
+Casters: 3
+Mana: 40 ea.
+Fail chance: 25%
+Fail backlash: 15</description>
+    <jobString>summoning spirit</jobString>
+	<mageCount>3</mageCount>
+	<manaCost>1.2</manaCost>
+    <workAmount>100000</workAmount>
+	<failChance>.25</failChance>
+	<failManaConsumed>.6</failManaConsumed>
+	<failDamageApplied>15</failDamageApplied>
+     <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RawMagicyte</li>
+          </thingDefs>
+        </filter>
+        <count>300</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Silver</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>
+    </ingredients>
+    <products>
+    </products>
+	<resultSpawnThings>
+	  <li>
+		<resultSpawnThing>TM_SpiritTD</resultSpawnThing>
+		<resultPawnKindDef>TM_SpiritPKD</resultPawnKindDef> <!-- must have a kinddef for pawn types -->
+		<spawnThingCount>1</spawnThingCount>
+		<spawnThingStackCount>1</spawnThingStackCount>
+		<summonTemporary>false</summonTemporary>
+		<spawnHostile>false</spawnHostile>  <!-- attempts to spawn thing with a hostile faction -->
+		<countRange>
+			<min>1</min>
+			<max>1</max>
+		</countRange>
+	  </li>
+	</resultSpawnThings>	
+	<recipeUsers>
+		<li>TableSmallMagicCircle</li>
+	</recipeUsers>	
+  </TorannMagic.MagicRecipeDef>
+  
+  <TorannMagic.MagicRecipeDef ParentName="TM_MagicRecipeBase">
     <defName>TM_RuunbledMR</defName>
     <label>Conjuration: mystic weapon</label>
     <description>Summons a mystic weapon

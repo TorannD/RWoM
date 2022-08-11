@@ -170,31 +170,34 @@ namespace TorannMagic
 
         public void GainNeed(float amount)
         {
-            if (!base.pawn.NonHumanlikeOrWildMan())
+            if (!base.pawn.DestroyedOrNull() && !base.pawn.Dead && base.pawn.story != null && base.pawn.story.traits != null)
             {
-                Pawn pawn = base.pawn;
-                CompAbilityUserMight comp = pawn.GetComp<CompAbilityUserMight>();
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                amount = amount * (0.015f);
-                this.baseStaminaGain = amount * settingsRef.needMultiplier;
-                amount *= comp.spRegenRate;               
-                if (pawn.health != null && pawn.health.hediffSet != null)
+                if (!base.pawn.NonHumanlikeOrWildMan())
                 {
-                    Hediff hdRegen = pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_EnergyRegenHD);
-                    if (hdRegen != null)
+                    Pawn pawn = base.pawn;
+                    CompAbilityUserMight comp = pawn.GetComp<CompAbilityUserMight>();
+                    ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+                    amount = amount * (0.015f);
+                    this.baseStaminaGain = amount * settingsRef.needMultiplier;
+                    amount *= comp.spRegenRate;
+                    if (pawn.health != null && pawn.health.hediffSet != null)
                     {
-                        amount *= hdRegen.Severity;
+                        Hediff hdRegen = pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_EnergyRegenHD);
+                        if (hdRegen != null)
+                        {
+                            amount *= hdRegen.Severity;
+                        }
                     }
-                }
-                this.modifiedStaminaGain = amount - this.baseStaminaGain;
-                amount = Mathf.Min(amount, this.MaxLevel - this.CurLevel);
-                this.curLevelInt += amount;
-                this.lastGainPct = amount;
-                this.lastGainTick = Find.TickManager.TicksGame;
-                comp.Stamina.curLevelInt = Mathf.Clamp(comp.Stamina.curLevelInt += amount, 0f, this.MaxLevel);
+                    this.modifiedStaminaGain = amount - this.baseStaminaGain;
+                    amount = Mathf.Min(amount, this.MaxLevel - this.CurLevel);
+                    this.curLevelInt += amount;
+                    this.lastGainPct = amount;
+                    this.lastGainTick = Find.TickManager.TicksGame;
+                    comp.Stamina.curLevelInt = Mathf.Clamp(comp.Stamina.curLevelInt += amount, 0f, this.MaxLevel);
 
+                }
+                AdjustThresh();
             }
-            AdjustThresh();
         }
 
         public void UseMightPower(float amount)

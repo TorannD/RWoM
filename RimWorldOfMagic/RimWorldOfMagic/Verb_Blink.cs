@@ -8,32 +8,12 @@ using System.Collections.Generic;
 
 namespace TorannMagic
 {
-    class Verb_Blink : Verb_UseAbility  
+    class Verb_Blink : Verb_BLOS 
     {
         bool arg_41_0;
         bool arg_42_0;
         private bool validTarg = false;
-
-        public override bool CanHitTargetFrom(IntVec3 root, LocalTargetInfo targ)
-        {            
-            if ( targ.IsValid && targ.CenterVector3.InBounds(base.CasterPawn.Map) && !targ.Cell.Fogged(base.CasterPawn.Map) && targ.Cell.Walkable(base.CasterPawn.Map))
-            {
-                if ((root - targ.Cell).LengthHorizontal < this.verbProps.range)
-                {
-                    //out of range
-                    validTarg = true;
-                }
-                else
-                {
-                    validTarg = false;
-                }
-            }
-            else
-            {
-                validTarg = false;
-            }
-            return validTarg;
-        }
+        
 
         protected override bool TryCastShot()
         {
@@ -45,7 +25,7 @@ namespace TorannMagic
                 IntVec3 arg_29_0 = this.currentTarget.Cell;
                 Vector3 vector = this.currentTarget.CenterVector3;
                 arg_40_0 = this.currentTarget.Cell.IsValid;
-                arg_41_0 = vector.InBounds(base.CasterPawn.Map);
+                arg_41_0 = vector.InBoundsWithNullCheck(base.CasterPawn.Map);
                 arg_42_0 = true; // vector.ToIntVec3().Standable(base.CasterPawn.Map);
             }
             else

@@ -13,53 +13,69 @@ namespace TorannMagic
             if (parent.def != null)
             {
                 bool customClass = false;
+                bool advancedClass = false;
+                string failMessage = "";
                 TMDefs.TM_CustomClass cc = null;
+                CompAbilityUserMight comp = user.TryGetComp<CompAbilityUserMight>();
+
                 for (int i = 0; i < TM_ClassUtility.CustomClasses().Count; i++)
                 {
-                    if ((TM_ClassUtility.CustomClasses()[i].isFighter && user.story.traits.HasTrait(TorannMagicDefOf.PhysicalProdigy)) || (TM_ClassUtility.CustomClasses()[i].isFighter && TM_ClassUtility.CustomClasses()[i].isMage && (user.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted) || user.story.traits.HasTrait(TorannMagicDefOf.PhysicalProdigy))))
+                    cc = TM_ClassUtility.CustomClasses()[i];
+                    if (cc.isFighter && cc.isAdvancedClass && comp != null)
                     {
-                        if (parent.def == TM_ClassUtility.CustomClasses()[i].tornScript || parent.def == TM_ClassUtility.CustomClasses()[i].fullScript)
+                        if (parent.def == cc.tornScript || parent.def == cc.fullScript)
+                        {
+                            if (TM_Calc.HasAdvancedFighterRequirements(user, cc, out failMessage))
+                            {
+                                advancedClass = true;
+                                ApplyAdvancedTrait(user, cc);
+                                this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
+                            }
+                            break;
+                        }
+
+                    }
+                    else if ((cc.isFighter && user.story.traits.HasTrait(TorannMagicDefOf.PhysicalProdigy)) || (cc.isFighter && TM_ClassUtility.CustomClasses()[i].isMage && (user.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted) || user.story.traits.HasTrait(TorannMagicDefOf.PhysicalProdigy))))
+                    {
+                        if (parent.def == cc.tornScript || parent.def == cc.fullScript)
                         {
                             customClass = true;
-                            cc = TM_ClassUtility.CustomClasses()[i];
-                            if (parent.def == TM_ClassUtility.CustomClasses()[i].fullScript)
+                            if (parent.def == cc.fullScript)
                             {
                                 HealthUtility.AdjustSeverity(user, TorannMagicDefOf.TM_Uncertainty, 0.2f);
                             }
                             FixTrait(user, user.story.traits.allTraits);
-                            user.story.traits.GainTrait(new Trait(TM_ClassUtility.CustomClasses()[i].classTrait, TM_ClassUtility.CustomClasses()[i].traitDegree));
+                            user.story.traits.GainTrait(new Trait(cc.classTrait, cc.traitDegree));
                             //Unique actions hook
-                            ApplyTraitAdjustments(user, TM_ClassUtility.CustomClasses()[i].classTrait);
+                            ApplyTraitAdjustments(user, cc.classTrait);
                             //
                             this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
-                            CompAbilityUserMight comp = user.TryGetComp<CompAbilityUserMight>();
                             if (comp != null)
                             {
                                 comp.customIndex = i;
-                                comp.customClass = TM_ClassUtility.CustomClasses()[i];
+                                comp.customClass = cc;
                             }
                             else
                             {
                                 Log.Message("failed to initialize custom might class comp");
                             }
                             CompAbilityUserMagic mComp = user.TryGetComp<CompAbilityUserMagic>();
-                            if(mComp != null && TM_ClassUtility.CustomClasses()[i].isMage)
+                            if(mComp != null && cc.isMage)
                             {
                                 mComp.customIndex = i;
-                                mComp.customClass = TM_ClassUtility.CustomClasses()[i];
+                                mComp.customClass = cc;
                             }
                             break;
                         }
                     }
                 }
-                if (!customClass && user.story.traits.HasTrait(TorannMagicDefOf.PhysicalProdigy))
+                if (!customClass && !advancedClass && user.story.traits.HasTrait(TorannMagicDefOf.PhysicalProdigy))
                 {
                     if (parent.def.defName == "BookOfGladiator")
                     {
                         FixTrait(user, user.story.traits.allTraits);
                         user.story.traits.GainTrait(new Trait(TorannMagicDefOf.Gladiator, 0, false));
                         this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
-                        CompAbilityUserMight comp = user.GetComp<CompAbilityUserMight>();
                         comp.skill_Sprint = true;
                     }
                     else if (parent.def.defName == "BookOfSniper")
@@ -155,19 +171,56 @@ namespace TorannMagic
                         this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                     }
                 }
-                else if(!customClass && !user.story.traits.HasTrait(TorannMagicDefOf.PhysicalProdigy))
+                else if(!customClass && !advancedClass && !user.story.traits.HasTrait(TorannMagicDefOf.PhysicalProdigy))
                 {
-                    Messages.Message("NotPhyAdeptPawn".Translate(), MessageTypeDefOf.RejectInput);
+                    if (failMessage != "")
+                    {
+                        Messages.Message("TM_UnableToLearnAdvancedClass".Translate(
+                                user.LabelShort,
+                                this.parent.def.label,
+                                failMessage
+                            ), MessageTypeDefOf.RejectInput);
+                    }
+                    else
+                    {
+                        Messages.Message("NotPhyAdeptPawn".Translate(), MessageTypeDefOf.RejectInput);
+                    }
                 }
                 //ResolveClassPassions(user);  currently disabled
 
             }
             else
             {
-                Messages.Message("NotPhyAdeptPawn".Translate(), MessageTypeDefOf.RejectInput);
+                Messages.Message("TM_InvalidAction".Translate(
+                        user.LabelShort,
+                        "might book"
+                    ), MessageTypeDefOf.RejectInput);
             }           
 
 		}
+
+        public static void ApplyAdvancedTrait(Pawn p, TMDefs.TM_CustomClass cc)
+        {
+            TraitDef trait = cc.classTrait;            
+            p.story.traits.GainTrait(new Trait(cc.classTrait, cc.traitDegree));
+
+            if (cc.advancedClassOptions != null && cc.advancedClassOptions.removesRequiredTrait)
+            {
+                List<Trait> pawnTraits = p.story.traits.allTraits;
+                foreach (TraitDef td in cc.advancedClassOptions.requiredTraits)
+                {
+                    foreach (Trait t in pawnTraits)
+                    {
+                        if (t.def == td)
+                        {
+                            p.story.traits.RemoveTrait(t);
+                            goto TraitGainEnd;
+                        }
+                    }
+                }
+            }
+            TraitGainEnd:;
+        }
 
         private void FixTrait(Pawn pawn, List<Trait> traits)
         {

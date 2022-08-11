@@ -258,7 +258,7 @@ namespace TorannMagic
             if (target != null && pawn != null)
             {
                 arg_40_0 = target.IsValid;
-                arg_41_0 = target.ToVector3().InBounds(pawn.Map);
+                arg_41_0 = target.ToVector3().InBoundsWithNullCheck(pawn.Map);
                 arg_42_0 = true; // target.Standable(pawn.Map);
                 vflag = arg_40_0 && arg_41_0 && arg_42_0;
                 if (vflag)

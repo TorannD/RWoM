@@ -1986,6 +1986,88 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 		</conflictingTraits>	
 	</TraitDef>
 	
+	<TraitDef>  
+		<defName>TM_Possessed</defName>
+		<ignoreConfigErrors>true</ignoreConfigErrors>
+		<commonality>0</commonality>
+		<degreeDatas>	
+		  <li>
+			<label>Possessed</label>
+			<description>The body of [PAWN_nameDef] is inhabited by the spirit of another pawn. Possession in a living pawn creates an internal conflict as the functions of the body are shared between two souls. This conflict can be reduced if personalities align, but will become further aggravated if they contrast. Possession of a deceased pawn will not experience mental conflicts, but will slowly deplete the energy of the possessing spirit. Spirit can be recharged through meditation or absorption.</description>
+			<degree>0</degree>
+			<statOffsets>				
+			</statOffsets>			
+		  </li>
+		</degreeDatas>
+		<modExtensions>
+			<li Class="TorannMagic.TMDefs.DefModExtension_TraitEnchantments">
+				<mpRegenRate>0.2</mpRegenRate>
+				<arcaneRes>.5</arcaneRes>
+				<arcaneDmg>.1</arcaneDmg>
+				<combatDmg>.25</combatDmg>
+			</li>
+		</modExtensions>
+		<conflictingTraits>
+		  <li>TM_Possessor</li>
+		</conflictingTraits>	
+	</TraitDef>
+	
+	<TraitDef>  
+		<defName>TM_Possessor</defName>
+		<ignoreConfigErrors>true</ignoreConfigErrors>
+		<commonality>0</commonality>
+		<degreeDatas>	
+		  <li>
+			<label>Spirit</label>
+			<description>The body of [PAWN_nameDef] is inhabited by the spirit of another pawn. Possession in a living pawn creates an internal conflict as the functions of the body are shared between two souls. This conflict can be reduced if personalities align, but will become further aggravated if they contrast. Possession of a deceased pawn will not experience mental conflicts, but will slowly deplete the energy of the possessing spirit. Spirit can be recharged through meditation or absorption.</description>
+			<degree>0</degree>
+			<statOffsets>				
+			</statOffsets>			
+		  </li>
+		</degreeDatas>		
+		<conflictingTraits>
+		  <li>InnerFire</li>
+		  <li>HeartOfFrost</li>
+		  <li>StormBorn</li>
+		  <li>Arcanist</li>
+		  <li>TM_Gifted</li>
+		  <li>PhysicalProdigy</li>
+		  <li>Paladin</li>
+		  <li>Gladiator</li>
+		  <li>TM_Sniper</li>
+		  <li>Summoner</li>
+		  <li>Druid</li>
+		  <li>Bladedancer</li>
+		  <li>Necromancer</li>
+		  <li>Priest</li>
+		  <li>Ranger</li>
+		  <li>Lich</li>
+		  <li>TM_Bard</li>
+		  <li>Faceless</li>
+		  <li>Succubus</li>
+		  <li>Warlock</li>
+		  <li>TM_Psionic</li>
+		  <li>Geomancer</li>
+		  <li>Technomancer</li>
+		  <li>BloodMage</li>
+		  <li>DeathKnight</li>
+		  <li>Enchanter</li>
+		  <li>TM_Monk</li>
+		  <li>TM_Wanderer</li>
+		  <li>TM_Wayfarer</li>
+		  <li>Chronomancer</li>
+		  <li>TM_SuperSoldier</li>
+		  <li>TM_Commander</li>	
+		  <li>ChaosMage</li>
+		  <li>TM_TheShadow</li>
+		  <li>TM_Brightmage</li>
+		  <li>TM_Shaman</li>
+		  <li>TM_Empath</li>
+		  <li>TM_Apothecary</li>
+		  <li>TM_Possessor</li>
+		</conflictingTraits>	
+	</TraitDef>
+	
 	<!-- Might Classes -->
 	
 	<TraitDef>

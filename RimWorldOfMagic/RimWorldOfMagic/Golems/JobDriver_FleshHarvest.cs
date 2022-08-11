@@ -56,12 +56,28 @@ namespace TorannMagic.Golems
                 if (age >= durationTicks)
                 {
                     Pawn p = pawn;
-                    IEnumerable<Thing> plantThings = from t in pawn.Map.listerThings.AllThings
-                                                    where (t.def.plant != null && !t.Fogged() && !t.IsForbidden(p) && (t.Position - TargetLocA).LengthHorizontal < 2f && t.Map.designationManager.AllDesignationsOn(t).Any((Designation x) => x.def == DesignationDefOf.HarvestPlant))
+                    List<Thing> dList = new List<Thing>();
+                    dList.Clear();
+                    IEnumerable<Thing> tmpThings = from t in pawn.Map.listerThings.AllThings
+                                                    where (t.def.plant != null && !t.Fogged() && !t.IsForbidden(p) && (t.Position - TargetLocA).LengthHorizontal < 2f)
                                                     select t;
-                    if (plantThings != null)
+                    foreach (Thing t in tmpThings)
                     {
-                        List<Thing> dList = plantThings.ToList();
+                        if (t.Map.designationManager.AllDesignationsOn(t).Any((Designation x) => x.def == DesignationDefOf.HarvestPlant))
+                        {
+                            dList.Add(t);
+                        }
+                        else if (t is Plant)
+                        {
+                            Plant plant = t as Plant;
+                            if (!plant.Blighted && plant.Growth >= 1 && plant.HarvestableNow && plant.DeliberatelyCultivated())
+                            {
+                                dList.Add(plant);
+                            }
+                        }
+                    }
+                    if (dList != null && dList.Count > 0)
+                    {
                         float angle = (Quaternion.AngleAxis(90, Vector3.up) * TM_Calc.GetVector(p.DrawPos, TargetThingA.DrawPos)).ToAngleFlat();
                         int num2 = dList.Count;
                         for (int i = 0; i < num2; i++)

@@ -568,7 +568,8 @@ Range: 50</description>
             <warmupTime>0.3</warmupTime>
             <SecondsToRecharge>8.0</SecondsToRecharge>
             <range>50</range>
-			<isViolent>false</isViolent>
+			<isViolent>false</isViolent>	
+			<stopBurstWithoutLos>false</stopBurstWithoutLos>
             <burstShotCount>1</burstShotCount>
             <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
             <soundCast>Message_PositiveEvent</soundCast>

@@ -9,37 +9,43 @@ namespace TorannMagic
 	public class TMAbilityDef : AbilityUser.AbilityDef
 	{
         //Add new variables here to control skill levels
-        public float manaCost = 0f;
-        public float staminaCost = 0f;
-        public float bloodCost = 0f;
-        public float chiCost = 0f;
-        public bool consumeEnergy = true;
-        public int abilityPoints = 1;
-        public float learnChance = 1f;
-        public float efficiencyReductionPercent = 0f;
-        public float upkeepEnergyCost = 0f;
-        public float upkeepRegenCost = 0f;
-        public float upkeepEfficiencyPercent = 0f;
-        public bool shouldInitialize = true;
-        public float weaponDamageFactor = 1f;
-        public HediffDef abilityHediff = null;
-        public ThingDef learnItem = null;
-        public bool canCopy = false;
-        public List<string> requiredWeaponsOrCategories = null; //Unarmed, Melee, Ranged, Bows, Rifles, Shotguns, Pistols, MagicalFoci or defName
-        public int relationsAdjustment = 0;
-        public bool restrictedAbility = false;
+        public float manaCost = 0f;                             //hardcoded mana cost of ability
+        public float staminaCost = 0f;                          //hardcoded stamina cost of ability
+        public float bloodCost = 0f;                            //hardcoded blood cost of ability
+        public float chiCost = 0f;                              //hardcoded chi cost of ability 
+        public bool consumeEnergy = true;                       //does not perform energy validation or reduction if false
+        public int abilityPoints = 1;                           //ability points to level - only applies to tiered abilities
+        public float learnChance = 1f;                          //chance a pawn learns this ability as a class ability if a torn book is used; doesn't apply to legacy classes
+        public float efficiencyReductionPercent = 0f;           //reduces the energy cost of this ability when the efficiency skill is leveled
+        public float upkeepEnergyCost = 0f;                     //reduces maximum energy to maintain this ability
+        public float upkeepRegenCost = 0f;                      //reduces energy regen
+        public float upkeepEfficiencyPercent = 0f;              //lowers upkeep costs (both max energy and energy regen)
+        public bool shouldInitialize = true;                    //loads the ability gizmo - set to false for passive abilities
+        public float weaponDamageFactor = 1f;                   //calculates ability damage based on equipped weapon - only applies to abilities that use this value
+        public HediffDef abilityHediff = null;                  //*do not use* - old custom energy cost
+        public ThingDef learnItem = null;                       //allows ability to be learned via this item - usually a scroll, commonly required to acquire cantrips
+        public bool canCopy = false;                            //whether this ability is allowed to be copied by legion or faceless 'mimic' abilities
+        public List<string> requiredWeaponsOrCategories = null; //Unarmed, Melee, Ranged, Bows, Rifles, Shotguns, Pistols, MagicalFoci or defName, must be equipped to use this ability
+        public int relationsAdjustment = 0;                     //modified relationships by this much if used on a non-hostile, non-wild, non-colonist pawn
+        public bool restrictedAbility = false;                  //identifies the ability as restricted, requiring a specific trait/class which is set in custom class learnable skills/spells
 
-        public NeedDef requiredNeed = null;
-        public float needCost = 0f;
-        public float needXPFactor = 100f;
-        public HediffDef requiredHediff = null;
-        public float hediffCost = 0f;
-        public float hediffXPFactor = 100f;
-        public InspirationDef requiredInspiration = null;
-        public bool requiresAnyInspiration = false;
-        public bool consumesInspiration = true;
+        public NeedDef requiredNeed = null;                     //identifies a need required to be present on the pawn to use this ability
+        public float needCost = 0f;                             //how much of the required need is required to use the ability and how much need will be reduced after using the ability
+        public float needXPFactor = 100f;                       //multiplier for amount of need consumed when applying xp gain; needs 0.0-1.0 will typically have a factor of 100
+        public HediffDef requiredHediff = null;                 //identifes a hediff required to be present on the pawn to use this ability
+        public float hediffCost = 0f;                           //severity of the hediff required to use the ability and how much severity will be reduced after using the ability
+        public float hediffXPFactor = 100f;                     //multiplier for hediff severity consumed when applying xp gain; hediff ranges from 0.0-1.0 will typically have a factor of 100
+        public InspirationDef requiredInspiration = null;       //pawn must have this inspiriation to use the ability
+        public bool requiresAnyInspiration = false;             //pawn must have a (any) inspiration to use this ability
+        public bool consumesInspiration = true;                 //whether the inspiration is consumed after the ability is used
 
-        public List<TMAbilityDef> childAbilities = new List<TMAbilityDef>();
+        public List<TMAbilityDef> childAbilities = new List<TMAbilityDef>();    //child abilities are also gained with the parent ability, an example is super soldier pistol spec
+
+        public TMAbilityDef chainedAbility = null;              //another ability that becomes available after using this ability
+        public int chainedAbilityExpiresAfterTicks = -1;        //chained ability is available for this many ticks after it appears; set to -1 to never expire
+        public bool chainedAbilityExpiresAfterCooldown = true;  //links the cooldown of this ability to the removal of the chained ability; accounts for cooldown reduction
+        public bool removeAbilityAfterUse = false;              //ability is removed after use   
+        public List<TMAbilityDef> abilitiesRemovedWhenUsed = new List<TMAbilityDef>();       //removes all listed abilities when this ability is used; useful for resetting an ability chain
 
         public string GetPointDesc()
 		{

@@ -24,6 +24,20 @@ namespace TorannMagic
             return TM_CustomClassDef.Named("TM_CustomClasses").customClasses;
         }
 
+        public static List<TM_CustomClass> CustomBaseClasses()
+        {
+            List<TM_CustomClass> ccTemp = new List<TM_CustomClass>();
+            ccTemp.Clear();
+            foreach(TM_CustomClass cc in CustomClasses())
+            {
+                if(!cc.isAdvancedClass)
+                {
+                    ccTemp.Add(cc);
+                }
+            }
+            return ccTemp;
+        }
+
         public static List<TraitDef> CustomClassTraitDefs
         {
             get
@@ -45,10 +59,20 @@ namespace TorannMagic
                 mageClasses.Clear();
                 for(int i = 0; i < CustomClasses().Count; i++)
                 {
-                    bool classEnabled = Settings.Instance.CustomClass[CustomClasses()[i].classTrait.ToString()];
-                    if (CustomClasses()[i].isMage && ModOptions.Settings.Instance.CustomClass[CustomClasses()[i].classTrait.ToString()] && classEnabled)
+                    TM_CustomClass cc = CustomClasses()[i];
+                    if (cc.isMage && ModOptions.Settings.Instance.CustomClass[cc.classTrait.ToString()])
                     {
-                        mageClasses.Add(CustomClasses()[i]);
+                        if (cc.isAdvancedClass)
+                        {
+                            if (cc.advancedClassOptions != null && cc.advancedClassOptions.canSpawnWithClass)
+                            {
+                                mageClasses.Add(cc);
+                            }
+                        }
+                        else
+                        {
+                            mageClasses.Add(cc);
+                        }                        
                     }
                 }
                 return mageClasses;
@@ -63,22 +87,50 @@ namespace TorannMagic
                 fighterClasses.Clear();
                 for (int i = 0; i < CustomClasses().Count; i++)
                 {
-                    if (CustomClasses()[i].isFighter && ModOptions.Settings.Instance.CustomClass[CustomClasses()[i].classTrait.ToString()])
+                    TM_CustomClass cc = CustomClasses()[i];
+                    if (cc.isFighter && ModOptions.Settings.Instance.CustomClass[cc.classTrait.ToString()])
                     {
-                        fighterClasses.Add(CustomClasses()[i]);
+                        if (cc.isAdvancedClass)
+                        {
+                            if(cc.advancedClassOptions != null && cc.advancedClassOptions.canSpawnWithClass)
+                            {
+                                fighterClasses.Add(cc);
+                            }
+                        }
+                        else
+                        {
+                            fighterClasses.Add(cc);
+                        }                        
                     }
                 }
                 return fighterClasses;
             }
         }
 
-        public static int IsCustomClassIndex(List<Trait> allTraits)
+        public static List<TM_CustomClass> CustomAdvancedClasses
         {
-            for(int i = 0; i < CustomClasses().Count; i++)
+            get
+            {
+                List<TM_CustomClass> advClasses = new List<TM_CustomClass>();
+                advClasses.Clear();
+                for (int i = 0; i < CustomClasses().Count; i++)
+                {
+                    if (CustomClasses()[i].isAdvancedClass && ModOptions.Settings.Instance.CustomClass[CustomClasses()[i].classTrait.ToString()])
+                    {
+                        advClasses.Add(CustomClasses()[i]);
+                    }
+                }
+                return advClasses;
+            }
+        }
+
+        public static int IsCustomBaseClassIndex(List<Trait> allTraits)
+        {
+            for(int i = 0; i < CustomBaseClasses().Count; i++)
             {
                 for (int j = 0; j < allTraits.Count; j++)
                 {
-                    if (CustomClasses()[i].classTrait == allTraits[j].def)
+                    if (CustomBaseClasses()[i].classTrait == allTraits[j].def)
                     {
                         return i;
                     }
@@ -111,6 +163,16 @@ namespace TorannMagic
                 }
             }
             return hList;
+        }
+
+        public static TM_CustomClass GetCustomClassOfTrait(TraitDef td)
+        {
+            int index = CustomClassIndexOfTraitDef(td);
+            if(index >= 0)
+            {
+                return CustomClasses()[index];
+            }
+            return null;
         }
 
         public static List<MagicPowerSkill> GetAssociatedMagicPowerSkill(CompAbilityUserMagic comp, MagicPower power)
@@ -195,6 +257,20 @@ namespace TorannMagic
                 return customMages.RandomElement();
             }
             return null;
+        }
+
+        public static List<TM_CustomClass> GetAdvancedClassesForPawn(Pawn p)
+        {
+            List<TM_CustomClass> ccList = new List<TM_CustomClass>();
+            ccList.Clear();
+            foreach(TM_CustomClass cc in CustomAdvancedClasses)
+            {
+                if(p.story.traits.HasTrait(cc.classTrait))
+                {
+                    ccList.Add(cc);
+                }
+            }
+            return ccList;
         }
 
         public static bool ClassHasAbility(TMAbilityDef ability, CompAbilityUserMagic compMagic = null, CompAbilityUserMight compMight = null)

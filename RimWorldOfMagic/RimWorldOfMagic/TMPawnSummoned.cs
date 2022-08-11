@@ -213,7 +213,7 @@ namespace TorannMagic
                     ));
                 }
             }
-            if(this.def == TorannMagicDefOf.TM_SpiritWolfR)
+            if(this.def == TorannMagicDefOf.TM_SpiritWolfR || this.def == TorannMagicDefOf.TM_SpiritBearR || this.def == TorannMagicDefOf.TM_SpiritCrowR || this.def == TorannMagicDefOf.TM_SpiritMongooseR)
             {
                 try
                 {

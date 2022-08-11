@@ -43,9 +43,16 @@ namespace TorannMagic
                 if (flag)
                 {
                     CompAbilityUserMight compMight = base.SelPawn.TryGetComp<CompAbilityUserMight>();
-                    if (compMight != null && compMight.customClass != null)
+                    if (compMight != null)
                     {
-                        return true;
+                        if (compMight.customClass != null)
+                        {
+                            return true;
+                        }
+                        if(compMight.AdvancedClasses.Count > 0)
+                        {
+                            return true;
+                        }
                     }
                     if (base.SelPawn.story.traits.HasTrait(TorannMagicDefOf.Gladiator))
                     {

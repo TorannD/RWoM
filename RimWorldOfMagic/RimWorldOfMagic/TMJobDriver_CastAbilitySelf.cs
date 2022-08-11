@@ -27,7 +27,7 @@ namespace TorannMagic
             //{
             Find.Targeter.targetingSource = verb;
             //}
-            if (this.verb.Ability.Def is TMAbilityDef)
+            if (this.verb != null && this.verb.Ability != null && this.verb.Ability.Def is TMAbilityDef)
             {
                 TMAbilityDef tmAbility = (TMAbilityDef)(this.verb.Ability.Def);
                 CompAbilityUserMight compMight = this.pawn.TryGetComp<CompAbilityUserMight>();

@@ -223,10 +223,10 @@ namespace TorannMagic
 
         private bool IsGoodLocationForStrike(IntVec3 loc)
         {
-            bool flag1 = loc.InBounds(base.Map);
+            bool flag1 = loc.InBoundsWithNullCheck(base.Map);
             bool flag2 = loc.IsValid;
             bool flag3 = !loc.Fogged(base.Map);
-            bool flag4 = loc.DistanceToEdge(base.Map) > 2;
+            bool flag4 = loc.DistanceToEdge(base.Map) > 2;            
             if(flag1 && flag2 && flag3 && flag4)
             {
                 if(loc.Roofed(base.Map))
@@ -413,7 +413,7 @@ namespace TorannMagic
             for (int j = 0; j < targets.Count(); j++)
             {
                 curCell = targets.ToArray<IntVec3>()[j];
-                if (curCell.InBounds(this.Map) && curCell.IsValid && curCell.Walkable(this.Map))
+                if (curCell.InBoundsWithNullCheck(this.Map) && curCell.IsValid && curCell.Walkable(this.Map))
                 {
                     SpawnThings rogueElemental = new SpawnThings();
                     if (rnd < 2)

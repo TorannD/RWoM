@@ -14,7 +14,7 @@ namespace TorannMagic
         protected override DamageWorker.DamageResult ApplyMeleeDamageToTarget(LocalTargetInfo target)
         {
             DamageWorker.DamageResult damageResult = new DamageWorker.DamageResult();
-            DamageInfo dinfo = new DamageInfo(TMDamageDefOf.DamageDefOf.TM_Shadow, (int)(this.tool.power), 2, (float)-1, this.CasterPawn, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
+            DamageInfo dinfo = new DamageInfo(this.maneuver.verb.meleeDamageDef, (int)(this.tool.power), 2, (float)-1, this.CasterPawn, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
             damageResult.hitThing = target.Thing;
             damageResult.totalDamageDealt = Mathf.Min((float)target.Thing.HitPoints, dinfo.Amount);
             float angle = (Quaternion.AngleAxis(90, Vector3.up)*GetVector(this.CasterPawn.Position, target.Thing.Position)).ToAngleFlat();

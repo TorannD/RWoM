@@ -39,6 +39,7 @@ namespace TorannMagic.TMDefs
         public bool isUndead = false;
         public bool isAndroid = false;
         public bool isAdvancedClass = false;
+        public TM_AdvancedClassOptions advancedClassOptions = new TM_AdvancedClassOptions();
         public bool shouldShow = true;
 
         //Class Items

@@ -22,7 +22,7 @@ namespace TorannMagic.Weapon
             {
                 return this.verbProps.targetParams.canTargetSelf;
             }
-            if (targ.IsValid && targ.CenterVector3.InBounds(base.CasterPawn.Map) && !targ.Cell.Fogged(base.CasterPawn.Map) && targ.Cell.Walkable(base.CasterPawn.Map))
+            if (targ.IsValid && targ.CenterVector3.InBoundsWithNullCheck(base.CasterPawn.Map) && !targ.Cell.Fogged(base.CasterPawn.Map) && targ.Cell.Walkable(base.CasterPawn.Map))
             {
                 if ((root - targ.Cell).LengthHorizontal < this.verbProps.range)
                 {
@@ -67,7 +67,7 @@ namespace TorannMagic.Weapon
             for (int i = 0; i < 5; i++)
             {
                 currentPosR = GetNewPos(currentPosR, this.currentTarget.Cell.x <= destinationRPos.x, this.currentTarget.Cell.z <= destinationRPos.z, false, 0, 0, xProbR, 1 - xProbR);
-                if(currentPosR.IsValid && currentPosR.InBounds(this.CasterPawn.Map) && !currentPosR.Impassable(this.CasterPawn.Map) && this.currentPosR.Walkable(this.CasterPawn.Map))
+                if(currentPosR.IsValid && currentPosR.InBoundsWithNullCheck(this.CasterPawn.Map) && !currentPosR.Impassable(this.CasterPawn.Map) && this.currentPosR.Walkable(this.CasterPawn.Map))
                 {
                     bool flag = true;
                     foreach (Thing current in currentPosR.GetThingList(this.CasterPawn.Map))
@@ -84,7 +84,7 @@ namespace TorannMagic.Weapon
                     }
                 }
                 currentPosL = GetNewPos(currentPosL, this.currentTarget.Cell.x <= destinationLPos.x, this.currentTarget.Cell.z <= destinationLPos.z, false, 0, 0, xProbL, 1 - xProbL);
-                if (currentPosL.IsValid && currentPosL.InBounds(this.CasterPawn.Map) && !currentPosL.Impassable(this.CasterPawn.Map) && this.currentPosL.Walkable(this.CasterPawn.Map))
+                if (currentPosL.IsValid && currentPosL.InBoundsWithNullCheck(this.CasterPawn.Map) && !currentPosL.Impassable(this.CasterPawn.Map) && this.currentPosL.Walkable(this.CasterPawn.Map))
                 {
                     bool flag = true;
                     foreach (Thing current in currentPosL.GetThingList(this.CasterPawn.Map))

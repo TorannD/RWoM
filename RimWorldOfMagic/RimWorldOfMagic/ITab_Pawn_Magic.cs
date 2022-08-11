@@ -50,9 +50,16 @@ namespace TorannMagic
                 if (flag)
                 {
                     CompAbilityUserMagic compMagic = base.SelPawn.TryGetComp<CompAbilityUserMagic>();
-                    if (compMagic != null && compMagic.customClass != null)
+                    if (compMagic != null)
                     {
-                        return true;
+                        if (compMagic.customClass != null)
+                        {
+                            return true;
+                        }
+                        if(compMagic.AdvancedClasses.Count > 0)
+                        {
+                            return true;
+                        }
                     }
                     if (base.SelPawn.story.traits.HasTrait(TorannMagicDefOf.Arcanist))
                     {

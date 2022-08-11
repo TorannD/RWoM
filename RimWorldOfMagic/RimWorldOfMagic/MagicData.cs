@@ -3531,6 +3531,13 @@ namespace TorannMagic
             }
         }
 
+        public void ClearSkill_Dictionaries()
+        {
+            skillPower.Clear();
+            skillVersatility.Clear();
+            skillEfficiency.Clear();
+        }
+
         private Dictionary<TMAbilityDef, MagicPowerSkill> skillEfficiency = new Dictionary<TMAbilityDef, MagicPowerSkill>();
         public MagicPowerSkill GetSkill_Efficiency(TMAbilityDef ability)
         {
@@ -3542,7 +3549,6 @@ namespace TorannMagic
                 s = s.TrimEnd(trim) + "_eff";
                 for (int i = 0; i < AllMagicPowerSkills.Count; i++)
                 {
-
                     MagicPowerSkill mps = AllMagicPowerSkills[i];
                     
                     if (mps.label.Contains(s))
@@ -3611,7 +3617,7 @@ namespace TorannMagic
             return skillVersatility[ability];
         }
 
-        private Dictionary<TMAbilityDef, MagicPowerSkill> skillPower = new Dictionary<TMAbilityDef, MagicPowerSkill>();
+        private Dictionary<TMAbilityDef, MagicPowerSkill> skillPower = new Dictionary<TMAbilityDef, MagicPowerSkill>();        
         public MagicPowerSkill GetSkill_Power(TMAbilityDef ability)
         {
             if (!skillPower.ContainsKey(ability))
@@ -3644,7 +3650,7 @@ namespace TorannMagic
                                     MagicPowerSkill mps = AllMagicPowerSkills[k];
                                     foreach (TM_CustomSkill cs in customPowers[i].customPower.skills)
                                     {
-                                        if (cs.label.Contains("_pwr") && cs.label == mps.label)
+                                        if (cs.label.EndsWith("_pwr") && cs.label == mps.label)
                                         {
                                             skillPower.Add(ability, mps);
                                             hasSkill = true;
@@ -3690,27 +3696,26 @@ namespace TorannMagic
         }
 
         private int uniquePowersCount = 0;
-        public int GetUniquePowersWithSkillsCount(TMDefs.TM_CustomClass customClass)
+        public int GetUniquePowersWithSkillsCount(List<TMDefs.TM_CustomClass> customClassList)
         {
-            if (uniquePowersCount != 0)
-            {
-                return uniquePowersCount;
-            }
             List<TMAbilityDef> abilities = new List<TMAbilityDef>();
             abilities.Clear();
-            for (int i = 0; i < customClass.classMageAbilities.Count; i++)
+            foreach (TMDefs.TM_CustomClass customClass in customClassList)
             {
-                bool unique = true;
-                for (int j = 0; j < abilities.Count; j++)
+                for (int i = 0; i < customClass.classMageAbilities.Count; i++)
                 {
-                    if (customClass.classMageAbilities[i].defName.Contains(abilities[j].defName))
+                    bool unique = true;
+                    for (int j = 0; j < abilities.Count; j++)
                     {
-                        unique = false;
+                        if (customClass.classMageAbilities[i].defName.Contains(abilities[j].defName))
+                        {
+                            unique = false;
+                        }
                     }
-                }
-                if (unique)
-                {
-                    abilities.Add(customClass.classMageAbilities[i]);
+                    if (unique)
+                    {
+                        abilities.Add(customClass.classMageAbilities[i]);
+                    }
                 }
             }
             uniquePowersCount = abilities.Count;

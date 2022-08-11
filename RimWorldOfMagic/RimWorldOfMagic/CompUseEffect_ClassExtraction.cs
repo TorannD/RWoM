@@ -13,51 +13,57 @@ namespace TorannMagic
         {
             CompAbilityUserMagic compMagic = user.GetComp<CompAbilityUserMagic>();
             CompAbilityUserMight compMight = user.GetComp<CompAbilityUserMight>();
-            int essenceXP = 0;
-            if(compMagic != null && compMagic.IsMagicUser && compMagic.MagicUserXP != 0 && compMagic.MagicData != null)
+            if (TM_Calc.IsPossessedBySpirit(user))
             {
-                essenceXP += Rand.Range(300, 500);
-                for(int i = 0; i < compMagic.MagicData.MagicPowersStandalone.Count; i++)
-                {
-                    MagicPower mp = compMagic.MagicData.MagicPowersStandalone[i];
-                    if(mp.learned)
-                    {
-                        essenceXP += Rand.Range(80, 120);                       
-                    }
-                }
-                essenceXP += Mathf.RoundToInt(compMagic.MagicUserXP / Rand.Range(1.7f, 2.3f));
-                Thing mes = ThingMaker.MakeThing(TorannMagicDefOf.TM_MagicArtifact_MagicEssence, null);
-                CompEnchantedItem itemComp = mes.TryGetComp<CompEnchantedItem>();
-                if(itemComp != null && itemComp.HasEnchantment)
-                {
-                    itemComp.magicEssence = essenceXP;
-                }
-                GenPlace.TryPlaceThing(mes, this.parent.Position, this.parent.Map, ThingPlaceMode.Near);
-                essenceXP = 0;
+                TM_Action.RemovePossession(user, parent.Position, false);
             }
-            if (compMight != null && compMight.IsMightUser && compMight.MightUserXP != 0 && compMight.MightData != null)
+            else
             {
-                essenceXP += Rand.Range(300, 500);
-                for (int i = 0; i < compMight.MightData.MightPowersStandalone.Count; i++)
+                int essenceXP = 0;
+                if (compMagic != null && compMagic.IsMagicUser && compMagic.MagicUserXP != 0 && compMagic.MagicData != null)
                 {
-                    MightPower mp = compMight.MightData.MightPowersStandalone[i];
-                    if (mp.learned)
+                    essenceXP += Rand.Range(300, 500);
+                    for (int i = 0; i < compMagic.MagicData.MagicPowersStandalone.Count; i++)
                     {
-                        essenceXP += Rand.Range(80, 120);
+                        MagicPower mp = compMagic.MagicData.MagicPowersStandalone[i];
+                        if (mp.learned)
+                        {
+                            essenceXP += Rand.Range(80, 120);
+                        }
                     }
+                    essenceXP += Mathf.RoundToInt(compMagic.MagicUserXP / Rand.Range(1.7f, 2.3f));
+                    Thing mes = ThingMaker.MakeThing(TorannMagicDefOf.TM_MagicArtifact_MagicEssence, null);
+                    CompEnchantedItem itemComp = mes.TryGetComp<CompEnchantedItem>();
+                    if (itemComp != null && itemComp.HasEnchantment)
+                    {
+                        itemComp.magicEssence = essenceXP;
+                    }
+                    GenPlace.TryPlaceThing(mes, this.parent.Position, this.parent.Map, ThingPlaceMode.Near);
+                    essenceXP = 0;
                 }
-                essenceXP += Mathf.RoundToInt(compMight.MightUserXP / Rand.Range(1.7f, 2.3f));
-                Thing mes = ThingMaker.MakeThing(TorannMagicDefOf.TM_MagicArtifact_MightEssence, null);
-                CompEnchantedItem itemComp = mes.TryGetComp<CompEnchantedItem>();
-                if (itemComp != null && itemComp.HasEnchantment)
+                if (compMight != null && compMight.IsMightUser && compMight.MightUserXP != 0 && compMight.MightData != null)
                 {
-                    itemComp.mightEssence = essenceXP;
+                    essenceXP += Rand.Range(300, 500);
+                    for (int i = 0; i < compMight.MightData.MightPowersStandalone.Count; i++)
+                    {
+                        MightPower mp = compMight.MightData.MightPowersStandalone[i];
+                        if (mp.learned)
+                        {
+                            essenceXP += Rand.Range(80, 120);
+                        }
+                    }
+                    essenceXP += Mathf.RoundToInt(compMight.MightUserXP / Rand.Range(1.7f, 2.3f));
+                    Thing mes = ThingMaker.MakeThing(TorannMagicDefOf.TM_MagicArtifact_MightEssence, null);
+                    CompEnchantedItem itemComp = mes.TryGetComp<CompEnchantedItem>();
+                    if (itemComp != null && itemComp.HasEnchantment)
+                    {
+                        itemComp.mightEssence = essenceXP;
+                    }
+                    GenPlace.TryPlaceThing(mes, this.parent.Position, this.parent.Map, ThingPlaceMode.Near);
+                    essenceXP = 0;
                 }
-                GenPlace.TryPlaceThing(mes, this.parent.Position, this.parent.Map, ThingPlaceMode.Near);
-                essenceXP = 0;
+                ModOptions.TM_DebugTools.RemoveClass(user);
             }
-
-            ModOptions.TM_DebugTools.RemoveClass(user);
             TM_Action.TransmutateEffects(user.Position, user);
             TM_Action.TransmutateEffects(parent.Position, user);
 

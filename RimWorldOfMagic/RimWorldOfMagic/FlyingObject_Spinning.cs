@@ -163,7 +163,7 @@ namespace TorannMagic
             //base.Tick();
             Vector3 exactPosition = this.ExactPosition;
             this.ticksToImpact--;
-            bool flag = !this.ExactPosition.InBounds(base.Map);
+            bool flag = !this.ExactPosition.InBoundsWithNullCheck(base.Map);
             if (flag)
             {
                 this.ticksToImpact++;
@@ -187,7 +187,7 @@ namespace TorannMagic
                 bool flag2 = this.ticksToImpact <= 0;
                 if (flag2)
                 {
-                    bool flag3 = this.DestinationCell.InBounds(base.Map);
+                    bool flag3 = this.DestinationCell.InBoundsWithNullCheck(base.Map);
                     if (flag3)
                     {
                         base.Position = this.DestinationCell;
@@ -420,7 +420,7 @@ namespace TorannMagic
                         for (int i = 0; i < outsideRing.Count; i++)
                         {
                             IntVec3 intVec = outsideRing[i];
-                            if (intVec.IsValid && intVec.InBounds(base.Map))
+                            if (intVec.IsValid && intVec.InBoundsWithNullCheck(base.Map))
                             {
                                 Vector3 moteDirection = TM_Calc.GetVector(this.ExactPosition.ToIntVec3(), intVec);
                                 TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Rubble, this.ExactPosition, base.Map, Rand.Range(.3f, .6f), .2f, .02f, .05f, Rand.Range(-100, 100), Rand.Range(8f, 13f), (Quaternion.AngleAxis(90, Vector3.up) * moteDirection).ToAngleFlat(), 0);
@@ -504,7 +504,7 @@ namespace TorannMagic
                         for (int i = 0; i < outsideRing.Count; i++)
                         {
                             IntVec3 intVec = outsideRing[i];
-                            if (intVec.IsValid && intVec.InBounds(base.Map))
+                            if (intVec.IsValid && intVec.InBoundsWithNullCheck(base.Map))
                             {
                                 Vector3 moteDirection = TM_Calc.GetVector(this.ExactPosition.ToIntVec3(), intVec);
                                 TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_BloodSquirt, this.ExactPosition, base.Map, Rand.Range(.3f, .6f), .2f, .02f, .05f, Rand.Range(-100, 100), Rand.Range(4f, 13f), (Quaternion.AngleAxis(Rand.Range(60, 120), Vector3.up) * moteDirection).ToAngleFlat(), 0);
@@ -575,7 +575,7 @@ namespace TorannMagic
                     for (int i = 0; i < outsideRing.Count; i++)
                     {
                         IntVec3 intVec = outsideRing[i];
-                        if (intVec.IsValid && intVec.InBounds(base.Map))
+                        if (intVec.IsValid && intVec.InBoundsWithNullCheck(base.Map))
                         {
                             Vector3 moteDirection = TM_Calc.GetVector(this.ExactPosition.ToIntVec3(), intVec);
                             TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Rubble, this.ExactPosition, base.Map, Rand.Range(.3f, .6f), .2f, .02f, .05f, Rand.Range(-100, 100), Rand.Range(8f, 13f), (Quaternion.AngleAxis(90, Vector3.up) * moteDirection).ToAngleFlat(), 0);

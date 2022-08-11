@@ -23,6 +23,29 @@ namespace TorannMagic
 
         public int customIndex = -2;
         public TMDefs.TM_CustomClass customClass = null;
+        private List<TMDefs.TM_CustomClass> advClasses = null;
+       
+        public List<TMDefs.TM_CustomClass> AdvancedClasses
+        {
+            get
+            {
+                if (advClasses == null)
+                {
+                    advClasses = new List<TMDefs.TM_CustomClass>();
+                    advClasses.Clear();
+                }
+                return advClasses;
+            }
+            set
+            {
+                if (advClasses == null)
+                {
+                    advClasses = new List<TMDefs.TM_CustomClass>();
+                    advClasses.Clear();
+                }
+                advClasses = value;
+            }
+        }
 
         public bool mightPowersInitialized = false;
         public bool firstMightTick = false;
@@ -137,6 +160,20 @@ namespace TorannMagic
 
         public TMAbilityDef mimicAbility = null;
 
+        public class ChainedMightAbility
+        {
+            public ChainedMightAbility(TMAbilityDef _ability, int _expirationTicks, bool _expires)
+            {
+                abilityDef = _ability;
+                expirationTicks = _expirationTicks;
+                expires = _expires;
+            }
+            public TMAbilityDef abilityDef = null;
+            public int expirationTicks = 0;
+            public bool expires = true;
+        }
+        public List<ChainedMightAbility> chainedAbilitiesList = new List<ChainedMightAbility>();
+
         private MightData mightData = null;
         public MightData MightData
         {
@@ -170,6 +207,48 @@ namespace TorannMagic
                     mightUsed.Clear();
                 }
                 mightUsed = value;
+            }
+        }
+
+        public List<TMDefs.TM_CustomClass> CombinedCustomClasses
+        {
+            get
+            {
+                List<TMDefs.TM_CustomClass> tempcc = new List<TMDefs.TM_CustomClass>();
+                tempcc.Clear();
+                tempcc.AddRange(AdvancedClasses);
+                if (this.customClass != null)
+                {
+                    tempcc.Add(this.customClass);
+                }
+                return tempcc;
+            }
+        }
+
+        public List<TMAbilityDef> CombinedCustomAbilities
+        {
+            get
+            {
+                List<TMAbilityDef> tempca = new List<TMAbilityDef>();
+                tempca.Clear();
+                if (this.customClass != null)
+                {
+                    foreach (TMAbilityDef ability in this.customClass.classFighterAbilities)
+                    {
+                        tempca.Add(ability);
+                    }
+                }
+                if (this.AdvancedClasses != null && AdvancedClasses.Count > 0)
+                {
+                    foreach (TMDefs.TM_CustomClass cc in this.AdvancedClasses)
+                    {
+                        foreach (TMAbilityDef advAbility in cc.classFighterAbilities)
+                        {
+                            tempca.Add(advAbility);
+                        }
+                    }
+                }
+                return tempca;
             }
         }
 
@@ -245,31 +324,34 @@ namespace TorannMagic
 
             if (this.customClass != null)
             {
-                CompAbilityUserMagic mComp = this.Pawn.TryGetComp<CompAbilityUserMagic>();
-                bool shouldDraw = true;
-                if(mComp != null)
+                if (!this.customClass.isAdvancedClass)
                 {
-                    if(mComp.customClass != null)
+                    CompAbilityUserMagic mComp = this.Pawn.TryGetComp<CompAbilityUserMagic>();
+                    bool shouldDraw = true;
+                    if (mComp != null)
                     {
-                        shouldDraw = false;
+                        if (mComp.customClass != null)
+                        {
+                            shouldDraw = false;
+                        }
                     }
-                }
-                if (shouldDraw)
-                {
-                    Material mat = TM_RenderQueue.fighterMarkMat;
-                    if (this.customClass.classIconPath != "")
+                    if (shouldDraw)
                     {
-                        mat = MaterialPool.MatFrom("Other/" + this.customClass.classIconPath.ToString());
+                        Material mat = TM_RenderQueue.fighterMarkMat;
+                        if (this.customClass.classIconPath != "")
+                        {
+                            mat = MaterialPool.MatFrom("Other/" + this.customClass.classIconPath.ToString());
+                        }
+                        else if (this.customClass.classTexturePath != "")
+                        {
+                            mat = MaterialPool.MatFrom("Other/ClassTextures/" + this.customClass.classTexturePath, true);
+                        }
+                        if (this.customClass.classIconColor != null)
+                        {
+                            mat.color = this.customClass.classIconColor;
+                        }
+                        Graphics.DrawMesh(MeshPool.plane10, matrix, mat, 0);
                     }
-                    else if (this.customClass.classTexturePath != "")
-                    {
-                        mat = MaterialPool.MatFrom("Other/ClassTextures/" + this.customClass.classTexturePath, true);
-                    }
-                    if (this.customClass.classIconColor != null)
-                    {
-                        mat.color = this.customClass.classIconColor;
-                    }
-                    Graphics.DrawMesh(MeshPool.plane10, matrix, mat, 0);
                 }
             }            
             else
@@ -318,10 +400,10 @@ namespace TorannMagic
                 {
                     Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.wayfarerMarkMat, 0);
                 }
-                else
-                {
-                    Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.fighterMarkMat, 0);
-                }
+                //else
+                //{
+                //    Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.fighterMarkMat, 0);
+                //}
             }
         }
 
@@ -1027,6 +1109,19 @@ namespace TorannMagic
                         }
                         base.CompTick();
                         this.age++;
+                        if (this.chainedAbilitiesList != null && this.chainedAbilitiesList.Count > 0)
+                        {
+                            for (int i = 0; i < chainedAbilitiesList.Count; i++)
+                            {
+                                chainedAbilitiesList[i].expirationTicks--;
+                                if (chainedAbilitiesList[i].expires && chainedAbilitiesList[i].expirationTicks <= 0)
+                                {
+                                    this.RemovePawnAbility(chainedAbilitiesList[i].abilityDef);
+                                    this.chainedAbilitiesList.Remove(chainedAbilitiesList[i]);
+                                    break;
+                                }
+                            }
+                        }
                         if (Find.TickManager.TicksGame % 20 == 0)
                         {
                             ResolveSustainedSkills();
@@ -1288,7 +1383,7 @@ namespace TorannMagic
                         }
                         if (this.customClass == null && this.customIndex == -2)
                         {
-                            this.customIndex = TM_ClassUtility.IsCustomClassIndex(this.Pawn.story.traits.allTraits);
+                            this.customIndex = TM_ClassUtility.IsCustomBaseClassIndex(this.Pawn.story.traits.allTraits);
                             if (this.customIndex >= 0)
                             {
                                 if (!TM_ClassUtility.CustomClasses()[this.customIndex].isFighter)
@@ -1310,7 +1405,27 @@ namespace TorannMagic
                         if (flag4)
                         {
                             return true;
-                        }                        
+                        }
+                        if (this.AdvancedClasses != null && this.AdvancedClasses.Count > 0)
+                        {
+                            return true;
+                        }
+                        else if (TM_Calc.HasAdvancedClass(this.Pawn))
+                        {
+                            bool hasAdvClass = false;
+                            foreach (TMDefs.TM_CustomClass cc in TM_ClassUtility.GetAdvancedClassesForPawn(this.Pawn))
+                            {
+                                if (cc.isFighter)
+                                {
+                                    this.AdvancedClasses.Add(cc);
+                                    hasAdvClass = true;
+                                }
+                            }
+                            if (hasAdvClass)
+                            {
+                                return true;
+                            }
+                        }
                     }
                 }
                 return false;
@@ -1792,8 +1907,48 @@ namespace TorannMagic
                     this.MightData.ReturnMatchingMightPower(TorannMagicDefOf.TM_60mmMortar).learned = true;
                 }
             }
+            AssignAdvancedClassAbilities(true);
             this.mightPowersInitialized = true;
             //base.UpdateAbilities();
+        }
+
+        public void AssignAdvancedClassAbilities(bool firstAssignment = false)
+        {
+            if (this.AdvancedClasses != null && this.AdvancedClasses.Count > 0)
+            {
+                for (int z = 0; z < this.MightData.AllMightPowers.Count; z++)
+                {
+                    TMAbilityDef ability = (TMAbilityDef)this.MightData.AllMightPowers[z].abilityDef;
+                    foreach (TMDefs.TM_CustomClass cc in this.AdvancedClasses)
+                    {
+                        if (cc.classFighterAbilities.Contains(ability))
+                        {
+                            this.MightData.AllMightPowers[z].learned = true;
+                        }                       
+                        if (this.MightData.AllMightPowers[z].learned)
+                        {
+                            if (ability.shouldInitialize)
+                            {
+                                this.AddPawnAbility(ability);
+                            }
+                            if (ability.childAbilities != null && ability.childAbilities.Count > 0)
+                            {
+                                for (int c = 0; c < ability.childAbilities.Count; c++)
+                                {
+                                    if (ability.childAbilities[c].shouldInitialize)
+                                    {
+                                        this.AddPawnAbility(ability.childAbilities[c]);
+                                    }
+                                }
+                            }
+                        }
+                        if (cc.classHediff != null)
+                        {
+                            HealthUtility.AdjustSeverity(this.Pawn, this.customClass.classHediff, this.customClass.hediffSeverity);
+                        }
+                    }
+                }                
+            }
         }
 
         public void InitializeSkill()  //used for class independant skills
@@ -3434,9 +3589,10 @@ namespace TorannMagic
                                                 continue;
                                             }
                                         }
-                                        bool TN = mp.autocasting.targetNeutral && (targetThing.Faction == null || !targetThing.Faction.HostileTo(this.Pawn.Faction));
+                                        bool TN = mp.autocasting.targetNeutral && targetThing.Faction != null && !targetThing.Faction.HostileTo(this.Pawn.Faction);
+                                        bool TNF = mp.autocasting.targetNoFaction && targetThing.Faction == null;
                                         bool TF = mp.autocasting.targetFriendly && targetThing.Faction == this.Pawn.Faction;
-                                        if (!(TE || TN || TF))
+                                        if (!(TE || TN || TF || TNF))
                                         {
                                             continue;
                                         }
@@ -3517,10 +3673,11 @@ namespace TorannMagic
                                                 continue;
                                             }
                                         }
-                                        bool TN = mp.autocasting.targetNeutral && (targetThing.Faction == null || !targetThing.Faction.HostileTo(this.Pawn.Faction));
+                                        bool TN = mp.autocasting.targetNeutral && targetThing.Faction != null && !targetThing.Faction.HostileTo(this.Pawn.Faction);
+                                        bool TNF = mp.autocasting.targetNoFaction && targetThing.Faction == null;
                                         bool TF = mp.autocasting.targetFriendly && targetThing.Faction == this.Pawn.Faction;
-                                        if (!(TE || TN || TF))
-                                        {                                            
+                                        if (!(TE || TN || TF || TNF))
+                                        {
                                             continue;
                                         }
                                         if (!mp.autocasting.ValidConditions(this.Pawn, targetThing))
@@ -3828,9 +3985,10 @@ namespace TorannMagic
                                                 continue;
                                             }
                                         }
-                                        bool TN = mp.autocasting.targetNeutral && (targetThing.Faction == null || !targetThing.Faction.HostileTo(this.Pawn.Faction));
+                                        bool TN = mp.autocasting.targetNeutral && targetThing.Faction != null && !targetThing.Faction.HostileTo(this.Pawn.Faction);
+                                        bool TNF = mp.autocasting.targetNoFaction && targetThing.Faction == null;
                                         bool TF = mp.autocasting.targetFriendly && targetThing.Faction == this.Pawn.Faction;
-                                        if (!(TE || TN || TF))
+                                        if (!(TE || TN || TF || TNF))
                                         {
                                             continue;
                                         }
@@ -3910,9 +4068,10 @@ namespace TorannMagic
                                                 continue;
                                             }
                                         }
-                                        bool TN = mp.autocasting.targetNeutral && (targetThing.Faction == null || !targetThing.Faction.HostileTo(this.Pawn.Faction));
+                                        bool TN = mp.autocasting.targetNeutral && targetThing.Faction != null && !targetThing.Faction.HostileTo(this.Pawn.Faction);
+                                        bool TNF = mp.autocasting.targetNoFaction && targetThing.Faction == null;
                                         bool TF = mp.autocasting.targetFriendly && targetThing.Faction == this.Pawn.Faction;
-                                        if (!(TE || TN || TF))
+                                        if (!(TE || TN || TF || TNF))
                                         {
                                             continue;
                                         }
@@ -4233,7 +4392,7 @@ namespace TorannMagic
         public void ResolveAIAutoCast()
         {
             ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-            if (settingsRef.autocastEnabled && this.Pawn.jobs != null && this.Pawn.CurJob != null && this.Pawn.CurJob.def != TorannMagicDefOf.TMCastAbilityVerb && this.Pawn.CurJob.def != TorannMagicDefOf.TMCastAbilitySelf && this.Pawn.CurJob.def != JobDefOf.Ingest && this.Pawn.CurJob.def != JobDefOf.ManTurret && this.Pawn.GetPosture() == PawnPosture.Standing)
+            if (settingsRef.AICasting && this.Pawn.jobs != null && this.Pawn.CurJob != null && this.Pawn.CurJob.def != TorannMagicDefOf.TMCastAbilityVerb && this.Pawn.CurJob.def != TorannMagicDefOf.TMCastAbilitySelf && this.Pawn.CurJob.def != JobDefOf.Ingest && this.Pawn.CurJob.def != JobDefOf.ManTurret && this.Pawn.GetPosture() == PawnPosture.Standing)
             {
                 //Log.Message("pawn " + this.Pawn.LabelShort + " current job is " + this.Pawn.CurJob.def.defName);
                 bool castSuccess = false;
@@ -4282,7 +4441,7 @@ namespace TorannMagic
                                                 continue;
                                             }
                                         }
-                                        bool TN = mp.autocasting.targetNeutral && (targetThing.Faction == null || !targetThing.Faction.HostileTo(this.Pawn.Faction));
+                                        bool TN = mp.autocasting.targetNeutral && targetThing.Faction != null && !targetThing.Faction.HostileTo(this.Pawn.Faction);
                                         if (TN && targetThing is Pawn)
                                         {
                                             Pawn targetPawn = targetThing as Pawn;
@@ -4290,13 +4449,22 @@ namespace TorannMagic
                                             {
                                                 continue;
                                             }
-                                            if (mp.abilityDef.MainVerb.isViolent && targetThing.Faction != null && !targetPawn.InMentalState)
+                                            if (mp.abilityDef.MainVerb.isViolent && !targetPawn.InMentalState)
+                                            {
+                                                continue;
+                                            }
+                                        }
+                                        bool TNF = mp.autocasting.targetNoFaction && targetThing.Faction == null;
+                                        if (TNF && targetThing is Pawn)
+                                        {
+                                            Pawn targetPawn = targetThing as Pawn;
+                                            if (targetPawn.Downed || targetPawn.IsPrisoner)
                                             {
                                                 continue;
                                             }
                                         }
                                         bool TF = mp.autocasting.targetFriendly && targetThing.Faction == this.Pawn.Faction;
-                                        if (!(TE || TN || TF))
+                                        if (!(TE || TN || TF || TNF))
                                         {
                                             continue;
                                         }
@@ -4384,7 +4552,7 @@ namespace TorannMagic
                                                 continue;
                                             }
                                         }
-                                        bool TN = mp.autocasting.targetNeutral && (targetThing.Faction == null || !targetThing.Faction.HostileTo(this.Pawn.Faction));
+                                        bool TN = mp.autocasting.targetNeutral && targetThing.Faction != null && !targetThing.Faction.HostileTo(this.Pawn.Faction);
                                         if (TN && targetThing is Pawn)
                                         {
                                             Pawn targetPawn = targetThing as Pawn;
@@ -4392,13 +4560,22 @@ namespace TorannMagic
                                             {
                                                 continue;
                                             }
-                                            if (mp.abilityDef.MainVerb.isViolent && targetThing.Faction != null && !targetPawn.InMentalState)
+                                            if (mp.abilityDef.MainVerb.isViolent && !targetPawn.InMentalState)
+                                            {
+                                                continue;
+                                            }
+                                        }
+                                        bool TNF = mp.autocasting.targetNoFaction && targetThing.Faction == null;
+                                        if (TNF && targetThing is Pawn)
+                                        {
+                                            Pawn targetPawn = targetThing as Pawn;
+                                            if (targetPawn.Downed || targetPawn.IsPrisoner)
                                             {
                                                 continue;
                                             }
                                         }
                                         bool TF = mp.autocasting.targetFriendly && targetThing.Faction == this.Pawn.Faction;
-                                        if (!(TE || TN || TF))
+                                        if (!(TE || TN || TF || TNF))
                                         {
                                             continue;
                                         }
@@ -5213,7 +5390,7 @@ namespace TorannMagic
             if (flag11)
             {
                 Pawn abilityUser = base.Pawn;
-                int index = TM_ClassUtility.IsCustomClassIndex(abilityUser.story.traits.allTraits);
+                int index = TM_ClassUtility.IsCustomBaseClassIndex(abilityUser.story.traits.allTraits);
                 if (index >= 0)
                 {
                     if (TM_ClassUtility.CustomClasses()[index].isFighter)
@@ -5221,32 +5398,7 @@ namespace TorannMagic
                         this.customClass = TM_ClassUtility.CustomClasses()[index];
                         this.customIndex = index;
 
-                        for (int i = 0; i < customClass.classFighterAbilities.Count; i++)
-                        {
-                            TMAbilityDef ability = customClass.classFighterAbilities[i];
-                            
-                            for (int j = 0; j < this.MightData.AllMightPowers.Count; j++)
-                            {
-                                if (this.MightData.AllMightPowers[j].TMabilityDefs.Contains(ability) && this.MightData.AllMightPowers[j].learned)
-                                {
-                                    if (ability.shouldInitialize)
-                                    {
-                                        int level = this.MightData.AllMightPowers[j].level;
-                                        base.AddPawnAbility(this.MightData.AllMightPowers[j].TMabilityDefs[level]);
-                                    }
-                                    if(ability.childAbilities != null && ability.childAbilities.Count > 0)
-                                    {
-                                        for (int c = 0; c < ability.childAbilities.Count; c++)
-                                        {
-                                            if (ability.childAbilities[c].shouldInitialize)
-                                            {
-                                                this.AddPawnAbility(ability.childAbilities[c]);
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
+                        LoadCustomClassAbilities(this.customClass);
                     }
                 }
                 else
@@ -5740,6 +5892,163 @@ namespace TorannMagic
                 this.InitializeSkill();
                 //base.UpdateAbilities();
             }            
+        }
+
+        public void LoadCustomClassAbilities(TMDefs.TM_CustomClass cc, Pawn fromPawn = null)
+        {
+            for (int i = 0; i < cc.classFighterAbilities.Count; i++)
+            {
+                TMAbilityDef ability = cc.classFighterAbilities[i];
+                MightData fromData = null;
+                if (fromPawn != null)
+                {
+                    fromData = fromPawn.TryGetComp<CompAbilityUserMight>().MightData;
+                }
+                if (fromData != null)
+                {
+                    foreach (MightPower fp in fromData.AllMightPowers)
+                    {
+                        if (fp.learned && cc.classFighterAbilities.Contains(fp.abilityDef))
+                        {
+                            MightPower mp = this.MightData.AllMightPowers.FirstOrDefault((MightPower x) => x.abilityDef == fp.TMabilityDefs[0]);
+                            if (mp != null)
+                            {
+                                mp.learned = true;
+                                mp.level = fp.level;
+                            }
+                        }
+                    }
+                }
+
+                for (int j = 0; j < this.MightData.AllMightPowers.Count; j++)
+                {
+                    if (this.MightData.AllMightPowers[j].TMabilityDefs.Contains(ability) && this.MightData.AllMightPowers[j].learned)
+                    {
+                        if (ability.shouldInitialize)
+                        {
+                            int level = this.MightData.AllMightPowers[j].level;
+                            base.AddPawnAbility(this.MightData.AllMightPowers[j].TMabilityDefs[level]);
+                        }
+                        if (ability.childAbilities != null && ability.childAbilities.Count > 0)
+                        {
+                            for (int c = 0; c < ability.childAbilities.Count; c++)
+                            {
+                                if (ability.childAbilities[c].shouldInitialize)
+                                {
+                                    this.AddPawnAbility(ability.childAbilities[c]);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        public void AddAdvancedClass(TMDefs.TM_CustomClass ac, Pawn fromPawn = null)
+        {
+            if (ac != null && ac.isFighter && ac.isAdvancedClass)
+            {
+                if (!this.AdvancedClasses.Contains(ac))
+                {
+                    this.AdvancedClasses.Add(ac);
+                }
+                else // clear all abilities and re-add
+                {
+                    foreach (TMAbilityDef ability in ac.classFighterAbilities)
+                    {
+                        RemovePawnAbility(ability);
+                        if (ability.childAbilities != null && ability.childAbilities.Count > 0)
+                        {
+                            foreach (TMAbilityDef cab in ability.childAbilities)
+                            {
+                                RemovePawnAbility(cab);
+                            }
+                        }
+                    }
+                }
+                if (fromPawn != null)
+                {
+                    MightData fromData = fromPawn.TryGetComp<CompAbilityUserMight>().MightData;
+                    if (fromData != null)
+                    {
+                        foreach (TMAbilityDef ability in ac.classMageAbilities)
+                        {
+                            MightPowerSkill mps_e = this.MightData.GetSkill_Efficiency(ability);
+                            MightPowerSkill fps_e = fromData.GetSkill_Efficiency(ability);
+                            if (mps_e != null && fps_e != null)
+                            {
+                                mps_e.level = fps_e.level;
+                            }
+                            MightPowerSkill mps_p = this.MightData.GetSkill_Power(ability);
+                            MightPowerSkill fps_p = fromData.GetSkill_Power(ability);
+                            if (mps_p != null && fps_p != null)
+                            {
+                                mps_p.level = fps_p.level;
+                            }
+                            MightPowerSkill mps_v = this.MightData.GetSkill_Versatility(ability);
+                            MightPowerSkill fps_v = fromData.GetSkill_Versatility(ability);
+                            if (mps_v != null && fps_v != null)
+                            {
+                                mps_v.level = fps_v.level;
+                            }
+                        }
+                    }
+                }
+                LoadCustomClassAbilities(ac, fromPawn);
+            }
+        }
+
+        public void RemoveAdvancedClass(TMDefs.TM_CustomClass ac)
+        {
+            for (int i = 0; i < ac.classFighterAbilities.Count; i++)
+            {
+                TMAbilityDef ability = ac.classFighterAbilities[i];
+
+                for (int j = 0; j < this.MightData.AllMightPowers.Count; j++)
+                {
+                    MightPower power = this.MightData.AllMightPowers[j];
+                    if (power.abilityDef == ability)
+                    {                        
+                        power.autocast = false;
+                        power.learned = false;
+                        power.level = 0;
+
+                        if (ability.childAbilities != null && ability.childAbilities.Count > 0)
+                        {
+                            for (int c = 0; c < ability.childAbilities.Count; c++)
+                            {
+                                this.RemovePawnAbility(ability.childAbilities[c]);
+                            }
+                        }
+                    }
+                    base.RemovePawnAbility(ability);
+                }
+            }
+            if (ac != null && ac.isFighter && ac.isAdvancedClass)
+            {
+                foreach (TMAbilityDef ability in ac.classFighterAbilities)
+                {
+                    MightPowerSkill mps_e = this.MightData.GetSkill_Efficiency(ability);
+                    if (mps_e != null)
+                    {
+                        mps_e.level = 0;
+                    }
+                    MightPowerSkill mps_p = this.MightData.GetSkill_Power(ability);
+                    if (mps_p != null)
+                    {
+                        mps_p.level = 0;
+                    }
+                    MightPowerSkill mps_v = this.MightData.GetSkill_Versatility(ability);
+                    if (mps_v != null)
+                    {
+                        mps_v.level = 0;
+                    }
+                }
+            }
+            if (this.AdvancedClasses.Contains(ac))
+            {
+                this.AdvancedClasses.Remove(ac);
+            }
         }
 
         public void UpdateAutocastDef()

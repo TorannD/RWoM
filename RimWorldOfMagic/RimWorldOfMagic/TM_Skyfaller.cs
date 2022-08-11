@@ -206,7 +206,7 @@ namespace TorannMagic
         //            }
         //            RoofCollapserImmediate.DropRoofInCells(cr.ExpandedBy(1).ClipInsideMap(base.Map).Cells.Where(delegate (IntVec3 c)
         //            {
-        //                if (!c.InBounds(this.Map))
+        //                if (!c.InBoundsWithNullCheck(this.Map))
         //                {
         //                    return false;
         //                }

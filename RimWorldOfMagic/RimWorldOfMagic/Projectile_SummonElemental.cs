@@ -378,6 +378,12 @@ namespace TorannMagic
                             }
                             lord.AddPawn(newPawn);
                         }
+                        Pawn enemy = TM_Calc.FindNearbyEnemy(newPawn, 30);
+                        if (enemy != null)
+                        {
+                            Job defendJob = new Job(JobDefOf.AttackMelee, enemy);
+                            newPawn.jobs.TryTakeOrderedJob(defendJob);
+                        }
                     }
                 }
                 else

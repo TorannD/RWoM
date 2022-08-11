@@ -19,7 +19,7 @@ namespace TorannMagic
 
         public override bool CanHitTargetFrom(IntVec3 root, LocalTargetInfo targ)
         {
-            if (targ.IsValid && targ.CenterVector3.InBounds(base.CasterPawn.Map) && !targ.Cell.Fogged(base.CasterPawn.Map) && targ.Cell.Walkable(base.CasterPawn.Map))
+            if (targ.IsValid && targ.CenterVector3.InBoundsWithNullCheck(base.CasterPawn.Map) && !targ.Cell.Fogged(base.CasterPawn.Map) && targ.Cell.Walkable(base.CasterPawn.Map))
             {
                 if ((root - targ.Cell).LengthHorizontal < this.verbProps.range)
                 {
@@ -83,7 +83,7 @@ namespace TorannMagic
                             {
                                 if (Rand.Chance(TM_Calc.GetSpellSuccessChance(this.CasterPawn, pawns[i], true)) && Rand.Chance(distanceModifier))
                                 {
-                                    TM_Action.DamageEntities(pawns[i], pawns[i].def.race.body.AllPartsVulnerableToFrostbite.RandomElement(), Rand.Range(10, 20) * distanceModifier, 1f, DamageDefOf.Frostbite, p);
+                                    TM_Action.DamageEntities(pawns[i], pawns[i].def.race.body.AllPartsVulnerableToFrostbite.RandomElement(), Rand.Range(10, 20) * distanceModifier, 1f, TMDamageDefOf.DamageDefOf.TM_FreezingWindsDD, p);
                                 }
                                 if (Rand.Chance(TM_Calc.GetSpellSuccessChance(this.CasterPawn, pawns[i], true)) && Rand.Chance(distanceModifier))
                                 {

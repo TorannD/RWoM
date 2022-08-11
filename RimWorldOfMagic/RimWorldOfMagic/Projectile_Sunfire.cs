@@ -118,14 +118,14 @@ namespace TorannMagic
                 Vector3 rndPos = centerPos;
                 rndPos.x += Rand.Range(-this.radius, this.radius);
                 rndPos.z += Rand.Range(-this.radius, this.radius);
-                if(!rndPos.InBounds(this.Map))
+                if(!rndPos.InBoundsWithNullCheck(this.Map))
                 {
                     continue;
                 }                
                 Vector3 dstPos = rndPos;
                 dstPos.x += Rand.Range(-this.radius, this.radius);
                 dstPos.z += Rand.Range(-this.radius, this.radius);
-                if (!dstPos.InBounds(this.Map))
+                if (!dstPos.InBoundsWithNullCheck(this.Map))
                 {
                     continue;
                 }

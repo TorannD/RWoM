@@ -1267,6 +1267,19 @@
   </ThingDef>
   
   <ThingDef ParentName="MoteBase">
+    <defName>Mote_SpiritCasting</defName>
+    <graphicData>
+      <texPath>Motes/CastingMote_Spirit</texPath>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.0</fadeInTime>
+      <solidTime>0.15</solidTime>
+      <fadeOutTime>.45</fadeOutTime>
+    </mote>
+  </ThingDef>
+  
+  <ThingDef ParentName="MoteBase">
     <defName>Mote_PowerWave</defName>
     <graphicData>
       <texPath>Motes/PowerWaveMote</texPath>

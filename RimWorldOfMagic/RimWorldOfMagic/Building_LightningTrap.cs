@@ -141,7 +141,7 @@ namespace TorannMagic
             for (int i = 0; i < num; i++)
             {
                 IntVec3 intVec = center + GenRadial.RadialPattern[i];
-                if (intVec.InBounds(map))
+                if (intVec.InBoundsWithNullCheck(map))
                 {
                     float lengthHorizontal = (center - intVec).LengthHorizontal;
                     float num2 = 1f - lengthHorizontal / radius;

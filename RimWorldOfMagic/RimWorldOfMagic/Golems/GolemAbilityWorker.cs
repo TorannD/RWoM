@@ -40,12 +40,36 @@ namespace TorannMagic.Golems
                                                select t;               
                 return tmpThings;   
             }
-            if(job == TorannMagicDefOf.JobDriver_FleshHarvest)
+            //if(job == TorannMagicDefOf.JobDriver_FleshHarvest)
+            //{
+            //    IEnumerable<Thing> tmpThings = from t in p.Map.listerThings.AllThings
+            //                                   where (t.def.plant != null && t.def.plant.Harvestable && !t.Fogged() && !t.IsForbidden(p))
+            //                                   select t;
+            //    return tmpThings;                
+            //}
+            if (job == TorannMagicDefOf.JobDriver_FleshHarvest)
             {
-                IEnumerable<Thing> tmpThings = from t in p.Map.listerThings.AllThings
-                                               where (t.def.plant != null && t.def.plant.Harvestable && !t.Fogged() && !t.IsForbidden(p) && t.Map.designationManager.AllDesignationsOn(t).Any((Designation x) => x.def == DesignationDefOf.HarvestPlant))
-                                               select t;
-                return tmpThings;                
+                List<Thing> plantThings = new List<Thing>();
+                plantThings.Clear();
+                List<Thing> tmpThings = (from t in p.Map.listerThings.AllThings
+                                         where (t.def.plant != null && t.def.plant.Harvestable && !t.Fogged() && !t.IsForbidden(p))
+                                         select t).ToList();
+                foreach (Thing t in tmpThings)
+                {                    
+                    if(t.Map.designationManager.AllDesignationsOn(t).Any((Designation x) => x.def == DesignationDefOf.HarvestPlant))
+                    {
+                        plantThings.Add(t);
+                    }
+                    else if (t is Plant)
+                    {
+                        Plant plant = t as Plant;
+                        if (!plant.Blighted && plant.Growth >= 1 && plant.HarvestableNow && plant.DeliberatelyCultivated())
+                        {
+                            plantThings.Add(plant);
+                        }
+                    }
+                }
+                return plantThings.AsEnumerable();
             }
             if (job == TorannMagicDefOf.JobDriver_FleshChop)
             {

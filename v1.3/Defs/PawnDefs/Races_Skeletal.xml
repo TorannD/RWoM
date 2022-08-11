@@ -18,7 +18,7 @@
     <requiredCapacity>TM_ShadowBurn</requiredCapacity>
     <verb>
       <verbClass>TorannMagic.Verb_ShadowBurn</verbClass>
-      <meleeDamageDef>Cut</meleeDamageDef>
+      <meleeDamageDef>TM_Shadow</meleeDamageDef>
     </verb>
     <logEntryDef>MeleeAttack</logEntryDef>
     <combatLogRulesHit>Maneuver_Scratch_MeleeHit</combatLogRulesHit>
@@ -32,7 +32,7 @@
     <requiredCapacity>TM_DeathGaze</requiredCapacity>
     <verb>
       <verbClass>TorannMagic.Verb_DeathGaze</verbClass>
-      <meleeDamageDef>Cut</meleeDamageDef>
+      <meleeDamageDef>TM_Shadow</meleeDamageDef>
     </verb>
     <logEntryDef>MeleeAttack</logEntryDef>
     <combatLogRulesHit>Maneuver_Scratch_MeleeHit</combatLogRulesHit>

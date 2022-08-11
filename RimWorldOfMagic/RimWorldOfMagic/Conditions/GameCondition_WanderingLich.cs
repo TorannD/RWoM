@@ -363,7 +363,7 @@ namespace TorannMagic.Conditions
 
         private bool IsGoodLocationForSpawn(IntVec3 loc)
         {
-            return loc.InBounds(base.SingleMap) && !loc.Roofed(base.SingleMap) && loc.Standable(base.SingleMap) && loc.IsValid && !loc.Fogged(base.SingleMap) && loc.Walkable(base.SingleMap);
+            return loc.InBoundsWithNullCheck(base.SingleMap) && !loc.Roofed(base.SingleMap) && loc.Standable(base.SingleMap) && loc.IsValid && !loc.Fogged(base.SingleMap) && loc.Walkable(base.SingleMap);
         }
 
         private bool IsGoodCenterLocation(IntVec2 loc)
@@ -437,7 +437,7 @@ namespace TorannMagic.Conditions
             for (int j = 0; j < targets.Count(); j++)
             {
                 curCell = targets.ToArray<IntVec3>()[j];
-                if (curCell.InBounds(map) && curCell.IsValid && curCell.Walkable(map))
+                if (curCell.InBoundsWithNullCheck(map) && curCell.IsValid && curCell.Walkable(map))
                 {
                     SpawnThings skeleton = new SpawnThings();
                     if (Rand.Chance(geChance))

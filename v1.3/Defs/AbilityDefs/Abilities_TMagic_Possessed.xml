@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+<!-- Spirit Possession -->
+
+  <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
+		<thingClass>TorannMagic.Projectile_SpiritPossession</thingClass>
+	    <defName>Projectile_SpiritPossession</defName>
+        <label>possess</label>
+        <graphicData>
+			<texPath>Spells/invis</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+        </graphicData>
+        <projectile>
+            <flyOverhead>true</flyOverhead>
+            <damageDef>TM_Shadow</damageDef>
+            <damageAmountBase>0</damageAmountBase>
+            <speed>999</speed>
+        </projectile>
+    </ThingDef>
+	
+ <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
+    <defName>TM_SpiritPossession</defName>
+    <label>Possess</label>
+    <uiIconPath>UI/spiritpossession</uiIconPath>
+    <description>Possess a physical body, either dead or living. Possessing a body decreases how quickly spirit energy is lost. Deceased bodies or animals may be freely possessed, but do not generate spirit energy on their own, only another body with an existing spirit host will generate spirit energy. However, a body that is already occupied is more difficult to possess and the possessing spirit may struggle with the original spirit of the host. If the spirit still has energy, then it will extract from the body and become a wandering spirit once again. If a spirit's energy is completely drained, then it will cease to exist. When a spirit leaves a body, then the body will return to its original state or owner. Spirit Energy may be gained by siphoning energy through physical harm, using Spirit Drain, or through meditation. Killing another pawn with spirit drain absorbs a large amount of spirit. The body of a possessed pawn will not recover naturally, and only heals wounds and maladies when it gains spirit energy.</description>
+    <manaCost>0.0</manaCost>	
+	<learnChance>1</learnChance>
+	<relationsAdjustment>-50</relationsAdjustment>
+	<requiredNeed>TM_SpiritND</requiredNeed>
+	<needCost>20</needCost>
+	<needXPFactor>1</needXPFactor>
+	<efficiencyReductionPercent>.15</efficiencyReductionPercent>
+	<canCopy>false</canCopy>
+    <MainVerb Class="AbilityUser.VerbProperties_Ability">
+        <verbClass>TorannMagic.Verb_SB</verbClass>
+			<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+			<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+			<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+			<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+        <hasStandardCommand>true</hasStandardCommand>
+		<abilityDef>TM_SpiritPossession</abilityDef>
+		<isViolent>false</isViolent>
+        <defaultProjectile>Projectile_SpiritPossession</defaultProjectile>
+        <warmupTime>3</warmupTime>
+        <SecondsToRecharge>600.0</SecondsToRecharge>
+        <range>8</range>
+        <soundCast>TM_VibrationLow</soundCast>
+        <muzzleFlashScale>0</muzzleFlashScale>
+        <isPrimary>false</isPrimary>
+		<targetParams>
+		  <canTargetPawns>true</canTargetPawns>
+		  <canTargetBuildings>false</canTargetBuildings>
+		  <canTargetSelf>false</canTargetSelf>
+		  <canTargetLocations>true</canTargetLocations>
+		</targetParams>
+    </MainVerb>
+  </TorannMagic.TMAbilityDef>
+  
+  <!-- Spirit Drain -->
+ <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
+    <defName>TM_SpiritDrain</defName>
+    <label>Spirit Drain</label>
+    <uiIconPath>UI/spiritdrain</uiIconPath>
+    <description>Drains the spirit of a living being to restore spirit energy of the caster.</description>
+    <manaCost>0.0</manaCost>		
+	<learnChance>1</learnChance>
+	<relationsAdjustment>-20</relationsAdjustment>
+	<requiredNeed>TM_SpiritND</requiredNeed>
+	<needCost>10</needCost>
+	<needXPFactor>1</needXPFactor>
+	<efficiencyReductionPercent>.1</efficiencyReductionPercent>
+	<canCopy>false</canCopy>
+    <MainVerb Class="AbilityUser.VerbProperties_Ability">
+        <verbClass>TorannMagic.Verb_SpiritDrain</verbClass>
+			<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+			<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+			<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+			<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+        <hasStandardCommand>true</hasStandardCommand>
+		<abilityDef>TM_SpiritDrain</abilityDef>
+		<isViolent>false</isViolent>
+        <defaultProjectile>Projectile_Default</defaultProjectile>
+        <warmupTime>.5</warmupTime>
+        <SecondsToRecharge>240.0</SecondsToRecharge>
+        <range>12</range>
+        <soundCast>TM_VibrationLow</soundCast>
+        <muzzleFlashScale>2</muzzleFlashScale>
+        <isPrimary>false</isPrimary>
+		<targetParams>
+		  <canTargetPawns>true</canTargetPawns>
+		  <canTargetBuildings>false</canTargetBuildings>
+		  <canTargetSelf>false</canTargetSelf>
+		  <canTargetLocations>false</canTargetLocations>
+		</targetParams>
+    </MainVerb>
+  </TorannMagic.TMAbilityDef>
+  
+  <!-- Distort Spirit -->
+  
+  <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
+		<thingClass>TorannMagic.Projectile_DistortSpirit</thingClass>
+	    <defName>Projectile_DistortSpirit</defName>
+        <label>distort spirit</label>
+        <graphicData>
+			<texPath>Spells/invis</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+        </graphicData>
+        <projectile>
+            <flyOverhead>true</flyOverhead>
+            <damageDef>TM_Shadow</damageDef>
+            <damageAmountBase>0</damageAmountBase>
+            <speed>999</speed>
+			<explosionRadius>6</explosionRadius>
+			<postExplosionSpawnChance>1</postExplosionSpawnChance>
+        </projectile>
+    </ThingDef>
+	
+ <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
+    <defName>TM_DistortSpirit</defName>
+    <label>Distort Spirit (I)</label>
+    <uiIconPath>UI/distortspirit</uiIconPath>
+    <description>Distorts the balance between spirit and body of living pawns in a wide area. Pawns suffering from spirit distortion will take 20% more damage from all sources.
+	
+Range: 35
+Cast time: 3s
+Recharge: 60s</description>
+    <manaCost>0.0</manaCost>	
+	<requiredNeed>TM_SpiritND</requiredNeed>
+	<needCost>20</needCost>
+	<needXPFactor>1</needXPFactor>
+	<learnChance>0</learnChance>
+	<efficiencyReductionPercent>.1</efficiencyReductionPercent>
+	<canCopy>false</canCopy>
+    <MainVerb Class="AbilityUser.VerbProperties_Ability">
+        <verbClass>TorannMagic.Verb_SB</verbClass>
+			<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+			<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+			<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+			<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+        <hasStandardCommand>true</hasStandardCommand>
+		<abilityDef>TM_DistortSpirit</abilityDef>
+		<isViolent>false</isViolent>
+        <defaultProjectile>Projectile_DistortSpirit</defaultProjectile>
+        <warmupTime>3</warmupTime>
+        <SecondsToRecharge>60.0</SecondsToRecharge>
+        <range>35</range>
+        <soundCast>TM_Gong</soundCast>
+        <muzzleFlashScale>10</muzzleFlashScale>
+        <isPrimary>false</isPrimary>
+		<targetParams>
+		  <canTargetPawns>true</canTargetPawns>
+		  <canTargetBuildings>false</canTargetBuildings>
+		  <canTargetSelf>false</canTargetSelf>
+		  <canTargetLocations>true</canTargetLocations>
+		</targetParams>
+    </MainVerb>
+  </TorannMagic.TMAbilityDef>
+  
+  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
+    <defName>TM_DistortSpirit_I</defName>
+    <label>Distort Spirit (II)</label>
+    <uiIconPath>UI/distortspirit</uiIconPath>
+    <description>Distorts the balance between spirit and body of living pawns in a wide area. Pawns suffering from spirit distortion will take 20% more damage from all sources.
+	
+Range: 40
+Cast time: 2s
+Recharge: 45s</description>
+    <manaCost>0.0</manaCost>	
+	<requiredNeed>TM_SpiritND</requiredNeed>
+	<needCost>20</needCost>
+	<needXPFactor>1</needXPFactor>
+	<learnChance>0</learnChance>
+	<shouldInitialize>false</shouldInitialize>
+	<efficiencyReductionPercent>.1</efficiencyReductionPercent>
+	<canCopy>false</canCopy>
+    <MainVerb Class="AbilityUser.VerbProperties_Ability">
+        <verbClass>TorannMagic.Verb_SB</verbClass>
+			<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+			<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+			<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+			<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+        <hasStandardCommand>true</hasStandardCommand>
+		<abilityDef>TM_DistortSpirit_I</abilityDef>
+		<isViolent>false</isViolent>
+        <defaultProjectile>Projectile_DistortSpirit</defaultProjectile>
+        <warmupTime>2</warmupTime>
+        <SecondsToRecharge>45.0</SecondsToRecharge>
+        <range>40</range>
+        <soundCast>TM_Gong</soundCast>
+        <muzzleFlashScale>10</muzzleFlashScale>
+        <isPrimary>false</isPrimary>
+		<targetParams>
+		  <canTargetPawns>true</canTargetPawns>
+		  <canTargetBuildings>false</canTargetBuildings>
+		  <canTargetSelf>false</canTargetSelf>
+		  <canTargetLocations>true</canTargetLocations>
+		</targetParams>
+    </MainVerb>
+  </TorannMagic.TMAbilityDef>
+  
+  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
+    <defName>TM_DistortSpirit_II</defName>
+    <label>Distort Spirit (III)</label>
+    <uiIconPath>UI/distortspirit</uiIconPath>
+    <description>Distorts the balance between spirit and body of living pawns in a wide area. Pawns suffering from spirit distortion will take 20% more damage from all sources..
+	
+Range: 45
+Cast time: 1.5s
+Recharge: 30s</description>
+    <manaCost>0.0</manaCost>	
+	<requiredNeed>TM_SpiritND</requiredNeed>
+	<needCost>20</needCost>
+	<needXPFactor>1</needXPFactor>
+	<learnChance>0</learnChance>
+	<shouldInitialize>false</shouldInitialize>
+	<efficiencyReductionPercent>.1</efficiencyReductionPercent>
+	<canCopy>false</canCopy>
+    <MainVerb Class="AbilityUser.VerbProperties_Ability">
+        <verbClass>TorannMagic.Verb_SB</verbClass>
+			<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+			<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+			<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+			<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+        <hasStandardCommand>true</hasStandardCommand>
+		<abilityDef>TM_DistortSpirit_II</abilityDef>
+		<isViolent>false</isViolent>
+        <defaultProjectile>Projectile_DistortSpirit</defaultProjectile>
+        <warmupTime>1.5</warmupTime>
+        <SecondsToRecharge>30.0</SecondsToRecharge>
+        <range>45</range>
+        <soundCast>TM_Gong</soundCast>
+        <muzzleFlashScale>10</muzzleFlashScale>
+        <isPrimary>false</isPrimary>
+		<targetParams>
+		  <canTargetPawns>true</canTargetPawns>
+		  <canTargetBuildings>false</canTargetBuildings>
+		  <canTargetSelf>false</canTargetSelf>
+		  <canTargetLocations>true</canTargetLocations>
+		</targetParams>
+    </MainVerb>
+  </TorannMagic.TMAbilityDef>
+  
+  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
+    <defName>TM_DistortSpirit_III</defName>
+    <label>Distort Spirit (IV)</label>
+    <uiIconPath>UI/distortspirit</uiIconPath>
+    <description>Distorts the balance between spirit and body of living pawns in a wide area. Pawns suffering from spirit distortion will take 20% more damage from all sources.
+	
+Range: 50
+Cast time: 1s
+Recharge: 20s</description>
+    <manaCost>0.0</manaCost>	
+	<requiredNeed>TM_SpiritND</requiredNeed>
+	<needCost>20</needCost>
+	<needXPFactor>1</needXPFactor>
+	<learnChance>0</learnChance>
+	<shouldInitialize>false</shouldInitialize>
+	<efficiencyReductionPercent>.1</efficiencyReductionPercent>
+	<canCopy>false</canCopy>
+    <MainVerb Class="AbilityUser.VerbProperties_Ability">
+        <verbClass>TorannMagic.Verb_SB</verbClass>
+			<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+			<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+			<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+			<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+        <hasStandardCommand>true</hasStandardCommand>
+		<abilityDef>TM_DistortSpirit_III</abilityDef>
+		<isViolent>false</isViolent>
+        <defaultProjectile>Projectile_DistortSpirit</defaultProjectile>
+        <warmupTime>1</warmupTime>
+        <SecondsToRecharge>20.0</SecondsToRecharge>
+        <range>50</range>
+        <soundCast>TM_Gong</soundCast>
+        <muzzleFlashScale>10</muzzleFlashScale>
+        <isPrimary>false</isPrimary>
+		<targetParams>
+		  <canTargetPawns>true</canTargetPawns>
+		  <canTargetBuildings>false</canTargetBuildings>
+		  <canTargetSelf>false</canTargetSelf>
+		  <canTargetLocations>true</canTargetLocations>
+		</targetParams>
+    </MainVerb>
+  </TorannMagic.TMAbilityDef>
+  
+  <!-- Summon Spirit Animal -->
+  
+  <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
+		<thingClass>TorannMagic.Projectile_SummonSpiritAnimals</thingClass>
+	    <defName>Projectile_SummonSpiritAnimals</defName>
+        <label>summon spirit animals</label>
+        <graphicData>
+			<texPath>Spells/invis</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+        </graphicData>
+        <projectile>
+            <flyOverhead>true</flyOverhead>
+            <damageDef>TM_Shadow</damageDef>
+            <damageAmountBase>0</damageAmountBase>
+            <speed>999</speed>
+			<explosionRadius>5</explosionRadius>
+			<postExplosionSpawnChance>1</postExplosionSpawnChance>
+        </projectile>
+    </ThingDef>
+	
+ <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
+    <defName>TM_SummonSpiritAnimalMass</defName>
+    <label>Spirit Animals</label>
+    <uiIconPath>UI/summonspiritanimals</uiIconPath>
+    <description>Summons 1 of each spirit animal for a short time.</description>
+    <manaCost>0.0</manaCost>	
+	<requiredNeed>TM_SpiritND</requiredNeed>
+	<needCost>30</needCost>
+	<needXPFactor>1</needXPFactor>
+	<learnChance>0</learnChance>
+	<efficiencyReductionPercent>.1</efficiencyReductionPercent>
+	<canCopy>false</canCopy>
+    <MainVerb Class="AbilityUser.VerbProperties_Ability">
+        <verbClass>TorannMagic.Verb_SB</verbClass>
+			<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+			<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+			<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+			<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+        <hasStandardCommand>true</hasStandardCommand>
+		<abilityDef>TM_SummonSpiritAnimalMass</abilityDef>
+		<isViolent>false</isViolent>
+        <defaultProjectile>Projectile_SummonSpiritAnimals</defaultProjectile>
+        <warmupTime>3</warmupTime>
+        <SecondsToRecharge>120.0</SecondsToRecharge>
+        <range>35</range>
+        <soundCast>TM_Vibration</soundCast>
+        <muzzleFlashScale>2</muzzleFlashScale>
+        <isPrimary>false</isPrimary>		
+		<targetParams>
+		  <canTargetPawns>true</canTargetPawns>
+		  <canTargetBuildings>false</canTargetBuildings>
+		  <canTargetSelf>false</canTargetSelf>
+		  <canTargetLocations>true</canTargetLocations>
+		</targetParams>
+    </MainVerb>
+  </TorannMagic.TMAbilityDef>
+  
+  <!-- Spirit Rally -->
+ <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
+    <defName>TM_SpiritRally</defName>
+    <label>Spirit Rally (I)</label>
+    <uiIconPath>UI/spiritcall</uiIconPath>
+    <description>Enlists the aid of recently deceased pawns to inhabit the form of a spirit wolf and assist the caster for a short time. Spirit Rally is only effective when cast in the proximity of corpses. Each corpse may generate a spirit.
+
+Cast time: 2s
+Cooldown: 45s</description>
+    <manaCost>0.0</manaCost>	
+	<requiredNeed>TM_SpiritND</requiredNeed>
+	<needCost>20</needCost>	
+	<needXPFactor>1</needXPFactor>
+	<learnChance>0</learnChance>
+	<efficiencyReductionPercent>.12</efficiencyReductionPercent>
+	<canCopy>false</canCopy>
+    <MainVerb Class="AbilityUser.VerbProperties_Ability">
+        <verbClass>TorannMagic.Verb_SpiritRally</verbClass>
+			<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+			<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+			<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+			<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+        <hasStandardCommand>true</hasStandardCommand>
+		<abilityDef>TM_SpiritRally</abilityDef>
+		<isViolent>false</isViolent>
+        <defaultProjectile>Projectile_Default</defaultProjectile>
+        <warmupTime>1</warmupTime>
+        <SecondsToRecharge>45.0</SecondsToRecharge>
+        <range>0</range>
+        <soundCast>TM_VibrationLow</soundCast>
+        <muzzleFlashScale>2</muzzleFlashScale>
+        <isPrimary>false</isPrimary>
+		<AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+		<targetParams>
+		  <canTargetPawns>true</canTargetPawns>
+		  <canTargetBuildings>false</canTargetBuildings>
+		  <canTargetSelf>true</canTargetSelf>
+		  <canTargetLocations>false</canTargetLocations>
+		</targetParams>
+    </MainVerb>
+  </TorannMagic.TMAbilityDef>
+  
+  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
+    <defName>TM_SpiritRally_I</defName>
+    <label>Spirit Rally (II)</label>
+    <uiIconPath>UI/spiritcall</uiIconPath>
+    <description>Enlists the aid of recently deceased pawns to inhabit the form of a spirit wolf and assist the caster for a short time. Spirit Rally is only effective when cast in the proximity of corpses. Each corpse may generate a spirit.
+
+Cast time: 1s
+Cooldown: 30s</description>
+    <manaCost>0.0</manaCost>
+	<requiredNeed>TM_SpiritND</requiredNeed>
+	<needCost>20</needCost>
+	<needXPFactor>1</needXPFactor>
+	<learnChance>0</learnChance>
+	<efficiencyReductionPercent>.12</efficiencyReductionPercent>
+	<canCopy>false</canCopy>	
+	<shouldInitialize>false</shouldInitialize>
+    <MainVerb Class="AbilityUser.VerbProperties_Ability">
+        <verbClass>TorannMagic.Verb_SpiritRally</verbClass>
+			<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+			<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+			<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+			<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+        <hasStandardCommand>true</hasStandardCommand>
+		<abilityDef>TM_SpiritRally_I</abilityDef>
+		<isViolent>false</isViolent>
+        <defaultProjectile>Projectile_Default</defaultProjectile>
+        <warmupTime>1</warmupTime>
+        <SecondsToRecharge>30.0</SecondsToRecharge>
+        <range>0</range>
+        <soundCast>TM_VibrationLow</soundCast>
+        <muzzleFlashScale>3</muzzleFlashScale>
+        <isPrimary>false</isPrimary>
+		<AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+		<targetParams>
+		  <canTargetPawns>true</canTargetPawns>
+		  <canTargetBuildings>false</canTargetBuildings>
+		  <canTargetSelf>true</canTargetSelf>
+		  <canTargetLocations>false</canTargetLocations>
+		</targetParams>
+    </MainVerb>
+  </TorannMagic.TMAbilityDef>
+  
+  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
+    <defName>TM_SpiritRally_II</defName>
+    <label>Spirit Rally (III)</label>
+    <uiIconPath>UI/spiritcall</uiIconPath>
+    <description>Enlists the aid of recently deceased pawns to inhabit the form of a spirit wolf and assist the caster for a short time. Spirit Rally is only effective when cast in the proximity of corpses. Each corpse may generate a spirit.
+
+Cast time: .5s
+Cooldown: 20s</description>
+    <manaCost>0.0</manaCost>
+	<requiredNeed>TM_SpiritND</requiredNeed>
+	<needCost>20</needCost>
+	<needXPFactor>1</needXPFactor>
+	<learnChance>0</learnChance>
+	<efficiencyReductionPercent>.12</efficiencyReductionPercent>
+	<canCopy>false</canCopy>
+	<shouldInitialize>false</shouldInitialize>
+    <MainVerb Class="AbilityUser.VerbProperties_Ability">
+        <verbClass>TorannMagic.Verb_SpiritRally</verbClass>
+			<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+			<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+			<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+			<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+        <hasStandardCommand>true</hasStandardCommand>
+		<abilityDef>TM_SpiritRally_II</abilityDef>
+		<isViolent>false</isViolent>
+        <defaultProjectile>Projectile_Default</defaultProjectile>
+        <warmupTime>.5</warmupTime>
+        <SecondsToRecharge>20.0</SecondsToRecharge>
+        <range>0</range>
+        <soundCast>TM_VibrationLow</soundCast>
+        <muzzleFlashScale>5</muzzleFlashScale>
+        <isPrimary>false</isPrimary>
+		<AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+		<targetParams>
+		  <canTargetPawns>true</canTargetPawns>
+		  <canTargetBuildings>false</canTargetBuildings>
+		  <canTargetSelf>true</canTargetSelf>
+		  <canTargetLocations>false</canTargetLocations>
+		</targetParams>
+    </MainVerb>
+  </TorannMagic.TMAbilityDef>
+  
+  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
+    <defName>TM_SpiritRally_III</defName>
+    <label>Spirit Rally (IV)</label>
+    <uiIconPath>UI/spiritcall</uiIconPath>
+    <description>Enlists the aid of recently deceased pawns to inhabit the form of a spirit wolf and assist the caster for a short time. Spirit Rally is only effective when cast in the proximity of corpses. Each corpse may generate a spirit.
+
+Cast time: 0s
+Cooldown: 15s</description>
+    <manaCost>0.0</manaCost>
+	<requiredNeed>TM_SpiritND</requiredNeed>
+	<needCost>20</needCost>
+	<needXPFactor>1</needXPFactor>
+	<learnChance>0</learnChance>
+	<efficiencyReductionPercent>.12</efficiencyReductionPercent>
+	<canCopy>false</canCopy>
+	<shouldInitialize>false</shouldInitialize>
+    <MainVerb Class="AbilityUser.VerbProperties_Ability">
+        <verbClass>TorannMagic.Verb_SpiritRally</verbClass>
+			<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+			<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+			<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+			<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+        <hasStandardCommand>true</hasStandardCommand>
+		<abilityDef>TM_SpiritRally_III</abilityDef>
+		<isViolent>false</isViolent>
+        <defaultProjectile>Projectile_Default</defaultProjectile>
+        <warmupTime>0</warmupTime>
+        <SecondsToRecharge>15.0</SecondsToRecharge>
+        <range>0</range>
+        <soundCast>TM_VibrationLow</soundCast>
+        <muzzleFlashScale>10</muzzleFlashScale>
+        <isPrimary>false</isPrimary>
+		<AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+		<targetParams>
+		  <canTargetPawns>true</canTargetPawns>
+		  <canTargetBuildings>false</canTargetBuildings>
+		  <canTargetSelf>true</canTargetSelf>
+		  <canTargetLocations>false</canTargetLocations>
+		</targetParams>
+    </MainVerb>
+  </TorannMagic.TMAbilityDef>
+  
+  <!-- Spirit Storm -->
+  
+  <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
+		<thingClass>AbilityUser.Projectile_Ability</thingClass>
+	    <defName>Projectile_SpiritStorm</defName>
+        <label>spirit storm</label>
+        <graphicData>
+			<texPath>Spells/invis</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+        </graphicData>
+        <projectile>
+            <flyOverhead>true</flyOverhead>
+            <damageDef>TM_Shadow</damageDef>
+            <damageAmountBase>5</damageAmountBase>
+            <speed>999</speed>
+			<explosionRadius>4</explosionRadius>
+			<postExplosionSpawnChance>1</postExplosionSpawnChance>
+        </projectile>
+    </ThingDef>
+	
+	<ThingDef ParentName="BaseBullet" Name="FlyingObject_SpiritStorm">
+	   <defName>FlyingObject_SpiritStorm</defName>
+	   <thingClass>TorannMagic.FlyingObject_SpiritStorm</thingClass>
+	   <label>spirit storm</label>
+	   <graphicData>
+			<texPath>Spells/invis</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	   <projectile>
+			<flyOverhead>true</flyOverhead>
+			<damageDef>TM_Spirit</damageDef>
+			<damageAmountBase>5</damageAmountBase>
+			<speed>10</speed>
+			<explosionRadius>4</explosionRadius>
+	   </projectile>
+	</ThingDef>
+	
+ <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
+    <defName>TM_SpiritStorm</defName>
+    <label>Spirit Storm</label>
+    <uiIconPath>UI/spiritstorm</uiIconPath>
+    <description>Create a spirit beacon that attracts spirits of loss, spite, and vengeance. The swarm of angry spirits will quickly develop into a vortex that rips away reality and hope. The malevolent spirits within this storm will seek out the spirits of living beings to inflict their suffering. The direction of the spirit storm can be controlled for a short time after it is created.</description>
+    <manaCost>0.0</manaCost>	
+	<requiredNeed>TM_SpiritND</requiredNeed>
+	<needXPFactor>1</needXPFactor>
+	<needCost>50</needCost>
+	<learnChance>0</learnChance>
+	<efficiencyReductionPercent>.1</efficiencyReductionPercent>
+	<canCopy>false</canCopy>
+	<chainedAbility>TM_ControlSpiritStorm</chainedAbility>	<!--after spirit storm is used, adds storm control to allow the pawn to direct the storm -->
+	<chainedAbilityExpiresAfterTicks>600</chainedAbilityExpiresAfterTicks> <!-- alternate to 'cooldown' that manually determines duration ability is available -->
+																		   <!-- -1 is default and used to mark this field as unused; 60 ticks = 1 second -->
+	<chainedAbilityExpiresAfterCooldown>false</chainedAbilityExpiresAfterCooldown> <!-- chained ability not tied to cooldown -->
+	<removeAbilityAfterUse>false</removeAbilityAfterUse> 	<!-- ability can be used multiple times; default: false; can be set to true for single use abilities -->
+	<abilitiesRemovedWhenUsed>								<!-- removes all listed abilities when this ability is used -->
+	</abilitiesRemovedWhenUsed>								<!-- can be used to reset an ability chain or clear temporary abilities -->
+    <MainVerb Class="AbilityUser.VerbProperties_Ability">
+        <verbClass>TorannMagic.Effect_SpiritStorm</verbClass>
+			<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+			<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+			<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+			<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+        <hasStandardCommand>true</hasStandardCommand>
+		<abilityDef>TM_SpiritStorm</abilityDef>
+		<isViolent>false</isViolent>
+        <defaultProjectile>Projectile_SpiritStorm</defaultProjectile>
+        <warmupTime>3</warmupTime>
+        <SecondsToRecharge>300.0</SecondsToRecharge>
+        <range>40</range>
+        <soundCast>TM_FireWooshSD</soundCast>
+        <muzzleFlashScale>5</muzzleFlashScale>
+        <isPrimary>false</isPrimary>		
+		<targetParams>
+		  <canTargetPawns>true</canTargetPawns>
+		  <canTargetBuildings>false</canTargetBuildings>
+		  <canTargetSelf>false</canTargetSelf>
+		  <canTargetLocations>true</canTargetLocations>
+		</targetParams>
+    </MainVerb>
+  </TorannMagic.TMAbilityDef>
+  
+  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
+    <defName>TM_ControlSpiritStorm</defName>
+    <label>Control Spirit Storm</label>
+    <uiIconPath>UI/controlspiritstorm</uiIconPath>
+    <description>Directs the spirit storm to a designated location.</description>
+    <manaCost>0.0</manaCost>	
+	<requiredNeed>TM_SpiritND</requiredNeed>
+	<needCost>3</needCost>	
+	<needXPFactor>1</needXPFactor>
+	<learnChance>0</learnChance>
+	<canCopy>false</canCopy>
+    <MainVerb Class="AbilityUser.VerbProperties_Ability">
+        <verbClass>TorannMagic.Verb_ControlSpiritStorm</verbClass>
+			<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+			<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+			<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+			<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+        <hasStandardCommand>true</hasStandardCommand>
+		<abilityDef>TM_ControlSpiritStorm</abilityDef>
+		<isViolent>false</isViolent>
+        <defaultProjectile>Projectile_Default</defaultProjectile>
+        <warmupTime>1</warmupTime>
+        <SecondsToRecharge>5.0</SecondsToRecharge>
+        <range>500</range>
+        <soundCast>TM_VibrationLow</soundCast>
+        <muzzleFlashScale>1</muzzleFlashScale>
+        <isPrimary>false</isPrimary>
+		<requireLineOfSight>false</requireLineOfSight>		
+		<stopBurstWithoutLos>false</stopBurstWithoutLos>
+		<targetParams>
+		  <canTargetPawns>true</canTargetPawns>
+		  <canTargetBuildings>true</canTargetBuildings>
+		  <canTargetSelf>true</canTargetSelf>
+		  <canTargetLocations>true</canTargetLocations>
+		</targetParams>
+    </MainVerb>
+  </TorannMagic.TMAbilityDef>
+  
+</Defs>

@@ -205,7 +205,7 @@ namespace TorannMagic
             }
             this.ticksToImpact--;
             base.Position = this.ExactPosition.ToIntVec3();
-            bool flag = !this.ExactPosition.InBounds(base.Map);
+            bool flag = !this.ExactPosition.InBoundsWithNullCheck(base.Map);
             if (flag)
             {
                 this.ticksToImpact++;
@@ -220,7 +220,7 @@ namespace TorannMagic
                 bool flag2 = this.ticksToImpact <= 0;
                 if (flag2)
                 {
-                    bool flag3 = this.DestinationCell.InBounds(base.Map);
+                    bool flag3 = this.DestinationCell.InBoundsWithNullCheck(base.Map);
                     if (flag3)
                     {
                         base.Position = this.DestinationCell;
@@ -298,7 +298,7 @@ namespace TorannMagic
                 intVec = cleaveVector.ToIntVec3() + GenRadial.RadialPattern[i];
                 //GenExplosion.DoExplosion(intVec, base.Map, .4f, TMDamageDefOf.DamageDefOf.TM_Shadow, this.launcher as Pawn, Mathf.RoundToInt((Rand.Range(.6f * this.def.projectile.GetDamageAmount(1,null), 1.1f * this.def.projectile.GetDamageAmount(1,null)) + (5f * pwrVal)) * this.arcaneDmg), this.def.projectile.soundExplode, def, null, null, 0f, 1, false, null, 0f, 0, 0.0f, true);
 
-                if (intVec.IsValid && intVec.InBounds(this.Map))
+                if (intVec.IsValid && intVec.InBoundsWithNullCheck(this.Map))
                 {
                     List<Thing> hitList = new List<Thing>();
                     hitList = intVec.GetThingList(base.Map);
@@ -314,7 +314,7 @@ namespace TorannMagic
                 intVec = cleaveVector.ToIntVec3() + GenRadial.RadialPattern[i];
                 //GenExplosion.DoExplosion(intVec, base.Map, .4f, TMDamageDefOf.DamageDefOf.TM_Shadow, this.launcher as Pawn, Mathf.RoundToInt((Rand.Range(.6f * this.def.projectile.GetDamageAmount(1,null), 1.1f * this.def.projectile.GetDamageAmount(1,null)) + (5f * pwrVal)) * this.arcaneDmg), this.def.projectile.soundExplode, def, null, null, 0f, 1, false, null, 0f, 0, 0.0f, true);
 
-                if (intVec.IsValid && intVec.InBounds(this.Map))
+                if (intVec.IsValid && intVec.InBoundsWithNullCheck(this.Map))
                 {
                     List<Thing> hitList = new List<Thing>();
                     hitList = intVec.GetThingList(base.Map);
@@ -330,7 +330,7 @@ namespace TorannMagic
                 intVec = cleaveVector.ToIntVec3() + GenRadial.RadialPattern[i];
                 //GenExplosion.DoExplosion(intVec, base.Map, .4f, TMDamageDefOf.DamageDefOf.TM_Shadow, this.launcher as Pawn, Mathf.RoundToInt((Rand.Range(.6f*this.def.projectile.GetDamageAmount(1,null), 1.1f*this.def.projectile.GetDamageAmount(1,null)) + (5f * pwrVal)) * this.arcaneDmg), this.def.projectile.soundExplode, def, null, null, 0f, 1, false, null, 0f, 0, 0.0f, true);
 
-                if (intVec.IsValid && intVec.InBounds(this.Map))
+                if (intVec.IsValid && intVec.InBoundsWithNullCheck(this.Map))
                 {
                     List<Thing> hitList = new List<Thing>();
                     hitList = intVec.GetThingList(base.Map);

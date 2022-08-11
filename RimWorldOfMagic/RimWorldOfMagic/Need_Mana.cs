@@ -201,7 +201,7 @@ namespace TorannMagic
 
         public void GainNeed(float amount)
         {            
-            if (!base.pawn.Dead && base.pawn.story != null && base.pawn.story.traits != null && !base.pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+            if (!base.pawn.DestroyedOrNull() && !base.pawn.Dead && base.pawn.story != null && base.pawn.story.traits != null && !base.pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
             {                
                 Pawn pawn = base.pawn;
                 CompAbilityUserMagic comp = pawn.GetComp<CompAbilityUserMagic>();
@@ -548,6 +548,7 @@ namespace TorannMagic
                 {
                     this.curLevelInt = 0;
                 }
+                AdjustThresh();
             }
             //else
             //{                
@@ -565,7 +566,7 @@ namespace TorannMagic
             //        }
             //    }
             //}
-            AdjustThresh();
+            
         }        
 
         public void UseMagicPower(float amount)

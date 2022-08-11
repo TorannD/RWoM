@@ -5,7 +5,7 @@ using RimWorld;
 using AbilityUser;
 using Verse;
 using Verse.AI;
-
+using UnityEngine;
 
 namespace TorannMagic
 {
@@ -18,7 +18,7 @@ namespace TorannMagic
         bool validTarg;
         public override bool CanHitTargetFrom(IntVec3 root, LocalTargetInfo targ)
         {
-            if (targ.IsValid && targ.CenterVector3.InBounds(base.CasterPawn.Map) && !targ.Cell.Fogged(base.CasterPawn.Map))
+            if (targ.IsValid && targ.CenterVector3.InBoundsWithNullCheck(base.CasterPawn.Map) && !targ.Cell.Fogged(base.CasterPawn.Map))
             {
                 if ((root - targ.Cell).LengthHorizontal < this.verbProps.range)
                 {
@@ -97,13 +97,18 @@ namespace TorannMagic
 
         private void DoBrandingEffect(Pawn hitPawn)
         {
-            Effecter effect = EffecterDefOf.Skip_EntryNoDelay.Spawn();
-            effect.Trigger(new TargetInfo(this.CasterPawn), new TargetInfo(hitPawn));
-            effect.Cleanup();
+            if (hitPawn != null && hitPawn.Map != null)
+            {
+                TargetInfo ti = new TargetInfo(hitPawn.Position, hitPawn.Map, false);
+                TM_MoteMaker.MakeOverlay(ti, TorannMagicDefOf.TM_Mote_PsycastAreaEffect, hitPawn.Map, Vector3.zero, 1f, 0f, .1f, .4f, 1.2f, -3f);
+            }
+            //Effecter effect = EffecterDefOf.Skip_EntryNoDelay.Spawn();
+            //effect.Trigger(new TargetInfo(this.CasterPawn), new TargetInfo(hitPawn));
+            //effect.Cleanup();
 
-            Effecter effectExit = EffecterDefOf.Skip_ExitNoDelay.Spawn();
-            effectExit.Trigger(new TargetInfo(hitPawn), new TargetInfo(hitPawn));
-            effectExit.Cleanup();
+            //Effecter effectExit = EffecterDefOf.Skip_ExitNoDelay.Spawn();
+            //effectExit.Trigger(new TargetInfo(hitPawn), new TargetInfo(hitPawn));
+            //effectExit.Cleanup();
         }
 
         //private void RemoveOldBrand(Pawn hitPawn)

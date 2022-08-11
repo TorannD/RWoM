@@ -1216,7 +1216,15 @@ namespace TorannMagic
 
             for (int i = 0; i < count; i++)
             {
-                Thing thing = TM_Action.SingleSpawnLoop(caster, spawnables, position, caster.Map, duration, temporary, hostile, caster.Faction);                
+                if (thingDef == TorannMagicDefOf.TM_SpiritTD)
+                {
+                    Pawn spiritPawn = TM_Action.GenerateSpiritPawn(position, caster.Faction);
+                    GenSpawn.Spawn(spiritPawn, position, caster.Map);
+                }
+                else
+                {
+                    Thing thing = TM_Action.SingleSpawnLoop(caster, spawnables, position, caster.Map, duration, temporary, hostile, caster.Faction);
+                }
             }
         }
 

@@ -23,6 +23,7 @@ namespace TorannMagic.TMDefs
         public bool targetFriendly = false;
         public bool targetNeutral = true;
         public bool targetEnemy = false;
+        public bool targetNoFaction = true;
         public bool includeSelf = false;
         public bool requiresLoS = true;
         public bool AIUsable = false;
@@ -60,15 +61,36 @@ namespace TorannMagic.TMDefs
                         //Log.Message("validating " + acc.conditionClass);
                         if (acc.conditionClass == AutocastConditionClass.DamageTaken)
                         {
-                            meetsConditions = DamageTaken(acc, target.Thing);
+                            if (acc.onlyAppliesToCaster)
+                            {
+                                meetsConditions = DamageTaken(acc, caster);
+                            }
+                            else
+                            {
+                                meetsConditions = DamageTaken(acc, target.Thing);
+                            }
                         }
                         else if(acc.conditionClass == AutocastConditionClass.HasNeed)
                         {
-                            meetsConditions = HasNeed(acc, target.Pawn);
+                            if (acc.onlyAppliesToCaster)
+                            {
+                                meetsConditions = HasNeed(acc, caster);
+                            }
+                            else
+                            {
+                                meetsConditions = HasNeed(acc, target.Pawn);
+                            }
                         }
                         else if(acc.conditionClass == AutocastConditionClass.HasHediff)
                         {
-                            meetsConditions = HasHediff(acc, target.Pawn);
+                            if (acc.onlyAppliesToCaster)
+                            {
+                                meetsConditions = HasHediff(acc, caster);
+                            }
+                            else
+                            {
+                                meetsConditions = HasHediff(acc, target.Pawn);
+                            }
                         }
                         else if(acc.conditionClass == AutocastConditionClass.EnemiesInRange)
                         {
@@ -80,7 +102,14 @@ namespace TorannMagic.TMDefs
                         }
                         else if(acc.conditionClass == AutocastConditionClass.TargetDrafted)
                         {
-                            meetsConditions = TargetDrafted(acc, target.Pawn);
+                            if (acc.onlyAppliesToCaster)
+                            {
+                                meetsConditions = TargetDrafted(acc, caster);
+                            }
+                            else
+                            {
+                                meetsConditions = TargetDrafted(acc, target.Pawn);
+                            }
                         }
 
                         if(!meetsConditions)

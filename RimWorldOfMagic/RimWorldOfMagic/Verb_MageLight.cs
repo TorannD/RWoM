@@ -9,30 +9,6 @@ namespace TorannMagic
     [StaticConstructorOnStartup]
     class Verb_MageLight : Verb_UseAbility  
     {
-
-        //bool validTarg;
-
-        //public override bool CanHitTargetFrom(IntVec3 root, LocalTargetInfo targ)
-        //{
-        //    if (targ.IsValid && targ.CenterVector3.InBounds(base.CasterPawn.Map) && !targ.Cell.Fogged(base.CasterPawn.Map) && targ.Cell.Walkable(base.CasterPawn.Map))
-        //    {
-        //        if ((root - targ.Cell).LengthHorizontal < this.verbProps.range)
-        //        {
-        //            //out of range
-        //            validTarg = true;
-        //        }
-        //        else
-        //        {
-        //            validTarg = false;
-        //        }
-        //    }
-        //    else
-        //    {
-        //        validTarg = false;
-        //    }
-        //    return validTarg;
-        //}
-
         protected override bool TryCastShot()
         {
             bool result = false;

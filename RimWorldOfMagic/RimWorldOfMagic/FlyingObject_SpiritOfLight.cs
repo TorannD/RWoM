@@ -598,7 +598,7 @@ namespace TorannMagic
 
             if (!dFlag)
             {                
-                bool flag = !this.ExactPosition.InBounds(base.Map);
+                bool flag = !this.ExactPosition.InBoundsWithNullCheck(base.Map);
                 if (flag)
                 {
                     if (!this.pawn.DestroyedOrNull() && this.pawn.Spawned)
@@ -628,7 +628,7 @@ namespace TorannMagic
                     {
                         if (this.shouldDismiss)
                         {
-                            bool flag3 = this.DestinationCell.InBounds(base.Map);
+                            bool flag3 = this.DestinationCell.InBoundsWithNullCheck(base.Map);
                             if (flag3)
                             {
                                 base.Position = this.DestinationCell;
@@ -649,7 +649,7 @@ namespace TorannMagic
                                 }
                                 else
                                 {
-                                    bool flag3 = this.DestinationCell.InBounds(base.Map);
+                                    bool flag3 = this.DestinationCell.InBoundsWithNullCheck(base.Map);
                                     if (flag3)
                                     {
                                         base.Position = this.DestinationCell;
@@ -661,7 +661,7 @@ namespace TorannMagic
                             }
                             else
                             {
-                                bool flag3 = this.DestinationCell.InBounds(base.Map);
+                                bool flag3 = this.DestinationCell.InBoundsWithNullCheck(base.Map);
                                 if (flag3)
                                 {
                                     base.Position = this.DestinationCell;
@@ -1010,7 +1010,7 @@ namespace TorannMagic
                 Vector3 motePos = center;
                 motePos.x += Rand.Range(-5f, 5f);
                 motePos.z += Rand.Range(-5f, 5f);
-                if (motePos.InBounds(this.Map))
+                if (motePos.InBoundsWithNullCheck(this.Map))
                 {
                     TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Twinkle, motePos, this.Map, Rand.Range(.3f, .4f), Rand.Range(.3f, .6f), Rand.Range(0f, .3f), Rand.Range(.4f, .6f), Rand.Range(-50, 50), Rand.Range(2f, 4f), 0, Rand.Range(0, 360));
                 }

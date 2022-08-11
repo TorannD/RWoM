@@ -62,15 +62,67 @@ namespace TorannMagic
 
         public static bool adjustedForLanguage = false;
 
+        public static List<TMAbilityDef> GetAbilityList(CompAbilityUserMight comp, List<MightPower> classList = null)
+        {
+            List<TMAbilityDef> tmpList = new List<TMAbilityDef>();
+            tmpList.Clear();
+            if (classList != null)
+            {
+                foreach (MightPower p in classList)
+                {
+                    foreach (TMAbilityDef t in p.TMabilityDefs)
+                    {
+                        tmpList.Add(t);
+                    }
+                }
+            }
+            if (comp.customClass != null)
+            {
+                foreach (TMAbilityDef a in comp.customClass.classFighterAbilities)
+                {
+                    tmpList.Add(a);
+                }
+            }
+            if (comp.AdvancedClasses != null && comp.AdvancedClasses.Count > 0)
+            {
+                foreach (TMDefs.TM_CustomClass cc in comp.AdvancedClasses)
+                {
+                    foreach (TMAbilityDef ab in cc.classFighterAbilities)
+                    {
+                        tmpList.Add(ab);
+                    }
+                }
+            }
+            return tmpList;
+        }
+
         public static void DrawMightCard(Rect rect, Pawn pawn)
         {
             //GUI.BeginGroup(rect);
             CompAbilityUserMight comp = pawn.GetComp<CompAbilityUserMight>();
             int sizeY = 0;
-            if (comp.customClass != null)
+            if (comp.customClass != null || comp.AdvancedClasses.Count > 0)
             {
-                sizeY = (comp.MightData.GetUniquePowersWithSkillsCount(comp.customClass) * 80);
-                if(sizeY > 500)
+                List<TMDefs.TM_CustomClass> ccList = new List<TMDefs.TM_CustomClass>();
+                ccList.Clear();
+                int defaultCount = 0;
+                if (comp.customClass != null)
+                {
+                    ccList.Add(comp.customClass);
+                }
+                else
+                {
+                    defaultCount = 5;
+                }
+                if (comp.AdvancedClasses.Count > 0)
+                {
+                    foreach (TMDefs.TM_CustomClass cc in comp.AdvancedClasses)
+                    {
+                        ccList.Add(cc);
+                    }
+                }
+                sizeY = ((comp.MightData.GetUniquePowersWithSkillsCount(ccList) + defaultCount) * 80);
+                if (sizeY > 500)
                 {
                     sizeY -= 500;
                 }
@@ -105,79 +157,122 @@ namespace TorannMagic
                 if (comp.customClass != null)
                 {
                     Rect inRect3 = new Rect(rect.x, rect11.y, MightCardUtility.PowersColumnWidth, MightCardUtility.PowersColumnHeight);
-                    MightCardUtility.CustomPowersHandler(inRect3, pawn.GetComp<CompAbilityUserMight>(), pawn.GetComp<CompAbilityUserMight>().MightData.AllMightPowersWithSkills, comp.customClass, TexButton.TMTex_SkillPointUsed);
+                    MightCardUtility.CustomPowersHandler(inRect3, comp, comp.MightData.AllMightPowersWithSkills, GetAbilityList(comp), TexButton.TMTex_SkillPointUsed);
                 }
                 else
                 {
                     if (pawn.story.traits.HasTrait(TorannMagicDefOf.Gladiator))
                     {
                         Rect inRect3 = new Rect(rect.x, rect11.y, MightCardUtility.PowersColumnWidth, MightCardUtility.PowersColumnHeight);
-                        MightCardUtility.PowersGUIHandler(inRect3, pawn.GetComp<CompAbilityUserMight>(), pawn.GetComp<CompAbilityUserMight>().MightData.MightPowersG, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Sprint, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Fortitude, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Grapple, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Cleave, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Whirlwind, null, TexButton.TMTex_SkillPointUsed);
+                        MightCardUtility.CustomPowersHandler(inRect3, comp, comp.MightData.AllMightPowersWithSkills, GetAbilityList(comp, comp.MightData.MightPowersG), TexButton.TMTex_SkillPointUsed);
+                        //MightCardUtility.PowersGUIHandler(inRect3, pawn.GetComp<CompAbilityUserMight>(), pawn.GetComp<CompAbilityUserMight>().MightData.MightPowersG, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Sprint, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Fortitude, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Grapple, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Cleave, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Whirlwind, null, TexButton.TMTex_SkillPointUsed);
                     }
-                    if (pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Sniper))
+                    else if (pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Sniper))
                     {
                         Rect inRect3 = new Rect(rect.x, rect11.y, MightCardUtility.PowersColumnWidth, MightCardUtility.PowersColumnHeight);
-                        MightCardUtility.PowersGUIHandler(inRect3, pawn.GetComp<CompAbilityUserMight>(), pawn.GetComp<CompAbilityUserMight>().MightData.MightPowersS, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_SniperFocus, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Headshot, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_DisablingShot, comp.MightData.MightPowerSkill_AntiArmor, comp.MightData.MightPowerSkill_ShadowSlayer, null, TexButton.TMTex_SkillPointUsed);
+                        MightCardUtility.CustomPowersHandler(inRect3, comp, comp.MightData.AllMightPowersWithSkills, GetAbilityList(comp, comp.MightData.MightPowersS), TexButton.TMTex_SkillPointUsed);
+
+                        //MightCardUtility.PowersGUIHandler(inRect3, pawn.GetComp<CompAbilityUserMight>(), pawn.GetComp<CompAbilityUserMight>().MightData.MightPowersS, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_SniperFocus, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Headshot, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_DisablingShot, comp.MightData.MightPowerSkill_AntiArmor, comp.MightData.MightPowerSkill_ShadowSlayer, null, TexButton.TMTex_SkillPointUsed);
                     }
-                    if (pawn.story.traits.HasTrait(TorannMagicDefOf.Bladedancer))
+                    else if (pawn.story.traits.HasTrait(TorannMagicDefOf.Bladedancer))
                     {
                         Rect inRect3 = new Rect(rect.x, rect11.y, MightCardUtility.PowersColumnWidth, MightCardUtility.PowersColumnHeight);
-                        MightCardUtility.PowersGUIHandler(inRect3, pawn.GetComp<CompAbilityUserMight>(), pawn.GetComp<CompAbilityUserMight>().MightData.MightPowersB, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_BladeFocus, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_BladeArt, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_SeismicSlash, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_BladeSpin, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_PhaseStrike, null, TexButton.TMTex_SkillPointUsed);
+                        MightCardUtility.CustomPowersHandler(inRect3, comp, comp.MightData.AllMightPowersWithSkills, GetAbilityList(comp, comp.MightData.MightPowersB), TexButton.TMTex_SkillPointUsed);
+
+                        //MightCardUtility.PowersGUIHandler(inRect3, pawn.GetComp<CompAbilityUserMight>(), pawn.GetComp<CompAbilityUserMight>().MightData.MightPowersB, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_BladeFocus, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_BladeArt, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_SeismicSlash, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_BladeSpin, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_PhaseStrike, null, TexButton.TMTex_SkillPointUsed);
                     }
-                    if (pawn.story.traits.HasTrait(TorannMagicDefOf.Ranger))
+                    else if (pawn.story.traits.HasTrait(TorannMagicDefOf.Ranger))
                     {
                         Rect inRect3 = new Rect(rect.x, rect11.y, MightCardUtility.PowersColumnWidth, MightCardUtility.PowersColumnHeight);
-                        MightCardUtility.PowersGUIHandler(inRect3, pawn.GetComp<CompAbilityUserMight>(), pawn.GetComp<CompAbilityUserMight>().MightData.MightPowersR, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_RangerTraining, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_BowTraining, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_PoisonTrap, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_AnimalFriend, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_ArrowStorm, null, TexButton.TMTex_SkillPointUsed);
+                        MightCardUtility.CustomPowersHandler(inRect3, comp, comp.MightData.AllMightPowersWithSkills, GetAbilityList(comp, comp.MightData.MightPowersR), TexButton.TMTex_SkillPointUsed);
+
+                        //MightCardUtility.PowersGUIHandler(inRect3, pawn.GetComp<CompAbilityUserMight>(), pawn.GetComp<CompAbilityUserMight>().MightData.MightPowersR, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_RangerTraining, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_BowTraining, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_PoisonTrap, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_AnimalFriend, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_ArrowStorm, null, TexButton.TMTex_SkillPointUsed);
                     }
-                    if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+                    else if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
                     {
                         Rect inRect3 = new Rect(rect.x, rect11.y, MightCardUtility.PowersColumnWidth, MightCardUtility.PowersColumnHeight);
-                        MightCardUtility.PowersGUIHandler(inRect3, pawn.GetComp<CompAbilityUserMight>(), pawn.GetComp<CompAbilityUserMight>().MightData.MightPowersF, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Disguise, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Reversal, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Transpose, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Possess, null, TexButton.TMTex_SkillPointUsed);
+                        MightCardUtility.CustomPowersHandler(inRect3, comp, comp.MightData.AllMightPowersWithSkills, GetAbilityList(comp, comp.MightData.MightPowersF), TexButton.TMTex_SkillPointUsed);
+
+                        //MightCardUtility.PowersGUIHandler(inRect3, pawn.GetComp<CompAbilityUserMight>(), pawn.GetComp<CompAbilityUserMight>().MightData.MightPowersF, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Disguise, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Reversal, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Transpose, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Possess, null, TexButton.TMTex_SkillPointUsed);
                     }
-                    if (pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Psionic))
+                    else if (pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Psionic))
                     {
                         Rect inRect3 = new Rect(rect.x, rect11.y, MightCardUtility.PowersColumnWidth, MightCardUtility.PowersColumnHeight);
-                        MightCardUtility.PowersGUIHandler(inRect3, pawn.GetComp<CompAbilityUserMight>(), pawn.GetComp<CompAbilityUserMight>().MightData.MightPowersP, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_PsionicAugmentation, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_PsionicBarrier, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_PsionicBlast, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_PsionicDash, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_PsionicStorm, null, TexButton.TMTex_SkillPointUsed);
+                        MightCardUtility.CustomPowersHandler(inRect3, comp, comp.MightData.AllMightPowersWithSkills, GetAbilityList(comp, comp.MightData.MightPowersP), TexButton.TMTex_SkillPointUsed);
+
+                        //MightCardUtility.PowersGUIHandler(inRect3, pawn.GetComp<CompAbilityUserMight>(), pawn.GetComp<CompAbilityUserMight>().MightData.MightPowersP, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_PsionicAugmentation, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_PsionicBarrier, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_PsionicBlast, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_PsionicDash, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_PsionicStorm, null, TexButton.TMTex_SkillPointUsed);
                     }
-                    if (pawn.story.traits.HasTrait(TorannMagicDefOf.DeathKnight))
+                    else if (pawn.story.traits.HasTrait(TorannMagicDefOf.DeathKnight))
                     {
                         Rect inRect3 = new Rect(rect.x, rect11.y, MightCardUtility.PowersColumnWidth, MightCardUtility.PowersColumnHeight);
-                        MightCardUtility.PowersGUIHandler(inRect3, pawn.GetComp<CompAbilityUserMight>(), pawn.GetComp<CompAbilityUserMight>().MightData.MightPowersDK, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Shroud, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_WaveOfFear, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Spite, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_LifeSteal, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_GraveBlade, null, TexButton.TMTex_SkillPointUsed);
+                        MightCardUtility.CustomPowersHandler(inRect3, comp, comp.MightData.AllMightPowersWithSkills, GetAbilityList(comp, comp.MightData.MightPowersDK), TexButton.TMTex_SkillPointUsed);
+
+                        //MightCardUtility.PowersGUIHandler(inRect3, pawn.GetComp<CompAbilityUserMight>(), pawn.GetComp<CompAbilityUserMight>().MightData.MightPowersDK, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Shroud, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_WaveOfFear, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Spite, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_LifeSteal, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_GraveBlade, null, TexButton.TMTex_SkillPointUsed);
                     }
-                    if (pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Monk))
+                    else if (pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Monk))
                     {
                         Rect inRect3 = new Rect(rect.x, rect11.y, MightCardUtility.PowersColumnWidth, MightCardUtility.PowersColumnHeight);
-                        MightCardUtility.PowersGUIHandler(inRect3, pawn.GetComp<CompAbilityUserMight>(), pawn.GetComp<CompAbilityUserMight>().MightData.MightPowersM, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Chi, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_MindOverBody, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Meditate, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_TigerStrike, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_DragonStrike, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_ThunderStrike, TexButton.TMTex_SkillPointUsed);
+                        MightCardUtility.CustomPowersHandler(inRect3, comp, comp.MightData.AllMightPowersWithSkills, GetAbilityList(comp, comp.MightData.MightPowersM), TexButton.TMTex_SkillPointUsed);
+
+                        //MightCardUtility.PowersGUIHandler(inRect3, pawn.GetComp<CompAbilityUserMight>(), pawn.GetComp<CompAbilityUserMight>().MightData.MightPowersM, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Chi, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_MindOverBody, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Meditate, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_TigerStrike, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_DragonStrike, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_ThunderStrike, TexButton.TMTex_SkillPointUsed);
                     }
-                    if (pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Wayfarer))
+                    else if (pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Wayfarer))
                     {
                         Rect inRect3 = new Rect(rect.x, rect11.y, MightCardUtility.PowersColumnWidth, MightCardUtility.PowersColumnHeight);
-                        MightCardUtility.PowersGUIHandler(inRect3, pawn.GetComp<CompAbilityUserMight>(), pawn.GetComp<CompAbilityUserMight>().MightData.MightPowersW, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_WayfarerCraft, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_FieldTraining, null, null, null, null, TexButton.TMTex_SkillPointUsed);
+                        MightCardUtility.CustomPowersHandler(inRect3, comp, comp.MightData.AllMightPowersWithSkills, GetAbilityList(comp, comp.MightData.MightPowersW), TexButton.TMTex_SkillPointUsed);
+
+                        //MightCardUtility.PowersGUIHandler(inRect3, pawn.GetComp<CompAbilityUserMight>(), pawn.GetComp<CompAbilityUserMight>().MightData.MightPowersW, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_WayfarerCraft, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_FieldTraining, null, null, null, null, TexButton.TMTex_SkillPointUsed);
                     }
-                    if (pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Commander))
+                    else if (pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Commander))
                     {
                         Rect inRect3 = new Rect(rect.x, rect11.y, MightCardUtility.PowersColumnWidth, MightCardUtility.PowersColumnHeight);
-                        MightCardUtility.PowersGUIHandler(inRect3, pawn.GetComp<CompAbilityUserMight>(), pawn.GetComp<CompAbilityUserMight>().MightData.MightPowersC, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_ProvisionerAura, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_TaskMasterAura, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_CommanderAura, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_StayAlert, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_MoveOut, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_HoldTheLine, TexButton.TMTex_SkillPointUsed);
+                        MightCardUtility.CustomPowersHandler(inRect3, comp, comp.MightData.AllMightPowersWithSkills, GetAbilityList(comp, comp.MightData.MightPowersC), TexButton.TMTex_SkillPointUsed);
+
+                        //MightCardUtility.PowersGUIHandler(inRect3, pawn.GetComp<CompAbilityUserMight>(), pawn.GetComp<CompAbilityUserMight>().MightData.MightPowersC, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_ProvisionerAura, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_TaskMasterAura, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_CommanderAura, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_StayAlert, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_MoveOut, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_HoldTheLine, TexButton.TMTex_SkillPointUsed);
                     }
-                    if (pawn.story.traits.HasTrait(TorannMagicDefOf.TM_SuperSoldier))
+                    else if (pawn.story.traits.HasTrait(TorannMagicDefOf.TM_SuperSoldier))
                     {
                         Rect inRect3 = new Rect(rect.x, rect11.y, MightCardUtility.PowersColumnWidth, MightCardUtility.PowersColumnHeight);
+
                         if (comp.MightData.MightPowersSS.FirstOrDefault<MightPower>((MightPower mp) => mp.abilityDef == TorannMagicDefOf.TM_PistolSpec).learned == true)
                         {
-                            MightCardUtility.PowersGUIHandler(inRect3, pawn.GetComp<CompAbilityUserMight>(), pawn.GetComp<CompAbilityUserMight>().MightData.MightPowersSS, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_PistolSpec, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_CQC, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_FirstAid, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_60mmMortar, null, null, TexButton.TMTex_SkillPointUsed);
+                            List<TMAbilityDef> ssList = GetAbilityList(comp, comp.MightData.MightPowersSS);
+                            ssList.Remove(TorannMagicDefOf.TM_RifleSpec);
+                            ssList.Remove(TorannMagicDefOf.TM_ShotgunSpec);
+                            MightCardUtility.CustomPowersHandler(inRect3, comp, comp.MightData.AllMightPowersWithSkills, ssList, TexButton.TMTex_SkillPointUsed);
+
+                            //MightCardUtility.PowersGUIHandler(inRect3, pawn.GetComp<CompAbilityUserMight>(), pawn.GetComp<CompAbilityUserMight>().MightData.MightPowersSS, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_PistolSpec, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_CQC, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_FirstAid, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_60mmMortar, null, null, TexButton.TMTex_SkillPointUsed);
                         }
                         else if (comp.MightData.MightPowersSS.FirstOrDefault<MightPower>((MightPower mp) => mp.abilityDef == TorannMagicDefOf.TM_RifleSpec).learned == true)
                         {
-                            MightCardUtility.PowersGUIHandler(inRect3, pawn.GetComp<CompAbilityUserMight>(), pawn.GetComp<CompAbilityUserMight>().MightData.MightPowersSS, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_RifleSpec, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_CQC, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_FirstAid, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_60mmMortar, null, null, TexButton.TMTex_SkillPointUsed);
+                            List<TMAbilityDef> ssList = GetAbilityList(comp, comp.MightData.MightPowersSS);
+                            ssList.Remove(TorannMagicDefOf.TM_PistolSpec);
+                            ssList.Remove(TorannMagicDefOf.TM_ShotgunSpec);
+                            MightCardUtility.CustomPowersHandler(inRect3, comp, comp.MightData.AllMightPowersWithSkills, ssList, TexButton.TMTex_SkillPointUsed);
+                            //MightCardUtility.PowersGUIHandler(inRect3, pawn.GetComp<CompAbilityUserMight>(), pawn.GetComp<CompAbilityUserMight>().MightData.MightPowersSS, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_RifleSpec, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_CQC, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_FirstAid, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_60mmMortar, null, null, TexButton.TMTex_SkillPointUsed);
                         }
                         else if (comp.MightData.MightPowersSS.FirstOrDefault<MightPower>((MightPower mp) => mp.abilityDef == TorannMagicDefOf.TM_ShotgunSpec).learned == true)
                         {
-                            MightCardUtility.PowersGUIHandler(inRect3, pawn.GetComp<CompAbilityUserMight>(), pawn.GetComp<CompAbilityUserMight>().MightData.MightPowersSS, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_ShotgunSpec, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_CQC, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_FirstAid, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_60mmMortar, null, null, TexButton.TMTex_SkillPointUsed);
+                            List<TMAbilityDef> ssList = GetAbilityList(comp, comp.MightData.MightPowersSS);
+                            ssList.Remove(TorannMagicDefOf.TM_RifleSpec);
+                            ssList.Remove(TorannMagicDefOf.TM_PistolSpec);
+                            MightCardUtility.CustomPowersHandler(inRect3, comp, comp.MightData.AllMightPowersWithSkills, ssList, TexButton.TMTex_SkillPointUsed);
+                            // MightCardUtility.PowersGUIHandler(inRect3, pawn.GetComp<CompAbilityUserMight>(), pawn.GetComp<CompAbilityUserMight>().MightData.MightPowersSS, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_ShotgunSpec, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_CQC, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_FirstAid, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_60mmMortar, null, null, TexButton.TMTex_SkillPointUsed);
                         }
                         else
                         {
-                            MightCardUtility.PowersGUIHandler(inRect3, pawn.GetComp<CompAbilityUserMight>(), pawn.GetComp<CompAbilityUserMight>().MightData.MightPowersSS, null, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_PistolSpec, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_RifleSpec, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_ShotgunSpec, null, null, TexButton.TMTex_SkillPointUsed);
+                            List<TMAbilityDef> ssList = GetAbilityList(comp, comp.MightData.MightPowersSS);
+                            ssList.Remove(TorannMagicDefOf.TM_CQC);
+                            ssList.Remove(TorannMagicDefOf.TM_FirstAid);
+                            ssList.Remove(TorannMagicDefOf.TM_60mmMortar);
+                            MightCardUtility.CustomPowersHandler(inRect3, comp, comp.MightData.AllMightPowersWithSkills, ssList, TexButton.TMTex_SkillPointUsed);
+                            //MightCardUtility.PowersGUIHandler(inRect3, pawn.GetComp<CompAbilityUserMight>(), pawn.GetComp<CompAbilityUserMight>().MightData.MightPowersSS, null, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_PistolSpec, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_RifleSpec, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_ShotgunSpec, null, null, TexButton.TMTex_SkillPointUsed);
                         }
+                    }
+                    else if (comp.AdvancedClasses.Count > 0)
+                    {
+                        Rect inRect3 = new Rect(rect.x, rect11.y, MightCardUtility.PowersColumnWidth, MightCardUtility.PowersColumnHeight);
+                        MightCardUtility.CustomPowersHandler(inRect3, comp, comp.MightData.AllMightPowersWithSkills, GetAbilityList(comp), TexButton.TMTex_SkillPointUsed);
                     }
                 }
                 
@@ -1030,7 +1125,7 @@ namespace TorannMagic
             }
         }
 
-        public static void CustomPowersHandler(Rect inRect, CompAbilityUserMight compMight, List<MightPower> MightPowers, TMDefs.TM_CustomClass customClass, Texture2D pointTexture)
+        public static void CustomPowersHandler(Rect inRect, CompAbilityUserMight compMight, List<MightPower> MightPowers, List<TMAbilityDef> abilityList, Texture2D pointTexture)
         {
             float num = inRect.y;
             int itnum = 1;
@@ -1041,7 +1136,7 @@ namespace TorannMagic
                 while (enumerator.MoveNext())
                 {
                     MightPower power = enumerator.Current;
-                    if(!customClass.classFighterAbilities.Contains((TMAbilityDef)power.abilityDef))
+                    if(!abilityList.Contains((TMAbilityDef)power.abilityDef))
                     {
                         goto EnumerationStart;
                     }

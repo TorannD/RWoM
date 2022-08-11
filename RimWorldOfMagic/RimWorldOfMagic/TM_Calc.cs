@@ -220,6 +220,51 @@ namespace TorannMagic
             return false;
         }
 
+        public static bool IsPolymorphed(Pawn p)
+        {
+            CompPolymorph cp = p.GetComp<CompPolymorph>();
+            if (cp != null && cp.Original != null && cp.Original.RaceProps.Humanlike)
+            {
+                return true;
+            }
+            return false;            
+        }
+
+        public static bool IsSpirit(Pawn p)
+        {
+            if(p.def == TorannMagicDefOf.TM_SpiritTD)
+            {
+                return true;
+            }
+            if (p != null && p.health != null && p.health.hediffSet != null)
+            {
+                if (p.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_SpiritPossessorHD) != null)
+                {
+                    return true;
+                }
+                return false;
+            }
+            return false;
+        }
+
+        public static bool IsPossessedBySpirit(Pawn p)
+        {
+            if(p != null && p.health != null && p.health.hediffSet != null)
+            {                
+                if(p.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_SpiritPossessionHD) != null)
+                {
+                    return true;
+                }
+                return false;
+            }
+            return false;
+        }
+
+        public static bool IsPossessedByOrIsSpirit(Pawn p)
+        {
+            return IsSpirit(p) || IsPossessedBySpirit(p);
+        }
+
         public static Hediff GetLinkedHediff(Pawn p, HediffDef starter)
         {
             if(starter == null)
@@ -359,6 +404,144 @@ namespace TorannMagic
                 }                                
             }
             return false;
+        }
+
+        public static bool HasAdvancedClass(Pawn p)
+        {               
+            if (p != null && p.story != null && p.story.traits != null)
+            {
+                List<TM_CustomClass> customClasses = TM_ClassUtility.CustomClasses();
+                for (int i = 0; i < customClasses.Count; i++)
+                {
+                    if (customClasses[i].isAdvancedClass)
+                    {
+                        foreach(Trait t in p.story.traits.allTraits)
+                        {
+                            if(t.def == customClasses[i].classTrait)
+                            {
+                                return true;
+                            }
+                        }                          
+                    }
+                }
+            }
+            return false;            
+        }
+
+        public static bool HasAdvancedMageRequirements(Pawn p, TMDefs.TM_CustomClass cc, out string failMessage)
+        {
+            bool hasReqTrait = true;
+            failMessage = "";
+            if (cc.advancedClassOptions != null)
+            {
+                CompAbilityUserMagic comp = p.TryGetComp<CompAbilityUserMagic>();                
+                if (comp == null)
+                {
+                    failMessage = "null magic comp"; //this should never happen
+                    return false;
+                }
+                if (cc.advancedClassOptions.requiresBaseClass && !comp.IsMagicUser)
+                {
+                    failMessage = "TM_LearnFail_NotClass".Translate();
+                    return false;
+                }
+                if (cc.advancedClassOptions.requiredTraits != null && cc.advancedClassOptions.requiredTraits.Count > 0)
+                {
+                    hasReqTrait = false;
+                    foreach(TraitDef td in cc.advancedClassOptions.requiredTraits)
+                    {
+                        foreach(Trait t in p.story.traits.allTraits)
+                        {
+                            if(t.def == td)
+                            {
+                                hasReqTrait = true;
+                                break;
+                            }
+                        }
+                        if(hasReqTrait)
+                        {
+                            break;
+                        }
+                    }                    
+                }
+                if(cc.advancedClassOptions.disallowedTraits != null && cc.advancedClassOptions.disallowedTraits.Count > 0)
+                {
+                    foreach(TraitDef td in cc.advancedClassOptions.disallowedTraits)
+                    {
+                        foreach(Trait t in p.story.traits.allTraits)
+                        {
+                            if(t.def == td)
+                            {
+                                failMessage = "TM_LearnFail_DisallowedTrait".Translate();
+                                return false;
+                            }
+                        }
+                    }
+                }
+            }
+            if(!hasReqTrait)
+            {
+                failMessage = "TM_LearnFail_NoRequiredTrait".Translate();
+            }
+            return hasReqTrait;
+        }
+
+        public static bool HasAdvancedFighterRequirements(Pawn p, TMDefs.TM_CustomClass cc, out string failMessage)
+        {
+            bool hasReqTrait = true;
+            failMessage = "";
+            if (cc.advancedClassOptions != null)
+            {
+                CompAbilityUserMight comp = p.TryGetComp<CompAbilityUserMight>();
+                if (comp == null)
+                {
+                    failMessage = "null might comp"; //this should never happen
+                    return false;
+                }
+                if (cc.advancedClassOptions.requiresBaseClass && !comp.IsMightUser)
+                {
+                    failMessage = "TM_LearnFail_NotClass".Translate();
+                    return false;
+                }
+                if (cc.advancedClassOptions.requiredTraits != null && cc.advancedClassOptions.requiredTraits.Count > 0)
+                {
+                    hasReqTrait = false;
+                    foreach (TraitDef td in cc.advancedClassOptions.requiredTraits)
+                    {
+                        foreach (Trait t in p.story.traits.allTraits)
+                        {
+                            if (t.def == td)
+                            {
+                                hasReqTrait = true;
+                                break;
+                            }
+                        }
+                        if (hasReqTrait)
+                        {
+                            break;
+                        }
+                    }
+                }
+                if (cc.advancedClassOptions.disallowedTraits != null && cc.advancedClassOptions.disallowedTraits.Count > 0)
+                {
+                    foreach (TraitDef td in cc.advancedClassOptions.disallowedTraits)
+                    {
+                        foreach (Trait t in p.story.traits.allTraits)
+                        {
+                            if (t.def == td)
+                            {
+                                failMessage = "TM_LearnFail_DisallowedTrait".Translate();
+                                return false;
+                            }
+                        }
+                    }
+                }
+            }
+            if (!hasReqTrait)
+            {
+                failMessage = "TM_LearnFail_NoRequiredTrait".Translate();
+            }
+            return hasReqTrait;
         }
 
         public static bool IsWanderer(Pawn pawn)
@@ -1763,6 +1946,38 @@ namespace TorannMagic
             }
         }
 
+        public static Pawn FindNearestEnemy(Map map, IntVec3 position, Faction faction, bool dead = false, bool downed = false)
+        {
+            Pawn closest = null;
+            float closestDistance = 1000f;
+            List<Pawn> allPawns = map.mapPawns.AllPawnsSpawned;
+            foreach(Pawn p in allPawns)
+            {
+                if(!p.DestroyedOrNull())
+                {
+                    if(p.Dead && !dead)
+                    {
+                        continue;
+                    }
+                    if(p.Downed && !downed)
+                    {
+                        continue;
+                    }
+                    if(!p.Faction.HostileTo(faction))
+                    {
+                        continue;
+                    }
+                    if((p.Position - position).LengthHorizontal > closestDistance)
+                    {
+                        continue;
+                    }
+                    closest = p;
+                    closestDistance = (p.Position - position).LengthHorizontal;
+                }
+            }
+            return closest;
+        }
+
         public static List<Pawn> FindAllHostilePawnsAround(Map map, IntVec3 center, float radius, Faction faction)
         {
             List<Pawn> tmpList = FindAllPawnsAround(map, center, radius);
@@ -1884,7 +2099,7 @@ namespace TorannMagic
                 IntVec3 tmp = currentPos;
                 tmp.x += (Rand.Range(-radius, radius));
                 tmp.z += Rand.Range(-radius, radius);
-                if (tmp.InBounds(pawn.Map) && tmp.IsValid && tmp.Walkable(pawn.Map) && tmp.DistanceToEdge(pawn.Map) > 8)
+                if (tmp.InBoundsWithNullCheck(pawn.Map) && tmp.IsValid && tmp.Walkable(pawn.Map) && tmp.DistanceToEdge(pawn.Map) > 8)
                 {
                     List<Pawn> threatCount = TM_Calc.FindPawnsNearTarget(pawn, 4, tmp, true);
                     if (threatCount != null)
@@ -1918,7 +2133,7 @@ namespace TorannMagic
             for (int k = 0; k < outerCells.Count; k++)
             {
                 IntVec3 wall = outerCells[k];
-                if (wall.IsValid && wall.InBounds(map) && !wall.Fogged(map) && wall.Standable(map) && (!wall.Roofed(map) || allowRoofed))
+                if (wall.IsValid && wall.InBoundsWithNullCheck(map) && !wall.Fogged(map) && wall.Standable(map) && (!wall.Roofed(map) || allowRoofed))
                 {
                     List<Thing> cellList = new List<Thing>();
                     try
@@ -1974,7 +2189,7 @@ namespace TorannMagic
             }
 
             CompAbilityUserMight compMight = pawn.GetComp<CompAbilityUserMight>();
-            if(compMight != null)
+            if(compMight != null && resistance == 0)
             {
                 resistance += (compMight.arcaneRes - 1);
             }
@@ -2001,7 +2216,7 @@ namespace TorannMagic
                 penetration += (compMagic.arcaneDmg - 1);
                 if(compMagic.MagicData != null && compMagic.MagicData.GetSkill_Versatility(TorannMagicDefOf.TM_Empathy) != null)
                 {
-                    penetration += compMagic.MagicData.GetSkill_Versatility(TorannMagicDefOf.TM_Empathy).level * .05f;
+                    penetration += compMagic.MagicData.GetSkill_Versatility(TorannMagicDefOf.TM_Empathy).level * .1f;
                 }
             }
 
@@ -3778,15 +3993,18 @@ namespace TorannMagic
         public static bool IsUsingMelee(Pawn p)
         {
             bool result = false;
-            if (p != null && p.equipment != null)
+            if (p != null)
             {
-                if (p.equipment.Primary != null && p.equipment.Primary.def.IsMeleeWeapon)
+                if (p.equipment != null)
                 {
-                    result = true;
-                }
-                if(p.equipment.Primary == null)
-                {
-                    result = true;
+                    if (p.equipment.Primary != null && p.equipment.Primary.def.IsMeleeWeapon)
+                    {
+                        result = true;
+                    }
+                    if (p.equipment.Primary == null)
+                    {
+                        result = true;
+                    }
                 }
             }
             return result;
@@ -4264,7 +4482,7 @@ namespace TorannMagic
             List<IntVec3> cellList = GenAdjFast.AdjacentCells8Way(cell);
             for (int i = 0; i < cellList.Count; i++)
             {
-                if (cellList[i] != default(IntVec3) && cellList[i].InBounds(map) && cellList[i].Walkable(map) && !cellList[i].Fogged(map))
+                if (cellList[i] != default(IntVec3) && cellList[i].InBoundsWithNullCheck(map) && cellList[i].Walkable(map) && !cellList[i].Fogged(map))
                 {
                     cell = cellList[i];
                     break;
@@ -4278,7 +4496,7 @@ namespace TorannMagic
             List<IntVec3> cellList = GenRadial.RadialCellsAround(cell, range, true).InRandomOrder().ToList();
             for (int i = 0; i < cellList.Count; i++)
             {
-                if (cellList[i] != default(IntVec3) && cellList[i].InBounds(map) && !cellList[i].Fogged(map))
+                if (cellList[i] != default(IntVec3) && cellList[i].InBoundsWithNullCheck(map) && !cellList[i].Fogged(map))
                 {
                     cell = cellList[i];
                     break;
@@ -4577,7 +4795,7 @@ namespace TorannMagic
         {
             //Determines if a cell has a wall built on it
             Building wall = null;
-            if (cell != default(IntVec3) && cell.InBounds(map))
+            if (cell != default(IntVec3) && cell.InBoundsWithNullCheck(map))
             {
                 List<Thing> tList = cell.GetThingList(map);
                 if(tList != null && tList.Count > 0)

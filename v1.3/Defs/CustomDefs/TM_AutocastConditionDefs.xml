@@ -17,6 +17,7 @@
 				<valueB></valueB>										<!-- secondary value used for range determination in xInRange where A is # of enemies and B is range (radius) around target -->
 				<valueC></valueC>										<!-- tertiary value, currently unused by any condition check -->
 				<invert>true</invert>									<!-- inverts the result -->
+				<onlyAppliesToCaster>false</onlyAppliesToCaster>		<!-- forces the condition check against the caster instead of the target -->
 			</autocastCondition>
 		</TorannMagic.TM_AutocastConditionDef>
 		
@@ -173,7 +174,7 @@
 			</autocastCondition>
 		</TorannMagic.TM_AutocastConditionDef>
 		
-		<TorannMagic.TM_AutocastConditionDef>							<!-- a condition check that looks for any regenerate hediff on the target -->
+		<TorannMagic.TM_AutocastConditionDef>							<!-- a condition check that looks for any clarity hediff on the target -->
 		    <defName>TM_DoesNotHaveClarityHediff</defName>					
 			<autocastCondition>
 				<conditionClass>HasHediff</conditionClass>				<!-- type of condition: DamageTaken, HasNeed, HasHediff, EnemiesInRange, AlliesInRange, TargetDrafted -->
@@ -185,6 +186,36 @@
 				<valueB></valueB>										
 				<valueC></valueC>										
 				<invert>true</invert>									<!-- returns "true" if the target has any of the listed hediffs, need to invert to fail condition if a hediff is present -->
+			</autocastCondition>
+		</TorannMagic.TM_AutocastConditionDef>
+		
+		<TorannMagic.TM_AutocastConditionDef>							<!-- a condition check that looks for spirit drain hediff on the target -->
+		    <defName>TM_DoesNotHaveSpiritDrainHediff</defName>					
+			<autocastCondition>
+				<conditionClass>HasHediff</conditionClass>				<!-- type of condition: DamageTaken, HasNeed, HasHediff, EnemiesInRange, AlliesInRange, TargetDrafted -->
+				<hediffDefs>
+					<li>TM_SpiritDrainHD</li>							<!-- hediff defnames, listed all hediff levels -->					
+				</hediffDefs>											
+				<needDefs></needDefs>									
+				<valueA></valueA>										<!-- no values needed since this is only a boolean check -->
+				<valueB></valueB>										
+				<valueC></valueC>										
+				<invert>true</invert>									<!-- returns "true" if the target has any of the listed hediffs, need to invert to fail condition if a hediff is present -->
+			</autocastCondition>
+		</TorannMagic.TM_AutocastConditionDef>
+		
+		<TorannMagic.TM_AutocastConditionDef>							<!-- a condition check that looks for the spirit need of the caster to be below 50 -->
+		    <defName>TM_SpiritNeedIsBelow50</defName>					
+			<autocastCondition>
+				<conditionClass>HasNeed</conditionClass>				<!-- type of condition: DamageTaken, HasNeed, HasHediff, EnemiesInRange, AlliesInRange, TargetDrafted -->											
+				<needDefs>
+					<li>TM_SpiritND</li>
+				</needDefs>												<!-- has mood need... -->	
+				<valueA>0</valueA>										<!-- and mood is above (or equal) to this value... -->
+				<valueB>50</valueB>									    <!-- and mood is below (or equal) to this value... -->
+				<valueC></valueC>										<!-- a value of 0 means don't perform this check, if A and B were both 0, then it would only check for the existence of the need -->
+				<invert>false</invert>									<!-- returns "true" if the target has the need and (valueA <= need <= valueB) -->
+				<onlyAppliesToCaster>true</onlyAppliesToCaster>
 			</autocastCondition>
 		</TorannMagic.TM_AutocastConditionDef>
 		

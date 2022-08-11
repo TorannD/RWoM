@@ -63,13 +63,14 @@
 				<mightUser>false</mightUser>				<!-- determines if autocast is checked for might users -->
 				<magicUser>false</magicUser>				<!-- determines if autocast is checked for magic users -->
 				<drafted>false</drafted>					<!-- determines if autocasting will be attempted if the pawn is drafted -->
-				<undrafted>false</undrafted>				<!-- determines if autocasting will be attempted if the pawn is not drafted (can be both drafted and undrafted) -->
+				<undrafted>false</undrafted>				<!-- determines if autocasting will be attempted if the pawn is not drafted; can be both drafted and undrafted or neither, if neither is selected then only AI would attempt to use this ability, but only if AIUsable is true -->
 															<!-- targets can match any or all criteria but must be valid for at least 1 -->
 				<targetFriendly>false</targetFriendly>		<!-- target is valid if Friendly (same faction) -->
-				<targetNeutral>true</targetNeutral>			<!-- target is valid if Neutral (non-hostile) -->
-				<targetEnemy>false</targetEnemy>			<!-- target is valid if Enemy (hostile) -->
+				<targetNeutral>true</targetNeutral>			<!-- target is valid if Neutral (non-hostile or friendly pawns with another faction) -->
+				<targetNoFaction>true</targetNoFaction>		<!-- targets only pawns without a faction (null faction) -->
+				<targetEnemy>false</targetEnemy>			<!-- target is valid if Enemy (hostile faction) -->
 				<requiresLoS>true</requiresLoS>				<!-- checks LOS -->
-				<AIUsable>false</AIUsable>					<!-- WIP - limited functionality for AI casting -->
+				<AIUsable>false</AIUsable>					<!-- allows AI to use this ability -->
 				<includeSelf>false</includeSelf>			<!-- valid targets can include the caster -->
 				<advancedConditionDefs>						<!-- list of advanced condition checks; entries are the defName of one or more TM_AutocastConditionDef -->
 				</advancedConditionDefs>					<!-- must match all conditions; review TM_AutocastConditionDefs.xml for examples and detailed instructions -->
@@ -380,7 +381,7 @@
 				<targetType>Pawn</targetType>				
 				<mightUser>false</mightUser>				
 				<magicUser>true</magicUser>				
-				<drafted>false</drafted>					<!--only AI autocastable -->
+				<drafted>false</drafted>					<!--only AI autocastable since drafted and undrafted are false, but aicasting is true -->
 				<undrafted>false</undrafted>
 				<targetFriendly>false</targetFriendly>		
 				<targetNeutral>false</targetNeutral>		
@@ -501,7 +502,7 @@
 		<customPower>	
 			<forFighter>true</forFighter>
 			<maxLevel>3</maxLevel>
-			<abilityDefs>									<!-- only 1 ability so max level is 0 -->
+			<abilityDefs>									<!-- 4 abilities so max level is 3 -->
 				<li>TM_FireSuppressionFlask</li>
 				<li>TM_FireSuppressionFlask_I</li>
 				<li>TM_FireSuppressionFlask_II</li>
@@ -593,6 +594,214 @@
 			<abilityDefs>									<!-- only 1 ability so max level is 0 -->
 				<li>TM_AlterStorm</li>
 			</abilityDefs>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_SpiritPossession</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<abilityDefs>									
+				<li>TM_SpiritPossession</li>
+			</abilityDefs>
+			<skills>
+				<li>
+					<label>TM_SpiritPossession_pwr</label>
+					<description>TM_SpiritPossession_pwr_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_SpiritPossession_eff</label>
+					<description>TM_SpiritPossession_eff_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_SpiritPossession_ver</label>
+					<description>TM_SpiritPossession_ver_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+			</skills>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_SpiritDrain</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<abilityDefs>									
+				<li>TM_SpiritDrain</li>
+			</abilityDefs>
+			<skills>
+				<li>
+					<label>TM_SpiritDrain_pwr</label>
+					<description>TM_SpiritDrain_pwr_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_SpiritDrain_eff</label>
+					<description>TM_SpiritDrain_eff_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_SpiritDrain_ver</label>
+					<description>TM_SpiritDrain_ver_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+			</skills>
+			<autocasting>									
+				<type>OnNearby</type>							
+				<targetType>Pawn</targetType>				
+				<mightUser>false</mightUser>				
+				<magicUser>true</magicUser>				
+				<drafted>true</drafted>					
+				<undrafted>true</undrafted>
+				<targetFriendly>true</targetFriendly>		
+				<targetNeutral>false</targetNeutral>		
+				<targetEnemy>true</targetEnemy>
+				<targetNoFaction>true</targetNoFaction>				
+				<requiresLoS>true</requiresLoS>			
+				<AIUsable>false</AIUsable>					
+				<includeSelf>false</includeSelf>
+				<maxRange>10</maxRange>
+				<advancedConditionDefs>						
+					<li>TM_DoesNotHaveSpiritDrainHediff</li>
+					<li>TM_SpiritNeedIsBelow50</li>
+				</advancedConditionDefs>					
+			</autocasting>
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_DistortSpirit</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<maxLevel>3</maxLevel>
+			<abilityDefs>									
+				<li>TM_DistortSpirit</li>
+				<li>TM_DistortSpirit_I</li>
+				<li>TM_DistortSpirit_II</li>
+				<li>TM_DistortSpirit_III</li>
+			</abilityDefs>
+			<skills>
+				<li>
+					<label>TM_DistortSpirit_pwr</label>
+					<description>TM_DistortSpirit_pwr_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_DistortSpirit_eff</label>
+					<description>TM_DistortSpirit_eff_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_DistortSpirit_ver</label>
+					<description>TM_DistortSpirit_ver_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>2</costToLevel>
+				</li>
+			</skills>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_SummonSpiritAnimalMass</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<abilityDefs>									
+				<li>TM_SummonSpiritAnimalMass</li>
+			</abilityDefs>
+			<skills>
+				<li>
+					<label>TM_SummonSpiritAnimalMass_pwr</label>
+					<description>TM_SummonSpiritAnimalMass_pwr_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_SummonSpiritAnimalMass_eff</label>
+					<description>TM_SummonSpiritAnimalMass_eff_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_SummonSpiritAnimalMass_ver</label>
+					<description>TM_SummonSpiritAnimalMass_ver_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+			</skills>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_SpiritRally</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<maxLevel>3</maxLevel>
+			<abilityDefs>									
+				<li>TM_SpiritRally</li>
+				<li>TM_SpiritRally_I</li>
+				<li>TM_SpiritRally_II</li>
+				<li>TM_SpiritRally_III</li>
+			</abilityDefs>
+			<skills>
+				<li>
+					<label>TM_SpiritRally_pwr</label>
+					<description>TM_SpiritRally_pwr_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_SpiritRally_eff</label>
+					<description>TM_SpiritRally_eff_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_SpiritRally_ver</label>
+					<description>TM_SpiritRally_ver_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+			</skills>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_SpiritStorm</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<abilityDefs>									
+				<li>TM_SpiritStorm</li>
+			</abilityDefs>
+			<skills>
+				<li>
+					<label>TM_SpiritStorm_pwr</label>
+					<description>TM_SpiritStorm_pwr_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_SpiritStorm_eff</label>
+					<description>TM_SpiritStorm_eff_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_SpiritStorm_ver</label>
+					<description>TM_SpiritStorm_ver_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+			</skills>										
 		</customPower>
 	</TorannMagic.TM_CustomPowerDef>
 	

@@ -206,7 +206,7 @@
 <TM_MaxGolemUpgradeReached>The max {0} upgrade has already been reached; resources have been returned</TM_MaxGolemUpgradeReached>
 <TM_NoGolemPartToRestore>There were no missing parts for {0} to replace; resources have been returned</TM_NoGolemPartToRestore>
 <TM_GolemBillUnsuccessful>Unable to complete golem recipe {0}; resources have been returned</TM_GolemBillUnsuccessful>
-<TM_GolemCannotReturn>The golem could not return to its designated position, it not reachable or is occupied.</TM_GolemCannotReturn>
+<TM_GolemCannotReturn>The golem could not return to its designated position, cell is unreachable or occupied.</TM_GolemCannotReturn>
 <TM_GolemPartReplaced>The {0} upgrade has replaced the {1} upgrade; only one upgrade of this type can occupy the {2}.</TM_GolemPartReplaced>
 <TM_UnfinishedThingNoProduct>Unfinished {0}</TM_UnfinishedThingNoProduct>
 <TM_NoPassionsToTransfer>No worthwhile passions found to transfer from {0} to {1}.</TM_NoPassionsToTransfer>
@@ -219,6 +219,23 @@
 <TM_GolemChargesRemaining>{0} actions remaining</TM_GolemChargesRemaining>
 <TM_AlreadyHasSymbiote>{0} already has a symbiote.</TM_AlreadyHasSymbiote>
 <TM_CannotAlterWeatherType>Unable to create an alternate weather type from {0}</TM_CannotAlterWeatherType>
+<TM_UnableToLearnAdvancedClass>{0} was unable to apply {1} because {2}</TM_UnableToLearnAdvancedClass>
+<TM_LearnFail_NotClass>no base class found</TM_LearnFail_NotClass>
+<TM_LearnFail_NoRequiredTrait>no required trait found</TM_LearnFail_NoRequiredTrait>
+<TM_LearnFail_DisallowedTrait>of a conflicting trait</TM_LearnFail_DisallowedTrait>
+
+<!-- Spirit Backstories -->
+<TM_SpiritVerbatum>Spirit</TM_SpiritVerbatum>
+<TM_AncientSpiritVerbatum>Ancient Spirit</TM_AncientSpiritVerbatum>
+<TM_VengefulSpiritVerbatum>Vengeful Spirit</TM_VengefulSpiritVerbatum>
+<TM_LostSpiritVerbatum>Lost Spirit</TM_LostSpiritVerbatum>
+<TM_RegretSpiritVerbatum>Spirit of Regret</TM_RegretSpiritVerbatum>
+
+<TM_BaseSpiritDesc>A wandering spirit, anchored to this realm by some unknown force. The events surrounding the origins of this spirit are unknown, but powerful enough to cause the spirit to seek answers, justice, or redemption from the living.</TM_BaseSpiritDesc>
+<TM_AncientSpiritDesc>This spirit has existed for countless ages and it no longer remembers its purpose. Ancient spirits pursue their own ends and have become masters at controlling spirit energy. Maximum spirit energy is increased by 50.</TM_AncientSpiritDesc>
+<TM_VengefulSpiritDesc>Vengeful spirits are full of spite and hatred, wishing only to inflict their misery onto the living. Vengeful spirits are able to exert more power during spirit distortion and spirit storm but are more difficult to harmonize with when possessing a living body. Increases attack rate of spirit storm by 25% and damage bonus of distort spirit by 6%. Reduces compatibility by 1.</TM_VengefulSpiritDesc>
+<TM_LostSpiritDesc>Lost spirits wander the realm in a constant state of existential anguish, unable to perceive their purpose. The lost readily attach themselves to another's cause and more easily harmonize with kindred spirits. They are also able to strengthen the power of the rally spirit ability. Increase duration, radius, max targets, and bonuses of Spirit Rally by 10%. Increases compatibility by 2. </TM_LostSpiritDesc>
+<TM_RegretSpiritDesc>The spirit of regret is still able to remember their purpose as a spirit, but are were unable to right their wrongs before it was too late. Now they wander the world as a spirit, full of sadness and regret, still searching for a way to fulfill their purpose. Spirits of regret enhance the drain spirit ability by 20%.</TM_RegretSpiritDesc>
 
 <!-- Surgery Failed letters -->
 <LetterLabelRegrowthSurgeryFail>Surgery Failed</LetterLabelRegrowthSurgeryFail>
@@ -1376,7 +1393,7 @@ Level 3: 25% efficiency, -15% success chance</TM_RuneCarving_pwr_desc>
 Mental Break Resistance: [0,5,9,12,13,15]%
 Positive Vibe Chance: [5,10,15,20,25]%</TM_Empathy_pwr_desc>
 <TM_Empathy_eff_desc>Increases range of empathy by 3c and frequency of emotional vibes by 2s per skill level. Default frequency is once every 21s.</TM_Empathy_eff_desc>
-<TM_Empathy_ver_desc>Increases spell penetration for all abilities by 5% per skill level.</TM_Empathy_ver_desc>
+<TM_Empathy_ver_desc>Increases spell penetration for all abilities by 10% per skill level.</TM_Empathy_ver_desc>
 <TM_MindKiller_pwr_desc>Increases maximum targets by 2 and overall strength of effects by 20% per skill level. At ranks 1+, friendly pawns will not be affected. Base target maximum is 8.</TM_MindKiller_pwr_desc>
 <TM_MindKiller_eff_desc>Reduces the amount of mood consumed for activation by 5% per skill level.</TM_MindKiller_eff_desc>
 <TM_MindKiller_ver_desc>Increases effect radius and success chance:
@@ -1416,6 +1433,50 @@ Level 3: 40% absorbed, 50% transferred</TM_Symbiosis_ver_desc>
 <TM_Symbiosis_pwr>Awareness</TM_Symbiosis_pwr>
 <TM_Symbiosis_eff>Commune</TM_Symbiosis_eff>
 <TM_Symbiosis_ver>Shell</TM_Symbiosis_ver>
+
+<TM_SpiritPossession_pwr_desc>Increases the psychic sensitivity and consciousness while in spirit form and increases the amount of energy gained through spirit tap by 10% per level:
+Sensitivity: +[40%, 65%, 85%, 100%]
+Consciousness: +[0%, 15%, 25%, 40%]</TM_SpiritPossession_pwr_desc>
+<TM_SpiritPossession_eff_desc>Reduces the cost of spirit possession by 15% per skill level increases compatibility when possessing an occupied body.</TM_SpiritPossession_eff_desc>
+<TM_SpiritPossession_ver_desc>Reduces the chance spirit possession is resisted by 20% and maximum spirit by 15 per skill level.</TM_SpiritPossession_ver_desc>
+<TM_SpiritDrain_pwr_desc>Increases the amount of spirit drain applied to enemies while reducing the amount applied to allies by 15% per skill level.</TM_SpiritDrain_pwr_desc>
+<TM_SpiritDrain_eff_desc>Increases the amount of spirit energy gained from any source by 10% per skill level.</TM_SpiritDrain_eff_desc>
+<TM_SpiritDrain_ver_desc>Decreases the duration of spirit drain by 15% per skill level; the amount of spirit drain applied and spirit energy absorbed remains the same.</TM_SpiritDrain_ver_desc>
+<TM_DistortSpirit_pwr_desc>Increases the amount of damage a distorted pawn takes by 5% per skill level.</TM_DistortSpirit_pwr_desc>
+<TM_DistortSpirit_eff_desc>Reduces the spirit energy needed to cast spirit distortion by 10% and increases the maximum number of targets affected by 1 per skill level. Base maximum is 5 targets.</TM_DistortSpirit_eff_desc>
+<TM_DistortSpirit_ver_desc>Spirit Distortion also applies a small amount of spirit drain at skill level 1. At skill level 2 and 3, the amount of spirit drain increases and caster will absorb the spirit energy. This skill costs 2 points to train.</TM_DistortSpirit_ver_desc>
+<TM_SummonSpiritAnimalMass_pwr_desc>Summoned spirit animals gain increased enhancements for each skill level.</TM_SummonSpiritAnimalMass_pwr_desc>
+<TM_SummonSpiritAnimalMass_eff_desc>Reduces the spirit energy required by 10% per skill level.</TM_SummonSpiritAnimalMass_eff_desc>
+<TM_SummonSpiritAnimalMass_ver_desc>Increases the duration of spirit animals by 5s per skill level. Base duration 20s.</TM_SummonSpiritAnimalMass_ver_desc>
+<TM_SpiritRally_pwr_desc>Increases the maximum number of spirit allies summoned by 2 per skill level and reduces the summoning penalties. Base maximum 7.</TM_SpiritRally_pwr_desc>
+<TM_SpiritRally_eff_desc>Reduces spirit energy cost by 12% per skill level.</TM_SpiritRally_eff_desc>
+<TM_SpiritRally_ver_desc>Increases the radius and duration of spirit rally:
+Level 0: 8c, 15s
+Level 1: 10c, 18s
+Level 2: 12c, 21s
+Level 3: 14c, 24s</TM_SpiritRally_ver_desc>
+<TM_SpiritStorm_pwr_desc>Increases the damage dealt by spirit storm by 12% per skill level.</TM_SpiritStorm_pwr_desc>
+<TM_SpiritStorm_eff_desc>Reduces the spirit energy cost to create a spirit storm by 10% per skill level.</TM_SpiritStorm_eff_desc>
+<TM_SpiritStorm_ver_desc>Increases the radius of spirit storm by 1c per skill level. Base radius 4c.</TM_SpiritStorm_ver_desc>
+
+<TM_SpiritPossession_pwr>Spirit Power</TM_SpiritPossession_pwr>
+<TM_SpiritPossession_eff>Spirit Control</TM_SpiritPossession_eff>
+<TM_SpiritPossession_ver>Spirit Manipulation</TM_SpiritPossession_ver>
+<TM_SpiritDrain_pwr>Damage Control</TM_SpiritDrain_pwr>
+<TM_SpiritDrain_eff>Clean Energy</TM_SpiritDrain_eff>
+<TM_SpiritDrain_ver>Rapid Absorption</TM_SpiritDrain_ver>
+<TM_DistortSpirit_pwr>Intensity</TM_DistortSpirit_pwr>
+<TM_DistortSpirit_eff>Administration</TM_DistortSpirit_eff>
+<TM_DistortSpirit_ver>Spirit Lacerations</TM_DistortSpirit_ver>
+<TM_SummonSpiritAnimalMass_pwr>Manifestation</TM_SummonSpiritAnimalMass_pwr>
+<TM_SummonSpiritAnimalMass_eff>Kindred</TM_SummonSpiritAnimalMass_eff>
+<TM_SummonSpiritAnimalMass_ver>Harmony</TM_SummonSpiritAnimalMass_ver>
+<TM_SpiritRally_pwr>Spirit Army</TM_SpiritRally_pwr>
+<TM_SpiritRally_eff>Collective</TM_SpiritRally_eff>
+<TM_SpiritRally_ver>Influence</TM_SpiritRally_ver>
+<TM_SpiritStorm_pwr>Spirit Frenzy</TM_SpiritStorm_pwr>
+<TM_SpiritStorm_eff>Empathy</TM_SpiritStorm_eff>
+<TM_SpiritStorm_ver>Sea of Sorrow</TM_SpiritStorm_ver>
 
 <!-- Might Ability Point Descriptions -->
 
@@ -1988,7 +2049,7 @@ Level 3: slowly heals permanent injuries</TM_Elixir_ver_desc>
 <TM_SoothingBalm_pwr_desc>Increases the tend quality of treated wounds by 10% per skill level. Base 50-70%.</TM_SoothingBalm_pwr_desc>
 <TM_SoothingBalm_eff_desc>Reduces the amount of ingredients used to create soothing balm by 8% per skill level.</TM_SoothingBalm_eff_desc>
 <TM_SoothingBalm_ver_desc>Increases the number of wounds tended by soothing balm.</TM_SoothingBalm_ver_desc>
-<TM_FireSuppressionFlask_eff_desc>Reduces amount of ingredients needed to create a poison flask by 15% per skill level.</TM_FireSuppressionFlask_eff_desc>
+<TM_FireSuppressionFlask_eff_desc>Reduces amount of ingredients needed to create a fire suppression flask by 15% per skill level.</TM_FireSuppressionFlask_eff_desc>
 
 <TM_Herbalist_pwr>Herbalist Bag</TM_Herbalist_pwr>
 <TM_Herbalist_eff>Preservation</TM_Herbalist_eff>
@@ -2143,7 +2204,8 @@ Level 3: all 4 effects</TM_CombatDrugs_pwr_desc>
 <TM_GolemMasterLabel>Golemancer</TM_GolemMasterLabel>
 <TM_ActivatesGolem_Time>Activates the golem - this typically takes a small amount of time. The golem will not be able to activate if it is undergoing upgrades.</TM_ActivatesGolem_Time>
 <TM_DeActivatesGolem_Time>Deactivates the golem - this will send the golem back to their resting position and may take some time.</TM_DeActivatesGolem_Time>
-
+<TM_RemovePossession>Leave body</TM_RemovePossession>
+<TM_RemovePossessionDesc>The spirit leaves the body willingly and the characteristics of the pawn return to its state prior to possession.</TM_RemovePossessionDesc>
 <!-- ========== Building Menu's ========== -->
 
 <TM_SelectPortalDestination>Activate Portal</TM_SelectPortalDestination>

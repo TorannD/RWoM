@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef Name="TM_BaseSpiritPawn" Abstract="True">
+    <thingClass>Pawn</thingClass>
+    <category>Pawn</category>
+    <selectable>true</selectable>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Pawn</altitudeLayer>
+    <useHitPoints>false</useHitPoints>
+    <hasTooltip>true</hasTooltip>
+    <soundImpactDefault>BulletImpact_Flesh</soundImpactDefault>
+	<tradeability>None</tradeability>
+    <statBases>
+      <Mass>0</Mass>
+      <Flammability>0</Flammability>
+	  <ToxicSensitivity>0</ToxicSensitivity>
+      <ComfyTemperatureMin>-500</ComfyTemperatureMin>
+      <ComfyTemperatureMax>500</ComfyTemperatureMax>
+	  <MeatAmount>0</MeatAmount>
+	  <MarketValue>0</MarketValue>	  
+	  <LeatherAmount>0</LeatherAmount>
+      <RoyalFavorValue>0</RoyalFavorValue>
+    </statBases>
+    <inspectorTabs>
+      <li>ITab_Pawn_Health</li>
+      <li>ITab_Pawn_Needs</li>
+      <li>ITab_Pawn_Character</li>
+      <li>ITab_Pawn_Training</li>
+      <li>ITab_Pawn_Social</li>
+      <li>ITab_Pawn_Guest</li>
+      <li>ITab_Pawn_Prisoner</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">ITab_Pawn_Slave</li>
+      <li>ITab_Pawn_FormingCaravan</li>
+      <li>ITab_Pawn_Gear</li>
+      <li>ITab_Pawn_Log</li>
+    </inspectorTabs>
+	<tradeTags>
+	  <li>AnimalInsectSpace</li>
+	</tradeTags>
+    <comps>
+      <li>
+        <compClass>CompAttachBase</compClass>
+      </li>
+    </comps>
+    <drawGUIOverlay>true</drawGUIOverlay>
+  </ThingDef>
+  
+  <ThingDef ParentName="TM_BaseSpiritPawn">
+    <defName>TM_SpiritTD</defName>
+    <label>spirit</label>
+    <description>A wandering spirit, anchored to the material plane by some unknown force.</description>
+    <statBases>
+      <MoveSpeed>6</MoveSpeed>
+    </statBases>
+    <tools>
+      <!-- <li>
+        <label>spectral hand</label>
+        <capacities>
+          <li>TM_Spectral</li>
+        </capacities>
+        <power>12</power>
+        <cooldownTime>10</cooldownTime>
+        <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>spectral hand</label>
+        <capacities>
+          <li>TM_Spectral</li>
+        </capacities>
+        <power>12</power>
+        <cooldownTime>10</cooldownTime>
+        <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+      </li> -->
+	  <li>
+        <label>spirit tap</label>
+        <capacities>
+          <li>TM_SpiritTap</li>
+        </capacities>
+        <power>10</power>		
+        <cooldownTime>8</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+      </li>
+    </tools>
+    <race>
+      <thinkTreeMain>TM_SpiritThinkTree</thinkTreeMain>
+      <thinkTreeConstant>TM_SpiritThingTreeConstant</thinkTreeConstant>
+      <intelligence>Humanlike</intelligence>
+      <makesFootprints>false</makesFootprints>
+      <lifeExpectancy>10000</lifeExpectancy>
+      <leatherDef>Leather_Human</leatherDef>
+      <nameCategory>HumanStandard</nameCategory>
+      <body>Human</body>
+      <baseBodySize>1</baseBodySize>
+      <baseHealthScale>1</baseHealthScale>
+      <foodType>OmnivoreHuman</foodType>
+      <gestationPeriodDays>1000</gestationPeriodDays>
+      <meatMarketValue>0</meatMarketValue>
+      <manhunterOnDamageChance>0</manhunterOnDamageChance>
+      <manhunterOnTameFailChance>0</manhunterOnTameFailChance>
+      <litterSizeCurve>
+        <points>
+          <li>(0, 0)</li>
+        </points>
+      </litterSizeCurve>
+      <lifeStageAges>
+        <li>
+          <def>TM_SpiritLS</def>
+          <minAge>0</minAge>
+        </li>        
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_Punch_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_Punch_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_Punch_Miss</soundMeleeMiss>
+      <soundMeleeDodge>Pawn_MeleeDodge</soundMeleeDodge>
+      <specialShadowData>
+        <volume>(0, 0, 0)</volume>
+        <offset>(0,0,0)</offset>
+      </specialShadowData>
+      <ageGenerationCurve>
+        <points>
+          <li>(1,1)</li>
+        </points>
+      </ageGenerationCurve>
+      <hediffGiverSets>
+      </hediffGiverSets>
+    </race>
+    <recipes>      
+    </recipes>
+    <ingredient>
+      <mergeCompatibilityTags>
+        <li>HumanMeat</li>
+      </mergeCompatibilityTags>
+    </ingredient>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BasePlayerPawnKind">
+    <defName>TM_SpiritPKD</defName>
+    <label>spirit</label>
+    <defaultFactionType>PlayerColony</defaultFactionType>
+    <chemicalAddictionChance>0</chemicalAddictionChance>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+    </apparelTags>
+    <apparelAllowHeadgearChance>0</apparelAllowHeadgearChance>
+    <apparelMoney>0~0</apparelMoney>
+    <backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+    <techHediffsChance>0</techHediffsChance>
+    <techHediffsMoney>0~0</techHediffsMoney>
+    <techHediffsTags>
+      <li>Poor</li>
+      <li>Simple</li>      
+    </techHediffsTags>
+    <initialResistanceRange>0~0</initialResistanceRange>
+  </PawnKindDef>
+  
+  <LifeStageDef>
+    <defName>TM_SpiritLS</defName>
+    <label>spirit</label>
+    <bodySizeFactor>0.8</bodySizeFactor>
+    <foodMaxFactor>0</foodMaxFactor>
+    <healthScaleFactor>1</healthScaleFactor>
+    <hungerRateFactor>0</hungerRateFactor>
+    <marketValueFactor>0</marketValueFactor>
+    <meleeDamageFactor>1</meleeDamageFactor>
+    <statFactors>
+      <MoveSpeed>1</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  
+  <ToolCapacityDef>
+    <defName>TM_Spectral</defName>
+    <label>spectral</label>
+  </ToolCapacityDef>
+  
+  <ManeuverDef>
+    <defName>TM_SpectralHand</defName>
+    <requiredCapacity>TM_Spectral</requiredCapacity>
+    <verb>
+      <verbClass>TorannMagic.Verb_ShadowBurn</verbClass>
+      <meleeDamageDef>TM_Spirit</meleeDamageDef>
+      <ai_IsBuildingDestroyer>false</ai_IsBuildingDestroyer>
+    </verb>
+    <logEntryDef>MeleeAttack</logEntryDef>
+    <combatLogRulesHit>Maneuver_Smash_MeleeHit</combatLogRulesHit>
+    <combatLogRulesDeflect>Maneuver_Smash_MeleeDeflect</combatLogRulesDeflect>
+    <combatLogRulesMiss>Maneuver_Smash_MeleeMiss</combatLogRulesMiss>
+    <combatLogRulesDodge>Maneuver_Smash_MeleeDodge</combatLogRulesDodge>
+  </ManeuverDef>
+  
+  <ToolCapacityDef>
+    <defName>TM_SpiritTap</defName>
+    <label>spirit tap</label>
+  </ToolCapacityDef> 
+
+  <ManeuverDef>
+    <defName>TM_SpiritTapMD</defName>
+    <requiredCapacity>TM_SpiritTap</requiredCapacity>
+    <verb>
+      <verbClass>TorannMagic.Verb_SpiritTap</verbClass>
+      <meleeDamageDef>TM_Spirit</meleeDamageDef>
+    </verb>
+    <logEntryDef>MeleeAttack</logEntryDef>
+    <combatLogRulesHit>Maneuver_Scratch_MeleeHit</combatLogRulesHit>
+    <combatLogRulesDeflect>Maneuver_Scratch_MeleeDeflect</combatLogRulesDeflect>
+    <combatLogRulesMiss>Maneuver_Scratch_MeleeMiss</combatLogRulesMiss>
+    <combatLogRulesDodge>Maneuver_Scratch_MeleeDodge</combatLogRulesDodge>
+  </ManeuverDef>
+
+</Defs>

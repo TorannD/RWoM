@@ -14,6 +14,7 @@ namespace TorannMagic.TMDefs
         //variables to be used with the condition checks
         public AutocastConditionClass conditionClass = AutocastConditionClass.Null;
         public bool invert = false;
+        public bool onlyAppliesToCaster = false;
         public List<HediffDef> hediffDefs = null;
         public List<NeedDef> needDefs = null;
         public float valueA = 0f;

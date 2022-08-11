@@ -196,7 +196,7 @@ namespace TorannMagic
             //for (int i = 0; i < this.barrierCells.Count(); i++)
             //{
             //    IntVec3 intVec = this.barrierCells[i];
-            //    if (intVec.InBounds(this.pawn.Map) && intVec.IsValid)
+            //    if (intVec.InBoundsWithNullCheck(this.pawn.Map) && intVec.IsValid)
             //    {
             //        FleckMaker.ThrowHeatGlow(intVec, this.pawn.Map, 1f);
             //    }

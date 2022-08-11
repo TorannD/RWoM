@@ -113,6 +113,7 @@ namespace TorannMagic
 
             public static DamageDef TM_SymbiosisDD;
             public static DamageDef TM_HailDD;
+            public static DamageDef TM_FreezingWindsDD;
         }
     }
 }

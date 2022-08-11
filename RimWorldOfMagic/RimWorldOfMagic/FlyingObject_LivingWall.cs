@@ -593,7 +593,7 @@ namespace TorannMagic
                     DoDirectActions();
                     if (!shouldDestroy)
                     {
-                        bool flag = !this.ExactPosition.InBounds(base.Map);
+                        bool flag = !this.ExactPosition.InBoundsWithNullCheck(base.Map);
                         if (flag)
                         {
                             this.ticksToImpact++;
@@ -625,7 +625,7 @@ namespace TorannMagic
                                     }
                                     else
                                     {
-                                        bool flag3 = this.DestinationCell.InBounds(base.Map);
+                                        bool flag3 = this.DestinationCell.InBoundsWithNullCheck(base.Map);
                                         if (flag3)
                                         {
                                             base.Position = this.DestinationCell;
@@ -636,7 +636,7 @@ namespace TorannMagic
                                 }
                                 else
                                 {
-                                    bool flag3 = this.DestinationCell.InBounds(base.Map);
+                                    bool flag3 = this.DestinationCell.InBoundsWithNullCheck(base.Map);
                                     if (flag3)
                                     {
                                         base.Position = this.DestinationCell;

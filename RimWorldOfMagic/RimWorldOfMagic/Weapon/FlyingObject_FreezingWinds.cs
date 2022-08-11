@@ -64,7 +64,7 @@ namespace TorannMagic.Weapon
             {
                 if (hitList[j] is Pawn && hitList[j] != this.launcher)
                 {
-                    DamageInfo dinfo = new DamageInfo(this.def.projectile.damageDef, this.def.projectile.GetDamageAmount(this.weaponDamageMultiplier), 1, -1, this.launcher);
+                    DamageInfo dinfo = new DamageInfo(this.def.projectile.damageDef, this.def.projectile.GetDamageAmount(this.weaponDamageMultiplier), 1, -1, this.launcher);                    
                     hitList[j].TakeDamage(dinfo);
                     hitThing = hitList[j];
                 }

@@ -288,5 +288,40 @@ namespace TorannMagic.ModOptions
                 Traverse.Create(root: p).Field(name: "comps").SetValue(comps);
             }
         }
+
+        [DebugAction("RWoM", "Spawn Spirit", actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        public static void SpawnSpirit()
+        {            
+            Pawn spiritPawn = TM_Action.GenerateSpiritPawn(UI.MouseCell(), Faction.OfPlayer);            
+            GenSpawn.Spawn(spiritPawn, UI.MouseCell(), Find.CurrentMap);  
+        }
+
+        [DebugAction("RWoM", "T: -20% Spirit", actionType = DebugActionType.ToolMapForPawns, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        public static void ReduceSpirit(Pawn pawn)
+        {
+            //Pawn pawn = Find.CurrentMap.thingGrid.ThingsAt(UI.MouseCell()).Where((Thing t) => t is Pawn).Cast<Pawn>().FirstOrDefault();
+            if (pawn != null && pawn.needs != null)
+            {
+                Need_Spirit ns = pawn.needs.TryGetNeed(TorannMagicDefOf.TM_SpiritND) as Need_Spirit;
+                if(ns != null)
+                {
+                    ns.GainNeed(-20f);
+                }
+            }
+        }
+
+        [DebugAction("RWoM", "T: +20% Spirit", actionType = DebugActionType.ToolMapForPawns, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        public static void GainSpirit(Pawn pawn)
+        {
+            //Pawn pawn = Find.CurrentMap.thingGrid.ThingsAt(UI.MouseCell()).Where((Thing t) => t is Pawn).Cast<Pawn>().FirstOrDefault();
+            if (pawn != null && pawn.needs != null)
+            {
+                Need_Spirit ns = pawn.needs.TryGetNeed(TorannMagicDefOf.TM_SpiritND) as Need_Spirit;
+                if (ns != null)
+                {
+                    ns.GainNeed(20f);
+                }
+            }
+        }
     }
 }

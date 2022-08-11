@@ -19,7 +19,7 @@ namespace TorannMagic
         bool validTarg;
         public override bool CanHitTargetFrom(IntVec3 root, LocalTargetInfo targ)
         {
-            if (targ.IsValid && targ.CenterVector3.InBounds(base.CasterPawn.Map) && !targ.Cell.Fogged(base.CasterPawn.Map))
+            if (targ.IsValid && targ.CenterVector3.InBoundsWithNullCheck(base.CasterPawn.Map) && !targ.Cell.Fogged(base.CasterPawn.Map))
             {
                 if ((root - targ.Cell).LengthHorizontal < this.verbProps.range)
                 {
@@ -50,7 +50,7 @@ namespace TorannMagic
 
             if(!(comp.maxMP < .6f - (.07f * verVal)))
             {
-                if(this.currentTarget.IsValid && this.currentTarget.CenterVector3.InBounds(base.CasterPawn.Map))
+                if(this.currentTarget.IsValid && this.currentTarget.CenterVector3.InBoundsWithNullCheck(base.CasterPawn.Map))
                 {
                     Building isBuilding = null;
                     TerrainDef terrain = null;
@@ -135,7 +135,7 @@ namespace TorannMagic
                 IntVec3 cell = cellList[i];                
                 bldg = cell.GetFirstBuilding(this.CasterPawn.Map);
                 terrain = cell.GetTerrain(this.CasterPawn.Map);
-                if (cell.InBounds(this.CasterPawn.Map) && bldg == null && terrain == terrainDef)
+                if (cell.InBoundsWithNullCheck(this.CasterPawn.Map) && bldg == null && terrain == terrainDef)
                 {
                     this.CasterPawn.Map.terrainGrid.SetTerrain(cell, TerrainDef.Named("Gravel"));
                     FleckMaker.ThrowSmoke(cell.ToVector3Shifted(), this.CasterPawn.Map, Rand.Range(.8f, 1.2f));

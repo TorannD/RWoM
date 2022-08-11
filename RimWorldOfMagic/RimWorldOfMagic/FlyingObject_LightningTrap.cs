@@ -188,7 +188,7 @@ namespace TorannMagic
             this.searchDelay--;
             Vector3 exactPosition = this.ExactPosition;
             this.ticksToImpact--;
-            bool flag = !this.ExactPosition.InBounds(base.Map);
+            bool flag = !this.ExactPosition.InBoundsWithNullCheck(base.Map);
             if (flag)
             {
                 this.ticksToImpact++;
@@ -207,7 +207,7 @@ namespace TorannMagic
                 bool flag2 = this.ticksToImpact <= 0;
                 if (flag2)
                 {
-                    bool flag3 = this.DestinationCell.InBounds(base.Map);
+                    bool flag3 = this.DestinationCell.InBoundsWithNullCheck(base.Map);
                     if (flag3)
                     {
                         base.Position = this.DestinationCell;
@@ -352,7 +352,7 @@ namespace TorannMagic
             for (int i = 0; i < 4; i++)
             {
                 IntVec3 strikeCell = dissipationList.RandomElement();
-                if (strikeCell.InBounds(base.Map) && strikeCell.IsValid && !strikeCell.Fogged(this.Map))
+                if (strikeCell.InBoundsWithNullCheck(base.Map) && strikeCell.IsValid && !strikeCell.Fogged(this.Map))
                 {
                     DrawStrike(this.ExactPosition.ToIntVec3(), strikeCell.ToVector3Shifted());
                     for (int k = 0; k < Rand.Range(1, 8); k++)

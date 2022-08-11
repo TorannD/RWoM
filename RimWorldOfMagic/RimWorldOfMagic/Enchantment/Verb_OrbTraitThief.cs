@@ -18,7 +18,7 @@ namespace TorannMagic.Enchantment
             {
                 return this.verbProps.targetParams.canTargetSelf;
             }
-            if (targ.IsValid && targ.CenterVector3.InBounds(base.CasterPawn.Map) && !targ.Cell.Fogged(base.CasterPawn.Map) && targ.Cell.Walkable(base.CasterPawn.Map))
+            if (targ.IsValid && targ.CenterVector3.InBoundsWithNullCheck(base.CasterPawn.Map) && !targ.Cell.Fogged(base.CasterPawn.Map) && targ.Cell.Walkable(base.CasterPawn.Map))
             {
                 if ((root - targ.Cell).LengthHorizontal < this.verbProps.range)
                 {
@@ -45,7 +45,7 @@ namespace TorannMagic.Enchantment
                 if(this.currentTarget.Thing != null && this.currentTarget.Thing is Pawn)
                 {
                     Pawn victim = this.currentTarget.Thing as Pawn;
-                    if(victim.Faction != null && victim.RaceProps.Humanlike && victim.story != null && victim.story.traits != null && victim.story.traits.allTraits.Count > 0 && !TM_Calc.IsUndead(victim))
+                    if(victim.Faction != null && victim.RaceProps.Humanlike && victim.story != null && victim.story.traits != null && victim.story.traits.allTraits.Count > 0 && !TM_Calc.IsUndead(victim) && !TM_Calc.IsSpirit(victim))
                     {
                         if (Rand.Chance(TM_Calc.GetSpellSuccessChance(this.CasterPawn, victim, true)))
                         {
@@ -63,8 +63,16 @@ namespace TorannMagic.Enchantment
                                     for (int i = 0; i < iterations; i++)
                                     {
                                         Trait transferTrait = allTraits.RandomElement();
-                                        orbComp.SoulOrbTraits.AddDistinct(transferTrait);
-                                        RemoveTrait(victim, allTraits, transferTrait.def);
+                                        if (transferTrait.def == TorannMagicDefOf.TM_Possessed)
+                                        {
+                                            TM_Action.RemovePossession(victim, victim.Position);
+                                        }
+                                        else
+                                        {
+                                            orbComp.SoulOrbTraits.AddDistinct(transferTrait);
+                                            RemoveTrait(victim, allTraits, transferTrait.def);
+                                        }
+                                        
                                         result = true;
                                     }
                                     if(Rand.Chance(.6f))

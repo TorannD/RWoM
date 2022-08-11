@@ -182,6 +182,38 @@ namespace TorannMagic
                         this.Pawn.mindState.inspirationHandler.EndInspiration(this.Pawn.Inspiration);
                     }
                 }
+                if (mightDef.chainedAbility != null)
+                {
+                    this.MightUser.TryAddPawnAbility(mightDef.chainedAbility);
+                    bool expires = false;
+                    int expireTicks = -1;
+                    if (mightDef.chainedAbilityExpiresAfterTicks >= 0)
+                    {
+                        expires = true;
+                        expireTicks = mightDef.chainedAbilityExpiresAfterTicks;
+                    }
+                    else if (mightDef.chainedAbilityExpiresAfterCooldown)
+                    {
+                        expires = true;
+                        expireTicks = this.CooldownTicksLeft;
+                    }
+                    if (expires)
+                    {
+                        CompAbilityUserMight.ChainedMightAbility cab = new CompAbilityUserMight.ChainedMightAbility(mightDef.chainedAbility, expireTicks, expires);
+                        this.MightUser.chainedAbilitiesList.Add(cab);
+                    }
+                }
+                if (mightDef.removeAbilityAfterUse)
+                {
+                    MightUser.RemovePawnAbility(mightDef);
+                }
+                if (mightDef.abilitiesRemovedWhenUsed != null && mightDef.abilitiesRemovedWhenUsed.Count > 0)
+                {
+                    foreach (TMAbilityDef rem in mightDef.abilitiesRemovedWhenUsed)
+                    {
+                        this.MightUser.RemovePawnAbility(rem);
+                    }
+                }
             }
         }
 

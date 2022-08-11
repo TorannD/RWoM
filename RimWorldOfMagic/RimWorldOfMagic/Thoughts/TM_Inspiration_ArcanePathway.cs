@@ -21,8 +21,8 @@ namespace TorannMagic.Thoughts
         public override string LetterText
         {
             get
-            {
-                TaggedString taggedString = def.beginLetter.Formatted(pawn.LabelShortCap, TM_Data.EnabledMagicTraits[mageIndex].degreeDatas[TM_Data.EnabledMagicTraits[mageIndex].degreeDatas.FirstOrDefault().degree].label).AdjustedFor(pawn);
+            {                        
+                TaggedString taggedString = def.beginLetter.Formatted(pawn.LabelShortCap, TM_Data.EnabledMagicTraits[mageIndex].degreeDatas.FirstOrDefault().label).AdjustedFor(pawn);
                 if (!string.IsNullOrWhiteSpace(reason))
                 {
                     taggedString = reason.Formatted(pawn.LabelCap, TM_Data.EnabledMagicTraits[mageIndex].degreeDatas[0].LabelCap, pawn.Named("PAWN")).AdjustedFor(pawn) + "\n\n" + taggedString;
@@ -33,7 +33,7 @@ namespace TorannMagic.Thoughts
 
         public override void PostStart(bool sendLetter = true)
         {
-            mageIndex = TM_Calc.GetRandomAcceptableMagicClassIndex(pawn);            
+            mageIndex = TM_Calc.GetRandomAcceptableMagicClassIndex(pawn);
             base.PostStart(sendLetter);
         }
 

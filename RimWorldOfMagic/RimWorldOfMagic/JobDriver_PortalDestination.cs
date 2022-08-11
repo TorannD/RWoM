@@ -109,7 +109,7 @@ namespace TorannMagic
                 portalTarget.canTargetFires = false;
                 portalTarget.canTargetBuildings = false;
                 portalTarget.canTargetItems = false;
-                portalTarget.validator = ((TargetInfo x) => x.IsValid && !x.Cell.Fogged(map) && x.Cell.InBounds(map) && x.Cell.Walkable(map));  //TargetingParameters.ForDropPodsDestination()
+                portalTarget.validator = ((TargetInfo x) => x.IsValid && !x.Cell.Fogged(map) && x.Cell.InBoundsWithNullCheck(map) && x.Cell.Walkable(map));  //TargetingParameters.ForDropPodsDestination()
                 Find.Targeter.BeginTargeting(portalTarget, delegate (LocalTargetInfo x)
                 {                    
                     portalBldg.PortalDestinationPosition = x.Cell;

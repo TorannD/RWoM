@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace TorannMagic
 {
-    public class Verb_CureDisease : Verb_UseAbility
+    public class Verb_CureDisease : Verb_SB
     {
         private int verVal;
         private int pwrVal;

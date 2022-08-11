@@ -20,7 +20,7 @@ namespace TorannMagic
             {
                 return this.verbProps.targetParams.canTargetSelf;
             }
-            if (targ.IsValid && targ.CenterVector3.InBounds(base.CasterPawn.Map) && !targ.Cell.Fogged(base.CasterPawn.Map) && targ.Cell.Walkable(base.CasterPawn.Map))
+            if (targ.IsValid && targ.CenterVector3.InBoundsWithNullCheck(base.CasterPawn.Map) && !targ.Cell.Fogged(base.CasterPawn.Map) && targ.Cell.Walkable(base.CasterPawn.Map))
             {
                 if ((root - targ.Cell).LengthHorizontal < this.verbProps.range)
                 {
@@ -61,7 +61,7 @@ namespace TorannMagic
             {
                 foreach (IntVec3 c in tmpList)
                 {
-                    if (c != null && (c.IsValid && c.Standable(map) && c.InBounds(map)))
+                    if (c != null && (c.IsValid && c.Standable(map) && c.InBoundsWithNullCheck(map)))
                     {
                         cellList.Add(c);
                     }
@@ -85,6 +85,12 @@ namespace TorannMagic
                     for (int j = 0; j < 3; j++)
                     {
                         FleckMaker.ThrowSmoke(animal.DrawPos, map, Rand.Range(.5f, 1.1f));
+                    }
+                    Pawn enemy = TM_Calc.FindNearbyEnemy(animal, 30);
+                    if (enemy != null)
+                    {
+                        Job defendJob = new Job(JobDefOf.AttackMelee, enemy);
+                        animal.jobs.TryTakeOrderedJob(defendJob);
                     }
                 }
             }
