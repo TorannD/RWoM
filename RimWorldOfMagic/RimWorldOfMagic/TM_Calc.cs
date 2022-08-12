@@ -370,44 +370,18 @@ namespace TorannMagic
 
         public static bool IsMagicUser(Pawn pawn)
         {
-            if (pawn != null)
+            if (pawn?.story?.traits?.allTraits == null) return false;
+            if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless)) return false;
+
+            if(pawn.story.traits.allTraits.Any(t => TM_Data.MagicTraits.Contains(t.def))) return true;
+
+            CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
+            if (comp != null && comp.IsMagicUser && comp.MagicData != null && comp.Mana != null)
             {
-                if (pawn.story != null && pawn.story.traits != null && pawn.story.traits.allTraits != null)
-                {
-                    if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
-                    {
-                        return false;
-                    }
-                    for (int i = 0; i < pawn.story.traits.allTraits.Count; i++)
-                    {
-                        if (TM_Data.MagicTraits.Contains(pawn.story.traits.allTraits[i].def))
-                        {
-                            return true;
-                        }
-                    }                    
-                }
-                else
-                {
-                    return false;
-                }
-                CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
-                if(comp != null && comp.IsMagicUser && comp.MagicData != null && comp.Mana != null)
-                {
-                    return true;
-                }
-                if (pawn.needs != null)
-                {
-                    List<Need> needs = pawn.needs.AllNeeds;
-                    for (int i = 0; i < needs.Count; i++)
-                    {
-                        if (needs[i].def.defName == "TM_Mana")
-                        {
-                            return true;
-                        }
-                    }
-                }                                
+                return true;
             }
-            return false;
+
+            return pawn.needs != null && pawn.needs.AllNeeds.Any(t => t.def.defName == "TM_Mana");
         }
 
         public static bool HasAdvancedClass(Pawn p)
