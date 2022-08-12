@@ -64,10 +64,10 @@ namespace TorannMagic
                 if (!cc.isAdvancedClass) CustomBaseClasses.Add(cc); //base classes cannot also be advanced classes, but advanced classes can act like base classes
                 else CustomAdvancedClasses.Add(cc);
             }
-            CustomBaseClassTraitIndexes = new Dictionary<ushort, int>();
-            for (int i = 0; i < CustomBaseClasses.Count; i++)
+            CustomClassTraitIndexes = new Dictionary<ushort, int>();
+            for (int i = 0; i < CustomClasses.Count; i++)
             {
-                CustomBaseClassTraitIndexes[CustomBaseClasses[i].classTrait.index] = i;
+                CustomClassTraitIndexes[CustomClasses[i].classTrait.index] = i;
             }
         }
 
@@ -171,15 +171,22 @@ namespace TorannMagic
         //    }
         //}
 
-        private static Dictionary<ushort, int> CustomBaseClassTraitIndexes;  // Dictionary to more quickly determine trait's CustomClasses index
+        private static Dictionary<ushort, int> CustomClassTraitIndexes;  // Dictionary to more quickly determine trait's CustomClasses index
 
-        public static int IsCustomBaseClassIndex(List<Trait> allTraits)
+        public static int IsCustomClassIndex(List<Trait> allTraits)
         {
-            for(int i = 0; i < allTraits.Count; i++)
+            if (allTraits != null && allTraits.Count > 0)
             {
-                if (CustomBaseClassTraitIndexes.ContainsKey(allTraits[i].def.index))
+                if (CustomClassTraitIndexes == null)
                 {
-                    return CustomBaseClassTraitIndexes[allTraits[i].def.index];
+                    LoadCustomClasses();
+                }
+                for (int i = 0; i < allTraits.Count; i++)
+                {
+                    if (CustomClassTraitIndexes.ContainsKey(allTraits[i].def.index))
+                    {
+                        return CustomClassTraitIndexes[allTraits[i].def.index];
+                    }
                 }
             }
             return -2;

@@ -2205,10 +2205,10 @@ namespace TorannMagic
                 }
                 if (this.customClass == null && this.customIndex == -2)
                 {
-                    this.customIndex = TM_ClassUtility.IsCustomBaseClassIndex(this.Pawn.story.traits.allTraits);
+                    this.customIndex = TM_ClassUtility.IsCustomClassIndex(this.Pawn.story.traits.allTraits);
                     if (this.customIndex >= 0)
                     {
-                        if (!TM_ClassUtility.CustomBaseClasses[this.customIndex].isMage)
+                        if (!TM_ClassUtility.CustomClasses[this.customIndex].isMage || TM_ClassUtility.CustomClasses[this.customIndex].isAdvancedClass)
                         {
                             this.customIndex = -1;
                             return false;
@@ -8891,12 +8891,12 @@ namespace TorannMagic
             if (flag11)
             {
                 Pawn abilityUser = base.Pawn;
-                int index = TM_ClassUtility.IsCustomBaseClassIndex(abilityUser.story.traits.allTraits);
+                int index = TM_ClassUtility.IsCustomClassIndex(abilityUser.story.traits.allTraits);
                 if (index >= 0)
                 {                    
-                    if (TM_ClassUtility.CustomBaseClasses[index].isMage)
+                    if (TM_ClassUtility.CustomClasses[index].isMage && !TM_ClassUtility.CustomClasses[index].isAdvancedClass)
                     {
-                        this.customClass = TM_ClassUtility.CustomBaseClasses[index];
+                        this.customClass = TM_ClassUtility.CustomClasses[index];
                         this.customIndex = index;
                         LoadCustomClassAbilities(this.customClass);
                     }
