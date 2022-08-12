@@ -262,8 +262,8 @@
 			<classTrait>TM_Possessor</classTrait>				
 			<traitDegree>0</traitDegree>					
 			<classHediff></classHediff>								
-			<classTexturePath></classTexturePath> 
-			<classIconPath></classIconPath>			
+			<classTexturePath>spiritMark</classTexturePath> 
+			<classIconPath>SpiritMark</classIconPath>			
 			<classIconColor>(0,0.6,.6)</classIconColor>		
 			<tornScript></tornScript>						
 			<fullScript></fullScript>			

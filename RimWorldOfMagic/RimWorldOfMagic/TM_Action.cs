@@ -12,6 +12,7 @@ using HarmonyLib;
 using TorannMagic.Enchantment;
 using TorannMagic.TMDefs;
 
+
 namespace TorannMagic
 {
     public static class TM_Action
@@ -78,9 +79,8 @@ namespace TorannMagic
         {
             Thing instigator = dinfo.Instigator;
 
-            if (instigator is Pawn)
+            if (instigator is Pawn meleePawn)
             {
-                Pawn meleePawn = instigator as Pawn;
                 if ((dinfo.Weapon != null && dinfo.Weapon.IsMeleeWeapon) || dinfo.WeaponBodyPartGroup != null)
                 {
                     DamageInfo dinfo2 = new DamageInfo(dinfo.Def, dinfo.Amount, dinfo.ArmorPenetrationInt, dinfo.Angle, reflectingPawn, null, null, DamageInfo.SourceCategory.ThingOrUnknown, meleePawn);
@@ -93,17 +93,15 @@ namespace TorannMagic
         {
             Thing instigator = dinfo.Instigator;
 
-            if (instigator is Pawn)
+            if (instigator is Pawn shooterPawn)
             {
-                Pawn shooterPawn = instigator as Pawn;
                 if (dinfo.Weapon != null && !dinfo.Weapon.IsMeleeWeapon && dinfo.WeaponBodyPartGroup == null)
                 {
                     TM_CopyAndLaunchProjectile.CopyAndLaunchThing(shooterPawn.equipment.PrimaryEq.PrimaryVerb.verbProps.defaultProjectile, reflectingPawn, instigator, shooterPawn, ProjectileHitFlags.All, null);
                 }
             }
-            if (instigator is Building)
+            if (instigator is Building turret)
             {
-                Building turret = instigator as Building;
                 ThingDef projectile = null;
 
                 if (turret.def.building.turretGunDef != null)
@@ -131,9 +129,8 @@ namespace TorannMagic
         {
             Thing instigator = dinfo.Instigator;
 
-            if (instigator is Pawn)
+            if (instigator is Pawn shooterPawn)
             {
-                Pawn shooterPawn = instigator as Pawn;
                 if (dinfo.Weapon != null && !dinfo.Weapon.IsMeleeWeapon && dinfo.WeaponBodyPartGroup == null)
                 {
                     Pawn randomTarget = null;
@@ -144,9 +141,8 @@ namespace TorannMagic
                     }
                 }
             }
-            if (instigator is Building)
+            if (instigator is Building turret)
             {
-                Building turret = instigator as Building;
                 ThingDef projectile = null;
 
                 if (turret.def.building.turretGunDef != null)
@@ -194,7 +190,7 @@ namespace TorannMagic
 
         public static void DoAction_TechnoWeaponCopy(Pawn caster, Thing thing, ThingDef td = null, QualityCategory _qc = QualityCategory.Normal)
         {
-            CompAbilityUserMagic comp = caster.TryGetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
             ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
             bool destroyThingAtEnd = false;
             if (thing != null && comp != null)
@@ -304,7 +300,7 @@ namespace TorannMagic
 
         public static void DoAction_PistolSpecCopy(Pawn caster, ThingWithComps thing)
         {
-            CompAbilityUserMight comp = caster.TryGetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = caster.GetCompAbilityUserMight();
             ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
 
             if (thing != null && thing.def != null && thing.def.IsRangedWeapon)
@@ -405,7 +401,7 @@ namespace TorannMagic
 
         public static void DoAction_RifleSpecCopy(Pawn caster, ThingWithComps thing)
         {
-            CompAbilityUserMight comp = caster.TryGetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = caster.GetCompAbilityUserMight();
             ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
 
             if (thing != null && thing.def != null && thing.def.IsRangedWeapon)
@@ -506,7 +502,7 @@ namespace TorannMagic
         //public static void DoAction_ShotgunSpecCopy(Pawn caster, ThingDef thingDef, int wpnQuality, ThingDef stuff = null)
         public static void DoAction_ShotgunSpecCopy(Pawn caster, ThingWithComps thing)
         {
-            CompAbilityUserMight comp = caster.TryGetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = caster.GetCompAbilityUserMight();
             ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
 
             if (thing != null && thing.def != null && thing.def.IsRangedWeapon)
@@ -646,7 +642,7 @@ namespace TorannMagic
         {
             bool multiplePawns = false;
             bool flag = !dinfo.InstantPermanentInjury;
-            CompAbilityUserMight comp = caster.GetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = caster.GetCompAbilityUserMight();
             MightPowerSkill eff = comp.MightData.MightPowerSkill_DragonStrike.FirstOrDefault((MightPowerSkill x) => x.label == "TM_DragonStrike_eff");
             MightPowerSkill globalSkill = comp.MightData.MightPowerSkill_global_seff.FirstOrDefault((MightPowerSkill x) => x.label == "TM_global_seff_pwr");
             float actualStaminaCost = .1f * (1 - (.1f * eff.level) * (1 - (.03f * globalSkill.level)));
@@ -1112,12 +1108,12 @@ namespace TorannMagic
                 {
                     bool targetIsMage = TM_Calc.IsMagicUser(target);
                     target.story.traits.GainTrait(new Trait(TorannMagicDefOf.TM_Possessed, 0, false));
-                    CompAbilityUserMagic targetComp = target.TryGetComp<CompAbilityUserMagic>();
+                    CompAbilityUserMagic targetComp = target.GetCompAbilityUserMagic();
                     //targetComp.CompTick();
                     targetComp.AddAdvancedClass(TM_ClassUtility.GetCustomClassOfTrait(TorannMagicDefOf.TM_Possessed), caster);
                     if (!targetIsMage)
                     {
-                        CompAbilityUserMagic casterComp = caster.TryGetComp<CompAbilityUserMagic>();
+                        CompAbilityUserMagic casterComp = caster.GetCompAbilityUserMagic();
                         targetComp.MagicUserLevel = casterComp.MagicUserLevel;
                         targetComp.MagicData.MagicAbilityPoints = 0;
                     }
@@ -1133,7 +1129,7 @@ namespace TorannMagic
                         target.equipment = new Pawn_EquipmentTracker(target);
                     }
                 }
-                //caster.TryGetComp<CompAbilityUserMagic>().RemoveAdvancedClass(TM_ClassUtility.GetCustomClassOfTrait(TorannMagicDefOf.TM_Possessor));            
+                //caster.GetCompAbilityUserMagic().RemoveAdvancedClass(TM_ClassUtility.GetCustomClassOfTrait(TorannMagicDefOf.TM_Possessor));            
                 Hediff hd = target.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_SpiritPossessionHD);
                 HediffComp_SpiritPossession hdc_sp = hd.TryGetComp<HediffComp_SpiritPossession>() as HediffComp_SpiritPossession;
                 Need_Spirit ns = target.needs.TryGetNeed(TorannMagicDefOf.TM_SpiritND) as Need_Spirit;
@@ -1143,7 +1139,7 @@ namespace TorannMagic
                     ns.wasDead = wasDead;
                 }
                 hdc_sp.SpiritPawn = caster;
-                //target.TryGetComp<CompAbilityUserMagic>().MagicData.ClearSkill_Dictionaries();
+                //target.GetCompAbilityUserMagic().MagicData.ClearSkill_Dictionaries();
             }, "adding spirit", false, null);
         }
 
@@ -1152,7 +1148,7 @@ namespace TorannMagic
             Hediff hd = p.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_SpiritPossessionHD);
             HediffComp_SpiritPossession hdc_sp = hd.TryGetComp<HediffComp_SpiritPossession>() as HediffComp_SpiritPossession;
             Pawn spirit = hdc_sp.SpiritPawn;
-            CompAbilityUserMagic pComp = p.TryGetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic pComp = p.GetCompAbilityUserMagic();
             Map spawnMap = p.Map;
             if (p.Map == null && p.Corpse != null)
             {
@@ -1169,7 +1165,7 @@ namespace TorannMagic
             {
                 MagicData fromData = pComp.MagicData;
 
-                CompAbilityUserMagic spiritComp = spirit.TryGetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic spiritComp = spirit.GetCompAbilityUserMagic();
                 MagicData toData = spiritComp.MagicData;
                 TMDefs.TM_CustomClass cc = TM_ClassUtility.GetCustomClassOfTrait(TorannMagicDefOf.TM_Possessed);
                 int spiritLevelChange = 0;
@@ -1680,7 +1676,7 @@ namespace TorannMagic
         {
             if (p != null)
             {
-                CompAbilityUserMagic comp = p.GetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = p.GetCompAbilityUserMagic();
                 ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
                 if (comp != null && comp.Mana != null)
                 {
@@ -1865,7 +1861,7 @@ namespace TorannMagic
                         {
                             if (TM_Calc.IsMagicUser(allPawns[i]))
                             {
-                                CompAbilityUserMagic apComp = allPawns[i].TryGetComp<CompAbilityUserMagic>();
+                                CompAbilityUserMagic apComp = allPawns[i].GetCompAbilityUserMagic();
                                 if (apComp != null)
                                 {
                                     for (int j = 0; j < apComp.AbilityData.AllPowers.Count; j++)
@@ -2117,7 +2113,7 @@ namespace TorannMagic
 
         public static void DoTransmutate(Pawn caster, Thing transmutateThing, bool flagNoStuffItem, bool flagRawResource, bool flagStuffItem, bool flagNutrition, bool flagCorpse)
         {
-            CompAbilityUserMagic comp = caster.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
             int pwrVal = comp.MagicData.MagicPowerSkill_Transmutate.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Transmutate_pwr").level;
             int verVal = comp.MagicData.MagicPowerSkill_Transmutate.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Transmutate_ver").level;
 
@@ -2899,8 +2895,8 @@ namespace TorannMagic
             ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();            
             if (settingsRef.autocastEnabled && com.pawnAbility.Def.defName.StartsWith("TM_"))
             {
-                CompAbilityUserMagic comp = com.pawnAbility.Pawn.GetComp<CompAbilityUserMagic>();
-                CompAbilityUserMight mightComp = com.pawnAbility.Pawn.GetComp<CompAbilityUserMight>();
+                CompAbilityUserMagic comp = com.pawnAbility.Pawn.GetCompAbilityUserMagic();
+                CompAbilityUserMight mightComp = com.pawnAbility.Pawn.GetCompAbilityUserMight();
                 MagicPower magicPower = null;
                 MightPower mightPower = null;
                 TMAbilityDef tmAbilityDef = com.pawnAbility.Def as TMAbilityDef;
@@ -3721,7 +3717,7 @@ namespace TorannMagic
                 HediffComp_BrandingBase hdc = hd_br.TryGetComp<HediffComp_BrandingBase>();
                 if (hdc != null && hdc.BranderPawn != null)
                 {
-                    CompAbilityUserMagic branderComp = hdc.BranderPawn.TryGetComp<CompAbilityUserMagic>();
+                    CompAbilityUserMagic branderComp = hdc.BranderPawn.GetCompAbilityUserMagic();
                     if (branderComp != null)
                     {
                         TMDefs.TM_Branding tmpBranding = null;

@@ -28,7 +28,7 @@ namespace TorannMagic
             {
                 caster = this.launcher as Pawn;
                 this.strikePos = base.Position;
-                CompAbilityUserMight comp = caster.GetComp<CompAbilityUserMight>();
+                CompAbilityUserMight comp = caster.GetCompAbilityUserMight();
                 //verVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_RifleSpec, "TM_RifleSpec", "_ver", true);
                 verVal = TM_Calc.GetSkillVersatilityLevel(caster, TorannMagicDefOf.TM_RifleSpec, true);
                 this.radius = this.def.projectile.explosionRadius;

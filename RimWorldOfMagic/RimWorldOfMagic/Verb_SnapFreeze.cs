@@ -44,7 +44,7 @@ namespace TorannMagic
             Map map = this.CasterPawn.Map;
             if (map != null)
             {
-                CompAbilityUserMagic comp = this.CasterPawn.GetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = this.CasterPawn.GetCompAbilityUserMagic();
                 pawns.Clear();
                 plants.Clear();
                 GenClamor.DoClamor(p, this.UseAbilityProps.TargetAoEProperties.range, ClamorDefOf.Ability);

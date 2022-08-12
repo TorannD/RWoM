@@ -1303,7 +1303,7 @@ SoL: reduces light energy costs for the Spirit of Light by 1% per skill level.</
 Lightning Totem: Increases range and damage
 Earth Totem: Increases stagger frequency and duration
 Healing Totem: Increases range and heal amount</TM_Totems_pwr_desc>
-<TM_Totems_eff_desc>Reduces the mana cost to create a totem by 2% per skill level.</TM_Totems_eff_desc>
+<TM_Totems_eff_desc>Reduces the mana cost to create a totem by 4% per skill level.</TM_Totems_eff_desc>
 <TM_Totems_ver_desc>Increases the duration of totems by 5% per skill point; base duration is 1 game hour.</TM_Totems_ver_desc>
 <TM_ChainLightning_pwr_desc>Increases Chain Lighting damage by 10% per skill point.</TM_ChainLightning_pwr_desc>
 <TM_ChainLightning_eff_desc>Reduces mana cost by 6% per skill point.</TM_ChainLightning_eff_desc>

@@ -27,7 +27,7 @@ namespace TorannMagic
             {
                 initAction = () =>
                 {
-                    this.comp = this.pawn.GetComp<CompAbilityUserMagic>();
+                    this.comp = this.pawn.GetCompAbilityUserMagic();
                     this.markedPawn = comp.soulBondPawn;
                 },
                 tickAction = () =>

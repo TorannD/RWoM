@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Verse;
 
+
 namespace TorannMagic
 {
     public class Need_Stamina : Need  //Original code by Jecrell
@@ -77,10 +78,10 @@ namespace TorannMagic
         public override float CurLevel
         {
             get => base.CurLevel;
-            set => base.CurLevel = Mathf.Clamp(value, 0f, this.pawn.GetComp<CompAbilityUserMight>().maxSP);
+            set => base.CurLevel = Mathf.Clamp(value, 0f, this.pawn.GetCompAbilityUserMight().maxSP);
         }
 
-        public override float MaxLevel => this.pawn.GetComp<CompAbilityUserMight>().maxSP;
+        public override float MaxLevel => this.pawn.GetCompAbilityUserMight().maxSP;
 
         public override int GUIChangeArrow
         {
@@ -175,7 +176,7 @@ namespace TorannMagic
                 if (!base.pawn.NonHumanlikeOrWildMan())
                 {
                     Pawn pawn = base.pawn;
-                    CompAbilityUserMight comp = pawn.GetComp<CompAbilityUserMight>();
+                    CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
                     ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
                     amount = amount * (0.015f);
                     this.baseStaminaGain = amount * settingsRef.needMultiplier;
@@ -202,7 +203,7 @@ namespace TorannMagic
 
         public void UseMightPower(float amount)
         {
-            this.curLevelInt = Mathf.Clamp(this.curLevelInt - amount, 0f, this.pawn.GetComp<CompAbilityUserMight>().maxSP); //change for max sp
+            this.curLevelInt = Mathf.Clamp(this.curLevelInt - amount, 0f, this.pawn.GetCompAbilityUserMight().maxSP); //change for max sp
         }
 
         public override void NeedInterval()

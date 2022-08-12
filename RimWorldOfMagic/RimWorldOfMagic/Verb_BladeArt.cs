@@ -3,6 +3,7 @@ using Verse;
 using AbilityUser;
 using System.Linq;
 
+
 namespace TorannMagic
 {
     public class Verb_BladeArt : Verb_UseAbility
@@ -11,8 +12,8 @@ namespace TorannMagic
         {
             Map map = base.CasterPawn.Map;
             Pawn pawn = base.CasterPawn;
-            CompAbilityUserMight comp = pawn.GetComp<CompAbilityUserMight>();
-            MightPowerSkill pwr = pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_BladeArt.FirstOrDefault((MightPowerSkill x) => x.label == "TM_BladeArt_pwr");
+            CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
+            MightPowerSkill pwr = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_BladeArt.FirstOrDefault((MightPowerSkill x) => x.label == "TM_BladeArt_pwr");
 
             if (pawn != null && !pawn.Dead)
             {

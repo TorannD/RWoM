@@ -17,8 +17,8 @@ namespace TorannMagic
 
             Pawn pawn = this.CasterPawn;
             Map map = this.CasterPawn.Map;
-            CompAbilityUserMagic comp = pawn.GetComp<CompAbilityUserMagic>();
-            int verVal = pawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_BloodGift.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_BloodGift_ver").level;
+            CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
+            int verVal = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_BloodGift.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_BloodGift_ver").level;
             int bloodGain = 0;
             List<BodyPartRecord> bodyparts = new List<BodyPartRecord>();
             bodyparts.Clear();

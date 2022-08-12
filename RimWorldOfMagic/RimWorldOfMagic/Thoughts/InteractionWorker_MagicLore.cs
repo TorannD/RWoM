@@ -15,8 +15,8 @@ namespace TorannMagic.Thoughts
             letterLabel = null;
             letterDef = null;
             lookTargets = null;
-            CompAbilityUserMagic compInit = initiator.GetComp<CompAbilityUserMagic>();
-            CompAbilityUserMagic compRec = recipient.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic compInit = initiator.GetCompAbilityUserMagic();
+            CompAbilityUserMagic compRec = recipient.GetCompAbilityUserMagic();
             //base.Interacted(initiator, recipient, extraSentencePacks);
             int num = compInit.MagicUserLevel - compRec.MagicUserLevel;
             int num2 = Mathf.RoundToInt(Mathf.Clamp((int)(25f + Rand.Range(5f, 75f) + num),0, 200) * compRec.xpGain);
@@ -26,8 +26,8 @@ namespace TorannMagic.Thoughts
 
         public override float RandomSelectionWeight(Pawn initiator, Pawn recipient)
         {
-            CompAbilityUserMagic compInit = initiator.GetComp<CompAbilityUserMagic>();
-            CompAbilityUserMagic compRec = recipient.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic compInit = initiator.GetCompAbilityUserMagic();
+            CompAbilityUserMagic compRec = recipient.GetCompAbilityUserMagic();
             bool flag = !initiator.IsColonist || !recipient.IsColonist;
             float result = 0f;
             if (flag)

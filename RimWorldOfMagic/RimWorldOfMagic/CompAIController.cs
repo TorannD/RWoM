@@ -476,14 +476,13 @@ namespace TorannMagic
         public override void PostPreApplyDamage(DamageInfo dinfo, out bool absorbed)
         {
             base.PostPreApplyDamage(dinfo, out absorbed);
-            if(dinfo.Instigator != null)
+            if (dinfo.Instigator is Building instigatorThing)
             {
-                Thing instigatorThing = dinfo.Instigator;
-                if(instigatorThing is Building)
+                if (instigatorThing is Building)
                 {
                     if (instigatorThing.Faction != null && instigatorThing.Faction != this.Pawn.Faction)
                     {
-                        this.buildingThreats.AddDistinct(instigatorThing as Building);
+                        this.buildingThreats.AddDistinct(instigatorThing);
                     }
                 }
             }
@@ -593,9 +592,9 @@ namespace TorannMagic
             {
                 return false;
             }
-            if(target is Pawn)
+            if (target is Pawn targetPawn)
             {
-                return !(target as Pawn).Downed;
+                return !targetPawn.Downed;
             }
             if(target.Position.DistanceToEdge(this.Pawn.Map) < 8)
             {

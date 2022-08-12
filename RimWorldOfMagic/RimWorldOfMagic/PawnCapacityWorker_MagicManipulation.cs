@@ -12,7 +12,7 @@ namespace TorannMagic
     {
         public override float CalculateCapacityLevel(HediffSet diffSet, List<PawnCapacityUtility.CapacityImpactor> impactors = null)
         {
-            CompAbilityUserMagic comp = diffSet.pawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = diffSet.pawn.GetCompAbilityUserMagic();
             float num = 0;
             if(comp != null && comp.IsMagicUser && !comp.Pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
             {

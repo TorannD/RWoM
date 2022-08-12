@@ -24,9 +24,8 @@ namespace TorannMagic.Golems
         public override void Apply(LocalTargetInfo target, Pawn caster, TM_GolemAbilityDef ability, float effectLevel = 1f, float effectBonus = 1f)
         {
             base.Apply(target, caster, ability);
-            if (target.Thing != null && target.Thing is Pawn)
+            if (target.Thing != null && target.Thing is Pawn victim)
             {
-                Pawn victim = target.Thing as Pawn;
                 List<BodyPartRecord> bprList = new List<BodyPartRecord>();
                 bprList.Clear();
                 List<BodyPartRecord> bprLegs = victim.health.hediffSet.GetNotMissingParts(BodyPartHeight.Undefined, BodyPartDepth.Outside, BodyPartTagDefOf.MovingLimbCore, null).ToList();

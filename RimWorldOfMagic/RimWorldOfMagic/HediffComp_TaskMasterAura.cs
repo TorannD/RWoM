@@ -43,7 +43,7 @@ namespace TorannMagic
         private void Initialize()
         {
             bool spawned = base.Pawn.Spawned;
-            CompAbilityUserMight comp = this.Pawn.GetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = this.Pawn.GetCompAbilityUserMight();
             if (spawned && comp != null && comp.IsMightUser)
             {
                 DetermineHediff();
@@ -102,7 +102,7 @@ namespace TorannMagic
                             }
                         }
                     }
-                    CompAbilityUserMight comp = this.Pawn.GetComp<CompAbilityUserMight>();
+                    CompAbilityUserMight comp = this.Pawn.GetCompAbilityUserMight();
                     comp.MightUserXP += Rand.Range(2, 5);                    
                 }
 
@@ -115,7 +115,7 @@ namespace TorannMagic
 
         private void DetermineHediff()
         {           
-            CompAbilityUserMight comp = this.Pawn.GetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = this.Pawn.GetCompAbilityUserMight();
             if (parent.def == TorannMagicDefOf.TM_TaskMasterAuraHD && comp != null)
             {
                 pwrVal = comp.MightData.MightPowerSkill_TaskMasterAura.FirstOrDefault((MightPowerSkill x) => x.label == "TM_TaskMasterAura_pwr").level;

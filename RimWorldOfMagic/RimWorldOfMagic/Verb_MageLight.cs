@@ -13,7 +13,7 @@ namespace TorannMagic
         {
             bool result = false;
             Pawn p = this.CasterPawn;
-            CompAbilityUserMagic comp = this.CasterPawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = this.CasterPawn.GetCompAbilityUserMagic();
 
             if (this.currentTarget != null && base.CasterPawn != null)
             {                

@@ -43,7 +43,7 @@ namespace TorannMagic
                 initAction = () =>
                 {
                     chiHD = this.pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_ChiHD, false);
-                    CompAbilityUserMight comp = this.pawn.GetComp<CompAbilityUserMight>();
+                    CompAbilityUserMight comp = this.pawn.GetCompAbilityUserMight();
                     if(comp != null && chiHD != null)
                     {
                         effVal = comp.MightData.MightPowerSkill_Meditate.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Meditate_eff").level;
@@ -96,7 +96,7 @@ namespace TorannMagic
                                 this.EndJobWith(JobCondition.InterruptForced);
                             }
                         }
-                        CompAbilityUserMight comp = this.pawn.GetComp<CompAbilityUserMight>();
+                        CompAbilityUserMight comp = this.pawn.GetCompAbilityUserMight();
                         if (TM_Calc.IsPawnInjured(this.pawn, 0))
                         {
                             TM_Action.DoAction_HealPawn(this.pawn, this.pawn, 1, Rand.Range(.25f, .4f) * chiMultiplier * (1+ (.1f *pwrVal)));

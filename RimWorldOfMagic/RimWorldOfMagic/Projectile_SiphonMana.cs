@@ -16,8 +16,8 @@ namespace TorannMagic
 
             Pawn hitPawn = hitThing as Pawn;
             Pawn caster = this.launcher as Pawn;
-            CompAbilityUserMagic compHitPawn = hitPawn.GetComp<CompAbilityUserMagic>();            
-            CompAbilityUserMagic compCaster = caster.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic compHitPawn = hitPawn.GetCompAbilityUserMagic();            
+            CompAbilityUserMagic compCaster = caster.GetCompAbilityUserMagic();
 
             if (hitPawn != null && !hitPawn.Dead && !caster.Dead && !caster.Downed && caster != null)
             {
@@ -27,7 +27,7 @@ namespace TorannMagic
                     {
                         if (compHitPawn != null && compHitPawn.IsMagicUser)
                         {
-                            MagicPowerSkill regen = caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_global_regen.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_global_regen_pwr");
+                            MagicPowerSkill regen = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_global_regen.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_global_regen_pwr");
                             float manaDrained = compHitPawn.Mana.CurLevel;
                             if (manaDrained > (.5f * compCaster.arcaneDmg))
                             {
@@ -74,7 +74,7 @@ namespace TorannMagic
                 {
                     if (compHitPawn != null && compHitPawn.IsMagicUser)
                     {
-                        MagicPowerSkill regen = caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_global_regen.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_global_regen_pwr");
+                        MagicPowerSkill regen = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_global_regen.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_global_regen_pwr");
                         float manaDrained = compHitPawn.Mana.CurLevel;
                         if (manaDrained > .5f)
                         {

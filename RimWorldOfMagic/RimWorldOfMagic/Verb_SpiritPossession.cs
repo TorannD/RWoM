@@ -22,7 +22,7 @@ namespace TorannMagic
             
             if (hitPawn != null && !hitPawn.Dead && hitPawn.Spawned && hitPawn.story != null && hitPawn.story.traits != null && hitPawn.jobs != null && hitPawn != caster && !TM_Calc.IsPossessedByOrIsSpirit(hitPawn) && hitPawn.RaceProps != null && hitPawn.RaceProps.IsFlesh)
             {
-                CompAbilityUserMagic targetComp = hitPawn.TryGetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic targetComp = hitPawn.GetCompAbilityUserMagic();
                 if (targetComp != null)
                 {
                     TryLaunchProjectile(base.verbProps.defaultProjectile, hitPawn);

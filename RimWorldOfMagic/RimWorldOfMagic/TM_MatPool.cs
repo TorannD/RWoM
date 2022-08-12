@@ -79,6 +79,9 @@ namespace TorannMagic
         public static readonly Texture2D wandererIcon = ContentFinder<Texture2D>.Get("Other/ClassTextures/wandererFlame", true);
         public static readonly Texture2D wayfarerIcon = ContentFinder<Texture2D>.Get("Other/ClassTextures/wayfarerFlame", true);
 
+        public static readonly Texture2D DefaultCustomMageIcon = ContentFinder<Texture2D>.Get("Other/ClassTextures/CustomMageMark", true);
+        public static readonly Texture2D DefaultCustomFighterIcon = ContentFinder<Texture2D>.Get("Other/ClassTextures/CustomFighterMark", true);
+
 
         //skeleton chain
         public static readonly Material circleChain = MaterialPool.MatFrom("PawnKind/skeleton_chain_circle", ShaderDatabase.MoteGlow);

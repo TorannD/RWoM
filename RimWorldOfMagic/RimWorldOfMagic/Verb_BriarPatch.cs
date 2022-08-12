@@ -39,7 +39,7 @@ namespace TorannMagic
             bool result = false;
             Pawn p = this.CasterPawn;
             Pawn hitPawn = this.currentTarget.Thing as Pawn;
-            CompAbilityUserMagic comp = this.CasterPawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = this.CasterPawn.GetCompAbilityUserMagic();
             Faction hitPawnFaction = null;
 
             if (this.currentTarget != null && p != null)

@@ -205,7 +205,7 @@ namespace TorannMagic
         {            
             Pawn pawn = base.pawn;                
             ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-            CompAbilityUserMagic comp = this.pawn.TryGetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = this.pawn.GetCompAbilityUserMagic();
             float eff = 1f;
             if (comp != null && comp.MagicData != null && comp.MagicData.GetSkill_Efficiency(TorannMagicDefOf.TM_SpiritDrain) != null)
             {
@@ -278,7 +278,7 @@ namespace TorannMagic
 
         public void UseMightPower(float amount)
         {
-            this.curLevelInt = Mathf.Clamp(this.curLevelInt - amount, 0f, this.pawn.GetComp<CompAbilityUserMight>().maxSP); //change for max sp
+            this.curLevelInt = Mathf.Clamp(this.curLevelInt - amount, 0f, this.pawn.GetCompAbilityUserMight().maxSP); //change for max sp
         }
 
         public override void NeedInterval()

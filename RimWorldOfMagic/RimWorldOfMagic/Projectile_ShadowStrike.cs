@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System;
 using RimWorld;
 
+
 namespace TorannMagic
 {
     public class Projectile_ShadowStrike : Projectile_AbilityBase
@@ -54,7 +55,7 @@ namespace TorannMagic
             {
                 this.initialized = true;
                 this.caster = this.launcher as Pawn;               
-                CompAbilityUserMight comp = caster.GetComp<CompAbilityUserMight>();
+                CompAbilityUserMight comp = caster.GetCompAbilityUserMight();
                 //verVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_ShadowStrike, "TM_ShadowStrike", "_ver", true);    
                 verVal = TM_Calc.GetSkillVersatilityLevel(caster, TorannMagicDefOf.TM_ShadowStrike);
                 this.startPos = caster.Position;
@@ -83,9 +84,8 @@ namespace TorannMagic
             this.startPos = caster.Position;
             IntVec3 targetPos = target.Position;
             IntVec3 tmpPos = targetPos;
-            if(!target.DestroyedOrNull() && target is Pawn)
+            if(!target.DestroyedOrNull() && target is Pawn p)
             {
-                Pawn p = target as Pawn;
                 if(p.Rotation == Rot4.East)
                 {
                     tmpPos.x--;
@@ -142,9 +142,8 @@ namespace TorannMagic
 
         public void DoStrike(Thing target)
         {
-            if (target != null && target is Pawn)
+            if (target != null && target is Pawn t)
             {
-                Pawn t = target as Pawn;
                 if (t.Faction == null || (t.Faction != null && t.Faction != caster.Faction))
                 {
                     //List<BodyPartRecord> partList = new List<BodyPartRecord>();
@@ -285,7 +284,7 @@ namespace TorannMagic
 
         public static int GetWeaponDmg(Pawn pawn)
         {
-            CompAbilityUserMight comp = pawn.GetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
             int pwrVal = comp.MightData.MightPowerSkill_ShadowStrike.FirstOrDefault((MightPowerSkill x) => x.label == "TM_ShadowStrike_pwr").level;
             float dmg = comp.weaponDamage;
             ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();

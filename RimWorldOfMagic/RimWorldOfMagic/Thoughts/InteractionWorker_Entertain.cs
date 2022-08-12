@@ -13,7 +13,7 @@ namespace TorannMagic.Thoughts
             letterLabel = null;
             letterDef = null;
             lookTargets = null;
-            CompAbilityUserMagic compInit = initiator.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic compInit = initiator.GetCompAbilityUserMagic();
             // base.Interacted(initiator, recipient, extraSentencePacks, );
             int num =  Rand.Range(50, 100);
             compInit.MagicUserXP += num;

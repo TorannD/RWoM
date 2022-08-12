@@ -70,7 +70,7 @@ namespace TorannMagic
             {
                 if (base.Pawn.Spawned && base.Pawn.Map != null)
                 {
-                    CompAbilityUserMagic comp = base.Pawn.TryGetComp<CompAbilityUserMagic>();
+                    CompAbilityUserMagic comp = base.Pawn.GetCompAbilityUserMagic();
                     if (comp != null && comp.SoL != null)
                     {
                         return comp.SoL;

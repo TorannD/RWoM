@@ -7,7 +7,7 @@ namespace TorannMagic.SihvRMagicScrollScribe
     {
         public override void DoEffect(Pawn user)
         {
-            CompAbilityUserMagic comp = user.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = user.GetCompAbilityUserMagic();
 
             if (parent.def != null && comp.spell_Rain == true)
             {}

@@ -9,6 +9,7 @@ using System;
 using RimWorld;
 using HarmonyLib;
 
+
 namespace TorannMagic
 {
     public struct SabotageThing
@@ -67,14 +68,14 @@ namespace TorannMagic
             if (!this.initialized)
             {
                 ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                CompAbilityUserMagic comp = caster.GetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
 
                 pwrVal = comp.MagicData.MagicPowerSkill_Sabotage.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Sabotage_pwr").level;
                 verVal = comp.MagicData.MagicPowerSkill_Sabotage.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Sabotage_ver").level;
                 if (caster.story.traits.HasTrait(TorannMagicDefOf.Faceless))
                 {
-                    MightPowerSkill mpwr = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-                    MightPowerSkill mver = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
+                    MightPowerSkill mpwr = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
+                    MightPowerSkill mver = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
                     pwrVal = mpwr.level;
                     verVal = mver.level;
                 }

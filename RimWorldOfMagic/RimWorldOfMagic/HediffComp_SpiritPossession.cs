@@ -74,7 +74,7 @@ namespace TorannMagic
                         }
                     }
                 }
-                foreach(Backstory bs in SpiritPawn_Hediff.backstoryCompatibilityList)
+                foreach (Backstory bs in SpiritPawn_Hediff.BackstoryCompatibilityList)
                 {
                     if(this.Pawn.story.childhood == bs || this.Pawn.story.adulthood == bs)
                     {
@@ -110,7 +110,7 @@ namespace TorannMagic
         {            
             if (magicComp == null)
             {
-                magicComp = this.Pawn.TryGetComp<CompAbilityUserMagic>();
+                magicComp = this.Pawn.GetCompAbilityUserMagic();
             }            
             if (magicComp != null)
             {

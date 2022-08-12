@@ -4,6 +4,7 @@ using Verse;
 using System.Collections.Generic;
 using System.Linq;
 
+
 namespace TorannMagic
 {
 	public class Projectile_PoisonFlask : Projectile_AbilityBase
@@ -31,7 +32,7 @@ namespace TorannMagic
                 if (caster != null && !initialized)
                 {
                     initialized = true;
-                    CompAbilityUserMight comp = caster.GetComp<CompAbilityUserMight>();
+                    CompAbilityUserMight comp = caster.GetCompAbilityUserMight();
                     int verVal = TM_Calc.GetSkillVersatilityLevel(caster, TorannMagicDefOf.TM_PoisonFlask, false);
                     int pwrVal = TM_Calc.GetSkillPowerLevel(caster, TorannMagicDefOf.TM_PoisonFlask, false);
                     Map map = base.Map;

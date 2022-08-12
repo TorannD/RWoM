@@ -18,7 +18,7 @@ namespace TorannMagic
         {
             bool result = false;
             map = this.CasterPawn.Map;
-            comp = this.CasterPawn.GetComp<CompAbilityUserMagic>();
+            comp = this.CasterPawn.GetCompAbilityUserMagic();
 
             if (this.CasterPawn != null && !this.CasterPawn.Downed && comp != null && comp.recallSet)
             {

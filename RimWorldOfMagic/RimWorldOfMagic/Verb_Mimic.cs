@@ -6,6 +6,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
 
+
 namespace TorannMagic
 {
     class Verb_Mimic : Verb_UseAbility  
@@ -18,8 +19,7 @@ namespace TorannMagic
             {
                 if ((root - targ.Cell).LengthHorizontal < this.verbProps.range)
                 {
-                    Pawn targetPawn = targ.Thing as Pawn;
-                    if(targ.Thing is Pawn)
+                    if(targ.Thing is Pawn targetPawn)
                     {
                         if(targetPawn.RaceProps.Humanlike)
                         {
@@ -56,13 +56,12 @@ namespace TorannMagic
         {
             bool result = false;
 
-            if (this.currentTarget != null && base.CasterPawn != null && this.currentTarget.Thing is Pawn)
+            if (this.currentTarget != null && base.CasterPawn != null && this.currentTarget.Thing is Pawn targetPawn)
             {
-                Pawn targetPawn = this.currentTarget.Thing as Pawn;
                 if (targetPawn.RaceProps.Humanlike)
                 {
-                    CompAbilityUserMagic magicPawn = targetPawn.GetComp<CompAbilityUserMagic>();
-                    CompAbilityUserMight mightPawn = targetPawn.GetComp<CompAbilityUserMight>();
+                    CompAbilityUserMagic magicPawn = targetPawn.GetCompAbilityUserMagic();
+                    CompAbilityUserMight mightPawn = targetPawn.GetCompAbilityUserMight();
                     bool copyMagic = false;
                     bool copyMight = false;
                     if(magicPawn != null && magicPawn.IsMagicUser)
@@ -79,8 +78,8 @@ namespace TorannMagic
                         copyMagic = false;
                     }
                     TMAbilityDef tempAbility = null;
-                    CompAbilityUserMight mightComp = this.CasterPawn.GetComp<CompAbilityUserMight>();
-                    CompAbilityUserMagic magicComp = this.CasterPawn.GetComp<CompAbilityUserMagic>();
+                    CompAbilityUserMight mightComp = this.CasterPawn.GetCompAbilityUserMight();
+                    CompAbilityUserMagic magicComp = this.CasterPawn.GetCompAbilityUserMagic();
 
                     if (copyMagic)
                     {

@@ -95,9 +95,8 @@ namespace TorannMagic
 
                                 }
 
-                                if(this.target.Thing is Pawn)
+                                if(this.target.Thing is Pawn prisonerPawn)
                                 {
-                                    Pawn prisonerPawn = this.target.Thing as Pawn;
                                     if(prisonerPawn.IsPrisoner)
                                     {
                                         Job job = new Job(JobDefOf.AttackMelee, prisonerPawn);
@@ -240,9 +239,9 @@ namespace TorannMagic
             {
                 return false;
             }
-            if(target is Pawn)
+            if(target is Pawn targetPawn)
             {
-                return !(target as Pawn).Downed;
+                return !targetPawn.Downed;
             }
             if(target.Position.DistanceToEdge(this.Pawn.Map) < 8)
             {
@@ -293,7 +292,7 @@ namespace TorannMagic
                         }
                     }
                 }
-                CompAbilityUserMagic comp = this.sustainerPawn.GetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = this.sustainerPawn.GetCompAbilityUserMagic();
                 comp.summonedSentinels.Remove(this.Pawn);
                 comp.summonedSentinels.Add(spawnedThing);
                 DamageInfo dinfo = new DamageInfo(DamageDefOf.Blunt, 10*healthDeficit, 0, (float)-1, this.Pawn, null, null, DamageInfo.SourceCategory.ThingOrUnknown);

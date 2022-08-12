@@ -90,7 +90,7 @@ namespace TorannMagic
         {
             if (caster != null)
             {
-                CompAbilityUserMagic comp = caster.GetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
                 //pwrVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_Refraction, "TM_Refraction", "_pwr", TorannMagicDefOf.TM_Refraction.canCopy);
                 //verVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_Refraction, "TM_Refraction", "_ver", TorannMagicDefOf.TM_Refraction.canCopy);
                 pwrVal = TM_Calc.GetSkillPowerLevel(caster, TorannMagicDefOf.TM_Refraction);
@@ -166,12 +166,11 @@ namespace TorannMagic
                 for (int i = 0; i < cellList.Count; i++)
                 {
                     Thing t = cellList[i];
-                    if (t is Projectile && t.def.defName != "Projectile_Refraction" && !(t is Mote))
+                    if (t is Projectile proj && t.def.defName != "Projectile_Refraction")
                     {
-                        Projectile proj = t as Projectile;
                         IntVec3 projOrigin = Traverse.Create(root: proj).Field(name: "origin").GetValue<Vector3>().ToIntVec3();
 
-                        if (proj != null && proj.Launcher != null && (proj.Launcher.Faction != null || proj.def.defName == "Projectile_LightLaser") && !proj.def.projectile.flyOverhead && !wallPositions.Contains(projOrigin))
+                        if (proj.Launcher != null && (proj.Launcher.Faction != null || proj.def.defName == "Projectile_LightLaser") && !proj.def.projectile.flyOverhead && !wallPositions.Contains(projOrigin))
                         {
                             if (proj.Launcher.Faction != this.caster.Faction)
                             {

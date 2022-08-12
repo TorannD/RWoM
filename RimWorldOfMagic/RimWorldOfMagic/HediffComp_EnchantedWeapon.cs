@@ -47,7 +47,7 @@ namespace TorannMagic
         private void Initialize()
         {
             bool spawned = base.Pawn.Spawned;
-            CompAbilityUserMagic comp = this.enchanterPawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = this.enchanterPawn.GetCompAbilityUserMagic();
             if (!spawned || this.enchanterPawn == null)
             {
                 this.removeNow = true;
@@ -70,7 +70,7 @@ namespace TorannMagic
                 {
                     if(!this.enchanterPawn.DestroyedOrNull() && !this.enchanterPawn.Dead)
                     {
-                        CompAbilityUserMagic comp = this.enchanterPawn.GetComp<CompAbilityUserMagic>();
+                        CompAbilityUserMagic comp = this.enchanterPawn.GetCompAbilityUserMagic();
                         if(comp != null && comp.weaponEnchants != null && comp.weaponEnchants.Count >0)
                         {
                             bool isRegistered = false;
@@ -108,7 +108,7 @@ namespace TorannMagic
         {
             if(this.enchanterPawn != null)
             {
-                CompAbilityUserMagic comp = enchanterPawn.GetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = enchanterPawn.GetCompAbilityUserMagic();
                 if(comp != null && comp.weaponEnchants != null && comp.weaponEnchants.Count > 0)
                 {
                     if(comp.weaponEnchants.Contains(this.Pawn))

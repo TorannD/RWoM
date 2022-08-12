@@ -121,7 +121,7 @@ namespace TorannMagic
             bool spawned = flyingThing.Spawned;            
             pawn = launcher as Pawn;
             drafted = pawn.Drafted;
-            comp = pawn.GetComp<CompAbilityUserMagic>();
+            comp = pawn.GetCompAbilityUserMagic();
 
             if (spawned)
             {               

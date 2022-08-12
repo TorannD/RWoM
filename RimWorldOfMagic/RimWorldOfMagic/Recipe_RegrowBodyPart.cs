@@ -38,7 +38,7 @@ namespace TorannMagic
         public bool CheckDruidSurgeryFail(Pawn surgeon, Pawn patient, List<Thing> ingredients, BodyPartRecord part, Bill bill)
         {
 
-            CompAbilityUserMagic comp = surgeon.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = surgeon.GetCompAbilityUserMagic();
 
             string reason;
             if (comp.IsMagicUser)
@@ -54,7 +54,7 @@ namespace TorannMagic
                 }
                 if (canRegrow)
                 {
-                    MagicPowerSkill eff = surgeon.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_RegrowLimb.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_RegrowLimb_eff");
+                    MagicPowerSkill eff = surgeon.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_RegrowLimb.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_RegrowLimb_eff");
                     if (comp.Mana.CurLevel < (.9f - ((eff.level * TorannMagicDefOf.TM_RegrowLimb.efficiencyReductionPercent) * .9f)))
                     {
                         comp.Mana.CurLevel = comp.Mana.CurLevel / 2;
@@ -112,7 +112,7 @@ namespace TorannMagic
         public void ApplyHediff(Pawn patient, BodyPartRecord part, Pawn billdoer)
         {
 
-            CompAbilityUserMagic comp = billdoer.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = billdoer.GetCompAbilityUserMagic();
             switch (part.def.defName)
             {
                 case "Foot":

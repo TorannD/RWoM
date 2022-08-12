@@ -31,8 +31,8 @@ namespace TorannMagic.Thoughts
                     }
                     else
                     {
-                        CompAbilityUserMagic magicComp = pawn.GetComp<CompAbilityUserMagic>();
-                        CompAbilityUserMight mightComp = pawn.GetComp<CompAbilityUserMight>();
+                        CompAbilityUserMagic magicComp = pawn.GetCompAbilityUserMagic();
+                        CompAbilityUserMight mightComp = pawn.GetCompAbilityUserMight();
                         if (mightComp.IsMightUser)
                         {
                             return ThoughtState.ActiveAtStage(0);

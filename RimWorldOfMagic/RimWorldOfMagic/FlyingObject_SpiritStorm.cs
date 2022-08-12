@@ -145,7 +145,7 @@ namespace TorannMagic
             {
                 frenzyBonus = 8;
             }
-            CompAbilityUserMagic comp = pawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
             this.duration = Mathf.RoundToInt(this.duration * comp.arcaneDmg);
             this.radius = this.def.projectile.explosionRadius + comp.MagicData.GetSkill_Versatility(TorannMagicDefOf.TM_SpiritStorm).level;
             this.spellDamage = this.def.projectile.GetDamageAmount(1f) * (1f + (.12f * comp.MagicData.GetSkill_Power(TorannMagicDefOf.TM_SpiritStorm).level)) * comp.arcaneDmg;

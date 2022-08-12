@@ -37,7 +37,7 @@ namespace TorannMagic
                 {
                     //if (pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Wayfarer))
                     //{
-                        int lvl = pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_FieldTraining.FirstOrDefault((MightPowerSkill x) => x.label == "TM_FieldTraining_pwr").level;
+                        int lvl = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_FieldTraining.FirstOrDefault((MightPowerSkill x) => x.label == "TM_FieldTraining_pwr").level;
                         HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_HediffHeavyBlow, .95f + (.19f * lvl));
                         FleckMaker.ThrowDustPuff(pawn.Position, pawn.Map, 1f);
                     //}

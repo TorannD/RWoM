@@ -39,6 +39,16 @@ namespace TorannMagic
         public List<Backstory> backstoryCompatibilityList = null;
         public List<string> backstoryIdentifiers = null;
 
+        public List<Backstory> BackstoryCompatibilityList
+        {
+            get
+            {
+                if (backstoryCompatibilityList != null) return backstoryCompatibilityList;
+                PopulateBackstoryList();
+                return backstoryCompatibilityList;                
+            }
+        }
+
         public float MaxLevelBonus => verVal * 15;
 
         public override void ExposeData()
@@ -68,7 +78,7 @@ namespace TorannMagic
 
         public void UpdateSpiritLevel()
         {
-            CompAbilityUserMagic comp = pawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
             if(comp != null)
             {
                 spiritLevel = comp.MagicData.MagicUserLevel;
@@ -77,7 +87,7 @@ namespace TorannMagic
 
         public void UpdateSkills()
         {
-            CompAbilityUserMagic comp = pawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
             if (comp != null)
             {
                 pwrVal = TM_Calc.GetMagicSkillLevel(pawn, TorannMagicDefOf.TM_Possess, "_pwr", false);
@@ -150,11 +160,7 @@ namespace TorannMagic
             {
                 this.initialized = true;
                 Initialize();
-            }
-            if(backstoryCompatibilityList == null)
-            {
-                PopulateBackstoryList();
-            }
+            }            
             if (Find.TickManager.TicksGame % 31 == 0)
             {
                 IEnumerable<Hediff> hdEnum = this.pawn.health.hediffSet.GetHediffs<Hediff>();
@@ -169,7 +175,10 @@ namespace TorannMagic
             }
             if (Find.TickManager.TicksGame % 150 == 0)
             {
-                
+                if (backstoryCompatibilityList == null)
+                {
+                    PopulateBackstoryList();
+                }
             }
             if(Find.TickManager.TicksGame % 2501 == 0)
             {

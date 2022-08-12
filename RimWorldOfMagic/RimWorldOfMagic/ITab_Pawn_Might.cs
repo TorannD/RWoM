@@ -42,7 +42,7 @@ namespace TorannMagic
                 bool flag = base.SelPawn.story != null && base.SelPawn.IsColonist;
                 if (flag)
                 {
-                    CompAbilityUserMight compMight = base.SelPawn.TryGetComp<CompAbilityUserMight>();
+                    CompAbilityUserMight compMight = base.SelPawn.GetCompAbilityUserMight();
                     if (compMight != null)
                     {
                         if (compMight.customClass != null)

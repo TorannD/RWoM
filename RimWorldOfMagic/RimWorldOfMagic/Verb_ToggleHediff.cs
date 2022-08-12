@@ -38,7 +38,7 @@ namespace TorannMagic
                         }
                     }
 
-                    CompAbilityUserMagic magicComp = caster.TryGetComp<CompAbilityUserMagic>();
+                    CompAbilityUserMagic magicComp = caster.GetCompAbilityUserMagic();
                     if(magicComp != null && magicComp.MagicData != null)
                     {
                         MagicPower mp = magicComp.MagicData.ReturnMatchingMagicPower(ability);
@@ -47,7 +47,7 @@ namespace TorannMagic
                             mp.autocast = caster.health.hediffSet.HasHediff(hdDef);
                         }
                     }
-                    CompAbilityUserMight mightComp = caster.TryGetComp<CompAbilityUserMight>();
+                    CompAbilityUserMight mightComp = caster.GetCompAbilityUserMight();
                     if (mightComp != null && mightComp.MightData != null)
                     {
                         MightPower mp = mightComp.MightData.ReturnMatchingMightPower(ability);

@@ -55,7 +55,7 @@ namespace TorannMagic
                 Map map = this.CasterPawn.Map;
                 IntVec3 cell = this.CasterPawn.Position;
                 bool draftFlag = this.CasterPawn.Drafted;
-                CompAbilityUserMagic comp = p.TryGetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = p.GetCompAbilityUserMagic();
                 if (comp != null)
                 {
                     pwrVal = comp.MagicData.MagicPowerSkill_ShadowWalk.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_ShadowWalk_pwr").level;

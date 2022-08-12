@@ -52,7 +52,7 @@ namespace TorannMagic
 
         private void UpdateCachedValues()
         {
-            CompAbilityUserMight comp = this.Pawn.TryGetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = this.Pawn.GetCompAbilityUserMight();
             if (comp != null)
             {
                 int lvlMax = 0;

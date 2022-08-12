@@ -86,7 +86,7 @@ namespace TorannMagic
 
 		public bool CheckRuneCarvingFail(Pawn surgeon, Pawn patient, List<Thing> ingredients, BodyPartRecord part, Bill bill)
 		{
-			CompAbilityUserMagic comp = surgeon.GetComp<CompAbilityUserMagic>();
+			CompAbilityUserMagic comp = surgeon.GetCompAbilityUserMagic();
 			if (bill.recipe.surgerySuccessChanceFactor >= 1f)
 			{
 				return false;
@@ -110,7 +110,7 @@ namespace TorannMagic
                 }
 				if (canRuneCarve)
 				{
-					MagicPowerSkill eff = surgeon.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_RuneCarving.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_RuneCarving_eff");
+					MagicPowerSkill eff = surgeon.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_RuneCarving.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_RuneCarving_eff");
 					float manaNeeded = TorannMagicDefOf.TM_RuneCarving.manaCost - ((eff.level * TorannMagicDefOf.TM_RuneCarving.efficiencyReductionPercent) * TorannMagicDefOf.TM_RuneCarving.manaCost);
 					if (comp.Mana.CurLevel < manaNeeded)
 					{
@@ -135,8 +135,8 @@ namespace TorannMagic
 					{						
 						float runeChance = surgeon.GetStatValue(TorannMagicDefOf.TM_RuneCarvingEfficiency);
 						float num = bill.recipe.surgerySuccessChanceFactor * runeChance;
-						int pwrVal = surgeon.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_RuneCarving.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_RuneCarving_pwr").level;
-						int verVal = surgeon.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_RuneCarving.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_RuneCarving_ver").level;
+						int pwrVal = surgeon.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_RuneCarving.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_RuneCarving_pwr").level;
+						int verVal = surgeon.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_RuneCarving.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_RuneCarving_ver").level;
 						float successChance = num + (pwrVal * -.05f) + (verVal * .1f);
 						comp.Mana.CurLevel -= manaNeeded;
 						int xpGain = Mathf.RoundToInt(TorannMagicDefOf.TM_RuneCarving.manaCost * 180 * comp.xpGain);
@@ -195,7 +195,7 @@ namespace TorannMagic
 
 		public virtual void RunePart(Pawn pawn, Pawn carver, BodyPartRecord part)
 		{
-			int pwrVal = carver.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_RuneCarving.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_RuneCarving_pwr").level;
+			int pwrVal = carver.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_RuneCarving.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_RuneCarving_pwr").level;
             Hediff hd = null;
             if (part.IsCorePart)
             {

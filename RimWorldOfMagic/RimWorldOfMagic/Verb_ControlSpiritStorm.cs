@@ -16,7 +16,7 @@ namespace TorannMagic
         {
             Pawn p = this.CasterPawn;
             map = this.CasterPawn.Map;
-            CompAbilityUserMagic comp = this.CasterPawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = this.CasterPawn.GetCompAbilityUserMagic();
             List<FlyingObject_SpiritStorm> storms = GetActiveStorms();
             if(storms != null)
             {

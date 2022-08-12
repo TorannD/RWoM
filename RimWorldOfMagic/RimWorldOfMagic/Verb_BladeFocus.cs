@@ -39,8 +39,8 @@ namespace TorannMagic
         {
             Map map = base.CasterPawn.Map;
             Pawn pawn = base.CasterPawn;
-            CompAbilityUserMight comp = pawn.GetComp<CompAbilityUserMight>();
-            MightPowerSkill pwr = pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_BladeFocus.FirstOrDefault((MightPowerSkill x) => x.label == "TM_BladeFocus_pwr");
+            CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
+            MightPowerSkill pwr = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_BladeFocus.FirstOrDefault((MightPowerSkill x) => x.label == "TM_BladeFocus_pwr");
 
             List<Trait> traits = this.CasterPawn.story.traits.allTraits;
             for (int i = 0; i < traits.Count; i++)

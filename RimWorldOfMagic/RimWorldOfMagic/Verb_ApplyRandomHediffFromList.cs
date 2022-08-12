@@ -5,6 +5,7 @@ using System.Linq;
 using System.Collections.Generic;
 using RimWorld;
 
+
 namespace TorannMagic
 {
     public class Verb_ApplyRandomHediffFromList_Properties : VerbProperties_Ability
@@ -29,9 +30,9 @@ namespace TorannMagic
         Verb_ApplyRandomHediffFromList_Properties Properties => this.verbProps as Verb_ApplyRandomHediffFromList_Properties;
         List<HediffDef> Effects => Properties?.hediffDefs;
         int CountUpgrade => Properties.countUpgrade == null ? 0
-            : TM_ClassUtility.GetMightPowerSkillFromLabel(this.CasterPawn.TryGetComp<CompAbilityUserMight>(), Properties.countUpgrade).level;
+            : TM_ClassUtility.GetMightPowerSkillFromLabel(this.CasterPawn.GetCompAbilityUserMight(), Properties.countUpgrade).level;
         int SeverityUpgrade => Properties.severityUpgrade == null ? 0
-            : TM_ClassUtility.GetMightPowerSkillFromLabel(this.CasterPawn.TryGetComp<CompAbilityUserMight>(), Properties.severityUpgrade).level;
+            : TM_ClassUtility.GetMightPowerSkillFromLabel(this.CasterPawn.GetCompAbilityUserMight(), Properties.severityUpgrade).level;
 
         protected override bool TryCastShot()
         {

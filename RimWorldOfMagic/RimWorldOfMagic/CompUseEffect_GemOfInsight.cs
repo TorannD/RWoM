@@ -9,8 +9,8 @@ namespace TorannMagic
     {
         public override void DoEffect(Pawn user)
         {
-            CompAbilityUserMight compMight = user.GetComp<CompAbilityUserMight>();
-            CompAbilityUserMagic compMagic = user.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMight compMight = user.GetCompAbilityUserMight();
+            CompAbilityUserMagic compMagic = user.GetCompAbilityUserMagic();
 
             if(!(compMagic.IsMagicUser || compMight.IsMightUser || user.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted) || user.story.traits.HasTrait(TorannMagicDefOf.PhysicalProdigy) || user.story.traits.HasTrait(TorannMagicDefOf.Undead)))
             {

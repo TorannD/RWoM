@@ -4,6 +4,7 @@ using UnityEngine;
 using RimWorld;
 using System.Linq;
 
+
 namespace TorannMagic
 {
     [StaticConstructorOnStartup]
@@ -61,7 +62,7 @@ namespace TorannMagic
             cellRect.ClipInsideMap(map);
 
             IntVec3 centerCell = cellRect.CenterCell;
-            CompAbilityUserMight comp = this.CasterPawn.GetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = this.CasterPawn.GetCompAbilityUserMight();
             pwr = comp.MightData.MightPowerSkill_Cleave.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Cleave_pwr");
             str = comp.MightData.MightPowerSkill_global_strength.FirstOrDefault((MightPowerSkill x) => x.label == "TM_global_strength_pwr");
             ver = comp.MightData.MightPowerSkill_Cleave.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Cleave_ver");

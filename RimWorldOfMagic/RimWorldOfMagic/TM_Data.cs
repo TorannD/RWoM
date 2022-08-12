@@ -133,7 +133,7 @@ namespace TorannMagic
             fighterBookList.Add(TorannMagicDefOf.BookOfMonk);
             fighterBookList.Add(TorannMagicDefOf.BookOfCommander);
             fighterBookList.Add(TorannMagicDefOf.BookOfSuperSoldier);
-            foreach(TMDefs.TM_CustomClass cc in TM_ClassUtility.CustomClasses())
+            foreach(TMDefs.TM_CustomClass cc in TM_ClassUtility.CustomClasses)
             {
                 if (cc.isFighter && cc.fullScript != null)
                 {
@@ -200,7 +200,7 @@ namespace TorannMagic
                 magicTraits.Add(TorannMagicDefOf.TM_Brightmage);
                 magicTraits.Add(TorannMagicDefOf.TM_Shaman);
                 magicTraits.Add(TorannMagicDefOf.TM_Golemancer);
-                foreach (TMDefs.TM_CustomClass cc in TM_ClassUtility.CustomClasses())
+                foreach (TMDefs.TM_CustomClass cc in TM_ClassUtility.CustomClasses)
                 {
                     if (cc.isMage && !magicTraits.Contains(cc.classTrait))
                     {
@@ -239,7 +239,7 @@ namespace TorannMagic
                 if (settingsRef.Brightmage) { magicTraits.Add(TorannMagicDefOf.TM_Brightmage); }
                 if (settingsRef.Shaman) { magicTraits.Add(TorannMagicDefOf.TM_Shaman); }
                 if (settingsRef.Golemancer) { magicTraits.Add(TorannMagicDefOf.TM_Golemancer); }
-                foreach (TMDefs.TM_CustomClass cc in TM_ClassUtility.CustomClasses())
+                foreach (TMDefs.TM_CustomClass cc in TM_ClassUtility.CustomClasses)
                 {
                     if (cc.isMage && !magicTraits.Contains(cc.classTrait) && ModOptions.Settings.Instance.CustomClass[cc.classTrait.ToString()])
                     {
@@ -267,7 +267,7 @@ namespace TorannMagic
                 mightTraits.Add(TorannMagicDefOf.TM_Commander);
                 mightTraits.Add(TorannMagicDefOf.TM_SuperSoldier);
                 mightTraits.Add(TorannMagicDefOf.TM_Wayfarer);
-                foreach (TMDefs.TM_CustomClass cc in TM_ClassUtility.CustomClasses())
+                foreach (TMDefs.TM_CustomClass cc in TM_ClassUtility.CustomClasses)
                 {
                     if (cc.isFighter && !mightTraits.Contains(cc.classTrait))
                     {

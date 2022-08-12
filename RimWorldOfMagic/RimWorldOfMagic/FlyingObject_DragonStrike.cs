@@ -134,7 +134,7 @@ namespace TorannMagic
             bool spawned = flyingThing.Spawned;            
             pawn = launcher as Pawn;
             drafted = pawn.Drafted;
-            comp = pawn.GetComp<CompAbilityUserMight>();
+            comp = pawn.GetCompAbilityUserMight();
             verVal = TM_Calc.GetSkillVersatilityLevel(pawn, TorannMagicDefOf.TM_DragonStrike, true);
             //verVal = TM_Calc.GetMightSkillLevel(pawn, comp.MightData.MightPowerSkill_DragonStrike, "TM_DragonStrike", "_ver", true);
             //this.verVal = comp.MightData.MightPowerSkill_DragonStrike.FirstOrDefault((MightPowerSkill x) => x.label == "TM_DragonStrike_ver").level;

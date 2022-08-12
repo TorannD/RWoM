@@ -70,7 +70,7 @@ namespace TorannMagic
         private void Initialize()
         {
             caster = this.launcher as Pawn;
-            CompAbilityUserMagic comp = caster.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
             if (comp != null && comp.MagicData != null)
             {
                 //pwrVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_Sunfire, "TM_Sunfire", "_pwr", true);

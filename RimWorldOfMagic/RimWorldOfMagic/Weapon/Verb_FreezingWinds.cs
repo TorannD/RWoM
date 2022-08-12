@@ -41,7 +41,7 @@ namespace TorannMagic.Weapon
 
         protected override bool TryCastShot()
         {
-            CompAbilityUserMagic comp = this.CasterPawn.TryGetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = this.CasterPawn.GetCompAbilityUserMagic();
             if(comp != null && comp.IsMagicUser)
             {
                 LocalTargetInfo t = this.CurrentTarget;

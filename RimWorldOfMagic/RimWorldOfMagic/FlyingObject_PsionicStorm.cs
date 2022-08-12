@@ -135,7 +135,7 @@ namespace TorannMagic
                 this.targetCells = new List<IntVec3>();
                 this.targetCells.Clear();
                 this.targetCells = GenRadial.RadialCellsAround(this.targetCenter.ToIntVec3(), 4, true).ToList();
-                this.verVal = pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_PsionicStorm.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PsionicStorm_ver").level;
+                this.verVal = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_PsionicStorm.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PsionicStorm_ver").level;
             }
             //flyingThing.ThingID += Rand.Range(0, 2147).ToString();
         }

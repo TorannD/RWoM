@@ -577,6 +577,7 @@ namespace TorannMagic
         public static TMAbilityDef TM_BloodForBlood;
         public static HediffDef TM_BloodForBloodHD;
         public static TMAbilityDef TM_BloodShield;
+        public static HediffDef TM_BloodShieldHD;
         public static TMAbilityDef TM_Rend;
         public static TMAbilityDef TM_Rend_I;
         public static TMAbilityDef TM_Rend_II;
@@ -958,6 +959,11 @@ namespace TorannMagic
         public static TraitDef DeathKnight;
 
         public static HediffDef TM_HateHD;
+        public static HediffDef TM_HateHD_I;
+        public static HediffDef TM_HateHD_II;
+        public static HediffDef TM_HateHD_III;
+        public static HediffDef TM_HateHD_IV;
+        public static HediffDef TM_HateHD_V;
         public static TMAbilityDef TM_Shroud;
         public static TMAbilityDef TM_WaveOfFear;
         public static HediffDef TM_WaveOfFearHD;

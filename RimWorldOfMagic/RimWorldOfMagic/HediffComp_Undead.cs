@@ -74,7 +74,7 @@ namespace TorannMagic
         {
             if(this.linkedPawn != null)
             {
-                CompAbilityUserMagic comp = linkedPawn.TryGetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = linkedPawn.GetCompAbilityUserMagic();
                 try
                 {
                     if (comp != null)

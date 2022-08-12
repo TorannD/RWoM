@@ -11,7 +11,7 @@ namespace TorannMagic
         protected override void Impact(Thing hitThing)
         {
             Pawn caster = this.launcher as Pawn;
-            CompAbilityUserMagic comp = caster.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
             Map map = base.Map;
             base.Impact(hitThing);
             ThingDef def = this.def;            

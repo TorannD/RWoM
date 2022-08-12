@@ -17,10 +17,10 @@ namespace TorannMagic
         {
             Pawn caster = base.CasterPawn;
             Pawn pawn = this.currentTarget.Thing as Pawn;
-            MagicPower magicPower = caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowersC.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Prediction);
-            MagicPowerSkill pwr = base.CasterPawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_Prediction.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Prediction_pwr");
+            MagicPower magicPower = caster.GetCompAbilityUserMagic().MagicData.MagicPowersC.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Prediction);
+            MagicPowerSkill pwr = base.CasterPawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Prediction.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Prediction_pwr");
             pwrVal = pwr.level;
-            CompAbilityUserMagic comp = base.CasterPawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = base.CasterPawn.GetCompAbilityUserMagic();
             ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
             if (settingsRef.AIHardMode && !this.CasterPawn.IsColonist)
             {

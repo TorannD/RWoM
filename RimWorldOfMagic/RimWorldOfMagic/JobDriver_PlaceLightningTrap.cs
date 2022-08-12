@@ -35,7 +35,7 @@ namespace TorannMagic
                 {
                     SpawnThings tempPod = new SpawnThings();
                     tempPod.def = TorannMagicDefOf.TM_Trap_Lightning;
-                    CompAbilityUserMagic comp = pawn.GetComp<CompAbilityUserMagic>();
+                    CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
                     try
                     {
                         for (int i = 0; i < comp.lightningTraps.Count; i++)
@@ -96,7 +96,7 @@ namespace TorannMagic
                     }
                     Thing thing = ThingMaker.MakeThing(def, stuff);
                     thing.SetFaction(faction, null);
-                    CompAbilityUserMagic comp = pawn.GetComp<CompAbilityUserMagic>();
+                    CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
                     GenPlace.TryPlaceThing(thing, position, map, ThingPlaceMode.Direct);
                     //GenSpawn.Spawn(thing, position, map, Rot4.North, WipeMode.Vanish, false);
                     comp.lightningTraps.Add(thing);

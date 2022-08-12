@@ -42,7 +42,7 @@ namespace TorannMagic
             bool flag = false;
             this.TargetsAoE.Clear();
             this.FindTargets();
-            CompAbilityUserMagic comp = CasterPawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = CasterPawn.GetCompAbilityUserMagic();
             if (comp != null && comp.MagicData != null)
             {
                 pwrVal = TM_Calc.GetSkillPowerLevel(CasterPawn, this.Ability.Def as TMAbilityDef);

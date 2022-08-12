@@ -41,7 +41,7 @@ namespace TorannMagic
         {
             get
             {
-                return spawner.GetComp<CompAbilityUserMagic>();
+                return spawner.GetCompAbilityUserMagic();
             }
         }
 

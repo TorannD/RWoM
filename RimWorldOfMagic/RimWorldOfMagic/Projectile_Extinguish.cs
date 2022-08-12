@@ -19,7 +19,7 @@ namespace TorannMagic
             Pawn p = this.launcher as Pawn;
             if (p != null)
             {
-                CompAbilityUserMagic comp = p.TryGetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = p.GetCompAbilityUserMagic();
                 if (comp != null)
                 {
                     if (comp.MagicData.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Cantrips_pwr").level >= 4)

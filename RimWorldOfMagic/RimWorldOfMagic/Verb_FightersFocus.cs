@@ -29,7 +29,7 @@ namespace TorannMagic
                     float val = .5f;
                     if(caster.story != null)
                     {
-                        if (caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_FieldTraining.FirstOrDefault((MightPowerSkill x) => x.label == "TM_FieldTraining_ver").level >= 1)
+                        if (caster.GetCompAbilityUserMight().MightData.MightPowerSkill_FieldTraining.FirstOrDefault((MightPowerSkill x) => x.label == "TM_FieldTraining_ver").level >= 1)
                         {
                             val = 1.5f;
                         }

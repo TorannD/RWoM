@@ -47,8 +47,8 @@ namespace TorannMagic
             Toil doTeaching = new Toil();
             doTeaching.initAction = delegate
             {
-                CompAbilityUserMagic compMagic = student.GetComp<CompAbilityUserMagic>();
-                CompAbilityUserMight compMight = student.GetComp<CompAbilityUserMight>();
+                CompAbilityUserMagic compMagic = student.GetCompAbilityUserMagic();
+                CompAbilityUserMight compMight = student.GetCompAbilityUserMight();
                 if(compMagic != null && compMagic.IsMagicUser && !student.story.traits.HasTrait(TorannMagicDefOf.Faceless))
                 {
                     this.isMageTeaching = true;
@@ -253,8 +253,8 @@ namespace TorannMagic
 
         private void AssignMagicXP(Pawn student)
         {
-            CompAbilityUserMagic studentComp = student.GetComp<CompAbilityUserMagic>();
-            CompAbilityUserMagic mentorComp = this.pawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic studentComp = student.GetCompAbilityUserMagic();
+            CompAbilityUserMagic mentorComp = this.pawn.GetCompAbilityUserMagic();
 
             if (studentComp != null && mentorComp != null)
             {
@@ -295,8 +295,8 @@ namespace TorannMagic
 
         private void AssignMightXP(Pawn student)
         {
-            CompAbilityUserMight studentComp = student.GetComp<CompAbilityUserMight>();
-            CompAbilityUserMight mentorComp = this.pawn.GetComp<CompAbilityUserMight>();
+            CompAbilityUserMight studentComp = student.GetCompAbilityUserMight();
+            CompAbilityUserMight mentorComp = this.pawn.GetCompAbilityUserMight();
 
             if (studentComp != null && mentorComp != null)
             {

@@ -25,7 +25,7 @@ namespace TorannMagic
             this.Destroy(DestroyMode.Vanish);
             ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
             Pawn caster = this.launcher as Pawn;
-            CompAbilityUserMagic comp = caster.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
             if (comp != null && comp.IsMagicUser)
             {
                 verVal = TM_Calc.GetSkillVersatilityLevel(caster, TorannMagicDefOf.TM_DistortSpirit, false);

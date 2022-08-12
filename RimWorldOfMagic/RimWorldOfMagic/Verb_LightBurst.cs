@@ -19,7 +19,7 @@ namespace TorannMagic
 
         private void Initialize(Pawn pawn)
         {
-            CompAbilityUserMagic comp = pawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
             //pwrVal = TM_Calc.GetMagicSkillLevel(pawn, comp.MagicData.MagicPowerSkill_LightBurst, "TM_LightBurst", "_pwr", TorannMagicDefOf.TM_LightBurst.canCopy);
             //verVal = TM_Calc.GetMagicSkillLevel(pawn, comp.MagicData.MagicPowerSkill_LightBurst, "TM_LightBurst", "_ver", TorannMagicDefOf.TM_LightBurst.canCopy);
             pwrVal = TM_Calc.GetSkillPowerLevel(pawn, this.Ability.Def as TMAbilityDef);

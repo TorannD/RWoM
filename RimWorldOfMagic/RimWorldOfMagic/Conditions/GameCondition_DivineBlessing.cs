@@ -34,9 +34,8 @@ namespace TorannMagic.Conditions
                 for (int i = 0; i < allThings.Count; i++)
                 {
                     Thing t = allThings[i];
-                    if(t != null && t is Corpse)
+                    if(t != null && t is Corpse c)
                     {
-                        Corpse c = t as Corpse;
                         if(c.InnerPawn.IsColonist && !c.IsDessicated())
                         {
                             potentialResurrection.Add(c);

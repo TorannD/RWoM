@@ -11,8 +11,8 @@ namespace TorannMagic
     {
         public override void DoEffect(Pawn user)
         {
-            CompAbilityUserMagic compMagic = user.GetComp<CompAbilityUserMagic>();
-            CompAbilityUserMight compMight = user.GetComp<CompAbilityUserMight>();
+            CompAbilityUserMagic compMagic = user.GetCompAbilityUserMagic();
+            CompAbilityUserMight compMight = user.GetCompAbilityUserMight();
             if (TM_Calc.IsPossessedBySpirit(user))
             {
                 TM_Action.RemovePossession(user, parent.Position, false);

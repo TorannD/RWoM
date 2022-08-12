@@ -37,12 +37,11 @@ namespace TorannMagic
             Map map = base.CasterPawn.Map;
             Pawn mentor = base.CasterPawn;
 
-            if(this.currentTarget.Thing != null && this.currentTarget.Thing is Pawn && this.currentTarget.Thing != mentor)
+            if(this.currentTarget.Thing is Pawn student && this.currentTarget.Thing != mentor)
             {
-                Pawn student = this.currentTarget.Thing as Pawn;
                 if (this.Ability.Def == TorannMagicDefOf.TM_TeachMagic)
                 {
-                    if (TM_Calc.IsMagicUser(mentor) && !TM_Calc.IsCrossClass(mentor, true) && student != null && student.story != null)
+                    if (TM_Calc.IsMagicUser(mentor) && !TM_Calc.IsCrossClass(mentor, true) && student.story != null)
                     {
                         if (TM_Calc.IsMagicUser(student) && !TM_Calc.IsCrossClass(student, true))
                         {
@@ -75,7 +74,7 @@ namespace TorannMagic
                 }
                 if (this.Ability.Def == TorannMagicDefOf.TM_TeachMight)
                 {
-                    if (TM_Calc.IsMightUser(mentor) && !TM_Calc.IsCrossClass(mentor, false) && student != null && student.story != null)
+                    if (TM_Calc.IsMightUser(mentor) && !TM_Calc.IsCrossClass(mentor, false) && student.story != null)
                     {
                         if (TM_Calc.IsMightUser(student) && !TM_Calc.IsCrossClass(student, false))
                         {

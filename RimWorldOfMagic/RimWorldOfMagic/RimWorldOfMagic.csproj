@@ -132,6 +132,7 @@
     <Compile Include="Building_TMTotem_Healing.cs" />
     <Compile Include="Building_TMTotem_Lightning.cs" />
     <Compile Include="Building_TM_DMP.cs" />
+    <Compile Include="CompAbilityUserTMBase.cs" />
     <Compile Include="GenGridExtensions.cs" />
     <Compile Include="Effect_SpiritStorm.cs" />
     <Compile Include="Enchantment\HediffComp_WinterChill.cs" />
@@ -146,6 +147,8 @@
     <Compile Include="Projectile_DistortSpirit.cs" />
     <Compile Include="Projectile_SummonSpiritAnimals.cs" />
     <Compile Include="TMDefs\TM_AdvancedClassOptions.cs" />
+    <Compile Include="Utils\TraitIconMap.cs" />
+    <Compile Include="Utils\SimpleCache.cs" />
     <Compile Include="Verb_ControlSpiritStorm.cs" />
     <Compile Include="Verb_SpiritTap.cs" />
     <Compile Include="Verb_SpiritRally.cs" />

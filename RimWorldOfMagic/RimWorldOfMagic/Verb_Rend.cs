@@ -48,8 +48,8 @@ namespace TorannMagic
             this.TargetsAoE.Clear();
             //this.UpdateTargets();
             this.FindTargets();
-            MagicPowerSkill ver = base.CasterPawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_Rend.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Rend_ver");
-            this.arcaneDmg = base.CasterPawn.GetComp<CompAbilityUserMagic>().arcaneDmg;
+            MagicPowerSkill ver = base.CasterPawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Rend.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Rend_ver");
+            this.arcaneDmg = base.CasterPawn.GetCompAbilityUserMagic().arcaneDmg;
             verVal = ver.level;
             bool flag2 = this.UseAbilityProps.AbilityTargetCategory != AbilityTargetCategory.TargetAoE && this.TargetsAoE.Count > 1;
             if (flag2)

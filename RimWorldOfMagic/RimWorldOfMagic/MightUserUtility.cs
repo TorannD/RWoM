@@ -22,7 +22,7 @@ namespace TorannMagic
         public static Need_Stamina GetStamina(Pawn pawn)
         {
             CompAbilityUserMight comp;
-            bool flag = (comp = pawn.GetComp<CompAbilityUserMight>()) != null;
+            bool flag = (comp = pawn.GetCompAbilityUserMight()) != null;
             Need_Stamina result;
             if (flag)
             {
@@ -38,7 +38,7 @@ namespace TorannMagic
         public static CompAbilityUserMight GetMightUser(Pawn pawn)
         {
             CompAbilityUserMight comp;
-            bool flag = (comp = pawn.GetComp<CompAbilityUserMight>()) != null;
+            bool flag = (comp = pawn.GetCompAbilityUserMight()) != null;
             CompAbilityUserMight result;
             if (flag)
             {

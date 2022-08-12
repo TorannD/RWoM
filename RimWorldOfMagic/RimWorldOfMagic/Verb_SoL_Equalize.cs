@@ -16,7 +16,7 @@ namespace TorannMagic
             Map map = this.CasterPawn.Map;
             if (pawn != null && !pawn.Downed)
             {
-                CompAbilityUserMagic comp = pawn.TryGetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
                 Hediff hd = pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_LightCapacitanceHD);
                 if(comp != null && comp.SoL != null && hd != null)
                 {

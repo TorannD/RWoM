@@ -49,7 +49,7 @@ namespace TorannMagic
         private void Initialize()
         {
             bool spawned = base.Pawn.Spawned;
-            CompAbilityUserMight comp = this.Pawn.GetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = this.Pawn.GetCompAbilityUserMight();
 
             if (comp != null && comp.IsMightUser)
             {

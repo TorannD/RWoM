@@ -19,7 +19,7 @@ namespace TorannMagic
         {
             Pawn caster = base.CasterPawn;
 
-            CompAbilityUserMight comp = caster.GetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = caster.GetCompAbilityUserMight();
             pwrVal = TM_Calc.GetSkillPowerLevel(caster, this.Ability.Def as TMAbilityDef);
             verVal = TM_Calc.GetSkillVersatilityLevel(caster, this.Ability.Def as TMAbilityDef);
             //pwrVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_FirstAid, "TM_FirstAid", "_pwr", true);

@@ -14,7 +14,7 @@ namespace TorannMagic
             bool flag = false;
             Map map = base.CasterPawn.Map;
 
-            CompAbilityUserMagic comp = this.CasterPawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = this.CasterPawn.GetCompAbilityUserMagic();
             Pawn sacrificialPawn = comp.soulBondPawn;
 
             if (!sacrificialPawn.DestroyedOrNull() && sacrificialPawn.Spawned && !sacrificialPawn.Dead)
@@ -36,7 +36,7 @@ namespace TorannMagic
                             {
                                 if (allPawns[i].CurJobDef == TorannMagicDefOf.JobDriver_SummonDemon)
                                 {
-                                    CompAbilityUserMagic supportComp = allPawns[i].GetComp<CompAbilityUserMagic>();
+                                    CompAbilityUserMagic supportComp = allPawns[i].GetCompAbilityUserMagic();
                                     if (supportComp.soulBondPawn == sacrificialPawn)
                                     {
                                         this.TryLaunchProjectile(ThingDef.Named("Projectile_SummonDemon"), this.CasterPawn);

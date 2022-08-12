@@ -25,7 +25,7 @@ namespace TorannMagic
             bool flag = caster != null && !caster.Dead && !caster.Downed;
             if (flag)
             {
-                CompAbilityUserMagic comp = caster.GetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
                 int pwrVal = 0;
                 int verVal = 0;
                 if (comp != null && comp.MagicData != null)

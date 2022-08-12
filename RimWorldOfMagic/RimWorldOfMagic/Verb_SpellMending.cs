@@ -44,7 +44,7 @@ namespace TorannMagic
 
             if (hitPawn != null & !hitPawn.Dead && !hitPawn.RaceProps.Animal)
             {
-                CompAbilityUserMagic compCaster = caster.TryGetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic compCaster = caster.GetCompAbilityUserMagic();
                 if (compCaster != null && compCaster.MagicData.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Cantrips_ver").level >= 8)
                 {
                     HealthUtility.AdjustSeverity(hitPawn, HediffDef.Named("SpellMendingHD"), 1.95f);

@@ -42,8 +42,8 @@ namespace TorannMagic
             }
             else
             {
-                CompAbilityUserMagic comp = caster.GetComp<CompAbilityUserMagic>();
-                verVal = caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_Sentinel.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Sentinel_ver").level;
+                CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
+                verVal = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Sentinel.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Sentinel_ver").level;
 
                 if (comp.summonedSentinels.Count > verVal + 1)
                 {

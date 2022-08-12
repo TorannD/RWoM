@@ -119,7 +119,7 @@ namespace TorannMagic
             if (pawn != null)
             {
                 GetFilteredList();
-                CompAbilityUserMagic comp = pawn.GetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
                 if(comp != null)
                 {
                     //pwrVal = comp.MagicData.MagicPowerSkill_LightLance.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_LightLance_pwr").level;

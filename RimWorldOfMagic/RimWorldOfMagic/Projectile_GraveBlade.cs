@@ -67,9 +67,9 @@ namespace TorannMagic
             if (!this.initialized)
             {
                 this.caster = this.launcher as Pawn;               
-                CompAbilityUserMight comp = caster.GetComp<CompAbilityUserMight>();
-                //pwrVal = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_GraveBlade.FirstOrDefault((MightPowerSkill x) => x.label == "TM_GraveBlade_pwr").level;
-                //verVal = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_GraveBlade.FirstOrDefault((MightPowerSkill x) => x.label == "TM_GraveBlade_ver").level;
+                CompAbilityUserMight comp = caster.GetCompAbilityUserMight();
+                //pwrVal = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_GraveBlade.FirstOrDefault((MightPowerSkill x) => x.label == "TM_GraveBlade_pwr").level;
+                //verVal = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_GraveBlade.FirstOrDefault((MightPowerSkill x) => x.label == "TM_GraveBlade_ver").level;
                 //verVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_GraveBlade, "TM_GraveBlade", "_ver", true);
                 //pwrVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_GraveBlade, "TM_GraveBlade", "_pwr", true);
                 //ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();

@@ -16,7 +16,7 @@ namespace TorannMagic
         {
             
             Hediff chiHD = pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_ChiHD);
-            CompAbilityUserMight comp = pawn.GetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
             if (chiHD == null)
             {
                 return 0f;
@@ -108,7 +108,7 @@ namespace TorannMagic
                 {
                     return null;
                 }
-                CompAbilityUserMight comp = pawn.GetComp<CompAbilityUserMight>();
+                CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
                 if (comp != null)
                 {
                     MightPower mightPower = comp.MightData.MightPowersM.FirstOrDefault<MightPower>((MightPower x) => x.abilityDef == TorannMagicDefOf.TM_Meditate);
@@ -124,7 +124,7 @@ namespace TorannMagic
                     }
 
                     Hediff hediff = pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_ChiHD);
-                    PawnAbility ability = pawn.GetComp<CompAbilityUserMight>().AbilityData.Powers.FirstOrDefault((PawnAbility x) => x.Def == TorannMagicDefOf.TM_Meditate);
+                    PawnAbility ability = pawn.GetCompAbilityUserMight().AbilityData.Powers.FirstOrDefault((PawnAbility x) => x.Def == TorannMagicDefOf.TM_Meditate);
 
                     if (ability.CooldownTicksLeft > 0 || hediff.Severity >= 70)
                     {

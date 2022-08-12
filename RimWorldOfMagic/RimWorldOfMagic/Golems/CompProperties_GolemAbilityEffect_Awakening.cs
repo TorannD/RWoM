@@ -65,7 +65,7 @@ namespace TorannMagic.Golems
                         }
 
                         verb.Ability.PostAbilityAttempt();
-                        CompAbilityUserMagic ecomp = enemyCaster.TryGetComp<CompAbilityUserMagic>();
+                        CompAbilityUserMagic ecomp = enemyCaster.GetCompAbilityUserMagic();
                         if (ecomp != null)
                         {
                             for (int j = 0; j < ecomp.AbilityData.AllPowers.Count; j++)

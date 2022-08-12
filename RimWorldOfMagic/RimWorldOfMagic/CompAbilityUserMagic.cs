@@ -17,35 +17,9 @@ namespace TorannMagic
     [CompilerGenerated]
     [Serializable]
     [StaticConstructorOnStartup]
-    public class CompAbilityUserMagic : CompAbilityUser
+    public class CompAbilityUserMagic : CompAbilityUserTMBase
     {
         public string LabelKey = "TM_Magic";
-
-        public int customIndex = -2;
-        public TMDefs.TM_CustomClass customClass = null;
-        private List<TMDefs.TM_CustomClass> advClasses = null;
-
-        public List<TMDefs.TM_CustomClass> AdvancedClasses
-        {
-            get
-            {
-                if(advClasses == null)
-                {
-                    advClasses = new List<TMDefs.TM_CustomClass>();
-                    advClasses.Clear();
-                }
-                return advClasses;
-            }
-            set
-            {
-                if(advClasses == null)
-                {
-                    advClasses = new List<TMDefs.TM_CustomClass>();
-                    advClasses.Clear();
-                }
-                advClasses = value;
-            }
-        }
 
         public bool firstTick = false;
         public bool magicPowersInitialized = false;
@@ -56,13 +30,8 @@ namespace TorannMagic
         private int damageMitigationDelayMS = 0;
         public int magicXPRate = 1000;
         public int lastXPGain = 0;
-        private int age = -1;
+        
         private bool doOnce = true;
-        private int autocastTick = 0;
-        private int nextAICastAttemptTick = 0;
-        public bool canDeathRetaliate = false;
-        private bool deathRetaliating = false;
-        private int ticksTillRetaliation = 600;
         private List<IntVec3> deathRing = new List<IntVec3>();
         public float weaponDamage = 1;
         public float weaponCritChance = 0f;
@@ -221,12 +190,8 @@ namespace TorannMagic
 
         public float maxMP = 1;
         public float mpRegenRate = 1;
-        public float coolDown = 1;
         public float mpCost = 1;
-        public float xpGain = 1;
         public float arcaneDmg = 1;
-        public float arcaneRes = 1;
-        public float arcalleumCooldown = 0f;
 
         public List<TM_ChaosPowers> chaosPowers = new List<TM_ChaosPowers>();
         public TMAbilityDef mimicAbility = null;
@@ -358,75 +323,6 @@ namespace TorannMagic
                     brandDefs.Clear();
                 }
                 return brandDefs;
-            }
-        }
-
-        //public List<Pawn> BrandedPawns
-        //{
-        //    get
-        //    {
-        //        if (brandedPawns == null)
-        //        {
-        //            brandedPawns = new List<Pawn>();
-        //            brandedPawns.Clear();
-        //        }
-        //        List<Pawn> tmpList = new List<Pawn>();
-        //        tmpList.Clear();
-        //        foreach (Pawn br in brandedPawns)
-        //        {
-        //            Pawn p = br;
-        //            if (p.DestroyedOrNull() || p.Dead)
-        //            {
-        //                tmpList.Add(br);
-        //            }
-        //        }
-        //        for (int i = 0; i < tmpList.Count; i++)
-        //        {
-        //            brandedPawns.Remove(tmpList[i]);
-        //        }
-        //        return brandedPawns;
-        //    }
-        //}
-
-        public List<TMDefs.TM_CustomClass> CombinedCustomClasses
-        {
-            get
-            {
-                List<TMDefs.TM_CustomClass> tempcc = new List<TMDefs.TM_CustomClass>();
-                tempcc.Clear();
-                tempcc.AddRange(AdvancedClasses);
-                if(this.customClass != null)
-                {
-                    tempcc.Add(this.customClass);
-                }
-                return tempcc;
-            }
-        }
-
-        public List<TMAbilityDef> CombinedCustomAbilities
-        {
-            get
-            {
-                List<TMAbilityDef> tempca = new List<TMAbilityDef>();
-                tempca.Clear();
-                if(this.customClass != null)
-                {
-                    foreach(TMAbilityDef ability in this.customClass.classMageAbilities)
-                    {
-                        tempca.Add(ability);
-                    }
-                }
-                if (this.AdvancedClasses != null && AdvancedClasses.Count > 0)
-                {
-                    foreach (TMDefs.TM_CustomClass cc in this.AdvancedClasses)
-                    {
-                        foreach (TMAbilityDef advAbility in cc.classMageAbilities)
-                        {
-                            tempca.Add(advAbility);
-                        }
-                    }
-                }
-                return tempca;
             }
         }
 
@@ -612,14 +508,14 @@ namespace TorannMagic
                 {
                     if (!this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
                     {
-                        DrawMageMark();
+                        DrawMark();
                     }
                 }
                 if (settingsRef.AIMarking && !base.Pawn.IsColonist && this.IsMagicUser)
                 {
                     if (!this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
                     {
-                        DrawMageMark();
+                        DrawMark();
                     }
                 }
 
@@ -698,7 +594,7 @@ namespace TorannMagic
                 lightPos.x -= .5f;
                 lightPos.z += .6f;
 
-                lightPos.y = Altitudes.AltitudeFor(AltitudeLayer.MoteOverhead);
+                lightPos.y = AltitudeLayer.MoteOverhead.AltitudeFor();
                 float angle = Rand.Range(0, 360);
                 Vector3 s = new Vector3(.27f, .5f, .27f);
                 Matrix4x4 matrix = default(Matrix4x4);
@@ -708,131 +604,131 @@ namespace TorannMagic
 
         }
 
-        public void DrawMageMark()
-        {
-            float num = Mathf.Lerp(1.2f, 1.55f, 1f);
-            Vector3 vector = this.Pawn.Drawer.DrawPos;
-            vector.x = vector.x + .45f;
-            vector.z = vector.z + .45f;
-            vector.y = Altitudes.AltitudeFor(AltitudeLayer.MoteOverhead);
-            float angle = 0f;
-            Vector3 s = new Vector3(.28f, 1f, .28f);
-            Matrix4x4 matrix = default(Matrix4x4);
-            matrix.SetTRS(vector, Quaternion.AngleAxis(angle, Vector3.up), s);
-            if (this.customClass != null)
-            {
-                if (!this.customClass.isAdvancedClass)
-                {
-                    Material mat = TM_RenderQueue.mageMarkMat;
-                    if (this.customClass.classIconPath != "")
-                    {
-                        mat = MaterialPool.MatFrom("Other/" + this.customClass.classIconPath.ToString());
-                    }
-                    else if (this.customClass.classTexturePath != "")
-                    {
-                        mat = MaterialPool.MatFrom("Other/ClassTextures/" + this.customClass.classTexturePath, true);
-                    }
-                    if (this.customClass.classIconColor != null)
-                    {
-                        mat.color = this.customClass.classIconColor;
-                    }
-                    Graphics.DrawMesh(MeshPool.plane10, matrix, mat, 0);
-                }
-            }
-            else
-            {
-                if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.InnerFire))
-                {
-                    Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.fireMarkMat, 0);
-                }
-                else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.HeartOfFrost))
-                {
-                    Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.iceMarkMat, 0);
-                }
-                else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.StormBorn))
-                {
-                    Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.lightningMarkMat, 0);
-                }
-                else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Arcanist))
-                {
-                    Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.arcanistMarkMat, 0);
-                }
-                else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Paladin))
-                {
-                    Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.paladinMarkMat, 0);
-                }
-                else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Summoner))
-                {
-                    Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.summonerMarkMat, 0);
-                }
-                else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Druid))
-                {
-                    Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.druidMarkMat, 0);
-                }
-                else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Necromancer) || this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Lich))
-                {
-                    Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.necroMarkMat, 0);
-                }
-                else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Priest))
-                {
-                    Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.priestMarkMat, 0);
-                }
-                else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Bard))
-                {
-                    Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.bardMarkMat, 0);
-                }
-                else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Succubus) || this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Warlock))
-                {
-                    Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.demonkinMarkMat, 0);
-                }
-                else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Geomancer))
-                {
-                    Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.earthMarkMat, 0);
-                }
-                else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Technomancer))
-                {
-                    Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.technoMarkMat, 0);
-                }
-                else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.BloodMage))
-                {
-                    Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.bloodmageMarkMat, 0);
-                }
-                else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Enchanter))
-                {
-                    Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.enchanterMarkMat, 0);
-                }
-                else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Chronomancer))
-                {
-                    Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.chronomancerMarkMat, 0);
-                }
-                else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.ChaosMage))
-                {
-                    Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.chaosMarkMat, 0);
-                }
-                else if (TM_Calc.IsWanderer(this.Pawn))
-                {
-                    Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.wandererMarkMat, 0);
-                }
-                //else
-                //{
-                //    Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.mageMarkMat, 0);
-                //}
-            }
-
-        }
+        //public void DrawMageMark()
+        //{
+        //    float num = Mathf.Lerp(1.2f, 1.55f, 1f);
+        //    Vector3 vector = this.Pawn.Drawer.DrawPos;
+        //    vector.x = vector.x + .45f;
+        //    vector.z = vector.z + .45f;
+        //    vector.y = Altitudes.AltitudeFor(AltitudeLayer.MoteOverhead);
+        //    float angle = 0f;
+        //    Vector3 s = new Vector3(.28f, 1f, .28f);
+        //    Matrix4x4 matrix = default(Matrix4x4);
+        //    matrix.SetTRS(vector, Quaternion.AngleAxis(angle, Vector3.up), s);
+        //    if (this.customClass != null)
+        //    {
+        //        if (!this.customClass.isAdvancedClass)
+        //        {
+        //            Material mat = TM_RenderQueue.mageMarkMat;
+        //            if (this.customClass.classIconPath != "")
+        //            {
+        //                mat = MaterialPool.MatFrom("Other/" + this.customClass.classIconPath.ToString());
+        //            }
+        //            else if (this.customClass.classTexturePath != "")
+        //            {
+        //                mat = MaterialPool.MatFrom("Other/ClassTextures/" + this.customClass.classTexturePath, true);
+        //            }
+        //            if (this.customClass.classIconColor != null)
+        //            {
+        //                mat.color = this.customClass.classIconColor;
+        //            }
+        //            Graphics.DrawMesh(MeshPool.plane10, matrix, mat, 0);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.InnerFire))
+        //        {
+        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.fireMarkMat, 0);
+        //        }
+        //        else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.HeartOfFrost))
+        //        {
+        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.iceMarkMat, 0);
+        //        }
+        //        else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.StormBorn))
+        //        {
+        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.lightningMarkMat, 0);
+        //        }
+        //        else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Arcanist))
+        //        {
+        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.arcanistMarkMat, 0);
+        //        }
+        //        else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Paladin))
+        //        {
+        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.paladinMarkMat, 0);
+        //        }
+        //        else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Summoner))
+        //        {
+        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.summonerMarkMat, 0);
+        //        }
+        //        else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Druid))
+        //        {
+        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.druidMarkMat, 0);
+        //        }
+        //        else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Necromancer) || this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Lich))
+        //        {
+        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.necroMarkMat, 0);
+        //        }
+        //        else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Priest))
+        //        {
+        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.priestMarkMat, 0);
+        //        }
+        //        else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Bard))
+        //        {
+        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.bardMarkMat, 0);
+        //        }
+        //        else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Succubus) || this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Warlock))
+        //        {
+        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.demonkinMarkMat, 0);
+        //        }
+        //        else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Geomancer))
+        //        {
+        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.earthMarkMat, 0);
+        //        }
+        //        else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Technomancer))
+        //        {
+        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.technoMarkMat, 0);
+        //        }
+        //        else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.BloodMage))
+        //        {
+        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.bloodmageMarkMat, 0);
+        //        }
+        //        else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Enchanter))
+        //        {
+        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.enchanterMarkMat, 0);
+        //        }
+        //        else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Chronomancer))
+        //        {
+        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.chronomancerMarkMat, 0);
+        //        }
+        //        else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.ChaosMage))
+        //        {
+        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.chaosMarkMat, 0);
+        //        }
+        //        else if (TM_Calc.IsWanderer(this.Pawn))
+        //        {
+        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.wandererMarkMat, 0);
+        //        }
+        //        //else
+        //        //{
+        //        //    Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.mageMarkMat, 0);
+        //        //}
+        //    }
+        //}
 
         public void DrawEnchantMark()
         {
-            float num = Mathf.Lerp(1.2f, 1.55f, 1f);
-            Vector3 vector = this.Pawn.Drawer.DrawPos;
-            vector.x = vector.x + .45f;
-            vector.z = vector.z + .45f;
-            vector.y = Altitudes.AltitudeFor(AltitudeLayer.MoteOverhead);
-            float angle = 0f;
-            Vector3 s = new Vector3(.5f, 1f, .5f);
-            Matrix4x4 matrix = default(Matrix4x4);
-            matrix.SetTRS(vector, Quaternion.AngleAxis(angle, Vector3.up), s);
-            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.enchantMark, 0);
+            DrawMark(TM_RenderQueue.enchantMark, new Vector3(.5f, 1f, .5f));
+            //float num = Mathf.Lerp(1.2f, 1.55f, 1f);
+            //Vector3 vector = this.Pawn.Drawer.DrawPos;
+            //vector.x = vector.x + .45f;
+            //vector.z = vector.z + .45f;
+            //vector.y = Altitudes.AltitudeFor(AltitudeLayer.MoteOverhead);
+            //float angle = 0f;
+            //Vector3 s = new Vector3(.5f, 1f, .5f);
+            //Matrix4x4 matrix = default(Matrix4x4);
+            //matrix.SetTRS(vector, Quaternion.AngleAxis(angle, Vector3.up), s);
+            //Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.enchantMark, 0);
 
         }
 
@@ -869,1085 +765,1086 @@ namespace TorannMagic
 
         public static List<TMAbilityDef> MagicAbilities = null;
 
-        public int LevelUpSkill_global_regen(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_global_regen.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_global_eff(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_global_eff.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_global_spirit(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_global_spirit.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
+        //LevelUpSkill_x is unused TODO: REMOVE
+        //public int LevelUpSkill_global_regen(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_global_regen.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_global_eff(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_global_eff.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_global_spirit(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_global_spirit.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
 
-        public int LevelUpSkill_RayofHope(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_RayofHope.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_Firebolt(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Firebolt.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_Fireball(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Fireball.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_Fireclaw(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Fireclaw.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_Firestorm(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Firestorm.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
+        //public int LevelUpSkill_RayofHope(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_RayofHope.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_Firebolt(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Firebolt.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_Fireball(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Fireball.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_Fireclaw(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Fireclaw.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_Firestorm(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Firestorm.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
 
-        public int LevelUpSkill_Soothe(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Soothe.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_Icebolt(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Icebolt.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_FrostRay(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_FrostRay.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_Snowball(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Snowball.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_Rainmaker(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Rainmaker.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_Blizzard(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Blizzard.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
+        //public int LevelUpSkill_Soothe(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Soothe.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_Icebolt(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Icebolt.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_FrostRay(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_FrostRay.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_Snowball(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Snowball.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_Rainmaker(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Rainmaker.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_Blizzard(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Blizzard.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
 
-        public int LevelUpSkill_AMP(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_AMP.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_LightningBolt(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_LightningBolt.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_LightningCloud(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_LightningCloud.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_LightningStorm(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_LightningStorm.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_EyeOfTheStorm(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_EyeOfTheStorm.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
+        //public int LevelUpSkill_AMP(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_AMP.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_LightningBolt(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_LightningBolt.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_LightningCloud(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_LightningCloud.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_LightningStorm(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_LightningStorm.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_EyeOfTheStorm(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_EyeOfTheStorm.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
 
-        public int LevelUpSkill_Shadow(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Shadow.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_MagicMissile(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_MagicMissile.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_Blink(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Blink.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_Summon(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Summon.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_Teleport(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Teleport.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_FoldReality(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_FoldReality.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
+        //public int LevelUpSkill_Shadow(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Shadow.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_MagicMissile(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_MagicMissile.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_Blink(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Blink.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_Summon(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Summon.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_Teleport(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Teleport.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_FoldReality(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_FoldReality.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
 
-        public int LevelUpSkill_Heal(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Heal.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_Shield(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Shield.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_ValiantCharge(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_ValiantCharge.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_Overwhelm(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Overwhelm.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_HolyWrath(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_HolyWrath.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
+        //public int LevelUpSkill_Heal(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Heal.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_Shield(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Shield.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_ValiantCharge(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_ValiantCharge.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_Overwhelm(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Overwhelm.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_HolyWrath(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_HolyWrath.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
 
-        public int LevelUpSkill_SummonMinion(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_SummonMinion.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_SummonPylon(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_SummonPylon.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_SummonExplosive(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_SummonExplosive.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_SummonElemental(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_SummonElemental.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_SummonPoppi(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_SummonPoppi.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
+        //public int LevelUpSkill_SummonMinion(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_SummonMinion.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_SummonPylon(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_SummonPylon.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_SummonExplosive(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_SummonExplosive.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_SummonElemental(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_SummonElemental.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_SummonPoppi(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_SummonPoppi.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
 
-        public int LevelUpSkill_Poison(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Poison.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_SootheAnimal(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_SootheAnimal.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_Regenerate(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Regenerate.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_CureDisease(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_CureDisease.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_RegrowLimb(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_RegrowLimb.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
+        //public int LevelUpSkill_Poison(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Poison.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_SootheAnimal(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_SootheAnimal.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_Regenerate(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Regenerate.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_CureDisease(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_CureDisease.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_RegrowLimb(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_RegrowLimb.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
 
-        public int LevelUpSkill_RaiseUndead(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_RaiseUndead.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_DeathMark(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_DeathMark.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_FogOfTorment(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_FogOfTorment.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_ConsumeCorpse(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_ConsumeCorpse.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_CorpseExplosion(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_CorpseExplosion.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_DeathBolt(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_DeathBolt.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
+        //public int LevelUpSkill_RaiseUndead(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_RaiseUndead.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_DeathMark(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_DeathMark.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_FogOfTorment(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_FogOfTorment.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_ConsumeCorpse(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_ConsumeCorpse.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_CorpseExplosion(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_CorpseExplosion.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_DeathBolt(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_DeathBolt.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
 
-        public int LevelUpSkill_AdvancedHeal(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_AdvancedHeal.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_Purify(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Purify.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_HealingCircle(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_HealingCircle.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_BestowMight(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_BestowMight.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_Resurrection(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Resurrection.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
+        //public int LevelUpSkill_AdvancedHeal(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_AdvancedHeal.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_Purify(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Purify.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_HealingCircle(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_HealingCircle.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_BestowMight(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_BestowMight.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_Resurrection(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Resurrection.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
 
-        public int LevelUpSkill_BardTraining(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_BardTraining.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_Entertain(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Entertain.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_Inspire(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Inspire.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_Lullaby(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Lullaby.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_BattleHymn(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_BattleHymn.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
+        //public int LevelUpSkill_BardTraining(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_BardTraining.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_Entertain(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Entertain.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_Inspire(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Inspire.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_Lullaby(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Lullaby.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_BattleHymn(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_BattleHymn.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
 
-        public int LevelUpSkill_SoulBond(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_SoulBond.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_ShadowBolt(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_ShadowBolt.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_Dominate(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Dominate.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_Attraction(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Attraction.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_Repulsion(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Repulsion.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_Scorn(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Scorn.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_PsychicShock(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_PsychicShock.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
+        //public int LevelUpSkill_SoulBond(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_SoulBond.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_ShadowBolt(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_ShadowBolt.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_Dominate(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Dominate.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_Attraction(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Attraction.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_Repulsion(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Repulsion.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_Scorn(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Scorn.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_PsychicShock(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_PsychicShock.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
 
-        public int LevelUpSkill_Stoneskin(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Stoneskin.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_Encase(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Encase.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_EarthSprites(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_EarthSprites.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_EarthernHammer(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_EarthernHammer.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_Meteor(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Meteor.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_Sentinel(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Sentinel.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_TechnoBit(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_TechnoBit.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_TechnoTurret(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_TechnoTurret.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_TechnoWeapon(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_TechnoWeapon.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_TechnoShield(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_TechnoShield.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_Sabotage(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Sabotage.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_Overdrive(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Overdrive.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_OrbitalStrike(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_OrbitalStrike.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_BloodGift(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_BloodGift.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_IgniteBlood(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_IgniteBlood.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_BloodForBlood(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_BloodForBlood.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_BloodShield(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_BloodShield.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_Rend(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Rend.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_BloodMoon(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_BloodMoon.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_EnchantedBody(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_EnchantedBody.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_Transmutate(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Transmutate.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_EnchanterStone(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_EnchanterStone.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_EnchantWeapon(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_EnchantWeapon.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_Polymorph(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Polymorph.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_Shapeshift(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Shapeshift.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_Prediction(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Prediction.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_AlterFate(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_AlterFate.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_AccelerateTime(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_AccelerateTime.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_ReverseTime(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_ReverseTime.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_ChronostaticField(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_ChronostaticField.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_Recall(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Recall.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_ChaosTradition(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_ChaosTradition.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_WandererCraft(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_WandererCraft.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
-        public int LevelUpSkill_Cantrips(string skillName)
-        {
-            int result = 0;
-            MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
-            bool flag = magicPowerSkill != null;
-            if (flag)
-            {
-                result = magicPowerSkill.level;
-            }
-            return result;
-        }
+        //public int LevelUpSkill_Stoneskin(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Stoneskin.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_Encase(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Encase.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_EarthSprites(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_EarthSprites.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_EarthernHammer(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_EarthernHammer.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_Meteor(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Meteor.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_Sentinel(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Sentinel.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_TechnoBit(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_TechnoBit.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_TechnoTurret(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_TechnoTurret.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_TechnoWeapon(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_TechnoWeapon.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_TechnoShield(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_TechnoShield.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_Sabotage(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Sabotage.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_Overdrive(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Overdrive.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_OrbitalStrike(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_OrbitalStrike.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_BloodGift(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_BloodGift.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_IgniteBlood(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_IgniteBlood.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_BloodForBlood(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_BloodForBlood.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_BloodShield(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_BloodShield.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_Rend(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Rend.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_BloodMoon(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_BloodMoon.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_EnchantedBody(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_EnchantedBody.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_Transmutate(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Transmutate.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_EnchanterStone(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_EnchanterStone.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_EnchantWeapon(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_EnchantWeapon.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_Polymorph(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Polymorph.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_Shapeshift(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Shapeshift.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_Prediction(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Prediction.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_AlterFate(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_AlterFate.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_AccelerateTime(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_AccelerateTime.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_ReverseTime(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_ReverseTime.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_ChronostaticField(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_ChronostaticField.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_Recall(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Recall.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_ChaosTradition(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_ChaosTradition.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_WandererCraft(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_WandererCraft.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
+        //public int LevelUpSkill_Cantrips(string skillName)
+        //{
+        //    int result = 0;
+        //    MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == skillName);
+        //    bool flag = magicPowerSkill != null;
+        //    if (flag)
+        //    {
+        //        result = magicPowerSkill.level;
+        //    }
+        //    return result;
+        //}
 
         private void SingleEvent()
         {
@@ -2300,68 +2197,61 @@ namespace TorannMagic
         {
             get
             {
-                bool flag = base.Pawn != null;
-                bool result;
-                if (flag)
+                if (Pawn?.story == null) return false;
+
+                if (this.customClass != null)
                 {
-                    bool flag3 = base.Pawn.story != null;
-                    if (flag3)
+                    return true;
+                }
+                if (this.customClass == null && this.customIndex == -2)
+                {
+                    this.customIndex = TM_ClassUtility.IsCustomBaseClassIndex(this.Pawn.story.traits.allTraits);
+                    if (this.customIndex >= 0)
                     {
-                        if (this.customClass != null)
+                        if (!TM_ClassUtility.CustomBaseClasses[this.customIndex].isMage)
                         {
+                            this.customIndex = -1;
+                            return false;
+                        }
+                        else
+                        {
+                            this.customClass = TM_ClassUtility.CustomBaseClasses[this.customIndex];
                             return true;
                         }
-                        if (this.customClass == null && this.customIndex == -2)
+                    }
+                }
+                bool flag4 = base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Enchanter) || base.Pawn.story.traits.HasTrait(TorannMagicDefOf.BloodMage) ||
+                    base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Technomancer) || base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Geomancer) ||
+                    base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Warlock) || base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Succubus) ||
+                    base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless) || base.Pawn.story.traits.HasTrait(TorannMagicDefOf.InnerFire) ||
+                    base.Pawn.story.traits.HasTrait(TorannMagicDefOf.HeartOfFrost) || base.Pawn.story.traits.HasTrait(TorannMagicDefOf.StormBorn) ||
+                    base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Arcanist) || base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Paladin) ||
+                    base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Summoner) || base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Druid) ||
+                    (base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Necromancer) || base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Lich)) ||
+                    base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Priest) || base.Pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Bard) ||
+                    base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Chronomancer) || TM_Calc.IsWanderer(base.Pawn) || base.Pawn.story.traits.HasTrait(TorannMagicDefOf.ChaosMage);
+                if (flag4)
+                {
+                    return true;
+                }
+                if(this.AdvancedClasses != null && this.AdvancedClasses.Count > 0)
+                {
+                    return true;
+                }
+                else if(TM_Calc.HasAdvancedClass(this.Pawn))
+                {
+                    bool hasMageAdvClass = false;
+                    foreach(TMDefs.TM_CustomClass cc in TM_ClassUtility.GetAdvancedClassesForPawn(this.Pawn))
+                    {
+                        if(cc.isMage)
                         {
-                            this.customIndex = TM_ClassUtility.IsCustomBaseClassIndex(this.Pawn.story.traits.allTraits);
-                            if (this.customIndex >= 0)
-                            {
-                                if (!TM_ClassUtility.CustomClasses()[this.customIndex].isMage)
-                                {
-                                    this.customIndex = -1;
-                                    return false;
-                                }
-                                else
-                                {
-                                    this.customClass = TM_ClassUtility.CustomClasses()[this.customIndex];
-                                    return true;
-                                }
-                            }
+                            this.AdvancedClasses.Add(cc);
+                            hasMageAdvClass = true;
                         }
-                        bool flag4 = base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Enchanter) || base.Pawn.story.traits.HasTrait(TorannMagicDefOf.BloodMage) ||
-                            base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Technomancer) || base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Geomancer) ||
-                            base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Warlock) || base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Succubus) ||
-                            base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless) || base.Pawn.story.traits.HasTrait(TorannMagicDefOf.InnerFire) ||
-                            base.Pawn.story.traits.HasTrait(TorannMagicDefOf.HeartOfFrost) || base.Pawn.story.traits.HasTrait(TorannMagicDefOf.StormBorn) ||
-                            base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Arcanist) || base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Paladin) ||
-                            base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Summoner) || base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Druid) ||
-                            (base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Necromancer) || base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Lich)) ||
-                            base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Priest) || base.Pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Bard) ||
-                            base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Chronomancer) || TM_Calc.IsWanderer(base.Pawn) || base.Pawn.story.traits.HasTrait(TorannMagicDefOf.ChaosMage);
-                        if (flag4)
-                        {
-                            return true;
-                        }
-                        if(this.AdvancedClasses != null && this.AdvancedClasses.Count > 0)
-                        {
-                            return true;
-                        }
-                        else if(TM_Calc.HasAdvancedClass(this.Pawn))
-                        {
-                            bool hasMageAdvClass = false;
-                            foreach(TMDefs.TM_CustomClass cc in TM_ClassUtility.GetAdvancedClassesForPawn(this.Pawn))
-                            {
-                                if(cc.isMage)
-                                {
-                                    this.AdvancedClasses.Add(cc);
-                                    hasMageAdvClass = true;
-                                }
-                            }
-                            if(hasMageAdvClass)
-                            {
-                                return true;
-                            }
-                        }
+                    }
+                    if(hasMageAdvClass)
+                    {
+                        return true;
                     }
                 }
                 return false;
@@ -5691,7 +5581,7 @@ namespace TorannMagic
                 }
                 else if(this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
                 {
-                    CompAbilityUserMight compMight = this.Pawn.TryGetComp<CompAbilityUserMight>();
+                    CompAbilityUserMight compMight = this.Pawn.GetCompAbilityUserMight();
                     adjustedManaCost *= 1f - (magicDef.efficiencyReductionPercent * compMight.MightData.GetSkill_Efficiency(TorannMagicDefOf.TM_Mimic).level);
                 }
                 else
@@ -6051,7 +5941,7 @@ namespace TorannMagic
             //CompAbilityUserMight compMight = null;
             //if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
             //{
-            //    compMight = this.Pawn.TryGetComp<CompAbilityUserMight>();
+            //    compMight = this.Pawn.GetCompAbilityUserMight();
             //}
             if (settingsRef.autocastEnabled && this.Pawn.jobs != null && this.Pawn.CurJob != null && this.Pawn.CurJob.def != TorannMagicDefOf.TMCastAbilityVerb && this.Pawn.CurJob.def != TorannMagicDefOf.TMCastAbilitySelf && 
                 this.Pawn.CurJob.def != JobDefOf.Ingest && this.Pawn.CurJob.def != JobDefOf.ManTurret && this.Pawn.GetPosture() == PawnPosture.Standing && !this.Pawn.CurJob.playerForced && !this.Pawn.Map.GameConditionManager.ConditionIsActive(TorannMagicDefOf.ManaDrain) && !this.Pawn.Map.GameConditionManager.ConditionIsActive(TorannMagicDefOf.TM_ManaStorm))
@@ -8297,7 +8187,7 @@ namespace TorannMagic
             {
                 if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Bard))
                 {
-                    MagicPowerSkill bardtraining_pwr = this.Pawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_BardTraining.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_BardTraining_pwr");
+                    MagicPowerSkill bardtraining_pwr = this.Pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_BardTraining.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_BardTraining_pwr");
 
                     List<Trait> traits = this.Pawn.story.traits.allTraits;
                     for (int i = 0; i < traits.Count; i++)
@@ -9004,9 +8894,9 @@ namespace TorannMagic
                 int index = TM_ClassUtility.IsCustomBaseClassIndex(abilityUser.story.traits.allTraits);
                 if (index >= 0)
                 {                    
-                    if (TM_ClassUtility.CustomClasses()[index].isMage)
+                    if (TM_ClassUtility.CustomBaseClasses[index].isMage)
                     {
-                        this.customClass = TM_ClassUtility.CustomClasses()[index];
+                        this.customClass = TM_ClassUtility.CustomBaseClasses[index];
                         this.customIndex = index;
                         LoadCustomClassAbilities(this.customClass);
                     }
@@ -10212,7 +10102,7 @@ namespace TorannMagic
                 MagicData fromData = null;
                 if (fromPawn != null)
                 {
-                   fromData = fromPawn.TryGetComp<CompAbilityUserMagic>().MagicData;
+                   fromData = fromPawn.GetCompAbilityUserMagic().MagicData;
                 }
                 if (fromData != null)
                 {
@@ -10305,7 +10195,7 @@ namespace TorannMagic
                 }
                 if(fromPawn != null)
                 {
-                    MagicData fromData = fromPawn.TryGetComp<CompAbilityUserMagic>().MagicData;
+                    MagicData fromData = fromPawn.GetCompAbilityUserMagic().MagicData;
                     if(fromData != null)
                     {
                         foreach(TMAbilityDef ability in ac.classMageAbilities)

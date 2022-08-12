@@ -24,7 +24,7 @@ namespace TorannMagic.Ideology
 			{
 				if(TM_Calc.IsMagicUser(key))
                 {
-					CompAbilityUserMagic comp = key.TryGetComp<CompAbilityUserMagic>();
+					CompAbilityUserMagic comp = key.GetCompAbilityUserMagic();
 					if(comp != null)
                     {
 						mageCount++;

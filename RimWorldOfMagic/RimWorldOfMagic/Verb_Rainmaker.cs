@@ -16,7 +16,7 @@ namespace TorannMagic
         {
             Map map = base.CasterPawn.Map; 
             WeatherDef rainMakerDef = new WeatherDef();
-            CompAbilityUserMagic comp = base.CasterPawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = base.CasterPawn.GetCompAbilityUserMagic();
             if (map != null && comp != null && comp.MagicData != null)
             {
 

@@ -149,7 +149,7 @@ namespace TorannMagic
                 }
                 else if (this.MagicUser.Pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
                 {
-                    CompAbilityUserMight mightComp = this.MagicUser.Pawn.GetComp<CompAbilityUserMight>();
+                    CompAbilityUserMight mightComp = this.MagicUser.Pawn.GetCompAbilityUserMight();
                     mightComp.Stamina.UseMightPower(magicDef.manaCost);
                     mightComp.MightUserXP += (int)((magicDef.manaCost * 180) * mightComp.xpGain * settingsRef.xpMultiplier);
                 }
@@ -510,7 +510,7 @@ namespace TorannMagic
                     }
                     else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
                     {
-                        CompAbilityUserMight mightComp = this.Pawn.GetComp<CompAbilityUserMight>();
+                        CompAbilityUserMight mightComp = this.Pawn.GetCompAbilityUserMight();
                         bool flag7 = mightComp != null && mightComp.Stamina != null && magicDef.manaCost > 0f && this.magicDef.manaCost > mightComp.Stamina.CurLevel;
                         if (flag7)
                         {

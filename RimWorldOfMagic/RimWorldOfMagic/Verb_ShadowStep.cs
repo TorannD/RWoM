@@ -14,7 +14,7 @@ namespace TorannMagic
         protected override bool TryCastShot()
         {
             bool result = false;
-            CompAbilityUserMagic comp = this.CasterPawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = this.CasterPawn.GetCompAbilityUserMagic();
             Pawn soulPawn = comp.soulBondPawn;
 
             if(soulPawn != null && !soulPawn.Dead && !soulPawn.Destroyed)
@@ -49,11 +49,8 @@ namespace TorannMagic
                             soulPawnSpawned = true;
                         }
                     }
-                    if(soulPawn.ParentHolder != null && soulPawn.ParentHolder is Caravan)
+                    if(soulPawn.ParentHolder != null && soulPawn.ParentHolder is Caravan van)
                     {
-                        //Log.Message("caravan detected");
-                        //p.DeSpawn();
-                        Caravan van = soulPawn.ParentHolder as Caravan;
                         van.AddPawn(p, true);
                         Find.WorldPawns.PassToWorld(p);
                         p.Notify_PassedToWorld();

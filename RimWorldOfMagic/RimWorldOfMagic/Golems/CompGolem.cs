@@ -68,9 +68,8 @@ namespace TorannMagic.Golems
             {
                 if(threatTarget != null)
                 {
-                    if (threatTarget is Pawn)
+                    if (threatTarget is Pawn p)
                     {
-                        Pawn p = threatTarget as Pawn;
                         if(p.DestroyedOrNull() || p.Dead || p.Downed || p.Map == null)
                         {
                             threatTarget = null;
@@ -98,9 +97,8 @@ namespace TorannMagic.Golems
                 {
                     return false;
                 }
-                if (targetThing is Pawn)
+                if (targetThing is Pawn p)
                 {
-                    Pawn p = targetThing as Pawn;
                     if (p.Dead || p.Downed)
                     {
                         return false;
@@ -324,9 +322,9 @@ namespace TorannMagic.Golems
                 {
                     foreach(Thing t in innerContainer)
                     {
-                        if(t is Building_TMGolemBase)
+                        if(t is Building_TMGolemBase tmGolemBase)
                         {
-                            dormantThing = t as Building_TMGolemBase;
+                            dormantThing = tmGolemBase;
                         }
                     }
                 }
@@ -609,7 +607,7 @@ namespace TorannMagic.Golems
         {
             if(!pawnMaster.DestroyedOrNull() && !pawnMaster.Dead)
             {
-                CompAbilityUserMagic masterComp = pawnMaster.TryGetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic masterComp = pawnMaster.GetCompAbilityUserMagic();
                 if(TM_Calc.IsMagicUser(pawnMaster) && masterComp != null && masterComp.MagicData != null && masterComp.MagicData.AllMagicPowersWithSkills.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Golemancy).learned)
                 {
                     float pSev = .5f + masterComp.MagicData.GetSkill_Power(TorannMagicDefOf.TM_Golemancy).level;

@@ -9,7 +9,7 @@ namespace TorannMagic
     {
         public override void DoEffect(Pawn user)
         {
-            CompAbilityUserMagic comp = user.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = user.GetCompAbilityUserMagic();
             MagicPower magicPower;
             if (parent.def != null && (TM_Calc.IsMagicUser(user) || TM_Calc.IsWanderer(user)))
             {                

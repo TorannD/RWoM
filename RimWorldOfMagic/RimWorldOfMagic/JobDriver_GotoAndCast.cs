@@ -117,7 +117,7 @@ namespace TorannMagic
 
         private void AssignXP()
         {
-            CompAbilityUserMight comp = this.pawn.GetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = this.pawn.GetCompAbilityUserMight();
 
             if (comp != null)
             {

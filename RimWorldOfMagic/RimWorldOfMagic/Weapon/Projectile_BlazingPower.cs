@@ -20,7 +20,7 @@ namespace TorannMagic.Weapon
             ThingDef def = this.def;
             if (pawn != null)
             {
-                CompAbilityUserMagic comp = pawn.GetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
                 if (comp != null && comp.IsMagicUser)
                 {
                     this.arcaneDmg = comp.arcaneDmg;

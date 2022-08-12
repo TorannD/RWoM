@@ -55,8 +55,8 @@ namespace TorannMagic
                 caster = this.launcher as Pawn;
                 hitPawn = hitThing as Pawn;
                 this.oldPosition = caster.Position;
-                MightPowerSkill pwr = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Possess.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Possess_pwr");
-                MightPowerSkill ver = caster.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Possess.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Possess_ver");
+                MightPowerSkill pwr = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Possess.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Possess_pwr");
+                MightPowerSkill ver = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Possess.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Possess_ver");
                 ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
                 pwrVal = pwr.level;
                 verVal = ver.level;
@@ -305,7 +305,7 @@ namespace TorannMagic
                             {
                                 hitPawn.workSettings.SetPriority(allWorkTypes[i], hitPawnWorkSetting[i]);
                             }
-                            CompAbilityUserMagic comp = hitPawn.GetComp<CompAbilityUserMagic>();
+                            CompAbilityUserMagic comp = hitPawn.GetCompAbilityUserMagic();
                             if(comp != null && comp.IsMagicUser)
                             {
                                 comp.magicPowersInitializedForColonist = true;

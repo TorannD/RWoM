@@ -26,7 +26,7 @@ namespace TorannMagic
             bool flag = false;
             Pawn caster = base.CasterPawn;
 
-            CompAbilityUserMagic comp = caster.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
             //pwrVal = comp.MagicData.MagicPowerSkill_AlterFate.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_AlterFate_pwr").level;
             pwrVal = TM_Calc.GetSkillPowerLevel(caster, this.Ability.Def as TMAbilityDef);
             arcaneDmg = comp.arcaneDmg;

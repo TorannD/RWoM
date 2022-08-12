@@ -50,7 +50,7 @@ namespace TorannMagic
             Map map = base.CasterPawn.Map;
             IntVec3 centerCell = this.currentTarget.Cell;
 
-            verVal = this.CasterPawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_Meteor.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Meteor_ver").level;
+            verVal = this.CasterPawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Meteor.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Meteor_ver").level;
             pwrVal = this.UseAbilityProps.TargetAoEProperties.range;
 
             bool result = false;

@@ -13,8 +13,8 @@ namespace TorannMagic
         public override float OrderPriority => -800f;
         public override void DoEffect(Pawn user)
         {
-            CompAbilityUserMagic compMagic = user.GetComp<CompAbilityUserMagic>();
-            CompAbilityUserMight compMight = user.GetComp<CompAbilityUserMight>();
+            CompAbilityUserMagic compMagic = user.GetCompAbilityUserMagic();
+            CompAbilityUserMight compMight = user.GetCompAbilityUserMight();
 
             if(this.parent.def == TorannMagicDefOf.TM_MagicArtifact_MightEssence && compMight != null && compMight.IsMightUser)
             {

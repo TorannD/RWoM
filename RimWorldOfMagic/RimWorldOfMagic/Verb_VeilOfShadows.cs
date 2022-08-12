@@ -21,7 +21,7 @@ namespace TorannMagic
             bool flag = caster != null && !caster.Dead;
             if (flag)
             {
-                CompAbilityUserMight comp = caster.TryGetComp<CompAbilityUserMight>();
+                CompAbilityUserMight comp = caster.GetCompAbilityUserMight();
                 //verVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_VeilOfShadows, "TM_VeilOfShadows", "_ver", true);
                 //pwrVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_VeilOfShadows, "TM_VeilOfShadows", "_pwr", true);
                 verVal = TM_Calc.GetSkillVersatilityLevel(caster, this.Ability.Def as TMAbilityDef);

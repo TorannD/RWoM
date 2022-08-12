@@ -15,14 +15,14 @@ namespace TorannMagic
 
             Pawn hitPawn = hitThing as Pawn;
             Pawn caster = this.launcher as Pawn;
-            CompAbilityUserMagic compHitPawn = hitPawn.GetComp<CompAbilityUserMagic>();            
-            CompAbilityUserMagic compCaster = caster.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic compHitPawn = hitPawn.GetCompAbilityUserMagic();            
+            CompAbilityUserMagic compCaster = caster.GetCompAbilityUserMagic();
 
             if (hitPawn != null && compHitPawn != null)
             {
                 if (compHitPawn.IsMagicUser && compHitPawn.MagicData != null && compHitPawn.Mana != null)
                 {
-                    MagicPowerSkill regen = hitPawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_global_regen.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_global_regen_pwr");
+                    MagicPowerSkill regen = hitPawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_global_regen.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_global_regen_pwr");
                     compHitPawn.Mana.CurLevel += (.2f + (.01f * regen.level)) * compCaster.arcaneDmg;
                     TM_MoteMaker.ThrowManaPuff(hitPawn.DrawPos, hitPawn.Map, 1f);
                     TM_MoteMaker.ThrowManaPuff(hitPawn.DrawPos, hitPawn.Map, 1f);

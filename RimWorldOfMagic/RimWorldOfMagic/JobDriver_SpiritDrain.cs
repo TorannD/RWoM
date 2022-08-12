@@ -26,7 +26,7 @@ namespace TorannMagic
 
         protected override IEnumerable<Toil> MakeNewToils()
         {
-            CompAbilityUserMagic comp = this.pawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = this.pawn.GetCompAbilityUserMagic();
             Toil discordance = new Toil();
             Pawn target = this.TargetThingA as Pawn;
             Need_Spirit spiritNeed = this.pawn.needs.TryGetNeed(TorannMagicDefOf.TM_SpiritND) as Need_Spirit;

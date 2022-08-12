@@ -606,16 +606,13 @@ namespace TorannMagic
         {
             base.PostPreApplyDamage(dinfo, out absorbed);
             //Log.Message("taking damage");
-            if (dinfo.Instigator != null)
+            if (dinfo.Instigator is Building instigatorThing)
             {
-                Thing instigatorThing = dinfo.Instigator;
-                if (instigatorThing is Building)
+                if (instigatorThing.Faction != null && instigatorThing.Faction != this.Pawn.Faction)
                 {
-                    if (instigatorThing.Faction != null && instigatorThing.Faction != this.Pawn.Faction)
-                    {
                         //Log.Message("adding building threat");
-                        this.buildingThreats.AddDistinct(instigatorThing as Building);
-                    }
+                        this.buildingThreats.AddDistinct(instigatorThing);
+                    
                 }
             }
         }
@@ -689,9 +686,9 @@ namespace TorannMagic
             {
                 return false;
             }
-            if(target is Pawn)
+            if(target is Pawn targetPawn)
             {
-                return !(target as Pawn).Downed;
+                return !targetPawn.Downed;
             }
             if(target.Position.DistanceToEdge(this.Pawn.Map) < 8)
             {

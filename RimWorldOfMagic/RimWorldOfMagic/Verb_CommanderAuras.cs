@@ -74,15 +74,15 @@ namespace TorannMagic
             MightPower mightPower = null;
             if (this.Ability.Def == TorannMagicDefOf.TM_ProvisionerAura)
             {
-               mightPower = this.CasterPawn.GetComp<CompAbilityUserMight>().MightData.MightPowersC.FirstOrDefault<MightPower>((MightPower x) => x.abilityDef == TorannMagicDefOf.TM_ProvisionerAura);
+               mightPower = this.CasterPawn.GetCompAbilityUserMight().MightData.MightPowersC.FirstOrDefault<MightPower>((MightPower x) => x.abilityDef == TorannMagicDefOf.TM_ProvisionerAura);
             }
             else if (this.Ability.Def == TorannMagicDefOf.TM_TaskMasterAura)
             {
-                mightPower = this.CasterPawn.GetComp<CompAbilityUserMight>().MightData.MightPowersC.FirstOrDefault<MightPower>((MightPower x) => x.abilityDef == TorannMagicDefOf.TM_TaskMasterAura);
+                mightPower = this.CasterPawn.GetCompAbilityUserMight().MightData.MightPowersC.FirstOrDefault<MightPower>((MightPower x) => x.abilityDef == TorannMagicDefOf.TM_TaskMasterAura);
             }
             else if (this.Ability.Def == TorannMagicDefOf.TM_CommanderAura)
             {
-                mightPower = this.CasterPawn.GetComp<CompAbilityUserMight>().MightData.MightPowersC.FirstOrDefault<MightPower>((MightPower x) => x.abilityDef == TorannMagicDefOf.TM_CommanderAura);
+                mightPower = this.CasterPawn.GetCompAbilityUserMight().MightData.MightPowersC.FirstOrDefault<MightPower>((MightPower x) => x.abilityDef == TorannMagicDefOf.TM_CommanderAura);
             }            
 
             if (mightPower != null)

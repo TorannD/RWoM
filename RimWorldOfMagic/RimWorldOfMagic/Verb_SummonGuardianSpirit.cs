@@ -49,7 +49,7 @@ namespace TorannMagic
             Pawn caster = base.CasterPawn;
             Map map = caster.Map;
             IntVec3 cell = currentTarget.Cell;
-            CompAbilityUserMagic comp = caster.TryGetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
             //pwrVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_GuardianSpirit, "TM_GuardianSpirit", "_pwr", true);
             //verVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_GuardianSpirit, "TM_GuardianSpirit", "_ver", true);
             //effVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_GuardianSpirit, "TM_GuardianSpirit", "_eff", true);

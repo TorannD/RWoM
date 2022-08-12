@@ -53,12 +53,12 @@ namespace TorannMagic
         {
             float weaponAccuracy = pawn.equipment.Primary.GetStatValue(StatDefOf.AccuracyMedium, true);
             verVal = TM_Calc.GetSkillVersatilityLevel(pawn, TorannMagicDefOf.TM_ArrowStorm);
-            //verVal = TM_Calc.GetMightSkillLevel(pawn, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_ArrowStorm, "TM_ArrowStorm", "_ver", true);
-            //MightPowerSkill ver = pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_ArrowStorm.FirstOrDefault((MightPowerSkill x) => x.label == "TM_ArrowStorm_ver");
+            //verVal = TM_Calc.GetMightSkillLevel(pawn, pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_ArrowStorm, "TM_ArrowStorm", "_ver", true);
+            //MightPowerSkill ver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_ArrowStorm.FirstOrDefault((MightPowerSkill x) => x.label == "TM_ArrowStorm_ver");
             //verVal = ver.level;
             //if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
             //{
-            //    MightPowerSkill mver = pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
+            //    MightPowerSkill mver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
             //    verVal = mver.level;
             //}
             weaponAccuracy = Mathf.Min(1f, (.8f * weaponAccuracy) + (.05f * verVal));
@@ -67,8 +67,8 @@ namespace TorannMagic
 
         public static int GetWeaponDmg(Pawn pawn)
         {
-            CompAbilityUserMight comp = pawn.GetComp<CompAbilityUserMight>();
-            //pwrVal = TM_Calc.GetMightSkillLevel(pawn, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_ArrowStorm, "TM_ArrowStorm", "_pwr", true);   
+            CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
+            //pwrVal = TM_Calc.GetMightSkillLevel(pawn, pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_ArrowStorm, "TM_ArrowStorm", "_pwr", true);   
             pwrVal = TM_Calc.GetSkillPowerLevel(pawn, TorannMagicDefOf.TM_ArrowStorm);
 
             float dmg = comp.weaponDamage;

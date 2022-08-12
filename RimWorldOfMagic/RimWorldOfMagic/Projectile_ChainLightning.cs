@@ -63,7 +63,7 @@ namespace TorannMagic
             if(!p.DestroyedOrNull())
             {
                 GenClamor.DoClamor(this, 2f, ClamorDefOf.Ability);
-                CompAbilityUserMagic comp = p.TryGetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = p.GetCompAbilityUserMagic();
                 if (comp != null && comp.MagicData != null)
                 {
                     //pwrVal = TM_Calc.GetMagicSkillLevel(p, comp.MagicData.MagicPowerSkill_ChainLightning, "TM_ChainLightning", "_pwr", true);

@@ -9,6 +9,7 @@ using Verse.Sound;
 using Verse.AI;
 
 
+
 namespace TorannMagic
 {
     public class Verb_Taunt : Verb_UseAbility
@@ -26,7 +27,7 @@ namespace TorannMagic
             if (flag)
             {
 
-                CompAbilityUserMight comp = caster.GetComp<CompAbilityUserMight>();
+                CompAbilityUserMight comp = caster.GetCompAbilityUserMight();
                 //int verVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_Custom, "TM_Taunt", "_ver", true);
                 //int pwrVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_Custom, "TM_Taunt", "_pwr", true);
                 int verVal = TM_Calc.GetSkillVersatilityLevel(caster, this.Ability.Def as TMAbilityDef);

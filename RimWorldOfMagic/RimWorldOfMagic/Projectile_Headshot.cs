@@ -30,9 +30,9 @@ namespace TorannMagic
             
             try
             {
-                CompAbilityUserMight comp = pawn.GetComp<CompAbilityUserMight>();
+                CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
                 //verVal = TM_Calc.GetMightSkillLevel(pawn, comp.MightData.MightPowerSkill_Headshot, "TM_Headshot", "_ver", true);
-                //MightPowerSkill ver = pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Headshot.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Headshot_ver");
+                //MightPowerSkill ver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Headshot.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Headshot_ver");
                 //verVal = ver.level;
                 //if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
                 //{
@@ -62,7 +62,7 @@ namespace TorannMagic
 
         public static int GetWeaponDmg(Pawn pawn)
         {
-            CompAbilityUserMight comp = pawn.GetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
             //pwrVal = TM_Calc.GetMightSkillLevel(pawn, comp.MightData.MightPowerSkill_Headshot, "TM_Headshot", "_pwr", true);
             pwrVal = TM_Calc.GetSkillPowerLevel(pawn, TorannMagicDefOf.TM_Headshot);
 

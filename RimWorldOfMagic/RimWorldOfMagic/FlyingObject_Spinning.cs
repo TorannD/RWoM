@@ -349,9 +349,8 @@ namespace TorannMagic
                 if (this.flyingThing != null)
                 {
                     GenSpawn.Spawn(this.flyingThing, base.Position, base.Map);
-                    if (this.flyingThing is Pawn)
+                    if (this.flyingThing is Pawn p)
                     {
-                        Pawn p = this.flyingThing as Pawn;
                         if (p.IsColonist && this.drafted)
                         {
                             p.drafter.Drafted = true;

@@ -18,11 +18,11 @@ namespace TorannMagic
             float explosionRadius = this.def.projectile.explosionRadius;
             if (p != null)
             {
-                if (p.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Cantrips_ver").level >= 2)
+                if (p.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Cantrips_ver").level >= 2)
                 {
                     explosionRadius += 2f;
                 }
-                if (p.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Cantrips_pwr").level >= 1)
+                if (p.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Cantrips_pwr").level >= 1)
                 {
                     List<Pawn> blindedPawns = TM_Calc.FindAllPawnsAround(map, base.Position, explosionRadius);
                     if (blindedPawns != null && blindedPawns.Count > 0)

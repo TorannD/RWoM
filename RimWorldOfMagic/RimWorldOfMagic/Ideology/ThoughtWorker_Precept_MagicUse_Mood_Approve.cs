@@ -14,7 +14,7 @@ namespace TorannMagic.Ideology
         {
             if (p.IsColonist && !p.IsPrisoner && !p.IsQuestLodger() && TM_Calc.IsMagicUser(p))
             {
-                CompAbilityUserMagic comp = p.TryGetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = p.GetCompAbilityUserMagic();
                 float totalPower = 0f;
                 foreach(TM_EventRecords er in comp.MagicUsed)
                 {

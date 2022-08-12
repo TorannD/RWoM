@@ -43,7 +43,7 @@ namespace TorannMagic
             Pawn caster = base.CasterPawn;
             Pawn target = this.currentTarget.Thing as Pawn;
             
-            CompAbilityUserMagic comp = caster.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
             if (comp.IsMagicUser && target != null)
             {
                 if (target.RaceProps.Humanlike)

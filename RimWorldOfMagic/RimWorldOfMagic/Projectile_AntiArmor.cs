@@ -6,6 +6,7 @@ using System.Linq;
 using UnityEngine;
 using System.Collections.Generic;
 
+
 namespace TorannMagic
 {
     public class Projectile_AntiArmor : Projectile_AbilityBase
@@ -36,19 +37,19 @@ namespace TorannMagic
             Pawn victim = hitThing as Pawn;
             try
             {
-                CompAbilityUserMight comp = pawn.GetComp<CompAbilityUserMight>();
-                //MightPowerSkill pwr = pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_AntiArmor.FirstOrDefault((MightPowerSkill x) => x.label == "TM_AntiArmor_pwr");
+                CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
+                //MightPowerSkill pwr = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_AntiArmor.FirstOrDefault((MightPowerSkill x) => x.label == "TM_AntiArmor_pwr");
                 //verVal = TM_Calc.GetMightSkillLevel(pawn, comp.MightData.MightPowerSkill_AntiArmor, "TM_AntiArmor", "_ver", true);
                 //pwrVal = TM_Calc.GetMightSkillLevel(pawn, comp.MightData.MightPowerSkill_AntiArmor, "TM_AntiArmor", "_pwr", true);
-                //MightPowerSkill ver = pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_AntiArmor.FirstOrDefault((MightPowerSkill x) => x.label == "TM_AntiArmor_ver");
+                //MightPowerSkill ver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_AntiArmor.FirstOrDefault((MightPowerSkill x) => x.label == "TM_AntiArmor_ver");
                 MightPowerSkill str = comp.MightData.MightPowerSkill_global_strength.FirstOrDefault((MightPowerSkill x) => x.label == "TM_global_strength_pwr");
                 //ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
                 //pwrVal = pwr.level;
                 //verVal = ver.level;
                 //if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
                 //{
-                //    MightPowerSkill mpwr = pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-                //    MightPowerSkill mver = pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
+                //    MightPowerSkill mpwr = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
+                //    MightPowerSkill mver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
                 //    pwrVal = mpwr.level;
                 //    verVal = mver.level;
                 //}
@@ -120,7 +121,7 @@ namespace TorannMagic
 
         public static int GetWeaponDmg(Pawn pawn)
         {
-            CompAbilityUserMight comp = pawn.GetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
 
             float dmg = comp.weaponDamage;
             ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
@@ -136,8 +137,8 @@ namespace TorannMagic
         public static int GetWeaponDmgMech(Pawn pawn, int dmg)
         {
 
-            //MightPowerSkill pwr = pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_AntiArmor.FirstOrDefault((MightPowerSkill x) => x.label == "TM_AntiArmor_pwr");
-            //int pwrVal = TM_Calc.GetMightSkillLevel(pawn, pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_AntiArmor, "TM_AntiArmor", "_pwr", true);
+            //MightPowerSkill pwr = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_AntiArmor.FirstOrDefault((MightPowerSkill x) => x.label == "TM_AntiArmor_pwr");
+            //int pwrVal = TM_Calc.GetMightSkillLevel(pawn, pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_AntiArmor, "TM_AntiArmor", "_pwr", true);
             int pwrVal = TM_Calc.GetSkillPowerLevel(pawn, TorannMagicDefOf.TM_AntiArmor);
             int mechDmg = dmg + Mathf.RoundToInt(dmg * (1 + .5f * pwrVal));
             return mechDmg;

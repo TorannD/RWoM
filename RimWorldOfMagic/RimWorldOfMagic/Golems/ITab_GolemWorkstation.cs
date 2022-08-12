@@ -24,13 +24,9 @@ namespace TorannMagic.Golems
             get
             {
                 Thing singleSelectedThing = Find.Selector.SingleSelectedThing;
-                if (singleSelectedThing != null && singleSelectedThing is Building_TMGolemBase)
+                if (singleSelectedThing != null && singleSelectedThing is Building_TMGolemBase golem_building)
                 {
-                    Building_TMGolemBase golem_building = singleSelectedThing as Building_TMGolemBase;
-                    if(golem_building != null)
-                    {
-                        return golem_building.Upgrades;
-                    }
+                    return golem_building.Upgrades;                    
                 }
                 return null;
             }

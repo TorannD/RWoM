@@ -24,7 +24,7 @@ namespace TorannMagic
             if (!this.initialized)
             {
                 caster = this.launcher as Pawn;
-                CompAbilityUserMight comp = caster.GetComp<CompAbilityUserMight>();
+                CompAbilityUserMight comp = caster.GetCompAbilityUserMight();
                 //verVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_ShotgunSpec, "TM_ShotgunSpec", "_ver", true); 
                 verVal = TM_Calc.GetSkillVersatilityLevel(caster, TorannMagicDefOf.TM_ShotgunSpec);
                 this.explosionCount = 5;

@@ -43,7 +43,7 @@ namespace TorannMagic
         {
             Pawn p = this.CasterPawn;
             Map map = this.CasterPawn.Map;
-            CompAbilityUserMagic comp = this.CasterPawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = this.CasterPawn.GetCompAbilityUserMagic();
             corpses.Clear();
             pawns.Clear();
             plants.Clear();

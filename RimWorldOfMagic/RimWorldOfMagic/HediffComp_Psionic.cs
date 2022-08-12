@@ -85,12 +85,12 @@ namespace TorannMagic
 
         private void DeterminePsionicHD()
         {
-            this.comp = this.Pawn.GetComp<CompAbilityUserMight>();
+            this.comp = this.Pawn.GetCompAbilityUserMight();
             if (comp != null && comp.MightData != null)
             {
-                this.PwrVal = this.Pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_PsionicAugmentation.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PsionicAugmentation_pwr").level;
-                this.EffVal = this.Pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_PsionicAugmentation.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PsionicAugmentation_eff").level;
-                this.VerVal = this.Pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_PsionicAugmentation.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PsionicAugmentation_ver").level;
+                this.PwrVal = this.Pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_PsionicAugmentation.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PsionicAugmentation_pwr").level;
+                this.EffVal = this.Pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_PsionicAugmentation.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PsionicAugmentation_eff").level;
+                this.VerVal = this.Pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_PsionicAugmentation.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PsionicAugmentation_ver").level;
             }
         }
 

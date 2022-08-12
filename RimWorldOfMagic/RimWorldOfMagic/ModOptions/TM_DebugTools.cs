@@ -37,7 +37,7 @@ namespace TorannMagic.ModOptions
             {
                 bool addMagicComp = false;
                 bool addMightComp = false;
-                CompAbilityUserMagic compMagic = pawn.TryGetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic compMagic = pawn.GetCompAbilityUserMagic();
                 if(compMagic != null && compMagic.IsMagicUser)
                 {
                     RemoveMagicComp(compMagic);
@@ -51,7 +51,7 @@ namespace TorannMagic.ModOptions
                         Log.Warning("failed to remove magic comp");
                     }
                 }
-                CompAbilityUserMight compMight = pawn.TryGetComp<CompAbilityUserMight>();
+                CompAbilityUserMight compMight = pawn.GetCompAbilityUserMight();
                 if(compMight != null && compMight.IsMightUser)
                 {
                     RemoveMightComp(compMight);

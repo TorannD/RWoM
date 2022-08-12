@@ -41,7 +41,7 @@ namespace TorannMagic
         private void Initialize()
         {
             bool spawned = base.Pawn.Spawned;
-            CompAbilityUserMagic comp = this.Pawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = this.Pawn.GetCompAbilityUserMagic();
             if (spawned && comp != null && comp.IsMagicUser)
             {
                 DetermineHediff();
@@ -81,12 +81,12 @@ namespace TorannMagic
                             FleckMaker.ThrowLightningGlow(pawn.DrawPos, pawn.Map, .8f);
                             if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
                             {
-                                CompAbilityUserMight comp = this.Pawn.GetComp<CompAbilityUserMight>();
+                                CompAbilityUserMight comp = this.Pawn.GetCompAbilityUserMight();
                                 comp.MightUserXP += Rand.Range(10, 15);
                             }
                             else
                             {
-                                CompAbilityUserMagic comp = this.Pawn.GetComp<CompAbilityUserMagic>();
+                                CompAbilityUserMagic comp = this.Pawn.GetCompAbilityUserMagic();
                                 comp.MagicUserXP += Rand.Range(10, 15);
                             }
                             Find.HistoryEventsManager.RecordEvent(new HistoryEvent(TorannMagicDefOf.TM_UsedMagic, this.Pawn.Named(HistoryEventArgsNames.Doer), this.Pawn.Named(HistoryEventArgsNames.Subject), this.Pawn.Named(HistoryEventArgsNames.AffectedFaction), this.Pawn.Named(HistoryEventArgsNames.Victim)), true);
@@ -104,7 +104,7 @@ namespace TorannMagic
         public void DetermineHediff()
         {
             MagicPower abilityPower = null;            
-            CompAbilityUserMagic comp = this.Pawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = this.Pawn.GetCompAbilityUserMagic();
             if (parent.def == TorannMagicDefOf.TM_Shadow_AuraHD && comp != null)
             {
                 abilityPower = comp.MagicData.MagicPowersA.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Shadow);                

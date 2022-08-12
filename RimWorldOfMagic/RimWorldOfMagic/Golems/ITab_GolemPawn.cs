@@ -36,18 +36,14 @@ namespace TorannMagic.Golems
         {
             get
             {
-                Thing singleSelectedThing = Find.Selector.SingleSelectedThing;
-                if (singleSelectedThing != null && singleSelectedThing is TMPawnGolem)
+                if (Find.Selector.SingleSelectedThing is TMPawnGolem golemPawn)
                 {
-                    TMPawnGolem golem_pawn = singleSelectedThing as TMPawnGolem;
-                    if(golem_pawn != null)
+                    CompGolem cg = golemPawn.TryGetComp<CompGolem>();
+                    if (cg != null)
                     {
-                        CompGolem cg = golem_pawn.TryGetComp<CompGolem>();
-                        if (cg != null)
-                        {
-                            return cg.Upgrades;
-                        }
+                        return cg.Upgrades;
                     }
+                    
                 }
                 return null;
             }

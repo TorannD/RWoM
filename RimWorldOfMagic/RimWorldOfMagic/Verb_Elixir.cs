@@ -42,7 +42,7 @@ namespace TorannMagic
 
             Pawn hitPawn = this.currentTarget.Thing as Pawn;
             Pawn caster = this.CasterPawn;
-            CompAbilityUserMight comp = caster.TryGetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = caster.GetCompAbilityUserMight();
 
             int verVal = TM_Calc.GetSkillVersatilityLevel(caster, this.Ability.Def as TMAbilityDef, false);
             int pwrVal = TM_Calc.GetSkillPowerLevel(caster, this.Ability.Def as TMAbilityDef, false);

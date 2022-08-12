@@ -154,12 +154,11 @@ namespace TorannMagic
                         }
                         return RefuelWorkGiverUtility.RefuelJob(pawn, thing, forced);
                     }
-                    CompAbilityUserMagic compMagic = pawn.TryGetComp<CompAbilityUserMagic>();
+                    CompAbilityUserMagic compMagic = pawn.GetCompAbilityUserMagic();
                     if (compMagic != null && compMagic.Mana != null)
                     {
-                        if (thing is Building_TMMagicCircle)
+                        if (thing is Building_TMMagicCircle mc)
                         {
-                            Building_TMMagicCircle mc = thing as Building_TMMagicCircle;
                             if(mc.InteractionCellOccupied())
                             {
                                 return null;
@@ -247,10 +246,9 @@ namespace TorannMagic
                         
                         List<Pawn> billPawns = new List<Pawn>();
                         billPawns.Clear();
-                        if (bill.recipe is MagicRecipeDef)
+                        if (bill.recipe is MagicRecipeDef magicRecipe)
                         {
-                            MagicRecipeDef magicRecipe = bill.recipe as MagicRecipeDef;
-                            CompAbilityUserMagic compMagic = pawn.TryGetComp<CompAbilityUserMagic>(); 
+                            CompAbilityUserMagic compMagic = pawn.GetCompAbilityUserMagic(); 
                             if(magicCircle.IsActive)
                             {
                                 issueBill = false;

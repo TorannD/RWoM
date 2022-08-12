@@ -57,7 +57,7 @@ namespace TorannMagic
             bool spawned = base.Pawn.Spawned && Pawn.skills != null && !Pawn.Dead;
             if (spawned && !caster.DestroyedOrNull() && !caster.Dead && !caster.Downed)
             {                
-                CompAbilityUserMagic comp = caster.TryGetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
                 if(comp != null && comp.MagicData != null)
                 {
                     if (comp.MagicData.GetSkill_Power(TorannMagicDefOf.TM_HarvestPassion) != null)

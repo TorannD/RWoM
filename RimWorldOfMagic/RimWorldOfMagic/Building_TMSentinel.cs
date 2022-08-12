@@ -49,7 +49,7 @@ namespace TorannMagic
                     {
                         if (!mapPawns[i].DestroyedOrNull() && mapPawns[i].Spawned && !mapPawns[i].Downed && mapPawns[i].RaceProps.Humanlike)
                         {
-                            CompAbilityUserMagic comp = mapPawns[i].GetComp<CompAbilityUserMagic>();
+                            CompAbilityUserMagic comp = mapPawns[i].GetCompAbilityUserMagic();
                             if (comp.IsMagicUser && comp.summonedSentinels.Count > 0)
                             {
                                 for (int j = 0; j < comp.summonedSentinels.Count(); j++)
@@ -107,7 +107,7 @@ namespace TorannMagic
                             if (hostilePawn != null)
                             {
                                 SpawnSentinel();
-                                CompAbilityUserMagic comp = this.sustainerPawn.GetComp<CompAbilityUserMagic>();
+                                CompAbilityUserMagic comp = this.sustainerPawn.GetCompAbilityUserMagic();
                                 comp.summonedSentinels.Remove(this);
                                 comp.summonedSentinels.Add(this.newPawn as Thing);
                                 this.Destroy(DestroyMode.Vanish);

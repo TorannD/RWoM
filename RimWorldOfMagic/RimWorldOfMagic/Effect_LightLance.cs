@@ -51,7 +51,7 @@ namespace TorannMagic
             int shotCount = 3;
             if(!base.CasterPawn.DestroyedOrNull())
             {
-                CompAbilityUserMagic comp = base.CasterPawn.GetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = base.CasterPawn.GetCompAbilityUserMagic();
                 if (comp != null)
                 {
                     //shotCount -= TM_Calc.GetMagicSkillLevel(base.CasterPawn, comp.MagicData.MagicPowerSkill_LightLance, "TM_LightLance", "_pwr", true);

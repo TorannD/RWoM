@@ -23,7 +23,7 @@ namespace TorannMagic
 
             if (hitPawn != null & !hitPawn.Dead && hitPawn != caster && !TM_Calc.IsUndead(hitPawn) && !TM_Calc.IsRobotPawn(hitPawn) && !TM_Calc.IsGolem(hitPawn))
             {
-                CompAbilityUserMagic compCaster = caster.TryGetComp<CompAbilityUserMagic>();              
+                CompAbilityUserMagic compCaster = caster.GetCompAbilityUserMagic();              
 
                 Job job = new Job(TorannMagicDefOf.JobDriver_SpiritDrain, hitPawn);
                 caster.jobs.EndCurrentJob(JobCondition.InterruptForced);

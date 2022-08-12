@@ -40,7 +40,7 @@ namespace TorannMagic
                 }
                 else
                 {
-                    CompAbilityUserMagic comp = pawn.TryGetComp<CompAbilityUserMagic>();
+                    CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
                     if (comp != null)
                     {
                         if (comp.maxMP >= TorannMagicDefOf.TM_Blur.upkeepEnergyCost)

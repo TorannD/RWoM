@@ -21,7 +21,7 @@ namespace TorannMagic
         protected override bool TryCastShot()
         {
             Map map = base.CasterPawn.Map;
-            comp = this.CasterPawn.GetComp<CompAbilityUserMagic>();
+            comp = this.CasterPawn.GetCompAbilityUserMagic();
             StartChoosingDestination();
             return false;
         }

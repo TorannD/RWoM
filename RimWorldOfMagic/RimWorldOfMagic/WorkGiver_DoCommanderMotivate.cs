@@ -33,7 +33,7 @@ namespace TorannMagic
         public override bool HasJobOnThing(Pawn pawn, Thing t, bool forced = false)
         {
             Pawn pawn2 = t as Pawn;
-            CompAbilityUserMight comp = pawn.GetComp<CompAbilityUserMight>();           
+            CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();           
             if (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_CommanderAuraHD, false))
             {
                 HediffComp_CommanderAura hdComp = pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_CommanderAuraHD).TryGetComp<HediffComp_CommanderAura>();
@@ -60,7 +60,7 @@ namespace TorannMagic
         public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false)
         {
             //Pawn pawn2 = t as Pawn;
-            //CompAbilityUserMagic comp = pawn.GetComp<CompAbilityUserMagic>();
+            //CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
             //if(comp.nextEntertainTick >= Find.TickManager.TicksGame)
             //{
             //    return null;

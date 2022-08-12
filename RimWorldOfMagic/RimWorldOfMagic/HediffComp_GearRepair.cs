@@ -65,7 +65,7 @@ namespace TorannMagic
                 {
                     gear[i].HitPoints++;
                 }
-                CompAbilityUserMight comp = this.Pawn.GetComp<CompAbilityUserMight>();
+                CompAbilityUserMight comp = this.Pawn.GetCompAbilityUserMight();
                 if (comp != null && comp.MightData.MightPowerSkill_FieldTraining.FirstOrDefault((MightPowerSkill x) => x.label == "TM_FieldTraining_ver").level >= 5)
                 {
                     if (gear[i].HitPoints >= gear[i].MaxHitPoints && gear[i].WornByCorpse)

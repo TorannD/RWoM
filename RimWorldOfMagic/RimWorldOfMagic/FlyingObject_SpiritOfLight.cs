@@ -462,7 +462,7 @@ namespace TorannMagic
         {
             if (!pawn.DestroyedOrNull())
             {
-                CompAbilityUserMagic comp = pawn.TryGetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
                 comp.SoL = null;
             }
             base.Destroy(mode);
@@ -495,7 +495,7 @@ namespace TorannMagic
         {
             if(!pawn.DestroyedOrNull() && pawn.Spawned)
             {
-                CompAbilityUserMagic comp = pawn.TryGetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
                 if(comp != null && comp.IsMagicUser)
                 {
                     //pwrVal = TM_Calc.GetMagicSkillLevel(pawn, comp.MagicData.MagicPowerSkill_SpiritOfLight, "TM_SpiritOfLight", "_pwr");
@@ -838,9 +838,8 @@ namespace TorannMagic
             }
             else if(solAction == SoLAction.BrightenDay)
             {
-                if(this.assignedTarget != null && this.assignedTarget is Pawn)
+                if(this.assignedTarget != null && this.assignedTarget is Pawn p)
                 {
-                    Pawn p = this.assignedTarget as Pawn;
                     ActualLightCost(6f);
                     p.needs.mood.thoughts.memories.TryGainMemory(TorannMagicDefOf.TM_BrightDayTD);
                     Action_CircleTarget(this.assignedTarget, out destTarget);

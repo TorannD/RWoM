@@ -51,7 +51,7 @@ namespace TorannMagic
             GenClamor.DoClamor(this, this.def.projectile.explosionRadius, ClamorDefOf.Impact);
             SpawnThings spawnThing = new SpawnThings();
             Pawn caster = this.launcher as Pawn;
-            arcaneDmg = caster.TryGetComp<CompAbilityUserMagic>().arcaneDmg;
+            arcaneDmg = caster.GetCompAbilityUserMagic().arcaneDmg;
             verVal = TM_Calc.GetSkillVersatilityLevel(caster, TorannMagicDefOf.TM_SummonSpiritAnimalMass, false);
             pwrVal = TM_Calc.GetSkillPowerLevel(caster, TorannMagicDefOf.TM_SummonSpiritAnimalMass, false);
 

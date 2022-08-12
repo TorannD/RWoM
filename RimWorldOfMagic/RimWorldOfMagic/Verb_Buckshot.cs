@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Linq;
 using RimWorld;
 
+
 namespace TorannMagic
 {
     public class Verb_Buckshot : Verb_UseAbility  
@@ -31,7 +32,7 @@ namespace TorannMagic
         public static int GetShotCount(Pawn pawn)
         {
             int shots = 0;
-            return shots = Mathf.RoundToInt((5 + TM_Calc.GetSkillEfficiencyLevel(pawn, TorannMagicDefOf.TM_ShotgunSpec, false)) * pawn.GetComp<CompAbilityUserMight>().mightPwr);
+            return shots = Mathf.RoundToInt((5 + TM_Calc.GetSkillEfficiencyLevel(pawn, TorannMagicDefOf.TM_ShotgunSpec, false)) * pawn.GetCompAbilityUserMight().mightPwr);
         }
     }
 }

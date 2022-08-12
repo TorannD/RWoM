@@ -16,11 +16,11 @@ namespace TorannMagic
                 bool advancedClass = false;
                 string failMessage = "";
                 TMDefs.TM_CustomClass cc = null;
-                CompAbilityUserMight comp = user.TryGetComp<CompAbilityUserMight>();
+                CompAbilityUserMight comp = user.GetCompAbilityUserMight();
 
-                for (int i = 0; i < TM_ClassUtility.CustomClasses().Count; i++)
+                for (int i = 0; i < TM_ClassUtility.CustomClasses.Count; i++)
                 {
-                    cc = TM_ClassUtility.CustomClasses()[i];
+                    cc = TM_ClassUtility.CustomClasses[i];
                     if (cc.isFighter && cc.isAdvancedClass && comp != null)
                     {
                         if (parent.def == cc.tornScript || parent.def == cc.fullScript)
@@ -35,7 +35,7 @@ namespace TorannMagic
                         }
 
                     }
-                    else if ((cc.isFighter && user.story.traits.HasTrait(TorannMagicDefOf.PhysicalProdigy)) || (cc.isFighter && TM_ClassUtility.CustomClasses()[i].isMage && (user.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted) || user.story.traits.HasTrait(TorannMagicDefOf.PhysicalProdigy))))
+                    else if ((cc.isFighter && user.story.traits.HasTrait(TorannMagicDefOf.PhysicalProdigy)) || (cc.isFighter && TM_ClassUtility.CustomClasses[i].isMage && (user.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted) || user.story.traits.HasTrait(TorannMagicDefOf.PhysicalProdigy))))
                     {
                         if (parent.def == cc.tornScript || parent.def == cc.fullScript)
                         {
@@ -59,7 +59,7 @@ namespace TorannMagic
                             {
                                 Log.Message("failed to initialize custom might class comp");
                             }
-                            CompAbilityUserMagic mComp = user.TryGetComp<CompAbilityUserMagic>();
+                            CompAbilityUserMagic mComp = user.GetCompAbilityUserMagic();
                             if(mComp != null && cc.isMage)
                             {
                                 mComp.customIndex = i;

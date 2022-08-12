@@ -30,9 +30,9 @@ namespace TorannMagic.Golems
         public override void Apply(LocalTargetInfo target, Pawn caster, TM_GolemAbilityDef ability, float effectLevel = 1f, float effectBonus = 1f)
         {
             base.Apply(target, caster, ability);
-            if (target.Thing != null && target.Thing is Pawn)
+            if (target.Thing != null && target.Thing is Pawn targetPawn)
             {
-                TM_Action.DamageEntities_AoE(damageType, damageAmount * LevelModifier * effectBonus, armorPenetration * effectBonus, caster, target.Thing as Pawn, caster.Map, splashRadius);
+                TM_Action.DamageEntities_AoE(damageType, damageAmount * LevelModifier * effectBonus, armorPenetration * effectBonus, caster, targetPawn, caster.Map, splashRadius);
             }
         }
 

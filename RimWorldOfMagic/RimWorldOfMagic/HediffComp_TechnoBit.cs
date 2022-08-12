@@ -91,7 +91,7 @@ namespace TorannMagic
 
         private void DetermineHDRank()
         {
-            CompAbilityUserMagic comp = this.Pawn.GetComp<CompAbilityUserMagic>();
+            CompAbilityUserMagic comp = this.Pawn.GetCompAbilityUserMagic();
             this.PwrVal = comp.MagicData.MagicPowerSkill_TechnoBit.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_TechnoBit_pwr").level;
             this.EffVal = comp.MagicData.MagicPowerSkill_TechnoBit.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_TechnoBit_eff").level;
             this.VerVal = comp.MagicData.MagicPowerSkill_TechnoBit.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_TechnoBit_ver").level;
@@ -111,7 +111,7 @@ namespace TorannMagic
                     }
                 }
 
-                CompAbilityUserMagic comp = this.Pawn.GetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = this.Pawn.GetCompAbilityUserMagic();
 
                 if (this.ticksBitWorking > 0 && this.nextBitEffect < Find.TickManager.TicksGame && this.moteLoc != Vector3.zero)
                 {

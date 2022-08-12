@@ -40,7 +40,7 @@ namespace TorannMagic
                 }
                 else
                 {
-                    HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_InvisibilityHD, Mathf.RoundToInt(20f * pawn.GetComp<CompAbilityUserMagic>().arcaneDmg));
+                    HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_InvisibilityHD, Mathf.RoundToInt(20f * pawn.GetCompAbilityUserMagic().arcaneDmg));
                     TM_MoteMaker.ThrowManaPuff(pawn.DrawPos, pawn.Map, .75f);
                     TM_MoteMaker.ThrowManaPuff(pawn.DrawPos, pawn.Map, 1);
                     TM_MoteMaker.ThrowManaPuff(pawn.DrawPos, pawn.Map, .75f);
@@ -52,7 +52,7 @@ namespace TorannMagic
                             allPawns[i].jobs.EndCurrentJob(Verse.AI.JobCondition.InterruptForced, true);
                         }
                     }
-                    if (this.CasterPawn.TryGetComp<CompAbilityUserMagic>()?.MagicData.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Cantrips_ver").level >= 12)
+                    if (this.CasterPawn.GetCompAbilityUserMagic()?.MagicData.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Cantrips_ver").level >= 12)
                     {
                         HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_InvisibilityHD, 5f);
                         TM_Action.DoAction_HealPawn(this.CasterPawn, this.CasterPawn, 3, 7);

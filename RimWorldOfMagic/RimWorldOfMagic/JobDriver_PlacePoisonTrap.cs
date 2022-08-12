@@ -6,6 +6,7 @@ using AbilityUser;
 using System.Linq;
 
 
+
 namespace TorannMagic
 {
     internal class JobDriver_PlacePoisonTrap: JobDriver
@@ -35,13 +36,13 @@ namespace TorannMagic
                 {
                     SpawnThings tempPod = new SpawnThings();
                     tempPod.def = ThingDef.Named("TM_PoisonTrap");
-                    CompAbilityUserMight comp = pawn.GetComp<CompAbilityUserMight>();
+                    CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
                     int verVal = 0;
                     try
                     {
                         //verVal = TM_Calc.GetMightSkillLevel(pawn, comp.MightData.MightPowerSkill_PoisonTrap, "TM_PoisonTrap", "_ver", true);
                         verVal = TM_Calc.GetSkillVersatilityLevel(pawn, TorannMagicDefOf.TM_PoisonTrap);
-                        MightPowerSkill ver = pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_PoisonTrap.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PoisonTrap_ver");
+                        MightPowerSkill ver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_PoisonTrap.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PoisonTrap_ver");
                         //verVal = ver.level;
                         //if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
                         //{
@@ -106,7 +107,7 @@ namespace TorannMagic
                     }
                     Thing thing = ThingMaker.MakeThing(def, stuff);
                     thing.SetFaction(faction, null);
-                    CompAbilityUserMight comp = pawn.GetComp<CompAbilityUserMight>();
+                    CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
                     GenSpawn.Spawn(thing, position, map, Rot4.North, WipeMode.Vanish, false);
                     comp.combatItems.Add(thing);
                 }

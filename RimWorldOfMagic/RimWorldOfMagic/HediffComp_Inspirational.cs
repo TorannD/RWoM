@@ -34,8 +34,8 @@ namespace TorannMagic
             bool spawned = base.Pawn.Spawned;
             if (spawned)
             {
-                MagicPowerSkill pwr = this.Pawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_Inspire.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Inspire_pwr");
-                MagicPowerSkill ver = this.Pawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_Inspire.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Inspire_ver");
+                MagicPowerSkill pwr = this.Pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Inspire.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Inspire_pwr");
+                MagicPowerSkill ver = this.Pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Inspire.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Inspire_ver");
                 this.pwrVal = pwr.level;
                 this.verVal = ver.level;
             }
@@ -55,8 +55,8 @@ namespace TorannMagic
             }
             if(Find.TickManager.TicksGame % 600 == 0)
             {
-                MagicPowerSkill pwr = this.Pawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_Inspire.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Inspire_pwr");
-                MagicPowerSkill ver = this.Pawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_Inspire.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Inspire_ver");
+                MagicPowerSkill pwr = this.Pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Inspire.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Inspire_pwr");
+                MagicPowerSkill ver = this.Pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Inspire.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Inspire_ver");
                 this.pwrVal = pwr.level;
                 this.verVal = ver.level;
             }

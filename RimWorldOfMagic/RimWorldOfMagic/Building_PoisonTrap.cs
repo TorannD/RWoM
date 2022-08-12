@@ -184,7 +184,7 @@ namespace TorannMagic
                 for (int i = 0; i < pList.Count; i++)
                 {
                     Pawn p = pList[i];
-                    CompAbilityUserMight comp = p.TryGetComp<CompAbilityUserMight>();
+                    CompAbilityUserMight comp = p.GetCompAbilityUserMight();
                     if(comp != null && comp.combatItems != null && comp.combatItems.Count > 0)
                     {
                         if(comp.combatItems.Contains(this))

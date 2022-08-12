@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using Verse.AI;
 using Verse.AI.Group;
 
+
 namespace TorannMagic
 {
     public class Projectile_DisablingShot : Projectile_AbilityBase
@@ -25,8 +26,8 @@ namespace TorannMagic
             Pawn victim = hitThing as Pawn;
             try
             {
-                CompAbilityUserMight comp = pawn.GetComp<CompAbilityUserMight>();
-                //MightPowerSkill ver = pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_DisablingShot.FirstOrDefault((MightPowerSkill x) => x.label == "TM_DisablingShot_ver");
+                CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
+                //MightPowerSkill ver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_DisablingShot.FirstOrDefault((MightPowerSkill x) => x.label == "TM_DisablingShot_ver");
                 //verVal = TM_Calc.GetMightSkillLevel(pawn, comp.MightData.MightPowerSkill_DisablingShot, "TM_DisablingShot", "_ver", true);
                 verVal = TM_Calc.GetSkillVersatilityLevel(pawn, TorannMagicDefOf.TM_DisablingShot);
                 MightPowerSkill str = comp.MightData.MightPowerSkill_global_strength.FirstOrDefault((MightPowerSkill x) => x.label == "TM_global_strength_pwr");
@@ -34,7 +35,7 @@ namespace TorannMagic
                 //verVal = ver.level;
                 //if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
                 //{
-                //    MightPowerSkill mver = pawn.GetComp<CompAbilityUserMight>().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
+                //    MightPowerSkill mver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
                 //    verVal = mver.level;
                 //}
                 //if (settingsRef.AICasting && !pawn.IsColonist)

@@ -74,7 +74,7 @@ namespace TorannMagic
             }
             else
             {
-                comp = this.Pawn.TryGetComp<CompAbilityUserMight>();
+                comp = this.Pawn.GetCompAbilityUserMight();
             }
         }
 

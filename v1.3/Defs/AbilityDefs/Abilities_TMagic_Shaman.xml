@@ -10,7 +10,7 @@
     <uiIconPath>UI/totem_icon</uiIconPath>
     <description>Totems are a form of magic that anchors an elemental spirit to the physical world allowing it to influence objects near the totem. This ability increases control over all types of totems.</description>
     <manaCost>0</manaCost>
-	<efficiencyReductionPercent>.02</efficiencyReductionPercent>
+	<efficiencyReductionPercent>.04</efficiencyReductionPercent>
 	<learnChance>.7</learnChance>
 	<canCopy>false</canCopy>
 	<shouldInitialize>false</shouldInitialize>
@@ -56,7 +56,7 @@
     <uiIconPath>UI/totem_lightning_icon</uiIconPath>
     <description>Creates a lightning totem at the target location. Lasts 1 game hr and discharges electrical bolts at enemies within 40m every 2-3 seconds.</description>
     <manaCost>0.40</manaCost>
-	<efficiencyReductionPercent>.02</efficiencyReductionPercent>
+	<efficiencyReductionPercent>.04</efficiencyReductionPercent>
 	<canCopy>false</canCopy>
 	<shouldInitialize>true</shouldInitialize>
 	<MainVerb Class="AbilityUser.VerbProperties_Ability">
@@ -94,7 +94,7 @@
     <uiIconPath>UI/totem_earth_icon</uiIconPath>
     <description>Creates an earth totem at the target location. Lasts 1 game hour and causes tremors every 3-4 seconds that stagger all pawns within 5 cells.</description>
     <manaCost>0.35</manaCost>
-	<efficiencyReductionPercent>.02</efficiencyReductionPercent>
+	<efficiencyReductionPercent>.04</efficiencyReductionPercent>
 	<canCopy>false</canCopy>
 	<shouldInitialize>true</shouldInitialize>
 	<MainVerb Class="AbilityUser.VerbProperties_Ability">
@@ -132,7 +132,7 @@
     <uiIconPath>UI/totem_heal_icon</uiIconPath>
     <description>Creates a healing totem at the target location. Lasts 1 game hour and periodically heals nearby pawns.</description>
     <manaCost>0.30</manaCost>
-	<efficiencyReductionPercent>.02</efficiencyReductionPercent>
+	<efficiencyReductionPercent>.04</efficiencyReductionPercent>
 	<canCopy>false</canCopy>
 	<shouldInitialize>true</shouldInitialize>
 	<MainVerb Class="AbilityUser.VerbProperties_Ability">

@@ -18,8 +18,8 @@ namespace TorannMagic
 
             Pawn pawn = this.CasterPawn;
             Map map = this.CasterPawn.Map;
-            CompAbilityUserMagic comp = pawn.GetComp<CompAbilityUserMagic>();
-            pwrVal = pawn.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_EnchantedBody.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_EnchantedBody_pwr").level;
+            CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
+            pwrVal = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_EnchantedBody.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_EnchantedBody_pwr").level;
             ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
             if (settingsRef.AIHardMode && !pawn.IsColonist)
             {

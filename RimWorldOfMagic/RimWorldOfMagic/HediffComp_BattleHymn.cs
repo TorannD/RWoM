@@ -36,7 +36,7 @@ namespace TorannMagic
             bool spawned = base.Pawn.Spawned;
             if (spawned)
             {
-                CompAbilityUserMagic comp = this.Pawn.GetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = this.Pawn.GetCompAbilityUserMagic();
                 pwrVal = TM_Calc.GetSkillPowerLevel(Pawn, TorannMagicDefOf.TM_BattleHymn);
                 verVal = TM_Calc.GetSkillVersatilityLevel(Pawn, TorannMagicDefOf.TM_BattleHymn);
                 effVal = TM_Calc.GetSkillEfficiencyLevel(Pawn, TorannMagicDefOf.TM_BattleHymn);
@@ -75,7 +75,7 @@ namespace TorannMagic
             bool flag4 = Find.TickManager.TicksGame % chantFrequency == 0;
             if (flag4 && map != null)
             {
-                CompAbilityUserMagic comp = this.Pawn.GetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = this.Pawn.GetCompAbilityUserMagic();
                 if (comp.Mana.CurLevel > (.09f - (.009f * effVal)))
                 {
                     List<Pawn> pawns = this.Pawn.Map.mapPawns.AllPawnsSpawned;

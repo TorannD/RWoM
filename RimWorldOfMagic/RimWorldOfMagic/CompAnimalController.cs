@@ -101,7 +101,7 @@ namespace TorannMagic
                 {
                     if (summonerPawn != null)
                     {
-                        CompAbilityUserMagic comp = summonerPawn.TryGetComp<CompAbilityUserMagic>();
+                        CompAbilityUserMagic comp = summonerPawn.GetCompAbilityUserMagic();
                         if (comp != null)
                         {
                             verVal = TM_Calc.GetSkillVersatilityLevel(summonerPawn, TorannMagicDefOf.TM_GuardianSpirit);
@@ -163,7 +163,7 @@ namespace TorannMagic
                                     if(Rand.Chance(hexChance))
                                     {
                                         HealthUtility.AdjustSeverity(p, TorannMagicDefOf.TM_HexHD, 1f);
-                                        CompAbilityUserMagic bondedMagicComp = this.summonerPawn.TryGetComp<CompAbilityUserMagic>();
+                                        CompAbilityUserMagic bondedMagicComp = this.summonerPawn.GetCompAbilityUserMagic();
 
                                         if (bondedMagicComp != null && !bondedMagicComp.HexedPawns.Contains(p) && bondedMagicComp.MagicData != null && bondedMagicComp.MagicData.MagicPowersShaman.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Hex).learned)
                                         {
@@ -252,18 +252,17 @@ namespace TorannMagic
             Map map = this.Pawn.Map;
             IntVec3 targetPos = target.Position;
             IntVec3 tmpPos = targetPos;
-            if (!target.DestroyedOrNull() && target is Pawn)
+            if (!target.DestroyedOrNull() && target is Pawn targetPawn)
             {
-                Pawn p = target as Pawn;
-                if (p.Rotation == Rot4.East)
+                if (targetPawn.Rotation == Rot4.East)
                 {
                     tmpPos.x--;
                 }
-                else if (p.Rotation == Rot4.West)
+                else if (targetPawn.Rotation == Rot4.West)
                 {
                     tmpPos.x++;
                 }
-                else if (p.Rotation == Rot4.North)
+                else if (targetPawn.Rotation == Rot4.North)
                 {
                     tmpPos.z--;
                 }
@@ -284,9 +283,8 @@ namespace TorannMagic
 
         public void DoStrike(Thing target)
         {
-            if (target != null && target is Pawn)
+            if (target != null && target is Pawn t)
             {
-                Pawn t = target as Pawn;
                 if (t.Faction == null || (t.Faction != null && t.Faction != this.Pawn.Faction))
                 {
                     for (int i = 0; i < 4; i++)
@@ -419,9 +417,9 @@ namespace TorannMagic
             {
                 return false;
             }
-            if(target is Pawn)
+            if(target is Pawn targetPawn)
             {
-                return !(target as Pawn).Downed;
+                return !targetPawn.Downed;
             }
             if(target.Position.DistanceToEdge(this.Pawn.Map) < 8)
             {

@@ -64,9 +64,9 @@ namespace TorannMagic
             if (!this.initialized)
             {
                 caster = this.launcher as Pawn;
-                CompAbilityUserMagic comp = caster.GetComp<CompAbilityUserMagic>();
-                MagicPowerSkill pwr = caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_OrbitalStrike.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_OrbitalStrike_pwr");
-                MagicPowerSkill ver = caster.GetComp<CompAbilityUserMagic>().MagicData.MagicPowerSkill_OrbitalStrike.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_OrbitalStrike_ver");
+                CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
+                MagicPowerSkill pwr = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_OrbitalStrike.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_OrbitalStrike_pwr");
+                MagicPowerSkill ver = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_OrbitalStrike.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_OrbitalStrike_ver");
                 verVal = ver.level;
                 pwrVal = pwr.level;
                 this.arcaneDmg = comp.arcaneDmg;

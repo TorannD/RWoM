@@ -62,7 +62,7 @@ namespace TorannMagic
             {
                 if(comp == null && TM_Calc.IsMightUser(this.Pawn))
                 {
-                    comp = this.Pawn.GetComp<CompAbilityUserMight>();
+                    comp = this.Pawn.GetCompAbilityUserMight();
                     int pwrVal = comp.MightData.MightPowerSkill_FieldTraining.FirstOrDefault((MightPowerSkill x) => x.label == "TM_FieldTraining_pwr").level;
                     if (pwrVal >= 4)
                     {

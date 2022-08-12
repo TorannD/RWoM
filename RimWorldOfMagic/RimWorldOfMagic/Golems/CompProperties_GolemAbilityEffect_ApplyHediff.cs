@@ -28,9 +28,8 @@ namespace TorannMagic.Golems
         public override void Apply(LocalTargetInfo target, Pawn caster, TM_GolemAbilityDef ability, float effectLevel = 1f, float effectBonus = 1f)
         {
             base.Apply(target, caster, ability);
-            if (target.Thing != null && target.Thing is Pawn)
+            if (target.Thing != null && target.Thing is Pawn p)
             {
-                Pawn p = target.Thing as Pawn;
                 HealthUtility.AdjustSeverity(p, hediff, severity * LevelModifier * effectBonus);
             }
         }

@@ -3,6 +3,7 @@ using Verse;
 using AbilityUser;
 using System.Linq;
 
+
 namespace TorannMagic
 {
     public class Verb_BowTraining : Verb_UseAbility
@@ -11,7 +12,7 @@ namespace TorannMagic
         {
             Map map = base.CasterPawn.Map;
             Pawn pawn = base.CasterPawn;
-            CompAbilityUserMight comp = pawn.GetComp<CompAbilityUserMight>();
+            CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
             int pwrVal = TM_Calc.GetSkillPowerLevel(pawn, this.Ability.Def as TMAbilityDef);
 
             if (pawn != null && !pawn.Dead)

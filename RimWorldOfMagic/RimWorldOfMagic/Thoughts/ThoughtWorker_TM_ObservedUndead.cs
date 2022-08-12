@@ -10,13 +10,25 @@ namespace TorannMagic.Thoughts
     {
         private const float radius = 12f;
 
+        private readonly HashSet<TraitDef> unaffectedByUndeadTraits = new HashSet<TraitDef>()
+        {
+            TorannMagicDefOf.TM_OKWithDeath,
+            TorannMagicDefOf.DeathKnight,
+            TorannMagicDefOf.Undead,
+            TorannMagicDefOf.Necromancer,
+            TorannMagicDefOf.Lich,
+            TraitDefOf.Psychopath,
+            TraitDefOf.Bloodlust,
+            TraitDefOf.Masochist
+        };
+
         protected override ThoughtState CurrentStateInternal(Pawn pawn)
         {
             if(!pawn.Spawned || !pawn.RaceProps.Humanlike)
             {
                 return false;
             }
-            if (pawn.story.traits.HasTrait(TorannMagicDefOf.TM_OKWithDeath) || pawn.story.traits.HasTrait(TorannMagicDefOf.DeathKnight) || pawn.story.traits.HasTrait(TorannMagicDefOf.Undead) || pawn.story.traits.HasTrait(TorannMagicDefOf.Necromancer) || pawn.story.traits.HasTrait(TorannMagicDefOf.Lich) || pawn.story.traits.HasTrait(TraitDefOf.Psychopath) || pawn.story.traits.HasTrait(TraitDefOf.Bloodlust) || pawn.story.traits.HasTrait(TraitDef.Named("Masochist")))
+            if (pawn.story.traits.allTraits.Any(t => unaffectedByUndeadTraits.Contains(t.def)))
             {
                 return false;
             }

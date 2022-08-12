@@ -18,7 +18,7 @@ namespace TorannMagic
             if (caster != null && this.currentTarget != null && this.currentTarget.Thing != null && currentTarget.Thing is Pawn)
             { 
                 Pawn pawn = this.currentTarget.Thing as Pawn;
-                CompAbilityUserMight comp = caster.GetComp<CompAbilityUserMight>();
+                CompAbilityUserMight comp = caster.GetCompAbilityUserMight();
                 MightPowerSkill ver = comp.MightData.MightPowerSkill_PistolSpec.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PistolSpec_ver");
                 DamageInfo dinfo = new DamageInfo(DamageDefOf.Stun, Mathf.RoundToInt(comp.weaponDamage * TorannMagicDefOf.TM_PistolWhip.weaponDamageFactor + ver.level), 4, (float)-1, this.CasterPawn, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
                 BodyPartRecord hitPart = pawn.health.hediffSet.GetRandomNotMissingPart(dinfo.Def, BodyPartHeight.Undefined, BodyPartDepth.Outside, null);

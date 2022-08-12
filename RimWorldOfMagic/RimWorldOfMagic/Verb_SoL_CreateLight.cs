@@ -39,7 +39,7 @@ namespace TorannMagic
 
             if (pawn != null && !pawn.Downed)
             {
-                CompAbilityUserMagic comp = pawn.TryGetComp<CompAbilityUserMagic>();
+                CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
                 if (comp != null && comp.SoL != null)
                 {
                     if (!comp.SoL.IsGlowing)
