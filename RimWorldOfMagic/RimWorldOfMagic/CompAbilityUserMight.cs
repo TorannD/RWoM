@@ -1308,47 +1308,66 @@ namespace TorannMagic
             this.ResolveStamina();
         }
 
+        private static HashSet<ushort> mightTraitIndexes = new HashSet<ushort>()
+        {
+            TorannMagicDefOf.TM_Monk.index,
+            TorannMagicDefOf.DeathKnight.index,
+            TorannMagicDefOf.TM_Psionic.index,
+            TorannMagicDefOf.Gladiator.index,
+            TorannMagicDefOf.TM_Sniper.index,
+            TorannMagicDefOf.Bladedancer.index,
+            TorannMagicDefOf.Ranger.index,
+            TorannMagicDefOf.Faceless.index,
+            TorannMagicDefOf.TM_Commander.index,
+            TorannMagicDefOf.TM_SuperSoldier.index,
+            TorannMagicDefOf.TM_Wayfarer.index
+        };
+
         public bool IsMightUser
         {
             get
             {
                 if (Pawn?.story == null) return false;
-                if (this.customClass != null) return true;
-                if (this.customClass == null && this.customIndex == -2)
+                if (customClass != null) return true;
+
+                if (customIndex == -2)
                 {
-                    this.customIndex = TM_ClassUtility.CustomClassIndexOfBaseFighterClass(this.Pawn.story.traits.allTraits);
-                    if (this.customIndex >= 0)
+                    customIndex = TM_ClassUtility.CustomClassIndexOfBaseFighterClass(this.Pawn.story.traits.allTraits);
+                    if (customIndex >= 0)
                     {
-                        if (!TM_ClassUtility.CustomClasses[this.customIndex].isFighter)
+                        if (!TM_ClassUtility.CustomClasses[customIndex].isFighter)
                         {
-                            this.customIndex = -1;
+                            customIndex = -1;
                             return false;
                         }
                         else
                         {
-                            this.customClass = TM_ClassUtility.CustomClasses[this.customIndex];
+                            customClass = TM_ClassUtility.CustomClasses[customIndex];
                             return true;
                         }
                     }
-                }                
-                if (Pawn.story.traits.allTraits.Any(t => mightTraitIndexes.Contains(t.def.index)
-                || TM_Calc.IsWayfarer(base.Pawn)
-                || (this.AdvancedClasses != null && this.AdvancedClasses.Count > 0)))
+                }
+                if (
+                    Pawn.story.traits.allTraits.Any(t =>  mightTraitIndexes.Contains(t.def.index))
+                    || TM_Calc.IsWayfarer(Pawn)
+                    || AdvancedClasses != null && AdvancedClasses.Count > 0
+                )
                 {
                     return true;
-                }                
-                else if (TM_Calc.HasAdvancedClass(this.Pawn))
+                }
+                else if (TM_Calc.HasAdvancedClass(Pawn))
                 {
                     bool hasAdvClass = false;
-                    foreach (TMDefs.TM_CustomClass cc in TM_ClassUtility.GetAdvancedClassesForPawn(this.Pawn))
+                    foreach (TMDefs.TM_CustomClass cc in TM_ClassUtility.GetAdvancedClassesForPawn(Pawn))
                     {
                         if (cc.isFighter)
                         {
-                            this.AdvancedClasses.Add(cc);
+                            AdvancedClasses.Add(cc);
                             hasAdvClass = true;
                             break;
                         }
                     }
+
                     return hasAdvClass;
                 }
                 return false;
@@ -1357,13 +1376,13 @@ namespace TorannMagic
 
         public int MightUserLevel
         {
-            get => MightData?.MightUserLevel ?? 0;            
+            get => MightData?.MightUserLevel ?? 0;
             set
             {
                 if (value > MightData.MightUserLevel)
                 {
                     MightData.MightAbilityPoints++;
-                    if (MightData.MightUserXP < GetXPForLevel(value - 1))
+                    if (MightData.MightUserXP < GetXPForLevel(value-1))
                     {
                         MightData.MightUserXP = GetXPForLevel(value-1);
                     }

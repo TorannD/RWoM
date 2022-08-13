@@ -2236,45 +2236,72 @@ namespace TorannMagic
             }
         }
 
-        public bool IsMagicUser 
+        private static HashSet<ushort> magicTraitIndexes = new HashSet<ushort>()
+        {
+            TorannMagicDefOf.Enchanter.index,
+            TorannMagicDefOf.BloodMage.index,
+            TorannMagicDefOf.Technomancer.index,
+            TorannMagicDefOf.Geomancer.index,
+            TorannMagicDefOf.Warlock.index,
+            TorannMagicDefOf.Succubus.index,
+            TorannMagicDefOf.Faceless.index,
+            TorannMagicDefOf.InnerFire.index,
+            TorannMagicDefOf.HeartOfFrost.index,
+            TorannMagicDefOf.StormBorn.index,
+            TorannMagicDefOf.Arcanist.index,
+            TorannMagicDefOf.Paladin.index,
+            TorannMagicDefOf.Summoner.index,
+            TorannMagicDefOf.Druid.index,
+            TorannMagicDefOf.Necromancer.index,
+            TorannMagicDefOf.Lich.index,
+            TorannMagicDefOf.Priest.index,
+            TorannMagicDefOf.TM_Bard.index,
+            TorannMagicDefOf.Chronomancer.index,
+            TorannMagicDefOf.ChaosMage.index,
+            TorannMagicDefOf.TM_Wanderer.index
+        };
+
+        public bool IsMagicUser
         {
             get
             {
                 if (Pawn?.story == null) return false;
+                if (customClass != null) return true;
 
-                if (this.customClass != null) return true;
-                if (this.customClass == null && this.customIndex == -2)
+                if (customIndex == -2)
                 {
-                    this.customIndex = TM_ClassUtility.CustomClassIndexOfBaseMageClass(this.Pawn.story.traits.allTraits);
-                    if (this.customIndex >= 0)
+                    customIndex = TM_ClassUtility.CustomClassIndexOfBaseMageClass(Pawn.story.traits.allTraits);
+                    if (customIndex >= 0)
                     {
                         TM_CustomClass foundCustomClass = TM_ClassUtility.CustomClasses[customIndex];
                         if (!foundCustomClass.isMage)
                         {
-                            this.customIndex = -1;
+                            customIndex = -1;
                             return false;
                         }
                         else
                         {
-                            this.customClass = foundCustomClass;
+                            customClass = foundCustomClass;
                             return true;
                         }
                     }
                 }
-                if (Pawn.story.traits.allTraits.Any(t => magicTraitIndexes.Contains(t.def.index) 
-                || TM_Calc.IsWanderer(base.Pawn) 
-                || (this.AdvancedClasses != null && this.AdvancedClasses.Count > 0)))
+                if (
+                    Pawn.story.traits.allTraits.Any(t => magicTraitIndexes.Contains(t.def.index))
+                    || TM_Calc.IsWanderer(Pawn)
+                    || AdvancedClasses != null && AdvancedClasses.Count > 0
+                )
                 {
                     return true;
                 }
-                else if(TM_Calc.HasAdvancedClass(this.Pawn))
+                else if(TM_Calc.HasAdvancedClass(Pawn))
                 {
                     bool hasMageAdvClass = false;
-                    foreach(TMDefs.TM_CustomClass cc in TM_ClassUtility.GetAdvancedClassesForPawn(this.Pawn))
+                    foreach(TMDefs.TM_CustomClass cc in TM_ClassUtility.GetAdvancedClassesForPawn(Pawn))
                     {
                         if(cc.isMage)
                         {
-                            this.AdvancedClasses.Add(cc);
+                            AdvancedClasses.Add(cc);
                             hasMageAdvClass = true;
                         }
                     }
@@ -2546,7 +2573,7 @@ namespace TorannMagic
                         //this.MagicData.AllMagicPowers[z] == this.MagicData.MagicPowersWD.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Dominate))
                         //{
                         //    this.MagicData.AllMagicPowers[z].learned = false;
-                        //}                        
+                        //}
                         if (this.MagicData.AllMagicPowers[z].requiresScroll)
                         {
                             this.MagicData.AllMagicPowers[z].learned = false;
@@ -8933,10 +8960,10 @@ namespace TorannMagic
                 Pawn abilityUser = base.Pawn;
                 int index = TM_ClassUtility.CustomClassIndexOfBaseMageClass(abilityUser.story.traits.allTraits);
                 if (index >= 0)
-                {                   
+                {
                     this.customClass = TM_ClassUtility.CustomClasses[index];
                     this.customIndex = index;
-                    LoadCustomClassAbilities(this.customClass);                    
+                    LoadCustomClassAbilities(this.customClass);
                 }                
                 else
                 {
@@ -10109,7 +10136,7 @@ namespace TorannMagic
                                                     AddPawnAbility(TorannMagicDefOf.TM_Hex_MentalAssault);
                                                     AddPawnAbility(TorannMagicDefOf.TM_Hex_Pain);
                                                 }
-                                                
+
                                                 RemovePawnAbility(tmad);
                                                 AddPawnAbility(tmad);
                                             }
