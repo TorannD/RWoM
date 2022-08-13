@@ -384,7 +384,7 @@ namespace TorannMagic
                         {
                             return true;
                         }
-                    }                    
+                    }
                 }
                 else
                 {
@@ -405,31 +405,22 @@ namespace TorannMagic
                             return true;
                         }
                     }
-                }                                
+                }
             }
             return false;
         }
 
         public static bool HasAdvancedClass(Pawn p)
-        {               
-            if (p != null && p.story != null && p.story.traits != null)
+        {
+            if (p?.story?.traits == null) return false;
+
+            for (int i = 0; i < p.story.traits.allTraits.Count; i++)
             {
-                List<TM_CustomClass> customClasses = TM_ClassUtility.CustomClasses;
-                for (int i = 0; i < customClasses.Count; i++)
-                {
-                    if (customClasses[i].isAdvancedClass)
-                    {
-                        foreach(Trait t in p.story.traits.allTraits)
-                        {
-                            if(t.def == customClasses[i].classTrait)
-                            {
-                                return true;
-                            }
-                        }                          
-                    }
-                }
+                if (TM_ClassUtility.CustomAdvancedClassTraitIndexMap.TryGetValue(p.story.traits.allTraits[i].def.index) != null)
+                    return true;
             }
-            return false;            
+
+            return false;
         }
 
         public static bool HasAdvancedMageRequirements(Pawn p, TMDefs.TM_CustomClass cc, out string failMessage)
@@ -551,19 +542,18 @@ namespace TorannMagic
         public static bool IsWanderer(Pawn pawn)
         {
             CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
-            if (comp != null)
+            if (comp == null) return false;
+
+            if (pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Wanderer))
             {
-                if (pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Wanderer))
+                return true;
+            }
+            else if (pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Wayfarer) || (comp.customClass != null && comp.customClass.classFighterAbilities.Contains(TorannMagicDefOf.TM_FieldTraining))) //pawn is a wayfarer with appropriate skill level
+            {
+                int lvl = comp.MightData.MightPowerSkill_FieldTraining.First((MightPowerSkill x) => x.label == "TM_FieldTraining_eff").level;
+                if (lvl >= 15)
                 {
                     return true;
-                }
-                else if (pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Wayfarer) || (comp.customClass != null && comp.customClass.classFighterAbilities.Contains(TorannMagicDefOf.TM_FieldTraining))) //pawn is a wayfarer with appropriate skill level
-                {
-                    int lvl = comp.MightData.MightPowerSkill_FieldTraining.FirstOrDefault((MightPowerSkill x) => x.label == "TM_FieldTraining_eff").level;
-                    if (lvl >= 15)
-                    {
-                        return true;
-                    }
                 }
             }
             return false;

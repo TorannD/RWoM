@@ -11,6 +11,7 @@ using Verse.AI;
 using Verse.Sound;
 using AbilityUserAI;
 using TorannMagic.Ideology;
+using TorannMagic.TMDefs;
 
 namespace TorannMagic
 {
@@ -2193,59 +2194,72 @@ namespace TorannMagic
             }
         }
 
+        private static HashSet<ushort> magicTraitIndexes = new HashSet<ushort>()
+        {
+            TorannMagicDefOf.Enchanter.index,
+            TorannMagicDefOf.BloodMage.index,
+            TorannMagicDefOf.Technomancer.index,
+            TorannMagicDefOf.Geomancer.index,
+            TorannMagicDefOf.Warlock.index,
+            TorannMagicDefOf.Succubus.index,
+            TorannMagicDefOf.Faceless.index,
+            TorannMagicDefOf.InnerFire.index,
+            TorannMagicDefOf.HeartOfFrost.index,
+            TorannMagicDefOf.StormBorn.index,
+            TorannMagicDefOf.Arcanist.index,
+            TorannMagicDefOf.Paladin.index,
+            TorannMagicDefOf.Summoner.index,
+            TorannMagicDefOf.Druid.index,
+            TorannMagicDefOf.Necromancer.index,
+            TorannMagicDefOf.Lich.index,
+            TorannMagicDefOf.Priest.index,
+            TorannMagicDefOf.TM_Bard.index,
+            TorannMagicDefOf.Chronomancer.index,
+            TorannMagicDefOf.ChaosMage.index,
+            TorannMagicDefOf.TM_Wanderer.index
+        };
+
         public bool IsMagicUser 
         {
             get
             {
                 if (Pawn?.story == null) return false;
+                if (customClass != null) return true;
 
-                if (this.customClass != null)
+                if (customClass == null && customIndex == -2)
                 {
-                    return true;
-                }
-                if (this.customClass == null && this.customIndex == -2)
-                {
-                    this.customIndex = TM_ClassUtility.IsCustomClassIndex(this.Pawn.story.traits.allTraits);
-                    if (this.customIndex >= 0)
+                    customIndex = TM_ClassUtility.IsCustomClassIndex(Pawn.story.traits.allTraits);
+                    if (customIndex >= 0)
                     {
-                        if (!TM_ClassUtility.CustomClasses[this.customIndex].isMage || TM_ClassUtility.CustomClasses[this.customIndex].isAdvancedClass)
+                        TM_CustomClass foundCustomClass = TM_ClassUtility.CustomClasses[customIndex];
+                        if (!foundCustomClass.isMage || foundCustomClass.isAdvancedClass)
                         {
-                            this.customIndex = -1;
+                            customIndex = -1;
                             return false;
                         }
                         else
                         {
-                            this.customClass = TM_ClassUtility.CustomBaseClasses[this.customIndex];
+                            customClass = foundCustomClass;
                             return true;
                         }
                     }
                 }
-                bool flag4 = base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Enchanter) || base.Pawn.story.traits.HasTrait(TorannMagicDefOf.BloodMage) ||
-                    base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Technomancer) || base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Geomancer) ||
-                    base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Warlock) || base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Succubus) ||
-                    base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless) || base.Pawn.story.traits.HasTrait(TorannMagicDefOf.InnerFire) ||
-                    base.Pawn.story.traits.HasTrait(TorannMagicDefOf.HeartOfFrost) || base.Pawn.story.traits.HasTrait(TorannMagicDefOf.StormBorn) ||
-                    base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Arcanist) || base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Paladin) ||
-                    base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Summoner) || base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Druid) ||
-                    (base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Necromancer) || base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Lich)) ||
-                    base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Priest) || base.Pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Bard) ||
-                    base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Chronomancer) || TM_Calc.IsWanderer(base.Pawn) || base.Pawn.story.traits.HasTrait(TorannMagicDefOf.ChaosMage);
-                if (flag4)
+                if (
+                    Pawn.story.traits.allTraits.Any(t => magicTraitIndexes.Contains(t.def.index))
+                    || TM_Calc.IsWanderer(Pawn)
+                    || AdvancedClasses != null && AdvancedClasses.Count > 0
+                )
                 {
                     return true;
                 }
-                if(this.AdvancedClasses != null && this.AdvancedClasses.Count > 0)
-                {
-                    return true;
-                }
-                else if(TM_Calc.HasAdvancedClass(this.Pawn))
+                else if(TM_Calc.HasAdvancedClass(Pawn))
                 {
                     bool hasMageAdvClass = false;
                     foreach(TMDefs.TM_CustomClass cc in TM_ClassUtility.GetAdvancedClassesForPawn(this.Pawn))
                     {
                         if(cc.isMage)
                         {
-                            this.AdvancedClasses.Add(cc);
+                            AdvancedClasses.Add(cc);
                             hasMageAdvClass = true;
                         }
                     }

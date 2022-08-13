@@ -115,9 +115,12 @@ namespace TorannMagic
         {
             Material material = traitCache.GetOrCreate(Pawn.ThingID, () =>
             {
-                Trait markTrait =
-                    Pawn.story.traits.allTraits.FirstOrDefault(trait => TraitIconMap.ContainsKey(trait.def));
-                return markTrait != null ? TraitIconMap.Get(markTrait.def).IconMaterial : null;
+                for (int i = 0; i < Pawn.story.traits.allTraits.Count; i++)
+                {
+                    var iconInfo = TraitIconMap.TryGetValue(Pawn.story.traits.allTraits[i].def);
+                    if (iconInfo != null) return iconInfo.IconMaterial;
+                }
+                return null;
             }, 5);
 
             if (material != null)

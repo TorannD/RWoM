@@ -85,9 +85,9 @@ namespace TorannMagic
 
         protected override Job TryGiveJob(Pawn pawn)
         {
-            if (pawn != null && pawn.Map != null && pawn.health != null && pawn.health.hediffSet != null && pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_ChiHD) && !pawn.Drafted)
+            if (pawn?.Map != null && pawn.health?.hediffSet != null && pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_ChiHD) && !pawn.Drafted)
             {
-                if (pawn.InBed() || HealthAIUtility.ShouldSeekMedicalRest(pawn) || !(pawn.GetPosture() == PawnPosture.Standing))
+                if (pawn.InBed() || HealthAIUtility.ShouldSeekMedicalRest(pawn) || pawn.GetPosture() != PawnPosture.Standing)
                 {
                     return null;
                 }

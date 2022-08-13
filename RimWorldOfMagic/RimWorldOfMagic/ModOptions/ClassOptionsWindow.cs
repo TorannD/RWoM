@@ -28,7 +28,7 @@ namespace TorannMagic.ModOptions
         {
             int num = 0;
             float rowHeight = 28f;
-            Rect sRect = new Rect(inRect.x, inRect.y, inRect.width - 36f, inRect.height + 296f + TM_ClassUtility.CustomClasses.Count * 40);
+            Rect sRect = new Rect(inRect.x, inRect.y, inRect.width - 36f, inRect.height + 296f + TM_ClassUtility.CustomClasses.Length * 40);
             scrollPosition = GUI.BeginScrollView(inRect, scrollPosition, sRect, false, true);
             //GUI.BeginGroup(inRect);
             
@@ -211,7 +211,7 @@ namespace TorannMagic.ModOptions
             Widgets.Label(customRect, "TM_CustomClasses".Translate());
             GUI.color = Color.white;
             num++;
-            for(int i = 0; i < TM_ClassUtility.CustomClasses.Count; i++)
+            for(int i = 0; i < TM_ClassUtility.CustomClasses.Length; i++)
             {
                 TMDefs.TM_CustomClass cClass = TM_ClassUtility.CustomClasses[i];
                 bool classEnabled = Settings.Instance.CustomClass[cClass.classTrait.ToString()];

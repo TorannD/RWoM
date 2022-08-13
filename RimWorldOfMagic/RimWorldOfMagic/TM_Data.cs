@@ -175,31 +175,32 @@ namespace TorannMagic
         {
             get
             {
-                List<TraitDef> magicTraits = new List<TraitDef>();
-                magicTraits.Clear();
-                magicTraits.Add(TorannMagicDefOf.Arcanist);
-                magicTraits.Add(TorannMagicDefOf.InnerFire);
-                magicTraits.Add(TorannMagicDefOf.HeartOfFrost);
-                magicTraits.Add(TorannMagicDefOf.StormBorn);
-                magicTraits.Add(TorannMagicDefOf.Druid);
-                magicTraits.Add(TorannMagicDefOf.Priest);
-                magicTraits.Add(TorannMagicDefOf.Necromancer);
-                magicTraits.Add(TorannMagicDefOf.Technomancer);
-                magicTraits.Add(TorannMagicDefOf.Geomancer);
-                magicTraits.Add(TorannMagicDefOf.Warlock);
-                magicTraits.Add(TorannMagicDefOf.Succubus);
-                magicTraits.Add(TorannMagicDefOf.ChaosMage);
-                magicTraits.Add(TorannMagicDefOf.Paladin);
-                magicTraits.Add(TorannMagicDefOf.Summoner);
-                magicTraits.Add(TorannMagicDefOf.Lich);
-                magicTraits.Add(TorannMagicDefOf.TM_Bard);
-                magicTraits.Add(TorannMagicDefOf.Chronomancer);
-                magicTraits.Add(TorannMagicDefOf.Enchanter);
-                magicTraits.Add(TorannMagicDefOf.BloodMage);
-                magicTraits.Add(TorannMagicDefOf.TM_Wanderer);
-                magicTraits.Add(TorannMagicDefOf.TM_Brightmage);
-                magicTraits.Add(TorannMagicDefOf.TM_Shaman);
-                magicTraits.Add(TorannMagicDefOf.TM_Golemancer);
+                List<TraitDef> magicTraits = new List<TraitDef>
+                {
+                    TorannMagicDefOf.Arcanist,
+                    TorannMagicDefOf.InnerFire,
+                    TorannMagicDefOf.HeartOfFrost,
+                    TorannMagicDefOf.StormBorn,
+                    TorannMagicDefOf.Druid,
+                    TorannMagicDefOf.Priest,
+                    TorannMagicDefOf.Necromancer,
+                    TorannMagicDefOf.Technomancer,
+                    TorannMagicDefOf.Geomancer,
+                    TorannMagicDefOf.Warlock,
+                    TorannMagicDefOf.Succubus,
+                    TorannMagicDefOf.ChaosMage,
+                    TorannMagicDefOf.Paladin,
+                    TorannMagicDefOf.Summoner,
+                    TorannMagicDefOf.Lich,
+                    TorannMagicDefOf.TM_Bard,
+                    TorannMagicDefOf.Chronomancer,
+                    TorannMagicDefOf.Enchanter,
+                    TorannMagicDefOf.BloodMage,
+                    TorannMagicDefOf.TM_Wanderer,
+                    TorannMagicDefOf.TM_Brightmage,
+                    TorannMagicDefOf.TM_Shaman,
+                    TorannMagicDefOf.TM_Golemancer
+                };
                 foreach (TMDefs.TM_CustomClass cc in TM_ClassUtility.CustomClasses)
                 {
                     if (cc.isMage && !magicTraits.Contains(cc.classTrait))
@@ -254,19 +255,20 @@ namespace TorannMagic
         {
             get
             {
-                List<TraitDef> mightTraits = new List<TraitDef>();
-                mightTraits.Clear();
-                mightTraits.Add(TorannMagicDefOf.Bladedancer);
-                mightTraits.Add(TorannMagicDefOf.DeathKnight);
-                mightTraits.Add(TorannMagicDefOf.Gladiator);
-                mightTraits.Add(TorannMagicDefOf.Faceless);
-                mightTraits.Add(TorannMagicDefOf.TM_Sniper);
-                mightTraits.Add(TorannMagicDefOf.Ranger);
-                mightTraits.Add(TorannMagicDefOf.TM_Psionic);
-                mightTraits.Add(TorannMagicDefOf.TM_Monk);
-                mightTraits.Add(TorannMagicDefOf.TM_Commander);
-                mightTraits.Add(TorannMagicDefOf.TM_SuperSoldier);
-                mightTraits.Add(TorannMagicDefOf.TM_Wayfarer);
+                List<TraitDef> mightTraits = new List<TraitDef>
+                {
+                    TorannMagicDefOf.Bladedancer,
+                    TorannMagicDefOf.DeathKnight,
+                    TorannMagicDefOf.Gladiator,
+                    TorannMagicDefOf.Faceless,
+                    TorannMagicDefOf.TM_Sniper,
+                    TorannMagicDefOf.Ranger,
+                    TorannMagicDefOf.TM_Psionic,
+                    TorannMagicDefOf.TM_Monk,
+                    TorannMagicDefOf.TM_Commander,
+                    TorannMagicDefOf.TM_SuperSoldier,
+                    TorannMagicDefOf.TM_Wayfarer
+                };
                 foreach (TMDefs.TM_CustomClass cc in TM_ClassUtility.CustomClasses)
                 {
                     if (cc.isFighter && !mightTraits.Contains(cc.classTrait))

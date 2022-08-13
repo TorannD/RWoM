@@ -7,7 +7,6 @@ using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 using Verse;
 using Verse.Sound;
@@ -16,7 +15,6 @@ using AbilityUserAI;
 using TorannMagic.Conditions;
 using TorannMagic.TMDefs;
 using TorannMagic.Golems;
-using RimWorld.QuestGen;
 using System.Diagnostics;
 using TorannMagic.Utils;
 
@@ -437,24 +435,20 @@ namespace TorannMagic
             }
             private static void Postfix(TraitSet __instance, Trait trait, Pawn ___pawn)
             {
-                List<TMDefs.TM_CustomClass> acList = TM_ClassUtility.CustomAdvancedClasses;
-                for(int i = 0; i < acList.Count; i++)
+                TM_CustomClass advancedClass = TM_ClassUtility.CustomAdvancedClassTraitIndexMap.TryGetValue(trait.def.index);
+                if (advancedClass == null) return;
+                
+                if (advancedClass.isMage)
                 {
-                    if(trait.def == acList[i].classTrait)
-                    {
-                        if (acList[i].isMage)
-                        {
-                            CompAbilityUserMagic targetComp = ___pawn.GetCompAbilityUserMagic();
-                            targetComp.CompTick();
-                            targetComp.AddAdvancedClass(TM_ClassUtility.GetCustomClassOfTrait(trait.def));
-                        }
-                        if(acList[i].isFighter)
-                        {
-                            CompAbilityUserMight targetComp = ___pawn.GetCompAbilityUserMight();
-                            targetComp.CompTick();
-                            targetComp.AddAdvancedClass(TM_ClassUtility.GetCustomClassOfTrait(trait.def));
-                        }
-                    }
+                    CompAbilityUserMagic targetComp = ___pawn.GetCompAbilityUserMagic();
+                    targetComp.CompTick();
+                    targetComp.AddAdvancedClass(TM_ClassUtility.GetCustomClassOfTrait(trait.def));
+                }
+                if(advancedClass.isFighter)
+                {
+                    CompAbilityUserMight targetComp = ___pawn.GetCompAbilityUserMight();
+                    targetComp.CompTick();
+                    targetComp.AddAdvancedClass(TM_ClassUtility.GetCustomClassOfTrait(trait.def));
                 }
             }
         }
@@ -464,72 +458,69 @@ namespace TorannMagic
         {            
             private static void Postfix(TraitSet __instance, Trait trait, Pawn ___pawn)
             {
-                List<TMDefs.TM_CustomClass> acList = TM_ClassUtility.CustomAdvancedClasses;
-                for (int i = 0; i < acList.Count; i++)
+                TM_CustomClass advancedClass = TM_ClassUtility.CustomAdvancedClassTraitIndexMap.TryGetValue(trait.def.index);
+                if (advancedClass == null) return;
+                
+                if(advancedClass.isMage)
                 {
-                    if (trait.def == acList[i].classTrait)
+                    CompAbilityUserMagic mComp = ___pawn.GetCompAbilityUserMagic();
+                    if(mComp != null)
                     {
-                        if(acList[i].isMage)
+                        mComp.RemoveAdvancedClass(TM_ClassUtility.GetCustomClassOfTrait(trait.def));
+                    }
+                    //clean up magic comp if this is the last remaining item keeping the pawn a magic user
+                    if (!mComp.IsMagicUser && ___pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_MagicUserHD)) 
+                    {
+                        bool addMagicComp = false;
+                        ModOptions.TM_DebugTools.RemoveMagicComp(mComp);
+                        try
                         {
-                            CompAbilityUserMagic mComp = ___pawn.GetCompAbilityUserMagic();
-                            if(mComp != null)
-                            {
-                                mComp.RemoveAdvancedClass(TM_ClassUtility.GetCustomClassOfTrait(trait.def));
-                            }
-                            //clean up magic comp if this is the last remaining item keeping the pawn a magic user
-                            if (!mComp.IsMagicUser && ___pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_MagicUserHD)) 
-                            {
-                                bool addMagicComp = false;
-                                ModOptions.TM_DebugTools.RemoveMagicComp(mComp);
-                                try
-                                {
-                                    ___pawn.AllComps.Remove(mComp);
-                                    addMagicComp = true;
-                                }
-                                catch (NullReferenceException ex)
-                                {
-                                    Log.Warning("failed to remove magic comp");
-                                }
-                                ModOptions.TM_DebugTools.RemoveClassHediffs(___pawn);
-                                if (addMagicComp)
-                                {
-                                    mComp = new CompAbilityUserMagic();
-                                    mComp.parent = ___pawn;
-                                    ___pawn.AllComps.Add(mComp);
-                                }
-                            }
+                            ___pawn.AllComps.Remove(mComp);
+                            addMagicComp = true;
                         }
-                        if(acList[i].isFighter)
+                        catch (NullReferenceException ex)
                         {
-                            CompAbilityUserMight pComp = ___pawn.GetCompAbilityUserMight();
-                            if(pComp != null)
-                            {
-                                pComp.RemoveAdvancedClass(TM_ClassUtility.GetCustomClassOfTrait(trait.def));
-                            }
-                            if (!pComp.IsMightUser && ___pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_MightUserHD))
-                            {
-                                bool addMightComp = false;
-                                ModOptions.TM_DebugTools.RemoveMightComp(pComp);
-                                try
-                                {
-                                    ___pawn.AllComps.Remove(pComp);
-                                    addMightComp = true;
-                                }
-                                catch (NullReferenceException ex)
-                                {
-                                    Log.Warning("failed to remove might comp");
-                                }
-                                ModOptions.TM_DebugTools.RemoveClassHediffs(___pawn);
-                                if (addMightComp)
-                                {
-                                    pComp = new CompAbilityUserMight();
-                                    pComp.parent = ___pawn;
-                                    ___pawn.AllComps.Add(pComp);
-                                }
-                            }
+                            Log.Warning("failed to remove magic comp");
+                        }
+                        ModOptions.TM_DebugTools.RemoveClassHediffs(___pawn);
+                        if (addMagicComp)
+                        {
+                            mComp = new CompAbilityUserMagic();
+                            mComp.parent = ___pawn;
+                            ___pawn.AllComps.Add(mComp);
                         }
                     }
                 }
+                if(advancedClass.isFighter)
+                {
+                    CompAbilityUserMight pComp = ___pawn.GetCompAbilityUserMight();
+                    if(pComp != null)
+                    {
+                        pComp.RemoveAdvancedClass(TM_ClassUtility.GetCustomClassOfTrait(trait.def));
+                    }
+                    if (!pComp.IsMightUser && ___pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_MightUserHD))
+                    {
+                        bool addMightComp = false;
+                        ModOptions.TM_DebugTools.RemoveMightComp(pComp);
+                        try
+                        {
+                            ___pawn.AllComps.Remove(pComp);
+                            addMightComp = true;
+                        }
+                        catch (NullReferenceException ex)
+                        {
+                            Log.Warning("failed to remove might comp");
+                        }
+                        ModOptions.TM_DebugTools.RemoveClassHediffs(___pawn);
+                        if (addMightComp)
+                        {
+                            pComp = new CompAbilityUserMight();
+                            pComp.parent = ___pawn;
+                            ___pawn.AllComps.Add(pComp);
+                        }
+                    }
+                }
+                
             }
         }
 
@@ -568,9 +559,8 @@ namespace TorannMagic
         {
             private static void Postfix(CompPowerBattery __instance, float amount)
             {
-                if(__instance.parent != null && __instance.parent is Building_TMGolemBase)
+                if(__instance.parent is Building_TMGolemBase gb)
                 {
-                    Building_TMGolemBase gb = __instance.parent as Building_TMGolemBase;
                     gb.Energy.DrawPowerNew(amount);
                 }
             }
@@ -2966,7 +2956,7 @@ namespace TorannMagic
                         i--;
                         hasFighterTrait = true;
                     }
-                    for (int j = 0; j < TM_ClassUtility.CustomClasses.Count; j++)
+                    for (int j = 0; j < TM_ClassUtility.CustomClasses.Length; j++)
                     {
                         if (TM_ClassUtility.CustomClasses[j].classTrait == pawnTraits[i].def)
                         {
@@ -5132,16 +5122,16 @@ namespace TorannMagic
                         mageFactor = settingsRef.FactionMageSettings[pawn.Faction.def.defName];
                     }
                 }
-                List<TMDefs.TM_CustomClass> customFighters = TM_ClassUtility.CustomFighterClasses;
-                List<TMDefs.TM_CustomClass> customMages = TM_ClassUtility.CustomMageClasses;
+                TM_CustomClass[] customFighters = TM_ClassUtility.CustomFighterClasses;
+                TM_CustomClass[] customMages = TM_ClassUtility.CustomMageClasses;
 
-                mageCount += customMages.Count;
-                fighterCount += customFighters.Count;
-                if (customFighters.Count > 0 || settingsRef.Gladiator || settingsRef.Bladedancer || settingsRef.Ranger || settingsRef.Sniper || settingsRef.Faceless || settingsRef.DeathKnight || settingsRef.Psionic || settingsRef.Monk || settingsRef.Wayfarer || settingsRef.Commander || settingsRef.SuperSoldier)
+                mageCount += customMages.Length;
+                fighterCount += customFighters.Length;
+                if (customFighters.Length > 0 || settingsRef.Gladiator || settingsRef.Bladedancer || settingsRef.Ranger || settingsRef.Sniper || settingsRef.Faceless || settingsRef.DeathKnight || settingsRef.Psionic || settingsRef.Monk || settingsRef.Wayfarer || settingsRef.Commander || settingsRef.SuperSoldier)
                 {
                     anyFightersEnabled = true;
                 }
-                if (customMages.Count > 0 || settingsRef.Arcanist || settingsRef.FireMage || settingsRef.IceMage || settingsRef.LitMage || settingsRef.Druid || settingsRef.Paladin || settingsRef.Summoner || settingsRef.Priest || settingsRef.Necromancer || settingsRef.Bard || settingsRef.Demonkin || settingsRef.Geomancer || settingsRef.Technomancer || settingsRef.BloodMage || settingsRef.Enchanter || settingsRef.Chronomancer || settingsRef.Wanderer || settingsRef.ChaosMage)
+                if (customMages.Length > 0 || settingsRef.Arcanist || settingsRef.FireMage || settingsRef.IceMage || settingsRef.LitMage || settingsRef.Druid || settingsRef.Paladin || settingsRef.Summoner || settingsRef.Priest || settingsRef.Necromancer || settingsRef.Bard || settingsRef.Demonkin || settingsRef.Geomancer || settingsRef.Technomancer || settingsRef.BloodMage || settingsRef.Enchanter || settingsRef.Chronomancer || settingsRef.Wanderer || settingsRef.ChaosMage)
                 {
                     anyMagesEnabled = true;
                 }
@@ -6772,11 +6762,9 @@ namespace TorannMagic
 
                         for (int i = 0; i < colonist.story.traits.allTraits.Count; i++)
                         {
-                            TraitDef trait = colonist.story.traits.allTraits[i].def;
-                            if (TraitIconMap.ContainsKey(trait))
-                            {
-                                return TraitIconMap.Get(trait);                                
-                            }
+                            var iconValue = TraitIconMap.TryGetValue(colonist.story.traits.allTraits[i].def);
+                            if (iconValue != null)
+                                return iconValue;
                         }
                         return null;
                     }, 5);
