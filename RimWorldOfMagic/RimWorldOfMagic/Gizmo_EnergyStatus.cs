@@ -23,6 +23,7 @@ namespace TorannMagic
         private static readonly Texture2D FullNecroticTex = SolidColorMaterials.NewSolidColorTexture(new Color(0.32f, 0.4f, 0.0f));
         private static readonly Texture2D FullBrightmageTex = SolidColorMaterials.NewSolidColorTexture(new Color(1f, .95f, .9f));
         private static readonly Texture2D FullSoLTex = SolidColorMaterials.NewSolidColorTexture(new Color(.9f, .8f, .2f));
+        private static readonly Texture2D FullSpiritTex = SolidColorMaterials.NewSolidColorTexture(new Color(0f, 0.5f, .5f));
 
         private static Texture2D CustomTex;
 
@@ -50,6 +51,7 @@ namespace TorannMagic
                 bool isBloodMage = pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_BloodHD"), false);
                 bool isBrightmage = pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_LightCapacitanceHD);
                 bool isMonk = pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_ChiHD, false);
+                bool isSpirit = TM_Calc.IsPossessedByOrIsSpirit(pawn);
                 bool isEnchantedItem = this.iComp != null;
                 bool isCustom = false;
 
@@ -118,6 +120,10 @@ namespace TorannMagic
                     {
                         boostBloodSev += hediffBoost.Severity;
                     }
+                }
+                if(isSpirit)
+                {
+                    barCount++;                    
                 }
                 if(isBrightmage)
                 {
@@ -308,6 +314,24 @@ namespace TorannMagic
                             {
                                 fillPercent = 0f;
                                 Widgets.FillableBar(rect2, fillPercent, Gizmo_EnergyStatus.FullManaTex, Gizmo_EnergyStatus.EmptyShieldBarTex, false);
+                                Widgets.Label(rect2, "");
+                            }
+                            yShift += (barHeight) + barSpacing;
+                        }
+                        if (isSpirit)
+                        {
+                            rect2.y = rect.y + yShift;
+                            Need_Spirit nd = pawn.needs.TryGetNeed(TorannMagicDefOf.TM_SpiritND) as Need_Spirit;
+                            try
+                            {
+                                fillPercent = nd.CurLevel / nd.MaxLevel;
+                                Widgets.FillableBar(rect2, fillPercent, Gizmo_EnergyStatus.FullSpiritTex, Gizmo_EnergyStatus.EmptyShieldBarTex, false);
+                                Widgets.Label(rect2, "" + (nd.CurLevel).ToString("F0") + " / " + (nd.MaxLevel).ToString("F0"));
+                            }
+                            catch
+                            {
+                                fillPercent = 0f;
+                                Widgets.FillableBar(rect2, fillPercent, Gizmo_EnergyStatus.FullSpiritTex, Gizmo_EnergyStatus.EmptyShieldBarTex, false);
                                 Widgets.Label(rect2, "");
                             }
                             yShift += (barHeight) + barSpacing;

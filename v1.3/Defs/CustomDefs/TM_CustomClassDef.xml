@@ -71,7 +71,7 @@
 			<classHediff>TM_LightCapacitanceHD</classHediff>
 			<classTexturePath>brightMageMark</classTexturePath> 
 			<classIconPath>PsiMark</classIconPath>		
-			<classIconColor>(1,0.95,.9)</classIconColor>		
+			<classIconColor>(1,1,.8)</classIconColor>		
 			<tornScript>Torn_BookOfTheSun</tornScript>			
 			<fullScript>BookOfTheSun</fullScript>			
 			

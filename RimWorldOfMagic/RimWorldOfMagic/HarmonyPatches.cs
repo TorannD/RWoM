@@ -374,7 +374,7 @@ namespace TorannMagic
         {
             private static bool Prefix(Pawn __instance, DamageInfo? dinfo, Hediff exactCulprit = null)
             {                
-                if(dinfo.HasValue && dinfo.Value.Instigator != null && dinfo.Value.Instigator is Pawn && TM_Calc.IsPossessedByOrIsSpirit(dinfo.Value.Instigator as Pawn))
+                if(dinfo.HasValue && dinfo.Value.Instigator != null && dinfo.Value.Instigator is Pawn pPawn && TM_Calc.IsPossessedByOrIsSpirit(pPawn))
                 {
                     Pawn s = dinfo.Value.Instigator as Pawn;
                     if (s.needs != null)
@@ -538,7 +538,7 @@ namespace TorannMagic
         {
             private static bool Prefix(Pawn_IdeoTracker __instance, Pawn ___pawn)
             {
-                if (___pawn.needs.mood == null)
+                if (___pawn?.needs?.mood == null)
                 {
                     return false;
                 }
@@ -4642,7 +4642,7 @@ namespace TorannMagic
                     __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_Hex" ||
                     __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_Discord" ||
                     __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_AdvancedHeal" ||
-                    !__instance.verbProps.requireLineOfSight)
+                    __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_ControlSpiritStorm")
                 {
                     //Ignores line of sight
                     //                    

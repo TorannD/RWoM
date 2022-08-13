@@ -1870,14 +1870,23 @@ namespace TorannMagic
                     this.AddPawnAbility(TorannMagicDefOf.TM_DismissFertileLands);
                 }
             }
-            for (int z = 0; z < this.MagicData.AllMagicPowers.Count; z++)
+            //to fix filtering of succubus abilities
+            if(this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Succubus))
             {
-                MagicPower mp = this.MagicData.AllMagicPowers[z];
-                if(mp.TMabilityDefs.Contains(TorannMagicDefOf.TM_Branding) && !this.Pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Golemancer))
+                for(int i = 0; i < this.MagicData.MagicPowersWD.Count; i++)
                 {
-                    foreach(TMAbilityDef tm in TM_Data.BrandList())
+                    MagicPower wd = this.MagicData.MagicPowersWD[i];
+                    if (wd.learned && wd.abilityDef == TorannMagicDefOf.TM_SoulBond)
                     {
-                        RemovePawnAbility(tm);
+                        this.MagicData.MagicPowersSD.FirstOrDefault((MagicPower p) => p.abilityDef == TorannMagicDefOf.TM_SoulBond).learned = true;
+                    }
+                    else if(wd.learned && wd.abilityDef == TorannMagicDefOf.TM_ShadowBolt)
+                    {
+                        this.MagicData.MagicPowersSD.FirstOrDefault((MagicPower p) => p.abilityDef == TorannMagicDefOf.TM_ShadowBolt).learned = true;
+                    }
+                    else if (wd.learned && wd.abilityDef == TorannMagicDefOf.TM_Dominate)
+                    {
+                        this.MagicData.MagicPowersSD.FirstOrDefault((MagicPower p) => p.abilityDef == TorannMagicDefOf.TM_Dominate).learned = true;
                     }
                 }
             }
@@ -2205,17 +2214,17 @@ namespace TorannMagic
                 }
                 if (this.customClass == null && this.customIndex == -2)
                 {
-                    this.customIndex = TM_ClassUtility.IsCustomClassIndex(this.Pawn.story.traits.allTraits);
+                    this.customIndex = TM_ClassUtility.CustomClassIndexOfBaseMageClass(this.Pawn.story.traits.allTraits);
                     if (this.customIndex >= 0)
                     {
-                        if (!TM_ClassUtility.CustomClasses[this.customIndex].isMage || TM_ClassUtility.CustomClasses[this.customIndex].isAdvancedClass)
+                        if (!TM_ClassUtility.CustomClasses[this.customIndex].isMage)
                         {
                             this.customIndex = -1;
                             return false;
                         }
                         else
                         {
-                            this.customClass = TM_ClassUtility.CustomBaseClasses[this.customIndex];
+                            this.customClass = TM_ClassUtility.CustomClasses[this.customIndex];
                             return true;
                         }
                     }
@@ -8891,15 +8900,12 @@ namespace TorannMagic
             if (flag11)
             {
                 Pawn abilityUser = base.Pawn;
-                int index = TM_ClassUtility.IsCustomClassIndex(abilityUser.story.traits.allTraits);
+                int index = TM_ClassUtility.CustomClassIndexOfBaseMageClass(abilityUser.story.traits.allTraits);
                 if (index >= 0)
-                {                    
-                    if (TM_ClassUtility.CustomClasses[index].isMage && !TM_ClassUtility.CustomClasses[index].isAdvancedClass)
-                    {
-                        this.customClass = TM_ClassUtility.CustomClasses[index];
-                        this.customIndex = index;
-                        LoadCustomClassAbilities(this.customClass);
-                    }
+                {                   
+                    this.customClass = TM_ClassUtility.CustomClasses[index];
+                    this.customIndex = index;
+                    LoadCustomClassAbilities(this.customClass);                    
                 }                
                 else
                 {

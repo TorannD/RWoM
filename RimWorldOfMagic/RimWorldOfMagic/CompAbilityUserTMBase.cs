@@ -121,7 +121,13 @@ namespace TorannMagic
             }, 5);
 
             if (material != null)
+            {
+                if (customClass != null)
+                {
+                    material.color = customClass.classIconColor;                    
+                }
                 DrawMark(material, new Vector3(.28f, 1f, .28f));
+            }
         }
     }
 }

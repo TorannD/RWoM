@@ -33,7 +33,7 @@ namespace TorannMagic
                 thingList = this.DestinationCell.GetThingList(map);
                 int z = 0;
                 while (z < thingList.Count)
-                {
+                {                    
                     corpseThing = thingList[z];
                     if (corpseThing != null)
                     {
@@ -53,7 +53,8 @@ namespace TorannMagic
                             validTarget = true;
                             break;
                         }
-                    }                    
+                    }
+                    z++;
                 }
                 if(!validTarget)
                 {

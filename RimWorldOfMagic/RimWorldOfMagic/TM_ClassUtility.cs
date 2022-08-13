@@ -64,26 +64,18 @@ namespace TorannMagic
                 if (!cc.isAdvancedClass) CustomBaseClasses.Add(cc); //base classes cannot also be advanced classes, but advanced classes can act like base classes
                 else CustomAdvancedClasses.Add(cc);
             }
+            LoadClassIndexes();
+        }
+
+        public static void LoadClassIndexes()
+        {
             CustomClassTraitIndexes = new Dictionary<ushort, int>();
+            CustomClassTraitIndexes.Clear();
             for (int i = 0; i < CustomClasses.Count; i++)
             {
                 CustomClassTraitIndexes[CustomClasses[i].classTrait.index] = i;
             }
         }
-
-        //public static List<TM_CustomClass> CustomBaseClasses()
-        //{
-        //    List<TM_CustomClass> ccTemp = new List<TM_CustomClass>();
-        //    ccTemp.Clear();
-        //    foreach(TM_CustomClass cc in CustomClasses)
-        //    {
-        //        if(!cc.isAdvancedClass)
-        //        {
-        //            ccTemp.Add(cc);
-        //        }
-        //    }
-        //    return ccTemp;
-        //}
 
         public static List<TraitDef> CustomClassTraitDefs
         {
@@ -98,79 +90,6 @@ namespace TorannMagic
             }            
         }
 
-        //public static List<TM_CustomClass> CustomMageClasses
-        //{
-        //    get
-        //    {
-        //        List<TM_CustomClass> mageClasses = new List<TM_CustomClass>();
-        //        mageClasses.Clear();
-        //        for(int i = 0; i < CustomClasses().Count; i++)
-        //        {
-        //            TM_CustomClass cc = CustomClasses()[i];
-        //            if (cc.isMage && ModOptions.Settings.Instance.CustomClass[cc.classTrait.ToString()])
-        //            {
-        //                if (cc.isAdvancedClass)
-        //                {
-        //                    if (cc.advancedClassOptions != null && cc.advancedClassOptions.canSpawnWithClass)
-        //                    {
-        //                        mageClasses.Add(cc);
-        //                    }
-        //                }
-        //                else
-        //                {
-        //                    mageClasses.Add(cc);
-        //                }                        
-        //            }
-        //        }
-        //        return mageClasses;
-        //    }
-        //}
-
-        //public static List<TM_CustomClass> CustomFighterClasses
-        //{
-        //    get
-        //    {
-        //        List<TM_CustomClass> fighterClasses = new List<TM_CustomClass>();
-        //        fighterClasses.Clear();
-        //        for (int i = 0; i < CustomClasses().Count; i++)
-        //        {
-        //            TM_CustomClass cc = CustomClasses()[i];
-        //            if (cc.isFighter && ModOptions.Settings.Instance.CustomClass[cc.classTrait.ToString()])
-        //            {
-        //                if (cc.isAdvancedClass)
-        //                {
-        //                    if(cc.advancedClassOptions != null && cc.advancedClassOptions.canSpawnWithClass)
-        //                    {
-        //                        fighterClasses.Add(cc);
-        //                    }
-        //                }
-        //                else
-        //                {
-        //                    fighterClasses.Add(cc);
-        //                }                        
-        //            }
-        //        }
-        //        return fighterClasses;
-        //    }
-        //}
-
-        //public static List<TM_CustomClass> CustomAdvancedClasses
-        //{
-        //    get
-        //    {
-        //        List<TM_CustomClass> advClasses = new List<TM_CustomClass>();
-        //        advClasses.Clear();
-        //        for (int i = 0; i < CustomClasses().Count; i++)
-        //        {
-        //            if (CustomClasses()[i].isAdvancedClass && ModOptions.Settings.Instance.CustomClass[CustomClasses()[i].classTrait.ToString()])
-        //            {
-        //                advClasses.Add(CustomClasses()[i]);
-        //            }
-        //        }
-        //        return advClasses;
-        //    }
-        //}
-
         private static Dictionary<ushort, int> CustomClassTraitIndexes;  // Dictionary to more quickly determine trait's CustomClasses index
 
         public static int IsCustomClassIndex(List<Trait> allTraits)
@@ -179,7 +98,7 @@ namespace TorannMagic
             {
                 if (CustomClassTraitIndexes == null)
                 {
-                    LoadCustomClasses();
+                    LoadClassIndexes();
                 }
                 for (int i = 0; i < allTraits.Count; i++)
                 {
@@ -199,6 +118,40 @@ namespace TorannMagic
                 if (CustomClasses[i].classTrait.defName == trait.defName)
                 {
                     return i;
+                }
+            }
+            return -2;
+        }
+
+        public static int CustomClassIndexOfBaseMageClass(List<Trait> allTraits)
+        {
+            for (int i = 0; i < CustomClasses.Count; i++)
+            {
+                if (CustomClasses[i].isAdvancedClass) continue;
+                if (!CustomClasses[i].isMage) continue;
+                for (int j = 0; j < allTraits.Count; j++)
+                {
+                    if (allTraits[j].def == CustomClasses[i].classTrait)
+                    {
+                        return i;
+                    }
+                }
+            }
+            return -2;
+        }
+
+        public static int CustomClassIndexOfBaseFighterClass(List<Trait> allTraits)
+        {
+            for(int i = 0; i < CustomClasses.Count; i++)
+            {
+                if (CustomClasses[i].isAdvancedClass) continue;
+                if (!CustomClasses[i].isFighter) continue;
+                for(int j = 0; j < allTraits.Count; j++)
+                {
+                    if(allTraits[j].def == CustomClasses[i].classTrait)
+                    {
+                        return i;
+                    }
                 }
             }
             return -2;

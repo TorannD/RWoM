@@ -223,7 +223,7 @@ namespace TorannMagic
                         else if (pawn.story.traits.HasTrait(TorannMagicDefOf.Paladin))
                         {
                             Rect inRect3 = new Rect(rect.x, rect11.y, MagicCardUtility.PowersColumnWidth, MagicCardUtility.PowersColumnHeight);
-                            MagicCardUtility.CustomPowersHandler(inRect3, pawn.GetCompAbilityUserMagic(), pawn.GetCompAbilityUserMagic().MagicData.AllMagicPowersWithSkills, GetAbilityList(comp, comp.MagicData.MagicPowersA), TexButton.TMTex_SkillPointUsed);
+                            MagicCardUtility.CustomPowersHandler(inRect3, pawn.GetCompAbilityUserMagic(), pawn.GetCompAbilityUserMagic().MagicData.AllMagicPowersWithSkills, GetAbilityList(comp, comp.MagicData.MagicPowersP), TexButton.TMTex_SkillPointUsed);
 
                             //if (pawn.GetCompAbilityUserMagic().spell_HolyWrath == true)
                             //{
@@ -1833,18 +1833,30 @@ namespace TorannMagic
                 while (enumerator.MoveNext())
                 {
                     MagicPower power = enumerator.Current;
-                    TMAbilityDef ability = (TMAbilityDef)power.abilityDef;                    
-                    if(!abilityList.Contains(ability))
+                    TMAbilityDef ability = (TMAbilityDef)power.abilityDef;
+                    if (!abilityList.Contains(ability))
                     {
                         goto EnumerationStart;
                     }
-                    if (power == compMagic.MagicData.MagicPowersWD.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_SoulBond) ||
-                         power == compMagic.MagicData.MagicPowersWD.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_ShadowBolt) ||
-                         power == compMagic.MagicData.MagicPowersWD.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Dominate))
+                    if (compMagic.Pawn.story.traits.HasTrait(TorannMagicDefOf.Warlock))
                     {
-                        goto EnumerationStart;
+                        if (power == compMagic.MagicData.MagicPowersSD.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_SoulBond) ||
+                             power == compMagic.MagicData.MagicPowersSD.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_ShadowBolt) ||
+                             power == compMagic.MagicData.MagicPowersSD.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Dominate))
+                        {
+                            goto EnumerationStart;
+                        }
                     }
-                    
+                    else if (compMagic.Pawn.story.traits.HasTrait(TorannMagicDefOf.Succubus))
+                    {
+                        if (power == compMagic.MagicData.MagicPowersWD.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_SoulBond) ||
+                             power == compMagic.MagicData.MagicPowersWD.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_ShadowBolt) ||
+                             power == compMagic.MagicData.MagicPowersWD.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Dominate))
+                        {
+                            goto EnumerationStart;
+                        }
+                    }
+
                     Text.Font = GameFont.Small;
                     Rect rect = new Rect(MagicCardUtility.MagicCardSize.x / 2f - MagicCardUtility.MagicButtonSize, num, MagicCardUtility.MagicButtonSize, MagicCardUtility.MagicButtonSize);
                     if (itnum > 1)

@@ -1233,7 +1233,7 @@ namespace TorannMagic
                     }
                 }
                 spiritComp.MagicUserLevel += spiritLevelChange;
-                spiritComp.MagicData.MagicAbilityPoints--;
+                //spiritComp.MagicData.MagicAbilityPoints--;
             }
             if (p.story != null && p.story.traits != null)
             {
@@ -1259,12 +1259,13 @@ namespace TorannMagic
             {
                 p.SetFaction(null);
             }
+            p.health.RemoveHediff(hd);
             if (possessorHD.wasDead && !p.Dead && !hostKilled)
             {
                 p.Kill(null, null);
             }
             //pComp.RemoveAdvancedClass(TM_ClassUtility.GetCustomClassOfTrait(TorannMagicDefOf.TM_Possessed));
-            //p.health.RemoveHediff(hd);   
+            //  
             if (destroySpirit)
             {
                 TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Ghost, spirit.DrawPos, spirit.Map, 1.2f, .25f, 0f, .25f, 0, Rand.Range(2f, 3f), 0, 0);

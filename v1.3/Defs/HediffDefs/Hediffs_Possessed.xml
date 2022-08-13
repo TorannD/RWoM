@@ -230,8 +230,7 @@
   
   <ThoughtDef>
     <defName>TM_SpiritPossessedTD</defName>
-    <workerClass>ThoughtWorker_Hediff</workerClass>
-    <hediff>TM_SpiritPossessionHD</hediff>
+    <workerClass>TorannMagic.Thoughts.ThoughtWorker_TM_LivingPossessed</workerClass>
     <validWhileDespawned>true</validWhileDespawned>
     <stages>
       <li>
