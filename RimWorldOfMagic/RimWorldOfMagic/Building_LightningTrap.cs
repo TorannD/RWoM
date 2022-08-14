@@ -16,24 +16,19 @@ namespace TorannMagic
             Scribe_Values.Look<bool>(ref this.iceTrap, "iceTrap", false, false);
         }
 
-        public new void Spring(Pawn p)
+        public override void Spring(Pawn p)
         {
-            base.Spring(p);
             IntVec3 targetPos = Position;
             targetPos.z += 2;
             LocalTargetInfo t = targetPos;
-            bool flag = t.Cell != default;
             float speed = .8f;
             if(extendedTrap)
             {
                 speed = .6f;
             }
-            if (flag)
+            if (t.Cell != default)
             {
-                Thing eyeThing = new Thing
-                {
-                    def = TorannMagicDefOf.FlyingObject_LightningTrap
-                };
+                Thing eyeThing = new Thing {def = TorannMagicDefOf.FlyingObject_LightningTrap};
                 FlyingObject_LightningTrap flyingObject = (FlyingObject_LightningTrap)GenSpawn.Spawn(TorannMagicDefOf.FlyingObject_LightningTrap, Position, Map);
                 flyingObject.Launch(p, Position.ToVector3Shifted(), t.Cell, eyeThing, Faction, null, speed);
             }
