@@ -35,7 +35,6 @@ namespace TorannMagic
             Scribe_Values.Look<bool>(ref this.destroyAfterUse, "destroyAfterUse", false, false);
             Scribe_Values.Look<int>(ref this.age, "age", -1, false);
             Scribe_Values.Look<int>(ref this.duration, "duration", 600, false);
-            Scribe_Values.Look<int>(ref this.strikeDelay, "strikeDelay", 0, false);
             Scribe_Values.Look<int>(ref this.lastStrike, "lastStrike", 0, false);
             Scribe_Defs.Look<ThingDef>(ref this.fog, "fog");        
         }
@@ -151,7 +150,12 @@ namespace TorannMagic
                     Destroy();
                 }
             }
-            base.Tick();
+
+            // Explicitly doing something not great here since overall this little section being wrong is easier
+            // to maintain than the whole class having to repeat Building_Trap code. This is the code for ThingWithComps.Tick
+            // and we are skipping Building_ExplosiveProximityTrap.Tick and Building_Trap.Tick to avoid friendly trap trigger message.
+            for (int i = 0; i < AllComps.Count; i++)
+                AllComps[i].CompTick();
         }
 
         private void CheckForAgent()
