@@ -2191,12 +2191,20 @@ namespace TorannMagic
                     bool flag2 = base.Pawn.story != null;
                     if (flag2)
                     {
-                        this.firstTick = true;
-                        this.Initialize();
-                        this.ResolveMagicTab();
-                        this.ResolveMagicPowers();
-                        this.ResolveMana();
-                        this.DoOncePerLoad();
+                        Trait t = base.Pawn.story.traits.GetTrait(TorannMagicDefOf.TM_Possessed);
+                        if (t != null && !base.Pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_SpiritPossessionHD))
+                        {
+                            base.Pawn.story.traits.RemoveTrait(t);
+                        }
+                        else
+                        {
+                            this.firstTick = true;
+                            this.Initialize();
+                            this.ResolveMagicTab();
+                            this.ResolveMagicPowers();
+                            this.ResolveMana();
+                            this.DoOncePerLoad();
+                        }
                     }
                 }
             }
@@ -7498,12 +7506,12 @@ namespace TorannMagic
 
         public void ResolveSuccubusLovin()
         {
-            if (this.Pawn.CurrentBed() != null && !this.Pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_VitalityBoostHD"), false))
+            if (this.Pawn.CurrentBed() != null && this.Pawn.ageTracker.AgeBiologicalYears > 17 && !this.Pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_VitalityBoostHD"), false))
             {
                 Pawn pawnInMyBed = TM_Calc.FindNearbyOtherPawn(this.Pawn, 1);
                 if (pawnInMyBed != null)
                 {
-                    if (pawnInMyBed.CurrentBed() != null && pawnInMyBed.RaceProps.Humanlike)
+                    if (pawnInMyBed.CurrentBed() != null && pawnInMyBed.RaceProps.Humanlike && pawnInMyBed.ageTracker.AgeBiologicalYears > 17)
                     {
                         Job job = new Job(JobDefOf.Lovin, pawnInMyBed, this.Pawn.CurrentBed());
                         this.Pawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
@@ -10181,6 +10189,12 @@ namespace TorannMagic
         {
             if (ac != null && ac.isMage && ac.isAdvancedClass)
             {
+                Trait t = base.Pawn.story.traits.GetTrait(TorannMagicDefOf.TM_Possessed);
+                if (t != null && !base.Pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_SpiritPossessionHD))
+                {
+                    base.Pawn.story.traits.RemoveTrait(t);
+                    return;
+                }
                 if (!this.AdvancedClasses.Contains(ac))
                 {
                     this.AdvancedClasses.Add(ac);

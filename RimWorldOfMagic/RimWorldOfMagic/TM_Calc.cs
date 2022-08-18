@@ -104,7 +104,6 @@ namespace TorannMagic
         {
             if (pawn == null) return false;
 
-            bool flag_Hediff = false;
             if (pawn.health?.hediffSet != null && pawn.health.hediffSet.hediffs.Any(hediff =>
                 hediff.def == TorannMagicDefOf.TM_UndeadHD
                 || hediff.def == TorannMagicDefOf.TM_UndeadAnimalHD
@@ -156,7 +155,8 @@ namespace TorannMagic
         public static bool IsUndeadNotVamp(Pawn pawn)
         {
             if (pawn?.health?.hediffSet == null) return false;
-            return pawn.health.hediffSet.hediffs.Any((Hediff x) => x.def.defName.StartsWith("ROM_Vamp"));            
+            if (pawn.health.hediffSet.hediffs.Any((Hediff x) => x.def.defName.StartsWith("ROM_Vamp"))) return false;
+            return IsUndead(pawn);
         }
 
         public static bool IsGolem(Pawn p)
@@ -962,11 +962,12 @@ namespace TorannMagic
                 int tmpIndex = Rand.RangeInclusive(0, TM_Data.EnabledMagicTraits.Count - 1);                
                 TraitDef td = TM_Data.EnabledMagicTraits[tmpIndex];
                 if (td == TorannMagicDefOf.TM_Wanderer) { }
+                else if (TM_ClassUtility.CustomAdvancedClasses.Any((TM_CustomClass x) => x.classTrait == td)) { }
                 else if (td == TorannMagicDefOf.Lich) { }
                 else if (td == TorannMagicDefOf.Warlock && p.gender == Gender.Female) { }
                 else if (td == TorannMagicDefOf.Succubus && p.gender == Gender.Male) { }
                 else
-                {                    
+                {
                     result = tmpIndex;
                 }                
             }

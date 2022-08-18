@@ -22,7 +22,7 @@ namespace TorannMagic
 
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
         {
-            bool flag = this.age < duration;
+            bool flag = this.age <= duration;
             if (!flag)
             {
                 base.Destroy(mode);

@@ -86,7 +86,14 @@ namespace TorannMagic
                 this.verb = combatToil.actor.jobs.curJob.verbToUse as Verb_UseAbility;
                 if (verb != null && verb.verbProps != null)
                 {
-                    this.duration = (int)((this.verb.verbProps.warmupTime * 60) * this.pawn.GetStatValue(StatDefOf.AimingDelayFactor, false));
+                    try
+                    {
+                        this.duration = (int)((this.verb.verbProps.warmupTime * 60) * this.pawn.GetStatValue(StatDefOf.AimingDelayFactor, false));
+                    }
+                    catch
+                    {
+                        this.duration = (int)(this.verb.verbProps.warmupTime * 60);
+                    }
                     LocalTargetInfo target = combatToil.actor.jobs.curJob.GetTarget(TargetIndex.A);
                     if (target != null && !validCastFlag)
                     {

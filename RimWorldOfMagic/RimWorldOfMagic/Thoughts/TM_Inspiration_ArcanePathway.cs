@@ -44,7 +44,7 @@ namespace TorannMagic.Thoughts
             get 
             {
                 int numTicks = (int)((def.baseDurationDays - AgeDays) * 60000f);
-                return def.baseInspectLine + " - " + TM_Data.EnabledMagicTraits[mageIndex].degreeDatas[TM_Data.EnabledMagicTraits[mageIndex].degreeDatas.FirstOrDefault().degree].label + " (" + "ExpiresIn".Translate() + ": " + numTicks.ToStringTicksToPeriod() + ")";
+                return def.baseInspectLine + " - " + TM_Data.EnabledMagicTraits[mageIndex].degreeDatas[0].label + " (" + "ExpiresIn".Translate() + ": " + numTicks.ToStringTicksToPeriod() + ")";
             }
         }
 

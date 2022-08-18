@@ -1192,7 +1192,7 @@ namespace TorannMagic
                         {
                             ResolveMightUseEvents();
                         }
-                    }
+                    }                    
                 }
                 else
                 {

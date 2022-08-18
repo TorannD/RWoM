@@ -128,7 +128,14 @@ namespace TorannMagic
                     this.verb = combatToil.actor.jobs.curJob.verbToUse as Verb_UseAbility;                    
                     if (verb != null && verb.verbProps != null)
                     {
-                        this.duration = (int)((this.verb.verbProps.warmupTime * 60) * this.pawn.GetStatValue(StatDefOf.AimingDelayFactor, false));
+                        try
+                        {
+                            this.duration = (int)((this.verb.verbProps.warmupTime * 60) * this.pawn.GetStatValue(StatDefOf.AimingDelayFactor, false));
+                        }
+                        catch
+                        {
+                            this.duration = (int)(this.verb.verbProps.warmupTime * 60);
+                        }
 
                         if (this.pawn.RaceProps.Humanlike)
                         {
@@ -277,7 +284,14 @@ namespace TorannMagic
                             //    defaultCompleteMode = ToilCompleteMode.Instant
                             //};
                             //yield return toil2;
-                            this.duration = (int)((verb.verbProps.warmupTime * 60) * this.pawn.GetStatValue(StatDefOf.AimingDelayFactor, false));
+                            try
+                            {
+                                this.duration = (int)((this.verb.verbProps.warmupTime * 60) * this.pawn.GetStatValue(StatDefOf.AimingDelayFactor, false));
+                            }
+                            catch
+                            {
+                                this.duration = (int)(this.verb.verbProps.warmupTime * 60);
+                            }
                             LocalTargetInfo target = base.TargetLocA;
                             Toil toil = new Toil();
                             toil.initAction = delegate

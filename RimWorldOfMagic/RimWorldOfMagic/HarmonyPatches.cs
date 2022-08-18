@@ -369,6 +369,18 @@ namespace TorannMagic
         //    return true;
         //} 
 
+        [HarmonyPatch(typeof(SlaveRebellionUtility), "CanParticipateInSlaveRebellion", null)]
+        public class Undead_NoSlaveRebellion_Patch
+        {
+            private static void Postfix(Pawn pawn, ref bool __result)
+            {
+                if(__result && TM_Calc.IsUndeadNotVamp(pawn))
+                {
+                    __result = false;
+                }
+            }
+        }
+
         [HarmonyPatch(typeof(Pawn), "Kill", null)]
         public class KillPossessed_Patch
         {
@@ -4642,11 +4654,12 @@ namespace TorannMagic
                     __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_Hex" ||
                     __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_Discord" ||
                     __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_AdvancedHeal" ||
-                    __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_ControlSpiritStorm")
+                    __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_ControlSpiritStorm" ||
+                    !__instance.verbProps.requireLineOfSight)
                 {
                     //Ignores line of sight
                     //                    
-                    if (__instance.CasterPawn.RaceProps.Humanlike)
+                    if (__instance.CasterPawn != null && __instance.CasterPawn.RaceProps.Humanlike)
                     {
                         Pawn pawn = __instance.CasterPawn;
                         CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
