@@ -127,6 +127,21 @@ namespace TorannMagic
 
         public TMAbilityDef mimicAbility = null;
 
+        private static HashSet<ushort> mightTraitIndexes = new HashSet<ushort>()
+        {
+            TorannMagicDefOf.TM_Monk.index,
+            TorannMagicDefOf.DeathKnight.index,
+            TorannMagicDefOf.TM_Psionic.index,
+            TorannMagicDefOf.Gladiator.index,
+            TorannMagicDefOf.TM_Sniper.index,
+            TorannMagicDefOf.Bladedancer.index,
+            TorannMagicDefOf.Ranger.index,
+            TorannMagicDefOf.Faceless.index,
+            TorannMagicDefOf.TM_Commander.index,
+            TorannMagicDefOf.TM_SuperSoldier.index,
+            TorannMagicDefOf.TM_Wayfarer.index
+        };
+
         public class ChainedMightAbility
         {
             public ChainedMightAbility(TMAbilityDef _ability, int _expirationTicks, bool _expires)
@@ -1298,11 +1313,7 @@ namespace TorannMagic
             get
             {
                 if (Pawn?.story == null) return false;
-
-                if (this.customClass != null)
-                {
-                    return true;
-                }
+                if (this.customClass != null) return true;
                 if (this.customClass == null && this.customIndex == -2)
                 {
                     this.customIndex = TM_ClassUtility.CustomClassIndexOfBaseFighterClass(this.Pawn.story.traits.allTraits);
@@ -1319,19 +1330,13 @@ namespace TorannMagic
                             return true;
                         }
                     }
-                }
-                bool flag4 = base.Pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Monk) || base.Pawn.story.traits.HasTrait(TorannMagicDefOf.DeathKnight) || base.Pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Psionic) ||
-                    base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Gladiator) || base.Pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Sniper) || base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Bladedancer) ||
-                    base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Ranger) || base.Pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless) || TM_Calc.IsWayfarer(base.Pawn) || base.Pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Commander) ||
-                    base.Pawn.story.traits.HasTrait(TorannMagicDefOf.TM_SuperSoldier);
-                if (flag4)
+                }                
+                if (Pawn.story.traits.allTraits.Any(t => mightTraitIndexes.Contains(t.def.index)
+                || TM_Calc.IsWayfarer(base.Pawn)
+                || (this.AdvancedClasses != null && this.AdvancedClasses.Count > 0)))
                 {
                     return true;
-                }
-                if (this.AdvancedClasses != null && this.AdvancedClasses.Count > 0)
-                {
-                    return true;
-                }
+                }                
                 else if (TM_Calc.HasAdvancedClass(this.Pawn))
                 {
                     bool hasAdvClass = false;
@@ -1341,12 +1346,10 @@ namespace TorannMagic
                         {
                             this.AdvancedClasses.Add(cc);
                             hasAdvClass = true;
+                            break;
                         }
                     }
-                    if (hasAdvClass)
-                    {
-                        return true;
-                    }
+                    return hasAdvClass;
                 }
                 return false;
             }
@@ -1354,28 +1357,18 @@ namespace TorannMagic
 
         public int MightUserLevel
         {
-            get
-            {
-                if (this.MightData != null)
-                {
-                    return this.MightData.MightUserLevel;
-                }
-                return 0;
-            }
+            get => MightData?.MightUserLevel ?? 0;            
             set
             {
-                bool flag = value > this.MightData.MightUserLevel;
-                if (flag)
+                if (value > MightData.MightUserLevel)
                 {
-                    this.MightData.MightAbilityPoints++;
-
-                    bool flag2 = this.MightData.MightUserXP < GetXPForLevel(value-1);
-                    if (flag2)
+                    MightData.MightAbilityPoints++;
+                    if (MightData.MightUserXP < GetXPForLevel(value - 1))
                     {
-                        this.MightData.MightUserXP = GetXPForLevel(value-1);
+                        MightData.MightUserXP = GetXPForLevel(value-1);
                     }
                 }
-                this.MightData.MightUserLevel = value;
+                MightData.MightUserLevel = value;
             }
         }
 

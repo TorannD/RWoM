@@ -18,19 +18,28 @@ namespace TorannMagic
 {
     public static class TM_ClassUtility
     {
-        public static List<TM_CustomClass> CustomClasses;
-        public static readonly List<TM_CustomClass> CustomBaseClasses = new List<TM_CustomClass>();        
-        public static readonly List<TM_CustomClass> CustomMageClasses = new List<TM_CustomClass>();
-        public static readonly List<TM_CustomClass> CustomFighterClasses = new List<TM_CustomClass>();
-        public static readonly List<TM_CustomClass> CustomAdvancedClasses = new List<TM_CustomClass>();
+        //public static List<TM_CustomClass> CustomClasses;
+        //public static readonly List<TM_CustomClass> CustomBaseClasses = new List<TM_CustomClass>();        
+        //public static readonly List<TM_CustomClass> CustomMageClasses = new List<TM_CustomClass>();
+        //public static readonly List<TM_CustomClass> CustomFighterClasses = new List<TM_CustomClass>();
+        //public static readonly List<TM_CustomClass> CustomAdvancedClasses = new List<TM_CustomClass>();
+
+        public static TM_CustomClass[] CustomClasses;
+        public static readonly Dictionary<ushort, TM_CustomClass> CustomAdvancedClassTraitIndexMap = new Dictionary<ushort, TM_CustomClass>();
+        public static TM_CustomClass[] CustomBaseClasses;
+        public static TM_CustomClass[] CustomMageClasses;
+        public static TM_CustomClass[] CustomFighterClasses;
+        public static TM_CustomClass[] CustomAdvancedClasses;
 
         public static void LoadCustomClasses()
         {
-            CustomClasses = TM_CustomClassDef.Named("TM_CustomClasses").customClasses;            
-            CustomBaseClasses.Clear();
-            CustomMageClasses.Clear();
-            CustomFighterClasses.Clear();
-            CustomAdvancedClasses.Clear();
+            CustomClasses = TM_CustomClassDef.Named("TM_CustomClasses").customClasses.ToArray();
+            CustomAdvancedClassTraitIndexMap.Clear();
+            var CustomBaseClassesList = new List<TM_CustomClass>();
+            var CustomMageClassesList = new List<TM_CustomClass>();
+            var CustomFighterClassesList = new List<TM_CustomClass>();
+            var CustomAdvancedClassesList = new List<TM_CustomClass>();
+
             foreach (TM_CustomClass cc in CustomClasses.Where(cc => Settings.Instance.CustomClass[cc.classTrait.ToString()]))
             {
                 if (cc.isMage)
@@ -39,12 +48,12 @@ namespace TorannMagic
                     {
                         if (cc.advancedClassOptions != null && cc.advancedClassOptions.canSpawnWithClass)
                         {
-                            CustomMageClasses.Add(cc);
+                            CustomMageClassesList.Add(cc);
                         }
                     }
                     else
                     {
-                        CustomMageClasses.Add(cc);
+                        CustomMageClassesList.Add(cc);
                     }                          
                 }
                 if (cc.isFighter)
@@ -53,16 +62,24 @@ namespace TorannMagic
                     {
                         if (cc.advancedClassOptions != null && cc.advancedClassOptions.canSpawnWithClass)
                         {
-                            CustomFighterClasses.Add(cc);
+                            CustomFighterClassesList.Add(cc);
                         }
                     }
                     else
                     {
-                        CustomFighterClasses.Add(cc);
+                        CustomFighterClassesList.Add(cc);
                     }                    
                 }
-                if (!cc.isAdvancedClass) CustomBaseClasses.Add(cc); //base classes cannot also be advanced classes, but advanced classes can act like base classes
-                else CustomAdvancedClasses.Add(cc);
+                if (!cc.isAdvancedClass) CustomBaseClassesList.Add(cc); //base classes cannot also be advanced classes, but advanced classes can act like base classes
+                else
+                {
+                    CustomAdvancedClassesList.Add(cc);
+                    CustomAdvancedClassTraitIndexMap[cc.classTrait.index] = cc;
+                }
+                CustomBaseClasses = CustomBaseClassesList.ToArray();
+                CustomFighterClasses = CustomFighterClassesList.ToArray();
+                CustomMageClasses = CustomMageClassesList.ToArray();
+                CustomAdvancedClasses = CustomAdvancedClassesList.ToArray();
             }
             LoadClassIndexes();
         }
@@ -71,7 +88,7 @@ namespace TorannMagic
         {
             CustomClassTraitIndexes = new Dictionary<ushort, int>();
             CustomClassTraitIndexes.Clear();
-            for (int i = 0; i < CustomClasses.Count; i++)
+            for (int i = 0; i < CustomClasses.Length; i++)
             {
                 CustomClassTraitIndexes[CustomClasses[i].classTrait.index] = i;
             }
@@ -79,15 +96,7 @@ namespace TorannMagic
 
         public static List<TraitDef> CustomClassTraitDefs
         {
-            get
-            {
-                List<TraitDef> customTraits = new List<TraitDef>();
-                for(int i = 0; i < CustomClasses.Count; i++)
-                {
-                    customTraits.Add(CustomClasses[i].classTrait);
-                }
-                return customTraits;
-            }            
+            get => CustomClasses.Select(t => t.classTrait).ToList();           
         }
 
         private static Dictionary<ushort, int> CustomClassTraitIndexes;  // Dictionary to more quickly determine trait's CustomClasses index
@@ -113,7 +122,7 @@ namespace TorannMagic
 
         public static int CustomClassIndexOfTraitDef(TraitDef trait)
         {
-            for (int i = 0; i < CustomClasses.Count; i++)
+            for (int i = 0; i < CustomClasses.Length; i++)
             {
                 if (CustomClasses[i].classTrait.defName == trait.defName)
                 {
@@ -125,7 +134,7 @@ namespace TorannMagic
 
         public static int CustomClassIndexOfBaseMageClass(List<Trait> allTraits)
         {
-            for (int i = 0; i < CustomClasses.Count; i++)
+            for (int i = 0; i < CustomClasses.Length; i++)
             {
                 if (CustomClasses[i].isAdvancedClass) continue;
                 if (!CustomClasses[i].isMage) continue;
@@ -142,7 +151,7 @@ namespace TorannMagic
 
         public static int CustomClassIndexOfBaseFighterClass(List<Trait> allTraits)
         {
-            for(int i = 0; i < CustomClasses.Count; i++)
+            for(int i = 0; i < CustomClasses.Length; i++)
             {
                 if (CustomClasses[i].isAdvancedClass) continue;
                 if (!CustomClasses[i].isFighter) continue;
@@ -183,9 +192,8 @@ namespace TorannMagic
 
         public static List<MagicPowerSkill> GetAssociatedMagicPowerSkill(CompAbilityUserMagic comp, MagicPower power)
         {
-            string str = power.TMabilityDefs.FirstOrDefault().defName.ToString() + "_";
+            string str = power.TMabilityDefs.First().defName + "_";
             List<MagicPowerSkill> skills = new List<MagicPowerSkill>();
-            skills.Clear();
             for (int i = 0; i < comp.MagicData.AllMagicPowerSkills.Count; i++)
             {
                 MagicPowerSkill mps = comp.MagicData.AllMagicPowerSkills[i];
@@ -199,9 +207,8 @@ namespace TorannMagic
 
         public static List<MightPowerSkill> GetAssociatedMightPowerSkill(CompAbilityUserMight comp, TMAbilityDef abilityDef, string var)
         {
-            string str = abilityDef.defName.ToString() + "_" + var;
+            string str = abilityDef.defName + "_" + var;
             List<MightPowerSkill> skills = new List<MightPowerSkill>();
-            skills.Clear();
             for (int i = 0; i < comp.MightData.AllMightPowerSkills.Count; i++)
             {
                 MightPowerSkill mps = comp.MightData.AllMightPowerSkills[i];
@@ -247,7 +254,7 @@ namespace TorannMagic
 
         public static TMDefs.TM_CustomClass GetRandomCustomFighter()
         {
-            List<TMDefs.TM_CustomClass> customFighters = CustomFighterClasses;
+            List<TMDefs.TM_CustomClass> customFighters = CustomFighterClasses.ToList();
             if(customFighters.Count > 0)
             {
                 return customFighters.RandomElement();
@@ -257,7 +264,7 @@ namespace TorannMagic
 
         public static TMDefs.TM_CustomClass GetRandomCustomMage()
         {
-            List<TMDefs.TM_CustomClass> customMages = CustomMageClasses;
+            List<TMDefs.TM_CustomClass> customMages = CustomMageClasses.ToList();
             if (customMages.Count > 0)
             {
                 return customMages.RandomElement();

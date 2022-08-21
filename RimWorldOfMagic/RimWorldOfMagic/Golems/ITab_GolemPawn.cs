@@ -111,7 +111,7 @@ namespace TorannMagic.Golems
                 {
                     GolemNameWindow newWindow = new GolemNameWindow();
                     newWindow.cg = golem_pawn.Golem;
-                    newWindow.golemName = golem_pawn.Name.ToStringShort;
+                    newWindow.golemName = golem_pawn.Label;
                     Find.WindowStack.Add(newWindow);
                 }
 

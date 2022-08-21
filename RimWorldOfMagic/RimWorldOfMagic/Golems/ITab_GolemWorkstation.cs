@@ -96,7 +96,7 @@ namespace TorannMagic.Golems
                     {
                         GolemNameWindow newWindow = new GolemNameWindow();
                         newWindow.cg = golem_building.GolemComp;
-                        newWindow.golemName = golem_building.GolemPawn.Name.ToStringShort;
+                        newWindow.golemName = golem_building.GolemPawn.Label;
                         Find.WindowStack.Add(newWindow);
                     }
                     //string tmpName = Widgets.TextField(rect2, golem_building.GolemPawn.LabelShortCap != "Blank" ? golem_building.GolemPawn.LabelShortCap : "");

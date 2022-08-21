@@ -32,15 +32,16 @@ namespace TorannMagic.Utils
 
         public TValue GetOrCreate(TKey key, Func<TValue> valueGetter, double secondsToTimeout)
         {
-            if (cache.ContainsKey(key) && cache[key].Timeout > DateTime.UtcNow)
+            CacheValue<TValue> cacheValue = cache.TryGetValue(key);
+            if (cacheValue != null && cacheValue.Timeout > DateTime.UtcNow)
             {
-                return cache[key].Value;
+                return cacheValue.Value;
             }
 
             if (DateTime.UtcNow > nextFlush)
             {
                 DateTime now = DateTime.UtcNow;
-                var itemsToRemove = cache.Where(kv => now > kv.Value.Timeout).ToList();
+                var itemsToRemove = cache.Where(kv => now > kv.Value.Timeout).ToArray();
                 foreach (var item in itemsToRemove)
                 {
                     cache.Remove(item.Key);
@@ -48,8 +49,9 @@ namespace TorannMagic.Utils
 
                 nextFlush = DateTime.UtcNow.AddMinutes(minutesUntilFlush);
             }
-            cache[key] = new CacheValue<TValue>(valueGetter(), secondsToTimeout);
-            return cache[key].Value;
+            cacheValue = new CacheValue<TValue>(valueGetter(), secondsToTimeout);
+            cache[key] = cacheValue;
+            return cacheValue.Value;
         }
     }
 }

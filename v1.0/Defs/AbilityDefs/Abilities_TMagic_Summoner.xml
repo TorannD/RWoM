@@ -110,7 +110,7 @@
   <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_SummonPylon</defName>
     <label>Summon defense pylon</label>
-    <uiIconPath>UI/defense_pylon</uiIconPath>
+    <uiIconPath>UI/DefensePylon_MenuIcon</uiIconPath>
     <description>Summons and manifests magical energy to form an automated defense turret that is tethered to a physical location.  The turret channels arcane current into a focal point that emits bursts of raw energy.  When the tether holding the turret to the physical world dissipates, the turret will harmlessly dissolve back into magical energy.  If the turret is destroyed, this event can be more destructive.</description>
     <manaCost>0.34</manaCost>
 	<MainVerb Class="AbilityUser.VerbProperties_Ability">

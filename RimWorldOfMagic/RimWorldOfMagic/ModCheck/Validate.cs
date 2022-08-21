@@ -60,9 +60,9 @@ namespace TorannMagic.ModCheck
         {
             public static bool IsInitialized()
             {
-                bool initialized = false;
+                bool initialized = false;               
                 foreach (ModContentPack p in LoadedModManager.RunningMods)
-                {                    
+                {
                     if (p.Name == "Children, school and learning")
                     {
                         initialized = true;

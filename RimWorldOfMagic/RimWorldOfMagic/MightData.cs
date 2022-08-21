@@ -2133,6 +2133,7 @@ namespace TorannMagic
             {
                 bool hasSkill = false;
                 string s = ability.defName.ToString();
+                if (s == "TM_PsionicBarrier_Projected") s = "TM_PsionicBarrier";
                 char[] trim = { '_', 'I', 'V', 'X' };
                 s = s.TrimEnd(trim) + "_eff";
                 for (int i = 0; i < AllMightPowerSkills.Count; i++)
@@ -2184,6 +2185,7 @@ namespace TorannMagic
             {
                 bool hasSkill = false;
                 string s = ability.defName.ToString();
+                if (s == "TM_PsionicBarrier_Projected") s = "TM_PsionicBarrier";
                 char[] trim = { '_', 'I', 'V', 'X' };
                 s = s.TrimEnd(trim) + "_ver";
                 for (int i = 0; i < AllMightPowerSkills.Count; i++)
@@ -2236,7 +2238,8 @@ namespace TorannMagic
             {
                 bool hasSkill = false;
                 string s = ability.defName.ToString();
-                char[] trim = { '_', 'I', 'V', 'X' };
+                if (s == "TM_PsionicBarrier_Projected") s = "TM_PsionicBarrier";
+                char[] trim = { '_', 'I', 'V', 'X', };
                 s = s.TrimEnd(trim) + "_pwr";
                 for (int i = 0; i < AllMightPowerSkills.Count; i++)
                 {                    

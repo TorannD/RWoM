@@ -314,35 +314,11 @@ namespace TorannMagic
 
         public static bool IsMightUser(Pawn pawn)
         {
-            if (pawn != null)
-            {
-                CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
-                if (comp != null && comp.IsMightUser && comp.MightData != null && comp.Stamina != null)
-                {
-                    return true;
-                }
-                if (pawn.needs != null)
-                {
-                    List<Need> needs = pawn.needs.AllNeeds;
-                    for (int i = 0; i < needs.Count; i++)
-                    {
-                        if (needs[i].def.defName == "TM_Stamina")
-                        {
-                            return true;
-                        }
-                    }
-                }
-                if (pawn.story != null && pawn.story.traits != null && pawn.story.traits.allTraits != null)
-                {
-                    for (int i = 0; i < pawn.story.traits.allTraits.Count; i++)
-                    {
-                        if (TM_Data.MightTraits.Contains(pawn.story.traits.allTraits[i].def))
-                        {
-                            return true;
-                        }
-                    }                    
-                }
-            }
+            if (pawn?.story?.traits?.allTraits == null) return false;
+            CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
+            if (comp != null && comp.IsMightUser && comp.MightData != null && comp.Stamina != null) return true;            
+            if (pawn.story.traits.allTraits.Any(t => TM_Data.MightTraits.Contains(t.def))) return true;
+            if (pawn.needs != null && pawn.needs.AllNeeds.Any(t => t.def == TorannMagicDefOf.TM_Stamina)) return true;
             return false;
         }
 
@@ -370,43 +346,12 @@ namespace TorannMagic
 
         public static bool IsMagicUser(Pawn pawn)
         {
-            if (pawn != null)
-            {
-                if (pawn.story != null && pawn.story.traits != null && pawn.story.traits.allTraits != null)
-                {
-                    if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
-                    {
-                        return false;
-                    }
-                    for (int i = 0; i < pawn.story.traits.allTraits.Count; i++)
-                    {
-                        if (TM_Data.MagicTraits.Contains(pawn.story.traits.allTraits[i].def))
-                        {
-                            return true;
-                        }
-                    }                    
-                }
-                else
-                {
-                    return false;
-                }
-                CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
-                if(comp != null && comp.IsMagicUser && comp.MagicData != null && comp.Mana != null)
-                {
-                    return true;
-                }
-                if (pawn.needs != null)
-                {
-                    List<Need> needs = pawn.needs.AllNeeds;
-                    for (int i = 0; i < needs.Count; i++)
-                    {
-                        if (needs[i].def.defName == "TM_Mana")
-                        {
-                            return true;
-                        }
-                    }
-                }                                
-            }
+            if (pawn?.story?.traits?.allTraits == null) return false;
+            if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless)) return false;            
+            CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
+            if (comp != null && comp.IsMagicUser && comp.MagicData != null && comp.Mana != null) return true;
+            if (pawn.story.traits.allTraits.Any(t => TM_Data.MagicTraits.Contains(t.def))) return true;
+            if (pawn.needs != null && pawn.needs.AllNeeds.Any(t => t.def == TorannMagicDefOf.TM_Mana)) return true;            
             return false;
         }
 
@@ -414,8 +359,8 @@ namespace TorannMagic
         {               
             if (p != null && p.story != null && p.story.traits != null)
             {
-                List<TM_CustomClass> customClasses = TM_ClassUtility.CustomClasses;
-                for (int i = 0; i < customClasses.Count; i++)
+                TM_CustomClass[] customClasses = TM_ClassUtility.CustomClasses;
+                for (int i = 0; i < customClasses.Length; i++)
                 {
                     if (customClasses[i].isAdvancedClass)
                     {

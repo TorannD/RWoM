@@ -18,7 +18,7 @@ namespace TorannMagic
                 TMDefs.TM_CustomClass cc = null;
                 CompAbilityUserMight comp = user.GetCompAbilityUserMight();
 
-                for (int i = 0; i < TM_ClassUtility.CustomClasses.Count; i++)
+                for (int i = 0; i < TM_ClassUtility.CustomClasses.Length; i++)
                 {
                     cc = TM_ClassUtility.CustomClasses[i];
                     if (cc.isFighter && cc.isAdvancedClass && comp != null)

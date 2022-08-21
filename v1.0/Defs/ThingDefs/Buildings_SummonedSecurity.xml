@@ -261,7 +261,7 @@
     <label>magical defense pylon</label>
     <thingClass>Building_TurretGun</thingClass>
     <graphicData>
-      <texPath>Other/defense_pylon_base</texPath>
+      <texPath>Other/DefensePylon_Base_Level0</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(2,2)</drawSize>
       <damageData>
@@ -327,7 +327,7 @@
     <defName>Launcher_DefensePylon</defName>
     <label>energy focus point</label>
     <graphicData>
-      <texPath>Other/defense_pylon_top</texPath>
+      <texPath>Other/DefensePylon_Top</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <menuHidden>true</menuHidden>
@@ -369,7 +369,7 @@
     <defName>Bullet_DefensePylon</defName>
     <label>focused magical energy</label>
     <graphicData>
-      <texPath>Spells/bullet_defense_pylon</texPath>
+      <texPath>Spells/DefensePylonCharge</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <projectile>
@@ -384,7 +384,7 @@
     <label>magical defense pylon (I)</label>
     <thingClass>Building_TurretGun</thingClass>
     <graphicData>
-      <texPath>Other/defense_pylon_base</texPath>
+      <texPath>Other/DefensePylon_Base_Level1</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(2.2,2.2)</drawSize>
       <damageData>
@@ -450,7 +450,7 @@
     <defName>Launcher_DefensePylon_I</defName>
     <label>energy focus point</label>
     <graphicData>
-      <texPath>Other/defense_pylon_top</texPath>
+      <texPath>Other/DefensePylon_Top</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <menuHidden>true</menuHidden>
@@ -493,7 +493,7 @@
     <label>magical defense pylon (II)</label>
     <thingClass>Building_TurretGun</thingClass>
     <graphicData>
-      <texPath>Other/defense_pylon_base</texPath>
+      <texPath>Other/DefensePylon_Base_Level2</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(2.3,2.3)</drawSize>
       <damageData>
@@ -558,7 +558,7 @@
     <defName>Launcher_DefensePylon_II</defName>
     <label>energy focus point</label>
     <graphicData>
-      <texPath>Other/defense_pylon_top</texPath>
+      <texPath>Other/DefensePylon_Top</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <menuHidden>true</menuHidden>
@@ -601,7 +601,7 @@
     <label>magical defense pylon (III)</label>
     <thingClass>Building_TurretGun</thingClass>
     <graphicData>
-      <texPath>Other/defense_pylon_base</texPath>
+      <texPath>Other/DefensePylon_Base_Level3</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(2.5,2.5)</drawSize>
       <damageData>
@@ -668,7 +668,7 @@
     <defName>Launcher_DefensePylon_III</defName>
     <label>energy focus point</label>
     <graphicData>
-      <texPath>Other/defense_pylon_top</texPath>
+      <texPath>Other/DefensePylon_Top</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <menuHidden>true</menuHidden>

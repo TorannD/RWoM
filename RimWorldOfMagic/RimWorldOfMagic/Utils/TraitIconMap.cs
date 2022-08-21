@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using RimWorld;
+using Verse;
 
 namespace TorannMagic.Utils
 {
@@ -65,6 +66,11 @@ namespace TorannMagic.Utils
         public static TraitIconValue Get(TraitDef traitDef)
         {
             return TraitIconMapping[traitDef.index];
+        }
+
+        public static TraitIconValue TryGetValue(TraitDef traitDef)
+        {
+            return TraitIconMapping.TryGetValue(traitDef.index);
         }
 
         public static void Set(TraitDef traitDef, TraitIconValue traitIconValue)

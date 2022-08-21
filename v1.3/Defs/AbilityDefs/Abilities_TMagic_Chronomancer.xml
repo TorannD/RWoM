@@ -161,9 +161,11 @@ When used on friendly pawns, there is no area of effect, only the primary target
 
 When applied to inanimate objects, the effect is instant and will regenerate items and restore material to a previous state. Reverse Time can be used to restore rotting food, decaying equipment, and tainted material.
 
-Living tissue will resist instant change and requires a more gradual approach. Any living pawn affected will have decreased movement and manipulation speed and their biological aging will reverse. This can remove many ailments that were caused recently as the tissue is restored to a state prior to the ailment; this includes wounds, diseases, and age related ailments that occurred within the window of time reversal.
+Living tissue will resist instant change and requires a more gradual approach. Any living pawn affected will have decreased movement and manipulation speed and their biological aging will reverse. This can remove many ailments that were caused recently as the tissue is restored to a state prior to the ailment; this includes wounds, diseases, and age related ailments that occurred within the window of time reversal. 
 
-Reverse Time can be dispelled by countering the effects with Accelerate Time.</description>
+Warning: when used to reverse a death condition, both the chronomancer and pawn returned from death will suffer memory and skill loss.
+
+Reverse Time can be dispelled/countered with Accelerate Time.</description>
         <manaCost>0.50</manaCost>
 		<efficiencyReductionPercent>.08</efficiencyReductionPercent>
 		<learnChance>.4</learnChance>
