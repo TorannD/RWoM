@@ -15,7 +15,7 @@ namespace TorannMagic.SihvRMagicScrollScribe
             ThingDef tempPod = null;
             IntVec3 currentPos = parent.PositionHeld;
             Map map = parent.Map;
-            TMDefs.TM_CustomClass[] cFighters = TM_ClassUtility.CustomFighterClasses;
+            List<TMDefs.TM_CustomClass> cFighters = TM_ClassUtility.CustomFighterClasses;
             
             CompAbilityUserMight comp = user.GetCompAbilityUserMight();
             if (parent.def != null && comp != null && user.IsSlave)
@@ -82,7 +82,7 @@ namespace TorannMagic.SihvRMagicScrollScribe
                 RetryWrite:;
                 if (attempt < 20)
                 {
-                    float rnd = Rand.Range(0, 9 + cFighters.Length);
+                    float rnd = Rand.Range(0, 9 + cFighters.Count);
                     if (rnd < 1)
                     {
                         if (settingsRef.Gladiator)
@@ -194,7 +194,7 @@ namespace TorannMagic.SihvRMagicScrollScribe
                     }
                     else
                     {
-                        if (cFighters.Length > 0)
+                        if (cFighters.Count > 0)
                         {
                             tempPod = TM_ClassUtility.GetRandomCustomFighter().fullScript;
                         }

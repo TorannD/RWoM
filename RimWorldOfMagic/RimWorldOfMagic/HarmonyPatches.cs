@@ -446,21 +446,40 @@ namespace TorannMagic
                 return true;
             }
             private static void Postfix(TraitSet __instance, Trait trait, Pawn ___pawn)
-            {
-                TM_CustomClass advancedClass = TM_ClassUtility.CustomAdvancedClassTraitIndexMap.TryGetValue(trait.def.index);
-                if (advancedClass == null) return;
-                if (advancedClass.isMage)
+            {                
+                List<TMDefs.TM_CustomClass> acList = TM_ClassUtility.CustomAdvancedClasses;
+                for (int i = 0; i < acList.Count; i++)
                 {
-                    CompAbilityUserMagic targetComp = ___pawn.GetCompAbilityUserMagic();
-                    targetComp.CompTick();
-                    targetComp.AddAdvancedClass(TM_ClassUtility.GetCustomClassOfTrait(trait.def));
+                    if (trait.def == acList[i].classTrait)
+                    {
+                        if (acList[i].isMage)
+                        {
+                            CompAbilityUserMagic targetComp = ___pawn.GetCompAbilityUserMagic();
+                            targetComp.CompTick();
+                            targetComp.AddAdvancedClass(TM_ClassUtility.GetCustomClassOfTrait(trait.def));
+                        }
+                        if (acList[i].isFighter)
+                        {
+                            CompAbilityUserMight targetComp = ___pawn.GetCompAbilityUserMight();
+                            targetComp.CompTick();
+                            targetComp.AddAdvancedClass(TM_ClassUtility.GetCustomClassOfTrait(trait.def));
+                        }
+                    }
                 }
-                if(advancedClass.isFighter)
-                {
-                    CompAbilityUserMight targetComp = ___pawn.GetCompAbilityUserMight();
-                    targetComp.CompTick();
-                    targetComp.AddAdvancedClass(TM_ClassUtility.GetCustomClassOfTrait(trait.def));
-                }
+                //TM_CustomClass advancedClass = TM_ClassUtility.CustomAdvancedClassTraitIndexMap.TryGetValue(trait.def.index);
+                //if (advancedClass == null) return;
+                //if (advancedClass.isMage)
+                //{
+                //    CompAbilityUserMagic targetComp = ___pawn.GetCompAbilityUserMagic();
+                //    targetComp.CompTick();
+                //    targetComp.AddAdvancedClass(TM_ClassUtility.GetCustomClassOfTrait(trait.def));
+                //}
+                //if (advancedClass.isFighter)
+                //{
+                //    CompAbilityUserMight targetComp = ___pawn.GetCompAbilityUserMight();
+                //    targetComp.CompTick();
+                //    targetComp.AddAdvancedClass(TM_ClassUtility.GetCustomClassOfTrait(trait.def));
+                //}
             }
         }
 
@@ -2971,7 +2990,7 @@ namespace TorannMagic
                         i--;
                         hasFighterTrait = true;
                     }
-                    for (int j = 0; j < TM_ClassUtility.CustomClasses.Length; j++)
+                    for (int j = 0; j < TM_ClassUtility.CustomClasses.Count; j++)
                     {
                         if (TM_ClassUtility.CustomClasses[j].classTrait == pawnTraits[i].def)
                         {
@@ -5138,8 +5157,17 @@ namespace TorannMagic
                         mageFactor = settingsRef.FactionMageSettings[pawn.Faction.def.defName];
                     }
                 }
-                List<TMDefs.TM_CustomClass> customFighters = TM_ClassUtility.CustomFighterClasses.ToList();
-                List<TMDefs.TM_CustomClass> customMages = TM_ClassUtility.CustomMageClasses.ToList();
+                if (TM_ClassUtility.CustomFighterClasses == null)
+                {
+                    TM_ClassUtility.LoadCustomClasses();
+                }
+                if (TM_ClassUtility.CustomMageClasses == null)
+                {
+                    TM_ClassUtility.LoadCustomClasses();
+                }
+
+                List<TM_CustomClass> customFighters = TM_ClassUtility.CustomFighterClasses;
+                List<TM_CustomClass> customMages = TM_ClassUtility.CustomMageClasses;              
 
                 mageCount += customMages.Count;
                 fighterCount += customFighters.Count;

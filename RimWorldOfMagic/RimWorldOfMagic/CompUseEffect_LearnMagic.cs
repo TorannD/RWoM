@@ -17,7 +17,7 @@ namespace TorannMagic
                 bool advancedClass = false;
                 string failMessage = "";
                 CompAbilityUserMagic comp = user.GetCompAbilityUserMagic();
-                for (int i = 0; i < TM_ClassUtility.CustomClasses.Length; i++)
+                for (int i = 0; i < TM_ClassUtility.CustomClasses.Count; i++)
                 {
                     TMDefs.TM_CustomClass cc = TM_ClassUtility.CustomClasses[i];
                     if (cc.isMage && cc.isAdvancedClass && comp != null)
@@ -286,7 +286,7 @@ namespace TorannMagic
                         if (attempts < 50)
                         {
                             int baseClassCount = 17;
-                            int customClassCount = TM_ClassUtility.CustomMageClasses.Length;
+                            int customClassCount = TM_ClassUtility.CustomMageClasses.Count;
                             int rnd = Mathf.RoundToInt(Rand.RangeInclusive(0, baseClassCount + customClassCount));
                             switch (rnd)
                             {

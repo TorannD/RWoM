@@ -1025,7 +1025,7 @@ Lightning shot: stuns the target (1 mana)</TM_TechnoWeapon_ver_desc>
 
 <TM_BloodGift_pwr_desc>Increases the damage of all blood magic by 10% per skill point.</TM_BloodGift_pwr_desc>
 <TM_BloodGift_eff_desc>Reduces the mana cost of blood sacrifice by 6% per skill point and reduces the blood cost of all blood magic by 3% per skill point.</TM_BloodGift_eff_desc>
-<TM_BloodGift_ver_desc>Increases the amount of blood magic gained when using blood sacrifice or through bleeding by 10%. Increased skill levels allows the blood mage to draw fresh blood from the ground:
+<TM_BloodGift_ver_desc>Increases the amount of blood magic gained when using blood sacrifice or through bleeding by 10%. Increased skill levels allows the blood mage to draw fresh blood from the ground when casting Blood Sacrifice:
 Level 0: none
 Level 1: 1cell radius
 Level 2: 3cell radius

@@ -359,8 +359,8 @@ namespace TorannMagic
         {               
             if (p != null && p.story != null && p.story.traits != null)
             {
-                TM_CustomClass[] customClasses = TM_ClassUtility.CustomClasses;
-                for (int i = 0; i < customClasses.Length; i++)
+                List<TM_CustomClass> customClasses = TM_ClassUtility.CustomClasses;
+                for (int i = 0; i < customClasses.Count; i++)
                 {
                     if (customClasses[i].isAdvancedClass)
                     {

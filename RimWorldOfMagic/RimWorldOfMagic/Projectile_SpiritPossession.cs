@@ -70,7 +70,7 @@ namespace TorannMagic
         {
             bool wasDead = false;
             FactionDef previousFaction = caster.Faction.def;
-            if (!TM_Calc.IsPossessedByOrIsSpirit(pawn) && pawn.RaceProps != null && pawn.RaceProps.IsFlesh && !(pawn is TMPawnSummoned) && !(pawn is Golems.TMPawnGolem))
+            if (!TM_Calc.IsPossessedByOrIsSpirit(pawn) && pawn.RaceProps != null && pawn.RaceProps.IsFlesh && !(pawn is TMPawnSummoned) && !(pawn is Golems.TMPawnGolem) && !TM_Calc.IsUndeadNotVamp(pawn))
             {
                 if (Rand.Chance(TM_Calc.GetSpellSuccessChance(caster, pawn, true) - .4f + (.2f * verVal)))
                 {
