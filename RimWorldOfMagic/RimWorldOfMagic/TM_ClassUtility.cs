@@ -44,48 +44,51 @@ namespace TorannMagic
             CustomFighterClasses.Clear();
             CustomAdvancedClasses.Clear();
 
-            foreach (TM_CustomClass cc in CustomClasses.Where(cc => Settings.Instance.CustomClass[cc.classTrait.ToString()]))
+            if (CustomClasses != null)
             {
-                if (cc.isMage)
+                foreach (TM_CustomClass cc in CustomClasses.Where(cc => Settings.Instance.CustomClass[cc.classTrait.ToString()]))
                 {
-                    if (cc.isAdvancedClass)
+                    if (cc.isMage)
                     {
-                        if (cc.advancedClassOptions != null && cc.advancedClassOptions.canSpawnWithClass)
+                        if (cc.isAdvancedClass)
+                        {
+                            if (cc.advancedClassOptions != null && cc.advancedClassOptions.canSpawnWithClass)
+                            {
+                                CustomMageClasses.Add(cc);
+                            }
+                        }
+                        else
                         {
                             CustomMageClasses.Add(cc);
                         }
                     }
-                    else
+                    if (cc.isFighter)
                     {
-                        CustomMageClasses.Add(cc);
-                    }                          
-                }
-                if (cc.isFighter)
-                {
-                    if (cc.isAdvancedClass)
-                    {
-                        if (cc.advancedClassOptions != null && cc.advancedClassOptions.canSpawnWithClass)
+                        if (cc.isAdvancedClass)
+                        {
+                            if (cc.advancedClassOptions != null && cc.advancedClassOptions.canSpawnWithClass)
+                            {
+                                CustomFighterClasses.Add(cc);
+                            }
+                        }
+                        else
                         {
                             CustomFighterClasses.Add(cc);
                         }
                     }
+                    if (!cc.isAdvancedClass) CustomBaseClasses.Add(cc); //base classes cannot also be advanced classes, but advanced classes can act like base classes
                     else
                     {
-                        CustomFighterClasses.Add(cc);
-                    }                    
+                        CustomAdvancedClasses.Add(cc);
+                        //CustomAdvancedClassTraitIndexMap[cc.classTrait.index] = cc;
+                    }
+                    //CustomBaseClasses = CustomBaseClassesList.ToArray();
+                    //CustomFighterClasses = CustomFighterClassesList.ToArray();
+                    //CustomMageClasses = CustomMageClassesList.ToArray();
+                    //CustomAdvancedClasses = CustomAdvancedClassesList.ToArray();
                 }
-                if (!cc.isAdvancedClass) CustomBaseClasses.Add(cc); //base classes cannot also be advanced classes, but advanced classes can act like base classes
-                else
-                {
-                    CustomAdvancedClasses.Add(cc);
-                    //CustomAdvancedClassTraitIndexMap[cc.classTrait.index] = cc;
-                }
-                //CustomBaseClasses = CustomBaseClassesList.ToArray();
-                //CustomFighterClasses = CustomFighterClassesList.ToArray();
-                //CustomMageClasses = CustomMageClassesList.ToArray();
-                //CustomAdvancedClasses = CustomAdvancedClassesList.ToArray();
+                LoadClassIndexes();
             }
-            LoadClassIndexes();
         }
 
         public static void LoadClassIndexes()

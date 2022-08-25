@@ -44,7 +44,8 @@ namespace TorannMagic
         public TMAbilityDef chainedAbility = null;              //another ability that becomes available after using this ability
         public int chainedAbilityExpiresAfterTicks = -1;        //chained ability is available for this many ticks after it appears; set to -1 to never expire
         public bool chainedAbilityExpiresAfterCooldown = true;  //links the cooldown of this ability to the removal of the chained ability; accounts for cooldown reduction
-        public bool removeAbilityAfterUse = false;              //ability is removed after use   
+        public bool removeAbilityAfterUse = false;              //ability is removed after use
+        public List<TraitDef> chainedAbilityTraitRequirements = null;
         public List<TMAbilityDef> abilitiesRemovedWhenUsed = new List<TMAbilityDef>();       //removes all listed abilities when this ability is used; useful for resetting an ability chain
 
         public string GetPointDesc()

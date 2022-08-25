@@ -1132,17 +1132,27 @@ namespace TorannMagic
             float num = inRect.y;
             int itnum = 1;
             bool flag999;
+            List<TMAbilityDef> usedAbilities = new List<TMAbilityDef>();
+            usedAbilities.Clear();
             using (List<MightPower>.Enumerator enumerator = MightPowers.GetEnumerator())
             {
                 EnumerationStart:;
                 while (enumerator.MoveNext())
                 {
                     MightPower power = enumerator.Current;
-                    if(!abilityList.Contains((TMAbilityDef)power.abilityDef))
+                    TMAbilityDef ability = (TMAbilityDef)power.abilityDef;
+                    if (!abilityList.Contains(ability))
                     {
                         goto EnumerationStart;
                     }
-
+                    if (usedAbilities.Contains(ability))
+                    {
+                        goto EnumerationStart;
+                    }
+                    else
+                    {
+                        usedAbilities.Add(ability);
+                    }
                     //if (compMight.MightData.GetSkill_Efficiency((TMAbilityDef)power.abilityDef) == null)
                     //{
                     //    goto EnumerationStart;                        

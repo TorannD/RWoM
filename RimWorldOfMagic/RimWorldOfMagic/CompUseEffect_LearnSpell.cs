@@ -297,7 +297,7 @@ namespace TorannMagic
                         else if (parent.def.defName == "SpellOf_FoldReality" && comp.spell_FoldReality == false && user.story.traits.HasTrait(TorannMagicDefOf.Arcanist))
                         {
                             comp.spell_FoldReality = true;
-                            comp.MagicData.ReturnMatchingMagicPower(TorannMagicDefOf.TM_Firestorm).learned = true;
+                            comp.MagicData.ReturnMatchingMagicPower(TorannMagicDefOf.TM_FoldReality).learned = true;
                             comp.InitializeSpell();
                             this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                         }

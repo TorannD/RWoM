@@ -193,24 +193,21 @@ namespace TorannMagic
                 }
                 if(magicDef.chainedAbility != null)
                 {
-                    this.MagicUser.TryAddPawnAbility(magicDef.chainedAbility);
-                    bool expires = false;
-                    int expireTicks = -1;
-                    if(magicDef.chainedAbilityExpiresAfterTicks >= 0)
+                    if (magicDef.chainedAbilityTraitRequirements != null && magicDef.chainedAbilityTraitRequirements.Count > 0)
                     {
-                        expires = true;
-                        expireTicks = magicDef.chainedAbilityExpiresAfterTicks;
+                        foreach (TraitDef reqTrait in magicDef.chainedAbilityTraitRequirements)
+                        {
+                            if (Pawn.story.traits.allTraits.Any(t => t.def == reqTrait))
+                            {
+                                AddChainedAbility(magicDef);
+                                break;
+                            }
+                        }
                     }
-                    else if(magicDef.chainedAbilityExpiresAfterCooldown)
+                    else
                     {
-                        expires = true;
-                        expireTicks = this.CooldownTicksLeft;
-                    }
-                    if (expires)
-                    {
-                        CompAbilityUserMagic.ChainedMagicAbility cab = new CompAbilityUserMagic.ChainedMagicAbility(magicDef.chainedAbility, expireTicks, expires);
-                        this.MagicUser.chainedAbilitiesList.Add(cab);
-                    }
+                        AddChainedAbility(magicDef);
+                    }                    
                 }
                 if(magicDef.removeAbilityAfterUse)
                 {
@@ -224,6 +221,28 @@ namespace TorannMagic
                     }
                 }
             }                       
+        }
+
+        private void AddChainedAbility(TMAbilityDef magicDef)
+        {
+            this.MagicUser.TryAddPawnAbility(magicDef.chainedAbility);
+            bool expires = false;
+            int expireTicks = -1;
+            if (magicDef.chainedAbilityExpiresAfterTicks >= 0)
+            {
+                expires = true;
+                expireTicks = magicDef.chainedAbilityExpiresAfterTicks;
+            }
+            else if (magicDef.chainedAbilityExpiresAfterCooldown)
+            {
+                expires = true;
+                expireTicks = this.CooldownTicksLeft;
+            }
+            if (expires)
+            {
+                CompAbilityUserMagic.ChainedMagicAbility cab = new CompAbilityUserMagic.ChainedMagicAbility(magicDef.chainedAbility, expireTicks, expires);
+                this.MagicUser.chainedAbilitiesList.Add(cab);
+            }
         }
 
         public override string PostAbilityVerbCompDesc(VerbProperties_Ability verbDef)

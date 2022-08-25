@@ -1827,6 +1827,8 @@ namespace TorannMagic
             float num = inRect.y;
             int itnum = 1;
             bool flag999;
+            List<TMAbilityDef> usedAbilities = new List<TMAbilityDef>();
+            usedAbilities.Clear();
             using (List<MagicPower>.Enumerator enumerator = MagicPowers.GetEnumerator())
             {
                 EnumerationStart:;
@@ -1856,6 +1858,14 @@ namespace TorannMagic
                             goto EnumerationStart;
                         }
                     }
+                    if (usedAbilities.Contains(ability))
+                    {
+                        goto EnumerationStart;
+                    }
+                    else
+                    {
+                        usedAbilities.Add(ability);
+                    }                    
 
                     Text.Font = GameFont.Small;
                     Rect rect = new Rect(MagicCardUtility.MagicCardSize.x / 2f - MagicCardUtility.MagicButtonSize, num, MagicCardUtility.MagicButtonSize, MagicCardUtility.MagicButtonSize);

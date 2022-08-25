@@ -2520,6 +2520,8 @@ namespace TorannMagic
             float masterChance = .05f;
             Pawn abilityUser = base.Pawn;
             bool flag2;
+            List<TMAbilityDef> usedAbilities = new List<TMAbilityDef>();
+            usedAbilities.Clear();
             if (abilityUser != null && abilityUser.story != null && abilityUser.story.traits != null)
             {
                 if (this.customClass != null)
@@ -2527,16 +2529,24 @@ namespace TorannMagic
                     for (int z = 0; z < this.MagicData.AllMagicPowers.Count; z++)
                     {
                         TMAbilityDef ability = (TMAbilityDef)this.MagicData.AllMagicPowers[z].abilityDef;
+                        if (usedAbilities.Contains(ability))
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            usedAbilities.Add(ability);
+                        }
                         if (this.customClass.classMageAbilities.Contains(ability))
                         {
                             this.MagicData.AllMagicPowers[z].learned = true;
                         }
-                        if (this.MagicData.AllMagicPowers[z] == this.MagicData.MagicPowersWD.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_SoulBond) ||
-                        this.MagicData.AllMagicPowers[z] == this.MagicData.MagicPowersWD.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_ShadowBolt) ||
-                        this.MagicData.AllMagicPowers[z] == this.MagicData.MagicPowersWD.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Dominate))
-                        {
-                            this.MagicData.AllMagicPowers[z].learned = false;
-                        }                        
+                        //if (this.MagicData.AllMagicPowers[z] == this.MagicData.MagicPowersWD.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_SoulBond) ||
+                        //this.MagicData.AllMagicPowers[z] == this.MagicData.MagicPowersWD.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_ShadowBolt) ||
+                        //this.MagicData.AllMagicPowers[z] == this.MagicData.MagicPowersWD.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Dominate))
+                        //{
+                        //    this.MagicData.AllMagicPowers[z].learned = false;
+                        //}                        
                         if (this.MagicData.AllMagicPowers[z].requiresScroll)
                         {
                             this.MagicData.AllMagicPowers[z].learned = false;
@@ -3939,6 +3949,7 @@ namespace TorannMagic
                     }
                     if (this.spell_FoldReality == true)
                     {
+                        this.MagicData.ReturnMatchingMagicPower(TorannMagicDefOf.TM_FoldReality).learned = true;
                         this.RemovePawnAbility(TorannMagicDefOf.TM_FoldReality);
                         this.AddPawnAbility(TorannMagicDefOf.TM_FoldReality);
                     }

@@ -1526,15 +1526,25 @@ namespace TorannMagic
             bool flag2;
             MightData.MightUserLevel = 0;
             MightData.MightAbilityPoints = 0;
+            List<TMAbilityDef> usedAbilities = new List<TMAbilityDef>();
+            usedAbilities.Clear();
             if (this.customClass != null)
             {
                 for (int z = 0; z < this.MightData.AllMightPowers.Count; z++)
                 {
+                    TMAbilityDef ability = (TMAbilityDef)this.MightData.AllMightPowers[z].abilityDef;
+                    if (usedAbilities.Contains(ability))
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        usedAbilities.Add(ability);
+                    }
                     if (this.customClass.classFighterAbilities.Contains(this.MightData.AllMightPowers[z].abilityDef))
                     {
                         this.MightData.AllMightPowers[z].learned = true;
-                    }
-                    TMAbilityDef ability = (TMAbilityDef)this.MightData.AllMightPowers[z].abilityDef;
+                    }                    
                     if (this.MightData.AllMightPowers[z].learned)
                     {
                         if (ability.shouldInitialize)

@@ -184,24 +184,21 @@ namespace TorannMagic
                 }
                 if (mightDef.chainedAbility != null)
                 {
-                    this.MightUser.TryAddPawnAbility(mightDef.chainedAbility);
-                    bool expires = false;
-                    int expireTicks = -1;
-                    if (mightDef.chainedAbilityExpiresAfterTicks >= 0)
+                    if (mightDef.chainedAbilityTraitRequirements != null && mightDef.chainedAbilityTraitRequirements.Count > 0)
                     {
-                        expires = true;
-                        expireTicks = mightDef.chainedAbilityExpiresAfterTicks;
+                        foreach (TraitDef reqTrait in mightDef.chainedAbilityTraitRequirements)
+                        {
+                            if (Pawn.story.traits.allTraits.Any(t => t.def == reqTrait))
+                            {
+                                AddChainedAbility(mightDef);
+                                break;
+                            }
+                        }
                     }
-                    else if (mightDef.chainedAbilityExpiresAfterCooldown)
+                    else
                     {
-                        expires = true;
-                        expireTicks = this.CooldownTicksLeft;
-                    }
-                    if (expires)
-                    {
-                        CompAbilityUserMight.ChainedMightAbility cab = new CompAbilityUserMight.ChainedMightAbility(mightDef.chainedAbility, expireTicks, expires);
-                        this.MightUser.chainedAbilitiesList.Add(cab);
-                    }
+                        AddChainedAbility(mightDef);
+                    }                    
                 }
                 if (mightDef.removeAbilityAfterUse)
                 {
@@ -214,6 +211,28 @@ namespace TorannMagic
                         this.MightUser.RemovePawnAbility(rem);
                     }
                 }
+            }
+        }
+
+        private void AddChainedAbility(TMAbilityDef mightDef)
+        {
+            this.MightUser.TryAddPawnAbility(mightDef.chainedAbility);
+            bool expires = false;
+            int expireTicks = -1;
+            if (mightDef.chainedAbilityExpiresAfterTicks >= 0)
+            {
+                expires = true;
+                expireTicks = mightDef.chainedAbilityExpiresAfterTicks;
+            }
+            else if (mightDef.chainedAbilityExpiresAfterCooldown)
+            {
+                expires = true;
+                expireTicks = this.CooldownTicksLeft;
+            }
+            if (expires)
+            {
+                CompAbilityUserMight.ChainedMightAbility cab = new CompAbilityUserMight.ChainedMightAbility(mightDef.chainedAbility, expireTicks, expires);
+                this.MightUser.chainedAbilitiesList.Add(cab);
             }
         }
 

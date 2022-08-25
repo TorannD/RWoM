@@ -569,6 +569,10 @@ Cooldown: 15s</description>
 	<removeAbilityAfterUse>false</removeAbilityAfterUse> 	<!-- ability can be used multiple times; default: false; can be set to true for single use abilities -->
 	<abilitiesRemovedWhenUsed>								<!-- removes all listed abilities when this ability is used -->
 	</abilitiesRemovedWhenUsed>								<!-- can be used to reset an ability chain or clear temporary abilities -->
+	<chainedAbilityTraitRequirements>
+		<li>TM_Possessed</li>
+		<li>TM_Possessor</li>
+	</chainedAbilityTraitRequirements>
     <MainVerb Class="AbilityUser.VerbProperties_Ability">
         <verbClass>TorannMagic.Effect_SpiritStorm</verbClass>
 			<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
