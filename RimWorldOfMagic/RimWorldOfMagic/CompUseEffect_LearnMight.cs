@@ -18,7 +18,7 @@ namespace TorannMagic
                 TMDefs.TM_CustomClass cc = null;
                 CompAbilityUserMight comp = user.GetCompAbilityUserMight();
 
-                for (int i = 0; i < TM_ClassUtility.CustomClasses.Count; i++)
+                for (int i = 0; i < TM_ClassUtility.CustomClasses.Length; i++)
                 {
                     cc = TM_ClassUtility.CustomClasses[i];
                     if (cc.isFighter && cc.isAdvancedClass && comp != null)
@@ -35,7 +35,7 @@ namespace TorannMagic
                         }
 
                     }
-                    else if ((cc.isFighter && user.story.traits.HasTrait(TorannMagicDefOf.PhysicalProdigy)) || (cc.isFighter && TM_ClassUtility.CustomClasses[i].isMage && (user.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted) || user.story.traits.HasTrait(TorannMagicDefOf.PhysicalProdigy))))
+                    else if ((cc.isFighter && user.story.traits.HasTrait(TorannMagicDefOf.PhysicalProdigy)) || (cc.isFighter && cc.isMage && (user.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted) || user.story.traits.HasTrait(TorannMagicDefOf.PhysicalProdigy))))
                     {
                         if (parent.def == cc.tornScript || parent.def == cc.fullScript)
                         {

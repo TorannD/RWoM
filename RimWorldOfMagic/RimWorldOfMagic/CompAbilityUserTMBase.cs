@@ -12,18 +12,18 @@ namespace TorannMagic
 {
     public abstract class CompAbilityUserTMBase : CompAbilityUser
     {
+        // TODO - This should be moved into customClass. This will make the checks clearer (customClass != null) and allow us to load in immediately instead of checking every time if set.
         public int customIndex = -2;
 
-        public TMDefs.TM_CustomClass customClass = null;
-        private List<TMDefs.TM_CustomClass> advClasses = null;
-        public List<TMDefs.TM_CustomClass> AdvancedClasses
+        public TM_CustomClass customClass = null;
+        private List<TM_CustomClass> advClasses = null;
+        public List<TM_CustomClass> AdvancedClasses
         {
             get
             {
                 if (advClasses == null)
                 {
-                    advClasses = new List<TMDefs.TM_CustomClass>();
-                    advClasses.Clear();
+                    advClasses = new List<TM_CustomClass>();
                 }
                 return advClasses;
             }
@@ -31,8 +31,7 @@ namespace TorannMagic
             {
                 if (advClasses == null)
                 {
-                    advClasses = new List<TMDefs.TM_CustomClass>();
-                    advClasses.Clear();
+                    advClasses = new List<TM_CustomClass>();
                 }
                 advClasses = value;
             }

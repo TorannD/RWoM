@@ -17,7 +17,7 @@ namespace TorannMagic
                 bool advancedClass = false;
                 string failMessage = "";
                 CompAbilityUserMagic comp = user.GetCompAbilityUserMagic();
-                for (int i = 0; i < TM_ClassUtility.CustomClasses.Count; i++)
+                for (int i = 0; i < TM_ClassUtility.CustomClasses.Length; i++)
                 {
                     TMDefs.TM_CustomClass cc = TM_ClassUtility.CustomClasses[i];
                     if (cc.isMage && cc.isAdvancedClass && comp != null)
@@ -40,34 +40,34 @@ namespace TorannMagic
                     }
                     else if (cc.isMage && user.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted) || (cc.isMage && cc.isFighter && (user.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted) || user.story.traits.HasTrait(TorannMagicDefOf.PhysicalProdigy))))
                     {
-                        if (parent.def == cc.tornScript || parent.def == TM_ClassUtility.CustomClasses[i].fullScript)
+                        if (parent.def == cc.tornScript || parent.def == cc.fullScript)
                         {
                             customClass = true;
-                            if (parent.def == TM_ClassUtility.CustomClasses[i].fullScript)
+                            if (parent.def == cc.fullScript)
                             {
                                 HealthUtility.AdjustSeverity(user, TorannMagicDefOf.TM_Uncertainty, 0.2f);
                             }
 
-                            ApplyTrait(user, TM_ClassUtility.CustomClasses[i].classTrait, TM_ClassUtility.CustomClasses[i].traitDegree);
+                            ApplyTrait(user, cc.classTrait, cc.traitDegree);
 
                             //Unique actions hook
-                            ApplyTraitAdjustments(user, TM_ClassUtility.CustomClasses[i].classTrait);
+                            ApplyTraitAdjustments(user, cc.classTrait);
                             //
                             this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                             if (comp != null)
                             {
                                 comp.customIndex = i;
-                                comp.customClass = TM_ClassUtility.CustomClasses[i];
+                                comp.customClass = cc;
                             }
                             else
                             {
                                 Log.Message("failed to initialize custom magic class comp");
                             }
                             CompAbilityUserMight mComp = user.GetCompAbilityUserMight();
-                            if (mComp != null && TM_ClassUtility.CustomClasses[i].isFighter)
+                            if (mComp != null && cc.isFighter)
                             {
                                 mComp.customIndex = i;
-                                mComp.customClass = TM_ClassUtility.CustomClasses[i];
+                                mComp.customClass = cc;
                             }
                             break;
                         }
@@ -286,7 +286,7 @@ namespace TorannMagic
                         if (attempts < 50)
                         {
                             int baseClassCount = 17;
-                            int customClassCount = TM_ClassUtility.CustomMageClasses.Count;
+                            int customClassCount = TM_ClassUtility.CustomMageClasses.Length;
                             int rnd = Mathf.RoundToInt(Rand.RangeInclusive(0, baseClassCount + customClassCount));
                             switch (rnd)
                             {
