@@ -1624,5 +1624,34 @@ namespace TorannMagic
         public static PawnKindDef TM_GraniteGolemK;
         public static PawnTableDef TM_Golems;
         //public static TMDefs.TM_GolemAbility TM_Golem_GatlingCannon;
-    }
+
+        // Spell Recipes
+        public static RecipeDef Make_SpellOf_FoldReality;
+        public static RecipeDef Make_SpellOf_Firestorm;
+        public static RecipeDef Make_SpellOf_DryGround;
+        public static RecipeDef Make_SpellOf_Blizzard;
+        public static RecipeDef Make_SpellOf_WetGround;
+        public static RecipeDef Make_SpellOf_EyeOfTheStorm;
+        public static RecipeDef Make_SpellOf_ChargeBattery;
+        public static RecipeDef Make_SpellOf_RegrowLimb;
+        public static RecipeDef Make_SpellOf_FertileLands;
+        public static RecipeDef Make_SpellOf_SummonPoppi;
+        public static RecipeDef Make_SpellOf_HolyWrath;
+        public static RecipeDef Make_SpellOf_Resurrection;
+        public static RecipeDef Make_SpellOf_BattleHymn;
+        public static RecipeDef Make_SpellOf_LichForm;
+        public static RecipeDef Make_SpellOf_Meteor;
+        public static RecipeDef Make_SpellOf_Scorn;
+        public static RecipeDef Make_SpellOf_PsychicShock;
+        public static RecipeDef Make_SpellOf_TechnoShield;
+        public static RecipeDef Make_SpellOf_Sabotage;
+        public static RecipeDef Make_SpellOf_Overdrive;
+        public static RecipeDef Make_SpellOf_OrbitalStrike;
+        public static RecipeDef Make_SpellOf_BloodMoon;
+        public static RecipeDef Make_SpellOf_Shapeshift;
+        public static RecipeDef Make_SpellOf_Recall;
+
+        // Books
+        public static RecipeDef Make_BookOfSuperSoldier;
+	}
 }

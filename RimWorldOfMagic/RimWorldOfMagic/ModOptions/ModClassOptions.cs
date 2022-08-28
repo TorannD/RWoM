@@ -17,6 +17,7 @@ namespace TorannMagic.ModOptions
         // These get initialized in InitializeThingDefDictionaries since things must load first before ThingDefs can be accessed.
         private static Dictionary<ushort, Func<bool>> thingDefIndexToSettingsRefMap;
         private static Dictionary<ushort, Func<bool>> spellIndexToSettingsRefMap;
+        private static Dictionary<ushort, (Func<bool> settingsValueGetter, ThingDef spell)> recipeIndexMap;
 
         public ModClassOptions(ModContentPack mcp) : base(mcp)
         {
@@ -310,6 +311,110 @@ namespace TorannMagic.ModOptions
                 { TorannMagicDefOf.SpellOf_Shapeshift.index, () => new SettingsRef().Enchanter },
                 { TorannMagicDefOf.SpellOf_Recall.index, () => new SettingsRef().Chronomancer },
             };
+
+            recipeIndexMap = new Dictionary<ushort, (Func<bool> settingsValueGetter, ThingDef item)>
+            {
+                {
+                    TorannMagicDefOf.Make_SpellOf_FoldReality.index,
+                    (() => new SettingsRef().Arcanist, TorannMagicDefOf.SpellOf_FoldReality)
+                },
+                {
+                    TorannMagicDefOf.Make_SpellOf_Firestorm.index,
+                    (() => new SettingsRef().FireMage, TorannMagicDefOf.SpellOf_Firestorm)
+                },
+                {
+                    TorannMagicDefOf.Make_SpellOf_DryGround.index,
+                    (() => new SettingsRef().FireMage, TorannMagicDefOf.SpellOf_DryGround)
+                },
+                {
+                    TorannMagicDefOf.Make_SpellOf_Blizzard.index,
+                    (() => new SettingsRef().IceMage, TorannMagicDefOf.SpellOf_Blizzard)
+                },
+                {
+                    TorannMagicDefOf.Make_SpellOf_WetGround.index,
+                    (() => new SettingsRef().IceMage, TorannMagicDefOf.SpellOf_WetGround)
+                },
+                {
+                    TorannMagicDefOf.Make_SpellOf_EyeOfTheStorm.index,
+                    (() => new SettingsRef().LitMage, TorannMagicDefOf.SpellOf_EyeOfTheStorm)
+                },
+                {
+                    TorannMagicDefOf.Make_SpellOf_ChargeBattery.index,
+                    (() => new SettingsRef().LitMage, TorannMagicDefOf.SpellOf_ChargeBattery)
+                },
+                {
+                    TorannMagicDefOf.Make_SpellOf_RegrowLimb.index,
+                    (() => new SettingsRef().Druid, TorannMagicDefOf.SpellOf_RegrowLimb)
+                },
+                {
+                    TorannMagicDefOf.Make_SpellOf_FertileLands.index,
+                    (() => new SettingsRef().Druid, TorannMagicDefOf.SpellOf_FertileLands)
+                },
+                {
+                    TorannMagicDefOf.Make_SpellOf_SummonPoppi.index,
+                    (() => new SettingsRef().Summoner, TorannMagicDefOf.SpellOf_SummonPoppi)
+                },
+                {
+                    TorannMagicDefOf.Make_SpellOf_HolyWrath.index,
+                    (() => new SettingsRef().Paladin, TorannMagicDefOf.SpellOf_HolyWrath)
+                },
+                {
+                    TorannMagicDefOf.Make_SpellOf_Resurrection.index,
+                    (() => new SettingsRef().Priest, TorannMagicDefOf.SpellOf_Resurrection)
+                },
+                {
+                    TorannMagicDefOf.Make_SpellOf_BattleHymn.index,
+                    (() => new SettingsRef().Bard, TorannMagicDefOf.SpellOf_BattleHymn)
+                },
+                {
+                    TorannMagicDefOf.Make_SpellOf_LichForm.index,
+                    (() => new SettingsRef().Necromancer, TorannMagicDefOf.SpellOf_LichForm)
+                },
+                {
+                    TorannMagicDefOf.Make_SpellOf_Meteor.index,
+                    (() => new SettingsRef().Geomancer, TorannMagicDefOf.SpellOf_Meteor)
+                },
+                {
+                    TorannMagicDefOf.Make_SpellOf_Scorn.index,
+                    (() => new SettingsRef().Demonkin, TorannMagicDefOf.SpellOf_Scorn)
+                },
+                {
+                    TorannMagicDefOf.Make_SpellOf_PsychicShock.index,
+                    (() => new SettingsRef().Demonkin, TorannMagicDefOf.SpellOf_PsychicShock)
+                },
+                {
+                    TorannMagicDefOf.Make_SpellOf_TechnoShield.index,
+                    (() => new SettingsRef().Technomancer, TorannMagicDefOf.SpellOf_TechnoShield)
+                },
+                {
+                    TorannMagicDefOf.Make_SpellOf_Sabotage.index,
+                    (() => new SettingsRef().Technomancer, TorannMagicDefOf.SpellOf_Sabotage)
+                },
+                {
+                    TorannMagicDefOf.Make_SpellOf_Overdrive.index,
+                    (() => new SettingsRef().Technomancer, TorannMagicDefOf.SpellOf_Overdrive)
+                },
+                {
+                    TorannMagicDefOf.Make_SpellOf_OrbitalStrike.index,
+                    (() => new SettingsRef().Technomancer, TorannMagicDefOf.SpellOf_OrbitalStrike)
+                },
+                {
+                    TorannMagicDefOf.Make_SpellOf_BloodMoon.index,
+                    (() => new SettingsRef().BloodMage, TorannMagicDefOf.SpellOf_BloodMoon)
+                },
+                {
+                    TorannMagicDefOf.Make_SpellOf_Shapeshift.index,
+                    (() => new SettingsRef().Enchanter, TorannMagicDefOf.SpellOf_Shapeshift)
+                },
+                {
+                    TorannMagicDefOf.Make_SpellOf_Recall.index,
+                    (() => new SettingsRef().Chronomancer, TorannMagicDefOf.SpellOf_Recall)
+                },
+                {
+                    TorannMagicDefOf.Make_BookOfSuperSoldier.index,
+                    (() => new SettingsRef().SuperSoldier, TorannMagicDefOf.BookOfSuperSoldier)
+                }
+            };
         }
 
         private static void RestrictClasses()
@@ -365,22 +470,22 @@ namespace TorannMagic.ModOptions
                         }
                         if (cc.classFighterAbilities.Contains(TorannMagicDefOf.TM_PistolSpec))
                         {
-                            customThings.AddDistinct(ThingDef.Named("TM_PistolSpec_Base0"));
+                            customThings.AddDistinct(TorannMagicDefOf.TM_PistolSpec_Base0);
                         }
                         if (cc.classFighterAbilities.Contains(TorannMagicDefOf.TM_RifleSpec))
                         {
-                            customThings.AddDistinct(ThingDef.Named("TM_RifleSpec_Base0"));
+                            customThings.AddDistinct(TorannMagicDefOf.TM_RifleSpec_Base0);
                         }
                         if (cc.classFighterAbilities.Contains(TorannMagicDefOf.TM_ShotgunSpec))
                         {
-                            customThings.AddDistinct(ThingDef.Named("TM_ShotgunSpec_Base0"));
+                            customThings.AddDistinct(TorannMagicDefOf.TM_ShotgunSpec_Base0);
                         }
                     }
                     if (cc.classMageAbilities != null && cc.classMageAbilities.Count > 0)
                     {
                         if (cc.classMageAbilities.Contains(TorannMagicDefOf.TM_RegrowLimb))
                         {
-                            customThings.AddDistinct(ThingDef.Named("SeedofRegrowth"));
+                            customThings.AddDistinct(TorannMagicDefOf.SeedofRegrowth);
                         }
                         if (cc.classMageAbilities.Contains(TorannMagicDefOf.TM_SummonExplosive))
                         {
@@ -391,15 +496,15 @@ namespace TorannMagic.ModOptions
                         }
                         if (cc.classMageAbilities.Contains(TorannMagicDefOf.TM_SummonPylon))
                         {
-                            customThings.AddDistinct(ThingDef.Named("DefensePylon"));
-                            customThings.AddDistinct(ThingDef.Named("DefensePylon_I"));
-                            customThings.AddDistinct(ThingDef.Named("DefensePylon_II"));
-                            customThings.AddDistinct(ThingDef.Named("DefensePylon_III"));
-                            customThings.AddDistinct(ThingDef.Named("Bullet_DefensePylon"));
-                            customThings.AddDistinct(ThingDef.Named("Launcher_DefensePylon"));
-                            customThings.AddDistinct(ThingDef.Named("Launcher_DefensePylon_I"));
-                            customThings.AddDistinct(ThingDef.Named("Launcher_DefensePylon_II"));
-                            customThings.AddDistinct(ThingDef.Named("Launcher_DefensePylon_III"));
+                            customThings.AddDistinct(TorannMagicDefOf.DefensePylon);
+                            customThings.AddDistinct(TorannMagicDefOf.DefensePylon_I);
+                            customThings.AddDistinct(TorannMagicDefOf.DefensePylon_II);
+                            customThings.AddDistinct(TorannMagicDefOf.DefensePylon_III);
+                            customThings.AddDistinct(TorannMagicDefOf.Bullet_DefensePylon);
+                            customThings.AddDistinct(TorannMagicDefOf.Launcher_DefensePylon);
+                            customThings.AddDistinct(TorannMagicDefOf.Launcher_DefensePylon_I);
+                            customThings.AddDistinct(TorannMagicDefOf.Launcher_DefensePylon_II);
+                            customThings.AddDistinct(TorannMagicDefOf.Launcher_DefensePylon_III);
                             customThings.AddDistinct(TorannMagicDefOf.TM_Poppi);
                         }
                         if (cc.classMageAbilities.Contains(TorannMagicDefOf.TM_SummonPoppi))
@@ -470,155 +575,41 @@ namespace TorannMagic.ModOptions
                 }
             }
 
-            for (int i = 0; i < removedThings.Count(); i++)
+            for (int i = 0; i < removedThings.Count; i++)
             {
                 //Log.Message("removing " + removedThings[i].defName + " from def database");
                 removedThings[i].resourceReadoutPriority = ResourceCountPriority.Uncounted;
                 DefDatabase<ThingDef>.AllDefsListForReading.Remove(removedThings[i]);
             }
 
-            IEnumerable<RecipeDef> RecipeEnumerable = (from def in DefDatabase<RecipeDef>.AllDefs
-                                                       select def);
+            IEnumerable<RecipeDef> RecipeEnumerable = DefDatabase<RecipeDef>.AllDefs;
             List<RecipeDef> removedRecipes = new List<RecipeDef>();
+            Dictionary<string, RecipeDef> recipeDictionary = new Dictionary<string, RecipeDef>();
 
+            bool anyRemovedCustomThings = removedCustomThings.Count > 0;
             foreach (RecipeDef current in RecipeEnumerable)
             {
-                if (!settingsRef.Arcanist)
-                {
-                    if (current.defName == "Make_SpellOf_FoldReality" && !customThings.Contains(TorannMagicDefOf.SpellOf_FoldReality))
-                    {
-                        removedRecipes.Add(current);
-                    }
-                }
-                if (!settingsRef.FireMage)
-                {
-                    if ((current.defName == "Make_SpellOf_Firestorm" && !customThings.Contains(TorannMagicDefOf.SpellOf_Firestorm)) || (current.defName == "Make_SpellOf_DryGround" && !customThings.Contains(TorannMagicDefOf.SpellOf_DryGround)))
-                    {
-                        removedRecipes.Add(current);
-                    }
-                }
-                if (!settingsRef.IceMage)
-                {
-                    if ((current.defName == "Make_SpellOf_Overdrive" && !customThings.Contains(TorannMagicDefOf.SpellOf_Overdrive)) || (current.defName == "Make_SpellOf_WetGround" && !customThings.Contains(TorannMagicDefOf.SpellOf_WetGround)))
-                    {
-                        removedRecipes.Add(current);
-                    }
-                }
-                if (!settingsRef.LitMage)
-                {
-                    if ((current.defName == "Make_SpellOf_EyeOfTheStorm" && !customThings.Contains(TorannMagicDefOf.SpellOf_EyeOfTheStorm)) || (current.defName == "Make_SpellOf_ChargeBattery" && !customThings.Contains(TorannMagicDefOf.SpellOf_ChargeBattery)))
-                    {
-                        removedRecipes.Add(current);
-                    }
-                }
-                if (!settingsRef.Druid)
-                {
-                    if ((current.defName == "Make_SpellOf_RegrowLimb" && !customThings.Contains(TorannMagicDefOf.SpellOf_RegrowLimb)) || (current.defName == "Make_SpellOf_FertileLands" && !customThings.Contains(TorannMagicDefOf.SpellOf_FertileLands)))
-                    {
-                        removedRecipes.Add(current);
-                    }
-                }
-                if (!settingsRef.Summoner)
-                {
-                    if ((current.defName == "Make_SpellOf_SummonPoppi" && !customThings.Contains(TorannMagicDefOf.SpellOf_SummonPoppi)))
-                    {
-                        removedRecipes.Add(current);
-                    }
-                }
-                if (!settingsRef.Paladin)
-                {
-                    if ((current.defName == "Make_SpellOf_HolyWrath" && !customThings.Contains(TorannMagicDefOf.SpellOf_HolyWrath)))
-                    {
-                        removedRecipes.Add(current);
-                    }
-                }
-                if (!settingsRef.Priest)
-                {
-                    if ((current.defName == "Make_SpellOf_Resurrection" && !customThings.Contains(TorannMagicDefOf.SpellOf_Resurrection)))
-                    {
-                        removedRecipes.Add(current);
-                    }
-                }
-                if (!settingsRef.Bard)
-                {
-                    if ((current.defName == "Make_SpellOf_BattleHymn" && !customThings.Contains(TorannMagicDefOf.SpellOf_BattleHymn)))
-                    {
-                        removedRecipes.Add(current);
-                    }
-                }
-                if (!settingsRef.Necromancer)
-                {
-                    if ((current.defName == "Make_SpellOf_FoldReality" && !customThings.Contains(TorannMagicDefOf.SpellOf_FoldReality)))
-                    {
-                        removedRecipes.Add(current);
-                    }
-                }
-                if (!settingsRef.Geomancer)
-                {
-                    if ((current.defName == "Make_SpellOf_Meteor" && !customThings.Contains(TorannMagicDefOf.SpellOf_Meteor)))
-                    {
-                        removedRecipes.Add(current);
-                    }
-                }
-                if (!settingsRef.Demonkin)
-                {
-                    if ((current.defName == "Make_SpellOf_Scorn" && !customThings.Contains(TorannMagicDefOf.SpellOf_Scorn)) || (current.defName == "Make_SpellOf_PsychicShock" && !customThings.Contains(TorannMagicDefOf.SpellOf_PsychicShock)))
-                    {
-                        removedRecipes.Add(current);
-                    }
-                }
-                if (!settingsRef.Technomancer)
-                {
-                    if ((current.defName == "Make_SpellOf_TechnoShield" && !customThings.Contains(TorannMagicDefOf.SpellOf_TechnoShield)) ||
-                        (current.defName == "Make_SpellOf_Sabotage" && !customThings.Contains(TorannMagicDefOf.SpellOf_Sabotage)) ||
-                        (current.defName == "Make_SpellOf_Overdrive" && !customThings.Contains(TorannMagicDefOf.SpellOf_Overdrive)) ||
-                        (current.defName == "Make_SpellOf_OrbitalStrike" && !customThings.Contains(TorannMagicDefOf.SpellOf_OrbitalStrike)))
-                    {
-                        removedRecipes.Add(current);
-                    }
-                }
-                if (!settingsRef.BloodMage)
-                {
-                    if ((current.defName == "Make_SpellOf_BloodMoon" && !customThings.Contains(TorannMagicDefOf.SpellOf_BloodMoon)))
-                    {
-                        removedRecipes.Add(current);
-                    }
-                }
-                if (!settingsRef.Enchanter)
-                {
-                    if ((current.defName == "Make_SpellOf_Shapeshift" && !customThings.Contains(TorannMagicDefOf.SpellOf_Shapeshift)))
-                    {
-                        removedRecipes.Add(current);
-                    }
-                }
-                if (!settingsRef.Chronomancer)
-                {
-                    if ((current.defName == "Make_SpellOf_Recall" && !customThings.Contains(TorannMagicDefOf.SpellOf_Recall)))
-                    {
-                        removedRecipes.Add(current);
-                    }
-                }
-                if (!settingsRef.SuperSoldier)
-                {
-                    if (!settingsRef.SuperSoldier)
-                    {
-                        if ((current.defName == "Make_BookOfSuperSoldier" && !customThings.Contains(TorannMagicDefOf.BookOfSuperSoldier)))
-                        {
-                            removedRecipes.Add(current);
-                        }
-                    }
-                }
+                if (anyRemovedCustomThings)
+                    recipeDictionary[current.defName] = current;
+
+                (Func<bool> settingsValueGetter, ThingDef item) = recipeIndexMap.TryGetValue(current.index);
+                if (settingsValueGetter == null) continue;
+                if (settingsValueGetter()) continue;
+                if (customThings.Contains(item)) continue;
+                removedRecipes.Add(current);
             }
 
-            for (int i = 0; i < removedCustomThings.Count; i++)
+            if (anyRemovedCustomThings)
             {
-                if (RecipeEnumerable.Any((RecipeDef x) => x.defName == "Make_" + removedCustomThings[i].defName))
-                {
-                    removedRecipes.Add(RecipeEnumerable.FirstOrDefault<RecipeDef>((RecipeDef x) => x.defName == ("Make_" + removedCustomThings[i].ToString())));
-                }
+                removedRecipes.AddRange(
+                    removedCustomThings
+                        .Select(td => recipeDictionary.TryGetValue($"Make_{td.defName}"))
+                        .Where(recipeDef => recipeDef != null)
+                );
             }
 
-            for (int i = 0; i < removedRecipes.Count(); i++)
+
+            for (int i = 0; i < removedRecipes.Count; i++)
             {
                 //Log.Message("removing " + removedRecipes[i].defName + " from def database");
                 DefDatabase<RecipeDef>.AllDefsListForReading.Remove(removedRecipes[i]);
