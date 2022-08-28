@@ -2236,56 +2236,6 @@ namespace TorannMagic
             }
         }
 
-        private static HashSet<ushort> magicTraitIndexes = new HashSet<ushort>()
-        {
-            TorannMagicDefOf.Enchanter.index,
-            TorannMagicDefOf.BloodMage.index,
-            TorannMagicDefOf.Technomancer.index,
-            TorannMagicDefOf.Geomancer.index,
-            TorannMagicDefOf.Warlock.index,
-            TorannMagicDefOf.Succubus.index,
-            TorannMagicDefOf.Faceless.index,
-            TorannMagicDefOf.InnerFire.index,
-            TorannMagicDefOf.HeartOfFrost.index,
-            TorannMagicDefOf.StormBorn.index,
-            TorannMagicDefOf.Arcanist.index,
-            TorannMagicDefOf.Paladin.index,
-            TorannMagicDefOf.Summoner.index,
-            TorannMagicDefOf.Druid.index,
-            TorannMagicDefOf.Necromancer.index,
-            TorannMagicDefOf.Lich.index,
-            TorannMagicDefOf.Priest.index,
-            TorannMagicDefOf.TM_Bard.index,
-            TorannMagicDefOf.Chronomancer.index,
-            TorannMagicDefOf.ChaosMage.index,
-            TorannMagicDefOf.TM_Wanderer.index
-        };
-
-        private static HashSet<ushort> magicTraitIndexes = new HashSet<ushort>()
-        {
-            TorannMagicDefOf.Enchanter.index,
-            TorannMagicDefOf.BloodMage.index,
-            TorannMagicDefOf.Technomancer.index,
-            TorannMagicDefOf.Geomancer.index,
-            TorannMagicDefOf.Warlock.index,
-            TorannMagicDefOf.Succubus.index,
-            TorannMagicDefOf.Faceless.index,
-            TorannMagicDefOf.InnerFire.index,
-            TorannMagicDefOf.HeartOfFrost.index,
-            TorannMagicDefOf.StormBorn.index,
-            TorannMagicDefOf.Arcanist.index,
-            TorannMagicDefOf.Paladin.index,
-            TorannMagicDefOf.Summoner.index,
-            TorannMagicDefOf.Druid.index,
-            TorannMagicDefOf.Necromancer.index,
-            TorannMagicDefOf.Lich.index,
-            TorannMagicDefOf.Priest.index,
-            TorannMagicDefOf.TM_Bard.index,
-            TorannMagicDefOf.Chronomancer.index,
-            TorannMagicDefOf.ChaosMage.index,
-            TorannMagicDefOf.TM_Wanderer.index
-        };
-
         public bool IsMagicUser
         {
             get

@@ -1308,21 +1308,6 @@ namespace TorannMagic
             this.ResolveStamina();
         }
 
-        private static HashSet<ushort> mightTraitIndexes = new HashSet<ushort>()
-        {
-            TorannMagicDefOf.TM_Monk.index,
-            TorannMagicDefOf.DeathKnight.index,
-            TorannMagicDefOf.TM_Psionic.index,
-            TorannMagicDefOf.Gladiator.index,
-            TorannMagicDefOf.TM_Sniper.index,
-            TorannMagicDefOf.Bladedancer.index,
-            TorannMagicDefOf.Ranger.index,
-            TorannMagicDefOf.Faceless.index,
-            TorannMagicDefOf.TM_Commander.index,
-            TorannMagicDefOf.TM_SuperSoldier.index,
-            TorannMagicDefOf.TM_Wayfarer.index
-        };
-
         public bool IsMightUser
         {
             get

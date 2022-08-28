@@ -112,7 +112,7 @@ namespace TorannMagic
 
         public static int CustomClassIndexOfBaseMageClass(List<Trait> allTraits)
         {
-            for (int i = 0; i < CustomClasses.Count; i++)
+            for (int i = 0; i < CustomClasses.Length; i++)
             {
                 if (CustomClasses[i].isAdvancedClass) continue;
                 if (!CustomClasses[i].isMage) continue;
@@ -129,7 +129,7 @@ namespace TorannMagic
 
         public static int CustomClassIndexOfBaseFighterClass(List<Trait> allTraits)
         {
-            for(int i = 0; i < CustomClasses.Count; i++)
+            for(int i = 0; i < CustomClasses.Length; i++)
             {
                 if (CustomClasses[i].isAdvancedClass) continue;
                 if (!CustomClasses[i].isFighter) continue;
