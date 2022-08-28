@@ -1,21 +1,28 @@
 ﻿using RimWorld;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
 using UnityEngine;
 using System.Text;
 using HarmonyLib;
+using TorannMagic.TMDefs;
 using TorannMagic.Utils;
 
 namespace TorannMagic.ModOptions
 {
     internal class ModClassOptions : Mod
     {
+        // These get initialized in InitializeThingDefDictionaries since things must load first before ThingDefs can be accessed.
+        private static Dictionary<ushort, Func<bool>> thingDefIndexToSettingsRefMap;
+        private static Dictionary<ushort, Func<bool>> spellIndexToSettingsRefMap;
+
         public ModClassOptions(ModContentPack mcp) : base(mcp)
         {
             LongEventHandler.ExecuteWhenFinished(TM_ClassUtility.LoadCustomClasses);
             LongEventHandler.ExecuteWhenFinished(CheckForDisabledCustomClass);
+            LongEventHandler.ExecuteWhenFinished(InitializeThingDefDictionaries);
             LongEventHandler.ExecuteWhenFinished(RestrictClasses);
             LongEventHandler.ExecuteWhenFinished(InitializeFactionSettings);
             LongEventHandler.ExecuteWhenFinished(InitializeCustomClassActions);
@@ -76,7 +83,6 @@ namespace TorannMagic.ModOptions
             if(Settings.Instance.CustomClass == null)
             {
                 Settings.Instance.CustomClass = new Dictionary<string, bool>();
-                Settings.Instance.CustomClass.Clear();
             }
             for (int i = 0; i < TM_ClassUtility.CustomClasses.Count; i++)
             {
@@ -148,6 +154,162 @@ namespace TorannMagic.ModOptions
             }
         }
 
+        private static void InitializeThingDefDictionaries()
+        {
+            thingDefIndexToSettingsRefMap = new Dictionary<ushort, Func<bool>>
+            {
+                { TorannMagicDefOf.BookOfSniper.index, () => new SettingsRef().Sniper },
+                { TorannMagicDefOf.BookOfRanger.index, () => new SettingsRef().Ranger },
+                { TorannMagicDefOf.TM_PoisonTrap.index, () => new SettingsRef().Ranger },
+                { TorannMagicDefOf.BookOfGladiator.index, () => new SettingsRef().Gladiator },
+                { TorannMagicDefOf.BookOfBladedancer.index, () => new SettingsRef().Bladedancer },
+                { TorannMagicDefOf.BookOfFaceless.index, () => new SettingsRef().Faceless },
+                { TorannMagicDefOf.BookOfPsionic.index, () => new SettingsRef().Psionic },
+                { TorannMagicDefOf.BookOfDeathKnight.index, () => new SettingsRef().DeathKnight },
+                { TorannMagicDefOf.BookOfMonk.index, () => new SettingsRef().Monk },
+                { TorannMagicDefOf.BookOfCommander.index, () => new SettingsRef().Commander },
+                { TorannMagicDefOf.BookOfSuperSoldier.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_60mmMortar_Base.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_PistolSpec_Base1.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_PistolSpec_Base2.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_PistolSpec_Base3.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_PistolSpec_Base4.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_PistolSpec_Base5.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_PistolSpec_Base6.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_PistolSpec_Base7.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_PistolSpec_Base8.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_PistolSpec_Base9.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_PistolSpec_Base10.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_PistolSpec_Base11.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_PistolSpec_Base12.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_PistolSpec_Base13.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_PistolSpec_Base14.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_PistolSpec_Base15.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_PistolSpec_Base16.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_PistolSpec_Base17.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_PistolSpec_Base18.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_PistolSpec_Base19.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_RifleSpec_Base1.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_RifleSpec_Base2.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_RifleSpec_Base3.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_RifleSpec_Base4.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_RifleSpec_Base5.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_RifleSpec_Base6.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_RifleSpec_Base7.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_RifleSpec_Base8.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_RifleSpec_Base9.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_RifleSpec_Base10.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_RifleSpec_Base11.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_RifleSpec_Base12.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_RifleSpec_Base13.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_RifleSpec_Base14.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_RifleSpec_Base15.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_RifleSpec_Base16.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_RifleSpec_Base17.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_RifleSpec_Base18.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_RifleSpec_Base19.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_ShotgunSpec_Base1.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_ShotgunSpec_Base2.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_ShotgunSpec_Base3.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_ShotgunSpec_Base4.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_ShotgunSpec_Base5.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_ShotgunSpec_Base6.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_ShotgunSpec_Base7.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_ShotgunSpec_Base8.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_ShotgunSpec_Base9.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_ShotgunSpec_Base10.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_ShotgunSpec_Base11.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_ShotgunSpec_Base12.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_ShotgunSpec_Base13.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_ShotgunSpec_Base14.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_ShotgunSpec_Base15.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_ShotgunSpec_Base16.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_ShotgunSpec_Base17.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_ShotgunSpec_Base18.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.TM_ShotgunSpec_Base19.index, () => new SettingsRef().SuperSoldier },
+                { TorannMagicDefOf.BookOfArcanist.index, () => new SettingsRef().Arcanist },
+                { TorannMagicDefOf.Torn_BookOfArcanist.index, () => new SettingsRef().Arcanist },
+                { TorannMagicDefOf.Torn_BookOfInnerFire.index, () => new SettingsRef().FireMage },
+                { TorannMagicDefOf.BookOfInnerFire.index, () => new SettingsRef().FireMage },
+                { TorannMagicDefOf.Torn_BookOfHeartOfFrost.index, () => new SettingsRef().IceMage },
+                { TorannMagicDefOf.BookOfHeartOfFrost.index, () => new SettingsRef().IceMage },
+                { TorannMagicDefOf.Torn_BookOfStormBorn.index, () => new SettingsRef().LitMage },
+                { TorannMagicDefOf.BookOfStormBorn.index, () => new SettingsRef().LitMage },
+                { TorannMagicDefOf.Torn_BookOfNature.index, () => new SettingsRef().Druid },
+                { TorannMagicDefOf.BookOfDruid.index, () => new SettingsRef().Druid },
+                { TorannMagicDefOf.SeedofRegrowth.index, () => new SettingsRef().Druid },
+                { TorannMagicDefOf.Torn_BookOfSummoner.index, () => new SettingsRef().Summoner },
+                { TorannMagicDefOf.BookOfSummoner.index, () => new SettingsRef().Summoner },
+                { TorannMagicDefOf.TM_ManaMine.index, () => new SettingsRef().Summoner },
+                { TorannMagicDefOf.TM_ManaMine_I.index, () => new SettingsRef().Summoner },
+                { TorannMagicDefOf.TM_ManaMine_II.index, () => new SettingsRef().Summoner },
+                { TorannMagicDefOf.TM_ManaMine_III.index, () => new SettingsRef().Summoner },
+                { TorannMagicDefOf.DefensePylon.index, () => new SettingsRef().Summoner },
+                { TorannMagicDefOf.DefensePylon_I.index, () => new SettingsRef().Summoner },
+                { TorannMagicDefOf.DefensePylon_II.index, () => new SettingsRef().Summoner },
+                { TorannMagicDefOf.DefensePylon_III.index, () => new SettingsRef().Summoner },
+                { TorannMagicDefOf.Launcher_DefensePylon.index, () => new SettingsRef().Summoner },
+                { TorannMagicDefOf.Launcher_DefensePylon_I.index, () => new SettingsRef().Summoner },
+                { TorannMagicDefOf.Launcher_DefensePylon_II.index, () => new SettingsRef().Summoner },
+                { TorannMagicDefOf.Launcher_DefensePylon_III.index, () => new SettingsRef().Summoner },
+                { TorannMagicDefOf.TM_Poppi.index, () => new SettingsRef().Summoner },
+                { TorannMagicDefOf.Torn_BookOfValiant.index, () => new SettingsRef().Paladin },
+                { TorannMagicDefOf.BookOfValiant.index, () => new SettingsRef().Paladin },
+                { TorannMagicDefOf.Torn_BookOfPriest.index, () => new SettingsRef().Priest },
+                { TorannMagicDefOf.BookOfPriest.index, () => new SettingsRef().Priest },
+                { TorannMagicDefOf.Torn_BookOfBard.index, () => new SettingsRef().Bard },
+                { TorannMagicDefOf.BookOfBard.index, () => new SettingsRef().Bard },
+                { TorannMagicDefOf.BookOfNecromancer.index, () => new SettingsRef().Necromancer },
+                { TorannMagicDefOf.Torn_BookOfUndead.index, () => new SettingsRef().Necromancer },
+                { TorannMagicDefOf.TM_Artifact_NecroticOrb.index, () => new SettingsRef().Necromancer },
+                { TorannMagicDefOf.Torn_BookOfEarth.index, () => new SettingsRef().Geomancer },
+                { TorannMagicDefOf.BookOfEarth.index, () => new SettingsRef().Geomancer },
+                { TorannMagicDefOf.TM_Lesser_SentinelR.index, () => new SettingsRef().Geomancer },
+                { TorannMagicDefOf.TM_SentinelR.index, () => new SettingsRef().Geomancer },
+                { TorannMagicDefOf.TM_Greater_SentinelR.index, () => new SettingsRef().Geomancer },
+                { TorannMagicDefOf.Torn_BookOfDemons.index, () => new SettingsRef().Demonkin },
+                { TorannMagicDefOf.BookOfDemons.index, () => new SettingsRef().Demonkin },
+                { TorannMagicDefOf.Torn_BookOfMagitech.index, () => new SettingsRef().Technomancer },
+                { TorannMagicDefOf.BookOfMagitech.index, () => new SettingsRef().Technomancer },
+                { TorannMagicDefOf.Torn_BookOfHemomancy.index, () => new SettingsRef().BloodMage },
+                { TorannMagicDefOf.BookOfHemomancy.index, () => new SettingsRef().BloodMage },
+                { TorannMagicDefOf.Torn_BookOfEnchanter.index, () => new SettingsRef().Enchanter },
+                { TorannMagicDefOf.BookOfEnchanter.index, () => new SettingsRef().Enchanter },
+                { TorannMagicDefOf.Torn_BookOfChronomancer.index, () => new SettingsRef().Chronomancer },
+                { TorannMagicDefOf.BookOfChronomancer.index, () => new SettingsRef().Chronomancer },
+                { TorannMagicDefOf.Torn_BookOfChaos.index, () => new SettingsRef().ChaosMage },
+                { TorannMagicDefOf.BookOfChaos.index, () => new SettingsRef().ChaosMage }
+            };
+
+            spellIndexToSettingsRefMap = new Dictionary<ushort, Func<bool>>
+            {
+                { TorannMagicDefOf.SpellOf_FoldReality.index, () => new SettingsRef().Arcanist },
+                { TorannMagicDefOf.SpellOf_Firestorm.index, () => new SettingsRef().FireMage },
+                { TorannMagicDefOf.SpellOf_DryGround.index, () => new SettingsRef().FireMage },
+                { TorannMagicDefOf.SpellOf_Blizzard.index, () => new SettingsRef().IceMage },
+                { TorannMagicDefOf.SpellOf_WetGround.index, () => new SettingsRef().IceMage },
+                { TorannMagicDefOf.SpellOf_EyeOfTheStorm.index, () => new SettingsRef().LitMage },
+                { TorannMagicDefOf.SpellOf_ChargeBattery.index, () => new SettingsRef().LitMage },
+                { TorannMagicDefOf.SpellOf_RegrowLimb.index, () => new SettingsRef().Druid },
+                { TorannMagicDefOf.SpellOf_FertileLands.index, () => new SettingsRef().Druid },
+                { TorannMagicDefOf.SpellOf_SummonPoppi.index, () => new SettingsRef().Summoner },
+                { TorannMagicDefOf.SpellOf_HolyWrath.index, () => new SettingsRef().Paladin },
+                { TorannMagicDefOf.SpellOf_Resurrection.index, () => new SettingsRef().Priest },
+                { TorannMagicDefOf.SpellOf_BattleHymn.index, () => new SettingsRef().Bard },
+                { TorannMagicDefOf.SpellOf_LichForm.index, () => new SettingsRef().Necromancer },
+                { TorannMagicDefOf.SpellOf_Meteor.index, () => new SettingsRef().Geomancer },
+                { TorannMagicDefOf.SpellOf_Scorn.index, () => new SettingsRef().Demonkin },
+                { TorannMagicDefOf.SpellOf_PsychicShock.index, () => new SettingsRef().Demonkin },
+                { TorannMagicDefOf.SpellOf_TechnoShield.index, () => new SettingsRef().Technomancer },
+                { TorannMagicDefOf.SpellOf_Sabotage.index, () => new SettingsRef().Technomancer },
+                { TorannMagicDefOf.SpellOf_Overdrive.index, () => new SettingsRef().Technomancer },
+                { TorannMagicDefOf.SpellOf_OrbitalStrike.index, () => new SettingsRef().Technomancer },
+                { TorannMagicDefOf.SpellOf_BloodMoon.index, () => new SettingsRef().BloodMage },
+                { TorannMagicDefOf.SpellOf_Shapeshift.index, () => new SettingsRef().Enchanter },
+                { TorannMagicDefOf.SpellOf_Recall.index, () => new SettingsRef().Chronomancer },
+            };
+        }
+
         private static void RestrictClasses()
         {
             ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
@@ -160,9 +322,10 @@ namespace TorannMagic.ModOptions
             List<ThingDef> classSpells = new List<ThingDef>();
             List<ThingDef> removedSpells = new List<ThingDef>();
 
-            for (int i = 0; i < TM_CustomClassDef.Named("TM_CustomClasses").customClasses.Count; i++)
+            List<TM_CustomClass> customClasses = TM_CustomClassDef.Named("TM_CustomClasses").customClasses;
+            for (int i = 0; i < customClasses.Count; i++)
             {
-                TMDefs.TM_CustomClass cc = TM_CustomClassDef.Named("TM_CustomClasses").customClasses[i];
+                TM_CustomClass cc = customClasses[i];
                 if (Settings.Instance.CustomClass[cc.classTrait.ToString()])
                 {
                     if (cc.tornScript != null)
@@ -218,10 +381,10 @@ namespace TorannMagic.ModOptions
                         }
                         if (cc.classMageAbilities.Contains(TorannMagicDefOf.TM_SummonExplosive))
                         {
-                            customThings.AddDistinct(ThingDef.Named("TM_ManaMine"));
-                            customThings.AddDistinct(ThingDef.Named("TM_ManaMine_I"));
-                            customThings.AddDistinct(ThingDef.Named("TM_ManaMine_II"));
-                            customThings.AddDistinct(ThingDef.Named("TM_ManaMine_III"));
+                            customThings.AddDistinct(TorannMagicDefOf.TM_ManaMine);
+                            customThings.AddDistinct(TorannMagicDefOf.TM_ManaMine_I);
+                            customThings.AddDistinct(TorannMagicDefOf.TM_ManaMine_II);
+                            customThings.AddDistinct(TorannMagicDefOf.TM_ManaMine_III);
                         }
                         if (cc.classMageAbilities.Contains(TorannMagicDefOf.TM_SummonPylon))
                         {
@@ -234,11 +397,11 @@ namespace TorannMagic.ModOptions
                             customThings.AddDistinct(ThingDef.Named("Launcher_DefensePylon_I"));
                             customThings.AddDistinct(ThingDef.Named("Launcher_DefensePylon_II"));
                             customThings.AddDistinct(ThingDef.Named("Launcher_DefensePylon_III"));
-                            customThings.AddDistinct(ThingDef.Named("TM_Poppi"));
+                            customThings.AddDistinct(TorannMagicDefOf.TM_Poppi);
                         }
                         if (cc.classMageAbilities.Contains(TorannMagicDefOf.TM_SummonPoppi))
                         {
-                            customThings.AddDistinct(ThingDef.Named("TM_Poppi"));
+                            customThings.AddDistinct(TorannMagicDefOf.TM_Poppi);
                         }
                         if (cc.classMageAbilities.Contains(TorannMagicDefOf.TM_RaiseUndead))
                         {
@@ -252,419 +415,38 @@ namespace TorannMagic.ModOptions
                     {
                         removedCustomThings.Add(cc.tornScript);                        
                     }
-                    for (int k = 0; k < cc.learnableSpells.Count; k++)
-                    {
-                        removedSpells.Add(cc.learnableSpells[k]);
-                    }
-                    for (int k = 0; k < cc.learnableSkills.Count; k++)
-                    {
-                        removedSpells.Add(cc.learnableSkills[k]);
-                    }
+
+                    removedSpells.AddRange(cc.learnableSpells);
+                    removedSpells.AddRange(cc.learnableSkills);
                     removedCustomThings.Add(cc.fullScript);
                 }
             }
 
+            void removeIfNotCustom(ThingDef thingDef)
+            {
+                if(!customThings.Contains(thingDef))
+                    removedThings.Add(thingDef);
+            }
+
             foreach (ThingDef current in enumerable)
             {
-                if (!settingsRef.Sniper)
+                // First check if this is a normal ThingDef we have a setting for
+                Func<bool> settingsValueGetter = thingDefIndexToSettingsRefMap.TryGetValue(current.index);
+                if (settingsValueGetter != null)
                 {
-                    if(current.defName == "BookOfSniper")
-                    {
-                        if (!customThings.Contains(current))
-                        {
-                            removedThings.Add(current);
-                        }
-                    }
+                    if (!settingsValueGetter())
+                        removeIfNotCustom(current);
                 }
-                if (!settingsRef.Ranger)
+                // If that fails, next we check for spells
+                else
                 {
-                    if (current.defName == "BookOfRanger" || current.defName == "TM_PoisonTrap")
-                    {
-                        if (!customThings.Contains(current))
-                        {
-                            removedThings.Add(current);
-                        }
-                    }
-                }
-                if (!settingsRef.Gladiator)
-                {
-                    if (current.defName == "BookOfGladiator")
-                    {
-                        if (!customThings.Contains(current))
-                        {
-                            removedThings.Add(current);
-                        }
-                    }
-                }
-                if (!settingsRef.Bladedancer)
-                {
-                    if (current.defName == "BookOfBladedancer")
-                    {
-                        if (!customThings.Contains(current))
-                        {
-                            removedThings.Add(current);
-                        }
-                    }
-                }
-                if (!settingsRef.Faceless)
-                {
-                    if (current.defName == "BookOfFaceless")
-                    {
-                        if (!customThings.Contains(current))
-                        {
-                            removedThings.Add(current);
-                        }
-                    }
-                }
-                if (!settingsRef.Psionic)
-                {
-                    if (current.defName == "BookOfPsionic")
-                    {
-                        if (!customThings.Contains(current))
-                        {
-                            removedThings.Add(current);
-                        }
-                    }
-                }
-                if (!settingsRef.DeathKnight)
-                {
-                    if (current.defName == "BookOfDeathKnight")
-                    {
-                        if (!customThings.Contains(current))
-                        {
-                            removedThings.Add(current);
-                        }
-                    }
-                }
-                if (!settingsRef.Monk)
-                {
-                    if (current.defName == "BookOfMonk")
-                    {
-                        if (!customThings.Contains(current))
-                        {
-                            removedThings.Add(current);
-                        }
-                    }
-                }
-                if (!settingsRef.Commander)
-                {
-                    if (current == TorannMagicDefOf.BookOfCommander)
-                    {
-                        if (!customThings.Contains(current))
-                        {
-                            removedThings.Add(current);
-                        }
-                    }
-                }
-                if (!settingsRef.SuperSoldier)
-                {
-                    if (current == TorannMagicDefOf.BookOfSuperSoldier || current == TorannMagicDefOf.TM_60mmMortar_Base)
-                    {
-                        if (!customThings.Contains(current))
-                        {
-                            removedThings.Add(current);
-                        }
-                    }
-                    if (current.defName.Contains("TM_PistolSpec_Base") && !customThings.Contains(ThingDef.Named("TM_PistolSpec_Base0")))
-                    {
-                        removedThings.Add(current);
-                    }
-                    if (current.defName.Contains("TM_RifleSpec_Base") && !customThings.Contains(ThingDef.Named("TM_RifleSpec_Base0")))
-                    {
-                        removedThings.Add(current);
-                    }
-                    if (current.defName.Contains("TM_ShotgunSpec_Base") && !customThings.Contains(ThingDef.Named("TM_ShotgunSpec_Base0")))
-                    {
-                        removedThings.Add(current);
-                    }
-                }
+                    settingsValueGetter = spellIndexToSettingsRefMap.TryGetValue(current.index);
+                    if (settingsValueGetter == null) continue;
 
-                if (!settingsRef.Arcanist)
-                {
-                    if (current.defName == "Torn_BookOfArcanist" || current.defName == "BookOfArcanist" || current.defName == "SpellOf_FoldReality")
-                    {
-                        if (!customThings.Contains(current))
-                        {
-                            removedThings.Add(current);
-                        }
-                    }
-                }
-                else
-                {
-                    if(current.defName == "SpellOf_FoldReality")
-                    {
+                    if (settingsValueGetter())
                         classSpells.Add(current);
-                    }
-                }
-                if (!settingsRef.FireMage)
-                {
-                    if (current.defName == "Torn_BookOfInnerFire" || current.defName == "BookOfInnerFire" || current.defName == "SpellOf_Firestorm" || current.defName == "SpellOf_DryGround")
-                    {
-                        if (!customThings.Contains(current))
-                        {
-                            removedThings.Add(current);
-                        }
-                    }
-                }
-                else
-                {
-                    if (current.defName == "SpellOf_Firestorm" || current.defName == "SpellOf_DryGround")
-                    {
-                        classSpells.Add(current);
-                    }
-                }
-                if (!settingsRef.IceMage)
-                {
-                    if (current.defName == "Torn_BookOfHeartOfFrost" || current.defName == "BookOfHeartOfFrost" || current.defName == "SpellOf_Blizzard" || current.defName == "SpellOf_WetGround")
-                    {
-                        if (!customThings.Contains(current))
-                        {
-                            removedThings.Add(current);
-                        }
-                    }
-                }
-                else
-                {
-                    if (current.defName == "SpellOf_Blizzard" || current.defName == "SpellOf_WetGround")
-                    {
-                        classSpells.Add(current);
-                    }
-                }
-                if (!settingsRef.LitMage)
-                {
-                    if (current.defName == "Torn_BookOfStormBorn" || current.defName == "BookOfStormBorn" || current.defName == "SpellOf_EyeOfTheStorm" || current.defName == "SpellOf_ChargeBattery")
-                    {
-                        if (!customThings.Contains(current))
-                        {
-                            removedThings.Add(current);
-                        }
-                    }
-                }
-                else
-                {
-                    if (current.defName == "SpellOf_EyeOfTheStorm" || current.defName == "SpellOf_ChargeBattery")
-                    {
-                        classSpells.Add(current);
-                    }
-                }
-                if (!settingsRef.Druid)
-                {
-                    if (current.defName == "Torn_BookOfNature" || current.defName == "BookOfNature" || current.defName == "SpellOf_RegrowLimb" || current.defName == "SeedofRegrowth" || current.defName == "SpellOf_FertileLands")
-                    {
-                        if (!customThings.Contains(current))
-                        {
-                            removedThings.Add(current);
-                        }
-                    }
-                }
-                else
-                {
-                    if (current.defName == "SpellOf_RegrowLimb" ||  current.defName == "SpellOf_FertileLands")
-                    {
-                        classSpells.Add(current);
-                    }
-                }
-                if (!settingsRef.Summoner)
-                {
-                    if (current.defName == "Torn_BookOfSummoner" || current.defName == "BookOfSummoner" || current.defName == "SpellOf_SummonPoppi" ||
-                        current.defName == "TM_ManaMine" || current.defName == "TM_ManaMine_I" || current.defName == "TM_ManaMine_II" || current.defName == "TM_ManaMine_III" ||
-                        current.defName == "DefensePylon" || current.defName == "DefensePylon_I" || current.defName == "DefensePylon_II" || current.defName == "DefensePylon_III" || current.defName == "Bullet_DefensePylon" ||
-                        current.defName == "Launcher_DefensePylon" || current.defName == "Launcher_DefensePylon_I" || current.defName == "Launcher_DefensePylon_II" || current.defName == "Launcher_DefensePylon_III" ||
-                        current.defName == "TM_Poppi")
-                    {
-                        if (!customThings.Contains(current))
-                        {
-                            removedThings.Add(current);
-                        }
-                    }
-                }
-                else
-                {
-                    if (current.defName == "SpellOf_SummonPoppi")
-                    {
-                        classSpells.Add(current);
-                    }
-                }
-                if (!settingsRef.Paladin)
-                {
-                    if (current.defName == "Torn_BookOfValiant" || current.defName == "BookOfValiant" || current.defName == "SpellOf_HolyWrath")
-                    {
-                        if (!customThings.Contains(current))
-                        {
-                            removedThings.Add(current);
-                        }
-                    }
-                }
-                else
-                {
-                    if (current.defName == "SpellOf_HolyWrath")
-                    {
-                        classSpells.Add(current);
-                    }
-                }
-                if (!settingsRef.Priest)
-                {
-                    if (current.defName == "Torn_BookOfPriest" || current.defName == "BookOfPriest" || current.defName == "SpellOf_Resurrection")
-                    {
-                        if (!customThings.Contains(current))
-                        {
-                            removedThings.Add(current);
-                        }
-                    }
-                }
-                else
-                {
-                    if (current.defName == "SpellOf_Resurrection")
-                    {
-                        classSpells.Add(current);
-                    }
-                }
-                if (!settingsRef.Bard)
-                {
-                    if (current.defName == "Torn_BookOfBard" || current.defName == "BookOfBard" || current.defName == "SpellOf_BattleHymn")
-                    {
-                        if (!customThings.Contains(current))
-                        {
-                            removedThings.Add(current);
-                        }
-                    }
-                }
-                else
-                {
-                    if (current.defName == "SpellOf_BattleHymn")
-                    {
-                        classSpells.Add(current);
-                    }
-                }
-                if (!settingsRef.Necromancer)
-                {
-                    if (current == TorannMagicDefOf.BookOfNecromancer || current == TorannMagicDefOf.Torn_BookOfUndead || current == TorannMagicDefOf.SpellOf_LichForm || current == TorannMagicDefOf.TM_Artifact_NecroticOrb)
-                    {
-                        if (!customThings.Contains(current))
-                        {
-                            removedThings.Add(current);
-                        }
-                    }
-                }
-                else
-                {
-                    if (current == TorannMagicDefOf.SpellOf_LichForm)
-                    {
-                        classSpells.Add(current);
-                    }
-                }
-                if (!settingsRef.Geomancer)
-                {
-                    if (current.defName == "Torn_BookOfEarth" || current.defName == "BookOfEarth" || current.defName == "SpellOf_Meteor" ||
-                        current.defName == "TM_Lesser_SentinelR" || current.defName == "TM_SentinelR" || current.defName == "TM_Greater_SentinelR")
-                    {
-                        if (!customThings.Contains(current))
-                        {
-                            removedThings.Add(current);
-                        }
-                    }
-                }
-                else
-                {
-                    if (current.defName == "SpellOf_Meteor")
-                    {
-                        classSpells.Add(current);
-                    }
-                }
-                if (!settingsRef.Demonkin)
-                {
-                    if (current.defName == "Torn_BookOfDemons" || current.defName == "BookOfDemons" || current.defName == "SpellOf_Scorn" || current.defName == "SpellOf_PsychicShock")
-                    {
-                        if (!customThings.Contains(current))
-                        {
-                            removedThings.Add(current);
-                        }
-                    }
-                }
-                else
-                {
-                    if (current.defName == "SpellOf_Scorn" || current.defName == "SpellOf_PsychicShock")
-                    {
-                        classSpells.Add(current);
-                    }
-                }
-                if (!settingsRef.Technomancer)
-                {
-                    if (current == TorannMagicDefOf.Torn_BookOfMagitech || current == TorannMagicDefOf.BookOfMagitech || current == TorannMagicDefOf.SpellOf_TechnoShield || current == TorannMagicDefOf.SpellOf_Sabotage || current == TorannMagicDefOf.SpellOf_Overdrive || current == TorannMagicDefOf.SpellOf_OrbitalStrike)
-                    {
-                        if (!customThings.Contains(current))
-                        {
-                            removedThings.Add(current);
-                        }
-                    }
-                }
-                else
-                {
-                    if (current == TorannMagicDefOf.SpellOf_TechnoShield || current == TorannMagicDefOf.SpellOf_Sabotage || current == TorannMagicDefOf.SpellOf_Overdrive || current == TorannMagicDefOf.SpellOf_OrbitalStrike)
-                    {
-                        classSpells.Add(current);
-                    }
-                }
-                if (!settingsRef.BloodMage)
-                {
-                    if (current == TorannMagicDefOf.BookOfHemomancy || current == TorannMagicDefOf.Torn_BookOfHemomancy || current == TorannMagicDefOf.SpellOf_BloodMoon)
-                    {
-                        if (!customThings.Contains(current))
-                        {
-                            removedThings.Add(current);
-                        }
-                    }
-                }
-                else
-                {
-                    if (current == TorannMagicDefOf.SpellOf_BloodMoon)
-                    {
-                        classSpells.Add(current);
-                    }
-                }
-                if (!settingsRef.Enchanter)
-                {
-                    if (current == TorannMagicDefOf.BookOfEnchanter || current == TorannMagicDefOf.Torn_BookOfEnchanter || current == TorannMagicDefOf.SpellOf_Shapeshift)
-                    {
-                        if (!customThings.Contains(current))
-                        {
-                            removedThings.Add(current);
-                        }
-                    }
-                }
-                else
-                {
-                    if (current == TorannMagicDefOf.SpellOf_Shapeshift)
-                    {
-                        classSpells.Add(current);
-                    }
-                }
-                if (!settingsRef.Chronomancer)
-                {
-                    if (current == TorannMagicDefOf.BookOfChronomancer || current == TorannMagicDefOf.Torn_BookOfChronomancer || current == TorannMagicDefOf.SpellOf_Recall)
-                    {
-                        if (!customThings.Contains(current))
-                        {
-                            removedThings.Add(current);
-                        }
-                    }
-                }
-                else
-                {
-                    if (current == TorannMagicDefOf.SpellOf_Recall)
-                    {
-                        classSpells.Add(current);
-                    }
-                }
-                if (!settingsRef.ChaosMage)
-                {
-                    if (current == TorannMagicDefOf.BookOfChaos || current == TorannMagicDefOf.Torn_BookOfChaos)
-                    {
-                        if (!customThings.Contains(current))
-                        {
-                            removedThings.Add(current);
-                        }
-                    }
+                    else
+                        removeIfNotCustom(current);
                 }
             }
 
