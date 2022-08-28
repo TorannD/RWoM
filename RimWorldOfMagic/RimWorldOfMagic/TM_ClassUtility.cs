@@ -26,13 +26,6 @@ namespace TorannMagic
         public static TM_CustomClass[] CustomMageClasses;
         public static TM_CustomClass[] CustomFighterClasses;
 
-        //public static TM_CustomClass[] CustomClasses;
-        //public static readonly Dictionary<ushort, TM_CustomClass> CustomAdvancedClassTraitIndexMap = new Dictionary<ushort, TM_CustomClass>();
-        //public static TM_CustomClass[] CustomBaseClasses;
-        //public static TM_CustomClass[] CustomMageClasses;
-        //public static TM_CustomClass[] CustomFighterClasses;
-        //public static TM_CustomClass[] CustomAdvancedClasses;
-
         public static void LoadCustomClasses()
         {
             CustomClasses = TM_CustomClassDef.Named("TM_CustomClasses").customClasses.ToArray();
