@@ -13,101 +13,82 @@ namespace TorannMagic
         private int pwrVal = 0;
         private int verVal = 0;
 
-        public string labelCap
-        {
-            get
-            {
-                return base.Def.LabelCap;
-            }
-        }
-
-        public string label
-        {
-            get
-            {
-                return base.Def.label;
-            }
-        }
+        public string labelCap => base.Def.LabelCap;
+        public string label => base.Def.label;
 
         private void Initialize()
         {
-            bool spawned = base.Pawn.Spawned;
-            if (spawned)
-            {
-                MagicPowerSkill pwr = this.Pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Inspire.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Inspire_pwr");
-                MagicPowerSkill ver = this.Pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Inspire.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Inspire_ver");
-                this.pwrVal = pwr.level;
-                this.verVal = ver.level;
-            }
+            if (!Pawn.Spawned) return;
+            MagicPowerSkill pwr = Pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Inspire.First(mps => mps.label == "TM_Inspire_pwr");
+            MagicPowerSkill ver = Pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Inspire.First(mps => mps.label == "TM_Inspire_ver");
+            pwrVal = pwr.level;
+            verVal = ver.level;
+            initializing = false;
         }
 
         public override void CompPostTick(ref float severityAdjustment)
         {
             base.CompPostTick(ref severityAdjustment);
-            bool flag = base.Pawn != null;
-            if (flag)
+            if (Pawn != null)
             {
                 if (initializing)
                 {
-                    initializing = false;
-                    this.Initialize();
+                    Initialize();
                 }
             }
             if(Find.TickManager.TicksGame % 600 == 0)
             {
-                MagicPowerSkill pwr = this.Pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Inspire.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Inspire_pwr");
-                MagicPowerSkill ver = this.Pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Inspire.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Inspire_ver");
-                this.pwrVal = pwr.level;
-                this.verVal = ver.level;
+                MagicPowerSkill pwr = Pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Inspire.First(mps => mps.label == "TM_Inspire_pwr");
+                MagicPowerSkill ver = Pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Inspire.First(mps => mps.label == "TM_Inspire_ver");
+                pwrVal = pwr.level;
+                verVal = ver.level;
             }
-            Map map = base.Pawn.Map;
+            Map map = Pawn?.Map;
             int tickTimer = 1000 - (pwrVal * 100);
-            bool flag4 = Find.TickManager.TicksGame % tickTimer == 0;
-            if (flag4 && map != null)
-            {
-                CellRect cellRect = CellRect.CenteredOn(base.Pawn.Position, 3);
-                cellRect.ClipInsideMap(map);
+            if (Find.TickManager.TicksGame % tickTimer != 0 || map == null) return;
 
-                IntVec3 curCell = cellRect.RandomCell;
-                Pawn inspiredPawn = curCell.GetFirstPawn(map);
-                if(inspiredPawn != null && inspiredPawn.IsColonist && inspiredPawn.RaceProps.Humanlike && !inspiredPawn.Inspired && inspiredPawn != this.Pawn)
-                {
-                    InspirationDef id = TM_Calc.GetRandomAvailableInspirationDef(inspiredPawn);
-                    bool flag1 = id.defName == "ID_MiningFrenzy" || id.defName == "ID_FarmingFrenzy" || id == TorannMagicDefOf.ID_ArcanePathways;
-                    bool flag2 = id.defName == "ID_Introspection" || id.defName == "ID_Outgoing";
-                    bool flag3 = id.defName == "ID_ManaRegen" || id.defName == "ID_Champion";
-                    Vector3 drawPosAbove = inspiredPawn.DrawPos;
-                    drawPosAbove.z += .5f;
-                    if (verVal == 0 && !flag1 && !flag2 && !flag3)
-                    {
-                        inspiredPawn.mindState.inspirationHandler.TryStartInspiration(id);
-                        TM_MoteMaker.ThrowExclamationMote(drawPosAbove, inspiredPawn.Map, .5f);
-                    }
-                    else if( verVal == 1 && !flag2 && !flag3)
-                    {
-                        inspiredPawn.mindState.inspirationHandler.TryStartInspiration(id);
-                        TM_MoteMaker.ThrowExclamationMote(drawPosAbove, inspiredPawn.Map, .7f);
-                    }
-                    else if( verVal == 2 && !flag3)
-                    {
-                        inspiredPawn.mindState.inspirationHandler.TryStartInspiration(id);
-                        TM_MoteMaker.ThrowExclamationMote(drawPosAbove, inspiredPawn.Map, Rand.Range(.5f, .7f));
-                        TM_MoteMaker.ThrowExclamationMote(drawPosAbove, inspiredPawn.Map, Rand.Range(.5f, .7f));
-                    }
-                    else if(verVal == 3)
-                    {
-                        inspiredPawn.mindState.inspirationHandler.TryStartInspiration(id);                        
-                        TM_MoteMaker.ThrowExclamationMote(drawPosAbove, inspiredPawn.Map, Rand.Range(.5f, .7f));
-                        TM_MoteMaker.ThrowExclamationMote(drawPosAbove, inspiredPawn.Map, Rand.Range(.5f, .7f));
-                        TM_MoteMaker.ThrowExclamationMote(drawPosAbove, inspiredPawn.Map, Rand.Range(.5f, .7f));
-                    }
-                    else
-                    {
-                        //failed inspiration due to type
-                    }                    
-                }
+            CellRect cellRect = CellRect.CenteredOn(Pawn.Position, 3);
+            cellRect.ClipInsideMap(map);
+
+            IntVec3 curCell = cellRect.RandomCell;
+            Pawn inspiredPawn = curCell.GetFirstPawn(map);
+            if (inspiredPawn == null
+                || !inspiredPawn.IsColonist
+                || !inspiredPawn.RaceProps.Humanlike
+                || inspiredPawn.Inspired
+                || inspiredPawn == Pawn) return;
+
+            InspirationDef id = TM_Calc.GetRandomAvailableInspirationDef(inspiredPawn);
+            bool flag1 = id.defName == "ID_MiningFrenzy" || id.defName == "ID_FarmingFrenzy" || id == TorannMagicDefOf.ID_ArcanePathways;
+            bool flag2 = id.defName == "ID_Introspection" || id.defName == "ID_Outgoing";
+            bool flag3 = id.defName == "ID_ManaRegen" || id.defName == "ID_Champion";
+            Vector3 drawPosAbove = inspiredPawn.DrawPos;
+            drawPosAbove.z += .5f;
+            switch (verVal)
+            {
+                case 0 when !flag1 && !flag2 && !flag3:
+                    inspiredPawn.mindState.inspirationHandler.TryStartInspiration(id);
+                    TM_MoteMaker.ThrowExclamationMote(drawPosAbove, inspiredPawn.Map, .5f);
+                    break;
+                case 1 when !flag2 && !flag3:
+                    inspiredPawn.mindState.inspirationHandler.TryStartInspiration(id);
+                    TM_MoteMaker.ThrowExclamationMote(drawPosAbove, inspiredPawn.Map, .7f);
+                    break;
+                case 2 when !flag3:
+                    inspiredPawn.mindState.inspirationHandler.TryStartInspiration(id);
+                    TM_MoteMaker.ThrowExclamationMote(drawPosAbove, inspiredPawn.Map, Rand.Range(.5f, .7f));
+                    TM_MoteMaker.ThrowExclamationMote(drawPosAbove, inspiredPawn.Map, Rand.Range(.5f, .7f));
+                    break;
+                case 3:
+                    inspiredPawn.mindState.inspirationHandler.TryStartInspiration(id);
+                    TM_MoteMaker.ThrowExclamationMote(drawPosAbove, inspiredPawn.Map, Rand.Range(.5f, .7f));
+                    TM_MoteMaker.ThrowExclamationMote(drawPosAbove, inspiredPawn.Map, Rand.Range(.5f, .7f));
+                    TM_MoteMaker.ThrowExclamationMote(drawPosAbove, inspiredPawn.Map, Rand.Range(.5f, .7f));
+                    break;
+                default:
+                    //failed inspiration due to type
+                    break;
             }
         }
-        
     }
 }
