@@ -103,12 +103,7 @@ namespace TorannMagic.ModOptions
 
         public static List<Pawn> GetOverdrivePawnList()
         {
-            if(overdrivePawns == null)
-            {
-                overdrivePawns = new List<Pawn>();
-                overdrivePawns.Clear();
-            }
-            return overdrivePawns;
+            return overdrivePawns ?? (overdrivePawns = new List<Pawn>());
         }
 
         private static int pistolSpecCount;

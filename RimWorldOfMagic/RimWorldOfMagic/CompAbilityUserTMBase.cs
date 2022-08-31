@@ -1,12 +1,12 @@
 ﻿using System.Linq;
 using AbilityUser;
 using RimWorld;
-using TorannMagic.Utils;
 using UnityEngine;
 using Verse;
 using System.Collections.Generic;
 using HarmonyLib;
 using TorannMagic.TMDefs;
+using TorannMagic.Utils;
 
 namespace TorannMagic
 {
@@ -131,6 +131,13 @@ namespace TorannMagic
                 }
                 DrawMark(material, new Vector3(.28f, 1f, .28f));
             }
+        }
+
+        // Remove and then add ability to prevent duplication
+        public void SafelyAddPawnAbility(TMAbilityDef abilityDef)
+        {
+            RemovePawnAbility(abilityDef);
+            AddPawnAbility(abilityDef);
         }
     }
 }
