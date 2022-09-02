@@ -305,13 +305,8 @@ namespace TorannMagic
             return new MagicPower(new List<AbilityDef> { abilityDef }, requiresScrollToLearn);
         }
 
-        public Dictionary<ushort, MagicPower> MagicPowerStandaloneDictionary
-        {
-            get
-            {
-                return magicPowerStandaloneDictionary ?? MagicPowersStandalone.ToDictionary(mp => mp.abilityDef.index, mp => mp);
-            }
-        }
+        public Dictionary<ushort, MagicPower> MagicPowerStandaloneDictionary =>
+            magicPowerStandaloneDictionary ?? MagicPowersStandalone.ToDictionary(mp => mp.abilityDef.index, mp => mp);
 
         public List<MagicPower> MagicPowersStandalone  //spells needed for magicpower reference during autocast
         {
@@ -1947,30 +1942,41 @@ namespace TorannMagic
 
         public MagicPower ReturnMatchingMagicPower(TMAbilityDef def)
         {
-            for (int i = 0; i < AllMagicPowers.Count; i++)
-            {
-                if (AllMagicPowers[i].TMabilityDefs.Contains(def))
-                {
-                    if (AllMagicPowers[i] == MagicPowersWD.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_SoulBond) ||
-                                            AllMagicPowers[i] == MagicPowersWD.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_ShadowBolt) ||
-                                            AllMagicPowers[i] == MagicPowersWD.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Dominate))
-                    {
-                        //do nothing
-                    }
-                    else
-                    {
-                        return AllMagicPowers[i];
-                    }
-                }
-            }
-            return null;
+            return AllMagicPowers
+                .Where(t => t.TMabilityDefs.Contains(def))
+                .FirstOrDefault(t =>
+                    t != MagicPowersWD.FirstOrDefault(mp =>  mp.abilityDef == TorannMagicDefOf.TM_SoulBond)
+                    && t != MagicPowersWD.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_ShadowBolt)
+                    && t != MagicPowersWD.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_Dominate)
+                );
         }
 
         public IEnumerable<MagicPower> Powers
         {
             get
             {
-                return this.MagicPowersCM.Concat(this.MagicPowersW.Concat(this.MagicPowersC.Concat(this.MagicPowersE.Concat(this.MagicPowersBM.Concat(this.MagicPowersIF.Concat(this.MagicPowersHoF.Concat(this.MagicPowersSB.Concat(this.MagicPowersA.Concat(this.MagicPowersP.Concat(this.MagicPowersS.Concat(this.MagicPowersD.Concat(this.MagicPowersN.Concat(this.MagicPowersPR.Concat(this.MagicPowersB.Concat(this.MagicPowersWD.Concat(this.MagicPowersSD.Concat(this.MagicPowersG.Concat(this.MagicPowersT.Concat(this.MagicPowersStandalone)))))))))))))))))));
+                List<MagicPower> powers = new List<MagicPower>();
+                powers.AddRange(MagicPowersCM);
+                powers.AddRange(MagicPowersW);
+                powers.AddRange(MagicPowersC);
+                powers.AddRange(MagicPowersE);
+                powers.AddRange(MagicPowersBM);
+                powers.AddRange(MagicPowersIF);
+                powers.AddRange(MagicPowersHoF);
+                powers.AddRange(MagicPowersSB);
+                powers.AddRange(MagicPowersA);
+                powers.AddRange(MagicPowersP);
+                powers.AddRange(MagicPowersS);
+                powers.AddRange(MagicPowersD);
+                powers.AddRange(MagicPowersN);
+                powers.AddRange(MagicPowersPR);
+                powers.AddRange(MagicPowersB);
+                powers.AddRange(MagicPowersWD);
+                powers.AddRange(MagicPowersSD);
+                powers.AddRange(MagicPowersG);
+                powers.AddRange(MagicPowersT);
+                powers.AddRange(MagicPowersStandalone);
+                return powers;
             }
         }
 
@@ -1983,64 +1989,63 @@ namespace TorannMagic
                 {
                     List<MagicPower> tmpList = new List<MagicPower>();
                     allMagicPowersForChaosMageList = new List<MagicPower>();
-                    allMagicPowersForChaosMageList.Clear();
-                    allMagicPowersForChaosMageList.AddRange(this.MagicPowersW);
-                    tmpList.Add(this.MagicPowersIF.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Firestorm));
-                    allMagicPowersForChaosMageList.AddRange(this.MagicPowersIF.Except(tmpList));
+                    allMagicPowersForChaosMageList.AddRange(MagicPowersW);
+                    tmpList.Add(MagicPowersIF.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_Firestorm));
+                    allMagicPowersForChaosMageList.AddRange(MagicPowersIF.Except(tmpList));
                     tmpList.Clear();
-                    tmpList.Add(this.MagicPowersHoF.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Rainmaker));
-                    tmpList.Add(this.MagicPowersHoF.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Blizzard));
-                    allMagicPowersForChaosMageList.AddRange(this.MagicPowersHoF.Except(tmpList));
+                    tmpList.Add(MagicPowersHoF.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_Rainmaker));
+                    tmpList.Add(MagicPowersHoF.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_Blizzard));
+                    allMagicPowersForChaosMageList.AddRange(MagicPowersHoF.Except(tmpList));
                     tmpList.Clear();
-                    tmpList.Add(this.MagicPowersSB.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_EyeOfTheStorm));
-                    allMagicPowersForChaosMageList.AddRange(this.MagicPowersSB.Except(tmpList));
+                    tmpList.Add(MagicPowersSB.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_EyeOfTheStorm));
+                    allMagicPowersForChaosMageList.AddRange(MagicPowersSB.Except(tmpList));
                     tmpList.Clear();
-                    tmpList.Add(this.MagicPowersA.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_FoldReality));
-                    allMagicPowersForChaosMageList.AddRange(this.MagicPowersA.Except(tmpList));
+                    tmpList.Add(MagicPowersA.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_FoldReality));
+                    allMagicPowersForChaosMageList.AddRange(MagicPowersA.Except(tmpList));
                     tmpList.Clear();
-                    tmpList.Add(this.MagicPowersP.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_HolyWrath));
-                    allMagicPowersForChaosMageList.AddRange(this.MagicPowersP.Except(tmpList));
+                    tmpList.Add(MagicPowersP.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_HolyWrath));
+                    allMagicPowersForChaosMageList.AddRange(MagicPowersP.Except(tmpList));
                     tmpList.Clear();
-                    allMagicPowersForChaosMageList.AddRange(this.MagicPowersS.Except(MagicPowersS.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_SummonPoppi)));
-                    tmpList.Add(this.MagicPowersD.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_RegrowLimb));
-                    allMagicPowersForChaosMageList.AddRange(this.MagicPowersD.Except(tmpList));
+                    allMagicPowersForChaosMageList.AddRange(MagicPowersS.Except(MagicPowersS.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_SummonPoppi)));
+                    tmpList.Add(MagicPowersD.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_RegrowLimb));
+                    allMagicPowersForChaosMageList.AddRange(MagicPowersD.Except(tmpList));
                     tmpList.Clear();
-                    tmpList.Add(this.MagicPowersN.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_RaiseUndead));
-                    tmpList.Add(this.MagicPowersN.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_LichForm));
-                    tmpList.Add(this.MagicPowersN.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_DeathBolt));
-                    tmpList.Add(this.MagicPowersN.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_DeathBolt_I));
-                    tmpList.Add(this.MagicPowersN.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_DeathBolt_II));
-                    tmpList.Add(this.MagicPowersN.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_DeathBolt_III));
-                    allMagicPowersForChaosMageList.AddRange(this.MagicPowersN.Except(tmpList));
+                    tmpList.Add(MagicPowersN.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_RaiseUndead));
+                    tmpList.Add(MagicPowersN.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_LichForm));
+                    tmpList.Add(MagicPowersN.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_DeathBolt));
+                    tmpList.Add(MagicPowersN.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_DeathBolt_I));
+                    tmpList.Add(MagicPowersN.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_DeathBolt_II));
+                    tmpList.Add(MagicPowersN.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_DeathBolt_III));
+                    allMagicPowersForChaosMageList.AddRange(MagicPowersN.Except(tmpList));
                     tmpList.Clear();
-                    allMagicPowersForChaosMageList.AddRange(this.MagicPowersPR.Except(MagicPowersPR.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Resurrection)));
-                    tmpList.Add(this.MagicPowersB.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_BardTraining));
-                    tmpList.Add(this.MagicPowersB.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Inspire));
-                    tmpList.Add(this.MagicPowersB.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Entertain));
-                    tmpList.Add(this.MagicPowersB.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_BattleHymn));
-                    allMagicPowersForChaosMageList.AddRange(this.MagicPowersB.Except(tmpList));
+                    allMagicPowersForChaosMageList.AddRange(MagicPowersPR.Except(MagicPowersPR.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_Resurrection)));
+                    tmpList.Add(MagicPowersB.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_BardTraining));
+                    tmpList.Add(MagicPowersB.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_Inspire));
+                    tmpList.Add(MagicPowersB.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_Entertain));
+                    tmpList.Add(MagicPowersB.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_BattleHymn));
+                    allMagicPowersForChaosMageList.AddRange(MagicPowersB.Except(tmpList));
                     tmpList.Clear();
-                    allMagicPowersForChaosMageList.AddRange(this.MagicPowersWD.Except(MagicPowersWD.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_PsychicShock)));
-                    tmpList.Add(this.MagicPowersSD.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_SoulBond));
-                    tmpList.Add(this.MagicPowersSD.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_ShadowBolt));
-                    tmpList.Add(this.MagicPowersSD.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Dominate));
-                    tmpList.Add(this.MagicPowersSD.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Scorn));
-                    allMagicPowersForChaosMageList.AddRange(this.MagicPowersSD.Except(tmpList));
+                    allMagicPowersForChaosMageList.AddRange(MagicPowersWD.Except(MagicPowersWD.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_PsychicShock)));
+                    tmpList.Add(MagicPowersSD.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_SoulBond));
+                    tmpList.Add(MagicPowersSD.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_ShadowBolt));
+                    tmpList.Add(MagicPowersSD.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_Dominate));
+                    tmpList.Add(MagicPowersSD.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_Scorn));
+                    allMagicPowersForChaosMageList.AddRange(MagicPowersSD.Except(tmpList));
                     tmpList.Clear();
-                    allMagicPowersForChaosMageList.AddRange(this.MagicPowersG.Except(MagicPowersG.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Meteor)));
-                    tmpList.Add(this.MagicPowersT.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_OrbitalStrike));
-                    tmpList.Add(this.MagicPowersT.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_OrbitalStrike_I));
-                    tmpList.Add(this.MagicPowersT.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_OrbitalStrike_II));
-                    tmpList.Add(this.MagicPowersT.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_OrbitalStrike_III));
-                    allMagicPowersForChaosMageList.AddRange(this.MagicPowersT.Except(tmpList));
+                    allMagicPowersForChaosMageList.AddRange(MagicPowersG.Except(MagicPowersG.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_Meteor)));
+                    tmpList.Add(MagicPowersT.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_OrbitalStrike));
+                    tmpList.Add(MagicPowersT.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_OrbitalStrike_I));
+                    tmpList.Add(MagicPowersT.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_OrbitalStrike_II));
+                    tmpList.Add(MagicPowersT.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_OrbitalStrike_III));
+                    allMagicPowersForChaosMageList.AddRange(MagicPowersT.Except(tmpList));
                     tmpList.Clear();
-                    allMagicPowersForChaosMageList.AddRange(this.MagicPowersE.Except(MagicPowersE.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Shapeshift)));
-                    allMagicPowersForChaosMageList.AddRange(this.MagicPowersC.Except(MagicPowersC.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Recall)));
-                    allMagicPowersForChaosMageList.Add((this.MagicPowersShadow.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_ShadowWalk)));
-                    allMagicPowersForChaosMageList.AddRange(this.MagicPowersBrightmage.Except(MagicPowersBrightmage.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_SpiritOfLight)));
-                    tmpList.Add(MagicPowersShaman.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_GuardianSpirit));
-                    //tmpList.Add(this.MagicPowersShaman.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Totems));
-                    allMagicPowersForChaosMageList.AddRange(this.MagicPowersShaman.Except(tmpList));
+                    allMagicPowersForChaosMageList.AddRange(MagicPowersE.Except(MagicPowersE.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_Shapeshift)));
+                    allMagicPowersForChaosMageList.AddRange(MagicPowersC.Except(MagicPowersC.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_Recall)));
+                    allMagicPowersForChaosMageList.Add((MagicPowersShadow.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_ShadowWalk)));
+                    allMagicPowersForChaosMageList.AddRange(MagicPowersBrightmage.Except(MagicPowersBrightmage.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_SpiritOfLight)));
+                    tmpList.Add(MagicPowersShaman.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_GuardianSpirit));
+                    //tmpList.Add(MagicPowersShaman.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_Totems));
+                    allMagicPowersForChaosMageList.AddRange(MagicPowersShaman.Except(tmpList));
                     tmpList.Clear();
                 }
                 return allMagicPowersForChaosMageList;
@@ -2055,10 +2060,9 @@ namespace TorannMagic
                 if (allMagicPowersList == null || allMagicPowersList.Count <= 0)
                 {
                     allMagicPowersList = new List<MagicPower>();
-                    allMagicPowersList.Clear();
                     allMagicPowersList.AddRange(AllMagicPowersWithSkills);
-                    allMagicPowersList.AddRange(this.MagicPowersStandalone);
-                    allMagicPowersList.AddRange(this.MagicPowersCustomStandalone);
+                    allMagicPowersList.AddRange(MagicPowersStandalone);
+                    allMagicPowersList.AddRange(MagicPowersCustomStandalone);
                 }
                 return allMagicPowersList;
             }
@@ -2089,8 +2093,8 @@ namespace TorannMagic
                     allMagicPowersWithSkillsList.AddRange(MagicPowersN);
                     allMagicPowersWithSkillsList.AddRange(MagicPowersB);
                     allMagicPowersWithSkillsList.AddRange(MagicPowersSD);
-                    //allMagicPowersWithSkillsList.Add(MagicPowersWD.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Repulsion));
-                    //allMagicPowersWithSkillsList.Add(MagicPowersWD.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_PsychicShock));
+                    //allMagicPowersWithSkillsList.Add(MagicPowersWD.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_Repulsion));
+                    //allMagicPowersWithSkillsList.Add(MagicPowersWD.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_PsychicShock));
                     allMagicPowersWithSkillsList.AddRange(MagicPowersWD);
                     allMagicPowersWithSkillsList.AddRange(MagicPowersG);
                     allMagicPowersWithSkillsList.AddRange(MagicPowersT);
@@ -2108,18 +2112,9 @@ namespace TorannMagic
         {
             get
             {
-                if (uniquePowers == null || uniquePowers.Count <= 0)
-                {
-                    List<MagicPower> tmpList = new List<MagicPower>();
-                    for(int i = 0; i < AllMagicPowers.Count; i++)
-                    {
-                        if(!tmpList.Contains(AllMagicPowers[i]))
-                        {
-                            tmpList.Add(AllMagicPowers[i]);
-                        }
-                    }
-                    uniquePowers = tmpList;
-                }
+                if (uniquePowers != null && uniquePowers.Count > 0) return uniquePowers;
+
+                uniquePowers = AllMagicPowers.Distinct().ToList();
                 return uniquePowers;
             }
         }
