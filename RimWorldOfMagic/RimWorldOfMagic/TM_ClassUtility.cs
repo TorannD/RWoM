@@ -33,19 +33,19 @@ namespace TorannMagic
 
         public static void LoadCustomClasses()
         {
-            CustomClasses = TM_CustomClassDef.Named("TM_CustomClasses").customClasses;
-            //CustomAdvancedClassTraitIndexMap.Clear();
-            //var CustomBaseClassesList = new List<TM_CustomClass>();
-            //var CustomMageClassesList = new List<TM_CustomClass>();
-            //var CustomFighterClassesList = new List<TM_CustomClass>();
-            //var CustomAdvancedClassesList = new List<TM_CustomClass>();
-            CustomBaseClasses.Clear();
-            CustomMageClasses.Clear();
-            CustomFighterClasses.Clear();
-            CustomAdvancedClasses.Clear();
-
-            if (CustomClasses != null)
+            if (TM_CustomClassDef.Named("TM_CustomClasses") != null)
             {
+                CustomClasses = TM_CustomClassDef.Named("TM_CustomClasses").customClasses;
+                //CustomAdvancedClassTraitIndexMap.Clear();
+                //var CustomBaseClassesList = new List<TM_CustomClass>();
+                //var CustomMageClassesList = new List<TM_CustomClass>();
+                //var CustomFighterClassesList = new List<TM_CustomClass>();
+                //var CustomAdvancedClassesList = new List<TM_CustomClass>();
+                CustomBaseClasses.Clear();
+                CustomMageClasses.Clear();
+                CustomFighterClasses.Clear();
+                CustomAdvancedClasses.Clear();
+
                 foreach (TM_CustomClass cc in CustomClasses.Where(cc => Settings.Instance.CustomClass[cc.classTrait.ToString()]))
                 {
                     if (cc.isMage)

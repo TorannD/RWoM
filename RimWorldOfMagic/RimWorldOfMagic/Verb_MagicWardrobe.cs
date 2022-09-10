@@ -42,7 +42,7 @@ namespace TorannMagic
                     {                       
                         pawn.apparel.Wear(tmpApparel[i] as Apparel);
                         pawn.apparel.Notify_ApparelChanged();
-                        pawn.apparel.Lock(tmpApparel[i] as Apparel);
+                        pawn.outfits.forcedHandler.SetForced(tmpApparel[i] as Apparel, true);
                     }
                     for (int i = 0; i < tmpHolder.Count; i++)
                     {                       
