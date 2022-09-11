@@ -4091,9 +4091,9 @@ namespace TorannMagic
                     {
                         CompAbilityUserMight comp = attacker.GetCompAbilityUserMight();
 
-                        if (!attacker.Destroyed && !attacker.Downed && !attacker.Dead && attacker != pawn && dinfo.Weapon != null && dinfo.Weapon.IsMeleeWeapon)
+                        if (!attacker.Destroyed && !attacker.Downed && !attacker.Dead && attacker != pawn && dinfo.Weapon != null && dinfo.Weapon.IsMeleeWeapon && comp != null &&  comp.MightData != null)
                         {
-                            if ((attacker.story.traits != null && attacker.story.traits.HasTrait(TorannMagicDefOf.DeathKnight)) || TM_ClassUtility.ClassHasAbility(TorannMagicDefOf.TM_LifeSteal, null, comp))
+                            if ((attacker.story != null && attacker.story.traits != null && attacker.story.traits.HasTrait(TorannMagicDefOf.DeathKnight)) || TM_ClassUtility.ClassHasAbility(TorannMagicDefOf.TM_LifeSteal, null, comp))
                             {
                                 //Hediff hediff = null;
                                 //for (int h = 0; h < attacker.health.hediffSet.hediffs.Count; h++)
@@ -6701,17 +6701,20 @@ namespace TorannMagic
             public static void Postfix(Pawn initiator, Pawn recipient, ref float __result)
             {
                 CompAbilityUserMagic comp = initiator.GetCompAbilityUserMagic();
-                if (comp != null && (initiator.story.traits.HasTrait(TorannMagicDefOf.TM_Bard) || TM_ClassUtility.ClassHasAbility(TorannMagicDefOf.TM_Entertain, comp, null)))
+                if (initiator.story?.traits != null)
                 {
-                    MagicPowerSkill ver = comp.MagicData.MagicPowerSkill_Entertain.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Entertain_ver");
-                    __result = __result / (1 + ver.level);
+                    if ((initiator.story.traits.HasTrait(TorannMagicDefOf.TM_Bard) || TM_ClassUtility.ClassHasAbility(TorannMagicDefOf.TM_Entertain, comp, null)))
+                    {
+                        MagicPowerSkill ver = comp.MagicData.MagicPowerSkill_Entertain.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Entertain_ver");
+                        __result = __result / (1 + ver.level);
 
+                    }
+                    if (initiator.story.traits.HasTrait(TorannMagicDefOf.TM_Sniper))
+                    {
+                        __result *= 1.2f;
+                    }
                 }
-                if (initiator.story.traits.HasTrait(TorannMagicDefOf.TM_Sniper))
-                {
-                    __result *= 1.2f;
-                }
-                if (initiator.Inspired && initiator.InspirationDef.defName == "Outgoing")
+                if (initiator.mindState != null && initiator.mindState.mentalStateHandler != null && initiator.Inspired && initiator.InspirationDef.defName == "Outgoing")
                 {
                     __result = __result * .5f;
                 }

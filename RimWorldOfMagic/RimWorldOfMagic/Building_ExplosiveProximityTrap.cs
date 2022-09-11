@@ -1,12 +1,9 @@
-﻿using System;
-using RimWorld;
+﻿using RimWorld;
 using Verse;
 using Verse.Sound;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using Verse.AI;
-using Verse.AI.Group;
+
 
 namespace TorannMagic
 {
@@ -22,11 +19,21 @@ namespace TorannMagic
         private int trapSpringDelay = 30;
         private bool trapSprung = false;
 
-        Pawn trapPawn = new Pawn();
+        private Pawn trapPawn = new Pawn();
+
+        public bool Armed => !trapSprung;
+
 
         protected override void SpringSub(Pawn p)
         {
-            base.GetComp<CompExplosive>().StartWick(null);
+            for (int i = 0; i < AllComps.Count; i++)
+            {
+                if (AllComps[i] is CompExplosive comp)
+                {
+                    comp.StartWick();
+                    return;
+                }
+            }
         }
 
         public override void ExposeData()
@@ -41,19 +48,13 @@ namespace TorannMagic
             for (int i = 0; i < thingList.Count; i++)
             {
                 Pawn pawn = thingList[i] as Pawn;
-                if (pawn != null && pawn.Faction != this.Faction && pawn.HostileTo(this.Faction) && !this.touchingPawns.Contains(pawn))
-                {
-                    this.touchingPawns.Add(pawn);
-                    this.CheckSpring(pawn);
-                }
-            }
-        }
+                if (pawn == null
+                    || pawn.Faction == Faction
+                    || !pawn.HostileTo(Faction)
+                    || touchingPawns.Contains(pawn)) continue;
 
-        public bool Armed
-        {
-            get
-            {
-                return !this.trapSprung;
+                touchingPawns.Add(pawn);
+                CheckSpring(pawn);
             }
         }
 
@@ -88,67 +89,49 @@ namespace TorannMagic
             base.Tick();
         }
 
-        private void CheckSpring(Pawn p)
+        protected virtual void CheckSpring(Pawn p)
         {
-            if (Rand.Value < this.SpringChance(p))
+            if (!(Rand.Value < SpringChance(p))) return;
+
+            this.Spring(p);
+            if (p.Faction == Faction.OfPlayer || p.HostFaction == Faction.OfPlayer)
             {
-                this.Spring(p);
-                if (p.Faction == Faction.OfPlayer || p.HostFaction == Faction.OfPlayer)
-                {
-                    Find.LetterStack.ReceiveLetter("LetterFriendlyTrapSprungLabel".Translate(
-                        p.LabelShort
-                    ), "LetterFriendlyTrapSprung".Translate(
-                        p.LabelShort
-                    ), LetterDefOf.NegativeEvent, new TargetInfo(base.Position, base.Map, false), null);
-                }
-            }
+                Find.LetterStack.ReceiveLetter("LetterFriendlyTrapSprungLabel".Translate(
+                    p.LabelShort
+                ), "LetterFriendlyTrapSprung".Translate(
+                    p.LabelShort
+                ), LetterDefOf.NegativeEvent, new TargetInfo(base.Position, base.Map));
+            }            
         }
 
-        new public void Spring(Pawn p)
+        public new virtual void Spring(Pawn p)
         {
             SoundDefOf.EnergyShield_Broken.PlayOneShot(new TargetInfo(base.Position, base.Map, false));
             this.trapPawn = p;
             this.trapSprung = true;
         }
 
-        protected override float SpringChance(Pawn p)
+        protected virtual float UnclampedSpringChance(Pawn p)
         {
-            float num;
-            if (this.KnowsOfTrap(p))
-            {
-                num = 0.8f;
-            }
-            else
-            {
-                num = this.GetStatValue(StatDefOf.TrapSpringChance, true);
-            }
+            float num = KnowsOfTrap(p) ? 0.8f : this.GetStatValue(StatDefOf.TrapSpringChance, true);
             num *= GenMath.LerpDouble(0.4f, 0.8f, 0f, 1f, p.BodySize);
-            return Mathf.Clamp01(num);
+            return num;
+        }
+
+        protected override float SpringChance(Pawn p)
+        {            
+            return Mathf.Clamp01(UnclampedSpringChance(p));
         }
 
         public override ushort PathFindCostFor(Pawn p)
         {
-            if (!this.Armed)
-            {
-                return 0;
-            }
-            if (this.KnowsOfTrap(p))
-            {
-                return 800;
-            }
+            if (!this.Armed && this.KnowsOfTrap(p)) return 800;
             return 0;
         }
 
         public override ushort PathWalkCostFor(Pawn p)
         {
-            if (!this.Armed)
-            {
-                return 0;
-            }
-            if (this.KnowsOfTrap(p))
-            {
-                return 50;
-            }
+            if (!this.Armed && this.KnowsOfTrap(p)) return 50;
             return 0;
         }
 
@@ -166,7 +149,7 @@ namespace TorannMagic
             }
             if (this.Armed)
             {
-                text += "Proximity Trap Armed";
+                text += "Trap Armed";
             }
             else
             {
@@ -177,12 +160,11 @@ namespace TorannMagic
 
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
         {
-            Map map = base.Map;
             base.Destroy(mode);
             InstallBlueprintUtility.CancelBlueprintsFor(this);
             if (mode == DestroyMode.Deconstruct)
             {
-                SoundDef.Named("Building_Deconstructed").PlayOneShot(new TargetInfo(base.Position, map, false));
+                SoundDef.Named("Building_Deconstructed").PlayOneShot(new TargetInfo(base.Position, Map, false));
             }
         }
     }

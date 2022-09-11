@@ -41,6 +41,11 @@ namespace TorannMagic
 
             if (CustomClasses != null)
             {
+                CustomBaseClasses.Clear();
+                CustomMageClasses.Clear();
+                CustomFighterClasses.Clear();
+                CustomAdvancedClasses.Clear();
+
                 foreach (TM_CustomClass cc in CustomClasses.Where(cc => Settings.Instance.CustomClass[cc.classTrait.ToString()]))
                 {
                     if (cc.isMage)
@@ -90,7 +95,6 @@ namespace TorannMagic
         public static void LoadClassIndexes()
         {
             CustomClassTraitIndexes = new Dictionary<ushort, int>();
-            CustomClassTraitIndexes.Clear();
             for (int i = 0; i < CustomClasses.Length; i++)
             {
                 CustomClassTraitIndexes[CustomClasses[i].classTrait.index] = i;

@@ -894,6 +894,7 @@ namespace TorannMagic
                 TraitDef td = TM_Data.EnabledMagicTraits[tmpIndex];
                 if (td == TorannMagicDefOf.TM_Wanderer) { }
                 else if (TM_ClassUtility.CustomAdvancedClasses.Any((TM_CustomClass x) => x.classTrait == td)) { }
+                else if (td == TorannMagicDefOf.TM_Possessor) { }
                 else if (td == TorannMagicDefOf.Lich) { }
                 else if (td == TorannMagicDefOf.Warlock && p.gender == Gender.Female) { }
                 else if (td == TorannMagicDefOf.Succubus && p.gender == Gender.Male) { }
