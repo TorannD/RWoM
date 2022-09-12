@@ -46,7 +46,7 @@ namespace TorannMagic
                 CustomFighterClasses.Clear();
                 CustomAdvancedClasses.Clear();
 
-                foreach (TM_CustomClass cc in CustomClasses.Where(cc => Settings.Instance.CustomClass[cc.classTrait.ToString()]))
+                foreach (TM_CustomClass cc in CustomClasses.Where(cc => Settings.Instance.CustomClass.TryGetValue(cc.classTrait.ToString())))
                 {
                     if (cc.isMage)
                     {
