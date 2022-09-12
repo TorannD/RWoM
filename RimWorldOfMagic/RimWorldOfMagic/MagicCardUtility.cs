@@ -508,18 +508,17 @@ namespace TorannMagic
 
         public static void InfoPane(Rect inRect, CompAbilityUserMagic compMagic, Pawn pawn)
         {
-            Rect rect = new Rect(inRect.x, inRect.y, inRect.width * 0.7f, MagicCardUtility.TextSize);
+            Rect rect = new Rect(inRect.x, inRect.y, inRect.width * 0.7f, TextSize);
             Text.Font = GameFont.Tiny;
             Widgets.Label(rect, "TM_Level".Translate().CapitalizeFirst() + ": " + compMagic.MagicData.MagicUserLevel.ToString());
             Text.Font = GameFont.Tiny;
             bool godMode = DebugSettings.godMode;
             if (godMode)
             {
-                Rect rect2 = new Rect(rect.xMax, inRect.y, inRect.width * 0.3f, MagicCardUtility.TextSize);
-                bool flag = Widgets.ButtonText(rect2, "+", true, false, true);
-                if (flag)
+                Rect rect2 = new Rect(rect.xMax, inRect.y, inRect.width * 0.3f, TextSize);
+                if (Widgets.ButtonText(rect2, "+", true, false))
                 {
-                    compMagic.LevelUp(true);
+                    compMagic.CheckLevelUp(true, true);
                 }
 
                 Rect rect22 = new Rect(rect.xMax + 60f, inRect.y, 50f, MagicCardUtility.TextSize * 2);
