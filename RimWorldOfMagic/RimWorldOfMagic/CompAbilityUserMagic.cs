@@ -6138,183 +6138,217 @@ namespace TorannMagic
             }
 
             //combat (drafted) spells
-            if (Pawn.drafter != null && Pawn.Drafted && Pawn.drafter.FireAtWill && Pawn.CurJob.def != JobDefOf.Goto && Mana != null && Mana.CurLevelPercentage >= settingsRef.autocastCombatMinThreshold)
+            if (Pawn.drafter == null || !Pawn.Drafted || !Pawn.drafter.FireAtWill || Pawn.CurJob.def == JobDefOf.Goto ||
+                Mana == null || !(Mana.CurLevelPercentage >= settingsRef.autocastCombatMinThreshold)) return;
+            foreach (MagicPower mp in MagicData.MagicPowersCustom)
             {
-                foreach (MagicPower mp in MagicData.MagicPowersCustom)
+                if (!mp.learned || !mp.autocast || mp.autocasting == null || !mp.autocasting.magicUser ||
+                    !mp.autocasting.drafted) continue;
+
+                TMAbilityDef tmad = mp.TMabilityDefs[mp.level] as TMAbilityDef; // issues with index?
+                if (!TM_Calc.HasResourcesForAbility(Pawn, tmad)) continue;
+                if (!(!Pawn.story.DisabledWorkTagsBackstoryAndTraits.HasFlag(WorkTags.Violent) || !tmad.MainVerb.isViolent)) continue;
+
+                PawnAbility ability = AbilityData.Powers.FirstOrDefault(pa => pa.Def == tmad);
+                if (mp.autocasting.type == AutocastType.OnTarget && Pawn.TargetCurrentlyAimingAt != null && Pawn.TargetCurrentlyAimingAt.Thing != null)
                 {
-                    if (mp.learned && mp.autocast && mp.autocasting != null && mp.autocasting.magicUser && mp.autocasting.drafted)
+                    LocalTargetInfo localTarget = TM_Calc.GetAutocastTarget(Pawn, mp.autocasting, Pawn.TargetCurrentlyAimingAt);
+                    if (localTarget != null && localTarget.IsValid)
                     {
-                        TMAbilityDef tmad = mp.TMabilityDefs[mp.level] as TMAbilityDef; // issues with index?
-                        bool canUseWithEquippedWeapon = true;
-                        bool canUseIfViolentAbility = !Pawn.story.DisabledWorkTagsBackstoryAndTraits.HasFlag(WorkTags.Violent) || !tmad.MainVerb.isViolent;
-                        if (!TM_Calc.HasResourcesForAbility(Pawn, tmad))
+                        Thing targetThing = localTarget.Thing;
+                        if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
                         {
                             continue;
                         }
-                        if (canUseWithEquippedWeapon && canUseIfViolentAbility)
+                        if (mp.autocasting.requiresLoS && !TM_Calc.HasLoSFromTo(Pawn.Position, targetThing, Pawn, mp.autocasting.minRange, ability.Def.MainVerb.range))
                         {
-                            PawnAbility ability = AbilityData.Powers.FirstOrDefault(pa => pa.Def == tmad);
-                            if (mp.autocasting.type == AutocastType.OnTarget && Pawn.TargetCurrentlyAimingAt != null && Pawn.TargetCurrentlyAimingAt.Thing != null)
+                            continue;
+                        }
+                        if (mp.autocasting.maxRange != 0f && mp.autocasting.maxRange < (Pawn.Position - targetThing.Position).LengthHorizontal)
+                        {
+                            continue;
+                        }
+                        bool TE = mp.autocasting.targetEnemy && targetThing.Faction != null && targetThing.Faction.HostileTo(Pawn.Faction);
+                        if (TE && targetThing is Pawn)
+                        {
+                            Pawn targetPawn = targetThing as Pawn;
+                            if (targetPawn.Downed || targetPawn.IsPrisonerInPrisonCell())
                             {
-                                LocalTargetInfo localTarget = TM_Calc.GetAutocastTarget(Pawn, mp.autocasting, Pawn.TargetCurrentlyAimingAt);
-                                if (localTarget != null && localTarget.IsValid)
-                                {
-                                    Thing targetThing = localTarget.Thing;
-                                    if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
-                                    {
-                                        continue;
-                                    }
-                                    if (mp.autocasting.requiresLoS && !TM_Calc.HasLoSFromTo(Pawn.Position, targetThing, Pawn, mp.autocasting.minRange, ability.Def.MainVerb.range))
-                                    {
-                                        continue;
-                                    }
-                                    if (mp.autocasting.maxRange != 0f && mp.autocasting.maxRange < (Pawn.Position - targetThing.Position).LengthHorizontal)
-                                    {
-                                        continue;
-                                    }
-                                    bool TE = mp.autocasting.targetEnemy && targetThing.Faction != null && targetThing.Faction.HostileTo(Pawn.Faction);
-                                    if (TE && targetThing is Pawn)
-                                    {
-                                        Pawn targetPawn = targetThing as Pawn;
-                                        if (targetPawn.Downed || targetPawn.IsPrisonerInPrisonCell())
-                                        {
-                                            continue;
-                                        }
-                                    }
-                                    bool TN = mp.autocasting.targetNeutral && targetThing.Faction != null && !targetThing.Faction.HostileTo(Pawn.Faction);
-                                    bool TNF = mp.autocasting.targetNoFaction && targetThing.Faction == null;
-                                    bool TF = mp.autocasting.targetFriendly && targetThing.Faction == Pawn.Faction;
-                                    if (!(TE || TN || TF || TNF))
-                                    {
-                                        continue;
-                                    }
-                                    if (!mp.autocasting.ValidConditions(Pawn, targetThing))
-                                    {
-                                        continue;
-                                    }
-                                    AutoCast.MagicAbility_OnTarget.TryExecute(this, tmad, ability, mp, targetThing, mp.autocasting.minRange, out castSuccess);
-                                }
+                                continue;
                             }
-                            if (mp.autocasting.type == AutocastType.OnSelf)
+                        }
+                        bool TN = mp.autocasting.targetNeutral && targetThing.Faction != null && !targetThing.Faction.HostileTo(Pawn.Faction);
+                        bool TNF = mp.autocasting.targetNoFaction && targetThing.Faction == null;
+                        bool TF = mp.autocasting.targetFriendly && targetThing.Faction == Pawn.Faction;
+                        if (!(TE || TN || TF || TNF))
+                        {
+                            continue;
+                        }
+                        if (!mp.autocasting.ValidConditions(Pawn, targetThing))
+                        {
+                            continue;
+                        }
+                        AutoCast.MagicAbility_OnTarget.TryExecute(this, tmad, ability, mp, targetThing, mp.autocasting.minRange, out castSuccess);
+                    }
+                }
+                if (mp.autocasting.type == AutocastType.OnSelf)
+                {
+                    LocalTargetInfo localTarget = TM_Calc.GetAutocastTarget(Pawn, mp.autocasting, Pawn);
+                    if (localTarget != null && localTarget.IsValid)
+                    {
+                        Pawn targetThing = localTarget.Pawn;
+                        if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
+                        {
+                            continue;
+                        }
+                        if (!mp.autocasting.ValidConditions(Pawn, targetThing))
+                        {
+                            continue;
+                        }
+                        AutoCast.MagicAbility_OnSelf.Evaluate(this, tmad, ability, mp, out castSuccess);
+                    }
+                }
+                if (mp.autocasting.type == AutocastType.OnCell && Pawn.TargetCurrentlyAimingAt != null)
+                {
+                    LocalTargetInfo localTarget = TM_Calc.GetAutocastTarget(Pawn, mp.autocasting, Pawn.TargetCurrentlyAimingAt);
+                    if (localTarget != null && localTarget.IsValid)
+                    {
+                        IntVec3 targetThing = localTarget.Cell;
+                        if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
+                        {
+                            continue;
+                        }
+                        if (mp.autocasting.requiresLoS && !TM_Calc.HasLoSFromTo(Pawn.Position, targetThing, Pawn, mp.autocasting.minRange, ability.Def.MainVerb.range))
+                        {
+                            continue;
+                        }
+                        if (mp.autocasting.maxRange != 0f && mp.autocasting.maxRange < (Pawn.Position - targetThing).LengthHorizontal)
+                        {
+                            continue;
+                        }
+                        if (!mp.autocasting.ValidConditions(Pawn, targetThing))
+                        {
+                            continue;
+                        }
+                        AutoCast.MagicAbility_OnCell.TryExecute(this, tmad, ability, mp, targetThing, mp.autocasting.minRange, out castSuccess);
+                    }
+                }
+                if (mp.autocasting.type == AutocastType.OnNearby)
+                {
+                    LocalTargetInfo localTarget = TM_Calc.GetAutocastTarget(Pawn, mp.autocasting, Pawn.TargetCurrentlyAimingAt);
+                    if (localTarget != null && localTarget.IsValid)
+                    {
+                        Thing targetThing = localTarget.Thing;
+                        if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
+                        {
+                            continue;
+                        }
+                        if (mp.autocasting.requiresLoS && !TM_Calc.HasLoSFromTo(Pawn.Position, targetThing, Pawn, mp.autocasting.minRange, ability.Def.MainVerb.range))
+                        {
+                            continue;
+                        }
+                        if (mp.autocasting.maxRange != 0f && mp.autocasting.maxRange < (Pawn.Position - targetThing.Position).LengthHorizontal)
+                        {
+                            continue;
+                        }
+                        bool TE = mp.autocasting.targetEnemy && targetThing.Faction != null && targetThing.Faction.HostileTo(Pawn.Faction);
+                        if (TE && targetThing is Pawn)
+                        {
+                            Pawn targetPawn = targetThing as Pawn;
+                            if (targetPawn.Downed || targetPawn.IsPrisonerInPrisonCell())
                             {
-                                LocalTargetInfo localTarget = TM_Calc.GetAutocastTarget(Pawn, mp.autocasting, Pawn);
-                                if (localTarget != null && localTarget.IsValid)
-                                {
-                                    Pawn targetThing = localTarget.Pawn;
-                                    if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
-                                    {
-                                        continue;
-                                    }
-                                    if (!mp.autocasting.ValidConditions(Pawn, targetThing))
-                                    {
-                                        continue;
-                                    }
-                                    AutoCast.MagicAbility_OnSelf.Evaluate(this, tmad, ability, mp, out castSuccess);
-                                }
+                                continue;
                             }
-                            if (mp.autocasting.type == AutocastType.OnCell && Pawn.TargetCurrentlyAimingAt != null)
+                        }
+                        bool TN = mp.autocasting.targetNeutral && targetThing.Faction != null && !targetThing.Faction.HostileTo(Pawn.Faction);
+                        bool TNF = mp.autocasting.targetNoFaction && targetThing.Faction == null;
+                        bool TF = mp.autocasting.targetFriendly && targetThing.Faction == Pawn.Faction;
+                        if (!(TE || TN || TF || TNF))
+                        {
+                            continue;
+                        }
+                        if (!mp.autocasting.ValidConditions(Pawn, targetThing))
+                        {
+                            continue;
+                        }
+                        AutoCast.MagicAbility_OnTarget.TryExecute(this, tmad, ability, mp, targetThing, mp.autocasting.minRange, out castSuccess);
+                    }
+                }
+                if (castSuccess) return;
+            }
+
+            if ((Pawn.story.traits.HasTrait(TorannMagicDefOf.InnerFire) || flagCM || isCustom) && Pawn.story.DisabledWorkTagsBackstoryAndTraits != WorkTags.Violent)
+            {
+                foreach (MagicPower magicPower in MagicData.MagicPowersIF)
+                {
+                    if (magicPower?.abilityDef == null || !magicPower.learned) continue;
+                    if (magicPower.abilityDef != TorannMagicDefOf.TM_Firebolt) continue;
+                    if (magicPower == null || !magicPower.autocast) continue;
+                    PawnAbility ability = AbilityData.Powers.FirstOrDefault(pa => pa.Def == TorannMagicDefOf.TM_Firebolt);
+                    AutoCast.DamageSpell.Evaluate(this, TorannMagicDefOf.TM_Firebolt, ability, magicPower, out castSuccess);
+                    if (castSuccess) return;
+                }
+            }
+            if ((Pawn.story.traits.HasTrait(TorannMagicDefOf.HeartOfFrost) || flagCM || isCustom) && Pawn.story.DisabledWorkTagsBackstoryAndTraits != WorkTags.Violent)
+            {
+                foreach (MagicPower current in MagicData.MagicPowersHoF)
+                {
+                    if (current?.abilityDef == null || !current.learned) continue;
+                    foreach (TMAbilityDef tmad in current.TMabilityDefs)
+                    {
+                        if (tmad == TorannMagicDefOf.TM_Icebolt)
+                        {
+                            MagicPower magicPower = MagicData.MagicPowersHoF.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_Icebolt);
+                            if (magicPower != null && magicPower.learned && magicPower.autocast)
                             {
-                                LocalTargetInfo localTarget = TM_Calc.GetAutocastTarget(Pawn, mp.autocasting, Pawn.TargetCurrentlyAimingAt);
-                                if (localTarget != null && localTarget.IsValid)
-                                {
-                                    IntVec3 targetThing = localTarget.Cell;
-                                    if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
-                                    {
-                                        continue;
-                                    }
-                                    if (mp.autocasting.requiresLoS && !TM_Calc.HasLoSFromTo(Pawn.Position, targetThing, Pawn, mp.autocasting.minRange, ability.Def.MainVerb.range))
-                                    {
-                                        continue;
-                                    }
-                                    if (mp.autocasting.maxRange != 0f && mp.autocasting.maxRange < (Pawn.Position - targetThing).LengthHorizontal)
-                                    {
-                                        continue;
-                                    }
-                                    if (!mp.autocasting.ValidConditions(Pawn, targetThing))
-                                    {
-                                        continue;
-                                    }
-                                    AutoCast.MagicAbility_OnCell.TryExecute(this, tmad, ability, mp, targetThing, mp.autocasting.minRange, out castSuccess);
-                                }
+                                PawnAbility ability = AbilityData.Powers.FirstOrDefault(pa => pa.Def == TorannMagicDefOf.TM_Icebolt);
+                                AutoCast.DamageSpell.Evaluate(this, TorannMagicDefOf.TM_Icebolt, ability, magicPower, out castSuccess);
+                                if (castSuccess) return;
                             }
-                            if (mp.autocasting.type == AutocastType.OnNearby)
+                        }
+                        else if ((tmad == TorannMagicDefOf.TM_FrostRay || tmad == TorannMagicDefOf.TM_FrostRay_I || tmad == TorannMagicDefOf.TM_FrostRay_II || tmad == TorannMagicDefOf.TM_FrostRay_III))
+                        {
+                            MagicPower magicPower = MagicData.MagicPowersHoF.FirstOrDefault(mp => mp.abilityDef == tmad);
+                            if (magicPower != null && magicPower.learned && magicPower.autocast)
                             {
-                                LocalTargetInfo localTarget = TM_Calc.GetAutocastTarget(Pawn, mp.autocasting, Pawn.TargetCurrentlyAimingAt);
-                                if (localTarget != null && localTarget.IsValid)
-                                {
-                                    Thing targetThing = localTarget.Thing;
-                                    if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
-                                    {
-                                        continue;
-                                    }
-                                    if (mp.autocasting.requiresLoS && !TM_Calc.HasLoSFromTo(Pawn.Position, targetThing, Pawn, mp.autocasting.minRange, ability.Def.MainVerb.range))
-                                    {
-                                        continue;
-                                    }
-                                    if (mp.autocasting.maxRange != 0f && mp.autocasting.maxRange < (Pawn.Position - targetThing.Position).LengthHorizontal)
-                                    {
-                                        continue;
-                                    }
-                                    bool TE = mp.autocasting.targetEnemy && targetThing.Faction != null && targetThing.Faction.HostileTo(Pawn.Faction);
-                                    if (TE && targetThing is Pawn)
-                                    {
-                                        Pawn targetPawn = targetThing as Pawn;
-                                        if (targetPawn.Downed || targetPawn.IsPrisonerInPrisonCell())
-                                        {
-                                            continue;
-                                        }
-                                    }
-                                    bool TN = mp.autocasting.targetNeutral && targetThing.Faction != null && !targetThing.Faction.HostileTo(Pawn.Faction);
-                                    bool TNF = mp.autocasting.targetNoFaction && targetThing.Faction == null;
-                                    bool TF = mp.autocasting.targetFriendly && targetThing.Faction == Pawn.Faction;
-                                    if (!(TE || TN || TF || TNF))
-                                    {
-                                        continue;
-                                    }
-                                    if (!mp.autocasting.ValidConditions(Pawn, targetThing))
-                                    {
-                                        continue;
-                                    }
-                                    AutoCast.MagicAbility_OnTarget.TryExecute(this, tmad, ability, mp, targetThing, mp.autocasting.minRange, out castSuccess);
-                                }
+                                PawnAbility ability = AbilityData.Powers.FirstOrDefault(pa => pa.Def == tmad);
+                                AutoCast.DamageSpell.Evaluate(this, tmad, ability, magicPower, out castSuccess);
+                                if (castSuccess) return;
                             }
-                            if (castSuccess) return;
                         }
                     }
                 }
-
-                if ((Pawn.story.traits.HasTrait(TorannMagicDefOf.InnerFire) || flagCM || isCustom) && Pawn.story.DisabledWorkTagsBackstoryAndTraits != WorkTags.Violent)
+            }
+            if ((Pawn.story.traits.HasTrait(TorannMagicDefOf.StormBorn) || flagCM || isCustom) && Pawn.story.DisabledWorkTagsBackstoryAndTraits != WorkTags.Violent)
+            {
+                foreach (MagicPower current in MagicData.MagicPowersSB)
                 {
-                    foreach (MagicPower magicPower in MagicData.MagicPowersIF)
+                    if (current != null && current.abilityDef != null && current.learned)
                     {
-                        if (magicPower?.abilityDef == null || !magicPower.learned) continue;
-                        if (magicPower.abilityDef != TorannMagicDefOf.TM_Firebolt) continue;
-                        if (magicPower == null || !magicPower.autocast) continue;
-                        PawnAbility ability = AbilityData.Powers.FirstOrDefault(pa => pa.Def == TorannMagicDefOf.TM_Firebolt);
-                        AutoCast.DamageSpell.Evaluate(this, TorannMagicDefOf.TM_Firebolt, ability, magicPower, out castSuccess);
-                        if (castSuccess) return;
+                        if (current.abilityDef == TorannMagicDefOf.TM_LightningBolt)
+                        {
+                            MagicPower magicPower = MagicData.MagicPowersSB.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_LightningBolt);
+                            if (magicPower != null && magicPower.learned && magicPower.autocast)
+                            {
+                                PawnAbility ability = AbilityData.Powers.FirstOrDefault(pa => pa.Def == TorannMagicDefOf.TM_LightningBolt);
+                                AutoCast.DamageSpell.Evaluate(this, TorannMagicDefOf.TM_LightningBolt, ability, magicPower, out castSuccess);
+                                if (castSuccess) return;
+                            }
+                        }
                     }
                 }
-                if ((Pawn.story.traits.HasTrait(TorannMagicDefOf.HeartOfFrost) || flagCM || isCustom) && Pawn.story.DisabledWorkTagsBackstoryAndTraits != WorkTags.Violent)
+            }
+            if ((Pawn.story.traits.HasTrait(TorannMagicDefOf.Arcanist) || flagCM || isCustom) && Pawn.story.DisabledWorkTagsBackstoryAndTraits != WorkTags.Violent)
+            {
+                foreach (MagicPower current in MagicData.MagicPowersA)
                 {
-                    foreach (MagicPower current in MagicData.MagicPowersHoF)
+                    if (current != null && current.abilityDef != null && current.learned)
                     {
-                        if (current?.abilityDef == null || !current.learned) continue;
                         foreach (TMAbilityDef tmad in current.TMabilityDefs)
                         {
-                            if (tmad == TorannMagicDefOf.TM_Icebolt)
+                            if ((tmad == TorannMagicDefOf.TM_MagicMissile || tmad == TorannMagicDefOf.TM_MagicMissile_I || tmad == TorannMagicDefOf.TM_MagicMissile_II || tmad == TorannMagicDefOf.TM_MagicMissile_III))
                             {
-                                MagicPower magicPower = MagicData.MagicPowersHoF.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_Icebolt);
-                                if (magicPower != null && magicPower.learned && magicPower.autocast)
-                                {
-                                    PawnAbility ability = AbilityData.Powers.FirstOrDefault(pa => pa.Def == TorannMagicDefOf.TM_Icebolt);
-                                    AutoCast.DamageSpell.Evaluate(this, TorannMagicDefOf.TM_Icebolt, ability, magicPower, out castSuccess);
-                                    if (castSuccess) return;
-                                }
-                            }
-                            else if ((tmad == TorannMagicDefOf.TM_FrostRay || tmad == TorannMagicDefOf.TM_FrostRay_I || tmad == TorannMagicDefOf.TM_FrostRay_II || tmad == TorannMagicDefOf.TM_FrostRay_III))
-                            {
-                                MagicPower magicPower = MagicData.MagicPowersHoF.FirstOrDefault(mp => mp.abilityDef == tmad);
+                                MagicPower magicPower = MagicData.MagicPowersA.FirstOrDefault(mp => mp.abilityDef == tmad);
                                 if (magicPower != null && magicPower.learned && magicPower.autocast)
                                 {
                                     PawnAbility ability = AbilityData.Powers.FirstOrDefault(pa => pa.Def == tmad);
@@ -6325,229 +6359,188 @@ namespace TorannMagic
                         }
                     }
                 }
-                if ((Pawn.story.traits.HasTrait(TorannMagicDefOf.StormBorn) || flagCM || isCustom) && Pawn.story.DisabledWorkTagsBackstoryAndTraits != WorkTags.Violent)
+            }
+            if (Pawn.story.traits.HasTrait(TorannMagicDefOf.Druid) || flagCM || isCustom)
+            {
+                foreach (MagicPower current in MagicData.MagicPowersD)
                 {
-                    foreach (MagicPower current in MagicData.MagicPowersSB)
+                    if (current?.abilityDef != null && current.learned)
                     {
-                        if (current != null && current.abilityDef != null && current.learned)
+                        if (current.abilityDef == TorannMagicDefOf.TM_Poison && Pawn.story.DisabledWorkTagsBackstoryAndTraits != WorkTags.Violent)
                         {
-                            if (current.abilityDef == TorannMagicDefOf.TM_LightningBolt)
+                            MagicPower magicPower = MagicData.MagicPowersD.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_Poison);
+                            if (magicPower != null && magicPower.learned && magicPower.autocast)
                             {
-                                MagicPower magicPower = MagicData.MagicPowersSB.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_LightningBolt);
-                                if (magicPower != null && magicPower.learned && magicPower.autocast)
+                                PawnAbility ability = AbilityData.Powers.FirstOrDefault(pa => pa.Def == TorannMagicDefOf.TM_Poison);
+                                AutoCast.HediffSpell.EvaluateMinRange(this, TorannMagicDefOf.TM_Poison, ability, magicPower, HediffDef.Named("TM_Poisoned_HD"), 10, out castSuccess);
+                                if (castSuccess) return;
+                            }
+                        }
+                        if (current.abilityDef == TorannMagicDefOf.TM_Regenerate)
+                        {
+                            MagicPower magicPower = MagicData.MagicPowersD.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_Regenerate);
+                            if (magicPower != null && magicPower.learned && magicPower.autocast)
+                            {
+                                PawnAbility ability = AbilityData.Powers.FirstOrDefault(pa => pa.Def == TorannMagicDefOf.TM_Regenerate);
+                                MagicPowerSkill pwr = MagicData.MagicPowerSkill_Regenerate.FirstOrDefault(mps => mps.label == "TM_Regenerate_pwr");
+                                if (pwr.level == 0)
                                 {
-                                    PawnAbility ability = AbilityData.Powers.FirstOrDefault(pa => pa.Def == TorannMagicDefOf.TM_LightningBolt);
-                                    AutoCast.DamageSpell.Evaluate(this, TorannMagicDefOf.TM_LightningBolt, ability, magicPower, out castSuccess);
+                                    AutoCast.HediffHealSpell.EvaluateMinSeverity(this, TorannMagicDefOf.TM_Regenerate, ability, magicPower, HediffDef.Named("TM_Regeneration"), 10f, out castSuccess);
+                                    if (castSuccess) return;
+                                }
+                                else if (pwr.level == 1)
+                                {
+                                    AutoCast.HediffHealSpell.EvaluateMinSeverity(this, TorannMagicDefOf.TM_Regenerate, ability, magicPower, HediffDef.Named("TM_Regeneration_I"), 12f, out castSuccess);
+                                    if (castSuccess) return;
+                                }
+                                else if (pwr.level == 2)
+                                {
+                                    AutoCast.HediffHealSpell.EvaluateMinSeverity(this, TorannMagicDefOf.TM_Regenerate, ability, magicPower, HediffDef.Named("TM_Regeneration_II"), 14f, out castSuccess);
+                                    if (castSuccess) return;
+                                }
+                                else
+                                {
+                                    AutoCast.HediffHealSpell.EvaluateMinSeverity(this, TorannMagicDefOf.TM_Regenerate, ability, magicPower, HediffDef.Named("TM_Regeneration_III"), 16f, out castSuccess);
                                     if (castSuccess) return;
                                 }
                             }
                         }
                     }
                 }
-                if ((Pawn.story.traits.HasTrait(TorannMagicDefOf.Arcanist) || flagCM || isCustom) && Pawn.story.DisabledWorkTagsBackstoryAndTraits != WorkTags.Violent)
+            }
+            if ((Pawn.story.traits.HasTrait(TorannMagicDefOf.Succubus) || flagCM || isCustom) && Pawn.story.DisabledWorkTagsBackstoryAndTraits != WorkTags.Violent)
+            {
+                foreach (MagicPower current in MagicData.MagicPowersSD)
                 {
-                    foreach (MagicPower current in MagicData.MagicPowersA)
+                    if (current?.abilityDef != null && current.learned)
                     {
-                        if (current != null && current.abilityDef != null && current.learned)
+                        foreach (TMAbilityDef tmad in current.TMabilityDefs)
                         {
-                            foreach (TMAbilityDef tmad in current.TMabilityDefs)
+                            if ((tmad == TorannMagicDefOf.TM_ShadowBolt || tmad == TorannMagicDefOf.TM_ShadowBolt_I || tmad == TorannMagicDefOf.TM_ShadowBolt_II || tmad == TorannMagicDefOf.TM_ShadowBolt_III))
                             {
-                                if ((tmad == TorannMagicDefOf.TM_MagicMissile || tmad == TorannMagicDefOf.TM_MagicMissile_I || tmad == TorannMagicDefOf.TM_MagicMissile_II || tmad == TorannMagicDefOf.TM_MagicMissile_III))
-                                {
-                                    MagicPower magicPower = MagicData.MagicPowersA.FirstOrDefault(mp => mp.abilityDef == tmad);
-                                    if (magicPower != null && magicPower.learned && magicPower.autocast)
-                                    {
-                                        PawnAbility ability = AbilityData.Powers.FirstOrDefault(pa => pa.Def == tmad);
-                                        AutoCast.DamageSpell.Evaluate(this, tmad, ability, magicPower, out castSuccess);
-                                        if (castSuccess) return;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                if (Pawn.story.traits.HasTrait(TorannMagicDefOf.Druid) || flagCM || isCustom)
-                {
-                    foreach (MagicPower current in MagicData.MagicPowersD)
-                    {
-                        if (current?.abilityDef != null && current.learned)
-                        {
-                            if (current.abilityDef == TorannMagicDefOf.TM_Poison && Pawn.story.DisabledWorkTagsBackstoryAndTraits != WorkTags.Violent)
-                            {
-                                MagicPower magicPower = MagicData.MagicPowersD.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_Poison);
+                                MagicPower magicPower = MagicData.MagicPowersSD.FirstOrDefault(mp => mp.abilityDef == tmad);
                                 if (magicPower != null && magicPower.learned && magicPower.autocast)
                                 {
-                                    PawnAbility ability = AbilityData.Powers.FirstOrDefault(pa => pa.Def == TorannMagicDefOf.TM_Poison);
-                                    AutoCast.HediffSpell.EvaluateMinRange(this, TorannMagicDefOf.TM_Poison, ability, magicPower, HediffDef.Named("TM_Poisoned_HD"), 10, out castSuccess);
-                                    if (castSuccess) return;
-                                }
-                            }
-                            if (current.abilityDef == TorannMagicDefOf.TM_Regenerate)
-                            {
-                                MagicPower magicPower = MagicData.MagicPowersD.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_Regenerate);
-                                if (magicPower != null && magicPower.learned && magicPower.autocast)
-                                {
-                                    PawnAbility ability = AbilityData.Powers.FirstOrDefault(pa => pa.Def == TorannMagicDefOf.TM_Regenerate);
-                                    MagicPowerSkill pwr = MagicData.MagicPowerSkill_Regenerate.FirstOrDefault(mps => mps.label == "TM_Regenerate_pwr");
-                                    if (pwr.level == 0)
-                                    {
-                                        AutoCast.HediffHealSpell.EvaluateMinSeverity(this, TorannMagicDefOf.TM_Regenerate, ability, magicPower, HediffDef.Named("TM_Regeneration"), 10f, out castSuccess);
-                                        if (castSuccess) return;
-                                    }
-                                    else if (pwr.level == 1)
-                                    {
-                                        AutoCast.HediffHealSpell.EvaluateMinSeverity(this, TorannMagicDefOf.TM_Regenerate, ability, magicPower, HediffDef.Named("TM_Regeneration_I"), 12f, out castSuccess);
-                                        if (castSuccess) return;
-                                    }
-                                    else if (pwr.level == 2)
-                                    {
-                                        AutoCast.HediffHealSpell.EvaluateMinSeverity(this, TorannMagicDefOf.TM_Regenerate, ability, magicPower, HediffDef.Named("TM_Regeneration_II"), 14f, out castSuccess);
-                                        if (castSuccess) return;
-                                    }
-                                    else
-                                    {
-                                        AutoCast.HediffHealSpell.EvaluateMinSeverity(this, TorannMagicDefOf.TM_Regenerate, ability, magicPower, HediffDef.Named("TM_Regeneration_III"), 16f, out castSuccess);
-                                        if (castSuccess) return;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                if ((Pawn.story.traits.HasTrait(TorannMagicDefOf.Succubus) || flagCM || isCustom) && Pawn.story.DisabledWorkTagsBackstoryAndTraits != WorkTags.Violent)
-                {
-                    foreach (MagicPower current in MagicData.MagicPowersSD)
-                    {
-                        if (current?.abilityDef != null && current.learned)
-                        {
-                            foreach (TMAbilityDef tmad in current.TMabilityDefs)
-                            {
-                                if ((tmad == TorannMagicDefOf.TM_ShadowBolt || tmad == TorannMagicDefOf.TM_ShadowBolt_I || tmad == TorannMagicDefOf.TM_ShadowBolt_II || tmad == TorannMagicDefOf.TM_ShadowBolt_III))
-                                {
-                                    MagicPower magicPower = MagicData.MagicPowersSD.FirstOrDefault(mp => mp.abilityDef == tmad);
-                                    if (magicPower != null && magicPower.learned && magicPower.autocast)
-                                    {
-                                        PawnAbility ability = AbilityData.Powers.FirstOrDefault(pa => pa.Def == tmad);
-                                        AutoCast.DamageSpell.Evaluate(this, tmad, ability, magicPower, out castSuccess);
-                                        if (castSuccess) return;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                if ((Pawn.story.traits.HasTrait(TorannMagicDefOf.Warlock) || flagCM || isCustom) && Pawn.story.DisabledWorkTagsBackstoryAndTraits != WorkTags.Violent)
-                {
-                    foreach (MagicPower current in MagicData.MagicPowersWD)
-                    {
-                        if (current != null && current.abilityDef != null && current.learned)
-                        {
-                            foreach (TMAbilityDef tmad in current.TMabilityDefs)
-                            {
-                                if ((tmad == TorannMagicDefOf.TM_ShadowBolt || tmad == TorannMagicDefOf.TM_ShadowBolt_I || tmad == TorannMagicDefOf.TM_ShadowBolt_II || tmad == TorannMagicDefOf.TM_ShadowBolt_III))
-                                {
-                                    MagicPower magicPower = MagicData.MagicPowersWD.FirstOrDefault(mp => mp.abilityDef == tmad);
-                                    if (magicPower != null && magicPower.learned && magicPower.autocast)
-                                    {
-                                        PawnAbility ability = AbilityData.Powers.FirstOrDefault(pa => pa.Def == tmad);
-                                        AutoCast.DamageSpell.Evaluate(this, tmad, ability, magicPower, out castSuccess);
-                                        if (castSuccess) return;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                if ((Pawn.story.traits.HasTrait(TorannMagicDefOf.Paladin) || flagCM || isCustom))
-                {
-                    foreach (MagicPower current in MagicData.MagicPowersP)
-                    {
-                        if (current != null && current.abilityDef != null && current.learned)
-                        {
-                            foreach (TMAbilityDef tmad in current.TMabilityDefs)
-                            {
-                                if (tmad == TorannMagicDefOf.TM_Heal)
-                                {
-                                    MagicPower magicPower = MagicData.MagicPowersP.FirstOrDefault(mp => mp.abilityDef == tmad);
-                                    if (magicPower != null && magicPower.learned && magicPower.autocast)
-                                    {
-                                        PawnAbility ability = AbilityData.Powers.FirstOrDefault(pa => pa.Def == tmad);
-                                        AutoCast.HealSpell.Evaluate(this, tmad, ability, magicPower, out castSuccess);
-                                        if (castSuccess) return;
-                                    }
-                                }
-                                if ((tmad == TorannMagicDefOf.TM_Shield || tmad == TorannMagicDefOf.TM_Shield_I || tmad == TorannMagicDefOf.TM_Shield_II || tmad == TorannMagicDefOf.TM_Shield_III))
-                                {
-                                    MagicPower magicPower = MagicData.MagicPowersP.FirstOrDefault(mp => mp.abilityDef == tmad);
-                                    if (magicPower != null && magicPower.learned && magicPower.autocast)
-                                    {
-                                        PawnAbility ability = AbilityData.Powers.FirstOrDefault(pa => pa.Def == tmad);
-                                        AutoCast.Shield.Evaluate(this, tmad, ability, magicPower, out castSuccess);
-                                        if (castSuccess) return;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                if (Pawn.story.traits.HasTrait(TorannMagicDefOf.Priest) || flagCM || isCustom)
-                {
-                    foreach (MagicPower current in MagicData.MagicPowersPR)
-                    {
-                        if (current != null && current.abilityDef != null && current.learned)
-                        {
-                            if (current.abilityDef == TorannMagicDefOf.TM_AdvancedHeal)
-                            {
-                                MagicPower magicPower = MagicData.MagicPowersPR.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_AdvancedHeal);
-                                if (magicPower != null && magicPower.learned && magicPower.autocast)
-                                {
-                                    PawnAbility ability = AbilityData.Powers.FirstOrDefault(pa => pa.Def == TorannMagicDefOf.TM_AdvancedHeal);
-                                    AutoCast.HealSpell.EvaluateMinSeverity(this, TorannMagicDefOf.TM_AdvancedHeal, ability, magicPower, 1f, out castSuccess);
+                                    PawnAbility ability = AbilityData.Powers.FirstOrDefault(pa => pa.Def == tmad);
+                                    AutoCast.DamageSpell.Evaluate(this, tmad, ability, magicPower, out castSuccess);
                                     if (castSuccess) return;
                                 }
                             }
                         }
                     }
                 }
-                if ((spell_Heal && !Pawn.story.traits.HasTrait(TorannMagicDefOf.Paladin)))
+            }
+            if ((Pawn.story.traits.HasTrait(TorannMagicDefOf.Warlock) || flagCM || isCustom) && Pawn.story.DisabledWorkTagsBackstoryAndTraits != WorkTags.Violent)
+            {
+                foreach (MagicPower current in MagicData.MagicPowersWD)
                 {
-                    MagicPower magicPower = MagicData.MagicPowersP.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_Heal);
-                    if (magicPower.autocast)
+                    if (current != null && current.abilityDef != null && current.learned)
                     {
-                        PawnAbility ability = AbilityData.Powers.FirstOrDefault(pa => pa.Def == TorannMagicDefOf.TM_Heal);
-                        AutoCast.HealSpell.Evaluate(this, TorannMagicDefOf.TM_Heal, ability, magicPower, out castSuccess);
-                        if (castSuccess) return;
+                        foreach (TMAbilityDef tmad in current.TMabilityDefs)
+                        {
+                            if ((tmad == TorannMagicDefOf.TM_ShadowBolt || tmad == TorannMagicDefOf.TM_ShadowBolt_I || tmad == TorannMagicDefOf.TM_ShadowBolt_II || tmad == TorannMagicDefOf.TM_ShadowBolt_III))
+                            {
+                                MagicPower magicPower = MagicData.MagicPowersWD.FirstOrDefault(mp => mp.abilityDef == tmad);
+                                if (magicPower != null && magicPower.learned && magicPower.autocast)
+                                {
+                                    PawnAbility ability = AbilityData.Powers.FirstOrDefault(pa => pa.Def == tmad);
+                                    AutoCast.DamageSpell.Evaluate(this, tmad, ability, magicPower, out castSuccess);
+                                    if (castSuccess) return;
+                                }
+                            }
+                        }
                     }
                 }
-                if (spell_SiphonMana || isCustom)
+            }
+            if ((Pawn.story.traits.HasTrait(TorannMagicDefOf.Paladin) || flagCM || isCustom))
+            {
+                foreach (MagicPower current in MagicData.MagicPowersP)
                 {
-                    MagicPower magicPower = MagicData.MagicPowersStandalone.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_SiphonMana);
-                    if (magicPower.learned && magicPower.autocast)
+                    if (current != null && current.abilityDef != null && current.learned)
                     {
-                        PawnAbility ability = AbilityData.Powers.FirstOrDefault(pa => pa.Def == TorannMagicDefOf.TM_SiphonMana);
-                        AutoCast.TransferManaSpell.Evaluate(this, TorannMagicDefOf.TM_SiphonMana, ability, magicPower, true, true, out castSuccess);
-                        if (castSuccess) return;
+                        foreach (TMAbilityDef tmad in current.TMabilityDefs)
+                        {
+                            if (tmad == TorannMagicDefOf.TM_Heal)
+                            {
+                                MagicPower magicPower = MagicData.MagicPowersP.FirstOrDefault(mp => mp.abilityDef == tmad);
+                                if (magicPower != null && magicPower.learned && magicPower.autocast)
+                                {
+                                    PawnAbility ability = AbilityData.Powers.FirstOrDefault(pa => pa.Def == tmad);
+                                    AutoCast.HealSpell.Evaluate(this, tmad, ability, magicPower, out castSuccess);
+                                    if (castSuccess) return;
+                                }
+                            }
+                            if ((tmad == TorannMagicDefOf.TM_Shield || tmad == TorannMagicDefOf.TM_Shield_I || tmad == TorannMagicDefOf.TM_Shield_II || tmad == TorannMagicDefOf.TM_Shield_III))
+                            {
+                                MagicPower magicPower = MagicData.MagicPowersP.FirstOrDefault(mp => mp.abilityDef == tmad);
+                                if (magicPower != null && magicPower.learned && magicPower.autocast)
+                                {
+                                    PawnAbility ability = AbilityData.Powers.FirstOrDefault(pa => pa.Def == tmad);
+                                    AutoCast.Shield.Evaluate(this, tmad, ability, magicPower, out castSuccess);
+                                    if (castSuccess) return;
+                                }
+                            }
+                        }
                     }
                 }
-                if (spell_CauterizeWound || isCustom)
+            }
+            if (Pawn.story.traits.HasTrait(TorannMagicDefOf.Priest) || flagCM || isCustom)
+            {
+                foreach (MagicPower current in MagicData.MagicPowersPR)
                 {
-                    MagicPower magicPower = MagicData.MagicPowersStandalone.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_CauterizeWound);
-                    if (magicPower.learned && magicPower.autocast)
+                    if (current != null && current.abilityDef != null && current.learned)
                     {
-                        PawnAbility ability = AbilityData.Powers.FirstOrDefault(pa => pa.Def == TorannMagicDefOf.TM_CauterizeWound);
-                        AutoCast.HealSpell.EvaluateMinSeverity(this, TorannMagicDefOf.TM_CauterizeWound, ability, magicPower, 40f, out castSuccess);
-                        if (castSuccess) return;
+                        if (current.abilityDef == TorannMagicDefOf.TM_AdvancedHeal)
+                        {
+                            MagicPower magicPower = MagicData.MagicPowersPR.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_AdvancedHeal);
+                            if (magicPower != null && magicPower.learned && magicPower.autocast)
+                            {
+                                PawnAbility ability = AbilityData.Powers.FirstOrDefault(pa => pa.Def == TorannMagicDefOf.TM_AdvancedHeal);
+                                AutoCast.HealSpell.EvaluateMinSeverity(this, TorannMagicDefOf.TM_AdvancedHeal, ability, magicPower, 1f, out castSuccess);
+                                if (castSuccess) return;
+                            }
+                        }
                     }
                 }
-                if ((spell_ArcaneBolt || isCustom) && Pawn.story.DisabledWorkTagsBackstoryAndTraits != WorkTags.Violent)
+            }
+            if ((spell_Heal && !Pawn.story.traits.HasTrait(TorannMagicDefOf.Paladin)))
+            {
+                MagicPower magicPower = MagicData.MagicPowersP.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_Heal);
+                if (magicPower.autocast)
                 {
-                    MagicPower magicPower = MagicData.MagicPowersStandalone.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_ArcaneBolt);
-                    if (magicPower != null && magicPower.learned && magicPower.autocast)
-                    {
-                        PawnAbility ability = AbilityData.Powers.FirstOrDefault(pa => pa.Def == TorannMagicDefOf.TM_ArcaneBolt);
-                        AutoCast.DamageSpell.Evaluate(this, TorannMagicDefOf.TM_ArcaneBolt, ability, magicPower, out castSuccess);
-                        if (castSuccess) return;
-                    }
+                    PawnAbility ability = AbilityData.Powers.FirstOrDefault(pa => pa.Def == TorannMagicDefOf.TM_Heal);
+                    AutoCast.HealSpell.Evaluate(this, TorannMagicDefOf.TM_Heal, ability, magicPower, out castSuccess);
+                    if (castSuccess) return;
+                }
+            }
+            if (spell_SiphonMana || isCustom)
+            {
+                MagicPower magicPower = MagicData.MagicPowersStandalone.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_SiphonMana);
+                if (magicPower.learned && magicPower.autocast)
+                {
+                    PawnAbility ability = AbilityData.Powers.FirstOrDefault(pa => pa.Def == TorannMagicDefOf.TM_SiphonMana);
+                    AutoCast.TransferManaSpell.Evaluate(this, TorannMagicDefOf.TM_SiphonMana, ability, magicPower, true, true, out castSuccess);
+                    if (castSuccess) return;
+                }
+            }
+            if (spell_CauterizeWound || isCustom)
+            {
+                MagicPower magicPower = MagicData.MagicPowersStandalone.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_CauterizeWound);
+                if (magicPower.learned && magicPower.autocast)
+                {
+                    PawnAbility ability = AbilityData.Powers.FirstOrDefault(pa => pa.Def == TorannMagicDefOf.TM_CauterizeWound);
+                    AutoCast.HealSpell.EvaluateMinSeverity(this, TorannMagicDefOf.TM_CauterizeWound, ability, magicPower, 40f, out castSuccess);
+                    if (castSuccess) return;
+                }
+            }
+            if ((spell_ArcaneBolt || isCustom) && Pawn.story.DisabledWorkTagsBackstoryAndTraits != WorkTags.Violent)
+            {
+                MagicPower magicPower = MagicData.MagicPowersStandalone.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_ArcaneBolt);
+                if (magicPower != null && magicPower.learned && magicPower.autocast)
+                {
+                    PawnAbility ability = AbilityData.Powers.FirstOrDefault(pa => pa.Def == TorannMagicDefOf.TM_ArcaneBolt);
+                    AutoCast.DamageSpell.Evaluate(this, TorannMagicDefOf.TM_ArcaneBolt, ability, magicPower, out castSuccess);
+                    if (castSuccess) return;
                 }
             }
         }
@@ -9801,13 +9794,9 @@ namespace TorannMagic
                     }
                     case "technoRepair":
                     {
-                        string toggle_repair = "bit_repairon";
+                        string toggle_repair = useTechnoBitRepairToggle ? "bit_repairon" : "bit_repairoff";
                         string label_repair = "TM_TechnoBitRepair".Translate();
                         string desc_repair = "TM_TechnoBitRepairDesc".Translate();
-                        if (!useTechnoBitRepairToggle)
-                        {
-                            toggle_repair = "bit_repairoff";
-                        }
                         var item_repair = new Command_Toggle
                         {
                             isActive = () => useTechnoBitRepairToggle,
@@ -9826,13 +9815,9 @@ namespace TorannMagic
                     }
                     case "elementalShot":
                     {
-                        string toggle = "elementalshot";
+                        string toggle = useElementalShotToggle ? "elementalshot" : "elementalshot_off";
                         string label = "TM_TechnoWeapon_ver".Translate();
                         string desc = "TM_ElementalShotToggleDesc".Translate();
-                        if (!useElementalShotToggle)
-                        {
-                            toggle = "elementalshot_off";
-                        }
                         var item = new Command_Toggle
                         {
                             isActive = () => useElementalShotToggle,
