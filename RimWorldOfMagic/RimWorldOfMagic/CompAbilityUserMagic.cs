@@ -196,10 +196,10 @@ namespace TorannMagic
         public List<TM_ChaosPowers> chaosPowers = new List<TM_ChaosPowers>();
         public TMAbilityDef mimicAbility = null;
         public List<Thing> summonedMinions = new List<Thing>();
-        public List<Thing> supportedUndead = new List<Thing>();
+        public List<Thing> supportedUndead = new List<Thing>();  // Should really be List<Pawn> since methods rely on type casting as Pawn
         public List<Thing> summonedSentinels = new List<Thing>();
         public List<Pawn> stoneskinPawns = new List<Pawn>();
-        public IntVec3 earthSprites = default;
+        public IntVec3 earthSprites;
         public bool earthSpritesInArea;
         public Map earthSpriteMap;
         public int nextEarthSpriteAction;
@@ -256,7 +256,7 @@ namespace TorannMagic
         private List<Pawn> hexedPawns = new List<Pawn>();
         //Recall fields
         //position, hediffs, needs, mana, manual recall bool, recall duration
-        public IntVec3 recallPosition = default;
+        public IntVec3 recallPosition;
         public Map recallMap;
         public List<string> recallNeedDefnames;
         public List<float> recallNeedValues;
@@ -312,57 +312,24 @@ namespace TorannMagic
                 expirationTicks = _expirationTicks;
                 expires = _expires;
             }
-            public TMAbilityDef abilityDef = null;
-            public int expirationTicks = 0;
-            public bool expires = true;
+            public readonly TMAbilityDef abilityDef;
+            public int expirationTicks;
+            public readonly bool expires;
         }
         public List<ChainedMagicAbility> chainedAbilitiesList = new List<ChainedMagicAbility>();
 
-        private Effecter powerEffecter = null;
-        private int powerModifier = 0;
+        private Effecter powerEffecter;
+        private int powerModifier;
         private int maxPower = 10;
-        private int previousHexedPawns = 0;
+        private int previousHexedPawns;
         public int nextEntertainTick = -1;
         public int nextSuccubusLovinTick = -1;
 
-        public List<Pawn> BrandPawns
-        {
-            get
-            {
-                if (brands == null)
-                {
-                    brands = new List<Pawn>();
-                    brands.Clear();
-                }
-                return brands;
-            }
-        }
+        public List<Pawn> BrandPawns => brands ?? (brands = new List<Pawn>());
 
-        public List<HediffDef> BrandDefs
-        {
-            get
-            {
-                if (brandDefs == null)
-                {
-                    brandDefs = new List<HediffDef>();
-                    brandDefs.Clear();
-                }
-                return brandDefs;
-            }
-        }
+        public List<HediffDef> BrandDefs => brandDefs ?? (brandDefs = new List<HediffDef>());
 
-        public ThingOwner<ThingWithComps> MagicWardrobe
-        {
-            get
-            {
-                if(magicWardrobe == null)
-                {
-                    magicWardrobe = new ThingOwner<ThingWithComps>();
-                    magicWardrobe.Clear();
-                }
-                return magicWardrobe;
-            }
-        }
+        public ThingOwner<ThingWithComps> MagicWardrobe => magicWardrobe ?? (magicWardrobe = new ThingOwner<ThingWithComps>());
 
         public List<TM_EventRecords> MagicUsed
         {
@@ -381,47 +348,21 @@ namespace TorannMagic
             }
         }
 
-        public ThingDef GuardianSpiritType
-        {
-            get
-            {
-                if (guardianSpiritType != null) return guardianSpiritType;
+        private ThingDef[] spiritAnimals = {
+            TorannMagicDefOf.TM_SpiritBearR,
+            TorannMagicDefOf.TM_SpiritMongooseR,
+            TorannMagicDefOf.TM_SpiritCrowR
+        };
 
-                float rnd = Rand.Value;
-                    
-                if(rnd < .34f)
-                    guardianSpiritType = TorannMagicDefOf.TM_SpiritBearR;
-                else if (rnd < .67f)
-                    guardianSpiritType = TorannMagicDefOf.TM_SpiritMongooseR;
-                else
-                    guardianSpiritType = TorannMagicDefOf.TM_SpiritCrowR;
-                return guardianSpiritType;
-            }
-        }
+        public ThingDef GuardianSpiritType => guardianSpiritType ??
+            (guardianSpiritType = spiritAnimals[new System.Random().Next(0, spiritAnimals.Length)]);
 
-        public bool HasTechnoBit
-        {
-            get
-            {
-                return IsMagicUser && MagicData.MagicPowersT.First(mp => mp.abilityDef == TorannMagicDefOf.TM_TechnoBit).learned;
-            }
-        }
-        public bool HasTechnoTurret
-        {
-            get
-            {
-                return IsMagicUser && MagicData.MagicPowersT.First(mp => mp.abilityDef == TorannMagicDefOf.TM_TechnoTurret).learned;
-            }
-        }
-
-        public bool HasTechnoWeapon
-        {
-            get
-            {
-                return IsMagicUser && MagicData.MagicPowersT.First(mps => mps.abilityDef == TorannMagicDefOf.TM_TechnoWeapon).learned;
-            }
-        }
-
+        public bool HasTechnoBit => IsMagicUser
+            && MagicData.MagicPowersT.First(mp => mp.abilityDef == TorannMagicDefOf.TM_TechnoBit).learned;
+        public bool HasTechnoTurret => IsMagicUser
+            && MagicData.MagicPowersT.First(mp => mp.abilityDef == TorannMagicDefOf.TM_TechnoTurret).learned;
+        public bool HasTechnoWeapon => IsMagicUser
+            && MagicData.MagicPowersT.First(mp => mp.abilityDef == TorannMagicDefOf.TM_TechnoWeapon).learned;
         public int PowerModifier
         {
             get => powerModifier;
@@ -432,7 +373,7 @@ namespace TorannMagic
             }
         }
 
-        private MagicData magicData = null;
+        private MagicData magicData;
         public MagicData MagicData
         {
             get
@@ -520,7 +461,6 @@ namespace TorannMagic
 
         private void DrawTechnoBit()
         {
-            float num = Mathf.Lerp(1.2f, 1.55f, 1f);
             if (bitFloatingDown)
             {
                 if (bitOffset < .38f)
@@ -541,11 +481,10 @@ namespace TorannMagic
             bitPosition = Pawn.Drawer.DrawPos;
             bitPosition.x -= .5f + Rand.Range(-.01f, .01f);
             bitPosition.z += bitOffset;
-            bitPosition.y = Altitudes.AltitudeFor(AltitudeLayer.MoteOverhead);
-            float angle = 0f;
+            bitPosition.y = AltitudeLayer.MoteOverhead.AltitudeFor();
             Vector3 s = new Vector3(.35f, 1f, .35f);
             Matrix4x4 matrix = default(Matrix4x4);
-            matrix.SetTRS(bitPosition, Quaternion.AngleAxis(angle, Vector3.up), s);
+            matrix.SetTRS(bitPosition, Quaternion.AngleAxis(0f, Vector3.up), s);
             Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.bitMat, 0);
         }
 
@@ -553,9 +492,7 @@ namespace TorannMagic
         {
             if (mageLightSet) return;
 
-            Vector3 lightPos = Vector3.zero;
-
-            lightPos = Pawn.Drawer.DrawPos;
+            Vector3 lightPos = Pawn.Drawer.DrawPos;
             lightPos.x -= .5f;
             lightPos.z += .6f;
 
@@ -978,36 +915,33 @@ namespace TorannMagic
         private Dictionary<int, int> cacheXPFL = new Dictionary<int, int>();
         public int GetXPForLevel(int lvl)
         {
-            if (!cacheXPFL.ContainsKey(lvl))
+            int val = cacheXPFL.TryGetValue(lvl);
+            if (val > 0) return val;
+
+            IntVec2 c1 = new IntVec2(0, 40);
+            IntVec2 c2 = new IntVec2(5, 30);
+            IntVec2 c3 = new IntVec2(15, 20);
+            IntVec2 c4 = new IntVec2(30, 10);
+            IntVec2 c5 = new IntVec2(200, 0);
+
+            for (int i = 0; i <= lvl; i++)
             {
-                IntVec2 c1 = new IntVec2(0, 40); 
-                IntVec2 c2 = new IntVec2(5, 30);
-                IntVec2 c3 = new IntVec2(15, 20); 
-                IntVec2 c4 = new IntVec2(30, 10);
-                IntVec2 c5 = new IntVec2(200, 0);
-
-                int val = 0;
-
-                for (int i = 0; i < lvl + 1; i++)
+                val += Mathf.Clamp(i, c1.x, c2.x - 1) * c1.z + c1.z;
+                if (i >= c2.x)
                 {
-                    val += (Mathf.Clamp(i, c1.x, c2.x - 1) * c1.z) + c1.z;
-                    if (i >= c2.x)
-                    {
-                        val += (Mathf.Clamp(i, c2.x, c3.x - 1) * c2.z) + c2.z;
-                    }
-                    if (i >= c3.x)
-                    {
-                        val += (Mathf.Clamp(i, c3.x, c4.x - 1) * c3.z) + c3.z;
-                    }
-                    if (i >= c4.x)
-                    {
-                        val += (Mathf.Clamp(i, c4.x, c5.x - 1) * c4.z) + c4.z;
-                    }
+                    val += Mathf.Clamp(i, c2.x, c3.x - 1) * c2.z + c2.z;
                 }
-                cacheXPFL.Add(lvl, val);
-                return val;
+                if (i >= c3.x)
+                {
+                    val += Mathf.Clamp(i, c3.x, c4.x - 1) * c3.z + c3.z;
+                }
+                if (i >= c4.x)
+                {
+                    val += Mathf.Clamp(i, c4.x, c5.x - 1) * c4.z + c4.z;
+                }
             }
-            return cacheXPFL[lvl];
+            cacheXPFL.Add(lvl, val);
+            return val;
         }
 
         public int MagicUserLevel
@@ -1077,9 +1011,7 @@ namespace TorannMagic
                 ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
                 if (Pawn.IsColonist && settingsRef.showLevelUpMessage)
                 {
-                    Messages.Message(TranslatorFormattedStringExtensions.Translate("TM_MagicLevelUp",
-                        parent.Label
-                    ), Pawn, MessageTypeDefOf.PositiveEvent);
+                    Messages.Message("TM_MagicLevelUp".Translate(parent.Label), Pawn, MessageTypeDefOf.PositiveEvent);
                 }
             }
             else
@@ -2420,7 +2352,7 @@ namespace TorannMagic
                 }
                 if (spell_Teleport && !abilityUser.story.traits.HasTrait(TorannMagicDefOf.Arcanist))
                 {
-                    if (!(abilityUser.story.traits.HasTrait(TorannMagicDefOf.ChaosMage) && MagicData.MagicPowersA.FirstOrDefault(mp => mp.abilityDef == TorannMagicDefOf.TM_Teleport).learned))
+                    if (!(abilityUser.story.traits.HasTrait(TorannMagicDefOf.ChaosMage) && MagicData.MagicPowersA.First(mp => mp.abilityDef == TorannMagicDefOf.TM_Teleport).learned))
                     {
                         SafelyAddPawnAbility(TorannMagicDefOf.TM_Teleport);
                     }
@@ -2784,22 +2716,20 @@ namespace TorannMagic
             }
             if (abilityUser.story.traits.HasTrait(TorannMagicDefOf.ChaosMage))
             {
-                foreach (MagicPower current in MagicData.AllMagicPowersForChaosMage)
+                foreach (MagicPower current in MagicData.AllMagicPowersForChaosMage.Where(
+                             mp => mp.abilityDef != TorannMagicDefOf.TM_ChaosTradition))
                 {
-                    if (current.abilityDef != TorannMagicDefOf.TM_ChaosTradition)
+                    current.learned = false;
+                    foreach (TMAbilityDef tmad in current.TMabilityDefs)
                     {
-                        current.learned = false;
-                        foreach (TMAbilityDef tmad in current.TMabilityDefs)
+                        if (tmad.childAbilities != null && tmad.childAbilities.Count > 0)
                         {
-                            if (tmad.childAbilities != null && tmad.childAbilities.Count > 0)
+                            for (int k = 0; k < tmad.childAbilities.Count; k++)
                             {
-                                for (int k = 0; k < tmad.childAbilities.Count; k++)
-                                {
-                                    RemovePawnAbility(tmad.childAbilities[k]);
-                                }
+                                RemovePawnAbility(tmad.childAbilities[k]);
                             }
-                            RemovePawnAbility(tmad);
                         }
+                        RemovePawnAbility(tmad);
                     }
                 }
                 RemovePawnAbility(TorannMagicDefOf.TM_EnchantedAura);
@@ -4070,37 +4000,10 @@ namespace TorannMagic
             Pawn abilityUser = Pawn;
 
             List<Hediff> list = new List<Hediff>();
-            List<Hediff> arg_32_0 = list;
-            IEnumerable<Hediff> arg_32_1;
-            if (abilityUser == null)
-            {
-                arg_32_1 = null;
-            }
-            else
-            {
-                arg_32_1 = abilityUser.health?.hediffSet?.hediffs;
-            }
-            arg_32_0.AddRange(arg_32_1);
-            Pawn expr_3E = abilityUser;
-            int? arg_84_0;
-            if (expr_3E == null)
-            {
-                arg_84_0 = null;
-            }
-            else
-            {
-                Pawn_HealthTracker expr_52 = expr_3E.health;
-                if (expr_52 == null)
-                {
-                    arg_84_0 = null;
-                }
-                else
-                {
-                    HediffSet expr_66 = expr_52.hediffSet;
-                    arg_84_0 = ((expr_66 != null) ? new int?(expr_66.hediffs.Count<Hediff>()) : null);
-                }
-            }
-            if ((arg_84_0 ?? 0) > 0)
+            List<Hediff> existingHediffs = abilityUser?.health?.hediffSet?.hediffs;
+            if (existingHediffs != null) list.AddRange(existingHediffs);
+
+            if (abilityUser?.health?.hediffSet != null && abilityUser.health.hediffSet.hediffs.Count > 0)
             {
                 foreach (Hediff current in list)
                 {
@@ -4110,7 +4013,7 @@ namespace TorannMagic
                         FleckMaker.Static(Pawn.Position, Pawn.Map, FleckDefOf.ExplosionFlash, 10);
                         dinfo.SetAmount(0);
                         return;
-                    }                    
+                    }
                     if (current.def == TorannMagicDefOf.TM_HediffEnchantment_phantomShift && Rand.Chance(.2f))
                     {
                         absorbed = true;
@@ -4118,7 +4021,7 @@ namespace TorannMagic
                         FleckMaker.ThrowSmoke(abilityUser.Position.ToVector3Shifted(), abilityUser.Map, 1.2f);
                         dinfo.SetAmount(0);
                         return;
-                    }                    
+                    }
                     if (current.def == TorannMagicDefOf.TM_HediffShield)
                     {
                         float sev = current.Severity;
@@ -4656,86 +4559,39 @@ namespace TorannMagic
                                     if (castSuccess) return;
                                 }
                             }
-                            if (tmad == TorannMagicDefOf.TM_Purify)
+
+                            if (tmad != TorannMagicDefOf.TM_Purify) continue;
                             {
                                 MagicPower magicPower = MagicData.MagicPowersPR.FirstOrDefault(mp => mp.abilityDef == tmad);
-                                if (magicPower != null && magicPower.learned && magicPower.autocast)
+                                if (magicPower == null || !magicPower.learned || !magicPower.autocast) continue;
+
+                                PawnAbility ability = AbilityData.Powers.FirstOrDefault(pa => pa.Def == TorannMagicDefOf.TM_Purify);
+                                MagicPowerSkill ver = MagicData.MagicPowerSkill_Purify.FirstOrDefault(mps => mps.label == "TM_Purify_ver");
+                                AutoCast.HealPermanentSpell.Evaluate(this, TorannMagicDefOf.TM_Purify, ability, magicPower, out castSuccess);
+                                if (castSuccess) return;
+                                List<string> afflictionList = HediffCategoryList.Named("TM_Category_Hediffs").ailments
+                                    .Where(chd => chd.requiredSkillName == "TM_Purify_ver" && chd.requiredSkillLevel <= ver.level)
+                                    .Select(chd => chd.hediffDefname).ToList();
+                                AutoCast.CureSpell.Evaluate(this, TorannMagicDefOf.TM_Purify, ability, magicPower, afflictionList, out castSuccess);
+                                if (castSuccess) return;
+                                List<string> addictionList = HediffCategoryList.Named("TM_Category_Hediffs").addictions
+                                    .Where(chd => chd.requiredSkillName == "TM_Purify_ver" && chd.requiredSkillLevel <= ver.level)
+                                    .Select(chd => chd.hediffDefname).ToList();
+                                if (ver.level >= 3)
                                 {
-                                    PawnAbility ability = AbilityData.Powers.FirstOrDefault(pa => pa.Def == TorannMagicDefOf.TM_Purify);
-                                    MagicPowerSkill ver = MagicData.MagicPowerSkill_Purify.FirstOrDefault(mps => mps.label == "TM_Purify_ver");
-                                    AutoCast.HealPermanentSpell.Evaluate(this, TorannMagicDefOf.TM_Purify, ability, magicPower, out castSuccess);
-                                    if (castSuccess) return;
-                                    List<string> afflictionList = new List<string>();
-                                    foreach(TM_CategoryHediff chd in HediffCategoryList.Named("TM_Category_Hediffs").ailments)
+                                    IEnumerable<ChemicalDef> enumerable = from def in DefDatabase<ChemicalDef>.AllDefs
+                                        where (true)
+                                        select def;
+                                    foreach (ChemicalDef addiction in enumerable)
                                     {
-                                        if(chd.requiredSkillName == "TM_Purify_ver" && chd.requiredSkillLevel <= ver.level)
+                                        if (addiction.defName != "ROMV_VitaeAddiction" && addiction != TorannMagicDefOf.Luciferium)
                                         {
-                                            afflictionList.Add(chd.hediffDefname);
+                                            addictionList.AddDistinct(addiction.defName);
                                         }
                                     }
-                                    //afflictionList.Add("Cataract");
-                                    //afflictionList.Add("HearingLoss");
-                                    //afflictionList.Add("ToxicBuildup");
-                                    //if (ver.level >= 1)
-                                    //{
-                                    //    afflictionList.Add("Blindness");
-                                    //    afflictionList.Add("Asthma");
-                                    //    afflictionList.Add("Cirrhosis");
-                                    //    afflictionList.Add("ChemicalDamageModerate");
-                                    //}
-                                    //if (ver.level >= 2)
-                                    //{
-                                    //    afflictionList.Add("Frail");
-                                    //    afflictionList.Add("BadBack");
-                                    //    afflictionList.Add("Carcinoma");
-                                    //    afflictionList.Add("ChemicalDamageSevere");
-                                    //}
-                                    //if (ver.level >= 3)
-                                    //{
-                                    //    afflictionList.Add("Alzheimers");
-                                    //    afflictionList.Add("Dementia");
-                                    //    afflictionList.Add("HeartArteryBlockage");
-                                    //    afflictionList.Add("PsychicShock");
-                                    //    afflictionList.Add("CatatonicBreakdown");
-                                    //    afflictionList.Add("Abasia");
-                                    //}
-                                    AutoCast.CureSpell.Evaluate(this, TorannMagicDefOf.TM_Purify, ability, magicPower, afflictionList, out castSuccess);
-                                    if (castSuccess) return;
-                                    List<string> addictionList = new List<string>();
-                                    //addictionList.Add("Alcohol");
-                                    //addictionList.Add("Smokeleaf");
-                                    //if (ver.level >= 1)
-                                    //{
-                                    //    addictionList.Add("GoJuice");
-                                    //    addictionList.Add("WakeUp");
-                                    //}
-                                    //if (ver.level >= 2)
-                                    //{
-                                    //    addictionList.Add("Psychite");
-                                    //}
-                                    foreach (TM_CategoryHediff chd in HediffCategoryList.Named("TM_Category_Hediffs").addictions)
-                                    {
-                                        if (chd.requiredSkillName == "TM_Purify_ver" && chd.requiredSkillLevel <= ver.level)
-                                        {
-                                            addictionList.Add(chd.hediffDefname);
-                                        }
-                                    }
-                                    if (ver.level >= 3)
-                                    {
-                                        IEnumerable<ChemicalDef> enumerable = from def in DefDatabase<ChemicalDef>.AllDefs
-                                            where (true)
-                                            select def;
-                                        foreach (ChemicalDef addiction in enumerable)
-                                        {
-                                            if (addiction.defName != "ROMV_VitaeAddiction" && addiction != TorannMagicDefOf.Luciferium)
-                                            {
-                                                addictionList.AddDistinct(addiction.defName);
-                                            }
-                                        }
-                                    }
-                                    AutoCast.CureAddictionSpell.Evaluate(this, TorannMagicDefOf.TM_Purify, ability, magicPower, addictionList, out castSuccess);
-                                    if (castSuccess) return;
                                 }
+                                AutoCast.CureAddictionSpell.Evaluate(this, TorannMagicDefOf.TM_Purify, ability, magicPower, addictionList, out castSuccess);
+                                if (castSuccess) return;
                             }
                         }
                     }
@@ -4769,12 +4625,7 @@ namespace TorannMagic
                     if (magicPower != null && magicPower.learned && magicPower.autocast && !Pawn.CurJob.playerForced)
                     {
                         PawnAbility ability = AbilityData.Powers.FirstOrDefault(pa => pa.Def == TorannMagicDefOf.TM_MechaniteReprogramming);
-                        List<string> afflictionList = new List<string>();
-                        afflictionList.Clear();
-                        foreach (TM_CategoryHediff chd in HediffCategoryList.Named("TM_Category_Hediffs").mechanites)
-                        {
-                            afflictionList.Add(chd.hediffDefname);
-                        }
+                        List<string> afflictionList = HediffCategoryList.Named("TM_Category_Hediffs").mechanites.Select(chd => chd.hediffDefname).ToList();
                         //afflictionList.Add("SensoryMechanites");
                         //afflictionList.Add("FibrousMechanites");
                         AutoCast.CureSpell.Evaluate(this, TorannMagicDefOf.TM_MechaniteReprogramming, ability, magicPower, afflictionList, out castSuccess);
@@ -4902,37 +4753,24 @@ namespace TorannMagic
                     {
                         Thing targetThing = localTarget.Thing;
                         if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
-                        {
                             continue;
-                        }
                         if (mp.autocasting.requiresLoS && !TM_Calc.HasLoSFromTo(Pawn.Position, targetThing, Pawn, mp.autocasting.minRange, ability.Def.MainVerb.range))
-                        {
                             continue;
-                        }
                         if (mp.autocasting.maxRange != 0f && mp.autocasting.maxRange < (Pawn.Position - targetThing.Position).LengthHorizontal)
-                        {
                             continue;
-                        }
                         bool TE = mp.autocasting.targetEnemy && targetThing.Faction != null && targetThing.Faction.HostileTo(Pawn.Faction);
-                        if (TE && targetThing is Pawn)
+                        if (TE && targetThing is Pawn targetPawn)
                         {
-                            Pawn targetPawn = targetThing as Pawn;
                             if (targetPawn.Downed || targetPawn.IsPrisonerInPrisonCell())
-                            {
                                 continue;
-                            }
                         }
                         bool TN = mp.autocasting.targetNeutral && targetThing.Faction != null && !targetThing.Faction.HostileTo(Pawn.Faction);
                         bool TNF = mp.autocasting.targetNoFaction && targetThing.Faction == null;
                         bool TF = mp.autocasting.targetFriendly && targetThing.Faction == Pawn.Faction;
                         if (!(TE || TN || TF || TNF))
-                        {
                             continue;
-                        }
                         if (!mp.autocasting.ValidConditions(Pawn, targetThing))
-                        {
                             continue;
-                        }
                         AutoCast.MagicAbility_OnTarget.TryExecute(this, tmad, ability, mp, targetThing, mp.autocasting.minRange, out castSuccess);
                     }
                 }
@@ -4943,13 +4781,9 @@ namespace TorannMagic
                     {
                         Pawn targetThing = localTarget.Pawn;
                         if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
-                        {
                             continue;
-                        }
                         if (!mp.autocasting.ValidConditions(Pawn, targetThing))
-                        {
                             continue;
-                        }
                         AutoCast.MagicAbility_OnSelf.Evaluate(this, tmad, ability, mp, out castSuccess);
                     }
                 }
@@ -4960,21 +4794,13 @@ namespace TorannMagic
                     {
                         IntVec3 targetThing = localTarget.Cell;
                         if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
-                        {
                             continue;
-                        }
                         if (mp.autocasting.requiresLoS && !TM_Calc.HasLoSFromTo(Pawn.Position, targetThing, Pawn, mp.autocasting.minRange, ability.Def.MainVerb.range))
-                        {
                             continue;
-                        }
                         if (mp.autocasting.maxRange != 0f && mp.autocasting.maxRange < (Pawn.Position - targetThing).LengthHorizontal)
-                        {
                             continue;
-                        }
                         if (!mp.autocasting.ValidConditions(Pawn, targetThing))
-                        {
                             continue;
-                        }
                         AutoCast.MagicAbility_OnCell.TryExecute(this, tmad, ability, mp, targetThing, mp.autocasting.minRange, out castSuccess);
                     }
                 }
@@ -4985,37 +4811,24 @@ namespace TorannMagic
                     {
                         Thing targetThing = localTarget.Thing;
                         if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
-                        {
                             continue;
-                        }
                         if (mp.autocasting.requiresLoS && !TM_Calc.HasLoSFromTo(Pawn.Position, targetThing, Pawn, mp.autocasting.minRange, ability.Def.MainVerb.range))
-                        {
                             continue;
-                        }
                         if (mp.autocasting.maxRange != 0f && mp.autocasting.maxRange < (Pawn.Position - targetThing.Position).LengthHorizontal)
-                        {
                             continue;
-                        }
                         bool TE = mp.autocasting.targetEnemy && targetThing.Faction != null && targetThing.Faction.HostileTo(Pawn.Faction);
-                        if (TE && targetThing is Pawn)
+                        if (TE && targetThing is Pawn targetPawn)
                         {
-                            Pawn targetPawn = targetThing as Pawn;
                             if (targetPawn.Downed || targetPawn.IsPrisonerInPrisonCell())
-                            {
                                 continue;
-                            }
                         }
                         bool TN = mp.autocasting.targetNeutral && targetThing.Faction != null && !targetThing.Faction.HostileTo(Pawn.Faction);
                         bool TNF = mp.autocasting.targetNoFaction && targetThing.Faction == null;
                         bool TF = mp.autocasting.targetFriendly && targetThing.Faction == Pawn.Faction;
                         if (!(TE || TN || TF || TNF))
-                        {
                             continue;
-                        }
                         if (!mp.autocasting.ValidConditions(Pawn, targetThing))
-                        {
                             continue;
-                        }
                         AutoCast.MagicAbility_OnTarget.TryExecute(this, tmad, ability, mp, targetThing, mp.autocasting.minRange, out castSuccess);
                     }
                 }
@@ -5288,187 +5101,155 @@ namespace TorannMagic
                 Pawn.CurJob.def != JobDefOf.Ingest && Pawn.CurJob.def != JobDefOf.ManTurret && Pawn.GetPosture() == PawnPosture.Standing)
             {
                 bool castSuccess = false;
-                if (Mana != null && Mana.CurLevelPercentage >= settingsRef.autocastMinThreshold)
+                if (Mana == null || !(Mana.CurLevelPercentage >= settingsRef.autocastMinThreshold)) return;
+
+                foreach (MagicPower mp in MagicData.MagicPowersCustom)
                 {
-                    foreach (MagicPower mp in MagicData.MagicPowersCustom)
+                    if (mp.learned && mp.autocasting != null && mp.autocasting.magicUser && mp.autocasting.AIUsable)
                     {
-                        if (mp.learned && mp.autocasting != null && mp.autocasting.magicUser && mp.autocasting.AIUsable)
-                        {                            
-                            //try
-                            //{ 
-                            TMAbilityDef tmad = mp.TMabilityDefs[mp.level] as TMAbilityDef; // issues with index?                            
-                            bool canUseWithEquippedWeapon = true;
-                            bool canUseIfViolentAbility = !Pawn.story.DisabledWorkTagsBackstoryAndTraits.HasFlag(WorkTags.Violent) || !tmad.MainVerb.isViolent;
-                            if (!TM_Calc.HasResourcesForAbility(Pawn, tmad))
-                            {
-                                continue;
-                            }
-                            if (canUseWithEquippedWeapon && canUseIfViolentAbility)
-                            {
-                                PawnAbility ability = AbilityData.Powers.FirstOrDefault(pa => pa.Def == tmad);
-                                LocalTargetInfo currentTarget = Pawn.TargetCurrentlyAimingAt != null ? Pawn.TargetCurrentlyAimingAt : (Pawn.CurJob != null ? Pawn.CurJob.targetA : null);
-                                if (mp.autocasting.type == AutocastType.OnTarget && currentTarget != null)
-                                {
-                                    LocalTargetInfo localTarget = TM_Calc.GetAutocastTarget(Pawn, mp.autocasting, currentTarget);
-                                    if (localTarget != null && localTarget.IsValid)
-                                    {
-                                        Thing targetThing = localTarget.Thing;
-                                        if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
-                                        {
-                                            continue;
-                                        }
-                                        if (mp.autocasting.requiresLoS && !TM_Calc.HasLoSFromTo(Pawn.Position, targetThing, Pawn, mp.autocasting.minRange, ability.Def.MainVerb.range))
-                                        {
-                                            continue;
-                                        }
-                                        if (mp.autocasting.maxRange != 0f && mp.autocasting.maxRange < (Pawn.Position - targetThing.Position).LengthHorizontal)
-                                        {
-                                            continue;
-                                        }
-                                        bool TE = mp.autocasting.targetEnemy && targetThing.Faction != null && targetThing.Faction.HostileTo(Pawn.Faction);
-                                        bool TN = mp.autocasting.targetNeutral && targetThing.Faction != null && !targetThing.Faction.HostileTo(Pawn.Faction);
-                                        bool TNF = mp.autocasting.targetNoFaction && targetThing.Faction == null;
-                                        if (targetThing is Pawn targetPawn)
-                                        {
-                                            if (TE || TNF)
-                                            {
-                                                if (targetPawn.Downed || targetPawn.IsPrisoner)
-                                                    continue;
-                                            }
-                                            if (TN)
-                                            {
-                                                if (targetPawn.Downed || targetPawn.IsPrisoner)
-                                                    continue;
-                                                if (mp.abilityDef.MainVerb.isViolent && !targetPawn.InMentalState)
-                                                    continue;
-                                            }
-                                        }
-                                        bool TF = mp.autocasting.targetFriendly && targetThing.Faction == Pawn.Faction;
-                                        if (!(TE || TN || TF || TNF))
-                                        {
-                                            continue;
-                                        }
-                                        if (!mp.autocasting.ValidConditions(Pawn, targetThing))
-                                        {
-                                            continue;
-                                        }
-                                        AutoCast.MagicAbility_OnTarget.TryExecute(this, tmad, ability, mp, targetThing, mp.autocasting.minRange, out castSuccess);
-                                    }
-                                }
-                                if (mp.autocasting.type == AutocastType.OnSelf)
-                                {
-                                    LocalTargetInfo localTarget = TM_Calc.GetAutocastTarget(Pawn, mp.autocasting, Pawn);
-                                    if (localTarget != null && localTarget.IsValid)
-                                    {
-                                        Pawn targetThing = localTarget.Pawn;
-                                        if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
-                                        {
-                                            continue;
-                                        }
-                                        if (!mp.autocasting.ValidConditions(Pawn, targetThing))
-                                        {
-                                            continue;
-                                        }
-                                        AutoCast.MagicAbility_OnSelf.Evaluate(this, tmad, ability, mp, out castSuccess);
-                                    }
-                                }
-                                if (mp.autocasting.type == AutocastType.OnCell && currentTarget != null)
-                                {
-                                    LocalTargetInfo localTarget = TM_Calc.GetAutocastTarget(Pawn, mp.autocasting, currentTarget);
-                                    if (localTarget != null && localTarget.IsValid)
-                                    {
-                                        IntVec3 targetThing = localTarget.Cell;
-                                        if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
-                                        {
-                                            continue;
-                                        }
-                                        if (mp.autocasting.requiresLoS && !TM_Calc.HasLoSFromTo(Pawn.Position, targetThing, Pawn, mp.autocasting.minRange, ability.Def.MainVerb.range))
-                                        {
-                                            continue;
-                                        }
-                                        if (mp.autocasting.maxRange != 0f && mp.autocasting.maxRange < (Pawn.Position - targetThing).LengthHorizontal)
-                                        {
-                                            continue;
-                                        }
-                                        if (!mp.autocasting.ValidConditions(Pawn, targetThing))
-                                        {
-                                            continue;
-                                        }
-                                        AutoCast.MagicAbility_OnCell.TryExecute(this, tmad, ability, mp, targetThing, mp.autocasting.minRange, out castSuccess);
-                                    }
-                                }
-                                if (mp.autocasting.type == AutocastType.OnNearby)
-                                {
-                                    LocalTargetInfo localTarget = TM_Calc.GetAutocastTarget(Pawn, mp.autocasting, currentTarget);
-                                    if (localTarget != null && localTarget.IsValid)
-                                    {
-                                        Thing targetThing = localTarget.Thing;
-                                        if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
-                                        {
-                                            continue;
-                                        }
-                                        if (mp.autocasting.requiresLoS && !TM_Calc.HasLoSFromTo(Pawn.Position, targetThing, Pawn, mp.autocasting.minRange, ability.Def.MainVerb.range))
-                                        {
-                                            continue;
-                                        }
-                                        if (mp.autocasting.maxRange != 0f && mp.autocasting.maxRange < (Pawn.Position - targetThing.Position).LengthHorizontal)
-                                        {
-                                            continue;
-                                        }
-                                        bool TE = mp.autocasting.targetEnemy && targetThing.Faction != null && targetThing.Faction.HostileTo(Pawn.Faction);
-                                        if (TE && targetThing is Pawn)
-                                        {
-                                            Pawn targetPawn = targetThing as Pawn;
-                                            if (targetPawn.Downed || targetPawn.IsPrisoner)
-                                            {
-                                                continue;
-                                            }
-                                        }
-                                        bool TN = mp.autocasting.targetNeutral && targetThing.Faction != null && !targetThing.Faction.HostileTo(Pawn.Faction);
-                                        if (TN && targetThing is Pawn)
-                                        {
-                                            Pawn targetPawn = targetThing as Pawn;
-                                            if (targetPawn.Downed || targetPawn.IsPrisoner)
-                                            {
-                                                continue;
-                                            }
-                                            if (mp.abilityDef.MainVerb.isViolent && !targetPawn.InMentalState)
-                                            {
-                                                continue;
-                                            }
-                                        }
-                                        bool TNF = mp.autocasting.targetNoFaction && targetThing.Faction == null;
-                                        if (TNF && targetThing is Pawn)
-                                        {
-                                            Pawn targetPawn = targetThing as Pawn;
-                                            if (targetPawn.Downed || targetPawn.IsPrisoner)
-                                            {
-                                                continue;
-                                            }
-                                        }
-                                        bool TF = mp.autocasting.targetFriendly && targetThing.Faction == Pawn.Faction;
-                                        if (!(TE || TN || TF || TNF))
-                                        {
-                                            continue;
-                                        }
-                                        if (!mp.autocasting.ValidConditions(Pawn, targetThing))
-                                        {
-                                            continue;
-                                        }
-                                        AutoCast.MagicAbility_OnTarget.TryExecute(this, tmad, ability, mp, targetThing, mp.autocasting.minRange, out castSuccess);
-                                    }
-                                }
-                            }
-                            //}
-                            //catch
-                            //{
-                            //    Log.Message("no index found at " + mp.level + " for " + mp.abilityDef.defName);
-                            //}
+                        //try
+                        //{
+                        TMAbilityDef tmad = mp.TMabilityDefs[mp.level] as TMAbilityDef; // issues with index?
+                        bool canUseWithEquippedWeapon = true;
+                        bool canUseIfViolentAbility = !Pawn.story.DisabledWorkTagsBackstoryAndTraits.HasFlag(WorkTags.Violent) || !tmad.MainVerb.isViolent;
+                        if (!TM_Calc.HasResourcesForAbility(Pawn, tmad))
+                        {
+                            continue;
                         }
-                        if (castSuccess) goto AIAutoCastExit;
+                        if (canUseWithEquippedWeapon && canUseIfViolentAbility)
+                        {
+                            PawnAbility ability = AbilityData.Powers.FirstOrDefault(pa => pa.Def == tmad);
+                            LocalTargetInfo currentTarget = Pawn.TargetCurrentlyAimingAt;
+                            if (currentTarget == LocalTargetInfo.Invalid && Pawn.CurJob != null)
+                                currentTarget = Pawn.CurJob.targetA;
+                            if (mp.autocasting.type == AutocastType.OnTarget && currentTarget != null)
+                            {
+                                LocalTargetInfo localTarget = TM_Calc.GetAutocastTarget(Pawn, mp.autocasting, currentTarget);
+                                if (localTarget != null && localTarget.IsValid)
+                                {
+                                    Thing targetThing = localTarget.Thing;
+                                    if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
+                                        continue;
+                                    if (mp.autocasting.requiresLoS && !TM_Calc.HasLoSFromTo(Pawn.Position, targetThing, Pawn, mp.autocasting.minRange, ability.Def.MainVerb.range))
+                                        continue;
+                                    if (mp.autocasting.maxRange != 0f && mp.autocasting.maxRange < (Pawn.Position - targetThing.Position).LengthHorizontal)
+                                        continue;
+                                    bool TE = mp.autocasting.targetEnemy && targetThing.Faction != null && targetThing.Faction.HostileTo(Pawn.Faction);
+                                    bool TN = mp.autocasting.targetNeutral && targetThing.Faction != null && !targetThing.Faction.HostileTo(Pawn.Faction);
+                                    bool TNF = mp.autocasting.targetNoFaction && targetThing.Faction == null;
+                                    if (targetThing is Pawn targetPawn)
+                                    {
+                                        if (TE || TNF)
+                                        {
+                                            if (targetPawn.Downed || targetPawn.IsPrisoner)
+                                                continue;
+                                        }
+                                        if (TN)
+                                        {
+                                            if (targetPawn.Downed || targetPawn.IsPrisoner)
+                                                continue;
+                                            if (mp.abilityDef.MainVerb.isViolent && !targetPawn.InMentalState)
+                                                continue;
+                                        }
+                                    }
+                                    bool TF = mp.autocasting.targetFriendly && targetThing.Faction == Pawn.Faction;
+                                    if (!(TE || TN || TF || TNF))
+                                    {
+                                        continue;
+                                    }
+                                    if (!mp.autocasting.ValidConditions(Pawn, targetThing))
+                                    {
+                                        continue;
+                                    }
+                                    AutoCast.MagicAbility_OnTarget.TryExecute(this, tmad, ability, mp, targetThing, mp.autocasting.minRange, out castSuccess);
+                                }
+                            }
+                            if (mp.autocasting.type == AutocastType.OnSelf)
+                            {
+                                LocalTargetInfo localTarget = TM_Calc.GetAutocastTarget(Pawn, mp.autocasting, Pawn);
+                                if (localTarget != null && localTarget.IsValid)
+                                {
+                                    Pawn targetThing = localTarget.Pawn;
+                                    if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
+                                        continue;
+                                    if (!mp.autocasting.ValidConditions(Pawn, targetThing))
+                                        continue;
+                                    AutoCast.MagicAbility_OnSelf.Evaluate(this, tmad, ability, mp, out castSuccess);
+                                }
+                            }
+                            if (mp.autocasting.type == AutocastType.OnCell && currentTarget != null)
+                            {
+                                LocalTargetInfo localTarget = TM_Calc.GetAutocastTarget(Pawn, mp.autocasting, currentTarget);
+                                if (localTarget != null && localTarget.IsValid)
+                                {
+                                    IntVec3 targetThing = localTarget.Cell;
+                                    if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
+                                        continue;
+                                    if (mp.autocasting.requiresLoS && !TM_Calc.HasLoSFromTo(Pawn.Position, targetThing, Pawn, mp.autocasting.minRange, ability.Def.MainVerb.range))
+                                        continue;
+                                    if (mp.autocasting.maxRange != 0f && mp.autocasting.maxRange < (Pawn.Position - targetThing).LengthHorizontal)
+                                        continue;
+                                    if (!mp.autocasting.ValidConditions(Pawn, targetThing))
+                                        continue;
+                                    AutoCast.MagicAbility_OnCell.TryExecute(this, tmad, ability, mp, targetThing, mp.autocasting.minRange, out castSuccess);
+                                }
+                            }
+                            if (mp.autocasting.type == AutocastType.OnNearby)
+                            {
+                                LocalTargetInfo localTarget = TM_Calc.GetAutocastTarget(Pawn, mp.autocasting, currentTarget);
+                                if (localTarget != null && localTarget.IsValid)
+                                {
+                                    Thing targetThing = localTarget.Thing;
+                                    if (!mp.autocasting.ValidType(mp.autocasting.GetTargetType, localTarget))
+                                        continue;
+                                    if (mp.autocasting.requiresLoS && !TM_Calc.HasLoSFromTo(Pawn.Position, targetThing, Pawn, mp.autocasting.minRange, ability.Def.MainVerb.range))
+                                        continue;
+                                    if (mp.autocasting.maxRange != 0f && mp.autocasting.maxRange <
+                                        (Pawn.Position - targetThing.Position).LengthHorizontal)
+                                        continue;
+                                    bool TE = mp.autocasting.targetEnemy && targetThing.Faction != null && targetThing.Faction.HostileTo(Pawn.Faction);
+                                    bool TN = mp.autocasting.targetNeutral && targetThing.Faction != null && !targetThing.Faction.HostileTo(Pawn.Faction);
+                                    bool TNF = mp.autocasting.targetNoFaction && targetThing.Faction == null;
+                                    bool TF = mp.autocasting.targetFriendly && targetThing.Faction == Pawn.Faction;
+                                    if (targetThing is Pawn targetPawn)
+                                    {
+                                        if (TE)
+                                        {
+                                            if (targetPawn.Downed || targetPawn.IsPrisoner)
+                                                continue;
+                                        }
+
+                                        if (TN)
+                                        {
+                                            if (targetPawn.Downed || targetPawn.IsPrisoner)
+                                                continue;
+                                            if (mp.abilityDef.MainVerb.isViolent && !targetPawn.InMentalState)
+                                                continue;
+                                        }
+                                        if (TNF)
+                                        {
+                                            if (targetPawn.Downed || targetPawn.IsPrisoner)
+                                                continue;
+                                        }
+                                    }
+
+                                    if (!(TE || TN || TF || TNF))
+                                        continue;
+                                    if (!mp.autocasting.ValidConditions(Pawn, targetThing))
+                                        continue;
+                                    AutoCast.MagicAbility_OnTarget.TryExecute(this, tmad, ability, mp, targetThing, mp.autocasting.minRange, out castSuccess);
+                                }
+                            }
+                        }
+                        //}
+                        //catch
+                        //{
+                        //    Log.Message("no index found at " + mp.level + " for " + mp.abilityDef.defName);
+                        //}
                     }
-                    AIAutoCastExit:;
+                    if (castSuccess) goto AIAutoCastExit;
                 }
+                AIAutoCastExit:;
             }
         }
 
@@ -5506,96 +5287,101 @@ namespace TorannMagic
             {
                 earthSpriteMap = Pawn.Map;
             }
-            if (earthSpriteType == 1) //mining stone
+            switch (earthSpriteType)
             {
-                //Log.Message("stone");
-                Building mineTarget = earthSprites.GetFirstBuilding(earthSpriteMap);
-                nextEarthSpriteAction = Find.TickManager.TicksGame + Mathf.RoundToInt(300 * (1 - .1f * magicPowerSkill.level) / arcaneDmg);
-                TM_MoteMaker.ThrowGenericFleck(TorannMagicDefOf.SparkFlash, earthSprites.ToVector3Shifted(), earthSpriteMap, Rand.Range(2f, 5f), .05f, 0f, .1f, 0, 0f, 0f, 0f);
-                var mineable = mineTarget as Mineable;
-                const int num = 80;
-                if (mineable != null && mineTarget.HitPoints > num)
+                //mining stone
+                case 1:
                 {
-                    var dinfo = new DamageInfo(DamageDefOf.Mining, num, 0, -1f, Pawn);
-                    mineTarget.TakeDamage(dinfo);
-                    ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                    if (Rand.Chance(settingsRef.magicyteChance * 2))
+                    //Log.Message("stone");
+                    Building mineTarget = earthSprites.GetFirstBuilding(earthSpriteMap);
+                    nextEarthSpriteAction = Find.TickManager.TicksGame + Mathf.RoundToInt(300 * (1 - .1f * magicPowerSkill.level) / arcaneDmg);
+                    TM_MoteMaker.ThrowGenericFleck(TorannMagicDefOf.SparkFlash, earthSprites.ToVector3Shifted(), earthSpriteMap, Rand.Range(2f, 5f), .05f, 0f, .1f, 0, 0f, 0f, 0f);
+                    var mineable = mineTarget as Mineable;
+                    const int num = 80;
+                    if (mineable != null && mineTarget.HitPoints > num)
                     {
-                        Thing thing = ThingMaker.MakeThing(TorannMagicDefOf.RawMagicyte);
-                        thing.stackCount = Rand.Range(8, 16);
-                        GenPlace.TryPlaceThing(thing, earthSprites, earthSpriteMap, ThingPlaceMode.Near);
+                        var dinfo = new DamageInfo(DamageDefOf.Mining, num, 0, -1f, Pawn);
+                        mineTarget.TakeDamage(dinfo);
+                        ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+                        if (Rand.Chance(settingsRef.magicyteChance * 2))
+                        {
+                            Thing thing = ThingMaker.MakeThing(TorannMagicDefOf.RawMagicyte);
+                            thing.stackCount = Rand.Range(8, 16);
+                            GenPlace.TryPlaceThing(thing, earthSprites, earthSpriteMap, ThingPlaceMode.Near);
+                        }
                     }
-                }
-                else if (mineable != null && mineTarget.HitPoints <= num)
-                {
-                    mineable.DestroyMined(Pawn);
-                }
-
-                if (!mineable.DestroyedOrNull()) return;
-
-                IntVec3 oldEarthSpriteLoc = earthSprites;
-                Building newMineSpot;
-                if (earthSpritesInArea)
-                {
-                    //Log.Message("moving in area");
-                    List<IntVec3> spriteAreaCells = GenRadial.RadialCellsAround(oldEarthSpriteLoc, 6f, false).ToList();
-                    spriteAreaCells.Shuffle();
-                    for (int i = 0; i < spriteAreaCells.Count; i++)
+                    else if (mineable != null && mineTarget.HitPoints <= num)
                     {
-                        IntVec3 intVec = spriteAreaCells[i];
-                        newMineSpot = intVec.GetFirstBuilding(earthSpriteMap);
-                        if (newMineSpot == null
-                            || intVec.Fogged(earthSpriteMap)
-                            || TM_Calc.GetSpriteArea() == null
-                            || !TM_Calc.GetSpriteArea().ActiveCells.Contains(intVec)
-                        ) continue;
-
-                        mineable = newMineSpot as Mineable;
-                        if (mineable == null) continue;
-                        // Assign earthSprites Spot
-                        earthSprites = intVec;
-                        break;
+                        mineable.DestroyMined(Pawn);
                     }
-                }
-                else
-                {
-                    for (int i = 0; i < 20; i++)
+
+                    if (!mineable.DestroyedOrNull()) return;
+
+                    IntVec3 oldEarthSpriteLoc = earthSprites;
+                    Building newMineSpot;
+                    if (earthSpritesInArea)
                     {
-                        IntVec3 intVec = earthSprites + GenAdj.AdjacentCells.RandomElement();
-                        newMineSpot = intVec.GetFirstBuilding(earthSpriteMap);
-                        if (!(newMineSpot is Mineable)) continue;
+                        //Log.Message("moving in area");
+                        List<IntVec3> spriteAreaCells = GenRadial.RadialCellsAround(oldEarthSpriteLoc, 6f, false).ToList();
+                        spriteAreaCells.Shuffle();
+                        for (int i = 0; i < spriteAreaCells.Count; i++)
+                        {
+                            IntVec3 intVec = spriteAreaCells[i];
+                            newMineSpot = intVec.GetFirstBuilding(earthSpriteMap);
+                            if (newMineSpot == null
+                                || intVec.Fogged(earthSpriteMap)
+                                || TM_Calc.GetSpriteArea() == null
+                                || !TM_Calc.GetSpriteArea().ActiveCells.Contains(intVec)
+                               ) continue;
 
-                        earthSprites = intVec;
-                        i = 20;
+                            mineable = newMineSpot as Mineable;
+                            if (mineable == null) continue;
+                            // Assign earthSprites Spot
+                            earthSprites = intVec;
+                            break;
+                        }
                     }
-                }
+                    else
+                    {
+                        for (int i = 0; i < 20; i++)
+                        {
+                            IntVec3 intVec = earthSprites + GenAdj.AdjacentCells.RandomElement();
+                            newMineSpot = intVec.GetFirstBuilding(earthSpriteMap);
+                            if (!(newMineSpot is Mineable)) continue;
 
-                if (oldEarthSpriteLoc == earthSprites)
-                {
+                            earthSprites = intVec;
+                            i = 20;
+                        }
+                    }
+
+                    if (oldEarthSpriteLoc != earthSprites) return;
+
                     earthSpriteType = 0;
                     earthSprites = IntVec3.Invalid;
                     earthSpritesInArea = false;
+                    break;
                 }
-            }
-            else if (earthSpriteType == 2) //transforming soil
-            {
-                //Log.Message("earth");
-                nextEarthSpriteAction = Find.TickManager.TicksGame + Mathf.RoundToInt((24000 * (1 - (.1f * magicPowerSkill.level))) / arcaneDmg);
-                for (int m = 0; m < 4; m++)
+                //transforming soil
+                case 2:
                 {
-                    TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_ThickDust, earthSprites.ToVector3Shifted(), earthSpriteMap, Rand.Range(.3f, .5f), Rand.Range(.2f, .3f), .05f, Rand.Range(.4f, .6f), Rand.Range(-20, 20), Rand.Range(.5f, 1f), Rand.Range(0, 360), Rand.Range(0, 360));
-                }
-                Map map = earthSpriteMap;
-                IntVec3 curCell = earthSprites;
-                TerrainDef terrain = curCell.GetTerrain(map);
-                if (Rand.Chance(.8f))
-                {
-                    Thing thing = ThingMaker.MakeThing(TorannMagicDefOf.RawMagicyte);
-                    thing.stackCount = Rand.Range(10, 20);
-                    GenPlace.TryPlaceThing(thing, earthSprites, earthSpriteMap, ThingPlaceMode.Near);
-                }
-                if (curCell.InBoundsWithNullCheck(map) && curCell.IsValid && terrain != null)
-                {
+                    //Log.Message("earth");
+                    nextEarthSpriteAction = Find.TickManager.TicksGame + Mathf.RoundToInt((24000 * (1 - (.1f * magicPowerSkill.level))) / arcaneDmg);
+                    for (int m = 0; m < 4; m++)
+                    {
+                        TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_ThickDust, earthSprites.ToVector3Shifted(), earthSpriteMap, Rand.Range(.3f, .5f), Rand.Range(.2f, .3f), .05f, Rand.Range(.4f, .6f), Rand.Range(-20, 20), Rand.Range(.5f, 1f), Rand.Range(0, 360), Rand.Range(0, 360));
+                    }
+                    Map map = earthSpriteMap;
+                    IntVec3 curCell = earthSprites;
+                    TerrainDef terrain = curCell.GetTerrain(map);
+                    if (Rand.Chance(.8f))
+                    {
+                        Thing thing = ThingMaker.MakeThing(TorannMagicDefOf.RawMagicyte);
+                        thing.stackCount = Rand.Range(10, 20);
+                        GenPlace.TryPlaceThing(thing, earthSprites, earthSpriteMap, ThingPlaceMode.Near);
+                    }
+
+                    if (!curCell.InBoundsWithNullCheck(map) || !curCell.IsValid || terrain == null) return;
+
                     switch (terrain.defName)
                     {
                         case "MarshyTerrain":
@@ -5653,10 +5439,9 @@ namespace TorannMagic
                                 && terrain.defName != "Soil"
                                 && terrain.defName != "MossyTerrain"
                                 && terrain.defName != "SoftSand"
-                            ) continue;
-                            if (TM_Calc.GetSpriteArea() == null
-                                || !TM_Calc.GetSpriteArea().ActiveCells.Contains(intVec)
-                            ) continue;
+                               ) continue;
+                            if (TM_Calc.GetSpriteArea() == null || !TM_Calc.GetSpriteArea().ActiveCells.Contains(intVec))
+                                continue;
                             // Assign Sprite Area
                             earthSprites = intVec;
                             break;
@@ -5678,7 +5463,7 @@ namespace TorannMagic
                                 && terrain.defName != "Soil"
                                 && terrain.defName != "MossyTerrain"
                                 && terrain.defName != "SoftSand"
-                            ) continue;
+                               ) continue;
                             Building terrainHasBuilding = intVec.GetFirstBuilding(earthSpriteMap);
                             if (terrainHasBuilding != null) continue;  // Don't transform terrain under buildings
 
@@ -5687,14 +5472,14 @@ namespace TorannMagic
                         }
                     }
 
-                    if (oldEarthSpriteLoc == earthSprites)
-                    {
-                        earthSpriteType = 0;
-                        earthSpriteMap = null;
-                        earthSprites = IntVec3.Invalid;
-                        earthSpritesInArea = false;
-                        //Log.Message("ending");
-                    }
+                    if (oldEarthSpriteLoc != earthSprites) return;
+
+                    earthSpriteType = 0;
+                    earthSpriteMap = null;
+                    earthSprites = IntVec3.Invalid;
+                    earthSpritesInArea = false;
+                    //Log.Message("ending");
+                    break;
                 }
             }
         }
@@ -5730,16 +5515,7 @@ namespace TorannMagic
         {
             if (supportedUndead != null)
             {
-                List<Thing> tmpList = new List<Thing>();
-                tmpList.Clear();
-                for(int i =0; i < supportedUndead.Count; i++)
-                {
-                    Pawn p = supportedUndead[i] as Pawn;
-                    if(p.DestroyedOrNull() || p.Dead)
-                    {
-                        tmpList.Add(p);
-                    }
-                }
+                List<Thing> tmpList = supportedUndead.Select(t => t as Pawn).Where(p => p.DestroyedOrNull() || p.Dead).Cast<Thing>().ToList();
                 for(int i = 0; i < tmpList.Count; i++)
                 {
                     supportedUndead.Remove(tmpList[i]);
@@ -5780,80 +5556,71 @@ namespace TorannMagic
         {
             //strange bug observed where other pawns will get the old offset of the previous pawn's offset unless other pawn has no empathy existing
             //in other words, empathy base mood effect seems to carry over from last otherpawn instead of using current otherpawn values
-            if (Rand.Chance(Pawn.GetStatValue(StatDefOf.PsychicSensitivity, false) - 1))
+            if (!Rand.Chance(Pawn.GetStatValue(StatDefOf.PsychicSensitivity, false) - 1)) return;
+            Pawn otherPawn = TM_Calc.FindNearbyOtherPawn(Pawn, 5);
+            if (otherPawn == null || !otherPawn.RaceProps.Humanlike || !otherPawn.IsColonist) return;
+            if (!Rand.Chance(otherPawn.GetStatValue(StatDefOf.PsychicSensitivity, false) - .3f)) return;
+
+            ThoughtHandler pawnThoughtHandler = Pawn.needs.mood.thoughts;
+            List<Thought> pawnThoughts = new List<Thought>();
+            pawnThoughtHandler.GetAllMoodThoughts(pawnThoughts);
+            List<Thought> otherThoughts = new List<Thought>();
+            otherPawn.needs.mood.thoughts.GetAllMoodThoughts(otherThoughts);
+            List<Thought_Memory> memoryThoughts = Pawn.needs.mood.thoughts.memories.Memories;
+            float oldMemoryOffset = 0;
+            if (Rand.Chance(.3f)) //empathy absorbed by warlock
             {
-                Pawn otherPawn = TM_Calc.FindNearbyOtherPawn(Pawn, 5);
-                if (otherPawn != null && otherPawn.RaceProps.Humanlike && otherPawn.IsColonist)
+                ThoughtDef empathyThought = ThoughtDef.Named("WarlockEmpathy");
+                for (int i = 0; i < memoryThoughts.Count; i++)
                 {
-                    if (Rand.Chance(otherPawn.GetStatValue(StatDefOf.PsychicSensitivity, false) - .3f))
+                    if (memoryThoughts[i].def.defName != "WarlockEmpathy") continue;
+
+                    oldMemoryOffset = memoryThoughts[i].MoodOffset();
+                    if (oldMemoryOffset > 30)
                     {
-                        ThoughtHandler pawnThoughtHandler = Pawn.needs.mood.thoughts;
-                        List<Thought> pawnThoughts = new List<Thought>();
-                        pawnThoughtHandler.GetAllMoodThoughts(pawnThoughts);
-                        List<Thought> otherThoughts = new List<Thought>();
-                        otherPawn.needs.mood.thoughts.GetAllMoodThoughts(otherThoughts);
-                        List<Thought_Memory> memoryThoughts = new List<Thought_Memory>();
-                        float oldMemoryOffset = 0;
-                        if (Rand.Chance(.3f)) //empathy absorbed by warlock
-                        {
-                            ThoughtDef empathyThought = ThoughtDef.Named("WarlockEmpathy");
-                            memoryThoughts = Pawn.needs.mood.thoughts.memories.Memories;
-                            for (int i = 0; i < memoryThoughts.Count; i++)
-                            {
-                                if (memoryThoughts[i].def.defName == "WarlockEmpathy")
-                                {
-                                    oldMemoryOffset = memoryThoughts[i].MoodOffset();
-                                    if (oldMemoryOffset > 30)
-                                    {
-                                        oldMemoryOffset = 30;
-                                    }
-                                    else if (oldMemoryOffset < -30)
-                                    {
-                                        oldMemoryOffset = -30;
-                                    }
-                                    Pawn.needs.mood.thoughts.memories.RemoveMemoriesOfDef(memoryThoughts[i].def);
-                                }
-                            }
-                            Thought transferThought = otherThoughts.RandomElement();
-                            float newOffset = Mathf.RoundToInt(transferThought.CurStage.baseMoodEffect / 2);
-                            empathyThought.stages.First().baseMoodEffect = newOffset + oldMemoryOffset;
-
-                            Pawn.needs.mood.thoughts.memories.TryGainMemory(empathyThought);
-                            Vector3 drawPosOffset = Pawn.DrawPos;
-                            drawPosOffset.z += .3f;
-                            TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_ArcaneCircle, drawPosOffset, Pawn.Map, newOffset / 20, .2f, .1f, .1f, Rand.Range(100, 200), 0, 0, Rand.Range(0, 360));
-                        }
-                        else //empathy bleeding to other pawn
-                        {
-                            ThoughtDef empathyThought = ThoughtDef.Named("PsychicEmpathy");
-                            memoryThoughts = otherPawn.needs.mood.thoughts.memories.Memories;
-                            for (int i = 0; i < memoryThoughts.Count; i++)
-                            {
-                                if (memoryThoughts[i].def.defName == "PsychicEmpathy")
-                                {
-                                    oldMemoryOffset = memoryThoughts[i].CurStage.baseMoodEffect;
-                                    if (oldMemoryOffset > 30)
-                                    {
-                                        oldMemoryOffset = 30;
-                                    }
-                                    else if (oldMemoryOffset < -30)
-                                    {
-                                        oldMemoryOffset = -30;
-                                    }
-                                    otherPawn.needs.mood.thoughts.memories.RemoveMemoriesOfDef(memoryThoughts[i].def);
-                                }
-                            }
-                            Thought transferThought = pawnThoughts.RandomElement();
-                            float newOffset = Mathf.RoundToInt(transferThought.CurStage.baseMoodEffect / 2);
-                            empathyThought.stages.First().baseMoodEffect = newOffset + oldMemoryOffset;
-
-                            otherPawn.needs.mood.thoughts.memories.TryGainMemory(empathyThought);
-                            Vector3 drawPosOffset = otherPawn.DrawPos;
-                            drawPosOffset.z += .3f;
-                            TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_ArcaneCircle, drawPosOffset, otherPawn.Map, newOffset / 20, .2f, .1f, .1f, Rand.Range(100, 200), 0, 0, Rand.Range(0, 360));
-                        }
+                        oldMemoryOffset = 30;
                     }
+                    else if (oldMemoryOffset < -30)
+                    {
+                        oldMemoryOffset = -30;
+                    }
+                    Pawn.needs.mood.thoughts.memories.RemoveMemoriesOfDef(memoryThoughts[i].def);
                 }
+                Thought transferThought = otherThoughts.RandomElement();
+                float newOffset = Mathf.RoundToInt(transferThought.CurStage.baseMoodEffect / 2);
+                empathyThought.stages.First().baseMoodEffect = newOffset + oldMemoryOffset;
+
+                Pawn.needs.mood.thoughts.memories.TryGainMemory(empathyThought);
+                Vector3 drawPosOffset = Pawn.DrawPos;
+                drawPosOffset.z += .3f;
+                TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_ArcaneCircle, drawPosOffset, Pawn.Map, newOffset / 20, .2f, .1f, .1f, Rand.Range(100, 200), 0, 0, Rand.Range(0, 360));
+            }
+            else //empathy bleeding to other pawn
+            {
+                ThoughtDef empathyThought = ThoughtDef.Named("PsychicEmpathy");
+                for (int i = 0; i < memoryThoughts.Count; i++)
+                {
+                    if (memoryThoughts[i].def.defName != "PsychicEmpathy") continue;
+
+                    oldMemoryOffset = memoryThoughts[i].CurStage.baseMoodEffect;
+                    if (oldMemoryOffset > 30)
+                    {
+                        oldMemoryOffset = 30;
+                    }
+                    else if (oldMemoryOffset < -30)
+                    {
+                        oldMemoryOffset = -30;
+                    }
+                    otherPawn.needs.mood.thoughts.memories.RemoveMemoriesOfDef(memoryThoughts[i].def);
+                }
+                Thought transferThought = pawnThoughts.RandomElement();
+                float newOffset = Mathf.RoundToInt(transferThought.CurStage.baseMoodEffect / 2);
+                empathyThought.stages.First().baseMoodEffect = newOffset + oldMemoryOffset;
+
+                otherPawn.needs.mood.thoughts.memories.TryGainMemory(empathyThought);
+                Vector3 drawPosOffset = otherPawn.DrawPos;
+                drawPosOffset.z += .3f;
+                TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_ArcaneCircle, drawPosOffset, otherPawn.Map, newOffset / 20, .2f, .1f, .1f, Rand.Range(100, 200), 0, 0, Rand.Range(0, 360));
             }
         }
 
@@ -5891,17 +5658,16 @@ namespace TorannMagic
                 overdriveFrequency /= 2;
             }
             overdriveDuration--;
-            if (overdriveDuration <= 0)
+            if (overdriveDuration > 0) return;
+
+            if (odPawns.Contains(Pawn))
             {
-                if (odPawns.Contains(Pawn))
-                {
-                    ModOptions.Constants.ClearOverdrivePawns();
-                    odPawns.Remove(Pawn);
-                    ModOptions.Constants.SetOverdrivePawnList(odPawns);
-                }
-                overdrivePowerOutput = 0;
-                overdriveBuilding = null;
+                ModOptions.Constants.ClearOverdrivePawns();
+                odPawns.Remove(Pawn);
+                ModOptions.Constants.SetOverdrivePawnList(odPawns);
             }
+            overdrivePowerOutput = 0;
+            overdriveBuilding = null;
         }
 
         public void ResolveChronomancerTimeMark()
@@ -8370,12 +8136,11 @@ namespace TorannMagic
 
         public void UpdateAutocastDef()
         {
-            IEnumerable<TM_CustomPowerDef> mpDefs = TM_Data.CustomMagePowerDefs();
             if (!IsMagicUser || MagicData?.MagicPowersCustom == null) return;
 
             foreach (MagicPower mp in MagicData.MagicPowersCustom)
             {
-                foreach (TM_CustomPowerDef mpDef in mpDefs)
+                foreach (TM_CustomPowerDef mpDef in TM_Data.CustomMagePowerDefs())
                 {
                     if (mpDef.customPower.abilityDefs[0].ToString() != mp.GetAbilityDef(0).ToString()) continue;
 
