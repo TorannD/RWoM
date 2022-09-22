@@ -23,8 +23,7 @@ namespace TorannMagic
 
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
         {
-            bool flag = this.age <= duration;
-            if (!flag)
+            if (this.age >= duration)
             {
                 //try
                 //{
@@ -53,6 +52,7 @@ namespace TorannMagic
         {
             Map map = base.Map;
             GenClamor.DoClamor(this, 2.1f, ClamorDefOf.Impact);
+            Destroy();
             //base.Impact(hitThing);
             ThingDef def = this.def;
             Pawn victim = hitThing as Pawn;
@@ -129,8 +129,7 @@ namespace TorannMagic
                     this.duration = 0;
                 }
             }
-            this.age = this.duration;
-            Destroy();
+            this.age = this.duration;            
         }
 
         public void SingleSpawnLoop(SpawnThings spawnables, IntVec3 position, Map map)

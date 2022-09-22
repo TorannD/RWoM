@@ -610,7 +610,6 @@ Arcane Res: +25%</description>
 			<li>Shoulders</li>
 			<li>Arms</li>
 			<li>Legs</li>
-			<li>Waist</li>
 		</bodyPartGroups>
 	</apparel>
 	<colorGenerator Class="ColorGenerator_StandardApparel" />
