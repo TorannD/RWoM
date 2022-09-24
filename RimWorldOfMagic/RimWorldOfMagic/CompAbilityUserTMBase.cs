@@ -115,6 +115,11 @@ namespace TorannMagic
             }
         }
 
+        public bool HasAbility(TMAbilityDef ability)
+        {
+            return customClass != null && customClass.classAbilities.Contains(ability);
+        }
+
         // Remove and then add ability to prevent duplication
         public void SafelyAddPawnAbility(TMAbilityDef abilityDef)
         {

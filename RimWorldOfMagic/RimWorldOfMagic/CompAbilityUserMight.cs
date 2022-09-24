@@ -4618,7 +4618,7 @@ namespace TorannMagic
                     }
                 }
 
-                if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Psionic) || TM_ClassUtility.ClassHasAbility(TorannMagicDefOf.TM_PsionicAugmentation))
+                if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Psionic) || HasAbility(TorannMagicDefOf.TM_PsionicAugmentation))
                 {
                     if (!this.Pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_PsionicHD"), false))
                     {

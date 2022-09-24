@@ -51,7 +51,6 @@ namespace TorannMagic.TMDefs
             get
             {
                 List<TMAbilityDef> allAbilities = new List<TMAbilityDef>();
-                allAbilities.Clear();
                 allAbilities.AddRange(classFighterAbilities);
                 allAbilities.AddRange(classMageAbilities);
                 return allAbilities;
