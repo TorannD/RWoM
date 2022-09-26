@@ -97,7 +97,7 @@ namespace TorannMagic
                                 
                                 deadPawn = corpse.InnerPawn;
                                 deadPawnPosition = corpse.Position;
-                                if (deadPawn.RaceProps.IsFlesh && !TM_Calc.IsUndead(deadPawn) && compRot != null)
+                                if (deadPawn != null && deadPawn.RaceProps.IsFlesh && !TM_Calc.IsUndead(deadPawn) && compRot != null)
                                 {
                                     if (!corpse.IsNotFresh())
                                     {
@@ -123,7 +123,7 @@ namespace TorannMagic
                 this.initialized = true;
             }
 
-            if(corpseThing.Position != this.deadPawnPosition || corpseThing.Map == null)
+            if(corpseThing != null && (corpseThing.Position != this.deadPawnPosition || corpseThing.Map == null))
             {
                 Log.Message("Corpse was moved or destroyed during resurrection process.");
                 this.age = this.timeToRaise;
@@ -156,7 +156,7 @@ namespace TorannMagic
                             }
                         }
                     }
-                    if (deadPawn != null)
+                    if (deadPawn != null && deadPawn.RaceProps != null && deadPawn.kindDef != null)
                     {
                         if (TM_Calc.IsUndead(deadPawn))
                         {

@@ -58,7 +58,7 @@ namespace TorannMagic
 
         public static void LoadCustomClasses()
         {
-            var named = TM_CustomClassDef.Named("TM_CustomClasses");
+            TM_CustomClassDef named = TM_CustomClassDef.Named("TM_CustomClasses");
             if (named == null) return;
 
             CustomClasses = named.customClasses;
@@ -72,13 +72,10 @@ namespace TorannMagic
             CustomFighterClasses.Clear();
             CustomAdvancedClasses.Clear();
 
-            // Load custom classes into MagicTraitIndexes to be able to check just this collection for mage traits
-            foreach (TM_CustomClass cc in CustomClasses.Where(cc => cc.isMage))
-            {
-                MagicTraitIndexes.Add(cc.classTrait.index);
-            }
+            IEnumerable<TM_CustomClass> enabledCustomClasses = CustomClasses.Where(cc =>
+                Settings.Instance.CustomClass.TryGetValue(cc.classTrait.ToString(), true));
 
-            foreach (TM_CustomClass cc in CustomClasses.Where(cc => Settings.Instance.CustomClass[cc.classTrait.ToString()]))
+            foreach (TM_CustomClass cc in enabledCustomClasses)
             {
                 if (cc.isMage)
                 {
@@ -120,6 +117,7 @@ namespace TorannMagic
                 //CustomAdvancedClasses = CustomAdvancedClassesList.ToArray();
             }
             LoadClassIndexes();
+
         }
 
         private static Dictionary<ushort, int> LoadClassIndexes()
