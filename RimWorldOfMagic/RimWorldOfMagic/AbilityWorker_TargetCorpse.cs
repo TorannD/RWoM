@@ -9,14 +9,12 @@ namespace TorannMagic
     {
         public override LocalTargetInfo TargetAbilityFor(AbilityAIDef abilityDef, Pawn pawn)
         {
-            Corpse corpse = PickClosestCorpse(abilityDef, pawn);
-            return corpse ?? base.TargetAbilityFor(abilityDef, pawn);
+            return PickClosestCorpse(abilityDef, pawn) ?? base.TargetAbilityFor(abilityDef, pawn);
         }
 
         public override bool CanPawnUseThisAbility(AbilityAIDef abilityDef, Pawn pawn, LocalTargetInfo target)
         {
-            Corpse corpse = PickClosestCorpse(abilityDef, pawn);
-            return corpse != null && base.CanPawnUseThisAbility(abilityDef, pawn, target);
+            return PickClosestCorpse(abilityDef, pawn) != null && base.CanPawnUseThisAbility(abilityDef, pawn, target);
         }
 
         public virtual Corpse PickClosestCorpse(AbilityAIDef abilityDef, Pawn pawn)
