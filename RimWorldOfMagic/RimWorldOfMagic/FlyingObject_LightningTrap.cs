@@ -40,19 +40,7 @@ namespace TorannMagic
         protected new int ticksToImpact;
 
         protected Faction faction;
-        protected Thing assignedTarget;
         protected Thing flyingThing;
-        private Pawn pawn;
-
-        public DamageInfo? impactDamage;
-
-        public bool damageLaunched = true;
-
-        public bool explosion;
-
-        public int timesToDamage = 3;
-
-        private bool initialized = true;        
 
         protected new int StartingTicksToImpact => Math.Max(1,
             Mathf.RoundToInt((origin - destination).magnitude / (speed / 100f)));
@@ -68,8 +56,6 @@ namespace TorannMagic
             }
         }
 
-        public new Quaternion ExactRotation => Quaternion.LookRotation(destination - origin);
-
         public override Vector3 DrawPos => ExactPosition;
 
         public override void ExposeData()
@@ -78,63 +64,30 @@ namespace TorannMagic
             Scribe_Values.Look<Vector3>(ref origin, "origin");
             Scribe_Values.Look<Vector3>(ref destination, "destination");
             Scribe_Values.Look<int>(ref ticksToImpact, "ticksToImpact");
-            Scribe_Values.Look<int>(ref timesToDamage, "timesToDamage");
             Scribe_Values.Look<int>(ref searchDelay, "searchDelay", 210);
-            //Scribe_Values.Look<int>(ref pwrVal, "pwrVal", 0, false);
-            //Scribe_Values.Look<int>(ref verVal, "verVal", 0, false);
-            Scribe_Values.Look<bool>(ref damageLaunched, "damageLaunched", true);
-            Scribe_Values.Look<bool>(ref explosion, "explosion");
-            Scribe_Values.Look<bool>(ref initialized, "initialized");
-            Scribe_References.Look<Thing>(ref assignedTarget, "assignedTarget");
-            //Scribe_References.Look<Thing>(ref launcher, "launcher");
-            Scribe_References.Look<Pawn>(ref pawn, "pawn");
             Scribe_Deep.Look<Thing>(ref flyingThing, "flyingThing");
         }
 
         private void Initialize()
         {
-            if (pawn != null)
-            {
-                FleckMaker.Static(origin, Map, FleckDefOf.ExplosionFlash, 12f);
-                FleckMaker.ThrowDustPuff(origin, Map, Rand.Range(1.2f, 1.8f));
-            }
+            FleckMaker.Static(origin, Map, FleckDefOf.ExplosionFlash, 12f);
+            FleckMaker.ThrowDustPuff(origin, Map, Rand.Range(1.2f, 1.8f));
             flyingThing.ThingID = flyingThing.ThingID;  // Get a new thingIDNumber
-            initialized = false;
-        }
-
-        public void Launch(
-            Thing projectileLauncher,
-            LocalTargetInfo target,
-            Thing projectileFlyingThing,
-            DamageInfo? projectileImpactDamage)
-        {
-            Launch(projectileLauncher, Position.ToVector3Shifted(), target, projectileFlyingThing, null,
-                projectileImpactDamage);
-        }
-
-        public void Launch(Thing projectileLauncher, LocalTargetInfo target, Thing projectileFlyingThing)
-        {
-            Launch(projectileLauncher, Position.ToVector3Shifted(), target, projectileFlyingThing, null);
         }
 
         public void Launch(
             Thing projectileLauncher,
             Vector3 projectileOrigin,
             LocalTargetInfo target,
-            Thing projectileFlyingThing,
-            Faction projectileFaction,
-            DamageInfo? newDamageInfo = null,
+            Faction projectileFaction = null,
             float _speed = .8f)
         {
-            pawn = launcher as Pawn;
+            // This is functioning essentially as a constructor
             speed = _speed;
-            if (flyingThing.Spawned) flyingThing.DeSpawn();
             launcher = projectileLauncher;
             origin = projectileOrigin;
             faction = projectileFaction ?? Faction.OfPlayer;
-            impactDamage = newDamageInfo;
-            flyingThing = projectileFlyingThing;
-            if (target.Thing != null) assignedTarget = target.Thing;
+            flyingThing = new Thing { def = TorannMagicDefOf.FlyingObject_LightningTrap };
             destination = target.Cell.ToVector3Shifted();
             ticksToImpact = StartingTicksToImpact;
 
@@ -147,12 +100,7 @@ namespace TorannMagic
             searchDelay--;
             Vector3 exactPosition = ExactPosition;
             ticksToImpact--;
-            if (!ExactPosition.InBoundsWithNullCheck(Map))
-            {
-                ticksToImpact++;
-                Position = ExactPosition.ToIntVec3();
-                Destroy();
-            }
+            if (!ExactPosition.InBoundsWithNullCheck(Map)) Destroy();
             else
             {
                 Position = ExactPosition.ToIntVec3();
@@ -168,7 +116,7 @@ namespace TorannMagic
                     {
                         Position = DestinationCell;
                     }
-                    ImpactSomething();
+                    Impact();
                 }
             }
         }
@@ -223,50 +171,8 @@ namespace TorannMagic
             }
         }
 
-        private void ImpactSomething()
+        protected void Impact()
         {
-            if (assignedTarget == null
-                || (assignedTarget is Pawn p
-                    && p.GetPosture() != PawnPosture.Standing
-                    && (origin - destination).MagnitudeHorizontalSquared() >= 20.25f
-                    && Rand.Value > 0.2f))
-            {
-                Impact(null);
-            }
-            else
-            {
-                Impact(assignedTarget);
-            }
-        }
-
-        protected new void Impact(Thing hitThing)
-        {
-            if (hitThing == null)
-            {
-                if (Position.GetThingList(Map).FirstOrDefault(t => t == assignedTarget) is Pawn hitPawn)
-                {
-                    hitThing = hitPawn;
-                }
-            }
-            if (impactDamage.HasValue)
-            {
-                for (int i = 0; i < timesToDamage; i++)
-                {
-                    if (damageLaunched)
-                    {
-                        flyingThing.TakeDamage(impactDamage.Value);
-                    }
-                    else
-                    {
-                        hitThing?.TakeDamage(impactDamage.Value);
-                    }
-                }
-                if (explosion)
-                {
-                    GenExplosion.DoExplosion(origin.ToIntVec3(), Map, 0.9f, DamageDefOf.Stun, this, -1, 0);
-                }
-            }
-
             List<IntVec3> dissipationList = GenRadial.RadialCellsAround(origin.ToIntVec3(), 5, false).ToList();
             for (int i = 0; i < 4; i++)
             {

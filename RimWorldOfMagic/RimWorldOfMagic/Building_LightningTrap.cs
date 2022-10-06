@@ -14,6 +14,7 @@ namespace TorannMagic
     {
         public bool extendedTrap = false;
         public bool iceTrap = false;
+        private FlyingObject_LightningTrap flyingObject;
 
         public override void ExposeData()
         {
@@ -24,8 +25,9 @@ namespace TorannMagic
 
         public override void Spring(Pawn p)
         {
+            if (flyingObject != null) return;  // Prevent duplicate lightning eyes from spawning. Very op.
             base.Spring(p);
-            IntVec3 targetPos = this.Position;
+            IntVec3 targetPos = Position;
             targetPos.z += 2;
             LocalTargetInfo t = targetPos;
             float speed = .8f;
@@ -33,16 +35,14 @@ namespace TorannMagic
             {
                 speed = .6f;
             }
-            if (t.Cell != default(IntVec3))
+            if (t.Cell != default)
             {
-                Thing eyeThing = new Thing();
-                eyeThing.def = TorannMagicDefOf.FlyingObject_LightningTrap;
-                FlyingObject_LightningTrap flyingObject = (FlyingObject_LightningTrap)GenSpawn.Spawn(TorannMagicDefOf.FlyingObject_LightningTrap, this.Position, this.Map);
-                flyingObject.Launch(p, this.Position.ToVector3Shifted(), t.Cell, eyeThing, this.Faction, null, speed);
+                flyingObject = (FlyingObject_LightningTrap)GenSpawn.Spawn(TorannMagicDefOf.FlyingObject_LightningTrap, Position, Map);
+                flyingObject.Launch(p, Position.ToVector3Shifted(), t.Cell, Faction, speed);
             }
             if(iceTrap)
             {
-                AddSnowRadial(this.Position, this.Map, 6, 1.1f);
+                AddSnowRadial(Position, Map, 6, 1.1f);
             }
         }
 
