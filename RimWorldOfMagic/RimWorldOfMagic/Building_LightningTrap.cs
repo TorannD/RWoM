@@ -14,7 +14,8 @@ namespace TorannMagic
     {
         public bool extendedTrap = false;
         public bool iceTrap = false;
-        private FlyingObject_LightningTrap flyingObject;
+
+        private FlyingObject_LightningTrap flyingObject;  // Used to prevent duplicate eye spawning only. Not saved.
 
         public override void ExposeData()
         {
