@@ -17,12 +17,24 @@ namespace TorannMagic
         protected new Vector3 destination;
 
         private int searchDelay = 10;
-        private const float arcaneDmg = 1;  // Remove const if you need to change global dmg modifier during game
+        private const float arcaneDmg = 1;  // Currently not used. Could be used for difficulty damage changes.
 
-        // These three arrays must have same length
-        private readonly IntVec3[] from = new IntVec3[10];
-        private readonly Vector3[] to = new Vector3[10];
-        private readonly int[] fadeTimer = new int[10];
+        private class Strike
+        {
+            public IntVec3 from;
+            public Vector3 to;
+            public int fadeTimer;
+
+            public void CountDown()
+            {
+                fadeTimer--;
+                if (fadeTimer > 0) return;
+
+                from = default;
+                to = default;
+            }
+        }
+        private readonly Strike[] strikeArray = Enumerable.Range(0, 10).Select(i => new Strike()).ToArray();
 
         public float speed = .8f;
         protected new int ticksToImpact;
@@ -42,8 +54,8 @@ namespace TorannMagic
 
         private bool initialized = true;        
 
-        protected new int StartingTicksToImpact => Math.Max(
-            Mathf.RoundToInt((origin - destination).magnitude / (speed / 100f)), 1);
+        protected new int StartingTicksToImpact => Math.Max(1,
+            Mathf.RoundToInt((origin - destination).magnitude / (speed / 100f)));
 
         protected new IntVec3 DestinationCell => new IntVec3(destination);
 
@@ -86,7 +98,7 @@ namespace TorannMagic
                 FleckMaker.Static(origin, Map, FleckDefOf.ExplosionFlash, 12f);
                 FleckMaker.ThrowDustPuff(origin, Map, Rand.Range(1.2f, 1.8f));
             }
-            flyingThing.ThingID += Rand.Range(0, 214).ToString();
+            flyingThing.ThingID = flyingThing.ThingID;  // Get a new thingIDNumber
             initialized = false;
         }
 
@@ -116,19 +128,13 @@ namespace TorannMagic
         {
             pawn = launcher as Pawn;
             speed = _speed;
-            if (flyingThing.Spawned)
-            {
-                flyingThing.DeSpawn();
-            }
+            if (flyingThing.Spawned) flyingThing.DeSpawn();
             launcher = projectileLauncher;
             origin = projectileOrigin;
-            faction = projectileFaction;
+            faction = projectileFaction ?? Faction.OfPlayer;
             impactDamage = newDamageInfo;
             flyingThing = projectileFlyingThing;
-            if (target.Thing != null)
-            {
-                assignedTarget = target.Thing;
-            }
+            if (target.Thing != null) assignedTarget = target.Thing;
             destination = target.Cell.ToVector3Shifted();
             ticksToImpact = StartingTicksToImpact;
 
@@ -169,23 +175,17 @@ namespace TorannMagic
 
         public void DrawOrb(Vector3 orbVec, Map map)
         {
-            Vector3 vector = orbVec;
             orbVec.x += Rand.Range(-0.6f, 0.6f);
             orbVec.z += Rand.Range(-0.6f, 0.6f);
             FleckMaker.ThrowLightningGlow(orbVec, map, 0.4f);
-            vector.y = AltitudeLayer.MoteOverhead.AltitudeFor();
-            Vector3 s = new Vector3(0.4f, 0.4f, 0.4f);
+            orbVec.y = AltitudeLayer.MoteOverhead.AltitudeFor();
             Matrix4x4 matrix = default(Matrix4x4);
-            matrix.SetTRS(vector, Quaternion.AngleAxis(0f, Vector3.up), s);
+            matrix.SetTRS(orbVec, Quaternion.AngleAxis(0f, Vector3.up), new Vector3(0.4f, 0.4f, 0.4f));
             Graphics.DrawMesh(MeshPool.plane10, matrix, OrbMat, 0);
         }
 
         public void SearchForTargets(IntVec3 center, float radius)
         {
-            if (faction == null)
-            {
-                faction = Faction.OfPlayer;
-            }
             Pawn target = TM_Calc.FindNearbyEnemy(center, Map, faction, radius, 0f);
             if (target != null)
             {
@@ -204,33 +204,23 @@ namespace TorannMagic
 
         public void DrawStrike(IntVec3 center, Vector3 dest)
         {
-            TM_MeshBolt meshBolt = new TM_MeshBolt(center, dest, lightningMat);
-            meshBolt.CreateBolt();
-            for (int i = 0; i < fadeTimer.Length; i++)
-            {
-                if (fadeTimer[i] > 0) continue;
+            new TM_MeshBolt(center, dest, lightningMat).CreateBolt();
 
-                from[i] = center;
-                to[i] = dest;
-                fadeTimer[i] = 30;
-                break;
-            }
+            Strike strike = strikeArray.FirstOrDefault(s => s.fadeTimer <= 0);
+            if (strike == default) return;
+
+            strike.from = center;
+            strike.to = dest;
+            strike.fadeTimer = 30;
         }
 
         public void DrawStrikeFading()
         {
-            for (int i = 0; i < fadeTimer.Length; i++)
+            foreach (Strike strike in strikeArray.Where(s => s.fadeTimer > 0))
             {
-                if (fadeTimer[i] <= 0) continue;
-
-                TM_MeshBolt meshBolt = new TM_MeshBolt(from[i], to[i], lightningMat);
-                meshBolt.CreateFadedBolt(fadeTimer[i]/30);
-                fadeTimer[i]--;
-                if (fadeTimer[i] != 0) continue;
-
-                from[i] = default;
-                to[i] = default;
-            }            
+                new TM_MeshBolt(strike.from, strike.to, lightningMat).CreateFadedBolt(strike.fadeTimer/30);
+                strike.CountDown();
+            }
         }
 
         private void ImpactSomething()
