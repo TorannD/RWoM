@@ -258,7 +258,7 @@
 			</skills>										
 		</customPower>
 	</TorannMagic.TM_CustomPowerDef>
-	
+
 	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
 		<defName>TM_SiphonBrand</defName>	
 		<customPower>	
@@ -798,6 +798,30 @@
 				<li>
 					<label>TM_SpiritStorm_ver</label>
 					<description>TM_SpiritStorm_ver_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+			</skills>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_ConsumeCorpse_Mass</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<abilityDefs>									
+				<li>TM_ConsumeCorpse_Mass</li>
+			</abilityDefs>
+			<skills>
+				<li>
+					<label>TM_ConsumeCorpse_eff</label>
+					<description>TM_ConsumeCorpse_eff_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_ConsumeCorpse_ver</label>
+					<description>TM_ConsumeCorpse_ver_desc</description>
 					<levelMax>3</levelMax>
 					<costToLevel>1</costToLevel>
 				</li>

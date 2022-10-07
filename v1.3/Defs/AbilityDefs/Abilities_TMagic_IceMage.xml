@@ -632,7 +632,7 @@ Shots: 3</description>
 		<learnItem>SpellOf_Blizzard</learnItem>
 		<learnChance>.08</learnChance>
 		<MainVerb Class="AbilityUser.VerbProperties_Ability">
-            <verbClass>AbilityUser.Verb_UseAbility</verbClass>
+            <verbClass>TorannMagic.Verb_Blizzard</verbClass>
             <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
             <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
             <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>

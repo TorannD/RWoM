@@ -52,7 +52,7 @@ namespace TorannMagic
                 pwrVal = 1;
                 verVal = 1;
             }
-            cellRect = CellRect.CenteredOn(base.Position, (int)(base.def.projectile.explosionRadius + (.75 *(verVal + pwrVal))));
+            cellRect = CellRect.CenteredOn(base.Position, (int)(base.def.projectile.explosionRadius + (.5 *(verVal + pwrVal))));
             cellRect.ClipInsideMap(map);
             duration = Mathf.RoundToInt(duration + (90 * verVal) * comp.arcaneDmg);
             initialized = true;
@@ -69,7 +69,7 @@ namespace TorannMagic
                 Initialize(map);
             }
             impactPos = cellRect.RandomCell;
-            if (this.age > lastStrikeLarge + Rand.Range(200 - (pwrVal * 30), duration/(4 + pwrVal)) && impactPos.Standable(map) && impactPos.InBoundsWithNullCheck(map) && impactPos.DistanceToEdge(map) >= 2)
+            if (this.age > lastStrikeLarge + Rand.Range(200 - (pwrVal * 30), duration/(4 + pwrVal)) && impactPos.InBoundsWithNullCheck(map) && impactPos.DistanceToEdge(map) >= 2 && impactPos.Standable(map))
             {
                 this.lastStrikeLarge = this.age;
                 SkyfallerMaker.SpawnSkyfaller(TorannMagicDefOf.TM_Blizzard_Large, impactPos, map);
@@ -79,7 +79,7 @@ namespace TorannMagic
                 snowCount++;
             }
             impactPos = cellRect.RandomCell;
-            if (this.age > lastStrikeTiny + Rand.Range(6-(pwrVal), 18-(2*pwrVal)) && impactPos.Standable(map) && impactPos.InBoundsWithNullCheck(map))
+            if (this.age > lastStrikeTiny + Rand.Range(6-(pwrVal), 18-(2*pwrVal)) && impactPos.InBoundsWithNullCheck(map) && impactPos.Standable(map))
             {
                 this.lastStrikeTiny = this.age;
                 SkyfallerMaker.SpawnSkyfaller(TorannMagicDefOf.TM_Blizzard_Tiny, impactPos, map);
@@ -89,7 +89,7 @@ namespace TorannMagic
                 snowCount++;
             }
             impactPos = cellRect.RandomCell;
-            if ( this.age > lastStrikeSmall + Rand.Range(30-(2*pwrVal), 60-(4*pwrVal)) && impactPos.Standable(map) && impactPos.InBoundsWithNullCheck(map))
+            if ( this.age > lastStrikeSmall + Rand.Range(30-(2*pwrVal), 60-(4*pwrVal)) && impactPos.InBoundsWithNullCheck(map) && impactPos.Standable(map))
             {
                 this.lastStrikeSmall = this.age;
                 SkyfallerMaker.SpawnSkyfaller(TorannMagicDefOf.TM_Blizzard_Small, impactPos, map);

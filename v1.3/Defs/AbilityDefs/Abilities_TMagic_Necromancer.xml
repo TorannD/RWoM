@@ -88,12 +88,21 @@ There is no limit to the number of undead a necromancer may control, however, wh
         <muzzleFlashScale>20</muzzleFlashScale>
 		<AlwaysHits>true</AlwaysHits>
         <isPrimary>false</isPrimary>
-		<targetParams>
-      	 <canTargetPawns>true</canTargetPawns>
-      	 <canTargetBuildings>false</canTargetBuildings>
-      	 <canTargetSelf>false</canTargetSelf>
-		 <canTargetLocations>false</canTargetLocations>
-        </targetParams>
+		<AbilityTargetCategory>TargetAoE</AbilityTargetCategory>
+            <TargetAoEProperties>
+                <targetClass>Pawn</targetClass>
+                <showRangeOnSelect>true</showRangeOnSelect>
+                <friendlyFire>true</friendlyFire>
+                <startsFromCaster>false</startsFromCaster>
+                <maxTargets>12</maxTargets>
+                <range>3</range>
+            </TargetAoEProperties>
+			<targetParams>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetSelf>false</canTargetSelf>
+                <canTargetLocations>true</canTargetLocations>
+            </targetParams>
     </MainVerb>
  </TorannMagic.TMAbilityDef>
 
@@ -351,7 +360,7 @@ Range: 46</description>
 		<learnChance>.4</learnChance>
 		<canCopy>true</canCopy>
 		<MainVerb Class="AbilityUser.VerbProperties_Ability">
-            <verbClass>TorannMagic.Verb_SB</verbClass>
+            <verbClass>TorannMagic.Verb_FogOfTorment</verbClass>
 				<tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
 				<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
 				<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
@@ -404,7 +413,7 @@ Range: 46</description>
         <uiIconPath>UI/consumecorpse</uiIconPath>
         <description>Consume a corpse or undead to replenish mana. Apparel, items, and equipment remain behind but all material belonging to the corpse is consumed (meat/leather)
 		
-Mana Cost: 3%
+Mana Cost: 3
 Range: 50
 Cooldown: 20s
 Cast Time: 2s</description>
@@ -444,7 +453,7 @@ Cast Time: 2s</description>
         <uiIconPath>UI/consumecorpse</uiIconPath>
         <description>Consume a corpse or undead to replenish mana. Apparel, items, and equipment remain behind but all material belonging to the corpse is consumed (meat/leather)
 		
-Mana Cost: 2.5%
+Mana Cost: 2.5
 Range: 60
 Cooldown: 18s
 Cast Time: 1.8s</description>
@@ -484,7 +493,7 @@ Cast Time: 1.8s</description>
         <uiIconPath>UI/consumecorpse</uiIconPath>
         <description>Consume a corpse or undead to replenish mana. Apparel, items, and equipment remain behind but all material belonging to the corpse is consumed (meat/leather)
 		
-Mana Cost: 2%
+Mana Cost: 2
 Range: 70
 Cooldown: 16s
 Cast Time: 1.5s</description>
@@ -524,7 +533,7 @@ Cast Time: 1.5s</description>
         <uiIconPath>UI/consumecorpse</uiIconPath>
         <description>Consume a corpse or undead to replenish mana. Apparel, items, and equipment remain behind but all material belonging to the corpse is consumed (meat/leather)
 		
-Mana Cost: 1.5%
+Mana Cost: 1.5
 Range: 80
 Cooldown: 15s
 Cast Time: 1.2s</description>
@@ -542,6 +551,62 @@ Cast Time: 1.2s</description>
             <warmupTime>1.2</warmupTime>
             <SecondsToRecharge>15</SecondsToRecharge>
             <range>80</range>
+            <burstShotCount>1</burstShotCount>
+            <soundCast>ThrowMolotovCocktail</soundCast>
+			<soundCastTail>GunTail_Medium</soundCastTail>
+            <muzzleFlashScale>4</muzzleFlashScale>
+		    <AlwaysHits>true</AlwaysHits>
+            <isPrimary>true</isPrimary>
+			<isViolent>false</isViolent>
+			<targetParams>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetSelf>false</canTargetSelf>
+                <canTargetLocations>true</canTargetLocations>
+            </targetParams>
+        </MainVerb>
+    </TorannMagic.TMAbilityDef>
+	
+	<ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
+		<thingClass>AbilityUser.Projectile_AbilityBase</thingClass>
+	    <defName>Projectile_ConsumeCorpse_Mass</defName>
+        <label>consume corpse: mass</label>
+        <graphicData>
+			<texPath>Spells/invis</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+        </graphicData>
+        <projectile>
+			<flyOverhead>true</flyOverhead>
+            <damageDef>TM_Holy</damageDef>
+            <damageAmountBase>0</damageAmountBase>			
+			<explosionRadius>3</explosionRadius>
+			<postExplosionSpawnChance>1</postExplosionSpawnChance>
+            <speed>999</speed>
+        </projectile>
+    </ThingDef>
+	
+	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
+        <defName>TM_ConsumeCorpse_Mass</defName>
+        <label>Consume Corpse: Mass</label>
+        <uiIconPath>UI/consumecorpse_mass</uiIconPath>
+        <description>Consume a group of corpses or undead to replenish mana. Apparel, items, and equipment remain behind but all material belonging to the corpse is consumed (meat/leather).</description>
+        <manaCost>0.20</manaCost>
+		<learnChance>0</learnChance>
+		<shouldInitialize>true</shouldInitialize>
+		<learnItem>SpellOf_ConsumeCorpse_Mass</learnItem>
+		<MainVerb Class="AbilityUser.VerbProperties_Ability">
+            <verbClass>TorannMagic.Verb_ConsumeCorpse_Mass</verbClass>
+				<tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+				<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+				<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+				<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+            <hasStandardCommand>true</hasStandardCommand>
+            <defaultProjectile>Projectile_ConsumeCorpse_Mass</defaultProjectile>
+            <abilityDef>TM_ConsumeCorpse_Mass</abilityDef>
+            <warmupTime>2</warmupTime>
+            <SecondsToRecharge>30</SecondsToRecharge>
+            <range>30</range>
             <burstShotCount>1</burstShotCount>
             <soundCast>ThrowMolotovCocktail</soundCast>
 			<soundCastTail>GunTail_Medium</soundCastTail>

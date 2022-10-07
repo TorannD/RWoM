@@ -72,7 +72,7 @@ namespace TorannMagic
             }
 
             impactPos = cellRect.RandomCell;
-            if (this.age > lastStrikeLarge + Rand.Range((200/(1+pwrVal))+20, (duration/(1+pwrVal))+40) && impactPos.Standable(map) && impactPos.InBoundsWithNullCheck(map))
+            if (this.age > lastStrikeLarge + Rand.Range((200/(1+pwrVal))+20, (duration/(1+pwrVal))+40) && impactPos.InBoundsWithNullCheck(map) && impactPos.Standable(map))
             {
                 this.lastStrikeLarge = this.age;
                 SkyfallerMaker.SpawnSkyfaller(TorannMagicDefOf.TM_Firestorm_Large, impactPos, map);
@@ -85,13 +85,13 @@ namespace TorannMagic
                 }                
             }
             impactPos = cellRect.RandomCell;
-            if (this.age > lastStrikeTiny + Rand.Range(7-pwrVal, 20-pwrVal) && impactPos.Standable(map) && impactPos.InBoundsWithNullCheck(map))
+            if (this.age > lastStrikeTiny + Rand.Range(7-pwrVal, 20-pwrVal) && impactPos.InBoundsWithNullCheck(map) && impactPos.Standable(map))
             {
                 this.lastStrikeTiny = this.age;
                 SkyfallerMaker.SpawnSkyfaller(TorannMagicDefOf.TM_Firestorm_Tiny, impactPos, map);
             }
             impactPos = cellRect.RandomCell;
-            if ( this.age > lastStrikeSmall + Rand.Range(18-(2*pwrVal), 42-(2*pwrVal)) && impactPos.Standable(map) && impactPos.InBoundsWithNullCheck(map))
+            if ( this.age > lastStrikeSmall + Rand.Range(18-(2*pwrVal), 42-(2*pwrVal)) && impactPos.InBoundsWithNullCheck(map) && impactPos.Standable(map))
             {
                 this.lastStrikeSmall = this.age;
                 SkyfallerMaker.SpawnSkyfaller(TorannMagicDefOf.TM_Firestorm_Small, impactPos, map);

@@ -49,8 +49,13 @@ namespace TorannMagic
         public static bool IsRobotPawn(Pawn pawn)
         {
             bool flag_Core = pawn.RaceProps.IsMechanoid;
-            bool flag_AndroidTiers = (pawn.def.defName.StartsWith("Android") || pawn.def.defName == "M7Mech" || pawn.def.defName == "MicroScyther");
+            if (flag_Core) return true;
+            bool flag_AndroidTiers = (pawn.def.defName.Contains("Android") || pawn.def.defName == "M7Mech" || pawn.def.defName == "MicroScyther") || pawn.def.race.FleshType.defName == "AndroidTier";
+            if (flag_AndroidTiers) return true;
+            bool flag_AndroidTiersKinds = pawn.kindDef.defName == "AbominationAtlas" || pawn.kindDef.defName.StartsWith("Android");
+            if (flag_AndroidTiersKinds) return true;
             bool flag_Androids = pawn.RaceProps.FleshType.defName == "ChJDroid" || pawn.def.defName == "ChjAndroid";
+            if (flag_Androids) return true;
             bool flag_AndroidClass = false;
             CompAbilityUserMight compMight = pawn.GetCompAbilityUserMight();
             if (compMight != null && compMight.customClass != null && compMight.customClass.isAndroid)
@@ -62,8 +67,13 @@ namespace TorannMagic
             {
                 flag_AndroidClass = true;
             }
-            bool isRobot = flag_Core || flag_AndroidTiers || flag_Androids || flag_AndroidClass;
-            return isRobot;
+            if (flag_AndroidClass) return true;
+            //bool isRobot = flag_Core || 
+            //    flag_AndroidTiers || 
+            //    flag_AndroidTiersKinds ||
+            //    flag_Androids || 
+            //    flag_AndroidClass;
+            return false;
         }
 
         public static bool IsNecromancer(Pawn pawn)

@@ -356,7 +356,19 @@ namespace TorannMagic
         public static ThingDef TM_GreaterWind_ElementalR;
         public static ThingDef TM_MinionR;
         public static ThingDef TM_GreaterMinionR;
-        //public static ThingDef TM_InvisMinionR;
+        public static ThingDef TM_ManaMine;
+        public static ThingDef TM_ManaMine_I;
+        public static ThingDef TM_ManaMine_II;
+        public static ThingDef TM_ManaMine_III;
+        public static ThingDef DefensePylon;
+        public static ThingDef DefensePylon_I;
+        public static ThingDef DefensePylon_II;
+        public static ThingDef DefensePylon_III;
+        public static ThingDef Bullet_DefensePylon;
+        public static ThingDef Launcher_DefensePylon;
+        public static ThingDef Launcher_DefensePylon_I;
+        public static ThingDef Launcher_DefensePylon_II;
+        public static ThingDef Launcher_DefensePylon_III;
         public static ThingDef TM_Poppi;
         public static FactionDef TM_ElementalFaction;
         public static FactionDef TM_SummonedFaction;
@@ -387,6 +399,7 @@ namespace TorannMagic
         public static HediffDef TM_DiseaseImmunityHD;
         public static HediffDef TM_DiseaseImmunity2HD;
         public static TMAbilityDef TM_RegrowLimb;  // ultimate 
+        public static ThingDef SeedofRegrowth;
         public static HediffDef TM_ArmRegrowth;
         public static HediffDef TM_HandRegrowth;
         public static HediffDef TM_FootRegrowth;
@@ -541,6 +554,9 @@ namespace TorannMagic
         public static TMAbilityDef TM_Meteor_I;
         public static TMAbilityDef TM_Meteor_II;
         public static TMAbilityDef TM_Meteor_III;
+        public static ThingDef TM_Lesser_SentinelR;
+        public static ThingDef TM_SentinelR;
+        public static ThingDef TM_Greater_SentinelR;
 
         //Technomancer
         public static TraitDef Technomancer;
@@ -1049,6 +1065,66 @@ namespace TorannMagic
         public static TMAbilityDef TM_60mmMortar;
         public static ThingDef FlyingObject_60mmMortar;
         public static ThingDef TM_60mmMortar_Base;
+        public static ThingDef TM_PistolSpec_Base0;
+        public static ThingDef TM_PistolSpec_Base1;
+        public static ThingDef TM_PistolSpec_Base2;
+        public static ThingDef TM_PistolSpec_Base3;
+        public static ThingDef TM_PistolSpec_Base4;
+        public static ThingDef TM_PistolSpec_Base5;
+        public static ThingDef TM_PistolSpec_Base6;
+        public static ThingDef TM_PistolSpec_Base7;
+        public static ThingDef TM_PistolSpec_Base8;
+        public static ThingDef TM_PistolSpec_Base9;
+        public static ThingDef TM_PistolSpec_Base10;
+        public static ThingDef TM_PistolSpec_Base11;
+        public static ThingDef TM_PistolSpec_Base12;
+        public static ThingDef TM_PistolSpec_Base13;
+        public static ThingDef TM_PistolSpec_Base14;
+        public static ThingDef TM_PistolSpec_Base15;
+        public static ThingDef TM_PistolSpec_Base16;
+        public static ThingDef TM_PistolSpec_Base17;
+        public static ThingDef TM_PistolSpec_Base18;
+        public static ThingDef TM_PistolSpec_Base19;
+        public static ThingDef TM_RifleSpec_Base0;
+        public static ThingDef TM_RifleSpec_Base1;
+        public static ThingDef TM_RifleSpec_Base2;
+        public static ThingDef TM_RifleSpec_Base3;
+        public static ThingDef TM_RifleSpec_Base4;
+        public static ThingDef TM_RifleSpec_Base5;
+        public static ThingDef TM_RifleSpec_Base6;
+        public static ThingDef TM_RifleSpec_Base7;
+        public static ThingDef TM_RifleSpec_Base8;
+        public static ThingDef TM_RifleSpec_Base9;
+        public static ThingDef TM_RifleSpec_Base10;
+        public static ThingDef TM_RifleSpec_Base11;
+        public static ThingDef TM_RifleSpec_Base12;
+        public static ThingDef TM_RifleSpec_Base13;
+        public static ThingDef TM_RifleSpec_Base14;
+        public static ThingDef TM_RifleSpec_Base15;
+        public static ThingDef TM_RifleSpec_Base16;
+        public static ThingDef TM_RifleSpec_Base17;
+        public static ThingDef TM_RifleSpec_Base18;
+        public static ThingDef TM_RifleSpec_Base19;
+        public static ThingDef TM_ShotgunSpec_Base0;
+        public static ThingDef TM_ShotgunSpec_Base1;
+        public static ThingDef TM_ShotgunSpec_Base2;
+        public static ThingDef TM_ShotgunSpec_Base3;
+        public static ThingDef TM_ShotgunSpec_Base4;
+        public static ThingDef TM_ShotgunSpec_Base5;
+        public static ThingDef TM_ShotgunSpec_Base6;
+        public static ThingDef TM_ShotgunSpec_Base7;
+        public static ThingDef TM_ShotgunSpec_Base8;
+        public static ThingDef TM_ShotgunSpec_Base9;
+        public static ThingDef TM_ShotgunSpec_Base10;
+        public static ThingDef TM_ShotgunSpec_Base11;
+        public static ThingDef TM_ShotgunSpec_Base12;
+        public static ThingDef TM_ShotgunSpec_Base13;
+        public static ThingDef TM_ShotgunSpec_Base14;
+        public static ThingDef TM_ShotgunSpec_Base15;
+        public static ThingDef TM_ShotgunSpec_Base16;
+        public static ThingDef TM_ShotgunSpec_Base17;
+        public static ThingDef TM_ShotgunSpec_Base18;
+        public static ThingDef TM_ShotgunSpec_Base19;
 
         //Standalone
         public static TMAbilityDef TM_Heater;
@@ -1369,6 +1445,35 @@ namespace TorannMagic
         public static ThingDef TM_Artifact_ClassExtraction;
         public static ThingDef TM_MagicArtifact_MightEssence;
         public static ThingDef TM_MagicArtifact_MagicEssence;
+
+        // Spell Recipes
+        public static RecipeDef Make_SpellOf_FoldReality;
+        public static RecipeDef Make_SpellOf_Firestorm;
+        public static RecipeDef Make_SpellOf_DryGround;
+        public static RecipeDef Make_SpellOf_Blizzard;
+        public static RecipeDef Make_SpellOf_WetGround;
+        public static RecipeDef Make_SpellOf_EyeOfTheStorm;
+        public static RecipeDef Make_SpellOf_ChargeBattery;
+        public static RecipeDef Make_SpellOf_RegrowLimb;
+        public static RecipeDef Make_SpellOf_FertileLands;
+        public static RecipeDef Make_SpellOf_SummonPoppi;
+        public static RecipeDef Make_SpellOf_HolyWrath;
+        public static RecipeDef Make_SpellOf_Resurrection;
+        public static RecipeDef Make_SpellOf_BattleHymn;
+        public static RecipeDef Make_SpellOf_LichForm;
+        public static RecipeDef Make_SpellOf_Meteor;
+        public static RecipeDef Make_SpellOf_Scorn;
+        public static RecipeDef Make_SpellOf_PsychicShock;
+        public static RecipeDef Make_SpellOf_TechnoShield;
+        public static RecipeDef Make_SpellOf_Sabotage;
+        public static RecipeDef Make_SpellOf_Overdrive;
+        public static RecipeDef Make_SpellOf_OrbitalStrike;
+        public static RecipeDef Make_SpellOf_BloodMoon;
+        public static RecipeDef Make_SpellOf_Shapeshift;
+        public static RecipeDef Make_SpellOf_Recall;
+
+        //Book Recipes
+        public static RecipeDef Make_BookOfSuperSoldier;
 
         //Sounds
         public static SoundDef ItemEnchanted;

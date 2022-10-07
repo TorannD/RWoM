@@ -165,8 +165,12 @@ namespace TorannMagic.Golems
                     Find.WindowStack.Add(newWindow);
                 }
                 num += 2;
-
-                Rect rectFollowMaster = GetRowRect(rect2, num);
+                Rect rectAllowedAreas = GetRowRect(rect2, num);
+                rectAllowedAreas.width = rect2.width / 2.2f;               
+                AreaAllowedGUI.DoAllowedAreaSelectors(rectAllowedAreas, golem_pawn);
+                TooltipHandler.TipRegion(rectAllowedAreas, "TM_GolemAssignArea".Translate());
+                num += 2;
+                Rect rectFollowMaster = GetRowRect(rectAllowedAreas, num);
                 rectFollowMaster.width = rect2.width / 2.2f;
                 Widgets.CheckboxLabeled(rectFollowMaster, "TM_GolemFollowsMaster".Translate(), ref golem_pawn.Golem.followsMaster, false);
                 TooltipHandler.TipRegion(rectFollowMaster, "TM_GolemFollowsMasterDesc".Translate());

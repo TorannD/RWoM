@@ -150,7 +150,14 @@
     <Compile Include="TMDefs\TM_AdvancedClassOptions.cs" />
     <Compile Include="Utils\TraitIconMap.cs" />
     <Compile Include="Utils\SimpleCache.cs" />
+    <Compile Include="Verb_Attraction.cs" />
+    <Compile Include="Verb_Scorn.cs" />
+    <Compile Include="Verb_FogOfTorment.cs" />
+    <Compile Include="Verb_LightningCloud.cs" />
+    <Compile Include="Verb_Firestorm.cs" />
+    <Compile Include="Verb_ConsumeCorpse_Mass.cs" />
     <Compile Include="Verb_ControlSpiritStorm.cs" />
+    <Compile Include="Verb_Blizzard.cs" />
     <Compile Include="Verb_SpiritTap.cs" />
     <Compile Include="Verb_SpiritRally.cs" />
     <Compile Include="Verb_SpiritDrain.cs" />

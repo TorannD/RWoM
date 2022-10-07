@@ -9,4 +9,3 @@ E:\Programs\Steam\steamapps\common\RimWorld\Mods\RWoM\v1.3\Assemblies\TorannMagi
 E:\Programs\Steam\steamapps\common\RimWorld\Mods\RWoM\RimWorldOfMagic\RimWorldOfMagic\obj\Debug\RimWorldOfMagic.csproj.CoreCompileInputs.cache
 E:\Programs\Steam\steamapps\common\RimWorld\Mods\RWoM\RimWorldOfMagic\RimWorldOfMagic\obj\Debug\TorannMagic.dll
 E:\Programs\Steam\steamapps\common\RimWorld\Mods\RWoM\RimWorldOfMagic\RimWorldOfMagic\obj\Debug\TorannMagic.pdb
-E:\Programs\Steam\steamapps\common\RimWorld\Mods\RWoM\RimWorldOfMagic\RimWorldOfMagic\obj\Debug\RimWorldOfMagic.csprojAssemblyReference.cache

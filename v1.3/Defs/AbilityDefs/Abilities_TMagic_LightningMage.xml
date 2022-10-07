@@ -283,7 +283,7 @@ Pain:		-40%</description>
 		<learnChance>.3</learnChance>
 		<canCopy>true</canCopy>
         <MainVerb Class="AbilityUser.VerbProperties_Ability">
-            <verbClass>AbilityUser.Verb_UseAbility</verbClass>
+            <verbClass>TorannMagic.Verb_LightningCloud</verbClass>
 				<tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
 				<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
 				<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>

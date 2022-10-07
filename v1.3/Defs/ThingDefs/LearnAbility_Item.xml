@@ -2701,6 +2701,58 @@ Produces 400Wd adjusted by ability power.</description>
     </graphicData>
   </ThingDef>
   
+  <ThingDef ParentName="ArcaneSpellBase">
+    <defName>SpellOf_ConsumeCorpse_Mass</defName>
+    <label>Necromancer Spell: Mass Consume Corpse</label>
+    <thingClass>ThingWithComps</thingClass>
+    <description>Teaches a necromancer how to expand consume corpse to target multiple corpses within an area.</description>
+	<category>Item</category>
+	<selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+	<alwaysHaulable>true</alwaysHaulable>	
+	<resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <tradeNeverStack>true</tradeNeverStack>
+    <useHitPoints>true</useHitPoints>
+	<statBases>
+      <MarketValue>500</MarketValue>
+	</statBases>
+	<comps>
+      <li Class="CompProperties_Forbiddable" />
+    </comps>
+		<costList>
+		<RawMagicyte>60</RawMagicyte>
+		<Cloth>50</Cloth>
+	</costList>
+	<recipeMaker>		    
+		<workAmount>4000</workAmount>
+		<workSpeedStat>WorkSpeedGlobal</workSpeedStat>
+		<workSkill>Intellectual</workSkill>
+		<recipeUsers>
+			<li>TableMagicPrinter</li>
+		</recipeUsers>
+		<effectWorking>Smelt</effectWorking>
+		<unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+		<skillRequirements>			
+			<Intellectual>5</Intellectual>
+		</skillRequirements>
+		<researchPrerequisite>
+			<li>TM_MagicScribing</li>
+		</researchPrerequisite>
+	</recipeMaker>
+	<rotatable>false</rotatable>
+    <graphicData>
+      <texPath>Books/scroll</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+	<modExtensions>
+      <li Class="TorannMagic.DefModExtension_LearnAbilityRequiredTraits">    
+        <traits>
+            <li>Necromancer</li>
+			<li>Lich</li>
+        </traits>
+      </li>
+    </modExtensions>
+  </ThingDef>  
   
   <ThingDef ParentName="ArcaneSpellBase">
     <defName>SpellOf_Discord</defName>

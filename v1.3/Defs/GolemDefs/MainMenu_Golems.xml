@@ -29,6 +29,8 @@
 	  <li>TM_GolemAwakenPercent</li>
 	  <li>GapTiny</li>
 	  <li>TM_GolemMaster</li>
+	  <li>GapTiny</li>
+      <li>AllowedArea</li>
       <li>RemainingSpace</li>
     </columns>
   </PawnTableDef>

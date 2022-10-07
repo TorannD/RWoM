@@ -4667,6 +4667,7 @@ namespace TorannMagic
                     __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_Discord" ||
                     __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_AdvancedHeal" ||
                     __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_ControlSpiritStorm" ||
+                    __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_Scorn" ||
                     !__instance.verbProps.requireLineOfSight)
                 {
                     //Ignores line of sight

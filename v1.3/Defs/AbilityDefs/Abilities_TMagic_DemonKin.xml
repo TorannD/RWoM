@@ -421,7 +421,7 @@ Cooldown: 60</description>
 		<learnChance>.3</learnChance>
 		<canCopy>true</canCopy>
 		<MainVerb Class="AbilityUser.VerbProperties_Ability">
-            <verbClass>TorannMagic.Verb_SB</verbClass>
+            <verbClass>TorannMagic.Verb_Attraction</verbClass>
 				<tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
 				<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
 				<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
@@ -462,7 +462,7 @@ Cooldown: 55</description>
 		<efficiencyReductionPercent>.08</efficiencyReductionPercent>
 		<shouldInitialize>false</shouldInitialize>
 		<MainVerb Class="AbilityUser.VerbProperties_Ability">
-            <verbClass>TorannMagic.Verb_SB</verbClass>
+            <verbClass>TorannMagic.Verb_Attraction</verbClass>
 				<tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
 				<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
 				<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
@@ -503,7 +503,7 @@ Cooldown: 50</description>
 		<efficiencyReductionPercent>.08</efficiencyReductionPercent>
 		<shouldInitialize>false</shouldInitialize>
 		<MainVerb Class="AbilityUser.VerbProperties_Ability">
-            <verbClass>TorannMagic.Verb_SB</verbClass>
+            <verbClass>TorannMagic.Verb_Attraction</verbClass>
 				<tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
 				<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
 				<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
@@ -544,7 +544,7 @@ Cooldown: 45</description>
 		<efficiencyReductionPercent>.08</efficiencyReductionPercent>
 		<shouldInitialize>false</shouldInitialize>
 		<MainVerb Class="AbilityUser.VerbProperties_Ability">
-            <verbClass>TorannMagic.Verb_SB</verbClass>
+            <verbClass>TorannMagic.Verb_Attraction</verbClass>
 				<tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
 				<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
 				<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
@@ -849,7 +849,7 @@ A succubus will retain her partial demon form for a short period after using thi
 		<learnItem>SpellOf_Scorn</learnItem>
 		<learnChance>.1</learnChance>
 		<MainVerb Class="AbilityUser.VerbProperties_Ability">
-            <verbClass>TorannMagic.Verb_BLOS</verbClass>
+            <verbClass>TorannMagic.Verb_Scorn</verbClass>
 				<tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
 				<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
 				<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>

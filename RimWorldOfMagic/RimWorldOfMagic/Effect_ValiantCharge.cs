@@ -32,6 +32,24 @@ namespace TorannMagic
             return validTarg;
         }
 
+        public override float HighlightFieldRadiusAroundTarget(out bool needLOSToCenter)
+        {
+            needLOSToCenter = true;
+            TargetAoEProperties targetAoEProperties = UseAbilityProps.abilityDef.MainVerb.TargetAoEProperties;
+            if (targetAoEProperties == null || !targetAoEProperties.showRangeOnSelect)
+            {
+                CompAbilityUserMagic comp = this.CasterPawn.GetCompAbilityUserMagic();
+                float adjustedRadius = verbProps.defaultProjectile?.projectile?.explosionRadius ?? 1.2f;
+                if (comp != null && comp.MagicData != null)
+                {
+                    int verVal = TM_Calc.GetSkillVersatilityLevel(this.CasterPawn, this.Ability.Def as TMAbilityDef);
+                    adjustedRadius = 1.2f + (.8f * verVal);
+                }
+                return adjustedRadius;
+            }
+            return (float)targetAoEProperties.range;
+        }
+
         public virtual void Effect()
         {
             LocalTargetInfo t = this.TargetsAoE[0];
