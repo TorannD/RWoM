@@ -162,11 +162,21 @@ namespace TorannMagic
                         {
                             if(deadPawn.RaceProps.Humanlike)
                             {
-                                GenExplosion.DoExplosion(base.Position, this.Map, Rand.Range(10, 16), TMDamageDefOf.DamageDefOf.TM_Holy, this.launcher, Mathf.RoundToInt(Rand.Range(20, 32)), 6, TMDamageDefOf.DamageDefOf.TM_Holy.soundExplosion);
+                                GenExplosion.DoExplosion(
+                                    Position, Map, Rand.Range(10, 16), TMDamageDefOf.DamageDefOf.TM_Holy, launcher,
+                                    damAmount: Mathf.RoundToInt(Rand.Range(20, 32)),
+                                    armorPenetration: 6,
+                                    explosionSound: TMDamageDefOf.DamageDefOf.TM_Holy.soundExplosion
+                                );
                             }
                             else
                             {
-                                GenExplosion.DoExplosion(base.Position, this.Map, Rand.Range(10, 16), TMDamageDefOf.DamageDefOf.TM_Holy, this.launcher, Mathf.RoundToInt(Rand.Range(16, 24)), 3, TMDamageDefOf.DamageDefOf.TM_Holy.soundExplosion);
+                                GenExplosion.DoExplosion(
+                                    Position, Map, Rand.Range(10, 16), TMDamageDefOf.DamageDefOf.TM_Holy, launcher,
+                                    damAmount: Mathf.RoundToInt(Rand.Range(16, 24)),
+                                    armorPenetration: 3,
+                                    explosionSound: TMDamageDefOf.DamageDefOf.TM_Holy.soundExplosion
+                                );
                             }
                         }
                         else

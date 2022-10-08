@@ -242,11 +242,20 @@ namespace TorannMagic
                 bool flag4 = this.explosion;
                 if (flag4)
                 {
-                    GenExplosion.DoExplosion(base.Position, base.Map, 0.9f, DamageDefOf.Stun, this, -1, 0, null, null, null, null, null, 0f, 1, false, null, 0f, 1, 0f, false);
+                    GenExplosion.DoExplosion(
+                        Position, Map, 0.9f, DamageDefOf.Stun, this,
+                        armorPenetration: 0
+                    );
                 }
             }
             TM_MoteMaker.MakePowerBeamMotePsionic(this.ExactPosition.ToIntVec3(), this.Map, 10f, 2f, .7f, .1f, .6f);
-            //GenExplosion.DoExplosion(this.ExactPosition.ToIntVec3(), this.Map, 1.7f, TMDamageDefOf.DamageDefOf.TM_PsionicInjury, this.pawn, Rand.Range(8, 12) + 2*this.effVal, 0, this.def.projectile.soundExplode, def, null, null, null, 0f, 1, false, null, 0f, 1, 0.0f, false);
+            /*GenExplosion.DoExplosion(
+                ExactPosition.ToIntVec3(), Map, 1.7f, TMDamageDefOf.DamageDefOf.TM_PsionicInjury, pawn,
+                damAmount: Rand.Range(8, 12) + 2*this.effVal,
+                armorPenetration: 0,
+                explosionSound: def.projectile.soundExplode,
+                weapon: def
+            );*/
             SearchForTargets(base.Position, 1.7f, this.Map);
             GenSpawn.Spawn(this.flyingThing, base.Position, base.Map);
             ModOptions.Constants.SetPawnInFlight(false);

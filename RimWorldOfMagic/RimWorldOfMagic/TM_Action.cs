@@ -1853,7 +1853,12 @@ namespace TorannMagic
                 switch (rndBad)
                 {
                     case 0:
-                        GenExplosion.DoExplosion(p.Position, p.Map, 5f, DamageDefOf.Bomb, p, Rand.Range(8, 12), 1f, null, null, null, null, null, 0, 1, false, null, 0, 1, 0, true);
+                        GenExplosion.DoExplosion(
+                            p.Position, p.Map, 5f, DamageDefOf.Bomb, p,
+                            damAmount: Rand.Range(8, 12),
+                            armorPenetration: 1f,
+                            damageFalloff: true
+                        );
                         surgeText = "Explosion";
                         break;
                     case 1:
@@ -2425,7 +2430,12 @@ namespace TorannMagic
                     Pawn p = new Pawn();
                     p = pawn;
                     Map map = p.Map;
-                    GenExplosion.DoExplosion(p.Position, p.Map, 0f, DamageDefOf.Burn, p as Thing, 0, 0, SoundDefOf.Thunder_OnMap, null, null, null, null, 0f, 0, false, null, 0f, 0, 0.0f, false);
+                    GenExplosion.DoExplosion(
+                        p.Position, p.Map, 0f, DamageDefOf.Burn, p,
+                        damAmount: 0,
+                        armorPenetration: 0,
+                        explosionSound: SoundDefOf.Thunder_OnMap
+                    );
                     Effecter deathEffect = TorannMagicDefOf.TM_DeathExplosion.Spawn();
                     deathEffect.Trigger(new TargetInfo(p.Position, p.Map, false), new TargetInfo(p.Position, p.Map, false));
                     deathEffect.Cleanup();
@@ -2543,7 +2553,11 @@ namespace TorannMagic
                     }
                     break;
                 case 4: //stun pulse
-                    GenExplosion.DoExplosion(pos, pawn.Map, 6, DamageDefOf.Stun, pawn, 0, 0);
+                    GenExplosion.DoExplosion(
+                        pos, pawn.Map, 6, DamageDefOf.Stun, pawn,
+                        damAmount: 0,
+                        armorPenetration: 0
+                    );
                     pawns = TM_Calc.FindAllPawnsAround(pawn.Map, pos, 4f, pawn.Faction, friendlyFire);
                     if (pawns != null && pawns.Count > 0)
                     {
@@ -2624,7 +2638,12 @@ namespace TorannMagic
                     GenPlace.TryPlaceThing(pTrap, pawn.Position, pawn.Map, ThingPlaceMode.Direct);
                     break;
                 case 2: //burst into flames
-                    GenExplosion.DoExplosion(pawn.Position, pawn.Map, 2f, DamageDefOf.Flame, pawn, 10, 0, DamageDefOf.Flame.soundExplosion);
+                    GenExplosion.DoExplosion(
+                        pawn.Position, pawn.Map, 2f, DamageDefOf.Flame, pawn,
+                        damAmount: 10,
+                        armorPenetration: 0,
+                        explosionSound: DamageDefOf.Flame.soundExplosion
+                    );
                     break;
                 case 3: //wave of fear
                     SoundInfo info = SoundInfo.InMap(new TargetInfo(pawn.Position, pawn.Map, false), MaintenanceType.None);

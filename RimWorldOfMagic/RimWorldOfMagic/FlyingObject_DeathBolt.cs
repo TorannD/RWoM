@@ -277,7 +277,14 @@ namespace TorannMagic
                         spreadingDarknessCell = cellRect.RandomCell;
                         if (spreadingDarknessCell.InBoundsWithNullCheck(base.Map) && spreadingDarknessCell.IsValid)
                         {
-                            GenExplosion.DoExplosion(spreadingDarknessCell, base.Map, .4f, TMDamageDefOf.DamageDefOf.TM_DeathBolt, this.pawn, Mathf.RoundToInt((Rand.Range(.4f * this.def.projectile.GetDamageAmount(1, null), .8f * this.def.projectile.GetDamageAmount(1, null)) + (3f * pwrVal)) * this.arcaneDmg), 2, this.def.projectile.soundExplode, def, null, null, null, 0f, 1, false, null, 0f, 0, 0.0f, true);
+                            GenExplosion.DoExplosion(
+                                spreadingDarknessCell, Map, .4f, TMDamageDefOf.DamageDefOf.TM_DeathBolt, pawn,
+                                damAmount: Mathf.RoundToInt((Rand.Range(.4f * def.projectile.GetDamageAmount(1), .8f * def.projectile.GetDamageAmount(1)) + 3f * pwrVal) * arcaneDmg),
+                                armorPenetration: 2,
+                                explosionSound: def.projectile.soundExplode,
+                                weapon: def,
+                                damageFalloff: true
+                            );
                             TM_MoteMaker.ThrowDiseaseMote(base.Position.ToVector3Shifted(), base.Map, .6f);
                             if (powered)
                             {
@@ -346,7 +353,14 @@ namespace TorannMagic
                 }
             }        
 
-            GenExplosion.DoExplosion(base.Position, base.Map, this.radius, TMDamageDefOf.DamageDefOf.TM_DeathBolt, this.pawn, Mathf.RoundToInt((Rand.Range(.6f*this.def.projectile.GetDamageAmount(1,null), 1.1f*this.def.projectile.GetDamageAmount(1,null)) + (5f * pwrVal)) * this.arcaneDmg), 4, this.def.projectile.soundExplode, def, null, null, null, 0f, 1, false, null, 0f, 0, 0.0f, true);
+            GenExplosion.DoExplosion(
+                Position, Map, radius, TMDamageDefOf.DamageDefOf.TM_DeathBolt, this.pawn,
+                damAmount: Mathf.RoundToInt((Rand.Range(.6f*def.projectile.GetDamageAmount(1), 1.1f*def.projectile.GetDamageAmount(1)) + 5f * pwrVal) * arcaneDmg),
+                armorPenetration: 4,
+                explosionSound: def.projectile.soundExplode,
+                weapon: def,
+                damageFalloff: true
+            );
 
             this.ticksFollowingImpact = this.verVal * 15;
             this.impacted = true;

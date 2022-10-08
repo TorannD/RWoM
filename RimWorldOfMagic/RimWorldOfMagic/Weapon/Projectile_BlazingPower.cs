@@ -34,7 +34,15 @@ namespace TorannMagic.Weapon
                     //    DamageEntities(thingList[i], null, this.def.projectile.GetDamageAmount(1, null), TMDamageDefOf.DamageDefOf.TM_BlazingPower, pawn);
                     //}
                     
-                    GenExplosion.DoExplosion(base.Position, map, .8f, TMDamageDefOf.DamageDefOf.TM_BlazingPower, this.launcher, Mathf.RoundToInt(this.def.projectile.GetDamageAmount(1, null) * this.arcaneDmg), 2, SoundDefOf.Crunch, def, this.equipmentDef, null, null, 0f, 1, false, null, 0f, 1, 0.0f, true);
+                    GenExplosion.DoExplosion(
+                        Position, map, .8f, TMDamageDefOf.DamageDefOf.TM_BlazingPower, launcher,
+                        damAmount: Mathf.RoundToInt(this.def.projectile.GetDamageAmount(1) * arcaneDmg),
+                        armorPenetration: 2,
+                        explosionSound: SoundDefOf.Crunch,
+                        weapon: def,
+                        projectile: equipmentDef,
+                        damageFalloff: true
+                    );
                 }
                 catch
                 {

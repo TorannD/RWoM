@@ -102,7 +102,12 @@ namespace TorannMagic
                 {
                     if(isExplosion)
                     {
-                        GenExplosion.DoExplosion(curCell, this.Pawn.Map, .4f, damageType, this.Pawn, damageAmount, Rand.Range(0, damageAmount), TorannMagicDefOf.TM_SoftExplosion, null, null, null, null, 0f, 1, false, null, 0f, 0, 0.0f, false);
+                        GenExplosion.DoExplosion(
+                            curCell, Pawn.Map, .4f, damageType, Pawn,
+                            damAmount: damageAmount,
+                            armorPenetration: Rand.Range(0, damageAmount),
+                            explosionSound: TorannMagicDefOf.TM_SoftExplosion
+                        );
                     }
                     else
                     {
@@ -452,7 +457,13 @@ namespace TorannMagic
                         {
                             CellRect cellRect = CellRect.CenteredOn(this.Pawn.Position, 3);
                             cellRect.ClipInsideMap(this.Pawn.Map);
-                            GenExplosion.DoExplosion(cellRect.RandomCell, this.Pawn.Map, 2f, DamageDefOf.Burn, this.Pawn, Rand.Range(6, 12), -1, DamageDefOf.Bomb.soundExplosion, null, null, null, null, 0f, 1, false, null, 0f, 0, 0.2f, true);
+                            GenExplosion.DoExplosion(
+                                cellRect.RandomCell, Pawn.Map, 2f, DamageDefOf.Burn, Pawn,
+                                damAmount: Rand.Range(6, 12),
+                                explosionSound: DamageDefOf.Bomb.soundExplosion,
+                                chanceToStartFire: 0.2f,
+                                damageFalloff: true
+                            );
                             DamageEntities(this.Pawn, 10f, TMDamageDefOf.DamageDefOf.TM_Shadow, this.Pawn);
                             deathOnce = true;
                         }

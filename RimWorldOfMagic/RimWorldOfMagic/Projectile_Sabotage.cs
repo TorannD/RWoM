@@ -132,8 +132,10 @@ namespace TorannMagic
                                 if (true)
                                 {
                                     //stun/electrical explosion
-                                    GenExplosion.DoExplosion(targetBuilding.Position, base.Map, 2 + pwrVal + Mathf.RoundToInt(cpt.powerOutputInt / 400), DamageDefOf.Stun, null);
-                                    GenExplosion.DoExplosion(targetBuilding.Position, base.Map, 1 + pwrVal + Mathf.RoundToInt(cpt.powerOutputInt / 600), TMDamageDefOf.DamageDefOf.TM_ElectricalBurn, null);
+                                    GenExplosion.DoExplosion(
+                                        targetBuilding.Position, Map, 2 + pwrVal + Mathf.RoundToInt(cpt.powerOutputInt / 400), DamageDefOf.Stun, null);
+                                    GenExplosion.DoExplosion(
+                                        targetBuilding.Position, Map, 1 + pwrVal + Mathf.RoundToInt(cpt.powerOutputInt / 600), TMDamageDefOf.DamageDefOf.TM_ElectricalBurn, null);
 
                                 }
                                 else if (rnd <= .66f)
@@ -158,7 +160,8 @@ namespace TorannMagic
                                 }
                                 else
                                 {
-                                    GenExplosion.DoExplosion(targetBattery.Position, base.Map, 2 + pwrVal + Mathf.RoundToInt(compB.StoredEnergy / 200), DamageDefOf.EMP, null);
+                                    GenExplosion.DoExplosion(
+                                        targetBattery.Position, Map, 2 + pwrVal + Mathf.RoundToInt(compB.StoredEnergy / 200), DamageDefOf.EMP, null);
                                     compB.DrawPower(compB.StoredEnergy);
                                 }
 
@@ -173,7 +176,8 @@ namespace TorannMagic
                                 }
                                 else
                                 {
-                                    GenExplosion.DoExplosion(targetTurret.Position, base.Map, 2 + pwrVal, TMDamageDefOf.DamageDefOf.TM_ElectricalBurn, null); //20 default damage
+                                    GenExplosion.DoExplosion(
+                                        targetTurret.Position, Map, 2 + pwrVal, TMDamageDefOf.DamageDefOf.TM_ElectricalBurn, null); //20 default damage
                                 }
                             }
                         }

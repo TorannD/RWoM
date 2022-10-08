@@ -220,7 +220,12 @@ namespace TorannMagic
                     {
                         if (isExplosion)
                         {
-                            GenExplosion.DoExplosion(curCell, this.Pawn.Map, .4f, damageType, this.Pawn, damageAmount, Rand.Range(0, damageAmount), TorannMagicDefOf.TM_SoftExplosion, null, null, null, null, 0f, 1, false, null, 0f, 0, 0.0f, false);
+                            GenExplosion.DoExplosion(
+                                curCell, Pawn.Map, .4f, damageType, Pawn,
+                                damAmount: damageAmount,
+                                armorPenetration: Rand.Range(0, damageAmount),
+                                explosionSound: TorannMagicDefOf.TM_SoftExplosion
+                            );
                         }
                         else
                         {

@@ -442,7 +442,10 @@ namespace TorannMagic
                 bool flag4 = this.explosion;
                 if (flag4)
                 {
-                    GenExplosion.DoExplosion(base.Position, base.Map, 0.9f, DamageDefOf.Stun, this, -1, 0, null, null, null, null, null, 0f, 1, false, null, 0f, 1, 0f, false);
+                    GenExplosion.DoExplosion(
+                        Position, Map, 0.9f, DamageDefOf.Stun, this,
+                        armorPenetration: 0
+                    );
                 }
             }
             GenSpawn.Spawn(this.flyingThing, base.Position, base.Map);

@@ -15,7 +15,14 @@ namespace TorannMagic
         {
             Map map = base.Map;
             Pawn pawn = this.launcher as Pawn;
-            GenExplosion.DoExplosion(base.Position, map, 0.4f, TMDamageDefOf.DamageDefOf.Iceshard, this.launcher, Mathf.RoundToInt(this.def.projectile.GetDamageAmount(1, null)), 0, this.def.projectile.soundExplode, def, this.equipmentDef, null, null, 0f, 1, false, null, 0f, 1, 0f, false);
+            GenExplosion.DoExplosion(
+                Position, map, 0.4f, TMDamageDefOf.DamageDefOf.Iceshard, launcher,
+                damAmount: Mathf.RoundToInt(def.projectile.GetDamageAmount(1)),
+                armorPenetration: 0,
+                explosionSound: def.projectile.soundExplode,
+                weapon: def,
+                projectile: equipmentDef
+            );
             CellRect cellRect = CellRect.CenteredOn(base.Position, 2);
             cellRect.ClipInsideMap(map);
             for (int i = 0; i < 3; i++)

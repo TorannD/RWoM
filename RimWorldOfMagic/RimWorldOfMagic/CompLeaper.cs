@@ -150,7 +150,11 @@ namespace TorannMagic
                 {
                     if (this.Pawn.Downed && !this.Pawn.Dead)
                     {
-                        GenExplosion.DoExplosion(this.Pawn.Position, this.Pawn.Map, Rand.Range(this.explosionRadius * .5f, this.explosionRadius * 1.5f), DamageDefOf.Burn, this.Pawn, Rand.Range(6, 10), 0, null, null, null, null, null, 0f, 1, false, null, 0f, 1, 0f, false);
+                        GenExplosion.DoExplosion(
+                            Pawn.Position, Pawn.Map, Rand.Range(explosionRadius * .5f, explosionRadius * 1.5f), DamageDefOf.Burn, Pawn,
+                            damAmount: Rand.Range(6, 10),
+                            armorPenetration: 0
+                        );
                         this.Pawn.Kill(null, null);
                     }
                 }

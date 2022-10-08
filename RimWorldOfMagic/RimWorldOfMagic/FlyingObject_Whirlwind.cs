@@ -97,7 +97,6 @@ namespace TorannMagic
             Scribe_Values.Look<int>(ref this.timesToDamage, "timesToDamage", 0, false);
             Scribe_Values.Look<int>(ref this.weaponDmg, "weaponDmg", 0, false);
             Scribe_Values.Look<bool>(ref this.damageLaunched, "damageLaunched", true, false);
-            Scribe_Values.Look<bool>(ref this.explosion, "explosion", false, false);
             Scribe_References.Look<Thing>(ref this.assignedTarget, "assignedTarget", false);
             Scribe_Deep.Look<Thing>(ref this.flyingThing, "flyingThing", new object[0]);
             Scribe_References.Look<Pawn>(ref this.pawn, "pawn", false);
@@ -364,11 +363,6 @@ namespace TorannMagic
                     {
                         hitThing.TakeDamage(this.impactDamage.Value);
                     }
-                }
-                bool flag4 = this.explosion;
-                if (flag4)
-                {
-                    GenExplosion.DoExplosion(base.Position, base.Map, 0.9f, DamageDefOf.Stun, this, -1, 0, null, null, null, null, null, 0f, 1, false, null, 0f, 1, 0f, false);
                 }
             }
             GenSpawn.Spawn(this.flyingThing, base.Position, base.Map);

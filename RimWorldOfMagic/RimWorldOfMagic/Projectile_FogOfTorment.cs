@@ -78,7 +78,16 @@ namespace TorannMagic
 
                 fog.gas.expireSeconds.min = this.duration/60;
                 fog.gas.expireSeconds.max = this.duration/60;
-                GenExplosion.DoExplosion(base.Position, map, this.def.projectile.explosionRadius + verVal, TMDamageDefOf.DamageDefOf.TM_Torment, this.launcher, 0, 0, this.def.projectile.soundExplode, def, this.equipmentDef, null, fog, 1f, 1, false, null, 0f, 0, 0.0f, false);
+                GenExplosion.DoExplosion(
+                    Position, map, this.def.projectile.explosionRadius + verVal, TMDamageDefOf.DamageDefOf.TM_Torment, launcher,
+                    damAmount: 0,
+                    armorPenetration: 0,
+                    explosionSound: this.def.projectile.soundExplode,
+                    weapon: def,
+                    projectile: equipmentDef,
+                    postExplosionSpawnThingDef: fog,
+                    postExplosionSpawnChance: 1f
+                );
                 
                 this.initialized = true;
             }

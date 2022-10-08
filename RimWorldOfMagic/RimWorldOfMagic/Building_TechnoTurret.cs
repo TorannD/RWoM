@@ -226,7 +226,12 @@ namespace TorannMagic
                     rndPos.z += Rand.Range(-.5f, .5f);
                     TM_MoteMaker.ThrowGenericFleck(TorannMagicDefOf.ElectricalSpark, rndPos, this.Map, Rand.Range(.4f, .7f), .2f, .05f, .1f, 0, 0, 0, Rand.Range(0, 360));
                 }
-                GenExplosion.DoExplosion(this.Position, this.Map, 1f, DamageDefOf.EMP, this, 0, 0, SoundDefOf.Crunch, null, null, this, null, 0, 0, false, null, 0, 0, 0, false);
+                GenExplosion.DoExplosion(
+                    Position, Map, 1f, DamageDefOf.EMP, this,
+                    damAmount: 0,
+                    armorPenetration: 0,
+                    explosionSound: SoundDefOf.Crunch
+                );
                 this.Destroy(DestroyMode.Vanish);
             }
         }

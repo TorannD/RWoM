@@ -200,7 +200,14 @@ namespace TorannMagic
             {                
                 FindGoodCenterLocation();
                 Map.weatherManager.eventHandler.AddEvent(new WeatherEvent_LightningStrike(this.Map, this.centerLocation.ToIntVec3));
-                GenExplosion.DoExplosion(this.centerLocation.ToIntVec3, this.Map, this.areaRadius, DamageDefOf.Bomb, null, Rand.Range(6, 16), 0, SoundDefOf.Thunder_OffMap, null, null, null, null, 0f, 1, false, null, 0f, 1, 0.1f, true);
+                GenExplosion.DoExplosion(
+                    centerLocation.ToIntVec3, Map, areaRadius, DamageDefOf.Bomb, null,
+                    damAmount: Rand.Range(6, 16),
+                    armorPenetration: 0,
+                    explosionSound: SoundDefOf.Thunder_OffMap,
+                    chanceToStartFire: 0.1f,
+                    damageFalloff: true
+                );
 
             }
         }

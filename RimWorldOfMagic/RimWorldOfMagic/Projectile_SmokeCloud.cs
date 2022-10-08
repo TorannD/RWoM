@@ -49,7 +49,17 @@ namespace TorannMagic
                 }
             }
 
-            GenExplosion.DoExplosion(base.Position, map, explosionRadius, this.def.projectile.damageDef, this.launcher, this.def.projectile.GetDamageAmount(1,null), 0, SoundDefOf.Artillery_ShellLoaded, def, this.equipmentDef, null, ThingDefOf.Gas_Smoke, 1f, 1, false, null, 0f, 1, 0f, false);
+            // TODO This will break in 1.4. Use BlindingSmoke GasType instead
+            GenExplosion.DoExplosion(
+                Position, map, explosionRadius, this.def.projectile.damageDef, launcher,
+                damAmount: this.def.projectile.GetDamageAmount(1),
+                armorPenetration: 0,
+                explosionSound: SoundDefOf.Artillery_ShellLoaded,
+                weapon: def,
+                projectile: equipmentDef, null,
+                postExplosionSpawnThingDef: ThingDefOf.Gas_Smoke,
+                postExplosionSpawnChance: 1f
+            );
 
 		}		
 	}	

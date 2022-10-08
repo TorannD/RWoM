@@ -30,8 +30,6 @@ namespace TorannMagic
 
         public bool damageLaunched = true;
 
-        public bool explosion = false;
-
         public int timesToDamage = 3;
 
         public int weaponDmg = 0;
@@ -96,7 +94,6 @@ namespace TorannMagic
             Scribe_Values.Look<int>(ref this.timesToDamage, "timesToDamage", 0, false);
             Scribe_Values.Look<int>(ref this.searchDelay, "searchDelay", 10, false);
             Scribe_Values.Look<bool>(ref this.damageLaunched, "damageLaunched", true, false);
-            Scribe_Values.Look<bool>(ref this.explosion, "explosion", false, false);
             Scribe_Values.Look<bool>(ref this.initialized, "initialized", false, false);
             Scribe_References.Look<Thing>(ref this.assignedTarget, "assignedTarget", false);
             //Scribe_References.Look<Thing>(ref this.launcher, "launcher", false);
@@ -336,11 +333,6 @@ namespace TorannMagic
                     {
                         hitThing.TakeDamage(this.impactDamage.Value);
                     }
-                }
-                bool flag4 = this.explosion;
-                if (flag4)
-                {
-                    GenExplosion.DoExplosion(base.Position, base.Map, 0.9f, DamageDefOf.Stun, this, -1, 0, null, null, null, null, null, 0f, 1, false, null, 0f, 1, 0f, false);
                 }
             }
 

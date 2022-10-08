@@ -111,7 +111,14 @@ namespace TorannMagic
                                 ThingDef fog = TorannMagicDefOf.Fog_Shadows;
                                 fog.gas.expireSeconds.min = 4;
                                 fog.gas.expireSeconds.max = 4;
-                                GenExplosion.DoExplosion(p.Position, p.Map, 2, TMDamageDefOf.DamageDefOf.TM_Toxin, caster, 0, 0, TMDamageDefOf.DamageDefOf.TM_Toxin.soundExplosion, null, null, null, fog, 1f, 1, false, null, 0f, 0, 0.0f, false);
+                                GenExplosion.DoExplosion(
+                                    p.Position, p.Map, 2, TMDamageDefOf.DamageDefOf.TM_Toxin, caster,
+                                    damAmount: 0,
+                                    armorPenetration: 0,
+                                    explosionSound: TMDamageDefOf.DamageDefOf.TM_Toxin.soundExplosion,
+                                    postExplosionSpawnThingDef: fog,
+                                    postExplosionSpawnChance: 1f
+                                );
 
                             }
                         }

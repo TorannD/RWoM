@@ -47,8 +47,6 @@ namespace TorannMagic
 
         public bool damageLaunched = true;
 
-        public bool explosion = false;
-
         public int timesToDamage = 3;
 
         public int weaponDmg = 0;
@@ -113,7 +111,6 @@ namespace TorannMagic
             Scribe_Values.Look<int>(ref this.pwrVal, "pwrVal", 0, false);
             Scribe_Values.Look<int>(ref this.verVal, "verVal", 0, false);
             Scribe_Values.Look<bool>(ref this.damageLaunched, "damageLaunched", true, false);
-            Scribe_Values.Look<bool>(ref this.explosion, "explosion", false, false);
             Scribe_Values.Look<bool>(ref this.initialized, "initialized", false, false);
             Scribe_References.Look<Thing>(ref this.assignedTarget, "assignedTarget", false);
             //Scribe_References.Look<Thing>(ref this.launcher, "launcher", false);
@@ -261,9 +258,23 @@ namespace TorannMagic
                         for (int k = 0; k < Rand.Range(1, 8); k++)
                         {
                             IntVec3 randomCell = cellRect.RandomCell;
-                            GenExplosion.DoExplosion(randomCell, base.Map, Rand.Range(.4f, .8f), TMDamageDefOf.DamageDefOf.TM_Lightning, this.launcher, Mathf.RoundToInt(Rand.Range(5 + pwrVal, 9 + 3 * pwrVal) * this.arcaneDmg), 0, SoundDefOf.Thunder_OnMap, null, null, null, null, 0f, 1, false, null, 0f, 1, 0.1f, true);
+                            GenExplosion.DoExplosion(
+                                randomCell, Map, Rand.Range(.4f, .8f), TMDamageDefOf.DamageDefOf.TM_Lightning, launcher,
+                                damAmount: Mathf.RoundToInt(Rand.Range(5 + pwrVal, 9 + 3 * pwrVal) * arcaneDmg),
+                                armorPenetration: 0,
+                                explosionSound: SoundDefOf.Thunder_OnMap,
+                                chanceToStartFire: 0.1f,
+                                damageFalloff: true
+                            );
                         }
-                        GenExplosion.DoExplosion(curPawnTarg.Position, base.Map, 1f, TMDamageDefOf.DamageDefOf.TM_Lightning, this.launcher, Mathf.RoundToInt(Rand.Range(5 + pwrVal, 9 + 3 * pwrVal) * this.arcaneDmg), 0, SoundDefOf.Thunder_OffMap, null, null, null, null, 0f, 1, false, null, 0f, 1, 0.1f, true);
+                        GenExplosion.DoExplosion(
+                            curPawnTarg.Position, Map, 1f, TMDamageDefOf.DamageDefOf.TM_Lightning, launcher,
+                            damAmount: Mathf.RoundToInt(Rand.Range(5 + pwrVal, 9 + 3 * pwrVal) * arcaneDmg),
+                            armorPenetration: 0,
+                            explosionSound: SoundDefOf.Thunder_OffMap,
+                            chanceToStartFire: 0.1f,
+                            damageFalloff: true
+                        );
                         this.lastStrike = this.age + (this.maxStrikeDelay - (int)Rand.Range(0 + (pwrVal * 20), 50 + (pwrVal * 10)));
                     }
                     else
@@ -293,10 +304,24 @@ namespace TorannMagic
                     for (int k = 0; k < Rand.Range(1, 8); k++)
                     {
                         IntVec3 randomCell = cellRect.RandomCell;
-                        GenExplosion.DoExplosion(randomCell, base.Map, Rand.Range(.2f, .6f), TMDamageDefOf.DamageDefOf.TM_Lightning, this.launcher, Mathf.RoundToInt(Rand.Range(3 + 3 * pwrVal, 7 + 5 * pwrVal) * this.arcaneDmg), 0, SoundDefOf.Thunder_OffMap, null, null, null, null, 0f, 1, false, null, 0f, 1, 0.1f, true);
+                        GenExplosion.DoExplosion(
+                            randomCell, Map, Rand.Range(.2f, .6f), TMDamageDefOf.DamageDefOf.TM_Lightning, launcher,
+                            damAmount: Mathf.RoundToInt(Rand.Range(3 + 3 * pwrVal, 7 + 5 * pwrVal) * arcaneDmg),
+                            armorPenetration: 0,
+                            explosionSound: SoundDefOf.Thunder_OffMap,
+                            chanceToStartFire: 0.1f,
+                            damageFalloff: true
+                        );
 
                     }
-                    GenExplosion.DoExplosion(curBldgTarg.Position, base.Map, 1f, TMDamageDefOf.DamageDefOf.TM_Lightning, this.launcher, Mathf.RoundToInt(Rand.Range(10 + 3 * pwrVal, 25 + 5 * pwrVal) * this.arcaneDmg), 0, SoundDefOf.Thunder_OffMap, null, null, null, null, 0f, 1, false, null, 0f, 1, 0.1f, true);
+                    GenExplosion.DoExplosion(
+                        curBldgTarg.Position, Map, 1f, TMDamageDefOf.DamageDefOf.TM_Lightning, launcher,
+                        damAmount: Mathf.RoundToInt(Rand.Range(10 + 3 * pwrVal, 25 + 5 * pwrVal) * arcaneDmg),
+                        armorPenetration: 0,
+                        explosionSound: SoundDefOf.Thunder_OffMap,
+                        chanceToStartFire: 0.1f,
+                        damageFalloff: true
+                    );
                     this.lastStrikeBldg = this.age + (this.maxStrikeDelayBldg - (int)Rand.Range(0 + (pwrVal * 10), (pwrVal * 15)));
                 }
                 else
@@ -393,11 +418,6 @@ namespace TorannMagic
                         hitThing.TakeDamage(this.impactDamage.Value);
                     }
                 }
-                bool flag4 = this.explosion;
-                if (flag4)
-                {
-                    GenExplosion.DoExplosion(base.Position, base.Map, 0.9f, DamageDefOf.Stun, this, -1, 0, null, null, null, null, null, 0f, 1, false, null, 0f, 1, 0f, false);
-                }
             }
 
             List<IntVec3> dissipationList = GenRadial.RadialCellsAround(this.ExactPosition.ToIntVec3(), 12, false).ToList();
@@ -412,11 +432,25 @@ namespace TorannMagic
                         CellRect cellRect = CellRect.CenteredOn(strikeCell, 1);
                         cellRect.ClipInsideMap(base.Map);
                         IntVec3 randomCell = cellRect.RandomCell;
-                        GenExplosion.DoExplosion(randomCell, base.Map, Rand.Range(.2f, .6f), TMDamageDefOf.DamageDefOf.TM_Lightning, this.launcher, Mathf.RoundToInt(Rand.Range(3 + 3 * pwrVal, 7 + 5 * pwrVal) * this.arcaneDmg), 0, SoundDefOf.Thunder_OffMap, null, null, null, null, 0f, 1, false, null, 0f, 1, 0.1f, true);
+                        GenExplosion.DoExplosion(
+                            randomCell, Map, Rand.Range(.2f, .6f), TMDamageDefOf.DamageDefOf.TM_Lightning, launcher,
+                            damAmount: Mathf.RoundToInt(Rand.Range(3 + 3 * pwrVal, 7 + 5 * pwrVal) * arcaneDmg),
+                            armorPenetration: 0,
+                            explosionSound: SoundDefOf.Thunder_OffMap,
+                            chanceToStartFire: 0.1f,
+                            damageFalloff: true
+                        );
                     }
                 }
             }
-            GenExplosion.DoExplosion(this.ExactPosition.ToIntVec3(), base.Map, 3f + verVal, TMDamageDefOf.DamageDefOf.TM_Lightning, this.launcher, Mathf.RoundToInt(Rand.Range(5 + 5 * pwrVal, 10 + 10 * pwrVal) * this.arcaneDmg), 0, SoundDefOf.Thunder_OffMap, null, null, null, null, 0f, 1, false, null, 0f, 1, 0.1f, true);
+            GenExplosion.DoExplosion(
+                ExactPosition.ToIntVec3(), Map, 3f + verVal, TMDamageDefOf.DamageDefOf.TM_Lightning, launcher,
+                damAmount: Mathf.RoundToInt(Rand.Range(5 + 5 * pwrVal, 10 + 10 * pwrVal) * arcaneDmg),
+                armorPenetration: 0,
+                explosionSound: SoundDefOf.Thunder_OffMap,
+                chanceToStartFire: 0.1f,
+                damageFalloff: true
+            );
 
 
             this.Destroy(DestroyMode.Vanish);

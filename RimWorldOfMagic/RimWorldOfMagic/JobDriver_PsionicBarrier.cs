@@ -165,9 +165,22 @@ namespace TorannMagic
                             }
                             if(cellList[j].def.projectile.explosionRadius > 0 && cellList[j].def != TorannMagicDefOf.Projectile_FogOfTorment)
                             {
-                                GenExplosion.DoExplosion(barrierCells[i], this.pawn.Map, cellList[j].def.projectile.explosionRadius, cellList[j].def.projectile.damageDef, this.pawn, (int)projectileDamage, cellList[j].def.projectile.GetArmorPenetration(1, null), cellList[j].def.projectile.soundExplode,
-                                    null, cellList[j].def, null, cellList[j].def.projectile.postExplosionSpawnThingDef, cellList[j].def.projectile.postExplosionSpawnChance, cellList[j].def.projectile.postExplosionSpawnThingCount, cellList[j].def.projectile.applyDamageToExplosionCellsNeighbors,
-                                    cellList[j].def.projectile.preExplosionSpawnThingDef, cellList[j].def.projectile.preExplosionSpawnChance, cellList[j].def.projectile.preExplosionSpawnThingCount, cellList[j].def.projectile.explosionChanceToStartFire, cellList[j].def.projectile.explosionDamageFalloff);
+                                GenExplosion.DoExplosion(
+                                    barrierCells[i], pawn.Map, cellList[j].def.projectile.explosionRadius, cellList[j].def.projectile.damageDef, pawn,
+                                    damAmount: (int)projectileDamage,
+                                    armorPenetration: cellList[j].def.projectile.GetArmorPenetration(1),
+                                    explosionSound: cellList[j].def.projectile.soundExplode,
+                                    projectile: cellList[j].def,
+                                    postExplosionSpawnThingDef: cellList[j].def.projectile.postExplosionSpawnThingDef,
+                                    postExplosionSpawnChance: cellList[j].def.projectile.postExplosionSpawnChance,
+                                    postExplosionSpawnThingCount: cellList[j].def.projectile.postExplosionSpawnThingCount,
+                                    applyDamageToExplosionCellsNeighbors: cellList[j].def.projectile.applyDamageToExplosionCellsNeighbors,
+                                    preExplosionSpawnThingDef: cellList[j].def.projectile.preExplosionSpawnThingDef,
+                                    preExplosionSpawnChance: cellList[j].def.projectile.preExplosionSpawnChance,
+                                    preExplosionSpawnThingCount: cellList[j].def.projectile.preExplosionSpawnThingCount,
+                                    chanceToStartFire: cellList[j].def.projectile.explosionChanceToStartFire,
+                                    damageFalloff: cellList[j].def.projectile.explosionDamageFalloff
+                                );
                             }
                             cellList[j].Destroy(DestroyMode.Vanish);
                         }

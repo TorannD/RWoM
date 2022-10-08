@@ -16,7 +16,15 @@ namespace TorannMagic.Weapon
             ThingDef def = this.def;
             try
             {
-                GenExplosion.DoExplosion(base.Position, map, this.def.projectile.explosionRadius, DamageDefOf.Bomb, this.launcher, this.def.projectile.GetDamageAmount(1,null), 2, SoundDefOf.Crunch, def, this.equipmentDef, null, null, 0f, 1, false, null, 0f, 1, 0.1f, false);
+                GenExplosion.DoExplosion(
+                    Position, map, this.def.projectile.explosionRadius, DamageDefOf.Bomb, launcher,
+                    damAmount: this.def.projectile.GetDamageAmount(1),
+                    armorPenetration: 2,
+                    explosionSound: SoundDefOf.Crunch,
+                    weapon: def,
+                    projectile: equipmentDef,
+                    chanceToStartFire: 0.1f
+                );
             }
             catch
             {

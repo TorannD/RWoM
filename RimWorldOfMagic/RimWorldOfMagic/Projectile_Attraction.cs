@@ -82,7 +82,13 @@ namespace TorannMagic
                 this.duration = this.duration + (120 * verVal);
                 this.strikeDelay = this.strikeDelay - verVal;
                 this.radius = this.def.projectile.explosionRadius + (1.5f * pwrVal);
-                //GenExplosion.DoExplosion(base.Position, this.Map, this.radius, TMDamageDefOf.DamageDefOf.TM_Shadow, this.pawn, (int)((this.def.projectile.GetDamageAmount(1, null) * (1 + .15 * pwrVal)) * this.arcaneDmg * Rand.Range(.75f, 1.25f)), 0, TorannMagicDefOf.TM_SoftExplosion, def, null, null, null, 0f, 1, false, null, 0f, 1, 0f, false);
+                /*GenExplosion.DoExplosion(
+                    Position, Map, radius, TMDamageDefOf.DamageDefOf.TM_Shadow, pawn,
+                    damAmount: (int)((def.projectile.GetDamageAmount(1) * (1 + .15 * pwrVal)) * arcaneDmg * Rand.Range(.75f, 1.25f)),
+                    armorPenetration: 0,
+                    explosionSound: TorannMagicDefOf.TM_SoftExplosion,
+                    weapon: def
+                );*/
 
                 this.initialized = true;
                 IEnumerable<IntVec3> hediffCells = GenRadial.RadialCellsAround(base.Position, 2, true);

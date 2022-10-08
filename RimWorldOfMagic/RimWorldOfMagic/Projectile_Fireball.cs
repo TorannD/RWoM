@@ -14,12 +14,24 @@ namespace TorannMagic
 
 		protected override void Impact(Thing hitThing)
 		{
-            
-            Map map = base.Map;
+			Map map = Map;
 			base.Impact(hitThing);
-			ThingDef def = this.def;
-            //GenExplosion.DoExplosion(base.Position, map, this.def.projectile.explosionRadius, DamageDefOf.Bomb, this.launcher, SoundDefOf.PlanetkillerImpact, def, this.equipmentDef, null, 0f, 1, false, null, 0f, 1);
-            GenExplosion.DoExplosion(base.Position, map, this.def.projectile.explosionRadius, DamageDefOf.Bomb, this.launcher, Mathf.RoundToInt(Rand.Range(this.def.projectile.GetDamageAmount(1,null)/2, this.def.projectile.GetDamageAmount(1,null)) * this.arcaneDmg), 0, TorannMagicDefOf.TM_SoftExplosion, def, this.equipmentDef, null, null, 0f, 1, false, null, 0f, 1, 0.1f, true);
+            /*GenExplosion.DoExplosion(base.
+				Position, map, def.projectile.explosionRadius, DamageDefOf.Bomb, launcher,
+				explosionSound: SoundDefOf.PlanetkillerImpact,
+				weapon: def,
+				projectile: equipmentDef
+			);*/
+            GenExplosion.DoExplosion(
+	            Position, map, def.projectile.explosionRadius, DamageDefOf.Bomb, launcher,
+	            damAmount: Mathf.RoundToInt(Rand.Range(def.projectile.GetDamageAmount(1)/2, def.projectile.GetDamageAmount(1)) * arcaneDmg),
+	            armorPenetration: 0,
+	            explosionSound: TorannMagicDefOf.TM_SoftExplosion,
+	            weapon: def,
+	            projectile: equipmentDef,
+	            chanceToStartFire: 0.1f,
+	            damageFalloff: true
+	        );
             CellRect cellRect = CellRect.CenteredOn(base.Position, 5);
 			cellRect.ClipInsideMap(map);
             ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();

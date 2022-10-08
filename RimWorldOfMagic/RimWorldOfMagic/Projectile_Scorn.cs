@@ -185,7 +185,13 @@ namespace TorannMagic
                             IntVec3 curCell = targets[j];
                             if (this.map != null && curCell.IsValid && curCell.InBoundsWithNullCheck(this.map))
                             {
-                                GenExplosion.DoExplosion(curCell, this.Map, .4f, TMDamageDefOf.DamageDefOf.TM_Shadow, this.pawn, (int)((this.def.projectile.GetDamageAmount(1, null) * (1 + .15 * pwrVal)) * this.arcaneDmg * Rand.Range(.75f, 1.25f)), 0, TorannMagicDefOf.TM_SoftExplosion, def, null, null, null, 0f, 1, false, null, 0f, 1, 0f, false);
+                                GenExplosion.DoExplosion(
+                                    curCell, Map, .4f, TMDamageDefOf.DamageDefOf.TM_Shadow, pawn,
+                                    damAmount: (int)(this.def.projectile.GetDamageAmount(1) * (1 + .15 * pwrVal) * arcaneDmg * Rand.Range(.75f, 1.25f)),
+                                    armorPenetration: 0,
+                                    explosionSound: TorannMagicDefOf.TM_SoftExplosion,
+                                    weapon: def
+                                );
                             }
                         }
                         this.strikeNum++;

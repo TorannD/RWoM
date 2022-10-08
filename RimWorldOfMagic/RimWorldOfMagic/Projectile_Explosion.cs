@@ -197,7 +197,14 @@ namespace TorannMagic
                 {
                     float energy = 80000 * this.arcaneDmg;
                     GenTemperature.PushHeat(this.strikePos, this.Map, energy);
-                    GenExplosion.DoExplosion(this.strikePos, this.Map, this.radius/(4-this.expandingTick), DamageDefOf.Bomb, this.launcher, Mathf.RoundToInt(Rand.Range(this.damage *.7f, this.damage*.9f)), 1, DamageDefOf.Bomb.soundExplosion, null, null, null, null, 0, 0, false, null, 0, 0, .4f, true);
+                    GenExplosion.DoExplosion(
+                        strikePos, Map, radius/(4-expandingTick), DamageDefOf.Bomb, launcher,
+                        damAmount: Mathf.RoundToInt(Rand.Range(damage *.7f, damage*.9f)),
+                        armorPenetration: 1,
+                        explosionSound: DamageDefOf.Bomb.soundExplosion,
+                        chanceToStartFire: .4f,
+                        damageFalloff: true
+                    );
                 }
             }
             this.Destroy(DestroyMode.Vanish);

@@ -101,9 +101,15 @@ namespace TorannMagic
                 if (wrathAge[j] == this.timeToSmite/strikeNum)
                 {
                     TM_MoteMaker.MakePowerBeamMoteColor(smitePos[j], base.Map, this.radius * 3f, 2f, .5f, .1f, .5f, colorInt.ToColor);
-                    this.caster = this.launcher as Pawn;
-                    CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
-                    GenExplosion.DoExplosion(smitePos[j], map, 3f, TMDamageDefOf.DamageDefOf.TM_Overwhelm, this.launcher as Pawn, Mathf.RoundToInt((12 + TMDamageDefOf.DamageDefOf.TM_Overwhelm.defaultDamage + 3*pwrVal) * this.arcaneDmg), 0, TorannMagicDefOf.TM_Lightning, def, this.equipmentDef, null, null, 0f, 1, false, null, 0f, 1, 0f, false);
+                    caster = launcher as Pawn;
+                    GenExplosion.DoExplosion(
+                        smitePos[j], map, 3f, TMDamageDefOf.DamageDefOf.TM_Overwhelm, caster,
+                        damAmount: Mathf.RoundToInt((12 + TMDamageDefOf.DamageDefOf.TM_Overwhelm.defaultDamage + 3*pwrVal) * arcaneDmg),
+                        armorPenetration: 0,
+                        explosionSound: TorannMagicDefOf.TM_Lightning,
+                        weapon: def,
+                        projectile: equipmentDef
+                    );
                 }
             }
         }

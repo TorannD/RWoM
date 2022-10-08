@@ -221,7 +221,11 @@ namespace TorannMagic
                 IntVec3 hitCell = from + (dir * range).ToIntVec3();
                 //Log.Message("random strike " + hitCell);
                 //DamageCell(hitCell, caster);
-                GenExplosion.DoExplosion(hitCell, this.Map, 1f, TMDamageDefOf.DamageDefOf.TM_Lightning, caster, Mathf.RoundToInt(Rand.Range(4 + pwrVal, 8 + pwrVal) * arcaneDmg), 1.2f); 
+                GenExplosion.DoExplosion(
+                    hitCell, Map, 1f, TMDamageDefOf.DamageDefOf.TM_Lightning, caster,
+                    damAmount: Mathf.RoundToInt(Rand.Range(4 + pwrVal, 8 + pwrVal) * arcaneDmg),
+                    armorPenetration: 1.2f
+                );
                 this.Map.weatherManager.eventHandler.AddEvent(new TM_WeatherEvent_MeshGeneric(this.Map, TM_MatPool.thinLightning, from, hitCell, 2f, AltitudeLayer.MoteLow, strikeDelay, strikeDelay, 2));
             }
         }

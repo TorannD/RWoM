@@ -33,7 +33,16 @@ namespace TorannMagic
                 }
             }
             
-            GenExplosion.DoExplosion(base.Position, map, 0.4f, TMDamageDefOf.DamageDefOf.Firebolt, this.launcher, Mathf.RoundToInt(this.def.projectile.GetDamageAmount(1, null) * arcaneDmg), 0, this.def.projectile.soundExplode, def, this.equipmentDef, this.intendedTarget.Thing, null, 0f, 1, false, null, 0f, 1, 0.6f, false);
+            GenExplosion.DoExplosion(
+                Position, map, 0.4f, TMDamageDefOf.DamageDefOf.Firebolt, launcher,
+                damAmount: Mathf.RoundToInt(this.def.projectile.GetDamageAmount(1) * arcaneDmg),
+                armorPenetration: 0,
+                explosionSound: this.def.projectile.soundExplode,
+                weapon: def,
+                projectile: equipmentDef,
+                intendedTarget: intendedTarget.Thing,
+                chanceToStartFire: 0.6f
+            );
             CellRect cellRect = CellRect.CenteredOn(base.Position, 3);
             cellRect.ClipInsideMap(map);
 

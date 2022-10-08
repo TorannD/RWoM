@@ -63,10 +63,18 @@ namespace TorannMagic
                     Pawn e = TM_Calc.FindNearbyEnemy(this.Position, this.Map, this.factionInt, 20, 0);
                     if (e != null && TM_Calc.HasLoSFromTo(this.Position, e, this, 0, 20))
                     {
-                        GenExplosion.DoExplosion(e.Position, this.Map, .4f, DamageDefOf.Stun, this, 4, 1f);
+                        GenExplosion.DoExplosion(
+                            e.Position, Map, .4f, DamageDefOf.Stun, this,
+                            damAmount: 4,
+                            armorPenetration: 1f
+                        );
                         if (e.RaceProps.IsMechanoid || TM_Calc.IsRobotPawn(e))
                         {
-                            GenExplosion.DoExplosion(e.Position, this.Map, .4f, TMDamageDefOf.DamageDefOf.TM_ElectricalBurn, this, 8, 1f);
+                            GenExplosion.DoExplosion(
+                                e.Position, Map, .4f, TMDamageDefOf.DamageDefOf.TM_ElectricalBurn, this,
+                                damAmount: 8,
+                                armorPenetration: 1f
+                            );
                         }
                     }
                 }

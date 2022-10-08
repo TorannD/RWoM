@@ -41,7 +41,15 @@ namespace TorannMagic
                     ThingDef fog = TorannMagicDefOf.Fog_Poison;
                     fog.gas.expireSeconds.min = duration / 60;
                     fog.gas.expireSeconds.max = duration / 60;
-                    GenExplosion.DoExplosion(base.Position, map, radius, TMDamageDefOf.DamageDefOf.TM_Poison, this, 0, 0, SoundDef.Named("TinyBell"), def, null, null, fog, 1f, 1, false, null, 0f, 0, 0.0f, false);
+                    GenExplosion.DoExplosion(
+                        Position, map, radius, TMDamageDefOf.DamageDefOf.TM_Poison, this,
+                        damAmount: 0,
+                        armorPenetration: 0,
+                        explosionSound: SoundDef.Named("TinyBell"),
+                        weapon: def,
+                        postExplosionSpawnThingDef: fog,
+                        postExplosionSpawnChance: 1f
+                    );
                 }
 
                 if (this.age >= this.lastStrike + this.strikeDelay)

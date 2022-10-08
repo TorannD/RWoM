@@ -420,7 +420,13 @@ namespace TorannMagic
                 {
                     if(this.isExplosive)
                     {
-                        GenExplosion.DoExplosion(this.ExactPosition.ToIntVec3(), this.Map, this.impactRadius, this.impactDamageType, this.launcher as Pawn, this.explosionDamage, -1, this.impactDamageType.soundExplosion, def, null, null, null, 0f, 1, false, null, 0f, 0, 0.0f, true);
+                        GenExplosion.DoExplosion(
+                            ExactPosition.ToIntVec3(), Map, impactRadius, impactDamageType, launcher as Pawn,
+                            damAmount: explosionDamage,
+                            explosionSound: impactDamageType.soundExplosion,
+                            weapon: def,
+                            damageFalloff: true
+                        );
                     }
                     else
                     {
