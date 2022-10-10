@@ -53,11 +53,9 @@ namespace TorannMagic
 
         public void TickAction()
         {
-            Pawn pawn = this.Pawn;
+            Pawn pawn = Pawn;
 
-
-            IEnumerable<Hediff> hds = this.Pawn.health.hediffSet.GetHediffs<Hediff>();
-            foreach (Hediff current in hds)
+            foreach (Hediff current in pawn.health.hediffSet.hediffs)
             {
                 if (verVal >= 1)
                 {
@@ -76,27 +74,16 @@ namespace TorannMagic
                 }
             }
 
-            using (IEnumerator<BodyPartRecord> enumerator = pawn.health.hediffSet.GetInjuredParts().GetEnumerator())
+            foreach (Hediff_Injury injury in pawn.health.hediffSet.hediffs.OfType<Hediff_Injury>())
             {
-                while (enumerator.MoveNext())
+                if (injury.CanHealNaturally() && !injury.IsPermanent())
                 {
-                    BodyPartRecord rec = enumerator.Current;
-                    IEnumerable<Hediff_Injury> arg_BB_0 = pawn.health.hediffSet.GetHediffs<Hediff_Injury>();
-                    Func<Hediff_Injury, bool> arg_BB_1;
-                    arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
-                    foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1))
-                    {
-                        bool flag5 = current.CanHealNaturally() && !current.IsPermanent();
-                        if (flag5)
-                        {
-                            float healBleedingBonus = (current.Bleeding ? .2f : 0f);                                
-                            current.Heal((Rand.Range(.2f, .3f) + healBleedingBonus) * this.parent.Severity * (1f + (.1f * pwrVal))); //140-200 applications = 14 - 39 healing for every wound                            
-                        }        
-                        else if(verVal >= 3)
-                        {
-                            current.Heal(Rand.Range(.008f, .012f) * this.parent.Severity * (1f + (.1f * pwrVal))); //.56 - 1.56 permanent injury healing for every wound
-                        }
-                    }                    
+                    float healBleedingBonus = injury.Bleeding ? .2f : 0f;
+                    injury.Heal((Rand.Range(.2f, .3f) + healBleedingBonus) * parent.Severity * (1f + .1f * pwrVal)); //140-200 applications = 14 - 39 healing for every wound
+                }
+                else if(verVal >= 3)
+                {
+                    injury.Heal(Rand.Range(.008f, .012f) * parent.Severity * (1f + .1f * pwrVal)); //.56 - 1.56 permanent injury healing for every wound
                 }
             }
         }

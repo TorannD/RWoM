@@ -65,16 +65,16 @@ namespace TorannMagic
                         }
                         if (Find.TickManager.TicksGame % 300 == 0)
                         {
-                            IEnumerable<Hediff_Injury> injuries = this.Pawn.health.hediffSet.GetHediffs<Hediff_Injury>();
-                            if(injuries.Count() > 20 && this.parent.Severity < 1f)
+                            List<Hediff_Injury> injuries = Pawn.health.hediffSet.hediffs.OfType<Hediff_Injury>().ToList();
+                            if(injuries.Count > 20 && parent.Severity < 1f)
                             {
-                                HealthUtility.AdjustSeverity(this.Pawn, this.Def, -10);
-                                HealthUtility.AdjustSeverity(this.Pawn, this.Def, 1.5f);
+                                HealthUtility.AdjustSeverity(Pawn, Def, -10);
+                                HealthUtility.AdjustSeverity(Pawn, Def, 1.5f);
                             }
-                            else if(injuries.Count() > 40 && this.parent.Severity < 2f)
+                            else if(injuries.Count > 40 && parent.Severity < 2f)
                             {
-                                HealthUtility.AdjustSeverity(this.Pawn, this.Def, -10);
-                                HealthUtility.AdjustSeverity(this.Pawn, this.Def, 2.5f);
+                                HealthUtility.AdjustSeverity(Pawn, Def, -10);
+                                HealthUtility.AdjustSeverity(Pawn, Def, 2.5f);
                             }
                         }
                     }
