@@ -11,6 +11,7 @@ using UnityEngine;
 using System.Text;
 using CompDeflector;
 using TorannMagic.Ideology;
+using TorannMagic.Utils;
 
 namespace TorannMagic
 {
@@ -1175,7 +1176,7 @@ namespace TorannMagic
                                         bool flag7 = (this.Pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_DisguiseHD")) || this.Pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_DisguiseHD_I")) || this.Pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_DisguiseHD_II")) || this.Pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_DisguiseHD_III")));
                                         if (targetPawn.Faction != this.Pawn.Faction && flag7)
                                         {
-                                            using (IEnumerator<Hediff> enumerator = this.Pawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
+                                            using (IEnumerator<Hediff> enumerator = Pawn.health.hediffSet.hediffs.GetEnumerator())
                                             {
                                                 while (enumerator.MoveNext())
                                                 {
@@ -2345,15 +2346,13 @@ namespace TorannMagic
 
         public void RemoveTMagicHediffs()
         {
-            List<Hediff> allHediffs = this.Pawn.health.hediffSet.GetHediffs<Hediff>().ToList();
-            for (int i = 0; i < allHediffs.Count(); i++)
+            List<Hediff> allHediffs = Pawn.health.hediffSet.hediffs;
+            for (int i = 0; i < allHediffs.Count; i++)
             {
-                Hediff hediff = allHediffs[i];
-                if (hediff.def.defName.Contains("TM_"))
+                if (allHediffs[i].def.defName.Contains("TM_"))
                 {
-                    this.Pawn.health.RemoveHediff(hediff);
+                    Pawn.health.RemoveHediff(allHediffs[i]);
                 }
-
             }
         }
 
@@ -3266,55 +3265,26 @@ namespace TorannMagic
 
         public void SiphonReversal(int verVal)
         {
-            Pawn pawn = this.Pawn;
+            Pawn pawn = Pawn;
             CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
-            comp.Stamina.CurLevel += (.015f * verVal);         
-            int num = 1 + verVal;
-            using (IEnumerator<BodyPartRecord> enumerator = pawn.health.hediffSet.GetInjuredParts().GetEnumerator())
-            {
-                while (enumerator.MoveNext())
-                {
-                    BodyPartRecord rec = enumerator.Current;
-                    bool flag2 = num > 0;
-                    if (flag2)
-                    {
-                        int num2 = 1 + verVal;
-                        ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                        if (!pawn.IsColonist && settingsRef.AIHardMode)
-                        {
-                            num2 = 5;
-                        }
-                        IEnumerable<Hediff_Injury> arg_BB_0 = pawn.health.hediffSet.GetHediffs<Hediff_Injury>();
-                        Func<Hediff_Injury, bool> arg_BB_1;
-                        arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
+            comp.Stamina.CurLevel += .015f * verVal;
 
-                        foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1))
-                        {
-                            bool flag4 = num2 > 0;
-                            if (flag4)
-                            {
-                                bool flag5 = current.CanHealNaturally() && !current.IsPermanent();
-                                if (flag5)
-                                {
-                                    if (!pawn.IsColonist)
-                                    {
-                                        current.Heal(20.0f + (float)verVal * 3f); // power affects how much to heal
-                                    }
-                                    else
-                                    {
-                                        current.Heal((2.0f + (float)verVal * 1f)); // power affects how much to heal
-                                    }
-                                    TM_MoteMaker.ThrowRegenMote(pawn.Position.ToVector3Shifted(), pawn.Map, .6f);
-                                    TM_MoteMaker.ThrowRegenMote(pawn.Position.ToVector3Shifted(), pawn.Map, .4f);
-                                    num--;
-                                    num2--;
-                                }
-                            }
-                        }
-                    }
-                }
+            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+            int numberOfInjuriesPerPart = !pawn.IsColonist && settingsRef.AIHardMode ? 5 : 1 + verVal;
+
+            IEnumerable<Hediff_Injury> injuries = pawn.health.hediffSet.hediffs
+                .OfType<Hediff_Injury>()
+                .Where(injury => injury.CanHealNaturally() && !injury.IsPermanent())
+                .DistinctBy(injury => injury.Part, numberOfInjuriesPerPart)
+                .Take(1 + verVal);
+
+            float amountToHeal = pawn.IsColonist ? 2.0f + verVal : 20.0f + verVal * 3f;
+            foreach (Hediff_Injury injury in injuries)
+            {
+                injury.Heal(amountToHeal);
+                TM_MoteMaker.ThrowRegenMote(pawn.Position.ToVector3Shifted(), pawn.Map, .6f);
+                TM_MoteMaker.ThrowRegenMote(pawn.Position.ToVector3Shifted(), pawn.Map, .4f);
             }
-            
         }
 
         public void GiveReversalJob(DamageInfo dinfo)  // buggy AF due to complications with CompDeflector
@@ -4652,7 +4622,7 @@ namespace TorannMagic
                     }
                 }
 
-                using (IEnumerator<Hediff> enumerator = this.Pawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
+                using (IEnumerator<Hediff> enumerator = Pawn.health.hediffSet.hediffs.GetEnumerator())
                 {
                     while (enumerator.MoveNext())
                     {
@@ -4783,7 +4753,7 @@ namespace TorannMagic
                 {
                     int pwrVal = this.MightData.MightPowerSkill_FieldTraining.FirstOrDefault((MightPowerSkill x) => x.label == "TM_FieldTraining_pwr").level;
                     int verVal = this.MightData.MightPowerSkill_FieldTraining.FirstOrDefault((MightPowerSkill x) => x.label == "TM_FieldTraining_ver").level;
-                    using (IEnumerator<Hediff> enumerator = this.Pawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
+                    using (IEnumerator<Hediff> enumerator = Pawn.health.hediffSet.hediffs.GetEnumerator())
                     {
                         while (enumerator.MoveNext())
                         {
@@ -5047,7 +5017,7 @@ namespace TorannMagic
             }
 
             //Determine active or sustained abilities            
-            using (IEnumerator<Hediff> enumerator = this.Pawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
+            using (IEnumerator<Hediff> enumerator = this.Pawn.health.hediffSet.hediffs.GetEnumerator())
             {
                 while (enumerator.MoveNext())
                 {

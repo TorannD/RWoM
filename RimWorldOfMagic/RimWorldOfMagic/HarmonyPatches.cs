@@ -1458,8 +1458,8 @@ namespace TorannMagic
                             Pawn pawn = map.mapPawns.AllPawnsSpawned[i];
                             if (!pawn.Position.Roofed(map) && Rand.Chance(.3f))
                             {
-                                IEnumerable<Hediff_Injury> injuries = pawn.health.hediffSet.GetHediffs<Hediff_Injury>();
-                                if (injuries != null && injuries.Count() > 0)
+                                IEnumerable<Hediff_Injury> injuries = pawn.health.hediffSet.hediffs.OfType<Hediff_Injury>().ToList();
+                                if (injuries.Any())
                                 {
                                     Hediff_Injury injury = injuries.RandomElement();
                                     if (injury.CanHealNaturally() && !injury.IsPermanent())

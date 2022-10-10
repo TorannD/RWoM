@@ -137,43 +137,30 @@ namespace TorannMagic
 
         public void SlowTickAction()
         {
-            using (IEnumerator<BodyPartRecord> enumerator = this.Pawn.health.hediffSet.GetInjuredParts().GetEnumerator())
+            Hediff_Injury injuryToTend = Pawn.health.hediffSet.hediffs
+                .OfType<Hediff_Injury>()
+                .FirstOrDefault(injury => injury.CanHealNaturally() && !injury.IsPermanent() && injury.TendableNow());
+            if (injuryToTend == default) return;
+
+            if (Rand.Chance(.15f))
             {
-                while (enumerator.MoveNext())
-                {
-                    BodyPartRecord rec = enumerator.Current;
-
-                    IEnumerable<Hediff_Injury> arg_BB_0 = this.Pawn.health.hediffSet.GetHediffs<Hediff_Injury>();
-                    Func<Hediff_Injury, bool> arg_BB_1;
-
-                    arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
-
-                    foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1))
-                    {
-                        bool flag5 = current.CanHealNaturally() && !current.IsPermanent() && current.TendableNow();
-                        if (flag5)
-                        {
-                            if (Rand.Chance(.15f))
-                            {
-                                DamageInfo dinfo;
-                                dinfo = new DamageInfo(DamageDefOf.Burn, Mathf.RoundToInt(current.Severity / 2), 0, (float)-1, this.Pawn, rec, null, DamageInfo.SourceCategory.ThingOrUnknown);
-                                dinfo.SetAllowDamagePropagation(false);
-                                dinfo.SetInstantPermanentInjury(true);
-                                current.Heal(100);
-                                TM_MoteMaker.ThrowFlames(this.Pawn.DrawPos, this.Pawn.Map, Rand.Range(.1f, .2f));
-                                this.Pawn.TakeDamage(dinfo);
-                            }
-                            else
-                            {
-                                current.Tended(1, 1);
-                                TM_MoteMaker.ThrowFlames(this.Pawn.DrawPos, this.Pawn.Map, Rand.Range(.1f, .2f));
-                            }
-                            goto ExitEnum;
-                        }
-                    }
-                }
+                DamageInfo dinfo = new DamageInfo(
+                    DamageDefOf.Burn,
+                    amount: Mathf.RoundToInt(injuryToTend.Severity / 2),
+                    instigator: Pawn,
+                    hitPart: injuryToTend.Part
+                );
+                dinfo.SetAllowDamagePropagation(false);
+                dinfo.SetInstantPermanentInjury(true);
+                injuryToTend.Heal(100);
+                TM_MoteMaker.ThrowFlames(Pawn.DrawPos, Pawn.Map, Rand.Range(.1f, .2f));
+                Pawn.TakeDamage(dinfo);
             }
-            ExitEnum:;
+            else
+            {
+                injuryToTend.Tended(1, 1);
+                TM_MoteMaker.ThrowFlames(Pawn.DrawPos, Pawn.Map, Rand.Range(.1f, .2f));
+            }
         }
 
         public override bool CompShouldRemove

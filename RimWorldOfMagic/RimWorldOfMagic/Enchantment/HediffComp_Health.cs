@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using System;
 using System.Collections.Generic;
+using TorannMagic.Utils;
 
 namespace TorannMagic.Enchantment
 {
@@ -22,39 +23,15 @@ namespace TorannMagic.Enchantment
 
         public override void HediffActionTick()
         {
-            Pawn pawn = this.Pawn;
-            int num = 2;
+            IEnumerable<Hediff_Injury> injuries = Pawn.health.hediffSet.hediffs
+                .OfType<Hediff_Injury>()
+                .Where(injury => injury.CanHealNaturally() && !injury.IsPermanent())
+                .DistinctBy(injury => injury.Part)
+                .Take(2);
 
-            using (IEnumerator<BodyPartRecord> enumerator = pawn.health.hediffSet.GetInjuredParts().GetEnumerator())
+            foreach (Hediff_Injury injury in injuries)
             {
-                while (enumerator.MoveNext())
-                {
-                    BodyPartRecord rec = enumerator.Current;
-                    bool flag2 = num > 0;
-                    int num2 = 1;
-                    if (flag2)
-                    {
-                        IEnumerable<Hediff_Injury> arg_BB_0 = pawn.health.hediffSet.GetHediffs<Hediff_Injury>();
-                        Func<Hediff_Injury, bool> arg_BB_1;
-
-                        arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
-
-                        foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1))
-                        {
-                            bool flag3 = num2 > 0;
-                            if (flag3)
-                            {
-                                bool flag5 = current.CanHealNaturally() && !current.IsPermanent();
-                                if (flag5)
-                                {
-                                    current.Heal(Rand.Range(.1f, .3f));
-                                    num--;
-                                    num2--;
-                                }
-                            }
-                        }
-                    }
-                }
+                injury.Heal(Rand.Range(.1f, .3f));
             }
         }
     }

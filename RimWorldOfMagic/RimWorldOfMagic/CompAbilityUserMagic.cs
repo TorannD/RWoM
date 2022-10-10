@@ -4757,13 +4757,12 @@ namespace TorannMagic
 
         public void RemoveTMagicHediffs()
         {
-            List<Hediff> allHediffs = this.Pawn.health.hediffSet.GetHediffs<Hediff>().ToList();
-            for (int i = 0; i < allHediffs.Count(); i++)
+            List<Hediff> allHediffs = Pawn.health.hediffSet.hediffs;
+            for (int i = 0; i < allHediffs.Count; i++)
             {
-                Hediff hediff = allHediffs[i];
-                if (hediff.def.defName.Contains("TM_"))
+                if (allHediffs[i].def.defName.Contains("TM_"))
                 {
-                    this.Pawn.health.RemoveHediff(hediff);
+                    this.Pawn.health.RemoveHediff(allHediffs[i]);
                 }
 
             }
@@ -8584,7 +8583,7 @@ namespace TorannMagic
                 _maxMPUpkeep += TorannMagicDefOf.TM_Recall.upkeepEnergyCost * (1 - (TorannMagicDefOf.TM_Recall.upkeepEfficiencyPercent * this.MagicData.MagicPowerSkill_Recall.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Recall_eff").level));
                 _mpRegenRateUpkeep += TorannMagicDefOf.TM_Recall.upkeepRegenCost * (1 - (TorannMagicDefOf.TM_Recall.upkeepEfficiencyPercent * this.MagicData.MagicPowerSkill_Recall.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Recall_eff").level));
             }
-            using (IEnumerator<Hediff> enumerator = this.Pawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
+            using (IEnumerator<Hediff> enumerator = Pawn.health.hediffSet.hediffs.GetEnumerator())
             {
                 while (enumerator.MoveNext())
                 {

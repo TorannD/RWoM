@@ -260,10 +260,8 @@ namespace TorannMagic
             AbilityUser.SpawnThings spawnables = new SpawnThings();
             spawnables.def = ThingDef.Named("TM_Sentinel");
             spawnables.spawnCount = 1;
-            bool flag = spawnables.def != null;
-            if (flag)
+            if (spawnables.def != null)
             {
-                Faction faction = this.sustainerPawn.Faction;
                 ThingDef def = spawnables.def;
                 ThingDef stuff = null;
                 bool madeFromStuff = def.MadeFromStuff;
@@ -272,30 +270,15 @@ namespace TorannMagic
                     stuff = ThingDef.Named("BlocksGranite");
                 }
                 spawnedThing = ThingMaker.MakeThing(def, stuff);
-                GenSpawn.Spawn(spawnedThing, this.sentinelLoc, this.Pawn.Map, this.rotation, WipeMode.Vanish, false);
-                float totalHealth = 0;
-                float healthDeficit = 0;
-                using (IEnumerator<BodyPartRecord> enumerator = this.Pawn.health.hediffSet.GetInjuredParts().GetEnumerator())
-                {
-                    while (enumerator.MoveNext())
-                    {
-                        BodyPartRecord rec = enumerator.Current;
-                        totalHealth += rec.def.hitPoints;
-                        IEnumerable<Hediff_Injury> arg_BB_0 = this.Pawn.health.hediffSet.GetHediffs<Hediff_Injury>();
-                        Func<Hediff_Injury, bool> arg_BB_1;
+                GenSpawn.Spawn(spawnedThing, sentinelLoc, Pawn.Map, rotation);
+                float injurySeverity = Pawn.health.hediffSet.hediffs
+                    .OfType<Hediff_Injury>()
+                    .Sum(injury => injury.Severity);
 
-                        arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
-
-                        foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1))
-                        {                            
-                            healthDeficit += current.Severity;
-                        }
-                    }
-                }
-                CompAbilityUserMagic comp = this.sustainerPawn.GetCompAbilityUserMagic();
-                comp.summonedSentinels.Remove(this.Pawn);
+                CompAbilityUserMagic comp = sustainerPawn.GetCompAbilityUserMagic();
+                comp.summonedSentinels.Remove(Pawn);
                 comp.summonedSentinels.Add(spawnedThing);
-                DamageInfo dinfo = new DamageInfo(DamageDefOf.Blunt, 10*healthDeficit, 0, (float)-1, this.Pawn, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
+                DamageInfo dinfo = new DamageInfo(DamageDefOf.Blunt, 10*injurySeverity, 0, -1, Pawn);
                 spawnedThing.TakeDamage(dinfo);
 
             }

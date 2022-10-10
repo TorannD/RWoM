@@ -176,85 +176,38 @@ namespace TorannMagic
                 BFBEffect.Trigger(new TargetInfo(this.linkedPawn.Position, this.linkedPawn.Map, false), new TargetInfo(this.linkedPawn.Position, this.linkedPawn.Map, false));
                 BFBEffect.Cleanup();
             }
-            int num = 1;
-            using (IEnumerator<BodyPartRecord> enumerator =linkedPawn.health.hediffSet.GetInjuredParts().GetEnumerator())
-            {
-                while (enumerator.MoveNext())
-                {
-                    BodyPartRecord rec = enumerator.Current;
-                    bool flag2 = num > 0;
-                    if (flag2)
-                    {
-                        int num2 = 1;
-                        IEnumerable<Hediff_Injury> arg_BB_0 = linkedPawn.health.hediffSet.GetHediffs<Hediff_Injury>();
-                        Func<Hediff_Injury, bool> arg_BB_1;
 
-                        arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
+            // Heal first injury
+            Hediff_Injury linkedInjury = linkedPawn.health.hediffSet.hediffs
+                .OfType<Hediff_Injury>()
+                .FirstOrDefault(injury => !injury.CanHealNaturally() && injury.IsPermanent());
+            if (linkedInjury == default) return;
 
-                        foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1))
-                        {
-                            bool flag4 = num2 > 0;
-                            if (flag4)
-                            {
-                                bool flag5 = !current.CanHealNaturally() && current.IsPermanent();
-                                if (flag5)
-                                {
-                                    if (rec.def.tags.Contains(BodyPartTagDefOf.ConsciousnessSource))
-                                    {
-                                        current.Heal(Rand.Range(.03f, .05f) * this.arcaneDmg);
-                                    }
-                                    else
-                                    {
-                                        current.Heal(Rand.Range(.15f, .25f) * this.arcaneDmg);
-                                        //current.Heal(5.0f + (float)pwrVal * 3f); // power affects how much to heal
-                                        num--;
-                                        num2--;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+            if (linkedInjury.Part.def.tags.Contains(BodyPartTagDefOf.ConsciousnessSource))
+                linkedInjury.Heal(Rand.Range(.03f, .05f) * arcaneDmg);
+            else
+                linkedInjury.Heal(Rand.Range(.15f, .25f) * arcaneDmg);
         }
 
         public void HealWounds()
         {
-            int num = 1;
-            using (IEnumerator<BodyPartRecord> enumerator = this.Pawn.health.hediffSet.GetInjuredParts().GetEnumerator())
-            {
-                while (enumerator.MoveNext())
-                {
-                    BodyPartRecord rec = enumerator.Current;
-                    bool flag2 = num > 0;
+            Hediff_Injury injuryToHeal = Pawn.health.hediffSet.hediffs
+                .OfType<Hediff_Injury>()
+                .FirstOrDefault(injury => injury.CanHealNaturally() && !injury.IsPermanent());
+            if (injuryToHeal == default) return;
 
-                    if (flag2)
-                    {
-                        int num2 = 1;
-                        IEnumerable<Hediff_Injury> arg_BB_0 = this.Pawn.health.hediffSet.GetHediffs<Hediff_Injury>();
-                        Func<Hediff_Injury, bool> arg_BB_1;
-
-                        arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
-
-                        foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1))
-                        {
-                            bool flag4 = num2 > 0;
-                            if (flag4)
-                            {                                
-                                bool flag5 = current.CanHealNaturally() && !current.IsPermanent();
-                                if (flag5)
-                                {
-                                    this.bleedRate = this.Pawn.health.hediffSet.BleedRateTotal;
-                                    current.Heal(2f + (.25f * this.bleedRate));
-                                    TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_BloodMist, this.Pawn.DrawPos, this.Pawn.Map, Rand.Range(.5f, .85f), .2f, 0.05f, 1f, Rand.Range(-50, 50), Rand.Range(1f, 1.7f), (Quaternion.AngleAxis(Rand.Range(70f, 110f), Vector3.up) * this.directionToLinkedPawn).ToAngleFlat(), Rand.Range(0, 360));
-                                    num--;
-                                    num2--;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+            injuryToHeal.Heal(2f + .25f * Pawn.health.hediffSet.BleedRateTotal);
+            TM_MoteMaker.ThrowGenericMote(
+                TorannMagicDefOf.Mote_BloodMist, Pawn.DrawPos, Pawn.Map,
+                scale: Rand.Range(.5f, .85f),
+                solidTime: .2f,
+                fadeIn: 0.05f,
+                fadeOut: 1f,
+                rotationRate: Rand.Range(-50, 50),
+                velocity: Rand.Range(1f, 1.7f),
+                velocityAngle: (Quaternion.AngleAxis(Rand.Range(70f, 110f), Vector3.up) * directionToLinkedPawn).ToAngleFlat(),
+                lookAngle: Rand.Range(0, 360)
+            );
         }
 
         public override bool CompShouldRemove
