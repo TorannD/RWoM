@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using HarmonyLib;
 using System.Linq;
+using TorannMagic.Utils;
 
 namespace TorannMagic
 {
@@ -107,39 +108,15 @@ namespace TorannMagic
 
         public void TickActionHealth()
         {
-            Pawn pawn = this.Pawn;
-            int num = 2;
+            IEnumerable<Hediff_Injury> injuries = Pawn.health.hediffSet.hediffs
+                .OfType<Hediff_Injury>()
+                .Where(injury => injury.CanHealNaturally())
+                .DistinctBy(injury => injury.Part)
+                .Take(2);
 
-            using (IEnumerator<BodyPartRecord> enumerator = pawn.health.hediffSet.GetInjuredParts().GetEnumerator())
+            foreach (Hediff_Injury injury in injuries)
             {
-                while (enumerator.MoveNext())
-                {
-                    BodyPartRecord rec = enumerator.Current;
-                    bool flag2 = num > 0;
-                    int num2 = 1;
-                    if (flag2)
-                    {
-                        IEnumerable<Hediff_Injury> arg_BB_0 = pawn.health.hediffSet.GetHediffs<Hediff_Injury>();
-                        Func<Hediff_Injury, bool> arg_BB_1;
-
-                        arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
-
-                        foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1))
-                        {
-                            bool flag3 = num2 > 0;
-                            if (flag3)
-                            {
-                                bool flag5 = current.CanHealNaturally() && !current.IsPermanent();
-                                if (flag5)
-                                {
-                                    current.Heal(Rand.Range(.2f, .5f) + (.1f * pwrVal));
-                                    num--;
-                                    num2--;
-                                }
-                            }
-                        }
-                    }
-                }
+                injury.Heal(Rand.Range(.2f, .5f) + .1f * pwrVal);
             }
         }
 

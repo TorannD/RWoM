@@ -83,56 +83,17 @@ namespace TorannMagic
                     if (!flag)
                     {
                         ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                        int num = 1; // + ver.level;
-                        if (settingsRef.AIHardMode && !pawn.IsColonist)
+                        int injuriesToHeal = settingsRef.AIHardMode && !pawn.IsColonist ? 2 : 1;
+
+                        IEnumerable<Hediff_Injury> injuries = pawn.health.hediffSet.hediffs
+                            .OfType<Hediff_Injury>()
+                            .Where(injury => injury.CanHealNaturally())
+                            .Take(injuriesToHeal);
+
+                        float amountToHeal = pawn.IsColonist ? 4f + .5f * hediffPwr : 10f + 1.5f * hediffPwr;
+                        foreach (Hediff_Injury injury in injuries)
                         {
-                            num = 2;
-                        }
-
-                        using (IEnumerator<BodyPartRecord> enumerator = pawn.health.hediffSet.GetInjuredParts().GetEnumerator())
-                        {
-                            while (enumerator.MoveNext())
-                            {
-                                BodyPartRecord rec = enumerator.Current;
-                                bool flag2 = num > 0;
-
-                                if (flag2)
-                                {
-
-                                    int num2 = 1; // + ver.level;
-                                    if (settingsRef.AIHardMode && !pawn.IsColonist)
-                                    {
-                                        num2 = 2;
-                                    }
-                                    IEnumerable<Hediff_Injury> arg_BB_0 = pawn.health.hediffSet.GetHediffs<Hediff_Injury>();
-                                    Func<Hediff_Injury, bool> arg_BB_1;
-
-                                    arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
-
-                                    foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1))
-                                    {
-                                        bool flag4 = num2 > 0;
-                                        if (flag4)
-                                        {
-                                            bool flag5 = current.CanHealNaturally() && !current.IsPermanent();
-                                            if (flag5)
-                                            {
-
-                                                if (!pawn.IsColonist)
-                                                {
-                                                    current.Heal(10f + (1.5f * hediffPwr));
-                                                }
-                                                else
-                                                {
-                                                    current.Heal(4f + (.5f * hediffPwr));
-                                                }
-                                                num--;
-                                                num2--;
-                                            }
-                                        }
-                                    }
-                                }
-                            }
+                            injury.Heal(amountToHeal);
                         }
                     }
                     else

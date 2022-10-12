@@ -119,16 +119,9 @@ namespace TorannMagic
 
         public void RemoveExistingEnchantment(Pawn pawn)
         {
-            Hediff hediff = null;
-            List<Hediff> allHediffs = new List<Hediff>();
-            allHediffs.Clear();
-            allHediffs = pawn.health.hediffSet.GetHediffs<Hediff>().ToList();
-            if (allHediffs != null && allHediffs.Count > 0)
-            {
-                for (int i = 0; i < allHediffs.Count; i++)
+                foreach (Hediff hediff in pawn.health.hediffSet.hediffs)
                 {
-                    hediff = allHediffs[i];
-                    if(hediff.def.defName.Contains("TM_WeaponEnchantment"))
+                    if (hediff.def.defName.Contains("TM_WeaponEnchantment"))
                     {
                         HediffComp_EnchantedWeapon ewComp = hediff.TryGetComp<HediffComp_EnchantedWeapon>();
                         if (ewComp != null)
@@ -142,7 +135,7 @@ namespace TorannMagic
                         pawn.health.RemoveHediff(hediff);
                     }
                 }
-            }
+
         }
     }
 }

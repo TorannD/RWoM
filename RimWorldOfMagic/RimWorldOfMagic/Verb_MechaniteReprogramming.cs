@@ -44,124 +44,111 @@ namespace TorannMagic
             Pawn pawn = this.currentTarget.Thing as Pawn;
             CompAbilityUserMagic comp = pawn.TryGetComp <CompAbilityUserMagic>();
 
-            bool flag = pawn != null;
-            if (flag)
+            if (pawn == null) return false;
+
+            int num = 1;
+
+            if(!pawn.DestroyedOrNull() && pawn.health?.hediffSet != null && !pawn.Dead)
             {
-                int num = 1;
-
-                if(!pawn.DestroyedOrNull() && pawn.health != null || pawn.health.hediffSet != null && !pawn.Dead) 
+                bool success = false;
+                List<TMDefs.TM_CategoryHediff> mechaniteList = HediffCategoryList.Named("TM_Category_Hediffs").mechanites;
+                foreach (Hediff hediff in pawn.health.hediffSet.hediffs)
                 {
-                    bool success = false;
-                    List<TMDefs.TM_CategoryHediff> mechaniteList = HediffCategoryList.Named("TM_Category_Hediffs").mechanites;
-                    using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
+                    if (TM_Data.MechaniteList().Contains(hediff.def))
                     {
-                        while (enumerator.MoveNext())
+                        foreach(TMDefs.TM_CategoryHediff chd in mechaniteList)
                         {
-                            Hediff rec = enumerator.Current;
-                            bool flag2 = num > 0;
-
-
-                            if (TM_Data.MechaniteList().Contains(rec.def))
+                            if (chd.hediffDefname.Contains(hediff.def.defName))
                             {
-                                foreach(TMDefs.TM_CategoryHediff chd in mechaniteList)
+                                if (comp != null)
                                 {
-                                    if (chd.hediffDefname.Contains(rec.def.defName))
+                                    if (chd.requiredSkillName != "TM_Purify_ver")
                                     {
-                                        if (comp != null)
+                                        verVal = comp.MagicData.AllMagicPowerSkills.FirstOrDefault((MagicPowerSkill x) => x.label == chd.requiredSkillName).level;
+                                    }
+                                    if (chd.powerSkillName != "TM_Purify_pwr")
+                                    {
+                                        pwrVal = comp.MagicData.AllMagicPowerSkills.FirstOrDefault((MagicPowerSkill x) => x.label == chd.powerSkillName).level;
+                                    }
+                                }
+                                if (verVal >= chd.requiredSkillLevel)
+                                {
+                                    if (chd.removeOnCure)
+                                    {
+                                        if (Rand.Chance((chd.chanceToRemove + (chd.powerSkillAdjustment * pwrVal)) * arcaneDmg))
                                         {
-                                            if (chd.requiredSkillName != "TM_Purify_ver")
+                                            pawn.health.RemoveHediff(hediff);
+                                            if(chd.replacementHediffDefname != "")
                                             {
-                                                verVal = comp.MagicData.AllMagicPowerSkills.FirstOrDefault((MagicPowerSkill x) => x.label == chd.requiredSkillName).level;
+                                                HealthUtility.AdjustSeverity(pawn, HediffDef.Named(chd.replacementHediffDefname), chd.replacementHediffSeverity);
                                             }
-                                            if (chd.powerSkillName != "TM_Purify_pwr")
-                                            {
-                                                pwrVal = comp.MagicData.AllMagicPowerSkills.FirstOrDefault((MagicPowerSkill x) => x.label == chd.powerSkillName).level;
-                                            }
-                                        }                                        
-                                        if (verVal >= chd.requiredSkillLevel)
+                                            success = true;
+                                            num--;
+                                            break;
+                                        }
+                                        else
                                         {
-                                            if (chd.removeOnCure)
+                                            MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Failed to remove " + hediff.Label + " ...");
+                                        }
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        hediff.Severity -= ((chd.severityReduction + (chd.powerSkillAdjustment * pwrVal)) * arcaneDmg);
+                                        if ((hediff.Severity < 0))
+                                        {
+                                            if (chd.replacementHediffDefname != "")
                                             {
-                                                if (Rand.Chance((chd.chanceToRemove + (chd.powerSkillAdjustment * pwrVal)) * arcaneDmg))
-                                                {
-                                                    pawn.health.RemoveHediff(rec);
-                                                    if(chd.replacementHediffDefname != "")
-                                                    {
-                                                        HealthUtility.AdjustSeverity(pawn, HediffDef.Named(chd.replacementHediffDefname), chd.replacementHediffSeverity);
-                                                    }
-                                                    success = true;
-                                                    num--;
-                                                    break;
-                                                }
-                                                else
-                                                {
-                                                    MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Failed to remove " + rec.Label + " ...");
-                                                }
-                                                break;
-                                            }
-                                            else
-                                            {
-                                                rec.Severity -= ((chd.severityReduction + (chd.powerSkillAdjustment * pwrVal)) * arcaneDmg);
-                                                if ((rec.Severity < 0))
-                                                {
-                                                    if (chd.replacementHediffDefname != "")
-                                                    {
-                                                        HealthUtility.AdjustSeverity(pawn, HediffDef.Named(chd.replacementHediffDefname), chd.replacementHediffSeverity);
-                                                    }
-                                                }
-                                                success = true;
-                                                num--;
-                                                break;
+                                                HealthUtility.AdjustSeverity(pawn, HediffDef.Named(chd.replacementHediffDefname), chd.replacementHediffSeverity);
                                             }
                                         }
+                                        success = true;
+                                        num--;
+                                        break;
                                     }
                                 }
                             }
-                            else
-                            {
-                                if (rec.def.defName == "SensoryMechanites")
-                                {
-                                    pawn.health.RemoveHediff(rec);
-                                    HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_ReprogrammedSenMechanites_HD, .001f);
-                                    num--;
-                                    success = true;
-                                    break;
-                                }
-                                else if (rec.def.defName == "FibrousMechanites")
-                                {
-                                    pawn.health.RemoveHediff(rec);
-                                    HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_ReprogrammedFibMechanites_HD, .001f);
-                                    num--;
-                                    success = true;
-                                    break;
-                                }
-                                else if (rec.def.defName == "LymphaticMechanites")
-                                {
-                                    pawn.health.RemoveHediff(rec);
-                                    HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_ReprogrammedLymMechanites_HD, .001f);
-                                    num--;
-                                    success = true;
-                                    break;
-                                }
-                            }                         
                         }
-                    }
-                    if (success)
-                    {
-                        TM_MoteMaker.ThrowRegenMote(pawn.Position.ToVector3(), pawn.Map, 1.5f);
-                        MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Mechanite Reprogramming" + ": " + StringsToTranslate.AU_CastSuccess, -1f);
                     }
                     else
                     {
-                        Messages.Message("TM_CureDiseaseTypeFail".Translate(), MessageTypeDefOf.NegativeEvent);
-                        MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Mechanite Reprogramming" + ": " + StringsToTranslate.AU_CastFailure, -1f);
+                        if (hediff.def.defName == "SensoryMechanites")
+                        {
+                            pawn.health.RemoveHediff(hediff);
+                            HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_ReprogrammedSenMechanites_HD, .001f);
+                            success = true;
+                            break;
+                        }
+                        else if (hediff.def.defName == "FibrousMechanites")
+                        {
+                            pawn.health.RemoveHediff(hediff);
+                            HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_ReprogrammedFibMechanites_HD, .001f);
+                            success = true;
+                            break;
+                        }
+                        else if (hediff.def.defName == "LymphaticMechanites")
+                        {
+                            pawn.health.RemoveHediff(hediff);
+                            HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_ReprogrammedLymMechanites_HD, .001f);
+                            success = true;
+                            break;
+                        }
                     }
+                }
+                if (success)
+                {
+                    TM_MoteMaker.ThrowRegenMote(pawn.Position.ToVector3(), pawn.Map, 1.5f);
+                    MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Mechanite Reprogramming" + ": " + StringsToTranslate.AU_CastSuccess, -1f);
                 }
                 else
                 {
+                    Messages.Message("TM_CureDiseaseTypeFail".Translate(), MessageTypeDefOf.NegativeEvent);
                     MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Mechanite Reprogramming" + ": " + StringsToTranslate.AU_CastFailure, -1f);
                 }
-                
+            }
+            else
+            {
+                MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Mechanite Reprogramming" + ": " + StringsToTranslate.AU_CastFailure, -1f);
             }
             return false;
         }

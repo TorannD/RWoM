@@ -36,12 +36,10 @@ namespace TorannMagic
 
         protected override void Impact(Thing hitThing)
         {
-            Map map = base.Map;
+            Map map = Map;
             base.Impact(hitThing);
-            ThingDef def = this.def;
 
-            Pawn pawn = this.launcher as Pawn;
-            Pawn victim = null;
+            Pawn pawn = launcher as Pawn;
             CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
             if (comp != null)
             {
@@ -85,53 +83,20 @@ namespace TorannMagic
 
             if (this.age > this.lastStrike + this.strikeDelay)
             {
-                IntVec3 curCell;
-                IEnumerable<IntVec3> targets = GenRadial.RadialCellsAround(base.Position, this.def.projectile.explosionRadius + verVal, true);
-                for (int i = 0; i < targets.Count(); i++)
+                foreach (IntVec3 curCell in GenRadial.RadialCellsAround(Position, def.projectile.explosionRadius + verVal, true))
                 {
-                    curCell = targets.ToArray<IntVec3>()[i];
-
                     if (curCell.InBoundsWithNullCheck(map) && curCell.IsValid)
                     {
-                        victim = curCell.GetFirstPawn(map);
+                        Pawn victim = curCell.GetFirstPawn(map);
                         if(victim != null && !victim.Dead && victim.RaceProps.IsFlesh)
                         {
                             if(TM_Calc.IsUndead(victim) || victim.needs.food == null)
                             {
                                 //heals undead
-                                int num = 1;
-                                int num2 = 1;
-                                using (IEnumerator<BodyPartRecord> enumerator = victim.health.hediffSet.GetInjuredParts().GetEnumerator())
-                                {
-                                    while (enumerator.MoveNext())
-                                    {
-                                        BodyPartRecord rec = enumerator.Current;
-                                        bool flag2 = num > 0;
-
-                                        if (flag2)
-                                        {
-                                            IEnumerable<Hediff_Injury> arg_BB_0 = victim.health.hediffSet.GetHediffs<Hediff_Injury>();
-                                            Func<Hediff_Injury, bool> arg_BB_1;
-
-                                            arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
-
-                                            foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1))
-                                            {
-                                                bool flag3 = num2 > 0;
-                                                if (flag3)
-                                                {
-                                                    bool flag5 = current.CanHealNaturally() && !current.IsPermanent();
-                                                    if (flag5)
-                                                    {
-                                                        current.Heal(2.0f + pwrVal);
-                                                        num--;
-                                                        num2--;
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
+                                Hediff_Injury injuryToHeal = victim.health.hediffSet.hediffs
+                                    .OfType<Hediff_Injury>()
+                                    .FirstOrDefault(injury => injury.CanHealNaturally());
+                                injuryToHeal?.Heal(2.0f + pwrVal);
                             }
                             else
                             {

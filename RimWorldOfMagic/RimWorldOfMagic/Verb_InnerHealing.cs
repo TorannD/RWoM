@@ -16,29 +16,22 @@ namespace TorannMagic
             Pawn caster = base.CasterPawn;
             Pawn pawn = this.currentTarget.Thing as Pawn;
 
+            if (pawn == null || pawn.Dead) return true;
 
-            bool flag = pawn != null && !pawn.Dead;
-            if (flag)
+            bool hadInnerHealing = false;
+            foreach (Hediff hediff in pawn.health.hediffSet.hediffs)
             {
-                if(pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_HediffInnerHealing")))
+                if (hediff.def == TorannMagicDefOf.TM_HediffInnerHealing)
                 {
-                    using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
-                    {
-                        while (enumerator.MoveNext())
-                        {
-                            Hediff rec = enumerator.Current;
-                            if (rec.def.defName.Contains("TM_HediffInnerHealing"))
-                            {
-                                pawn.health.RemoveHediff(rec);
-                            }
-                        }
-                    }
+                    pawn.health.RemoveHediff(hediff);
+                    hadInnerHealing = true;
+                    break;
                 }
-                else
-                {
-                    HealthUtility.AdjustSeverity(pawn, HediffDef.Named("TM_HediffInnerHealing"), .5f );
-                    FleckMaker.ThrowDustPuff(pawn.Position, pawn.Map, 1f);
-                }
+            }
+            if (!hadInnerHealing)
+            {
+                HealthUtility.AdjustSeverity(pawn, HediffDef.Named("TM_HediffInnerHealing"), .5f );
+                FleckMaker.ThrowDustPuff(pawn.Position, pawn.Map, 1f);
             }
             return true;
         }

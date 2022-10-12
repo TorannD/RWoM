@@ -66,112 +66,106 @@ namespace TorannMagic
                 if(sevAdjustment >= .25f) 
                 {
                     bool success = false;
-                    using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
+                    List<TMDefs.TM_CategoryHediff> diseaseList = HediffCategoryList.Named("TM_Category_Hediffs").diseases;
+                    foreach (Hediff hediff in pawn.health.hediffSet.hediffs)
                     {
-                        while (enumerator.MoveNext())
+                        if (TM_Data.AddictionList().Contains(hediff.def))
                         {
-                            Hediff rec = enumerator.Current;
-                            bool flag2 = num > 0;
-
-                            if (TM_Data.AddictionList().Contains(rec.def))
+                            foreach (TMDefs.TM_CategoryHediff chd in diseaseList)
                             {
-                                List<TMDefs.TM_CategoryHediff> diseaseList = HediffCategoryList.Named("TM_Category_Hediffs").diseases;
-                                foreach (TMDefs.TM_CategoryHediff chd in diseaseList)
+                                if (chd.hediffDefname.Contains(hediff.def.defName))
                                 {
-                                    if (chd.hediffDefname.Contains(rec.def.defName))
+                                    if (comp != null && chd.requiredSkillName != "TM_Purify_ver")
                                     {
-                                        if (comp != null && chd.requiredSkillName != "TM_Purify_ver")
+                                        pwrVal = comp.MagicData.AllMagicPowerSkills.First(mps => mps.label == chd.powerSkillName).level;
+                                        verVal = comp.MagicData.AllMagicPowerSkills.First(mps => mps.label == chd.requiredSkillName).level;
+                                    }
+                                    if (verVal >= chd.requiredSkillLevel)
+                                    {
+                                        if (chd.removeOnCure)
                                         {
-                                            pwrVal = comp.MagicData.AllMagicPowerSkills.FirstOrDefault((MagicPowerSkill x) => x.label == chd.powerSkillName).level;
-                                            verVal = comp.MagicData.AllMagicPowerSkills.FirstOrDefault((MagicPowerSkill x) => x.label == chd.requiredSkillName).level;
-                                        }
-                                        if (verVal >= chd.requiredSkillLevel)
-                                        {
-                                            if (chd.removeOnCure)
+                                            if (Rand.Chance((chd.chanceToRemove + (chd.powerSkillAdjustment * pwrVal)) * arcaneDmg))
                                             {
-                                                if (Rand.Chance((chd.chanceToRemove + (chd.powerSkillAdjustment * pwrVal)) * arcaneDmg))
+                                                pawn.health.RemoveHediff(hediff);
+                                                if (chd.replacementHediffDefname != "")
                                                 {
-                                                    pawn.health.RemoveHediff(rec);
-                                                    if (chd.replacementHediffDefname != "")
-                                                    {
-                                                        HealthUtility.AdjustSeverity(pawn, HediffDef.Named(chd.replacementHediffDefname), chd.replacementHediffSeverity);
-                                                    }
-                                                    success = true;
-                                                    num--;
+                                                    HealthUtility.AdjustSeverity(pawn, HediffDef.Named(chd.replacementHediffDefname), chd.replacementHediffSeverity);
                                                 }
-                                                else
-                                                {
-                                                    MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Failed to remove " + rec.Label + " ...");
-                                                }
-                                                break;
+                                                success = true;
+                                                num--;
                                             }
                                             else
                                             {
-                                                if (((rec.Severity - (chd.severityReduction + (chd.powerSkillAdjustment * pwrVal)) * arcaneDmg <= 0)))
-                                                {
-                                                    if (chd.replacementHediffDefname != "")
-                                                    {
-                                                        HealthUtility.AdjustSeverity(pawn, HediffDef.Named(chd.replacementHediffDefname), chd.replacementHediffSeverity);
-                                                    }
-                                                    success = true;
-                                                }
-                                                rec.Severity -= ((chd.severityReduction + (chd.powerSkillAdjustment * pwrVal)) * arcaneDmg);                                                
-                                                num--;
-                                                break;
+                                                MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Failed to remove " + hediff.Label + " ...");
                                             }
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            if (((hediff.Severity - (chd.severityReduction + (chd.powerSkillAdjustment * pwrVal)) * arcaneDmg <= 0)))
+                                            {
+                                                if (chd.replacementHediffDefname != "")
+                                                {
+                                                    HealthUtility.AdjustSeverity(pawn, HediffDef.Named(chd.replacementHediffDefname), chd.replacementHediffSeverity);
+                                                }
+                                                success = true;
+                                            }
+                                            hediff.Severity -= ((chd.severityReduction + (chd.powerSkillAdjustment * pwrVal)) * arcaneDmg);
+                                            num--;
+                                            break;
                                         }
                                     }
                                 }
                             }
-                            else
+                        }
+                        else
+                        {
+                            if (hediff.def.defName == "WoundInfection" || hediff.def.defName.Contains("Flu") || hediff.def.defName == "Animal_Flu" || hediff.def.defName.Contains("Infection"))
                             {
-                                if (rec.def.defName == "WoundInfection" || rec.def.defName.Contains("Flu") || rec.def.defName == "Animal_Flu" || rec.def.defName.Contains("Infection"))
-                                {
-                                    //rec.Severity -= sevAdjustment;
-                                    pawn.health.RemoveHediff(rec);
-                                    success = true;
-                                }
-                                if (verVal >= 1 && (rec.def.defName == "GutWorms" || rec.def == HediffDefOf.Malaria || rec.def == HediffDefOf.FoodPoisoning))
-                                {
-                                    //rec.Severity -= sevAdjustment;
-                                    pawn.health.RemoveHediff(rec);
-                                    success = true;
-                                }
-                                if (verVal >= 2 && (rec.def.defName == "SleepingSickness" || rec.def.defName == "MuscleParasites") || rec.def == HediffDefOf.Scaria)
-                                {
-                                    //rec.Severity -= sevAdjustment;
-                                    pawn.health.RemoveHediff(rec);
-                                    success = true;
-                                }
-                                if (verVal == 3 && (rec.def.makesSickThought && rec.def.isBad))
-                                {
-                                    //rec.Severity -= sevAdjustment;
-                                    if (rec.def.defName == "BloodRot")
-                                    {
-                                        rec.Severity = 0.01f;
-                                        MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Tended Blood Rot", -1f);
-                                        rec.Tended(1f, 1f);
-                                        TM_MoteMaker.ThrowRegenMote(pawn.Position.ToVector3(), pawn.Map, 1.5f);
-                                        return false;
-                                    }
-                                    else if (rec.def.defName == "Abasia")
-                                    {
-                                        //do nothing
-                                    }
-                                    else
-                                    {
-                                        pawn.health.RemoveHediff(rec);
-                                        success = true;
-                                    }
-                                }
+                                //rec.Severity -= sevAdjustment;
+                                pawn.health.RemoveHediff(hediff);
+                                success = true;
                             }
-                            if(success)
+                            if (verVal >= 1 && (hediff.def.defName == "GutWorms" || hediff.def == HediffDefOf.Malaria || hediff.def == HediffDefOf.FoodPoisoning))
                             {
-                                break;
+                                //rec.Severity -= sevAdjustment;
+                                pawn.health.RemoveHediff(hediff);
+                                success = true;
+                            }
+                            if (verVal >= 2 && (hediff.def.defName == "SleepingSickness" || hediff.def.defName == "MuscleParasites") || hediff.def == HediffDefOf.Scaria)
+                            {
+                                //rec.Severity -= sevAdjustment;
+                                pawn.health.RemoveHediff(hediff);
+                                success = true;
+                            }
+                            if (verVal == 3 && (hediff.def.makesSickThought && hediff.def.isBad))
+                            {
+                                //rec.Severity -= sevAdjustment;
+                                if (hediff.def.defName == "BloodRot")
+                                {
+                                    hediff.Severity = 0.01f;
+                                    MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Tended Blood Rot", -1f);
+                                    hediff.Tended(1f, 1f);
+                                    TM_MoteMaker.ThrowRegenMote(pawn.Position.ToVector3(), pawn.Map, 1.5f);
+                                    return false;
+                                }
+                                else if (hediff.def.defName == "Abasia")
+                                {
+                                    //do nothing
+                                }
+                                else
+                                {
+                                    pawn.health.RemoveHediff(hediff);
+                                    success = true;
+                                }
                             }
                         }
+                        if(success)
+                        {
+                            break;
+                        }
                     }
-                    if (success == true)
+                    if (success)
                     {                        
                         TM_MoteMaker.ThrowRegenMote(pawn.Position.ToVector3(), pawn.Map, 1.5f);
                         MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Cure Disease" + ": " + StringsToTranslate.AU_CastSuccess, -1f);

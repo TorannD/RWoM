@@ -23,16 +23,12 @@ namespace TorannMagic
             {
                 if (pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_SingBattleHymnHD")))
                 {
-                    using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
+                    foreach (Hediff hediff in pawn.health.hediffSet.hediffs)
                     {
-                        while (enumerator.MoveNext())
+                        if (hediff.def.defName.Contains("TM_SingBattleHymnHD"))
                         {
-                            Hediff rec = enumerator.Current;
-                            if (rec.def.defName.Contains("TM_SingBattleHymnHD"))
-                            {
-                                pawn.health.RemoveHediff(rec);
-                                TM_MoteMaker.ThrowSiphonMote(pawn.DrawPos, pawn.Map, 1f);
-                            }
+                            pawn.health.RemoveHediff(hediff);
+                            TM_MoteMaker.ThrowSiphonMote(pawn.DrawPos, pawn.Map, 1f);
                         }
                     }
                 }

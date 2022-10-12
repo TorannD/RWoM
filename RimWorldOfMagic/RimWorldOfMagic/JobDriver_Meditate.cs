@@ -74,7 +74,7 @@ namespace TorannMagic
                     if(Find.TickManager.TicksGame % 60 == 0)
                     {
                         List<Hediff> afflictionList = TM_Calc.GetPawnAfflictions(this.pawn);
-                        List<Hediff> addictionList = TM_Calc.GetPawnAddictions(this.pawn);
+                        List<Hediff_Addiction> addictionList = TM_Calc.GetPawnAddictions(pawn);
 
                         if(chiHD != null)
                         {
@@ -119,18 +119,18 @@ namespace TorannMagic
                                 Traverse.Create(root: hediffTicks).Field(name: "ticksToDisappear").SetValue(ticksToDisappear);
                             }
                             chiHD.Severity -= 1f;
-                            comp.MightUserXP += (int)(2*chiMultiplier);
+                            comp.MightUserXP += 2 * chiMultiplier;
                         }
                         else if (addictionList != null && addictionList.Count > 0)
                         {
-                            Hediff hediff = addictionList.RandomElement();
-                            hediff.Severity -= .0015f * chiMultiplier * (1 + (.1f * pwrVal));
+                            Hediff_Addiction hediff = addictionList.RandomElement();
+                            hediff.Severity -= .0015f * chiMultiplier * (1 + .1f * pwrVal);
                             if (hediff.Severity <= 0)
                             {
-                                this.pawn.health.RemoveHediff(hediff);
+                                pawn.health.RemoveHediff(hediff);
                             }
                             chiHD.Severity -= 1f;
-                            comp.MightUserXP += (int)(2 * chiMultiplier);
+                            comp.MightUserXP += 2 * chiMultiplier;
                         }
                         else if(BreakRiskAlertUtility.PawnsAtRiskMinor.Contains(this.pawn) || BreakRiskAlertUtility.PawnsAtRiskMajor.Contains(this.pawn) || BreakRiskAlertUtility.PawnsAtRiskExtreme.Contains(this.pawn))
                         {

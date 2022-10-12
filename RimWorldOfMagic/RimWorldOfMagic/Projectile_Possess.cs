@@ -328,23 +328,19 @@ namespace TorannMagic
             Hediff disguiseHD = null;
             Hediff possessHD = null;
             Hediff possessCHD = null;
-            using (IEnumerator<Hediff> enumerator = hitPawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
+            foreach (Hediff hediff in hitPawn.health.hediffSet.hediffs)
             {
-                while (enumerator.MoveNext())
+                if (hediff.def == TorannMagicDefOf.TM_DisguiseHD_II)
                 {
-                    Hediff rec = enumerator.Current;
-                    if (rec.def == TorannMagicDefOf.TM_DisguiseHD_II)
-                    {
-                        disguiseHD = rec;
-                    }
-                    if (rec.def == TorannMagicDefOf.TM_CoOpPossessionHD || rec.def == TorannMagicDefOf.TM_CoOpPossessionHD_I || rec.def == TorannMagicDefOf.TM_CoOpPossessionHD_II || rec.def == TorannMagicDefOf.TM_CoOpPossessionHD_III)
-                    {
-                        possessCHD = rec;
-                    }
-                    if (rec.def == TorannMagicDefOf.TM_PossessionHD || rec.def == TorannMagicDefOf.TM_PossessionHD_I || rec.def == TorannMagicDefOf.TM_PossessionHD_II || rec.def == TorannMagicDefOf.TM_PossessionHD_III)
-                    {
-                        possessHD = rec;
-                    }
+                    disguiseHD = hediff;
+                }
+                if (hediff.def == TorannMagicDefOf.TM_CoOpPossessionHD || hediff.def == TorannMagicDefOf.TM_CoOpPossessionHD_I || hediff.def == TorannMagicDefOf.TM_CoOpPossessionHD_II || hediff.def == TorannMagicDefOf.TM_CoOpPossessionHD_III)
+                {
+                    possessCHD = hediff;
+                }
+                if (hediff.def == TorannMagicDefOf.TM_PossessionHD || hediff.def == TorannMagicDefOf.TM_PossessionHD_I || hediff.def == TorannMagicDefOf.TM_PossessionHD_II || hediff.def == TorannMagicDefOf.TM_PossessionHD_III)
+                {
+                    possessHD = hediff;
                 }
             }
             if(disguiseHD != null)

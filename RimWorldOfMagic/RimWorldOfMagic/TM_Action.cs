@@ -730,60 +730,34 @@ namespace TorannMagic
             }
         }
 
-        public static void DoAction_HealPawn(Pawn caster, Pawn pawn, int bodypartCount, float amountToHeal)
+        public static void DoAction_HealPawn(Pawn caster, Pawn pawn, int injuriesToHeal, float amountToHeal)
         {
-            int num = bodypartCount;
-            using (IEnumerator<BodyPartRecord> enumerator = pawn.health.hediffSet.GetInjuredParts().GetEnumerator())
+            // Heal bleeding injuries first, then finish with injuries from parts that were never bleeding
+            // Order is not guaranteed (.OrderBy(injury => injury.Part) if needed for both enumerables)
+            IEnumerable<Hediff_Injury> bleedingInjuries = pawn.health.hediffSet.hediffs
+                .OfType<Hediff_Injury>()
+                .Where(injury => injury.Bleeding);
+
+            int healedInjuries = 0;
+            HashSet<BodyPartRecord> bleedingBodyParts = new HashSet<BodyPartRecord>();
+            foreach (Hediff_Injury injury in bleedingInjuries)
             {
-                while (enumerator.MoveNext())
-                {
-                    BodyPartRecord rec = enumerator.Current;
-                    bool flag2 = num > 0;
+                if (healedInjuries > injuriesToHeal) return;
 
-                    if (flag2)
-                    {
-                        int num2 = bodypartCount;
-                        IEnumerable<Hediff_Injury> injury_hediff = pawn.health.hediffSet.GetHediffs<Hediff_Injury>();
-                        Func<Hediff_Injury, bool> partInjured;
+                bleedingBodyParts.Add(injury.Part);
+                healedInjuries++;
+                injury.Heal(amountToHeal);
+            }
 
-                        partInjured = ((Hediff_Injury injury) => injury.Part == rec);
-                        bool healedBleeding = false;
+            IEnumerable<Hediff_Injury> injuriesFromNonBleedingParts = pawn.health.hediffSet.hediffs
+                .OfType<Hediff_Injury>()
+                .Where(injury => !bleedingBodyParts.Contains(injury.Part));
+            foreach (Hediff_Injury injury in injuriesFromNonBleedingParts)
+            {
+                if (healedInjuries > injuriesToHeal) return;
 
-                        foreach (Hediff_Injury current in injury_hediff.Where(partInjured))
-                        {
-                            bool flag4 = num2 > 0;
-                            if (flag4)
-                            {
-                                bool flag5 = current.BleedRate > 0;
-                                if (flag5)
-                                {
-                                    current.Heal(amountToHeal);
-                                    num--;
-                                    num2--;
-                                    healedBleeding = true;
-                                }
-                            }
-                        }
-
-                        if (!healedBleeding)
-                        {
-                            foreach (Hediff_Injury current in injury_hediff.Where(partInjured))
-                            {
-                                bool flag4 = num2 > 0;
-                                if (flag4)
-                                {
-                                    bool flag5 = !current.IsPermanent();
-                                    if (flag5)
-                                    {
-                                        current.Heal(amountToHeal);
-                                        num--;
-                                        num2--;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+                healedInjuries++;
+                injury.Heal(amountToHeal);
             }
         }
 
@@ -3664,31 +3638,23 @@ namespace TorannMagic
 
         public static void ClearSustainedMagicHediffs(CompAbilityUserMagic comp)
         {
-            if (comp != null)
+            if (comp?.Pawn?.health?.hediffSet == null) return;
+            Pawn p = comp.Pawn;
+
+            List<Hediff> recList = new List<Hediff>();
+            List<Hediff> hds = p.health.hediffSet.hediffs;
+            for (int i = 0; i < hds.Count; i++)
             {
-                Pawn p = comp.Pawn;
-                if (p != null && p.health != null && p.health.hediffSet != null)
+                if (hds[i].def == TorannMagicDefOf.TM_RayOfHope_AuraHD || hds[i].def == TorannMagicDefOf.TM_SoothingBreeze_AuraHD || hds[i].def == TorannMagicDefOf.TM_Shadow_AuraHD || hds[i].def == TorannMagicDefOf.TM_InnerFire_AuraHD ||
+                    hds[i].def == TorannMagicDefOf.TM_TechnoBitHD || hds[i].def == TorannMagicDefOf.TM_EnchantedAuraHD || hds[i].def == TorannMagicDefOf.TM_EnchantedBodyHD ||
+                    hds[i].def == TorannMagicDefOf.TM_PredictionHD || hds[i].def == TorannMagicDefOf.TM_SDSoulBondPhysicalHD || hds[i].def == TorannMagicDefOf.TM_WDSoulBondMentalHD)
                 {
-                    List<Hediff> recList = new List<Hediff>();
-                    recList.Clear();
-                    List<Hediff> hds = p.health.hediffSet.GetHediffs<Hediff>().ToList();
-                    if (hds != null && hds.Count > 0)
-                    {
-                        for (int i = 0; i < hds.Count; i++)
-                        {
-                            if (hds[i].def == TorannMagicDefOf.TM_RayOfHope_AuraHD || hds[i].def == TorannMagicDefOf.TM_SoothingBreeze_AuraHD || hds[i].def == TorannMagicDefOf.TM_Shadow_AuraHD || hds[i].def == TorannMagicDefOf.TM_InnerFire_AuraHD ||
-                                hds[i].def == TorannMagicDefOf.TM_TechnoBitHD || hds[i].def == TorannMagicDefOf.TM_EnchantedAuraHD || hds[i].def == TorannMagicDefOf.TM_EnchantedBodyHD ||
-                                hds[i].def == TorannMagicDefOf.TM_PredictionHD || hds[i].def == TorannMagicDefOf.TM_SDSoulBondPhysicalHD || hds[i].def == TorannMagicDefOf.TM_WDSoulBondMentalHD)
-                            {
-                                recList.Add(hds[i]);
-                            }
-                        }
-                        for (int i = 0; i < recList.Count; i++)
-                        {
-                            p.health.RemoveHediff(recList[i]);
-                        }
-                    }
+                    recList.Add(hds[i]);
                 }
+            }
+            for (int i = 0; i < recList.Count; i++)
+            {
+                p.health.RemoveHediff(recList[i]);
             }
         }
 

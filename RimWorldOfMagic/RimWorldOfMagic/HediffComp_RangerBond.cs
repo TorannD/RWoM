@@ -88,47 +88,13 @@ namespace TorannMagic
             bool flag4 = Find.TickManager.TicksGame % 600 == 0;
             if (flag4)
             {
-                Pawn pawn = base.Pawn;
-                int num = 1;
-                int num2 = 1;
+                Pawn pawn = Pawn;
 
-                using (IEnumerator<BodyPartRecord> enumerator = pawn.health.hediffSet.GetInjuredParts().GetEnumerator())
-                {
-                    while (enumerator.MoveNext())
-                    {
-                        BodyPartRecord rec = enumerator.Current;
-                        bool flag2 = num > 0;
+                Hediff_Injury injuryToHeal = pawn?.health.hediffSet.hediffs
+                    .OfType<Hediff_Injury>()
+                    .FirstOrDefault();
+                injuryToHeal?.Heal(injuryToHeal.CanHealNaturally() ? 1.0f + parent.Severity / 3f : .2f);
 
-                        if (flag2)
-                        {
-                            IEnumerable<Hediff_Injury> arg_BB_0 = pawn.health.hediffSet.GetHediffs<Hediff_Injury>();
-                            Func<Hediff_Injury, bool> arg_BB_1;
-
-                            arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
-
-                            foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1))
-                            {
-                                bool flag3 = num2 > 0;
-                                if (flag3)
-                                {
-                                    bool flag5 = current.CanHealNaturally() && !current.IsPermanent();
-                                    if (flag5)
-                                    {
-                                        current.Heal(1.0f + this.parent.Severity/3f);
-                                        num--;
-                                        num2--;
-                                    }
-                                    else
-                                    {
-                                        current.Heal(.2f);
-                                        num--;
-                                        num2--;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
                 if (this.bonderPawn != null && !this.bonderPawn.Destroyed && !this.bonderPawn.Dead)
                 {
                     RefreshBond();

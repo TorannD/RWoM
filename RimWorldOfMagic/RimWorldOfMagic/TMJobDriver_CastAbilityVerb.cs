@@ -164,15 +164,15 @@ namespace TorannMagic
                         {
                             verb.TryStartCastOn(target, false, true);                            
                         }
-                        using (IEnumerator<Hediff> enumerator = this.pawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
+                        foreach (Hediff hediff in pawn.health.hediffSet.hediffs)
                         {
-                            while (enumerator.MoveNext())
+                            if (hediff.def == TorannMagicDefOf.TM_PossessionHD
+                                || hediff.def == TorannMagicDefOf.TM_DisguiseHD
+                                || hediff.def == TorannMagicDefOf.TM_DisguiseHD_I
+                                || hediff.def == TorannMagicDefOf.TM_DisguiseHD_II
+                                || hediff.def == TorannMagicDefOf.TM_DisguiseHD_III)
                             {
-                                Hediff rec = enumerator.Current;
-                                if (rec.def == TorannMagicDefOf.TM_PossessionHD || rec.def == TorannMagicDefOf.TM_DisguiseHD || rec.def == TorannMagicDefOf.TM_DisguiseHD_I || rec.def == TorannMagicDefOf.TM_DisguiseHD_II || rec.def == TorannMagicDefOf.TM_DisguiseHD_III)
-                                {
-                                    this.pawn.health.RemoveHediff(rec);
-                                }
+                                pawn.health.RemoveHediff(hediff);
                             }
                         }
                     }
@@ -322,15 +322,15 @@ namespace TorannMagic
                                 {
                                     verb.TryStartCastOn(target, false, canFreeIntercept2);
                                 }
-                                using (IEnumerator<Hediff> enumerator = this.pawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
+                                foreach (Hediff hediff in pawn.health.hediffSet.hediffs)
                                 {
-                                    while (enumerator.MoveNext())
+                                    if (hediff.def == TorannMagicDefOf.TM_PossessionHD
+                                        || hediff.def == TorannMagicDefOf.TM_DisguiseHD
+                                        || hediff.def == TorannMagicDefOf.TM_DisguiseHD_I
+                                        || hediff.def == TorannMagicDefOf.TM_DisguiseHD_II
+                                        || hediff.def == TorannMagicDefOf.TM_DisguiseHD_III)
                                     {
-                                        Hediff rec = enumerator.Current;
-                                        if (rec.def == TorannMagicDefOf.TM_PossessionHD || rec.def == TorannMagicDefOf.TM_DisguiseHD || rec.def == TorannMagicDefOf.TM_DisguiseHD_I || rec.def == TorannMagicDefOf.TM_DisguiseHD_II || rec.def == TorannMagicDefOf.TM_DisguiseHD_III)
-                                        {
-                                            this.pawn.health.RemoveHediff(rec);
-                                        }
+                                        this.pawn.health.RemoveHediff(hediff);
                                     }
                                 }
                             };

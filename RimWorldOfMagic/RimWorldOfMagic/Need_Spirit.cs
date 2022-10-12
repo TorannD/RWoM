@@ -221,7 +221,7 @@ namespace TorannMagic
             if(amount > 0)
             {
                 List<Hediff> afflictionList = TM_Calc.GetPawnAfflictions(this.pawn);
-                List<Hediff> addictionList = TM_Calc.GetPawnAddictions(this.pawn);
+                List<Hediff_Addiction> addictionList = TM_Calc.GetPawnAddictions(this.pawn);
                 if (TM_Calc.IsPawnInjured(this.pawn, 0))
                 {
                     TM_Action.DoAction_HealPawn(this.pawn, this.pawn, 1, Rand.Range(1f, 3f) * amount);                    
@@ -242,9 +242,9 @@ namespace TorannMagic
                         Traverse.Create(root: hediffTicks).Field(name: "ticksToDisappear").SetValue(ticksToDisappear);
                     }
                 }
-                else if (addictionList != null && addictionList.Count > 0)
+                else if (addictionList.Any())
                 {
-                    Hediff hediff = addictionList.RandomElement();
+                    Hediff_Addiction hediff = addictionList.RandomElement();
                     hediff.Severity -= .15f * amount;
                     if (hediff.Severity <= 0)
                     {

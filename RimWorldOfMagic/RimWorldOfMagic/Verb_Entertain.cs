@@ -22,15 +22,11 @@ namespace TorannMagic
             {
                 if (pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_EntertainingHD")))
                 {
-                    using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
+                    foreach (Hediff hediff in pawn.health.hediffSet.hediffs)
                     {
-                        while (enumerator.MoveNext())
+                        if (hediff.def.defName.Contains("TM_EntertainingHD"))
                         {
-                            Hediff rec = enumerator.Current;
-                            if (rec.def.defName.Contains("TM_EntertainingHD"))
-                            {
-                                pawn.health.RemoveHediff(rec);
-                            }
+                            pawn.health.RemoveHediff(hediff);
                         }
                     }
                     

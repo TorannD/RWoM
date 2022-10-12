@@ -176,18 +176,13 @@ namespace TorannMagic
                                 ResurrectionUtility.ResurrectWithSideEffects(deadPawn);
                                 SoundDef.Named("Thunder_OffMap").PlayOneShot(null);
                                 SoundDef.Named("Thunder_OffMap").PlayOneShot(null);
-                                using (IEnumerator<Hediff> enumerator = deadPawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
+                                foreach (Hediff hediff in deadPawn.health.hediffSet.hediffs)
                                 {
-                                    while (enumerator.MoveNext())
+                                    if (hediff.def.defName != "ResurrectionPsychosis") continue;
+
+                                    if (Rand.Chance(verVal * .33f))
                                     {
-                                        Hediff rec = enumerator.Current;
-                                        if (rec.def.defName == "ResurrectionPsychosis")
-                                        {
-                                            if (Rand.Chance(verVal * .33f))
-                                            {
-                                                deadPawn.health.RemoveHediff(rec);
-                                            }
-                                        }
+                                        deadPawn.health.RemoveHediff(hediff);
                                     }
                                 }
                                 HealthUtility.AdjustSeverity(deadPawn, HediffDef.Named("TM_ResurrectionHD"), 1f);

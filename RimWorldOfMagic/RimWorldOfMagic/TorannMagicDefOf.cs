@@ -1175,6 +1175,7 @@ namespace TorannMagic
         public static HediffDef TM_HediffStrongBack;
         public static HediffDef TM_HediffGearRepair;
         public static HediffDef TM_HediffHeavyBlow;
+        public static HediffDef TM_HediffInnerHealing;
         public static HediffDef TM_HediffSprint;
         public static TMAbilityDef TM_Legion;
         public static TMAbilityDef TM_TempestStrike;

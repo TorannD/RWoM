@@ -40,54 +40,37 @@ namespace TorannMagic
         protected override bool TryCastShot()
         {
             bool result = false;
-            bool arg_40_0;
 
             Pawn pawn = this.CasterPawn;
             Map map = this.CasterPawn.Map;
 
             if (pawn != null && !pawn.Downed)
             {
-                if(pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_ManaShieldHD, false))
+                bool hadManaShield = false;
+                foreach (Hediff hediff in pawn.health.hediffSet.hediffs)
                 {
-                    using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
+                    if (hediff.def == TorannMagicDefOf.TM_ManaShieldHD)
                     {
-                        while (enumerator.MoveNext())
-                        {
-                            Hediff rec = enumerator.Current;
-                            if (rec.def.defName == "TM_ManaShieldHD")
-                            {
-                                pawn.health.RemoveHediff(rec);
-                            }
-                        }
+                        pawn.health.RemoveHediff(hediff);
+                        hadManaShield = true;
+                        break;
                     }
-
-                    TM_MoteMaker.ThrowManaPuff(pawn.DrawPos, pawn.Map, .75f);
-                    TM_MoteMaker.ThrowManaPuff(pawn.DrawPos, pawn.Map, .75f);
-                    TM_MoteMaker.ThrowSiphonMote(pawn.DrawPos, pawn.Map, 1f);
                 }
-                else
+                if (!hadManaShield)
                 {
                     HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_ManaShieldHD, 1f);
-                    TM_MoteMaker.ThrowManaPuff(pawn.DrawPos, pawn.Map, .75f);
-                    TM_MoteMaker.ThrowManaPuff(pawn.DrawPos, pawn.Map, 1);
-                    TM_MoteMaker.ThrowManaPuff(pawn.DrawPos, pawn.Map, .75f);
                 }
-                arg_40_0 = true;
+                TM_MoteMaker.ThrowManaPuff(pawn.DrawPos, pawn.Map, .75f);
+                TM_MoteMaker.ThrowManaPuff(pawn.DrawPos, pawn.Map, .75f);
+                TM_MoteMaker.ThrowSiphonMote(pawn.DrawPos, pawn.Map, 1f);
+                result = true;
             }
-            else
-            {
-                arg_40_0 = false;
-            }
-            bool flag = arg_40_0;
-            if (flag)
-            {
-                
-            }
-            else
+
+            if (!result)
             {
                 Log.Warning("failed to TryCastShot");
             }
-            this.burstShotsLeft = 0;
+            burstShotsLeft = 0;
 
             return result;
         }

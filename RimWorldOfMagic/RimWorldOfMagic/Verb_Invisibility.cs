@@ -23,15 +23,11 @@ namespace TorannMagic
             {
                 if(pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_InvisibilityHD, false))
                 {
-                    using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
+                    for (int i = 0; i < pawn.health.hediffSet.hediffs.Count; i++)
                     {
-                        while (enumerator.MoveNext())
+                        if (pawn.health.hediffSet.hediffs[i].def == TorannMagicDefOf.TM_InvisibilityHD)
                         {
-                            Hediff rec = enumerator.Current;
-                            if (rec.def == TorannMagicDefOf.TM_InvisibilityHD)
-                            {
-                                pawn.health.RemoveHediff(rec);
-                            }
+                            pawn.health.RemoveHediff(pawn.health.hediffSet.hediffs[i]);
                         }
                     }
                     TM_MoteMaker.ThrowManaPuff(pawn.DrawPos, pawn.Map, .75f);
