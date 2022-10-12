@@ -508,7 +508,7 @@ namespace TorannMagic.AutoCast
                     {
                         float injurySeverity = caster.health.hediffSet.hediffs
                             .OfType<Hediff_Injury>()
-                            .Where(injury => injury.CanHealNaturally() && !injury.IsPermanent())
+                            .Where(injury => injury.CanHealNaturally())
                             .Sum(injury => injury.Severity);
 
                         if (injurySeverity >= minSeverity)
@@ -868,7 +868,7 @@ namespace TorannMagic.AutoCast
             {
                 float injurySeverity = caster.health.hediffSet.hediffs
                     .OfType<Hediff_Injury>()
-                    .Where(injury => injury.CanHealNaturally() && !injury.IsPermanent())
+                    .Where(injury => injury.CanHealNaturally())
                     .Sum(injury => injury.Severity);
 
                 if (injurySeverity != 0 && !(caster.health.hediffSet.HasHediff(HediffDef.Named("TM_HediffShield"))))

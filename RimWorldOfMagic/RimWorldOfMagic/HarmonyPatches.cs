@@ -1462,7 +1462,7 @@ namespace TorannMagic
                                 if (injuries.Any())
                                 {
                                     Hediff_Injury injury = injuries.RandomElement();
-                                    if (injury.CanHealNaturally() && !injury.IsPermanent())
+                                    if (injury.CanHealNaturally())
                                     {
                                         float healAmt = Rand.Range(.025f, .15f);
 

@@ -180,7 +180,7 @@ namespace TorannMagic
             // Heal first injury
             Hediff_Injury linkedInjury = linkedPawn.health.hediffSet.hediffs
                 .OfType<Hediff_Injury>()
-                .FirstOrDefault(injury => !injury.CanHealNaturally() && injury.IsPermanent());
+                .FirstOrDefault(injury => injury.IsPermanent());
             if (linkedInjury == default) return;
 
             if (linkedInjury.Part.def.tags.Contains(BodyPartTagDefOf.ConsciousnessSource))
@@ -193,7 +193,7 @@ namespace TorannMagic
         {
             Hediff_Injury injuryToHeal = Pawn.health.hediffSet.hediffs
                 .OfType<Hediff_Injury>()
-                .FirstOrDefault(injury => injury.CanHealNaturally() && !injury.IsPermanent());
+                .FirstOrDefault(injury => injury.CanHealNaturally());
             if (injuryToHeal == default) return;
 
             injuryToHeal.Heal(2f + .25f * Pawn.health.hediffSet.BleedRateTotal);

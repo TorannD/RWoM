@@ -139,7 +139,7 @@ namespace TorannMagic
         {
             Hediff_Injury injuryToTend = Pawn.health.hediffSet.hediffs
                 .OfType<Hediff_Injury>()
-                .FirstOrDefault(injury => injury.CanHealNaturally() && !injury.IsPermanent() && injury.TendableNow());
+                .FirstOrDefault(injury => injury.CanHealNaturally() && injury.TendableNow());
             if (injuryToTend == default) return;
 
             if (Rand.Chance(.15f))

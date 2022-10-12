@@ -276,7 +276,7 @@ namespace TorannMagic
         {
             IEnumerable<Hediff_Injury> injuriesToAdd = pawn.health.hediffSet.hediffs
                 .OfType<Hediff_Injury>()
-                .Where(injury => injury.CanHealNaturally() && !injury.IsPermanent());
+                .Where(injury => injury.CanHealNaturally());
             injuries.AddRange(injuriesToAdd);
         }
 

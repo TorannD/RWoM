@@ -76,7 +76,7 @@ namespace TorannMagic
 
             foreach (Hediff_Injury injury in pawn.health.hediffSet.hediffs.OfType<Hediff_Injury>())
             {
-                if (injury.CanHealNaturally() && !injury.IsPermanent())
+                if (injury.CanHealNaturally())
                 {
                     float healBleedingBonus = injury.Bleeding ? .2f : 0f;
                     injury.Heal((Rand.Range(.2f, .3f) + healBleedingBonus) * parent.Severity * (1f + .1f * pwrVal)); //140-200 applications = 14 - 39 healing for every wound

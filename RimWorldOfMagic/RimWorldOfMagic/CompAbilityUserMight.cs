@@ -3274,7 +3274,7 @@ namespace TorannMagic
 
             IEnumerable<Hediff_Injury> injuries = pawn.health.hediffSet.hediffs
                 .OfType<Hediff_Injury>()
-                .Where(injury => injury.CanHealNaturally() && !injury.IsPermanent())
+                .Where(injury => injury.CanHealNaturally())
                 .DistinctBy(injury => injury.Part, numberOfInjuriesPerPart)
                 .Take(1 + verVal);
 
