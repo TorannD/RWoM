@@ -18,7 +18,7 @@ namespace TorannMagic
 
         //non-saved vars
 
-        protected override void Impact(Thing hitThing)
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             GenClamor.DoClamor(this, 2.1f, ClamorDefOf.Impact);
             caster = this.launcher as Pawn;

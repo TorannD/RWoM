@@ -24,7 +24,7 @@ namespace TorannMagic
             base.Destroy(mode);            
         }        
 
-        protected override void Impact(Thing hitThing)
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             Map map = base.Map;
             GenClamor.DoClamor(this, 5.1f, ClamorDefOf.Impact);

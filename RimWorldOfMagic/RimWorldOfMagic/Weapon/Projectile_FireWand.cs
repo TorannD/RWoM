@@ -11,7 +11,7 @@ namespace TorannMagic.Weapon
     {
         private float arcaneDmg = 1;
 
-        protected override void Impact(Thing hitThing)
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             Pawn pawn = this.launcher as Pawn;
             if (pawn != null)

@@ -23,7 +23,7 @@ namespace TorannMagic
             Scribe_Values.Look<float>(ref this.radius, "radius", 4);
         }
 
-        protected override void Impact(Thing hitThing)
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             age++;            
             if (age < duration)
