@@ -101,7 +101,7 @@ namespace TorannMagic
             {
                 if (ticksTillHeavy[i] == 0)
                 {
-                    GenExplosion.DoExplosion(shrapnelPos[heavyCount], map, .4f, TMDamageDefOf.DamageDefOf.TM_Firestorm_Small, this.launcher, Rand.Range(5, this.def.projectile.GetDamageAmount(1,null)), 0, SoundDefOf.BulletImpact_Ground, def, this.equipmentDef, null, null, 0f, 1, false, null, 0f, 1, 0.2f, false);
+                    GenExplosion.DoExplosion(shrapnelPos[heavyCount], map, .4f, TMDamageDefOf.DamageDefOf.TM_Firestorm_Small, this.launcher, Rand.Range(5, this.def.projectile.GetDamageAmount(1,null)), 0, SoundDefOf.BulletImpact_Ground, def, this.equipmentDef, null, null, 0f, 1, null, false, null, 0f, 1, 0.2f, false);
                     ticksTillHeavy[i]--;
                 }
                 else

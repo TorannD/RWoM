@@ -506,26 +506,11 @@ namespace TorannMagic.AutoCast
                 {
                     if (minSeverity != 0)
                     {
-                        float injurySeverity = 0f;
-                        using (IEnumerator<BodyPartRecord> enumerator = caster.health.hediffSet.GetInjuredParts().GetEnumerator())
-                        {
-                            while (enumerator.MoveNext())
-                            {
-                                BodyPartRecord rec = enumerator.Current;
-                                IEnumerable<Hediff_Injury> arg_BB_0 = caster.health.hediffSet.GetHediffs<Hediff_Injury>();
-                                Func<Hediff_Injury, bool> arg_BB_1;
-                                arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
+                        float injurySeverity = caster.health.hediffSet.hediffs
+                            .OfType<Hediff_Injury>()
+                            .Where(injury => injury.CanHealNaturally())
+                            .Sum(injury => injury.Severity);
 
-                                foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1))
-                                {
-                                    bool flag5 = current.CanHealNaturally() && !current.IsPermanent();
-                                    if (flag5)
-                                    {
-                                        injurySeverity += current.Severity;
-                                    }
-                                }
-                            }
-                        }
                         if(injurySeverity >= minSeverity)
                         {
                             Job job = ability.GetJob(AbilityContext.AI, jobTarget);
@@ -881,27 +866,12 @@ namespace TorannMagic.AutoCast
 
             if (casterComp.Mana.CurLevel >= casterComp.ActualManaCost(abilitydef) && ability.CooldownTicksLeft <= 0 && jobTarget.Thing != null)
             {
-                float injurySeverity = 0;
-                using (IEnumerator<BodyPartRecord> enumerator = caster.health.hediffSet.GetInjuredParts().GetEnumerator())
-                {
-                    while (enumerator.MoveNext())
-                    {
-                        BodyPartRecord rec = enumerator.Current;
-                        IEnumerable<Hediff_Injury> arg_BB_0 = caster.health.hediffSet.GetHediffs<Hediff_Injury>();
-                        Func<Hediff_Injury, bool> arg_BB_1;
-                        arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
+                float injurySeverity = caster.health.hediffSet.hediffs
+                    .OfType<Hediff_Injury>()
+                    .Where(injury => injury.CanHealNaturally())
+                    .Sum(injury => injury.Severity);
 
-                        foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1))
-                        {
-                            bool flag5 = current.CanHealNaturally() && !current.IsPermanent();
-                            if (flag5)
-                            {
-                                injurySeverity += current.Severity;                                
-                            }
-                        }
-                    }
-                }
-                if (injurySeverity != 0 && !(caster.health.hediffSet.HasHediff(HediffDef.Named("TM_HediffShield"))))
+                if (injurySeverity != 0 && !(caster.health.hediffSet.HasHediff(TorannMagicDefOf.TM_HediffShield)))
                 {
                     Job job = ability.GetJob(AbilityContext.AI, jobTarget);
                     DoJob.Execute(job, caster);

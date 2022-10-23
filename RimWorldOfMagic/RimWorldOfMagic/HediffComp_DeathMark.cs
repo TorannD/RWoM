@@ -159,8 +159,8 @@ namespace TorannMagic
 
         private void RedoSkills(Pawn undeadPawn)
         {
-            undeadPawn.story.childhood = null;
-            undeadPawn.story.adulthood = null;
+            undeadPawn.story.Childhood = null;
+            undeadPawn.story.Adulthood = null;
             //undeadPawn.story.DisabledWorkTypes.Clear();
             //undeadPawn.story.WorkTypeIsDisabled(WorkTypeDefOf.Warden);
             //undeadPawn.story.WorkTypeIsDisabled(WorkTypeDefOf.Hunting);

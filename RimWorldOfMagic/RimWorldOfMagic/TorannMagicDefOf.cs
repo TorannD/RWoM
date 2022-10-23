@@ -127,7 +127,7 @@ namespace TorannMagic
         public static ThingDef SkillOf_StrongBack;
         public static ThingDef SkillOf_ThickSkin;
         public static ThingDef SkillOf_FightersFocus;
-        public static ThingDef SkillOf_HeavyBlow;
+        public static ThingDef SkillOf_HeavyBlow;        
         public static ThingDef SkillOf_ThrowingKnife;
         public static ThingDef SkillOf_BurningFury;
         public static ThingDef SkillOf_PommelStrike;
@@ -1175,6 +1175,7 @@ namespace TorannMagic
         public static HediffDef TM_HediffStrongBack;
         public static HediffDef TM_HediffGearRepair;
         public static HediffDef TM_HediffHeavyBlow;
+        public static HediffDef TM_HediffInnerHealing;
         public static HediffDef TM_HediffSprint;
         public static TMAbilityDef TM_Legion;
         public static TMAbilityDef TM_TempestStrike;
@@ -1213,6 +1214,8 @@ namespace TorannMagic
         public static HediffDef TM_DiscordHD;
         public static HediffDef TM_DiscordSafeHD;
         public static HediffDef TM_SeverityHasteHD;
+        public static HediffDef TM_EvasionHD;
+        public static HediffDef TM_AdrenalineHD;
 
         public static TMAbilityDef TM_Explosion;
 
@@ -1616,6 +1619,15 @@ namespace TorannMagic
         //FleckDefs
         public static FleckDef ElectricalSpark;
         public static FleckDef SparkFlash;
+
+        //BackstoryDefs
+        public static BackstoryDef TM_GolemChildBS;
+        public static BackstoryDef TM_GolemAdultBS;
+        public static BackstoryDef TM_SpiritChildBS;
+        public static BackstoryDef TM_AncientSpiritAdultBS;
+        public static BackstoryDef TM_VengefulSpiritAdultBS;
+        public static BackstoryDef TM_LostSpiritAdultBS;
+        public static BackstoryDef TM_RegretSpiritAdultBS;
 
         //Golems
         public static ThingDef TM_MechaGolem;

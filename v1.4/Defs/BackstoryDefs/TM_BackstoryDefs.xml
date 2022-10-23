@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <BackstoryDef>
+    <defName>TM_GolemChildBS</defName>
+    <ignoreIllegalLabelCharacterConfigError>True</ignoreIllegalLabelCharacterConfigError>
+    <identifier>TM_GolemChildBS</identifier>
+    <slot></slot>
+    <title>Golem</title>
+    <titleShort>Golem</titleShort>
+    <baseDesc>[PAWN_nameDef] is a golem, crafted with raw material and animated with magic.</baseDesc>
+    <spawnCategories>
+    </spawnCategories>
+    <shuffleable>False</shuffleable>
+  </BackstoryDef>
+  
+  <BackstoryDef>
+    <defName>TM_GolemAdultBS</defName>
+    <ignoreIllegalLabelCharacterConfigError>True</ignoreIllegalLabelCharacterConfigError>
+    <identifier>TM_GolemAdultBS</identifier>
+    <slot></slot>
+    <title>Golem</title>
+    <titleShort>Golem</titleShort>
+    <baseDesc>[PAWN_nameDef] is a golem, crafted with raw material and animated with magic.</baseDesc>
+    <spawnCategories>
+    </spawnCategories>
+    <shuffleable>False</shuffleable>
+  </BackstoryDef>
+  
+  <BackstoryDef>
+    <defName>TM_SpiritChildBS</defName>
+    <ignoreIllegalLabelCharacterConfigError>True</ignoreIllegalLabelCharacterConfigError>
+    <identifier>tm_childhood_spirit</identifier>
+    <slot></slot>
+    <title>Spirit</title>
+    <titleShort>Spirit</titleShort>
+    <baseDesc>[PAWN_nameDef] is a wandering spirit, anchored to this realm by some unknown force. The events surrounding [PAWN_possessive] origins are unknown, but powerful enough to cause [PAWN_objective] to seek answers, justice, or redemption from the living.</baseDesc>
+    <spawnCategories>
+    </spawnCategories>
+    <shuffleable>False</shuffleable>
+  </BackstoryDef>
+  
+  <BackstoryDef>
+    <defName>TM_AncientSpiritAdultBS</defName>
+    <ignoreIllegalLabelCharacterConfigError>True</ignoreIllegalLabelCharacterConfigError>
+    <identifier>tm_ancient_spirit</identifier>
+    <slot></slot>
+    <title>Ancient Spirit</title>
+    <titleShort>Ancient Spirit</titleShort>
+    <baseDesc>[PAWN_nameDef] has existed for countless ages and it no longer remembers [PAWN_possessive] purpose. Ancient spirits pursue their own ends and have become masters at controlling spirit energy. Maximum spirit energy is increased by 50.</baseDesc>
+    <spawnCategories>
+    </spawnCategories>
+    <shuffleable>False</shuffleable>
+  </BackstoryDef>
+  
+  <BackstoryDef>
+    <defName>TM_VengefulSpiritAdultBS</defName>
+    <ignoreIllegalLabelCharacterConfigError>True</ignoreIllegalLabelCharacterConfigError>
+    <identifier>tm_vengeful_spirit</identifier>
+    <slot></slot>
+    <title>Vengeful Spirit</title>
+    <titleShort>Vengeful Spirit</titleShort>
+    <baseDesc>[PAWN_nameDef] is a vengeful spirit, full of spite and hatred, wishing only to inflict their misery onto the living. Vengeful spirits are able to exert more power during spirit distortion and spirit storm but are more difficult to harmonize with when possessing a living body. Increases attack rate of spirit storm by 25% and damage bonus of distort spirit by 6%. Reduces compatibility by 1.</baseDesc>
+    <spawnCategories>
+    </spawnCategories>
+    <shuffleable>False</shuffleable>
+  </BackstoryDef>
+  
+  <BackstoryDef>
+    <defName>TM_LostSpiritAdultBS</defName>
+    <ignoreIllegalLabelCharacterConfigError>True</ignoreIllegalLabelCharacterConfigError>
+    <identifier>tm_lost_spirit</identifier>
+    <slot></slot>
+    <title>Lost Spirit</title>
+    <titleShort>Lost Spirit</titleShort>
+    <baseDesc>Lost spirits wander the realm in a constant state of existential anguish, unable to perceive their purpose. The lost readily attach themselves to another's cause and more easily harmonize with kindred spirits. They are also able to strengthen the power of the rally spirit ability. Increase duration, radius, max targets, and bonuses of Spirit Rally by 10%. Increases compatibility by 2.</baseDesc>
+    <spawnCategories>
+    </spawnCategories>
+    <shuffleable>False</shuffleable>
+  </BackstoryDef>
+  
+  <BackstoryDef>
+    <defName>TM_RegretSpiritAdultBS</defName>
+    <ignoreIllegalLabelCharacterConfigError>True</ignoreIllegalLabelCharacterConfigError>
+    <identifier>tm_regret_spirit</identifier>
+    <slot></slot>
+    <title>Spirit of Regret</title>
+    <titleShort>Spirit of Regret</titleShort>
+    <baseDesc>The spirit of regret is still able to remember their purpose as a spirit, but are were unable to right their wrongs before it was too late. Now they wander the world as a spirit, full of sadness and regret, still searching for a way to fulfill their purpose. Spirits of regret enhance the drain spirit ability by 20%.</baseDesc>
+    <spawnCategories>
+    </spawnCategories>
+    <shuffleable>False</shuffleable>
+  </BackstoryDef>
+
+</Defs>

@@ -217,39 +217,9 @@ namespace TorannMagic
 
         public void HealCaster(Pawn caster, int num, int num2, float healAmt)
         {
-            if (num > 0)
+            foreach(Hediff_Injury injury in caster.health.hediffSet.hediffs.OfType<Hediff_Injury>().Where(injury => injury.CanHealNaturally()).Take(num*num2))
             {
-                using (IEnumerator<BodyPartRecord> enumerator = caster.health.hediffSet.GetInjuredParts().GetEnumerator())
-                {
-                    while (enumerator.MoveNext())
-                    {
-                        BodyPartRecord rec = enumerator.Current;
-                        bool flag2 = num > 0;
-
-                        if (flag2)
-                        {
-                            IEnumerable<Hediff_Injury> arg_BB_0 = caster.health.hediffSet.GetHediffs<Hediff_Injury>();
-                            Func<Hediff_Injury, bool> arg_BB_1;
-
-                            arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
-
-                            foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1))
-                            {
-                                bool flag3 = num2 > 0;
-                                if (flag3)
-                                {
-                                    bool flag5 = current.CanHealNaturally() && !current.IsPermanent();
-                                    if (flag5)
-                                    {
-                                        current.Heal(healAmt);
-                                        num--;
-                                        num2--;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+                injury.Heal(healAmt);
             }
         }
     }

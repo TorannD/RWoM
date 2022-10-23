@@ -6,6 +6,7 @@ using AbilityUser;
 using Verse;
 using HarmonyLib;
 using UnityEngine;
+using TorannMagic.Utils;
 
 
 namespace TorannMagic
@@ -48,87 +49,50 @@ namespace TorannMagic
 
             try
             {
-                bool flag = pawn != null && !pawn.Dead && !TM_Calc.IsUndead(pawn);
-                if (!pawn.DestroyedOrNull() && pawn.Spawned && map != null && pawn.health != null && pawn.health.hediffSet != null && flag)
-                {                   
-                    int num = 2 + Mathf.RoundToInt(.3f * verVal);
-                    HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_SoothingBalmHD, .3f - (.03f * verVal));
-                    using (IEnumerator<BodyPartRecord> enumerator = pawn.health.hediffSet.GetInjuredParts().GetEnumerator())
+                if (pawn == null || pawn.Dead || pawn.Destroyed || TM_Calc.IsUndead(pawn)) return false;
+                if (pawn.Spawned && map != null && pawn.health?.hediffSet != null)
+                {
+                    int injuriesToHeal = 2 + Mathf.RoundToInt(.3f * verVal);
+                    ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+                    int injuriesPerBodyPart = !CasterPawn.IsColonist && settingsRef.AIHardMode ? 5 : 1 + Mathf.RoundToInt(.2f * verVal);
+
+                    IEnumerable<Hediff_Injury> injuries = pawn.health.hediffSet.hediffs
+                        .OfType<Hediff_Injury>()
+                        .Where(injury => injury.CanHealNaturally() && injury.TendableNow())
+                        .DistinctBy(injury => injury.Part, injuriesPerBodyPart)
+                        .Take(injuriesToHeal);
+
+                    HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_SoothingBalmHD, .3f - .03f * verVal);
+
+                    float healAmount = pawn.IsColonist ? 4.0f + pwrVal : 10 + pwrVal * 3f;
+                    foreach (Hediff_Injury injury in injuries)
                     {
-                        while (enumerator.MoveNext())
-                        {
-                            BodyPartRecord rec = enumerator.Current;
-                            bool flag2 = num > 0;
+                        injury.Heal(healAmount);
 
-                            if (flag2)
-                            {
-                                int num2 = 1 + Mathf.RoundToInt(.2f * verVal);
-                                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                                if (!this.CasterPawn.IsColonist && settingsRef.AIHardMode)
-                                {
-                                    num2 = 5;
-                                }
-                                IEnumerable<Hediff_Injury> arg_BB_0 = pawn.health.hediffSet.GetHediffs<Hediff_Injury>();
-                                Func<Hediff_Injury, bool> arg_BB_1;
+                        HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_SoothingBalmHD, .04f);
+                        Vector3 pos = pawn.DrawPos;
+                        pos.x += Rand.Range(-.3f, .3f);
+                        pos.z += Rand.Range(-.3f, .3f);
+                        TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Healing_Small, pos, map, Rand.Range(.6f, 1f), .3f, .2f, .5f, 0, 0f, 0f, Rand.Range(0, 360));
 
-                                arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
+                        if (!injury.TendableNow()) continue;
 
-                                for (int i = 0; i < num; i++)
-                                {
-                                    Vector3 pos = pawn.DrawPos;
-                                    pos.x += Rand.Range(-.3f, .3f);
-                                    pos.z += Rand.Range(-.3f, .3f);
-                                    TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Healing_Small, pos, map, Rand.Range(.6f, 1f), .3f, .2f, .5f, 0, 0f, 0f, Rand.Range(0, 360));
-                                }
-
-                                foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1))
-                                {
-                                    bool flag4 = num2 > 0;
-                                    if (flag4)
-                                    {
-                                        bool flag5 = current.CanHealNaturally() && !current.IsPermanent() && current.TendableNow(false);
-                                        if (flag5)
-                                        {
-                                            //current.Heal((float)((int)current.Severity + 1));
-                                            if (!this.CasterPawn.IsColonist)
-                                            {
-                                                current.Heal(10 + (float)pwrVal * 3f); // power affects how much to heal
-                                            }
-                                            else
-                                            {
-                                                current.Heal((4.0f + (float)pwrVal)); // power affects how much to heal
-                                            }
-                                            HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_SoothingBalmHD, .04f);
-                                            Vector3 pos = pawn.DrawPos;
-                                            pos.x += Rand.Range(-.3f, .3f);
-                                            pos.z += Rand.Range(-.3f, .3f);
-                                            TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Healing_Small, pos, map, Rand.Range(.6f, 1f), .3f, .2f, .5f, 0, 0f, 0f, Rand.Range(0, 360));
-                                            num--;
-                                            num2--;
-                                            if(current.TendableNow())
-                                            {
-                                                float tendQuality = Rand.Range(.5f, .7f) + (pwrVal * .1f);
-                                                current.Tended(tendQuality, 1f);
-                                                pawn.records.Increment(RecordDefOf.TimesTendedTo);
-                                                caster.records.Increment(RecordDefOf.TimesTendedOther);
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
+                        float tendQuality = Rand.Range(.5f, .7f) + pwrVal * .1f;
+                        injury.Tended(tendQuality, 1f);
+                        pawn.records.Increment(RecordDefOf.TimesTendedTo);
+                        caster.records.Increment(RecordDefOf.TimesTendedOther);
                     }
-                    
                 }
                 else
                 {
-                    Messages.Message("TM_InvalidTarget".Translate(caster.LabelShort, this.Ability.Def.label), MessageTypeDefOf.NeutralEvent);
+                    Messages.Message("TM_InvalidTarget".Translate(caster.LabelShort, Ability.Def.label), MessageTypeDefOf.NeutralEvent);
                 }
             }
             catch (NullReferenceException ex)
             {
-                //ex
+
             }
+            
             return false;
         }
     }

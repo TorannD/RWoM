@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RecipeDef Name="Golem_Recipe_Base" Abstract="True">	
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+	<workSkill>Crafting</workSkill>
+	<workSkillLearnFactor>.1</workSkillLearnFactor>
+    <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>	
+  </RecipeDef>
+  
+  <RecipeDef Name="MechaGolem_Recipe_Base" ParentName="Golem_Recipe_Base" Abstract="True">
+    <effectWorking>ConstructMetal</effectWorking>
+	<workSkillLearnFactor>.6</workSkillLearnFactor>
+    <unfinishedThingDef>TM_UnfinishedMechaGolemUpgrade</unfinishedThingDef>
+	<recipeUsers>
+		<li>TM_MechaGolem_Workstation</li>
+	</recipeUsers>
+  </RecipeDef>
+  
+  <RecipeDef Name="FleshGolem_Recipe_Base" ParentName="Golem_Recipe_Base" Abstract="True">
+    <effectWorking>ButcherFlesh</effectWorking>
+	<workSkillLearnFactor>.6</workSkillLearnFactor>
+    <unfinishedThingDef>TM_UnfinishedFleshGolemUpgrade</unfinishedThingDef>
+	<recipeUsers>
+		<li>TM_FleshGolem_Workstation</li>
+	</recipeUsers>
+  </RecipeDef>
+  
+  <RecipeDef Name="HollowGolem_Recipe_Base" ParentName="Golem_Recipe_Base" Abstract="True">
+	<workSkillLearnFactor>.6</workSkillLearnFactor>
+    <unfinishedThingDef>TM_UnfinishedHollowGolemUpgrade</unfinishedThingDef>
+	<recipeUsers>
+		<li>TM_HollowGolem_Workstation</li>
+	</recipeUsers>
+  </RecipeDef>
+  
+  <RecipeDef Name="StoneGolem_Recipe_Base" ParentName="Golem_Recipe_Base" Abstract="True">
+    <effectWorking>CutStone</effectWorking>
+	<soundWorking>Recipe_Sculpt</soundWorking>
+	<workSkillLearnFactor>.6</workSkillLearnFactor>
+    <unfinishedThingDef>TM_UnfinishedStoneGolemUpgrade</unfinishedThingDef>
+	<recipeUsers>
+		<li>TM_StoneGolem_Workstation</li>
+	</recipeUsers>
+    <fixedIngredientFilter>
+	  <categories>
+        <li>StoneBlocks</li>
+      </categories>     
+    </fixedIngredientFilter>
+  </RecipeDef>
+  
+  <RecipeDef Name="MaharalGolem_Recipe_Base" ParentName="Golem_Recipe_Base" Abstract="True">
+	<workSkillLearnFactor>.6</workSkillLearnFactor>
+    <unfinishedThingDef>TM_UnfinishedMaharalGolemUpgrade</unfinishedThingDef>
+	<recipeUsers>
+		<li>TM_MaharalGolem_Workstation</li>
+	</recipeUsers>
+  </RecipeDef>
+  
+</Defs>

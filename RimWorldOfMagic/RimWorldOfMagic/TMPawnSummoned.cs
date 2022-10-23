@@ -278,27 +278,10 @@ namespace TorannMagic
 
         public void CopyDamage(Pawn pawn)
         {
-            using (IEnumerator<BodyPartRecord> enumerator = pawn.health.hediffSet.GetInjuredParts().GetEnumerator())
-            {
-                while (enumerator.MoveNext())
-                {
-                    BodyPartRecord rec = enumerator.Current;
-                    IEnumerable<Hediff_Injury> arg_BB_0 = pawn.health.hediffSet.GetHediffs<Hediff_Injury>();
-                    Func<Hediff_Injury, bool> arg_BB_1;
-                    arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
-
-                    foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1))
-                    {
-                        bool flag5 = current.CanHealNaturally() && !current.IsPermanent();
-                        if (flag5)
-                        {
-                            this.injuries.Add(current);
-                            //this.bodypartDamage.Add(current.Severity);
-                            //this.bodypartDamageType.Add(current.)
-                        }                            
-                    }                    
-                }
-            }
+            IEnumerable<Hediff_Injury> injuriesToCopy = pawn.health.hediffSet.hediffs
+                .OfType<Hediff_Injury>()
+                .Where(injury => injury.CanHealNaturally());
+            injuries.AddRange(injuriesToCopy);
         }
 
         public void SpawnOriginal()

@@ -78,7 +78,7 @@ namespace TorannMagic
 
                 fog.gas.expireSeconds.min = this.duration/60;
                 fog.gas.expireSeconds.max = this.duration/60;
-                GenExplosion.DoExplosion(base.Position, map, this.def.projectile.explosionRadius + verVal, TMDamageDefOf.DamageDefOf.TM_Torment, this.launcher, 0, 0, this.def.projectile.soundExplode, def, this.equipmentDef, null, fog, 1f, 1, false, null, 0f, 0, 0.0f, false);
+                GenExplosion.DoExplosion(base.Position, map, this.def.projectile.explosionRadius + verVal, TMDamageDefOf.DamageDefOf.TM_Torment, this.launcher, 0, 0, this.def.projectile.soundExplode, def, this.equipmentDef, null, fog, 1f, 1, null, false, null, 0f, 0, 0.0f, false);
                 
                 this.initialized = true;
             }
@@ -99,39 +99,11 @@ namespace TorannMagic
                             if(TM_Calc.IsUndead(victim) || victim.needs.food == null)
                             {
                                 //heals undead
-                                int num = 1;
-                                int num2 = 1;
-                                using (IEnumerator<BodyPartRecord> enumerator = victim.health.hediffSet.GetInjuredParts().GetEnumerator())
-                                {
-                                    while (enumerator.MoveNext())
-                                    {
-                                        BodyPartRecord rec = enumerator.Current;
-                                        bool flag2 = num > 0;
+                                Hediff_Injury injuryToHeal = victim.health.hediffSet.hediffs
+                                    .OfType<Hediff_Injury>()
+                                    .FirstOrDefault(injury => injury.CanHealNaturally());
+                                injuryToHeal?.Heal(2.0f + pwrVal);
 
-                                        if (flag2)
-                                        {
-                                            IEnumerable<Hediff_Injury> arg_BB_0 = victim.health.hediffSet.GetHediffs<Hediff_Injury>();
-                                            Func<Hediff_Injury, bool> arg_BB_1;
-
-                                            arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
-
-                                            foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1))
-                                            {
-                                                bool flag3 = num2 > 0;
-                                                if (flag3)
-                                                {
-                                                    bool flag5 = current.CanHealNaturally() && !current.IsPermanent();
-                                                    if (flag5)
-                                                    {
-                                                        current.Heal(2.0f + pwrVal);
-                                                        num--;
-                                                        num2--;
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
                             }
                             else
                             {

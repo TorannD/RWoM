@@ -328,7 +328,7 @@ namespace TorannMagic
             Hediff disguiseHD = null;
             Hediff possessHD = null;
             Hediff possessCHD = null;
-            using (IEnumerator<Hediff> enumerator = hitPawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
+            using (IEnumerator<Hediff> enumerator = hitPawn.health.hediffSet.hediffs.GetEnumerator())
             {
                 while (enumerator.MoveNext())
                 {

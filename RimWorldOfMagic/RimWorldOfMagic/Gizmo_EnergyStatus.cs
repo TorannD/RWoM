@@ -161,7 +161,7 @@ namespace TorannMagic
                     Rect overRect = new Rect(topLeft.x + 2, topLeft.y, this.GetWidth(100), 75); //overall rect size (shell)
                     if (parms.highLight)
                     {
-                        QuickSearchWidget.DrawStrongHighlight(overRect.ExpandedBy(12f));
+                        Widgets.DrawStrongHighlight(overRect.ExpandedBy(12f));
                     }
                     Find.WindowStack.ImmediateWindow(984698, overRect, WindowLayer.GameUI, delegate
                     {

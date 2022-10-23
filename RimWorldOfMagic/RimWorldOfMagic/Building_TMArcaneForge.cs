@@ -72,7 +72,7 @@ namespace TorannMagic
                     {
                         defaultLabel = label,
                         defaultDesc = desc,
-                        order = 67,
+                        Order = 67,
                         icon = ContentFinder<Texture2D>.Get("UI/replicate", true),
                         targetingParams = newParameters
                     };
@@ -110,7 +110,7 @@ namespace TorannMagic
                     {
                         defaultLabel = label,
                         defaultDesc = desc,
-                        order = 68,
+                        Order = 68,
                         icon = ContentFinder<Texture2D>.Get("UI/replicateDisabled", true),
                         action = delegate
                         {

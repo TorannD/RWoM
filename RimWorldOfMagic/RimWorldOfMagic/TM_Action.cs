@@ -730,60 +730,35 @@ namespace TorannMagic
             }
         }
 
-        public static void DoAction_HealPawn(Pawn caster, Pawn pawn, int bodypartCount, float amountToHeal)
+        public static void DoAction_HealPawn(Pawn caster, Pawn pawn, int injuriesToHeal, float amountToHeal)
         {
-            int num = bodypartCount;
-            using (IEnumerator<BodyPartRecord> enumerator = pawn.health.hediffSet.GetInjuredParts().GetEnumerator())
+            // Heal bleeding injuries first, then finish with injuries from parts that were never bleeding
+            // Order is not guaranteed (.OrderBy(injury => injury.Part) if needed for both enumerables)
+            IEnumerable<Hediff_Injury> bleedingInjuries = pawn.health.hediffSet.hediffs
+                .OfType<Hediff_Injury>()
+                .Where(injury => injury.Bleeding);
+
+            int healedInjuries = 0;
+            HashSet<BodyPartRecord> bleedingBodyParts = new HashSet<BodyPartRecord>();
+            foreach (Hediff_Injury injury in bleedingInjuries)
             {
-                while (enumerator.MoveNext())
-                {
-                    BodyPartRecord rec = enumerator.Current;
-                    bool flag2 = num > 0;
+                if (healedInjuries > injuriesToHeal) return;
 
-                    if (flag2)
-                    {
-                        int num2 = bodypartCount;
-                        IEnumerable<Hediff_Injury> injury_hediff = pawn.health.hediffSet.GetHediffs<Hediff_Injury>();
-                        Func<Hediff_Injury, bool> partInjured;
+                bleedingBodyParts.Add(injury.Part);
+                healedInjuries++;
+                injury.Heal(amountToHeal);
+            }
 
-                        partInjured = ((Hediff_Injury injury) => injury.Part == rec);
-                        bool healedBleeding = false;
+            IEnumerable<Hediff_Injury> injuriesFromNonBleedingParts = pawn.health.hediffSet.hediffs
+                .OfType<Hediff_Injury>()
+                .Where(injury => !bleedingBodyParts.Contains(injury.Part));
 
-                        foreach (Hediff_Injury current in injury_hediff.Where(partInjured))
-                        {
-                            bool flag4 = num2 > 0;
-                            if (flag4)
-                            {
-                                bool flag5 = current.BleedRate > 0;
-                                if (flag5)
-                                {
-                                    current.Heal(amountToHeal);
-                                    num--;
-                                    num2--;
-                                    healedBleeding = true;
-                                }
-                            }
-                        }
+            foreach (Hediff_Injury injury in injuriesFromNonBleedingParts)
+            {
+                if (healedInjuries > injuriesToHeal) return;
 
-                        if (!healedBleeding)
-                        {
-                            foreach (Hediff_Injury current in injury_hediff.Where(partInjured))
-                            {
-                                bool flag4 = num2 > 0;
-                                if (flag4)
-                                {
-                                    bool flag5 = !current.IsPermanent();
-                                    if (flag5)
-                                    {
-                                        current.Heal(amountToHeal);
-                                        num--;
-                                        num2--;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+                healedInjuries++;
+                injury.Heal(amountToHeal);
             }
         }
 
@@ -978,36 +953,27 @@ namespace TorannMagic
 
         public static Pawn GenerateSpiritPawn(IntVec3 position, Faction fac = null)
         {
-            List<Backstory> spiritBSList = new List<Backstory>();
+            List<BackstoryDef> spiritBSList = new List<BackstoryDef>();
             spiritBSList.Clear();
 
-            Backstory childBS = null;
-            Backstory ancientBS = null;
-            Backstory lostBS = null;
-            Backstory vengefulBS = null;
-            Backstory regretBS = null;
+            //BackstoryDef childBS = null;
+            //BackstoryDef ancientBS = null;
+            //BackstoryDef lostBS = null;
+            //BackstoryDef vengefulBS = null;
+            //BackstoryDef regretBS = null;
 
-            BackstoryDatabase.TryGetWithIdentifier("tm_childhood_spirit", out childBS);
-            BackstoryDatabase.TryGetWithIdentifier("tm_ancient_spirit", out ancientBS);
-            if (BackstoryDatabase.TryGetWithIdentifier("tm_lost_spirit", out lostBS))
-            {
-                spiritBSList.Add(lostBS);
-            }
-            if(BackstoryDatabase.TryGetWithIdentifier("tm_vengeful_spirit", out vengefulBS))
-            {
-                spiritBSList.Add(vengefulBS);
-            }
-            if (BackstoryDatabase.TryGetWithIdentifier("tm_regret_spirit", out regretBS))
-            {
-                spiritBSList.Add(regretBS);
-            }           
+            spiritBSList.Add(TorannMagicDefOf.TM_SpiritChildBS);
+            spiritBSList.Add(TorannMagicDefOf.TM_AncientSpiritAdultBS);
+            spiritBSList.Add(TorannMagicDefOf.TM_LostSpiritAdultBS);
+            spiritBSList.Add(TorannMagicDefOf.TM_VengefulSpiritAdultBS);
+            spiritBSList.Add(TorannMagicDefOf.TM_RegretSpiritAdultBS);     
          
             Pawn newSpirit = (Pawn)ThingMaker.MakeThing(TorannMagicDefOf.TM_SpiritTD);
             newSpirit.kindDef = TorannMagicDefOf.TM_SpiritPKD;
             newSpirit.SetFactionDirect(fac);
             PawnComponentsUtility.CreateInitialComponents(newSpirit);
-            newSpirit.story.childhood = childBS;
-            newSpirit.story.adulthood = spiritBSList.RandomElement();
+            newSpirit.story.Childhood = TorannMagicDefOf.TM_SpiritChildBS;
+            newSpirit.story.Adulthood = spiritBSList.RandomElement();
             newSpirit.story.bodyType = BodyTypeDefOf.Thin;
             newSpirit.ageTracker.AgeBiologicalTicks = 1;// (long)(20f * 3600000f);
             newSpirit.ageTracker.AgeChronologicalTicks = (long)(Rand.Range(1, 1200) * 3600000f);
@@ -1026,7 +992,7 @@ namespace TorannMagic
             }
             if (newSpirit.ageTracker.AgeChronologicalTicks > (long)(1000 * 3600000f))
             {
-                newSpirit.story.adulthood = ancientBS;               
+                newSpirit.story.Adulthood = TorannMagicDefOf.TM_AncientSpiritAdultBS;               
             }
             newSpirit.needs.SetInitialLevels();
             if (newSpirit.workSettings != null && newSpirit.Faction != null && newSpirit.Faction.IsPlayer)
@@ -1046,22 +1012,21 @@ namespace TorannMagic
                 newSpirit.mindState.SetupLastHumanMeatTick();
             }
             newSpirit.story.skinColorOverride = newSpirit.kindDef.skinColorOverride;
-            newSpirit.story.melanin = (PawnSkinColors.RandomMelanin(fac));
-            newSpirit.story.crownType = ((Rand.Value < 0.5f) ? CrownType.Average : CrownType.Narrow);
+            newSpirit.story.TryGetRandomHeadFromSet(from x in DefDatabase<HeadTypeDef>.AllDefs where x.randomChosen select x);
             newSpirit.story.hairDef = (from def in DefDatabase<HairDef>.AllDefs
                                       where (def.styleGender == hairstyle)
                                       select def).RandomElement();
-            newSpirit.story.hairColor = (newSpirit.kindDef.forcedHairColor ?? PawnHairColors.RandomHairColor(newSpirit.story.SkinColor, newSpirit.ageTracker.AgeBiologicalYears));
+            Traverse.Create(root: newSpirit.story).Field(name: "hairColor").SetValue((newSpirit.kindDef.forcedHairColor ?? PawnHairColors.RandomHairColor(newSpirit, newSpirit.story.SkinColor, newSpirit.ageTracker.AgeBiologicalYears)));
             if (newSpirit.style != null)
             {
                 if (Rand.Chance(.5f))
                 {
-                    newSpirit.style.beardDef = ((newSpirit.gender == Gender.Male) ? PawnStyleItemChooser.ChooseStyleItem<BeardDef>(newSpirit) : BeardDefOf.NoBeard);
+                    newSpirit.style.beardDef = PawnStyleItemChooser.RandomBeardFor(newSpirit);
                 }
                 if (Rand.Chance(.5f) && ModsConfig.IdeologyActive)
                 {
-                    newSpirit.style.FaceTattoo = PawnStyleItemChooser.ChooseStyleItem<TattooDef>(newSpirit, TattooType.Face);
-                    newSpirit.style.BodyTattoo = PawnStyleItemChooser.ChooseStyleItem<TattooDef>(newSpirit, TattooType.Body);
+                    newSpirit.style.FaceTattoo = PawnStyleItemChooser.RandomTattooFor(newSpirit, TattooType.Face);
+                    newSpirit.style.BodyTattoo = PawnStyleItemChooser.RandomTattooFor(newSpirit, TattooType.Body);
                 }
                 else
                 {
@@ -1853,7 +1818,7 @@ namespace TorannMagic
                 switch (rndBad)
                 {
                     case 0:
-                        GenExplosion.DoExplosion(p.Position, p.Map, 5f, DamageDefOf.Bomb, p, Rand.Range(8, 12), 1f, null, null, null, null, null, 0, 1, false, null, 0, 1, 0, true);
+                        GenExplosion.DoExplosion(p.Position, p.Map, 5f, DamageDefOf.Bomb, p, Rand.Range(8, 12), 1f, null, null, null, null, null, 0, 1, null, false, null, 0, 1, 0, true);
                         surgeText = "Explosion";
                         break;
                     case 1:
@@ -2425,7 +2390,7 @@ namespace TorannMagic
                     Pawn p = new Pawn();
                     p = pawn;
                     Map map = p.Map;
-                    GenExplosion.DoExplosion(p.Position, p.Map, 0f, DamageDefOf.Burn, p as Thing, 0, 0, SoundDefOf.Thunder_OnMap, null, null, null, null, 0f, 0, false, null, 0f, 0, 0.0f, false);
+                    GenExplosion.DoExplosion(p.Position, p.Map, 0f, DamageDefOf.Burn, p as Thing, 0, 0, SoundDefOf.Thunder_OnMap, null, null, null, null, 0f, 0, null, false, null, 0f, 0, 0.0f, false);
                     Effecter deathEffect = TorannMagicDefOf.TM_DeathExplosion.Spawn();
                     deathEffect.Trigger(new TargetInfo(p.Position, p.Map, false), new TargetInfo(p.Position, p.Map, false));
                     deathEffect.Cleanup();
@@ -2921,7 +2886,7 @@ namespace TorannMagic
                 //GUI.DrawTexture(rect, Command.BGTex);
                 GenUI.DrawTextureWithMaterial(rect, shrink ? Command.BGTexShrunk : Command.BGTex, material);
 
-                Texture2D texture2D = com.icon;
+                Texture texture2D = com.icon;
                 if (texture2D == null)
                 {
                     texture2D = BaseContent.BadTex;
@@ -3671,7 +3636,7 @@ namespace TorannMagic
                 {
                     List<Hediff> recList = new List<Hediff>();
                     recList.Clear();
-                    List<Hediff> hds = p.health.hediffSet.GetHediffs<Hediff>().ToList();
+                    List<Hediff> hds = p.health.hediffSet.hediffs.ToList();
                     if (hds != null && hds.Count > 0)
                     {
                         for (int i = 0; i < hds.Count; i++)

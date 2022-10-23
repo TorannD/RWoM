@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--================== Maharal Golem upgrade recipes ==================-->
+  
+  <RecipeDef ParentName="MaharalGolem_Recipe_Base">
+    <defName>TM_MaharalGolem_RepairBlock</defName>
+    <label>Part restoration</label>
+    <description>Replaces missing golem parts that do not require an upgrade.</description>
+    <jobString>crafting golem part</jobString>
+	<skillRequirements>
+	  <Construction>6</Construction>
+    </skillRequirements>
+	<workAmount>2000</workAmount>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Leather_Light</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>RawMagicyte</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="MaharalGolem_Recipe_Base">
+    <defName>TM_MaharalGolem_EnergyMax</defName>
+    <label>energy cell</label>
+    <description>Creates an energy cell that increases maximum energy by 120 per cell.</description>
+    <jobString>creating energy cell</jobString>
+	<workAmount>3000</workAmount>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Leather_Plain</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>RawMagicyte</li>
+          </thingDefs>
+        </filter>
+        <count>60</count>
+      </li> 
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Gold</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="MaharalGolem_Recipe_Base">
+    <defName>TM_MaharalGolem_EnergyConverter</defName>
+    <label>energy converter</label>
+    <description>Increases the efficiency of energy absorbed and used by the golem by 10%.</description>
+    <jobString>constructing energy converter</jobString>	
+	<workAmount>3000</workAmount>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Gold</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li> 
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>RawMagicyte</li>
+          </thingDefs>
+        </filter>
+        <count>60</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="MaharalGolem_Recipe_Base">
+    <defName>TM_MaharalGolem_EnergyRegen</defName>
+    <label>energy generator</label>
+    <description>Increases the energy regeneration rate of the golem by 4 per hour.</description>
+    <jobString>constructing energy generator</jobString>	
+	<workAmount>3000</workAmount>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Silver</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>RawMagicyte</li>
+          </thingDefs>
+        </filter>
+        <count>40</count>
+      </li>	  
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Leather_Plain</li>
+          </thingDefs>
+        </filter>
+        <count>40</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="MaharalGolem_Recipe_Base">
+    <defName>TM_MaharalGolem_Armor</defName>
+    <label>Armor</label>
+    <description>Each upgrade increases the armor of the golem per level [1,2,3]:
+Blunt:	+[9,16,21]%
+Sharp:	+[13,22,29]%
+Heat:	+[8,14,18]%</description>
+    <jobString>crafting golem part</jobString>
+	<skillRequirements>
+	  <Crafting>6</Crafting>
+    </skillRequirements>
+	<workAmount>3000</workAmount>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>40</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Leather_Heavy</li>
+          </thingDefs>
+        </filter>
+        <count>40</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="MaharalGolem_Recipe_Base">
+    <defName>TM_MaharalGolem_LifeStage</defName>
+    <label>frame tier</label>
+    <description>Improves and refines the golem's frame each level [1,2,3]:
+Movement:	+[10/20/30]%
+Health:		+[40/70/100]%</description>
+    <jobString>improving golem frame</jobString>
+	<skillRequirements>
+	  <Crafting>8</Crafting>
+    </skillRequirements>
+	<workAmount>5000</workAmount>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Leather_Plain</li>
+          </thingDefs>
+        </filter>
+        <count>40</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>25</count>
+      </li>
+	   <li>
+        <filter>
+          <thingDefs>
+            <li>RawMagicyte</li>
+          </thingDefs>
+        </filter>
+        <count>40</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="MaharalGolem_Recipe_Base">
+    <defName>TM_MaharalGolem_Power</defName>
+    <label>Power</label>
+    <description>The shem hamephorash is further enhanced, allowing the Maharal golem the ability to produce an excess power.</description>
+    <jobString>crafting golem upgrade</jobString>
+	<skillRequirements>
+	  <Construction>5</Construction>
+    </skillRequirements>
+	<workAmount>4000</workAmount>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Silver</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>RawMagicyte</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>	
+    </ingredients>
+  </RecipeDef>  
+  
+  <RecipeDef ParentName="MaharalGolem_Recipe_Base">
+    <defName>TM_MaharalGolem_Heat</defName>
+    <label>Heat</label>
+    <description>The shem hamephorash is further enhanced, allowing the Maharal golem the ability to produce an excess heat.</description>
+    <jobString>crafting golem upgrade</jobString>
+	<skillRequirements>
+	  <Construction>5</Construction>
+    </skillRequirements>
+	<workAmount>4000</workAmount>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>70</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>RawMagicyte</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>	
+    </ingredients>
+  </RecipeDef>  
+  
+</Defs>

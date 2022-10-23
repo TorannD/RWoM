@@ -14,7 +14,7 @@ namespace TorannMagic
     {
 		public override IEnumerable<BodyPartRecord> GetPartsToApplyOn(Pawn pawn, RecipeDef recipe)
 		{
-			IEnumerable<BodyPartRecord> runeCarvedParts = from rch in pawn.health.hediffSet.GetHediffs<Hediff>()
+			IEnumerable<BodyPartRecord> runeCarvedParts = from rch in pawn.health.hediffSet.hediffs
 															where rch != null && rch.Part != null && (rch.def == TorannMagicDefOf.TM_RuneCarvedPartHD || rch.def == TorannMagicDefOf.TM_ArcaneTatooPartHD)
 															select rch.Part;
 			IEnumerable<BodyPartRecord> notMissingParts = from nmp in pawn.health.hediffSet.GetNotMissingParts()

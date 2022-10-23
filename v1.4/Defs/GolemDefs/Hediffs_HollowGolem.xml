@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <HediffDef>
+    <defName>TM_DecayHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(1, 0.8, .2)</defaultLabelColor>
+    <label>Decay</label>
+	<description>Rapidly decays, corrodes, and dissolves material and tissue.</description>
+	<isBad>true</isBad>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>true</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<initialSeverity>.5</initialSeverity>
+	<comps>
+      <li>
+        <compClass>TorannMagic.HediffComp_Decay</compClass>
+      </li>	
+    </comps>
+    <stages>
+      <li>
+        <label></label>
+        <minSeverity>.001</minSeverity>
+		<becomeVisible>true</becomeVisible>
+      </li>
+	</stages>
+  </HediffDef>
+  
+  <HediffDef>
+    <defName>TM_DeathFieldHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(1, 0.8, .2)</defaultLabelColor>
+    <label>Death Field</label>
+	<description>Periodically strikes nearby targets with death magic.</description>
+	<isBad>false</isBad>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<initialSeverity>.1</initialSeverity>
+	<comps>
+      <li>
+        <compClass>TorannMagic.HediffComp_DeathField</compClass>
+      </li>	
+    </comps>
+    <stages>
+      <li>
+        <label></label>
+        <minSeverity>.001</minSeverity>
+		<becomeVisible>true</becomeVisible>
+      </li>
+	</stages>
+  </HediffDef>
+  
+  <HediffDef>
+    <defName>TM_DoomFieldHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(1, 0.8, .2)</defaultLabelColor>
+    <label>Death's Abyss</label>
+	<description>Periodically slows nearby targets with their impending doom.</description>
+	<isBad>false</isBad>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<initialSeverity>.1</initialSeverity>
+	<comps>
+      <li>
+        <compClass>TorannMagic.HediffComp_DoomField</compClass>
+      </li>	
+    </comps>
+    <stages>
+      <li>
+        <label></label>
+        <minSeverity>.001</minSeverity>
+		<becomeVisible>true</becomeVisible>
+      </li>
+	</stages>
+  </HediffDef>
+
+  <HediffDef ParentName="TM_Golem_ImplantHediffBase">
+    <defName>TM_HollowGolem_BreastPlateHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+	<label>breastplate</label>
+	<description>Protects the torso and chest from attacks.</description>
+    <scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<maxSeverity>1</maxSeverity>
+	<isBad>false</isBad>
+	<initialSeverity>.1</initialSeverity>
+	<stages>
+      <li>
+        <label></label>
+        <minSeverity>0.001</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>
+		  <ArmorRating_Blunt>.21</ArmorRating_Blunt>
+		  <ArmorRating_Sharp>.32</ArmorRating_Sharp>
+		  <ArmorRating_Heat>.14</ArmorRating_Heat>
+		</statOffsets>
+      </li>
+	</stages>
+  </HediffDef>  
+  
+  <HediffDef ParentName="TM_Golem_ImplantHediffBase">
+    <defName>TM_HollowGolem_HelmHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+	<label>helmet</label>
+	<description>Protects the head and skull.</description>
+    <scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<maxSeverity>1</maxSeverity>
+	<isBad>false</isBad>
+	<initialSeverity>.1</initialSeverity>
+	<stages>
+      <li>
+        <label></label>
+        <minSeverity>0.001</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>
+		  <ArmorRating_Blunt>.22</ArmorRating_Blunt>
+		  <ArmorRating_Sharp>.07</ArmorRating_Sharp>
+		  <ArmorRating_Heat>.09</ArmorRating_Heat>
+		</statOffsets>
+      </li>
+	</stages>
+  </HediffDef>
+  
+  <HediffDef ParentName="TM_Golem_ImplantHediffBase">
+    <defName>TM_HollowGolem_ShoulderHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+	<label>shoulders</label>
+	<description>Protects the shoulders, collar, and neck.</description>
+    <scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<maxSeverity>1</maxSeverity>
+	<isBad>false</isBad>
+	<initialSeverity>.1</initialSeverity>
+	<stages>
+      <li>
+        <label></label>
+        <minSeverity>0.001</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>
+		  <ArmorRating_Blunt>.08</ArmorRating_Blunt>
+		  <ArmorRating_Sharp>.19</ArmorRating_Sharp>
+		  <ArmorRating_Heat>.06</ArmorRating_Heat>
+		</statOffsets>
+      </li>
+	</stages>
+  </HediffDef>
+  
+  <HediffDef ParentName="TM_Golem_ImplantHediffBase">
+    <defName>TM_HollowGolem_CrownHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+	<label>crown of awakening</label>
+	<description>Strengthens willpower and offers minor protection against physical attacks.</description>
+    <scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<maxSeverity>1</maxSeverity>
+	<isBad>false</isBad>
+	<initialSeverity>.1</initialSeverity>
+	<stages>
+      <li>
+        <label></label>
+        <minSeverity>0.001</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>
+		  <ArmorRating_Blunt>.02</ArmorRating_Blunt>
+		  <ArmorRating_Sharp>.05</ArmorRating_Sharp>
+		  <ArmorRating_Alignment>.25</ArmorRating_Alignment>
+		</statOffsets>
+      </li>
+	</stages>
+  </HediffDef>
+  
+  <HediffDef ParentName="TM_Golem_ImplantHediffBase">
+    <defName>TM_HollowGolem_CloakHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+	<label>fade cloak</label>
+	<description>Increases movement speed and provides a small amount of protection.</description>
+    <scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<maxSeverity>1</maxSeverity>
+	<isBad>false</isBad>
+	<initialSeverity>.1</initialSeverity>
+	<stages>
+      <li>
+        <label></label>
+        <minSeverity>0.001</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>
+		  <ArmorRating_Blunt>.1</ArmorRating_Blunt>
+		  <ArmorRating_Sharp>.05</ArmorRating_Sharp>
+		  <ArmorRating_Heat>.15</ArmorRating_Heat>
+		  <ArmorRating_Alignment>.05</ArmorRating_Alignment>
+		  <MoveSpeed>.4</MoveSpeed>
+		</statOffsets>
+      </li>
+	</stages>
+  </HediffDef>
+  
+  <HediffDef ParentName="TM_Golem_ImplantHediffBase">
+    <defName>TM_HollowGolem_CoAFireHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+	<label>Coat of Arms: Fire</label>
+	<description>Increases movement speed and heat resistance.</description>
+    <scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<maxSeverity>3</maxSeverity>
+	<isBad>false</isBad>
+	<initialSeverity>.1</initialSeverity>
+	<stages>
+      <li>
+        <label>I</label>
+        <minSeverity>0.001</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>
+		  <MoveSpeed>.2</MoveSpeed>
+		  <ArmorRating_Heat>.3</ArmorRating_Heat>
+		</statOffsets>
+      </li>
+	  <li>
+        <label>II</label>
+        <minSeverity>1</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>
+		  <MoveSpeed>.3</MoveSpeed>
+		  <ArmorRating_Heat>.5</ArmorRating_Heat>
+		</statOffsets>
+      </li>
+	  <li>
+        <label>III</label>
+        <minSeverity>2</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>
+		  <MoveSpeed>.35</MoveSpeed>
+		  <ArmorRating_Heat>.6</ArmorRating_Heat>
+		</statOffsets>
+      </li>
+	</stages>
+  </HediffDef>
+  
+  <HediffDef ParentName="TM_Golem_ImplantHediffBase">
+    <defName>TM_HollowGolem_CoAIceHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+	<label>Coat of Arms</label>
+	<description>Increases armor.</description>
+    <scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<maxSeverity>3</maxSeverity>
+	<isBad>false</isBad>
+	<initialSeverity>.1</initialSeverity>
+	<stages>
+      <li>
+        <label>I</label>
+        <minSeverity>0.001</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>
+		  <ArmorRating_Blunt>.05</ArmorRating_Blunt>
+		  <ArmorRating_Sharp>.05</ArmorRating_Sharp>
+		  <ArmorRating_Heat>.05</ArmorRating_Heat>
+		  <ArmorRating_Alignment>.05</ArmorRating_Alignment>
+		</statOffsets>
+      </li>
+	  <li>
+        <label>II</label>
+        <minSeverity>1</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>
+		  <ArmorRating_Blunt>.1</ArmorRating_Blunt>
+		  <ArmorRating_Sharp>.1</ArmorRating_Sharp>
+		  <ArmorRating_Heat>.1</ArmorRating_Heat>
+		  <ArmorRating_Alignment>.1</ArmorRating_Alignment>
+		</statOffsets>
+      </li>
+	  <li>
+        <label>III</label>
+        <minSeverity>2</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>
+		  <ArmorRating_Blunt>.15</ArmorRating_Blunt>
+		  <ArmorRating_Sharp>.15</ArmorRating_Sharp>
+		  <ArmorRating_Heat>.15</ArmorRating_Heat>
+		  <ArmorRating_Alignment>.15</ArmorRating_Alignment>
+		</statOffsets>
+      </li>
+	</stages>
+  </HediffDef>
+
+</Defs>

@@ -335,7 +335,7 @@ namespace TorannMagic
             }
         }
 
-        private void ImpactSomething()
+        protected override void ImpactSomething()
         {
             bool flag = this.assignedTarget != null;
             if (flag)
@@ -344,20 +344,20 @@ namespace TorannMagic
                 bool flag2 = pawn != null && pawn.GetPosture() != PawnPosture.Standing && (this.origin - this.destination).MagnitudeHorizontalSquared() >= 20.25f && Rand.Value > 0.2f;
                 if (flag2)
                 {
-                    this.Impact(null);
+                    this.Impact(null, false);
                 }
                 else
                 {
-                    this.Impact(this.assignedTarget);
+                    this.Impact(this.assignedTarget, false);
                 }
             }
             else
             {
-                this.Impact(null);
+                this.Impact(null, false);
             }
         }
 
-        protected override void Impact(Thing hitThing)
+        protected override void Impact(Thing hitThing, bool blockedByShield)
         {
             bool flag = hitThing == null;
             if (flag)

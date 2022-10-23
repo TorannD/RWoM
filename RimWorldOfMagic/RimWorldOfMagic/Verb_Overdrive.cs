@@ -88,7 +88,7 @@ namespace TorannMagic
                 {                    
                     CompPower compP = bldg.GetComp<CompPower>();
                     CompPowerTrader cpt = bldg.GetComp<CompPowerTrader>();
-                    if(compP != null && compP.Props.basePowerConsumption != 0 && cpt != null && cpt.powerOutputInt != 0)
+                    if(compP != null && compP.Props.PowerConsumption != 0 && cpt != null && cpt.powerOutputInt != 0)
                     {
                         comp.overdriveBuilding = bldg;
                         comp.overdrivePowerOutput = Mathf.RoundToInt(cpt.powerOutputInt * (2 + .6f * pwrVal * comp.arcaneDmg));

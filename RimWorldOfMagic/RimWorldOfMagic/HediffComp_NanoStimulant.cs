@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Verse;
 using RimWorld;
+using TorannMagic.Utils;
 using UnityEngine;
 
 namespace TorannMagic
@@ -62,68 +63,38 @@ namespace TorannMagic
             {
                 HealthUtility.AdjustSeverity(base.Pawn, HediffDef.Named("TM_NanoStimulantWithdrawalHD"), 1 - (.03f * this.hediffPwr));
                 Pawn pawn = base.Pawn as Pawn;
-                
+
+                if (pawn == null) return;
                 TM_MoteMaker.ThrowRegenMote(pawn.DrawPos, pawn.Map, 1f);
-                bool flag = pawn != null;
-                if (flag)
+
+                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+                int injuriesToHeal;
+                int injuriesPerBodyPart;
+                if (settingsRef.AIHardMode && !pawn.IsColonist)
                 {
-                    ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                    int num = 2 + Mathf.RoundToInt(this.hediffPwr * .2f);
-                    if(settingsRef.AIHardMode && !pawn.IsColonist)
-                    {
-                        num = 5;
-                    }
-  
-                    using (IEnumerator<BodyPartRecord> enumerator = pawn.health.hediffSet.GetInjuredParts().GetEnumerator())
-                    {
-                        while (enumerator.MoveNext())
-                        {
-                            BodyPartRecord rec = enumerator.Current;
-                            bool flag2 = num > 0;
-
-                            if (flag2)
-                            {
-                                
-                                int num2 = 3 + Mathf.RoundToInt(this.hediffPwr * .35f); // + ver.level;
-                                if(settingsRef.AIHardMode && !pawn.IsColonist)
-                                {
-                                    num2 = 5;
-                                }
-                                IEnumerable<Hediff_Injury> arg_BB_0 = pawn.health.hediffSet.GetHediffs<Hediff_Injury>();
-                                Func<Hediff_Injury, bool> arg_BB_1;
-
-                                arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
-
-                                foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1))
-                                {
-                                    bool flag4 = num2 > 0;
-                                    if (flag4)
-                                    {
-                                        bool flag5 = current.CanHealNaturally() && !current.IsPermanent();
-                                        if (flag5)
-                                        {
-                                            
-                                            if(!pawn.IsColonist)
-                                            {
-                                                current.Heal(10f);
-                                            }
-                                            else
-                                            {
-                                                current.Heal(2f + (.35f * hediffPwr));
-                                            }
-                                            if(Rand.Chance(.4f + (.02f * hediffPwr)))
-                                            {
-                                                current.Tended(Rand.Range(.4f + (.02f * this.hediffPwr), .5f + (.03f * this.hediffPwr)), 1f);
-                                            }
-                                            num--;
-                                            num2--;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
+                    injuriesToHeal = 5;
+                    injuriesPerBodyPart = 5;
                 }
+                else
+                {
+                    injuriesToHeal = 2 + Mathf.RoundToInt(hediffPwr * .2f);
+                    injuriesPerBodyPart = 3 + Mathf.RoundToInt(hediffPwr * .35f);
+                }
+
+                IEnumerable<Hediff_Injury> injuries = pawn.health.hediffSet.hediffs
+                    .OfType<Hediff_Injury>()
+                    .Where(injury => injury.CanHealNaturally())
+                    .DistinctBy(injury => injury.Part, injuriesPerBodyPart)
+                    .Take(injuriesToHeal);
+
+                float healAmount = pawn.IsColonist ? 2f + .35f * hediffPwr : 10f;
+                float tendChance = .4f + .02f * hediffPwr;
+                foreach (Hediff_Injury injury in injuries)
+                {
+                    injury.Heal(healAmount);
+                    if (Rand.Chance(tendChance))
+                        injury.Tended(Rand.Range(.4f + .02f * hediffPwr, .5f + .03f * hediffPwr), 1f);
+                }                
             }            
         }
 

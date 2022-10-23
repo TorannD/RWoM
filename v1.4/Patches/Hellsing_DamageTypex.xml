@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Hellsing ARMS Ultimate</li>
+		</mods>
+		<match Class="PatchOperationAdd">
+			<xpath>/Defs/DamageDef[defName = "TM_Holy" or defName = "TM_Overwhelm" or defName = "TM_BurningLight"]</xpath>
+			<value>
+				<additionalHediffs>
+					<li>
+						<hediff>HSAU_SearingSanctification</hediff>
+						<severityPerDamageDealt>0.020</severityPerDamageDealt>
+						<victimSeverityScaling>HSAU_SanctusSensitivity</victimSeverityScaling>
+						<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+					</li>
+				</additionalHediffs>
+			</value>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Hellsing ARMS Ultimate</li>
+		</mods>
+		<match Class="PatchOperationAdd">
+			<xpath>/Defs/DamageDef[defName = "TM_Shadow" or defName = "TM_Spirit" or defName = "TM_ArcaneSpectre" or defName = "TM_DecayDD"]</xpath>
+			<value>
+				<additionalHediffs>
+				  <li>
+					<hediff>HSAU_DirgeDecay</hediff>
+					<severityPerDamageDealt>0.003</severityPerDamageDealt>
+					<victimSeverityScaling>HSAU_DecaySensitivity</victimSeverityScaling>
+					<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+				  </li>
+				</additionalHediffs>
+			</value>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Hellsing ARMS Ultimate</li>
+		</mods>
+		<match Class="PatchOperationAdd">
+			<xpath>/Defs/DamageDef[defName = "TM_Torment" or defName = "TM_DeathBolt" or defName = "TM_CorpseExplosion"]/additionalHediffs</xpath>
+			<value>
+				<li>
+					<hediff>HSAU_DirgeDecay</hediff>
+					<severityPerDamageDealt>0.003</severityPerDamageDealt>
+					<victimSeverityScaling>HSAU_DecaySensitivity</victimSeverityScaling>
+					<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+				</li>
+			</value>
+		</match>
+	</Operation>
+  
+</Patch>

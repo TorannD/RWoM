@@ -3,6 +3,7 @@ using Verse;
 using System.Collections.Generic;
 using System;
 using System.Linq;
+using TorannMagic.Utils;
 
 namespace TorannMagic
 {
@@ -80,79 +81,24 @@ namespace TorannMagic
 
         public void TickAction()
         {
-            Pawn pawn = this.Pawn;
-            int num = 2;
+            IEnumerable<Hediff_Injury> injuries = Pawn.health.hediffSet.hediffs
+                .OfType<Hediff_Injury>()
+                .Where(injury => injury.CanHealNaturally())
+                .DistinctBy(injury => injury.Part)
+                .Take(2);
 
-            using (IEnumerator<BodyPartRecord> enumerator = pawn.health.hediffSet.GetInjuredParts().GetEnumerator())
+            foreach (Hediff_Injury injury in injuries)
             {
-                while (enumerator.MoveNext())
-                {
-                    BodyPartRecord rec = enumerator.Current;
-                    bool flag2 = num > 0;
-                    int num2 = 1;
-                    if (flag2)
-                    {
-                        IEnumerable<Hediff_Injury> arg_BB_0 = pawn.health.hediffSet.GetHediffs<Hediff_Injury>();
-                        Func<Hediff_Injury, bool> arg_BB_1;
-
-                        arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
-
-                        foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1))
-                        {
-                            bool flag3 = num2 > 0;
-                            if (flag3)
-                            {
-                                bool flag5 = current.CanHealNaturally() && !current.IsPermanent();
-                                if (flag5)
-                                {
-                                    current.Heal(Rand.Range(.2f, 1f));
-                                    num--;
-                                    num2--;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+                injury.Heal(Rand.Range(.2f, 1f));
+            }                
         }
 
         public void TickActionPerm()
         {
-            Pawn pawn = this.Pawn;
-            int num = 1;
-            using (IEnumerator<BodyPartRecord> enumerator = pawn.health.hediffSet.GetInjuredParts().GetEnumerator())
-            {
-                while (enumerator.MoveNext())
-                {
-                    BodyPartRecord rec = enumerator.Current;
-                    bool flag2 = num > 0;
-                    if (flag2)
-                    {
-                        int num2 = 1;
-                        IEnumerable<Hediff_Injury> arg_BB_0 = pawn.health.hediffSet.GetHediffs<Hediff_Injury>();
-                        Func<Hediff_Injury, bool> arg_BB_1;
-
-                        arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
-
-                        foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1))
-                        {
-                            bool flag4 = num2 > 0;
-                            if (flag4)
-                            {
-                                bool flag5 = !current.CanHealNaturally() && current.IsPermanent();
-                                if (flag5)
-                                {
-                                    current.Heal(Rand.Range(.1f, .3f));
-                                    num--;
-                                    num2--;
-
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+            Hediff_Injury injuryToHeal = Pawn.health.hediffSet.hediffs
+                .OfType<Hediff_Injury>()
+                .FirstOrDefault(injury => injury.IsPermanent());
+            injuryToHeal?.Heal(Rand.Range(.1f, .3f));
         }
-
     }
 }

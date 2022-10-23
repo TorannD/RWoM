@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\v1.3\Assemblies\</OutputPath>
+    <OutputPath>..\..\v1.4\Assemblies\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -140,17 +140,21 @@
     <Compile Include="FlyingObject_SpiritStorm.cs" />
     <Compile Include="HediffComp_SpiritDistortion.cs" />
     <Compile Include="HediffComp_SpiritPossession.cs" />
+    <Compile Include="Hediff_Evasion.cs" />
     <Compile Include="Hediff_Possessor.cs" />
     <Compile Include="JobDriver_SpiritDrain.cs" />
     <Compile Include="Need_Spirit.cs" />
+    <Compile Include="Projectile_MagicBase.cs" />
     <Compile Include="Projectile_SpiritPossession.cs" />
     <Compile Include="Projectile_DistortSpirit.cs" />
     <Compile Include="Projectile_SummonSpiritAnimals.cs" />
     <Compile Include="Thoughts\ThoughtWorker_TM_LivingPossessed.cs" />
     <Compile Include="TMDefs\TM_AdvancedClassOptions.cs" />
+    <Compile Include="Utils\LinqExtensions.cs" />
     <Compile Include="Utils\TraitIconMap.cs" />
     <Compile Include="Utils\SimpleCache.cs" />
     <Compile Include="Verb_Attraction.cs" />
+    <Compile Include="Verb_UseMagic.cs" />
     <Compile Include="Verb_Scorn.cs" />
     <Compile Include="Verb_FogOfTorment.cs" />
     <Compile Include="Verb_LightningCloud.cs" />

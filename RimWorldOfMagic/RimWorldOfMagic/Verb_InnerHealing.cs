@@ -20,9 +20,9 @@ namespace TorannMagic
             bool flag = pawn != null && !pawn.Dead;
             if (flag)
             {
-                if(pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_HediffInnerHealing")))
+                if(pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_HediffInnerHealing))
                 {
-                    using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
+                    using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.hediffs.GetEnumerator())
                     {
                         while (enumerator.MoveNext())
                         {
@@ -36,7 +36,7 @@ namespace TorannMagic
                 }
                 else
                 {
-                    HealthUtility.AdjustSeverity(pawn, HediffDef.Named("TM_HediffInnerHealing"), .5f );
+                    HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_HediffInnerHealing, .5f );
                     FleckMaker.ThrowDustPuff(pawn.Position, pawn.Map, 1f);
                 }
             }

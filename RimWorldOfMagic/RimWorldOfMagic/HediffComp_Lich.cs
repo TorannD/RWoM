@@ -58,8 +58,7 @@ namespace TorannMagic
 
             if (Find.TickManager.TicksGame % 16 == 0)
             {
-                IEnumerable<Hediff> hdEnum = this.Pawn.health.hediffSet.GetHediffs<Hediff>();
-                foreach (Hediff hd in hdEnum)
+                foreach (Hediff hd in Pawn.health.hediffSet.hediffs)
                 {
                     if (hd.def.defName == "SpaceHypoxia")
                     {
@@ -69,8 +68,7 @@ namespace TorannMagic
                 }
             }
 
-            bool flag4 = Find.TickManager.TicksGame % 600 == 0;
-            if (flag4)
+            if (Find.TickManager.TicksGame % 600 == 0)
             {
                 List<Need> needs = base.Pawn.needs.AllNeeds;
                 for (int i = 0; i < needs.Count; i++)
@@ -81,46 +79,10 @@ namespace TorannMagic
                     }
                     
                 }
-                Pawn pawn = base.Pawn;
-                int num = 1;
-                int num2 = 1;
-                using (IEnumerator<BodyPartRecord> enumerator = pawn.health.hediffSet.GetInjuredParts().GetEnumerator())
-                {
-                    while (enumerator.MoveNext())
-                    {
-                        BodyPartRecord rec = enumerator.Current;
-                        bool flag2 = num > 0;
 
-                        if (flag2)
-                        {
-                            IEnumerable<Hediff_Injury> arg_BB_0 = pawn.health.hediffSet.GetHediffs<Hediff_Injury>();
-                            Func<Hediff_Injury, bool> arg_BB_1;
-
-                            arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
-
-                            foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1))
-                            {
-                                bool flag3 = num2 > 0;
-                                if (flag3)
-                                {
-                                    bool flag5 = current.CanHealNaturally() && !current.IsPermanent();
-                                    if (flag5)
-                                    {
-                                        current.Heal(2.0f);
-                                        num--;
-                                        num2--;
-                                    }
-                                    else
-                                    {
-                                        current.Heal(1.0f);
-                                        num--;
-                                        num2--;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+                Pawn pawn = Pawn;
+                Hediff_Injury injuryToHeal = pawn.health.hediffSet.hediffs.OfType<Hediff_Injury>().FirstOrDefault();
+                injuryToHeal?.Heal(injuryToHeal.CanHealNaturally() ? 2.0f : 1.0f);
 
                 using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.GetHediffsTendable().GetEnumerator())
                 {
@@ -132,7 +94,6 @@ namespace TorannMagic
                             if (rec.Bleeding && rec is Hediff_MissingPart)
                             {
                                 Traverse.Create(root: rec).Field(name: "isFreshInt").SetValue(false);
-                                num--;
                             }
                             else
                             {
@@ -142,7 +103,7 @@ namespace TorannMagic
                     }
                 }
 
-                using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
+                using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.hediffs.GetEnumerator())
                 {
                     while (enumerator.MoveNext())
                     {

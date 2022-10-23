@@ -80,7 +80,7 @@ namespace TorannMagic
                     else
                     {
                         bool soulPawnHasHediff = false;
-                        using (IEnumerator<Hediff> enumerator = soulPawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
+                        using (IEnumerator<Hediff> enumerator = soulPawn.health.hediffSet.hediffs.GetEnumerator())
                         {
                             while (enumerator.MoveNext())
                             {

@@ -2,6 +2,7 @@
 using Verse.AI;
 using RimWorld;
 using Verse;
+using Verse.AI.Group;
 using AbilityUser;
 using System.Linq;
 
@@ -14,6 +15,16 @@ namespace TorannMagic
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
             return true;
+        }
+
+        private static float WakeThreshold(Pawn p)
+        {
+            Lord lord = p.GetLord();
+            if (lord != null && lord.CurLordToil != null && lord.CurLordToil.CustomWakeThreshold.HasValue)
+            {
+                return lord.CurLordToil.CustomWakeThreshold.Value;
+            }
+            return p.ageTracker.CurLifeStage?.naturalWakeThresholdOverride ?? 1f;
         }
 
         protected override IEnumerable<Toil> MakeNewToils()
@@ -46,12 +57,12 @@ namespace TorannMagic
                 actor.GainComfortFromCellIfPossible();
                 if (!curDriver.asleep)
                 {
-                    if (actor.needs.rest != null && actor.needs.rest.CurLevel < .99f * RestUtility.WakeThreshold(actor))
+                    if (actor.needs.rest != null && actor.needs.rest.CurLevel < .99f * WakeThreshold(actor))
                     {
                         curDriver.asleep = true;
                     }
                 }
-                else if ((actor.needs.rest == null || actor.needs.rest.CurLevel >= RestUtility.WakeThreshold(actor)))
+                else if ((actor.needs.rest == null || actor.needs.rest.CurLevel >= WakeThreshold(actor)))
                 {
                     actor.mindState.priorityWork.ClearPrioritizedWorkAndJobQueue();
                     this.EndJobWith(JobCondition.Incompletable);
@@ -61,7 +72,7 @@ namespace TorannMagic
                 {                    
                     num = 0.7f * num + 0.3f * num;  //talk about convoluted calculations...
                     actor.needs.rest.TickResting(num);
-                    if(actor.needs.rest.CurLevel >= .99f * RestUtility.WakeThreshold(actor))
+                    if(actor.needs.rest.CurLevel >= .99f * WakeThreshold(actor))
                     {
                         curDriver.asleep = false;
                         actor.mindState.priorityWork.ClearPrioritizedWorkAndJobQueue();

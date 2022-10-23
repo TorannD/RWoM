@@ -152,7 +152,7 @@ namespace TorannMagic
                             this.targetPawn.Destroy();
                         }
                     }
-                    GenExplosion.DoExplosion(this.targetPawn.Position, map, this.radius, TMDamageDefOf.DamageDefOf.TM_CorpseExplosion, this.launcher, Mathf.RoundToInt((Rand.Range(22f, 36f) + (5f * pwrVal)) * this.arcaneDmg), 0, this.def.projectile.soundExplode, def, this.equipmentDef, null, null, 0f, 01, false, null, 0f, 0, 0.0f, true);
+                    GenExplosion.DoExplosion(this.targetPawn.Position, map, this.radius, TMDamageDefOf.DamageDefOf.TM_CorpseExplosion, this.launcher, Mathf.RoundToInt((Rand.Range(22f, 36f) + (5f * pwrVal)) * this.arcaneDmg), 0, this.def.projectile.soundExplode, def, this.equipmentDef, null, null, 0f, 01, null, false, null, 0f, 0, 0.0f, true);
 
                 }
             }
@@ -196,7 +196,7 @@ namespace TorannMagic
                         corpsePawn.equipment.DropAllEquipment(this.targetCorpse.Position, false);
                         corpsePawn.apparel.DropAll(this.targetCorpse.Position, false);
                     }
-                    GenExplosion.DoExplosion(this.targetCorpse.Position, map, this.radius, TMDamageDefOf.DamageDefOf.TM_CorpseExplosion, this.launcher, Mathf.RoundToInt((Rand.Range(18f, 30f) + (5f * pwrVal))*this.arcaneDmg), 0, this.def.projectile.soundExplode, def, this.equipmentDef, null, null, 0f, 01, false, null, 0f, 0, 0.0f, true);
+                    GenExplosion.DoExplosion(this.targetCorpse.Position, map, this.radius, TMDamageDefOf.DamageDefOf.TM_CorpseExplosion, this.launcher, Mathf.RoundToInt((Rand.Range(18f, 30f) + (5f * pwrVal))*this.arcaneDmg), 0, this.def.projectile.soundExplode, def, this.equipmentDef, null, null, 0f, 01, null, false, null, 0f, 0, 0.0f, true);
                     if (!this.targetCorpse.Destroyed)
                     {
                         this.targetCorpse.Destroy();

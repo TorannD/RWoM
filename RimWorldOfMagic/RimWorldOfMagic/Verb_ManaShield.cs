@@ -40,8 +40,6 @@ namespace TorannMagic
         protected override bool TryCastShot()
         {
             bool result = false;
-            bool arg_40_0;
-
             Pawn pawn = this.CasterPawn;
             Map map = this.CasterPawn.Map;
 
@@ -49,12 +47,12 @@ namespace TorannMagic
             {
                 if(pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_ManaShieldHD, false))
                 {
-                    using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
+                    using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.hediffs.GetEnumerator())
                     {
                         while (enumerator.MoveNext())
                         {
                             Hediff rec = enumerator.Current;
-                            if (rec.def.defName == "TM_ManaShieldHD")
+                            if (rec.def == TorannMagicDefOf.TM_ManaShieldHD)
                             {
                                 pawn.health.RemoveHediff(rec);
                             }
@@ -72,21 +70,12 @@ namespace TorannMagic
                     TM_MoteMaker.ThrowManaPuff(pawn.DrawPos, pawn.Map, 1);
                     TM_MoteMaker.ThrowManaPuff(pawn.DrawPos, pawn.Map, .75f);
                 }
-                arg_40_0 = true;
-            }
-            else
-            {
-                arg_40_0 = false;
-            }
-            bool flag = arg_40_0;
-            if (flag)
-            {
-                
             }
             else
             {
                 Log.Warning("failed to TryCastShot");
             }
+
             this.burstShotsLeft = 0;
 
             return result;

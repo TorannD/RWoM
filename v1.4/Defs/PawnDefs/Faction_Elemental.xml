@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<FactionDef>
+		<defName>TM_SkeletalFaction</defName>
+		<label>Skeletal</label>
+		<description>Skeletons and undead raised by arcane power.</description>
+		<pawnSingular>skeleton</pawnSingular>
+		<pawnsPlural>skeletal</pawnsPlural>
+		<requiredCountAtGameStart>1</requiredCountAtGameStart>
+		<fixedName>Skeletal</fixedName>
+		<humanlikeFaction>false</humanlikeFaction>
+		<techLevel>Neolithic</techLevel>
+		<hidden>true</hidden>
+		<rescueesCanJoin>false</rescueesCanJoin>
+		<autoFlee>false</autoFlee>
+		<naturalEnemy>true</naturalEnemy>
+		<permanentEnemy>true</permanentEnemy>
+		<raidLootValueFromPointsCurve>
+		  <points>
+			<li>(10,    200)</li>
+		  </points>
+		</raidLootValueFromPointsCurve>
+	</FactionDef>
+
+	<FactionDef>
+		<defName>TM_ElementalFaction</defName>
+		<label>Elemental</label>
+		<description>Elemental spirits summoned from their planes of power.</description>
+		<pawnSingular>elemental</pawnSingular>
+		<pawnsPlural>Elementals</pawnsPlural>
+		<requiredCountAtGameStart>1</requiredCountAtGameStart>
+		<fixedName>Elementals</fixedName>
+		<humanlikeFaction>false</humanlikeFaction>
+		<techLevel>Neolithic</techLevel>
+		<backstoryCategories>
+			<li>Civil</li>
+		</backstoryCategories>
+		<hidden>true</hidden>
+		<rescueesCanJoin>false</rescueesCanJoin>
+		<autoFlee>false</autoFlee>
+		<naturalEnemy>true</naturalEnemy>
+		<permanentEnemy>true</permanentEnemy>
+		<raidLootValueFromPointsCurve>
+		  <points>
+			<li>(10,    200)</li>
+		  </points>
+		</raidLootValueFromPointsCurve>
+
+	</FactionDef>
+	
+	<FactionDef>
+		<defName>TM_SummonedFaction</defName>
+		<label>Summoned being</label>
+		<description>Beings summoned from other dimensions or planes of existence using arcane power.</description>
+		<pawnSingular>summoned</pawnSingular>
+		<pawnsPlural>summoned</pawnsPlural>
+		<requiredCountAtGameStart>1</requiredCountAtGameStart>
+		<fixedName>Summoned</fixedName>
+		<humanlikeFaction>false</humanlikeFaction>
+		<techLevel>Neolithic</techLevel>
+		<backstoryCategories>
+			<li>Civil</li>
+		</backstoryCategories>
+		<hidden>true</hidden>
+		<rescueesCanJoin>false</rescueesCanJoin>
+		<autoFlee>false</autoFlee>
+		<naturalEnemy>true</naturalEnemy>
+		<permanentEnemy>true</permanentEnemy>
+		<raidLootValueFromPointsCurve>
+		  <points>
+			<li>(10,    200)</li>
+		  </points>
+		</raidLootValueFromPointsCurve>
+
+	</FactionDef>
+
+</Defs>

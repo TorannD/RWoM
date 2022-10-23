@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+  <!--============= Misc for Golems ===============-->
+
+  <JobDef>
+    <defName>JobDriver_GolemDespawn</defName>
+    <driverClass>TorannMagic.Golems.JobDriver_GolemDespawn</driverClass>
+    <reportString>deactivating</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  
+  <JobDef>
+    <defName>JobDriver_GolemSelfTend</defName>
+    <driverClass>TorannMagic.Golems.JobDriver_GolemSelfTend</driverClass>
+    <reportString>auto tend</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  
+  <JobDef>
+    <defName>JobDriver_MechaMine</defName>
+    <driverClass>TorannMagic.Golems.JobDriver_MechaMine</driverClass>
+    <reportString>mining protocol</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  
+  <JobDef>
+    <defName>JobDriver_FleshHarvest</defName>
+    <driverClass>TorannMagic.Golems.JobDriver_FleshHarvest</driverClass>
+    <reportString>harvesting plants</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  
+  <JobDef>
+    <defName>JobDriver_FleshChop</defName>
+    <driverClass>TorannMagic.Golems.JobDriver_FleshChop</driverClass>
+    <reportString>cutting plants</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  
+  <JobDef>
+    <defName>JobDriver_GolemAbilityJob</defName>
+    <driverClass>TorannMagic.Golems.JobDriver_GolemAbilityJob</driverClass>
+    <reportString>using ability</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  
+  <JobDef>
+    <defName>JobDriver_GolemAttackStatic</defName>
+    <driverClass>TorannMagic.Golems.JobDriver_GolemAttackStatic</driverClass>
+    <reportString>targeting TargetA.</reportString>
+	<casualInterruptible>false</casualInterruptible>
+    <collideWithPawns>true</collideWithPawns>
+  </JobDef>
+  
+</Defs>

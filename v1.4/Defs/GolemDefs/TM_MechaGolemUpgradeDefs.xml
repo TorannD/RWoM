@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+ 
+<Defs>
+
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_MechaRepair</defName>
+		<label>restore part</label>
+		<recipe>TM_Mecha-Golem_RepairComponent</recipe>
+		<maxLevel>0</maxLevel>
+		<workstationEffects>
+			<li Class="TorannMagic.Golems.GolemWorkstationEffect_RestorePart" />
+		</workstationEffects>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_MechaMaxEnergy</defName>
+		<label>energy cell</label>
+		<description>Increases maximum energy by 500 per level. Starting max energy is 1000.</description>
+		<recipe>TM_Mecha-Golem_EnergyCell</recipe>
+		<bodypart>Mecha_EnergyCompactor</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<maxLevel>5</maxLevel>
+		<workstationCapacity>EnergyMax</workstationCapacity>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_MechaEnergyEfficiency</defName>
+		<label>energy converter</label>
+		<description>Increases energy efficiency by 10% per level. Starting energy efficiency is 50%.</description>
+		<recipe>TM_Mecha-Golem_EnergyConverter</recipe>
+		<bodypart>Mecha_Core</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<maxLevel>5</maxLevel>
+		<workstationCapacity>Efficiency</workstationCapacity>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_MechaEnergyRate</defName>
+		<label>electrical neuro-core</label>
+		<description>Increases energy charge rate by 20% per level. Starting recharge rate is 50 energy/hour when disconnected from a power grid. Connecting to a power grind increases the recharge rate.</description>
+		<recipe>TM_Mecha-Golem_EnergyCharge</recipe>
+		<bodypart>Mecha_Spine</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<maxLevel>5</maxLevel>
+		<workstationCapacity>EnergyRegeneration</workstationCapacity>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_MechaExtinguisher</defName>
+		<label>extinguisher</label>
+		<description>Adds the ability to quickly douse fires.</description>
+		<recipe>TM_Mecha-Golem_Extinguisher</recipe>
+		<bodypart>Mecha_Body</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<drawOnlyWhenActive>true</drawOnlyWhenActive>
+		<drawUndrafted>false</drawUndrafted>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>	
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_MechaBallisticPlate</defName>
+		<label>ballistic plate</label>
+		<description>Increases armor but decreases movement for each level:
+Blunt:	+[24,37,49]%
+Sharp:	+[35,53,68]%
+Heat:	+[40,60,75]%
+Move:	-[.3c,.5c,.6c]%</description>
+		<maxLevel>3</maxLevel>
+		<recipe>TM_Mecha-Golem_BallisticPlate</recipe>
+		<bodypart>Mecha_Body</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<hediff>TM_Mecha-Golem_BallisticPlateHD</hediff>
+		<hediffSeverityPerLevel>.8</hediffSeverityPerLevel>
+		<graphicsPath>Mecha/BallisticPlate</graphicsPath>
+		<drawUndrafted>true</drawUndrafted>
+		<drawOnlyWhenActive>false</drawOnlyWhenActive>
+		<drawSize>3</drawSize>
+		<shouldRotate>false</shouldRotate>
+		<drawOffsetNorth>(0, .01, 0)</drawOffsetNorth>
+		<drawOffsetSouth>(0, .01, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .01, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .01, 0)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_MechaAxe</defName>
+		<label>mecha-axe</label>
+		<description>Adds a quick cutting attack, useful for cutting down unarmored masses.</description>
+		<recipe>TM_Mecha-Golem_Axe</recipe>
+		<bodypart>Mecha_LeftArm_Axe</bodypart>
+		<partRequiresUpgrade>true</partRequiresUpgrade>
+		<occupiedPart>Mecha_LeftArm</occupiedPart>
+		<maxLevel>1</maxLevel>
+		<graphicsPath>Mecha/GolemAxe</graphicsPath>
+		<drawUndrafted>false</drawUndrafted>
+		<drawSize>1.8</drawSize>
+		<drawOffsetNorth>(-.6, -.02, .4)</drawOffsetNorth>
+		<drawOffsetSouth>(.6, .02, .4)</drawOffsetSouth>
+		<drawOffsetEast>(.8, -.02, .4)</drawOffsetEast>
+		<drawOffsetWest>(-.8, .02, .4)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_MechaSword</defName>
+		<label>mecha-sword</label>
+		<description>Adds a powerful cutting attack, useful for breaking through defenses and severing limbs.</description>
+		<recipe>TM_Mecha-Golem_Sword</recipe>
+		<bodypart>Mecha_LeftArm_Sword</bodypart>
+		<partRequiresUpgrade>true</partRequiresUpgrade>
+		<occupiedPart>Mecha_LeftArm</occupiedPart>
+		<maxLevel>1</maxLevel>
+		<graphicsPath>Mecha/GolemSword</graphicsPath>
+		<drawUndrafted>false</drawUndrafted>
+		<drawSize>1.8</drawSize>
+		<drawOffsetNorth>(-.6, -.02, .4)</drawOffsetNorth>
+		<drawOffsetSouth>(.6, .02, .4)</drawOffsetSouth>
+		<drawOffsetEast>(.8, -.02, .4)</drawOffsetEast>
+		<drawOffsetWest>(-.8, .02, .4)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_MechaHammer</defName>
+		<label>mecha-hammer</label>
+		<description>Adds a ruthless blunt attack, more powerful than the golems fists.</description>
+		<recipe>TM_Mecha-Golem_Hammer</recipe>
+		<bodypart>Mecha_RightArm_Hammer</bodypart>
+		<partRequiresUpgrade>true</partRequiresUpgrade>
+		<maxLevel>1</maxLevel>
+		<graphicsPath>Mecha/GolemHammer</graphicsPath>
+		<drawUndrafted>false</drawUndrafted>
+		<drawSize>1.8</drawSize>
+		<drawOffsetNorth>(.6, -.02, .4)</drawOffsetNorth>
+		<drawOffsetSouth>(-.6, .02, .4)</drawOffsetSouth>
+		<drawOffsetEast>(.8, .02, .4)</drawOffsetEast>
+		<drawOffsetWest>(-.8, -.02, .4)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_MechaGatlingCannon</defName>
+		<label>Gatling cannon</label>
+		<description>Fires a 12 round burst of gunfire.
+Cooldown:	5s
+Energy Cost:	40
+Range: 		40</description>
+		<recipe>TM_Mecha-Golem_GatlingCannon</recipe>
+		<bodypart>Mecha_RightShoulder</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<ability>TM_Mecha-Golem_GatlingCannon</ability>
+		<maxLevel>1</maxLevel>
+		<drawThing></drawThing>
+		<shouldRotate>true</shouldRotate>
+		<drawOnlyWhenActive>true</drawOnlyWhenActive>
+		<drawUndrafted>false</drawUndrafted>
+		<drawSize>1.2</drawSize>
+		<drawOffsetNorth>(.7,-.02,.1)</drawOffsetNorth>
+		<drawOffsetSouth>(-.7,.02,.1)</drawOffsetSouth>
+		<drawOffsetEast>(-.2,.02,.1)</drawOffsetEast>
+		<drawOffsetWest>(.2,-.02,.1)</drawOffsetWest>
+		<workstationEffects>
+		  <li Class="TorannMagic.Golems.GolemWorkstationEffect_LaunchThing">
+			<ticksTillNextEffect80>300</ticksTillNextEffect80>
+			<energyCost>40</energyCost>
+			<thing>Bullet_Minigun</thing>
+			<ticksBetweenBursts>4</ticksBetweenBursts>
+			<effectFlashScale>.8</effectFlashScale>	
+			<doEffectEachBurst>true</doEffectEachBurst>
+			<effectDuration>48</effectDuration>
+			<missRadius>2</missRadius>
+			<hitChance>.185</hitChance>
+			<maxRange>40</maxRange>
+			<minRange>0</minRange>
+			<alwaysDraw>false</alwaysDraw> <!-- looks goofy, need a better inactive appearance to mount weapons -->
+			<drawOffset>(0, .005, .3)</drawOffset>
+			<requiresLoS>true</requiresLoS>
+		  </li>
+		</workstationEffects>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_MechaMiningLaser</defName>
+		<label>mining laser</label>
+		<description>Allows the golem to mine designated wall segments.
+Energy Cost: 20</description>
+		<recipe>TM_Mecha-Golem_MiningLaser</recipe>
+		<bodypart>Mecha_LeftShoulder</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<ability>TM_Mecha-Golem_MiningLaser</ability>
+		<maxLevel>3</maxLevel>
+		<drawThing></drawThing>
+		<shouldRotate>false</shouldRotate>
+		<drawOnlyWhenActive>true</drawOnlyWhenActive>
+		<drawUndrafted>false</drawUndrafted>
+		<drawSize>1.2</drawSize>
+		<drawOffsetNorth>(-.7,.02,.8)</drawOffsetNorth>
+		<drawOffsetSouth>(.7,.02,.8)</drawOffsetSouth>
+		<drawOffsetEast>(.2,.02,.8)</drawOffsetEast>
+		<drawOffsetWest>(-.2,-.02,.8)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_MechaFlameCore</defName>
+		<label>flame core</label>
+		<description>Passively increases golem stats and adds an ability that burns away nearby filth.
+Movement:	+[0.5c/0.9c/1.2c]
+Processing: 	+[10%/20%/30%]
+Ability Damage:	+[10%/20%/30%]
+Energy Cost:	+[10%/20%/30%]
+
+Cleaning Protocol
+Cooldown:	6s
+Range:	2c
+Energy Cost:	4 per filth</description>
+		<maxLevel>3</maxLevel>
+		<recipe>TM_Mecha-Golem_FlameCore</recipe>
+		<bodypart>Mecha_CoreProcessor</bodypart>
+		<partRequiresUpgrade>true</partRequiresUpgrade>
+		<hediff>TM_Mecha-Golem_FlameCoreHD</hediff>
+		<hediffSeverityPerLevel>.8</hediffSeverityPerLevel>
+		<graphicsPath>Mecha/FlameCore</graphicsPath>
+		<levelIncrementsGraphics>false</levelIncrementsGraphics>
+		<ability>TM_Mecha-Golem_AbsorbFilth</ability>
+		<abilityModifiers>
+			<damageModifier>.1</damageModifier>
+			<energyCostModifier>.1</energyCostModifier>
+			<processingModifier>-.1</processingModifier>
+		</abilityModifiers>
+		<drawThing></drawThing>
+		<drawUndrafted>true</drawUndrafted>
+		<drawOnlyWhenActive>false</drawOnlyWhenActive>
+		<drawSize>3</drawSize>
+		<shouldRotate>false</shouldRotate>
+		<drawOffsetNorth>(0, .016, 0)</drawOffsetNorth>
+		<drawOffsetSouth>(0, .016, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .016, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .016, 0)</drawOffsetWest>
+		<workstationCapacity>None</workstationCapacity> 
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_MechaWaterCore</defName>
+		<label>water core</label>
+		<description>Passively increases golem stats and adds an autonomous repair mechanism.
+Armor:		+[5%/10%/15%]
+Ability Cooldown:	-[10%/20%/30%]
+Healing Bonus:	+[100%/200%/300%]
+Energy Cost:	-[15%/30%/45%]
+
+Autonomous Repair
+Cooldown:	3s
+Energy Cost:	10(D), 30(A)
+Heal Amount:	8</description>
+		<maxLevel>3</maxLevel>
+		<recipe>TM_Mecha-Golem_WaterCore</recipe>
+		<bodypart>Mecha_CoreProcessor</bodypart>
+		<partRequiresUpgrade>true</partRequiresUpgrade>
+		<hediff>TM_Mecha-Golem_WaterCoreHD</hediff>
+		<hediffSeverityPerLevel>.8</hediffSeverityPerLevel>
+		<graphicsPath>Mecha/WaterCore</graphicsPath>
+		<levelIncrementsGraphics>false</levelIncrementsGraphics>
+		<ability>TM_Mecha-Golem_HealSelf</ability>
+		<abilityModifiers>
+			<cooldownModifier>-.1</cooldownModifier>
+			<energyCostModifier>-.15</energyCostModifier>
+			<healingModifier>1</healingModifier>
+		</abilityModifiers>
+		<drawThing></drawThing>
+		<drawUndrafted>true</drawUndrafted>
+		<drawOnlyWhenActive>false</drawOnlyWhenActive>
+		<drawSize>3</drawSize>
+		<shouldRotate>false</shouldRotate>
+		<drawOffsetNorth>(0, .016, 0)</drawOffsetNorth>
+		<drawOffsetSouth>(0, .016, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .016, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .016, 0)</drawOffsetWest>
+		<workstationEffects>
+		  <li Class="TorannMagic.Golems.GolemWorkstationEffect_RepairBuilding">
+			<ticksTillNextEffect80>180</ticksTillNextEffect80>
+			<energyCost>10</energyCost>
+			<effectDuration>0</effectDuration>
+		  </li>
+		</workstationEffects> 
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		  
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_MechaEarthCore</defName>
+		<label>earth core</label>
+		<description>Passively increases golem stats and adds an ability that provides a shield.
+Armor:		+[10%/18%/25%]
+Ability Cooldown:	+[5%/10%/15%]
+Healing Bonus:	+[60%/120%/180%]
+Energy Cost:	+[5%/10%/15%]
+Processing: 	+[15%/30%/45%]
+
+Shield Protocol
+Cooldown:	10s
+Energy Cost:	10
+Shield Amount:	120</description>
+		<maxLevel>3</maxLevel>
+		<recipe>TM_Mecha-Golem_EarthCore</recipe>
+		<bodypart>Mecha_CoreProcessor</bodypart>
+		<partRequiresUpgrade>true</partRequiresUpgrade>
+		<hediff>TM_Mecha-Golem_EarthCoreHD</hediff>
+		<hediffSeverityPerLevel>.8</hediffSeverityPerLevel>
+		<graphicsPath>Mecha/EarthCore</graphicsPath>
+		<levelIncrementsGraphics>false</levelIncrementsGraphics>
+		<ability>TM_Mecha-Golem_ShieldSelf</ability>
+		<abilityModifiers>
+			<cooldownModifier>-.05</cooldownModifier>
+			<energyCostModifier>.05</energyCostModifier>
+			<healingModifier>.6</healingModifier>
+			<processingModifier>.05</processingModifier>
+		</abilityModifiers>
+		<drawThing></drawThing>
+		<drawUndrafted>true</drawUndrafted>
+		<drawOnlyWhenActive>false</drawOnlyWhenActive>
+		<drawSize>3</drawSize>
+		<shouldRotate>false</shouldRotate>
+		<drawOffsetNorth>(0, .016, 0)</drawOffsetNorth>
+		<drawOffsetSouth>(0, .016, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .016, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .016, 0)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_MechaLightningCore</defName>
+		<label>lightning core</label>
+		<description>Passively increases golem stats and adds a reflexive coating to the golem's shell that produces an electric discharge that stuns melee attackers.
+Movement:	+[1.2c/1.8c/2.2c]
+Ability Cooldown:	-[15%/30%/45%]
+Energy Cost:	+[10%/20%/30%]
+Processing: 	-[5%/10%/15%]</description>
+		<maxLevel>3</maxLevel>
+		<recipe>TM_Mecha-Golem_LightningCore</recipe>
+		<bodypart>Mecha_CoreProcessor</bodypart>
+		<partRequiresUpgrade>true</partRequiresUpgrade>
+		<hediff>TM_Mecha-Golem_LightningCoreHD</hediff>
+		<hediffSeverityPerLevel>.8</hediffSeverityPerLevel>
+		<graphicsPath>Mecha/LightningCore</graphicsPath>
+		<levelIncrementsGraphics>false</levelIncrementsGraphics>
+		<abilityModifiers>
+			<cooldownModifier>-.15</cooldownModifier>
+			<energyCostModifier>.1</energyCostModifier>
+			<processingModifier>-.05</processingModifier>
+		</abilityModifiers>
+		<drawThing></drawThing>
+		<drawUndrafted>true</drawUndrafted>
+		<drawOnlyWhenActive>false</drawOnlyWhenActive>
+		<drawSize>3</drawSize>
+		<shouldRotate>false</shouldRotate>
+		<drawOffsetNorth>(0, .016, 0)</drawOffsetNorth>
+		<drawOffsetSouth>(0, .016, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .016, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .016, 0)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_MechaFlameShard</defName>
+		<label>flame shard</label>
+		<description>Increases golem stats:
+Movement:	+[15%/30%/40%]
+Health:		+[15%/30%/40%]</description>
+		<maxLevel>3</maxLevel>
+		<recipe>TM_Mecha-Golem_FlameShard</recipe>
+		<bodypart>Mecha_Base</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<occupiedPart>Mecha_Base</occupiedPart>
+		<graphicsPath>Mecha/FlameShard</graphicsPath>
+		<levelIncrementsGraphics>false</levelIncrementsGraphics>
+		<lifeStages>
+			<li>TM_MechaGolemLS</li>
+			<li>TM_MechaGolemLS_FS1</li>
+			<li>TM_MechaGolemLS_FS2</li>
+			<li>TM_MechaGolemLS_FS3</li>
+		</lifeStages>
+		<drawThing></drawThing>
+		<drawUndrafted>true</drawUndrafted>
+		<drawOnlyWhenActive>false</drawOnlyWhenActive>
+		<drawSize>.45</drawSize>
+		<shouldRotate>false</shouldRotate>
+		<drawOffsetNorth>(0, -.012, -1.06)</drawOffsetNorth>
+		<drawNorth>false</drawNorth>
+		<drawOffsetSouth>(0, .012, -1.1)</drawOffsetSouth>
+		<drawOffsetEast>(.37, -.002, -1.05)</drawOffsetEast>
+		<drawOffsetWest>(-.37, -.002, -1.05)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_MechaWaterShard</defName>
+		<label>water shard</label>
+		<description>Increases golem stats:
+Movement:	+[10%/15%/20%]
+Health:		+[30%/50%/70%]</description>
+		<maxLevel>3</maxLevel>
+		<recipe>TM_Mecha-Golem_WaterShard</recipe>
+		<bodypart>Mecha_Base</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<occupiedPart>Mecha_Base</occupiedPart>
+		<graphicsPath>Mecha/WaterShard</graphicsPath>
+		<levelIncrementsGraphics>false</levelIncrementsGraphics>
+		<lifeStages>
+			<li>TM_MechaGolemLS</li>
+			<li>TM_MechaGolemLS_WS1</li>
+			<li>TM_MechaGolemLS_WS2</li>
+			<li>TM_MechaGolemLS_WS3</li>
+		</lifeStages>
+		<drawThing></drawThing>
+		<drawUndrafted>true</drawUndrafted>
+		<drawOnlyWhenActive>false</drawOnlyWhenActive>
+		<drawSize>.45</drawSize>
+		<shouldRotate>false</shouldRotate>
+		<drawOffsetNorth>(0, -.012, -1.06)</drawOffsetNorth>
+		<drawNorth>false</drawNorth>
+		<drawOffsetSouth>(0, .012, -1.1)</drawOffsetSouth>
+		<drawOffsetEast>(.37, -.002, -1.05)</drawOffsetEast>
+		<drawOffsetWest>(-.37, -.002, -1.05)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_MechaEarthShard</defName>
+		<label>earth shard</label>
+		<description>Increases golem stats:
+Health:		+[40%/80%/120%]</description>
+		<maxLevel>3</maxLevel>
+		<recipe>TM_Mecha-Golem_EarthShard</recipe>
+		<bodypart>Mecha_Base</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<occupiedPart>Mecha_Base</occupiedPart>
+		<graphicsPath>Mecha/EarthShard</graphicsPath>
+		<levelIncrementsGraphics>false</levelIncrementsGraphics>
+		<lifeStages>
+			<li>TM_MechaGolemLS</li>
+			<li>TM_MechaGolemLS_ES1</li>
+			<li>TM_MechaGolemLS_ES2</li>
+			<li>TM_MechaGolemLS_ES3</li>
+		</lifeStages>
+		<drawThing></drawThing>
+		<drawUndrafted>true</drawUndrafted>
+		<drawOnlyWhenActive>false</drawOnlyWhenActive>
+		<drawSize>.45</drawSize>
+		<shouldRotate>false</shouldRotate>
+		<drawOffsetNorth>(0, -.012, -1.06)</drawOffsetNorth>
+		<drawNorth>false</drawNorth>
+		<drawOffsetSouth>(0, .012, -1.1)</drawOffsetSouth>
+		<drawOffsetEast>(.37, -.002, -1.05)</drawOffsetEast>
+		<drawOffsetWest>(-.37, -.002, -1.05)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_MechaLightningShard</defName>
+		<label>lightning shard</label>
+		<description>Increases golem stats:
+Movement:	+[25%/50%/75%]</description>
+		<maxLevel>3</maxLevel>
+		<recipe>TM_Mecha-Golem_LightningShard</recipe>
+		<bodypart>Mecha_Base</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<occupiedPart>Mecha_Base</occupiedPart>
+		<graphicsPath>Mecha/LightningShard</graphicsPath>
+		<levelIncrementsGraphics>false</levelIncrementsGraphics>
+		<lifeStages>
+			<li>TM_MechaGolemLS</li>
+			<li>TM_MechaGolemLS_LS1</li>
+			<li>TM_MechaGolemLS_LS2</li>
+			<li>TM_MechaGolemLS_LS3</li>
+		</lifeStages>
+		<drawThing></drawThing>
+		<drawUndrafted>true</drawUndrafted>
+		<drawOnlyWhenActive>false</drawOnlyWhenActive>
+		<drawSize>.45</drawSize>
+		<shouldRotate>false</shouldRotate>
+		<drawOffsetNorth>(0, -.012, -1.06)</drawOffsetNorth>
+		<drawNorth>false</drawNorth>
+		<drawOffsetSouth>(0, .012, -1.1)</drawOffsetSouth>
+		<drawOffsetEast>(.37, -.002, -1.05)</drawOffsetEast>
+		<drawOffsetWest>(-.37, -.002, -1.05)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+
+</Defs>
+
+<!--
+			    <label></label>
+				<maxLevel>1</maxLevel>
+				<recipe>TM_Mecha-Golem_</recipe>
+				<bodypart>Mecha_</bodypart>
+				<partRequiresUpgrade>true</partRequiresUpgrade>
+				<hediff></hediff>
+				<ability></ability>
+				<lifeStages>
+				</lifeStages>
+				<abilityModifier>
+					<damageModifier></damageModifier>
+					<cooldownModifier></cooldownModifier>
+					<energyCostModifier></energyCostModifier>
+					<durationModifier></durationModifier>
+					<healingModifier></healingModifier>
+					<processingModifier></processingModifier>
+				</abilityModifier>				
+				<graphicsPath>Mecha/</graphicsPath>
+				<levelIncrementsGraphics>false</levelIncrementsGraphics>
+				<drawThing></drawThing>
+				<drawUndrafted>true</drawUndrafted>
+				<drawOnlyWhenActive>false</drawOnlyWhenActive>
+				<drawSize>1</drawSize>
+				<shouldRotate>false</shouldRotate>
+				<drawOffsetNorth>(0, 0, 0)</drawOffsetNorth>
+				<drawOffsetSouth>(0, 0, 0)</drawOffsetSouth>
+				<drawOffsetEast>(0, 0, 0)</drawOffsetEast>
+				<drawOffsetWest>(0, 0, 0)</drawOffsetWest>
+				<workstationCapacity>None</workstationCapacity> 
+				<workstationEffects>
+				</workstationEffects>
+-->

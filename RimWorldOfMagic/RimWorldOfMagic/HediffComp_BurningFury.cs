@@ -143,14 +143,14 @@ namespace TorannMagic
                 {
                     BodyPartRecord rec = enumerator.Current;
 
-                    IEnumerable<Hediff_Injury> arg_BB_0 = this.Pawn.health.hediffSet.GetHediffs<Hediff_Injury>();
+                    IEnumerable<Hediff_Injury> arg_BB_0 = this.Pawn.health.hediffSet.hediffs.OfType<Hediff_Injury>();
                     Func<Hediff_Injury, bool> arg_BB_1;
 
                     arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
 
                     foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1))
                     {
-                        bool flag5 = current.CanHealNaturally() && !current.IsPermanent() && current.TendableNow();
+                        bool flag5 = current.CanHealNaturally() && current.TendableNow();
                         if (flag5)
                         {
                             if (Rand.Chance(.15f))

@@ -100,7 +100,7 @@ namespace TorannMagic
             if (this.age == (this.targettingAge + this.beamDuration))
             {
                 TM_MoteMaker.MakePowerBeamMoteColor(this.strikePos, base.Map, this.radius * 4f, 2f, .5f, .1f, .5f, colorInt.ToColor);                
-                GenExplosion.DoExplosion(this.strikePos, map, this.def.projectile.explosionRadius, DamageDefOf.Bomb, this.launcher as Pawn, Mathf.RoundToInt((25 + 5*pwrVal) * this.arcaneDmg), 0, null, def, this.equipmentDef, null, null, 0f, 1, false, null, 0f, 1, 0f, false);
+                GenExplosion.DoExplosion(this.strikePos, map, this.def.projectile.explosionRadius, DamageDefOf.Bomb, this.launcher as Pawn, Mathf.RoundToInt((25 + 5*pwrVal) * this.arcaneDmg), 0, null, def, this.equipmentDef, null, null, 0f, 1, null, false, null, 0f, 1, 0f, false);
                 Effecter OSEffect = TorannMagicDefOf.TM_OSExplosion.Spawn();
                 OSEffect.Trigger(new TargetInfo(this.strikePos, this.Map, false), new TargetInfo(this.strikePos, this.Map, false));
                 OSEffect.Cleanup();

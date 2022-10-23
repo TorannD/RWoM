@@ -4757,15 +4757,13 @@ namespace TorannMagic
 
         public void RemoveTMagicHediffs()
         {
-            List<Hediff> allHediffs = this.Pawn.health.hediffSet.GetHediffs<Hediff>().ToList();
+            List<Hediff> allHediffs = this.Pawn.health.hediffSet.hediffs;
             for (int i = 0; i < allHediffs.Count(); i++)
             {
-                Hediff hediff = allHediffs[i];
-                if (hediff.def.defName.Contains("TM_"))
+                if (allHediffs[i].def.defName.StartsWith("TM_"))
                 {
-                    this.Pawn.health.RemoveHediff(hediff);
+                    this.Pawn.health.RemoveHediff(allHediffs[i]);
                 }
-
             }
         }
 
@@ -8584,7 +8582,7 @@ namespace TorannMagic
                 _maxMPUpkeep += TorannMagicDefOf.TM_Recall.upkeepEnergyCost * (1 - (TorannMagicDefOf.TM_Recall.upkeepEfficiencyPercent * this.MagicData.MagicPowerSkill_Recall.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Recall_eff").level));
                 _mpRegenRateUpkeep += TorannMagicDefOf.TM_Recall.upkeepRegenCost * (1 - (TorannMagicDefOf.TM_Recall.upkeepEfficiencyPercent * this.MagicData.MagicPowerSkill_Recall.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Recall_eff").level));
             }
-            using (IEnumerator<Hediff> enumerator = this.Pawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
+            using (IEnumerator<Hediff> enumerator = this.Pawn.health.hediffSet.hediffs.GetEnumerator())
             {
                 while (enumerator.MoveNext())
                 {
@@ -10395,7 +10393,7 @@ namespace TorannMagic
                         {
                             TM_Action.PromoteWanderer(p);
                         }),
-                        order = 51,
+                        Order = 51,
                         defaultLabel = TM_TextPool.TM_PromoteWanderer,
                         defaultDesc = TM_TextPool.TM_PromoteWandererDesc,
                         icon = ContentFinder<Texture2D>.Get("UI/wanderer", true),
@@ -10421,7 +10419,7 @@ namespace TorannMagic
                         },
                         defaultLabel = label,
                         defaultDesc = desc,
-                        order = -89,
+                        Order = -89,
                         icon = ContentFinder<Texture2D>.Get("UI/" + toggle, true)
                     };
                     gizmoCommands.Add(key, item);
@@ -10444,7 +10442,7 @@ namespace TorannMagic
                         },
                         defaultLabel = label_repair,
                         defaultDesc = desc_repair,
-                        order = -88,
+                        Order = -88,
                         icon = ContentFinder<Texture2D>.Get("UI/" + toggle_repair, true)
                     };
                     gizmoCommands.Add(key, item_repair);
@@ -10467,7 +10465,7 @@ namespace TorannMagic
                         },
                         defaultLabel = label,
                         defaultDesc = desc,
-                        order = -88,
+                        Order = -88,
                         icon = ContentFinder<Texture2D>.Get("UI/" + toggle, true)
                     };
                     gizmoCommands.Add(key, item);

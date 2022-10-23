@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using HarmonyLib;
+using TorannMagic.TMDefs;
 
 namespace TorannMagic
 {
@@ -65,7 +66,7 @@ namespace TorannMagic
                                 bool flag_SL = false;
                                 if (undeadPawn.def.defName == "SL_Runner" || undeadPawn.def.defName == "SL_Peon" || undeadPawn.def.defName == "SL_Archer" || undeadPawn.def.defName == "SL_Hero")
                                 {
-                                    PawnGenerationRequest pgr = new PawnGenerationRequest(PawnKindDef.Named("Tribesperson"), pawn.Faction, PawnGenerationContext.NonPlayer, -1, true, false, false, false, false, true, 0, false, false, false, false, false, false, false, false, 0, 0, null, 0);
+                                    PawnGenerationRequest pgr = new PawnGenerationRequest(PawnKindDef.Named("Tribesperson"), pawn.Faction, PawnGenerationContext.NonPlayer, -1, true, false, false, false, true, 0, false, false, false, false, false, false, false, false, true, 0, 0, null, 0);
                                     Pawn newUndeadPawn = PawnGenerator.GeneratePawn(pgr);
                                     GenSpawn.Spawn(newUndeadPawn, corpse.Position, corpse.Map, WipeMode.Vanish);
                                     corpse.Strip();
@@ -259,8 +260,8 @@ namespace TorannMagic
 
         private void RedoSkills(Pawn undeadPawn, bool lichBonus = false)
         {
-            undeadPawn.story.childhood = null;
-            undeadPawn.story.adulthood = null;
+            undeadPawn.story.Childhood = null;
+            undeadPawn.story.Adulthood = null;
             float bonusSkill = 1f + (.1f * pwr.level);
             if(lichBonus)
             {
@@ -491,79 +492,24 @@ namespace TorannMagic
 
         public static void RemoveHediffsAddictionsAndPermanentInjuries(Pawn pawn)
         {
-            List<Hediff> removeList = new List<Hediff>();
-            removeList.Clear();
-            using (IEnumerator<BodyPartRecord> enumerator = pawn.health.hediffSet.GetInjuredParts().GetEnumerator())
+            IEnumerable<Hediff> hediffsToRemove = pawn.health.hediffSet.hediffs.Where(hediff =>
+                hediff is Hediff_Injury injury && injury.CanHealNaturally()
+                || hediff is Hediff_Addiction
+                || (
+                    (
+                        hediff.IsPermanent()
+                        || hediff.def.tendable
+                        || hediff.source == null && hediff.sourceBodyPartGroup == null
+                    )
+                    && hediff.def != TorannMagicDefOf.TM_UndeadHD
+                    && hediff.def != TorannMagicDefOf.TM_UndeadStageHD
+                    && hediff.def != TorannMagicDefOf.TM_UndeadAnimalHD
+                )
+            );
+            foreach (Hediff hediff in hediffsToRemove)
             {
-                while (enumerator.MoveNext())
-                {
-                    BodyPartRecord rec = enumerator.Current;
-
-                    IEnumerable<Hediff_Injury> arg_BB_0 = pawn.health.hediffSet.GetHediffs<Hediff_Injury>();
-                    Func<Hediff_Injury, bool> arg_BB_1;
-
-                    arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
-
-                    foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1))
-                    {
-                        bool flag5 = !current.CanHealNaturally() && current.IsPermanent();
-                        if (flag5)
-                        {
-                            removeList.Add(current);
-                        }                        
-                    }                    
-                }
+                pawn.health.RemoveHediff(hediff);
             }
-            if(removeList.Count > 0)
-            {
-                for(int i = 0; i < removeList.Count; i++)
-                {
-                    pawn.health.RemoveHediff(removeList[i]);
-                }
-            }
-            removeList.Clear();
-
-            using (IEnumerator<Hediff_Addiction> enumerator = pawn.health.hediffSet.GetHediffs<Hediff_Addiction>().GetEnumerator())
-            {
-                while (enumerator.MoveNext())
-                {
-                    Hediff_Addiction rec = enumerator.Current;
-                    removeList.Add(rec);                  
-                }
-            }
-
-            if (removeList.Count > 0)
-            {
-                for (int i = 0; i < removeList.Count; i++)
-                {
-                    pawn.health.RemoveHediff(removeList[i]);
-                }
-            }
-            removeList.Clear();
-
-            using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
-            {
-                while(enumerator.MoveNext())
-                {
-                    Hediff hd = enumerator.Current;
-                    if(hd.IsPermanent() || (hd.IsTended() || hd.TendableNow()) || (hd.source == null && hd.sourceBodyPartGroup == null))
-                    {
-                        if (hd.def != TorannMagicDefOf.TM_UndeadHD && hd.def != TorannMagicDefOf.TM_UndeadStageHD && hd.def != TorannMagicDefOf.TM_UndeadAnimalHD)
-                        {
-                            removeList.Add(hd);
-                        }
-                    }
-                }
-            }
-
-            if (removeList.Count > 0)
-            {
-                for (int i = 0; i < removeList.Count; i++)
-                {
-                    pawn.health.RemoveHediff(removeList[i]);
-                }
-            }
-            removeList.Clear();
         }
     }
 }

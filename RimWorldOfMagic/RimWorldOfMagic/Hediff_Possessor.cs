@@ -36,10 +36,10 @@ namespace TorannMagic
         private int spiritLevel = 0;
         public int SpiritLevel => spiritLevel;
         public List<TraitDef> traitCompatibilityList = null;
-        public List<Backstory> backstoryCompatibilityList = null;
+        public List<BackstoryDef> backstoryCompatibilityList = null;
         public List<string> backstoryIdentifiers = null;
 
-        public List<Backstory> BackstoryCompatibilityList
+        public List<BackstoryDef> BackstoryCompatibilityList
         {
             get
             {
@@ -108,21 +108,17 @@ namespace TorannMagic
                     traitCompatibilityList.Add(def);
                 }
             }
-            this.backstoryCompatibilityList = new List<Backstory>();
+            this.backstoryCompatibilityList = new List<BackstoryDef>();
             backstoryCompatibilityList.Clear();
             backstoryIdentifiers = new List<string>();
             backstoryIdentifiers.Clear();
-            for(int i = 0; i < BackstoryDatabase.allBackstories.Count; i++)
+            List <BackstoryDef> bsDefs = (from def in DefDatabase<BackstoryDef>.AllDefs
+                                                where (!def.shuffleable && def.slot == (BackstorySlot)13)
+                                                select def).ToList();
+            for (int i = 0; i < bsDefs.Count; i++)
             {
-                Backstory rnd = null;
-                if (Rand.Chance(.5f))
-                {
-                    rnd = BackstoryDatabase.RandomBackstory(BackstorySlot.Adulthood);
-                }
-                else
-                {
-                    rnd = BackstoryDatabase.RandomBackstory(BackstorySlot.Childhood);
-                }
+                BackstoryDef rnd = bsDefs.RandomElement();
+
                 if(rnd != null && !backstoryCompatibilityList.Contains(rnd))
                 {
                     backstoryIdentifiers.Add(rnd.identifier);
@@ -135,12 +131,11 @@ namespace TorannMagic
         {
             if (backstoryIdentifiers != null && backstoryIdentifiers.Count > 0)
             {
-                backstoryCompatibilityList = new List<Backstory>();
+                backstoryCompatibilityList = new List<BackstoryDef>();
                 backstoryCompatibilityList.Clear();
                 foreach (string s in backstoryIdentifiers)
                 {
-                    Backstory bs = null;
-                    BackstoryDatabase.TryGetWithIdentifier(s, out bs, false);
+                    BackstoryDef bs = DefDatabase<BackstoryDef>.AllDefs.FirstOrDefault((BackstoryDef b) => b.identifier == s);
                     if (bs != null)
                     {
                         backstoryCompatibilityList.Add(bs);
@@ -163,8 +158,7 @@ namespace TorannMagic
             }            
             if (Find.TickManager.TicksGame % 31 == 0)
             {
-                IEnumerable<Hediff> hdEnum = this.pawn.health.hediffSet.GetHediffs<Hediff>();
-                foreach (Hediff hd in hdEnum)
+                foreach (Hediff hd in this.pawn.health.hediffSet.hediffs)
                 {
                     if (hd.def.defName == "SpaceHypoxia")
                     {

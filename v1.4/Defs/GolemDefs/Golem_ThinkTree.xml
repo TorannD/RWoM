@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+
+<Defs>
+
+  <ThinkTreeDef>
+    <defName>TM_GolemMain</defName>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+	  
+        <!-- Downed -->
+        <li Class="ThinkNode_Subtree">
+          <treeDef>Downed</treeDef>
+        </li>
+        <li Class="ThinkNode_Subtree">
+          <treeDef>TM_Golem_BurningResponse</treeDef>
+        </li>
+		
+		<!-- React to close melee threat -->
+        <li Class="JobGiver_ReactToCloseMeleeThreat" />
+		
+		<!-- Do a queued job -->
+		<li Class="ThinkNode_QueuedJob" />
+
+		<!-- Wait if drafted -->
+        <li Class="TorannMagic.Golems.ThinkNode_ConditionalGolem">
+          <subNodes>
+            <li Class="ThinkNode_Tagger">
+              <tagToGive>DraftedOrder</tagToGive>
+              <subNodes>
+			    <li Class="TorannMagic.Golems.JobGiver_DraftedGolemRangedAttack" />
+                <li Class="JobGiver_MoveToStandable" />
+                <li Class="JobGiver_Orders" />
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+
+		<!-- Should Despawn -->
+        <li Class="TorannMagic.Golems.ThinkNode_ConditionalShouldDespawn">
+          <subNodes>
+            <li Class="ThinkNode_Tagger">
+              <tagToGive>Misc</tagToGive>
+              <subNodes>
+                <li Class="TorannMagic.Golems.JobGiver_GolemForceGotoDespawn" />
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>		
+
+        <!-- Lord -->
+        <li Class="ThinkNode_Subtree">
+          <treeDef>LordDuty</treeDef>
+        </li>
+
+		<li Class="ThinkNode_ConditionalOfPlayerFaction">
+			<subNodes>
+				<li Class="TorannMagic.Golems.ThinkNode_GolemShouldFollowMaster" >
+				  <subNodes>
+					<li Class="TorannMagic.Golems.JobGiver_GolemDefendMaster">
+					  <attackMeleeThreatEvenIfNotHostile>false</attackMeleeThreatEvenIfNotHostile>
+					</li>
+					<li Class="TorannMagic.Golems.JobGiver_GolemFollowMaster"/>
+					<li Class="TorannMagic.Golems.JobGiver_GolemWanderNearMaster" />
+				  </subNodes>
+				</li>
+				<!-- React to threat in engagement range -->
+				<li Class="TorannMagic.Golems.JobGiver_EngageThreatInRange" />				
+				<li Class="JobGiver_RescueNearby">
+				  <radius>75</radius>
+				</li>	
+				<li Class="TorannMagic.Golems.JobGiver_GolemSelfTend"/>				
+				
+				<!-- Unload your inventory -->
+				<li Class="ThinkNode_Tagger">
+				  <tagToGive>UnloadingOwnInventory</tagToGive>
+				  <subNodes>
+					<li Class="JobGiver_UnloadYourInventory" />
+				  </subNodes>
+				</li>					
+				<li Class="ThinkNode_Subtree">
+				  <treeDef>TM_Golem_BehaviorCore</treeDef>
+				  <leaveJoinableLordIfIssuesJob>true</leaveJoinableLordIfIssuesJob>
+				</li>
+				<li Class="JobGiver_SeekAllowedArea" />
+				<li Class="JobGiver_SeekSafeTemperature" />
+				<!-- Idle -->
+				<li Class="ThinkNode_Tagger">
+				  <tagToGive>Idle</tagToGive>
+				  <subNodes>
+					<li Class="JobGiver_WanderColony">
+					  <maxDanger>None</maxDanger>
+					  <ticksBetweenWandersRange>120~240</ticksBetweenWandersRange>
+					</li>
+				  </subNodes>
+				</li>
+			</subNodes>
+		</li>
+		
+        <!-- Idle -->
+        <li Class="ThinkNode_Tagger">
+          <tagToGive>Idle</tagToGive>
+          <subNodes>
+            <li Class="JobGiver_WanderAnywhere">
+              <maxDanger>Deadly</maxDanger>
+            </li>
+          </subNodes>
+        </li>
+        
+        <!-- Idle error -->
+        <li Class="JobGiver_IdleError"/>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+  
+  <ThinkTreeDef>
+    <defName>TM_GolemConstant</defName>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="ThinkNode_ConditionalCanDoConstantThinkTreeJobNow">
+          <subNodes>
+            
+            <!-- Hostility response -->
+            <li Class="JobGiver_ConfigurableHostilityResponse" />
+            
+			<!-- Join auto joinable caravan -->
+            <li Class="ThinkNode_Subtree">
+              <treeDef>JoinAutoJoinableCaravan</treeDef>
+            </li>
+			
+            <!-- Lord directives -->
+            <li Class="ThinkNode_Subtree">
+              <treeDef>LordDutyConstant</treeDef>
+            </li>
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+  
+</Defs>

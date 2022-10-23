@@ -222,7 +222,7 @@ namespace TorannMagic
                 {
                     defaultLabel = label,
                     defaultDesc = desc,
-                    order = 109,
+                    Order = 109,
                     icon = ContentFinder<Texture2D>.Get("UI/Polymorph_cancel", true),
                     isActive = (() => true),
                     toggleAction = delegate
@@ -274,25 +274,10 @@ namespace TorannMagic
 
         public void CopyDamage(Pawn pawn)
         {
-            using (IEnumerator<BodyPartRecord> enumerator = pawn.health.hediffSet.GetInjuredParts().GetEnumerator())
-            {
-                while (enumerator.MoveNext())
-                {
-                    BodyPartRecord rec = enumerator.Current;
-                    IEnumerable<Hediff_Injury> arg_BB_0 = pawn.health.hediffSet.GetHediffs<Hediff_Injury>();
-                    Func<Hediff_Injury, bool> arg_BB_1;
-                    arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
-
-                    foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1))
-                    {
-                        bool flag5 = current.CanHealNaturally() && !current.IsPermanent();
-                        if (flag5)
-                        {
-                            this.injuries.Add(current);
-                        }                            
-                    }                    
-                }
-            }
+            IEnumerable<Hediff_Injury> injuriesToAdd = pawn.health.hediffSet.hediffs
+                .OfType<Hediff_Injury>()
+                .Where(injury => injury.CanHealNaturally());
+            this.injuries.AddRange(injuriesToAdd);
         }
 
         public override void PostDestroy(DestroyMode mode, Map previousMap)

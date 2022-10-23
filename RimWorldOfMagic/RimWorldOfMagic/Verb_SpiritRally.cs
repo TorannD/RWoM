@@ -18,7 +18,7 @@ namespace TorannMagic
             Pawn caster = this.CasterPawn;
             Map map = this.CasterPawn.Map;
             
-            if(caster.story != null && caster.story.adulthood != null && caster.story.adulthood.identifier == "tm_lost_spirit")
+            if(caster.story != null && caster.story.Adulthood != null && caster.story.Adulthood.identifier == "tm_lost_spirit")
             {
                 rallyBonus = 1;
             }

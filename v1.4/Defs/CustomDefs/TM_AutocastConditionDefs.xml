@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<!-- Notes
+	Examples are shown in this document - do not use this document to add autocast conditions, create a unique .xml file for custom autocast conditions and 
+	supporting defs to prevent them from being overwritten during mod updates
+	These conditions are for entries into the <advancedConditions> <li>custom_autocast_defName</li> </advancedConditions> field within the custom power defs
+	-->
+	
+		<TorannMagic.TM_AutocastConditionDef>							<!-- a simple condition check for any non-permanent injuries on the target -->
+		    <defName>TM_NoHealthLost</defName>							<!-- defName is the key to add into the field in CustomPowerDefs -->
+			<autocastCondition>
+				<conditionClass>DamageTaken</conditionClass>			<!-- type of condition: DamageTaken, HasNeed, HasHediff, EnemiesInRange, AlliesInRange, TargetDrafted -->
+				<hediffDefs></hediffDefs>									<!-- hediff defnames, null by default, accepts lists -->
+				<needDefs></needDefs>										<!-- need defnames, null by default, could be used to check for magic user eg TM_Mana, accepts lists -->
+				<valueA>0</valueA>										<!-- primary value used -->
+				<valueB></valueB>										<!-- secondary value used for range determination in xInRange where A is # of enemies and B is range (radius) around target -->
+				<valueC></valueC>										<!-- tertiary value, currently unused by any condition check -->
+				<invert>true</invert>									<!-- inverts the result -->
+				<onlyAppliesToCaster>false</onlyAppliesToCaster>		<!-- forces the condition check against the caster instead of the target -->
+			</autocastCondition>
+		</TorannMagic.TM_AutocastConditionDef>
+		
+		<TorannMagic.TM_AutocastConditionDef>							<!-- a simple condition check for any non-permanent injuries on the target -->
+		    <defName>TM_BelowMaxHealth</defName>						<!-- defName is the key to add into the field in CustomPowerDefs -->
+			<autocastCondition>
+				<conditionClass>DamageTaken</conditionClass>			<!-- type of condition: DamageTaken, HasNeed, HasHediff, EnemiesInRange, AlliesInRange, TargetDrafted -->
+				<hediffDefs></hediffDefs>									<!-- hediff defname, null by default -->
+				<needDefs></needDefs>										<!-- need defname, null by default, could be used to check for magic user eg TM_Mana -->
+				<valueA>0</valueA>										<!-- primary value used -->
+				<valueB></valueB>										<!-- secondary value used for range determination in xInRange where A is # of enemies and B is range (radius) around target -->
+				<valueC></valueC>										<!-- tertiary value, currently unused by any condition check -->
+				<invert>false</invert>									<!-- inverts the result -->
+			</autocastCondition>
+		</TorannMagic.TM_AutocastConditionDef>
+		
+		<TorannMagic.TM_AutocastConditionDef>							<!-- a condition check that looks for 3 enemies near the target - this will include the target enemy for target +2 -->
+		    <defName>TM_3EnemiesWithin6Cells</defName>					<!-- defName is the key to add into the field in CustomPowerDefs -->
+			<autocastCondition>
+				<conditionClass>EnemiesInRange</conditionClass>			<!-- type of condition: DamageTaken, HasNeed, HasHediff, EnemiesInRange, AlliesInRange, TargetDrafted -->
+				<hediffDefs></hediffDefs>									<!-- hediff defname, null by default -->
+				<needDefs></needDefs>										<!-- need defname, null by default, could be used to check for magic user eg TM_Mana -->
+				<valueA>3</valueA>										<!-- primary value used, in this case, number of enemies -->
+				<valueB>6</valueB>										<!-- secondary value used for range determination in xInRange where A is # of enemies and B is range (radius) around target -->
+				<valueC></valueC>										<!-- tertiary value, currently unused by any condition check -->
+				<invert>false</invert>									<!-- inverts the result -->
+			</autocastCondition>
+		</TorannMagic.TM_AutocastConditionDef>
+		
+		<TorannMagic.TM_AutocastConditionDef>							<!-- a condition check that looks for any regenerate hediff on the target -->
+		    <defName>TM_HasAnyRegenerateHediff</defName>					
+			<autocastCondition>
+				<conditionClass>HasHediff</conditionClass>				<!-- type of condition: DamageTaken, HasNeed, HasHediff, EnemiesInRange, AlliesInRange, TargetDrafted -->
+				<hediffDefs>
+					<li>TM_Regeneration</li>							<!-- hediff defnames, listed all hediff levels -->
+					<li>TM_Regeneration_I</li>
+					<li>TM_Regeneration_II</li>
+					<li>TM_Regeneration_III</li>
+				</hediffDefs>											
+				<needDefs></needDefs>									
+				<valueA></valueA>										<!-- no values needed since this is only a boolean check -->
+				<valueB></valueB>										
+				<valueC></valueC>										
+				<invert>true</invert>									<!-- returns "true" if the target has any of the listed hediffs, need to invert to fail condition if a hediff is present -->
+			</autocastCondition>
+		</TorannMagic.TM_AutocastConditionDef>
+		
+		<TorannMagic.TM_AutocastConditionDef>							<!-- a condition check that looks for any regenerate hediff on the target -->
+		    <defName>TM_TargetDrafted</defName>					
+			<autocastCondition>
+				<conditionClass>TargetDrafted</conditionClass>				<!-- type of condition: DamageTaken, HasNeed, HasHediff, EnemiesInRange, AlliesInRange, TargetDrafted -->
+				<hediffDefs>
+				</hediffDefs>											
+				<needDefs></needDefs>									
+				<valueA></valueA>										<!-- no values needed since this is only a boolean check -->
+				<valueB></valueB>										
+				<valueC></valueC>										
+				<invert>false</invert>									<!-- returns "true" if the target has any of the listed hediffs, need to invert to fail condition if a hediff is present -->
+			</autocastCondition>
+		</TorannMagic.TM_AutocastConditionDef>
+		
+		<TorannMagic.TM_AutocastConditionDef>							<!-- a condition check that looks to have at least 1 enemy nearby -->
+		    <defName>TM_1EnemyWithin30Cells</defName>					<!-- defName is the key to add into the field in CustomPowerDefs -->
+			<autocastCondition>
+				<conditionClass>EnemiesInRange</conditionClass>			<!-- type of condition: DamageTaken, HasNeed, HasHediff, EnemiesInRange, AlliesInRange, TargetDrafted -->
+				<hediffDefs></hediffDefs>									<!-- hediff defname, null by default -->
+				<needDefs></needDefs>										<!-- need defname, null by default, could be used to check for magic user eg TM_Mana -->
+				<valueA>1</valueA>										<!-- primary value used, in this case, number of enemies -->
+				<valueB>30</valueB>										<!-- secondary value used for range determination in xInRange where A is # of enemies and B is range (radius) around target -->
+				<valueC></valueC>										<!-- tertiary value, currently unused by any condition check -->
+				<invert>false</invert>									<!-- inverts the result -->
+			</autocastCondition>
+		</TorannMagic.TM_AutocastConditionDef>
+		
+		<TorannMagic.TM_AutocastConditionDef>							<!-- a condition check that looks to have at least 1 enemy nearby -->
+		    <defName>TM_1EnemyWithin3Cells</defName>					<!-- defName is the key to add into the field in CustomPowerDefs -->
+			<autocastCondition>
+				<conditionClass>EnemiesInRange</conditionClass>			<!-- type of condition: DamageTaken, HasNeed, HasHediff, EnemiesInRange, AlliesInRange, TargetDrafted -->
+				<hediffDefs></hediffDefs>									<!-- hediff defname, null by default -->
+				<needDefs></needDefs>										<!-- need defname, null by default, could be used to check for magic user eg TM_Mana -->
+				<valueA>1</valueA>										<!-- primary value used, in this case, number of enemies -->
+				<valueB>3</valueB>										<!-- secondary value used for range determination in xInRange where A is # of enemies and B is range (radius) around target -->
+				<valueC></valueC>										<!-- tertiary value, currently unused by any condition check -->
+				<invert>false</invert>									<!-- inverts the result -->
+			</autocastCondition>
+		</TorannMagic.TM_AutocastConditionDef>
+		
+		<TorannMagic.TM_AutocastConditionDef>							<!-- a condition check that looks for 1 enemies near the target -->
+		    <defName>TM_1EnemyWithin15Cells</defName>					
+			<autocastCondition>
+				<conditionClass>EnemiesInRange</conditionClass>			
+				<hediffDefs></hediffDefs>								
+				<needDefs></needDefs>										
+				<valueA>1</valueA>										
+				<valueB>15</valueB>										
+				<valueC></valueC>										
+				<invert>false</invert>									
+			</autocastCondition>
+		</TorannMagic.TM_AutocastConditionDef>
+		
+		<TorannMagic.TM_AutocastConditionDef>							<!-- a condition check that looks for 3 enemies near the target - this will include the target enemy for target +2 -->
+		    <defName>TM_3EnemiesWithin15Cells</defName>					<!-- defName is the key to add into the field in CustomPowerDefs -->
+			<autocastCondition>
+				<conditionClass>EnemiesInRange</conditionClass>			<!-- type of condition: DamageTaken, HasNeed, HasHediff, EnemiesInRange, AlliesInRange, TargetDrafted -->
+				<hediffDefs></hediffDefs>									<!-- hediff defname, null by default -->
+				<needDefs></needDefs>										<!-- need defname, null by default, could be used to check for magic user eg TM_Mana -->
+				<valueA>3</valueA>										<!-- primary value used, in this case, number of enemies -->
+				<valueB>15</valueB>										<!-- secondary value used for range determination in xInRange where A is # of enemies and B is range (radius) around target -->
+				<valueC></valueC>										<!-- tertiary value, currently unused by any condition check -->
+				<invert>false</invert>									<!-- inverts the result -->
+			</autocastCondition>
+		</TorannMagic.TM_AutocastConditionDef>
+		
+		<TorannMagic.TM_AutocastConditionDef>							<!-- a condition check that looks for mood need below 30 percent -->
+		    <defName>TM_HasMoodBelow5Percent</defName>					
+			<autocastCondition>
+				<conditionClass>HasNeed</conditionClass>				<!-- type of condition: DamageTaken, HasNeed, HasHediff, EnemiesInRange, AlliesInRange, TargetDrafted -->											
+				<needDefs>
+					<li>Mood</li>
+				</needDefs>												<!-- has mood need... -->	
+				<valueA>0</valueA>										<!-- and mood is above (or equal) to this value... -->
+				<valueB>.05</valueB>									<!-- and mood is below (or equal) to this value... -->
+				<valueC></valueC>										<!-- a value of 0 means don't perform this check, if A and B were both 0, then it would only check for the existence of the need -->
+				<invert>false</invert>									<!-- returns "true" if the target has the need and (valueA <= need <= valueB) -->
+			</autocastCondition>
+		</TorannMagic.TM_AutocastConditionDef>
+		
+		<TorannMagic.TM_AutocastConditionDef>							<!-- a condition check that looks for any regenerate hediff on the target -->
+		    <defName>TM_DoesNotHaveBlissHediff</defName>					
+			<autocastCondition>
+				<conditionClass>HasHediff</conditionClass>				<!-- type of condition: DamageTaken, HasNeed, HasHediff, EnemiesInRange, AlliesInRange, TargetDrafted -->
+				<hediffDefs>
+					<li>TM_HerbalBlissHD</li>							<!-- hediff defnames, listed all hediff levels -->					
+				</hediffDefs>											
+				<needDefs></needDefs>									
+				<valueA></valueA>										<!-- no values needed since this is only a boolean check -->
+				<valueB></valueB>										
+				<valueC></valueC>										
+				<invert>true</invert>									<!-- returns "true" if the target has any of the listed hediffs, need to invert to fail condition if a hediff is present -->
+			</autocastCondition>
+		</TorannMagic.TM_AutocastConditionDef>
+		
+		<TorannMagic.TM_AutocastConditionDef>							<!-- a condition check that looks for mood need below 30 percent -->
+		    <defName>TM_HasManaBelow20</defName>					
+			<autocastCondition>
+				<conditionClass>HasNeed</conditionClass>				<!-- type of condition: DamageTaken, HasNeed, HasHediff, EnemiesInRange, AlliesInRange, TargetDrafted -->											
+				<needDefs>
+					<li>TM_Mana</li>
+				</needDefs>												<!-- has need... -->	
+				<valueA>0</valueA>										<!-- and need is above (or equal) to this value... -->
+				<valueB>.2</valueB>										<!-- and need is below (or equal) to this value... -->
+				<valueC></valueC>										<!-- a value of 0 means don't perform this check, if A and B were both 0, then it would only check for the existence of the need -->
+				<invert>false</invert>									<!-- returns "true" if the target has the need and (valueA <= need <= valueB) -->
+			</autocastCondition>
+		</TorannMagic.TM_AutocastConditionDef>
+		
+		<TorannMagic.TM_AutocastConditionDef>							<!-- a condition check that looks for any clarity hediff on the target -->
+		    <defName>TM_DoesNotHaveClarityHediff</defName>					
+			<autocastCondition>
+				<conditionClass>HasHediff</conditionClass>				<!-- type of condition: DamageTaken, HasNeed, HasHediff, EnemiesInRange, AlliesInRange, TargetDrafted -->
+				<hediffDefs>
+					<li>TM_HerbalClarityHD</li>							<!-- hediff defnames, listed all hediff levels -->					
+				</hediffDefs>											
+				<needDefs></needDefs>									
+				<valueA></valueA>										<!-- no values needed since this is only a boolean check -->
+				<valueB></valueB>										
+				<valueC></valueC>										
+				<invert>true</invert>									<!-- returns "true" if the target has any of the listed hediffs, need to invert to fail condition if a hediff is present -->
+			</autocastCondition>
+		</TorannMagic.TM_AutocastConditionDef>
+		
+		<TorannMagic.TM_AutocastConditionDef>							<!-- a condition check that looks for spirit drain hediff on the target -->
+		    <defName>TM_DoesNotHaveSpiritDrainHediff</defName>					
+			<autocastCondition>
+				<conditionClass>HasHediff</conditionClass>				<!-- type of condition: DamageTaken, HasNeed, HasHediff, EnemiesInRange, AlliesInRange, TargetDrafted -->
+				<hediffDefs>
+					<li>TM_SpiritDrainHD</li>							<!-- hediff defnames, listed all hediff levels -->					
+				</hediffDefs>											
+				<needDefs></needDefs>									
+				<valueA></valueA>										<!-- no values needed since this is only a boolean check -->
+				<valueB></valueB>										
+				<valueC></valueC>										
+				<invert>true</invert>									<!-- returns "true" if the target has any of the listed hediffs, need to invert to fail condition if a hediff is present -->
+			</autocastCondition>
+		</TorannMagic.TM_AutocastConditionDef>
+		
+		<TorannMagic.TM_AutocastConditionDef>							<!-- a condition check that looks for the spirit need of the caster to be below 50 -->
+		    <defName>TM_SpiritNeedIsBelow50</defName>					
+			<autocastCondition>
+				<conditionClass>HasNeed</conditionClass>				<!-- type of condition: DamageTaken, HasNeed, HasHediff, EnemiesInRange, AlliesInRange, TargetDrafted -->											
+				<needDefs>
+					<li>TM_SpiritND</li>
+				</needDefs>												<!-- has mood need... -->	
+				<valueA>0</valueA>										<!-- and mood is above (or equal) to this value... -->
+				<valueB>50</valueB>									    <!-- and mood is below (or equal) to this value... -->
+				<valueC></valueC>										<!-- a value of 0 means don't perform this check, if A and B were both 0, then it would only check for the existence of the need -->
+				<invert>false</invert>									<!-- returns "true" if the target has the need and (valueA <= need <= valueB) -->
+				<onlyAppliesToCaster>true</onlyAppliesToCaster>
+			</autocastCondition>
+		</TorannMagic.TM_AutocastConditionDef>
+		
+</Defs>

@@ -33,7 +33,7 @@ namespace TorannMagic
             int effVal = TM_Calc.GetSkillEfficiencyLevel(this.pawn, TorannMagicDefOf.TM_SpiritDrain);
             int pwrVal = TM_Calc.GetSkillPowerLevel(this.pawn, TorannMagicDefOf.TM_SpiritDrain);
             int verVal = TM_Calc.GetSkillVersatilityLevel(this.pawn, TorannMagicDefOf.TM_SpiritDrain);
-            if(this.pawn.story != null && this.pawn.story.adulthood != null && this.pawn.story.adulthood.identifier == "tm_regret_spirit")
+            if(this.pawn.story != null && this.pawn.story.Adulthood != null && this.pawn.story.Adulthood.identifier == "tm_regret_spirit")
             {
                 drainFrequencyReduction = 4;
             }

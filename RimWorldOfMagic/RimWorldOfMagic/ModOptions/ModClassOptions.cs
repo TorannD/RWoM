@@ -31,46 +31,48 @@ namespace TorannMagic.ModOptions
 
         private static void InitializeModBackstories()
         {
-            Backstory TM_SpiritBS = new Backstory()
-            {
-                identifier = "tm_childhood_spirit",
-                slot = BackstorySlot.Childhood,
-                title = "TM_SpiritVerbatum".Translate(),
-                baseDesc = "TM_BaseSpiritDesc".Translate(),
-            };
-            BackstoryDatabase.AddBackstory(TM_SpiritBS);
-            Backstory TM_AncientSpiritBS = new Backstory()
-            {
-                identifier = "tm_ancient_spirit",
-                slot = BackstorySlot.Adulthood,
-                title = "TM_AncientSpiritVerbatum".Translate(),
-                baseDesc = "TM_AncientSpiritDesc".Translate(),
-            };
-            BackstoryDatabase.AddBackstory(TM_AncientSpiritBS);
-            Backstory TM_VengefulSpiritBS = new Backstory()
-            {
-                identifier = "tm_vengeful_spirit",
-                slot = BackstorySlot.Adulthood,
-                title = "TM_VengefulSpiritVerbatum".Translate(),
-                baseDesc = "TM_VengefulSpiritDesc".Translate(),
-            };
-            BackstoryDatabase.AddBackstory(TM_VengefulSpiritBS);
-            Backstory TM_LostSpiritBS = new Backstory()
-            {
-                identifier = "tm_lost_spirit",
-                slot = BackstorySlot.Adulthood,
-                title = "TM_LostSpiritVerbatum".Translate(),
-                baseDesc = "TM_LostSpiritDesc".Translate(),
-            };
-            BackstoryDatabase.AddBackstory(TM_LostSpiritBS);
-            Backstory TM_RegretSpiritBS = new Backstory()
-            {
-                identifier = "tm_regret_spirit",
-                slot = BackstorySlot.Adulthood,
-                title = "TM_RegretSpiritVerbatum".Translate(),
-                baseDesc = "TM_RegretSpiritDesc".Translate(),
-            };
-            BackstoryDatabase.AddBackstory(TM_RegretSpiritBS);
+            BackstorySlot TM_BS = (BackstorySlot)13;            
+
+            //BackstoryDef TM_SpiritBS = new BackstoryDef()
+            //{
+            //    identifier = "tm_childhood_spirit",
+            //    slot = BackstorySlot.Childhood,
+            //    title = "TM_SpiritVerbatum".Translate(),
+            //    baseDesc = "TM_BaseSpiritDesc".Translate(),
+            //};
+            //BackstoryDatabase.AddBackstory(TM_SpiritBS);
+            //Backstory TM_AncientSpiritBS = new Backstory()
+            //{
+            //    identifier = "tm_ancient_spirit",
+            //    slot = BackstorySlot.Adulthood,
+            //    title = "TM_AncientSpiritVerbatum".Translate(),
+            //    baseDesc = "TM_AncientSpiritDesc".Translate(),
+            //};
+            //BackstoryDatabase.AddBackstory(TM_AncientSpiritBS);
+            //Backstory TM_VengefulSpiritBS = new Backstory()
+            //{
+            //    identifier = "tm_vengeful_spirit",
+            //    slot = BackstorySlot.Adulthood,
+            //    title = "TM_VengefulSpiritVerbatum".Translate(),
+            //    baseDesc = "TM_VengefulSpiritDesc".Translate(),
+            //};
+            //BackstoryDatabase.AddBackstory(TM_VengefulSpiritBS);
+            //Backstory TM_LostSpiritBS = new Backstory()
+            //{
+            //    identifier = "tm_lost_spirit",
+            //    slot = BackstorySlot.Adulthood,
+            //    title = "TM_LostSpiritVerbatum".Translate(),
+            //    baseDesc = "TM_LostSpiritDesc".Translate(),
+            //};
+            //BackstoryDatabase.AddBackstory(TM_LostSpiritBS);
+            //Backstory TM_RegretSpiritBS = new Backstory()
+            //{
+            //    identifier = "tm_regret_spirit",
+            //    slot = BackstorySlot.Adulthood,
+            //    title = "TM_RegretSpiritVerbatum".Translate(),
+            //    baseDesc = "TM_RegretSpiritDesc".Translate(),
+            //};
+            //BackstoryDatabase.AddBackstory(TM_RegretSpiritBS);
         }
 
         private static void InitializeFactionSettings()

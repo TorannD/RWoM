@@ -1,0 +1,695 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--================== Flesh Golem upgrade recipes ==================-->
+  
+  <RecipeDef ParentName="FleshGolem_Recipe_Base">
+    <defName>TM_FleshGolem_RestorePart</defName>
+    <label>restore body part</label>
+    <description>Restores missing golem parts that do not require a specific upgrade.</description>
+    <jobString>grafting golem part</jobString>
+<!-- 	<researchPrerequisite>TechPlasteelCrafting</researchPrerequisite>
+	<skillRequirements>
+	  <Intellectual>6</Intellectual>
+    </skillRequirements> -->
+	<workAmount>1500</workAmount>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>MeatRaw</li>
+          </categories>
+        </filter>
+        <count>125.0</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+	  <categories>
+        <li>FoodRaw</li>
+      </categories>
+      <disallowedCategories>
+        <li>PlantFoodRaw</li>
+        <li>AnimalProductRaw</li>
+      </disallowedCategories>
+    </fixedIngredientFilter>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="FleshGolem_Recipe_Base">
+    <defName>TM_FleshGolem_MuscleTissue</defName>
+    <label>graft muscle tissue</label>
+    <description>Grafts muscle tissue onto the golem to enhance strength and endurance.</description>
+    <jobString>grafting muscle tissue</jobString>
+<!-- 	<researchPrerequisite>TM_FleshGolemEquipment</researchPrerequisite>
+	<skillRequirements>
+	  <Intellectual>6</Intellectual>
+    </skillRequirements> -->
+	<workAmount>4000</workAmount>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>MeatRaw</li>
+          </categories>
+        </filter>
+        <count>150.0</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+	  <categories>
+        <li>FoodRaw</li>
+      </categories>
+      <disallowedCategories>
+        <li>PlantFoodRaw</li>
+        <li>AnimalProductRaw</li>
+      </disallowedCategories>
+    </fixedIngredientFilter>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="FleshGolem_Recipe_Base">
+    <defName>TM_FleshGolem_DigestiveOrgans</defName>
+    <label>add digestive organs</label>
+    <description>Increases the efficiency of energy absorbed and used by the golem by 10% for digestive system added.</description>
+    <jobString>adding digestive organs</jobString>
+<!-- 	<researchPrerequisite>TechPlasteelCrafting</researchPrerequisite>
+	<skillRequirements>
+	  <Intellectual>6</Intellectual>
+    </skillRequirements> -->
+	<workAmount>6000</workAmount>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>MeatRaw</li>
+          </categories>
+        </filter>
+        <count>250.0</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+	  <categories>
+        <li>FoodRaw</li>
+      </categories>
+      <disallowedCategories>
+        <li>PlantFoodRaw</li>
+        <li>AnimalProductRaw</li>
+      </disallowedCategories>
+    </fixedIngredientFilter>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="FleshGolem_Recipe_Base">
+    <defName>TM_FleshGolem_EnergySynthesis</defName>
+    <label>enhance nutrient absorption</label>
+    <description>Increases the rate energy dispersed throughout the golem.</description>
+    <jobString>improving muscle metabolism</jobString>
+<!-- 	<researchPrerequisite>TechPlasteelCrafting</researchPrerequisite>
+	<skillRequirements>
+	  <Intellectual>6</Intellectual>
+    </skillRequirements> -->
+	<workAmount>5000</workAmount>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>MeatRaw</li>
+          </categories>
+        </filter>
+        <count>225.0</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+	  <categories>
+        <li>FoodRaw</li>
+      </categories>
+      <disallowedCategories>
+        <li>PlantFoodRaw</li>
+		<li>AnimalProductRaw</li>
+      </disallowedCategories>
+    </fixedIngredientFilter>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="FleshGolem_Recipe_Base">
+    <defName>TM_FleshGolem_LifeStage</defName>
+    <label>enhance automaton biomass</label>
+    <description>Enhances the flesh golem by removing excess or unnecessary body parts or organs and replacing them with extra muscle tissues, sinew and bone to further shape the flesh golem into a lethal abomination. This upgrade provides the following benefits per upgrade level [1/2/3]:
+Movement:	+[20%/35%/50%]
+Health:		+[30%/50%/70%]
+
+In addition, this upgrade allows the flesh golem to use their rage to tear the limbs off their enemies.</description>
+    <jobString>enhancing flesh golem</jobString>
+<!-- 	<researchPrerequisite>TechPlasteelCrafting</researchPrerequisite>
+	<skillRequirements>
+	  <Intellectual>6</Intellectual>
+    </skillRequirements> -->
+	<workAmount>10000</workAmount>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>100</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>RawMagicyte</li>
+          </thingDefs>
+        </filter>
+        <count>200</count>
+      </li>
+	  <li>
+        <filter>
+          <categories>
+            <li>MeatRaw</li>
+          </categories>
+        </filter>
+        <count>200.0</count>
+      </li>
+    </ingredients>
+	<fixedIngredientFilter>
+      <thingDefs>
+        <li>Steel</li>
+		<li>RawMagicyte</li>
+      </thingDefs>
+	  <categories>
+        <li>FoodRaw</li>
+      </categories>
+	  <disallowedCategories>
+        <li>PlantFoodRaw</li>
+		<li>AnimalProductRaw</li>
+      </disallowedCategories>
+    </fixedIngredientFilter>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="FleshGolem_Recipe_Base">
+    <defName>TM_FleshGolem_LeftArm_Bracer</defName>
+    <label>craft golem left bracer</label>
+    <description>Adds a metallic bracer to the arm of a flesh golem to increase blunt damage and allow blocking.</description>
+    <jobString>crafting golem bracer</jobString>
+	<researchPrerequisite>TM_FleshGolemEquipmentRD</researchPrerequisite>
+<!-- 	<skillRequirements>
+	  <Intellectual>6</Intellectual>
+    </skillRequirements> -->
+	<workAmount>5000</workAmount>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>200</count>
+      </li> 
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Silver</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li> 
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>RawMagicyte</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="FleshGolem_Recipe_Base">
+    <defName>TM_FleshGolem_RightArm_Bracer</defName>
+    <label>craft golem right bracer</label>
+    <description>Adds a metallic bracer to the arm of a flesh golem to increase blunt damage and allow blocking.</description>
+    <jobString>crafting golem bracer</jobString>
+	<researchPrerequisite>TM_FleshGolemEquipmentRD</researchPrerequisite>
+<!-- 	<skillRequirements>
+	  <Intellectual>6</Intellectual>
+    </skillRequirements> -->
+	<workAmount>5000</workAmount>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>200</count>
+      </li> 
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Silver</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li> 
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>RawMagicyte</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="FleshGolem_Recipe_Base">
+    <defName>TM_FleshGolem_LeftArm_Cleaver</defName>
+    <label>craft golem left cleaver</label>
+    <description>Adds a metallic cleaver to the arm of a flesh golem, enabling an AoE cutting attack and allows the golem the ability to harvest plants and trees.</description>
+    <jobString>crafting golem cleaver</jobString>
+	<researchPrerequisite>TM_FleshGolemEquipmentRD</researchPrerequisite>
+<!-- 	<skillRequirements>
+	  <Intellectual>6</Intellectual>
+    </skillRequirements> -->
+	<workAmount>8000</workAmount>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>200</count>
+      </li> 
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>RawMagicyte</li>
+          </thingDefs>
+        </filter>
+        <count>120</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="FleshGolem_Recipe_Base">
+    <defName>TM_FleshGolem_RightArm_Cleaver</defName>
+    <label>craft golem right cleaver</label>
+    <description>Adds a metallic cleaver to the arm of a flesh golem, enabling an AoE cutting attack and allows the golem the ability to cut down plants and trees.</description>
+    <jobString>crafting golem cleaver</jobString>
+	<researchPrerequisite>TM_FleshGolemEquipmentRD</researchPrerequisite>
+<!-- 	<skillRequirements>
+	  <Intellectual>6</Intellectual>
+    </skillRequirements> -->
+	<workAmount>8000</workAmount>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>200</count>
+      </li> 
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>RawMagicyte</li>
+          </thingDefs>
+        </filter>
+        <count>120</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+
+  <RecipeDef ParentName="FleshGolem_Recipe_Base">
+    <defName>TM_FleshGolem_Tusks</defName>
+    <label>attach tusks</label>
+    <description>Inserts tusks into the mandibles of a flesh golem.</description>
+    <jobString>attaching golem tusks</jobString>
+	<researchPrerequisite>TM_FleshGolemEquipmentRD</researchPrerequisite>
+<!-- 	<skillRequirements>
+	  <Intellectual>6</Intellectual>
+    </skillRequirements> -->
+	<workAmount>200</workAmount>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>ElephantTusk</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li> 
+	  <li>
+        <filter>
+          <categories>
+            <li>MeatRaw</li>
+          </categories>
+        </filter>
+        <count>75.0</count>
+      </li>
+    </ingredients>
+	<fixedIngredientFilter>
+      <thingDefs>
+        <li>ElephantTusk</li>
+      </thingDefs>
+	  <categories>
+        <li>FoodRaw</li>
+      </categories>
+	  <disallowedCategories>
+        <li>PlantFoodRaw</li>
+		<li>AnimalProductRaw</li>
+      </disallowedCategories>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+  <RecipeDef ParentName="FleshGolem_Recipe_Base">
+    <defName>TM_FleshGolem_Horns</defName>
+    <label>attach horns</label>
+    <description>Attaches horns into the skull of a flesh golem. Horns grant the flesh golem the lethal gore attack and allows the golem to charge into battle.</description>
+    <jobString>attaching horns</jobString>
+	<researchPrerequisite>TM_FleshGolemEquipmentRD</researchPrerequisite>
+<!-- 	<skillRequirements>
+	  <Intellectual>6</Intellectual>
+    </skillRequirements> -->
+	<workAmount>6500</workAmount>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>ThrumboHorn</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>RawMagicyte</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>	  
+	  <li>
+        <filter>
+          <categories>
+            <li>MeatRaw</li>
+          </categories>
+        </filter>
+        <count>75.0</count>
+      </li>
+    </ingredients>
+	<fixedIngredientFilter>
+      <thingDefs>
+        <li>ThrumboHorn</li>
+		<li>RawMagicyte</li>
+      </thingDefs>
+	  <categories>
+        <li>FoodRaw</li>
+      </categories>
+	  <disallowedCategories>
+        <li>PlantFoodRaw</li>
+		<li>AnimalProductRaw</li>
+      </disallowedCategories>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+  <RecipeDef ParentName="FleshGolem_Recipe_Base">
+    <defName>TM_FleshGolem_SkullPlate</defName>
+    <label>graft skull plate</label>
+    <description>Grafts a metal plate around the skull of a flesh golem.</description>
+    <jobString>grafting skull plate</jobString>
+	<researchPrerequisite>TM_FleshGolemEquipmentRD</researchPrerequisite>
+<!-- 	<skillRequirements>
+	  <Intellectual>6</Intellectual>
+    </skillRequirements> -->
+	<workAmount>5500</workAmount>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>150</count>
+      </li>
+	  <li>
+        <filter>
+          <categories>
+            <li>MeatRaw</li>
+          </categories>
+        </filter>
+        <count>100.0</count>
+      </li>
+    </ingredients>
+	<fixedIngredientFilter>
+      <thingDefs>
+        <li>Steel</li>
+      </thingDefs>
+	  <categories>
+        <li>FoodRaw</li>
+      </categories>
+	  <disallowedCategories>
+        <li>PlantFoodRaw</li>
+		<li>AnimalProductRaw</li>
+      </disallowedCategories>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+  <RecipeDef ParentName="FleshGolem_Recipe_Base">
+    <defName>TM_FleshGolem_ShoulderPlates</defName>
+    <label>graft shoulder plates</label>
+    <description>Grafts metal plates onto the shoulders of a flesh golem.</description>
+    <jobString>grafting shoulder plates</jobString>
+	<researchPrerequisite>TM_FleshGolemEquipmentRD</researchPrerequisite>
+<!-- 	<skillRequirements>
+	  <Intellectual>6</Intellectual>
+    </skillRequirements> -->
+	<workAmount>7500</workAmount>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>200</count>
+      </li> 
+    </ingredients>
+	<fixedIngredientFilter>
+      <thingDefs>
+        <li>Steel</li>
+      </thingDefs>
+	  <categories>
+        <li>FoodRaw</li>
+      </categories>
+	  <disallowedCategories>
+        <li>PlantFoodRaw</li>
+		<li>AnimalProductRaw</li>
+      </disallowedCategories>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+  <RecipeDef ParentName="FleshGolem_Recipe_Base">
+    <defName>TM_FleshGolem_ChestCage</defName>
+    <label>attach chest cage</label>
+    <description>Improves frontal body armor by grafting a cage made from the bones of human corpses around the chest.</description>
+    <jobString>attaching bone chest cage</jobString>
+	<researchPrerequisite>TM_FleshGolemEquipmentRD</researchPrerequisite>
+<!-- 	<skillRequirements>
+	  <Intellectual>6</Intellectual>
+    </skillRequirements> -->
+	<workAmount>4000</workAmount>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>CorpsesHumanlike</li>
+          </categories>
+        </filter>
+        <count>3</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>CorpsesHumanlike</li>
+      </categories>
+      <disallowedCategories>
+        <li>CorpsesMechanoid</li>
+      </disallowedCategories>
+    </fixedIngredientFilter>
+    <defaultIngredientFilter>
+	  <categories>
+        <li>CorpsesHumanlike</li>
+      </categories>
+      <specialFiltersToAllow>
+        <li>AllowCorpsesColonist</li>
+        <li>AllowCorpsesStranger</li>
+		<li>AllowRotten</li>
+      </specialFiltersToAllow>
+    </defaultIngredientFilter>
+  </RecipeDef>
+
+  <RecipeDef ParentName="FleshGolem_Recipe_Base">
+    <defName>TM_FleshGolem_SpineGuard</defName>
+    <label>attach spine guard</label>
+    <description>Improves back armor by grafting a shell made from the bones of a corpse along the spinal column of a flesh golem.</description>
+    <jobString>attaching spine bone plate</jobString>
+	<researchPrerequisite>TM_FleshGolemEquipmentRD</researchPrerequisite>
+<!-- 	<skillRequirements>
+	  <Intellectual>6</Intellectual>
+    </skillRequirements> -->
+	<workAmount>3000</workAmount>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>CorpsesHumanlike</li>
+          </categories>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>CorpsesHumanlike</li>
+      </categories>
+      <disallowedCategories>
+        <li>CorpsesMechanoid</li>
+      </disallowedCategories>
+    </fixedIngredientFilter>
+    <defaultIngredientFilter>
+	  <categories>
+        <li>CorpsesHumanlike</li>
+      </categories>
+      <specialFiltersToAllow>
+        <li>AllowCorpsesColonist</li>
+        <li>AllowCorpsesStranger</li>
+		<li>AllowRotten</li>
+      </specialFiltersToAllow>
+    </defaultIngredientFilter>
+  </RecipeDef>
+
+  <RecipeDef ParentName="FleshGolem_Recipe_Base">
+    <defName>TM_FleshGolem_Wings</defName>
+    <label>attach wings</label>
+    <description>Increases speed and balance by grafting wings into the back of a flesh golem. These wings are not intended for flight, rather they serve the golem by helping it offset some of its considerable bulk during combat.</description>
+    <jobString>attaching wings</jobString>
+	<researchPrerequisite>TM_FleshGolemEquipmentRD</researchPrerequisite>
+<!-- 	<skillRequirements>
+	  <Intellectual>6</Intellectual>
+    </skillRequirements> -->
+	<workAmount>5600</workAmount>
+	<ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Leather_Human</li>
+          </thingDefs>
+        </filter>
+        <count>250</count>
+      </li> 
+    </ingredients>
+  </RecipeDef>
+
+  <RecipeDef ParentName="FleshGolem_Recipe_Base">
+    <defName>TM_FleshGolem_LegPlates</defName>
+    <label>graft leg plates</label>
+    <description>Grafts metal plates around the legs of a flesh golem.</description>
+    <jobString>grafting leg plates</jobString>
+	<researchPrerequisite>TM_FleshGolemEquipmentRD</researchPrerequisite>
+<!-- 	<skillRequirements>
+	  <Intellectual>6</Intellectual>
+    </skillRequirements> -->
+	<workAmount>6000</workAmount>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>180</count>
+      </li> 
+    </ingredients>
+  </RecipeDef>
+
+  <RecipeDef ParentName="FleshGolem_Recipe_Base">
+    <defName>TM_FleshGolem_EyesT1</defName>
+    <label>insert quad-eyes</label>
+    <description>Inserts a pair of eyes underneath the original pair that improve vision and reduces the chance the golem can be fully blinded.</description>
+    <jobString>insert eyes</jobString>
+	<researchPrerequisite>TM_FleshGolemEquipmentRD</researchPrerequisite>
+<!-- 	<skillRequirements>
+	  <Intellectual>6</Intellectual>
+    </skillRequirements> -->
+	<workAmount>2000</workAmount>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>CorpsesHumanlike</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>CorpsesHumanlike</li>
+      </categories>
+      <disallowedCategories>
+        <li>CorpsesMechanoid</li>
+      </disallowedCategories>
+    </fixedIngredientFilter>
+    <defaultIngredientFilter>
+	  <categories>
+        <li>CorpsesHumanlike</li>
+      </categories>
+      <specialFiltersToAllow>
+        <li>AllowCorpsesColonist</li>
+        <li>AllowCorpsesStranger</li>
+		<li>AllowRotten</li>
+      </specialFiltersToAllow>
+    </defaultIngredientFilter>
+  </RecipeDef>
+
+  <RecipeDef ParentName="FleshGolem_Recipe_Base">
+    <defName>TM_FleshGolem_EyesT2</defName>
+    <label>carve evil eye</label>
+    <description>Carves an eye socket into the forehead of a flesh golem that is filled with molded magicyte in the shape of an eye. Arcane symbols are etched around the eye, forming a magical link between the golem and the eye. The evil eye is able to manifest the suppressed rage of the flesh golem to curse their target with feebleness.</description>
+    <jobString>carving evil eye</jobString>
+	<researchPrerequisite>TM_FleshGolemEquipmentRD</researchPrerequisite>
+<!-- 	<skillRequirements>
+	  <Intellectual>6</Intellectual>
+    </skillRequirements> -->
+	<workAmount>8000</workAmount>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>RawMagicyte</li>
+          </thingDefs>
+        </filter>
+        <count>200</count>
+      </li> 
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Jade</li>
+          </thingDefs>
+        </filter>
+        <count>60</count>
+      </li> 
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Silver</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li> 
+    </ingredients>
+  </RecipeDef>
+  
+</Defs>

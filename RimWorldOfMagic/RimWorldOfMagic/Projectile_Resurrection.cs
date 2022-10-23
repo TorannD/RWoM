@@ -67,10 +67,13 @@ namespace TorannMagic
                 if (this.launcher is Pawn caster)
                 {
                     CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
-                    MagicPowerSkill ver = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Resurrection.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Resurrection_ver");
-                    MagicPowerSkill pwr = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Resurrection.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Resurrection_eff");
-                    verVal = ver.level;
-                    pwrVal = pwr.level;
+                    if (comp != null && comp.MagicData != null)
+                    {
+                        MagicPowerSkill ver = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Resurrection.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Resurrection_ver");
+                        MagicPowerSkill pwr = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Resurrection.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Resurrection_eff");
+                        verVal = ver.level;
+                        pwrVal = pwr.level;
+                    }
                 }
                 this.angle = Rand.Range(-12f, 12f);               
                 
@@ -90,7 +93,7 @@ namespace TorannMagic
                         if (corpseThing != null)
                         {
                             bool validator = corpseThing is Corpse;
-                            if (validator)
+                            if (corpseThing is Corpse)
                             {
                                 corpse = corpseThing as Corpse;
                                 CompRottable compRot = corpse.GetComp<CompRottable>(); 
@@ -123,7 +126,7 @@ namespace TorannMagic
                 this.initialized = true;
             }
 
-            if(corpseThing != null && (corpseThing.Position != this.deadPawnPosition || corpseThing.Map == null))
+            if(corpseThing != null && (corpseThing.Position != this.deadPawnPosition || corpseThing.Map == null) && deadPawn.Dead)
             {
                 Log.Message("Corpse was moved or destroyed during resurrection process.");
                 this.age = this.timeToRaise;
@@ -176,19 +179,10 @@ namespace TorannMagic
                                 ResurrectionUtility.ResurrectWithSideEffects(deadPawn);
                                 SoundDef.Named("Thunder_OffMap").PlayOneShot(null);
                                 SoundDef.Named("Thunder_OffMap").PlayOneShot(null);
-                                using (IEnumerator<Hediff> enumerator = deadPawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
+                                Hediff rec = deadPawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ResurrectionPsychosis);
+                                if (rec != null && Rand.Chance(verVal * .33f))
                                 {
-                                    while (enumerator.MoveNext())
-                                    {
-                                        Hediff rec = enumerator.Current;
-                                        if (rec.def.defName == "ResurrectionPsychosis")
-                                        {
-                                            if (Rand.Chance(verVal * .33f))
-                                            {
-                                                deadPawn.health.RemoveHediff(rec);
-                                            }
-                                        }
-                                    }
+                                    deadPawn.health.RemoveHediff(rec);
                                 }
                                 HealthUtility.AdjustSeverity(deadPawn, HediffDef.Named("TM_ResurrectionHD"), 1f);
                                 ReduceSkillsOfPawn(deadPawn, (.35f - .035f * pwrVal));
