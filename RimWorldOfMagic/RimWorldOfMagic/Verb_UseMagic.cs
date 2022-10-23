@@ -79,7 +79,7 @@ namespace TorannMagic
             }
             Vector3 drawPos = base.caster.DrawPos;
             Log.Message("test 1 - before spawn ");
-            var obj = (Projectile_AbilityBase)GenSpawn.Spawn(projectileDef, val.Source, base.caster.Map, 0);
+            var obj = (Projectile)GenSpawn.Spawn(projectileDef, val.Source, base.caster.Map, 0);
             Log.Message("test 2 - after spawn");
             VerbProperties_Ability useAbilityProps = UseAbilityProps;
             //obj.extraDamages = useAbilityProps.extraDamages;

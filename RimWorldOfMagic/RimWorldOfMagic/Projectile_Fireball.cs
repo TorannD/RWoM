@@ -15,7 +15,7 @@ namespace TorannMagic
     //    propagationSpeed:, excludeRadius:, doSoundEffects:, postExplosionSpawnThingDefWater:, screenShakeFactor:
     //    );
 
-    public class Projectile_Fireball : Projectile_AbilityBase
+    public class Projectile_Fireball : Projectile_MagicBase
 	{
         private int verVal;
         private int pwrVal;
