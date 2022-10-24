@@ -7,7 +7,7 @@ namespace TorannMagic.Weapon
 {
     class SeerRing_Ice : Projectile_AbilityBase
     {
-        protected override void Impact(Thing hitThing)
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             Map map = base.Map;
             base.Impact(hitThing);

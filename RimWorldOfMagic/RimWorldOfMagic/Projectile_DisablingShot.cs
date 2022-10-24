@@ -16,7 +16,7 @@ namespace TorannMagic
         BodyPartRecord vitalPart = null;
         private int verVal;
 
-        protected override void Impact(Thing hitThing)
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             Map map = base.Map;
             base.Impact(hitThing);

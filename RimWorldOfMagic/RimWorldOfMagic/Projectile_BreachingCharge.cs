@@ -17,7 +17,7 @@ namespace TorannMagic
         private int explosionCount = 5;
         Pawn caster;
 
-        protected override void Impact(Thing hitThing)
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             base.Impact(hitThing);
             ThingDef def = this.def;

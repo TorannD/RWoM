@@ -38,7 +38,7 @@ namespace TorannMagic
             Scribe_References.Look<Pawn>(ref this.hitPawn, "hitPawn", false);
         }
 
-        protected override void Impact(Thing hitThing)
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             Map map = base.Map;
             base.Impact(hitThing);

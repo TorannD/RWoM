@@ -8,7 +8,7 @@ namespace TorannMagic.Weapon
 {
     public class SeerRing_Fire : Projectile_AbilityBase
     {
-        protected override void Impact(Thing hitThing)
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
 
             Map map = base.Map;

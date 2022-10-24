@@ -45,7 +45,7 @@ namespace TorannMagic
             Scribe_Collections.Look<int>(ref this.hitPawnWorkSetting, "hitPawnWorkSettings", LookMode.Value);
         }
 
-        protected override void Impact(Thing hitThing)
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             Map map = base.Map;
             base.Impact(hitThing);

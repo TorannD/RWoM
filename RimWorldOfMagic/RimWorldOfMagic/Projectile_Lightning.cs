@@ -83,7 +83,7 @@ namespace TorannMagic
             chainedThings.Clear();
         }
 
-		protected override void Impact(Thing hitThing)
+		protected override void Impact(Thing hitThing, bool blockedByShield = false)
 		{			         
             Map map = base.Map;
             IntVec3 strikePos = default(IntVec3);

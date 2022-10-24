@@ -19,7 +19,7 @@ namespace TorannMagic
 
         Thing turret = null;
 
-        protected override void Impact(Thing hitThing)
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             Map map = this.launcher.Map;
             Pawn pawn = this.launcher as Pawn;

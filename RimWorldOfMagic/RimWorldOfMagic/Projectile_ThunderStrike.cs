@@ -45,7 +45,7 @@ namespace TorannMagic
             Scribe_Values.Look<bool>(ref this.initialized, "initialized", false, false);
         }
 
-        protected override void Impact(Thing hitThing)
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             base.Impact(hitThing);
 

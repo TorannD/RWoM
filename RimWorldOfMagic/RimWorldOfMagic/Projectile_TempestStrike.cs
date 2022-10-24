@@ -16,7 +16,7 @@ namespace TorannMagic
         public bool shouldSpin = true;
         private bool spinCheck = true;
 
-        protected override void Impact(Thing hitThing)
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             Map map = base.Map;
             Pawn pawn = this.launcher as Pawn;

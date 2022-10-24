@@ -15,7 +15,7 @@ namespace TorannMagic
     //    propagationSpeed:, excludeRadius:, doSoundEffects:, postExplosionSpawnThingDefWater:, screenShakeFactor:
     //    );
 
-    public class Projectile_Fireball : Projectile_MagicBase
+    public class Projectile_Fireball : Projectile_AbilityBase
 	{
         private int verVal;
         private int pwrVal;
@@ -23,26 +23,13 @@ namespace TorannMagic
 
         protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
-            Log.Message("fireball start impact");
             Map map = base.Map;
 			base.Impact(hitThing);
 			ThingDef def = this.def;
-            Log.Message("1");
-            
+
             //GenExplosion.DoExplosion(base.Position, map, this.def.projectile.explosionRadius, DamageDefOf.Bomb, this.launcher, SoundDefOf.PlanetkillerImpact, def, this.equipmentDef, null, 0f, 1, false, null, 0f, 1);
             GenExplosion.DoExplosion(base.Position, map, this.def.projectile.explosionRadius, DamageDefOf.Bomb, this.launcher, Mathf.RoundToInt(Rand.Range(this.def.projectile.GetDamageAmount(1,null)/2, this.def.projectile.GetDamageAmount(1,null)) * this.arcaneDmg), 0, TorannMagicDefOf.TM_SoftExplosion, def, this.equipmentDef, null, null, 0f, 1, null, false, null, 0f, 1, 0.1f, true);
 
-            Log.Message("2");
-            GenExplosion.DoExplosion(
-                center: Position, map: Map, radius: this.def.projectile.explosionRadius, damType: DamageDefOf.Bomb, instigator: Launcher, 
-                damAmount: Mathf.RoundToInt(Rand.Range(this.def.projectile.GetDamageAmount(1, null) / 2, this.def.projectile.GetDamageAmount(1, null)) * this.arcaneDmg),
-                armorPenetration: 0f, explosionSound: TorannMagicDefOf.TM_SoftExplosion, weapon: def, projectile: this.equipmentDef, intendedTarget: hitThing 
-                //postExplosionSpawnThingDef:, postExplosionSpawnChance:, postExplosionSpawnThingCount:, postExplosionGasType:, applyDamageToExplosionCellsNeighbors:, preExplosionSpawnThingDef:, preExplosionSpawnChance:,
-                //preExplosionSpawnThingCount:, chanceToStartFire:, damageFalloff:, direction:, ignoredThings:, affectedAngle:, doVisualEffects:, propagationSpeed:, excludeRadius:, doSoundEffects:,
-                //postExplosionSpawnThingDefWater:, screenShakeFactor:
-                );
-
-            Log.Message("3");
             //GenExplosion.DoExplosion(Position, Map,this.def.projectile.explosionRadius, DamageDefOf.Bomb, Launcher, Mathf.RoundToInt(Rand.Range(this.def.projectile.GetDamageAmount(1, null) / 2, this.def.projectile.GetDamageAmount(1, null)) * this.arcaneDmg), 0f, TorannMagicDefOf.TM_SoftExplosion)
                 
             CellRect cellRect = CellRect.CenteredOn(base.Position, 5);
@@ -80,7 +67,6 @@ namespace TorannMagic
                 }
 				
 			}
-            Log.Message("fireball end");
 		}
 
 		protected void FireExplosion(IntVec3 pos, Map map, float radius, MagicPowerSkill ver)

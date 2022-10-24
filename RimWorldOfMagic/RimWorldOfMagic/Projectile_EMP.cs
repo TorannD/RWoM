@@ -8,7 +8,7 @@ namespace TorannMagic
 {
 	public class Projectile_EMP : Projectile_AbilityBase
 	{
-        protected override void Impact(Thing hitThing)
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             Pawn caster = this.launcher as Pawn;
             CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();

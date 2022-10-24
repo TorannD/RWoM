@@ -62,7 +62,7 @@ namespace TorannMagic
             }
         }
 
-        protected override void Impact(Thing hitThing)
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {            
             ThingDef def = this.def;
             if (!this.initialized)

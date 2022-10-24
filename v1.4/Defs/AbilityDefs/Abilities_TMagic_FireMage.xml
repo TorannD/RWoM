@@ -321,8 +321,7 @@ Requires 40 mana to maintain and reduces mana regeneration by 30%; cast again to
 		<learnChance>.3</learnChance>
 		<canCopy>true</canCopy>
 		<MainVerb Class="AbilityUser.VerbProperties_Ability">
-           <!--  <verbClass>AbilityUser.Verb_UseAbility</verbClass> -->
-			<verbClass>TorannMagic.Verb_UseMagic</verbClass>
+            <verbClass>AbilityUser.Verb_UseAbility</verbClass>
 				<tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
 				<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
 				<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>

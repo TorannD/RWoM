@@ -13,7 +13,7 @@ namespace TorannMagic
         private int pwrVal;
         private float arcaneDmg = 1;
 
-		protected override void Impact(Thing hitThing)
+		protected override void Impact(Thing hitThing, bool blockedByShield = false)
 		{
 			Map map = base.Map;
 			base.Impact(hitThing);
