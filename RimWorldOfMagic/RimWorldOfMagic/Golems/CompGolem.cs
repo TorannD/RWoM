@@ -361,7 +361,10 @@ namespace TorannMagic.Golems
             }
             if (Pawn.playerSettings != null)
             {
-                Pawn.playerSettings.hostilityResponse = HostilityResponseMode.Attack;
+                if (Pawn.playerSettings != null)
+                {
+                    Pawn.playerSettings.hostilityResponse = HostilityResponseMode.Attack;
+                }
                 if (InnerWorkstation.ThreatTarget != null && (InnerWorkstation.ThreatTarget.Position - Pawn.Position).LengthHorizontal <= threatRange)
                 {
                     threatTarget = InnerWorkstation.ThreatTarget;

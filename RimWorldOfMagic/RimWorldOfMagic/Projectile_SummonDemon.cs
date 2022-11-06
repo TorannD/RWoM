@@ -175,7 +175,12 @@ namespace TorannMagic
                         newPawn.TicksToDestroy = this.duration;
                         try
                         {
-                            GenSpawn.Spawn(newPawn, position, map);
+                            Pawn p = (Pawn)GenSpawn.Spawn(newPawn, position, map);
+                            if (p.playerSettings != null)
+                            {
+                                p.playerSettings.hostilityResponse = HostilityResponseMode.Attack;
+                                p.playerSettings.medCare = MedicalCareCategory.NoCare;
+                            }
                             this.demonPawn = newPawn;
                         }
                         catch

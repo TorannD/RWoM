@@ -1611,7 +1611,14 @@ namespace TorannMagic
                 }
             }
 
-            thingList.AddRange(FindNearbyDamagedBuildings(pawn, radius));
+            List<Thing> damagedBuildings = FindNearbyDamagedBuildings(pawn, radius);
+            if(damagedBuildings != null && damagedBuildings.Count > 0)
+            {
+                foreach(Thing t in damagedBuildings)
+                {
+                    thingList.Add(t);
+                }
+            }
 
             return thingList.Count > 0 ? thingList.RandomElement() : null;
         }

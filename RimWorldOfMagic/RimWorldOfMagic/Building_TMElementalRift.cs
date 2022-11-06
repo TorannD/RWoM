@@ -328,7 +328,6 @@ namespace TorannMagic
                 this.eventFrequencyMultiplier = .4f;
                 this.areaRadius = 2;
             }
-
         }
 
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
@@ -585,6 +584,7 @@ namespace TorannMagic
                         newPawn.validSummoning = true;
                         //newPawn.Spawner = this.Caster;
                         newPawn.Temporary = false;
+                        
                         if (newPawn.Faction == null || !newPawn.Faction.HostileTo(Faction.OfPlayer))
                         {
                             Log.Message("elemental faction was null or not hostile - fixing");

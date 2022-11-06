@@ -81,6 +81,11 @@ namespace TorannMagic
                     Thing newPawn = null;
                     newPawn = TM_Action.SingleSpawnLoop(caster, tempPod, cell, map, Rand.Range(1000,1200) + (120 * effVal), true, false, caster.Faction, false);
                     Pawn animal = newPawn as Pawn;
+                    if (animal.playerSettings != null)
+                    {
+                        animal.playerSettings.hostilityResponse = HostilityResponseMode.Attack;
+                        animal.playerSettings.medCare = MedicalCareCategory.NoCare;
+                    }
                     HealthUtility.AdjustSeverity(animal, TorannMagicDefOf.TM_EnrageHD, .2f + (.1f * pwrVal));
                     for (int j = 0; j < 3; j++)
                     {

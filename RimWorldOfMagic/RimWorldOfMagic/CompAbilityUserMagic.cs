@@ -563,7 +563,7 @@ namespace TorannMagic
                 Enchantment.CompEnchant compEnchant = this.Pawn.GetComp<Enchantment.CompEnchant>();
                 //try
                 //{
-                    if (this.IsMagicUser && compEnchant != null && compEnchant.enchantingContainer.Count > 0)
+                    if (this.IsMagicUser && compEnchant != null && compEnchant.enchantingContainer != null && compEnchant.enchantingContainer.Count > 0)
                     {
                         DrawEnchantMark();
                     }
@@ -744,7 +744,7 @@ namespace TorannMagic
 
         public void DrawEnchantMark()
         {
-            DrawMark(TM_RenderQueue.enchantMark, new Vector3(.5f, 1f, .5f));
+            DrawMark(TM_RenderQueue.enchantMark, new Vector3(.5f, 1f, .5f), 0, -.2f);
             //float num = Mathf.Lerp(1.2f, 1.55f, 1f);
             //Vector3 vector = this.Pawn.Drawer.DrawPos;
             //vector.x = vector.x + .45f;

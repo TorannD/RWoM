@@ -1621,6 +1621,12 @@ namespace TorannMagic
         public static FleckDef SparkFlash;
 
         //BackstoryDefs
+        public static BackstoryDef TM_UndeadChildBS;
+        public static BackstoryDef TM_UndeadAdultBS;
+        public static BackstoryDef TM_UndeadAdultBS_GhostEye;
+        public static BackstoryDef TM_UndeadAdultBS_GhostMind;
+        public static BackstoryDef TM_UndeadAdultBS_Brute;
+        public static BackstoryDef TM_UndeadAdultBS_Servant;
         public static BackstoryDef TM_GolemChildBS;
         public static BackstoryDef TM_GolemAdultBS;
         public static BackstoryDef TM_SpiritChildBS;

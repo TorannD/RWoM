@@ -124,9 +124,7 @@
         <useLabel>Use shard of extraction</useLabel>
         <useDuration>500</useDuration>
       </li>
-      <li Class="CompProperties_UseEffect">
-        <compClass>CompUseEffect_DestroySelf</compClass>
-      </li>
+      <li Class="CompProperties_UseEffectDestroySelf" />
     </comps>
   </ThingDef>
   

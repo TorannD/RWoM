@@ -798,9 +798,9 @@ Due to its weight, the Mark-IV cannot be moved while deployed.</description>
     </statBases>
     <tickerType>Normal</tickerType>
     <comps>
-	  <li Class="CompProperties_Mannable">
+	  <!-- <li Class="CompProperties_Mannable">
         <manWorkType>Violent</manWorkType>
-      </li>
+      </li> -->
 	  <li Class="TorannMagic.CompProperties_Summoned"></li>
     </comps>    
     <size>(1,1)</size>

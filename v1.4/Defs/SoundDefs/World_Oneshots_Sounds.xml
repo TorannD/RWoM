@@ -579,7 +579,7 @@
         <onCamera>True</onCamera>
         <grains>
           <li Class="AudioGrain_Folder">
-            <clipFolderPath>SFX/Pop</clipFolderPath>
+            <clipFolderPath>SFX/Thinpop</clipFolderPath>
           </li>
         </grains>
         <volumeRange>

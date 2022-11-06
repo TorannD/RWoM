@@ -312,9 +312,8 @@ namespace TorannMagic
         }
 
         public void SingleSpawnLoop(SpawnThings spawnables, IntVec3 position, Map map)
-        {
-            bool flag = spawnables.def != null;
-            if (flag)
+        {            
+            if (spawnables.def != null)
             {
                 Faction faction = pawn.Faction;
                 bool flag2 = spawnables.def.race != null;
@@ -332,13 +331,22 @@ namespace TorannMagic
                         newPawn.Spawner = this.Caster;
                         newPawn.Temporary = true;
                         newPawn.TicksToDestroy = this.duration;
+                        if (newPawn.playerSettings != null)
+                        {
+                            newPawn.playerSettings.hostilityResponse = HostilityResponseMode.Attack;
+                        }
                         //if (newPawn.Faction != Faction.OfPlayerSilentFail)
                         //{
                         //    newPawn.SetFaction(this.Caster.Faction, null);
                         //}
                         try
                         {
-                            GenSpawn.Spawn(newPawn, position, map, Rot4.North, WipeMode.Vanish, false);
+                            Pawn p = (Pawn)GenSpawn.Spawn(newPawn, position, map, Rot4.North, WipeMode.Vanish, false);
+                            if (newPawn.playerSettings != null)
+                            {
+                                p.playerSettings.hostilityResponse = HostilityResponseMode.Attack;
+                                p.playerSettings.medCare = MedicalCareCategory.NoCare;
+                            }
                             //GenPlace.TryPlaceThing(newPawn, position, map, ThingPlaceMode.Near, null, null);
                         }
                         catch

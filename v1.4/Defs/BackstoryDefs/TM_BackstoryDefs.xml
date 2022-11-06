@@ -2,6 +2,152 @@
 <Defs>
 
   <BackstoryDef>
+    <defName>TM_UndeadChildBS</defName>
+    <ignoreIllegalLabelCharacterConfigError>True</ignoreIllegalLabelCharacterConfigError>
+    <identifier>TM_UndeadChildBS</identifier>
+    <slot></slot>
+    <title>Undead</title>
+    <titleShort>Undead</titleShort>
+    <baseDesc>[PAWN_nameDef] is now undead, the story of the pawn that inhabited this body previously has been washed away - replaced by the will of a necromancer.</baseDesc>
+    <spawnCategories>
+    </spawnCategories>
+    <shuffleable>False</shuffleable>
+  </BackstoryDef>
+  
+  <BackstoryDef>
+    <defName>TM_UndeadAdultBS_GhostEye</defName>
+    <ignoreIllegalLabelCharacterConfigError>True</ignoreIllegalLabelCharacterConfigError>
+    <identifier>TM_UndeadAdultBS_GhostEye</identifier>
+    <slot></slot>
+    <title>Ghost Eye</title>
+    <titleShort>Ghost Eye</titleShort>
+    <baseDesc>The Ghost Eye is a unique undead variant with some shooting skill, but suffers a penalty to melee and mining.</baseDesc>
+    <spawnCategories>
+    </spawnCategories>
+    <shuffleable>False</shuffleable>
+	<skillGains>
+      <li>
+        <key>Shooting</key>      
+        <value>5</value>
+      </li>    
+      <li>
+        <key>Melee</key>      
+        <value>-5</value>
+      </li>    
+    </skillGains>  
+  </BackstoryDef>
+  
+  <BackstoryDef>
+    <defName>TM_UndeadAdultBS_GhostMind</defName>
+    <ignoreIllegalLabelCharacterConfigError>True</ignoreIllegalLabelCharacterConfigError>
+    <identifier>TM_UndeadAdultBS_GhostMind</identifier>
+    <slot></slot>
+    <title>Ghost Mind</title>
+    <titleShort>Ghost Mind</titleShort>
+    <baseDesc>The Ghost Mind is a unique undead variant with increased crafting and cooking skill but has a penalty to melee and mining.</baseDesc>
+    <spawnCategories>
+    </spawnCategories>
+    <shuffleable>False</shuffleable>
+	<skillGains>
+      <li>
+        <key>Crafting</key>      
+        <value>3</value>
+      </li>    
+      <li>
+        <key>Melee</key>      
+        <value>-3</value>
+      </li>    
+      <li>
+        <key>Cooking</key>      
+        <value>2</value>
+      </li>
+	   <li>
+        <key>Mining</key>      
+        <value>-2</value>
+      </li>
+    </skillGains>  
+  </BackstoryDef>
+  
+  <BackstoryDef>
+    <defName>TM_UndeadAdultBS_Brute</defName>
+    <ignoreIllegalLabelCharacterConfigError>True</ignoreIllegalLabelCharacterConfigError>
+    <identifier>TM_UndeadAdultBS_Brute</identifier>
+    <slot></slot>
+    <title>Undead Brute</title>
+    <titleShort>Undead Brute</titleShort>
+    <baseDesc>The Undead Brute is a unique undead variant with increased melee and mining, but is so ham-fisted that crafting and cooking tasks are nearly impossible.</baseDesc>
+    <spawnCategories>
+    </spawnCategories>
+    <shuffleable>False</shuffleable>
+	<skillGains>
+      <li>
+        <key>Crafting</key>      
+        <value>-4</value>
+      </li>    
+      <li>
+        <key>Melee</key>      
+        <value>3</value>
+      </li>    
+      <li>
+        <key>Cooking</key>      
+        <value>-3</value>
+      </li>
+	   <li>
+        <key>Mining</key>      
+        <value>3</value>
+      </li>
+    </skillGains> 
+  </BackstoryDef>
+  
+  <BackstoryDef>
+    <defName>TM_UndeadAdultBS_Servant</defName>
+    <ignoreIllegalLabelCharacterConfigError>True</ignoreIllegalLabelCharacterConfigError>
+    <identifier>TM_UndeadAdultBS_Servant</identifier>
+    <slot></slot>
+    <title>Undead Servant</title>
+    <titleShort>Undead Servant</titleShort>
+    <baseDesc>The Undead Servant is a unique undead variant that is particularly tuned for labor, with a severe disadvantage in a fight.</baseDesc>
+    <spawnCategories>
+    </spawnCategories>
+    <shuffleable>False</shuffleable>
+	<skillGains>
+      <li>
+        <key>Crafting</key>      
+        <value>2</value>
+      </li>    
+      <li>
+        <key>Melee</key>      
+        <value>-5</value>
+      </li>    
+      <li>
+        <key>Cooking</key>      
+        <value>2</value>
+      </li>
+	   <li>
+        <key>Plants</key>      
+        <value>2</value>
+      </li>
+	  <li>
+        <key>Construction</key>      
+        <value>2</value>
+      </li>
+    </skillGains> 
+  </BackstoryDef>
+  
+  <BackstoryDef>
+    <defName>TM_UndeadAdultBS</defName>
+    <ignoreIllegalLabelCharacterConfigError>True</ignoreIllegalLabelCharacterConfigError>
+    <identifier>TM_UndeadAdultBS</identifier>
+    <slot></slot>
+    <title>Undead</title>
+    <titleShort>Undead</titleShort>
+    <baseDesc>[PAWN_nameDef] is a baseline undead with no abnormalities.</baseDesc>
+    <spawnCategories>
+    </spawnCategories>
+    <shuffleable>False</shuffleable>
+  </BackstoryDef>
+
+  <BackstoryDef>
     <defName>TM_GolemChildBS</defName>
     <ignoreIllegalLabelCharacterConfigError>True</ignoreIllegalLabelCharacterConfigError>
     <identifier>TM_GolemChildBS</identifier>

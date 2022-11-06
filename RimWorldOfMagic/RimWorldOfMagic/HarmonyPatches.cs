@@ -2342,7 +2342,7 @@ namespace TorannMagic
             typeof(Quaternion),
             typeof(Material),
             typeof(bool)
-        })]
+        }), HarmonyPriority(10)] //go last to ensure cloaks draw over everything else
         public class DrawMesh_Cloaks_Patch
         {
             public static bool Prefix(Mesh mesh, Vector3 loc, Quaternion quat, Material mat, bool drawNow)

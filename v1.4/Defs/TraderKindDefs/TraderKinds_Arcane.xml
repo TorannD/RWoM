@@ -60,6 +60,16 @@
 				<countRange>1~1</countRange>
 			</li>
 			<li Class="StockGenerator_Tag">
+				<tradeTag>TM_BuyableMageWand</tradeTag>
+				<thingDefCountRange>1~2</thingDefCountRange>
+				<countRange>1~1</countRange>
+			  </li>
+			  <li Class="StockGenerator_Tag">
+				<tradeTag>TM_BuyableMageWeapon</tradeTag>
+				<thingDefCountRange>1~2</thingDefCountRange>
+				<countRange>1~1</countRange>
+			  </li>
+			<li Class="StockGenerator_Tag">
 				<tradeTag>TechHediff</tradeTag>
 				<thingDefCountRange>3~4</thingDefCountRange>
 				<countRange>1~1</countRange>
@@ -272,6 +282,16 @@
         <tradeTag>Armor</tradeTag>
         <countRange>3~6</countRange>
       </li>
+	  <li Class="StockGenerator_Tag">
+		<tradeTag>TM_BuyableMageWand</tradeTag>
+		<thingDefCountRange>1~2</thingDefCountRange>
+		<countRange>1~1</countRange>
+	  </li>
+	  <li Class="StockGenerator_Tag">
+		<tradeTag>TM_BuyableMageWeapon</tradeTag>
+		<thingDefCountRange>3~5</thingDefCountRange>
+		<countRange>1~1</countRange>
+	  </li>
       <li Class="StockGenerator_MarketValue">
         <tradeTag>Art</tradeTag>
         <countRange>4~8</countRange>

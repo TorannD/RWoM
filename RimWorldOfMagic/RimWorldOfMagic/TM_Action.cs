@@ -918,7 +918,12 @@ namespace TorannMagic
             //{
             //    newPawn.SetFaction(val, null);
             //}
-            GenSpawn.Spawn(newPawn, position, map, 0);
+            Pawn np = (Pawn)GenSpawn.Spawn(newPawn, position, map, 0);
+            if (np.playerSettings != null)
+            {
+                np.playerSettings.hostilityResponse = HostilityResponseMode.Attack;
+            }
+            //np.playerSettings.medCare = MedicalCareCategory.NoCare;
 
             if (newPawn.Faction != null && newPawn.Faction != Faction.OfPlayer)
             {

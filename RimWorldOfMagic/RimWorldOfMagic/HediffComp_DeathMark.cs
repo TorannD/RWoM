@@ -109,7 +109,10 @@ namespace TorannMagic
                     {
                         skills[j].passion = Passion.None;
                     }
-                    undeadPawn.playerSettings.hostilityResponse = HostilityResponseMode.Attack;
+                    if (undeadPawn.playerSettings != null)
+                    {
+                        undeadPawn.playerSettings.hostilityResponse = HostilityResponseMode.Attack;
+                    }
                     if(!undeadPawn.IsColonist)
                     {
                         undeadPawn.ClearMind();

@@ -206,40 +206,53 @@ namespace TorannMagic
                             TM_Action.TendWithoutNotice(hediff, 1f, 1f);
                     }
 
+                    List<Hediff> removeHDList = new List<Hediff>();
+                    removeHDList.Clear();
+
                     using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.hediffs.GetEnumerator())
                     {
                         while (enumerator.MoveNext())
                         {
                             Hediff rec = enumerator.Current;
-                            if (!rec.IsPermanent())
-                            {
-                                if (rec.def.defName == "Cataract" || rec.def.defName == "HearingLoss" || rec.def.defName.Contains("ToxicBuildup") || rec.def.defName == "Abasia" || rec.def.defName == "BloodRot")
-                                {
-                                    pawn.health.RemoveHediff(rec);
-                                }
-                                if ((rec.def.defName == "Blindness" || rec.def.defName.Contains("Asthma") || rec.def.defName == "Cirrhosis" || rec.def.defName == "ChemicalDamageModerate") || rec.def.defName == "Scaria")
-                                {
-                                    pawn.health.RemoveHediff(rec);
-                                }
-                                if ((rec.def.defName == "Frail" || rec.def.defName == "BadBack" || rec.def.defName.Contains("Carcinoma") || rec.def.defName == "ChemicalDamageSevere"))
-                                {
-                                    pawn.health.RemoveHediff(rec);
-                                }
-                                if ((rec.def.defName.Contains("Alzheimers") || rec.def.defName == "Dementia" || rec.def.defName.Contains("HeartArteryBlockage") || rec.def.defName == "CatatonicBreakdown"))
-                                {
-                                    pawn.health.RemoveHediff(rec);
-                                }
-                            }
                             if (rec.def.makesSickThought)
                             {
-                                pawn.health.RemoveHediff(rec);
+                                removeHDList.Add(rec);
                             }
-                            if (rec.def.defName.Contains("Pregnant") || rec.def.defName == "DrugOverdose")
+                            else if (!rec.IsPermanent())
                             {
-                                pawn.health.RemoveHediff(rec);
+                                if (rec.def.defName == "Cataract"
+                                    || rec.def.defName == "HearingLoss"
+                                    || rec.def.defName.Contains("ToxicBuildup")
+                                    || rec.def.defName == "Blindness"
+                                    || rec.def.defName.Contains("Asthma")
+                                    || rec.def.defName == "Abasia" 
+                                    || rec.def.defName == "BloodRot"
+                                    || rec.def.defName == "Scaria"
+                                    || rec.def.defName == "Cirrhosis"
+                                    || rec.def.defName == "ChemicalDamageModerate"
+                                    || rec.def.defName == "Frail"
+                                    || rec.def.defName == "BadBack"
+                                    || rec.def.defName.Contains("Carcinoma")
+                                    || rec.def.defName == "ChemicalDamageSevere"
+                                    || rec.def.defName.Contains("Alzheimers")
+                                    || rec.def.defName == "Dementia"
+                                    || rec.def.defName.Contains("HeartArteryBlockage")
+                                    || rec.def.defName == "CatatonicBreakdown"
+                                    || rec.def.defName.Contains("Pregnant")
+                                    || rec.def.defName == "DrugOverdose")
+                                {
+                                    removeHDList.Add(rec);
+                                }
+
                             }
                         }
                     }
+
+                    foreach (Hediff hd in removeHDList)
+                    {
+                        pawn.health.RemoveHediff(hd);
+                    }
+
                     CompHatcher cp_h = this.Pawn.TryGetComp<CompHatcher>();
                     if (cp_h != null)
                     {

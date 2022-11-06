@@ -220,8 +220,11 @@ namespace TorannMagic
                                             {
                                                 skills[j].passion = Passion.None;
                                             }
-                                            undeadPawn.playerSettings.hostilityResponse = HostilityResponseMode.Attack;
-                                            undeadPawn.playerSettings.medCare = MedicalCareCategory.NoMeds;
+                                            if (undeadPawn.playerSettings != null)
+                                            {
+                                                undeadPawn.playerSettings.hostilityResponse = HostilityResponseMode.Attack;
+                                                undeadPawn.playerSettings.medCare = MedicalCareCategory.NoMeds;
+                                            }
                                             for (int h = 0; h < 24; h++)
                                             {
                                                 undeadPawn.timetable.SetAssignment(h, TimeAssignmentDefOf.Work);
@@ -260,8 +263,37 @@ namespace TorannMagic
 
         private void RedoSkills(Pawn undeadPawn, bool lichBonus = false)
         {
-            undeadPawn.story.Childhood = null;
-            undeadPawn.story.Adulthood = null;
+            if (undeadPawn.story.Childhood != null)
+            {
+                undeadPawn.story.Childhood = TorannMagicDefOf.TM_UndeadChildBS;
+            }
+            if (undeadPawn.story.Adulthood != null)
+            {
+                float rnd = Rand.Value;
+                if (rnd < .15f)
+                {
+                    undeadPawn.story.Adulthood = TorannMagicDefOf.TM_UndeadAdultBS_GhostEye;
+                }
+                else if (rnd < .3f)
+                {
+                    undeadPawn.story.Adulthood = TorannMagicDefOf.TM_UndeadAdultBS_Brute;
+                }
+                else if (rnd < .45f)
+                {
+                    undeadPawn.story.Adulthood = TorannMagicDefOf.TM_UndeadAdultBS_GhostMind;
+                }
+                else if (rnd < .6f)
+                {
+                    undeadPawn.story.Adulthood = TorannMagicDefOf.TM_UndeadAdultBS_Servant;
+                }
+                else
+                {
+                    undeadPawn.story.Adulthood = TorannMagicDefOf.TM_UndeadAdultBS;
+                }
+            }            
+
+            //undeadPawn.story.Childhood = null;
+            //undeadPawn.story.Adulthood = null;
             float bonusSkill = 1f + (.1f * pwr.level);
             if(lichBonus)
             {
@@ -271,9 +303,9 @@ namespace TorannMagic
             //undeadPawn.story.WorkTypeIsDisabled(WorkTypeDefOf.Warden);
             //undeadPawn.story.WorkTypeIsDisabled(WorkTypeDefOf.Hunting);
             //undeadPawn.story.WorkTypeIsDisabled(WorkTypeDefOf.Handling);
-            //undeadPawn.story.WorkTypeIsDisabled(WorkTypeDefOf.Doctor);            
+            //undeadPawn.story.WorkTypeIsDisabled(WorkTypeDefOf.Doctor);           
 
-            undeadPawn.skills.Learn(SkillDefOf.Shooting, -100000000, true);
+            undeadPawn.skills.Learn(SkillDefOf.Shooting, -100000000, true);            
             undeadPawn.skills.Learn(SkillDefOf.Animals, -100000000, true);
             undeadPawn.skills.Learn(SkillDefOf.Artistic, -100000000, true);
             undeadPawn.skills.Learn(SkillDefOf.Cooking, -100000000, true);
@@ -285,18 +317,74 @@ namespace TorannMagic
             undeadPawn.skills.Learn(SkillDefOf.Intellectual, -10000000, true);
             undeadPawn.skills.Learn(SkillDefOf.Medicine, -10000000, true);
             undeadPawn.skills.Learn(SkillDefOf.Melee, -10000000, true);
-            undeadPawn.skills.Learn(SkillDefOf.Melee, Rand.Range(50000, 90000) * bonusSkill, true);
+            undeadPawn.skills.Learn(SkillDefOf.Melee, Rand.Range(50000, 80000) * bonusSkill, true);
             undeadPawn.skills.Learn(SkillDefOf.Mining, -10000000, true);
-            undeadPawn.skills.Learn(SkillDefOf.Mining, Rand.Range(30000, 70000) * bonusSkill, true);
+            undeadPawn.skills.Learn(SkillDefOf.Mining, Rand.Range(30000, 60000) * bonusSkill, true);
             undeadPawn.skills.Learn(SkillDefOf.Social, -10000000, true);
             undeadPawn.skills.Learn(SkillDefOf.Construction, -10000000, true);
             undeadPawn.skills.Learn(SkillDefOf.Construction, Rand.Range(20000, 50000) * bonusSkill, true);
-            undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Doctor, 0);
-            undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Warden, 0);
-            undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Handling, 0);
-            undeadPawn.workSettings.SetPriority(TorannMagicDefOf.Research, 0);
-            undeadPawn.workSettings.SetPriority(TorannMagicDefOf.Art, 0);
-            undeadPawn.workSettings.SetPriority(TorannMagicDefOf.PatientBedRest, 0);
+
+            //if (undeadPawn.story.Adulthood == TorannMagicDefOf.TM_UndeadAdultBS_GhostMind)
+            //{
+            //    undeadPawn.skills.Learn(SkillDefOf.Crafting, Rand.Range(20000, 30000), true);
+            //    undeadPawn.skills.Learn(SkillDefOf.Cooking, Rand.Range(10000, 20000), true);
+            //    undeadPawn.skills.Learn(SkillDefOf.Melee, -25000, true);
+            //    undeadPawn.skills.Learn(SkillDefOf.Mining, -25000, true);
+            //}
+            if (undeadPawn.story.Adulthood == TorannMagicDefOf.TM_UndeadAdultBS_GhostEye)
+            {
+                undeadPawn.skills.Learn(SkillDefOf.Shooting, Rand.Range(10000, 20000) * bonusSkill, true);                
+            }
+            //if (undeadPawn.story.Adulthood == TorannMagicDefOf.TM_UndeadAdultBS_Brute)
+            //{
+            //    undeadPawn.skills.Learn(SkillDefOf.Crafting, -45000, true);
+            //    undeadPawn.skills.Learn(SkillDefOf.Cooking, -20000, true);
+            //    undeadPawn.skills.Learn(SkillDefOf.Melee, Rand.Range(30000, 40000), true);
+            //    undeadPawn.skills.Learn(SkillDefOf.Mining, Rand.Range(20000, 40000), true);
+            //}
+            //if (undeadPawn.story.Adulthood == TorannMagicDefOf.TM_UndeadAdultBS_Servant)
+            //{
+            //    undeadPawn.skills.Learn(SkillDefOf.Crafting, Rand.Range(18000, 25000), true);
+            //    undeadPawn.skills.Learn(SkillDefOf.Construction, Rand.Range(20000, 25000), true);
+            //    undeadPawn.skills.Learn(SkillDefOf.Cooking, Rand.Range(10000, 20000), true);
+            //    undeadPawn.skills.Learn(SkillDefOf.Plants, Rand.Range(15000, 20000), true);
+            //    undeadPawn.skills.Learn(SkillDefOf.Melee, -80000, true);
+            //}
+
+            foreach (BackstoryDef item in from bs in undeadPawn.story.AllBackstories
+                                          where bs != null
+                                          select bs)
+            {
+                foreach (KeyValuePair<SkillDef, int> skillGain in item.skillGains)
+                {
+                    undeadPawn.skills.GetSkill(skillGain.Key).Level += skillGain.Value;                  
+                }
+            }
+
+            if (!undeadPawn.WorkTypeIsDisabled(WorkTypeDefOf.Doctor))
+            {
+                undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Doctor, 0);
+            }
+            if (!undeadPawn.WorkTypeIsDisabled(WorkTypeDefOf.Warden))
+            {
+                undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Warden, 0);
+            }
+            if (!undeadPawn.WorkTypeIsDisabled(WorkTypeDefOf.Handling))
+            {
+                undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Handling, 0);
+            }
+            if (!undeadPawn.WorkTypeIsDisabled(WorkTypeDefOf.Research))
+            {
+                undeadPawn.workSettings.SetPriority(TorannMagicDefOf.Research, 0);
+            }
+            if (!undeadPawn.WorkTypeIsDisabled(WorkTypeDefOf.Art))
+            {
+                undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Art, 0);
+            }
+            if (!undeadPawn.WorkTypeIsDisabled(TorannMagicDefOf.PatientBedRest))
+            {
+                undeadPawn.workSettings.SetPriority(TorannMagicDefOf.PatientBedRest, 0);
+            }
 
             SetSmartWorkPriorities(undeadPawn);            
         }
@@ -306,7 +394,7 @@ namespace TorannMagic
             int numSkilled = 0;
             foreach (SkillRecord s in undeadPawn.skills.skills)
             {                
-                if (s.def == SkillDefOf.Cooking)
+                if (s.def == SkillDefOf.Cooking && !undeadPawn.WorkTypeIsDisabled(TorannMagicDefOf.Cooking))
                 {
                     if(s.Level >= 8)
                     {
@@ -323,7 +411,7 @@ namespace TorannMagic
                         undeadPawn.workSettings.SetPriority(TorannMagicDefOf.Cooking, 3);
                     }
                 }
-                else if (s.def == SkillDefOf.Crafting)
+                else if (s.def == SkillDefOf.Crafting && !undeadPawn.WorkTypeIsDisabled(WorkTypeDefOf.Crafting))
                 {
                     if (s.Level >= 9)
                     {
@@ -340,7 +428,7 @@ namespace TorannMagic
                         undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Crafting, 3);
                     }
                 }
-                else if (s.def == SkillDefOf.Plants)
+                else if (s.def == SkillDefOf.Plants && !undeadPawn.WorkTypeIsDisabled(WorkTypeDefOf.PlantCutting) && !undeadPawn.WorkTypeIsDisabled(WorkTypeDefOf.Growing))
                 {
                     if (s.Level >= 10)
                     {
@@ -364,7 +452,7 @@ namespace TorannMagic
                         undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Growing, 4);
                     }
                 }
-                else if (s.def == SkillDefOf.Mining)
+                else if (s.def == SkillDefOf.Mining && !undeadPawn.WorkTypeIsDisabled(WorkTypeDefOf.Mining))
                 {
                     if (s.Level >= 10)
                     {
@@ -385,7 +473,7 @@ namespace TorannMagic
                         undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Mining, 4);
                     }
                 }
-                else if(s.def == SkillDefOf.Construction)
+                else if(s.def == SkillDefOf.Construction && !undeadPawn.WorkTypeIsDisabled(WorkTypeDefOf.Construction))
                 {
                     if (s.Level >= 10)
                     {
@@ -403,50 +491,107 @@ namespace TorannMagic
                     }                    
                 }                        
             }
-            undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Firefighter, 1);
+            if (!undeadPawn.WorkTypeIsDisabled(WorkTypeDefOf.Firefighter))
+            {
+                undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Firefighter, 1);
+            }
             if (numSkilled <= 2)
             {
                 if (Rand.Chance(.5f))
                 {
-                    undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Hauling, 1);
-                    undeadPawn.workSettings.SetPriority(TorannMagicDefOf.Cleaning, 2);
-                    undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Crafting, 2);
+                    if (!undeadPawn.WorkTypeIsDisabled(WorkTypeDefOf.Hauling))
+                    {
+                        undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Hauling, 1);
+                    }
+                    if (!undeadPawn.WorkTypeIsDisabled(TorannMagicDefOf.Cleaning))
+                    {
+                        undeadPawn.workSettings.SetPriority(TorannMagicDefOf.Cleaning, 2);
+                    }
+                    if (!undeadPawn.WorkTypeIsDisabled(WorkTypeDefOf.Crafting))
+                    {
+                        undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Crafting, 2);
+                    }
                 }
                 else
                 {
-                    undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Hauling, 2);
-                    undeadPawn.workSettings.SetPriority(TorannMagicDefOf.Cleaning, 1);
-                    undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Crafting, 2);
+                    if (!undeadPawn.WorkTypeIsDisabled(WorkTypeDefOf.Hauling))
+                    {
+                        undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Hauling, 2);
+                    }
+                    if (!undeadPawn.WorkTypeIsDisabled(TorannMagicDefOf.Cleaning))
+                    {
+                        undeadPawn.workSettings.SetPriority(TorannMagicDefOf.Cleaning, 1);
+                    }
+                    if (!undeadPawn.WorkTypeIsDisabled(WorkTypeDefOf.Crafting))
+                    {
+                        undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Crafting, 2);
+                    }
                 }
             }
             else if (numSkilled <= 5)
             {
                 if (Rand.Chance(.5f))
                 {
-                    undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Hauling, 2);
-                    undeadPawn.workSettings.SetPriority(TorannMagicDefOf.Cleaning, 3);
-                    undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Crafting, 3);
+                    if (!undeadPawn.WorkTypeIsDisabled(WorkTypeDefOf.Hauling))
+                    {
+                        undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Hauling, 2);
+                    }
+                    if (!undeadPawn.WorkTypeIsDisabled(TorannMagicDefOf.Cleaning))
+                    {
+                        undeadPawn.workSettings.SetPriority(TorannMagicDefOf.Cleaning, 3);
+                    }
+                    if (!undeadPawn.WorkTypeIsDisabled(WorkTypeDefOf.Crafting))
+                    {
+                        undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Crafting, 3);
+                    }
                 }
                 else
                 {
-                    undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Hauling, 3);
-                    undeadPawn.workSettings.SetPriority(TorannMagicDefOf.Cleaning, 2);
-                    undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Crafting, 2);
+                    if (!undeadPawn.WorkTypeIsDisabled(WorkTypeDefOf.Hauling))
+                    {
+                        undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Hauling, 3);
+                    }
+                    if (!undeadPawn.WorkTypeIsDisabled(TorannMagicDefOf.Cleaning))
+                    {
+                        undeadPawn.workSettings.SetPriority(TorannMagicDefOf.Cleaning, 2);
+                    }
+                    if (!undeadPawn.WorkTypeIsDisabled(WorkTypeDefOf.Crafting))
+                    {
+                        undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Crafting, 2);
+                    }
                 }
             }
             else
             {
                 if (Rand.Chance(.5f))
                 {
-                    undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Hauling, 3);
-                    undeadPawn.workSettings.SetPriority(TorannMagicDefOf.Cleaning, 4);
-                    undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Crafting, 3);
+                    if (!undeadPawn.WorkTypeIsDisabled(WorkTypeDefOf.Hauling))
+                    {
+                        undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Hauling, 3);
+                    }
+                    if (!undeadPawn.WorkTypeIsDisabled(TorannMagicDefOf.Cleaning))
+                    {
+                        undeadPawn.workSettings.SetPriority(TorannMagicDefOf.Cleaning, 4);
+                    }
+                    if (!undeadPawn.WorkTypeIsDisabled(WorkTypeDefOf.Crafting))
+                    {
+                        undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Crafting, 3);
+                    }
                 }
                 else
                 {
-                    undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Hauling, 4);
-                    undeadPawn.workSettings.SetPriority(TorannMagicDefOf.Cleaning, 3);
-                    undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Crafting, 4);
+                    if (!undeadPawn.WorkTypeIsDisabled(WorkTypeDefOf.Hauling))
+                    {
+                        undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Hauling, 4);
+                    }
+                    if (!undeadPawn.WorkTypeIsDisabled(TorannMagicDefOf.Cleaning))
+                    {
+                        undeadPawn.workSettings.SetPriority(TorannMagicDefOf.Cleaning, 3);
+                    }
+                    if (!undeadPawn.WorkTypeIsDisabled(WorkTypeDefOf.Crafting))
+                    {
+                        undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Crafting, 4);
+                    }
                 }
             }
         }
@@ -492,24 +637,93 @@ namespace TorannMagic
 
         public static void RemoveHediffsAddictionsAndPermanentInjuries(Pawn pawn)
         {
-            IEnumerable<Hediff> hediffsToRemove = pawn.health.hediffSet.hediffs.Where(hediff =>
-                hediff is Hediff_Injury injury && injury.CanHealNaturally()
-                || hediff is Hediff_Addiction
-                || (
-                    (
-                        hediff.IsPermanent()
-                        || hediff.def.tendable
-                        || hediff.source == null && hediff.sourceBodyPartGroup == null
-                    )
-                    && hediff.def != TorannMagicDefOf.TM_UndeadHD
-                    && hediff.def != TorannMagicDefOf.TM_UndeadStageHD
-                    && hediff.def != TorannMagicDefOf.TM_UndeadAnimalHD
-                )
-            );
-            foreach (Hediff hediff in hediffsToRemove)
+            List<Hediff> removeList = new List<Hediff>();
+            removeList.Clear();
+            using (IEnumerator<BodyPartRecord> enumerator = pawn.health.hediffSet.GetInjuredParts().GetEnumerator())
             {
-                pawn.health.RemoveHediff(hediff);
+                while (enumerator.MoveNext())
+                {
+                    BodyPartRecord rec = enumerator.Current;
+
+                    IEnumerable<Hediff_Injury> arg_BB_0 = pawn.health.hediffSet.hediffs.OfType<Hediff_Injury>();
+                    Func<Hediff_Injury, bool> arg_BB_1;
+
+                    arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
+
+                    foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1))
+                    {
+                        bool flag5 = !current.CanHealNaturally() && current.IsPermanent();
+                        if (flag5)
+                        {
+                            removeList.Add(current);
+                        }
+                    }
+                }
             }
+            if (removeList.Count > 0)
+            {
+                for (int i = 0; i < removeList.Count; i++)
+                {
+                    pawn.health.RemoveHediff(removeList[i]);
+                }
+            }
+            removeList.Clear();
+
+            using(IEnumerator <Hediff_Addiction> enumerator = pawn.health.hediffSet.hediffs.OfType<Hediff_Addiction>().GetEnumerator())
+            {
+                while (enumerator.MoveNext())
+                {
+                    Hediff_Addiction rec = enumerator.Current;
+                    removeList.Add(rec);
+                }
+            }
+
+            if (removeList.Count > 0)
+            {
+                for (int i = 0; i < removeList.Count; i++)
+                {
+                    pawn.health.RemoveHediff(removeList[i]);
+                }
+            }
+            removeList.Clear();
+
+            using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.hediffs.GetEnumerator())
+            {
+                while (enumerator.MoveNext())
+                {
+                    Hediff hd = enumerator.Current;
+                    if (hd.IsPermanent() || (hd.IsTended() || hd.TendableNow()) || (hd.source == null && hd.sourceBodyPartGroup == null))
+                    {
+                        if (hd.def != TorannMagicDefOf.TM_UndeadHD && hd.def != TorannMagicDefOf.TM_UndeadStageHD && hd.def != TorannMagicDefOf.TM_UndeadAnimalHD)
+                        {
+                            removeList.Add(hd);
+                        }
+                    }
+                }
+            }
+
+            if (removeList.Count > 0)
+            {
+                for (int i = 0; i < removeList.Count; i++)
+                {
+                    pawn.health.RemoveHediff(removeList[i]);
+                }
+
+                removeList.Clear();
+            }
+
+            //IEnumerable<Hediff> hediffsToRemove = pawn.health.hediffSet.hediffs.Where(hediff => hediff is Hediff_Injury injury && injury.CanHealNaturally()
+            //    || hediff is Hediff_Addiction
+            //    || ((hediff.IsPermanent() || hediff.def.tendable || (hediff.source == null && hediff.sourceBodyPartGroup == null))
+            //        && hediff.def != TorannMagicDefOf.TM_UndeadHD
+            //        && hediff.def != TorannMagicDefOf.TM_UndeadStageHD
+            //        && hediff.def != TorannMagicDefOf.TM_UndeadAnimalHD
+            //    )
+            //);
+            //foreach (Hediff hediff in hediffsToRemove)
+            //{
+            //    pawn.health.RemoveHediff(hediff);
+            //}
         }
     }
 }

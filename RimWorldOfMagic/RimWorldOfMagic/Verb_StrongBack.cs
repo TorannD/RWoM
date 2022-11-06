@@ -29,6 +29,7 @@ namespace TorannMagic
                             if (rec.def.defName.Contains("TM_HediffStrongBack"))
                             {
                                 pawn.health.RemoveHediff(rec);
+                                break;
                             }
                         }
                     }

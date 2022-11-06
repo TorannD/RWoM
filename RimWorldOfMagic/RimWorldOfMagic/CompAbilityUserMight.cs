@@ -1184,6 +1184,7 @@ namespace TorannMagic
                                                     if (rec.def == TorannMagicDefOf.TM_DisguiseHD || rec.def == TorannMagicDefOf.TM_DisguiseHD_I || rec.def == TorannMagicDefOf.TM_DisguiseHD_II || rec.def == TorannMagicDefOf.TM_DisguiseHD_III)
                                                     {
                                                         this.Pawn.health.RemoveHediff(rec);
+                                                        break;
                                                     }
                                                 }
                                             }
@@ -4529,6 +4530,7 @@ namespace TorannMagic
                                 traits.Remove(traits[i]);
                                 this.Pawn.story.traits.GainTrait(new Trait(TraitDef.Named("Bladedancer"), bladefocus_pwr.level, false));
                                 FleckMaker.ThrowHeatGlow(this.Pawn.Position, this.Pawn.Map, 2);
+                                break;
                             }
                         }
                     }
@@ -4566,6 +4568,7 @@ namespace TorannMagic
                                 traits.Remove(traits[i]);
                                 this.Pawn.story.traits.GainTrait(new Trait(TraitDef.Named("Ranger"), rangertraining_pwr.level, false));
                                 FleckMaker.ThrowHeatGlow(this.Pawn.Position, this.Pawn.Map, 2);
+                                break;
                             }
                         }
                     }
@@ -4762,8 +4765,7 @@ namespace TorannMagic
                             Hediff rec = enumerator.Current;
                             if (rec.def == TorannMagicDefOf.TM_HediffHeavyBlow && rec.Severity != (.95f + (.19f * pwrVal)))
                             {
-                                this.Pawn.health.RemoveHediff(rec);
-                                HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_HediffHeavyBlow, .95f + (.19f * pwrVal));
+                                rec.Severity = .95f + (.19f * pwrVal);
                             }
                             if (rec.def == TorannMagicDefOf.TM_HediffStrongBack)
                             {
@@ -4771,16 +4773,16 @@ namespace TorannMagic
                                 {
                                     if (rec.Severity != 2.5f)
                                     {
-                                        this.Pawn.health.RemoveHediff(rec);
-                                        HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_HediffStrongBack, 2.5f);
+                                        rec.Severity = 2.5f;
                                     }
                                 }
                                 else if (verVal >= 3)
                                 {
                                     if (rec.Severity != 1.5f)
                                     {
-                                        this.Pawn.health.RemoveHediff(rec);
-                                        HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_HediffStrongBack, 1.5f);
+                                        //rec.Severity = 1.5f;
+                                        //this.Pawn.health.RemoveHediff(rec);
+                                        //HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_HediffStrongBack, 1.5f);
                                     }
                                 }
                             }
@@ -4790,24 +4792,23 @@ namespace TorannMagic
                                 {
                                     if (rec.Severity != 3.5f)
                                     {
-                                        this.Pawn.health.RemoveHediff(rec);
-                                        HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_HediffThickSkin, 3.5f);
+                                        rec.Severity = 3.5f;
+                                        //this.Pawn.health.RemoveHediff(rec);
+                                        //HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_HediffThickSkin, 3.5f);
                                     }
                                 }
                                 else if (verVal >= 7)
                                 {
                                     if (rec.Severity != 2.5f)
                                     {
-                                        this.Pawn.health.RemoveHediff(rec);
-                                        HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_HediffThickSkin, 2.5f);
+                                        rec.Severity = 2.5f;
                                     }
                                 }
                                 else if (verVal >= 2)
                                 {
                                     if (rec.Severity != 1.5f)
                                     {
-                                        this.Pawn.health.RemoveHediff(rec);
-                                        HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_HediffThickSkin, 1.5f);
+                                        rec.Severity = 1.5f;
                                     }
                                 }
                             }
@@ -4817,8 +4818,7 @@ namespace TorannMagic
                                 {
                                     if (rec.Severity != 1.5f)
                                     {
-                                        this.Pawn.health.RemoveHediff(rec);
-                                        HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_HediffFightersFocus, 1.5f);
+                                        rec.Severity = 1.5f;
                                     }
                                 }
                             }
@@ -4826,8 +4826,7 @@ namespace TorannMagic
                             {
                                 if (rec.Severity != (.5f + (int)(pwrVal / 3)))
                                 {
-                                    this.Pawn.health.RemoveHediff(rec);
-                                    HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_HediffSprint, (.5f + (int)(pwrVal / 3)));
+                                    rec.Severity = (.5f + (int)(pwrVal / 3));
                                 }
                             }
                         }

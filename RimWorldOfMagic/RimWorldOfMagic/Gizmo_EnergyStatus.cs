@@ -53,7 +53,7 @@ namespace TorannMagic
                 bool isMonk = pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_ChiHD, false);
                 bool isSpirit = TM_Calc.IsPossessedByOrIsSpirit(pawn);
                 bool isEnchantedItem = this.iComp != null;
-                bool isCustom = false;
+                bool isCustom = customHediff != null ? true : false;
 
                 if (customHediff == null || Find.TickManager.TicksGame % 303 == 0)
                 {

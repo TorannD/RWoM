@@ -132,7 +132,7 @@ namespace TorannMagic
                                                 {
                                                     HealthUtility.AdjustSeverity(pawn, HediffDef.Named(chd.replacementHediffDefname), chd.replacementHediffSeverity);
                                                 }
-                                                num--;
+                                                num--;                                                
                                             }
                                             else
                                             {

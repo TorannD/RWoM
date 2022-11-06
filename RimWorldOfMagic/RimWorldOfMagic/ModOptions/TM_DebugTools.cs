@@ -323,5 +323,38 @@ namespace TorannMagic.ModOptions
                 }
             }
         }
+
+        [DebugAction("RWoM", "Give Energy", actionType = DebugActionType.ToolMapForPawns, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        public static void GiveEnergy(Pawn pawn)
+        {
+            //Pawn pawn = Find.CurrentMap.thingGrid.ThingsAt(UI.MouseCell()).Where((Thing t) => t is Pawn).Cast<Pawn>().FirstOrDefault();
+            if (pawn != null)
+            {               
+                CompAbilityUserMagic compMagic = pawn.GetCompAbilityUserMagic();
+                if (compMagic != null && compMagic.IsMagicUser && compMagic.Mana != null)
+                {                    
+                    try
+                    {
+                        compMagic.Mana.CurLevel += 1f;
+                    }
+                    catch (NullReferenceException ex)
+                    {
+                        Log.Warning("failed to give mana");
+                    }
+                }
+                CompAbilityUserMight compMight = pawn.GetCompAbilityUserMight();
+                if (compMight != null && compMight.IsMightUser && compMight.Stamina != null)
+                {
+                    try
+                    {
+                        compMight.Stamina.CurLevel += 1f;
+                    }
+                    catch (NullReferenceException ex)
+                    {
+                        Log.Warning("failed to give stamina");
+                    }
+                }                
+            }
+        }
     }
 }

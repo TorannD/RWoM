@@ -8,6 +8,11 @@
 	<thingCategories>
       <li>TM_MagicItems</li>
     </thingCategories>
+	<descriptionHyperlinks>
+      <HediffDef>ManaPotionHigh</HediffDef>
+      <HediffDef>ManaPotionTolerance</HediffDef>
+      <HediffDef>ManaPotionAddiction</HediffDef>
+    </descriptionHyperlinks>
     <description>A magical supplement that allows arcane users to rapidly recover mana. Mana potions work by acting as a natural suppressant to the bodies mana absorption resistances \n\nUsers are warned, bypassing natural resistances can cause mental and sensory damage.</description>
     <graphicData>
       <texPath>Items/manapot</texPath>

@@ -66,6 +66,9 @@
 	<thingCategories>
       <li>TM_MagicWeaponsRanged</li>
     </thingCategories>
+	<tradeTags>
+      <li>WeaponRanged</li>
+    </tradeTags>
     <inspectorTabs>
       <li>ITab_Art</li>
 	  <li>TorannMagic.Enchantment.ITab_Enchantment</li>
@@ -89,6 +92,9 @@
 	<thingCategories>
       <li>TM_MagicWeaponsFoci</li>
     </thingCategories>
+	<tradeTags>
+      <li>WeaponRanged</li>
+    </tradeTags>
     <inspectorTabs>
       <li>ITab_Art</li>
 	  <li>TorannMagic.Enchantment.ITab_Enchantment</li>
@@ -112,6 +118,9 @@
     <thingCategories>
       <li>TM_MagicWeaponsMelee</li>
     </thingCategories>
+	<tradeTags>
+      <li>WeaponMelee</li>
+    </tradeTags>
     <inspectorTabs>
       <li>ITab_Art</li>
 	  <li>TorannMagic.Enchantment.ITab_Enchantment</li>
@@ -136,6 +145,9 @@
 	<thingCategories>
       <li>TM_MagicWeaponsFoci</li>
     </thingCategories>
+	<tradeTags>
+      <li>TM_BuyableMageWand</li>
+    </tradeTags>
     <inspectorTabs>
       <li>ITab_Art</li>
 	  <li>TorannMagic.Enchantment.ITab_Enchantment</li>
@@ -194,6 +206,9 @@ Arcane Resistance: +20%</description>
     <weaponTags>
       <li>SeerSpearman</li>
     </weaponTags>
+	<tradeTags>
+      <li>TM_BuyableMageWeapon</li>
+    </tradeTags>
 	<relicChance>.5</relicChance>
 	<statBases>
       <WorkToMake>20000</WorkToMake>
@@ -286,6 +301,9 @@ Arcane Resistance: +20%</description>
     <weaponTags>
       <li>SeerSpearman</li>
     </weaponTags>
+	<tradeTags>
+      <li>TM_BuyableMageWeapon</li>
+    </tradeTags>
 	<relicChance>.5</relicChance>
 	<statBases>
       <WorkToMake>5000</WorkToMake>
@@ -392,6 +410,9 @@ Ability Cooldown: -10%</description>
 	<weaponTags>
       <li>SeerBowman</li>
     </weaponTags>
+	<tradeTags>
+      <li>TM_BuyableMageWeapon</li>
+    </tradeTags>
 	<relicChance>.5</relicChance>
     <statBases>
       <WorkToMake>12000</WorkToMake>
@@ -489,6 +510,9 @@ Cleaving Strike</description>
     <weaponTags>
 		<li>SeerElite</li>
     </weaponTags>
+	<tradeTags>
+      <li>TM_BuyableMageWeapon</li>
+    </tradeTags>
 	<relicChance>1.2</relicChance>
 	<statBases>
       <WorkToMake>60000</WorkToMake>
@@ -588,6 +612,9 @@ Haste on hit (25%)</description>
     <weaponTags>
 		<li>SeerElite</li>
     </weaponTags>
+	<tradeTags>
+      <li>TM_BuyableMageWeapon</li>
+    </tradeTags>
 	<relicChance>1.2</relicChance>
 	<statBases>
       <WorkToMake>40000</WorkToMake>
@@ -691,6 +718,9 @@ Bestow Might on hit (15%)</description>
     <weaponTags>
 		<li>SeerElite</li>
     </weaponTags>
+	<tradeTags>
+      <li>TM_BuyableMageWeapon</li>
+    </tradeTags>
 	<relicChance>1.2</relicChance>
 	<statBases>
       <WorkToMake>30000</WorkToMake>
@@ -788,6 +818,9 @@ Frailty on hit (50%)</description>
     <weaponTags>
 		<li>SeerElite</li>
     </weaponTags>
+	<tradeTags>
+      <li>TM_BuyableMageWeapon</li>
+    </tradeTags>
 	<relicChance>1.2</relicChance>
 	<statBases>
       <WorkToMake>50000</WorkToMake>
@@ -1022,6 +1055,9 @@ Class XP Gain: -20%</description>
     </graphicData>
     <soundInteract>Bow_Large</soundInteract>	
 	<relicChance>1.2</relicChance>
+	<tradeTags>
+      <li>TM_BuyableMageWeapon</li>
+    </tradeTags>
     <statBases>
       <WorkToMake>77700</WorkToMake>
 	  <MarketValue>4480</MarketValue>
@@ -1125,6 +1161,9 @@ Nightshade Toxin on hit (20%)</description>
     <weaponTags>
 		<li>SeerElite</li>
     </weaponTags>
+	<tradeTags>
+      <li>TM_BuyableMageWeapon</li>
+    </tradeTags>
 	<relicChance>1.2</relicChance>
 	<statBases>
       <WorkToMake>25000</WorkToMake>

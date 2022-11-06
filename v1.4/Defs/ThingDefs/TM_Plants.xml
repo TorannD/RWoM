@@ -237,6 +237,7 @@ The fruit it produces, known more commonly as pomona, can be consumed raw and is
 		<TM_Syrrium>2</TM_Syrrium>
 		<TM_RawPomanaMash>20</TM_RawPomanaMash>
 	</products>
+	<uiIconThing>TM_Syrrium</uiIconThing>
     <workSkill>Cooking</workSkill>
 	<skillRequirements>
       <Cooking>9</Cooking>
