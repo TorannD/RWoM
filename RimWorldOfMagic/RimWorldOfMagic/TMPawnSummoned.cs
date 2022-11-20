@@ -125,31 +125,31 @@ namespace TorannMagic
 
         public override void Tick()
         {
-            base.Tick();
-            if (Find.TickManager.TicksGame % 10 == 0)
+            if (Spawned && this.Map != null)
             {
-                if (!this.initialized)
+                base.Tick();
+                if (Find.TickManager.TicksGame % 10 == 0)
                 {
-                    this.initialized = true;
-                    this.PostSummonSetup();
-                }
-                bool flag2 = this.temporary;
-                if (flag2)
-                {
-                    this.ticksLeft -= 10;
-                    bool flag3 = this.ticksLeft <= 0;
-                    if (flag3)
+                    if (!this.initialized)
                     {
-                        this.PreDestroy();
-                        if (!this.Destroyed)
-                        {
-                            this.Destroy(DestroyMode.Vanish);
-                        }
+                        this.initialized = true;
+                        this.PostSummonSetup();
                     }
-                    CheckPawnState();
-                    bool spawned = base.Spawned;
-                    if (spawned)
+                    bool flag2 = this.temporary;
+                    if (flag2)
                     {
+                        this.ticksLeft -= 10;
+                        bool flag3 = this.ticksLeft <= 0;
+                        if (flag3)
+                        {
+                            this.PreDestroy();
+                            if (!this.Destroyed)
+                            {
+                                this.Destroy(DestroyMode.Vanish);
+                            }
+                        }
+                        CheckPawnState();
+
                         bool flag4 = this.effecter == null;
                         if (flag4)
                         {

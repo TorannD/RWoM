@@ -36,7 +36,7 @@ namespace TorannMagic
             {
                 curCell = targets.ToArray<IntVec3>()[i];
 
-                TM_MoteMaker.ThrowPoisonMote(curCell.ToVector3Shifted(), map, .3f);
+                TM_MoteMaker.ThrowPoisonMote(curCell.ToVector3Shifted(), map, Rand.Range(.3f, .6f));
                 if (curCell.InBoundsWithNullCheck(map))
                 { 
                     Corpse corpse = null;
@@ -161,12 +161,15 @@ namespace TorannMagic
                                                     undeadPawn.training.Train(TorannMagicDefOf.Rescue, pawn);
                                                 }
                                             }
-                                            undeadPawn.playerSettings.medCare = MedicalCareCategory.NoMeds;
+                                            if (undeadPawn.playerSettings != null)
+                                            {
+                                                undeadPawn.playerSettings.medCare = MedicalCareCategory.NoMeds;
+                                            }
                                             undeadPawn.def.tradeability = Tradeability.None;
                                         }
-                                        else if (undeadPawn.story != null && undeadPawn.story.traits != null && undeadPawn.needs != null && undeadPawn.playerSettings != null)
+                                        else if (undeadPawn.story != null && undeadPawn.story.traits != null && undeadPawn.needs != null)
                                         {
-                                            if (ModsConfig.IdeologyActive && undeadPawn.guest != null)
+                                            if (ModsConfig.IdeologyActive && undeadPawn.guest != null && undeadPawn.IsColonist)
                                             {
                                                 undeadPawn.guest.SetGuestStatus(pawn.Faction, GuestStatus.Slave);
                                             }
@@ -225,9 +228,16 @@ namespace TorannMagic
                                                 undeadPawn.playerSettings.hostilityResponse = HostilityResponseMode.Attack;
                                                 undeadPawn.playerSettings.medCare = MedicalCareCategory.NoMeds;
                                             }
-                                            for (int h = 0; h < 24; h++)
+                                            if (undeadPawn.IsColonist)
                                             {
-                                                undeadPawn.timetable.SetAssignment(h, TimeAssignmentDefOf.Work);
+                                                for (int h = 0; h < 24; h++)
+                                                {
+                                                    undeadPawn.timetable.SetAssignment(h, TimeAssignmentDefOf.Work);
+                                                }
+                                            }
+                                            for(int m = 0; m < 3; m++)
+                                            {
+                                                TM_MoteMaker.ThrowPoisonMote(undeadPawn.Position.ToVector3Shifted(), map, Rand.Range(.4f, .6f));
                                             }
                                             //if(priorities != null)
                                             //{
@@ -361,32 +371,35 @@ namespace TorannMagic
                 }
             }
 
-            if (!undeadPawn.WorkTypeIsDisabled(WorkTypeDefOf.Doctor))
+            if (undeadPawn.IsColonist)
             {
-                undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Doctor, 0);
-            }
-            if (!undeadPawn.WorkTypeIsDisabled(WorkTypeDefOf.Warden))
-            {
-                undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Warden, 0);
-            }
-            if (!undeadPawn.WorkTypeIsDisabled(WorkTypeDefOf.Handling))
-            {
-                undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Handling, 0);
-            }
-            if (!undeadPawn.WorkTypeIsDisabled(WorkTypeDefOf.Research))
-            {
-                undeadPawn.workSettings.SetPriority(TorannMagicDefOf.Research, 0);
-            }
-            if (!undeadPawn.WorkTypeIsDisabled(WorkTypeDefOf.Art))
-            {
-                undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Art, 0);
-            }
-            if (!undeadPawn.WorkTypeIsDisabled(TorannMagicDefOf.PatientBedRest))
-            {
-                undeadPawn.workSettings.SetPriority(TorannMagicDefOf.PatientBedRest, 0);
-            }
+                if (!undeadPawn.WorkTypeIsDisabled(WorkTypeDefOf.Doctor))
+                {
+                    undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Doctor, 0);
+                }
+                if (!undeadPawn.WorkTypeIsDisabled(WorkTypeDefOf.Warden))
+                {
+                    undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Warden, 0);
+                }
+                if (!undeadPawn.WorkTypeIsDisabled(WorkTypeDefOf.Handling))
+                {
+                    undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Handling, 0);
+                }
+                if (!undeadPawn.WorkTypeIsDisabled(WorkTypeDefOf.Research))
+                {
+                    undeadPawn.workSettings.SetPriority(TorannMagicDefOf.Research, 0);
+                }
+                if (!undeadPawn.WorkTypeIsDisabled(WorkTypeDefOf.Art))
+                {
+                    undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Art, 0);
+                }
+                if (!undeadPawn.WorkTypeIsDisabled(TorannMagicDefOf.PatientBedRest))
+                {
+                    undeadPawn.workSettings.SetPriority(TorannMagicDefOf.PatientBedRest, 0);
+                }
 
-            SetSmartWorkPriorities(undeadPawn);            
+                SetSmartWorkPriorities(undeadPawn);
+            }
         }
 
         private static void SetSmartWorkPriorities(Pawn undeadPawn)

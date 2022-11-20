@@ -13,7 +13,6 @@ namespace TorannMagic
         protected override bool TryCastShot()
         {
             bool result = false;
-            bool arg_40_0;
 
             Pawn pawn = this.CasterPawn;
             Map map = this.CasterPawn.Map;
@@ -22,17 +21,8 @@ namespace TorannMagic
             {
                 if(pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_BlurHD, false))
                 {
-                    using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.hediffs.GetEnumerator())
-                    {
-                        while (enumerator.MoveNext())
-                        {
-                            Hediff rec = enumerator.Current;
-                            if (rec.def == TorannMagicDefOf.TM_BlurHD)
-                            {
-                                pawn.health.RemoveHediff(rec);
-                            }
-                        }
-                    }
+                    Hediff hd = pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_BlurHD);
+                    pawn.health.RemoveHediff(hd);                    
 
                     TM_MoteMaker.ThrowManaPuff(pawn.DrawPos, pawn.Map, .75f);
                     TM_MoteMaker.ThrowManaPuff(pawn.DrawPos, pawn.Map, .75f);
@@ -59,23 +49,9 @@ namespace TorannMagic
                         }
                     }
                 }
-                arg_40_0 = true;
             }
-            else
-            {
-                arg_40_0 = false;
-            }
-            bool flag = arg_40_0;
-            if (flag)
-            {
-                
-            }
-            else
-            {
-                Log.Warning("failed to TryCastShot");
-            }
-            this.burstShotsLeft = 0;
 
+            this.burstShotsLeft = 0;
             return result;
         }
     }

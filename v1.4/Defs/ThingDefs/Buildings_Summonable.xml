@@ -839,13 +839,15 @@ As you drawn near the statue, an eerie glint from the eyes of the stone sentinel
     </graphicData>
     <size>(1,1)</size>
     <rotatable>false</rotatable>
-    <altitudeLayer>BuildingOnTop</altitudeLayer>
-    <passability>PassThroughOnly</passability>
+    <altitudeLayer>Blueprint</altitudeLayer>
+    <passability>Standable</passability>
     <castEdgeShadows>false</castEdgeShadows>
     <fillPercent>0.5</fillPercent>
 	<building>
 		<expandHomeArea>false</expandHomeArea>
 		<deconstructible>false</deconstructible>
+		<canPlaceOverImpassablePlant>true</canPlaceOverImpassablePlant>
+		<canPlaceOverWall>true</canPlaceOverWall>
 	</building>
     <statBases>
       <MaxHitPoints>10</MaxHitPoints>

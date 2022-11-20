@@ -742,7 +742,7 @@
         <minSeverity>.1</minSeverity>
 		<becomeVisible>true</becomeVisible>
 		<statFactors>
-			<ToxicResistance>-.03</ToxicResistance>
+			<ToxicResistance>1.05</ToxicResistance>
 			<ImmunityGainSpeed>1.02</ImmunityGainSpeed>
         </statFactors>
       </li>
@@ -750,7 +750,7 @@
         <label>II</label>
         <minSeverity>.15</minSeverity>
 		<statFactors>
-			<ToxicResistance>-.35</ToxicResistance>
+			<ToxicResistance>1.07</ToxicResistance>
 			<ImmunityGainSpeed>1.025</ImmunityGainSpeed>
         </statFactors>
       </li>
@@ -758,7 +758,7 @@
         <label>III</label>
         <minSeverity>.2</minSeverity>
 		<statFactors>
-			<ToxicResistance>-.04</ToxicResistance>
+			<ToxicResistance>1.09</ToxicResistance>
 			<ImmunityGainSpeed>1.03</ImmunityGainSpeed>
         </statFactors>
       </li>
@@ -766,7 +766,7 @@
         <label>IV</label>
         <minSeverity>.25</minSeverity>
 		<statFactors>
-			<ToxicResistance>-.045</ToxicResistance>
+			<ToxicResistance>1.1</ToxicResistance>
 			<ImmunityGainSpeed>1.035</ImmunityGainSpeed>
         </statFactors>
       </li>
@@ -774,7 +774,7 @@
         <label>surging I</label>
         <minSeverity>.5</minSeverity>
 		<statFactors>
-			<ToxicResistance>-.25</ToxicResistance>
+			<ToxicResistance>2.5</ToxicResistance>
 			<ImmunityGainSpeed>1.2</ImmunityGainSpeed>
         </statFactors>
       </li>
@@ -782,7 +782,7 @@
         <label>surging II</label>
         <minSeverity>.55</minSeverity>
 		<statFactors>
-			<ToxicResistance>-.3</ToxicResistance>
+			<ToxicResistance>3</ToxicResistance>
 			<ImmunityGainSpeed>1.24</ImmunityGainSpeed>
         </statFactors>
       </li>
@@ -790,7 +790,7 @@
         <label>surging III</label>
         <minSeverity>.6</minSeverity>
 		<statFactors>
-			<ToxicResistance>-.35</ToxicResistance>
+			<ToxicResistance>3.5</ToxicResistance>
 			<ImmunityGainSpeed>1.27</ImmunityGainSpeed>
         </statFactors>
       </li>
@@ -798,7 +798,7 @@
         <label>surging IV</label>
         <minSeverity>.65</minSeverity>
 		<statFactors>
-			<ToxicResistance>-.4</ToxicResistance>
+			<ToxicResistance>4</ToxicResistance>
 			<ImmunityGainSpeed>1.3</ImmunityGainSpeed>
         </statFactors>
       </li>
@@ -806,7 +806,7 @@
         <label>surging V</label>
         <minSeverity>.7</minSeverity>
 		<statFactors>
-			<ToxicResistance>-.6</ToxicResistance>
+			<ToxicResistance>6</ToxicResistance>
 			<ImmunityGainSpeed>1.4</ImmunityGainSpeed>
         </statFactors>
       </li>
@@ -814,7 +814,7 @@
         <label>surging VI</label>
         <minSeverity>.8</minSeverity>
 		<statFactors>
-			<ToxicResistance>-.75</ToxicResistance>
+			<ToxicResistance>7.5</ToxicResistance>
 			<ImmunityGainSpeed>1.5</ImmunityGainSpeed>
         </statFactors>
       </li>

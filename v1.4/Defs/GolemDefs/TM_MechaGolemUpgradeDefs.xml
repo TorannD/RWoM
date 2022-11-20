@@ -180,7 +180,8 @@ Range: 		40</description>
 		<defName>TM_Golem_MechaMiningLaser</defName>
 		<label>mining laser</label>
 		<description>Allows the golem to mine designated wall segments.
-Energy Cost: 20</description>
+Energy Cost: [20,18,16,14]
+Laser Power: [40,50,60,70]</description>
 		<recipe>TM_Mecha-Golem_MiningLaser</recipe>
 		<bodypart>Mecha_LeftShoulder</bodypart>
 		<partRequiresUpgrade>false</partRequiresUpgrade>

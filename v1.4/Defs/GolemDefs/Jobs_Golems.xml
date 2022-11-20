@@ -12,6 +12,13 @@
   </JobDef>
   
   <JobDef>
+    <defName>JobDriver_GolemDespawnWait</defName>
+    <driverClass>TorannMagic.Golems.JobDriver_GolemDespawnWait</driverClass>
+    <reportString>deactivating</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  
+  <JobDef>
     <defName>JobDriver_GolemSelfTend</defName>
     <driverClass>TorannMagic.Golems.JobDriver_GolemSelfTend</driverClass>
     <reportString>auto tend</reportString>

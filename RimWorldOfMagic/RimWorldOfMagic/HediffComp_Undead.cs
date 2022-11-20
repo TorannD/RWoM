@@ -138,7 +138,7 @@ namespace TorannMagic
                     necroValid = true;
                     lichStrike = 0;
 
-                    if (ModsConfig.IdeologyActive && !this.Pawn.Downed && this.Pawn.guest != null)
+                    if (ModsConfig.IdeologyActive && !this.Pawn.Downed && this.Pawn.guest != null && this.Pawn.IsColonist)
                     {
                         TM_Action.TryCopyIdeo(linkedPawn, this.Pawn);
                         if (this.Pawn.guest.GuestStatus != GuestStatus.Slave)
@@ -152,7 +152,7 @@ namespace TorannMagic
                     lichStrike++;
                 }   
                 
-                if (!necroValid && lichStrike > 2)
+                if (!necroValid && !Pawn.Dead && ((pawn.IsColonist && lichStrike > 2) || (!pawn.IsColonist && lichStrike >= 1)))
                 {
                     if (base.Pawn.Map != null)
                     {

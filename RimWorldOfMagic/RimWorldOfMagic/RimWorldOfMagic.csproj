@@ -139,6 +139,9 @@
     <Compile Include="Enchantment\HediffComp_WinterChill.cs" />
     <Compile Include="Enchantment\Verb_WeaponWintersFury.cs" />
     <Compile Include="FlyingObject_SpiritStorm.cs" />
+    <Compile Include="Golems\JobDriver_GolemDespawnWait.cs" />
+    <Compile Include="Golems\JobGiver_GolemDespawning.cs" />
+    <Compile Include="Golems\ThinkNode_ConditionalPlayerGolem.cs" />
     <Compile Include="HediffComp_SpiritDistortion.cs" />
     <Compile Include="HediffComp_SpiritPossession.cs" />
     <Compile Include="Hediff_Evasion.cs" />

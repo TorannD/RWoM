@@ -1101,7 +1101,7 @@ namespace TorannMagic
                                 else if(settingsRef.AICasting && (!this.Pawn.IsPrisoner || this.Pawn.IsFighting()))
                                 {
                                     float tickMult = settingsRef.AIAggressiveCasting ? 1f : 2f;
-                                    this.autocastTick = Find.TickManager.TicksGame + (int)(Rand.Range(.8f * settingsRef.autocastEvaluationFrequency, 1.2f * settingsRef.autocastEvaluationFrequency) * tickMult);
+                                    this.autocastTick = Find.TickManager.TicksGame + (int)(Rand.Range(.75f * settingsRef.autocastEvaluationFrequency, 1.25f * settingsRef.autocastEvaluationFrequency) * tickMult);
                                     ResolveAIAutoCast();
                                 }
                             }                            
@@ -4290,7 +4290,7 @@ namespace TorannMagic
                 bool castSuccess = false;
                 if (this.Stamina != null && this.Stamina.CurLevelPercentage >= settingsRef.autocastMinThreshold)
                 {
-                    foreach (MightPower mp in this.MightData.MightPowersCustom)
+                    foreach (MightPower mp in this.MightData.AllMightPowersWithSkills)
                     {
                         if (mp.learned && mp.autocasting != null && mp.autocasting.mightUser && mp.autocasting.AIUsable)
                         {

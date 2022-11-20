@@ -152,6 +152,16 @@
 		  <li>LAP_WEAP_BoltPistol</li>
 		  <li>LAP_WEAP_HandFlamer</li>
 		  <li>LAP_WEAP_PlasmaPistol</li>
+		  <li>HSAU_HLS_Casull</li>
+		  <li>HSAU_HLS_Jackal</li>
+		  <li>HSAU_MLN_ExtendedExtendedMauser</li>
+		  <li>HSAU_MLN_ExtendedMauser</li>
+		  <li>HSAU_ISC_PiousPistol</li>
+		  <li>G_JERICHO_HG</li>
+		  <li>G_K5_HG</li>
+		  <li>G_M1895_HG</li>
+		  <li>G_Thunder_HG</li>
+		  <li>G_WebleyRevolver_HG</li>
 		</weaponDefNames>	
 	</TorannMagic.WeaponCategoryList>
 	
@@ -518,6 +528,47 @@
 		  <li>LAP_WEAP_PlasmaGun</li>
 		  <li>LAP_WEAP_PlasmaCannon</li>
 		  <li>LAP_WEAP_LasCannon</li>
+		  <li>HSAU_HLS_AMR</li>
+		  <li>HSAU_HLS_BloodBlaster</li>   
+		  <li>HSAU_HLS_Harkonnen</li>
+		  <li>HSAU_HLS_HarkonnenII</li>
+		  <li>HSAU_HLS_ArmaliteRifle</li>
+		  <li>HSAU_HLS_AvtomatKalashnikova</li>
+		  <li>HSAU_MLN_FNP90m</li>
+		  <li>HSAU_MLN_MagicalMusket</li>
+		  <li>HSAU_ISC_mPTRS</li>
+		  <li>G_AEK999_MG</li>
+		  <li>G_AK12_AR</li>
+		  <li>G_9A91_SMG</li>
+		  <li>G_AN94_AR</li>
+		  <li>G_AR15_AR</li>
+	   	  <li>G_DSR50_RF</li>
+		  <li>G_FNFNC_AR</li>
+		  <li>G_G11_AR</li>
+		  <li>G_G36_AR</li>
+		  <li>G_G41_AR</li>
+		  <li>G_HK416_AR</li>
+		  <li>G_IDW_SMG</li>
+		  <li>G_IWS2000_RF</li>
+		  <li>G_K2_AR</li>
+		  <li>G_KP31_SMG</li>
+		  <li>G_LEWIS_MG</li>
+		  <li>G_M14_RF</li>
+		  <li>G_M16A1_AR</li>
+		  <li>G_M4A1_AR</li>
+		  <li>G_M950A_SMG</li>
+		  <li>G_MosinNagant_RF</li>
+		  <li>G_NEGEV_MG</li>
+		  <li>G_RO635_SMG</li>
+		  <li>G_SIGMCX_AR</li>
+		  <li>G_SOPMODII_AR</li>
+		  <li>G_SpringField_RF</li>
+		  <li>G_TMP_SMG</li>
+		  <li>G_TYPE4_RF</li>
+		  <li>G_UMP40_SMG</li>
+		  <li>G_UMP45_SMG</li>
+		  <li>G_UMP9_SMG</li>
+		  <li>G_WA2000_RF</li>
 		</weaponDefNames>	
 	</TorannMagic.WeaponCategoryList>
 	
@@ -584,6 +635,10 @@
 		  <li>OGI_Gun_Webber</li>
 		  <li>LAP_WEAP_MeltaGun</li>
 		  <li>LAP_WEAP_MultiMelta</li>
+		  <li>G_AA12_SG</li>
+		  <li>G_SAIGA12_SG</li>
+		  <li>G_SAT8_SG</li>
+		  <li>G_SPAS12_SG</li>
 		</weaponDefNames>	
 	</TorannMagic.WeaponCategoryList>
 	
@@ -599,6 +654,7 @@
 		  <li>VWE_Bow_Long</li>
 		  <li>VWE_Bow_Crossbow</li>
 		  <li>VWE_Bow_Compound</li>
+		  <li>Heyra_Crossbow</li>
 		</weaponDefNames>	
 	</TorannMagic.WeaponCategoryList>
 	
@@ -610,6 +666,7 @@
 		  <li>TM_LightningWand</li>
 		  <li>TM_DefenderStaff</li>
 		  <li>TM_BlazingPowerStaff</li>
+		  <li>HSAU_MLN_DandyDeck</li>
 	    </weaponDefNames>	
 	</TorannMagic.WeaponCategoryList>
 
@@ -659,4 +716,7 @@
 	[RH] Faction_ War Mongrels
 	Adeptus Mechanicus_ Armoury
 	Legiones Astartes_ Primarch
+	Hellsing ARMS Ultimate
+	Girls' frontline Weapon Pack
+	Heyra Race
 	=============-->

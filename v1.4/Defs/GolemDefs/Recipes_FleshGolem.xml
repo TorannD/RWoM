@@ -43,7 +43,7 @@
 	<skillRequirements>
 	  <Intellectual>6</Intellectual>
     </skillRequirements> -->
-	<workAmount>4000</workAmount>
+	<workAmount>40</workAmount>
     <ingredients>
       <li>
         <filter>
@@ -74,7 +74,7 @@
 	<skillRequirements>
 	  <Intellectual>6</Intellectual>
     </skillRequirements> -->
-	<workAmount>6000</workAmount>
+	<workAmount>60</workAmount>
     <ingredients>
       <li>
         <filter>
@@ -105,7 +105,7 @@
 	<skillRequirements>
 	  <Intellectual>6</Intellectual>
     </skillRequirements> -->
-	<workAmount>5000</workAmount>
+	<workAmount>50</workAmount>
     <ingredients>
       <li>
         <filter>
@@ -140,7 +140,7 @@ In addition, this upgrade allows the flesh golem to use their rage to tear the l
 	<skillRequirements>
 	  <Intellectual>6</Intellectual>
     </skillRequirements> -->
-	<workAmount>10000</workAmount>
+	<workAmount>100</workAmount>
     <ingredients>
 	  <li>
         <filter>
@@ -191,7 +191,7 @@ In addition, this upgrade allows the flesh golem to use their rage to tear the l
 <!-- 	<skillRequirements>
 	  <Intellectual>6</Intellectual>
     </skillRequirements> -->
-	<workAmount>5000</workAmount>
+	<workAmount>50</workAmount>
     <ingredients>
 	  <li>
         <filter>
@@ -229,7 +229,7 @@ In addition, this upgrade allows the flesh golem to use their rage to tear the l
 <!-- 	<skillRequirements>
 	  <Intellectual>6</Intellectual>
     </skillRequirements> -->
-	<workAmount>5000</workAmount>
+	<workAmount>50</workAmount>
     <ingredients>
 	  <li>
         <filter>
@@ -267,7 +267,7 @@ In addition, this upgrade allows the flesh golem to use their rage to tear the l
 <!-- 	<skillRequirements>
 	  <Intellectual>6</Intellectual>
     </skillRequirements> -->
-	<workAmount>8000</workAmount>
+	<workAmount>80</workAmount>
     <ingredients>
 	  <li>
         <filter>
@@ -297,7 +297,7 @@ In addition, this upgrade allows the flesh golem to use their rage to tear the l
 <!-- 	<skillRequirements>
 	  <Intellectual>6</Intellectual>
     </skillRequirements> -->
-	<workAmount>8000</workAmount>
+	<workAmount>80</workAmount>
     <ingredients>
 	  <li>
         <filter>
@@ -327,7 +327,7 @@ In addition, this upgrade allows the flesh golem to use their rage to tear the l
 <!-- 	<skillRequirements>
 	  <Intellectual>6</Intellectual>
     </skillRequirements> -->
-	<workAmount>200</workAmount>
+	<workAmount>20</workAmount>
     <ingredients>
 	  <li>
         <filter>
@@ -369,7 +369,7 @@ In addition, this upgrade allows the flesh golem to use their rage to tear the l
 <!-- 	<skillRequirements>
 	  <Intellectual>6</Intellectual>
     </skillRequirements> -->
-	<workAmount>6500</workAmount>
+	<workAmount>65</workAmount>
     <ingredients>
 	  <li>
         <filter>
@@ -420,7 +420,7 @@ In addition, this upgrade allows the flesh golem to use their rage to tear the l
 <!-- 	<skillRequirements>
 	  <Intellectual>6</Intellectual>
     </skillRequirements> -->
-	<workAmount>5500</workAmount>
+	<workAmount>55</workAmount>
     <ingredients>
 	  <li>
         <filter>
@@ -462,7 +462,7 @@ In addition, this upgrade allows the flesh golem to use their rage to tear the l
 <!-- 	<skillRequirements>
 	  <Intellectual>6</Intellectual>
     </skillRequirements> -->
-	<workAmount>7500</workAmount>
+	<workAmount>75</workAmount>
     <ingredients>
 	  <li>
         <filter>
@@ -496,7 +496,7 @@ In addition, this upgrade allows the flesh golem to use their rage to tear the l
 <!-- 	<skillRequirements>
 	  <Intellectual>6</Intellectual>
     </skillRequirements> -->
-	<workAmount>4000</workAmount>
+	<workAmount>40</workAmount>
     <allowMixingIngredients>true</allowMixingIngredients>
     <ingredients>
       <li>
@@ -537,7 +537,7 @@ In addition, this upgrade allows the flesh golem to use their rage to tear the l
 <!-- 	<skillRequirements>
 	  <Intellectual>6</Intellectual>
     </skillRequirements> -->
-	<workAmount>3000</workAmount>
+	<workAmount>30</workAmount>
     <allowMixingIngredients>true</allowMixingIngredients>
     <ingredients>
       <li>
@@ -578,7 +578,7 @@ In addition, this upgrade allows the flesh golem to use their rage to tear the l
 <!-- 	<skillRequirements>
 	  <Intellectual>6</Intellectual>
     </skillRequirements> -->
-	<workAmount>5600</workAmount>
+	<workAmount>56</workAmount>
 	<ingredients>
 	  <li>
         <filter>
@@ -600,7 +600,7 @@ In addition, this upgrade allows the flesh golem to use their rage to tear the l
 <!-- 	<skillRequirements>
 	  <Intellectual>6</Intellectual>
     </skillRequirements> -->
-	<workAmount>6000</workAmount>
+	<workAmount>60</workAmount>
     <ingredients>
 	  <li>
         <filter>
@@ -622,7 +622,7 @@ In addition, this upgrade allows the flesh golem to use their rage to tear the l
 <!-- 	<skillRequirements>
 	  <Intellectual>6</Intellectual>
     </skillRequirements> -->
-	<workAmount>2000</workAmount>
+	<workAmount>20</workAmount>
     <allowMixingIngredients>true</allowMixingIngredients>
     <ingredients>
       <li>
@@ -663,7 +663,7 @@ In addition, this upgrade allows the flesh golem to use their rage to tear the l
 <!-- 	<skillRequirements>
 	  <Intellectual>6</Intellectual>
     </skillRequirements> -->
-	<workAmount>8000</workAmount>
+	<workAmount>80</workAmount>
     <ingredients>
 	  <li>
         <filter>

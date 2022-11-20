@@ -119,12 +119,13 @@ namespace TorannMagic.Golems
 
         public bool ThreatDisabled(IAttackTargetSearcher disabledFor)
         {
+            String str = "";
             CompFlickable comp = GetComp<CompFlickable>();
             if (comp != null && !comp.SwitchIsOn)
             {
                 return true;
             }
-            if(!CanActivate())
+            if (!CanActivate(out str))
             {
                 return true;
             }
@@ -235,10 +236,12 @@ namespace TorannMagic.Golems
             return true;
         }
 
-        public bool CanActivate()
+        public bool CanActivate(out String reason)
         {
+            reason = "";
             if(!this.Spawned || this.Map == null || this.Position == null || this.GolemComp == null)
             {
+                reason = "invalid conditions";
                 return false;
             }
             List<Thing> tmpList = this.Position.GetThingList(this.Map);
@@ -249,6 +252,7 @@ namespace TorannMagic.Golems
                 {
                     if(tmpList[i] is TorannMagic.Golems.UnfinishedNoProductThing)
                     {
+                        reason = "under construction";
                         return false;
                     }
                 }
@@ -259,6 +263,7 @@ namespace TorannMagic.Golems
                 {
                     if (b.ShouldDoNow())
                     {
+                        reason = "pending upgrades";
                         return false;
                     }
                     
@@ -452,11 +457,12 @@ namespace TorannMagic.Golems
                     {
                         if (Find.TickManager.TicksGame % Mathf.RoundToInt(GolemDef.activationTicks * .05f) == 0)
                         {
+                            String failString = "";
                             Vector3 rndPos = this.DrawPos;
                             rndPos.x += Rand.Range(-.6f, .6f);
                             rndPos.z += Rand.Range(-.6f, .6f);
                             FleckMaker.ThrowSmoke(rndPos, this.Map, Rand.Range(.6f, 1.1f));
-                            if (!CanActivate())
+                            if (!CanActivate(out failString))
                             {
                                 activationAge = 0;
                                 activating = false;
@@ -479,7 +485,8 @@ namespace TorannMagic.Golems
                         }                        
                     }
                     else
-                    {                        
+                    {
+                        String failString = "";
                         if (this.abilityCharges > 0 && this.creationRecipes.Count > 0)
                         {
                             DoGolemWorkingEffect();
@@ -533,12 +540,12 @@ namespace TorannMagic.Golems
                                     }
                                 }
                             }
-                            if (this.Energy.StoredEnergyPct >= GolemComp.energyPctShouldAwaken && GolemComp.energyPctShouldAwaken > .1f && CanActivate())
+                            if (this.Energy.StoredEnergyPct >= GolemComp.energyPctShouldAwaken && GolemComp.energyPctShouldAwaken > .1f && CanActivate(out failString))
                             {
                                 this.activating = true;
                             }
                         }
-                        if (ThreatTarget != null && CanActivate() && GolemComp.threatRange > 0 && (ThreatTarget.Position - this.Position).LengthHorizontal <= GolemComp.threatRange)
+                        if (ThreatTarget != null && CanActivate(out failString) && GolemComp.threatRange > 0 && (ThreatTarget.Position - this.Position).LengthHorizontal <= GolemComp.threatRange)
                         {
                             activating = true;
                         }
@@ -800,17 +807,23 @@ namespace TorannMagic.Golems
             }
             if (this.GetComp<CompFlickable>().SwitchIsOn)
             {
+                String failString = "";
+                bool activationFlag = CanActivate(out failString);
                 Command_Action command_Action = new Command_Action();
                 command_Action.defaultLabel = "TM_ActivateGolem".Translate();
                 command_Action.defaultDesc = "TM_ActivateGolemDesc".Translate(GolemDef.minimumEnergyPctToActivate.ToString("P1"));
-                if(Energy.StoredEnergyPct < GolemDef.minimumEnergyPctToActivate)
+                if (Energy.StoredEnergyPct < GolemDef.minimumEnergyPctToActivate)
                 {
-                    command_Action.defaultDescPostfix = "\n"+"TM_ActivateGolemDisabled".Translate();
-                }                
+                    command_Action.defaultDescPostfix = "\n" + "TM_ActivateGolemDisabled".Translate("insufficient energy");
+                }
+                if (!activationFlag)
+                {
+                    command_Action.defaultDescPostfix = "\n" + "TM_ActivateGolemDisabled".Translate(failString);
+                }
                 command_Action.icon = ContentFinder<Texture2D>.Get("UI/MoveOut", true);
                 command_Action.action = delegate
                 {
-                    if(Energy.StoredEnergyPct >= GolemDef.minimumEnergyPctToActivate)
+                    if (Energy.StoredEnergyPct >= GolemDef.minimumEnergyPctToActivate && activationFlag)
                     {
                         activating = !activating;
                     }
@@ -821,7 +834,7 @@ namespace TorannMagic.Golems
                         MoteMaker.ThrowText(pos, this.Map, "TM_GolemMinimumToActivate".Translate(Energy.StoredEnergyPct.ToString("P"), GolemDef.minimumEnergyPctToActivate.ToString("P1")), -1);                        
                     }
                 };
-                command_Action.disabled = (Energy.StoredEnergyPct < GolemDef.minimumEnergyPctToActivate) || pauseFor > 0;
+                command_Action.disabled = (Energy.StoredEnergyPct < GolemDef.minimumEnergyPctToActivate) || pauseFor > 0 || !activationFlag;
                 yield return command_Action;
 
                 Command_Toggle command_Toggle = new Command_Toggle();

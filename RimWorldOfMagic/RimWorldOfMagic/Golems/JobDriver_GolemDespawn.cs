@@ -48,6 +48,7 @@ namespace TorannMagic.Golems
                 defaultCompleteMode = ToilCompleteMode.Instant
             };
             yield return despawn;
+
         }
     }
 }

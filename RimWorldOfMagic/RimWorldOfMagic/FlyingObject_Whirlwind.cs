@@ -220,29 +220,32 @@ namespace TorannMagic
                         for (int i = 0; i < 8; i++)
                         {
                             IntVec3 intVec = base.Position + GenAdj.AdjacentCells[i];
-                            Pawn cleaveVictim = new Pawn();
-                            cleaveVictim = intVec.GetFirstPawn(base.Map);
-                            if (cleaveVictim != null && cleaveVictim.Faction != pawn.Faction)
+                            if (intVec.InBounds(this.Map))
                             {
-                                cleaveVictim.TakeDamage(dinfo);
-                                FleckMaker.ThrowMicroSparks(cleaveVictim.Position.ToVector3(), base.Map);
-                                CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
-                                verVal = TM_Calc.GetSkillVersatilityLevel(pawn, TorannMagicDefOf.TM_Whirlwind);
-                                //verVal = TM_Calc.GetMightSkillLevel(pawn, comp.MightData.MightPowerSkill_Whirlwind, "TM_Whirlwind", "_ver", true);
-                                //MightPowerSkill ver = comp.MightData.MightPowerSkill_Whirlwind.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Whirlwind_ver");
-                                //verVal = ver.level;
-                                //if(pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
-                                //{
-                                //    MightPowerSkill mver = comp.MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
-                                //    verVal = mver.level;
-                                //}
-                                DamageInfo dinfo2 = new DamageInfo(TMDamageDefOf.DamageDefOf.TM_Whirlwind, weaponDmg, 0, (float)-1, pawn, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
-                                System.Random random = new System.Random();
-                                int rnd = GenMath.RoundRandom(random.Next(0, 100));
-                                if (rnd < (verVal * 5))
+                                Pawn cleaveVictim = new Pawn();
+                                cleaveVictim = intVec.GetFirstPawn(base.Map);
+                                if (cleaveVictim != null && cleaveVictim.Faction != pawn.Faction)
                                 {
-                                    cleaveVictim.TakeDamage(dinfo2);
+                                    cleaveVictim.TakeDamage(dinfo);
                                     FleckMaker.ThrowMicroSparks(cleaveVictim.Position.ToVector3(), base.Map);
+                                    CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
+                                    verVal = TM_Calc.GetSkillVersatilityLevel(pawn, TorannMagicDefOf.TM_Whirlwind);
+                                    //verVal = TM_Calc.GetMightSkillLevel(pawn, comp.MightData.MightPowerSkill_Whirlwind, "TM_Whirlwind", "_ver", true);
+                                    //MightPowerSkill ver = comp.MightData.MightPowerSkill_Whirlwind.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Whirlwind_ver");
+                                    //verVal = ver.level;
+                                    //if(pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+                                    //{
+                                    //    MightPowerSkill mver = comp.MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
+                                    //    verVal = mver.level;
+                                    //}
+                                    DamageInfo dinfo2 = new DamageInfo(TMDamageDefOf.DamageDefOf.TM_Whirlwind, weaponDmg, 0, (float)-1, pawn, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
+                                    System.Random random = new System.Random();
+                                    int rnd = GenMath.RoundRandom(random.Next(0, 100));
+                                    if (rnd < (verVal * 5))
+                                    {
+                                        cleaveVictim.TakeDamage(dinfo2);
+                                        FleckMaker.ThrowMicroSparks(cleaveVictim.Position.ToVector3(), base.Map);
+                                    }
                                 }
                             }
                         }

@@ -446,32 +446,34 @@ namespace TorannMagic
 
         public void Explosion(int pwr, IntVec3 center, Map map, float radius, DamageDef damType, Thing instigator, SoundDef explosionSound = null, ThingDef projectile = null, ThingDef source = null, ThingDef postExplosionSpawnThingDef = null, float postExplosionSpawnChance = 0f, int postExplosionSpawnThingCount = 1, bool applyDamageToExplosionCellsNeighbors = false, ThingDef preExplosionSpawnThingDef = null, float preExplosionSpawnChance = 0f, int preExplosionSpawnThingCount = 1)
         {
-
-            System.Random rnd = new System.Random();
-            int modDamAmountRand = GenMath.RoundRandom(rnd.Next(8 + pwr, 15 + (4*pwr)));
-            modDamAmountRand = Mathf.RoundToInt(modDamAmountRand * this.arcaneDmg);
-            if (map == null)
+            if (center.InBounds(map))
             {
-                Log.Warning("Tried to do explosion in a null map.");
-                return;
+                System.Random rnd = new System.Random();
+                int modDamAmountRand = GenMath.RoundRandom(rnd.Next(8 + pwr, 15 + (4 * pwr)));
+                modDamAmountRand = Mathf.RoundToInt(modDamAmountRand * this.arcaneDmg);
+                if (map == null)
+                {
+                    Log.Warning("Tried to do explosion in a null map.");
+                    return;
+                }
+                Explosion explosion = (Explosion)GenSpawn.Spawn(ThingDefOf.Explosion, center, map);
+                explosion.damageFalloff = false;
+                explosion.chanceToStartFire = 0.0f;
+                explosion.Position = center;
+                explosion.radius = radius;
+                explosion.damType = damType;
+                explosion.instigator = instigator;
+                explosion.damAmount = ((projectile == null) ? GenMath.RoundRandom((float)damType.defaultDamage) : modDamAmountRand);
+                explosion.weapon = source;
+                explosion.preExplosionSpawnThingDef = preExplosionSpawnThingDef;
+                explosion.preExplosionSpawnChance = preExplosionSpawnChance;
+                explosion.preExplosionSpawnThingCount = preExplosionSpawnThingCount;
+                explosion.postExplosionSpawnThingDef = postExplosionSpawnThingDef;
+                explosion.postExplosionSpawnChance = postExplosionSpawnChance;
+                explosion.postExplosionSpawnThingCount = postExplosionSpawnThingCount;
+                explosion.applyDamageToExplosionCellsNeighbors = applyDamageToExplosionCellsNeighbors;
+                explosion.StartExplosion(explosionSound, null);
             }
-            Explosion explosion = (Explosion)GenSpawn.Spawn(ThingDefOf.Explosion, center, map);
-            explosion.damageFalloff = false;
-            explosion.chanceToStartFire = 0.0f;
-            explosion.Position = center;
-            explosion.radius = radius;
-            explosion.damType = damType;
-            explosion.instigator = instigator;
-            explosion.damAmount = ((projectile == null) ? GenMath.RoundRandom((float)damType.defaultDamage) : modDamAmountRand);
-            explosion.weapon = source;
-            explosion.preExplosionSpawnThingDef = preExplosionSpawnThingDef;
-            explosion.preExplosionSpawnChance = preExplosionSpawnChance;
-            explosion.preExplosionSpawnThingCount = preExplosionSpawnThingCount;
-            explosion.postExplosionSpawnThingDef = postExplosionSpawnThingDef;
-            explosion.postExplosionSpawnChance = postExplosionSpawnChance;
-            explosion.postExplosionSpawnThingCount = postExplosionSpawnThingCount;
-            explosion.applyDamageToExplosionCellsNeighbors = applyDamageToExplosionCellsNeighbors;
-            explosion.StartExplosion(explosionSound, null);
         }
 
         private void XProb(IntVec3 target, Vector3 origin)

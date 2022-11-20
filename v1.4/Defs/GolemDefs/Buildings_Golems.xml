@@ -5,7 +5,27 @@
     <thingClass>TorannMagic.Golems.UnfinishedNoProductThing</thingClass>
     <label>unfinished golem thing</label>
     <description>An unfinished upgrade for a golem.</description>
+	<altitudeLayer>Item</altitudeLayer>
+    <useHitPoints>true</useHitPoints>
+    <isUnfinishedThing>true</isUnfinishedThing>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <selectable>true</selectable>
+    <tradeability>None</tradeability>
+    <drawerType>MapMeshOnly</drawerType>
+	<alwaysHaulable>true</alwaysHaulable>
+    <rotatable>false</rotatable>
+    <pathCost>14</pathCost>
+	<statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <Mass>1</Mass> <!-- ingredients are added to this value -->
+    </statBases>
+	<thingCategories>
+      <li>Unfinished</li>
+    </thingCategories>
 	<stuffCategories Inherit="false" />
+	<comps>
+      <li Class="CompProperties_Forbiddable"/>
+    </comps>
   </ThingDef>
 
 

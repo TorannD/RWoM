@@ -219,4 +219,20 @@
 			</autocastCondition>
 		</TorannMagic.TM_AutocastConditionDef>
 		
+		<TorannMagic.TM_AutocastConditionDef>							<!-- a condition check that looks for any clarity hediff on the target -->
+		    <defName>TM_DoesNotHaveNightshadeHediff</defName>					
+			<autocastCondition>
+				<conditionClass>HasHediff</conditionClass>				<!-- type of condition: DamageTaken, HasNeed, HasHediff, EnemiesInRange, AlliesInRange, TargetDrafted -->
+				<hediffDefs>
+					<li>TM_NightshadeHD</li>							<!-- hediff defnames, listed all hediff levels -->					
+				</hediffDefs>											
+				<needDefs></needDefs>									
+				<valueA></valueA>										<!-- no values needed since this is only a boolean check -->
+				<valueB></valueB>										
+				<valueC></valueC>										
+				<invert>true</invert>									<!-- returns "true" if the target has any of the listed hediffs, need to invert to fail condition if a hediff is present -->
+				<onlyAppliesToCaster>true</onlyAppliesToCaster>
+			</autocastCondition>
+		</TorannMagic.TM_AutocastConditionDef>
+		
 </Defs>

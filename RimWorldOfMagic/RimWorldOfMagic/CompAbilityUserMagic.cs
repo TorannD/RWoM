@@ -2022,7 +2022,7 @@ namespace TorannMagic
                                     else if(settingsRef.AICasting && (!this.Pawn.IsPrisoner || this.Pawn.IsFighting()) && (this.Pawn.guest != null && !this.Pawn.IsSlave))
                                     {
                                         float tickMult = settingsRef.AIAggressiveCasting ? 1f : 2f;
-                                        this.autocastTick = Find.TickManager.TicksGame + (int)(Rand.Range(.8f * settingsRef.autocastEvaluationFrequency, 1.2f * settingsRef.autocastEvaluationFrequency) * tickMult);
+                                        this.autocastTick = Find.TickManager.TicksGame + (int)(Rand.Range(.75f * settingsRef.autocastEvaluationFrequency, 1.25f * settingsRef.autocastEvaluationFrequency) * tickMult);
                                         ResolveAIAutoCast();
                                     }
                                 }                                
@@ -7028,13 +7028,13 @@ namespace TorannMagic
                 bool castSuccess = false;
                 if (this.Mana != null && this.Mana.CurLevelPercentage >= settingsRef.autocastMinThreshold)
                 {
-                    foreach (MagicPower mp in this.MagicData.MagicPowersCustom)
+                    foreach (MagicPower mp in this.MagicData.AllMagicPowersWithSkills)
                     {
                         if (mp.learned && mp.autocasting != null && mp.autocasting.magicUser && mp.autocasting.AIUsable)
                         {                            
                             //try
-                            //{ 
-                            TMAbilityDef tmad = mp.TMabilityDefs[mp.level] as TMAbilityDef; // issues with index?                            
+                            //{                             
+                            TMAbilityDef tmad = mp.TMabilityDefs[mp.level] as TMAbilityDef; // issues with index?
                             bool canUseWithEquippedWeapon = true;
                             bool canUseIfViolentAbility = this.Pawn.story.DisabledWorkTagsBackstoryAndTraits.HasFlag(WorkTags.Violent) ? !tmad.MainVerb.isViolent : true;
                             if (!TM_Calc.HasResourcesForAbility(this.Pawn, tmad))

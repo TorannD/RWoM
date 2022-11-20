@@ -2171,7 +2171,7 @@ Level 3: all 4 effects</TM_CombatDrugs_pwr_desc>
 <TM_ActivateGolemDesc>Begins the process to activate the golem - after activating, the golem will move about as a normal pawn. Any upgrades or repairs being performed in the dormant state will be discarded. Requires a minimum of {0} energy to activate.</TM_ActivateGolemDesc>
 <TM_DeActivateGolem>Deactivate</TM_DeActivateGolem>
 <TM_DeActivateGolemDesc>Orders the golem to become dormant. The golem will attempt to return to its assigned dormant location. If this location is unreachable, the golem will deactivate at its current location. If the location is available, issuing this command a second time will override the return command and immediately deactivate the golem at it's current position.</TM_DeActivateGolemDesc>
-<TM_ActivateGolemDisabled>Disabled - insufficient energy</TM_ActivateGolemDisabled>
+<TM_ActivateGolemDisabled>Disabled - {0}</TM_ActivateGolemDisabled>
 <TM_AssignGolemRestPosition>Dormant position</TM_AssignGolemRestPosition>
 <TM_AssignGolemRestPositionDesc>Assigns the location the golem should deactivate.</TM_AssignGolemRestPositionDesc>
 <TM_DormantPositionUnreachable>Selected position is unreachable or occupied - canceling</TM_DormantPositionUnreachable>

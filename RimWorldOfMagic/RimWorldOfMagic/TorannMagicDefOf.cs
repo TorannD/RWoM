@@ -1650,6 +1650,7 @@ namespace TorannMagic
         public static LifeStageDef TM_HollowGolemLS;        
         public static HediffDef TM_DecayHD;
         public static JobDef JobDriver_GolemAttackStatic;
+        public static JobDef JobDriver_GolemDespawnWait;
         public static ThingDef Mote_Golem_LSFA_South;
         public static ThingDef Mote_Golem_LSFA_East;
         public static ThingDef Mote_Golem_LSFA_West;

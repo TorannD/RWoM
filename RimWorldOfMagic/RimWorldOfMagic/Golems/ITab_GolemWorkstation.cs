@@ -76,7 +76,7 @@ namespace TorannMagic.Golems
                     pawnMasterName = "None";
                 }
                 int num = 2;
-                float scrollHeight = ActiveUpgradeCount > 9 ? 380 + ActiveUpgradeCount * 18 : 550;
+                float scrollHeight = ActiveUpgradeCount > 3 ? 470 + ActiveUpgradeCount * 20 : 550;
                 Rect canvas = new Rect(17f, 17f, ITab_GolemWorkstation.WinSize.x, ITab_GolemWorkstation.WinSize.y);
                 Rect rect = new Rect(canvas.x, canvas.y, ITab_GolemWorkstation.WinSize.x -34f, ITab_GolemWorkstation.WinSize.y - 34f);
                 Rect sRect = new Rect(rect.x, rect.y, rect.width-34, scrollHeight);

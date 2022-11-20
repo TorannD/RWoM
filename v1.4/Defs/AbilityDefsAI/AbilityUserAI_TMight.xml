@@ -1126,7 +1126,7 @@
 						</li>
 					</subNodes>
 				</li>
-				<li Class="AbilityUserAI.AbilityDecisionConditionalNode_InCombat">
+<!-- 				<li Class="AbilityUserAI.AbilityDecisionConditionalNode_InCombat">
 					<invert>true</invert>
 					<subNodes>
 						<li Class="AbilityUserAI.AbilityDecisionConditionalNode_CasterHealth">
@@ -1140,7 +1140,7 @@
 							</subNodes>
 						</li>
 					</subNodes>
-				</li>
+				</li> -->
 			</subNodes>
 		</decisionTree>
 	</AbilityUserAI.AbilityUserAIProfileDef>

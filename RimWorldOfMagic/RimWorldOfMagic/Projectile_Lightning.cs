@@ -179,15 +179,21 @@ namespace TorannMagic
         public void RandomStrikes(IntVec3 from, Thing caster)
         {
             int rndStrikes = Rand.RangeInclusive(2, 4);
-            for(int i = 0; i < rndStrikes; i++)
+            if (this.Map != null)
             {
-                Vector3 dir = (Quaternion.AngleAxis(Rand.Range(0, 360), Vector3.up) * this.direction);
-                float range = Rand.Range(2f, 6f);
-                IntVec3 hitCell = from + (dir * range).ToIntVec3();
-                //Log.Message("random strike " + hitCell);
-                //DamageCell(hitCell, caster);
-                GenExplosion.DoExplosion(hitCell, this.Map, 1f, TMDamageDefOf.DamageDefOf.TM_Lightning, caster, Mathf.RoundToInt(Rand.Range(3 + pwrVal, 6 + pwrVal) * arcaneDmg), 1.2f, null); 
-                this.Map.weatherManager.eventHandler.AddEvent(new TM_WeatherEvent_MeshGeneric(this.Map, TM_MatPool.thinLightning, from, hitCell, 2f, AltitudeLayer.MoteLow, strikeDelay, strikeDelay, 2));
+                for (int i = 0; i < rndStrikes; i++)
+                {
+                    Vector3 dir = (Quaternion.AngleAxis(Rand.Range(0, 360), Vector3.up) * this.direction);
+                    float range = Rand.Range(2f, 6f);
+                    IntVec3 hitCell = from + (dir * range).ToIntVec3();
+                    //Log.Message("random strike " + hitCell);
+                    //DamageCell(hitCell, caster);
+                    if (hitCell.InBounds(this.Map))
+                    {
+                        GenExplosion.DoExplosion(hitCell, this.Map, 1f, TMDamageDefOf.DamageDefOf.TM_Lightning, caster, Mathf.RoundToInt(Rand.Range(3 + pwrVal, 6 + pwrVal) * arcaneDmg), 1.2f, null);
+                        this.Map.weatherManager.eventHandler.AddEvent(new TM_WeatherEvent_MeshGeneric(this.Map, TM_MatPool.thinLightning, from, hitCell, 2f, AltitudeLayer.MoteLow, strikeDelay, strikeDelay, 2));
+                    }
+                }
             }
         }
 

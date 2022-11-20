@@ -1166,9 +1166,7 @@ Orbs of the Eternal have been used by mages, rulers, and the elite to prolong li
       <li Class="CompProperties_UseEffect">
         <compClass>CompUseEffect_FixWorstHealthCondition</compClass>
       </li>
-      <li Class="CompProperties_UseEffect">
-        <compClass>CompUseEffect_DestroySelf</compClass>
-      </li>
+      <li Class="CompProperties_UseEffectDestroySelf" />
     </comps>
   </ThingDef>
   

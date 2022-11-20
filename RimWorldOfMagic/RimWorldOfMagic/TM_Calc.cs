@@ -24,10 +24,13 @@ namespace TorannMagic
         // Non-generic GetComp<CompAbilityUserMagic> for performance since isInst against generic T is slow
         public static CompAbilityUserMagic GetCompAbilityUserMagic(this ThingWithComps thingWithComps)
         {
-            for (int i = 0; i < thingWithComps.AllComps.Count; i++)
+            if (thingWithComps?.AllComps != null)
             {
-                if (thingWithComps.AllComps[i] is CompAbilityUserMagic comp)
-                    return comp;
+                for (int i = 0; i < thingWithComps.AllComps.Count; i++)
+                {
+                    if (thingWithComps.AllComps[i] is CompAbilityUserMagic comp)
+                        return comp;
+                }
             }
 
             return null;
@@ -36,10 +39,13 @@ namespace TorannMagic
         // Non-generic GetComp<CompAbilityUserMight> for performance since isInst against generic T is slow
         public static CompAbilityUserMight GetCompAbilityUserMight(this ThingWithComps thingWithComps)
         {
-            for (int i = 0; i < thingWithComps.AllComps.Count; i++)
+            if (thingWithComps?.AllComps != null)
             {
-                if (thingWithComps.AllComps[i] is CompAbilityUserMight comp)
-                    return comp;
+                for (int i = 0; i < thingWithComps.AllComps.Count; i++)
+                {
+                    if (thingWithComps.AllComps[i] is CompAbilityUserMight comp)
+                        return comp;
+                }
             }
 
             return null;
@@ -1445,25 +1451,28 @@ namespace TorannMagic
 
         public static Pawn FindNearbyEnemy(IntVec3 position, Map map, Faction faction, float radius, float minRange)
         {
-            List<Pawn> mapPawns = map.mapPawns.AllPawnsSpawned;
             List<Pawn> pawnList = new List<Pawn>();
-            Pawn targetPawn = null;
-            pawnList.Clear();
-            for (int i = 0; i < mapPawns.Count; i++)
+            if (map != null)
             {
-                targetPawn = mapPawns[i];
-                if (targetPawn != null && !targetPawn.Dead && !targetPawn.Destroyed && !targetPawn.Downed)
+                List<Pawn> mapPawns = map.mapPawns.AllPawnsSpawned;                
+                Pawn targetPawn = null;
+                pawnList.Clear();
+                for (int i = 0; i < mapPawns.Count; i++)
                 {
-                    if (targetPawn.Position != position && targetPawn.Faction.HostileTo(faction) && !targetPawn.IsPrisoner && (position - targetPawn.Position).LengthHorizontal <= radius && (position - targetPawn.Position).LengthHorizontal > minRange)
+                    targetPawn = mapPawns[i];
+                    if (targetPawn != null && !targetPawn.Dead && !targetPawn.Destroyed && !targetPawn.Downed)
                     {
-                        pawnList.Add(targetPawn);
-                        targetPawn = null;
+                        if (targetPawn.Position != position && targetPawn.Faction.HostileTo(faction) && !targetPawn.IsPrisoner && (position - targetPawn.Position).LengthHorizontal <= radius && (position - targetPawn.Position).LengthHorizontal > minRange)
+                        {
+                            pawnList.Add(targetPawn);
+                            targetPawn = null;
+                        }
+                        else
+                        {
+                            targetPawn = null;
+                        }
                     }
-                    else
-                    {
-                        targetPawn = null;
-                    }
-                }                
+                }
             }
             if (pawnList.Count > 0)
             {
@@ -4360,10 +4369,11 @@ namespace TorannMagic
                 }
                 else if (autocasting.GetTargetType == typeof(Corpse))
                 {
-                    IEnumerable<Corpse> nearbyThings = from x in caster.Map.listerThings.AllThings
-                                                               where (x.GetType() == typeof(Corpse) && (x.Position - caster.Position).LengthHorizontal >= autocasting.minRange &&
+                    IEnumerable<Corpse> nearbyThings = from x in caster.Map.listerThings.AllThings.OfType<Corpse>()
+                                                               where ((x.Position - caster.Position).LengthHorizontal >= autocasting.minRange &&
                                                                autocasting.maxRange > 0 ? (x.Position - caster.Position).LengthHorizontal <= autocasting.maxRange : true)
                                                                select x as Corpse;
+
                     target = nearbyThings?.Count() > 0 ? nearbyThings.RandomElement() : null;
                 }
                 else if (autocasting.GetTargetType == typeof(ThingWithComps))
