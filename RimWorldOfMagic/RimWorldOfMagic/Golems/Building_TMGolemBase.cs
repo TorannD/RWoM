@@ -836,7 +836,7 @@ namespace TorannMagic.Golems
                 };
                 command_Action.disabled = (Energy.StoredEnergyPct < GolemDef.minimumEnergyPctToActivate) || pauseFor > 0 || !activationFlag;
                 yield return command_Action;
-
+                
                 Command_Toggle command_Toggle = new Command_Toggle();
                 command_Toggle.defaultLabel = "CommandHoldFire".Translate();
                 command_Toggle.defaultDesc = "CommandHoldFireDesc".Translate();
@@ -848,7 +848,7 @@ namespace TorannMagic.Golems
                 };
                 command_Toggle.isActive = (() => holdFire);
                 yield return (Gizmo)command_Toggle;
-
+                
                 TM_Command_Target command_Target = new TM_Command_Target();
                 command_Target.defaultLabel = "CommandSetForceAttackTarget".Translate();
                 command_Target.defaultDesc = "CommandSetForceAttackTargetDesc".Translate();
@@ -863,7 +863,7 @@ namespace TorannMagic.Golems
                     }
                 };
                 yield return command_Target;
-
+                
                 if (glower != null)
                 {
                     Command_Toggle command_Glow = new Command_Toggle();
@@ -878,7 +878,8 @@ namespace TorannMagic.Golems
                     command_Glow.isActive = (() => glowingInt);
                     yield return (Gizmo)command_Glow;
                 }
-                if(canRegulateTemp)
+                
+                if (canRegulateTemp)
                 {
                     float offset = RoundedToCurrentTempModeOffset(-10f);
                     Command_Action command_Temperature = new Command_Action();
@@ -937,6 +938,7 @@ namespace TorannMagic.Golems
                     command_Temperature5.icon = ContentFinder<Texture2D>.Get("UI/Commands/TempRaise");
                     yield return (Gizmo)command_Temperature5;
                 }
+                
             }            
         }
 

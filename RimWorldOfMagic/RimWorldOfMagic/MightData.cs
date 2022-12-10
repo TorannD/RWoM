@@ -2299,6 +2299,7 @@ namespace TorannMagic
                         {
                             hediffAbility.Add(hd.def, ability);
                             hasAbility = true;
+                            break;
                         }
                     }
                 }

@@ -53,8 +53,8 @@ namespace TorannMagic
                  null, null);
             harmonyInstance.Patch(AccessTools.Method(typeof(AutoUndrafter), "ShouldAutoUndraft"), new HarmonyMethod(patchType, nameof(AutoUndrafter_Undead_Prefix)),
                  null, null);
-            harmonyInstance.Patch(AccessTools.Method(typeof(PawnUtility), "IsTravelingInTransportPodWorldObject"),
-                 new HarmonyMethod(patchType, nameof(IsTravelingInTeleportPod_Prefix)), null);
+            //harmonyInstance.Patch(AccessTools.Method(typeof(PawnUtility), "IsTravelingInTransportPodWorldObject"), null,
+            //     new HarmonyMethod(patchType, nameof(IsTravelingInTeleportPod_Postfix)));
             harmonyInstance.Patch(AccessTools.Method(typeof(FloatMenuMakerMap), "AddHumanlikeOrders"), null,
                  new HarmonyMethod(patchType, nameof(AddHumanLikeOrders_RestrictEquipmentPatch)), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(CompAbilityItem), "PostDrawExtraSelectionOverlays"), new HarmonyMethod(patchType, nameof(CompAbilityItem_Overlay_Prefix)),
@@ -78,6 +78,11 @@ namespace TorannMagic
             harmonyInstance.Patch(AccessTools.Method(typeof(MainTabWindow_Animals), "get_Pawns", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_GolemsAsAnimals", null), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(RecipeDef), "get_AvailableNow", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_GolemsRecipeAvailable", null), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(Pawn), "get_ShouldAvoidFences", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_GolemShouldAvoidFences"), null, null);
+            //harmonyInstance.Patch(AccessTools.Method(typeof(Precept_Relic), "get_RelicInPlayerPossession", null, null),null, new HarmonyMethod(typeof(TorannMagicMod), "Get_DelayRelicLost"), null);
+            //harmonyInstance.Patch(AccessTools.Method(typeof(Pawn), "get_InAggroMentalState", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_UndeadAggroMentalState"), null, null);
+            //harmonyInstance.Patch(AccessTools.Method(typeof(Pawn), "get_InMentalState", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_UndeadMentalState"), null, null);
+            //harmonyInstance.Patch(AccessTools.Method(typeof(Pawn_GuiltTracker), "get_IsGuilty", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_UndeadIsGuilty"), null, null);
+            //harmonyInstance.Patch(AccessTools.Method(typeof(RestUtility), "get_IsCharging", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_UndeadIsCharging"), null, null);
 
             harmonyInstance.Patch(AccessTools.Method(typeof(GenDraw), "DrawRadiusRing", new Type[]
                 {
@@ -285,6 +290,98 @@ namespace TorannMagic
         //    }
         //    return true;
         //} 
+
+        //[HarmonyPatch(typeof(Precept_Relic), "Notify_ThingLost", null)]
+        //public class Relic_LostDebug
+        //{
+        //    private static void Postfix(Precept_Relic __instance)
+        //    {
+        //        Log.Warning("calling notify relic lost");
+        //    }
+        //}
+
+        //private static int lostCount = 300;
+        //private static bool lostFlag = false;
+        //public static void Get_DelayRelicLost(Precept_Relic __instance, ref bool __result)
+        //{
+        //    Log.Message("calling relic in player possession " + __result);
+        //    Thing thing = __instance.GeneratedRelic;
+        //    if(!__result)
+        //    {
+        //        if(thing.MapHeld == null && 
+        //            !ThingOwnerUtility.AnyParentIs<TM_Skyfaller>(thing) && 
+        //            !ThingOwnerUtility.AnyParentIs<WorldTransport.TM_TravelingTransportPods>(thing))
+        //        {
+        //            lostCount--;
+        //            Log.Message("ticks to lose relic " + lostCount);
+        //            if (lostCount <= 0)
+        //            {
+        //                lostFlag = false;
+        //            }
+        //        }
+        //        else
+        //        {
+        //            lostFlag = true;
+        //        }
+        //    }
+        //    else
+        //    {
+        //        lostCount = 300;
+        //        lostFlag = __result;
+        //    }
+        //    __result = lostFlag;
+        //}
+
+        public static bool Get_UndeadIsCharging(Pawn p, ref bool __result)
+        {
+            if(TM_Calc.IsUndeadNotVamp(p))
+            {
+                try
+                {
+                    if (p.needs.energy != null)
+                    {
+                        __result = p.needs.energy.currentCharger != null;
+                    }
+                    __result = false;
+                }
+                catch
+                {
+                    __result = false;
+                }
+                return false;
+            }
+            return true;
+        }
+
+        public static bool Get_UndeadIsGuilty(Pawn_GuiltTracker __instance, Pawn ___pawn, ref bool __result)
+        {
+            if (TM_Calc.IsUndeadNotVamp(___pawn))
+            {
+                __result = false;
+                return false;
+            }
+            return true;
+        }
+
+        public static bool Get_UndeadAggroMentalState(Pawn __instance, Pawn_MindState ___mindState, ref bool __result)
+        {
+            if (TM_Calc.IsUndeadNotVamp(__instance))
+            {
+                __result = false;
+                return false;
+            }
+            return true;
+        }
+
+        public static bool Get_UndeadMentalState(Pawn __instance, Pawn_MindState ___mindState, ref bool __result)
+        {
+            if (TM_Calc.IsUndeadNotVamp(__instance))
+            {
+                __result = false;
+                return false;
+            }
+            return true;
+        }
 
         public static bool Get_GolemShouldAvoidFences(Pawn __instance, ref bool __result)
         {
@@ -1690,7 +1787,7 @@ namespace TorannMagic
         {
             public static void Postfix(Pawn p, ThingDef apparel, ref bool __result)
             {
-                if (p != null && p.story != null && !p.story.DisabledWorkTagsBackstoryAndTraits.HasFlag(WorkTags.Violent) && apparel == TorannMagicDefOf.TM_Artifact_BracersOfThePacifist)
+                if (p != null && p.story != null && !p.WorkTagIsDisabled(WorkTags.Violent) && apparel == TorannMagicDefOf.TM_Artifact_BracersOfThePacifist)
                 {
                     __result = false;
                 }
@@ -2846,19 +2943,21 @@ namespace TorannMagic
         //    __result = 250f;
         //}
 
-        public static bool TryGiveThoughts_PrefixPatch(ref Pawn victim)
-        {
-            if (victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_UndeadHD, false) || victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_PossessionHD) || victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_PossessionHD_I) || victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_PossessionHD_II) || victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_PossessionHD_III))
+        public static bool TryGiveThoughts_PrefixPatch(ref Pawn victim, PawnDiedOrDownedThoughtsKind thoughtsKind)
+        {            
+            if (victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_UndeadHD, false) ||  victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_PossessionHD) || victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_PossessionHD_I) || victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_PossessionHD_II) || victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_PossessionHD_III))
             {
+                
                 return false;
             }
             return true;
         }
 
-        public static bool AppendThoughts_ForHumanlike_PrefixPatch(ref Pawn victim)
+        public static bool AppendThoughts_ForHumanlike_PrefixPatch(ref Pawn victim, PawnDiedOrDownedThoughtsKind thoughtsKind)
         {
-            if (victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_UndeadHD, false) || victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_PossessionHD) || victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_PossessionHD_I) || victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_PossessionHD_II) || victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_PossessionHD_III))
+            if (victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_UndeadHD, false) ||  victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_PossessionHD) || victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_PossessionHD_I) || victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_PossessionHD_II) || victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_PossessionHD_III))
             {
+                
                 return false;
             }
             return true;
@@ -6216,7 +6315,7 @@ namespace TorannMagic
                 {
                     string labelShort = equipment.LabelShort;
                     FloatMenuOption nve_option;
-                    if (!(pawn.story.traits.HasTrait(TorannMagicDefOf.Priest) || pawn.story.DisabledWorkTagsBackstoryAndTraits.HasFlag(WorkTags.Violent)))
+                    if (!(pawn.story.traits.HasTrait(TorannMagicDefOf.Priest) || pawn.WorkTagIsDisabled(WorkTags.Violent)))
                     {
                         for (int j = 0; j < opts.Count; j++)
                         {                            
@@ -6383,20 +6482,18 @@ namespace TorannMagic
         //[HarmonyBefore(new string[] { "TheThirdAge.RemoveModernStuffHarmony.IsTravelingInTransportPodWorldObject", "rimworld.PawnUtility.IsTravelingInTransportPodWorldObject" })]        
         //[HarmonyPatch(typeof(PawnUtility), "IsTravelingInTransportPodWorldObject", null)]
 
-        [HarmonyPriority(2000)]
-        public static bool IsTravelingInTeleportPod_Prefix(Pawn pawn, ref bool __result)
-        {
-            if (pawn.IsColonist || (pawn.Faction != null && pawn.Faction.IsPlayer))
-            {
-                if(ModsConfig.IdeologyActive && pawn.IsSlaveOfColony)
-                {
-                    return true;
-                }
-                __result = pawn.IsWorldPawn() && ThingOwnerUtility.AnyParentIs<ActiveDropPodInfo>(pawn);
-                return false;
-            }
-            return true;
-        }
+        //[HarmonyPriority(2000)]
+        //public static void IsTravelingInTeleportPod_Postfix(Pawn pawn, ref bool __result)
+        //{
+        //    if (!__result)
+        //    {
+        //        Log.Message("" + pawn.LabelShort + " was not in a transport pod but is in a " + pawn.ParentHolder);
+        //        if (pawn.IsColonist || (pawn.Faction != null && pawn.Faction.IsPlayer))
+        //        {
+                    
+        //        }
+        //    }
+        //}
 
 
         //[HarmonyPatch(typeof(PawnAbility), "PostAbilityAttempt", null)]
@@ -6824,14 +6921,11 @@ namespace TorannMagic
         [HarmonyPatch(typeof(MentalStateHandler), "TryStartMentalState", null)]
         public class MentalStateHandler_Patch
         {
-            public static FieldInfo pawn = typeof(MentalStateHandler).GetField("pawn", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.GetField);
+            //public static FieldInfo pawn = typeof(MentalStateHandler).GetField("pawn", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.GetField);
 
-            public static bool Prefix(MentalStateHandler __instance, MentalStateDef stateDef, Pawn otherPawn, ref bool __result)
+            public static bool Prefix(MentalStateHandler __instance, MentalStateDef stateDef, Pawn otherPawn, Pawn ___pawn, ref bool __result)
             {
-                Traverse traverse = Traverse.Create(__instance);
-                Pawn pawn = (Pawn)MentalStateHandler_Patch.pawn.GetValue(__instance);
-
-                if (pawn.RaceProps.Humanlike && (TM_Calc.IsUndeadNotVamp(pawn)))
+                if (___pawn.RaceProps.Humanlike && (TM_Calc.IsUndeadNotVamp(___pawn)))
                 {
                     __result = false;
                     return false;

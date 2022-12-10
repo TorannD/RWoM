@@ -103,6 +103,7 @@ namespace TorannMagic
                 GenPlace.TryPlaceThing(pod, pawn.Position, pawn.Map, ThingPlaceMode.Near);
                 podT.groupID = 11;
                 pawnToSkip.DeSpawn();
+                pawn.teleporting = true;
                 if(mount != null)
                 {
                     mount.DeSpawn();

@@ -124,9 +124,11 @@ namespace TorannMagic
                     //GenSpawn.Spawn(pod, p.Position, p.Map, WipeMode.Vanish);
                     podT.groupID = 12;
                     p.DeSpawn();
+                    p.teleporting = true;
                     if(mount != null)
                     {
                         mount.DeSpawn();
+                        mount.teleporting = true;
                         podT.innerContainer.TryAddOrTransfer(mount);
                     }
                     podT.innerContainer.TryAddOrTransfer(p);

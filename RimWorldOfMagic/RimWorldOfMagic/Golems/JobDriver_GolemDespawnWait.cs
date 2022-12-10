@@ -30,7 +30,11 @@ namespace TorannMagic.Golems
             Toil toil3 = toil;
             toil3.tickAction = (Action)Delegate.Combine(toil3.tickAction, (Action)delegate
             {
-
+                CompGolem cg = pawn.TryGetComp<CompGolem>();
+                if(!cg.shouldDespawn)
+                {
+                    EndJobWith(JobCondition.Succeeded);
+                }
             });
             toil.defaultCompleteMode = ToilCompleteMode.Never;
             if (job.overrideFacing != Rot4.Invalid)
@@ -51,7 +55,7 @@ namespace TorannMagic.Golems
                 {
                     pawn.rotationTracker.FaceTarget(focusLocal);
                 });
-            }
+            }            
             yield return toil;
 
         }
