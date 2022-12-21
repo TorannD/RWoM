@@ -6,6 +6,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
+using TorannMagic.Utils;
 
 namespace TorannMagic
 {
@@ -56,7 +57,7 @@ namespace TorannMagic
             }
         }
 
-        protected override void Impact(Thing hitThing)
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             Map map = base.Map;
             base.Impact(hitThing);
@@ -103,7 +104,7 @@ namespace TorannMagic
                     TM_MoteMaker.MakePowerBeamMoteColor(smitePos[j], base.Map, this.radius * 3f, 2f, .5f, .1f, .5f, colorInt.ToColor);
                     this.caster = this.launcher as Pawn;
                     CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
-                    GenExplosion.DoExplosion(smitePos[j], map, 3f, TMDamageDefOf.DamageDefOf.TM_Overwhelm, this.launcher as Pawn, Mathf.RoundToInt((12 + TMDamageDefOf.DamageDefOf.TM_Overwhelm.defaultDamage + 3*pwrVal) * this.arcaneDmg), 0, TorannMagicDefOf.TM_Lightning, def, this.equipmentDef, null, null, 0f, 1, false, null, 0f, 1, 0f, false);
+                    GenExplosion.DoExplosion(smitePos[j], map, 3f, TMDamageDefOf.DamageDefOf.TM_Overwhelm, this.launcher as Pawn, Mathf.RoundToInt((12 + TMDamageDefOf.DamageDefOf.TM_Overwhelm.defaultDamage + 3*pwrVal) * this.arcaneDmg), 0, TorannMagicDefOf.TM_Lightning, def, this.equipmentDef, null, null, 0f, 1, null, false, null, 0f, 1, 0f, false);
                 }
             }
         }
@@ -121,20 +122,15 @@ namespace TorannMagic
 
         public void GetAffectedPawns(IntVec3 center, Map map)
         {
-            Pawn victim = null;
-            IntVec3 curCell;
-            IEnumerable<IntVec3> targets = GenRadial.RadialCellsAround(center, this.def.projectile.explosionRadius, true);
-            for (int i = 0; i < targets.Count(); i++)
+            foreach (IntVec3 curCell in GenRadial.RadialCellsAround(center, def.projectile.explosionRadius, true))
             {
-                curCell = targets.ToArray<IntVec3>()[i];
-                if (curCell.InBoundsWithNullCheck(map) && curCell.IsValid)
-                {
-                    victim = curCell.GetFirstPawn(map);
-                }
+                if (!curCell.InBoundsWithNullCheck(map) || !curCell.IsValid) return;
+                Pawn victim = curCell.GetFirstPawn(map);
+                if (victim == null || victim.Dead) return;
 
-                if (victim != null &&  victim.Faction == this.caster.Faction && !victim.Dead)
+                if (victim.Faction == caster.Faction)
                 {
-                    if(verVal >= 1)
+                    if (verVal >= 1)
                     {
                         HealthUtility.AdjustSeverity(victim, TorannMagicDefOf.TM_HediffTimedInvulnerable, 1f);
                         Hediff hd = victim.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_HediffTimedInvulnerable);
@@ -146,67 +142,33 @@ namespace TorannMagic
                     }
                     if (verVal >= 2)
                     {
-                        Pawn pawn = victim;
-                        bool flag = pawn != null && !pawn.Dead && !TM_Calc.IsUndead(pawn);
-                        bool undeadFlag = pawn != null && !pawn.Dead && TM_Calc.IsUndead(pawn);
-                        if (flag)
+                        if (!victim.Dead && !TM_Calc.IsUndead(victim))
                         {
-                            int num = 3;
-                            using (IEnumerator<BodyPartRecord> enumerator = pawn.health.hediffSet.GetInjuredParts().GetEnumerator())
+                            IEnumerable<Hediff_Injury> injuries = victim.health.hediffSet.hediffs
+                                .OfType<Hediff_Injury>()
+                                .Where(injury => injury.CanHealNaturally())
+                                .DistinctBy(injury => injury.Part)
+                                .Take(3);
+
+                            float healAmount = caster.IsColonist ? 5.0f * arcaneDmg : 20.0f;
+                            foreach (Hediff_Injury injury in injuries)
                             {
-                                while (enumerator.MoveNext())
-                                {
-                                    BodyPartRecord rec = enumerator.Current;
-                                    bool flag2 = num > 0;
-
-                                    if (flag2)
-                                    {
-                                        int num2 = 1;
-                                        IEnumerable<Hediff_Injury> arg_BB_0 = pawn.health.hediffSet.GetHediffs<Hediff_Injury>();
-                                        Func<Hediff_Injury, bool> arg_BB_1;
-
-                                        arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
-
-                                        foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1))
-                                        {
-                                            bool flag4 = num2 > 0;
-                                            if (flag4)
-                                            {
-                                                bool flag5 = current.CanHealNaturally() && !current.IsPermanent();
-                                                if (flag5)
-                                                {
-                                                    //current.Heal((float)((int)current.Severity + 1));
-                                                    if (!this.caster.IsColonist)
-                                                    {
-                                                        current.Heal(20.0f); // power affects how much to heal
-                                                    }
-                                                    else
-                                                    {
-                                                        current.Heal((5.0f * this.arcaneDmg)); // power affects how much to heal
-                                                    }
-                                                    TM_MoteMaker.ThrowRegenMote(pawn.Position.ToVector3Shifted(), pawn.Map, .6f);
-                                                    TM_MoteMaker.ThrowRegenMote(pawn.Position.ToVector3Shifted(), pawn.Map, .4f);
-                                                    num--;
-                                                    num2--;
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
+                                injury.Heal(healAmount);
+                                TM_MoteMaker.ThrowRegenMote(victim.Position.ToVector3Shifted(), victim.Map, .6f);
+                                TM_MoteMaker.ThrowRegenMote(victim.Position.ToVector3Shifted(), victim.Map, .4f);
                             }
-                        }                        
-                    }
+                        }
+                    }                
                     if (verVal >= 3)
                     {
                         HealthUtility.AdjustSeverity(victim, HediffDef.Named("BestowMightHD"), 1f);
                     }
 
                 }
-                if(victim != null && !victim.Dead && TM_Calc.IsUndead(victim))
+                if(TM_Calc.IsUndead(victim))
                 {
                     TM_Action.DamageUndead(victim, Rand.Range(5f, 12f) * this.arcaneDmg, this.launcher);
                 }
-                targets.GetEnumerator().MoveNext();
             }
         }
 

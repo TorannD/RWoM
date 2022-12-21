@@ -65,7 +65,7 @@ namespace TorannMagic
                         }
                         if (Find.TickManager.TicksGame % 300 == 0)
                         {
-                            IEnumerable<Hediff_Injury> injuries = this.Pawn.health.hediffSet.GetHediffs<Hediff_Injury>();
+                            IEnumerable<Hediff_Injury> injuries = this.Pawn.health.hediffSet.hediffs.OfType<Hediff_Injury>();
                             if(injuries.Count() > 20 && this.parent.Severity < 1f)
                             {
                                 HealthUtility.AdjustSeverity(this.Pawn, this.Def, -10);

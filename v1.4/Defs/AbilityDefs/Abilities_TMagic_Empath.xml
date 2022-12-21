@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+   <!-- Empathy -->
+	
+  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
+    <defName>TM_Empathy</defName>
+    <label>Empathy</label>
+    <uiIconPath>UI/Empathy</uiIconPath>
+    <description>An empath has the ability to experience the emotions of those around them reverberate their emotions to better understand the feelings of others, or to convey their own emotions. These innate abilities have been augmented by arcane power, magnifying the effects of empathy. Pawns in proximity to the empath will occasionally experience the faded emotions of the empath, both good and bad. The more good emotions an empath is feeling, the more likely nearby pawns will gain positive empathic feelings. Mastery of empathic abilities can make it an effective mood management tool, but an untrained and stressed out empath can cause despair to an entire colony.</description>
+    <abilityHediff>TM_EmpathHD</abilityHediff>
+	<learnChance>1</learnChance>
+	<canCopy>false</canCopy>
+	<shouldInitialize>false</shouldInitialize>
+	<MainVerb Class="AbilityUser.VerbProperties_Ability">
+        <verbClass>TorannMagic.Verb_SB</verbClass>
+			<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+			<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+			<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+			<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Projectile_Default</defaultProjectile>
+		<abilityDef>TM_Empathy</abilityDef>
+        <warmupTime>0</warmupTime>
+        <SecondsToRecharge>2</SecondsToRecharge>
+		<burstShotCount>1</burstShotCount>
+        <range>0</range>
+		<isViolent>false</isViolent>
+        <soundCast>Message_PositiveEvent</soundCast>
+        <muzzleFlashScale>20</muzzleFlashScale>
+		<AlwaysHits>true</AlwaysHits>
+        <isPrimary>false</isPrimary>		
+   	    <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+		<targetParams>
+		  <canTargetPawns>true</canTargetPawns>
+		  <canTargetBuildings>false</canTargetBuildings>
+		  <canTargetSelf>true</canTargetSelf>
+		  <canTargetLocations>false</canTargetLocations>
+		</targetParams>
+    </MainVerb>
+ </TorannMagic.TMAbilityDef>
+ 
+ 
+   <!-- MindKiller -->
+ 
+   <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
+    <defName>TM_MindKiller</defName>
+    <label>Mind Killer</label>
+    <uiIconPath>UI/MindKiller</uiIconPath>
+    <description>Releases an empathic wail that floods all nearby pawns with emotions. Reactions can vary, but most living organisms have difficulty dealing with the overwhelming surge of emotions. Can cause hostile pawns to go berserk. The higher an affected pawns mood, the more emotional energy is released. When untrained, this skill may affect nearby allies.</description>
+    <requiredNeed>Mood</requiredNeed>
+	<needCost>.3</needCost>
+	<needXPFactor>250</needXPFactor>
+	<efficiencyReductionPercent>.05</efficiencyReductionPercent>
+	<learnChance>.6</learnChance>
+	<canCopy>false</canCopy>
+	<shouldInitialize>true</shouldInitialize>
+	<MainVerb Class="AbilityUser.VerbProperties_Ability">
+        <verbClass>TorannMagic.Verb_MindKiller</verbClass>
+			<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+			<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+			<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+			<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Projectile_Default</defaultProjectile>
+		<abilityDef>TM_MindKiller</abilityDef>
+        <warmupTime>.5</warmupTime>
+        <SecondsToRecharge>5</SecondsToRecharge>
+		<burstShotCount>1</burstShotCount>
+        <range>15</range>
+		<requireLineOfSight>false</requireLineOfSight>
+		<isViolent>true</isViolent>
+        <soundCast>TM_Vibration</soundCast>
+        <muzzleFlashScale>5</muzzleFlashScale>
+		<AlwaysHits>true</AlwaysHits>
+        <isPrimary>false</isPrimary>
+		<AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+		<targetParams>
+      	 <canTargetPawns>true</canTargetPawns>
+      	 <canTargetBuildings>false</canTargetBuildings>
+      	 <canTargetSelf>true</canTargetSelf>
+		 <canTargetLocations>false</canTargetLocations>
+        </targetParams>
+    </MainVerb>
+ </TorannMagic.TMAbilityDef>
+ 
+ <!-- Suppressive Aura -->
+	
+  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
+    <defName>TM_SuppressiveAura</defName>
+    <label>Suppressive Aura</label>
+    <uiIconPath>UI/suppressiveaura</uiIconPath>
+    <description>Creates an aura around the empath that suppresses the emotions of other pawns, allowing them to feel only what the empath wishes them to feel. With training, the empath can allow positive emotions and suppress negative emotions. Side effects of the aura may cause transference of the emotions of the empath. Emotionally suppressed pawns will not experience mental breaks.</description>
+	<requiredNeed>Mood</requiredNeed>
+	<needCost>.2</needCost>
+	<needXPFactor>100</needXPFactor>
+	<learnChance>.5</learnChance>
+	<canCopy>false</canCopy>
+	<shouldInitialize>true</shouldInitialize>
+	<abilityHediff>TM_SuppressiveAuraHD</abilityHediff>
+	<MainVerb Class="AbilityUser.VerbProperties_Ability">
+        <verbClass>TorannMagic.Verb_ToggleHediff</verbClass>
+			<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+			<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+			<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+			<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Projectile_Default</defaultProjectile>
+		<abilityDef>TM_SuppressiveAura</abilityDef>
+        <warmupTime>.25</warmupTime>
+        <SecondsToRecharge>10</SecondsToRecharge>
+		<burstShotCount>1</burstShotCount>
+        <range>0</range>
+		<requireLineOfSight>false</requireLineOfSight>
+		<isViolent>false</isViolent>
+        <soundCast>Message_PositiveEvent</soundCast>
+        <muzzleFlashScale>20</muzzleFlashScale>
+		<AlwaysHits>true</AlwaysHits>
+        <isPrimary>false</isPrimary>
+		<AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+		<targetParams>
+      	 <canTargetPawns>true</canTargetPawns>
+      	 <canTargetBuildings>false</canTargetBuildings>
+      	 <canTargetSelf>true</canTargetSelf>
+		 <canTargetLocations>false</canTargetLocations>
+        </targetParams>
+    </MainVerb>
+ </TorannMagic.TMAbilityDef>
+ 
+  <!-- Harvest Passion -->
+	
+  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
+    <defName>TM_HarvestPassion</defName>
+    <label>Harvest Passion</label>
+    <uiIconPath>UI/harvestpassion</uiIconPath>
+    <description>Attempts to steal a work passion from the target pawn. The caster must sacrifice an active inspiration to activate this ability. Once all joy is removed from the target pawn, the effect attempts to transfer a passion to the caster. The joy of the caster is also consumed each iteration. If a passion is not transferred to the caster before their joy is depleted, then the ability ends. Both the caster and target will suffer shocking trauma while the effect is active. The passion harvested is always random.</description>
+    <requiredNeed>Joy</requiredNeed>
+	<needCost>.1</needCost>
+	<needXPFactor>1000</needXPFactor>
+	<requiresAnyInspiration>true</requiresAnyInspiration>
+	<consumesInspiration>true</consumesInspiration>
+	<learnChance>.4</learnChance>
+	<canCopy>false</canCopy>
+	<shouldInitialize>true</shouldInitialize>
+	<childAbilities>
+		<li>TM_IncitePassion</li>
+	</childAbilities>
+	<MainVerb Class="AbilityUser.VerbProperties_Ability">
+        <verbClass>TorannMagic.Verb_HarvestPassion</verbClass>
+			<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+			<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+			<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+			<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Projectile_Default</defaultProjectile>
+		<abilityDef>TM_HarvestPassion</abilityDef>
+        <warmupTime>3</warmupTime>
+        <SecondsToRecharge>600</SecondsToRecharge>
+		<burstShotCount>1</burstShotCount>
+        <range>15</range>
+		<isViolent>false</isViolent>
+        <soundCast>Message_PositiveEvent</soundCast>
+        <muzzleFlashScale>20</muzzleFlashScale>
+		<AlwaysHits>true</AlwaysHits>
+        <isPrimary>false</isPrimary>
+		<AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+		<targetParams>
+      	 <canTargetPawns>true</canTargetPawns>
+      	 <canTargetBuildings>false</canTargetBuildings>
+      	 <canTargetSelf>false</canTargetSelf>
+		 <canTargetLocations>false</canTargetLocations>
+        </targetParams>
+    </MainVerb>
+ </TorannMagic.TMAbilityDef>
+	
+	<!-- Incite Passion -->
+
+  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
+    <defName>TM_IncitePassion</defName>
+    <label>Incite Passion</label>
+    <uiIconPath>UI/incitepassion</uiIconPath>
+    <description>Transfers a work passion from the caster to a target. This ability is always successful. This ability cannot be used by slaves. The transferred passion is always random.</description>
+    <requiredNeed>Mood</requiredNeed>
+	<needCost>.8</needCost>
+	<needXPFactor>50</needXPFactor>
+	<learnChance>0</learnChance>
+	<canCopy>false</canCopy>
+	<shouldInitialize>true</shouldInitialize>
+	<MainVerb Class="AbilityUser.VerbProperties_Ability">
+        <verbClass>TorannMagic.Verb_IncitePassion</verbClass>
+			<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+			<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+			<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+			<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Projectile_Default</defaultProjectile>
+		<abilityDef>TM_IncitePassion</abilityDef>
+        <warmupTime>2</warmupTime>
+        <SecondsToRecharge>600</SecondsToRecharge>
+		<burstShotCount>1</burstShotCount>
+        <range>15</range>
+		<isViolent>false</isViolent>
+        <soundCast>Message_PositiveEvent</soundCast>
+        <muzzleFlashScale>20</muzzleFlashScale>
+		<AlwaysHits>true</AlwaysHits>
+        <isPrimary>false</isPrimary>
+		<AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+		<targetParams>
+      	 <canTargetPawns>true</canTargetPawns>
+      	 <canTargetBuildings>false</canTargetBuildings>
+      	 <canTargetSelf>false</canTargetSelf>
+		 <canTargetLocations>false</canTargetLocations>
+        </targetParams>
+    </MainVerb>
+ </TorannMagic.TMAbilityDef>
+ 
+  <!-- Symbiosis -->
+
+  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
+    <defName>TM_Symbiosis</defName>
+    <label>Symbiosis</label>
+    <uiIconPath>UI/symbiosis</uiIconPath>
+    <description>Entwines the fate of the empath with the target. The empath will enter into a mentally vacant state, unable to control their own body as they project their will to reinforce the will of a target pawn. The empath will still maintain any pre-existing effects or aura's. The target will receive emotional fortitude and mental strength in return. The symbiote may experience physical after-effects of injuries taken by their host. If the host dies while the empath is a symbiote, the empath will also die. The symbiosis will only end when the empath's mood expires.</description>
+    <requiredNeed>Mood</requiredNeed>
+	<needCost>.1</needCost>
+	<needXPFactor>50</needXPFactor>
+	<learnChance>.4</learnChance>
+	<efficiencyReductionPercent>.35</efficiencyReductionPercent>
+	<canCopy>false</canCopy>
+	<shouldInitialize>true</shouldInitialize>	
+	<MainVerb Class="AbilityUser.VerbProperties_Ability">
+        <verbClass>TorannMagic.Verb_Symbiosis</verbClass>
+			<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+			<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+			<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+			<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Projectile_Default</defaultProjectile>
+		<abilityDef>TM_Symbiosis</abilityDef>
+        <warmupTime>3</warmupTime>
+        <SecondsToRecharge>1200</SecondsToRecharge>
+		<burstShotCount>1</burstShotCount>
+        <range>15</range>
+		<requireLineOfSight>false</requireLineOfSight>
+		<isViolent>false</isViolent>
+        <soundCast>TM_Vibration</soundCast>
+        <muzzleFlashScale>1</muzzleFlashScale>
+		<AlwaysHits>true</AlwaysHits>
+        <isPrimary>false</isPrimary>
+		<AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+		<targetParams>
+      	 <canTargetPawns>true</canTargetPawns>
+      	 <canTargetBuildings>false</canTargetBuildings>
+      	 <canTargetSelf>false</canTargetSelf>
+		 <canTargetLocations>false</canTargetLocations>
+        </targetParams>
+    </MainVerb>
+ </TorannMagic.TMAbilityDef>
+ 
+ <!-- Faded Emotions -->
+
+  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
+    <defName>TM_FadeEmotions</defName>
+    <label>Fade Emotion</label>
+    <uiIconPath>UI/emotionfade</uiIconPath>
+    <description>Reduces mood of the empath and the target to rid the target of negative memories. After the first memory, each additional negative memory will consume 30 mood from the target to be removed. The effect ends with the target has less than 30 mood or no remaining negative memories. The first memory always consumes 30 mood from the target. This ability has no affect on situational mood modifiers.</description>
+    <requiredNeed>Mood</requiredNeed>
+	<needCost>.2</needCost>
+	<needXPFactor>50</needXPFactor>
+	<learnChance>0</learnChance>
+	<canCopy>false</canCopy>
+	<shouldInitialize>true</shouldInitialize>
+	<learnItem>SpellOf_FadeEmotions</learnItem>
+	<MainVerb Class="AbilityUser.VerbProperties_Ability">
+        <verbClass>TorannMagic.Verb_FadeEmotions</verbClass>
+			<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+			<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+			<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+			<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Projectile_Default</defaultProjectile>
+		<abilityDef>TM_FadeEmotions</abilityDef>
+        <warmupTime>4</warmupTime>
+        <SecondsToRecharge>60</SecondsToRecharge>
+		<burstShotCount>1</burstShotCount>
+        <range>25</range>
+		<isViolent>false</isViolent>
+        <soundCast>TM_Vibration</soundCast>
+        <muzzleFlashScale>1</muzzleFlashScale>
+		<AlwaysHits>true</AlwaysHits>
+        <isPrimary>false</isPrimary>
+		<requireLineOfSight>false</requireLineOfSight>
+		<AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+		<targetParams>
+      	 <canTargetPawns>true</canTargetPawns>
+      	 <canTargetBuildings>false</canTargetBuildings>
+      	 <canTargetSelf>false</canTargetSelf>
+		 <canTargetLocations>false</canTargetLocations>
+        </targetParams>
+    </MainVerb>
+ </TorannMagic.TMAbilityDef>
+
+</Defs>

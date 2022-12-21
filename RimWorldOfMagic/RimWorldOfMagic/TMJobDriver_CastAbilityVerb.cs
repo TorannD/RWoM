@@ -164,7 +164,7 @@ namespace TorannMagic
                         {
                             verb.TryStartCastOn(target, false, true);                            
                         }
-                        using (IEnumerator<Hediff> enumerator = this.pawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
+                        using (IEnumerator<Hediff> enumerator = this.pawn.health.hediffSet.hediffs.GetEnumerator())
                         {
                             while (enumerator.MoveNext())
                             {
@@ -322,7 +322,7 @@ namespace TorannMagic
                                 {
                                     verb.TryStartCastOn(target, false, canFreeIntercept2);
                                 }
-                                using (IEnumerator<Hediff> enumerator = this.pawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
+                                using (IEnumerator<Hediff> enumerator = this.pawn.health.hediffSet.hediffs.GetEnumerator())
                                 {
                                     while (enumerator.MoveNext())
                                     {

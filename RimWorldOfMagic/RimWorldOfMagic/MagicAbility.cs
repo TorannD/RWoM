@@ -597,7 +597,7 @@ namespace TorannMagic
             {
                 verb = Verb,
                 defaultLabel = this.magicDef.LabelCap,
-                order = 9999
+                Order = 9999
             };
             command_PawnAbility.curTicks = CooldownTicksLeft;
             StringBuilder stringBuilder = new StringBuilder();

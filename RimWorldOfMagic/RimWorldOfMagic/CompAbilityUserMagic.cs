@@ -563,7 +563,7 @@ namespace TorannMagic
                 Enchantment.CompEnchant compEnchant = this.Pawn.GetComp<Enchantment.CompEnchant>();
                 //try
                 //{
-                    if (this.IsMagicUser && compEnchant != null && compEnchant.enchantingContainer.Count > 0)
+                    if (this.IsMagicUser && compEnchant != null && compEnchant.enchantingContainer != null && compEnchant.enchantingContainer.Count > 0)
                     {
                         DrawEnchantMark();
                     }
@@ -744,7 +744,7 @@ namespace TorannMagic
 
         public void DrawEnchantMark()
         {
-            DrawMark(TM_RenderQueue.enchantMark, new Vector3(.5f, 1f, .5f));
+            DrawMark(TM_RenderQueue.enchantMark, new Vector3(.5f, 1f, .5f), 0, -.2f);
             //float num = Mathf.Lerp(1.2f, 1.55f, 1f);
             //Vector3 vector = this.Pawn.Drawer.DrawPos;
             //vector.x = vector.x + .45f;
@@ -2022,7 +2022,7 @@ namespace TorannMagic
                                     else if(settingsRef.AICasting && (!this.Pawn.IsPrisoner || this.Pawn.IsFighting()) && (this.Pawn.guest != null && !this.Pawn.IsSlave))
                                     {
                                         float tickMult = settingsRef.AIAggressiveCasting ? 1f : 2f;
-                                        this.autocastTick = Find.TickManager.TicksGame + (int)(Rand.Range(.8f * settingsRef.autocastEvaluationFrequency, 1.2f * settingsRef.autocastEvaluationFrequency) * tickMult);
+                                        this.autocastTick = Find.TickManager.TicksGame + (int)(Rand.Range(.75f * settingsRef.autocastEvaluationFrequency, 1.25f * settingsRef.autocastEvaluationFrequency) * tickMult);
                                         ResolveAIAutoCast();
                                     }
                                 }                                
@@ -4757,15 +4757,13 @@ namespace TorannMagic
 
         public void RemoveTMagicHediffs()
         {
-            List<Hediff> allHediffs = this.Pawn.health.hediffSet.GetHediffs<Hediff>().ToList();
+            List<Hediff> allHediffs = this.Pawn.health.hediffSet.hediffs;
             for (int i = 0; i < allHediffs.Count(); i++)
             {
-                Hediff hediff = allHediffs[i];
-                if (hediff.def.defName.Contains("TM_"))
+                if (allHediffs[i].def.defName.StartsWith("TM_"))
                 {
-                    this.Pawn.health.RemoveHediff(hediff);
+                    this.Pawn.health.RemoveHediff(allHediffs[i]);
                 }
-
             }
         }
 
@@ -7030,13 +7028,13 @@ namespace TorannMagic
                 bool castSuccess = false;
                 if (this.Mana != null && this.Mana.CurLevelPercentage >= settingsRef.autocastMinThreshold)
                 {
-                    foreach (MagicPower mp in this.MagicData.MagicPowersCustom)
+                    foreach (MagicPower mp in this.MagicData.AllMagicPowersWithSkills)
                     {
                         if (mp.learned && mp.autocasting != null && mp.autocasting.magicUser && mp.autocasting.AIUsable)
                         {                            
                             //try
-                            //{ 
-                            TMAbilityDef tmad = mp.TMabilityDefs[mp.level] as TMAbilityDef; // issues with index?                            
+                            //{                             
+                            TMAbilityDef tmad = mp.TMabilityDefs[mp.level] as TMAbilityDef; // issues with index?
                             bool canUseWithEquippedWeapon = true;
                             bool canUseIfViolentAbility = this.Pawn.story.DisabledWorkTagsBackstoryAndTraits.HasFlag(WorkTags.Violent) ? !tmad.MainVerb.isViolent : true;
                             if (!TM_Calc.HasResourcesForAbility(this.Pawn, tmad))
@@ -8584,7 +8582,7 @@ namespace TorannMagic
                 _maxMPUpkeep += TorannMagicDefOf.TM_Recall.upkeepEnergyCost * (1 - (TorannMagicDefOf.TM_Recall.upkeepEfficiencyPercent * this.MagicData.MagicPowerSkill_Recall.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Recall_eff").level));
                 _mpRegenRateUpkeep += TorannMagicDefOf.TM_Recall.upkeepRegenCost * (1 - (TorannMagicDefOf.TM_Recall.upkeepEfficiencyPercent * this.MagicData.MagicPowerSkill_Recall.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Recall_eff").level));
             }
-            using (IEnumerator<Hediff> enumerator = this.Pawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
+            using (IEnumerator<Hediff> enumerator = this.Pawn.health.hediffSet.hediffs.GetEnumerator())
             {
                 while (enumerator.MoveNext())
                 {
@@ -10395,7 +10393,7 @@ namespace TorannMagic
                         {
                             TM_Action.PromoteWanderer(p);
                         }),
-                        order = 51,
+                        Order = 51,
                         defaultLabel = TM_TextPool.TM_PromoteWanderer,
                         defaultDesc = TM_TextPool.TM_PromoteWandererDesc,
                         icon = ContentFinder<Texture2D>.Get("UI/wanderer", true),
@@ -10421,7 +10419,7 @@ namespace TorannMagic
                         },
                         defaultLabel = label,
                         defaultDesc = desc,
-                        order = -89,
+                        Order = -89,
                         icon = ContentFinder<Texture2D>.Get("UI/" + toggle, true)
                     };
                     gizmoCommands.Add(key, item);
@@ -10444,7 +10442,7 @@ namespace TorannMagic
                         },
                         defaultLabel = label_repair,
                         defaultDesc = desc_repair,
-                        order = -88,
+                        Order = -88,
                         icon = ContentFinder<Texture2D>.Get("UI/" + toggle_repair, true)
                     };
                     gizmoCommands.Add(key, item_repair);
@@ -10467,7 +10465,7 @@ namespace TorannMagic
                         },
                         defaultLabel = label,
                         defaultDesc = desc,
-                        order = -88,
+                        Order = -88,
                         icon = ContentFinder<Texture2D>.Get("UI/" + toggle, true)
                     };
                     gizmoCommands.Add(key, item);

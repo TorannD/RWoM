@@ -49,7 +49,7 @@ namespace TorannMagic
             }
         }
 
-        protected override void Impact(Thing hitThing)
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {           
             if (!this.initialized && !hitThing.DestroyedOrNull())
             {
@@ -223,7 +223,7 @@ namespace TorannMagic
                 ThingDef fog = TorannMagicDefOf.Fog_Shadows;
                 fog.gas.expireSeconds.min = 2;
                 fog.gas.expireSeconds.max = 3;
-                GenExplosion.DoExplosion(caster.Position, caster.Map, radius, TMDamageDefOf.DamageDefOf.TM_Toxin, caster, 0, 0, TMDamageDefOf.DamageDefOf.TM_Toxin.soundExplosion, null, null, null, fog, 1f, 1, false, null, 0f, 0, 0.0f, false);
+                GenExplosion.DoExplosion(caster.Position, caster.Map, radius, TMDamageDefOf.DamageDefOf.TM_Toxin, caster, 0, 0, TMDamageDefOf.DamageDefOf.TM_Toxin.soundExplosion, null, null, null, fog, 1f, 1, null, false, null, 0f, 0, 0.0f, false);
 
                 for (int i = 0; i < 6; i++)
                 {

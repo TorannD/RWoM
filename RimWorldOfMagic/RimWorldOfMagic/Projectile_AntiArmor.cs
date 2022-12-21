@@ -27,7 +27,7 @@ namespace TorannMagic
             XProb(target, pawn);
         }
 
-        protected override void Impact(Thing hitThing)
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             Map map = base.Map;
             base.Impact(hitThing);
@@ -77,8 +77,8 @@ namespace TorannMagic
                         FleckMaker.ThrowMicroSparks(victim.Position.ToVector3(), map);
                         for (int i = 0; i < 1 + verVal; i++)
                         {
-                            GenExplosion.DoExplosion(newPos, map, Rand.Range((.1f) * (1 + verVal), (.3f) * (1 + verVal)), DamageDefOf.Bomb, this.launcher, (this.def.projectile.GetDamageAmount(1, null) / 4) * (1 + verVal), .4f, SoundDefOf.MetalHitImportant, def, this.equipmentDef, null, null, 0f, 1, false, null, 0f, 1, 0f, true);
-                            GenExplosion.DoExplosion(newPos, map, Rand.Range((.2f) * (1 + verVal), (.4f) * (1 + verVal)), DamageDefOf.Stun, this.launcher, (this.def.projectile.GetDamageAmount(1, null) / 2) * (1 + verVal), .4f, SoundDefOf.MetalHitImportant, def, this.equipmentDef, null, null, 0f, 1, false, null, 0f, 1, 0f, true);
+                            GenExplosion.DoExplosion(newPos, map, Rand.Range((.1f) * (1 + verVal), (.3f) * (1 + verVal)), DamageDefOf.Bomb, this.launcher, (this.def.projectile.GetDamageAmount(1, null) / 4) * (1 + verVal), .4f, SoundDefOf.MetalHitImportant, def, this.equipmentDef, null, null, 0f, 1, null, false, null, 0f, 1, 0f, true);
+                            GenExplosion.DoExplosion(newPos, map, Rand.Range((.2f) * (1 + verVal), (.4f) * (1 + verVal)), DamageDefOf.Stun, this.launcher, (this.def.projectile.GetDamageAmount(1, null) / 2) * (1 + verVal), .4f, SoundDefOf.MetalHitImportant, def, this.equipmentDef, null, null, 0f, 1, null, false, null, 0f, 1, 0f, true);
                             newPos = GetNewPos(newPos, pawn.Position.x <= victim.Position.x, pawn.Position.z <= victim.Position.z, false, 0, 0, xProb, 1 - xProb);
                             FleckMaker.ThrowMicroSparks(victim.Position.ToVector3(), base.Map);
                             FleckMaker.ThrowDustPuff(newPos, map, Rand.Range(1.2f, 2.4f));

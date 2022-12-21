@@ -23,18 +23,6 @@ namespace TorannMagic
             pwrVal = TM_Calc.GetSkillPowerLevel(caster, this.Ability.Def as TMAbilityDef);
             verVal = TM_Calc.GetSkillVersatilityLevel(caster, this.Ability.Def as TMAbilityDef);
 
-            //MagicPowerSkill pwr = comp.MagicData.MagicPowerSkill_CureDisease.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_CureDisease_pwr");
-            //MagicPowerSkill ver = comp.MagicData.MagicPowerSkill_CureDisease.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_CureDisease_ver");
-            //verVal = ver.level;
-            //pwrVal = pwr.level;
-            //this.arcaneDmg = caster.GetCompAbilityUserMagic().arcaneDmg;
-            //if (caster.story.traits.HasTrait(TorannMagicDefOf.Faceless))
-            //{
-            //    MightPowerSkill mpwr = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-            //    MightPowerSkill mver = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
-            //    pwrVal = mpwr.level;
-            //    verVal = mver.level;
-            //}
             bool flag = pawn != null;
             if (flag)
             {
@@ -66,7 +54,8 @@ namespace TorannMagic
                 if(sevAdjustment >= .25f) 
                 {
                     bool success = false;
-                    using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
+
+                    using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.hediffs.GetEnumerator())
                     {
                         while (enumerator.MoveNext())
                         {

@@ -5,6 +5,7 @@ using RimWorld;
 using AbilityUser;
 using Verse;
 using UnityEngine;
+using TorannMagic.Utils;
 
 namespace TorannMagic
 {
@@ -50,7 +51,7 @@ namespace TorannMagic
             {
                 pwrVal = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_AdvancedHeal.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_AdvancedHeal_pwr").level;
                 verVal = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_AdvancedHeal.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_AdvancedHeal_ver").level;
-            }            
+            }
             //else if (caster.story.traits.HasTrait(TorannMagicDefOf.Faceless))
             //{
             //    MightPowerSkill mpwr = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
@@ -66,61 +67,29 @@ namespace TorannMagic
             //    verVal = (tmpVerVal > verVal) ? tmpVerVal : verVal;
             //}
 
-            Pawn pawn = (Pawn)this.currentTarget;
-            bool flag = pawn != null && !pawn.Dead && !TM_Calc.IsUndead(pawn);
-            bool flagUndead = pawn != null && !pawn.Dead && TM_Calc.IsUndead(pawn);
-            if (flag)
+            Pawn pawn = (Pawn)currentTarget;
+            if (pawn == null || pawn.Dead) return true;
+
+            if (!TM_Calc.IsUndead(pawn))
             {
-                int num = 3 + verVal;
-                using (IEnumerator<BodyPartRecord> enumerator = pawn.health.hediffSet.GetInjuredParts().GetEnumerator())
+                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+                int injuriesPerBodyPart = !CasterPawn.IsColonist && settingsRef.AIHardMode ? 5 : 1 + verVal;
+
+                IEnumerable<Hediff_Injury> injuries = pawn.health.hediffSet.hediffs
+                    .OfType<Hediff_Injury>()
+                    .Where(injury => injury.CanHealNaturally())
+                    .DistinctBy(injury => injury.Part, injuriesPerBodyPart)
+                    .Take(3 + verVal);
+
+                float healAmount = CasterPawn.IsColonist ? (8.0f + pwrVal * 2f) * comp.arcaneDmg : 20.0f + pwrVal * 3f;
+                foreach (Hediff_Injury injury in injuries)
                 {
-                    while (enumerator.MoveNext())
-                    {
-                        BodyPartRecord rec = enumerator.Current;
-                        bool flag2 = num > 0;
-                        
-                        if (flag2)
-                        {
-                            int num2 = 1 + verVal;
-                            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                            if (!this.CasterPawn.IsColonist && settingsRef.AIHardMode)
-                            {
-                                num2 = 5;
-                            }
-                            IEnumerable<Hediff_Injury> arg_BB_0 = pawn.health.hediffSet.GetHediffs<Hediff_Injury>();
-                            Func<Hediff_Injury, bool> arg_BB_1;
-
-                            arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
-
-                            foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1))
-                            {
-                                bool flag4 = num2 > 0;
-                                if (flag4)
-                                {
-                                    bool flag5 = current.CanHealNaturally() && !current.IsPermanent();
-                                    if (flag5)
-                                    {
-                                        //current.Heal((float)((int)current.Severity + 1));
-                                        if (!this.CasterPawn.IsColonist)
-                                        {
-                                            current.Heal(20.0f + (float)pwrVal * 3f); // power affects how much to heal                                            
-                                        }
-                                        else
-                                        {
-                                            current.Heal((8.0f + (float)pwrVal * 2f)*comp.arcaneDmg); // power affects how much to heal
-                                        }
-                                        TM_MoteMaker.ThrowRegenMote(pawn.Position.ToVector3Shifted(), pawn.Map, .6f);
-                                        TM_MoteMaker.ThrowRegenMote(pawn.Position.ToVector3Shifted(), pawn.Map, .4f);
-                                        num--;
-                                        num2--;
-                                    }
-                                }
-                            }
-                        }
-                    }
+                    injury.Heal(healAmount);
+                    TM_MoteMaker.ThrowRegenMote(pawn.Position.ToVector3Shifted(), pawn.Map, .6f);
+                    TM_MoteMaker.ThrowRegenMote(pawn.Position.ToVector3Shifted(), pawn.Map, .4f);
                 }
             }
-            if(flagUndead)
+            else
             {
                 for(int i = 0; i < 2+verVal; i++)
                 {

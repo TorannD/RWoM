@@ -122,7 +122,7 @@ namespace TorannMagic.TMDefs
             return true;           
         }
 
-        private string targetType = "";
+        public string targetType = "";
         public Type GetTargetType
         {
             get

@@ -23,41 +23,27 @@ namespace TorannMagic.ModCheck
                     {
                         traitIsAllowed = false;
                     }
-                    //AlienTraitEntry ate = new AlienTraitEntry();
-                    //ate.defName = (from def in DefDatabase<TraitDef>.AllDefs
-                    //              where (def.defName == traitString)
-                    //              select def).FirstOrDefault();
-                    ////Log.Message("alien race. checking if " + traitString + " is allowed for backstory...");
-                    //if (alienDef.alienRace.generalSettings != null && alienDef.alienRace.generalSettings. != null && alienDef.alienRace.generalSettings.disallowedTraits.)
-                    //{
-                    //    traitIsAllowed = false;
-                    //}
+
                     if (pawn.story != null && pawn.story.AllBackstories != null)
                     {
-                        foreach (Backstory bs in pawn.story.AllBackstories)
+                        foreach (RimWorld.BackstoryDef bs in pawn.story.AllBackstories)
                         {
-                            IEnumerable<BackstoryDef> enumerable = from def in DefDatabase<BackstoryDef>.AllDefs
-                                                                   where (def.backstory == bs)
-                                                                   select def;
-                            foreach (BackstoryDef current in enumerable)
+                            foreach(BackstoryTrait bt in bs.disallowedTraits)
                             {
-                                //Log.Message(current.LabelCap + " has disallowed traits: " + current.disallowedTraits.Count);
-                                for (int i = 0; i < current.disallowedTraits.Count; i++)
+                                if(bt.def == td)
                                 {
-                                    //Log.Message("" + current.disallowedTraits[i].defName);
-                                    if (current.disallowedTraits[i].defName == td)
-                                    {
-                                        //Log.Message("trait is disallowed");
-                                        traitIsAllowed = false;
-                                    }
+                                    traitIsAllowed = false;
+                                    break;
                                 }
+                            }
+                            if(!traitIsAllowed)
+                            {
+                                break;
                             }
                         }
                     }
                 }
             }
-
-            //Log.Message("trait " + traitString + " is allowed: " + traitIsAllowed);
             return traitIsAllowed;
         }
     }

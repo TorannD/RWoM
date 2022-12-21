@@ -76,7 +76,7 @@ namespace TorannMagic.Golems
                     pawnMasterName = "None";
                 }
                 int num = 2;
-                float scrollHeight = ActiveUpgradeCount > 9 ? 380 + ActiveUpgradeCount * 18 : 550;
+                float scrollHeight = ActiveUpgradeCount > 3 ? 470 + ActiveUpgradeCount * 20 : 550;
                 Rect canvas = new Rect(17f, 17f, ITab_GolemWorkstation.WinSize.x, ITab_GolemWorkstation.WinSize.y);
                 Rect rect = new Rect(canvas.x, canvas.y, ITab_GolemWorkstation.WinSize.x -34f, ITab_GolemWorkstation.WinSize.y - 34f);
                 Rect sRect = new Rect(rect.x, rect.y, rect.width-34, scrollHeight);
@@ -151,7 +151,11 @@ namespace TorannMagic.Golems
                         Find.WindowStack.Add(newWindow);
                     }
                     num += 2;
-
+                    Rect rectAllowedAreas = GetRowRect(rect2, num);
+                    rectAllowedAreas.width = rect2.width / 2.2f;
+                    AreaAllowedGUI.DoAllowedAreaSelectors(rectAllowedAreas, golem_building.GolemPawn);
+                    TooltipHandler.TipRegion(rectAllowedAreas, "TM_GolemAssignArea".Translate());
+                    num += 2;
                     Rect rectFollowMaster = GetRowRect(rect2, num);
                     rectFollowMaster.width = rect2.width / 2.2f;
                     Widgets.CheckboxLabeled(rectFollowMaster, "TM_GolemFollowsMaster".Translate(), ref golem_building.GolemComp.followsMaster, false);

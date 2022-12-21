@@ -117,7 +117,7 @@ namespace TorannMagic
             if (!this.strikeLoc.Fogged(this.map))
             {
                 SoundDef exp = TorannMagicDefOf.TM_FireBombSD;
-                GenExplosion.DoExplosion(this.strikeLoc, this.map, (Rand.Range(.8f, 1.2f) * this.averageRadius), this.damageType, instigator, this.damageAmount, -1f, exp, null, null, null, null, 0f, 1, false, null, 0f, 1, 0f, false);
+                GenExplosion.DoExplosion(this.strikeLoc, this.map, (Rand.Range(.8f, 1.2f) * this.averageRadius), this.damageType, instigator, this.damageAmount, -1f, exp, null, null, null, null, 0f, 1, null, false, null, 0f, 1, 0f, false);
                 Vector3 loc = this.strikeLoc.ToVector3Shifted();
                 for (int i = 0; i < 4; i++)
                 {

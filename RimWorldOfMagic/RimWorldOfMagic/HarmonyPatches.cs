@@ -45,8 +45,6 @@ namespace TorannMagic
                  new HarmonyMethod(patchType, nameof(DiseaseHuman_Candidates_Patch)), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(Pawn), "GetGizmos"), null,
                  new HarmonyMethod(patchType, nameof(Pawn_Gizmo_TogglePatch)), null);
-            //harmonyInstance.Patch(AccessTools.Method(typeof(Pawn), "GetGizmos"), null,
-            //     new HarmonyMethod(patchType, nameof(Pawn_Gizmo_ActionPatch)), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(CompPowerPlant), "CompTick"), null,
                  new HarmonyMethod(patchType, nameof(PowerCompTick_Overdrive_Postfix)), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(Building_TurretGun), "Tick"), null,
@@ -55,8 +53,8 @@ namespace TorannMagic
                  null, null);
             harmonyInstance.Patch(AccessTools.Method(typeof(AutoUndrafter), "ShouldAutoUndraft"), new HarmonyMethod(patchType, nameof(AutoUndrafter_Undead_Prefix)),
                  null, null);
-            harmonyInstance.Patch(AccessTools.Method(typeof(PawnUtility), "IsTravelingInTransportPodWorldObject"),
-                 new HarmonyMethod(patchType, nameof(IsTravelingInTeleportPod_Prefix)), null);
+            //harmonyInstance.Patch(AccessTools.Method(typeof(PawnUtility), "IsTravelingInTransportPodWorldObject"), null,
+            //     new HarmonyMethod(patchType, nameof(IsTravelingInTeleportPod_Postfix)));
             harmonyInstance.Patch(AccessTools.Method(typeof(FloatMenuMakerMap), "AddHumanlikeOrders"), null,
                  new HarmonyMethod(patchType, nameof(AddHumanLikeOrders_RestrictEquipmentPatch)), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(CompAbilityItem), "PostDrawExtraSelectionOverlays"), new HarmonyMethod(patchType, nameof(CompAbilityItem_Overlay_Prefix)),
@@ -69,26 +67,23 @@ namespace TorannMagic
                  new HarmonyMethod(patchType, nameof(PawnEquipment_Drop_Postfix)), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(Pawn_EquipmentTracker), "AddEquipment"), null,
                  new HarmonyMethod(patchType, nameof(PawnEquipment_Add_Postfix)), null);
-            //harmonyInstance.Patch(AccessTools.Method(typeof(TraitDef), "ConflictsWith", new Type[]
-            //    {
-            //        typeof(TraitDef)
-            //    }), null, new HarmonyMethod(patchType, nameof(TraitConflicts_TM_Collection_Postfix)), null);
-            //harmonyInstance.Patch(AccessTools.Method(typeof(Pawn_ApparelTracker), "Notify_ApparelAdded"), null, new HarmonyMethod(typeof(TorannMagicMod), "Notify_ApparelAdded_PostFix"));
-            //harmonyInstance.Patch(AccessTools.Method(typeof(Pawn_ApparelTracker), "Notify_ApparelRemoved"), null, new HarmonyMethod(typeof(TorannMagicMod), "Notify_ApparelRemoved_PostFix"));
 
-            //harmonyInstance.Patch(AccessTools.Method(typeof(Pawn), "get_IsColonist", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_IsColonist_Polymorphed", null), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(Pawn), "get_IsColonist", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_IsColonist_Polymorphed"), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(Caravan), "get_NightResting", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_NightResting_Undead", null), null);
-            //harmonyInstance.Patch(AccessTools.Method(typeof(Pawn_StanceTracker), "get_Staggered", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_Staggered", null), null);
-            harmonyInstance.Patch(AccessTools.Method(typeof(Pawn_StanceTracker), "get_Staggered", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_Staggered", null));
+            harmonyInstance.Patch(AccessTools.Method(typeof(StaggerHandler), "get_Staggered", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_Staggered", null));
             harmonyInstance.Patch(AccessTools.Method(typeof(Verb_LaunchProjectile), "get_Projectile", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_Projectile_ES", null), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(WindManager), "get_WindSpeed", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_WindSpeed", null), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(MentalBreaker), "get_CanDoRandomMentalBreaks", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_CanDoRandomMentalBreaks", null), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(Pawn), "get_IsFreeNonSlaveColonist", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_IsFreeNonSlaveColonist_Golem", null));
-            //harmonyInstance.Patch(AccessTools.Method(typeof(RaceProperties), "get_Humanlike", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_Humanlike_Golem", null), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(MainTabWindow_Animals), "get_Pawns", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_GolemsAsAnimals", null), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(RecipeDef), "get_AvailableNow", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_GolemsRecipeAvailable", null), null);
-            
+            harmonyInstance.Patch(AccessTools.Method(typeof(Pawn), "get_ShouldAvoidFences", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_GolemShouldAvoidFences"), null, null);
+            //harmonyInstance.Patch(AccessTools.Method(typeof(Precept_Relic), "get_RelicInPlayerPossession", null, null),null, new HarmonyMethod(typeof(TorannMagicMod), "Get_DelayRelicLost"), null);
+            //harmonyInstance.Patch(AccessTools.Method(typeof(Pawn), "get_InAggroMentalState", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_UndeadAggroMentalState"), null, null);
+            //harmonyInstance.Patch(AccessTools.Method(typeof(Pawn), "get_InMentalState", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_UndeadMentalState"), null, null);
+            //harmonyInstance.Patch(AccessTools.Method(typeof(Pawn_GuiltTracker), "get_IsGuilty", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_UndeadIsGuilty"), null, null);
+            //harmonyInstance.Patch(AccessTools.Method(typeof(RestUtility), "get_IsCharging", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_UndeadIsCharging"), null, null);
+
             harmonyInstance.Patch(AccessTools.Method(typeof(GenDraw), "DrawRadiusRing", new Type[]
                 {
                     typeof(IntVec3),
@@ -101,9 +96,10 @@ namespace TorannMagic
                     typeof(Pawn),
                     typeof(IntVec3)
                 }, null), new HarmonyMethod(typeof(TorannMagicMod), "Pawn_PathFollower_Pathfinder_Prefix", null), null);
-            harmonyInstance.Patch(AccessTools.Method(typeof(Pawn_StanceTracker), "StaggerFor", new Type[]
+            harmonyInstance.Patch(AccessTools.Method(typeof(StaggerHandler), "StaggerFor", new Type[]
                 {
-                    typeof(int)
+                    typeof(int),
+                    typeof(float)
                 }, null), new HarmonyMethod(typeof(TorannMagicMod), "StaggerFor_Patch", null), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(MemoryThoughtHandler), "TryGainMemory", new Type[]
                 {
@@ -120,15 +116,6 @@ namespace TorannMagic
                     typeof(RotDrawMode),
                     typeof(PawnRenderFlags)
                 }, null), new HarmonyMethod(typeof(TorannMagicMod), "PawnRenderer_UndeadInternal_Prefix", null), null);
-            //harmonyInstance.Patch(AccessTools.Method(typeof(PawnRenderer), "DrawPawnBody", new Type[]
-            //    {
-            //        typeof(Vector3),
-            //        typeof(float),
-            //        typeof(Rot4),
-            //        typeof(RotDrawMode),
-            //        typeof(PawnRenderFlags),
-            //        typeof(Mesh)
-            //    }, null), new HarmonyMethod(typeof(TorannMagicMod), "PawnRenderer_Undead_Prefix", null), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(PawnRenderer), "RenderPawnAt", new Type[]
                 {
                     typeof(Vector3),
@@ -157,18 +144,6 @@ namespace TorannMagic
                     typeof(DamageInfo?),
                     typeof(PawnDiedOrDownedThoughtsKind)
                 }, null), new HarmonyMethod(typeof(TorannMagicMod), "TryGiveThoughts_PrefixPatch", null), null, null);
-            //harmonyInstance.Patch(AccessTools.Method(typeof(DaysWorthOfFoodCalculator), "ApproxDaysWorthOfFood", new Type[]
-            //    {
-            //        typeof(List<Pawn>),
-            //        typeof(List<ThingDefCount>),
-            //        typeof(int),
-            //        typeof(IgnorePawnsInventoryMode),
-            //        typeof(Faction),
-            //        typeof(WorldPath),
-            //        typeof(float),
-            //        typeof(int),
-            //        typeof(bool)
-            //    }, null), null, new HarmonyMethod(typeof(TorannMagicMod), "DaysWorthOfFoodCalc_Undead_Postfix", null), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(Targeter), "TargeterOnGUI", new Type[]
                 {
                 }, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Targeter_Casting_Postfix", null), null);
@@ -206,24 +181,17 @@ namespace TorannMagic
                     typeof(LocalTargetInfo),
                     typeof(bool),
                     typeof(bool),
+                    typeof(bool),
                     typeof(bool)
                 }, null), null, new HarmonyMethod(typeof(TorannMagicMod), "TryStartCastOn_Prefix", null), null);
-            //harmonyInstance.Patch(AccessTools.Method(typeof(GenGrid), "InBounds", new Type[]
-            //    {
-            //        typeof(IntVec3),
-            //        typeof(Map)
-            //    }, null), new HarmonyMethod(typeof(TorannMagicMod), "IntVec3Inbounds_NullCheck_Prefix", null), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(VerbProperties), "AdjustedCooldown", new Type[]
                 {
                     typeof(Tool),
                     typeof(Pawn),
                     typeof(Thing)
                 }, null), null, new HarmonyMethod(typeof(TorannMagicMod), "GolemVerb_AdjustedCooldown_Postfix", null), null);
-            //harmonyInstance.Patch(AccessTools.Method(typeof(GenGrid), "InBounds", new Type[]
-            //    {
-            //        typeof(IntVec3),
-            //        typeof(Map)
-            //    }, null), new HarmonyMethod(typeof(TorannMagicMod), "IntVec3Inbounds_NullCheck_Prefix", null), null);
+            ///
+            /// //-----
             ////harmonyInstance.Patch(AccessTools.Method(typeof(AbilityUser.PawnAbility), "GetJob"),
             ////    new HarmonyMethod(typeof(TorannMagicMod), "PawnAbility_GetJob_Prefix"));
             ////harmonyInstance.Patch(AccessTools.Method(typeof(QuestNode_RaceProperty), "Matches", new Type[]
@@ -249,34 +217,6 @@ namespace TorannMagic
             ////        typeof(int)
             ////    }, null), null, new HarmonyMethod(typeof(TorannMagicMod), "EstimatedTicksToArrive_Wayfarer_Postfix", null), null);
 
-            ////#region PrisonLabor
-            ////{
-            ////    try
-            ////    {
-            ////        ((Action)(() =>
-            ////        {
-            ////            if (ModCheck.Validate.PrisonLaborOutdated.IsInitialized())
-            ////            {
-            ////                harmonyInstance.Patch(AccessTools.Method(typeof(PrisonLabor.JobDriver_Mine_Tweak), "ResetTicksToPickHit"), null, new HarmonyMethod(typeof(TorannMagicMod), "TM_PrisonLabor_JobDriver_Mine_Tweak"));
-            ////            }
-            ////        }))();
-            ////    }
-            ////    catch (TypeLoadException) { }
-
-            ////    try
-            ////    {
-            ////        ((Action)(() =>
-            ////        {
-            ////            if (ModCheck.Validate.PrisonLabor.IsInitialized())
-            ////            {
-            ////                harmonyInstance.Patch(AccessTools.Method(typeof(PrisonLabor.Tweaks.JobDriver_Mine_Tweak), "ResetTicksToPickHit"), null, new HarmonyMethod(typeof(TorannMagicMod), "TM_PrisonLabor_JobDriver_Mine_Tweak"));
-            ////            }
-            ////        }))();
-            ////    }
-            ////    catch (TypeLoadException) { }
-
-            ////}
-            ////#endregion PrisonLabor
 
             #region Children
             {
@@ -293,22 +233,6 @@ namespace TorannMagic
                 catch (TypeLoadException) { }
             }
             #endregion Children
-
-            ////#region Dual Wield
-            ////{
-            ////    try
-            ////    {
-            ////        ((Action)(() =>
-            ////        {
-            ////            if (ModCheck.Validate.DualWield.IsInitialized())
-            ////            {
-            ////                harmonyInstance.Patch(AccessTools.Method(typeof(DualWield.Harmony.Verb_TryStartCastOn), "Postfix"), new HarmonyMethod(typeof(TorannMagicMod), "TM_DualWield_NotForCasting"), null);
-            ////            }
-            ////        }))();
-            ////    }
-            ////    catch (TypeLoadException) { }
-            ////}
-            ////#endregion Dual Wield
 
         }
 
@@ -366,6 +290,108 @@ namespace TorannMagic
         //    }
         //    return true;
         //} 
+
+        //[HarmonyPatch(typeof(Precept_Relic), "Notify_ThingLost", null)]
+        //public class Relic_LostDebug
+        //{
+        //    private static void Postfix(Precept_Relic __instance)
+        //    {
+        //        Log.Warning("calling notify relic lost");
+        //    }
+        //}
+
+        //private static int lostCount = 300;
+        //private static bool lostFlag = false;
+        //public static void Get_DelayRelicLost(Precept_Relic __instance, ref bool __result)
+        //{
+        //    Log.Message("calling relic in player possession " + __result);
+        //    Thing thing = __instance.GeneratedRelic;
+        //    if(!__result)
+        //    {
+        //        if(thing.MapHeld == null && 
+        //            !ThingOwnerUtility.AnyParentIs<TM_Skyfaller>(thing) && 
+        //            !ThingOwnerUtility.AnyParentIs<WorldTransport.TM_TravelingTransportPods>(thing))
+        //        {
+        //            lostCount--;
+        //            Log.Message("ticks to lose relic " + lostCount);
+        //            if (lostCount <= 0)
+        //            {
+        //                lostFlag = false;
+        //            }
+        //        }
+        //        else
+        //        {
+        //            lostFlag = true;
+        //        }
+        //    }
+        //    else
+        //    {
+        //        lostCount = 300;
+        //        lostFlag = __result;
+        //    }
+        //    __result = lostFlag;
+        //}
+
+        public static bool Get_UndeadIsCharging(Pawn p, ref bool __result)
+        {
+            if(TM_Calc.IsUndeadNotVamp(p))
+            {
+                try
+                {
+                    if (p.needs.energy != null)
+                    {
+                        __result = p.needs.energy.currentCharger != null;
+                    }
+                    __result = false;
+                }
+                catch
+                {
+                    __result = false;
+                }
+                return false;
+            }
+            return true;
+        }
+
+        public static bool Get_UndeadIsGuilty(Pawn_GuiltTracker __instance, Pawn ___pawn, ref bool __result)
+        {
+            if (TM_Calc.IsUndeadNotVamp(___pawn))
+            {
+                __result = false;
+                return false;
+            }
+            return true;
+        }
+
+        public static bool Get_UndeadAggroMentalState(Pawn __instance, Pawn_MindState ___mindState, ref bool __result)
+        {
+            if (TM_Calc.IsUndeadNotVamp(__instance))
+            {
+                __result = false;
+                return false;
+            }
+            return true;
+        }
+
+        public static bool Get_UndeadMentalState(Pawn __instance, Pawn_MindState ___mindState, ref bool __result)
+        {
+            if (TM_Calc.IsUndeadNotVamp(__instance))
+            {
+                __result = false;
+                return false;
+            }
+            return true;
+        }
+
+        public static bool Get_GolemShouldAvoidFences(Pawn __instance, ref bool __result)
+        {
+            if(TM_Calc.IsGolem(__instance))
+            {
+                __result = false;
+                return false;
+            }
+            return true;
+        }
 
         [HarmonyPatch(typeof(SlaveRebellionUtility), "CanParticipateInSlaveRebellion", null)]
         public class Undead_NoSlaveRebellion_Patch
@@ -861,17 +887,18 @@ namespace TorannMagic
             }
         }
 
-        [HarmonyPatch(typeof(PawnGraphicSet), "ResolveAllGraphics", null)]
-        public class SkeletonSkull_Patch
-        {
-            private static void Postfix(ref PawnGraphicSet __instance)
-            {
-                if (__instance.pawn.RaceProps.Humanlike)
-                {
-                    __instance.skullGraphic = SkullDatabase.GetSkullFor(__instance.pawn.gender, __instance.pawn.story.crownType);
-                }
-            }
-        }
+        //[HarmonyPatch(typeof(PawnGraphicSet), "ResolveAllGraphics", null)]
+        //public class SkeletonSkull_Patch
+        //{
+        //    private static void Postfix(ref PawnGraphicSet __instance)
+        //    {
+        //        if (__instance.pawn.RaceProps.Humanlike)
+        //        {
+        //            __instance.pawn.story.TryGetRandomHeadFromSet(from x in DefDatabase<HeadTypeDef>.AllDefs
+        //            __instance.skullGraphic = SkullDatabase.GetSkullFor(__instance.pawn.gender, __instance.pawn.story.cr);
+        //        }
+        //    }
+        //}
 
         [HarmonyPatch(typeof(FloatMenuMakerMap), "CanTakeOrder", null)]
         public class GolemOrders_Patch
@@ -1458,26 +1485,23 @@ namespace TorannMagic
                             Pawn pawn = map.mapPawns.AllPawnsSpawned[i];
                             if (!pawn.Position.Roofed(map) && Rand.Chance(.3f))
                             {
-                                IEnumerable<Hediff_Injury> injuries = pawn.health.hediffSet.GetHediffs<Hediff_Injury>();
-                                if (injuries != null && injuries.Count() > 0)
+                                IEnumerable<Hediff_Injury> injuries = pawn.health.hediffSet.hediffs
+                                    .OfType<Hediff_Injury>()
+                                    .Where(injury => injury.CanHealNaturally());
+                                foreach(Hediff_Injury injury in injuries)
                                 {
-                                    Hediff_Injury injury = injuries.RandomElement();
-                                    if (injury.CanHealNaturally() && !injury.IsPermanent())
+                                    float healAmt = Rand.Range(.025f, .15f);
+                                    injury.Heal(healAmt);
+                                    Vector3 rndPos = pawn.DrawPos;
+                                    rndPos.x += Rand.Range(-.25f, .25f);
+                                    rndPos.z += Rand.Range(-.3f, .3f);
+                                    ThingDef mote = TorannMagicDefOf.Mote_BlueTwinkle;
+                                    if (Rand.Chance(.7f))
                                     {
-                                        float healAmt = Rand.Range(.025f, .15f);
-
-                                        injury.Heal(healAmt);
-                                        Vector3 rndPos = pawn.DrawPos;
-                                        rndPos.x += Rand.Range(-.25f, .25f);
-                                        rndPos.z += Rand.Range(-.3f, .3f);
-                                        ThingDef mote = TorannMagicDefOf.Mote_BlueTwinkle;
-                                        if (Rand.Chance(.7f))
-                                        {
-                                            mote = TorannMagicDefOf.Mote_GreenTwinkle;
-                                        }
-                                        TM_MoteMaker.ThrowGenericMote(mote, rndPos, map, healAmt * 3f, Rand.Range(.2f, .35f), Rand.Range(0, .25f), Rand.Range(.25f, .75f), Rand.Range(-250, 250), Rand.Range(.2f, .6f), Rand.Range(-15f, 15f), Rand.Range(0f, 360f));
+                                        mote = TorannMagicDefOf.Mote_GreenTwinkle;
                                     }
-                                }
+                                    TM_MoteMaker.ThrowGenericMote(mote, rndPos, map, healAmt * 3f, Rand.Range(.2f, .35f), Rand.Range(0, .25f), Rand.Range(.25f, .75f), Rand.Range(-250, 250), Rand.Range(.2f, .6f), Rand.Range(-15f, 15f), Rand.Range(0f, 360f));
+                                } 
                             }
                         }
                     }
@@ -1763,7 +1787,7 @@ namespace TorannMagic
         {
             public static void Postfix(Pawn p, ThingDef apparel, ref bool __result)
             {
-                if (p != null && p.story != null && !p.story.DisabledWorkTagsBackstoryAndTraits.HasFlag(WorkTags.Violent) && apparel == TorannMagicDefOf.TM_Artifact_BracersOfThePacifist)
+                if (p != null && p.story != null && !p.WorkTagIsDisabled(WorkTags.Violent) && apparel == TorannMagicDefOf.TM_Artifact_BracersOfThePacifist)
                 {
                     __result = false;
                 }
@@ -2426,7 +2450,7 @@ namespace TorannMagic
             typeof(Quaternion),
             typeof(Material),
             typeof(bool)
-        })]
+        }), HarmonyPriority(10)] //go last to ensure cloaks draw over everything else
         public class DrawMesh_Cloaks_Patch
         {
             public static bool Prefix(Mesh mesh, Vector3 loc, Quaternion quat, Material mat, bool drawNow)
@@ -2919,19 +2943,21 @@ namespace TorannMagic
         //    __result = 250f;
         //}
 
-        public static bool TryGiveThoughts_PrefixPatch(ref Pawn victim)
-        {
-            if (victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_UndeadHD, false) || victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_PossessionHD) || victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_PossessionHD_I) || victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_PossessionHD_II) || victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_PossessionHD_III))
+        public static bool TryGiveThoughts_PrefixPatch(ref Pawn victim, PawnDiedOrDownedThoughtsKind thoughtsKind)
+        {            
+            if (victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_UndeadHD, false) ||  victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_PossessionHD) || victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_PossessionHD_I) || victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_PossessionHD_II) || victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_PossessionHD_III))
             {
+                
                 return false;
             }
             return true;
         }
 
-        public static bool AppendThoughts_ForHumanlike_PrefixPatch(ref Pawn victim)
+        public static bool AppendThoughts_ForHumanlike_PrefixPatch(ref Pawn victim, PawnDiedOrDownedThoughtsKind thoughtsKind)
         {
-            if (victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_UndeadHD, false) || victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_PossessionHD) || victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_PossessionHD_I) || victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_PossessionHD_II) || victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_PossessionHD_III))
+            if (victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_UndeadHD, false) ||  victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_PossessionHD) || victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_PossessionHD_I) || victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_PossessionHD_II) || victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_PossessionHD_III))
             {
+                
                 return false;
             }
             return true;
@@ -3030,12 +3056,13 @@ namespace TorannMagic
             }
         }
 
-        public static void Get_Staggered(Pawn_StanceTracker __instance, ref bool __result)
+        public static void Get_Staggered(StaggerHandler __instance, ref bool __result)
         {
             if (!__result) return;
-            if (__instance.pawn.def == TorannMagicDefOf.TM_DemonR
-               || __instance.pawn.def == TorannMagicDefOf.TM_HollowGolem
-               || !__instance.pawn.health.hediffSet.hediffs.Any(hd =>
+            Pawn p = __instance.parent;
+            if (p.def == TorannMagicDefOf.TM_DemonR
+               || p.def == TorannMagicDefOf.TM_HollowGolem
+               || !p.health.hediffSet.hediffs.Any(hd =>
                    hd.def == TorannMagicDefOf.TM_BurningFuryHD
                    || hd.def == TorannMagicDefOf.TM_MoveOutHD
                    || hd.def == TorannMagicDefOf.TM_EnrageHD
@@ -3060,11 +3087,12 @@ namespace TorannMagic
             //return false;
         }
 
-        public static bool StaggerFor_Patch(Pawn_StanceTracker __instance, int ticks)
+        public static bool StaggerFor_Patch(StaggerHandler __instance, int ticks)
         {
-            return __instance.pawn.def != TorannMagicDefOf.TM_DemonR
-                && __instance.pawn.def != TorannMagicDefOf.TM_HollowGolem
-                && !__instance.pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_BurningFuryHD);
+            Pawn p = __instance.parent;
+            return p.def != TorannMagicDefOf.TM_DemonR
+                && p.def != TorannMagicDefOf.TM_HollowGolem
+                && !p.health.hediffSet.HasHediff(TorannMagicDefOf.TM_BurningFuryHD);
             //if (__instance.pawn.def == TorannMagicDefOf.TM_DemonR || __instance.pawn.def == TorannMagicDefOf.TM_HollowGolem)
             //{
             //    return false;
@@ -3320,7 +3348,7 @@ namespace TorannMagic
                                 //Make it the first thing you see
                                 pawn = __instance,
                                 iComp = itemComp,
-                                order = -101f
+                                Order = -101f
                             };
 
                             gizmoList.Add(energyGizmo);
@@ -3385,7 +3413,7 @@ namespace TorannMagic
                     {
                         if (gizmoList[i] is Command_PawnAbility)
                         {
-                            gizmoList[i].order = 500f;
+                            gizmoList[i].Order = 500f;
                             reorderGizmo.Add(gizmoList[i]);
                             gizmoList.Remove(gizmoList[i]);
                             i--;
@@ -3411,7 +3439,7 @@ namespace TorannMagic
                             p.drafter.Drafted = false;
                             TM_Action.RemovePossession(p, p.Position, false);
                         }),
-                        order = 49,
+                        Order = 49,
                         defaultLabel = TM_TextPool.TM_RemovePossess,
                         defaultDesc = TM_TextPool.TM_RemovePossessDesc,
                         icon = ContentFinder<Texture2D>.Get("UI/remove_spiritpossession", true),
@@ -3506,7 +3534,12 @@ namespace TorannMagic
             }
         }
 
-        [HarmonyPatch(typeof(Pawn), "MakeCorpse", null)]
+        [HarmonyPatch(typeof(Pawn), "MakeCorpse", new Type[]
+            {
+            typeof(Building_Grave),
+            typeof(bool),
+            typeof(float)
+            })]
         public static class DecomposeUndeadOnDeath
         {
             public static void Postfix(Pawn __instance, ref Corpse __result)
@@ -3584,7 +3617,7 @@ namespace TorannMagic
                                         }
                                     }
                                     float num = (!pawn.RaceProps.Animal) ? 0f : 0f;
-                                    bool flag7 = !__instance.forceIncap && dinfo.HasValue && dinfo.Value.Def.ExternalViolenceFor(pawn) && (pawn.Faction == null || !pawn.Faction.IsPlayer) && !pawn.IsPrisonerOfColony && pawn.RaceProps.IsFlesh && Rand.Value < num;
+                                    bool flag7 = !__instance.forceDowned && dinfo.HasValue && dinfo.Value.Def.ExternalViolenceFor(pawn) && (pawn.Faction == null || !pawn.Faction.IsPlayer) && !pawn.IsPrisonerOfColony && pawn.RaceProps.IsFlesh && Rand.Value < num;
                                     if (flag7)
                                     {
                                         pawn.Kill(dinfo, null);
@@ -3599,7 +3632,7 @@ namespace TorannMagic
                                         result = false;
                                         return result;
                                     }
-                                    __instance.forceIncap = false;
+                                    __instance.forceDowned = false;
                                     CheckForStateChange_Patch.MakeDowned.Invoke(__instance, new object[]
                                     {
                                     dinfo,
@@ -3872,62 +3905,30 @@ namespace TorannMagic
         public class PreApplyDamage_Patch
         {
             public static FieldInfo pawn = typeof(Pawn_HealthTracker).GetField("pawn", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.GetField);
-            public static bool Prefix(Pawn __instance, ref DamageInfo dinfo, out bool absorbed)
+            public static bool Prefix(Pawn_HealthTracker __instance, Pawn ___pawn, ref DamageInfo dinfo, out bool absorbed)
             {
-                Traverse traverse = Traverse.Create(__instance);
-                Pawn pawn = (Pawn)PreApplyDamage_Patch.pawn.GetValue(__instance);
-                if(dinfo.Def != null && pawn != null && __instance.def == TorannMagicDefOf.TM_SpiritTD)
+                Pawn pawn = ___pawn;
+                if (dinfo.Def != null && pawn != null)
                 {
-                    float amt = dinfo.Amount * .25f;
-                    Need nd = __instance.needs.TryGetNeed(TorannMagicDefOf.TM_SpiritND);
-                    if(nd != null)
+                    if (pawn.def == TorannMagicDefOf.TM_SpiritTD)
                     {
-                        nd.CurLevel -= amt;
-                    }
-                    absorbed = true;
-                    return false;
-                }
-                if (dinfo.Def != null && pawn != null && !pawn.Downed)
-                {
-                    if (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_HediffTimedInvulnerable))
-                    {
+                        float amt = dinfo.Amount * .25f;
+                        Need nd = pawn.needs.TryGetNeed(TorannMagicDefOf.TM_SpiritND);
+                        if (nd != null)
+                        {
+                            nd.CurLevel -= amt;
+                        }
                         absorbed = true;
                         return false;
                     }
-                    if (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_ArtifactBlockHD) && Rand.Chance(.4f))
+                    if (!pawn.Downed)
                     {
-                        Thing instigator = dinfo.Instigator;
-                        if (instigator != null)
+                        if (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_HediffTimedInvulnerable))
                         {
-                            if ((dinfo.Weapon != null && !dinfo.Def.isExplosive) || dinfo.WeaponBodyPartGroup != null)
-                            {
-                                Vector3 drawPos = pawn.DrawPos;
-                                float drawAngle = (instigator.DrawPos - drawPos).AngleFlat();
-                                drawPos.x += Mathf.Clamp(((instigator.DrawPos.x - drawPos.x) / 5f) + Rand.Range(-.1f, .1f), -.45f, .45f);
-                                drawPos.z += Mathf.Clamp(((instigator.DrawPos.z - drawPos.z) / 5f) + Rand.Range(-.1f, .1f), -.45f, .45f);
-                                TM_MoteMaker.ThrowSparkFlashMote(drawPos, pawn.Map, 1f);
-                                TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_BracerBlock_NoFlash, drawPos, pawn.Map, .45f, .23f, 0f, .07f, 0, 0, 0, drawAngle);
-                                SoundInfo info = SoundInfo.InMap(new TargetInfo(pawn.Position, pawn.Map, false), MaintenanceType.None);
-                                TorannMagicDefOf.TM_MetalImpact.PlayOneShot(info);
-                                dinfo.SetAmount(0);
-                                absorbed = true;
-                                return false;
-                            }
+                            absorbed = true;
+                            return false;
                         }
-                    }
-                    if(pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_FleshGolem_BracerGuardHD))
-                    {
-                        int count = 0;
-                        Hediff hd = null;
-                        foreach (Hediff h in pawn.health.hediffSet.hediffs)
-                        {
-                            if(h.def == TorannMagicDefOf.TM_FleshGolem_BracerGuardHD)
-                            {
-                                hd = h;
-                                count++;
-                            }
-                        }
-                        if(hd != null && Rand.Chance(hd.Severity * count))
+                        if (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_ArtifactBlockHD) && Rand.Chance(.4f))
                         {
                             Thing instigator = dinfo.Instigator;
                             if (instigator != null)
@@ -3948,215 +3949,41 @@ namespace TorannMagic
                                 }
                             }
                         }
-                    }
-                    if (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_ArtifactDeflectHD) && Rand.Chance(.3f))
-                    {
-                        Thing instigator = dinfo.Instigator;
-                        if (instigator != null)
+                        if (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_FleshGolem_BracerGuardHD))
                         {
-                            if ((dinfo.Weapon != null && !dinfo.Def.isExplosive) || dinfo.WeaponBodyPartGroup != null)
+                            int count = 0;
+                            Hediff hd = null;
+                            foreach (Hediff h in pawn.health.hediffSet.hediffs)
                             {
-                                Vector3 drawPos = pawn.DrawPos;
-                                float drawAngle = (instigator.DrawPos - drawPos).AngleFlat();
-                                drawPos.x += Mathf.Clamp(((instigator.DrawPos.x - drawPos.x) / 5f) + Rand.Range(-.1f, .1f), -.45f, .45f);
-                                drawPos.z += Mathf.Clamp(((instigator.DrawPos.z - drawPos.z) / 5f) + Rand.Range(-.1f, .1f), -.45f, .45f);
-                                TM_MoteMaker.ThrowSparkFlashMote(drawPos, pawn.Map, 1f);
-                                TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_BracerBlock, drawPos, pawn.Map, .45f, .23f, 0f, .07f, 0, 0, 0, drawAngle);
-                                SoundInfo info = SoundInfo.InMap(new TargetInfo(pawn.Position, pawn.Map, false), MaintenanceType.None);
-                                TM_Action.DoReversalRandomTarget(dinfo, pawn, 0, 8f);
-                                TorannMagicDefOf.TM_MetalImpact.PlayOneShot(info);
-                                dinfo.SetAmount(0);
-                                absorbed = true;
-                                return false;
-                            }
-                        }
-                    }
-                    if (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_HTLShieldHD, false))
-                    {
-                        HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_HTLShieldHD, -dinfo.Amount);
-                        TM_Action.DisplayShieldHit(pawn, dinfo);
-                        absorbed = true;
-                        return false;
-                    }
-                    if (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_MagicShieldHD, false))
-                    {
-                        HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_MagicShieldHD, -(dinfo.Amount * .004f));
-                        TM_Action.DisplayShieldHit(pawn, dinfo);
-                        absorbed = true;
-                        return false;
-                    }
-                    if ((pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_TechnoShieldHD) && dinfo.Amount <= 10) || (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_TechnoShieldHD_I) && dinfo.Amount <= 13) || (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_TechnoShieldHD_II) && dinfo.Amount <= 18) || (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_TechnoShieldHD_III) && dinfo.Amount <= 30))
-                    {
-                        Thing instigator = dinfo.Instigator;
-                        if (instigator != null && dinfo.Weapon != null && dinfo.Weapon.IsRangedWeapon)
-                        {
-                            Vector3 drawPos = pawn.DrawPos;
-                            drawPos.x += ((instigator.DrawPos.x - drawPos.x) / 20f) + Rand.Range(-.2f, .2f);
-                            drawPos.z += ((instigator.DrawPos.z - drawPos.z) / 20f) + Rand.Range(-.2f, .2f);
-                            TM_MoteMaker.ThrowSparkFlashMote(drawPos, pawn.Map, 2f);
-                            TM_Action.DoReversal(dinfo, pawn);
-                            TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_TechnoShield, pawn.DrawPos, pawn.Map, .9f, .1f, 0f, .05f, Rand.Range(-500, 500), 0, 0, Rand.Range(0, 360));
-                            HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_TechnoShieldHD, -dinfo.Amount);
-                            HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_TechnoShieldHD_I, -dinfo.Amount);
-                            HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_TechnoShieldHD_II, -dinfo.Amount);
-                            HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_TechnoShieldHD_III, -dinfo.Amount);
-                            dinfo.SetAmount(0);
-                            absorbed = true;
-                            return false;
-
-                        }
-                    }
-                    if (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_StoneskinHD, false))
-                    {
-                        HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_StoneskinHD, -1);
-                        for (int m = 0; m < 4; m++)
-                        {
-                            Vector3 vectorOffset = pawn.DrawPos;
-                            vectorOffset.x += (Rand.Range(-.3f, .3f));
-                            vectorOffset.z += Rand.Range(-.3f, .3f);
-                            TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_ThickDust, vectorOffset, pawn.Map, Rand.Range(.15f, .35f), Rand.Range(.1f, .15f), 0, Rand.Range(.1f, .2f), Rand.Range(-20, 20), Rand.Range(.3f, .5f), Rand.Range(0, 360), Rand.Range(0, 360));
-                        }
-                        absorbed = true;
-                        return false;
-                    }
-                    if (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_ProtectionBrandHD, false))
-                    {
-                        Hediff hd = pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_ProtectionBrandHD);
-                        if (hd != null)
-                        {
-                            HediffComp_BrandingProtection hd_bp = hd.TryGetComp<HediffComp_BrandingProtection>();
-                            if(hd_bp != null && hd_bp.canProtect)
-                            {
-                                hd_bp.TakeHit();
-                                for (int m = 0; m < 4; m++)
+                                if (h.def == TorannMagicDefOf.TM_FleshGolem_BracerGuardHD)
                                 {
-                                    Vector3 vectorOffset = pawn.DrawPos;
-                                    vectorOffset.x += (Rand.Range(-.3f, .3f));
-                                    vectorOffset.z += Rand.Range(-.3f, .3f);
-                                    TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_GlowingRuneA, vectorOffset, pawn.Map, Rand.Range(.1f, .25f), Rand.Range(.1f, .15f), 0, Rand.Range(.1f, .2f), Rand.Range(-10, 10), Rand.Range(.1f, .15f), Rand.Range(0, 360), Rand.Range(0, 360));
+                                    hd = h;
+                                    count++;
                                 }
-                                absorbed = true;
-                                return false;
                             }
-                        }                        
-                    }
-                    if (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_BloodShieldHD, false))
-                    {
-                        HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_BloodShieldHD, -dinfo.Amount);
-                        for (int m = 0; m < 4; m++)
-                        {
-                            Effecter BloodShieldEffect = TorannMagicDefOf.TM_BloodShieldEffecter.Spawn();
-                            BloodShieldEffect.Trigger(new TargetInfo(pawn.Position, pawn.Map, false), new TargetInfo(pawn.Position, pawn.Map, false));
-                            BloodShieldEffect.Cleanup();
-                        }
-                        absorbed = true;
-                        return false;
-                    }
-                    if (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_BlurHD, false) && !dinfo.Def.isExplosive)
-                    {
-                        float blurVal = .2f;
-                        if (pawn.GetCompAbilityUserMagic()?.MagicData.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Cantrips_ver").level >= 11)
-                        {
-                            blurVal = .3f;
-                        }
-                        if (Rand.Chance(blurVal))
-                        {
-                            Hediff blur = pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_BlurHD);
-                            blur.TryGetComp<HediffComp_Blur>().blurTick = Find.TickManager.TicksGame;
-                            absorbed = true;
-                            return false;
-                        }
-                    }
-                    if (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_PredictionHD, false) && !dinfo.Def.isExplosive)
-                    {
-                        Hediff prediction = pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_PredictionHD);
-                        if (Rand.Chance(prediction.Severity / 10f))
-                        {
-                            prediction.TryGetComp<HediffComp_Prediction>().blurTick = Find.TickManager.TicksGame;
-                            absorbed = true;
-                            return false;
-                        }
-                    }
-                    Hediff hateHediff = TM_Calc.GetHateHediff(pawn);
-                    if (hateHediff != null && dinfo.Amount > 0)
-                    { 
-                        int hatePwr = 0;
-                        int hateVer = 0;
-                        int hateEff = 0;
-
-                        CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
-                        if (comp != null && comp.IsMightUser)
-                        {
-                            hatePwr = comp.MightData.MightPowerSkill_Shroud.First((MightPowerSkill x) => x.label == "TM_Shroud_pwr").level;
-                            hateVer = comp.MightData.MightPowerSkill_Shroud.First((MightPowerSkill x) => x.label == "TM_Shroud_ver").level;
-                            hateEff = comp.MightData.MightPowerSkill_Shroud.First((MightPowerSkill x) => x.label == "TM_Shroud_eff").level;
-                        }
-
-                        //Hediff hediff = null;
-                        //for (int h = 0; h < pawn.health.hediffSet.hediffs.Count; h++)
-                        //{
-                        //    if (pawn.health.hediffSet.hediffs[h].def.defName.Contains("TM_HateHD"))
-                        //    {
-                        //        hediff = pawn.health.hediffSet.hediffs[h];
-                        //    }
-                        //}
-
-                        HealthUtility.AdjustSeverity(pawn, hateHediff.def, (dinfo.Amount * (1 + (.1f * hateEff))));
-                        if (hateHediff != null && hateHediff.Severity >= 20 && Rand.Chance(.1f * hateVer) && dinfo.Instigator != null && dinfo.Instigator is Pawn && dinfo.Instigator != pawn && (dinfo.Instigator.Position - pawn.Position).LengthHorizontal < 2)
-                        {
-                            TM_Action.DamageEntities(dinfo.Instigator, null, (dinfo.Amount * (1 + .2f * hatePwr)), TMDamageDefOf.DamageDefOf.TM_Spirit, pawn);
-                            TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_SpiritRetaliation, pawn.DrawPos, pawn.Map, Rand.Range(1f, 1.2f), Rand.Range(.1f, .15f), 0, Rand.Range(.1f, .2f), -600, 0, 0, Rand.Range(0, 360));
-                            HealthUtility.AdjustSeverity(pawn, hateHediff.def, -(dinfo.Amount * (.8f - (.1f * hateEff))));
-                        }
-
-                    }
-                    if (dinfo.Instigator is Pawn attacker)
-                    {
-                        CompAbilityUserMight comp = attacker.GetCompAbilityUserMight();
-
-                        if (!attacker.Destroyed && !attacker.Downed && !attacker.Dead && attacker != pawn && dinfo.Weapon != null && dinfo.Weapon.IsMeleeWeapon && comp != null &&  comp.MightData != null)
-                        {
-                            if ((attacker.story != null && attacker.story.traits != null && attacker.story.traits.HasTrait(TorannMagicDefOf.DeathKnight)) || TM_ClassUtility.ClassHasAbility(TorannMagicDefOf.TM_LifeSteal, null, comp))
+                            if (hd != null && Rand.Chance(hd.Severity * count))
                             {
-                                //Hediff hediff = null;
-                                //for (int h = 0; h < attacker.health.hediffSet.hediffs.Count; h++)
-                                //{
-                                //    if (attacker.health.hediffSet.hediffs[h].def.defName.Contains("TM_HateHD"))
-                                //    {
-                                //        hediff = attacker.health.hediffSet.hediffs[h];
-                                //    }
-                                //}
-                                //&& TM_Calc.HasHateHediff(attacker)
-                                int lifestealPwr = comp.MightData.MightPowerSkill_LifeSteal.First((MightPowerSkill x) => x.label == "TM_LifeSteal_pwr").level;
-                                int lifestealEff = comp.MightData.MightPowerSkill_LifeSteal.First((MightPowerSkill x) => x.label == "TM_LifeSteal_eff").level;
-                                int lifestealVer = comp.MightData.MightPowerSkill_LifeSteal.First((MightPowerSkill x) => x.label == "TM_LifeSteal_ver").level;
-
-                                TM_Action.DoAction_HealPawn(attacker, attacker, 1, dinfo.Amount * (TorannMagicDefOf.TM_LifeSteal.weaponDamageFactor + (.02f * lifestealPwr)));
-                                TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Siphon, attacker.DrawPos, attacker.Map, 1f, .1f, .15f, .5f, 600, 0, 0, Rand.Range(0, 360));
-                                TM_MoteMaker.ThrowSiphonMote(attacker.DrawPos, attacker.Map, 1f);
-
-                                if (hateHediff != null && lifestealEff > 0)
+                                Thing instigator = dinfo.Instigator;
+                                if (instigator != null)
                                 {
-                                    HealthUtility.AdjustSeverity(attacker, hateHediff.def, dinfo.Amount * (.25f + .05f * lifestealEff));
-                                    comp.Stamina.CurLevel += (dinfo.Amount * (float)(.1f * lifestealEff)) / 100;
-                                }
-                                if (lifestealVer > 0)
-                                {
-                                    Pawn ally = TM_Calc.FindNearbyInjuredPawnOther(attacker, 3, 0);
-                                    if (ally != null)
+                                    if ((dinfo.Weapon != null && !dinfo.Def.isExplosive) || dinfo.WeaponBodyPartGroup != null)
                                     {
-                                        TM_Action.DoAction_HealPawn(attacker, ally, 1, dinfo.Amount * ((TorannMagicDefOf.TM_LifeSteal.weaponDamageFactor - .05f) + (.01f * lifestealVer)));
-                                        TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Siphon, ally.DrawPos, ally.Map, 1f, .1f, .15f, .5f, 600, 0, 0, Rand.Range(0, 360));
+                                        Vector3 drawPos = pawn.DrawPos;
+                                        float drawAngle = (instigator.DrawPos - drawPos).AngleFlat();
+                                        drawPos.x += Mathf.Clamp(((instigator.DrawPos.x - drawPos.x) / 5f) + Rand.Range(-.1f, .1f), -.45f, .45f);
+                                        drawPos.z += Mathf.Clamp(((instigator.DrawPos.z - drawPos.z) / 5f) + Rand.Range(-.1f, .1f), -.45f, .45f);
+                                        TM_MoteMaker.ThrowSparkFlashMote(drawPos, pawn.Map, 1f);
+                                        TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_BracerBlock_NoFlash, drawPos, pawn.Map, .45f, .23f, 0f, .07f, 0, 0, 0, drawAngle);
+                                        SoundInfo info = SoundInfo.InMap(new TargetInfo(pawn.Position, pawn.Map, false), MaintenanceType.None);
+                                        TorannMagicDefOf.TM_MetalImpact.PlayOneShot(info);
+                                        dinfo.SetAmount(0);
+                                        absorbed = true;
+                                        return false;
                                     }
                                 }
                             }
                         }
-                    }
-                    CompAbilityUserMagic compMagic = pawn.GetCompAbilityUserMagic();
-                    if (compMagic != null && compMagic.SoL != null && compMagic.SoL.solAction == SoLAction.Hovering)
-                    {
-                        FlyingObject_SpiritOfLight sol = compMagic.SoL;
-                        if (sol.LightEnergy > (dinfo.Amount / 10f) && Rand.Chance(sol.LightEnergy / 100f))
+                        if (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_ArtifactDeflectHD) && Rand.Chance(.3f))
                         {
                             Thing instigator = dinfo.Instigator;
                             if (instigator != null)
@@ -4165,32 +3992,249 @@ namespace TorannMagic
                                 {
                                     Vector3 drawPos = pawn.DrawPos;
                                     float drawAngle = (instigator.DrawPos - drawPos).AngleFlat();
-                                    drawPos.x += Mathf.Clamp(((instigator.DrawPos.x - drawPos.x) / 20f) + Rand.Range(-.1f, .1f), -.75f, .75f);
-                                    drawPos.z += Mathf.Clamp(((instigator.DrawPos.z - drawPos.z) / 10f) + Rand.Range(-.1f, .1f), -1f, 1f);
-                                    FleckMaker.Static(drawPos, pawn.Map, TorannMagicDefOf.SparkFlash, 1f);
-                                    TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_LightShield_Glow, drawPos, pawn.Map, .65f, .27f, 0f, .13f, 0, 0, 0, drawAngle - 180);
+                                    drawPos.x += Mathf.Clamp(((instigator.DrawPos.x - drawPos.x) / 5f) + Rand.Range(-.1f, .1f), -.45f, .45f);
+                                    drawPos.z += Mathf.Clamp(((instigator.DrawPos.z - drawPos.z) / 5f) + Rand.Range(-.1f, .1f), -.45f, .45f);
+                                    TM_MoteMaker.ThrowSparkFlashMote(drawPos, pawn.Map, 1f);
+                                    TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_BracerBlock, drawPos, pawn.Map, .45f, .23f, 0f, .07f, 0, 0, 0, drawAngle);
                                     SoundInfo info = SoundInfo.InMap(new TargetInfo(pawn.Position, pawn.Map, false), MaintenanceType.None);
-                                    info.volumeFactor = .5f;
-                                    info.pitchFactor = 3f;
-                                    TM_Action.DoReversalRandomTarget(dinfo, pawn, 0, 40f);
+                                    TM_Action.DoReversalRandomTarget(dinfo, pawn, 0, 8f);
                                     TorannMagicDefOf.TM_MetalImpact.PlayOneShot(info);
-                                    sol.ActualLightCost(dinfo.Amount / 10f);
                                     dinfo.SetAmount(0);
                                     absorbed = true;
                                     return false;
                                 }
                             }
                         }
+                        if (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_HTLShieldHD, false))
+                        {
+                            HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_HTLShieldHD, -dinfo.Amount);
+                            TM_Action.DisplayShieldHit(pawn, dinfo);
+                            absorbed = true;
+                            return false;
+                        }
+                        if (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_MagicShieldHD, false))
+                        {
+                            HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_MagicShieldHD, -(dinfo.Amount * .004f));
+                            TM_Action.DisplayShieldHit(pawn, dinfo);
+                            absorbed = true;
+                            return false;
+                        }
+                        if ((pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_TechnoShieldHD) && dinfo.Amount <= 10) || (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_TechnoShieldHD_I) && dinfo.Amount <= 13) || (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_TechnoShieldHD_II) && dinfo.Amount <= 18) || (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_TechnoShieldHD_III) && dinfo.Amount <= 30))
+                        {
+                            Thing instigator = dinfo.Instigator;
+                            if (instigator != null && dinfo.Weapon != null && dinfo.Weapon.IsRangedWeapon)
+                            {
+                                Vector3 drawPos = pawn.DrawPos;
+                                drawPos.x += ((instigator.DrawPos.x - drawPos.x) / 20f) + Rand.Range(-.2f, .2f);
+                                drawPos.z += ((instigator.DrawPos.z - drawPos.z) / 20f) + Rand.Range(-.2f, .2f);
+                                TM_MoteMaker.ThrowSparkFlashMote(drawPos, pawn.Map, 2f);
+                                TM_Action.DoReversal(dinfo, pawn);
+                                TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_TechnoShield, pawn.DrawPos, pawn.Map, .9f, .1f, 0f, .05f, Rand.Range(-500, 500), 0, 0, Rand.Range(0, 360));
+                                HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_TechnoShieldHD, -dinfo.Amount);
+                                HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_TechnoShieldHD_I, -dinfo.Amount);
+                                HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_TechnoShieldHD_II, -dinfo.Amount);
+                                HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_TechnoShieldHD_III, -dinfo.Amount);
+                                dinfo.SetAmount(0);
+                                absorbed = true;
+                                return false;
+
+                            }
+                        }
+                        if (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_StoneskinHD, false))
+                        {
+                            HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_StoneskinHD, -1);
+                            for (int m = 0; m < 4; m++)
+                            {
+                                Vector3 vectorOffset = pawn.DrawPos;
+                                vectorOffset.x += (Rand.Range(-.3f, .3f));
+                                vectorOffset.z += Rand.Range(-.3f, .3f);
+                                TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_ThickDust, vectorOffset, pawn.Map, Rand.Range(.15f, .35f), Rand.Range(.1f, .15f), 0, Rand.Range(.1f, .2f), Rand.Range(-20, 20), Rand.Range(.3f, .5f), Rand.Range(0, 360), Rand.Range(0, 360));
+                            }
+                            absorbed = true;
+                            return false;
+                        }
+                        if (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_ProtectionBrandHD, false))
+                        {
+                            Hediff hd = pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_ProtectionBrandHD);
+                            if (hd != null)
+                            {
+                                HediffComp_BrandingProtection hd_bp = hd.TryGetComp<HediffComp_BrandingProtection>();
+                                if (hd_bp != null && hd_bp.canProtect)
+                                {
+                                    hd_bp.TakeHit();
+                                    for (int m = 0; m < 4; m++)
+                                    {
+                                        Vector3 vectorOffset = pawn.DrawPos;
+                                        vectorOffset.x += (Rand.Range(-.3f, .3f));
+                                        vectorOffset.z += Rand.Range(-.3f, .3f);
+                                        TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_GlowingRuneA, vectorOffset, pawn.Map, Rand.Range(.1f, .25f), Rand.Range(.1f, .15f), 0, Rand.Range(.1f, .2f), Rand.Range(-10, 10), Rand.Range(.1f, .15f), Rand.Range(0, 360), Rand.Range(0, 360));
+                                    }
+                                    absorbed = true;
+                                    return false;
+                                }
+                            }
+                        }
+                        if (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_BloodShieldHD, false))
+                        {
+                            HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_BloodShieldHD, -dinfo.Amount);
+                            for (int m = 0; m < 4; m++)
+                            {
+                                Effecter BloodShieldEffect = TorannMagicDefOf.TM_BloodShieldEffecter.Spawn();
+                                BloodShieldEffect.Trigger(new TargetInfo(pawn.Position, pawn.Map, false), new TargetInfo(pawn.Position, pawn.Map, false));
+                                BloodShieldEffect.Cleanup();
+                            }
+                            absorbed = true;
+                            return false;
+                        }
+                        if (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_BlurHD, false) && !dinfo.Def.isExplosive)
+                        {
+                            float blurVal = .2f;
+                            if (pawn.GetCompAbilityUserMagic()?.MagicData.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Cantrips_ver").level >= 11)
+                            {
+                                blurVal = .3f;
+                            }
+                            if (Rand.Chance(blurVal))
+                            {
+                                Hediff blur = pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_BlurHD);
+                                blur.TryGetComp<HediffComp_Blur>().blurTick = Find.TickManager.TicksGame;
+                                absorbed = true;
+                                return false;
+                            }
+                        }
+                        if (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_EvasionHD) && !dinfo.Def.isExplosive)
+                        {
+                            Hediff evasion = pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_EvasionHD);
+                            if (Rand.Chance(evasion.Severity))
+                            {
+                                absorbed = true;
+                                return false;
+                            }
+                        }
+                        if (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_PredictionHD, false) && !dinfo.Def.isExplosive)
+                        {
+                            Hediff prediction = pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_PredictionHD);
+                            if (Rand.Chance(prediction.Severity / 10f))
+                            {
+                                prediction.TryGetComp<HediffComp_Prediction>().blurTick = Find.TickManager.TicksGame;
+                                absorbed = true;
+                                return false;
+                            }
+                        }
+                        Hediff hateHediff = TM_Calc.GetHateHediff(pawn);
+                        if (hateHediff != null && dinfo.Amount > 0)
+                        {
+                            int hatePwr = 0;
+                            int hateVer = 0;
+                            int hateEff = 0;
+
+                            CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
+                            if (comp != null && comp.IsMightUser)
+                            {
+                                hatePwr = comp.MightData.MightPowerSkill_Shroud.First((MightPowerSkill x) => x.label == "TM_Shroud_pwr").level;
+                                hateVer = comp.MightData.MightPowerSkill_Shroud.First((MightPowerSkill x) => x.label == "TM_Shroud_ver").level;
+                                hateEff = comp.MightData.MightPowerSkill_Shroud.First((MightPowerSkill x) => x.label == "TM_Shroud_eff").level;
+                            }
+
+                            //Hediff hediff = null;
+                            //for (int h = 0; h < pawn.health.hediffSet.hediffs.Count; h++)
+                            //{
+                            //    if (pawn.health.hediffSet.hediffs[h].def.defName.Contains("TM_HateHD"))
+                            //    {
+                            //        hediff = pawn.health.hediffSet.hediffs[h];
+                            //    }
+                            //}
+
+                            HealthUtility.AdjustSeverity(pawn, hateHediff.def, (dinfo.Amount * (1 + (.1f * hateEff))));
+                            if (hateHediff != null && hateHediff.Severity >= 20 && Rand.Chance(.1f * hateVer) && dinfo.Instigator != null && dinfo.Instigator is Pawn && dinfo.Instigator != pawn && (dinfo.Instigator.Position - pawn.Position).LengthHorizontal < 2)
+                            {
+                                TM_Action.DamageEntities(dinfo.Instigator, null, (dinfo.Amount * (1 + .2f * hatePwr)), TMDamageDefOf.DamageDefOf.TM_Spirit, pawn);
+                                TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_SpiritRetaliation, pawn.DrawPos, pawn.Map, Rand.Range(1f, 1.2f), Rand.Range(.1f, .15f), 0, Rand.Range(.1f, .2f), -600, 0, 0, Rand.Range(0, 360));
+                                HealthUtility.AdjustSeverity(pawn, hateHediff.def, -(dinfo.Amount * (.8f - (.1f * hateEff))));
+                            }
+
+                        }
+                        if (dinfo.Instigator is Pawn attacker)
+                        {
+                            CompAbilityUserMight comp = attacker.GetCompAbilityUserMight();
+
+                            if (!attacker.Destroyed && !attacker.Downed && !attacker.Dead && attacker != pawn && dinfo.Weapon != null && dinfo.Weapon.IsMeleeWeapon && comp != null && comp.MightData != null)
+                            {
+                                if ((attacker.story != null && attacker.story.traits != null && attacker.story.traits.HasTrait(TorannMagicDefOf.DeathKnight)) || TM_ClassUtility.ClassHasAbility(TorannMagicDefOf.TM_LifeSteal, null, comp))
+                                {
+                                    //Hediff hediff = null;
+                                    //for (int h = 0; h < attacker.health.hediffSet.hediffs.Count; h++)
+                                    //{
+                                    //    if (attacker.health.hediffSet.hediffs[h].def.defName.Contains("TM_HateHD"))
+                                    //    {
+                                    //        hediff = attacker.health.hediffSet.hediffs[h];
+                                    //    }
+                                    //}
+                                    //&& TM_Calc.HasHateHediff(attacker)
+                                    int lifestealPwr = comp.MightData.MightPowerSkill_LifeSteal.First((MightPowerSkill x) => x.label == "TM_LifeSteal_pwr").level;
+                                    int lifestealEff = comp.MightData.MightPowerSkill_LifeSteal.First((MightPowerSkill x) => x.label == "TM_LifeSteal_eff").level;
+                                    int lifestealVer = comp.MightData.MightPowerSkill_LifeSteal.First((MightPowerSkill x) => x.label == "TM_LifeSteal_ver").level;
+
+                                    TM_Action.DoAction_HealPawn(attacker, attacker, 1, dinfo.Amount * (TorannMagicDefOf.TM_LifeSteal.weaponDamageFactor + (.02f * lifestealPwr)));
+                                    TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Siphon, attacker.DrawPos, attacker.Map, 1f, .1f, .15f, .5f, 600, 0, 0, Rand.Range(0, 360));
+                                    TM_MoteMaker.ThrowSiphonMote(attacker.DrawPos, attacker.Map, 1f);
+
+                                    if (hateHediff != null && lifestealEff > 0)
+                                    {
+                                        HealthUtility.AdjustSeverity(attacker, hateHediff.def, dinfo.Amount * (.25f + .05f * lifestealEff));
+                                        comp.Stamina.CurLevel += (dinfo.Amount * (float)(.1f * lifestealEff)) / 100;
+                                    }
+                                    if (lifestealVer > 0)
+                                    {
+                                        Pawn ally = TM_Calc.FindNearbyInjuredPawnOther(attacker, 3, 0);
+                                        if (ally != null)
+                                        {
+                                            TM_Action.DoAction_HealPawn(attacker, ally, 1, dinfo.Amount * ((TorannMagicDefOf.TM_LifeSteal.weaponDamageFactor - .05f) + (.01f * lifestealVer)));
+                                            TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Siphon, ally.DrawPos, ally.Map, 1f, .1f, .15f, .5f, 600, 0, 0, Rand.Range(0, 360));
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        CompAbilityUserMagic compMagic = pawn.GetCompAbilityUserMagic();
+                        if (compMagic != null && compMagic.SoL != null && compMagic.SoL.solAction == SoLAction.Hovering)
+                        {
+                            FlyingObject_SpiritOfLight sol = compMagic.SoL;
+                            if (sol.LightEnergy > (dinfo.Amount / 10f) && Rand.Chance(sol.LightEnergy / 100f))
+                            {
+                                Thing instigator = dinfo.Instigator;
+                                if (instigator != null)
+                                {
+                                    if ((dinfo.Weapon != null && !dinfo.Def.isExplosive) || dinfo.WeaponBodyPartGroup != null)
+                                    {
+                                        Vector3 drawPos = pawn.DrawPos;
+                                        float drawAngle = (instigator.DrawPos - drawPos).AngleFlat();
+                                        drawPos.x += Mathf.Clamp(((instigator.DrawPos.x - drawPos.x) / 20f) + Rand.Range(-.1f, .1f), -.75f, .75f);
+                                        drawPos.z += Mathf.Clamp(((instigator.DrawPos.z - drawPos.z) / 10f) + Rand.Range(-.1f, .1f), -1f, 1f);
+                                        FleckMaker.Static(drawPos, pawn.Map, TorannMagicDefOf.SparkFlash, 1f);
+                                        TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_LightShield_Glow, drawPos, pawn.Map, .65f, .27f, 0f, .13f, 0, 0, 0, drawAngle - 180);
+                                        SoundInfo info = SoundInfo.InMap(new TargetInfo(pawn.Position, pawn.Map, false), MaintenanceType.None);
+                                        info.volumeFactor = .5f;
+                                        info.pitchFactor = 3f;
+                                        TM_Action.DoReversalRandomTarget(dinfo, pawn, 0, 40f);
+                                        TorannMagicDefOf.TM_MetalImpact.PlayOneShot(info);
+                                        sol.ActualLightCost(dinfo.Amount / 10f);
+                                        dinfo.SetAmount(0);
+                                        absorbed = true;
+                                        return false;
+                                    }
+                                }
+                            }
+                        }
+                        //concept damage mitigation from psychic sensitivity - completely mitigates some damage types
+                        //if (pawn.RaceProps.Humanlike && pawn.GetStatValue(StatDefOf.PsychicSensitivity, true) < 1)
+                        //{
+                        //    if ((dinfo.Def.defName.Contains("TM_") || dinfo.Def.defName == "FrostRay" || dinfo.Def.defName == "Snowball" || dinfo.Def.defName == "Iceshard" || dinfo.Def.defName == "Firebolt") && Rand.Chance(1 - pawn.GetStatValue(StatDefOf.PsychicSensitivity, true)))
+                        //    {
+                        //        absorbed = true;
+                        //        return false;
+                        //    }
+                        //}
                     }
-                    //concept damage mitigation from psychic sensitivity - completely mitigates some damage types
-                    //if (pawn.RaceProps.Humanlike && pawn.GetStatValue(StatDefOf.PsychicSensitivity, true) < 1)
-                    //{
-                    //    if ((dinfo.Def.defName.Contains("TM_") || dinfo.Def.defName == "FrostRay" || dinfo.Def.defName == "Snowball" || dinfo.Def.defName == "Iceshard" || dinfo.Def.defName == "Firebolt") && Rand.Chance(1 - pawn.GetStatValue(StatDefOf.PsychicSensitivity, true)))
-                    //    {
-                    //        absorbed = true;
-                    //        return false;
-                    //    }
-                    //}
                 }
                 absorbed = false;
                 return true;
@@ -4613,7 +4657,7 @@ namespace TorannMagic
                 if (patient.health.hediffSet.HasHediff(HediffDef.Named("TM_UndeadHD")) || patient.health.hediffSet.HasHediff(HediffDef.Named("TM_UndeadAnimalHD")))
                 {
                     Messages.Message("Something went horribly wrong while trying to perform a surgery on " + patient.LabelShort + ", perhaps it's best to leave the bodies of the undead alone.", MessageTypeDefOf.NegativeHealthEvent);
-                    GenExplosion.DoExplosion(surgeon.Position, surgeon.Map, 2f, TMDamageDefOf.DamageDefOf.TM_CorpseExplosion, patient, Rand.Range(6, 12), 10, TMDamageDefOf.DamageDefOf.TM_CorpseExplosion.soundExplosion, null, null, null, null, 0, 0, false, null, 0, 0, 0, false);
+                    GenExplosion.DoExplosion(surgeon.Position, surgeon.Map, 2f, TMDamageDefOf.DamageDefOf.TM_CorpseExplosion, patient, Rand.Range(6, 12), 10, TMDamageDefOf.DamageDefOf.TM_CorpseExplosion.soundExplosion, null, null, null, null, 0, 0, null, false, null, 0, 0, 0, false);
                     __result = true;
                     return false;
                 }
@@ -4667,6 +4711,7 @@ namespace TorannMagic
                     __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_Discord" ||
                     __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_AdvancedHeal" ||
                     __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_ControlSpiritStorm" ||
+                    __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_Scorn" ||
                     !__instance.verbProps.requireLineOfSight)
                 {
                     //Ignores line of sight
@@ -6270,7 +6315,7 @@ namespace TorannMagic
                 {
                     string labelShort = equipment.LabelShort;
                     FloatMenuOption nve_option;
-                    if (!(pawn.story.traits.HasTrait(TorannMagicDefOf.Priest) || pawn.story.DisabledWorkTagsBackstoryAndTraits.HasFlag(WorkTags.Violent)))
+                    if (!(pawn.story.traits.HasTrait(TorannMagicDefOf.Priest) || pawn.WorkTagIsDisabled(WorkTags.Violent)))
                     {
                         for (int j = 0; j < opts.Count; j++)
                         {                            
@@ -6437,20 +6482,18 @@ namespace TorannMagic
         //[HarmonyBefore(new string[] { "TheThirdAge.RemoveModernStuffHarmony.IsTravelingInTransportPodWorldObject", "rimworld.PawnUtility.IsTravelingInTransportPodWorldObject" })]        
         //[HarmonyPatch(typeof(PawnUtility), "IsTravelingInTransportPodWorldObject", null)]
 
-        [HarmonyPriority(2000)]
-        public static bool IsTravelingInTeleportPod_Prefix(Pawn pawn, ref bool __result)
-        {
-            if (pawn.IsColonist || (pawn.Faction != null && pawn.Faction.IsPlayer))
-            {
-                if(ModsConfig.IdeologyActive && pawn.IsSlaveOfColony)
-                {
-                    return true;
-                }
-                __result = pawn.IsWorldPawn() && ThingOwnerUtility.AnyParentIs<ActiveDropPodInfo>(pawn);
-                return false;
-            }
-            return true;
-        }
+        //[HarmonyPriority(2000)]
+        //public static void IsTravelingInTeleportPod_Postfix(Pawn pawn, ref bool __result)
+        //{
+        //    if (!__result)
+        //    {
+        //        Log.Message("" + pawn.LabelShort + " was not in a transport pod but is in a " + pawn.ParentHolder);
+        //        if (pawn.IsColonist || (pawn.Faction != null && pawn.Faction.IsPlayer))
+        //        {
+                    
+        //        }
+        //    }
+        //}
 
 
         //[HarmonyPatch(typeof(PawnAbility), "PostAbilityAttempt", null)]
@@ -6878,14 +6921,11 @@ namespace TorannMagic
         [HarmonyPatch(typeof(MentalStateHandler), "TryStartMentalState", null)]
         public class MentalStateHandler_Patch
         {
-            public static FieldInfo pawn = typeof(MentalStateHandler).GetField("pawn", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.GetField);
+            //public static FieldInfo pawn = typeof(MentalStateHandler).GetField("pawn", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.GetField);
 
-            public static bool Prefix(MentalStateHandler __instance, MentalStateDef stateDef, Pawn otherPawn, ref bool __result)
+            public static bool Prefix(MentalStateHandler __instance, MentalStateDef stateDef, Pawn otherPawn, Pawn ___pawn, ref bool __result)
             {
-                Traverse traverse = Traverse.Create(__instance);
-                Pawn pawn = (Pawn)MentalStateHandler_Patch.pawn.GetValue(__instance);
-
-                if (pawn.RaceProps.Humanlike && (TM_Calc.IsUndeadNotVamp(pawn)))
+                if (___pawn.RaceProps.Humanlike && (TM_Calc.IsUndeadNotVamp(___pawn)))
                 {
                     __result = false;
                     return false;

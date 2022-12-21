@@ -141,7 +141,7 @@ namespace TorannMagic
         {
             bool spawned = flyingThing.Spawned;
             pawn = launcher as Pawn;
-            if(pawn != null && pawn.story != null && pawn.story.adulthood != null && pawn.story.adulthood.identifier == "tm_vengeful_spirit")
+            if(pawn != null && pawn.story != null && pawn.story.Adulthood != null && pawn.story.Adulthood.identifier == "tm_vengeful_spirit")
             {
                 frenzyBonus = 8;
             }
@@ -340,7 +340,7 @@ namespace TorannMagic
                 bool flag4 = this.explosion;
                 if (flag4)
                 {
-                    GenExplosion.DoExplosion(base.Position, base.Map, 0.9f, DamageDefOf.Stun, this, -1, 0, null, null, null, null, null, 0f, 1, false, null, 0f, 1, 0f, false);
+                    GenExplosion.DoExplosion(base.Position, base.Map, 0.9f, DamageDefOf.Stun, this, -1, 0, null, null, null, null, null, 0f, 1, null, false, null, 0f, 1, 0f, false);
                 }
             }
 

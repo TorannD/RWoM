@@ -58,7 +58,7 @@ namespace TorannMagic
             }
         }
 
-        protected override void Impact(Thing hitThing)
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             Map map = base.Map;
             base.Impact(hitThing);
@@ -165,50 +165,22 @@ namespace TorannMagic
 
         public void Heal(Pawn pawn)
         {
-            bool flag = pawn != null && !pawn.Dead;
-            if (flag)
+            if (pawn == null || pawn.Dead) return;
+
+            IEnumerable<Hediff_Injury> injuries = pawn.health.hediffSet.hediffs
+                .OfType<Hediff_Injury>()
+                .Where(injury => injury.CanHealNaturally())
+                .Take(1 + verVal);
+
+            float healAmount = (10.0f + pwrVal * 2f) * arcaneDmg;
+            foreach (Hediff_Injury injury in injuries)
             {
-                int num = 1 + verVal;
-                
-                using (IEnumerator<BodyPartRecord> enumerator = pawn.health.hediffSet.GetInjuredParts().GetEnumerator())
-                {
-                    while (enumerator.MoveNext())
-                    {
-                        BodyPartRecord rec = enumerator.Current;
-                        bool flag2 = num > 0;                        
+                if (!Rand.Chance(.8f)) continue;  // 80% chance to heal, 20% chance to skip
 
-                        if (flag2)
-                        {
-                            int num2 = 1 + verVal;
-                            IEnumerable<Hediff_Injury> arg_BB_0 = pawn.health.hediffSet.GetHediffs<Hediff_Injury>();
-                            Func<Hediff_Injury, bool> arg_BB_1;
-
-                            arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
-
-                            foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1))
-                            {
-                                bool flag4 = num2 > 0;
-                                if (flag4)
-                                {
-                                    bool flag5 = current.CanHealNaturally() && !current.IsPermanent();
-                                    if (flag5)
-                                    {
-                                        //current.Heal((float)((int)current.Severity + 1));
-                                        if (Rand.Chance(.8f))
-                                        {
-                                            current.Heal((10.0f + (float)pwrVal * 2f) * this.arcaneDmg); // power affects how much to heal
-                                            TM_MoteMaker.ThrowRegenMote(pawn.Position.ToVector3Shifted(), pawn.Map, 1.2f);
-                                        }
-                                        num--;
-                                        num2--;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+                injury.Heal(healAmount);
+                TM_MoteMaker.ThrowRegenMote(pawn.Position.ToVector3Shifted(), pawn.Map, 1.2f);
             }
-        }        
+        }
 
         public override void Tick()
         {

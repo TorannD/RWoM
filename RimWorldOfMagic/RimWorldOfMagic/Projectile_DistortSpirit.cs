@@ -17,7 +17,7 @@ namespace TorannMagic
         private int duration = 1;
         private float sevBonus = 0;
 
-		protected override void Impact(Thing hitThing)
+		protected override void Impact(Thing hitThing, bool blockedByShield = false)
 		{            
             Map map = base.Map;			
 			ThingDef def = this.def;
@@ -32,7 +32,7 @@ namespace TorannMagic
                 pwrVal = TM_Calc.GetSkillPowerLevel(caster, TorannMagicDefOf.TM_DistortSpirit, false);
                 effVal = comp.MagicData.GetSkill_Efficiency(TorannMagicDefOf.TM_DistortSpirit).level;
             }
-            if(caster.story != null && caster.story.adulthood != null && caster.story.adulthood.identifier == "tm_vengeful_spirit")
+            if(caster.story != null && caster.story.Adulthood != null && caster.story.Adulthood.identifier == "tm_vengeful_spirit")
             {
                 sevBonus += .06f;
             }

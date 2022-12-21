@@ -52,7 +52,7 @@ namespace TorannMagic
             impacted = true;
         }
 
-        protected override void Impact(Thing hitThing)
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {            
             if(!initialized)
             {

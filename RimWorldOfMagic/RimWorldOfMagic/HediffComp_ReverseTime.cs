@@ -117,7 +117,7 @@ namespace TorannMagic
         {
             float totalBleedRate = 0;
             int totalHDremoved = 0;
-            using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
+            using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.hediffs.GetEnumerator())
             {
                 while (enumerator.MoveNext())
                 {                    
@@ -180,7 +180,7 @@ namespace TorannMagic
                     HealthUtility.AdjustSeverity(pawn, HediffDefOf.BloodLoss, -(totalBleedRate * ticks * this.parent.Severity) / (24 * 2500));
                 }
             }
-            List<Hediff> hediffList = pawn.health.hediffSet.GetHediffs<Hediff>().ToList();
+            List<Hediff> hediffList = pawn.health.hediffSet.hediffs.ToList();
             if (hediffList != null && hediffList.Count > 0)
             {
                 for (int i = 0; i < hediffList.Count; i++)
@@ -307,7 +307,7 @@ namespace TorannMagic
             bool hasMissingParent = false;
             if (mphd.Part.parent != null)
             {
-                List<Hediff_MissingPart> hediffList = this.Pawn.health.hediffSet.GetHediffs<Hediff_MissingPart>().ToList();
+                List<Hediff_MissingPart> hediffList = this.Pawn.health.hediffSet.hediffs.OfType<Hediff_MissingPart>().ToList();
                 for (int i = 0; i < hediffList.Count; i++)
                 {
                     if(mphd.Part.parent == hediffList[i].Part)
@@ -321,7 +321,7 @@ namespace TorannMagic
 
         public bool RemoveChildParts(Hediff_MissingPart mphd)
         {
-            List<Hediff> hediffList = this.Pawn.health.hediffSet.GetHediffs<Hediff>().ToList();
+            List<Hediff> hediffList = this.Pawn.health.hediffSet.hediffs.ToList();
             for (int i = 0; i < hediffList.Count; i++)
             {
                 Hediff_MissingPart mpChild = hediffList[i] as Hediff_MissingPart;

@@ -72,7 +72,7 @@ namespace TorannMagic
             //this.age++;
         }
 
-        protected override void Impact(Thing hitThing)
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {            
             base.Impact(hitThing);
             ThingDef def = this.def;
@@ -176,12 +176,15 @@ namespace TorannMagic
                     Thing pod = ThingMaker.MakeThing(TorannMagicDefOf.TM_LightPod, null);
                     CompLaunchable podL = pod.TryGetComp<CompLaunchable>();
                     CompTransporter podT = podL.Transporter;
-                    GenSpawn.Spawn(pod, p.Position, this.Map, WipeMode.Vanish);
+                    GenPlace.TryPlaceThing(pod, p.Position, p.Map, ThingPlaceMode.Near);
+                    //GenSpawn.Spawn(pod, p.Position, this.Map, WipeMode.Vanish);
                     podT.groupID = 12;
                     p.DeSpawn();
+                    p.teleporting = true;
                     if (mount != null)
                     {
                         mount.DeSpawn();
+                        mount.teleporting = true;
                         podT.innerContainer.TryAddOrTransfer(mount);
                     }
                     podT.innerContainer.TryAddOrTransfer(p);

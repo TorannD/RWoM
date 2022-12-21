@@ -44,12 +44,50 @@ namespace TorannMagic
         private bool IsMortar => def.building.IsMortar;
         private bool IsMortarOrProjectileFliesOverhead => AttackVerb.ProjectileFliesOverhead() || IsMortar;
         private bool initialized = false;
+        private bool burstActivated;
 
         public IntVec3 iCell = new IntVec3();
         public override IntVec3 InteractionCell => iCell;
 
         CompAbilityUserMagic comp;
         public Pawn manPawn = null;
+
+        public bool TT_Active
+        {
+            get
+            {
+                if ((powerComp == null || powerComp.PowerOn) && (dormantComp == null || dormantComp.Awake) && (initiatableComp == null || initiatableComp.Initiated))
+                {
+                    if (activableComp != null)
+                    {
+                        return burstActivated;
+                    }
+                    return true;
+                }
+                return false;
+            }
+        }
+
+        public override bool ClaimableBy(Faction by, StringBuilder reason = null)
+        {
+            //if (!base.ClaimableBy(by, reason))
+            //{
+            //    return false;
+            //}
+            //if (mannableComp != null && mannableComp.ManningPawn != null)
+            //{
+            //    return false;
+            //}
+            //if (TT_Active && mannableComp == null)
+            //{
+            //    return false;
+            //}
+            //if (((dormantComp != null && !dormantComp.Awake) || (initiatableComp != null && !initiatableComp.Initiated)) && (powerComp == null || powerComp.PowerOn))
+            //{
+            //    return false;
+            //}
+            return false;
+        }
 
         public override void ExposeData()
         {
@@ -62,6 +100,7 @@ namespace TorannMagic
             Scribe_Values.Look<int>(ref this.rocketTicksToFire, "rocketTicksToFire", 600, false);
             Scribe_Values.Look<float>(ref this.rocketManaCost, "rocketManaCost", 0.05f, false);
             Scribe_Values.Look<float>(ref this.mortarManaCost, "mortarManaCost", 0.1f, false);
+            Scribe_Values.Look(ref burstActivated, "burstActivated", false);
             Scribe_Values.Look<Pawn>(ref this.manPawn, "manPawn");
             Scribe_Values.Look<IntVec3>(ref this.iCell, "iCell");
             Scribe_Values.Look<int>(ref this.age, "age", 0);
@@ -73,7 +112,7 @@ namespace TorannMagic
             base.Tick();
             age++;
             //if (!manPawn.DestroyedOrNull() && !manPawn.Dead && !manPawn.Downed && manPawn.Position == this.InteractionCell)
-            if(this.age <= this.duration)
+            if (this.age <= this.duration)
             {
                 if (!initialized)
                 {
@@ -93,7 +132,7 @@ namespace TorannMagic
                         this.mortarTicksToFire = 900 - ((verVal - 10) * 40);
                         this.mortarMaxRange += ((verVal - 10) * 5);
                         this.mortarManaCost = .08f - (.002f * effVal);
-                    }                    
+                    }
                     this.initialized = true;
                 }
 
@@ -149,7 +188,7 @@ namespace TorannMagic
                                     Projectile newProjectile = (Projectile)GenSpawn.Spawn(ThingDef.Named("Bullet_Shell_TechnoTurretExplosive"), this.Position, this.Map, WipeMode.Vanish);
                                     newProjectile.Launch(this, rndTarget, target, ProjectileHitFlags.All, false, null);
                                 }
-                            }                            
+                            }
                             SoundInfo info = SoundInfo.InMap(new TargetInfo(this.Position, this.Map, false), MaintenanceType.None);
                             info.pitchFactor = 1.3f;
                             info.volumeFactor = .8f;
@@ -179,11 +218,12 @@ namespace TorannMagic
                     {
                         ResetForcedTarget();
                     }
-                    if ((powerComp == null || powerComp.PowerOn) && base.Spawned)
+                    if (TT_Active && !stunner.Stunned && base.Spawned) //&& (mannableComp == null || mannableComp.MannedNow)
                     {
                         GunCompEq.verbTracker.VerbsTick();
-                        if (!stunner.Stunned && AttackVerb.state != VerbState.Bursting)
+                        if (AttackVerb.state != VerbState.Bursting)
                         {
+                            burstActivated = false;
                             if (WarmingUp)
                             {
                                 burstWarmupTicksLeft--;
@@ -226,9 +266,15 @@ namespace TorannMagic
                     rndPos.z += Rand.Range(-.5f, .5f);
                     TM_MoteMaker.ThrowGenericFleck(TorannMagicDefOf.ElectricalSpark, rndPos, this.Map, Rand.Range(.4f, .7f), .2f, .05f, .1f, 0, 0, 0, Rand.Range(0, 360));
                 }
-                GenExplosion.DoExplosion(this.Position, this.Map, 1f, DamageDefOf.EMP, this, 0, 0, SoundDefOf.Crunch, null, null, this, null, 0, 0, false, null, 0, 0, 0, false);
+                GenExplosion.DoExplosion(this.Position, this.Map, 1f, DamageDefOf.EMP, this, 0, 0, SoundDefOf.Crunch, null, null, this, null, 0, 0, null, false, null, 0, 0, 0, false);
                 this.Destroy(DestroyMode.Vanish);
             }
+        }
+
+        public new void TryActivateBurst()
+        {
+            burstActivated = true;
+            TryStartShootSomething(canBeginBurstImmediately: true);
         }
 
         private void ExtractShell()

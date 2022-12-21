@@ -9,15 +9,16 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TorannMagic</RootNamespace>
     <AssemblyName>TorannMagic</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\v1.3\Assemblies\</OutputPath>
+    <OutputPath>..\..\v1.4\Assemblies\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -36,15 +37,15 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="AbilityUser">
-      <HintPath>..\..\..\..\..\..\workshop\content\294100\932008009\1.3\Assemblies\AbilityUser.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\workshop\content\294100\932008009\1.4\Assemblies\AbilityUser.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="AbilityUserAI">
-      <HintPath>..\..\..\..\..\..\workshop\content\294100\932008009\1.3\Assemblies\AbilityUserAI.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\workshop\content\294100\932008009\1.4\Assemblies\AbilityUserAI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="AlienRace">
-      <HintPath>..\..\..\..\..\..\workshop\content\294100\839005762\1.3\Assemblies\AlienRace.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\workshop\content\294100\839005762\1.4\Assemblies\AlienRace.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">
@@ -64,11 +65,11 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="HugsLib">
-      <HintPath>..\..\..\..\..\..\workshop\content\294100\818773962\v1.3\Assemblies\HugsLib.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\workshop\content\294100\818773962\v1.4\Assemblies\HugsLib.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="SimpleSidearms">
-      <HintPath>..\..\..\..\..\..\workshop\content\294100\927155256\v1.3\Assemblies\SimpleSidearms.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\workshop\content\294100\927155256\v1.4\Assemblies\SimpleSidearms.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -138,8 +139,12 @@
     <Compile Include="Enchantment\HediffComp_WinterChill.cs" />
     <Compile Include="Enchantment\Verb_WeaponWintersFury.cs" />
     <Compile Include="FlyingObject_SpiritStorm.cs" />
+    <Compile Include="Golems\JobDriver_GolemDespawnWait.cs" />
+    <Compile Include="Golems\JobGiver_GolemDespawning.cs" />
+    <Compile Include="Golems\ThinkNode_ConditionalPlayerGolem.cs" />
     <Compile Include="HediffComp_SpiritDistortion.cs" />
     <Compile Include="HediffComp_SpiritPossession.cs" />
+    <Compile Include="Hediff_Evasion.cs" />
     <Compile Include="Hediff_Possessor.cs" />
     <Compile Include="JobDriver_SpiritDrain.cs" />
     <Compile Include="Need_Spirit.cs" />
@@ -148,9 +153,17 @@
     <Compile Include="Projectile_SummonSpiritAnimals.cs" />
     <Compile Include="Thoughts\ThoughtWorker_TM_LivingPossessed.cs" />
     <Compile Include="TMDefs\TM_AdvancedClassOptions.cs" />
+    <Compile Include="Utils\LinqExtensions.cs" />
     <Compile Include="Utils\TraitIconMap.cs" />
     <Compile Include="Utils\SimpleCache.cs" />
+    <Compile Include="Verb_Attraction.cs" />
+    <Compile Include="Verb_Scorn.cs" />
+    <Compile Include="Verb_FogOfTorment.cs" />
+    <Compile Include="Verb_LightningCloud.cs" />
+    <Compile Include="Verb_Firestorm.cs" />
+    <Compile Include="Verb_ConsumeCorpse_Mass.cs" />
     <Compile Include="Verb_ControlSpiritStorm.cs" />
+    <Compile Include="Verb_Blizzard.cs" />
     <Compile Include="Verb_SpiritTap.cs" />
     <Compile Include="Verb_SpiritRally.cs" />
     <Compile Include="Verb_SpiritDrain.cs" />

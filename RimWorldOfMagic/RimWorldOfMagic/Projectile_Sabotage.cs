@@ -58,7 +58,7 @@ namespace TorannMagic
             this.age++;
         }
 
-        protected override void Impact(Thing hitThing)
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             Map map = base.Map;
             base.Impact(hitThing);
@@ -127,7 +127,7 @@ namespace TorannMagic
                         {
                             CompPower compP = targetBuilding.GetComp<CompPower>();
                             CompPowerTrader cpt = targetBuilding.GetComp<CompPowerTrader>();
-                            if (compP != null && compP.Props.basePowerConsumption != 0 && cpt != null && cpt.powerOutputInt != 0)
+                            if (compP != null && compP.Props.PowerConsumption != 0 && cpt != null && cpt.powerOutputInt != 0)
                             {
                                 if (true)
                                 {

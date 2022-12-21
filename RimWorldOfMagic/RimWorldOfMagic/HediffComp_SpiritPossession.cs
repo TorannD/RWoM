@@ -74,9 +74,9 @@ namespace TorannMagic
                         }
                     }
                 }
-                foreach (Backstory bs in SpiritPawn_Hediff.BackstoryCompatibilityList)
+                foreach (BackstoryDef bs in SpiritPawn_Hediff.BackstoryCompatibilityList)
                 {
-                    if(this.Pawn.story.childhood == bs || this.Pawn.story.adulthood == bs)
+                    if(this.Pawn.story.Childhood == bs || this.Pawn.story.Adulthood == bs)
                     {
                         matchingCount += 2;
                     }
@@ -89,13 +89,13 @@ namespace TorannMagic
                     matchingCount++;
                 }
             }
-            if (SpiritPawn != null && SpiritPawn.story != null && SpiritPawn.story.adulthood != null)
+            if (SpiritPawn != null && SpiritPawn.story != null && SpiritPawn.story.Adulthood != null)
             {
-                if (SpiritPawn.story.adulthood.identifier == "tm_lost_spirit")
+                if (SpiritPawn.story.Adulthood.identifier == "tm_lost_spirit")
                 {
                     matchingCount += 2;
                 }
-                if (SpiritPawn.story.adulthood.identifier == "tm_vengeful_spirit")
+                if (SpiritPawn.story.Adulthood.identifier == "tm_vengeful_spirit")
                 {
                     matchingCount -= 1;
                 }

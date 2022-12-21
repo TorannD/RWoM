@@ -21,7 +21,7 @@ namespace TorannMagic
             {
                 if(pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_HediffStrongBack))
                 {
-                    using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
+                    using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.hediffs.GetEnumerator())
                     {
                         while (enumerator.MoveNext())
                         {
@@ -29,6 +29,7 @@ namespace TorannMagic
                             if (rec.def.defName.Contains("TM_HediffStrongBack"))
                             {
                                 pawn.health.RemoveHediff(rec);
+                                break;
                             }
                         }
                     }

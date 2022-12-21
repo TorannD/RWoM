@@ -62,7 +62,7 @@ namespace TorannMagic
             }
         }
 
-        protected override void Impact(Thing hitThing)
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {            
             ThingDef def = this.def;
             if (!this.initialized)
@@ -100,9 +100,10 @@ namespace TorannMagic
                 Thing pod = ThingMaker.MakeThing(TorannMagicDefOf.TM_LightPod, null);
                 CompLaunchable podL = pod.TryGetComp<CompLaunchable>();
                 CompTransporter podT = podL.Transporter;
-                GenSpawn.Spawn(pod, pawnToSkip.Position, pawnToSkip.Map, WipeMode.Vanish);
+                GenPlace.TryPlaceThing(pod, pawn.Position, pawn.Map, ThingPlaceMode.Near);
                 podT.groupID = 11;
                 pawnToSkip.DeSpawn();
+                pawn.teleporting = true;
                 if(mount != null)
                 {
                     mount.DeSpawn();
@@ -128,7 +129,7 @@ namespace TorannMagic
             ThingOwner directlyHeldThings = compTransporter.GetDirectlyHeldThings();
             ActiveDropPod activeDropPod = (ActiveDropPod)ThingMaker.MakeThing(ThingDefOf.ActiveDropPod);
             activeDropPod.Contents = new ActiveDropPodInfo();
-            activeDropPod.Contents.innerContainer.TryAddRangeOrTransfer(directlyHeldThings, canMergeWithExistingStacks: true, destroyLeftover: true);
+            activeDropPod.Contents.innerContainer.TryAddRangeOrTransfer(directlyHeldThings, canMergeWithExistingStacks: true, destroyLeftover: true);          
             WorldTransport.TM_DropPodLeaving obj = (WorldTransport.TM_DropPodLeaving)SkyfallerMaker.MakeSkyfaller(TorannMagicDefOf.TM_LightPodLeaving, activeDropPod);
             obj.groupID = groupID;
             obj.destinationTile = destinationTile;

@@ -109,7 +109,10 @@ namespace TorannMagic
                     {
                         skills[j].passion = Passion.None;
                     }
-                    undeadPawn.playerSettings.hostilityResponse = HostilityResponseMode.Attack;
+                    if (undeadPawn.playerSettings != null)
+                    {
+                        undeadPawn.playerSettings.hostilityResponse = HostilityResponseMode.Attack;
+                    }
                     if(!undeadPawn.IsColonist)
                     {
                         undeadPawn.ClearMind();
@@ -159,8 +162,8 @@ namespace TorannMagic
 
         private void RedoSkills(Pawn undeadPawn)
         {
-            undeadPawn.story.childhood = null;
-            undeadPawn.story.adulthood = null;
+            undeadPawn.story.Childhood = null;
+            undeadPawn.story.Adulthood = null;
             //undeadPawn.story.DisabledWorkTypes.Clear();
             //undeadPawn.story.WorkTypeIsDisabled(WorkTypeDefOf.Warden);
             //undeadPawn.story.WorkTypeIsDisabled(WorkTypeDefOf.Hunting);

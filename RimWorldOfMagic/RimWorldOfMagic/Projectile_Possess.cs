@@ -45,7 +45,7 @@ namespace TorannMagic
             Scribe_Collections.Look<int>(ref this.hitPawnWorkSetting, "hitPawnWorkSettings", LookMode.Value);
         }
 
-        protected override void Impact(Thing hitThing)
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             Map map = base.Map;
             base.Impact(hitThing);
@@ -328,7 +328,7 @@ namespace TorannMagic
             Hediff disguiseHD = null;
             Hediff possessHD = null;
             Hediff possessCHD = null;
-            using (IEnumerator<Hediff> enumerator = hitPawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
+            using (IEnumerator<Hediff> enumerator = hitPawn.health.hediffSet.hediffs.GetEnumerator())
             {
                 while (enumerator.MoveNext())
                 {

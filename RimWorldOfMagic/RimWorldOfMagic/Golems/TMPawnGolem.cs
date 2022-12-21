@@ -194,10 +194,8 @@ namespace TorannMagic.Golems
             if(this.story == null)
             {
                 this.story = new Pawn_StoryTracker(this);
-                this.story.childhood = new Backstory();
-                this.story.childhood.baseDesc = "Crafted";
-                this.story.adulthood = new Backstory();
-                this.story.adulthood.baseDesc = "Crafted";
+                this.story.Childhood = TorannMagicDefOf.TM_GolemChildBS;
+                this.story.Adulthood = TorannMagicDefOf.TM_GolemAdultBS;
                 this.story.title = "Golem";
             }
             if (this.workSettings == null)
