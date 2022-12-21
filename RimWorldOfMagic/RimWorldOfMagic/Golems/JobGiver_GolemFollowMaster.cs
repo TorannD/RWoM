@@ -20,7 +20,7 @@ namespace TorannMagic.Golems
 
         protected override float GetRadius(Pawn pawn)
         {
-            return pawn.TryGetComp<CompGolem>().threatRange;
+            return 3f; // pawn.TryGetComp<CompGolem>().threatRange;
         }
     } 
 }

@@ -16,28 +16,22 @@ namespace TorannMagic
             Pawn caster = base.CasterPawn;
             Pawn pawn = this.currentTarget.Thing as Pawn;
 
-            bool flag = caster != null && !caster.Dead;
-            if (flag)
+            if (caster == null || caster.Dead) return true;
+
+            bool containedHediff = false;
+            for (int i = 0; i < caster.health.hediffSet.hediffs.Count; i++)
             {
-                if(caster.health.hediffSet.HasHediff(HediffDef.Named("TM_HediffGearRepair")))
+                if (caster.health.hediffSet.hediffs[i].def == TorannMagicDefOf.TM_HediffGearRepair)
                 {
-                    using (IEnumerator<Hediff> enumerator = caster.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
-                    {
-                        while (enumerator.MoveNext())
-                        {
-                            Hediff rec = enumerator.Current;
-                            if (rec.def.defName.Contains("TM_HediffGearRepair"))
-                            {
-                                caster.health.RemoveHediff(rec);
-                            }
-                        }
-                    }
+                    caster.health.RemoveHediff(caster.health.hediffSet.hediffs[i]);
+                    containedHediff = true;
+                    break;
                 }
-                else
-                {
-                    HealthUtility.AdjustSeverity(caster, HediffDef.Named("TM_HediffGearRepair"), .5f);
-                    FleckMaker.ThrowDustPuff(caster.Position, caster.Map, 1f);
-                }
+            }
+            if (!containedHediff)
+            {
+                HealthUtility.AdjustSeverity(caster, HediffDef.Named("TM_HediffGearRepair"), .5f);
+                FleckMaker.ThrowDustPuff(caster.Position, caster.Map, 1f);
             }
             return true;
         }

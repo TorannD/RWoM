@@ -24,10 +24,13 @@ namespace TorannMagic
         // Non-generic GetComp<CompAbilityUserMagic> for performance since isInst against generic T is slow
         public static CompAbilityUserMagic GetCompAbilityUserMagic(this ThingWithComps thingWithComps)
         {
-            for (int i = 0; i < thingWithComps.AllComps.Count; i++)
+            if (thingWithComps?.AllComps != null)
             {
-                if (thingWithComps.AllComps[i] is CompAbilityUserMagic comp)
-                    return comp;
+                for (int i = 0; i < thingWithComps.AllComps.Count; i++)
+                {
+                    if (thingWithComps.AllComps[i] is CompAbilityUserMagic comp)
+                        return comp;
+                }
             }
 
             return null;
@@ -36,10 +39,13 @@ namespace TorannMagic
         // Non-generic GetComp<CompAbilityUserMight> for performance since isInst against generic T is slow
         public static CompAbilityUserMight GetCompAbilityUserMight(this ThingWithComps thingWithComps)
         {
-            for (int i = 0; i < thingWithComps.AllComps.Count; i++)
+            if (thingWithComps?.AllComps != null)
             {
-                if (thingWithComps.AllComps[i] is CompAbilityUserMight comp)
-                    return comp;
+                for (int i = 0; i < thingWithComps.AllComps.Count; i++)
+                {
+                    if (thingWithComps.AllComps[i] is CompAbilityUserMight comp)
+                        return comp;
+                }
             }
 
             return null;
@@ -49,8 +55,13 @@ namespace TorannMagic
         public static bool IsRobotPawn(Pawn pawn)
         {
             bool flag_Core = pawn.RaceProps.IsMechanoid;
-            bool flag_AndroidTiers = (pawn.def.defName.StartsWith("Android") || pawn.def.defName == "M7Mech" || pawn.def.defName == "MicroScyther");
+            if (flag_Core) return true;
+            bool flag_AndroidTiers = (pawn.def.defName.Contains("Android") || pawn.def.defName == "M7Mech" || pawn.def.defName == "MicroScyther") || pawn.def.race.FleshType.defName == "AndroidTier";
+            if (flag_AndroidTiers) return true;
+            bool flag_AndroidTiersKinds = pawn.kindDef.defName == "AbominationAtlas" || pawn.kindDef.defName.StartsWith("Android");
+            if (flag_AndroidTiersKinds) return true;
             bool flag_Androids = pawn.RaceProps.FleshType.defName == "ChJDroid" || pawn.def.defName == "ChjAndroid";
+            if (flag_Androids) return true;
             bool flag_AndroidClass = false;
             CompAbilityUserMight compMight = pawn.GetCompAbilityUserMight();
             if (compMight != null && compMight.customClass != null && compMight.customClass.isAndroid)
@@ -62,8 +73,13 @@ namespace TorannMagic
             {
                 flag_AndroidClass = true;
             }
-            bool isRobot = flag_Core || flag_AndroidTiers || flag_Androids || flag_AndroidClass;
-            return isRobot;
+            if (flag_AndroidClass) return true;
+            //bool isRobot = flag_Core || 
+            //    flag_AndroidTiers || 
+            //    flag_AndroidTiersKinds ||
+            //    flag_Androids || 
+            //    flag_AndroidClass;
+            return false;
         }
 
         public static bool IsNecromancer(Pawn pawn)
@@ -908,63 +924,22 @@ namespace TorannMagic
 
         public static bool IsPawnInjured(Pawn targetPawn, float minInjurySeverity = 0)
         {
-            float injurySeverity = 0;
-            using (IEnumerator<BodyPartRecord> enumerator = targetPawn.health.hediffSet.GetInjuredParts().GetEnumerator())
-            {
-                while (enumerator.MoveNext())
-                {
-                    BodyPartRecord rec = enumerator.Current;
-                    IEnumerable<Hediff_Injury> arg_BB_0 = targetPawn.health.hediffSet.GetHediffs<Hediff_Injury>();
-                    Func<Hediff_Injury, bool> arg_BB_1;
-                    arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
-
-                    foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1))
-                    {
-                        bool flag5 = current.CanHealNaturally() && !current.IsPermanent();
-                        if (flag5)
-                        {
-                            injurySeverity += current.Severity;
-                        }
-                    }
-                }
-            }
-            return injurySeverity > minInjurySeverity;
+            return targetPawn.health.hediffSet.hediffs
+                .OfType<Hediff_Injury>()
+                .Where(injury => injury.CanHealNaturally())
+                .Sum(injury => injury.Severity) > minInjurySeverity;
         }
 
         public static List<Hediff> GetPawnAfflictions(Pawn targetPawn)
         {
-            List<Hediff> afflictionList = new List<Hediff>();
-            afflictionList.Clear();
-            using (IEnumerator<Hediff> enumerator = targetPawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
-            {
-                while (enumerator.MoveNext())
-                {
-                    Hediff rec = enumerator.Current;
-                    if (rec.def.isBad && rec.def.makesSickThought)
-                    {
-                        afflictionList.Add(rec);
-                    }
-                }
-            }
-            return afflictionList;
+            return targetPawn.health.hediffSet.hediffs
+                .Where(hediff => hediff.def.isBad && hediff.def.makesSickThought)
+                .ToList();
         }
 
         public static List<Hediff> GetPawnAddictions(Pawn targetPawn)
         {
-            List<Hediff> addictionList = new List<Hediff>();
-            addictionList.Clear();
-            using (IEnumerator<Hediff_Addiction> enumerator = targetPawn.health.hediffSet.GetHediffs<Hediff_Addiction>().GetEnumerator())
-            {
-                while (enumerator.MoveNext())
-                {
-                    Hediff_Addiction rec = enumerator.Current;
-                    if (rec.Chemical.addictionHediff != null)
-                    {
-                        addictionList.Add(rec);
-                    }
-                }
-            }
-            return addictionList;
+            return targetPawn.health.hediffSet.hediffs.Where(hd => hd is Hediff_Addiction).ToList();
         }
 
         public static Vector3 GetVectorBetween(Vector3 v1, Vector3 v2)
@@ -1254,36 +1229,20 @@ namespace TorannMagic
         {
             List<Pawn> mapPawns = map.mapPawns.AllPawnsSpawned;
             List<Pawn> pawnList = new List<Pawn>();
-            Pawn targetPawn = null;
-            pawnList.Clear();
+
             for (int i = 0; i < mapPawns.Count; i++)
             {
-                targetPawn = mapPawns[i];
+                Pawn targetPawn = mapPawns[i];
                 if (targetPawn != null && !targetPawn.Dead && !targetPawn.Destroyed && !TM_Calc.IsUndead(targetPawn) && targetPawn.Faction != null && targetPawn.Faction == fac)
                 {
                     ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
                     if ((targetPawn.RaceProps.Humanlike || settingsRef.autocastAnimals || includeAnimals) && (center - targetPawn.Position).LengthHorizontal <= radius)
                     {
-                        float injurySeverity = 0;
-                        using (IEnumerator<BodyPartRecord> enumerator = targetPawn.health.hediffSet.GetInjuredParts().GetEnumerator())
-                        {
-                            while (enumerator.MoveNext())
-                            {
-                                BodyPartRecord rec = enumerator.Current;
-                                IEnumerable<Hediff_Injury> arg_BB_0 = targetPawn.health.hediffSet.GetHediffs<Hediff_Injury>();
-                                Func<Hediff_Injury, bool> arg_BB_1;
-                                arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
+                        float injurySeverity = targetPawn.health.hediffSet.hediffs
+                            .OfType<Hediff_Injury>()
+                            .Where(injury => injury.CanHealNaturally())
+                            .Sum(injury => injury.Severity);
 
-                                foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1))
-                                {
-                                    bool flag5 = current.CanHealNaturally() && !current.IsPermanent();
-                                    if (flag5)
-                                    {
-                                        injurySeverity += current.Severity;
-                                    }
-                                }
-                            }
-                        }
                         if (minSeverity != 0)
                         {
                             if (injurySeverity >= minSeverity)
@@ -1298,22 +1257,10 @@ namespace TorannMagic
                                 pawnList.Add(targetPawn);
                             }
                         }
-                        targetPawn = null;
-                    }
-                    else
-                    {
-                        targetPawn = null;
                     }
                 }
             }
-            if (pawnList.Count > 0)
-            {
-                return pawnList.RandomElement();
-            }
-            else
-            {
-                return null;
-            }
+            return pawnList.Count > 0 ? pawnList.RandomElement() : null;
         }
 
         public static Pawn FindNearbyInjuredPawn(Pawn pawn, int radius, float minSeverity, bool includeAnimals = false)
@@ -1325,36 +1272,20 @@ namespace TorannMagic
         {
             List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned;
             List<Pawn> pawnList = new List<Pawn>();
-            Pawn targetPawn = null;
-            pawnList.Clear();
+
             for (int i = 0; i < mapPawns.Count; i++)
             {
-                targetPawn = mapPawns[i];
+                Pawn targetPawn = mapPawns[i];
                 if (targetPawn != null && !targetPawn.Dead && !targetPawn.Destroyed && !TM_Calc.IsUndead(targetPawn) && targetPawn.Faction != null && targetPawn.Faction == pawn.Faction)
                 {
                     ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
                     if ((targetPawn.RaceProps.Humanlike || settingsRef.autocastAnimals) && (pawn.Position - targetPawn.Position).LengthHorizontal <= radius && targetPawn != pawn)
                     {
-                        float injurySeverity = 0;
-                        using (IEnumerator<BodyPartRecord> enumerator = targetPawn.health.hediffSet.GetInjuredParts().GetEnumerator())
-                        {
-                            while (enumerator.MoveNext())
-                            {
-                                BodyPartRecord rec = enumerator.Current;
-                                IEnumerable<Hediff_Injury> arg_BB_0 = targetPawn.health.hediffSet.GetHediffs<Hediff_Injury>();
-                                Func<Hediff_Injury, bool> arg_BB_1;
-                                arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
+                        float injurySeverity = targetPawn.health.hediffSet.hediffs
+                            .OfType<Hediff_Injury>()
+                            .Where(injury => injury.CanHealNaturally())
+                            .Sum(injury => injury.Severity);
 
-                                foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1))
-                                {
-                                    bool flag5 = current.CanHealNaturally() && !current.IsPermanent();
-                                    if (flag5)
-                                    {
-                                        injurySeverity += current.Severity;
-                                    }
-                                }
-                            }
-                        }
                         if (minSeverity != 0)
                         {
                             if (injurySeverity >= minSeverity)
@@ -1368,59 +1299,30 @@ namespace TorannMagic
                             {
                                 pawnList.Add(targetPawn);
                             }
-                        }
-                        targetPawn = null;
-                    }
-                    else
-                    {
-                        targetPawn = null;
+                        }                        
                     }
                 }
             }
-            if (pawnList.Count > 0)
-            {
-                return pawnList.RandomElement();
-            }
-            else
-            {
-                return null;
-            }
+            return pawnList.Count > 0 ? pawnList.RandomElement() : null;
         }
 
         public static Pawn FindNearbyPermanentlyInjuredPawn(Pawn pawn, int radius, float minSeverity)
         {
             List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned;
             List<Pawn> pawnList = new List<Pawn>();
-            Pawn targetPawn = null;
-            pawnList.Clear();
+
             for (int i = 0; i < mapPawns.Count; i++)
             {
-                targetPawn = mapPawns[i];
+                Pawn targetPawn = mapPawns[i];
                 if (targetPawn != null && !targetPawn.Dead && !targetPawn.Destroyed && !TM_Calc.IsUndead(targetPawn) && targetPawn.Faction != null && targetPawn.Faction == pawn.Faction)
                 {
                     ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
                     if ((targetPawn.RaceProps.Humanlike || settingsRef.autocastAnimals) && (pawn.Position - targetPawn.Position).LengthHorizontal <= radius)
                     {
-                        float injurySeverity = 0;
-                        using (IEnumerator<BodyPartRecord> enumerator = targetPawn.health.hediffSet.GetInjuredParts().GetEnumerator())
-                        {
-                            while (enumerator.MoveNext())
-                            {
-                                BodyPartRecord rec = enumerator.Current;
-                                IEnumerable<Hediff_Injury> arg_BB_0 = targetPawn.health.hediffSet.GetHediffs<Hediff_Injury>();
-                                Func<Hediff_Injury, bool> arg_BB_1;
-                                arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
-
-                                foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1))
-                                {
-                                    bool flag5 = !current.CanHealNaturally() && current.IsPermanent();
-                                    if (flag5)
-                                    {
-                                        injurySeverity += current.Severity;
-                                    }
-                                }
-                            }
-                        }
+                        float injurySeverity = targetPawn.health.hediffSet.hediffs
+                            .OfType<Hediff_Injury>()
+                            .Where(injury => injury.IsPermanent())
+                            .Sum(injury => injury.Severity);
                         if (minSeverity != 0)
                         {
                             if (injurySeverity >= minSeverity)
@@ -1434,106 +1336,61 @@ namespace TorannMagic
                             {
                                 pawnList.Add(targetPawn);
                             }
-                        }
-                        targetPawn = null;
-                    }
-                    else
-                    {
-                        targetPawn = null;
+                        }                        
                     }
                 }
             }
-            if (pawnList.Count > 0)
-            {
-                return pawnList.RandomElement();
-            }
-            else
-            {
-                return null;
-            }
+            return pawnList.Count > 0 ? pawnList.RandomElement() : null;
         }
 
         public static Pawn FindNearbyAfflictedPawn(Pawn pawn, int radius, List<string> validAfflictionDefnames)
         {
             List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned;
             List<Pawn> pawnList = new List<Pawn>();
-            Pawn targetPawn = null;
-            pawnList.Clear();
+
             for (int i = 0; i < mapPawns.Count; i++)
             {
-                targetPawn = mapPawns[i];
+                Pawn targetPawn = mapPawns[i];
                 if (targetPawn != null && !targetPawn.Dead && !targetPawn.Destroyed && targetPawn.Faction != null && targetPawn.Faction == pawn.Faction)
                 {
                     ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
                     if ((targetPawn.RaceProps.Humanlike || settingsRef.autocastAnimals) && (pawn.Position - targetPawn.Position).LengthHorizontal <= radius)
                     {
-                        using (IEnumerator<Hediff> enumerator = targetPawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
+                        if (targetPawn.health.hediffSet.hediffs.Any(hediff =>
+                                (hediff.def.isBad || hediff.def.makesSickThought)
+                                && validAfflictionDefnames.Any(name => hediff.def.defName.Contains(name))))
                         {
-                            while (enumerator.MoveNext())
-                            {
-                                Hediff rec = enumerator.Current;
-                                for(int j =0; j < validAfflictionDefnames.Count; j++)
-                                {
-                                    if (rec.def.defName.Contains(validAfflictionDefnames[j]) && (rec.def.isBad || rec.def.makesSickThought))
-                                    {
-                                        pawnList.Add(targetPawn);
-                                    }
-                                }                                    
-                                
-                            }
+                            pawnList.Add(targetPawn);
+
                         }
-                        targetPawn = null;
-                    }
-                    else
-                    {
-                        targetPawn = null;
                     }
                 }
             }
-            if (pawnList.Count > 0)
-            {
-                return pawnList.RandomElement();
-            }
-            else
-            {
-                return null;
-            }
+            return pawnList.Count > 0 ? pawnList.RandomElement() : null;
         }
 
         public static Pawn FindNearbyAfflictedPawnAny(Pawn pawn, int radius)
         {
             List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned;
             List<Pawn> pawnList = new List<Pawn>();
-            Pawn targetPawn = null;
-            pawnList.Clear();
+
             for (int i = 0; i < mapPawns.Count; i++)
             {
-                targetPawn = mapPawns[i];
+                Pawn targetPawn = mapPawns[i];
                 if (targetPawn != null && !targetPawn.Dead && !targetPawn.Destroyed && targetPawn.Faction != null && targetPawn.Faction == pawn.Faction)
                 {
                     ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
                     if ((targetPawn.RaceProps.Humanlike || settingsRef.autocastAnimals) && (pawn.Position - targetPawn.Position).LengthHorizontal <= radius)
                     {
-                        using (IEnumerator<Hediff> enumerator = targetPawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
+                        if (targetPawn.health.hediffSet.hediffs.Any(hediff =>
+                                hediff.def.defName == "BloodRot"
+                                || (
+                                    hediff.def.PossibleToDevelopImmunityNaturally()
+                                    && (hediff.def.isBad || hediff.def.makesSickThought)
+                                )))
                         {
-                            while (enumerator.MoveNext())
-                            {
-                                Hediff rec = enumerator.Current;
-                                if (rec.def.PossibleToDevelopImmunityNaturally() && (rec.def.isBad || rec.def.makesSickThought))
-                                {
-                                    pawnList.Add(targetPawn);
-                                }
-                                if (rec.def.defName == "BloodRot")
-                                {
-                                    pawnList.Add(targetPawn);
-                                }
-                            }
-                        }
-                        targetPawn = null;
-                    }
-                    else
-                    {
-                        targetPawn = null;
+                            pawnList.Add(targetPawn);
+                        }                            
                     }
                 }
             }
@@ -1552,47 +1409,25 @@ namespace TorannMagic
         {
             List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned;
             List<Pawn> pawnList = new List<Pawn>();
-            Pawn targetPawn = null;
-            pawnList.Clear();
+
             for (int i = 0; i < mapPawns.Count; i++)
             {
-                targetPawn = mapPawns[i];
+                Pawn targetPawn = mapPawns[i];
                 if (targetPawn != null && !targetPawn.Dead && !targetPawn.Destroyed && targetPawn.Faction != null && targetPawn.Faction == pawn.Faction)
                 {
                     ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
                     if ((targetPawn.RaceProps.Humanlike || settingsRef.autocastAnimals) && (pawn.Position - targetPawn.Position).LengthHorizontal <= radius)
                     {
-                        using (IEnumerator<Hediff_Addiction> enumerator = targetPawn.health.hediffSet.GetHediffs<Hediff_Addiction>().GetEnumerator())
+                        if (targetPawn.health.hediffSet.hediffs.OfType<Hediff_Addiction>().Any(addiction =>
+                                validAddictionDefnames.Any(name => addiction.Chemical.defName.Contains(name))))
                         {
-                            while (enumerator.MoveNext())
-                            {
-                                Hediff_Addiction rec = enumerator.Current;
-                                for (int j = 0; j < validAddictionDefnames.Count; j++)
-                                {
-                                    if (rec.Chemical.defName.Contains(validAddictionDefnames[j]))
-                                    {
-                                        pawnList.Add(targetPawn);
-                                    }
-                                }
-
-                            }
+                            pawnList.Add(targetPawn);
                         }
-                        targetPawn = null;
-                    }
-                    else
-                    {
-                        targetPawn = null;
                     }
                 }
             }
-            if (pawnList.Count > 0)
-            {
-                return pawnList.RandomElement();
-            }
-            else
-            {
-                return null;
-            }
+
+            return pawnList.Count > 0 ? pawnList.RandomElement() : null;
         }
 
         public static Pawn FindNearbyEnemy(Pawn pawn, int radius)
@@ -1602,25 +1437,28 @@ namespace TorannMagic
 
         public static Pawn FindNearbyEnemy(IntVec3 position, Map map, Faction faction, float radius, float minRange)
         {
-            List<Pawn> mapPawns = map.mapPawns.AllPawnsSpawned;
             List<Pawn> pawnList = new List<Pawn>();
-            Pawn targetPawn = null;
-            pawnList.Clear();
-            for (int i = 0; i < mapPawns.Count; i++)
+            if (map != null)
             {
-                targetPawn = mapPawns[i];
-                if (targetPawn != null && !targetPawn.Dead && !targetPawn.Destroyed && !targetPawn.Downed)
+                List<Pawn> mapPawns = map.mapPawns.AllPawnsSpawned;                
+                Pawn targetPawn = null;
+                pawnList.Clear();
+                for (int i = 0; i < mapPawns.Count; i++)
                 {
-                    if (targetPawn.Position != position && targetPawn.Faction.HostileTo(faction) && !targetPawn.IsPrisoner && (position - targetPawn.Position).LengthHorizontal <= radius && (position - targetPawn.Position).LengthHorizontal > minRange)
+                    targetPawn = mapPawns[i];
+                    if (targetPawn != null && !targetPawn.Dead && !targetPawn.Destroyed && !targetPawn.Downed)
                     {
-                        pawnList.Add(targetPawn);
-                        targetPawn = null;
+                        if (targetPawn.Position != position && targetPawn.Faction.HostileTo(faction) && !targetPawn.IsPrisoner && (position - targetPawn.Position).LengthHorizontal <= radius && (position - targetPawn.Position).LengthHorizontal > minRange)
+                        {
+                            pawnList.Add(targetPawn);
+                            targetPawn = null;
+                        }
+                        else
+                        {
+                            targetPawn = null;
+                        }
                     }
-                    else
-                    {
-                        targetPawn = null;
-                    }
-                }                
+                }
             }
             if (pawnList.Count > 0)
             {
@@ -1707,15 +1545,14 @@ namespace TorannMagic
             return false;
         }
 
-        public static List<Thing> FindNearbyDamagedBuilding(Pawn pawn, int radius)
+        public static List<Thing> FindNearbyDamagedBuildings(Pawn pawn, int radius)
         {
             List<Thing> mapBuildings = pawn.Map.listerBuildingsRepairable.RepairableBuildings(pawn.Faction);
             List<Thing> buildingList = new List<Thing>();
-            Building building= null;
-            buildingList.Clear();
+            
             for (int i = 0; i < mapBuildings.Count; i++)
             {
-                building = mapBuildings[i] as Building;
+                Building building = mapBuildings[i] as Building;
                 if (building != null && (building.Position - pawn.Position).LengthHorizontal <= radius && building.def.useHitPoints && building.HitPoints != building.MaxHitPoints)
                 {
                     if (pawn.Drafted && building.def.designationCategory == DesignationCategoryDefOf.Security || building.def.building.ai_combatDangerous)
@@ -1726,8 +1563,7 @@ namespace TorannMagic
                     {
                         buildingList.Add(building);
                     }
-                }
-                building = null;                
+                }              
             }
 
             if (buildingList.Count > 0)
@@ -1743,12 +1579,11 @@ namespace TorannMagic
         public static Thing FindNearbyDamagedThing(Pawn pawn, int radius)
         {
             List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned;
-            List<Thing> pawnList = new List<Thing>();
-            Pawn targetPawn = null;
-            pawnList.Clear();
+            List<Thing> thingList = new List<Thing>();
+
             for (int i = 0; i < mapPawns.Count; i++)
             {
-                targetPawn = mapPawns[i];
+                Pawn targetPawn = mapPawns[i];
                 if (targetPawn != null && targetPawn.Spawned && !targetPawn.Dead && !targetPawn.Destroyed)
                 {
                     //Log.Message("evaluating targetpawn " + targetPawn.LabelShort);
@@ -1757,53 +1592,30 @@ namespace TorannMagic
                     //Log.Message("pawn is robot: " + TM_Calc.IsRobotPawn(targetPawn));
                     if (targetPawn.Faction != null && targetPawn.Faction == pawn.Faction && (pawn.Position - targetPawn.Position).LengthHorizontal <= radius && TM_Calc.IsRobotPawn(targetPawn))
                     {
-                        float injurySeverity = 0;
-                        using (IEnumerator<BodyPartRecord> enumerator = targetPawn.health.hediffSet.GetInjuredParts().GetEnumerator())
-                        {
-                            while (enumerator.MoveNext())
-                            {
-                                BodyPartRecord rec = enumerator.Current;
-                                IEnumerable<Hediff_Injury> arg_BB_0 = targetPawn.health.hediffSet.GetHediffs<Hediff_Injury>();
-                                Func<Hediff_Injury, bool> arg_BB_1;
-                                arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
+                        float injurySeverity = targetPawn.health.hediffSet.hediffs
+                            .OfType<Hediff_Injury>()
+                            .Where(injury => injury.CanHealNaturally())
+                            .Sum(injury => injury.Severity);
 
-                                foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1))
-                                {
-                                    bool flag5 = !current.IsPermanent();
-                                    if (flag5)
-                                    {
-                                        injurySeverity += current.Severity;
-                                    }
-                                }
-                            }
-                        }
-                        
                         if (injurySeverity != 0)
                         {
-                            pawnList.Add(targetPawn as Thing);
+                            thingList.Add(targetPawn as Thing);
                         }
                     }
                     targetPawn = null;                    
                 }
             }
 
-            List<Thing> buildingList = TM_Calc.FindNearbyDamagedBuilding(pawn, radius);
-            if (buildingList != null)
+            List<Thing> damagedBuildings = FindNearbyDamagedBuildings(pawn, radius);
+            if(damagedBuildings != null && damagedBuildings.Count > 0)
             {
-                for (int i = 0; i < buildingList.Count; i++)
+                foreach(Thing t in damagedBuildings)
                 {
-                    pawnList.Add(buildingList[i]);
+                    thingList.Add(t);
                 }
             }
 
-            if (pawnList.Count > 0)
-            {
-                return pawnList.RandomElement();
-            }
-            else
-            {
-                return null;
-            }
+            return thingList.Count > 0 ? thingList.RandomElement() : null;
         }
 
         public static List<Pawn> FindAllPawnsAround(Map map, IntVec3 center, float radius, Faction faction = null, bool sameFaction = false)
@@ -4543,10 +4355,11 @@ namespace TorannMagic
                 }
                 else if (autocasting.GetTargetType == typeof(Corpse))
                 {
-                    IEnumerable<Corpse> nearbyThings = from x in caster.Map.listerThings.AllThings
-                                                               where (x.GetType() == typeof(Corpse) && (x.Position - caster.Position).LengthHorizontal >= autocasting.minRange &&
+                    IEnumerable<Corpse> nearbyThings = from x in caster.Map.listerThings.AllThings.OfType<Corpse>()
+                                                               where ((x.Position - caster.Position).LengthHorizontal >= autocasting.minRange &&
                                                                autocasting.maxRange > 0 ? (x.Position - caster.Position).LengthHorizontal <= autocasting.maxRange : true)
                                                                select x as Corpse;
+
                     target = nearbyThings?.Count() > 0 ? nearbyThings.RandomElement() : null;
                 }
                 else if (autocasting.GetTargetType == typeof(ThingWithComps))

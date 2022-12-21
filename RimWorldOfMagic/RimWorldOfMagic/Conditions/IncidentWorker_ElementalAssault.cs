@@ -30,6 +30,7 @@ namespace TorannMagic.Conditions
                 }
                 if (!factionFlag)
                 {
+                    Log.Message("no faction found");
                     return false;
                 }
                 TM_Action.ForceFactionDiscoveryAndRelation(TorannMagicDefOf.TM_ElementalFaction);

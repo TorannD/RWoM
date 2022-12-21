@@ -46,7 +46,7 @@ namespace TorannMagic
             Scribe_Collections.Look<TMDefs.Encase>(ref this.wall, "wall", LookMode.Deep);
         }
 
-        protected override void Impact(Thing hitThing)
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             Map map = base.Map;
             base.Impact(hitThing);

@@ -198,14 +198,19 @@ namespace TorannMagic
                     {
                         newPawn = (TMPawnSummoned)PawnGenerator.GeneratePawn(spawnables.kindDef, faction);
                         newPawn.validSummoning = true;
-                        newPawn.Temporary = false;
+                        newPawn.Temporary = false;                        
                         //if (newPawn.Faction != Faction.OfPlayerSilentFail)
                         //{
                         //    newPawn.SetFaction(this.Caster.Faction, null);
                         //}
                         try
                         {
-                            GenSpawn.Spawn(newPawn, position, map, Rot4.North, WipeMode.Vanish, false);
+                            Pawn p = (Pawn)GenSpawn.Spawn(newPawn, position, map, Rot4.North, WipeMode.Vanish, false);
+                            if (p.playerSettings != null)
+                            {
+                                p.playerSettings.hostilityResponse = HostilityResponseMode.Attack;
+                                p.playerSettings.medCare = MedicalCareCategory.NoCare;
+                            }
                             //GenPlace.TryPlaceThing(newPawn, position, map, ThingPlaceMode.Near, null, null);
                             CompSentinel compSentinel = newPawn.TryGetComp<CompSentinel>();
                             compSentinel.target = this.hostilePawn;

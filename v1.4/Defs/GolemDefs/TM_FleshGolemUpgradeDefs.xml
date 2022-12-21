@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+ 
+<Defs>
+
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_FleshRestore</defName>
+		<label>restore part</label>
+		<recipe>TM_FleshGolem_RestorePart</recipe>
+		<maxLevel>0</maxLevel>
+		<workstationEffects>
+			<li Class="TorannMagic.Golems.GolemWorkstationEffect_RestorePart" />
+		</workstationEffects>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_FleshMaxEnergy</defName>
+		<label>muscular endurance</label>
+		<description>Increases maximum energy by 400 per level. Starting max energy is 800.</description>
+		<recipe>TM_FleshGolem_MuscleTissue</recipe>
+		<bodypart>Flesh_Body</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<maxLevel>5</maxLevel>
+		<workstationCapacity>EnergyMax</workstationCapacity>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_FleshEnergyEfficiency</defName>
+		<label>muscular efficiency</label>
+		<description>Increases energy efficiency by 10% per level. Starting energy efficiency is 50%.</description>
+		<recipe>TM_FleshGolem_DigestiveOrgans</recipe>
+		<bodypart>Flesh_Guts</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<maxLevel>5</maxLevel>
+		<workstationCapacity>Efficiency</workstationCapacity>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_FleshEnergyRate</defName>
+		<label>energy synthesis</label>
+		<description>Increases energy charge rate by 20% per level. Starting recharge rate is 100 energy/hour.</description>
+		<recipe>TM_FleshGolem_EnergySynthesis</recipe>
+		<bodypart>Flesh_Spine</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<maxLevel>5</maxLevel>
+		<workstationCapacity>EnergyRegeneration</workstationCapacity>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_Flesh_LeftArmBrace</defName>
+		<label>left arm brace</label>
+		<description>Increases block chance by 20%, stacks with right bracer.</description>
+		<recipe>TM_FleshGolem_LeftArm_Bracer</recipe>
+		<bodypart>Flesh_LeftArm_Brace</bodypart>		
+		<partRequiresUpgrade>true</partRequiresUpgrade>
+		<occupiedPart>Flesh_LeftArm</occupiedPart>
+		<hediff>TM_FleshGolem_BracerGuardHD</hediff>	
+		<hediffSeverityPerLevel>.1</hediffSeverityPerLevel>		
+		<maxLevel>1</maxLevel>
+<!-- 		<graphicsPath>Mecha/GolemAxe</graphicsPath>
+		<drawUndrafted>false</drawUndrafted>
+		<drawSize>1.8</drawSize>
+		<drawOffsetNorth>(-.6, -1, .4)</drawOffsetNorth>
+		<drawOffsetSouth>(.6, 1, .4)</drawOffsetSouth>
+		<drawOffsetEast>(.8, -1, .4)</drawOffsetEast>
+		<drawOffsetWest>(-.8, 1, .4)</drawOffsetWest> -->
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_Flesh_LeftArmCleaver</defName>
+		<label>left arm cleaver</label>
+		<description>Allows the golem to harvest plants and enables an AoE cleave attack.
+		
+Cleave
+Rage Cost:	15
+Damage:	15
+Splash:	2c</description>
+		<recipe>TM_FleshGolem_LeftArm_Cleaver</recipe>
+		<bodypart>Flesh_LeftArm_Cleaver</bodypart>
+		<partRequiresUpgrade>true</partRequiresUpgrade>
+		<occupiedPart>Flesh_LeftArm</occupiedPart>
+		<ability>TM_FleshGolem_LeftCleave</ability>
+		<maxLevel>1</maxLevel>
+<!-- 		<graphicsPath>Mecha/GolemAxe</graphicsPath>
+		<drawUndrafted>false</drawUndrafted>
+		<drawSize>1.8</drawSize>
+		<drawOffsetNorth>(-.6, -1, .4)</drawOffsetNorth>
+		<drawOffsetSouth>(.6, 1, .4)</drawOffsetSouth>
+		<drawOffsetEast>(.8, -1, .4)</drawOffsetEast>
+		<drawOffsetWest>(-.8, 1, .4)</drawOffsetWest> -->
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_Flesh_RightArmBrace</defName>
+		<label>right arm brace</label>
+		<description>Increases block chance by 20%, stacks with left bracer.</description>
+		<recipe>TM_FleshGolem_RightArm_Bracer</recipe>
+		<bodypart>Flesh_RightArm_Brace</bodypart>
+		<partRequiresUpgrade>true</partRequiresUpgrade>
+		<occupiedPart>Flesh_RightArm</occupiedPart>
+		<hediff>TM_FleshGolem_BracerGuardHD</hediff>
+		<hediffSeverityPerLevel>.1</hediffSeverityPerLevel>
+		<maxLevel>1</maxLevel>
+<!-- 		<graphicsPath>Mecha/GolemAxe</graphicsPath>
+		<drawUndrafted>false</drawUndrafted>
+		<drawSize>1.8</drawSize>
+		<drawOffsetNorth>(-.6, -1, .4)</drawOffsetNorth>
+		<drawOffsetSouth>(.6, 1, .4)</drawOffsetSouth>
+		<drawOffsetEast>(.8, -1, .4)</drawOffsetEast>
+		<drawOffsetWest>(-.8, 1, .4)</drawOffsetWest> -->
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_Flesh_RightArmCleaver</defName>
+		<label>right arm cleaver</label>
+		<description>Allows the golem to cut plants and enables an AoE cleave attack.
+
+Cleave
+Rage Cost:	15
+Damage:	15
+Splash:	2c</description>
+		<recipe>TM_FleshGolem_RightArm_Cleaver</recipe>
+		<bodypart>Flesh_RightArm_Cleaver</bodypart>
+		<partRequiresUpgrade>true</partRequiresUpgrade>
+		<occupiedPart>Flesh_RightArm</occupiedPart>
+		<ability>TM_FleshGolem_RightCleave</ability>
+		<maxLevel>1</maxLevel>
+<!-- 		<graphicsPath>Mecha/GolemAxe</graphicsPath>
+		<drawUndrafted>false</drawUndrafted>
+		<drawSize>1.8</drawSize>
+		<drawOffsetNorth>(-.6, -1, .4)</drawOffsetNorth>
+		<drawOffsetSouth>(.6, 1, .4)</drawOffsetSouth>
+		<drawOffsetEast>(.8, -1, .4)</drawOffsetEast>
+		<drawOffsetWest>(-.8, 1, .4)</drawOffsetWest> -->
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_Flesh_Tusks</defName>
+		<label>tusks</label>
+		<description>Adds a powerful bite attack.</description>
+		<recipe>TM_FleshGolem_Tusks</recipe>
+		<bodypart>Flesh_Tusks</bodypart>
+		<partRequiresUpgrade>true</partRequiresUpgrade>
+		<maxLevel>1</maxLevel>
+		<graphicsPath>Flesh/Tusks</graphicsPath>
+		<drawUndrafted>true</drawUndrafted>
+		<drawSize>4</drawSize>
+		<drawOffsetNorth>(0, -.02, 0)</drawOffsetNorth>
+		<drawOffsetSouth>(0, .018, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .018, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .018, 0)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_Flesh_Horns</defName>
+		<label>horns</label>
+		<description>Adds a piercing attack and charge ability.
+
+Bull Charge
+Rage Cost:	5
+Cooldown:	10s</description>
+		<recipe>TM_FleshGolem_Horns</recipe>
+		<bodypart>Flesh_Horns</bodypart>
+		<partRequiresUpgrade>true</partRequiresUpgrade>
+		<ability>TM_FleshGolem_BullCharge</ability>
+		<maxLevel>1</maxLevel>
+		<graphicsPath>Flesh/Horns</graphicsPath>
+		<drawUndrafted>true</drawUndrafted>
+		<drawSize>4</drawSize>
+		<drawOffsetNorth>(0, .018, 0)</drawOffsetNorth>
+		<drawOffsetSouth>(0, .018, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .018, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .018, 0)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_Flesh_EyesT1</defName>
+		<label>quad sight</label>
+		<description>Increases sight by 100%.</description>
+		<recipe>TM_FleshGolem_EyesT1</recipe>
+		<bodypart>Flesh_LowerEye</bodypart>
+		<partRequiresUpgrade>true</partRequiresUpgrade>
+		<hediff>TM_FleshGolem_EyesT1HD</hediff>
+		<hediffSeverityPerLevel>.8</hediffSeverityPerLevel>
+		<maxLevel>1</maxLevel>
+		<graphicsPath>Flesh/EyeT1</graphicsPath>
+		<drawUndrafted>true</drawUndrafted>
+		<drawSize>4</drawSize>
+		<drawOffsetNorth>(0, -.012, 0)</drawOffsetNorth>
+		<drawOffsetSouth>(0, .012, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .012, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .012, 0)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_Flesh_EyesT2</defName>
+		<label>evil eye</label>
+		<description>Enables an ability that terrifies and slows enemies.
+
+Evil Eye
+Rage Cost:	10
+Cooldown:	2.2s
+Range:	40</description>
+		<recipe>TM_FleshGolem_EyesT2</recipe>
+		<bodypart>Flesh_EvilEye</bodypart>
+		<partRequiresUpgrade>true</partRequiresUpgrade>
+		<ability>TM_FleshGolem_EyeCurse</ability>
+		<maxLevel>1</maxLevel>
+		<graphicsPath>Flesh/EyeT2</graphicsPath>
+		<drawUndrafted>true</drawUndrafted>
+		<drawSize>4</drawSize>
+		<drawOffsetNorth>(0, -.012, 0)</drawOffsetNorth>
+		<drawOffsetSouth>(0, .012, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .012, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .012, 0)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_Flesh_Wings</defName>
+		<label>wings</label>
+		<description>Adds an ability that can grant the golem haste.
+
+Haste
+Rage Cost:	15
+Cooldown:	6s
+Double attack and move speed</description>
+		<recipe>TM_FleshGolem_Wings</recipe>
+		<bodypart>Flesh_Wings</bodypart>
+		<partRequiresUpgrade>true</partRequiresUpgrade>
+		<hediff>TM_FleshGolem_HasteHD</hediff>
+		<hediffSeverityPerLevel>.8</hediffSeverityPerLevel>
+		<ability>TM_FleshGolem_WingHaste</ability>
+		<maxLevel>1</maxLevel>
+		<graphicsPath>Flesh/Wings</graphicsPath>
+		<drawUndrafted>true</drawUndrafted>
+		<drawSize>4</drawSize>
+		<drawOffsetNorth>(0, .018, 0)</drawOffsetNorth>
+		<drawOffsetSouth>(0, -.018, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, -.02, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, -.02, 0)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_Flesh_SkullPlate</defName>
+		<label>skull plate</label>
+		<description>Increases armor:
+Blunt:	12%
+Sharp:	18%
+Heat:	8%</description>
+		<recipe>TM_FleshGolem_SkullPlate</recipe>
+		<bodypart>Flesh_Skull</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<hediff>TM_FleshGolem_SkullPlateHD</hediff>
+		<hediffSeverityPerLevel>.8</hediffSeverityPerLevel>
+		<maxLevel>1</maxLevel>
+		<graphicsPath>Flesh/Head</graphicsPath>
+		<drawUndrafted>true</drawUndrafted>
+		<drawSize>4</drawSize>
+		<drawOffsetNorth>(0, .016, 0)</drawOffsetNorth>
+		<drawOffsetSouth>(0, .016, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .016, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .016, 0)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_Flesh_ShoulderPlates</defName>
+		<label>shoulder plates</label>
+		<description>Increases armor:
+Blunt:	14%
+Sharp:	12%
+Heat:	10%</description>
+		<recipe>TM_FleshGolem_ShoulderPlates</recipe>
+		<bodypart>Flesh_Shoulder</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<hediff>TM_FleshGolem_ShoulderPlatesHD</hediff>
+		<hediffSeverityPerLevel>.8</hediffSeverityPerLevel>
+		<maxLevel>1</maxLevel>
+		<graphicsPath>Flesh/Shoulder</graphicsPath>
+		<drawUndrafted>true</drawUndrafted>
+		<drawSize>4</drawSize>
+		<drawOffsetNorth>(0, .017, 0)</drawOffsetNorth>
+		<drawOffsetSouth>(0, .017, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .017, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .017, 0)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_Flesh_ChestCage</defName>
+		<label>chest cage</label>
+		<description>Increases armor:
+Blunt:	28%
+Sharp:	10%
+Heat:	5%</description>
+		<recipe>TM_FleshGolem_ChestCage</recipe>
+		<bodypart>Flesh_Chest</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<hediff>TM_FleshGolem_ChestCageHD</hediff>
+		<hediffSeverityPerLevel>.8</hediffSeverityPerLevel>
+		<maxLevel>1</maxLevel>
+		<graphicsPath>Flesh/Chest</graphicsPath>
+		<drawUndrafted>true</drawUndrafted>
+		<drawSize>4</drawSize>
+		<drawOffsetNorth>(0, -.014, 0)</drawOffsetNorth>
+		<drawOffsetSouth>(0, .014, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .014, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .014, 0)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_Flesh_SpineGuard</defName>
+		<label>spine guard</label>
+		<description>Increases armor:
+Blunt:	12%
+Sharp:	14%
+Heat:	5%</description>
+		<recipe>TM_FleshGolem_SpineGuard</recipe>
+		<bodypart>Flesh_Back</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<hediff>TM_FleshGolem_SpineGuardHD</hediff>
+		<hediffSeverityPerLevel>.8</hediffSeverityPerLevel>
+		<maxLevel>1</maxLevel>
+		<graphicsPath>Flesh/Back</graphicsPath>
+		<drawUndrafted>true</drawUndrafted>
+		<drawSize>4</drawSize>
+		<drawOffsetNorth>(0, .014, 0)</drawOffsetNorth>
+		<drawOffsetSouth>(0, -.014, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, -.014, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, -.014, 0)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_Flesh_LegPlates</defName>
+		<label>leg plates</label>
+		<description>Increases armor:
+Blunt:	10%
+Sharp:	15%
+Heat:	8%</description>
+		<recipe>TM_FleshGolem_LegPlates</recipe>
+		<bodypart>Flesh_Waist</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<hediff>TM_FleshGolem_LegPlatesHD</hediff>
+		<hediffSeverityPerLevel>.8</hediffSeverityPerLevel>
+		<maxLevel>1</maxLevel>
+		<graphicsPath>Flesh/Legs</graphicsPath>
+		<drawUndrafted>true</drawUndrafted>
+		<drawSize>4</drawSize>
+		<drawOffsetNorth>(0, .012, 0)</drawOffsetNorth>
+		<drawOffsetSouth>(0, .012, 0)</drawOffsetSouth>
+		<drawOffsetEast>(0, .012, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .012, 0)</drawOffsetWest>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_FleshLifeStage</defName>
+		<label>automaton power</label>
+		<description>Increases stats and adds the dismember ability.
+Movement:	+[20%/35%/50%]
+Health:		+[30%/50%/70%]
+
+Dismember
+Rage Cost:	25
+Cooldown:	13s
+Range:	1c</description>
+		<maxLevel>3</maxLevel>
+		<recipe>TM_FleshGolem_LifeStage</recipe>
+		<bodypart>Flesh_Heart</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<occupiedPart>Flesh_Heart</occupiedPart>
+		<ability>TM_FleshGolem_Dismember</ability>
+		<lifeStages>
+			<li>TM_FleshGolemLS</li>
+			<li>TM_FleshGolemLS1</li>
+			<li>TM_FleshGolemLS2</li>
+			<li>TM_FleshGolemLS3</li>
+		</lifeStages>
+		<drawUndrafted>false</drawUndrafted>
+		<drawOnlyWhenActive>false</drawOnlyWhenActive>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+
+</Defs>
+
+<!--
+			    <label></label>
+				<maxLevel>1</maxLevel>
+				<recipe>TM_Mecha-Golem_</recipe>
+				<bodypart>Mecha_</bodypart>
+				<partRequiresUpgrade>true</partRequiresUpgrade>
+				<hediff></hediff>
+				<ability></ability>
+				<lifeStages>
+				</lifeStages>
+				<abilityModifier>
+					<damageModifier></damageModifier>
+					<cooldownModifier></cooldownModifier>
+					<energyCostModifier></energyCostModifier>
+					<durationModifier></durationModifier>
+					<healingModifier></healingModifier>
+					<processingModifier></processingModifier>
+				</abilityModifier>				
+				<graphicsPath>Mecha/</graphicsPath>
+				<levelIncrementsGraphics>false</levelIncrementsGraphics>
+				<drawThing></drawThing>
+				<drawUndrafted>true</drawUndrafted>
+				<drawOnlyWhenActive>false</drawOnlyWhenActive>
+				<drawSize>1</drawSize>
+				<shouldRotate>false</shouldRotate>
+				<drawOffsetNorth>(0, 0, 0)</drawOffsetNorth>
+				<drawOffsetSouth>(0, 0, 0)</drawOffsetSouth>
+				<drawOffsetEast>(0, 0, 0)</drawOffsetEast>
+				<drawOffsetWest>(0, 0, 0)</drawOffsetWest>
+				<workstationCapacity>None</workstationCapacity> 
+				<workstationEffects>
+				</workstationEffects>
+-->

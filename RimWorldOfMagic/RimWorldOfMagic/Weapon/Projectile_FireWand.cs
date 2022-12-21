@@ -11,7 +11,7 @@ namespace TorannMagic.Weapon
     {
         private float arcaneDmg = 1;
 
-        protected override void Impact(Thing hitThing)
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             Pawn pawn = this.launcher as Pawn;
             if (pawn != null)
@@ -25,7 +25,7 @@ namespace TorannMagic.Weapon
             Map map = this.launcher.Map;
             base.Impact(hitThing);
             ThingDef def = this.def;
-            GenExplosion.DoExplosion(base.Position, map, 1, DamageDefOf.Burn, this.launcher, Mathf.RoundToInt(this.def.projectile.GetDamageAmount(1, null) * this.arcaneDmg), 2, SoundDefOf.Crunch, def, this.equipmentDef, null, null, 0f, 1, false, null, 0f, 1, 0, true);
+            GenExplosion.DoExplosion(base.Position, map, 1, DamageDefOf.Burn, this.launcher, Mathf.RoundToInt(this.def.projectile.GetDamageAmount(1, null) * this.arcaneDmg), 2, SoundDefOf.Crunch, def, this.equipmentDef, null, null, 0f, 1, null, false, null, 0f, 1, 0, true);
 
             try
             {

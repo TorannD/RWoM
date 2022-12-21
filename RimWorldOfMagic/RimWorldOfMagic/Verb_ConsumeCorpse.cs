@@ -5,6 +5,7 @@ using RimWorld;
 using AbilityUser;
 using Verse;
 using UnityEngine;
+using TorannMagic.Utils;
 
 namespace TorannMagic
 {
@@ -220,42 +221,17 @@ namespace TorannMagic
             TM_MoteMaker.ThrowManaPuff(caster.Position.ToVector3Shifted(), caster.Map, .8f);
         }
 
-        public void HealCaster(Pawn caster, int num, int num2, float healAmt)
+        public static void HealCaster(Pawn pawn, int injuriesToHeal, int injuriesPerBodyPart, float healAmt)
         {
-            if (num > 0)
+            IEnumerable<Hediff_Injury> injuries = pawn.health.hediffSet.hediffs
+                .OfType<Hediff_Injury>()
+                .Where(injury => injury.CanHealNaturally())
+                .DistinctBy(injury => injury.Part, injuriesPerBodyPart)
+                .Take(injuriesToHeal);
+            foreach (Hediff_Injury injury in injuries)
             {
-                using (IEnumerator<BodyPartRecord> enumerator = caster.health.hediffSet.GetInjuredParts().GetEnumerator())
-                {
-                    while (enumerator.MoveNext())
-                    {
-                        BodyPartRecord rec = enumerator.Current;
-                        bool flag2 = num > 0;
-
-                        if (flag2)
-                        {
-                            IEnumerable<Hediff_Injury> arg_BB_0 = caster.health.hediffSet.GetHediffs<Hediff_Injury>();
-                            Func<Hediff_Injury, bool> arg_BB_1;
-
-                            arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
-
-                            foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1))
-                            {
-                                bool flag3 = num2 > 0;
-                                if (flag3)
-                                {
-                                    bool flag5 = current.CanHealNaturally() && !current.IsPermanent();
-                                    if (flag5)
-                                    {
-                                        current.Heal(healAmt);
-                                        num--;
-                                        num2--;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+                injury.Heal(healAmt);
+            }            
         }
     }
 }

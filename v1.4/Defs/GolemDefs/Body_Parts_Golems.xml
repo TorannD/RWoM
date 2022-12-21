@@ -1,0 +1,1522 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+<!-- GOLEM Generic -->
+  
+  <BodyPartDef>
+    <defName>Golem_Body</defName>
+    <label>torso</label>
+    <hitPoints>70</hitPoints>
+    <skinCovered>true</skinCovered>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<bleedRate>.2</bleedRate>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Golem_Back</defName>
+    <label>back</label>
+    <hitPoints>50</hitPoints>
+    <skinCovered>true</skinCovered>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<bleedRate>.2</bleedRate>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Golem_Spine</defName>
+    <label>spine</label>
+    <hitPoints>15</hitPoints>
+    <skinCovered>false</skinCovered>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<bleedRate>.2</bleedRate>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Golem_Abdomen</defName>
+    <label>abdomen</label>
+    <hitPoints>40</hitPoints>
+    <skinCovered>true</skinCovered>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<bleedRate>.5</bleedRate>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Golem_Guts</defName>
+    <label>guts</label>
+    <hitPoints>20</hitPoints>
+    <skinCovered>false</skinCovered>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<tags>
+      <li>MetabolismSource</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Golem_Chest</defName>
+    <label>chest</label>
+    <hitPoints>50</hitPoints>
+    <skinCovered>true</skinCovered>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<bleedRate>.2</bleedRate>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Golem_Heart</defName>
+    <label>heart</label>
+    <hitPoints>10</hitPoints>
+    <bleedRate>2</bleedRate>
+    <skinCovered>false</skinCovered>
+    <tags>
+      <li>BloodPumpingSource</li>
+    </tags>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Golem_Ribcage</defName>
+    <label>ribcage</label>
+    <hitPoints>20</hitPoints>
+    <skinCovered>false</skinCovered>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<solid>true</solid>
+    <bleedRate>0</bleedRate>
+    <tags>
+      <li>BreathingSourceCage</li>
+    </tags>
+    <destroyableByDamage>false</destroyableByDamage>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Golem_Lung</defName>
+    <label>lung</label>
+    <hitPoints>10</hitPoints>
+    <skinCovered>false</skinCovered>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <tags>
+      <li>BreathingSource</li>
+    </tags>
+	<hitChanceFactors>
+      <li>
+        <key>Blunt</key>
+        <value>0</value>
+      </li>
+    </hitChanceFactors>
+	<bleedRate>.5</bleedRate>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Golem_Neck</defName>
+    <label>neck</label>
+    <hitPoints>20</hitPoints>
+    <bleedRate>1.5</bleedRate>
+    <skinCovered>true</skinCovered>
+    <tags>
+      <li>BreathingPathway</li>
+      <li>EatingPathway</li>
+    </tags>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Golem_Head</defName>
+    <label>head</label>
+    <hitPoints>25</hitPoints>
+    <skinCovered>true</skinCovered>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Golem_Skull</defName>
+    <label>skull</label>
+    <hitPoints>30</hitPoints>
+	<solid>true</solid>
+	<bleedRate>0</bleedRate>
+    <skinCovered>false</skinCovered>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Golem_Brain</defName>
+    <label>brain</label>
+    <hitPoints>8</hitPoints>
+	<bleedRate>2</bleedRate>
+    <delicate>true</delicate>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <tags>
+      <li>ConsciousnessSource</li>
+    </tags>
+	<hitChanceFactors>
+      <li>
+        <key>Blunt</key>
+        <value>0</value>
+      </li>
+    </hitChanceFactors>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Golem_Face</defName>
+    <label>face</label>
+    <hitPoints>20</hitPoints>
+    <skinCovered>true</skinCovered>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Golem_Eye</defName>
+    <label>eye</label>
+    <hitPoints>5</hitPoints>
+    <delicate>true</delicate>
+    <skinCovered>false</skinCovered>
+    <socketed>true</socketed>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<bleedRate>.1</bleedRate>
+    <tags>
+      <li>SightSource</li>
+    </tags>
+    <hitChanceFactors>
+      <li>
+        <key>Blunt</key>
+        <value>0</value>
+      </li>
+    </hitChanceFactors>
+  </BodyPartDef>
+  
+  <BodyPartGroupDef>
+    <defName>Golem_Eyes</defName>
+    <label>eyes</label>
+	<listOrder>101</listOrder>
+  </BodyPartGroupDef>
+  
+  <BodyPartDef>
+    <defName>Golem_Ear</defName>
+    <label>ear</label>
+    <hitPoints>7</hitPoints>
+    <frostbiteVulnerability>1</frostbiteVulnerability>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>true</skinCovered>
+	<bleedRate>.2</bleedRate>
+    <tags>
+      <li>HearingSource</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Golem_Nose</defName>
+    <label>nose</label>
+    <hitPoints>12</hitPoints>
+    <frostbiteVulnerability>1</frostbiteVulnerability>
+    <skinCovered>true</skinCovered>
+    <solid>true</solid>
+    <bleedRate>0</bleedRate>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Golem_Jaw</defName>
+    <label>jaw</label>
+    <hitPoints>15</hitPoints>
+    <frostbiteVulnerability>0</frostbiteVulnerability>
+    <skinCovered>true</skinCovered>
+    <solid>true</solid>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <tags>
+      <li>EatingSource</li>
+      <li>TalkingSource</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Golem_Tongue</defName>
+	<hitPoints>10</hitPoints>
+    <label>tongue</label>
+    <skinCovered>false</skinCovered>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <tags>
+      <li>Tongue</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>Golem_Shoulder</defName>
+    <label>shoulder</label>
+    <hitPoints>30</hitPoints>
+    <skinCovered>true</skinCovered>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<bleedRate>.2</bleedRate>
+    <tags>
+      <li>ManipulationLimbSegment</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>Golem_RightArm</defName>
+    <label>right arm</label>
+    <hitPoints>25</hitPoints>
+    <skinCovered>true</skinCovered>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<bleedRate>.2</bleedRate>
+    <tags>
+      <li>ManipulationLimbCore</li>
+    </tags>
+  </BodyPartDef>
+
+<BodyPartDef>
+    <defName>Golem_LeftArm</defName>
+    <label>left arm</label>
+    <hitPoints>25</hitPoints>
+    <skinCovered>true</skinCovered>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<bleedRate>.2</bleedRate>
+    <tags>
+      <li>ManipulationLimbCore</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartGroupDef>
+    <defName>Golem_Arms</defName>
+    <label>smash</label>
+	<listOrder>104</listOrder>
+  </BodyPartGroupDef>
+
+  <BodyPartDef>
+    <defName>Golem_Hand</defName>
+    <label>hand</label>
+    <hitPoints>15</hitPoints>
+    <frostbiteVulnerability>0.1</frostbiteVulnerability>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>true</skinCovered>
+	<bleedRate>.1</bleedRate>
+    <tags>
+      <li>ManipulationLimbSegment</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Golem_Waist</defName>
+    <label>waist</label>
+	<hitPoints>40</hitPoints>
+	<skinCovered>true</skinCovered>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor> 
+	<bleedRate>.2</bleedRate>	
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Golem_Leg</defName>
+    <label>leg</label>
+    <hitPoints>30</hitPoints>
+    <skinCovered>true</skinCovered>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor> 
+	<bleedRate>.2</bleedRate>
+    <tags>
+      <li>MovingLimbCore</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Golem_Femur</defName>
+    <label>femur</label>
+    <hitPoints>25</hitPoints>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor> 
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+    <bleedRate>0</bleedRate>
+    <tags>
+      <li>MovingLimbSegment</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>Golem_Tibia</defName>
+    <label>tibia</label>
+    <hitPoints>12</hitPoints>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+    <bleedRate>0</bleedRate>
+    <tags>
+      <li>MovingLimbSegment</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>Golem_Foot</defName>
+    <label>foot</label>
+    <hitPoints>20</hitPoints>
+    <frostbiteVulnerability>0.1</frostbiteVulnerability>
+    <skinCovered>true</skinCovered>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor> 
+	<bleedRate>.1</bleedRate>
+    <tags>
+      <li>MovingLimbSegment</li>
+    </tags>
+  </BodyPartDef>
+
+
+<!-- MECHA GOLEM -->
+
+  <BodyPartDef>
+    <defName>Mecha_Body</defName>
+    <label>body</label>
+    <hitPoints>50</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+	<canScarify>false</canScarify>
+	<bleedRate>0</bleedRate>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Mecha_Back</defName>
+    <label>back plate</label>
+    <hitPoints>50</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+	<canScarify>false</canScarify>
+	<bleedRate>0</bleedRate>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Mecha_Spine</defName>
+    <label>spinal-pathway</label>
+    <hitPoints>20</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+	<bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <tags>
+      <li>Spine</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Mecha_Abdomen</defName>
+    <label>abdomen</label>
+    <hitPoints>20</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>false</solid>
+	<bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Mecha_EnergyCompactor</defName>
+    <label>energy compactor</label>
+    <hitPoints>15</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+	<bleedRate>0</bleedRate>
+    <beautyRelated>false</beautyRelated>
+	<canScarify>false</canScarify>
+    <tags>
+      <li>EatingSource</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Mecha_Chest</defName>
+    <label>chest plate</label>
+    <hitPoints>80</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>false</solid>
+	<bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Mecha_Core</defName>
+    <label>CPU</label>
+    <hitPoints>10</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <skinCovered>false</skinCovered>
+    <tags>
+      <li>BloodPumpingSource</li>
+      <li>BloodFiltrationSource</li>
+      <li>MetabolismSource</li>
+      <li>BreathingSource</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Mecha_CoreProcessor</defName>
+    <label>processor core</label>
+    <hitPoints>3</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <skinCovered>false</skinCovered>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Mecha_Neck</defName>
+    <label>gorget</label>
+    <hitPoints>15</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <skinCovered>true</skinCovered>
+<!--     <tags>
+      <li>BreathingPathway</li>
+      <li>EatingPathway</li>
+      <li>TalkingPathway</li>
+    </tags> -->
+    <canSuggestAmputation>false</canSuggestAmputation>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>Mecha_Head</defName>
+    <label>head frame</label>
+    <hitPoints>30</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>true</skinCovered>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<bleedRate>0</bleedRate>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>Mecha_SkullPlate</defName>
+    <label>skull plate</label>
+    <hitPoints>20</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+	<bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>Mecha_AI</defName>
+    <label>AI core</label>
+    <hitPoints>3</hitPoints>
+    <permanentInjuryChanceFactor>1</permanentInjuryChanceFactor>
+	<bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <skinCovered>false</skinCovered>
+    <tags>
+      <li>ConsciousnessSource</li>
+    </tags>
+    <canSuggestAmputation>false</canSuggestAmputation>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Mecha_Optics</defName>
+    <label>optics</label>
+    <hitPoints>10</hitPoints>
+    <skinCovered>false</skinCovered>
+	<frostbiteVulnerability>.1</frostbiteVulnerability>
+    <beautyRelated>true</beautyRelated>
+	<socketed>true</socketed>
+	<bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <tags>
+      <li>SightSource</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Mecha_Sensors</defName>
+    <label>sensors</label>
+    <hitPoints>10</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<frostbiteVulnerability>.1</frostbiteVulnerability>
+    <skinCovered>false</skinCovered>
+    <beautyRelated>true</beautyRelated>
+	<canScarify>false</canScarify>
+	<bleedRate>0</bleedRate>
+    <tags>
+      <li>HearingSource</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>Mecha_Transmitter</defName>
+    <label>transmitters</label>
+    <hitPoints>8</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<frostbiteVulnerability>.1</frostbiteVulnerability>
+    <skinCovered>false</skinCovered>
+    <beautyRelated>true</beautyRelated>
+	<canScarify>false</canScarify>
+	<bleedRate>0</bleedRate>
+    <tags>
+      <li>TalkingSource</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Mecha_LeftShoulder</defName>
+    <label>left shoulder</label>
+    <hitPoints>25</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<bleedRate>0</bleedRate>
+    <skinCovered>false</skinCovered>
+	<canScarify>false</canScarify>
+    <tags>
+      <li>ManipulationLimbSegment</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Mecha_LeftArm</defName>
+    <label>left arm</label>
+    <hitPoints>30</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<bleedRate>0</bleedRate>
+    <skinCovered>false</skinCovered>
+	<canScarify>false</canScarify>
+    <tags>
+      <li>ManipulationLimbCore</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Mecha_LeftArm_Axe</defName>
+    <label>mecha-axe</label>
+    <hitPoints>70</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<bleedRate>0</bleedRate>
+    <skinCovered>false</skinCovered>
+	<canScarify>false</canScarify>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Mecha_LeftArm_Sword</defName>
+    <label>mecha-sword</label>
+    <hitPoints>70</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<bleedRate>0</bleedRate>
+    <skinCovered>false</skinCovered>
+	<canScarify>false</canScarify>
+  </BodyPartDef>
+  
+  <BodyPartGroupDef>
+    <defName>Mecha_LeftArm</defName>
+    <label>left arm</label>
+	<listOrder>101</listOrder>
+  </BodyPartGroupDef>
+  
+  <BodyPartGroupDef>
+    <defName>Mecha_LeftArm_Axe</defName>
+    <label>mecha-axe</label>
+	<listOrder>102</listOrder>
+  </BodyPartGroupDef>
+  
+  <BodyPartGroupDef>
+    <defName>Mecha_LeftArm_Sword</defName>
+    <label>mecha-sword</label>
+	<listOrder>106</listOrder>
+  </BodyPartGroupDef>
+  
+  <BodyPartDef>
+    <defName>Mecha_RightShoulder</defName>
+    <label>right shoulder</label>
+    <hitPoints>25</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<bleedRate>0</bleedRate>
+    <skinCovered>false</skinCovered>
+	<canScarify>false</canScarify>
+    <tags>
+      <li>ManipulationLimbSegment</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>Mecha_RightArm</defName>
+    <label>right arm</label>
+    <hitPoints>30</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<bleedRate>0</bleedRate>
+    <skinCovered>false</skinCovered>
+	<canScarify>false</canScarify>
+    <tags>
+      <li>ManipulationLimbCore</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Mecha_RightArm_Hammer</defName>
+    <label>mecha-hammer</label>
+    <hitPoints>70</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<bleedRate>0</bleedRate>
+    <skinCovered>false</skinCovered>
+	<canScarify>false</canScarify>
+  </BodyPartDef>
+  
+  <BodyPartGroupDef>
+    <defName>Mecha_RightArm</defName>
+    <label>right arm</label>
+	<listOrder>103</listOrder>
+  </BodyPartGroupDef>
+  
+  <BodyPartGroupDef>
+    <defName>Mecha_RightArm_Hammer</defName>
+    <label>mecha-hammer</label>
+	<listOrder>104</listOrder>
+  </BodyPartGroupDef>
+  
+  <BodyPartDef>
+    <defName>Mecha_Base</defName>
+    <label>automoton movement base</label>
+    <hitPoints>40</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+	<bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <tags>
+      <li>MovingLimbCore</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartGroupDef>
+    <defName>Mecha_Base</defName>
+    <label>body smash</label>
+	<listOrder>105</listOrder>
+  </BodyPartGroupDef>
+  
+  <!-- FLESH GOLEM -->
+  
+  <BodyPartDef>
+    <defName>Flesh_Body</defName>
+    <label>torso</label>
+    <hitPoints>70</hitPoints>
+    <skinCovered>true</skinCovered>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<bleedRate>.2</bleedRate>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Flesh_Back</defName>
+    <label>back</label>
+    <hitPoints>50</hitPoints>
+    <skinCovered>true</skinCovered>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<bleedRate>.2</bleedRate>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Flesh_Spine</defName>
+    <label>spine</label>
+    <hitPoints>15</hitPoints>
+    <skinCovered>false</skinCovered>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<bleedRate>.2</bleedRate>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Flesh_Wings</defName>
+    <label>wings</label>
+    <hitPoints>15</hitPoints>
+    <skinCovered>true</skinCovered>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<bleedRate>.1</bleedRate>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Flesh_Abdomen</defName>
+    <label>abdomen</label>
+    <hitPoints>40</hitPoints>
+    <skinCovered>true</skinCovered>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<bleedRate>.5</bleedRate>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Flesh_Guts</defName>
+    <label>guts</label>
+    <hitPoints>20</hitPoints>
+    <skinCovered>false</skinCovered>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<tags>
+      <li>MetabolismSource</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Flesh_Chest</defName>
+    <label>chest</label>
+    <hitPoints>50</hitPoints>
+    <skinCovered>true</skinCovered>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<bleedRate>.2</bleedRate>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Flesh_Heart</defName>
+    <label>heart</label>
+    <hitPoints>10</hitPoints>
+    <bleedRate>2</bleedRate>
+    <skinCovered>false</skinCovered>
+    <tags>
+      <li>BloodPumpingSource</li>
+    </tags>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Flesh_Ribcage</defName>
+    <label>ribcage</label>
+    <hitPoints>20</hitPoints>
+    <skinCovered>false</skinCovered>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<solid>true</solid>
+    <bleedRate>0</bleedRate>
+    <tags>
+      <li>BreathingSourceCage</li>
+    </tags>
+    <destroyableByDamage>false</destroyableByDamage>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Flesh_Lung</defName>
+    <label>lung</label>
+    <hitPoints>10</hitPoints>
+    <skinCovered>false</skinCovered>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <tags>
+      <li>BreathingSource</li>
+    </tags>
+	<hitChanceFactors>
+      <li>
+        <key>Blunt</key>
+        <value>0</value>
+      </li>
+    </hitChanceFactors>
+	<bleedRate>.5</bleedRate>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Flesh_Neck</defName>
+    <label>neck</label>
+    <hitPoints>20</hitPoints>
+    <bleedRate>1.5</bleedRate>
+    <skinCovered>true</skinCovered>
+    <tags>
+      <li>BreathingPathway</li>
+      <li>EatingPathway</li>
+    </tags>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Flesh_Head</defName>
+    <label>head</label>
+    <hitPoints>25</hitPoints>
+    <skinCovered>true</skinCovered>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Flesh_Skull</defName>
+    <label>skull</label>
+    <hitPoints>30</hitPoints>
+	<solid>true</solid>
+	<bleedRate>0</bleedRate>
+    <skinCovered>false</skinCovered>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Flesh_Brain</defName>
+    <label>brain</label>
+    <hitPoints>8</hitPoints>
+	<bleedRate>2</bleedRate>
+    <delicate>true</delicate>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <tags>
+      <li>ConsciousnessSource</li>
+    </tags>
+	<hitChanceFactors>
+      <li>
+        <key>Blunt</key>
+        <value>0</value>
+      </li>
+    </hitChanceFactors>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Flesh_Face</defName>
+    <label>face</label>
+    <hitPoints>20</hitPoints>
+    <skinCovered>true</skinCovered>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Flesh_Eye</defName>
+    <label>eye</label>
+    <hitPoints>5</hitPoints>
+    <delicate>true</delicate>
+    <skinCovered>false</skinCovered>
+    <socketed>true</socketed>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<bleedRate>.1</bleedRate>
+    <tags>
+      <li>SightSource</li>
+    </tags>
+    <hitChanceFactors>
+      <li>
+        <key>Blunt</key>
+        <value>0</value>
+      </li>
+    </hitChanceFactors>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Flesh_LowerEye</defName>
+    <label>eye</label>
+    <hitPoints>4</hitPoints>
+    <delicate>true</delicate>
+    <skinCovered>false</skinCovered>
+    <socketed>true</socketed>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<bleedRate>.1</bleedRate>
+    <tags>
+      <li>SightSource</li>
+    </tags>
+    <hitChanceFactors>
+      <li>
+        <key>Blunt</key>
+        <value>0</value>
+      </li>
+    </hitChanceFactors>
+  </BodyPartDef>
+  
+  <BodyPartGroupDef>
+    <defName>Flesh_Eyes</defName>
+    <label>eyes</label>
+	<listOrder>101</listOrder>
+  </BodyPartGroupDef>
+  
+  <BodyPartDef>
+    <defName>Flesh_EvilEye</defName>
+    <label>evil eye</label>
+    <hitPoints>7</hitPoints>
+    <delicate>true</delicate>
+    <skinCovered>false</skinCovered>
+    <socketed>true</socketed>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<bleedRate>.5</bleedRate>
+    <hitChanceFactors>
+      <li>
+        <key>Blunt</key>
+        <value>0</value>
+      </li>
+    </hitChanceFactors>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Flesh_Tusks</defName>
+    <label>tusks</label>
+    <hitPoints>25</hitPoints>    
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+  </BodyPartDef>
+  
+  <BodyPartGroupDef>
+    <defName>Flesh_Tusks</defName>
+    <label>tusks</label>
+	<listOrder>102</listOrder>
+  </BodyPartGroupDef>
+  
+  <BodyPartDef>
+    <defName>Flesh_Ear</defName>
+    <label>ear</label>
+    <hitPoints>7</hitPoints>
+    <frostbiteVulnerability>1</frostbiteVulnerability>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>true</skinCovered>
+	<bleedRate>.2</bleedRate>
+    <tags>
+      <li>HearingSource</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Flesh_Nose</defName>
+    <label>nose</label>
+    <hitPoints>12</hitPoints>
+    <frostbiteVulnerability>1</frostbiteVulnerability>
+    <skinCovered>true</skinCovered>
+    <solid>true</solid>
+    <bleedRate>0</bleedRate>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Flesh_Jaw</defName>
+    <label>jaw</label>
+    <hitPoints>15</hitPoints>
+    <frostbiteVulnerability>0</frostbiteVulnerability>
+    <skinCovered>true</skinCovered>
+    <solid>true</solid>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <tags>
+      <li>EatingSource</li>
+      <li>TalkingSource</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Flesh_Tongue</defName>
+	<hitPoints>10</hitPoints>
+    <label>tongue</label>
+    <skinCovered>false</skinCovered>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <tags>
+      <li>Tongue</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Flesh_Horns</defName>
+    <label>horns</label>
+    <hitPoints>40</hitPoints>    
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+  </BodyPartDef>
+  
+  <BodyPartGroupDef>
+    <defName>Flesh_Horns</defName>
+    <label>horns</label>
+	<listOrder>103</listOrder>
+  </BodyPartGroupDef>
+
+  <BodyPartDef>
+    <defName>Flesh_Shoulder</defName>
+    <label>shoulder</label>
+    <hitPoints>30</hitPoints>
+    <skinCovered>true</skinCovered>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<bleedRate>.2</bleedRate>
+    <tags>
+      <li>ManipulationLimbSegment</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>Flesh_RightArm</defName>
+    <label>right arm</label>
+    <hitPoints>25</hitPoints>
+    <skinCovered>true</skinCovered>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<bleedRate>.2</bleedRate>
+    <tags>
+      <li>ManipulationLimbCore</li>
+    </tags>
+  </BodyPartDef>
+
+<BodyPartDef>
+    <defName>Flesh_LeftArm</defName>
+    <label>left arm</label>
+    <hitPoints>25</hitPoints>
+    <skinCovered>true</skinCovered>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<bleedRate>.2</bleedRate>
+    <tags>
+      <li>ManipulationLimbCore</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartGroupDef>
+    <defName>Flesh_Arms</defName>
+    <label>smash</label>
+	<listOrder>104</listOrder>
+  </BodyPartGroupDef>
+
+  <BodyPartDef>
+    <defName>Flesh_Hand</defName>
+    <label>hand</label>
+    <hitPoints>15</hitPoints>
+    <frostbiteVulnerability>0.1</frostbiteVulnerability>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>true</skinCovered>
+	<bleedRate>.1</bleedRate>
+    <tags>
+      <li>ManipulationLimbSegment</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Flesh_LeftArm_Brace</defName>
+    <label>left brace</label>
+    <hitPoints>30</hitPoints>
+	<skinCovered>false</skinCovered>
+	<solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>    
+  </BodyPartDef>
+  
+  <BodyPartGroupDef>
+    <defName>Flesh_LeftArm_Brace</defName>
+    <label>bracer</label>
+	<listOrder>105</listOrder>
+  </BodyPartGroupDef>
+  
+  <BodyPartDef>
+    <defName>Flesh_LeftArm_Cleaver</defName>
+    <label>left cleaver</label>
+    <hitPoints>30</hitPoints>
+	<skinCovered>false</skinCovered>
+	<solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>    
+  </BodyPartDef>
+  
+  <BodyPartGroupDef>
+    <defName>Flesh_LeftArm_Cleaver</defName>
+    <label>cleaver</label>
+	<listOrder>106</listOrder>
+  </BodyPartGroupDef>
+  
+  <BodyPartDef>
+    <defName>Flesh_RightArm_Brace</defName>
+    <label>right brace</label>
+    <hitPoints>30</hitPoints>
+	<skinCovered>false</skinCovered>
+	<solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>    
+  </BodyPartDef>
+  
+  <BodyPartGroupDef>
+    <defName>Flesh_RightArm_Brace</defName>
+    <label>bracer</label>
+	<listOrder>107</listOrder>
+  </BodyPartGroupDef>
+  
+  <BodyPartDef>
+    <defName>Flesh_RightArm_Cleaver</defName>
+    <label>right cleaver</label>
+    <hitPoints>30</hitPoints>
+	<skinCovered>false</skinCovered>
+	<solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>    
+  </BodyPartDef>
+  
+  <BodyPartGroupDef>
+    <defName>Flesh_RightArm_Cleaver</defName>
+    <label>cleaver</label>
+	<listOrder>108</listOrder>
+  </BodyPartGroupDef>
+  
+  <BodyPartDef>
+    <defName>Flesh_Waist</defName>
+    <label>waist</label>
+	<hitPoints>40</hitPoints>
+	<skinCovered>true</skinCovered>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor> 
+	<bleedRate>.2</bleedRate>	
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Flesh_Leg</defName>
+    <label>leg</label>
+    <hitPoints>30</hitPoints>
+    <skinCovered>true</skinCovered>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor> 
+	<bleedRate>.2</bleedRate>
+    <tags>
+      <li>MovingLimbCore</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Flesh_Femur</defName>
+    <label>femur</label>
+    <hitPoints>25</hitPoints>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor> 
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+    <bleedRate>0</bleedRate>
+    <tags>
+      <li>MovingLimbSegment</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>Flesh_Tibia</defName>
+    <label>tibia</label>
+    <hitPoints>12</hitPoints>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+    <bleedRate>0</bleedRate>
+    <tags>
+      <li>MovingLimbSegment</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>Flesh_Foot</defName>
+    <label>foot</label>
+    <hitPoints>20</hitPoints>
+    <frostbiteVulnerability>0.1</frostbiteVulnerability>
+    <skinCovered>true</skinCovered>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor> 
+	<bleedRate>.1</bleedRate>
+    <tags>
+      <li>MovingLimbSegment</li>
+    </tags>
+  </BodyPartDef>
+  
+  <!-- HOLLOW GOLEM -->
+  
+  <BodyPartDef>
+    <defName>Hollow_Weapon</defName>
+    <label>hollowed weapon slot</label>
+    <hitPoints>100</hitPoints>
+	<skinCovered>false</skinCovered>
+	<solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>      
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Hollow_Axe</defName>
+    <label>hollowed axe</label>
+    <hitPoints>100</hitPoints>
+	<skinCovered>false</skinCovered>
+	<solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>    
+  </BodyPartDef>
+  
+  <BodyPartGroupDef>
+    <defName>Hollow_Axe</defName>
+    <label>hollowed axe</label>
+	<listOrder>105</listOrder>
+  </BodyPartGroupDef>
+  
+  <BodyPartDef>
+    <defName>Hollow_Staff</defName>
+    <label>hollowed staff</label>
+    <hitPoints>100</hitPoints>
+	<skinCovered>false</skinCovered>
+	<solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>    
+  </BodyPartDef>
+  
+  <BodyPartGroupDef>
+    <defName>Hollow_Staff</defName>
+    <label>hollowed staff</label>
+	<listOrder>106</listOrder>
+  </BodyPartGroupDef>
+  
+  <BodyPartGroupDef>
+    <defName>Hollow_Claws</defName>
+    <label>hollow claws</label>
+	<listOrder>107</listOrder>
+  </BodyPartGroupDef>
+  
+  <BodyPartGroupDef>
+    <defName>Hollow_Decay</defName>
+    <label>decay touch</label>
+	<listOrder>108</listOrder>
+  </BodyPartGroupDef>
+  
+  <BodyPartGroupDef>
+    <defName>Hollow_FocusGems</defName>
+    <label>focus gem</label>
+	<listOrder>109</listOrder>
+  </BodyPartGroupDef>
+  
+  <BodyPartDef>
+    <defName>Hollow_Core</defName>
+    <label>hollow core</label>
+    <hitPoints>20</hitPoints>
+	<skinCovered>false</skinCovered>
+	<solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>1</permanentInjuryChanceFactor>    
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Hollow_CoreSlotA</defName>
+    <label>hollow core</label>
+    <hitPoints>10</hitPoints>
+	<skinCovered>false</skinCovered>
+	<solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>    
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Hollow_CoreSlotB</defName>
+    <label>hollow core</label>
+    <hitPoints>10</hitPoints>
+	<skinCovered>false</skinCovered>
+	<solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>    
+  </BodyPartDef>
+  
+  <!-- STONE GOLEM -->
+  
+  <BodyPartGroupDef>
+    <defName>Stone_Arms</defName>
+    <label>arms</label>
+	<listOrder>101</listOrder>
+  </BodyPartGroupDef>
+  
+  <BodyPartDef>
+    <defName>Stone_Core</defName>
+    <label>stone core</label>
+    <hitPoints>20</hitPoints>
+	<skinCovered>false</skinCovered>
+	<solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>1</permanentInjuryChanceFactor>    
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Stone_SlotA</defName>
+    <label>stone core(a)</label>
+    <hitPoints>10</hitPoints>
+	<skinCovered>false</skinCovered>
+	<solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>    
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Stone_SlotB</defName>
+    <label>stone core(b)</label>
+    <hitPoints>10</hitPoints>
+	<skinCovered>false</skinCovered>
+	<solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>    
+  </BodyPartDef>
+  
+  <!-- MAHARAL GOLEM -->
+  
+  <BodyPartGroupDef>
+    <defName>Maharal_Arms</defName>
+    <label>arms</label>
+	<listOrder>101</listOrder>
+  </BodyPartGroupDef>
+  
+  <BodyPartDef>
+    <defName>Maharal_Core</defName>
+    <label>maharal core</label>
+    <hitPoints>20</hitPoints>
+	<skinCovered>false</skinCovered>
+	<solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>1</permanentInjuryChanceFactor>    
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Maharal_SlotA</defName>
+    <label>maharal core(a)</label>
+    <hitPoints>10</hitPoints>
+	<skinCovered>false</skinCovered>
+	<solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>    
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Maharal_SlotB</defName>
+    <label>maharal core(b)</label>
+    <hitPoints>10</hitPoints>
+	<skinCovered>false</skinCovered>
+	<solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>    
+  </BodyPartDef>
+  
+</Defs>

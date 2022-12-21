@@ -13,7 +13,7 @@ namespace TorannMagic
         bool initialized = false;
         Pawn caster;
 
-        protected override void Impact(Thing hitThing)
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             Map map = base.Map;
             base.Impact(hitThing);

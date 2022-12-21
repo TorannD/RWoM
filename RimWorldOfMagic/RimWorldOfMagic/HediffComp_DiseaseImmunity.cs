@@ -48,7 +48,7 @@ namespace TorannMagic
                     {
                         if(this.verVal >= 3)
                         {
-                            IEnumerable<Hediff> hdEnum = this.Pawn.health.hediffSet.GetHediffs<Hediff>();
+                            IEnumerable<Hediff> hdEnum = this.Pawn.health.hediffSet.hediffs;
                             foreach (Hediff hd in hdEnum)
                             {
                                 if (hd.def.defName == "BloodRot")

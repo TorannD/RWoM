@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  
+  <HistoryEventDef>
+    <defName>TM_OffensiveMagic</defName>
+    <label>offensive or vulgar use of magic</label>
+  </HistoryEventDef>
+  
+  <HistoryEventDef>
+    <defName>TM_KilledMage</defName>
+    <label>killed a mage</label>
+  </HistoryEventDef>
+  
+  <HistoryEventDef>
+    <defName>TM_KilledFighter</defName>
+    <label>killed a fighter</label>
+  </HistoryEventDef>
+  
+  <HistoryEventDef>
+    <defName>TM_UsedMagic</defName>
+    <label>used a magic ability</label>
+  </HistoryEventDef>
+  
+  <HistoryEventDef>
+    <defName>TM_UsedManeuver</defName>
+    <label>used a combat ability</label>
+  </HistoryEventDef>
+  
+  <HistoryEventDef>
+    <defName>TM_KilledHumanlike</defName>
+    <label>killed someone</label>
+  </HistoryEventDef>
+  
+  <HistoryEventDef>
+    <defName>TM_SeverMagicEvent</defName>
+    <label>severed a mage from magic</label>
+  </HistoryEventDef>
+  
+  <HistoryEventDef>
+    <defName>TM_BestowMagicEvent</defName>
+    <label>granted the gift of magic</label>
+  </HistoryEventDef>
+  
+  <HistoryEventDef>
+    <defName>TM_BestowClassEvent</defName>
+    <label>inspired magic class</label>
+  </HistoryEventDef>
+
+
+</Defs>

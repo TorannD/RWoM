@@ -14,7 +14,7 @@ namespace TorannMagic
             }
             catch (NullReferenceException e)
             {
-                Log.Warning($"NullReference during InBounds call: {e.ToString()}");
+                //Log.Warning($"NullReference during InBounds call: {e.ToString()}");
                 return false;
             }
         }
@@ -27,7 +27,7 @@ namespace TorannMagic
             }
             catch (NullReferenceException e)
             {
-                Log.Warning($"NullReference during InBounds call: {e.ToString()}");
+                //Log.Warning($"NullReference during InBounds call: {e.ToString()}");
                 return false;
             }
         }

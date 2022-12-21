@@ -5,6 +5,7 @@ using AbilityUser;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 namespace TorannMagic
 {
@@ -56,7 +57,7 @@ namespace TorannMagic
             }
         }
 
-        protected override void Impact(Thing hitThing)
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             Map map = base.Map;
             base.Impact(hitThing);
@@ -67,10 +68,13 @@ namespace TorannMagic
                 if (this.launcher is Pawn caster)
                 {
                     CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
-                    MagicPowerSkill ver = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Resurrection.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Resurrection_ver");
-                    MagicPowerSkill pwr = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Resurrection.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Resurrection_eff");
-                    verVal = ver.level;
-                    pwrVal = pwr.level;
+                    if (comp != null && comp.MagicData != null)
+                    {
+                        MagicPowerSkill ver = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Resurrection.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Resurrection_ver");
+                        MagicPowerSkill pwr = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Resurrection.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Resurrection_eff");
+                        verVal = ver.level;
+                        pwrVal = pwr.level;
+                    }
                 }
                 this.angle = Rand.Range(-12f, 12f);               
                 
@@ -90,14 +94,14 @@ namespace TorannMagic
                         if (corpseThing != null)
                         {
                             bool validator = corpseThing is Corpse;
-                            if (validator)
+                            if (corpseThing is Corpse)
                             {
                                 corpse = corpseThing as Corpse;
                                 CompRottable compRot = corpse.GetComp<CompRottable>(); 
                                 
                                 deadPawn = corpse.InnerPawn;
                                 deadPawnPosition = corpse.Position;
-                                if (deadPawn.RaceProps.IsFlesh && !TM_Calc.IsUndead(deadPawn) && compRot != null)
+                                if (deadPawn != null && deadPawn.RaceProps.IsFlesh && !TM_Calc.IsUndead(deadPawn) && compRot != null)
                                 {
                                     if (!corpse.IsNotFresh())
                                     {
@@ -123,7 +127,7 @@ namespace TorannMagic
                 this.initialized = true;
             }
 
-            if(corpseThing.Position != this.deadPawnPosition || corpseThing.Map == null)
+            if(corpseThing != null && (corpseThing.Position != this.deadPawnPosition || corpseThing.Map == null) && deadPawn.Dead)
             {
                 Log.Message("Corpse was moved or destroyed during resurrection process.");
                 this.age = this.timeToRaise;
@@ -156,7 +160,7 @@ namespace TorannMagic
                             }
                         }
                     }
-                    if (deadPawn != null)
+                    if (deadPawn != null && deadPawn.RaceProps != null && deadPawn.kindDef != null)
                     {
                         if (TM_Calc.IsUndead(deadPawn))
                         {
@@ -171,33 +175,33 @@ namespace TorannMagic
                         }
                         else
                         {
-                            if (!deadPawn.kindDef.RaceProps.Animal && deadPawn.kindDef.RaceProps.Humanlike)
+                            try
                             {
-                                ResurrectionUtility.ResurrectWithSideEffects(deadPawn);
-                                SoundDef.Named("Thunder_OffMap").PlayOneShot(null);
-                                SoundDef.Named("Thunder_OffMap").PlayOneShot(null);
-                                using (IEnumerator<Hediff> enumerator = deadPawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
+                                if (!deadPawn.kindDef.RaceProps.Animal && deadPawn.kindDef.RaceProps.Humanlike)
                                 {
-                                    while (enumerator.MoveNext())
+
+                                    ResurrectionUtility.ResurrectWithSideEffects(deadPawn);
+                                    SoundDef.Named("Thunder_OffMap").PlayOneShot(null);
+                                    SoundDef.Named("Thunder_OffMap").PlayOneShot(null);
+                                    Hediff rec = deadPawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ResurrectionPsychosis);
+                                    if (rec != null && Rand.Chance(verVal * .33f))
                                     {
-                                        Hediff rec = enumerator.Current;
-                                        if (rec.def.defName == "ResurrectionPsychosis")
-                                        {
-                                            if (Rand.Chance(verVal * .33f))
-                                            {
-                                                deadPawn.health.RemoveHediff(rec);
-                                            }
-                                        }
+                                        deadPawn.health.RemoveHediff(rec);
                                     }
+                                    HealthUtility.AdjustSeverity(deadPawn, HediffDef.Named("TM_ResurrectionHD"), 1f);
+                                    ReduceSkillsOfPawn(deadPawn, (.35f - .035f * pwrVal));
+                                    ApplyHealthDefects(deadPawn, .6f - (.06f * verVal), .3f - .03f * verVal);
                                 }
-                                HealthUtility.AdjustSeverity(deadPawn, HediffDef.Named("TM_ResurrectionHD"), 1f);
-                                ReduceSkillsOfPawn(deadPawn, (.35f - .035f * pwrVal));
-                                ApplyHealthDefects(deadPawn, .6f - (.06f * verVal), .3f - .03f * verVal);
+
+                                if (deadPawn.kindDef.RaceProps.Animal)
+                                {
+                                    ResurrectionUtility.Resurrect(deadPawn);
+                                    HealthUtility.AdjustSeverity(deadPawn, HediffDef.Named("TM_ResurrectionHD"), 1f);
+                                }
                             }
-                            if (deadPawn.kindDef.RaceProps.Animal)
+                            catch(NullReferenceException ex)
                             {
-                                ResurrectionUtility.Resurrect(deadPawn);
-                                HealthUtility.AdjustSeverity(deadPawn, HediffDef.Named("TM_ResurrectionHD"), 1f);
+                                Log.Warning("Resurrection spell failed or incomplete due to " + ex);
                             }
                         }
                     }                    

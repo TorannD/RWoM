@@ -234,7 +234,7 @@
 <TM_BaseSpiritDesc>A wandering spirit, anchored to this realm by some unknown force. The events surrounding the origins of this spirit are unknown, but powerful enough to cause the spirit to seek answers, justice, or redemption from the living.</TM_BaseSpiritDesc>
 <TM_AncientSpiritDesc>This spirit has existed for countless ages and it no longer remembers its purpose. Ancient spirits pursue their own ends and have become masters at controlling spirit energy. Maximum spirit energy is increased by 50.</TM_AncientSpiritDesc>
 <TM_VengefulSpiritDesc>Vengeful spirits are full of spite and hatred, wishing only to inflict their misery onto the living. Vengeful spirits are able to exert more power during spirit distortion and spirit storm but are more difficult to harmonize with when possessing a living body. Increases attack rate of spirit storm by 25% and damage bonus of distort spirit by 6%. Reduces compatibility by 1.</TM_VengefulSpiritDesc>
-<TM_LostSpiritDesc>Lost spirits wander the realm in a constant state of existential anguish, unable to perceive their purpose. The lost readily attach themselves to another's cause and more easily harmonize with kindred spirits. They are also able to strengthen the power of the rally spirit ability. Increase duration, radius, max targets, and bonuses of Spirit Rally by 10%. Increases compatibility by 2. </TM_LostSpiritDesc>
+<TM_LostSpiritDesc>Lost spirits wander the realm in a constant state of existential anguish, unable to perceive their purpose. The lost readily attach themselves to another's cause and more easily harmonize with kindred spirits. They are also able to strengthen the power of the rally spirit ability. Increase duration, radius, max targets, and bonuses of Spirit Rally by 10%. Increases compatibility by 2.</TM_LostSpiritDesc>
 <TM_RegretSpiritDesc>The spirit of regret is still able to remember their purpose as a spirit, but are were unable to right their wrongs before it was too late. Now they wander the world as a spirit, full of sadness and regret, still searching for a way to fulfill their purpose. Spirits of regret enhance the drain spirit ability by 20%.</TM_RegretSpiritDesc>
 
 <!-- Surgery Failed letters -->
@@ -460,10 +460,10 @@ Level 3: 12</TM_Fireclaw_pwr_desc>
 <TM_Fireball_eff_desc>Decrease mana cost by 8% per level.</TM_Fireball_eff_desc>
 <TM_Fireball_ver_desc>Fireball causes Terror at level 1; levels 2 and 3 increase Terror potency. Terror lowers the enemies ability to fight effectively and may cause them to flee in panic.</TM_Fireball_ver_desc>
 <TM_Firestorm_pwr_desc>Increases the frequency of all meteor types.
-Increases Firestorm radius by .25 per skill level.</TM_Firestorm_pwr_desc>
+Increases Firestorm radius by .5c per skill level.</TM_Firestorm_pwr_desc>
 <TM_Firestorm_eff_desc>Decrease mana cost by 5% per level.</TM_Firestorm_eff_desc>
 <TM_Firestorm_ver_desc>Increases the duration of Firestorm by 1 second per skill level.
-Increases Firestorm radius by .25 per skill level.
+Increases Firestorm radius by .5c per skill level.
 Increases amount of shrapnel create by meteor impacts.</TM_Firestorm_ver_desc>
 
 <TM_Firebolt_pwr>Firebolt Power</TM_Firebolt_pwr>
@@ -500,10 +500,10 @@ Level 1: 4 fragments
 Level 2: 8 fragments
 Level 3: 12 fragments</TM_Snowball_ver_desc>
 <TM_Blizzard_pwr_desc>Increases the frequency of iceshards and snowballs.
-Increases the radius of blizzard by .5 per skill level.</TM_Blizzard_pwr_desc>
+Increases the radius of blizzard by .5c per skill level.</TM_Blizzard_pwr_desc>
 <TM_Blizzard_eff_desc>Decreases mana cost of Blizzard by 8% per level of base mana cost.</TM_Blizzard_eff_desc>
 <TM_Blizzard_ver_desc>Increases the duration of blizzard by 1.5 seconds per level.
-Increases the radius of blizzard by .5 per skill level.</TM_Blizzard_ver_desc>
+Increases the radius of blizzard by .5c per skill level.</TM_Blizzard_ver_desc>
 
 <TM_Soothe_eff>Soothe Efficiency</TM_Soothe_eff>
 <TM_Rainmaker_eff>Rainmaker Efficiency</TM_Rainmaker_eff>
@@ -524,13 +524,13 @@ Increases the radius of blizzard by .5 per skill level.</TM_Blizzard_ver_desc>
 <TM_LightningBolt_ver_desc>Increases the possibility of secondary lightning strikes by 1 to 4 per level.</TM_LightningBolt_ver_desc>
 <TM_LightningCloud_eff_desc>Decreases mana cost of Lightning Cloud by 6% of base mana cost.</TM_LightningCloud_eff_desc>
 <TM_LightningCloud_pwr_desc>Increases the shock damage of Lightning Cloud by 1 per level.</TM_LightningCloud_pwr_desc>
-<TM_LightningCloud_ver_desc>Increases duration of Lightning Cloud by 2 seconds per level.</TM_LightningCloud_ver_desc>
+<TM_LightningCloud_ver_desc>Increases duration of Lightning Cloud by 2 seconds and radius by 1 cell per level.</TM_LightningCloud_ver_desc>
 <TM_LightningStorm_eff_desc>Decreases mana cost of Lightning Storm by 6% of base mana cost.</TM_LightningStorm_eff_desc>
 <TM_LightningStorm_pwr_desc>Increases the frequency of lightning strikes by 20% per level and slightly increases the damage of each strike.</TM_LightningStorm_pwr_desc>
-<TM_LightningStorm_ver_desc>Increases duration of Lightning Storm by 1s per level and expands the area of effect.</TM_LightningStorm_ver_desc>
+<TM_LightningStorm_ver_desc>Increases duration of Lightning Storm by 1s per level.</TM_LightningStorm_ver_desc>
 <TM_EyeOfTheStorm_eff_desc>Uses energy in the atmosphere to fuel creation of the storm.  Reduces mana cost by 5% per skill level.</TM_EyeOfTheStorm_eff_desc>
 <TM_EyeOfTheStorm_pwr_desc>Increases the frequency the eye's lightning strikes by 20% per level and increases the damage of each strike by 20%.</TM_EyeOfTheStorm_pwr_desc>
-<TM_EyeOfTheStorm_ver_desc>Expands the strike radius by 1 for each skill level.  Base radius is 5.</TM_EyeOfTheStorm_ver_desc>
+<TM_EyeOfTheStorm_ver_desc>Expands the strike radius by 1 for each skill level. Base radius is 5.</TM_EyeOfTheStorm_ver_desc>
 
 
 <TM_AMP_eff>AMP Efficiency</TM_AMP_eff>
@@ -649,9 +649,9 @@ Level 1: (20%-60%), Duration 49.5s
 Level 2: (30%-80%), Duration 54s
 Level 3: (40%-80%), Duration 58.5s</TM_Poison_ver_desc>
 <TM_SootheAnimal_eff_desc>Reduces the cost of Beguile Animal by 10% per skill level.</TM_SootheAnimal_eff_desc>
-<TM_SootheAnimal_pwr_desc>Animals will receive arcane buffs when enraged, and arcane debuffs when pacified.  Skill level determines the strength of these modifiers, no modifiers occur at skill level 0.</TM_SootheAnimal_pwr_desc>
+<TM_SootheAnimal_pwr_desc>Animals will receive arcane buffs when enraged, and arcane debuffs when pacified. Skill level determines the strength of these modifiers, no modifiers occur at skill level 0.</TM_SootheAnimal_pwr_desc>
 <TM_Regenerate_eff_desc>Reduces the cost of Regeneration by 7% per skill level.</TM_Regenerate_eff_desc>
-<TM_Regenerate_pwr_desc>Increases the amount regeneration heals each tick by .5 health per level.  Base regeneration is 4 health.</TM_Regenerate_pwr_desc>
+<TM_Regenerate_pwr_desc>Increases the amount regeneration heals each tick by .5 health per level. Base regeneration is 4 health.</TM_Regenerate_pwr_desc>
 <TM_Regenerate_ver_desc>Increases the duration of regeneration per skill level, duration is random between stated values:
 Level 0: 16s - 50s
 Level 1: 33s - 100s
@@ -706,14 +706,15 @@ Level 2: radius 8, effect/1.4s, duration 30s
 Level 3: radius 9, effect/1.1s, duration 33s</TM_FogOfTorment_ver_desc>
 <TM_ConsumeCorpse_eff_desc>Increases mana restored by Consume Corpse by 7% per skill level.</TM_ConsumeCorpse_eff_desc>
 <TM_ConsumeCorpse_ver_desc>Consume corpse also heals the physical wounds of the caster.  
-The amount of health varies based on type (human or animal) and freshness of the corpse or undead being consumed.</TM_ConsumeCorpse_ver_desc>
-<TM_CorpseExplosion_pwr_desc>Increases the damage of Corpse Explosion by 5 per skill level.  Also increases the explosion radius by 10%.
+The amount of health varies based on type (human or animal) and freshness of the corpse or undead being consumed.
+Increases damage done to enemy undead by 15% per skill level.</TM_ConsumeCorpse_ver_desc>
+<TM_CorpseExplosion_pwr_desc>Increases the damage of Corpse Explosion by 5 per skill level. Also increases the explosion radius by 10%.
 Level 0: 18-30
 Level 1: 23-35
 Level 2: 28-40
 Level 3: 32-45</TM_CorpseExplosion_pwr_desc>
 <TM_CorpseExplosion_eff_desc>Reduces mana cost of Corpse Explosion by 8% per skill level.</TM_CorpseExplosion_eff_desc>
-<TM_CorpseExplosion_ver_desc>Reduces explosion delay by 1s per skill point.  Also increases the explosion radius by 10%.</TM_CorpseExplosion_ver_desc>
+<TM_CorpseExplosion_ver_desc>Reduces explosion delay by 1s per skill point. Also increases the explosion radius by 10%.</TM_CorpseExplosion_ver_desc>
 <TM_DeathBolt_pwr_desc>Increases the damage of Death Bolt by 5 per skill level and Spreading Darkness by 3 per skill level.
 Level 0: 18-35; Spreading Darkness: 12-24
 Level 1: 23-40; Spreading Darkness: 15-27
@@ -851,7 +852,7 @@ Level 1: 20%
 Level 2: 40%
 Level 3: 60%</TM_Repulsion_ver_desc>
 <TM_Scorn_eff_desc>Reduces mana cost of Scorn by 6% per skill point.</TM_Scorn_eff_desc>
-<TM_Scorn_ver_desc>Increases impact radius of Scorn by 1cell per skill point. Base 7 cell radius. 
+<TM_Scorn_ver_desc>Increases impact radius of Scorn by 1cell per skill point. Base 5 cell radius. 
 Also increases the power of the partial demonic transformation.</TM_Scorn_ver_desc>
 <TM_Scorn_pwr_desc>Increases the damage of Scorn by 15% per skill level. 
 Also increases the power of the demonic damage shield by 25%. Base shield absorbs 60 damage.</TM_Scorn_pwr_desc>
@@ -2170,7 +2171,7 @@ Level 3: all 4 effects</TM_CombatDrugs_pwr_desc>
 <TM_ActivateGolemDesc>Begins the process to activate the golem - after activating, the golem will move about as a normal pawn. Any upgrades or repairs being performed in the dormant state will be discarded. Requires a minimum of {0} energy to activate.</TM_ActivateGolemDesc>
 <TM_DeActivateGolem>Deactivate</TM_DeActivateGolem>
 <TM_DeActivateGolemDesc>Orders the golem to become dormant. The golem will attempt to return to its assigned dormant location. If this location is unreachable, the golem will deactivate at its current location. If the location is available, issuing this command a second time will override the return command and immediately deactivate the golem at it's current position.</TM_DeActivateGolemDesc>
-<TM_ActivateGolemDisabled>Disabled - insufficient energy</TM_ActivateGolemDisabled>
+<TM_ActivateGolemDisabled>Disabled - {0}</TM_ActivateGolemDisabled>
 <TM_AssignGolemRestPosition>Dormant position</TM_AssignGolemRestPosition>
 <TM_AssignGolemRestPositionDesc>Assigns the location the golem should deactivate.</TM_AssignGolemRestPositionDesc>
 <TM_DormantPositionUnreachable>Selected position is unreachable or occupied - canceling</TM_DormantPositionUnreachable>
@@ -2190,9 +2191,9 @@ Level 3: all 4 effects</TM_CombatDrugs_pwr_desc>
 <TM_GolemAwakenMinimumDesc>The energy percent at which that the golem will activate to perform tasks; set to 10% or less to disable automatic activation.</TM_GolemAwakenMinimumDesc>
 <TM_GolemMasterDesc>Assigns a golemancer as the master of this golem; assigning a master allows the golem improved behavior to protect the assigned golemancer.</TM_GolemMasterDesc>
 <TM_GolemFollowsMaster>Follow master</TM_GolemFollowsMaster>
-<TM_GolemFollowsMasterDesc>When enabled, the golem will prioritize following and protecting its master above all other work related tasks.</TM_GolemFollowsMasterDesc>
+<TM_GolemFollowsMasterDesc>When enabled, the golem will prioritize following and protecting its master above all other work related tasks. The golem must have a master assigned.</TM_GolemFollowsMasterDesc>
 <TM_GolemDraftedFollow>Drafted only</TM_GolemDraftedFollow>
-<TM_GolemDraftedFollowDesc>Prioritizes protection of its assigned master above all other actions when the master is drafted; the master may direct the golem in combat similar to a released animal.</TM_GolemDraftedFollowDesc>
+<TM_GolemDraftedFollowDesc>Follows master only when master is drafted.</TM_GolemDraftedFollowDesc>
 <TM_GolemDormantWhenUpgrading>Stay dormant when upgrading</TM_GolemDormantWhenUpgrading>
 <TM_GolemDormantWhenUpgradingDesc>When enabled, the golem will remain in a dormant state if there are queued bills. A golem will always remain dormant when a bill is in progress (unfinished upgrade).</TM_GolemDormantWhenUpgradingDesc>
 <TM_GolemUseAbilitiesWhileDormant>Use abilities while dormant</TM_GolemUseAbilitiesWhileDormant>
@@ -2204,6 +2205,7 @@ Level 3: all 4 effects</TM_CombatDrugs_pwr_desc>
 <TM_GolemMasterLabel>Golemancer</TM_GolemMasterLabel>
 <TM_ActivatesGolem_Time>Activates the golem - this typically takes a small amount of time. The golem will not be able to activate if it is undergoing upgrades.</TM_ActivatesGolem_Time>
 <TM_DeActivatesGolem_Time>Deactivates the golem - this will send the golem back to their resting position and may take some time.</TM_DeActivatesGolem_Time>
+<TM_GolemAssignAreaDesc>Allow area</TM_GolemAssignAreaDesc>
 <TM_RemovePossession>Leave body</TM_RemovePossession>
 <TM_RemovePossessionDesc>The spirit leaves the body willingly and the characteristics of the pawn return to its state prior to possession.</TM_RemovePossessionDesc>
 <!-- ========== Building Menu's ========== -->

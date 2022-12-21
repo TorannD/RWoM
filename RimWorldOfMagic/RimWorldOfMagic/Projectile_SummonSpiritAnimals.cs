@@ -44,7 +44,7 @@ namespace TorannMagic
             }
         }        
 
-        protected override void Impact(Thing hitThing)
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             Map map = base.Map;
             //base.Impact(hitThing);
@@ -88,8 +88,11 @@ namespace TorannMagic
                         Thing spirit = TM_Action.SingleSpawnLoop(caster, tempPod, shiftPos, map, spawnDuration, true, false, caster.Faction, false);
                         Pawn animal = spirit as Pawn;
                         Pawn enemy = TM_Calc.FindNearbyEnemy(animal, 30);
-                        animal.playerSettings.hostilityResponse = HostilityResponseMode.Attack;
-                        animal.playerSettings.followDrafted = true;
+                        if (animal.playerSettings != null)
+                        {
+                            animal.playerSettings.hostilityResponse = HostilityResponseMode.Attack;
+                            animal.playerSettings.followDrafted = true;
+                        }
                         
                         //TM_Action.TrainAnimalFull(animal, caster);
 

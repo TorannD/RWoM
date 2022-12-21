@@ -95,11 +95,11 @@ namespace TorannMagic
 
         private static readonly SimpleCache<string, Material> traitCache = new SimpleCache<string, Material>(5);
 
-        protected void DrawMark(Material material, Vector3 scale)
+        protected void DrawMark(Material material, Vector3 scale, float xOffset = 0, float yOffset = 0)
         {
             Vector3 vector = Pawn.Drawer.DrawPos;
-            vector.x += .45f;
-            vector.z += .45f;
+            vector.x += .45f + xOffset;
+            vector.z += .45f + yOffset;
             vector.y = AltitudeLayer.MoteOverhead.AltitudeFor();
             const float angle = 0f;
 

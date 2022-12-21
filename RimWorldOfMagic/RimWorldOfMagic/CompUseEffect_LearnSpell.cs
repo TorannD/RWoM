@@ -33,6 +33,7 @@ namespace TorannMagic
                         if (comp.Pawn.story.traits.HasTrait(td))
                         {
                             hasRequiredTrait = true;
+                            break;
                         }
                     }
                 }                

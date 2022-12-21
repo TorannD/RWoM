@@ -103,7 +103,7 @@ namespace TorannMagic.Golems
                                 }
                             }
                             p.Map.designationManager.RemoveAllDesignationsOn(plant);
-                            plant.PlantCollected(pawn);
+                            plant.PlantCollected(pawn, PlantDestructionMode.Cut);
                         }
                     }
                     this.EndJobWith(JobCondition.Succeeded);

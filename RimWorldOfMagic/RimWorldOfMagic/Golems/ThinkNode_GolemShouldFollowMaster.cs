@@ -33,15 +33,21 @@ namespace TorannMagic.Golems
             {
                 return false;
             }
-            if (respectedMaster.Spawned)
+            if (respectedMaster.Spawned && cg.followsMaster)
             {
-                if (cg.followsMasterDrafted && respectedMaster.Drafted && pawn.CanReach(respectedMaster, PathEndMode.OnCell, Danger.Deadly))
+                if (cg.followsMasterDrafted)
                 {
-                    return true;
+                    if (respectedMaster.Drafted && pawn.CanReach(respectedMaster, PathEndMode.OnCell, Danger.Deadly))
+                    {
+                        return true;
+                    }
                 }
-                if (cg.followsMaster && respectedMaster.mindState.lastJobTag == JobTag.Fieldwork && pawn.CanReach(respectedMaster, PathEndMode.OnCell, Danger.Deadly))
+                else
                 {
-                    return true;
+                    if (pawn.CanReach(respectedMaster, PathEndMode.OnCell, Danger.Deadly))
+                    {
+                        return true;
+                    }
                 }
             }
             else

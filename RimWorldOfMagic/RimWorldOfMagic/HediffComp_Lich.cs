@@ -58,8 +58,7 @@ namespace TorannMagic
 
             if (Find.TickManager.TicksGame % 16 == 0)
             {
-                IEnumerable<Hediff> hdEnum = this.Pawn.health.hediffSet.GetHediffs<Hediff>();
-                foreach (Hediff hd in hdEnum)
+                foreach (Hediff hd in Pawn.health.hediffSet.hediffs)
                 {
                     if (hd.def.defName == "SpaceHypoxia")
                     {
@@ -69,58 +68,29 @@ namespace TorannMagic
                 }
             }
 
-            bool flag4 = Find.TickManager.TicksGame % 600 == 0;
-            if (flag4)
+            if (Find.TickManager.TicksGame % 600 == 0)
             {
                 List<Need> needs = base.Pawn.needs.AllNeeds;
                 for (int i = 0; i < needs.Count; i++)
                 {
-                    if(needs[i].def.defName != "Joy" && needs[i].def.defName != "Mood" && needs[i].def.defName != "TM_Mana" && needs[i].def.defName != "TM_Stamina" && needs[i].def.defName != "ROMV_Blood" || nonStandardNeedsToAutoFulfill.Contains(needs[i]?.def?.defName))
+                    if(needs[i].def.defName != "Joy" && 
+                        needs[i].def.defName != "Mood" && 
+                        needs[i].def.defName != "TM_Mana" && 
+                        needs[i].def.defName != "TM_Stamina" &&
+                        needs[i].def.defName != "Deathrest" &&
+                        needs[i].def.defName != "MechEnergy" &&
+                        needs[i].def.defName != "KillThirst" &&
+                        needs[i].def.defName != "ROMV_Blood" || 
+                        nonStandardNeedsToAutoFulfill.Contains(needs[i]?.def?.defName))
                     { 
                         needs[i].CurLevel = needs[i].MaxLevel;
                     }
                     
                 }
-                Pawn pawn = base.Pawn;
-                int num = 1;
-                int num2 = 1;
-                using (IEnumerator<BodyPartRecord> enumerator = pawn.health.hediffSet.GetInjuredParts().GetEnumerator())
-                {
-                    while (enumerator.MoveNext())
-                    {
-                        BodyPartRecord rec = enumerator.Current;
-                        bool flag2 = num > 0;
 
-                        if (flag2)
-                        {
-                            IEnumerable<Hediff_Injury> arg_BB_0 = pawn.health.hediffSet.GetHediffs<Hediff_Injury>();
-                            Func<Hediff_Injury, bool> arg_BB_1;
-
-                            arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
-
-                            foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1))
-                            {
-                                bool flag3 = num2 > 0;
-                                if (flag3)
-                                {
-                                    bool flag5 = current.CanHealNaturally() && !current.IsPermanent();
-                                    if (flag5)
-                                    {
-                                        current.Heal(2.0f);
-                                        num--;
-                                        num2--;
-                                    }
-                                    else
-                                    {
-                                        current.Heal(1.0f);
-                                        num--;
-                                        num2--;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+                Pawn pawn = Pawn;
+                Hediff_Injury injuryToHeal = pawn.health.hediffSet.hediffs.OfType<Hediff_Injury>().FirstOrDefault();
+                injuryToHeal?.Heal(injuryToHeal.CanHealNaturally() ? 2.0f : 1.0f);
 
                 using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.GetHediffsTendable().GetEnumerator())
                 {
@@ -132,7 +102,6 @@ namespace TorannMagic
                             if (rec.Bleeding && rec is Hediff_MissingPart)
                             {
                                 Traverse.Create(root: rec).Field(name: "isFreshInt").SetValue(false);
-                                num--;
                             }
                             else
                             {
@@ -142,36 +111,51 @@ namespace TorannMagic
                     }
                 }
 
-                using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
+                List<Hediff> removeHDList = new List<Hediff>();
+                removeHDList.Clear();
+               
+                using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.hediffs.GetEnumerator())
                 {
                     while (enumerator.MoveNext())
-                    {
+                    {                        
                         Hediff rec = enumerator.Current;
-                        if (!rec.IsPermanent())
-                        {
-                            if (rec.def.defName == "Cataract" || rec.def.defName == "HearingLoss" || rec.def.defName.Contains("ToxicBuildup"))
-                            {
-                                pawn.health.RemoveHediff(rec);
-                            }
-                            if ((rec.def.defName == "Blindness" || rec.def.defName.Contains("Asthma") || rec.def.defName == "Cirrhosis" || rec.def.defName == "ChemicalDamageModerate"))
-                            {
-                                pawn.health.RemoveHediff(rec);
-                            }
-                            if ((rec.def.defName == "Frail" || rec.def.defName == "BadBack" || rec.def.defName.Contains("Carcinoma") || rec.def.defName == "ChemicalDamageSevere"))
-                            {
-                                pawn.health.RemoveHediff(rec);
-                            }
-                            if ((rec.def.defName.Contains("Alzheimers") || rec.def.defName == "Dementia" || rec.def.defName.Contains("HeartArteryBlockage") || rec.def.defName == "CatatonicBreakdown"))
-                            {
-                                pawn.health.RemoveHediff(rec);
-                            }
-                        }
                         if (rec.def.makesSickThought)
                         {
-                            pawn.health.RemoveHediff(rec);
+                            removeHDList.Add(rec);
                         }
+                        else if (!rec.IsPermanent())
+                        {
+                            if (rec.def.defName == "Cataract" 
+                                || rec.def.defName == "HearingLoss" 
+                                || rec.def.defName.Contains("ToxicBuildup")
+                                || rec.def.defName == "Blindness" 
+                                || rec.def.defName.Contains("Asthma") 
+                                || rec.def.defName == "Cirrhosis" 
+                                || rec.def.defName == "ChemicalDamageModerate"
+                                || rec.def.defName == "Frail" 
+                                || rec.def.defName == "BadBack" 
+                                || rec.def.defName.Contains("Carcinoma") 
+                                || rec.def.defName == "ChemicalDamageSevere"
+                                || rec.def.defName.Contains("Alzheimers") 
+                                || rec.def.defName == "Dementia" 
+                                || rec.def.defName.Contains("HeartArteryBlockage") 
+                                || rec.def.defName == "CatatonicBreakdown"
+                                || rec.def.defName == "Abasia" 
+                                || rec.def.defName == "BloodRot"
+                                || rec.def.defName == "Scaria" 
+                                || rec.def.defName.Contains("Pregnant"))
+                            {
+                                removeHDList.Add(rec);
+                            }
+                            
+                        }                        
                     }
-                }                
+                }  
+                
+                foreach(Hediff hd in removeHDList)
+                {
+                    pawn.health.RemoveHediff(hd);
+                }
             }
         }
     }

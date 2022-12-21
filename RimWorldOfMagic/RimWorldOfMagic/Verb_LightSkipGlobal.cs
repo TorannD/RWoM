@@ -120,12 +120,15 @@ namespace TorannMagic
                     Thing pod = ThingMaker.MakeThing(TorannMagicDefOf.TM_LightPod, null);
                     CompLaunchable podL = pod.TryGetComp<CompLaunchable>();
                     CompTransporter podT = podL.Transporter;
-                    GenSpawn.Spawn(pod, p.Position, p.Map, WipeMode.Vanish);
+                    GenPlace.TryPlaceThing(pod, p.Position, p.Map, ThingPlaceMode.Near);
+                    //GenSpawn.Spawn(pod, p.Position, p.Map, WipeMode.Vanish);
                     podT.groupID = 12;
                     p.DeSpawn();
+                    p.teleporting = true;
                     if(mount != null)
                     {
                         mount.DeSpawn();
+                        mount.teleporting = true;
                         podT.innerContainer.TryAddOrTransfer(mount);
                     }
                     podT.innerContainer.TryAddOrTransfer(p);

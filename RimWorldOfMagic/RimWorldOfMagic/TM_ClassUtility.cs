@@ -36,59 +36,57 @@ namespace TorannMagic
             var CustomMageClassesList = new List<TM_CustomClass>();
             var CustomFighterClassesList = new List<TM_CustomClass>();
             var CustomAdvancedClassesList = new List<TM_CustomClass>();
+            
+            if (CustomClasses == null) return;
+            
             CustomAdvancedClassTraitIndexMap.Clear();
             CustomClassTraitIndexes.Clear();
+            CustomBaseClasses.Clear();
+            CustomMageClasses.Clear();
+            CustomFighterClasses.Clear();
+            CustomAdvancedClasses.Clear();
 
-            if (CustomClasses != null)
+            IEnumerable<TM_CustomClass> enabledCustomClasses = CustomClasses.Where(cc =>
+                Settings.Instance.CustomClass.TryGetValue(cc.classTrait.ToString(), true));
+
+            foreach (TM_CustomClass cc in enabledCustomClasses)
             {
-                CustomBaseClasses.Clear();
-                CustomMageClasses.Clear();
-                CustomFighterClasses.Clear();
-                CustomAdvancedClasses.Clear();
-
-                foreach (TM_CustomClass cc in CustomClasses.Where(cc => Settings.Instance.CustomClass[cc.classTrait.ToString()]))
+                if (cc.isMage)
                 {
-                    if (cc.isMage)
+                    if (cc.isAdvancedClass && cc.advancedClassOptions != null && cc.advancedClassOptions.canSpawnWithClass)
                     {
-                        if (cc.isAdvancedClass)
-                        {
-                            if (cc.advancedClassOptions != null && cc.advancedClassOptions.canSpawnWithClass)
-                            {
-                                CustomMageClassesList.Add(cc);
-                            }
-                        }
-                        else
-                        {
-                            CustomMageClassesList.Add(cc);
-                        }
+                        CustomMageClassesList.Add(cc);
                     }
-                    if (cc.isFighter)
-                    {
-                        if (cc.isAdvancedClass)
-                        {
-                            if (cc.advancedClassOptions != null && cc.advancedClassOptions.canSpawnWithClass)
-                            {
-                                CustomFighterClassesList.Add(cc);
-                            }
-                        }
-                        else
-                        {
-                            CustomFighterClassesList.Add(cc);
-                        }
-                    }
-                    if (!cc.isAdvancedClass) CustomBaseClassesList.Add(cc); //base classes cannot also be advanced classes, but advanced classes can act like base classes
                     else
                     {
-                        CustomAdvancedClassesList.Add(cc);
-                        CustomAdvancedClassTraitIndexMap[cc.classTrait.index] = cc;
+                        CustomMageClassesList.Add(cc);
                     }
                 }
+                if (cc.isFighter)
+                {
+                    if (cc.isAdvancedClass && cc.advancedClassOptions != null && cc.advancedClassOptions.canSpawnWithClass)
+                    {
+                        CustomFighterClassesList.Add(cc);
+                    }
+                    else
+                    {
+                        CustomFighterClasses.Add(cc);
+                    }
+                }
+                
+                if (!cc.isAdvancedClass) CustomBaseClasses.Add(cc); //base classes cannot also be advanced classes, but advanced classes can act like base classes
+                else
+                {
+                    CustomAdvancedClasses.Add(cc);
+                    CustomAdvancedClassTraitIndexMap[cc.classTrait.index] = cc;
+                }
+                
+                // These ALWAYS need to be set regardless of if there are any custom classes
+                CustomBaseClasses = CustomBaseClassesList.ToArray();
+                CustomFighterClasses = CustomFighterClassesList.ToArray();
+                CustomMageClasses = CustomMageClassesList.ToArray();
+                CustomAdvancedClasses = CustomAdvancedClassesList.ToArray();
             }
-            // These ALWAYS need to be set regardless of if there are any custom classes
-            CustomBaseClasses = CustomBaseClassesList.ToArray();
-            CustomFighterClasses = CustomFighterClassesList.ToArray();
-            CustomMageClasses = CustomMageClassesList.ToArray();
-            CustomAdvancedClasses = CustomAdvancedClassesList.ToArray();
             LoadClassIndexes();
         }
 

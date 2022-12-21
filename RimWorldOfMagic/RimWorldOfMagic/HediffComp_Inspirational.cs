@@ -44,26 +44,24 @@ namespace TorannMagic
         public override void CompPostTick(ref float severityAdjustment)
         {
             base.CompPostTick(ref severityAdjustment);
-            bool flag = base.Pawn != null;
-            if (flag)
+            if (Pawn.DestroyedOrNull()) return;
+
+            if (initializing)
             {
-                if (initializing)
-                {
-                    initializing = false;
-                    this.Initialize();
-                }
+                initializing = false;
+                this.Initialize();
             }
+            
             if(Find.TickManager.TicksGame % 600 == 0)
             {
-                MagicPowerSkill pwr = this.Pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Inspire.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Inspire_pwr");
-                MagicPowerSkill ver = this.Pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Inspire.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Inspire_ver");
+                MagicPowerSkill pwr = this.Pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Inspire.First((MagicPowerSkill x) => x.label == "TM_Inspire_pwr");
+                MagicPowerSkill ver = this.Pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Inspire.First((MagicPowerSkill x) => x.label == "TM_Inspire_ver");
                 this.pwrVal = pwr.level;
                 this.verVal = ver.level;
             }
             Map map = base.Pawn.Map;
             int tickTimer = 1000 - (pwrVal * 100);
-            bool flag4 = Find.TickManager.TicksGame % tickTimer == 0;
-            if (flag4 && map != null)
+            if (Find.TickManager.TicksGame % tickTimer == 0 && map != null)
             {
                 CellRect cellRect = CellRect.CenteredOn(base.Pawn.Position, 3);
                 cellRect.ClipInsideMap(map);

@@ -41,33 +41,42 @@ namespace TorannMagic
         protected override bool TryCastShot()
         {
             Pawn caster = base.CasterPawn;
-            Pawn target = this.currentTarget.Thing as Pawn;
+            
             
             CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
-            if (comp.IsMagicUser && target != null)
+            if (comp.IsMagicUser)
             {
-                if (target.RaceProps.Humanlike)
+                this.TargetsAoE.Clear();
+                this.UpdateTargets();
+                foreach (LocalTargetInfo t in TargetsAoE)
                 {
-                    if (target.health.hediffSet.HasHediff(TorannMagicDefOf.TM_UndeadHD) && target.Faction == caster.Faction)
+                    Pawn target = t.Thing as Pawn;
+                    if (target != null && target != caster)
                     {
-                        target.Kill(null, null);
+                        if (target.RaceProps.Humanlike)
+                        {
+                            if (target.health.hediffSet.HasHediff(TorannMagicDefOf.TM_UndeadHD) && target.Faction == caster.Faction)
+                            {
+                                target.Kill(null, null);
+                            }
+                        }
+                        else if (target.RaceProps.Animal)
+                        {
+                            if (target.health.hediffSet.HasHediff(TorannMagicDefOf.TM_UndeadAnimalHD) && target.Faction == caster.Faction)
+                            {
+                                target.Kill(null, null);
+                            }
+                        }
+                        //else
+                        //{
+                        //    Messages.Message("TM_NoValidUndeadToDismiss".Translate(), MessageTypeDefOf.RejectInput);
+                        //}
+
+                        if (!target.Dead && target.story != null && target.story.traits != null && target.story.traits.HasTrait(TorannMagicDefOf.Undead) && target.Faction == caster.Faction)
+                        {
+                            target.Kill(null, null);
+                        }
                     }
-                }
-                else if (target.RaceProps.Animal)
-                {
-                    if (target.health.hediffSet.HasHediff(TorannMagicDefOf.TM_UndeadAnimalHD) && target.Faction == caster.Faction)
-                    {
-                        target.Kill(null, null);
-                    }
-                }                
-                else
-                {
-                    Messages.Message("TM_NoValidUndeadToDismiss".Translate(), MessageTypeDefOf.RejectInput);
-                }
-                
-                if (!target.Dead && target.story != null && target.story.traits != null && target.story.traits.HasTrait(TorannMagicDefOf.Undead) && target.Faction == caster.Faction)
-                {
-                    target.Kill(null, null);
                 }
             }
             return true;

@@ -140,41 +140,23 @@ namespace TorannMagic
         public void HealWounds(float healAmount)
         {
             this.woundsHealed = false;
-            int num = 1;
-            using (IEnumerator<BodyPartRecord> enumerator = this.Pawn.health.hediffSet.GetInjuredParts().GetEnumerator())
-            {
-                while (enumerator.MoveNext())
-                {
-                    BodyPartRecord rec = enumerator.Current;
-                    bool flag2 = num > 0;
-
-                    if (flag2)
-                    {
-                        int num2 = 1;
-                        IEnumerable<Hediff_Injury> arg_BB_0 = this.Pawn.health.hediffSet.GetHediffs<Hediff_Injury>();
-                        Func<Hediff_Injury, bool> arg_BB_1;
-
-                        arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
-
-                        foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1))
-                        {
-                            bool flag4 = num2 > 0;
-                            if (flag4)
-                            {                                
-                                bool flag5 = current.CanHealNaturally() && !current.IsPermanent();
-                                if (flag5)
-                                {
-                                    current.Heal(healAmount);
-                                    TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_BloodMist, this.Pawn.DrawPos, this.Pawn.Map, Rand.Range(.5f, .75f), .2f, 0.05f, 1f, Rand.Range(-50, 50), Rand.Range(.5f, .7f), Rand.Range(30,40), Rand.Range(0, 360));
-                                    num--;
-                                    num2--;
-                                    this.woundsHealed = true;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+            Hediff_Injury injuryToHeal = Pawn.health.hediffSet.hediffs
+                .OfType<Hediff_Injury>()
+                .FirstOrDefault(injury => injury.CanHealNaturally());
+            if (injuryToHeal == null) return;
+            injuryToHeal.Heal(healAmount);
+            TM_MoteMaker.ThrowGenericMote(
+                TorannMagicDefOf.Mote_BloodMist, Pawn.DrawPos, Pawn.Map,
+                scale: Rand.Range(.5f, .75f),
+                solidTime: .2f,
+                fadeIn: 0.05f,
+                fadeOut: 1f,
+                rotationRate: Rand.Range(-50, 50),
+                velocity: Rand.Range(.5f, .7f),
+                velocityAngle: Rand.Range(30, 40),
+                lookAngle: Rand.Range(0, 360)
+            );
+            woundsHealed = true;
         }
 
         public override bool CompShouldRemove

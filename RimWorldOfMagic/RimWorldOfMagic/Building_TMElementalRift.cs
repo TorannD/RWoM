@@ -200,7 +200,7 @@ namespace TorannMagic
             {                
                 FindGoodCenterLocation();
                 Map.weatherManager.eventHandler.AddEvent(new WeatherEvent_LightningStrike(this.Map, this.centerLocation.ToIntVec3));
-                GenExplosion.DoExplosion(this.centerLocation.ToIntVec3, this.Map, this.areaRadius, DamageDefOf.Bomb, null, Rand.Range(6, 16), 0, SoundDefOf.Thunder_OffMap, null, null, null, null, 0f, 1, false, null, 0f, 1, 0.1f, true);
+                GenExplosion.DoExplosion(this.centerLocation.ToIntVec3, this.Map, this.areaRadius, DamageDefOf.Bomb, null, Rand.Range(6, 16), 0, SoundDefOf.Thunder_OffMap, null, null, null, null, 0f, 1, null, false, null, 0f, 1, 0.1f, true);
 
             }
         }
@@ -328,7 +328,6 @@ namespace TorannMagic
                 this.eventFrequencyMultiplier = .4f;
                 this.areaRadius = 2;
             }
-
         }
 
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
@@ -585,6 +584,7 @@ namespace TorannMagic
                         newPawn.validSummoning = true;
                         //newPawn.Spawner = this.Caster;
                         newPawn.Temporary = false;
+                        
                         if (newPawn.Faction == null || !newPawn.Faction.HostileTo(Faction.OfPlayer))
                         {
                             Log.Message("elemental faction was null or not hostile - fixing");

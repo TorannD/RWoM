@@ -60,7 +60,7 @@ namespace TorannMagic.Golems
                     targets = new List<Mineable>();
                     targets.Clear();
                     targets.Add(TargetThingA as Mineable);
-                    cg.Energy.CurLevel -= cg.Energy.ActualNeedCost(gu.golemUpgradeDef.ability.needCost);                   
+                    cg.Energy.CurLevel -= cg.Energy.ActualNeedCost(gu.golemUpgradeDef.ability.needCost - (gu.currentLevel * 2));                   
                 }                
             };
             doJob.tickAction = delegate
@@ -84,9 +84,11 @@ namespace TorannMagic.Golems
                     if (ticksToLaserPick <= 0)
                     {
                         Mineable mineable = targets.FirstOrDefault();
+                        CompGolem cg = pawn.TryGetComp<CompGolem>();
+                        TM_GolemUpgrade gu = cg.Upgrades.FirstOrDefault((TM_GolemUpgrade x) => x.golemUpgradeDef.ability?.jobDef == TorannMagicDefOf.JobDriver_MechaMine);
                         if (!mineable.DestroyedOrNull())
                         {
-                            int num = mineable.def.building.isNaturalRock ? 40 : 20;
+                            int num = mineable.def.building.isNaturalRock ? (40 + (10*gu.currentLevel)) : (20 + (20 * gu.currentLevel));
                             if (mineable.HitPoints > num)
                             {
                                 DamageInfo dinfo = new DamageInfo(DamageDefOf.Mining, (float)num, 0f, -1f, pawn);

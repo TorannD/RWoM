@@ -23,7 +23,7 @@ namespace TorannMagic
             Scribe_Values.Look<float>(ref this.radius, "radius", 4);
         }
 
-        protected override void Impact(Thing hitThing)
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             age++;            
             if (age < duration)
@@ -41,7 +41,7 @@ namespace TorannMagic
                     ThingDef fog = TorannMagicDefOf.Fog_Poison;
                     fog.gas.expireSeconds.min = duration / 60;
                     fog.gas.expireSeconds.max = duration / 60;
-                    GenExplosion.DoExplosion(base.Position, map, radius, TMDamageDefOf.DamageDefOf.TM_Poison, this, 0, 0, SoundDef.Named("TinyBell"), def, null, null, fog, 1f, 1, false, null, 0f, 0, 0.0f, false);
+                    GenExplosion.DoExplosion(base.Position, map, radius, TMDamageDefOf.DamageDefOf.TM_Poison, this, 0, 0, SoundDef.Named("TinyBell"), def, null, null, fog, 1f, 1, null, false, null, 0f, 0, 0.0f, false);
                 }
 
                 if (this.age >= this.lastStrike + this.strikeDelay)

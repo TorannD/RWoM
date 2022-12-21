@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Base -->
+  <IssueDef>
+    <defName>TM_IdeoRole</defName>
+    <label>role</label>
+    <allowMultiplePrecepts>true</allowMultiplePrecepts>
+  </IssueDef>
+  
+  <PreceptDef Abstract="True" Name="TM_PreceptRoleVoidBase">
+    <!-- <issue>TM_IdeoRole</issue> -->
+    <preceptClass>TorannMagic.Ideology.TM_Precept_RoleVoidSeeker</preceptClass>
+	<createsRoleEmptyThought>False</createsRoleEmptyThought>
+	<canGenerateAsSpecialPrecept>false</canGenerateAsSpecialPrecept>
+    <certaintyLossFactor>0.5</certaintyLossFactor>
+    <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
+<!--     <roleRequirements>
+      <li Class="RoleRequirement_SameIdeo">
+        <labelKey>RoleRequirementLabelSameIdeo</labelKey>
+      </li>
+      <li Class="RoleRequirement_SupremeGender">
+        <labelKey>RoleRequirementLabelSupremeGender</labelKey>
+      </li>
+    </roleRequirements> -->
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought MayRequire="Ludeon.RimWorld.Ideology">IdeoRoleApparelRequirementNotMet</thought>
+      </li>
+    </comps>
+    <impact>Medium</impact>
+    <activationBelieverCount>3</activationBelieverCount>
+    <deactivationBelieverCount>1</deactivationBelieverCount>
+    <classicExtra>true</classicExtra>
+  </PreceptDef>
+
+  <PreceptDef Abstract="True" Name="TM_PreceptRoleMultiBase">
+    <issue MayRequire="Ludeon.RimWorld.Ideology">IdeoRole</issue>
+    <preceptClass>Precept_RoleMulti</preceptClass>
+    <createsRoleEmptyThought>False</createsRoleEmptyThought>
+    <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
+    <canGenerateAsSpecialPrecept>false</canGenerateAsSpecialPrecept>
+    <roleRequirements>
+      <li Class="RoleRequirement_SameIdeo">
+        <labelKey>RoleRequirementLabelSameIdeo</labelKey>
+      </li>
+    </roleRequirements>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought MayRequire="Ludeon.RimWorld.Ideology">IdeoRoleApparelRequirementNotMet</thought>
+      </li>
+    </comps>
+    <impact>Medium</impact>
+    <roleApparelRequirements>
+      <li>
+        <requirement>
+          <bodyPartGroupsMatchAny>
+            <li>UpperHead</li>
+            <li>FullHead</li>
+          </bodyPartGroupsMatchAny>
+          <requiredDefs>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Apparel_Headwrap</li>
+          </requiredDefs>
+        </requirement>
+      </li>
+      <li>
+        <requirement>
+          <bodyPartGroupsMatchAny>
+            <li>UpperHead</li>
+            <li>FullHead</li>
+          </bodyPartGroupsMatchAny>
+          <requiredDefs>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Apparel_Broadwrap</li>
+          </requiredDefs>
+        </requirement>
+      </li>
+      <li>
+        <requirement>
+          <bodyPartGroupsMatchAny>
+            <li>Torso</li>
+            <li>Neck</li>
+            <li>Shoulders</li>
+            <li>Arms</li>
+            <li>Legs</li>
+          </bodyPartGroupsMatchAny>
+          <requiredDefs>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Apparel_Robe</li>
+          </requiredDefs>
+        </requirement>
+      </li>
+      <li>
+        <requirement>
+          <bodyPartGroupsMatchAny>
+            <li>UpperHead</li>
+          </bodyPartGroupsMatchAny>
+          <requiredDefs>
+            <li>Apparel_HatHood</li>
+          </requiredDefs>
+        </requirement>
+      </li>
+      <li>
+        <requirement>
+          <bodyPartGroupsMatchAny>
+            <li>UpperHead</li>
+          </bodyPartGroupsMatchAny>
+          <requiredDefs>
+            <li>Apparel_BowlerHat</li>
+          </requiredDefs>
+        </requirement>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Royalty">
+        <requirement>
+          <bodyPartGroupsMatchAny>
+            <li>Torso</li>
+          </bodyPartGroupsMatchAny>
+          <requiredTags>
+            <li>Cape</li>
+          </requiredTags>
+        </requirement>
+      </li>
+    </roleApparelRequirements>
+    <roleApparelRequirementCountCurve>
+      <points>
+        <li>(0, 1)</li>
+        <li>(1, 1)</li>
+      </points>
+    </roleApparelRequirementCountCurve>
+  </PreceptDef>  
+
+  <PreceptDef ParentName="TM_PreceptRoleMultiBase">
+    <defName>TM_IdeoRole_VoidSeeker</defName>
+	<preceptClass>TorannMagic.Ideology.TM_Precept_RoleVoidSeeker</preceptClass>
+    <label>Void seeker</label>
+    <description>A mysterious figure with abilities able to manipulate the connection to magic.</description>
+    <iconPath>Ideology/Voidseeker</iconPath>
+    <nameMaker>TM_NamerRoleVoidseeker</nameMaker>
+    <displayOrderInImpact>101</displayOrderInImpact>
+    <restrictToSupremeGenderChance>0.5</restrictToSupremeGenderChance>
+    <convertPowerFactor>1</convertPowerFactor>
+    <expectationsOffset>2</expectationsOffset>
+    <canRemoveInUI>false</canRemoveInUI>
+    <roleApparelRequirements>
+      <li MayRequire="Ludeon.RimWorld.Royalty">
+        <requirement>
+          <bodyPartGroupsMatchAny>
+            <li>Torso</li>
+          </bodyPartGroupsMatchAny>
+        </requirement>
+      </li>
+      <li>
+        <requirement>
+          <bodyPartGroupsMatchAny>
+            <li>FullHead</li>
+          </bodyPartGroupsMatchAny>
+        </requirement>
+      </li>
+      <li>
+        <requirement>
+          <bodyPartGroupsMatchAny>
+            <li>UpperHead</li>
+            <li>FullHead</li>
+          </bodyPartGroupsMatchAny>
+        </requirement>
+      </li>
+      <li>
+        <requirement>
+          <bodyPartGroupsMatchAny>
+            <li>UpperHead</li>
+            <li>FullHead</li>
+          </bodyPartGroupsMatchAny>
+        </requirement>
+      </li>
+      <li>
+        <requirement>
+          <bodyPartGroupsMatchAny>
+            <li>UpperHead</li>
+            <li>Neck</li>
+            <li>Shoulders</li>
+            <li>FullHead</li>
+          </bodyPartGroupsMatchAny>
+        </requirement>
+      </li>
+      <li>
+        <requirement>
+          <bodyPartGroupsMatchAny>
+            <li>Torso</li>
+            <li>FullHead</li>
+            <li>UpperHead</li>
+            <li>Legs</li>
+            <li>Arms</li>
+          </bodyPartGroupsMatchAny>
+        </requirement>
+      </li>
+      <li>
+        <allowedFactionCategoryTags><li>Tribal</li></allowedFactionCategoryTags>
+        <requirement>
+          <bodyPartGroupsMatchAny>
+            <li>UpperHead</li>
+            <li>FullHead</li>
+          </bodyPartGroupsMatchAny>
+        </requirement>
+      </li>
+      <li>
+        <allowedFactionCategoryTags><li>Tribal</li></allowedFactionCategoryTags>
+        <requirement>
+          <bodyPartGroupsMatchAny>
+            <li>FullHead</li>
+          </bodyPartGroupsMatchAny>
+        </requirement>
+      </li>
+      <li>
+        <disallowedFactionCategoryTags><li>Tribal</li></disallowedFactionCategoryTags>
+        <anyMemeRequired><li MayRequire="Ludeon.RimWorld.Ideology">Transhumanist</li></anyMemeRequired>
+        <requirement>
+          <bodyPartGroupsMatchAny>
+            <li>UpperHead</li>
+            <li>FullHead</li>
+          </bodyPartGroupsMatchAny>
+        </requirement>
+      </li>
+      <li>
+        <requirement>
+          <bodyPartGroupsMatchAny>
+            <li>FullHead</li>
+          </bodyPartGroupsMatchAny>
+        </requirement>
+      </li>
+    </roleApparelRequirements>
+    <roleApparelRequirementCountCurve>
+      <points>
+        <li>(0.5, 1)</li>
+        <li>(1.0, 2)</li>
+      </points>
+    </roleApparelRequirementCountCurve>
+    <grantedAbilities>
+      <li>TM_Start_ManaStorm</li>
+	  <li>TM_Start_ElementalDefenders</li>
+    </grantedAbilities>
+    <roleRequiredWorkTags><li>Social</li></roleRequiredWorkTags>
+    <roleTags><li>Voidseeker</li></roleTags>
+	<requiredMemes>
+      <li>TM_Transcendent</li>
+    </requiredMemes>
+  </PreceptDef>
+  
+  <RulePackDef>
+    <defName>TM_NamerRoleVoidseeker</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_roleName(p=7)->[firstPart][secondPart]</li>
+		<li>firstPart->void-</li>
+		<li>firstPart->null-</li>
+		<li>firstPart->hidden-</li>
+		<li>firstPart->star-</li>
+		<li>firstPart->link-</li>
+		<li>firstPart->soul-</li>
+		<li>firstPart->spirit-</li>
+		<li>firstPart->mind-</li>
+        <li>secondPart->master</li>
+        <li>secondPart->seeker</li>
+        <li>secondPart->touched</li>
+        <li>secondPart->caller</li>
+        <li>secondPart->searcher</li>
+        <li>secondPart->manipulator</li>
+        <li>secondPart->culler</li>
+        <li>secondPart->eraser</li>
+        <li>secondPart->mind</li>
+        <li>secondPart->whisperer</li>
+        <li>secondPart->bringer</li>
+        <li>secondPart->speaker</li>
+        <li>secondPart->steward</li>
+        <li>secondPart->slave</li>
+        <li>secondPart->being</li>
+        <li>secondPart->one</li>
+		<li>secondPart->guide</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  
+</Defs>

@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <HediffDef ParentName="TM_Golem_ImplantHediffBase">
+    <defName>TM_Mecha-Golem_GatlingCannonHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+	<label>Gatling Cannon</label>
+	<description>A gatling cannon mounted to the right shoulder.</description>
+    <scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<maxSeverity>3</maxSeverity>
+	<isBad>false</isBad>
+	<initialSeverity>.5</initialSeverity>
+	<stages>
+      <li>
+        <label></label>
+        <minSeverity>0.001</minSeverity>
+		<becomeVisible>true</becomeVisible>
+      </li>
+	</stages>
+  </HediffDef>
+  
+  <HediffDef ParentName="TM_Golem_ImplantHediffBase">
+    <defName>TM_Mecha-Golem_BallisticPlateHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+	<label>Ballistic plate</label>
+	<description>Improves armor, but reduces movement speed.</description>
+    <scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<maxSeverity>3</maxSeverity>
+	<isBad>false</isBad>
+	<initialSeverity>.1</initialSeverity>
+	<stages>
+      <li>
+        <label></label>
+        <minSeverity>0.001</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>
+		  <ArmorRating_Blunt>.24</ArmorRating_Blunt>
+		  <ArmorRating_Sharp>.35</ArmorRating_Sharp>
+		  <ArmorRating_Heat>.40</ArmorRating_Heat>
+		  <ArmorRating_Alignment>.1</ArmorRating_Alignment>
+		  <MoveSpeed>-.3</MoveSpeed>
+		</statOffsets>
+      </li>
+	  <li>
+        <label></label>
+        <minSeverity>1</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>
+		  <ArmorRating_Blunt>.37</ArmorRating_Blunt>
+		  <ArmorRating_Sharp>.53</ArmorRating_Sharp>
+		  <ArmorRating_Heat>.60</ArmorRating_Heat>
+		  <ArmorRating_Alignment>.15</ArmorRating_Alignment>
+		  <MoveSpeed>-.5</MoveSpeed>
+		</statOffsets>
+      </li>
+	  <li>
+        <label></label>
+        <minSeverity>2</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>
+		  <ArmorRating_Blunt>.49</ArmorRating_Blunt>
+		  <ArmorRating_Sharp>.68</ArmorRating_Sharp>
+		  <ArmorRating_Heat>.75</ArmorRating_Heat>
+		  <ArmorRating_Alignment>.2</ArmorRating_Alignment>
+		  <MoveSpeed>-.6</MoveSpeed>
+		</statOffsets>
+      </li>
+	</stages>
+  </HediffDef>
+  
+  <HediffDef ParentName="TM_Golem_ImplantHediffBase">
+    <defName>TM_Mecha-Golem_FlameCoreHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+	<label>Flame core</label>
+	<description>Flame core upgrades increase movement speed and decreases cooldown time for attacks and abilities.</description>
+    <scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<maxSeverity>3</maxSeverity>
+	<isBad>false</isBad>
+	<initialSeverity>.1</initialSeverity>
+	<stages>
+      <li>
+        <label>Mk.1</label>
+        <minSeverity>0.001</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>
+		  <MoveSpeed>.5</MoveSpeed>
+		</statOffsets>
+      </li>
+	  <li>
+        <label>Mk.2</label>
+        <minSeverity>1</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>
+		  <MoveSpeed>.9</MoveSpeed>
+		</statOffsets>
+      </li>
+	  <li>
+        <label>Mk.3</label>
+        <minSeverity>2</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>
+		  <MoveSpeed>1.2</MoveSpeed>
+		</statOffsets>
+      </li>
+	</stages>
+  </HediffDef>
+  
+  <HediffDef ParentName="TM_Golem_ImplantHediffBase">
+    <defName>TM_Mecha-Golem_WaterCoreHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+	<label>Water core</label>
+	<description>Water core processor upgrades increase armor and regeneration, and improve energy conservation.</description>
+    <scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<maxSeverity>3</maxSeverity>
+	<isBad>false</isBad>
+	<initialSeverity>.1</initialSeverity>
+	<stages>
+      <li>
+        <label>Mk.1</label>
+        <minSeverity>0.001</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>
+		  <ArmorRating_Blunt>.05</ArmorRating_Blunt>
+		  <ArmorRating_Sharp>.05</ArmorRating_Sharp>
+		  <ArmorRating_Heat>.05</ArmorRating_Heat>
+		  <ArmorRating_Alignment>.05</ArmorRating_Alignment>
+		</statOffsets>
+      </li>
+	  <li>
+        <label>Mk.2</label>
+        <minSeverity>1</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>
+		  <ArmorRating_Blunt>.1</ArmorRating_Blunt>
+		  <ArmorRating_Sharp>.1</ArmorRating_Sharp>
+		  <ArmorRating_Heat>.1</ArmorRating_Heat>
+		  <ArmorRating_Alignment>.1</ArmorRating_Alignment>
+		</statOffsets>
+      </li>
+	  <li>
+        <label>Mk.3</label>
+        <minSeverity>2</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>
+		  <ArmorRating_Blunt>.15</ArmorRating_Blunt>
+		  <ArmorRating_Sharp>.15</ArmorRating_Sharp>
+		  <ArmorRating_Heat>.15</ArmorRating_Heat>
+		  <ArmorRating_Alignment>.15</ArmorRating_Alignment>
+		</statOffsets>
+      </li>
+	</stages>
+  </HediffDef>
+  
+  <HediffDef ParentName="TM_Golem_ImplantHediffBase">
+    <defName>TM_Mecha-Golem_EarthCoreHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+	<label>Earth core</label>
+	<description>Earth core processor upgrades increase armor and protection.</description>
+    <scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<maxSeverity>3</maxSeverity>
+	<isBad>false</isBad>
+	<initialSeverity>.1</initialSeverity>
+	<stages>
+      <li>
+        <label>Mk.1</label>
+        <minSeverity>0.001</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>
+		  <ArmorRating_Blunt>.10</ArmorRating_Blunt>
+		  <ArmorRating_Sharp>.10</ArmorRating_Sharp>
+		  <ArmorRating_Heat>.10</ArmorRating_Heat>
+		  <ArmorRating_Alignment>.10</ArmorRating_Alignment>
+		</statOffsets>
+      </li>
+	  <li>
+        <label>Mk.2</label>
+        <minSeverity>1</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>
+		  <ArmorRating_Blunt>.18</ArmorRating_Blunt>
+		  <ArmorRating_Sharp>.18</ArmorRating_Sharp>
+		  <ArmorRating_Heat>.18</ArmorRating_Heat>
+		  <ArmorRating_Alignment>.18</ArmorRating_Alignment>
+		</statOffsets>
+      </li>
+	  <li>
+        <label>Mk.3</label>
+        <minSeverity>2</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>
+		  <ArmorRating_Blunt>.25</ArmorRating_Blunt>
+		  <ArmorRating_Sharp>.25</ArmorRating_Sharp>
+		  <ArmorRating_Heat>.25</ArmorRating_Heat>
+		  <ArmorRating_Alignment>.25</ArmorRating_Alignment>
+		</statOffsets>
+      </li>
+	</stages>
+  </HediffDef>
+  
+  <HediffDef ParentName="TM_Golem_ImplantHediffBase">
+    <defName>TM_Mecha-Golem_LightningCoreHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+	<label>Lightning core</label>
+	<description>Lightning core upgrades increase improve movement and processing speed.</description>
+    <scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<maxSeverity>3</maxSeverity>
+	<isBad>false</isBad>
+	<initialSeverity>.1</initialSeverity>
+	<stages>
+      <li>
+        <label>Mk.1</label>
+        <minSeverity>0.001</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>
+		  <MoveSpeed>1.2</MoveSpeed>
+		</statOffsets>
+      </li>
+	  <li>
+        <label>Mk.2</label>
+        <minSeverity>1</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>
+		  <MoveSpeed>1.8</MoveSpeed>
+		</statOffsets>
+      </li>
+	  <li>
+        <label>Mk.3</label>
+        <minSeverity>2</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>
+		  <MoveSpeed>2.2</MoveSpeed>
+		</statOffsets>
+      </li>
+	</stages>
+  </HediffDef>
+  
+</Defs>

@@ -8,7 +8,7 @@ namespace TorannMagic.Weapon
 {
     public class SeerRing_Fire : Projectile_AbilityBase
     {
-        protected override void Impact(Thing hitThing)
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
 
             Map map = base.Map;
@@ -16,7 +16,7 @@ namespace TorannMagic.Weapon
             ThingDef def = this.def;
             try
             {
-                GenExplosion.DoExplosion(base.Position, map, this.def.projectile.explosionRadius, DamageDefOf.Bomb, this.launcher, this.def.projectile.GetDamageAmount(1,null), 2, SoundDefOf.Crunch, def, this.equipmentDef, null, null, 0f, 1, false, null, 0f, 1, 0.1f, false);
+                GenExplosion.DoExplosion(base.Position, map, this.def.projectile.explosionRadius, DamageDefOf.Bomb, this.launcher, this.def.projectile.GetDamageAmount(1,null), 2, SoundDefOf.Crunch, def, this.equipmentDef, null, null, 0f, 1, null, false, null, 0f, 1, 0.1f, false);
             }
             catch
             {

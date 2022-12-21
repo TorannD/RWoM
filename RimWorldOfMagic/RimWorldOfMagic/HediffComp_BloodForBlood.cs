@@ -176,6 +176,7 @@ namespace TorannMagic
                 BFBEffect.Trigger(new TargetInfo(this.linkedPawn.Position, this.linkedPawn.Map, false), new TargetInfo(this.linkedPawn.Position, this.linkedPawn.Map, false));
                 BFBEffect.Cleanup();
             }
+
             int num = 1;
             using (IEnumerator<BodyPartRecord> enumerator =linkedPawn.health.hediffSet.GetInjuredParts().GetEnumerator())
             {
@@ -186,7 +187,8 @@ namespace TorannMagic
                     if (flag2)
                     {
                         int num2 = 1;
-                        IEnumerable<Hediff_Injury> arg_BB_0 = linkedPawn.health.hediffSet.GetHediffs<Hediff_Injury>();
+                        IEnumerable<Hediff_Injury> arg_BB_0 = linkedPawn.health.hediffSet.hediffs
+                            .OfType<Hediff_Injury>();
                         Func<Hediff_Injury, bool> arg_BB_1;
 
                         arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
@@ -196,7 +198,7 @@ namespace TorannMagic
                             bool flag4 = num2 > 0;
                             if (flag4)
                             {
-                                bool flag5 = !current.CanHealNaturally() && current.IsPermanent();
+                                bool flag5 = !current.CanHealNaturally();
                                 if (flag5)
                                 {
                                     if (rec.def.tags.Contains(BodyPartTagDefOf.ConsciousnessSource))
@@ -220,41 +222,15 @@ namespace TorannMagic
 
         public void HealWounds()
         {
-            int num = 1;
-            using (IEnumerator<BodyPartRecord> enumerator = this.Pawn.health.hediffSet.GetInjuredParts().GetEnumerator())
-            {
-                while (enumerator.MoveNext())
-                {
-                    BodyPartRecord rec = enumerator.Current;
-                    bool flag2 = num > 0;
+            Hediff_Injury injuries = this.Pawn.health.hediffSet.hediffs
+                .OfType<Hediff_Injury>()
+                .Where(injury => injury.CanHealNaturally())
+                .FirstOrDefault();
+            if (injuries == null) return;
 
-                    if (flag2)
-                    {
-                        int num2 = 1;
-                        IEnumerable<Hediff_Injury> arg_BB_0 = this.Pawn.health.hediffSet.GetHediffs<Hediff_Injury>();
-                        Func<Hediff_Injury, bool> arg_BB_1;
-
-                        arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
-
-                        foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1))
-                        {
-                            bool flag4 = num2 > 0;
-                            if (flag4)
-                            {                                
-                                bool flag5 = current.CanHealNaturally() && !current.IsPermanent();
-                                if (flag5)
-                                {
-                                    this.bleedRate = this.Pawn.health.hediffSet.BleedRateTotal;
-                                    current.Heal(2f + (.25f * this.bleedRate));
-                                    TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_BloodMist, this.Pawn.DrawPos, this.Pawn.Map, Rand.Range(.5f, .85f), .2f, 0.05f, 1f, Rand.Range(-50, 50), Rand.Range(1f, 1.7f), (Quaternion.AngleAxis(Rand.Range(70f, 110f), Vector3.up) * this.directionToLinkedPawn).ToAngleFlat(), Rand.Range(0, 360));
-                                    num--;
-                                    num2--;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+            injuries.Heal(2f + (.25f * this.Pawn.health.hediffSet.BleedRateTotal));
+            TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_BloodMist, this.Pawn.DrawPos, this.Pawn.Map, Rand.Range(.5f, .85f), .2f, 0.05f, 1f, Rand.Range(-50, 50), Rand.Range(1f, 1.7f), (Quaternion.AngleAxis(Rand.Range(70f, 110f), Vector3.up) * this.directionToLinkedPawn).ToAngleFlat(), Rand.Range(0, 360));
+                        
         }
 
         public override bool CompShouldRemove

@@ -24,7 +24,7 @@ namespace TorannMagic
             base.Destroy(mode);            
         }        
 
-        protected override void Impact(Thing hitThing)
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             Map map = base.Map;
             GenClamor.DoClamor(this, 5.1f, ClamorDefOf.Impact);
@@ -101,12 +101,21 @@ namespace TorannMagic
                         newPawn.Spawner = this.Caster;
                         newPawn.Temporary = true;
                         newPawn.TicksToDestroy = Mathf.RoundToInt(1800 * this.arcaneDmg);
+                        if (newPawn.playerSettings != null)
+                        {
+                            newPawn.playerSettings.hostilityResponse = HostilityResponseMode.Attack;
+                        }
 
                         try
                         {
-                            GenSpawn.Spawn(newPawn, position, map);
+                            Pawn p = (Pawn)GenSpawn.Spawn(newPawn, position, map);
                             CompLeaper comp = newPawn.GetComp<CompLeaper>();
                             comp.explosionRadius += ((verVal * .2f) * this.arcaneDmg);
+                            if (p.playerSettings != null)
+                            {
+                                p.playerSettings.hostilityResponse = HostilityResponseMode.Attack;
+                                p.playerSettings.medCare = MedicalCareCategory.NoCare;
+                            }
                         }
                         catch
                         {

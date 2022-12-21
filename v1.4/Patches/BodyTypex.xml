@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <!-- Pawn skeleton replacements -->
+  
+  <Operation Class="PatchOperationReplace">
+    <xpath>*/BodyTypeDef[defName = "Male"]/bodyDessicatedGraphicPath</xpath>	
+	<value>
+		<bodyDessicatedGraphicPath>Skeletons/Skeleton_Male</bodyDessicatedGraphicPath>
+	</value>
+  </Operation>
+  
+  <Operation Class="PatchOperationReplace">
+    <xpath>*/BodyTypeDef[defName = "Female"]/bodyDessicatedGraphicPath</xpath>	
+	<value>
+		<bodyDessicatedGraphicPath>Skeletons/Skeleton_Female</bodyDessicatedGraphicPath>
+	</value>
+  </Operation> 
+  
+  <Operation Class="PatchOperationReplace">
+    <xpath>*/BodyTypeDef[defName = "Thin"]/bodyDessicatedGraphicPath</xpath>	
+	<value>
+		<bodyDessicatedGraphicPath>Skeletons/Skeleton_Thin</bodyDessicatedGraphicPath>
+	</value>
+  </Operation> 
+  
+  <Operation Class="PatchOperationReplace">
+    <xpath>*/BodyTypeDef[defName = "Hulk"]/bodyDessicatedGraphicPath</xpath>	
+	<value>
+		<bodyDessicatedGraphicPath>Skeletons/Skeleton_Hulk</bodyDessicatedGraphicPath>
+	</value>
+  </Operation> 
+  
+  <Operation Class="PatchOperationReplace">
+    <xpath>*/BodyTypeDef[defName = "Fat"]/bodyDessicatedGraphicPath</xpath>	
+	<value>
+		<bodyDessicatedGraphicPath>Skeletons/Skeleton_Fat</bodyDessicatedGraphicPath>
+	</value>
+  </Operation> 
+
+  
+</Patch>

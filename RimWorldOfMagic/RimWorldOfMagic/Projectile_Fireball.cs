@@ -6,20 +6,32 @@ using UnityEngine;
 
 namespace TorannMagic
 {
-	public class Projectile_Fireball : Projectile_AbilityBase
+    //GenExplosion.DoExplosion(
+    //    center:, map:, radius:, damType:, instigator:, damAmount:, armorPenetration:, 
+    //    explosionSound:, weapon:, projectile:, intendedTarget:, 
+    //    postExplosionSpawnThingDef:, postExplosionSpawnChance:, postExplosionSpawnThingCount:, postExplosionGasType:, applyDamageToExplosionCellsNeighbors:, 
+    //    preExplosionSpawnThingDef:, preExplosionSpawnChance:, preExplosionSpawnThingCount:, 
+    //    chanceToStartFire:, damageFalloff:, direction:, ignoredThings:, affectedAngle:, doVisualEffects:, 
+    //    propagationSpeed:, excludeRadius:, doSoundEffects:, postExplosionSpawnThingDefWater:, screenShakeFactor:
+    //    );
+
+    public class Projectile_Fireball : Projectile_AbilityBase
 	{
         private int verVal;
         private int pwrVal;
         private float arcaneDmg = 1;
 
-		protected override void Impact(Thing hitThing)
-		{
-            
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
+        {
             Map map = base.Map;
 			base.Impact(hitThing);
 			ThingDef def = this.def;
+
             //GenExplosion.DoExplosion(base.Position, map, this.def.projectile.explosionRadius, DamageDefOf.Bomb, this.launcher, SoundDefOf.PlanetkillerImpact, def, this.equipmentDef, null, 0f, 1, false, null, 0f, 1);
-            GenExplosion.DoExplosion(base.Position, map, this.def.projectile.explosionRadius, DamageDefOf.Bomb, this.launcher, Mathf.RoundToInt(Rand.Range(this.def.projectile.GetDamageAmount(1,null)/2, this.def.projectile.GetDamageAmount(1,null)) * this.arcaneDmg), 0, TorannMagicDefOf.TM_SoftExplosion, def, this.equipmentDef, null, null, 0f, 1, false, null, 0f, 1, 0.1f, true);
+            GenExplosion.DoExplosion(base.Position, map, this.def.projectile.explosionRadius, DamageDefOf.Bomb, this.launcher, Mathf.RoundToInt(Rand.Range(this.def.projectile.GetDamageAmount(1,null)/2, this.def.projectile.GetDamageAmount(1,null)) * this.arcaneDmg), 0, TorannMagicDefOf.TM_SoftExplosion, def, this.equipmentDef, null, null, 0f, 1, null, false, null, 0f, 1, 0.1f, true);
+
+            //GenExplosion.DoExplosion(Position, Map,this.def.projectile.explosionRadius, DamageDefOf.Bomb, Launcher, Mathf.RoundToInt(Rand.Range(this.def.projectile.GetDamageAmount(1, null) / 2, this.def.projectile.GetDamageAmount(1, null)) * this.arcaneDmg), 0f, TorannMagicDefOf.TM_SoftExplosion)
+                
             CellRect cellRect = CellRect.CenteredOn(base.Position, 5);
 			cellRect.ClipInsideMap(map);
             ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();

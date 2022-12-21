@@ -11,6 +11,7 @@ using UnityEngine;
 using System.Text;
 using CompDeflector;
 using TorannMagic.Ideology;
+using TorannMagic.Utils;
 
 namespace TorannMagic
 {
@@ -1100,7 +1101,7 @@ namespace TorannMagic
                                 else if(settingsRef.AICasting && (!this.Pawn.IsPrisoner || this.Pawn.IsFighting()))
                                 {
                                     float tickMult = settingsRef.AIAggressiveCasting ? 1f : 2f;
-                                    this.autocastTick = Find.TickManager.TicksGame + (int)(Rand.Range(.8f * settingsRef.autocastEvaluationFrequency, 1.2f * settingsRef.autocastEvaluationFrequency) * tickMult);
+                                    this.autocastTick = Find.TickManager.TicksGame + (int)(Rand.Range(.75f * settingsRef.autocastEvaluationFrequency, 1.25f * settingsRef.autocastEvaluationFrequency) * tickMult);
                                     ResolveAIAutoCast();
                                 }
                             }                            
@@ -1175,7 +1176,7 @@ namespace TorannMagic
                                         bool flag7 = (this.Pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_DisguiseHD")) || this.Pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_DisguiseHD_I")) || this.Pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_DisguiseHD_II")) || this.Pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_DisguiseHD_III")));
                                         if (targetPawn.Faction != this.Pawn.Faction && flag7)
                                         {
-                                            using (IEnumerator<Hediff> enumerator = this.Pawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
+                                            using (IEnumerator<Hediff> enumerator = this.Pawn.health.hediffSet.hediffs.GetEnumerator())
                                             {
                                                 while (enumerator.MoveNext())
                                                 {
@@ -1183,6 +1184,7 @@ namespace TorannMagic
                                                     if (rec.def == TorannMagicDefOf.TM_DisguiseHD || rec.def == TorannMagicDefOf.TM_DisguiseHD_I || rec.def == TorannMagicDefOf.TM_DisguiseHD_II || rec.def == TorannMagicDefOf.TM_DisguiseHD_III)
                                                     {
                                                         this.Pawn.health.RemoveHediff(rec);
+                                                        break;
                                                     }
                                                 }
                                             }
@@ -2345,13 +2347,12 @@ namespace TorannMagic
 
         public void RemoveTMagicHediffs()
         {
-            List<Hediff> allHediffs = this.Pawn.health.hediffSet.GetHediffs<Hediff>().ToList();
+            List<Hediff> allHediffs = this.Pawn.health.hediffSet.hediffs.ToList();
             for (int i = 0; i < allHediffs.Count(); i++)
             {
-                Hediff hediff = allHediffs[i];
-                if (hediff.def.defName.Contains("TM_"))
+                if (allHediffs[i].def.defName.StartsWith("TM_"))
                 {
-                    this.Pawn.health.RemoveHediff(hediff);
+                    this.Pawn.health.RemoveHediff(allHediffs[i]);
                 }
 
             }
@@ -3270,51 +3271,23 @@ namespace TorannMagic
             CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
             comp.Stamina.CurLevel += (.015f * verVal);         
             int num = 1 + verVal;
-            using (IEnumerator<BodyPartRecord> enumerator = pawn.health.hediffSet.GetInjuredParts().GetEnumerator())
-            {
-                while (enumerator.MoveNext())
-                {
-                    BodyPartRecord rec = enumerator.Current;
-                    bool flag2 = num > 0;
-                    if (flag2)
-                    {
-                        int num2 = 1 + verVal;
-                        ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                        if (!pawn.IsColonist && settingsRef.AIHardMode)
-                        {
-                            num2 = 5;
-                        }
-                        IEnumerable<Hediff_Injury> arg_BB_0 = pawn.health.hediffSet.GetHediffs<Hediff_Injury>();
-                        Func<Hediff_Injury, bool> arg_BB_1;
-                        arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
+            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+            int numberOfInjuriesPerPart = !pawn.IsColonist && settingsRef.AIHardMode ? 5 : 1 + verVal;
 
-                        foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1))
-                        {
-                            bool flag4 = num2 > 0;
-                            if (flag4)
-                            {
-                                bool flag5 = current.CanHealNaturally() && !current.IsPermanent();
-                                if (flag5)
-                                {
-                                    if (!pawn.IsColonist)
-                                    {
-                                        current.Heal(20.0f + (float)verVal * 3f); // power affects how much to heal
-                                    }
-                                    else
-                                    {
-                                        current.Heal((2.0f + (float)verVal * 1f)); // power affects how much to heal
-                                    }
-                                    TM_MoteMaker.ThrowRegenMote(pawn.Position.ToVector3Shifted(), pawn.Map, .6f);
-                                    TM_MoteMaker.ThrowRegenMote(pawn.Position.ToVector3Shifted(), pawn.Map, .4f);
-                                    num--;
-                                    num2--;
-                                }
-                            }
-                        }
-                    }
-                }
+            IEnumerable<Hediff_Injury> injuries = pawn.health.hediffSet.hediffs
+                .OfType<Hediff_Injury>()
+                .Where(injury => injury.CanHealNaturally())
+                .DistinctBy(injury => injury.Part, numberOfInjuriesPerPart)
+                .Take(1 + verVal);
+
+            float amountToHeal = pawn.IsColonist ? 2.0f + verVal : 20.0f + verVal * 3f;
+            foreach (Hediff_Injury injury in injuries)
+            {
+                injury.Heal(amountToHeal);
+                TM_MoteMaker.ThrowRegenMote(pawn.Position.ToVector3Shifted(), pawn.Map, .6f);
+                TM_MoteMaker.ThrowRegenMote(pawn.Position.ToVector3Shifted(), pawn.Map, .4f);
             }
-            
+
         }
 
         public void GiveReversalJob(DamageInfo dinfo)  // buggy AF due to complications with CompDeflector
@@ -4317,7 +4290,7 @@ namespace TorannMagic
                 bool castSuccess = false;
                 if (this.Stamina != null && this.Stamina.CurLevelPercentage >= settingsRef.autocastMinThreshold)
                 {
-                    foreach (MightPower mp in this.MightData.MightPowersCustom)
+                    foreach (MightPower mp in this.MightData.AllMightPowersWithSkills)
                     {
                         if (mp.learned && mp.autocasting != null && mp.autocasting.mightUser && mp.autocasting.AIUsable)
                         {
@@ -4557,6 +4530,7 @@ namespace TorannMagic
                                 traits.Remove(traits[i]);
                                 this.Pawn.story.traits.GainTrait(new Trait(TraitDef.Named("Bladedancer"), bladefocus_pwr.level, false));
                                 FleckMaker.ThrowHeatGlow(this.Pawn.Position, this.Pawn.Map, 2);
+                                break;
                             }
                         }
                     }
@@ -4594,6 +4568,7 @@ namespace TorannMagic
                                 traits.Remove(traits[i]);
                                 this.Pawn.story.traits.GainTrait(new Trait(TraitDef.Named("Ranger"), rangertraining_pwr.level, false));
                                 FleckMaker.ThrowHeatGlow(this.Pawn.Position, this.Pawn.Map, 2);
+                                break;
                             }
                         }
                     }
@@ -4652,7 +4627,7 @@ namespace TorannMagic
                     }
                 }
 
-                using (IEnumerator<Hediff> enumerator = this.Pawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
+                using (IEnumerator<Hediff> enumerator = this.Pawn.health.hediffSet.hediffs.GetEnumerator())
                 {
                     while (enumerator.MoveNext())
                     {
@@ -4783,15 +4758,14 @@ namespace TorannMagic
                 {
                     int pwrVal = this.MightData.MightPowerSkill_FieldTraining.FirstOrDefault((MightPowerSkill x) => x.label == "TM_FieldTraining_pwr").level;
                     int verVal = this.MightData.MightPowerSkill_FieldTraining.FirstOrDefault((MightPowerSkill x) => x.label == "TM_FieldTraining_ver").level;
-                    using (IEnumerator<Hediff> enumerator = this.Pawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
+                    using (IEnumerator<Hediff> enumerator = this.Pawn.health.hediffSet.hediffs.GetEnumerator())
                     {
                         while (enumerator.MoveNext())
                         {
                             Hediff rec = enumerator.Current;
                             if (rec.def == TorannMagicDefOf.TM_HediffHeavyBlow && rec.Severity != (.95f + (.19f * pwrVal)))
                             {
-                                this.Pawn.health.RemoveHediff(rec);
-                                HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_HediffHeavyBlow, .95f + (.19f * pwrVal));
+                                rec.Severity = .95f + (.19f * pwrVal);
                             }
                             if (rec.def == TorannMagicDefOf.TM_HediffStrongBack)
                             {
@@ -4799,16 +4773,16 @@ namespace TorannMagic
                                 {
                                     if (rec.Severity != 2.5f)
                                     {
-                                        this.Pawn.health.RemoveHediff(rec);
-                                        HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_HediffStrongBack, 2.5f);
+                                        rec.Severity = 2.5f;
                                     }
                                 }
                                 else if (verVal >= 3)
                                 {
                                     if (rec.Severity != 1.5f)
                                     {
-                                        this.Pawn.health.RemoveHediff(rec);
-                                        HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_HediffStrongBack, 1.5f);
+                                        //rec.Severity = 1.5f;
+                                        //this.Pawn.health.RemoveHediff(rec);
+                                        //HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_HediffStrongBack, 1.5f);
                                     }
                                 }
                             }
@@ -4818,24 +4792,23 @@ namespace TorannMagic
                                 {
                                     if (rec.Severity != 3.5f)
                                     {
-                                        this.Pawn.health.RemoveHediff(rec);
-                                        HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_HediffThickSkin, 3.5f);
+                                        rec.Severity = 3.5f;
+                                        //this.Pawn.health.RemoveHediff(rec);
+                                        //HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_HediffThickSkin, 3.5f);
                                     }
                                 }
                                 else if (verVal >= 7)
                                 {
                                     if (rec.Severity != 2.5f)
                                     {
-                                        this.Pawn.health.RemoveHediff(rec);
-                                        HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_HediffThickSkin, 2.5f);
+                                        rec.Severity = 2.5f;
                                     }
                                 }
                                 else if (verVal >= 2)
                                 {
                                     if (rec.Severity != 1.5f)
                                     {
-                                        this.Pawn.health.RemoveHediff(rec);
-                                        HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_HediffThickSkin, 1.5f);
+                                        rec.Severity = 1.5f;
                                     }
                                 }
                             }
@@ -4845,8 +4818,7 @@ namespace TorannMagic
                                 {
                                     if (rec.Severity != 1.5f)
                                     {
-                                        this.Pawn.health.RemoveHediff(rec);
-                                        HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_HediffFightersFocus, 1.5f);
+                                        rec.Severity = 1.5f;
                                     }
                                 }
                             }
@@ -4854,8 +4826,7 @@ namespace TorannMagic
                             {
                                 if (rec.Severity != (.5f + (int)(pwrVal / 3)))
                                 {
-                                    this.Pawn.health.RemoveHediff(rec);
-                                    HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_HediffSprint, (.5f + (int)(pwrVal / 3)));
+                                    rec.Severity = (.5f + (int)(pwrVal / 3));
                                 }
                             }
                         }
@@ -5047,7 +5018,7 @@ namespace TorannMagic
             }
 
             //Determine active or sustained abilities            
-            using (IEnumerator<Hediff> enumerator = this.Pawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
+            using (IEnumerator<Hediff> enumerator = this.Pawn.health.hediffSet.hediffs.GetEnumerator())
             {
                 while (enumerator.MoveNext())
                 {
@@ -6003,7 +5974,7 @@ namespace TorannMagic
                         {
                             TM_Action.PromoteWayfarer(p);
                         }),
-                        order = 52,
+                        Order = 52,
                         defaultLabel = TM_TextPool.TM_PromoteWayfarer,
                         defaultDesc = TM_TextPool.TM_PromoteWayfarerDesc,
                         icon = ContentFinder<Texture2D>.Get("UI/wayfarer", true),
@@ -6024,7 +5995,7 @@ namespace TorannMagic
                     {
                         defaultLabel = label,
                         defaultDesc = desc,
-                        order = -90,
+                        Order = -90,
                         icon = ContentFinder<Texture2D>.Get("UI/" + toggle, true),
                         isActive = (() => this.useCleaveToggle),
                         toggleAction = delegate
@@ -6048,7 +6019,7 @@ namespace TorannMagic
                     {
                         defaultLabel = label,
                         defaultDesc = desc,
-                        order = -90,
+                        Order = -90,
                         icon = ContentFinder<Texture2D>.Get("UI/" + toggle, true),
                         isActive = (() => this.useCQCToggle),
                         toggleAction = delegate
@@ -6072,7 +6043,7 @@ namespace TorannMagic
                     {
                         defaultLabel = label,
                         defaultDesc = desc,
-                        order = -90,
+                        Order = -90,
                         icon = ContentFinder<Texture2D>.Get("UI/" + toggle, true),
                         isActive = (() => this.usePsionicAugmentationToggle),
                         toggleAction = delegate
@@ -6097,7 +6068,7 @@ namespace TorannMagic
                     {
                         defaultLabel = label2,
                         defaultDesc = desc2,
-                        order = -89,
+                        Order = -89,
                         icon = ContentFinder<Texture2D>.Get("UI/" + toggle2, true),
                         isActive = (() => this.usePsionicMindAttackToggle),
                         toggleAction = delegate

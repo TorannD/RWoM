@@ -88,7 +88,7 @@ namespace TorannMagic
             this.initialized = true;
         }
 
-        protected override void Impact(Thing hitThing)
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             Map map = base.Map;
             //base.Impact(hitThing);
@@ -175,7 +175,12 @@ namespace TorannMagic
                         newPawn.TicksToDestroy = this.duration;
                         try
                         {
-                            GenSpawn.Spawn(newPawn, position, map);
+                            Pawn p = (Pawn)GenSpawn.Spawn(newPawn, position, map);
+                            if (p.playerSettings != null)
+                            {
+                                p.playerSettings.hostilityResponse = HostilityResponseMode.Attack;
+                                p.playerSettings.medCare = MedicalCareCategory.NoCare;
+                            }
                             this.demonPawn = newPawn;
                         }
                         catch

@@ -1231,7 +1231,7 @@ namespace TorannMagic
         public override IEnumerable<Gizmo> GetGizmos()
         {
             List<Gizmo> gizmoList = base.GetGizmos().ToList();
-            Command command = BuildCopyCommandUtility.BuildCopyCommand(def, base.Stuff);
+            Command command = BuildCopyCommandUtility.BuildCopyCommand(def, base.Stuff, base.StyleSourcePrecept as Precept_Building, base.StyleDef, true, null);
             if (command != null)
             {
                 gizmoList.Add((Gizmo)command);
