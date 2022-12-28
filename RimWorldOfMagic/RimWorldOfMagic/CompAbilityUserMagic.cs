@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Threading;
 using RimWorld;
 using UnityEngine;
 using AbilityUser;
@@ -12,6 +11,7 @@ using Verse.Sound;
 using AbilityUserAI;
 using TorannMagic.Ideology;
 using TorannMagic.TMDefs;
+using TorannMagic.Utils;
 
 namespace TorannMagic
 {
@@ -2009,7 +2009,7 @@ namespace TorannMagic
                                     ResolveChronomancerTimeMark();
                                 }
                             }
-                            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+                            ModOptions.SettingsRef settingsRef = GlobalTickCache.SettingsRef;
                             if (this.autocastTick < Find.TickManager.TicksGame)  //180 default
                             {
                                 if (!this.Pawn.Dead && !this.Pawn.Downed && this.Pawn.Map != null && this.Pawn.story != null && this.Pawn.story.traits != null && this.MagicData != null && this.AbilityData != null && !this.Pawn.InMentalState)
@@ -2194,9 +2194,8 @@ namespace TorannMagic
             {
                 if (deathRetaliationDelayCount >= 20 && Rand.Value < .04f)
                 {
-                    ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
                     this.deathRetaliating = true;
-                    this.ticksTillRetaliation = Mathf.RoundToInt(Rand.Range(400, 1200) * settingsRef.deathRetaliationDelayFactor);
+                    this.ticksTillRetaliation = Mathf.RoundToInt(Rand.Range(400, 1200) * GlobalTickCache.SettingsRef.deathRetaliationDelayFactor);
                     this.deathRing = TM_Calc.GetOuterRing(this.Pawn.Position, 1f, 2f);
                 }
                 else
@@ -2404,11 +2403,9 @@ namespace TorannMagic
                 if (this.MagicUserLevel < (this.customClass?.maxMageLevel ?? 200))
                 {
                     this.MagicUserLevel++;
-                    bool flag = !hideNotification;
-                    if (flag)
+                    if (!hideNotification)
                     {
-                        ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                        if (Pawn.IsColonist && settingsRef.showLevelUpMessage)
+                        if (Pawn.IsColonist && GlobalTickCache.SettingsRef.showLevelUpMessage)
                         {
                             Messages.Message(TranslatorFormattedStringExtensions.Translate("TM_MagicLevelUp",
                         this.parent.Label
@@ -5972,7 +5969,7 @@ namespace TorannMagic
 
         public void ResolveAutoCast()
         {
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+            ModOptions.SettingsRef settingsRef = GlobalTickCache.SettingsRef;
             bool flagCM = this.Pawn.story.traits.HasTrait(TorannMagicDefOf.ChaosMage);
             bool isCustom = this.customClass != null;
             //bool flagCP = this.Pawn.story.traits.HasTrait(TorannMagicDefOf.ChaosMage) || this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless);
@@ -7021,12 +7018,11 @@ namespace TorannMagic
 
         public void ResolveAIAutoCast()
         {
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-            if (settingsRef.AICasting && this.Pawn.jobs != null && this.Pawn.CurJob != null && this.Pawn.CurJob.def != TorannMagicDefOf.TMCastAbilityVerb && this.Pawn.CurJob.def != TorannMagicDefOf.TMCastAbilitySelf && 
+            if (GlobalTickCache.SettingsRef.AICasting && this.Pawn.jobs != null && this.Pawn.CurJob != null && this.Pawn.CurJob.def != TorannMagicDefOf.TMCastAbilityVerb && this.Pawn.CurJob.def != TorannMagicDefOf.TMCastAbilitySelf &&
                 this.Pawn.CurJob.def != JobDefOf.Ingest && this.Pawn.CurJob.def != JobDefOf.ManTurret && this.Pawn.GetPosture() == PawnPosture.Standing)
             {
                 bool castSuccess = false;
-                if (this.Mana != null && this.Mana.CurLevelPercentage >= settingsRef.autocastMinThreshold)
+                if (this.Mana != null && this.Mana.CurLevelPercentage >= GlobalTickCache.SettingsRef.autocastMinThreshold)
                 {
                     foreach (MagicPower mp in this.MagicData.AllMagicPowersWithSkills)
                     {
@@ -7272,8 +7268,7 @@ namespace TorannMagic
                 {
                     var dinfo = new DamageInfo(DamageDefOf.Mining, num, 0, -1f, this.Pawn, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
                     mineTarget.TakeDamage(dinfo);
-                    ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                    if (Rand.Chance(settingsRef.magicyteChance * 2))
+                    if (Rand.Chance(GlobalTickCache.SettingsRef.magicyteChance * 2))
                     {
                         Thing thing = null;
                         thing = ThingMaker.MakeThing(TorannMagicDefOf.RawMagicyte);

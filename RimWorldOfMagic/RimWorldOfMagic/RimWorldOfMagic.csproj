@@ -154,6 +154,7 @@
     <Compile Include="Thoughts\ThoughtWorker_TM_LivingPossessed.cs" />
     <Compile Include="TMDefs\TM_AdvancedClassOptions.cs" />
     <Compile Include="Utils\LinqExtensions.cs" />
+    <Compile Include="Utils\GlobalTickCache.cs" />
     <Compile Include="Utils\TraitIconMap.cs" />
     <Compile Include="Utils\SimpleCache.cs" />
     <Compile Include="Verb_Attraction.cs" />

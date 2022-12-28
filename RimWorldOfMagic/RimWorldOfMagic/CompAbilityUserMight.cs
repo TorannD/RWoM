@@ -8,7 +8,6 @@ using AbilityUser;
 using AbilityUserAI;
 using Verse.AI;
 using UnityEngine;
-using System.Text;
 using CompDeflector;
 using TorannMagic.Ideology;
 using TorannMagic.Utils;
@@ -1088,7 +1087,7 @@ namespace TorannMagic
                             ResolveClassSkills();
                             //ResolveClassPassions(); currently disabled
                         }
-                        ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+                        ModOptions.SettingsRef settingsRef = GlobalTickCache.SettingsRef;
                         if (this.autocastTick < Find.TickManager.TicksGame)  //180 default
                         {
                             if ( !this.Pawn.Dead && !this.Pawn.Downed && this.Pawn.Map != null && this.Pawn.story != null && this.Pawn.story.traits != null && this.MightData != null && this.AbilityData != null && !this.Pawn.InMentalState)
@@ -1288,9 +1287,8 @@ namespace TorannMagic
             {
                 if (deathRetaliationDelayCount >= 20 && Rand.Value < .04f)
                 {
-                    ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
                     this.deathRetaliating = true;
-                    this.ticksTillRetaliation = Mathf.RoundToInt(Rand.Range(400, 1200) * settingsRef.deathRetaliationDelayFactor);
+                    this.ticksTillRetaliation = Mathf.RoundToInt(Rand.Range(400, 1200) * GlobalTickCache.SettingsRef.deathRetaliationDelayFactor);
                     this.deathRing = TM_Calc.GetOuterRing(this.Pawn.Position, 1f, 2f);
                 }
                 else
@@ -1469,11 +1467,9 @@ namespace TorannMagic
                 if (this.MightUserLevel < (this.customClass?.maxFighterLevel ?? 200))
                 {
                     this.MightUserLevel++;
-                    bool flag = !hideNotification;
-                    if (flag)
+                    if (!hideNotification)
                     {
-                        ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                        if (Pawn.IsColonist && settingsRef.showLevelUpMessage)
+                        if (Pawn.IsColonist && GlobalTickCache.SettingsRef.showLevelUpMessage)
                         {
                             Messages.Message("TM_MightLevelUp".Translate(
                                 this.parent.Label
@@ -3427,8 +3423,7 @@ namespace TorannMagic
 
         public void ResolveAutoCast()
         {
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-            if (settingsRef.autocastEnabled && this.Pawn.jobs != null && this.Pawn.CurJob != null && this.Pawn.CurJob.def != TorannMagicDefOf.TMCastAbilityVerb && this.Pawn.CurJob.def != TorannMagicDefOf.TMCastAbilitySelf && 
+            if (GlobalTickCache.SettingsRef.autocastEnabled && this.Pawn.jobs != null && this.Pawn.CurJob != null && this.Pawn.CurJob.def != TorannMagicDefOf.TMCastAbilityVerb && this.Pawn.CurJob.def != TorannMagicDefOf.TMCastAbilitySelf &&
                 this.Pawn.CurJob.def != JobDefOf.Ingest && this.Pawn.CurJob.def != JobDefOf.ManTurret && this.Pawn.GetPosture() == PawnPosture.Standing && !this.Pawn.CurJob.playerForced)
             {
                 //Log.Message("pawn " + this.Pawn.LabelShort + " current job is " + this.Pawn.CurJob.def.defName);
@@ -3436,7 +3431,7 @@ namespace TorannMagic
                 bool castSuccess = false;
                 bool isFaceless = (this.mimicAbility != null);
                 bool isCustom = this.customIndex >= 0;
-                if (this.Pawn.drafter != null && !this.Pawn.Drafted && this.Stamina != null && this.Stamina.CurLevelPercentage >= settingsRef.autocastMinThreshold)
+                if (this.Pawn.drafter != null && !this.Pawn.Drafted && this.Stamina != null && this.Stamina.CurLevelPercentage >= GlobalTickCache.SettingsRef.autocastMinThreshold)
                 {
                     foreach (MightPower mp in this.MightData.MightPowersCustomAll)
                     {
@@ -3832,7 +3827,10 @@ namespace TorannMagic
                 }
 
                 //combat (drafted) spells
-                if (this.Pawn.drafter != null && this.Pawn.Drafted && this.Pawn.drafter.FireAtWill && this.Stamina != null && (this.Stamina.CurLevelPercentage >= settingsRef.autocastCombatMinThreshold || this.Pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Monk)) && this.Pawn.CurJob.def != JobDefOf.Goto && this.Pawn.CurJob.def != JobDefOf.AttackMelee)
+                if (Pawn.drafter != null && Pawn.Drafted && Pawn.drafter.FireAtWill && Stamina != null && (
+                        Stamina.CurLevelPercentage >= GlobalTickCache.SettingsRef.autocastCombatMinThreshold
+                        || Pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Monk)
+                    ) && Pawn.CurJob.def != JobDefOf.Goto && Pawn.CurJob.def != JobDefOf.AttackMelee)
                 {
                     foreach (MightPower mp in this.MightData.MightPowersCustom)
                     {
@@ -4283,12 +4281,11 @@ namespace TorannMagic
 
         public void ResolveAIAutoCast()
         {
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-            if (settingsRef.AICasting && this.Pawn.jobs != null && this.Pawn.CurJob != null && this.Pawn.CurJob.def != TorannMagicDefOf.TMCastAbilityVerb && this.Pawn.CurJob.def != TorannMagicDefOf.TMCastAbilitySelf && this.Pawn.CurJob.def != JobDefOf.Ingest && this.Pawn.CurJob.def != JobDefOf.ManTurret && this.Pawn.GetPosture() == PawnPosture.Standing)
+            if (GlobalTickCache.SettingsRef.AICasting && this.Pawn.jobs != null && this.Pawn.CurJob != null && this.Pawn.CurJob.def != TorannMagicDefOf.TMCastAbilityVerb && this.Pawn.CurJob.def != TorannMagicDefOf.TMCastAbilitySelf && this.Pawn.CurJob.def != JobDefOf.Ingest && this.Pawn.CurJob.def != JobDefOf.ManTurret && this.Pawn.GetPosture() == PawnPosture.Standing)
             {
                 //Log.Message("pawn " + this.Pawn.LabelShort + " current job is " + this.Pawn.CurJob.def.defName);
                 bool castSuccess = false;
-                if (this.Stamina != null && this.Stamina.CurLevelPercentage >= settingsRef.autocastMinThreshold)
+                if (this.Stamina != null && this.Stamina.CurLevelPercentage >= GlobalTickCache.SettingsRef.autocastMinThreshold)
                 {
                     foreach (MightPower mp in this.MightData.AllMightPowersWithSkills)
                     {
@@ -4601,14 +4598,13 @@ namespace TorannMagic
                     }
                 }
 
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
                 if ((this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Bladedancer) || (this.customClass != null && this.customClass.classFighterAbilities.Contains(TorannMagicDefOf.TM_BladeArt))) && !this.Pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_BladeArtHD))
                 {
                     MightPowerSkill bladeart_pwr = this.Pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_BladeArt.FirstOrDefault((MightPowerSkill x) => x.label == "TM_BladeArt_pwr");
 
                     //HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_BladeArtHD, -5f);
                     HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_BladeArtHD, (.5f) + bladeart_pwr.level);
-                    if (!this.Pawn.IsColonist && settingsRef.AIHardMode)
+                    if (!this.Pawn.IsColonist && GlobalTickCache.SettingsRef.AIHardMode)
                     {
                         HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_BladeArtHD, 4);
                     }
@@ -4620,7 +4616,7 @@ namespace TorannMagic
                     {
                         //HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_BowTrainingHD, -5f);
                         HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_BowTrainingHD, (.5f) + bowtraining_pwr.level);
-                        if (!this.Pawn.IsColonist && settingsRef.AIHardMode)
+                        if (!this.Pawn.IsColonist && GlobalTickCache.SettingsRef.AIHardMode)
                         {
                             HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_BowTrainingHD, 4);
                         }
