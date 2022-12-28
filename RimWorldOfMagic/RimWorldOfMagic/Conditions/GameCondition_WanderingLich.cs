@@ -8,6 +8,7 @@ using RimWorld;
 using AbilityUser;
 using Verse.AI.Group;
 using HarmonyLib;
+using TorannMagic.ModOptions;
 
 namespace TorannMagic.Conditions
 {
@@ -87,19 +88,18 @@ namespace TorannMagic.Conditions
             {
                 tempAllow = true;
             }
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();            
-            if (settingsRef.wanderingLichChallenge > 0 || tempAllow)
+            if (Settings.Instance.wanderingLichChallenge > 0 || tempAllow)
             {
                 base.Init();
                 this.disabled = false;
                 this.FindGoodEdgeLocation();
                 this.SpawnWanderingLich();
                 this.SetEventParameters();
-                if(settingsRef.wanderingLichChallenge >= 2)
+                if(Settings.Instance.wanderingLichChallenge >= 2)
                 {
                     InitializeDeathSkies();
                 }
-                if(settingsRef.wanderingLichChallenge >= 3)
+                if(Settings.Instance.wanderingLichChallenge >= 3)
                 {
                     InitializeSolarFlare();
                 }
@@ -130,8 +130,7 @@ namespace TorannMagic.Conditions
 
         private void SetEventParameters()
         {
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-            float mult = Rand.Range(2f, 4f) + settingsRef.wanderingLichChallenge + Find.Storyteller.difficulty.threatScale;
+            float mult = Rand.Range(2f, 4f) + Settings.Instance.wanderingLichChallenge + Find.Storyteller.difficulty.threatScale;
             this.nextEventTick = Find.TickManager.TicksGame + 200;
             this.ticksBetweenEvents = Mathf.RoundToInt((float)this.Duration / mult);
         }
@@ -424,9 +423,8 @@ namespace TorannMagic.Conditions
             {
                 wealthMultiplier = 2.5f;
             }
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-            geChance = 0.02f * wealthMultiplier * Mathf.Max(settingsRef.wanderingLichChallenge, 1f);
-            leChance = 0.14f * Mathf.Max(settingsRef.wanderingLichChallenge, 1f) * wealthMultiplier;
+            geChance = 0.02f * wealthMultiplier * Mathf.Max(Settings.Instance.wanderingLichChallenge, 1f);
+            leChance = 0.14f * Mathf.Max(Settings.Instance.wanderingLichChallenge, 1f) * wealthMultiplier;
         }
 
         public void SpawnSkeletonMinions(IntVec3 center, int radius, Faction faction)

@@ -10,6 +10,7 @@ using Verse.AI;
 using Verse.Sound;
 using AbilityUserAI;
 using TorannMagic.Ideology;
+using TorannMagic.ModOptions;
 using TorannMagic.TMDefs;
 using TorannMagic.Utils;
 
@@ -529,15 +530,14 @@ namespace TorannMagic
         {
             if (shouldDraw && IsMagicUser)
             {
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                if (settingsRef.AIFriendlyMarking && base.Pawn.IsColonist && this.IsMagicUser)
+                if (Settings.Instance.AIFriendlyMarking && base.Pawn.IsColonist && this.IsMagicUser)
                 {
                     if (!this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
                     {
                         DrawMark();
                     }
                 }
-                if (settingsRef.AIMarking && !base.Pawn.IsColonist && this.IsMagicUser)
+                if (Settings.Instance.AIMarking && !base.Pawn.IsColonist && this.IsMagicUser)
                 {
                     if (!this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
                     {
@@ -2009,25 +2009,24 @@ namespace TorannMagic
                                     ResolveChronomancerTimeMark();
                                 }
                             }
-                            ModOptions.SettingsRef settingsRef = GlobalTickCache.SettingsRef;
                             if (this.autocastTick < Find.TickManager.TicksGame)  //180 default
                             {
                                 if (!this.Pawn.Dead && !this.Pawn.Downed && this.Pawn.Map != null && this.Pawn.story != null && this.Pawn.story.traits != null && this.MagicData != null && this.AbilityData != null && !this.Pawn.InMentalState)
                                 {
                                     if (this.Pawn.IsColonist)
                                     {
-                                        this.autocastTick = Find.TickManager.TicksGame + (int)Rand.Range(.8f * settingsRef.autocastEvaluationFrequency, 1.2f * settingsRef.autocastEvaluationFrequency);
+                                        this.autocastTick = Find.TickManager.TicksGame + (int)Rand.Range(.8f * Settings.Instance.autocastEvaluationFrequency, 1.2f * Settings.Instance.autocastEvaluationFrequency);
                                         ResolveAutoCast();
                                     }
-                                    else if(settingsRef.AICasting && (!this.Pawn.IsPrisoner || this.Pawn.IsFighting()) && (this.Pawn.guest != null && !this.Pawn.IsSlave))
+                                    else if(Settings.Instance.AICasting && (!this.Pawn.IsPrisoner || this.Pawn.IsFighting()) && (this.Pawn.guest != null && !this.Pawn.IsSlave))
                                     {
-                                        float tickMult = settingsRef.AIAggressiveCasting ? 1f : 2f;
-                                        this.autocastTick = Find.TickManager.TicksGame + (int)(Rand.Range(.75f * settingsRef.autocastEvaluationFrequency, 1.25f * settingsRef.autocastEvaluationFrequency) * tickMult);
+                                        float tickMult = Settings.Instance.AIAggressiveCasting ? 1f : 2f;
+                                        this.autocastTick = Find.TickManager.TicksGame + (int)(Rand.Range(.75f * Settings.Instance.autocastEvaluationFrequency, 1.25f * Settings.Instance.autocastEvaluationFrequency) * tickMult);
                                         ResolveAIAutoCast();
                                     }
                                 }                                
                             }
-                            if (!this.Pawn.IsColonist && settingsRef.AICasting && settingsRef.AIAggressiveCasting && Find.TickManager.TicksGame > this.nextAICastAttemptTick) //Aggressive AI Casting
+                            if (!this.Pawn.IsColonist && Settings.Instance.AICasting && Settings.Instance.AIAggressiveCasting && Find.TickManager.TicksGame > this.nextAICastAttemptTick) //Aggressive AI Casting
                             {
                                 this.nextAICastAttemptTick = Find.TickManager.TicksGame + Rand.Range(300, 500);
                                 if (this.Pawn.jobs != null && this.Pawn.CurJobDef != TorannMagicDefOf.TMCastAbilitySelf && this.Pawn.CurJobDef != TorannMagicDefOf.TMCastAbilityVerb)
@@ -2195,7 +2194,7 @@ namespace TorannMagic
                 if (deathRetaliationDelayCount >= 20 && Rand.Value < .04f)
                 {
                     this.deathRetaliating = true;
-                    this.ticksTillRetaliation = Mathf.RoundToInt(Rand.Range(400, 1200) * GlobalTickCache.SettingsRef.deathRetaliationDelayFactor);
+                    this.ticksTillRetaliation = Mathf.RoundToInt(Rand.Range(400, 1200) * Settings.Instance.deathRetaliationDelayFactor);
                     this.deathRing = TM_Calc.GetOuterRing(this.Pawn.Position, 1f, 2f);
                 }
                 else
@@ -2405,7 +2404,7 @@ namespace TorannMagic
                     this.MagicUserLevel++;
                     if (!hideNotification)
                     {
-                        if (Pawn.IsColonist && GlobalTickCache.SettingsRef.showLevelUpMessage)
+                        if (Pawn.IsColonist && Settings.Instance.showLevelUpMessage)
                         {
                             Messages.Message(TranslatorFormattedStringExtensions.Translate("TM_MagicLevelUp",
                         this.parent.Label
@@ -2512,7 +2511,6 @@ namespace TorannMagic
 
         private void AssignAbilities()
         {
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
             float hardModeMasterChance = .35f;
             float masterChance = .05f;
             Pawn abilityUser = base.Pawn;
@@ -2782,7 +2780,7 @@ namespace TorannMagic
 
                             if (!abilityUser.IsColonist)
                             {
-                                if ((settingsRef.AIHardMode && Rand.Chance(hardModeMasterChance)) || Rand.Chance(masterChance))
+                                if ((Settings.Instance.AIHardMode && Rand.Chance(hardModeMasterChance)) || Rand.Chance(masterChance))
                                 {
                                     this.spell_Firestorm = true;
                                 }
@@ -2840,7 +2838,7 @@ namespace TorannMagic
 
                             if (!abilityUser.IsColonist)
                             {
-                                if ((settingsRef.AIHardMode && Rand.Chance(hardModeMasterChance)) || Rand.Chance(masterChance))
+                                if ((Settings.Instance.AIHardMode && Rand.Chance(hardModeMasterChance)) || Rand.Chance(masterChance))
                                 {
                                     this.spell_Blizzard = true;
                                 }
@@ -2889,7 +2887,7 @@ namespace TorannMagic
 
                             if (!abilityUser.IsColonist)
                             {
-                                if ((settingsRef.AIHardMode && Rand.Chance(hardModeMasterChance)) || Rand.Chance(masterChance))
+                                if ((Settings.Instance.AIHardMode && Rand.Chance(hardModeMasterChance)) || Rand.Chance(masterChance))
                                 {
                                     this.spell_EyeOfTheStorm = true;
                                 }
@@ -3002,7 +3000,7 @@ namespace TorannMagic
 
                             if (!abilityUser.IsColonist)
                             {
-                                if ((settingsRef.AIHardMode && Rand.Chance(hardModeMasterChance)) || Rand.Chance(masterChance))
+                                if ((Settings.Instance.AIHardMode && Rand.Chance(hardModeMasterChance)) || Rand.Chance(masterChance))
                                 {
                                     this.spell_HolyWrath = true;
                                 }
@@ -3055,7 +3053,7 @@ namespace TorannMagic
 
                             if (!abilityUser.IsColonist)
                             {
-                                if ((settingsRef.AIHardMode && Rand.Chance(hardModeMasterChance)) || Rand.Chance(masterChance))
+                                if ((Settings.Instance.AIHardMode && Rand.Chance(hardModeMasterChance)) || Rand.Chance(masterChance))
                                 {
                                     this.spell_SummonPoppi = true;
                                 }
@@ -3155,7 +3153,7 @@ namespace TorannMagic
 
                             if (!abilityUser.IsColonist)
                             {
-                                if ((settingsRef.AIHardMode && Rand.Chance(hardModeMasterChance)) || Rand.Chance(masterChance))
+                                if ((Settings.Instance.AIHardMode && Rand.Chance(hardModeMasterChance)) || Rand.Chance(masterChance))
                                 {
                                     this.AddPawnAbility(TorannMagicDefOf.TM_DeathBolt);
                                 }
@@ -3244,7 +3242,7 @@ namespace TorannMagic
 
                             if (!abilityUser.IsColonist)
                             {
-                                if ((settingsRef.AIHardMode && Rand.Chance(hardModeMasterChance)) || Rand.Chance(masterChance))
+                                if ((Settings.Instance.AIHardMode && Rand.Chance(hardModeMasterChance)) || Rand.Chance(masterChance))
                                 {
                                     this.spell_BattleHymn = true;
                                 }
@@ -3295,7 +3293,7 @@ namespace TorannMagic
 
                             if (!abilityUser.IsColonist)
                             {
-                                if ((settingsRef.AIHardMode && Rand.Chance(hardModeMasterChance)) || Rand.Chance(masterChance))
+                                if ((Settings.Instance.AIHardMode && Rand.Chance(hardModeMasterChance)) || Rand.Chance(masterChance))
                                 {
                                     this.spell_Scorn = true;
                                 }
@@ -3345,7 +3343,7 @@ namespace TorannMagic
                             this.AddPawnAbility(TorannMagicDefOf.TM_Repulsion);
                             if (!abilityUser.IsColonist)
                             {
-                                if ((settingsRef.AIHardMode && Rand.Chance(hardModeMasterChance)) || Rand.Chance(masterChance))
+                                if ((Settings.Instance.AIHardMode && Rand.Chance(hardModeMasterChance)) || Rand.Chance(masterChance))
                                 {
                                     this.spell_PsychicShock = true;
                                 }
@@ -3402,7 +3400,7 @@ namespace TorannMagic
 
                             if (!abilityUser.IsColonist)
                             {
-                                if ((settingsRef.AIHardMode && Rand.Chance(hardModeMasterChance)) || Rand.Chance(masterChance))
+                                if ((Settings.Instance.AIHardMode && Rand.Chance(hardModeMasterChance)) || Rand.Chance(masterChance))
                                 {
                                     this.AddPawnAbility(TorannMagicDefOf.TM_Meteor);
                                     this.spell_Meteor = true;
@@ -3450,7 +3448,7 @@ namespace TorannMagic
                             this.AddPawnAbility(TorannMagicDefOf.TM_Overdrive);
                             if (!abilityUser.IsColonist)
                             {
-                                if ((settingsRef.AIHardMode && Rand.Chance(hardModeMasterChance)) || Rand.Chance(masterChance))
+                                if ((Settings.Instance.AIHardMode && Rand.Chance(hardModeMasterChance)) || Rand.Chance(masterChance))
                                 {
                                     this.spell_OrbitalStrike = true;
                                 }
@@ -3509,7 +3507,7 @@ namespace TorannMagic
                             this.AddPawnAbility(TorannMagicDefOf.TM_Rend);
                             if (!abilityUser.IsColonist)
                             {
-                                if ((settingsRef.AIHardMode && Rand.Chance(hardModeMasterChance)) || Rand.Chance(masterChance))
+                                if ((Settings.Instance.AIHardMode && Rand.Chance(hardModeMasterChance)) || Rand.Chance(masterChance))
                                 {
                                     this.AddPawnAbility(TorannMagicDefOf.TM_BloodMoon);
                                     this.spell_BloodMoon = true;
@@ -3621,7 +3619,7 @@ namespace TorannMagic
 
                             if (!abilityUser.IsColonist)
                             {
-                                if ((settingsRef.AIHardMode && Rand.Chance(hardModeMasterChance)) || Rand.Chance(masterChance))
+                                if ((Settings.Instance.AIHardMode && Rand.Chance(hardModeMasterChance)) || Rand.Chance(masterChance))
                                 {
                                     this.AddPawnAbility(TorannMagicDefOf.TM_Recall);
                                     this.spell_Recall = true;
@@ -5743,10 +5741,9 @@ namespace TorannMagic
                         int actualDmg = 0;
                         float dmgAmt = (float)dinfo.Amount;
                         float dmgToSev = 0.004f;
-                        ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
                         if (!abilityUser.IsColonist)
                         {
-                            if (settingsRef.AIHardMode)
+                            if (Settings.Instance.AIHardMode)
                             {
                                 dmgToSev = 0.0025f;
                             }
@@ -5774,10 +5771,9 @@ namespace TorannMagic
                         int actualDmg = 0;
                         float dmgAmt = (float)dinfo.Amount;
                         float dmgToSev = 1f;
-                        ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
                         if (!abilityUser.IsColonist)
                         {
-                            if (settingsRef.AIHardMode)
+                            if (Settings.Instance.AIHardMode)
                             {
                                 dmgToSev = 0.8f;
                             }
@@ -5969,7 +5965,6 @@ namespace TorannMagic
 
         public void ResolveAutoCast()
         {
-            ModOptions.SettingsRef settingsRef = GlobalTickCache.SettingsRef;
             bool flagCM = this.Pawn.story.traits.HasTrait(TorannMagicDefOf.ChaosMage);
             bool isCustom = this.customClass != null;
             //bool flagCP = this.Pawn.story.traits.HasTrait(TorannMagicDefOf.ChaosMage) || this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless);
@@ -5978,13 +5973,13 @@ namespace TorannMagic
             //{
             //    compMight = this.Pawn.GetCompAbilityUserMight();
             //}
-            if (settingsRef.autocastEnabled && this.Pawn.jobs != null && this.Pawn.CurJob != null && this.Pawn.CurJob.def != TorannMagicDefOf.TMCastAbilityVerb && this.Pawn.CurJob.def != TorannMagicDefOf.TMCastAbilitySelf && 
+            if (Settings.Instance.autocastEnabled && this.Pawn.jobs != null && this.Pawn.CurJob != null && this.Pawn.CurJob.def != TorannMagicDefOf.TMCastAbilityVerb && this.Pawn.CurJob.def != TorannMagicDefOf.TMCastAbilitySelf &&
                 this.Pawn.CurJob.def != JobDefOf.Ingest && this.Pawn.CurJob.def != JobDefOf.ManTurret && this.Pawn.GetPosture() == PawnPosture.Standing && !this.Pawn.CurJob.playerForced && !this.Pawn.Map.GameConditionManager.ConditionIsActive(TorannMagicDefOf.ManaDrain) && !this.Pawn.Map.GameConditionManager.ConditionIsActive(TorannMagicDefOf.TM_ManaStorm))
             {
                 //Log.Message("pawn " + this.Pawn.LabelShort + " current job is " + this.Pawn.CurJob.def.defName);
                 //non-combat (undrafted) spells
                 bool castSuccess = false;
-                if (this.Pawn.drafter != null && !this.Pawn.Drafted && this.Mana != null && this.Mana.CurLevelPercentage >= settingsRef.autocastMinThreshold)
+                if (this.Pawn.drafter != null && !this.Pawn.Drafted && this.Mana != null && this.Mana.CurLevelPercentage >= Settings.Instance.autocastMinThreshold)
                 {
                     foreach (MagicPower mp in this.MagicData.MagicPowersCustomAll)
                     {
@@ -6582,7 +6577,7 @@ namespace TorannMagic
                 }
 
                 //combat (drafted) spells
-                if (this.Pawn.drafter != null && this.Pawn.Drafted && this.Pawn.drafter.FireAtWill && this.Pawn.CurJob.def != JobDefOf.Goto && this.Mana != null && this.Mana.CurLevelPercentage >= settingsRef.autocastCombatMinThreshold)
+                if (this.Pawn.drafter != null && this.Pawn.Drafted && this.Pawn.drafter.FireAtWill && this.Pawn.CurJob.def != JobDefOf.Goto && this.Mana != null && this.Mana.CurLevelPercentage >= Settings.Instance.autocastCombatMinThreshold)
                 {
                     foreach (MagicPower mp in this.MagicData.MagicPowersCustom)
                     {
@@ -7018,11 +7013,11 @@ namespace TorannMagic
 
         public void ResolveAIAutoCast()
         {
-            if (GlobalTickCache.SettingsRef.AICasting && this.Pawn.jobs != null && this.Pawn.CurJob != null && this.Pawn.CurJob.def != TorannMagicDefOf.TMCastAbilityVerb && this.Pawn.CurJob.def != TorannMagicDefOf.TMCastAbilitySelf &&
+            if (Settings.Instance.AICasting && this.Pawn.jobs != null && this.Pawn.CurJob != null && this.Pawn.CurJob.def != TorannMagicDefOf.TMCastAbilityVerb && this.Pawn.CurJob.def != TorannMagicDefOf.TMCastAbilitySelf &&
                 this.Pawn.CurJob.def != JobDefOf.Ingest && this.Pawn.CurJob.def != JobDefOf.ManTurret && this.Pawn.GetPosture() == PawnPosture.Standing)
             {
                 bool castSuccess = false;
-                if (this.Mana != null && this.Mana.CurLevelPercentage >= GlobalTickCache.SettingsRef.autocastMinThreshold)
+                if (this.Mana != null && this.Mana.CurLevelPercentage >= Settings.Instance.autocastMinThreshold)
                 {
                     foreach (MagicPower mp in this.MagicData.AllMagicPowersWithSkills)
                     {
@@ -7268,7 +7263,7 @@ namespace TorannMagic
                 {
                     var dinfo = new DamageInfo(DamageDefOf.Mining, num, 0, -1f, this.Pawn, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
                     mineTarget.TakeDamage(dinfo);
-                    if (Rand.Chance(GlobalTickCache.SettingsRef.magicyteChance * 2))
+                    if (Rand.Chance(Settings.Instance.magicyteChance * 2))
                     {
                         Thing thing = null;
                         thing = ThingMaker.MakeThing(TorannMagicDefOf.RawMagicyte);

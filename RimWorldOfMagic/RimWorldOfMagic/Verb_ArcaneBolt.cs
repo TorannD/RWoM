@@ -2,6 +2,7 @@
 using AbilityUser;
 using UnityEngine;
 using System.Linq;
+using TorannMagic.ModOptions;
 
 namespace TorannMagic
 {
@@ -43,7 +44,6 @@ namespace TorannMagic
             Pawn pawn = this.CasterPawn;
             CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
             int burstCountMin = 1;
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
             
             if (pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Cantrips_pwr").level >= 2)
             {
@@ -53,7 +53,7 @@ namespace TorannMagic
                     burstCountMin++;
                 }
             }
-            if (!pawn.IsColonist && settingsRef.AIHardMode)
+            if (!pawn.IsColonist && Settings.Instance.AIHardMode)
             {
                 burstCountMin = 3;
             }

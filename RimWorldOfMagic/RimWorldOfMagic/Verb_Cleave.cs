@@ -3,6 +3,7 @@ using AbilityUser;
 using UnityEngine;
 using RimWorld;
 using System.Linq;
+using TorannMagic.ModOptions;
 
 
 namespace TorannMagic
@@ -76,8 +77,7 @@ namespace TorannMagic
                 pawnDPS = base.CasterPawn.GetStatValue(StatDefOf.MeleeDPS, false);
                 skillMultiplier = (1.2f + (.025f * str.level));
                 dmgNum = Mathf.RoundToInt(skillMultiplier * dmgMultiplier * (pawnDPS + weaponDPS));
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                if(!this.CasterPawn.IsColonist && settingsRef.AIHardMode)
+                if(!this.CasterPawn.IsColonist && Settings.Instance.AIHardMode)
                 {
                     dmgNum += 10;
                 }

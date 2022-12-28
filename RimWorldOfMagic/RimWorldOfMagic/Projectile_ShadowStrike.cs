@@ -6,6 +6,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System;
 using RimWorld;
+using TorannMagic.ModOptions;
 
 
 namespace TorannMagic
@@ -287,8 +288,7 @@ namespace TorannMagic
             CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
             int pwrVal = comp.MightData.MightPowerSkill_ShadowStrike.FirstOrDefault((MightPowerSkill x) => x.label == "TM_ShadowStrike_pwr").level;
             float dmg = comp.weaponDamage;
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-            if (!pawn.IsColonist && settingsRef.AIHardMode)
+            if (!pawn.IsColonist && Settings.Instance.AIHardMode)
             {
                 dmg += 5;
             }

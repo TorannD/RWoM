@@ -3,6 +3,7 @@ using System;
 using System.Linq;
 using Verse;
 using AbilityUser;
+using TorannMagic.ModOptions;
 using UnityEngine;
 using Verse.AI.Group;
 
@@ -40,11 +41,10 @@ namespace TorannMagic
                 pawn = this.launcher as Pawn;
                 MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_SummonPoppi.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_SummonPoppi_pwr");
                 MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_SummonPoppi.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_SummonPoppi_ver");
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
                 pwrVal = pwr.level;
                 verVal = ver.level;
                 this.arcaneDmg = pawn.GetCompAbilityUserMagic().arcaneDmg;
-                if (settingsRef.AIHardMode && !pawn.IsColonist)
+                if (Settings.Instance.AIHardMode && !pawn.IsColonist)
                 {
                     pwrVal = 1;
                     verVal = 1;

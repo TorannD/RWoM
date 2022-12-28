@@ -2,6 +2,7 @@
 using Verse;
 using AbilityUser;
 using System.Linq;
+using TorannMagic.ModOptions;
 
 
 namespace TorannMagic
@@ -46,10 +47,9 @@ namespace TorannMagic
             CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
             pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Firestorm.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Firestorm_pwr");
             ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Firestorm.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Firestorm_ver");
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
             pwrVal = pwr.level;
             verVal = ver.level;
-            if (settingsRef.AIHardMode && !pawn.IsColonist)
+            if (Settings.Instance.AIHardMode && !pawn.IsColonist)
             {
                 pwrVal = 1;
                 verVal = 1;

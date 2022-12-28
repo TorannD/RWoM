@@ -2,6 +2,7 @@
 using Verse;
 using AbilityUser;
 using System.Linq;
+using TorannMagic.ModOptions;
 using UnityEngine;
 
 
@@ -44,10 +45,9 @@ namespace TorannMagic
             CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
             pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Blizzard.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Blizzard_pwr");
             ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Blizzard.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Blizzard_ver");
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
             pwrVal = pwr.level;
             verVal = ver.level;
-            if (settingsRef.AIHardMode && !pawn.IsColonist)
+            if (Settings.Instance.AIHardMode && !pawn.IsColonist)
             {
                 pwrVal = 1;
                 verVal = 1;

@@ -8,6 +8,7 @@ using RimWorld;
 using AbilityUser;
 using Verse.AI.Group;
 using HarmonyLib;
+using TorannMagic.ModOptions;
 
 namespace TorannMagic.Conditions
 {
@@ -158,7 +159,6 @@ namespace TorannMagic.Conditions
 
         private void SetEventParameters()
         {
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
             int pts = (int)(Rand.Range(.7f, .9f) * wealth * wealthMultiplier * storytellerThreat);
             pts += 50000 * eventDifficulty;
             pts = Mathf.Clamp(pts, eventSpawnPoints, 1250000);
@@ -411,8 +411,7 @@ namespace TorannMagic.Conditions
                 wealthMultiplier = 2f;
             }
             storytellerThreat = Mathf.Max(Find.Storyteller.difficulty.threatScale, 1f);
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-            eventDifficulty = Mathf.RoundToInt(settingsRef.demonAssaultChallenge);
+            eventDifficulty = Mathf.RoundToInt(Settings.Instance.demonAssaultChallenge);
             //Log.Message("wealth: " + wealth + " w_mult: " + wealthMultiplier + " threat scale: " + storytellerThreat + " event difficulty " + eventDifficulty);
         }
     }
