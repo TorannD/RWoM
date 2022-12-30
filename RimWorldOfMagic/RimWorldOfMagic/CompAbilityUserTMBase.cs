@@ -16,26 +16,10 @@ namespace TorannMagic
 
         public TMDefs.TM_CustomClass customClass = null;
         private List<TMDefs.TM_CustomClass> advClasses = null;
-        public List<TMDefs.TM_CustomClass> AdvancedClasses
+        public List<TM_CustomClass> AdvancedClasses
         {
-            get
-            {
-                if (advClasses == null)
-                {
-                    advClasses = new List<TMDefs.TM_CustomClass>();
-                    advClasses.Clear();
-                }
-                return advClasses;
-            }
-            set
-            {
-                if (advClasses == null)
-                {
-                    advClasses = new List<TMDefs.TM_CustomClass>();
-                    advClasses.Clear();
-                }
-                advClasses = value;
-            }
+            get => advClasses ?? (advClasses = new List<TM_CustomClass>());
+            set => advClasses = value;
         }
 
         protected int age = -1;

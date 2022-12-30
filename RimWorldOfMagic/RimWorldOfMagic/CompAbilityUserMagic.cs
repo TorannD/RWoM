@@ -2236,7 +2236,7 @@ namespace TorannMagic
             }
         }
 
-        public bool IsMagicUser 
+        public bool IsMagicUser
         {
             get
             {
@@ -2261,13 +2261,22 @@ namespace TorannMagic
                         }
                     }
                 }
-                if (Pawn.story.traits.allTraits.Any(t => magicTraitIndexes.Contains(t.def.index) 
-                || TM_Calc.IsWanderer(base.Pawn) 
-                || (this.AdvancedClasses != null && this.AdvancedClasses.Count > 0)))
+
+                // Avoid LINQ since this is called inside of CompTick
+                bool hasMagicTrait = false;
+                for (int i = 0; i < Pawn.story.traits.allTraits.Count; i++)
+                {
+                    if (!magicTraitIndexes.Contains(Pawn.story.traits.allTraits[i].def.index)) continue;
+
+                    hasMagicTrait = true;
+                    break;
+                }
+
+                if (hasMagicTrait || TM_Calc.IsWanderer(Pawn) || AdvancedClasses.Count > 0)
                 {
                     return true;
                 }
-                else if(TM_Calc.HasAdvancedClass(this.Pawn))
+                if(TM_Calc.HasAdvancedClass(Pawn))
                 {
                     bool hasMageAdvClass = false;
                     foreach(TMDefs.TM_CustomClass cc in TM_ClassUtility.GetAdvancedClassesForPawn(this.Pawn))
