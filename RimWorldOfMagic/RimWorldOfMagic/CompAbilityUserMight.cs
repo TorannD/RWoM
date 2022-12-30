@@ -1359,10 +1359,19 @@ namespace TorannMagic
                             return true;
                         }
                     }
-                }                
-                if (Pawn.story.traits.allTraits.Any(t => mightTraitIndexes.Contains(t.def.index)
-                || TM_Calc.IsWayfarer(base.Pawn)
-                || (this.AdvancedClasses != null && this.AdvancedClasses.Count > 0)))
+                }
+
+                // Avoid LINQ since this is called inside of CompTick
+                bool hasMightTrait = false;
+                for (int i = 0; i < Pawn.story.traits.allTraits.Count; i++)
+                {
+                    if (!mightTraitIndexes.Contains(Pawn.story.traits.allTraits[i].def.index)) continue;
+
+                    hasMightTrait = true;
+                    break;
+                }
+
+                if (hasMightTrait || TM_Calc.IsWayfarer(Pawn) || AdvancedClasses.Count > 0)
                 {
                     return true;
                 }                
