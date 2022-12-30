@@ -296,22 +296,6 @@ namespace TorannMagic
             return ccList;
         }
 
-        public static bool ClassHasAbility(TMAbilityDef ability, CompAbilityUserMagic compMagic = null, CompAbilityUserMight compMight = null)
-        {
-            if(compMagic != null && compMagic.customClass != null && compMagic.customClass.classAbilities.Contains(ability))
-            {
-                return true;
-            }
-            else if(compMight != null && compMight.customClass != null && compMight.customClass.classAbilities.Contains(ability))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
         public static bool ClassHasHediff(HediffDef hdDef, CompAbilityUserMagic compMagic = null, CompAbilityUserMight compMight = null)
         {
             if (compMagic != null && compMagic.customClass != null && compMagic.customClass.classHediff == hdDef)
