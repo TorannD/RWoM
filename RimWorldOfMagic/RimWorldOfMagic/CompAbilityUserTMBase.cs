@@ -12,6 +12,7 @@ namespace TorannMagic
 {
     public abstract class CompAbilityUserTMBase : CompAbilityUser
     {
+        // TODO - This should be moved into customClass. This will make the checks clearer (customClass != null) and allow us to load in immediately instead of checking every time if set.
         public int customIndex = -2;
 
         protected int tickOffset6;

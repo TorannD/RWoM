@@ -87,9 +87,8 @@ namespace TorannMagic.ModOptions
                 Settings.Instance.CustomClass = new Dictionary<string, bool>();
                 Settings.Instance.CustomClass.Clear();
             }
-            for (int i = 0; i < TM_ClassUtility.CustomClasses.Count; i++)
+            foreach (TMDefs.TM_CustomClass customClass in TM_ClassUtility.CustomClasses)
             {
-                TMDefs.TM_CustomClass customClass = TM_ClassUtility.CustomClasses[i];
                 if(!Settings.Instance.CustomClass.Keys.Contains(customClass.classTrait.ToString()))
                 {
                     Settings.Instance.CustomClass.Add(customClass.classTrait.ToString(), true);
@@ -103,10 +102,8 @@ namespace TorannMagic.ModOptions
             List<TraitDef> customTraits = new List<TraitDef>();
             customTraits.Clear();
             const string customIconType = "TM_Icon_Custom";
-            
-            for (int i = 0; i < TM_ClassUtility.CustomClasses.Count; i++)
+            foreach (TMDefs.TM_CustomClass customClass in TM_ClassUtility.CustomClasses)
             {
-                TMDefs.TM_CustomClass customClass = TM_ClassUtility.CustomClasses[i];
                 //customTraits.AddDistinct(customClass.classTrait);
                 if (customTraits.Contains(customClass.classTrait))
                 {

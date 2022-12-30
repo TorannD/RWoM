@@ -372,25 +372,11 @@ namespace TorannMagic
         }
 
         public static bool HasAdvancedClass(Pawn p)
-        {               
-            if (p != null && p.story != null && p.story.traits != null)
-            {
-                List<TM_CustomClass> customClasses = TM_ClassUtility.CustomClasses;
-                for (int i = 0; i < customClasses.Count; i++)
-                {
-                    if (customClasses[i].isAdvancedClass)
-                    {
-                        foreach(Trait t in p.story.traits.allTraits)
-                        {
-                            if(t.def == customClasses[i].classTrait)
-                            {
-                                return true;
-                            }
-                        }                          
-                    }
-                }
-            }
-            return false;            
+        {
+            if (p?.story?.traits == null) return false;
+
+            return p.story.traits.allTraits.Any(
+                t => TM_ClassUtility.CustomAdvancedClassTraitIndexMap.ContainsKey(t.def.index));
         }
 
         public static bool HasAdvancedMageRequirements(Pawn p, TMDefs.TM_CustomClass cc, out string failMessage)
