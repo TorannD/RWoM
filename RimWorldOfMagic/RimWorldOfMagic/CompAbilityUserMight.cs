@@ -1075,7 +1075,7 @@ namespace TorannMagic
                                 }
                             }
                         }
-                        if (Find.TickManager.TicksGame % 20 == 0)
+                        if (GlobalTickCache.tickMod20 == tickOffset20)
                         {
                             ResolveSustainedSkills();
                             if (reversalTarget != null)
@@ -1083,7 +1083,7 @@ namespace TorannMagic
                                 ResolveReversalDamage();
                             }
                         }
-                        if (Find.TickManager.TicksGame % 60 == 0)
+                        if (GlobalTickCache.tickMod60 == tickOffset60)
                         {                            
                             ResolveClassSkills();
                             //ResolveClassPassions(); currently disabled
@@ -1154,17 +1154,14 @@ namespace TorannMagic
                                 lastMightXPGain = this.age;
                             }
                         }
-                        bool flag4 = Find.TickManager.TicksGame % 30 == 0;
-                        if (flag4)
+                        if (GlobalTickCache.tickMod30 == tickOffset30)
                         {
                             bool flag5 = this.MightUserXP > this.MightUserXPTillNextLevel;
                             if (flag5)
                             {
                                 this.LevelUp(false);
                             }
-                        }
-                        if (Find.TickManager.TicksGame % 30 == 0)
-                        {
+
                             bool flag6 = this.Pawn.TargetCurrentlyAimingAt != null;
                             if (flag6)
                             {
@@ -1197,15 +1194,15 @@ namespace TorannMagic
                         {
                             DoDeathRetaliation();
                         }
-                        else if (Find.TickManager.TicksGame % 67 == 0 && !this.Pawn.IsColonist && this.Pawn.Downed)
+                        else if (GlobalTickCache.tickMod67 == tickOffset67 && !Pawn.IsColonist && Pawn.Downed)
                         {
                             DoDeathRetaliation();
                         }
-                        if(Find.TickManager.TicksGame % 301 == 0) //cache weapon damage for tooltip and damage calculations
+                        if(GlobalTickCache.tickMod300 == tickOffset300) //cache weapon damage for tooltip and damage calculations
                         {
                             this.weaponDamage = TM_Calc.GetSkillDamage(this.Pawn);
                         }
-                        if (Find.TickManager.TicksGame % 602 == 0)
+                        if (GlobalTickCache.tickMod600 == tickOffset600)
                         {
                             ResolveMightUseEvents();
                         }
@@ -1213,7 +1210,7 @@ namespace TorannMagic
                 }
                 else
                 {
-                    if (Find.TickManager.TicksGame % 600 == 0)
+                    if (GlobalTickCache.tickMod600 == tickOffset600)
                     {
                         if (this.Pawn.Map == null)
                         {
@@ -1267,7 +1264,7 @@ namespace TorannMagic
                 {
                     this.deathRing = TM_Calc.GetOuterRing(this.Pawn.Position, 1f, 2f);
                 }
-                if (Find.TickManager.TicksGame % 7 == 0)
+                if (GlobalTickCache.tickMod6 == tickOffset6)
                 {
                     Vector3 moteVec = this.deathRing.RandomElement().ToVector3Shifted();
                     moteVec.x += Rand.Range(-.4f, .4f);

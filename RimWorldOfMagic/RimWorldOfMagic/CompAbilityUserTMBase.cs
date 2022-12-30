@@ -14,6 +14,26 @@ namespace TorannMagic
     {
         public int customIndex = -2;
 
+        protected int tickOffset6;
+        protected int tickOffset20;
+        protected int tickOffset30;
+        protected int tickOffset60;
+        protected int tickOffset67;
+        protected int tickOffset300;
+        protected int tickOffset600;
+
+        public override void PostSpawnSetup(bool respawningAfterLoad)
+        {
+            base.PostSpawnSetup(respawningAfterLoad);
+            tickOffset6 = Pawn.GetHashCode() % 6;
+            tickOffset20 = Pawn.GetHashCode() % 20;
+            tickOffset30 = Pawn.GetHashCode() % 30;
+            tickOffset60 = Pawn.GetHashCode() % 60;
+            tickOffset67 = Pawn.GetHashCode() % 67;
+            tickOffset300 = Pawn.GetHashCode() % 300;
+            tickOffset600 = Pawn.GetHashCode() % 600;
+        }
+
         public TMDefs.TM_CustomClass customClass = null;
         private List<TMDefs.TM_CustomClass> advClasses = null;
         public List<TMDefs.TM_CustomClass> AdvancedClasses
