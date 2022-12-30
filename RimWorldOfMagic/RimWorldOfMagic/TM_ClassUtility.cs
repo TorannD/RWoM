@@ -18,7 +18,6 @@ namespace TorannMagic
 {
     public static class TM_ClassUtility
     {
-
         public static TM_CustomClass[] CustomClasses;
         public static TM_CustomClass[] CustomBaseClasses;
         public static TM_CustomClass[] CustomMageClasses;
@@ -41,10 +40,10 @@ namespace TorannMagic
             
             CustomAdvancedClassTraitIndexMap.Clear();
             CustomClassTraitIndexes.Clear();
-            CustomBaseClasses.Clear();
-            CustomMageClasses.Clear();
-            CustomFighterClasses.Clear();
-            CustomAdvancedClasses.Clear();
+            CustomBaseClassesList.Clear();
+            CustomMageClassesList.Clear();
+            CustomFighterClassesList.Clear();
+            CustomAdvancedClassesList.Clear();
 
             IEnumerable<TM_CustomClass> enabledCustomClasses = CustomClasses.Where(cc =>
                 Settings.Instance.CustomClass.TryGetValue(cc.classTrait.ToString(), true));
@@ -70,14 +69,14 @@ namespace TorannMagic
                     }
                     else
                     {
-                        CustomFighterClasses.Add(cc);
+                        CustomFighterClassesList.Add(cc);
                     }
                 }
                 
-                if (!cc.isAdvancedClass) CustomBaseClasses.Add(cc); //base classes cannot also be advanced classes, but advanced classes can act like base classes
+                if (!cc.isAdvancedClass) CustomBaseClassesList.Add(cc); //base classes cannot also be advanced classes, but advanced classes can act like base classes
                 else
                 {
-                    CustomAdvancedClasses.Add(cc);
+                    CustomAdvancedClassesList.Add(cc);
                     CustomAdvancedClassTraitIndexMap[cc.classTrait.index] = cc;
                 }
                 

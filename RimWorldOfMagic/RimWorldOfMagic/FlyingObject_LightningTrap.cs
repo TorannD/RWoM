@@ -143,9 +143,9 @@ namespace TorannMagic
                 for (int k = 0; k < Rand.Range(1, 5); k++)
                 {
                     IntVec3 randomCell = cellRect.RandomCell;
-                    GenExplosion.DoExplosion(randomCell, Map, Rand.Range(.4f, .8f), TMDamageDefOf.DamageDefOf.TM_Lightning, launcher, Mathf.RoundToInt(Rand.Range(4, 6)), 0, SoundDefOf.Thunder_OnMap, null, null, null, null, 0f, 1, false, null, 0f, 1, 0.1f, true);
+                    GenExplosion.DoExplosion(randomCell, Map, Rand.Range(.4f, .8f), TMDamageDefOf.DamageDefOf.TM_Lightning, launcher, Mathf.RoundToInt(Rand.Range(4, 6)), 0, SoundDefOf.Thunder_OnMap, null, null, null, null, 0f, 1, null, false, null, 0f, 1, 0.1f, true);
                 }
-                GenExplosion.DoExplosion(target.Position, Map, 1f, TMDamageDefOf.DamageDefOf.TM_Lightning, launcher, Mathf.RoundToInt(Rand.Range(5, 9) * arcaneDmg), 0, SoundDefOf.Thunder_OffMap, null, null, null, null, 0f, 1, false, null, 0f, 1, 0.1f, true);
+                GenExplosion.DoExplosion(target.Position, Map, 1f, TMDamageDefOf.DamageDefOf.TM_Lightning, launcher, Mathf.RoundToInt(Rand.Range(5, 9) * arcaneDmg), 0, SoundDefOf.Thunder_OffMap, null, null, null, null, 0f, 1, null, false, null, 0f, 1, 0.1f, true);
             }            
             DrawStrikeFading();
         }
@@ -185,10 +185,10 @@ namespace TorannMagic
                     CellRect cellRect = CellRect.CenteredOn(strikeCell, 2);
                     cellRect.ClipInsideMap(Map);
                     IntVec3 randomCell = cellRect.RandomCell;
-                    GenExplosion.DoExplosion(randomCell, Map, Rand.Range(.2f, .6f), TMDamageDefOf.DamageDefOf.TM_Lightning, launcher, Mathf.RoundToInt(Rand.Range(2, 6)), 0, SoundDefOf.Thunder_OffMap, null, null, null, null, 0f, 1, false, null, 0f, 1, 0.1f, true);
+                    GenExplosion.DoExplosion(randomCell, Map, Rand.Range(.2f, .6f), TMDamageDefOf.DamageDefOf.TM_Lightning, launcher, Mathf.RoundToInt(Rand.Range(2, 6)), 0, SoundDefOf.Thunder_OffMap, null, null, null, null, 0f, 1, null, false, null, 0f, 1, 0.1f, true);
                 }
             }
-            GenExplosion.DoExplosion(origin.ToIntVec3(), Map, 1f, TMDamageDefOf.DamageDefOf.TM_Lightning, launcher, Mathf.RoundToInt(Rand.Range(4, 8)), 0, SoundDefOf.Thunder_OffMap, null, null, null, null, 0f, 1, false, null, 0f, 1, 0.1f, true);
+            GenExplosion.DoExplosion(origin.ToIntVec3(), Map, 1f, TMDamageDefOf.DamageDefOf.TM_Lightning, launcher, Mathf.RoundToInt(Rand.Range(4, 8)), 0, SoundDefOf.Thunder_OffMap, null, null, null, null, 0f, 1, null, false, null, 0f, 1, 0.1f, true);
 
             Destroy();
         }        
