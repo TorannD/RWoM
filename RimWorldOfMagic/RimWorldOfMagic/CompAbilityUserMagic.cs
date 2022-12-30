@@ -34,7 +34,6 @@ namespace TorannMagic
         
         private bool doOnce = true;
         private List<IntVec3> deathRing = new List<IntVec3>();
-        public float weaponDamage = 1;
         public float weaponCritChance = 0f;
         public LocalTargetInfo SecondTarget = null;
         public List<TM_EventRecords> magicUsed = new List<TM_EventRecords>();
@@ -522,6 +521,36 @@ namespace TorannMagic
                 this.hexedPawns = validPawns;
                 return this.hexedPawns;
             }
+        }
+
+        public float GetSkillDamage()
+        {
+            float result;
+            float strFactor = 1f;
+            if (IsMagicUser)
+            {
+                strFactor = arcaneDmg;
+            }
+
+            if (Pawn.equipment?.Primary != null)
+            {
+                if(Pawn.equipment.Primary.def.IsMeleeWeapon)
+                {
+                    result = TM_Calc.GetSkillDamage_Melee(Pawn, strFactor);
+                    weaponCritChance = TM_Calc.GetWeaponCritChance(Pawn.equipment.Primary);
+                }
+                else
+                {
+                    result = TM_Calc.GetSkillDamage_Range(Pawn, strFactor);
+                    weaponCritChance = 0f;
+                }
+            }
+            else
+            {
+                result = Pawn.GetStatValue(StatDefOf.MeleeDPS, false) * strFactor;
+            }
+
+            return result;
         }
 
         public bool shouldDraw = true;
@@ -2077,7 +2106,7 @@ namespace TorannMagic
                         }
                         if (Find.TickManager.TicksGame % 299 == 0) //cache weapon damage for tooltip and damage calculations
                         {
-                            this.weaponDamage = TM_Calc.GetSkillDamage(this.Pawn);
+                            weaponDamage = GetSkillDamage();
                         }
                         if (Find.TickManager.TicksGame % 601 == 0)
                         {

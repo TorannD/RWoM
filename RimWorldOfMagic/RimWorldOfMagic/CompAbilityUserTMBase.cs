@@ -52,6 +52,8 @@ namespace TorannMagic
         public float coolDown = 1;
         public float xpGain = 1;
 
+        public float weaponDamage = 1f;
+
         public List<TMDefs.TM_CustomClass> CombinedCustomClasses
         {
             get

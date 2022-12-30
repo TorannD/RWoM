@@ -4001,48 +4001,37 @@ namespace TorannMagic
 
         public static float GetWeaponCritChance(ThingWithComps weapon)
         {
-            float weaponMass = weapon.GetStatValue(StatDefOf.Mass, false);            
-            if(weaponMass != 0)
-            {
-                QualityCategory qual;
-                weapon.TryGetQuality(out qual);
-                int q = (int)qual;
+            float weaponMass = weapon.GetStatValue(StatDefOf.Mass, false);
+            if (weaponMass == 0) return 0f;
 
-                float critChanceByMass = .1f + (.2f / weaponMass);
-                float critChanceByQuality = (.05f * (float)q);
+            weapon.TryGetQuality(out QualityCategory qualityCategory);
+            int q = (int)qualityCategory;
 
-                return (critChanceByMass + critChanceByQuality);
-            }
-
-
-            return 0f;
+            return .1f + .2f / weaponMass + .05f * q;
         }
 
         public static float GetSkillDamage_Melee(Pawn p, float strFactor)
         {
-            float weaponDamage = 0f;
-            ThingWithComps weaponComp = p.equipment.Primary;
-            float weaponDPS = weaponComp.GetStatValue(StatDefOf.MeleeWeapon_AverageDPS, false);
+            float weaponDPS = p.equipment.Primary.GetStatValue(StatDefOf.MeleeWeapon_AverageDPS, false);
             float pawnDPS = p.GetStatValue(StatDefOf.MeleeDPS, false);
 
-            weaponDamage = Mathf.Max((pawnDPS + weaponDPS) * strFactor, 5f);
-
-            return weaponDamage;
+            return Mathf.Max((pawnDPS + weaponDPS) * strFactor, 5f);
         }
 
         public static float GetSkillDamage_Range(Pawn p, float strFactor)
         {
             VerbProperties vp = p.equipment.Primary.def.Verbs?.FirstOrDefault();
-            if (vp != null)
-            {
-                QualityCategory qc = QualityCategory.Normal;
-                //p.equipment.Primary.TryGetQuality(out qc);
-                float qc_m = GetQualityMultiplier(qc);
-                float weaponDamage = ((vp.defaultProjectile.projectile.GetDamageAmount(p.equipment.Primary) * qc_m) - (2 * (vp.warmupTime + vp.defaultCooldownTime))) + (3 * vp.defaultProjectile.projectile.stoppingPower);
-                weaponDamage *= strFactor;
-                return weaponDamage;
-            }
-            return 0;
+            if (vp == null) return 0;
+
+            //const QualityCategory qc = QualityCategory.Normal;
+            //p.equipment.Primary.TryGetQuality(out qc);
+            //float qc_m = GetQualityMultiplier(qc);
+            const float qc_m = 1f;
+            return (
+                qc_m * vp.defaultProjectile.projectile.GetDamageAmount(p.equipment.Primary)
+                - 2 * (vp.warmupTime + vp.defaultCooldownTime)
+                + 3 * vp.defaultProjectile.projectile.stoppingPower
+            ) * strFactor;
         }
 
         public static float GetQualityMultiplier(QualityCategory qc)
