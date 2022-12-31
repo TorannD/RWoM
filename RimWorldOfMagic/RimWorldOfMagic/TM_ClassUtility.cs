@@ -40,6 +40,8 @@ namespace TorannMagic
             if (CustomClasses == null) return;
             
             CustomAdvancedClassTraitIndexMap.Clear();
+            CustomBaseClassTraitIndexMap.Clear();
+            CustomClassTraitIndexes.Clear();
 
             IEnumerable<TM_CustomClass> enabledCustomClasses = CustomClasses.Where(cc =>
                 Settings.Instance.CustomClass.TryGetValue(cc.classTrait.ToString(), true));
