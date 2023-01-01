@@ -306,6 +306,11 @@ namespace TorannMagic
             TorannMagicDefOf.TM_Wanderer.index
         };
 
+        /*
+         * These Tick offsets are used so expensive calls aren't happening all on the same tick. PostSpawnSetup is used
+         * as the trigger so we can guarantee ThingIdNumber has been set. They correspond to the TickModulo variables
+         * found within TM_TickManager
+         */
         private int tickOffset2000;
         private int tickOffset2500;
 
