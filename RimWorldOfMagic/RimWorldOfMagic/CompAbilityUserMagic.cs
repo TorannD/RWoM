@@ -305,6 +305,11 @@ namespace TorannMagic
             TorannMagicDefOf.TM_Wanderer.index
         };
 
+        /*
+         * These Tick offsets are used so expensive calls aren't happening all on the same tick. PostSpawnSetup is used
+         * as the trigger so we can guarantee ThingIdNumber has been set. They correspond to the TickModulo variables
+         * found within TM_TickManager
+         */
         private int tickOffset2000;
         private int tickOffset2500;
 
@@ -2006,7 +2011,7 @@ namespace TorannMagic
                                     lastXPGain = this.age;
                                 }
                             }
-                            if (GlobalTickCache.tickMod30 == tickOffset30)
+                            if (TM_TickManager.tickMod30 == tickOffset30)
                             {
                                 bool flag5 = this.MagicUserXP > this.MagicUserXPTillNextLevel;
                                 if (flag5)
@@ -2014,7 +2019,7 @@ namespace TorannMagic
                                     this.LevelUp(false);
                                 }
                             }
-                            if (GlobalTickCache.tickMod60 == tickOffset60)
+                            if (TM_TickManager.tickMod60 == tickOffset60)
                             {
                                 if (this.Pawn.IsColonist && !this.magicPowersInitializedForColonist)
                                 {
@@ -2114,11 +2119,11 @@ namespace TorannMagic
                                 ResolveTechnomancerOverdrive();
                             }
                         }
-                        if (GlobalTickCache.tickMod300 == tickOffset300) //cache weapon damage for tooltip and damage calculations
+                        if (TM_TickManager.tickMod300 == tickOffset300) //cache weapon damage for tooltip and damage calculations
                         {
                             weaponDamage = GetSkillDamage();
                         }
-                        if (GlobalTickCache.tickMod600 == tickOffset600)
+                        if (TM_TickManager.tickMod600 == tickOffset600)
                         {
                             if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Warlock))
                             {
@@ -2126,7 +2131,7 @@ namespace TorannMagic
                             }
                             ResolveMagicUseEvents();
                         }
-                        if (GlobalTickCache.tickMod2000 == tickOffset2000)
+                        if (TM_TickManager.tickMod2000 == tickOffset2000)
                         {
                             if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Succubus))
                             {
@@ -2137,14 +2142,14 @@ namespace TorannMagic
                         {
                             DoDeathRetaliation();
                         }
-                        else if (GlobalTickCache.tickMod67 == tickOffset67 && !Pawn.IsColonist && Pawn.Downed)
+                        else if (TM_TickManager.tickMod67 == tickOffset67 && !Pawn.IsColonist && Pawn.Downed)
                         {
                             DoDeathRetaliation();
                         }
                     }
                     else
                     {                        
-                        if(GlobalTickCache.tickMod2500 == tickOffset2500 && Pawn.story != null && Pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted))
+                        if(TM_TickManager.tickMod2500 == tickOffset2500 && Pawn.story != null && Pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted))
                         {                            
                             if (!this.Pawn.Inspired && this.Pawn.CurJobDef == JobDefOf.LayDown && Rand.Chance(.025f))
                             {
@@ -2155,7 +2160,7 @@ namespace TorannMagic
                 }
                 else
                 {
-                    if (GlobalTickCache.tickMod600 == tickOffset600)
+                    if (TM_TickManager.tickMod600 == tickOffset600)
                     {
                         if (this.Pawn.Map == null)
                         {
@@ -2209,7 +2214,7 @@ namespace TorannMagic
                 {
                     this.deathRing = TM_Calc.GetOuterRing(this.Pawn.Position, 1f, 2f);
                 }
-                if (GlobalTickCache.tickMod6 == tickOffset6)
+                if (TM_TickManager.tickMod6 == tickOffset6)
                 {
                     Vector3 moteVec = this.deathRing.RandomElement().ToVector3Shifted();
                     moteVec.x += Rand.Range(-.4f, .4f);
@@ -5955,7 +5960,7 @@ namespace TorannMagic
                 Thing forge = this.Pawn.CurJob.targetA.Thing;
                 if (this.Pawn.Position == forge.InteractionCell && this.Pawn.jobs.curDriver.CurToilIndex >= 10)
                 {
-                    if (GlobalTickCache.tickMod20 == tickOffset20)
+                    if (TM_TickManager.tickMod20 == tickOffset20)
                     {
                         if (this.Mana.CurLevel >= .1f)
                         {

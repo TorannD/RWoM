@@ -1105,7 +1105,7 @@ namespace TorannMagic
                                 }
                             }
                         }
-                        if (GlobalTickCache.tickMod20 == tickOffset20)
+                        if (TM_TickManager.tickMod20 == tickOffset20)
                         {
                             ResolveSustainedSkills();
                             if (reversalTarget != null)
@@ -1113,7 +1113,7 @@ namespace TorannMagic
                                 ResolveReversalDamage();
                             }
                         }
-                        if (GlobalTickCache.tickMod60 == tickOffset60)
+                        if (TM_TickManager.tickMod60 == tickOffset60)
                         {                            
                             ResolveClassSkills();
                             //ResolveClassPassions(); currently disabled
@@ -1184,7 +1184,7 @@ namespace TorannMagic
                                 lastMightXPGain = this.age;
                             }
                         }
-                        if (GlobalTickCache.tickMod30 == tickOffset30)
+                        if (TM_TickManager.tickMod30 == tickOffset30)
                         {
                             bool flag5 = this.MightUserXP > this.MightUserXPTillNextLevel;
                             if (flag5)
@@ -1224,15 +1224,15 @@ namespace TorannMagic
                         {
                             DoDeathRetaliation();
                         }
-                        else if (GlobalTickCache.tickMod67 == tickOffset67 && !Pawn.IsColonist && Pawn.Downed)
+                        else if (TM_TickManager.tickMod67 == tickOffset67 && !Pawn.IsColonist && Pawn.Downed)
                         {
                             DoDeathRetaliation();
                         }
-                        if(GlobalTickCache.tickMod300 == tickOffset300) //cache weapon damage for tooltip and damage calculations
+                        if(TM_TickManager.tickMod300 == tickOffset300) //cache weapon damage for tooltip and damage calculations
                         {
                             weaponDamage = GetSkillDamage();
                         }
-                        if (GlobalTickCache.tickMod600 == tickOffset600)
+                        if (TM_TickManager.tickMod600 == tickOffset600)
                         {
                             ResolveMightUseEvents();
                         }
@@ -1240,7 +1240,7 @@ namespace TorannMagic
                 }
                 else
                 {
-                    if (GlobalTickCache.tickMod600 == tickOffset600)
+                    if (TM_TickManager.tickMod600 == tickOffset600)
                     {
                         if (this.Pawn.Map == null)
                         {
@@ -1294,7 +1294,7 @@ namespace TorannMagic
                 {
                     this.deathRing = TM_Calc.GetOuterRing(this.Pawn.Position, 1f, 2f);
                 }
-                if (GlobalTickCache.tickMod6 == tickOffset6)
+                if (TM_TickManager.tickMod6 == tickOffset6)
                 {
                     Vector3 moteVec = this.deathRing.RandomElement().ToVector3Shifted();
                     moteVec.x += Rand.Range(-.4f, .4f);

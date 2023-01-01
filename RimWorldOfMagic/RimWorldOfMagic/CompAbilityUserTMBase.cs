@@ -15,6 +15,11 @@ namespace TorannMagic
         // TODO - This should be moved into customClass. This will make the checks clearer (customClass != null) and allow us to load in immediately instead of checking every time if set.
         public int customIndex = -2;
 
+        /*
+         * These Tick offsets are used so expensive calls aren't happening all on the same tick. PostSpawnSetup is used
+         * as the trigger so we can guarantee ThingIdNumber has been set. They correspond to the TickModulo variables
+         * found within TM_TickManager
+         */
         protected int tickOffset6;
         protected int tickOffset20;
         protected int tickOffset30;
