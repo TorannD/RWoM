@@ -5,6 +5,7 @@ using AbilityUser;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using TorannMagic.ModOptions;
 
 namespace TorannMagic
 {
@@ -24,7 +25,6 @@ namespace TorannMagic
             bodyparts.Clear();
             bodyparts = this.CasterPawn.def.race.body.AllParts;
             List<ThingDef> bloodDefs = TM_Calc.GetAllRaceBloodTypes();
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
             if (pawn != null && !pawn.Downed && bodyparts != null && bloodDefs != null)
             {
                 if (verVal > 0)
@@ -36,7 +36,7 @@ namespace TorannMagic
                         List<Thing> thingList = curcell.GetThingList(this.CasterPawn.Map);
                         for (int j = 0; j < thingList.Count; j++)
                         {
-                            if(thingList[j].def == ThingDefOf.Filth_Blood || (settingsRef.unrestrictedBloodTypes && bloodDefs.Contains(thingList[j].def)))
+                            if(thingList[j].def == ThingDefOf.Filth_Blood || (Settings.Instance.unrestrictedBloodTypes && bloodDefs.Contains(thingList[j].def)))
                             {                                
                                 bloodGain += thingList[j].stackCount;
                                 thingList[j].Destroy(DestroyMode.Vanish);                                
@@ -56,7 +56,7 @@ namespace TorannMagic
                 }
                 if(validParts.Count > 0)
                 {
-                    if (this.CasterPawn.RaceProps.BloodDef != null && (this.CasterPawn.RaceProps.BloodDef == ThingDefOf.Filth_Blood || settingsRef.unrestrictedBloodTypes))
+                    if (this.CasterPawn.RaceProps.BloodDef != null && (this.CasterPawn.RaceProps.BloodDef == ThingDefOf.Filth_Blood || Settings.Instance.unrestrictedBloodTypes))
                     {
                         BodyPartRecord damagePart = validParts.RandomElement();
                         TM_Action.DamageEntities(this.CasterPawn, damagePart, 4f, 10f, TMDamageDefOf.DamageDefOf.TM_BloodyCut, this.CasterPawn);

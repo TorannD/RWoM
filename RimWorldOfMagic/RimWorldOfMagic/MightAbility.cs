@@ -6,6 +6,7 @@ using System.Text;
 using Verse;
 using UnityEngine;
 using TorannMagic.Ideology;
+using TorannMagic.ModOptions;
 
 namespace TorannMagic
 {
@@ -104,8 +105,7 @@ namespace TorannMagic
         public override void PostAbilityAttempt()  
         {
             //base.PostAbilityAttempt();
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-            if (!this.Pawn.IsColonist && settingsRef.AIAggressiveCasting)// for AI
+            if (!this.Pawn.IsColonist && Settings.Instance.AIAggressiveCasting)// for AI
             {
                 this.CooldownTicksLeft = Mathf.RoundToInt(this.MaxCastingTicks/2f);
             }
@@ -129,7 +129,7 @@ namespace TorannMagic
                     bool flag3 = this.MightUser.Stamina != null;
                     if (flag3)
                     {
-                        if (!this.Pawn.IsColonist && settingsRef.AIAggressiveCasting)// for AI
+                        if (!this.Pawn.IsColonist && Settings.Instance.AIAggressiveCasting)// for AI
                         {
                             this.MightUser.Stamina.UseMightPower(this.MightUser.ActualStaminaCost(mightDef) / 2f);
                         }
@@ -138,7 +138,7 @@ namespace TorannMagic
                             this.MightUser.Stamina.UseMightPower(this.MightUser.ActualStaminaCost(mightDef));
                         }
 
-                        this.MightUser.MightUserXP += (int)((mightDef.staminaCost * 180) * this.MightUser.xpGain * settingsRef.xpMultiplier);
+                        this.MightUser.MightUserXP += (int)((mightDef.staminaCost * 180) * this.MightUser.xpGain * Settings.Instance.xpMultiplier);
 
                         TM_EventRecords er = new TM_EventRecords();
                         er.eventPower = this.mightDef.manaCost;
@@ -149,7 +149,7 @@ namespace TorannMagic
                     if (this.mightDef.chiCost != 0)
                     {
                         HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_ChiHD, -100 * this.ActualChiCost);
-                        this.MightUser.MightUserXP += (int)((mightDef.chiCost * 100) * this.MightUser.xpGain * settingsRef.xpMultiplier);
+                        this.MightUser.MightUserXP += (int)((mightDef.chiCost * 100) * this.MightUser.xpGain * Settings.Instance.xpMultiplier);
                     }
                     if(mightDef.requiredHediff != null)
                     {
@@ -157,7 +157,7 @@ namespace TorannMagic
                         if (reqHediff != null)
                         {
                             reqHediff.Severity -= ActualHediffCost(mightDef, this.MightUser);
-                            this.MightUser.MightUserXP += (int)((mightDef.hediffXPFactor * this.MightUser.xpGain * settingsRef.xpMultiplier) * mightDef.hediffCost);
+                            this.MightUser.MightUserXP += (int)((mightDef.hediffXPFactor * this.MightUser.xpGain * Settings.Instance.xpMultiplier) * mightDef.hediffCost);
                         }
                         else
                         {
@@ -170,7 +170,7 @@ namespace TorannMagic
                         {
                             Need nd = this.Pawn.needs.TryGetNeed(this.mightDef.requiredNeed);
                             nd.CurLevel -= ActualNeedCost(mightDef, this.MightUser);
-                            this.MightUser.MightUserXP += (int)((mightDef.needXPFactor * this.MightUser.xpGain * settingsRef.xpMultiplier) * mightDef.needCost);
+                            this.MightUser.MightUserXP += (int)((mightDef.needXPFactor * this.MightUser.xpGain * Settings.Instance.xpMultiplier) * mightDef.needCost);
                         }
                         else
                         {

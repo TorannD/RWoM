@@ -586,7 +586,6 @@
     <Compile Include="ModOptions\ModClassOptions.cs" />
     <Compile Include="ModOptions\ModCompatibilityCheck.cs" />
     <Compile Include="ModOptions\Settings.cs" />
-    <Compile Include="ModOptions\SettingsRef.cs" />
     <Compile Include="ModOptions\TM_DebugTools.cs" />
     <Compile Include="MovingObject.cs" />
     <Compile Include="Need_Mana.cs" />

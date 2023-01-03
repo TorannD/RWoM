@@ -5,6 +5,7 @@ using System.Linq;
 using Verse;
 using Verse.Sound;
 using AbilityUser;
+using TorannMagic.ModOptions;
 using UnityEngine;
 using Verse.AI.Group;
 
@@ -53,12 +54,11 @@ namespace TorannMagic
             MagicPowerSkill bpwr = comp.MagicData.MagicPowerSkill_BloodGift.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_BloodGift_pwr");
             MagicPowerSkill pwr = comp.MagicData.MagicPowerSkill_BloodShield.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_BloodShield_pwr");
             pwrVal = pwr.level;
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
             if (caster.story.traits.HasTrait(TorannMagicDefOf.Faceless))
             {
                 pwrVal = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr").level;
             }
-            if (settingsRef.AIHardMode && !caster.IsColonist)
+            if (Settings.Instance.AIHardMode && !caster.IsColonist)
             {
                 pwrVal = 3;
             }

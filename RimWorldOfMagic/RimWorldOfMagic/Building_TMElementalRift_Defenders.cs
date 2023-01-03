@@ -8,7 +8,7 @@ using System.Diagnostics;
 using UnityEngine;
 using RimWorld;
 using AbilityUser;
-
+using TorannMagic.ModOptions;
 
 
 namespace TorannMagic
@@ -85,16 +85,15 @@ namespace TorannMagic
                 DetermineElementalType();
                 BeginAssaultCondition();
                 SpawnCycle();
-                ModOptions.SettingsRef settings = new ModOptions.SettingsRef();
                 if (Find.Storyteller.difficulty.threatScale != 0)
                 {
                     this.STDMultiplier = (float)(Find.Storyteller.difficulty.threatScale / 20f);
                 }
-                if(settings.riftChallenge <= 3f)
+                if(Settings.Instance.riftChallenge <= 3f)
                 {
                     this.difficultyMultiplier = 1f;
                 }
-                else if(settings.riftChallenge < 3f)
+                else if(Settings.Instance.riftChallenge < 3f)
                 {
                     this.difficultyMultiplier = .85f;
                 }
@@ -400,9 +399,8 @@ namespace TorannMagic
             {
                 wealthMultiplier = 2.5f;
             }
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
             float geChance = 0.007f * wealthMultiplier;
-            float riftChallenge = Mathf.Min(settingsRef.riftChallenge, 1f);
+            float riftChallenge = Mathf.Min(Settings.Instance.riftChallenge, 1f);
             float difficultyMod = 1f;
             if(riftChallenge >=3f)
             {
@@ -417,7 +415,7 @@ namespace TorannMagic
                 difficultyMod = .65f;
             }
 
-            if (settingsRef.riftChallenge > 1 )
+            if (Settings.Instance.riftChallenge > 1 )
             {
                 geChance *= (difficultyMod * riftChallenge);
             }  

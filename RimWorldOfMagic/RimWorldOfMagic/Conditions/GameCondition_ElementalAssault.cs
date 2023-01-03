@@ -4,6 +4,7 @@ using System.Diagnostics;
 using UnityEngine;
 using Verse;
 using RimWorld;
+using TorannMagic.ModOptions;
 
 namespace TorannMagic.Conditions
 {
@@ -37,9 +38,8 @@ namespace TorannMagic.Conditions
         }
 
         public override void Init()
-        {           
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();            
-            if (settingsRef.riftChallenge > 0)
+        {
+            if (Settings.Instance.riftChallenge > 0)
             {
                 base.Init();
                 this.disabled = false;
@@ -86,18 +86,17 @@ namespace TorannMagic.Conditions
                 }
                 z++;
             }
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
             if (!this.disabled)
             {
                 Thing thing = null;
                 thing = ThingMaker.MakeThing(ThingDef.Named("Jade"));
-                thing.stackCount = Rand.Range(35 * (int)settingsRef.riftChallenge, 60 * (int)settingsRef.riftChallenge);
+                thing.stackCount = Rand.Range(35 * (int)Settings.Instance.riftChallenge, 60 * (int)Settings.Instance.riftChallenge);
                 if (thing != null)
                 {
                     GenPlace.TryPlaceThing(thing, thingLoc, this.SingleMap, ThingPlaceMode.Near, null);
                 }
 
-                int totalMarketValue = Mathf.RoundToInt(1000f * (settingsRef.riftChallenge * settingsRef.riftChallenge));
+                int totalMarketValue = Mathf.RoundToInt(1000f * (Settings.Instance.riftChallenge * Settings.Instance.riftChallenge));
                 List<Thing> list = new List<Thing>();
                 ItemCollectionGenerator_Gemstones itc_g = new ItemCollectionGenerator_Gemstones();
                 list = itc_g.Generate(totalMarketValue, list);

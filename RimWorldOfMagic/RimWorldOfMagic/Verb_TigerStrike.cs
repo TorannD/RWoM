@@ -127,8 +127,7 @@ namespace TorannMagic
 //if (this.CasterPawn.equipment.Primary != null && !this.CasterPawn.equipment.Primary.def.IsRangedWeapon)
 //            {
 //    int dmgNum = GetWeaponDmg(this.CasterPawn);
-//    ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-//    if (!this.CasterPawn.IsColonist && settingsRef.AIHardMode)
+//    if (!this.CasterPawn.IsColonist && Settings.Instance.AIHardMode)
 //    {
 //        dmgNum += 10;
 //    }

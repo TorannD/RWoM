@@ -4,6 +4,7 @@ using Verse;
 using RimWorld;
 using UnityEngine;
 using System.Collections.Generic;
+using TorannMagic.ModOptions;
 
 
 namespace TorannMagic.Conditions
@@ -12,8 +13,7 @@ namespace TorannMagic.Conditions
     {
         protected override bool TryExecuteWorker(IncidentParms parms)
         {
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-            if (settingsRef.riftChallenge > 0)
+            if (Settings.Instance.riftChallenge > 0)
             {
                 string str = "";
                 Map map = (Map)parms.target;

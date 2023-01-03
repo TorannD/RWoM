@@ -4,6 +4,7 @@ using Verse;
 using RimWorld;
 using UnityEngine;
 using System.Collections.Generic;
+using TorannMagic.ModOptions;
 
 
 namespace TorannMagic.Conditions
@@ -19,8 +20,7 @@ namespace TorannMagic.Conditions
             {
                 tempAllow = true;
             }
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-            if (settingsRef.demonAssaultChallenge > 0 || tempAllow)
+            if (Settings.Instance.demonAssaultChallenge > 0 || tempAllow)
             {
                 string str = "";
                 

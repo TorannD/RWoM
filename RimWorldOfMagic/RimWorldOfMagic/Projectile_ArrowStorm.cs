@@ -3,6 +3,7 @@ using System;
 using RimWorld;
 using Verse;
 using AbilityUser;
+using TorannMagic.ModOptions;
 using UnityEngine;
 
 namespace TorannMagic
@@ -35,7 +36,6 @@ namespace TorannMagic
                 }
 
                 int dmg = GetWeaponDmg(this.launcher as Pawn);
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
 
                 if (victim != null && Rand.Chance(GetWeaponAccuracy(pawn)))
                 {
@@ -72,8 +72,7 @@ namespace TorannMagic
             pwrVal = TM_Calc.GetSkillPowerLevel(pawn, TorannMagicDefOf.TM_ArrowStorm);
 
             float dmg = comp.weaponDamage;
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-            if (!pawn.IsColonist && settingsRef.AIHardMode)
+            if (!pawn.IsColonist && Settings.Instance.AIHardMode)
             {
                 dmg += 8;
             }

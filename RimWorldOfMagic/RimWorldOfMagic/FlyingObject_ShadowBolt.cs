@@ -152,8 +152,6 @@ namespace TorannMagic
             pawn = launcher as Pawn;
             CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
 
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-
             this.arcaneDmg = comp.arcaneDmg;
             pwrVal = TM_Calc.GetSkillPowerLevel(pawn, TorannMagicDefOf.TM_ShadowBolt, true);
             verVal = TM_Calc.GetSkillVersatilityLevel(pawn, TorannMagicDefOf.TM_ShadowBolt, true);
@@ -169,7 +167,7 @@ namespace TorannMagic
             //    pwrVal = mpwr.level;
             //    verVal = mver.level;
             //}
-            //if (settingsRef.AIHardMode && !pawn.IsColonist)
+            //if (Settings.Instance.AIHardMode && !pawn.IsColonist)
             //{
             //    pwrVal = 3;
             //    verVal = 3;

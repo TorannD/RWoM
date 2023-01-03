@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Verse;
 using RimWorld;
+using TorannMagic.ModOptions;
 using TorannMagic.Utils;
 using UnityEngine;
 
@@ -67,10 +68,9 @@ namespace TorannMagic
                 if (pawn == null) return;
                 TM_MoteMaker.ThrowRegenMote(pawn.DrawPos, pawn.Map, 1f);
 
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
                 int injuriesToHeal;
                 int injuriesPerBodyPart;
-                if (settingsRef.AIHardMode && !pawn.IsColonist)
+                if (Settings.Instance.AIHardMode && !pawn.IsColonist)
                 {
                     injuriesToHeal = 5;
                     injuriesPerBodyPart = 5;
