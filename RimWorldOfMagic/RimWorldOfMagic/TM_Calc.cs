@@ -179,22 +179,14 @@ namespace TorannMagic
         {
             if (p?.health.hediffSet == null) return false;
 
-            TMPawnGolem pg = p as TMPawnGolem;
-            if(pg != null)
+            if (p is TMPawnGolem) return true;
+
+            for (int i = 0; i < p.AllComps.Count; i++)
             {
-                return true;
-            }
-            CompGolem cg = p.TryGetComp<CompGolem>();
-            if(cg != null)
-            {
-                return true;
-            }
-            if(p.health.hediffSet.HasHediff(TorannMagicDefOf.TM_GolemHD))
-            {
-                return true;
+                if (p.AllComps[i] is CompGolem) return true;
             }
 
-            return false;
+            return p.health.hediffSet.HasHediff(TorannMagicDefOf.TM_GolemHD);
         }
 
         public static bool IsGolemBuilding(Thing b)
