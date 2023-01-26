@@ -162,12 +162,11 @@ namespace TorannMagic
         {
             get
             {
-                bool flag = this.mightData == null && this.IsMightUser;
-                if (flag)
+                if (mightData == null && IsMightUser)
                 {
-                    this.mightData = new MightData(this);
+                    mightData = new MightData(this);
                 }
-                return this.mightData;
+                return mightData;
             }
         }
 
@@ -1055,10 +1054,9 @@ namespace TorannMagic
                     bool isMightUser = this.IsMightUser && !this.Pawn.NonHumanlikeOrWildMan();
                     if (isMightUser)
                     {
-                        bool flag3 = !this.MightData.Initialized;
-                        if (flag3)
+                        if (!Initialized)
                         {
-                            this.PostInitializeTick();
+                            PostInitializeTick();
                         }
                         base.CompTick();
                         this.age++;
@@ -5186,8 +5184,7 @@ namespace TorannMagic
 
         public void ResolveStamina()
         {
-            bool flag = this.Stamina == null;
-            if (flag)
+            if (Stamina == null)
             {
                 Hediff firstHediffOfDef = base.Pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_MightUserHD, false);
                 bool flag2 = firstHediffOfDef != null;
@@ -5205,10 +5202,9 @@ namespace TorannMagic
         }
         public void ResolveMightPowers()
         {
-            bool flag = this.mightPowersInitialized;
-            if (!flag)
+            if (!mightPowersInitialized)
             {
-                this.mightPowersInitialized = true;
+                mightPowersInitialized = true;
             }
         }
         public void ResolveMightTab()
