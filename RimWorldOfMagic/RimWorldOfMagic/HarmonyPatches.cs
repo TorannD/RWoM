@@ -2458,7 +2458,7 @@ namespace TorannMagic
                 if (mat == null) return true;
                 if (!ModOptions.Constants.GetCloaks().Contains(mat)) return true;
 
-                loc.y = ModOptions.Constants.GetCloaksNorth().Contains(mat) ? 8.75f : 8.17f;
+                loc.y = Array.IndexOf(ModOptions.Constants.GetCloaksNorth(), mat) != -1 ? 8.75f : 8.17f;
                 if (drawNow)
                 {
                     mat.SetPass(0);
