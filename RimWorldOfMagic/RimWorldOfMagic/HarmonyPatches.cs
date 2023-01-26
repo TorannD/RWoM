@@ -2455,39 +2455,20 @@ namespace TorannMagic
         {
             public static bool Prefix(Mesh mesh, Vector3 loc, Quaternion quat, Material mat, bool drawNow)
             {
-                if (mesh != null && loc != null && quat != null && mat != null)
-                {
-                    //Log.Message("item is " + mat.mainTexture.ToString() + " at y: " + loc.y);
-                    //if (mat.mainTexture != null && mat.mainTexture.name != null)
-                    //{
-                    //    Log.Message("thing: " + mat.mainTexture.name + " at loc.y:" + loc.y);
-                    //}
-                    if (mat.mainTexture != null && ModOptions.Constants.GetCloaks().Contains(mat.mainTexture))//mat.mainTexture.name != null && mat.mainTexture.ToString() != null && (mat.mainTexture.ToString().Contains("demonlordcloak") || mat.mainTexture.name.Contains("opencloak")))
-                    {
-                        //Log.Message("main texture is: " + mat.mainTexture);
-                        //Log.Message("pool contains " + ModOptions.Constants.GetCloaks()[0]);
-                        //Log.Message("item is " + mat.mainTexture.ToString() + " at y: " + loc.y);
-                        loc.y = 8.17f;  ///8.205f
-                        //loc.y += .010f; //was 0.015f
-                        if (ModOptions.Constants.GetCloaksNorth().Contains(mat.mainTexture))
-                        {
-                            //loc.y += .00175f; //was 0.006f
-                            loc.y = 8.75f; //7.9961f; 8.209, 8.309
-                        }
+                if (mat == null) return true;
+                if (!ModOptions.Constants.GetCloaks().Contains(mat)) return true;
 
-                        if (drawNow)
-                        {
-                            mat.SetPass(0);
-                            Graphics.DrawMeshNow(mesh, loc, quat);
-                        }
-                        else
-                        {
-                            Graphics.DrawMesh(mesh, loc, quat, mat, 0);
-                        }
-                        return false;
-                    }
+                loc.y = ModOptions.Constants.GetCloaksNorth().Contains(mat) ? 8.75f : 8.17f;
+                if (drawNow)
+                {
+                    mat.SetPass(0);
+                    Graphics.DrawMeshNow(mesh, loc, quat);
                 }
-                return true;
+                else
+                {
+                    Graphics.DrawMesh(mesh, loc, quat, mat, 0);
+                }
+                return false;
             }
         }
 
