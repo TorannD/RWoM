@@ -4,13 +4,14 @@ namespace TorannMagic.Utils;
 
 public abstract class DismissVar<T> : Dismiss<T>
 {
-    public T Value;
+    protected T value;
+    public T Value => value;
 
     public DismissVar(CompAbilityUserTMBase abilityUser, TMAbilityDef abilityDef) : base(abilityUser, abilityDef) {}
 
     public void Set(T newValue)
     {
-        Value = newValue;
+        value = newValue;
         DismissSpellLearned = !Equals(Value, default);
     }
 
@@ -28,7 +29,7 @@ public class DismissThing<T> : DismissVar<T> where T : Thing
 
     public void Scribe(string thingName)
     {
-        Scribe_References.Look<T>(ref Value, thingName);
+        Scribe_References.Look<T>(ref value, thingName);
         Scribe();
     }
 }
@@ -39,7 +40,7 @@ public class DismissValue<T> : DismissVar<T>
 
     public void Scribe(string valueName)
     {
-        Scribe_Values.Look<T>(ref Value, valueName);
+        Scribe_Values.Look<T>(ref value, valueName);
         Scribe();
     }
 }
