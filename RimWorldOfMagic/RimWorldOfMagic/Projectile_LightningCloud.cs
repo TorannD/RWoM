@@ -4,6 +4,7 @@ using AbilityUser;
 using UnityEngine;
 using System.Linq;
 using System.Collections.Generic;
+using TorannMagic.ModOptions;
 
 namespace TorannMagic
 {
@@ -53,8 +54,6 @@ namespace TorannMagic
 
             Pawn pawn = this.launcher as Pawn;
             
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-            
             if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
             {
                 MightPowerSkill mpwr = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
@@ -73,7 +72,7 @@ namespace TorannMagic
                 this.arcaneDmg = comp.arcaneDmg;
             }
             
-            if (settingsRef.AIHardMode && !pawn.IsColonist)
+            if (Settings.Instance.AIHardMode && !pawn.IsColonist)
             {
                 pwrVal = 3;
                 verVal = 3;

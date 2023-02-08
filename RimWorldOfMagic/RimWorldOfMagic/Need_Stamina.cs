@@ -1,6 +1,7 @@
 ﻿using RimWorld;
 using System.Linq;
 using System.Collections.Generic;
+using TorannMagic.ModOptions;
 using UnityEngine;
 using Verse;
 
@@ -177,9 +178,8 @@ namespace TorannMagic
                 {
                     Pawn pawn = base.pawn;
                     CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
-                    ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
                     amount = amount * (0.015f);
-                    this.baseStaminaGain = amount * settingsRef.needMultiplier;
+                    this.baseStaminaGain = amount * Settings.Instance.needMultiplier;
                     amount *= comp.spRegenRate;
                     if (pawn.health != null && pawn.health.hediffSet != null)
                     {

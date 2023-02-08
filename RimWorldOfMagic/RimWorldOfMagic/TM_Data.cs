@@ -5,6 +5,7 @@ using System.Linq;
 using Verse.AI;
 using RimWorld;
 using System;
+using TorannMagic.ModOptions;
 
 namespace TorannMagic
 {
@@ -218,28 +219,27 @@ namespace TorannMagic
             {
                 List<TraitDef> magicTraits = new List<TraitDef>();
                 magicTraits.Clear();
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                if (settingsRef.Arcanist) { magicTraits.Add(TorannMagicDefOf.Arcanist); }
-                if (settingsRef.FireMage) { magicTraits.Add(TorannMagicDefOf.InnerFire); }
-                if (settingsRef.IceMage) { magicTraits.Add(TorannMagicDefOf.HeartOfFrost); }
-                if (settingsRef.LitMage) { magicTraits.Add(TorannMagicDefOf.StormBorn); }
-                if (settingsRef.Druid) { magicTraits.Add(TorannMagicDefOf.Druid); }
-                if (settingsRef.Priest) { magicTraits.Add(TorannMagicDefOf.Priest); }
-                if (settingsRef.Necromancer) { magicTraits.Add(TorannMagicDefOf.Necromancer); }
-                if (settingsRef.Technomancer) { magicTraits.Add(TorannMagicDefOf.Technomancer); }
-                if (settingsRef.Geomancer) { magicTraits.Add(TorannMagicDefOf.Geomancer); }
-                if (settingsRef.Demonkin) { magicTraits.Add(TorannMagicDefOf.Warlock); }
-                if (settingsRef.Demonkin) { magicTraits.Add(TorannMagicDefOf.Succubus); }
-                if (settingsRef.ChaosMage) { magicTraits.Add(TorannMagicDefOf.ChaosMage); }
-                if (settingsRef.Paladin) { magicTraits.Add(TorannMagicDefOf.Paladin); }
-                if (settingsRef.Summoner) { magicTraits.Add(TorannMagicDefOf.Summoner); }
-                if (settingsRef.Bard) { magicTraits.Add(TorannMagicDefOf.TM_Bard); }
-                if (settingsRef.Chronomancer) { magicTraits.Add(TorannMagicDefOf.Chronomancer); }
-                if (settingsRef.Enchanter) { magicTraits.Add(TorannMagicDefOf.Enchanter); }
-                if (settingsRef.BloodMage) { magicTraits.Add(TorannMagicDefOf.BloodMage); }
-                if (settingsRef.Brightmage) { magicTraits.Add(TorannMagicDefOf.TM_Brightmage); }
-                if (settingsRef.Shaman) { magicTraits.Add(TorannMagicDefOf.TM_Shaman); }
-                if (settingsRef.Golemancer) { magicTraits.Add(TorannMagicDefOf.TM_Golemancer); }
+                if (Settings.Instance.Arcanist) { magicTraits.Add(TorannMagicDefOf.Arcanist); }
+                if (Settings.Instance.FireMage) { magicTraits.Add(TorannMagicDefOf.InnerFire); }
+                if (Settings.Instance.IceMage) { magicTraits.Add(TorannMagicDefOf.HeartOfFrost); }
+                if (Settings.Instance.LitMage) { magicTraits.Add(TorannMagicDefOf.StormBorn); }
+                if (Settings.Instance.Druid) { magicTraits.Add(TorannMagicDefOf.Druid); }
+                if (Settings.Instance.Priest) { magicTraits.Add(TorannMagicDefOf.Priest); }
+                if (Settings.Instance.Necromancer) { magicTraits.Add(TorannMagicDefOf.Necromancer); }
+                if (Settings.Instance.Technomancer) { magicTraits.Add(TorannMagicDefOf.Technomancer); }
+                if (Settings.Instance.Geomancer) { magicTraits.Add(TorannMagicDefOf.Geomancer); }
+                if (Settings.Instance.Demonkin) { magicTraits.Add(TorannMagicDefOf.Warlock); }
+                if (Settings.Instance.Demonkin) { magicTraits.Add(TorannMagicDefOf.Succubus); }
+                if (Settings.Instance.ChaosMage) { magicTraits.Add(TorannMagicDefOf.ChaosMage); }
+                if (Settings.Instance.Paladin) { magicTraits.Add(TorannMagicDefOf.Paladin); }
+                if (Settings.Instance.Summoner) { magicTraits.Add(TorannMagicDefOf.Summoner); }
+                if (Settings.Instance.Bard) { magicTraits.Add(TorannMagicDefOf.TM_Bard); }
+                if (Settings.Instance.Chronomancer) { magicTraits.Add(TorannMagicDefOf.Chronomancer); }
+                if (Settings.Instance.Enchanter) { magicTraits.Add(TorannMagicDefOf.Enchanter); }
+                if (Settings.Instance.BloodMage) { magicTraits.Add(TorannMagicDefOf.BloodMage); }
+                if (Settings.Instance.Brightmage) { magicTraits.Add(TorannMagicDefOf.TM_Brightmage); }
+                if (Settings.Instance.Shaman) { magicTraits.Add(TorannMagicDefOf.TM_Shaman); }
+                if (Settings.Instance.Golemancer) { magicTraits.Add(TorannMagicDefOf.TM_Golemancer); }
                 foreach (TMDefs.TM_CustomClass cc in TM_ClassUtility.CustomClasses)
                 {
                     if (cc.isMage && !magicTraits.Contains(cc.classTrait) && ModOptions.Settings.Instance.CustomClass[cc.classTrait.ToString()])

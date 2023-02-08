@@ -5,6 +5,7 @@ namespace TorannMagic
 {
     public class MightPower : TMPower
     {
+        public MightPower() {}
         public MightPower(List<AbilityDef> newAbilityDefs) : base(newAbilityDefs)
         {
             if (abilityDef == TorannMagicDefOf.TM_PsionicBarrier || abilityDef == TorannMagicDefOf.TM_PsionicBarrier_Projected)

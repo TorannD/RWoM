@@ -1,6 +1,7 @@
 ﻿using RimWorld;
 using Verse;
 using System.Collections.Generic;
+using TorannMagic.ModOptions;
 using UnityEngine;
 
 
@@ -17,7 +18,7 @@ namespace TorannMagic
                 bool advancedClass = false;
                 string failMessage = "";
                 CompAbilityUserMagic comp = user.GetCompAbilityUserMagic();
-                for (int i = 0; i < TM_ClassUtility.CustomClasses.Count; i++)
+                for (int i = 0; i < TM_ClassUtility.CustomClasses.Length; i++)
                 {
                     TMDefs.TM_CustomClass cc = TM_ClassUtility.CustomClasses[i];
                     if (cc.isMage && cc.isAdvancedClass && comp != null)
@@ -40,34 +41,34 @@ namespace TorannMagic
                     }
                     else if (cc.isMage && user.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted) || (cc.isMage && cc.isFighter && (user.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted) || user.story.traits.HasTrait(TorannMagicDefOf.PhysicalProdigy))))
                     {
-                        if (parent.def == cc.tornScript || parent.def == TM_ClassUtility.CustomClasses[i].fullScript)
+                        if (parent.def == cc.tornScript || parent.def == cc.fullScript)
                         {
                             customClass = true;
-                            if (parent.def == TM_ClassUtility.CustomClasses[i].fullScript)
+                            if (parent.def == cc.fullScript)
                             {
                                 HealthUtility.AdjustSeverity(user, TorannMagicDefOf.TM_Uncertainty, 0.2f);
                             }
 
-                            ApplyTrait(user, TM_ClassUtility.CustomClasses[i].classTrait, TM_ClassUtility.CustomClasses[i].traitDegree);
+                            ApplyTrait(user, cc.classTrait, cc.traitDegree);
 
                             //Unique actions hook
-                            ApplyTraitAdjustments(user, TM_ClassUtility.CustomClasses[i].classTrait);
+                            ApplyTraitAdjustments(user, cc.classTrait);
                             //
                             this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                             if (comp != null)
                             {
                                 comp.customIndex = i;
-                                comp.customClass = TM_ClassUtility.CustomClasses[i];
+                                comp.customClass = cc;
                             }
                             else
                             {
                                 Log.Message("failed to initialize custom magic class comp");
                             }
                             CompAbilityUserMight mComp = user.GetCompAbilityUserMight();
-                            if (mComp != null && TM_ClassUtility.CustomClasses[i].isFighter)
+                            if (mComp != null && cc.isFighter)
                             {
                                 mComp.customIndex = i;
-                                mComp.customClass = TM_ClassUtility.CustomClasses[i];
+                                mComp.customClass = cc;
                             }
                             break;
                         }
@@ -280,18 +281,17 @@ namespace TorannMagic
                     else if (parent.def.defName == "BookOfQuestion")
                     {
                         int attempts = 0;
-                        ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
                         FixTrait(user, user.story.traits.allTraits);
                         RetryBookOfQuestion:;
                         if (attempts < 50)
                         {
                             int baseClassCount = 17;
-                            int customClassCount = TM_ClassUtility.CustomMageClasses.Count;
+                            int customClassCount = TM_ClassUtility.CustomMageClasses.Length;
                             int rnd = Mathf.RoundToInt(Rand.RangeInclusive(0, baseClassCount + customClassCount));
                             switch (rnd)
                             {
                                 case 0:
-                                    if (settingsRef.Demonkin)
+                                    if (Settings.Instance.Demonkin)
                                     {
                                         if (user.gender == Gender.Male)
                                         {
@@ -313,7 +313,7 @@ namespace TorannMagic
                                     }
                                     break;
                                 case 15:
-                                    if (settingsRef.Demonkin)
+                                    if (Settings.Instance.Demonkin)
                                     {
                                         if (user.gender == Gender.Male)
                                         {
@@ -335,7 +335,7 @@ namespace TorannMagic
                                     }
                                     break;
                                 case 1:
-                                    if (settingsRef.Necromancer)
+                                    if (Settings.Instance.Necromancer)
                                     {
                                         user.story.traits.GainTrait(new Trait(TorannMagicDefOf.Necromancer, 0, false));
                                     }
@@ -346,7 +346,7 @@ namespace TorannMagic
                                     }
                                     break;
                                 case 2:
-                                    if (settingsRef.Druid)
+                                    if (Settings.Instance.Druid)
                                     {
                                         user.story.traits.GainTrait(new Trait(TorannMagicDefOf.Druid, 0, false));
                                     }
@@ -357,7 +357,7 @@ namespace TorannMagic
                                     }
                                     break;
                                 case 3:
-                                    if (settingsRef.Summoner)
+                                    if (Settings.Instance.Summoner)
                                     {
                                         user.story.traits.GainTrait(new Trait(TorannMagicDefOf.Summoner, 0, false));
                                     }
@@ -368,7 +368,7 @@ namespace TorannMagic
                                     }
                                     break;
                                 case 4:
-                                    if (settingsRef.FireMage)
+                                    if (Settings.Instance.FireMage)
                                     {
                                         user.story.traits.GainTrait(new Trait(TorannMagicDefOf.InnerFire, 0, false));
                                     }
@@ -379,7 +379,7 @@ namespace TorannMagic
                                     }
                                     break;
                                 case 5:
-                                    if (settingsRef.IceMage)
+                                    if (Settings.Instance.IceMage)
                                     {
                                         user.story.traits.GainTrait(new Trait(TorannMagicDefOf.HeartOfFrost, 0, false));
                                     }
@@ -390,7 +390,7 @@ namespace TorannMagic
                                     }
                                     break;
                                 case 6:
-                                    if (settingsRef.LitMage)
+                                    if (Settings.Instance.LitMage)
                                     {
                                         user.story.traits.GainTrait(new Trait(TorannMagicDefOf.StormBorn, 0, false));
                                     }
@@ -401,7 +401,7 @@ namespace TorannMagic
                                     }
                                     break;
                                 case 7:
-                                    if (settingsRef.Arcanist)
+                                    if (Settings.Instance.Arcanist)
                                     {
                                         user.story.traits.GainTrait(new Trait(TorannMagicDefOf.Arcanist, 0, false));
                                     }
@@ -412,7 +412,7 @@ namespace TorannMagic
                                     }
                                     break;
                                 case 8:
-                                    if (settingsRef.Priest)
+                                    if (Settings.Instance.Priest)
                                     {
                                         user.story.traits.GainTrait(new Trait(TorannMagicDefOf.Priest, 0, false));
                                     }
@@ -423,7 +423,7 @@ namespace TorannMagic
                                     }
                                     break;
                                 case 9:
-                                    if (settingsRef.Bard)
+                                    if (Settings.Instance.Bard)
                                     {
                                         user.story.traits.GainTrait(new Trait(TorannMagicDefOf.TM_Bard, 0, false));
                                     }
@@ -434,7 +434,7 @@ namespace TorannMagic
                                     }
                                     break;
                                 case 10:
-                                    if (settingsRef.Paladin)
+                                    if (Settings.Instance.Paladin)
                                     {
                                         user.story.traits.GainTrait(new Trait(TorannMagicDefOf.Paladin, 0, false));
                                     }
@@ -445,7 +445,7 @@ namespace TorannMagic
                                     }
                                     break;
                                 case 11:
-                                    if (settingsRef.Geomancer)
+                                    if (Settings.Instance.Geomancer)
                                     {
                                         user.story.traits.GainTrait(new Trait(TorannMagicDefOf.Geomancer, 0, false));
                                     }
@@ -456,7 +456,7 @@ namespace TorannMagic
                                     }
                                     break;
                                 case 12:
-                                    if (settingsRef.Technomancer)
+                                    if (Settings.Instance.Technomancer)
                                     {
                                         user.story.traits.GainTrait(new Trait(TorannMagicDefOf.Technomancer, 0, false));
                                     }
@@ -467,7 +467,7 @@ namespace TorannMagic
                                     }
                                     break;
                                 case 13:
-                                    if (settingsRef.BloodMage)
+                                    if (Settings.Instance.BloodMage)
                                     {
                                         user.story.traits.GainTrait(new Trait(TorannMagicDefOf.BloodMage, 0, false));
                                     }
@@ -478,7 +478,7 @@ namespace TorannMagic
                                     }
                                     break;
                                 case 14:
-                                    if (settingsRef.Technomancer)
+                                    if (Settings.Instance.Technomancer)
                                     {
                                         user.story.traits.GainTrait(new Trait(TorannMagicDefOf.Enchanter, 0, false));
                                     }
@@ -489,7 +489,7 @@ namespace TorannMagic
                                     }
                                     break;
                                 case 16:
-                                    if (settingsRef.Chronomancer)
+                                    if (Settings.Instance.Chronomancer)
                                     {
                                         user.story.traits.GainTrait(new Trait(TorannMagicDefOf.Chronomancer, 0, false));
                                     }
@@ -500,7 +500,7 @@ namespace TorannMagic
                                     }
                                     break;
                                 case 17:
-                                    if (settingsRef.ChaosMage)
+                                    if (Settings.Instance.ChaosMage)
                                     {
                                         user.story.traits.GainTrait(new Trait(TorannMagicDefOf.ChaosMage, 0, false));
                                     }

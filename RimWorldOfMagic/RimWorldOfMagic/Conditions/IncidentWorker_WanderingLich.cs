@@ -4,6 +4,7 @@ using Verse;
 using RimWorld;
 using UnityEngine;
 using System.Collections.Generic;
+using TorannMagic.ModOptions;
 
 namespace TorannMagic.Conditions
 {
@@ -11,7 +12,6 @@ namespace TorannMagic.Conditions
     {
         protected override bool TryExecuteWorker(IncidentParms parms)
         {
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
             bool tempAllow = false;
             Map map = (Map)parms.target;
             MagicMapComponent mmc = map.GetComponent<MagicMapComponent>();
@@ -19,7 +19,7 @@ namespace TorannMagic.Conditions
             {
                 tempAllow = true;
             }
-            if (settingsRef.wanderingLichChallenge > 0 || tempAllow)
+            if (Settings.Instance.wanderingLichChallenge > 0 || tempAllow)
             {
                 int duration = Mathf.RoundToInt(this.def.durationDays.RandomInRange * 60000f);
                 List<Faction> lichFaction = Find.FactionManager.AllFactions.ToList();

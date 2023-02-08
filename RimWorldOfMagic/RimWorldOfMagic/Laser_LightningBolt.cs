@@ -3,6 +3,7 @@ using Verse;
 using Verse.Sound;
 using AbilityUser;
 using System.Linq;
+using TorannMagic.ModOptions;
 using UnityEngine;
 
 namespace TorannMagic
@@ -19,8 +20,6 @@ namespace TorannMagic
             base.Impact_Override(hitThing);
 
             Pawn pawn = this.launcher as Pawn;
-                       
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
             
             if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
             {
@@ -40,7 +39,7 @@ namespace TorannMagic
                 this.arcaneDmg = comp.arcaneDmg;
             }
             
-            if (settingsRef.AIHardMode && !pawn.IsColonist)
+            if (Settings.Instance.AIHardMode && !pawn.IsColonist)
             {
                 pwrVal = 3;
                 verVal = 3;
