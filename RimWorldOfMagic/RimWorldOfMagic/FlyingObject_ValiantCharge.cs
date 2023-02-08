@@ -165,7 +165,6 @@ namespace TorannMagic
             verVal = TM_Calc.GetSkillVersatilityLevel(pawn, TorannMagicDefOf.TM_ValiantCharge);
             //pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_ValiantCharge.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_ValiantCharge_pwr");
             //ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_ValiantCharge.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_ValiantCharge_ver");
-            //ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
             //pwrVal = pwr.level;
             //verVal = ver.level;
             //if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
@@ -175,7 +174,7 @@ namespace TorannMagic
             //    pwrVal = mpwr.level;
             //    verVal = mver.level;
             //}
-            //if (settingsRef.AIHardMode && !pawn.IsColonist)
+            //if (Settings.Instance.AIHardMode && !pawn.IsColonist)
             //{
             //    pwrVal = 3;
             //    verVal = 3;

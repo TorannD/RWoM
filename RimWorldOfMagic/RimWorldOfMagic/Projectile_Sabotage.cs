@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System;
 using RimWorld;
 using HarmonyLib;
+using TorannMagic.ModOptions;
 
 
 namespace TorannMagic
@@ -67,7 +68,6 @@ namespace TorannMagic
             Pawn caster = this.launcher as Pawn;
             if (!this.initialized)
             {
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
                 CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
 
                 pwrVal = comp.MagicData.MagicPowerSkill_Sabotage.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Sabotage_pwr").level;
@@ -80,7 +80,7 @@ namespace TorannMagic
                     verVal = mver.level;
                 }
                 this.arcaneDmg = comp.arcaneDmg;
-                if (settingsRef.AIHardMode && !caster.IsColonist)
+                if (Settings.Instance.AIHardMode && !caster.IsColonist)
                 {
                     pwrVal = 3;
                     verVal = 3;

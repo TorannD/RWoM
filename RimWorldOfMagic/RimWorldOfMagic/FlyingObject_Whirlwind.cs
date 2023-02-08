@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using Verse;
 using AbilityUser;
+using TorannMagic.ModOptions;
 
 namespace TorannMagic
 {
@@ -114,8 +115,7 @@ namespace TorannMagic
                 SoundDefOf.Ambient_AltitudeWind.sustainFadeoutTime.Equals(30.0f);
                 FleckMaker.ThrowDustPuff(this.origin, this.Map, Rand.Range(1.2f, 1.8f));
                 weaponDmg = GetWeaponDmg(pawn);
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                if (!pawn.IsColonist && settingsRef.AIHardMode)
+                if (!pawn.IsColonist && Settings.Instance.AIHardMode)
                 {
                     weaponDmg += 10;
                 }

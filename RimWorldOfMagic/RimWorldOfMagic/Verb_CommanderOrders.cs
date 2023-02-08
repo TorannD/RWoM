@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using AbilityUser;
+using TorannMagic.ModOptions;
 using Verse;
 using Verse.AI;
 using UnityEngine;
@@ -61,8 +62,7 @@ namespace TorannMagic
                     if (!caster.IsColonist)
                     {
                         rChance = Mathf.Clamp(socialChance * 3f, .5f, 1f);
-                        ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                        if(settingsRef.AIHardMode)
+                        if(Settings.Instance.AIHardMode)
                         {
                             socialChance = 1f;
                         }

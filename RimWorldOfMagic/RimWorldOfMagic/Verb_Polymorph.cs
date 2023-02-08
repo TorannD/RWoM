@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using AbilityUser;
+using TorannMagic.ModOptions;
 using Verse;
 using Verse.AI;
 using UnityEngine;
@@ -63,8 +64,7 @@ namespace TorannMagic
                 pwrVal = mpwr.level;
                 verVal = mver.level;
             }
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-            if (settingsRef.AIHardMode && !this.CasterPawn.IsColonist)
+            if (Settings.Instance.AIHardMode && !this.CasterPawn.IsColonist)
             {
                 verVal = 2;
                 pwrVal = 3;

@@ -7,6 +7,7 @@ using RimWorld;
 using Verse.AI;
 using Verse.AI.Group;
 using System;
+using TorannMagic.ModOptions;
 
 
 namespace TorannMagic
@@ -57,10 +58,9 @@ namespace TorannMagic
                 this.oldPosition = caster.Position;
                 MightPowerSkill pwr = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Possess.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Possess_pwr");
                 MightPowerSkill ver = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Possess.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Possess_ver");
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
                 pwrVal = pwr.level;
                 verVal = ver.level;
-                if (settingsRef.AIHardMode && !caster.IsColonist)
+                if (Settings.Instance.AIHardMode && !caster.IsColonist)
                 {
                     pwrVal = 3;
                     verVal = 3;

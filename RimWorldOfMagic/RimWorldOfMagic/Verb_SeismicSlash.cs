@@ -4,6 +4,7 @@ using UnityEngine;
 using RimWorld;
 using System.Linq;
 using System.Collections.Generic;
+using TorannMagic.ModOptions;
 
 
 namespace TorannMagic
@@ -125,8 +126,7 @@ namespace TorannMagic
             {
                 TMAbilityDef ad = (TMAbilityDef)this.Ability.Def;
                 int dmgNum = Mathf.RoundToInt(comp.weaponDamage * ad.weaponDamageFactor * (1 + (.1f * pwrVal)));
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                if (!this.CasterPawn.IsColonist && settingsRef.AIHardMode)
+                if (!this.CasterPawn.IsColonist && Settings.Instance.AIHardMode)
                 {
                     dmgNum += 10;
                 }

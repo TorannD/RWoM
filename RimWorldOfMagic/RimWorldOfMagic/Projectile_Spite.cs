@@ -3,6 +3,7 @@ using Verse;
 using AbilityUser;
 using UnityEngine;
 using RimWorld;
+using TorannMagic.ModOptions;
 
 namespace TorannMagic
 {
@@ -17,7 +18,6 @@ namespace TorannMagic
             Map map = base.Map;
             base.Impact(hitThing);
             ThingDef def = this.def;
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
 
             Pawn pawn = this.launcher as Pawn;
             Pawn victim = hitThing as Pawn;
@@ -34,7 +34,7 @@ namespace TorannMagic
                 verVal = mver.level;
             }
             this.arcaneDmg = comp.mightPwr;
-            if (settingsRef.AIHardMode && !pawn.IsColonist)
+            if (Settings.Instance.AIHardMode && !pawn.IsColonist)
             {
                 pwrVal = 3;
                 verVal = 3;

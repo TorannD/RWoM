@@ -1,6 +1,7 @@
 ﻿using RimWorld;
 using Verse;
 using System.Collections.Generic;
+using TorannMagic.ModOptions;
 using UnityEngine;
 using TorannMagic.TMDefs;
 
@@ -15,7 +16,7 @@ namespace TorannMagic.SihvRMagicScrollScribe
             ThingDef tempPod = null;
             IntVec3 currentPos = parent.PositionHeld;
             Map map = parent.Map;
-            List<TMDefs.TM_CustomClass> cFighters = TM_ClassUtility.CustomFighterClasses;
+            TM_CustomClass[] cFighters = TM_ClassUtility.CustomFighterClasses;
             
             CompAbilityUserMight comp = user.GetCompAbilityUserMight();
             if (parent.def != null && comp != null && user.IsSlave)
@@ -78,14 +79,13 @@ namespace TorannMagic.SihvRMagicScrollScribe
             else if (parent.def != null && (user.story.traits.HasTrait(TorannMagicDefOf.PhysicalProdigy) || user.story.traits.HasTrait(TorannMagicDefOf.TM_Wayfarer) || user.story.traits.HasTrait(TorannMagicDefOf.TM_SuperSoldier)))
             {
                 int attempt = 0;
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
                 RetryWrite:;
                 if (attempt < 20)
                 {
-                    float rnd = Rand.Range(0, 9 + cFighters.Count);
+                    float rnd = Rand.Range(0, 9 + cFighters.Length);
                     if (rnd < 1)
                     {
-                        if (settingsRef.Gladiator)
+                        if (Settings.Instance.Gladiator)
                         {
                             tempPod = ThingDef.Named("BookOfGladiator");
                         }
@@ -98,7 +98,7 @@ namespace TorannMagic.SihvRMagicScrollScribe
                     else if (rnd < 2)
                     {
                         
-                        if (settingsRef.Sniper)
+                        if (Settings.Instance.Sniper)
                         {
                             tempPod = ThingDef.Named("BookOfSniper");
                         }
@@ -110,7 +110,7 @@ namespace TorannMagic.SihvRMagicScrollScribe
                     }
                     else if (rnd < 3)
                     {                       
-                        if (settingsRef.Bladedancer)
+                        if (Settings.Instance.Bladedancer)
                         {
                             tempPod = ThingDef.Named("BookOfBladedancer");
                         }
@@ -122,7 +122,7 @@ namespace TorannMagic.SihvRMagicScrollScribe
                     }
                     else if (rnd < 4)
                     {                        
-                        if (settingsRef.Ranger)
+                        if (Settings.Instance.Ranger)
                         {
                             tempPod = ThingDef.Named("BookOfRanger");
                         }
@@ -134,7 +134,7 @@ namespace TorannMagic.SihvRMagicScrollScribe
                     }
                     else if (rnd < 5)
                     {                        
-                        if (settingsRef.Psionic)
+                        if (Settings.Instance.Psionic)
                         {
                             tempPod = ThingDef.Named("BookOfPsionic");
                         }
@@ -146,7 +146,7 @@ namespace TorannMagic.SihvRMagicScrollScribe
                     }
                     else if (rnd < 6)
                     {
-                        if (settingsRef.DeathKnight)
+                        if (Settings.Instance.DeathKnight)
                         {
                             tempPod = ThingDef.Named("BookOfDeathKnight");
                         }
@@ -158,7 +158,7 @@ namespace TorannMagic.SihvRMagicScrollScribe
                     }
                     else if (rnd < 7)
                     {
-                        if (settingsRef.Monk)
+                        if (Settings.Instance.Monk)
                         {
                             tempPod = TorannMagicDefOf.BookOfMonk;
                         }
@@ -170,7 +170,7 @@ namespace TorannMagic.SihvRMagicScrollScribe
                     }
                     else if (rnd < 8)
                     {
-                        if (settingsRef.Commander)
+                        if (Settings.Instance.Commander)
                         {
                             tempPod = TorannMagicDefOf.BookOfCommander;
                         }
@@ -182,7 +182,7 @@ namespace TorannMagic.SihvRMagicScrollScribe
                     }
                     else if(rnd < 9)
                     {                        
-                        if (settingsRef.Faceless)
+                        if (Settings.Instance.Faceless)
                         {
                             tempPod = ThingDef.Named("BookOfFaceless");
                         }
@@ -194,7 +194,7 @@ namespace TorannMagic.SihvRMagicScrollScribe
                     }
                     else
                     {
-                        if (cFighters.Count > 0)
+                        if (cFighters.Length > 0)
                         {
                             tempPod = TM_ClassUtility.GetRandomCustomFighter().fullScript;
                         }

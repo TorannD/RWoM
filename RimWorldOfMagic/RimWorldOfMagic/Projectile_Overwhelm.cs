@@ -4,6 +4,7 @@ using AbilityUser;
 using System.Linq;
 using UnityEngine;
 using System.Collections.Generic;
+using TorannMagic.ModOptions;
 
 namespace TorannMagic
 {
@@ -25,7 +26,6 @@ namespace TorannMagic
             CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
             pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Overwhelm.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Overwhelm_pwr");
             ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Overwhelm.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Overwhelm_ver");
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
             pwrVal = pwr.level;
             verVal = ver.level;
             if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
@@ -36,7 +36,7 @@ namespace TorannMagic
                 verVal = mver.level;
             }
             this.arcaneDmg = comp.arcaneDmg;
-            if (settingsRef.AIHardMode && !pawn.IsColonist)
+            if (Settings.Instance.AIHardMode && !pawn.IsColonist)
             {
                 pwrVal = 3;
                 verVal = 3;

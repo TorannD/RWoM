@@ -4,6 +4,7 @@ using AbilityUser;
 using System.Linq;
 using System.Collections.Generic;
 using System;
+using TorannMagic.ModOptions;
 using UnityEngine;
 
 namespace TorannMagic
@@ -80,8 +81,7 @@ namespace TorannMagic
                     verVal = mver.level;
                 }
                 this.arcaneDmg = comp.arcaneDmg;
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                if (!caster.IsColonist && settingsRef.AIHardMode)
+                if (!caster.IsColonist && Settings.Instance.AIHardMode)
                 {
                     pwrVal = 3;
                     verVal = 3;

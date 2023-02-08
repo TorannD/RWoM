@@ -155,6 +155,7 @@
     <Compile Include="Thoughts\ThoughtWorker_TM_LivingPossessed.cs" />
     <Compile Include="TMDefs\TM_AdvancedClassOptions.cs" />
     <Compile Include="TMPower.cs" />
+    <Compile Include="Utils\TM_TickManager.cs" />
     <Compile Include="Utils\LinqExtensions.cs" />
     <Compile Include="Utils\TraitIconMap.cs" />
     <Compile Include="Utils\SimpleCache.cs" />
@@ -587,7 +588,6 @@
     <Compile Include="ModOptions\ModClassOptions.cs" />
     <Compile Include="ModOptions\ModCompatibilityCheck.cs" />
     <Compile Include="ModOptions\Settings.cs" />
-    <Compile Include="ModOptions\SettingsRef.cs" />
     <Compile Include="ModOptions\TM_DebugTools.cs" />
     <Compile Include="MovingObject.cs" />
     <Compile Include="Need_Mana.cs" />
