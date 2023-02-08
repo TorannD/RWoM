@@ -44,7 +44,6 @@ namespace TorannMagic
                         List<AbilityUser.AbilityDef> abilityList = current.customPower.abilityDefs;
                         bool requiresScroll = current.customPower.requiresScroll;
                         MagicPower mp = new MagicPower(abilityList, requiresScroll);
-                        mp.maxLevel = current.customPower.maxLevel;
                         mp.learnCost = current.customPower.learnCost;
                         mp.costToLevel = current.customPower.costToLevel;
                         mp.autocasting = current.customPower.autocasting;
@@ -162,7 +161,7 @@ namespace TorannMagic
         public List<MagicPower> magicPowerShaman;
         public List<MagicPower> magicPowerGolemancer;
 
-        public List<MagicPower> magicPowerStandalone;        
+        public List<MagicPower> magicPowerStandalone;
 
         public List<MagicPowerSkill> magicPowerSkill_global_regen;
         public List<MagicPowerSkill> magicPowerSkill_global_eff;
@@ -170,7 +169,7 @@ namespace TorannMagic
 
         public List<MagicPowerSkill> magicPowerSkill_WandererCraft;
         public List<MagicPowerSkill> magicPowerSkill_Cantrips;
-        
+
         public List<MagicPowerSkill> magicPowerSkill_RayofHope;
         public List<MagicPowerSkill> magicPowerSkill_Firebolt;
         public List<MagicPowerSkill> magicPowerSkill_Fireball;
@@ -203,8 +202,8 @@ namespace TorannMagic
         public List<MagicPowerSkill> magicPowerSkill_ValiantCharge;
         public List<MagicPowerSkill> magicPowerSkill_Overwhelm;
         public List<MagicPowerSkill> magicPowerSkill_HolyWrath;
-        
-        public List<MagicPowerSkill> magicPowerSkill_SummonMinion;        
+
+        public List<MagicPowerSkill> magicPowerSkill_SummonMinion;
         public List<MagicPowerSkill> magicPowerSkill_SummonPylon;
         public List<MagicPowerSkill> magicPowerSkill_SummonExplosive;
         public List<MagicPowerSkill> magicPowerSkill_SummonElemental;
@@ -241,7 +240,7 @@ namespace TorannMagic
         public List<MagicPowerSkill> magicPowerSkill_Dominate;
         public List<MagicPowerSkill> magicPowerSkill_Repulsion;
         public List<MagicPowerSkill> magicPowerSkill_Attraction;
-        public List<MagicPowerSkill> magicPowerSkill_Scorn;             
+        public List<MagicPowerSkill> magicPowerSkill_Scorn;
         public List<MagicPowerSkill> magicPowerSkill_PsychicShock;
         //public List<MagicPowerSkill> magicPowerSkill_SummonDemon;
 
@@ -279,7 +278,7 @@ namespace TorannMagic
         public List<MagicPowerSkill> magicPowerSkill_AccelerateTime;
         public List<MagicPowerSkill> magicPowerSkill_ReverseTime;
         public List<MagicPowerSkill> magicPowerSkill_ChronostaticField;
-        public List<MagicPowerSkill> magicPowerSkill_Recall;       
+        public List<MagicPowerSkill> magicPowerSkill_Recall;
 
         public List<MagicPowerSkill> magicPowerSkill_ChaosTradition;
 
@@ -293,13 +292,13 @@ namespace TorannMagic
         public List<MagicPowerSkill> magicPowerSkill_SpiritOfLight;
 
         public List<MagicPowerSkill> magicPowerSkill_Totems;            //healing totem, hex/buff totem, elemental totem
-        public List<MagicPowerSkill> magicPowerSkill_ChainLightning;    
+        public List<MagicPowerSkill> magicPowerSkill_ChainLightning;
         public List<MagicPowerSkill> magicPowerSkill_Enrage;
         public List<MagicPowerSkill> magicPowerSkill_Hex;
         public List<MagicPowerSkill> magicPowerSkill_SpiritWolves;
         public List<MagicPowerSkill> magicPowerSkill_GuardianSpirit;
 
-        public List<MagicPowerSkill> magicPowerSkill_Golemancy;            
+        public List<MagicPowerSkill> magicPowerSkill_Golemancy;
         public List<MagicPowerSkill> magicPowerSkill_RuneCarving;
         public List<MagicPowerSkill> magicPowerSkill_Branding;
         public List<MagicPowerSkill> magicPowerSkill_SigilSurge;
@@ -367,7 +366,7 @@ namespace TorannMagic
                 }
                 return this.magicPower;
             }
-            
+
         }
 
         public List<MagicPower> MagicPowersStandalone  //spells needed for magicpower reference during autocast
@@ -1121,7 +1120,7 @@ namespace TorannMagic
         public List<MagicPower> MagicPowersP
         {
             get
-            {                
+            {
                 bool flag = this.magicPowerP == null;
                 if (flag)
                 {
@@ -1165,9 +1164,9 @@ namespace TorannMagic
                     if(this.magicPowerP.Count >= 6)
                     {
                         hasPaladinBuff = true;
-                    }                       
+                    }
                     if(!hasPaladinBuff)
-                    {                        
+                    {
                         MagicPower pBuff = new MagicPower(new List<AbilityUser.AbilityDef>
                         {
                             TorannMagicDefOf.TM_P_RayofHope,
@@ -1545,7 +1544,7 @@ namespace TorannMagic
                             TorannMagicDefOf.TM_DeathMark_I,
                             TorannMagicDefOf.TM_DeathMark_II,
                             TorannMagicDefOf.TM_DeathMark_III
-                        }),                        
+                        }),
                         new MagicPower(new List<AbilityUser.AbilityDef>
                         {
                             TorannMagicDefOf.TM_FogOfTorment
@@ -2184,11 +2183,11 @@ namespace TorannMagic
                             TorannMagicDefOf.TM_Encase_I,
                             TorannMagicDefOf.TM_Encase_II,
                             TorannMagicDefOf.TM_Encase_III
-                        }),                        
+                        }),
                         new MagicPower(new List<AbilityUser.AbilityDef>
                         {
                             TorannMagicDefOf.TM_EarthSprites
-                        }),                        
+                        }),
                         new MagicPower(new List<AbilityUser.AbilityDef>
                         {
                             TorannMagicDefOf.TM_EarthernHammer
@@ -2221,7 +2220,7 @@ namespace TorannMagic
                         new MagicPowerSkill("TM_Stoneskin_pwr", "TM_Stoneskin_pwr_desc"),
                         new MagicPowerSkill("TM_Stoneskin_eff", "TM_Stoneskin_eff_desc"),
                         new MagicPowerSkill("TM_Stoneskin_ver", "TM_Stoneskin_ver_desc")
-                        
+
                     };
                 }
                 return this.magicPowerSkill_Stoneskin;
@@ -2236,7 +2235,7 @@ namespace TorannMagic
                 {
                     this.magicPowerSkill_Encase = new List<MagicPowerSkill>
                     {
-                        new MagicPowerSkill("TM_Encase_pwr", "TM_Encase_pwr_desc"),                        
+                        new MagicPowerSkill("TM_Encase_pwr", "TM_Encase_pwr_desc"),
                         new MagicPowerSkill("TM_Encase_eff", "TM_Encase_eff_desc"),
                         new MagicPowerSkill("TM_Encase_ver", "TM_Encase_ver_desc")
                     };
@@ -2260,7 +2259,7 @@ namespace TorannMagic
                 }
                 return this.magicPowerSkill_EarthSprites;
             }
-        }        
+        }
         public List<MagicPowerSkill> MagicPowerSkill_EarthernHammer
         {
             get
@@ -2277,7 +2276,7 @@ namespace TorannMagic
                 }
                 return this.magicPowerSkill_EarthernHammer;
             }
-        }        
+        }
         public List<MagicPowerSkill> MagicPowerSkill_Sentinel
         {
             get
@@ -2335,14 +2334,14 @@ namespace TorannMagic
                         }),
                         new MagicPower(new List<AbilityUser.AbilityDef>
                         {
-                            TorannMagicDefOf.TM_TechnoShield  
+                            TorannMagicDefOf.TM_TechnoShield
                         },true),
                         new MagicPower(new List<AbilityUser.AbilityDef>
                         {
                             TorannMagicDefOf.TM_Overdrive
                         },true),
                         new MagicPower(new List<AbilityUser.AbilityDef>
-                        {                            
+                        {
                             TorannMagicDefOf.TM_Sabotage
                         },true),
                         new MagicPower(new List<AbilityUser.AbilityDef>
@@ -2508,7 +2507,7 @@ namespace TorannMagic
                             TorannMagicDefOf.TM_Rend_I,
                             TorannMagicDefOf.TM_Rend_II,
                             TorannMagicDefOf.TM_Rend_III
-                        }),                        
+                        }),
                         new MagicPower(new List<AbilityUser.AbilityDef>
                         {
                             TorannMagicDefOf.TM_BloodMoon,
@@ -2538,7 +2537,7 @@ namespace TorannMagic
                 }
                 return this.magicPowerSkill_BloodGift;
             }
-        }        
+        }
         public List<MagicPowerSkill> MagicPowerSkill_IgniteBlood
         {
             get
@@ -2905,7 +2904,7 @@ namespace TorannMagic
                     {
                         new MagicPowerSkill("TM_Recall_pwr", "TM_Recall_pwr_desc"),
                         new MagicPowerSkill("TM_Recall_eff", "TM_Recall_eff_desc"),
-                        new MagicPowerSkill("TM_Recall_ver", "TM_Recall_ver_desc")                        
+                        new MagicPowerSkill("TM_Recall_ver", "TM_Recall_ver_desc")
                     };
                 }
                 return this.magicPowerSkill_Recall;
@@ -3181,7 +3180,7 @@ namespace TorannMagic
                     this.magicPowerSkill_Totems = new List<MagicPowerSkill>
                     {
                         new MagicPowerSkill("TM_Totems_pwr", "TM_Totems_pwr_desc"), // power of totems
-                        new MagicPowerSkill("TM_Totems_eff", "TM_Totems_eff_desc"), // mana cost 
+                        new MagicPowerSkill("TM_Totems_eff", "TM_Totems_eff_desc"), // mana cost
                         new MagicPowerSkill("TM_Totems_ver", "TM_Totems_ver_desc")  // duration
                     };
                 }
@@ -3266,7 +3265,7 @@ namespace TorannMagic
                     this.magicPowerSkill_GuardianSpirit = new List<MagicPowerSkill>
                     {
                         new MagicPowerSkill("TM_GuardianSpirit_pwr", "TM_GuardianSpirit_pwr_desc"), // power of GuardianSpirit
-                        new MagicPowerSkill("TM_GuardianSpirit_eff", "TM_GuardianSpirit_eff_desc"), // mana cost 
+                        new MagicPowerSkill("TM_GuardianSpirit_eff", "TM_GuardianSpirit_eff_desc"), // mana cost
                         new MagicPowerSkill("TM_GuardianSpirit_ver", "TM_GuardianSpirit_ver_desc")  // effect radius, effects
                     };
                 }
@@ -3357,7 +3356,7 @@ namespace TorannMagic
                     {
                         new MagicPowerSkill("TM_Branding_pwr", "TM_Branding_pwr_desc"), // severity, 5 ranks
                         new MagicPowerSkill("TM_Branding_eff", "TM_Branding_eff_desc") // reduces upkeep cost, 5 ranks
-                        //new MagicPowerSkill("TM_Branding_ver", "TM_Branding_ver_desc")  // 
+                        //new MagicPowerSkill("TM_Branding_ver", "TM_Branding_ver_desc")  //
                     };
                 }
                 return this.magicPowerSkill_Branding;
@@ -3406,7 +3405,7 @@ namespace TorannMagic
                 {
                     this.magicPowerSkill_LivingWall = new List<MagicPowerSkill>
                     {
-                        new MagicPowerSkill("TM_LivingWall_pwr", "TM_LivingWall_pwr_desc"), // power of living walls abilities 
+                        new MagicPowerSkill("TM_LivingWall_pwr", "TM_LivingWall_pwr_desc"), // power of living walls abilities
                         new MagicPowerSkill("TM_LivingWall_eff", "TM_LivingWall_eff_desc"), // mana upkeep cost
                         new MagicPowerSkill("TM_LivingWall_ver", "TM_LivingWall_ver_desc")  // movement and action quickness
                     };
@@ -3424,7 +3423,7 @@ namespace TorannMagic
             set
             {
                 this.isNecromancer = value;
-            }               
+            }
         }
 
         public int DominationCount
@@ -3527,7 +3526,7 @@ namespace TorannMagic
             }
             set
             {
-                this.affiliation = value; 
+                this.affiliation = value;
             }
         }
 
@@ -3550,7 +3549,7 @@ namespace TorannMagic
                 for (int i = 0; i < AllMagicPowerSkills.Count; i++)
                 {
                     MagicPowerSkill mps = AllMagicPowerSkills[i];
-                    
+
                     if (mps.label.Contains(s))
                     {
                         skillEfficiency.Add(ability, mps);
@@ -3577,7 +3576,7 @@ namespace TorannMagic
                 for (int i = 0; i < AllMagicPowerSkills.Count; i++)
                 {
                     MagicPowerSkill mps = AllMagicPowerSkills[i];
-                    
+
                     if (mps.label.Contains(s))
                     {
                         skillVersatility.Add(ability, mps);
@@ -3617,7 +3616,7 @@ namespace TorannMagic
             return skillVersatility[ability];
         }
 
-        private Dictionary<TMAbilityDef, MagicPowerSkill> skillPower = new Dictionary<TMAbilityDef, MagicPowerSkill>();        
+        private Dictionary<TMAbilityDef, MagicPowerSkill> skillPower = new Dictionary<TMAbilityDef, MagicPowerSkill>();
         public MagicPowerSkill GetSkill_Power(TMAbilityDef ability)
         {
             if (!skillPower.ContainsKey(ability))
@@ -3627,9 +3626,9 @@ namespace TorannMagic
                 char[] trim = { '_', 'I', 'V', 'X' };
                 s = s.TrimEnd(trim) + "_pwr";
                 for (int i = 0; i < AllMagicPowerSkills.Count; i++)
-                {                   
+                {
                     MagicPowerSkill mps = AllMagicPowerSkills[i];
-                    
+
                     if (mps.label.Contains(s))
                     {
                         skillPower.Add(ability, mps);
@@ -4042,7 +4041,7 @@ namespace TorannMagic
         {
             List<MagicPowerSkill> mps = new List<MagicPowerSkill>();
             mps.Clear();
-            mps = this.AllMagicPowerSkills; 
+            mps = this.AllMagicPowerSkills;
             for(int i = 0; i < mps.Count; i++)
             {
                 mps[i].level = 0;
@@ -4055,7 +4054,7 @@ namespace TorannMagic
 
         public MagicData(CompAbilityUserMagic newUser)
         {
-            this.magicPawn = newUser.AbilityUser;            
+            this.magicPawn = newUser.AbilityUser;
         }
 
         public void ClearData()
@@ -4084,8 +4083,8 @@ namespace TorannMagic
             this.magicPowerShaman.Clear();
             this.magicPowerGolemancer.Clear();
             this.magicPowerCustom.Clear();
-            this.magicPawn = null;            
-            this.initialized = false;           
+            this.magicPawn = null;
+            this.initialized = false;
         }
 
         public void ExposeData()

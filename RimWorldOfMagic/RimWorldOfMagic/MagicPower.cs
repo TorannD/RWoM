@@ -1,184 +1,52 @@
 ﻿using AbilityUser;
 using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
 using Verse;
 
 namespace TorannMagic 
 {
-    public class MagicPower : IExposable
+    public class MagicPower : TMPower
     {
-        public List<AbilityDef> TMabilityDefs;
-        public TMDefs.TM_Autocast autocasting;
+        public bool requiresScroll;
 
-        public int ticksUntilNextCast = -1;
-
-        public int level = 0;
-        public bool learned = false;
-        public bool autocast = false;
-        public int learnCost = 2;
-        private int interactionTick = 0;
-        public bool requiresScroll = false;
-        public int maxLevel = 3;
-        public int costToLevel = 1;
-        
-        public bool AutoCast
+        public MagicPower(List<AbilityDef> newAbilityDefs, bool requireScrollToLearn = false) : base(newAbilityDefs)
         {
-            get
+            requiresScroll = requireScrollToLearn;
+
+            if (abilityDef.defName is "TM_TechnoBit" or "TM_TechnoTurret" or "TM_TechnoWeapon")
             {
-                return autocast;
+                learnCost = 0;
             }
-            set
+            if (abilityDef.defName is "TM_TechnoShield" or "TM_Sabotage" or "TM_Overdrive")
             {
-                if (interactionTick < Find.TickManager.TicksGame)
-                {
-                    autocast = value;
-                    interactionTick = Find.TickManager.TicksGame + 5;
-                }
+                learnCost = 99;
             }
-
-        }
-
-        private void SetMaxLevel()
-        {
-            this.maxLevel = this.TMabilityDefs.Count - 1;
-        }
-
-        public AbilityDef abilityDescDef
-        {
-            get
+            if (abilityDef.defName is "TM_Firebolt" or "TM_Icebolt" or "TM_Rainmaker" or "TM_LightningBolt"
+                or "TM_Blink" or "TM_Summon" or "TM_Heal" or "TM_SummonExplosive" or "TM_SummonPylon" or "TM_Poison"
+                or "TM_FogOfTorment" or "TM_AdvancedHeal" or "TM_CorpseExplosion" or "TM_Entertain" or "TM_Encase"
+                or "TM_EarthernHammer")
             {
-                return this.abilityDef;                
+                learnCost = 1;
             }
-        }
-
-        public AbilityDef nextLevelAbilityDescDef
-        {
-            get
+            if(abilityDef.defName is "TM_Fireball" or "TM_LightningStorm" or "TM_SummonElemental" || abilityDef == TorannMagicDefOf.TM_DeathBolt ||
+               abilityDef == TorannMagicDefOf.TM_Sunfire || abilityDef == TorannMagicDefOf.TM_Refraction || abilityDef == TorannMagicDefOf.TM_ChainLightning)
             {
-                return this.nextLevelAbilityDef;                
-            }
-        }
-
-        public AbilityDef abilityDef
-        {
-            get
-            {
-                SetMaxLevel();
-                if (TMabilityDefs != null && TMabilityDefs.Count > 0)
-                {
-                    if (level <= 0)
-                    {
-                        return this.TMabilityDefs[0];
-                    }
-                    else if (level >= maxLevel)
-                    {
-                        return this.TMabilityDefs[maxLevel];
-                    }
-                    return this.TMabilityDefs[level];
-                }
-                return null;
-            }
-        }
-
-        public AbilityDef nextLevelAbilityDef
-        {
-            get
-            {
-                SetMaxLevel();
-                if ((this.level + 1) >= this.maxLevel)
-                {
-                    return this.TMabilityDefs[maxLevel];
-                }
-                else
-                {
-                    return this.TMabilityDefs[level + 1];
-                }               
-            }
-        }
-
-        public Texture2D Icon
-        {
-            get
-            {
-                return this.abilityDef.uiIcon;
-            }
-        }
-
-        public AbilityDef GetAbilityDef(int index)
-        {
-            try
-            {
-                return this.TMabilityDefs[index];
-            }
-            catch
-            {
-                return this.TMabilityDefs[0];
-            }            
-        }
-
-        public AbilityDef HasAbilityDef(AbilityDef defToFind)
-        {
-            return this.TMabilityDefs.FirstOrDefault((AbilityDef x) => x == defToFind);
-        }
-
-        public MagicPower()
-        {
-        }
-
-        public MagicPower(List<AbilityDef> newAbilityDefs, bool requireScrollToLearn = false)
-        {
-            this.level = 0;
-            this.requiresScroll = requireScrollToLearn;
-            this.TMabilityDefs = newAbilityDefs;
-            this.maxLevel = newAbilityDefs.Count - 1;
-
-            if (this.abilityDef.defName == "TM_TechnoBit" || this.abilityDef.defName == "TM_TechnoTurret" || this.abilityDef.defName == "TM_TechnoWeapon")
-            {
-                this.learnCost = 0;
-            }
-
-            if (this.abilityDef.defName == "TM_TechnoShield" || this.abilityDef.defName == "TM_Sabotage" || this.abilityDef.defName == "TM_Overdrive")
-            {
-                this.learnCost = 99;
-            }
-
-            if (this.abilityDef.defName == "TM_Firebolt" || this.abilityDef.defName == "TM_Icebolt" || this.abilityDef.defName == "TM_Rainmaker" || this.abilityDef.defName == "TM_LightningBolt" ||
-                this.abilityDef.defName == "TM_Blink" || this.abilityDef.defName == "TM_Summon" || this.abilityDef.defName == "TM_Heal" || this.abilityDef.defName == "TM_SummonExplosive" ||
-                this.abilityDef.defName == "TM_SummonPylon" || this.abilityDef.defName == "TM_Poison" || this.abilityDef.defName == "TM_FogOfTorment" || this.abilityDef.defName == "TM_AdvancedHeal" ||
-                this.abilityDef.defName == "TM_CorpseExplosion" || this.abilityDef.defName == "TM_Entertain" || this.abilityDef.defName == "TM_Encase" || this.abilityDef.defName == "TM_EarthernHammer")
-            {
-                this.learnCost = 1;
-            }
-
-            if(this.abilityDef.defName == "TM_Fireball" || this.abilityDef.defName == "TM_LightningStorm" || this.abilityDef.defName == "TM_SummonElemental" || this.abilityDef == TorannMagicDefOf.TM_DeathBolt ||
-                this.abilityDef == TorannMagicDefOf.TM_Sunfire || this.abilityDef == TorannMagicDefOf.TM_Refraction || this.abilityDef == TorannMagicDefOf.TM_ChainLightning)
-            {
-                this.learnCost = 3;
+                learnCost = 3;
             }
 
             LoadLegacyClassAutocast();
         }
 
-        public void ExposeData()
+        public override void ExposeData()
         {
-            Scribe_Values.Look<bool>(ref this.learned, "learned", true, false);
-            Scribe_Values.Look<bool>(ref this.autocast, "autocast", false, false);
-            Scribe_Values.Look<bool>(ref this.requiresScroll, "requiresScroll", false, false);
-            Scribe_Values.Look<int>(ref this.learnCost, "learnCost", 2, false);
-            Scribe_Values.Look<int>(ref this.costToLevel, "costToLevel", 1, false);
-            Scribe_Values.Look<int>(ref this.level, "level", 0, false);
-            Scribe_Values.Look<int>(ref this.maxLevel, "maxLevel", 3, false);
-            Scribe_Values.Look<int>(ref this.ticksUntilNextCast, "ticksUntilNextCast", -1, false);
-            Scribe_Collections.Look<AbilityDef>(ref this.TMabilityDefs, "TMabilityDefs", LookMode.Def, null);
-            Scribe_Deep.Look<TMDefs.TM_Autocast>(ref this.autocasting, "autocasting", new object[0]);
+            base.ExposeData();
+            Scribe_Values.Look<bool>(ref requiresScroll, "requiresScroll");
         }
 
-        public void LoadLegacyClassAutocast()
+        private void LoadLegacyClassAutocast()
         {
-            if (this.abilityDef == TorannMagicDefOf.TM_RaiseUndead)
+            if (abilityDef == TorannMagicDefOf.TM_RaiseUndead)
             {
-                this.autocasting = new TMDefs.TM_Autocast
+                autocasting = new TMDefs.TM_Autocast
                 {
                     type = TMDefs.AutocastType.OnNearby,
                     targetType = "Corpse",
@@ -196,9 +64,9 @@ namespace TorannMagic
                     maxRange = 20
                 };
             }
-            if (this.abilityDef == TorannMagicDefOf.TM_DeathMark)
+            if (abilityDef == TorannMagicDefOf.TM_DeathMark)
             {
-                this.autocasting = new TMDefs.TM_Autocast
+                autocasting = new TMDefs.TM_Autocast
                 {
                     type = TMDefs.AutocastType.OnNearby,
                     targetType = "Pawn",
@@ -216,14 +84,14 @@ namespace TorannMagic
                     maxRange = 30
                 };
             }
-            if (this.abilityDef == TorannMagicDefOf.TM_FogOfTorment || 
-                this.abilityDef == TorannMagicDefOf.TM_LightningCloud || 
-                this.abilityDef == TorannMagicDefOf.TM_IgniteBlood ||
-                this.abilityDef == TorannMagicDefOf.TM_Attraction ||
-                this.abilityDef == TorannMagicDefOf.TM_Repulsion ||
-                this.abilityDef == TorannMagicDefOf.TM_HolyWrath)
+            if (abilityDef == TorannMagicDefOf.TM_FogOfTorment || 
+                abilityDef == TorannMagicDefOf.TM_LightningCloud || 
+                abilityDef == TorannMagicDefOf.TM_IgniteBlood ||
+                abilityDef == TorannMagicDefOf.TM_Attraction ||
+                abilityDef == TorannMagicDefOf.TM_Repulsion ||
+                abilityDef == TorannMagicDefOf.TM_HolyWrath)
             {
-                this.autocasting = new TMDefs.TM_Autocast
+                autocasting = new TMDefs.TM_Autocast
                 {
                     type = TMDefs.AutocastType.OnNearby,
                     targetType = "Pawn",
@@ -246,13 +114,13 @@ namespace TorannMagic
                     }
                 };
             }
-            if (this.abilityDef == TorannMagicDefOf.TM_Fireball ||
-                this.abilityDef == TorannMagicDefOf.TM_Snowball ||
-                this.abilityDef == TorannMagicDefOf.TM_Blizzard ||
-                this.abilityDef == TorannMagicDefOf.TM_Firestorm ||
-                this.abilityDef == TorannMagicDefOf.TM_ChainLightning)
+            if (abilityDef == TorannMagicDefOf.TM_Fireball ||
+                abilityDef == TorannMagicDefOf.TM_Snowball ||
+                abilityDef == TorannMagicDefOf.TM_Blizzard ||
+                abilityDef == TorannMagicDefOf.TM_Firestorm ||
+                abilityDef == TorannMagicDefOf.TM_ChainLightning)
             {
-                this.autocasting = new TMDefs.TM_Autocast
+                autocasting = new TMDefs.TM_Autocast
                 {
                     type = TMDefs.AutocastType.OnNearby,
                     targetType = "Pawn",
@@ -275,12 +143,12 @@ namespace TorannMagic
                     }
                 };
             }
-            if (this.abilityDef == TorannMagicDefOf.TM_LightningBolt ||
-               this.abilityDef == TorannMagicDefOf.TM_ShadowBolt ||
-               this.abilityDef == TorannMagicDefOf.TM_Firebolt ||
-               this.abilityDef == TorannMagicDefOf.TM_Icebolt)
+            if (abilityDef == TorannMagicDefOf.TM_LightningBolt ||
+               abilityDef == TorannMagicDefOf.TM_ShadowBolt ||
+               abilityDef == TorannMagicDefOf.TM_Firebolt ||
+               abilityDef == TorannMagicDefOf.TM_Icebolt)
             {
-                this.autocasting = new TMDefs.TM_Autocast
+                autocasting = new TMDefs.TM_Autocast
                 {
                     type = TMDefs.AutocastType.OnTarget,
                     targetType = "Pawn",
@@ -299,10 +167,10 @@ namespace TorannMagic
                     minRange = 5
                 };
             }
-            if (this.abilityDef == TorannMagicDefOf.TM_MagicMissile ||
-                this.abilityDef == TorannMagicDefOf.TM_FrostRay)
+            if (abilityDef == TorannMagicDefOf.TM_MagicMissile ||
+                abilityDef == TorannMagicDefOf.TM_FrostRay)
             {
-                this.autocasting = new TMDefs.TM_Autocast
+                autocasting = new TMDefs.TM_Autocast
                 {
                     type = TMDefs.AutocastType.OnTarget,
                     targetType = "Pawn",
@@ -320,9 +188,9 @@ namespace TorannMagic
                     maxRange = 22
                 };
             }
-            if (this.abilityDef == TorannMagicDefOf.TM_Dominate)
+            if (abilityDef == TorannMagicDefOf.TM_Dominate)
             {
-                this.autocasting = new TMDefs.TM_Autocast
+                autocasting = new TMDefs.TM_Autocast
                 {
                     type = TMDefs.AutocastType.OnTarget,
                     targetType = "Pawn",
@@ -340,9 +208,9 @@ namespace TorannMagic
                     maxRange = 45
                 };
             }
-            if (this.abilityDef == TorannMagicDefOf.TM_Scorn)
+            if (abilityDef == TorannMagicDefOf.TM_Scorn)
             {
-                this.autocasting = new TMDefs.TM_Autocast
+                autocasting = new TMDefs.TM_Autocast
                 {
                     type = TMDefs.AutocastType.OnNearby,
                     targetType = "Pawn",
@@ -361,10 +229,10 @@ namespace TorannMagic
                     minRange = 30
                 };
             }
-            if (this.abilityDef == TorannMagicDefOf.TM_ValiantCharge ||
-                this.abilityDef == TorannMagicDefOf.TM_SummonTotemEarth)
+            if (abilityDef == TorannMagicDefOf.TM_ValiantCharge ||
+                abilityDef == TorannMagicDefOf.TM_SummonTotemEarth)
             {
-                this.autocasting = new TMDefs.TM_Autocast
+                autocasting = new TMDefs.TM_Autocast
                 {
                     type = TMDefs.AutocastType.OnNearby,
                     targetType = "Pawn",
@@ -383,9 +251,9 @@ namespace TorannMagic
                     minRange = 3
                 };
             }
-            if (this.abilityDef == TorannMagicDefOf.TM_Overwhelm)
+            if (abilityDef == TorannMagicDefOf.TM_Overwhelm)
             {
-                this.autocasting = new TMDefs.TM_Autocast
+                autocasting = new TMDefs.TM_Autocast
                 {
                     type = TMDefs.AutocastType.OnSelf,
                     targetType = "Pawn",
@@ -406,9 +274,9 @@ namespace TorannMagic
                     }
                 };
             }
-            if (this.abilityDef == TorannMagicDefOf.TM_SummonTotemLightning)
+            if (abilityDef == TorannMagicDefOf.TM_SummonTotemLightning)
             {
-                this.autocasting = new TMDefs.TM_Autocast
+                autocasting = new TMDefs.TM_Autocast
                 {
                     type = TMDefs.AutocastType.OnSelf,
                     targetType = "Pawn",
@@ -429,10 +297,10 @@ namespace TorannMagic
                     }
                 };
             }
-            if (this.abilityDef == TorannMagicDefOf.TM_Enrage ||
-                this.abilityDef == TorannMagicDefOf.TM_AMP)
+            if (abilityDef == TorannMagicDefOf.TM_Enrage ||
+                abilityDef == TorannMagicDefOf.TM_AMP)
             {
-                this.autocasting = new TMDefs.TM_Autocast
+                autocasting = new TMDefs.TM_Autocast
                 {
                     type = TMDefs.AutocastType.OnNearby,
                     targetType = "Pawn",
