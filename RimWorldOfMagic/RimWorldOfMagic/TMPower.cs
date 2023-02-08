@@ -19,6 +19,13 @@ namespace TorannMagic
         private int ticksUntilNextCast = -1;
         private int interactionTick;
 
+        protected TMPower() {}
+        protected TMPower(List<AbilityDef> newAbilityDefs)
+        {
+            level = 0;
+            TMabilityDefs = newAbilityDefs;
+        }
+
         public bool AutoCast
         {
             get => autocast;
@@ -66,12 +73,6 @@ namespace TorannMagic
             {
                 return TMabilityDefs[0];
             }
-        }
-
-        protected TMPower(List<AbilityDef> newAbilityDefs)
-        {
-            level = 0;
-            TMabilityDefs = newAbilityDefs;
         }
 
         public virtual void ExposeData()

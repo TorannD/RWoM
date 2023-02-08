@@ -8,6 +8,7 @@ namespace TorannMagic
     {
         public bool requiresScroll;
 
+        public MagicPower() {}
         public MagicPower(List<AbilityDef> newAbilityDefs, bool requireScrollToLearn = false) : base(newAbilityDefs)
         {
             requiresScroll = requireScrollToLearn;
