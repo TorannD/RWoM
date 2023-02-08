@@ -27,14 +27,8 @@ public class DismissList<T>: Dismiss<T> where T : Thing
         if (list.Count > 0) return;
         DismissSpellLearned = false;
     }
-    public void Remove(T item)
-    {
-        RemoveAt(list.IndexOf(item));
-    }
-    public bool Contains(T item)
-    {
-        return list.Contains(item);
-    }
+    public void Remove(T item) => RemoveAt(list.IndexOf(item));
+    public bool Contains(T item) => list.Contains(item);
     public virtual void Cleanup()
     {
         list.RemoveAll(static item => item.DestroyedOrNull());
