@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Verse.AI;
 using HarmonyLib;
+using TorannMagic.ModOptions;
 
 namespace TorannMagic
 {
@@ -57,13 +58,12 @@ namespace TorannMagic
                 CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
                 pwrVal = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Encase.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Encase_pwr").level;
                 verVal = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Encase.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Encase_ver").level;
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
                 if (caster.story.traits.HasTrait(TorannMagicDefOf.Faceless))
                 {
                     pwrVal = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr").level;
                     verVal = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver").level;
                 }
-                if (settingsRef.AIHardMode && !caster.IsColonist)
+                if (Settings.Instance.AIHardMode && !caster.IsColonist)
                 {
                     pwrVal = 3;
                     verVal = 3;

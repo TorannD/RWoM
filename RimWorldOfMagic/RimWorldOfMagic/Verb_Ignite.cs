@@ -69,7 +69,6 @@ namespace TorannMagic
                 this.FindTargets();
                 float energy = 200000 * this.arcaneDmg * classBonus;
                 GenTemperature.PushHeat(this.currentTarget.Cell, p.Map, energy);
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
                 for (int i = 0; i < pawns.Count; i++)
                 {
                     if (!pawns[i].RaceProps.IsMechanoid)

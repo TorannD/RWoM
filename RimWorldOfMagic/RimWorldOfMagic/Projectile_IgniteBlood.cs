@@ -4,6 +4,7 @@ using Verse;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using TorannMagic.ModOptions;
 using UnityEngine;
 
 namespace TorannMagic
@@ -84,7 +85,6 @@ namespace TorannMagic
                 this.initialized = true;
                 this.BF = new List<BloodFire>();
                 this.BF.Clear();
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
                 Pawn pawn = this.launcher as Pawn;
                 CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
                 MagicPowerSkill bpwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_BloodGift.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_BloodGift_pwr");
@@ -102,14 +102,14 @@ namespace TorannMagic
                 this.arcaneDmg = comp.arcaneDmg;
                 this.arcaneDmg *= (1 + (.1f * bpwr.level));
                 this.spreadRate -= 2 * verVal;
-                if (settingsRef.AIHardMode && !pawn.IsColonist)
+                if (Settings.Instance.AIHardMode && !pawn.IsColonist)
                 {
                     pwrVal = 3;
                     verVal = 3;
                 }
                 this.bloodTypes = new List<ThingDef>();
                 this.bloodTypes.Clear();
-                if (settingsRef.unrestrictedBloodTypes)
+                if (Settings.Instance.unrestrictedBloodTypes)
                 {
                     this.pawnBloodDef = pawn.RaceProps.BloodDef;
                     this.bloodTypes = TM_Calc.GetAllRaceBloodTypes();

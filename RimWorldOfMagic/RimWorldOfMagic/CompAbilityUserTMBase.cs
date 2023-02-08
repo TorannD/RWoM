@@ -12,30 +12,40 @@ namespace TorannMagic
 {
     public abstract class CompAbilityUserTMBase : CompAbilityUser
     {
+        // TODO - This should be moved into customClass. This will make the checks clearer (customClass != null) and allow us to load in immediately instead of checking every time if set.
         public int customIndex = -2;
 
-        public TMDefs.TM_CustomClass customClass = null;
-        private List<TMDefs.TM_CustomClass> advClasses = null;
-        public List<TMDefs.TM_CustomClass> AdvancedClasses
+        /*
+         * These Tick offsets are used so expensive calls aren't happening all on the same tick. PostSpawnSetup is used
+         * as the trigger so we can guarantee ThingIdNumber has been set. They correspond to the TickModulo variables
+         * found within TM_TickManager
+         */
+        protected int tickOffset6;
+        protected int tickOffset20;
+        protected int tickOffset30;
+        protected int tickOffset60;
+        protected int tickOffset67;
+        protected int tickOffset300;
+        protected int tickOffset600;
+
+        public override void PostSpawnSetup(bool respawningAfterLoad)
         {
-            get
-            {
-                if (advClasses == null)
-                {
-                    advClasses = new List<TMDefs.TM_CustomClass>();
-                    advClasses.Clear();
-                }
-                return advClasses;
-            }
-            set
-            {
-                if (advClasses == null)
-                {
-                    advClasses = new List<TMDefs.TM_CustomClass>();
-                    advClasses.Clear();
-                }
-                advClasses = value;
-            }
+            base.PostSpawnSetup(respawningAfterLoad);
+            tickOffset6 = Pawn.GetHashCode() % 6;
+            tickOffset20 = Pawn.GetHashCode() % 20;
+            tickOffset30 = Pawn.GetHashCode() % 30;
+            tickOffset60 = Pawn.GetHashCode() % 60;
+            tickOffset67 = Pawn.GetHashCode() % 67;
+            tickOffset300 = Pawn.GetHashCode() % 300;
+            tickOffset600 = Pawn.GetHashCode() % 600;
+        }
+
+        public TM_CustomClass customClass = null;
+        private List<TM_CustomClass> advClasses;
+        public List<TM_CustomClass> AdvancedClasses
+        {
+            get => advClasses ?? (advClasses = new List<TM_CustomClass>());
+            set => advClasses = value;
         }
 
         protected int age = -1;
@@ -52,18 +62,19 @@ namespace TorannMagic
         public float coolDown = 1;
         public float xpGain = 1;
 
-        public List<TMDefs.TM_CustomClass> CombinedCustomClasses
+        public float weaponDamage = 1f;
+
+        public List<TM_CustomClass> CombinedCustomClasses
         {
             get
             {
-                List<TMDefs.TM_CustomClass> tempcc = new List<TMDefs.TM_CustomClass>();
-                tempcc.Clear();
-                tempcc.AddRange(AdvancedClasses);
-                if (this.customClass != null)
+                List<TM_CustomClass> combinedCustomClasses = new List<TM_CustomClass>();
+                combinedCustomClasses.AddRange(AdvancedClasses);
+                if (customClass != null)
                 {
-                    tempcc.Add(this.customClass);
+                    combinedCustomClasses.Add(customClass);
                 }
-                return tempcc;
+                return combinedCustomClasses;
             }
         }
 
@@ -71,27 +82,25 @@ namespace TorannMagic
         {
             get
             {
-                List<TMAbilityDef> tempca = new List<TMAbilityDef>();
-                tempca.Clear();
-                if (this.customClass != null)
+                List<TMAbilityDef> combinedCustomAbilities = new List<TMAbilityDef>();
+                if (customClass != null)
                 {
-                    foreach (TMAbilityDef ability in this.customClass.classFighterAbilities)
+                    combinedCustomAbilities.AddRange(customClass.classFighterAbilities);
+                }
+                if (AdvancedClasses.Count > 0)
+                {
+                    foreach (TM_CustomClass cc in AdvancedClasses)
                     {
-                        tempca.Add(ability);
+                        combinedCustomAbilities.AddRange(cc.classFighterAbilities);
                     }
                 }
-                if (this.AdvancedClasses != null && AdvancedClasses.Count > 0)
-                {
-                    foreach (TMDefs.TM_CustomClass cc in this.AdvancedClasses)
-                    {
-                        foreach (TMAbilityDef advAbility in cc.classFighterAbilities)
-                        {
-                            tempca.Add(advAbility);
-                        }
-                    }
-                }
-                return tempca;
+                return combinedCustomAbilities;
             }
+        }
+
+        public bool CustomClassHasAbility(TMAbilityDef ability)
+        {
+            return customClass != null && customClass.classAbilities.Contains(ability);
         }
 
         private static readonly SimpleCache<string, Material> traitCache = new SimpleCache<string, Material>(5);

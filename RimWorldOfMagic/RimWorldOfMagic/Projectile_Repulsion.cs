@@ -5,6 +5,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System;
 using RimWorld;
+using TorannMagic.ModOptions;
 
 
 namespace TorannMagic
@@ -67,7 +68,6 @@ namespace TorannMagic
                 CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
                 MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Repulsion.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Repulsion_pwr");
                 MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Repulsion.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Repulsion_ver");
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
                 pwrVal = pwr.level;
                 verVal = ver.level;
                 if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
@@ -78,7 +78,7 @@ namespace TorannMagic
                     verVal = mver.level;
                 }
                 this.arcaneDmg = comp.arcaneDmg;
-                if (settingsRef.AIHardMode && !pawn.IsColonist)
+                if (Settings.Instance.AIHardMode && !pawn.IsColonist)
                 {
                     pwrVal = 3;
                     verVal = 3;

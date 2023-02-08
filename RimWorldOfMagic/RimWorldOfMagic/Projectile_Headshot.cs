@@ -4,6 +4,7 @@ using AbilityUser;
 using System;
 using System.Linq;
 using System.Collections.Generic;
+using TorannMagic.ModOptions;
 using UnityEngine;
 using Verse.AI;
 using Verse.AI.Group;
@@ -67,8 +68,7 @@ namespace TorannMagic
             pwrVal = TM_Calc.GetSkillPowerLevel(pawn, TorannMagicDefOf.TM_Headshot);
 
             float dmg = comp.weaponDamage;
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-            if (!pawn.IsColonist && settingsRef.AIHardMode)
+            if (!pawn.IsColonist && Settings.Instance.AIHardMode)
             {
                 dmg += 8;
             }

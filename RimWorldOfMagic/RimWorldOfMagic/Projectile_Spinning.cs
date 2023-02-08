@@ -6,6 +6,7 @@ using RimWorld;
 using System.Collections.Generic;
 using System;
 using System.Linq;
+using TorannMagic.ModOptions;
 
 namespace TorannMagic
 {
@@ -23,8 +24,7 @@ namespace TorannMagic
                 CompAbilityUserMight comp = caster.GetCompAbilityUserMight();
                 if(comp != null)
                 {
-                    ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                    if((comp.MightData.MightPowerSkill_FieldTraining.FirstOrDefault((MightPowerSkill x) => x.label == "TM_FieldTraining_pwr").level >= 12) || (!caster.IsColonist && settingsRef.AIHardMode))
+                    if((comp.MightData.MightPowerSkill_FieldTraining.FirstOrDefault((MightPowerSkill x) => x.label == "TM_FieldTraining_pwr").level >= 12) || (!caster.IsColonist && Settings.Instance.AIHardMode))
                     {
                         Projectile_Spinning newProjectile = (Projectile_Spinning)ThingMaker.MakeThing(this.def, null);
                         newProjectile.daggerCount = 0;

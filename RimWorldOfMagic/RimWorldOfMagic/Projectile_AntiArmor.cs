@@ -5,6 +5,7 @@ using AbilityUser;
 using System.Linq;
 using UnityEngine;
 using System.Collections.Generic;
+using TorannMagic.ModOptions;
 
 
 namespace TorannMagic
@@ -43,7 +44,6 @@ namespace TorannMagic
                 //pwrVal = TM_Calc.GetMightSkillLevel(pawn, comp.MightData.MightPowerSkill_AntiArmor, "TM_AntiArmor", "_pwr", true);
                 //MightPowerSkill ver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_AntiArmor.FirstOrDefault((MightPowerSkill x) => x.label == "TM_AntiArmor_ver");
                 MightPowerSkill str = comp.MightData.MightPowerSkill_global_strength.FirstOrDefault((MightPowerSkill x) => x.label == "TM_global_strength_pwr");
-                //ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
                 //pwrVal = pwr.level;
                 //verVal = ver.level;
                 //if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
@@ -53,7 +53,7 @@ namespace TorannMagic
                 //    pwrVal = mpwr.level;
                 //    verVal = mver.level;
                 //}
-                //if (settingsRef.AIHardMode && !pawn.IsColonist)
+                //if (Settings.Instance.AIHardMode && !pawn.IsColonist)
                 //{
                 //    pwrVal = 3;
                 //    verVal = 3;
@@ -124,8 +124,7 @@ namespace TorannMagic
             CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
 
             float dmg = comp.weaponDamage;
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-            if (!pawn.IsColonist && settingsRef.AIHardMode)
+            if (!pawn.IsColonist && Settings.Instance.AIHardMode)
             {
                 dmg += 8;
             }

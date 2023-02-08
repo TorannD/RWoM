@@ -51,7 +51,6 @@ namespace TorannMagic
             CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
             //MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_ReverseTime.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_ReverseTime_pwr");
             //MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_ReverseTime.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_ReverseTime_ver");
-            //ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
             //pwrVal = pwr.level;
             //verVal = ver.level;
             //arcaneDmg = comp.arcaneDmg;
@@ -62,7 +61,7 @@ namespace TorannMagic
             //    pwrVal = mpwr.level;
             //    verVal = mver.level;
             //}
-            //if (settingsRef.AIHardMode && !pawn.IsColonist)
+            //if (Settings.Instance.AIHardMode && !pawn.IsColonist)
             //{
             //    pwrVal = 3;
             //    verVal = 3;
