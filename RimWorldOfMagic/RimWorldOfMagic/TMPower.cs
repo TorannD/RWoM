@@ -68,6 +68,8 @@ namespace TorannMagic
             }
         }
 
+        protected TMPower() {}
+
         protected TMPower(List<AbilityDef> newAbilityDefs)
         {
             level = 0;
