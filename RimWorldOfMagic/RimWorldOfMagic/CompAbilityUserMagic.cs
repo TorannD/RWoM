@@ -561,18 +561,10 @@ namespace TorannMagic
                 }
 
                 Enchantment.CompEnchant compEnchant = this.Pawn.GetComp<Enchantment.CompEnchant>();
-                //try
-                //{
-                    if (this.IsMagicUser && compEnchant != null && compEnchant.enchantingContainer != null && compEnchant.enchantingContainer.Count > 0)
-                    {
-                        DrawEnchantMark();
-                    }
-                //}
-                //catch
-                //{
-                //    Enchantment.CompProperties_Enchant newEnchantComp = new Enchantment.CompProperties_Enchant();
-                //    this.Pawn.def.comps.Add(newEnchantComp);
-                //}
+                if (this.IsMagicUser && compEnchant != null && compEnchant.enchantingContainer != null && compEnchant.enchantingContainer.Count > 0)
+                {
+                    DrawEnchantMark();
+                }
             }
             base.PostDraw();
         }
@@ -630,132 +622,9 @@ namespace TorannMagic
 
         }
 
-        //public void DrawMageMark()
-        //{
-        //    float num = Mathf.Lerp(1.2f, 1.55f, 1f);
-        //    Vector3 vector = this.Pawn.Drawer.DrawPos;
-        //    vector.x = vector.x + .45f;
-        //    vector.z = vector.z + .45f;
-        //    vector.y = Altitudes.AltitudeFor(AltitudeLayer.MoteOverhead);
-        //    float angle = 0f;
-        //    Vector3 s = new Vector3(.28f, 1f, .28f);
-        //    Matrix4x4 matrix = default(Matrix4x4);
-        //    matrix.SetTRS(vector, Quaternion.AngleAxis(angle, Vector3.up), s);
-        //    if (this.customClass != null)
-        //    {
-        //        if (!this.customClass.isAdvancedClass)
-        //        {
-        //            Material mat = TM_RenderQueue.mageMarkMat;
-        //            if (this.customClass.classIconPath != "")
-        //            {
-        //                mat = MaterialPool.MatFrom("Other/" + this.customClass.classIconPath.ToString());
-        //            }
-        //            else if (this.customClass.classTexturePath != "")
-        //            {
-        //                mat = MaterialPool.MatFrom("Other/ClassTextures/" + this.customClass.classTexturePath, true);
-        //            }
-        //            if (this.customClass.classIconColor != null)
-        //            {
-        //                mat.color = this.customClass.classIconColor;
-        //            }
-        //            Graphics.DrawMesh(MeshPool.plane10, matrix, mat, 0);
-        //        }
-        //    }
-        //    else
-        //    {
-        //        if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.InnerFire))
-        //        {
-        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.fireMarkMat, 0);
-        //        }
-        //        else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.HeartOfFrost))
-        //        {
-        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.iceMarkMat, 0);
-        //        }
-        //        else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.StormBorn))
-        //        {
-        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.lightningMarkMat, 0);
-        //        }
-        //        else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Arcanist))
-        //        {
-        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.arcanistMarkMat, 0);
-        //        }
-        //        else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Paladin))
-        //        {
-        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.paladinMarkMat, 0);
-        //        }
-        //        else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Summoner))
-        //        {
-        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.summonerMarkMat, 0);
-        //        }
-        //        else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Druid))
-        //        {
-        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.druidMarkMat, 0);
-        //        }
-        //        else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Necromancer) || this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Lich))
-        //        {
-        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.necroMarkMat, 0);
-        //        }
-        //        else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Priest))
-        //        {
-        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.priestMarkMat, 0);
-        //        }
-        //        else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Bard))
-        //        {
-        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.bardMarkMat, 0);
-        //        }
-        //        else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Succubus) || this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Warlock))
-        //        {
-        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.demonkinMarkMat, 0);
-        //        }
-        //        else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Geomancer))
-        //        {
-        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.earthMarkMat, 0);
-        //        }
-        //        else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Technomancer))
-        //        {
-        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.technoMarkMat, 0);
-        //        }
-        //        else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.BloodMage))
-        //        {
-        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.bloodmageMarkMat, 0);
-        //        }
-        //        else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Enchanter))
-        //        {
-        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.enchanterMarkMat, 0);
-        //        }
-        //        else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Chronomancer))
-        //        {
-        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.chronomancerMarkMat, 0);
-        //        }
-        //        else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.ChaosMage))
-        //        {
-        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.chaosMarkMat, 0);
-        //        }
-        //        else if (TM_Calc.IsWanderer(this.Pawn))
-        //        {
-        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.wandererMarkMat, 0);
-        //        }
-        //        //else
-        //        //{
-        //        //    Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.mageMarkMat, 0);
-        //        //}
-        //    }
-        //}
-
         public void DrawEnchantMark()
         {
             DrawMark(TM_RenderQueue.enchantMark, new Vector3(.5f, 1f, .5f), 0, -.2f);
-            //float num = Mathf.Lerp(1.2f, 1.55f, 1f);
-            //Vector3 vector = this.Pawn.Drawer.DrawPos;
-            //vector.x = vector.x + .45f;
-            //vector.z = vector.z + .45f;
-            //vector.y = Altitudes.AltitudeFor(AltitudeLayer.MoteOverhead);
-            //float angle = 0f;
-            //Vector3 s = new Vector3(.5f, 1f, .5f);
-            //Matrix4x4 matrix = default(Matrix4x4);
-            //matrix.SetTRS(vector, Quaternion.AngleAxis(angle, Vector3.up), s);
-            //Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.enchantMark, 0);
-
         }
 
         public void DrawScornWings()
