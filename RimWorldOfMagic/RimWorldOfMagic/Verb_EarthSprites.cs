@@ -68,7 +68,7 @@ namespace TorannMagic
                                 comp.earthSpritesInArea = true;
                             }
                             comp.earthSprites = this.currentTarget.Cell;
-                            comp.earthSpriteType = 1;
+                            comp.earthSpriteType.Set(1);
                             comp.earthSpriteMap = this.CasterPawn.Map;
                             comp.nextEarthSpriteAction = Find.TickManager.TicksGame + 300;
                         }
@@ -89,7 +89,7 @@ namespace TorannMagic
                             comp.earthSpritesInArea = true;
                         }
                         comp.earthSprites = this.currentTarget.Cell;
-                        comp.earthSpriteType = 2;
+                        comp.earthSpriteType.Set(2);
                         comp.earthSpriteMap = this.CasterPawn.Map;
                         comp.nextEarthSpriteAction = Find.TickManager.TicksGame + 20000;
                     }

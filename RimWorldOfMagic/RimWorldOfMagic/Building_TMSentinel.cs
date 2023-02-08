@@ -52,7 +52,7 @@ namespace TorannMagic
                             CompAbilityUserMagic comp = mapPawns[i].GetCompAbilityUserMagic();
                             if (comp.IsMagicUser && comp.summonedSentinels.Count > 0)
                             {
-                                for (int j = 0; j < comp.summonedSentinels.Count(); j++)
+                                for (int j = 0; j < comp.summonedSentinels.Count; j++)
                                 {
                                     if(comp.summonedSentinels[j] == this)
                                     {

@@ -12,6 +12,7 @@ using Verse.Sound;
 using AbilityUserAI;
 using TorannMagic.Ideology;
 using TorannMagic.TMDefs;
+using TorannMagic.Utils;
 
 namespace TorannMagic
 {
@@ -196,37 +197,39 @@ namespace TorannMagic
 
         public List<TM_ChaosPowers> chaosPowers = new List<TM_ChaosPowers>();
         public TMAbilityDef mimicAbility = null;
-        public List<Thing> summonedMinions = new List<Thing>();
-        public List<Thing> supportedUndead = new List<Thing>();
-        public List<Thing> summonedSentinels = new List<Thing>();
-        public List<Pawn> stoneskinPawns = new List<Pawn>();
+
         public IntVec3 earthSprites = default(IntVec3);
         public bool earthSpritesInArea = false;
         public Map earthSpriteMap = null;
         public int nextEarthSpriteAction = 0;
         public int nextEarthSpriteMote = 0;
-        public int earthSpriteType = 0;
         private bool dismissEarthSpriteSpell = false;
-        public List<Thing> summonedLights = new List<Thing>();
-        public List<Thing> summonedHeaters = new List<Thing>();
-        public List<Thing> summonedCoolers = new List<Thing>();
-        public List<Thing> summonedPowerNodes = new List<Thing>();
-        public ThingDef guardianSpiritType = null;
+
+        // Dismiss<T> instances are initialized during constructor because they must reference this
+        public readonly DismissPawnList<TMPawnSummoned> summonedMinions;
+        public readonly DismissPawnList<Pawn> supportedUndead;
+        public readonly DismissList<Thing> summonedSentinels;
+        public readonly DismissPawnList<Pawn> stoneskinPawns;
+        public readonly DismissList<Thing> summonedLights;
+        public readonly DismissList<Thing> summonedHeaters;
+        public readonly DismissList<Thing> summonedCoolers;
+        public readonly DismissList<Thing> summonedPowerNodes;
+        public readonly DismissList<Thing> enchanterStones;
+        public readonly DismissList<Thing> lightningTraps;
+        public readonly DismissPawnList<Pawn> weaponEnchants;
+        public readonly DismissThing<FlyingObject_LivingWall> livingWall;
+        public readonly DismissValue<int> earthSpriteType;
+
+        // Should probably combine these two variables into a class
+        public readonly DismissThing<Pawn> bondedSpirit;
+        public ThingDef guardianSpiritType;
+
+        // This one should be combined into one list that contains Pawn + Def together
+        // something like: public DismissPawnList<TMDefs.TM_Branding> brandings;
+        public readonly DismissPawnList<Pawn> BrandPawns;
+        public List<HediffDef> BrandDefs = new ();
+
         public Pawn soulBondPawn = null;
-        private bool dismissMinionSpell = false;
-        private bool dismissUndeadSpell = false;
-        private bool dismissSunlightSpell = false;
-        private bool dispelStoneskin = false;
-        private bool dismissCoolerSpell = false;
-        private bool dismissHeaterSpell = false;
-        private bool dismissPowerNodeSpell = false;
-        private bool dispelEnchantWeapon = false;
-        private bool dismissEnchanterStones = false;
-        private bool dismissLightningTrap = false;
-        private bool shatterSentinel = false;
-        private bool dismissGuardianSpirit = false;
-        private bool dispelLivingWall = false;
-        private bool dispelBrandings = false;
         public List<IntVec3> fertileLands = new List<IntVec3>();
         public Thing mageLightThing = null;
         public bool mageLightActive = false;
@@ -247,10 +250,7 @@ namespace TorannMagic
         public int overdriveFrequency = 100;
         public Building sabotageBuilding = null;
         public bool ArcaneForging = false;
-        public List<Pawn> weaponEnchants = new List<Pawn>();
         public Thing enchanterStone = null;
-        public List<Thing> enchanterStones = new List<Thing>();
-        public List<Thing> lightningTraps = new List<Thing>();        
         public IncidentDef predictionIncidentDef = null;
         public int predictionTick = 0;
         public int predictionHash = 0;
@@ -269,14 +269,8 @@ namespace TorannMagic
         public int recallExpiration = 0;
         public bool recallSpell = false;
         public FlyingObject_SpiritOfLight SoL = null;
-        public Pawn bondedSpirit = null;
-        //public List<TMDefs.TM_Branding> brandings = new List<TMDefs.TM_Branding>();
-        public List<Pawn> brandedPawns = new List<Pawn>();
-        public List<Pawn> brands = new List<Pawn>();
-        public List<HediffDef> brandDefs = new List<HediffDef>();
         public bool sigilSurging = false;
         public bool sigilDraining = false;
-        public FlyingObject_LivingWall livingWall = null;
         public int lastChaosTraditionTick = 0;
         public ThingOwner<ThingWithComps> magicWardrobe;
 
@@ -326,32 +320,6 @@ namespace TorannMagic
         public int nextEntertainTick = -1;
         public int nextSuccubusLovinTick = -1;
 
-        public List<Pawn> BrandPawns
-        {
-            get
-            {
-                if (brands == null)
-                {
-                    brands = new List<Pawn>();
-                    brands.Clear();
-                }
-                return brands;
-            }
-        }
-
-        public List<HediffDef> BrandDefs
-        {
-            get
-            {
-                if (brandDefs == null)
-                {
-                    brandDefs = new List<HediffDef>();
-                    brandDefs.Clear();
-                }
-                return brandDefs;
-            }
-        }
-
         public ThingOwner<ThingWithComps> MagicWardrobe
         {
             get
@@ -387,28 +355,11 @@ namespace TorannMagic
             }
         }
 
-        public List<Pawn> StoneskinPawns
+        public DismissPawnList<Pawn> StoneskinPawns
         {
             get
             {
-                if(stoneskinPawns == null)
-                {
-                    stoneskinPawns = new List<Pawn>();
-                    stoneskinPawns.Clear();
-                }
-                List<Pawn> tmpList = new List<Pawn>();
-                tmpList.Clear();
-                foreach(Pawn p in stoneskinPawns)
-                {
-                    if(p.DestroyedOrNull() || p.Dead)
-                    {
-                        tmpList.Add(p);
-                    }
-                }
-                for(int i = 0; i < tmpList.Count; i++)
-                {
-                    stoneskinPawns.Remove(tmpList[i]);
-                }
+                stoneskinPawns.Cleanup();
                 return stoneskinPawns;
             }
         }
@@ -417,25 +368,34 @@ namespace TorannMagic
         {
             get
             {
-                if(this.guardianSpiritType == null)
+                if (guardianSpiritType != null) return guardianSpiritType;
+
+                return guardianSpiritType = Rand.Value switch
                 {
-                    float rnd = Rand.Value;
-                    
-                    if(rnd < .34f)
-                    {
-                        this.guardianSpiritType = TorannMagicDefOf.TM_SpiritBearR;
-                    }
-                    else if (rnd < .67f)
-                    {
-                        this.guardianSpiritType = TorannMagicDefOf.TM_SpiritMongooseR;
-                    }
-                    else
-                    {
-                        this.guardianSpiritType = TorannMagicDefOf.TM_SpiritCrowR;
-                    }
-                }
-                return this.guardianSpiritType;
+                    < .34f => TorannMagicDefOf.TM_SpiritBearR,
+                    < .67f => TorannMagicDefOf.TM_SpiritMongooseR,
+                    _ => TorannMagicDefOf.TM_SpiritCrowR
+                };
             }
+        }
+
+        public CompAbilityUserMagic()
+        {
+            summonedMinions = new DismissPawnList<TMPawnSummoned>(this, TorannMagicDefOf.TM_DismissMinion);
+            supportedUndead = new DismissPawnList<Pawn>(this, TorannMagicDefOf.TM_DismissUndead);
+            summonedSentinels = new DismissList<Thing>(this, TorannMagicDefOf.TM_ShatterSentinel);
+            stoneskinPawns = new DismissPawnList<Pawn>(this, TorannMagicDefOf.TM_DispelStoneskin);
+            summonedLights = new DismissList<Thing>(this, TorannMagicDefOf.TM_DismissSunlight);
+            summonedHeaters = new DismissList<Thing>(this, TorannMagicDefOf.TM_DismissHeater);
+            summonedCoolers = new DismissList<Thing>(this, TorannMagicDefOf.TM_DismissCooler);
+            summonedPowerNodes = new DismissList<Thing>(this, TorannMagicDefOf.TM_DismissPowerNode);
+            enchanterStones = new DismissList<Thing>(this, TorannMagicDefOf.TM_DismissEnchanterStones);
+            lightningTraps = new DismissList<Thing>(this, TorannMagicDefOf.TM_DismissLightningTrap);
+            weaponEnchants = new DismissPawnList<Pawn>(this, TorannMagicDefOf.TM_DispelEnchantWeapon);
+            BrandPawns = new DismissPawnList<Pawn>(this, TorannMagicDefOf.TM_DispelBranding);
+            livingWall = new DismissThing<FlyingObject_LivingWall>(this, TorannMagicDefOf.TM_DispelLivingWall);
+            bondedSpirit = new DismissThing<Pawn>(this, TorannMagicDefOf.TM_DismissGuardianSpirit);
+            earthSpriteType = new DismissValue<int>(this, TorannMagicDefOf.TM_DismissEarthSprites);
         }
 
         public bool HasTechnoBit
@@ -1989,20 +1949,9 @@ namespace TorannMagic
                                 if (this.Pawn.IsColonist)
                                 {
                                     ResolveEnchantments();
-                                    for (int i = 0; i < this.summonedMinions.Count; i++)
-                                    {
-                                        Pawn evaluateMinion = this.summonedMinions[i] as Pawn;
-                                        if (evaluateMinion == null || evaluateMinion.Dead || evaluateMinion.Destroyed)
-                                        {
-                                            this.summonedMinions.Remove(this.summonedMinions[i]);
-                                        }
-                                    }
-                                    ResolveMinions();
+                                    summonedMinions.Cleanup();
                                     ResolveSustainers();
-                                    if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Necromancer) || this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Lich) || (this.customClass != null && this.customClass.isNecromancer))
-                                    {
-                                        ResolveUndead();
-                                    }
+                                    supportedUndead.Cleanup();
                                     ResolveEffecter();
                                     ResolveClassSkills();
                                     ResolveSpiritOfLight();
@@ -5956,7 +5905,6 @@ namespace TorannMagic
         public void ResolveMagicUseEvents()
         {
             List<TM_EventRecords> tmpList = new List<TM_EventRecords>();
-            tmpList.Clear();
             foreach(TM_EventRecords ev in MagicUsed)
             {
                 if(Find.TickManager.TicksGame - 150000 > ev.eventTick)
@@ -6139,7 +6087,7 @@ namespace TorannMagic
                     if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Summoner) || flagCM || isCustom)
                     {
                         MagicPower magicPower = this.MagicData.MagicPowersS.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_SummonMinion);
-                        if (magicPower != null && magicPower.learned && magicPower.autocast && this.summonedMinions.Count() < 4)
+                        if (magicPower != null && magicPower.learned && magicPower.autocast && this.summonedMinions.Count < 4)
                         {
                             PawnAbility ability = this.AbilityData.Powers.FirstOrDefault((PawnAbility x) => x.Def == TorannMagicDefOf.TM_SummonMinion);
                             AutoCast.MagicAbility_OnSelfPosition.Evaluate(this, TorannMagicDefOf.TM_SummonMinion, ability, magicPower, out castSuccess);
@@ -6549,7 +6497,7 @@ namespace TorannMagic
                     if (this.spell_SummonMinion && !this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Summoner) && !isCustom)
                     {
                         MagicPower magicPower = this.MagicData.MagicPowersS.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_SummonMinion);
-                        if (magicPower.learned && magicPower.autocast && !this.Pawn.CurJob.playerForced && this.summonedMinions.Count() < 4)
+                        if (magicPower.learned && magicPower.autocast && !this.Pawn.CurJob.playerForced && this.summonedMinions.Count < 4)
                         {
                             PawnAbility ability = this.AbilityData.Powers.FirstOrDefault((PawnAbility x) => x.Def == TorannMagicDefOf.TM_SummonMinion);
                             AutoCast.MagicAbility_OnSelfPosition.Evaluate(this, TorannMagicDefOf.TM_SummonMinion, ability, magicPower, out castSuccess);
@@ -7260,7 +7208,7 @@ namespace TorannMagic
             {
                 this.earthSpriteMap = this.Pawn.Map;
             }
-            if (this.earthSpriteType == 1) //mining stone
+            if (this.earthSpriteType.Value == 1) //mining stone
             {
                 //Log.Message("stone");
                 Building mineTarget = this.earthSprites.GetFirstBuilding(this.earthSpriteMap);
@@ -7336,13 +7284,13 @@ namespace TorannMagic
 
                     if (oldEarthSpriteLoc == this.earthSprites)
                     {
-                        this.earthSpriteType = 0;
+                        this.earthSpriteType.Set(0);
                         this.earthSprites = IntVec3.Invalid;
                         this.earthSpritesInArea = false;
                     }
                 }
             }
-            else if (this.earthSpriteType == 2) //transforming soil
+            else if (this.earthSpriteType.Value == 2) //transforming soil
             {
                 //Log.Message("earth");
                 this.nextEarthSpriteAction = Find.TickManager.TicksGame + Mathf.RoundToInt((24000 * (1 - (.1f * magicPowerSkill.level))) / this.arcaneDmg);
@@ -7394,7 +7342,7 @@ namespace TorannMagic
                         Log.Message("unable to resolve terraindef - resetting earth sprite parameters");
                         this.earthSprites = IntVec3.Invalid;
                         this.earthSpriteMap = null;
-                        this.earthSpriteType = 0;
+                        this.earthSpriteType.Set(0);
                         this.earthSpritesInArea = false;
                     }
 
@@ -7448,7 +7396,7 @@ namespace TorannMagic
 
                         if (oldEarthSpriteLoc == earthSprites)
                         {
-                            this.earthSpriteType = 0;
+                            this.earthSpriteType.Set(0);
                             this.earthSpriteMap = null;
                             this.earthSprites = IntVec3.Invalid;
                             this.earthSpritesInArea = false;
@@ -7487,41 +7435,6 @@ namespace TorannMagic
                         mote.offsetZ = +0.85f;
                     }
                 }
-            }
-        }
-
-        public void ResolveUndead()
-        {
-            if (supportedUndead != null)
-            {
-                List<Thing> tmpList = new List<Thing>();
-                tmpList.Clear();
-                for(int i =0; i < supportedUndead.Count; i++)
-                {
-                    Pawn p = supportedUndead[i] as Pawn;
-                    if(p.DestroyedOrNull() || p.Dead)
-                    {
-                        tmpList.Add(p);
-                    }
-                }
-                for(int i = 0; i < tmpList.Count; i++)
-                {
-                    supportedUndead.Remove(tmpList[i]);
-                }
-                if (this.supportedUndead.Count > 0 && this.dismissUndeadSpell == false)
-                {
-                    this.AddPawnAbility(TorannMagicDefOf.TM_DismissUndead);
-                    this.dismissUndeadSpell = true;
-                }
-                if (this.supportedUndead.Count <= 0 && this.dismissUndeadSpell == true)
-                {
-                    this.RemovePawnAbility(TorannMagicDefOf.TM_DismissUndead);
-                    this.dismissUndeadSpell = false;
-                }
-            }
-            else
-            {
-                this.supportedUndead = new List<Thing>();
             }
         }
 
@@ -7701,19 +7614,12 @@ namespace TorannMagic
 
         public void ResolveSustainers()
         {
-            if(this.BrandPawns != null && this.BrandPawns.Count > 0)
+            if(BrandPawns.Count > 0)
             {
-                if(!this.dispelBrandings)
-                {
-                    this.AddPawnAbility(TorannMagicDefOf.TM_DispelBranding);
-                    this.dispelBrandings = true;
-                }
-                List<Pawn> tmpBrands = new List<Pawn>();
-                tmpBrands.Clear();
                 for(int i = 0; i < BrandPawns.Count; i++)
                 {
                     Pawn p = BrandPawns[i];
-                    if(p != null && (p.Destroyed || p.Dead))
+                    if (p != null && (p.Destroyed || p.Dead))
                     {
                         BrandPawns.Remove(BrandPawns[i]);
                         BrandDefs.Remove(BrandDefs[i]);
@@ -7725,144 +7631,17 @@ namespace TorannMagic
                     this.sigilSurging = false;
                 }
             }
-            else if(dispelBrandings)
-            {
-                this.dispelBrandings = false;
-                this.RemovePawnAbility(TorannMagicDefOf.TM_DispelBranding);
-            }
-            if (this.livingWall != null)
-            {
-                if (!this.dispelLivingWall)
-                {
-                    this.dispelLivingWall = true;
-                    this.RemovePawnAbility(TorannMagicDefOf.TM_DispelLivingWall);
-                    this.AddPawnAbility(TorannMagicDefOf.TM_DispelLivingWall);
-                }
-            }
-            else if(this.dispelLivingWall)
-            {
-                this.dispelLivingWall = false;
-                this.RemovePawnAbility(TorannMagicDefOf.TM_DispelLivingWall);
-            }
 
-            if (this.stoneskinPawns.Count() > 0)
+            if (stoneskinPawns.Count > 0)
             {
-                if (!this.dispelStoneskin)
+                for (int i = stoneskinPawns.Count - 1; i >= 0; i--)
                 {
-                    this.dispelStoneskin = true;
-                    this.AddPawnAbility(TorannMagicDefOf.TM_DispelStoneskin);
-                }
-                for (int i = 0; i < this.stoneskinPawns.Count(); i++)
-                {
-                    if (this.stoneskinPawns[i].DestroyedOrNull() || this.stoneskinPawns[i].Dead)
+                    if (stoneskinPawns[i].DestroyedOrNull() || stoneskinPawns[i].Dead
+                        || !stoneskinPawns[i].health.hediffSet.HasHediff(HediffDef.Named("TM_StoneskinHD")))
                     {
-                        this.stoneskinPawns.Remove(this.stoneskinPawns[i]);
-                    }
-                    else
-                    {
-                        if (!this.stoneskinPawns[i].health.hediffSet.HasHediff(HediffDef.Named("TM_StoneskinHD"), false))
-                        {
-                            this.stoneskinPawns.Remove(this.stoneskinPawns[i]);
-                        }
+                        stoneskinPawns.RemoveAt(i);
                     }
                 }
-            }
-            else if (this.dispelStoneskin)
-            {
-                this.dispelStoneskin = false;
-                this.RemovePawnAbility(TorannMagicDefOf.TM_DispelStoneskin);
-            }
-
-            if(this.bondedSpirit != null && !this.dismissGuardianSpirit)
-            {
-                this.AddPawnAbility(TorannMagicDefOf.TM_DismissGuardianSpirit);
-                this.dismissGuardianSpirit = true;
-            }
-            if (this.bondedSpirit == null && this.dismissGuardianSpirit)
-            {
-                this.RemovePawnAbility(TorannMagicDefOf.TM_DismissGuardianSpirit);
-                this.dismissGuardianSpirit = false;
-            }
-
-            if (this.summonedLights.Count > 0 && dismissSunlightSpell == false)
-            {
-                this.AddPawnAbility(TorannMagicDefOf.TM_DismissSunlight);
-                dismissSunlightSpell = true;
-            }
-
-            if (this.summonedLights.Count <= 0 && dismissSunlightSpell == true)
-            {
-                this.RemovePawnAbility(TorannMagicDefOf.TM_DismissSunlight);
-                dismissSunlightSpell = false;
-            }
-
-            if (this.summonedPowerNodes.Count > 0 && this.dismissPowerNodeSpell == false)
-            {
-                this.AddPawnAbility(TorannMagicDefOf.TM_DismissPowerNode);
-                dismissPowerNodeSpell = true;
-            }
-
-            if (this.summonedPowerNodes.Count <= 0 && dismissPowerNodeSpell == true)
-            {
-                this.RemovePawnAbility(TorannMagicDefOf.TM_DismissPowerNode);
-                dismissPowerNodeSpell = false;
-            }
-
-            if (this.summonedCoolers.Count > 0 && dismissCoolerSpell == false)
-            {
-                this.AddPawnAbility(TorannMagicDefOf.TM_DismissCooler);
-                dismissCoolerSpell = true;
-            }
-
-            if (this.summonedCoolers.Count <= 0 && dismissCoolerSpell == true)
-            {
-                this.RemovePawnAbility(TorannMagicDefOf.TM_DismissCooler);
-                dismissCoolerSpell = false;
-            }
-
-            if (this.summonedHeaters.Count > 0 && dismissHeaterSpell == false)
-            {
-                this.AddPawnAbility(TorannMagicDefOf.TM_DismissHeater);
-                dismissHeaterSpell = true;
-            }
-
-            if (this.summonedHeaters.Count <= 0 && dismissHeaterSpell == true)
-            {
-                this.RemovePawnAbility(TorannMagicDefOf.TM_DismissHeater);
-                dismissHeaterSpell = false;
-            }
-
-            if (this.enchanterStones.Count > 0 && this.dismissEnchanterStones == false)
-            {
-                this.AddPawnAbility(TorannMagicDefOf.TM_DismissEnchanterStones);
-                dismissEnchanterStones = true;
-            }
-            if (this.enchanterStones.Count <= 0 && this.dismissEnchanterStones == true)
-            {
-                this.RemovePawnAbility(TorannMagicDefOf.TM_DismissEnchanterStones);
-                dismissEnchanterStones = false;
-            }
-
-            if (this.lightningTraps.Count > 0 && this.dismissLightningTrap == false)
-            {
-                this.AddPawnAbility(TorannMagicDefOf.TM_DismissLightningTrap);
-                dismissLightningTrap = true;
-            }
-            if (this.lightningTraps.Count <= 0 && this.dismissLightningTrap == true)
-            {
-                this.RemovePawnAbility(TorannMagicDefOf.TM_DismissLightningTrap);
-                dismissLightningTrap = false;
-            }
-
-            if (this.summonedSentinels.Count > 0 && this.shatterSentinel == false)
-            {
-                this.AddPawnAbility(TorannMagicDefOf.TM_ShatterSentinel);
-                shatterSentinel = true;
-            }
-            if (this.summonedSentinels.Count <= 0 && this.shatterSentinel == true)
-            {
-                this.RemovePawnAbility(TorannMagicDefOf.TM_ShatterSentinel);
-                shatterSentinel = false;
             }
 
             if (this.soulBondPawn.DestroyedOrNull() && (this.spell_ShadowStep == true || this.spell_ShadowCall == true))
@@ -7889,28 +7668,7 @@ namespace TorannMagic
                 }
             }
 
-            if (this.weaponEnchants != null && this.weaponEnchants.Count > 0)
-            {
-                for (int i = 0; i < this.weaponEnchants.Count; i++)
-                {
-                    Pawn ewPawn = weaponEnchants[i];
-                    if (ewPawn.DestroyedOrNull() || ewPawn.Dead)
-                    {
-                        this.weaponEnchants.Remove(ewPawn);
-                    }
-                }
-
-                if (this.dispelEnchantWeapon == false)
-                {
-                    this.dispelEnchantWeapon = true;
-                    this.AddPawnAbility(TorannMagicDefOf.TM_DispelEnchantWeapon);
-                }
-            }
-            else if (this.dispelEnchantWeapon == true)
-            {
-                this.dispelEnchantWeapon = false;
-                this.RemovePawnAbility(TorannMagicDefOf.TM_DispelEnchantWeapon);
-            }
+            weaponEnchants.Cleanup();
 
             if (this.mageLightActive)
             {
@@ -7944,54 +7702,6 @@ namespace TorannMagic
                 }
                 this.mageLightSet = false;
             }            
-        }
-
-        public void ResolveMinions()
-        {
-            if (this.summonedMinions.Count > 0 && dismissMinionSpell == false)
-            {
-                this.AddPawnAbility(TorannMagicDefOf.TM_DismissMinion);
-                dismissMinionSpell = true;
-            }
-
-            if (this.summonedMinions.Count <= 0 && dismissMinionSpell == true)
-            {
-                this.RemovePawnAbility(TorannMagicDefOf.TM_DismissMinion);
-                dismissMinionSpell = false;
-            }
-
-            if (this.summonedMinions.Count > 0)
-            {
-                for (int i = 0; i < this.summonedMinions.Count(); i++)
-                {
-                    Pawn minion = this.summonedMinions[i] as Pawn;
-                    if (minion != null)
-                    {
-                        if (minion.DestroyedOrNull() || minion.Dead)
-                        {
-                            this.summonedMinions.Remove(this.summonedMinions[i]);
-                            i--;
-                        }
-                    }
-                    else
-                    {
-                        this.summonedMinions.Remove(this.summonedMinions[i]);
-                        i--;
-                    }
-                }
-            }
-
-            if (this.earthSpriteType != 0 && dismissEarthSpriteSpell == false)
-            {
-                this.AddPawnAbility(TorannMagicDefOf.TM_DismissEarthSprites);
-                dismissEarthSpriteSpell = true;
-            }
-
-            if (this.earthSpriteType == 0 && dismissEarthSpriteSpell == true)
-            {
-                this.RemovePawnAbility(TorannMagicDefOf.TM_DismissEarthSprites);
-                dismissEarthSpriteSpell = false;
-            }
         }
 
         public void ResolveMana()
@@ -8160,7 +7870,7 @@ namespace TorannMagic
                 this.spell_Teach = true;
             }
 
-            if ((this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Geomancer) || flagCM || isCustom) && this.earthSpriteType != 0 && this.earthSprites.IsValid)
+            if ((Pawn.story.traits.HasTrait(TorannMagicDefOf.Geomancer) || flagCM || isCustom) && earthSpriteType.Value != 0 && earthSprites.IsValid)
             {
                 if (this.nextEarthSpriteAction < Find.TickManager.TicksGame)
                 {
@@ -8184,27 +7894,8 @@ namespace TorannMagic
                 }
             }
 
-            if (this.summonedSentinels.Count > 0)
-            {
-                for (int i = 0; i < this.summonedSentinels.Count(); i++)
-                {
-                    if (summonedSentinels[i].DestroyedOrNull())
-                    {
-                        this.summonedSentinels.Remove(this.summonedSentinels[i]);
-                    }
-                }
-            }
-
-            if (this.lightningTraps.Count > 0)
-            {
-                for (int i = 0; i < this.lightningTraps.Count(); i++)
-                {
-                    if (lightningTraps[i].DestroyedOrNull())
-                    {
-                        this.lightningTraps.Remove(this.lightningTraps[i]);
-                    }
-                }
-            }
+            summonedSentinels.Cleanup();
+            lightningTraps.Cleanup();
 
             if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Lich))
             {
@@ -8475,11 +8166,11 @@ namespace TorannMagic
             {
                 _maxMPUpkeep += (this.weaponEnchants.Count * ActualManaCost(TorannMagicDefOf.TM_EnchantWeapon));
             }
-            if (this.stoneskinPawns != null && this.stoneskinPawns.Count > 0)
+            if (stoneskinPawns.Count > 0)
             {
                 _maxMPUpkeep += (this.stoneskinPawns.Count * (TorannMagicDefOf.TM_Stoneskin.upkeepEnergyCost - (.02f * this.MagicData.GetSkill_Efficiency(TorannMagicDefOf.TM_Stoneskin).level)));
             }
-            if (this.summonedSentinels != null && this.summonedSentinels.Count > 0)
+            if (summonedSentinels.Count > 0)
             {
                 MagicPowerSkill heartofstone = this.MagicData.MagicPowerSkill_Sentinel.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Sentinel_eff");
 
@@ -8492,7 +8183,7 @@ namespace TorannMagic
                     _maxMPUpkeep += ((.2f - (.02f * heartofstone.level)) * this.summonedSentinels.Count);
                 }
             }
-            if(this.BrandPawns != null && this.BrandPawns.Count > 0)
+            if(BrandPawns.Count > 0)
             {
                 float brandCost = this.BrandPawns.Count * (TorannMagicDefOf.TM_Branding.upkeepRegenCost * (1f - (TorannMagicDefOf.TM_Branding.upkeepEfficiencyPercent * this.MagicData.GetSkill_Efficiency(TorannMagicDefOf.TM_Branding).level)));
                 if(sigilSurging)
@@ -8505,26 +8196,26 @@ namespace TorannMagic
                 }
                 _mpRegenRateUpkeep += brandCost; 
             }
-            if(this.livingWall != null && livingWall.Spawned)
+            if(livingWall.Value != null && livingWall.Value.Spawned)
             {
                 _maxMPUpkeep += (TorannMagicDefOf.TM_LivingWall.upkeepEnergyCost * (1f - (TorannMagicDefOf.TM_LivingWall.upkeepEfficiencyPercent * this.MagicData.GetSkill_Efficiency(TorannMagicDefOf.TM_LivingWall).level)));
             }
             //Bonded spirit animal
-            if (this.bondedSpirit != null)
+            if (this.bondedSpirit.Value != null)
             {
                 _maxMPUpkeep += (TorannMagicDefOf.TM_GuardianSpirit.upkeepEnergyCost * (1f - (TorannMagicDefOf.TM_GuardianSpirit.upkeepEfficiencyPercent * this.MagicData.GetSkill_Efficiency(TorannMagicDefOf.TM_GuardianSpirit).level)));
                 _mpRegenRateUpkeep += (TorannMagicDefOf.TM_GuardianSpirit.upkeepRegenCost * (1f - (TorannMagicDefOf.TM_GuardianSpirit.upkeepEfficiencyPercent * this.MagicData.GetSkill_Efficiency(TorannMagicDefOf.TM_GuardianSpirit).level)));
-                if (this.bondedSpirit.Dead || this.bondedSpirit.Destroyed)
+                if (bondedSpirit.Value.Dead || bondedSpirit.Value.Destroyed)
                 {
-                    this.bondedSpirit = null;
+                    bondedSpirit.Set(null);
                 }
-                else if (this.bondedSpirit.Faction != null && this.bondedSpirit.Faction != this.Pawn.Faction)
+                else if (bondedSpirit.Value.Faction != null && bondedSpirit.Value.Faction != Pawn.Faction)
                 {
-                    this.bondedSpirit = null;
+                    bondedSpirit.Set(null);
                 }
-                else if (!this.bondedSpirit.health.hediffSet.HasHediff(TorannMagicDefOf.TM_SpiritBondHD))
+                else if (!bondedSpirit.Value.health.hediffSet.HasHediff(TorannMagicDefOf.TM_SpiritBondHD))
                 {
-                    HealthUtility.AdjustSeverity(this.bondedSpirit, TorannMagicDefOf.TM_SpiritBondHD, .5f);
+                    HealthUtility.AdjustSeverity(this.bondedSpirit.Value, TorannMagicDefOf.TM_SpiritBondHD, .5f);
                 }
                 if(TorannMagicDefOf.TM_SpiritCrowR == this.GuardianSpiritType)
                 {
@@ -8878,23 +8569,31 @@ namespace TorannMagic
             Scribe_Defs.Look<ThingDef>(ref this.technoWeaponThingDef, "technoWeaponThingDef");
             Scribe_Values.Look<QualityCategory>(ref this.technoWeaponQC, "technoWeaponQC");
             Scribe_References.Look<Thing>(ref this.enchanterStone, "enchanterStone", false);
-            Scribe_Collections.Look<Thing>(ref this.enchanterStones, "enchanterStones", LookMode.Reference);
-            Scribe_Collections.Look<Thing>(ref this.summonedMinions, "summonedMinions", LookMode.Reference);
-            Scribe_Collections.Look<Thing>(ref this.supportedUndead, "supportedUndead", LookMode.Reference);
-            Scribe_Collections.Look<Thing>(ref this.summonedLights, "summonedLights", LookMode.Reference);
-            Scribe_Collections.Look<Thing>(ref this.summonedPowerNodes, "summonedPowerNodes", LookMode.Reference);
-            Scribe_Collections.Look<Thing>(ref this.summonedCoolers, "summonedCoolers", LookMode.Reference);
-            Scribe_Collections.Look<Thing>(ref this.summonedHeaters, "summonedHeaters", LookMode.Reference);
-            Scribe_Collections.Look<Thing>(ref this.summonedSentinels, "summonedSentinels", LookMode.Reference);
-            Scribe_Collections.Look<Pawn>(ref this.stoneskinPawns, "stoneskinPawns", LookMode.Reference);
-            Scribe_Collections.Look<Pawn>(ref this.weaponEnchants, "weaponEnchants", LookMode.Reference);
-            Scribe_Collections.Look<Thing>(ref this.lightningTraps, "lightningTraps", LookMode.Reference);
-            Scribe_Collections.Look<Pawn>(ref this.hexedPawns, "hexedPawns", LookMode.Reference);
+            enchanterStones.Scribe("enchanterStones");
+            summonedMinions.Scribe("summonedMinions");
+            supportedUndead.Scribe("supportedUndead");
+            summonedLights.Scribe("summonedLights");
+            summonedPowerNodes.Scribe("summonedPowerNodes");
+            summonedHeaters.Scribe("summonedHeaters");
+            summonedSentinels.Scribe("summonedSentinels");
+            stoneskinPawns.Scribe("stoneskinPawns");
+            lightningTraps.Scribe("lightningTraps");
+            weaponEnchants.Scribe("weaponEnchants");
+            livingWall.Scribe("livingWall");
+
+            bondedSpirit.Scribe("bondedSpirit");
+            Scribe_Defs.Look<ThingDef>(ref this.guardianSpiritType, "guardianSpiritType");
+
+            earthSpriteType.Scribe("earthSpriteType");
             Scribe_Values.Look<IntVec3>(ref this.earthSprites, "earthSprites", default(IntVec3), false);
-            Scribe_Values.Look<int>(ref this.earthSpriteType, "earthSpriteType", 0, false);
             Scribe_References.Look<Map>(ref this.earthSpriteMap, "earthSpriteMap", false);
             Scribe_Values.Look<bool>(ref this.earthSpritesInArea, "earthSpritesInArea", false, false);
             Scribe_Values.Look<int>(ref this.nextEarthSpriteAction, "nextEarthSpriteAction", 0, false);
+
+            BrandPawns.Scribe("brands");
+            Scribe_Collections.Look<HediffDef>(ref BrandDefs, "brandDefs", LookMode.Def);
+
+            Scribe_Collections.Look<Pawn>(ref this.hexedPawns, "hexedPawns", LookMode.Reference);
             Scribe_Collections.Look<IntVec3>(ref this.fertileLands, "fertileLands", LookMode.Value);
             Scribe_Values.Look<float>(ref this.maxMP, "maxMP", 1f, false);
             Scribe_Values.Look<int>(ref this.lastChaosTraditionTick, "lastChaosTraditionTick", 0);
@@ -8912,13 +8611,8 @@ namespace TorannMagic
             Scribe_Collections.Look<int>(ref this.recallHediffDefTicksRemainingList, "recallHediffDefTicksRemainingList", LookMode.Value);
             Scribe_Collections.Look<Hediff_Injury>(ref this.recallInjuriesList, "recallInjuriesList", LookMode.Deep);
             Scribe_References.Look<FlyingObject_SpiritOfLight>(ref SoL, "SoL", false);
-            Scribe_Defs.Look<ThingDef>(ref this.guardianSpiritType, "guardianSpiritType");
-            Scribe_References.Look<Pawn>(ref this.bondedSpirit, "bondedSpirit", false);
-            Scribe_Collections.Look<Pawn>(ref this.brands, "brands", LookMode.Reference);
-            Scribe_Collections.Look<HediffDef>(ref this.brandDefs, "brandDefs", LookMode.Def);
             Scribe_Values.Look<bool>(ref this.sigilSurging, "sigilSurging", false, false);
             Scribe_Values.Look<bool>(ref this.sigilDraining, "sigilDraining", false, false);
-            Scribe_References.Look<FlyingObject_LivingWall>(ref this.livingWall, "livingWall");
             Scribe_Deep.Look(ref this.magicWardrobe, "magicWardrobe", new object[0]);
             //
             Scribe_Deep.Look<MagicData>(ref this.magicData, "magicData", new object[]

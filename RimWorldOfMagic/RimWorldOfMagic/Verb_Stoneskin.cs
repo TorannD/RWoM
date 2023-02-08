@@ -113,7 +113,7 @@ namespace TorannMagic
         {
             if (comp != null && !pawn.DestroyedOrNull() && !pawn.Dead && pawn.Map != null)
             {
-                if (comp.StoneskinPawns.Count() < verVal + 2)
+                if (comp.StoneskinPawns.Count < verVal + 2)
                 {
                     ApplyHediffs(pawn);
                     if (!comp.StoneskinPawns.Contains(pawn))
@@ -132,7 +132,7 @@ namespace TorannMagic
                 else
                 {
                     string stoneskinPawns = "";
-                    int count = comp.StoneskinPawns.Count();
+                    int count = comp.StoneskinPawns.Count;
                     for (int i = 0; i < count; i++)
                     {
                         if (i + 1 == count) //last name

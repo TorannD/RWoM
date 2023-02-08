@@ -296,11 +296,6 @@ namespace TorannMagic
 
             if(newThing != null)
             {
-                if(comp.enchanterStones == null)
-                {
-                    comp.enchanterStones = new List<Thing>();
-                    comp.enchanterStones.Clear();
-                }
                 GenPlace.TryPlaceThing(newThing, this.currentTarget.Cell, this.CasterPawn.Map, ThingPlaceMode.Near);
                 comp.enchanterStones.Add(newThing);
 

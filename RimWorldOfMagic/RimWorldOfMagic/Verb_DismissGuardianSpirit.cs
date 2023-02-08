@@ -13,16 +13,15 @@ namespace TorannMagic
     {        
         protected override bool TryCastShot()
         {
-            Pawn caster = base.CasterPawn;
             Pawn pawn = this.currentTarget.Thing as Pawn;
 
             CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
             if(comp.IsMagicUser)
             {
-                if(comp.bondedSpirit != null)
+                if(comp.bondedSpirit.Value != null)
                 {
-                    comp.bondedSpirit.SetFaction(Find.FactionManager.FirstFactionOfDef(TorannMagicDefOf.TM_SkeletalFaction), null);
-                    comp.bondedSpirit.Kill(null);                    
+                    comp.bondedSpirit.Value.SetFaction(Find.FactionManager.FirstFactionOfDef(TorannMagicDefOf.TM_SkeletalFaction));
+                    comp.bondedSpirit.Value.Kill(null);
                 }
                 else
                 {

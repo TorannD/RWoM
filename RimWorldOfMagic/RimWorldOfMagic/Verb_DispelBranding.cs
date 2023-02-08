@@ -17,7 +17,7 @@ namespace TorannMagic
             bool flag = false;
             CompAbilityUserMagic comp = CasterPawn.GetCompAbilityUserMagic();
 
-            if (comp != null && comp.IsMagicUser && comp.BrandPawns != null && comp.BrandDefs != null)
+            if (comp != null && comp.IsMagicUser)
             {
                 if (comp.BrandPawns.Count > 0)
                 {
