@@ -221,7 +221,7 @@
     <defName>TM_Symbiosis</defName>
     <label>Symbiosis</label>
     <uiIconPath>UI/symbiosis</uiIconPath>
-    <description>Entwines the fate of the empath with the target. The empath will enter into a mentally vacant state, unable to control their own body as they project their will to reinforce the will of a target pawn. The empath will still maintain any pre-existing effects or aura's. The target will receive emotional fortitude and mental strength in return. The symbiote may experience physical after-effects of injuries taken by their host. If the host dies while the empath is a symbiote, the empath will also die. The symbiosis will only end when the empath's mood expires.</description>
+    <description>Entwines the fate of the empath with the target. The empath will enter into a mentally vacant state, unable to control their own body as they project their will to reinforce the will of a target pawn. The empath will still maintain any pre-existing effects or aura's. The target will receive emotional fortitude and mental strength in return. The symbiote may experience physical after-effects of injuries taken by their host. If the host dies while the empath is a symbiote, the empath will also die. The symbiosis will end when the empath's mood expires and can be manually ended if the host and symbiote are in neary proximity.</description>
     <requiredNeed>Mood</requiredNeed>
 	<needCost>.1</needCost>
 	<needXPFactor>50</needXPFactor>

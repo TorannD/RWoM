@@ -31,14 +31,14 @@ namespace TorannMagic
                 //verVal = TM_Calc.GetMightSkillLevel(pawn, comp.MightData.MightPowerSkill_DisablingShot, "TM_DisablingShot", "_ver", true);
                 verVal = TM_Calc.GetSkillVersatilityLevel(pawn, TorannMagicDefOf.TM_DisablingShot);
                 MightPowerSkill str = comp.MightData.MightPowerSkill_global_strength.FirstOrDefault((MightPowerSkill x) => x.label == "TM_global_strength_pwr");
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+                
                 //verVal = ver.level;
                 //if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
                 //{
                 //    MightPowerSkill mver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
                 //    verVal = mver.level;
                 //}
-                //if (settingsRef.AICasting && !pawn.IsColonist)
+                //if (ModOptions.Settings.Instance.AICasting && !pawn.IsColonist)
                 //{
                 //    verVal = 3;
                 //}

@@ -128,16 +128,28 @@ namespace TorannMagic
             {
                 if ((age > 150 && Rand.Chance(.01f * age)))
                 {
-                    item.TryApply(pawn);
+                    if (pawn.genes != null && pawn.genes.HasGene(TorannMagicDefOf.Ageless))
+                    {
+                    }
+                    else
+                    {
+                        item.TryApply(pawn);
+                    }
                 }
             }
         }
 
         private void RaceAgainstTime(Pawn pawn, float age)
-        {            
+        {               
             if (Rand.Chance(age/maxAge))
             {
-                AgeInjuryUtility.GenerateRandomOldAgeInjuries(pawn, false);
+                if (pawn.genes != null && pawn.genes.HasGene(TorannMagicDefOf.Ageless))
+                {
+                }
+                else
+                {
+                    AgeInjuryUtility.GenerateRandomOldAgeInjuries(pawn, false);
+                }
             }
             if (Rand.Chance((age/maxAge)*.5f))
             {

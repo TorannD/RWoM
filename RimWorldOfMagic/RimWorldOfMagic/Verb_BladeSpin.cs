@@ -85,8 +85,8 @@ namespace TorannMagic
                 IntVec3 centerCell = cellRect.CenterCell;                
                 TMAbilityDef ad = (TMAbilityDef)this.Ability.Def;
                 int dmgNum = Mathf.RoundToInt(comp.weaponDamage * ad.weaponDamageFactor);
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                if (!this.CasterPawn.IsColonist && settingsRef.AIHardMode)
+                
+                if (!this.CasterPawn.IsColonist && ModOptions.Settings.Instance.AIHardMode)
                 {
                     dmgNum += 10;
                 }

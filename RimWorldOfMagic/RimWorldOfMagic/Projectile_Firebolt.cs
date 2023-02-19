@@ -16,7 +16,7 @@ namespace TorannMagic
             Map map = base.Map;
             base.Impact(hitThing);
             ThingDef def = this.def;
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+            
 
             Pawn pawn = this.launcher as Pawn;
             Pawn victim = hitThing as Pawn;
@@ -41,7 +41,7 @@ namespace TorannMagic
             if (victim != null)
             {                
                 int dmg = Mathf.RoundToInt(((this.def.projectile.GetDamageAmount(1,null) / 3) * pwrVal)* arcaneDmg);  //projectile = 16
-                if (settingsRef.AIHardMode && this.launcher is Pawn && !pawn.IsColonist)
+                if (ModOptions.Settings.Instance.AIHardMode && this.launcher is Pawn && !pawn.IsColonist)
                 {
                     dmg += 10;
                 }

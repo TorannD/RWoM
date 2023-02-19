@@ -190,8 +190,8 @@ namespace TorannMagic
             }
             this.destination = targ.Cell.ToVector3Shifted();
             this.ticksToImpact = this.StartingTicksToImpact;
-            this.variationDestination = this.DrawPos;
-            this.drawPosition = this.DrawPos;
+            this.variationDestination = base.Position.ToVector3Shifted(); //this.DrawPos //not initialized?
+            this.drawPosition = base.Position.ToVector3Shifted(); //this.DrawPos; 
             this.Initialize();
         }        
 
@@ -274,7 +274,8 @@ namespace TorannMagic
                     //}
                     //Pawn pawn = this.flyingThing as Pawn;
                     //pawn.Drawer.DrawAt(this.DrawPos);
-                    this.flyingThing.DrawAt(this.drawPosition);
+                    //this.flyingThing.DrawAt(this.drawPosition);
+                    this.flyingThing.DrawAt(drawPosition);
                 }
                 else
                 {
@@ -287,6 +288,7 @@ namespace TorannMagic
         private Vector3 VariationPosition(Vector3 currentDrawPos)
         {
             Vector3 startPos = currentDrawPos;
+            startPos.y = 10f;
             float variance = (xVariation / 100f);
             if ((startPos.x - variationDestination.x) < -variance)
             {

@@ -1600,6 +1600,9 @@ namespace TorannMagic
         public static HistoryEventDef TM_BestowMagicEvent;
         public static HistoryEventDef TM_BestowClassEvent;
 
+        //Gene's
+        public static GeneDef Ageless;
+
         //Rituals
         public static JobDef TM_SeverMagic;
         public static HediffDef TM_MagicSeverenceHD;

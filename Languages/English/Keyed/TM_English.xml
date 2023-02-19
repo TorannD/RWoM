@@ -2208,6 +2208,10 @@ Level 3: all 4 effects</TM_CombatDrugs_pwr_desc>
 <TM_GolemAssignAreaDesc>Allow area</TM_GolemAssignAreaDesc>
 <TM_RemovePossession>Leave body</TM_RemovePossession>
 <TM_RemovePossessionDesc>The spirit leaves the body willingly and the characteristics of the pawn return to its state prior to possession.</TM_RemovePossessionDesc>
+<TM_GolemDoScreenShake>Golem screen shake</TM_GolemDoScreenShake>
+<TM_GolemDoScreenShakeDesc>When disabled, golems will not cause the screen to shake when they activate or deactivate.</TM_GolemDoScreenShakeDesc>
+<TM_EndSymbiosis>End Symbiosis</TM_EndSymbiosis>
+<TM_EndSymbiosisDesc>The empath detaches their will from the host and returns to his or her body. This option is only available if the host is near the symbiote.</TM_EndSymbiosisDesc>
 <!-- ========== Building Menu's ========== -->
 
 <TM_SelectPortalDestination>Activate Portal</TM_SelectPortalDestination>

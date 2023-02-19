@@ -76,7 +76,7 @@ namespace TorannMagic.ModOptions
             Widgets.CheckboxLabeled(rowRect0, "TM_Wanderer".Translate(), ref Settings.Instance.Wanderer, false);
             Rect rowRect0ShiftRight = Controller.UIHelper.GetRowRect(rowRect0, rowHeight, num);
             rowRect0ShiftRight.x += rowRect0.width + 98f;
-            Widgets.CheckboxLabeled(rowRect0ShiftRight, "TM_Wayfarer".Translate(), ref Settings.Instance.Wayfayer, false);
+            Widgets.CheckboxLabeled(rowRect0ShiftRight, "TM_Wayfarer".Translate(), ref Settings.Instance.Wayfarer, false);
             num++;
             Rect rowRect = Controller.UIHelper.GetRowRect(rowRect0, rowHeight, num);
             Widgets.CheckboxLabeled(rowRect, "TM_Arcanist".Translate(), ref Settings.Instance.Arcanist, false);

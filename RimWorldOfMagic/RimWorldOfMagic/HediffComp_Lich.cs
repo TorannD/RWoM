@@ -119,7 +119,7 @@ namespace TorannMagic
                     while (enumerator.MoveNext())
                     {                        
                         Hediff rec = enumerator.Current;
-                        if (rec.def.makesSickThought)
+                        if (rec.def.makesSickThought && rec.def != TorannMagicDefOf.TM_ArcaneWeakness)
                         {
                             removeHDList.Add(rec);
                         }

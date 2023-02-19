@@ -65,13 +65,14 @@ namespace TorannMagic
 
             if (!this.initialized)
             {
-                if (this.launcher is Pawn caster)
+                if (this.launcher is Pawn)
                 {
+                    this.caster = this.launcher as Pawn;
                     CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
                     if (comp != null && comp.MagicData != null)
                     {
-                        MagicPowerSkill ver = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Resurrection.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Resurrection_ver");
-                        MagicPowerSkill pwr = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Resurrection.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Resurrection_eff");
+                        MagicPowerSkill ver = comp.MagicData.MagicPowerSkill_Resurrection.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Resurrection_ver");
+                        MagicPowerSkill pwr = comp.MagicData.MagicPowerSkill_Resurrection.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Resurrection_eff");
                         verVal = ver.level;
                         pwrVal = pwr.level;
                     }
@@ -85,7 +86,7 @@ namespace TorannMagic
                 if (curCell.InBoundsWithNullCheck(map))
                 {
                     Corpse corpse = null;
-                    List<Thing> thingList;
+                    List<Thing> thingList = new List<Thing>();
                     thingList = curCell.GetThingList(map);
                     int z = 0;
                     while (z < thingList.Count)
@@ -97,21 +98,21 @@ namespace TorannMagic
                             if (corpseThing is Corpse)
                             {
                                 corpse = corpseThing as Corpse;
-                                CompRottable compRot = corpse.GetComp<CompRottable>(); 
-                                
+                                CompRottable compRot = corpse.GetComp<CompRottable>();
                                 deadPawn = corpse.InnerPawn;
                                 deadPawnPosition = corpse.Position;
                                 if (deadPawn != null && deadPawn.RaceProps.IsFlesh && !TM_Calc.IsUndead(deadPawn) && compRot != null)
                                 {
                                     if (!corpse.IsNotFresh())
-                                    {
-                                        z = thingList.Count;
+                                    {                                        
                                         this.validTarget = true;
                                         corpse.SetForbidden(true);
+                                        break;
                                     }
                                     else
                                     {
-                                        Messages.Message("TM_ResurrectionTargetExpired".Translate(), MessageTypeDefOf.RejectInput);                                        
+                                        Messages.Message("TM_ResurrectionTargetExpired".Translate(), MessageTypeDefOf.RejectInput);
+                                        break;
                                     }
                                 }
                                 if(TM_Calc.IsUndead(deadPawn))
@@ -127,7 +128,7 @@ namespace TorannMagic
                 this.initialized = true;
             }
 
-            if(corpseThing != null && (corpseThing.Position != this.deadPawnPosition || corpseThing.Map == null) && deadPawn.Dead)
+            if (validTarget && corpseThing != null && (corpseThing.Position != this.deadPawnPosition || corpseThing.Map == null) && deadPawn.Dead)
             {
                 Log.Message("Corpse was moved or destroyed during resurrection process.");
                 this.age = this.timeToRaise;
@@ -145,7 +146,6 @@ namespace TorannMagic
                         this.sustainer = null;
                     }
                 }
-                
                 if (this.age+1 == this.timeToRaise)
                 {
                     TM_MoteMaker.MakePowerBeamMoteColor(base.Position, base.Map, this.radius * 3f, 2f, 2f, .1f, 1.5f, colorInt.ToColor);
