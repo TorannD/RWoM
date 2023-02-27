@@ -12,8 +12,8 @@ namespace TorannMagic.Conditions
     {
         protected override bool TryExecuteWorker(IncidentParms parms)
         {
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-            if (settingsRef.riftChallenge > 0)
+            
+            if (ModOptions.Settings.Instance.riftChallenge > 0)
             {
                 string str = "";
                 Map map = (Map)parms.target;

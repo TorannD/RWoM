@@ -400,9 +400,9 @@ namespace TorannMagic
             {
                 wealthMultiplier = 2.5f;
             }
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+            
             float geChance = 0.007f * wealthMultiplier;
-            float riftChallenge = Mathf.Min(settingsRef.riftChallenge, 1f);
+            float riftChallenge = Mathf.Min(ModOptions.Settings.Instance.riftChallenge, 1f);
             float difficultyMod = 1f;
             if(riftChallenge >=3f)
             {
@@ -417,7 +417,7 @@ namespace TorannMagic
                 difficultyMod = .65f;
             }
 
-            if (settingsRef.riftChallenge > 1 )
+            if (ModOptions.Settings.Instance.riftChallenge > 1 )
             {
                 geChance *= (difficultyMod * riftChallenge);
             }  

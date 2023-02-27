@@ -23,7 +23,7 @@ namespace TorannMagic
 			ThingDef def = this.def;
             this.age++;
             this.Destroy(DestroyMode.Vanish);
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+            
             Pawn caster = this.launcher as Pawn;
             CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
             if (comp != null && comp.IsMagicUser)
