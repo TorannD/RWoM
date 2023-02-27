@@ -141,7 +141,7 @@ namespace TorannMagic
             pawn = launcher as Pawn;
             
             CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+            
             this.arcaneDmg = comp.mightPwr;
             //MightPowerSkill pwr = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_PsionicStorm.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PsionicStorm_pwr");
             //MightPowerSkill ver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_PsionicStorm.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PsionicStorm_ver");
@@ -149,7 +149,7 @@ namespace TorannMagic
             //pwrVal = pwr.level;
             verVal = TM_Calc.GetSkillVersatilityLevel(pawn, TorannMagicDefOf.TM_PsionicStorm, false);
             pwrVal = TM_Calc.GetSkillPowerLevel(pawn, TorannMagicDefOf.TM_PsionicStorm, false);
-            if (settingsRef.AIHardMode && !pawn.IsColonist)
+            if (ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist)
             {
                 pwrVal = 3;
                 verVal = 3;

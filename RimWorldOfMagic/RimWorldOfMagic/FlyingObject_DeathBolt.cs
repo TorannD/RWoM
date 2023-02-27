@@ -178,8 +178,8 @@ namespace TorannMagic
                 //MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_DeathBolt.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_DeathBolt_ver");
                 //verVal = ver.level;
                 //pwrVal = pwr.level;
-                //ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                //if (settingsRef.AIHardMode && !pawn.IsColonist)
+                //
+                //if (ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist)
                 //{
                 //    pwrVal = 1;
                 //    verVal = 1;

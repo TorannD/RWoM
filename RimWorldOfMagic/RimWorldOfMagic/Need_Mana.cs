@@ -215,10 +215,10 @@ namespace TorannMagic
                     }
                     else
                     {
-                        ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();                        
+                                                
                         MagicPowerSkill manaRegen = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_global_regen.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_global_regen_pwr");
-                        this.baseManaGain = (amount * (0.0012f) * settingsRef.needMultiplier);
-                        amount *= (((0.0012f * comp.mpRegenRate)) * settingsRef.needMultiplier);
+                        this.baseManaGain = (amount * (0.0012f) * ModOptions.Settings.Instance.needMultiplier);
+                        amount *= (((0.0012f * comp.mpRegenRate)) * ModOptions.Settings.Instance.needMultiplier);
                         this.modifiedManaGain = amount - this.baseManaGain;
 
                         if (pawn.health != null && pawn.health.hediffSet != null)
@@ -328,7 +328,7 @@ namespace TorannMagic
                             int paracyteCount = paracyteBushes.Count;
                             List<Pawn> mapPawns = this.pawn.Map.mapPawns.AllPawnsSpawned;
                             int mageCount = 0;
-                            if (settingsRef.paracyteMagesCount)
+                            if (ModOptions.Settings.Instance.paracyteMagesCount)
                             {
                                 for (int i = 0; i < mapPawns.Count; i++)
                                 {
@@ -344,9 +344,9 @@ namespace TorannMagic
                             }
 
                             int mapManaDrainerCount = paracyteCount + (2 * mageCount);
-                            if (mapManaDrainerCount > settingsRef.paracyteSoftCap)
+                            if (mapManaDrainerCount > ModOptions.Settings.Instance.paracyteSoftCap)
                             {
-                                mapManaDrainerCount -= Mathf.RoundToInt(settingsRef.paracyteSoftCap);
+                                mapManaDrainerCount -= Mathf.RoundToInt(ModOptions.Settings.Instance.paracyteSoftCap);
                             }
                             else
                             {
@@ -385,7 +385,7 @@ namespace TorannMagic
                         int necroCount = 0;
                         float undeadCount = 0;
 
-                        if (settingsRef.undeadUpkeepMultiplier > 0f && comp.supportedUndead != null && comp.supportedUndead.Count > 0)
+                        if (ModOptions.Settings.Instance.undeadUpkeepMultiplier > 0f && comp.supportedUndead != null && comp.supportedUndead.Count > 0)
                         {
                             Apparel orb = TM_Calc.GetNecroticOrb(this.pawn);
                             float orbEnergy = 0;
@@ -488,7 +488,7 @@ namespace TorannMagic
                                 orbReduction = .75f;
                             }
                             
-                            necroReduction = (((0.0012f * (.15f - (.15f * (.1f * eff.level))) * undeadCount) * orbReduction) * settingsRef.undeadUpkeepMultiplier);
+                            necroReduction = (((0.0012f * (.15f - (.15f * (.1f * eff.level))) * undeadCount) * orbReduction) * ModOptions.Settings.Instance.undeadUpkeepMultiplier);
                             this.drainUndead = necroReduction;
                             amount -= necroReduction;
                             //Log.Message("" + pawn.LabelShort + " is 1 of " + necroCount + " contributing necros and had necro reduction of " + necroReduction);
@@ -499,7 +499,7 @@ namespace TorannMagic
                             this.drainUndead = 0;
                         }
 
-                        if (this.CurLevel < .01f && amount < 0)
+                        if (this.CurLevel < .01f && amount < 0 && pawn.Map != null && pawn.Spawned)
                         {
                             float pain = pawn.health.hediffSet.PainTotal;
                             float con = pawn.health.capacities.GetLevel(PawnCapacityDefOf.Consciousness);
@@ -557,9 +557,9 @@ namespace TorannMagic
             //    {
             //        if (comp.IsMagicUser && comp.Mana != null)
             //        {
-            //            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+            //            
             //            MagicPowerSkill manaRegen = comp.MagicData.MagicPowerSkill_global_regen.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_global_regen_pwr");
-            //            amount *= ((0.0012f + 0.00006f * manaRegen.level) * comp.mpRegenRate * settingsRef.needMultiplier);
+            //            amount *= ((0.0012f + 0.00006f * manaRegen.level) * comp.mpRegenRate * ModOptions.Settings.Instance.needMultiplier);
             //            amount = Mathf.Min(amount, this.MaxLevel - this.CurLevel);
             //            comp.Mana.CurLevel = Mathf.Max(comp.Mana.CurLevel += amount, 0f);
             //        }

@@ -84,7 +84,7 @@ namespace TorannMagic
                 this.initialized = true;
                 this.BF = new List<BloodFire>();
                 this.BF.Clear();
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+                
                 Pawn pawn = this.launcher as Pawn;
                 CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
                 MagicPowerSkill bpwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_BloodGift.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_BloodGift_pwr");
@@ -102,14 +102,14 @@ namespace TorannMagic
                 this.arcaneDmg = comp.arcaneDmg;
                 this.arcaneDmg *= (1 + (.1f * bpwr.level));
                 this.spreadRate -= 2 * verVal;
-                if (settingsRef.AIHardMode && !pawn.IsColonist)
+                if (ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist)
                 {
                     pwrVal = 3;
                     verVal = 3;
                 }
                 this.bloodTypes = new List<ThingDef>();
                 this.bloodTypes.Clear();
-                if (settingsRef.unrestrictedBloodTypes)
+                if (ModOptions.Settings.Instance.unrestrictedBloodTypes)
                 {
                     this.pawnBloodDef = pawn.RaceProps.BloodDef;
                     this.bloodTypes = TM_Calc.GetAllRaceBloodTypes();

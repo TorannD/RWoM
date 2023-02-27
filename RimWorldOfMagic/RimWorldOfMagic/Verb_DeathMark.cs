@@ -65,7 +65,7 @@ namespace TorannMagic
                 this.TargetsAoE.Clear();
                 //this.UpdateTargets();
                 this.FindTargets();
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+                
                 for(int i =0; i < this.TargetsAoE.Count; i++)
                 {
                     if (this.TargetsAoE[i].Thing is Pawn)

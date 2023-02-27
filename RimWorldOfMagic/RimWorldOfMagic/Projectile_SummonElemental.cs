@@ -57,7 +57,7 @@ namespace TorannMagic
                 pawn = this.launcher as Pawn;
                 MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_SummonElemental.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_SummonElemental_pwr");
                 MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_SummonElemental.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_SummonElemental_ver");
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+                
                 pwrVal = pwr.level;
                 verVal = ver.level;
                 if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
@@ -67,7 +67,7 @@ namespace TorannMagic
                     pwrVal = mpwr.level;
                     verVal = mver.level;
                 }
-                if (settingsRef.AIHardMode && !pawn.IsColonist)
+                if (ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist)
                 {
                     pwrVal = 3;
                     verVal = 3;
