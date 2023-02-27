@@ -17,5 +17,7 @@ namespace TorannMagic
         public static string TM_PromoteWayfarerDesc = "TM_PromoteWayfarerDesc".Translate();
         public static string TM_RemovePossess = "TM_RemovePossession".Translate();
         public static string TM_RemovePossessDesc = "TM_RemovePossessionDesc".Translate();
+        public static string TM_RemoveSymbiosis = "TM_EndSymbiosis".Translate();
+        public static string TM_RemoveSymbiosisDesc = "TM_EndSymbiosisDesc".Translate();
     }
 }

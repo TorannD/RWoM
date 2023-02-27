@@ -71,10 +71,10 @@ namespace TorannMagic
                 this.map = this.pawn.Map;
                 CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
                 MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_LightSkip.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_LightSkip_pwr");
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+                
                 pwrVal = pwr.level;
                 this.arcaneDmg = comp.arcaneDmg;
-                if (settingsRef.AIHardMode && !pawn.IsColonist)
+                if (ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist)
                 {
                     pwrVal = 1;
                     verVal = 1;

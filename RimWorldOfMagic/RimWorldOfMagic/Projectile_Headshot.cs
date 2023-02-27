@@ -67,8 +67,8 @@ namespace TorannMagic
             pwrVal = TM_Calc.GetSkillPowerLevel(pawn, TorannMagicDefOf.TM_Headshot);
 
             float dmg = comp.weaponDamage;
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-            if (!pawn.IsColonist && settingsRef.AIHardMode)
+            
+            if (!pawn.IsColonist && ModOptions.Settings.Instance.AIHardMode)
             {
                 dmg += 8;
             }

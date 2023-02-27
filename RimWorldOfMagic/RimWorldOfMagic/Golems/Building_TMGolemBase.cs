@@ -468,7 +468,7 @@ namespace TorannMagic.Golems
                                 activating = false;
                             }
                         }
-                        if (activationAge >= (.9f * GolemDef.activationTicks) && Find.TickManager.TicksGame % 6 == 0)
+                        if (ModOptions.Settings.Instance.golemScreenShake && activationAge >= (.9f * GolemDef.activationTicks) && Find.TickManager.TicksGame % 6 == 0)
                         {
                             Find.CameraDriver.shaker.DoShake(.05f);
                         }

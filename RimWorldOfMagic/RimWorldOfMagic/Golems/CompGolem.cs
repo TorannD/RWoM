@@ -749,7 +749,10 @@ namespace TorannMagic.Golems
                 rndPos.z += Rand.Range(-1f, 1f);
                 FleckMaker.ThrowSmoke(rndPos, Pawn.Map, Rand.Range(.6f, 1.2f));                
             }
-            Find.CameraDriver.shaker.DoShake(.25f);
+            if (ModOptions.Settings.Instance.golemScreenShake)
+            {
+                Find.CameraDriver.shaker.DoShake(.25f);
+            }
             Building_TMGolemBase spawnedThing = null;
             IntVec3 despawnPos = Pawn.Position;
             if((dormantPosition - despawnPos).LengthHorizontal <= 1.4f)

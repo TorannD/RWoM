@@ -16,25 +16,11 @@ namespace TorannMagic
         public int customIndex = -2;
 
         public TM_CustomClass customClass = null;
-        private List<TM_CustomClass> advClasses = null;
+        private List<TM_CustomClass> advClasses;
         public List<TM_CustomClass> AdvancedClasses
         {
-            get
-            {
-                if (advClasses == null)
-                {
-                    advClasses = new List<TM_CustomClass>();
-                }
-                return advClasses;
-            }
-            set
-            {
-                if (advClasses == null)
-                {
-                    advClasses = new List<TM_CustomClass>();
-                }
-                advClasses = value;
-            }
+            get => advClasses ?? (advClasses = new List<TM_CustomClass>());
+            set => advClasses = value;
         }
 
         protected int age = -1;
@@ -51,47 +37,41 @@ namespace TorannMagic
         public float coolDown = 1;
         public float xpGain = 1;
 
-        public List<TMDefs.TM_CustomClass> CombinedCustomClasses
-        {
-            get
-            {
-                List<TMDefs.TM_CustomClass> tempcc = new List<TMDefs.TM_CustomClass>();
-                tempcc.Clear();
-                tempcc.AddRange(AdvancedClasses);
-                if (this.customClass != null)
-                {
-                    tempcc.Add(this.customClass);
-                }
-                return tempcc;
-            }
-        }
+        public float weaponDamage = 1;
 
-        public List<TMAbilityDef> CombinedCustomAbilities
-        {
-            get
-            {
-                List<TMAbilityDef> tempca = new List<TMAbilityDef>();
-                tempca.Clear();
-                if (this.customClass != null)
-                {
-                    foreach (TMAbilityDef ability in this.customClass.classFighterAbilities)
-                    {
-                        tempca.Add(ability);
-                    }
-                }
-                if (this.AdvancedClasses != null && AdvancedClasses.Count > 0)
-                {
-                    foreach (TMDefs.TM_CustomClass cc in this.AdvancedClasses)
-                    {
-                        foreach (TMAbilityDef advAbility in cc.classFighterAbilities)
-                        {
-                            tempca.Add(advAbility);
-                        }
-                    }
-                }
-                return tempca;
-            }
-        }
+        //public List<TMDefs.TM_CustomClass> CombinedCustomClasses
+        //{
+        //    get
+        //    {
+        //        List<TMDefs.TM_CustomClass> combinedCustomClasses = new List<TMDefs.TM_CustomClass>();
+        //        combinedCustomClasses.AddRange(AdvancedClasses);
+        //        if (this.customClass != null)
+        //        {
+        //            combinedCustomClasses.Add(this.customClass);
+        //        }
+        //        return combinedCustomClasses;
+        //    }
+        //}
+
+        //public List<TMAbilityDef> CombinedCustomAbilities
+        //{
+        //    get
+        //    {
+        //        List<TMAbilityDef> combinedCustomAbilities = new List<TMAbilityDef>();
+        //        if (this.customClass != null)
+        //        {
+        //            combinedCustomAbilities.AddRange(customClass.classFighterAbilities);
+        //        }
+        //        if (this.AdvancedClasses != null && AdvancedClasses.Count > 0)
+        //        {
+        //            foreach (TMDefs.TM_CustomClass cc in this.AdvancedClasses)
+        //            {
+        //                combinedCustomAbilities.AddRange(cc.classFighterAbilities);
+        //            }
+        //        }
+        //        return combinedCustomAbilities;
+        //    }
+        //}
 
         private static readonly SimpleCache<string, Material> traitCache = new SimpleCache<string, Material>(5);
 

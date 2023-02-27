@@ -191,7 +191,7 @@ namespace TorannMagic
         public static void DoAction_TechnoWeaponCopy(Pawn caster, Thing thing, ThingDef td = null, QualityCategory _qc = QualityCategory.Normal)
         {
             CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+            
             bool destroyThingAtEnd = false;
             if (thing != null && comp != null)
             {
@@ -215,7 +215,7 @@ namespace TorannMagic
             }
 
 
-            if (thing != null && thing.def != null && thing.def.IsRangedWeapon && (thing.def.techLevel >= TechLevel.Industrial || settingsRef.unrestrictedWeaponCopy) && (thing.def.Verbs.FirstOrDefault().verbClass.ToString() == "Verse.Verb_Shoot" || settingsRef.unrestrictedWeaponCopy))
+            if (thing != null && thing.def != null && thing.def.IsRangedWeapon && (thing.def.techLevel >= TechLevel.Industrial || ModOptions.Settings.Instance.unrestrictedWeaponCopy) && (thing.def.Verbs.FirstOrDefault().verbClass.ToString() == "Verse.Verb_Shoot" || ModOptions.Settings.Instance.unrestrictedWeaponCopy))
             {
                 int verVal = comp.MagicData.MagicPowerSkill_TechnoWeapon.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_TechnoWeapon_ver").level;
                 int pwrVal = comp.MagicData.MagicPowerSkill_TechnoWeapon.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_TechnoWeapon_pwr").level;
@@ -301,7 +301,7 @@ namespace TorannMagic
         public static void DoAction_PistolSpecCopy(Pawn caster, ThingWithComps thing)
         {
             CompAbilityUserMight comp = caster.GetCompAbilityUserMight();
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+            
 
             if (thing != null && thing.def != null && thing.def.IsRangedWeapon)
             {
@@ -402,7 +402,7 @@ namespace TorannMagic
         public static void DoAction_RifleSpecCopy(Pawn caster, ThingWithComps thing)
         {
             CompAbilityUserMight comp = caster.GetCompAbilityUserMight();
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+            
 
             if (thing != null && thing.def != null && thing.def.IsRangedWeapon)
             {
@@ -503,7 +503,7 @@ namespace TorannMagic
         public static void DoAction_ShotgunSpecCopy(Pawn caster, ThingWithComps thing)
         {
             CompAbilityUserMight comp = caster.GetCompAbilityUserMight();
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+            
 
             if (thing != null && thing.def != null && thing.def.IsRangedWeapon)
             {
@@ -1648,10 +1648,10 @@ namespace TorannMagic
             if (p != null)
             {
                 CompAbilityUserMagic comp = p.GetCompAbilityUserMagic();
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+                
                 if (comp != null && comp.Mana != null)
                 {
-                    int xpNum = (int)((mp * 300) * comp.xpGain * settingsRef.xpMultiplier * xpMultiplier);
+                    int xpNum = (int)((mp * 300) * comp.xpGain * ModOptions.Settings.Instance.xpMultiplier * xpMultiplier);
                     comp.MagicUserXP += xpNum;
                     MoteMaker.ThrowText(p.DrawPos, p.MapHeld, "XP +" + xpNum, -1f);
                     mp *= comp.mpCost;
@@ -2364,7 +2364,7 @@ namespace TorannMagic
 
         public static void CreateMagicDeathEffect(Pawn pawn, IntVec3 pos, bool canCauseDeath = true, bool friendlyFire = false)
         {
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+            
             List<IntVec3> targets = new List<IntVec3>();
             List<Pawn> pawns = new List<Pawn>();
             int rnd = Rand.RangeInclusive(0, 6);
@@ -2380,7 +2380,7 @@ namespace TorannMagic
                     Pawn victim = new Pawn();
 
                     float radius = 3f;
-                    if (settingsRef.AIHardMode)
+                    if (ModOptions.Settings.Instance.AIHardMode)
                     {
                         radius *= 1.5f;
                     }
@@ -2549,7 +2549,7 @@ namespace TorannMagic
                     }
                     break;
             }
-            if (canCauseDeath && settingsRef.deathRetaliationIsLethal && rnd < 6)
+            if (canCauseDeath && ModOptions.Settings.Instance.deathRetaliationIsLethal && rnd < 6)
             {
                 KillPawnByMindBurn(pawn);
             }
@@ -2577,7 +2577,7 @@ namespace TorannMagic
 
         public static void CreateMightDeathEffect(Pawn pawn, IntVec3 pos)
         {
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+            
             List<IntVec3> targets = new List<IntVec3>();
             List<Pawn> pawns = new List<Pawn>();
             int rnd = Rand.RangeInclusive(0, 4);
@@ -2653,7 +2653,7 @@ namespace TorannMagic
                     TM_Action.DoAction_HealPawn(pawn, pawn, 2, 10f);
                     break;
             }
-            if (settingsRef.deathRetaliationIsLethal && rnd < 4)
+            if (ModOptions.Settings.Instance.deathRetaliationIsLethal && rnd < 4)
             {
                 KillPawnBySepeku(pawn);
             }
@@ -2861,10 +2861,27 @@ namespace TorannMagic
             }
         }
 
+        public static void RemoveSymbiosisCommand(Pawn symbiote)
+        {
+            Hediff symbioteHD = symbiote.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_OutOfBodyHD);
+            Pawn host = symbioteHD.TryGetComp<HediffComp_SymbiosisCaster>().symbiosisHost;
+
+            Hediff hostHD = host.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_SymbiosisHD);
+            if (hostHD != null)
+            {
+                host.health.RemoveHediff(hostHD);
+            }
+
+            if (symbioteHD != null)
+            {
+                symbiote.health.RemoveHediff(symbioteHD);
+            }            
+        }
+
         public static GizmoResult DrawAutoCastForGizmo(Command_PawnAbility com, Rect rect, bool shrink, GizmoResult oldResult)
         {
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();            
-            if (settingsRef.autocastEnabled && com.pawnAbility.Def.defName.StartsWith("TM_"))
+                        
+            if (ModOptions.Settings.Instance.autocastEnabled && com.pawnAbility.Def.defName.StartsWith("TM_"))
             {
                 CompAbilityUserMagic comp = com.pawnAbility.Pawn.GetCompAbilityUserMagic();
                 CompAbilityUserMight mightComp = com.pawnAbility.Pawn.GetCompAbilityUserMight();

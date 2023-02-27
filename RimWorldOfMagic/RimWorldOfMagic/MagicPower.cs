@@ -193,6 +193,7 @@ namespace TorannMagic
                     targetNeutral = true,
                     targetFriendly = true,
                     targetNoFaction = true,
+                    hostileCasterOnly = true,
                     maxRange = 20
                 };
             }

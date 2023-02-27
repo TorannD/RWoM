@@ -44,7 +44,7 @@ namespace TorannMagic
 
             Pawn pawn = this.launcher as Pawn;
             
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+            
             
             if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
             {
@@ -64,7 +64,7 @@ namespace TorannMagic
                 this.arcaneDmg = comp.arcaneDmg;
             }
             
-            if (settingsRef.AIHardMode && !pawn.IsColonist)
+            if (ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist)
             {
                 pwrVal = 3;
                 verVal = 3;

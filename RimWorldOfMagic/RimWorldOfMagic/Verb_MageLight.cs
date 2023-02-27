@@ -18,7 +18,7 @@ namespace TorannMagic
             if (this.currentTarget != null && base.CasterPawn != null)
             {                
                 Map map = this.CasterPawn.Map;
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+                
                 if(this.currentTarget.Thing != null && this.currentTarget.Thing == base.CasterPawn)
                 {
                     if (comp.mageLightActive == true)
