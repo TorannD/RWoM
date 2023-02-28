@@ -68,7 +68,6 @@ namespace TorannMagic
             harmonyInstance.Patch(AccessTools.Method(typeof(Pawn_EquipmentTracker), "AddEquipment"), null,
                  new HarmonyMethod(patchType, nameof(PawnEquipment_Add_Postfix)), null);
 
-            harmonyInstance.Patch(AccessTools.Method(typeof(Pawn), "get_IsColonist", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_IsColonist_Polymorphed"), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(Caravan), "get_NightResting", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_NightResting_Undead", null), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(StaggerHandler), "get_Staggered", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_Staggered", null));
             harmonyInstance.Patch(AccessTools.Method(typeof(Verb_LaunchProjectile), "get_Projectile", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_Projectile_ES", null), null);
@@ -2295,40 +2294,17 @@ namespace TorannMagic
             }
         }
 
-        public static void Get_IsColonist_Polymorphed(Pawn __instance, ref bool __result)
+        [HarmonyPatch(typeof(Pawn), "get_IsColonist", null)]
+        public class IsColonist_Patch
         {
-            if(__result || __instance.Faction == null || __instance.Faction != Faction.OfPlayerSilentFail) return;
-
-            // TryGetComp but faster by avoiding generic isInst
-            CompPolymorph cp = null;
-            for (int i = 0; i < __instance.AllComps.Count; i++)
+            public static void Postfix(Pawn __instance, ref bool __result)
             {
-                if (__instance.AllComps[i] is CompPolymorph)
-                {
-                    cp = __instance.AllComps[i] as CompPolymorph;
-                    break;
-                }
-            }
-            if (cp?.Original != null && cp.Original.RaceProps.Humanlike)
-            {
-                __result = true;                
-            }
+                if (__result) return;
+                CompPolymorph compPolymorph = CompPolymorph.PolymorphCache.TryGetValue(__instance.ThingID);
+                if (compPolymorph?.Original == null) return;
 
-            
-            //if (!__result && p != null && p.Faction == Faction.OfPlayerSilentFail)// __instance.GetComp<CompPolymorph>() != null && __instance.GetComp<CompPolymorph>().Original != null && __instance.GetComp<CompPolymorph>().Original.RaceProps.Humanlike)
-            //{
-            //    CompPolymorph cp = __instance.GetComp<CompPolymorph>();
-            //    if (cp != null && cp.Original != null && cp.Original.RaceProps.Humanlike)
-            //    {
-            //        __result = true;
-            //        return false;
-            //    }
-            //    if (p.health != null && p.health.hediffSet != null && p.health.hediffSet.HasHediff(TorannMagicDefOf.TM_SpiritPossessionHD))
-            //    {
-            //        __result = true;
-            //        return false;
-            //    }
-            //}
+                __result = compPolymorph.Original.IsColonist;
+            }
         }
 
         [HarmonyPatch(typeof(FloatMenuMakerMap), "AddJobGiverWorkOrders", null)]

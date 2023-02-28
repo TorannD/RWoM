@@ -1246,137 +1246,99 @@ namespace TorannMagic
 
         public static Pawn PolymorphPawn(Pawn caster, Pawn original, Pawn polymorphFactionPawn, SpawnThings spawnables, IntVec3 position, bool temporary, int duration, Faction fac = null)
         {
-            Pawn polymorphPawn = null;
-            bool flag = spawnables.def != null;
-            if (flag)
+            if (spawnables.def == null) return null;
+            if (spawnables.def.race == null)
             {
-                Faction faction = TM_Action.ResolveFaction(polymorphFactionPawn, spawnables, fac);
-                bool flag2 = spawnables.def.race != null;
-                if (flag2)
+                Log.Message("Missing race");
+                return null;
+            }
+            if (spawnables.kindDef == null)
+            {
+                Log.Error("Missing kindDef");
+                return null;
+            }
+
+            Faction faction = ResolveFaction(polymorphFactionPawn, spawnables, fac);
+            try
+            {
+                if (ModCheck.Validate.GiddyUp.Core_IsInitialized())
                 {
-                    bool flag3 = spawnables.kindDef == null;
-                    if (flag3)
-                    {
-                        Log.Error("Missing kinddef");
-                    }
-                    else
-                    {
-                        try
-                        {
-                            if (ModCheck.Validate.GiddyUp.Core_IsInitialized())
-                            {
-                                ModCheck.GiddyUp.ForceDismount(original);
-                            }
-                        }
-                        catch
-                        {
-
-                        }
-
-                        Pawn newPawn = new Pawn();
-
-                        newPawn = (Pawn)PawnGenerator.GeneratePawn(spawnables.kindDef, faction);
-                        newPawn.AllComps.Add(new CompPolymorph());
-                        CompPolymorph compPoly = newPawn.GetComp<CompPolymorph>();
-                        //CompProperties_Polymorph props = new CompProperties_Polymorph();
-                        //compPoly.Initialize(props);
-
-                        if (compPoly != null)
-                        {
-                            compPoly.ParentPawn = newPawn;
-                            compPoly.Spawner = caster;
-                            compPoly.Temporary = temporary;
-                            compPoly.TicksToDestroy = duration;
-                            compPoly.Original = original;
-                        }
-                        else
-                        {
-                            Log.Message("CompPolymorph was null.");
-                        }
-
-                        try
-                        {
-                            GenSpawn.Spawn(newPawn, position, original.Map);
-                            polymorphPawn = newPawn;
-
-                            polymorphPawn.drafter = new Pawn_DraftController(polymorphPawn);
-                            polymorphPawn.equipment = new Pawn_EquipmentTracker(polymorphPawn);
-                            polymorphPawn.story = new Pawn_StoryTracker(polymorphPawn);
-                            if (original.workSettings != null)
-                            {
-                                polymorphPawn.workSettings = new Pawn_WorkSettings(polymorphPawn);
-                                DefMap<WorkTypeDef, int> priorities = Traverse.Create(root: original.workSettings).Field(name: "priorities").GetValue<DefMap<WorkTypeDef, int>>();
-                                priorities = new DefMap<WorkTypeDef, int>();
-                                priorities.SetAll(0);
-                                Traverse.Create(root: polymorphPawn.workSettings).Field(name: "priorities").SetValue(priorities);
-                            }
-
-                            //polymorphPawn.apparel = new Pawn_ApparelTracker(polymorphPawn);
-                            //polymorphPawn.mindState = new Pawn_MindState(polymorphPawn);
-                            //polymorphPawn.thinker = new Pawn_Thinker(polymorphPawn);
-                            //polymorphPawn.jobs = new Pawn_JobTracker(polymorphPawn);
-                            //polymorphPawn.records = new Pawn_RecordsTracker(polymorphPawn);
-                            //polymorphPawn.skills = new Pawn_SkillTracker(polymorphPawn);
-                            //PawnComponentsUtility.AddAndRemoveDynamicComponents(polymorphPawn, true);
-
-                            polymorphPawn.Name = original.Name;
-                            polymorphPawn.gender = original.gender;
-
-                            if (original.health.hediffSet.HasHediff(HediffDef.Named("TM_SoulBondPhysicalHD")) || original.health.hediffSet.HasHediff(HediffDef.Named("TM_SoulBondMentalHD")))
-                            {
-                                TM_Action.TransferSoulBond(original, polymorphPawn);
-                            }
-                        }
-                        catch (NullReferenceException ex)
-                        {
-                            Log.Message("TM_Exception".Translate(
-                                caster.LabelShort,
-                                ex.ToString()
-                                ));
-                            polymorphPawn = null;
-                        }
-                        if (polymorphPawn != null && newPawn.Faction != null && newPawn.Faction != Faction.OfPlayer)
-                        {
-                            Lord lord = null;
-                            if (newPawn.Map.mapPawns.SpawnedPawnsInFaction(faction).Any((Pawn p) => p != newPawn))
-                            {
-                                Predicate<Thing> validator = (Thing p) => p != newPawn && ((Pawn)p).GetLord() != null;
-                                Pawn p2 = (Pawn)GenClosest.ClosestThing_Global(newPawn.Position, newPawn.Map.mapPawns.SpawnedPawnsInFaction(faction), 99999f, validator, null);
-                                lord = p2.GetLord();
-                            }
-                            bool flag4 = lord == null;
-                            if (flag4)
-                            {
-                                LordJob_DefendPoint lordJob = new LordJob_DefendPoint(newPawn.Position);
-                                lord = LordMaker.MakeNewLord(faction, lordJob, original.Map, null);
-                            }
-                            try
-                            {
-                                lord.AddPawn(newPawn);
-                            }
-                            catch (NullReferenceException ex)
-                            {
-                                if (lord != null)
-                                {
-                                    LordJob_AssaultColony lordJob = new LordJob_AssaultColony(faction, false, false, false, false);
-                                    lord = LordMaker.MakeNewLord(faction, lordJob, original.Map, null);
-                                }
-                            }
-                        }
-                    }
-                }
-                else
-                {
-                    Log.Message("Missing race");
+                    ModCheck.GiddyUp.ForceDismount(original);
                 }
             }
+            catch
+            {
+
+            }
+
+            Pawn polymorphPawn = PawnGenerator.GeneratePawn(spawnables.kindDef, faction);
+            CompPolymorph compPoly = new CompPolymorph
+            {
+                ParentPawn = polymorphPawn,
+                Spawner = caster,
+                Temporary = temporary,
+                TicksToDestroy = duration,
+                Original = original
+            };
+            polymorphPawn.AllComps.Add(compPoly);
+            CompPolymorph.PolymorphCache.Add(polymorphPawn.ThingID, compPoly);
+
+            GenSpawn.Spawn(polymorphPawn, position, original.Map);
+
+            polymorphPawn.Name = original.Name;
+            polymorphPawn.gender = original.gender;
+            polymorphPawn.drafter = new Pawn_DraftController(polymorphPawn);
+            polymorphPawn.equipment = new Pawn_EquipmentTracker(polymorphPawn);
+            polymorphPawn.story = new Pawn_StoryTracker(polymorphPawn);
+            if (original.workSettings != null)
+            {
+                polymorphPawn.workSettings = new Pawn_WorkSettings(polymorphPawn);
+                DefMap<WorkTypeDef, int> priorities = Traverse.Create(root: original.workSettings).Field(name: "priorities").GetValue<DefMap<WorkTypeDef, int>>();
+                priorities = new DefMap<WorkTypeDef, int>();
+                priorities.SetAll(0);
+                Traverse.Create(root: polymorphPawn.workSettings).Field(name: "priorities").SetValue(priorities);
+            }
+
+            if (original.health.hediffSet.HasHediff(TorannMagicDefOf.TM_SDSoulBondPhysicalHD) || original.health.hediffSet.HasHediff(TorannMagicDefOf.TM_WDSoulBondMentalHD))
+            {
+                TransferSoulBond(original, polymorphPawn);
+            }
+
+            if (polymorphPawn.Faction != null && polymorphPawn.Faction != Faction.OfPlayer)
+            {
+                Lord lord = null;
+                if (polymorphPawn.Map.mapPawns.SpawnedPawnsInFaction(faction).Any(p => p != polymorphPawn))
+                {
+                    Predicate<Thing> validator = t => t != polymorphPawn && ((Pawn)t).GetLord() != null;
+                    Pawn p2 = (Pawn)GenClosest.ClosestThing_Global(polymorphPawn.Position, polymorphPawn.Map.mapPawns.SpawnedPawnsInFaction(faction), 99999f, validator);
+                    lord = p2.GetLord();
+                }
+                if (lord == null)
+                {
+                    LordJob_DefendPoint lordJob = new LordJob_DefendPoint(polymorphPawn.Position);
+                    lord = LordMaker.MakeNewLord(faction, lordJob, original.Map);
+                }
+                try
+                {
+                    lord.AddPawn(polymorphPawn);
+                }
+                catch (NullReferenceException)
+                {
+                    if (lord != null)
+                    {
+                        LordJob_AssaultColony lordJob = new LordJob_AssaultColony(faction, false, false);
+                        LordMaker.MakeNewLord(faction, lordJob, original.Map);
+                    }
+                }
+            }
+
             return polymorphPawn;
         }
 
         public static void TransferSoulBond(Pawn bondedPawn, Pawn polymorphedPawn)
         {
             Hediff bondHediff = null;
-            bondHediff = bondedPawn.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("TM_SoulBondPhysicalHD"), false);
+            bondHediff = bondedPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_SDSoulBondPhysicalHD);
             if (bondHediff != null)
             {
                 HediffComp_SoulBondHost comp = bondHediff.TryGetComp<HediffComp_SoulBondHost>();
@@ -1385,9 +1347,8 @@ namespace TorannMagic
                     comp.polyHost = polymorphedPawn;
                 }
             }
-            bondHediff = null;
 
-            bondHediff = bondedPawn.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("TM_SoulBondMentalHD"), false);
+            bondHediff = bondedPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_WDSoulBondMentalHD);
             if (bondHediff != null)
             {
                 HediffComp_SoulBondHost comp = bondHediff.TryGetComp<HediffComp_SoulBondHost>();
