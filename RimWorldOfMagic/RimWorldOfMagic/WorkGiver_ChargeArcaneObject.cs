@@ -39,21 +39,21 @@ namespace TorannMagic
             CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
             if (comp != null && portal != null && comp.IsMagicUser && comp.Mana.CurLevelPercentage >= .7f && portal.IsPaired && portal.ArcaneEnergyCur < .7f)
             {
-                if (pawn != null && pawn.RaceProps.Humanlike && pawn.workSettings.WorkIsActive(TorannMagicDefOf.TM_Magic) && pawn.health.capacities.GetLevel(TorannMagicDefOf.MagicManipulation) > 0 && pawn.IsColonist && pawn.Awake() && !pawn.Drafted && !pawn.Downed && pawn.CanReserveAndReach(portal, PathEndMode.InteractionCell, Danger.Some))
+                if (pawn != null && pawn.workSettings.WorkIsActive(TorannMagicDefOf.TM_Magic) && pawn.health.capacities.GetLevel(TorannMagicDefOf.MagicManipulation) > 0 && pawn.IsColonist && pawn.Awake() && !pawn.Drafted && !pawn.Downed && pawn.CanReserveAndReach(portal, PathEndMode.InteractionCell, Danger.Some))
                 {
                     return true;
                 }
             }
             if (comp != null && arcaneCapacitor != null && comp.IsMagicUser && comp.Mana.CurLevelPercentage >= .9f && arcaneCapacitor.ArcaneEnergyCur < arcaneCapacitor.TargetArcaneEnergyPct && arcaneCapacitor.CapacitorIsOn)
             {
-                if (pawn != null && pawn.RaceProps.Humanlike && pawn.workSettings.WorkIsActive(TorannMagicDefOf.TM_Magic) && pawn.health.capacities.GetLevel(TorannMagicDefOf.MagicManipulation) > 0 && pawn.IsColonist && pawn.Awake() && !pawn.Drafted && !pawn.Downed && pawn.CanReserveAndReach(arcaneCapacitor, PathEndMode.InteractionCell, Danger.Some))
+                if (pawn != null && pawn.workSettings.WorkIsActive(TorannMagicDefOf.TM_Magic) && pawn.health.capacities.GetLevel(TorannMagicDefOf.MagicManipulation) > 0 && pawn.IsColonist && pawn.Awake() && !pawn.Drafted && !pawn.Downed && pawn.CanReserveAndReach(arcaneCapacitor, PathEndMode.InteractionCell, Danger.Some))
                 {
                     return true;
                 }
             }
             if (comp != null && dmp != null && comp.IsMagicUser && comp.Mana.CurLevelPercentage >= .9f && dmp.ArcaneEnergyCur < dmp.TargetArcaneEnergyPct && dmp.IsOn)
             {
-                if (pawn != null && pawn.RaceProps.Humanlike && pawn.workSettings.WorkIsActive(TorannMagicDefOf.TM_Magic) && pawn.health.capacities.GetLevel(TorannMagicDefOf.MagicManipulation) > 0 && pawn.IsColonist && pawn.Awake() && !pawn.Drafted && !pawn.Downed && pawn.CanReserveAndReach(dmp, PathEndMode.InteractionCell, Danger.Some))
+                if (pawn != null && pawn.workSettings.WorkIsActive(TorannMagicDefOf.TM_Magic) && pawn.health.capacities.GetLevel(TorannMagicDefOf.MagicManipulation) > 0 && pawn.IsColonist && pawn.Awake() && !pawn.Drafted && !pawn.Downed && pawn.CanReserveAndReach(dmp, PathEndMode.InteractionCell, Danger.Some))
                 {
                     return true;
                 }

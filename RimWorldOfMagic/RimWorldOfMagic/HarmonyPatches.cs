@@ -69,7 +69,6 @@ namespace TorannMagic
                  new HarmonyMethod(patchType, nameof(PawnEquipment_Add_Postfix)), null);
 
             harmonyInstance.Patch(AccessTools.Method(typeof(Pawn), "get_IsColonist", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_IsColonist_Polymorphed"), null);
-            harmonyInstance.Patch(AccessTools.Method(typeof(Caravan), "get_NightResting", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_NightResting_Undead", null), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(StaggerHandler), "get_Staggered", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_Staggered", null));
             harmonyInstance.Patch(AccessTools.Method(typeof(Verb_LaunchProjectile), "get_Projectile", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_Projectile_ES", null), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(WindManager), "get_WindSpeed", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_WindSpeed", null), null);
@@ -2052,7 +2051,7 @@ namespace TorannMagic
         {
             public static bool Prefix(IncidentWorker __instance, ref IncidentParms parms, ref bool __result)
             {
-                if (__instance != null && __instance.def != null && parms != null && __instance.def.defName != "VisitorGroup" && __instance.def.defName != "VisitorGroupMax" && !__instance.def.defName.Contains("Cult") && parms.quest == null && !parms.forced && !__instance.def.workerClass.ToString().StartsWith("Rumor_Code"))
+                if (__instance?.def != null && parms != null && __instance.def.defName != "VisitorGroup" && __instance.def.defName != "VisitorGroupMax" && !__instance.def.defName.Contains("Cult") && parms.quest == null && !parms.forced && !__instance.def.workerClass.ToString().StartsWith("Rumor_Code"))
                 {
                     try
                     {
@@ -2061,75 +2060,71 @@ namespace TorannMagic
                         {
                             for (int i = 0; i < allMaps.Count; i++)
                             {
-                                if (parms != null && parms.target != null && allMaps[i].Tile == parms.target.Tile)
+                                if (parms?.target != null && allMaps[i].Tile == parms.target.Tile)
                                 {
                                     List<Pawn> mapPawns = allMaps[i].mapPawns.AllPawnsSpawned.InRandomOrder().ToList();
-                                    if (mapPawns != null && mapPawns.Count > 0)
+                                    List<Pawn> predictingPawnsAvailable = new List<Pawn>();
+                                    for (int j = 0; j < mapPawns.Count; j++)
                                     {
-
-                                        List<Pawn> predictingPawnsAvailable = new List<Pawn>();
-                                        predictingPawnsAvailable.Clear();
-                                        for (int j = 0; j < mapPawns.Count; j++)
+                                        Pawn pawn = mapPawns[j];
+                                        if (pawn.health?.hediffSet != null && pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_PredictionHD) && mapPawns[j].IsColonist)
                                         {
-                                            if (mapPawns[j].health != null && mapPawns[j].health.hediffSet != null && mapPawns[j].health.hediffSet.HasHediff(TorannMagicDefOf.TM_PredictionHD, false) && mapPawns[j].IsColonist)
+                                            CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
+                                            if (comp?.MagicData != null)
                                             {
-                                                CompAbilityUserMagic comp = mapPawns[j].GetCompAbilityUserMagic();
-                                                if (comp != null && comp.MagicData != null)
+                                                if (comp.predictionIncidentDef != null)
                                                 {
-                                                    if (comp.predictionIncidentDef != null)
+                                                    //Log.Message("attempt to execute prediction " + comp.predictionIncidentDef.defName);
+                                                    if (comp.predictionIncidentDef == __instance.def && parms.GetHashCode() == comp.predictionHash)
                                                     {
-                                                        //Log.Message("attempt to execute prediction " + comp.predictionIncidentDef.defName);
-                                                        if (comp.predictionIncidentDef == __instance.def && parms.GetHashCode() == comp.predictionHash)
+                                                        comp.predictionIncidentDef = null;
+                                                        if (__instance.def.letterLabel != null)
                                                         {
-                                                            comp.predictionIncidentDef = null;
-                                                            if (__instance.def.letterLabel != null)
-                                                            {
-                                                                parms.customLetterLabel = "Predicted " + __instance.def.letterLabel;
-                                                            }
-                                                            else
-                                                            {
-                                                                parms.customLetterLabel = "Predicted " + __instance.def.label;
-                                                            }
-                                                            return true;
+                                                            parms.customLetterLabel = "Predicted " + __instance.def.letterLabel;
                                                         }
-                                                    }
-                                                    else
-                                                    {
-                                                        predictingPawnsAvailable.AddDistinct(mapPawns[j]);
+                                                        else
+                                                        {
+                                                            parms.customLetterLabel = "Predicted " + __instance.def.label;
+                                                        }
+                                                        return true;
                                                     }
                                                 }
-                                            }
-                                        }
-                                        for (int j = 0; j < predictingPawnsAvailable.Count; j++)
-                                        {
-                                            CompAbilityUserMagic comp = predictingPawnsAvailable[j].GetCompAbilityUserMagic();
-                                            MagicPowerSkill ver = comp.MagicData.MagicPowerSkill_Prediction.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Prediction_ver");
-                                            if (__instance.CanFireNow(parms) && !ModOptions.Constants.GetBypassPrediction() && Rand.Chance(.25f + (.05f * ver.level))) //up to 40% chance to predict, per chronomancer
-                                            {
-                                                if (__instance.def.category != null && (__instance.def.category == IncidentCategoryDefOf.ThreatBig || __instance.def.category == IncidentCategoryDefOf.ThreatSmall || __instance.def.category == IncidentCategoryDefOf.DeepDrillInfestation ||
-                                                    __instance.def.category == IncidentCategoryDefOf.DiseaseAnimal || __instance.def.category == IncidentCategoryDefOf.DiseaseHuman || __instance.def.category == IncidentCategoryDefOf.Misc))
+                                                else
                                                 {
-                                                    //Log.Message("prediction is " + __instance.def.defName + " and can fire now: " + __instance.CanFireNow(parms, false));
-                                                    int ticksTillIncident = Mathf.RoundToInt((Rand.Range(1800, 3600) * (1 + (.15f * ver.level))));  // from .72 to 1.44 hours, plus bonus (1.05 - 2.1)
-                                                    //Log.Message("prediction of " + parms.GetHashCode());                                                                             //Log.Message("pushing " + __instance.def.defName + " to iq for " + ticksTillIncident  + " ticks");
-                                                    comp.predictionIncidentDef = __instance.def;
-                                                    comp.predictionTick = Find.TickManager.TicksGame + ticksTillIncident;
-                                                    comp.predictionHash = parms.GetHashCode();
-                                                    QueuedIncident iq = new QueuedIncident(new FiringIncident(__instance.def, null, parms), comp.predictionTick);
-                                                    Find.Storyteller.incidentQueue.Add(iq);
-                                                    string labelText = "TM_PredictionLetter".Translate(__instance.def.label);
-                                                    string text = "TM_PredictionText".Translate(predictingPawnsAvailable[j].LabelShort, __instance.def.label, Mathf.RoundToInt(ticksTillIncident / 2500));
-                                                    //Log.Message("attempting to push letter");
-                                                    Find.LetterStack.ReceiveLetter(labelText, text, LetterDefOf.NeutralEvent, null);
-                                                    int xpNum = Rand.Range(60, 120);
-                                                    comp.MagicUserXP += xpNum;
-                                                    MoteMaker.ThrowText(comp.Pawn.DrawPos, comp.Pawn.Map, "XP +" + xpNum, -1f);
-                                                    __result = true;
-                                                    return false;
+                                                    predictingPawnsAvailable.AddDistinct(pawn);
                                                 }
                                             }
                                         }
                                     }
+                                    for (int j = 0; j < predictingPawnsAvailable.Count; j++)
+                                    {
+                                        CompAbilityUserMagic comp = predictingPawnsAvailable[j].GetCompAbilityUserMagic();
+                                        MagicPowerSkill ver = comp.MagicData.MagicPowerSkill_Prediction.First(static mps => mps.label == "TM_Prediction_ver");
+                                        if (__instance.CanFireNow(parms) && !ModOptions.Constants.GetBypassPrediction() && Rand.Chance(.25f + .05f * ver.level)) //up to 40% chance to predict, per chronomancer
+                                        {
+                                            if (__instance.def.category != null && (__instance.def.category == IncidentCategoryDefOf.ThreatBig || __instance.def.category == IncidentCategoryDefOf.ThreatSmall || __instance.def.category == IncidentCategoryDefOf.DeepDrillInfestation ||
+                                                __instance.def.category == IncidentCategoryDefOf.DiseaseAnimal || __instance.def.category == IncidentCategoryDefOf.DiseaseHuman || __instance.def.category == IncidentCategoryDefOf.Misc))
+                                            {
+                                                //Log.Message("prediction is " + __instance.def.defName + " and can fire now: " + __instance.CanFireNow(parms, false));
+                                                int ticksTillIncident = Mathf.RoundToInt(Rand.Range(1800, 3600) * (1 + .15f * ver.level));  // from .72 to 1.44 hours, plus bonus (1.05 - 2.1)
+                                                comp.predictionIncidentDef = __instance.def;
+                                                comp.predictionTick = Find.TickManager.TicksGame + ticksTillIncident;
+                                                comp.predictionHash = parms.GetHashCode();
+                                                QueuedIncident iq = new QueuedIncident(new FiringIncident(__instance.def, null, parms), comp.predictionTick);
+                                                Find.Storyteller.incidentQueue.Add(iq);
+                                                string labelText = "TM_PredictionLetter".Translate(__instance.def.label);
+                                                string text = "TM_PredictionText".Translate(predictingPawnsAvailable[j].LabelShort, __instance.def.label, Mathf.RoundToInt(ticksTillIncident / 2500));
+                                                //Log.Message("attempting to push letter");
+                                                Find.LetterStack.ReceiveLetter(labelText, text, LetterDefOf.NeutralEvent);
+                                                int xpNum = Rand.Range(60, 120);
+                                                comp.MagicUserXP += xpNum;
+                                                MoteMaker.ThrowText(comp.Pawn.DrawPos, comp.Pawn.Map, "XP +" + xpNum);
+                                                __result = true;
+                                                return false;
+                                            }
+                                        }
+                                    }
+
                                 }
                             }
                         }
@@ -2167,7 +2162,7 @@ namespace TorannMagic
             {
                 if (pawn.DestroyedOrNull() && pawn.health != null && pawn.health.hediffSet != null)
                 {
-                    if (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_ArcaneWeakness, false))
+                    if (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_ArcaneWeakness))
                     {
                         Hediff hediff = pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_ArcaneWeakness);
                         if (hediff.Severity >= 10)
@@ -2175,7 +2170,7 @@ namespace TorannMagic
                             __result = true;
                         }
                     }
-                    if (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_ManaSickness, false))
+                    if (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_ManaSickness))
                     {
                         Hediff hediff = pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_ManaSickness);
                         if (hediff.Severity >= 4)
@@ -2280,16 +2275,14 @@ namespace TorannMagic
         {
             public static void Postfix(ref List<Pawn> __result)
             {
-                if (__result != null)
+                if (__result == null) return;
+
+                for (int i = __result.Count - 1; i >= 0; i--)
                 {
-                    for (int i = 0; i < __result.Count; i++)
+                    CompPolymorph comp = __result[i].GetComp<CompPolymorph>();
+                    if (comp?.Original != null)
                     {
-                        CompPolymorph comp = __result[i].GetComp<CompPolymorph>();
-                        if (comp != null && comp.Original != null)
-                        {
-                            __result.Remove(__result[i]);
-                            i--;
-                        }
+                        __result.RemoveAt(i);
                     }
                 }
             }
@@ -2314,7 +2307,7 @@ namespace TorannMagic
                 __result = true;                
             }
 
-            
+
             //if (!__result && p != null && p.Faction == Faction.OfPlayerSilentFail)// __instance.GetComp<CompPolymorph>() != null && __instance.GetComp<CompPolymorph>().Original != null && __instance.GetComp<CompPolymorph>().Original.RaceProps.Humanlike)
             //{
             //    CompPolymorph cp = __instance.GetComp<CompPolymorph>();
@@ -3123,35 +3116,25 @@ namespace TorannMagic
             return true;
         }
 
-        private static readonly HashSet<HediffDef> UndeadHediffDefs = new HashSet<HediffDef>()
+        private static readonly HediffDef[] UndeadHediffDefs =
         {
             TorannMagicDefOf.TM_UndeadHD,
             TorannMagicDefOf.TM_UndeadAnimalHD,
             TorannMagicDefOf.TM_LichHD
         };
 
-        public static bool Get_NightResting_Undead(Caravan __instance, ref bool __result)
+        [HarmonyPatch(typeof(Caravan), "get_NightResting")]
+        public class NightResting_Undead_Patch
         {
-            List<Pawn> caravan = __instance.PawnsListForReading;
-            bool anyLivingColonists = caravan.Any(pawn =>
-                pawn.IsColonist
-                && !pawn.health.hediffSet.hediffs.Any(hediff => UndeadHediffDefs.Contains(hediff.def))
-            );
-            __result = anyLivingColonists;
-            return anyLivingColonists;
-
-            //List<Pawn> undeadCaravan = __instance.PawnsListForReading;
-            //bool allUndead = true;
-            //for (int i = 0; i < undeadCaravan.Count; i++)
-            //{
-            //    if (undeadCaravan[i].IsColonist && !(undeadCaravan[i].health.hediffSet.HasHediff(HediffDef.Named("TM_UndeadHD")) || undeadCaravan[i].health.hediffSet.HasHediff(HediffDef.Named("TM_UndeadAnimalHD")) || undeadCaravan[i].health.hediffSet.HasHediff(HediffDef.Named("TM_LichHD"))))
-            //    {
-            //        allUndead = false;
-            //        break;
-            //    }
-            //}
-            //__result = !allUndead;
-            //return !allUndead;
+            // Pass through Postfix: https://harmony.pardeike.net/articles/patching-postfix.html#pass-through-postfixes
+            public static bool Get_NightResting_Undead(bool result, Caravan __instance)
+            {
+                return __instance.PawnsListForReading.Any(static pawn =>
+                    pawn.IsColonist
+                    && !pawn.health.hediffSet.hediffs.Any(
+                        static hediff => Array.IndexOf(UndeadHediffDefs, hediff.def) != -1)
+                );
+            }
         }
 
         [HarmonyPriority(2000)]
@@ -3694,10 +3677,8 @@ namespace TorannMagic
             {
                 Traverse traverse = Traverse.Create(__instance);
                 Pawn pawn = (Pawn)CheckForStateChange_Patch.pawn.GetValue(__instance);
-                
 
-                bool flag = pawn != null && dinfo.HasValue && hediff != null;
-                if (flag)
+                if (pawn != null && dinfo.HasValue && hediff != null)
                 {
                     if (pawn != null && !pawn.IsColonist)
                     {
@@ -6876,7 +6857,7 @@ namespace TorannMagic
                 {
                     Traverse traverse = Traverse.Create(__instance);
                     Pawn pawn = (Pawn)InteractionsTrackerTick_Patch.pawn.GetValue(__instance);
-                    if (pawn.IsColonist && !pawn.Downed && !pawn.Dead && pawn.RaceProps.Humanlike)
+                    if (pawn.IsColonist && !pawn.Downed && !pawn.Dead)
                     {
                         CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
                         int lastInteractionTime = (int)InteractionsTrackerTick_Patch.lastInteractionTime.GetValue(__instance);

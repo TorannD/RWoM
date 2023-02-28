@@ -558,40 +558,54 @@ namespace TorannMagic
         {
             if (shouldDraw && IsMagicUser)
             {
-                
-                if (ModOptions.Settings.Instance.AIFriendlyMarking && base.Pawn.IsColonist && this.IsMagicUser)
+                if (Pawn.Faction.IsPlayer)
                 {
-                    if (!this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+                    if (ModOptions.Settings.Instance.AIFriendlyMarking)
                     {
-                        DrawMark();
+                        if (!Pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+                        {
+                            DrawMark();
+                        }
                     }
                 }
-                if (ModOptions.Settings.Instance.AIMarking && !base.Pawn.IsColonist && this.IsMagicUser)
+                else
                 {
-                    if (!this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+                    if (ModOptions.Settings.Instance.AIMarking)
                     {
-                        DrawMark();
+                        if (!Pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+                        {
+                            DrawMark();
+                        }
                     }
                 }
 
-                if (this.MagicData.MagicPowersT.FirstOrDefault<MagicPower>((MagicPower mp) => mp.abilityDef == TorannMagicDefOf.TM_TechnoBit).learned == true && this.Pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_TechnoBitHD))
+                // Go through all hediffs at once
+                for (int i = 0; i < Pawn.health.hediffSet.hediffs.Count; i++)
                 {
-                    DrawTechnoBit();
+                    HediffDef def = Pawn.health.hediffSet.hediffs[i].def;
+                    if (def == TorannMagicDefOf.TM_TechnoBitHD
+                        && MagicData.MagicPowersT.First(static mp => mp.abilityDef == TorannMagicDefOf.TM_TechnoBit).learned)
+                    {
+                        DrawTechnoBit();
+                    }
+
+                    if (def == TorannMagicDefOf.TM_DemonScornHD
+                        || def == TorannMagicDefOf.TM_DemonScornHD_I
+                        || def == TorannMagicDefOf.TM_DemonScornHD_II
+                        || def == TorannMagicDefOf.TM_DemonScornHD_III)
+                    {
+                        DrawScornWings();
+                    }
                 }
 
-                if (this.Pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_DemonScornHD) || this.Pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_DemonScornHD_I) || this.Pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_DemonScornHD_II) || this.Pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_DemonScornHD_III))
-                {
-                    DrawScornWings();
-                }
-
-                if (this.mageLightActive)
+                if (mageLightActive)
                 {
                     DrawMageLight();
                 }
 
-                Enchantment.CompEnchant compEnchant = this.Pawn.GetComp<Enchantment.CompEnchant>();
+                Enchantment.CompEnchant compEnchant = Pawn.GetComp<Enchantment.CompEnchant>();
 
-                if (this.IsMagicUser && compEnchant != null && compEnchant.enchantingContainer != null && compEnchant.enchantingContainer.Count > 0)
+                if (IsMagicUser && compEnchant?.enchantingContainer != null && compEnchant.enchantingContainer.Count > 0)
                 {
                     DrawEnchantMark();
                 }
@@ -602,32 +616,30 @@ namespace TorannMagic
 
         private void DrawTechnoBit()
         {
-            float num = Mathf.Lerp(1.2f, 1.55f, 1f);
-            if (this.bitFloatingDown)
+            if (bitFloatingDown)
             {
-                if (this.bitOffset < .38f)
+                if (bitOffset < .38f)
                 {
-                    this.bitFloatingDown = false;
+                    bitFloatingDown = false;
                 }
-                this.bitOffset -= .001f;
+                bitOffset -= .001f;
             }
             else
             {
-                if (this.bitOffset > .57f)
+                if (bitOffset > .57f)
                 {
-                    this.bitFloatingDown = true;
+                    bitFloatingDown = true;
                 }
-                this.bitOffset += .001f;
+                bitOffset += .001f;
             }
 
-            this.bitPosition = this.Pawn.Drawer.DrawPos;
-            this.bitPosition.x -= .5f + Rand.Range(-.01f, .01f);
-            this.bitPosition.z += this.bitOffset;
-            this.bitPosition.y = Altitudes.AltitudeFor(AltitudeLayer.MoteOverhead);
-            float angle = 0f;
+            bitPosition = Pawn.Drawer.DrawPos;
+            bitPosition.x -= .5f + Rand.Range(-.01f, .01f);
+            bitPosition.z += bitOffset;
+            bitPosition.y = AltitudeLayer.MoteOverhead.AltitudeFor();
             Vector3 s = new Vector3(.35f, 1f, .35f);
             Matrix4x4 matrix = default(Matrix4x4);
-            matrix.SetTRS(this.bitPosition, Quaternion.AngleAxis(angle, Vector3.up), s);
+            matrix.SetTRS(bitPosition, Quaternion.AngleAxis(0f, Vector3.up), s);
             Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.bitMat, 0);
         }
 
@@ -635,10 +647,9 @@ namespace TorannMagic
         {
             if (!mageLightSet)
             {
-                float num = Mathf.Lerp(1.2f, 1.55f, 1f);
                 Vector3 lightPos = Vector3.zero;
 
-                lightPos = this.Pawn.Drawer.DrawPos;
+                lightPos = Pawn.Drawer.DrawPos;
                 lightPos.x -= .5f;
                 lightPos.z += .6f;
 
@@ -661,32 +672,24 @@ namespace TorannMagic
 
         public void DrawScornWings()
         {
-            bool flag = !this.Pawn.Dead && !this.Pawn.Downed;
-            if (flag)
+            if (Pawn.Dead || Pawn.Downed) return;
+
+            Vector3 vector = Pawn.Drawer.DrawPos;
+            vector.y = Pawn.Rotation == Rot4.North ? AltitudeLayer.PawnState.AltitudeFor() : AltitudeLayer.Pawn.AltitudeFor();
+            Vector3 s = new Vector3(3f, 3f, 3f);
+            Matrix4x4 matrix = default(Matrix4x4);
+            matrix.SetTRS(vector, Quaternion.AngleAxis(0f, Vector3.up), s);
+            if (Pawn.Rotation == Rot4.South || Pawn.Rotation == Rot4.North)
             {
-                float num = Mathf.Lerp(1.2f, 1.55f, 1f);
-                Vector3 vector = this.Pawn.Drawer.DrawPos;
-                vector.y = Altitudes.AltitudeFor(AltitudeLayer.Pawn);
-                if (this.Pawn.Rotation == Rot4.North)
-                {
-                    vector.y = Altitudes.AltitudeFor(AltitudeLayer.PawnState);
-                }
-                float angle = (float)Rand.Range(0, 360);
-                Vector3 s = new Vector3(3f, 3f, 3f);
-                Matrix4x4 matrix = default(Matrix4x4);
-                matrix.SetTRS(vector, Quaternion.AngleAxis(0f, Vector3.up), s);
-                if (this.Pawn.Rotation == Rot4.South || this.Pawn.Rotation == Rot4.North)
-                {
-                    Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.scornWingsNS, 0);
-                }
-                if (this.Pawn.Rotation == Rot4.East)
-                {
-                    Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.scornWingsE, 0);
-                }
-                if (this.Pawn.Rotation == Rot4.West)
-                {
-                    Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.scornWingsW, 0);
-                }
+                Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.scornWingsNS, 0);
+            }
+            if (Pawn.Rotation == Rot4.East)
+            {
+                Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.scornWingsE, 0);
+            }
+            if (Pawn.Rotation == Rot4.West)
+            {
+                Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.scornWingsW, 0);
             }
         }
 
@@ -797,29 +800,24 @@ namespace TorannMagic
                             }
                             if (Find.TickManager.TicksGame % 60 == 0)
                             {
-                                if (this.Pawn.IsColonist && !this.magicPowersInitializedForColonist)
+                                if (Pawn.IsColonist)
                                 {
-                                    ResolveFactionChange();
-                                }
-                                else if (!this.Pawn.IsColonist)
-                                {
-                                    this.magicPowersInitializedForColonist = false;
-                                }
+                                    if (!magicPowersInitializedForColonist) ResolveFactionChange();
 
-                                if (this.Pawn.IsColonist)
-                                {
                                     ResolveEnchantments();
-                                    for (int i = 0; i < this.summonedMinions.Count; i++)
+                                    for (int i = 0; i < summonedMinions.Count; i++)
                                     {
-                                        Pawn evaluateMinion = this.summonedMinions[i] as Pawn;
+                                        Pawn evaluateMinion = summonedMinions[i] as Pawn;
                                         if (evaluateMinion == null || evaluateMinion.Dead || evaluateMinion.Destroyed)
                                         {
-                                            this.summonedMinions.Remove(this.summonedMinions[i]);
+                                            summonedMinions.Remove(summonedMinions[i]);
                                         }
                                     }
                                     ResolveMinions();
                                     ResolveSustainers();
-                                    if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Necromancer) || this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Lich) || (this.customClass != null && this.customClass.isNecromancer))
+                                    if (Pawn.story.traits.HasTrait(TorannMagicDefOf.Necromancer)
+                                        || Pawn.story.traits.HasTrait(TorannMagicDefOf.Lich)
+                                        || (customClass != null && customClass.isNecromancer))
                                     {
                                         ResolveUndead();
                                     }
@@ -827,6 +825,10 @@ namespace TorannMagic
                                     ResolveClassSkills();
                                     ResolveSpiritOfLight();
                                     ResolveChronomancerTimeMark();
+                                }
+                                else
+                                {
+                                    magicPowersInitializedForColonist = false;
                                 }
                             }
                             
@@ -1323,8 +1325,7 @@ namespace TorannMagic
         public override void PostInitialize()
         {
             base.PostInitialize();
-            bool flag = CompAbilityUserMagic.MagicAbilities == null;
-            if (flag)
+            if (MagicAbilities == null)
             {
                 if (this.magicPowersInitialized == false && this.MagicData != null)
                 {
@@ -6379,7 +6380,7 @@ namespace TorannMagic
             if (Rand.Chance(this.Pawn.GetStatValue(StatDefOf.PsychicSensitivity, false) - 1))
             {
                 Pawn otherPawn = TM_Calc.FindNearbyOtherPawn(this.Pawn, 5);
-                if (otherPawn != null && otherPawn.RaceProps.Humanlike && otherPawn.IsColonist)
+                if (otherPawn != null && otherPawn.IsColonist)
                 {
                     if (Rand.Chance(otherPawn.GetStatValue(StatDefOf.PsychicSensitivity, false) - .3f))
                     {

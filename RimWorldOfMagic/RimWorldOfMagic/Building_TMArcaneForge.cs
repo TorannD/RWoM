@@ -133,7 +133,7 @@ namespace TorannMagic
                     List<Pawn> mapPawns = this.Map.mapPawns.AllPawnsSpawned;
                     for(int j =0; j < mapPawns.Count; j++)
                     {
-                        if(mapPawns[j].IsColonist && mapPawns[j].RaceProps.Humanlike && mapPawns[j].CurJob != null && mapPawns[j].CurJob.bill != null)
+                        if(mapPawns[j].IsColonist && mapPawns[j].CurJob?.bill != null)
                         {
                             if (mapPawns[j].CurJob.bill.recipe.defName == this.BillStack[i].recipe.defName)
                             {
