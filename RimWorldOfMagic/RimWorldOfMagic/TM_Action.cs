@@ -1281,7 +1281,6 @@ namespace TorannMagic
                 Original = original
             };
             polymorphPawn.AllComps.Add(compPoly);
-            CompPolymorph.PolymorphCache.Add(polymorphPawn.ThingID, compPoly);
 
             GenSpawn.Spawn(polymorphPawn, position, original.Map);
 

@@ -8,9 +8,6 @@ namespace TorannMagic
 {
     public class CompPolymorph : ThingComp
     {
-        // This dictionary is for faster reference than TryGetComp
-        public static Dictionary<string, CompPolymorph> PolymorphCache = new Dictionary<string, CompPolymorph>();
-
         private CompAbilityUserMagic compSummoner;
         private Pawn spawner;
         private Pawn original;
@@ -102,51 +99,47 @@ namespace TorannMagic
 
         public override void CompTick()
         {
-            if (original != null)
+            if (original == null) return;
+            base.CompTick();
+            if (Find.TickManager.TicksGame % 4 != 0) return;
+            if (!initialized)
             {
-                base.CompTick();
-                if (Find.TickManager.TicksGame % 4 == 0)
+                initialized = true;
+                SpawnSetup();
+            }
+            activeMap = ParentPawn.Map;
+            if (temporary && initialized)
+            {
+                ticksLeft -= 4;
+                if (ticksLeft <= 0)
                 {
-                    if (!initialized)
+                    PreDestroy();
+                    ParentPawn.Destroy();
+                }
+                CheckPawnState();
+                if (parent.Spawned)
+                {
+                    if (effecter == null)
                     {
-                        initialized = true;
-                        SpawnSetup();
+                        EffecterDef progressBar = EffecterDefOf.ProgressBar;
+                        effecter = progressBar.Spawn();
                     }
-                    activeMap = ParentPawn.Map;
-                    if (temporary && initialized)
+                    else
                     {
-                        ticksLeft -= 4;
-                        if (ticksLeft <= 0)
+                        effecter.EffectTick(parent, TargetInfo.Invalid);
+                        MoteProgressBar mote = ((SubEffecter_ProgressBar)effecter.children[0]).mote;
+                        if (mote != null)
                         {
-                            PreDestroy();
-                            ParentPawn.Destroy();
+                            float value = 1f - (float)(TicksToDestroy - ticksLeft) / TicksToDestroy;
+                            mote.progress = Mathf.Clamp01(value);
+                            mote.offsetZ = -0.5f;
                         }
-                        CheckPawnState();
-                        if (parent.Spawned)
-                        {
-                            if (effecter == null)
-                            {
-                                EffecterDef progressBar = EffecterDefOf.ProgressBar;
-                                effecter = progressBar.Spawn();
-                            }
-                            else
-                            {
-                                effecter.EffectTick(parent, TargetInfo.Invalid);
-                                MoteProgressBar mote = ((SubEffecter_ProgressBar)effecter.children[0]).mote;
-                                if (mote != null)
-                                {
-                                    float value = 1f - (float)(TicksToDestroy - ticksLeft) / TicksToDestroy;
-                                    mote.progress = Mathf.Clamp01(value);
-                                    mote.offsetZ = -0.5f;
-                                }
-                            }
-                        }
-                    }
-                    else if(initialized && !temporary && parent.Spawned)
-                    {
-                        CheckPawnState();
                     }
                 }
+            }
+            else if(initialized && !temporary && parent.Spawned)
+            {
+                CheckPawnState();
             }
         }
 
@@ -179,7 +172,6 @@ namespace TorannMagic
             if (original == null) return;
 
             //CopyDamage(ParentPawn); removed for polymorph balance
-            PolymorphCache.Remove(ParentPawn.ThingID);
             SpawnOriginal(ParentPawn.Map);
             ApplyDamage(original);
             original = null;

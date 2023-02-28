@@ -2299,11 +2299,22 @@ namespace TorannMagic
         {
             public static void Postfix(Pawn __instance, ref bool __result)
             {
-                if (__result) return;
-                CompPolymorph compPolymorph = CompPolymorph.PolymorphCache.TryGetValue(__instance.ThingID);
-                if (compPolymorph?.Original == null) return;
+                if(__result || __instance.Faction == null || __instance.Faction != Faction.OfPlayerSilentFail) return;
 
-                __result = compPolymorph.Original.IsColonist;
+                // TryGetComp but faster by avoiding generic isInst
+                CompPolymorph cp = null;
+                for (int i = 0; i < __instance.AllComps.Count; i++)
+                {
+                    if (__instance.AllComps[i] is CompPolymorph)
+                    {
+                        cp = __instance.AllComps[i] as CompPolymorph;
+                        break;
+                    }
+                }
+                if (cp?.Original != null && cp.Original.RaceProps.Humanlike)
+                {
+                    __result = true;
+                }
             }
         }
 
