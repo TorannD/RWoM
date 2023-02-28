@@ -350,7 +350,7 @@ namespace TorannMagic
                     int count = Mathf.Min(threatPawns.Count, 10);
                     for (int i = 0; i < count; i++)
                     {
-                        if (threatPawns[i].Faction != null && this.Pawn.Faction != null && threatPawns[i].Faction.HostileTo(this.Pawn.Faction) && !threatPawns[i].IsColonist)
+                        if (threatPawns[i].Faction != null && Pawn.Faction != null && threatPawns[i].Faction.HostileTo(Pawn.Faction))
                         {
                             if (threatPawns[i].jobs != null && threatPawns[i].CurJob != null && threatPawns[i].CurJob.targetA != null && threatPawns[i].CurJob.targetA.Thing != null && threatPawns[i].CurJob.targetA.Thing != this.Pawn)
                             {

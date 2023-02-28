@@ -991,7 +991,7 @@ namespace TorannMagic.AutoCast
     {
         public static void Execute(Job job, Pawn caster)
         {
-            if (caster.IsColonist && ModOptions.Settings.Instance.autocastQueueing && !caster.Drafted && caster.CurJobDef != JobDefOf.Hunt)
+            if (ModOptions.Settings.Instance.autocastQueueing && !caster.Drafted && caster.CurJobDef != JobDefOf.Hunt && caster.IsColonist)
             {
                 if (caster.jobs.jobQueue.Count < 1)
                 {

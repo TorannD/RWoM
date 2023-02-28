@@ -94,35 +94,33 @@ namespace TorannMagic
             //base.PostAbilityAttempt();
             
             
-            if (!this.Pawn.IsColonist && ModOptions.Settings.Instance.AIAggressiveCasting)// for AI
+            if (ModOptions.Settings.Instance.AIAggressiveCasting && !Pawn.IsColonist)// for AI
             {
-                this.CooldownTicksLeft = Mathf.RoundToInt(this.MaxCastingTicks/2f);
+                CooldownTicksLeft = Mathf.RoundToInt(MaxCastingTicks/2f);
             }
             else
             {
-                this.CooldownTicksLeft = Mathf.RoundToInt(this.MaxCastingTicks * this.MagicUser.coolDown);
+                this.CooldownTicksLeft = Mathf.RoundToInt(MaxCastingTicks * MagicUser.coolDown);
             }
             if(Rand.Chance(MagicUser.arcalleumCooldown))
             {
                 this.CooldownTicksLeft = 4;
             }
-            bool flag = this.magicDef != null;
-            if (flag)
+            if (magicDef != null)
             {
                 if (this.Pawn.IsColonist)
                 {
-                    Find.HistoryEventsManager.RecordEvent(new HistoryEvent(TorannMagicDefOf.TM_UsedMagic, this.Pawn.Named(HistoryEventArgsNames.Doer), this.Pawn.Named(HistoryEventArgsNames.Subject), this.Pawn.Named(HistoryEventArgsNames.AffectedFaction), this.Pawn.Named(HistoryEventArgsNames.Victim)), true);
+                    Find.HistoryEventsManager.RecordEvent(new HistoryEvent(TorannMagicDefOf.TM_UsedMagic, Pawn.Named(HistoryEventArgsNames.Doer), Pawn.Named(HistoryEventArgsNames.Subject), Pawn.Named(HistoryEventArgsNames.AffectedFaction), Pawn.Named(HistoryEventArgsNames.Victim)));
                 }
-                bool flag3 = this.MagicUser.Mana != null;
-                if (flag3)
+                if (MagicUser.Mana != null)
                 {
-                    if(!this.Pawn.IsColonist && ModOptions.Settings.Instance.AIAggressiveCasting)// for AI
+                    if(ModOptions.Settings.Instance.AIAggressiveCasting && !Pawn.IsColonist)// for AI
                     {
-                        this.MagicUser.Mana.UseMagicPower(this.MagicUser.ActualManaCost(magicDef)/2f);
+                        MagicUser.Mana.UseMagicPower(MagicUser.ActualManaCost(magicDef)/2f);
                     }
                     else
                     {                       
-                        this.MagicUser.Mana.UseMagicPower(this.MagicUser.ActualManaCost(magicDef));
+                        MagicUser.Mana.UseMagicPower(MagicUser.ActualManaCost(magicDef));
                     }
                                        
                     if(this.magicDef != TorannMagicDefOf.TM_TransferMana && magicDef.abilityHediff == null)

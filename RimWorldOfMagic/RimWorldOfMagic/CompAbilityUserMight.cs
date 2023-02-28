@@ -228,48 +228,50 @@ namespace TorannMagic
             if (!shouldDraw) return;
 
             base.PostDraw();
-            if (Pawn.health.hediffSet.hediffs.Any(hediff =>
-                    hediff.def == TorannMagicDefOf.TM_PossessionHD
-                    || hediff.def == TorannMagicDefOf.TM_CoOpPossessionHD
-                    || hediff.def == TorannMagicDefOf.TM_PossessionHD_I
-                    || hediff.def == TorannMagicDefOf.TM_PossessionHD_II
-                    || hediff.def == TorannMagicDefOf.TM_PossessionHD_III
-                    || hediff.def == TorannMagicDefOf.TM_CoOpPossessionHD_I
-                    || hediff.def == TorannMagicDefOf.TM_CoOpPossessionHD_II
-                    || hediff.def == TorannMagicDefOf.TM_CoOpPossessionHD_III
-                ))
+            for (int i = 0; i < Pawn.health.hediffSet.hediffs.Count; i++)
             {
-                DrawDeceptionTicker(true);
-            }
-            else if (Pawn.health.hediffSet.hediffs.Any(hediff =>
-                 hediff.def == TorannMagicDefOf.TM_DisguiseHD
-                 || hediff.def == TorannMagicDefOf.TM_DisguiseHD_I
-                 || hediff.def == TorannMagicDefOf.TM_DisguiseHD_II
-                 || hediff.def == TorannMagicDefOf.TM_DisguiseHD_III
-             ))
-            {
-                DrawDeceptionTicker(false);
-            }
-
-            
-            if (ModOptions.Settings.Instance.AIFriendlyMarking && this.Pawn.IsColonist && this.IsMightUser)
-            {
-                DrawMark();
-            }
-            if (ModOptions.Settings.Instance.AIMarking && !base.Pawn.IsColonist && this.IsMightUser)
-            {
-                DrawMark();
+                HediffDef def = Pawn.health.hediffSet.hediffs[i].def;
+                if (def == TorannMagicDefOf.TM_PossessionHD
+                    || def == TorannMagicDefOf.TM_CoOpPossessionHD
+                    || def == TorannMagicDefOf.TM_PossessionHD_I
+                    || def == TorannMagicDefOf.TM_PossessionHD_II
+                    || def == TorannMagicDefOf.TM_PossessionHD_III
+                    || def == TorannMagicDefOf.TM_CoOpPossessionHD_I
+                    || def == TorannMagicDefOf.TM_CoOpPossessionHD_II
+                    || def == TorannMagicDefOf.TM_CoOpPossessionHD_III)
+                {
+                    DrawDeceptionTicker(true);
+                    break;
+                }
+                if (def == TorannMagicDefOf.TM_DisguiseHD
+                         || def == TorannMagicDefOf.TM_DisguiseHD_I
+                         || def == TorannMagicDefOf.TM_DisguiseHD_II
+                         || def == TorannMagicDefOf.TM_DisguiseHD_III)
+                {
+                    DrawDeceptionTicker(false);
+                    break;
+                }
             }
 
-            if (this.Pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_BurningFuryHD, false))
+            if (IsMightUser)
             {
-                float num = Mathf.Lerp(1.2f, 1.55f, 1f);
-                Vector3 vector = this.Pawn.Drawer.DrawPos;
-                vector.y = Altitudes.AltitudeFor(AltitudeLayer.MoteOverhead);
-                float angle = (float)Rand.Range(0, 360);
+                if (Pawn.Faction.IsPlayer)
+                {
+                    if (ModOptions.Settings.Instance.AIFriendlyMarking) DrawMark();
+                }
+                else
+                {
+                    if (ModOptions.Settings.Instance.AIMarking) DrawMark();
+                }
+            }
+
+            if (Pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_BurningFuryHD))
+            {
+                Vector3 vector = Pawn.Drawer.DrawPos;
+                vector.y = AltitudeLayer.MoteOverhead.AltitudeFor();
                 Vector3 s = new Vector3(1.7f, 1f, 1.7f);
                 Matrix4x4 matrix = default(Matrix4x4);
-                matrix.SetTRS(vector, Quaternion.AngleAxis(angle, Vector3.up), s);
+                matrix.SetTRS(vector, Quaternion.AngleAxis(Rand.Range(0, 360), Vector3.up), s);
                 Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.burningFuryMat, 0);                
             }
 
@@ -2561,17 +2563,16 @@ namespace TorannMagic
 
         public void SiphonReversal(int verVal)
         {
-            Pawn pawn = this.Pawn;
+            Pawn pawn = Pawn;
             CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
-            comp.Stamina.CurLevel += (.015f * verVal);         
-            int num = 1 + verVal;
+            comp.Stamina.CurLevel += .015f * verVal;
             
-            int numberOfInjuriesPerPart = !pawn.IsColonist && ModOptions.Settings.Instance.AIHardMode ? 5 : 1 + verVal;
+            int numberOfInjuriesPerPart = ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist ? 5 : 1 + verVal;
 
             IEnumerable<Hediff_Injury> injuries = pawn.health.hediffSet.hediffs
                 .OfType<Hediff_Injury>()
-                .Where(injury => injury.CanHealNaturally())
-                .DistinctBy(injury => injury.Part, numberOfInjuriesPerPart)
+                .Where(static injury => injury.CanHealNaturally())
+                .DistinctBy(static injury => injury.Part, numberOfInjuriesPerPart)
                 .Take(1 + verVal);
 
             float amountToHeal = pawn.IsColonist ? 2.0f + verVal : 20.0f + verVal * 3f;
@@ -2581,7 +2582,6 @@ namespace TorannMagic
                 TM_MoteMaker.ThrowRegenMote(pawn.Position.ToVector3Shifted(), pawn.Map, .6f);
                 TM_MoteMaker.ThrowRegenMote(pawn.Position.ToVector3Shifted(), pawn.Map, .4f);
             }
-
         }
 
         public void GiveReversalJob(DamageInfo dinfo)  // buggy AF due to complications with CompDeflector
@@ -3902,9 +3902,9 @@ namespace TorannMagic
 
                     //HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_BladeArtHD, -5f);
                     HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_BladeArtHD, (.5f) + bladeart_pwr.level);
-                    if (!this.Pawn.IsColonist && ModOptions.Settings.Instance.AIHardMode)
+                    if (ModOptions.Settings.Instance.AIHardMode && !Pawn.IsColonist)
                     {
-                        HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_BladeArtHD, 4);
+                        HealthUtility.AdjustSeverity(Pawn, TorannMagicDefOf.TM_BladeArtHD, 4);
                     }
                 }
                 if ((this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Ranger) || (this.customClass != null && this.customClass.classFighterAbilities.Contains(TorannMagicDefOf.TM_BowTraining))))

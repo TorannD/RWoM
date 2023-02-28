@@ -39,7 +39,7 @@ namespace TorannMagic
                 HediffComp_CommanderAura hdComp = pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_CommanderAuraHD).TryGetComp<HediffComp_CommanderAura>();
                 if (hdComp != null && hdComp.nextSpeechTick < Find.TickManager.TicksGame)
                 {               
-                    if (pawn2 != null && pawn2 != pawn && pawn2.RaceProps.Humanlike && pawn2.IsColonist && pawn2.Awake() && !pawn2.Drafted && !pawn.Drafted && !pawn2.Downed)
+                    if (pawn2 != null && pawn2 != pawn && pawn2.IsColonist && pawn2.Awake() && !pawn2.Drafted && !pawn.Drafted && !pawn2.Downed)
                     {
                         if (pawn2.InMentalState && (pawn.Position - pawn2.Position).LengthHorizontal < 50f && !GenAI.EnemyIsNear(pawn2, 20f))
                         {
