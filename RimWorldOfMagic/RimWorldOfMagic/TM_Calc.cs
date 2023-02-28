@@ -24,13 +24,10 @@ namespace TorannMagic
         // Non-generic GetComp<CompAbilityUserMagic> for performance since isInst against generic T is slow
         public static CompAbilityUserMagic GetCompAbilityUserMagic(this ThingWithComps thingWithComps)
         {
-            if (thingWithComps?.AllComps != null)
+            for (int i = 0; i < thingWithComps.AllComps.Count; i++)
             {
-                for (int i = 0; i < thingWithComps.AllComps.Count; i++)
-                {
-                    if (thingWithComps.AllComps[i] is CompAbilityUserMagic comp)
-                        return comp;
-                }
+                if (thingWithComps.AllComps[i] is CompAbilityUserMagic comp)
+                    return comp;
             }
 
             return null;
@@ -39,16 +36,24 @@ namespace TorannMagic
         // Non-generic GetComp<CompAbilityUserMight> for performance since isInst against generic T is slow
         public static CompAbilityUserMight GetCompAbilityUserMight(this ThingWithComps thingWithComps)
         {
-            if (thingWithComps?.AllComps != null)
+            for (int i = 0; i < thingWithComps.AllComps.Count; i++)
             {
-                for (int i = 0; i < thingWithComps.AllComps.Count; i++)
-                {
-                    if (thingWithComps.AllComps[i] is CompAbilityUserMight comp)
-                        return comp;
-                }
+                if (thingWithComps.AllComps[i] is CompAbilityUserMight comp)
+                    return comp;
             }
 
             return null;
+        }
+
+        /*
+         * Simply checks that a trait exists that is mighty or magic. Uses customClass prop on comp for custom class traits
+         */
+        public static bool HasMightOrMagicTrait(Pawn pawn)
+        {
+            if (pawn.GetCompAbilityUserMagic()?.customClass != null) return true;
+            if (pawn.GetCompAbilityUserMight()?.customClass != null) return true;
+            return pawn.story.traits.allTraits.Select(static t => t.def.index).Any(static index =>
+                TM_ClassUtility.NonCustomMagicAndMightTraitIndexes.Contains(index));
         }
 
 
