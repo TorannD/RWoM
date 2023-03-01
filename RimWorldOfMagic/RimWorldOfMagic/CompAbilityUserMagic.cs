@@ -4506,216 +4506,151 @@ namespace TorannMagic
 
         public override void PostPreApplyDamage(DamageInfo dinfo, out bool absorbed)
         {
-            Pawn abilityUser = base.Pawn;
+            Pawn pawn = Pawn;
+            for (int i = 0; i < pawn.health.hediffSet.hediffs.Count; i++)
+            {
+                Hediff hediff = pawn.health.hediffSet.hediffs[i];
 
-            List<Hediff> list = new List<Hediff>();
-            List<Hediff> arg_32_0 = list;
-            IEnumerable<Hediff> arg_32_1;
-            if (abilityUser == null)
-            {
-                arg_32_1 = null;
-            }
-            else
-            {
-                Pawn_HealthTracker expr_1A = abilityUser.health;
-                if (expr_1A == null)
+                if (hediff.def == TorannMagicDefOf.TM_HediffInvulnerable)
                 {
-                    arg_32_1 = null;
+                    absorbed = true;
+                    FleckMaker.Static(pawn.Position, pawn.Map, FleckDefOf.ExplosionFlash, 10);
+                    dinfo.SetAmount(0);
+                    return;
                 }
-                else
+                if (hediff.def == TorannMagicDefOf.TM_HediffEnchantment_phantomShift && Rand.Chance(.2f))
                 {
-                    HediffSet expr_26 = expr_1A.hediffSet;
-                    arg_32_1 = ((expr_26 != null) ? expr_26.hediffs : null);
+                    absorbed = true;
+                    FleckMaker.Static(pawn.Position, pawn.Map, FleckDefOf.ExplosionFlash, 8);
+                    FleckMaker.ThrowSmoke(pawn.Position.ToVector3Shifted(), pawn.Map, 1.2f);
+                    dinfo.SetAmount(0);
+                    return;
                 }
-            }
-            arg_32_0.AddRange(arg_32_1);
-            Pawn expr_3E = abilityUser;
-            int? arg_84_0;
-            if (expr_3E == null)
-            {
-                arg_84_0 = null;
-            }
-            else
-            {
-                Pawn_HealthTracker expr_52 = expr_3E.health;
-                if (expr_52 == null)
+                if (hediff.def == TorannMagicDefOf.TM_HediffShield)
                 {
-                    arg_84_0 = null;
-                }
-                else
-                {
-                    HediffSet expr_66 = expr_52.hediffSet;
-                    arg_84_0 = ((expr_66 != null) ? new int?(expr_66.hediffs.Count<Hediff>()) : null);
-                }
-            }
-            bool flag = (arg_84_0 ?? 0) > 0;
-            if (flag)
-            {
-                foreach (Hediff current in list)
-                {
-                    if (current.def == TorannMagicDefOf.TM_HediffInvulnerable)
-                    {
-                        absorbed = true;
-                        FleckMaker.Static(Pawn.Position, Pawn.Map, FleckDefOf.ExplosionFlash, 10);
-                        dinfo.SetAmount(0);
-                        return;
-                    }                    
-                    if (current.def == TorannMagicDefOf.TM_HediffEnchantment_phantomShift && Rand.Chance(.2f))
-                    {
-                        absorbed = true;
-                        FleckMaker.Static(Pawn.Position, Pawn.Map, FleckDefOf.ExplosionFlash, 8);
-                        FleckMaker.ThrowSmoke(abilityUser.Position.ToVector3Shifted(), abilityUser.Map, 1.2f);
-                        dinfo.SetAmount(0);
-                        return;
-                    }                    
-                    if (current.def == TorannMagicDefOf.TM_HediffShield)
-                    {
-                        float sev = current.Severity;
-                        absorbed = true;
-                        int actualDmg = 0;
-                        float dmgAmt = (float)dinfo.Amount;
-                        float dmgToSev = 0.004f;
-                        
-                        if (!abilityUser.IsColonist)
-                        {
-                            if (ModOptions.Settings.Instance.AIHardMode)
-                            {
-                                dmgToSev = 0.0025f;
-                            }
-                            else
-                            {
-                                dmgToSev = 0.003f;
-                            }
-                        }
-                        sev = sev - (dmgAmt * dmgToSev);
-                        if (sev < 0)
-                        {
-                            actualDmg = (int)Mathf.RoundToInt(Mathf.Abs(sev / dmgToSev));
-                            BreakShield(abilityUser);
-                        }
-                        TM_Action.DisplayShieldHit(abilityUser, dinfo);
-                        current.Severity = sev;
-                        dinfo.SetAmount(actualDmg);
+                    float sev = hediff.Severity;
+                    absorbed = true;
+                    int actualDmg = 0;
+                    float dmgAmt = dinfo.Amount;
+                    float dmgToSev = 0.004f;
 
+                    if (!pawn.IsColonist)
+                    {
+                        dmgToSev = ModOptions.Settings.Instance.AIHardMode ? 0.0025f : 0.003f;
+                    }
+                    sev -= dmgAmt * dmgToSev;
+                    if (sev < 0)
+                    {
+                        actualDmg = Mathf.RoundToInt(Mathf.Abs(sev / dmgToSev));
+                        BreakShield(pawn);
+                    }
+                    TM_Action.DisplayShieldHit(pawn, dinfo);
+                    hediff.Severity = sev;
+                    dinfo.SetAmount(actualDmg);
+
+                    return;
+                }
+                if (hediff.def == TorannMagicDefOf.TM_DemonScornHD || hediff.def == TorannMagicDefOf.TM_DemonScornHD_I || hediff.def == TorannMagicDefOf.TM_DemonScornHD_II || hediff.def == TorannMagicDefOf.TM_DemonScornHD_III)
+                {
+                    float sev = hediff.Severity;
+                    absorbed = true;
+                    int actualDmg = 0;
+                    float dmgAmt = dinfo.Amount;
+                    float dmgToSev = 1f;
+
+                    if (!pawn.IsColonist)
+                    {
+                        dmgToSev = ModOptions.Settings.Instance.AIHardMode ? 0.8f : 1f;
+                    }
+                    sev -= dmgAmt * dmgToSev;
+                    if (sev < 0)
+                    {
+                        actualDmg = Mathf.RoundToInt(Mathf.Abs(sev / dmgToSev));
+                        BreakShield(pawn);
+                    }
+                    TM_Action.DisplayShieldHit(pawn, dinfo);
+                    hediff.Severity = sev;
+                    dinfo.SetAmount(actualDmg);
+
+                    return;
+                }
+                if (hediff.def == TorannMagicDefOf.TM_ManaShieldHD && damageMitigationDelayMS < age)
+                {
+                    float sev = Mana.CurLevel;
+                    absorbed = true;
+                    int actualDmg = 0;
+                    float dmgAmt = dinfo.Amount;
+                    float dmgToSev = 0.02f;
+                    float maxDmg = 11f;
+                    if (MagicData.MagicPowerSkill_Cantrips.First(static mps => mps.label == "TM_Cantrips_ver").level >= 3)
+                    {
+                        dmgToSev = 0.015f;
+                        maxDmg = 14f;
+                        if (MagicData.MagicPowerSkill_Cantrips.First(static mps => mps.label == "TM_Cantrips_ver").level >= 7)
+                        {
+                            dmgToSev = 0.012f;
+                            maxDmg = 17f;
+                        }
+                    }
+                    if (dmgAmt >= maxDmg)
+                    {
+                        actualDmg = Mathf.RoundToInt(dmgAmt - maxDmg);
+                        sev -= maxDmg * dmgToSev;
+                    }
+                    else
+                    {
+                        sev -= dmgAmt * dmgToSev;
+                    }
+                    Mana.CurLevel = sev;
+                    if (sev < 0)
+                    {
+                        actualDmg = Mathf.RoundToInt(Mathf.Abs(sev / dmgToSev));
+                        BreakShield(pawn);
+                        hediff.Severity = sev;
+                        pawn.health.RemoveHediff(hediff);
+                    }
+                    TM_Action.DisplayShieldHit(pawn, dinfo);
+                    damageMitigationDelayMS = age + 2;
+                    dinfo.SetAmount(actualDmg);
+                    pawn.TakeDamage(dinfo);
+                    return;
+                }
+                if (hediff.def == TorannMagicDefOf.TM_LichHD && damageMitigationDelay < age)
+                {
+                    absorbed = true;
+                    const int mitigationAmt = 4;
+                    int dmgAmt = Mathf.RoundToInt(dinfo.Amount);
+                    if (dmgAmt < mitigationAmt)
+                    {
+                        MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "TM_DamageAbsorbedAll".Translate());
                         return;
                     }
-                    if (current.def == TorannMagicDefOf.TM_DemonScornHD || current.def == TorannMagicDefOf.TM_DemonScornHD_I || current.def == TorannMagicDefOf.TM_DemonScornHD_II || current.def == TorannMagicDefOf.TM_DemonScornHD_III)
-                    {
-                        float sev = current.Severity;
-                        absorbed = true;
-                        int actualDmg = 0;
-                        float dmgAmt = (float)dinfo.Amount;
-                        float dmgToSev = 1f;
-                        
-                        if (!abilityUser.IsColonist)
-                        {
-                            if (ModOptions.Settings.Instance.AIHardMode)
-                            {
-                                dmgToSev = 0.8f;
-                            }
-                            else
-                            {
-                                dmgToSev = 1f;
-                            }
-                        }
-                        sev = sev - (dmgAmt * dmgToSev);
-                        if (sev < 0)
-                        {
-                            actualDmg = (int)Mathf.RoundToInt(Mathf.Abs(sev / dmgToSev));
-                            BreakShield(abilityUser);
-                        }
-                        TM_Action.DisplayShieldHit(abilityUser, dinfo);
-                        current.Severity = sev;
-                        dinfo.SetAmount(actualDmg);
+                    MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "TM_DamageAbsorbed".Translate(
+                        dmgAmt, mitigationAmt));
+                    int actualDmg = dmgAmt - mitigationAmt;
 
-                        return;
-                    }
-                    if (current.def == TorannMagicDefOf.TM_ManaShieldHD && this.damageMitigationDelayMS < this.age)
+                    damageMitigationDelay = age + 6;
+                    dinfo.SetAmount(actualDmg);
+                    pawn.TakeDamage(dinfo);
+                    return;
+                }
+                if (arcaneRes != 0 && resMitigationDelay < age)
+                {
+                    if (hediff.def == TorannMagicDefOf.TM_HediffEnchantment_arcaneRes)
                     {
-                        float sev = this.Mana.CurLevel;
-                        absorbed = true;
-                        int actualDmg = 0;
-                        float dmgAmt = (float)dinfo.Amount;
-                        float dmgToSev = 0.02f;
-                        float maxDmg = 11f;
-                        if (this.MagicData.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Cantrips_ver").level >= 3)
+                        if ((dinfo.Def.armorCategory != null && (dinfo.Def.armorCategory == TorannMagicDefOf.Dark || dinfo.Def.armorCategory == TorannMagicDefOf.Light)) || dinfo.Def.defName.Contains("TM_") || dinfo.Def.defName is "FrostRay" or "Snowball" or "Iceshard" or "Firebolt")
                         {
-                            dmgToSev = 0.015f;
-                            maxDmg = 14f;
-                            if (this.MagicData.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Cantrips_ver").level >= 7)
-                            {
-                                dmgToSev = 0.012f;
-                                maxDmg = 17f;
-                            }
-                        }
-                        if (dmgAmt >= maxDmg)
-                        {
-                            actualDmg = Mathf.RoundToInt(dmgAmt - maxDmg);
-                            sev = sev - (maxDmg * dmgToSev);
-                        }
-                        else
-                        {
-                            sev = sev - (dmgAmt * dmgToSev);
-                        }
-                        this.Mana.CurLevel = sev;
-                        if (sev < 0)
-                        {
-                            actualDmg = (int)Mathf.RoundToInt(Mathf.Abs(sev / dmgToSev));
-                            BreakShield(abilityUser);
-                            current.Severity = sev;
-                            abilityUser.health.RemoveHediff(current);
-                        }
-                        TM_Action.DisplayShieldHit(abilityUser, dinfo);
-                        this.damageMitigationDelayMS = this.age + 2;
-                        dinfo.SetAmount(actualDmg);
-                        abilityUser.TakeDamage(dinfo);
-                        return;
-                    }
-                    if (current.def == TorannMagicDefOf.TM_LichHD && this.damageMitigationDelay < this.age)
-                    {
-                        absorbed = true;
-                        int mitigationAmt = 4;
-                        int actualDmg;
-                        int dmgAmt = Mathf.RoundToInt(dinfo.Amount);
-                        if (dmgAmt < mitigationAmt)
-                        {
-                            MoteMaker.ThrowText(this.Pawn.DrawPos, this.Pawn.Map, "TM_DamageAbsorbedAll".Translate(), -1);
-                            actualDmg = 0;
+                            absorbed = true;
+                            int actualDmg = Mathf.RoundToInt(dinfo.Amount / arcaneRes);
+                            resMitigationDelay = age + 10;
+                            dinfo.SetAmount(actualDmg);
+                            pawn.TakeDamage(dinfo);
                             return;
                         }
-                        else
-                        {
-                            MoteMaker.ThrowText(this.Pawn.DrawPos, this.Pawn.Map, "TM_DamageAbsorbed".Translate(
-                                dmgAmt,
-                                mitigationAmt
-                            ), -1);
-                            actualDmg = dmgAmt - mitigationAmt;
-                        }
-                        this.damageMitigationDelay = this.age + 6;
-                        dinfo.SetAmount(actualDmg);
-                        abilityUser.TakeDamage(dinfo);
-                        return;
-                    }
-                    if (arcaneRes != 0 && resMitigationDelay < this.age)
-                    {
-                        if (current.def == TorannMagicDefOf.TM_HediffEnchantment_arcaneRes)
-                        {
-                            if ((dinfo.Def.armorCategory != null && (dinfo.Def.armorCategory == TorannMagicDefOf.Dark || dinfo.Def.armorCategory == TorannMagicDefOf.Light)) || dinfo.Def.defName.Contains("TM_") || dinfo.Def.defName == "FrostRay" || dinfo.Def.defName == "Snowball" || dinfo.Def.defName == "Iceshard" || dinfo.Def.defName == "Firebolt")
-                            {
-                                absorbed = true;
-                                int actualDmg = Mathf.RoundToInt(dinfo.Amount / arcaneRes);
-                                resMitigationDelay = this.age + 10;
-                                dinfo.SetAmount(actualDmg);
-                                abilityUser.TakeDamage(dinfo);
-                                return;
-                            }
-                        }
                     }
                 }
-
-                list.Clear();
-                list = null;
             }
+
             base.PostPreApplyDamage(dinfo, out absorbed);
         }
 
