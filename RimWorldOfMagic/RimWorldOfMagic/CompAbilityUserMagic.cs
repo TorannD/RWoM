@@ -7277,46 +7277,11 @@ namespace TorannMagic
 
         private void CleanupSummonedStructures()
         {
-            for (int i = 0; i < this.summonedLights.Count; i++)
-            {
-                if (this.summonedLights[i].DestroyedOrNull())
-                {
-                    this.summonedLights.Remove(this.summonedLights[i]);
-                    i--;
-                }
-            }
-            for (int i = 0; i < this.summonedHeaters.Count; i++)
-            {
-                if (this.summonedHeaters[i].DestroyedOrNull())
-                {
-                    this.summonedHeaters.Remove(this.summonedHeaters[i]);
-                    i--;
-                }
-            }
-            for (int i = 0; i < this.summonedCoolers.Count; i++)
-            {
-                if (this.summonedCoolers[i].DestroyedOrNull())
-                {
-                    this.summonedCoolers.Remove(this.summonedCoolers[i]);
-                    i--;
-                }
-            }
-            for (int i = 0; i < this.summonedPowerNodes.Count; i++)
-            {
-                if (this.summonedPowerNodes[i].DestroyedOrNull())
-                {
-                    this.summonedPowerNodes.Remove(this.summonedPowerNodes[i]);
-                    i--;
-                }
-            }
-            for (int i = 0; i < this.lightningTraps.Count; i++)
-            {
-                if (this.lightningTraps[i].DestroyedOrNull())
-                {
-                    this.lightningTraps.Remove(this.lightningTraps[i]);
-                    i--;
-                }
-            }
+            summonedLights.Cleanup();
+            summonedHeaters.Cleanup();
+            summonedCoolers.Cleanup();
+            summonedPowerNodes.Cleanup();
+            lightningTraps.Cleanup();
         }
 
         public override void PostExposeData()
