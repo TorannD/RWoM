@@ -57,6 +57,10 @@ namespace TorannMagic.ModOptions
             Widgets.CheckboxLabeled(rowRect1, "TM_GolemShowColonistBar".Translate(), ref Settings.Instance.showGolemsOnColonistBar, false);
             TooltipHandler.TipRegion(rowRect1, "TM_GolemShowColonistBarDesc".Translate());            
             num++;
+            Rect rowRect2 = Controller.UIHelper.GetRowRect(rect1, rowHeight, num);
+            Widgets.CheckboxLabeled(rowRect2, "TM_GolemDoScreenShake".Translate(), ref Settings.Instance.golemScreenShake, false);
+            TooltipHandler.TipRegion(rowRect2, "TM_GolemDoScreenShakeDesc".Translate());
+            num++;
             Rect rowRect99 = UIHelper.GetRowRect(rect1, rowHeight, num);
             rowRect99.width = 100f;
             reset = Widgets.ButtonText(rowRect99, "Default", true, false, true);

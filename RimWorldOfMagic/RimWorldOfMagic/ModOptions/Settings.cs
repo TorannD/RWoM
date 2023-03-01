@@ -61,6 +61,7 @@ namespace TorannMagic.ModOptions
         //Golem options
         public bool showDormantFrames = false;
         public bool showGolemsOnColonistBar = false;
+        public bool golemScreenShake = true;
 
         //class options
         public bool Arcanist = true;
@@ -94,7 +95,7 @@ namespace TorannMagic.ModOptions
         public bool Psionic = true;
         public bool DeathKnight = true;
         public bool Monk = true;
-        public bool Wayfayer = true;
+        public bool Wayfarer = true;
         public bool Commander = true;
         public bool SuperSoldier = true;
         public bool Shadow = true;
@@ -197,7 +198,7 @@ namespace TorannMagic.ModOptions
             Scribe_Values.Look<bool>(ref this.Psionic, "Psionic", true, false);
             Scribe_Values.Look<bool>(ref this.DeathKnight, "DeathKnight", true, false);
             Scribe_Values.Look<bool>(ref this.Wanderer, "Wanderer", true, false);
-            Scribe_Values.Look<bool>(ref this.Wayfayer, "Wayfarer", true, false);
+            Scribe_Values.Look<bool>(ref this.Wayfarer, "Wayfarer", true, false);
             Scribe_Values.Look<bool>(ref this.ChaosMage, "ChaosMage", true, false);
             Scribe_Values.Look<bool>(ref this.Monk, "Monk", true, false);
             Scribe_Values.Look<bool>(ref this.Commander, "Commander", true, false);

@@ -20,7 +20,7 @@ namespace TorannMagic
             Map map = base.Map;
             base.Impact(hitThing);
             ThingDef def = this.def;
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+            
 
             Pawn pawn = this.launcher as Pawn;
             Pawn victim = hitThing as Pawn;

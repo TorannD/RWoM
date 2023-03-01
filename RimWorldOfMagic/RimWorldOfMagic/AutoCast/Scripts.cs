@@ -167,8 +167,8 @@ namespace TorannMagic.AutoCast
             caster.pather.StartPath(pathEndTarget, pem);
             //GenClamor.DoClamor(caster, 2f, ClamorDefOf.Ability);
 
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-            casterComp.MightUserXP -= (int)((casterComp.ActualStaminaCost(abilitydef) * 180 * .9f * casterComp.xpGain * settingsRef.xpMultiplier));
+            
+            casterComp.MightUserXP -= (int)((casterComp.ActualStaminaCost(abilitydef) * 180 * .9f * casterComp.xpGain * ModOptions.Settings.Instance.xpMultiplier));
             ability.PostAbilityAttempt();
             if (selectCaster)
             {
@@ -223,8 +223,8 @@ namespace TorannMagic.AutoCast
                     //GenSpawn.Spawn(cT, targetCell, map);
                 }
 
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                casterComp.MightUserXP -= (int)((casterComp.ActualStaminaCost(abilitydef) * 180 * .9f * casterComp.xpGain * settingsRef.xpMultiplier));
+                
+                casterComp.MightUserXP -= (int)((casterComp.ActualStaminaCost(abilitydef) * 180 * .9f * casterComp.xpGain * ModOptions.Settings.Instance.xpMultiplier));
                 ability.PostAbilityAttempt();
                 if (selectCaster)
                 {
@@ -1233,8 +1233,8 @@ namespace TorannMagic.AutoCast
 
                 if (casterComp != null && casterComp.IsMagicUser)
                 {
-                    ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                    casterComp.MagicUserXP -= (int)((casterComp.ActualManaCost(abilitydef) * 300 * .7f * casterComp.xpGain * settingsRef.xpMultiplier));
+                    
+                    casterComp.MagicUserXP -= (int)((casterComp.ActualManaCost(abilitydef) * 300 * .7f * casterComp.xpGain * ModOptions.Settings.Instance.xpMultiplier));
                     ability.PostAbilityAttempt();
                 }
                 if(selectCaster)

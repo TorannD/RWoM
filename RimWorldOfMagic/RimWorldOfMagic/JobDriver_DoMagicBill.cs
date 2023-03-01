@@ -75,16 +75,84 @@ namespace TorannMagic
 
         protected override IEnumerable<Toil> MakeNewToils()
         {
-            //Log.Message("doing magic bill");
-            //Log.Message("actor is " + this.GetActor().LabelShort);
-            //Log.Message("doing job " + this.GetActor().CurJobDef);
-            //Log.Message("bill thing is " + this.GetActor().CurJob.GetTarget(TargetIndex.A).Thing.Label);
-            //if(this.GetActor().CurJob.targetA.Thing is Building_TMMagicCircle)
-            //{
-            //    Log.Message("target building is a magic circle");
-            //}
-            //Log.Message("toil is " + base.MakeNewToils().ToString());
-            return base.MakeNewToils();
+            AddEndCondition(delegate
+            {
+                Thing thing = GetActor().jobs.curJob.GetTarget(TargetIndex.A).Thing;
+                if (thing is Building && !thing.Spawned)
+                {
+                    return JobCondition.Incompletable;
+                }
+                return JobCondition.Ongoing;
+            });
+            this.FailOnBurningImmobile(TargetIndex.A);
+            this.FailOn(delegate
+            {
+                IBillGiver billGiver = job.GetTarget(TargetIndex.A).Thing as IBillGiver;
+                if (billGiver != null)
+                {
+                    if (job.bill.DeletedOrDereferenced)
+                    {
+                        return true;
+                    }
+                    if (!billGiver.CurrentlyUsableForBills())
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            });
+            Toil gotoBillGiver = Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.InteractionCell);
+            Toil toil = ToilMaker.MakeToil("MakeNewToils");
+            toil.initAction = delegate
+            {
+                if (job.targetQueueB != null && job.targetQueueB.Count == 1)
+                {
+                    UnfinishedThing unfinishedThing = job.targetQueueB[0].Thing as UnfinishedThing;
+                    if (unfinishedThing != null)
+                    {
+                        unfinishedThing.BoundBill = (Bill_ProductionWithUft)job.bill;
+                    }
+                }
+                job.bill.Notify_DoBillStarted(pawn);
+            };
+            yield return toil;
+            yield return Toils_Jump.JumpIf(gotoBillGiver, () => job.GetTargetQueue(TargetIndex.B).NullOrEmpty());
+            foreach (Toil item in CollectIngredientsToils(TargetIndex.B, TargetIndex.A, TargetIndex.C, false, true, BillGiver is Building_MechGestator))
+            {
+                yield return item;
+            }
+            yield return gotoBillGiver;
+            yield return Toils_Recipe.MakeUnfinishedThingIfNeeded();
+            yield return Toils_Recipe.DoRecipeWork().FailOnDespawnedNullOrForbiddenPlacedThings(TargetIndex.A).FailOnCannotTouch(TargetIndex.A, PathEndMode.InteractionCell);
+            yield return Toils_Recipe.CheckIfRecipeCanFinishNow();
+            yield return Toils_Recipe.FinishRecipeAndStartStoringProduct(TargetIndex.None);
+            if (!job.RecipeDef.products.NullOrEmpty() || !job.RecipeDef.specialProducts.NullOrEmpty())
+            {
+                yield return Toils_Reserve.Reserve(TargetIndex.B);
+                Toil carryToCell = Toils_Haul.CarryHauledThingToCell(TargetIndex.B);
+                yield return carryToCell;
+                yield return Toils_Haul.PlaceHauledThingInCell(TargetIndex.B, carryToCell, storageMode: true, tryStoreInSameStorageIfSpotCantHoldWholeStack: true);
+                Toil recount = ToilMaker.MakeToil("MakeNewToils");
+                recount.initAction = delegate
+                {
+                    Bill_Production bill_Production = recount.actor.jobs.curJob.bill as Bill_Production;
+                    if (bill_Production != null && bill_Production.repeatMode == BillRepeatModeDefOf.TargetCount)
+                    {
+                        base.Map.resourceCounter.UpdateResourceCounts();
+                    }
+                };
+                yield return recount;
+            }
+            ////Log.Message("doing magic bill");
+            ////Log.Message("actor is " + this.GetActor().LabelShort);
+            ////Log.Message("doing job " + this.GetActor().CurJobDef);
+            ////Log.Message("bill thing is " + this.GetActor().CurJob.GetTarget(TargetIndex.A).Thing.Label);
+            ////if(this.GetActor().CurJob.targetA.Thing is Building_TMMagicCircle)
+            ////{
+            ////    Log.Message("target building is a magic circle");
+            ////}
+            ////Log.Message("toil is " + base.MakeNewToils().ToString());
+            //return base.MakeNewToils();
         }
 
         private static Toil JumpToCollectNextIntoHandsForBill(Toil gotoGetTargetToil, TargetIndex ind)

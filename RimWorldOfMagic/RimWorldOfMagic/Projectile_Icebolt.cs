@@ -21,7 +21,7 @@ namespace TorannMagic
             Map map = base.Map;
             base.Impact(hitThing);
             ThingDef def = this.def;
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+            
             Pawn pawn = this.launcher as Pawn;
             CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
             MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Icebolt.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Icebolt_pwr");
@@ -36,7 +36,7 @@ namespace TorannMagic
                 verVal = mver.level;
             }
             this.arcaneDmg = comp.arcaneDmg;
-            if(settingsRef.AIHardMode && !pawn.IsColonist)
+            if(ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist)
             {
                 pwrVal = 3;
                 verVal = 3;

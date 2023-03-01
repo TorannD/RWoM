@@ -142,7 +142,7 @@ namespace TorannMagic.Golems
 
         public static void ResolveAbilityUse(TMPawnGolem golem, CompGolem comp, TM_GolemAbility ability, out bool success)
         {
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+            
             success = false;
             if (CanUseAbility(golem, ability.golemAbilityDef))
             {

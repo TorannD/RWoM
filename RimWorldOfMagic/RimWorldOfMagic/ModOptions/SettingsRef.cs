@@ -58,6 +58,7 @@ namespace TorannMagic.ModOptions
         //golem options
         public bool showDormantFrames = Settings.Instance.showDormantFrames;
         public bool showGolemsOnColonistBar = Settings.Instance.showGolemsOnColonistBar;
+        public bool golemScreenShake = Settings.Instance.golemScreenShake;
 
         //Class options
         public bool Arcanist = Settings.Instance.Arcanist;
@@ -91,7 +92,7 @@ namespace TorannMagic.ModOptions
         public bool Psionic = Settings.Instance.Psionic;
         public bool DeathKnight = Settings.Instance.DeathKnight;
         public bool Monk = Settings.Instance.Monk;
-        public bool Wayfarer = Settings.Instance.Wayfayer;
+        public bool Wayfarer = Settings.Instance.Wayfarer;
         public bool Commander = Settings.Instance.Commander;
         public bool SuperSoldier = Settings.Instance.SuperSoldier;
         public bool Shadow = Settings.Instance.Shadow;

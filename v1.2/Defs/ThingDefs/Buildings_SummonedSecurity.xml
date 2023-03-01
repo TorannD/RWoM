@@ -261,13 +261,15 @@
     <label>magical defense pylon</label>
     <thingClass>Building_TurretGun</thingClass>
     <graphicData>
-      <texPath>Other/Defense_Pylon_Base0</texPath>
+      <texPath>Other/DefensePylon_Base_Level0</texPath>
+      <shaderType>MoteGlow</shaderType>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(2,2)</drawSize>
       <damageData>
         <rect>(0.2,0.2,0.6,0.6)</rect>
       </damageData>
     </graphicData>
+	<uiIconPath>Other/DefensePylon_MenuIcon</uiIconPath>
     <altitudeLayer>Building</altitudeLayer>
     <stealable>false</stealable>
     <rotatable>false</rotatable>
@@ -384,13 +386,15 @@
     <label>magical defense pylon (I)</label>
     <thingClass>Building_TurretGun</thingClass>
     <graphicData>
-      <texPath>Other/Defense_Pylon_Base1</texPath>
+      <texPath>Other/DefensePylon_Base_Level1</texPath>
+      <shaderType>MoteGlow</shaderType>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(2.2,2.2)</drawSize>
       <damageData>
         <rect>(0.2,0.2,0.6,0.6)</rect>
       </damageData>
     </graphicData>
+	<uiIconPath>Other/DefensePylon_MenuIcon</uiIconPath>
     <altitudeLayer>Building</altitudeLayer>
     <stealable>false</stealable>
     <rotatable>false</rotatable>
@@ -493,13 +497,15 @@
     <label>magical defense pylon (II)</label>
     <thingClass>Building_TurretGun</thingClass>
     <graphicData>
-      <texPath>Other/Defense_Pylon_Base2</texPath>
+      <texPath>Other/DefensePylon_Base_Level2</texPath>
+      <shaderType>MoteGlow</shaderType>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(2.3,2.3)</drawSize>
       <damageData>
         <rect>(0.2,0.2,0.6,0.6)</rect>
       </damageData>
     </graphicData>
+	<uiIconPath>Other/DefensePylon_MenuIcon</uiIconPath>
     <altitudeLayer>Building</altitudeLayer>
     <stealable>false</stealable>
     <rotatable>false</rotatable>
@@ -601,13 +607,15 @@
     <label>magical defense pylon (III)</label>
     <thingClass>Building_TurretGun</thingClass>
     <graphicData>
-      <texPath>Other/Defense_Pylon_Base3</texPath>
+      <texPath>Other/DefensePylon_Base_Level3</texPath>
+      <shaderType>MoteGlow</shaderType>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(2.5,2.5)</drawSize>
       <damageData>
         <rect>(0.2,0.2,0.6,0.6)</rect>
       </damageData>
     </graphicData>
+	<uiIconPath>Other/DefensePylon_MenuIcon</uiIconPath>
     <altitudeLayer>Building</altitudeLayer>
     <stealable>false</stealable>
     <rotatable>false</rotatable>
