@@ -6825,22 +6825,16 @@ namespace TorannMagic
 
         public void ResolveMana()
         {
-            bool flag = this.Mana == null;
-            if (flag)
+            if (Mana != null) return;  // Exit if there is no Mana need
+
+            Hediff hediff = Pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_MagicUserHD);
+            if (hediff == null)
             {
-                Hediff firstHediffOfDef = base.Pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_MagicUserHD, false);
-                bool flag2 = firstHediffOfDef != null;
-                if (flag2)
-                {
-                    firstHediffOfDef.Severity = 1f;
-                }
-                else
-                {
-                    Hediff hediff = HediffMaker.MakeHediff(TorannMagicDefOf.TM_MagicUserHD, base.Pawn, null);
-                    hediff.Severity = 1f;
-                    base.Pawn.health.AddHediff(hediff, null, null);
-                }
+                hediff = HediffMaker.MakeHediff(TorannMagicDefOf.TM_MagicUserHD, Pawn);
+                Pawn.health.AddHediff(hediff);
             }
+
+            hediff.Severity = 1f;
         }
         public void ResolveMagicPowers()
         {
