@@ -1249,8 +1249,8 @@ namespace TorannMagic
                 Pawn targetPawn = mapPawns[i];
                 if (targetPawn != null && !targetPawn.Dead && !targetPawn.Destroyed && !TM_Calc.IsUndead(targetPawn) && targetPawn.Faction != null && targetPawn.Faction == fac)
                 {
-                    ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                    if ((targetPawn.RaceProps.Humanlike || settingsRef.autocastAnimals || includeAnimals) && (center - targetPawn.Position).LengthHorizontal <= radius)
+                    
+                    if ((targetPawn.RaceProps.Humanlike || ModOptions.Settings.Instance.autocastAnimals || includeAnimals) && (center - targetPawn.Position).LengthHorizontal <= radius)
                     {
                         float injurySeverity = targetPawn.health.hediffSet.hediffs
                             .OfType<Hediff_Injury>()
@@ -1292,8 +1292,8 @@ namespace TorannMagic
                 Pawn targetPawn = mapPawns[i];
                 if (targetPawn != null && !targetPawn.Dead && !targetPawn.Destroyed && !TM_Calc.IsUndead(targetPawn) && targetPawn.Faction != null && targetPawn.Faction == pawn.Faction)
                 {
-                    ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                    if ((targetPawn.RaceProps.Humanlike || settingsRef.autocastAnimals) && (pawn.Position - targetPawn.Position).LengthHorizontal <= radius && targetPawn != pawn)
+                    
+                    if ((targetPawn.RaceProps.Humanlike || ModOptions.Settings.Instance.autocastAnimals) && (pawn.Position - targetPawn.Position).LengthHorizontal <= radius && targetPawn != pawn)
                     {
                         float injurySeverity = targetPawn.health.hediffSet.hediffs
                             .OfType<Hediff_Injury>()
@@ -1330,8 +1330,8 @@ namespace TorannMagic
                 Pawn targetPawn = mapPawns[i];
                 if (targetPawn != null && !targetPawn.Dead && !targetPawn.Destroyed && !TM_Calc.IsUndead(targetPawn) && targetPawn.Faction != null && targetPawn.Faction == pawn.Faction)
                 {
-                    ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                    if ((targetPawn.RaceProps.Humanlike || settingsRef.autocastAnimals) && (pawn.Position - targetPawn.Position).LengthHorizontal <= radius)
+                    
+                    if ((targetPawn.RaceProps.Humanlike || ModOptions.Settings.Instance.autocastAnimals) && (pawn.Position - targetPawn.Position).LengthHorizontal <= radius)
                     {
                         float injurySeverity = targetPawn.health.hediffSet.hediffs
                             .OfType<Hediff_Injury>()
@@ -1367,8 +1367,8 @@ namespace TorannMagic
                 Pawn targetPawn = mapPawns[i];
                 if (targetPawn != null && !targetPawn.Dead && !targetPawn.Destroyed && targetPawn.Faction != null && targetPawn.Faction == pawn.Faction)
                 {
-                    ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                    if ((targetPawn.RaceProps.Humanlike || settingsRef.autocastAnimals) && (pawn.Position - targetPawn.Position).LengthHorizontal <= radius)
+                    
+                    if ((targetPawn.RaceProps.Humanlike || ModOptions.Settings.Instance.autocastAnimals) && (pawn.Position - targetPawn.Position).LengthHorizontal <= radius)
                     {
                         if (targetPawn.health.hediffSet.hediffs.Any(hediff =>
                                 (hediff.def.isBad || hediff.def.makesSickThought)
@@ -1393,8 +1393,8 @@ namespace TorannMagic
                 Pawn targetPawn = mapPawns[i];
                 if (targetPawn != null && !targetPawn.Dead && !targetPawn.Destroyed && targetPawn.Faction != null && targetPawn.Faction == pawn.Faction)
                 {
-                    ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                    if ((targetPawn.RaceProps.Humanlike || settingsRef.autocastAnimals) && (pawn.Position - targetPawn.Position).LengthHorizontal <= radius)
+                    
+                    if ((targetPawn.RaceProps.Humanlike || ModOptions.Settings.Instance.autocastAnimals) && (pawn.Position - targetPawn.Position).LengthHorizontal <= radius)
                     {
                         if (targetPawn.health.hediffSet.hediffs.Any(hediff =>
                                 hediff.def.defName == "BloodRot"
@@ -1429,8 +1429,8 @@ namespace TorannMagic
                 Pawn targetPawn = mapPawns[i];
                 if (targetPawn != null && !targetPawn.Dead && !targetPawn.Destroyed && targetPawn.Faction != null && targetPawn.Faction == pawn.Faction)
                 {
-                    ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                    if ((targetPawn.RaceProps.Humanlike || settingsRef.autocastAnimals) && (pawn.Position - targetPawn.Position).LengthHorizontal <= radius)
+                    
+                    if ((targetPawn.RaceProps.Humanlike || ModOptions.Settings.Instance.autocastAnimals) && (pawn.Position - targetPawn.Position).LengthHorizontal <= radius)
                     {
                         if (targetPawn.health.hediffSet.hediffs.OfType<Hediff_Addiction>().Any(addiction =>
                                 validAddictionDefnames.Any(name => addiction.Chemical.defName.Contains(name))))
@@ -2067,20 +2067,20 @@ namespace TorannMagic
             }
         }
 
-        //Rand.Chance(((settingsRef.baseFighterChance * 6) + (settingsRef.baseMageChance * 6) + (8 * settingsRef.advFighterChance) + (16 * settingsRef.advMageChance)) / (allTraits.Count))
+        //Rand.Chance(((ModOptions.Settings.Instance.baseFighterChance * 6) + (ModOptions.Settings.Instance.baseMageChance * 6) + (8 * ModOptions.Settings.Instance.advFighterChance) + (16 * ModOptions.Settings.Instance.advMageChance)) / (allTraits.Count))
         public static float GetRWoMTraitChance()
         {
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+            
             List<TraitDef> allTraits = DefDatabase<TraitDef>.AllDefsListForReading;
-            float chance = ((settingsRef.baseFighterChance * 6) + (settingsRef.baseMageChance * 6) + (9 * settingsRef.advFighterChance) + (18 * settingsRef.advMageChance)) / (allTraits.Count);
+            float chance = ((ModOptions.Settings.Instance.baseFighterChance * 6) + (ModOptions.Settings.Instance.baseMageChance * 6) + (9 * ModOptions.Settings.Instance.advFighterChance) + (18 * ModOptions.Settings.Instance.advMageChance)) / (allTraits.Count);
             return Mathf.Clamp01(chance);
         }
         
         public static float GetMagePrecurserChance()
         {
             float chance = 0f;
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-            chance = (settingsRef.baseMageChance * 6) / ((settingsRef.baseFighterChance * 6) + (settingsRef.baseMageChance * 6) + (9 * settingsRef.advFighterChance) + (18 * settingsRef.advMageChance));
+            
+            chance = (ModOptions.Settings.Instance.baseMageChance * 6) / ((ModOptions.Settings.Instance.baseFighterChance * 6) + (ModOptions.Settings.Instance.baseMageChance * 6) + (9 * ModOptions.Settings.Instance.advFighterChance) + (18 * ModOptions.Settings.Instance.advMageChance));
             chance *= GetRWoMTraitChance();
             return chance;
         }
@@ -2088,8 +2088,8 @@ namespace TorannMagic
         public static float GetFighterPrecurserChance()
         {
             float chance = 0f;
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-            chance = (settingsRef.baseFighterChance * 6) / ((settingsRef.baseFighterChance * 6) + (settingsRef.baseMageChance * 6) + (9 * settingsRef.advFighterChance) + (18 * settingsRef.advMageChance));
+            
+            chance = (ModOptions.Settings.Instance.baseFighterChance * 6) / ((ModOptions.Settings.Instance.baseFighterChance * 6) + (ModOptions.Settings.Instance.baseMageChance * 6) + (9 * ModOptions.Settings.Instance.advFighterChance) + (18 * ModOptions.Settings.Instance.advMageChance));
             chance *= GetRWoMTraitChance();
             return chance;
         }
@@ -2097,8 +2097,8 @@ namespace TorannMagic
         public static float GetMageSpawnChance()
         {
             float chance = 0f;
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-            chance = (settingsRef.advMageChance * 16) / ((settingsRef.baseFighterChance * 6) + (settingsRef.baseMageChance * 6) + (9 * settingsRef.advFighterChance) + (18 * settingsRef.advMageChance));
+            
+            chance = (ModOptions.Settings.Instance.advMageChance * 16) / ((ModOptions.Settings.Instance.baseFighterChance * 6) + (ModOptions.Settings.Instance.baseMageChance * 6) + (9 * ModOptions.Settings.Instance.advFighterChance) + (18 * ModOptions.Settings.Instance.advMageChance));
             chance *= GetRWoMTraitChance();
             return chance;
         }
@@ -2106,8 +2106,8 @@ namespace TorannMagic
         public static float GetFighterSpawnChance()
         {
             float chance = 0f;
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-            chance = (settingsRef.advFighterChance * 8) / ((settingsRef.baseFighterChance * 6) + (settingsRef.baseMageChance * 6) + (9 * settingsRef.advFighterChance) + (18 * settingsRef.advMageChance));
+            
+            chance = (ModOptions.Settings.Instance.advFighterChance * 8) / ((ModOptions.Settings.Instance.baseFighterChance * 6) + (ModOptions.Settings.Instance.baseMageChance * 6) + (9 * ModOptions.Settings.Instance.advFighterChance) + (18 * ModOptions.Settings.Instance.advMageChance));
             chance *= GetRWoMTraitChance();
             return chance;
         }
@@ -3440,8 +3440,8 @@ namespace TorannMagic
                         level = level >= 1 ? level : 1;
                     }
                 }
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                if (settingsRef.AIHardMode && !caster.IsColonist)
+                
+                if (ModOptions.Settings.Instance.AIHardMode && !caster.IsColonist)
                 {
                     level = 3;
                 }
@@ -3476,8 +3476,8 @@ namespace TorannMagic
             //            }
             //        }
             //    }
-            //    ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-            //    if (settingsRef.AIHardMode && !caster.IsColonist)
+            //    
+            //    if (ModOptions.Settings.Instance.AIHardMode && !caster.IsColonist)
             //    {
             //        val = 3;
             //    }
@@ -3525,8 +3525,8 @@ namespace TorannMagic
                     cantripLevel = (int)((comp.MagicData.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == cantripLabel).level) / 5);
                 }
                 level = cantripLevel > level ? cantripLevel : level;
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                if (settingsRef.AIHardMode && !caster.IsColonist)
+                
+                if (ModOptions.Settings.Instance.AIHardMode && !caster.IsColonist)
                 {
                     level = 3;
                 }
@@ -3555,8 +3555,8 @@ namespace TorannMagic
             //                val = (int)((comp.MagicData.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == label).level) / 5);
             //            }
             //        }
-            //        ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-            //        if (settingsRef.AIHardMode && !caster.IsColonist)
+            //        
+            //        if (ModOptions.Settings.Instance.AIHardMode && !caster.IsColonist)
             //        {
             //            val = 3;
             //        }
@@ -4001,48 +4001,36 @@ namespace TorannMagic
 
         public static float GetWeaponCritChance(ThingWithComps weapon)
         {
-            float weaponMass = weapon.GetStatValue(StatDefOf.Mass, false);            
-            if(weaponMass != 0)
-            {
-                QualityCategory qual;
-                weapon.TryGetQuality(out qual);
-                int q = (int)qual;
+            float weaponMass = weapon.GetStatValue(StatDefOf.Mass, false);
+            if (weaponMass == 0) return 0f;
 
-                float critChanceByMass = .1f + (.2f / weaponMass);
-                float critChanceByQuality = (.05f * (float)q);
+            weapon.TryGetQuality(out QualityCategory qualityCategory);
+            int q = (int)qualityCategory;
 
-                return (critChanceByMass + critChanceByQuality);
-            }
-
-
-            return 0f;
+            return .1f + (.2f / weaponMass) + (.05f * (float)q);
         }
 
         public static float GetSkillDamage_Melee(Pawn p, float strFactor)
         {
-            float weaponDamage = 0f;
-            ThingWithComps weaponComp = p.equipment.Primary;
-            float weaponDPS = weaponComp.GetStatValue(StatDefOf.MeleeWeapon_AverageDPS, false);
+            float weaponDPS = p.equipment.Primary.GetStatValue(StatDefOf.MeleeWeapon_AverageDPS, false);
             float pawnDPS = p.GetStatValue(StatDefOf.MeleeDPS, false);
-
-            weaponDamage = Mathf.Max((pawnDPS + weaponDPS) * strFactor, 5f);
-
-            return weaponDamage;
+            return Mathf.Max((pawnDPS + weaponDPS) * strFactor, 5f);
         }
 
         public static float GetSkillDamage_Range(Pawn p, float strFactor)
         {
             VerbProperties vp = p.equipment.Primary.def.Verbs?.FirstOrDefault();
-            if (vp != null)
-            {
-                QualityCategory qc = QualityCategory.Normal;
-                //p.equipment.Primary.TryGetQuality(out qc);
-                float qc_m = GetQualityMultiplier(qc);
-                float weaponDamage = ((vp.defaultProjectile.projectile.GetDamageAmount(p.equipment.Primary) * qc_m) - (2 * (vp.warmupTime + vp.defaultCooldownTime))) + (3 * vp.defaultProjectile.projectile.stoppingPower);
-                weaponDamage *= strFactor;
-                return weaponDamage;
-            }
-            return 0;
+            if (vp == null) return 0;
+
+            //const QualityCategory qc = QualityCategory.Normal;
+            //p.equipment.Primary.TryGetQuality(out qc);
+            //float qc_m = GetQualityMultiplier(qc);
+            const float qc_m = 1f;
+            return (
+                qc_m * vp.defaultProjectile.projectile.GetDamageAmount(p.equipment.Primary)
+                - 2 * (vp.warmupTime + vp.defaultCooldownTime)
+                + 3 * vp.defaultProjectile.projectile.stoppingPower
+            ) * strFactor;
         }
 
         public static float GetQualityMultiplier(QualityCategory qc)

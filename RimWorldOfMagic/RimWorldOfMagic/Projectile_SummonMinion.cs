@@ -62,10 +62,10 @@ namespace TorannMagic
                 comp = pawn.GetCompAbilityUserMagic();
                 MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_SummonMinion.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_SummonMinion_pwr");
                 MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_SummonMinion.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_SummonMinion_ver");
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+                
                 pwrVal = pwr.level;
                 verVal = ver.level;
-                if (settingsRef.AIHardMode && !pawn.IsColonist)
+                if (ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist)
                 {
                     pwrVal = 3;
                     verVal = 3;

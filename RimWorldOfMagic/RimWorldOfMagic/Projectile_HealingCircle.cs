@@ -80,8 +80,8 @@ namespace TorannMagic
                     verVal = mver.level;
                 }
                 this.arcaneDmg = comp.arcaneDmg;
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                if (!caster.IsColonist && settingsRef.AIHardMode)
+                
+                if (!caster.IsColonist && ModOptions.Settings.Instance.AIHardMode)
                 {
                     pwrVal = 3;
                     verVal = 3;

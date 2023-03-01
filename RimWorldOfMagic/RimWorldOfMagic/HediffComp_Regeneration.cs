@@ -82,8 +82,8 @@ namespace TorannMagic
 
                     if (!TM_Calc.IsUndead(pawn))
                     {
-                        ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                        int injuriesToHeal = settingsRef.AIHardMode && !pawn.IsColonist ? 2 : 1;
+                        
+                        int injuriesToHeal = ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist ? 2 : 1;
                         IEnumerable<Hediff_Injury> injuries = pawn.health.hediffSet.hediffs
                             .OfType<Hediff_Injury>()
                             .Where(injury => injury.CanHealNaturally())

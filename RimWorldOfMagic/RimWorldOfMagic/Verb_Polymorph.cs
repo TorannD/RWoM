@@ -63,8 +63,8 @@ namespace TorannMagic
                 pwrVal = mpwr.level;
                 verVal = mver.level;
             }
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-            if (settingsRef.AIHardMode && !this.CasterPawn.IsColonist)
+            
+            if (ModOptions.Settings.Instance.AIHardMode && !this.CasterPawn.IsColonist)
             {
                 verVal = 2;
                 pwrVal = 3;

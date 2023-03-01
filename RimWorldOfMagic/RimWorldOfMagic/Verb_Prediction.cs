@@ -21,8 +21,8 @@ namespace TorannMagic
             MagicPowerSkill pwr = base.CasterPawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Prediction.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Prediction_pwr");
             pwrVal = pwr.level;
             CompAbilityUserMagic comp = base.CasterPawn.GetCompAbilityUserMagic();
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-            if (settingsRef.AIHardMode && !this.CasterPawn.IsColonist)
+            
+            if (ModOptions.Settings.Instance.AIHardMode && !this.CasterPawn.IsColonist)
             {
                 pwrVal = 4;
             }

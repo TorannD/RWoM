@@ -47,8 +47,8 @@ namespace TorannMagic.ModOptions
             num++;
             num++;
             SettingsRef settingsRef = new SettingsRef();
-            deathExplosionDmgMin = settingsRef.deathExplosionMin.ToString();
-            deathExplosionDmgMax = settingsRef.deathExplosionMax.ToString();
+            deathExplosionDmgMin = ModOptions.Settings.Instance.deathExplosionMin.ToString();
+            deathExplosionDmgMax = ModOptions.Settings.Instance.deathExplosionMax.ToString();
             Rect rowRect = UIHelper.GetRowRect(rect1, rowHeight, num);
             Settings.Instance.xpMultiplier = Widgets.HorizontalSlider(rowRect, Settings.Instance.xpMultiplier, .1f, 2f, false, "XPMultiplier".Translate() + " " + Settings.Instance.xpMultiplier, ".1", "2", .1f);
             Rect rowRectShiftRight = UIHelper.GetRowRect(rowRect, rowHeight, num);
@@ -148,7 +148,7 @@ namespace TorannMagic.ModOptions
             Widgets.CheckboxLabeled(rowRect7, "AICanCast".Translate(), ref Settings.Instance.AICasting, false);
             Rect rowRect7ShiftRight = UIHelper.GetRowRect(rowRect7, rowHeight, num);
             rowRect7ShiftRight.x += rowRect7.width + 56f;
-            Widgets.CheckboxLabeled(rowRect7ShiftRight, "AIHardMode".Translate(), ref Settings.Instance.AIHardMode, !settingsRef.AICasting);            
+            Widgets.CheckboxLabeled(rowRect7ShiftRight, "AIHardMode".Translate(), ref Settings.Instance.AIHardMode, !ModOptions.Settings.Instance.AICasting);            
             num++;
             Rect rowRect9 = UIHelper.GetRowRect(rowRect7, rowHeight, num);
             Widgets.CheckboxLabeled(rowRect9, "AIMarking".Translate(), ref Settings.Instance.AIMarking, false);

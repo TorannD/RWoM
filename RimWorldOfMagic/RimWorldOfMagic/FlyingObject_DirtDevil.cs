@@ -205,21 +205,24 @@ namespace TorannMagic
             allThings.Clear();
             allFilth.Clear();
             List<IntVec3> cellsAround = GenRadial.RadialCellsAround(this.Position, 1.4f, true).ToList();
-            for(int i =0; i < cellsAround.Count; i++)
+            if (cellsAround != null)
             {
-                allThings = cellsAround[i].GetThingList(this.Map);
-                for(int j = 0; j < allThings.Count; j++)
+                for (int i = 0; i < cellsAround.Count; i++)
                 {
-                    if(allThings[j].def.category == ThingCategory.Filth || allThings[j].def.IsFilth)
+                    allThings = cellsAround[i].GetThingList(this.Map);                   
+                    for (int j = 0; j < allThings.Count; j++)
                     {
-                        allFilth.Add(allThings[j]);
+                        if (allThings[j].def.category == ThingCategory.Filth || allThings[j].def.IsFilth)
+                        {
+                            allFilth.Add(allThings[j]);
+                        }
                     }
                 }
-            }
-            for(int i = 0; i < allFilth.Count; i++)
-            {
-                CleanGraphics(allFilth[i]);
-                allFilth[i].Destroy(DestroyMode.Vanish);
+                for (int i = 0; i < allFilth.Count; i++)
+                {
+                    CleanGraphics(allFilth[i]);
+                    allFilth[i].Destroy(DestroyMode.Vanish);
+                }
             }
         }
 

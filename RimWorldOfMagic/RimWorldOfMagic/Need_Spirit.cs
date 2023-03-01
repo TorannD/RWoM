@@ -204,7 +204,7 @@ namespace TorannMagic
         public void GainNeed(float amount)
         {            
             Pawn pawn = base.pawn;                
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+            
             CompAbilityUserMagic comp = this.pawn.GetCompAbilityUserMagic();
             float eff = 1f;
             if (comp != null && comp.MagicData != null && comp.MagicData.GetSkill_Efficiency(TorannMagicDefOf.TM_SpiritDrain) != null)
