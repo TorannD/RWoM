@@ -217,7 +217,6 @@ namespace TorannMagic
             get
             {
                 List<TraitDef> magicTraits = new List<TraitDef>();
-                magicTraits.Clear();
                 
                 if (ModOptions.Settings.Instance.Arcanist) { magicTraits.Add(TorannMagicDefOf.Arcanist); }
                 if (ModOptions.Settings.Instance.FireMage) { magicTraits.Add(TorannMagicDefOf.InnerFire); }
@@ -285,10 +284,8 @@ namespace TorannMagic
             get
             {
                 List<TraitDef> allClassTraits = new List<TraitDef>();
-                allClassTraits.Clear();
                 allClassTraits.AddRange(MightTraits);
-                allClassTraits.AddRange(MagicTraits);                
-                //allClassTraits.AddRange(TM_ClassUtility.CustomClassTraitDefs);
+                allClassTraits.AddRange(MagicTraits);
                 return allClassTraits;
             }
         }
@@ -298,253 +295,123 @@ namespace TorannMagic
             get
             {
                 List<TraitDef> allClassConflictTraits = new List<TraitDef>();
-                allClassConflictTraits.Clear();
                 allClassConflictTraits.AddRange(AllClassTraits);
                 allClassConflictTraits.Add(TorannMagicDefOf.TM_Gifted);
-                AllClassConflictTraits.Add(TorannMagicDefOf.PhysicalProdigy);
+                allClassConflictTraits.Add(TorannMagicDefOf.PhysicalProdigy);
                 return allClassConflictTraits;
             }
         }
 
         public static List<TMAbilityDef> BrandList()
         {
-            List<TMAbilityDef> tmpList = new List<TMAbilityDef>();
-            tmpList.Clear();
-            tmpList.Add(TorannMagicDefOf.TM_AwarenessBrand);
-            tmpList.Add(TorannMagicDefOf.TM_EmotionBrand);
-            tmpList.Add(TorannMagicDefOf.TM_FitnessBrand);
-            tmpList.Add(TorannMagicDefOf.TM_ProtectionBrand);
-            tmpList.Add(TorannMagicDefOf.TM_SiphonBrand);
-            tmpList.Add(TorannMagicDefOf.TM_VitalityBrand);
-            return tmpList;
+            return new List<TMAbilityDef>
+            {
+                TorannMagicDefOf.TM_AwarenessBrand,
+                TorannMagicDefOf.TM_EmotionBrand,
+                TorannMagicDefOf.TM_FitnessBrand,
+                TorannMagicDefOf.TM_ProtectionBrand,
+                TorannMagicDefOf.TM_SiphonBrand,
+                TorannMagicDefOf.TM_VitalityBrand
+            };
         }
 
-        public static List<ThingDef> MagicFociList()
+        private static HashSet<ThingDef> magicFociSet;
+        public static HashSet<ThingDef> MagicFociList()
         {
-            List<ThingDef> magicFocis = new List<ThingDef>();
-            magicFocis.Clear();
-            IEnumerable<ThingDef> enumerable = from def in DefDatabase<ThingDef>.AllDefs
-                                               where (true)
-                                               select def;
-            List<string> magicFociList = WeaponCategoryList.Named("TM_Category_MagicalFoci").weaponDefNames;
-            foreach (ThingDef current in enumerable)
-            {
-                for (int i = 0; i < magicFociList.Count; i++)
-                {
-                    if (current.defName == magicFociList[i].ToString() || magicFociList[i].ToString() == "*")
-                    {
-                        //Log.Message("adding magicFoci def " + current.defName);
-                        magicFocis.AddDistinct(current);
-                    }
-                }
-            }
-            return magicFocis;
+            return magicFociSet ??= DefDatabase<ThingDef>.AllDefs.Where(static def =>
+                WeaponCategoryList.Named("TM_Category_MagicalFoci").weaponDefNames.Contains(def.defName)).ToHashSet();
         }
 
         public static List<string> CustomWeaponCategoryList(string listDefName)
         {
             List<string> customWeaponDefNames = new List<string>();
-            customWeaponDefNames.Clear();
-            IEnumerable<WeaponCategoryList> enumerable = from def in DefDatabase<WeaponCategoryList>.AllDefs
-                                                         where (def.defName == listDefName)
-                                                         select def;
-            foreach(WeaponCategoryList wcl in enumerable)
+            foreach(WeaponCategoryList wcl in DefDatabase<WeaponCategoryList>.AllDefs.Where(list => list.defName == listDefName))
             {
                 customWeaponDefNames.AddRange(wcl.weaponDefNames);
             }
             return customWeaponDefNames;
         }
 
-        public static List<ThingDef> BowList()
+        private static HashSet<ThingDef> bowSet;
+        public static HashSet<ThingDef> BowSet()
         {
-            List<ThingDef> bows = new List<ThingDef>();
-            bows.Clear();
-            IEnumerable<ThingDef> enumerable = from def in DefDatabase<ThingDef>.AllDefs
-                                               where (true)
-                                               select def;
-            List<string> bowList = WeaponCategoryList.Named("TM_Category_Bows").weaponDefNames;
-            foreach (ThingDef current in enumerable)
-            {
-                for (int i = 0; i < bowList.Count; i++)
-                {
-                    if (current.defName == bowList[i].ToString() || bowList[i].ToString() == "*")
-                    {
-                        //Log.Message("adding bow def " + current.defName);
-                        bows.AddDistinct(current);
-                    }
-                }
-            }
-            return bows;
+            return bowSet ??= DefDatabase<ThingDef>.AllDefs.Where(static def =>
+                WeaponCategoryList.Named("TM_Category_Bows").weaponDefNames.Contains(def.defName)).ToHashSet();
         }
 
-        public static List<ThingDef> PistolList()
+        private static HashSet<ThingDef> pistolSet;
+        public static HashSet<ThingDef> PistolSet()
         {
-            List<ThingDef> pistols = new List<ThingDef>();
-            pistols.Clear();
-            IEnumerable<ThingDef> enumerable = from def in DefDatabase<ThingDef>.AllDefs
-                                               where (true)
-                                               select def;
-            List<string> pistolList = WeaponCategoryList.Named("TM_Category_Pistols").weaponDefNames;
-            foreach (ThingDef current in enumerable)
-            {
-                for (int i = 0; i < pistolList.Count; i++)
-                {
-                    if (current.defName == pistolList[i].ToString() || pistolList[i].ToString() == "*")
-                    {
-                        //Log.Message("adding pistol def " + current.defName);
-                        pistols.AddDistinct(current);
-                    }
-                }
-            }
-            return pistols;
+            return pistolSet ??= DefDatabase<ThingDef>.AllDefs.Where(static def =>
+                WeaponCategoryList.Named("TM_Category_Pistols").weaponDefNames.Contains(def.defName)).ToHashSet();
         }
 
-        public static List<ThingDef> RifleList()
+        private static HashSet<ThingDef> rifleSet;
+        public static HashSet<ThingDef> RifleSet()
         {
-            List<ThingDef> rifles = new List<ThingDef>();
-            rifles.Clear();
-            IEnumerable<ThingDef> enumerable = from def in DefDatabase<ThingDef>.AllDefs
-                                               where (true)
-                                               select def;
-            List<string> rifleList = WeaponCategoryList.Named("TM_Category_Rifles").weaponDefNames;
-            foreach (ThingDef current in enumerable)
-            {
-                for (int i = 0; i < rifleList.Count; i++)
-                {
-                    if (current.defName == rifleList[i].ToString() || rifleList[i].ToString() == "*")
-                    {
-                        //Log.Message("adding rifle def " + current.defName);
-                        rifles.AddDistinct(current);
-                    }
-                }
-            }
-            return rifles;
+            return rifleSet ??= DefDatabase<ThingDef>.AllDefs.Where(static def =>
+                WeaponCategoryList.Named("TM_Category_Rifles").weaponDefNames.Contains(def.defName)).ToHashSet();
         }
 
-        public static List<ThingDef> ShotgunList()
+        private static HashSet<ThingDef> shotgunSet;
+        public static HashSet<ThingDef> ShotgunSet()
         {
-            List<ThingDef> shotguns = new List<ThingDef>();
-            shotguns.Clear();
-            IEnumerable<ThingDef> enumerable = from def in DefDatabase<ThingDef>.AllDefs
-                                               where (true)
-                                               select def;
-            List<string> shotgunList = WeaponCategoryList.Named("TM_Category_Shotguns").weaponDefNames;
-            foreach (ThingDef current in enumerable)
-            {
-                for (int i = 0; i < shotgunList.Count; i++)
-                {
-                    if (current.defName == shotgunList[i].ToString() || shotgunList[i].ToString() == "*")
-                    {
-                        //Log.Message("adding shotgun def " + current.defName);
-                        shotguns.AddDistinct(current);
-                    }
-                }
-            }
-            return shotguns;
+            return shotgunSet ??= DefDatabase<ThingDef>.AllDefs.Where(static def =>
+                WeaponCategoryList.Named("TM_Category_Shotguns").weaponDefNames.Contains(def.defName)).ToHashSet();
         }
 
-        public static List<HediffDef> AilmentList()
+        private static HashSet<HediffDef> ailmentSet;
+        public static HashSet<HediffDef> AilmentSet()
         {
-            List<HediffDef> ailments = new List<HediffDef>();
-            ailments.Clear();
-            IEnumerable<HediffDef> enumerable = from def in DefDatabase<HediffDef>.AllDefs
-                                               where (true)
-                                               select def;
-            List<TMDefs.TM_CategoryHediff> ailmentList = HediffCategoryList.Named("TM_Category_Hediffs").ailments;
-            foreach (HediffDef current in enumerable)
-            {
-                for (int i = 0; i < ailmentList.Count; i++)
-                {
-                    if (current.defName == ailmentList[i].hediffDefname || (ailmentList[i].containsDefnameString && current.defName.Contains(ailmentList[i].hediffDefname)) || ailmentList[i].ToString() == "*")
-                    {
-                        //Log.Message("adding shotgun def " + current.defName);
-                        ailments.AddDistinct(current);
-                    }
-                }
-            }
-            return ailments;
+            return ailmentSet ??= DefDatabase<HediffDef>.AllDefs.Where(static def =>
+                HediffCategoryList.Named("TM_Category_Hediffs").ailments.Any(hediff =>
+                    hediff.hediffDefname == def.defName ||
+                    hediff.containsDefnameString && def.defName.Contains(hediff.hediffDefname))
+            ).ToHashSet();
         }
 
-        public static List<HediffDef> AddictionList()
+        private static HashSet<HediffDef> addictionSet;
+        public static HashSet<HediffDef> AddictionSet()
         {
-            List<HediffDef> addictions = new List<HediffDef>();
-            addictions.Clear();
-            IEnumerable<HediffDef> enumerable = from def in DefDatabase<HediffDef>.AllDefs
-                                                where (true)
-                                                select def;
-            List<TMDefs.TM_CategoryHediff> addictionList = HediffCategoryList.Named("TM_Category_Hediffs").addictions;
-            foreach (HediffDef current in enumerable)
-            {
-                for (int i = 0; i < addictionList.Count; i++)
-                {
-                    if (current.defName == addictionList[i].hediffDefname || (addictionList[i].containsDefnameString && current.defName.Contains(addictionList[i].hediffDefname)) || addictionList[i].ToString() == "*")
-                    {
-                        //Log.Message("adding shotgun def " + current.defName);
-                        addictions.AddDistinct(current);
-                    }
-                }
-            }
-            return addictions;
+            return addictionSet ??= DefDatabase<HediffDef>.AllDefs.Where(static def =>
+                HediffCategoryList.Named("TM_Category_Hediffs").addictions.Any(hediff =>
+                    hediff.hediffDefname == def.defName ||
+                    hediff.containsDefnameString && def.defName.Contains(hediff.hediffDefname))
+                ).ToHashSet();
         }
 
-        public static List<HediffDef> MechaniteList()
+        private static HashSet<HediffDef> mechaniteSet;
+        public static HashSet<HediffDef> MechaniteSet()
         {
-            List<HediffDef> mechanites = new List<HediffDef>();
-            mechanites.Clear();
-            IEnumerable<HediffDef> enumerable = from def in DefDatabase<HediffDef>.AllDefs
-                                                where (true)
-                                                select def;
-            List<TMDefs.TM_CategoryHediff> mechaniteList = HediffCategoryList.Named("TM_Category_Hediffs").mechanites;
-            foreach (HediffDef current in enumerable)
-            {
-                for (int i = 0; i < mechaniteList.Count; i++)
-                {
-                    if (current.defName == mechaniteList[i].hediffDefname || (mechaniteList[i].containsDefnameString && current.defName.Contains(mechaniteList[i].hediffDefname)) || mechaniteList[i].ToString() == "*")
-                    {
-                        //Log.Message("adding shotgun def " + current.defName);
-                        mechanites.AddDistinct(current);
-                    }
-                }
-            }
-            return mechanites;
+            return mechaniteSet ??= DefDatabase<HediffDef>.AllDefs.Where(static def =>
+                HediffCategoryList.Named("TM_Category_Hediffs").mechanites.Any(hediff =>
+                    hediff.hediffDefname == def.defName ||
+                    hediff.containsDefnameString && def.defName.Contains(hediff.hediffDefname))
+            ).ToHashSet();
         }
 
-        public static List<HediffDef> DiseaseList()
+        private static HashSet<HediffDef> diseaseSet;
+        public static HashSet<HediffDef> DiseaseSet()
         {
-            List<HediffDef> diseases = new List<HediffDef>();
-            diseases.Clear();
-            IEnumerable<HediffDef> enumerable = from def in DefDatabase<HediffDef>.AllDefs
-                                                where (true)
-                                                select def;
-            List<TMDefs.TM_CategoryHediff> diseaseList = HediffCategoryList.Named("TM_Category_Hediffs").diseases;
-            foreach (HediffDef current in enumerable)
-            {
-                for (int i = 0; i < diseaseList.Count; i++)
-                {
-                    if (current.defName == diseaseList[i].hediffDefname || (diseaseList[i].containsDefnameString && current.defName.Contains(diseaseList[i].hediffDefname)) || diseaseList[i].ToString() == "*")
-                    {
-                        //Log.Message("adding shotgun def " + current.defName);
-                        diseases.AddDistinct(current);
-                    }
-                }
-            }
-            return diseases;
+            return diseaseSet ??= DefDatabase<HediffDef>.AllDefs.Where(static def =>
+                HediffCategoryList.Named("TM_Category_Hediffs").diseases.Any(hediff =>
+                    hediff.hediffDefname == def.defName ||
+                    hediff.containsDefnameString && def.defName.Contains(hediff.hediffDefname))
+            ).ToHashSet();
         }
 
-        public static IEnumerable<TM_CustomPowerDef> CustomFighterPowerDefs()
+        private static TM_CustomPowerDef[] customFighterPowerDefs;
+        public static TM_CustomPowerDef[] CustomFighterPowerDefs()
         {
-            IEnumerable<TM_CustomPowerDef> enumerable = from def in DefDatabase<TM_CustomPowerDef>.AllDefs
-                                                        where (def.customPower != null && def.customPower.forFighter)
-                                                        select def;
-            return enumerable;
+            return customFighterPowerDefs ??= DefDatabase<TM_CustomPowerDef>.AllDefs.Where(static def =>
+                def.customPower is { forFighter: true }).ToArray();
         }
 
+        private static TM_CustomPowerDef[] customMagePowerDefs;
         public static IEnumerable<TM_CustomPowerDef> CustomMagePowerDefs()
         {
-            IEnumerable<TM_CustomPowerDef> enumerable = from def in DefDatabase<TM_CustomPowerDef>.AllDefs
-                                                        where (def.customPower != null && def.customPower.forMage)
-                                                        select def;
-            return enumerable;
+            return customMagePowerDefs ??= DefDatabase<TM_CustomPowerDef>.AllDefs.Where(static def =>
+                def.customPower is { forMage: true }).ToArray();
         }
 
     }

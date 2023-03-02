@@ -112,7 +112,7 @@ namespace TorannMagic
                     bool flag2 = num > 0;
                     if (flag2)
                     {
-                        if (TM_Data.AilmentList().Contains(rec.def))
+                        if (TM_Data.AilmentSet().Contains(rec.def))
                         {
                             List<TMDefs.TM_CategoryHediff> ailmentList = HediffCategoryList.Named("TM_Category_Hediffs").ailments;
                             foreach(TMDefs.TM_CategoryHediff chd in ailmentList)
@@ -206,7 +206,7 @@ namespace TorannMagic
                     bool flag2 = num > 0;
                     if (flag2)
                     {
-                        if (TM_Data.AddictionList().Contains(rec.def))
+                        if (TM_Data.AddictionSet().Contains(rec.def))
                         {
                             List<TMDefs.TM_CategoryHediff> addictionList = HediffCategoryList.Named("TM_Category_Hediffs").addictions;
                             foreach (TMDefs.TM_CategoryHediff chd in addictionList)

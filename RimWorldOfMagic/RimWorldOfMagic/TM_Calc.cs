@@ -3745,219 +3745,151 @@ namespace TorannMagic
 
         public static bool IsUsingRanged(Pawn p)
         {
-            bool result = false;
-            if (p != null && p.equipment != null && p.equipment.Primary != null && p.equipment.Primary.def.IsRangedWeapon)
-            {
-                result = true;
-            }
-            return result;
+            return p?.equipment?.Primary != null && p.equipment.Primary.def.IsRangedWeapon;
         }
 
         public static bool IsUsingMelee(Pawn p)
         {
-            bool result = false;
-            if (p != null)
-            {
-                if (p.equipment != null)
-                {
-                    if (p.equipment.Primary != null && p.equipment.Primary.def.IsMeleeWeapon)
-                    {
-                        result = true;
-                    }
-                    if (p.equipment.Primary == null)
-                    {
-                        result = true;
-                    }
-                }
-            }
-            return result;
+            return p?.equipment != null && (p.equipment.Primary == null || p.equipment.Primary.def.IsMeleeWeapon);
         }
 
         public static bool IsUsingPistol(Pawn p)
         {
-            bool result = false;
-            if (TM_Calc.IsUsingRanged(p))
+            if (!IsUsingRanged(p)) return false;
+
+            ThingDef weaponDef = p.equipment.Primary.def;
+            CompAbilityUserMight mightComp = p.GetCompAbilityUserMight();
+            //Log.Message("" + p.LabelShort + " is using a " + wpn.def.defName);
+            if(mightComp.equipmentContainer.Count > 0)
             {
-                Thing wpn = p.equipment.Primary;
-                CompAbilityUserMight mightComp = p.GetCompAbilityUserMight();
-                //Log.Message("" + p.LabelShort + " is using a " + wpn.def.defName);
-                if(mightComp != null && mightComp.equipmentContainer != null && mightComp.equipmentContainer.Count > 0)
-                {
-                    result = true;
-                }
-                else if (wpn.def.defName.ToLower().Contains("pistol") || wpn.def.defName.Contains("SMG") || wpn.def.defName.ToLower().Contains("revolver"))
-                {
-                    //Log.Message("weapon name contains pistol: " + wpn.def.defName);
-                    result = true;
-                }
-                else if(TM_Data.PistolList().Contains(wpn.def))
-                {
-                    //Log.Message("weapon found in custom defnames");
-                    result = true;
-                }
-                //else
-                //{
-                //    Messages.Message("TM_MustHaveWeaponType".Translate(
-                //    p.LabelShort,
-                //    wpn.LabelShort,
-                //    "pistol"
-                //    ), MessageTypeDefOf.NegativeEvent);                    
-                //}
+                return true;
             }
-            //else
-            //{
-            //    Messages.Message("MustHaveRangedWeapon".Translate(
-            //        p.LabelCap
-            //    ), MessageTypeDefOf.RejectInput);
-            //}
-            return result;
+            string defNameLower = weaponDef.defName.ToLower();
+            if (defNameLower.Contains("pistol") || weaponDef.defName.Contains("SMG") || defNameLower.Contains("revolver"))
+            {
+                //Log.Message("weapon name contains pistol: " + wpn.def.defName);
+                return true;
+            }
+            if(TM_Data.PistolSet().Contains(weaponDef))
+            {
+                //Log.Message("weapon found in custom defnames");
+                return true;
+            }
+            return false;
         }
 
         public static bool IsUsingRifle(Pawn p)
         {
-            bool result = false;
             if (IsUsingRanged(p))
             {
                 Thing wpn = p.equipment.Primary;
                 CompAbilityUserMight mightComp = p.GetCompAbilityUserMight();
                 //Log.Message("" + p.LabelShort + " is using a " + wpn.def.defName);
-                if (mightComp != null && mightComp.equipmentContainer != null && mightComp.equipmentContainer.Count > 0)
+                if (mightComp?.equipmentContainer != null && mightComp.equipmentContainer.Count > 0)
                 {
-                    result = true;
+                    return true;
                 }
-                else if ((wpn.def.defName.ToLower().Contains("rifle") || wpn.def.defName.Contains("LMG")) && !(wpn.def.defName.ToLower().Contains("sniper")))
+                if ((wpn.def.defName.ToLower().Contains("rifle") || wpn.def.defName.Contains("LMG")) && !(wpn.def.defName.ToLower().Contains("sniper")))
                 {
                     //Log.Message("weapon name contains rifle: " + wpn.def.defName);
-                    result = true;
+                    return true;
                 }
-                else if (TM_Data.RifleList().Contains(wpn.def))
+                if (TM_Data.RifleSet().Contains(wpn.def))
                 {
                     //Log.Message("weapon found in custom defnames");
-                    result = true;
+                    return true;
                 }
-                //else
-                //{
-                //    Messages.Message("TM_MustHaveWeaponType".Translate(
-                //    p.LabelShort,
-                //    wpn.LabelShort,
-                //    "rifle"
-                //    ), MessageTypeDefOf.NegativeEvent);
-                //}
             }
-            //else
-            //{
-            //    Messages.Message("MustHaveRangedWeapon".Translate(
-            //        p.LabelCap
-            //    ), MessageTypeDefOf.RejectInput);
-            //}
-            return result;
+            return false;
         }
 
         public static bool IsUsingShotgun(Pawn p)
         {
-            bool result = false;
             if (IsUsingRanged(p))
             {
                 Thing wpn = p.equipment.Primary;
                 CompAbilityUserMight mightComp = p.GetCompAbilityUserMight();
                 //Log.Message("" + p.LabelShort + " is using a " + wpn.def.defName);
-                if (mightComp != null && mightComp.equipmentContainer != null && mightComp.equipmentContainer.Count > 0)
+                if (mightComp?.equipmentContainer != null && mightComp.equipmentContainer.Count > 0)
                 {
-                    result = true;
+                    return true;
                 }
-                else if (wpn.def.defName.ToLower().Contains("shotgun"))
+                if (wpn.def.defName.ToLower().Contains("shotgun"))
                 {
                     //Log.Message("weapon name contains shotgun: " + wpn.def.defName);
-                    result = true;
+                    return true;
                 }
-                else if (TM_Data.ShotgunList().Contains(wpn.def))
+                if (TM_Data.ShotgunSet().Contains(wpn.def))
                 {
                     //Log.Message("weapon found in custom defnames");
-                    result = true;
+                    return true;
                 }
-                //else
-                //{
-                //    Messages.Message("TM_MustHaveWeaponType".Translate(
-                //    p.LabelShort,
-                //    wpn.LabelShort,
-                //    "shotgun"
-                //    ), MessageTypeDefOf.NegativeEvent);
-                //}
             }
-            //else
-            //{
-            //    Messages.Message("MustHaveRangedWeapon".Translate(
-            //        p.LabelCap
-            //    ), MessageTypeDefOf.RejectInput);
-            //}
-            return result;
+            return false;
         }
 
         public static bool IsUsingBow(Pawn p)
         {
-            bool result = false;
             if (IsUsingRanged(p))
             {
                 Thing wpn = p.equipment.Primary;
                 CompAbilityUserMight mightComp = p.GetCompAbilityUserMight();
                 //Log.Message("" + p.LabelShort + " is using a " + wpn.def.defName);
-                if (mightComp != null && mightComp.equipmentContainer != null && mightComp.equipmentContainer.Count > 0)
+                if (mightComp?.equipmentContainer != null && mightComp.equipmentContainer.Count > 0)
                 {
-                    result = true;
+                    return true;
                 }
-                else if ((wpn.def.Verbs.FirstOrDefault<VerbProperties>().defaultProjectile.projectile.damageDef.defName.ToLower().Contains("arrow") || wpn.def.defName.ToLower().Contains("bow")))
+                if (wpn.def.Verbs.First().defaultProjectile.projectile.damageDef.defName.ToLower().Contains("arrow") || wpn.def.defName.ToLower().Contains("bow"))
                 {
                     //Log.Message("weapon name contains shotgun: " + wpn.def.defName);
-                    result = true;
+                    return true;
                 }
-                else if (TM_Data.BowList().Contains(wpn.def))
+                if (TM_Data.BowSet().Contains(wpn.def))
                 {
                     //Log.Message("weapon found in custom defnames");
-                    result = true;
+                    return true;
                 }
             }
-            return result;
+            return false;
         }
 
         public static bool IsUsingMagicalFoci(Pawn p)
         {
-            bool result = false;
-            if (p != null && p.equipment != null && p.equipment.Primary != null && p.equipment.Primary.def.IsRangedWeapon)
+            if (p?.equipment?.Primary != null && p.equipment.Primary.def.IsRangedWeapon)
             {
                 Thing wpn = p.equipment.Primary;
                 CompAbilityUserMight mightComp = p.GetCompAbilityUserMight();
                 //Log.Message("" + p.LabelShort + " is using a " + wpn.def.defName);
-                if (mightComp != null && mightComp.equipmentContainer != null && mightComp.equipmentContainer.Count > 0)
+                if (mightComp?.equipmentContainer != null && mightComp.equipmentContainer.Count > 0)
                 {
-                    result = true;
+                    return true;
                 }
-                else if (wpn.def.defName.ToLower().Contains("wand") || wpn.def.defName.ToLower().Contains("staff"))
+                if (wpn.def.defName.ToLower().Contains("wand") || wpn.def.defName.ToLower().Contains("staff"))
                 {
                     //Log.Message("weapon name contains shotgun: " + wpn.def.defName);
-                    result = true;
+                    return true;
                 }
-                else if (TM_Data.MagicFociList().Contains(wpn.def))
+                if (TM_Data.MagicFociList().Contains(wpn.def))
                 {
                     //Log.Message("weapon found in custom defnames");
-                    result = true;
+                    return true;
                 }
             }
-            return result;
+            return false;
         }
 
         public static bool IsUsingCustomWeaponCategory(Pawn p, string str)
         {
-            bool result = false;
-            if (p != null && p.equipment != null && p.equipment.Primary != null)
+            if (p?.equipment?.Primary != null)
             {
                 Thing wpn = p.equipment.Primary;
                 if (TM_Data.CustomWeaponCategoryList(str).Contains(wpn.def.defName))
                 {
                     //Log.Message("weapon found in custom defnames");
-                    result = true;
+                    return true;
                 }
             }
-            return result;
+            return false;
         }
 
         public static float GetSkillDamage(Pawn p)

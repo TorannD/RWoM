@@ -3586,17 +3586,16 @@ namespace TorannMagic
                 }
                 if (!hasSkill) //check custom powers for different ability to skill names
                 {
-                    List<TM_CustomPowerDef> customPowers = TM_Data.CustomMagePowerDefs().ToList();
-                    for (int i = 0; i < customPowers.Count; i++)
+                    foreach (TM_CustomPowerDef powerDef in TM_Data.CustomMagePowerDefs())
                     {
-                        for (int j = 0; j < customPowers[i].customPower.abilityDefs.Count; j++)
+                        for (int j = 0; j < powerDef.customPower.abilityDefs.Count; j++)
                         {
-                            if (ability.defName == customPowers[i].customPower.abilityDefs[j].ToString())
+                            if (ability.defName == powerDef.customPower.abilityDefs[j].ToString())
                             {
                                 for (int k = 0; k < AllMagicPowerSkills.Count; k++)
                                 {
                                     MagicPowerSkill mps = AllMagicPowerSkills[k];
-                                    foreach (TM_CustomSkill cs in customPowers[i].customPower.skills)
+                                    foreach (TM_CustomSkill cs in powerDef.customPower.skills)
                                     {
                                         if (cs.label.Contains("_ver") && cs.label == mps.label)
                                         {
@@ -3638,17 +3637,16 @@ namespace TorannMagic
                 }
                 if (!hasSkill) //check custom powers for different ability to skill names
                 {
-                    List<TM_CustomPowerDef> customPowers = TM_Data.CustomMagePowerDefs().ToList();
-                    for (int i = 0; i < customPowers.Count; i++)
+                    foreach (TM_CustomPowerDef powerDef in TM_Data.CustomMagePowerDefs())
                     {
-                        for (int j = 0; j < customPowers[i].customPower.abilityDefs.Count; j++)
+                        for (int j = 0; j < powerDef.customPower.abilityDefs.Count; j++)
                         {
-                            if (ability.defName == customPowers[i].customPower.abilityDefs[j].ToString())
+                            if (ability.defName == powerDef.customPower.abilityDefs[j].ToString())
                             {
                                 for (int k = 0; k < AllMagicPowerSkills.Count; k++)
                                 {
                                     MagicPowerSkill mps = AllMagicPowerSkills[k];
-                                    foreach (TM_CustomSkill cs in customPowers[i].customPower.skills)
+                                    foreach (TM_CustomSkill cs in powerDef.customPower.skills)
                                     {
                                         if (cs.label.EndsWith("_pwr") && cs.label == mps.label)
                                         {

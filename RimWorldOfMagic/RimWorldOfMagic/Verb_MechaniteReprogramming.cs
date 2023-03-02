@@ -61,7 +61,7 @@ namespace TorannMagic
                             bool flag2 = num > 0;
 
 
-                            if (TM_Data.MechaniteList().Contains(rec.def))
+                            if (TM_Data.MechaniteSet().Contains(rec.def))
                             {
                                 foreach(TMDefs.TM_CategoryHediff chd in mechaniteList)
                                 {

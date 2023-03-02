@@ -1670,12 +1670,6 @@ namespace TorannMagic
                 CompAbilityUserMight comp = p.GetCompAbilityUserMight();
                 if (p != null && comp != null && (p.story.traits.HasTrait(TorannMagicDefOf.TM_SuperSoldier) || (comp.customClass != null)))
                 {
-                    if (comp.equipmentContainer == null)
-                    {
-                        comp.equipmentContainer = new ThingOwner<ThingWithComps>();
-                        comp.equipmentContainer.Clear();
-                    }
-
                     if (newEq == p.equipment.Primary)
                     {
                         //Log.Message("adding primary weapon");

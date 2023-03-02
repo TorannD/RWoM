@@ -9189,12 +9189,11 @@ namespace TorannMagic
 
         public void UpdateAutocastDef()
         {
-            IEnumerable<TM_CustomPowerDef> mpDefs = TM_Data.CustomMagePowerDefs();
-            if (this.IsMagicUser && this.MagicData != null && this.MagicData.MagicPowersCustom != null)
+            if (IsMagicUser && MagicData?.MagicPowersCustom != null)
             {
-                foreach (MagicPower mp in this.MagicData.MagicPowersCustom)
+                foreach (MagicPower mp in MagicData.MagicPowersCustom)
                 {
-                    foreach (TM_CustomPowerDef mpDef in mpDefs)
+                    foreach (TM_CustomPowerDef mpDef in TM_Data.CustomMagePowerDefs())
                     {                        
                         if (mpDef.customPower.abilityDefs[0].ToString() == mp.GetAbilityDef(0).ToString())
                         {
