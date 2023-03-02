@@ -6290,32 +6290,20 @@ namespace TorannMagic
 
         public void ResolveEffecter()
         {
-            bool spawned = this.Pawn.Spawned;
-            if (spawned)
+            if (powerEffecter != null && PowerModifier == 0)
             {
-                if (this.powerEffecter != null && this.PowerModifier == 0)
-                {
-                    this.powerEffecter.Cleanup();
-                    this.powerEffecter = null;
-                }
-                bool flag4 = this.powerEffecter == null && this.PowerModifier > 0;
-                if (flag4)
-                {
-                    EffecterDef progressBar = EffecterDefOf.ProgressBar;
-                    this.powerEffecter = progressBar.Spawn();
-                }
-                if (this.powerEffecter != null && this.PowerModifier > 0)
-                {
-                    this.powerEffecter.EffectTick(this.Pawn, TargetInfo.Invalid);
-                    MoteProgressBar mote = ((SubEffecter_ProgressBar)this.powerEffecter.children[0]).mote;
-                    bool flag5 = mote != null;
-                    if (flag5)
-                    {
-                        float value = (float)(this.powerModifier) / (float)(this.maxPower);
-                        mote.progress = Mathf.Clamp01(value);
-                        mote.offsetZ = +0.85f;
-                    }
-                }
+                powerEffecter.Cleanup();
+                powerEffecter = null;
+            }
+            else if (PowerModifier > 0)
+            {
+                powerEffecter ??= EffecterDefOf.ProgressBar.Spawn();
+                powerEffecter.EffectTick(Pawn, TargetInfo.Invalid);
+                MoteProgressBar mote = ((SubEffecter_ProgressBar)powerEffecter.children[0]).mote;
+                if (mote == null) return;
+
+                mote.progress = Mathf.Clamp01((float)powerModifier / maxPower);
+                mote.offsetZ = +0.85f;
             }
         }
 
