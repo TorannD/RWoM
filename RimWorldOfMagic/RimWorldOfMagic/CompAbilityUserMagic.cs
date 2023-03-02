@@ -366,24 +366,8 @@ namespace TorannMagic
 
         public List<TM_EventRecords> MagicUsed
         {
-            get
-            {
-                if (magicUsed == null)
-                {
-                    magicUsed = new List<TM_EventRecords>();
-                    magicUsed.Clear();
-                }
-                return magicUsed;
-            }
-            set
-            {
-                if (magicUsed == null)
-                {
-                    magicUsed = new List<TM_EventRecords>();
-                    magicUsed.Clear();
-                }
-                magicUsed = value;                
-            }
+            get => magicUsed ??= new List<TM_EventRecords>();
+            set => magicUsed = value;
         }
 
         public List<Pawn> StoneskinPawns
@@ -4784,18 +4768,10 @@ namespace TorannMagic
 
         public void ResolveMagicUseEvents()
         {
-            List<TM_EventRecords> tmpList = new List<TM_EventRecords>();
-            tmpList.Clear();
-            foreach(TM_EventRecords ev in MagicUsed)
+            int expiryTick = Find.TickManager.TicksGame - 150000;
+            for (int i = MagicUsed.Count - 1; i >= 0; i--)
             {
-                if(Find.TickManager.TicksGame - 150000 > ev.eventTick)
-                {
-                    tmpList.Add(ev);
-                }
-            }
-            foreach(TM_EventRecords rem_ev in tmpList)
-            {
-                MagicUsed.Remove(rem_ev);
+                if (expiryTick > MagicUsed[i].eventTick) MagicUsed.RemoveAt(i);
             }
         }
 
