@@ -462,14 +462,15 @@ namespace TorannMagic
 
         public int PowerModifier
         {
-            get
-            {
-                return powerModifier;
-            }
+            get => powerModifier;
             set
             {
-                TM_MoteMaker.ThrowSiphonMote(this.Pawn.DrawPos, this.Pawn.Map, 1f);
+                TM_MoteMaker.ThrowSiphonMote(Pawn.DrawPos, Pawn.Map, 1f);
                 powerModifier = Mathf.Clamp(value, 0, maxPower);
+
+                if (powerModifier != 0 || powerEffecter == null) return;
+                powerEffecter.Cleanup();
+                powerEffecter = null;
             }
         }
 
@@ -6290,21 +6291,15 @@ namespace TorannMagic
 
         public void ResolveEffecter()
         {
-            if (powerEffecter != null && PowerModifier == 0)
-            {
-                powerEffecter.Cleanup();
-                powerEffecter = null;
-            }
-            else if (PowerModifier > 0)
-            {
-                powerEffecter ??= EffecterDefOf.ProgressBar.Spawn();
-                powerEffecter.EffectTick(Pawn, TargetInfo.Invalid);
-                MoteProgressBar mote = ((SubEffecter_ProgressBar)powerEffecter.children[0]).mote;
-                if (mote == null) return;
+            if (PowerModifier <= 0) return;
 
-                mote.progress = Mathf.Clamp01((float)powerModifier / maxPower);
-                mote.offsetZ = +0.85f;
-            }
+            powerEffecter ??= EffecterDefOf.ProgressBar.Spawn();
+            powerEffecter.EffectTick(Pawn, TargetInfo.Invalid);
+            MoteProgressBar mote = ((SubEffecter_ProgressBar)powerEffecter.children[0]).mote;
+            if (mote == null) return;
+
+            mote.progress = Mathf.Clamp01((float)powerModifier / maxPower);
+            mote.offsetZ = +0.85f;
         }
 
         public void ResolveUndead()
