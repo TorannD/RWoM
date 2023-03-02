@@ -7,6 +7,7 @@ using Verse;
 using System.Collections.Generic;
 using HarmonyLib;
 using TorannMagic.TMDefs;
+using AbilityDef=AbilityUser.AbilityDef;
 
 namespace TorannMagic
 {
@@ -109,6 +110,13 @@ namespace TorannMagic
                 }
                 DrawMark(material, new Vector3(.28f, 1f, .28f));
             }
+        }
+
+        // Safely adds PawnAbility by removing it first
+        public void AddDistinctPawnAbility(AbilityDef abilityDef)
+        {
+            RemovePawnAbility(abilityDef);
+            AddPawnAbility(abilityDef);
         }
     }
 }

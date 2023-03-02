@@ -12,6 +12,7 @@ using Verse.Sound;
 using AbilityUserAI;
 using TorannMagic.Ideology;
 using TorannMagic.TMDefs;
+using AbilityDef=AbilityUser.AbilityDef;
 
 namespace TorannMagic
 {
@@ -2553,506 +2554,238 @@ namespace TorannMagic
             }
         }
 
-        public void InitializeSpell()
+        private void InitializeCustomClassSpells()
         {
-            Pawn abilityUser = base.Pawn;
-            if (this.IsMagicUser)
+            for (int j = 0; j < MagicData.AllMagicPowers.Count; j++)
             {
-                if (this.customClass != null)
+                if (MagicData.AllMagicPowers[j].learned && !customClass.classMageAbilities.Contains(MagicData.AllMagicPowers[j].abilityDef))
                 {
-                    //for(int j = 0; j < this.MagicData.AllMagicPowersWithSkills.Count; j++)
-                    //{
-                    //    if(this.MagicData.AllMagicPowersWithSkills[j].learned && !this.customClass.classMageAbilities.Contains(this.MagicData.AllMagicPowersWithSkills[j].abilityDef))
-                    //    {
-                    //        this.MagicData.AllMagicPowersWithSkills[j].learned = false;
-                    //        this.RemovePawnAbility(this.MagicData.AllMagicPowersWithSkills[j].abilityDef);
-                    //    }
-                    //}                   
-                    for (int j = 0; j < this.MagicData.AllMagicPowers.Count; j++)
-                    {                       
-                        if (this.MagicData.AllMagicPowers[j].learned && !this.customClass.classMageAbilities.Contains(this.MagicData.AllMagicPowers[j].abilityDef))
-                        {
-                            this.RemovePawnAbility(this.MagicData.AllMagicPowers[j].abilityDef);
-                            this.AddPawnAbility(this.MagicData.AllMagicPowers[j].abilityDef);                            
-                        }
-                    }
-                    if(this.recallSpell)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_Recall);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_Recall);
-                    }
+                    AddDistinctPawnAbility(MagicData.AllMagicPowers[j].abilityDef);
+                }
+            }
+            if(recallSpell) AddDistinctPawnAbility(TorannMagicDefOf.TM_Recall);
+        }
+
+        private void InitializeNonCustomClassSpells()
+        {
+            Pawn pawn = Pawn;
+            if (spell_Rain && !pawn.story.traits.HasTrait(TorannMagicDefOf.HeartOfFrost))
+            {
+                AddDistinctPawnAbility(TorannMagicDefOf.TM_Rainmaker);
+            }
+            if (spell_Blink && !pawn.story.traits.HasTrait(TorannMagicDefOf.Arcanist))
+            {
+                if (!pawn.story.traits.HasTrait(TorannMagicDefOf.ChaosMage))
+                {
+                    AddDistinctPawnAbility(TorannMagicDefOf.TM_Blink);
                 }
                 else
                 {
-                    if (this.spell_Rain == true && !abilityUser.story.traits.HasTrait(TorannMagicDefOf.HeartOfFrost))
+                    for (int i = 0; i < chaosPowers.Count; i++)
                     {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_Rainmaker);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_Rainmaker);
+                        if (chaosPowers[i].Ability != TorannMagicDefOf.TM_Blink
+                            && chaosPowers[i].Ability != TorannMagicDefOf.TM_Blink_I
+                            && chaosPowers[i].Ability != TorannMagicDefOf.TM_Blink_II
+                            && chaosPowers[i].Ability != TorannMagicDefOf.TM_Blink_III) continue;
 
-                    }
-                    if (this.spell_Blink == true && !abilityUser.story.traits.HasTrait(TorannMagicDefOf.Arcanist))
-                    {
-                        if (!abilityUser.story.traits.HasTrait(TorannMagicDefOf.ChaosMage))
-                        {
-                            this.RemovePawnAbility(TorannMagicDefOf.TM_Blink);
-                            this.AddPawnAbility(TorannMagicDefOf.TM_Blink);
-                        }
-                        else
-                        {
-                            bool hasAbility = false;
-                            for (int i = 0; i < this.chaosPowers.Count; i++)
-                            {
-                                if (this.chaosPowers[i].Ability == TorannMagicDefOf.TM_Blink || this.chaosPowers[i].Ability == TorannMagicDefOf.TM_Blink_I || this.chaosPowers[i].Ability == TorannMagicDefOf.TM_Blink_II || this.chaosPowers[i].Ability == TorannMagicDefOf.TM_Blink_III)
-                                {
-                                    hasAbility = true;
-                                }
-                            }
-                            if (!hasAbility)
-                            {
-                                this.RemovePawnAbility(TorannMagicDefOf.TM_Blink);
-                                this.AddPawnAbility(TorannMagicDefOf.TM_Blink);
-                            }
-                        }
-                    }
-                    if (this.spell_Teleport == true && !abilityUser.story.traits.HasTrait(TorannMagicDefOf.Arcanist))
-                    {
-                        if (!(abilityUser.story.traits.HasTrait(TorannMagicDefOf.ChaosMage) && this.MagicData.MagicPowersA.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Teleport).learned))
-                        {
-                            this.RemovePawnAbility(TorannMagicDefOf.TM_Teleport);
-                            this.AddPawnAbility(TorannMagicDefOf.TM_Teleport);
-                        }
-                    }
-                    
-                    if (this.spell_Heal == true && !abilityUser.story.traits.HasTrait(TorannMagicDefOf.Paladin))
-                    {
-                        if (!abilityUser.story.traits.HasTrait(TorannMagicDefOf.ChaosMage))
-                        {
-                            this.RemovePawnAbility(TorannMagicDefOf.TM_Heal);
-                            this.AddPawnAbility(TorannMagicDefOf.TM_Heal);
-                        }
-                        else
-                        {
-                            bool hasAbility = false;
-                            for (int i = 0; i < this.chaosPowers.Count; i++)
-                            {
-                                if (this.chaosPowers[i].Ability == TorannMagicDefOf.TM_Heal)
-                                {
-                                    hasAbility = true;
-                                }
-                            }
-                            if (!hasAbility)
-                            {
-                                this.RemovePawnAbility(TorannMagicDefOf.TM_Heal);
-                                this.AddPawnAbility(TorannMagicDefOf.TM_Heal);
-                            }
-                        }
-                    }
-                    if (this.spell_Heater == true)
-                    {
-                        //if (this.summonedHeaters == null || (this.summonedHeaters != null && this.summonedHeaters.Count <= 0))
-                        //{
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_Heater);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_Heater);
-                        //}
-                    }
-                    if (this.spell_Cooler == true)
-                    {
-                        //if(this.summonedCoolers == null || (this.summonedCoolers != null && this.summonedCoolers.Count <= 0))
-                        //{
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_Cooler);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_Cooler);
-                        //}
-                    }
-                    if (this.spell_PowerNode == true)
-                    {
-                        //if (this.summonedPowerNodes == null || (this.summonedPowerNodes != null && this.summonedPowerNodes.Count <= 0))
-                        //{
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_PowerNode);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_PowerNode);
-                        //}
-                    }
-                    if (this.spell_Sunlight == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_Sunlight);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_Sunlight);
-
-                    }
-                    if (this.spell_DryGround == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_DryGround);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_DryGround);
-                    }
-                    if (this.spell_WetGround == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_WetGround);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_WetGround);
-                    }
-                    if (this.spell_ChargeBattery == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_ChargeBattery);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_ChargeBattery);
-                    }
-                    if (this.spell_SmokeCloud == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_SmokeCloud);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_SmokeCloud);
-                    }
-                    if (this.spell_Extinguish == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_Extinguish);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_Extinguish);
-                    }
-                    if (this.spell_EMP == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_EMP);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_EMP);
-                    }
-                    if (this.spell_Blizzard == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_Blizzard);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_Blizzard);
-                    }
-                    if (this.spell_Firestorm == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_Firestorm);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_Firestorm);
-                    }
-                    if (this.spell_SummonMinion == true && !abilityUser.story.traits.HasTrait(TorannMagicDefOf.Summoner))
-                    {
-                        if (!abilityUser.story.traits.HasTrait(TorannMagicDefOf.ChaosMage))
-                        {
-                            this.RemovePawnAbility(TorannMagicDefOf.TM_SummonMinion);
-                            this.AddPawnAbility(TorannMagicDefOf.TM_SummonMinion);
-                        }
-                        else
-                        {
-                            bool hasAbility = false;
-                            for (int i = 0; i < this.chaosPowers.Count; i++)
-                            {
-                                if (this.chaosPowers[i].Ability == TorannMagicDefOf.TM_SummonMinion)
-                                {
-                                    hasAbility = true;
-                                }
-                            }
-                            if (!hasAbility)
-                            {
-                                this.RemovePawnAbility(TorannMagicDefOf.TM_SummonMinion);
-                                this.AddPawnAbility(TorannMagicDefOf.TM_SummonMinion);
-                            }
-                        }
-                    }
-                    if (this.spell_TransferMana == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_TransferMana);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_TransferMana);
-                    }
-                    if (this.spell_SiphonMana == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_SiphonMana);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_SiphonMana);
-                    }
-                    if (this.spell_RegrowLimb == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_RegrowLimb);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_RegrowLimb);
-                    }
-                    if (this.spell_EyeOfTheStorm == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_EyeOfTheStorm);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_EyeOfTheStorm);
-                    }
-                    if (this.spell_HeatShield == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_HeatShield);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_HeatShield);
-                    }
-                    if (this.spell_ManaShield == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_ManaShield);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_ManaShield);
-                    }
-                    if (this.spell_Blur == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_Blur);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_Blur);
-                    }
-                    if (this.spell_FoldReality == true)
-                    {
-                        this.MagicData.ReturnMatchingMagicPower(TorannMagicDefOf.TM_FoldReality).learned = true;
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_FoldReality);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_FoldReality);
-                    }
-                    if (this.spell_Resurrection == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_Resurrection);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_Resurrection);
-                    }
-                    if (this.spell_HolyWrath == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_HolyWrath);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_HolyWrath);
-                    }
-                    if (this.spell_LichForm == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_LichForm);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_LichForm);
-                    }
-                    if (this.spell_Flight == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_Flight);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_Flight);
-                    }
-                    if (this.spell_SummonPoppi == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_SummonPoppi);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_SummonPoppi);
-                    }
-                    if (this.spell_BattleHymn == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_BattleHymn);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_BattleHymn);
-                    }
-                    if (this.spell_CauterizeWound == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_CauterizeWound);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_CauterizeWound);
-                    }
-                    if (this.spell_SpellMending == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_SpellMending);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_SpellMending);
-                    }
-                    if (this.spell_FertileLands == true)
-                    {
-                        //if (this.fertileLands == null || (this.fertileLands != null && this.fertileLands.Count <= 0))
-                        //{
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_FertileLands);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_FertileLands);
-                        //}
-                    }
-                    if (this.spell_PsychicShock == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_PsychicShock);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_PsychicShock);
-                    }
-                    if (this.spell_Scorn == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_Scorn);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_Scorn);
-                    }
-                    if (this.spell_BlankMind == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_BlankMind);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_BlankMind);
-                    }
-                    if (this.spell_ShadowStep == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_ShadowStep);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_ShadowStep);
-                    }
-                    if (this.spell_ShadowCall == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_ShadowCall);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_ShadowCall);
-                    }
-                    if (this.spell_Teach == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_TeachMagic);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_TeachMagic);
-                    }
-                    if (this.spell_Meteor == true)
-                    {
-                        MagicPower meteorPower = this.MagicData.MagicPowersG.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Meteor);
-                        if (meteorPower == null)
-                        {
-                            meteorPower = this.MagicData.MagicPowersG.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Meteor_I);
-                            if (meteorPower == null)
-                            {
-                                meteorPower = this.MagicData.MagicPowersG.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Meteor_II);
-                                if (meteorPower == null)
-                                {
-                                    meteorPower = this.MagicData.MagicPowersG.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Meteor_III);
-                                }
-                            }
-                        }
-                        if (meteorPower.level == 3)
-                        {
-                            this.RemovePawnAbility(TorannMagicDefOf.TM_Meteor_III);
-                            this.AddPawnAbility(TorannMagicDefOf.TM_Meteor_III);
-                        }
-                        else if (meteorPower.level == 2)
-                        {
-                            this.RemovePawnAbility(TorannMagicDefOf.TM_Meteor_II);
-                            this.AddPawnAbility(TorannMagicDefOf.TM_Meteor_II);
-                        }
-                        else if (meteorPower.level == 1)
-                        {
-                            this.RemovePawnAbility(TorannMagicDefOf.TM_Meteor_I);
-                            this.AddPawnAbility(TorannMagicDefOf.TM_Meteor_I);
-                        }
-                        else
-                        {
-                            this.RemovePawnAbility(TorannMagicDefOf.TM_Meteor);
-                            this.AddPawnAbility(TorannMagicDefOf.TM_Meteor);
-                        }
-                    }
-                    if (this.spell_OrbitalStrike == true)
-                    {
-                        MagicPower OrbitalStrikePower = this.MagicData.magicPowerT.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_OrbitalStrike);
-                        if (OrbitalStrikePower == null)
-                        {
-                            OrbitalStrikePower = this.MagicData.magicPowerT.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_OrbitalStrike_I);
-                            if (OrbitalStrikePower == null)
-                            {
-                                OrbitalStrikePower = this.MagicData.magicPowerT.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_OrbitalStrike_II);
-                                if (OrbitalStrikePower == null)
-                                {
-                                    OrbitalStrikePower = this.MagicData.magicPowerT.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_OrbitalStrike_III);
-                                }
-                            }
-                        }
-                        if (OrbitalStrikePower.level == 3)
-                        {
-                            this.RemovePawnAbility(TorannMagicDefOf.TM_OrbitalStrike_III);
-                            this.AddPawnAbility(TorannMagicDefOf.TM_OrbitalStrike_III);
-                        }
-                        else if (OrbitalStrikePower.level == 2)
-                        {
-                            this.RemovePawnAbility(TorannMagicDefOf.TM_OrbitalStrike_II);
-                            this.AddPawnAbility(TorannMagicDefOf.TM_OrbitalStrike_II);
-                        }
-                        else if (OrbitalStrikePower.level == 1)
-                        {
-                            this.RemovePawnAbility(TorannMagicDefOf.TM_OrbitalStrike_I);
-                            this.AddPawnAbility(TorannMagicDefOf.TM_OrbitalStrike_I);
-                        }
-                        else
-                        {
-                            this.RemovePawnAbility(TorannMagicDefOf.TM_OrbitalStrike);
-                            this.AddPawnAbility(TorannMagicDefOf.TM_OrbitalStrike);
-                        }
-                    }
-                    if (this.spell_BloodMoon == true)
-                    {
-                        MagicPower BloodMoonPower = this.MagicData.MagicPowersBM.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_BloodMoon);
-                        if (BloodMoonPower == null)
-                        {
-                            BloodMoonPower = this.MagicData.MagicPowersBM.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_BloodMoon_I);
-                            if (BloodMoonPower == null)
-                            {
-                                BloodMoonPower = this.MagicData.MagicPowersBM.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_BloodMoon_II);
-                                if (BloodMoonPower == null)
-                                {
-                                    BloodMoonPower = this.MagicData.MagicPowersBM.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_BloodMoon_III);
-                                }
-                            }
-                        }
-                        if (BloodMoonPower.level == 3)
-                        {
-                            this.RemovePawnAbility(TorannMagicDefOf.TM_BloodMoon_III);
-                            this.AddPawnAbility(TorannMagicDefOf.TM_BloodMoon_III);
-                        }
-                        else if (BloodMoonPower.level == 2)
-                        {
-                            this.RemovePawnAbility(TorannMagicDefOf.TM_BloodMoon_II);
-                            this.AddPawnAbility(TorannMagicDefOf.TM_BloodMoon_II);
-                        }
-                        else if (BloodMoonPower.level == 1)
-                        {
-                            this.RemovePawnAbility(TorannMagicDefOf.TM_BloodMoon_I);
-                            this.AddPawnAbility(TorannMagicDefOf.TM_BloodMoon_I);
-                        }
-                        else
-                        {
-                            this.RemovePawnAbility(TorannMagicDefOf.TM_BloodMoon);
-                            this.AddPawnAbility(TorannMagicDefOf.TM_BloodMoon);
-                        }
-                    }
-                    if (this.spell_EnchantedAura == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_EnchantedAura);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_EnchantedAura);
-                    }
-                    if (this.spell_Shapeshift == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_Shapeshift);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_Shapeshift);
-                    }
-                    if (this.spell_ShapeshiftDW == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_ShapeshiftDW);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_ShapeshiftDW);
-                    }
-                    if (this.spell_DirtDevil == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_DirtDevil);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_DirtDevil);
-                    }
-                    if (this.spell_MechaniteReprogramming == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_MechaniteReprogramming);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_MechaniteReprogramming);
-                    }
-                    if (this.spell_ArcaneBolt == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_ArcaneBolt);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_ArcaneBolt);
-                    }
-                    if (this.spell_LightningTrap == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_LightningTrap);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_LightningTrap);
-                    }
-                    if (this.spell_Invisibility == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_Invisibility);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_Invisibility);
-                    }
-                    if (this.spell_BriarPatch == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_BriarPatch);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_BriarPatch);
-                    }
-                    if (this.spell_Recall == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_TimeMark);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_TimeMark);
-                        if (this.recallSpell)
-                        {
-                            this.RemovePawnAbility(TorannMagicDefOf.TM_Recall);
-                            this.AddPawnAbility(TorannMagicDefOf.TM_Recall);
-                        }
-                    }
-                    if (this.spell_MageLight == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_MageLight);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_MageLight);
-                    }
-                    if (this.spell_SnapFreeze == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_SnapFreeze);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_SnapFreeze);
-                    }
-                    if (this.spell_Ignite == true)
-                    {
-                        this.RemovePawnAbility(TorannMagicDefOf.TM_Ignite);
-                        this.AddPawnAbility(TorannMagicDefOf.TM_Ignite);
-                    }
-                    
-                    if (this.IsMagicUser && this.MagicData.MagicPowersCustomAll != null && this.MagicData.MagicPowersCustomAll.Count > 0)
-                    {
-                        for (int j = 0; j < this.MagicData.MagicPowersCustomAll.Count; j++)
-                        {
-                            if (this.MagicData.MagicPowersCustomAll[j].learned)
-                            {
-                                this.RemovePawnAbility(this.MagicData.MagicPowersCustomAll[j].abilityDef);
-                                this.AddPawnAbility(this.MagicData.MagicPowersCustomAll[j].abilityDef);
-                            }
-                        }
+                        AddDistinctPawnAbility(TorannMagicDefOf.TM_Blink);
+                        break;
                     }
                 }
-                //this.UpdateAbilities();
             }
+            if (spell_Teleport && !pawn.story.traits.HasTrait(TorannMagicDefOf.Arcanist))
+            {
+                if (!(pawn.story.traits.HasTrait(TorannMagicDefOf.ChaosMage) && MagicData.MagicPowersA.First(static mp => mp.abilityDef == TorannMagicDefOf.TM_Teleport).learned))
+                {
+                    AddDistinctPawnAbility(TorannMagicDefOf.TM_Teleport);
+                }
+            }
+
+            if (spell_Heal && !pawn.story.traits.HasTrait(TorannMagicDefOf.Paladin))
+            {
+                if (!pawn.story.traits.HasTrait(TorannMagicDefOf.ChaosMage))
+                {
+                    AddDistinctPawnAbility(TorannMagicDefOf.TM_Heal);
+                }
+                else
+                {
+                    bool hasAbility = false;
+                    for (int i = 0; i < chaosPowers.Count; i++)
+                    {
+                        if (chaosPowers[i].Ability == TorannMagicDefOf.TM_Heal)
+                        {
+                            hasAbility = true;
+                        }
+                    }
+                    if (!hasAbility)
+                    {
+                        AddDistinctPawnAbility(TorannMagicDefOf.TM_Heal);
+                    }
+                }
+            }
+
+            if (spell_SummonMinion && !pawn.story.traits.HasTrait(TorannMagicDefOf.Summoner))
+            {
+                if (!pawn.story.traits.HasTrait(TorannMagicDefOf.ChaosMage))
+                {
+                    AddDistinctPawnAbility(TorannMagicDefOf.TM_SummonMinion);
+                }
+                else
+                {
+                    for (int i = 0; i < chaosPowers.Count; i++)
+                    {
+                        if (chaosPowers[i].Ability != TorannMagicDefOf.TM_SummonMinion) continue;
+
+                        AddDistinctPawnAbility(TorannMagicDefOf.TM_SummonMinion);
+                        break;
+                    }
+                }
+            }
+
+            if (spell_FoldReality)
+            {
+                MagicData.ReturnMatchingMagicPower(TorannMagicDefOf.TM_FoldReality).learned = true;
+                AddDistinctPawnAbility(TorannMagicDefOf.TM_FoldReality);
+            }
+
+            if (spell_Meteor)
+            {
+                MagicPower meteorPower = MagicData.MagicPowersG.FirstOrDefault(static mp => mp.abilityDef == TorannMagicDefOf.TM_Meteor)
+                                         ?? MagicData.MagicPowersG.FirstOrDefault(static mp => mp.abilityDef == TorannMagicDefOf.TM_Meteor_I)
+                                         ?? MagicData.MagicPowersG.FirstOrDefault(static mp => mp.abilityDef == TorannMagicDefOf.TM_Meteor_II)
+                                         ?? MagicData.MagicPowersG.First(static mp => mp.abilityDef == TorannMagicDefOf.TM_Meteor_III);
+                switch (meteorPower.level)
+                {
+                    case 3:
+                        AddDistinctPawnAbility(TorannMagicDefOf.TM_Meteor_III);
+                        break;
+                    case 2:
+                        AddDistinctPawnAbility(TorannMagicDefOf.TM_Meteor_II);
+                        break;
+                    case 1:
+                        AddDistinctPawnAbility(TorannMagicDefOf.TM_Meteor_I);
+                        break;
+                    default:
+                        AddDistinctPawnAbility(TorannMagicDefOf.TM_Meteor);
+                        break;
+                }
+            }
+            if (spell_OrbitalStrike)
+            {
+                MagicPower OrbitalStrikePower = MagicData.magicPowerT.FirstOrDefault(static mp => mp.abilityDef == TorannMagicDefOf.TM_OrbitalStrike)
+                                                ?? MagicData.magicPowerT.FirstOrDefault(static mp => mp.abilityDef == TorannMagicDefOf.TM_OrbitalStrike_I)
+                                                ?? MagicData.magicPowerT.FirstOrDefault(static mp => mp.abilityDef == TorannMagicDefOf.TM_OrbitalStrike_II)
+                                                ?? MagicData.magicPowerT.First(static mp => mp.abilityDef == TorannMagicDefOf.TM_OrbitalStrike_III);
+                switch (OrbitalStrikePower.level)
+                {
+                    case 3:
+                        AddDistinctPawnAbility(TorannMagicDefOf.TM_OrbitalStrike_III);
+                        break;
+                    case 2:
+                        AddDistinctPawnAbility(TorannMagicDefOf.TM_OrbitalStrike_II);
+                        break;
+                    case 1:
+                        AddDistinctPawnAbility(TorannMagicDefOf.TM_OrbitalStrike_I);
+                        break;
+                    default:
+                        AddDistinctPawnAbility(TorannMagicDefOf.TM_OrbitalStrike);
+                        break;
+                }
+            }
+            if (spell_BloodMoon)
+            {
+                MagicPower BloodMoonPower = MagicData.MagicPowersBM.FirstOrDefault(static mp => mp.abilityDef == TorannMagicDefOf.TM_BloodMoon)
+                                            ?? MagicData.MagicPowersBM.FirstOrDefault(static mp => mp.abilityDef == TorannMagicDefOf.TM_BloodMoon_I)
+                                            ?? MagicData.MagicPowersBM.FirstOrDefault(static mp => mp.abilityDef == TorannMagicDefOf.TM_BloodMoon_II)
+                                            ?? MagicData.MagicPowersBM.First(static mp => mp.abilityDef == TorannMagicDefOf.TM_BloodMoon_III);
+                switch (BloodMoonPower.level)
+                {
+                    case 3:
+                        AddDistinctPawnAbility(TorannMagicDefOf.TM_BloodMoon_III);
+                        break;
+                    case 2:
+                        AddDistinctPawnAbility(TorannMagicDefOf.TM_BloodMoon_II);
+                        break;
+                    case 1:
+                        AddDistinctPawnAbility(TorannMagicDefOf.TM_BloodMoon_I);
+                        break;
+                    default:
+                        AddDistinctPawnAbility(TorannMagicDefOf.TM_BloodMoon);
+                        break;
+                }
+            }
+
+            if (spell_Recall)
+            {
+                AddDistinctPawnAbility(TorannMagicDefOf.TM_TimeMark);
+                if (recallSpell)
+                {
+                    AddDistinctPawnAbility(TorannMagicDefOf.TM_Recall);
+                }
+            }
+
+            if (spell_Heater) AddDistinctPawnAbility(TorannMagicDefOf.TM_Heater);
+            if (spell_Cooler) AddDistinctPawnAbility(TorannMagicDefOf.TM_Cooler);
+            if (spell_PowerNode) AddDistinctPawnAbility(TorannMagicDefOf.TM_PowerNode);
+            if (spell_Sunlight) AddDistinctPawnAbility(TorannMagicDefOf.TM_Sunlight);
+            if (spell_DryGround) AddDistinctPawnAbility(TorannMagicDefOf.TM_DryGround);
+            if (spell_WetGround) AddDistinctPawnAbility(TorannMagicDefOf.TM_WetGround);
+            if (spell_ChargeBattery) AddDistinctPawnAbility(TorannMagicDefOf.TM_ChargeBattery);
+            if (spell_SmokeCloud) AddDistinctPawnAbility(TorannMagicDefOf.TM_SmokeCloud);
+            if (spell_Extinguish) AddDistinctPawnAbility(TorannMagicDefOf.TM_Extinguish);
+            if (spell_EMP) AddDistinctPawnAbility(TorannMagicDefOf.TM_EMP);
+            if (spell_Blizzard) AddDistinctPawnAbility(TorannMagicDefOf.TM_Blizzard);
+            if (spell_Firestorm) AddDistinctPawnAbility(TorannMagicDefOf.TM_Firestorm);
+            if (spell_TransferMana) AddDistinctPawnAbility(TorannMagicDefOf.TM_TransferMana);
+            if (spell_SiphonMana) AddDistinctPawnAbility(TorannMagicDefOf.TM_SiphonMana);
+            if (spell_RegrowLimb) AddDistinctPawnAbility(TorannMagicDefOf.TM_RegrowLimb);
+            if (spell_EyeOfTheStorm) AddDistinctPawnAbility(TorannMagicDefOf.TM_EyeOfTheStorm);
+            if (spell_HeatShield) AddDistinctPawnAbility(TorannMagicDefOf.TM_HeatShield);
+            if (spell_ManaShield) AddDistinctPawnAbility(TorannMagicDefOf.TM_ManaShield);
+            if (spell_Blur) AddDistinctPawnAbility(TorannMagicDefOf.TM_Blur);
+            if (spell_Resurrection) AddDistinctPawnAbility(TorannMagicDefOf.TM_Resurrection);
+            if (spell_HolyWrath) AddDistinctPawnAbility(TorannMagicDefOf.TM_HolyWrath);
+            if (spell_LichForm) AddDistinctPawnAbility(TorannMagicDefOf.TM_LichForm);
+            if (spell_Flight) AddDistinctPawnAbility(TorannMagicDefOf.TM_Flight);
+            if (spell_SummonPoppi) AddDistinctPawnAbility(TorannMagicDefOf.TM_SummonPoppi);
+            if (spell_BattleHymn) AddDistinctPawnAbility(TorannMagicDefOf.TM_BattleHymn);
+            if (spell_CauterizeWound) AddDistinctPawnAbility(TorannMagicDefOf.TM_CauterizeWound);
+            if (spell_SpellMending) AddDistinctPawnAbility(TorannMagicDefOf.TM_SpellMending);
+            if (spell_FertileLands) AddDistinctPawnAbility(TorannMagicDefOf.TM_FertileLands);
+            if (spell_PsychicShock) AddDistinctPawnAbility(TorannMagicDefOf.TM_PsychicShock);
+            if (spell_Scorn) AddDistinctPawnAbility(TorannMagicDefOf.TM_Scorn);
+            if (spell_BlankMind) AddDistinctPawnAbility(TorannMagicDefOf.TM_BlankMind);
+            if (spell_ShadowStep) AddDistinctPawnAbility(TorannMagicDefOf.TM_ShadowStep);
+            if (spell_ShadowCall) AddDistinctPawnAbility(TorannMagicDefOf.TM_ShadowCall);
+            if (spell_Teach) AddDistinctPawnAbility(TorannMagicDefOf.TM_TeachMagic);
+            if (spell_EnchantedAura) AddDistinctPawnAbility(TorannMagicDefOf.TM_EnchantedAura);
+            if (spell_Shapeshift) AddDistinctPawnAbility(TorannMagicDefOf.TM_Shapeshift);
+            if (spell_ShapeshiftDW) AddDistinctPawnAbility(TorannMagicDefOf.TM_ShapeshiftDW);
+            if (spell_DirtDevil) AddDistinctPawnAbility(TorannMagicDefOf.TM_DirtDevil);
+            if (spell_MechaniteReprogramming) AddDistinctPawnAbility(TorannMagicDefOf.TM_MechaniteReprogramming);
+            if (spell_ArcaneBolt) AddDistinctPawnAbility(TorannMagicDefOf.TM_ArcaneBolt);
+            if (spell_LightningTrap) AddDistinctPawnAbility(TorannMagicDefOf.TM_LightningTrap);
+            if (spell_Invisibility) AddDistinctPawnAbility(TorannMagicDefOf.TM_Invisibility);
+            if (spell_BriarPatch) AddDistinctPawnAbility(TorannMagicDefOf.TM_BriarPatch);
+            if (spell_MageLight) AddDistinctPawnAbility(TorannMagicDefOf.TM_MageLight);
+            if (spell_SnapFreeze) AddDistinctPawnAbility(TorannMagicDefOf.TM_SnapFreeze);
+            if (spell_Ignite) AddDistinctPawnAbility(TorannMagicDefOf.TM_Ignite);
+
+            for (int j = 0; j < MagicData.MagicPowersCustomAll.Count; j++)
+            {
+                if (MagicData.MagicPowersCustomAll[j].learned)
+                {
+                    AddDistinctPawnAbility(MagicData.MagicPowersCustomAll[j].abilityDef);
+                }
+            }
+        }
+
+        public void InitializeSpell()
+        {
+            if (!IsMagicUser) return;
+
+            if (customClass != null) InitializeCustomClassSpells();
+            else InitializeNonCustomClassSpells();
         }
 
         public void RemovePowers(bool clearStandalone = true)
@@ -8937,8 +8670,7 @@ namespace TorannMagic
                                                     AddPawnAbility(TorannMagicDefOf.TM_Hex_Pain);
                                                 }
                                                 
-                                                RemovePawnAbility(tmad);
-                                                AddPawnAbility(tmad);
+                                                AddDistinctPawnAbility(tmad);
                                             }
                                             if(tmad.childAbilities != null && tmad.childAbilities.Count > 0)
                                             {
@@ -8946,8 +8678,7 @@ namespace TorannMagic
                                                 {
                                                     if(ad.shouldInitialize)
                                                     {
-                                                        RemovePawnAbility(ad);
-                                                        AddPawnAbility(ad);
+                                                        AddDistinctPawnAbility(ad);
                                                     }
                                                 }
                                             }
