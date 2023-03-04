@@ -176,7 +176,7 @@
 
 <!-- Mod Settings Class options -->
 
-<TM_ClassWarning>**Cambia la configuración de las clases solo al empezar un nuevo juego**</TM_ClassWarning>
+<TM_ClassWarning>**La configuración de clase solo afecta a los peones creados después del cambio**</TM_ClassWarning>
 <TM_RequiresRestart>**Cualquier cambio requiere un reinicio de juego**</TM_RequiresRestart>
 <TM_ClassOptions>Clases Habilitadas</TM_ClassOptions>
 <TM_EnabledMages>Magos</TM_EnabledMages>
