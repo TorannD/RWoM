@@ -2074,7 +2074,7 @@ namespace TorannMagic
             // cut the decimal if 100%
             string formatted = weightedChance > 99.9f ? $"{weightedChance:F0}" : $"{weightedChance:F1}";
             // Add a + if the total is over 100% as when conflicts arise the percentage will be higher (unless full conflict)
-            return total > 1f ? $"{formatted}+%" : $"{formatted} %";
+            return total > 1f && chance > 0f ? $"{formatted}+%" : $"{formatted} %";
         }
 
         public static Area GetSpriteArea(Map map = null, bool makeNewArea = true)
