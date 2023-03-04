@@ -132,10 +132,10 @@ namespace TorannMagic.ModOptions
             Scribe_Values.Look<bool>(ref this.AIMarking, "AIMarking", false, false);
             Scribe_Values.Look<bool>(ref this.AIFighterMarking, "AIFighterMarking", false, false);
             Scribe_Values.Look<bool>(ref this.AIFriendlyMarking, "AIFriendlyMarking", false, false);
-            Scribe_Values.Look<float>(ref this.baseMageChance, "baseMageChance", 1f, false);
-            Scribe_Values.Look<float>(ref this.baseFighterChance, "baseFighterChance", 1f, false);
-            Scribe_Values.Look<float>(ref this.advMageChance, "advMageChance", 0.5f, false);
-            Scribe_Values.Look<float>(ref this.advFighterChance, "advFighterChance", 0.5f, false);
+            Scribe_Values.Look<float>(ref baseMageChance, "baseMageChance", 0.2f);
+            Scribe_Values.Look<float>(ref baseFighterChance, "baseFighterChance", 0.2f);
+            Scribe_Values.Look<float>(ref advMageChance, "advMageChance", 0.1f);
+            Scribe_Values.Look<float>(ref advFighterChance, "advFighterChance", 0.1f);
             Scribe_Values.Look<float>(ref this.supportTraitChance, "supportTraitChance", 0.1f, false);
             Scribe_Values.Look<float>(ref this.magicyteChance, "magicyteChance", 0.005f, false);
             Scribe_Values.Look<bool>(ref this.showIconsMultiSelect, "showIconsMultiSelect", true, false);
