@@ -17,7 +17,6 @@ namespace TorannMagic
 {
     [CompilerGenerated]
     [Serializable]
-    [StaticConstructorOnStartup]
     public class CompAbilityUserMagic : CompAbilityUserTMBase
     {
         public string LabelKey = "TM_Magic";
@@ -3558,29 +3557,6 @@ namespace TorannMagic
                 //Log.Message("Removing ability: " + currentP.abilityDef.defName.ToString());
                 currentN.level = 0;
                 base.RemovePawnAbility(currentN.abilityDef);
-            }
-        }
-
-        public void RemoveTraits()
-        {
-            List<Trait> traits = this.Pawn.story.traits.allTraits;
-            for (int i = 0; i < traits.Count; i++)
-            {
-                if (traits[i].def == TorannMagicDefOf.InnerFire || traits[i].def == TorannMagicDefOf.HeartOfFrost || traits[i].def == TorannMagicDefOf.StormBorn || traits[i].def == TorannMagicDefOf.Arcanist || traits[i].def == TorannMagicDefOf.Paladin ||
-                    traits[i].def == TorannMagicDefOf.Druid || traits[i].def == TorannMagicDefOf.Priest || traits[i].def == TorannMagicDefOf.Necromancer || traits[i].def == TorannMagicDefOf.Warlock || traits[i].def == TorannMagicDefOf.Succubus ||
-                    traits[i].def == TorannMagicDefOf.TM_Bard || traits[i].def == TorannMagicDefOf.Geomancer || traits[i].def == TorannMagicDefOf.Technomancer || traits[i].def == TorannMagicDefOf.BloodMage || traits[i].def == TorannMagicDefOf.Enchanter ||
-                    traits[i].def == TorannMagicDefOf.Chronomancer || traits[i].def == TorannMagicDefOf.ChaosMage || traits[i].def == TorannMagicDefOf.TM_Wanderer)
-                {
-                    Log.Message("Removing trait " + traits[i].Label);
-                    traits.Remove(traits[i]);
-                    i--;
-                }
-                if (this.customClass != null)
-                {
-                    traits.Remove(this.Pawn.story.traits.GetTrait(this.customClass.classTrait));
-                    this.customClass = null;
-                    this.customIndex = -2;
-                }
             }
         }
 

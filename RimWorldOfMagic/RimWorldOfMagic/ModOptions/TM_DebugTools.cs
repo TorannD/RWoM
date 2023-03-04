@@ -129,17 +129,15 @@ namespace TorannMagic.ModOptions
 
         public static void RemoveClassTrait(Pawn pawn)
         {
-            for (int i = 0; i < TM_Data.AllClassTraits.Count; i++)
+            for (int j = 0; j < pawn.story.traits.allTraits.Count; j++)
             {
-                for (int j = 0; j < pawn.story.traits.allTraits.Count; j++)
+                if (TM_ClassUtility.AllClassTraits.Contains(pawn.story.traits.allTraits[j].def))
                 {
-                    if (pawn.story.traits.allTraits[j].def == TM_Data.AllClassTraits[i])
-                    {
-                        pawn.story.traits.allTraits.Remove(pawn.story.traits.allTraits[j]);
-                        break;
-                    }                    
+                    pawn.story.traits.allTraits.Remove(pawn.story.traits.allTraits[j]);
+                    break;
                 }
             }
+
             if(pawn.story.traits.HasTrait(TorannMagicDefOf.TM_CursedTD))
             {
                 pawn.story.traits.RemoveTrait(pawn.story.traits.GetTrait(TorannMagicDefOf.TM_CursedTD));

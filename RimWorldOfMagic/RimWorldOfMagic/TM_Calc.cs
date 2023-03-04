@@ -333,7 +333,7 @@ namespace TorannMagic
             if (pawn?.story?.traits?.allTraits == null) return false;
             CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
             if (comp != null && comp.IsMightUser && comp.MightData != null && comp.Stamina != null) return true;            
-            if (pawn.story.traits.allTraits.Any(t => TM_Data.MightTraits.Contains(t.def))) return true;
+            if (pawn.story.traits.allTraits.Any(t => TM_ClassUtility.MightTraits.Contains(t.def))) return true;
             if (pawn.needs != null && pawn.needs.AllNeeds.Any(t => t.def == TorannMagicDefOf.TM_Stamina)) return true;
             return false;
         }
@@ -366,29 +366,18 @@ namespace TorannMagic
             if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless)) return false;            
             CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
             if (comp != null && comp.IsMagicUser && comp.MagicData != null && comp.Mana != null) return true;
-            if (pawn.story.traits.allTraits.Any(t => TM_Data.MagicTraits.Contains(t.def))) return true;
+            if (pawn.story.traits.allTraits.Any(t => TM_ClassUtility.MagicTraits.Contains(t.def))) return true;
             if (pawn.needs != null && pawn.needs.AllNeeds.Any(t => t.def == TorannMagicDefOf.TM_Mana)) return true;            
             return false;
         }
 
         public static bool HasAdvancedClass(Pawn p)
-        {               
-            if (p != null && p.story != null && p.story.traits != null)
+        {
+            if (p?.story?.traits == null) return false;
+            for (int i = p.story.traits.allTraits.Count - 1; i >= 0; i--)
             {
-                List<TM_CustomClass> customClasses = TM_ClassUtility.CustomClasses;
-                for (int i = 0; i < customClasses.Count; i++)
-                {
-                    if (customClasses[i].isAdvancedClass)
-                    {
-                        foreach(Trait t in p.story.traits.allTraits)
-                        {
-                            if(t.def == customClasses[i].classTrait)
-                            {
-                                return true;
-                            }
-                        }                          
-                    }
-                }
+                if (TM_ClassUtility.CustomAdvancedClassTraitMap.ContainsKey(p.story.traits.allTraits[i].def.index))
+                    return true;
             }
             return false;            
         }
@@ -2075,41 +2064,17 @@ namespace TorannMagic
             float chance = ((ModOptions.Settings.Instance.baseFighterChance * 6) + (ModOptions.Settings.Instance.baseMageChance * 6) + (9 * ModOptions.Settings.Instance.advFighterChance) + (18 * ModOptions.Settings.Instance.advMageChance)) / (allTraits.Count);
             return Mathf.Clamp01(chance);
         }
-        
-        public static float GetMagePrecurserChance()
-        {
-            float chance = 0f;
-            
-            chance = (ModOptions.Settings.Instance.baseMageChance * 6) / ((ModOptions.Settings.Instance.baseFighterChance * 6) + (ModOptions.Settings.Instance.baseMageChance * 6) + (9 * ModOptions.Settings.Instance.advFighterChance) + (18 * ModOptions.Settings.Instance.advMageChance));
-            chance *= GetRWoMTraitChance();
-            return chance;
-        }
 
-        public static float GetFighterPrecurserChance()
+        public static string GetWeightedChance(float chance)
         {
-            float chance = 0f;
-            
-            chance = (ModOptions.Settings.Instance.baseFighterChance * 6) / ((ModOptions.Settings.Instance.baseFighterChance * 6) + (ModOptions.Settings.Instance.baseMageChance * 6) + (9 * ModOptions.Settings.Instance.advFighterChance) + (18 * ModOptions.Settings.Instance.advMageChance));
-            chance *= GetRWoMTraitChance();
-            return chance;
-        }
+            var inst = ModOptions.Settings.Instance;
+            float total = inst.baseMageChance + inst.baseFighterChance + inst.advMageChance + inst.advFighterChance;
 
-        public static float GetMageSpawnChance()
-        {
-            float chance = 0f;
-            
-            chance = (ModOptions.Settings.Instance.advMageChance * 16) / ((ModOptions.Settings.Instance.baseFighterChance * 6) + (ModOptions.Settings.Instance.baseMageChance * 6) + (9 * ModOptions.Settings.Instance.advFighterChance) + (18 * ModOptions.Settings.Instance.advMageChance));
-            chance *= GetRWoMTraitChance();
-            return chance;
-        }
-
-        public static float GetFighterSpawnChance()
-        {
-            float chance = 0f;
-            
-            chance = (ModOptions.Settings.Instance.advFighterChance * 8) / ((ModOptions.Settings.Instance.baseFighterChance * 6) + (ModOptions.Settings.Instance.baseMageChance * 6) + (9 * ModOptions.Settings.Instance.advFighterChance) + (18 * ModOptions.Settings.Instance.advMageChance));
-            chance *= GetRWoMTraitChance();
-            return chance;
+            float weightedChance = chance * 100 / total;
+            // cut the decimal if 100%
+            string formatted = weightedChance > 99.9f ? $"{weightedChance:F0}" : $"{weightedChance:F1}";
+            // Add a + if the total is over 100% as when conflicts arise the percentage will be higher (unless full conflict)
+            return total > 1f ? $"{formatted}+%" : $"{formatted} %";
         }
 
         public static Area GetSpriteArea(Map map = null, bool makeNewArea = true)

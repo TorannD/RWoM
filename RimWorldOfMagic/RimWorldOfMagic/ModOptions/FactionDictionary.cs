@@ -44,8 +44,6 @@ namespace TorannMagic.ModOptions
             {
                 Settings.Instance.FactionFighterSettings = new Dictionary<string, float>();
                 Settings.Instance.FactionMageSettings = new Dictionary<string, float>();
-                Settings.Instance.FactionFighterSettings.Clear();
-                Settings.Instance.FactionMageSettings.Clear();
                 foreach (FactionDef current in factionDefs)
                 {
                     if (current.defName == "Seers")
@@ -63,9 +61,7 @@ namespace TorannMagic.ModOptions
             else
             {
                 Dictionary<string, float> fList = new Dictionary<string, float>();
-                fList.Clear();
                 Dictionary<string, float> mList = new Dictionary<string, float>();
-                mList.Clear();
                 foreach (FactionDef current in factionDefs)
                 {
                     if (Settings.Instance.FactionFighterSettings.ContainsKey(current.defName))

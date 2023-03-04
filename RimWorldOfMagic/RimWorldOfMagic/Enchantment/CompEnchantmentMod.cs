@@ -6,16 +6,9 @@ using Verse;
 
 namespace TorannMagic.Enchantment
 {
-    internal class CompEnchantmentMod : Mod
+    internal class CompEnchantmentMod
     {
-        public CompEnchantmentMod(ModContentPack mcp) : base(mcp)
-        {
-            LongEventHandler.ExecuteWhenFinished(new Action(CompEnchantmentMod.AddComp));
-            LongEventHandler.ExecuteWhenFinished(new Action(CompEnchantmentMod.AddUniversalBodyparts));            
-            LongEventHandler.ExecuteWhenFinished(new Action(CompEnchantmentMod.FillCloakPool));
-        }
-
-        private static void AddComp()
+        public static void AddComp()
         {
             //unrelated, single time load mod check
             //foreach (ModContentPack p in LoadedModManager.RunningMods)
@@ -60,7 +53,7 @@ namespace TorannMagic.Enchantment
             }        
         }
 
-        private static void AddUniversalBodyparts()
+        public static void AddUniversalBodyparts()
         {
             IEnumerable<BodyPartDef> universalBodyParts = from def in DefDatabase<BodyPartDef>.AllDefs
                                                           where (def.destroyableByDamage)
@@ -80,7 +73,7 @@ namespace TorannMagic.Enchantment
             }
         }        
 
-        private static void FillCloakPool()
+        public static void FillCloakPool()
         {
             ModOptions.Constants.InitializeCloaks();
         }

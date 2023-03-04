@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
-  <TM_PoisonTrap.label>毒药陷阱</TM_PoisonTrap.label>
-  <TM_PoisonTrap.description>一个由刺和细绳组成的陷阱， 它可以完美地与地形贴合从而骗过未经训练的眼睛， 但是它的气味会给动物们一个明显的警告. 当一个受害者触发陷阱，德鲁伊之毒的粒子将会排放到空气中. 这种毒同时用来伤害和使受害者失去行动能力。</TM_PoisonTrap.description>
+  <TM_Trap_Poison.label>毒药陷阱</TM_Trap_Poison.label>
+  <TM_Trap_Poison.description>一个由刺和细绳组成的陷阱， 它可以完美地与地形贴合从而骗过未经训练的眼睛， 但是它的气味会给动物们一个明显的警告. 当一个受害者触发陷阱，德鲁伊之毒的粒子将会排放到空气中. 这种毒同时用来伤害和使受害者失去行动能力。</TM_Trap_Poison.description>
 
   <TM_ManaMine.label>魔法地雷</TM_ManaMine.label>
   <TM_ManaMine.description>将魔力与物质压缩造成极强的爆炸. 心灵之蔓的力量会从地雷中扩展; 当一个受害者惊扰到这些心灵之蔓， 它将会瓦解领域内的一切并触发地雷。2.4米 爆炸半径。</TM_ManaMine.description>

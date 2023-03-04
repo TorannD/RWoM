@@ -1,4 +1,5 @@
 ﻿using System;
+using TorannMagic.Enchantment;
 using UnityEngine;
 using Verse;
 
@@ -28,14 +29,42 @@ namespace TorannMagic.ModOptions
             return "A RimWorld of Magic";
         }
 
+        // After defs are loaded on startup
+        private static void AfterDefsLoadedAction()
+        {
+            CompEnchantmentMod.AddComp();
+            CompEnchantmentMod.AddUniversalBodyparts();
+            CompEnchantmentMod.FillCloakPool();
+            TM_ClassUtility.InitializeCustomClasses();
+            ModClassOptions.InitializeThingDefDictionaries();
+            ModClassOptions.ReloadSettings();                   // Requires InitializeCustomClasses && InitializeThingDefDictionaries
+            ModClassOptions.InitializeCustomClassActions();     // Requires CacheEnabledClasses
+            ModClassOptions.InitializeModBackstories();
+        }
+
         public Controller(ModContentPack content) : base(content)
         {
-            Controller.Instance = this;
-            Settings.Instance = base.GetSettings<Settings>();
+            Instance = this;
+            Settings.Instance = GetSettings<Settings>();
+            LongEventHandler.ExecuteWhenFinished(AfterDefsLoadedAction);
+        }
+
+        // On Changing of settings
+        public override void WriteSettings()
+        {
+            try
+            {
+                ModClassOptions.ReloadSettings();
+            }
+            catch
+            {
+                Log.Error("[Rimworld of Magic] Error writing settings. Skipping...");
+            }
+            base.WriteSettings();
         }
 
         public override void DoSettingsWindowContents(Rect canvas)
-        {            
+        {
             int num = 0;
             float rowHeight = 28f;
             Rect sRect = new Rect(canvas.x, canvas.y, canvas.width - 36f, canvas.height + 360f);
@@ -58,7 +87,7 @@ namespace TorannMagic.ModOptions
             if (classOptions)
             {
                 Rect rect = new Rect(64f, 64f, 480, 640);
-                ClassOptionsWindow newWindow = new ClassOptionsWindow();                
+                ClassOptionsWindow newWindow = new ClassOptionsWindow();
                 Find.WindowStack.Add(newWindow);
             }
             Rect rowRectShiftRightPlus = UIHelper.GetRowRect(rowRect, rowHeight, num);
@@ -97,13 +126,13 @@ namespace TorannMagic.ModOptions
             num++;
             Rect rowRect21 = UIHelper.GetRowRect(rowRect2, rowHeight, num);
             Settings.Instance.magicyteChance = Widgets.HorizontalSlider(rowRect21, Settings.Instance.magicyteChance, 0, .05f, false, "MagicyteChance".Translate() + " " + Settings.Instance.magicyteChance, "0%", "5%", .001f);
-            num++;            
+            num++;
             Rect rowRect3 = UIHelper.GetRowRect(rowRect21, rowHeight, num);
             Widgets.CheckboxLabeled(rowRect3, "TM_DeathRetaliationIsLethal".Translate(), ref Settings.Instance.deathRetaliationIsLethal, false);
             //rowRect3.width = rowRect3.width * .7f;
             //Settings.Instance.deathExplosionRadius = Widgets.HorizontalSlider(rowRect3, Settings.Instance.deathExplosionRadius, .1f, 6f, false, "DeathRadius".Translate() + " " + Settings.Instance.deathExplosionRadius, ".1", "6", .1f);
             //Rect rowRect31 = new Rect(rowRect3.xMax + 4f, rowRect3.y, rowRect2.width/2, rowRect3.height);
-            //Widgets.TextFieldNumericLabeled<int>(rowRect31, "DeathExplosionMin".Translate(), ref Settings.Instance.deathExplosionMin, ref this.deathExplosionDmgMin, 0, 100);            
+            //Widgets.TextFieldNumericLabeled<int>(rowRect31, "DeathExplosionMin".Translate(), ref Settings.Instance.deathExplosionMin, ref this.deathExplosionDmgMin, 0, 100);
             //Rect rowRect32 = new Rect(rowRect31.xMax + 4f, rowRect3.y, rowRect2.width/2, rowRect3.height);
             //Widgets.TextFieldNumericLabeled<int>(rowRect32, "DeathExplosionMax".Translate(), ref Settings.Instance.deathExplosionMax, ref this.deathExplosionDmgMax, 0, 200);
             num++;
@@ -148,7 +177,7 @@ namespace TorannMagic.ModOptions
             Widgets.CheckboxLabeled(rowRect7, "AICanCast".Translate(), ref Settings.Instance.AICasting, false);
             Rect rowRect7ShiftRight = UIHelper.GetRowRect(rowRect7, rowHeight, num);
             rowRect7ShiftRight.x += rowRect7.width + 56f;
-            Widgets.CheckboxLabeled(rowRect7ShiftRight, "AIHardMode".Translate(), ref Settings.Instance.AIHardMode, !ModOptions.Settings.Instance.AICasting);            
+            Widgets.CheckboxLabeled(rowRect7ShiftRight, "AIHardMode".Translate(), ref Settings.Instance.AIHardMode, !ModOptions.Settings.Instance.AICasting);
             num++;
             Rect rowRect9 = UIHelper.GetRowRect(rowRect7, rowHeight, num);
             Widgets.CheckboxLabeled(rowRect9, "AIMarking".Translate(), ref Settings.Instance.AIMarking, false);
