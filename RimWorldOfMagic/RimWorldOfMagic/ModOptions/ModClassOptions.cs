@@ -161,7 +161,7 @@ namespace TorannMagic.ModOptions
             {
                 { TorannMagicDefOf.BookOfSniper.index, Settings.Sniper },
                 { TorannMagicDefOf.BookOfRanger.index, Settings.Ranger },
-                // { ThingDef.Named("TM_PoisonTrap").index, Settings.Ranger },
+                { ThingDef.Named("TM_PoisonTrap").index, Settings.Ranger },
                 { TorannMagicDefOf.BookOfGladiator.index, Settings.Gladiator },
                 { TorannMagicDefOf.BookOfBladedancer.index, Settings.Bladedancer },
                 { TorannMagicDefOf.BookOfFaceless.index, Settings.Faceless },
@@ -419,7 +419,7 @@ namespace TorannMagic.ModOptions
         {
             return new Dictionary<TMAbilityDef, ThingDef[]>
             {
-                // { TorannMagicDefOf.TM_PoisonTrap, new[] { ThingDef.Named("TM_PoisonTrap") } },
+                { TorannMagicDefOf.TM_PoisonTrap, new[] { ThingDef.Named("TM_PoisonTrap") } },
                 { TorannMagicDefOf.TM_60mmMortar, new[] { TorannMagicDefOf.TM_60mmMortar_Base } },
                 { TorannMagicDefOf.TM_PistolSpec, new[] { TorannMagicDefOf.TM_PistolSpec_Base0 } },
                 { TorannMagicDefOf.TM_RifleSpec, new[] { TorannMagicDefOf.TM_RifleSpec_Base0 } },
