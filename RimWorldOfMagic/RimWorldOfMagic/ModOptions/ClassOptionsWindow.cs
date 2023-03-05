@@ -33,27 +33,6 @@ namespace TorannMagic.ModOptions
             scrollPosition = GUI.BeginScrollView(inRect, scrollPosition, sRect, false, true);
             //GUI.BeginGroup(inRect);
 
-            // Helper function to make the mage checkboxes
-            Rect mageCheckbox(Rect previousRect, string mageLabel, ref bool mageSetting)
-            {
-                row++;
-                Rect mageRect = Controller.UIHelper.GetRowRect(previousRect, rowHeight, row);
-                Widgets.CheckboxLabeled(mageRect, mageLabel.Translate(), ref mageSetting);
-                return mageRect;
-            }
-
-            // Helper function to make 2 checkboxes. 1 in each column
-            Rect dualColumnCheckbox(
-                Rect previousMageRect,
-                string mageLabel, ref bool mageSetting, string mightLabel, ref bool mightSetting)
-            {
-                Rect mageRect = mageCheckbox(previousMageRect, mageLabel, ref mageSetting);
-                Rect mightRect = Controller.UIHelper.GetRowRect(mageRect, rowHeight, row);
-                mightRect.x = mageRect.width + 98f;
-                Widgets.CheckboxLabeled(mightRect, mightLabel.Translate(), ref mightSetting);
-                return mageRect;
-            }
-
             Text.Font = GameFont.Medium;
             float x = Text.CalcSize("TM_ClassOptions".Translate()).x;
             Rect headerRect = new Rect(inRect.width / 2f - (x / 2), inRect.y, inRect.width, HeaderSize);
