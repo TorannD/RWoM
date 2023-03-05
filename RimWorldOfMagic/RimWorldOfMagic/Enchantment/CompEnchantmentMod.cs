@@ -53,30 +53,26 @@ namespace TorannMagic.Enchantment
             }        
         }
 
-        public static void AddUniversalBodyparts()
+        public static void InitializeUniversalBodyParts()
         {
-            IEnumerable<BodyPartDef> universalBodyParts = from def in DefDatabase<BodyPartDef>.AllDefs
-                                                          where (def.destroyableByDamage)
-                                                          select def;
-            foreach (BodyPartDef current1 in universalBodyParts)
+            // Add all destroyable body parts to Regrowth
+            foreach (BodyPartDef bodyPartDef in DefDatabase<BodyPartDef>.AllDefs)
             {
-                TorannMagicDefOf.UniversalRegrowth.appliedOnFixedBodyParts.AddDistinct(current1);
-            }
+                if (!bodyPartDef.destroyableByDamage) continue;
 
-            IEnumerable<ThingDef> universalPawnTypes = from def in DefDatabase<ThingDef>.AllDefs
-                                                       where (def.category == ThingCategory.Pawn && !def.defName.Contains("TM_") && def.race.IsFlesh)
-                                                       select def;
-            foreach (ThingDef current2 in universalPawnTypes)
+                TorannMagicDefOf.UniversalRegrowth.appliedOnFixedBodyParts.AddDistinct(bodyPartDef);
+            }
+            // Add all pawn flesh things outside of this mod
+            foreach (ThingDef thingDef in DefDatabase<ThingDef>.AllDefs)
             {
-                TorannMagicDefOf.UniversalRegrowth.recipeUsers.AddDistinct(current2);
-                TorannMagicDefOf.AdministerOrbOfTheEternal.recipeUsers.AddDistinct(current2);
-            }
-        }        
+                if (thingDef.category != ThingCategory.Pawn
+                    || thingDef.defName.StartsWith("TM_")
+                    || !thingDef.race.IsFlesh) continue;
 
-        public static void FillCloakPool()
-        {
-            ModOptions.Constants.InitializeCloaks();
+                TorannMagicDefOf.UniversalRegrowth.recipeUsers.AddDistinct(thingDef);
+                TorannMagicDefOf.AdministerOrbOfTheEternal.recipeUsers.AddDistinct(thingDef);
+
+            }
         }
-
     }
 }

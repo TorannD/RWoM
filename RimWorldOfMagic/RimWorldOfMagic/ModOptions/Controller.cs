@@ -33,8 +33,8 @@ namespace TorannMagic.ModOptions
         private static void AfterDefsLoadedAction()
         {
             CompEnchantmentMod.AddComp();
-            CompEnchantmentMod.AddUniversalBodyparts();
-            CompEnchantmentMod.FillCloakPool();
+            CompEnchantmentMod.InitializeUniversalBodyParts();
+            Constants.InitializeCloaks();
             TM_ClassUtility.InitializeCustomClasses();
             ModClassOptions.InitializeThingDefDictionaries();
             ModClassOptions.ReloadSettings();                   // Requires InitializeCustomClasses && InitializeThingDefDictionaries
@@ -373,7 +373,6 @@ namespace TorannMagic.ModOptions
 
             //Widgets.EndScrollView();
             GUI.EndScrollView();
-
         }
 
         public static class UIHelper
