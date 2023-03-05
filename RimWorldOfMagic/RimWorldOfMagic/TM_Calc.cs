@@ -2068,7 +2068,7 @@ namespace TorannMagic
         public static string GetWeightedChance(float chance)
         {
             var inst = ModOptions.Settings.Instance;
-            float total = inst.baseMageChance + inst.baseFighterChance + inst.advMageChance + inst.advFighterChance;
+            float total = Math.Max(inst.baseMageChance + inst.baseFighterChance + inst.advMageChance + inst.advFighterChance, 1f);
 
             float weightedChance = chance * 100 / total;
             // cut the decimal if 100%

@@ -85,7 +85,7 @@ namespace TorannMagic.SihvRMagicScrollScribe
                     float rnd = Rand.Range(0, 9 + cFighters.Length);
                     if (rnd < 1)
                     {
-                        if (ModOptions.Settings.Instance.Gladiator)
+                        if (ModOptions.Settings.Gladiator.isEnabled)
                         {
                             tempPod = ThingDef.Named("BookOfGladiator");
                         }
@@ -98,7 +98,7 @@ namespace TorannMagic.SihvRMagicScrollScribe
                     else if (rnd < 2)
                     {
                         
-                        if (ModOptions.Settings.Instance.Sniper)
+                        if (ModOptions.Settings.Sniper.isEnabled)
                         {
                             tempPod = ThingDef.Named("BookOfSniper");
                         }
@@ -110,7 +110,7 @@ namespace TorannMagic.SihvRMagicScrollScribe
                     }
                     else if (rnd < 3)
                     {                       
-                        if (ModOptions.Settings.Instance.Bladedancer)
+                        if (ModOptions.Settings.Bladedancer.isEnabled)
                         {
                             tempPod = ThingDef.Named("BookOfBladedancer");
                         }
@@ -122,7 +122,7 @@ namespace TorannMagic.SihvRMagicScrollScribe
                     }
                     else if (rnd < 4)
                     {                        
-                        if (ModOptions.Settings.Instance.Ranger)
+                        if (ModOptions.Settings.Ranger.isEnabled)
                         {
                             tempPod = ThingDef.Named("BookOfRanger");
                         }
@@ -134,7 +134,7 @@ namespace TorannMagic.SihvRMagicScrollScribe
                     }
                     else if (rnd < 5)
                     {                        
-                        if (ModOptions.Settings.Instance.Psionic)
+                        if (ModOptions.Settings.Psionic.isEnabled)
                         {
                             tempPod = ThingDef.Named("BookOfPsionic");
                         }
@@ -146,7 +146,7 @@ namespace TorannMagic.SihvRMagicScrollScribe
                     }
                     else if (rnd < 6)
                     {
-                        if (ModOptions.Settings.Instance.DeathKnight)
+                        if (ModOptions.Settings.DeathKnight.isEnabled)
                         {
                             tempPod = ThingDef.Named("BookOfDeathKnight");
                         }
@@ -158,7 +158,7 @@ namespace TorannMagic.SihvRMagicScrollScribe
                     }
                     else if (rnd < 7)
                     {
-                        if (ModOptions.Settings.Instance.Monk)
+                        if (ModOptions.Settings.Monk.isEnabled)
                         {
                             tempPod = TorannMagicDefOf.BookOfMonk;
                         }
@@ -170,7 +170,7 @@ namespace TorannMagic.SihvRMagicScrollScribe
                     }
                     else if (rnd < 8)
                     {
-                        if (ModOptions.Settings.Instance.Commander)
+                        if (ModOptions.Settings.Commander.isEnabled)
                         {
                             tempPod = TorannMagicDefOf.BookOfCommander;
                         }
@@ -182,7 +182,7 @@ namespace TorannMagic.SihvRMagicScrollScribe
                     }
                     else if(rnd < 9)
                     {                        
-                        if (ModOptions.Settings.Instance.Faceless)
+                        if (ModOptions.Settings.Faceless.isEnabled)
                         {
                             tempPod = ThingDef.Named("BookOfFaceless");
                         }

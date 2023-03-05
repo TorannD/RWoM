@@ -9,6 +9,18 @@ namespace TorannMagic.ModOptions
 {
     public class Settings : Verse.ModSettings
     {
+        // This struct lets us link boolean values to their labels for the class options
+        public class CheckboxOption
+        {
+            public bool isEnabled = true;
+            public string label;
+
+            public CheckboxOption(string _label)
+            {
+                label = _label;
+            }
+        }
+
         public float xpMultiplier = 1f;
         public float needMultiplier = 1f;        
         public bool AICasting = true;
@@ -17,10 +29,10 @@ namespace TorannMagic.ModOptions
         public bool AIMarking = true;
         public bool AIFighterMarking = false;
         public bool AIFriendlyMarking = false;
-        public float baseMageChance = 0.2f;
-        public float baseFighterChance = 0.2f;
-        public float advMageChance = 0.1f;
-        public float advFighterChance = 0.1f;
+        public float baseMageChance = 0.063f;
+        public float baseFighterChance = 0.063f;
+        public float advMageChance = 0.083f;
+        public float advFighterChance = 0.042f;
         public float supportTraitChance = 0.1f;
         public float magicyteChance = .005f;
         public bool showIconsMultiSelect = true;
@@ -64,50 +76,50 @@ namespace TorannMagic.ModOptions
         public bool golemScreenShake = true;
 
         //class options
-        public bool Arcanist = true;
-        public bool FireMage = true;
-        public bool IceMage = true;
-        public bool LitMage = true;
-        public bool Druid = true;
-        public bool Paladin = true;
-        public bool Necromancer = true;
-        public bool Bard = true;
-        public bool Priest = true;
-        public bool Demonkin = true;
-        public bool Geomancer = true;
-        public bool Summoner = true;
-        public bool Technomancer = true;
-        public bool BloodMage = true;
-        public bool Enchanter = true;
-        public bool Chronomancer = true;
-        public bool Wanderer = true;
-        public bool ChaosMage = true;
-        public bool Brightmage = true;
-        public bool Shaman = true;
-        public bool Golemancer = true;
-        public bool Empath = true;
+        public static CheckboxOption Arcanist = new("TM_Arcanist");
+        public static CheckboxOption FireMage = new("TM_FireMage");
+        public static CheckboxOption IceMage = new("TM_IceMage");
+        public static CheckboxOption LitMage = new("TM_LitMage");
+        public static CheckboxOption Druid = new("TM_Druid");
+        public static CheckboxOption Paladin = new("TM_Paladin");
+        public static CheckboxOption Necromancer = new("TM_Necromancer");
+        public static CheckboxOption Bard = new("TM_Bard");
+        public static CheckboxOption Priest = new("TM_Priest");
+        public static CheckboxOption Demonkin = new("TM_Demonkin");
+        public static CheckboxOption Geomancer = new("TM_Geomancer");
+        public static CheckboxOption Summoner = new("TM_Summoner");
+        public static CheckboxOption Technomancer = new("TM_Technomancer");
+        public static CheckboxOption BloodMage = new("TM_BloodMage");
+        public static CheckboxOption Enchanter = new("TM_Enchanter");
+        public static CheckboxOption Chronomancer = new("TM_Chronomancer");
+        public static CheckboxOption Wanderer = new("TM_Wanderer");
+        public static CheckboxOption ChaosMage = new("TM_ChaosMage");
+        public static CheckboxOption Brightmage = new("TM_Brightmage");
+        public static CheckboxOption Shaman = new("TM_Shaman");
+        public static CheckboxOption Golemancer = new("TM_Golemancer");
+        public static CheckboxOption Empath = new("TM_Empath");
 
-        public bool Gladiator = true;
-        public bool Bladedancer = true;
-        public bool Sniper = true;
-        public bool Ranger = true;
-        public bool Faceless = true;
-        public bool Psionic = true;
-        public bool DeathKnight = true;
-        public bool Monk = true;
-        public bool Wayfarer = true;
-        public bool Commander = true;
-        public bool SuperSoldier = true;
-        public bool Shadow = true;
-        public bool Apothecary = true;
+        public static CheckboxOption Gladiator = new("TM_Gladiator");
+        public static CheckboxOption Bladedancer = new("TM_Bladedancer");
+        public static CheckboxOption Sniper = new("TM_Sniper");
+        public static CheckboxOption Ranger = new("TM_Ranger");
+        public static CheckboxOption Faceless = new("TM_Faceless");
+        public static CheckboxOption Psionic = new("TM_Psionic");
+        public static CheckboxOption DeathKnight = new("TM_DeathKnight");
+        public static CheckboxOption Monk = new("TM_Monk");
+        public static CheckboxOption Wayfarer = new("TM_Wayfarer");
+        public static CheckboxOption Commander = new("TM_Commander");
+        public static CheckboxOption SuperSoldier = new("TM_SuperSoldier");
+        public static CheckboxOption Shadow = new("TM_Shadow");
+        public static CheckboxOption Apothecary = new("TM_Apothecary");
 
-        public bool ArcaneConduit = true;
-        public bool ManaWell = true;
-        public bool Boundless = true;
-        public bool Enlightened = true;
-        public bool Cursed = true;
-        public bool FaeBlood = true;
-        public bool GiantsBlood = true;
+        public static CheckboxOption ArcaneConduit = new("TM_ArcaneConduit");
+        public static CheckboxOption ManaWell = new("TM_ManaWell");
+        public static CheckboxOption Boundless = new("TM_Boundless");
+        public static CheckboxOption Enlightened = new("TM_Enlightened");
+        public static CheckboxOption Cursed = new("TM_Cursed");
+        public static CheckboxOption FaeBlood = new("TM_FaeBlood");
+        public static CheckboxOption GiantsBlood = new("TM_GiantsBlood");
 
         //Faction settings
         public Dictionary<string, float> FactionFighterSettings = new Dictionary<string, float>();
@@ -132,10 +144,10 @@ namespace TorannMagic.ModOptions
             Scribe_Values.Look<bool>(ref this.AIMarking, "AIMarking", false, false);
             Scribe_Values.Look<bool>(ref this.AIFighterMarking, "AIFighterMarking", false, false);
             Scribe_Values.Look<bool>(ref this.AIFriendlyMarking, "AIFriendlyMarking", false, false);
-            Scribe_Values.Look<float>(ref baseMageChance, "baseMageChance", 0.2f);
-            Scribe_Values.Look<float>(ref baseFighterChance, "baseFighterChance", 0.2f);
-            Scribe_Values.Look<float>(ref advMageChance, "advMageChance", 0.1f);
-            Scribe_Values.Look<float>(ref advFighterChance, "advFighterChance", 0.1f);
+            Scribe_Values.Look<float>(ref baseMageChance, "baseMageChance", 0.063f);
+            Scribe_Values.Look<float>(ref baseFighterChance, "baseFighterChance", 0.063f);
+            Scribe_Values.Look<float>(ref advMageChance, "advMageChance", 0.83f);
+            Scribe_Values.Look<float>(ref advFighterChance, "advFighterChance", 0.042f);
             Scribe_Values.Look<float>(ref this.supportTraitChance, "supportTraitChance", 0.1f, false);
             Scribe_Values.Look<float>(ref this.magicyteChance, "magicyteChance", 0.005f, false);
             Scribe_Values.Look<bool>(ref this.showIconsMultiSelect, "showIconsMultiSelect", true, false);
@@ -171,54 +183,54 @@ namespace TorannMagic.ModOptions
             Scribe_Values.Look<bool>(ref this.autocastAnimals, "autocastAnimals", false, false);
             Scribe_Values.Look<bool>(ref this.autocastQueueing, "autocastQueueing", false, false);
 
-            Scribe_Values.Look<bool>(ref this.showDormantFrames, "showDormantFrames", false, false);
+            Scribe_Values.Look<bool>(ref this.showDormantFrames, "sClassOptionhowDormantFrames", false, false);
             Scribe_Values.Look<bool>(ref this.showGolemsOnColonistBar, "showGolemsOnColonistBar", false, false);
             // Mage classes enabled
-            Scribe_Values.Look<bool>(ref Arcanist, "Arcanist", true);
-            Scribe_Values.Look<bool>(ref Bard, "Bard", true);
-            Scribe_Values.Look<bool>(ref BloodMage, "BloodMage", true);
-            Scribe_Values.Look<bool>(ref Brightmage, "Brightmage", true);
-            Scribe_Values.Look<bool>(ref ChaosMage, "ChaosMage", true);
-            Scribe_Values.Look<bool>(ref Chronomancer, "Chronomancer", true);
-            Scribe_Values.Look<bool>(ref Demonkin, "Demonkin", true);
-            Scribe_Values.Look<bool>(ref Druid, "Druid", true);
-            Scribe_Values.Look<bool>(ref Empath, "Empath", true);
-            Scribe_Values.Look<bool>(ref Enchanter, "Enchanter", true);
-            Scribe_Values.Look<bool>(ref FireMage, "FireMage", true);
-            Scribe_Values.Look<bool>(ref Geomancer, "Geomancer", true);
-            Scribe_Values.Look<bool>(ref Golemancer, "Golemancer", true);
-            Scribe_Values.Look<bool>(ref IceMage, "IceMage", true);
-            Scribe_Values.Look<bool>(ref LitMage, "LitMage", true);
-            Scribe_Values.Look<bool>(ref Necromancer, "Necromancer", true);
-            Scribe_Values.Look<bool>(ref Paladin, "Paladin", true);
-            Scribe_Values.Look<bool>(ref Priest, "Priest", true);
-            Scribe_Values.Look<bool>(ref Shaman, "Shaman", true);
-            Scribe_Values.Look<bool>(ref Summoner, "Summoner", true);
-            Scribe_Values.Look<bool>(ref Technomancer, "Technomancer", true);
-            Scribe_Values.Look<bool>(ref Wanderer, "Wanderer", true);
+            Scribe_Values.Look<bool>(ref Arcanist.isEnabled, "Arcanist", true);
+            Scribe_Values.Look<bool>(ref Bard.isEnabled, "Bard", true);
+            Scribe_Values.Look<bool>(ref BloodMage.isEnabled, "BloodMage", true);
+            Scribe_Values.Look<bool>(ref Brightmage.isEnabled, "Brightmage", true);
+            Scribe_Values.Look<bool>(ref ChaosMage.isEnabled, "ChaosMage", true);
+            Scribe_Values.Look<bool>(ref Chronomancer.isEnabled, "Chronomancer", true);
+            Scribe_Values.Look<bool>(ref Demonkin.isEnabled, "Demonkin", true);
+            Scribe_Values.Look<bool>(ref Druid.isEnabled, "Druid", true);
+            Scribe_Values.Look<bool>(ref Empath.isEnabled, "Empath", true);
+            Scribe_Values.Look<bool>(ref Enchanter.isEnabled, "Enchanter", true);
+            Scribe_Values.Look<bool>(ref FireMage.isEnabled, "FireMage", true);
+            Scribe_Values.Look<bool>(ref Geomancer.isEnabled, "Geomancer", true);
+            Scribe_Values.Look<bool>(ref Golemancer.isEnabled, "Golemancer", true);
+            Scribe_Values.Look<bool>(ref IceMage.isEnabled, "IceMage", true);
+            Scribe_Values.Look<bool>(ref LitMage.isEnabled, "LitMage", true);
+            Scribe_Values.Look<bool>(ref Necromancer.isEnabled, "Necromancer", true);
+            Scribe_Values.Look<bool>(ref Paladin.isEnabled, "Paladin", true);
+            Scribe_Values.Look<bool>(ref Priest.isEnabled, "Priest", true);
+            Scribe_Values.Look<bool>(ref Shaman.isEnabled, "Shaman", true);
+            Scribe_Values.Look<bool>(ref Summoner.isEnabled, "Summoner", true);
+            Scribe_Values.Look<bool>(ref Technomancer.isEnabled, "Technomancer", true);
+            Scribe_Values.Look<bool>(ref Wanderer.isEnabled, "Wanderer", true);
             // Fighter classes enabled
-            Scribe_Values.Look<bool>(ref Apothecary, "Apothecary", true);
-            Scribe_Values.Look<bool>(ref Bladedancer, "Bladedancer", true);
-            Scribe_Values.Look<bool>(ref Commander, "Commander", true);
-            Scribe_Values.Look<bool>(ref DeathKnight, "DeathKnight", true);
-            Scribe_Values.Look<bool>(ref Faceless, "Faceless", true);
-            Scribe_Values.Look<bool>(ref Gladiator, "Gladiator", true);
-            Scribe_Values.Look<bool>(ref Monk, "Monk", true);
-            Scribe_Values.Look<bool>(ref Psionic, "Psionic", true);
-            Scribe_Values.Look<bool>(ref Ranger, "Ranger", true);
-            Scribe_Values.Look<bool>(ref Shadow, "Shadow", true);
-            Scribe_Values.Look<bool>(ref Sniper, "Sniper", true);
-            Scribe_Values.Look<bool>(ref SuperSoldier, "SuperSoldier", true);
-            Scribe_Values.Look<bool>(ref Wayfarer, "Wayfarer", true);
+            Scribe_Values.Look<bool>(ref Apothecary.isEnabled, "Apothecary", true);
+            Scribe_Values.Look<bool>(ref Bladedancer.isEnabled, "Bladedancer", true);
+            Scribe_Values.Look<bool>(ref Commander.isEnabled, "Commander", true);
+            Scribe_Values.Look<bool>(ref DeathKnight.isEnabled, "DeathKnight", true);
+            Scribe_Values.Look<bool>(ref Faceless.isEnabled, "Faceless", true);
+            Scribe_Values.Look<bool>(ref Gladiator.isEnabled, "Gladiator", true);
+            Scribe_Values.Look<bool>(ref Monk.isEnabled, "Monk", true);
+            Scribe_Values.Look<bool>(ref Psionic.isEnabled, "Psionic", true);
+            Scribe_Values.Look<bool>(ref Ranger.isEnabled, "Ranger", true);
+            Scribe_Values.Look<bool>(ref Shadow.isEnabled, "Shadow", true);
+            Scribe_Values.Look<bool>(ref Sniper.isEnabled, "Sniper", true);
+            Scribe_Values.Look<bool>(ref SuperSoldier.isEnabled, "SuperSoldier", true);
+            Scribe_Values.Look<bool>(ref Wayfarer.isEnabled, "Wayfarer", true);
 
             Scribe_Collections.Look(ref this.CustomClass, "CustomClass");
-            Scribe_Values.Look<bool>(ref this.ManaWell, "ManaWell", true, false);
-            Scribe_Values.Look<bool>(ref this.ArcaneConduit, "ArcaneConduit", true, false);
-            Scribe_Values.Look<bool>(ref this.Boundless, "Boundless", true, false);
-            Scribe_Values.Look<bool>(ref this.Enlightened, "Enlightened", true, false);
-            Scribe_Values.Look<bool>(ref this.Cursed, "Cursed", true, false);
-            Scribe_Values.Look<bool>(ref this.FaeBlood, "FaeBlood", true, false);
-            Scribe_Values.Look<bool>(ref this.GiantsBlood, "GiantsBlood", true, false);
+            Scribe_Values.Look<bool>(ref ManaWell.isEnabled, "ManaWell", true, false);
+            Scribe_Values.Look<bool>(ref ArcaneConduit.isEnabled, "ArcaneConduit", true, false);
+            Scribe_Values.Look<bool>(ref Boundless.isEnabled, "Boundless", true, false);
+            Scribe_Values.Look<bool>(ref Enlightened.isEnabled, "Enlightened", true, false);
+            Scribe_Values.Look<bool>(ref Cursed.isEnabled, "Cursed", true, false);
+            Scribe_Values.Look<bool>(ref FaeBlood.isEnabled, "FaeBlood", true, false);
+            Scribe_Values.Look<bool>(ref GiantsBlood.isEnabled, "GiantsBlood", true, false);
             Scribe_Collections.Look(ref this.FactionFighterSettings, "FactionFighterSettings");
             Scribe_Collections.Look(ref this.FactionMageSettings, "FactionMageSettings");
         }

@@ -18,63 +18,63 @@ namespace TorannMagic
 {
     public static class TM_ClassUtility
     {
-        public static Dictionary<TraitDef, Func<bool>> NonCustomMagicTraits = new Dictionary<TraitDef, Func<bool>>()
+        public static Dictionary<TraitDef, Settings.CheckboxOption> NonCustomMagicTraits = new ()
         {
-            { TorannMagicDefOf.Arcanist, static () => Settings.Instance.Arcanist },
-            { TorannMagicDefOf.BloodMage, static () => Settings.Instance.BloodMage },
-            { TorannMagicDefOf.ChaosMage, static () => Settings.Instance.ChaosMage },
-            { TorannMagicDefOf.Chronomancer, static () => Settings.Instance.Chronomancer },
-            { TorannMagicDefOf.Druid, static () => Settings.Instance.Druid },
-            { TorannMagicDefOf.Enchanter, static () => Settings.Instance.Enchanter },
-            { TorannMagicDefOf.Faceless, static () => Settings.Instance.Faceless },
-            { TorannMagicDefOf.Geomancer, static () => Settings.Instance.Geomancer },
-            { TorannMagicDefOf.HeartOfFrost, static () => Settings.Instance.IceMage },
-            { TorannMagicDefOf.InnerFire, static () => Settings.Instance.FireMage },
-            { TorannMagicDefOf.Lich, static () => Settings.Instance.Necromancer },
-            { TorannMagicDefOf.Necromancer, static () => Settings.Instance.Necromancer },
-            { TorannMagicDefOf.Paladin, static () => Settings.Instance.Paladin },
-            { TorannMagicDefOf.Priest, static () => Settings.Instance.Priest },
-            { TorannMagicDefOf.StormBorn, static () => Settings.Instance.LitMage },
-            { TorannMagicDefOf.Succubus, static () => Settings.Instance.Demonkin },
-            { TorannMagicDefOf.Summoner, static () => Settings.Instance.Summoner },
-            { TorannMagicDefOf.TM_Bard, static () => Settings.Instance.Bard },
-            { TorannMagicDefOf.TM_Brightmage, static () => Settings.Instance.Brightmage },
-            { TorannMagicDefOf.TM_TheShadow, static () => Settings.Instance.Shadow },
-            { TorannMagicDefOf.TM_Wanderer, static () => Settings.Instance.Wanderer },
-            { TorannMagicDefOf.Technomancer, static () => Settings.Instance.Technomancer },
-            { TorannMagicDefOf.Warlock, static () => Settings.Instance.Demonkin }
+            { TorannMagicDefOf.Arcanist, Settings.Arcanist },
+            { TorannMagicDefOf.BloodMage, Settings.BloodMage },
+            { TorannMagicDefOf.ChaosMage, Settings.ChaosMage },
+            { TorannMagicDefOf.Chronomancer, Settings.Chronomancer },
+            { TorannMagicDefOf.Druid, Settings.Druid },
+            { TorannMagicDefOf.Enchanter, Settings.Enchanter },
+            { TorannMagicDefOf.Faceless, Settings.Faceless },
+            { TorannMagicDefOf.Geomancer, Settings.Geomancer },
+            { TorannMagicDefOf.HeartOfFrost, Settings.IceMage },
+            { TorannMagicDefOf.InnerFire, Settings.FireMage },
+            { TorannMagicDefOf.Lich, Settings.Necromancer },
+            { TorannMagicDefOf.Necromancer, Settings.Necromancer },
+            { TorannMagicDefOf.Paladin, Settings.Paladin },
+            { TorannMagicDefOf.Priest, Settings.Priest },
+            { TorannMagicDefOf.StormBorn, Settings.LitMage },
+            { TorannMagicDefOf.Succubus, Settings.Demonkin },
+            { TorannMagicDefOf.Summoner, Settings.Summoner },
+            { TorannMagicDefOf.TM_Bard, Settings.Bard },
+            { TorannMagicDefOf.TM_Brightmage, Settings.Brightmage },
+            { TorannMagicDefOf.TM_TheShadow, Settings.Shadow },
+            { TorannMagicDefOf.TM_Wanderer, Settings.Wanderer },
+            { TorannMagicDefOf.Technomancer, Settings.Technomancer },
+            { TorannMagicDefOf.Warlock, Settings.Demonkin }
         };
 
-        public static Dictionary<TraitDef, Func<bool>> NonCustomFighterTraits = new Dictionary<TraitDef, Func<bool>>
+        public static Dictionary<TraitDef, Settings.CheckboxOption> NonCustomFighterTraits = new ()
         {
-            { TorannMagicDefOf.TM_Apothecary, static () => Settings.Instance.Apothecary },
-            { TorannMagicDefOf.Bladedancer, static () => Settings.Instance.Bladedancer },
-            { TorannMagicDefOf.DeathKnight, static () => Settings.Instance.DeathKnight },
-            { TorannMagicDefOf.Faceless, static () => Settings.Instance.Faceless },
-            { TorannMagicDefOf.Gladiator, static () => Settings.Instance.Gladiator },
-            { TorannMagicDefOf.Ranger, static () => Settings.Instance.Ranger },
-            { TorannMagicDefOf.TM_Commander, static () => Settings.Instance.Commander },
-            { TorannMagicDefOf.TM_Monk, static () => Settings.Instance.Monk },
-            { TorannMagicDefOf.TM_Psionic, static () => Settings.Instance.Psionic },
-            { TorannMagicDefOf.TM_Sniper, static () => Settings.Instance.Sniper },
-            { TorannMagicDefOf.TM_SuperSoldier, static () => Settings.Instance.SuperSoldier },
-            { TorannMagicDefOf.TM_TheShadow, static () => Settings.Instance.Shadow },
-            { TorannMagicDefOf.TM_Wayfarer, static () => Settings.Instance.Wayfarer }
+            { TorannMagicDefOf.TM_Apothecary, Settings.Apothecary },
+            { TorannMagicDefOf.Bladedancer, Settings.Bladedancer },
+            { TorannMagicDefOf.DeathKnight, Settings.DeathKnight },
+            { TorannMagicDefOf.Faceless, Settings.Faceless },
+            { TorannMagicDefOf.Gladiator, Settings.Gladiator },
+            { TorannMagicDefOf.Ranger, Settings.Ranger },
+            { TorannMagicDefOf.TM_Commander, Settings.Commander },
+            { TorannMagicDefOf.TM_Monk, Settings.Monk },
+            { TorannMagicDefOf.TM_Psionic, Settings.Psionic },
+            { TorannMagicDefOf.TM_Sniper, Settings.Sniper },
+            { TorannMagicDefOf.TM_SuperSoldier, Settings.SuperSoldier },
+            { TorannMagicDefOf.TM_TheShadow, Settings.Shadow },
+            { TorannMagicDefOf.TM_Wayfarer, Settings.Wayfarer }
         };
 
-        public static Dictionary<TraitDef, Func<bool>> MageSupportTraits = new Dictionary<TraitDef, Func<bool>>
+        public static Dictionary<TraitDef, Settings.CheckboxOption> MageSupportTraits = new ()
         {
-            { TorannMagicDefOf.TM_ArcaneConduitTD, static () => Settings.Instance.ArcaneConduit },
-            { TorannMagicDefOf.TM_ManaWellTD, static () => Settings.Instance.ManaWell },
-            { TorannMagicDefOf.TM_FaeBloodTD, static () => Settings.Instance.FaeBlood },
-            { TorannMagicDefOf.TM_EnlightenedTD, static () => Settings.Instance.Enlightened },
-            { TorannMagicDefOf.TM_CursedTD, static () => Settings.Instance.Cursed }
+            { TorannMagicDefOf.TM_ArcaneConduitTD, Settings.ArcaneConduit },
+            { TorannMagicDefOf.TM_ManaWellTD, Settings.ManaWell },
+            { TorannMagicDefOf.TM_FaeBloodTD, Settings.FaeBlood },
+            { TorannMagicDefOf.TM_EnlightenedTD, Settings.Enlightened },
+            { TorannMagicDefOf.TM_CursedTD, Settings.Cursed }
         };
 
-        public static Dictionary<TraitDef, Func<bool>> FighterSupportTraits = new Dictionary<TraitDef, Func<bool>>
+        public static Dictionary<TraitDef, Settings.CheckboxOption> FighterSupportTraits = new ()
         {
-            { TorannMagicDefOf.TM_BoundlessTD, static () => Settings.Instance.Boundless },
-            { TorannMagicDefOf.TM_GiantsBloodTD, static () => Settings.Instance.GiantsBlood }
+            { TorannMagicDefOf.TM_BoundlessTD, Settings.Boundless },
+            { TorannMagicDefOf.TM_GiantsBloodTD, Settings.GiantsBlood }
         };
 
         // Special rules for generating pawns.
@@ -228,21 +228,21 @@ namespace TorannMagic
                 EnabledFighterClasses.Add(cc.classTrait);
             }
             // Add the base classes if they are enabled
-            foreach (KeyValuePair<TraitDef, Func<bool>> pair in NonCustomMagicTraits)
+            foreach (KeyValuePair<TraitDef, Settings.CheckboxOption> pair in NonCustomMagicTraits)
             {
-                if (pair.Value()) EnabledMageClasses.Add(pair.Key);
+                if (pair.Value.isEnabled) EnabledMageClasses.Add(pair.Key);
             }
-            foreach (KeyValuePair<TraitDef, Func<bool>> pair in NonCustomFighterTraits)
+            foreach (KeyValuePair<TraitDef, Settings.CheckboxOption> pair in NonCustomFighterTraits)
             {
-                if (pair.Value()) EnabledFighterClasses.Add(pair.Key);
+                if (pair.Value.isEnabled) EnabledFighterClasses.Add(pair.Key);
             }
-            // Handle the support classes
+            // Handle the support classes. Use LINQ to avoid array annoyances
             EnabledMageSupportClasses = MageSupportTraits
-                .Where(static pair => pair.Value())
+                .Where(static pair => pair.Value.isEnabled)
                 .Select(static pair => pair.Key)
                 .ToArray();
             EnabledFighterSupportClasses = FighterSupportTraits
-                .Where(static pair => pair.Value())
+                .Where(static pair => pair.Value.isEnabled)
                 .Select(static pair => pair.Key)
                 .ToArray();
         }

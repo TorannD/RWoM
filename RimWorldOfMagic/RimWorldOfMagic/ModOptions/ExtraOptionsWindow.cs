@@ -50,10 +50,10 @@ namespace TorannMagic.ModOptions
             //Options
             GUI.color = Color.white;
             Rect rowRect = Controller.UIHelper.GetRowRect(classRect, rowHeight, num);
-            Widgets.CheckboxLabeled(rowRect, "TM_Arcanist".Translate(), ref Settings.Instance.Arcanist, false);
+            Widgets.CheckboxLabeled(rowRect, "TM_Arcanist".Translate(), ref Settings.Arcanist.isEnabled);
             Rect rowRectShiftRight = Controller.UIHelper.GetRowRect(rowRect, rowHeight, num);
             rowRectShiftRight.x += rowRect.width + 140f;
-            Widgets.CheckboxLabeled(rowRectShiftRight, "TM_Gladiator".Translate(), ref Settings.Instance.Gladiator, false);
+            Widgets.CheckboxLabeled(rowRectShiftRight, "TM_Gladiator".Translate(), ref Settings.Gladiator.isEnabled);
             num++;
             
 

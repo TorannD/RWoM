@@ -16,6 +16,7 @@ using TorannMagic.Conditions;
 using TorannMagic.TMDefs;
 using TorannMagic.Golems;
 using System.Diagnostics;
+using TorannMagic.ModOptions;
 using TorannMagic.Utils;
 
 namespace TorannMagic
@@ -3195,7 +3196,7 @@ namespace TorannMagic
                             }
                         }
                     }
-                    if (ModOptions.Settings.Instance.Wanderer && __instance.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted))
+                    if (Settings.Wanderer.isEnabled && __instance.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted))
                     {
                         //Pawn p = __instance;
                         //Command_Action itemWanderer = new Command_Action
@@ -3216,7 +3217,7 @@ namespace TorannMagic
                         }
                     }
 
-                    if (ModOptions.Settings.Instance.Wayfarer && __instance.story.traits.HasTrait(TorannMagicDefOf.PhysicalProdigy))
+                    if (Settings.Wayfarer.isEnabled && __instance.story.traits.HasTrait(TorannMagicDefOf.PhysicalProdigy))
                     {
                         //Pawn p = __instance;
                         //Command_Action itemWayfarer = new Command_Action
@@ -3262,7 +3263,7 @@ namespace TorannMagic
                     CompAbilityUserMight compMight = __instance.GetCompAbilityUserMight();
                     var gizmoList = __result.ToList();
                     bool canBecomeClassless = false;
-                    if (ModOptions.Settings.Instance.Wanderer && __instance.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted))
+                    if (Settings.Wanderer.isEnabled && __instance.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted))
                     {
                         //Pawn p = __instance;
                         //Command_Action itemWanderer = new Command_Action
@@ -3284,7 +3285,7 @@ namespace TorannMagic
                         }
                     }
 
-                    if (ModOptions.Settings.Instance.Wayfarer && __instance.story.traits.HasTrait(TorannMagicDefOf.PhysicalProdigy))
+                    if (Settings.Wayfarer.isEnabled && __instance.story.traits.HasTrait(TorannMagicDefOf.PhysicalProdigy))
                     {
                         //Pawn p = __instance;
                         //Command_Action itemWayfarer = new Command_Action

@@ -8,7 +8,7 @@ using System.Diagnostics;
 using UnityEngine;
 using RimWorld;
 using AbilityUser;
-
+using TorannMagic.ModOptions;
 
 
 namespace TorannMagic
@@ -85,16 +85,15 @@ namespace TorannMagic
                 DetermineElementalType();
                 BeginAssaultCondition();
                 SpawnCycle();
-                ModOptions.SettingsRef settings = new ModOptions.SettingsRef();
                 if (Find.Storyteller.difficulty.threatScale != 0)
                 {
                     this.STDMultiplier = (float)(Find.Storyteller.difficulty.threatScale / 20f);
                 }
-                if(settings.riftChallenge <= 3f)
+                if(Settings.Instance.riftChallenge <= 3f)
                 {
                     this.difficultyMultiplier = 1f;
                 }
-                else if(settings.riftChallenge < 3f)
+                else if(Settings.Instance.riftChallenge < 3f)
                 {
                     this.difficultyMultiplier = .85f;
                 }

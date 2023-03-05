@@ -14,9 +14,9 @@ namespace TorannMagic.ModOptions
     internal class ModClassOptions : Mod
     {
         // These get initialized in InitializeThingDefDictionaries since things must load first before ThingDefs can be accessed.
-        private static Dictionary<ushort, Func<bool>> thingDefIndexToSettingsRefMap;
-        private static Dictionary<ushort, Func<bool>> spellIndexToSettingsRefMap;
-        private static Dictionary<ushort, (Func<bool> settingsValueGetter, ThingDef spell)> recipeIndexMap;
+        private static Dictionary<ushort, Settings.CheckboxOption> thingDefIndexToSettingsRefMap;
+        private static Dictionary<ushort, Settings.CheckboxOption> spellIndexToSettingsRefMap;
+        private static Dictionary<ushort, (Settings.CheckboxOption option, ThingDef spell)> recipeIndexMap;
 
         public ModClassOptions(ModContentPack content) : base(content) { }
 
@@ -157,260 +157,260 @@ namespace TorannMagic.ModOptions
         }
         public static void InitializeThingDefDictionaries()
         {
-            thingDefIndexToSettingsRefMap = new Dictionary<ushort, Func<bool>>
+            thingDefIndexToSettingsRefMap = new Dictionary<ushort, Settings.CheckboxOption>
             {
-                { TorannMagicDefOf.BookOfSniper.index, static () => Settings.Instance.Sniper },
-                { TorannMagicDefOf.BookOfRanger.index, static () => Settings.Instance.Ranger },
-                // { ThingDef.Named("TM_PoisonTrap").index, static () => Settings.Instance.Ranger },
-                { TorannMagicDefOf.BookOfGladiator.index, static () => Settings.Instance.Gladiator },
-                { TorannMagicDefOf.BookOfBladedancer.index, static () => Settings.Instance.Bladedancer },
-                { TorannMagicDefOf.BookOfFaceless.index, static () => Settings.Instance.Faceless },
-                { TorannMagicDefOf.BookOfPsionic.index, static () => Settings.Instance.Psionic },
-                { TorannMagicDefOf.BookOfDeathKnight.index, static () => Settings.Instance.DeathKnight },
-                { TorannMagicDefOf.BookOfMonk.index, static () => Settings.Instance.Monk },
-                { TorannMagicDefOf.BookOfCommander.index, static () => Settings.Instance.Commander },
-                { TorannMagicDefOf.BookOfSuperSoldier.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_60mmMortar_Base.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_PistolSpec_Base1.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_PistolSpec_Base2.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_PistolSpec_Base3.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_PistolSpec_Base4.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_PistolSpec_Base5.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_PistolSpec_Base6.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_PistolSpec_Base7.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_PistolSpec_Base8.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_PistolSpec_Base9.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_PistolSpec_Base10.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_PistolSpec_Base11.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_PistolSpec_Base12.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_PistolSpec_Base13.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_PistolSpec_Base14.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_PistolSpec_Base15.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_PistolSpec_Base16.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_PistolSpec_Base17.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_PistolSpec_Base18.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_PistolSpec_Base19.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_RifleSpec_Base1.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_RifleSpec_Base2.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_RifleSpec_Base3.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_RifleSpec_Base4.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_RifleSpec_Base5.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_RifleSpec_Base6.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_RifleSpec_Base7.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_RifleSpec_Base8.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_RifleSpec_Base9.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_RifleSpec_Base10.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_RifleSpec_Base11.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_RifleSpec_Base12.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_RifleSpec_Base13.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_RifleSpec_Base14.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_RifleSpec_Base15.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_RifleSpec_Base16.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_RifleSpec_Base17.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_RifleSpec_Base18.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_RifleSpec_Base19.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_ShotgunSpec_Base1.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_ShotgunSpec_Base2.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_ShotgunSpec_Base3.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_ShotgunSpec_Base4.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_ShotgunSpec_Base5.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_ShotgunSpec_Base6.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_ShotgunSpec_Base7.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_ShotgunSpec_Base8.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_ShotgunSpec_Base9.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_ShotgunSpec_Base10.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_ShotgunSpec_Base11.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_ShotgunSpec_Base12.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_ShotgunSpec_Base13.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_ShotgunSpec_Base14.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_ShotgunSpec_Base15.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_ShotgunSpec_Base16.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_ShotgunSpec_Base17.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_ShotgunSpec_Base18.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.TM_ShotgunSpec_Base19.index, static () => Settings.Instance.SuperSoldier },
-                { TorannMagicDefOf.BookOfArcanist.index, static () => Settings.Instance.Arcanist },
-                { TorannMagicDefOf.Torn_BookOfArcanist.index, static () => Settings.Instance.Arcanist },
-                { TorannMagicDefOf.Torn_BookOfInnerFire.index, static () => Settings.Instance.FireMage },
-                { TorannMagicDefOf.BookOfInnerFire.index, static () => Settings.Instance.FireMage },
-                { TorannMagicDefOf.Torn_BookOfHeartOfFrost.index, static () => Settings.Instance.IceMage },
-                { TorannMagicDefOf.BookOfHeartOfFrost.index, static () => Settings.Instance.IceMage },
-                { TorannMagicDefOf.Torn_BookOfStormBorn.index, static () => Settings.Instance.LitMage },
-                { TorannMagicDefOf.BookOfStormBorn.index, static () => Settings.Instance.LitMage },
-                { TorannMagicDefOf.Torn_BookOfNature.index, static () => Settings.Instance.Druid },
-                { TorannMagicDefOf.BookOfDruid.index, static () => Settings.Instance.Druid },
-                { TorannMagicDefOf.SeedofRegrowth.index, static () => Settings.Instance.Druid },
-                { TorannMagicDefOf.Torn_BookOfSummoner.index, static () => Settings.Instance.Summoner },
-                { TorannMagicDefOf.BookOfSummoner.index, static () => Settings.Instance.Summoner },
-                { TorannMagicDefOf.TM_ManaMine.index, static () => Settings.Instance.Summoner },
-                { TorannMagicDefOf.TM_ManaMine_I.index, static () => Settings.Instance.Summoner },
-                { TorannMagicDefOf.TM_ManaMine_II.index, static () => Settings.Instance.Summoner },
-                { TorannMagicDefOf.TM_ManaMine_III.index, static () => Settings.Instance.Summoner },
-                { TorannMagicDefOf.DefensePylon.index, static () => Settings.Instance.Summoner },
-                { TorannMagicDefOf.DefensePylon_I.index, static () => Settings.Instance.Summoner },
-                { TorannMagicDefOf.DefensePylon_II.index, static () => Settings.Instance.Summoner },
-                { TorannMagicDefOf.DefensePylon_III.index, static () => Settings.Instance.Summoner },
-                { TorannMagicDefOf.Launcher_DefensePylon.index, static () => Settings.Instance.Summoner },
-                { TorannMagicDefOf.Launcher_DefensePylon_I.index, static () => Settings.Instance.Summoner },
-                { TorannMagicDefOf.Launcher_DefensePylon_II.index, static () => Settings.Instance.Summoner },
-                { TorannMagicDefOf.Launcher_DefensePylon_III.index, static () => Settings.Instance.Summoner },
-                { TorannMagicDefOf.TM_Poppi.index, static () => Settings.Instance.Summoner },
-                { TorannMagicDefOf.Torn_BookOfValiant.index, static () => Settings.Instance.Paladin },
-                { TorannMagicDefOf.BookOfValiant.index, static () => Settings.Instance.Paladin },
-                { TorannMagicDefOf.Torn_BookOfPriest.index, static () => Settings.Instance.Priest },
-                { TorannMagicDefOf.BookOfPriest.index, static () => Settings.Instance.Priest },
-                { TorannMagicDefOf.Torn_BookOfBard.index, static () => Settings.Instance.Bard },
-                { TorannMagicDefOf.BookOfBard.index, static () => Settings.Instance.Bard },
-                { TorannMagicDefOf.BookOfNecromancer.index, static () => Settings.Instance.Necromancer },
-                { TorannMagicDefOf.Torn_BookOfUndead.index, static () => Settings.Instance.Necromancer },
-                { TorannMagicDefOf.TM_Artifact_NecroticOrb.index, static () => Settings.Instance.Necromancer },
-                { TorannMagicDefOf.Torn_BookOfEarth.index, static () => Settings.Instance.Geomancer },
-                { TorannMagicDefOf.BookOfEarth.index, static () => Settings.Instance.Geomancer },
-                { TorannMagicDefOf.TM_Lesser_SentinelR.index, static () => Settings.Instance.Geomancer },
-                { TorannMagicDefOf.TM_SentinelR.index, static () => Settings.Instance.Geomancer },
-                { TorannMagicDefOf.TM_Greater_SentinelR.index, static () => Settings.Instance.Geomancer },
-                { TorannMagicDefOf.Torn_BookOfDemons.index, static () => Settings.Instance.Demonkin },
-                { TorannMagicDefOf.BookOfDemons.index, static () => Settings.Instance.Demonkin },
-                { TorannMagicDefOf.Torn_BookOfMagitech.index, static () => Settings.Instance.Technomancer },
-                { TorannMagicDefOf.BookOfMagitech.index, static () => Settings.Instance.Technomancer },
-                { TorannMagicDefOf.Torn_BookOfHemomancy.index, static () => Settings.Instance.BloodMage },
-                { TorannMagicDefOf.BookOfHemomancy.index, static () => Settings.Instance.BloodMage },
-                { TorannMagicDefOf.Torn_BookOfEnchanter.index, static () => Settings.Instance.Enchanter },
-                { TorannMagicDefOf.BookOfEnchanter.index, static () => Settings.Instance.Enchanter },
-                { TorannMagicDefOf.Torn_BookOfChronomancer.index, static () => Settings.Instance.Chronomancer },
-                { TorannMagicDefOf.BookOfChronomancer.index, static () => Settings.Instance.Chronomancer },
-                { TorannMagicDefOf.Torn_BookOfChaos.index, static () => Settings.Instance.ChaosMage },
-                { TorannMagicDefOf.BookOfChaos.index, static () => Settings.Instance.ChaosMage }
+                { TorannMagicDefOf.BookOfSniper.index, Settings.Sniper },
+                { TorannMagicDefOf.BookOfRanger.index, Settings.Ranger },
+                // { ThingDef.Named("TM_PoisonTrap").index, Settings.Ranger },
+                { TorannMagicDefOf.BookOfGladiator.index, Settings.Gladiator },
+                { TorannMagicDefOf.BookOfBladedancer.index, Settings.Bladedancer },
+                { TorannMagicDefOf.BookOfFaceless.index, Settings.Faceless },
+                { TorannMagicDefOf.BookOfPsionic.index, Settings.Psionic },
+                { TorannMagicDefOf.BookOfDeathKnight.index, Settings.DeathKnight },
+                { TorannMagicDefOf.BookOfMonk.index, Settings.Monk },
+                { TorannMagicDefOf.BookOfCommander.index, Settings.Commander },
+                { TorannMagicDefOf.BookOfSuperSoldier.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_60mmMortar_Base.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_PistolSpec_Base1.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_PistolSpec_Base2.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_PistolSpec_Base3.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_PistolSpec_Base4.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_PistolSpec_Base5.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_PistolSpec_Base6.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_PistolSpec_Base7.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_PistolSpec_Base8.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_PistolSpec_Base9.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_PistolSpec_Base10.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_PistolSpec_Base11.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_PistolSpec_Base12.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_PistolSpec_Base13.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_PistolSpec_Base14.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_PistolSpec_Base15.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_PistolSpec_Base16.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_PistolSpec_Base17.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_PistolSpec_Base18.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_PistolSpec_Base19.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_RifleSpec_Base1.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_RifleSpec_Base2.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_RifleSpec_Base3.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_RifleSpec_Base4.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_RifleSpec_Base5.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_RifleSpec_Base6.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_RifleSpec_Base7.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_RifleSpec_Base8.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_RifleSpec_Base9.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_RifleSpec_Base10.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_RifleSpec_Base11.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_RifleSpec_Base12.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_RifleSpec_Base13.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_RifleSpec_Base14.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_RifleSpec_Base15.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_RifleSpec_Base16.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_RifleSpec_Base17.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_RifleSpec_Base18.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_RifleSpec_Base19.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_ShotgunSpec_Base1.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_ShotgunSpec_Base2.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_ShotgunSpec_Base3.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_ShotgunSpec_Base4.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_ShotgunSpec_Base5.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_ShotgunSpec_Base6.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_ShotgunSpec_Base7.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_ShotgunSpec_Base8.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_ShotgunSpec_Base9.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_ShotgunSpec_Base10.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_ShotgunSpec_Base11.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_ShotgunSpec_Base12.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_ShotgunSpec_Base13.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_ShotgunSpec_Base14.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_ShotgunSpec_Base15.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_ShotgunSpec_Base16.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_ShotgunSpec_Base17.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_ShotgunSpec_Base18.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.TM_ShotgunSpec_Base19.index, Settings.SuperSoldier },
+                { TorannMagicDefOf.BookOfArcanist.index, Settings.Arcanist },
+                { TorannMagicDefOf.Torn_BookOfArcanist.index, Settings.Arcanist },
+                { TorannMagicDefOf.Torn_BookOfInnerFire.index, Settings.FireMage },
+                { TorannMagicDefOf.BookOfInnerFire.index, Settings.FireMage },
+                { TorannMagicDefOf.Torn_BookOfHeartOfFrost.index, Settings.IceMage },
+                { TorannMagicDefOf.BookOfHeartOfFrost.index, Settings.IceMage },
+                { TorannMagicDefOf.Torn_BookOfStormBorn.index, Settings.LitMage },
+                { TorannMagicDefOf.BookOfStormBorn.index, Settings.LitMage },
+                { TorannMagicDefOf.Torn_BookOfNature.index, Settings.Druid },
+                { TorannMagicDefOf.BookOfDruid.index, Settings.Druid },
+                { TorannMagicDefOf.SeedofRegrowth.index, Settings.Druid },
+                { TorannMagicDefOf.Torn_BookOfSummoner.index, Settings.Summoner },
+                { TorannMagicDefOf.BookOfSummoner.index, Settings.Summoner },
+                { TorannMagicDefOf.TM_ManaMine.index, Settings.Summoner },
+                { TorannMagicDefOf.TM_ManaMine_I.index, Settings.Summoner },
+                { TorannMagicDefOf.TM_ManaMine_II.index, Settings.Summoner },
+                { TorannMagicDefOf.TM_ManaMine_III.index, Settings.Summoner },
+                { TorannMagicDefOf.DefensePylon.index, Settings.Summoner },
+                { TorannMagicDefOf.DefensePylon_I.index, Settings.Summoner },
+                { TorannMagicDefOf.DefensePylon_II.index, Settings.Summoner },
+                { TorannMagicDefOf.DefensePylon_III.index, Settings.Summoner },
+                { TorannMagicDefOf.Launcher_DefensePylon.index, Settings.Summoner },
+                { TorannMagicDefOf.Launcher_DefensePylon_I.index, Settings.Summoner },
+                { TorannMagicDefOf.Launcher_DefensePylon_II.index, Settings.Summoner },
+                { TorannMagicDefOf.Launcher_DefensePylon_III.index, Settings.Summoner },
+                { TorannMagicDefOf.TM_Poppi.index, Settings.Summoner },
+                { TorannMagicDefOf.Torn_BookOfValiant.index, Settings.Paladin },
+                { TorannMagicDefOf.BookOfValiant.index, Settings.Paladin },
+                { TorannMagicDefOf.Torn_BookOfPriest.index, Settings.Priest },
+                { TorannMagicDefOf.BookOfPriest.index, Settings.Priest },
+                { TorannMagicDefOf.Torn_BookOfBard.index, Settings.Bard },
+                { TorannMagicDefOf.BookOfBard.index, Settings.Bard },
+                { TorannMagicDefOf.BookOfNecromancer.index, Settings.Necromancer },
+                { TorannMagicDefOf.Torn_BookOfUndead.index, Settings.Necromancer },
+                { TorannMagicDefOf.TM_Artifact_NecroticOrb.index, Settings.Necromancer },
+                { TorannMagicDefOf.Torn_BookOfEarth.index, Settings.Geomancer },
+                { TorannMagicDefOf.BookOfEarth.index, Settings.Geomancer },
+                { TorannMagicDefOf.TM_Lesser_SentinelR.index, Settings.Geomancer },
+                { TorannMagicDefOf.TM_SentinelR.index, Settings.Geomancer },
+                { TorannMagicDefOf.TM_Greater_SentinelR.index, Settings.Geomancer },
+                { TorannMagicDefOf.Torn_BookOfDemons.index, Settings.Demonkin },
+                { TorannMagicDefOf.BookOfDemons.index, Settings.Demonkin },
+                { TorannMagicDefOf.Torn_BookOfMagitech.index, Settings.Technomancer },
+                { TorannMagicDefOf.BookOfMagitech.index, Settings.Technomancer },
+                { TorannMagicDefOf.Torn_BookOfHemomancy.index, Settings.BloodMage },
+                { TorannMagicDefOf.BookOfHemomancy.index, Settings.BloodMage },
+                { TorannMagicDefOf.Torn_BookOfEnchanter.index, Settings.Enchanter },
+                { TorannMagicDefOf.BookOfEnchanter.index, Settings.Enchanter },
+                { TorannMagicDefOf.Torn_BookOfChronomancer.index, Settings.Chronomancer },
+                { TorannMagicDefOf.BookOfChronomancer.index, Settings.Chronomancer },
+                { TorannMagicDefOf.Torn_BookOfChaos.index, Settings.ChaosMage },
+                { TorannMagicDefOf.BookOfChaos.index, Settings.ChaosMage }
             };
 
-            spellIndexToSettingsRefMap = new Dictionary<ushort, Func<bool>>
+            spellIndexToSettingsRefMap = new Dictionary<ushort, Settings.CheckboxOption>
             {
-                { TorannMagicDefOf.SpellOf_FoldReality.index, static () => Settings.Instance.Arcanist },
-                { TorannMagicDefOf.SpellOf_Firestorm.index, static () => Settings.Instance.FireMage },
-                { TorannMagicDefOf.SpellOf_DryGround.index, static () => Settings.Instance.FireMage },
-                { TorannMagicDefOf.SpellOf_Blizzard.index, static () => Settings.Instance.IceMage },
-                { TorannMagicDefOf.SpellOf_WetGround.index, static () => Settings.Instance.IceMage },
-                { TorannMagicDefOf.SpellOf_EyeOfTheStorm.index, static () => Settings.Instance.LitMage },
-                { TorannMagicDefOf.SpellOf_ChargeBattery.index, static () => Settings.Instance.LitMage },
-                { TorannMagicDefOf.SpellOf_RegrowLimb.index, static () => Settings.Instance.Druid },
-                { TorannMagicDefOf.SpellOf_FertileLands.index, static () => Settings.Instance.Druid },
-                { TorannMagicDefOf.SpellOf_SummonPoppi.index, static () => Settings.Instance.Summoner },
-                { TorannMagicDefOf.SpellOf_HolyWrath.index, static () => Settings.Instance.Paladin },
-                { TorannMagicDefOf.SpellOf_Resurrection.index, static () => Settings.Instance.Priest },
-                { TorannMagicDefOf.SpellOf_BattleHymn.index, static () => Settings.Instance.Bard },
-                { TorannMagicDefOf.SpellOf_LichForm.index, static () => Settings.Instance.Necromancer },
-                { TorannMagicDefOf.SpellOf_Meteor.index, static () => Settings.Instance.Geomancer },
-                { TorannMagicDefOf.SpellOf_Scorn.index, static () => Settings.Instance.Demonkin },
-                { TorannMagicDefOf.SpellOf_PsychicShock.index, static () => Settings.Instance.Demonkin },
-                { TorannMagicDefOf.SpellOf_TechnoShield.index, static () => Settings.Instance.Technomancer },
-                { TorannMagicDefOf.SpellOf_Sabotage.index, static () => Settings.Instance.Technomancer },
-                { TorannMagicDefOf.SpellOf_Overdrive.index, static () => Settings.Instance.Technomancer },
-                { TorannMagicDefOf.SpellOf_OrbitalStrike.index, static () => Settings.Instance.Technomancer },
-                { TorannMagicDefOf.SpellOf_BloodMoon.index, static () => Settings.Instance.BloodMage },
-                { TorannMagicDefOf.SpellOf_Shapeshift.index, static () => Settings.Instance.Enchanter },
-                { TorannMagicDefOf.SpellOf_Recall.index, static () => Settings.Instance.Chronomancer },
+                { TorannMagicDefOf.SpellOf_FoldReality.index, Settings.Arcanist },
+                { TorannMagicDefOf.SpellOf_Firestorm.index, Settings.FireMage },
+                { TorannMagicDefOf.SpellOf_DryGround.index, Settings.FireMage },
+                { TorannMagicDefOf.SpellOf_Blizzard.index, Settings.IceMage },
+                { TorannMagicDefOf.SpellOf_WetGround.index, Settings.IceMage },
+                { TorannMagicDefOf.SpellOf_EyeOfTheStorm.index, Settings.LitMage },
+                { TorannMagicDefOf.SpellOf_ChargeBattery.index, Settings.LitMage },
+                { TorannMagicDefOf.SpellOf_RegrowLimb.index, Settings.Druid },
+                { TorannMagicDefOf.SpellOf_FertileLands.index, Settings.Druid },
+                { TorannMagicDefOf.SpellOf_SummonPoppi.index, Settings.Summoner },
+                { TorannMagicDefOf.SpellOf_HolyWrath.index, Settings.Paladin },
+                { TorannMagicDefOf.SpellOf_Resurrection.index, Settings.Priest },
+                { TorannMagicDefOf.SpellOf_BattleHymn.index, Settings.Bard },
+                { TorannMagicDefOf.SpellOf_LichForm.index, Settings.Necromancer },
+                { TorannMagicDefOf.SpellOf_Meteor.index, Settings.Geomancer },
+                { TorannMagicDefOf.SpellOf_Scorn.index, Settings.Demonkin },
+                { TorannMagicDefOf.SpellOf_PsychicShock.index, Settings.Demonkin },
+                { TorannMagicDefOf.SpellOf_TechnoShield.index, Settings.Technomancer },
+                { TorannMagicDefOf.SpellOf_Sabotage.index, Settings.Technomancer },
+                { TorannMagicDefOf.SpellOf_Overdrive.index, Settings.Technomancer },
+                { TorannMagicDefOf.SpellOf_OrbitalStrike.index, Settings.Technomancer },
+                { TorannMagicDefOf.SpellOf_BloodMoon.index, Settings.BloodMage },
+                { TorannMagicDefOf.SpellOf_Shapeshift.index, Settings.Enchanter },
+                { TorannMagicDefOf.SpellOf_Recall.index, Settings.Chronomancer },
             };
 
-            recipeIndexMap = new Dictionary<ushort, (Func<bool> settingsValueGetter, ThingDef item)>
+            recipeIndexMap = new Dictionary<ushort, (Settings.CheckboxOption classOption, ThingDef item)>
             {
                 {
                     TorannMagicDefOf.Make_SpellOf_FoldReality.index,
-                    (static () => Settings.Instance.Arcanist, TorannMagicDefOf.SpellOf_FoldReality)
+                    (Settings.Arcanist, TorannMagicDefOf.SpellOf_FoldReality)
                 },
                 {
                     TorannMagicDefOf.Make_SpellOf_Firestorm.index,
-                    (static () => Settings.Instance.FireMage, TorannMagicDefOf.SpellOf_Firestorm)
+                    (Settings.FireMage, TorannMagicDefOf.SpellOf_Firestorm)
                 },
                 {
                     TorannMagicDefOf.Make_SpellOf_DryGround.index,
-                    (static () => Settings.Instance.FireMage, TorannMagicDefOf.SpellOf_DryGround)
+                    (Settings.FireMage, TorannMagicDefOf.SpellOf_DryGround)
                 },
                 {
                     TorannMagicDefOf.Make_SpellOf_Blizzard.index,
-                    (static () => Settings.Instance.IceMage, TorannMagicDefOf.SpellOf_Blizzard)
+                    (Settings.IceMage, TorannMagicDefOf.SpellOf_Blizzard)
                 },
                 {
                     TorannMagicDefOf.Make_SpellOf_WetGround.index,
-                    (static () => Settings.Instance.IceMage, TorannMagicDefOf.SpellOf_WetGround)
+                    (Settings.IceMage, TorannMagicDefOf.SpellOf_WetGround)
                 },
                 {
                     TorannMagicDefOf.Make_SpellOf_EyeOfTheStorm.index,
-                    (static () => Settings.Instance.LitMage, TorannMagicDefOf.SpellOf_EyeOfTheStorm)
+                    (Settings.LitMage, TorannMagicDefOf.SpellOf_EyeOfTheStorm)
                 },
                 {
                     TorannMagicDefOf.Make_SpellOf_ChargeBattery.index,
-                    (static () => Settings.Instance.LitMage, TorannMagicDefOf.SpellOf_ChargeBattery)
+                    (Settings.LitMage, TorannMagicDefOf.SpellOf_ChargeBattery)
                 },
                 {
                     TorannMagicDefOf.Make_SpellOf_RegrowLimb.index,
-                    (static () => Settings.Instance.Druid, TorannMagicDefOf.SpellOf_RegrowLimb)
+                    (Settings.Druid, TorannMagicDefOf.SpellOf_RegrowLimb)
                 },
                 {
                     TorannMagicDefOf.Make_SpellOf_FertileLands.index,
-                    (static () => Settings.Instance.Druid, TorannMagicDefOf.SpellOf_FertileLands)
+                    (Settings.Druid, TorannMagicDefOf.SpellOf_FertileLands)
                 },
                 {
                     TorannMagicDefOf.Make_SpellOf_SummonPoppi.index,
-                    (static () => Settings.Instance.Summoner, TorannMagicDefOf.SpellOf_SummonPoppi)
+                    (Settings.Summoner, TorannMagicDefOf.SpellOf_SummonPoppi)
                 },
                 {
                     TorannMagicDefOf.Make_SpellOf_HolyWrath.index,
-                    (static () => Settings.Instance.Paladin, TorannMagicDefOf.SpellOf_HolyWrath)
+                    (Settings.Paladin, TorannMagicDefOf.SpellOf_HolyWrath)
                 },
                 {
                     TorannMagicDefOf.Make_SpellOf_Resurrection.index,
-                    (static () => Settings.Instance.Priest, TorannMagicDefOf.SpellOf_Resurrection)
+                    (Settings.Priest, TorannMagicDefOf.SpellOf_Resurrection)
                 },
                 {
                     TorannMagicDefOf.Make_SpellOf_BattleHymn.index,
-                    (static () => Settings.Instance.Bard, TorannMagicDefOf.SpellOf_BattleHymn)
+                    (Settings.Bard, TorannMagicDefOf.SpellOf_BattleHymn)
                 },
                 {
                     TorannMagicDefOf.Make_SpellOf_LichForm.index,
-                    (static () => Settings.Instance.Necromancer, TorannMagicDefOf.SpellOf_LichForm)
+                    (Settings.Necromancer, TorannMagicDefOf.SpellOf_LichForm)
                 },
                 {
                     TorannMagicDefOf.Make_SpellOf_Meteor.index,
-                    (static () => Settings.Instance.Geomancer, TorannMagicDefOf.SpellOf_Meteor)
+                    (Settings.Geomancer, TorannMagicDefOf.SpellOf_Meteor)
                 },
                 {
                     TorannMagicDefOf.Make_SpellOf_Scorn.index,
-                    (static () => Settings.Instance.Demonkin, TorannMagicDefOf.SpellOf_Scorn)
+                    (Settings.Demonkin, TorannMagicDefOf.SpellOf_Scorn)
                 },
                 {
                     TorannMagicDefOf.Make_SpellOf_PsychicShock.index,
-                    (static () => Settings.Instance.Demonkin, TorannMagicDefOf.SpellOf_PsychicShock)
+                    (Settings.Demonkin, TorannMagicDefOf.SpellOf_PsychicShock)
                 },
                 {
                     TorannMagicDefOf.Make_SpellOf_TechnoShield.index,
-                    (static () => Settings.Instance.Technomancer, TorannMagicDefOf.SpellOf_TechnoShield)
+                    (Settings.Technomancer, TorannMagicDefOf.SpellOf_TechnoShield)
                 },
                 {
                     TorannMagicDefOf.Make_SpellOf_Sabotage.index,
-                    (static () => Settings.Instance.Technomancer, TorannMagicDefOf.SpellOf_Sabotage)
+                    (Settings.Technomancer, TorannMagicDefOf.SpellOf_Sabotage)
                 },
                 {
                     TorannMagicDefOf.Make_SpellOf_Overdrive.index,
-                    (static () => Settings.Instance.Technomancer, TorannMagicDefOf.SpellOf_Overdrive)
+                    (Settings.Technomancer, TorannMagicDefOf.SpellOf_Overdrive)
                 },
                 {
                     TorannMagicDefOf.Make_SpellOf_OrbitalStrike.index,
-                    (static () => Settings.Instance.Technomancer, TorannMagicDefOf.SpellOf_OrbitalStrike)
+                    (Settings.Technomancer, TorannMagicDefOf.SpellOf_OrbitalStrike)
                 },
                 {
                     TorannMagicDefOf.Make_SpellOf_BloodMoon.index,
-                    (static () => Settings.Instance.BloodMage, TorannMagicDefOf.SpellOf_BloodMoon)
+                    (Settings.BloodMage, TorannMagicDefOf.SpellOf_BloodMoon)
                 },
                 {
                     TorannMagicDefOf.Make_SpellOf_Shapeshift.index,
-                    (static () => Settings.Instance.Enchanter, TorannMagicDefOf.SpellOf_Shapeshift)
+                    (Settings.Enchanter, TorannMagicDefOf.SpellOf_Shapeshift)
                 },
                 {
                     TorannMagicDefOf.Make_SpellOf_Recall.index,
-                    (static () => Settings.Instance.Chronomancer, TorannMagicDefOf.SpellOf_Recall)
+                    (Settings.Chronomancer, TorannMagicDefOf.SpellOf_Recall)
                 },
                 {
                     TorannMagicDefOf.Make_BookOfSuperSoldier.index,
-                    (static () => Settings.Instance.SuperSoldier, TorannMagicDefOf.BookOfSuperSoldier)
+                    (Settings.SuperSoldier, TorannMagicDefOf.BookOfSuperSoldier)
                 }
             };
         }
@@ -517,19 +517,19 @@ namespace TorannMagic.ModOptions
             foreach (ThingDef current in DefDatabase<ThingDef>.AllDefs)
             {
                 // First check if this is a normal ThingDef we have a setting for
-                Func<bool> settingsValueGetter = thingDefIndexToSettingsRefMap.TryGetValue(current.index);
-                if (settingsValueGetter != null)
+                Settings.CheckboxOption option = thingDefIndexToSettingsRefMap.TryGetValue(current.index);
+                if (option != null)
                 {
-                    if (!settingsValueGetter())
+                    if (!option.isEnabled)
                         removeIfNotCustom(current);
                 }
                 // If that fails, next we check for spells
                 else
                 {
-                    settingsValueGetter = spellIndexToSettingsRefMap.TryGetValue(current.index);
-                    if (settingsValueGetter == null) continue;
+                    option = spellIndexToSettingsRefMap.TryGetValue(current.index);
+                    if (option == null) continue;
 
-                    if (settingsValueGetter())
+                    if (option.isEnabled)
                         classSpells.Add(current);
                     else
                         removeIfNotCustom(current);
@@ -563,9 +563,9 @@ namespace TorannMagic.ModOptions
                 if (anyRemovedCustomThings)
                     recipeDictionary[current.defName] = current;
 
-                (Func<bool> settingsValueGetter, ThingDef item) = recipeIndexMap.TryGetValue(current.index);
-                if (settingsValueGetter == null) continue;
-                if (settingsValueGetter()) continue;
+                (Settings.CheckboxOption option, ThingDef item) = recipeIndexMap.TryGetValue(current.index);
+                if (option == null) continue;
+                if (option.isEnabled) continue;
                 if (customThings.Contains(item)) continue;
                 removedRecipes.Add(current);
             }
