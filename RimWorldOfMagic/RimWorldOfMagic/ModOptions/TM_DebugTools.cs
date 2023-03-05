@@ -133,7 +133,7 @@ namespace TorannMagic.ModOptions
             {
                 if (TM_ClassUtility.AllClassTraits.Contains(pawn.story.traits.allTraits[j].def))
                 {
-                    pawn.story.traits.allTraits.Remove(pawn.story.traits.allTraits[j]);
+                    pawn.story.traits.RemoveTrait(pawn.story.traits.allTraits[j]);
                     break;
                 }
             }

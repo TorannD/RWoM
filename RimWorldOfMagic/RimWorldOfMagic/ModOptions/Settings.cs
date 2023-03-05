@@ -9,7 +9,7 @@ namespace TorannMagic.ModOptions
 {
     public class Settings : Verse.ModSettings
     {
-        // This struct lets us link boolean values to their labels for the class options
+        // This class lets us link boolean values to their labels for the class options
         public class CheckboxOption
         {
             public bool isEnabled = true;
