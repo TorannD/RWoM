@@ -392,9 +392,9 @@ namespace TorannMagic
             lightningTraps = new DismissList<Thing>(this, TorannMagicDefOf.TM_DismissLightningTrap);
             weaponEnchants = new DismissPawnList<Pawn>(this, TorannMagicDefOf.TM_DispelEnchantWeapon);
             BrandPawns = new DismissPawnList<Pawn>(this, TorannMagicDefOf.TM_DispelBranding);
-            livingWall = new DismissThing<FlyingObject_LivingWall>(this, TorannMagicDefOf.TM_DispelLivingWall);
-            bondedSpirit = new DismissThing<Pawn>(this, TorannMagicDefOf.TM_DismissGuardianSpirit);
-            earthSpriteType = new DismissValue<int>(this, TorannMagicDefOf.TM_DismissEarthSprites);
+            livingWall = new DismissThing<FlyingObject_LivingWall>(this, TorannMagicDefOf.TM_DispelLivingWall, null);
+            bondedSpirit = new DismissThing<Pawn>(this, TorannMagicDefOf.TM_DismissGuardianSpirit, null);
+            earthSpriteType = new DismissValue<int>(this, TorannMagicDefOf.TM_DismissEarthSprites, 0);
         }
 
         public bool HasTechnoBit

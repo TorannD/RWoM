@@ -5,19 +5,24 @@ namespace TorannMagic.Utils;
 public abstract class DismissVar<T> : Dismiss<T>
 {
     protected T value;
+    protected T offValue;
     public T Value => value;
 
-    public DismissVar(CompAbilityUserTMBase abilityUser, TMAbilityDef abilityDef) : base(abilityUser, abilityDef) {}
+    public DismissVar(CompAbilityUserTMBase abilityUser, TMAbilityDef abilityDef, T _offValue)
+        : base(abilityUser, abilityDef)
+    {
+        offValue = _offValue;
+    }
 
     public void Set(T newValue)
     {
         value = newValue;
-        DismissSpellLearned = !Equals(Value, default);
+        DismissSpellLearned = !Equals(value, offValue);
     }
 
     protected void Scribe()
     {
-        if (Verse.Scribe.mode == LoadSaveMode.PostLoadInit && !Equals(Value, default))
+        if (Verse.Scribe.mode == LoadSaveMode.PostLoadInit && !Equals(value, offValue))
             DismissSpellLearned = true;
     }
 }
@@ -25,7 +30,7 @@ public abstract class DismissVar<T> : Dismiss<T>
 // ========================== Specific versions to specify Scribe
 public class DismissThing<T> : DismissVar<T> where T : Thing
 {
-    public DismissThing(CompAbilityUserTMBase abilityUser, TMAbilityDef abilityDef) : base(abilityUser, abilityDef) {}
+    public DismissThing(CompAbilityUserTMBase abilityUser, TMAbilityDef abilityDef, T offValue) : base(abilityUser, abilityDef, offValue) {}
 
     public void Scribe(string thingName)
     {
@@ -36,7 +41,7 @@ public class DismissThing<T> : DismissVar<T> where T : Thing
 
 public class DismissValue<T> : DismissVar<T>
 {
-    public DismissValue(CompAbilityUserTMBase abilityUser, TMAbilityDef abilityDef) : base(abilityUser, abilityDef) {}
+    public DismissValue(CompAbilityUserTMBase abilityUser, TMAbilityDef abilityDef, T offValue) : base(abilityUser, abilityDef, offValue) {}
 
     public void Scribe(string valueName)
     {
