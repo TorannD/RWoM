@@ -5241,10 +5241,16 @@ namespace TorannMagic
                     ref isMagicallyGiftedValid, ref isPhysicalProdigyValid);
 
 
-                var inst = ModOptions.Settings.Instance;
+                var inst = Settings.Instance;
 
-                float fighterFactor = inst.FactionFighterSettings.TryGetValue(pawn.Faction?.def?.defName, 1f);
-                float mageFactor = inst.FactionMageSettings.TryGetValue(pawn.Faction?.def?.defName, 1f);
+                float fighterFactor = 1;
+                float mageFactor = 1;
+                if (pawn.Faction?.def?.defName != null)
+                {
+                    fighterFactor = inst.FactionFighterSettings.TryGetValue(pawn.Faction?.def?.defName, 1f);
+                    mageFactor = inst.FactionMageSettings.TryGetValue(pawn.Faction?.def?.defName, 1f);
+                }
+
 
                 float baseMageChance = mageFactor * inst.baseMageChance * (isMagicallyGiftedValid ? 1 : 0);
                 float baseFighterChance = fighterFactor * inst.baseFighterChance * (isPhysicalProdigyValid ? 1 : 0);
