@@ -17,7 +17,6 @@ using TorannMagic.TMDefs;
 using TorannMagic.Golems;
 using System.Diagnostics;
 using System.Reflection.Emit;
-using MonoMod.Utils;
 using TorannMagic.Utils;
 
 namespace TorannMagic
