@@ -16,6 +16,8 @@ using TorannMagic.Conditions;
 using TorannMagic.TMDefs;
 using TorannMagic.Golems;
 using System.Diagnostics;
+using System.Reflection.Emit;
+using MonoMod.Utils;
 using TorannMagic.Utils;
 
 namespace TorannMagic
@@ -73,7 +75,6 @@ namespace TorannMagic
             harmonyInstance.Patch(AccessTools.Method(typeof(StaggerHandler), "get_Staggered", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_Staggered", null));
             harmonyInstance.Patch(AccessTools.Method(typeof(Verb_LaunchProjectile), "get_Projectile", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_Projectile_ES", null), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(WindManager), "get_WindSpeed", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_WindSpeed", null), null);
-            harmonyInstance.Patch(AccessTools.Method(typeof(MentalBreaker), "get_CanDoRandomMentalBreaks", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_CanDoRandomMentalBreaks", null), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(Pawn), "get_IsFreeNonSlaveColonist", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_IsFreeNonSlaveColonist_Golem", null));
             harmonyInstance.Patch(AccessTools.Method(typeof(MainTabWindow_Animals), "get_Pawns", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_GolemsAsAnimals", null), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(RecipeDef), "get_AvailableNow", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_GolemsRecipeAvailable", null), null);
@@ -729,16 +730,61 @@ namespace TorannMagic
             }
         }
 
-        private static void Get_CanDoRandomMentalBreaks(MentalBreaker __instance, Pawn ___pawn, ref bool __result)
+        [HarmonyPatch(typeof(MentalBreaker), "TestMoodMentalBreak", null)]
+        public class MentalBreaker_TestMoodMentalBreak
         {
-            if(___pawn != null && __result)
+            static void Postfix(Pawn ___pawn, ref bool __result)
             {
-                if (__result && ___pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_EmotionSuppressionHD))
+                if (!__result) return;
+                if (___pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_EmotionSuppressionHD))
                 {
                     __result = false;
                 }
             }
-        }        
+        }
+
+
+        [HarmonyPatch(typeof(Need_Mood), "DrawOnGUI", null)]
+        public static class Need_Mood_DrawOnGUI
+        {
+            static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator generator)
+            {
+                CodeInstruction[] codes = instructions.ToArray();
+                Label afterMoodTicks = generator.DefineLabel();
+                for (int i = 0; i < codes.Length; i++)
+                {
+                    // Unfortunately this is the easiest way to grab after the if statement in Need_Mood.DrawOnGUI.
+                    // These opcodes were grabbed directly from dnspy
+                    if (codes[i].opcode == OpCodes.Ldarg_0 && codes[i+1].opcode == OpCodes.Ldarg_1)
+                    {
+                        // We need to mark the code statement after the if logic with a label so we can jump to it
+                        codes[i].labels ??= new List<Label>();
+                        codes[i].labels.Add(afterMoodTicks);
+                    }
+
+                    yield return codes[i];
+
+                    // this is the end of the if logic that draws the mood ticks. We shall add a new condition.
+                    if (codes[i].opcode == OpCodes.Brfalse_S)
+                    {
+                        // Load pawn.health.hediffSet onto stack
+                        yield return new CodeInstruction(OpCodes.Ldarg_0);
+                        yield return CodeInstruction.LoadField(typeof(Need), "pawn");
+                        yield return CodeInstruction.LoadField(typeof(Pawn), nameof(Pawn.health));
+                        yield return CodeInstruction.LoadField(typeof(Pawn_HealthTracker), nameof(Pawn_HealthTracker.hediffSet));
+                        // Load TM_EmotionSuppressionHD HediffDef onto stack
+                        yield return new CodeInstruction(OpCodes.Ldsfld, AccessTools.Field(
+                            typeof(TorannMagicDefOf), nameof(TorannMagicDefOf.TM_EmotionSuppressionHD)));
+                        // Load 0 (aka false) onto stack
+                        yield return new CodeInstruction(OpCodes.Ldc_I4_0);
+                        // pawn.health.hediffSet.HasHediff(...TM_EmotionSuppressionHD, bool(0))
+                        yield return CodeInstruction.Call(typeof(HediffSet), nameof(HediffSet.HasHediff), new Type[] {typeof(HediffDef), typeof(bool)});
+                        // if we have the hediff, jump to the end of the if statement
+                        yield return new CodeInstruction(OpCodes.Brtrue_S, afterMoodTicks);
+                    }
+                }
+            }
+        }
 
         [HarmonyPatch(typeof(Plant), "PlantCollected", null)]
         public class ApothecaryHarvest_Patch
