@@ -3,7 +3,6 @@ using RimWorld;
 using Verse;
 using AbilityUser;
 
-
 namespace TorannMagic
 {
 	[DefOf]

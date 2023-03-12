@@ -20,7 +20,7 @@ namespace TorannMagic
                 for (int i = 0; i < TM_ClassUtility.CustomClasses.Count; i++)
                 {
                     TMDefs.TM_CustomClass cc = TM_ClassUtility.CustomClasses[i];
-                    if (cc.isMage && cc.isAdvancedClass && comp != null)
+                    if (cc.isAdvancedClass)
                     {
                         if (parent.def == cc.tornScript || parent.def == cc.fullScript)
                         {

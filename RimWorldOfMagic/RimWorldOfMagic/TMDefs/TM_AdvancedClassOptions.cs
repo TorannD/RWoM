@@ -11,6 +11,7 @@ namespace TorannMagic.TMDefs
     public class TM_AdvancedClassOptions
     {
         public bool requiresBaseClass = false;
+        public bool allowAnyBaseClass = false;
         public bool canSpawnWithClass = false;
         public bool removesRequiredTrait = false;
         public List<TraitDef> requiredTraits = new List<TraitDef>();

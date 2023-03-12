@@ -926,7 +926,7 @@ namespace TorannMagic
                             DoDeathRetaliation();
                         }
                     }
-                    else
+                    else if(ModsConfig.IdeologyActive)
                     {                        
                         if(Find.TickManager.TicksGame % 2501 == 0 && base.Pawn.story != null && this.Pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted))
                         {                            

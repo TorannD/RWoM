@@ -331,6 +331,18 @@ namespace TorannMagic
         //    __result = lostFlag;
         //}
 
+        [HarmonyPatch(typeof(JobGiver_GetHemogen), "CanFeedOnPrisoner", null)]
+        public class Hemogen_CannotFeedOnUndead_Patch
+        {
+            private static void Postfix(Pawn bloodfeeder, Pawn prisoner, ref bool __result)
+            {
+                if (__result && (TM_Calc.IsUndead(prisoner) || TM_Calc.IsSpirit(prisoner) || TM_Calc.IsRobotPawn(prisoner) || TM_Calc.IsGolem(prisoner)))
+                {
+                    __result = false;
+                }
+            }
+        }
+
         public static bool Get_UndeadIsCharging(Pawn p, ref bool __result)
         {
             if(TM_Calc.IsUndeadNotVamp(p))

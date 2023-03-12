@@ -62,24 +62,12 @@ namespace TorannMagic
 
         private static float ActualNeedCost (TMAbilityDef mightDef, CompAbilityUserMight mightUser)
         {
-
-            float num = 1f;
-            if (mightDef != null && mightUser.MightData.GetSkill_Efficiency(mightDef) != null)
-            {
-                num = 1f - (mightDef.efficiencyReductionPercent * mightUser.MightData.GetSkill_Efficiency(mightDef).level);
-            }
-            return mightDef.needCost * num;
-            
+            return mightUser.ActualNeedCost(mightDef);            
         }
 
         private static float ActualHediffCost (TMAbilityDef mightDef, CompAbilityUserMight mightUser)
         {
-            float num = 1f;
-            if (mightDef != null && mightUser.MightData.GetSkill_Efficiency(mightDef) != null)
-            {
-                num = 1f - (mightDef.efficiencyReductionPercent * mightUser.MightData.GetSkill_Efficiency(mightDef).level);
-            }
-            return mightDef.hediffCost * num;            
+            return mightUser.ActualHediffCost(mightDef);        
         }
 
         public MightAbility()
@@ -126,8 +114,7 @@ namespace TorannMagic
                 }
                 if (mightDef.consumeEnergy)
                 {
-                    bool flag3 = this.MightUser.Stamina != null;
-                    if (flag3)
+                    if (this.MightUser.Stamina != null)
                     {
                         if (!this.Pawn.IsColonist && ModOptions.Settings.Instance.AIAggressiveCasting)// for AI
                         {
@@ -138,26 +125,35 @@ namespace TorannMagic
                             this.MightUser.Stamina.UseMightPower(this.MightUser.ActualStaminaCost(mightDef));
                         }
 
-                        this.MightUser.MightUserXP += (int)((mightDef.staminaCost * 180) * this.MightUser.xpGain * ModOptions.Settings.Instance.xpMultiplier);
+                        this.MightUser.MightUserXP += Mathf.Clamp((int)((mightDef.staminaCost * 180) * this.MightUser.xpGain * ModOptions.Settings.Instance.xpMultiplier), 0, 9999);
 
                         TM_EventRecords er = new TM_EventRecords();
                         er.eventPower = this.mightDef.manaCost;
                         er.eventTick = Find.TickManager.TicksGame;
-                        this.MightUser.MightUsed.Add(er);                        
+                        this.MightUser.MightUsed.Add(er);
 
+                    }
+                    if (this.mightDef.manaCost != 0)
+                    {
+                        CompAbilityUserMagic magicComp = this.Pawn.GetCompAbilityUserMagic();
+                        if(magicComp != null && magicComp.Mana != null)
+                        {
+                            magicComp.Mana.UseMagicPower(mightDef.manaCost);
+                            //this.MagicUser.Mana.UseMagicPower(this.MagicUser.ActualManaCost(magicDef)
+                        }
                     }
                     if (this.mightDef.chiCost != 0)
                     {
                         HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_ChiHD, -100 * this.ActualChiCost);
-                        this.MightUser.MightUserXP += (int)((mightDef.chiCost * 100) * this.MightUser.xpGain * ModOptions.Settings.Instance.xpMultiplier);
+                        this.MightUser.MightUserXP += Mathf.Clamp((int)((mightDef.chiCost * 100) * this.MightUser.xpGain * ModOptions.Settings.Instance.xpMultiplier),0 , 9999);
                     }
-                    if(mightDef.requiredHediff != null)
+                    if (mightDef.requiredHediff != null)
                     {
                         Hediff reqHediff = TM_Calc.GetLinkedHediff(this.Pawn, mightDef.requiredHediff);
                         if (reqHediff != null)
                         {
                             reqHediff.Severity -= ActualHediffCost(mightDef, this.MightUser);
-                            this.MightUser.MightUserXP += (int)((mightDef.hediffXPFactor * this.MightUser.xpGain * ModOptions.Settings.Instance.xpMultiplier) * mightDef.hediffCost);
+                            this.MightUser.MightUserXP += Mathf.Clamp((int)((mightDef.hediffXPFactor * this.MightUser.xpGain * ModOptions.Settings.Instance.xpMultiplier) * mightDef.hediffCost), 0 , 9999);
                         }
                         else
                         {
@@ -170,7 +166,7 @@ namespace TorannMagic
                         {
                             Need nd = this.Pawn.needs.TryGetNeed(this.mightDef.requiredNeed);
                             nd.CurLevel -= ActualNeedCost(mightDef, this.MightUser);
-                            this.MightUser.MightUserXP += (int)((mightDef.needXPFactor * this.MightUser.xpGain * ModOptions.Settings.Instance.xpMultiplier) * mightDef.needCost);
+                            this.MightUser.MightUserXP += Mathf.Clamp((int)((mightDef.needXPFactor * this.MightUser.xpGain * ModOptions.Settings.Instance.xpMultiplier) * mightDef.needCost), 0, 9999);
                         }
                         else
                         {
@@ -521,6 +517,21 @@ namespace TorannMagic
                             );
                             result = false;
                             return result;
+                        }
+                        if (mightDef.manaCost > 0f)
+                        {
+                            CompAbilityUserMagic compMagic = base.Pawn.GetCompAbilityUserMagic();
+                            if (compMagic != null && compMagic.Mana != null)
+                            {
+                                if (mightDef.manaCost > compMagic.Mana.CurLevel)
+                                {
+                                    reason = "TM_NotEnoughMana".Translate(
+                                    base.Pawn.LabelShort
+                                    );
+                                    result = false;
+                                    return result;
+                                }
+                            }
                         }
                         if (mightDef.chiCost > 0f)
                         {

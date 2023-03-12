@@ -11,7 +11,7 @@ using AbilityUser;
 using HarmonyLib;
 using TorannMagic.Enchantment;
 using TorannMagic.TMDefs;
-
+using TorannMagic.Ideology;
 
 namespace TorannMagic
 {
@@ -1641,7 +1641,7 @@ namespace TorannMagic
                     current.CooldownTicksLeft = Mathf.RoundToInt(current.MaxCastingTicks * comp.coolDown);
                 }
             }
-        }
+        }        
 
         public static void ConsumeManaXP(Pawn p, float mp, float xpMultiplier = 1f, bool applyArcaneWeakness = true)
         {
