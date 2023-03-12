@@ -334,7 +334,7 @@ namespace TorannMagic
         [HarmonyPatch(typeof(JobGiver_GetHemogen), "CanFeedOnPrisoner", null)]
         public class Hemogen_CannotFeedOnUndead_Patch
         {
-            private static void Postfix(Pawn bloodfeeder, Pawn prisoner, ref bool __result)
+            private static void Postfix(Pawn bloodfeeder, Pawn prisoner, ref AcceptanceReport __result)
             {
                 if (__result && (TM_Calc.IsUndead(prisoner) || TM_Calc.IsSpirit(prisoner) || TM_Calc.IsRobotPawn(prisoner) || TM_Calc.IsGolem(prisoner)))
                 {
