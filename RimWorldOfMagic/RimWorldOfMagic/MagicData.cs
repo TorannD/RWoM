@@ -112,13 +112,11 @@ namespace TorannMagic
         {
             get
             {
-                if(this.magicPowerCustomAll == null)
-                {
-                    this.magicPowerCustomAll = new List<MagicPower>();
-                    this.magicPowerCustomAll.Clear();
-                    this.magicPowerCustomAll.AddRange(MagicPowersCustom);
-                    this.magicPowerCustomAll.AddRange(MagicPowersCustomStandalone);
-                }
+                if (magicPowerCustomAll != null) return magicPowerCustomAll;
+
+                magicPowerCustomAll = new List<MagicPower>();
+                magicPowerCustomAll.AddRange(MagicPowersCustom);
+                magicPowerCustomAll.AddRange(MagicPowersCustomStandalone);
                 return magicPowerCustomAll;
             }
         }
