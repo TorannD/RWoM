@@ -13,6 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
+    <LangVersion>10</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -153,6 +154,7 @@
     <Compile Include="Projectile_SummonSpiritAnimals.cs" />
     <Compile Include="Thoughts\ThoughtWorker_TM_LivingPossessed.cs" />
     <Compile Include="TMDefs\TM_AdvancedClassOptions.cs" />
+    <Compile Include="TMPower.cs" />
     <Compile Include="Utils\LinqExtensions.cs" />
     <Compile Include="Utils\TraitIconMap.cs" />
     <Compile Include="Utils\SimpleCache.cs" />

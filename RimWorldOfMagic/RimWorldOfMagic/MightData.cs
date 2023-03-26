@@ -43,7 +43,6 @@ namespace TorannMagic
                         bool newPower = false;
                         List<AbilityUser.AbilityDef> abilityList = current.customPower.abilityDefs;
                         MightPower mp = new MightPower(abilityList);
-                        mp.maxLevel = current.customPower.maxLevel;
                         mp.learnCost = current.customPower.learnCost;
                         mp.costToLevel = current.customPower.costToLevel;
                         mp.autocasting = current.customPower.autocasting;
