@@ -84,35 +84,24 @@ namespace TorannMagic
 
         public static bool IsNecromancer(Pawn pawn)
         {
-            if (pawn != null)
-            {                
-                bool flag_DefName = false;
-                if (pawn.def == TorannMagicDefOf.TM_SkeletonLichR)
-                {
-                    flag_DefName = true;
-                }
-                bool flag_Trait = false;
-                if (pawn.story != null && pawn.story.traits != null)
-                {
-                    if (pawn.story.traits.HasTrait(TorannMagicDefOf.Necromancer) || pawn.story.traits.HasTrait(TorannMagicDefOf.Lich))
-                    {
-                        flag_Trait = true;
-                    }
-                }
-                bool flag_Class = false;
-                CompAbilityUserMight compMight = pawn.GetCompAbilityUserMight();
-                if (compMight != null && compMight.customClass != null && compMight.customClass.isNecromancer)
-                {
-                    flag_Class = true;
-                }
-                CompAbilityUserMagic compMagic = pawn.GetCompAbilityUserMagic();
-                if (compMagic != null && compMagic.customClass != null && compMagic.customClass.isNecromancer)
-                {
-                    flag_Class = true;
-                }
-                bool isNecromancer = flag_DefName || flag_Trait || flag_Class;
-                return isNecromancer;
+            if (pawn.def == TorannMagicDefOf.TM_SkeletonLichR) return true;
+
+            for (int i = 0; i < pawn.story.traits.allTraits.Count; i++)
+            {
+                if (pawn.story.traits.allTraits[i].def == TorannMagicDefOf.Necromancer
+                    || pawn.story.traits.allTraits[i].def == TorannMagicDefOf.Lich) return true;
             }
+
+            CompAbilityUserMight compMight = pawn.GetCompAbilityUserMight();
+            if (compMight != null && compMight.customClass != null && compMight.customClass.isNecromancer)
+            {
+                return true;
+            }
+            CompAbilityUserMagic compMagic = pawn.GetCompAbilityUserMagic();
+            if (compMagic != null && compMagic.customClass != null && compMagic.customClass.isNecromancer)
+            {
+                return true;
+            }            
             return false;
         }
 

@@ -97,7 +97,7 @@ namespace TorannMagic
             get
             {
                 float maxBase = 100f;
-                if(this.pawn.story != null && this.pawn.story.Adulthood.identifier == "tm_ancient_spirit")
+                if(this.pawn.story != null && this.pawn.story.Adulthood != null && this.pawn.story.Adulthood.identifier == "tm_ancient_spirit")
                 {
                     maxBase += 50f;
                 }
