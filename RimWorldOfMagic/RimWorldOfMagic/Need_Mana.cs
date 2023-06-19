@@ -223,7 +223,7 @@ namespace TorannMagic
 
                         if (pawn.health != null && pawn.health.hediffSet != null)
                         {
-                            if(comp.BrandPawns != null && comp.BrandPawns.Count > 0)
+                            if(comp.BrandPawns.Count > 0)
                             {
                                 drainSigils = comp.BrandPawns.Count * (TorannMagicDefOf.TM_Branding.upkeepRegenCost * (1f - (TorannMagicDefOf.TM_Branding.upkeepEfficiencyPercent * comp.MagicData.GetSkill_Efficiency(TorannMagicDefOf.TM_Branding).level)));
                                 if(comp.sigilSurging)
@@ -369,7 +369,7 @@ namespace TorannMagic
                         }
 
                         //Earth sprite modifier
-                        if(comp.earthSpriteType != 0)
+                        if(comp.earthSpriteType.Value != 0)
                         {
                             MagicPowerSkill manaDeviant = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_EarthSprites.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_EarthSprites_ver");
                             this.drainSprites = (0.0012f * (.6f - (.07f * manaDeviant.level)));
@@ -399,8 +399,9 @@ namespace TorannMagic
                                     orbCount++;
                                 }                                
                             }
-                            foreach (Pawn current in comp.supportedUndead)
+                            for (int i = 0; i < comp.supportedUndead.Count; i++)
                             {
+                                Pawn current = comp.supportedUndead[i];
                                 if (current.RaceProps.Humanlike)
                                 {
                                     if (current.health.hediffSet.HasHediff(TorannMagicDefOf.TM_UndeadHD))
@@ -444,7 +445,7 @@ namespace TorannMagic
                                     if (this.CurLevel < 0.01f && undeadCount > 0)
                                     {
                                         //consume corpse
-                                        Pawn current = (Pawn)comp.supportedUndead.RandomElement();
+                                        Pawn current = comp.supportedUndead[Random.Range(0, comp.supportedUndead.Count)];
                                         Messages.Message("TM_UndeadCollapsed".Translate(
                                             pawn.LabelShort,
                                             current.LabelShort

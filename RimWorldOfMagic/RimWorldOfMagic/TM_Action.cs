@@ -3646,11 +3646,8 @@ namespace TorannMagic
                 HealthUtility.AdjustSeverity(hitPawn, brandDef, .05f);
             }
 
-            if (casterComp.BrandPawns != null && casterComp.BrandDefs != null)
-            {
-                casterComp.BrandPawns.Add(hitPawn);
-                casterComp.BrandDefs.Add(brandDef);
-            }
+            casterComp.BrandPawns.Add(hitPawn);
+            casterComp.BrandDefs.Add(brandDef);
         }
 
         private static void ClearExistingBrander(Pawn hitPawn, HediffDef brandDef)

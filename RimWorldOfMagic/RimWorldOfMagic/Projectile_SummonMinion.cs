@@ -178,8 +178,8 @@ namespace TorannMagic
                             {
                                 while (comp.summonedMinions.Count > 4)
                                 {
-                                    Pawn excessMinion = comp.summonedMinions[comp.summonedMinions.Count - 1] as Pawn;
-                                    comp.summonedMinions.Remove(excessMinion);
+                                    TMPawnSummoned excessMinion = comp.summonedMinions[comp.summonedMinions.Count - 1];
+                                    comp.summonedMinions.RemoveAt(comp.summonedMinions.Count - 1);
                                     if (excessMinion != null && !excessMinion.Dead && !excessMinion.Destroyed)
                                     {
                                         excessMinion.Destroy();

@@ -60,9 +60,9 @@ namespace TorannMagic
                             }
                         }
                         CompAbilityUserMagic compMagic = mapPawns[i].GetCompAbilityUserMagic();
-                        if(compMagic.IsMagicUser && compMagic.bondedSpirit != null)
+                        if(compMagic.IsMagicUser && compMagic.bondedSpirit.Value != null)
                         {
-                            if(compMagic.bondedSpirit == this.Pawn)
+                            if(compMagic.bondedSpirit.Value == Pawn)
                             {
                                 this.bonderPawn = compMagic.Pawn;
                                 break;

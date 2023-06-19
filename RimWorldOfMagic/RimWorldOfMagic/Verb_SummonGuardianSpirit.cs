@@ -81,14 +81,14 @@ namespace TorannMagic
                 {
                     try
                     {
-                        if(comp.bondedSpirit != null)
+                        if(comp.bondedSpirit.Value != null)
                         {
-                            if (comp.bondedSpirit.Map != null)
+                            if (comp.bondedSpirit.Value.Map != null)
                             {
-                                FleckMaker.ThrowSmoke(comp.bondedSpirit.DrawPos, comp.bondedSpirit.Map, 1f);
-                                TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Ghost, comp.bondedSpirit.DrawPos, comp.bondedSpirit.Map, 1.3f, .25f, .1f, .45f, 0, Rand.Range(1f, 2f), 0, 0);
+                                FleckMaker.ThrowSmoke(comp.bondedSpirit.Value.DrawPos, comp.bondedSpirit.Value.Map, 1f);
+                                TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Ghost, comp.bondedSpirit.Value.DrawPos, comp.bondedSpirit.Value.Map, 1.3f, .25f, .1f, .45f, 0, Rand.Range(1f, 2f), 0, 0);
                             }                            
-                            comp.bondedSpirit.Destroy(DestroyMode.Vanish);
+                            comp.bondedSpirit.Value.Destroy();
                         }
                         this.spirit = TM_Action.SingleSpawnLoop(caster, tempPod, shiftPos, map, 5, false, false, caster.Faction, false);
                         Pawn animal = this.spirit as Pawn;
@@ -99,7 +99,7 @@ namespace TorannMagic
                         {
                             HealthUtility.AdjustSeverity(animal, TorannMagicDefOf.TM_BirdflightHD, .5f);
                         }
-                        comp.bondedSpirit = animal;
+                        comp.bondedSpirit.Set(animal);
                         CompAnimalController animalComp = animal.TryGetComp<CompAnimalController>();
                         if(animalComp != null)
                         {

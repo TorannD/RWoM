@@ -106,9 +106,9 @@ namespace TorannMagic
                     }
                 }
 
-                if (comp.earthSprites != IntVec3.Invalid || comp.earthSpriteType != 0)
+                if (comp.earthSprites != IntVec3.Invalid || comp.earthSpriteType.Value != 0)
                 {
-                    comp.earthSpriteType = 0;
+                    comp.earthSpriteType.Set(0);
                     comp.earthSpriteMap = null;
                     comp.earthSprites = IntVec3.Invalid;
                     comp.earthSpritesInArea = false;

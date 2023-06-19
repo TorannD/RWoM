@@ -17,10 +17,10 @@ namespace TorannMagic
 
             if (comp.IsMagicUser)
             {
-                if (comp.livingWall != null && comp.livingWall.Spawned)
+                if (comp.livingWall.Value != null && comp.livingWall.Value.Spawned)
                 {
-                    comp.livingWall.Destroy(DestroyMode.Vanish);
-                    comp.livingWall = null;
+                    comp.livingWall.Value.Destroy(DestroyMode.Vanish);
+                    comp.livingWall.Set(null);
                 }
             }
 

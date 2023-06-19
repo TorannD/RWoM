@@ -60,9 +60,9 @@ namespace TorannMagic
                     {
                         if(t.Faction == caster.Faction && TM_Calc.IsWall(t))
                         {
-                            if(comp.livingWall != null && !comp.livingWall.DestroyedOrNull())
+                            if(comp.livingWall.Value != null && !comp.livingWall.Value.DestroyedOrNull())
                             {
-                                comp.livingWall.Destroy(DestroyMode.Vanish);
+                                comp.livingWall.Value.Destroy();
                             }
                             FleckMaker.ThrowLightningGlow(t.DrawPos, caster.Map, 1f);
                             Thing launchedThing = new Thing()
@@ -76,7 +76,7 @@ namespace TorannMagic
                             path.Add(newVec);
                             path.Add(newVec);
                             flyingObject.ExactLaunch(null, 0, false, path, caster, newVec, t, launchedThing, 15+(3*verVal), 0);
-                            comp.livingWall = flyingObject;
+                            comp.livingWall.Set(flyingObject);
                             wallDetected = true;
                             break;
                         }

@@ -12,6 +12,7 @@ using UnityEngine;
 using Verse;
 using Verse.AI;
 using HarmonyLib;
+using TorannMagic.Utils;
 
 namespace TorannMagic.ModOptions
 {
@@ -155,94 +156,57 @@ namespace TorannMagic.ModOptions
             }
             foreach (Thing t in compMight.combatItems)
             {
-                if(t != null)
-                t.Destroy(DestroyMode.Vanish);
+                t?.Destroy();
             }
             compMight.shouldDraw = false;
         }
 
         public static void RemoveMagicComp(CompAbilityUserMagic compMagic)
         {
-            if (!compMagic.bondedSpirit.DestroyedOrNull())
+            if (!compMagic.bondedSpirit.Value.DestroyedOrNull())
             {
-                compMagic.bondedSpirit.Destroy(DestroyMode.Vanish);
+                compMagic.bondedSpirit.Value.Destroy();
             }
-            compMagic.earthSprites = default(IntVec3);
-            compMagic.earthSpriteType = 0;
-            if (compMagic.enchanterStones != null)
-            {
-                foreach (Thing t in compMagic.enchanterStones)
-                {
-                    if(t != null)
-                        t.Destroy(DestroyMode.Vanish);
-                }
-            }
+            compMagic.earthSprites = default;
+            compMagic.earthSpriteType.Set(0);
+            compMagic.enchanterStones.DestroyAll();
             if(compMagic.fertileLands != null)
                 compMagic.fertileLands.Clear();
             if (!compMagic.SoL.DestroyedOrNull())
             {
                 compMagic.SoL.Destroy(DestroyMode.Vanish);
             }
-            if (compMagic.StoneskinPawns != null)
+
+            DismissPawnList<Pawn> stoneskinPawns = compMagic.StoneskinPawns;
+            for (int i = 0; i < stoneskinPawns.Count; i++)
             {
-                foreach (Pawn p in compMagic.StoneskinPawns)
+                Pawn p = stoneskinPawns[i];
+                Hediff hd = p?.health?.hediffSet?.GetFirstHediffOfDef(TorannMagicDefOf.TM_StoneskinHD);
+                if (hd != null)
                 {
-                    if (p != null && p.health != null && p.health.hediffSet != null)
+                    p.health.RemoveHediff(hd);
+                }
+            }
+
+            compMagic.summonedCoolers.DestroyAll();
+            compMagic.summonedHeaters.DestroyAll();
+            compMagic.summonedLights.DestroyAll();
+            compMagic.summonedPowerNodes.DestroyAll();
+            compMagic.summonedSentinels.DestroyAll();
+            compMagic.supportedUndead.KillAll();
+            for (int i = 0; i < compMagic.weaponEnchants.Count; i++)
+            {
+                Pawn p = compMagic.weaponEnchants[i];
+                if (p?.health?.hediffSet == null) continue;
+                foreach (Hediff hd in p.health.hediffSet.hediffs)
+                {
+                    if (hd.def == TorannMagicDefOf.TM_WeaponEnchantment_DarkHD || hd.def == TorannMagicDefOf.TM_WeaponEnchantment_FireHD || hd.def == TorannMagicDefOf.TM_WeaponEnchantment_IceHD || hd.def == TorannMagicDefOf.TM_WeaponEnchantment_LitHD)
                     {
-                        Hediff hd = p.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_StoneskinHD);
-                        if (hd != null)
-                        {
-                            p.health.RemoveHediff(hd);
-                        }
+                        p.health.RemoveHediff(hd);
                     }
                 }
             }
-            foreach (Thing t in compMagic.summonedCoolers)
-            {
-                if (t != null)
-                    t.Destroy(DestroyMode.Vanish);
-            }
-            foreach (Thing t in compMagic.summonedHeaters)
-            {
-                if (t != null)
-                    t.Destroy(DestroyMode.Vanish);
-            }
-            foreach (Thing t in compMagic.summonedLights)
-            {
-                if (t != null)
-                    t.Destroy(DestroyMode.Vanish);
-            }
-            foreach (Thing t in compMagic.summonedPowerNodes)
-            {
-                if (t != null)
-                    t.Destroy(DestroyMode.Vanish);
-            }
-            foreach (Thing t in compMagic.summonedSentinels)
-            {
-                if (t != null)
-                    t.Destroy(DestroyMode.Vanish);
-            }
-            foreach (Thing t in compMagic.supportedUndead)
-            {
-                if (t != null)
-                    t.Kill(null, null);
-            }
-            foreach (Pawn p in compMagic.weaponEnchants)
-            {
-                if (p != null)
-                {
-                    if (p.health != null && p.health.hediffSet != null)
-                    {
-                        foreach (Hediff hd in p.health.hediffSet.hediffs)
-                        {
-                            if (hd.def == TorannMagicDefOf.TM_WeaponEnchantment_DarkHD || hd.def == TorannMagicDefOf.TM_WeaponEnchantment_FireHD || hd.def == TorannMagicDefOf.TM_WeaponEnchantment_IceHD || hd.def == TorannMagicDefOf.TM_WeaponEnchantment_LitHD)
-                            {
-                                p.health.RemoveHediff(hd);
-                            }
-                        }
-                    }
-                }
-            }
+            compMagic.weaponEnchants.Clear();
             compMagic.shouldDraw = false;            
         }
 
