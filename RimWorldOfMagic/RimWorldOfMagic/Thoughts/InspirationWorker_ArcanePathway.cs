@@ -11,7 +11,13 @@ namespace TorannMagic.Thoughts
             bool flag = ModsConfig.IdeologyActive;
             if(flag && pawn.story != null && pawn.story.traits != null && pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted))
             {
-                return base.InspirationCanOccur(pawn);
+                foreach (Pawn p in pawn.Map.mapPawns.AllPawns)
+                {
+                    if (p.IsColonistPlayerControlled && p.Ideo != null && p.Ideo.GetRole(p) != null && p.Ideo.GetRole(p).def == TorannMagicDefOf.TM_IdeoRole_VoidSeeker)
+                    {
+                        return base.InspirationCanOccur(pawn);
+                    }
+                }
             }
             return false;
         }

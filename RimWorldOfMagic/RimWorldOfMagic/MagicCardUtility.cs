@@ -545,36 +545,24 @@ namespace TorannMagic
                 Widgets.Label(rect6, "TM_LastManaGainPct".Translate(
                     (compMagic.Mana.lastGainPct * 200).ToString("0.000")
                     ));
-                string str1 = "Base mana gain: " + (200 * compMagic.Mana.baseManaGain).ToString("0.000") + "\nMana regen bonus: " + (200 * compMagic.Mana.modifiedManaGain).ToString("0.000");
+                string str1 = "TM_MCU_BaseMana".Translate((200 * compMagic.Mana.baseManaGain).ToString("0.000")) + "\n" + "TM_MCU_BaseRegen".Translate((200 * compMagic.Mana.modifiedManaGain).ToString("0.000"));
                 TooltipHandler.TipRegion(rect6, () => string.Concat(new string[]
                         {
                         str1,
-                         "\n\nMana surge: +",
-                        (200 * compMagic.Mana.drainManaSurge).ToString("0.000"),
-                        "\nSyrrium boost: +",
-                        (200*compMagic.Mana.drainSyrrium).ToString("0.000"),
-                        "\nModified mana gain: ",
-                        (200*(compMagic.Mana.baseManaGain + compMagic.Mana.modifiedManaGain + compMagic.Mana.drainSyrrium + compMagic.Mana.drainManaSurge)).ToString("0.000"),
-                        "\nEnergy regen bonus: +",
-                        (200*compMagic.Mana.drainEnergyHD).ToString("0.000"),
-                        "\n\nMana weakness: -",
-                        (200*compMagic.Mana.drainManaWeakness).ToString("0.000"),
-                        "\nMinion cost: -",
-                        (200*compMagic.Mana.drainMinion).ToString("0.000"),
-                        "\nSprite cost: -",
-                        (200*compMagic.Mana.drainSprites).ToString("0.000"),
-                        "\nUndead cost: -",
-                        (200*compMagic.Mana.drainUndead).ToString("0.000"),
-                        "\nMana drain: -",
-                        (200*compMagic.Mana.drainManaDrain).ToString("0.000"),
-                        "\nMana sickness: -",
-                        (200*compMagic.Mana.drainManaSickness).ToString("0.000"),
-                        "\nParacytic drain: -",
-                        (200*compMagic.Mana.paracyteCountReduction).ToString("0.000"),
+                         "\n\n"+"TM_MCU_ManaSurge".Translate((200 * compMagic.Mana.drainManaSurge).ToString("0.000")),
+                        "\n"+"TM_MCU_Syrrium".Translate((200*compMagic.Mana.drainSyrrium).ToString("0.000")),                        
+                        "\n"+"TM_MCU_EnergyDrainBonus".Translate((200*(compMagic.Mana.baseManaGain + compMagic.Mana.modifiedManaGain + compMagic.Mana.drainSyrrium + compMagic.Mana.drainManaSurge)).ToString("0.000")),                        
+                        "\n"+"TM_MCU_RegenBonus".Translate((200*compMagic.Mana.drainEnergyHD).ToString("0.000")),
+                        "\n\n"+"TM_MCU_ManaWeakness".Translate((200*compMagic.Mana.drainManaWeakness).ToString("0.000")),                        
+                        "\n"+"TM_MCU_Minion".Translate((200*compMagic.Mana.drainMinion).ToString("0.000")),                        
+                        "\n"+"TM_MCU_Sprite".Translate((200*compMagic.Mana.drainSprites).ToString("0.000")),                        
+                        "\n"+"TM_MCU_Undead".Translate((200*compMagic.Mana.drainUndead).ToString("0.000")),                        
+                        "\n"+"TM_MCU_ManaDrain".Translate((200*compMagic.Mana.drainManaDrain).ToString("0.000")),                        
+                        "\n"+"TM_MCU_ManaSickness".Translate((200*compMagic.Mana.drainManaSickness).ToString("0.000")),                        
+                        "\n"+"TM_MCU_Paracyte".Translate((200*compMagic.Mana.paracyteCountReduction).ToString("0.000")),                        
                         //"\nSigil drain: -",
                         //(2*compMagic.Mana.drainSigils).ToString("0.000"),
-                        "\nTotal mana upkeep: ",
-                        (-200 *(compMagic.Mana.paracyteCountReduction + compMagic.Mana.drainManaSickness + compMagic.Mana.drainManaDrain + compMagic.Mana.drainUndead + compMagic.Mana.drainSprites + compMagic.Mana.drainMinion + compMagic.Mana.drainManaWeakness)).ToString("0.000"),
+                        "\n"+"TM_MCU_ManaNet".Translate((-200 *(compMagic.Mana.paracyteCountReduction + compMagic.Mana.drainManaSickness + compMagic.Mana.drainManaDrain + compMagic.Mana.drainUndead + compMagic.Mana.drainSprites + compMagic.Mana.drainMinion + compMagic.Mana.drainManaWeakness)).ToString("0.000")),                        
                         }), 398552);
                 GUI.color = Color.white;
             }
@@ -1878,9 +1866,9 @@ namespace TorannMagic
                         TooltipHandler.TipRegion(rect, () => string.Concat(new string[]
                         {
                         power.abilityDef.label,
-                        "\n\nCurrent Level:\n",
+                        "\n\n"+"TM_MCU_CurrentLevel".Translate()+"\n",
                         power.abilityDescDef.description,
-                        "\n\nNext Level:\n",
+                        "\n\n"+"TM_MCU_NextLevel".Translate()+"\n",
                         power.nextLevelAbilityDescDef?.description,
                         "\n\n",
                         "TM_CheckPointsForMoreInfo".Translate()
@@ -1964,7 +1952,7 @@ namespace TorannMagic
                         {
                             Rect rectToLearn = new Rect(rect.xMin - 98f, rect.yMin, 100f, MagicButtonPointSize);
                             Text.Font = GameFont.Tiny;
-                            bool flagLearn = Widgets.ButtonText(rectToLearn, "" + enumerator.Current.learnCost + " points to " + "TM_Learn".Translate(), false, false, false) && compMagic.AbilityUser.Faction == Faction.OfPlayer;
+                            bool flagLearn = Widgets.ButtonText(rectToLearn, "TM_MCU_PointsToLearn".Translate(enumerator.Current.learnCost) + "TM_Learn".Translate(), false, false, false) && compMagic.AbilityUser.Faction == Faction.OfPlayer;
                         }
                     }
                     else

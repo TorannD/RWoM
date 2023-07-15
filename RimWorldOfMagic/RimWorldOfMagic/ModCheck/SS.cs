@@ -19,7 +19,7 @@ namespace TorannMagic.ModCheck
                 {
                     csm.ForgetSidearmMemory(csm.RememberedWeapons[0]);
                 }
-                csm.generateRememberedWeaponsFromEquipped();
+                csm.GenerateRememberedWeaponsFromEquipped();
             }
         }
     }

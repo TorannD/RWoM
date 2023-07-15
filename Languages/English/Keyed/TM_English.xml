@@ -2263,4 +2263,26 @@ Level 3: all 4 effects</TM_CombatDrugs_pwr_desc>
 <!-- ============ Floating Text =============-->
 <TM_Enchanted>Enchanted!</TM_Enchanted>
 
+<!-- ============ Magic Card info =============-->
+<TM_MCU_BaseMana>Base mana gain: {0}</TM_MCU_BaseMana>
+<TM_MCU_BaseRegen>Mana regen bonus: {0}</TM_MCU_BaseRegen>
+<TM_MCU_ManaSurge>Mana surge: +{0}</TM_MCU_ManaSurge>
+<TM_MCU_Syrrium>Syrrium boost: +{0}</TM_MCU_Syrrium>
+<TM_MCU_EnergyDrainBonus>Modified mana gain: {0}</TM_MCU_EnergyDrainBonus>
+<TM_MCU_RegenBonus>Energy regen bonus: +{0}</TM_MCU_RegenBonus>
+<TM_MCU_ManaWeakness>Mana weakness: -{0}</TM_MCU_ManaWeakness>
+<TM_MCU_Minion>Minion cost: -{0}</TM_MCU_Minion>
+<TM_MCU_Sprite>Sprite cost: -{0}</TM_MCU_Sprite>
+<TM_MCU_Undead>Undead cost: -{0}</TM_MCU_Undead>
+<TM_MCU_ManaDrain>Mana drain: -{0}</TM_MCU_ManaDrain>
+<TM_MCU_ManaSickness>Mana sickness: -{0}</TM_MCU_ManaSickness>
+<TM_MCU_Paracyte>Paracytic drain: -{0}</TM_MCU_Paracyte>
+<TM_MCU_ManaNet>Total mana upkeep: {0}</TM_MCU_ManaNet>
+
+<TM_MCU_CurrentLevel>Current Level:</TM_MCU_CurrentLevel>
+<TM_MCU_NextLevel>Next Level:</TM_MCU_NextLevel>
+
+<TM_MCU_PointsToLearn>{0} points to </TM_MCU_PointsToLearn>
+
+
 </LanguageData>

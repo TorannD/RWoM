@@ -133,6 +133,9 @@
     <Compile Include="Building_TMTotem_Healing.cs" />
     <Compile Include="Building_TMTotem_Lightning.cs" />
     <Compile Include="Building_TM_DMP.cs" />
+    <Compile Include="Verb_ShootTLine_Properties.cs" />
+    <Compile Include="Verb_ShootDifferentProjectiles_Properties.cs" />
+    <Compile Include="Verb_HurtOrSpawnInCone_Properties.cs" />
     <Compile Include="CompAbilityUserTMBase.cs" />
     <Compile Include="GenGridExtensions.cs" />
     <Compile Include="Effect_SpiritStorm.cs" />

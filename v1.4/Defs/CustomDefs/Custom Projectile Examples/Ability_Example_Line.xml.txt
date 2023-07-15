@@ -1,0 +1,42 @@
+
+	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
+        <defName>BM_LightningWall</defName>
+        <label>Lightning Wall</label>
+        <uiIconPath>UI/LightningWall</uiIconPath>
+        <description>Rains lightning bolts from the sky in a line.</description>
+        <shouldInitialize>true</shouldInitialize>
+        <learnChance>1</learnChance>
+        <canCopy>false</canCopy>
+		<manaCost>0.2</manaCost>
+		<learnItem>SpellOf_LightningWall</learnItem>
+        <MainVerb Class="TorannMagic.Verb_ShootTLine_Properties">
+            <verbClass>TorannMagic.Verb_ShootTLine</verbClass>
+                <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+                <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+                <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+                <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+            <hasStandardCommand>true</hasStandardCommand>
+            <abilityDef>BM_LightningWall</abilityDef>
+            <isViolent>true</isViolent>
+            <defaultProjectile>Projectile_LightningStrike</defaultProjectile>
+            <warmupTime>0.25</warmupTime>
+            <SecondsToRecharge>30.0</SecondsToRecharge>
+            <range>20</range>
+			<distBetweenShots>3</distBetweenShots>
+			<!-- makes the lightning strikes spaced wider, defaults to 1 -->
+            <muzzleFlashScale>1</muzzleFlashScale>
+            <isPrimary>false</isPrimary>
+			<canCastInMelee>true</canCastInMelee>
+			<soundCast>TM_Launch</soundCast>
+			<burstShotCount>9</burstShotCount>
+			<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+            <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+            <targetParams>
+                <canTargetItems>false</canTargetItems>
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetLocations>true</canTargetLocations>
+				<canTargetSelf>false</canTargetSelf>
+            </targetParams>
+        </MainVerb>
+    </TorannMagic.TMAbilityDef>
+

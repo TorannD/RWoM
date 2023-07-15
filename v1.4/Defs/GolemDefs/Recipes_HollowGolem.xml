@@ -19,7 +19,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>150</count>
+        <count>50</count>
       </li> 
 	  <li>
         <filter>
@@ -27,7 +27,7 @@
             <li>RawMagicyte</li>
           </thingDefs>
         </filter>
-        <count>50</count>
+        <count>25</count>
       </li>
     </ingredients>
   </RecipeDef>
@@ -45,7 +45,7 @@
             <li>Jade</li>
           </thingDefs>
         </filter>
-        <count>50</count>
+        <count>30</count>
       </li>
 	  <li>
         <filter>
@@ -53,7 +53,7 @@
             <li>RawMagicyte</li>
           </thingDefs>
         </filter>
-        <count>200</count>
+        <count>120</count>
       </li> 
 	  <li>
         <filter>
@@ -61,7 +61,7 @@
             <li>Gold</li>
           </thingDefs>
         </filter>
-        <count>10</count>
+        <count>7</count>
       </li>
     </ingredients>
   </RecipeDef>
@@ -79,7 +79,7 @@
             <li>Gold</li>
           </thingDefs>
         </filter>
-        <count>20</count>
+        <count>16</count>
       </li> 
 	  <li>
         <filter>
@@ -87,7 +87,7 @@
             <li>RawMagicyte</li>
           </thingDefs>
         </filter>
-        <count>250</count>
+        <count>200</count>
       </li>
     </ingredients>
   </RecipeDef>
@@ -105,7 +105,7 @@
             <li>Gold</li>
           </thingDefs>
         </filter>
-        <count>20</count>
+        <count>15</count>
       </li> 
 	  <li>
         <filter>
@@ -113,7 +113,7 @@
             <li>Jade</li>
           </thingDefs>
         </filter>
-        <count>50</count>
+        <count>40</count>
       </li>
     </ingredients>
   </RecipeDef>
@@ -135,7 +135,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>150</count>
+        <count>100</count>
       </li> 
 	  <li>
         <filter>
@@ -143,7 +143,7 @@
             <li>RawMagicyte</li>
           </thingDefs>
         </filter>
-        <count>250</count>
+        <count>150</count>
       </li>
 	  <li>
         <filter>
@@ -207,7 +207,7 @@ Heat:	+14%</description>
             <li>Plasteel</li>
           </thingDefs>
         </filter>
-        <count>330</count>
+        <count>260</count>
       </li> 
     </ingredients>
   </RecipeDef>
@@ -232,7 +232,7 @@ Heat:	+9%</description>
             <li>Plasteel</li>
           </thingDefs>
         </filter>
-        <count>190</count>
+        <count>160</count>
       </li> 
     </ingredients>
   </RecipeDef>
@@ -257,7 +257,7 @@ Heat:	+6%</description>
             <li>Plasteel</li>
           </thingDefs>
         </filter>
-        <count>160</count>
+        <count>130</count>
       </li> 
     </ingredients>
   </RecipeDef>
@@ -279,7 +279,7 @@ Heat:	+6%</description>
             <li>Plasteel</li>
           </thingDefs>
         </filter>
-        <count>200</count>
+        <count>160</count>
       </li> 
 	  <li>
         <filter>
@@ -287,7 +287,7 @@ Heat:	+6%</description>
             <li>RawMagicyte</li>
           </thingDefs>
         </filter>
-        <count>200</count>
+        <count>160</count>
       </li> 
 	  <li>
         <filter>
@@ -295,7 +295,7 @@ Heat:	+6%</description>
             <li>Gold</li>
           </thingDefs>
         </filter>
-        <count>10</count>
+        <count>8</count>
       </li> 
     </ingredients>
   </RecipeDef>
@@ -333,7 +333,7 @@ Ability: Fade</description>
             <li>RawMagicyte</li>
           </thingDefs>
         </filter>
-        <count>200</count>
+        <count>160</count>
       </li> 
 	  <li>
         <filter>
@@ -341,7 +341,7 @@ Ability: Fade</description>
             <li>Silver</li>
           </thingDefs>
         </filter>
-        <count>50</count>
+        <count>40</count>
       </li> 
     </ingredients>
   </RecipeDef>
@@ -367,7 +367,7 @@ Energy Cost:	50</description>
             <li>RawMagicyte</li>
           </thingDefs>
         </filter>
-        <count>300</count>
+        <count>240</count>
       </li> 
 	  <li>
         <filter>
@@ -375,7 +375,7 @@ Energy Cost:	50</description>
             <li>Gold</li>
           </thingDefs>
         </filter>
-        <count>20</count>
+        <count>16</count>
       </li> 
     </ingredients>
   </RecipeDef>  
@@ -397,7 +397,7 @@ Energy Cost:	50</description>
             <li>RawMagicyte</li>
           </thingDefs>
         </filter>
-        <count>300</count>
+        <count>240</count>
       </li> 
 	  <li>
         <filter>
@@ -405,7 +405,7 @@ Energy Cost:	50</description>
             <li>Silver</li>
           </thingDefs>
         </filter>
-        <count>60</count>
+        <count>40</count>
       </li> 
     </ingredients>
   </RecipeDef>
@@ -427,7 +427,7 @@ Energy Cost:	50</description>
             <li>RawMagicyte</li>
           </thingDefs>
         </filter>
-        <count>400</count>
+        <count>300</count>
       </li>	  
     </ingredients>
   </RecipeDef>
@@ -457,7 +457,7 @@ Energy Cost:	50</description>
             <li>RawMagicyte</li>
           </thingDefs>
         </filter>
-        <count>50</count>
+        <count>40</count>
       </li>
     </ingredients>
   </RecipeDef>
@@ -479,7 +479,7 @@ Energy Cost:	50</description>
             <li>RawMagicyte</li>
           </thingDefs>
         </filter>
-        <count>200</count>
+        <count>160</count>
       </li> 
 	  <li>
         <filter>
@@ -487,7 +487,7 @@ Energy Cost:	50</description>
             <li>Jade</li>
           </thingDefs>
         </filter>
-        <count>50</count>
+        <count>40</count>
       </li> 
     </ingredients>
   </RecipeDef>
@@ -517,7 +517,7 @@ Energy Cost:	50</description>
             <li>Gold</li>
           </thingDefs>
         </filter>
-        <count>20</count>
+        <count>16</count>
       </li> 
     </ingredients>
   </RecipeDef>
@@ -547,7 +547,7 @@ Energy Cost:	50</description>
             <li>Silver</li>
           </thingDefs>
         </filter>
-        <count>60</count>
+        <count>48</count>
       </li> 
     </ingredients>
   </RecipeDef>
@@ -577,7 +577,7 @@ Energy Cost:	50</description>
             <li>Silver</li>
           </thingDefs>
         </filter>
-        <count>50</count>
+        <count>40</count>
       </li> 
     </ingredients>
   </RecipeDef>
@@ -607,7 +607,7 @@ Energy Cost:	50</description>
             <li>Jade</li>
           </thingDefs>
         </filter>
-        <count>50</count>
+        <count>40</count>
       </li> 
     </ingredients>
   </RecipeDef>
@@ -700,7 +700,7 @@ In addition, decay touch deals bonus burn damage and the golem can absorb nearby
             <li>Gold</li>
           </thingDefs>
         </filter>
-        <count>10</count>
+        <count>8</count>
       </li> 
 	  <li>
         <filter>
@@ -708,7 +708,7 @@ In addition, decay touch deals bonus burn damage and the golem can absorb nearby
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>150</count>
+        <count>120</count>
       </li>
 	  <li>
         <filter>
@@ -743,7 +743,7 @@ In addition, decay touch heals the golem and one friendly pawn within 10 + 3*lev
             <li>Silver</li>
           </thingDefs>
         </filter>
-        <count>30</count>
+        <count>20</count>
       </li> 
 	  <li>
         <filter>
@@ -751,7 +751,7 @@ In addition, decay touch heals the golem and one friendly pawn within 10 + 3*lev
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>150</count>
+        <count>120</count>
       </li>
 	  <li>
         <filter>
@@ -786,7 +786,7 @@ In addition, decay touch restores 20 + 5*level energy per hit.</description>
             <li>RawMagicyte</li>
           </thingDefs>
         </filter>
-        <count>100</count>
+        <count>80</count>
       </li> 
 	  <li>
         <filter>
@@ -794,7 +794,7 @@ In addition, decay touch restores 20 + 5*level energy per hit.</description>
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>150</count>
+        <count>120</count>
       </li>
 	  <li>
         <filter>
@@ -830,7 +830,7 @@ In addition, decay touch is 50% more effective and strikes twice.</description>
             <li>Jade</li>
           </thingDefs>
         </filter>
-        <count>30</count>
+        <count>24</count>
       </li> 
 	  <li>
         <filter>
@@ -838,7 +838,7 @@ In addition, decay touch is 50% more effective and strikes twice.</description>
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>150</count>
+        <count>120</count>
       </li>
 	  <li>
         <filter>
@@ -870,7 +870,7 @@ Health:	+[40/60/75]%</description>
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>100</count>
+        <count>80</count>
       </li> 
 	  <li>
         <filter>
@@ -878,7 +878,7 @@ Health:	+[40/60/75]%</description>
             <li>RawMagicyte</li>
           </thingDefs>
         </filter>
-        <count>250</count>
+        <count>200</count>
       </li>
 	  <li>
         <filter>
@@ -886,7 +886,7 @@ Health:	+[40/60/75]%</description>
             <li>Chemfuel</li>
           </thingDefs>
         </filter>
-        <count>100</count>
+        <count>80</count>
       </li>
     </ingredients>
   </RecipeDef>
@@ -910,7 +910,7 @@ Health:	+[50/75/90]%</description>
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>100</count>
+        <count>80</count>
       </li> 
 	  <li>
         <filter>
@@ -918,7 +918,7 @@ Health:	+[50/75/90]%</description>
             <li>RawMagicyte</li>
           </thingDefs>
         </filter>
-        <count>250</count>
+        <count>200</count>
       </li>
 	  <li>
         <filter>
@@ -926,7 +926,7 @@ Health:	+[50/75/90]%</description>
             <li>Silver</li>
           </thingDefs>
         </filter>
-        <count>50</count>
+        <count>40</count>
       </li>
     </ingredients>
   </RecipeDef>
@@ -950,7 +950,7 @@ Health:	+[55/85/100]%</description>
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>100</count>
+        <count>80</count>
       </li> 
 	  <li>
         <filter>
@@ -958,7 +958,7 @@ Health:	+[55/85/100]%</description>
             <li>RawMagicyte</li>
           </thingDefs>
         </filter>
-        <count>250</count>
+        <count>200</count>
       </li>
 	  <li>
         <filter>
@@ -990,7 +990,7 @@ Health:	+[65/90/110]%</description>
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>100</count>
+        <count>80</count>
       </li> 
 	  <li>
         <filter>
@@ -998,7 +998,7 @@ Health:	+[65/90/110]%</description>
             <li>RawMagicyte</li>
           </thingDefs>
         </filter>
-        <count>250</count>
+        <count>200</count>
       </li>
 	  <li>
         <filter>
