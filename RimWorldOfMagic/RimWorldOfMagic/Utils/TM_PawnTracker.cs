@@ -5,8 +5,8 @@ using Verse;
 namespace TorannMagic.Utils
 {
     /*
-     * This class stores information about which Pawns are which classes, whether they are spawned, etc. It uses
-     * the harmony patches below the class to achieve this state tracking.
+     * This class stores information that is expensive to calculate, but easy enough to track changes.
+     * Specifically, it is used for classes that have a CompTick that need pawn information.
      */
     public static class TM_PawnTracker
     {
