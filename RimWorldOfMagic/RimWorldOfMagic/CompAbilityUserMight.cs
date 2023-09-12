@@ -127,6 +127,10 @@ namespace TorannMagic
 
         public TMAbilityDef mimicAbility = null;
 
+        // Cached values calculated in TM_PawnTracker
+        private bool initializedIsMightUser;
+        private bool isMightUser;  // Cached version
+
         private static HashSet<ushort> mightTraitIndexes = new HashSet<ushort>()
         {
             TorannMagicDefOf.TM_Monk.index,
@@ -594,61 +598,46 @@ namespace TorannMagic
             this.ResolveStamina();
         }
 
-        public bool IsMightUser
+        public bool IsMightUser => this.initializedIsMightUser ? isMightUser : this.SetIsMightUser();
+        public bool SetIsMightUser()
         {
-            get
+            Pawn pawn = this.Pawn;
+            if (pawn?.story == null) return this.isMightUser = false;
+            this.initializedIsMightUser = true;
+            if (this.customClass != null) return this.isMightUser = true;
+            if (this.customClass == null && this.customIndex == -2)
             {
-                if (Pawn?.story == null) return false;
-                if (this.customClass != null) return true;
-                if (this.customClass == null && this.customIndex == -2)
+                this.customIndex = TM_ClassUtility.CustomClassIndexOfBaseFighterClass(pawn.story.traits.allTraits);
+                if (this.customIndex >= 0)
                 {
-                    this.customIndex = TM_ClassUtility.CustomClassIndexOfBaseFighterClass(this.Pawn.story.traits.allTraits);
-                    if (this.customIndex >= 0)
+                    if (!TM_ClassUtility.CustomClasses[this.customIndex].isFighter)
                     {
-                        if (!TM_ClassUtility.CustomClasses[this.customIndex].isFighter)
-                        {
-                            this.customIndex = -1;
-                            return false;
-                        }
-                        else
-                        {
-                            this.customClass = TM_ClassUtility.CustomClasses[this.customIndex];
-                            return true;
-                        }
+                        this.customIndex = -1;
+                        return this.isMightUser = false;
                     }
+                    this.customClass = TM_ClassUtility.CustomClasses[this.customIndex];
+                    return this.isMightUser = true;
                 }
-                //if (Pawn.story.traits.allTraits.Any(t => mightTraitIndexes.Contains(t.def.index)
-                //|| TM_Calc.IsWayfarer(base.Pawn)
-                //|| (this.AdvancedClasses != null && this.AdvancedClasses.Count > 0)))
-                bool hasMightTrait = false;
-                for (int i = 0; i < Pawn.story.traits.allTraits.Count; i++)
-                {
-                    if (!mightTraitIndexes.Contains(Pawn.story.traits.allTraits[i].def.index)) continue;
-
-                    hasMightTrait = true;
-                    break;
-                }
-
-                if (hasMightTrait || TM_Calc.IsWayfarer(Pawn) || AdvancedClasses.Count > 0)
-                {
-                    return true;
-                }                
-                else if (TM_Calc.HasAdvancedClass(this.Pawn))
-                {
-                    bool hasAdvClass = false;
-                    foreach (TMDefs.TM_CustomClass cc in TM_ClassUtility.GetAdvancedClassesForPawn(this.Pawn))
-                    {
-                        if (cc.isFighter)
-                        {
-                            this.AdvancedClasses.Add(cc);
-                            hasAdvClass = true;
-                            break;
-                        }
-                    }
-                    return hasAdvClass;
-                }
-                return false;
             }
+            for (int i = pawn.story.traits.allTraits.Count - 1; i >= 0; i--)
+            {
+                if (mightTraitIndexes.Contains(Pawn.story.traits.allTraits[i].def.index)) return this.isMightUser = true;
+            }
+
+            if (AdvancedClasses.Count > 0 || TM_Calc.IsWayfarer(pawn)) return this.isMightUser = true;
+
+            if (TM_Calc.HasAdvancedClass(pawn))
+            {
+                foreach (TMDefs.TM_CustomClass cc in TM_ClassUtility.GetAdvancedClassesForPawn(this.Pawn))
+                {
+                    if (cc.isFighter)
+                    {
+                        this.AdvancedClasses.Add(cc);
+                        return this.isMightUser = true;
+                    }
+                }
+            }
+            return this.isMightUser = false;
         }
 
         public int MightUserLevel
@@ -4582,14 +4571,11 @@ namespace TorannMagic
             Scribe_Values.Look<bool>(ref this.useCQCToggle, "useCQCToggle", true, false);
             Scribe_Defs.Look<TMAbilityDef>(ref this.mimicAbility, "mimicAbility");
             Scribe_Values.Look<float>(ref this.maxSP, "maxSP", 1f, false);
-            Scribe_Deep.Look<MightData>(ref this.mightData, "mightData", new object[]
-            {
-                this
-            });
+            Scribe_Deep.Look<MightData>(ref this.mightData, "mightData",  this);
 
-            bool flag11 = Scribe.mode == LoadSaveMode.PostLoadInit;
-            if (flag11)
+            if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
+                TM_PawnTracker.ResolveMightComp(this);
                 Pawn abilityUser = base.Pawn;
                 int index = TM_ClassUtility.CustomClassIndexOfBaseFighterClass(abilityUser.story.traits.allTraits);
                 if (index >= 0)

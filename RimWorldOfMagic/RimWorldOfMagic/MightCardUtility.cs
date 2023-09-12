@@ -3,6 +3,7 @@ using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using TorannMagic.Utils;
 using UnityEngine;
 using Verse;
 
@@ -1422,7 +1423,11 @@ namespace TorannMagic
                             skill.level++;
                             compMight.MightData.MightAbilityPoints -= skill.costToLevel;
                             
-                            
+                            // We need to recalculate IsMagicUser when field training grant Magic powers
+                            if (skill.label == "TM_FieldTraining_eff" && skill.level >= 15)
+                            {
+                                TM_PawnTracker.ResolveMagicComp(compMight.Pawn.GetCompAbilityUserMagic());
+                            }
                         }
                     }
                     num2 += (MightCardUtility.MightCardSize.x / 3) - MightCardUtility.SpacingOffset;

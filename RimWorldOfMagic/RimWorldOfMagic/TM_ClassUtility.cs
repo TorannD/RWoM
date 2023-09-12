@@ -285,7 +285,6 @@ namespace TorannMagic
         public static List<TM_CustomClass> GetAdvancedClassesForPawn(Pawn p)
         {
             List<TM_CustomClass> ccList = new List<TM_CustomClass>();
-            ccList.Clear();
             foreach(TM_CustomClass cc in CustomAdvancedClasses)
             {
                 if(p.story.traits.HasTrait(cc.classTrait))

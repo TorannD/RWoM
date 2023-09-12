@@ -3,6 +3,7 @@ using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using TorannMagic.Utils;
 using UnityEngine;
 using Verse;
 
@@ -2055,6 +2056,11 @@ namespace TorannMagic
                             }
                             skill.level++;
                             compMagic.MagicData.MagicAbilityPoints -= skill.costToLevel;
+                            // We need to recalculate IsMightUser when cantrips grants Might powers
+                            if (skill.label == "TM_Cantrips_eff" && skill.level >= 15)
+                            {
+                                TM_PawnTracker.ResolveMightComp(compMagic.Pawn.GetCompAbilityUserMight());
+                            }
                             if (skill.label == "TM_LightSkip_pwr")
                             {
                                 if (skill.level == 1)
