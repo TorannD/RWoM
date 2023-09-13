@@ -4538,6 +4538,12 @@ namespace TorannMagic
             }
         }
 
+        public override void PostSpawnSetup(bool respawningAfterLoad)
+        {
+            // We already set this on load
+            if (!respawningAfterLoad) TM_PawnTracker.ResolveMightComp(this);
+        }
+
         public override void PostExposeData()
         {
             //base.PostExposeData();
