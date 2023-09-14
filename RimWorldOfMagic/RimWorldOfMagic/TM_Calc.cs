@@ -24,13 +24,11 @@ namespace TorannMagic
         // Non-generic GetComp<CompAbilityUserMagic> for performance since isInst against generic T is slow
         public static CompAbilityUserMagic GetCompAbilityUserMagic(this ThingWithComps thingWithComps)
         {
-            if (thingWithComps?.AllComps != null)
+            if (thingWithComps == null) return null;
+
+            for (int i = thingWithComps.AllComps.Count - 1; i >= 0; i--)
             {
-                for (int i = 0; i < thingWithComps.AllComps.Count; i++)
-                {
-                    if (thingWithComps.AllComps[i] is CompAbilityUserMagic comp)
-                        return comp;
-                }
+                if (thingWithComps.AllComps[i] is CompAbilityUserMagic comp) return comp;
             }
 
             return null;
@@ -39,13 +37,11 @@ namespace TorannMagic
         // Non-generic GetComp<CompAbilityUserMight> for performance since isInst against generic T is slow
         public static CompAbilityUserMight GetCompAbilityUserMight(this ThingWithComps thingWithComps)
         {
-            if (thingWithComps?.AllComps != null)
+            if (thingWithComps == null) return null;
+
+            for (int i = thingWithComps.AllComps.Count - 1; i >= 0; i--)
             {
-                for (int i = 0; i < thingWithComps.AllComps.Count; i++)
-                {
-                    if (thingWithComps.AllComps[i] is CompAbilityUserMight comp)
-                        return comp;
-                }
+                if (thingWithComps.AllComps[i] is CompAbilityUserMight comp) return comp;
             }
 
             return null;
@@ -500,42 +496,28 @@ namespace TorannMagic
 
         public static bool IsWanderer(Pawn pawn)
         {
-            CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
-            if (comp != null)
+            CompAbilityUserMight comp = pawn?.GetCompAbilityUserMight();
+            if (comp == null) return false;
+
+            if (pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Wanderer)) return true;
+            if (pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Wayfarer) || (comp.customClass != null && comp.customClass.classFighterAbilities.Contains(TorannMagicDefOf.TM_FieldTraining)))
             {
-                if (pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Wanderer))
-                {
-                    return true;
-                }
-                else if (pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Wayfarer) || (comp.customClass != null && comp.customClass.classFighterAbilities.Contains(TorannMagicDefOf.TM_FieldTraining))) //pawn is a wayfarer with appropriate skill level
-                {
-                    int lvl = comp.MightData.MightPowerSkill_FieldTraining.FirstOrDefault((MightPowerSkill x) => x.label == "TM_FieldTraining_eff").level;
-                    if (lvl >= 15)
-                    {
-                        return true;
-                    }
-                }
+                int lvl = comp.MightData.MightPowerSkill_FieldTraining.FirstOrDefault((MightPowerSkill x) => x.label == "TM_FieldTraining_eff").level;
+                if (lvl >= 15) return true; // pawn has FieldTraining with appropriate skill level
             }
             return false;
         }
 
         public static bool IsWayfarer(Pawn pawn)
         {
-            CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
-            if (comp != null)
+            CompAbilityUserMagic comp = pawn?.GetCompAbilityUserMagic();
+            if (comp == null) return false;
+
+            if (pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Wayfarer)) return true;
+            if (pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Wanderer) || (comp.customClass != null && comp.customClass.classMageAbilities.Contains(TorannMagicDefOf.TM_Cantrips)))
             {
-                if (pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Wayfarer))
-                {
-                    return true;
-                }
-                else if (pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Wanderer) || (comp.customClass != null && comp.customClass.classMageAbilities.Contains(TorannMagicDefOf.TM_Cantrips))) //pawn is a wanderer with appropriate skill level
-                {
-                    int lvl = comp.MagicData.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Cantrips_eff").level;
-                    if (lvl >= 15)
-                    {
-                        return true;
-                    }
-                }
+                int lvl = comp.MagicData.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Cantrips_eff").level;
+                if (lvl >= 15) return true; // pawn has cantrips with appropriate skill level
             }
             return false;
         }
