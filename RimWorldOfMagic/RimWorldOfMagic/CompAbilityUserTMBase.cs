@@ -38,6 +38,10 @@ namespace TorannMagic
 
         public float weaponDamage = 1;
 
+        // Cache values set in TM_PawnTracker
+        public bool IsFaceless;
+        public bool TickConditionsMet;
+
         //public List<TMDefs.TM_CustomClass> CombinedCustomClasses
         //{
         //    get
