@@ -20,7 +20,8 @@ namespace TorannMagic
             this.desc = newDesc;
             this.level = 0;
 
-            if (this.label.Contains("TM_BladeFocus") || this.label.Contains("TM_BladeArt") || this.label.Contains("TM_RangerTraining" ) || this.label.Contains("TM_BowTraining") || this.label.Contains("TM_PsionicAugmentation"))
+            if (this.label.Contains("TM_BladeFocus") || this.label.Contains("TM_BladeArt") || this.label.Contains("TM_RangerTraining" ) || this.label.Contains("TM_BowTraining") || 
+                this.label.Contains("TM_PsionicAugmentation") || this.label.Contains("TM_SniperFocus_pwr"))
             {
                 costToLevel = 2;
             }

@@ -48,8 +48,7 @@ namespace TorannMagic
                         corpseThing = thingList[z];
                         if (corpseThing != null)
                         {
-                            bool validator = corpseThing is Corpse;
-                            if (validator)
+                            if (corpseThing is Corpse)
                             {
                                 corpse = corpseThing as Corpse;
                                 Pawn undeadPawn = corpse.InnerPawn;
@@ -254,9 +253,14 @@ namespace TorannMagic
                             }
                             else if (corpseThing is Pawn undeadPawn)
                             {
-                                if(undeadPawn != pawn && !TM_Calc.IsNecromancer(undeadPawn) && TM_Calc.IsUndead(undeadPawn))
+                                if(TM_Calc.IsUndead(undeadPawn))
                                 {
                                     RemoveHediffsAddictionsAndPermanentInjuries(undeadPawn);
+                                    TM_MoteMaker.ThrowPoisonMote(curCell.ToVector3Shifted(), map, .6f);
+                                }
+                                if(corpseThing != pawn && !TM_Calc.IsNecromancer(undeadPawn) && !TM_Calc.IsUndead(undeadPawn))
+                                {
+                                    DisruptiveRemoveHediffs(undeadPawn);
                                     TM_MoteMaker.ThrowPoisonMote(curCell.ToVector3Shifted(), map, .6f);
                                 }
                             }
@@ -648,6 +652,36 @@ namespace TorannMagic
             }
         }
 
+        public static void DisruptiveRemoveHediffs(Pawn pawn)
+        {
+            List<Hediff> removeList = new List<Hediff>();
+            removeList.Clear();
+
+            using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.hediffs.GetEnumerator())
+            {
+                while (enumerator.MoveNext())
+                {
+                    Hediff hd = enumerator.Current;
+                    if (hd.IsPermanent() || (hd.IsTended() || hd.TendableNow()) || (hd.source == null && hd.sourceBodyPartGroup == null))
+                    {
+                        if (hd.def != TorannMagicDefOf.TM_UndeadHD && hd.def != TorannMagicDefOf.TM_UndeadStageHD && hd.def != TorannMagicDefOf.TM_UndeadAnimalHD)
+                        {
+                            removeList.Add(hd);
+                        }
+                    }
+                }
+            }
+
+            if (removeList.Count > 0)
+            {
+                for (int i = 0; i < removeList.Count; i++)
+                {
+                    pawn.health.RemoveHediff(removeList[i]);
+                }
+            }
+            removeList.Clear();
+        }
+
         public static void RemoveHediffsAddictionsAndPermanentInjuries(Pawn pawn)
         {
             List<Hediff> removeList = new List<Hediff>();
@@ -673,6 +707,23 @@ namespace TorannMagic
                     }
                 }
             }
+            int partCountCap = 0;
+            while (pawn.health.hediffSet.GetMissingPartsCommonAncestors().Count > 0 && partCountCap < 10)
+            {
+                Hediff missingPart = null;
+                BodyPartRecord bodyPartRecord = null;
+                foreach (Hediff_MissingPart missingPartsCommonAncestor in pawn.health.hediffSet.GetMissingPartsCommonAncestors())
+                {
+                    if (!pawn.health.hediffSet.PartOrAnyAncestorHasDirectlyAddedParts(missingPartsCommonAncestor.Part) && (bodyPartRecord == null || missingPartsCommonAncestor.Part.coverageAbsWithChildren > bodyPartRecord.coverageAbsWithChildren))
+                    {
+                        bodyPartRecord = missingPartsCommonAncestor.Part;
+                        missingPart = missingPartsCommonAncestor;
+                    }
+                }
+                pawn.health.RemoveHediff(missingPart);
+                partCountCap++;                
+            }
+
             if (removeList.Count > 0)
             {
                 for (int i = 0; i < removeList.Count; i++)
@@ -699,31 +750,6 @@ namespace TorannMagic
                 }
             }
             removeList.Clear();
-
-            using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.hediffs.GetEnumerator())
-            {
-                while (enumerator.MoveNext())
-                {
-                    Hediff hd = enumerator.Current;
-                    if (hd.IsPermanent() || (hd.IsTended() || hd.TendableNow()) || (hd.source == null && hd.sourceBodyPartGroup == null))
-                    {
-                        if (hd.def != TorannMagicDefOf.TM_UndeadHD && hd.def != TorannMagicDefOf.TM_UndeadStageHD && hd.def != TorannMagicDefOf.TM_UndeadAnimalHD)
-                        {
-                            removeList.Add(hd);
-                        }
-                    }
-                }
-            }
-
-            if (removeList.Count > 0)
-            {
-                for (int i = 0; i < removeList.Count; i++)
-                {
-                    pawn.health.RemoveHediff(removeList[i]);
-                }
-
-                removeList.Clear();
-            }
 
             //IEnumerable<Hediff> hediffsToRemove = pawn.health.hediffSet.hediffs.Where(hediff => hediff is Hediff_Injury injury && injury.CanHealNaturally()
             //    || hediff is Hediff_Addiction

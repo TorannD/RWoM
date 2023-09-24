@@ -85,12 +85,12 @@ namespace TorannMagic
         public static bool IsNecromancer(Pawn pawn)
         {
             if (pawn.def == TorannMagicDefOf.TM_SkeletonLichR) return true;
-
-            for (int i = 0; i < pawn.story.traits.allTraits.Count; i++)
+            
+            for (int i = 0; i < pawn.story?.traits?.allTraits.Count; i++)
             {
                 if (pawn.story.traits.allTraits[i].def == TorannMagicDefOf.Necromancer
                     || pawn.story.traits.allTraits[i].def == TorannMagicDefOf.Lich) return true;
-            }
+            }            
 
             CompAbilityUserMight compMight = pawn.GetCompAbilityUserMight();
             if (compMight != null && compMight.customClass != null && compMight.customClass.isNecromancer)

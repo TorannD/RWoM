@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Verse;
+using TorannMagic.Utils;
 
 
 namespace TorannMagic
@@ -1421,8 +1422,11 @@ namespace TorannMagic
                             }                                                       
                             skill.level++;
                             compMight.MightData.MightAbilityPoints -= skill.costToLevel;
-                            
-                            
+                            // We need to recalculate IsMagicUser when field training grant Magic powers
+                            if (skill.label == "TM_FieldTraining_eff" && skill.level >= 15)
+                            {
+                                TM_PawnTracker.ResolveMagicComp(compMight.Pawn.GetCompAbilityUserMagic());
+                            }
                         }
                     }
                     num2 += (MightCardUtility.MightCardSize.x / 3) - MightCardUtility.SpacingOffset;
