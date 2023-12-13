@@ -18,6 +18,42 @@ namespace TorannMagic
 {
     public static class TM_ClassUtility
     {
+        public static HashSet<ushort> NonCustomMagicAndMightTraitIndexes = new HashSet<ushort>()
+        {
+            TorannMagicDefOf.Enchanter.index,
+            TorannMagicDefOf.BloodMage.index,
+            TorannMagicDefOf.Technomancer.index,
+            TorannMagicDefOf.Geomancer.index,
+            TorannMagicDefOf.Warlock.index,
+            TorannMagicDefOf.Succubus.index,
+            TorannMagicDefOf.Faceless.index,
+            TorannMagicDefOf.InnerFire.index,
+            TorannMagicDefOf.HeartOfFrost.index,
+            TorannMagicDefOf.StormBorn.index,
+            TorannMagicDefOf.Arcanist.index,
+            TorannMagicDefOf.Paladin.index,
+            TorannMagicDefOf.Summoner.index,
+            TorannMagicDefOf.Druid.index,
+            TorannMagicDefOf.Necromancer.index,
+            TorannMagicDefOf.Lich.index,
+            TorannMagicDefOf.Priest.index,
+            TorannMagicDefOf.TM_Bard.index,
+            TorannMagicDefOf.Chronomancer.index,
+            TorannMagicDefOf.ChaosMage.index,
+            TorannMagicDefOf.TM_Wanderer.index,
+            TorannMagicDefOf.TM_Monk.index,
+            TorannMagicDefOf.DeathKnight.index,
+            TorannMagicDefOf.TM_Psionic.index,
+            TorannMagicDefOf.Gladiator.index,
+            TorannMagicDefOf.TM_Sniper.index,
+            TorannMagicDefOf.Bladedancer.index,
+            TorannMagicDefOf.Ranger.index,
+            TorannMagicDefOf.Faceless.index,
+            TorannMagicDefOf.TM_Commander.index,
+            TorannMagicDefOf.TM_SuperSoldier.index,
+            TorannMagicDefOf.TM_Wayfarer.index
+        };
+
         public static List<TM_CustomClass> CustomClasses;
         public static readonly List<TM_CustomClass> CustomBaseClasses = new List<TM_CustomClass>();
         public static readonly List<TM_CustomClass> CustomMageClasses = new List<TM_CustomClass>();
