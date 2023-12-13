@@ -26,11 +26,6 @@
     <initialSeverity>1.0</initialSeverity>	
     <label>magic user</label>
     <causesNeed>TM_Mana</causesNeed>
-    <comps>
-      <li Class="HediffCompProperties_SeverityPerDay">
-        <severityPerDay>-0</severityPerDay>
-      </li>
-    </comps>
     <stages>
         <li>
           <label>hidden</label>

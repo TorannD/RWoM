@@ -27,11 +27,6 @@
     <label>magic user</label>
 	<description>Hediff required for magic users.</description>
     <causesNeed>TM_Mana</causesNeed>
-    <comps>
-      <li Class="HediffCompProperties_SeverityPerDay">
-        <severityPerDay>-0</severityPerDay>
-      </li>
-    </comps>
     <stages>
         <li>
           <label>hidden</label>
