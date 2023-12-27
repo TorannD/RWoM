@@ -3560,18 +3560,20 @@ namespace TorannMagic
                 bool result;
                 if (flag)
                 {
+                    if(pawn.IsColonistPlayerControlled && pawn.genes != null && pawn.genes.HasGene(DefDatabase<GeneDef>.GetNamed("Deathless", true)))
+                    {
+                        return true;
+                    }
                     CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
                     bool flagChrono = comp != null && comp.IsMagicUser && comp.recallSet;
                     if (flagChrono || (dinfo.Value.Def == TMDamageDefOf.DamageDefOf.TM_DisablingBlow || dinfo.Value.Def == TMDamageDefOf.DamageDefOf.TM_Whirlwind || dinfo.Value.Def == TMDamageDefOf.DamageDefOf.TM_GrapplingHook || dinfo.Value.Def == TMDamageDefOf.DamageDefOf.TM_DisablingShot || dinfo.Value.Def == TMDamageDefOf.DamageDefOf.TM_Tranquilizer) || TM_Calc.IsUndeadNotVamp(pawn))
                     {
-                        bool flag2 = !__instance.Dead;
-                        if (flag2)
-                        {
+                        if (!__instance.Dead)
+                        {                            
                             bool flag3 = traverse.Method("ShouldBeDead", new object[0]).GetValue<bool>() && CheckForStateChange_Patch.pawn != null;
                             if (flag3)
                             {
-                                bool flag4 = !pawn.Destroyed;
-                                if (flag4)
+                                if (!pawn.Destroyed)
                                 {
                                     if (comp != null && comp.IsMagicUser && comp.recallSet)
                                     {
@@ -3585,8 +3587,7 @@ namespace TorannMagic
                                     }                                    
                                     pawn.Kill(dinfo, hediff);
                                 }
-                                result = false;
-                                return result;
+                                return false;
                             }
                             bool flag5 = !__instance.Downed;
                             if (flag5)

@@ -500,41 +500,39 @@ namespace TorannMagic
 
         public static bool IsWanderer(Pawn pawn)
         {
-            CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
-            if (comp != null)
+            CompAbilityUserMight comp = pawn?.GetCompAbilityUserMight();
+            if (comp == null) return false;
+            if (pawn.story?.traits == null) return false;
+            if (pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Wanderer)) return true;
+            if (pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Wayfarer) || (comp.customClass != null && comp.customClass.classFighterAbilities.Contains(TorannMagicDefOf.TM_FieldTraining))) //pawn is a wayfarer with appropriate skill level
             {
-                if (pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Wanderer))
+                List<MightPowerSkill> fieldTraining = comp.MightData?.MightPowerSkill_FieldTraining;
+                if (fieldTraining == null) return false;
+                int lvl = fieldTraining.First((MightPowerSkill x) => x.label == "TM_FieldTraining_eff").level;
+                if (lvl >= 15)
                 {
                     return true;
                 }
-                else if (pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Wayfarer) || (comp.customClass != null && comp.customClass.classFighterAbilities.Contains(TorannMagicDefOf.TM_FieldTraining))) //pawn is a wayfarer with appropriate skill level
-                {
-                    int lvl = comp.MightData.MightPowerSkill_FieldTraining.FirstOrDefault((MightPowerSkill x) => x.label == "TM_FieldTraining_eff").level;
-                    if (lvl >= 15)
-                    {
-                        return true;
-                    }
-                }
             }
+            
             return false;
         }
 
         public static bool IsWayfarer(Pawn pawn)
         {
-            CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
-            if (comp != null)
+            CompAbilityUserMagic comp = pawn?.GetCompAbilityUserMagic();
+            if (comp == null) return false;
+            if (pawn.story?.traits == null) return false;
+            if (pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Wayfarer)) return true;
+
+            if (pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Wanderer) || (comp.customClass != null && comp.customClass.classMageAbilities.Contains(TorannMagicDefOf.TM_Cantrips))) //pawn is a wanderer with appropriate skill level
             {
-                if (pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Wayfarer))
+                List<MagicPowerSkill> cantrips = comp.MagicData?.MagicPowerSkill_Cantrips;
+                if (cantrips == null) return false;
+                int lvl = cantrips.First((MagicPowerSkill x) => x.label == "TM_Cantrips_eff").level;
+                if (lvl >= 15)
                 {
                     return true;
-                }
-                else if (pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Wanderer) || (comp.customClass != null && comp.customClass.classMageAbilities.Contains(TorannMagicDefOf.TM_Cantrips))) //pawn is a wanderer with appropriate skill level
-                {
-                    int lvl = comp.MagicData.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Cantrips_eff").level;
-                    if (lvl >= 15)
-                    {
-                        return true;
-                    }
                 }
             }
             return false;
@@ -542,16 +540,16 @@ namespace TorannMagic
 
         public static bool IsEmpath(Pawn pawn)
         {
-            if (pawn.story != null && pawn.story.traits != null && pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Empath))
+            if (pawn.story?.traits != null && pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Empath))
             {
                 return true;
             }
-            if (pawn.health != null && pawn.health.hediffSet != null && pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_EmpathHD) != null)
+            if (pawn.health?.hediffSet != null && pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_EmpathHD) != null)
             {
                 return true;
             }
             CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
-            if(comp != null && comp.customClass != null && comp.customClass.classAbilities.Contains(TorannMagicDefOf.TM_Empathy))
+            if(comp?.customClass != null && comp.customClass.classAbilities.Contains(TorannMagicDefOf.TM_Empathy))
             {
                 return true;
             }
