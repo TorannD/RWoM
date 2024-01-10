@@ -309,7 +309,7 @@
 
 <!-- Mod Settings Class options -->
 <supportTraitChance>Supporting Trait Commonality</supportTraitChance>
-<TM_ClassWarning>**Change class settings only when starting a new game**</TM_ClassWarning>
+<TM_ClassWarning>**Class settings only affect pawns created after changes**</TM_ClassWarning>
 <TM_RequiresRestart>**Any change requires a game restart**</TM_RequiresRestart>
 <TM_ClassOptions>Enabled Classes</TM_ClassOptions>
 <TM_EnabledMages>Mages</TM_EnabledMages>

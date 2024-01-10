@@ -5,6 +5,7 @@ using System.Linq;
 using Verse.AI;
 using RimWorld;
 using System;
+using TorannMagic.ModOptions;
 
 namespace TorannMagic
 {
@@ -171,138 +172,42 @@ namespace TorannMagic
             return enumerable.ToList();
         }
 
-        public static List<TraitDef> MagicTraits
-        {
-            get
-            {
-                List<TraitDef> magicTraits = new List<TraitDef>
-                {
-                    TorannMagicDefOf.Arcanist,
-                    TorannMagicDefOf.InnerFire,
-                    TorannMagicDefOf.HeartOfFrost,
-                    TorannMagicDefOf.StormBorn,
-                    TorannMagicDefOf.Druid,
-                    TorannMagicDefOf.Priest,
-                    TorannMagicDefOf.Necromancer,
-                    TorannMagicDefOf.Technomancer,
-                    TorannMagicDefOf.Geomancer,
-                    TorannMagicDefOf.Warlock,
-                    TorannMagicDefOf.Succubus,
-                    TorannMagicDefOf.ChaosMage,
-                    TorannMagicDefOf.Paladin,
-                    TorannMagicDefOf.Summoner,
-                    TorannMagicDefOf.Lich,
-                    TorannMagicDefOf.TM_Bard,
-                    TorannMagicDefOf.Chronomancer,
-                    TorannMagicDefOf.Enchanter,
-                    TorannMagicDefOf.BloodMage,
-                    TorannMagicDefOf.TM_Wanderer,
-                    TorannMagicDefOf.TM_Brightmage,
-                    TorannMagicDefOf.TM_Shaman,
-                    TorannMagicDefOf.TM_Golemancer
-                };
-                foreach (TMDefs.TM_CustomClass cc in TM_ClassUtility.CustomClasses)
-                {
-                    if (cc.isMage && !magicTraits.Contains(cc.classTrait))
-                    {
-                        magicTraits.Add(cc.classTrait);
-                    }
-                }
-                return magicTraits;
-            }
-        }
-
         public static List<TraitDef> EnabledMagicTraits
+        // DEPRECATED. Use TM_ClassUtility.EnabledMagicTraits instead. This is just here to prevent save breaking for ArcanePathway.
         {
             get
             {
                 List<TraitDef> magicTraits = new List<TraitDef>();
-                magicTraits.Clear();
-                
-                if (ModOptions.Settings.Instance.Arcanist) { magicTraits.Add(TorannMagicDefOf.Arcanist); }
-                if (ModOptions.Settings.Instance.FireMage) { magicTraits.Add(TorannMagicDefOf.InnerFire); }
-                if (ModOptions.Settings.Instance.IceMage) { magicTraits.Add(TorannMagicDefOf.HeartOfFrost); }
-                if (ModOptions.Settings.Instance.LitMage) { magicTraits.Add(TorannMagicDefOf.StormBorn); }
-                if (ModOptions.Settings.Instance.Druid) { magicTraits.Add(TorannMagicDefOf.Druid); }
-                if (ModOptions.Settings.Instance.Priest) { magicTraits.Add(TorannMagicDefOf.Priest); }
-                if (ModOptions.Settings.Instance.Necromancer) { magicTraits.Add(TorannMagicDefOf.Necromancer); }
-                if (ModOptions.Settings.Instance.Technomancer) { magicTraits.Add(TorannMagicDefOf.Technomancer); }
-                if (ModOptions.Settings.Instance.Geomancer) { magicTraits.Add(TorannMagicDefOf.Geomancer); }
-                if (ModOptions.Settings.Instance.Demonkin) { magicTraits.Add(TorannMagicDefOf.Warlock); }
-                if (ModOptions.Settings.Instance.Demonkin) { magicTraits.Add(TorannMagicDefOf.Succubus); }
-                if (ModOptions.Settings.Instance.ChaosMage) { magicTraits.Add(TorannMagicDefOf.ChaosMage); }
-                if (ModOptions.Settings.Instance.Paladin) { magicTraits.Add(TorannMagicDefOf.Paladin); }
-                if (ModOptions.Settings.Instance.Summoner) { magicTraits.Add(TorannMagicDefOf.Summoner); }
-                if (ModOptions.Settings.Instance.Bard) { magicTraits.Add(TorannMagicDefOf.TM_Bard); }
-                if (ModOptions.Settings.Instance.Chronomancer) { magicTraits.Add(TorannMagicDefOf.Chronomancer); }
-                if (ModOptions.Settings.Instance.Enchanter) { magicTraits.Add(TorannMagicDefOf.Enchanter); }
-                if (ModOptions.Settings.Instance.BloodMage) { magicTraits.Add(TorannMagicDefOf.BloodMage); }
-                if (ModOptions.Settings.Instance.Brightmage) { magicTraits.Add(TorannMagicDefOf.TM_Brightmage); }
-                if (ModOptions.Settings.Instance.Shaman) { magicTraits.Add(TorannMagicDefOf.TM_Shaman); }
-                if (ModOptions.Settings.Instance.Golemancer) { magicTraits.Add(TorannMagicDefOf.TM_Golemancer); }
+
+                if (Settings.Arcanist.isEnabled) { magicTraits.Add(TorannMagicDefOf.Arcanist); }
+                if (Settings.FireMage.isEnabled) { magicTraits.Add(TorannMagicDefOf.InnerFire); }
+                if (Settings.IceMage.isEnabled) { magicTraits.Add(TorannMagicDefOf.HeartOfFrost); }
+                if (Settings.LitMage.isEnabled) { magicTraits.Add(TorannMagicDefOf.StormBorn); }
+                if (Settings.Druid.isEnabled) { magicTraits.Add(TorannMagicDefOf.Druid); }
+                if (Settings.Priest.isEnabled) { magicTraits.Add(TorannMagicDefOf.Priest); }
+                if (Settings.Necromancer.isEnabled) { magicTraits.Add(TorannMagicDefOf.Necromancer); }
+                if (Settings.Technomancer.isEnabled) { magicTraits.Add(TorannMagicDefOf.Technomancer); }
+                if (Settings.Geomancer.isEnabled) { magicTraits.Add(TorannMagicDefOf.Geomancer); }
+                if (Settings.Demonkin.isEnabled) { magicTraits.Add(TorannMagicDefOf.Warlock); }
+                if (Settings.Demonkin.isEnabled) { magicTraits.Add(TorannMagicDefOf.Succubus); }
+                if (Settings.ChaosMage.isEnabled) { magicTraits.Add(TorannMagicDefOf.ChaosMage); }
+                if (Settings.Paladin.isEnabled) { magicTraits.Add(TorannMagicDefOf.Paladin); }
+                if (Settings.Summoner.isEnabled) { magicTraits.Add(TorannMagicDefOf.Summoner); }
+                if (Settings.Bard.isEnabled) { magicTraits.Add(TorannMagicDefOf.TM_Bard); }
+                if (Settings.Chronomancer.isEnabled) { magicTraits.Add(TorannMagicDefOf.Chronomancer); }
+                if (Settings.Enchanter.isEnabled) { magicTraits.Add(TorannMagicDefOf.Enchanter); }
+                if (Settings.BloodMage.isEnabled) { magicTraits.Add(TorannMagicDefOf.BloodMage); }
+                if (Settings.Brightmage.isEnabled) { magicTraits.Add(TorannMagicDefOf.TM_Brightmage); }
+                if (Settings.Shaman.isEnabled) { magicTraits.Add(TorannMagicDefOf.TM_Shaman); }
+                if (Settings.Golemancer.isEnabled) { magicTraits.Add(TorannMagicDefOf.TM_Golemancer); }
                 foreach (TMDefs.TM_CustomClass cc in TM_ClassUtility.CustomClasses)
                 {
-                    if (cc.isMage && !magicTraits.Contains(cc.classTrait) && ModOptions.Settings.Instance.CustomClass[cc.classTrait.ToString()])
+                    if (cc.isMage && !magicTraits.Contains(cc.classTrait) && Settings.Instance.CustomClass[cc.classTrait.ToString()])
                     {
                         magicTraits.Add(cc.classTrait);
                     }
-                }               
-                return magicTraits;
-            }
-        }
-
-        public static List<TraitDef> MightTraits
-        {
-            get
-            {
-                List<TraitDef> mightTraits = new List<TraitDef>
-                {
-                    TorannMagicDefOf.Bladedancer,
-                    TorannMagicDefOf.DeathKnight,
-                    TorannMagicDefOf.Gladiator,
-                    TorannMagicDefOf.Faceless,
-                    TorannMagicDefOf.TM_Sniper,
-                    TorannMagicDefOf.Ranger,
-                    TorannMagicDefOf.TM_Psionic,
-                    TorannMagicDefOf.TM_Monk,
-                    TorannMagicDefOf.TM_Commander,
-                    TorannMagicDefOf.TM_SuperSoldier,
-                    TorannMagicDefOf.TM_Wayfarer
-                };
-                foreach (TMDefs.TM_CustomClass cc in TM_ClassUtility.CustomClasses)
-                {
-                    if (cc.isFighter && !mightTraits.Contains(cc.classTrait))
-                    {
-                        mightTraits.Add(cc.classTrait);
-                    }
                 }
-                return mightTraits;
-            }
-        }
-
-        public static List<TraitDef> AllClassTraits
-        {
-            get
-            {
-                List<TraitDef> allClassTraits = new List<TraitDef>();
-                allClassTraits.Clear();
-                allClassTraits.AddRange(MightTraits);
-                allClassTraits.AddRange(MagicTraits);                
-                //allClassTraits.AddRange(TM_ClassUtility.CustomClassTraitDefs);
-                return allClassTraits;
-            }
-        }
-
-        public static List<TraitDef> AllClassConflictTraits
-        {
-            get
-            {
-                List<TraitDef> allClassConflictTraits = new List<TraitDef>();
-                allClassConflictTraits.Clear();
-                allClassConflictTraits.AddRange(AllClassTraits);
-                allClassConflictTraits.Add(TorannMagicDefOf.TM_Gifted);
-                AllClassConflictTraits.Add(TorannMagicDefOf.PhysicalProdigy);
-                return allClassConflictTraits;
+                return magicTraits;
             }
         }
 

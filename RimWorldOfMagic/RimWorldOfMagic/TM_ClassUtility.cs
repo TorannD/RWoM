@@ -18,90 +18,233 @@ namespace TorannMagic
 {
     public static class TM_ClassUtility
     {
-        public static List<TM_CustomClass> CustomClasses;
-        public static readonly List<TM_CustomClass> CustomBaseClasses = new List<TM_CustomClass>();
-        public static readonly List<TM_CustomClass> CustomMageClasses = new List<TM_CustomClass>();
-        public static readonly List<TM_CustomClass> CustomFighterClasses = new List<TM_CustomClass>();
-        public static readonly List<TM_CustomClass> CustomAdvancedClasses = new List<TM_CustomClass>();
+        public static Dictionary<TraitDef, Settings.CheckboxOption> NonCustomMagicTraits = new ()
+        {
+            { TorannMagicDefOf.Arcanist, Settings.Arcanist },
+            { TorannMagicDefOf.BloodMage, Settings.BloodMage },
+            { TorannMagicDefOf.ChaosMage, Settings.ChaosMage },
+            { TorannMagicDefOf.Chronomancer, Settings.Chronomancer },
+            { TorannMagicDefOf.Druid, Settings.Druid },
+            { TorannMagicDefOf.Enchanter, Settings.Enchanter },
+            { TorannMagicDefOf.Faceless, Settings.Faceless },
+            { TorannMagicDefOf.Geomancer, Settings.Geomancer },
+            { TorannMagicDefOf.HeartOfFrost, Settings.IceMage },
+            { TorannMagicDefOf.InnerFire, Settings.FireMage },
+            { TorannMagicDefOf.Lich, Settings.Necromancer },
+            { TorannMagicDefOf.Necromancer, Settings.Necromancer },
+            { TorannMagicDefOf.Paladin, Settings.Paladin },
+            { TorannMagicDefOf.Priest, Settings.Priest },
+            { TorannMagicDefOf.StormBorn, Settings.LitMage },
+            { TorannMagicDefOf.Succubus, Settings.Demonkin },
+            { TorannMagicDefOf.Summoner, Settings.Summoner },
+            { TorannMagicDefOf.TM_Bard, Settings.Bard },
+            { TorannMagicDefOf.TM_Brightmage, Settings.Brightmage },
+            { TorannMagicDefOf.TM_TheShadow, Settings.Shadow },
+            { TorannMagicDefOf.TM_Wanderer, Settings.Wanderer },
+            { TorannMagicDefOf.Technomancer, Settings.Technomancer },
+            { TorannMagicDefOf.Warlock, Settings.Demonkin }
+        };
 
-        //public static TM_CustomClass[] CustomClasses;
-        //public static readonly Dictionary<ushort, TM_CustomClass> CustomAdvancedClassTraitIndexMap = new Dictionary<ushort, TM_CustomClass>();
-        //public static TM_CustomClass[] CustomBaseClasses;
-        //public static TM_CustomClass[] CustomMageClasses;
-        //public static TM_CustomClass[] CustomFighterClasses;
-        //public static TM_CustomClass[] CustomAdvancedClasses;
+        public static Dictionary<TraitDef, Settings.CheckboxOption> NonCustomFighterTraits = new ()
+        {
+            { TorannMagicDefOf.TM_Apothecary, Settings.Apothecary },
+            { TorannMagicDefOf.Bladedancer, Settings.Bladedancer },
+            { TorannMagicDefOf.DeathKnight, Settings.DeathKnight },
+            { TorannMagicDefOf.Faceless, Settings.Faceless },
+            { TorannMagicDefOf.Gladiator, Settings.Gladiator },
+            { TorannMagicDefOf.Ranger, Settings.Ranger },
+            { TorannMagicDefOf.TM_Commander, Settings.Commander },
+            { TorannMagicDefOf.TM_Monk, Settings.Monk },
+            { TorannMagicDefOf.TM_Psionic, Settings.Psionic },
+            { TorannMagicDefOf.TM_Sniper, Settings.Sniper },
+            { TorannMagicDefOf.TM_SuperSoldier, Settings.SuperSoldier },
+            { TorannMagicDefOf.TM_TheShadow, Settings.Shadow },
+            { TorannMagicDefOf.TM_Wayfarer, Settings.Wayfarer }
+        };
 
+        public static Dictionary<TraitDef, Settings.CheckboxOption> MageSupportTraits = new ()
+        {
+            { TorannMagicDefOf.TM_ArcaneConduitTD, Settings.ArcaneConduit },
+            { TorannMagicDefOf.TM_ManaWellTD, Settings.ManaWell },
+            { TorannMagicDefOf.TM_FaeBloodTD, Settings.FaeBlood },
+            { TorannMagicDefOf.TM_EnlightenedTD, Settings.Enlightened },
+            { TorannMagicDefOf.TM_CursedTD, Settings.Cursed }
+        };
+
+        public static Dictionary<TraitDef, Settings.CheckboxOption> FighterSupportTraits = new ()
+        {
+            { TorannMagicDefOf.TM_BoundlessTD, Settings.Boundless },
+            { TorannMagicDefOf.TM_GiantsBloodTD, Settings.GiantsBlood }
+        };
+
+        // Special rules for generating pawns.
+        public static Dictionary<TraitDef, Predicate<Pawn>> ClassSpawnValidators = new Dictionary<TraitDef, Predicate<Pawn>>
+            {
+                { TorannMagicDefOf.Warlock, static pawn => pawn.gender == Gender.Male },
+                { TorannMagicDefOf.Succubus, static pawn => pawn.gender == Gender.Female },
+                { TorannMagicDefOf.Lich, static pawn => false },  // Never spawn a lich under normal circumstances
+                { TorannMagicDefOf.TM_Possessor, static pawn => false },  // Never spawn possessor under normal circumstances
+
+            };
+
+        public static HashSet<TraitDef> MightTraits;
+        public static HashSet<TraitDef> MagicTraits;
+        public static HashSet<TraitDef> AllClassTraits;
+        public static Dictionary<ushort, TM_CustomClass> CustomClassTraitMap;
+        public static Dictionary<ushort, TM_CustomClass> CustomAdvancedClassTraitMap;
+        public static TM_CustomClass[] CustomClasses;
+        public static TM_CustomClass[] CustomBaseClasses;
+        public static TM_CustomClass[] CustomMageClasses;
+        public static TM_CustomClass[] CustomFighterClasses;
+        public static TM_CustomClass[] CustomAdvancedClasses;
+
+        // Load all custom classes into the mod (regardless if enabled)
+        public static void InitializeCustomClasses()
+        {
+            // A Helper method to set the trait trackers to no custom classes.
+            static void setNoCustomClassDefaults()
+            {
+                CustomClassTraitMap = new Dictionary<ushort, TM_CustomClass>();
+                CustomAdvancedClassTraitMap = new Dictionary<ushort, TM_CustomClass>();
+                MagicTraits = new HashSet<TraitDef>(NonCustomMagicTraits.Keys);
+                MightTraits = new HashSet<TraitDef>(NonCustomFighterTraits.Keys);
+                AllClassTraits = new HashSet<TraitDef>(NonCustomFighterTraits.Keys);
+                AllClassTraits.UnionWith(MagicTraits);
+            }
+
+            try
+            {
+                setNoCustomClassDefaults();
+                CustomClasses = TM_CustomClassDef.Named("TM_CustomClasses").customClasses.ToArray();
+                foreach (TM_CustomClass cc in CustomClasses)
+                {
+                    CustomClassTraitMap[cc.classTrait.index] = cc;
+                    if (cc.isAdvancedClass) CustomAdvancedClassTraitMap[cc.classTrait.index] = cc;
+                    if (cc.isMage) MagicTraits.Add(cc.classTrait);
+                    if (cc.isFighter) MightTraits.Add(cc.classTrait);
+                    AllClassTraits.Add(cc.classTrait);
+                }
+            }
+            catch
+            {
+                Log.Error("[Rimworld of Magic] Initializing Custom Classes failed. Disabling Custom Classes");
+                setNoCustomClassDefaults();
+                CustomClasses = Array.Empty<TM_CustomClass>();
+            }
+        }
+
+        // Load the enabled custom classes into appropriate variables after load + mod settings change
         public static void LoadCustomClasses()
         {
-            TM_CustomClassDef named = TM_CustomClassDef.Named("TM_CustomClasses");
-            if (named == null) return;
-
-            CustomClasses = named.customClasses;
-            //CustomAdvancedClassTraitIndexMap.Clear();
-            //var CustomBaseClassesList = new List<TM_CustomClass>();
-            //var CustomMageClassesList = new List<TM_CustomClass>();
-            //var CustomFighterClassesList = new List<TM_CustomClass>();
-            //var CustomAdvancedClassesList = new List<TM_CustomClass>();
-            CustomBaseClasses.Clear();
-            CustomMageClasses.Clear();
-            CustomFighterClasses.Clear();
-            CustomAdvancedClasses.Clear();
-
-            IEnumerable<TM_CustomClass> enabledCustomClasses = CustomClasses.Where(cc =>
-                Settings.Instance.CustomClass.TryGetValue(cc.classTrait.ToString(), true));
-
-            foreach (TM_CustomClass cc in enabledCustomClasses)
+            try
             {
-                if (cc.isMage)
+                var CustomBaseClassesList = new List<TM_CustomClass>();
+                var CustomMageClassesList = new List<TM_CustomClass>();
+                var CustomFighterClassesList = new List<TM_CustomClass>();
+                var CustomAdvancedClassesList = new List<TM_CustomClass>();
+
+                foreach (TM_CustomClass cc in CustomClasses)
                 {
-                    if (cc.isAdvancedClass)
+                    if (!Settings.Instance.CustomClass.TryGetValue(cc.classTrait.ToString(), true)) continue;
+
+                    if (cc.isMage)
                     {
-                        if (cc.advancedClassOptions != null && cc.advancedClassOptions.canSpawnWithClass)
+                        if (cc.isAdvancedClass)
                         {
-                            CustomMageClasses.Add(cc);
+                            if (cc.advancedClassOptions != null && cc.advancedClassOptions.canSpawnWithClass)
+                            {
+                                CustomMageClassesList.Add(cc);
+                            }
+                        }
+                        else
+                        {
+                            CustomMageClassesList.Add(cc);
                         }
                     }
-                    else
+
+                    if (cc.isFighter)
                     {
-                        CustomMageClasses.Add(cc);
-                    }
-                }
-                if (cc.isFighter)
-                {
-                    if (cc.isAdvancedClass)
-                    {
-                        if (cc.advancedClassOptions != null && cc.advancedClassOptions.canSpawnWithClass)
+                        if (cc.isAdvancedClass)
                         {
-                            CustomFighterClasses.Add(cc);
+                            if (cc.advancedClassOptions != null && cc.advancedClassOptions.canSpawnWithClass)
+                            {
+                                CustomFighterClassesList.Add(cc);
+                            }
+                        }
+                        else
+                        {
+                            CustomFighterClassesList.Add(cc);
                         }
                     }
+
+                    if (!cc.isAdvancedClass)
+                        CustomBaseClassesList.Add(cc); //base classes cannot also be advanced classes, but advanced classes can act like base classes
                     else
-                    {
-                        CustomFighterClasses.Add(cc);
-                    }
+                        CustomAdvancedClassesList.Add(cc);
+
+                    CustomBaseClasses = CustomBaseClassesList.ToArray();
+                    CustomFighterClasses = CustomFighterClassesList.ToArray();
+                    CustomMageClasses = CustomMageClassesList.ToArray();
+                    CustomAdvancedClasses = CustomAdvancedClassesList.ToArray();
                 }
-                if (!cc.isAdvancedClass) CustomBaseClasses.Add(cc); //base classes cannot also be advanced classes, but advanced classes can act like base classes
-                else
-                {
-                    CustomAdvancedClasses.Add(cc);
-                    //CustomAdvancedClassTraitIndexMap[cc.classTrait.index] = cc;
-                }
-                //CustomBaseClasses = CustomBaseClassesList.ToArray();
-                //CustomFighterClasses = CustomFighterClassesList.ToArray();
-                //CustomMageClasses = CustomMageClassesList.ToArray();
-                //CustomAdvancedClasses = CustomAdvancedClassesList.ToArray();
+                LoadClassIndexes();
             }
-            LoadClassIndexes();
-            
+            catch
+            {
+                Log.Error("Loading Enabled Custom Classes Failed. Disabling...");
+                CustomClasses = Array.Empty<TM_CustomClass>();
+                CustomBaseClasses = Array.Empty<TM_CustomClass>();
+                CustomMageClasses = Array.Empty<TM_CustomClass>();
+                CustomFighterClasses = Array.Empty<TM_CustomClass>();
+                CustomAdvancedClasses = Array.Empty<TM_CustomClass>();
+            }
         }
 
         public static void LoadClassIndexes()
         {
             CustomClassTraitIndexes = new Dictionary<ushort, int>();
-            for (int i = 0; i < CustomClasses.Count; i++)
+            for (int i = 0; i < CustomClasses.Length; i++)
             {
                 CustomClassTraitIndexes[CustomClasses[i].classTrait.index] = i;
             }
+        }
+
+        public static HashSet<TraitDef> EnabledMageClasses = new HashSet<TraitDef>();
+        public static HashSet<TraitDef> EnabledFighterClasses = new HashSet<TraitDef>();
+        // Switch these two to hashsets if they get bigger than 10 traitdefs or go custom
+        public static TraitDef[] EnabledMageSupportClasses;
+        public static TraitDef[] EnabledFighterSupportClasses;
+        public static void CacheEnabledClasses()
+        {
+            EnabledMageClasses.Clear();
+            EnabledFighterClasses.Clear();
+            // Add custom classes which have already checked if they are enabled
+            foreach (TM_CustomClass cc in CustomMageClasses)
+            {
+                EnabledMageClasses.Add(cc.classTrait);
+            }
+            foreach (TM_CustomClass cc in CustomFighterClasses)
+            {
+                EnabledFighterClasses.Add(cc.classTrait);
+            }
+            // Add the base classes if they are enabled
+            foreach (KeyValuePair<TraitDef, Settings.CheckboxOption> pair in NonCustomMagicTraits)
+            {
+                if (pair.Value.isEnabled) EnabledMageClasses.Add(pair.Key);
+            }
+            foreach (KeyValuePair<TraitDef, Settings.CheckboxOption> pair in NonCustomFighterTraits)
+            {
+                if (pair.Value.isEnabled) EnabledFighterClasses.Add(pair.Key);
+            }
+            // Handle the support classes. Use LINQ to avoid array annoyances
+            EnabledMageSupportClasses = MageSupportTraits
+                .Where(static pair => pair.Value.isEnabled)
+                .Select(static pair => pair.Key)
+                .ToArray();
+            EnabledFighterSupportClasses = FighterSupportTraits
+                .Where(static pair => pair.Value.isEnabled)
+                .Select(static pair => pair.Key)
+                .ToArray();
         }
 
         public static List<TraitDef> CustomClassTraitDefs
@@ -109,7 +252,8 @@ namespace TorannMagic
             get => CustomClasses.Select(t => t.classTrait).ToList();           
         }
 
-        private static Dictionary<ushort, int> CustomClassTraitIndexes;  // Dictionary to more quickly determine trait's CustomClasses index
+        // DEPRECATED: Use TM_ClassUtility.CustomClassTraitMap
+        public static Dictionary<ushort, int> CustomClassTraitIndexes;  // Dictionary to more quickly determine trait's CustomClasses index
 
         public static int IsCustomClassIndex(List<Trait> allTraits)
         {
@@ -132,7 +276,7 @@ namespace TorannMagic
 
         public static int CustomClassIndexOfTraitDef(TraitDef trait)
         {
-            for (int i = 0; i < CustomClasses.Count; i++)
+            for (int i = 0; i < CustomClasses.Length; i++)
             {
                 if (CustomClasses[i].classTrait.defName == trait.defName)
                 {
@@ -144,7 +288,7 @@ namespace TorannMagic
 
         public static int CustomClassIndexOfBaseMageClass(List<Trait> allTraits)
         {
-            for (int i = 0; i < CustomClasses.Count; i++)
+            for (int i = 0; i < CustomClasses.Length; i++)
             {
                 if (CustomClasses[i].isAdvancedClass) continue;
                 if (!CustomClasses[i].isMage) continue;
@@ -161,7 +305,7 @@ namespace TorannMagic
 
         public static int CustomClassIndexOfBaseFighterClass(List<Trait> allTraits)
         {
-            for(int i = 0; i < CustomClasses.Count; i++)
+            for(int i = 0; i < CustomClasses.Length; i++)
             {
                 if (CustomClasses[i].isAdvancedClass) continue;
                 if (!CustomClasses[i].isFighter) continue;

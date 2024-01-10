@@ -17,7 +17,6 @@ namespace TorannMagic
 {
     [CompilerGenerated]
     [Serializable]
-    [StaticConstructorOnStartup]
     public class CompAbilityUserMight : CompAbilityUserTMBase
     {
         public string LabelKey = "TM_Might";
@@ -1653,22 +1652,6 @@ namespace TorannMagic
             Log.Message("Removing ability: " + current.abilityDef.defName.ToString());
             base.RemovePawnAbility(current.abilityDef);
             base.UpdateAbilities();
-        }
-
-        public void RemoveTraits()
-        {
-            List<Trait> traits = this.Pawn.story.traits.allTraits;
-            for (int i = 0; i < traits.Count; i++)
-            {
-                if (traits[i].def == TorannMagicDefOf.Gladiator || traits[i].def == TorannMagicDefOf.Bladedancer || traits[i].def == TorannMagicDefOf.Ranger || traits[i].def == TorannMagicDefOf.Faceless ||
-                    traits[i].def == TorannMagicDefOf.DeathKnight || traits[i].def == TorannMagicDefOf.TM_Psionic || traits[i].def == TorannMagicDefOf.TM_Sniper || traits[i].def == TorannMagicDefOf.TM_Monk ||
-                    traits[i].def == TorannMagicDefOf.TM_Wayfarer || traits[i].def == TorannMagicDefOf.TM_Commander || traits[i].def == TorannMagicDefOf.TM_SuperSoldier)
-                {
-                    Log.Message("Removing trait " + traits[i].Label);
-                    traits.Remove(traits[i]);
-                    i--;
-                }
-            }
         }
 
         private void LoadPowers(Pawn pawn)

@@ -6,16 +6,9 @@ using Verse;
 
 namespace TorannMagic.Enchantment
 {
-    internal class CompEnchantmentMod : Mod
+    internal class CompEnchantmentMod
     {
-        public CompEnchantmentMod(ModContentPack mcp) : base(mcp)
-        {
-            LongEventHandler.ExecuteWhenFinished(new Action(CompEnchantmentMod.AddComp));
-            LongEventHandler.ExecuteWhenFinished(new Action(CompEnchantmentMod.AddUniversalBodyparts));            
-            LongEventHandler.ExecuteWhenFinished(new Action(CompEnchantmentMod.FillCloakPool));
-        }
-
-        private static void AddComp()
+        public static void AddComp()
         {
             //unrelated, single time load mod check
             //foreach (ModContentPack p in LoadedModManager.RunningMods)
@@ -60,30 +53,26 @@ namespace TorannMagic.Enchantment
             }        
         }
 
-        private static void AddUniversalBodyparts()
+        public static void InitializeUniversalBodyParts()
         {
-            IEnumerable<BodyPartDef> universalBodyParts = from def in DefDatabase<BodyPartDef>.AllDefs
-                                                          where (def.destroyableByDamage)
-                                                          select def;
-            foreach (BodyPartDef current1 in universalBodyParts)
+            // Add all destroyable body parts to Regrowth
+            foreach (BodyPartDef bodyPartDef in DefDatabase<BodyPartDef>.AllDefs)
             {
-                TorannMagicDefOf.UniversalRegrowth.appliedOnFixedBodyParts.AddDistinct(current1);
-            }
+                if (!bodyPartDef.destroyableByDamage) continue;
 
-            IEnumerable<ThingDef> universalPawnTypes = from def in DefDatabase<ThingDef>.AllDefs
-                                                       where (def.category == ThingCategory.Pawn && !def.defName.Contains("TM_") && def.race.IsFlesh)
-                                                       select def;
-            foreach (ThingDef current2 in universalPawnTypes)
+                TorannMagicDefOf.UniversalRegrowth.appliedOnFixedBodyParts.AddDistinct(bodyPartDef);
+            }
+            // Add all pawn flesh things outside of this mod
+            foreach (ThingDef thingDef in DefDatabase<ThingDef>.AllDefs)
             {
-                TorannMagicDefOf.UniversalRegrowth.recipeUsers.AddDistinct(current2);
-                TorannMagicDefOf.AdministerOrbOfTheEternal.recipeUsers.AddDistinct(current2);
-            }
-        }        
+                if (thingDef.category != ThingCategory.Pawn
+                    || thingDef.defName.StartsWith("TM_")
+                    || !thingDef.race.IsFlesh) continue;
 
-        private static void FillCloakPool()
-        {
-            ModOptions.Constants.InitializeCloaks();
+                TorannMagicDefOf.UniversalRegrowth.recipeUsers.AddDistinct(thingDef);
+                TorannMagicDefOf.AdministerOrbOfTheEternal.recipeUsers.AddDistinct(thingDef);
+
+            }
         }
-
     }
 }

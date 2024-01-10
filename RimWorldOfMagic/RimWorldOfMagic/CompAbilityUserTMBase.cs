@@ -114,5 +114,18 @@ namespace TorannMagic
                 DrawMark(material, new Vector3(.28f, 1f, .28f));
             }
         }
+
+        public void RemoveTraits()
+        {
+            List<Trait> traits = Pawn.story.traits.allTraits;
+            for (int i = traits.Count - 1; i >= 0; i--)
+            {
+                if (TM_ClassUtility.AllClassTraits.Contains(traits[i].def))
+                {
+                    Log.Message("Removing trait " + traits[i].Label);
+                    Pawn.story.traits.RemoveTrait(traits[i]);
+                }
+            }
+        }
     }
 }

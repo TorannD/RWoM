@@ -1,6 +1,7 @@
 ﻿using RimWorld;
 using Verse;
 using System.Collections.Generic;
+using TorannMagic.ModOptions;
 using UnityEngine;
 
 
@@ -17,7 +18,7 @@ namespace TorannMagic
                 bool advancedClass = false;
                 string failMessage = "";
                 CompAbilityUserMagic comp = user.GetCompAbilityUserMagic();
-                for (int i = 0; i < TM_ClassUtility.CustomClasses.Count; i++)
+                for (int i = 0; i < TM_ClassUtility.CustomClasses.Length; i++)
                 {
                     TMDefs.TM_CustomClass cc = TM_ClassUtility.CustomClasses[i];
                     if (cc.isAdvancedClass)
@@ -286,12 +287,12 @@ namespace TorannMagic
                         if (attempts < 50)
                         {
                             int baseClassCount = 17;
-                            int customClassCount = TM_ClassUtility.CustomMageClasses.Count;
+                            int customClassCount = TM_ClassUtility.CustomMageClasses.Length;
                             int rnd = Mathf.RoundToInt(Rand.RangeInclusive(0, baseClassCount + customClassCount));
                             switch (rnd)
                             {
                                 case 0:
-                                    if (ModOptions.Settings.Instance.Demonkin)
+                                    if (Settings.Demonkin.isEnabled)
                                     {
                                         if (user.gender == Gender.Male)
                                         {
@@ -313,7 +314,7 @@ namespace TorannMagic
                                     }
                                     break;
                                 case 15:
-                                    if (ModOptions.Settings.Instance.Demonkin)
+                                    if (Settings.Demonkin.isEnabled)
                                     {
                                         if (user.gender == Gender.Male)
                                         {
@@ -335,7 +336,7 @@ namespace TorannMagic
                                     }
                                     break;
                                 case 1:
-                                    if (ModOptions.Settings.Instance.Necromancer)
+                                    if (Settings.Necromancer.isEnabled)
                                     {
                                         user.story.traits.GainTrait(new Trait(TorannMagicDefOf.Necromancer, 0, false));
                                     }
@@ -346,7 +347,7 @@ namespace TorannMagic
                                     }
                                     break;
                                 case 2:
-                                    if (ModOptions.Settings.Instance.Druid)
+                                    if (Settings.Druid.isEnabled)
                                     {
                                         user.story.traits.GainTrait(new Trait(TorannMagicDefOf.Druid, 0, false));
                                     }
@@ -357,7 +358,7 @@ namespace TorannMagic
                                     }
                                     break;
                                 case 3:
-                                    if (ModOptions.Settings.Instance.Summoner)
+                                    if (Settings.Summoner.isEnabled)
                                     {
                                         user.story.traits.GainTrait(new Trait(TorannMagicDefOf.Summoner, 0, false));
                                     }
@@ -368,7 +369,7 @@ namespace TorannMagic
                                     }
                                     break;
                                 case 4:
-                                    if (ModOptions.Settings.Instance.FireMage)
+                                    if (Settings.FireMage.isEnabled)
                                     {
                                         user.story.traits.GainTrait(new Trait(TorannMagicDefOf.InnerFire, 0, false));
                                     }
@@ -379,7 +380,7 @@ namespace TorannMagic
                                     }
                                     break;
                                 case 5:
-                                    if (ModOptions.Settings.Instance.IceMage)
+                                    if (Settings.IceMage.isEnabled)
                                     {
                                         user.story.traits.GainTrait(new Trait(TorannMagicDefOf.HeartOfFrost, 0, false));
                                     }
@@ -390,7 +391,7 @@ namespace TorannMagic
                                     }
                                     break;
                                 case 6:
-                                    if (ModOptions.Settings.Instance.LitMage)
+                                    if (Settings.LitMage.isEnabled)
                                     {
                                         user.story.traits.GainTrait(new Trait(TorannMagicDefOf.StormBorn, 0, false));
                                     }
@@ -401,7 +402,7 @@ namespace TorannMagic
                                     }
                                     break;
                                 case 7:
-                                    if (ModOptions.Settings.Instance.Arcanist)
+                                    if (Settings.Arcanist.isEnabled)
                                     {
                                         user.story.traits.GainTrait(new Trait(TorannMagicDefOf.Arcanist, 0, false));
                                     }
@@ -412,7 +413,7 @@ namespace TorannMagic
                                     }
                                     break;
                                 case 8:
-                                    if (ModOptions.Settings.Instance.Priest)
+                                    if (Settings.Priest.isEnabled)
                                     {
                                         user.story.traits.GainTrait(new Trait(TorannMagicDefOf.Priest, 0, false));
                                     }
@@ -423,7 +424,7 @@ namespace TorannMagic
                                     }
                                     break;
                                 case 9:
-                                    if (ModOptions.Settings.Instance.Bard)
+                                    if (Settings.Bard.isEnabled)
                                     {
                                         user.story.traits.GainTrait(new Trait(TorannMagicDefOf.TM_Bard, 0, false));
                                     }
@@ -434,7 +435,7 @@ namespace TorannMagic
                                     }
                                     break;
                                 case 10:
-                                    if (ModOptions.Settings.Instance.Paladin)
+                                    if (Settings.Paladin.isEnabled)
                                     {
                                         user.story.traits.GainTrait(new Trait(TorannMagicDefOf.Paladin, 0, false));
                                     }
@@ -445,7 +446,7 @@ namespace TorannMagic
                                     }
                                     break;
                                 case 11:
-                                    if (ModOptions.Settings.Instance.Geomancer)
+                                    if (Settings.Geomancer.isEnabled)
                                     {
                                         user.story.traits.GainTrait(new Trait(TorannMagicDefOf.Geomancer, 0, false));
                                     }
@@ -456,7 +457,7 @@ namespace TorannMagic
                                     }
                                     break;
                                 case 12:
-                                    if (ModOptions.Settings.Instance.Technomancer)
+                                    if (Settings.Technomancer.isEnabled)
                                     {
                                         user.story.traits.GainTrait(new Trait(TorannMagicDefOf.Technomancer, 0, false));
                                     }
@@ -467,7 +468,7 @@ namespace TorannMagic
                                     }
                                     break;
                                 case 13:
-                                    if (ModOptions.Settings.Instance.BloodMage)
+                                    if (Settings.BloodMage.isEnabled)
                                     {
                                         user.story.traits.GainTrait(new Trait(TorannMagicDefOf.BloodMage, 0, false));
                                     }
@@ -478,7 +479,7 @@ namespace TorannMagic
                                     }
                                     break;
                                 case 14:
-                                    if (ModOptions.Settings.Instance.Technomancer)
+                                    if (Settings.Technomancer.isEnabled)
                                     {
                                         user.story.traits.GainTrait(new Trait(TorannMagicDefOf.Enchanter, 0, false));
                                     }
@@ -489,7 +490,7 @@ namespace TorannMagic
                                     }
                                     break;
                                 case 16:
-                                    if (ModOptions.Settings.Instance.Chronomancer)
+                                    if (Settings.Chronomancer.isEnabled)
                                     {
                                         user.story.traits.GainTrait(new Trait(TorannMagicDefOf.Chronomancer, 0, false));
                                     }
@@ -500,7 +501,7 @@ namespace TorannMagic
                                     }
                                     break;
                                 case 17:
-                                    if (ModOptions.Settings.Instance.ChaosMage)
+                                    if (Settings.ChaosMage.isEnabled)
                                     {
                                         user.story.traits.GainTrait(new Trait(TorannMagicDefOf.ChaosMage, 0, false));
                                     }
