@@ -3104,4 +3104,76 @@
     </stages>
   </HediffDef>
   
+  <HediffDef>
+    <defName>TM_UndeadShroudHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+    <label>Undeath Shroud</label>
+	<description>The forces of undeath cling to this pawn.</description>
+	<defaultLabelColor>(0.5,0.8,0)</defaultLabelColor>
+    <scenarioCanAdd>false</scenarioCanAdd>
+	<maxSeverity>1</maxSeverity>
+	<isBad>false</isBad>
+	<makesSickThought>false</makesSickThought>
+	<comps>
+	  <li Class="TorannMagic.HediffCompProperties_SetDuration">
+		<compClass>TorannMagic.HediffComp_SetDuration</compClass>
+		<duration>6</duration>
+		<maxDuration>60</maxDuration>
+	  </li> 
+    </comps>
+    <stages>
+      <li>
+	    <label></label>
+		<minSeverity>.001</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<capMods>
+		  <li>
+            <capacity>Moving</capacity>
+            <offset>0.05</offset>
+          </li>	
+        </capMods>
+      </li>	  
+	  <li>
+	    <label></label>
+		<minSeverity>.06</minSeverity>
+		<capMods>
+		  <li>
+            <capacity>Moving</capacity>
+            <offset>0.1</offset>
+          </li>	
+        </capMods>
+      </li>
+	  <li>
+	    <label></label>
+		<minSeverity>.11</minSeverity>
+		<capMods>
+		  <li>
+            <capacity>Moving</capacity>
+            <offset>0.15</offset>
+          </li>	
+        </capMods>
+      </li>	
+	  <li>
+	    <label></label>
+		<minSeverity>.16</minSeverity>
+		<capMods>
+		  <li>
+            <capacity>Moving</capacity>
+            <offset>0.2</offset>
+          </li>	
+        </capMods>
+      </li>
+	  <li>
+	    <label></label>
+		<minSeverity>.21</minSeverity>
+		<capMods>
+		  <li>
+            <capacity>Moving</capacity>
+            <offset>0.25</offset>
+          </li>	
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+  
 </Defs>

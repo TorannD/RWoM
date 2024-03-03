@@ -59,4 +59,28 @@
 	</recipeUsers>
   </RecipeDef>
   
+  <RecipeDef Name="StrawGolem_Recipe_Base" ParentName="Golem_Recipe_Base" Abstract="True">
+	<workSkillLearnFactor>.6</workSkillLearnFactor>
+    <unfinishedThingDef>TM_UnfinishedStrawGolemUpgrade</unfinishedThingDef>
+	<recipeUsers>
+		<li>TM_StrawGolem_Workstation</li>
+	</recipeUsers>
+  </RecipeDef>
+  
+  <RecipeDef Name="WoodGolem_Recipe_Base" ParentName="Golem_Recipe_Base" Abstract="True">
+	<workSkillLearnFactor>.6</workSkillLearnFactor>
+    <unfinishedThingDef>TM_UnfinishedWoodGolemUpgrade</unfinishedThingDef>
+	<recipeUsers>
+		<li>TM_WoodGolem_Workstation</li>
+	</recipeUsers>
+  </RecipeDef>
+  
+  <RecipeDef Name="SilkGolem_Recipe_Base" ParentName="Golem_Recipe_Base" Abstract="True">
+	<workSkillLearnFactor>.6</workSkillLearnFactor>
+    <unfinishedThingDef>TM_UnfinishedSilkGolemUpgrade</unfinishedThingDef>
+	<recipeUsers>
+		<li>TM_SilkGolem_Workstation</li>
+	</recipeUsers>
+  </RecipeDef>
+  
 </Defs>

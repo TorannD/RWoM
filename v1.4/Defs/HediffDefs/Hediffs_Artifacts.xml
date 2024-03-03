@@ -358,4 +358,23 @@
     </comps>	 
   </HediffDef>
   
+  	<!-- Shroud of Undead (Shroud of Soulreaper buff) -->
+  
+   <HediffDef ParentName="BaseArtifactHD">
+    <defName>TM_ShroudOfUndeathHD</defName>
+	<label>Shroud of Undeath</label>
+	<description>Reduces undead upkeep of this necromancer and increases the movement and attack power of nearby undead.</description>
+    <defaultLabelColor>(0.4,0.8,0)</defaultLabelColor>
+      <stages>
+        <li>
+			<minSeverity>.001</minSeverity>
+        </li>
+	 </stages>
+	<comps>
+      <li>
+        <compClass>TorannMagic.Enchantment.HediffComp_ShroudOfUndeath</compClass>
+      </li>  
+    </comps>	 
+  </HediffDef>
+  
 </Defs>

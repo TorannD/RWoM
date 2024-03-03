@@ -2,9 +2,159 @@
 
 <Defs>
 
+	<TorannMagic.TMDefs.TM_GolemDef Name="TM_StrawGolem">
+		<defName>TM_Golem_Straw</defName>
+		<golemDef>TM_StrawGolem</golemDef>
+		<golemKindDef>TM_StrawGolemK</golemKindDef>
+		<golemWorkstationDef>TM_StrawGolem_Workstation</golemWorkstationDef>
+		<golemFramePath>Golems/Straw/Straw_Workstation_Frame</golemFramePath>
+		<activationTicks>180</activationTicks>
+		<processorEvaluationTicks>300</processorEvaluationTicks>
+		<needs>
+		  <li>TM_GolemEnergy</li>
+		</needs>
+		<hediffs>
+		  <li>TM_GolemHD</li>
+		</hediffs>
+		<upgrades>
+		  <li>TM_Golem_StrawRepair</li>
+		  <li>TM_Golem_StrawMaxEnergy</li>
+		  <li>TM_Golem_StrawEnergyEfficiency</li>
+		  <li>TM_Golem_StrawEnergyRate</li>
+		  <li>TM_Golem_StrawArmor</li>
+		  <li>TM_Golem_StrawScarecrow</li>
+		  <li>TM_Golem_StrawSeed</li>
+		  <li>TM_Golem_StrawLifeStage</li>
+		</upgrades>			
+		<golemWorkTypes>
+			<li>
+				<workTypeDef>Growing</workTypeDef>
+				<priority>1</priority>
+				<golemUpgradeDef>TM_Golem_StrawSeed</golemUpgradeDef>
+				<requiresUpgrade>false</requiresUpgrade>			<!--default is false -->
+				<upgradedSkill>Plants</upgradedSkill>
+				<initialSkillLevel>0</initialSkillLevel>
+				<skillBonusPerUpgrade>2</skillBonusPerUpgrade>				
+			</li>
+			<li>
+				<workTypeDef>Hauling</workTypeDef>
+				<priority>2</priority>
+			</li>
+			<li>
+				<workTypeDef>Cleaning</workTypeDef>
+				<priority>3</priority>
+			</li>
+		</golemWorkTypes>
+	</TorannMagic.TMDefs.TM_GolemDef>
+	
+	<TorannMagic.TMDefs.TM_GolemDef Name="TM_WoodGolem">
+		<defName>TM_Golem_Wood</defName>
+		<golemDef>TM_WoodGolem</golemDef>
+		<golemKindDef>TM_WoodGolemK</golemKindDef>
+		<golemWorkstationDef>TM_WoodGolem_Workstation</golemWorkstationDef>
+		<golemFramePath>Golems/Wood/Wood_Workstation_Frame</golemFramePath>
+		<activationTicks>240</activationTicks>
+		<processorEvaluationTicks>300</processorEvaluationTicks>
+		<needs>
+		  <li>TM_GolemEnergy</li>
+		</needs>
+		<hediffs>
+		  <li>TM_GolemHD</li>
+		</hediffs>
+		<upgrades>
+		  <li>TM_Golem_WoodRepair</li>
+		  <li>TM_Golem_WoodMaxEnergy</li>
+		  <li>TM_Golem_WoodEnergyEfficiency</li>
+		  <li>TM_Golem_WoodEnergyRate</li>
+		  <li>TM_Golem_WoodArmor</li>
+		  <li>TM_Golem_WoodSkills</li>
+		  <li>TM_Golem_WoodLifeStage</li>
+		</upgrades>			
+		<golemWorkTypes>
+			<li>
+				<workTypeDef>Handling</workTypeDef>
+				<priority>2</priority>
+				<golemUpgradeDef>TM_Golem_WoodSkills</golemUpgradeDef>
+				<requiresUpgrade>false</requiresUpgrade>			<!--default is false -->
+				<upgradedSkill>Animals</upgradedSkill>
+				<initialSkillLevel>4</initialSkillLevel>
+				<skillBonusPerUpgrade>2</skillBonusPerUpgrade>				
+			</li>
+			<li>
+				<workTypeDef>Cooking</workTypeDef>
+				<priority>1</priority>
+				<golemUpgradeDef>TM_Golem_WoodSkills</golemUpgradeDef>
+				<requiresUpgrade>false</requiresUpgrade>			<!--default is false -->
+				<upgradedSkill>Cooking</upgradedSkill>
+				<initialSkillLevel>5</initialSkillLevel>
+				<skillBonusPerUpgrade>1</skillBonusPerUpgrade>				
+			</li>
+			<li>
+				<workTypeDef>Construction</workTypeDef>
+				<priority>2</priority>
+				<golemUpgradeDef>TM_Golem_WoodSkills</golemUpgradeDef>
+				<requiresUpgrade>false</requiresUpgrade>			<!--default is false -->
+				<upgradedSkill>Construction</upgradedSkill>
+				<initialSkillLevel>2</initialSkillLevel>
+				<skillBonusPerUpgrade>2</skillBonusPerUpgrade>				
+			</li>
+			<li>
+				<workTypeDef>Hauling</workTypeDef>
+				<priority>3</priority>
+			</li>
+			<li>
+				<workTypeDef>Cleaning</workTypeDef>
+				<priority>3</priority>
+			</li>
+		</golemWorkTypes>
+	</TorannMagic.TMDefs.TM_GolemDef>
+	
+	<TorannMagic.TMDefs.TM_GolemDef Name="TM_SilkGolem">
+		<defName>TM_Golem_Silk</defName>
+		<golemDef>TM_SilkGolem</golemDef>
+		<golemKindDef>TM_SilkGolemK</golemKindDef>
+		<golemWorkstationDef>TM_SilkGolem_Workstation</golemWorkstationDef>
+		<golemFramePath>Golems/Silk/Silk_Workstation_Frame</golemFramePath>
+		<activationTicks>120</activationTicks>
+		<processorEvaluationTicks>600</processorEvaluationTicks>
+		<needs>
+		  <li>TM_GolemEnergy</li>
+		</needs>
+		<hediffs>
+		  <li>TM_GolemHD</li>
+		</hediffs>
+		<upgrades>
+		  <li>TM_Golem_SilkRepair</li>
+		  <li>TM_Golem_SilkMaxEnergy</li>
+		  <li>TM_Golem_SilkEnergyEfficiency</li>
+		  <li>TM_Golem_SilkEnergyRate</li>
+		  <li>TM_Golem_SilkSkills</li>
+		  <li>TM_Golem_SilkLifeStage</li>
+		</upgrades>			
+		<golemWorkTypes>
+			<li>
+				<workTypeDef>Warden</workTypeDef>
+				<priority>1</priority>
+				<golemUpgradeDef>TM_Golem_SilkSkills</golemUpgradeDef>
+				<requiresUpgrade>false</requiresUpgrade>			<!--default is false -->
+				<upgradedSkill>Social</upgradedSkill>
+				<initialSkillLevel>7</initialSkillLevel>
+				<skillBonusPerUpgrade>1</skillBonusPerUpgrade>				
+			</li>
+			<li>
+				<workTypeDef>Hauling</workTypeDef>
+				<priority>3</priority>
+			</li>
+			<li>
+				<workTypeDef>Cleaning</workTypeDef>
+				<priority>2</priority>
+			</li>
+		</golemWorkTypes>
+	</TorannMagic.TMDefs.TM_GolemDef>
+
 	<TorannMagic.TMDefs.TM_GolemDef Name="TM_StoneGolem" Abstract="True">
 		<golemWorkstationDef>TM_StoneGolem_Workstation</golemWorkstationDef>
-		<golemFramePath>Golems/Stone/Stone_Workstation_frame</golemFramePath>
+		<golemFramePath>Golems/Stone/Stone_Workstation_Frame</golemFramePath>
 		<activationTicks>600</activationTicks>
 		<processorEvaluationTicks>400</processorEvaluationTicks>
 		<needs>

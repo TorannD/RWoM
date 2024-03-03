@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <!--================== Maharal Golem upgrade recipes ==================-->
+  <!--================== Straw Golem upgrade recipes ==================-->
   
   <RecipeDef ParentName="MaharalGolem_Recipe_Base">
     <defName>TM_MaharalGolem_RepairBlock</defName>

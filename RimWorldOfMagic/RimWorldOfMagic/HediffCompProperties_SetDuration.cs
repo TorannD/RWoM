@@ -11,6 +11,7 @@ namespace TorannMagic
     public class HediffCompProperties_SetDuration : HediffCompProperties
     {
         public int duration = 10;
+        public int maxDuration = 999;
 
         public HediffCompProperties_SetDuration()
         {

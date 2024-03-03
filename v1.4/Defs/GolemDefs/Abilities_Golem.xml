@@ -681,5 +681,17 @@
 	  </advancedConditionDefs> -->
 	</autocasting>
   </TorannMagic.TMDefs.TM_GolemAbilityDef>
+  
+<!--   <TorannMagic.TMDefs.TM_GolemAbilityDef>
+	<defName>TM_StrawGolem_PlantSeeds</defName>
+	<label>farming</label>	
+	<warmupTicks>0</warmupTicks>
+	<cooldownTicks>180</cooldownTicks>
+	<warmupStuns>false</warmupStuns>
+	<requiredNeed>TM_GolemEnergy</requiredNeed>
+	<needCost>0</needCost>
+	<interruptsJob>false</interruptsJob>
+	<jobDef>JobDriver_GolemPlant</jobDef>
+  </TorannMagic.TMDefs.TM_GolemAbilityDef> -->
 
 </Defs>

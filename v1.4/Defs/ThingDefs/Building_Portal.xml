@@ -8,7 +8,7 @@
     <graphicData>
       <texPath>Other/PortalBldg2</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(5,4)</drawSize>
+      <drawSize>(4,4)</drawSize>
       <damageData>
         <rect>(0,0,3,1.8)</rect>
         <cornerBL>Damage/Corner</cornerBL>
@@ -30,7 +30,7 @@
     <description>Instant travel between two portals.</description>
 	<drawerType>MapMeshAndRealTime</drawerType>
 	<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
-    <size>(3,2)</size>
+    <size>(3,3)</size>
     <costList>
       <Steel>500</Steel>
 	  <Gold>100</Gold>

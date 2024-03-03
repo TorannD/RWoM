@@ -1519,4 +1519,262 @@
 	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>    
   </BodyPartDef>
   
+  <!-- STRAW GOLEM -->
+  
+  <BodyPartDef>
+    <defName>Straw_Face</defName>
+    <label>face</label>
+    <hitPoints>20</hitPoints>
+    <skinCovered>false</skinCovered>
+    <canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>.5</permanentInjuryChanceFactor>
+	<frostbiteVulnerability>0</frostbiteVulnerability>
+    <beautyRelated>true</beautyRelated>
+	<socketed>false</socketed>
+	<bleedRate>0</bleedRate>
+    <tags>
+      <li>SightSource</li>
+      <li>EatingSource</li>
+      <li>TalkingSource</li>
+	  <li>HearingSource</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartGroupDef>
+    <defName>Straw_Arms</defName>
+    <label>arms</label>
+	<listOrder>101</listOrder>
+  </BodyPartGroupDef>
+  
+  <BodyPartDef>
+    <defName>Straw_Core</defName>
+    <label>straw golem core</label>
+    <hitPoints>20</hitPoints>
+	<skinCovered>false</skinCovered>
+	<solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>1</permanentInjuryChanceFactor>    
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Straw_SlotA</defName>
+    <label>straw core(a)</label>
+    <hitPoints>10</hitPoints>
+	<skinCovered>false</skinCovered>
+	<solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>    
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Straw_SlotB</defName>
+    <label>straw core(b)</label>
+    <hitPoints>10</hitPoints>
+	<skinCovered>false</skinCovered>
+	<solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>    
+  </BodyPartDef>
+  
+  <!-- WOOD GOLEM -->
+
+  <BodyPartDef>
+    <defName>TM_Wood_Body</defName>
+    <label>body</label>
+    <hitPoints>50</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+	<canScarify>false</canScarify>
+	<bleedRate>0</bleedRate>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>TM_Wood_Back</defName>
+    <label>back plate</label>
+    <hitPoints>50</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+	<canScarify>false</canScarify>
+	<bleedRate>0</bleedRate>
+  </BodyPartDef>
+  
+    <BodyPartDef>
+    <defName>TM_Wood_Chest</defName>
+    <label>chest plate</label>
+    <hitPoints>80</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>false</solid>
+	<bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>TM_Wood_Core</defName>
+    <label>magic core</label>
+    <hitPoints>10</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <skinCovered>false</skinCovered>
+	<frostbiteVulnerability>.1</frostbiteVulnerability>
+    <tags>
+      <li>BloodPumpingSource</li>
+      <li>BloodFiltrationSource</li>
+      <li>MetabolismSource</li>
+      <li>BreathingSource</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>TM_Wood_Focus</defName>
+    <label>awareness source</label>
+    <hitPoints>10</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <skinCovered>false</skinCovered>
+    <tags>
+      <li>ConsciousnessSource</li>
+      <li>SightSource</li>
+      <li>HearingSource</li>
+      <li>TalkingSource</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>TM_Wood_Reserves</defName>
+    <label>energy reserves</label>
+    <hitPoints>10</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <skinCovered>false</skinCovered>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Wood_SlotA</defName>
+    <label>wood core(a)</label>
+    <hitPoints>10</hitPoints>
+	<skinCovered>false</skinCovered>
+	<solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>    
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Wood_SlotB</defName>
+    <label>wood core(b)</label>
+    <hitPoints>10</hitPoints>
+	<skinCovered>false</skinCovered>
+	<solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>    
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>TM_Wood_Manipulator</defName>
+    <label>force projector</label>
+    <hitPoints>30</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+	<bleedRate>0</bleedRate>
+    <skinCovered>false</skinCovered>
+	<canScarify>false</canScarify>
+    <tags>
+      <li>ManipulationLimbCore</li>
+	  <li>ManipulationLimbSegment</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartGroupDef>
+    <defName>TM_Wood_Manipulator</defName>
+    <label>central force</label>
+	<listOrder>101</listOrder>
+  </BodyPartGroupDef>
+  
+  <BodyPartDef>
+    <defName>TM_Wood_Base</defName>
+    <label>movement base</label>
+    <hitPoints>40</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+	<bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <tags>
+      <li>MovingLimbCore</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartGroupDef>
+    <defName>TM_Wood_Base</defName>
+    <label>movement base</label>
+	<listOrder>102</listOrder>
+  </BodyPartGroupDef>
+  
+  <BodyPartDef>
+    <defName>TM_Silk_Core</defName>
+    <label>magic core</label>
+    <hitPoints>10</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <skinCovered>false</skinCovered>
+    <tags>
+      <li>BloodPumpingSource</li>
+      <li>BloodFiltrationSource</li>
+      <li>MetabolismSource</li>
+      <li>BreathingSource</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Silk_SlotA</defName>
+    <label>silk core(a)</label>
+    <hitPoints>10</hitPoints>
+	<skinCovered>false</skinCovered>
+	<solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>    
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Silk_SlotB</defName>
+    <label>silk core(b)</label>
+    <hitPoints>10</hitPoints>
+	<skinCovered>false</skinCovered>
+	<solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+	<canScarify>false</canScarify>
+    <canSuggestAmputation>false</canSuggestAmputation>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>    
+  </BodyPartDef>
+  
+  <BodyPartGroupDef>
+    <defName>TM_Silk_Arms</defName>
+    <label>arms</label>
+	<listOrder>101</listOrder>
+  </BodyPartGroupDef>
+  
 </Defs>

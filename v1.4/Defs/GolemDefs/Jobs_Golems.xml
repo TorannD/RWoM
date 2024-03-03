@@ -42,7 +42,7 @@
   <JobDef>
     <defName>JobDriver_FleshChop</defName>
     <driverClass>TorannMagic.Golems.JobDriver_FleshChop</driverClass>
-    <reportString>cutting plants</reportString>
+    <reportString>cutting plants and trees</reportString>
     <casualInterruptible>false</casualInterruptible>
   </JobDef>
   

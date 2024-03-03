@@ -404,6 +404,28 @@ namespace TorannMagic
             return true;
         }
 
+        [HarmonyPatch(typeof(RimWorld.JobGiver_Work), "PawnCanUseWorkGiver", null)]
+        public class Golem_NoDisabledWorkTypes_Patch
+        {
+            private static bool Prefix(RimWorld.JobGiver_Work __instance, Pawn pawn, WorkGiver giver, ref bool __result)
+            {
+                if (pawn is TMPawnGolem)
+                {
+                    try
+                    {
+                        __result = !ThingUtility.DestroyedOrNull(pawn) && pawn.Spawned && giver.MissingRequiredCapacity(pawn) == null && !giver.ShouldSkip(pawn, false);
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Warning("Golem caught error in PawnCanUseWorkGiver: Golem " + pawn.def.defName + " on WorkGiver '" + giver.def.defName + "', this exception thrown in a try_catch \n" + ex.ToString());
+                        
+                    }
+                    return false;
+                }
+                return true;
+            }
+        }
+
         [HarmonyPatch(typeof(SlaveRebellionUtility), "CanParticipateInSlaveRebellion", null)]
         public class Undead_NoSlaveRebellion_Patch
         {
@@ -2451,12 +2473,14 @@ namespace TorannMagic
         }), HarmonyPriority(10)] //go last to ensure cloaks draw over everything else
         public class DrawMesh_Cloaks_Patch
         {
-            public static bool Prefix(Mesh mesh, Vector3 loc, Quaternion quat, Material mat, bool drawNow)
+            public static bool Prefix(Mesh mesh, ref Vector3 loc, Quaternion quat, Material mat, bool drawNow)
             {
                 if (mat == null) return true;
-                if (!ModOptions.Constants.GetCloaks().Contains(mat)) return true;
-                //loc.y = ModOptions.Constants.GetCloaksNorth().Contains(mat) ? 8.75f : 8.17f;
-                loc.y = Array.IndexOf(ModOptions.Constants.GetCloaksNorth(), mat) != -1 ? 8.75f : 8.17f;
+                if (!ModOptions.Constants.GetCloaks().Contains(mat.mainTexture)) return true;
+                //Log.Message("apparel " + mat.mainTexture + " y=" + loc.y);
+                loc.y = ModOptions.Constants.GetCloaksNorth().Contains(mat.mainTexture) ? 8.5375f : 8.535f;
+
+                //loc.y = Array.IndexOf(ModOptions.Constants.GetCloaksNorth(), mat) != -1 ? 8.95f : 8.37f;
                 if (drawNow)
                 {
                     mat.SetPass(0);
@@ -2466,9 +2490,27 @@ namespace TorannMagic
                 {
                     Graphics.DrawMesh(mesh, loc, quat, mat, 0);
                 }
-                return false;
+                return true;
             }
         }
+
+        //testing purposes
+        //[HarmonyPatch(typeof(Graphics), "DrawMesh", new Type[]
+        //{
+        //    typeof(Mesh),
+        //    typeof(Vector3),
+        //    typeof(Quaternion),
+        //    typeof(Material),
+        //    typeof(int)
+        //}), HarmonyPriority(10)] //go last to ensure cloaks draw over everything else
+        //public class DrawMesh_Cloaks_Patch2
+        //{
+        //    public static bool Prefix(Mesh mesh, Vector3 position, Quaternion rotation, Material material, int layer)
+        //    {
+        //        Log.Message("" + material.mainTexture + " layer: " + layer + " loc.y: " + position.y);
+        //        return true;
+        //    }
+        //}
 
         //code crashes linux and mac when a pawn dies
         //[HarmonyPatch(typeof(DeathActionWorker_Simple), "PawnDied", null)]
@@ -3243,14 +3285,18 @@ namespace TorannMagic
 
         public static void Pawn_Gizmo_TogglePatch(ref IEnumerable<Gizmo> __result, ref Pawn __instance)
         {
-            if (!(__instance != null && __result != null))
-            {
-                return;
-            }
-            if (__instance.Faction != Faction.OfPlayer)
-            {
-                return;
-            }
+            if (__instance == null) return;
+            if (__result == null) return;
+            if (__instance.Faction != Faction.OfPlayer) return;
+            if (!__instance.Spawned) return;
+            //if (!(__instance != null && __result != null))
+            //{
+            //    return;
+            //}
+            //if (__instance.Faction != Faction.OfPlayer)
+            //{
+            //    return;
+            //}
 
             if (__instance.story != null && __instance.story.traits != null && __instance.RaceProps.Humanlike)
             {
@@ -3827,6 +3873,12 @@ namespace TorannMagic
                         }
                         if (p.health != null && p.health.hediffSet != null)
                         {
+                            if (p.health.hediffSet.HasHediff(TorannMagicDefOf.TM_UndeadShroudHD))
+                            {
+                                Hediff hediff = p.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_UndeadShroudHD);
+                                dinfo.SetAmount(Mathf.RoundToInt(dinfo.Amount * (1f + hediff.Severity)));
+                            }
+
                             if (p.health.hediffSet.HasHediff(TorannMagicDefOf.TM_MindOverBodyHD) && dinfo.Def == DamageDefOf.Blunt && dinfo.Weapon != null && dinfo.Weapon.defName == "Human")
                             {
                                 Hediff hediff = p.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_MindOverBodyHD);
@@ -4779,15 +4831,19 @@ namespace TorannMagic
         [HarmonyPatch(typeof(SkillRecord), "Learn", null)]
         public static class SkillRecord_Patch
         {
-            public static FieldInfo pawn = typeof(SkillRecord).GetField("pawn", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.GetField);
-            private static bool Prefix(SkillRecord __instance)
+            //public static FieldInfo pawn = typeof(SkillRecord).GetField("pawn", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.GetField);
+            private static bool Prefix(SkillRecord __instance, Pawn ___pawn)
             {
-                Traverse traverse = Traverse.Create(__instance);
-                Pawn pawn = (Pawn)SkillRecord_Patch.pawn.GetValue(__instance);
+                //Traverse traverse = Traverse.Create(__instance);
+                //Pawn pawn = (Pawn)SkillRecord_Patch.pawn.GetValue(__instance);
 
-                if (pawn != null)
+                if (___pawn != null)
                 {
-                    if (pawn.story.traits.HasTrait(TorannMagicDefOf.Undead))
+                    if (___pawn.story.traits.HasTrait(TorannMagicDefOf.Undead))
+                    {
+                        return false;
+                    }
+                    if(___pawn is TMPawnGolem)
                     {
                         return false;
                     }
@@ -6441,7 +6497,7 @@ namespace TorannMagic
         {
             public static void Postfix(Vector3 clickPos, Pawn pawn, List<FloatMenuOption> opts, bool drafted)
             {
-                JobGiver_Work jobGiver_Work = pawn.thinker.TryGetMainTreeThinkNode<JobGiver_Work>();
+                RimWorld.JobGiver_Work jobGiver_Work = pawn.thinker.TryGetMainTreeThinkNode<RimWorld.JobGiver_Work>();
                 if (jobGiver_Work != null)
                 {
                     foreach (Thing item in pawn.Map.thingGrid.ThingsAt(clickPos.ToIntVec3()))

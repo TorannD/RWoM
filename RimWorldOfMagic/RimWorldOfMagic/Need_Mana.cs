@@ -487,8 +487,14 @@ namespace TorannMagic
                             {
                                 orbReduction = .75f;
                             }
+                            float shroudMultiplier = 1f;
+                            if(pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_ShroudOfUndeathHD))
+                            {
+                                Hediff hd = pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_ShroudOfUndeathHD);
+                                shroudMultiplier = 1f - hd.Severity;
+                            }
                             
-                            necroReduction = (((0.0012f * (.15f - (.15f * (.1f * eff.level))) * undeadCount) * orbReduction) * ModOptions.Settings.Instance.undeadUpkeepMultiplier);
+                            necroReduction = (((0.0012f * (.15f - (.15f * (.1f * eff.level))) * undeadCount) * orbReduction) * ModOptions.Settings.Instance.undeadUpkeepMultiplier * shroudMultiplier);
                             this.drainUndead = necroReduction;
                             amount -= necroReduction;
                             //Log.Message("" + pawn.LabelShort + " is 1 of " + necroCount + " contributing necros and had necro reduction of " + necroReduction);

@@ -68,10 +68,10 @@
 	
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
 		<defName>TM_Golem_Flesh_LeftArmCleaver</defName>
-		<label>left arm cleaver</label>
-		<description>Allows the golem to harvest plants and enables an AoE cleave attack.
+		<label>left arm (harvest) cleaver</label>
+		<description>Harvest plants
 		
-Cleave
+AoE Cleave
 Rage Cost:	15
 Damage:	15
 Splash:	2c</description>
@@ -112,10 +112,10 @@ Splash:	2c</description>
 	
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
 		<defName>TM_Golem_Flesh_RightArmCleaver</defName>
-		<label>right arm cleaver</label>
-		<description>Allows the golem to cut plants and enables an AoE cleave attack.
+		<label>right arm (chop) cleaver</label>
+		<description>Cut trees
 
-Cleave
+AoE Cleave
 Rage Cost:	15
 Damage:	15
 Splash:	2c</description>

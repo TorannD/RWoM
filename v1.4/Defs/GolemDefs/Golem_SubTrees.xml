@@ -96,6 +96,33 @@
             </li>
           </subNodes>
         </li>
+		<li Class="ThinkNode_ConditionalPawnKind">
+          <pawnKind>TM_StrawGolemK</pawnKind>
+          <subNodes>
+            <li Class="ThinkNode_Subtree">
+              <treeDef>TM_Golem_StrawBehavior</treeDef>
+              <leaveJoinableLordIfIssuesJob>true</leaveJoinableLordIfIssuesJob>
+            </li>
+          </subNodes>
+        </li>
+		<li Class="ThinkNode_ConditionalPawnKind">
+          <pawnKind>TM_WoodGolemK</pawnKind>
+          <subNodes>
+            <li Class="ThinkNode_Subtree">
+              <treeDef>TM_Golem_WoodBehavior</treeDef>
+              <leaveJoinableLordIfIssuesJob>true</leaveJoinableLordIfIssuesJob>
+            </li>
+          </subNodes>
+        </li>
+		<li Class="ThinkNode_ConditionalPawnKind">
+          <pawnKind>TM_SilkGolemK</pawnKind>
+          <subNodes>
+            <li Class="ThinkNode_Subtree">
+              <treeDef>TM_Golem_SilkBehavior</treeDef>
+              <leaveJoinableLordIfIssuesJob>true</leaveJoinableLordIfIssuesJob>
+            </li>
+          </subNodes>
+        </li>
       </subNodes>
     </thinkRoot>
   </ThinkTreeDef>
@@ -169,6 +196,58 @@
       <subNodes>
 		<li Class="TorannMagic.Golems.JobGiver_GolemGetEnergy"/>
 		<li Class="TorannMagic.Golems.JobGiver_GolemJobs"/>
+		<li Class="JobGiver_Haul" />
+		<li Class="TorannMagic.JobGiver_AIClean" />
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+  
+  <!--============= Main straw golem behavior ============-->
+  
+  <ThinkTreeDef>
+    <defName>TM_Golem_StrawBehavior</defName>
+    <thinkRoot Class="ThinkNode_Tagger">
+      <tagToGive>Misc</tagToGive> <!-- note that JobGiver_Work will assign its own tag -->
+      <subNodes>
+		<li Class="TorannMagic.Golems.JobGiver_GolemGetEnergy"/>
+		<li Class="TorannMagic.Golems.JobGiver_GolemJobs"/>
+		<li Class="TorannMagic.Golems.JobGiver_Work"/>
+		<li Class="JobGiver_Haul" />
+		<li Class="TorannMagic.JobGiver_AIClean" />
+		<li Class="TorannMagic.JobGiver_AIClearPollution" />
+		<li Class="TorannMagic.JobGiver_AIClearSnow" />
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+  
+    <!--============= Main wood golem behavior ============-->
+  
+  <ThinkTreeDef>
+    <defName>TM_Golem_WoodBehavior</defName>
+    <thinkRoot Class="ThinkNode_Tagger">
+      <tagToGive>Misc</tagToGive> <!-- note that JobGiver_Work will assign its own tag -->
+      <subNodes>
+		<li Class="TorannMagic.Golems.JobGiver_GolemGetEnergy"/>
+		<li Class="TorannMagic.Golems.JobGiver_GolemJobs"/>
+		<li Class="TorannMagic.Golems.JobGiver_Work"/>
+		<li Class="JobGiver_Haul" />
+		<li Class="TorannMagic.JobGiver_AIClean" />
+		<li Class="TorannMagic.JobGiver_AIClearPollution" />
+		<li Class="TorannMagic.JobGiver_AIClearSnow" />
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+  
+      <!--============= Main silk golem behavior ============-->
+  
+  <ThinkTreeDef>
+    <defName>TM_Golem_SilkBehavior</defName>
+    <thinkRoot Class="ThinkNode_Tagger">
+      <tagToGive>Misc</tagToGive> <!-- note that JobGiver_Work will assign its own tag -->
+      <subNodes>
+		<li Class="TorannMagic.Golems.JobGiver_GolemGetEnergy"/>
+		<li Class="TorannMagic.Golems.JobGiver_GolemJobs"/>
+		<li Class="TorannMagic.Golems.JobGiver_Work"/>
 		<li Class="JobGiver_Haul" />
 		<li Class="TorannMagic.JobGiver_AIClean" />
       </subNodes>

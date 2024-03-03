@@ -16,6 +16,7 @@ namespace TorannMagic.Golems
     {
         private List<TM_GolemAbilityDef> jobAbilities = null;
         IEnumerable<Thing> workThings;
+        IEnumerable<LocalTargetInfo> workTargets;
 
         public override ThinkNode DeepCopy(bool resolve = true)
         {
@@ -108,8 +109,10 @@ namespace TorannMagic.Golems
                         return JobMaker.MakeJob(TorannMagicDefOf.JobDriver_FleshChop, jobThing);
                     }
                 }
-                return null;                               
+                return null;
             }
+
+
             return null;
         }
     } 

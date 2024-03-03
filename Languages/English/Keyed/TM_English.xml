@@ -2212,6 +2212,7 @@ Level 3: all 4 effects</TM_CombatDrugs_pwr_desc>
 <TM_GolemDoScreenShakeDesc>When disabled, golems will not cause the screen to shake when they activate or deactivate.</TM_GolemDoScreenShakeDesc>
 <TM_EndSymbiosis>End Symbiosis</TM_EndSymbiosis>
 <TM_EndSymbiosisDesc>The empath detaches their will from the host and returns to his or her body. This option is only available if the host is near the symbiote.</TM_EndSymbiosisDesc>
+<TM_GolemAssignArea>Restricts golem to this area</TM_GolemAssignArea>
 <!-- ========== Building Menu's ========== -->
 
 <TM_SelectPortalDestination>Activate Portal</TM_SelectPortalDestination>
@@ -2242,6 +2243,7 @@ Level 3: all 4 effects</TM_CombatDrugs_pwr_desc>
 <TM_GolemAbilities>{0}'s Abilities</TM_GolemAbilities>
 <TM_GolemAbilitiesButton>Abilities</TM_GolemAbilitiesButton>
 <TM_GolemAbilityEnabledDesc>Toggles use of {0}: {1}</TM_GolemAbilityEnabledDesc>
+<TM_GolemWorkTypeEnabledDesc>Toggles use of {0}</TM_GolemWorkTypeEnabledDesc>
 <TM_GolemShowDormant>Show dormant frame</TM_GolemShowDormant>
 <TM_GolemShowDormantDesc>Shows a frame over this golem's dormant position. Use the mod options menu to toggle this for all golems.</TM_GolemShowDormantDesc>
 

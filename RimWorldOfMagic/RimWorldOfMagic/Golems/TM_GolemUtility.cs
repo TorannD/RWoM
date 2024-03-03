@@ -13,6 +13,7 @@ using TorannMagic.Enchantment;
 using System.Text;
 using TorannMagic.TMDefs;
 using TorannMagic.ModOptions;
+using HarmonyLib;
 
 namespace TorannMagic.Golems
 {
@@ -97,7 +98,7 @@ namespace TorannMagic.Golems
             }
             if (thing.Stuff != null)
             {
-                Log.Message("stuff defname is " + thing.Stuff.defName);
+                //Log.Message("stuff defname is " + thing.Stuff.defName);
                 if (thing.Stuff.defName == "BlocksSandstone")
                 {
                     pkd = TorannMagicDefOf.TM_SandstoneGolemK;
@@ -255,6 +256,116 @@ namespace TorannMagic.Golems
                 return "Never";
             }
             return pct.ToString("P2");
+        }
+
+        public static void InitializeWorksettings(TMPawnGolem pg)
+        {
+            pg.workSettings = new Pawn_WorkSettings();            
+            if (pg.GolemDef.golemWorkTypes == null) return;
+            if (pg.GolemDef.golemWorkTypes.Count <= 0) return;
+            if(pg.skills == null) pg.skills = new Pawn_SkillTracker(pg);
+
+            DefMap<WorkTypeDef, int> golemPriorities = Traverse.Create(pg.workSettings).Field(name: "priorities").GetValue<DefMap<WorkTypeDef, int>>();
+            if(golemPriorities == null)
+            {
+                golemPriorities = new DefMap<WorkTypeDef, int>();
+            }
+            golemPriorities.SetAll(0);
+            int num = 0;
+            foreach (WorkTypeDef item in DefDatabase<WorkTypeDef>.AllDefs.Where(delegate (WorkTypeDef w)
+            {
+                if (!w.alwaysStartActive)
+                {
+                    return !pg.WorkTypeIsDisabled(w);
+                }
+                return false;
+            }).OrderByDescending(delegate (WorkTypeDef w)
+            {
+                if (pg.skills == null)
+                {
+                    return 1f;
+                }
+                return pg.skills.AverageOfRelevantSkillsFor(w);
+            }))
+            {
+                golemPriorities[item] = 3;
+                num++;
+                if (num >= 6)
+                {
+                    break;
+                }
+            }
+            foreach (WorkTypeDef item2 in from w in DefDatabase<WorkTypeDef>.AllDefs
+                                          where w.alwaysStartActive
+                                          select w)
+            {
+                if (!pg.WorkTypeIsDisabled(item2))
+                {
+                    golemPriorities[item2] = 3;
+                }
+            }
+            List<WorkTypeDef> disabledWorkTypes = pg.GetDisabledWorkTypes();
+            for (int j = 0; j < disabledWorkTypes.Count; j++)
+            {
+                golemPriorities[j] = 0;
+            }
+
+
+
+
+            //DefMap<WorkTypeDef, int> golemPriorities = new DefMap<WorkTypeDef, int>();
+            //golemPriorities.SetAll(0);
+
+            //IEnumerable<WorkTypeDef> wtds = from def in DefDatabase<WorkTypeDef>.AllDefs
+            //                                where (true)
+            //                                select def;
+
+            //foreach (WorkTypeDef wtd in wtds)
+            //{
+            //    golemPriorities[wtd] = 0;
+            //}
+
+            //foreach (TM_GolemDef.GolemWorkTypes gwt in pg.GolemDef.golemWorkTypes)
+            //{
+            //    golemPriorities[gwt.workTypeDef] = gwt.priority;
+            //}
+
+            //Traverse.Create(pg.workSettings).Field(name: "priorities").SetValue(golemPriorities);
+            //pg.workSettings.EnableAndInitialize();
+
+            //try
+            //{
+            //    pg.workSettings.EnableAndInitialize();
+            //}
+            //catch (NullReferenceException ex)
+            //{
+            //    Log.Message("failed to initialize work settings for " + pg.Golem.GolemName);
+            //    return;
+            //}
+
+            //foreach (WorkTypeDef wtd in wtds)
+            //{
+            //    pg.workSettings.SetPriority(wtd, 0);
+            //}
+
+            //foreach (TM_GolemDef.GolemWorkTypes gwt in pg.GolemDef.golemWorkTypes)
+            //{
+            //    pg.workSettings.SetPriority(gwt.workTypeDef, gwt.priority);
+            //}
+
+            //testing/checking
+            //foreach (WorkTypeDef wtd in DefDatabase<WorkTypeDef>.AllDefs)
+            //{
+            //    Log.Message("golem work setting " + wtd.defName + " has priority of " + golemPriorities[wtd]);
+            //}
+            Traverse.Create(pg.workSettings).Field(name: "priorities").SetValue(golemPriorities);
+            //Log.Message("trying to get priority for work type of growing " + pg.workSettings.GetPriority(WorkTypeDefOf.Growing));
+        }
+
+        public static void UpdateWorkSkills(TMPawnGolem pg)
+        {
+            if (pg.skills == null) pg.skills = new Pawn_SkillTracker(pg);
+            //Log.Message("trying to get priority for work type of growing " + pg.workSettings.GetPriority(WorkTypeDefOf.Growing) + " + with skill " + pg.skills.GetSkill(SkillDefOf.Plants).Level);
         }
     }
 }

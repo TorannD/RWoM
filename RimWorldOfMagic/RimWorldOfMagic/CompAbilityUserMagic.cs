@@ -4404,7 +4404,6 @@ namespace TorannMagic
                     }
                 }
             }
-
             if (this.Pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_SyrriumSenseHD"), false))
             {
                 adjustedManaCost = adjustedManaCost * .9f;
@@ -4432,8 +4431,7 @@ namespace TorannMagic
             {
                 adjustedManaCost = adjustedManaCost * 1.2f;
             }
-
-            if(this.Pawn.Map.gameConditionManager.ConditionIsActive(TorannMagicDefOf.TM_ManaStorm))
+            if (this.Pawn.Map != null && this.Pawn.Map.gameConditionManager.ConditionIsActive(TorannMagicDefOf.TM_ManaStorm))
             {
                 return Mathf.Max(adjustedManaCost *.5f, 0f);
             }

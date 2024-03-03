@@ -1187,6 +1187,8 @@ namespace TorannMagic
         public static HediffDef TM_FrailtyHD;
         public static TMAbilityDef TM_HeatShield;
         public static HediffDef TM_HeatShieldHD;
+        public static HediffDef TM_ShroudOfUndeathHD;
+        public static HediffDef TM_UndeadShroudHD;
 
         public static HediffDef TM_Sight;
         public static HediffDef TM_Breathing;
@@ -1430,6 +1432,7 @@ namespace TorannMagic
         public static JobDef JobDriver_FleshChop;
         public static JobDef JobDriver_GolemSelfTend;
         public static JobDef JobDriver_GolemAbilityJob;
+        //public static JobDef JobDriver_GolemPlant; may be removed for generic work jobs
 
         //Things
         public static ThingDef RawMagicyte;

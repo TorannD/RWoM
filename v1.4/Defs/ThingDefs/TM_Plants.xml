@@ -260,6 +260,7 @@ The claims that pomanasyrrium grant insight and clarity is disregarded by most a
       <graphicData>
 		  <texPath>Items/Syrrium</texPath>
 		  <graphicClass>Graphic_StackCount</graphicClass>
+		  <drawSize>(.8,.8)</drawSize>
 	  </graphicData>
 	  <rotatable>false</rotatable>
 	  <stackLimit>50</stackLimit>

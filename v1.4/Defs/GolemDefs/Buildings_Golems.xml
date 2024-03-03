@@ -361,7 +361,7 @@ While dormant, the golem may be modified or upgraded. The hollow golem recharges
     <label>dormant stone golem</label>
     <description>Stone golems apply the basic principles of golemancy and are simple constructs of rock and stone fashioned into humanoid shape. Though simple and inexpensive, the stone golem is unrefined and relies heavily on magical runes for mobility. The material weight and reliance on magical power for animation make the stone golem slow, but difficult to destroy. In its dormant form, the stone golem can be enhanced with a rock compactor, which is an automated process that crushes rock and shapes it into bricks. This process requires energy and the stone chunks to be deposited into the golem.
 	
-While dormant, the golem may be modified or upgraded. The hollow golem recharges energy slowly on its own. This golem takes up to 10 seconds to activate.</description>
+While dormant, the golem may be modified or upgraded. The stone golem recharges energy slowly on its own. This golem takes up to 10 seconds to activate.</description>
     <castEdgeShadows>true</castEdgeShadows>
 	<interactionCellOffset>(0,0,-1)</interactionCellOffset>
     <graphicData>
@@ -428,7 +428,7 @@ While dormant, the golem may be modified or upgraded. The hollow golem recharges
   
   <ThingDef ParentName="TM_UnfinishedGolemBase">
     <defName>TM_UnfinishedStoneGolem</defName>
-    <label>unfinished flesh golem</label>
+    <label>unfinished stone golem</label>
     <description>An unfinished stone golem.</description>
 	<statBases>
       <Flammability>0</Flammability>
@@ -443,8 +443,8 @@ While dormant, the golem may be modified or upgraded. The hollow golem recharges
   
   <ThingDef ParentName="TM_UnfinishedGolemBase">
     <defName>TM_UnfinishedStoneGolemUpgrade</defName>
-    <label>unfinished hollow golem upgrade</label>
-    <description>An unfinished hollow golem upgrade.</description>
+    <label>unfinished stone golem upgrade</label>
+    <description>An unfinished stone golem upgrade.</description>
 	<statBases>
       <Flammability>0</Flammability>
     </statBases>
@@ -461,7 +461,7 @@ While dormant, the golem may be modified or upgraded. The hollow golem recharges
     <label>dormant maharal golem</label>
     <description>Maharal golems apply the basic principles of golemancy and are simple constructs of clay wrapped in leather. The maharal golem is capable of basic tasks and defense. In its dormant form, the maharal golem can be enhanced to provide low amounts of heat and energy.
 	
-While dormant, the golem may be modified or upgraded. The hollow golem recharges energy slowly on its own. This golem takes up to 5 seconds to activate.</description>
+While dormant, the golem may be modified or upgraded. The maharal golem recharges energy slowly on its own. This golem takes up to 5 seconds to activate.</description>
     <castEdgeShadows>true</castEdgeShadows>
 	<interactionCellOffset>(0,0,-1)</interactionCellOffset>
     <graphicData>
@@ -524,7 +524,7 @@ While dormant, the golem may be modified or upgraded. The hollow golem recharges
   
   <ThingDef ParentName="TM_UnfinishedGolemBase">
     <defName>TM_UnfinishedMaharalGolem</defName>
-    <label>unfinished flesh golem</label>
+    <label>unfinished maharal golem</label>
     <description>An unfinished maharal golem.</description>
 	<statBases>
       <Flammability>.5</Flammability>
@@ -539,8 +539,8 @@ While dormant, the golem may be modified or upgraded. The hollow golem recharges
   
   <ThingDef ParentName="TM_UnfinishedGolemBase">
     <defName>TM_UnfinishedMaharalGolemUpgrade</defName>
-    <label>unfinished hollow golem upgrade</label>
-    <description>An unfinished hollow golem upgrade.</description>
+    <label>unfinished maharal golem upgrade</label>
+    <description>An unfinished maharal golem upgrade.</description>
 	<statBases>
       <Flammability>.5</Flammability>
     </statBases>
@@ -548,6 +548,317 @@ While dormant, the golem may be modified or upgraded. The hollow golem recharges
       <texPath>Things/Item/Unfinished/UnfinishedApparel</texPath>
       <graphicClass>Graphic_Single</graphicClass>	
 	  <drawSize>(.6,.6)</drawSize>	  
+    </graphicData>
+	<stuffCategories Inherit="false" />
+  </ThingDef>
+  
+  
+  <ThingDef ParentName="TM_GolemBuildingBase">
+    <defName>TM_StrawGolem_Workstation</defName>
+	<thingClass>TorannMagic.Golems.Building_TMGolemStraw</thingClass>
+    <label>dormant straw golem</label>
+    <description>Straw golems apply the basic principles of golemancy and are simple constructs of wood and hay fashioned into humanoid shape. Simple and inexpensive, the straw golem is at home in the fields, able to seed new crops. Its light weight and flexible construction material make it an excellent golem for keeping the colony free of debris, but is extremely flammable. The straw golem increases nearby plant growth in both active and dormant forms
+	
+While dormant, the golem may be modified or upgraded. The straw golem recharges energy slowly on its own. This golem takes up to 3 seconds to activate.</description>
+    <castEdgeShadows>true</castEdgeShadows>
+	<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <graphicData>
+      <texPath>Golems/Straw/Straw_Workstation</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+	  <shaderType>CutoutComplex</shaderType>
+      <drawSize>(1.25,1.25)</drawSize>
+    </graphicData>
+    <fillPercent>0.5</fillPercent>
+    <rotatable>true</rotatable>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>  
+      <Mass>25</Mass>
+      <Beauty>-15</Beauty>
+      <WorkToMake>1000</WorkToMake>
+	  <Flammability>2.0</Flammability>
+    </statBases>
+	<recipeMaker>
+      <unfinishedThingDef>TM_UnfinishedStrawGolem</unfinishedThingDef>
+      <recipeUsers>
+        <li>CraftingSpot</li>
+	  </recipeUsers>    
+<!-- 	  <researchPrerequisite>TM_GolemCraftRD</researchPrerequisite> -->
+      <skillRequirements>
+        <Construction>2</Construction>
+      </skillRequirements>
+	  <workSkill>Construction</workSkill>
+	  <defaultIngredientFilter>
+        <disallowedThingDefs>
+          <li>Gold</li>
+          <li>Silver</li>
+          <li>Plasteel</li>
+          <li>Jade</li>
+          <li>Uranium</li>
+        </disallowedThingDefs>
+      </defaultIngredientFilter>
+    </recipeMaker>
+	<costList>
+	  <Hay>100</Hay>
+	  <RawMagicyte>50</RawMagicyte>
+	  <Leather_Light>20</Leather_Light>
+	  <WoodLog>20</WoodLog>
+    </costList>
+	<comps>
+      <li Class="TorannMagic.Golems.CompProperties_GolemEnergyHandler">
+        <storedEnergyMax>300</storedEnergyMax>
+		<storedEnergyMaxUpgradeIncrease>100</storedEnergyMaxUpgradeIncrease>
+		<storedEnergyMaxUpgrades>3</storedEnergyMaxUpgrades>
+        <conversionEfficiency>0.3</conversionEfficiency>
+		<conversionEfficiencyUpgradeIncrease>.06</conversionEfficiencyUpgradeIncrease>
+		<conversionEfficiencyMaxUpgrades>5</conversionEfficiencyMaxUpgrades>
+		<selfChargePerHour>20</selfChargePerHour>
+		<selfChargeUpgradeFactor>.2</selfChargeUpgradeFactor>
+        <shortCircuitInRain>false</shortCircuitInRain>
+        <transmitsPower>false</transmitsPower>
+		<energyColor>(.6, .6, 0)</energyColor>
+		<energyBarOffsetX>-.3</energyBarOffsetX>
+		<energyBarOffsetY>-.3</energyBarOffsetY>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="TM_UnfinishedGolemBase">
+    <defName>TM_UnfinishedStrawGolem</defName>
+    <label>unfinished straw golem</label>
+    <description>An unfinished straw golem.</description>
+	<statBases>
+      <Flammability>2</Flammability>
+    </statBases>
+    <graphicData>
+      <texPath>Golems/Straw/UnfinishedStrawGolem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>	
+	  <drawSize>(.7,.7)</drawSize>	  
+    </graphicData>
+	<stuffCategories Inherit="false" />
+  </ThingDef>
+  
+  <ThingDef ParentName="TM_UnfinishedGolemBase">
+    <defName>TM_UnfinishedStrawGolemUpgrade</defName>
+    <label>unfinished straw golem upgrade</label>
+    <description>An unfinished straw golem upgrade.</description>
+	<statBases>
+      <Flammability>0</Flammability>
+    </statBases>
+    <graphicData>
+      <texPath>Golems/Straw/UnfinishedStrawGolem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>	
+	  <drawSize>(.6,.6)</drawSize>	  
+    </graphicData>
+	<stuffCategories Inherit="false" />
+  </ThingDef>
+  
+  
+  
+  <ThingDef ParentName="TM_GolemBuildingBase">
+    <defName>TM_WoodGolem_Workstation</defName>
+    <label>dormant wood golem</label>
+    <description>Wood golems apply the basic principles of golemancy and are simple constructs of wood, stone, and steel fashioned into a hollowed spherical shape. The wood golem's frame encases a magical core. The wood golem is able to perform basic crafting, animal care, cooking, and drug synthesis. The wood golem's simple and inexpensive construction provide it to fill many roles in the early stages of a colony, but it is inefficient and easily destroyed.
+	
+While dormant, the golem may be modified or upgraded. The wood golem recharges energy slowly on its own. This golem takes up to 4 seconds to activate.</description>
+    <castEdgeShadows>true</castEdgeShadows>
+	<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <graphicData>
+      <texPath>Golems/Wood/Wood_Workstation</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+	  <shaderType>CutoutComplex</shaderType>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <fillPercent>0.5</fillPercent>
+    <rotatable>true</rotatable>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>  
+      <Mass>100</Mass>
+      <Beauty>-10</Beauty>
+      <WorkToMake>2000</WorkToMake>
+	  <Flammability>2.0</Flammability>
+    </statBases>
+	<recipeMaker>
+      <unfinishedThingDef>TM_UnfinishedWoodGolem</unfinishedThingDef>
+      <recipeUsers>
+        <li>CraftingSpot</li>
+	  </recipeUsers>    
+<!-- 	  <researchPrerequisite>TM_GolemCraftRD</researchPrerequisite> -->
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+	  <workSkill>Crafting</workSkill>
+	  <defaultIngredientFilter>
+        <disallowedThingDefs>
+          <li>Gold</li>
+          <li>Silver</li>
+          <li>Plasteel</li>
+          <li>Jade</li>
+          <li>Uranium</li>
+        </disallowedThingDefs>
+      </defaultIngredientFilter>
+    </recipeMaker>
+	<costList>
+	  <Steel>20</Steel>
+	  <RawMagicyte>150</RawMagicyte>
+    </costList>
+	<stuffCategories>
+      <li>Woody</li>
+    </stuffCategories>
+    <costStuffCount>150</costStuffCount>
+	<comps>
+      <li Class="TorannMagic.Golems.CompProperties_GolemEnergyHandler">
+        <storedEnergyMax>400</storedEnergyMax>
+		<storedEnergyMaxUpgradeIncrease>100</storedEnergyMaxUpgradeIncrease>
+		<storedEnergyMaxUpgrades>3</storedEnergyMaxUpgrades>
+        <conversionEfficiency>0.25</conversionEfficiency>
+		<conversionEfficiencyUpgradeIncrease>.05</conversionEfficiencyUpgradeIncrease>
+		<conversionEfficiencyMaxUpgrades>5</conversionEfficiencyMaxUpgrades>
+		<selfChargePerHour>25</selfChargePerHour>
+		<selfChargeUpgradeFactor>.15</selfChargeUpgradeFactor>
+        <shortCircuitInRain>false</shortCircuitInRain>
+        <transmitsPower>false</transmitsPower>
+		<energyColor>(0, .2, .6)</energyColor>
+		<energyBarOffsetX>0</energyBarOffsetX>
+		<energyBarOffsetY>.1</energyBarOffsetY>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="TM_UnfinishedGolemBase">
+    <defName>TM_UnfinishedWoodGolem</defName>
+    <label>unfinished wood golem</label>
+    <description>An unfinished wood golem.</description>
+	<statBases>
+      <Flammability>2</Flammability>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Item/Unfinished/UnfinishedSculpture</texPath>
+      <graphicClass>Graphic_Single</graphicClass>	
+	  <drawSize>(.7,.7)</drawSize>	  
+    </graphicData>
+	<stuffCategories Inherit="false" />
+  </ThingDef>
+  
+  <ThingDef ParentName="TM_UnfinishedGolemBase">
+    <defName>TM_UnfinishedWoodGolemUpgrade</defName>
+    <label>unfinished wood golem upgrade</label>
+    <description>An unfinished wood golem upgrade.</description>
+	<statBases>
+      <Flammability>0</Flammability>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Item/Unfinished/UnfinishedSculpture</texPath>
+      <graphicClass>Graphic_Single</graphicClass>	
+	  <drawSize>(.5,.5)</drawSize>	  
+    </graphicData>
+	<stuffCategories Inherit="false" />
+  </ThingDef>
+  
+  
+  <ThingDef ParentName="TM_GolemBuildingBase">
+    <defName>TM_SilkGolem_Workstation</defName>
+    <label>dormant silk golem</label>
+    <description>Silk golems apply the basic principles of golemancy and are simple constructs of cloth and silk that makes their form undefined yet pliable. The silk golem's main function is wardening and social tasks, but their unprotected form makes them a poor choice for hard labor or combat.
+	
+While dormant, the golem may be modified or upgraded. The silk golem recharges energy slowly on its own. This golem takes up to 2 seconds to activate.</description>
+    <castEdgeShadows>false</castEdgeShadows>
+	<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <graphicData>
+      <texPath>Golems/Silk/Silk_Workstation</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+	  <shaderType>CutoutComplex</shaderType>
+      <drawSize>(1.5,1.5)</drawSize>
+	        <shadowData>
+        <volume>(.15, 0.375, .18)</volume>
+        <offset>(0,0,-0.12)</offset>
+      </shadowData>
+    </graphicData>
+    <fillPercent>0.5</fillPercent>
+    <rotatable>true</rotatable>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>  
+      <Mass>30</Mass>
+      <Beauty>0</Beauty>
+      <WorkToMake>2000</WorkToMake>
+	  <Flammability>2.0</Flammability>
+    </statBases>
+	<recipeMaker>
+      <unfinishedThingDef>TM_UnfinishedSilkGolem</unfinishedThingDef>
+      <recipeUsers>
+        <li>HandTailoringBench</li>
+		<li>ElectricTailoringBench</li>
+	  </recipeUsers>    
+<!-- 	  <researchPrerequisite>TM_GolemCraftRD</researchPrerequisite> -->
+      <skillRequirements>
+        <Crafting>2</Crafting>
+      </skillRequirements>
+	  <workSkill>Crafting</workSkill>
+	  <defaultIngredientFilter>
+        <disallowedThingDefs>
+          <li>Gold</li>
+          <li>Silver</li>
+          <li>Plasteel</li>
+          <li>Jade</li>
+          <li>Uranium</li>
+        </disallowedThingDefs>
+      </defaultIngredientFilter>
+    </recipeMaker>
+	<costList>
+	  <Cloth>100</Cloth>
+	  <RawMagicyte>120</RawMagicyte>
+    </costList>
+	<stuffCategories>
+      <li>Fabric</li>
+    </stuffCategories>
+    <costStuffCount>150</costStuffCount>
+	<comps>
+      <li Class="TorannMagic.Golems.CompProperties_GolemEnergyHandler">
+        <storedEnergyMax>300</storedEnergyMax>
+		<storedEnergyMaxUpgradeIncrease>100</storedEnergyMaxUpgradeIncrease>
+		<storedEnergyMaxUpgrades>3</storedEnergyMaxUpgrades>
+        <conversionEfficiency>0.4</conversionEfficiency>
+		<conversionEfficiencyUpgradeIncrease>.08</conversionEfficiencyUpgradeIncrease>
+		<conversionEfficiencyMaxUpgrades>5</conversionEfficiencyMaxUpgrades>
+		<selfChargePerHour>20</selfChargePerHour>
+		<selfChargeUpgradeFactor>.1</selfChargeUpgradeFactor>
+        <shortCircuitInRain>false</shortCircuitInRain>
+        <transmitsPower>false</transmitsPower>
+		<energyColor>(0, .8, 0)</energyColor>
+		<energyBarOffsetX>-.22</energyBarOffsetX>
+		<energyBarOffsetY>-.33</energyBarOffsetY>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="TM_UnfinishedGolemBase">
+    <defName>TM_UnfinishedSilkGolem</defName>
+    <label>unfinished silk golem</label>
+    <description>An unfinished silk golem.</description>
+	<statBases>
+      <Flammability>2</Flammability>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Item/Unfinished/UnfinishedSculpture</texPath>
+      <graphicClass>Graphic_Single</graphicClass>	
+	  <drawSize>(.7,.7)</drawSize>	  
+    </graphicData>
+	<stuffCategories Inherit="false" />
+  </ThingDef>
+  
+  <ThingDef ParentName="TM_UnfinishedGolemBase">
+    <defName>TM_UnfinishedSilkGolemUpgrade</defName>
+    <label>unfinished silk golem upgrade</label>
+    <description>An unfinished silk golem upgrade.</description>
+	<statBases>
+      <Flammability>0</Flammability>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Item/Unfinished/UnfinishedSculpture</texPath>
+      <graphicClass>Graphic_Single</graphicClass>	
+	  <drawSize>(.5,.5)</drawSize>	  
     </graphicData>
 	<stuffCategories Inherit="false" />
   </ThingDef>

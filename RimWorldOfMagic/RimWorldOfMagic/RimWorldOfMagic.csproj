@@ -133,6 +133,12 @@
     <Compile Include="Building_TMTotem_Healing.cs" />
     <Compile Include="Building_TMTotem_Lightning.cs" />
     <Compile Include="Building_TM_DMP.cs" />
+    <Compile Include="Enchantment\HediffComp_ShroudOfUndeath.cs" />
+    <Compile Include="Golems\Building_TMGolemStraw.cs" />
+    <Compile Include="Golems\GolemWorkstationEffect_ScarecrowGrow.cs" />
+    <Compile Include="Golems\JobGiver_Work.cs" />
+    <Compile Include="JobGiver_AIClearSnow.cs" />
+    <Compile Include="JobGiver_AIClearPollution.cs" />
     <Compile Include="Utils\TM_PawnTracker.cs" />
     <Compile Include="Verb_ShootTLine_Properties.cs" />
     <Compile Include="Verb_ShootDifferentProjectiles_Properties.cs" />
