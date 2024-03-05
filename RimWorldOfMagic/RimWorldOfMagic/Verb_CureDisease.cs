@@ -62,7 +62,7 @@ namespace TorannMagic
                             Hediff rec = enumerator.Current;
                             bool flag2 = num > 0;
 
-                            if (TM_Data.AddictionList().Contains(rec.def))
+                            if (TM_Data.AddictionSet().Contains(rec.def))
                             {
                                 List<TMDefs.TM_CategoryHediff> diseaseList = HediffCategoryList.Named("TM_Category_Hediffs").diseases;
                                 foreach (TMDefs.TM_CategoryHediff chd in diseaseList)
