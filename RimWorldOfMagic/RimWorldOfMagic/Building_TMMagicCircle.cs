@@ -162,8 +162,8 @@ namespace TorannMagic
             CircleED.Cleanup();
         }
 
-        public override void Draw()
-        {            
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
+        {           
             if (this.IsActive)
             {
                 Vector3 vector = base.DrawPos;
@@ -196,7 +196,7 @@ namespace TorannMagic
             }
             else
             {
-                base.Draw();
+                base.DrawAt(drawLoc, flip);
             }
         }
 

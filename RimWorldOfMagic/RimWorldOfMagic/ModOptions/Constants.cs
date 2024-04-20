@@ -10,6 +10,7 @@ using AbilityUser;
 
 namespace TorannMagic.ModOptions
 { 
+    [StaticConstructorOnStartup]
     public abstract class Constants
     {
         private static bool pawnInFlight = false;

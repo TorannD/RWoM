@@ -1,9 +1,8 @@
-﻿using RimWorld;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Verse;
 using AbilityUser;
-using UnityEngine;
 using Verse.AI;
+using System.Linq;
 
 namespace TorannMagic
 {
@@ -27,7 +26,7 @@ namespace TorannMagic
                 }
                 else
                 {
-                    List<Pawn> allPawns = this.CasterPawn.Map.mapPawns.AllPawnsSpawned;
+                    List<Pawn> allPawns = this.CasterPawn.Map.mapPawns.AllPawnsSpawned.ToList();
                     for(int i = 0; i < allPawns.Count; i++)
                     {
                         if(allPawns[i].IsColonist && allPawns[i].RaceProps.Humanlike)

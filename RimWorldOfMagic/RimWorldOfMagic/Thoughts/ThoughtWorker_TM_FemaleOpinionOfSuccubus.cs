@@ -31,7 +31,7 @@ namespace TorannMagic.Thoughts
                     }
                     if (pawn.gender == Gender.Female && !pawn.story.traits.HasTrait(TraitDefOf.Gay))
                     {
-                        int num = pawn.story.traits.DegreeOfTrait(TraitDefOf.Beauty);
+                        int num = pawn.story.traits.DegreeOfTrait(TorannMagicDefOf.Beauty);
                         if (num >= 1)
                         {
                             return ThoughtState.ActiveAtStage(1);

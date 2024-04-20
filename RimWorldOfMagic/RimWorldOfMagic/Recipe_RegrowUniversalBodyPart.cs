@@ -104,7 +104,7 @@ namespace TorannMagic
                             patient.Label,
                             reason,
                             surgeon.LabelShort
-                        ), LetterDefOf.NegativeEvent, null);
+                        ), LetterDefOf.NegativeEvent, null, null);
                         return true;
                     }
                     else // regrowth surgery success
@@ -130,7 +130,7 @@ namespace TorannMagic
                         patient.Label,
                         reason,
                         surgeon.LabelShort
-                    ), LetterDefOf.NegativeEvent, null);
+                    ), LetterDefOf.NegativeEvent, null, null);
                     return true;
                 }
             }
@@ -141,7 +141,7 @@ namespace TorannMagic
                         patient.Label,
                         reason,
                         surgeon.LabelShort
-                ), LetterDefOf.NegativeEvent, null);
+                ), LetterDefOf.NegativeEvent, null, null);
             return true;
 
         }

@@ -238,7 +238,7 @@ namespace TorannMagic
             TM_MoteMaker.ThrowShadowMote(effectVec, map, Rand.Range(.6f, 1f));
         }
 
-        public override void Draw()
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
             bool flag = this.flyingThing != null;
             if (flag)

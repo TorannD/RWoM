@@ -967,7 +967,7 @@ namespace TorannMagic
 
         public static Pawn FindNearbyOtherPawn(Pawn pawn, int radius)
         {
-            List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned;
+            List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned.ToList();
             List<Pawn> pawnList = new List<Pawn>();
             Pawn targetPawn = null;
             pawnList.Clear();
@@ -999,7 +999,7 @@ namespace TorannMagic
 
         public static Pawn FindNearbyPawn(Pawn pawn, int radius)
         {
-            List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned;
+            List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned.ToList();
             List<Pawn> pawnList = new List<Pawn>();
             Pawn targetPawn = null;
             pawnList.Clear();
@@ -1031,7 +1031,7 @@ namespace TorannMagic
 
         public static Pawn FindNearbyFactionPawn(Pawn pawn, Faction faction, int radius)
         {
-            List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned;
+            List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned.ToList();
             List<Pawn> pawnList = new List<Pawn>();
             Pawn targetPawn = null;
             pawnList.Clear();
@@ -1063,7 +1063,7 @@ namespace TorannMagic
 
         public static Pawn FindNearbyOtherFactionPawn(Pawn pawn, Faction faction, int radius)
         {
-            List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned;
+            List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned.ToList();
             List<Pawn> pawnList = new List<Pawn>();
             Pawn targetPawn = null;
             pawnList.Clear();
@@ -1095,7 +1095,7 @@ namespace TorannMagic
 
         public static Pawn FindNearbyMage(Pawn pawn, int radius, bool inCombat)
         {
-            List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned;
+            List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned.ToList();
             List<Pawn> pawnList = new List<Pawn>();
             Pawn targetPawn = null;
             pawnList.Clear();
@@ -1141,7 +1141,7 @@ namespace TorannMagic
 
         public static List<Pawn> FindNearbyMages(IntVec3 center, Map map, Faction faction, int radius, bool friendly)
         {
-            List<Pawn> mapPawns = map.mapPawns.AllPawnsSpawned;
+            List<Pawn> mapPawns = map.mapPawns.AllPawnsSpawned.ToList();
             List<Pawn> pawnList = new List<Pawn>();
             Pawn targetPawn = null;
             pawnList.Clear();
@@ -1182,7 +1182,7 @@ namespace TorannMagic
 
         public static Pawn FindNearbyFighter(Pawn pawn, int radius, bool inCombat)
         {
-            List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned;
+            List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned.ToList();
             List<Pawn> pawnList = new List<Pawn>();
             Pawn targetPawn = null;
             pawnList.Clear();
@@ -1228,7 +1228,7 @@ namespace TorannMagic
 
         public static Pawn FindNearbyInjuredPawn(IntVec3 center, Map map, Faction fac, int radius, float minSeverity, bool includeAnimals = false)
         {
-            List<Pawn> mapPawns = map.mapPawns.AllPawnsSpawned;
+            List<Pawn> mapPawns = map.mapPawns.AllPawnsSpawned.ToList();
             List<Pawn> pawnList = new List<Pawn>();
 
             for (int i = 0; i < mapPawns.Count; i++)
@@ -1271,7 +1271,7 @@ namespace TorannMagic
 
         public static Pawn FindNearbyInjuredPawnOther(Pawn pawn, int radius, float minSeverity)
         {
-            List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned;
+            List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned.ToList();
             List<Pawn> pawnList = new List<Pawn>();
 
             for (int i = 0; i < mapPawns.Count; i++)
@@ -1309,7 +1309,7 @@ namespace TorannMagic
 
         public static Pawn FindNearbyPermanentlyInjuredPawn(Pawn pawn, int radius, float minSeverity)
         {
-            List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned;
+            List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned.ToList();
             List<Pawn> pawnList = new List<Pawn>();
 
             for (int i = 0; i < mapPawns.Count; i++)
@@ -1346,7 +1346,7 @@ namespace TorannMagic
 
         public static Pawn FindNearbyAfflictedPawn(Pawn pawn, int radius, List<string> validAfflictionDefnames)
         {
-            List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned;
+            List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned.ToList();
             List<Pawn> pawnList = new List<Pawn>();
 
             for (int i = 0; i < mapPawns.Count; i++)
@@ -1372,7 +1372,7 @@ namespace TorannMagic
 
         public static Pawn FindNearbyAfflictedPawnAny(Pawn pawn, int radius)
         {
-            List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned;
+            List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned.ToList();
             List<Pawn> pawnList = new List<Pawn>();
 
             for (int i = 0; i < mapPawns.Count; i++)
@@ -1408,7 +1408,7 @@ namespace TorannMagic
 
         public static Pawn FindNearbyAddictedPawn(Pawn pawn, int radius, List<string> validAddictionDefnames)
         {
-            List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned;
+            List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned.ToList();
             List<Pawn> pawnList = new List<Pawn>();
 
             for (int i = 0; i < mapPawns.Count; i++)
@@ -1441,7 +1441,7 @@ namespace TorannMagic
             List<Pawn> pawnList = new List<Pawn>();
             if (map != null)
             {
-                List<Pawn> mapPawns = map.mapPawns.AllPawnsSpawned;                
+                List<Pawn> mapPawns = map.mapPawns.AllPawnsSpawned.ToList();                
                 Pawn targetPawn = null;
                 pawnList.Clear();
                 for (int i = 0; i < mapPawns.Count; i++)
@@ -1476,7 +1476,7 @@ namespace TorannMagic
         {
             if (!pawn.DestroyedOrNull() && pawn.Spawned && pawn.Map != null)
             {
-                List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned;
+                List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned.ToList();
                 List<Pawn> pawnList = new List<Pawn>();
                 Pawn targetPawn = null;
                 pawnList.Clear();
@@ -1556,7 +1556,7 @@ namespace TorannMagic
                 Building building = mapBuildings[i] as Building;
                 if (building != null && (building.Position - pawn.Position).LengthHorizontal <= radius && building.def.useHitPoints && building.HitPoints != building.MaxHitPoints)
                 {
-                    if (pawn.Drafted && building.def.designationCategory == DesignationCategoryDefOf.Security || building.def.building.ai_combatDangerous)
+                    if (pawn.Drafted && building.def.designationCategory == TorannMagicDefOf.Security || building.def.building.ai_combatDangerous)
                     {
                         buildingList.Add(building);
                     }
@@ -1579,7 +1579,7 @@ namespace TorannMagic
 
         public static Thing FindNearbyDamagedThing(Pawn pawn, int radius)
         {
-            List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned;
+            List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned.ToList();
             List<Thing> thingList = new List<Thing>();
 
             for (int i = 0; i < mapPawns.Count; i++)
@@ -1621,7 +1621,7 @@ namespace TorannMagic
 
         public static List<Pawn> FindAllPawnsAround(Map map, IntVec3 center, float radius, Faction faction = null, bool sameFaction = false)
         {
-            List<Pawn> mapPawns = map.mapPawns.AllPawnsSpawned;
+            List<Pawn> mapPawns = map.mapPawns.AllPawnsSpawned.ToList();
             List<Pawn> pawnList = new List<Pawn>();
             Pawn targetPawn = null;
             pawnList.Clear();
@@ -1700,7 +1700,7 @@ namespace TorannMagic
         {
             Pawn closest = null;
             float closestDistance = 1000f;
-            List<Pawn> allPawns = map.mapPawns.AllPawnsSpawned;
+            List<Pawn> allPawns = map.mapPawns.AllPawnsSpawned.ToList();
             foreach(Pawn p in allPawns)
             {
                 if(!p.DestroyedOrNull())
@@ -1894,7 +1894,7 @@ namespace TorannMagic
                             bool hasThing = false;
                             for (int i = 0; i < cellList.Count(); i++)
                             {
-                                if (cellList[i].def.designationCategory != null && cellList[i].def.designationCategory == DesignationCategoryDefOf.Structure)
+                                if (cellList[i].def.designationCategory != null && cellList[i].def.designationCategory == TorannMagicDefOf.Structure)
                                 {
                                     hasThing = true;
                                     break;
@@ -2116,17 +2116,18 @@ namespace TorannMagic
                         if (allAreas[i].Label == "earth sprites")
                         {
                             spriteArea = allAreas[i];
+                            break;
                         }
                     }
                 }
-                if (spriteArea == null && makeNewArea)
-                {
-                    Area_Allowed newArea = null;
-                    if (map.areaManager.TryMakeNewAllowed(out newArea))
-                    {
-                        newArea.SetLabel("earth sprites");
-                    }
-                }
+                //if (spriteArea == null && makeNewArea)
+                //{
+                //    Area_Allowed newArea = new Area_Allowed(map.areaManager, "earth sprites");
+                //    //if (map.areaManager.TryMakeNewAllowed(out newArea))
+                //    //{
+                //    //    newArea.SetLabel("earth sprites");
+                //    //}
+                //}
             }
             return spriteArea;
         }
@@ -2148,17 +2149,18 @@ namespace TorannMagic
                         if (allAreas[i].Label == "transmutate")
                         {
                             transmutateArea = allAreas[i];
+                            break;
                         }
                     }
                 }
-                if (transmutateArea == null && makeNewArea)
-                {
-                    Area_Allowed newArea = null;
-                    if (map.areaManager.TryMakeNewAllowed(out newArea))
-                    {
-                        newArea.SetLabel("transmutate");
-                    }
-                }
+                //if (transmutateArea == null && makeNewArea)
+                //{
+                //    Area_Allowed newArea = new Area_Allowed(map.areaManager, "transmutate");
+                //    //if (map.areaManager.TryMakeNewAllowed(out newArea))
+                //    //{
+                //    //    newArea.SetLabel("transmutate");
+                //    //}
+                //}
             }
             return transmutateArea;
         }
@@ -2180,17 +2182,18 @@ namespace TorannMagic
                         if (allAreas[i].Label == "regrowth seed")
                         {
                             regrowthSeedArea = allAreas[i];
+                            break;
                         }
                     }
                 }
-                if (regrowthSeedArea == null && makeNewArea)
-                {
-                    Area_Allowed newArea = null;
-                    if (map.areaManager.TryMakeNewAllowed(out newArea))
-                    {
-                        newArea.SetLabel("regrowth seed");
-                    }
-                }
+                //if (regrowthSeedArea == null && makeNewArea)
+                //{
+                //    Area_Allowed newArea = new Area_Allowed(map.areaManager, "regrowth seed");
+                //    //if (map.areaManager.TryMakeNewAllowed(out newArea))
+                //    //{                        
+                //    //    newArea.SetLabel("regrowth seed");
+                //    //}
+                //}
             }
             return regrowthSeedArea;
         }
@@ -2217,7 +2220,7 @@ namespace TorannMagic
             orbs.Clear();
             if (pawn.Map != null)
             {
-                List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned;
+                List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned.ToList();
                 for (int i = 0; i < mapPawns.Count; i++)
                 {
                     if (mapPawns[i].RaceProps.Humanlike && mapPawns[i].apparel != null && mapPawns[i].Faction == pawn.Faction && mapPawns[i].apparel.WornApparelCount > 0)

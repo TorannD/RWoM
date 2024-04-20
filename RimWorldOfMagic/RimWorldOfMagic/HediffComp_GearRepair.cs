@@ -70,7 +70,6 @@ namespace TorannMagic
                 {
                     if (gear[i].HitPoints >= gear[i].MaxHitPoints && gear[i].WornByCorpse)
                     {
-                        gear[i].Notify_PawnResurrected();
                         Traverse.Create(root: gear[i]).Field(name: "wornByCorpseInt").SetValue(false);
                     }
                 }

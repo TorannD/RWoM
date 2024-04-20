@@ -122,7 +122,7 @@ namespace TorannMagic
 
                             if (polymorphedPawn.Faction != this.CasterPawn.Faction && polymorphedPawn.mindState != null && Rand.Chance(Mathf.Clamp((.2f * this.pwrVal), 0f, .5f)))
                             {
-                                polymorphedPawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Berserk, "wild beast!", true, false, null, true);
+                                polymorphedPawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Berserk, "wild beast!", true, false, false, null, true);
                             }
 
                             if (this.verVal >= 3)

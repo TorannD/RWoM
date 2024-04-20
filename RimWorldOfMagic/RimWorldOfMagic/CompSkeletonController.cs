@@ -343,7 +343,7 @@ namespace TorannMagic
             this.nextTaunt = (int)(this.Props.tauntCooldownTicks*Rand.Range(.9f, 1.1f)) + Find.TickManager.TicksGame;
             if (map != null)
             {
-                List<Pawn> threatPawns = map.mapPawns.AllPawnsSpawned;
+                List<Pawn> threatPawns = map.mapPawns.AllPawnsSpawned.ToList();
                 bool anyPawnsTaunted = false;
                 if (threatPawns != null && threatPawns.Count > 0)
                 {
@@ -596,9 +596,9 @@ namespace TorannMagic
             base.PostDestroy(mode, previousMap);
         }
 
-        public override void PostPreApplyDamage(DamageInfo dinfo, out bool absorbed)
+        public override void PostPreApplyDamage(ref DamageInfo dinfo, out bool absorbed)
         {
-            base.PostPreApplyDamage(dinfo, out absorbed);
+            base.PostPreApplyDamage(ref dinfo, out absorbed);
             if (dinfo.Instigator is Building instigatorThing)
             {
                 if (instigatorThing.Faction != null && instigatorThing.Faction != this.Pawn.Faction)
@@ -612,7 +612,7 @@ namespace TorannMagic
         {
             this.closeThreats.Clear();
             this.farThreats.Clear();
-            List<Pawn> allPawns = this.Pawn.Map.mapPawns.AllPawnsSpawned;
+            List<Pawn> allPawns = this.Pawn.Map.mapPawns.AllPawnsSpawned.ToList();
             for (int i = 0; i < allPawns.Count; i++)
             {
                 if (!allPawns[i].DestroyedOrNull() && allPawns[i] != this.Pawn)

@@ -326,7 +326,7 @@ namespace TorannMagic
                         {
                             List<Thing> paracyteBushes = this.pawn.Map.listerThings.ThingsOfDef(TorannMagicDefOf.TM_Plant_Paracyte);
                             int paracyteCount = paracyteBushes.Count;
-                            List<Pawn> mapPawns = this.pawn.Map.mapPawns.AllPawnsSpawned;
+                            List<Pawn> mapPawns = this.pawn.Map.mapPawns.AllPawnsSpawned.ToList();
                             int mageCount = 0;
                             if (ModOptions.Settings.Instance.paracyteMagesCount)
                             {

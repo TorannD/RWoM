@@ -87,12 +87,12 @@ namespace TorannMagic
                     {
                         if (oldPos != default(IntVec3))
                         {
-                            this.Pawn.Map.mapDrawer.MapMeshDirty(oldPos, MapMeshFlag.Things);
+                            this.Pawn.Map.mapDrawer.MapMeshDirty(oldPos, MapMeshFlagDefOf.Things);
                             this.Pawn.Map.glowGrid.DeRegisterGlower(glower);
                         }
                         if ((this.Pawn.Map.skyManager.CurSkyGlow < 0.7f || this.Pawn.Position.Roofed(Pawn.Map)) && !comp.mageLightSet)
                         {
-                            this.Pawn.Map.mapDrawer.MapMeshDirty(this.Pawn.Position, MapMeshFlag.Things);
+                            this.Pawn.Map.mapDrawer.MapMeshDirty(this.Pawn.Position, MapMeshFlagDefOf.Things);
                             oldPos = this.Pawn.Position;
                             this.Pawn.Map.glowGrid.RegisterGlower(glower);
                         }
@@ -110,7 +110,7 @@ namespace TorannMagic
         {
             if (oldPos != default(IntVec3))
             {
-                this.Pawn.Map.mapDrawer.MapMeshDirty(oldPos, MapMeshFlag.Things);
+                this.Pawn.Map.mapDrawer.MapMeshDirty(oldPos, MapMeshFlagDefOf.Things);
                 this.Pawn.Map.glowGrid.DeRegisterGlower(glower);
             }
             base.CompPostPostRemoved();

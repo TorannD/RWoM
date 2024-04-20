@@ -211,7 +211,7 @@ namespace TorannMagic
 
         }
 
-        public override void Draw()
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
             bool flag = this.flyingThing != null;
             if (flag)
@@ -254,7 +254,7 @@ namespace TorannMagic
                         return;
                     }
                     Pawn pawn = this.flyingThing as Pawn;
-                    pawn.Drawer.DrawAt(this.DrawPos);
+                    pawn.Drawer.renderer.RenderPawnAt(this.DrawPos);
                     Material bubble = TM_MatPool.TimeBubble;
                     Vector3 vec3 = this.DrawPos;
                     vec3.y++;
@@ -275,7 +275,8 @@ namespace TorannMagic
                     //Pawn pawn = this.flyingThing as Pawn;
                     //pawn.Drawer.DrawAt(this.DrawPos);
                     //this.flyingThing.DrawAt(this.drawPosition);
-                    this.flyingThing.DrawAt(drawPosition);
+                    this.flyingThing.DrawNowAt(drawPosition);
+                    //this.flyingThing.DrawAt(drawPosition);
                 }
                 else
                 {

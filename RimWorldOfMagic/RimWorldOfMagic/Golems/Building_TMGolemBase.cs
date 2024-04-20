@@ -69,13 +69,13 @@ namespace TorannMagic.Golems
 
         public void GlowOff()
         {
-            this.Map.mapDrawer.MapMeshDirty(this.Position, MapMeshFlag.Things);
+            this.Map.mapDrawer.MapMeshDirty(this.Position, MapMeshFlagDefOf.Things);
             this.Map.glowGrid.DeRegisterGlower(glower);
         }
 
         public void GlowOn()
         {
-            this.Map.mapDrawer.MapMeshDirty(this.Position, MapMeshFlag.Things);
+            this.Map.mapDrawer.MapMeshDirty(this.Position, MapMeshFlagDefOf.Things);
             this.Map.glowGrid.RegisterGlower(glower);
         }
         
@@ -705,9 +705,9 @@ namespace TorannMagic.Golems
         public virtual PawnKindDef GetGolemKindDef => TM_GolemUtility.GetGolemDefFromThing(this).golemKindDef;
 
         private int drawIteration = 0;
-		public override void Draw()
-		{
-			base.Draw();
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
+        {
+            base.DrawAt(drawLoc, flip);
             if (Upgrades != null)
             {
                 foreach (TM_GolemUpgrade gu in Upgrades)
@@ -834,7 +834,7 @@ namespace TorannMagic.Golems
                         MoteMaker.ThrowText(pos, this.Map, "TM_GolemMinimumToActivate".Translate(Energy.StoredEnergyPct.ToString("P"), GolemDef.minimumEnergyPctToActivate.ToString("P1")), -1);                        
                     }
                 };
-                command_Action.disabled = (Energy.StoredEnergyPct < GolemDef.minimumEnergyPctToActivate) || pauseFor > 0 || !activationFlag;
+                command_Action.Disabled = (Energy.StoredEnergyPct < GolemDef.minimumEnergyPctToActivate) || pauseFor > 0 || !activationFlag;
                 yield return command_Action;
 
                 Command_Toggle command_Toggle = new Command_Toggle();
@@ -961,11 +961,15 @@ namespace TorannMagic.Golems
 
         public override string GetInspectString()
         {
-            string baseStr = base.GetInspectString();
+
+            StringBuilder sb = new StringBuilder();
+            //stringBuilder.AppendLine();
+            //string baseStr = base.GetInspectString();
             if (canRegulateTemp)
             {
-                string tempString = "\n" + "TargetTemperature".Translate() + ": " + "\n" + tempGoal.ToStringTemperature("F0");
-                baseStr += tempString;
+                sb.AppendLine("TargetTemperature".Translate() + ": " + "\n" + tempGoal.ToStringTemperature("F0"));
+                //string tempString = "\n" + "TargetTemperature".Translate() + ": " + "\n" + tempGoal.ToStringTemperature("F0");
+                //baseStr += tempString;
             }
             if(this.abilityCharges > 0 && this.creationRecipes != null && this.creationRecipes.Count > 0)
             {
@@ -977,17 +981,19 @@ namespace TorannMagic.Golems
                         {
                             if(gwe.chargesRequired > 0)
                             {
-                                string tempString = "\n" + gu.golemUpgradeDef.label + " " + this.creationRecipes[0].outputThing.label;
-                                baseStr += tempString;
+                                sb.AppendLine(gu.golemUpgradeDef.label + " " + this.creationRecipes[0].outputThing.label);
+                                //string tempString = "\n" + gu.golemUpgradeDef.label + " " + this.creationRecipes[0].outputThing.label;
+                                //baseStr += tempString;
                             }
                         }
                     }
                 }
-                string chargeString = "\n" + "TM_GolemChargesRemaining".Translate(this.abilityCharges);
-                baseStr += chargeString;
+                sb.AppendLine("TM_GolemChargesRemaining".Translate(this.abilityCharges));
+                //string chargeString = "\n" + "TM_GolemChargesRemaining".Translate(this.abilityCharges);
+                //baseStr += chargeString;
             }
-            
-            return baseStr;
+            return GenText.TrimEndNewlines(sb.ToString());
+            //return baseStr;
         }
   
 

@@ -804,9 +804,9 @@ namespace TorannMagic.Golems
             base.PostDestroy(mode, previousMap);
         }
 
-        public override void PostPreApplyDamage(DamageInfo dinfo, out bool absorbed)
+        public override void PostPreApplyDamage(ref DamageInfo dinfo, out bool absorbed)
         {
-            base.PostPreApplyDamage(dinfo, out absorbed);
+            base.PostPreApplyDamage(ref dinfo, out absorbed);
         }
 
         public void TryUseAbilities()

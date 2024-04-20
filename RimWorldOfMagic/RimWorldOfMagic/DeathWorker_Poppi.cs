@@ -1,12 +1,13 @@
 ﻿using RimWorld;
 using System;
 using Verse;
+using Verse.AI.Group;
 
 namespace TorannMagic
 {
     public class DeathWorker_Poppi : DeathActionWorker
     {
-        public override void PawnDied(Corpse corpse)
+        public override void PawnDied(Corpse corpse, Lord prevLord)
         {
             float radius = 2f;
             CompLeaper comp = corpse.InnerPawn.GetComp<CompLeaper>();

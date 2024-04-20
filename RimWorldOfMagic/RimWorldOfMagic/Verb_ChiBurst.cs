@@ -87,7 +87,7 @@ namespace TorannMagic
             mapPawns.Clear();
             List<Pawn> classPawns = new List<Pawn>();
             classPawns.Clear();
-            mapPawns = map.mapPawns.AllPawnsSpawned;
+            mapPawns = map.mapPawns.AllPawnsSpawned.ToList();
             for(int i =0; i < mapPawns.Count; i++)
             {
                 if((mapPawns[i].Position - centerPos).LengthHorizontal <= radius)

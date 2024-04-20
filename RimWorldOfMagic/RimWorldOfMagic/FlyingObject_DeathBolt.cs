@@ -301,7 +301,7 @@ namespace TorannMagic
             TM_MoteMaker.ThrowDiseaseMote(effectVec, map, 0.4f, 0.1f, .01f, 0.35f);
         }
 
-        public override void Draw()
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
             bool flag = this.flyingThing != null && !this.impacted;
             if (flag)

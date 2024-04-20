@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+ 
+<Defs>
+
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_StoneRepair</defName>
+		<label>restore part</label>
+		<recipe>TM_StoneGolem_RepairBlock</recipe>
+		<maxLevel>0</maxLevel>
+		<workstationEffects>
+			<li Class="TorannMagic.Golems.GolemWorkstationEffect_RestorePart" />
+		</workstationEffects>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_StoneMaxEnergy</defName>
+		<label>energy storage</label>
+		<description>Increases maximum energy by 120 per level. Starting max energy is 800.</description>
+		<recipe>TM_StoneGolem_EnergyMax</recipe>
+		<bodypart>Golem_Spine</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<maxLevel>5</maxLevel>
+		<workstationCapacity>EnergyMax</workstationCapacity>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_StoneEnergyEfficiency</defName>
+		<label>energy efficiency</label>
+		<description>Increases energy efficiency by 10% per level. Starting energy efficiency is 50%.</description>
+		<recipe>TM_StoneGolem_EnergyConverter</recipe>
+		<bodypart>Stone_SlotA</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<maxLevel>5</maxLevel>
+		<workstationCapacity>Efficiency</workstationCapacity>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_StoneEnergyRate</defName>
+		<label>energy regeneration</label>
+		<description>Increases energy charge rate by 20% per level. Starting recharge rate is 20 energy/hour.</description>
+		<recipe>TM_StoneGolem_EnergyRegen</recipe>
+		<bodypart>Stone_SlotB</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<maxLevel>5</maxLevel>
+		<workstationCapacity>EnergyRegeneration</workstationCapacity>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>	
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_StoneHardening</defName>
+		<label>hardening</label>
+		<description>Increases overall protection:
+Blunt:	+[4,8,12]%
+Sharp:	+[11,22,33]%
+Heat:	+[6,12,18]%</description>
+		<maxLevel>3</maxLevel>
+		<recipe>TM_StoneGolem_Armor</recipe>
+		<bodypart>Golem_Chest</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<hediff>TM_StoneGolem_HardeningHD</hediff>
+		<hediffSeverityPerLevel>.8</hediffSeverityPerLevel>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_StoneCompactor</defName>
+		<label>Stone compactor</label>
+		<description>Allows the golem the ability to crush stone chunks into usable bricks. This process occurs on its own after the stone chunks are deposited into the golem, and requires the golem to be in it's dormant state.</description>
+		<maxLevel>1</maxLevel>
+		<recipe>TM_StoneGolem_Compactor</recipe>
+		<bodypart>Golem_Abdomen</bodypart>
+		<occupiedPart>Golem_Abdomen</occupiedPart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<upgradeEnablesRecipes>
+			<li>TM_StoneGolem_SandstoneBricks</li>
+			<li>TM_StoneGolem_GraniteBricks</li>
+			<li>TM_StoneGolem_LimestoneBricks</li>
+			<li>TM_StoneGolem_SlateBricks</li>
+			<li>TM_StoneGolem_MarbleBricks</li>
+		</upgradeEnablesRecipes>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_StoneToBricks</defName>
+		<label>making</label>
+		<description>Converts stone chucks into bricks over time</description>
+		<maxLevel>0</maxLevel>
+		<recipeList>
+			<li>TM_StoneGolem_SandstoneBricks</li>
+			<li>TM_StoneGolem_GraniteBricks</li>
+			<li>TM_StoneGolem_LimestoneBricks</li>
+			<li>TM_StoneGolem_SlateBricks</li>
+			<li>TM_StoneGolem_MarbleBricks</li>
+		</recipeList>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<workstationEffects>
+		  <li Class="TorannMagic.Golems.GolemWorkstationEffect_CreateItem">
+			<effectFrequency>2000</effectFrequency>
+			<chargesRequired>1</chargesRequired>
+			<energyCost>40</energyCost>
+			<recipes>
+				<li>TM_GolemMake_Sandstone</li>
+				<li>TM_GolemMake_Granite</li>
+				<li>TM_GolemMake_Limestone</li>
+				<li>TM_GolemMake_Slate</li>
+				<li>TM_GolemMake_Marble</li>
+			</recipes>
+		  </li>
+		</workstationEffects>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemItemRecipeDef>
+		<defName>TM_GolemMake_Sandstone</defName>
+		<inputThing>ChunkSandstone</inputThing>
+		<outputThing>BlocksSandstone</outputThing>
+		<outputCount>20</outputCount>
+		<inputCharges>1</inputCharges>
+	</TorannMagic.TMDefs.TM_GolemItemRecipeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemItemRecipeDef>
+		<defName>TM_GolemMake_Granite</defName>
+		<inputThing>ChunkGranite</inputThing>
+		<outputThing>BlocksGranite</outputThing>
+		<outputCount>20</outputCount>
+		<inputCharges>1</inputCharges>
+	</TorannMagic.TMDefs.TM_GolemItemRecipeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemItemRecipeDef>
+		<defName>TM_GolemMake_Limestone</defName>
+		<inputThing>ChunkLimestone</inputThing>
+		<outputThing>BlocksLimestone</outputThing>
+		<outputCount>20</outputCount>
+		<inputCharges>1</inputCharges>
+	</TorannMagic.TMDefs.TM_GolemItemRecipeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemItemRecipeDef>
+		<defName>TM_GolemMake_Slate</defName>
+		<inputThing>ChunkSlate</inputThing>
+		<outputThing>BlocksSlate</outputThing>
+		<outputCount>20</outputCount>
+		<inputCharges>1</inputCharges>
+	</TorannMagic.TMDefs.TM_GolemItemRecipeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemItemRecipeDef>
+		<defName>TM_GolemMake_Marble</defName>
+		<inputThing>ChunkMarble</inputThing>
+		<outputThing>BlocksMarble</outputThing>
+		<outputCount>20</outputCount>
+		<inputCharges>1</inputCharges>
+	</TorannMagic.TMDefs.TM_GolemItemRecipeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_StoneLifeStage</defName>
+		<label>frame tier</label>
+		<description>Increases stats:
+Movement:	+[20%/35%/50%]
+Health:		+[40%/70%/100%]</description>
+		<maxLevel>3</maxLevel>
+		<recipe>TM_StoneGolem_LifeStage</recipe>
+		<bodypart>Golem_Heart</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<occupiedPart>Golem_Heart</occupiedPart>
+		<lifeStages>
+			<li>TM_StoneGolemLS</li>
+			<li>TM_StoneGolemLS1</li>
+			<li>TM_StoneGolemLS2</li>
+			<li>TM_StoneGolemLS3</li>
+		</lifeStages>
+		<drawUndrafted>false</drawUndrafted>
+		<drawOnlyWhenActive>false</drawOnlyWhenActive>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+
+</Defs>
+
+<!--
+			    <label></label>
+				<maxLevel>1</maxLevel>
+				<recipe>TM_Mecha-Golem_</recipe>
+				<bodypart>Mecha_</bodypart>
+				<partRequiresUpgrade>true</partRequiresUpgrade>
+				<hediff></hediff>
+				<ability></ability>
+				<lifeStages>
+				</lifeStages>
+				<abilityModifier>
+					<damageModifier></damageModifier>
+					<cooldownModifier></cooldownModifier>
+					<energyCostModifier></energyCostModifier>
+					<durationModifier></durationModifier>
+					<healingModifier></healingModifier>
+					<processingModifier></processingModifier>
+				</abilityModifier>				
+				<graphicsPath>Mecha/</graphicsPath>
+				<levelIncrementsGraphics>false</levelIncrementsGraphics>
+				<drawThing></drawThing>
+				<drawUndrafted>true</drawUndrafted>
+				<drawOnlyWhenActive>false</drawOnlyWhenActive>
+				<drawSize>1</drawSize>
+				<shouldRotate>false</shouldRotate>
+				<drawOffsetNorth>(0, 0, 0)</drawOffsetNorth>
+				<drawOffsetSouth>(0, 0, 0)</drawOffsetSouth>
+				<drawOffsetEast>(0, 0, 0)</drawOffsetEast>
+				<drawOffsetWest>(0, 0, 0)</drawOffsetWest>
+				<workstationCapacity>None</workstationCapacity> 
+				<workstationEffects>
+				</workstationEffects>
+-->

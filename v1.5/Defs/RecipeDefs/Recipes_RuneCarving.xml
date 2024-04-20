@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RecipeDef Abstract="True" Name="TM_SurgeryRuneCarving">
+    <effectWorking>TM_RuneCarving</effectWorking>
+    <soundWorking>Recipe_Surgery</soundWorking>
+    <workSpeedStat>WorkSpeedGlobal</workSpeedStat>
+    <workSkill>Crafting</workSkill>
+    <workSkillLearnFactor>15</workSkillLearnFactor>
+	<recipeUsers>
+		<li>Human</li>
+	</recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef ParentName="TM_SurgeryRuneCarving">
+    <defName>TM_RuneCarveBodyPart</defName>
+    <label>rune carving</label>
+    <description>Carve a rune on a body part.</description>
+    <workerClass>TorannMagic.Recipe_RuneCarving</workerClass>
+    <jobString>Rune carving.</jobString>
+    <workAmount>5000</workAmount>
+    <surgerySuccessChanceFactor>.7</surgerySuccessChanceFactor>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Medicine</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+	  <li>
+		<filter>
+			<thingDefs>
+				<li>ManaPotion</li>
+			</thingDefs>
+		</filter>
+		<count>2</count>
+	  </li>
+	  <li>
+		<filter>
+			<thingDefs>
+				<li>RawMagicyte</li>
+			</thingDefs>
+		</filter>
+		<count>225</count>
+	  </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Medicine</li>
+      </categories>
+	  <thingDefs>
+		<li>ManaPotion</li>
+		<li>RawMagicyte</li>
+	  </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+  
+</Defs>

@@ -13,7 +13,7 @@ namespace TorannMagic
             base.SpawnSetup(map, respawningAfterLoad);
             //LessonAutoActivator.TeachOpportunity(ConceptDef.Named("TM_Portals"), OpportunityType.GoodToKnow);
         }
-                
+
         //public override void Tick()
         //{
         //    if(!initialized)
@@ -27,9 +27,10 @@ namespace TorannMagic
         //    base.Tick();
         //}
 
-        public override void Draw()
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
-            base.Draw();
+            base.DrawAt(drawLoc, flip);
+
             Vector3 vector = base.DrawPos;
             float size = Rand.Range(1.60f, 1.70f);
             vector.y = Altitudes.AltitudeFor(AltitudeLayer.MoteOverhead);

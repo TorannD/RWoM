@@ -44,7 +44,7 @@ namespace TorannMagic
                     TM_MoteMaker.ThrowManaPuff(pawn.DrawPos, pawn.Map, .75f);
                     TM_MoteMaker.ThrowManaPuff(pawn.DrawPos, pawn.Map, 1);
                     TM_MoteMaker.ThrowManaPuff(pawn.DrawPos, pawn.Map, .75f);
-                    List<Pawn> allPawns = this.CasterPawn.Map.mapPawns.AllPawnsSpawned;
+                    List<Pawn> allPawns = this.CasterPawn.Map.mapPawns.AllPawnsSpawned.ToList();
                     for(int i =0; i < allPawns.Count; i++)
                     {
                         if(allPawns[i].Faction != null && allPawns[i].HostileTo(this.CasterPawn.Faction) && allPawns[i].CurJob != null && allPawns[i].CurJob.targetA != null && allPawns[i].CurJob.targetA.Thing == this.CasterPawn)

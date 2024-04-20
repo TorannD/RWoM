@@ -224,7 +224,6 @@ namespace TorannMagic
             {
                 if(apparelThing.WornByCorpse)
                 {
-                    apparelThing.Notify_PawnResurrected();
                     Traverse.Create(root: apparelThing).Field(name: "wornByCorpseInt").SetValue(false);
                 }
             }
@@ -252,7 +251,7 @@ namespace TorannMagic
                     {
                         TransmutateEffects(corpse.Position, 10);
                         Pawn innerPawn = corpse.InnerPawn;
-                        ResurrectionUtility.ResurrectWithSideEffects(innerPawn);
+                        ResurrectionUtility.TryResurrectWithSideEffects(innerPawn);
                         AgePawn(innerPawn, Mathf.RoundToInt((6*2500) * (1 + (.1f * verVal))), false);
                         HealthUtility.AdjustSeverity(innerPawn, TorannMagicDefOf.TM_DeathReversalHD, 1f);
                         Projectile_Resurrection.ApplyHealthDefects(innerPawn, .25f, .3f);

@@ -770,7 +770,7 @@ namespace TorannMagic
 
         public virtual void ScanForRepeatJob()
         {
-            List<Pawn> allPawns = this.Map.mapPawns.AllPawnsSpawned;
+            List<Pawn> allPawns = this.Map.mapPawns.AllPawnsSpawned.ToList();
             if(allPawns != null && allPawns.Count > 0)
             {
                 for(int i = 0; i < allPawns.Count; i++)
@@ -1137,7 +1137,7 @@ namespace TorannMagic
 
         public static void TryApplyHediff(HediffDef hediff, Faction faction, Map map, Pawn caster, float sev, int count = 0, bool checkResistance = false, bool friendly = false, bool enemy = false, bool neutral = false, bool nullFaction = false, ThingDef mote = null)
         {
-            List<Pawn> allPawns = map.mapPawns.AllPawnsSpawned;
+            List<Pawn> allPawns = map.mapPawns.AllPawnsSpawned.ToList();
             allPawns.Shuffle();
             if (allPawns != null && allPawns.Count > 0)
             {

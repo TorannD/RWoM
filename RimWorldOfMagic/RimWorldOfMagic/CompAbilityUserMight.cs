@@ -2329,7 +2329,7 @@ namespace TorannMagic
             };
         }
 
-        public override void PostPreApplyDamage(DamageInfo dinfo, out bool absorbed)
+        public override void PostPreApplyDamage(ref DamageInfo dinfo, out bool absorbed)
         {
             Pawn abilityUser = base.Pawn;
             absorbed = false;
@@ -2552,7 +2552,7 @@ namespace TorannMagic
             }
             list.Clear();
             list = null;
-            base.PostPreApplyDamage(dinfo, out absorbed);
+            base.PostPreApplyDamage(ref dinfo, out absorbed);
         }
 
         public void DoMeleeReversal(DamageInfo dinfo)
@@ -4157,7 +4157,7 @@ namespace TorannMagic
                 if (this.Pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_SS_SerumHD) && this.Pawn.Downed && nextSSTend < Find.TickManager.TicksGame && 
                     (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.TM_SuperSoldier) || (this.customClass != null && this.customClass.classFighterAbilities.Contains(TorannMagicDefOf.TM_FirstAid))))
                 {
-                    Hediff_Injury wound = this.Pawn.health.hediffSet.GetInjuriesTendable().RandomElement();
+                    Hediff_Injury wound = this.Pawn.health.hediffSet.GetHediffsTendable().RandomElement() as Hediff_Injury;
                     if (wound != null && wound.CanHealNaturally())
                     {
                         wound.Tended(Rand.Range(0, .3f), .3f);

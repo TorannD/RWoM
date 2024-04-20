@@ -121,7 +121,7 @@ namespace TorannMagic
                             {
                                 val *= .85f;
                             }
-                            if (gcList[i].def == GameConditionDefOf.SolarFlare)
+                            if (gcList[i].def == TorannMagicDefOf.SolarFlare)
                             {
                                 val *= 1.5f;
                             }

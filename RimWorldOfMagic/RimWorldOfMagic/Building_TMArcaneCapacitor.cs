@@ -120,7 +120,7 @@ namespace TorannMagic
             base.Tick();
             if (Find.TickManager.TicksGame % 120 == 0 && this.CapacitorIsOn)
             {
-                List<Pawn> mapPawns = this.Map.mapPawns.AllPawnsSpawned;
+                List<Pawn> mapPawns = this.Map.mapPawns.AllPawnsSpawned.ToList();
                 Pawn pawn = null;
                 for(int i = 0; i < mapPawns.Count; i++)
                 {

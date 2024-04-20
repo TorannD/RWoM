@@ -116,7 +116,7 @@ namespace TorannMagic.Conditions
         {
             GameConditionManager gameConditionManager = this.gameConditionManager;
             int duration = Mathf.RoundToInt(this.Duration);
-            GameCondition cond = GameConditionMaker.MakeCondition(GameConditionDefOf.SolarFlare, duration);
+            GameCondition cond = GameConditionMaker.MakeCondition(TorannMagicDefOf.SolarFlare, duration);
             gameConditionManager.RegisterCondition(cond);
         }
 
@@ -190,7 +190,7 @@ namespace TorannMagic.Conditions
                 defendLord = LordMaker.MakeNewLord(faction, lordJob, this.SingleMap, null);
             }
             
-            List<Pawn> allPawns = this.SingleMap.mapPawns.AllPawnsSpawned;
+            List<Pawn> allPawns = this.SingleMap.mapPawns.AllPawnsSpawned.ToList();
             for (int i = 0; i < allPawns.Count; i++)
             {
                 if (allPawns[i].Faction != null && allPawns[i].Faction == faction)
@@ -275,7 +275,7 @@ namespace TorannMagic.Conditions
             }
             else
             {
-                List<Pawn> allPawns = this.SingleMap.mapPawns.AllPawnsSpawned;
+                List<Pawn> allPawns = this.SingleMap.mapPawns.AllPawnsSpawned.ToList();
                 for(int i = 0; i < allPawns.Count; i++)
                 {
                     if(allPawns[i].def == TorannMagicDefOf.TM_SkeletonR || allPawns[i].def == TorannMagicDefOf.TM_GiantSkeletonR || allPawns[i].def == TorannMagicDefOf.TM_SkeletonLichR)
@@ -296,7 +296,7 @@ namespace TorannMagic.Conditions
                 {
                     gcs[i].End();
                 }
-                else if(gcs[i].def == GameConditionDefOf.SolarFlare)
+                else if(gcs[i].def == TorannMagicDefOf.SolarFlare)
                 {
                     gcs[i].End();
                 }

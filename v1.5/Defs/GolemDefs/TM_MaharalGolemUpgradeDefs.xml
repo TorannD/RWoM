@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+ 
+<Defs>
+
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_MaharalRepair</defName>
+		<label>restore part</label>
+		<recipe>TM_MaharalGolem_RepairBlock</recipe>
+		<maxLevel>0</maxLevel>
+		<workstationEffects>
+			<li Class="TorannMagic.Golems.GolemWorkstationEffect_RestorePart" />
+		</workstationEffects>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_MaharalMaxEnergy</defName>
+		<label>energy storage</label>
+		<description>Increases maximum energy by 100 per level. Starting max energy is 800.</description>
+		<recipe>TM_MaharalGolem_EnergyMax</recipe>
+		<bodypart>Golem_Spine</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<maxLevel>5</maxLevel>
+		<workstationCapacity>EnergyMax</workstationCapacity>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_MaharalEnergyEfficiency</defName>
+		<label>energy efficiency</label>
+		<description>Increases energy efficiency by 10% per level. Starting energy efficiency is 50%.</description>
+		<recipe>TM_MaharalGolem_EnergyConverter</recipe>
+		<bodypart>Maharal_SlotA</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<maxLevel>5</maxLevel>
+		<workstationCapacity>Efficiency</workstationCapacity>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_MaharalEnergyRate</defName>
+		<label>energy regeneration</label>
+		<description>Increases energy charge rate by 20% per level. Starting recharge rate is 30 energy/hour.</description>
+		<recipe>TM_MaharalGolem_EnergyRegen</recipe>
+		<bodypart>Maharal_SlotB</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<maxLevel>5</maxLevel>
+		<workstationCapacity>EnergyRegeneration</workstationCapacity>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>	
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_MaharalArmor</defName>
+		<label>armor</label>
+		<description>Increases overall protection:
+Blunt:	+[9,16,21]%
+Sharp:	+[13,22,29]%
+Heat:	+[8,14,18]%</description>
+		<maxLevel>3</maxLevel>
+		<recipe>TM_MaharalGolem_Armor</recipe>
+		<bodypart>Golem_Chest</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<hediff>TM_MaharalGolem_ArmorHD</hediff>
+		<hediffSeverityPerLevel>.8</hediffSeverityPerLevel>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_MaharalPower</defName>
+		<label>Power</label>
+		<description>Enables the golem the ability to produce excess power while dormant.</description>
+		<maxLevel>1</maxLevel>
+		<recipe>TM_MaharalGolem_Power</recipe>
+		<bodypart>Maharal_Core</bodypart>
+		<occupiedPart>Maharal_Core</occupiedPart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<workstationEffects>
+		  <li Class="TorannMagic.Golems.GolemWorkstationEffect_EnableMaharalPower">
+			<ticksTillNextEffect80>5001</ticksTillNextEffect80>	
+		  </li>
+		</workstationEffects>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_MaharalHeat</defName>
+		<label>Heat</label>
+		<description>Enables the golem the ability to produce heat while dormant.</description>
+		<maxLevel>1</maxLevel>
+		<recipe>TM_MaharalGolem_Heat</recipe>
+		<bodypart>Golem_Abdomen</bodypart>
+		<occupiedPart>Golem_Abdomen</occupiedPart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<workstationEffects>
+		  <li Class="TorannMagic.Golems.GolemWorkstationEffect_RegulateTemperature">
+			<ticksTillNextEffect80>245</ticksTillNextEffect80>	
+			<energyCost>1</energyCost>
+			<minHeat>0</minHeat>			
+			<maxHeat>100</maxHeat>
+			<canCool>false</canCool>
+			<maxHeatAbsPerEffect>30</maxHeatAbsPerEffect>
+		  </li>
+		</workstationEffects>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_MaharalLifeStage</defName>
+		<label>frame tier</label>
+		<description>Increases stats:
+Movement:	+[20%/30%/40%]
+Health:		+[20%/40%/50%]</description>
+		<maxLevel>3</maxLevel>
+		<recipe>TM_MaharalGolem_LifeStage</recipe>
+		<bodypart>Golem_Heart</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<occupiedPart>Golem_Heart</occupiedPart>
+		<lifeStages>
+			<li>TM_MaharalGolemLS</li>
+			<li>TM_MaharalGolemLS1</li>
+			<li>TM_MaharalGolemLS2</li>
+			<li>TM_MaharalGolemLS3</li>
+		</lifeStages>
+		<drawUndrafted>false</drawUndrafted>
+		<drawOnlyWhenActive>false</drawOnlyWhenActive>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+
+</Defs>
+
+<!--
+			    <label></label>
+				<maxLevel>1</maxLevel>
+				<recipe>TM_Mecha-Golem_</recipe>
+				<bodypart>Mecha_</bodypart>
+				<partRequiresUpgrade>true</partRequiresUpgrade>
+				<hediff></hediff>
+				<ability></ability>
+				<lifeStages>
+				</lifeStages>
+				<abilityModifier>
+					<damageModifier></damageModifier>
+					<cooldownModifier></cooldownModifier>
+					<energyCostModifier></energyCostModifier>
+					<durationModifier></durationModifier>
+					<healingModifier></healingModifier>
+					<processingModifier></processingModifier>
+				</abilityModifier>				
+				<graphicsPath>Mecha/</graphicsPath>
+				<levelIncrementsGraphics>false</levelIncrementsGraphics>
+				<drawThing></drawThing>
+				<drawUndrafted>true</drawUndrafted>
+				<drawOnlyWhenActive>false</drawOnlyWhenActive>
+				<drawSize>1</drawSize>
+				<shouldRotate>false</shouldRotate>
+				<drawOffsetNorth>(0, 0, 0)</drawOffsetNorth>
+				<drawOffsetSouth>(0, 0, 0)</drawOffsetSouth>
+				<drawOffsetEast>(0, 0, 0)</drawOffsetEast>
+				<drawOffsetWest>(0, 0, 0)</drawOffsetWest>
+				<workstationCapacity>None</workstationCapacity> 
+				<workstationEffects>
+				</workstationEffects>
+-->

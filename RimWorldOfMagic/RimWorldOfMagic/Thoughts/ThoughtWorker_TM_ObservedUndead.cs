@@ -19,7 +19,7 @@ namespace TorannMagic.Thoughts
             TorannMagicDefOf.Lich,
             TraitDefOf.Psychopath,
             TraitDefOf.Bloodlust,
-            TraitDefOf.Masochist
+            TorannMagicDefOf.Masochist
         };
 
         protected override ThoughtState CurrentStateInternal(Pawn pawn)
@@ -40,7 +40,7 @@ namespace TorannMagic.Thoughts
                     return false;
                 }                
             }
-            List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned;
+            List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned.ToList();
             for (int i = 0; i < mapPawns.Count; i++)
             {
                 if (mapPawns[i].Spawned && mapPawns[i].RaceProps.Humanlike)

@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <HediffDef>
+    <defName>TM_BullChargeHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(1, 0.8, .2)</defaultLabelColor>
+    <label>charge</label>
+	<description>Charging into battle.</description>
+	<isBad>false</isBad>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<initialSeverity>.3</initialSeverity>
+	<comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-100</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label></label>
+        <minSeverity>.001</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>
+		  <MoveSpeed>10</MoveSpeed>
+		</statOffsets>
+      </li>
+	</stages>
+  </HediffDef>
+  
+  <HediffDef>
+    <defName>TM_FrailtyCurseHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.4, 0.6, .62)</defaultLabelColor>
+    <label>Cursed</label>
+	<description>The gaze of an evil eye has applied this curse.</description>
+	<makesSickThought>true</makesSickThought>
+	<isBad>true</isBad>
+	<comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-30</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+	  <li>
+        <label>frail</label>
+        <minSeverity>0.1</minSeverity>
+        <capMods>
+		  <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.1</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.4</offset>
+          </li>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>-0.2</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>crippled</label>
+        <minSeverity>2</minSeverity>
+        <capMods>
+		  <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.3</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.7</offset>
+          </li>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>-0.4</offset>
+          </li>
+        </capMods>
+      </li>	  
+    </stages>
+  </HediffDef>
+  
+  <HediffDef ParentName="TM_Golem_ImplantHediffBase">
+    <defName>TM_FleshGolem_SkullPlateHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+	<label>skull plate</label>
+	<description>Improves armor over the skull.</description>
+    <scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<maxSeverity>1</maxSeverity>
+	<isBad>false</isBad>
+	<initialSeverity>.1</initialSeverity>
+	<stages>
+      <li>
+        <label></label>
+        <minSeverity>0.001</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>
+		  <ArmorRating_Blunt>.12</ArmorRating_Blunt>
+		  <ArmorRating_Sharp>.18</ArmorRating_Sharp>
+		  <ArmorRating_Heat>.08</ArmorRating_Heat>
+		</statOffsets>
+      </li>
+	</stages>
+  </HediffDef>
+  
+  <HediffDef ParentName="TM_Golem_ImplantHediffBase">
+    <defName>TM_FleshGolem_ShoulderPlatesHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+	<label>shoulder plates</label>
+	<description>Improves armor around the shoulders.</description>
+    <scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<maxSeverity>1</maxSeverity>
+	<isBad>false</isBad>
+	<initialSeverity>.1</initialSeverity>
+	<stages>
+      <li>
+        <label></label>
+        <minSeverity>0.001</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>
+		  <ArmorRating_Blunt>.14</ArmorRating_Blunt>
+		  <ArmorRating_Sharp>.12</ArmorRating_Sharp>
+		  <ArmorRating_Heat>.1</ArmorRating_Heat>
+		</statOffsets>
+      </li>
+	</stages>
+  </HediffDef>
+  
+  <HediffDef ParentName="TM_Golem_ImplantHediffBase">
+    <defName>TM_FleshGolem_ChestCageHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+	<label>chest cage</label>
+	<description>Deflects attacks against the chest and torso, works best against larger weapons.</description>
+    <scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<maxSeverity>1</maxSeverity>
+	<isBad>false</isBad>
+	<initialSeverity>.1</initialSeverity>
+	<stages>
+      <li>
+        <label></label>
+        <minSeverity>0.001</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>
+		  <ArmorRating_Blunt>.28</ArmorRating_Blunt>
+		  <ArmorRating_Sharp>.1</ArmorRating_Sharp>
+		  <ArmorRating_Heat>.05</ArmorRating_Heat>
+		</statOffsets>
+      </li>
+	</stages>
+  </HediffDef>
+  
+  <HediffDef ParentName="TM_Golem_ImplantHediffBase">
+    <defName>TM_FleshGolem_SpineGuardHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+	<label>spine guard</label>
+	<description>Deflects attacks against the back.</description>
+    <scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<maxSeverity>1</maxSeverity>
+	<isBad>false</isBad>
+	<initialSeverity>.1</initialSeverity>
+	<stages>
+      <li>
+        <label></label>
+        <minSeverity>0.001</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>
+		  <ArmorRating_Blunt>.12</ArmorRating_Blunt>
+		  <ArmorRating_Sharp>.14</ArmorRating_Sharp>
+		  <ArmorRating_Heat>.05</ArmorRating_Heat>
+		</statOffsets>
+      </li>
+	</stages>
+  </HediffDef>
+  
+  <HediffDef ParentName="TM_Golem_ImplantHediffBase">
+    <defName>TM_FleshGolem_LegPlatesHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+	<label>leg plates</label>
+	<description>Improves armor around over the legs.</description>
+    <scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<maxSeverity>1</maxSeverity>
+	<isBad>false</isBad>
+	<initialSeverity>.1</initialSeverity>
+	<stages>
+      <li>
+        <label></label>
+        <minSeverity>0.001</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>
+		  <ArmorRating_Blunt>.1</ArmorRating_Blunt>
+		  <ArmorRating_Sharp>.15</ArmorRating_Sharp>
+		  <ArmorRating_Heat>.08</ArmorRating_Heat>
+		</statOffsets>
+      </li>
+	</stages>
+  </HediffDef>
+  
+    <HediffDef ParentName="TM_Golem_ImplantHediffBase">
+    <defName>TM_FleshGolem_BracerGuardHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+	<label>bracer guard</label>
+	<description>chance to block attacks</description>
+    <scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<maxSeverity>1</maxSeverity>
+	<isBad>false</isBad>
+	<initialSeverity>.1</initialSeverity>
+	<stages>
+      <li>
+        <label></label>
+        <minSeverity>0.001</minSeverity>
+		<becomeVisible>true</becomeVisible>
+      </li>
+	</stages>
+  </HediffDef>
+  
+  <HediffDef ParentName="TM_Golem_ImplantHediffBase">
+    <defName>TM_FleshGolem_HasteHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+	<label>swiftness</label>
+	<description>Wings are granting movement agility.</description>
+    <scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<maxSeverity>1</maxSeverity>
+	<isBad>false</isBad>
+	<initialSeverity>.1</initialSeverity>
+	<comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-100</severityPerDay>
+      </li>
+    </comps>
+	<stages>
+      <li>
+        <label></label>
+        <minSeverity>0.001</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>
+		  <MoveSpeed>1</MoveSpeed>
+		</statOffsets>
+      </li>
+	</stages>
+  </HediffDef>
+  
+  <HediffDef ParentName="TM_Golem_ImplantHediffBase">
+    <defName>TM_FleshGolem_EyesT1HD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+	<label>quad sight</label>
+	<description>Vision is improved with four eyes.</description>
+    <scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<maxSeverity>1</maxSeverity>
+	<isBad>false</isBad>
+	<initialSeverity>.1</initialSeverity>
+	<stages>
+      <li>
+        <label></label>
+        <minSeverity>1</minSeverity>
+        <capMods>
+		  <li>
+            <capacity>Sight</capacity>
+            <offset>0.5</offset>
+          </li>
+        </capMods>
+      </li>
+	</stages>
+  </HediffDef>
+  
+</Defs>

@@ -57,7 +57,7 @@ namespace TorannMagic
                     if (Rand.Chance(TM_Calc.GetSpellSuccessChance(this.CasterPawn, pawn, true)))
                     {
                         List<Thought_Memory> thoughts = pawn.needs.mood.thoughts.memories.Memories;
-                        pawn.mindState.mentalStateHandler.TryStartMentalState(TorannMagicDefOf.WanderConfused, null, false, false, null, false);
+                        pawn.mindState.mentalStateHandler.TryStartMentalState(TorannMagicDefOf.WanderConfused, null, false, false, false, null, false);
                         for(int i =0; i< thoughts.Count; i++)
                         {
                             pawn.needs.mood.thoughts.memories.RemoveMemory(thoughts[i]);                            

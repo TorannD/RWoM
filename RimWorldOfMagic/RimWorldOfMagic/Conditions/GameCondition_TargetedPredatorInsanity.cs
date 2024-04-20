@@ -44,7 +44,7 @@ namespace TorannMagic.Conditions
                     for (int i = 0; i < potentialAnimals.Count; i++)
                     {
                         Pawn a = potentialAnimals[i];                 
-                        a.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Manhunter,null, true, false, null, true);
+                        a.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Manhunter, null, true, false, false, null, true);
                         if(a.InMentalState)
                         {
                             this.enragedPredators.AddDistinct(a);

@@ -30,7 +30,7 @@ namespace TorannMagic
                 {
                     this.growthTick = Rand.Range(30, 60);
                     plant.Growth += .0735f;
-                    parent.Map.mapDrawer.MapMeshDirty(parent.Position, MapMeshFlag.Things);
+                    parent.Map.mapDrawer.MapMeshDirty(parent.Position, MapMeshFlagDefOf.Things);
                 }
             }
             

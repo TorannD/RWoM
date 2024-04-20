@@ -134,7 +134,7 @@ namespace TorannMagic
                                 ), MessageTypeDefOf.NeutralEvent);
                                 if(animal.Faction == null && Rand.Chance(animal.RaceProps.manhunterOnTameFailChance))
                                 {
-                                    animal.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Manhunter, null, true, false, null);
+                                    animal.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Manhunter, null, true, false, false, null);
                                 }
                             }
                         }

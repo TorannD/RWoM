@@ -241,17 +241,17 @@ namespace TorannMagic
                 {
                     if (FireUtility.CanEverAttachFire(tList[i]))
                     {
-                        FireUtility.TryAttachFire(tList[i], .2f);
+                        FireUtility.TryAttachFire(tList[i], .2f, null);
                     }
                     else
                     {
-                        FireUtility.TryStartFireIn(c, this.Map, .2f);
+                        FireUtility.TryStartFireIn(c, this.Map, .2f, null);
                     }
                 }                
             }
         }
 
-        public override void Draw()
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
             for (int i = 0; i < this.sfBeams.Count; i++)
             {

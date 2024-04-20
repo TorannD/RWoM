@@ -9,7 +9,7 @@ namespace TorannMagic.Thoughts
         public override bool InspirationCanOccur(Pawn pawn)
         {
             bool flag = ModsConfig.IdeologyActive;
-            if(flag && pawn.story != null && pawn.story.traits != null && pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted))
+            if(flag && pawn.story != null && pawn.story.traits != null && pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted) && pawn.ageTracker.AgeBiologicalYears >= 6)
             {
                 foreach (Pawn p in pawn.Map.mapPawns.AllPawns)
                 {

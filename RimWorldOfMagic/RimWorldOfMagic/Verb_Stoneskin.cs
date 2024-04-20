@@ -96,7 +96,7 @@ namespace TorannMagic
                         comp.stoneskinPawns.Remove(pawn);
                         SoundInfo info = SoundInfo.InMap(new TargetInfo(pawn.Position, pawn.Map, false), MaintenanceType.None);
                         info.pitchFactor = .7f;
-                        SoundDefOf.EnergyShield_Broken.PlayOneShot(info);
+                        TorannMagicDefOf.EnergyShield_Broken.PlayOneShot(info);
                         FleckMaker.ThrowLightningGlow(pawn.DrawPos, pawn.Map, 1.5f);
                     }
                 }

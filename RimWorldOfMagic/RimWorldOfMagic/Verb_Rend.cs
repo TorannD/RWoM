@@ -70,7 +70,7 @@ namespace TorannMagic
                         }
                         else if (newPawn.kindDef != null && newPawn.kindDef.RaceProps.Animal && newPawn.Faction == null)
                         {
-                            newPawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Manhunter, null, true, false, null);
+                            newPawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Manhunter, null, true, false, false, null);
                         }
                         if (newPawn.IsColonist && !base.CasterPawn.IsColonist)
                         {

@@ -1,0 +1,111 @@
+
+	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
+        <defName>TM_RandomBullshitGo</defName>
+        <label>Random bullshit go</label>
+        <uiIconPath>UI/Fireball</uiIconPath>
+        <description>Fires many different spells.</description>
+        <manaCost>0.25</manaCost>
+		<efficiencyReductionPercent>.05</efficiencyReductionPercent>
+        <shouldInitialize>true</shouldInitialize>
+        <learnChance>1</learnChance>
+        <canCopy>false</canCopy>
+        <MainVerb Class="TorannMagic.Verb_ShootDifferentProjectiles_Properties">
+            <verbClass>TorannMagic.Verb_ShootDifferentProjectiles</verbClass>
+                <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+                <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+                <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+                <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+            <hasStandardCommand>true</hasStandardCommand>
+            <abilityDef>TM_RandomBullshitGo</abilityDef>
+			<requiresLineOfSight>true</requiresLineOfSight>
+            <isViolent>true</isViolent>
+            <defaultProjectile>Projectile_Default</defaultProjectile>
+			<!-- ignored if you also have a <projectiles> list -->
+            <warmupTime>1.0</warmupTime>
+            <SecondsToRecharge>120.0</SecondsToRecharge>
+			<burstShotCount>29</burstShotCount>
+            <ticksBetweenBurstShots>2</ticksBetweenBurstShots>
+			<forcedMissRadius>7</forcedMissRadius>
+			<!-- actually uses forcedMissRadius -->
+            <range>35.0</range>
+            <AlwaysHits>true</AlwaysHits>
+            <muzzleFlashScale>1</muzzleFlashScale>  
+            <isPrimary>false</isPrimary>
+            <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+			<targetParams>
+				<canTargetItems>false</canTargetItems>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetSelf>false</canTargetSelf>
+                <canTargetLocations>true</canTargetLocations>
+            </targetParams>
+			
+			<addShotPerMagicLevels>10</addShotPerMagicLevels>
+			<!-- every ten levels, this spell shoots one more shot per burst -->
+			<!-- you can also use addShotPerMightLevels if you are making a might spell -->
+			<!-- you can also use both at once for dual classes -->
+			<shootInListOrder>false</shootInListOrder>
+			<!-- shoots a random projectiles from <projectiles> every shot, defaults to true to iterate over the list and loop back-->
+			<projectiles>
+				<li>Projectile_ArcaneBolt</li>
+				<li>Projectile_Snowball</li>
+				<li>Projectile_Fireball</li>
+				<li>Projectile_Fireclaw</li>
+			</projectiles>
+			<!--list of projectiles to shoot-->
+        </MainVerb>
+    </TorannMagic.TMAbilityDef>
+	
+	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
+        <defName>TM_DontStopMeNow</defName>
+        <label>I'm having a ball</label>
+        <uiIconPath>UI/Snowball</uiIconPath>
+        <description>Fires alternating snowballs and fireballs.</description>
+        <manaCost>0.25</manaCost>
+		<efficiencyReductionPercent>.05</efficiencyReductionPercent>
+        <shouldInitialize>true</shouldInitialize>
+        <learnChance>1</learnChance>
+        <canCopy>false</canCopy>
+        <MainVerb Class="TorannMagic.Verb_ShootDifferentProjectiles_Properties">
+            <verbClass>TorannMagic.Verb_ShootDifferentProjectiles</verbClass>
+                <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+                <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+                <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+                <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+            <hasStandardCommand>true</hasStandardCommand>
+            <abilityDef>TM_DontStopMeNow</abilityDef>
+			<requiresLineOfSight>true</requiresLineOfSight>
+            <isViolent>true</isViolent>
+            <defaultProjectile>Projectile_Default</defaultProjectile>
+			<!-- ignored if you also have a <projectiles> list -->
+            <warmupTime>1.0</warmupTime>
+            <SecondsToRecharge>120.0</SecondsToRecharge>
+			<burstShotCount>5</burstShotCount>
+            <ticksBetweenBurstShots>15</ticksBetweenBurstShots>
+			<forcedMissRadius>2</forcedMissRadius>
+			<!-- actually uses forcedMissRadius -->
+            <range>35.0</range>
+            <AlwaysHits>true</AlwaysHits>
+            <muzzleFlashScale>1</muzzleFlashScale>  
+            <isPrimary>false</isPrimary>
+            <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+			<targetParams>
+				<canTargetItems>false</canTargetItems>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetSelf>false</canTargetSelf>
+                <canTargetLocations>true</canTargetLocations>
+            </targetParams>
+			
+			<addShotPerMagicLevels>15</addShotPerMagicLevels>
+			<!-- every fifteen levels, this spell shoots one more shot per burst -->
+			<shootInListOrder>true</shootInListOrder>	<!--default value-->
+			<!-- shoots a snowball on shot 1, 3, and 5, and a fireball on shot 2 and 4-->
+			<projectiles>
+				<li>Projectile_Snowball</li>
+				<li>Projectile_Fireball</li>
+			</projectiles>
+			<!--list of projectiles to shoot-->
+        </MainVerb>
+    </TorannMagic.TMAbilityDef>
+

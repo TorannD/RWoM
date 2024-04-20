@@ -56,7 +56,7 @@ namespace TorannMagic.Golems
             get
             {
                 glist.Clear();
-                List<Pawn> tmpList = Find.CurrentMap.mapPawns.AllPawnsSpawned;
+                List<Pawn> tmpList = Find.CurrentMap.mapPawns.AllPawnsSpawned.ToList();
                 foreach (Pawn p in tmpList)
                 {
                     if (TM_Calc.IsGolem(p))

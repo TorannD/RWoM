@@ -103,9 +103,9 @@ namespace TorannMagic
 
             }
             base.Tick();
-        }        
+        }
 
-        public override void Draw()
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
             Vector3 vector = base.DrawPos;
             vector.y = Altitudes.AltitudeFor(AltitudeLayer.MoteOverhead);

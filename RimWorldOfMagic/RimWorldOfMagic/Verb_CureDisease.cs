@@ -120,7 +120,7 @@ namespace TorannMagic
                                     pawn.health.RemoveHediff(rec);
                                     success = true;
                                 }
-                                if (verVal >= 1 && (rec.def.defName == "GutWorms" || rec.def == HediffDefOf.Malaria || rec.def == HediffDefOf.FoodPoisoning))
+                                if (verVal >= 1 && (rec.def.defName == "GutWorms" || rec.def.defName == "Malaria" || rec.def == HediffDefOf.FoodPoisoning))
                                 {
                                     //rec.Severity -= sevAdjustment;
                                     pawn.health.RemoveHediff(rec);

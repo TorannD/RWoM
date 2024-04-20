@@ -4446,7 +4446,7 @@ namespace TorannMagic
             };
         }
 
-        public override void PostPreApplyDamage(DamageInfo dinfo, out bool absorbed)
+        public override void PostPreApplyDamage(ref DamageInfo dinfo, out bool absorbed)
         {
             Pawn abilityUser = base.Pawn;
 
@@ -4658,12 +4658,12 @@ namespace TorannMagic
                 list.Clear();
                 list = null;
             }
-            base.PostPreApplyDamage(dinfo, out absorbed);
+            base.PostPreApplyDamage(ref dinfo, out absorbed);
         }
 
         private void BreakShield(Pawn pawn)
         {
-            SoundDefOf.EnergyShield_Broken.PlayOneShot(new TargetInfo(pawn.Position, pawn.Map, false));
+            TorannMagicDefOf.EnergyShield_Broken.PlayOneShot(new TargetInfo(pawn.Position, pawn.Map, false));
             FleckMaker.Static(pawn.TrueCenter(), pawn.Map, FleckDefOf.ExplosionFlash, 12f);
             for (int i = 0; i < 6; i++)
             {

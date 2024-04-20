@@ -205,6 +205,8 @@ namespace TorannMagic
         public static TraitDef TM_EnlightenedTD;
         public static TraitDef TM_CursedTD;
         public static HediffDef TM_CursedHD;
+        public static TraitDef Masochist;
+        public static TraitDef Beauty;
 
         //Wanderer
         public static TraitDef TM_Wanderer;
@@ -1507,6 +1509,8 @@ namespace TorannMagic
         public static SoundDef TM_Roar;
         public static SoundDef TM_Powerup;
         public static SoundDef TM_Scream;
+        public static SoundDef EnergyShield_Broken;
+        public static SoundDef DropPod_Open;
 
         //Inspirations
         public static InspirationDef ID_Champion;
@@ -1566,11 +1570,15 @@ namespace TorannMagic
         public static WeatherDef TM_HealingRainWD;
         public static WeatherDef TM_HailstormWD;
 
+        //GameConditionDefs
+        public static GameConditionDef SolarFlare;
+
         //Factions
         public static FactionDef TM_SkeletalFaction;
 
         //NeedDefs
         public static NeedDef TM_Travel;
+        public static NeedDef Joy;
 
         //Stats
         public static StatDef ArmorRating_Alignment;        
@@ -1578,6 +1586,10 @@ namespace TorannMagic
         //Armor Categories
         public static DamageArmorCategoryDef Dark;
         public static DamageArmorCategoryDef Light;
+
+        //Designation Categories
+        public static DesignationCategoryDef Structure;
+        public static DesignationCategoryDef Security;
 
         //CustomDefs
         public static TM_CustomDef TM_CustomDef;
@@ -1624,6 +1636,9 @@ namespace TorannMagic
         //FleckDefs
         public static FleckDef ElectricalSpark;
         public static FleckDef SparkFlash;
+
+        //DamageDefs
+        public static DamageDef Arrow;
 
         //BackstoryDefs
         public static BackstoryDef TM_UndeadChildBS;

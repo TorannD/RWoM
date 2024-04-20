@@ -45,7 +45,7 @@ namespace TorannMagic
                 {
                     FleckMaker.ThrowHeatGlow(base.Pawn.DrawPos.ToIntVec3(), base.Pawn.Map, 2f);
                 }
-                List<Pawn> mapPawns = this.Pawn.Map.mapPawns.AllPawnsSpawned;
+                List<Pawn> mapPawns = this.Pawn.Map.mapPawns.AllPawnsSpawned.ToList();
                 for (int i = 0; i < mapPawns.Count(); i++)
                 {
                     if (!mapPawns[i].DestroyedOrNull() && mapPawns[i].Spawned && !mapPawns[i].Downed && mapPawns[i].RaceProps.Humanlike)

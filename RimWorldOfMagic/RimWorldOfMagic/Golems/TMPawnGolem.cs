@@ -217,7 +217,10 @@ namespace TorannMagic.Golems
             {
                 this.skills = new Pawn_SkillTracker(this);
             }
-            base.Tick();
+            if (this.Spawned && this.Map != null)
+            {
+                base.Tick();
+            }
             if(Downed && !Dead)
             {
                 Kill(null, null);
@@ -257,9 +260,10 @@ namespace TorannMagic.Golems
         }
 
         List<GolemDrawClass> removeGDC = new List<GolemDrawClass>();
-        public override void Draw()
+
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
-            base.Draw();
+            base.DrawAt(drawLoc, flip);
             List<DrawMesh> tmpMesh = new List<DrawMesh>();
             foreach(DrawMesh mesh in drawQueue)
             {

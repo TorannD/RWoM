@@ -178,7 +178,7 @@ namespace TorannMagic
                             {
                                 val *= .85f;
                             }
-                            if(gcList[i].def == GameConditionDefOf.SolarFlare)
+                            if(gcList[i].def == TorannMagicDefOf.SolarFlare)
                             {
                                 val *= 1.5f;
                             }
@@ -329,7 +329,7 @@ namespace TorannMagic
             Scribe_Values.Look<bool>(ref this.glowing, "glowing", false, false);
         }
 
-        public override void Draw()
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
             bool flag = this.flyingThing != null;
             if (flag && solAction != SoLAction.Sleeping && solAction != SoLAction.Limbo)
@@ -440,12 +440,12 @@ namespace TorannMagic
                 //Log.Message("glower not null, glow center " + glowCenter);
                 if (this.glowCenter != default(IntVec3) && this.pawn.Spawned)
                 {
-                    this.Map.mapDrawer.MapMeshDirty(glowCenter, MapMeshFlag.Things);
+                    this.Map.mapDrawer.MapMeshDirty(glowCenter, MapMeshFlagDefOf.Things);
                     GlowGrid gg = this.Map.glowGrid;
                     HashSet<CompGlower> litGlowers = Traverse.Create(root: gg).Field(name: "litGlowers").GetValue<HashSet<CompGlower>>();
                     litGlowers.Add(glower);
                     Traverse.Create(root: gg).Field(name: "litGlowers").SetValue(litGlowers);
-                    gg.MarkGlowGridDirty(glowCenter);
+                    gg.DirtyCache(glowCenter);
                     if (Current.ProgramState != ProgramState.Playing)
                     {
                         List<IntVec3> locs = Traverse.Create(root: gg).Field(name: "initialGlowerLocs").GetValue<List<IntVec3>>();
@@ -482,7 +482,7 @@ namespace TorannMagic
                 gProps.overlightRadius = 12f;
                 glower.parent = this;
                 glower.Initialize(gProps);
-                this.Map.mapDrawer.MapMeshDirty(base.Position, MapMeshFlag.Things);
+                this.Map.mapDrawer.MapMeshDirty(base.Position, MapMeshFlagDefOf.Things);
                 this.Map.glowGrid.DeRegisterGlower(glower);
                 this.glowing = false;
                 //this.shouldGlow = false;
@@ -759,7 +759,7 @@ namespace TorannMagic
                         Action_Hover(out destTarget);
                     }
                 }                
-                else if (this.pawn.Downed && this.pawn.health.hediffSet.GetInjuriesTendable().Count() > 0 && LightEnergy > 10)
+                else if (this.pawn.Downed && this.pawn.health.hediffSet.GetHediffsTendable().Count() > 0 && LightEnergy > 10)
                 {
                     Action_GotoTarget(this.pawn.DrawPos, speed_jog, out destTarget);
                     this.assignedTarget = this.pawn;
@@ -775,7 +775,7 @@ namespace TorannMagic
                 {
                     Pawn p = TM_Calc.FindNearbyInjuredPawnOther(this.pawn, 10, 10f);
                     this.delayCount++;
-                    if (this.delayCount > 1 && p != null && p.Downed && TM_Calc.HasLoSFromTo(this.pawn.Position, p, this.pawn, 0, 10) && p.health.hediffSet.GetInjuriesTendable().Count() > 0)
+                    if (this.delayCount > 1 && p != null && p.Downed && TM_Calc.HasLoSFromTo(this.pawn.Position, p, this.pawn, 0, 10) && p.health.hediffSet.GetHediffsTendable().Count() > 0)
                     {
                         Action_GotoTarget(p.DrawPos, speed_dash, out destTarget);
                         queuedAction = SoLAction.Guarding;
@@ -867,7 +867,7 @@ namespace TorannMagic
                 if(LightEnergy > 10 && this.assignedTarget != null && this.assignedTarget is Pawn)
                 {
                     Pawn p = this.assignedTarget as Pawn;
-                    if (p.health.hediffSet.GetInjuriesTendable().Count() > 0)
+                    if (p.health.hediffSet.GetHediffsTendable().Count() > 0)
                     {
                         this.ticksToImpact = 300;
                         ActualLightCost(2f);
@@ -1159,7 +1159,7 @@ namespace TorannMagic
             int iCount = 1;
             for (int i = 0; i < iCount; i++)
             {
-                Hediff_Injury hi = p.health.hediffSet.GetInjuriesTendable().RandomElement();
+                Hediff hi = p.health.hediffSet.GetHediffsTendable().RandomElement();
                 if (hi != null)
                 {
                     float tendQuality = Rand.Range(.3f, .6f) * LightPotency;

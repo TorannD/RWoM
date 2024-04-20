@@ -1,13 +1,13 @@
 ﻿using RimWorld;
 using System;
 using Verse;
-using AbilityUser;
+using Verse.AI.Group;
 
 namespace TorannMagic
 {
     public class Spirit_DeathWorker : DeathActionWorker
     {
-        public override void PawnDied(Corpse corpse)
+        public override void PawnDied(Corpse corpse, Lord prevLord)
         {
             
             if (corpse.Map != null)

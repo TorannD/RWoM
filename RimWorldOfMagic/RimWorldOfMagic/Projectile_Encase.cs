@@ -123,7 +123,7 @@ namespace TorannMagic
                             cellList = wall[k].position.GetThingList(caster.Map);
                             for (int i = 0; i < cellList.Count(); i++)
                             {
-                                if (cellList[i].def.designationCategory == DesignationCategoryDefOf.Structure || cellList[i].def.altitudeLayer == AltitudeLayer.Building || cellList[i].def.altitudeLayer == AltitudeLayer.Item || cellList[i].def.altitudeLayer == AltitudeLayer.ItemImportant)
+                                if (cellList[i].def.designationCategory == TorannMagicDefOf.Structure || cellList[i].def.altitudeLayer == AltitudeLayer.Building || cellList[i].def.altitudeLayer == AltitudeLayer.Item || cellList[i].def.altitudeLayer == AltitudeLayer.ItemImportant)
                                 {
                                     if (!cellList[i].def.EverHaulable)
                                     {

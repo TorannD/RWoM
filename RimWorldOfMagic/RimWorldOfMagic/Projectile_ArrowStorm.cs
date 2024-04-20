@@ -39,9 +39,9 @@ namespace TorannMagic
 
                 if (victim != null && Rand.Chance(GetWeaponAccuracy(pawn)))
                 {
-                    damageEntities(victim, null, dmg, DamageDefOf.Arrow);
+                    damageEntities(victim, null, dmg, TorannMagicDefOf.Arrow);
                     TM_MoteMaker.ThrowBloodSquirt(victim.DrawPos, victim.Map, 1f);
-                }
+                } 
             }
             catch(NullReferenceException ex)
             {

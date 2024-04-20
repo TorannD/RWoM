@@ -15,10 +15,10 @@
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\v1.4\Assemblies\</OutputPath>
+    <OutputPath>..\..\v1.5\Assemblies\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -37,11 +37,11 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="AbilityUser">
-      <HintPath>..\..\..\..\..\..\workshop\content\294100\932008009\1.4\Assemblies\AbilityUser.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\workshop\content\294100\932008009\1.5\Assemblies\AbilityUser.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="AbilityUserAI">
-      <HintPath>..\..\..\..\..\..\workshop\content\294100\932008009\1.4\Assemblies\AbilityUserAI.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\workshop\content\294100\932008009\1.5\Assemblies\AbilityUserAI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="AlienRace">
@@ -53,7 +53,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="CompDeflector">
-      <HintPath>..\..\..\..\..\..\workshop\content\294100\932008009\1.3\Assemblies\CompDeflector.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\workshop\content\294100\932008009\1.5\Assemblies\CompDeflector.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="GiddyUpCore">
@@ -65,7 +65,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="HugsLib">
-      <HintPath>..\..\..\..\..\..\workshop\content\294100\818773962\v1.4\Assemblies\HugsLib.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\workshop\content\294100\818773962\Assemblies\HugsLib.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="SimpleSidearms">
@@ -108,6 +108,8 @@
   <ItemGroup>
     <Compile Include="AbilityDecisionConditionalNode_EnemyTargetIsBuilding.cs" />
     <Compile Include="AbilityWorker_TargetCorpse.cs" />
+    <Compile Include="Area_TMRegrowth.cs" />
+    <Compile Include="Area_TMTransmutate.cs" />
     <Compile Include="AutoCast\Scripts.cs" />
     <Compile Include="Building_60mmMortar.cs" />
     <Compile Include="Building_ExplosiveProximityTrap.cs" />
@@ -133,6 +135,7 @@
     <Compile Include="Building_TMTotem_Healing.cs" />
     <Compile Include="Building_TMTotem_Lightning.cs" />
     <Compile Include="Building_TM_DMP.cs" />
+    <Compile Include="Area_TMSprite.cs" />
     <Compile Include="Enchantment\HediffComp_ShroudOfUndeath.cs" />
     <Compile Include="Golems\Building_TMGolemStraw.cs" />
     <Compile Include="Golems\GolemWorkstationEffect_ScarecrowGrow.cs" />

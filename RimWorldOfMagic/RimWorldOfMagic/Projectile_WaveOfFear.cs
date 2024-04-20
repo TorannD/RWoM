@@ -134,7 +134,7 @@ namespace TorannMagic
 
         public void SearchAndFear()
         {
-            List<Pawn> mapPawns = this.caster.Map.mapPawns.AllPawnsSpawned;
+            List<Pawn> mapPawns = this.caster.Map.mapPawns.AllPawnsSpawned.ToList();
             if (mapPawns != null && mapPawns.Count > 0)
             {
                 for (int i = 0; i < mapPawns.Count; i++)

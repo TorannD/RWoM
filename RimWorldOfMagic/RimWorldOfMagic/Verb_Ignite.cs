@@ -81,7 +81,7 @@ namespace TorannMagic
                         }
                         if (Rand.Chance(TM_Calc.GetSpellSuccessChance(this.CasterPawn, pawns[i], true)) && Rand.Chance(distanceModifier))
                         {
-                            pawns[i].TryAttachFire(Rand.Range(distanceModifier / 2f, distanceModifier));
+                            pawns[i].TryAttachFire(Rand.Range(distanceModifier / 2f, distanceModifier), null);
                         }
                     }
                 }
@@ -91,7 +91,7 @@ namespace TorannMagic
                     //{
                     float distanceModifier = 1f / (corpses[i].Position - currentTarget.Cell).LengthHorizontal;
                     //    corpses[i].TryAttachFire(Rand.Range(distanceModifier / 2f, distanceModifier));
-                        FireUtility.TryStartFireIn(corpses[i].Position, map, Rand.Range(distanceModifier / 2f, distanceModifier));
+                        FireUtility.TryStartFireIn(corpses[i].Position, map, Rand.Range(distanceModifier / 2f, distanceModifier), null);
                     //}
                 }
                 for (int i = 0; i < plants.Count; i++)
@@ -105,16 +105,16 @@ namespace TorannMagic
                     {
                         if (Rand.Chance(distanceModifier/2f))
                         {
-                            plants[i].TryAttachFire(Rand.Range(distanceModifier / 3f, distanceModifier/2f));
-                            FireUtility.TryStartFireIn(plants[i].Position, map, Rand.Range(distanceModifier / 3f, distanceModifier / 2f));
+                            plants[i].TryAttachFire(Rand.Range(distanceModifier / 3f, distanceModifier/2f), null);
+                            FireUtility.TryStartFireIn(plants[i].Position, map, Rand.Range(distanceModifier / 3f, distanceModifier / 2f), null);
                         }
                     }
                     else
                     {
                         if(Rand.Chance(distanceModifier))
                         {
-                            plants[i].TryAttachFire(Rand.Range(distanceModifier / 2f, distanceModifier));
-                            FireUtility.TryStartFireIn(plants[i].Position, map, Rand.Range(distanceModifier / 2f, distanceModifier));
+                            plants[i].TryAttachFire(Rand.Range(distanceModifier / 2f, distanceModifier), null);
+                            FireUtility.TryStartFireIn(plants[i].Position, map, Rand.Range(distanceModifier / 2f, distanceModifier), null);
                         }
                     }                    
                 }

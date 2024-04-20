@@ -92,7 +92,7 @@ namespace TorannMagic
                         {
                             if (cellList[j].def.designationCategory != null)
                             {
-                                if (cellList[j].def.designationCategory == DesignationCategoryDefOf.Structure || cellList[j].def.altitudeLayer == AltitudeLayer.Building || cellList[j].def.altitudeLayer == AltitudeLayer.Item || cellList[j].def.altitudeLayer == AltitudeLayer.ItemImportant)
+                                if (cellList[j].def.designationCategory == TorannMagicDefOf.Structure || cellList[j].def.altitudeLayer == AltitudeLayer.Building || cellList[j].def.altitudeLayer == AltitudeLayer.Item || cellList[j].def.altitudeLayer == AltitudeLayer.ItemImportant)
                                 {
                                     invalidCell = true;
                                 }

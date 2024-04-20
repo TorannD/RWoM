@@ -81,8 +81,9 @@ namespace TorannMagic
             }
         }
 
-        public override void Draw()
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
+            base.DrawAt(drawLoc, flip);
             this.rotationOffset += Rand.Range(20, 36);
             if(this.rotationOffset > 360)
             {

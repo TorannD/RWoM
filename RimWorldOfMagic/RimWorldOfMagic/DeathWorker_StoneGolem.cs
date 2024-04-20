@@ -4,12 +4,13 @@ using Verse;
 using AbilityUser;
 using UnityEngine;
 using TorannMagic.Golems;
+using Verse.AI.Group;
 
 namespace TorannMagic
 {
     public class DeathWorker_StoneGolem : DeathActionWorker
     {
-        public override void PawnDied(Corpse corpse)
+        public override void PawnDied(Corpse corpse, Lord prevLord)
         {
             TMPawnGolem innerPawn = corpse.InnerPawn as TMPawnGolem;
             if (innerPawn != null)

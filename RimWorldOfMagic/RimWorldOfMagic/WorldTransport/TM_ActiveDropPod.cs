@@ -123,7 +123,7 @@ namespace TorannMagic.WorldTransport
                     GenPlace.TryPlaceThing(ThingMaker.MakeThing(ThingDefOf.ChunkSlagSteel), base.Position, map, ThingPlaceMode.Near);
                 }
             }
-            SoundDefOf.DropPod_Open.PlayOneShot(new TargetInfo(base.Position, map));
+            TorannMagicDefOf.DropPod_Open.PlayOneShot(new TargetInfo(base.Position, map));
             Destroy();
         }
     }

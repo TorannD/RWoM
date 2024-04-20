@@ -161,13 +161,13 @@ namespace TorannMagic
             if (this.rnd < 2) //earth
             {
                 //berserk random animal
-                List<Pawn> animalList = this.Map.mapPawns.AllPawnsSpawned;
+                List<Pawn> animalList = this.Map.mapPawns.AllPawnsSpawned.ToList();
                 for (int i = 0; i < animalList.Count; i++)
                 {
                     int j = Rand.Range(0, animalList.Count);
                     if (animalList[j].RaceProps.Animal && !animalList[j].IsColonist && !animalList[j].def.defName.Contains("Elemental") && animalList[j].Faction == null)
                     {
-                        animalList[j].mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.ManhunterPermanent, null, true, false, null);
+                        animalList[j].mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.ManhunterPermanent);
                         i = animalList.Count;
                     }
                 }                
@@ -618,9 +618,9 @@ namespace TorannMagic
             }
         }
 
-        public override void Draw()
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
-            base.Draw();
+            base.DrawAt(drawLoc, flip);
 
             Vector3 vector = base.DrawPos;
             vector.y = Altitudes.AltitudeFor(AltitudeLayer.MoteOverhead);

@@ -127,7 +127,7 @@ namespace TorannMagic
 							patient.Label,
 							reason,
 							surgeon.LabelShort
-						), LetterDefOf.NegativeEvent, null);
+						), LetterDefOf.NegativeEvent, null, null);
 						return true;
 					}
 					else // rune carving success chance is calculated by .7f * ([crafting] .75 + .025 * level) * ([artistic] .8 + .03 * level) - ([skill power] level * .05) + ([skill versatility] level * .1)
@@ -160,7 +160,7 @@ namespace TorannMagic
 								patient.LabelShort,
 								part.Label,
 								(successChance * 100f).ToString("#.#")
-							), LetterDefOf.NegativeEvent, null);
+							), LetterDefOf.NegativeEvent, null, null);
 							return true;
                         }
 					}
@@ -176,7 +176,7 @@ namespace TorannMagic
 						reason,
 						surgeon.LabelShort,
 						TorannMagicDefOf.TM_RuneCarving.manaCost * 100f
-					), LetterDefOf.NegativeEvent, null);
+					), LetterDefOf.NegativeEvent, null, null);
 					return true;
 				}
 			}
@@ -188,7 +188,7 @@ namespace TorannMagic
 						reason,
 						surgeon.LabelShort,
 						TorannMagicDefOf.TM_RuneCarving.manaCost * 100f
-				), LetterDefOf.NegativeEvent, null);
+				), LetterDefOf.NegativeEvent, null, null);
 			return true;
 
 		}
@@ -236,8 +236,9 @@ namespace TorannMagic
                         }
                     }
                                        
-                    pawn.style.BodyTattoo = tat;                    
-                    pawn.Drawer.renderer.graphics.SetAllGraphicsDirty();
+                    pawn.style.BodyTattoo = tat;
+                    pawn.Drawer.renderer.SetAllGraphicsDirty();
+                    //pawn.Drawer.renderer.graphics.SetAllGraphicsDirty();
                     PortraitsCache.SetDirty(pawn);
                 }
             }

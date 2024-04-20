@@ -108,7 +108,7 @@ namespace TorannMagic
                                             //        priorities[item] = tmppriorities[item];
                                             //    }                                                    
                                             //}
-                                            ResurrectionUtility.Resurrect(undeadPawn);
+                                            ResurrectionUtility.TryResurrect(undeadPawn);
                                         }
                                         raisedPawns++;
                                         comp.supportedUndead.Add(undeadPawn);
@@ -369,9 +369,9 @@ namespace TorannMagic
                                           where bs != null
                                           select bs)
             {
-                foreach (KeyValuePair<SkillDef, int> skillGain in item.skillGains)
+                foreach (SkillGain skillGain in item.skillGains)
                 {
-                    undeadPawn.skills.GetSkill(skillGain.Key).Level += skillGain.Value;                  
+                    undeadPawn.skills.GetSkill(skillGain.skill).Level += skillGain.amount;                
                 }
             }
 
@@ -393,9 +393,9 @@ namespace TorannMagic
                 {
                     undeadPawn.workSettings.SetPriority(TorannMagicDefOf.Research, 0);
                 }
-                if (!undeadPawn.WorkTypeIsDisabled(WorkTypeDefOf.Art))
+                if (!undeadPawn.WorkTypeIsDisabled(TorannMagicDefOf.Art))
                 {
-                    undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Art, 0);
+                    undeadPawn.workSettings.SetPriority(TorannMagicDefOf.Art, 0);
                 }
                 if (!undeadPawn.WorkTypeIsDisabled(TorannMagicDefOf.PatientBedRest))
                 {
@@ -662,7 +662,7 @@ namespace TorannMagic
                 while (enumerator.MoveNext())
                 {
                     Hediff hd = enumerator.Current;
-                    if (hd.IsPermanent() || (hd.IsTended() || hd.TendableNow()) || (hd.source == null && hd.sourceBodyPartGroup == null))
+                    if (hd.IsPermanent() || (hd.IsTended() || hd.TendableNow()) || (hd.sourceBodyPartGroup == null))
                     {
                         if (hd.def != TorannMagicDefOf.TM_UndeadHD && hd.def != TorannMagicDefOf.TM_UndeadStageHD && hd.def != TorannMagicDefOf.TM_UndeadAnimalHD)
                         {

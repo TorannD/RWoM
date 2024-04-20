@@ -127,12 +127,12 @@ namespace TorannMagic.Golems
                 TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Casting, this.DrawPos, this.Map, 2.2f, TorannMagicDefOf.Mote_Casting.mote.solidTime, TorannMagicDefOf.Mote_Casting.mote.fadeInTime,
                         TorannMagicDefOf.Mote_Casting.mote.fadeOutTime, Rand.Range(-50, 50),0, 0, Rand.Range(0, 360));
             }
-        }        
+        }
 
-        public override void Draw()
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
-            base.Draw();
-            
+            base.DrawAt(drawLoc, flip);
+
             if(this.Rotation != Rot4.North && this.RaceProps.lifeStageAges.FirstOrDefault().def == TorannMagicDefOf.TM_HollowGolemLS)
             {
                 string extraDrawPath = "Golems/Hollow/Hollow_LS";

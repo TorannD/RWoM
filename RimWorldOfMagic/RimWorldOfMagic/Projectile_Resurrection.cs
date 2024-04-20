@@ -180,7 +180,7 @@ namespace TorannMagic
                                 if (!deadPawn.kindDef.RaceProps.Animal && deadPawn.kindDef.RaceProps.Humanlike)
                                 {
 
-                                    ResurrectionUtility.ResurrectWithSideEffects(deadPawn);
+                                    ResurrectionUtility.TryResurrectWithSideEffects(deadPawn);
                                     SoundDef.Named("Thunder_OffMap").PlayOneShot(null);
                                     SoundDef.Named("Thunder_OffMap").PlayOneShot(null);
                                     Hediff rec = deadPawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ResurrectionPsychosis);
@@ -195,7 +195,7 @@ namespace TorannMagic
 
                                 if (deadPawn.kindDef.RaceProps.Animal)
                                 {
-                                    ResurrectionUtility.Resurrect(deadPawn);
+                                    ResurrectionUtility.TryResurrect(deadPawn);
                                     HealthUtility.AdjustSeverity(deadPawn, HediffDef.Named("TM_ResurrectionHD"), 1f);
                                 }
                             }
@@ -216,9 +216,9 @@ namespace TorannMagic
             }
         }
 
-        public override void Draw()
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
-            base.Draw();
+            base.DrawAt(drawLoc, flip);
             Vector3 drawPos = base.Position.ToVector3Shifted(); // this.parent.DrawPos;
             drawPos.z = drawPos.z - 1.5f;
             float num = ((float)base.Map.Size.z - drawPos.z) * 1.41421354f;
@@ -314,14 +314,14 @@ namespace TorannMagic
                 if (Rand.Chance(chanceMinor))
                 {
                     List<HediffDef> minorHealthDefects = new List<HediffDef>();
-                    minorHealthDefects.Add(HediffDefOf.BadBack);
+                    minorHealthDefects.Add(HediffDef.Named("BadBack"));
                     minorHealthDefects.Add(HediffDef.Named("HearingLoss"));
                     minorHealthDefects.Add(HediffDefOf.Carcinoma);
                     minorHealthDefects.Add(HediffDef.Named("ChemicalDamageModerate"));
 
                     HediffDef hdDef = minorHealthDefects.RandomElement();
 
-                    if (hdDef == HediffDefOf.BadBack)
+                    if (hdDef == HediffDef.Named("BadBack"))
                     {
                         for (int i = 0; i < parts.Count; i++)
                         {
@@ -355,7 +355,7 @@ namespace TorannMagic
             if (Rand.Chance(chanceMajor))
             {
                 List<HediffDef> majorHealthDefects = new List<HediffDef>();
-                majorHealthDefects.Add(HediffDefOf.Frail);
+                majorHealthDefects.Add(HediffDef.Named("Frail"));
                 majorHealthDefects.Add(HediffDefOf.Dementia);
                 majorHealthDefects.Add(HediffDefOf.Carcinoma);
                 majorHealthDefects.Add(HediffDef.Named("HeartArteryBlockage"));
@@ -373,7 +373,7 @@ namespace TorannMagic
                         }
                     }
                 }
-                else if (hdDef == HediffDefOf.Frail)
+                else if (hdDef == HediffDef.Named("Frail"))
                 {
                     HealthUtility.AdjustSeverity(p, hdDef, 1f);
                 }

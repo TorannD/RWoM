@@ -42,7 +42,7 @@ namespace TorannMagic
             Scribe_Defs.Look<ThingDef>(ref this.fog, "fog");        
         }
 
-        public override void Draw()
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
             if (rearming)
             {
@@ -52,7 +52,7 @@ namespace TorannMagic
             }
             else
             {
-                base.Draw();
+                base.DrawAt(drawLoc, flip);
             }
         }
 
@@ -160,7 +160,7 @@ namespace TorannMagic
         private void CheckForAgent()
         {
             this.destroyAfterUse = true;
-            List<Pawn> pList = this.Map.mapPawns.AllPawnsSpawned;
+            List<Pawn> pList = this.Map.mapPawns.AllPawnsSpawned.ToList();
             if (pList == null || pList.Count <= 0) return;
 
             for (int i = 0; i < pList.Count; i++)

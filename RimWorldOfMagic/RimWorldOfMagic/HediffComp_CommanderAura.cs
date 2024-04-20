@@ -72,7 +72,7 @@ namespace TorannMagic
                     if (Find.TickManager.TicksGame > this.nextApplyTick)
                     {
                         this.nextApplyTick = Find.TickManager.TicksGame + Rand.Range(1000, 1200);
-                        List<Pawn> mapPawns = this.Pawn.Map.mapPawns.AllPawnsSpawned;
+                        List<Pawn> mapPawns = this.Pawn.Map.mapPawns.AllPawnsSpawned.ToList();
                         for (int i = 0; i < mapPawns.Count; i++)
                         {
                             if (mapPawns[i].RaceProps.Humanlike && mapPawns[i].Faction != null && mapPawns[i].Faction == base.Pawn.Faction && mapPawns[i] != this.Pawn)

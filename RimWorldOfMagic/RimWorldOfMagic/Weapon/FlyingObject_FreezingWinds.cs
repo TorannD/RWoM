@@ -91,7 +91,7 @@ namespace TorannMagic.Weapon
             TM_MoteMaker.ThrowGenericMote(this.moteDef, effectVec, this.Map, Rand.Range(.15f, .45f), Rand.Range(.05f, .1f), .03f, Rand.Range(.2f, .3f), Rand.Range(-200, 200), Rand.Range(1f, 6f), moteAngle + Rand.Range(-20,20), Rand.Range(0, 360));
         }
 
-        public override void Draw()
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
             bool flag = this.flyingThing != null;
             if (flag)

@@ -2,12 +2,13 @@
 using System;
 using Verse;
 using AbilityUser;
+using Verse.AI.Group;
 
 namespace TorannMagic
 {
     public class DeathWorker_Sentinel : DeathActionWorker
     {
-        public override void PawnDied(Corpse corpse)
+        public override void PawnDied(Corpse corpse, Lord prevLord)
         {
             for (int i = 0; i < 3; i++)
             {

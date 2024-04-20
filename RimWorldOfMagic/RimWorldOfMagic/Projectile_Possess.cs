@@ -292,7 +292,7 @@ namespace TorannMagic
                             Find.LetterStack.ReceiveLetter("LetterLabelPossessedCaughtStealing".Translate(), "TM_PossessedCaughtStealing".Translate(
                                 hitPawn.Faction,
                                 hitPawn.LabelShort
-                                ), LetterDefOf.NegativeEvent, null);
+                                ), LetterDefOf.NegativeEvent, null, null);
                         }
                         if (hitPawn.IsColonist)
                         {

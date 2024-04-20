@@ -82,7 +82,7 @@ namespace TorannMagic
             age++;
         }
 
-        public override void Draw()
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
             if (impacted)
             {

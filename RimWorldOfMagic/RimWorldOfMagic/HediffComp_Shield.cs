@@ -216,7 +216,7 @@ namespace TorannMagic
         {
             if (!broken && base.Pawn.Map != null)
             {
-                SoundDefOf.EnergyShield_Broken.PlayOneShot(new TargetInfo(base.Pawn.Position, base.Pawn.Map, false));
+                TorannMagicDefOf.EnergyShield_Broken.PlayOneShot(new TargetInfo(base.Pawn.Position, base.Pawn.Map, false));
                 FleckMaker.Static(base.Pawn.TrueCenter(), base.Pawn.Map, FleckDefOf.ExplosionFlash, 12f);
                 for (int i = 0; i < 6; i++)
                 {

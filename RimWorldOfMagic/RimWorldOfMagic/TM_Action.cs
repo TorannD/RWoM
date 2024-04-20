@@ -708,7 +708,7 @@ namespace TorannMagic
                 {
                     if (targetPawn.mindState != null)
                     {
-                        targetPawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Berserk, "logic circuits sabotaged", true, false, null, true);
+                        targetPawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Berserk, "logic circuits sabotaged", true, false, false, null, true);
                     }
                     else
                     {
@@ -1482,7 +1482,7 @@ namespace TorannMagic
             HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_HediffInvulnerable, .02f);
             if (pawn.Dead)
             {
-                ResurrectionUtility.Resurrect(pawn);
+                ResurrectionUtility.TryResurrect(pawn);
                 deathTrigger = true;
             }
             if (deathTrigger && Rand.Chance(.5f))
@@ -1783,7 +1783,7 @@ namespace TorannMagic
                         surgeText = "Explosion";
                         break;
                     case 1:
-                        List<Pawn> allPawns = p.Map.mapPawns.AllPawnsSpawned;
+                        List<Pawn> allPawns = p.Map.mapPawns.AllPawnsSpawned.ToList();
                         for (int i = 0; i < allPawns.Count; i++)
                         {
                             if (TM_Calc.IsMagicUser(allPawns[i]))
@@ -1903,7 +1903,7 @@ namespace TorannMagic
                     case 2:
                         if (p.Map != null)
                         {
-                            List<Pawn> allPawns = p.Map.mapPawns.AllPawnsSpawned;
+                            List<Pawn> allPawns = p.Map.mapPawns.AllPawnsSpawned.ToList();
                             if (allPawns != null && allPawns.Count > 0)
                             {
                                 for (int i = 0; i < allPawns.Count; i++)
@@ -1920,7 +1920,7 @@ namespace TorannMagic
                     case 3:
                         if (p.Map != null)
                         {
-                            List<Pawn> allPawns = p.Map.mapPawns.AllPawnsSpawned;
+                            List<Pawn> allPawns = p.Map.mapPawns.AllPawnsSpawned.ToList();
                             if (allPawns != null && allPawns.Count > 0)
                             {
                                 for (int i = 0; i < allPawns.Count; i++)
@@ -2070,7 +2070,6 @@ namespace TorannMagic
                 Apparel aThing = thing as Apparel;
                 if (aThing != null && aThing.WornByCorpse)
                 {
-                    aThing.Notify_PawnResurrected();
                     Traverse.Create(root: aThing).Field(name: "wornByCorpseInt").SetValue(false);
                 }
 
@@ -2558,7 +2557,7 @@ namespace TorannMagic
                     Effecter FearWave = TorannMagicDefOf.TM_FearWave.Spawn();
                     FearWave.Trigger(new TargetInfo(pawn.Position, pawn.Map, false), new TargetInfo(pawn.Position, pawn.Map, false));
                     FearWave.Cleanup();
-                    List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned;
+                    List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned.ToList();
                     if (mapPawns != null && mapPawns.Count > 0)
                     {
                         for (int i = 0; i < mapPawns.Count; i++)
@@ -2739,7 +2738,7 @@ namespace TorannMagic
         {
             if(map != null && center != default(IntVec3))
             {
-                List<Pawn> pawnList = map.mapPawns.AllPawnsSpawned;
+                List<Pawn> pawnList = map.mapPawns.AllPawnsSpawned.ToList();
                 if(pawnList != null)
                 {
                     foreach(Pawn p in pawnList)
@@ -2764,7 +2763,7 @@ namespace TorannMagic
 
         public static void SearchAndTaunt(Pawn caster, float radius, int maxTargets, float tauntChance)
         {
-            List<Pawn> mapPawns = caster.Map.mapPawns.AllPawnsSpawned;
+            List<Pawn> mapPawns = caster.Map.mapPawns.AllPawnsSpawned.ToList();
             List<Pawn> tauntTargets = new List<Pawn>();
             tauntTargets.Clear();
             if (mapPawns != null && mapPawns.Count > 0)
@@ -2860,7 +2859,7 @@ namespace TorannMagic
                 }
 
                 MouseoverSounds.DoRegion(rect, SoundDefOf.Mouseover_Command);
-                Material material = com.disabled ? TexUI.GrayscaleGUI : null;
+                Material material = com.Disabled ? TexUI.GrayscaleGUI : null;
                 //GUI.DrawTexture(rect, Command.BGTex);
                 GenUI.DrawTextureWithMaterial(rect, shrink ? Command.BGTexShrunk : Command.BGTex, material);
 
@@ -2920,7 +2919,7 @@ namespace TorannMagic
                 if (Mouse.IsOver(rect))
                 {
                     TipSignal tipSignal = com.Desc;
-                    if (com.disabled && !com.disabledReason.NullOrEmpty())
+                    if (com.Disabled && !com.disabledReason.NullOrEmpty())
                     {
                         tipSignal.text = tipSignal.text + "\n" + StringsToTranslate.AU_DISABLED + ": " + com.disabledReason;
                     }
@@ -3576,7 +3575,7 @@ namespace TorannMagic
                 }
                 if (flag2 && !Input.GetMouseButtonDown(1) && !Input.GetMouseButtonUp(1))
                 {
-                    if (com.disabled)
+                    if (com.Disabled)
                     {
                         if (!com.disabledReason.NullOrEmpty())
                         {
