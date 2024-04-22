@@ -2438,6 +2438,7 @@
 	  <li>
         <compClass>TorannMagic.HediffComp_Invisibility</compClass>
       </li>	  
+	  <li Class="HediffCompProperties_DisappearsOnDeath"/>
     </comps>
 	<stages>
       <li>
@@ -2874,9 +2875,13 @@
       <li Class="HediffCompProperties_Disappears">
         <showRemainingTime>True</showRemainingTime>
       </li> 
-      <li Class="HediffCompProperties">
-        <compClass>HediffComp_Invisibility</compClass>
+	  <li Class="HediffCompProperties_Invisibility">
+        <visibleToPlayer>true</visibleToPlayer>
       </li>
+	  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+      <!-- <li Class="HediffCompProperties">
+        <compClass>HediffComp_Invisibility</compClass>
+      </li> -->
     </comps>
     <stages>
       <li>

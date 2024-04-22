@@ -10,12 +10,13 @@
     <maxSeverity>6</maxSeverity>
 	<isBad>false</isBad>
 	<comps>
-      <li Class="HediffCompProperties_Disappears">
+	  <li Class="HediffCompProperties_Disappears">
         <showRemainingTime>True</showRemainingTime>
       </li> 
-      <li Class="HediffCompProperties">
-        <compClass>HediffComp_Invisibility</compClass>
+	  <li Class="HediffCompProperties_Invisibility">
+        <visibleToPlayer>true</visibleToPlayer>
       </li>
+	  <li Class="HediffCompProperties_DisappearsOnDeath"/>
     </comps>
     <stages>
       <li>

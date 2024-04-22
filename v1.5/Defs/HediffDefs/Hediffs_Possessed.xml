@@ -33,8 +33,8 @@
 	<initialSeverity>.5</initialSeverity>
 	<causesNeed>TM_SpiritND</causesNeed>
 	<comps>
-	  <li Class="HediffCompProperties">
-        <compClass>HediffComp_Invisibility</compClass>
+	  <li Class="HediffCompProperties_Invisibility">
+        <visibleToPlayer>true</visibleToPlayer>
       </li>
     </comps>
     <stages>
