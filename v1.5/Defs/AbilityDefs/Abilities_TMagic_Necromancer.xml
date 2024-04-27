@@ -31,7 +31,7 @@
 Undead will remain under the Necromancers control indefinitely. The necromancer will incur a mana upkeep cost of 30% of base mana regeneration for each undead, humanlike pawn. Undead animals incur an upkeep cost of 15% for every 100 combat power.
 
 There is no limit to the number of undead a necromancer may control, however, when the necromancer no longer has mana to maintain undead, they will automatically be consumed until the number of active undead is reduced to a manageable amount.</description>
-        <manaCost>0.45</manaCost>
+        <manaCost>0.045</manaCost>
 		<efficiencyReductionPercent>.05</efficiencyReductionPercent>
 		<learnChance>.5</learnChance>
 		<MainVerb Class="AbilityUser.VerbProperties_Ability">
@@ -43,8 +43,8 @@ There is no limit to the number of undead a necromancer may control, however, wh
             <hasStandardCommand>true</hasStandardCommand>
             <defaultProjectile>Projectile_RaiseUndead</defaultProjectile>
             <abilityDef>TM_RaiseUndead</abilityDef>
-            <warmupTime>6</warmupTime>
-            <SecondsToRecharge>30</SecondsToRecharge>
+            <warmupTime>1</warmupTime>
+            <SecondsToRecharge>3</SecondsToRecharge>
             <range>25</range>
             <burstShotCount>1</burstShotCount>
             <soundCast>ThrowMolotovCocktail</soundCast>

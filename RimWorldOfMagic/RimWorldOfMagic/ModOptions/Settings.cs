@@ -13,34 +13,40 @@ namespace TorannMagic.ModOptions
         public float needMultiplier = 1f;        
         public bool AICasting = true;
         public bool AIAggressiveCasting = true;
-        public bool AIHardMode = false;
-        public bool AIMarking = true;
-        public bool AIFighterMarking = false;
-        public bool AIFriendlyMarking = false;
+        public bool AIHardMode = false;        
         public float baseMageChance = 1f;
         public float baseFighterChance = 1f;
         public float advMageChance = 0.5f;
         public float advFighterChance = 0.5f;
         public float supportTraitChance = 0.1f;
-        public float magicyteChance = .005f;
-        public bool showIconsMultiSelect = true;
+        public float magicyteChance = .005f;        
         public float riftChallenge = 1f;
         public float demonAssaultChallenge = 1f;
-        public float wanderingLichChallenge = 1f;
-        public bool showGizmo = true;
-        public bool showLevelUpMessage = true;
-        public bool changeUndeadPawnAppearance = true;
-        public bool changeUndeadAnimalAppearance = true;
-        public bool showClassIconOnColonistBar = true;
-        public float classIconSize = 1f;
+        public float wanderingLichChallenge = 1f;        
+        public bool showLevelUpMessage = true;        
         public bool unrestrictedBloodTypes = true;
         public float paracyteSoftCap = 50f;
         public bool paracyteMagesCount = true;
         public bool unrestrictedWeaponCopy = false;
-        public float undeadUpkeepMultiplier = 1f;
+        public float undeadUpkeepMultiplier = 1f;      
+        public bool cameraSnap = true;        
+
+        //Draw Options
+        public bool AIMarking = true;
+        public bool AIFighterMarking = false;
+        public bool AIFriendlyMarking = false;
+        public bool showIconsMultiSelect = true;
+        public bool showGizmo = true;
+        public bool changeUndeadPawnAppearance = true;
+        public bool changeUndeadAnimalAppearance = true;
+        public bool showClassIconOnColonistBar = true;
+        public float classIconSize = 1f;
         public bool shrinkIcons = false;
         public Vector2 iconPosition = Vector2.zero;
-        public bool cameraSnap = true;
+        public float cloakDepth = 0f;
+        public float cloakDepthNorth = 0f;
+        public bool offSetClothing = false;
+        public float offsetMultiLayerClothingAmount = -.025384f;
 
         //Death Retaliation
         public float deathRetaliationChance = 1f;
@@ -156,6 +162,10 @@ namespace TorannMagic.ModOptions
             Scribe_Values.Look<bool>(ref this.shrinkIcons, "shrinkIcons", false, false);
             Scribe_Values.Look<Vector2>(ref this.iconPosition, "iconPosition", default(Vector2));
             Scribe_Values.Look<bool>(ref this.cameraSnap, "cameraSnap", true, false);
+            Scribe_Values.Look<float>(ref this.cloakDepth, "cloakDepth", 0f, false);
+            Scribe_Values.Look<float>(ref this.cloakDepthNorth, "cloakDepthNorth", 0f, false);
+            Scribe_Values.Look<bool>(ref this.offSetClothing, "offsetClothing", false, false);
+            Scribe_Values.Look<float>(ref this.offsetMultiLayerClothingAmount, "offsetMultiLayerClothingAmount", -.025384f, false);
 
             Scribe_Values.Look<float>(ref this.deathExplosionRadius, "deathExplosionRadius", 3f, false);
             Scribe_Values.Look<int>(ref this.deathExplosionMin, "deathExplosionMin", 20, false);

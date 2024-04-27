@@ -46,6 +46,8 @@ namespace TorannMagic.ModOptions
         public bool shrinkIcons = Settings.Instance.shrinkIcons;
         public Vector2 iconPosition = Settings.Instance.iconPosition;
         public bool cameraSnap= Settings.Instance.cameraSnap;
+        public float cloakDepth = Settings.Instance.cloakDepth;
+        public float cloakDepthNorth = Settings.Instance.cloakDepthNorth;
 
         //autocast
         public bool autocastEnabled = Settings.Instance.autocastEnabled;

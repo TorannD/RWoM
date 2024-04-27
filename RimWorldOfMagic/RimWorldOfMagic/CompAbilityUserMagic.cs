@@ -562,6 +562,8 @@ namespace TorannMagic
         public bool shouldDraw = true;
         public override void PostDraw()
         {
+            if (this.Pawn.DestroyedOrNull()) return;
+            if (this.Pawn.Dead) return;
             if (shouldDraw && IsMagicUser)
             {
                 

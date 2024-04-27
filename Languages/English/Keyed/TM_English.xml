@@ -270,9 +270,6 @@
 <AICanCast>AI use abilities</AICanCast>
 <AIHardMode>AI hard mode</AIHardMode>
 <DeathRadius>AI mage death retaliation radius</DeathRadius>
-<AIMarking>AI mage marking</AIMarking>
-<AIFighterMarking>AI fighter marking</AIFighterMarking>
-<AIFriendlyMarking>Mark controlled pawns</AIFriendlyMarking>
 <baseMageChance>Mage precursor commonality: </baseMageChance>
 <baseFighterChance>Fighter precursor commonality: </baseFighterChance>
 <advMageChance>Mage commonality: </advMageChance>
@@ -281,20 +278,13 @@
 <DeathExplosionMax>maximum damage</DeathExplosionMax>
 <DeathExplosionField>{0}</DeathExplosionField>
 <MagicyteChance>Magicyte Drop Chance</MagicyteChance>
-<showAbilitiesOnMultiSelect>Show abilities when selecting multiple pawns</showAbilitiesOnMultiSelect>
-<showMagicGizmo>Show mana/stamina/psi energy as gizmo</showMagicGizmo>
 <TM_enableAutocast>Enable auto-cast</TM_enableAutocast>
 <TM_queueAutocast>Queue autocast jobs</TM_queueAutocast>
 <TM_queueAutocastDesc>Non-violent and un-drafted autocast jobs will be queued as the next job to perform instead of interrupting the current job. Queued abilities may become invalid or sub-optimal, depending on the duration of the delay. Some abilities, like blink, phase strike, or 'zone' based jobs are exempt.</TM_queueAutocastDesc>
 <TM_autocastUndraftedThreshold>Minimum energy % for auto-cast (undrafted)</TM_autocastUndraftedThreshold>
 <TM_autocastDraftedThreshold>Minimum energy % for auto-cast (drafted)</TM_autocastDraftedThreshold>
 <TM_autocastEvaluationFrequency>Autocast evaluation frequency</TM_autocastEvaluationFrequency>
-<showLevelUpMessage>Show level up messages</showLevelUpMessage>
-<showUndeadPawnChange>Change undead pawn appearance</showUndeadPawnChange>
-<showUndeadAnimalChange>Change undead animal appearance</showUndeadAnimalChange>
 <unrestrictedBloodTypesForBloodMagic>Unrestricted blood types for blood magic</unrestrictedBloodTypesForBloodMagic>
-<showClassIconOnColonistBar>Show class icon on colonist bar</showClassIconOnColonistBar>
-<classIconSize>Class icon size</classIconSize>
 <TM_AggressiveAICasting>Aggressive AI Casting</TM_AggressiveAICasting>
 <TM_ParacyteSoftCap>Paracyte Soft Cap: </TM_ParacyteSoftCap>
 <TM_ParacyteMagesCount>Mages count against soft cap (2ea)</TM_ParacyteMagesCount>
@@ -304,14 +294,13 @@
 <TM_DeathRetaliationIsLethal>Death retaliation always lethal</TM_DeathRetaliationIsLethal>
 <TM_DeathRetaliationChance>Death retaliation chance</TM_DeathRetaliationChance>
 <TM_DeathRetaliationDelay>Death retaliation delay factor</TM_DeathRetaliationDelay>
-<TM_shrinkIcons>Shrink Icons</TM_shrinkIcons>
-<TM_CameraSnap>Snap camera after teleport</TM_CameraSnap>
 
 <!-- Mod Settings Class options -->
 <supportTraitChance>Supporting Trait Commonality</supportTraitChance>
 <TM_ClassWarning>**Change class settings only when starting a new game**</TM_ClassWarning>
 <TM_RequiresRestart>**Any change requires a game restart**</TM_RequiresRestart>
-<TM_ClassOptions>Enabled Classes</TM_ClassOptions>
+<TM_ClassOptions>Class Options</TM_ClassOptions>
+<TM_EnabledClasses>Enabled Classes</TM_EnabledClasses>
 <TM_EnabledMages>Mages</TM_EnabledMages>
 <TM_EnabledFighters>Fighters</TM_EnabledFighters>
 <TM_Arcanist>Arcanist</TM_Arcanist>
@@ -357,6 +346,38 @@
 <TM_FaeBlood>Fae Blood</TM_FaeBlood>
 <TM_GiantsBlood>Giants Blood</TM_GiantsBlood>
 <TM_CustomClasses>Custom Classes</TM_CustomClasses>
+
+<!-- Mod Settings display options -->
+<TM_DisplayOptions>Display Options</TM_DisplayOptions>
+<showLevelUpMessage>Show level up messages</showLevelUpMessage>
+<TM_CameraSnap>Snap camera after teleport</TM_CameraSnap>
+<TM_CameraSnapDesc>Snaps camera to selected pawn after teleporting (blink, phase strike, etc)</TM_CameraSnapDesc>
+
+<AIMarking>AI mage marking</AIMarking>
+<AIMarkingDesc>Shows a small class icon next to an AI mage</AIMarkingDesc>
+<AIFighterMarking>AI fighter marking</AIFighterMarking>
+<AIFighterMarkingDesc>Shows a small class icon next to an AI fighter</AIFighterMarkingDesc>
+<AIFriendlyMarking>Mark controlled pawns</AIFriendlyMarking>
+<showClassIconOnColonistBar>Show class icon on colonist bar</showClassIconOnColonistBar>
+<classIconSize>Class icon size</classIconSize>
+<classIconSizeDesc>Changes the size of the class icon on the colonist bar</classIconSizeDesc>
+<TM_shrinkIcons>Shrink Icons</TM_shrinkIcons>
+<TM_shrinkIconsDesc>Shrinks the size of icons when selecting pawns with a large number of abilities</TM_shrinkIconsDesc>
+<showAbilitiesOnMultiSelect>Show abilities when selecting multiple pawns</showAbilitiesOnMultiSelect>
+<showMagicGizmo>Show mana/stamina/psi energy as gizmo</showMagicGizmo>
+<showUndeadPawnChange>Change undead pawn appearance</showUndeadPawnChange>
+<showUndeadPawnChangeDesc>Undead pawns will show varying rot stages; if this is disabled, undead pawns will appear as they were when alive</showUndeadPawnChangeDesc>
+<showUndeadAnimalChange>Change undead animal appearance</showUndeadAnimalChange>
+<showUndeadAnimalChangeDesc>Undead animals will show the first stage of rot (decayed); if this is disabled, undead animals will appear as they were when alive</showUndeadAnimalChangeDesc>
+<TM_AlterClothingDepth>Adjust clothing draw depth</TM_AlterClothingDepth>
+<TM_AlterClothingDepthDesc>When this is enabled, the following options will change the order in which clothing is drawn (on top of or underneath other clothes).</TM_AlterClothingDepthDesc>
+<TM_offsetMultilayerClothing>Multi-layer offset</TM_offsetMultilayerClothing>
+<TM_offsetMultilayerClothingDesc>Adjusts the display depth of multi-layered clothing, but only when the calculated offset is extreme (would appear on top of all other clothes). This is primarily intended to correct the draw depth for cloaks.</TM_offsetMultilayerClothingDesc>
+
+<TM_CloakDepth>Cloak draw depth</TM_CloakDepth>
+<TM_CloakDepthDesc>Adjusts the draw depth of cloaks to appear on top of or underneath other clothing. If this value needs to be adjusted, it is usually very small (.001).</TM_CloakDepthDesc>
+<TM_CloakDepthNorth>Cloak draw depth (north)</TM_CloakDepthNorth>
+<TM_CloakDepthNorthDesc>Adjusts the draw depth of cloaks to appear on top of or underneath other clothing when the character is facing north (up). If this value needs to be adjusted, it is usually very small (.001).</TM_CloakDepthNorthDesc>
 
 <!-- Mod Settings event options -->
 <TM_EventOptions>Event Options</TM_EventOptions>
@@ -2247,7 +2268,6 @@ Level 3: all 4 effects</TM_CombatDrugs_pwr_desc>
 <TM_GolemShowDormant>Show dormant frame</TM_GolemShowDormant>
 <TM_GolemShowDormantDesc>Shows a frame over this golem's dormant position. Use the mod options menu to toggle this for all golems.</TM_GolemShowDormantDesc>
 
-
 <!-- ============ Enchantment Labels =============-->
 <TM_MaxMPLabel>Max Energy Increase: {0}&#37;</TM_MaxMPLabel>
 <TM_MPRegenRateLabel>Energy Regen Increase: {0}&#37;</TM_MPRegenRateLabel>
@@ -2264,6 +2284,12 @@ Level 3: all 4 effects</TM_CombatDrugs_pwr_desc>
 
 <!-- ============ Floating Text =============-->
 <TM_Enchanted>Enchanted!</TM_Enchanted>
+
+<!-- ============ Right Click Menu Options =============-->
+<TM_Use>Use {0}</TM_Use>
+<TM_Read>Read {0}</TM_Read>
+<TM_Learn>Learn {0}</TM_Learn>
+<TM_Inject>Inject {0}</TM_Inject>
 
 <!-- ============ Magic Card info =============-->
 <TM_MCU_BaseMana>Base mana gain: {0}</TM_MCU_BaseMana>

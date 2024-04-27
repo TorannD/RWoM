@@ -13,6 +13,7 @@
     <makesAlert>false</makesAlert>
 	<minSeverity>0.001</minSeverity>
 	<maxSeverity>4.0</maxSeverity>
+	<preventsLungRot>true</preventsLungRot>
 	<disablesNeeds>
 		<li>Rest</li>		
 		<li>Joy</li>
@@ -145,6 +146,7 @@
 	<minSeverity>0.001</minSeverity>
 	<maxSeverity>4.0</maxSeverity>
 	<initialSeverity>0.95</initialSeverity>
+	<preventsLungRot>true</preventsLungRot>
 	<disablesNeeds>
 		<li>Rest</li>
 		<li>Joy</li>
@@ -185,6 +187,7 @@
 	<minSeverity>0.001</minSeverity>
 	<maxSeverity>4.0</maxSeverity>
 	<initialSeverity>0.95</initialSeverity>
+	<preventsLungRot>true</preventsLungRot>
 	<disablesNeeds>
 		<li>Rest</li>
 	</disablesNeeds>

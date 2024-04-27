@@ -79,6 +79,7 @@ namespace TorannMagic
             harmonyInstance.Patch(AccessTools.Method(typeof(RecipeDef), "get_AvailableNow", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_GolemsRecipeAvailable", null), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(Pawn), "get_ShouldAvoidFences", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_GolemShouldAvoidFences"), null, null);
             harmonyInstance.Patch(AccessTools.Method(typeof(PawnRenderer), "get_CurRotDrawMode", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_RotBodyForUndead"), null, null);
+            harmonyInstance.Patch(AccessTools.Method(typeof(Pawn_HealthTracker), "get_CanBleed", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_Undead_CanBleed"), null, null);
             //harmonyInstance.Patch(AccessTools.Method(typeof(Precept_Relic), "get_RelicInPlayerPossession", null, null),null, new HarmonyMethod(typeof(TorannMagicMod), "Get_DelayRelicLost"), null);
             //harmonyInstance.Patch(AccessTools.Method(typeof(Pawn), "get_InAggroMentalState", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_UndeadAggroMentalState"), null, null);
             //harmonyInstance.Patch(AccessTools.Method(typeof(Pawn), "get_InMentalState", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_UndeadMentalState"), null, null);
@@ -291,7 +292,7 @@ namespace TorannMagic
         //    }
         //    return true;
         //} 
-        
+
         //[HarmonyPatch(typeof(Precept_Relic), "Notify_ThingLost", null)]
         //public class Relic_LostDebug
         //{
@@ -332,6 +333,41 @@ namespace TorannMagic
         //    }
         //    __result = lostFlag;
         //}
+        [HarmonyPatch(typeof(MeditationUtility), "CanMeditateNow", null)]
+        public class Meditation_NoUndeadMeditation_Patch
+        {
+            private static void Postfix(Pawn pawn, ref bool __result)
+            {
+                if (__result && (TM_Calc.IsUndead(pawn) || TM_Calc.IsSpirit(pawn)) && !pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_LichHD))
+                {
+                    __result = false;
+                }
+            }
+        }
+
+        [HarmonyPatch(typeof(MeditationUtility), "PsyfocusGainPerTick", null)]
+        public class Undead_NoPsyfocusGain_Patch
+        {
+            private static void Postfix(Pawn pawn, ref float __result, Thing focus = null)
+            {
+                if ((TM_Calc.IsUndead(pawn) || TM_Calc.IsSpirit(pawn)) && !pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_LichHD))
+                {
+                    __result = 0f;
+                }
+            }
+        }
+
+        [HarmonyPatch(typeof(RimWorld.AbilityUtility), "ValidateMustBeHumanOrWildMan", null)]
+        public class Hemogen_NoBloodfeedOnUndead_Patch
+        {
+            private static void Postfix(Pawn targetPawn, bool showMessage, Ability ability, ref bool __result)
+            {
+                if (__result && (TM_Calc.IsUndead(targetPawn) || TM_Calc.IsSpirit(targetPawn) || TM_Calc.IsRobotPawn(targetPawn) || TM_Calc.IsGolem(targetPawn)))
+                {
+                    __result = false;
+                }
+            }
+        }
 
         [HarmonyPatch(typeof(JobGiver_GetHemogen), "CanFeedOnPrisoner", null)]
         public class Hemogen_CannotFeedOnUndead_Patch
@@ -342,6 +378,14 @@ namespace TorannMagic
                 {
                     __result = false;
                 }
+            }
+        }
+
+        public static void Get_Undead_CanBleed(Pawn_HealthTracker __instance, Pawn ___pawn, ref bool __result)
+        {
+            if(TM_Calc.IsUndead(___pawn))
+            {
+                __result = false;
             }
         }
 
@@ -2498,51 +2542,75 @@ namespace TorannMagic
             return true;
         }
 
-        [HarmonyPatch(typeof(GenDraw), "DrawMeshNowOrLater", new Type[]
-        {
-            typeof(Mesh),
-            typeof(Vector3),
-            typeof(Quaternion),
-            typeof(Material),
-            typeof(bool)
-        }), HarmonyPriority(10)] //go last to ensure cloaks draw over everything else
-        public class DrawMesh_Cloaks_Patch
-        {
-            public static bool Prefix(Mesh mesh, ref Vector3 loc, Quaternion quat, Material mat, bool drawNow)
-            {
-                if (mat == null) return true;
-                if (!ModOptions.Constants.GetCloaks().Contains(mat.mainTexture)) return true;
-                //Log.Message("apparel " + mat.mainTexture + " y=" + loc.y);
-                loc.y = ModOptions.Constants.GetCloaksNorth().Contains(mat.mainTexture) ? 8.5375f : 8.535f;
-
-                //loc.y = Array.IndexOf(ModOptions.Constants.GetCloaksNorth(), mat) != -1 ? 8.95f : 8.37f;
-                if (drawNow)
-                {
-                    mat.SetPass(0);
-                    Graphics.DrawMeshNow(mesh, loc, quat);
-                }
-                else
-                {
-                    Graphics.DrawMesh(mesh, loc, quat, mat, 0);
-                }
-                return true;
-            }
-        }
-
-        //testing purposes
-        //[HarmonyPatch(typeof(Graphics), "DrawMesh", new Type[]
+        //[HarmonyPatch(typeof(GenDraw), "DrawMeshNowOrLater", new Type[]
         //{
         //    typeof(Mesh),
         //    typeof(Vector3),
         //    typeof(Quaternion),
         //    typeof(Material),
+        //    typeof(bool)
+        //}), HarmonyPriority(10)] //go last to ensure cloaks draw over everything else
+        //public class DrawMesh_Cloaks_Patch
+        //{
+        //    public static bool Prefix(Mesh mesh, ref Vector3 loc, Quaternion quat, Material mat, bool drawNow)
+        //    {
+        //        if (mat == null) return true;
+        //        Log.Message("apparel " + mat.mainTexture + " y=" + loc.y);
+        //        if (!ModOptions.Constants.GetCloaks().Contains(mat.mainTexture)) return true;
+                
+        //        loc.y = ModOptions.Constants.GetCloaksNorth().Contains(mat.mainTexture) ? 8.5375f + ModOptions.Settings.Instance.cloakDepthNorth : 8.535f + ModOptions.Settings.Instance.cloakDepth;
+
+        //        //loc.y = Array.IndexOf(ModOptions.Constants.GetCloaksNorth(), mat) != -1 ? 8.95f : 8.37f;
+        //        if (drawNow)
+        //        {
+        //            mat.SetPass(0);
+        //            Graphics.DrawMeshNow(mesh, loc, quat);
+        //        }
+        //        else
+        //        {
+        //            Graphics.DrawMesh(mesh, loc, quat, mat, 0);
+        //        }
+        //        return true;
+        //    }
+        //}
+
+        //testing purposes
+        [HarmonyPatch(typeof(PawnRenderNodeWorker), "AltitudeFor", null), HarmonyPriority(10)] //go last to ensure cloaks draw over everything else
+        public class DrawMesh_Cloaks_Patch2
+        {
+            public static void Postfix(PawnRenderNode node, PawnDrawParms parms, ref float __result)
+            {
+                if (node?.apparel != null && ModOptions.Settings.Instance.offSetClothing)
+                {
+                    if(__result >= .0288f)
+                    {
+                        __result = __result + ModOptions.Settings.Instance.offsetMultiLayerClothingAmount;
+                    }
+                    //Log.Message("for apparel " + node.apparel.def.defName + " the layer is " + ((node.Props.drawData?.LayerForRot(parms.facing, node.Props.baseLayer) ?? node.Props.baseLayer) + node.debugLayerOffset).ToString() + " with altitude of " + __result);
+                    if (!ModOptions.Constants.GetCloaks().Contains(node.Graphic.MatSingle)) return;
+                    {
+                        __result += ModOptions.Constants.GetCloaksNorth().Contains(node.Graphic.MatSingle) ? ModOptions.Settings.Instance.cloakDepthNorth : ModOptions.Settings.Instance.cloakDepth;
+                    }
+
+                }
+                
+            }
+        }
+
+        //[HarmonyPatch(typeof(Graphics), "DrawMesh", new Type[]
+        //{
+        //    typeof(Mesh),
+        //    typeof(Matrix4x4),
+        //    typeof(Material),
+        //    typeof(bool),
+        //    typeof(MaterialPropertyBlock),
         //    typeof(int)
         //}), HarmonyPriority(10)] //go last to ensure cloaks draw over everything else
         //public class DrawMesh_Cloaks_Patch2
         //{
-        //    public static bool Prefix(Mesh mesh, Vector3 position, Quaternion rotation, Material material, int layer)
+        //    public static bool Prefix(Mesh mesh, ref Matrix4x4 matrix, Material mat, bool drawNow, MaterialPropertyBlock properties)
         //    {
-        //        Log.Message("" + material.mainTexture + " layer: " + layer + " loc.y: " + position.y);
+        //        Log.Message("" + mat.mainTexture + " matrix.y: " + matrix.tra + " loc.y: " + position.y);
         //        return true;
         //    }
         //}
@@ -6489,6 +6557,25 @@ namespace TorannMagic
                         nve_option = new FloatMenuOption("TM_ViolentCannotEquip".Translate(pawn.LabelShort, labelShort), null);
                         opts.Add(nve_option);
                     }
+                }
+            }
+            foreach (FloatMenuOption op in opts)
+            {
+                if (op.Label.StartsWith("TM_Use"))
+                {
+                    op.Label = "TM_Use".Translate(op.revalidateClickTarget.Label);
+                }
+                else if(op.Label.StartsWith("TM_Learn"))
+                {
+                    op.Label = "TM_Learn".Translate(op.revalidateClickTarget.Label);
+                }
+                else if (op.Label.StartsWith("TM_Read"))
+                {
+                    op.Label = "TM_Read".Translate(op.revalidateClickTarget.Label);
+                }
+                else if (op.Label.StartsWith("TM_Inject"))
+                {
+                    op.Label = "TM_Inject".Translate(op.revalidateClickTarget.Label);
                 }
             }
         }

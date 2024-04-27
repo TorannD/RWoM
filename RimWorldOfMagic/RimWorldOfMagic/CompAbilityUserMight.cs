@@ -229,8 +229,10 @@ namespace TorannMagic
         public bool shouldDraw = true;
         public override void PostDraw()
         {
+            if (this.Pawn.DestroyedOrNull()) return;
+            if (this.Pawn.Dead) return;
             if (!shouldDraw) return;
-
+            
             base.PostDraw();
             if (Pawn.health.hediffSet.hediffs.Any(hediff =>
                     hediff.def == TorannMagicDefOf.TM_PossessionHD

@@ -187,6 +187,7 @@ namespace TorannMagic
                                             }
                                             RemoveHediffsAddictionsAndPermanentInjuries(undeadPawn);
                                             RemovePsylinkAbilities(undeadPawn);
+                                            RemoveGenes(undeadPawn);
                                             TM_Action.TryCopyIdeo(pawn, undeadPawn);
                                             HealthUtility.AdjustSeverity(undeadPawn, TorannMagicDefOf.TM_UndeadHD, -4f);
                                             HealthUtility.AdjustSeverity(undeadPawn, TorannMagicDefOf.TM_UndeadHD, .5f + ver.level);
@@ -276,7 +277,80 @@ namespace TorannMagic
         }
 
         private void RedoSkills(Pawn undeadPawn, bool lichBonus = false)
-        {
+        {                       
+
+            //undeadPawn.story.Childhood = null;
+            //undeadPawn.story.Adulthood = null;
+            float bonusSkill = 1f + (.1f * pwr.level);
+            if(lichBonus)
+            {
+                bonusSkill *= 1.2f;
+            }
+            //undeadPawn.story.DisabledWorkTypes.Clear();
+            //undeadPawn.story.WorkTypeIsDisabled(WorkTypeDefOf.Warden);
+            //undeadPawn.story.WorkTypeIsDisabled(WorkTypeDefOf.Hunting);
+            //undeadPawn.story.WorkTypeIsDisabled(WorkTypeDefOf.Handling);
+            //undeadPawn.story.WorkTypeIsDisabled(WorkTypeDefOf.Doctor);           
+
+            //undeadPawn.skills.Learn(SkillDefOf.Shooting, -100000000, true);            
+            //undeadPawn.skills.Learn(SkillDefOf.Animals, -100000000, true);
+            //undeadPawn.skills.Learn(SkillDefOf.Artistic, -100000000, true);
+            //undeadPawn.skills.Learn(SkillDefOf.Cooking, -100000000, true);
+            //undeadPawn.skills.Learn(SkillDefOf.Cooking, Rand.Range(10000, 30000)*bonusSkill, true);            
+            //undeadPawn.skills.Learn(SkillDefOf.Crafting, -100000000, true);
+            //undeadPawn.skills.Learn(SkillDefOf.Crafting, Rand.Range(10000, 50000) * bonusSkill, true);
+            //undeadPawn.skills.Learn(SkillDefOf.Plants, -100000000, true);
+            //undeadPawn.skills.Learn(SkillDefOf.Plants, Rand.Range(25000, 50000) * bonusSkill, true);
+            //undeadPawn.skills.Learn(SkillDefOf.Intellectual, -10000000, true);
+            //undeadPawn.skills.Learn(SkillDefOf.Medicine, -10000000, true);
+            //undeadPawn.skills.Learn(SkillDefOf.Melee, -10000000, true);
+            //undeadPawn.skills.Learn(SkillDefOf.Melee, Rand.Range(30000, 60000) * bonusSkill, true);
+            //undeadPawn.skills.Learn(SkillDefOf.Mining, -10000000, true);
+            //undeadPawn.skills.Learn(SkillDefOf.Mining, Rand.Range(20000, 50000) * bonusSkill, true);
+            //undeadPawn.skills.Learn(SkillDefOf.Social, -10000000, true);
+            //undeadPawn.skills.Learn(SkillDefOf.Construction, -10000000, true);
+            //undeadPawn.skills.Learn(SkillDefOf.Construction, Rand.Range(15000, 40000) * bonusSkill, true);
+
+            foreach (SkillRecord sr in undeadPawn.skills.skills)
+            {
+                if(sr.def == SkillDefOf.Cooking)
+                {
+                    sr.Level = Mathf.RoundToInt(Rand.Range(2f, 7f) * bonusSkill);
+                }
+                else if(sr.def == SkillDefOf.Crafting)
+                {
+                    sr.Level = Mathf.RoundToInt(Rand.Range(1.5f, 8f) * bonusSkill);
+                }
+                else if (sr.def == SkillDefOf.Plants)
+                {
+                    sr.Level = Mathf.RoundToInt(Rand.Range(3f, 8f) * bonusSkill);
+                }
+                else if (sr.def == SkillDefOf.Melee)
+                {
+                    sr.Level = Mathf.RoundToInt(Rand.Range(4f, 8.5f) * bonusSkill);
+                }
+                else if (sr.def == SkillDefOf.Mining)
+                {
+                    sr.Level = Mathf.RoundToInt(Rand.Range(2f, 7f) * bonusSkill);
+                }
+                else if (sr.def == SkillDefOf.Construction)
+                {
+                    sr.Level = Mathf.RoundToInt(Rand.Range(1.5f, 6f) * bonusSkill);
+                }
+                else
+                {
+                    sr.Level = 0;
+                }
+                sr.xpSinceLastLevel = 0;
+            }
+
+            //if (undeadPawn.story.Adulthood == TorannMagicDefOf.TM_UndeadAdultBS_GhostMind)
+            //{
+            //    undeadPawn.skills.Learn(SkillDefOf.Crafting, Rand.Range(20000, 30000), true);
+            //    undeadPawn.skills.Learn(SkillDefOf.Cooking, Rand.Range(10000, 20000), true);
+            //    undeadPawn.skills.Learn(SkillDefOf.Melee, -25000, true);
+            //    undeadPawn.skills.Learn(SkillDefOf.Mining, -25000, true);
+            //}
             if (undeadPawn.story.Childhood != null)
             {
                 undeadPawn.story.Childhood = TorannMagicDefOf.TM_UndeadChildBS;
@@ -304,50 +378,20 @@ namespace TorannMagic
                 {
                     undeadPawn.story.Adulthood = TorannMagicDefOf.TM_UndeadAdultBS;
                 }
-            }            
-
-            //undeadPawn.story.Childhood = null;
-            //undeadPawn.story.Adulthood = null;
-            float bonusSkill = 1f + (.1f * pwr.level);
-            if(lichBonus)
-            {
-                bonusSkill *= 1.2f;
             }
-            //undeadPawn.story.DisabledWorkTypes.Clear();
-            //undeadPawn.story.WorkTypeIsDisabled(WorkTypeDefOf.Warden);
-            //undeadPawn.story.WorkTypeIsDisabled(WorkTypeDefOf.Hunting);
-            //undeadPawn.story.WorkTypeIsDisabled(WorkTypeDefOf.Handling);
-            //undeadPawn.story.WorkTypeIsDisabled(WorkTypeDefOf.Doctor);           
-
-            undeadPawn.skills.Learn(SkillDefOf.Shooting, -100000000, true);            
-            undeadPawn.skills.Learn(SkillDefOf.Animals, -100000000, true);
-            undeadPawn.skills.Learn(SkillDefOf.Artistic, -100000000, true);
-            undeadPawn.skills.Learn(SkillDefOf.Cooking, -100000000, true);
-            undeadPawn.skills.Learn(SkillDefOf.Cooking, Rand.Range(10000, 30000)*bonusSkill, true);            
-            undeadPawn.skills.Learn(SkillDefOf.Crafting, -100000000, true);
-            undeadPawn.skills.Learn(SkillDefOf.Crafting, Rand.Range(10000, 60000) * bonusSkill, true);
-            undeadPawn.skills.Learn(SkillDefOf.Plants, -100000000, true);
-            undeadPawn.skills.Learn(SkillDefOf.Plants, Rand.Range(25000, 50000) * bonusSkill, true);
-            undeadPawn.skills.Learn(SkillDefOf.Intellectual, -10000000, true);
-            undeadPawn.skills.Learn(SkillDefOf.Medicine, -10000000, true);
-            undeadPawn.skills.Learn(SkillDefOf.Melee, -10000000, true);
-            undeadPawn.skills.Learn(SkillDefOf.Melee, Rand.Range(50000, 80000) * bonusSkill, true);
-            undeadPawn.skills.Learn(SkillDefOf.Mining, -10000000, true);
-            undeadPawn.skills.Learn(SkillDefOf.Mining, Rand.Range(30000, 60000) * bonusSkill, true);
-            undeadPawn.skills.Learn(SkillDefOf.Social, -10000000, true);
-            undeadPawn.skills.Learn(SkillDefOf.Construction, -10000000, true);
-            undeadPawn.skills.Learn(SkillDefOf.Construction, Rand.Range(20000, 50000) * bonusSkill, true);
-
-            //if (undeadPawn.story.Adulthood == TorannMagicDefOf.TM_UndeadAdultBS_GhostMind)
-            //{
-            //    undeadPawn.skills.Learn(SkillDefOf.Crafting, Rand.Range(20000, 30000), true);
-            //    undeadPawn.skills.Learn(SkillDefOf.Cooking, Rand.Range(10000, 20000), true);
-            //    undeadPawn.skills.Learn(SkillDefOf.Melee, -25000, true);
-            //    undeadPawn.skills.Learn(SkillDefOf.Mining, -25000, true);
-            //}
             if (undeadPawn.story.Adulthood == TorannMagicDefOf.TM_UndeadAdultBS_GhostEye)
             {
-                undeadPawn.skills.Learn(SkillDefOf.Shooting, Rand.Range(10000, 20000) * bonusSkill, true);                
+                undeadPawn.skills.Learn(SkillDefOf.Shooting, Rand.Range(10000, 20000) * bonusSkill, true);
+            }
+
+            foreach (BackstoryDef item in from bs in undeadPawn.story.AllBackstories
+                                          where bs != null
+                                          select bs)
+            {
+                foreach (SkillGain skillGain in item.skillGains)
+                {
+                    undeadPawn.skills.GetSkill(skillGain.skill).Level += skillGain.amount;
+                }
             }
             //if (undeadPawn.story.Adulthood == TorannMagicDefOf.TM_UndeadAdultBS_Brute)
             //{
@@ -364,16 +408,6 @@ namespace TorannMagic
             //    undeadPawn.skills.Learn(SkillDefOf.Plants, Rand.Range(15000, 20000), true);
             //    undeadPawn.skills.Learn(SkillDefOf.Melee, -80000, true);
             //}
-
-            foreach (BackstoryDef item in from bs in undeadPawn.story.AllBackstories
-                                          where bs != null
-                                          select bs)
-            {
-                foreach (SkillGain skillGain in item.skillGains)
-                {
-                    undeadPawn.skills.GetSkill(skillGain.skill).Level += skillGain.amount;                
-                }
-            }
 
             if (undeadPawn.IsColonist)
             {
@@ -610,6 +644,20 @@ namespace TorannMagic
                         undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Crafting, 4);
                     }
                 }
+            }
+        }
+
+        private void RemoveGenes(Pawn p)
+        {
+            if (p.genes == null) return;
+            List<Gene> pGenes = new List<Gene>();
+            foreach (Gene g in p.genes.GenesListForReading)
+            {
+                pGenes.Add(g);
+            }
+            for(int i = 0; i < pGenes.Count; i++)
+            {
+                p.genes.RemoveGene(pGenes[i]);
             }
         }
 

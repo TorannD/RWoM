@@ -31,6 +31,7 @@
     <makesAlert>false</makesAlert>
 	<isBad>false</isBad>
 	<initialSeverity>.5</initialSeverity>
+	<preventsLungRot>true</preventsLungRot>
 	<causesNeed>TM_SpiritND</causesNeed>
 	<comps>
 	  <li Class="HediffCompProperties_Invisibility">

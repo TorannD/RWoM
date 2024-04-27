@@ -33,9 +33,9 @@ namespace TorannMagic.ModOptions
             //GUI.BeginGroup(inRect);
             
             Text.Font = GameFont.Medium;
-            float x = Text.CalcSize("TM_ClassOptions".Translate()).x;
+            float x = Text.CalcSize("TM_EnabledClasses".Translate()).x;
             Rect headerRect = new Rect(inRect.width / 2f - (x / 2), inRect.y, inRect.width, ClassOptionsWindow.HeaderSize);
-            Widgets.Label(headerRect, "TM_ClassOptions".Translate());
+            Widgets.Label(headerRect, "TM_EnabledClasses".Translate());
             Text.Font = GameFont.Small;
             GUI.color = Color.yellow;
             x = Text.CalcSize("TM_ClassWarning".Translate()).x;
