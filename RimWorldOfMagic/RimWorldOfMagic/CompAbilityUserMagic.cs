@@ -6760,7 +6760,7 @@ namespace TorannMagic
         {
             bool flag = this.Mana == null;
             if (flag)
-            {
+            {                
                 Hediff firstHediffOfDef = base.Pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_MagicUserHD, false);
                 bool flag2 = firstHediffOfDef != null;
                 if (flag2)
@@ -6773,6 +6773,7 @@ namespace TorannMagic
                     hediff.Severity = 1f;
                     base.Pawn.health.AddHediff(hediff, null, null);
                 }
+                this.Pawn.needs.AddOrRemoveNeedsAsAppropriate();
             }
         }
         public void ResolveMagicPowers()

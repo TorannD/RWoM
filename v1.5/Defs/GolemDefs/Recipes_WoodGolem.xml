@@ -148,6 +148,21 @@ Heat:	+[4,7,10]%</description>
         <count>25</count>
       </li>
     </ingredients>
+	<fixedIngredientFilter>
+	  <thingDefs>
+        <li>Steel</li>
+      </thingDefs>
+      <categories>
+        <li>StoneBlocks</li>
+      </categories>
+    </fixedIngredientFilter>
+    <defaultIngredientFilter>
+      <categories>
+        <li>StoneBlocks</li>
+      </categories>
+      <disallowedThingDefs>
+      </disallowedThingDefs>
+    </defaultIngredientFilter>
   </RecipeDef>
   
   <RecipeDef ParentName="WoodGolem_Recipe_Base">

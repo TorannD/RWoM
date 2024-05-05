@@ -30,6 +30,21 @@
         <count>10</count>
       </li>
     </ingredients>
+	<fixedIngredientFilter>
+	  <thingDefs>
+		<li>RawMagicyte</li>
+      </thingDefs>
+      <categories>
+        <li>StoneBlocks</li>
+      </categories>
+    </fixedIngredientFilter>
+    <defaultIngredientFilter>
+      <categories>
+        <li>StoneBlocks</li>
+      </categories>
+      <disallowedThingDefs>
+      </disallowedThingDefs>
+    </defaultIngredientFilter>
   </RecipeDef>
   
   <RecipeDef ParentName="StoneGolem_Recipe_Base">
@@ -124,6 +139,22 @@
         <count>40</count>
       </li>
     </ingredients>
+	<fixedIngredientFilter>
+	  <thingDefs>
+        <li>Silver</li>
+		<li>RawMagicyte</li>
+      </thingDefs>
+      <categories>
+        <li>StoneBlocks</li>
+      </categories>
+    </fixedIngredientFilter>
+    <defaultIngredientFilter>
+      <categories>
+        <li>StoneBlocks</li>
+      </categories>
+      <disallowedThingDefs>
+      </disallowedThingDefs>
+    </defaultIngredientFilter>
   </RecipeDef>
   
   <RecipeDef ParentName="StoneGolem_Recipe_Base">
@@ -156,6 +187,21 @@ Heat:	+6%</description>
         <count>50</count>
       </li>
     </ingredients>
+	<fixedIngredientFilter>
+	  <thingDefs>
+        <li>Steel</li>
+      </thingDefs>
+      <categories>
+        <li>StoneBlocks</li>
+      </categories>
+    </fixedIngredientFilter>
+    <defaultIngredientFilter>
+      <categories>
+        <li>StoneBlocks</li>
+      </categories>
+      <disallowedThingDefs>
+      </disallowedThingDefs>
+    </defaultIngredientFilter>
   </RecipeDef>
   
   <RecipeDef ParentName="StoneGolem_Recipe_Base">
@@ -179,6 +225,18 @@ Health:		+[40/70/100]%</description>
         <count>100</count>
       </li>
     </ingredients>
+	<fixedIngredientFilter>
+      <categories>
+        <li>StoneBlocks</li>
+      </categories>
+    </fixedIngredientFilter>
+    <defaultIngredientFilter>
+      <categories>
+        <li>StoneBlocks</li>
+      </categories>
+      <disallowedThingDefs>
+      </disallowedThingDefs>
+    </defaultIngredientFilter>
   </RecipeDef>
   
   <RecipeDef ParentName="StoneGolem_Recipe_Base">

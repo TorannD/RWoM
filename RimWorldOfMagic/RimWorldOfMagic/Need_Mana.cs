@@ -59,7 +59,7 @@ namespace TorannMagic
             set => curLevelInt = Mathf.Clamp(value, 0f, 2f*this.pawn.GetCompAbilityUserMagic().maxMP);            
         }
 
-        public override float MaxLevel => this.pawn.GetCompAbilityUserMagic().maxMP;
+        public override float MaxLevel => this.pawn.ageTracker.AgeBiologicalYears < 13 ? this.pawn.GetCompAbilityUserMagic().maxMP - ((12f - this.pawn.ageTracker.AgeBiologicalYearsFloat) / 12f) : this.pawn.GetCompAbilityUserMagic().maxMP;
 
         public override void ExposeData()
         {

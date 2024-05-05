@@ -81,6 +81,36 @@ namespace TorannMagic.ModOptions
             return bypassPrediction;
         }
 
+        private static ApparelPolicy undeadApparelPolicy;
+
+        public static ApparelPolicy GetUndeadApparelPolicy()
+        {
+            return undeadApparelPolicy;
+        }
+
+        public static void SetUndeadApparelPolicy()
+        {
+            ApparelPolicy existingPolicy = null;
+            foreach(ApparelPolicy ap in Current.Game.outfitDatabase.AllOutfits)
+            {
+                if(ap.id == 67)
+                {
+                    existingPolicy = ap;
+                }
+            }
+            if (existingPolicy != null)
+            {
+                undeadApparelPolicy = existingPolicy;
+            }
+            else
+            {
+                undeadApparelPolicy = Current.Game.outfitDatabase.MakeNewOutfit();
+                undeadApparelPolicy.id = 67;
+                undeadApparelPolicy.label = "TM_UndeadVerbatum".Translate();
+                undeadApparelPolicy.filter = Current.Game.outfitDatabase.DefaultOutfit().filter;
+            }
+        }
+
         static List<Pawn> overdrivePawns = new List<Pawn>();
 
         public static bool ClearOverdrivePawns()

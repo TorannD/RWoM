@@ -194,7 +194,11 @@ namespace TorannMagic
                                             undeadPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_UndeadHD).TryGetComp<HediffComp_Undead>().linkedPawn = pawn;
                                             HealthUtility.AdjustSeverity(undeadPawn, HediffDef.Named("TM_UndeadStageHD"), -2f);
                                             HealthUtility.AdjustSeverity(undeadPawn, HediffDef.Named("TM_UndeadStageHD"), rotStage);
-                                            RedoSkills(undeadPawn, pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_LichHD")));
+                                            if (!undeadPawn.story.traits.HasTrait(TorannMagicDefOf.Undead))
+                                            {
+                                                RedoSkills(undeadPawn, pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_LichHD")));
+                                            }
+                                            SetOutfitRestrictions(undeadPawn);
                                             if (undeadPawn.story.traits.HasTrait(TorannMagicDefOf.ChaosMage))
                                             {
                                                 compMagic.RemovePawnAbility(TorannMagicDefOf.TM_ChaosTradition);
@@ -647,13 +651,38 @@ namespace TorannMagic
             }
         }
 
+        private void SetOutfitRestrictions(Pawn p)
+        {
+            if(ModOptions.Constants.GetUndeadApparelPolicy() == null)
+            {
+                ModOptions.Constants.SetUndeadApparelPolicy();
+            }
+            if (p.outfits.CurrentApparelPolicy == Current.Game.outfitDatabase.DefaultOutfit())
+            {
+                p.outfits.CurrentApparelPolicy = ModOptions.Constants.GetUndeadApparelPolicy();
+            }
+        }
+
         private void RemoveGenes(Pawn p)
         {
             if (p.genes == null) return;
             List<Gene> pGenes = new List<Gene>();
             foreach (Gene g in p.genes.GenesListForReading)
             {
-                pGenes.Add(g);
+                if (g.def.endogeneCategory != EndogeneCategory.None) continue;
+                if (g.def.abilities != null && g.def.abilities.Count > 0)
+                {
+                    if(g.def.defName == "Coagulate" || g.def.defName == "Bloodfeeder" || g.def.defName == "XenogermReimplanter")
+                    {
+                        pGenes.Add(g);
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
+
+                pGenes.Add(g);                
             }
             for(int i = 0; i < pGenes.Count; i++)
             {

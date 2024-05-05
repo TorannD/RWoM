@@ -30,6 +30,22 @@
         <count>10</count>
       </li>
     </ingredients>
+	<fixedIngredientFilter>
+	  <thingDefs>
+		<li>RawMagicyte</li>
+      </thingDefs>
+      <categories>
+        <li>Textiles</li>
+      </categories>
+    </fixedIngredientFilter>
+    <defaultIngredientFilter>
+      <categories>
+        <li>Textiles</li>
+      </categories>
+      <disallowedThingDefs>
+		<li>TM_Manaweave</li>
+      </disallowedThingDefs>
+    </defaultIngredientFilter>
   </RecipeDef>
   
   <RecipeDef ParentName="SilkGolem_Recipe_Base">
@@ -116,6 +132,23 @@
         <count>40</count>
       </li>
     </ingredients>
+	<fixedIngredientFilter>
+	  <thingDefs>
+        <li>Silver</li>
+		<li>RawMagicyte</li>
+      </thingDefs>
+      <categories>
+        <li>Textiles</li>
+      </categories>
+    </fixedIngredientFilter>
+    <defaultIngredientFilter>
+      <categories>
+        <li>Textiles</li>
+      </categories>
+      <disallowedThingDefs>
+		<li>TM_Manaweave</li>
+      </disallowedThingDefs>
+    </defaultIngredientFilter>
   </RecipeDef>
   
   <RecipeDef ParentName="SilkGolem_Recipe_Base">
@@ -139,6 +172,19 @@ Health:		+[20/40/60]%</description>
         <count>100</count>
       </li>
     </ingredients>
+	<fixedIngredientFilter>
+      <categories>
+        <li>Textiles</li>
+      </categories>
+    </fixedIngredientFilter>
+    <defaultIngredientFilter>
+      <categories>
+        <li>Textiles</li>
+      </categories>
+      <disallowedThingDefs>
+		<li>TM_Manaweave</li>
+      </disallowedThingDefs>
+    </defaultIngredientFilter>
   </RecipeDef> 
   
   <RecipeDef ParentName="SilkGolem_Recipe_Base">

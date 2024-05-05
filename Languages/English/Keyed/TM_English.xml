@@ -2312,5 +2312,8 @@ Level 3: all 4 effects</TM_CombatDrugs_pwr_desc>
 
 <TM_MCU_PointsToLearn>{0} points to </TM_MCU_PointsToLearn>
 
+<!-- ============ Miscellaneous =============-->
+<TM_UndeadVerbatum>Undead</TM_UndeadVerbatum>
+
 
 </LanguageData>

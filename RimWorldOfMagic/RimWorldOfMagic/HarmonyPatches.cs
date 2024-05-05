@@ -3421,7 +3421,7 @@ namespace TorannMagic
                             }
                         }
                     }
-                    if (ModOptions.Settings.Instance.Wanderer && __instance.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted))
+                    if (ModOptions.Settings.Instance.Wanderer && __instance.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted) && __instance.ageTracker.AgeBiologicalYears >= 4)
                     {
                         //Pawn p = __instance;
                         //Command_Action itemWanderer = new Command_Action
@@ -3442,7 +3442,7 @@ namespace TorannMagic
                         }
                     }
 
-                    if (ModOptions.Settings.Instance.Wayfarer && __instance.story.traits.HasTrait(TorannMagicDefOf.PhysicalProdigy))
+                    if (ModOptions.Settings.Instance.Wayfarer && __instance.story.traits.HasTrait(TorannMagicDefOf.PhysicalProdigy) && __instance.ageTracker.AgeBiologicalYears >= 4)
                     {
                         //Pawn p = __instance;
                         //Command_Action itemWayfarer = new Command_Action
@@ -3492,7 +3492,7 @@ namespace TorannMagic
                     CompAbilityUserMight compMight = __instance.GetCompAbilityUserMight();
                     var gizmoList = __result.ToList();
                     bool canBecomeClassless = false;
-                    if (ModOptions.Settings.Instance.Wanderer && __instance.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted))
+                    if (ModOptions.Settings.Instance.Wanderer && __instance.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted) && __instance.ageTracker.AgeBiologicalYears >= 4)
                     {
                         //Pawn p = __instance;
                         //Command_Action itemWanderer = new Command_Action
@@ -3514,7 +3514,7 @@ namespace TorannMagic
                         }
                     }
 
-                    if (ModOptions.Settings.Instance.Wayfarer && __instance.story.traits.HasTrait(TorannMagicDefOf.PhysicalProdigy))
+                    if (ModOptions.Settings.Instance.Wayfarer && __instance.story.traits.HasTrait(TorannMagicDefOf.PhysicalProdigy) && __instance.ageTracker.AgeBiologicalYears >= 4)
                     {
                         //Pawn p = __instance;
                         //Command_Action itemWayfarer = new Command_Action
@@ -5870,7 +5870,7 @@ namespace TorannMagic
                         if (Rand.Chance((baseMageChance + baseFighterChance + advMageChance + advFighterChance) / (allTraits.Count)))
                         {
 
-                            if (pawnTraits.Count > 0)
+                            if (pawnTraits.Count > 2)
                             {
                                 pawnTraits.Remove(pawnTraits[pawnTraits.Count - 1]);
                             }
@@ -5885,7 +5885,7 @@ namespace TorannMagic
                             }
                             else if (rnd >= (baseMageChance + baseFighterChance) && rnd < (baseMageChance + baseFighterChance + advFighterChance))
                             {
-                                if (anyFightersEnabled)
+                                if (anyFightersEnabled && pawn.ageTracker?.AgeBiologicalYears >= 6)
                                 {
                                     int rndF = Rand.RangeInclusive(1, fighterCount);
                                     switch (rndF)
@@ -6027,7 +6027,7 @@ namespace TorannMagic
                             }
                             else
                             {
-                                if (anyMagesEnabled)
+                                if (anyMagesEnabled && pawn.ageTracker?.AgeBiologicalYears >= 6)
                                 {
                                     int rndM = Rand.RangeInclusive(1, (mageCount + 1));
                                     switch (rndM)

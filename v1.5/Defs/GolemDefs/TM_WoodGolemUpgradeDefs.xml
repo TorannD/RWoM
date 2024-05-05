@@ -17,7 +17,7 @@
 		<defName>TM_Golem_WoodMaxEnergy</defName>
 		<label>energy storage</label>
 		<description>Increases maximum energy by 100 per level. Starting max energy is 400.</description>
-		<recipe>TM_StrawGolem_EnergyMax</recipe>
+		<recipe>TM_WoodGolem_EnergyMax</recipe>
 		<bodypart>TM_Wood_Reserves</bodypart>
 		<partRequiresUpgrade>false</partRequiresUpgrade>
 		<maxLevel>3</maxLevel>

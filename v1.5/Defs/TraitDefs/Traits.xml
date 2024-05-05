@@ -192,6 +192,9 @@
 				<PainShockThreshold>0.90</PainShockThreshold>
 				<NegotiationAbility>-0.7</NegotiationAbility>
 				<WorkSpeedGlobal>-0.50</WorkSpeedGlobal>
+				<HypoxiaResistance MayRequire="kentington.saveourship2">1</HypoxiaResistance>
+				<DecompressionResistance MayRequire="kentington.saveourship2">1</DecompressionResistance>
+				<VacuumSpeedMultiplier MayRequire="kentington.saveourship2">.3</VacuumSpeedMultiplier>
 			</statOffsets>
 			<statFactors>
 				<ForagedNutritionPerDay>0</ForagedNutritionPerDay>
@@ -958,6 +961,9 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 				<TradePriceImprovement>-0.5</TradePriceImprovement>
 				<NegotiationAbility>-.5</NegotiationAbility>
 				<WorkSpeedGlobal>-.75</WorkSpeedGlobal>
+				<HypoxiaResistance MayRequire="kentington.saveourship2">1</HypoxiaResistance>
+				<DecompressionResistance MayRequire="kentington.saveourship2">1</DecompressionResistance>
+				<VacuumSpeedMultiplier MayRequire="kentington.saveourship2">.5</VacuumSpeedMultiplier>
 			</statOffsets>
 			<statFactors>
 				<ForagedNutritionPerDay>0</ForagedNutritionPerDay>
