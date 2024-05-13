@@ -1732,6 +1732,9 @@ namespace TorannMagic
         public static void PawnEquipment_Drop_Postfix(Pawn_EquipmentTracker __instance, ThingWithComps eq, ref bool __result)
         {
             Pawn p = __instance.pawn;
+            TM_Calc.DamageCache.Remove(p);
+            TM_Calc.DamageCache_Melee.Remove(p);
+            TM_Calc.DamageCache_Ranged.Remove(p);
             CompAbilityUserMight comp = p.GetCompAbilityUserMight();
             if (p != null && comp != null && (p.story.traits.HasTrait(TorannMagicDefOf.TM_SuperSoldier) || (comp.customClass != null)) && comp.equipmentContainer != null && __result)
             {
@@ -1775,11 +1778,11 @@ namespace TorannMagic
         //    }
         //}
 
-        public static void PawnEquipment_Add_Postfix(Pawn_EquipmentTracker __instance, ThingWithComps newEq)
+        public static void PawnEquipment_Add_Postfix(Pawn_EquipmentTracker __instance, ThingWithComps newEq, Pawn ___pawn)
         {
+            Pawn p = ___pawn;
             if (!newEq.def.defName.Contains("Spec_Base"))
-            {
-                Pawn p = __instance.pawn;
+            {               
                 CompAbilityUserMight comp = p.GetCompAbilityUserMight();
                 if (p != null && comp != null && (p.story.traits.HasTrait(TorannMagicDefOf.TM_SuperSoldier) || (comp.customClass != null)))
                 {

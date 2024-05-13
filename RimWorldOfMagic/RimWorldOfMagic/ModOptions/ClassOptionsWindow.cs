@@ -24,6 +24,12 @@ namespace TorannMagic.ModOptions
             base.forcePause = true;            
         }
 
+        public override void Close(bool doCloseSound = true)
+        {
+            TM_Data.ResetCaches();
+            base.Close(doCloseSound);
+        }
+
         public override void DoWindowContents(Rect inRect)
         {
             int num = 0;

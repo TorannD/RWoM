@@ -3950,8 +3950,20 @@ namespace TorannMagic
             return result;
         }
 
+        public static Dictionary<Pawn, float> DamageCache = new Dictionary<Pawn, float>();
+        private static int DamageCacheTimer = 0;
+
         public static float GetSkillDamage(Pawn p)
         {
+            if(DamageCacheTimer < Current.Game.tickManager.TicksAbs)
+            {
+                DamageCacheTimer = Current.Game.tickManager.TicksAbs + 2501;
+                DamageCache.Clear();
+            }
+            if(DamageCache.ContainsKey(p))
+            {
+                return DamageCache.TryGetValue(p);
+            }
             float result = 0;
 
             CompAbilityUserMight compMight = p.GetCompAbilityUserMight();
@@ -3985,7 +3997,7 @@ namespace TorannMagic
             {
                 result = p.GetStatValue(StatDefOf.MeleeDPS, false) * strFactor;
             }
-
+            DamageCache.Add(p, result);
             return result;
         }
 
@@ -4000,15 +4012,41 @@ namespace TorannMagic
             return .1f + (.2f / weaponMass) + (.05f * (float)q);
         }
 
+        public static Dictionary<Pawn, float> DamageCache_Melee = new Dictionary<Pawn, float>();
+        private static int DamageCacheTimer_Melee = 0;
+
         public static float GetSkillDamage_Melee(Pawn p, float strFactor)
         {
+            if (DamageCacheTimer_Melee < Current.Game.tickManager.TicksAbs)
+            {
+                DamageCacheTimer_Melee = Current.Game.tickManager.TicksAbs + 2503;
+                DamageCache_Melee.Clear();
+            }
+            if (DamageCache_Melee.ContainsKey(p))
+            {
+                return DamageCache_Melee.TryGetValue(p);
+            }
             float weaponDPS = p.equipment.Primary.GetStatValue(StatDefOf.MeleeWeapon_AverageDPS, false);
             float pawnDPS = p.GetStatValue(StatDefOf.MeleeDPS, false);
-            return Mathf.Max((pawnDPS + weaponDPS) * strFactor, 5f);
+            float result = Mathf.Max((pawnDPS + weaponDPS) * strFactor, 5f);
+            DamageCache_Melee.Add(p, result);
+            return result;
         }
+
+        public static Dictionary<Pawn, float> DamageCache_Ranged = new Dictionary<Pawn, float>();
+        private static int DamageCacheTimer_Ranged = 0;
 
         public static float GetSkillDamage_Range(Pawn p, float strFactor)
         {
+            if (DamageCacheTimer_Ranged < Current.Game.tickManager.TicksAbs)
+            {
+                DamageCacheTimer_Ranged = Current.Game.tickManager.TicksAbs + 2502;
+                DamageCache_Ranged.Clear();
+            }
+            if (DamageCache_Ranged.ContainsKey(p))
+            {
+                return DamageCache_Ranged.TryGetValue(p);
+            }
             VerbProperties vp = p.equipment.Primary.def.Verbs?.FirstOrDefault();
             if (vp == null) return 0;
 
@@ -4016,11 +4054,13 @@ namespace TorannMagic
             //p.equipment.Primary.TryGetQuality(out qc);
             //float qc_m = GetQualityMultiplier(qc);
             const float qc_m = 1f;
-            return (
+            float result = (
                 qc_m * vp.defaultProjectile.projectile.GetDamageAmount(p.equipment.Primary)
                 - 2 * (vp.warmupTime + vp.defaultCooldownTime)
                 + 3 * vp.defaultProjectile.projectile.stoppingPower
             ) * strFactor;
+            DamageCache_Ranged.Add(p, result);
+            return result;
         }
 
         public static float GetQualityMultiplier(QualityCategory qc)
