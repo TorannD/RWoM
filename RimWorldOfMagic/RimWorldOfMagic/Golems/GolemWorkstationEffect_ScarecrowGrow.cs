@@ -25,7 +25,7 @@ namespace TorannMagic.Golems
                 Plant p = t as Plant;
                 if(p.Growth < 1f)
                 {
-                    Log.Message("plant " + p.def.defName + " growth " + p.Growth + " with growth rate of " + p.GrowthRate);
+                    //Log.Message("plant " + p.def.defName + " growth " + p.Growth + " with growth rate of " + p.GrowthRate);
                     p.Growth += (growthPerEffectTick * p.GrowthRate);
                 }
             }

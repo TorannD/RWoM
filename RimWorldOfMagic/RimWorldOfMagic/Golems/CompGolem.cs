@@ -18,8 +18,8 @@ namespace TorannMagic.Golems
         public int age = 0;
         private int nextActionTick = 0;
         public int actionTickAverage80 = 300;
-        public IntVec3 dormantPosition = new IntVec3();
-        public Map dormantMap;
+        public IntVec3 dormantPosition = IntVec3.Zero;
+        public Map dormantMap = null;
         public Building_TMGolemBase dormantThing;
         public Rot4 dormantRotation;        
 

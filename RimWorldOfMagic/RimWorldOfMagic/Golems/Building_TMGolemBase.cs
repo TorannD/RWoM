@@ -666,9 +666,15 @@ namespace TorannMagic.Golems
                 if(cg != null)
                 {
                     cg.dormantThing = this;
-                    cg.dormantPosition = this.Position;
+                    if (cg.dormantPosition == IntVec3.Zero)
+                    {
+                        cg.dormantPosition = this.Position;
+                    }
                     cg.dormantRotation = this.Rotation;
-                    cg.dormantMap = this.Map;
+                    if (cg.dormantMap == null)
+                    {
+                        cg.dormantMap = this.Map;
+                    }
                     if (!cg.GolemName.ToString().Contains("Blank"))
                     {
                         spawnedThing.Name = cg.GolemName;
@@ -992,6 +998,7 @@ namespace TorannMagic.Golems
                 //string chargeString = "\n" + "TM_GolemChargesRemaining".Translate(this.abilityCharges);
                 //baseStr += chargeString;
             }
+            sb.AppendLine("TM_GolemCharge".Translate(this.Energy.StoredEnergyPct));
             return GenText.TrimEndNewlines(sb.ToString());
             //return baseStr;
         }

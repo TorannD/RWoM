@@ -2234,6 +2234,7 @@ Level 3: all 4 effects</TM_CombatDrugs_pwr_desc>
 <TM_EndSymbiosis>End Symbiosis</TM_EndSymbiosis>
 <TM_EndSymbiosisDesc>The empath detaches their will from the host and returns to his or her body. This option is only available if the host is near the symbiote.</TM_EndSymbiosisDesc>
 <TM_GolemAssignArea>Restricts golem to this area</TM_GolemAssignArea>
+<TM_GolemCharge>Energy: {0}%</TM_GolemCharge>
 <!-- ========== Building Menu's ========== -->
 
 <TM_SelectPortalDestination>Activate Portal</TM_SelectPortalDestination>
