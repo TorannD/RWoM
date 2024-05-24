@@ -12,7 +12,8 @@ namespace TorannMagic
             CompAbilityUserMight compMight = user.GetCompAbilityUserMight();
             CompAbilityUserMagic compMagic = user.GetCompAbilityUserMagic();
 
-            if(!(compMagic.IsMagicUser || compMight.IsMightUser || user.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted) || user.story.traits.HasTrait(TorannMagicDefOf.PhysicalProdigy) || user.story.traits.HasTrait(TorannMagicDefOf.Undead)))
+            if(!(compMagic.IsMagicUser || compMight.IsMightUser || user.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted) || 
+                user.story.traits.HasTrait(TorannMagicDefOf.PhysicalProdigy) || user.story.traits.HasTrait(TorannMagicDefOf.Undead) || user.IsShambler || user.IsGhoul))
             {
                 
                 if (parent.def != null && parent.def.defName == "GemstoneOfInsight_Magic")

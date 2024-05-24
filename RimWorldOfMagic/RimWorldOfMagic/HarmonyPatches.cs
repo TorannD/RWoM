@@ -2585,18 +2585,17 @@ namespace TorannMagic
             {
                 if (node?.apparel != null && ModOptions.Settings.Instance.offSetClothing)
                 {
-                    if(__result >= .0288f)
+                    //Log.Message("for apparel " + node.apparel.def.defName + " the layer is " + ((node.Props.drawData?.LayerForRot(parms.facing, node.Props.baseLayer) ?? node.Props.baseLayer) + node.debugLayerOffset).ToString() + " with altitude of " + __result);
+
+                    if (__result >= .0288f)
                     {
                         __result = __result + ModOptions.Settings.Instance.offsetMultiLayerClothingAmount;
                     }
-                    //Log.Message("for apparel " + node.apparel.def.defName + " the layer is " + ((node.Props.drawData?.LayerForRot(parms.facing, node.Props.baseLayer) ?? node.Props.baseLayer) + node.debugLayerOffset).ToString() + " with altitude of " + __result);
-                    if (!ModOptions.Constants.GetCloaks().Contains(node.Graphic.MatSingle)) return;
+                    if (ModOptions.Constants.GetCloaks().Contains(node.Graphic.MatSingle))
                     {
                         __result += ModOptions.Constants.GetCloaksNorth().Contains(node.Graphic.MatSingle) ? ModOptions.Settings.Instance.cloakDepthNorth : ModOptions.Settings.Instance.cloakDepth;
                     }
-
-                }
-                
+                }                
             }
         }
 
@@ -5411,6 +5410,9 @@ namespace TorannMagic
         {
             private static void Postfix(Pawn pawn)
             {
+                if (pawn.IsShambler) goto TraitEnd;
+                if (pawn.IsGhoul) goto TraitEnd;
+
                 List<TraitDef> allTraits = DefDatabase<TraitDef>.AllDefsListForReading;
                 List<Trait> pawnTraits = pawn.story.traits.allTraits;
                 

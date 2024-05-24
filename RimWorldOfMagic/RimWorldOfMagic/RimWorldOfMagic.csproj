@@ -142,7 +142,10 @@
     <Compile Include="Golems\JobGiver_Work.cs" />
     <Compile Include="JobGiver_AIClearSnow.cs" />
     <Compile Include="JobGiver_AIClearPollution.cs" />
+    <Compile Include="ModOptions\ChangeCloakDepthNorthWindow.cs" />
+    <Compile Include="ModOptions\ChangeCloakDepthWindow.cs" />
     <Compile Include="ModOptions\DisplayOptionsWindow.cs" />
+    <Compile Include="ModOptions\ChangeOffsetWindow.cs" />
     <Compile Include="Utils\TM_PawnTracker.cs" />
     <Compile Include="Verb_ShootTLine_Properties.cs" />
     <Compile Include="Verb_ShootDifferentProjectiles_Properties.cs" />

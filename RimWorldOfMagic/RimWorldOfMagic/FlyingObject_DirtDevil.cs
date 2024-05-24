@@ -38,7 +38,7 @@ namespace TorannMagic
 
         private bool initialized = true;
 
-        protected new int StartingTicksToImpact
+        protected int StartingTicksToImpact
         {
             get
             {
@@ -52,7 +52,7 @@ namespace TorannMagic
             }
         }
 
-        protected new IntVec3 DestinationCell
+        protected IntVec3 DestinationCell
         {
             get
             {
@@ -60,7 +60,7 @@ namespace TorannMagic
             }
         }
 
-        public new Vector3 ExactPosition
+        public override Vector3 ExactPosition
         {
             get
             {
@@ -69,7 +69,7 @@ namespace TorannMagic
             }
         }
 
-        public new Quaternion ExactRotation
+        public override Quaternion ExactRotation
         {
             get
             {
@@ -276,7 +276,9 @@ namespace TorannMagic
                     rndVec.x += Rand.Range(-1f, 1f);
                     rndVec.z += Rand.Range(-1f, 1f);
                     Vector3 angle = TM_Calc.GetVector(rndVec, this.ExactPosition);
-                    TM_MoteMaker.ThrowGenericFleck(FleckDefOf.Smoke, rndVec, this.Map, Rand.Range(.8f, 1.5f), .1f, .05f, .15f, -300, 2, (Quaternion.AngleAxis(90, Vector3.up) * angle).ToAngleFlat(), Rand.Range(0, 360));
+                    TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Base_Smoke, rndVec, base.Map, Rand.Range(.8f, 1.5f), .1f, .05f, .15f, -300, 2, (Quaternion.AngleAxis(90, Vector3.up) * angle).ToAngleFlat(), Rand.Range(0, 360));
+                    //TM_MoteMaker.ThrowGenericFleck(FleckDefOf.Smoke, rndVec, base.Map, Rand.Range(.8f, 1.5f), .1f, .05f, .15f, -300, 2, (Quaternion.AngleAxis(90, Vector3.up) * angle).ToAngleFlat(), Rand.Range(0, 360));
+                    
                 }
                 if(this.searchDelay < 0)
                 {

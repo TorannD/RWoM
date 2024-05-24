@@ -16,6 +16,10 @@ namespace TorannMagic.ModOptions
         private bool reset = false;
         private bool challenge = false;
 
+        private bool changeOffset = false;
+        private bool changeCloakDepth = false;
+        private bool changeCloakDepthNorth = false;
+
         private string multilayerVal = "0";
         private string cloakVal = "0";
         private string cloakNorthVal = "0";
@@ -103,25 +107,48 @@ namespace TorannMagic.ModOptions
             if (Settings.Instance.offSetClothing)
             {
                 Rect rowRect71 = UIHelper.GetRowRect(rect1, rowHeight, num);
-                Settings.Instance.offsetMultiLayerClothingAmount = Widgets.HorizontalSlider(rowRect71, Settings.Instance.offsetMultiLayerClothingAmount, -1, 1f, false, "TM_offsetMultilayerClothing".Translate() + " " + Settings.Instance.offsetMultiLayerClothingAmount, "-1", "1", .0001f);
+                Settings.Instance.offsetMultiLayerClothingAmount = Widgets.HorizontalSlider(rowRect71, Settings.Instance.offsetMultiLayerClothingAmount, -1f, 1f, false, "TM_offsetMultilayerClothing".Translate() + " " + Settings.Instance.offsetMultiLayerClothingAmount, "-1", "1", .000001f);
                 TooltipHandler.TipRegion(rowRect71, "TM_offsetMultilayerClothingDesc".Translate());
                 num++;
                 Rect rowRect71ShiftRight = UIHelper.GetRowRect(rowRect71, rowHeight, num);
-                Widgets.TextFieldNumeric<float>(rowRect71ShiftRight, ref Settings.Instance.offsetMultiLayerClothingAmount, ref multilayerVal, -1f, 1f);
+                Rect rectChangeOffset = new Rect(rowRect71ShiftRight.x, rowRect71ShiftRight.y+.5f, 100f, 28f);
+                changeOffset = Widgets.ButtonText(rectChangeOffset, "TM_SetVerbatum".Translate(), true, false, true);
+                if (changeOffset)
+                {
+                    ChangeOffsetWindow newWindow = new ChangeOffsetWindow();
+                    newWindow.currentOffset = Settings.Instance.offsetMultiLayerClothingAmount.ToString();
+                    Find.WindowStack.Add(newWindow);
+                }
+                num++;
                 num++;
                 Rect rowRect72 = UIHelper.GetRowRect(rect1, rowHeight, num);
-                Settings.Instance.cloakDepth = Widgets.HorizontalSlider(rowRect72, Settings.Instance.cloakDepth, -1, 1f, false, "TM_CloakDepth".Translate() + " " + Settings.Instance.cloakDepth, "-1", "1", .0001f);
+                Settings.Instance.cloakDepth = Widgets.HorizontalSlider(rowRect72, Settings.Instance.cloakDepth, -1f, 1f, false, "TM_CloakDepth".Translate() + " " + Settings.Instance.cloakDepth, "-1", "1", .000001f);
                 TooltipHandler.TipRegion(rowRect72, "TM_CloakDepthDesc".Translate());
                 num++;
                 Rect rowRect72ShiftRight = UIHelper.GetRowRect(rowRect72, rowHeight, num);
-                Widgets.TextFieldNumeric<float>(rowRect72ShiftRight, ref Settings.Instance.cloakDepth, ref cloakVal, -1f, 1f);
+                Rect rectChangeCloakDepth = new Rect(rowRect72ShiftRight.x, rowRect72ShiftRight.y + .5f, 100f, 28f);
+                changeCloakDepth = Widgets.ButtonText(rectChangeCloakDepth, "TM_SetVerbatum".Translate(), true, false, true);
+                if (changeCloakDepth)
+                {
+                    ChangeCloakDepthWindow newWindow = new ChangeCloakDepthWindow();
+                    newWindow.currentOffset = Settings.Instance.cloakDepth.ToString();
+                    Find.WindowStack.Add(newWindow);
+                }
+                num++;
                 num++;
                 Rect rowRect73 = UIHelper.GetRowRect(rect1, rowHeight, num);
-                Settings.Instance.cloakDepthNorth = Widgets.HorizontalSlider(rowRect73, Settings.Instance.cloakDepthNorth, -1, 1f, false, "TM_CloakDepthNorth".Translate() + " " + Settings.Instance.cloakDepthNorth, "-1", "1", .0001f);
+                Settings.Instance.cloakDepthNorth = Widgets.HorizontalSlider(rowRect73, Settings.Instance.cloakDepthNorth, -1f, 1f, false, "TM_CloakDepthNorth".Translate() + " " + Settings.Instance.cloakDepthNorth, "-1", "1", .000001f);
                 TooltipHandler.TipRegion(rowRect73, "TM_CloakDepthNorthDesc".Translate());
                 num++;
                 Rect rowRect73ShiftRight = UIHelper.GetRowRect(rowRect73, rowHeight, num);
-                Widgets.TextFieldNumeric<float>(rowRect73ShiftRight, ref Settings.Instance.cloakDepthNorth, ref cloakNorthVal, -1f, 1f);
+                Rect rectChangeCloakDepthNorth = new Rect(rowRect73ShiftRight.x, rowRect73ShiftRight.y + .5f, 100f, 28f);
+                changeCloakDepthNorth = Widgets.ButtonText(rectChangeCloakDepthNorth, "TM_SetVerbatum".Translate(), true, false, true);
+                if (changeCloakDepthNorth)
+                {
+                    ChangeCloakDepthNorthWindow newWindow = new ChangeCloakDepthNorthWindow();
+                    newWindow.currentOffset = Settings.Instance.cloakDepthNorth.ToString();
+                    Find.WindowStack.Add(newWindow);
+                }
             }
             num++;
             num++;

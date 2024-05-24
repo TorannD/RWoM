@@ -8,6 +8,7 @@
     <soundImpactDefault>MetalHitImportant</soundImpactDefault>
     <selectable>true</selectable>
     <drawerType>MapMeshAndRealTime</drawerType>
+	<surfaceType>Item</surfaceType>
 <!--     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded> -->
     <repairEffect>Repair</repairEffect>
     <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>

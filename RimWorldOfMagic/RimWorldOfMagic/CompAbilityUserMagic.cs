@@ -751,6 +751,14 @@ namespace TorannMagic
 
             Pawn pawn = this.Pawn;
             if (pawn?.story == null) return;
+            if (this.Pawn.IsShambler || this.Pawn.IsGhoul)
+            {
+                if (this.magicData != null)
+                {
+                    RemoveAbilityUser();
+                }
+                return;
+            }
 
             // If we aren't on map, handle ability cooldown per long tick
             if (!pawn.Spawned)

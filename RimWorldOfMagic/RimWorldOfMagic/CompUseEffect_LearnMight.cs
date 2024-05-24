@@ -10,7 +10,7 @@ namespace TorannMagic
 
 		public override void DoEffect(Pawn user)
 		{
-            if (parent.def != null)
+            if (parent.def != null || user.IsShambler || user.IsGhoul)
             {
                 bool customClass = false;
                 bool advancedClass = false;
