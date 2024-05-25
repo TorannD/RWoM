@@ -373,6 +373,7 @@ Health:		+[15%/30%/40%]</description>
 			<li>TM_MechaGolemLS_FS2</li>
 			<li>TM_MechaGolemLS_FS3</li>
 		</lifeStages>
+		<lifeStageIndexOffset>0</lifeStageIndexOffset>	
 		<drawThing></drawThing>
 		<drawUndrafted>true</drawUndrafted>
 		<drawOnlyWhenActive>false</drawOnlyWhenActive>
@@ -404,6 +405,7 @@ Health:		+[30%/50%/70%]</description>
 			<li>TM_MechaGolemLS_WS2</li>
 			<li>TM_MechaGolemLS_WS3</li>
 		</lifeStages>
+		<lifeStageIndexOffset>3</lifeStageIndexOffset>	
 		<drawThing></drawThing>
 		<drawUndrafted>true</drawUndrafted>
 		<drawOnlyWhenActive>false</drawOnlyWhenActive>
@@ -434,6 +436,7 @@ Health:		+[40%/80%/120%]</description>
 			<li>TM_MechaGolemLS_ES2</li>
 			<li>TM_MechaGolemLS_ES3</li>
 		</lifeStages>
+		<lifeStageIndexOffset>6</lifeStageIndexOffset>	
 		<drawThing></drawThing>
 		<drawUndrafted>true</drawUndrafted>
 		<drawOnlyWhenActive>false</drawOnlyWhenActive>
@@ -464,6 +467,7 @@ Movement:	+[25%/50%/75%]</description>
 			<li>TM_MechaGolemLS_LS2</li>
 			<li>TM_MechaGolemLS_LS3</li>
 		</lifeStages>
+		<lifeStageIndexOffset>9</lifeStageIndexOffset>	
 		<drawThing></drawThing>
 		<drawUndrafted>true</drawUndrafted>
 		<drawOnlyWhenActive>false</drawOnlyWhenActive>

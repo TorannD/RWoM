@@ -84,9 +84,9 @@
     <interactionCellOffset>(0,0,-1)</interactionCellOffset>
     <surfaceType>Item</surfaceType>
 	<comps>
-		<li>
-			<compClass>CompReportWorkSpeed</compClass>
-		</li>
+	  <li Class="CompProperties_ReportWorkSpeed">
+        <workSpeedStat>WorkTableWorkSpeedFactor</workSpeedStat>
+      </li>
 	</comps>
 	<placeWorkers>
 		<li>PlaceWorker_ReportWorkSpeedPenalties</li>

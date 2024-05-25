@@ -592,6 +592,7 @@ namespace TorannMagic.Golems
             }
             TMPawnSummoned spawnedThing = null;
             LifeStageDef lsDef = null;
+            int lsAgeIndex = 0;
             TM_Golem tmpGolem = null;
             
             //temp variables
@@ -630,25 +631,26 @@ namespace TorannMagic.Golems
                         {
                             tmpGolem = new TM_Golem(GolemDef, this);
                             lsDef = gu.golemUpgradeDef.lifeStages[gu.currentLevel];
+                            lsAgeIndex = gu.currentLevel + gu.golemUpgradeDef.lifeStageIndexOffset;
                         }
                     }
                 }
             }
-            if (innerContainer != null && innerContainer.Any && lsDef == null)
+            if (innerContainer != null && innerContainer.Any) // && lsDef == null)
             {
                 Pawn p = innerContainer.FirstOrDefault() as Pawn;
                 GenPlace.TryPlaceThing(p.SplitOff(1), this.Position, this.Map, ThingPlaceMode.Near, null, null, this.Rotation);
-                spawnedThing = p as TMPawnSummoned;
+                spawnedThing = p as TMPawnSummoned;                
             }
             else
             {
                 AbilityUser.SpawnThings spawnables = new SpawnThings();
                 spawnables.def = GetGolemThingDef;
                 spawnables.kindDef = GetGolemKindDef;
-                if (lsDef != null)
-                {
-                    spawnables.def.race.lifeStageAges.FirstOrDefault().def = lsDef;
-                }
+                //if (lsDef != null)
+                //{
+                //    spawnables.def.race.lifeStageAges.FirstOrDefault().def = lsDef;
+                //}
                 spawnables.spawnCount = 1;
                 
                 bool flag = spawnables.def != null;
@@ -698,6 +700,7 @@ namespace TorannMagic.Golems
                         cg.minEnergyPctForAbilities = tempMinEnergyPctForAbilities;
                         cg.energyPctShouldAwaken = tempEnergyPctShouldAwaken;                      
                     }
+                    spawnedThing.ageTracker.LockCurrentLifeStageIndex(lsAgeIndex);
                 }
             }
             if(Find.Selector.SingleSelectedThing == this)
@@ -998,7 +1001,8 @@ namespace TorannMagic.Golems
                 //string chargeString = "\n" + "TM_GolemChargesRemaining".Translate(this.abilityCharges);
                 //baseStr += chargeString;
             }
-            sb.AppendLine("TM_GolemCharge".Translate(this.Energy.StoredEnergyPct));
+            //sb.AppendLine("TM_GolemCharge".Translate(this.Energy.StoredEnergyPct));
+            sb.AppendLine(InspectStringPartsFromComps());
             return GenText.TrimEndNewlines(sb.ToString());
             //return baseStr;
         }

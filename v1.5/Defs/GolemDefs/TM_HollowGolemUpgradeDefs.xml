@@ -615,6 +615,7 @@ Health:	+[40/60/75]%</description>
 			<li>TM_HollowGolemLS_FA2</li>
 			<li>TM_HollowGolemLS_FA3</li>
 		</lifeStages>		
+		<lifeStageIndexOffset>0</lifeStageIndexOffset>
 		<drawThing></drawThing>
 		<shouldRotate>false</shouldRotate>
 		<drawOnlyWhenActive>false</drawOnlyWhenActive>
@@ -646,6 +647,7 @@ Health:	+[50/75/90]%</description>
 			<li>TM_HollowGolemLS_IA2</li>
 			<li>TM_HollowGolemLS_IA3</li>
 		</lifeStages>		
+		<lifeStageIndexOffset>3</lifeStageIndexOffset>
 		<drawThing></drawThing>
 		<shouldRotate>false</shouldRotate>
 		<drawOnlyWhenActive>false</drawOnlyWhenActive>
@@ -676,7 +678,8 @@ Health:	+[55/85/100]%</description>
 			<li>TM_HollowGolemLS_AA1</li>
 			<li>TM_HollowGolemLS_AA2</li>
 			<li>TM_HollowGolemLS_AA3</li>
-		</lifeStages>		
+		</lifeStages>
+		<lifeStageIndexOffset>6</lifeStageIndexOffset>		
 		<drawThing></drawThing>
 		<shouldRotate>false</shouldRotate>
 		<drawOnlyWhenActive>false</drawOnlyWhenActive>
@@ -708,6 +711,7 @@ Health:	+[65/90/110]%</description>
 			<li>TM_HollowGolemLS_DA2</li>
 			<li>TM_HollowGolemLS_DA3</li>
 		</lifeStages>		
+		<lifeStageIndexOffset>9</lifeStageIndexOffset>
 		<drawThing></drawThing>
 		<shouldRotate>false</shouldRotate>
 		<drawOnlyWhenActive>false</drawOnlyWhenActive>

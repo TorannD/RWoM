@@ -152,7 +152,7 @@ Heat:	+[6,12,18]%</description>
 		<defName>TM_Golem_StoneLifeStage</defName>
 		<label>frame tier</label>
 		<description>Increases stats:
-Movement:	+[20%/35%/50%]
+Movement:	+[10%/20%/30%]
 Health:		+[40%/70%/100%]</description>
 		<maxLevel>3</maxLevel>
 		<recipe>TM_StoneGolem_LifeStage</recipe>

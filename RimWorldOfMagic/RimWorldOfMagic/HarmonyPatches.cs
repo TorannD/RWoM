@@ -333,6 +333,15 @@ namespace TorannMagic
         //    }
         //    __result = lostFlag;
         //}
+        //[HarmonyPatch(typeof(CompReportWorkSpeed), "CompInspectStringExtra", null)]
+        //public class Golem_ReportWorkSpeed_Patch
+        //{
+        //    private static bool Prefix(CompReportWorkSpeed __instance, ref string __result)
+        //    {
+        //        if(__instance.parent)
+        //    }
+        //}
+
         [HarmonyPatch(typeof(MeditationUtility), "CanMeditateNow", null)]
         public class Meditation_NoUndeadMeditation_Patch
         {

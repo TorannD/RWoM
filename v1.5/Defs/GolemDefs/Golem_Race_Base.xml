@@ -95,6 +95,27 @@
           <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
           <soundCall>Pawn_Mech_Centipede_Call</soundCall>
         </li>
+		<li>
+          <def>TM_StoneGolemLS1</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+          <soundCall>Pawn_Mech_Centipede_Call</soundCall>
+        </li>
+		<li>
+          <def>TM_StoneGolemLS2</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+          <soundCall>Pawn_Mech_Centipede_Call</soundCall>
+        </li>
+		<li>
+          <def>TM_StoneGolemLS3</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+          <soundCall>Pawn_Mech_Centipede_Call</soundCall>
+        </li>
       </lifeStageAges>
       <soundCallIntervalRange>2000~5000</soundCallIntervalRange>
       <soundMeleeHitPawn>Pawn_Melee_MechanoidBash_HitPawn</soundMeleeHitPawn>
@@ -198,6 +219,45 @@
           </shadowData>
         </bodyGraphicData>
       </li>
+	  <li>
+        <bodyGraphicData>
+		  <color>(150, 150, 150)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+		  <color>(150, 150, 150)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+		  <color>(150, 150, 150)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
     </lifeStages>
   </PawnKindDef>
   
@@ -267,6 +327,45 @@
     <label>sandstone-golem</label>
     <lifeStages>
       <li>
+        <bodyGraphicData>
+		  <color>(126, 104, 94)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+		  <color>(126, 104, 94)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+		  <color>(126, 104, 94)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
         <bodyGraphicData>
 		  <color>(126, 104, 94)</color>
 		  <texPath>Golems/Stone/Stone</texPath>
@@ -360,6 +459,45 @@
           </shadowData>
         </bodyGraphicData>
       </li>
+	  <li>
+        <bodyGraphicData>
+		  <color>(158, 153, 135)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+		  <color>(158, 153, 135)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+		  <color>(158, 153, 135)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
     </lifeStages>
   </PawnKindDef>
   
@@ -429,6 +567,45 @@
     <label>granite-golem</label>
     <lifeStages>
       <li>
+        <bodyGraphicData>
+		  <color>(105, 95, 97)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+		  <color>(105, 95, 97)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+		  <color>(105, 95, 97)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
         <bodyGraphicData>
 		  <color>(105, 95, 97)</color>
 		  <texPath>Golems/Stone/Stone</texPath>
@@ -522,6 +699,45 @@
           </shadowData>
         </bodyGraphicData>
       </li>
+	  <li>
+        <bodyGraphicData>
+		  <color>(70, 70, 70)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+		  <color>(70, 70, 70)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+		  <color>(70, 70, 70)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
     </lifeStages>
   </PawnKindDef>
   
@@ -591,6 +807,45 @@
     <label>marble-golem</label>
     <lifeStages>
       <li>
+        <bodyGraphicData>
+		  <color>(132, 135, 132)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+		  <color>(132, 135, 132)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+		  <color>(132, 135, 132)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
         <bodyGraphicData>
 		  <color>(132, 135, 132)</color>
 		  <texPath>Golems/Stone/Stone</texPath>
@@ -761,6 +1016,78 @@
 		  <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
           <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
         </li>
+		<li>
+          <def>TM_MechaGolemLS_FS1</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+        </li>
+		<li>
+          <def>TM_MechaGolemLS_FS2</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+        </li>
+		<li>
+          <def>TM_MechaGolemLS_FS3</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+        </li>
+		<li>
+          <def>TM_MechaGolemLS_WS1</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+        </li>
+		<li>
+          <def>TM_MechaGolemLS_WS2</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+        </li>
+		<li>
+          <def>TM_MechaGolemLS_WS3</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+        </li>
+		<li>
+          <def>TM_MechaGolemLS_ES1</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+        </li>
+		<li>
+          <def>TM_MechaGolemLS_ES2</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+        </li>
+		<li>
+          <def>TM_MechaGolemLS_ES3</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+        </li>
+		<li>
+          <def>TM_MechaGolemLS_LS1</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+        </li>
+		<li>
+          <def>TM_MechaGolemLS_LS2</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+        </li>
+		<li>
+          <def>TM_MechaGolemLS_LS3</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+        </li>
       </lifeStageAges>
       <soundMeleeHitPawn>Pawn_Melee_MechanoidSlash_HitPawn</soundMeleeHitPawn>
       <soundMeleeHitBuilding>Pawn_Melee_MechanoidSlash_HitBuilding</soundMeleeHitBuilding>
@@ -789,6 +1116,138 @@
     <combatPower>500</combatPower>
     <lifeStages>
       <li>
+        <bodyGraphicData>
+          <texPath>Golems/Mecha/Mecha-Golem</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.4</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Mecha/Mecha-Golem</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.4</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Mecha/Mecha-Golem</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.4</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Mecha/Mecha-Golem</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.4</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Mecha/Mecha-Golem</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.4</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Mecha/Mecha-Golem</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.4</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Mecha/Mecha-Golem</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.4</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Mecha/Mecha-Golem</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.4</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Mecha/Mecha-Golem</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.4</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Mecha/Mecha-Golem</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.4</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Mecha/Mecha-Golem</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.4</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Mecha/Mecha-Golem</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.4</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
         <bodyGraphicData>
           <texPath>Golems/Mecha/Mecha-Golem</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
@@ -1084,6 +1543,30 @@
           <soundCall>Pawn_Bear_Call</soundCall>
           <soundAngry>Pawn_Bear_Angry</soundAngry>
         </li>
+		<li>
+          <def>TM_FleshGolemLS1</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li>
+		<li>
+          <def>TM_FleshGolemLS2</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li>
+		<li>
+          <def>TM_FleshGolemLS3</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li>
       </lifeStageAges>
       <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
       <soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
@@ -1112,6 +1595,39 @@
     <combatPower>400</combatPower>
     <lifeStages>
       <li>
+        <bodyGraphicData>
+          <texPath>Golems/Flesh/Flesh</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>4</drawSize>
+          <shadowData>
+            <volume>(0.4, 0.8, 0.6)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Flesh/Flesh</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>4</drawSize>
+          <shadowData>
+            <volume>(0.4, 0.8, 0.6)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Flesh/Flesh</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>4</drawSize>
+          <shadowData>
+            <volume>(0.4, 0.8, 0.6)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
         <bodyGraphicData>
           <texPath>Golems/Flesh/Flesh</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
@@ -1409,6 +1925,101 @@
           <soundCall>Pawn_Bear_Call</soundCall>
           <soundAngry>Pawn_Bear_Angry</soundAngry>
         </li>
+		<li>
+          <def>TM_HollowGolemLS_FA1</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li>
+		<li>
+          <def>TM_HollowGolemLS_FA2</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li>
+		<li>
+          <def>TM_HollowGolemLS_FA3</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li>
+		<li>
+          <def>TM_HollowGolemLS_IA1</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li>
+		<li>
+          <def>TM_HollowGolemLS_IA2</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li>
+		<li>
+          <def>TM_HollowGolemLS_IA3</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li><li>
+          <def>TM_HollowGolemLS_AA1</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li>
+		<li>
+          <def>TM_HollowGolemLS_AA2</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li>
+		<li>
+          <def>TM_HollowGolemLS_AA3</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li>
+		<li>
+          <def>TM_HollowGolemLS_DA1</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li>
+		<li>
+          <def>TM_HollowGolemLS_DA2</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li>
+		<li>
+          <def>TM_HollowGolemLS_DA3</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li>
       </lifeStageAges>
       <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
       <soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
@@ -1437,6 +2048,138 @@
     <combatPower>1000</combatPower>
     <lifeStages>
       <li>
+        <bodyGraphicData>
+          <texPath>Golems/Hollow/Hollow</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.2</drawSize>
+          <shadowData>
+            <volume>(0, 0, 0)</volume>
+			<offset>(0,0,0)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Hollow/Hollow</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.2</drawSize>
+          <shadowData>
+            <volume>(0, 0, 0)</volume>
+			<offset>(0,0,0)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Hollow/Hollow</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.2</drawSize>
+          <shadowData>
+            <volume>(0, 0, 0)</volume>
+			<offset>(0,0,0)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Hollow/Hollow</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.2</drawSize>
+          <shadowData>
+            <volume>(0, 0, 0)</volume>
+			<offset>(0,0,0)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Hollow/Hollow</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.2</drawSize>
+          <shadowData>
+            <volume>(0, 0, 0)</volume>
+			<offset>(0,0,0)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Hollow/Hollow</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.2</drawSize>
+          <shadowData>
+            <volume>(0, 0, 0)</volume>
+			<offset>(0,0,0)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Hollow/Hollow</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.2</drawSize>
+          <shadowData>
+            <volume>(0, 0, 0)</volume>
+			<offset>(0,0,0)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Hollow/Hollow</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.2</drawSize>
+          <shadowData>
+            <volume>(0, 0, 0)</volume>
+			<offset>(0,0,0)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Hollow/Hollow</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.2</drawSize>
+          <shadowData>
+            <volume>(0, 0, 0)</volume>
+			<offset>(0,0,0)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Hollow/Hollow</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.2</drawSize>
+          <shadowData>
+            <volume>(0, 0, 0)</volume>
+			<offset>(0,0,0)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Hollow/Hollow</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.2</drawSize>
+          <shadowData>
+            <volume>(0, 0, 0)</volume>
+			<offset>(0,0,0)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Hollow/Hollow</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.2</drawSize>
+          <shadowData>
+            <volume>(0, 0, 0)</volume>
+			<offset>(0,0,0)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
         <bodyGraphicData>
           <texPath>Golems/Hollow/Hollow</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
@@ -1659,6 +2402,30 @@
           <soundCall>Pawn_Bear_Call</soundCall>
           <soundAngry>Pawn_Bear_Angry</soundAngry>
         </li>
+		<li>
+          <def>TM_MaharalGolemLS1</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li>
+		<li>
+          <def>TM_MaharalGolemLS2</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li>
+		<li>
+          <def>TM_MaharalGolemLS3</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li>
       </lifeStageAges>
       <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
       <soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
@@ -1693,6 +2460,39 @@
     <combatPower>200</combatPower>
     <lifeStages>
       <li>
+        <bodyGraphicData>
+          <texPath>Golems/Maharal/Maharal</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.5</drawSize>
+          <shadowData>
+            <volume>(0.26, 0.5, 0.26)</volume>
+			<offset>(0,0,-0.26)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Maharal/Maharal</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.5</drawSize>
+          <shadowData>
+            <volume>(0.26, 0.5, 0.26)</volume>
+			<offset>(0,0,-0.26)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Maharal/Maharal</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.5</drawSize>
+          <shadowData>
+            <volume>(0.26, 0.5, 0.26)</volume>
+			<offset>(0,0,-0.26)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
         <bodyGraphicData>
           <texPath>Golems/Maharal/Maharal</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
@@ -1814,6 +2614,30 @@
           <soundCall>Pawn_Spelopede_Call</soundCall>
           <soundAngry>Pawn_Spelopede_Angry</soundAngry>
         </li>
+		<li>
+          <def>TM_StrawGolemLS1</def>
+		  <minAge>0</minAge>
+          <soundWounded>Pawn_Spelopede_Pain</soundWounded>
+          <soundDeath>Pawn_Spelopede_Death</soundDeath>
+          <soundCall>Pawn_Spelopede_Call</soundCall>
+          <soundAngry>Pawn_Spelopede_Angry</soundAngry>
+        </li>
+		<li>
+		  <minAge>0</minAge>
+          <def>TM_StrawGolemLS2</def>
+          <soundWounded>Pawn_Spelopede_Pain</soundWounded>
+          <soundDeath>Pawn_Spelopede_Death</soundDeath>
+          <soundCall>Pawn_Spelopede_Call</soundCall>
+          <soundAngry>Pawn_Spelopede_Angry</soundAngry>
+        </li>
+		<li>
+		  <minAge>0</minAge>
+          <def>TM_StrawGolemLS3</def>
+          <soundWounded>Pawn_Spelopede_Pain</soundWounded>
+          <soundDeath>Pawn_Spelopede_Death</soundDeath>
+          <soundCall>Pawn_Spelopede_Call</soundCall>
+          <soundAngry>Pawn_Spelopede_Angry</soundAngry>
+        </li>
       </lifeStageAges>
       <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
       <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
@@ -1846,6 +2670,39 @@
     <combatPower>50</combatPower>
     <lifeStages>
       <li>
+        <bodyGraphicData>
+          <texPath>Golems/Straw/Straw</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.25</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Straw/Straw</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.25</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Straw/Straw</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.25</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
         <bodyGraphicData>
           <texPath>Golems/Straw/Straw</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
@@ -1964,6 +2821,24 @@
           <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
           <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
         </li>
+		<li>
+          <def>TM_WoodGolemLS1</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+        </li>
+		<li>
+          <def>TM_WoodGolemLS2</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+        </li>
+		<li>
+          <def>TM_WoodGolemLS3</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+        </li>
       </lifeStageAges>
       <soundMeleeHitPawn>Pawn_Melee_MechanoidSlash_HitPawn</soundMeleeHitPawn>
       <soundMeleeHitBuilding>Pawn_Melee_MechanoidSlash_HitBuilding</soundMeleeHitBuilding>
@@ -1995,6 +2870,39 @@
     <combatPower>100</combatPower>
     <lifeStages>
       <li>
+        <bodyGraphicData>
+          <texPath>Golems/Wood/Wood</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1</drawSize>
+          <shadowData>
+            <volume>(0.5, 0.3, 0.1)</volume>
+			<offset>(-.1,0,-0.15)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Wood/Wood</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1</drawSize>
+          <shadowData>
+            <volume>(0.5, 0.3, 0.1)</volume>
+			<offset>(-.1,0,-0.15)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Wood/Wood</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1</drawSize>
+          <shadowData>
+            <volume>(0.5, 0.3, 0.1)</volume>
+			<offset>(-.1,0,-0.15)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
         <bodyGraphicData>
           <texPath>Golems/Wood/Wood</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
@@ -2105,6 +3013,30 @@
           <soundCall>Pawn_Rodent_Call</soundCall>
           <soundAngry>Pawn_Rodent_Angry</soundAngry>
         </li>
+		<li>
+          <def>TM_SilkGolemLS1</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Rodent_Wounded</soundWounded>
+          <soundDeath>Pawn_Rodent_Death</soundDeath>
+          <soundCall>Pawn_Rodent_Call</soundCall>
+          <soundAngry>Pawn_Rodent_Angry</soundAngry>
+        </li>
+		<li>
+          <def>TM_SilkGolemLS2</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Rodent_Wounded</soundWounded>
+          <soundDeath>Pawn_Rodent_Death</soundDeath>
+          <soundCall>Pawn_Rodent_Call</soundCall>
+          <soundAngry>Pawn_Rodent_Angry</soundAngry>
+        </li>
+		<li>
+          <def>TM_SilkGolemLS3</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Rodent_Wounded</soundWounded>
+          <soundDeath>Pawn_Rodent_Death</soundDeath>
+          <soundCall>Pawn_Rodent_Call</soundCall>
+          <soundAngry>Pawn_Rodent_Angry</soundAngry>
+        </li>
       </lifeStageAges>
       <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
       <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
@@ -2135,6 +3067,39 @@
     <combatPower>50</combatPower>
     <lifeStages>
       <li>
+        <bodyGraphicData>
+          <texPath>Golems/Silk/Silk</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.5</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Silk/Silk</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.5</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Silk/Silk</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.5</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
         <bodyGraphicData>
           <texPath>Golems/Silk/Silk</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
