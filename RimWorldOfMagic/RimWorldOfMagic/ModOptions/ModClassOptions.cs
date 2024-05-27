@@ -505,7 +505,6 @@ namespace TorannMagic.ModOptions
                                 customThings.AddDistinct(TorannMagicDefOf.Launcher_DefensePylon_I);
                                 customThings.AddDistinct(TorannMagicDefOf.Launcher_DefensePylon_II);
                                 customThings.AddDistinct(TorannMagicDefOf.Launcher_DefensePylon_III);
-                                customThings.AddDistinct(TorannMagicDefOf.TM_Poppi);
                             }
                             if (cc.classMageAbilities.Contains(TorannMagicDefOf.TM_SummonPoppi))
                             {
@@ -533,7 +532,10 @@ namespace TorannMagic.ModOptions
                         //}
                         removedSpells.AddRange(cc.learnableSpells);
                         removedSpells.AddRange(cc.learnableSkills);
-                        removedCustomThings.Add(cc.fullScript);
+                        if (cc.fullScript != null)
+                        {
+                            removedCustomThings.Add(cc.fullScript);
+                        }
                     }
                 }
 

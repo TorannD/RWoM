@@ -297,13 +297,13 @@ The enchantment will only remain active as long as the pawn holds the enchanted 
         <defName>TM_Polymorph</defName>
         <label>Polymorph</label>
         <uiIconPath>UI/Polymorph</uiIconPath>
-        <description>Transforms pawns in the target area into random beasts. The polymorphed creature will still retain enough of its original self to recognize, and be enraged by, its predicament. Allies can be controlled (drafted), but will still exhibit 'animal' behavior without a specific task.
+        <description>Transforms pawns in the target area into random beasts. The polymorphed creature will still retain enough of its original self to recognize, and be enraged by, its predicament. Allies can be controlled (drafted), but may still exhibit 'animal' behavior without a specific task.
 		
 Allies may be polymorphed, but most will be upset by the altercation. Enchanters cannot use this method to polymorph themselves.
 
-Use of polymorph on a creature already affected by polymorph will end the existing polymorph enchantment. The polymorph enchantment is broken if the polymorph creature dies.
+Use of polymorph on a creature already affected by polymorph will end the existing polymorph enchantment. The polymorph enchantment is also broken if the polymorph creature dies. If a polymorph dies, the enchanted pawn will return to normal, but if a polymorphed enemy dies, the enchantment becomes permanent.
 
-When a target is polymorphed, their new form does not retain any pre-existing injuries, however, when they return to their original form they will have all their original injuries in addition to any injuries sustained while polymorphed.
+The polymorph enchantment masks all wounds until the polymorph effect ends. All wounds acquired while polymorphed vanish when the enchantment ends.   
 
 Max targets: 4
 Radius: 3
@@ -357,9 +357,9 @@ Cast time: 3s</description>
 		
 Allies may be polymorphed, but most will be upset by the altercation. Enchanters cannot use this method to polymorph themselves.
 
-Use of polymorph on a creature already affected by polymorph will end the existing polymorph enchantment. The polymorph enchantment is broken if the polymorph creature dies.
+Use of polymorph on a creature already affected by polymorph will end the existing polymorph enchantment. The polymorph enchantment is also broken if the polymorph creature dies. If a polymorph dies, the enchanted pawn will return to normal, but if a polymorphed enemy dies, the enchantment becomes permanent.
 
-When a target is polymorphed, their new form does not retain any pre-existing injuries, however, when they return to their original form they will have all their original injuries in addition to any injuries sustained while polymorphed.
+The polymorph enchantment masks all wounds until the polymorph effect ends. All wounds acquired while polymorphed vanish when the enchantment ends. 
 
 Max targets: 5
 Radius: 3
@@ -412,9 +412,9 @@ Cast time: 2.8s</description>
 		
 Allies may be polymorphed, but most will be upset by the altercation. Enchanters cannot use this method to polymorph themselves.
 
-Use of polymorph on a creature already affected by polymorph will end the existing polymorph enchantment. The polymorph enchantment is broken if the polymorph creature dies.
+Use of polymorph on a creature already affected by polymorph will end the existing polymorph enchantment. The polymorph enchantment is also broken if the polymorph creature dies. If a polymorph dies, the enchanted pawn will return to normal, but if a polymorphed enemy dies, the enchantment becomes permanent.
 
-When a target is polymorphed, their new form does not retain any pre-existing injuries, however, when they return to their original form they will have all their original injuries in addition to any injuries sustained while polymorphed.
+The polymorph enchantment masks all wounds until the polymorph effect ends. All wounds acquired while polymorphed vanish when the enchantment ends. 
 
 Max targets: 5
 Radius: 4
@@ -467,9 +467,9 @@ Cast time: 2.6s</description>
 		
 Allies may be polymorphed, but most will be upset by the altercation. Enchanters cannot use this method to polymorph themselves.
 
-Use of polymorph on a creature already affected by polymorph will end the existing polymorph enchantment. The polymorph enchantment is broken if the polymorph creature dies.
+Use of polymorph on a creature already affected by polymorph will end the existing polymorph enchantment. The polymorph enchantment is also broken if the polymorph creature dies. If a polymorph dies, the enchanted pawn will return to normal, but if a polymorphed enemy dies, the enchantment becomes permanent.
 
-When a target is polymorphed, their new form does not retain any pre-existing injuries, however, when they return to their original form they will have all their original injuries in addition to any injuries sustained while polymorphed.
+The polymorph enchantment masks all wounds until the polymorph effect ends. All wounds acquired while polymorphed vanish when the enchantment ends. 
 
 Max targets: 6
 Radius: 4
@@ -519,7 +519,7 @@ Cast time: 2.4s</description>
     <defName>TM_Shapeshift</defName>
     <label>Shapeshift</label>
     <uiIconPath>UI/shapeshift1</uiIconPath>
-    <description>Shapeshift into a random creature. The enchanter will retain their sense of self and will retain control of their actions. Damage suffered while shape shifted will be transferred in equal proportions to the enchanter after returning to their original form.
+    <description>Shapeshift into a random creature. The enchanter will retain their sense of self and will retain control of their actions. Damage suffered while shape shifted vanishes when the polymorph enchantment ends. The enchantment will also end if the polymorph is killed, but the enchanter will remain unharmed.
 	
 Shapeshifting is not without minor side effects; shapeshifting into an animal will cause the enchanter to inherit instincts and behavior of the animal, if they haven't been given specific instructions, they will wander or do other random tasks an animal would normally do.</description>
     <manaCost>0.40</manaCost>
@@ -557,7 +557,7 @@ Shapeshifting is not without minor side effects; shapeshifting into an animal wi
     <defName>TM_ShapeshiftDW</defName>
     <label>Shapeshift: Dire Wolf</label>
     <uiIconPath>UI/shapeshiftDW</uiIconPath>
-    <description>Shapeshift into a dire wolf. The enchanter will retain their sense of self and remain in control of most of their actions. Damage suffered while shape shifted will be transferred in equal proportions to the enchanter after returning to their original form.
+    <description>Shapeshift into a dire wolf. The enchanter will retain their sense of self and remain in control of most of their actions. Damage suffered while shape shifted vanishes when the polymorph enchantment ends. The enchantment will also end if the polymorph is killed, but the enchanter will remain unharmed.
 	
 Shapeshifting is not without minor side effects; shapeshifting into an animal will cause the enchanter to inherit instincts and behavior of the animal, if they haven't been given specific instructions, they will wander or do other random tasks an animal would normally do.
 	

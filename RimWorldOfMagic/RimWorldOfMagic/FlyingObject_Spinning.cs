@@ -594,7 +594,6 @@ namespace TorannMagic
                     if (!this.flyingThing.Spawned)
                     {
                         GenSpawn.Spawn(this.flyingThing, base.Position, base.Map);
-                        Log.Message("catch");
                     }
                 }
                 this.Destroy(DestroyMode.Vanish);

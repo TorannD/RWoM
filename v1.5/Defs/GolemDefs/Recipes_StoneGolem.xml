@@ -76,7 +76,7 @@
             <li>Gold</li>
           </thingDefs>
         </filter>
-        <count>2</count>
+        <count>1</count>
       </li>
     </ingredients>
   </RecipeDef>
@@ -94,7 +94,7 @@
             <li>Gold</li>
           </thingDefs>
         </filter>
-        <count>5</count>
+        <count>1</count>
       </li> 
 	  <li>
         <filter>
@@ -120,7 +120,7 @@
             <li>Silver</li>
           </thingDefs>
         </filter>
-        <count>10</count>
+        <count>5</count>
       </li>
 	  <li>
         <filter>

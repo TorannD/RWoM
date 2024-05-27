@@ -342,6 +342,25 @@ namespace TorannMagic
         //    }
         //}
 
+        [HarmonyPatch(typeof(PawnGenerator), "GeneratePawn", new Type[]
+        {
+            typeof(PawnGenerationRequest)
+        })]
+        public static class RemoveClassFromEntity
+        {
+            public static void Postfix(ref Pawn __result)
+            {
+                if (__result != null)
+                {
+                    if(__result.IsShambler || __result.IsGhoul)
+                    {
+                        if (__result.story?.traits == null) return;
+                        ModOptions.TM_DebugTools.RemoveClass(__result);
+                    }
+                }
+            }
+        }
+
         [HarmonyPatch(typeof(MeditationUtility), "CanMeditateNow", null)]
         public class Meditation_NoUndeadMeditation_Patch
         {
@@ -1031,7 +1050,7 @@ namespace TorannMagic
         {
             public static bool Prefix(Vector3 clickPos, Pawn pawn, List<FloatMenuOption> opts)
             {
-                if(pawn is TMPawnGolem || pawn is TMHollowGolem)
+                if(pawn is TMPawnGolem || pawn is TMHollowGolem || TM_Calc.IsPolymorphed(pawn))
                 {
                     return false;
                 }
@@ -2420,6 +2439,7 @@ namespace TorannMagic
             }
         }
 
+        //added draft gizmo to polymorph comp
         [HarmonyPatch(typeof(Pawn), "get_IsColonist", null)]
         public class IsColonist_Patch
         {
@@ -2693,12 +2713,24 @@ namespace TorannMagic
         //    }
         //}
 
+        [HarmonyPatch(typeof(PawnUtility), "ShouldSendNotificationAbout", null)]
+        public class NoNotificationForSummons
+        {
+            public static void Postfix(Pawn p, ref bool __result)
+            {
+                if (p is TMPawnSummoned)
+                {
+                    __result = false;
+                }
+            }
+        }
+
         [HarmonyPatch(typeof(Pawn_JobTracker), "JobTrackerTick", null)]
         public class Demon_NoJobWhileInFlight
         {
             public static bool Prefix(Pawn ___pawn)
             {
-                if(___pawn.def == TorannMagicDefOf.TM_LesserDemonR || ___pawn.def == TorannMagicDefOf.TM_DemonR)
+                if(___pawn.def == TorannMagicDefOf.TM_LesserDemonR || ___pawn.def == TorannMagicDefOf.TM_DemonR || ___pawn.def == TorannMagicDefOf.TM_Poppi)
                 {
                     if(___pawn.Map == null || !___pawn.Spawned)
                     {
@@ -3677,7 +3709,7 @@ namespace TorannMagic
                     gizmoList.Add(itemUnpossess);
                     __result = gizmoList;
                 }
-            }
+            }            
         }
 
         [HarmonyPatch(typeof(Pawn), "Kill", null)]
@@ -3802,14 +3834,24 @@ namespace TorannMagic
                 bool result;
                 if (flag)
                 {
-                    if(pawn.IsColonistPlayerControlled && pawn.genes != null && pawn.genes.HasGene(DefDatabase<GeneDef>.GetNamed("Deathless", true)))
+                    if(pawn.IsColonistPlayerControlled && pawn.genes != null && pawn.genes.HasActiveGene(DefDatabase<GeneDef>.GetNamed("Deathless", true))) //undead bug with deathless without this
                     {
                         return true;
                     }
                     CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
                     bool flagChrono = comp != null && comp.IsMagicUser && comp.recallSet;
-                    if (flagChrono || (dinfo.Value.Def == TMDamageDefOf.DamageDefOf.TM_DisablingBlow || dinfo.Value.Def == TMDamageDefOf.DamageDefOf.TM_Whirlwind || dinfo.Value.Def == TMDamageDefOf.DamageDefOf.TM_GrapplingHook || dinfo.Value.Def == TMDamageDefOf.DamageDefOf.TM_DisablingShot || dinfo.Value.Def == TMDamageDefOf.DamageDefOf.TM_Tranquilizer) || TM_Calc.IsUndeadNotVamp(pawn))
+                    if (flagChrono || (dinfo.Value.Def == TMDamageDefOf.DamageDefOf.TM_DisablingBlow || dinfo.Value.Def == TMDamageDefOf.DamageDefOf.TM_Whirlwind || 
+                        dinfo.Value.Def == TMDamageDefOf.DamageDefOf.TM_GrapplingHook || dinfo.Value.Def == TMDamageDefOf.DamageDefOf.TM_DisablingShot || 
+                        dinfo.Value.Def == TMDamageDefOf.DamageDefOf.TM_Tranquilizer) || TM_Calc.IsUndeadNotVamp(pawn) || TM_Calc.IsPolymorphed(pawn))
                     {
+                        if (TM_Calc.IsPolymorphed(pawn) && pawn.IsColonist)
+                        {
+                            //force friendly pawn out of polymorph
+                            CompPolymorph poly = pawn.GetComp<CompPolymorph>();
+                            poly.Temporary = true;
+                            poly.TicksLeft = 0;
+                            return false; //take no further action
+                        }
                         if (!__instance.Dead)
                         {                            
                             bool flag3 = traverse.Method("ShouldBeDead", new object[0]).GetValue<bool>() && CheckForStateChange_Patch.pawn != null;
@@ -7667,12 +7709,25 @@ namespace TorannMagic
         public static class GizmoOnGUI_Prefix_Patch
         {
             public static bool Prefix(Command_PawnAbility __instance, Rect butRect, GizmoRenderParms parms, ref GizmoResult __result)
-            {
-                
+            {                
                 if (ModOptions.Settings.Instance.autocastEnabled && __instance.pawnAbility.Def.defName.StartsWith("TM_"))
                 {
                     //Rect rect = new Rect(topLeft.x, topLeft.y, __instance.GetWidth(maxWidth), 75f);
                     __result = TM_Action.DrawAutoCastForGizmo(__instance, butRect, parms.shrunk, __result);
+                    return false;
+                }
+                return true;
+            }
+        }
+
+        [HarmonyPatch(typeof(FloatMenuMap), "StillValid", null)]
+        public static class IncitePassion_MenuValid
+        {
+            public static bool Prefix(FloatMenuOption opt, List<FloatMenuOption> curOpts, Pawn forPawn, ref bool __result)
+            {
+                if (opt.orderInPriority == 991)
+                {
+                    __result = true;
                     return false;
                 }
                 return true;

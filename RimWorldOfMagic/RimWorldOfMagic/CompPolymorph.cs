@@ -178,7 +178,7 @@ namespace TorannMagic
                     ticksLeft = 1;
                 }
             };
-            yield return item;
+            yield return item;            
         }
 
         private void PreDestroy()

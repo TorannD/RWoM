@@ -274,16 +274,15 @@ namespace TorannMagic.Conditions
                 SendAssaultWave(comp.ParentPawn.Faction, true);
             }
             else
-            {
+            {               
                 List<Pawn> allPawns = this.SingleMap.mapPawns.AllPawnsSpawned.ToList();
                 for(int i = 0; i < allPawns.Count; i++)
                 {
                     if(allPawns[i].def == TorannMagicDefOf.TM_SkeletonR || allPawns[i].def == TorannMagicDefOf.TM_GiantSkeletonR || allPawns[i].def == TorannMagicDefOf.TM_SkeletonLichR)
                     {
-                        if(allPawns[i].Faction != Faction.OfPlayer)
+                        if(!allPawns[i].DestroyedOrNull() && allPawns[i].Faction != Faction.OfPlayer && !allPawns[i].Dead)
                         {
                             allPawns[i].Kill(null, null);
-                            i--;
                         }
                     }
                 }

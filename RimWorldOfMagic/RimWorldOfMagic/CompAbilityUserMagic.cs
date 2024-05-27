@@ -279,6 +279,7 @@ namespace TorannMagic
         public FlyingObject_LivingWall livingWall = null;
         public int lastChaosTraditionTick = 0;
         public ThingOwner<ThingWithComps> magicWardrobe;
+        public SkillRecord incitePassionSkill = null;
 
         // Cached values calculated in TM_PawnTracker
         private bool initializedIsMagicUser;

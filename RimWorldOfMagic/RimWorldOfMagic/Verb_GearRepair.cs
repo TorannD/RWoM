@@ -18,21 +18,17 @@ namespace TorannMagic
 
             if (caster == null || caster.Dead) return true;
 
-            bool containedHediff = false;
-            for (int i = 0; i < caster.health.hediffSet.hediffs.Count; i++)
+            if (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_HediffGearRepair))
             {
-                if (caster.health.hediffSet.hediffs[i].def == TorannMagicDefOf.TM_HediffGearRepair)
-                {
-                    caster.health.RemoveHediff(caster.health.hediffSet.hediffs[i]);
-                    containedHediff = true;
-                    break;
-                }
+                Hediff hd = pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_HediffGearRepair);
+                pawn.health.RemoveHediff(hd);
             }
-            if (!containedHediff)
+            else
             {
-                HealthUtility.AdjustSeverity(caster, HediffDef.Named("TM_HediffGearRepair"), .5f);
-                FleckMaker.ThrowDustPuff(caster.Position, caster.Map, 1f);
+                HealthUtility.AdjustSeverity(caster, TorannMagicDefOf.TM_HediffGearRepair, .5f);
+                FleckMaker.ThrowDustPuff(caster.Position, pawn.Map, 1f);
             }
+
             return true;
         }
     }

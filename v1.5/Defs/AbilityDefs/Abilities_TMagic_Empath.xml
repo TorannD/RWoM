@@ -180,9 +180,9 @@
     <defName>TM_IncitePassion</defName>
     <label>Incite Passion</label>
     <uiIconPath>UI/incitepassion</uiIconPath>
-    <description>Transfers a work passion from the caster to a target. This ability is always successful. This ability cannot be used by slaves. The transferred passion is always random.</description>
+    <description>Transfers a work passion from the caster to a target. This ability is always successful. This ability cannot be used by slaves. The transferred passion can be selected by right clicking on the ability icon. A random passion is transferred if no passion is specified.</description>
     <requiredNeed>Mood</requiredNeed>
-	<needCost>.8</needCost>
+	<needCost>.65</needCost>
 	<needXPFactor>50</needXPFactor>
 	<learnChance>0</learnChance>
 	<canCopy>false</canCopy>

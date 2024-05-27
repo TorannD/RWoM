@@ -22,6 +22,8 @@ namespace TorannMagic
         int min = 20;
         int max = 100;
 
+        private bool drafted = false;
+
         public override bool CanHitTargetFrom(IntVec3 root, LocalTargetInfo targ)
         {
             if (targ.IsValid && targ.CenterVector3.InBoundsWithNullCheck(base.CasterPawn.Map) && !targ.Cell.Fogged(base.CasterPawn.Map))
@@ -98,6 +100,10 @@ namespace TorannMagic
                         }
                         if (Rand.Chance(enchantChance) && newPawn.GetComp<CompPolymorph>() != null)
                         { 
+                            if(newPawn.drafter != null)
+                            {
+                                drafted = newPawn.Drafted;
+                            }
                             FactionDef fDef = null;
                             if (newPawn.Faction != null)
                             {
@@ -128,6 +134,11 @@ namespace TorannMagic
                             if (this.verVal >= 3)
                             {
                                 polymorphedPawn.GetComp<CompPolymorph>().Temporary = false;
+                            }
+
+                            if(polymorphedPawn.IsColonist && base.CasterPawn.IsColonist && polymorphedPawn.drafter != null)
+                            {
+                                polymorphedPawn.drafter.Drafted = drafted;
                             }
 
                             FleckMaker.ThrowSmoke(newPawn.DrawPos, newPawn.Map, 2);

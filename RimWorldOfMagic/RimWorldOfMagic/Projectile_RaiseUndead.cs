@@ -74,8 +74,8 @@ namespace TorannMagic
                                     flag_SL = true;
                                     undeadPawn = newUndeadPawn;
                                 }
-                                if (!undeadPawn.def.defName.Contains("ROM_") && undeadPawn.RaceProps.IsFlesh && (undeadPawn.Dead || flag_SL) && !(undeadPawn is TMPawnSummoned) && !(undeadPawn is Golems.TMPawnGolem))
-                                {
+                                if (!undeadPawn.def.defName.Contains("ROM_") && !undeadPawn.IsEntity && undeadPawn.RaceProps.IsFlesh && (undeadPawn.Dead || flag_SL) && !(undeadPawn is TMPawnSummoned) && !(undeadPawn is Golems.TMPawnGolem))
+                                { 
                                     bool wasVampire = false;
 
                                     IEnumerable<ThingDef> enumerable = from hd in DefDatabase<HediffDef>.AllDefs

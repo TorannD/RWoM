@@ -1270,15 +1270,29 @@ namespace TorannMagic
 
             }
             Pawn polymorphPawn = PawnGenerator.GeneratePawn(spawnables.kindDef, faction);
-            CompPolymorph compPoly = new CompPolymorph
+            CompPolymorph compPoly = null;
+            if (polymorphPawn.HasComp<CompPolymorph>())
             {
-                ParentPawn = polymorphPawn,
-                Spawner = caster,
-                Temporary = temporary,
-                TicksToDestroy = duration,
-                Original = original
-            };
-            polymorphPawn.AllComps.Add(compPoly);
+                compPoly = polymorphPawn.GetComp<CompPolymorph>();
+                compPoly.ParentPawn = polymorphPawn;
+                compPoly.Spawner = caster;
+                compPoly.Temporary = temporary;
+                compPoly.TicksToDestroy = duration;
+                compPoly.Original = original;
+            }
+            else
+            {
+                compPoly = new CompPolymorph
+                {
+                     ParentPawn = polymorphPawn,
+                     Spawner = caster,
+                     Temporary = temporary,
+                     TicksToDestroy = duration,
+                     Original = original
+                };
+                polymorphPawn.AllComps.Add(compPoly);
+            }
+            
             GenSpawn.Spawn(polymorphPawn, position, original.Map);
 
             polymorphPawn.Name = original.Name;
@@ -1499,7 +1513,8 @@ namespace TorannMagic
                 {
                     if (!pawn.health.hediffSet.hediffs[i].IsPermanent() && pawn.health.hediffSet.hediffs[i].def != TorannMagicDefOf.TM_MagicUserHD && !pawn.health.hediffSet.hediffs[i].def.defName.Contains("TM_HediffEnchantment") &&
                         !pawn.health.hediffSet.hediffs[i].def.defName.Contains("TM_Artifact") && pawn.health.hediffSet.hediffs[i].def.defName != "PsychicAmplifier" && pawn.health.hediffSet.hediffs[i].def != TorannMagicDefOf.TM_MightUserHD &&
-                        pawn.health.hediffSet.hediffs[i].def != TorannMagicDefOf.TM_BloodHD && pawn.health.hediffSet.hediffs[i].def != TorannMagicDefOf.TM_ChiHD && pawn.health.hediffSet.hediffs[i].def != TorannMagicDefOf.TM_PsionicHD)
+                        pawn.health.hediffSet.hediffs[i].def != TorannMagicDefOf.TM_BloodHD && pawn.health.hediffSet.hediffs[i].def != TorannMagicDefOf.TM_ChiHD && pawn.health.hediffSet.hediffs[i].def != TorannMagicDefOf.TM_PsionicHD &&
+                        pawn.health.hediffSet.hediffs[i].def != TorannMagicDefOf.TM_SpiritPossessionHD)
                     {
                         if (!(pawn.health.hediffSet.hediffs[i] is Hediff_MissingPart) && !(pawn.health.hediffSet.hediffs[i] is Hediff_AddedPart))
                         {
@@ -2936,6 +2951,32 @@ namespace TorannMagic
                 }
                 if (comp != null && comp.MagicData != null && tmAbilityDef != null)
                 {
+                    if(com.pawnAbility.Def == TorannMagicDefOf.TM_IncitePassion)
+                    {
+                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        {
+                            List<FloatMenuOption> pOpts = new List<FloatMenuOption>();
+                            foreach (SkillRecord sr in com.pawnAbility.Pawn.skills.skills)
+                            {
+                                if (sr.passion != Passion.None)
+                                {
+                                    Action action = delegate
+                                    {
+                                        comp.incitePassionSkill = sr;
+                                        Messages.Message("TM_IncitePassionSelection".Translate(sr.def.label), MessageTypeDefOf.NeutralEvent);                                        
+                                    };
+                                    FloatMenuOption fmo = new FloatMenuOption(sr.def.LabelCap + " (" + sr.passion.ToString() + ")", action, MenuOptionPriority.Low, null, null);
+                                    fmo.orderInPriority = 991; //required (with extra patch over "StillValid" to maintain the option menu
+                                    pOpts.Add(fmo);
+                                }
+                            }
+                            if (pOpts.Count != 0)
+                            {
+                                FloatMenuMap fmp = new FloatMenuMap(pOpts, "TM_SelectPassion".Translate(), UI.MouseMapPosition());
+                                Find.WindowStack.Add(fmp);
+                            }
+                        }
+                    }
                     if (com.pawnAbility.Def == TorannMagicDefOf.TM_Blink || com.pawnAbility.Def == TorannMagicDefOf.TM_Blink_I || com.pawnAbility.Def == TorannMagicDefOf.TM_Blink_II || com.pawnAbility.Def == TorannMagicDefOf.TM_Blink_III)
                     {
                         magicPower = comp.MagicData.MagicPowersA.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == tmAbilityDef);

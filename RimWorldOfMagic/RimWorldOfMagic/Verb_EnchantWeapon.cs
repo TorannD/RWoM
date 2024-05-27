@@ -123,6 +123,8 @@ namespace TorannMagic
             List<Hediff> allHediffs = new List<Hediff>();
             allHediffs.Clear();
             allHediffs = pawn.health.hediffSet.hediffs.ToList();
+            List<Hediff> removeHediffs = new List<Hediff>();
+            removeHediffs.Clear();
             if (allHediffs != null && allHediffs.Count > 0)
             {
                 for (int i = 0; i < allHediffs.Count; i++)
@@ -139,7 +141,14 @@ namespace TorannMagic
                                 comp.weaponEnchants.Remove(pawn);
                             }
                         }
-                        pawn.health.RemoveHediff(hediff);
+                        removeHediffs.Add(hediff);
+                    }
+                }
+                if(removeHediffs.Count > 0)
+                {
+                    foreach(Hediff hd in removeHediffs)
+                    {
+                        pawn.health.RemoveHediff(hd);
                     }
                 }
             }
