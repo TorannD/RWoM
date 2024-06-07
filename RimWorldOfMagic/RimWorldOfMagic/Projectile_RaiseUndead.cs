@@ -48,8 +48,7 @@ namespace TorannMagic
                         corpseThing = thingList[z];
                         if (corpseThing != null)
                         {
-                            bool validator = corpseThing is Corpse;
-                            if (validator)
+                            if (corpseThing is Corpse)
                             {
                                 corpse = corpseThing as Corpse;
                                 Pawn undeadPawn = corpse.InnerPawn;
@@ -75,8 +74,8 @@ namespace TorannMagic
                                     flag_SL = true;
                                     undeadPawn = newUndeadPawn;
                                 }
-                                if (!undeadPawn.def.defName.Contains("ROM_") && undeadPawn.RaceProps.IsFlesh && (undeadPawn.Dead || flag_SL) && !(undeadPawn is TMPawnSummoned) && !(undeadPawn is Golems.TMPawnGolem))
-                                {
+                                if (!undeadPawn.def.defName.Contains("ROM_") && !undeadPawn.IsEntity && undeadPawn.RaceProps.IsFlesh && (undeadPawn.Dead || flag_SL) && !(undeadPawn is TMPawnSummoned) && !(undeadPawn is Golems.TMPawnGolem))
+                                { 
                                     bool wasVampire = false;
 
                                     IEnumerable<ThingDef> enumerable = from hd in DefDatabase<HediffDef>.AllDefs
@@ -109,7 +108,7 @@ namespace TorannMagic
                                             //        priorities[item] = tmppriorities[item];
                                             //    }                                                    
                                             //}
-                                            ResurrectionUtility.Resurrect(undeadPawn);
+                                            ResurrectionUtility.TryResurrect(undeadPawn);
                                         }
                                         raisedPawns++;
                                         comp.supportedUndead.Add(undeadPawn);
@@ -188,13 +187,18 @@ namespace TorannMagic
                                             }
                                             RemoveHediffsAddictionsAndPermanentInjuries(undeadPawn);
                                             RemovePsylinkAbilities(undeadPawn);
+                                            RemoveGenes(undeadPawn);
                                             TM_Action.TryCopyIdeo(pawn, undeadPawn);
                                             HealthUtility.AdjustSeverity(undeadPawn, TorannMagicDefOf.TM_UndeadHD, -4f);
                                             HealthUtility.AdjustSeverity(undeadPawn, TorannMagicDefOf.TM_UndeadHD, .5f + ver.level);
                                             undeadPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_UndeadHD).TryGetComp<HediffComp_Undead>().linkedPawn = pawn;
                                             HealthUtility.AdjustSeverity(undeadPawn, HediffDef.Named("TM_UndeadStageHD"), -2f);
                                             HealthUtility.AdjustSeverity(undeadPawn, HediffDef.Named("TM_UndeadStageHD"), rotStage);
-                                            RedoSkills(undeadPawn, pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_LichHD")));
+                                            if (!undeadPawn.story.traits.HasTrait(TorannMagicDefOf.Undead))
+                                            {
+                                                RedoSkills(undeadPawn, pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_LichHD")));
+                                            }
+                                            SetOutfitRestrictions(undeadPawn);
                                             if (undeadPawn.story.traits.HasTrait(TorannMagicDefOf.ChaosMage))
                                             {
                                                 compMagic.RemovePawnAbility(TorannMagicDefOf.TM_ChaosTradition);
@@ -254,9 +258,14 @@ namespace TorannMagic
                             }
                             else if (corpseThing is Pawn undeadPawn)
                             {
-                                if(undeadPawn != pawn && !TM_Calc.IsNecromancer(undeadPawn) && TM_Calc.IsUndead(undeadPawn))
+                                if(TM_Calc.IsUndead(undeadPawn))
                                 {
                                     RemoveHediffsAddictionsAndPermanentInjuries(undeadPawn);
+                                    TM_MoteMaker.ThrowPoisonMote(curCell.ToVector3Shifted(), map, .6f);
+                                }
+                                if(corpseThing != pawn && !TM_Calc.IsNecromancer(undeadPawn) && !TM_Calc.IsUndead(undeadPawn))
+                                {
+                                    DisruptiveRemoveHediffs(undeadPawn);
                                     TM_MoteMaker.ThrowPoisonMote(curCell.ToVector3Shifted(), map, .6f);
                                 }
                             }
@@ -272,7 +281,80 @@ namespace TorannMagic
         }
 
         private void RedoSkills(Pawn undeadPawn, bool lichBonus = false)
-        {
+        {                       
+
+            //undeadPawn.story.Childhood = null;
+            //undeadPawn.story.Adulthood = null;
+            float bonusSkill = 1f + (.1f * pwr.level);
+            if(lichBonus)
+            {
+                bonusSkill *= 1.2f;
+            }
+            //undeadPawn.story.DisabledWorkTypes.Clear();
+            //undeadPawn.story.WorkTypeIsDisabled(WorkTypeDefOf.Warden);
+            //undeadPawn.story.WorkTypeIsDisabled(WorkTypeDefOf.Hunting);
+            //undeadPawn.story.WorkTypeIsDisabled(WorkTypeDefOf.Handling);
+            //undeadPawn.story.WorkTypeIsDisabled(WorkTypeDefOf.Doctor);           
+
+            //undeadPawn.skills.Learn(SkillDefOf.Shooting, -100000000, true);            
+            //undeadPawn.skills.Learn(SkillDefOf.Animals, -100000000, true);
+            //undeadPawn.skills.Learn(SkillDefOf.Artistic, -100000000, true);
+            //undeadPawn.skills.Learn(SkillDefOf.Cooking, -100000000, true);
+            //undeadPawn.skills.Learn(SkillDefOf.Cooking, Rand.Range(10000, 30000)*bonusSkill, true);            
+            //undeadPawn.skills.Learn(SkillDefOf.Crafting, -100000000, true);
+            //undeadPawn.skills.Learn(SkillDefOf.Crafting, Rand.Range(10000, 50000) * bonusSkill, true);
+            //undeadPawn.skills.Learn(SkillDefOf.Plants, -100000000, true);
+            //undeadPawn.skills.Learn(SkillDefOf.Plants, Rand.Range(25000, 50000) * bonusSkill, true);
+            //undeadPawn.skills.Learn(SkillDefOf.Intellectual, -10000000, true);
+            //undeadPawn.skills.Learn(SkillDefOf.Medicine, -10000000, true);
+            //undeadPawn.skills.Learn(SkillDefOf.Melee, -10000000, true);
+            //undeadPawn.skills.Learn(SkillDefOf.Melee, Rand.Range(30000, 60000) * bonusSkill, true);
+            //undeadPawn.skills.Learn(SkillDefOf.Mining, -10000000, true);
+            //undeadPawn.skills.Learn(SkillDefOf.Mining, Rand.Range(20000, 50000) * bonusSkill, true);
+            //undeadPawn.skills.Learn(SkillDefOf.Social, -10000000, true);
+            //undeadPawn.skills.Learn(SkillDefOf.Construction, -10000000, true);
+            //undeadPawn.skills.Learn(SkillDefOf.Construction, Rand.Range(15000, 40000) * bonusSkill, true);
+
+            foreach (SkillRecord sr in undeadPawn.skills.skills)
+            {
+                if(sr.def == SkillDefOf.Cooking)
+                {
+                    sr.Level = Mathf.RoundToInt(Rand.Range(2f, 7f) * bonusSkill);
+                }
+                else if(sr.def == SkillDefOf.Crafting)
+                {
+                    sr.Level = Mathf.RoundToInt(Rand.Range(1.5f, 8f) * bonusSkill);
+                }
+                else if (sr.def == SkillDefOf.Plants)
+                {
+                    sr.Level = Mathf.RoundToInt(Rand.Range(3f, 8f) * bonusSkill);
+                }
+                else if (sr.def == SkillDefOf.Melee)
+                {
+                    sr.Level = Mathf.RoundToInt(Rand.Range(4f, 8.5f) * bonusSkill);
+                }
+                else if (sr.def == SkillDefOf.Mining)
+                {
+                    sr.Level = Mathf.RoundToInt(Rand.Range(2f, 7f) * bonusSkill);
+                }
+                else if (sr.def == SkillDefOf.Construction)
+                {
+                    sr.Level = Mathf.RoundToInt(Rand.Range(1.5f, 6f) * bonusSkill);
+                }
+                else
+                {
+                    sr.Level = 0;
+                }
+                sr.xpSinceLastLevel = 0;
+            }
+
+            //if (undeadPawn.story.Adulthood == TorannMagicDefOf.TM_UndeadAdultBS_GhostMind)
+            //{
+            //    undeadPawn.skills.Learn(SkillDefOf.Crafting, Rand.Range(20000, 30000), true);
+            //    undeadPawn.skills.Learn(SkillDefOf.Cooking, Rand.Range(10000, 20000), true);
+            //    undeadPawn.skills.Learn(SkillDefOf.Melee, -25000, true);
+            //    undeadPawn.skills.Learn(SkillDefOf.Mining, -25000, true);
+            //}
             if (undeadPawn.story.Childhood != null)
             {
                 undeadPawn.story.Childhood = TorannMagicDefOf.TM_UndeadChildBS;
@@ -300,50 +382,20 @@ namespace TorannMagic
                 {
                     undeadPawn.story.Adulthood = TorannMagicDefOf.TM_UndeadAdultBS;
                 }
-            }            
-
-            //undeadPawn.story.Childhood = null;
-            //undeadPawn.story.Adulthood = null;
-            float bonusSkill = 1f + (.1f * pwr.level);
-            if(lichBonus)
-            {
-                bonusSkill *= 1.2f;
             }
-            //undeadPawn.story.DisabledWorkTypes.Clear();
-            //undeadPawn.story.WorkTypeIsDisabled(WorkTypeDefOf.Warden);
-            //undeadPawn.story.WorkTypeIsDisabled(WorkTypeDefOf.Hunting);
-            //undeadPawn.story.WorkTypeIsDisabled(WorkTypeDefOf.Handling);
-            //undeadPawn.story.WorkTypeIsDisabled(WorkTypeDefOf.Doctor);           
-
-            undeadPawn.skills.Learn(SkillDefOf.Shooting, -100000000, true);            
-            undeadPawn.skills.Learn(SkillDefOf.Animals, -100000000, true);
-            undeadPawn.skills.Learn(SkillDefOf.Artistic, -100000000, true);
-            undeadPawn.skills.Learn(SkillDefOf.Cooking, -100000000, true);
-            undeadPawn.skills.Learn(SkillDefOf.Cooking, Rand.Range(10000, 30000)*bonusSkill, true);            
-            undeadPawn.skills.Learn(SkillDefOf.Crafting, -100000000, true);
-            undeadPawn.skills.Learn(SkillDefOf.Crafting, Rand.Range(10000, 60000) * bonusSkill, true);
-            undeadPawn.skills.Learn(SkillDefOf.Plants, -100000000, true);
-            undeadPawn.skills.Learn(SkillDefOf.Plants, Rand.Range(25000, 50000) * bonusSkill, true);
-            undeadPawn.skills.Learn(SkillDefOf.Intellectual, -10000000, true);
-            undeadPawn.skills.Learn(SkillDefOf.Medicine, -10000000, true);
-            undeadPawn.skills.Learn(SkillDefOf.Melee, -10000000, true);
-            undeadPawn.skills.Learn(SkillDefOf.Melee, Rand.Range(50000, 80000) * bonusSkill, true);
-            undeadPawn.skills.Learn(SkillDefOf.Mining, -10000000, true);
-            undeadPawn.skills.Learn(SkillDefOf.Mining, Rand.Range(30000, 60000) * bonusSkill, true);
-            undeadPawn.skills.Learn(SkillDefOf.Social, -10000000, true);
-            undeadPawn.skills.Learn(SkillDefOf.Construction, -10000000, true);
-            undeadPawn.skills.Learn(SkillDefOf.Construction, Rand.Range(20000, 50000) * bonusSkill, true);
-
-            //if (undeadPawn.story.Adulthood == TorannMagicDefOf.TM_UndeadAdultBS_GhostMind)
-            //{
-            //    undeadPawn.skills.Learn(SkillDefOf.Crafting, Rand.Range(20000, 30000), true);
-            //    undeadPawn.skills.Learn(SkillDefOf.Cooking, Rand.Range(10000, 20000), true);
-            //    undeadPawn.skills.Learn(SkillDefOf.Melee, -25000, true);
-            //    undeadPawn.skills.Learn(SkillDefOf.Mining, -25000, true);
-            //}
             if (undeadPawn.story.Adulthood == TorannMagicDefOf.TM_UndeadAdultBS_GhostEye)
             {
-                undeadPawn.skills.Learn(SkillDefOf.Shooting, Rand.Range(10000, 20000) * bonusSkill, true);                
+                undeadPawn.skills.Learn(SkillDefOf.Shooting, Rand.Range(10000, 20000) * bonusSkill, true);
+            }
+
+            foreach (BackstoryDef item in from bs in undeadPawn.story.AllBackstories
+                                          where bs != null
+                                          select bs)
+            {
+                foreach (SkillGain skillGain in item.skillGains)
+                {
+                    undeadPawn.skills.GetSkill(skillGain.skill).Level += skillGain.amount;
+                }
             }
             //if (undeadPawn.story.Adulthood == TorannMagicDefOf.TM_UndeadAdultBS_Brute)
             //{
@@ -360,16 +412,6 @@ namespace TorannMagic
             //    undeadPawn.skills.Learn(SkillDefOf.Plants, Rand.Range(15000, 20000), true);
             //    undeadPawn.skills.Learn(SkillDefOf.Melee, -80000, true);
             //}
-
-            foreach (BackstoryDef item in from bs in undeadPawn.story.AllBackstories
-                                          where bs != null
-                                          select bs)
-            {
-                foreach (KeyValuePair<SkillDef, int> skillGain in item.skillGains)
-                {
-                    undeadPawn.skills.GetSkill(skillGain.Key).Level += skillGain.Value;                  
-                }
-            }
 
             if (undeadPawn.IsColonist)
             {
@@ -389,9 +431,9 @@ namespace TorannMagic
                 {
                     undeadPawn.workSettings.SetPriority(TorannMagicDefOf.Research, 0);
                 }
-                if (!undeadPawn.WorkTypeIsDisabled(WorkTypeDefOf.Art))
+                if (!undeadPawn.WorkTypeIsDisabled(TorannMagicDefOf.Art))
                 {
-                    undeadPawn.workSettings.SetPriority(WorkTypeDefOf.Art, 0);
+                    undeadPawn.workSettings.SetPriority(TorannMagicDefOf.Art, 0);
                 }
                 if (!undeadPawn.WorkTypeIsDisabled(TorannMagicDefOf.PatientBedRest))
                 {
@@ -609,6 +651,45 @@ namespace TorannMagic
             }
         }
 
+        private void SetOutfitRestrictions(Pawn p)
+        {
+            if(ModOptions.Constants.GetUndeadApparelPolicy() == null)
+            {
+                ModOptions.Constants.SetUndeadApparelPolicy();
+            }
+            if (p.outfits.CurrentApparelPolicy == Current.Game.outfitDatabase.DefaultOutfit())
+            {
+                p.outfits.CurrentApparelPolicy = ModOptions.Constants.GetUndeadApparelPolicy();
+            }
+        }
+
+        private void RemoveGenes(Pawn p)
+        {
+            if (p.genes == null) return;
+            List<Gene> pGenes = new List<Gene>();
+            foreach (Gene g in p.genes.GenesListForReading)
+            {
+                if (g.def.endogeneCategory != EndogeneCategory.None) continue;
+                if (g.def.abilities != null && g.def.abilities.Count > 0)
+                {
+                    if(g.def.defName == "Coagulate" || g.def.defName == "Bloodfeeder" || g.def.defName == "XenogermReimplanter")
+                    {
+                        pGenes.Add(g);
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
+
+                pGenes.Add(g);                
+            }
+            for(int i = 0; i < pGenes.Count; i++)
+            {
+                p.genes.RemoveGene(pGenes[i]);
+            }
+        }
+
         private void RemoveTraits(Pawn pawn, List<Trait> traits)
         {
             for (int i = 0; i < traits.Count; i++)
@@ -648,6 +729,36 @@ namespace TorannMagic
             }
         }
 
+        public static void DisruptiveRemoveHediffs(Pawn pawn)
+        {
+            List<Hediff> removeList = new List<Hediff>();
+            removeList.Clear();
+
+            using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.hediffs.GetEnumerator())
+            {
+                while (enumerator.MoveNext())
+                {
+                    Hediff hd = enumerator.Current;
+                    if (hd.IsPermanent() || (hd.IsTended() || hd.TendableNow()) || (hd.sourceBodyPartGroup == null))
+                    {
+                        if (hd.def != TorannMagicDefOf.TM_UndeadHD && hd.def != TorannMagicDefOf.TM_UndeadStageHD && hd.def != TorannMagicDefOf.TM_UndeadAnimalHD)
+                        {
+                            removeList.Add(hd);
+                        }
+                    }
+                }
+            }
+
+            if (removeList.Count > 0)
+            {
+                for (int i = 0; i < removeList.Count; i++)
+                {
+                    pawn.health.RemoveHediff(removeList[i]);
+                }
+            }
+            removeList.Clear();
+        }
+
         public static void RemoveHediffsAddictionsAndPermanentInjuries(Pawn pawn)
         {
             List<Hediff> removeList = new List<Hediff>();
@@ -673,6 +784,23 @@ namespace TorannMagic
                     }
                 }
             }
+            int partCountCap = 0;
+            while (pawn.health.hediffSet.GetMissingPartsCommonAncestors().Count > 0 && partCountCap < 10)
+            {
+                Hediff missingPart = null;
+                BodyPartRecord bodyPartRecord = null;
+                foreach (Hediff_MissingPart missingPartsCommonAncestor in pawn.health.hediffSet.GetMissingPartsCommonAncestors())
+                {
+                    if (!pawn.health.hediffSet.PartOrAnyAncestorHasDirectlyAddedParts(missingPartsCommonAncestor.Part) && (bodyPartRecord == null || missingPartsCommonAncestor.Part.coverageAbsWithChildren > bodyPartRecord.coverageAbsWithChildren))
+                    {
+                        bodyPartRecord = missingPartsCommonAncestor.Part;
+                        missingPart = missingPartsCommonAncestor;
+                    }
+                }
+                pawn.health.RemoveHediff(missingPart);
+                partCountCap++;                
+            }
+
             if (removeList.Count > 0)
             {
                 for (int i = 0; i < removeList.Count; i++)
@@ -699,31 +827,6 @@ namespace TorannMagic
                 }
             }
             removeList.Clear();
-
-            using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.hediffs.GetEnumerator())
-            {
-                while (enumerator.MoveNext())
-                {
-                    Hediff hd = enumerator.Current;
-                    if (hd.IsPermanent() || (hd.IsTended() || hd.TendableNow()) || (hd.source == null && hd.sourceBodyPartGroup == null))
-                    {
-                        if (hd.def != TorannMagicDefOf.TM_UndeadHD && hd.def != TorannMagicDefOf.TM_UndeadStageHD && hd.def != TorannMagicDefOf.TM_UndeadAnimalHD)
-                        {
-                            removeList.Add(hd);
-                        }
-                    }
-                }
-            }
-
-            if (removeList.Count > 0)
-            {
-                for (int i = 0; i < removeList.Count; i++)
-                {
-                    pawn.health.RemoveHediff(removeList[i]);
-                }
-
-                removeList.Clear();
-            }
 
             //IEnumerable<Hediff> hediffsToRemove = pawn.health.hediffSet.hediffs.Where(hediff => hediff is Hediff_Injury injury && injury.CanHealNaturally()
             //    || hediff is Hediff_Addiction

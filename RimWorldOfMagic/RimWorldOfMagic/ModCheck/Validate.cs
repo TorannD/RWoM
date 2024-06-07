@@ -14,7 +14,7 @@ namespace TorannMagic.ModCheck
             {
                 bool initialized = false;
                 foreach (ModContentPack p in LoadedModManager.RunningMods)
-                {                    
+                {
                     if (p.Name == "Prison Labor")
                     {
                         initialized = true;

@@ -46,8 +46,8 @@ namespace TorannMagic
                 //this.verVal = ver.level;
                 //this.pwrVal = pwr.level;
                 //this.effVal = eff.level;
-                //ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                //if (settingsRef.AIHardMode && !this.Pawn.IsColonist)
+                //
+                //if (ModOptions.Settings.Instance.AIHardMode && !this.Pawn.IsColonist)
                 //{
                 //    pwrVal = 1;
                 //    verVal = 1;
@@ -78,7 +78,7 @@ namespace TorannMagic
                 CompAbilityUserMagic comp = this.Pawn.GetCompAbilityUserMagic();
                 if (comp.Mana.CurLevel > (.09f - (.009f * effVal)))
                 {
-                    List<Pawn> pawns = this.Pawn.Map.mapPawns.AllPawnsSpawned;
+                    List<Pawn> pawns = this.Pawn.Map.mapPawns.AllPawnsSpawned.ToList();
                     for (int i = 0; i < pawns.Count; i++)
                     {
                         if (pawns[i].RaceProps.Humanlike && pawns[i].Faction != null && pawns[i].Faction == this.Pawn.Faction)

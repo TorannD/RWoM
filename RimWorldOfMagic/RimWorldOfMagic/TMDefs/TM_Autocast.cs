@@ -27,6 +27,7 @@ namespace TorannMagic.TMDefs
         public bool includeSelf = false;
         public bool requiresLoS = true;
         public bool AIUsable = false;
+        public bool hostileCasterOnly = false;
 
         public List<string> advancedConditionDefs = null;
         private List<TM_AutocastCondition> accList = null;
@@ -118,6 +119,10 @@ namespace TorannMagic.TMDefs
                         }
                     }
                 }
+            }
+            if(hostileCasterOnly && !caster.HostileTo(Faction.OfPlayer))
+            {
+                return false;
             }
             return true;           
         }
@@ -214,6 +219,7 @@ namespace TorannMagic.TMDefs
             Scribe_Values.Look<bool>(ref this.includeSelf, "includeSelf", false);
             Scribe_Values.Look<bool>(ref this.requiresLoS, "requiresLoS", false);
             Scribe_Values.Look<bool>(ref this.AIUsable, "AIUsable", false);
+            Scribe_Values.Look<bool>(ref this.hostileCasterOnly, "hostileCasterOnly", false);
 
             Scribe_Values.Look<AutocastType>(ref this.type, "type", AutocastType.Null);
             Scribe_Values.Look<string>(ref this.targetType, "targetType", "");

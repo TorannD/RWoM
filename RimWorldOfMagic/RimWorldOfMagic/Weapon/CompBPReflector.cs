@@ -66,7 +66,7 @@ namespace TorannMagic.Weapon
             //return base.ReflectionHandler(newVerb);
         }
 
-        public override void PostPreApplyDamage(DamageInfo dinfo, out bool absorbed)
+        public override void PostPreApplyDamage(ref DamageInfo dinfo, out bool absorbed)
         {
             bool flag = dinfo.Weapon != null;
             if (flag)

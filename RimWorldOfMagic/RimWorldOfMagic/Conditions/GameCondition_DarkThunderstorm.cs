@@ -32,7 +32,7 @@ namespace TorannMagic.Conditions
             if(Find.TickManager.TicksGame % nextStrike == 0)
             {
                 this.nextStrike = 1000;
-                List<Pawn> allPawns = this.SingleMap.mapPawns.AllPawnsSpawned;
+                List<Pawn> allPawns = this.SingleMap.mapPawns.AllPawnsSpawned.ToList();
                 if (allPawns != null && allPawns.Count > 0)
                 {
                     enemyPawns = new List<Pawn>();

@@ -1,0 +1,3162 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef Name="TM_Golem_Base" Abstract="True">
+    <thingClass>TorannMagic.Golems.TMPawnGolem</thingClass>
+    <category>Pawn</category>
+    <selectable>true</selectable>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Pawn</altitudeLayer>
+    <useHitPoints>false</useHitPoints>
+    <hasTooltip>true</hasTooltip>
+    <soundImpactDefault>BulletImpact_Flesh</soundImpactDefault>
+    <statBases>
+      <Mass>200</Mass>
+      <Flammability>0.6</Flammability>
+	  <ToxicResistance>0.5</ToxicResistance>
+    </statBases>
+	<tradeTags>
+	  <li>AnimalInsectSpace</li>
+	</tradeTags>
+	<race>
+	  <renderTree>Misc</renderTree>
+      <needsRest>false</needsRest>
+      <hasGenders>false</hasGenders>
+      <foodType>None</foodType>
+      <lifeExpectancy>2500</lifeExpectancy>
+	  <allowedOnCaravan>true</allowedOnCaravan>
+    </race>
+    <inspectorTabs>
+	  <li>TorannMagic.Golems.ITab_GolemPawn</li>
+      <li>ITab_Pawn_Health</li>
+      <li>ITab_Pawn_Needs</li>
+      <!-- <li>ITab_Pawn_Character</li> -->
+      <li>ITab_Pawn_FormingCaravan</li>
+      <li>ITab_Pawn_Gear</li>
+      <li>ITab_Pawn_Log</li>
+    </inspectorTabs>
+    <comps>
+      <li>
+        <compClass>CompAttachBase</compClass>
+      </li>
+    </comps>
+    <drawGUIOverlay>true</drawGUIOverlay>
+  </ThingDef>
+  
+  <PawnKindDef Name="TM_GolemKind_Base" Abstract="True">
+    <aiAvoidCover>true</aiAvoidCover>
+    <destroyGearOnDrop>true</destroyGearOnDrop>
+  </PawnKindDef>
+
+<!-- STONE GOLEM -->
+
+  <ToolCapacityDef>
+    <defName>TM_GolemSmash</defName>
+    <label>smash</label>
+  </ToolCapacityDef>
+  
+  <ManeuverDef>
+    <defName>TM_GolemSmashMD</defName>
+    <requiredCapacity>TM_GolemSmash</requiredCapacity>
+    <verb>
+      <verbClass>TorannMagic.Golems.Verb_GolemSmash</verbClass>
+      <meleeDamageDef>Cut</meleeDamageDef>
+    </verb>
+    <logEntryDef>MeleeAttack</logEntryDef>
+    <combatLogRulesHit>Maneuver_Scratch_MeleeHit</combatLogRulesHit>
+    <combatLogRulesDeflect>Maneuver_Scratch_MeleeDeflect</combatLogRulesDeflect>
+    <combatLogRulesMiss>Maneuver_Scratch_MeleeMiss</combatLogRulesMiss>
+    <combatLogRulesDodge>Maneuver_Scratch_MeleeDodge</combatLogRulesDodge>
+  </ManeuverDef>
+  
+  <ThingDef Name="TM_StoneGolem_Base" ParentName="TM_Golem_Base" Abstract="True">
+    <description>A simple golem crafted from stone and animated with magic.</description>
+	<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>    
+    <race>
+      <thinkTreeMain>TM_GolemMain</thinkTreeMain>
+      <thinkTreeConstant>TM_GolemConstant</thinkTreeConstant>
+	  <deathAction>
+		<workerClass>TorannMagic.DeathWorker_StoneGolem</workerClass>
+	  </deathAction>
+      <makesFootprints>true</makesFootprints>
+      <body>TM_StoneGolem</body>
+      <baseBodySize>1</baseBodySize>
+      <foodType>None</foodType>
+	  <bloodDef>Filth_RubbleRock</bloodDef>
+	  <intelligence>ToolUser</intelligence>
+	  <fleshType>TM_StoneFlesh</fleshType>
+	  <useMeatFrom>Human</useMeatFrom>
+	  <trainability>None</trainability>
+      <lifeStageAges>
+        <li>
+          <def>TM_StoneGolemLS</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+          <soundCall>Pawn_Mech_Centipede_Call</soundCall>
+        </li>
+		<li>
+          <def>TM_StoneGolemLS1</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+          <soundCall>Pawn_Mech_Centipede_Call</soundCall>
+        </li>
+		<li>
+          <def>TM_StoneGolemLS2</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+          <soundCall>Pawn_Mech_Centipede_Call</soundCall>
+        </li>
+		<li>
+          <def>TM_StoneGolemLS3</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+          <soundCall>Pawn_Mech_Centipede_Call</soundCall>
+        </li>
+      </lifeStageAges>
+      <soundCallIntervalRange>2000~5000</soundCallIntervalRange>
+      <soundMeleeHitPawn>Pawn_Melee_MechanoidBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_MechanoidBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
+      <specialShadowData>
+        <volume>(0.3, 0.6, 0.3)</volume>
+        <offset>(0,0,-0.3)</offset>
+      </specialShadowData>
+    </race>
+	<drawGUIOverlay>true</drawGUIOverlay>
+	<comps>
+	  <li Class="TorannMagic.Golems.CompProperties_Golem" />
+    </comps>
+	<ingredient>
+      <mergeCompatibilityTags>
+        <li>HumanMeat</li>
+      </mergeCompatibilityTags>
+    </ingredient>
+  </ThingDef>
+  
+  <PawnKindDef Name="TM_StoneGolemKind_Base" ParentName="TM_GolemKind_Base" Abstract="True">
+    <combatPower>200</combatPower>
+  </PawnKindDef>
+  
+  <ThingDef ParentName="TM_StoneGolem_Base">
+    <defName>TM_StoneGolem</defName>
+    <label>stone golem</label>
+    <statBases>
+      <MarketValue>1500</MarketValue>
+      <MoveSpeed>2.5</MoveSpeed>
+      <ComfyTemperatureMin>-500</ComfyTemperatureMin>
+      <ComfyTemperatureMax>800</ComfyTemperatureMax>
+	  <ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.75</ArmorRating_Sharp>
+	  <ArmorRating_Heat>0.5</ArmorRating_Heat>
+      <PsychicSensitivity>0</PsychicSensitivity>
+    </statBases>
+    <tools>      
+	  <li>
+        <label>smash</label>
+        <capacities>
+          <li>TM_GolemSmash</li>
+        </capacities>
+        <power>20</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Stone_Arms</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>18</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+		<chanceFactor>0.4</chanceFactor>
+        <soundMeleeHit>MeleeHit_Stone</soundMeleeHit>
+        <soundMeleeMiss>Pawn_Melee_HumanBite_Miss</soundMeleeMiss>
+      </li>
+      <li>
+        <label>left fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>20.0</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Stone_Arms</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>	    
+	  <li>
+        <label>right fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>1.5</cooldownTime>
+        <linkedBodyPartsGroup>Stone_Arms</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+    </tools>
+    <race>
+      <baseHealthScale>2</baseHealthScale>
+    </race>
+  </ThingDef>
+  
+  <PawnKindDef ParentName="TM_StoneGolemKind_Base">
+  	<defName>TM_StoneGolemK</defName>
+    <race>TM_StoneGolem</race>
+    <label>stone-golem</label>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+		  <color>(150, 150, 150)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+		  <color>(150, 150, 150)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+		  <color>(150, 150, 150)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+		  <color>(150, 150, 150)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+  
+  <ThingDef ParentName="TM_StoneGolem_Base">
+    <defName>TM_SandstoneGolem</defName>
+    <label>sandstone golem</label>
+    <statBases>
+      <MarketValue>1500</MarketValue>
+      <MoveSpeed>2.5</MoveSpeed>
+      <ComfyTemperatureMin>-500</ComfyTemperatureMin>
+      <ComfyTemperatureMax>1500</ComfyTemperatureMax>
+	  <ArmorRating_Blunt>0.33</ArmorRating_Blunt>
+      <ArmorRating_Sharp>1</ArmorRating_Sharp>
+	  <ArmorRating_Heat>0.75</ArmorRating_Heat>
+      <PsychicSensitivity>0</PsychicSensitivity>
+    </statBases>
+    <tools>      
+	  <li>
+        <label>smash</label>
+        <capacities>
+          <li>TM_GolemSmash</li>
+        </capacities>
+        <power>20</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Stone_Arms</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>22</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+		<chanceFactor>0.42</chanceFactor>
+        <soundMeleeHit>MeleeHit_Stone</soundMeleeHit>
+        <soundMeleeMiss>Pawn_Melee_HumanBite_Miss</soundMeleeMiss>
+      </li>
+      <li>
+        <label>left fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>20.0</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Stone_Arms</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>	    
+	  <li>
+        <label>right fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>15.0</power>
+        <cooldownTime>1.5</cooldownTime>
+        <linkedBodyPartsGroup>Stone_Arms</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+    </tools>
+    <race>
+      <baseHealthScale>2.4</baseHealthScale>
+    </race>
+  </ThingDef>
+  
+   <PawnKindDef ParentName="TM_StoneGolemKind_Base">
+  	<defName>TM_SandstoneGolemK</defName>
+    <race>TM_SandstoneGolem</race>
+    <label>sandstone-golem</label>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+		  <color>(126, 104, 94)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+		  <color>(126, 104, 94)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+		  <color>(126, 104, 94)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+		  <color>(126, 104, 94)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+  
+  <ThingDef ParentName="TM_StoneGolem_Base">
+    <defName>TM_LimestoneGolem</defName>
+    <label>limestone golem</label>
+    <statBases>
+      <MarketValue>1500</MarketValue>
+      <MoveSpeed>2.3</MoveSpeed>
+      <ComfyTemperatureMin>-500</ComfyTemperatureMin>
+      <ComfyTemperatureMax>825</ComfyTemperatureMax>
+	  <ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.75</ArmorRating_Sharp>
+	  <ArmorRating_Heat>0.42</ArmorRating_Heat>
+      <PsychicSensitivity>0</PsychicSensitivity>
+    </statBases>
+    <tools>      
+	  <li>
+        <label>smash</label>
+        <capacities>
+          <li>TM_GolemSmash</li>
+        </capacities>
+        <power>22</power>
+        <cooldownTime>2.2</cooldownTime>
+        <linkedBodyPartsGroup>Stone_Arms</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>18</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+		<chanceFactor>0.45</chanceFactor>
+        <soundMeleeHit>MeleeHit_Stone</soundMeleeHit>
+        <soundMeleeMiss>Pawn_Melee_HumanBite_Miss</soundMeleeMiss>
+      </li>
+      <li>
+        <label>left fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>21.0</power>
+        <cooldownTime>2.1</cooldownTime>
+        <linkedBodyPartsGroup>Stone_Arms</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>	    
+	  <li>
+        <label>right fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>16.5</power>
+        <cooldownTime>1.65</cooldownTime>
+        <linkedBodyPartsGroup>Stone_Arms</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+    </tools>
+    <race>
+      <baseHealthScale>2.55</baseHealthScale>
+    </race>
+  </ThingDef>
+  
+  <PawnKindDef ParentName="TM_StoneGolemKind_Base">
+  	<defName>TM_LimestoneGolemK</defName>
+    <race>TM_LimestoneGolem</race>
+    <label>limestone-golem</label>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+		  <color>(158, 153, 135)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+		  <color>(158, 153, 135)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+		  <color>(158, 153, 135)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+		  <color>(158, 153, 135)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+  
+  <ThingDef ParentName="TM_StoneGolem_Base">
+    <defName>TM_GraniteGolem</defName>
+    <label>granite golem</label>
+    <statBases>
+      <MarketValue>1500</MarketValue>
+      <MoveSpeed>2</MoveSpeed>
+      <ComfyTemperatureMin>-750</ComfyTemperatureMin>
+      <ComfyTemperatureMax>1260</ComfyTemperatureMax>
+	  <ArmorRating_Blunt>0.43</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.86</ArmorRating_Sharp>
+	  <ArmorRating_Heat>0.63</ArmorRating_Heat>
+      <PsychicSensitivity>0</PsychicSensitivity>
+    </statBases>
+    <tools>      
+	  <li>
+        <label>smash</label>
+        <capacities>
+          <li>TM_GolemSmash</li>
+        </capacities>
+        <power>25</power>
+        <cooldownTime>2.5</cooldownTime>
+        <linkedBodyPartsGroup>Stone_Arms</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>18</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+		<chanceFactor>0.4</chanceFactor>
+        <soundMeleeHit>MeleeHit_Stone</soundMeleeHit>
+        <soundMeleeMiss>Pawn_Melee_HumanBite_Miss</soundMeleeMiss>
+      </li>
+      <li>
+        <label>left fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>22.5</power>
+        <cooldownTime>2.25</cooldownTime>
+        <linkedBodyPartsGroup>Stone_Arms</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>	    
+	  <li>
+        <label>right fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>16.5</power>
+        <cooldownTime>1.65</cooldownTime>
+        <linkedBodyPartsGroup>Stone_Arms</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+    </tools>
+    <race>
+      <baseHealthScale>2.7</baseHealthScale>
+    </race>
+  </ThingDef>
+  
+  <PawnKindDef ParentName="TM_StoneGolemKind_Base">
+  	<defName>TM_GraniteGolemK</defName>
+    <race>TM_GraniteGolem</race>
+    <label>granite-golem</label>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+		  <color>(105, 95, 97)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+		  <color>(105, 95, 97)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+		  <color>(105, 95, 97)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+		  <color>(105, 95, 97)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+  
+  <ThingDef ParentName="TM_StoneGolem_Base">
+    <defName>TM_SlateGolem</defName>
+    <label>slate golem</label>
+    <statBases>
+      <MarketValue>1500</MarketValue>
+      <MoveSpeed>2.75</MoveSpeed>
+      <ComfyTemperatureMin>-1000</ComfyTemperatureMin>
+      <ComfyTemperatureMax>2000</ComfyTemperatureMax>
+	  <ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.75</ArmorRating_Sharp>
+	  <ArmorRating_Heat>1</ArmorRating_Heat>
+      <PsychicSensitivity>0</PsychicSensitivity>
+    </statBases>
+    <tools>      
+	  <li>
+        <label>smash</label>
+        <capacities>
+          <li>TM_GolemSmash</li>
+        </capacities>
+        <power>18</power>
+        <cooldownTime>1.8</cooldownTime>
+        <linkedBodyPartsGroup>Stone_Arms</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>18</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+		<chanceFactor>0.4</chanceFactor>
+        <soundMeleeHit>MeleeHit_Stone</soundMeleeHit>
+        <soundMeleeMiss>Pawn_Melee_HumanBite_Miss</soundMeleeMiss>
+      </li>
+      <li>
+        <label>left fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>19.0</power>
+        <cooldownTime>1.9</cooldownTime>
+        <linkedBodyPartsGroup>Stone_Arms</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>	    
+	  <li>
+        <label>right fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>14.5</power>
+        <cooldownTime>1.45</cooldownTime>
+        <linkedBodyPartsGroup>Stone_Arms</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+    </tools>
+    <race>
+      <baseHealthScale>2.3</baseHealthScale>
+    </race>
+  </ThingDef>
+  
+  <PawnKindDef ParentName="TM_StoneGolemKind_Base">
+  	<defName>TM_SlateGolemK</defName>
+    <race>TM_SlateGolem</race>
+    <label>slate-golem</label>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+		  <color>(70, 70, 70)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+		  <color>(70, 70, 70)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+		  <color>(70, 70, 70)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+		  <color>(70, 70, 70)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+  
+  <ThingDef ParentName="TM_StoneGolem_Base">
+    <defName>TM_MarbleGolem</defName>
+    <label>marble golem</label>
+    <statBases>
+      <MarketValue>1500</MarketValue>
+      <MoveSpeed>2</MoveSpeed>
+      <ComfyTemperatureMin>-400</ComfyTemperatureMin>
+      <ComfyTemperatureMax>800</ComfyTemperatureMax>
+	  <ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.75</ArmorRating_Sharp>
+	  <ArmorRating_Heat>0.4</ArmorRating_Heat>
+      <PsychicSensitivity>0</PsychicSensitivity>
+    </statBases>
+    <tools>      
+	  <li>
+        <label>smash</label>
+        <capacities>
+          <li>TM_GolemSmash</li>
+        </capacities>
+        <power>25</power>
+        <cooldownTime>2.5</cooldownTime>
+        <linkedBodyPartsGroup>Stone_Arms</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>18</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+		<chanceFactor>0.5</chanceFactor>
+        <soundMeleeHit>MeleeHit_Stone</soundMeleeHit>
+        <soundMeleeMiss>Pawn_Melee_HumanBite_Miss</soundMeleeMiss>
+      </li>
+      <li>
+        <label>left fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>22.5</power>
+        <cooldownTime>2.25</cooldownTime>
+        <linkedBodyPartsGroup>Stone_Arms</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>	    
+	  <li>
+        <label>right fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>16.0</power>
+        <cooldownTime>1.6</cooldownTime>
+        <linkedBodyPartsGroup>Stone_Arms</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+    </tools>
+    <race>
+      <baseHealthScale>2.2</baseHealthScale>
+    </race>
+  </ThingDef>
+  
+  <PawnKindDef ParentName="TM_StoneGolemKind_Base">
+  	<defName>TM_MarbleGolemK</defName>
+    <race>TM_MarbleGolem</race>
+    <label>marble-golem</label>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+		  <color>(132, 135, 132)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+		  <color>(132, 135, 132)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+		  <color>(132, 135, 132)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+		  <color>(132, 135, 132)</color>
+		  <texPath>Golems/Stone/Stone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+  
+  <LifeStageDef>
+    <defName>TM_StoneGolemLS</defName>
+    <label>stone golem</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1</healthScaleFactor>
+	<marketValueFactor>1</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.0</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  
+  <LifeStageDef>
+    <defName>TM_StoneGolemLS1</defName>
+    <label>stone golem</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1.4</healthScaleFactor>
+	<marketValueFactor>1.2</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.1</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>TM_StoneGolemLS2</defName>
+    <label>stone golem</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1.7</healthScaleFactor>
+	<marketValueFactor>1.35</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.2</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>TM_StoneGolemLS3</defName>
+    <label>stone golem</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>2</healthScaleFactor>
+	<marketValueFactor>1.5</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.3</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+
+  <!-- MECHA GOLEM -->  
+  
+  <ThingDef ParentName="TM_Golem_Base">
+    <defName>TM_MechaGolem</defName>
+    <label>mecha-golem</label>
+    <description>A golem, crafted from raw material and given basic autonomy through a combination of circuitry and magic.</description>
+	<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <statBases>
+      <MarketValue>3000</MarketValue>
+      <MoveSpeed>2.5</MoveSpeed>
+      <ComfyTemperatureMin>-65</ComfyTemperatureMin>
+      <ComfyTemperatureMax>54</ComfyTemperatureMax>
+	  <ArmorRating_Blunt>0.22</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.86</ArmorRating_Sharp>
+	  <ArmorRating_Heat>1.25</ArmorRating_Heat>
+      <PsychicSensitivity>0</PsychicSensitivity>
+    </statBases>
+    <tools>
+      <li>
+        <label>body smash</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>22.5</power>
+        <cooldownTime>4</cooldownTime>
+        <linkedBodyPartsGroup>Mecha_Base</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>20</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>left fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>14.0</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Mecha_LeftArm</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+	  <li>
+        <label>mecha-axe</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>24.0</power>
+		<armorPenetration>.5</armorPenetration>
+        <cooldownTime>1.2</cooldownTime>
+        <linkedBodyPartsGroup>Mecha_LeftArm_Axe</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+	  <li>
+        <label>mecha-sword</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>36.0</power>
+        <cooldownTime>2.4</cooldownTime>
+		<armorPenetration>1.15</armorPenetration>
+        <linkedBodyPartsGroup>Mecha_LeftArm_Sword</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+      <li>
+        <label>right fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>16.0</power>
+        <cooldownTime>2.3</cooldownTime>
+        <linkedBodyPartsGroup>Mecha_RightArm</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li> 
+	  <li>
+        <label>mecha-hammer</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>30.0</power>
+        <cooldownTime>2</cooldownTime>
+		<armorPenetration>.2</armorPenetration>
+        <linkedBodyPartsGroup>Mecha_RightArm_Hammer</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>	  
+    </tools>
+    <race>
+      <thinkTreeMain>TM_GolemMain</thinkTreeMain>
+      <thinkTreeConstant>TM_GolemConstant</thinkTreeConstant>      
+      <makesFootprints>true</makesFootprints>
+      <body>TM_Mecha-Golem</body>
+      <baseBodySize>1</baseBodySize>
+      <baseHealthScale>3</baseHealthScale>
+      <foodType>None</foodType>
+	  <bloodDef>Filth_MachineBits</bloodDef>
+	  <intelligence>ToolUser</intelligence>
+	  <fleshType>TM_MechaGolemFlesh</fleshType>
+	  <specificMeatDef>Steel</specificMeatDef>
+	  <trainability>None</trainability>
+      <lifeStageAges>
+        <li>
+          <def>TM_MechaGolemLS</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+        </li>
+		<li>
+          <def>TM_MechaGolemLS_FS1</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+        </li>
+		<li>
+          <def>TM_MechaGolemLS_FS2</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+        </li>
+		<li>
+          <def>TM_MechaGolemLS_FS3</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+        </li>
+		<li>
+          <def>TM_MechaGolemLS_WS1</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+        </li>
+		<li>
+          <def>TM_MechaGolemLS_WS2</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+        </li>
+		<li>
+          <def>TM_MechaGolemLS_WS3</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+        </li>
+		<li>
+          <def>TM_MechaGolemLS_ES1</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+        </li>
+		<li>
+          <def>TM_MechaGolemLS_ES2</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+        </li>
+		<li>
+          <def>TM_MechaGolemLS_ES3</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+        </li>
+		<li>
+          <def>TM_MechaGolemLS_LS1</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+        </li>
+		<li>
+          <def>TM_MechaGolemLS_LS2</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+        </li>
+		<li>
+          <def>TM_MechaGolemLS_LS3</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_MechanoidSlash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_MechanoidSlash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_MechanoidSlash_Miss</soundMeleeMiss>
+      <soundMeleeDodge>Pawn_MeleeDodge</soundMeleeDodge>
+      <specialShadowData>
+        <volume>(0.3, 0.6, 0.3)</volume>
+        <offset>(0,0,-0.3)</offset>
+      </specialShadowData>
+    </race>
+	<comps>
+	  <li Class="TorannMagic.Golems.CompProperties_Golem">
+	  </li>
+    </comps>
+	<butcherProducts>
+	  <Plasteel>100</Plasteel>
+	  <ComponentIndustrial>5</ComponentIndustrial>
+	  <ComponentSpacer>2</ComponentSpacer>
+    </butcherProducts>
+  </ThingDef>
+  
+  <PawnKindDef Name="TM_MechaGolemKind" ParentName="TM_GolemKind_Base">
+  	<defName>TM_MechaGolemK</defName>
+    <race>TM_MechaGolem</race>
+    <label>mecha-golem</label>
+    <combatPower>500</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Golems/Mecha/Mecha-Golem</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.4</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Mecha/Mecha-Golem</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.4</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Mecha/Mecha-Golem</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.4</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Mecha/Mecha-Golem</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.4</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Mecha/Mecha-Golem</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.4</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Mecha/Mecha-Golem</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.4</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Mecha/Mecha-Golem</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.4</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Mecha/Mecha-Golem</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.4</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Mecha/Mecha-Golem</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.4</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Mecha/Mecha-Golem</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.4</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Mecha/Mecha-Golem</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.4</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Mecha/Mecha-Golem</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.4</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Mecha/Mecha-Golem</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.4</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+  
+  <LifeStageDef>
+    <defName>TM_MechaGolemLS</defName>
+    <label>mecha-golem</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1</healthScaleFactor>
+	<marketValueFactor>1</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.0</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  
+  <LifeStageDef>
+    <defName>TM_MechaGolemLS_FS1</defName>
+    <label>flame shard mecha-golem</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1.15</healthScaleFactor>
+	<marketValueFactor>1.1</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.15</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>TM_MechaGolemLS_FS2</defName>
+    <label>flame shard mecha-golem</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1.3</healthScaleFactor>
+	<marketValueFactor>1.2</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.3</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>TM_MechaGolemLS_FS3</defName>
+    <label>flame shard mecha-golem</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1.4</healthScaleFactor>
+	<marketValueFactor>1.3</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.4</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  
+  <LifeStageDef>
+    <defName>TM_MechaGolemLS_WS1</defName>
+    <label>water shard mecha-golem</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1.3</healthScaleFactor>
+	<marketValueFactor>1.1</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.1</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>TM_MechaGolemLS_WS2</defName>
+    <label>water shard mecha-golem</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1.5</healthScaleFactor>
+	<marketValueFactor>1.2</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.15</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>TM_MechaGolemLS_WS3</defName>
+    <label>water shard mecha-golem</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1.7</healthScaleFactor>
+	<marketValueFactor>1.3</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.2</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  
+  <LifeStageDef>
+    <defName>TM_MechaGolemLS_ES1</defName>
+    <label>earth shard mecha-golem</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1.4</healthScaleFactor>
+	<marketValueFactor>1.1</marketValueFactor>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>TM_MechaGolemLS_ES2</defName>
+    <label>earth shard mecha-golem</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1.8</healthScaleFactor>
+	<marketValueFactor>1.2</marketValueFactor>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>TM_MechaGolemLS_ES3</defName>
+    <label>earth shard mecha-golem</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>2.2</healthScaleFactor>
+	<marketValueFactor>1.3</marketValueFactor>
+  </LifeStageDef>
+  
+  <LifeStageDef>
+    <defName>TM_MechaGolemLS_LS1</defName>
+    <label>lightning shard mecha-golem</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1</healthScaleFactor>
+	<marketValueFactor>1.1</marketValueFactor>
+	<statFactors>
+      <MoveSpeed>1.25</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>TM_MechaGolemLS_LS2</defName>
+    <label>lightning shard mecha-golem</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1</healthScaleFactor>
+	<marketValueFactor>1.2</marketValueFactor>
+  </LifeStageDef>
+  <statFactors>
+      <MoveSpeed>1.5</MoveSpeed>
+    </statFactors>
+  <LifeStageDef>
+    <defName>TM_MechaGolemLS_LS3</defName>
+    <label>lightning shard mecha-golem</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1</healthScaleFactor>
+	<marketValueFactor>1.3</marketValueFactor>
+	<statFactors>
+      <MoveSpeed>1.75</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  
+  <!-- FLESH GOLEM -->
+  <ThingDef ParentName="TM_Golem_Base">
+    <defName>TM_FleshGolem</defName>
+    <label>flesh golem</label>
+    <description>A golem crafted from the flesh, bones and organs of other beings and given basic autonomy through a combination of bioengineering and magic.</description>
+	<soundImpactDefault>BulletImpact_Flesh</soundImpactDefault>
+    <statBases>
+      <MarketValue>2700</MarketValue>
+      <MoveSpeed>2.8</MoveSpeed>
+      <ComfyTemperatureMin>-50</ComfyTemperatureMin>
+      <ComfyTemperatureMax>40</ComfyTemperatureMax>
+	  <ArmorRating_Blunt>0.96</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.44</ArmorRating_Sharp>
+	  <ArmorRating_Heat>0.5</ArmorRating_Heat>
+      <PsychicSensitivity>1</PsychicSensitivity>
+    </statBases>
+    <tools>
+      <li>
+        <label>gore</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>32.2</power>
+        <cooldownTime>4</cooldownTime>
+        <linkedBodyPartsGroup>Flesh_Horns</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>14</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+		<chanceFactor>0.07</chanceFactor>
+        <soundMeleeHit>Pawn_Melee_HumanBite_Hit</soundMeleeHit>
+        <soundMeleeMiss>Pawn_Melee_HumanBite_Miss</soundMeleeMiss>
+      </li>
+	  <li>
+        <label>tusks</label>
+        <capacities>
+          <li>Bite</li>
+		  <li>Cut</li>
+        </capacities>
+        <power>28</power>
+        <cooldownTime>1.5</cooldownTime>
+        <linkedBodyPartsGroup>Flesh_Horns</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>18</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+		<chanceFactor>0.33</chanceFactor>
+        <soundMeleeHit>Pawn_Melee_HumanBite_Hit</soundMeleeHit>
+        <soundMeleeMiss>Pawn_Melee_HumanBite_Miss</soundMeleeMiss>
+      </li>
+      <li>
+        <label>left fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>12.0</power>
+        <cooldownTime>1.6</cooldownTime>
+        <linkedBodyPartsGroup>Flesh_Arms</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+	  <li>
+        <label>left guard</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>18.0</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Flesh_LeftArm_Brace</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+	  <li>
+        <label>left cleaver</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>24.0</power>
+		<armorPenetration>.4</armorPenetration>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Flesh_LeftArm_Cleaver</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+	  <li>
+        <label>right fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>12.0</power>
+        <cooldownTime>1.6</cooldownTime>
+        <linkedBodyPartsGroup>Flesh_Arms</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+	  <li>
+        <label>right guard</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>18.0</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Flesh_RightArm_Brace</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+	  <li>
+        <label>right cleaver</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>24.0</power>
+		<armorPenetration>.4</armorPenetration>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Flesh_RightArm_Cleaver</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>	  
+    </tools>
+    <race>
+      <thinkTreeMain>TM_GolemMain</thinkTreeMain>
+      <thinkTreeConstant>TM_GolemConstant</thinkTreeConstant>      
+      <makesFootprints>true</makesFootprints>
+      <body>TM_FleshGolem</body>
+      <baseBodySize>1</baseBodySize>
+      <baseHealthScale>2.2</baseHealthScale>
+      <foodType>None</foodType>
+	  <bloodDef>Filth_CorpseBile</bloodDef>
+	  <intelligence>ToolUser</intelligence>
+	  <fleshType>TM_Golem_Flesh</fleshType>
+	  <useMeatFrom>Human</useMeatFrom>
+	  <trainability>None</trainability>
+      <lifeStageAges>
+        <li>
+          <def>TM_FleshGolemLS</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li>
+		<li>
+          <def>TM_FleshGolemLS1</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li>
+		<li>
+          <def>TM_FleshGolemLS2</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li>
+		<li>
+          <def>TM_FleshGolemLS3</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+      <soundMeleeDodge>Pawn_MeleeDodge</soundMeleeDodge>
+      <specialShadowData>
+        <volume>(0.4, 0.8, 0.6)</volume>
+        <offset>(0,0,-0.3)</offset>
+      </specialShadowData>
+    </race>
+	<comps>
+	  <li Class="TorannMagic.Golems.CompProperties_Golem">
+	  </li>
+    </comps>
+	<ingredient>
+      <mergeCompatibilityTags>
+        <li>HumanMeat</li>
+      </mergeCompatibilityTags>
+    </ingredient>
+  </ThingDef>
+  
+  <PawnKindDef Name="TM_FleshGolemKind" ParentName="TM_GolemKind_Base">
+  	<defName>TM_FleshGolemK</defName>
+    <race>TM_FleshGolem</race>
+    <label>flesh-golem</label>
+    <combatPower>400</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Golems/Flesh/Flesh</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>4</drawSize>
+          <shadowData>
+            <volume>(0.4, 0.8, 0.6)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Flesh/Flesh</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>4</drawSize>
+          <shadowData>
+            <volume>(0.4, 0.8, 0.6)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Flesh/Flesh</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>4</drawSize>
+          <shadowData>
+            <volume>(0.4, 0.8, 0.6)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Flesh/Flesh</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>4</drawSize>
+          <shadowData>
+            <volume>(0.4, 0.8, 0.6)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+  
+  <LifeStageDef>
+    <defName>TM_FleshGolemLS</defName>
+    <label>flesh golem</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1</healthScaleFactor>
+	<marketValueFactor>1</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.0</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  
+  <LifeStageDef>
+    <defName>TM_FleshGolemLS1</defName>
+    <label>flesh golem</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1.3</healthScaleFactor>
+	<marketValueFactor>1.2</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.2</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>TM_FleshGolemLS2</defName>
+    <label>flesh golem</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1.5</healthScaleFactor>
+	<marketValueFactor>1.35</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.35</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>TM_FleshGolemLS3</defName>
+    <label>flesh golem</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1.7</healthScaleFactor>
+	<marketValueFactor>1.5</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.5</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  
+  <!-- HOLLOW GOLEM -->
+  
+  <ToolCapacityDef>
+    <defName>TM_DecayTouch</defName>
+    <label>decay touch</label>
+  </ToolCapacityDef>
+  
+  <ManeuverDef>
+    <defName>TM_DecayTouchMD</defName>
+    <requiredCapacity>TM_DecayTouch</requiredCapacity>
+    <verb>
+      <verbClass>TorannMagic.Golems.Verb_DecayTouch</verbClass>
+      <meleeDamageDef>Cut</meleeDamageDef>
+    </verb>
+    <logEntryDef>MeleeAttack</logEntryDef>
+    <combatLogRulesHit>Maneuver_Scratch_MeleeHit</combatLogRulesHit>
+    <combatLogRulesDeflect>Maneuver_Scratch_MeleeDeflect</combatLogRulesDeflect>
+    <combatLogRulesMiss>Maneuver_Scratch_MeleeMiss</combatLogRulesMiss>
+    <combatLogRulesDodge>Maneuver_Scratch_MeleeDodge</combatLogRulesDodge>
+  </ManeuverDef>
+  
+  <ToolCapacityDef>
+    <defName>TM_NullCleave</defName>
+    <label>null cleave</label>
+  </ToolCapacityDef>
+  
+  <ManeuverDef>
+    <defName>TM_NullCleaveMD</defName>
+    <requiredCapacity>TM_NullCleave</requiredCapacity>
+    <verb>
+      <verbClass>TorannMagic.Golems.Verb_NullCleave</verbClass>
+      <meleeDamageDef>Cut</meleeDamageDef>
+    </verb>
+    <logEntryDef>MeleeAttack</logEntryDef>
+    <combatLogRulesHit>Maneuver_Slash_MeleeHit</combatLogRulesHit>
+    <combatLogRulesDeflect>Maneuver_Slash_MeleeDeflect</combatLogRulesDeflect>
+    <combatLogRulesMiss>Maneuver_Slash_MeleeMiss</combatLogRulesMiss>
+    <combatLogRulesDodge>Maneuver_Slash_MeleeDodge</combatLogRulesDodge>
+  </ManeuverDef>
+  
+  <ThingDef ParentName="TM_Golem_Base">
+    <defName>TM_HollowGolem</defName>
+	<thingClass>TorannMagic.Golems.TMHollowGolem</thingClass>
+    <label>hollow golem</label>
+    <description>A golem crafted from condensed magic and arcane catalysts. The armor surrounding the hollow golem anchors the magic center to a physical location and to protect its physical integrity. The hollow golem is able to harness tremendous amounts of magical energy for a variety of purposes, making it one of the most flexible golems developed to date. The hollow golem absorbs magical energy from the atmosphere, much like paracyte, with mana reduction equivalent to 10 paracyte thorn bushes.</description>
+	<soundImpactDefault>BulletImpact_Flesh</soundImpactDefault>
+    <statBases>
+      <MarketValue>5500</MarketValue>
+      <MoveSpeed>1.2</MoveSpeed>
+      <ComfyTemperatureMin>-200</ComfyTemperatureMin>
+      <ComfyTemperatureMax>200</ComfyTemperatureMax>
+	  <ArmorRating_Blunt>0.48</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.7</ArmorRating_Sharp>
+	  <ArmorRating_Heat>0.6</ArmorRating_Heat>
+	  <ArmorRating_Alignment>0.25</ArmorRating_Alignment>
+      <PsychicSensitivity>2</PsychicSensitivity>
+	  <MeatAmount>0</MeatAmount>
+    </statBases>
+	<verbs>
+	  <li>
+	    <label>blazing energy</label>
+		<commandIcon>Golems/Hollow/Hollow_Staff_north</commandIcon>
+        <verbClass>TorannMagic.Weapon.Verb_BlazingPower</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Projectile_BlazingPower</defaultProjectile>
+		<linkedBodyPartsGroup>Hollow_Staff</linkedBodyPartsGroup>
+        <warmupTime>1</warmupTime>
+		<defaultCooldownTime>2.1</defaultCooldownTime>
+		<minRange>5</minRange>
+        <range>40</range>		
+        <soundCast>TM_Woosh</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>7</muzzleFlashScale>
+		<burstShotCount>5</burstShotCount>
+		<ticksBetweenBurstShots>15</ticksBetweenBurstShots>		
+		<isPrimary>true</isPrimary>
+		<violent>true</violent>
+		<requireLineOfSight>true</requireLineOfSight>
+		<commonality>8</commonality>	<!-- used as priority -->
+      </li>	  
+	  <li>
+	    <label>firebolts</label>
+		<commandIcon>Spells/firebolt</commandIcon>
+        <verbClass>TorannMagic.Golems.Verb_FireBlossom</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Projectile_FireBlossomBolt</defaultProjectile>
+		<linkedBodyPartsGroup>Hollow_FocusGems</linkedBodyPartsGroup>
+        <warmupTime>2</warmupTime>
+		<defaultCooldownTime>10.1</defaultCooldownTime>
+		<minRange>6</minRange>
+        <range>50</range>
+		<accuracyLong>.9</accuracyLong>
+        <soundCast>TM_Woosh</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>3</muzzleFlashScale>
+		<burstShotCount>4</burstShotCount>
+		<ticksBetweenBurstShots>2</ticksBetweenBurstShots>		
+		<isPrimary>true</isPrimary>
+		<violent>true</violent>
+		<requireLineOfSight>true</requireLineOfSight>
+		<commonality>5</commonality>
+		<consumeFuelPerShot>40</consumeFuelPerShot>
+      </li>
+	  <li>
+	    <label>ice shards</label>
+		<commandIcon>Spells/Icebolt</commandIcon>
+        <verbClass>TorannMagic.Golems.Verb_IceBlossom</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Projectile_IceBlossomBolt</defaultProjectile>
+		<linkedBodyPartsGroup>Hollow_FocusGems</linkedBodyPartsGroup>
+        <warmupTime>3</warmupTime>
+		<defaultCooldownTime>900</defaultCooldownTime>
+		<minRange>8</minRange>
+        <range>60</range>
+		<accuracyLong>.8</accuracyLong>
+        <soundCast>TM_Woosh</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>3</muzzleFlashScale>
+		<burstShotCount>5</burstShotCount>
+		<ticksBetweenBurstShots>2</ticksBetweenBurstShots>		
+		<isPrimary>true</isPrimary>
+		<violent>true</violent>
+		<requireLineOfSight>true</requireLineOfSight>
+		<commonality>5</commonality>
+		<consumeFuelPerShot>60</consumeFuelPerShot>
+      </li>
+	  <li>
+	    <label>darkbolt</label>
+		<commandIcon>Spells/shadowbolt</commandIcon>
+        <verbClass>TorannMagic.Golems.Verb_DarkBolt</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Projectile_DarkBolt</defaultProjectile>
+		<linkedBodyPartsGroup>Hollow_FocusGems</linkedBodyPartsGroup>
+        <warmupTime>4</warmupTime>
+		<defaultCooldownTime>1200</defaultCooldownTime>
+		<minRange>10</minRange>
+        <range>120</range>		
+        <soundCast>TM_Woosh</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>7</muzzleFlashScale>
+		<burstShotCount>1</burstShotCount>
+		<ticksBetweenBurstShots>1</ticksBetweenBurstShots>		
+		<isPrimary>true</isPrimary>
+		<violent>true</violent>
+		<requireLineOfSight>true</requireLineOfSight>
+		<commonality>4</commonality>	<!-- used as priority -->
+		<consumeFuelPerShot>80</consumeFuelPerShot>
+      </li>	
+	</verbs>
+    <tools>
+      <li>
+        <label>claw</label>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>14.5</power>
+        <cooldownTime>1.5</cooldownTime>
+        <linkedBodyPartsGroup>Hollow_Claws</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>8</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+	  <li>
+        <label>decay touch</label>
+        <capacities>
+          <li>TM_DecayTouch</li>
+        </capacities>
+        <power>40</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Hollow_Decay</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>26</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+		<chanceFactor>0.33</chanceFactor>
+        <soundMeleeHit>Pawn_Melee_HumanBite_Hit</soundMeleeHit>
+        <soundMeleeMiss>Pawn_Melee_HumanBite_Miss</soundMeleeMiss>
+      </li>      
+	  <li>
+        <label>hollow axe</label>
+        <capacities>
+          <li>TM_NullCleave</li>
+        </capacities>
+        <power>26.0</power>
+        <cooldownTime>3</cooldownTime>
+        <linkedBodyPartsGroup>Hollow_Axe</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+		<surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>26</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+	  <li>
+        <label>hollow staff</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>20.0</power>
+		<armorPenetration>.4</armorPenetration>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Hollow_Staff</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>	  	  
+    </tools>
+    <race>
+      <thinkTreeMain>TM_GolemMain</thinkTreeMain>
+      <thinkTreeConstant>TM_GolemConstant</thinkTreeConstant>      
+      <makesFootprints>false</makesFootprints>
+      <body>TM_HollowGolem</body>
+      <baseBodySize>1</baseBodySize>
+      <baseHealthScale>3.6</baseHealthScale>
+      <foodType>None</foodType>
+	  <bloodDef>Filth_CorpseBile</bloodDef>
+	  <intelligence>ToolUser</intelligence>
+	  <fleshType>TM_Golem_Flesh</fleshType>
+	  <trainability>None</trainability>
+      <lifeStageAges>
+        <li>
+          <def>TM_HollowGolemLS</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li>
+		<li>
+          <def>TM_HollowGolemLS_FA1</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li>
+		<li>
+          <def>TM_HollowGolemLS_FA2</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li>
+		<li>
+          <def>TM_HollowGolemLS_FA3</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li>
+		<li>
+          <def>TM_HollowGolemLS_IA1</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li>
+		<li>
+          <def>TM_HollowGolemLS_IA2</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li>
+		<li>
+          <def>TM_HollowGolemLS_IA3</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li><li>
+          <def>TM_HollowGolemLS_AA1</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li>
+		<li>
+          <def>TM_HollowGolemLS_AA2</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li>
+		<li>
+          <def>TM_HollowGolemLS_AA3</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li>
+		<li>
+          <def>TM_HollowGolemLS_DA1</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li>
+		<li>
+          <def>TM_HollowGolemLS_DA2</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li>
+		<li>
+          <def>TM_HollowGolemLS_DA3</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+      <soundMeleeDodge>Pawn_MeleeDodge</soundMeleeDodge>
+      <specialShadowData>
+        <volume>(0.0, 0.0, 0.0)</volume>
+        <offset>(0,0,0)</offset>
+      </specialShadowData>
+    </race>
+	<comps>
+	  <li Class="TorannMagic.Golems.CompProperties_Golem">
+	  </li>
+    </comps>
+	<butcherProducts>
+	  <Steel>125</Steel>
+	  <Plasteel>75</Plasteel>
+	  <RawMagicyte>250</RawMagicyte>
+    </butcherProducts>
+  </ThingDef>
+  
+  <PawnKindDef Name="TM_HollowGolemKind" ParentName="TM_GolemKind_Base">
+  	<defName>TM_HollowGolemK</defName>
+    <race>TM_HollowGolem</race>
+    <label>hollow-golem</label>
+    <combatPower>1000</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Golems/Hollow/Hollow</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.2</drawSize>
+          <shadowData>
+            <volume>(0, 0, 0)</volume>
+			<offset>(0,0,0)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Hollow/Hollow</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.2</drawSize>
+          <shadowData>
+            <volume>(0, 0, 0)</volume>
+			<offset>(0,0,0)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Hollow/Hollow</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.2</drawSize>
+          <shadowData>
+            <volume>(0, 0, 0)</volume>
+			<offset>(0,0,0)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Hollow/Hollow</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.2</drawSize>
+          <shadowData>
+            <volume>(0, 0, 0)</volume>
+			<offset>(0,0,0)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Hollow/Hollow</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.2</drawSize>
+          <shadowData>
+            <volume>(0, 0, 0)</volume>
+			<offset>(0,0,0)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Hollow/Hollow</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.2</drawSize>
+          <shadowData>
+            <volume>(0, 0, 0)</volume>
+			<offset>(0,0,0)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Hollow/Hollow</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.2</drawSize>
+          <shadowData>
+            <volume>(0, 0, 0)</volume>
+			<offset>(0,0,0)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Hollow/Hollow</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.2</drawSize>
+          <shadowData>
+            <volume>(0, 0, 0)</volume>
+			<offset>(0,0,0)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Hollow/Hollow</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.2</drawSize>
+          <shadowData>
+            <volume>(0, 0, 0)</volume>
+			<offset>(0,0,0)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Hollow/Hollow</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.2</drawSize>
+          <shadowData>
+            <volume>(0, 0, 0)</volume>
+			<offset>(0,0,0)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Hollow/Hollow</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.2</drawSize>
+          <shadowData>
+            <volume>(0, 0, 0)</volume>
+			<offset>(0,0,0)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Hollow/Hollow</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.2</drawSize>
+          <shadowData>
+            <volume>(0, 0, 0)</volume>
+			<offset>(0,0,0)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Hollow/Hollow</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.2</drawSize>
+          <shadowData>
+            <volume>(0, 0, 0)</volume>
+			<offset>(0,0,0)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+  
+  <LifeStageDef>
+    <defName>TM_HollowGolemLS</defName>
+    <label>hollow golem</label>
+	<voxPitch>1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1</healthScaleFactor>
+	<marketValueFactor>1</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.0</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  
+  <LifeStageDef>
+    <defName>TM_HollowGolemLS_FA1</defName>
+    <label>fire affinity I</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1.40</healthScaleFactor>
+	<marketValueFactor>1.2</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.25</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>TM_HollowGolemLS_FA2</defName>
+    <label>fire affinity II</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1.6</healthScaleFactor>
+	<marketValueFactor>1.4</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.4</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>TM_HollowGolemLS_FA3</defName>
+    <label>fire affinity III</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1.75</healthScaleFactor>
+	<marketValueFactor>1.6</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.5</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  
+  <LifeStageDef>
+    <defName>TM_HollowGolemLS_IA1</defName>
+    <label>water affinity I</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1.5</healthScaleFactor>
+	<marketValueFactor>1.2</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.2</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>TM_HollowGolemLS_IA2</defName>
+    <label>water affinity II</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1.75</healthScaleFactor>
+	<marketValueFactor>1.4</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.3</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>TM_HollowGolemLS_IA3</defName>
+    <label>water affinity III</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1.9</healthScaleFactor>
+	<marketValueFactor>1.6</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.35</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  
+  <LifeStageDef>
+    <defName>TM_HollowGolemLS_AA1</defName>
+    <label>arcane affinity I</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1.55</healthScaleFactor>
+	<marketValueFactor>1.2</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.15</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>TM_HollowGolemLS_AA2</defName>
+    <label>arcane affinity II</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1.80</healthScaleFactor>
+	<marketValueFactor>1.4</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.25</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>TM_HollowGolemLS_AA3</defName>
+    <label>arcane affinity III</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>2</healthScaleFactor>
+	<marketValueFactor>1.6</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.3</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  
+  <LifeStageDef>
+    <defName>TM_HollowGolemLS_DA1</defName>
+    <label>death affinity I</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1.65</healthScaleFactor>
+	<marketValueFactor>1.2</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.1</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>TM_HollowGolemLS_DA2</defName>
+    <label>death affinity II</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1.9</healthScaleFactor>
+	<marketValueFactor>1.4</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.15</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>TM_HollowGolemLS_DA3</defName>
+    <label>death affinity III</label>
+	<voxPitch>.1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>2.1</healthScaleFactor>
+	<marketValueFactor>1.6</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.2</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  
+  <!-- MAHARAL GOLEM -->
+  <ThingDef ParentName="TM_Golem_Base">
+    <defName>TM_MaharalGolem</defName>
+    <label>maharal golem</label>
+    <description>A golem crafted from a mixture of molded stone wrapped in leather.</description>
+	<soundImpactDefault>BulletImpact_Flesh</soundImpactDefault>
+    <statBases>
+      <MarketValue>1800</MarketValue>
+      <MoveSpeed>2.8</MoveSpeed>
+      <ComfyTemperatureMin>-200</ComfyTemperatureMin>
+      <ComfyTemperatureMax>500</ComfyTemperatureMax>
+	  <ArmorRating_Blunt>0.68</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.73</ArmorRating_Sharp>
+	  <ArmorRating_Heat>0.65</ArmorRating_Heat>
+      <PsychicSensitivity>1</PsychicSensitivity>
+	  <MeatAmount>0</MeatAmount>
+    </statBases>
+    <tools>      
+      <li>
+        <label>left fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>18.0</power>
+        <cooldownTime>2.1</cooldownTime>
+        <linkedBodyPartsGroup>Maharal_Arms</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+	  <li>
+        <label>right fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>18.0</power>
+        <cooldownTime>2.1</cooldownTime>
+        <linkedBodyPartsGroup>Maharal_Arms</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+    </tools>
+    <race>
+      <thinkTreeMain>TM_GolemMain</thinkTreeMain>
+      <thinkTreeConstant>TM_GolemConstant</thinkTreeConstant>      
+      <makesFootprints>true</makesFootprints>
+      <body>TM_MaharalGolem</body>
+      <baseBodySize>1</baseBodySize>
+      <baseHealthScale>2</baseHealthScale>
+      <foodType>None</foodType>
+	  <bloodDef>Filth_RubbleRock</bloodDef>
+	  <intelligence>ToolUser</intelligence>
+	  <fleshType>TM_Golem_Flesh</fleshType>
+	  <useMeatFrom>Human</useMeatFrom>
+	  <trainability>None</trainability>
+      <lifeStageAges>
+        <li>
+          <def>TM_MaharalGolemLS</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li>
+		<li>
+          <def>TM_MaharalGolemLS1</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li>
+		<li>
+          <def>TM_MaharalGolemLS2</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li>
+		<li>
+          <def>TM_MaharalGolemLS3</def>
+          <minAge>0</minAge>
+		  <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+      <soundMeleeDodge>Pawn_MeleeDodge</soundMeleeDodge>
+      <specialShadowData>
+        <volume>(0.26, 0.5, 0.26)</volume>
+        <offset>(0,0,-0.25)</offset>
+      </specialShadowData>
+    </race>
+	<comps>
+	  <li Class="TorannMagic.Golems.CompProperties_Golem">
+	  </li>
+    </comps>
+	<ingredient>
+      <mergeCompatibilityTags>
+        <li>HumanMeat</li>
+      </mergeCompatibilityTags>
+    </ingredient>
+	<butcherProducts>
+	  <Steel>10</Steel>
+	  <Hay>20</Hay>
+	  <RawMagicyte>20</RawMagicyte>
+	  <Leather_Light>40</Leather_Light>
+    </butcherProducts>
+  </ThingDef>
+  
+  <PawnKindDef Name="TM_MaharalGolemKind" ParentName="TM_GolemKind_Base">
+  	<defName>TM_MaharalGolemK</defName>
+    <race>TM_MaharalGolem</race>
+    <label>maharal-golem</label>
+    <combatPower>200</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Golems/Maharal/Maharal</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.5</drawSize>
+          <shadowData>
+            <volume>(0.26, 0.5, 0.26)</volume>
+			<offset>(0,0,-0.26)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Maharal/Maharal</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.5</drawSize>
+          <shadowData>
+            <volume>(0.26, 0.5, 0.26)</volume>
+			<offset>(0,0,-0.26)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Maharal/Maharal</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.5</drawSize>
+          <shadowData>
+            <volume>(0.26, 0.5, 0.26)</volume>
+			<offset>(0,0,-0.26)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Maharal/Maharal</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.5</drawSize>
+          <shadowData>
+            <volume>(0.26, 0.5, 0.26)</volume>
+			<offset>(0,0,-0.26)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+  
+  <LifeStageDef>
+    <defName>TM_MaharalGolemLS</defName>
+    <label>maharal golem</label>
+	<voxPitch>.5</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1</healthScaleFactor>
+	<marketValueFactor>1</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.0</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  
+  <LifeStageDef>
+    <defName>TM_MaharalGolemLS1</defName>
+    <label>maharal golem</label>
+	<voxPitch>.4</voxPitch>
+	<bodySizeFactor>1.1</bodySizeFactor>
+	<healthScaleFactor>1.2</healthScaleFactor>
+	<marketValueFactor>1.2</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.2</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>TM_MaharalGolemLS2</defName>
+    <label>maharal golem</label>
+	<voxPitch>.35</voxPitch>
+	<bodySizeFactor>1.2</bodySizeFactor>
+	<healthScaleFactor>1.4</healthScaleFactor>
+	<marketValueFactor>1.35</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.3</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>TM_MaharalGolemLS3</defName>
+    <label>maharal golem</label>
+	<voxPitch>.3</voxPitch>
+	<bodySizeFactor>1.3</bodySizeFactor>
+	<healthScaleFactor>1.5</healthScaleFactor>
+	<marketValueFactor>1.5</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.4</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  
+  
+  <!-- STRAW GOLEM -->
+  <ThingDef ParentName="TM_Golem_Base">
+    <defName>TM_StrawGolem</defName>
+    <label>straw golem</label>
+    <description>A golem crafted from a mixture of basic material formed in the shape of a human.</description>
+	<soundImpactDefault>BulletImpact_Flesh</soundImpactDefault>
+    <statBases>
+      <MarketValue>400</MarketValue>
+      <MoveSpeed>3.6</MoveSpeed>
+      <ComfyTemperatureMin>-200</ComfyTemperatureMin>
+      <ComfyTemperatureMax>500</ComfyTemperatureMax>
+	  <ArmorRating_Blunt>0.22</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.13</ArmorRating_Sharp>
+	  <ArmorRating_Heat>0.04</ArmorRating_Heat>
+      <PsychicSensitivity>1</PsychicSensitivity>
+	  <MeatAmount>0</MeatAmount>
+    </statBases>
+    <tools>      
+      <li>
+        <label>left fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>5.0</power>
+        <cooldownTime>1.7</cooldownTime>
+        <linkedBodyPartsGroup>Straw_Arms</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+	  <li>
+        <label>right fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>5.0</power>
+        <cooldownTime>1.7</cooldownTime>
+        <linkedBodyPartsGroup>Straw_Arms</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+    </tools>
+    <race>
+      <thinkTreeMain>TM_GolemMain</thinkTreeMain>
+      <thinkTreeConstant>TM_GolemConstant</thinkTreeConstant>      
+      <makesFootprints>true</makesFootprints>
+      <body>TM_StrawGolem</body>
+      <baseBodySize>1</baseBodySize>
+      <baseHealthScale>1</baseHealthScale>
+      <foodType>None</foodType>
+	  <bloodDef>Filth_RubbleRock</bloodDef>
+	  <intelligence>ToolUser</intelligence>
+	  <fleshType>TM_Golem_Flesh</fleshType>
+	  <useMeatFrom>Human</useMeatFrom>
+	  <trainability>None</trainability>
+      <lifeStageAges>
+        <li>
+          <def>TM_StrawGolemLS</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Spelopede_Pain</soundWounded>
+          <soundDeath>Pawn_Spelopede_Death</soundDeath>
+          <soundCall>Pawn_Spelopede_Call</soundCall>
+          <soundAngry>Pawn_Spelopede_Angry</soundAngry>
+        </li>
+		<li>
+          <def>TM_StrawGolemLS1</def>
+		  <minAge>0</minAge>
+          <soundWounded>Pawn_Spelopede_Pain</soundWounded>
+          <soundDeath>Pawn_Spelopede_Death</soundDeath>
+          <soundCall>Pawn_Spelopede_Call</soundCall>
+          <soundAngry>Pawn_Spelopede_Angry</soundAngry>
+        </li>
+		<li>
+		  <minAge>0</minAge>
+          <def>TM_StrawGolemLS2</def>
+          <soundWounded>Pawn_Spelopede_Pain</soundWounded>
+          <soundDeath>Pawn_Spelopede_Death</soundDeath>
+          <soundCall>Pawn_Spelopede_Call</soundCall>
+          <soundAngry>Pawn_Spelopede_Angry</soundAngry>
+        </li>
+		<li>
+		  <minAge>0</minAge>
+          <def>TM_StrawGolemLS3</def>
+          <soundWounded>Pawn_Spelopede_Pain</soundWounded>
+          <soundDeath>Pawn_Spelopede_Death</soundDeath>
+          <soundCall>Pawn_Spelopede_Call</soundCall>
+          <soundAngry>Pawn_Spelopede_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+      <soundMeleeDodge>Pawn_MeleeDodge</soundMeleeDodge>
+      <specialShadowData>
+        <volume>(0.3, 0.6, 0.3)</volume>
+        <offset>(0,0,-0.3)</offset>
+      </specialShadowData>
+    </race>
+	<comps>
+	  <li Class="TorannMagic.Golems.CompProperties_Golem">
+	  </li>
+    </comps>
+	<ingredient>
+      <mergeCompatibilityTags>
+        <li>HumanMeat</li>
+      </mergeCompatibilityTags>
+    </ingredient>
+	<butcherProducts>
+	  <Hay>40</Hay>
+	  <Leather_Light>10</Leather_Light>
+    </butcherProducts>
+  </ThingDef>
+  
+  <PawnKindDef Name="TM_StrawGolemKind" ParentName="TM_GolemKind_Base">
+  	<defName>TM_StrawGolemK</defName>
+    <race>TM_StrawGolem</race>
+    <label>straw-golem</label>
+    <combatPower>50</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Golems/Straw/Straw</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.25</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Straw/Straw</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.25</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Straw/Straw</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.25</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Straw/Straw</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.25</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+  
+  <LifeStageDef>
+    <defName>TM_StrawGolemLS</defName>
+    <label>straw golem</label>
+	<voxPitch>1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1</healthScaleFactor>
+	<marketValueFactor>1</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.0</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  
+  <LifeStageDef>
+    <defName>TM_StrawGolemLS1</defName>
+    <label>straw golem</label>
+	<voxPitch>.9</voxPitch>
+	<bodySizeFactor>1.1</bodySizeFactor>
+	<healthScaleFactor>1.2</healthScaleFactor>
+	<marketValueFactor>1.2</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.2</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>TM_StrawGolemLS2</defName>
+    <label>straw golem</label>
+	<voxPitch>.8</voxPitch>
+	<bodySizeFactor>1.2</bodySizeFactor>
+	<healthScaleFactor>1.4</healthScaleFactor>
+	<marketValueFactor>1.35</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.3</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>TM_StrawGolemLS3</defName>
+    <label>straw golem</label>
+	<voxPitch>.7</voxPitch>
+	<bodySizeFactor>1.3</bodySizeFactor>
+	<healthScaleFactor>1.5</healthScaleFactor>
+	<marketValueFactor>1.5</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.4</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  
+  <!-- WOOD GOLEM -->
+  <ThingDef ParentName="TM_Golem_Base">
+    <defName>TM_WoodGolem</defName>
+    <label>wood golem</label>
+    <description>Magical energy infused into a construct of wood and stone.</description>
+	<soundImpactDefault>BulletImpact_Flesh</soundImpactDefault>
+    <statBases>
+      <MarketValue>400</MarketValue>
+      <MoveSpeed>2.6</MoveSpeed>
+      <ComfyTemperatureMin>-200</ComfyTemperatureMin>
+      <ComfyTemperatureMax>200</ComfyTemperatureMax>
+	  <ArmorRating_Blunt>0.45</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.4</ArmorRating_Sharp>
+	  <ArmorRating_Heat>0.12</ArmorRating_Heat>
+      <PsychicSensitivity>1</PsychicSensitivity>
+	  <MeatAmount>0</MeatAmount>
+    </statBases>
+    <tools>      
+      <li>
+        <label>spirit force</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>7.0</power>
+        <cooldownTime>1.3</cooldownTime>
+        <linkedBodyPartsGroup>TM_Wood_Manipulator</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+	  <li>
+        <label>frame smash</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>21.0</power>
+        <cooldownTime>3.5</cooldownTime>
+        <linkedBodyPartsGroup>TM_Wood_Base</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+    </tools>
+    <race>
+      <thinkTreeMain>TM_GolemMain</thinkTreeMain>
+      <thinkTreeConstant>TM_GolemConstant</thinkTreeConstant>      
+      <makesFootprints>true</makesFootprints>
+      <body>TM_WoodGolem</body>
+      <baseBodySize>1</baseBodySize>
+      <baseHealthScale>1</baseHealthScale>
+      <foodType>None</foodType>
+	  <bloodDef>Filth_RubbleRock</bloodDef>
+	  <intelligence>ToolUser</intelligence>
+	  <fleshType>TM_Golem_Flesh</fleshType>
+	  <useMeatFrom>Human</useMeatFrom>
+	  <trainability>None</trainability>
+      <lifeStageAges>
+        <li>
+          <def>TM_WoodGolemLS</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+        </li>
+		<li>
+          <def>TM_WoodGolemLS1</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+        </li>
+		<li>
+          <def>TM_WoodGolemLS2</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+        </li>
+		<li>
+          <def>TM_WoodGolemLS3</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_MechanoidSlash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_MechanoidSlash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_MechanoidSlash_Miss</soundMeleeMiss>
+      <soundMeleeDodge>Pawn_MeleeDodge</soundMeleeDodge>
+      <specialShadowData>
+        <volume>(0.5, 0.6, 0.15)</volume>
+        <offset>(0,0,-0.15)</offset>
+      </specialShadowData>
+    </race>
+	<comps>
+	  <li Class="TorannMagic.Golems.CompProperties_Golem">
+	  </li>
+    </comps>
+	<ingredient>
+      <mergeCompatibilityTags>
+        <li>HumanMeat</li>
+      </mergeCompatibilityTags>
+    </ingredient>
+	<butcherProducts>
+	  <WoodLog>50</WoodLog>
+    </butcherProducts>
+  </ThingDef>
+  
+  <PawnKindDef Name="TM_WoodGolemKind" ParentName="TM_GolemKind_Base">
+  	<defName>TM_WoodGolemK</defName>
+    <race>TM_WoodGolem</race>
+    <label>wood-golem</label>
+    <combatPower>100</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Golems/Wood/Wood</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1</drawSize>
+          <shadowData>
+            <volume>(0.5, 0.3, 0.1)</volume>
+			<offset>(-.1,0,-0.15)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Wood/Wood</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1</drawSize>
+          <shadowData>
+            <volume>(0.5, 0.3, 0.1)</volume>
+			<offset>(-.1,0,-0.15)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Wood/Wood</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1</drawSize>
+          <shadowData>
+            <volume>(0.5, 0.3, 0.1)</volume>
+			<offset>(-.1,0,-0.15)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Wood/Wood</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1</drawSize>
+          <shadowData>
+            <volume>(0.5, 0.3, 0.1)</volume>
+			<offset>(-.1,0,-0.15)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+  
+  <LifeStageDef>
+    <defName>TM_WoodGolemLS</defName>
+    <label>wood golem</label>
+	<voxPitch>1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1</healthScaleFactor>
+	<marketValueFactor>1</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.0</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  
+  <LifeStageDef>
+    <defName>TM_WoodGolemLS1</defName>
+    <label>wood golem</label>
+	<voxPitch>.9</voxPitch>
+	<bodySizeFactor>1.1</bodySizeFactor>
+	<healthScaleFactor>1.2</healthScaleFactor>
+	<marketValueFactor>1.2</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.2</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>TM_WoodGolemLS2</defName>
+    <label>wood golem</label>
+	<voxPitch>.8</voxPitch>
+	<bodySizeFactor>1.2</bodySizeFactor>
+	<healthScaleFactor>1.4</healthScaleFactor>
+	<marketValueFactor>1.35</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.3</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>TM_WoodGolemLS3</defName>
+    <label>wood golem</label>
+	<voxPitch>.7</voxPitch>
+	<bodySizeFactor>1.3</bodySizeFactor>
+	<healthScaleFactor>1.6</healthScaleFactor>
+	<marketValueFactor>1.5</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.4</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  
+  <!-- SILK GOLEM -->
+  <ThingDef ParentName="TM_Golem_Base">
+    <defName>TM_SilkGolem</defName>
+    <label>silk golem</label>
+    <description>An mass of cloth and thread constructed into a slug-like shape, the only distinct feature is its friendly, expressive face.</description>
+	<soundImpactDefault>BulletImpact_Flesh</soundImpactDefault>
+    <statBases>
+      <MarketValue>600</MarketValue>
+      <MoveSpeed>3.6</MoveSpeed>
+      <ComfyTemperatureMin>-200</ComfyTemperatureMin>
+      <ComfyTemperatureMax>200</ComfyTemperatureMax>
+	  <ArmorRating_Blunt>0.55</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.05</ArmorRating_Sharp>
+	  <ArmorRating_Heat>0.10</ArmorRating_Heat>
+      <PsychicSensitivity>1</PsychicSensitivity>
+	  <MeatAmount>0</MeatAmount>
+    </statBases>
+    <tools>      
+	  <li>
+        <label>bash</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>8.0</power>
+        <cooldownTime>2.4</cooldownTime>
+        <linkedBodyPartsGroup>TM_Silk_Arms</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+    </tools>
+    <race>
+      <thinkTreeMain>TM_GolemMain</thinkTreeMain>
+      <thinkTreeConstant>TM_GolemConstant</thinkTreeConstant>      
+      <makesFootprints>true</makesFootprints>
+      <body>TM_SilkGolem</body>
+      <baseBodySize>1</baseBodySize>
+      <baseHealthScale>1</baseHealthScale>
+      <foodType>None</foodType>
+	  <bloodDef>Filth_RubbleRock</bloodDef>
+	  <intelligence>ToolUser</intelligence>
+	  <fleshType>TM_Golem_Flesh</fleshType>
+	  <useMeatFrom>Human</useMeatFrom>
+	  <trainability>None</trainability>
+      <lifeStageAges>
+        <li>
+          <def>TM_SilkGolemLS</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Rodent_Wounded</soundWounded>
+          <soundDeath>Pawn_Rodent_Death</soundDeath>
+          <soundCall>Pawn_Rodent_Call</soundCall>
+          <soundAngry>Pawn_Rodent_Angry</soundAngry>
+        </li>
+		<li>
+          <def>TM_SilkGolemLS1</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Rodent_Wounded</soundWounded>
+          <soundDeath>Pawn_Rodent_Death</soundDeath>
+          <soundCall>Pawn_Rodent_Call</soundCall>
+          <soundAngry>Pawn_Rodent_Angry</soundAngry>
+        </li>
+		<li>
+          <def>TM_SilkGolemLS2</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Rodent_Wounded</soundWounded>
+          <soundDeath>Pawn_Rodent_Death</soundDeath>
+          <soundCall>Pawn_Rodent_Call</soundCall>
+          <soundAngry>Pawn_Rodent_Angry</soundAngry>
+        </li>
+		<li>
+          <def>TM_SilkGolemLS3</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Rodent_Wounded</soundWounded>
+          <soundDeath>Pawn_Rodent_Death</soundDeath>
+          <soundCall>Pawn_Rodent_Call</soundCall>
+          <soundAngry>Pawn_Rodent_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+      <specialShadowData>
+        <volume>(0.3, 0.6, 0.3)</volume>
+        <offset>(0,0,-0.15)</offset>
+      </specialShadowData>
+    </race>
+	<comps>
+	  <li Class="TorannMagic.Golems.CompProperties_Golem">
+	  </li>
+    </comps>
+	<ingredient>
+      <mergeCompatibilityTags>
+        <li>HumanMeat</li>
+      </mergeCompatibilityTags>
+    </ingredient>
+	<butcherProducts>
+	  <Cloth>50</Cloth>
+    </butcherProducts>
+  </ThingDef>
+  
+  <PawnKindDef Name="TM_SilkGolemKind" ParentName="TM_GolemKind_Base">
+  	<defName>TM_SilkGolemK</defName>
+    <race>TM_SilkGolem</race>
+    <label>silk-golem</label>
+    <combatPower>50</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Golems/Silk/Silk</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.5</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Silk/Silk</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.5</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Silk/Silk</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.5</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+	  <li>
+        <bodyGraphicData>
+          <texPath>Golems/Silk/Silk</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.5</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.6, 0.3)</volume>
+			<offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+  
+  <LifeStageDef>
+    <defName>TM_SilkGolemLS</defName>
+    <label>silk golem</label>
+	<voxPitch>1</voxPitch>
+	<bodySizeFactor>1.0</bodySizeFactor>
+	<healthScaleFactor>1</healthScaleFactor>
+	<marketValueFactor>1</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.0</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  
+  <LifeStageDef>
+    <defName>TM_SilkGolemLS1</defName>
+    <label>silk golem</label>
+	<voxPitch>.9</voxPitch>
+	<bodySizeFactor>1.1</bodySizeFactor>
+	<healthScaleFactor>1.2</healthScaleFactor>
+	<marketValueFactor>1.2</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.2</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>TM_SilkGolemLS2</defName>
+    <label>silk golem</label>
+	<voxPitch>.8</voxPitch>
+	<bodySizeFactor>1.2</bodySizeFactor>
+	<healthScaleFactor>1.4</healthScaleFactor>
+	<marketValueFactor>1.35</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.3</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>TM_SilkGolemLS3</defName>
+    <label>silk golem</label>
+	<voxPitch>.7</voxPitch>
+	<bodySizeFactor>1.3</bodySizeFactor>
+	<healthScaleFactor>1.6</healthScaleFactor>
+	<marketValueFactor>1.5</marketValueFactor>
+    <statFactors>
+      <MoveSpeed>1.4</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  
+</Defs>

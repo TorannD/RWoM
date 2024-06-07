@@ -60,7 +60,7 @@ namespace TorannMagic
                     {
                         try
                         {
-                            hitPawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Berserk, null, true, false, caster);
+                            hitPawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Berserk, null, true, false, false, caster);
                         }
                         catch
                         {

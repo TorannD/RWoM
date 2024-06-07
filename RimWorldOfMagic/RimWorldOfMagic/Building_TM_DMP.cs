@@ -151,7 +151,7 @@ namespace TorannMagic
 
             if (Find.TickManager.TicksGame % 240 == 0 && this.IsOn)
             {
-                List<Pawn> mapPawns = this.Map.mapPawns.AllPawnsSpawned;
+                List<Pawn> mapPawns = this.Map.mapPawns.AllPawnsSpawned.ToList();
                 Pawn pawn = null;
                 for(int i = 0; i < mapPawns.Count; i++)
                 {
@@ -194,9 +194,11 @@ namespace TorannMagic
             TM_MoteMaker.ThrowManaPuff(comp.Pawn.DrawPos, comp.Pawn.Map, 1f);
         }
 
-        public override void Draw()
+
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
-            base.Draw();
+            base.DrawAt(drawLoc, flip);
+
             Vector3 vector = base.DrawPos;
             vector.y = Altitudes.AltitudeFor(AltitudeLayer.MoteOverhead);
             Vector3 s = new Vector3(matMagnitude, matMagnitude, matMagnitude);

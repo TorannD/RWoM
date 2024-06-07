@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--================== Mecha Golem upgrade recipes ==================-->
+  
+  <RecipeDef ParentName="MechaGolem_Recipe_Base">
+    <defName>TM_Mecha-Golem_RepairComponent</defName>
+    <label>repair component</label>
+    <description>Replaces missing golem parts that do not require a specific upgrade.</description>
+    <jobString>crafting golem part</jobString>
+<!-- 	<researchPrerequisite>TM_MechaGolemEquipmentRD</researchPrerequisite>
+	<skillRequirements>
+	  <Intellectual>6</Intellectual>
+    </skillRequirements> -->
+	<workAmount>2000</workAmount>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>150</count>
+      </li> 
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="MechaGolem_Recipe_Base">
+    <defName>TM_Mecha-Golem_EnergyCell</defName>
+    <label>power cell</label>
+    <description>Creates a power cell and installs it into a mecha-golem.</description>
+    <jobString>crafting power cell</jobString>
+<!-- 	<researchPrerequisite>TechPlasteelCrafting</researchPrerequisite>
+	<skillRequirements>
+	  <Intellectual>6</Intellectual>
+    </skillRequirements> -->
+	<workAmount>2000</workAmount>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Gold</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li> 
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="MechaGolem_Recipe_Base">
+    <defName>TM_Mecha-Golem_EnergyConverter</defName>
+    <label>energy converter</label>
+    <description>Increases the efficiency of energy absorbed and used by the golem by 10%.</description>
+    <jobString>crafting power cycler</jobString>
+<!-- 	<researchPrerequisite>TechPlasteelCrafting</researchPrerequisite>
+	<skillRequirements>
+	  <Intellectual>6</Intellectual>
+    </skillRequirements> -->
+	<workAmount>2000</workAmount>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Gold</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li> 
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="MechaGolem_Recipe_Base">
+    <defName>TM_Mecha-Golem_EnergyCharge</defName>
+    <label>electrical neuro-core</label>
+    <description>Increases the energy charge rate of the golem by 10 per hour.</description>
+    <jobString>upgrading electrical neurology</jobString>
+<!-- 	<researchPrerequisite>TechPlasteelCrafting</researchPrerequisite>
+	<skillRequirements>
+	  <Intellectual>6</Intellectual>
+    </skillRequirements> -->
+	<workAmount>2000</workAmount>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Gold</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li> 
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+
+  <RecipeDef ParentName="MechaGolem_Recipe_Base">
+    <defName>TM_Mecha-Golem_Axe</defName>
+    <label>mecha-axe</label>
+    <description>Forges an axe and mounts it to the left arm attachment.</description>
+    <jobString>crafting golem part</jobString>
+ 	<researchPrerequisite>TM_MechaGolemEquipmentRD</researchPrerequisite>
+<!--	<skillRequirements>
+	  <Intellectual>6</Intellectual>
+    </skillRequirements> -->
+	<workAmount>4500</workAmount>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>150</count>
+      </li> 
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>WoodLog</li>
+          </thingDefs>
+        </filter>
+        <count>40</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+  
+    <RecipeDef ParentName="MechaGolem_Recipe_Base">
+    <defName>TM_Mecha-Golem_Sword</defName>
+    <label>mecha-sword</label>
+    <description>Forges a sword and mounts it to the left arm attachment.</description>
+    <jobString>crafting golem part</jobString>
+ 	<researchPrerequisite>TM_MechaGolemEquipmentRD</researchPrerequisite>
+<!--	<skillRequirements>
+	  <Intellectual>6</Intellectual>
+    </skillRequirements> -->
+	<workAmount>6000</workAmount>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>225</count>
+      </li> 
+    </ingredients>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="MechaGolem_Recipe_Base">
+    <defName>TM_Mecha-Golem_Hammer</defName>
+    <label>mecha-hammer</label>
+    <description>Forges a hammer and mounts it to the right arm attachment.</description>
+    <jobString>crafting golem part</jobString>
+ 	<researchPrerequisite>TM_MechaGolemEquipmentRD</researchPrerequisite>
+<!--	<skillRequirements>
+	  <Intellectual>6</Intellectual>
+    </skillRequirements> -->
+	<workAmount>5000</workAmount>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>180</count>
+      </li> 
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>WoodLog</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="MechaGolem_Recipe_Base">
+    <defName>TM_Mecha-Golem_GatlingCannon</defName>
+    <label>gatling cannon</label>
+    <description>Attaches a minigun onto the right shoulder mount of a mecha-golem.</description>
+    <jobString>crafting golem part</jobString>
+ 	<researchPrerequisite>TM_MechaGolemEquipmentRD</researchPrerequisite>
+<!--	<skillRequirements>
+	  <Intellectual>6</Intellectual>
+    </skillRequirements> -->
+	<workAmount>2500</workAmount>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li> 
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Gun_Minigun</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="MechaGolem_Recipe_Base">
+    <defName>TM_Mecha-Golem_MiningLaser</defName>
+    <label>mining laser</label>
+    <description>Creates a mining laser to attach to the left shoulder mount.</description>
+    <jobString>crafting golem part</jobString>
+ 	<researchPrerequisite>TM_MechaGolemEquipmentRD</researchPrerequisite>
+<!--	<skillRequirements>
+	  <Intellectual>6</Intellectual>
+    </skillRequirements> -->
+	<workAmount>8000</workAmount>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>120</count>
+      </li> 
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>6</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>RawMagicyte</li>
+          </thingDefs>
+        </filter>
+        <count>150</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="MechaGolem_Recipe_Base">
+    <defName>TM_Mecha-Golem_Extinguisher</defName>
+    <label>extinguisher</label>
+    <description>Adds built-in steam exhaust vents that can be used to quickly disperse fires on and around the golem.</description>
+    <jobString>crafting golem part</jobString>
+ 	<researchPrerequisite>TM_MechaGolemEquipmentRD</researchPrerequisite>
+<!--	<skillRequirements>
+	  <Intellectual>6</Intellectual>
+    </skillRequirements> -->
+	<workAmount>200</workAmount>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Silver</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li> 
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="MechaGolem_Recipe_Base">
+    <defName>TM_Mecha-Golem_BallisticPlate</defName>
+    <label>ballistic plate</label>
+    <description>Upgrades the bodyarmor of the golem with ballistic plate; incurs a movement penalty.</description>
+    <jobString>crafting golem part</jobString>
+ 	<researchPrerequisite>TM_MechaGolemEquipmentRD</researchPrerequisite>
+<!--	<skillRequirements>
+	  <Intellectual>6</Intellectual>
+    </skillRequirements> -->
+	<workAmount>12000</workAmount>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>225</count>
+      </li> 
+    </ingredients>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="MechaGolem_Recipe_Base">
+    <defName>TM_Mecha-Golem_FlameCore</defName>
+    <label>flame core processor</label>
+    <description>The flame core processor provides the following benefits per upgrade level [1/2/3]:
+Movement:	+[0.5c/0.9c/1.2c]
+Processing: 	+[10%/20%/30%]
+Ability Damage:	+[10%/20%/30%]
+Energy Cost:	+[10%/20%/30%]
+
+In addition, the flame core allows the golem the ability to attract and burn nearby filth, gaining energy in the process.</description>
+    <jobString>crafting golem upgrade</jobString>
+ 	<researchPrerequisite>TM_MechaGolemEquipmentRD</researchPrerequisite>
+<!--	<skillRequirements>
+	  <Intellectual>6</Intellectual>
+    </skillRequirements> -->
+	<workAmount>10000</workAmount>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Gold</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li> 
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="MechaGolem_Recipe_Base">
+    <defName>TM_Mecha-Golem_WaterCore</defName>
+    <label>water core processor</label>
+    <description>The water core processor provides the following benefits per upgrade level [1/2/3]:
+Armor:		+[5%/10%/15%]
+Ability Cooldown:	-[10%/20%/30%]
+Healing Bonus:	+[100%/200%/300%]
+Energy Cost:	-[15%/30%/45%]
+
+In addition, the water core allows the golem the ability to quickly regenerate health while active and regenerate health to its dormant frame.</description>
+    <jobString>crafting golem upgrade</jobString>
+ 	<researchPrerequisite>TM_MechaGolemEquipmentRD</researchPrerequisite>
+<!--	<skillRequirements>
+	  <Intellectual>6</Intellectual>
+    </skillRequirements> -->
+	<workAmount>10000</workAmount>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Gold</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li> 
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="MechaGolem_Recipe_Base">
+    <defName>TM_Mecha-Golem_EarthCore</defName>
+    <label>earth core processor</label>
+    <description>The earth core processor provides the following benefits per upgrade level [1/2/3]:
+Armor:		+[10%/18%/25%]
+Ability Cooldown:	+[5%/10%/15%]
+Healing Bonus:	+[60%/120%/180%]
+Energy Cost:	+[5%/10%/15%]
+Processing: 	+[15%/30%/45%]
+
+In addition, the earth core allows the golem the ability to shield itself from damage.</description>
+    <jobString>crafting golem upgrade</jobString>
+ 	<researchPrerequisite>TM_MechaGolemEquipmentRD</researchPrerequisite>
+<!--	<skillRequirements>
+	  <Intellectual>6</Intellectual>
+    </skillRequirements> -->
+	<workAmount>10000</workAmount>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Gold</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li> 
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="MechaGolem_Recipe_Base">
+    <defName>TM_Mecha-Golem_LightningCore</defName>
+    <label>lightning core processor</label>
+    <description>The lightning core processor provides the following benefits per upgrade level [1/2/3]:
+Movement:	+[1.2c/1.8c/2.2c]
+Ability Cooldown:	-[15%/30%/45%]
+Energy Cost:	+[10%/20%/30%]
+Processing: 	-[5%/10%/15%]
+
+In addition, the lightning core allows the golem the ability to retaliate against melee attackers with a jolt of energy, stunning them briefly.</description>
+    <jobString>crafting golem upgrade</jobString>
+ 	<researchPrerequisite>TM_MechaGolemEquipmentRD</researchPrerequisite>
+<!--	<skillRequirements>
+	  <Intellectual>6</Intellectual>
+    </skillRequirements> -->
+	<workAmount>10000</workAmount>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Gold</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li> 
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+  
+   <RecipeDef ParentName="MechaGolem_Recipe_Base">
+    <defName>TM_Mecha-Golem_FlameShard</defName>
+    <label>Flame shard base</label>
+    <description>The flame shard automaton base provides the following benefits per upgrade level [1/2/3]:
+Movement:	+[15%/30%/40%]
+Health:	+[15%/30%/40%]</description>
+    <jobString>crafting golem upgrade</jobString>
+<!-- 	<researchPrerequisite>TechPlasteelCrafting</researchPrerequisite>
+	<skillRequirements>
+	  <Intellectual>6</Intellectual>
+    </skillRequirements> -->
+	<workAmount>12000</workAmount>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>125</count>
+      </li> 
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>RawMagicyte</li>
+          </thingDefs>
+        </filter>
+        <count>250</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Chemfuel</li>
+          </thingDefs>
+        </filter>
+        <count>100</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="MechaGolem_Recipe_Base">
+    <defName>TM_Mecha-Golem_WaterShard</defName>
+    <label>Water shard base</label>
+    <description>The water shard automaton base provides the following benefits per upgrade level [1/2/3]:
+Movement:	+[10%/15%/20%]
+Health:	+[30%/50%/70%]</description>
+    <jobString>crafting golem upgrade</jobString>
+<!-- 	<researchPrerequisite>TechPlasteelCrafting</researchPrerequisite>
+	<skillRequirements>
+	  <Intellectual>6</Intellectual>
+    </skillRequirements> -->
+	<workAmount>12000</workAmount>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>125</count>
+      </li> 
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>RawMagicyte</li>
+          </thingDefs>
+        </filter>
+        <count>250</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Silver</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="MechaGolem_Recipe_Base">
+    <defName>TM_Mecha-Golem_EarthShard</defName>
+    <label>Earth shard base</label>
+    <description>The earth shard automaton base provides the following benefits per upgrade level [1/2/3]:
+Health:	+[40%/80%/120%]</description>
+    <jobString>crafting golem upgrade</jobString>
+<!-- 	<researchPrerequisite>TechPlasteelCrafting</researchPrerequisite>
+	<skillRequirements>
+	  <Intellectual>6</Intellectual>
+    </skillRequirements> -->
+	<workAmount>12000</workAmount>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>200</count>
+      </li> 
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>RawMagicyte</li>
+          </thingDefs>
+        </filter>
+        <count>250</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>WoodLog</li>
+          </thingDefs>
+        </filter>
+        <count>250</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="MechaGolem_Recipe_Base">
+    <defName>TM_Mecha-Golem_LightningShard</defName>
+    <label>Lightning shard base</label>
+    <description>The lightning shard automaton base provides the following benefits per upgrade level [1/2/3]:
+Movement:	+[25%/50%/75%]</description>
+    <jobString>crafting golem upgrade</jobString>
+<!-- 	<researchPrerequisite>TechPlasteelCrafting</researchPrerequisite>
+	<skillRequirements>
+	  <Intellectual>6</Intellectual>
+    </skillRequirements> -->
+	<workAmount>12000</workAmount>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Silver</li>
+          </thingDefs>
+        </filter>
+        <count>25</count>
+      </li> 
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>RawMagicyte</li>
+          </thingDefs>
+        </filter>
+        <count>250</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Gold</li>
+          </thingDefs>
+        </filter>
+        <count>15</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+  
+</Defs>

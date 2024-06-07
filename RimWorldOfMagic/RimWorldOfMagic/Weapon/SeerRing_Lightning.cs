@@ -29,7 +29,7 @@ namespace TorannMagic.Weapon
                 bool flag2 = this.canStartFire && Rand.Range(0f, 1f) > this.startFireChance;
                 if (flag2)
                 {
-                    hitThing.TryAttachFire(0.05f);
+                    hitThing.TryAttachFire(0.05f, null);
                 }
                 Pawn hitTarget;
                 bool flag3 = (hitTarget = (hitThing as Pawn)) != null;

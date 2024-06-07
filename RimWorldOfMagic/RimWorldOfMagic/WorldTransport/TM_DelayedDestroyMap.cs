@@ -20,7 +20,7 @@ namespace TorannMagic.WorldTransport
             if(age >= delayTicks && parent.Map != null)
             {
                 this.parent.AllComps.Remove(this);
-                Current.Game.DeinitAndRemoveMap(parent.Map);                
+                Current.Game.DeinitAndRemoveMap(parent.Map, false);                
             }
         }
 

@@ -57,10 +57,10 @@ namespace TorannMagic
                 this.oldPosition = caster.Position;
                 MightPowerSkill pwr = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Possess.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Possess_pwr");
                 MightPowerSkill ver = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Possess.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Possess_ver");
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+                
                 pwrVal = pwr.level;
                 verVal = ver.level;
-                if (settingsRef.AIHardMode && !caster.IsColonist)
+                if (ModOptions.Settings.Instance.AIHardMode && !caster.IsColonist)
                 {
                     pwrVal = 3;
                     verVal = 3;
@@ -292,7 +292,7 @@ namespace TorannMagic
                             Find.LetterStack.ReceiveLetter("LetterLabelPossessedCaughtStealing".Translate(), "TM_PossessedCaughtStealing".Translate(
                                 hitPawn.Faction,
                                 hitPawn.LabelShort
-                                ), LetterDefOf.NegativeEvent, null);
+                                ), LetterDefOf.NegativeEvent, null, null);
                         }
                         if (hitPawn.IsColonist)
                         {

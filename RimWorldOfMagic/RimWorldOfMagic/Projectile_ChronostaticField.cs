@@ -62,7 +62,7 @@ namespace TorannMagic
                 CompAbilityUserMagic comp = casterPawn.GetCompAbilityUserMagic();
                 MagicPowerSkill pwr = comp.MagicData.MagicPowerSkill_ChronostaticField.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_ChronostaticField_pwr");
                 MagicPowerSkill ver = comp.MagicData.MagicPowerSkill_ChronostaticField.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_ChronostaticField_ver");
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+                
                 pwrVal = pwr.level;
                 verVal = ver.level;
                 if (this.casterPawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
@@ -73,7 +73,7 @@ namespace TorannMagic
                     verVal = mver.level;
                 }
                 this.arcaneDmg = comp.arcaneDmg;
-                if (settingsRef.AIHardMode && !casterPawn.IsColonist)
+                if (ModOptions.Settings.Instance.AIHardMode && !casterPawn.IsColonist)
                 {
                     pwrVal = 3;
                     verVal = 3;

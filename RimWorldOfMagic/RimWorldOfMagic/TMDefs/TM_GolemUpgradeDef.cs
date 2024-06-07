@@ -22,6 +22,7 @@ namespace TorannMagic.TMDefs
         public int abilityUsedTick = 0;
         public BodyPartDef occupiedPart = null;
         public List<LifeStageDef> lifeStages = new List<LifeStageDef>();
+        public int lifeStageIndexOffset = 0;
         public bool abilityToggle = false;
 
         public string graphicsPath;

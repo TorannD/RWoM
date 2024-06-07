@@ -21,17 +21,8 @@ namespace TorannMagic
             {
                 if(pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_HediffHeavyBlow))
                 {
-                    using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.hediffs.GetEnumerator())
-                    {
-                        while (enumerator.MoveNext())
-                        {
-                            Hediff rec = enumerator.Current;
-                            if (rec.def == TorannMagicDefOf.TM_HediffHeavyBlow)
-                            {
-                                pawn.health.RemoveHediff(rec);
-                            }
-                        }
-                    }
+                    Hediff hd = pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_HediffHeavyBlow);
+                    pawn.health.RemoveHediff(hd);
                 }
                 else
                 {

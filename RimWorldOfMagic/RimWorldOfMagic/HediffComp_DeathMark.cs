@@ -118,7 +118,7 @@ namespace TorannMagic
                         undeadPawn.ClearMind();
                         undeadPawn.mindState.enemyTarget = instigator.TargetCurrentlyAimingAt.Thing;
                         undeadPawn.HostileTo(Faction.OfPlayer);
-                        undeadPawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.ManhunterPermanent, null, true, false, null);
+                        undeadPawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.ManhunterPermanent);
                     }
                 }
                 if (undeadPawn.kindDef.RaceProps.Animal)

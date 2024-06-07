@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <HediffDef>
+    <defName>TM_EmpathHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(.8,0,1)</defaultLabelColor>
+    <label>empath</label>
+	<description>Represents the skill of an empath to control their innate abilities.</description>
+    <maxSeverity>1.0</maxSeverity>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<isBad>false</isBad>
+	<initialSeverity>.1</initialSeverity>
+	<comps>
+	  <li>
+        <compClass>TorannMagic.HediffComp_Empath</compClass>
+      </li>  
+    </comps>
+    <stages>
+	  <li>
+        <label>Uncontrolled</label>
+        <minSeverity>0</minSeverity>
+		<becomeVisible>true</becomeVisible>
+      </li>
+	  <li>
+        <label>Untrained</label>
+        <minSeverity>.2</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>
+		  <MentalBreakThreshold>-0.05</MentalBreakThreshold>
+	    </statOffsets>
+      </li>    
+	  <li>
+        <label>Familiar</label>
+        <minSeverity>.4</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>
+		  <MentalBreakThreshold>-0.09</MentalBreakThreshold>
+	    </statOffsets>
+      </li> 
+	  <li>
+        <label>Trained</label>
+        <minSeverity>.6</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>
+		  <MentalBreakThreshold>-0.12</MentalBreakThreshold>
+	    </statOffsets>
+      </li> 
+	  <li>
+        <label>Skilled</label>
+        <minSeverity>.75</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>
+		  <MentalBreakThreshold>-0.14</MentalBreakThreshold>
+	    </statOffsets>
+      </li> 
+	  <li>
+        <label>Mastery</label>
+        <minSeverity>.9</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>
+		  <MentalBreakThreshold>-0.15</MentalBreakThreshold>
+	    </statOffsets>
+      </li> 	  
+    </stages>
+  </HediffDef>
+
+  <ThoughtDef ParentName="TM_MemoryStackable">
+    <defName>TM_PositiveEmpathyTD</defName>
+    <durationDays>.5</durationDays>
+    <stages>
+      <li>
+        <label>positive vibes</label>
+        <!-- generic benefit -->
+        <description>Emotions gained through empathy.</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+	  </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="TM_MemoryStackable">
+    <defName>TM_NegativeEmpathyTD</defName>
+    <durationDays>.5</durationDays>
+    <stages>
+      <li>
+        <label>negative vibes</label>
+        <!-- generic benefit -->
+        <description>Emotions gained through empathy.</description>
+        <baseMoodEffect>-1</baseMoodEffect>
+      </li>
+	  </stages>
+  </ThoughtDef>
+  
+  <HediffDef>
+    <defName>TM_MindKillerHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(.8,0,1)</defaultLabelColor>
+    <label>emotion shock</label>
+	<description>This pawn has been overwhelmed with a flood of emotions and is unable to think or act with clear intention; this can cause a pawn to drop their weapon or flee in fear.</description>
+    <maxSeverity>1.0</maxSeverity>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<isBad>true</isBad>
+	<initialSeverity>.2</initialSeverity>
+	<comps>
+	  <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-25</severityPerDay>
+      </li> 
+    </comps>
+    <stages>
+	<li>
+        <label>recovering</label>
+        <minSeverity>0</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<capMods>
+			<li>
+			  <capacity>Manipulation</capacity>
+			  <offset>-0.30</offset>
+			</li>
+		</capMods>
+      </li>
+	  <li>
+        <label>I</label>
+        <minSeverity>.2</minSeverity>
+		<becomeVisible>false</becomeVisible>
+		<capMods>
+			<li>
+			  <capacity>Manipulation</capacity>
+			  <offset>-0.6</offset>
+			</li>
+		</capMods>
+		<mentalStateGivers>
+			<li>
+				<mentalState>WanderConfused</mentalState>
+				<mtbDays>.5</mtbDays>
+			</li>
+			<li>
+				<mentalState>Berserk</mentalState>
+				<mtbDays>.75</mtbDays>
+			</li>
+			<li>
+				<mentalState>GiveUpExit</mentalState>
+				<mtbDays>1</mtbDays>
+			</li>
+		</mentalStateGivers>
+      </li>
+	  <li>
+        <label>II</label>
+        <minSeverity>.5</minSeverity>
+		<becomeVisible>false</becomeVisible>
+		<capMods>
+			<li>
+			  <capacity>Manipulation</capacity>
+			  <offset>-0.75</offset>
+			</li>
+		</capMods>
+		<mentalStateGivers>
+			<li>
+				<mentalState>WanderConfused</mentalState>
+				<mtbDays>.4</mtbDays>
+			</li>
+			<li>
+				<mentalState>Berserk</mentalState>
+				<mtbDays>.25</mtbDays>
+			</li>
+			<li>
+				<mentalState>GiveUpExit</mentalState>
+				<mtbDays>.5</mtbDays>
+			</li>
+		</mentalStateGivers>
+      </li>  	
+	  <li>
+        <label>III</label>
+        <minSeverity>.75</minSeverity>
+		<becomeVisible>false</becomeVisible>
+		<capMods>
+			<li>
+			  <capacity>Manipulation</capacity>
+			  <offset>-1</offset>
+			</li>
+		</capMods>
+		<mentalStateGivers>
+			<li>
+				<mentalState>WanderConfused</mentalState>
+				<mtbDays>.2</mtbDays>
+			</li>
+			<li>
+				<mentalState>Berserk</mentalState>
+				<mtbDays>.05</mtbDays>
+			</li>
+			<li>
+				<mentalState>GiveUpExit</mentalState>
+				<mtbDays>.2</mtbDays>
+			</li>
+		</mentalStateGivers>
+      </li>	  
+    </stages>
+  </HediffDef>
+  
+  <HediffDef>
+    <defName>TM_HarvestPassionHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(.8,0,1)</defaultLabelColor>
+    <label>passion harvesting</label>
+	<description>A passion is being stolen by another pawn.</description>
+    <maxSeverity>1.0</maxSeverity>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<isBad>false</isBad>
+	<initialSeverity>.5</initialSeverity>
+	<comps>
+	  <li>
+        <compClass>TorannMagic.HediffComp_HarvestPassion</compClass>
+      </li>  
+    </comps>
+    <stages>
+	  <li>
+        <label></label>
+        <minSeverity>0</minSeverity>
+		<becomeVisible>false</becomeVisible>
+      </li>    	  
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>TM_SuppressiveAuraHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(.8,0,1)</defaultLabelColor>
+    <label>suppressive aura</label>
+	<description>The empath is suppression the emotions of of nearby pawns; affected pawns will be unable to enter into a mental break or gain any mood related thoughts that are not allowed by the empath.</description>
+    <maxSeverity>1.0</maxSeverity>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<isBad>false</isBad>
+	<initialSeverity>.5</initialSeverity>
+	<comps>
+	  <li>
+        <compClass>TorannMagic.HediffComp_SuppressiveAura</compClass>
+      </li>  
+    </comps>
+    <stages>
+	  <li>
+        <label></label>
+        <minSeverity>0</minSeverity>
+		<becomeVisible>true</becomeVisible>
+      </li>    	  
+    </stages>
+  </HediffDef>
+  
+  <ThoughtDef>
+    <defName>TM_SuppressiveAuraTD</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>TM_SuppressiveAuraHD</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>Emotion thief</label>
+        <description>I have a deep sense of sadness and loss when depriving others of their ability to feel.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>TM_EmotionalWeightTD</defName>
+	<thoughtClass>Thought_Memory</thoughtClass>
+    <stackedEffectMultiplier>.75</stackedEffectMultiplier>
+    <stackLimit>4</stackLimit>
+    <durationDays>2</durationDays>
+    <stages>
+      <li>
+        <label>Emotional baggage</label>
+        <!-- generic benefit -->
+        <description>Bearing the weight of everyone's emotions.</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+	  </stages>
+  </ThoughtDef>
+  
+  <HediffDef>
+    <defName>TM_EmotionSuppressionHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(.8,0,1)</defaultLabelColor>
+    <label>suppressed emotions</label>
+	<description>The emotions of this pawn are being suppressed; this pawn will not experience a mental break and most mood related thoughts will be filtered.</description>
+    <maxSeverity>1.0</maxSeverity>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<isBad>false</isBad>
+	<initialSeverity>.1</initialSeverity>
+	<comps>
+	  <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-24</severityPerDay>
+      </li>	  
+    </comps>
+    <stages>
+	  <li>
+        <label></label>
+        <minSeverity>0</minSeverity>
+		<becomeVisible>true</becomeVisible>
+      </li>    	  
+    </stages>
+  </HediffDef>
+  
+  <HediffDef>
+    <defName>TM_SymbiosisHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(.8,0,1)</defaultLabelColor>
+    <label>symbiosis</label>
+	<description>The emotions and awareness of this pawn have been reinforced and fortified by the mind of an empath. For all intents and purposes, the mind of the empath is joined with this pawn - if this pawn dies then the empath will also die.</description>
+    <maxSeverity>4.0</maxSeverity>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<isBad>false</isBad>
+	<initialSeverity>.5</initialSeverity>
+	<comps>
+	  <li>
+        <compClass>TorannMagic.HediffComp_SymbiosisHost</compClass>
+      </li> 	  
+    </comps>
+    <stages>
+	  <li>
+        <label>I</label>
+        <minSeverity>.01</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<painFactor>.5</painFactor>
+		<statOffsets>
+		  <MentalBreakThreshold>-0.1</MentalBreakThreshold>
+		  <PsychicSensitivity>1</PsychicSensitivity>
+	    </statOffsets>
+		<capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>.7</offset>
+          </li>
+        </capMods>
+      </li>    	 
+	  <li>
+        <label>II</label>
+        <minSeverity>1</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<painFactor>.4</painFactor>
+		<statOffsets>
+		  <MentalBreakThreshold>-0.15</MentalBreakThreshold>
+		  <PsychicSensitivity>1.5</PsychicSensitivity>
+	    </statOffsets>
+		<capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>1</offset>
+          </li>
+        </capMods>
+      </li>
+	  <li>
+        <label>III</label>
+        <minSeverity>2</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<painFactor>.3</painFactor>
+		<statOffsets>
+		  <MentalBreakThreshold>-0.18</MentalBreakThreshold>
+		  <PsychicSensitivity>1.8</PsychicSensitivity>
+	    </statOffsets>
+		<capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>1.25</offset>
+          </li>
+        </capMods>
+      </li>	 
+	  <li>
+        <label>IV</label>
+        <minSeverity>3</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<painFactor>.25</painFactor>
+		<statOffsets>
+		  <MentalBreakThreshold>-0.2</MentalBreakThreshold>
+		  <PsychicSensitivity>2</PsychicSensitivity>
+	    </statOffsets>
+		<capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>1.5</offset>
+          </li>
+        </capMods>
+      </li>	  
+    </stages>
+  </HediffDef> 
+  
+  <ThoughtDef>
+    <defName>TM_SymbiosisThought</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>TM_SymbiosisHD</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>symbiosis</label>
+        <description>Emotional fortitude provided by a symbiotic connection with an empath.</description>
+        <baseMoodEffect>40</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <HediffDef>
+    <defName>TM_OutOfBodyHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(.8,0,1)</defaultLabelColor>
+    <label>out of body</label>
+	<description>The emotions and awareness of this pawn have been attached to another pawn; this body is currently an empty shell.</description>
+    <maxSeverity>1.0</maxSeverity>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<isBad>false</isBad>
+	<initialSeverity>.5</initialSeverity>
+	<comps>
+	  <li>
+        <compClass>TorannMagic.HediffComp_SymbiosisCaster</compClass>
+      </li> 	  
+    </comps>
+    <stages>
+	  <li>
+        <label></label>
+        <minSeverity>0</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+			 <setMax>.1</setMax>
+          </li>
+        </capMods>
+      </li>    	  
+    </stages>
+  </HediffDef> 
+  
+  <ThoughtDef>
+    <defName>TM_OutOfBodyThought</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>TM_OutOfBodyHD</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>out of body</label>
+        <description>Emotional energy is being used to augment another pawn.</description>
+        <baseMoodEffect>-100</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+</Defs>

@@ -89,7 +89,7 @@ namespace TorannMagic
                         for (int i = 0; i < this.Pawn.needs.AllNeeds.Count; i++)
                         {
                             Need n = this.Pawn.needs.AllNeeds[i];
-                            if(consumeJoy && n.def == NeedDefOf.Joy && n.CurLevel >= tickCost)
+                            if(consumeJoy && n.def == TorannMagicDefOf.Joy && n.CurLevel >= tickCost)
                             {
                                 n.CurLevel -= tickCost;
                                 usedEmotions = true;

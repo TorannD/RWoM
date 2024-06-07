@@ -207,9 +207,9 @@ namespace TorannMagic
             }
         }
 
-        public override void Draw()
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
-            base.Draw();
+            base.DrawAt(drawLoc, flip);
             if (wallActive)
             {
                 float altitude = Altitudes.AltitudeFor(AltitudeLayer.MetaOverlays);          //graphic depth

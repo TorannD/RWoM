@@ -130,7 +130,7 @@ namespace TorannMagic
             {
                 if (this.BillStack[i].recipe.defName == "ArcaneForge_Replication")
                 {
-                    List<Pawn> mapPawns = this.Map.mapPawns.AllPawnsSpawned;
+                    List<Pawn> mapPawns = this.Map.mapPawns.AllPawnsSpawned.ToList();
                     for(int j =0; j < mapPawns.Count; j++)
                     {
                         if(mapPawns[j].IsColonist && mapPawns[j].RaceProps.Humanlike && mapPawns[j].CurJob != null && mapPawns[j].CurJob.bill != null)

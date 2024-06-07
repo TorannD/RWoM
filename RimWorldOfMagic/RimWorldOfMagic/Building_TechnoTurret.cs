@@ -58,7 +58,7 @@ namespace TorannMagic
             {
                 if ((powerComp == null || powerComp.PowerOn) && (dormantComp == null || dormantComp.Awake) && (initiatableComp == null || initiatableComp.Initiated))
                 {
-                    if (activableComp != null)
+                    if (interactableComp != null)
                     {
                         return burstActivated;
                     }
@@ -218,7 +218,7 @@ namespace TorannMagic
                     {
                         ResetForcedTarget();
                     }
-                    if (TT_Active && !stunner.Stunned && base.Spawned) //&& (mannableComp == null || mannableComp.MannedNow)
+                    if (TT_Active && !base.IsStunned && base.Spawned) //&& (mannableComp == null || mannableComp.MannedNow)
                     {
                         GunCompEq.verbTracker.VerbsTick();
                         if (AttackVerb.state != VerbState.Bursting)

@@ -32,7 +32,6 @@ namespace TorannMagic
         private int nextSSTend = 0;
 
         private List<IntVec3> deathRing = new List<IntVec3>();
-        public float weaponDamage = 1f;
         public float weaponCritChance = 0f;
         public bool shouldDrawPsionicShield = false;
         public List<TM_EventRecords> mightUsed = new List<TM_EventRecords>();
@@ -128,6 +127,10 @@ namespace TorannMagic
 
         public TMAbilityDef mimicAbility = null;
 
+        // Cached values calculated in TM_PawnTracker
+        private bool initializedIsMightUser;
+        private bool isMightUser;  // Cached version
+
         private static HashSet<ushort> mightTraitIndexes = new HashSet<ushort>()
         {
             TorannMagicDefOf.TM_Monk.index,
@@ -162,8 +165,7 @@ namespace TorannMagic
         {
             get
             {
-                bool flag = this.mightData == null && this.IsMightUser;
-                if (flag)
+                if (this.mightData == null && this.IsMightUser)
                 {
                     this.mightData = new MightData(this);
                 }
@@ -191,13 +193,46 @@ namespace TorannMagic
                 }
                 mightUsed = value;
             }
-        }        
+        }
+
+        public float GetSkillDamage()
+        {
+            float result;
+            float strFactor = 1f;
+
+            if (IsMightUser)
+            {
+                strFactor = mightPwr;
+            }
+
+            if (Pawn.equipment?.Primary != null)
+            {
+                if (Pawn.equipment.Primary.def.IsMeleeWeapon)
+                {
+                    result = TM_Calc.GetSkillDamage_Melee(Pawn, strFactor);
+                    weaponCritChance = TM_Calc.GetWeaponCritChance(Pawn.equipment.Primary);
+                }
+                else
+                {
+                    result = TM_Calc.GetSkillDamage_Range(Pawn, strFactor);
+                    weaponCritChance = 0f;
+                }
+            }
+            else
+            {
+                result = Pawn.GetStatValue(StatDefOf.MeleeDPS, false) * strFactor;
+            }
+
+            return result;
+        }
 
         public bool shouldDraw = true;
         public override void PostDraw()
         {
+            if (this.Pawn.DestroyedOrNull()) return;
+            if (this.Pawn.Dead) return;
             if (!shouldDraw) return;
-
+            
             base.PostDraw();
             if (Pawn.health.hediffSet.hediffs.Any(hediff =>
                     hediff.def == TorannMagicDefOf.TM_PossessionHD
@@ -222,12 +257,12 @@ namespace TorannMagic
                 DrawDeceptionTicker(false);
             }
 
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-            if (settingsRef.AIFriendlyMarking && this.Pawn.IsColonist && this.IsMightUser)
+            
+            if (ModOptions.Settings.Instance.AIFriendlyMarking && this.Pawn.IsColonist && this.IsMightUser)
             {
                 DrawMark();
             }
-            if (settingsRef.AIMarking && !base.Pawn.IsColonist && this.IsMightUser)
+            if (ModOptions.Settings.Instance.AIMarking && !base.Pawn.IsColonist && this.IsMightUser)
             {
                 DrawMark();
             }
@@ -256,106 +291,8 @@ namespace TorannMagic
                 Matrix4x4 matrix = default(Matrix4x4);
                 matrix.SetTRS(vector, Quaternion.AngleAxis(Rand.Range(0, 360), Vector3.up), s);
                 Graphics.DrawMesh(MeshPool.plane10, matrix, TM_MatPool.PsionicBarrier, 0);
-            }
-            
+            }            
         }
-
-        //public void DrawFighterMark()
-        //{
-        //    float num = Mathf.Lerp(1.2f, 1.55f, 1f);
-        //    Vector3 vector = this.Pawn.Drawer.DrawPos;
-        //    vector.x = vector.x + .45f;
-        //    vector.z = vector.z + .45f;
-        //    vector.y = Altitudes.AltitudeFor(AltitudeLayer.MoteOverhead);
-        //    float angle = 0f;
-        //    Vector3 s = new Vector3(.28f, 1f, .28f);
-        //    Matrix4x4 matrix = default(Matrix4x4);
-        //    matrix.SetTRS(vector, Quaternion.AngleAxis(angle, Vector3.up), s);
-
-        //    if (this.customClass != null)
-        //    {
-        //        if (!this.customClass.isAdvancedClass)
-        //        {
-        //            CompAbilityUserMagic mComp = this.Pawn.GetCompAbilityUserMagic();
-        //            bool shouldDraw = true;
-        //            if (mComp != null)
-        //            {
-        //                if (mComp.customClass != null)
-        //                {
-        //                    shouldDraw = false;
-        //                }
-        //            }
-        //            if (shouldDraw)
-        //            {
-        //                Material mat = TM_RenderQueue.fighterMarkMat;
-        //                if (this.customClass.classIconPath != "")
-        //                {
-        //                    mat = MaterialPool.MatFrom("Other/" + this.customClass.classIconPath.ToString());
-        //                }
-        //                else if (this.customClass.classTexturePath != "")
-        //                {
-        //                    mat = MaterialPool.MatFrom("Other/ClassTextures/" + this.customClass.classTexturePath, true);
-        //                }
-        //                if (this.customClass.classIconColor != null)
-        //                {
-        //                    mat.color = this.customClass.classIconColor;
-        //                }
-        //                Graphics.DrawMesh(MeshPool.plane10, matrix, mat, 0);
-        //            }
-        //        }
-        //    }            
-        //    else
-        //    {
-        //        if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Gladiator))
-        //        {
-        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.gladiatorMarkMat, 0);
-        //        }
-        //        else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Sniper))
-        //        {
-        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.sniperMarkMat, 0);
-        //        }
-        //        else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Bladedancer))
-        //        {
-        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.bladedancerMarkMat, 0);
-        //        }
-        //        else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Ranger))
-        //        {
-        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.rangerMarkMat, 0);
-        //        }
-        //        else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
-        //        {
-        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.facelessMarkMat, 0);
-        //        }
-        //        else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Psionic))
-        //        {
-        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.psionicMarkMat, 0);
-        //        }
-        //        else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.DeathKnight))
-        //        {
-        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.deathknightMarkMat, 0);
-        //        }
-        //        else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Monk))
-        //        {
-        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.monkMarkMat, 0);
-        //        }
-        //        else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Commander))
-        //        {
-        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.commanderMarkMat, 0);
-        //        }
-        //        else if (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.TM_SuperSoldier))
-        //        {
-        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.supersoldierMarkMat, 0);
-        //        }
-        //        else if (TM_Calc.IsWayfarer(this.Pawn))
-        //        {
-        //            Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.wayfarerMarkMat, 0);
-        //        }
-        //        //else
-        //        //{
-        //        //    Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.fighterMarkMat, 0);
-        //        //}
-        //    }
-        //}
 
         public void DrawDeceptionTicker(bool possessed)
         {
@@ -395,668 +332,29 @@ namespace TorannMagic
             }
         }
 
-        public static List<TMAbilityDef> MightAbilities = null;    
+        public static List<TMAbilityDef> MightAbilities = null;   
         
-        //LevelUpSkill_x no longer used TODO:REMOVE
-        //public int LevelUpSkill_global_refresh(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_global_refresh.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}        
-        //public int LevelUpSkill_global_seff(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_global_seff.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}        
-        //public int LevelUpSkill_global_strength(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_global_strength.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_global_endurance(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_global_endurance.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-
-        //public int LevelUpSkill_Sprint(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_Sprint.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_Fortitude(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_Fortitude.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_Grapple(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_Grapple.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_Cleave(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_Cleave.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_Whirlwind(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_Whirlwind.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-
-        //public int LevelUpSkill_SniperFocus(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_SniperFocus.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_Headshot(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_Headshot.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_DisablingShot(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_DisablingShot.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_AntiArmor(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_AntiArmor.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-
-        //public int LevelUpSkill_BladeFocus(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_BladeFocus.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_BladeArt(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_BladeArt.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_SeismicSlash(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_SeismicSlash.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_BladeSpin(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_BladeSpin.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_PhaseStrike(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_PhaseStrike.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-
-        //public int LevelUpSkill_RangerTraining(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_RangerTraining.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_BowTraining(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_BowTraining.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_PoisonTrap(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_PoisonTrap.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_AnimalFriend(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_AnimalFriend.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_ArrowStorm(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_ArrowStorm.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-
-        //public int LevelUpSkill_Disguise(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_Disguise.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_Mimic(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_Reversal(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_Reversal.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_Transpose(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_Transpose.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_Possess(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_Possess.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-
-        //public int LevelUpSkill_PsionicAugmentation(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_PsionicAugmentation.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_PsionicBarrier(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_PsionicBarrier.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_PsionicBlast(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_PsionicBlast.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_PsionicDash(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_PsionicDash.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_PsionicStorm(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_PsionicStorm.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-
-        //public int LevelUpSkill_Shroud(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_Shroud.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_WaveOfFear(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_WaveOfFear.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_Spite(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_Spite.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_LifeSteal(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_LifeSteal.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_GraveBlade(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_GraveBlade.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_Chi(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_Chi.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_MindOverBody(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_MindOverBody.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_Meditate(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_Meditate.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_TigerStrike(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_TigerStrike.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_DragonStrike(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_DragonStrike.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_ThunderStrike(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_ThunderStrike.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_WayfarerCraft(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_WayfarerCraft.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_FieldTraining(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_FieldTraining.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_Provisioner(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_ProvisionerAura.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_TaskMaster(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_TaskMasterAura.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_Commander(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_CommanderAura.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_StayAlert(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_StayAlert.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_MoveOut(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_MoveOut.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_HoldTheLine(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_HoldTheLine.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_PistolSpec(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_PistolSpec.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_RifleSpec(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_RifleSpec.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_ShotgunSpec(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_ShotgunSpec.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_CQC(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_CQC.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_FirstAid(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_FirstAid.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
-        //public int LevelUpSkill_60mmMortar(string skillName)
-        //{
-        //    int result = 0;
-        //    MightPowerSkill mightPowerSkill = this.MightData.MightPowerSkill_60mmMortar.FirstOrDefault((MightPowerSkill x) => x.label == skillName);
-        //    bool flag = mightPowerSkill != null;
-        //    if (flag)
-        //    {
-        //        result = mightPowerSkill.level;
-        //    }
-        //    return result;
-        //}
 
         public override void CompTick()
         {
             bool flag = base.Pawn != null;
             if (flag)
             {
+                if (this.Pawn.IsShambler || this.Pawn.IsGhoul)
+                {
+                    if (this.mightData != null)
+                    {
+                        RemoveAbilityUser();
+                    }
+                    return;
+                }
                 bool spawned = base.Pawn.Spawned;
                 if (spawned)
                 {
                     bool isMightUser = this.IsMightUser && !this.Pawn.NonHumanlikeOrWildMan();
                     if (isMightUser)
                     {
-                        bool flag3 = !this.MightData.Initialized;
-                        if (flag3)
+                        if (!this.Initialized)
                         {
                             this.PostInitializeTick();
                         }
@@ -1088,25 +386,25 @@ namespace TorannMagic
                             ResolveClassSkills();
                             //ResolveClassPassions(); currently disabled
                         }
-                        ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+                        
                         if (this.autocastTick < Find.TickManager.TicksGame)  //180 default
                         {
                             if ( !this.Pawn.Dead && !this.Pawn.Downed && this.Pawn.Map != null && this.Pawn.story != null && this.Pawn.story.traits != null && this.MightData != null && this.AbilityData != null && !this.Pawn.InMentalState)
                             {
                                 if (this.Pawn.IsColonist)
                                 {
-                                    this.autocastTick = Find.TickManager.TicksGame + (int)Rand.Range(.8f * settingsRef.autocastEvaluationFrequency, 1.2f * settingsRef.autocastEvaluationFrequency);
+                                    this.autocastTick = Find.TickManager.TicksGame + (int)Rand.Range(.8f * ModOptions.Settings.Instance.autocastEvaluationFrequency, 1.2f * ModOptions.Settings.Instance.autocastEvaluationFrequency);
                                     ResolveAutoCast();
                                 }
-                                else if(settingsRef.AICasting && (!this.Pawn.IsPrisoner || this.Pawn.IsFighting()))
+                                else if(ModOptions.Settings.Instance.AICasting && (!this.Pawn.IsPrisoner || this.Pawn.IsFighting()))
                                 {
-                                    float tickMult = settingsRef.AIAggressiveCasting ? 1f : 2f;
-                                    this.autocastTick = Find.TickManager.TicksGame + (int)(Rand.Range(.75f * settingsRef.autocastEvaluationFrequency, 1.25f * settingsRef.autocastEvaluationFrequency) * tickMult);
+                                    float tickMult = ModOptions.Settings.Instance.AIAggressiveCasting ? 1f : 2f;
+                                    this.autocastTick = Find.TickManager.TicksGame + (int)(Rand.Range(.75f * ModOptions.Settings.Instance.autocastEvaluationFrequency, 1.25f * ModOptions.Settings.Instance.autocastEvaluationFrequency) * tickMult);
                                     ResolveAIAutoCast();
                                 }
                             }                            
                         }
-                        if (!this.Pawn.IsColonist && settingsRef.AICasting && settingsRef.AIAggressiveCasting && Find.TickManager.TicksGame > this.nextAICastAttemptTick) //Aggressive AI Casting
+                        if (!this.Pawn.IsColonist && ModOptions.Settings.Instance.AICasting && ModOptions.Settings.Instance.AIAggressiveCasting && Find.TickManager.TicksGame > this.nextAICastAttemptTick) //Aggressive AI Casting
                         {
                             this.nextAICastAttemptTick = Find.TickManager.TicksGame + Rand.Range(300, 500);
                             if (this.Pawn.jobs != null && this.Pawn.CurJobDef != TorannMagicDefOf.TMCastAbilitySelf && this.Pawn.CurJobDef != TorannMagicDefOf.TMCastAbilityVerb)
@@ -1203,7 +501,7 @@ namespace TorannMagic
                         }
                         if(Find.TickManager.TicksGame % 301 == 0) //cache weapon damage for tooltip and damage calculations
                         {
-                            this.weaponDamage = TM_Calc.GetSkillDamage(this.Pawn);
+                            weaponDamage = GetSkillDamage(); //TM_Calc.GetSkillDamage(this.Pawn);
                         }
                         if (Find.TickManager.TicksGame % 602 == 0)
                         {
@@ -1248,7 +546,7 @@ namespace TorannMagic
             if (Initialized)
             {
                 //custom code
-            }
+            }          
         }
 
         private int deathRetaliationDelayCount = 0;
@@ -1288,9 +586,9 @@ namespace TorannMagic
             {
                 if (deathRetaliationDelayCount >= 20 && Rand.Value < .04f)
                 {
-                    ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+                    
                     this.deathRetaliating = true;
-                    this.ticksTillRetaliation = Mathf.RoundToInt(Rand.Range(400, 1200) * settingsRef.deathRetaliationDelayFactor);
+                    this.ticksTillRetaliation = Mathf.RoundToInt(Rand.Range(400, 1200) * ModOptions.Settings.Instance.deathRetaliationDelayFactor);
                     this.deathRing = TM_Calc.GetOuterRing(this.Pawn.Position, 1f, 2f);
                 }
                 else
@@ -1310,51 +608,44 @@ namespace TorannMagic
             this.ResolveStamina();
         }
 
-        public bool IsMightUser
+        public bool IsMightUser => this.initializedIsMightUser ? isMightUser : this.SetIsMightUser();
+        public bool SetIsMightUser()
         {
-            get
+            Pawn pawn = this.Pawn;
+            if (pawn?.story == null) return this.isMightUser = false;
+            this.initializedIsMightUser = true;
+            if (this.customClass != null) return this.isMightUser = true;
+            if (this.customClass == null && this.customIndex == -2)
             {
-                if (Pawn?.story == null) return false;
-                if (this.customClass != null) return true;
-                if (this.customClass == null && this.customIndex == -2)
+                this.customIndex = TM_ClassUtility.CustomClassIndexOfBaseFighterClass(pawn.story.traits.allTraits);
+                if (this.customIndex >= 0)
                 {
-                    this.customIndex = TM_ClassUtility.CustomClassIndexOfBaseFighterClass(this.Pawn.story.traits.allTraits);
-                    if (this.customIndex >= 0)
+                    if (!TM_ClassUtility.CustomClasses[this.customIndex].isFighter)
                     {
-                        if (!TM_ClassUtility.CustomClasses[this.customIndex].isFighter)
-                        {
-                            this.customIndex = -1;
-                            return false;
-                        }
-                        else
-                        {
-                            this.customClass = TM_ClassUtility.CustomClasses[this.customIndex];
-                            return true;
-                        }
+                        this.customIndex = -1;
+                        return this.isMightUser = false;
                     }
-                }                
-                if (Pawn.story.traits.allTraits.Any(t => mightTraitIndexes.Contains(t.def.index)
-                || TM_Calc.IsWayfarer(base.Pawn)
-                || (this.AdvancedClasses != null && this.AdvancedClasses.Count > 0)))
-                {
-                    return true;
-                }                
-                else if (TM_Calc.HasAdvancedClass(this.Pawn))
-                {
-                    bool hasAdvClass = false;
-                    foreach (TMDefs.TM_CustomClass cc in TM_ClassUtility.GetAdvancedClassesForPawn(this.Pawn))
-                    {
-                        if (cc.isFighter)
-                        {
-                            this.AdvancedClasses.Add(cc);
-                            hasAdvClass = true;
-                            break;
-                        }
-                    }
-                    return hasAdvClass;
+                    this.customClass = TM_ClassUtility.CustomClasses[this.customIndex];
+                    return this.isMightUser = true;
                 }
-                return false;
             }
+            for (int i = pawn.story.traits.allTraits.Count - 1; i >= 0; i--)
+            {
+                if (mightTraitIndexes.Contains(Pawn.story.traits.allTraits[i].def.index)) return this.isMightUser = true;
+            }
+            if (AdvancedClasses.Count > 0 || TM_Calc.IsWayfarer(pawn)) return this.isMightUser = true;
+            if (TM_Calc.HasAdvancedClass(pawn))
+            {
+                foreach (TMDefs.TM_CustomClass cc in TM_ClassUtility.GetAdvancedClassesForPawn(this.Pawn))
+                {
+                    if (cc.isFighter)
+                    {
+                        this.AdvancedClasses.Add(cc);
+                        return this.isMightUser = true;
+                    }
+                }
+            }
+            return this.isMightUser = false;
         }
 
         public int MightUserLevel
@@ -1472,8 +763,8 @@ namespace TorannMagic
                     bool flag = !hideNotification;
                     if (flag)
                     {
-                        ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                        if (Pawn.IsColonist && settingsRef.showLevelUpMessage)
+                        
+                        if (Pawn.IsColonist && ModOptions.Settings.Instance.showLevelUpMessage)
                         {
                             Messages.Message("TM_MightLevelUp".Translate(
                                 this.parent.Label
@@ -2712,6 +2003,26 @@ namespace TorannMagic
             return result;
         }
 
+        public float ActualHediffCost(TMAbilityDef mightDef)
+        {
+            float num = 1f;
+            if (mightDef != null && MightData.GetSkill_Efficiency(mightDef) != null)
+            {
+                num = 1f - (mightDef.efficiencyReductionPercent * MightData.GetSkill_Efficiency(mightDef).level);
+            }
+            return mightDef.hediffCost * num;
+        }
+
+        public float ActualNeedCost(TMAbilityDef mightDef)
+        {
+            float num = 1f;
+            if (mightDef != null && MightData.GetSkill_Efficiency(mightDef) != null)
+            {
+                num = 1f - (mightDef.efficiencyReductionPercent * MightData.GetSkill_Efficiency(mightDef).level);
+            }
+            return mightDef.needCost * num;
+        }
+
         public float ActualChiCost(TMAbilityDef mightDef)
         {
             float num = mightDef.chiCost;
@@ -3016,8 +2327,7 @@ namespace TorannMagic
                 adjustedStaminaCost -= (adjustedStaminaCost * (global_seff * globalSkill.level));
             }
 
-            return Mathf.Max(adjustedStaminaCost, (.5f * mightDef.staminaCost));
-            
+            return Mathf.Max(adjustedStaminaCost, (.5f * mightDef.staminaCost));           
 
         }
 
@@ -3029,7 +2339,7 @@ namespace TorannMagic
             };
         }
 
-        public override void PostPreApplyDamage(DamageInfo dinfo, out bool absorbed)
+        public override void PostPreApplyDamage(ref DamageInfo dinfo, out bool absorbed)
         {
             Pawn abilityUser = base.Pawn;
             absorbed = false;
@@ -3190,8 +2500,8 @@ namespace TorannMagic
                             MightPowerSkill ver = this.MightData.MightPowerSkill_Fortitude.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Fortitude_ver");
                             absorbed = true;
                             int mitigationAmt = 5 + pwr.level;
-                            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                            if (settingsRef.AIHardMode && !abilityUser.IsColonist)
+                            
+                            if (ModOptions.Settings.Instance.AIHardMode && !abilityUser.IsColonist)
                             {
                                 mitigationAmt = 8;
                             }
@@ -3217,8 +2527,8 @@ namespace TorannMagic
                             MightPowerSkill ver = this.MightData.MightPowerSkill_MindOverBody.FirstOrDefault((MightPowerSkill x) => x.label == "TM_MindOverBody_ver");
                             absorbed = true;
                             int mitigationAmt = Mathf.Clamp((7 + (2 * ver.level) - Mathf.RoundToInt(totalApparelWeight/2)), 0, 13);
-                            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                            if (settingsRef.AIHardMode && !abilityUser.IsColonist)
+                            
+                            if (ModOptions.Settings.Instance.AIHardMode && !abilityUser.IsColonist)
                             {
                                 mitigationAmt = 10;
                             }
@@ -3252,7 +2562,7 @@ namespace TorannMagic
             }
             list.Clear();
             list = null;
-            base.PostPreApplyDamage(dinfo, out absorbed);
+            base.PostPreApplyDamage(ref dinfo, out absorbed);
         }
 
         public void DoMeleeReversal(DamageInfo dinfo)
@@ -3271,8 +2581,8 @@ namespace TorannMagic
             CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
             comp.Stamina.CurLevel += (.015f * verVal);         
             int num = 1 + verVal;
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-            int numberOfInjuriesPerPart = !pawn.IsColonist && settingsRef.AIHardMode ? 5 : 1 + verVal;
+            
+            int numberOfInjuriesPerPart = !pawn.IsColonist && ModOptions.Settings.Instance.AIHardMode ? 5 : 1 + verVal;
 
             IEnumerable<Hediff_Injury> injuries = pawn.health.hediffSet.hediffs
                 .OfType<Hediff_Injury>()
@@ -3427,8 +2737,8 @@ namespace TorannMagic
 
         public void ResolveAutoCast()
         {
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-            if (settingsRef.autocastEnabled && this.Pawn.jobs != null && this.Pawn.CurJob != null && this.Pawn.CurJob.def != TorannMagicDefOf.TMCastAbilityVerb && this.Pawn.CurJob.def != TorannMagicDefOf.TMCastAbilitySelf && 
+            
+            if (ModOptions.Settings.Instance.autocastEnabled && this.Pawn.jobs != null && this.Pawn.CurJob != null && this.Pawn.CurJob.def != TorannMagicDefOf.TMCastAbilityVerb && this.Pawn.CurJob.def != TorannMagicDefOf.TMCastAbilitySelf && 
                 this.Pawn.CurJob.def != JobDefOf.Ingest && this.Pawn.CurJob.def != JobDefOf.ManTurret && this.Pawn.GetPosture() == PawnPosture.Standing && !this.Pawn.CurJob.playerForced)
             {
                 //Log.Message("pawn " + this.Pawn.LabelShort + " current job is " + this.Pawn.CurJob.def.defName);
@@ -3436,7 +2746,7 @@ namespace TorannMagic
                 bool castSuccess = false;
                 bool isFaceless = (this.mimicAbility != null);
                 bool isCustom = this.customIndex >= 0;
-                if (this.Pawn.drafter != null && !this.Pawn.Drafted && this.Stamina != null && this.Stamina.CurLevelPercentage >= settingsRef.autocastMinThreshold)
+                if (this.Pawn.drafter != null && !this.Pawn.Drafted && this.Stamina != null && this.Stamina.CurLevelPercentage >= ModOptions.Settings.Instance.autocastMinThreshold)
                 {
                     foreach (MightPower mp in this.MightData.MightPowersCustomAll)
                     {
@@ -3832,7 +3142,7 @@ namespace TorannMagic
                 }
 
                 //combat (drafted) spells
-                if (this.Pawn.drafter != null && this.Pawn.Drafted && this.Pawn.drafter.FireAtWill && this.Stamina != null && (this.Stamina.CurLevelPercentage >= settingsRef.autocastCombatMinThreshold || this.Pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Monk)) && this.Pawn.CurJob.def != JobDefOf.Goto && this.Pawn.CurJob.def != JobDefOf.AttackMelee)
+                if (this.Pawn.drafter != null && this.Pawn.Drafted && this.Pawn.drafter.FireAtWill && this.Stamina != null && (this.Stamina.CurLevelPercentage >= ModOptions.Settings.Instance.autocastCombatMinThreshold || this.Pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Monk)) && this.Pawn.CurJob.def != JobDefOf.Goto && this.Pawn.CurJob.def != JobDefOf.AttackMelee)
                 {
                     foreach (MightPower mp in this.MightData.MightPowersCustom)
                     {
@@ -4283,12 +3593,12 @@ namespace TorannMagic
 
         public void ResolveAIAutoCast()
         {
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-            if (settingsRef.AICasting && this.Pawn.jobs != null && this.Pawn.CurJob != null && this.Pawn.CurJob.def != TorannMagicDefOf.TMCastAbilityVerb && this.Pawn.CurJob.def != TorannMagicDefOf.TMCastAbilitySelf && this.Pawn.CurJob.def != JobDefOf.Ingest && this.Pawn.CurJob.def != JobDefOf.ManTurret && this.Pawn.GetPosture() == PawnPosture.Standing)
+            
+            if (ModOptions.Settings.Instance.AICasting && this.Pawn.jobs != null && this.Pawn.CurJob != null && this.Pawn.CurJob.def != TorannMagicDefOf.TMCastAbilityVerb && this.Pawn.CurJob.def != TorannMagicDefOf.TMCastAbilitySelf && this.Pawn.CurJob.def != JobDefOf.Ingest && this.Pawn.CurJob.def != JobDefOf.ManTurret && this.Pawn.GetPosture() == PawnPosture.Standing)
             {
                 //Log.Message("pawn " + this.Pawn.LabelShort + " current job is " + this.Pawn.CurJob.def.defName);
                 bool castSuccess = false;
-                if (this.Stamina != null && this.Stamina.CurLevelPercentage >= settingsRef.autocastMinThreshold)
+                if (this.Stamina != null && this.Stamina.CurLevelPercentage >= ModOptions.Settings.Instance.autocastMinThreshold)
                 {
                     foreach (MightPower mp in this.MightData.AllMightPowersWithSkills)
                     {
@@ -4601,14 +3911,14 @@ namespace TorannMagic
                     }
                 }
 
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+                
                 if ((this.Pawn.story.traits.HasTrait(TorannMagicDefOf.Bladedancer) || (this.customClass != null && this.customClass.classFighterAbilities.Contains(TorannMagicDefOf.TM_BladeArt))) && !this.Pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_BladeArtHD))
                 {
                     MightPowerSkill bladeart_pwr = this.Pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_BladeArt.FirstOrDefault((MightPowerSkill x) => x.label == "TM_BladeArt_pwr");
 
                     //HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_BladeArtHD, -5f);
                     HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_BladeArtHD, (.5f) + bladeart_pwr.level);
-                    if (!this.Pawn.IsColonist && settingsRef.AIHardMode)
+                    if (!this.Pawn.IsColonist && ModOptions.Settings.Instance.AIHardMode)
                     {
                         HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_BladeArtHD, 4);
                     }
@@ -4620,7 +3930,7 @@ namespace TorannMagic
                     {
                         //HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_BowTrainingHD, -5f);
                         HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_BowTrainingHD, (.5f) + bowtraining_pwr.level);
-                        if (!this.Pawn.IsColonist && settingsRef.AIHardMode)
+                        if (!this.Pawn.IsColonist && ModOptions.Settings.Instance.AIHardMode)
                         {
                             HealthUtility.AdjustSeverity(this.Pawn, TorannMagicDefOf.TM_BowTrainingHD, 4);
                         }
@@ -4857,7 +4167,7 @@ namespace TorannMagic
                 if (this.Pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_SS_SerumHD) && this.Pawn.Downed && nextSSTend < Find.TickManager.TicksGame && 
                     (this.Pawn.story.traits.HasTrait(TorannMagicDefOf.TM_SuperSoldier) || (this.customClass != null && this.customClass.classFighterAbilities.Contains(TorannMagicDefOf.TM_FirstAid))))
                 {
-                    Hediff_Injury wound = this.Pawn.health.hediffSet.GetInjuriesTendable().RandomElement();
+                    Hediff_Injury wound = this.Pawn.health.hediffSet.GetHediffsTendable().RandomElement() as Hediff_Injury;
                     if (wound != null && wound.CanHealNaturally())
                     {
                         wound.Tended(Rand.Range(0, .3f), .3f);
@@ -5186,8 +4496,7 @@ namespace TorannMagic
 
         public void ResolveStamina()
         {
-            bool flag = this.Stamina == null;
-            if (flag)
+            if (this.Stamina == null)
             {
                 Hediff firstHediffOfDef = base.Pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_MightUserHD, false);
                 bool flag2 = firstHediffOfDef != null;
@@ -5205,8 +4514,7 @@ namespace TorannMagic
         }
         public void ResolveMightPowers()
         {
-            bool flag = this.mightPowersInitialized;
-            if (!flag)
+            if (!this.mightPowersInitialized)
             {
                 this.mightPowersInitialized = true;
             }
@@ -5271,14 +4579,11 @@ namespace TorannMagic
             Scribe_Values.Look<bool>(ref this.useCQCToggle, "useCQCToggle", true, false);
             Scribe_Defs.Look<TMAbilityDef>(ref this.mimicAbility, "mimicAbility");
             Scribe_Values.Look<float>(ref this.maxSP, "maxSP", 1f, false);
-            Scribe_Deep.Look<MightData>(ref this.mightData, "mightData", new object[]
-            {
-                this
-            });
+            Scribe_Deep.Look<MightData>(ref this.mightData, "mightData", this);
 
-            bool flag11 = Scribe.mode == LoadSaveMode.PostLoadInit;
-            if (flag11)
+            if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
+                TM_PawnTracker.ResolveMightComp(this);
                 Pawn abilityUser = base.Pawn;
                 int index = TM_ClassUtility.CustomClassIndexOfBaseFighterClass(abilityUser.story.traits.allTraits);
                 if (index >= 0)

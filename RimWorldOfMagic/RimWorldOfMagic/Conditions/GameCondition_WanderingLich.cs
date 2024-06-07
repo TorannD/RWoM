@@ -87,19 +87,19 @@ namespace TorannMagic.Conditions
             {
                 tempAllow = true;
             }
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();            
-            if (settingsRef.wanderingLichChallenge > 0 || tempAllow)
+                        
+            if (ModOptions.Settings.Instance.wanderingLichChallenge > 0 || tempAllow)
             {
                 base.Init();
                 this.disabled = false;
                 this.FindGoodEdgeLocation();
                 this.SpawnWanderingLich();
                 this.SetEventParameters();
-                if(settingsRef.wanderingLichChallenge >= 2)
+                if(ModOptions.Settings.Instance.wanderingLichChallenge >= 2)
                 {
                     InitializeDeathSkies();
                 }
-                if(settingsRef.wanderingLichChallenge >= 3)
+                if(ModOptions.Settings.Instance.wanderingLichChallenge >= 3)
                 {
                     InitializeSolarFlare();
                 }
@@ -116,7 +116,7 @@ namespace TorannMagic.Conditions
         {
             GameConditionManager gameConditionManager = this.gameConditionManager;
             int duration = Mathf.RoundToInt(this.Duration);
-            GameCondition cond = GameConditionMaker.MakeCondition(GameConditionDefOf.SolarFlare, duration);
+            GameCondition cond = GameConditionMaker.MakeCondition(TorannMagicDefOf.SolarFlare, duration);
             gameConditionManager.RegisterCondition(cond);
         }
 
@@ -130,8 +130,8 @@ namespace TorannMagic.Conditions
 
         private void SetEventParameters()
         {
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-            float mult = Rand.Range(2f, 4f) + settingsRef.wanderingLichChallenge + Find.Storyteller.difficulty.threatScale;
+            
+            float mult = Rand.Range(2f, 4f) + ModOptions.Settings.Instance.wanderingLichChallenge + Find.Storyteller.difficulty.threatScale;
             this.nextEventTick = Find.TickManager.TicksGame + 200;
             this.ticksBetweenEvents = Mathf.RoundToInt((float)this.Duration / mult);
         }
@@ -190,7 +190,7 @@ namespace TorannMagic.Conditions
                 defendLord = LordMaker.MakeNewLord(faction, lordJob, this.SingleMap, null);
             }
             
-            List<Pawn> allPawns = this.SingleMap.mapPawns.AllPawnsSpawned;
+            List<Pawn> allPawns = this.SingleMap.mapPawns.AllPawnsSpawned.ToList();
             for (int i = 0; i < allPawns.Count; i++)
             {
                 if (allPawns[i].Faction != null && allPawns[i].Faction == faction)
@@ -274,16 +274,15 @@ namespace TorannMagic.Conditions
                 SendAssaultWave(comp.ParentPawn.Faction, true);
             }
             else
-            {
-                List<Pawn> allPawns = this.SingleMap.mapPawns.AllPawnsSpawned;
+            {               
+                List<Pawn> allPawns = this.SingleMap.mapPawns.AllPawnsSpawned.ToList();
                 for(int i = 0; i < allPawns.Count; i++)
                 {
                     if(allPawns[i].def == TorannMagicDefOf.TM_SkeletonR || allPawns[i].def == TorannMagicDefOf.TM_GiantSkeletonR || allPawns[i].def == TorannMagicDefOf.TM_SkeletonLichR)
                     {
-                        if(allPawns[i].Faction != Faction.OfPlayer)
+                        if(!allPawns[i].DestroyedOrNull() && allPawns[i].Faction != Faction.OfPlayer && !allPawns[i].Dead)
                         {
                             allPawns[i].Kill(null, null);
-                            i--;
                         }
                     }
                 }
@@ -296,7 +295,7 @@ namespace TorannMagic.Conditions
                 {
                     gcs[i].End();
                 }
-                else if(gcs[i].def == GameConditionDefOf.SolarFlare)
+                else if(gcs[i].def == TorannMagicDefOf.SolarFlare)
                 {
                     gcs[i].End();
                 }
@@ -424,9 +423,9 @@ namespace TorannMagic.Conditions
             {
                 wealthMultiplier = 2.5f;
             }
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-            geChance = 0.02f * wealthMultiplier * Mathf.Max(settingsRef.wanderingLichChallenge, 1f);
-            leChance = 0.14f * Mathf.Max(settingsRef.wanderingLichChallenge, 1f) * wealthMultiplier;
+            
+            geChance = 0.02f * wealthMultiplier * Mathf.Max(ModOptions.Settings.Instance.wanderingLichChallenge, 1f);
+            leChance = 0.14f * Mathf.Max(ModOptions.Settings.Instance.wanderingLichChallenge, 1f) * wealthMultiplier;
         }
 
         public void SpawnSkeletonMinions(IntVec3 center, int radius, Faction faction)

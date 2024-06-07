@@ -70,8 +70,8 @@ namespace TorannMagic
                 verVal = ver.level;
                 pwrVal = pwr.level;
                 this.arcaneDmg = comp.arcaneDmg;
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                if (settingsRef.AIHardMode && !caster.IsColonist)
+                
+                if (ModOptions.Settings.Instance.AIHardMode && !caster.IsColonist)
                 {
                     pwrVal = 3;
                     verVal = 3;
@@ -113,11 +113,11 @@ namespace TorannMagic
                 }
             }
             
-        }        
+        }
 
-        public override void Draw()
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
-            base.Draw();
+            base.DrawAt(drawLoc, flip);
             if (this.age >= this.targettingAge)
             {
                 DrawSmiteBeams(this.strikePos, this.beamAge);

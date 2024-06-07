@@ -14,7 +14,7 @@ namespace TorannMagic.Ideology
         {
             if (p.IsColonist && !p.IsPrisoner && !p.IsSlave && !p.IsQuestLodger() && p.Map != null)
             {
-                List<Pawn> tmpList = p.Map.mapPawns.AllPawnsSpawned;
+                List<Pawn> tmpList = p.Map.mapPawns.AllPawnsSpawned.ToList();
                 foreach(Pawn otherPawn in tmpList)
                 {
                     if(otherPawn.IsPrisoner && TM_Calc.IsMagicUser(otherPawn))

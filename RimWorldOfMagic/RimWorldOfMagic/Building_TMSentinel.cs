@@ -44,7 +44,7 @@ namespace TorannMagic
             {
                 if (!initialized)
                 {
-                    List<Pawn> mapPawns = this.Map.mapPawns.AllPawnsSpawned;
+                    List<Pawn> mapPawns = this.Map.mapPawns.AllPawnsSpawned.ToList();
                     for(int i = 0; i < mapPawns.Count(); i++)
                     {
                         if (!mapPawns[i].DestroyedOrNull() && mapPawns[i].Spawned && !mapPawns[i].Downed && mapPawns[i].RaceProps.Humanlike)
@@ -123,7 +123,7 @@ namespace TorannMagic
         {
             Pawn threat = null;
 
-            List<Pawn> allPawns = this.Map.mapPawns.AllPawnsSpawned;
+            List<Pawn> allPawns = this.Map.mapPawns.AllPawnsSpawned.ToList();
             for(int i = 0; i < allPawns.Count(); i++)
             {
                 if (!allPawns[i].DestroyedOrNull())

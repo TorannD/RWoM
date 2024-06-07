@@ -16,7 +16,8 @@ namespace TorannMagic
 
         ThingOwner innerContainer = null;
 
-        public IThingHolder ParentHolder => ((IThingHolder)SpiritPawn).ParentHolder;
+        //public IThingHolder ParentHolder => ((IThingHolder)SpiritPawn).ParentHolder;
+        public IThingHolder ParentHolder => ((IThingHolder)Pawn);
 
         public ThingOwner GetDirectlyHeldThings()
         {

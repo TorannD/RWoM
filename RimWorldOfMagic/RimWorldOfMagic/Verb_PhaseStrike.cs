@@ -84,8 +84,8 @@ namespace TorannMagic
             {
                 TMAbilityDef ad = (TMAbilityDef)this.Ability.Def;
                 this.dmgNum = Mathf.RoundToInt(comp.weaponDamage * ad.weaponDamageFactor);
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                if (!this.CasterPawn.IsColonist && settingsRef.AIHardMode)
+                
+                if (!this.CasterPawn.IsColonist && ModOptions.Settings.Instance.AIHardMode)
                 {
                     this.dmgNum += 10;
                 }

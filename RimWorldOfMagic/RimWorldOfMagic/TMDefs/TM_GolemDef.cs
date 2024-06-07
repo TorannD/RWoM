@@ -22,6 +22,20 @@ namespace TorannMagic.TMDefs
         public List<NeedDef> needs = new List<NeedDef>();
         public List<HediffDef> hediffs = new List<HediffDef>();
 
+        public class GolemWorkTypes
+        {
+            public WorkTypeDef workTypeDef;
+            public int priority = 0;
+            public TM_GolemUpgradeDef golemUpgradeDef = null;
+            public SkillDef upgradedSkill;
+            public int initialSkillLevel = 0;
+            public int skillBonusPerUpgrade = 1;
+            public bool requiresUpgrade = false;
+            public bool enabled = true;
+        }
+
+        public List<GolemWorkTypes> golemWorkTypes = new List<GolemWorkTypes>();
+
         public static TM_GolemDef Named(string defName)
         {
             return DefDatabase<TM_GolemDef>.GetNamed(defName);

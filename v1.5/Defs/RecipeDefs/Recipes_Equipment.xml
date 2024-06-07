@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RecipeDef ParentName="FleshGolem_Recipe_Base">
+    <defName>TM_ShroudOfUndeath_Recipe</defName>
+    <label>craft shroud of soulreaper</label>
+    <description>Craft the Shroud of the Soulreaper - a mystical ensemble that augments the art of necromancy.</description>
+    <jobString>crafting Shroud</jobString>
+	<researchPrerequisite>TM_ArcaneCrafting</researchPrerequisite>
+<!-- 	<skillRequirements>
+	  <Intellectual>6</Intellectual>
+    </skillRequirements> -->
+	<workAmount>40</workAmount>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>CorpsesHumanlike</li>
+          </categories>
+        </filter>
+        <count>3</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>CorpsesHumanlike</li>
+      </categories>
+      <disallowedCategories>
+        <li>CorpsesMechanoid</li>
+      </disallowedCategories>
+    </fixedIngredientFilter>
+    <defaultIngredientFilter>
+	  <categories>
+        <li>CorpsesHumanlike</li>
+      </categories>
+      <specialFiltersToAllow>
+        <li>AllowCorpsesColonist</li>
+        <li>AllowCorpsesStranger</li>
+		<li>AllowRotten</li>
+      </specialFiltersToAllow>
+    </defaultIngredientFilter>
+  </RecipeDef>
+
+  
+</Defs>

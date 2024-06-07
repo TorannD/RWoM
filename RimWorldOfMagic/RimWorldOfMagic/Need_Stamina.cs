@@ -81,7 +81,7 @@ namespace TorannMagic
             set => base.CurLevel = Mathf.Clamp(value, 0f, this.pawn.GetCompAbilityUserMight().maxSP);
         }
 
-        public override float MaxLevel => this.pawn.GetCompAbilityUserMight().maxSP;
+        public override float MaxLevel => this.pawn.ageTracker.AgeBiologicalYears < 13 ? this.pawn.GetCompAbilityUserMight().maxSP - ((12f - this.pawn.ageTracker.AgeBiologicalYearsFloat)/10f) : this.pawn.GetCompAbilityUserMight().maxSP;
 
         public override int GUIChangeArrow
         {
@@ -177,9 +177,9 @@ namespace TorannMagic
                 {
                     Pawn pawn = base.pawn;
                     CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
-                    ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+                    
                     amount = amount * (0.015f);
-                    this.baseStaminaGain = amount * settingsRef.needMultiplier;
+                    this.baseStaminaGain = amount * ModOptions.Settings.Instance.needMultiplier;
                     amount *= comp.spRegenRate;
                     if (pawn.health != null && pawn.health.hediffSet != null)
                     {

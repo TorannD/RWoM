@@ -24,6 +24,12 @@ namespace TorannMagic.ModOptions
             base.forcePause = true;            
         }
 
+        public override void Close(bool doCloseSound = true)
+        {
+            TM_Data.ResetCaches();
+            base.Close(doCloseSound);
+        }
+
         public override void DoWindowContents(Rect inRect)
         {
             int num = 0;
@@ -33,9 +39,9 @@ namespace TorannMagic.ModOptions
             //GUI.BeginGroup(inRect);
             
             Text.Font = GameFont.Medium;
-            float x = Text.CalcSize("TM_ClassOptions".Translate()).x;
+            float x = Text.CalcSize("TM_EnabledClasses".Translate()).x;
             Rect headerRect = new Rect(inRect.width / 2f - (x / 2), inRect.y, inRect.width, ClassOptionsWindow.HeaderSize);
-            Widgets.Label(headerRect, "TM_ClassOptions".Translate());
+            Widgets.Label(headerRect, "TM_EnabledClasses".Translate());
             Text.Font = GameFont.Small;
             GUI.color = Color.yellow;
             x = Text.CalcSize("TM_ClassWarning".Translate()).x;
@@ -76,7 +82,7 @@ namespace TorannMagic.ModOptions
             Widgets.CheckboxLabeled(rowRect0, "TM_Wanderer".Translate(), ref Settings.Instance.Wanderer, false);
             Rect rowRect0ShiftRight = Controller.UIHelper.GetRowRect(rowRect0, rowHeight, num);
             rowRect0ShiftRight.x += rowRect0.width + 98f;
-            Widgets.CheckboxLabeled(rowRect0ShiftRight, "TM_Wayfarer".Translate(), ref Settings.Instance.Wayfayer, false);
+            Widgets.CheckboxLabeled(rowRect0ShiftRight, "TM_Wayfarer".Translate(), ref Settings.Instance.Wayfarer, false);
             num++;
             Rect rowRect = Controller.UIHelper.GetRowRect(rowRect0, rowHeight, num);
             Widgets.CheckboxLabeled(rowRect, "TM_Arcanist".Translate(), ref Settings.Instance.Arcanist, false);

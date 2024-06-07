@@ -88,8 +88,8 @@ namespace TorannMagic
                 verVal = TM_Calc.GetSkillVersatilityLevel(caster, TorannMagicDefOf.TM_WaveOfFear);
                 effVal = TM_Calc.GetSkillEfficiencyLevel(caster, TorannMagicDefOf.TM_WaveOfFear);
                 this.arcaneDmg = comp.mightPwr;
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                //if (!caster.IsColonist && settingsRef.AIHardMode)
+                
+                //if (!caster.IsColonist && ModOptions.Settings.Instance.AIHardMode)
                 //{
                 //    pwrVal = 3;
                 //    verVal = 3;
@@ -125,7 +125,7 @@ namespace TorannMagic
                 this.initialized = true;
             }  
 
-            if(Find.TickManager.TicksGame % this.waveDelay == 0)
+            if(Find.TickManager.TicksGame % this.waveDelay == 0 && !this.caster.DeadOrDowned && this.caster.Map != null)
             {
                 SearchAndFear();
                 this.waveRange++;
@@ -134,7 +134,7 @@ namespace TorannMagic
 
         public void SearchAndFear()
         {
-            List<Pawn> mapPawns = this.caster.Map.mapPawns.AllPawnsSpawned;
+            List<Pawn> mapPawns = this.caster.Map.mapPawns.AllPawnsSpawned.ToList();
             if (mapPawns != null && mapPawns.Count > 0)
             {
                 for (int i = 0; i < mapPawns.Count; i++)
@@ -143,6 +143,24 @@ namespace TorannMagic
                     if (!victim.DestroyedOrNull() && !victim.Dead && victim.Map != null && victim.health != null && victim.health.hediffSet != null && !victim.Downed && victim.mindState != null && !victim.InMentalState && !this.affectedPawns.Contains(victim))
                     {
                         if (victim.Faction != null && victim.Faction != caster.Faction && (victim.Position - caster.Position).LengthHorizontal < this.waveRange)
+                        {
+                            if (Rand.Chance(TM_Calc.GetSpellSuccessChance(caster, victim, true)))
+                            {
+                                LocalTargetInfo t = new LocalTargetInfo(victim.Position + (6 * this.arcaneDmg * TM_Calc.GetVector(caster.DrawPos, victim.DrawPos)).ToIntVec3());
+                                if (victim.jobs != null)
+                                {
+                                    Job job = new Job(JobDefOf.FleeAndCower, t);
+                                    victim.jobs.TryTakeOrderedJob(job, JobTag.Misc);
+                                }
+                                HealthUtility.AdjustSeverity(victim, HediffDef.Named("TM_WaveOfFearHD"), .5f + pwrVal);
+                                this.affectedPawns.Add(victim);
+                            }
+                            else
+                            {
+                                MoteMaker.ThrowText(victim.DrawPos, victim.Map, "TM_ResistedSpell".Translate(), -1);
+                            }
+                        }
+                        else if(victim.Faction == null && (victim.Position - caster.Position).LengthHorizontal < this.waveRange)
                         {
                             if (Rand.Chance(TM_Calc.GetSpellSuccessChance(caster, victim, true)))
                             {

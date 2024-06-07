@@ -1474,6 +1474,7 @@ This arcane script is incomplete and the reader may not be able to learn some, o
     <graphicData>
       <texPath>Items/ss_serum</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
+	  <drawSize>(.8,.8)</drawSize>
     </graphicData>
   </ThingDef>
   

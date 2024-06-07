@@ -1,12 +1,13 @@
 ﻿using RimWorld;
 using System;
 using Verse;
+using Verse.AI.Group;
 
 namespace TorannMagic
 {
     public class DeathWorker_Demon : DeathActionWorker
     {
-        public override void PawnDied(Corpse corpse)
+        public override void PawnDied(Corpse corpse, Lord prevLord)
         {
             if (corpse.InnerPawn.Faction == Faction.OfPlayer)
             {

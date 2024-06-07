@@ -144,8 +144,9 @@ namespace TorannMagic
             CircleED.Cleanup();
         }
 
-        public override void Draw()
-        {            
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
+        {           
+          
             if (this.IsActive)
             {
                 Vector3 vector = base.DrawPos;
@@ -157,8 +158,8 @@ namespace TorannMagic
                 matrix.SetTRS(vector, Quaternion.AngleAxis(angle, Vector3.up), s);
                 Graphics.DrawMesh(MeshPool.plane10, matrix, TM_RenderQueue.smc, 0);                               
             }
-            base.Draw();
-            
+            base.DrawAt(drawLoc, flip);
+
         }
 
         public override IntVec3 GetMageIndexPosition(List<Pawn> allMages, Pawn mage)

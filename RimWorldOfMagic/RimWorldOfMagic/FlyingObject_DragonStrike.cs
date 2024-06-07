@@ -205,7 +205,7 @@ namespace TorannMagic
             }
         }
 
-        public override void Draw()
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
             bool flag = this.flyingThing != null;
             if (flag)
@@ -220,7 +220,8 @@ namespace TorannMagic
                         return;
                     }
                     Pawn pawn = this.flyingThing as Pawn;
-                    pawn.Drawer.DrawAt(this.DrawPos);  
+                    pawn.Drawer.renderer.RenderPawnAt(this.DrawPos);
+                    //pawn.Drawer.DrawAt(this.DrawPos);  
                     
                 }
                 else

@@ -3,7 +3,6 @@ using RimWorld;
 using Verse;
 using AbilityUser;
 
-
 namespace TorannMagic
 {
 	[DefOf]
@@ -206,6 +205,8 @@ namespace TorannMagic
         public static TraitDef TM_EnlightenedTD;
         public static TraitDef TM_CursedTD;
         public static HediffDef TM_CursedHD;
+        public static TraitDef Masochist;
+        public static TraitDef Beauty;
 
         //Wanderer
         public static TraitDef TM_Wanderer;
@@ -1188,6 +1189,8 @@ namespace TorannMagic
         public static HediffDef TM_FrailtyHD;
         public static TMAbilityDef TM_HeatShield;
         public static HediffDef TM_HeatShieldHD;
+        public static HediffDef TM_ShroudOfUndeathHD;
+        public static HediffDef TM_UndeadShroudHD;
 
         public static HediffDef TM_Sight;
         public static HediffDef TM_Breathing;
@@ -1431,6 +1434,7 @@ namespace TorannMagic
         public static JobDef JobDriver_FleshChop;
         public static JobDef JobDriver_GolemSelfTend;
         public static JobDef JobDriver_GolemAbilityJob;
+        //public static JobDef JobDriver_GolemPlant; may be removed for generic work jobs
 
         //Things
         public static ThingDef RawMagicyte;
@@ -1505,6 +1509,8 @@ namespace TorannMagic
         public static SoundDef TM_Roar;
         public static SoundDef TM_Powerup;
         public static SoundDef TM_Scream;
+        public static SoundDef EnergyShield_Broken;
+        public static SoundDef DropPod_Open;
 
         //Inspirations
         public static InspirationDef ID_Champion;
@@ -1564,11 +1570,15 @@ namespace TorannMagic
         public static WeatherDef TM_HealingRainWD;
         public static WeatherDef TM_HailstormWD;
 
+        //GameConditionDefs
+        public static GameConditionDef SolarFlare;
+
         //Factions
         public static FactionDef TM_SkeletalFaction;
 
         //NeedDefs
         public static NeedDef TM_Travel;
+        public static NeedDef Joy;
 
         //Stats
         public static StatDef ArmorRating_Alignment;        
@@ -1576,6 +1586,10 @@ namespace TorannMagic
         //Armor Categories
         public static DamageArmorCategoryDef Dark;
         public static DamageArmorCategoryDef Light;
+
+        //Designation Categories
+        public static DesignationCategoryDef Structure;
+        public static DesignationCategoryDef Security;
 
         //CustomDefs
         public static TM_CustomDef TM_CustomDef;
@@ -1600,6 +1614,9 @@ namespace TorannMagic
         public static HistoryEventDef TM_BestowMagicEvent;
         public static HistoryEventDef TM_BestowClassEvent;
 
+        //Gene's
+        //public static GeneDef Ageless;  //can't use, error if biotech is not installed (non-existent def)
+
         //Rituals
         public static JobDef TM_SeverMagic;
         public static HediffDef TM_MagicSeverenceHD;
@@ -1619,6 +1636,9 @@ namespace TorannMagic
         //FleckDefs
         public static FleckDef ElectricalSpark;
         public static FleckDef SparkFlash;
+
+        //DamageDefs
+        public static DamageDef Arrow;
 
         //BackstoryDefs
         public static BackstoryDef TM_UndeadChildBS;

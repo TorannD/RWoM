@@ -61,7 +61,7 @@ namespace TorannMagic.Thoughts
         {
             if (!def.endMessage.NullOrEmpty() && PawnUtility.ShouldSendNotificationAbout(pawn))
             {
-                Messages.Message(def.endMessage.Formatted(pawn.LabelCap, TM_Data.EnabledMagicTraits[mageIndex].degreeDatas[TM_Data.EnabledMagicTraits[mageIndex].degreeDatas.FirstOrDefault().degree].label, pawn.Named("PAWN")).AdjustedFor(pawn), pawn, MessageTypeDefOf.NeutralEvent);
+                Messages.Message(def.endMessage.Formatted(pawn.LabelCap, TM_Data.EnabledMagicTraits[mageIndex].degreeDatas[0].label, pawn.Named("PAWN")).AdjustedFor(pawn), pawn, MessageTypeDefOf.NeutralEvent);
             }
         }
     }

@@ -215,7 +215,26 @@ namespace TorannMagic.Enchantment
                         //Log.Message("" + artifact.LabelShort + " has holding owner " + artifact.Wearer.LabelShort);
                         if (artifact.Wearer.health.hediffSet.GetFirstHediffOfDef(hediff, false) != null)
                         {
-
+                            Hediff hd = artifact.Wearer.health.hediffSet.GetFirstHediffOfDef(hediff);
+                            float totalSeverity = 0f;
+                            //look for multiple items that provide the same hediff and either add their severities (stacks) or select the largest severity
+                            List<Apparel> aList = artifact.Wearer.apparel.WornApparel;
+                            foreach(Apparel item in aList)
+                            {
+                                CompEnchantedItem enchantedItem = item.TryGetComp<CompEnchantedItem>();
+                                if(enchantedItem != null && enchantedItem.Props.hediff == this.hediff)
+                                {
+                                    if(enchantedItem.Props.hediffStacks && this.Props.hediffStacks)
+                                    {
+                                        totalSeverity += enchantedItem.hediffSeverity;
+                                    }             
+                                    else if(enchantedItem.Props.hediffSeverity > this.Props.hediffSeverity)
+                                    {
+                                        totalSeverity = enchantedItem.Props.hediffSeverity;
+                                    }
+                                }
+                            }
+                            hd.Severity = totalSeverity;
                         }
                         else
                         {                            

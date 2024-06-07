@@ -195,7 +195,7 @@ namespace TorannMagic
 
         public void SearchAndTaunt()
         {
-            List<Pawn> mapPawns = this.Pawn.Map.mapPawns.AllPawnsSpawned;
+            List<Pawn> mapPawns = this.Pawn.Map.mapPawns.AllPawnsSpawned.ToList();
             List<Pawn> tauntTargets = new List<Pawn>();
             tauntTargets.Clear();
             if (mapPawns != null && mapPawns.Count > 0)
@@ -336,9 +336,9 @@ namespace TorannMagic
             base.PostDestroy(mode, previousMap);
         }
 
-        public override void PostPreApplyDamage(DamageInfo dinfo, out bool absorbed)
+        public override void PostPreApplyDamage(ref DamageInfo dinfo, out bool absorbed)
         {
-            base.PostPreApplyDamage(dinfo, out absorbed);
+            base.PostPreApplyDamage(ref dinfo, out absorbed);
             if(dinfo.Instigator != null)
             {
                 Thing instigatorThing = dinfo.Instigator;
@@ -373,7 +373,7 @@ namespace TorannMagic
         {
             this.closeThreats.Clear();
             this.farThreats.Clear();
-            List<Pawn> allPawns = this.Pawn.Map.mapPawns.AllPawnsSpawned;
+            List<Pawn> allPawns = this.Pawn.Map.mapPawns.AllPawnsSpawned.ToList();
             for (int i = 0; i < allPawns.Count; i++)
             {
                 if (!allPawns[i].DestroyedOrNull() && allPawns[i] != this.Pawn)

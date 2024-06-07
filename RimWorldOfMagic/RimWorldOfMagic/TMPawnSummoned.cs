@@ -125,7 +125,7 @@ namespace TorannMagic
 
         public override void Tick()
         {
-            if (Spawned && this.Map != null)
+            if (Spawned && this.Map != null && this.Position.InBounds(this.Map))
             {
                 base.Tick();
                 if (Find.TickManager.TicksGame % 10 == 0)
@@ -254,9 +254,9 @@ namespace TorannMagic
             base.DeSpawn(mode);
         }
 
-        public override void Draw()
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
-            base.Draw();
+            base.DrawAt(drawLoc, flip);
         }
 
         public override void ExposeData()

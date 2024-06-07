@@ -11,13 +11,13 @@ namespace TorannMagic.Ideology
     public class RitualAttachableOutcomeEffectWorker_ManaRecharge : RitualAttachableOutcomeEffectWorker
     {
 		public static readonly IntRange ManaRange = new IntRange(50, 100);
-		public override void Apply(Dictionary<Pawn, int> totalPresence, LordJob_Ritual jobRitual, OutcomeChance outcome, out string extraOutcomeDesc, ref LookTargets letterLookTargets)
+		public override void Apply(Dictionary<Pawn, int> totalPresence, LordJob_Ritual jobRitual, RitualOutcomePossibility outcome, out string extraOutcomeDesc, ref LookTargets letterLookTargets)
 		{
 			extraOutcomeDesc = "No mages participated.";
 			int mageCount = 0;
-			List<OutcomeChance> outcomeChances = jobRitual.Ritual.outcomeEffect.def.outcomeChances;
-			int positivityIndex = outcomeChances.MaxBy((OutcomeChance c) => c.positivityIndex).positivityIndex;
-			int positivityIndex2 = outcomeChances.Where((OutcomeChance c) => c.positivityIndex >= 0).MinBy((OutcomeChance c) => c.positivityIndex).positivityIndex;
+			List<RitualOutcomePossibility> outcomeChances = jobRitual.Ritual.outcomeEffect.def.outcomeChances;
+			int positivityIndex = outcomeChances.MaxBy((RitualOutcomePossibility c) => c.positivityIndex).positivityIndex;
+			int positivityIndex2 = outcomeChances.Where((RitualOutcomePossibility c) => c.positivityIndex >= 0).MinBy((RitualOutcomePossibility c) => c.positivityIndex).positivityIndex;
 			int num = ManaRange.Lerped((float)(outcome.positivityIndex - positivityIndex2) / (float)(positivityIndex - positivityIndex2));
 			float numf = (float)num;
 			foreach (Pawn key in totalPresence.Keys)

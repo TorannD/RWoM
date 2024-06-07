@@ -6,6 +6,7 @@ using UnityEngine;
 using Verse;
 using RimWorld;
 using System.Diagnostics;
+using TorannMagic.TMDefs;
 
 namespace TorannMagic.Golems
 {
@@ -22,6 +23,7 @@ namespace TorannMagic.Golems
         public Vector2 scrollPosition = Vector2.zero;
         public CompGolem cg = null;
         List<TM_GolemUpgrade> upgrades = new List<TM_GolemUpgrade>();
+        List<TM_GolemDef.GolemWorkTypes> workTypes = new List<TM_GolemDef.GolemWorkTypes>();
 
 
         public GolemAbilitiesWindow()
@@ -80,6 +82,7 @@ namespace TorannMagic.Golems
                         cg.PawnGolem.ValidRangedVerbs(true);
                     }
                 }
+                cg.PawnGolem.SetGolemWorkPrioritiesAndSkills();
             }
             catch(NullReferenceException ex)
             {
@@ -120,11 +123,22 @@ namespace TorannMagic.Golems
                     }
                 }
             }
+            workTypes.Clear();
+            if (cg.Golem.golemDef.golemWorkTypes != null)
+            {
+                foreach (TMDefs.TM_GolemDef.GolemWorkTypes gwt in cg.Golem.golemDef.golemWorkTypes)
+                {
+                    if (!gwt.requiresUpgrade || cg.Golem.upgrades.Any((TM_GolemUpgrade y) => y.golemUpgradeDef == gwt.golemUpgradeDef && y.currentLevel > 0))
+                    {
+                        workTypes.Add(gwt);
+                    }
+                }
+            }
             int num = 0;
             float rowHeight = 28f;
             //GUI.BeginGroup(inRect);
             int scrollCount = 256;
-            if(upgrades.Count > 8)
+            if((workTypes.Count + upgrades.Count) > 8)
             {
                 scrollCount = upgrades.Count * 40;
             }
@@ -148,6 +162,19 @@ namespace TorannMagic.Golems
                 TooltipHandler.TipRegion(upgradeRect, "TM_GolemAbilityEnabledDesc".Translate(upgrades[i].golemUpgradeDef.label, upgrades[i].golemUpgradeDef.description));
                 num++;                
             }
+            if (cg.PawnGolem?.skills != null)
+            {
+                for (int i = 0; i < workTypes.Count; i++)
+                {
+                    if (workTypes[i].workTypeDef.relevantSkills?.Count > 0)
+                    {
+                        Rect upgradeRect = GetRowRect(rect1, num);
+                        Widgets.CheckboxLabeled(upgradeRect, workTypes[i].workTypeDef.pawnLabel + " [" + cg.PawnGolem.skills.GetSkill(workTypes[i].upgradedSkill).Level + "]", ref workTypes[i].enabled, false);
+                        TooltipHandler.TipRegion(upgradeRect, "TM_GolemWorkTypeEnabledDesc".Translate(workTypes[i].workTypeDef.pawnLabel));
+                        num++;
+                    }
+                }
+            }
             num++;
             Rect rowRect99 = GetRowRect(rect1, num);
             rowRect99.width = 100f;
@@ -157,6 +184,10 @@ namespace TorannMagic.Golems
                 foreach(TM_GolemUpgrade gu in upgrades)
                 {
                     gu.enabled = true;
+                }
+                foreach (TM_GolemDef.GolemWorkTypes gwt in workTypes)
+                {
+                    gwt.enabled = true;
                 }
             }
             GUI.EndScrollView();

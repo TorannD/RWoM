@@ -20,7 +20,7 @@ namespace TorannMagic
 
             Pawn pawn = this.launcher as Pawn;
                        
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+            
             
             if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
             {
@@ -40,7 +40,7 @@ namespace TorannMagic
                 this.arcaneDmg = comp.arcaneDmg;
             }
             
-            if (settingsRef.AIHardMode && !pawn.IsColonist)
+            if (ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist)
             {
                 pwrVal = 3;
                 verVal = 3;
@@ -60,7 +60,7 @@ namespace TorannMagic
                 bool flag2 = this.canStartFire && Rand.Range(0f, 1f) > this.startFireChance;
                 if (flag2)
                 {
-                    hitThing.TryAttachFire(0.05f);
+                    hitThing.TryAttachFire(0.05f, null);
                 }
                 Pawn hitTarget;
                 bool flag3 = (hitTarget = (hitThing as Pawn)) != null;

@@ -69,13 +69,13 @@ namespace TorannMagic.Golems
 
         public void GlowOff()
         {
-            this.Map.mapDrawer.MapMeshDirty(this.Position, MapMeshFlag.Things);
+            this.Map.mapDrawer.MapMeshDirty(this.Position, MapMeshFlagDefOf.Things);
             this.Map.glowGrid.DeRegisterGlower(glower);
         }
 
         public void GlowOn()
         {
-            this.Map.mapDrawer.MapMeshDirty(this.Position, MapMeshFlag.Things);
+            this.Map.mapDrawer.MapMeshDirty(this.Position, MapMeshFlagDefOf.Things);
             this.Map.glowGrid.RegisterGlower(glower);
         }
         
@@ -468,7 +468,7 @@ namespace TorannMagic.Golems
                                 activating = false;
                             }
                         }
-                        if (activationAge >= (.9f * GolemDef.activationTicks) && Find.TickManager.TicksGame % 6 == 0)
+                        if (ModOptions.Settings.Instance.golemScreenShake && activationAge >= (.9f * GolemDef.activationTicks) && Find.TickManager.TicksGame % 6 == 0)
                         {
                             Find.CameraDriver.shaker.DoShake(.05f);
                         }
@@ -592,6 +592,7 @@ namespace TorannMagic.Golems
             }
             TMPawnSummoned spawnedThing = null;
             LifeStageDef lsDef = null;
+            int lsAgeIndex = 0;
             TM_Golem tmpGolem = null;
             
             //temp variables
@@ -630,25 +631,26 @@ namespace TorannMagic.Golems
                         {
                             tmpGolem = new TM_Golem(GolemDef, this);
                             lsDef = gu.golemUpgradeDef.lifeStages[gu.currentLevel];
+                            lsAgeIndex = gu.currentLevel + gu.golemUpgradeDef.lifeStageIndexOffset;
                         }
                     }
                 }
             }
-            if (innerContainer != null && innerContainer.Any && lsDef == null)
+            if (innerContainer != null && innerContainer.Any) // && lsDef == null)
             {
                 Pawn p = innerContainer.FirstOrDefault() as Pawn;
                 GenPlace.TryPlaceThing(p.SplitOff(1), this.Position, this.Map, ThingPlaceMode.Near, null, null, this.Rotation);
-                spawnedThing = p as TMPawnSummoned;
+                spawnedThing = p as TMPawnSummoned;                
             }
             else
             {
                 AbilityUser.SpawnThings spawnables = new SpawnThings();
                 spawnables.def = GetGolemThingDef;
                 spawnables.kindDef = GetGolemKindDef;
-                if (lsDef != null)
-                {
-                    spawnables.def.race.lifeStageAges.FirstOrDefault().def = lsDef;
-                }
+                //if (lsDef != null)
+                //{
+                //    spawnables.def.race.lifeStageAges.FirstOrDefault().def = lsDef;
+                //}
                 spawnables.spawnCount = 1;
                 
                 bool flag = spawnables.def != null;
@@ -666,9 +668,15 @@ namespace TorannMagic.Golems
                 if(cg != null)
                 {
                     cg.dormantThing = this;
-                    cg.dormantPosition = this.Position;
+                    if (cg.dormantPosition == IntVec3.Zero)
+                    {
+                        cg.dormantPosition = this.Position;
+                    }
                     cg.dormantRotation = this.Rotation;
-                    cg.dormantMap = this.Map;
+                    if (cg.dormantMap == null)
+                    {
+                        cg.dormantMap = this.Map;
+                    }
                     if (!cg.GolemName.ToString().Contains("Blank"))
                     {
                         spawnedThing.Name = cg.GolemName;
@@ -692,6 +700,7 @@ namespace TorannMagic.Golems
                         cg.minEnergyPctForAbilities = tempMinEnergyPctForAbilities;
                         cg.energyPctShouldAwaken = tempEnergyPctShouldAwaken;                      
                     }
+                    spawnedThing.ageTracker.LockCurrentLifeStageIndex(lsAgeIndex);
                 }
             }
             if(Find.Selector.SingleSelectedThing == this)
@@ -705,9 +714,9 @@ namespace TorannMagic.Golems
         public virtual PawnKindDef GetGolemKindDef => TM_GolemUtility.GetGolemDefFromThing(this).golemKindDef;
 
         private int drawIteration = 0;
-		public override void Draw()
-		{
-			base.Draw();
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
+        {
+            base.DrawAt(drawLoc, flip);
             if (Upgrades != null)
             {
                 foreach (TM_GolemUpgrade gu in Upgrades)
@@ -805,7 +814,7 @@ namespace TorannMagic.Golems
             {
                 yield return gizmo;
             }
-            if (this.GetComp<CompFlickable>().SwitchIsOn)
+            if (GolemDef != null && this.GetComp<CompFlickable>().SwitchIsOn)
             {
                 String failString = "";
                 bool activationFlag = CanActivate(out failString);
@@ -834,9 +843,9 @@ namespace TorannMagic.Golems
                         MoteMaker.ThrowText(pos, this.Map, "TM_GolemMinimumToActivate".Translate(Energy.StoredEnergyPct.ToString("P"), GolemDef.minimumEnergyPctToActivate.ToString("P1")), -1);                        
                     }
                 };
-                command_Action.disabled = (Energy.StoredEnergyPct < GolemDef.minimumEnergyPctToActivate) || pauseFor > 0 || !activationFlag;
+                command_Action.Disabled = (Energy.StoredEnergyPct < GolemDef.minimumEnergyPctToActivate) || pauseFor > 0 || !activationFlag;
                 yield return command_Action;
-                
+
                 Command_Toggle command_Toggle = new Command_Toggle();
                 command_Toggle.defaultLabel = "CommandHoldFire".Translate();
                 command_Toggle.defaultDesc = "CommandHoldFireDesc".Translate();
@@ -848,7 +857,7 @@ namespace TorannMagic.Golems
                 };
                 command_Toggle.isActive = (() => holdFire);
                 yield return (Gizmo)command_Toggle;
-                
+
                 TM_Command_Target command_Target = new TM_Command_Target();
                 command_Target.defaultLabel = "CommandSetForceAttackTarget".Translate();
                 command_Target.defaultDesc = "CommandSetForceAttackTargetDesc".Translate();
@@ -863,7 +872,7 @@ namespace TorannMagic.Golems
                     }
                 };
                 yield return command_Target;
-                
+
                 if (glower != null)
                 {
                     Command_Toggle command_Glow = new Command_Toggle();
@@ -878,7 +887,7 @@ namespace TorannMagic.Golems
                     command_Glow.isActive = (() => glowingInt);
                     yield return (Gizmo)command_Glow;
                 }
-                
+
                 if (canRegulateTemp)
                 {
                     float offset = RoundedToCurrentTempModeOffset(-10f);
@@ -938,7 +947,6 @@ namespace TorannMagic.Golems
                     command_Temperature5.icon = ContentFinder<Texture2D>.Get("UI/Commands/TempRaise");
                     yield return (Gizmo)command_Temperature5;
                 }
-                
             }            
         }
 
@@ -962,11 +970,15 @@ namespace TorannMagic.Golems
 
         public override string GetInspectString()
         {
-            string baseStr = base.GetInspectString();
+
+            StringBuilder sb = new StringBuilder();
+            //stringBuilder.AppendLine();
+            //string baseStr = base.GetInspectString();
             if (canRegulateTemp)
             {
-                string tempString = "\n" + "TargetTemperature".Translate() + ": " + "\n" + tempGoal.ToStringTemperature("F0");
-                baseStr += tempString;
+                sb.AppendLine("TargetTemperature".Translate() + ": " + "\n" + tempGoal.ToStringTemperature("F0"));
+                //string tempString = "\n" + "TargetTemperature".Translate() + ": " + "\n" + tempGoal.ToStringTemperature("F0");
+                //baseStr += tempString;
             }
             if(this.abilityCharges > 0 && this.creationRecipes != null && this.creationRecipes.Count > 0)
             {
@@ -978,17 +990,21 @@ namespace TorannMagic.Golems
                         {
                             if(gwe.chargesRequired > 0)
                             {
-                                string tempString = "\n" + gu.golemUpgradeDef.label + " " + this.creationRecipes[0].outputThing.label;
-                                baseStr += tempString;
+                                sb.AppendLine(gu.golemUpgradeDef.label + " " + this.creationRecipes[0].outputThing.label);
+                                //string tempString = "\n" + gu.golemUpgradeDef.label + " " + this.creationRecipes[0].outputThing.label;
+                                //baseStr += tempString;
                             }
                         }
                     }
                 }
-                string chargeString = "\n" + "TM_GolemChargesRemaining".Translate(this.abilityCharges);
-                baseStr += chargeString;
+                sb.AppendLine("TM_GolemChargesRemaining".Translate(this.abilityCharges));
+                //string chargeString = "\n" + "TM_GolemChargesRemaining".Translate(this.abilityCharges);
+                //baseStr += chargeString;
             }
-            
-            return baseStr;
+            //sb.AppendLine("TM_GolemCharge".Translate(this.Energy.StoredEnergyPct));
+            sb.AppendLine(InspectStringPartsFromComps());
+            return GenText.TrimEndNewlines(sb.ToString());
+            //return baseStr;
         }
   
 

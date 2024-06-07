@@ -106,7 +106,8 @@ namespace TorannMagic
 
         public new virtual void Spring(Pawn p)
         {
-            SoundDefOf.EnergyShield_Broken.PlayOneShot(new TargetInfo(base.Position, base.Map, false));
+            
+            TorannMagicDefOf.EnergyShield_Broken.PlayOneShot(new TargetInfo(base.Position, base.Map, false));
             this.trapPawn = p;
             this.trapSprung = true;
         }

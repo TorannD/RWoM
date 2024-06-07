@@ -10,6 +10,7 @@ using AbilityUser;
 
 namespace TorannMagic.ModOptions
 { 
+    [StaticConstructorOnStartup]
     public abstract class Constants
     {
         private static bool pawnInFlight = false;
@@ -78,6 +79,36 @@ namespace TorannMagic.ModOptions
         {
             bypassPrediction = value;
             return bypassPrediction;
+        }
+
+        private static ApparelPolicy undeadApparelPolicy;
+
+        public static ApparelPolicy GetUndeadApparelPolicy()
+        {
+            return undeadApparelPolicy;
+        }
+
+        public static void SetUndeadApparelPolicy()
+        {
+            ApparelPolicy existingPolicy = null;
+            foreach(ApparelPolicy ap in Current.Game.outfitDatabase.AllOutfits)
+            {
+                if(ap.id == 67)
+                {
+                    existingPolicy = ap;
+                }
+            }
+            if (existingPolicy != null)
+            {
+                undeadApparelPolicy = existingPolicy;
+            }
+            else
+            {
+                undeadApparelPolicy = Current.Game.outfitDatabase.MakeNewOutfit();
+                undeadApparelPolicy.id = 67;
+                undeadApparelPolicy.label = "TM_UndeadVerbatum".Translate();
+                undeadApparelPolicy.filter = Current.Game.outfitDatabase.DefaultOutfit().filter;
+            }
         }
 
         static List<Pawn> overdrivePawns = new List<Pawn>();
@@ -159,64 +190,129 @@ namespace TorannMagic.ModOptions
             return shotgunSpecCount;
         }
 
-        private static List<Texture> cloaks;
-        public static List<Texture> GetCloaks()
+        //private static List<Texture> cloaks;
+        //public static List<Texture> GetCloaks()
+        private static HashSet<Material> cloaks;
+        public static HashSet<Material> GetCloaks()
+        //private static HashSet<Texture> cloaks;
+        //public static HashSet<Texture> GetCloaks()
         {
-            return cloaks;            
+            return cloaks;
         }
 
-        public static List<Texture> cloaksNorth;
-        public static List<Texture> GetCloaksNorth()
+        //public static List<Texture> cloaksNorth;
+        //public static List<Texture> GetCloaksNorth()
+        private static Material[] cloaksNorth;
+        public static Material[] GetCloaksNorth()
+        //private static Texture[] cloaksNorth;
+        //public static Texture[] GetCloaksNorth()
         {
             return cloaksNorth;
         }
 
         public static void InitializeCloaks()
         {
-            Constants.cloaks = new List<Texture>();
-            Constants.cloaks.Clear();
-            Constants.cloaksNorth = new List<Texture>();
-            Constants.cloaksNorth.Clear();
-            Constants.cloaksNorth.Add(MaterialPool.MatFrom("Equipment/opencloak_Female_north").mainTexture);
-            Constants.cloaksNorth.Add(MaterialPool.MatFrom("Equipment/opencloak_Hulk_north").mainTexture);
-            Constants.cloaksNorth.Add(MaterialPool.MatFrom("Equipment/opencloak_Male_north").mainTexture);
-            Constants.cloaksNorth.Add(MaterialPool.MatFrom("Equipment/opencloak_Thin_north").mainTexture);
-            Constants.cloaksNorth.Add(MaterialPool.MatFrom("Equipment/opencloak_Fat_north").mainTexture);
-            Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/opencloak_Female_east").mainTexture);            
-            Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/opencloak_Female_south").mainTexture);
-            Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/opencloak_Fat_east").mainTexture);
-            Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/opencloak_Fat_south").mainTexture);
-            Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/opencloak_Hulk_east").mainTexture);
-            Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/opencloak_Hulk_south").mainTexture);
-            Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/opencloak_Thin_east").mainTexture);
-            Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/opencloak_Thin_south").mainTexture);
-            Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/opencloak_Male_east").mainTexture);
-            Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/opencloak_Male_south").mainTexture);
-            Constants.cloaksNorth.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_Female_north").mainTexture);
-            Constants.cloaksNorth.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_Hulk_north").mainTexture);
-            Constants.cloaksNorth.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_Male_north").mainTexture);
-            Constants.cloaksNorth.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_Thin_north").mainTexture);
-            Constants.cloaksNorth.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_Fat_north").mainTexture);
-            Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_Female_east").mainTexture);
-            Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_Female_south").mainTexture);
-            Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_Fat_east").mainTexture);
-            Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_Fat_south").mainTexture);
-            Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_Hulk_east").mainTexture);
-            Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_Hulk_south").mainTexture);
-            Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_Thin_east").mainTexture);
-            Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_Thin_south").mainTexture);
-            Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_Male_east").mainTexture);
-            Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_Male_south").mainTexture);
-            if(ModsConfig.IsActive("ssulunge.BBBodySupport"))
+            cloaksNorth = new[] {
+                MaterialPool.MatFrom("Equipment/opencloak_Female_north"),
+                MaterialPool.MatFrom("Equipment/opencloak_Hulk_north"),
+                MaterialPool.MatFrom("Equipment/opencloak_Male_north"),
+                MaterialPool.MatFrom("Equipment/opencloak_Thin_north"),
+                MaterialPool.MatFrom("Equipment/opencloak_Fat_north"),
+                MaterialPool.MatFrom("Equipment/demonlordcloakc_Female_north"),
+                MaterialPool.MatFrom("Equipment/demonlordcloakc_Hulk_north"),
+                MaterialPool.MatFrom("Equipment/demonlordcloakc_Male_north"),
+                MaterialPool.MatFrom("Equipment/demonlordcloakc_Thin_north"),
+                MaterialPool.MatFrom("Equipment/demonlordcloakc_Fat_north"),
+                MaterialPool.MatFrom("Equipment/mop_Female_north"),
+                MaterialPool.MatFrom("Equipment/mop_Hulk_north"),
+                MaterialPool.MatFrom("Equipment/mop_Male_north"),
+                MaterialPool.MatFrom("Equipment/mop_Thin_north"),
+                MaterialPool.MatFrom("Equipment/mop_Fat_north")
+            };
+            cloaks = new HashSet<Material>
             {
-                Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_FemaleBB_east").mainTexture);
-                Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_FemaleBB_south").mainTexture);
-                Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_FemaleBB_north").mainTexture);
-                Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/opencloak_FemaleBB_east").mainTexture);
-                Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/opencloak_FemaleBB_south").mainTexture);
-                Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/opencloak_FemaleBB_south").mainTexture);
+                MaterialPool.MatFrom("Equipment/opencloak_Female_east"),
+                MaterialPool.MatFrom("Equipment/opencloak_Female_south"),
+                MaterialPool.MatFrom("Equipment/opencloak_Fat_east"),
+                MaterialPool.MatFrom("Equipment/opencloak_Fat_south"),
+                MaterialPool.MatFrom("Equipment/opencloak_Hulk_east"),
+                MaterialPool.MatFrom("Equipment/opencloak_Hulk_south"),
+                MaterialPool.MatFrom("Equipment/opencloak_Thin_east"),
+                MaterialPool.MatFrom("Equipment/opencloak_Thin_south"),
+                MaterialPool.MatFrom("Equipment/opencloak_Male_east"),
+                MaterialPool.MatFrom("Equipment/opencloak_Male_south"),
+                MaterialPool.MatFrom("Equipment/demonlordcloakc_Female_east"),
+                MaterialPool.MatFrom("Equipment/demonlordcloakc_Female_south"),
+                MaterialPool.MatFrom("Equipment/demonlordcloakc_Fat_east"),
+                MaterialPool.MatFrom("Equipment/demonlordcloakc_Fat_south"),
+                MaterialPool.MatFrom("Equipment/demonlordcloakc_Hulk_east"),
+                MaterialPool.MatFrom("Equipment/demonlordcloakc_Hulk_south"),
+                MaterialPool.MatFrom("Equipment/demonlordcloakc_Thin_east"),
+                MaterialPool.MatFrom("Equipment/demonlordcloakc_Thin_south"),
+                MaterialPool.MatFrom("Equipment/demonlordcloakc_Male_east"),
+                MaterialPool.MatFrom("Equipment/demonlordcloakc_Male_south"),
+                MaterialPool.MatFrom("Equipment/mop_Female_east"),
+                MaterialPool.MatFrom("Equipment/mop_Female_south"),
+                MaterialPool.MatFrom("Equipment/mop_Fat_east"),
+                MaterialPool.MatFrom("Equipment/mop_Fat_south"),
+                MaterialPool.MatFrom("Equipment/mop_Hulk_east"),
+                MaterialPool.MatFrom("Equipment/mop_Hulk_south"),
+                MaterialPool.MatFrom("Equipment/mop_Thin_east"),
+                MaterialPool.MatFrom("Equipment/mop_Thin_south"),
+                MaterialPool.MatFrom("Equipment/mop_Male_east"),
+                MaterialPool.MatFrom("Equipment/mop_Male_south")
+            };
+            ///
+            //Constants.cloaks = new List<Texture>();
+            //Constants.cloaks.Clear();
+            //Constants.cloaksNorth = new List<Texture>();
+            //Constants.cloaksNorth.Clear();
+            //Constants.cloaksNorth.Add(MaterialPool.MatFrom("Equipment/opencloak_Female_north").mainTexture);
+            //Constants.cloaksNorth.Add(MaterialPool.MatFrom("Equipment/opencloak_Hulk_north").mainTexture);
+            //Constants.cloaksNorth.Add(MaterialPool.MatFrom("Equipment/opencloak_Male_north").mainTexture);
+            //Constants.cloaksNorth.Add(MaterialPool.MatFrom("Equipment/opencloak_Thin_north").mainTexture);
+            //Constants.cloaksNorth.Add(MaterialPool.MatFrom("Equipment/opencloak_Fat_north").mainTexture);
+            //Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/opencloak_Female_east").mainTexture);
+            //Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/opencloak_Female_south").mainTexture);
+            //Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/opencloak_Fat_east").mainTexture);
+            //Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/opencloak_Fat_south").mainTexture);
+            //Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/opencloak_Hulk_east").mainTexture);
+            //Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/opencloak_Hulk_south").mainTexture);
+            //Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/opencloak_Thin_east").mainTexture);
+            //Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/opencloak_Thin_south").mainTexture);
+            //Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/opencloak_Male_east").mainTexture);
+            //Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/opencloak_Male_south").mainTexture);
+            //Constants.cloaksNorth.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_Female_north").mainTexture);
+            //Constants.cloaksNorth.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_Hulk_north").mainTexture);
+            //Constants.cloaksNorth.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_Male_north").mainTexture);
+            //Constants.cloaksNorth.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_Thin_north").mainTexture);
+            //Constants.cloaksNorth.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_Fat_north").mainTexture);
+            //Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_Female_east").mainTexture);
+            //Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_Female_south").mainTexture);
+            //Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_Fat_east").mainTexture);
+            //Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_Fat_south").mainTexture);
+            //Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_Hulk_east").mainTexture);
+            //Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_Hulk_south").mainTexture);
+            //Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_Thin_east").mainTexture);
+            //Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_Thin_south").mainTexture);
+            //Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_Male_east").mainTexture);
+            //Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_Male_south").mainTexture);
+            if (ModsConfig.IsActive("ssulunge.BBBodySupport"))
+            {
+                //Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_FemaleBB_east").mainTexture);
+                //Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_FemaleBB_south").mainTexture);
+                //Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_FemaleBB_north").mainTexture);
+                //Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/opencloak_FemaleBB_east").mainTexture);
+                //Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/opencloak_FemaleBB_south").mainTexture);
+                //Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/opencloak_FemaleBB_south").mainTexture);
+                cloaks.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_FemaleBB_east"));
+                cloaks.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_FemaleBB_south"));
+                cloaks.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_FemaleBB_north"));
+                cloaks.Add(MaterialPool.MatFrom("Equipment/opencloak_FemaleBB_east"));
+                cloaks.Add(MaterialPool.MatFrom("Equipment/opencloak_FemaleBB_south"));
+                cloaks.Add(MaterialPool.MatFrom("Equipment/opencloak_FemaleBB_south"));
             }
-            Constants.cloaks.AddRange(cloaksNorth);
+            cloaks.AddRange(cloaksNorth);
         }
 
         public static Dictionary<string,IEnumerable<Gizmo>> reducedGizmoList;

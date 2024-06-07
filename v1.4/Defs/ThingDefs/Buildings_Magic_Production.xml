@@ -37,7 +37,7 @@
       <texPath>Items/TableGemcutting</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
 	  <shaderType>CutoutComplex</shaderType>
-      <drawSize>(3.5,1.5)</drawSize>
+      <drawSize>(6,2)</drawSize>
       <damageData>
         <cornerTL>Damage/Corner</cornerTL>
         <cornerTR>Damage/Corner</cornerTR>
@@ -179,7 +179,7 @@ Using the arcane forge dramatically increases crafting speed but consumes mana. 
     <graphicData>
       <texPath>Items/anvil</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(3.5,1.5)</drawSize>
+      <drawSize>(3.3,2.2)</drawSize>
       <damageData>
         <cornerTL>Damage/Corner</cornerTL>
         <cornerTR>Damage/Corner</cornerTR>

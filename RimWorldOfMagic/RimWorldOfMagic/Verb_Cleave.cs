@@ -76,8 +76,8 @@ namespace TorannMagic
                 pawnDPS = base.CasterPawn.GetStatValue(StatDefOf.MeleeDPS, false);
                 skillMultiplier = (1.2f + (.025f * str.level));
                 dmgNum = Mathf.RoundToInt(skillMultiplier * dmgMultiplier * (pawnDPS + weaponDPS));
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                if(!this.CasterPawn.IsColonist && settingsRef.AIHardMode)
+                
+                if(!this.CasterPawn.IsColonist && ModOptions.Settings.Instance.AIHardMode)
                 {
                     dmgNum += 10;
                 }

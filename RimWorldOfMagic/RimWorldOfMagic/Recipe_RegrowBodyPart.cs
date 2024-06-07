@@ -8,6 +8,37 @@ namespace TorannMagic
 {
     public class Recipe_RegrowBodyPart : Recipe_InstallArtificialBodyPart
     {
+        public override IEnumerable<BodyPartRecord> GetPartsToApplyOn(Pawn pawn, RecipeDef recipe)
+        {
+            return MedicalRecipesUtility.GetFixedPartsToApplyOn(recipe, pawn, delegate (BodyPartRecord record)
+            {
+                IEnumerable<Hediff> source = from x in pawn.health.hediffSet.hediffs
+                                             where x.Part == record
+                                             select x;
+                //if (typeof(Hediff_AddedPart).IsAssignableFrom(recipe.addsHediff.hediffClass))
+                //{
+                //    if (source.Count() == 1 && source.First().def == recipe.addsHediff)
+                //    {
+                //        return false;
+                //    }
+                //}
+                //else if
+                if (source.Any((Hediff hd) => hd.def == recipe.addsHediff))
+                {
+                    return false;
+                }
+                if (record.parent != null && !pawn.health.hediffSet.GetNotMissingParts().Contains(record.parent))
+                {
+                    return false;
+                }
+                if (pawn.health.hediffSet.PartOrAnyAncestorHasDirectlyAddedParts(record) && !pawn.health.hediffSet.HasDirectlyAddedPartFor(record))
+                {
+                    return false;
+                }
+                return true;
+            });
+        }
+
         public override void ApplyOnPawn(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
         {
             if (billDoer != null)
@@ -67,7 +98,7 @@ namespace TorannMagic
                             patient.Label,
                             reason,
                             surgeon.LabelShort
-                        ), LetterDefOf.NegativeEvent, null);
+                        ), LetterDefOf.NegativeEvent, null, null);
                         return true;
                     }
                     else // regrowth surgery success
@@ -93,7 +124,7 @@ namespace TorannMagic
                         patient.Label,
                         reason,
                         surgeon.LabelShort
-                    ), LetterDefOf.NegativeEvent, null);
+                    ), LetterDefOf.NegativeEvent, null, null);
                     return true;
                 }
             }
@@ -104,7 +135,7 @@ namespace TorannMagic
                         patient.Label,
                         reason,
                         surgeon.LabelShort
-                ), LetterDefOf.NegativeEvent, null);
+                ), LetterDefOf.NegativeEvent, null, null);
             return true;
 
         }

@@ -210,7 +210,7 @@ namespace TorannMagic
                     removeHDList.Clear();
 
                     using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.hediffs.GetEnumerator())
-                    {
+                    {                        
                         while (enumerator.MoveNext())
                         {
                             Hediff rec = enumerator.Current;
@@ -239,7 +239,8 @@ namespace TorannMagic
                                     || rec.def.defName.Contains("HeartArteryBlockage")
                                     || rec.def.defName == "CatatonicBreakdown"
                                     || rec.def.defName.Contains("Pregnant")
-                                    || rec.def.defName == "DrugOverdose")
+                                    || rec.def.defName == "DrugOverdose"
+                                    || rec.def.defName == "GeneticDrugNeed")
                                 {
                                     removeHDList.Add(rec);
                                 }

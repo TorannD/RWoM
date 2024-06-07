@@ -40,7 +40,7 @@ namespace TorannMagic
                                 {
                                     if (Rand.Chance(.5f))
                                     {
-                                        blindedPawns[i].mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Manhunter, null, false, false, null, false);
+                                        blindedPawns[i].mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Manhunter);
                                     }
                                 }
                             }

@@ -223,7 +223,7 @@ namespace TorannMagic
             }
         }
 
-        public override void Draw()
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
             float beamSize = 8f;
             Vector3 drawPos = base.Position.ToVector3Shifted(); // this.parent.DrawPos;

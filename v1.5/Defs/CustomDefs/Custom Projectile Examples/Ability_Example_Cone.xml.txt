@@ -1,0 +1,164 @@
+
+	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
+	<defName>BM_FireBreath</defName>
+	<label>Fire Breath</label>
+	<uiIconPath>UI/FireBreath</uiIconPath>
+	<description>Breathes fire in a cone.</description>
+	<shouldInitialize>true</shouldInitialize>
+	<learnChance>1</learnChance>
+	<canCopy>false</canCopy>
+	<manaCost>0.25</manaCost>
+	<learnItem>SpellOf_FireBreath</learnItem>
+	<MainVerb Class="TorannMagic.Verb_HurtOrSpawnInCone_Properties">
+		<verbClass>TorannMagic.Verb_HurtOrSpawnInCone</verbClass>
+			<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+			<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+			<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+			<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+		<hasStandardCommand>true</hasStandardCommand>
+		<abilityDef>BM_FireBreath</abilityDef>
+		<isViolent>true</isViolent>
+		<defaultProjectile>Projectile_Firebolt</defaultProjectile>
+		<warmupTime>0.00001</warmupTime>
+		<SecondsToRecharge>300.0</SecondsToRecharge>
+		<range>15</range>
+		<angle>30</angle>		<!--used as the degrees of the cone; 30 = 30° cone-->
+		<burstShotCount>5</burstShotCount>
+		<ticksBetweenBurstShots>9</ticksBetweenBurstShots>
+		<isPrimary>false</isPrimary>
+		<canCastInMelee>true</canCastInMelee>
+		<AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+		<targetParams>
+			<canTargetItems>false</canTargetItems>
+			<canTargetPawns>true</canTargetPawns>
+			<canTargetLocations>true</canTargetLocations>
+			<canTargetSelf>true</canTargetSelf>
+			<canTargetBuildings>false</canTargetBuildings>
+		</targetParams>
+	</MainVerb>
+</TorannMagic.TMAbilityDef>
+
+<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
+	<defName>BM_Bombardment</defName>
+	<label>Bombardment</label>
+	<uiIconPath>UI/Bombardment</uiIconPath>
+	<description>Rains explosives from the sky in a line, which explode on landing.</description>
+	<shouldInitialize>true</shouldInitialize>
+	<learnChance>1</learnChance>
+	<canCopy>false</canCopy>
+	<manaCost>0.2</manaCost>
+	<learnItem>SpellOf_Bombardment</learnItem>
+	<MainVerb Class="TorannMagic.Verb_HurtOrSpawnInCone_Properties">
+		<verbClass>TorannMagic.Verb_HurtOrSpawnInCone</verbClass>
+			<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+			<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+			<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+			<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+		<hasStandardCommand>true</hasStandardCommand>
+		<abilityDef>BM_Bombardment</abilityDef>
+		<isViolent>true</isViolent>
+		<defaultProjectile>Projectile_BazelgeuseBombardment</defaultProjectile>
+		<!--this projectile deals damage, so it's actually shot by the verb so that the skyfallers drop in order-->
+		<warmupTime>0.25</warmupTime>
+		<SecondsToRecharge>30.0</SecondsToRecharge>
+		<minRange>5</minRange>
+		<!-- minRange means the tiles closest to the caster are excluded from the cone -->
+		<range>20</range>
+		<angle>10</angle>
+		<isPrimary>false</isPrimary>
+		<canCastInMelee>true</canCastInMelee>
+		<soundCast>TM_Launch</soundCast>
+		<burstShotCount>1</burstShotCount>
+		<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+		<AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+		<targetParams>
+			<canTargetItems>false</canTargetItems>
+			<canTargetPawns>true</canTargetPawns>
+			<canTargetLocations>true</canTargetLocations>
+			<canTargetSelf>false</canTargetSelf>
+		</targetParams>
+	</MainVerb>
+</TorannMagic.TMAbilityDef>
+
+<ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
+	<defName>Projectile_BazelgeuseBombardment</defName>
+	<thingClass>TorannMagic.Projectile_FireSuppressionFlask</thingClass>
+	<label>bombardment</label>
+	<graphicData>
+		<texPath>Spells/invis</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+		<shaderType>TransparentPostLight</shaderType>
+	</graphicData>
+	<projectile>
+		<flyOverhead>true</flyOverhead>
+		<damageDef>Extinguish</damageDef>
+		<speed>25</speed>
+		<damageAmountBase>1</damageAmountBase>
+		<explosionRadius>0.9</explosionRadius>
+		<postExplosionSpawnChance>0.2</postExplosionSpawnChance>
+		<postExplosionSpawnThingDef>BM_BazelgeuseSkyfaller</postExplosionSpawnThingDef>
+		<postExplosionSpawnThingCount>0.1</postExplosionSpawnThingCount>
+		<!-- only 10% of the tiles in the cone will actually be shot at -->
+	</projectile>
+</ThingDef>
+
+<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
+	<defName>BM_StunBreath</defName>
+	<label>Stun Breath</label>
+	<uiIconPath>UI/StunBreath</uiIconPath>
+	<description>Breathes out a bright, shocking cloud of particles. Anyone in the area is stunned.</description>
+	<shouldInitialize>true</shouldInitialize>
+	<learnChance>1</learnChance>
+	<canCopy>false</canCopy>
+	<manaCost>0.12</manaCost>
+	<learnItem>SpellOf_StunBreath</learnItem>
+	<MainVerb Class="TorannMagic.Verb_HurtOrSpawnInCone_Properties">
+		<verbClass>TorannMagic.Verb_HurtOrSpawnInCone</verbClass>
+			<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+			<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+			<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+			<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+		<hasStandardCommand>true</hasStandardCommand>
+		<abilityDef>BM_StunBreath</abilityDef>
+		<isViolent>true</isViolent>
+		<defaultProjectile>Projectile_StunBreath</defaultProjectile>
+		this projectile deals no damage, so all things that it should spawn will appear at the same time
+		<warmupTime>0.00001</warmupTime>
+		<SecondsToRecharge>60.0</SecondsToRecharge>
+		<range>25</range>
+		<angle>25</angle>
+		<isPrimary>false</isPrimary>
+		<canCastInMelee>true</canCastInMelee>
+		<soundCast>TM_AirWoosh</soundCast>
+		<AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+		<targetParams>
+			<canTargetItems>false</canTargetItems>
+			<canTargetHumans>false</canTargetHumans>
+			<canTargetAnimals>false</canTargetAnimals>
+			<canTargetMechs>false</canTargetMechs>
+			<canTargetLocations>true</canTargetLocations>
+			<canTargetSelf>false</canTargetSelf>
+			<canTargetBuildings>false</canTargetBuildings>
+		</targetParams>
+	</MainVerb>
+</TorannMagic.TMAbilityDef>
+
+<ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
+	<defName>Projectile_StunBreath</defName>
+	<label>stun breath</label>
+	<graphicData>
+		<texPath>Spells/invis</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+		<shaderType>TransparentPostLight</shaderType>
+	</graphicData>
+	<projectile>
+		<flyOverhead>true</flyOverhead>
+		<damageDef>Extinguish</damageDef>
+		<speed>999</speed>
+		<damageAmountBase>0</damageAmountBase>
+		<postExplosionSpawnChance>1.0</postExplosionSpawnChance>
+		<postExplosionSpawnThingDef>BM_StunCloud</postExplosionSpawnThingDef>
+		<postExplosionSpawnThingCount>1.0</postExplosionSpawnThingCount>
+	</projectile>
+</ThingDef>
+  

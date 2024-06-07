@@ -136,7 +136,7 @@ namespace TorannMagic
         //    this.innerContainer.ClearAndDestroyContents(DestroyMode.Vanish);
         //}
 
-        public override void DrawAt(Vector3 drawLoc, bool flip = false)
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
             Thing thingForGraphic = this.GetThingForGraphic();
             float extraRotation = (!this.def.skyfaller.rotateGraphicTowardsDirection) ? 0f : this.angle - 180f;

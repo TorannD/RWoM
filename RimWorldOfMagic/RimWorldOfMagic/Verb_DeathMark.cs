@@ -65,7 +65,7 @@ namespace TorannMagic
                 this.TargetsAoE.Clear();
                 //this.UpdateTargets();
                 this.FindTargets();
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+                
                 for(int i =0; i < this.TargetsAoE.Count; i++)
                 {
                     if (this.TargetsAoE[i].Thing is Pawn)
@@ -94,7 +94,7 @@ namespace TorannMagic
                                     {
                                         if (victim.mindState != null && victim.RaceProps != null && victim.RaceProps.Humanlike)
                                         {
-                                            victim.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Berserk, "cursed", true, false, null);
+                                            victim.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Berserk, "cursed", true, false, false, null);
                                             FleckMaker.ThrowMicroSparks(victim.DrawPos, victim.Map);
                                             MoteMaker.ThrowText(victim.DrawPos, victim.Map, "Berserk", -1);
                                         }

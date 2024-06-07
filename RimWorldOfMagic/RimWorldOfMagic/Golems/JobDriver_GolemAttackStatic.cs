@@ -60,7 +60,7 @@ namespace TorannMagic.Golems
                     if (base.TargetA.HasThing)
                     {
                         Pawn pawn = base.TargetA.Thing as Pawn;
-                        if (base.TargetA.Thing.Destroyed || (pawn != null && !startedIncapacitated && pawn.Downed) || (pawn != null && pawn.IsInvisible()))
+                        if (base.TargetA.Thing.Destroyed || (pawn != null && !startedIncapacitated && pawn.Downed) || (pawn != null && pawn.IsPsychologicallyInvisible()))
                         {
                             EndJobWith(JobCondition.Succeeded);
                             return;

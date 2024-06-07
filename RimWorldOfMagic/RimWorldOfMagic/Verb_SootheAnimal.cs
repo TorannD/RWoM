@@ -88,7 +88,7 @@ namespace TorannMagic
                     {
                         if (newPawn.kindDef.RaceProps.Animal && (this.TargetsAoE[i].Thing.Faction == null || this.TargetsAoE[i].Thing.HostileTo(base.CasterPawn.Faction)))
                         {
-                            newPawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.ManhunterPermanent, null, true, false, null);
+                            newPawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.ManhunterPermanent, null, true, false, false, null);
                             float sev = Rand.Range(pwrVal, 2 * pwrVal);
                             HealthUtility.AdjustSeverity(newPawn, TorannMagicDefOf.TM_Manipulation, sev);
                             sev = Rand.Range(pwrVal, 2 * pwrVal);

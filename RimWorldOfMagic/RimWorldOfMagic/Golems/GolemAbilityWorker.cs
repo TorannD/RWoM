@@ -81,6 +81,28 @@ namespace TorannMagic.Golems
             return null;
         }
 
+        //public static IEnumerable<LocalTargetInfo> PotentialAvailableWorkTargetForJob(Pawn p, JobDef job)
+        //{            
+        //    if (job == TorannMagicDefOf.JobDriver_GolemPlant)
+        //    {
+        //        IEnumerable<Zone_Growing> tmpTargets = from t in p.Map.zoneManager.AllZones.OfType<Zone_Growing>() //.AllZones((Zone_Growing x) => x.allowSow && x.CanAcceptSowNow() && x.PlantDefToGrow.plant.sowMinSkill <= 10)
+        //                                              where (t != null && t.Map == p.Map && t.allowSow && t.CanAcceptSowNow() && t.PlantDefToGrow?.plant?.sowMinSkill <= 10)
+        //                                              select t;
+        //        if (tmpTargets == null) return null;
+        //        if (tmpTargets.Count() <= 0) return null;
+        //        List<LocalTargetInfo> targetList = new List<LocalTargetInfo>();
+        //        foreach (Zone_Growing z in tmpTargets)
+        //        {
+        //            foreach(IntVec3 cell in z.Cells)
+        //            {                        
+        //                targetList.Add(cell);
+        //            }
+        //        }
+        //        return targetList.AsEnumerable();
+        //    }
+        //    return null;
+        //}
+
         public static bool CanUseAbility(Pawn p, TM_GolemAbilityDef ability)
         {
             if(p.DestroyedOrNull() || ability == null)
@@ -142,7 +164,7 @@ namespace TorannMagic.Golems
 
         public static void ResolveAbilityUse(TMPawnGolem golem, CompGolem comp, TM_GolemAbility ability, out bool success)
         {
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
+            
             success = false;
             if (CanUseAbility(golem, ability.golemAbilityDef))
             {

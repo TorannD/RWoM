@@ -21,8 +21,8 @@ namespace TorannMagic
                 {
                     HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_BowTrainingHD, -5f);
                     HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_BowTrainingHD, (.5f) + pwrVal);
-                    ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                    if (!pawn.IsColonist && settingsRef.AIHardMode)
+                    
+                    if (!pawn.IsColonist && ModOptions.Settings.Instance.AIHardMode)
                     {
                         HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_BowTrainingHD, 4);
                     }

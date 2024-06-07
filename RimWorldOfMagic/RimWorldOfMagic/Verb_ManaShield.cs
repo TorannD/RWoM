@@ -47,17 +47,8 @@ namespace TorannMagic
             {
                 if(pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_ManaShieldHD, false))
                 {
-                    using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.hediffs.GetEnumerator())
-                    {
-                        while (enumerator.MoveNext())
-                        {
-                            Hediff rec = enumerator.Current;
-                            if (rec.def == TorannMagicDefOf.TM_ManaShieldHD)
-                            {
-                                pawn.health.RemoveHediff(rec);
-                            }
-                        }
-                    }
+                    Hediff hd = pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_ManaShieldHD);
+                    pawn.health.RemoveHediff(hd);
 
                     TM_MoteMaker.ThrowManaPuff(pawn.DrawPos, pawn.Map, .75f);
                     TM_MoteMaker.ThrowManaPuff(pawn.DrawPos, pawn.Map, .75f);

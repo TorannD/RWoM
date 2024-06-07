@@ -71,8 +71,8 @@ namespace TorannMagic
                 verVal = ver.level;
                 pwrVal = pwr.level;
                 this.arcaneDmg = comp.arcaneDmg;
-                ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-                if (settingsRef.AIHardMode && !caster.IsColonist)
+                
+                if (ModOptions.Settings.Instance.AIHardMode && !caster.IsColonist)
                 {
                     pwrVal = 1;
                     verVal = 1;
@@ -172,9 +172,9 @@ namespace TorannMagic
             }
         }
 
-        public override void Draw()
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
-            base.Draw();
+            base.DrawAt(drawLoc, flip);
             for (int i = 0; i < smitePos.Count; i++)
             {
                 if (wrathAge[i] >= 0 && wrathAge[i] <= this.timeToSmite/this.strikeNum)

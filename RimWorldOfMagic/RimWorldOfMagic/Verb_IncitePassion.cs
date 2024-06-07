@@ -46,12 +46,17 @@ namespace TorannMagic
             bool flag = false;
             Pawn caster = this.CasterPawn;
             Pawn hitPawn = this.currentTarget.Thing as Pawn;
+            CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
 
             if (hitPawn != null && hitPawn.RaceProps != null && hitPawn.RaceProps.Humanlike && !TM_Calc.IsUndead(hitPawn))
             {
-                if (CheckAnyPassions(caster, hitPawn))
+                if (CheckAnyPassions(caster, hitPawn, comp))
                 {
                     SkillRecord sr = validSkillPassions.RandomElement();
+                    if (comp != null && comp.incitePassionSkill != null)
+                    {
+                        sr = comp.incitePassionSkill;
+                    }
                     string count = "+";
                     if (sr.passion == Passion.Major)
                     {
@@ -65,7 +70,7 @@ namespace TorannMagic
                     MoteMaker.ThrowText(aboveHead, caster.Map, "Lost " + sr.def.defName.CapitalizeFirst() + count.ToString());
                     hitPawn.skills.GetSkill(sr.def).passion = sr.passion;
                     sr.passion = Passion.None;
-
+                    comp.incitePassionSkill = null;
                     for (int i = 0; i < 4; i++)
                     {
                         Vector3 headOffset = caster.DrawPos;
@@ -97,10 +102,18 @@ namespace TorannMagic
             return flag;
         }
 
-        public bool CheckAnyPassions(Pawn source, Pawn target)
+        public bool CheckAnyPassions(Pawn source, Pawn target, CompAbilityUserMagic comp)
         {
             validSkillPassions = new List<SkillRecord>();
             validSkillPassions.Clear();
+            if (comp.incitePassionSkill != null)
+            {
+                if (comp.incitePassionSkill.passion > target.skills.GetSkill(comp.incitePassionSkill.def).passion)
+                {
+                    return true;
+                }
+                return false;
+            }
             foreach (SkillRecord skill in source.skills.skills)
             {
                 if (skill != null)

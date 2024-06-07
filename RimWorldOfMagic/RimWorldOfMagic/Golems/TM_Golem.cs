@@ -19,6 +19,7 @@ namespace TorannMagic.Golems
 
         public ThingDef workstationDef = null;
         public ThingDef pawnDef = null;
+        public TM_GolemDef golemDef = null;
 
         public List<TM_GolemUpgrade> upgrades = new List<TM_GolemUpgrade>();
         public List<NeedDef> needs = new List<NeedDef>();
@@ -36,6 +37,7 @@ namespace TorannMagic.Golems
             Scribe_Collections.Look<TM_GolemUpgrade>(ref upgrades, "upgrades", LookMode.Deep);
             Scribe_Collections.Look<NeedDef>(ref needs, "needs", LookMode.Def);
             Scribe_Collections.Look<HediffDef>(ref hediffs, "hediffs", LookMode.Def);
+            Scribe_Defs.Look<TM_GolemDef>(ref golemDef, "golemDef");
         }
 
         public TM_Golem()
@@ -45,56 +47,56 @@ namespace TorannMagic.Golems
 
         public TM_Golem(Thing thing)
         {
-            TM_GolemDef gd = TM_GolemUtility.GetGolemDefFromThing(thing);
-            activationTicks = gd.activationTicks;
-            processorEvaluationTicks = gd.processorEvaluationTicks;
-            minimumEnergyPctToActivate = gd.minimumEnergyPctToActivate;
-            workstationDef = gd.golemWorkstationDef;
-            pawnDef = gd.golemDef;
-            if (gd.golemFramePath != null)
+            golemDef = TM_GolemUtility.GetGolemDefFromThing(thing);
+            activationTicks = golemDef.activationTicks;
+            processorEvaluationTicks = golemDef.processorEvaluationTicks;
+            minimumEnergyPctToActivate = golemDef.minimumEnergyPctToActivate;
+            workstationDef = golemDef.golemWorkstationDef;
+            pawnDef = golemDef.golemDef;
+            if (golemDef.golemFramePath != null)
             {
-                frameMat = MaterialPool.MatFrom(gd.golemFramePath, true);
+                frameMat = MaterialPool.MatFrom(golemDef.golemFramePath, true);
             }
             upgrades.Clear();
-            foreach(TM_GolemUpgradeDef gud in gd.upgrades)
+            foreach(TM_GolemUpgradeDef gud in golemDef.upgrades)
             {
                 TM_GolemUpgrade gu = new TM_GolemUpgrade(gud);
                 upgrades.Add(gu);
             }
             needs.Clear();
-            needs.AddRange(gd.needs);
+            needs.AddRange(golemDef.needs);
             hediffs.Clear();
-            hediffs.AddRange(gd.hediffs);
+            hediffs.AddRange(golemDef.hediffs);
         }
 
         public TM_Golem(TM_Golem fromGolem, Thing thing)
         {
-            TM_GolemDef gd = TM_GolemUtility.GetGolemDefFromThing(thing);
-            activationTicks = gd.activationTicks;
-            processorEvaluationTicks = gd.processorEvaluationTicks;
-            minimumEnergyPctToActivate = gd.minimumEnergyPctToActivate;
-            workstationDef = gd.golemWorkstationDef;
-            pawnDef = gd.golemDef;
-            if (gd.golemFramePath != null)
+            golemDef = TM_GolemUtility.GetGolemDefFromThing(thing);
+            activationTicks = golemDef.activationTicks;
+            processorEvaluationTicks = golemDef.processorEvaluationTicks;
+            minimumEnergyPctToActivate = golemDef.minimumEnergyPctToActivate;
+            workstationDef = golemDef.golemWorkstationDef;
+            pawnDef = golemDef.golemDef;
+            if (golemDef.golemFramePath != null)
             {
-                frameMat = MaterialPool.MatFrom(gd.golemFramePath, true);
+                frameMat = MaterialPool.MatFrom(golemDef.golemFramePath, true);
             }
             upgrades.Clear();
             upgrades.AddRange(fromGolem.upgrades);
             needs.Clear();
-            needs.AddRange(gd.needs);
+            needs.AddRange(golemDef.needs);
             hediffs.Clear();
-            hediffs.AddRange(gd.hediffs);            
+            hediffs.AddRange(golemDef.hediffs);            
         }
 
         public Material GetGolemFrameMat(Thing thing)
         {
             if (frameMat == null)
             {
-                TM_GolemDef gd = TM_GolemUtility.GetGolemDefFromThing(thing);
-                if (gd.golemFramePath != null && gd.golemFramePath != "")
+                TM_GolemDef golemDef = TM_GolemUtility.GetGolemDefFromThing(thing);
+                if (golemDef.golemFramePath != null && golemDef.golemFramePath != "")
                 {
-                    frameMat = MaterialPool.MatFrom(gd.golemFramePath, true);
+                    frameMat = MaterialPool.MatFrom(golemDef.golemFramePath, true);
                 }
             }
             return frameMat;

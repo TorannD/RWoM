@@ -179,7 +179,6 @@ namespace TorannMagic
         public static List<HediffDef> CustomClassHediffs()
         {
             List<HediffDef> hList = new List<HediffDef>();
-            hList.Clear();
             foreach(TM_CustomClass cc in CustomClasses)
             {
                 if(cc.classHediff != null)
@@ -285,7 +284,6 @@ namespace TorannMagic
         public static List<TM_CustomClass> GetAdvancedClassesForPawn(Pawn p)
         {
             List<TM_CustomClass> ccList = new List<TM_CustomClass>();
-            ccList.Clear();
             foreach(TM_CustomClass cc in CustomAdvancedClasses)
             {
                 if(p.story.traits.HasTrait(cc.classTrait))

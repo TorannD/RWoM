@@ -119,7 +119,7 @@ namespace TorannMagic
                     while (enumerator.MoveNext())
                     {                        
                         Hediff rec = enumerator.Current;
-                        if (rec.def.makesSickThought)
+                        if (rec.def.makesSickThought && rec.def != TorannMagicDefOf.TM_ArcaneWeakness)
                         {
                             removeHDList.Add(rec);
                         }
@@ -143,7 +143,8 @@ namespace TorannMagic
                                 || rec.def.defName == "Abasia" 
                                 || rec.def.defName == "BloodRot"
                                 || rec.def.defName == "Scaria" 
-                                || rec.def.defName.Contains("Pregnant"))
+                                || rec.def.defName.Contains("Pregnant")
+                                || rec.def.defName == "GeneticDrugNeed")
                             {
                                 removeHDList.Add(rec);
                             }

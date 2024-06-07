@@ -201,11 +201,11 @@ namespace TorannMagic
                 }
             }
             this.Destroy(DestroyMode.Vanish);
-        }        
+        }
 
-        public override void Draw()
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
-            base.Draw();
+            base.DrawAt(drawLoc, flip);
             if (initialized)
             {
                 if (this.age <= (int)(this.duration * .6f))

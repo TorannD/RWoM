@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+				<li Class="PatchOperationAdd">
+				  <xpath>/Defs/ThingDef[thingClass = "Pawn"]/comps</xpath>
+				  <order>Append</order>
+				  <value>
+					<li Class = "TorannMagic.Enchantment.CompProperties_Enchant" />
+					<li Class = "TorannMagic.CompProperties_Polymorph" />
+				  </value>
+				</li>
+			</operations>
+	</Operation>
+	
+</Patch>

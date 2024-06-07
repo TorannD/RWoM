@@ -44,8 +44,8 @@ namespace TorannMagic
             bool result = false;
             Pawn caster = this.CasterPawn;
             this.pwrVal = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Chi.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Chi_pwr").level;
-            ModOptions.SettingsRef settingsRef = new ModOptions.SettingsRef();
-            if (!caster.IsColonist && settingsRef.AIHardMode)
+            
+            if (!caster.IsColonist && ModOptions.Settings.Instance.AIHardMode)
             {
                 pwrVal = 3;
             }
@@ -87,7 +87,7 @@ namespace TorannMagic
             mapPawns.Clear();
             List<Pawn> classPawns = new List<Pawn>();
             classPawns.Clear();
-            mapPawns = map.mapPawns.AllPawnsSpawned;
+            mapPawns = map.mapPawns.AllPawnsSpawned.ToList();
             for(int i =0; i < mapPawns.Count; i++)
             {
                 if((mapPawns[i].Position - centerPos).LengthHorizontal <= radius)

@@ -22,7 +22,7 @@ namespace TorannMagic.Ideology
         public override void Apply(float progress, Dictionary<Pawn, int> totalPresence, LordJob_Ritual jobRitual)
         {
             float quality = GetQuality(jobRitual, progress);
-            OutcomeChance outcome = GetOutcome(quality, jobRitual);
+            RitualOutcomePossibility outcome = GetOutcome(quality, jobRitual);
             LookTargets letterLookTargets = jobRitual.selectedTarget;
             string extraLetterText = null;
             if (jobRitual.Ritual != null)

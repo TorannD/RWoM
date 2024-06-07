@@ -89,7 +89,7 @@ namespace TorannMagic
                     if (pawn.Dead)
                     {
                         wasDead = true;
-                        ResurrectionUtility.Resurrect(pawn);
+                        ResurrectionUtility.TryResurrect(pawn);
                     }
                     TM_Action.PossessPawn(caster, pawn, wasDead, previousFaction);
                 }

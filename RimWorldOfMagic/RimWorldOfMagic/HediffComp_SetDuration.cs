@@ -69,6 +69,7 @@ namespace TorannMagic
             }
             if (Find.TickManager.TicksGame % 60 == 0)
             {
+                if (this.duration > this.Props.maxDuration) this.duration = this.Props.maxDuration;
                 this.duration--;
                 if (this.duration <= 0)
                 {

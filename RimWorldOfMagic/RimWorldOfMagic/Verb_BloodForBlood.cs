@@ -46,7 +46,7 @@ namespace TorannMagic
                     HealthUtility.AdjustSeverity(victim, TorannMagicDefOf.TM_BloodForBloodHD, (.5f + (.1f * pwrVal)) * this.arcaneDmg);
                     if(victim.Faction == null && victim.RaceProps != null && victim.RaceProps.Animal && victim.mindState != null)
                     {
-                        victim.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Manhunter, null, true, false, null);
+                        victim.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Manhunter, null, true, false, false, null);
                     }
                     HediffComp_BloodForBlood comp = victim.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_BloodForBloodHD, false).TryGetComp<HediffComp_BloodForBlood>();
                     if (comp != null)
