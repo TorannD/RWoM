@@ -957,9 +957,9 @@
         <capacities>
           <li>Cut</li>
         </capacities>
-        <power>24.0</power>
-		<armorPenetration>.5</armorPenetration>
-        <cooldownTime>1.2</cooldownTime>
+        <power>36.0</power>
+		<armorPenetration>1.15</armorPenetration>
+        <cooldownTime>2.2</cooldownTime>
         <linkedBodyPartsGroup>Mecha_LeftArm_Axe</linkedBodyPartsGroup>
         <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
       </li>
@@ -968,9 +968,9 @@
         <capacities>
           <li>Cut</li>
         </capacities>
-        <power>36.0</power>
-        <cooldownTime>2.4</cooldownTime>
-		<armorPenetration>1.15</armorPenetration>
+        <power>24.0</power>
+        <cooldownTime>1.2</cooldownTime>
+		<armorPenetration>0.5</armorPenetration>
         <linkedBodyPartsGroup>Mecha_LeftArm_Sword</linkedBodyPartsGroup>
         <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
       </li>

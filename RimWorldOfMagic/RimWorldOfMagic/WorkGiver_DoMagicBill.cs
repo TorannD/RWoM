@@ -154,6 +154,10 @@ namespace TorannMagic
                         }
                         return RefuelWorkGiverUtility.RefuelJob(pawn, thing, forced);
                     }
+                    if(TM_Calc.IsSpirit(pawn))
+                    {
+                        return null;
+                    }
                     CompAbilityUserMagic compMagic = pawn.GetCompAbilityUserMagic();
                     if (compMagic != null && compMagic.Mana != null)
                     {

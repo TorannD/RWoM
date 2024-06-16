@@ -1624,7 +1624,10 @@ namespace TorannMagic
                 {
                     int xpNum = (int)((mp * 300) * comp.xpGain * ModOptions.Settings.Instance.xpMultiplier * xpMultiplier);
                     comp.MagicUserXP += xpNum;
-                    MoteMaker.ThrowText(p.DrawPos, p.MapHeld, "XP +" + xpNum, -1f);
+                    if (p.MapHeld != null)
+                    {
+                        MoteMaker.ThrowText(p.DrawPos, p.MapHeld, "XP +" + xpNum, -1f);
+                    }
                     mp *= comp.mpCost;
                     if (applyArcaneWeakness)
                     {
@@ -1728,6 +1731,20 @@ namespace TorannMagic
                 rndPos.y += Rand.Range(.3f, 1.3f);
                 FleckMaker.ThrowSmoke(rndPos, p.Map, Rand.Range(.7f, 1.1f));
                 FleckMaker.ThrowLightningGlow(position.ToVector3Shifted(), p.Map, 1.4f);
+            }
+        }
+
+        public static void BreakShield(Pawn pawn)
+        {
+            if (pawn.Map != null)
+            {
+                TorannMagicDefOf.EnergyShield_Broken.PlayOneShot(new TargetInfo(pawn.Position, pawn.Map, false));
+                FleckMaker.Static(pawn.TrueCenter(), pawn.Map, FleckDefOf.ExplosionFlash, 12f);
+                for (int i = 0; i < 6; i++)
+                {
+                    Vector3 loc = pawn.TrueCenter() + Vector3Utility.HorizontalVectorFromAngle((float)Rand.Range(0, 360)) * Rand.Range(0.3f, 0.6f);
+                    FleckMaker.ThrowDustPuff(loc, pawn.Map, Rand.Range(0.8f, 1.2f));
+                }
             }
         }
 

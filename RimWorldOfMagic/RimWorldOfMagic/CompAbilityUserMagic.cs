@@ -39,94 +39,6 @@ namespace TorannMagic
         public LocalTargetInfo SecondTarget = null;
         public List<TM_EventRecords> magicUsed = new List<TM_EventRecords>();
 
-        private float IF_RayofHope_eff = 0.08f;
-        private float IF_Firebolt_eff = 0.10f;
-        private float IF_Fireclaw_eff = 0.10f;
-        private float IF_Fireball_eff = 0.08f;
-        private float IF_Firestorm_eff = 0.05f;
-        private float HoF_Soothe_eff = 0.08f;
-        private float HoF_Icebolt_eff = 0.08f;
-        private float HoF_FrostRay_eff = 0.08f;
-        private float HoF_Snowball_eff = 0.08f;
-        private float HoF_Blizzard_eff = 0.05f;
-        private float HoF_Rainmaker_eff = 0.15f;
-        private float SB_AMP_eff = 0.08f;
-        private float SB_LightningBolt_eff = 0.08f;
-        private float SB_LightningCloud_eff = 0.06f;
-        private float SB_LightningStorm_eff = 0.06f;
-        private float SB_EyeOfTheStorm_eff = 0.05f;
-        private float A_Shadow_eff = 0.08f;
-        private float A_MagicMissile_eff = 0.08f;
-        private float A_Blink_eff = 0.10f;
-        private float A_Summon_eff = 0.10f;
-        private float A_Teleport_eff = 0.10f;
-        private float A_FoldReality_eff = 0.06f;
-        private float P_Heal_eff = 0.07f;
-        private float P_Shield_eff = 0.08f;
-        private float P_ValiantCharge_eff = 0.08f;
-        private float P_Overwhelm_eff = 0.10f;
-        private float P_HolyWrath_eff = 0.05f;
-        private float S_SummonElemental_eff = 0.06f;
-        private float S_SummonExplosive_eff = 0.08f;
-        private float S_SummonMinion_eff = 0.10f;
-        private float S_SummonPylon_eff = 0.08f;
-        private float S_SummonPoppi_eff = 0.05f;
-        private float D_Poison_eff = 0.10f;
-        private float D_SootheAnimal_eff = 0.1f;
-        private float D_Regenerate_eff = 0.07f;
-        private float D_CureDisease_eff = 0.10f;
-        private float D_RegrowLimb_eff = 0.06f;
-        private float N_RaiseUndead_eff = 0.05f;
-        private float N_DeathMark_eff = 0.08f;
-        private float N_FogOfTorment_eff = 0.08f;
-        private float N_ConsumeCorpse_eff = 0.0f;
-        private float N_CorpseExplosion_eff = 0.08f;
-        private float N_DeathBolt_eff = 0.06f;
-        private float PR_AdvancedHeal_eff = 0.08f;
-        private float PR_Purify_eff = 0.07f;
-        private float PR_HealingCircle_eff = 0.07f;
-        private float PR_BestowMight_eff = 0.08f;
-        private float PR_Resurrection_eff = 0.05f;
-        private float B_Lullaby_eff = 0.08f;
-        private float B_BattleHymn_eff = 0.06f;
-        private float SoulBond_eff = 0.10f;
-        private float ShadowBolt_eff = .08f;
-        private float Dominate_eff = 0.06f;
-        private float WD_Repulsion_eff = .08f;
-        private float WD_PsychicShock_eff = .06f;
-        private float SD_Attraction_eff = .08f;
-        private float SD_Scorn_eff = .06f;
-        private float G_Encase_eff = .08f;
-        private float G_EarthSprites_eff = 0.06f;
-        private float G_EarthernHammer_eff = 0.06f;
-        private float G_Meteor_eff = 0.05f;
-        private float T_TechnoTurret_eff = 0.02f;
-        private float T_TechnoShield_eff = 0.06f;
-        private float T_Overdrive_eff = 0.08f;
-        private float T_Sabotage_eff = 0.06f;
-        private float T_OrbitalStrike_eff = 0.05f;
-        private float BM_BloodGift_eff = 0.05f;
-        private float BM_IgniteBlood_eff = .06f;
-        private float BM_BloodForBlood_eff = .06f;
-        private float BM_BloodShield_eff = .06f;
-        private float BM_Rend_eff = .08f;
-        private float BM_BloodMoon_eff = .05f;
-        private float E_EnchantedBody_eff = .15f;
-        private float E_Transmutate_eff = .12f;
-        private float E_EnchantWeapon_eff = .1f;
-        private float E_EnchanterStone_eff = .10f;
-        private float E_Polymorph_eff = .06f;
-        private float E_Shapeshift_eff = .05f;
-        private float C_Prediction_eff = .15f;
-        private float C_AlterFate_eff = .1f;
-        private float C_AccelerateTime_eff = .08f;
-        private float C_ReverseTime_eff = .08f;
-        private float C_ChronostaticField_eff = .06f;
-        private float C_Recall_eff = .1f;
-
-        private float W_eff = .01f;
-        private float global_eff = 0.025f;
-
         public bool spell_Rain = false;
         public bool spell_Blink = false;
         public bool spell_Teleport = false;
@@ -364,7 +276,6 @@ namespace TorannMagic
                 if(magicWardrobe == null)
                 {
                     magicWardrobe = new ThingOwner<ThingWithComps>();
-                    magicWardrobe.Clear();
                 }
                 return magicWardrobe;
             }
@@ -377,7 +288,6 @@ namespace TorannMagic
                 if (magicUsed == null)
                 {
                     magicUsed = new List<TM_EventRecords>();
-                    magicUsed.Clear();
                 }
                 return magicUsed;
             }
@@ -386,7 +296,6 @@ namespace TorannMagic
                 if (magicUsed == null)
                 {
                     magicUsed = new List<TM_EventRecords>();
-                    magicUsed.Clear();
                 }
                 magicUsed = value;                
             }
@@ -399,10 +308,8 @@ namespace TorannMagic
                 if(stoneskinPawns == null)
                 {
                     stoneskinPawns = new List<Pawn>();
-                    stoneskinPawns.Clear();
                 }
                 List<Pawn> tmpList = new List<Pawn>();
-                tmpList.Clear();
                 foreach(Pawn p in stoneskinPawns)
                 {
                     if(p.DestroyedOrNull() || p.Dead)
@@ -565,6 +472,7 @@ namespace TorannMagic
         {
             if (this.Pawn.DestroyedOrNull()) return;
             if (this.Pawn.Dead) return;
+            if (this.Pawn.Map == null) return;
             if (shouldDraw && IsMagicUser)
             {
                 
@@ -3558,819 +3466,7 @@ namespace TorannMagic
             this.magicData = null;
             base.Initialized = false;
             this.isMagicUser = false;
-        }
-
-        public int MagicAttributeEffeciencyLevel(string attributeName)
-        {
-            int result = 0;
-
-            if (attributeName == "TM_RayofHope_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_RayofHope.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_Firebolt_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Firebolt.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_Fireclaw_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Fireclaw.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_Fireball_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Fireball.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_Firestorm_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Firestorm.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-
-            if (attributeName == "TM_Soothe_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Soothe.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_Icebolt_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Icebolt.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_FrostRay_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_FrostRay.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_Snowball_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Snowball.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_Rainmaker_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Rainmaker.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_Blizzard_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Blizzard.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-
-            if (attributeName == "TM_AMP_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_AMP.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_LightningBolt_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_LightningBolt.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_LightningCloud_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_LightningCloud.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_LightningStorm_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_LightningStorm.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-
-            if (attributeName == "TM_Shadow_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Shadow.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_MagicMissile_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_MagicMissile.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_Blink_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Blink.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_Summon_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Summon.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_Teleport_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Teleport.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_FoldReality_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_FoldReality.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_Heal_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Heal.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_Shield_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Shield.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_ValiantCharge_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_ValiantCharge.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_Overwhelm_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Overwhelm.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_HolyWrath_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_HolyWrath.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_SummonMinion_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_SummonMinion.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_SummonPylon_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_SummonPylon.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_SummonExplosive_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_SummonExplosive.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_SummonElemental_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_SummonElemental.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_SummonPoppi_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_SummonPoppi.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_Poison_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Poison.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_SootheAnimal_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_SootheAnimal.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_Regenerate_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Regenerate.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_CureDisease_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_CureDisease.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_RegrowLimb_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_RegrowLimb.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_EyeOfTheStorm_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_EyeOfTheStorm.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_RaiseUndead_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_RaiseUndead.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_DeathMark_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_DeathMark.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_FogOfTorment_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_FogOfTorment.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_ConsumeCorpse_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_ConsumeCorpse.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_CorpseExplosion_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_CorpseExplosion.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_DeathBolt_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_DeathBolt.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_AdvancedHeal_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_AdvancedHeal.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_Purify_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Purify.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_HealingCircle_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_HealingCircle.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_BestowMight_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_BestowMight.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_Resurrection_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Resurrection.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_Lullaby_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Lullaby.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_BattleHymn_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_BattleHymn.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_SoulBond_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_SoulBond.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_ShadowBolt_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_ShadowBolt.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_Dominate_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Dominate.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_Attraction_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Attraction.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_Repulsion_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Repulsion.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_Scorn_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Scorn.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_PsychicShock_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_PsychicShock.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_Stoneskin_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Stoneskin.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_Encase_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Encase.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_EarthSprites_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_EarthSprites.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_EarthernHammer_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_EarthernHammer.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_Sentinel_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Sentinel.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_Meteor_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Meteor.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_TechnoTurret_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_TechnoTurret.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_TechnoShield_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_TechnoShield.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_Sabotage_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Sabotage.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_Overdrive_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Overdrive.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_OrbitalStrike_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_OrbitalStrike.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_BloodGift_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_BloodGift.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_IgniteBlood_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_IgniteBlood.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_BloodForBlood_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_BloodForBlood.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_BloodShield_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_BloodShield.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_Rend_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Rend.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_BloodMoon_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_BloodMoon.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_EnchantedBody_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_EnchantedBody.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_Transmutate_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Transmutate.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_EnchanterStone_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_EnchanterStone.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_EnchantWeapon_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_EnchantWeapon.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_Polymorph_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Polymorph.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_Shapeshift_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Shapeshift.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_Prediction_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Prediction.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_AlterFate_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_AlterFate.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_AccelerateTime_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_AccelerateTime.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_ReverseTime_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_ReverseTime.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_ChronostaticField_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_ChronostaticField.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_Recall_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Recall.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_WandererCraft_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_WandererCraft.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_Cantrips_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-            if (attributeName == "TM_ChaosTradition_eff")
-            {
-                MagicPowerSkill magicPowerSkill = this.MagicData.MagicPowerSkill_ChaosTradition.FirstOrDefault((MagicPowerSkill x) => x.label == attributeName);
-                bool flag = magicPowerSkill != null;
-                if (flag)
-                {
-                    result = magicPowerSkill.level;
-                }
-            }
-
-            return result;
-        }
+        }     
 
         public float ActualManaCost(TMAbilityDef magicDef)
         {
@@ -4459,229 +3555,220 @@ namespace TorannMagic
 
         public override void PostPreApplyDamage(ref DamageInfo dinfo, out bool absorbed)
         {
-            Pawn abilityUser = base.Pawn;
+            //Everything moved to harmony patches
 
-            List<Hediff> list = new List<Hediff>();
-            List<Hediff> arg_32_0 = list;
-            IEnumerable<Hediff> arg_32_1;
-            if (abilityUser == null)
-            {
-                arg_32_1 = null;
-            }
-            else
-            {
-                Pawn_HealthTracker expr_1A = abilityUser.health;
-                if (expr_1A == null)
-                {
-                    arg_32_1 = null;
-                }
-                else
-                {
-                    HediffSet expr_26 = expr_1A.hediffSet;
-                    arg_32_1 = ((expr_26 != null) ? expr_26.hediffs : null);
-                }
-            }
-            arg_32_0.AddRange(arg_32_1);
-            Pawn expr_3E = abilityUser;
-            int? arg_84_0;
-            if (expr_3E == null)
-            {
-                arg_84_0 = null;
-            }
-            else
-            {
-                Pawn_HealthTracker expr_52 = expr_3E.health;
-                if (expr_52 == null)
-                {
-                    arg_84_0 = null;
-                }
-                else
-                {
-                    HediffSet expr_66 = expr_52.hediffSet;
-                    arg_84_0 = ((expr_66 != null) ? new int?(expr_66.hediffs.Count<Hediff>()) : null);
-                }
-            }
-            bool flag = (arg_84_0 ?? 0) > 0;
-            if (flag)
-            {
-                foreach (Hediff current in list)
-                {
-                    if (current.def == TorannMagicDefOf.TM_HediffInvulnerable)
-                    {
-                        absorbed = true;
-                        FleckMaker.Static(Pawn.Position, Pawn.Map, FleckDefOf.ExplosionFlash, 10);
-                        dinfo.SetAmount(0);
-                        return;
-                    }                    
-                    if (current.def == TorannMagicDefOf.TM_HediffEnchantment_phantomShift && Rand.Chance(.2f))
-                    {
-                        absorbed = true;
-                        FleckMaker.Static(Pawn.Position, Pawn.Map, FleckDefOf.ExplosionFlash, 8);
-                        FleckMaker.ThrowSmoke(abilityUser.Position.ToVector3Shifted(), abilityUser.Map, 1.2f);
-                        dinfo.SetAmount(0);
-                        return;
-                    }                    
-                    if (current.def == TorannMagicDefOf.TM_HediffShield)
-                    {
-                        float sev = current.Severity;
-                        absorbed = true;
-                        int actualDmg = 0;
-                        float dmgAmt = (float)dinfo.Amount;
-                        float dmgToSev = 0.004f;
+            //Pawn abilityUser = base.Pawn;
+
+            //List<Hediff> list = new List<Hediff>();
+            //List<Hediff> arg_32_0 = list;
+            //IEnumerable<Hediff> arg_32_1;
+            //if (abilityUser == null)
+            //{
+            //    arg_32_1 = null;
+            //}
+            //else
+            //{
+            //    Pawn_HealthTracker expr_1A = abilityUser.health;
+            //    if (expr_1A == null)
+            //    {
+            //        arg_32_1 = null;
+            //    }
+            //    else
+            //    {
+            //        HediffSet expr_26 = expr_1A.hediffSet;
+            //        arg_32_1 = ((expr_26 != null) ? expr_26.hediffs : null);
+            //    }
+            //}
+            //arg_32_0.AddRange(arg_32_1);
+            //Pawn expr_3E = abilityUser;
+            //int? arg_84_0;
+            //if (expr_3E == null)
+            //{
+            //    arg_84_0 = null;
+            //}
+            //else
+            //{
+            //    Pawn_HealthTracker expr_52 = expr_3E.health;
+            //    if (expr_52 == null)
+            //    {
+            //        arg_84_0 = null;
+            //    }
+            //    else
+            //    {
+            //        HediffSet expr_66 = expr_52.hediffSet;
+            //        arg_84_0 = ((expr_66 != null) ? new int?(expr_66.hediffs.Count<Hediff>()) : null);
+            //    }
+            //}
+            //bool flag = (arg_84_0 ?? 0) > 0;
+            //if (flag)
+            //{
+            //    foreach (Hediff current in list)
+            //    {
+            //        if (current.def == TorannMagicDefOf.TM_HediffInvulnerable)
+            //        {
+            //            absorbed = true;
+            //            FleckMaker.Static(Pawn.Position, Pawn.Map, FleckDefOf.ExplosionFlash, 10);
+            //            dinfo.SetAmount(0);
+            //            return;
+            //        }                    
+            //        if (current.def == TorannMagicDefOf.TM_HediffEnchantment_phantomShift && Rand.Chance(.2f))
+            //        {
+            //            absorbed = true;
+            //            FleckMaker.Static(Pawn.Position, Pawn.Map, FleckDefOf.ExplosionFlash, 8);
+            //            FleckMaker.ThrowSmoke(abilityUser.Position.ToVector3Shifted(), abilityUser.Map, 1.2f);
+            //            dinfo.SetAmount(0);
+            //            return;
+            //        }                    
+            //        if (current.def == TorannMagicDefOf.TM_HediffShield)
+            //        {
+            //            float sev = current.Severity;
+            //            absorbed = true;
+            //            int actualDmg = 0;
+            //            float dmgAmt = (float)dinfo.Amount;
+            //            float dmgToSev = 0.004f;
                         
-                        if (!abilityUser.IsColonist)
-                        {
-                            if (ModOptions.Settings.Instance.AIHardMode)
-                            {
-                                dmgToSev = 0.0025f;
-                            }
-                            else
-                            {
-                                dmgToSev = 0.003f;
-                            }
-                        }
-                        sev = sev - (dmgAmt * dmgToSev);
-                        if (sev < 0)
-                        {
-                            actualDmg = (int)Mathf.RoundToInt(Mathf.Abs(sev / dmgToSev));
-                            BreakShield(abilityUser);
-                        }
-                        TM_Action.DisplayShieldHit(abilityUser, dinfo);
-                        current.Severity = sev;
-                        dinfo.SetAmount(actualDmg);
+            //            if (!abilityUser.IsColonist)
+            //            {
+            //                if (ModOptions.Settings.Instance.AIHardMode)
+            //                {
+            //                    dmgToSev = 0.0025f;
+            //                }
+            //                else
+            //                {
+            //                    dmgToSev = 0.003f;
+            //                }
+            //            }
+            //            sev = sev - (dmgAmt * dmgToSev);
+            //            if (sev < 0)
+            //            {
+            //                actualDmg = (int)Mathf.RoundToInt(Mathf.Abs(sev / dmgToSev));
+            //                BreakShield(abilityUser);
+            //            }
+            //            TM_Action.DisplayShieldHit(abilityUser, dinfo);
+            //            current.Severity = sev;
+            //            dinfo.SetAmount(actualDmg);
 
-                        return;
-                    }
-                    if (current.def == TorannMagicDefOf.TM_DemonScornHD || current.def == TorannMagicDefOf.TM_DemonScornHD_I || current.def == TorannMagicDefOf.TM_DemonScornHD_II || current.def == TorannMagicDefOf.TM_DemonScornHD_III)
-                    {
-                        float sev = current.Severity;
-                        absorbed = true;
-                        int actualDmg = 0;
-                        float dmgAmt = (float)dinfo.Amount;
-                        float dmgToSev = 1f;
+            //            return;
+            //        }
+            //        if (current.def == TorannMagicDefOf.TM_DemonScornHD || current.def == TorannMagicDefOf.TM_DemonScornHD_I || current.def == TorannMagicDefOf.TM_DemonScornHD_II || current.def == TorannMagicDefOf.TM_DemonScornHD_III)
+            //        {
+            //            float sev = current.Severity;
+            //            absorbed = true;
+            //            int actualDmg = 0;
+            //            float dmgAmt = (float)dinfo.Amount;
+            //            float dmgToSev = 1f;
                         
-                        if (!abilityUser.IsColonist)
-                        {
-                            if (ModOptions.Settings.Instance.AIHardMode)
-                            {
-                                dmgToSev = 0.8f;
-                            }
-                            else
-                            {
-                                dmgToSev = 1f;
-                            }
-                        }
-                        sev = sev - (dmgAmt * dmgToSev);
-                        if (sev < 0)
-                        {
-                            actualDmg = (int)Mathf.RoundToInt(Mathf.Abs(sev / dmgToSev));
-                            BreakShield(abilityUser);
-                        }
-                        TM_Action.DisplayShieldHit(abilityUser, dinfo);
-                        current.Severity = sev;
-                        dinfo.SetAmount(actualDmg);
+            //            if (!abilityUser.IsColonist)
+            //            {
+            //                if (ModOptions.Settings.Instance.AIHardMode)
+            //                {
+            //                    dmgToSev = 0.8f;
+            //                }
+            //                else
+            //                {
+            //                    dmgToSev = 1f;
+            //                }
+            //            }
+            //            sev = sev - (dmgAmt * dmgToSev);
+            //            if (sev < 0)
+            //            {
+            //                actualDmg = (int)Mathf.RoundToInt(Mathf.Abs(sev / dmgToSev));
+            //                BreakShield(abilityUser);
+            //            }
+            //            TM_Action.DisplayShieldHit(abilityUser, dinfo);
+            //            current.Severity = sev;
+            //            dinfo.SetAmount(actualDmg);
 
-                        return;
-                    }
-                    if (current.def == TorannMagicDefOf.TM_ManaShieldHD && this.damageMitigationDelayMS < this.age)
-                    {
-                        float sev = this.Mana.CurLevel;
-                        absorbed = true;
-                        int actualDmg = 0;
-                        float dmgAmt = (float)dinfo.Amount;
-                        float dmgToSev = 0.02f;
-                        float maxDmg = 11f;
-                        if (this.MagicData.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Cantrips_ver").level >= 3)
-                        {
-                            dmgToSev = 0.015f;
-                            maxDmg = 14f;
-                            if (this.MagicData.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Cantrips_ver").level >= 7)
-                            {
-                                dmgToSev = 0.012f;
-                                maxDmg = 17f;
-                            }
-                        }
-                        if (dmgAmt >= maxDmg)
-                        {
-                            actualDmg = Mathf.RoundToInt(dmgAmt - maxDmg);
-                            sev = sev - (maxDmg * dmgToSev);
-                        }
-                        else
-                        {
-                            sev = sev - (dmgAmt * dmgToSev);
-                        }
-                        this.Mana.CurLevel = sev;
-                        if (sev < 0)
-                        {
-                            actualDmg = (int)Mathf.RoundToInt(Mathf.Abs(sev / dmgToSev));
-                            BreakShield(abilityUser);
-                            current.Severity = sev;
-                            abilityUser.health.RemoveHediff(current);
-                        }
-                        TM_Action.DisplayShieldHit(abilityUser, dinfo);
-                        this.damageMitigationDelayMS = this.age + 2;
-                        dinfo.SetAmount(actualDmg);
-                        abilityUser.TakeDamage(dinfo);
-                        return;
-                    }
-                    if (current.def == TorannMagicDefOf.TM_LichHD && this.damageMitigationDelay < this.age)
-                    {
-                        absorbed = true;
-                        int mitigationAmt = 4;
-                        int actualDmg;
-                        int dmgAmt = Mathf.RoundToInt(dinfo.Amount);
-                        if (dmgAmt < mitigationAmt)
-                        {
-                            MoteMaker.ThrowText(this.Pawn.DrawPos, this.Pawn.Map, "TM_DamageAbsorbedAll".Translate(), -1);
-                            actualDmg = 0;
-                            return;
-                        }
-                        else
-                        {
-                            MoteMaker.ThrowText(this.Pawn.DrawPos, this.Pawn.Map, "TM_DamageAbsorbed".Translate(
-                                dmgAmt,
-                                mitigationAmt
-                            ), -1);
-                            actualDmg = dmgAmt - mitigationAmt;
-                        }
-                        this.damageMitigationDelay = this.age + 6;
-                        dinfo.SetAmount(actualDmg);
-                        abilityUser.TakeDamage(dinfo);
-                        return;
-                    }
-                    if (arcaneRes != 0 && resMitigationDelay < this.age)
-                    {
-                        if (current.def == TorannMagicDefOf.TM_HediffEnchantment_arcaneRes)
-                        {
-                            if ((dinfo.Def.armorCategory != null && (dinfo.Def.armorCategory == TorannMagicDefOf.Dark || dinfo.Def.armorCategory == TorannMagicDefOf.Light)) || dinfo.Def.defName.Contains("TM_") || dinfo.Def.defName == "FrostRay" || dinfo.Def.defName == "Snowball" || dinfo.Def.defName == "Iceshard" || dinfo.Def.defName == "Firebolt")
-                            {
-                                absorbed = true;
-                                int actualDmg = Mathf.RoundToInt(dinfo.Amount / arcaneRes);
-                                resMitigationDelay = this.age + 10;
-                                dinfo.SetAmount(actualDmg);
-                                abilityUser.TakeDamage(dinfo);
-                                return;
-                            }
-                        }
-                    }
-                }
+            //            return;
+            //        }
+            //        if (current.def == TorannMagicDefOf.TM_ManaShieldHD && this.damageMitigationDelayMS < this.age)
+            //        {
+            //            float sev = this.Mana.CurLevel;
+            //            absorbed = true;
+            //            int actualDmg = 0;
+            //            float dmgAmt = (float)dinfo.Amount;
+            //            float dmgToSev = 0.02f;
+            //            float maxDmg = 11f;
+            //            if (this.MagicData.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Cantrips_ver").level >= 3)
+            //            {
+            //                dmgToSev = 0.015f;
+            //                maxDmg = 14f;
+            //                if (this.MagicData.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Cantrips_ver").level >= 7)
+            //                {
+            //                    dmgToSev = 0.012f;
+            //                    maxDmg = 17f;
+            //                }
+            //            }
+            //            if (dmgAmt >= maxDmg)
+            //            {
+            //                actualDmg = Mathf.RoundToInt(dmgAmt - maxDmg);
+            //                sev = sev - (maxDmg * dmgToSev);
+            //            }
+            //            else
+            //            {
+            //                sev = sev - (dmgAmt * dmgToSev);
+            //            }
+            //            this.Mana.CurLevel = sev;
+            //            if (sev < 0)
+            //            {
+            //                actualDmg = (int)Mathf.RoundToInt(Mathf.Abs(sev / dmgToSev));
+            //                BreakShield(abilityUser);
+            //                current.Severity = sev;
+            //                abilityUser.health.RemoveHediff(current);
+            //            }
+            //            TM_Action.DisplayShieldHit(abilityUser, dinfo);
+            //            this.damageMitigationDelayMS = this.age + 2;
+            //            dinfo.SetAmount(actualDmg);
+            //            abilityUser.TakeDamage(dinfo);
+            //            return;
+            //        }
+            //        if (current.def == TorannMagicDefOf.TM_LichHD && this.damageMitigationDelay < this.age)
+            //        {
+            //            absorbed = true;
+            //            int mitigationAmt = 4;
+            //            int actualDmg;
+            //            int dmgAmt = Mathf.RoundToInt(dinfo.Amount);
+            //            if (dmgAmt < mitigationAmt)
+            //            {
+            //                MoteMaker.ThrowText(this.Pawn.DrawPos, this.Pawn.Map, "TM_DamageAbsorbedAll".Translate(), -1);
+            //                actualDmg = 0;
+            //                return;
+            //            }
+            //            else
+            //            {
+            //                MoteMaker.ThrowText(this.Pawn.DrawPos, this.Pawn.Map, "TM_DamageAbsorbed".Translate(
+            //                    dmgAmt,
+            //                    mitigationAmt
+            //                ), -1);
+            //                actualDmg = dmgAmt - mitigationAmt;
+            //            }
+            //            this.damageMitigationDelay = this.age + 6;
+            //            dinfo.SetAmount(actualDmg);
+            //            abilityUser.TakeDamage(dinfo);
+            //            return;
+            //        }
+            //        if (arcaneRes != 0 && resMitigationDelay < this.age)
+            //        {
+            //            if (current.def == TorannMagicDefOf.TM_HediffEnchantment_arcaneRes)
+            //            {
+            //                if ((dinfo.Def.armorCategory != null && (dinfo.Def.armorCategory == TorannMagicDefOf.Dark || dinfo.Def.armorCategory == TorannMagicDefOf.Light)) || dinfo.Def.defName.Contains("TM_") || dinfo.Def.defName == "FrostRay" || dinfo.Def.defName == "Snowball" || dinfo.Def.defName == "Iceshard" || dinfo.Def.defName == "Firebolt")
+            //                {
+            //                    absorbed = true;
+            //                    int actualDmg = Mathf.RoundToInt(dinfo.Amount / arcaneRes);
+            //                    resMitigationDelay = this.age + 10;
+            //                    dinfo.SetAmount(actualDmg);
+            //                    abilityUser.TakeDamage(dinfo);
+            //                    return;
+            //                }
+            //            }
+            //        }
+            //    }
 
-                list.Clear();
-                list = null;
-            }
+            //    list.Clear();
+            //    list = null;
+            //}
             base.PostPreApplyDamage(ref dinfo, out absorbed);
-        }
-
-        private void BreakShield(Pawn pawn)
-        {
-            TorannMagicDefOf.EnergyShield_Broken.PlayOneShot(new TargetInfo(pawn.Position, pawn.Map, false));
-            FleckMaker.Static(pawn.TrueCenter(), pawn.Map, FleckDefOf.ExplosionFlash, 12f);
-            for (int i = 0; i < 6; i++)
-            {
-                Vector3 loc = pawn.TrueCenter() + Vector3Utility.HorizontalVectorFromAngle((float)Rand.Range(0, 360)) * Rand.Range(0.3f, 0.6f);
-                FleckMaker.ThrowDustPuff(loc, pawn.Map, Rand.Range(0.8f, 1.2f));
-            }
-        }
+        }        
 
         public void DoArcaneForging()
         {
@@ -4737,18 +3824,10 @@ namespace TorannMagic
 
         public void ResolveMagicUseEvents()
         {
-            List<TM_EventRecords> tmpList = new List<TM_EventRecords>();
-            tmpList.Clear();
-            foreach(TM_EventRecords ev in MagicUsed)
+            int expiryTick = Find.TickManager.TicksGame - 150000;
+            for (int i = MagicUsed.Count - 1; i >= 0; i--)
             {
-                if(Find.TickManager.TicksGame - 150000 > ev.eventTick)
-                {
-                    tmpList.Add(ev);
-                }
-            }
-            foreach(TM_EventRecords rem_ev in tmpList)
-            {
-                MagicUsed.Remove(rem_ev);
+                if (expiryTick > MagicUsed[i].eventTick) MagicUsed.RemoveAt(i);
             }
         }
 
@@ -5345,7 +4424,7 @@ namespace TorannMagic
                         {
                             float roomCleanliness = this.Pawn.GetRoom().GetStat(RoomStatDefOf.Cleanliness);
 
-                            if (roomCleanliness < -3f)
+                            if (roomCleanliness < -2f)
                             {
                                 PawnAbility ability = this.AbilityData.Powers.FirstOrDefault((PawnAbility x) => x.Def == TorannMagicDefOf.TM_DirtDevil);
                                 AutoCast.MagicAbility_OnSelfPosition.Evaluate(this, TorannMagicDefOf.TM_DirtDevil, ability, magicPower, out castSuccess);
@@ -9164,7 +8243,7 @@ namespace TorannMagic
                         Order = 61,
                         defaultLabel = TM_TextPool.TM_RemoveSymbiosis,
                         defaultDesc = TM_TextPool.TM_RemoveSymbiosisDesc,
-                        icon = ContentFinder<Texture2D>.Get("UI/end_symbiosis", true),
+                        icon = ContentFinder<Texture2D>.Get("UI/remove_spiritpossession", true),
                     };
                     gizmoCommands.Add(key, itemSymbiosis);
                 }

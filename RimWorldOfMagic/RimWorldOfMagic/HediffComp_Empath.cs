@@ -139,12 +139,12 @@ namespace TorannMagic
         {
             if (Rand.Chance(.02f + (.01f * verVal)))
             {
-                if (base.Pawn.mindState != null && base.Pawn.mindState.inspirationHandler != null && !base.Pawn.mindState.inspirationHandler.Inspired)
+                if (p.mindState != null && p.mindState.inspirationHandler != null && !p.mindState.inspirationHandler.Inspired)
                 {
-                    InspirationDef ins = TM_Calc.GetRandomAvailableInspirationDef(base.Pawn);
+                    InspirationDef ins = TM_Calc.GetRandomAvailableInspirationDef(p);
                     if (ins != null)
                     {
-                        base.Pawn.mindState.inspirationHandler.TryStartInspiration(ins);
+                        p.mindState.inspirationHandler.TryStartInspiration(ins);
                     }
                 }
             }

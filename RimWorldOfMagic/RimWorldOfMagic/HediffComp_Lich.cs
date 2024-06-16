@@ -10,6 +10,8 @@ namespace TorannMagic
     [StaticConstructorOnStartup]
     class HediffComp_Lich : HediffComp
     {
+        public int lastDamageTick = 0;
+        
         private static readonly string[] nonStandardNeedsToAutoFulfill = new[] {
             "Bladder", //Dubs Bad Hygiene
             "Hygiene", //Dubs Bad Hygiene

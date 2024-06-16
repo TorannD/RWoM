@@ -122,7 +122,7 @@
     <lifeStages>      
       <li>
         <bodyGraphicData>
-          <texPath>Motes/spiritwolf</texPath>
+          <texPath>PawnKind/spiritwolf</texPath>
           <drawSize>1</drawSize>
 		  <shaderType>TransparentPostLight</shaderType>
           <shadowData>

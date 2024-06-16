@@ -136,6 +136,8 @@
     <Compile Include="Building_TMTotem_Lightning.cs" />
     <Compile Include="Building_TM_DMP.cs" />
     <Compile Include="Area_TMSprite.cs" />
+    <Compile Include="HediffComp_ManaShield.cs" />
+    <Compile Include="TM_DamageWorker_None.cs" />
     <Compile Include="Enchantment\HediffComp_ShroudOfUndeath.cs" />
     <Compile Include="Golems\Building_TMGolemStraw.cs" />
     <Compile Include="Golems\GolemWorkstationEffect_ScarecrowGrow.cs" />

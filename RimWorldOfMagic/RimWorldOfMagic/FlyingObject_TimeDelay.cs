@@ -125,6 +125,7 @@ namespace TorannMagic
             Scribe_Values.Look<float>(ref this.moteScale, "moteScale", 1f, false);
             Scribe_Values.Look<int>(ref this.moteFrequency, "moteFrequency", 0, false);
             Scribe_Values.Look<float>(ref this.destroyPctAtEnd, "destroyPctAtEnd", 0f, false);
+            Scribe_Values.Look<int>(ref this.duration, "duration", 600, false);
         }
 
         private void Initialize()

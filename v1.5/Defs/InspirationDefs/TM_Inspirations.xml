@@ -122,6 +122,7 @@
 			<MoveSpeed>1.25</MoveSpeed>
 			<PainShockThreshold>1.25</PainShockThreshold>
 			<IncomingDamageFactor>.3</IncomingDamageFactor>
+			<WorkSpeedGlobal>1.25</WorkSpeedGlobal>
         </statFactors>
     </InspirationDef>
 	

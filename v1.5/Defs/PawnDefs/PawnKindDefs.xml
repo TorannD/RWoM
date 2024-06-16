@@ -167,6 +167,11 @@
     <statFactors>
       <MoveSpeed>1</MoveSpeed>
     </statFactors>
+	<silhouetteGraphicData>
+      <texPath>Things/Pawn/Humanlike/Silhouettes/Silhouette_HumanChild</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1</drawSize>
+    </silhouetteGraphicData>
   </LifeStageDef>
   
   <ToolCapacityDef>

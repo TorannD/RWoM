@@ -17,7 +17,7 @@ namespace TorannMagic
         private int tickEffect = 300;
         private int tickPeriod = 120;
 
-        private int currentAge = 1;
+        private long currentAge = 1;
 
         public override void CompExposeData()
         {
@@ -25,7 +25,7 @@ namespace TorannMagic
             Scribe_Values.Look<bool>(ref this.initialized, "initialized", false, false);
             Scribe_Values.Look<bool>(ref this.isBad, "isBad", false, false);
             Scribe_Values.Look<int>(ref this.durationTicks, "durationTicks", 6000, false);
-            Scribe_Values.Look<int>(ref this.currentAge, "currentAge", 1, false);
+            Scribe_Values.Look<long>(ref this.currentAge, "currentAge", 1, false);
             Scribe_Values.Look<int>(ref this.tickEffect, "tickEffect", 300, false);
         }
 
@@ -73,8 +73,17 @@ namespace TorannMagic
             {
                 FleckMaker.ThrowLightningGlow(base.Pawn.TrueCenter(), base.Pawn.Map, 3f);
             }
-            this.currentAge = base.Pawn.ageTracker.AgeBiologicalYears;
+            this.currentAge = base.Pawn.ageTracker.AgeBiologicalTicks;
             this.tickEffect = Mathf.RoundToInt(this.durationTicks / 500);
+        }
+
+        public override void CompPostPostRemoved()
+        {
+            if(base.Pawn.ageTracker.AgeBiologicalTicks + (60*60000) <  this.currentAge)
+            {
+                base.Pawn.ageTracker.ResetAgeReversalDemand(Pawn_AgeTracker.AgeReversalReason.ViaTreatment);
+            }
+            base.CompPostPostRemoved();
         }
 
         public override void CompPostTick(ref float severityAdjustment)

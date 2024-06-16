@@ -30,7 +30,6 @@ namespace TorannMagic
             CompAbilityUserMagic magicComp = pawn.GetCompAbilityUserMagic();
             if (magicComp != null)// && magicComp.AIAbilityJob != null)
             {
-                Log.Message("giving ai job");
                 pawn.jobs.debugLog = true;
                 return null;
             }

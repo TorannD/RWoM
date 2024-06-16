@@ -106,15 +106,13 @@ namespace TorannMagic
             {
                 this.CooldownTicksLeft = 4;
             }
-            bool flag = this.magicDef != null;
-            if (flag)
+            if (this.magicDef != null)
             {
                 if (this.Pawn.IsColonist)
                 {
                     Find.HistoryEventsManager.RecordEvent(new HistoryEvent(TorannMagicDefOf.TM_UsedMagic, this.Pawn.Named(HistoryEventArgsNames.Doer), this.Pawn.Named(HistoryEventArgsNames.Subject), this.Pawn.Named(HistoryEventArgsNames.AffectedFaction), this.Pawn.Named(HistoryEventArgsNames.Victim)), true);
                 }
-                bool flag3 = this.MagicUser.Mana != null;
-                if (flag3)
+                if (this.MagicUser.Mana != null)
                 {
                     if(!this.Pawn.IsColonist && ModOptions.Settings.Instance.AIAggressiveCasting)// for AI
                     {

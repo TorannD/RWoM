@@ -24,13 +24,9 @@ namespace TorannMagic
         // Non-generic GetComp<CompAbilityUserMagic> for performance since isInst against generic T is slow
         public static CompAbilityUserMagic GetCompAbilityUserMagic(this ThingWithComps thingWithComps)
         {
-            if (thingWithComps?.AllComps != null)
+            for (int i = 0; i < thingWithComps.AllComps.Count; i++)
             {
-                for (int i = 0; i < thingWithComps.AllComps.Count; i++)
-                {
-                    if (thingWithComps.AllComps[i] is CompAbilityUserMagic comp)
-                        return comp;
-                }
+                if (thingWithComps.AllComps[i] is CompAbilityUserMagic comp) return comp;
             }
 
             return null;
@@ -39,18 +35,21 @@ namespace TorannMagic
         // Non-generic GetComp<CompAbilityUserMight> for performance since isInst against generic T is slow
         public static CompAbilityUserMight GetCompAbilityUserMight(this ThingWithComps thingWithComps)
         {
-            if (thingWithComps?.AllComps != null)
+            for (int i = 0; i < thingWithComps.AllComps.Count; i++)
             {
-                for (int i = 0; i < thingWithComps.AllComps.Count; i++)
-                {
-                    if (thingWithComps.AllComps[i] is CompAbilityUserMight comp)
-                        return comp;
-                }
+                if (thingWithComps.AllComps[i] is CompAbilityUserMight comp) return comp;
             }
 
             return null;
         }
 
+        public static bool HasMightOrMagicTrait(Pawn pawn)
+        {
+            if (pawn.GetCompAbilityUserMagic()?.customClass != null) return true;
+            if (pawn.GetCompAbilityUserMight()?.customClass != null) return true;
+            return pawn.story.traits.allTraits.Select(t => t.def.index).Any(index =>
+                TM_ClassUtility.NonCustomMagicAndMightTraitIndexes.Contains(index));
+        }
 
         public static bool IsRobotPawn(Pawn pawn)
         {
@@ -109,9 +108,11 @@ namespace TorannMagic
         {
             if (pawn == null) return false;
 
+            if (pawn.story?.traits != null && pawn.story.traits.HasTrait(TorannMagicDefOf.Undead)) return true;
+
             if (pawn.health?.hediffSet != null && pawn.health.hediffSet.hediffs.Any(hediff =>
-                hediff.def == TorannMagicDefOf.TM_UndeadHD
-                || hediff.def == TorannMagicDefOf.TM_UndeadAnimalHD
+                hediff.def == TorannMagicDefOf.TM_UndeadAnimalHD
+                || hediff.def == TorannMagicDefOf.TM_UndeadHD
                 || hediff.def == TorannMagicDefOf.TM_LichHD
                 || hediff.def == TorannMagicDefOf.TM_UndeadStageHD
                 || hediff.def.defName.StartsWith("ROM_Vamp")
@@ -125,8 +126,6 @@ namespace TorannMagic
             {
                 return true;
             }
-
-            if (pawn.story?.traits != null && pawn.story.traits.HasTrait(TorannMagicDefOf.Undead)) return true;
 
             for (int i = 0; i < pawn.AllComps.Count; i++)
             {
@@ -4288,9 +4287,79 @@ namespace TorannMagic
 
         public static InspirationDef GetRandomAvailableInspirationDef(Pawn pawn)
         {
-            return (from x in DefDatabase<InspirationDef>.AllDefsListForReading
-                    where x.Worker.InspirationCanOccur(pawn)
-                    select x).RandomElementByWeightWithFallback((InspirationDef x) => x.Worker.CommonalityFor(pawn), null);
+            InspirationDef id = null;
+            if (pawn?.workSettings != null && pawn.story?.traits != null)
+            {
+                List<InspirationDef> idList = new List<InspirationDef>();
+                IEnumerable<InspirationDef> inspirations = from x in DefDatabase<InspirationDef>.AllDefsListForReading
+                                                           where (x.Worker.InspirationCanOccur(pawn))
+                                                           select x;
+                foreach (InspirationDef i in inspirations)
+                {
+                    if (i == InspirationDefOf.Inspired_Creativity &&
+                        (pawn.workSettings.WorkIsActive(WorkTypeDefOf.Construction) ||
+                        pawn.workSettings.WorkIsActive(WorkTypeDefOf.Crafting) ||
+                        pawn.workSettings.WorkIsActive(TorannMagicDefOf.Art) ||
+                        pawn.story.traits.HasTrait(TorannMagicDefOf.Enchanter)))
+                    {
+                        idList.Add(i);
+                        continue;
+                    }
+                    if (i == InspirationDefOf.Inspired_Recruitment &&
+                            (pawn.workSettings.WorkIsActive(WorkTypeDefOf.Warden)))
+                    {
+                        idList.Add(i);
+                        continue;
+                    }
+                    if (i == InspirationDefOf.Inspired_Taming &&
+                        (pawn.workSettings.WorkIsActive(WorkTypeDefOf.Handling)))
+                    {
+                        idList.Add(i);
+                        continue;
+                    }
+                    if (i == InspirationDefOf.Inspired_Trade &&
+                        (pawn.GetStatValue(StatDefOf.TradePriceImprovement) > .2f))
+                    {
+                        idList.Add(i);
+                        continue;
+                    }
+                    if (i.defName == "Frenzy_Work" || i.defName == "Frenzy_Go")
+                    {
+                        idList.Add(i);
+                        continue;
+                    }
+                    if (i.defName == "Frenzy_Shoot" &&
+                        (pawn.workSettings.WorkIsActive(WorkTypeDefOf.Hunting) &&
+                        pawn.equipment?.Primary != null && pawn.equipment.Primary.def.IsRangedWeapon))
+                    {
+                        idList.Add(i);
+                        continue;
+                    }
+                    if (i.defName == "Inspired_Surgery" &&
+                        (pawn.workSettings.WorkIsActive(WorkTypeDefOf.Doctor)))
+                    {
+                        idList.Add(i);
+                        continue;
+                    }
+                    if (i.defName == "ID_MiningFrenzy" &&
+                        (pawn.workSettings.WorkIsActive(WorkTypeDefOf.Mining)))
+                    {
+                        idList.Add(i);
+                        continue;
+                    }
+                    if (i.defName == "ID_FarmingFrenzy" &&
+                        (pawn.workSettings.WorkIsActive(WorkTypeDefOf.Growing) || pawn.workSettings.WorkIsActive(WorkTypeDefOf.PlantCutting)))
+                    {
+                        idList.Add(i);
+                        continue;
+                    }
+                }
+                if (idList != null && idList.Count > 0)
+                {
+                    id = idList.RandomElementByWeightWithFallback((InspirationDef x) => x.Worker.CommonalityFor(pawn), null);
+                }
+            }
+            return id;
         }
 
         public static LocalTargetInfo GetAutocastTarget(Pawn caster, TM_Autocast autocasting, LocalTargetInfo potentialTarget)

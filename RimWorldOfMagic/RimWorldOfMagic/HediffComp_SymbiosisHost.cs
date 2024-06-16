@@ -8,6 +8,7 @@ namespace TorannMagic
         private bool initializing = true;
         private bool shouldRemove = false;
         public Pawn symbiote = null;
+        public int lastDamageTick = 0;
 
         public override void CompExposeData()
         {
@@ -81,6 +82,26 @@ namespace TorannMagic
                     else
                     {
                         this.shouldRemove = true;
+                    }
+                    float effVal = TM_Calc.GetSkillPowerLevel(symbiote, TorannMagicDefOf.TM_Symbiosis);
+                    if(base.Pawn.needs != null)
+                    {
+                        if (base.Pawn.needs.mood != null)
+                        {
+                            base.Pawn.needs.mood.CurLevel += (.001f * effVal);
+                        }
+                        if(base.Pawn.needs.rest != null)
+                        {
+                            base.Pawn.needs.rest.CurLevel += (.001f * effVal);
+                        }
+                        if(base.Pawn.needs.food != null)
+                        {
+                            base.Pawn.needs.food.CurLevel += (.001f * effVal);
+                        }
+                        if(base.Pawn.needs.joy != null)
+                        {
+                            base.Pawn.needs.joy.CurLevel += (.001f * effVal);
+                        }
                     }
                 }
                 if (this.Pawn.Dead && this.symbiote != null && !this.symbiote.Dead)

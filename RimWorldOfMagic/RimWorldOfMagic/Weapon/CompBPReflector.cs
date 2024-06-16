@@ -86,7 +86,7 @@ namespace TorannMagic.Weapon
                         }
                     }
                     float deflectionChance = this.DeflectionChance;
-                    float meleeSkill = GetPawn.skills.GetSkill(this.Props.deflectSkill).Level;
+                    float meleeSkill = GetPawn.skills != null ? GetPawn.skills.GetSkill(this.Props.deflectSkill).Level : 0;
                     CompAbilityUserMagic holder = GetPawn.GetCompAbilityUserMagic();
                     deflectionChance += (meleeSkill * this.Props.deflectRatePerSkillPoint);
                     if (holder != null && !holder.IsMagicUser && (this.parent.def.defName == "TM_DefenderStaff" || this.parent.def.defName == "TM_BlazingPowerStaff"))
@@ -103,17 +103,20 @@ namespace TorannMagic.Weapon
                     }
                     //splicing in TM handling of reflection
                     Thing instigator = dinfo.Instigator;
-                    Vector3 drawPos = this.GetPawn.DrawPos;
-                    drawPos.x += ((instigator.DrawPos.x - drawPos.x) / 20f) + Rand.Range(-.2f, .2f);
-                    drawPos.z += ((instigator.DrawPos.z - drawPos.z) / 20f) + Rand.Range(-.2f, .2f);
-                    TM_MoteMaker.ThrowSparkFlashMote(drawPos, this.GetPawn.Map, 2f);
-                    Thing thing = new Thing();
-                    thing.def = dinfo.Weapon;
-                    if (instigator is Pawn shooterPawn)
+                    if (instigator != null && instigator.Map != null && GetPawn.Map != null)
                     {
-                        if (!dinfo.Weapon.IsMeleeWeapon && dinfo.WeaponBodyPartGroup == null)
+                        Vector3 drawPos = this.GetPawn.DrawPos;
+                        drawPos.x += ((instigator.DrawPos.x - drawPos.x) / 20f) + Rand.Range(-.2f, .2f);
+                        drawPos.z += ((instigator.DrawPos.z - drawPos.z) / 20f) + Rand.Range(-.2f, .2f);
+                        TM_MoteMaker.ThrowSparkFlashMote(drawPos, this.GetPawn.Map, 2f);
+                        Thing thing = new Thing();
+                        thing.def = dinfo.Weapon;
+                        if (instigator is Pawn shooterPawn)
                         {
-                            TM_CopyAndLaunchProjectile.CopyAndLaunchThing(shooterPawn.equipment.PrimaryEq.PrimaryVerb.verbProps.defaultProjectile, this.GetPawn, instigator, shooterPawn, ProjectileHitFlags.IntendedTarget, null);
+                            if (!dinfo.Weapon.IsMeleeWeapon && dinfo.WeaponBodyPartGroup == null)
+                            {
+                                TM_CopyAndLaunchProjectile.CopyAndLaunchThing(shooterPawn.equipment.PrimaryEq.PrimaryVerb.verbProps.defaultProjectile, this.GetPawn, instigator, shooterPawn, ProjectileHitFlags.IntendedTarget, null);
+                            }
                         }
                     }
                     //no longer using comp deflector handling

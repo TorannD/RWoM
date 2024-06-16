@@ -167,7 +167,7 @@ namespace TorannMagic
                     }
                 }
             }
-            if (Find.TickManager.TicksGame % 150 == 0)
+            if (Find.TickManager.TicksGame % 300 == 0)
             {
                 if (backstoryCompatibilityList == null)
                 {

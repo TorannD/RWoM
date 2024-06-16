@@ -10,6 +10,7 @@ using RimWorld;
 using AbilityUser;
 using TorannMagic.TMDefs;
 using TorannMagic.Golems;
+using TorannMagic.Ideology;
 
 namespace TorannMagic.AutoCast
 {
@@ -1232,9 +1233,12 @@ namespace TorannMagic.AutoCast
                 //GenClamor.DoClamor(caster, 2f, ClamorDefOf.Ability);
 
                 if (casterComp != null && casterComp.IsMagicUser)
-                {
-                    
+                {                    
                     casterComp.MagicUserXP -= (int)((casterComp.ActualManaCost(abilitydef) * 300 * .7f * casterComp.xpGain * ModOptions.Settings.Instance.xpMultiplier));
+                    TM_EventRecords er = new TM_EventRecords();
+                    er.eventPower = casterComp.ActualManaCost(abilitydef);
+                    er.eventTick = Find.TickManager.TicksGame;
+                    casterComp.MagicUsed.Add(er);
                     ability.PostAbilityAttempt();
                 }
                 if(selectCaster)

@@ -68,44 +68,46 @@ namespace TorannMagic
 
                 IntVec3 curCell = cellRect.RandomCell;
                 Pawn inspiredPawn = curCell.GetFirstPawn(map);
-                if(inspiredPawn != null && inspiredPawn.IsColonist && inspiredPawn.RaceProps.Humanlike && !inspiredPawn.Inspired && inspiredPawn != this.Pawn)
+                if(inspiredPawn != null && inspiredPawn.IsColonist && inspiredPawn.RaceProps.Humanlike && !inspiredPawn.Inspired && inspiredPawn != this.Pawn && inspiredPawn.story != null && inspiredPawn.story.traits != null && inspiredPawn.workSettings != null)
                 {
                     InspirationDef id = TM_Calc.GetRandomAvailableInspirationDef(inspiredPawn);
-                    bool flag1 = id.defName == "ID_MiningFrenzy" || id.defName == "ID_FarmingFrenzy" || id == TorannMagicDefOf.ID_ArcanePathways;
-                    bool flag2 = id.defName == "ID_Introspection" || id.defName == "ID_Outgoing";
-                    bool flag3 = id.defName == "ID_ManaRegen" || id.defName == "ID_Champion";
-                    Vector3 drawPosAbove = inspiredPawn.DrawPos;
-                    drawPosAbove.z += .5f;
-                    if (verVal == 0 && !flag1 && !flag2 && !flag3)
+                    if (id != null)
                     {
-                        inspiredPawn.mindState.inspirationHandler.TryStartInspiration(id);
-                        TM_MoteMaker.ThrowExclamationMote(drawPosAbove, inspiredPawn.Map, .5f);
+                        bool flag1 = id.defName == "ID_MiningFrenzy" || id.defName == "ID_FarmingFrenzy" || id == TorannMagicDefOf.ID_ArcanePathways;
+                        bool flag2 = id.defName == "ID_Introspection" || id.defName == "ID_Outgoing";
+                        bool flag3 = id.defName == "ID_ManaRegen" || id.defName == "ID_Champion";
+                        Vector3 drawPosAbove = inspiredPawn.DrawPos;
+                        drawPosAbove.z += .5f;
+                        if (verVal == 0 && !flag1 && !flag2 && !flag3)
+                        {
+                            inspiredPawn.mindState.inspirationHandler.TryStartInspiration(id);
+                            TM_MoteMaker.ThrowExclamationMote(drawPosAbove, inspiredPawn.Map, .5f);
+                        }
+                        else if (verVal == 1 && !flag2 && !flag3)
+                        {
+                            inspiredPawn.mindState.inspirationHandler.TryStartInspiration(id);
+                            TM_MoteMaker.ThrowExclamationMote(drawPosAbove, inspiredPawn.Map, .7f);
+                        }
+                        else if (verVal == 2 && !flag3)
+                        {
+                            inspiredPawn.mindState.inspirationHandler.TryStartInspiration(id);
+                            TM_MoteMaker.ThrowExclamationMote(drawPosAbove, inspiredPawn.Map, Rand.Range(.5f, .7f));
+                            TM_MoteMaker.ThrowExclamationMote(drawPosAbove, inspiredPawn.Map, Rand.Range(.5f, .7f));
+                        }
+                        else if (verVal == 3)
+                        {
+                            inspiredPawn.mindState.inspirationHandler.TryStartInspiration(id);
+                            TM_MoteMaker.ThrowExclamationMote(drawPosAbove, inspiredPawn.Map, Rand.Range(.5f, .7f));
+                            TM_MoteMaker.ThrowExclamationMote(drawPosAbove, inspiredPawn.Map, Rand.Range(.5f, .7f));
+                            TM_MoteMaker.ThrowExclamationMote(drawPosAbove, inspiredPawn.Map, Rand.Range(.5f, .7f));
+                        }
+                        else
+                        {
+                            //failed inspiration due to type
+                        }
                     }
-                    else if( verVal == 1 && !flag2 && !flag3)
-                    {
-                        inspiredPawn.mindState.inspirationHandler.TryStartInspiration(id);
-                        TM_MoteMaker.ThrowExclamationMote(drawPosAbove, inspiredPawn.Map, .7f);
-                    }
-                    else if( verVal == 2 && !flag3)
-                    {
-                        inspiredPawn.mindState.inspirationHandler.TryStartInspiration(id);
-                        TM_MoteMaker.ThrowExclamationMote(drawPosAbove, inspiredPawn.Map, Rand.Range(.5f, .7f));
-                        TM_MoteMaker.ThrowExclamationMote(drawPosAbove, inspiredPawn.Map, Rand.Range(.5f, .7f));
-                    }
-                    else if(verVal == 3)
-                    {
-                        inspiredPawn.mindState.inspirationHandler.TryStartInspiration(id);                        
-                        TM_MoteMaker.ThrowExclamationMote(drawPosAbove, inspiredPawn.Map, Rand.Range(.5f, .7f));
-                        TM_MoteMaker.ThrowExclamationMote(drawPosAbove, inspiredPawn.Map, Rand.Range(.5f, .7f));
-                        TM_MoteMaker.ThrowExclamationMote(drawPosAbove, inspiredPawn.Map, Rand.Range(.5f, .7f));
-                    }
-                    else
-                    {
-                        //failed inspiration due to type
-                    }                    
                 }
             }
-        }
-        
+        }        
     }
 }

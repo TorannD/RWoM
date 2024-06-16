@@ -58,7 +58,7 @@
             <li>Gold</li>
           </thingDefs>
         </filter>
-        <count>10</count>
+        <count>1</count>
       </li> 
 	  <li>
         <filter>
@@ -88,7 +88,7 @@
             <li>Gold</li>
           </thingDefs>
         </filter>
-        <count>20</count>
+        <count>2</count>
       </li> 
 	  <li>
         <filter>
@@ -118,7 +118,7 @@
             <li>Gold</li>
           </thingDefs>
         </filter>
-        <count>20</count>
+        <count>2</count>
       </li> 
 	  <li>
         <filter>
@@ -336,7 +336,7 @@
             <li>Plasteel</li>
           </thingDefs>
         </filter>
-        <count>225</count>
+        <count>200</count>
       </li> 
     </ingredients>
   </RecipeDef>
@@ -364,7 +364,7 @@ In addition, the flame core allows the golem the ability to attract and burn nea
             <li>Gold</li>
           </thingDefs>
         </filter>
-        <count>10</count>
+        <count>2</count>
       </li> 
 	  <li>
         <filter>
@@ -408,7 +408,7 @@ In addition, the water core allows the golem the ability to quickly regenerate h
             <li>Gold</li>
           </thingDefs>
         </filter>
-        <count>10</count>
+        <count>2</count>
       </li> 
 	  <li>
         <filter>
@@ -453,7 +453,7 @@ In addition, the earth core allows the golem the ability to shield itself from d
             <li>Gold</li>
           </thingDefs>
         </filter>
-        <count>10</count>
+        <count>2</count>
       </li> 
 	  <li>
         <filter>
@@ -497,7 +497,7 @@ In addition, the lightning core allows the golem the ability to retaliate agains
             <li>Gold</li>
           </thingDefs>
         </filter>
-        <count>10</count>
+        <count>2</count>
       </li> 
 	  <li>
         <filter>
@@ -703,7 +703,7 @@ Movement:	+[25%/50%/75%]</description>
             <li>Gold</li>
           </thingDefs>
         </filter>
-        <count>15</count>
+        <count>4</count>
       </li>
     </ingredients>
   </RecipeDef>

@@ -74,8 +74,8 @@ namespace TorannMagic.Golems
                         Mineable m = targets.RandomElement();
                         TMPawnGolem pg = pawn as TMPawnGolem;
                         Vector3 mPos = m.DrawPos;
-                        mPos.x += Rand.Range(-.15f, .15f);
-                        mPos.z += Rand.Range(-.15f, .15f);
+                        mPos.x += Rand.Range(-.10f, .10f);
+                        mPos.z += Rand.Range(-.10f, .10f);
                         DrawMesh mesh = new DrawMesh(TM_MatPool.light_laser_long, pg.EyeVector, mPos, 2, 6, 3);
                         pg.drawQueue.Add(mesh);
                         FleckMaker.ThrowMicroSparks(m.DrawPos, m.Map);
@@ -89,6 +89,16 @@ namespace TorannMagic.Golems
                         if (!mineable.DestroyedOrNull())
                         {
                             int num = mineable.def.building.isNaturalRock ? (40 + (10*gu.currentLevel)) : (20 + (20 * gu.currentLevel));
+                            if (Rand.Chance(ModOptions.Settings.Instance.magicyteChance))
+                            {
+                                Thing thing = null;
+                                thing = ThingMaker.MakeThing(TorannMagicDefOf.RawMagicyte);
+                                thing.stackCount = Rand.Range(5, 21) + (4 * gu.currentLevel);
+                                if (thing != null)
+                                {
+                                    GenPlace.TryPlaceThing(thing, pawn.Position, pawn.Map, ThingPlaceMode.Near, null);
+                                }
+                            }
                             if (mineable.HitPoints > num)
                             {
                                 DamageInfo dinfo = new DamageInfo(DamageDefOf.Mining, (float)num, 0f, -1f, pawn);

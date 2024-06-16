@@ -42,6 +42,7 @@ namespace TorannMagic.Ideology
                     CompUseEffect_LearnMagic.FixBardSkills(pawn);
                 }
                 pawn.story.traits.GainTrait(new Trait(td, td.degreeDatas.FirstOrDefault().degree, false));
+                pawn.mindState.inspirationHandler.EndInspiration(inspiration);
             }
         }
 

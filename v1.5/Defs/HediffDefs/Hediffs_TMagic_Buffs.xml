@@ -1817,6 +1817,9 @@
 	<initialSeverity>1.0</initialSeverity>
 	<isBad>false</isBad>
 	<comps>
+	  <li>
+        <compClass>TorannMagic.HediffComp_ManaShield</compClass>
+      </li>
       <li Class="HediffCompProperties_SeverityPerDay">
         <severityPerDay>0.0</severityPerDay>
       </li>	  

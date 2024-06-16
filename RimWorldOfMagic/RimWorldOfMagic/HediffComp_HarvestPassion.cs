@@ -144,7 +144,7 @@ namespace TorannMagic
                                     if (np.CurLevel <= .01f && Rand.Chance(.25f + (.05f * pwrVal)))
                                     {
                                         StealPassion();
-                                        if(CheckAnyPassions() && Rand.Chance(.3f + (.2f * pwrVal)))
+                                        if(CheckAnyPassions() && Rand.Chance(.1f + (.3f * pwrVal)))
                                         {
                                             StealPassion();
                                         }

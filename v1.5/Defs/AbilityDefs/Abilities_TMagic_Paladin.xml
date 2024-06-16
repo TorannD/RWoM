@@ -278,7 +278,7 @@ Requires 40 mana to maintain and reduces mana regeneration by 30%; cast again to
    <projectile>
 		<flyOverhead>true</flyOverhead>
 		<damageDef>TM_Heal_I</damageDef>
-		<damageAmountBase>1</damageAmountBase>
+		<damageAmountBase>0</damageAmountBase>
 		<speed>100</speed>
    </projectile>
  </ThingDef>

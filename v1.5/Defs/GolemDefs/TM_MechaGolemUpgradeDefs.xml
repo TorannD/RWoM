@@ -51,7 +51,7 @@
 		<label>extinguisher</label>
 		<description>Adds the ability to quickly douse fires.</description>
 		<recipe>TM_Mecha-Golem_Extinguisher</recipe>
-		<bodypart>Mecha_Body</bodypart>
+		<bodypart>Mecha_Back</bodypart>
 		<partRequiresUpgrade>false</partRequiresUpgrade>
 		<drawOnlyWhenActive>true</drawOnlyWhenActive>
 		<drawUndrafted>false</drawUndrafted>
@@ -85,7 +85,8 @@ Move:	-[.3c,.5c,.6c]%</description>
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
 		<defName>TM_Golem_MechaAxe</defName>
 		<label>mecha-axe</label>
-		<description>Adds a quick cutting attack, useful for cutting down unarmored masses.</description>
+		<description>Adds a quick cutting attack, useful for cutting down unarmored masses. 16.4 DPS with 1.15 armor penetration. 
+		*This upgrade shares the same slot as the Mecha-Sword and will remove the Mecha-Sword if installed*</description>
 		<recipe>TM_Mecha-Golem_Axe</recipe>
 		<bodypart>Mecha_LeftArm_Axe</bodypart>
 		<partRequiresUpgrade>true</partRequiresUpgrade>
@@ -103,7 +104,8 @@ Move:	-[.3c,.5c,.6c]%</description>
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
 		<defName>TM_Golem_MechaSword</defName>
 		<label>mecha-sword</label>
-		<description>Adds a powerful cutting attack, useful for breaking through defenses and severing limbs.</description>
+		<description>Adds a powerful cutting attack, useful for breaking through defenses and severing limbs. 20 DPS with .5 armor penetration. 
+		*This upgrade shares the same slot as the Mecha-Axe and will remove the Mecha-Axe if installed*</description>
 		<recipe>TM_Mecha-Golem_Sword</recipe>
 		<bodypart>Mecha_LeftArm_Sword</bodypart>
 		<partRequiresUpgrade>true</partRequiresUpgrade>
@@ -230,7 +232,7 @@ Energy Cost:	4 per filth</description>
 		<drawOnlyWhenActive>false</drawOnlyWhenActive>
 		<drawSize>3</drawSize>
 		<shouldRotate>false</shouldRotate>
-		<drawOffsetNorth>(0, .016, 0)</drawOffsetNorth>
+		<drawOffsetNorth>(0, .016, -.125)</drawOffsetNorth>
 		<drawOffsetSouth>(0, .016, 0)</drawOffsetSouth>
 		<drawOffsetEast>(0, .016, 0)</drawOffsetEast>
 		<drawOffsetWest>(0, .016, 0)</drawOffsetWest>
@@ -269,7 +271,7 @@ Heal Amount:	8</description>
 		<drawOnlyWhenActive>false</drawOnlyWhenActive>
 		<drawSize>3</drawSize>
 		<shouldRotate>false</shouldRotate>
-		<drawOffsetNorth>(0, .016, 0)</drawOffsetNorth>
+		<drawOffsetNorth>(0, .016, -.125)</drawOffsetNorth>
 		<drawOffsetSouth>(0, .016, 0)</drawOffsetSouth>
 		<drawOffsetEast>(0, .016, 0)</drawOffsetEast>
 		<drawOffsetWest>(0, .016, 0)</drawOffsetWest>
@@ -316,7 +318,7 @@ Shield Amount:	120</description>
 		<drawOnlyWhenActive>false</drawOnlyWhenActive>
 		<drawSize>3</drawSize>
 		<shouldRotate>false</shouldRotate>
-		<drawOffsetNorth>(0, .016, 0)</drawOffsetNorth>
+		<drawOffsetNorth>(0, .016, -.125)</drawOffsetNorth>
 		<drawOffsetSouth>(0, .016, 0)</drawOffsetSouth>
 		<drawOffsetEast>(0, .016, 0)</drawOffsetEast>
 		<drawOffsetWest>(0, .016, 0)</drawOffsetWest>
@@ -348,7 +350,7 @@ Processing: 	-[5%/10%/15%]</description>
 		<drawOnlyWhenActive>false</drawOnlyWhenActive>
 		<drawSize>3</drawSize>
 		<shouldRotate>false</shouldRotate>
-		<drawOffsetNorth>(0, .016, 0)</drawOffsetNorth>
+		<drawOffsetNorth>(0, .016, -.125)</drawOffsetNorth>
 		<drawOffsetSouth>(0, .016, 0)</drawOffsetSouth>
 		<drawOffsetEast>(0, .016, 0)</drawOffsetEast>
 		<drawOffsetWest>(0, .016, 0)</drawOffsetWest>

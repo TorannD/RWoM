@@ -255,7 +255,7 @@
   <DamageDef>
     <defName>TM_Heal_I</defName>
     <label>Heal (I)</label>
-    <workerClass>TorannMagic.Verb_Heal</workerClass>
+    <workerClass>TorannMagic.TM_DamageWorker_None</workerClass>
     <hasForcefulImpact>false</hasForcefulImpact>
     <harmsHealth>false</harmsHealth>
     <makesBlood>false</makesBlood>

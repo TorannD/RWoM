@@ -1426,7 +1426,7 @@ Chance: [50,60,70,80]%</TM_MindKiller_ver_desc>
 <TM_SuppressiveAura_pwr_desc>Increases duration of emotion suppression by 20% and chance to allow positive emotions by 10% per skill level.</TM_SuppressiveAura_pwr_desc>
 <TM_SuppressiveAura_eff_desc>Increases the radius of suppressive aura by 15% per skill level; at level 3, the effects apply to all members of a caravan.</TM_SuppressiveAura_eff_desc>
 <TM_SuppressiveAura_ver_desc>Imitates feelings of joy and comfort to transfer to affected pawns; each skill level increases the amount of joy and comfort transferred.</TM_SuppressiveAura_ver_desc>
-<TM_HarvestPassion_pwr_desc>Increases the chance of harvesting a passion by 6% once the target's joy is exhausted. Base chance is 30% every 1s. Also increases the chance to harvest additional passions (if able) by 20% per skill level, base chance 30%. The attempt will end once the casters joy is depleted.</TM_HarvestPassion_pwr_desc>
+<TM_HarvestPassion_pwr_desc>Increases the chance of harvesting a passion by 5% once the target's joy is exhausted. Base chance is 25% every .75s. Also increases the chance to harvest additional passions (if able) by 30% per skill level, base chance 10%. The attempt will end once the casters joy is depleted.</TM_HarvestPassion_pwr_desc>
 <TM_HarvestPassion_eff_desc>Decreases the amount of the caster's joy is drained per iteration by 20% per skill level and increases the amount of the target's joy is drained per iteration by 15% per skill level.</TM_HarvestPassion_eff_desc>
 <TM_HarvestPassion_ver_desc>Increases chance to have a burst of inspiration by 1%. Base chance is 2% every in-game hour.</TM_HarvestPassion_ver_desc>
 <TM_Symbiosis_pwr_desc>Increases consciousness of the host pawn for each skill level.
@@ -1435,8 +1435,8 @@ Level 1: +100%
 Level 2: +125%
 Level 3: +150%
 </TM_Symbiosis_pwr_desc>
-<TM_Symbiosis_eff_desc>Decreases mood cost to begin symbiosis by 35%.</TM_Symbiosis_eff_desc>
-<TM_Symbiosis_ver_desc>Increases the protective shell surrounding the host and decreases the percent of absorbed damage that is conferred to the symbiotes body.
+<TM_Symbiosis_eff_desc>Decreases mood cost to begin symbiosis by 35% and increases mood, joy, rest, and food needs by .1% per skill level every 3 seconds.</TM_Symbiosis_eff_desc>
+<TM_Symbiosis_ver_desc>Increases the protective shell surrounding the host and decreases the percent of absorbed damage that is conferred to the symbiote's body.
 Level 0: 25% absorbed, 100% transferred
 Level 1: 30% absorbed, 80% transferred
 Level 2: 35% absorbed, 60% transferred

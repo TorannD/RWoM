@@ -61,7 +61,7 @@
             <li>Gold</li>
           </thingDefs>
         </filter>
-        <count>7</count>
+        <count>5</count>
       </li>
     </ingredients>
   </RecipeDef>
@@ -79,7 +79,7 @@
             <li>Gold</li>
           </thingDefs>
         </filter>
-        <count>16</count>
+        <count>3</count>
       </li> 
 	  <li>
         <filter>
@@ -105,7 +105,7 @@
             <li>Gold</li>
           </thingDefs>
         </filter>
-        <count>15</count>
+        <count>3</count>
       </li> 
 	  <li>
         <filter>
@@ -295,7 +295,7 @@ Heat:	+6%</description>
             <li>Gold</li>
           </thingDefs>
         </filter>
-        <count>8</count>
+        <count>5</count>
       </li> 
     </ingredients>
   </RecipeDef>
@@ -375,7 +375,7 @@ Energy Cost:	50</description>
             <li>Gold</li>
           </thingDefs>
         </filter>
-        <count>16</count>
+        <count>8</count>
       </li> 
     </ingredients>
   </RecipeDef>  
@@ -517,7 +517,7 @@ Energy Cost:	50</description>
             <li>Gold</li>
           </thingDefs>
         </filter>
-        <count>16</count>
+        <count>8</count>
       </li> 
     </ingredients>
   </RecipeDef>

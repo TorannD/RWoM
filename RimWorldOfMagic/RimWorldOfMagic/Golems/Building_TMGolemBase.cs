@@ -470,7 +470,7 @@ namespace TorannMagic.Golems
                         }
                         if (ModOptions.Settings.Instance.golemScreenShake && activationAge >= (.9f * GolemDef.activationTicks) && Find.TickManager.TicksGame % 6 == 0)
                         {
-                            Find.CameraDriver.shaker.DoShake(.05f);
+                            Find.CameraDriver.shaker.DoShake(.02f);
                         }
                         activationAge++;
                         if (Rand.Chance(GolemComp.ProcessingModifier))

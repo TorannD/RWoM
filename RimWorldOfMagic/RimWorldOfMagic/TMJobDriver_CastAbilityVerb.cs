@@ -15,7 +15,7 @@ namespace TorannMagic
 
         private int duration;
         public AbilityContext context => job.count == 1 ? AbilityContext.Player : AbilityContext.AI;
-        public Verb_UseAbility verb = new Verb_UseAbility(); // = this.pawn.CurJob.verbToUse as Verb_UseAbility;
+        public Verb_UseAbility verb = null; //new Verb_UseAbility(); // = this.pawn.CurJob.verbToUse as Verb_UseAbility;
         private bool wildCheck = false;
         bool cooldownFlag = false;
         bool energyFlag = false;
@@ -23,37 +23,35 @@ namespace TorannMagic
 
         public override void ExposeData()
         {
-
+            //Scribe_Deep.Look<Verb_UseAbility>(ref verb, "verb");
             base.ExposeData();
         }
 
         protected override IEnumerable<Toil> MakeNewToils()
         {
-            yield return Toils_Misc.ThrowColonistAttackingMote(TargetIndex.A);            
+            //yield return Toils_Misc.ThrowColonistAttackingMote(TargetIndex.A);            
             Pawn targetPawn = null;
-            this.verb = this.pawn.CurJob.verbToUse as Verb_UseAbility;
+
+            verb = this.pawn.CurJob.verbToUse as Verb_UseAbility;            
             if(this.verb != null)
             {
-                if (base.TargetA.HasThing && base.TargetA.Thing is Pawn && (!pawn.Position.InHorDistOf(base.TargetA.Cell, pawn.CurJob.verbToUse.verbProps.range) || !Verb.UseAbilityProps.canCastInMelee))
+                if (this.TargetA.HasThing && this.TargetA.Thing is Pawn && (!pawn.Position.InHorDistOf(this.TargetA.Cell, pawn.CurJob.verbToUse.verbProps.range) || !Verb.UseAbilityProps.canCastInMelee))
                 {
-                    //if (!base.GetActor().IsFighting() ? true : !verb.UseAbilityProps.canCastInMelee && !this.job.endIfCantShootTargetFromCurPos)
-                    //{
                     Toil toil = Toils_Combat.GotoCastPosition(TargetIndex.A);
                     yield return toil;
-                    //toil = null;
-                    //}
-                }
+                }                
                 if (this.Context == AbilityContext.Player)
                 {
                     Find.Targeter.targetingSource = this.verb;
                 }
+                
                 if (this.TargetThingA != null)
                 {
                     targetPawn = TargetThingA as Pawn;
                 }
 
                 cooldownFlag = this.verb.Ability.CooldownTicksLeft > 0;
-
+                
                 if (this.verb.Ability.Def is TMAbilityDef tmAbility)
                 {
                     CompAbilityUserMight compMight = this.pawn.GetCompAbilityUserMight();
@@ -111,10 +109,9 @@ namespace TorannMagic
                     }
                 }
             }
-
             validCastFlag = cooldownFlag || energyFlag;
 
-            if (targetPawn != null)
+            if (targetPawn != null && (verb != null || this.pawn.CurJob.verbToUse != null))
             {
                 //yield return Toils_Combat.CastVerb(TargetIndex.A, false);
                 Toil combatToil = new Toil();
@@ -123,11 +120,15 @@ namespace TorannMagic
                 //combatToil.FailOnDowned(TargetIndex.A);
                 //CompAbilityUserMagic comp = this.pawn.GetCompAbilityUserMagic();                
                 //JobDriver curDriver = this.pawn.jobs.curDriver;
+
                 combatToil.initAction = delegate
                 {
-                    this.verb = combatToil.actor.jobs.curJob.verbToUse as Verb_UseAbility;                    
+                    if (combatToil.actor.jobs.curJob.verbToUse == null) this.EndJobWith(JobCondition.Errored);
+                    this.verb = combatToil.actor.jobs.curJob.verbToUse as Verb_UseAbility;
+
                     if (verb != null && verb.verbProps != null)
                     {
+
                         try
                         {
                             this.duration = (int)((this.verb.verbProps.warmupTime * 60) * this.pawn.GetStatValue(StatDefOf.AimingDelayFactor, false));
@@ -159,6 +160,7 @@ namespace TorannMagic
                                 this.EndJobWith(JobCondition.Incompletable);
                             }
                         }
+
                         LocalTargetInfo target = combatToil.actor.jobs.curJob.GetTarget(TargetIndex.A);
                         if (target != null && !validCastFlag) 
                         {
@@ -183,10 +185,9 @@ namespace TorannMagic
                 };
                 combatToil.tickAction = delegate
                 {
-                    if(this.pawn.Downed)
-                    {
-                        EndJobWith(JobCondition.InterruptForced);
-                    }
+                    if(this.pawn.Downed) EndJobWith(JobCondition.InterruptForced);
+                    if (combatToil.actor.jobs.curJob.verbToUse == null) this.EndJobWith(JobCondition.Errored);
+
                     if (Find.TickManager.TicksGame % 12 == 0)
                     {
                         if (verb.Ability.Def == TorannMagicDefOf.TM_Artifact_TraitThief || verb.Ability.Def == TorannMagicDefOf.TM_Artifact_TraitInfuse)
@@ -214,6 +215,7 @@ namespace TorannMagic
                 };
                 combatToil.AddFinishAction(delegate
                 {
+
                     if (this.duration <= 5 && !this.pawn.DestroyedOrNull() && !this.pawn.Dead && !this.pawn.Downed)
                     {
                         //ShootLine shootLine;
@@ -261,7 +263,8 @@ namespace TorannMagic
                 //yield return toil1;
             }
             else
-            {                
+            {
+
                 if (verb != null && verb.verbProps != null && (pawn.Position - TargetLocA).LengthHorizontal < verb.verbProps.range)
                 {
                     if (TargetLocA.IsValid && TargetLocA.InBoundsWithNullCheck(pawn.Map) && !TargetLocA.Fogged(pawn.Map))  //&& TargetLocA.Walkable(pawn.Map)
@@ -296,6 +299,8 @@ namespace TorannMagic
                             Toil toil = new Toil();
                             toil.initAction = delegate
                             {
+
+                                if (toil.actor.jobs.curJob.verbToUse == null) this.EndJobWith(JobCondition.Errored);
                                 this.verb = toil.actor.jobs.curJob.verbToUse as Verb_UseAbility;
                                 if (this.pawn.RaceProps.Humanlike)
                                 {
@@ -336,6 +341,8 @@ namespace TorannMagic
                             };
                             toil.tickAction = delegate
                             {
+
+                                if (toil.actor.jobs.curJob.verbToUse == null) this.EndJobWith(JobCondition.Errored);
                                 if (Find.TickManager.TicksGame % 12 == 0)
                                 {
                                     TM_MoteMaker.ThrowCastingMote(pawn.DrawPos, pawn.Map, Rand.Range(1.2f, 2f));
@@ -392,7 +399,11 @@ namespace TorannMagic
                 }
                 else
                 {
-                    if (pawn.IsColonist)
+                    if(verb == null)
+                    {
+                        pawn.jobs.EndCurrentJob(JobCondition.Errored, false, true);
+                    }
+                    else if (pawn.IsColonist)
                     {
                         //out of range
                         Messages.Message("TM_OutOfRange".Translate(), MessageTypeDefOf.RejectInput);

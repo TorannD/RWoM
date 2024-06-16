@@ -58,7 +58,8 @@ namespace TorannMagic
         private float compatibilityRatio = -5f;
         private float effVal = 0;
         public float MaxLevelBonus = 0;
-        public float CRatio => compatibilityRatio + (.5f * effVal);  
+        public float CRatio => compatibilityRatio + (.5f * effVal);
+        private int conversionAttempts = 0;
 
         private void UpdateSpiritCompatibilityRatio()
         {
@@ -174,6 +175,7 @@ namespace TorannMagic
             base.CompExposeData();
             Scribe_Values.Look<float>(ref this.compatibilityRatio, "compatibilityRatio", -5f);
             Scribe_Deep.Look(ref innerContainer, "innerContainer", this);
+            Scribe_Values.Look<int>(ref this.conversionAttempts, "conversionAttempts", 0);
         }
 
         public override string CompLabelInBracketsExtra => SpiritPawn != null ? SpiritPawn.LabelShort + ": " + CRatio.ToString("#.#") + base.CompLabelInBracketsExtra : base.CompLabelInBracketsExtra;
@@ -281,16 +283,25 @@ namespace TorannMagic
 
         public void AdjustHostIdeo()
         {
-            if (this.Pawn.story != null && Pawn.story.traits != null && Pawn.jobs != null)
+            
+            if(ModsConfig.IdeologyActive)
             {
-                if(ModsConfig.IdeologyActive)
+                if (this.Pawn.story != null && Pawn.story.traits != null && Pawn.jobs != null)
                 {
-                    if(this.Pawn.ideo != null && this.Pawn.Ideo != SpiritPawn.Ideo)
+                    if (this.Pawn.ideo != null && this.Pawn.Ideo != SpiritPawn.Ideo)
                     {
                         this.Pawn.ideo.OffsetCertainty(Rand.Range(-.01f, -.03f));
-                        if(this.Pawn.ideo.Certainty <= 0)
+                        if(this.Pawn.ideo.Certainty <= 0.2f)
                         {
                             this.Pawn.ideo.IdeoConversionAttempt(-.5f, SpiritPawn.Ideo);
+                        }
+                        if (this.Pawn.ideo.Certainty > .8f)
+                        {
+                            conversionAttempts++;
+                            if (conversionAttempts >= 100)
+                            {
+                                SpiritPawn.ideo.IdeoConversionAttempt(-1f, this.Pawn.Ideo);
+                            }
                         }
                     }
                 }

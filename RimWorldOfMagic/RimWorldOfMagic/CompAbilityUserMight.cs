@@ -104,7 +104,7 @@ namespace TorannMagic
         public float spCost = 1;
         public float mightPwr = 1;
         private int resMitigationDelay = 0;
-        private float totalApparelWeight = 0;
+        public float totalApparelWeight = 0;
 
         public bool animalBondingDisabled = false;
 
@@ -2341,227 +2341,197 @@ namespace TorannMagic
 
         public override void PostPreApplyDamage(ref DamageInfo dinfo, out bool absorbed)
         {
-            Pawn abilityUser = base.Pawn;
-            absorbed = false;
-            //bool flag = abilityUser.story.traits.HasTrait(TorannMagicDefOf.Gladiator) || abilityUser.story.traits.HasTrait;
-            //if (isGladiator)
+            //Moved to harmony patches
+
+            //Pawn abilityUser = base.Pawn;
+            //absorbed = false;
+
+            //List<Hediff> list = new List<Hediff>();
+            //List<Hediff> arg_32_0 = list;
+            //IEnumerable<Hediff> arg_32_1;
+            //if (abilityUser == null)
             //{
-            List<Hediff> list = new List<Hediff>();
-            List<Hediff> arg_32_0 = list;
-            IEnumerable<Hediff> arg_32_1;
-            if (abilityUser == null)
-            {
-                arg_32_1 = null;
-            }
-            else
-            {
-                Pawn_HealthTracker expr_1A = abilityUser.health;
-                if (expr_1A == null)
-                {
-                    arg_32_1 = null;
-                }
-                else
-                {
-                    HediffSet expr_26 = expr_1A.hediffSet;
-                    arg_32_1 = ((expr_26 != null) ? expr_26.hediffs : null);
-                }
-            }
-            arg_32_0.AddRange(arg_32_1);
-            Pawn expr_3E = abilityUser;
-            int? arg_84_0;
-            if (expr_3E == null)
-            {
-                arg_84_0 = null;
-            }
-            else
-            {
-                Pawn_HealthTracker expr_52 = expr_3E.health;
-                if (expr_52 == null)
-                {
-                    arg_84_0 = null;
-                }
-                else
-                {
-                    HediffSet expr_66 = expr_52.hediffSet;
-                    arg_84_0 = ((expr_66 != null) ? new int?(expr_66.hediffs.Count<Hediff>()) : null);
-                }
-            }
-            bool flag = (arg_84_0 ?? 0) > 0;
-            if (flag)
-            {
-                foreach (Hediff current in list)
-                {
-                    if (current.def == TorannMagicDefOf.TM_HediffInvulnerable)
-                    {
-                        absorbed = true;
-                        FleckMaker.Static(Pawn.Position, Pawn.Map, FleckDefOf.ExplosionFlash, 10);
-                        dinfo.SetAmount(0);
-                        return;
-                    }
-                    if(current.def ==  TorannMagicDefOf.TM_PsionicHD)
-                    {
-                        if(dinfo.Def == TMDamageDefOf.DamageDefOf.TM_PsionicInjury)
-                        {
-                            absorbed = true;
-                            dinfo.SetAmount(0);
-                            return;
-                        }
-                    }
-                    if (current.def == TorannMagicDefOf.TM_ReversalHD)
-                    {
-                        Pawn instigator = dinfo.Instigator as Pawn;
-                        if (instigator != null)
-                        {
-                            if (instigator.equipment != null && instigator.equipment.PrimaryEq != null)
-                            {
-                                if (instigator.equipment.PrimaryEq.PrimaryVerb != null)
-                                {
-                                    absorbed = true;
-                                    Vector3 drawPos = Pawn.DrawPos;
-                                    drawPos.x += ((instigator.DrawPos.x - drawPos.x) / 20f) + Rand.Range(-.2f, .2f);
-                                    drawPos.z += ((instigator.DrawPos.z - drawPos.z) / 20f) + Rand.Range(-.2f, .2f);
-                                    TM_MoteMaker.ThrowSparkFlashMote(drawPos, this.Pawn.Map, 2f);                                    
-                                    DoReversal(dinfo);
-                                    dinfo.SetAmount(0);
-                                    MightPowerSkill ver = this.MightData.MightPowerSkill_Reversal.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Reversal_ver");
-                                    if(ver.level > 0)
-                                    {
-                                        SiphonReversal(ver.level);
-                                    }
-                                    return;
-                                }
-                            }
-                            else if(instigator.RaceProps.Animal && dinfo.Amount != 0 && (instigator.Position - this.Pawn.Position).LengthHorizontal <= 2)
-                            {
-                                absorbed = true;
-                                Vector3 drawPos = Pawn.DrawPos;
-                                drawPos.x += ((instigator.DrawPos.x - drawPos.x) / 20f) + Rand.Range(-.2f, .2f);
-                                drawPos.z += ((instigator.DrawPos.z - drawPos.z) / 20f) + Rand.Range(-.2f, .2f);
-                                TM_MoteMaker.ThrowSparkFlashMote(drawPos, this.Pawn.Map, 2f);
-                                DoMeleeReversal(dinfo);
-                                dinfo.SetAmount(0);
-                                MightPowerSkill ver = this.MightData.MightPowerSkill_Reversal.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Reversal_ver");
-                                if (ver.level > 0)
-                                {
-                                    SiphonReversal(ver.level);
-                                }
-                                return;
-                            }
-                        }
-                        Building instigatorBldg = dinfo.Instigator as Building;
-                        if(instigatorBldg != null)
-                        {
-                            if(instigatorBldg.def.Verbs != null)
-                            {
-                                absorbed = true;
-                                Vector3 drawPos = Pawn.DrawPos;
-                                drawPos.x += ((instigatorBldg.DrawPos.x - drawPos.x) / 20f) + Rand.Range(-.2f, .2f);
-                                drawPos.z += ((instigatorBldg.DrawPos.z - drawPos.z) / 20f) + Rand.Range(-.2f, .2f);
-                                TM_MoteMaker.ThrowSparkFlashMote(drawPos, this.Pawn.Map, 2f);
-                                DoReversal(dinfo);
-                                dinfo.SetAmount(0);
-                                MightPowerSkill ver = this.MightData.MightPowerSkill_Reversal.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Reversal_ver");
-                                if (ver.level > 0)
-                                {
-                                    SiphonReversal(ver.level);
-                                }
-                                return;
-                            }
-                        }
-                    }
-                    if (current.def == TorannMagicDefOf.TM_HediffEnchantment_phantomShift && Rand.Chance(.2f))
-                    {
-                        absorbed = true;
-                        FleckMaker.Static(Pawn.Position, Pawn.Map, FleckDefOf.ExplosionFlash, 8);
-                        FleckMaker.ThrowSmoke(abilityUser.Position.ToVector3Shifted(), abilityUser.Map, 1.2f);
-                        dinfo.SetAmount(0);
-                        return;
-                    }
-                    if (arcaneRes != 0 && resMitigationDelay < this.age)
-                    {
-                        if (current.def == TorannMagicDefOf.TM_HediffEnchantment_arcaneRes)
-                        {
-                            if ((dinfo.Def.armorCategory != null && (dinfo.Def.armorCategory == TorannMagicDefOf.Dark || dinfo.Def.armorCategory == TorannMagicDefOf.Light)) || dinfo.Def.defName.Contains("TM_") || dinfo.Def.defName == "FrostRay" || dinfo.Def.defName == "Snowball" || dinfo.Def.defName == "Iceshard" || dinfo.Def.defName == "Firebolt")
-                            {
-                                absorbed = true;
-                                int actualDmg = Mathf.RoundToInt(dinfo.Amount / arcaneRes);
-                                resMitigationDelay = this.age + 10;
-                                dinfo.SetAmount(actualDmg);
-                                abilityUser.TakeDamage(dinfo);
-                                return;
-                            }
-                        }
-                    }
-                    if (fortitudeMitigationDelay < this.age )
-                    {
-                        if (current.def == TorannMagicDefOf.TM_HediffFortitude)
-                        {
-                            MightPowerSkill pwr = this.MightData.MightPowerSkill_Fortitude.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Fortitude_pwr");
-                            MightPowerSkill ver = this.MightData.MightPowerSkill_Fortitude.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Fortitude_ver");
-                            absorbed = true;
-                            int mitigationAmt = 5 + pwr.level;
+            //    arg_32_1 = null;
+            //}
+            //else
+            //{
+            //    Pawn_HealthTracker expr_1A = abilityUser.health;
+            //    if (expr_1A == null)
+            //    {
+            //        arg_32_1 = null;
+            //    }
+            //    else
+            //    {
+            //        HediffSet expr_26 = expr_1A.hediffSet;
+            //        arg_32_1 = ((expr_26 != null) ? expr_26.hediffs : null);
+            //    }
+            //}
+            //arg_32_0.AddRange(arg_32_1);
+            //Pawn expr_3E = abilityUser;
+            //int? arg_84_0;
+            //if (expr_3E == null)
+            //{
+            //    arg_84_0 = null;
+            //}
+            //else
+            //{
+            //    Pawn_HealthTracker expr_52 = expr_3E.health;
+            //    if (expr_52 == null)
+            //    {
+            //        arg_84_0 = null;
+            //    }
+            //    else
+            //    {
+            //        HediffSet expr_66 = expr_52.hediffSet;
+            //        arg_84_0 = ((expr_66 != null) ? new int?(expr_66.hediffs.Count<Hediff>()) : null);
+            //    }
+            //}
+            //bool flag = (arg_84_0 ?? 0) > 0;
+            //if (flag)
+            //{
+            //    foreach (Hediff current in list)
+            //    {
+            //        if(current.def ==  TorannMagicDefOf.TM_PsionicHD)
+            //        {
+            //            if(dinfo.Def == TMDamageDefOf.DamageDefOf.TM_PsionicInjury)
+            //            {
+            //                absorbed = true;
+            //                dinfo.SetAmount(0);
+            //                return;
+            //            }
+            //        }
+            //        if (current.def == TorannMagicDefOf.TM_ReversalHD)
+            //        {
+            //            Pawn instigator = dinfo.Instigator as Pawn;
+            //            if (instigator != null)
+            //            {
+            //                if (instigator.equipment != null && instigator.equipment.PrimaryEq != null)
+            //                {
+            //                    if (instigator.equipment.PrimaryEq.PrimaryVerb != null)
+            //                    {
+            //                        absorbed = true;
+            //                        Vector3 drawPos = Pawn.DrawPos;
+            //                        drawPos.x += ((instigator.DrawPos.x - drawPos.x) / 20f) + Rand.Range(-.2f, .2f);
+            //                        drawPos.z += ((instigator.DrawPos.z - drawPos.z) / 20f) + Rand.Range(-.2f, .2f);
+            //                        TM_MoteMaker.ThrowSparkFlashMote(drawPos, this.Pawn.Map, 2f);                                    
+            //                        DoReversal(dinfo);
+            //                        dinfo.SetAmount(0);
+            //                        MightPowerSkill ver = this.MightData.MightPowerSkill_Reversal.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Reversal_ver");
+            //                        if(ver.level > 0)
+            //                        {
+            //                            SiphonReversal(ver.level);
+            //                        }
+            //                        return;
+            //                    }
+            //                }
+            //                else if(instigator.RaceProps.Animal && dinfo.Amount != 0 && (instigator.Position - this.Pawn.Position).LengthHorizontal <= 2)
+            //                {
+            //                    absorbed = true;
+            //                    Vector3 drawPos = Pawn.DrawPos;
+            //                    drawPos.x += ((instigator.DrawPos.x - drawPos.x) / 20f) + Rand.Range(-.2f, .2f);
+            //                    drawPos.z += ((instigator.DrawPos.z - drawPos.z) / 20f) + Rand.Range(-.2f, .2f);
+            //                    TM_MoteMaker.ThrowSparkFlashMote(drawPos, this.Pawn.Map, 2f);
+            //                    DoMeleeReversal(dinfo);
+            //                    dinfo.SetAmount(0);
+            //                    MightPowerSkill ver = this.MightData.MightPowerSkill_Reversal.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Reversal_ver");
+            //                    if (ver.level > 0)
+            //                    {
+            //                        SiphonReversal(ver.level);
+            //                    }
+            //                    return;
+            //                }
+            //            }
+            //            Building instigatorBldg = dinfo.Instigator as Building;
+            //            if(instigatorBldg != null)
+            //            {
+            //                if(instigatorBldg.def.Verbs != null)
+            //                {
+            //                    absorbed = true;
+            //                    Vector3 drawPos = Pawn.DrawPos;
+            //                    drawPos.x += ((instigatorBldg.DrawPos.x - drawPos.x) / 20f) + Rand.Range(-.2f, .2f);
+            //                    drawPos.z += ((instigatorBldg.DrawPos.z - drawPos.z) / 20f) + Rand.Range(-.2f, .2f);
+            //                    TM_MoteMaker.ThrowSparkFlashMote(drawPos, this.Pawn.Map, 2f);
+            //                    DoReversal(dinfo);
+            //                    dinfo.SetAmount(0);
+            //                    MightPowerSkill ver = this.MightData.MightPowerSkill_Reversal.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Reversal_ver");
+            //                    if (ver.level > 0)
+            //                    {
+            //                        SiphonReversal(ver.level);
+            //                    }
+            //                    return;
+            //                }
+            //            }
+            //        }                   
+            //        if (fortitudeMitigationDelay < this.age )
+            //        {
+            //            if (current.def == TorannMagicDefOf.TM_HediffFortitude)
+            //            {
+            //                MightPowerSkill pwr = this.MightData.MightPowerSkill_Fortitude.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Fortitude_pwr");
+            //                MightPowerSkill ver = this.MightData.MightPowerSkill_Fortitude.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Fortitude_ver");
+            //                absorbed = true;
+            //                int mitigationAmt = 5 + pwr.level;
                             
-                            if (ModOptions.Settings.Instance.AIHardMode && !abilityUser.IsColonist)
-                            {
-                                mitigationAmt = 8;
-                            }
-                            float actualDmg;
-                            float dmgAmt = dinfo.Amount;
-                            this.Stamina.GainNeed((.01f * dmgAmt) + (.005f * (float)ver.level));
-                            if (dmgAmt < mitigationAmt)
-                            {
-                                actualDmg = 0;
-                                return;
-                            }
-                            else
-                            {
-                                actualDmg = dmgAmt - mitigationAmt;
-                            }
-                            fortitudeMitigationDelay = this.age + 5;
-                            dinfo.SetAmount(actualDmg);
-                            abilityUser.TakeDamage(dinfo);
-                            return;
-                        }
-                        if (current.def == TorannMagicDefOf.TM_MindOverBodyHD)
-                        {
-                            MightPowerSkill ver = this.MightData.MightPowerSkill_MindOverBody.FirstOrDefault((MightPowerSkill x) => x.label == "TM_MindOverBody_ver");
-                            absorbed = true;
-                            int mitigationAmt = Mathf.Clamp((7 + (2 * ver.level) - Mathf.RoundToInt(totalApparelWeight/2)), 0, 13);
+            //                if (ModOptions.Settings.Instance.AIHardMode && !abilityUser.IsColonist)
+            //                {
+            //                    mitigationAmt = 8;
+            //                }
+            //                float actualDmg;
+            //                float dmgAmt = dinfo.Amount;
+            //                this.Stamina.GainNeed((.01f * dmgAmt) + (.005f * (float)ver.level));
+            //                if (dmgAmt < mitigationAmt)
+            //                {
+            //                    actualDmg = 0;
+            //                    return;
+            //                }
+            //                else
+            //                {
+            //                    actualDmg = dmgAmt - mitigationAmt;
+            //                }
+            //                fortitudeMitigationDelay = this.age + 5;
+            //                dinfo.SetAmount(actualDmg);
+            //                abilityUser.TakeDamage(dinfo);
+            //                return;
+            //            }
+            //            if (current.def == TorannMagicDefOf.TM_MindOverBodyHD)
+            //            {
+            //                MightPowerSkill ver = this.MightData.MightPowerSkill_MindOverBody.FirstOrDefault((MightPowerSkill x) => x.label == "TM_MindOverBody_ver");
+            //                absorbed = true;
+            //                int mitigationAmt = Mathf.Clamp((7 + (2 * ver.level) - Mathf.RoundToInt(totalApparelWeight/2)), 0, 13);
                             
-                            if (ModOptions.Settings.Instance.AIHardMode && !abilityUser.IsColonist)
-                            {
-                                mitigationAmt = 10;
-                            }
-                            float actualDmg;
-                            float dmgAmt = dinfo.Amount;
-                            if (dmgAmt < mitigationAmt)
-                            {
-                                Vector3 drawPos = this.Pawn.DrawPos;
-                                Thing instigator = dinfo.Instigator;
-                                if (instigator != null && instigator.DrawPos != null)
-                                {
-                                    float drawAngle = (instigator.DrawPos - drawPos).AngleFlat();
-                                    drawPos.x += Mathf.Clamp(((instigator.DrawPos.x - drawPos.x) / 5f) + Rand.Range(-.1f, .1f), -.45f, .45f);
-                                    drawPos.z += Mathf.Clamp(((instigator.DrawPos.z - drawPos.z) / 5f) + Rand.Range(-.1f, .1f), -.45f, .45f);
-                                    TM_MoteMaker.ThrowSparkFlashMote(drawPos, this.Pawn.Map, 1f);
-                                }
-                                actualDmg = 0;
-                                return;
-                            }
-                            else
-                            {
-                                actualDmg = dmgAmt - mitigationAmt;
-                            }
-                            fortitudeMitigationDelay = this.age + 6;
-                            dinfo.SetAmount(actualDmg);
-                            abilityUser.TakeDamage(dinfo);
-                            return;
-                        }
-                    }
-                }
-            }
-            list.Clear();
-            list = null;
+            //                if (ModOptions.Settings.Instance.AIHardMode && !abilityUser.IsColonist)
+            //                {
+            //                    mitigationAmt = 10;
+            //                }
+            //                float actualDmg;
+            //                float dmgAmt = dinfo.Amount;
+            //                if (dmgAmt < mitigationAmt)
+            //                {
+            //                    Vector3 drawPos = this.Pawn.DrawPos;
+            //                    Thing instigator = dinfo.Instigator;
+            //                    if (instigator != null && instigator.DrawPos != null)
+            //                    {
+            //                        float drawAngle = (instigator.DrawPos - drawPos).AngleFlat();
+            //                        drawPos.x += Mathf.Clamp(((instigator.DrawPos.x - drawPos.x) / 5f) + Rand.Range(-.1f, .1f), -.45f, .45f);
+            //                        drawPos.z += Mathf.Clamp(((instigator.DrawPos.z - drawPos.z) / 5f) + Rand.Range(-.1f, .1f), -.45f, .45f);
+            //                        TM_MoteMaker.ThrowSparkFlashMote(drawPos, this.Pawn.Map, 1f);
+            //                    }
+            //                    actualDmg = 0;
+            //                    return;
+            //                }
+            //                else
+            //                {
+            //                    actualDmg = dmgAmt - mitigationAmt;
+            //                }
+            //                fortitudeMitigationDelay = this.age + 6;
+            //                dinfo.SetAmount(actualDmg);
+            //                abilityUser.TakeDamage(dinfo);
+            //                return;
+            //            }
+            //        }
+            //    }
+            //}
+            //list.Clear();
+            //list = null;
             base.PostPreApplyDamage(ref dinfo, out absorbed);
         }
 

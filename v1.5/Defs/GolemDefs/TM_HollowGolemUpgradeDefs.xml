@@ -259,7 +259,8 @@ Health restored per fire: 7</description>
 		<description>Passively increases stats and improves decay touch to heal the golem for 8 + 4*level and another nearby pawn for the same amount.
 Armor:		+[5%/10%/15%]
 Cooldown:	-[10%/20%/30%]
-Processing:	+[10%/20%/30%]</description>
+Processing:	+[10%/20%/30%]
+*Only one Coat of Arms can be used*</description>
 		<maxLevel>3</maxLevel>
 		<recipe>TM_HollowGolem_CoAIce</recipe>
 		<bodypart>Golem_Body</bodypart>
@@ -290,7 +291,8 @@ Processing:	+[10%/20%/30%]</description>
 		<description>Passively increases stats and improves decay touch to restore 20 + 5*level energy per hit.
 Ability Cooldown:	-[12%/24%/36%]
 Ability Damage:		+[10%/20%/30%]
-Processing:		+[15%/30%/45%]</description>
+Processing:		+[15%/30%/45%]
+*Only one Coat of Arms can be used*</description>
 		<maxLevel>3</maxLevel>
 		<recipe>TM_HollowGolem_CoAArcane</recipe>
 		<bodypart>Golem_Body</bodypart>
@@ -321,7 +323,8 @@ Processing:		+[15%/30%/45%]</description>
 Armor:		+[5%/10%/15%]
 Ability Cooldown:	-[8%/16%/24%]
 Ability Damage:	+[10%/20%/30%]
-Processing:	+[15%/30%/45%]</description>
+Processing:	+[15%/30%/45%]
+*Only one Coat of Arms can be used*</description>
 		<maxLevel>3</maxLevel>
 		<recipe>TM_HollowGolem_CoADeath</recipe>
 		<hediff>TM_HollowGolem_CoAIceHD</hediff>
@@ -354,7 +357,8 @@ Processing:	+[15%/30%/45%]</description>
 
 Energy Cost: 120
 Cooldown: 1200s
-Duration: 100s</description>
+Duration: 100s
+*Only one Protection Gem can used*</description>
 		<maxLevel>1</maxLevel>
 		<recipe>TM_HollowGolem_PGFire</recipe>
 		<ability>TM_HollowGolem_BurningFury</ability>
@@ -378,7 +382,8 @@ Duration: 100s</description>
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
 		<defName>TM_Golem_HollowPGIce</defName>
 		<label>Protection Gem: Water</label>
-		<description>The Water protection gem allows the golem evade incoming attacks. The chance to evade an attack is proportional to the golem's energy percent. Each evasion reduces the golems energy by 5. This ability is persistent as long as the golem energy threshold is above the minimum required to use abilities.</description>
+		<description>The Water protection gem allows the golem evade incoming attacks. The chance to evade an attack is proportional to the golem's energy percent. Each evasion reduces the golems energy by 5. This ability is persistent as long as the golem energy threshold is above the minimum required to use abilities.
+		*Only one Protection Gem can used*</description>
 		<maxLevel>1</maxLevel>
 		<recipe>TM_HollowGolem_PGWater</recipe>
 		<bodypart>Golem_Neck</bodypart>
@@ -407,7 +412,8 @@ Duration: 100s</description>
 Energy Cost:	60
 Cooldown:	480
 Range:		50
-Duration:	20s</description>
+Duration:	20s
+*Only one Protection Gem can used*</description>
 		<maxLevel>1</maxLevel>
 		<recipe>TM_HollowGolem_PGArcane</recipe>
 		<ability>TM_HollowGolem_WellOfDespair</ability>
@@ -435,7 +441,8 @@ Duration:	20s</description>
 		
 Aura Range:	15
 Pulse Rate:	12s
-Energy Cost:	10 energy per pulse</description>
+Energy Cost:	10 energy per pulse
+*Only one Protection Gem can used*</description>
 		<maxLevel>1</maxLevel>
 		<abilityToggle>true</abilityToggle>
 		<recipe>TM_HollowGolem_PGDeath</recipe>
@@ -463,7 +470,8 @@ Energy Cost:	10 energy per pulse</description>
 		
 Aura Range:	36
 Pulse Rate:	10s
-Energy Cost:	8 energy per pawn</description>
+Energy Cost:	8 energy per pawn
+*Only one Protection Gem can used*</description>
 		<maxLevel>1</maxLevel>
 		<recipe>TM_HollowGolem_PGDoom</recipe>
 		<bodypart>Golem_Neck</bodypart>
@@ -492,7 +500,8 @@ Energy Cost:	8 energy per pawn</description>
 
 Energy Cost: 40
 Min Range: 6
-Max Range: 50</description>
+Max Range: 50
+*Only one Focus Gem can be used*</description>
 		<maxLevel>1</maxLevel>
 		<verbProjectile>Projectile_FireBlossomBolt</verbProjectile>
 		<recipe>TM_HollowGolem_FGFire</recipe>
@@ -520,7 +529,8 @@ Max Range: 50</description>
 
 Energy Cost: 60
 Min Range: 10
-Max Range: 70</description>
+Max Range: 70
+*Only one Focus Gem can be used*</description>
 		<maxLevel>1</maxLevel>
 		<verbProjectile>Projectile_IceBlossomBolt</verbProjectile>
 		<recipe>TM_HollowGolem_FGIce</recipe>
@@ -548,7 +558,8 @@ Max Range: 70</description>
 
 Energy Cost: 50
 Min Range: 10
-Max Range: 150</description>
+Max Range: 150
+*Only one Focus Gem can be used*</description>
 		<maxLevel>1</maxLevel>
 		<verbProjectile>Projectile_DarkBolt</verbProjectile>
 		<recipe>TM_HollowGolem_FGArcane</recipe>
@@ -575,7 +586,8 @@ Max Range: 150</description>
 		<description>The Death focus gem surrounds the golem with a field radiating death energy. Periodically strikes nearby enemies. Gains a bonus strike when any pawn dies within 10 cells of the golem.
 
 Energy Cost: 20
-Range: 10</description>
+Range: 10
+*Only one Focus Gem can be used*</description>
 		<maxLevel>1</maxLevel>
 		<recipe>TM_HollowGolem_FGDeath</recipe>
 		<bodypart>Golem_Face</bodypart>
@@ -599,9 +611,10 @@ Range: 10</description>
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
 		<defName>TM_Golem_HollowAffinityFire</defName>
 		<label>fire affinity</label>
-		<description>The arcane energy within the hollow golem is entwined with elemental fire. Only one affinity is allowed per golem. This affinity causes the golem's eyes to glow reddish orange. Fire affinity grants the golem additional stats:
+		<description>The arcane energy within the hollow golem is entwined with elemental fire. This affinity causes the golem's eyes to glow reddish orange. Fire affinity grants the golem additional stats:
 Movement: +[25/40/50]%
-Health:	+[40/60/75]%</description>
+Health:	+[40/60/75]%
+*Only one affinity type is allowed per golem*</description>
 		<recipe>TM_HollowGolem_AffinityFire</recipe>
 		<bodypart>Hollow_Core</bodypart>
 		<partRequiresUpgrade>true</partRequiresUpgrade>
@@ -631,9 +644,10 @@ Health:	+[40/60/75]%</description>
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
 		<defName>TM_Golem_HollowAffinityIce</defName>
 		<label>water affinity</label>
-		<description>The arcane energy within the hollow golem is entwined with elemental water. Only one affinity is allowed per golem. This affinity causes the golem's eyes to glow light blue. Water affinity grants the golem additional stats:
+		<description>The arcane energy within the hollow golem is entwined with elemental water. This affinity causes the golem's eyes to glow light blue. Water affinity grants the golem additional stats:
 Movement: +[20/30/35]%
-Health:	+[50/75/90]%</description>
+Health:	+[50/75/90]%
+*Only one affinity type is allowed per golem*</description>
 		<recipe>TM_HollowGolem_AffinityIce</recipe>
 		<bodypart>Hollow_Core</bodypart>
 		<partRequiresUpgrade>true</partRequiresUpgrade>
@@ -663,9 +677,10 @@ Health:	+[50/75/90]%</description>
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
 		<defName>TM_Golem_HollowAffinityArcane</defName>
 		<label>arcane affinity</label>
-		<description>The arcane energy within the hollow golem is further enhanced. Only one affinity is allowed per golem. This affinity causes the golem's eyes to glow magenta. Arcane affinity grants the golem additional stats:
+		<description>The arcane energy within the hollow golem is further enhanced. This affinity causes the golem's eyes to glow magenta. Arcane affinity grants the golem additional stats:
 Movement: +[15/25/30]%
-Health:	+[55/85/100]%</description>
+Health:	+[55/85/100]%
+*Only one affinity type is allowed per golem*</description>
 		<recipe>TM_HollowGolem_AffinityArcane</recipe>
 		<bodypart>Hollow_Core</bodypart>
 		<partRequiresUpgrade>true</partRequiresUpgrade>
@@ -695,9 +710,10 @@ Health:	+[55/85/100]%</description>
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
 		<defName>TM_Golem_HollowAffinityDeath</defName>
 		<label>death affinity</label>
-		<description>The arcane energy within the hollow golem is entwined with death magic. Only one affinity is allowed per golem. This affinity causes the golem's eyes to glow green. Death affinity grants the golem additional stats:
+		<description>The arcane energy within the hollow golem is entwined with death magic. This affinity causes the golem's eyes to glow green. Death affinity grants the golem additional stats:
 Movement: +[10/15/20]%
-Health:	+[65/90/110]%</description>
+Health:	+[65/90/110]%
+*Only one affinity type is allowed per golem*</description>
 		<recipe>TM_HollowGolem_AffinityDeath</recipe>
 		<bodypart>Hollow_Core</bodypart>
 		<partRequiresUpgrade>true</partRequiresUpgrade>
@@ -727,7 +743,8 @@ Health:	+[65/90/110]%</description>
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
 		<defName>TM_Golem_HollowOrbOfExtinguishedFlames</defName>
 		<label>Orb of Extinguished Flames</label>
-		<description>Gain points into the active research technology will increase for every pawn killed on the map. The orb can also be toggled to detect and consume any fire within 25 cells and emits a faint silver light. These effect are only active while the hollow golem is dormant.</description>
+		<description>Gain points into the active research technology will increase for every pawn killed on the map. The orb can also be toggled to detect and consume any fire within 25 cells and emits a faint silver light. These effect are only active while the hollow golem is dormant.
+		*This upgrade shares the same slot as Flames of Devouring Apathy and will remove it if installed*</description>
 		<maxLevel>1</maxLevel>
 		<recipe>TM_HollowGolem_OrbOfExtinguishedFlames</recipe>
 		<bodypart>Golem_Heart</bodypart>
@@ -770,7 +787,8 @@ Health:	+[65/90/110]%</description>
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
 		<defName>TM_Golem_HollowFlamesOfDevouringApathy</defName>
 		<label>Flames of Devouring Apathy</label>
-		<description>Actively regulates temperature and destroys any filth within 25 cells. Emits a faint mystical light. These effect are only active while the hollow golem is dormant.</description>
+		<description>Actively regulates temperature and destroys any filth within 25 cells. Emits a faint mystical light. These effect are only active while the hollow golem is dormant.
+		*This upgrade shares the same slot as Orb of Extinguished Flames and will remove it if installed*</description>
 		<maxLevel>1</maxLevel>
 		<recipe>TM_HollowGolem_FlamesOfDevouringApathy</recipe>
 		<bodypart>Golem_Heart</bodypart>

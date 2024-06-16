@@ -544,8 +544,8 @@ Cooldown: 15s</description>
 	   <projectile>
 			<flyOverhead>true</flyOverhead>
 			<damageDef>TM_Spirit</damageDef>
-			<damageAmountBase>5</damageAmountBase>
-			<speed>10</speed>
+			<damageAmountBase>4</damageAmountBase>
+			<speed>8</speed>
 			<explosionRadius>4</explosionRadius>
 	   </projectile>
 	</ThingDef>
