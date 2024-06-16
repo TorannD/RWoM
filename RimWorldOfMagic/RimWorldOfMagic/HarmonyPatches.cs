@@ -4733,7 +4733,7 @@ namespace TorannMagic
                                     }
                                 }
                                 //bracer of deflection blocks and reflects attack
-                                if (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_ArtifactDeflectHD) && Rand.Chance(.3f))
+                                if (hd.def == TorannMagicDefOf.TM_ArtifactDeflectHD && Rand.Chance(.3f))
                                 {
                                     if (instigator != null)
                                     {
