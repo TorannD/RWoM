@@ -388,6 +388,7 @@ Arcane Power: +10%</description>
 	<generateCommonality>0.001</generateCommonality>
 	<apparel>
 	 <tags>
+	   <li>Robe</li>
 	   <li>Arcane</li>
 	   <li>Royal</li>
        <li>RoyalTier2</li>
@@ -507,6 +508,7 @@ Arcane Res: +30%</description>
 	<generateCommonality>0.001</generateCommonality>
 	<apparel>
 	 <tags>
+		<li>Robe</li>
 	   <li>Arcane</li>
 	   <li>Royal</li>
        <li>RoyalTier2</li>
@@ -822,6 +824,7 @@ Arcane Res: +25%</description>
 	<generateCommonality>0.001</generateCommonality>
 	<apparel>	
 	 <tags>
+		<li>Robe</li>
 	   <li>Arcane</li>
 	   <li>SeerEliteApparel</li>
 	 </tags>
@@ -1004,6 +1007,7 @@ Ability Damage: +20%</description>
 	 <tags>
 	   <li>Arcane</li>
 	   <li>SeerEliteApparel</li>
+	   <li>Robe</li>
 	   <li>Royal</li>
        <li>RoyalTier6</li>
 	   <li>RoyalRobe</li>

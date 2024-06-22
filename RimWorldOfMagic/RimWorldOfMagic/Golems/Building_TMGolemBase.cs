@@ -544,13 +544,12 @@ namespace TorannMagic.Golems
                             {
                                 this.activating = true;
                             }
-                        }
-                        if (ThreatTarget != null && CanActivate(out failString) && GolemComp.threatRange > 0 && (ThreatTarget.Position - this.Position).LengthHorizontal <= GolemComp.threatRange)
-                        {
-                            activating = true;
-                        }
+                            if (ThreatTarget != null && CanActivate(out failString) && GolemComp.threatRange > 0 && (ThreatTarget.Position - this.Position).LengthHorizontal <= GolemComp.threatRange)
+                            {
+                                activating = true;
+                            }
+                        }                        
                         List<GolemWorkstationEffect> tmpList = new List<GolemWorkstationEffect>();
-                        tmpList.Clear();
                         foreach (GolemWorkstationEffect effect in activeEffects)
                         {
                             if (effect.EffectActive)
@@ -1013,7 +1012,7 @@ namespace TorannMagic.Golems
             this.threatTarget = null;
             try
             {
-                List<Pawn> allPawns = this.Map.mapPawns.AllPawnsSpawned.InRandomOrder().ToList();
+                List<Pawn> allPawns = this.Map.mapPawns.AllPawnsSpawned.InRandomOrder().ToList();                
                 for (int i = 0; i < allPawns.Count(); i++)
                 {
                     if (GolemComp.TargetIsValid(this, allPawns[i]))

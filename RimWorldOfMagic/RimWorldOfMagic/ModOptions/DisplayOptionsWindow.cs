@@ -17,6 +17,7 @@ namespace TorannMagic.ModOptions
         private bool challenge = false;
 
         private bool changeOffset = false;
+        private bool changeOffsetVal = false;
         private bool changeCloakDepth = false;
         private bool changeCloakDepthNorth = false;
 
@@ -106,6 +107,21 @@ namespace TorannMagic.ModOptions
             num++;
             if (Settings.Instance.offSetClothing)
             {
+                Rect rowRect70 = UIHelper.GetRowRect(rect1, rowHeight, num);
+                Settings.Instance.offsetApplyAtValue = Widgets.HorizontalSlider(rowRect70, Settings.Instance.offsetApplyAtValue, -1f, 1f, false, "TM_offsetApplyAt".Translate() + " " + Settings.Instance.offsetApplyAtValue, "-1", "1", .000001f);
+                TooltipHandler.TipRegion(rowRect70, "TM_offsetApplyAtDesc".Translate());
+                num++;
+                Rect rowRect70ShiftRight = UIHelper.GetRowRect(rowRect70, rowHeight, num);
+                Rect rectChangeOffsetVal = new Rect(rowRect70ShiftRight.x, rowRect70ShiftRight.y + .5f, 100f, 28f);
+                changeOffsetVal = Widgets.ButtonText(rectChangeOffsetVal, "TM_SetVerbatum".Translate(), true, false, true);
+                if (changeOffsetVal)
+                {
+                    ChangeOffsetWindow newWindow = new ChangeOffsetWindow();
+                    newWindow.currentOffset = Settings.Instance.offsetApplyAtValue.ToString();
+                    Find.WindowStack.Add(newWindow);
+                }
+                num++;
+                num++;
                 Rect rowRect71 = UIHelper.GetRowRect(rect1, rowHeight, num);
                 Settings.Instance.offsetMultiLayerClothingAmount = Widgets.HorizontalSlider(rowRect71, Settings.Instance.offsetMultiLayerClothingAmount, -1f, 1f, false, "TM_offsetMultilayerClothing".Translate() + " " + Settings.Instance.offsetMultiLayerClothingAmount, "-1", "1", .000001f);
                 TooltipHandler.TipRegion(rowRect71, "TM_offsetMultilayerClothingDesc".Translate());

@@ -2664,7 +2664,7 @@ namespace TorannMagic
         //    }
         //}
 
-        //testing purposes
+        //applied
         [HarmonyPatch(typeof(PawnRenderNodeWorker), "AltitudeFor", null), HarmonyPriority(10)] //go last to ensure cloaks draw over everything else
         public class DrawMesh_Cloaks_Patch2
         {
@@ -2674,13 +2674,15 @@ namespace TorannMagic
                 {
                     //Log.Message("for apparel " + node.apparel.def.defName + " the layer is " + ((node.Props.drawData?.LayerForRot(parms.facing, node.Props.baseLayer) ?? node.Props.baseLayer) + node.debugLayerOffset).ToString() + " with altitude of " + __result);
 
-                    if (__result >= .0288f)
+                    if (__result >= ModOptions.Settings.Instance.offsetApplyAtValue)
                     {
                         __result = __result + ModOptions.Settings.Instance.offsetMultiLayerClothingAmount;
                     }
-                    if (ModOptions.Constants.GetCloaks().Contains(node.Graphic.MatSingle))
+                    if (ModOptions.Constants.GetCloaks().Contains(node.Graphic.MatSingle.mainTexture))
                     {
-                        __result += ModOptions.Constants.GetCloaksNorth().Contains(node.Graphic.MatSingle) ? ModOptions.Settings.Instance.cloakDepthNorth : ModOptions.Settings.Instance.cloakDepth;
+                        //Log.Message("found cloak " + node.Graphic.MatSingle.mainTexture + " north ?:" + (parms.pawn.Rotation == Rot4.North) + " debug offset set to: " + node.debugLayerOffset);
+                        //__result += ModOptions.Constants.GetCloaksNorth().Contains(node.Graphic.MatNorth.mainTexture) ? ModOptions.Settings.Instance.cloakDepthNorth : ModOptions.Settings.Instance.cloakDepth;
+                        __result += (parms.pawn.Rotation == Rot4.North) ? ModOptions.Settings.Instance.cloakDepthNorth : ModOptions.Settings.Instance.cloakDepth;
                     }
                 }                
             }
@@ -4616,7 +4618,7 @@ namespace TorannMagic
                         //takes precedence over other mitigations
                         Hediff hateHediff = TM_Calc.GetHateHediff(pawn);
                         if(hateHediff != null && !dinfo.Def.isExplosive && dinfo.Amount > 0)
-                        {                          
+                        {
                             int hatePwr = 0;
                             int hateVer = 0;
                             int hateEff = 0;
@@ -4850,7 +4852,6 @@ namespace TorannMagic
                                 return false;
                             }
                         }
-                        
                         //Deathknight can life tap if their attack strikes and damages the target
                         if (dinfo.Instigator is Pawn attacker)
                         {
@@ -4887,7 +4888,7 @@ namespace TorannMagic
                         }
                         //symbiosis shell splits damage between symbiote and host and should only occur if the pawn takes damage
                         Hediff symb = ___pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_SymbiosisHD);
-                        if (dinfo.Def.harmsHealth)
+                        if (symb != null && dinfo.Def.harmsHealth)
                         {
                             HediffComp_SymbiosisHost hdh = symb.TryGetComp<HediffComp_SymbiosisHost>();
                             if (hdh != null && hdh.symbiote != null && hdh.lastDamageTick < Find.TickManager.TicksGame)

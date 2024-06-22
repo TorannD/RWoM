@@ -46,6 +46,7 @@ namespace TorannMagic.ModOptions
         public float cloakDepth = 0f;
         public float cloakDepthNorth = 0f;
         public bool offSetClothing = false;
+        public float offsetApplyAtValue = .0288f;
         public float offsetMultiLayerClothingAmount = -.025387f;
 
         //Death Retaliation
@@ -165,6 +166,7 @@ namespace TorannMagic.ModOptions
             Scribe_Values.Look<float>(ref this.cloakDepth, "cloakDepth", 0f, false);
             Scribe_Values.Look<float>(ref this.cloakDepthNorth, "cloakDepthNorth", 0f, false);
             Scribe_Values.Look<bool>(ref this.offSetClothing, "offsetClothing", false, false);
+            Scribe_Values.Look<float>(ref this.offsetApplyAtValue, "offsetApplyAtValue", .0288f, false);
             Scribe_Values.Look<float>(ref this.offsetMultiLayerClothingAmount, "offsetMultiLayerClothingAmount", -.025387f, false);
 
             Scribe_Values.Look<float>(ref this.deathExplosionRadius, "deathExplosionRadius", 3f, false);

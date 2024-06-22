@@ -2021,7 +2021,10 @@ Wanderers prefer the open road and gain a mood boost for being in a caravan. Car
 			<label>Spirit</label>
 			<description>The body of [PAWN_nameDef] is inhabited by the spirit of another pawn. Possession in a living pawn creates an internal conflict as the functions of the body are shared between two souls. This conflict can be reduced if personalities align, but will become further aggravated if they contrast. Possession of a deceased pawn will not experience mental conflicts, but will slowly deplete the energy of the possessing spirit. Spirit can be recharged through meditation or absorption.</description>
 			<degree>0</degree>
-			<statOffsets>				
+			<statOffsets>		
+				<HypoxiaResistance MayRequire="kentington.saveourship2">1</HypoxiaResistance>
+				<DecompressionResistance MayRequire="kentington.saveourship2">1</DecompressionResistance>
+				<VacuumSpeedMultiplier MayRequire="kentington.saveourship2">1</VacuumSpeedMultiplier>			
 			</statOffsets>			
 		  </li>
 		</degreeDatas>		

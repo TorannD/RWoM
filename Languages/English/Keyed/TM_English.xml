@@ -373,6 +373,8 @@
 <showUndeadAnimalChangeDesc>Undead animals will show the first stage of rot (decayed); if this is disabled, undead animals will appear as they were when alive</showUndeadAnimalChangeDesc>
 <TM_AlterClothingDepth>Adjust clothing draw depth</TM_AlterClothingDepth>
 <TM_AlterClothingDepthDesc>When this is enabled, the following options will change the order in which clothing is drawn (on top of or underneath other clothes).</TM_AlterClothingDepthDesc>
+<TM_offsetApplyAt>Offset threshold mark</TM_offsetApplyAt>
+<TM_offsetApplyAtDesc>Applies offset to clothing when its total depth is greater than this value; use this threshold to adjust multilayer clothing if it appears above both cloaks and hair.</TM_offsetApplyAtDesc>
 <TM_offsetMultilayerClothing>Multi-layer offset</TM_offsetMultilayerClothing>
 <TM_offsetMultilayerClothingDesc>Adjusts the display depth of multi-layered clothing, but only when the calculated offset is extreme (would appear on top of all other clothes). This is primarily intended to correct the draw depth for cloaks.</TM_offsetMultilayerClothingDesc>
 
