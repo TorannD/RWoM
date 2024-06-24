@@ -92,12 +92,12 @@ namespace TorannMagic
             }            
 
             CompAbilityUserMight compMight = pawn.GetCompAbilityUserMight();
-            if (compMight != null && compMight.customClass != null && compMight.customClass.isNecromancer)
+            if (compMight is { customClass: { isNecromancer: true } })
             {
                 return true;
             }
             CompAbilityUserMagic compMagic = pawn.GetCompAbilityUserMagic();
-            if (compMagic != null && compMagic.customClass != null && compMagic.customClass.isNecromancer)
+            if (compMagic is { customClass: { isNecromancer: true } })
             {
                 return true;
             }            
@@ -106,33 +106,24 @@ namespace TorannMagic
 
         public static bool IsUndead(Pawn pawn)
         {
-            if (pawn == null) return false;
+            if (pawn?.health?.hediffSet == null) return false;  // Early Exit
 
-            if (pawn.story?.traits != null && pawn.story.traits.HasTrait(TorannMagicDefOf.Undead)) return true;
-
-            if (pawn.health?.hediffSet != null && pawn.health.hediffSet.hediffs.Any(hediff =>
-                hediff.def == TorannMagicDefOf.TM_UndeadAnimalHD
-                || hediff.def == TorannMagicDefOf.TM_UndeadHD
-                || hediff.def == TorannMagicDefOf.TM_LichHD
-                || hediff.def == TorannMagicDefOf.TM_UndeadStageHD
-                || hediff.def.defName.StartsWith("ROM_Vamp")
-            ))
+            List<Hediff> hediffs = pawn.health.hediffSet.hediffs;
+            int hediffCount = hediffs.Count;
+            for (int i = 0; i < hediffCount; i++)
             {
-                return true;
+                // Use defName as string because constants are faster.
+                if (hediffs[i].def.defName is "TM_UndeadAnimalHD" or "TM_UndeadHD" or "TM_LichHD" or "TM_UndeadStageHD")
+                    return true;
             }
 
-            if (pawn.def.defName == "SL_Runner" || pawn.def.defName == "SL_Peon" || pawn.def.defName == "SL_Archer" || pawn.def.defName == "SL_Hero" ||
-                pawn.def == TorannMagicDefOf.TM_GiantSkeletonR || pawn.def == TorannMagicDefOf.TM_SkeletonR || pawn.def == TorannMagicDefOf.TM_SkeletonLichR)
+            byte compsSeen = 0;
+            for (int i = pawn.AllComps.Count - 1; i >= 0; i--)
             {
-                return true;
-            }
-
-            for (int i = 0; i < pawn.AllComps.Count; i++)
-            {
-                if (pawn.AllComps[i] is CompAbilityUserTMBase comp)
-                {
-                    if (comp.customClass != null && comp.customClass.isUndead) return true;
-                }
+                if (pawn.AllComps[i] is not CompAbilityUserTMBase comp) continue;
+                if (comp.customClass is { isUndead: true }) return true;
+                if (compsSeen == 1) return false;  // Only 2 CompAbilityUserTMBases
+                compsSeen++;
             }
 
             return false;

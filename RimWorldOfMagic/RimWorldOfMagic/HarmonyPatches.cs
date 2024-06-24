@@ -80,7 +80,6 @@ namespace TorannMagic
             harmonyInstance.Patch(AccessTools.Method(typeof(RecipeDef), "get_AvailableNow", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_GolemsRecipeAvailable", null), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(Pawn), "get_ShouldAvoidFences", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_GolemShouldAvoidFences"), null, null);
             harmonyInstance.Patch(AccessTools.Method(typeof(PawnRenderer), "get_CurRotDrawMode", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_RotBodyForUndead"), null, null);
-            harmonyInstance.Patch(AccessTools.Method(typeof(Pawn_HealthTracker), "get_CanBleed", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_Undead_CanBleed"), null, null);
             //harmonyInstance.Patch(AccessTools.Method(typeof(Precept_Relic), "get_RelicInPlayerPossession", null, null),null, new HarmonyMethod(typeof(TorannMagicMod), "Get_DelayRelicLost"), null);
             //harmonyInstance.Patch(AccessTools.Method(typeof(Pawn), "get_InAggroMentalState", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_UndeadAggroMentalState"), null, null);
             //harmonyInstance.Patch(AccessTools.Method(typeof(Pawn), "get_InMentalState", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_UndeadMentalState"), null, null);
@@ -410,11 +409,47 @@ namespace TorannMagic
             }
         }
 
-        public static void Get_Undead_CanBleed(Pawn_HealthTracker __instance, Pawn ___pawn, ref bool __result)
+        [HarmonyPatch(typeof(Pawn_HealthTracker), "get_CanBleed", null)]
+        public static class Get_Undead_CanBleed
         {
-            if (TM_Calc.IsUndead(___pawn))
+            // Transpiler to avoid harmony overhead since Anomaly update added lots of calls to CanBleed
+            static IEnumerable<CodeInstruction> Transpiler(
+                IEnumerable<CodeInstruction> instructions,
+                ILGenerator generator)
             {
-                __result = false;
+                CodeInstruction[] codes = instructions.ToArray();
+                Label startOfOurCheck = generator.DefineLabel(); // Label for the if statement we are adding
+                Label returnFalse = generator.DefineLabel();
+
+                // We are keeping the method the same, but adding a final if condition
+                for (int i = 0; i < codes.Length - 1; i++)
+                {
+                    yield return codes[i];
+                }
+
+                // Add a jump to our code
+                // If IsFlesh, continue to our check. Else, return false
+                yield return new CodeInstruction(OpCodes.Brtrue_S, startOfOurCheck); // If true, jump
+                yield return new CodeInstruction(OpCodes.Ret); // return loaded value (0) aka, false
+
+                // Here is our if condition of TM_Calc.IsUndead
+                var startOfIfStatement = new CodeInstruction(OpCodes.Ldarg_0)
+                {
+                    labels = new List<Label> { startOfOurCheck } // Mark this instruction with label
+                }; // Load pawn ref into arg stack
+                yield return startOfIfStatement; // add the code to the function
+                yield return CodeInstruction.LoadField(typeof(Pawn_HealthTracker), "pawn"); // Get value from pawn ref
+                yield return new CodeInstruction(OpCodes.Callvirt,
+                    AccessTools.Method(typeof(TM_Calc), nameof(TM_Calc.IsUndead))); // TM_Calc.IsUndead(pawn)
+                // Invert result
+                yield return new CodeInstruction(OpCodes.Brtrue_S, returnFalse);
+                yield return new CodeInstruction(OpCodes.Ldc_I4_1); // Load
+                yield return new CodeInstruction(OpCodes.Ret); // Return result
+                yield return new CodeInstruction(OpCodes.Ldc_I4_0)
+                {
+                    labels = new List<Label> { returnFalse }
+                };
+                yield return new CodeInstruction(OpCodes.Ret);
             }
         }
 
