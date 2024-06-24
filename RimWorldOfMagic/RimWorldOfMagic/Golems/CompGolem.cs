@@ -97,6 +97,14 @@ namespace TorannMagic.Golems
                 {
                     return false;
                 }
+                if (target.Thing.Map != source.Map)
+                {
+                    return false;                                       
+                }
+                if (!target.Cell.InAllowedArea(Pawn))
+                {
+                    return false;
+                }
                 if (targetThing is Pawn p)
                 {
                     if (p.Dead || p.Downed)
@@ -108,17 +116,6 @@ namespace TorannMagic.Golems
                         return false;
                     }
                     if (!p.CanReach(source, PathEndMode.ClosestTouch, Danger.Deadly, false, false, TraverseMode.ByPawn))
-                    {
-                        return false;
-                    }
-                }                
-                if (target.Thing.Map == source.Map)
-                {
-                    if (target.Cell.DistanceToEdge(source.Map) < 8)
-                    {
-                        return false;
-                    }
-                    if (!target.Cell.InAllowedArea(Pawn))
                     {
                         return false;
                     }

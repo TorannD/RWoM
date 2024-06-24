@@ -53,7 +53,7 @@
 		<golemKindDef>TM_WoodGolemK</golemKindDef>
 		<golemWorkstationDef>TM_WoodGolem_Workstation</golemWorkstationDef>
 		<golemFramePath>Golems/Wood/Wood_Workstation_Frame</golemFramePath>
-		<activationTicks>240</activationTicks>
+		<activationTicks>150</activationTicks>
 		<processorEvaluationTicks>300</processorEvaluationTicks>
 		<needs>
 		  <li>TM_GolemEnergy</li>
@@ -155,7 +155,7 @@
 	<TorannMagic.TMDefs.TM_GolemDef Name="TM_StoneGolem" Abstract="True">
 		<golemWorkstationDef>TM_StoneGolem_Workstation</golemWorkstationDef>
 		<golemFramePath>Golems/Stone/Stone_Workstation_Frame</golemFramePath>
-		<activationTicks>600</activationTicks>
+		<activationTicks>450</activationTicks>
 		<processorEvaluationTicks>400</processorEvaluationTicks>
 		<needs>
 		  <li>TM_GolemEnergy</li>
@@ -217,8 +217,8 @@
 		<golemKindDef>TM_MaharalGolemK</golemKindDef>
 		<golemWorkstationDef>TM_MaharalGolem_Workstation</golemWorkstationDef>
 		<golemFramePath>Golems/Maharal/Maharal_Workstation_Frame</golemFramePath>
-		<activationTicks>300</activationTicks>
-		<processorEvaluationTicks>200</processorEvaluationTicks>
+		<activationTicks>180</activationTicks>
+		<processorEvaluationTicks>600</processorEvaluationTicks>
 		<needs>
 		  <li>TM_GolemEnergy</li>
 		</needs>
@@ -243,8 +243,8 @@
 		<golemKindDef>TM_MechaGolemK</golemKindDef>
 		<golemWorkstationDef>TM_MechaGolem_Workstation</golemWorkstationDef>
 		<golemFramePath>Golems/Mecha/Mecha-Golem_Workstation_Frame</golemFramePath>
-		<activationTicks>240</activationTicks>
-		<processorEvaluationTicks>100</processorEvaluationTicks>
+		<activationTicks>150</activationTicks>
+		<processorEvaluationTicks>120</processorEvaluationTicks>
 		<needs>
 		  <li>TM_GolemEnergy</li>
 		</needs>
@@ -280,8 +280,8 @@
 		<golemKindDef>TM_FleshGolemK</golemKindDef>
 		<golemWorkstationDef>TM_FleshGolem_Workstation</golemWorkstationDef>
 		<golemFramePath>Golems/Flesh/FleshGolem_Workstation_Frame</golemFramePath>
-		<activationTicks>180</activationTicks>
-		<processorEvaluationTicks>60</processorEvaluationTicks>
+		<activationTicks>120</activationTicks>
+		<processorEvaluationTicks>90</processorEvaluationTicks>
 		<needs>
 		  <li>TM_GolemEnergy</li>
 		  <li>TM_GolemRage</li>
@@ -318,8 +318,8 @@
 		<golemKindDef>TM_HollowGolemK</golemKindDef>
 		<golemWorkstationDef>TM_HollowGolem_Workstation</golemWorkstationDef>
 		<golemFramePath>Golems/Hollow/HollowGolem_Workstation_Frame</golemFramePath>
-		<activationTicks>300</activationTicks>
-		<processorEvaluationTicks>40</processorEvaluationTicks>
+		<activationTicks>240</activationTicks>
+		<processorEvaluationTicks>60</processorEvaluationTicks>
 		<needs>
 		  <li>TM_GolemEnergy</li>
 		</needs>

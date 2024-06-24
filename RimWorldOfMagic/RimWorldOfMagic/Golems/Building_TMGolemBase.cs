@@ -413,6 +413,7 @@ namespace TorannMagic.Golems
             }
         }
 
+        private int threatOnMapCheckDelay = 0;
         public int pauseFor = 0;
 		public override void Tick()
 		{
@@ -500,7 +501,15 @@ namespace TorannMagic.Golems
                             }
                             if (threatTarget == null)
                             {
-                                DetermineThreats();
+                                if (threatOnMapCheckDelay > 1)
+                                {
+                                    threatOnMapCheckDelay = 0;
+                                    DetermineThreats();
+                                }
+                                else
+                                {
+                                    threatOnMapCheckDelay++;
+                                }
                             }
                             TMPawnGolem p = GetDirectlyHeldThings().FirstOrDefault() as TMPawnGolem;
                             if (p != null)
