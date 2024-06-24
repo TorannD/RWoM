@@ -103,15 +103,15 @@ namespace TorannMagic.Golems
                     {
                         return false;                        
                     }
-                    if (!p.CanReach(source, PathEndMode.ClosestTouch, Danger.Deadly, false, false, TraverseMode.NoPassClosedDoorsOrWater))
+                    if (!GenHostility.HostileTo(source, targetThing))
                     {
                         return false;
                     }
-                }
-                if (!GenHostility.HostileTo(source, targetThing))
-                {
-                    return false;
-                }
+                    if (!p.CanReach(source, PathEndMode.ClosestTouch, Danger.Deadly, false, false, TraverseMode.ByPawn))
+                    {
+                        return false;
+                    }
+                }                
                 if (target.Thing.Map == source.Map)
                 {
                     if (target.Cell.DistanceToEdge(source.Map) < 8)
