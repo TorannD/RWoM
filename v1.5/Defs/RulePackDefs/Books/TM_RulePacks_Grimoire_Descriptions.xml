@@ -1,0 +1,1028 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Combat Technique -->
+  
+  <RulePackDef>
+    <defName>TM_Description_CombatTechnique</defName>
+    <include>
+      <li>TM_Book_Pools</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        
+        <!-- General, root symbol is 'desc' -->
+
+        <li>subject->[subject_Might]</li>
+		<li>object->[subject_teachingType]</li>
+
+        <li>desc->[discussion].\n\n[anecdote]. \n\n[quality_statement].</li>
+        
+        <!-- discussion of the subject -->
+
+        <li>discussion->This [object] provides [useful_information] about [subject][detail]</li>
+        <li>discussion->This [object] establishes the author's authority on the subject of [subject][detail]</li>
+        <li>discussion->Those seeking [understanding_synonym] [subject] head to this [notable_adjective] [textbook][detail]</li>
+        <li>discussion->A [object_adjective] [object] on [subject][detail]</li>
+		  <li>object_adjective->dusty</li>
+		  <li>object_adjective->ancient</li>
+		  <li>object_adjective->worn</li>
+        <li>detail->. The instructions focus on the finer aspects of mastering [subject]</li>
+        <li>detail->. It is a succinct instruction of a complex subject</li>
+        <li>detail->. The introductions say that, when [ANYPAWN_label] wrote this, it was a new application in the field</li>
+        <li>detail->. A quote on the [note_location] says, 'True [students] of [subject] cannot ignore [ANYPAWN_label]'s book</li>
+          <li>students->students</li>
+          <li>students->lovers</li>
+          <li>students->practitioners</li>
+		  <li>students->warriors</li>
+		  <li>students->fighters</li>
+        <li>detail->. It takes you through the subject step-by-step</li>
+        <li>detail(quality[less_than]4)->, even though the author rushes through the subject</li>
+        <li>detail(quality[greater_than]3)->. It is a comprehensive treatment of the subject</li>
+		<li>detail(quality[greater_than]4)->. The pages of this [object] are made from thin sheets of metal</li>
+		<li>detail(quality[greater_than]5)->. The [object] is covered in chains</li>
+        <li>detail->. There are strange scratches on the cover of this [object]</li>
+		<li>detail->. Dried blood marrs the cover of this [object]</li>
+        <li>detail(quality[less_than]3)->, though the author's rhetoric distracts from the core concept</li>
+		<li>detail(quality[less_than]3)->, some of the pages have been torn out</li>
+
+        <li>quality_statement->[exterior_quality] [page_quality]</li>
+
+		<li>anecdote->In a secluded glade, an experienced [author_type] by the name of [ANYPAWN_label], known for [ANYPAWN_possessive] relentless pursuit of [skill_combat], took on a young apprentice. Every morning, they would meet at the [combatLocation] to practice new battle techniques. [ANYPAWN_label] would skillfully demonstrate each move, explaining the nuances that would cause the techniques to resonate with deadly precision. The apprentice learned that combat wasn't just about [skill_combat] or [skill_combat] but also about understanding the flow of battle and executing it with utmost precision</li>
+		<li>anecdote->According to the legends, [ANYPAWN_nameFull] was a renowned [author_type]. This [object] provides insight into how [ANYPAWN_label] mastered [skill_combat]</li>
+		<li>anecdote->According to the chronicles, the people of [worldname] still talk of [ANYPAWN_nameFull] and reminisce about [ANYPAWN_possessive] love of combat. This [object] provides instructions on mastering [skill_combat]</li>
+		<li>anecdote->According to the archives, a fateful duel with a rival warlord ended the life of the [author_type], [ANYPAWN_nameFull]. This [object] are the final words of [ANYPAWN_label] the [author_type], passing on [ANYPAWN_possessive] techniques to develop [skill_combat]</li>
+		<li>anecdote->According to the records, [ANYPAWN_nameFull] spent [ANYPAWN_possessive] last days teaching in the renowned academy on [worldname]. This book is taken from [ANYPAWN_possessive] lectures on [skill_combat]</li>
+		<li>anecdote->In a bustling city, nestled between towering buildings, there was a hidden entrance to a [combatLocation] accessible only to those who knew the password. Within this place of combat, there existed an old dojo with walls adorned with weapons of every kind. The sensei, a stoic [author_type] with a gleam in his eye, guided eager students through the intricacies of combat, teaching them to master [skill_combat] by illustrating each move with fluid grace</li>
+		<li>anecdote->A young [author_type] stumbled upon this ancient manuscript in [ANYPAWN_possessive] grandfather's attic. This [object] details the ruthless methods that the warlord [ANYPAWN_nameFull] used to brutally destroy a nearby city using [ANYPAWN_possessive] unnatural [skill_combat]</li>
+		
+		<li>student_learn->decipher</li>
+		<li>student_learn->learn</li>
+		<li>student_learn->understand</li>
+		<li>student_learn->master</li>
+		<li>student_learn->see</li>
+		<li>student_learn->visualize</li>
+		<li>student_learn->gain control of</li>
+		<li>student_learn->comprehend</li>
+		<li>student_learn->acquire</li>
+		<li>student_learn->grasp</li>
+		<li>student_learn->attain</li>
+		<li>student_learn->assimilate</li>
+		<li>student_learn->absorb</li>
+		<li>student_learn->procure</li>
+		<li>student_learn->capture</li>
+		<li>student_learn->take command of</li>
+		<li>student_learn->fathom</li>
+
+		<li>author_adjective->elderly</li>
+		<li>author_adjective->sinister</li>
+		<li>author_adjective->beautiful</li>
+		<li>author_adjective->wizened</li>
+		<li>author_adjective->mysterious</li>
+		<li>author_adjective->enigmatic</li>
+		<li>author_adjective->wise</li>
+		<li>author_adjective->ancient</li>
+		<li>author_adjective->powerful</li>
+		<li>author_adjective->forgotten</li>
+		<li>author_adjective->arcane</li>
+		<li>author_adjective->legendary</li>
+		<li>author_adjective->shadowy</li>
+		<li>author_adjective->mythical</li>
+		
+		<li>author_type->fighter</li>
+		<li>author_type->ninja</li>
+		<li>author_type->warrior</li>
+		<li>author_type->warlord</li>
+		<li>author_type->conqueror</li>
+		<li>author_type->gladiator</li>
+		<li>author_type->death knight</li>
+		<li>author_type->samurai</li>
+		<li>author_type->mercenary</li>
+		<li>author_type->duelist</li>
+		<li>author_type->berserker</li>
+		<li>author_type->ranger</li>
+		<li>author_type->brawler</li>
+		<li>author_type->shadow</li>
+		<li>author_type->bladedancer</li>
+
+		<li>skill_combat->speed</li>
+		<li>skill_combat->strength</li>
+		<li>skill_combat->cunning</li>
+		<li>skill_combat->accuracy</li>
+		<li>skill_combat->endurance</li>
+		<li>skill_combat->agility</li>
+		<li>skill_combat->dexterity</li>
+		<li>skill_combat->resilience</li>
+		<li>skill_combat->precision</li>
+		<li>skill_combat->strategy</li>
+		<li>skill_combat->tactics</li>
+		<li>skill_combat->ferocity</li>
+		<li>skill_combat->defense</li>
+		<li>skill_combat->balance</li>
+		<li>skill_combat->awareness</li>
+		<li>skill_combat->technique</li>
+		<li>skill_combat->reaction time</li>
+		<li>skill_combat->power</li>
+		<li>skill_combat->focus</li>
+		<li>skill_combat->discipline</li>
+		<li>skill_combat->coordination</li>
+		<li>skill_combat->aggression</li>
+		<li>skill_combat->reflexes</li>
+		<li>skill_combat->fortitude</li>
+		
+		<li>combatLocation->a secluded dojo</li>
+		<li>combatLocation->an ancient battleground</li>
+		<li>combatLocation->a deserted island</li>
+		<li>combatLocation->a fortified castle</li>
+		<li>combatLocation->a hidden training camp</li>
+		<li>combatLocation->a dense forest</li>
+		<li>combatLocation->a mountain peak</li>
+		<li>combatLocation->an abandoned arena</li>
+		<li>combatLocation->a sunlit clearing</li>
+		<li>combatLocation->a mystical cave</li>
+		<li>combatLocation->a windswept plateau</li>
+		<li>combatLocation->a remote monastery</li>
+		<li>combatLocation->a sprawling desert</li>
+		<li>combatLocation->a tranquil lakeside</li>
+		<li>combatLocation->an underground chamber</li>
+		<li>combatLocation->a shadowy canyon</li>
+		<li>combatLocation->a labyrinthine ruin</li>
+		<li>combatLocation->a bustling marketplace</li>
+		<li>combatLocation->a perilous cliffside</li>
+		<li>combatLocation->a sacred temple</li>		
+		
+        <!-- pools -->
+
+        <li>textbook->primer</li>
+        <li>textbook->manual</li>
+        <li>textbook(p=6)->book</li>
+        <li>textbook->workbook</li>
+        <li>textbook->reference book</li>
+        <li>textbook->compendium</li>
+        <li>textbook->guidebook</li>
+        <li>textbook->booklet</li>
+        <li>textbook->reference book</li>
+        <li>textbook->account</li>
+        <li>textbook->handbook</li>
+        <li>textbook->tradebook</li>
+        <li>textbook->work</li>
+
+
+        <li>note_location->front cover</li>
+        <li>note_location->back cover</li>
+        <li>note_location->front flap</li>
+        <li>note_location->back flap</li>
+        <li>note_location->first page</li>
+        <li>note_location->last page</li>
+        <li>note_location->margins</li>
+        <li>note_location->title page</li>
+        <li>note_location->footnote</li>
+        <li>note_location->endnote</li>
+        <li>note_location->author's biography</li>
+
+        <li>note->note</li>
+        <li>note->addendum</li>
+        <li>note->postscript</li>
+        <li>note->afterword</li>
+        <li>note->appendix</li>
+        <li>note->coda</li>
+        <li>note->footnote</li>
+        <li>note->endnote</li>
+
+        <li>useful_information->useful tidbits of information</li>
+        <li>useful_information->useful information</li>
+        <li>useful_information->interesting facts</li>
+        <li>useful_information->valuable insights</li>
+        <li>useful_information->practical insights</li>
+        <li>useful_information->helpful tips</li>
+        <li>useful_information->informative details</li>
+
+        <!-- General Textbook themes -->
+
+        <li>understanding_synonym->knowledge of</li>
+        <li>understanding_synonym->self-improvement in</li>
+        <li>understanding_synonym->an understanding of</li>
+        <li>understanding_synonym->scholarship in</li>
+        <li>understanding_synonym->erudition in</li>
+        <li>understanding_synonym->expertise in</li>
+        <li>understanding_synonym->a philosophy of</li>
+        <li>understanding_synonym->the ethics of</li>
+
+        <li>notable_adjective->famous</li>
+        <li>notable_adjective->obscure</li>
+        <li>notable_adjective->iconic</li>
+        <li>notable_adjective->classic</li>
+        <li>notable_adjective->common</li>
+        <li>notable_adjective->familiar</li>
+        <li>notable_adjective->timeless</li>
+        <li>notable_adjective->lopsided</li>
+        <li>notable_adjective->harmonious</li>
+        <li>notable_adjective->elegant</li>
+        <li>notable_adjective->simple</li>
+        <li>notable_adjective->functional</li>
+        <li>notable_adjective->urbworld</li>
+        <li>notable_adjective->Glitterworld</li>
+        <li>notable_adjective->primitive</li>
+        <li>notable_adjective->decorative</li>
+
+        <!-- Quality -->
+
+        <li>exterior_quality(quality[greater_than]4)->The exterior of this book is finely bound and</li>
+        <li>exterior_quality(quality[greater_than]4)->A masterpiece of the printer's art, this book shines and</li>
+        <li>exterior_quality(quality[greater_than]4)->Its leather cover is rough yet</li>
+        <li>exterior_quality(quality[greater_than]4)->Though the cover is very plain,</li>
+        <li>exterior_quality(quality[less_than]5,quality[greater_than]1)->This textbook has seen better days, but</li>
+        <li>exterior_quality(quality[less_than]5,quality[greater_than]1)->Despite being a second-hand schoolbook,</li>
+        <li>exterior_quality(quality[less_than]5,quality[greater_than]1)->This book has had many owners, but</li>
+        <li>exterior_quality(quality[less_than]2)->The front of this book seems attractive but</li>
+        <li>exterior_quality(quality[less_than]2)->Someone has torn away the first third of the book and</li>
+        <li>exterior_quality(quality[less_than]2)->The cover is soaked in a strong-smelling liquid and</li>
+        <li>exterior_quality(quality[less_than]2)->At first sight nothing is wrong with the book, but</li>
+             
+        <li>page_quality->the pages [page_condition]</li>
+       
+        <li>page_condition(quality[greater_than]4)->[page_excellent]</li>
+        <li>page_condition(quality[less_than]5,quality[greater_than]1)->[page_decent]</li>
+        <li>page_condition(quality[less_than]2)->[page_awful]</li>
+       
+        <li>page_excellent->are in amazing condition, as if never touched</li>
+        <li>page_excellent->are in great condition</li>
+        <li>page_excellent->are pristine</li>
+        <li>page_excellent->are bright and clean</li>
+        <li>page_excellent->are uniquely well-preserved</li>
+       
+        <li>page_decent->are in a decent condition</li>
+        <li>page_decent->are legible, if crumpled</li>
+        <li>page_decent->are perfectly readable</li>
+        <li>page_decent->are decent, if slightly scored</li>
+       
+        <li>page_awful->appear to be written on crumbling parchment</li>
+        <li>page_awful->are badly damaged</li>
+        <li>page_awful->are stained with a dark substance</li>
+        <li>page_awful->are illegible</li>
+        <li>page_awful->have been annotated in an unreadable hand</li>        
+
+        <!-- world names -->
+
+        <li>worldname->[glitterworld]</li>
+        <li>worldname->[urbworld]</li>
+        <li>worldname->[deadworld]</li>
+        <li>worldname->[shellworld]</li>
+        <li>worldname->[ruinworld]</li>
+        <li>worldname->[medievalworld]</li>
+        <li>worldname->[steamworld]</li>
+        <li>worldname->[midworld]</li>
+        <li>worldname->[rimworld]</li>
+        <li>worldname->[coreworld]</li>
+        <li>worldname->[toxicworld]</li>
+        <li>worldname->[glassworld]</li>
+        <li>worldname->[transcendentworld]</li>
+        <li>worldname->[indworld]</li>
+        <li>worldname->[prisonworld]</li>
+        <li>worldname->[feudalworld]</li>
+        <li>worldname->[trashworld]</li>
+        <li>worldname->[iceworld]</li>
+        <li>worldname->[dinoworld]</li>
+        <li>worldname->[warworld]</li>
+        <li>worldname->[oceanicworld]</li>
+        <li>worldname->[mineworld]</li>
+        <li>worldname->[animalworld]</li>
+        <li>worldname->[asteroid]</li>
+        <li>worldname->[animalworld]</li>
+        <li>feralworld->[animalworld]</li>
+        <li>milworld->[warworld]</li>        
+
+        <li>animalworld->Sorne</li>
+        <li>animalworld->Rhydell</li>
+        <li>animalworld->Zoutera</li>
+        <li>animalworld->Thylacine</li>
+        <li>animalworld->Jiai</li>
+        <li>animalworld->Steller's World</li>
+        <li>animalworld->Aukton</li>
+
+        <li>asteroid->Iwamura</li>
+        <li>asteroid->Atura</li>
+        <li>asteroid->Widdershins</li>
+        <li>asteroid->Ranomi</li>
+        <li>asteroid->Aesh 265</li>
+        <li>asteroid->Taxlos</li>
+        <li>asteroid->Aryn Sigma</li>
+
+        <li>coreworld->Novaroma</li>
+        <li>coreworld->Lutuni</li>
+        <li>coreworld->Zeglar</li>
+        <li>coreworld->Novaroma</li>
+        <li>coreworld->Cormora Prime</li>
+        <li>coreworld->Glossolia</li>
+        <li>coreworld->Barbaros</li>
+
+        <li>deadworld->Callos IX</li>
+        <li>deadworld->Haspia</li>
+        <li>deadworld->Gost IV</li>
+        <li>deadworld->Berimund</li>
+        <li>deadworld->Ardar</li>
+        <li>deadworld->Kremhild</li>
+        <li>deadworld->Melisandz</li>
+
+        <li>deathworld->Creticon</li>
+        <li>deathworld->Zartza</li>
+        <li>deathworld->Rayth</li>
+        <li>deathworld->Spectra</li>
+        <li>deathworld->JNovahex</li>
+        <li>deathworld->Carthago</li>
+        <li>deathworld->Grimcore</li>
+
+        <li>dinoworld->Oubanyen</li>
+        <li>dinoworld->Zoutera</li>
+        <li>dinoworld->Einio</li>
+        <li>dinoworld->Baryonyx</li>
+        <li>dinoworld->N'cilo</li>
+        <li>dinoworld->Venator</li>
+        <li>dinoworld->Brach</li>
+
+        <li>feudalworld->Aracena VI</li>
+        <li>feudalworld->Nuchadus</li>
+        <li>feudalworld->Filson</li>
+        <li>feudalworld->Fieth</li>
+        <li>feudalworld->Bloch Regis</li>
+        <li>feudalworld->Carlosphere</li>
+        <li>feudalworld->Magna Dijou</li>
+
+        <li>glassworld->Ceti V</li>
+        <li>glassworld->Thebes XIV</li>
+        <li>glassworld->Naga</li>
+        <li>glassworld->Merv</li>
+        <li>glassworld->Perse</li>
+        <li>glassworld->Shechem</li>
+        <li>glassworld->Yelhazor</li>
+
+        <li>glitterworld->Kalthas IV</li>
+        <li>glitterworld->Amen-Ti</li>
+        <li>glitterworld->Sophiamunda </li>
+        <li>glitterworld->Rogia</li>
+        <li>glitterworld->Utmaior</li>
+        <li>glitterworld->Caspian</li>
+        <li>glitterworld->Kenerella</li>
+
+        <li>iceworld->Yttak</li>
+        <li>iceworld->Dedchenko</li>
+        <li>iceworld->Baltoro</li>
+        <li>iceworld->Furtwale</li>
+        <li>iceworld->Jaqua</li>
+        <li>iceworld->Christensen</li>
+        <li>iceworld->Barnes</li>
+
+        <li>indworld->Irithir</li>
+        <li>indworld->New China</li>
+        <li>indworld->Hudders</li>
+        <li>indworld->Iver</li>
+        <li>indworld->Achesta</li>
+        <li>indworld->Oods</li>
+        <li>indworld->Iladelf</li>
+
+        <li>medievalworld->Chelis</li>
+        <li>medievalworld->Vinna</li>
+        <li>medievalworld->Cassone</li>
+        <li>medievalworld->Jork</li>
+        <li>medievalworld->Cochmar</li>
+        <li>medievalworld->Alin</li>
+        <li>medievalworld->Dubrognago</li>
+
+        <li>midworld->Khalderia</li>
+        <li>midworld->Elsin</li>
+        <li>midworld->Haihan</li>
+        <li>midworld->Seolure</li>
+        <li>midworld->Panga</li>
+        <li>midworld->New London CXI </li>
+        <li>midworld->San Delenda</li>
+
+        <li>mineworld->Xanides</li>
+        <li>mineworld->Bingham</li>
+        <li>mineworld->Saarhi</li>
+        <li>mineworld->Grasbeg</li>
+        <li>mineworld->Chuqui</li>
+        <li>mineworld->Olimpia</li>
+        <li>mineworld->Orme</li>
+
+        <li>oceanicworld->Wavia</li>
+        <li>oceanicworld->Wadka</li>
+        <li>oceanicworld->Gichen</li>
+        <li>oceanicworld->Port Yam</li>
+        <li>oceanicworld->Baia</li>
+        <li>oceanicworld->Thonis</li>
+        <li>oceanicworld->Moaui</li>
+
+        <li>prisonworld->Yttak</li>
+        <li>prisonworld->Aldgate</li>
+        <li>prisonworld->Borren</li>
+        <li>prisonworld->Hoalo</li>
+        <li>prisonworld->Casmina</li>
+        <li>prisonworld->Port Basil</li>
+        <li>prisonworld->Chateau D'Ouen</li>
+
+        <li>rimworld->Filson</li>
+        <li>rimworld->La Grand</li>
+        <li>rimworld->Dalles</li>
+        <li>rimworld->Twig Falls</li>
+        <li>rimworld->Old Boise</li>
+        <li>rimworld->Devil's Gate</li>
+        <li>rimworld->Laramiere</li>
+
+        <li>ruinworld->Earth</li>
+        <li>ruinworld->Ilwaba</li>
+        <li>ruinworld->Xennoa</li>
+        <li>ruinworld->Pichu</li>
+        <li>ruinworld->Perdida</li>
+        <li>ruinworld->Hisarlik</li>
+        <li>ruinworld->Helike</li>
+
+        <li>shellworld->Boccocarro</li>
+        <li>shellworld->Destria</li>
+        <li>shellworld->Trophic</li>
+        <li>shellworld->Matrio</li>
+        <li>shellworld->Samen</li>
+        <li>shellworld->Xinthia</li>
+        <li>shellworld->Ferbine</li>
+
+        <li>steamworld->Corliss</li>
+        <li>steamworld->Borassic</li>
+        <li>steamworld->Savery II</li>
+        <li>steamworld->Heron</li>
+        <li>steamworld->Malmesburi</li>
+        <li>steamworld->Architonnerre</li>
+        <li>steamworld->Escapement</li>
+
+        <li>toxicworld->Scylla</li>
+        <li>toxicworld->Mauro</li>
+        <li>toxicworld->Cerospor</li>
+        <li>toxicworld->Oxy VI</li>
+        <li>toxicworld->Sangwine</li>
+        <li>toxicworld->Soleno</li>
+        <li>toxicworld->Imbatus</li>
+
+        <li>transcendentworld->Xaroh</li>
+        <li>transcendentworld->Immanence VI</li>
+        <li>transcendentworld->Qabba</li>
+        <li>transcendentworld->Einsof</li>
+        <li>transcendentworld->Mitvo</li>
+        <li>transcendentworld->Samydi</li>
+        <li>transcendentworld->Samsarr</li>
+
+        <li>trashworld->Bagua 5</li>
+        <li>trashworld->Puobell</li>
+        <li>trashworld->Deni IX</li>
+        <li>trashworld->Garbsh</li>
+        <li>trashworld->Tra'age</li>
+        <li>trashworld->Reepsyk</li>
+        <li>trashworld->Mystras</li>
+
+        <li>urbworld->Euterpe</li>
+        <li>urbworld->Avenna</li>
+        <li>urbworld->Essalon</li>
+        <li>urbworld->Enike</li>
+        <li>urbworld->Adocia</li>
+        <li>urbworld->N'toch</li>
+        <li>urbworld->Barca</li>
+
+        <li>warworld->Kemia</li>
+        <li>warworld->Vanu</li>
+        <li>warworld->Samnium</li>
+        <li>warworld->Kyrus</li>
+        <li>warworld->Punica</li>
+        <li>warworld->Cimbria XII</li>
+        <li>warworld->Barkitos</li>
+
+      
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  
+  <!-- Grimoire -->
+  
+  <RulePackDef>
+    <defName>TM_Description_Grimoire</defName>
+    <include>
+      <li>TM_Book_Pools</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        
+        <!-- General, root symbol is 'desc' -->
+
+        <li>subject->[subject_Magic]</li>
+		<li>object->[subject_bookType]</li>
+
+        <li>desc->[discussion].\n\n[anecdote]. \n\n[quality_statement].</li>
+        
+        <!-- discussion of the subject -->
+
+        <li>discussion->This [object] provides [useful_information] about [subject][detail]</li>
+        <li>discussion->This [object] establishes the author's authority on the subject of [subject][detail]</li>
+        <li>discussion->Those seeking [understanding_synonym] [subject] head to this [notable_adjective] [textbook][detail]</li>
+        <li>discussion->A [object_adjective] [object] on [subject][detail]</li>
+		  <li>object_adjective->dusty</li>
+		  <li>object_adjective->ancient</li>
+		  <li>object_adjective->worn</li>
+        <li>detail->. The instructions focus on the finer aspects of manipulating [subject]</li>
+        <li>detail->. It is a succinct instruction of a complex subject</li>
+        <li>detail->. The introductions say that, when [ANYPAWN_label] wrote this, it was a new application in the field</li>
+        <li>detail->. A quote on the [note_location] says, 'True [students] of [subject] cannot ignore [ANYPAWN_label]'s book'</li>
+          <li>students->students</li>
+          <li>students->lovers</li>
+          <li>students->practitioners</li>
+		  <li>students->mages</li>
+		  <li>students->wizards</li>
+        <li>detail->. It takes you through the subject step-by-step</li>
+        <li>detail(quality[less_than]4)->, even though the author rushes through the subject</li>
+        <li>detail(quality[greater_than]3)->. It is a comprehensive treatment of the subject</li>
+		<li>detail(quality[greater_than]4)->. The pages of this [object] are made from human skin</li>
+		<li>detail(quality[greater_than]5)->. The [object] is covered in glowing runes</li>
+        <li>detail->. There are strange scratches on the cover of this [object]</li>
+		<li>detail->. Dried blood marrs the cover of this [object]</li>
+        <li>detail(quality[less_than]3)->, though the author's rhetoric distracts from the core concept</li>
+		<li>detail(quality[less_than]3)->, some of the pages have been torn out</li>
+
+        <li>quality_statement->[exterior_quality] [page_quality]</li>
+
+		<li>anecdote->In [magicLocation], [author_adjective] [author_type] by the name of [ANYPAWN_nameFull] was known for [ANYPAWN_possessive] [author_skillLevel]  [subject] took on a young apprentice. Every morning, they would travel across the [magicLocation], discovering new [phenomena]. The wizard would gently unravel each [phenomena], whispering ancient incantations that caused the [phenomena] to shimmer with magical light. The apprentice learned that [subject] wasn't just about spells but also about understanding the essence of magic and nurturing it with respect</li>
+        <li>anecdote->According to the [note_location], [ANYPAWN_nameFull] was known for being a master of many subjects</li>
+        <li>anecdote->According to the [note_location], the people of [worldname] still talk of [ANYPAWN_nameFull] and reminisce about [ANYPAWN_possessive] love of [subject]</li>
+        <li>anecdote->According to the [note_location], a freak entanglement accident killed the author, [ANYPAWN_nameFull], shortly after publication</li>
+        <li>anecdote->According to the [precis_synonym], [ANYPAWN_nameFull] spent [ANYPAWN_possessive] days teaching in the academy on [coreworld]. This book is taken from [ANYPAWN_possessive] lectures</li>
+        <li>anecdote->According to the [precis_synonym], [ANYPAWN_nameFull]'s knowledge of [subject] was so renowned that people would stop [ANYPAWN_objective] in the street to question [ANYPAWN_objective] about it</li>
+		<li>anecdote->In a bustling city, nestled between towering buildings, there was a hidden gateway to [magicLocation] accessible only to those who knew the secret. Within this magical realm, there existed an old structure lined with shelves containing books on every branch of magic imaginable. The librarian, an eccentric [author_type] with a twinkle in [ANYPAWN_possessive] eye, guided eager students through the maze of [phenomena]. [ANYPAWN_pronoun] taught them to [student_learn] [subject] by [author_action]</li>
+		<li>anecdote->A young apprentice stumbled upon an old [textbook] in [ANYPAWN_possessive] attic. In [ANYPAWN_possessive] eagerness, [ANYPAWN_pronoun] attempted a spell far beyond [ANYPAWN_possessive] understanding. [author_event] ensued, nearly destroying [ANYPAWN_label]. This [object] is the life work of the master [author_type] [ANYPAWN_nameFull] as [ANYPAWN_pronoun] journaled [ANYPAWN_possessive] odyssey into the wonders of magic</li>
+		<li>anecdote->In the midst of a fierce battle, an inexperienced [author_type] found a mysterious [author_item] on the battlefield. Driven by curiosity, [ANYPAWN_pronoun] activated it, unleashing a torrent of uncontrollable [subject]. [author_event] erupted, causing destruction among the combatants. This [object] holds the chronicles of the legendary [author_type] [ANYPAWN_nameFull], who documented [ANYPAWN_possessive] journey to mastering the art of [subject] amidst such unpredictable events</li>
+		
+		<li>author_item->shard</li>
+		<li>author_item->darkness</li>
+		<li>author_item->light</li>
+		<li>author_item->fragment</li>
+		<li>author_item->illusion</li>
+		<li>author_item->enchantment</li>
+		<li>author_item->rune</li>
+		<li>author_item->portal</li>
+		<li>author_item->sigil</li>
+		<li>author_item->hex</li>
+		<li>author_item->curse</li>
+		<li>author_item->charm</li>
+		
+		<li>author_event->Chaos</li>
+		<li>author_event->Mayhem</li>
+		<li>author_event->Disaster</li>
+		<li>author_event->Calamity</li>
+		<li>author_event->A catastrophe</li>
+		<li>author_event->Pandemonium</li>
+		
+		<li>student_learn->decipher</li>
+		<li>student_learn->learn</li>
+		<li>student_learn->understand</li>
+		<li>student_learn->master</li>
+		<li>student_learn->see</li>
+		<li>student_learn->visualize</li>
+		<li>student_learn->gain control of</li>
+		<li>student_learn->comprehend</li>
+		<li>student_learn->acquire</li>
+		<li>student_learn->grasp</li>
+		<li>student_learn->attain</li>
+		<li>student_learn->assimilate</li>
+		<li>student_learn->absorb</li>
+		<li>student_learn->procure</li>
+		<li>student_learn->capture</li>
+		<li>student_learn->take command of</li>
+		<li>student_learn->fathom</li>
+
+		<li>author_adjective->an elderly</li>
+		<li>author_adjective->a sinister</li>
+		<li>author_adjective->a beautiful</li>
+		<li>author_adjective->awizened</li>
+		<li>author_adjective->a mysterious</li>
+		<li>author_adjective->an enigmatic</li>
+		<li>author_adjective->a wise</li>
+		<li>author_adjective->an ancient</li>
+		<li>author_adjective->a powerful</li>
+		<li>author_adjective->a forgotten</li>
+		<li>author_adjective->an arcane</li>
+		<li>author_adjective->a legendary</li>
+		<li>author_adjective->a shadowy</li>
+		<li>author_adjective->a mythical</li>
+		
+		<li>author_type->wizard</li>
+		<li>author_type->sorcerer</li>
+		<li>author_type->witch</li>
+		<li>author_type->warlock</li>
+		<li>author_type->mage</li>
+		<li>author_type->enchanter</li>
+		<li>author_type->conjurer</li>
+		<li>author_type->magician</li>
+		<li>author_type->thaumaturge</li>
+		<li>author_type->necromancer</li>
+		<li>author_type->archmage</li>
+		<li>author_type->sorceress</li>
+		<li>author_type->spellcaster</li>
+
+		<li>author_skillLevel->mastery of</li>
+		<li>author_skillLevel->foundation in</li>
+		<li>author_skillLevel->dominance of</li>
+		<li>author_skillLevel->proficiency in</li>
+		<li>author_skillLevel->prowess in</li>
+		<li>author_skillLevel->aptitude in</li>
+		<li>author_skillLevel->expertise of</li>
+		<li>author_skillLevel->competence in</li>
+		<li>author_skillLevel->adeptness with</li>
+		<li>author_skillLevel->capabilities in</li>
+		<li>author_skillLevel->skillfulness with</li>
+		<li>author_skillLevel->acumen of</li>
+		
+		<li>author_action->summoning familiars that whispered secrets from the ether</li>
+		<li>author_action->opening windows of time throughout history</li>
+		<li>author_action->weaving tethers of control throughout the spell</li>
+		<li>author_action->concocting potions that altered reality</li>
+		<li>author_action->singing spells that echoed across dimensions</li>
+		<li>author_action->sculpting illusions able to fool even the keenest minds</li>
+		<li>author_action->weaving dreams that shaped destinies</li>
+		<li>author_action->forging artifacts that harnessed cosmic energies</li>
+		<li>author_action->whispering incantations that stirred ancient spirits</li>
+		<li>author_action->painting spells onto canvases that came alive</li>
+		<li>author_action->dancing rituals under moonlit skies to bend fate</li>
+		<li>author_action->carving runes into stone to bind elemental forces</li>
+		<li>author_action->chanting hymns that healed wounds and mended souls</li>
+		<li>author_action->pitting elementals against each other in mortal combat</li>
+		
+		<li>phenomena->mysteries</li>
+		<li>phenomena->phenomena</li>
+		<li>phenomena->secrets</li>		
+		<li>phenomena->enigmas</li>
+		<li>phenomena->marvels</li>
+		<li>phenomena->wonders</li>
+		<li>phenomena->curiosities</li>
+		<li>phenomena->anomalies</li>
+		<li>phenomena->occurrences</li>
+		<li>phenomena->peculiarities</li>
+		<li>phenomena->revelations</li>
+		<li>phenomena->miracles</li>
+		
+		<li>magicLocation->a secluded glade</li>
+		<li>magicLocation->a floating library</li>
+		<li>magicLocation->an enchanted garden</li>
+		<li>magicLocation->an elemental plane</li>
+		<li>magicLocation->a fiery abyss</li>
+		<li>magicLocation->an astral plane</li>
+		<li>magicLocation->an ancient city</li>
+		<li>magicLocation->a spectral palace</li>
+		<li>magicLocation->a shimmering oasis</li>
+		<li>magicLocation->a hidden valley</li>
+		<li>magicLocation->dark whispering woods</li>
+		<li>magicLocation->a starlit cavern</li>
+		<li>magicLocation->a cosmic rift</li>
+		<li>magicLocation->a twilight spire</li>
+		<li>magicLocation->a sunken citadel</li>
+		<li>magicLocation->an emerald labyrinth</li>
+		<li>magicLocation->an ethereal realm</li>		
+		
+        <!-- pools -->
+
+        <li>textbook->primer</li>
+        <li>textbook->manual</li>
+        <li>textbook->textbook</li>
+        <li>textbook(p=6)->book</li>
+        <li>textbook->workbook</li>
+        <li>textbook->compendium</li>
+        <li>textbook->guidebook</li>
+        <li>textbook->booklet</li>
+        <li>textbook->encyclopedia</li>
+        <li>textbook->handbook</li>
+        <li>textbook->tradebook</li>
+        <li>textbook->work</li>
+
+
+        <li>note_location->front cover</li>
+        <li>note_location->back cover</li>
+        <li>note_location->front flap</li>
+        <li>note_location->back flap</li>
+        <li>note_location->first page</li>
+        <li>note_location->last page</li>
+        <li>note_location->margins</li>
+        <li>note_location->title page</li>
+        <li>note_location->footnote</li>
+        <li>note_location->endnote</li>
+        <li>note_location->author's biography</li>
+
+        <li>note->note</li>
+        <li>note->addendum</li>
+        <li>note->postscript</li>
+        <li>note->afterword</li>
+        <li>note->appendix</li>
+        <li>note->coda</li>
+        <li>note->footnote</li>
+        <li>note->endnote</li>
+
+        <li>useful_information->useful tidbits of information</li>
+        <li>useful_information->useful information</li>
+        <li>useful_information->interesting facts</li>
+        <li>useful_information->valuable insights</li>
+        <li>useful_information->practical insights</li>
+        <li>useful_information->helpful tips</li>
+        <li>useful_information->informative details</li>
+
+        <!-- General Textbook themes -->
+
+        <li>understanding_synonym->knowledge of</li>
+        <li>understanding_synonym->self-improvement in</li>
+        <li>understanding_synonym->an understanding of</li>
+        <li>understanding_synonym->skills in</li>
+        <li>understanding_synonym->techniques in</li>
+        <li>understanding_synonym->expertise in</li>
+        <li>understanding_synonym->a philosophy of</li>
+        <li>understanding_synonym->the ethics of</li>
+
+        <li>notable_adjective->famous</li>
+        <li>notable_adjective->obscure</li>
+        <li>notable_adjective->iconic</li>
+        <li>notable_adjective->classic</li>
+        <li>notable_adjective->common</li>
+        <li>notable_adjective->familiar</li>
+        <li>notable_adjective->timeless</li>
+        <li>notable_adjective->lopsided</li>
+        <li>notable_adjective->harmonious</li>
+        <li>notable_adjective->elegant</li>
+        <li>notable_adjective->simple</li>
+        <li>notable_adjective->functional</li>
+        <li>notable_adjective->urbworld</li>
+        <li>notable_adjective->Glitterworld</li>
+        <li>notable_adjective->primitive</li>
+        <li>notable_adjective->decorative</li>
+
+        <!-- Quality -->
+
+        <li>exterior_quality(quality[greater_than]4)->The exterior of this book is finely bound and</li>
+        <li>exterior_quality(quality[greater_than]4)->A masterpiece of the printer's art, this book shines and</li>
+        <li>exterior_quality(quality[greater_than]4)->Its leather cover is rough yet</li>
+        <li>exterior_quality(quality[greater_than]4)->Though the cover is very plain,</li>
+        <li>exterior_quality(quality[less_than]5,quality[greater_than]1)->This textbook has seen better days, but</li>
+        <li>exterior_quality(quality[less_than]5,quality[greater_than]1)->Despite being a second-hand schoolbook,</li>
+        <li>exterior_quality(quality[less_than]5,quality[greater_than]1)->This book has had many owners, but</li>
+        <li>exterior_quality(quality[less_than]2)->The front of this book seems attractive but</li>
+        <li>exterior_quality(quality[less_than]2)->Someone has torn away the first third of the book and</li>
+        <li>exterior_quality(quality[less_than]2)->The cover is soaked in a strong-smelling liquid and</li>
+        <li>exterior_quality(quality[less_than]2)->At first sight nothing is wrong with the book, but</li>
+             
+        <li>page_quality->the pages [page_condition]</li>
+       
+        <li>page_condition(quality[greater_than]4)->[page_excellent]</li>
+        <li>page_condition(quality[less_than]5,quality[greater_than]1)->[page_decent]</li>
+        <li>page_condition(quality[less_than]2)->[page_awful]</li>
+       
+        <li>page_excellent->are in amazing condition, as if never touched</li>
+        <li>page_excellent->are in great condition</li>
+        <li>page_excellent->are pristine</li>
+        <li>page_excellent->are bright and clean</li>
+        <li>page_excellent->are uniquely well-preserved</li>
+       
+        <li>page_decent->are in a decent condition</li>
+        <li>page_decent->are legible, if crumpled</li>
+        <li>page_decent->are perfectly readable</li>
+        <li>page_decent->are decent, if slightly scored</li>
+       
+        <li>page_awful->appear to be written on crumbling parchment</li>
+        <li>page_awful->are badly damaged</li>
+        <li>page_awful->are stained with a dark substance</li>
+        <li>page_awful->are illegible</li>
+        <li>page_awful->have been annotated in an unreadable hand</li>        
+
+        <!-- world names -->
+
+        <li>worldname->[glitterworld]</li>
+        <li>worldname->[urbworld]</li>
+        <li>worldname->[deadworld]</li>
+        <li>worldname->[shellworld]</li>
+        <li>worldname->[ruinworld]</li>
+        <li>worldname->[medievalworld]</li>
+        <li>worldname->[steamworld]</li>
+        <li>worldname->[midworld]</li>
+        <li>worldname->[rimworld]</li>
+        <li>worldname->[coreworld]</li>
+        <li>worldname->[toxicworld]</li>
+        <li>worldname->[glassworld]</li>
+        <li>worldname->[transcendentworld]</li>
+        <li>worldname->[indworld]</li>
+        <li>worldname->[prisonworld]</li>
+        <li>worldname->[feudalworld]</li>
+        <li>worldname->[trashworld]</li>
+        <li>worldname->[iceworld]</li>
+        <li>worldname->[dinoworld]</li>
+        <li>worldname->[warworld]</li>
+        <li>worldname->[oceanicworld]</li>
+        <li>worldname->[mineworld]</li>
+        <li>worldname->[animalworld]</li>
+        <li>worldname->[asteroid]</li>
+        <li>worldname->[animalworld]</li>
+        <li>feralworld->[animalworld]</li>
+        <li>milworld->[warworld]</li>        
+
+        <li>animalworld->Sorne</li>
+        <li>animalworld->Rhydell</li>
+        <li>animalworld->Zoutera</li>
+        <li>animalworld->Thylacine</li>
+        <li>animalworld->Jiai</li>
+        <li>animalworld->Steller's World</li>
+        <li>animalworld->Aukton</li>
+
+        <li>asteroid->Iwamura</li>
+        <li>asteroid->Atura</li>
+        <li>asteroid->Widdershins</li>
+        <li>asteroid->Ranomi</li>
+        <li>asteroid->Aesh 265</li>
+        <li>asteroid->Taxlos</li>
+        <li>asteroid->Aryn Sigma</li>
+
+        <li>coreworld->Novaroma</li>
+        <li>coreworld->Lutuni</li>
+        <li>coreworld->Zeglar</li>
+        <li>coreworld->Novaroma</li>
+        <li>coreworld->Cormora Prime</li>
+        <li>coreworld->Glossolia</li>
+        <li>coreworld->Barbaros</li>
+
+        <li>deadworld->Callos IX</li>
+        <li>deadworld->Haspia</li>
+        <li>deadworld->Gost IV</li>
+        <li>deadworld->Berimund</li>
+        <li>deadworld->Ardar</li>
+        <li>deadworld->Kremhild</li>
+        <li>deadworld->Melisandz</li>
+
+        <li>deathworld->Creticon</li>
+        <li>deathworld->Zartza</li>
+        <li>deathworld->Rayth</li>
+        <li>deathworld->Spectra</li>
+        <li>deathworld->JNovahex</li>
+        <li>deathworld->Carthago</li>
+        <li>deathworld->Grimcore</li>
+
+        <li>dinoworld->Oubanyen</li>
+        <li>dinoworld->Zoutera</li>
+        <li>dinoworld->Einio</li>
+        <li>dinoworld->Baryonyx</li>
+        <li>dinoworld->N'cilo</li>
+        <li>dinoworld->Venator</li>
+        <li>dinoworld->Brach</li>
+
+        <li>feudalworld->Aracena VI</li>
+        <li>feudalworld->Nuchadus</li>
+        <li>feudalworld->Filson</li>
+        <li>feudalworld->Fieth</li>
+        <li>feudalworld->Bloch Regis</li>
+        <li>feudalworld->Carlosphere</li>
+        <li>feudalworld->Magna Dijou</li>
+
+        <li>glassworld->Ceti V</li>
+        <li>glassworld->Thebes XIV</li>
+        <li>glassworld->Naga</li>
+        <li>glassworld->Merv</li>
+        <li>glassworld->Perse</li>
+        <li>glassworld->Shechem</li>
+        <li>glassworld->Yelhazor</li>
+
+        <li>glitterworld->Kalthas IV</li>
+        <li>glitterworld->Amen-Ti</li>
+        <li>glitterworld->Sophiamunda </li>
+        <li>glitterworld->Rogia</li>
+        <li>glitterworld->Utmaior</li>
+        <li>glitterworld->Caspian</li>
+        <li>glitterworld->Kenerella</li>
+
+        <li>iceworld->Yttak</li>
+        <li>iceworld->Dedchenko</li>
+        <li>iceworld->Baltoro</li>
+        <li>iceworld->Furtwale</li>
+        <li>iceworld->Jaqua</li>
+        <li>iceworld->Christensen</li>
+        <li>iceworld->Barnes</li>
+
+        <li>indworld->Irithir</li>
+        <li>indworld->New China</li>
+        <li>indworld->Hudders</li>
+        <li>indworld->Iver</li>
+        <li>indworld->Achesta</li>
+        <li>indworld->Oods</li>
+        <li>indworld->Iladelf</li>
+
+        <li>medievalworld->Chelis</li>
+        <li>medievalworld->Vinna</li>
+        <li>medievalworld->Cassone</li>
+        <li>medievalworld->Jork</li>
+        <li>medievalworld->Cochmar</li>
+        <li>medievalworld->Alin</li>
+        <li>medievalworld->Dubrognago</li>
+
+        <li>midworld->Khalderia</li>
+        <li>midworld->Elsin</li>
+        <li>midworld->Haihan</li>
+        <li>midworld->Seolure</li>
+        <li>midworld->Panga</li>
+        <li>midworld->New London CXI </li>
+        <li>midworld->San Delenda</li>
+
+        <li>mineworld->Xanides</li>
+        <li>mineworld->Bingham</li>
+        <li>mineworld->Saarhi</li>
+        <li>mineworld->Grasbeg</li>
+        <li>mineworld->Chuqui</li>
+        <li>mineworld->Olimpia</li>
+        <li>mineworld->Orme</li>
+
+        <li>oceanicworld->Wavia</li>
+        <li>oceanicworld->Wadka</li>
+        <li>oceanicworld->Gichen</li>
+        <li>oceanicworld->Port Yam</li>
+        <li>oceanicworld->Baia</li>
+        <li>oceanicworld->Thonis</li>
+        <li>oceanicworld->Moaui</li>
+
+        <li>prisonworld->Yttak</li>
+        <li>prisonworld->Aldgate</li>
+        <li>prisonworld->Borren</li>
+        <li>prisonworld->Hoalo</li>
+        <li>prisonworld->Casmina</li>
+        <li>prisonworld->Port Basil</li>
+        <li>prisonworld->Chateau D'Ouen</li>
+
+        <li>rimworld->Filson</li>
+        <li>rimworld->La Grand</li>
+        <li>rimworld->Dalles</li>
+        <li>rimworld->Twig Falls</li>
+        <li>rimworld->Old Boise</li>
+        <li>rimworld->Devil's Gate</li>
+        <li>rimworld->Laramiere</li>
+
+        <li>ruinworld->Earth</li>
+        <li>ruinworld->Ilwaba</li>
+        <li>ruinworld->Xennoa</li>
+        <li>ruinworld->Pichu</li>
+        <li>ruinworld->Perdida</li>
+        <li>ruinworld->Hisarlik</li>
+        <li>ruinworld->Helike</li>
+
+        <li>shellworld->Boccocarro</li>
+        <li>shellworld->Destria</li>
+        <li>shellworld->Trophic</li>
+        <li>shellworld->Matrio</li>
+        <li>shellworld->Samen</li>
+        <li>shellworld->Xinthia</li>
+        <li>shellworld->Ferbine</li>
+
+        <li>steamworld->Corliss</li>
+        <li>steamworld->Borassic</li>
+        <li>steamworld->Savery II</li>
+        <li>steamworld->Heron</li>
+        <li>steamworld->Malmesburi</li>
+        <li>steamworld->Architonnerre</li>
+        <li>steamworld->Escapement</li>
+
+        <li>toxicworld->Scylla</li>
+        <li>toxicworld->Mauro</li>
+        <li>toxicworld->Cerospor</li>
+        <li>toxicworld->Oxy VI</li>
+        <li>toxicworld->Sangwine</li>
+        <li>toxicworld->Soleno</li>
+        <li>toxicworld->Imbatus</li>
+
+        <li>transcendentworld->Xaroh</li>
+        <li>transcendentworld->Immanence VI</li>
+        <li>transcendentworld->Qabba</li>
+        <li>transcendentworld->Einsof</li>
+        <li>transcendentworld->Mitvo</li>
+        <li>transcendentworld->Samydi</li>
+        <li>transcendentworld->Samsarr</li>
+
+        <li>trashworld->Bagua 5</li>
+        <li>trashworld->Puobell</li>
+        <li>trashworld->Deni IX</li>
+        <li>trashworld->Garbsh</li>
+        <li>trashworld->Tra'age</li>
+        <li>trashworld->Reepsyk</li>
+        <li>trashworld->Mystras</li>
+
+        <li>urbworld->Euterpe</li>
+        <li>urbworld->Avenna</li>
+        <li>urbworld->Essalon</li>
+        <li>urbworld->Enike</li>
+        <li>urbworld->Adocia</li>
+        <li>urbworld->N'toch</li>
+        <li>urbworld->Barca</li>
+
+        <li>warworld->Kemia</li>
+        <li>warworld->Vanu</li>
+        <li>warworld->Samnium</li>
+        <li>warworld->Kyrus</li>
+        <li>warworld->Punica</li>
+        <li>warworld->Cimbria XII</li>
+        <li>warworld->Barkitos</li>
+
+      
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+</Defs>

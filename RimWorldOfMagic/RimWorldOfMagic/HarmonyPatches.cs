@@ -80,7 +80,7 @@ namespace TorannMagic
             harmonyInstance.Patch(AccessTools.Method(typeof(RecipeDef), "get_AvailableNow", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_GolemsRecipeAvailable", null), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(Pawn), "get_ShouldAvoidFences", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_GolemShouldAvoidFences"), null, null);
             harmonyInstance.Patch(AccessTools.Method(typeof(PawnRenderer), "get_CurRotDrawMode", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_RotBodyForUndead"), null, null);
-            harmonyInstance.Patch(AccessTools.Method(typeof(Pawn_HealthTracker), "get_CanBleed", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_Undead_CanBleed"), null, null);
+            //harmonyInstance.Patch(AccessTools.Method(typeof(Pawn_HealthTracker), "get_CanBleed", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_Undead_CanBleed"), null, null);
             //harmonyInstance.Patch(AccessTools.Method(typeof(Precept_Relic), "get_RelicInPlayerPossession", null, null),null, new HarmonyMethod(typeof(TorannMagicMod), "Get_DelayRelicLost"), null);
             //harmonyInstance.Patch(AccessTools.Method(typeof(Pawn), "get_InAggroMentalState", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_UndeadAggroMentalState"), null, null);
             //harmonyInstance.Patch(AccessTools.Method(typeof(Pawn), "get_InMentalState", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_UndeadMentalState"), null, null);
@@ -342,6 +342,38 @@ namespace TorannMagic
         //        if(__instance.parent)
         //    }
         //}
+
+        [HarmonyPatch(typeof(BookUtility), "CanReadBook", null)]
+        public static class OnlyClasses_CanReadBook
+        {
+            public static bool Prefix(Book book, Pawn reader, ref bool __result, out string reason)
+            {
+                if(book.def == TorannMagicDefOf.TM_CombatManual)
+                {
+                    if (!TM_Calc.IsMightUser(reader))
+                    {
+                        reason = "BookCantRead".Translate(reader.Named("PAWN"));
+                        return false;
+                    }
+                }
+                if(book.def == TorannMagicDefOf.TM_Grimoire)
+                {
+                    if (!TM_Calc.IsMagicUser(reader))
+                    {
+                        reason = "BookCantRead".Translate(reader.Named("PAWN"));
+                        return false;
+                    }
+                    Hediff hd = reader.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_ArcaneWeakness);
+                    if(hd != null && hd.Severity >= 10f)
+                    {
+                        reason = "TM_TooWeak".Translate(reader.Named("PAWN"));
+                        return false;
+                    }
+                }
+                reason = null;
+                return true;
+            }
+        }
 
         [HarmonyPatch(typeof(PawnGenerator), "GeneratePawn", new Type[]
         {
@@ -4461,10 +4493,14 @@ namespace TorannMagic
                                         canAbsorb = (hdc.lastHitTick + 2) < Find.TickManager.TicksGame;
                                         hdc.lastHitTick = Find.TickManager.TicksGame;
                                     }
-                                    if (canAbsorb && __instance.GetCompAbilityUserMagic() != null && __instance.GetCompAbilityUserMagic().Mana != null && __instance.GetCompAbilityUserMagic().MagicData != null)
+                                    if (canAbsorb && __instance.GetCompAbilityUserMagic()?.Mana != null && __instance.GetCompAbilityUserMagic().MagicData != null)
                                     {
                                         CompAbilityUserMagic comp = __instance.GetCompAbilityUserMagic();
                                         float sev = comp.Mana.CurLevel;
+                                        if(sev < 0.1f)
+                                        {
+                                            continue;
+                                        }
 
                                         int actualDmg = 0;
                                         float dmgAmt = (float)dinfo.Amount;

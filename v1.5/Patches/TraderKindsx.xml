@@ -14,11 +14,28 @@
           <max>700</max>
         </countRange>
       </li>
+	  <li Class="StockGenerator_SingleDef">
+        <thingDef>RawMagicyte</thingDef>
+		<price>Expensive</price>
+        <countRange>
+          <min>100</min>
+          <max>300</max>
+        </countRange>
+      </li>
+	  <li Class="StockGenerator_SingleDef">
+        <thingDef>TM_Grimoire</thingDef>
+        <countRange>0~2</countRange>
+      </li>
+
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>TM_CombatManual</thingDef>
+        <countRange>0~2</countRange>
+      </li>
 	</value>
   </Operation>
   
-    <Operation Class="PatchOperationAdd">
-    <xpath>*/TraderKindDef[defName = "Caravan_Outlander_BulkGoods" or defName = "Caravan_Outlander_PirateMerchant" or defName = "Caravan_Neolithic_BulkGoods"]/stockGenerators</xpath>
+  <Operation Class="PatchOperationAdd">
+    <xpath>*/TraderKindDef[defName = "Caravan_Outlander_BulkGoods" or defName = "Caravan_Outlander_PirateMerchant" or defName = "Caravan_Neolithic_BulkGoods" or defName = "Caravan_Outlander_CombatSupplier"]/stockGenerators</xpath>
 	<value>
 	  <li Class="StockGenerator_SingleDef">
         <thingDef>RawMagicyte</thingDef>
@@ -27,6 +44,15 @@
           <min>100</min>
           <max>300</max>
         </countRange>
+      </li>
+	  <li Class="StockGenerator_SingleDef">
+        <thingDef>TM_Grimoire</thingDef>
+        <countRange>-1~1</countRange>
+      </li>
+
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>TM_CombatManual</thingDef>
+        <countRange>-1~1</countRange>
       </li>
 	</value>
   </Operation>
@@ -40,6 +66,15 @@
           <min>50</min>
           <max>100</max>
         </countRange>
+      </li>
+	  <li Class="StockGenerator_SingleDef">
+        <thingDef>TM_Grimoire</thingDef>
+        <countRange>-4~1</countRange>
+      </li>
+
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>TM_CombatManual</thingDef>
+        <countRange>-4~1</countRange>
       </li>
 	</value>
   </Operation>

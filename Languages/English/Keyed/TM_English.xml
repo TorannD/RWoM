@@ -225,6 +225,11 @@
 <TM_LearnFail_DisallowedTrait>of a conflicting trait</TM_LearnFail_DisallowedTrait>
 <TM_IncitePassionSelection>{0} selected for Incite Passion</TM_IncitePassionSelection>
 <TM_SelectPassion>Select passion</TM_SelectPassion>
+<TM_BookExperienceGrimoire>Magic class experience gain</TM_BookExperienceGrimoire>
+<TM_BookExperienceCombat>Combat class experience gain</TM_BookExperienceCombat>
+<TM_BookCausesWeakness>The reader will gain arcane weakness when studying this grimoire.</TM_BookCausesWeakness>
+<TM_TooWeak>{0} has too much arcane weakness to study right now.</TM_TooWeak>
+
 
 <!-- Spirit Backstories -->
 <TM_SpiritVerbatum>Spirit</TM_SpiritVerbatum>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BookBase">
+    <defName>TM_Grimoire</defName>
+    <label>grimoire</label>
+    <description>A book which divines the mysteries of magic. These volumes can help a reader harness arcane powers.</description>
+    <graphicData>
+      <texPath>Things/Item/Book/Textbook/Textbook</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.9</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Item/Book/Textbook/Textbook</uiIconPath>
+    <statBases>
+      <MarketValue>800</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Book">
+        <nameMaker>TM_Namer_Grimoire</nameMaker>
+        <descriptionMaker>TM_Description_Grimoire</descriptionMaker>
+        <ageYearsRange>100~5000</ageYearsRange>
+        <openGraphic>
+          <texPath>Things/Item/Book/Textbook/Textbook_Open</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>0.8</drawSize>
+        </openGraphic>
+        <verticalGraphic>
+          <texPath>Things/Item/Book/Textbook/Textbook_Vertical</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <addTopAltitudeBias>true</addTopAltitudeBias>
+        </verticalGraphic>
+        <doers>
+          <li Class="TorannMagic.BookOutcomeProperties_GainMagicExp" />
+        </doers>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="BookBase">
+    <defName>TM_CombatManual</defName>
+    <label>combat manual</label>
+    <description>A manual describes various combat techniques.</description>
+    <graphicData>
+      <texPath>Things/Item/Book/Textbook/Textbook</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.8</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Item/Book/Textbook/Textbook</uiIconPath>
+    <statBases>
+      <MarketValue>800</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Book">
+        <nameMaker>TM_Namer_CombatTechniques</nameMaker>
+        <descriptionMaker>TM_Description_CombatTechnique</descriptionMaker>
+        <ageYearsRange>100~200</ageYearsRange>
+        <openGraphic>
+          <texPath>Things/Item/Book/Textbook/Textbook_Open</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>0.7</drawSize>
+        </openGraphic>
+        <verticalGraphic>
+          <texPath>Things/Item/Book/Textbook/Textbook_Vertical</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <addTopAltitudeBias>true</addTopAltitudeBias>
+        </verticalGraphic>
+        <doers>
+          <li Class="TorannMagic.BookOutcomeProperties_GainMightExp" />
+        </doers>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  
+</Defs>

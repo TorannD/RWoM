@@ -59,6 +59,15 @@
 				<thingDefCountRange>3~5</thingDefCountRange>
 				<countRange>1~1</countRange>
 			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>TM_Grimoire</thingDef>
+				<countRange>1~1</countRange>
+			</li>
+
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>TM_CombatManual</thingDef>
+				<countRange>1~1</countRange>
+			</li>
 			<li Class="StockGenerator_Tag">
 				<tradeTag>TM_BuyableMageWand</tradeTag>
 				<thingDefCountRange>1~2</thingDefCountRange>
@@ -273,6 +282,15 @@
         <thingDefCountRange>5~8</thingDefCountRange>
         <countRange>1~1</countRange>
       </li>
+	  <li Class="StockGenerator_SingleDef">
+			<thingDef>TM_Grimoire</thingDef>
+			<countRange>0~2</countRange>
+		</li>
+
+		<li Class="StockGenerator_SingleDef">
+			<thingDef>TM_CombatManual</thingDef>
+			<countRange>0~2</countRange>
+		</li>
 	  <li Class="StockGenerator_Tag">
 		<tradeTag>Arcane</tradeTag>
 		<thingDefCountRange>5~10</thingDefCountRange>

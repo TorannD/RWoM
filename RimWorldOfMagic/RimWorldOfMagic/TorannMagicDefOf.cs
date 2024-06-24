@@ -1614,6 +1614,10 @@ namespace TorannMagic
         public static HistoryEventDef TM_BestowMagicEvent;
         public static HistoryEventDef TM_BestowClassEvent;
 
+        //BookDefs
+        public static ThingDef TM_Grimoire;
+        public static ThingDef TM_CombatManual;
+
         //Gene's
         //public static GeneDef Ageless;  //can't use, error if biotech is not installed (non-existent def)
 

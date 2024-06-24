@@ -111,6 +111,7 @@
     <Compile Include="Area_TMRegrowth.cs" />
     <Compile Include="Area_TMTransmutate.cs" />
     <Compile Include="AutoCast\Scripts.cs" />
+    <Compile Include="BookOutcomeProperties_GainMightExp.cs" />
     <Compile Include="Building_60mmMortar.cs" />
     <Compile Include="Building_ExplosiveProximityTrap.cs" />
     <Compile Include="Building_LightningTrap.cs" />
@@ -136,6 +137,9 @@
     <Compile Include="Building_TMTotem_Lightning.cs" />
     <Compile Include="Building_TM_DMP.cs" />
     <Compile Include="Area_TMSprite.cs" />
+    <Compile Include="ReadingOutcomeDoerGainMightExp.cs" />
+    <Compile Include="ReadingOutcomeDoerGainMagicExp.cs" />
+    <Compile Include="BookOutcomeProperties_GainMagicExp.cs" />
     <Compile Include="HediffComp_ManaShield.cs" />
     <Compile Include="TM_DamageWorker_None.cs" />
     <Compile Include="Enchantment\HediffComp_ShroudOfUndeath.cs" />
