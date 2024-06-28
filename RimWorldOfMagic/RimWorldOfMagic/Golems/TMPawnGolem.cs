@@ -16,8 +16,8 @@ namespace TorannMagic.Golems
         public List<GolemDrawClass> drawTempMesh = new List<GolemDrawClass>();
 
         public List<GolemVerbTracker> verbList = new List<GolemVerbTracker>();
-
         public bool rangedToggle = false;
+        public float maxAvailableRange = 0;
         public Dictionary<Verb, Command_VerbTarget> verbCommands = null;
         public Command_VerbTarget GetCommandVerbs(Verb verb)
         {
@@ -79,6 +79,7 @@ namespace TorannMagic.Golems
                             {
                                 if(this.RaceProps.body.AllParts.Where(x => x.groups.Contains(v.verbProps.linkedBodyPartsGroup)).Contains(bpr) && v.verbProps.defaultProjectile == gu.golemUpgradeDef.verbProjectile && !validRangedVerbs.Contains(v))
                                 {
+                                    this.maxAvailableRange = maxAvailableRange < v.verbProps.range ? v.verbProps.range : this.maxAvailableRange;
                                     validRangedVerbs.Add(v);
                                 }                                
                             }
@@ -99,7 +100,7 @@ namespace TorannMagic.Golems
                     if((Golem.HasEnergyForAbilities || v.verbProps.consumeFuelPerShot == 0) && Golem.Energy.CurLevel > v.verbProps.consumeFuelPerShot)
                     {
                         if ((v.LastShotTick + (v.verbProps.defaultCooldownTime * 60f)) < Find.TickManager.TicksGame)
-                        {
+                        {                            
                             return v;
                         }
                     }
@@ -364,7 +365,7 @@ namespace TorannMagic.Golems
                     }
 
                     Vector3 vector = this.DrawPos;
-                    vector.y = Altitudes.AltitudeFor(AltitudeLayer.Pawn);
+                    //vector.y = Altitudes.AltitudeFor(AltitudeLayer.Pawn); had to remove for v1.5, seems to have broken drawing
                     vector += vecOffset;
 
                     Vector3 s = new Vector3(gu.golemUpgradeDef.drawSize, this.DrawPos.y, gu.golemUpgradeDef.drawSize);

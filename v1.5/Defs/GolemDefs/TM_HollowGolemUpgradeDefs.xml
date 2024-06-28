@@ -72,7 +72,7 @@
 		<bodypart>Hollow_Staff</bodypart>
 		<partRequiresUpgrade>true</partRequiresUpgrade>
 		<occupiedPart>Hollow_Weapon</occupiedPart>
-		<verbProjectile>Projectile_BlazingPower</verbProjectile>
+		<verbProjectile>Projectile_BlazingEnergy</verbProjectile>
 		<maxLevel>1</maxLevel>
 		<graphicsPath>Hollow/Hollow_Staff</graphicsPath>
 		<drawUndrafted>false</drawUndrafted>
@@ -87,9 +87,10 @@
 		<defName>TM_Golem_HollowBreastPlate</defName>
 		<label>breastplate</label>
 		<description>Increases armor for the chest and torso:
-Blunt:	+21%
-Sharp:	+32%
-Heat:	+14%</description>
+Blunt:	+24%
+Sharp:	+36%
+Heat:	+16%
+Hit:	+12%</description>
 		<maxLevel>1</maxLevel>
 		<recipe>TM_HollowGolem_Armor</recipe>
 		<bodypart>Golem_Chest</bodypart>
@@ -102,9 +103,10 @@ Heat:	+14%</description>
 		<defName>TM_Golem_HollowHelm</defName>
 		<label>helmet</label>
 		<description>Protects the head and skull:
-Blunt:	+22%
-Sharp:	+7%
-Heat:	+9%</description>
+Blunt:	+26%
+Sharp:	+9%
+Heat:	+11%
+Hit:	+15%</description>
 		<maxLevel>1</maxLevel>
 		<recipe>TM_HollowGolem_Helm</recipe>
 		<bodypart>Golem_Head</bodypart>
@@ -127,9 +129,10 @@ Heat:	+9%</description>
 		<defName>TM_Golem_HollowShoulders</defName>
 		<label>shoulder guards</label>
 		<description>Protects the shoulders, collar and neck:
-Blunt:	+8%
-Sharp:	+19%
-Heat:	+6%</description>
+Blunt:	+10%
+Sharp:	+23%
+Heat:	+7%
+Hit:	+8%</description>
 		<maxLevel>1</maxLevel>
 		<recipe>TM_HollowGolem_Shoulder</recipe>
 		<bodypart>Golem_Shoulder</bodypart>
@@ -182,15 +185,15 @@ Damage and radius varies based on mana cost of reflected spell</description>
 		<label>Fade Cloak</label>
 		<description>The fade cloak passively increases the basic movement speed of the wearer while providing a small amount of protection. It also allows the wearer to instantly move to another location on the map by expending energy. If the wearer fades to a location near enemies, a decay blast will strike each enemy near the destination.
 
-Blunt:	+10%
-Sharp:	+5%
-Heat:	+15%
-Harmony: +5%
+Blunt:	+12%
+Sharp:	+6%
+Heat:	+18%
+Harmony: +10%
 Move Speed +.4c/s
 
 Faded Decay
 Energy Cost:	30
-Cooldown:	20s
+Cooldown:	10s
 Min Range:	10c
 Max Range:	200c
 Decay Radius:	4c
@@ -249,8 +252,8 @@ Health restored per fire: 7</description>
 		<shouldRotate>false</shouldRotate>
 		<drawOffsetNorth>(0, .01, 0)</drawOffsetNorth>
 		<drawOffsetSouth>(0, .01, 0)</drawOffsetSouth>
-		<drawOffsetEast>(0, .01, 0)</drawOffsetEast>
-		<drawOffsetWest>(0, .01, 0)</drawOffsetWest>
+		<drawOffsetEast>(0, .008, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .008, 0)</drawOffsetWest>
 	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
 	
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
@@ -281,8 +284,8 @@ Processing:	+[10%/20%/30%]
 		<shouldRotate>false</shouldRotate>
 		<drawOffsetNorth>(0, .01, 0)</drawOffsetNorth>
 		<drawOffsetSouth>(0, .01, 0)</drawOffsetSouth>
-		<drawOffsetEast>(0, .01, 0)</drawOffsetEast>
-		<drawOffsetWest>(0, .01, 0)</drawOffsetWest>
+		<drawOffsetEast>(0, .008, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .008, 0)</drawOffsetWest>
 	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
 	
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
@@ -312,8 +315,8 @@ Processing:		+[15%/30%/45%]
 		<shouldRotate>false</shouldRotate>
 		<drawOffsetNorth>(0, .01, 0)</drawOffsetNorth>
 		<drawOffsetSouth>(0, .01, 0)</drawOffsetSouth>
-		<drawOffsetEast>(0, .01, 0)</drawOffsetEast>
-		<drawOffsetWest>(0, .01, 0)</drawOffsetWest>
+		<drawOffsetEast>(0, .008, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .008, 0)</drawOffsetWest>
 	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
 	
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
@@ -346,8 +349,8 @@ Processing:	+[15%/30%/45%]
 		<shouldRotate>false</shouldRotate>
 		<drawOffsetNorth>(0, .01, 0)</drawOffsetNorth>
 		<drawOffsetSouth>(0, .01, 0)</drawOffsetSouth>
-		<drawOffsetEast>(0, .01, 0)</drawOffsetEast>
-		<drawOffsetWest>(0, .01, 0)</drawOffsetWest>
+		<drawOffsetEast>(0, .008, 0)</drawOffsetEast>
+		<drawOffsetWest>(0, .008, 0)</drawOffsetWest>
 	</TorannMagic.TMDefs.TM_GolemUpgradeDef>	
 	
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
@@ -409,9 +412,9 @@ Duration: 100s
 		<label>Protection Gem: Arcane</label>
 		<description>The Arcane protection gem allows the golem to surround enemy ranged attackers with a reverse shield called Well of Despair. Well of Despair allows projectiles in but will block all projectiles out.
 		
-Energy Cost:	60
-Cooldown:	480
-Range:		50
+Energy Cost:	40
+Cooldown:	360
+Range:		60
 Duration:	20s
 *Only one Protection Gem can used*</description>
 		<maxLevel>1</maxLevel>
@@ -498,9 +501,9 @@ Energy Cost:	8 energy per pawn
 		<label>Focus Gem: Fire</label>
 		<description>The Fire focus gem allows the golem to concentrate elemental fire into a fierce burst of firebolts. Launches 16 firebolts at enemies within 8 cells of a target.
 
-Energy Cost: 40
+Energy Cost: 20
 Min Range: 6
-Max Range: 50
+Max Range: 80
 *Only one Focus Gem can be used*</description>
 		<maxLevel>1</maxLevel>
 		<verbProjectile>Projectile_FireBlossomBolt</verbProjectile>
@@ -525,11 +528,11 @@ Max Range: 50
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
 		<defName>TM_Golem_HollowFGIce</defName>
 		<label>Focus Gem: Ice</label>
-		<description>The Ice focus gem allows the golem to concentrate elemental ice into a rapid flow of icebolts. Launches 16 icebolts at enemies within 12 cells of a target.
+		<description>The Ice focus gem allows the golem to concentrate elemental ice into a rapid flow of icebolts. Launches 20 icebolts at enemies within 12 cells of a target.
 
-Energy Cost: 60
-Min Range: 10
-Max Range: 70
+Energy Cost: 30
+Min Range: 8
+Max Range: 80
 *Only one Focus Gem can be used*</description>
 		<maxLevel>1</maxLevel>
 		<verbProjectile>Projectile_IceBlossomBolt</verbProjectile>
@@ -558,7 +561,7 @@ Max Range: 70
 
 Energy Cost: 50
 Min Range: 10
-Max Range: 150
+Max Range: 120
 *Only one Focus Gem can be used*</description>
 		<maxLevel>1</maxLevel>
 		<verbProjectile>Projectile_DarkBolt</verbProjectile>

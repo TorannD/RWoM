@@ -65,6 +65,7 @@ namespace TorannMagic.Golems
             {
                 pg.drawTickFlag = false;
             }
+            GolemPawn.Golem.Energy.SubtractEnergy(pg.activeVerb.verbProps.consumeFuelPerShot);
             return base.TryCastShot();
         }
     }

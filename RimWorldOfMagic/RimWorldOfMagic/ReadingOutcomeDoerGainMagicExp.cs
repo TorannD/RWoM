@@ -14,7 +14,13 @@ namespace TorannMagic
 
         public override bool DoesProvidesOutcome(Pawn reader)
         {
-            return reader.GetCompAbilityUserMagic().MagicData != null;
+            if(TM_Calc.IsMagicUser(reader) && reader.health.hediffSet != null)
+            {
+                Hediff hd = reader.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_ArcaneWeakness);
+                if (hd == null) return true;
+                else if (hd.Severity < 5) return true;
+            }
+            return false;
         }
 
         private int tickRate = 120;

@@ -1527,10 +1527,10 @@ Ability: Arcane Barrier</description>
 	  <MarketValue>3350</MarketValue>
       <Mass>3.0</Mass>
       <AccuracyTouch>0.88</AccuracyTouch>
-      <AccuracyShort>0.71</AccuracyShort>
-      <AccuracyMedium>0.66</AccuracyMedium>
-      <AccuracyLong>0.56</AccuracyLong>
-      <RangedWeapon_Cooldown>2.6</RangedWeapon_Cooldown>
+      <AccuracyShort>0.77</AccuracyShort>
+      <AccuracyMedium>0.71</AccuracyMedium>
+      <AccuracyLong>0.66</AccuracyLong>
+      <RangedWeapon_Cooldown>1.9</RangedWeapon_Cooldown>
     </statBases>
     <costList>
       <Steel>50</Steel>
@@ -1605,7 +1605,7 @@ Ability: Arcane Barrier</description>
         <soundCastTail>GunTail_Light</soundCastTail>
         <muzzleFlashScale>7</muzzleFlashScale>
 		<burstShotCount>5</burstShotCount>
-		<ticksBetweenBurstShots>15</ticksBetweenBurstShots>
+		<ticksBetweenBurstShots>12</ticksBetweenBurstShots>
       </li>
     </verbs>
     <tools>
@@ -1642,6 +1642,7 @@ Ability: Arcane Barrier</description>
 		<damageDef>TM_BlazingPower</damageDef>
 		<damageAmountBase>6</damageAmountBase>
 		<speed>45</speed>
+		<explosionRadius>.8</explosionRadius>
 	</projectile>
   </ThingDef>
 
@@ -1666,10 +1667,10 @@ Damage Boost: +40%</description>
 	  <MarketValue>3750</MarketValue>
       <Mass>3.0</Mass>
       <AccuracyTouch>0.90</AccuracyTouch>
-      <AccuracyShort>0.68</AccuracyShort>
-      <AccuracyMedium>0.60</AccuracyMedium>
-      <AccuracyLong>0.55</AccuracyLong>
-      <RangedWeapon_Cooldown>3.5</RangedWeapon_Cooldown>
+      <AccuracyShort>0.70</AccuracyShort>
+      <AccuracyMedium>0.66</AccuracyMedium>
+      <AccuracyLong>0.60</AccuracyLong>
+      <RangedWeapon_Cooldown>2.9</RangedWeapon_Cooldown>
     </statBases>
     <costList>
       <Steel>120</Steel>

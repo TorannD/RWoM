@@ -1744,6 +1744,7 @@
 	  <ArmorRating_Alignment>0.25</ArmorRating_Alignment>
       <PsychicSensitivity>2</PsychicSensitivity>
 	  <MeatAmount>0</MeatAmount>
+	  <MeleeHitChance>.8</MeleeHitChance>
     </statBases>
 	<verbs>
 	  <li>
@@ -1751,19 +1752,22 @@
 		<commandIcon>Golems/Hollow/Hollow_Staff_north</commandIcon>
         <verbClass>TorannMagic.Weapon.Verb_BlazingPower</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
-        <defaultProjectile>Projectile_BlazingPower</defaultProjectile>
+        <defaultProjectile>Projectile_BlazingEnergy</defaultProjectile>
 		<linkedBodyPartsGroup>Hollow_Staff</linkedBodyPartsGroup>
-        <warmupTime>1</warmupTime>
-		<defaultCooldownTime>2.1</defaultCooldownTime>
+        <warmupTime>.5</warmupTime>
+		<defaultCooldownTime>.5</defaultCooldownTime>
 		<minRange>5</minRange>
-        <range>40</range>		
+        <range>70</range>		
         <soundCast>TM_Woosh</soundCast>
         <soundCastTail>GunTail_Light</soundCastTail>
         <muzzleFlashScale>7</muzzleFlashScale>
-		<burstShotCount>5</burstShotCount>
-		<ticksBetweenBurstShots>15</ticksBetweenBurstShots>		
+		<burstShotCount>4</burstShotCount>
+		<ticksBetweenBurstShots>1</ticksBetweenBurstShots>	
+		<accuracyLong>1</accuracyLong>
+		<accuracyMedium>1</accuracyMedium>
+		<canGoWild>false</canGoWild>
 		<isPrimary>true</isPrimary>
-		<violent>true</violent>
+		<violent>true</violent>		
 		<requireLineOfSight>true</requireLineOfSight>
 		<commonality>8</commonality>	<!-- used as priority -->
       </li>	  
@@ -1774,11 +1778,11 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Projectile_FireBlossomBolt</defaultProjectile>
 		<linkedBodyPartsGroup>Hollow_FocusGems</linkedBodyPartsGroup>
-        <warmupTime>2</warmupTime>
+        <warmupTime>1</warmupTime>
 		<defaultCooldownTime>10.1</defaultCooldownTime>
 		<minRange>6</minRange>
-        <range>50</range>
-		<accuracyLong>.9</accuracyLong>
+        <range>70</range>
+		<accuracyLong>.5</accuracyLong>
         <soundCast>TM_Woosh</soundCast>
         <soundCastTail>GunTail_Light</soundCastTail>
         <muzzleFlashScale>3</muzzleFlashScale>
@@ -1788,7 +1792,7 @@
 		<violent>true</violent>
 		<requireLineOfSight>true</requireLineOfSight>
 		<commonality>5</commonality>
-		<consumeFuelPerShot>40</consumeFuelPerShot>
+		<consumeFuelPerShot>5</consumeFuelPerShot>
       </li>
 	  <li>
 	    <label>ice shards</label>
@@ -1797,10 +1801,10 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Projectile_IceBlossomBolt</defaultProjectile>
 		<linkedBodyPartsGroup>Hollow_FocusGems</linkedBodyPartsGroup>
-        <warmupTime>3</warmupTime>
-		<defaultCooldownTime>900</defaultCooldownTime>
+        <warmupTime>1.25</warmupTime>
+		<defaultCooldownTime>8.1</defaultCooldownTime>
 		<minRange>8</minRange>
-        <range>60</range>
+        <range>80</range>
 		<accuracyLong>.8</accuracyLong>
         <soundCast>TM_Woosh</soundCast>
         <soundCastTail>GunTail_Light</soundCastTail>
@@ -1811,7 +1815,7 @@
 		<violent>true</violent>
 		<requireLineOfSight>true</requireLineOfSight>
 		<commonality>5</commonality>
-		<consumeFuelPerShot>60</consumeFuelPerShot>
+		<consumeFuelPerShot>6</consumeFuelPerShot>
       </li>
 	  <li>
 	    <label>darkbolt</label>
@@ -1820,8 +1824,8 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Projectile_DarkBolt</defaultProjectile>
 		<linkedBodyPartsGroup>Hollow_FocusGems</linkedBodyPartsGroup>
-        <warmupTime>4</warmupTime>
-		<defaultCooldownTime>1200</defaultCooldownTime>
+        <warmupTime>2</warmupTime>
+		<defaultCooldownTime>12.1</defaultCooldownTime>
 		<minRange>10</minRange>
         <range>120</range>		
         <soundCast>TM_Woosh</soundCast>
@@ -1833,7 +1837,7 @@
 		<violent>true</violent>
 		<requireLineOfSight>true</requireLineOfSight>
 		<commonality>4</commonality>	<!-- used as priority -->
-		<consumeFuelPerShot>80</consumeFuelPerShot>
+		<consumeFuelPerShot>50</consumeFuelPerShot>
       </li>	
 	</verbs>
     <tools>
@@ -1842,8 +1846,8 @@
         <capacities>
           <li>Scratch</li>
         </capacities>
-        <power>14.5</power>
-        <cooldownTime>1.5</cooldownTime>
+        <power>19.5</power>
+        <cooldownTime>.6</cooldownTime>
         <linkedBodyPartsGroup>Hollow_Claws</linkedBodyPartsGroup>
         <surpriseAttack>
           <extraMeleeDamages>
@@ -1860,7 +1864,7 @@
           <li>TM_DecayTouch</li>
         </capacities>
         <power>40</power>
-        <cooldownTime>2</cooldownTime>
+        <cooldownTime>.5</cooldownTime>
         <linkedBodyPartsGroup>Hollow_Decay</linkedBodyPartsGroup>
         <surpriseAttack>
           <extraMeleeDamages>
@@ -1879,8 +1883,8 @@
         <capacities>
           <li>TM_NullCleave</li>
         </capacities>
-        <power>26.0</power>
-        <cooldownTime>3</cooldownTime>
+        <power>40.0</power>
+        <cooldownTime>.8</cooldownTime>
         <linkedBodyPartsGroup>Hollow_Axe</linkedBodyPartsGroup>
         <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
 		<surpriseAttack>
@@ -1920,104 +1924,104 @@
         <li>
           <def>TM_HollowGolemLS</def>
           <minAge>0</minAge>
-		  <soundWounded>Pawn_Bear_Injured</soundWounded>
-          <soundDeath>Pawn_Bear_Death</soundDeath>
-          <soundCall>Pawn_Bear_Call</soundCall>
+		  <soundWounded>Pawn_Mech_Scyther_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+          <soundCall>Pawn_Mech_Scyther_Call</soundCall>
           <soundAngry>Pawn_Bear_Angry</soundAngry>
         </li>
 		<li>
           <def>TM_HollowGolemLS_FA1</def>
           <minAge>0</minAge>
-		  <soundWounded>Pawn_Bear_Injured</soundWounded>
-          <soundDeath>Pawn_Bear_Death</soundDeath>
-          <soundCall>Pawn_Bear_Call</soundCall>
+		  <soundWounded>Pawn_Mech_Scyther_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+          <soundCall>Pawn_Mech_Scyther_Call</soundCall>
           <soundAngry>Pawn_Bear_Angry</soundAngry>
         </li>
 		<li>
           <def>TM_HollowGolemLS_FA2</def>
           <minAge>0</minAge>
-		  <soundWounded>Pawn_Bear_Injured</soundWounded>
-          <soundDeath>Pawn_Bear_Death</soundDeath>
-          <soundCall>Pawn_Bear_Call</soundCall>
+		  <soundWounded>Pawn_Mech_Scyther_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+          <soundCall>Pawn_Mech_Scyther_Call</soundCall>
           <soundAngry>Pawn_Bear_Angry</soundAngry>
         </li>
 		<li>
           <def>TM_HollowGolemLS_FA3</def>
           <minAge>0</minAge>
-		  <soundWounded>Pawn_Bear_Injured</soundWounded>
-          <soundDeath>Pawn_Bear_Death</soundDeath>
-          <soundCall>Pawn_Bear_Call</soundCall>
+		  <soundWounded>Pawn_Mech_Scyther_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+          <soundCall>Pawn_Mech_Scyther_Call</soundCall>
           <soundAngry>Pawn_Bear_Angry</soundAngry>
         </li>
 		<li>
           <def>TM_HollowGolemLS_IA1</def>
           <minAge>0</minAge>
-		  <soundWounded>Pawn_Bear_Injured</soundWounded>
-          <soundDeath>Pawn_Bear_Death</soundDeath>
-          <soundCall>Pawn_Bear_Call</soundCall>
+		  <soundWounded>Pawn_Mech_Scyther_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+          <soundCall>Pawn_Mech_Scyther_Call</soundCall>
           <soundAngry>Pawn_Bear_Angry</soundAngry>
         </li>
 		<li>
           <def>TM_HollowGolemLS_IA2</def>
           <minAge>0</minAge>
-		  <soundWounded>Pawn_Bear_Injured</soundWounded>
-          <soundDeath>Pawn_Bear_Death</soundDeath>
-          <soundCall>Pawn_Bear_Call</soundCall>
+		  <soundWounded>Pawn_Mech_Scyther_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+          <soundCall>Pawn_Mech_Scyther_Call</soundCall>
           <soundAngry>Pawn_Bear_Angry</soundAngry>
         </li>
 		<li>
           <def>TM_HollowGolemLS_IA3</def>
           <minAge>0</minAge>
-		  <soundWounded>Pawn_Bear_Injured</soundWounded>
-          <soundDeath>Pawn_Bear_Death</soundDeath>
-          <soundCall>Pawn_Bear_Call</soundCall>
+		  <soundWounded>Pawn_Mech_Scyther_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+          <soundCall>Pawn_Mech_Scyther_Call</soundCall>
           <soundAngry>Pawn_Bear_Angry</soundAngry>
         </li><li>
           <def>TM_HollowGolemLS_AA1</def>
           <minAge>0</minAge>
-		  <soundWounded>Pawn_Bear_Injured</soundWounded>
-          <soundDeath>Pawn_Bear_Death</soundDeath>
-          <soundCall>Pawn_Bear_Call</soundCall>
+		  <soundWounded>Pawn_Mech_Scyther_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+          <soundCall>Pawn_Mech_Scyther_Call</soundCall>
           <soundAngry>Pawn_Bear_Angry</soundAngry>
         </li>
 		<li>
           <def>TM_HollowGolemLS_AA2</def>
           <minAge>0</minAge>
-		  <soundWounded>Pawn_Bear_Injured</soundWounded>
-          <soundDeath>Pawn_Bear_Death</soundDeath>
-          <soundCall>Pawn_Bear_Call</soundCall>
+		  <soundWounded>Pawn_Mech_Scyther_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+          <soundCall>Pawn_Mech_Scyther_Call</soundCall>
           <soundAngry>Pawn_Bear_Angry</soundAngry>
         </li>
 		<li>
           <def>TM_HollowGolemLS_AA3</def>
           <minAge>0</minAge>
-		  <soundWounded>Pawn_Bear_Injured</soundWounded>
-          <soundDeath>Pawn_Bear_Death</soundDeath>
-          <soundCall>Pawn_Bear_Call</soundCall>
+		  <soundWounded>Pawn_Mech_Scyther_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+          <soundCall>Pawn_Mech_Scyther_Call</soundCall>
           <soundAngry>Pawn_Bear_Angry</soundAngry>
         </li>
 		<li>
           <def>TM_HollowGolemLS_DA1</def>
           <minAge>0</minAge>
-		  <soundWounded>Pawn_Bear_Injured</soundWounded>
-          <soundDeath>Pawn_Bear_Death</soundDeath>
-          <soundCall>Pawn_Bear_Call</soundCall>
+		  <soundWounded>Pawn_Mech_Scyther_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+          <soundCall>Pawn_Mech_Scyther_Call</soundCall>
           <soundAngry>Pawn_Bear_Angry</soundAngry>
         </li>
 		<li>
           <def>TM_HollowGolemLS_DA2</def>
           <minAge>0</minAge>
-		  <soundWounded>Pawn_Bear_Injured</soundWounded>
-          <soundDeath>Pawn_Bear_Death</soundDeath>
-          <soundCall>Pawn_Bear_Call</soundCall>
+		  <soundWounded>Pawn_Mech_Scyther_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+          <soundCall>Pawn_Mech_Scyther_Call</soundCall>
           <soundAngry>Pawn_Bear_Angry</soundAngry>
         </li>
 		<li>
           <def>TM_HollowGolemLS_DA3</def>
           <minAge>0</minAge>
-		  <soundWounded>Pawn_Bear_Injured</soundWounded>
-          <soundDeath>Pawn_Bear_Death</soundDeath>
-          <soundCall>Pawn_Bear_Call</soundCall>
+		  <soundWounded>Pawn_Mech_Scyther_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+          <soundCall>Pawn_Mech_Scyther_Call</soundCall>
           <soundAngry>Pawn_Bear_Angry</soundAngry>
         </li>
       </lifeStageAges>
@@ -2202,6 +2206,7 @@
 	<marketValueFactor>1</marketValueFactor>
     <statFactors>
       <MoveSpeed>1.0</MoveSpeed>
+	  <IncomingDamageFactor>0.9</IncomingDamageFactor>
     </statFactors>
   </LifeStageDef>
   
@@ -2214,6 +2219,7 @@
 	<marketValueFactor>1.2</marketValueFactor>
     <statFactors>
       <MoveSpeed>1.25</MoveSpeed>
+	  <IncomingDamageFactor>0.85</IncomingDamageFactor>
     </statFactors>
   </LifeStageDef>
   <LifeStageDef>
@@ -2222,9 +2228,10 @@
 	<voxPitch>.1</voxPitch>
 	<bodySizeFactor>1.0</bodySizeFactor>
 	<healthScaleFactor>1.6</healthScaleFactor>
-	<marketValueFactor>1.4</marketValueFactor>
+	<marketValueFactor>1.4</marketValueFactor>	
     <statFactors>
       <MoveSpeed>1.4</MoveSpeed>
+	  <IncomingDamageFactor>0.8</IncomingDamageFactor>
     </statFactors>
   </LifeStageDef>
   <LifeStageDef>
@@ -2236,6 +2243,7 @@
 	<marketValueFactor>1.6</marketValueFactor>
     <statFactors>
       <MoveSpeed>1.5</MoveSpeed>
+	  <IncomingDamageFactor>0.75</IncomingDamageFactor>
     </statFactors>
   </LifeStageDef>
   
@@ -2248,6 +2256,7 @@
 	<marketValueFactor>1.2</marketValueFactor>
     <statFactors>
       <MoveSpeed>1.2</MoveSpeed>
+	  <IncomingDamageFactor>0.85</IncomingDamageFactor>
     </statFactors>
   </LifeStageDef>
   <LifeStageDef>
@@ -2259,6 +2268,7 @@
 	<marketValueFactor>1.4</marketValueFactor>
     <statFactors>
       <MoveSpeed>1.3</MoveSpeed>
+	  <IncomingDamageFactor>0.8</IncomingDamageFactor>
     </statFactors>
   </LifeStageDef>
   <LifeStageDef>
@@ -2270,6 +2280,7 @@
 	<marketValueFactor>1.6</marketValueFactor>
     <statFactors>
       <MoveSpeed>1.35</MoveSpeed>
+	  <IncomingDamageFactor>0.75</IncomingDamageFactor>
     </statFactors>
   </LifeStageDef>
   
@@ -2282,6 +2293,7 @@
 	<marketValueFactor>1.2</marketValueFactor>
     <statFactors>
       <MoveSpeed>1.15</MoveSpeed>
+	  <IncomingDamageFactor>0.85</IncomingDamageFactor>
     </statFactors>
   </LifeStageDef>
   <LifeStageDef>
@@ -2293,6 +2305,7 @@
 	<marketValueFactor>1.4</marketValueFactor>
     <statFactors>
       <MoveSpeed>1.25</MoveSpeed>
+	  <IncomingDamageFactor>0.8</IncomingDamageFactor>
     </statFactors>
   </LifeStageDef>
   <LifeStageDef>
@@ -2304,6 +2317,7 @@
 	<marketValueFactor>1.6</marketValueFactor>
     <statFactors>
       <MoveSpeed>1.3</MoveSpeed>
+	  <IncomingDamageFactor>0.75</IncomingDamageFactor>
     </statFactors>
   </LifeStageDef>
   
@@ -2316,6 +2330,7 @@
 	<marketValueFactor>1.2</marketValueFactor>
     <statFactors>
       <MoveSpeed>1.1</MoveSpeed>
+	  <IncomingDamageFactor>0.85</IncomingDamageFactor>
     </statFactors>
   </LifeStageDef>
   <LifeStageDef>
@@ -2327,6 +2342,7 @@
 	<marketValueFactor>1.4</marketValueFactor>
     <statFactors>
       <MoveSpeed>1.15</MoveSpeed>
+	  <IncomingDamageFactor>0.8</IncomingDamageFactor>
     </statFactors>
   </LifeStageDef>
   <LifeStageDef>
@@ -2338,6 +2354,7 @@
 	<marketValueFactor>1.6</marketValueFactor>
     <statFactors>
       <MoveSpeed>1.2</MoveSpeed>
+	  <IncomingDamageFactor>0.75</IncomingDamageFactor>
     </statFactors>
   </LifeStageDef>
   

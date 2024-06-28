@@ -27,12 +27,19 @@ namespace TorannMagic.Golems
                 CompGolem Golem = pawn.TryGetComp<CompGolem>();
                 Need_GolemEnergy energy = pawn.needs.TryGetNeed(TorannMagicDefOf.TM_GolemEnergy) as Need_GolemEnergy;
                 Thing threat = Golem.ActiveThreat;
+                if (threat != null)
+                {
+                    if((pg.Position - threat.Position).LengthHorizontal > pg.maxAvailableRange)
+                    {
+                        threat = null;
+                    }
+                }
                 if (threat == null)
                 {
                     threat = pawn.TargetCurrentlyAimingAt.Thing;
                     if (threat == null)
                     {
-                        threat = TM_Calc.FindNearbyEnemy(pawn, Mathf.RoundToInt(Golem.threatRange * 3));
+                        threat = TM_Calc.FindNearbyEnemy(pawn, Mathf.RoundToInt(pg.maxAvailableRange));
                     }
                 }
                 Golem.threatTarget = threat;
@@ -43,8 +50,7 @@ namespace TorannMagic.Golems
                     {
                         return TM_GolemUtility.CreateRangedJob(pg, threat, v);
                     }
-                }
-                             
+                }                             
             }
             return null;
         }

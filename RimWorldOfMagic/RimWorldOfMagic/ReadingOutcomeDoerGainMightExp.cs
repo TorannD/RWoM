@@ -14,7 +14,7 @@ namespace TorannMagic
 
         public override bool DoesProvidesOutcome(Pawn reader)
         {
-            return reader.GetCompAbilityUserMight().MightData != null;
+            return TM_Calc.IsMightUser(reader);
         }
 
         private int tickRate = 120;

@@ -56,7 +56,7 @@ namespace TorannMagic
                     if ((Find.TickManager.TicksGame > nextTick || shouldStrike) && !base.Pawn.Dead && Pawn.Map != null)
                     {
                         TMHollowGolem caster = Pawn as TMHollowGolem;
-                        nextTick = Find.TickManager.TicksGame + Rand.Range(300, 600);
+                        nextTick = Find.TickManager.TicksGame + Rand.Range(150, 300);
                         if (caster != null && caster.deathFieldHediffEnabled && caster.Golem.Energy.CurEnergyPercent >= caster.Golem.minEnergyPctForAbilities)
                         {
                             Pawn target = TM_Calc.FindNearbyEnemy(Pawn, 10);
@@ -87,9 +87,9 @@ namespace TorannMagic
                 //Pawn.Map.weatherManager.eventHandler.AddEvent(new TM_WeatherEvent_MeshGeneric(Pawn.Map, TM_MatPool.deathlightning3, Pawn.Position, target.Position, 2f, AltitudeLayer.MoteLow, Rand.Range(8, 12), Rand.Range(25, 35), Rand.Range(2, 5)));
             }
 
-            if (caster != null && caster.Golem != null && caster.Golem.Energy != null)
+            if (caster?.Golem?.Energy != null)
             {
-                caster.Golem.Energy.SubtractEnergy(20);
+                caster.Golem.Energy.SubtractEnergy(10);
             }
             //Vector3 dir = TM_Calc.GetVector(caster.Position, target.Position);
             //float angle = (Quaternion.AngleAxis(90, Vector3.up) * dir).ToAngleFlat();

@@ -32,11 +32,11 @@ namespace TorannMagic.Golems
                 tmpTarget = currentTarget;
                 if (!Rand.Chance(this.verbProps.accuracyLong))
                 {
-                    tmpTarget = TM_Calc.FindValidCellWithinRange(currentTarget.Cell, CasterPawn.Map, 2);
+                    tmpTarget = TM_Calc.FindValidCellWithinRange(currentTarget.Cell, CasterPawn.Map, 6);
                 }
                 FlyingObject_Advanced flyingObject = (FlyingObject_Advanced)GenSpawn.Spawn(this.verbProps.defaultProjectile, CasterPawn.Position, CasterPawn.Map);
                 flyingObject.AdvancedLaunch(CasterPawn, null, 0, Mathf.Clamp(Rand.Range(5, 80),
-                    0, tmpTarget.Cell.DistanceToEdge(CasterPawn.Map)), false, CasterPawn.DrawPos, tmpTarget, launchedThing, Rand.Range(25, 35), this.verbProps.defaultProjectile.projectile.explosionRadius > 0, Rand.Range(12, 16),
+                    0, tmpTarget.Cell.DistanceToEdge(CasterPawn.Map)), false, CasterPawn.DrawPos, tmpTarget, launchedThing, Mathf.RoundToInt((Rand.Range(.8f, 1.2f) * this.verbProps.defaultProjectile.projectile.speed)), this.verbProps.defaultProjectile.projectile.explosionRadius > 0, Rand.Range(16, 24),
                     this.verbProps.defaultProjectile.projectile.explosionRadius, this.verbProps.defaultProjectile.projectile.damageDef, null, 0, this.verbProps.defaultProjectile.projectile.flyOverhead, .4f);
             }
             return base.TryCastShot();

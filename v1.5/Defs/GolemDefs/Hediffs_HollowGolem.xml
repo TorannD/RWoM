@@ -97,9 +97,10 @@
         <minSeverity>0.001</minSeverity>
 		<becomeVisible>true</becomeVisible>
 		<statOffsets>
-		  <ArmorRating_Blunt>.21</ArmorRating_Blunt>
-		  <ArmorRating_Sharp>.32</ArmorRating_Sharp>
-		  <ArmorRating_Heat>.14</ArmorRating_Heat>
+		  <ArmorRating_Blunt>.24</ArmorRating_Blunt>
+		  <ArmorRating_Sharp>.36</ArmorRating_Sharp>
+		  <ArmorRating_Heat>.16</ArmorRating_Heat>
+		  <MeleeHitChance>.12</MeleeHitChance>
 		</statOffsets>
       </li>
 	</stages>
@@ -123,9 +124,10 @@
         <minSeverity>0.001</minSeverity>
 		<becomeVisible>true</becomeVisible>
 		<statOffsets>
-		  <ArmorRating_Blunt>.22</ArmorRating_Blunt>
-		  <ArmorRating_Sharp>.07</ArmorRating_Sharp>
-		  <ArmorRating_Heat>.09</ArmorRating_Heat>
+		  <ArmorRating_Blunt>.26</ArmorRating_Blunt>
+		  <ArmorRating_Sharp>.09</ArmorRating_Sharp>
+		  <ArmorRating_Heat>.11</ArmorRating_Heat>
+		  <MeleeHitChance>.15</MeleeHitChance>
 		</statOffsets>
       </li>
 	</stages>
@@ -149,9 +151,10 @@
         <minSeverity>0.001</minSeverity>
 		<becomeVisible>true</becomeVisible>
 		<statOffsets>
-		  <ArmorRating_Blunt>.08</ArmorRating_Blunt>
-		  <ArmorRating_Sharp>.19</ArmorRating_Sharp>
-		  <ArmorRating_Heat>.06</ArmorRating_Heat>
+		  <ArmorRating_Blunt>.10</ArmorRating_Blunt>
+		  <ArmorRating_Sharp>.23</ArmorRating_Sharp>
+		  <ArmorRating_Heat>.07</ArmorRating_Heat>
+		  <MeleeHitChance>.08</MeleeHitChance>
 		</statOffsets>
       </li>
 	</stages>
@@ -175,9 +178,10 @@
         <minSeverity>0.001</minSeverity>
 		<becomeVisible>true</becomeVisible>
 		<statOffsets>
-		  <ArmorRating_Blunt>.02</ArmorRating_Blunt>
-		  <ArmorRating_Sharp>.05</ArmorRating_Sharp>
-		  <ArmorRating_Alignment>.25</ArmorRating_Alignment>
+		  <ArmorRating_Blunt>.03</ArmorRating_Blunt>
+		  <ArmorRating_Sharp>.06</ArmorRating_Sharp>
+		  <ArmorRating_Alignment>.30</ArmorRating_Alignment>
+		  <MeleeHitChance>.15</MeleeHitChance>
 		</statOffsets>
       </li>
 	</stages>
@@ -201,11 +205,11 @@
         <minSeverity>0.001</minSeverity>
 		<becomeVisible>true</becomeVisible>
 		<statOffsets>
-		  <ArmorRating_Blunt>.1</ArmorRating_Blunt>
-		  <ArmorRating_Sharp>.05</ArmorRating_Sharp>
-		  <ArmorRating_Heat>.15</ArmorRating_Heat>
-		  <ArmorRating_Alignment>.05</ArmorRating_Alignment>
-		  <MoveSpeed>.4</MoveSpeed>
+		  <ArmorRating_Blunt>.12</ArmorRating_Blunt>
+		  <ArmorRating_Sharp>.06</ArmorRating_Sharp>
+		  <ArmorRating_Heat>.18</ArmorRating_Heat>
+		  <ArmorRating_Alignment>.1</ArmorRating_Alignment>
+		  <MoveSpeed>1</MoveSpeed>
 		</statOffsets>
       </li>
 	</stages>

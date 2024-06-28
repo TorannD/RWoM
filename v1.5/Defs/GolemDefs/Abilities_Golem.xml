@@ -366,12 +366,12 @@
 	<defName>TM_HollowGolem_Fade</defName>
 	<label>fade</label>	
 	<warmupTicks>0</warmupTicks>
-	<cooldownTicks>1200</cooldownTicks>
+	<cooldownTicks>600</cooldownTicks>
 	<warmupStuns>false</warmupStuns>
 	<burstCount>1</burstCount>
 	<ticksBetweenBurstShots>0</ticksBetweenBurstShots>
 	<requiredNeed>TM_GolemEnergy</requiredNeed>
-	<needCost>30</needCost>
+	<needCost>20</needCost>
 	<interruptsJob>false</interruptsJob>
 	<priority>3</priority>
 	<effects>
@@ -389,12 +389,12 @@
 	<defName>TM_HollowGolem_Awakening</defName>
 	<label>awakening</label>	
 	<warmupTicks>0</warmupTicks>
-	<cooldownTicks>400</cooldownTicks>
+	<cooldownTicks>300</cooldownTicks>
 	<warmupStuns>false</warmupStuns>
 	<burstCount>1</burstCount>
 	<ticksBetweenBurstShots>0</ticksBetweenBurstShots>
 	<requiredNeed>TM_GolemEnergy</requiredNeed>
-	<needCost>50</needCost>
+	<needCost>25</needCost>
 	<interruptsJob>false</interruptsJob>
 	<priority>2</priority>
 	<effects>
@@ -405,6 +405,25 @@
       </li>
 	</effects>
   </TorannMagic.TMDefs.TM_GolemAbilityDef>
+  
+    <!-- Blazing Power -->	
+  <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
+	<thingClass>TorannMagic.Weapon.Projectile_BlazingPower</thingClass>
+	<defName>Projectile_BlazingEnergy</defName>
+	<label>blazing power</label>
+	<graphicData>
+		<texPath>Spells/blazingpower</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+		<shaderType>TransparentPostLight</shaderType>
+	</graphicData>
+	<projectile>
+		<damageDef>TM_BlazingPower</damageDef>
+		<damageAmountBase>9</damageAmountBase>
+		<speed>70</speed>
+		<explosionRadius>1.2</explosionRadius>
+		<explosionDamageFalloff>true</explosionDamageFalloff>
+	</projectile>
+  </ThingDef>
 	
   <ThingDef Class="AbilityUser.ProjectileDef_Ability" ParentName="FlyingObject_Advanced">
     <defName>Projectile_FireBlossomBolt</defName>
@@ -416,10 +435,10 @@
     <projectile>
 	  <soundExplode>Explosion_Flame</soundExplode>
 	  <flyOverhead>false</flyOverhead>
-      <damageDef>Firebolt</damageDef>
-      <damageAmountBase>12</damageAmountBase>
-	  <explosionRadius>1</explosionRadius>
-      <speed>50</speed>
+      <damageDef>Bomb</damageDef>
+      <damageAmountBase>24</damageAmountBase>
+	  <explosionRadius>2</explosionRadius>
+      <speed>45</speed>
     </projectile>
   </ThingDef>
   
@@ -488,8 +507,9 @@
 	  <soundExplode>TrapSpring</soundExplode>
 	  <flyOverhead>false</flyOverhead>
       <damageDef>Iceshard</damageDef>
-      <damageAmountBase>15</damageAmountBase>
-      <speed>60</speed>
+      <damageAmountBase>22</damageAmountBase>
+      <speed>70</speed>
+	  <explosionRadius>1.49</explosionRadius>
     </projectile>
   </ThingDef>
   
@@ -557,9 +577,9 @@
     <projectile>
 	  <flyOverhead>true</flyOverhead>
       <damageDef>TM_Shadow</damageDef>
-      <damageAmountBase></damageAmountBase>
-	  <explosionRadius>4.7</explosionRadius>
-      <speed>40</speed>
+      <damageAmountBase>50</damageAmountBase>
+	  <explosionRadius>6.7</explosionRadius>
+      <speed>55</speed>
     </projectile>
   </ThingDef>
   
@@ -567,7 +587,7 @@
 	<defName>TM_HollowGolem_AbsorbFire</defName>
 	<label>absorb fire</label>	
 	<warmupTicks>0</warmupTicks>
-	<cooldownTicks>255</cooldownTicks>
+	<cooldownTicks>125</cooldownTicks>
 	<warmupStuns>false</warmupStuns>
 	<burstCount>1</burstCount>
 	<ticksBetweenBurstShots>0</ticksBetweenBurstShots>
@@ -577,7 +597,7 @@
 	<effects>
 	  <li Class="TorannMagic.Golems.CompProperties_GolemAbilityEffect_AbsorbFire">
         <healthPerFire>7</healthPerFire>
-		<range>2</range>
+		<range>3</range>
 		<effectLevelModifier>.25</effectLevelModifier>
       </li>
 	</effects>
@@ -605,7 +625,7 @@
 	<burstCount>1</burstCount>
 	<ticksBetweenBurstShots>0</ticksBetweenBurstShots>
 	<requiredNeed>TM_GolemEnergy</requiredNeed>
-	<needCost>120</needCost>
+	<needCost>60</needCost>
 	<interruptsJob>false</interruptsJob>
 	<effects>
 	  <li Class="TorannMagic.Golems.CompProperties_GolemAbilityEffect_ApplyHediff">
@@ -652,12 +672,12 @@
 	<defName>TM_HollowGolem_WellOfDespair</defName>
 	<label>well of despair</label>	
 	<warmupTicks>0</warmupTicks>
-	<cooldownTicks>1500</cooldownTicks>
+	<cooldownTicks>1200</cooldownTicks>
 	<warmupStuns>false</warmupStuns>
 	<burstCount>1</burstCount>
 	<ticksBetweenBurstShots>0</ticksBetweenBurstShots>
 	<requiredNeed>TM_GolemEnergy</requiredNeed>
-	<needCost>80</needCost>
+	<needCost>60</needCost>
 	<interruptsJob>false</interruptsJob>
 	<effects>
 	  <li Class="TorannMagic.Golems.CompProperties_GolemAbilityEffect_LaunchThing">
@@ -670,7 +690,7 @@
 	  <targetType>Pawn</targetType>
 	  <drafted>true</drafted>
 	  <minRange>5</minRange>
-	  <maxRange>40</maxRange>
+	  <maxRange>60</maxRange>
 	  <undrafted>true</undrafted>
 	  <targetNeutral>false</targetNeutral>
 	  <targetEnemy>true</targetEnemy>

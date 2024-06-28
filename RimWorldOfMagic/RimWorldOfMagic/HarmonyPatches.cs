@@ -74,7 +74,7 @@ namespace TorannMagic
             harmonyInstance.Patch(AccessTools.Method(typeof(StaggerHandler), "get_Staggered", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_Staggered", null));
             harmonyInstance.Patch(AccessTools.Method(typeof(Verb_LaunchProjectile), "get_Projectile", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_Projectile_ES", null), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(WindManager), "get_WindSpeed", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_WindSpeed", null), null);
-            //harmonyInstance.Patch(AccessTools.Method(typeof(MentalBreaker), "get_CanDoRandomMentalBreaks", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_CanDoRandomMentalBreaks", null), null);
+            //harmonyInstance.Patch(AccessTools.Method(typeof(VerbProperties), "get_CausesExplosion", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_CausesExplosion", null), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(Pawn), "get_IsFreeNonSlaveColonist", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_IsFreeNonSlaveColonist_Golem", null));
             harmonyInstance.Patch(AccessTools.Method(typeof(MainTabWindow_Animals), "get_Pawns", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_GolemsAsAnimals", null), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(RecipeDef), "get_AvailableNow", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_GolemsRecipeAvailable", null), null);
@@ -294,12 +294,88 @@ namespace TorannMagic
         //    return true;
         //} 
 
-        //[HarmonyPatch(typeof(Precept_Relic), "Notify_ThingLost", null)]
-        //public class Relic_LostDebug
+        //[HarmonyPatch(typeof(BookUtility), "TryGetRandomBookToRead", null)]
+        //public class ClassesPreferClassBooks
         //{
-        //    private static void Postfix(Precept_Relic __instance)
+        //    private static bool Prefix(Pawn pawn, List<Thing> ___TmpCandidates, List<Thing> ___TmpOutcomeCandidates, out Book book, ref bool __result)
         //    {
-        //        Log.Warning("calling notify relic lost");
+        //        book = null; //doesn't matter
+        //        if(TM_Calc.IsMagicUser(pawn) && Rand.Chance(.7f) && (pawn.health.hediffSet != null && !pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_ArcaneWeakness)))
+        //        {
+        //            ___TmpCandidates.Clear();
+        //            ___TmpOutcomeCandidates.Clear();
+        //            ___TmpCandidates.AddRange(from thing in pawn.Map.listerThings.ThingsInGroup(ThingRequestGroup.Book)
+        //                                   where ClassesPreferClassBooks.IsValidBook(thing, pawn)
+        //                                   select thing);
+        //            ___TmpCandidates.AddRange(from thing in pawn.Map.listerThings.GetThingsOfType<Building_Bookcase>().SelectMany((Building_Bookcase x) => x.HeldBooks)
+        //                                   where ClassesPreferClassBooks.IsValidBook(thing, pawn)
+        //                                   select thing);
+        //            if (___TmpCandidates.Empty())
+        //            {
+        //                return false;
+        //            }
+        //            foreach (Thing tmpCandidate in ___TmpCandidates)
+        //            {
+        //                Book book2;
+        //                Log.Message("evaluating book " + tmpCandidate.Label);
+        //                if ((book2 = (tmpCandidate as Book)) != null && book2.ProvidesOutcome(pawn) && book2.def == TorannMagicDefOf.TM_Grimoire)
+        //                {
+        //                    Log.Message("adding book to possible outcome");
+        //                    ___TmpOutcomeCandidates.Add(tmpCandidate);
+        //                }
+        //            }
+        //            book = (Book)(___TmpOutcomeCandidates.Any() ? ___TmpOutcomeCandidates.RandomElement() : ___TmpCandidates.RandomElement());
+        //            ___TmpCandidates.Clear();
+        //            ___TmpOutcomeCandidates.Clear();
+        //            if (book != null)
+        //            {
+        //                Log.Message("" + pawn.LabelShort + " is prefering " + book.Label);
+        //            }
+        //            __result = true;
+        //            return false;
+        //        }
+        //        else if (TM_Calc.IsMightUser(pawn) && Rand.Chance(.7f))
+        //        {
+        //            ___TmpCandidates.Clear();
+        //            ___TmpOutcomeCandidates.Clear();
+        //            ___TmpCandidates.AddRange(from thing in pawn.Map.listerThings.ThingsInGroup(ThingRequestGroup.Book)
+        //                                      where ClassesPreferClassBooks.IsValidBook(thing, pawn)
+        //                                      select thing);
+        //            ___TmpCandidates.AddRange(from thing in pawn.Map.listerThings.GetThingsOfType<Building_Bookcase>().SelectMany((Building_Bookcase x) => x.HeldBooks)
+        //                                      where ClassesPreferClassBooks.IsValidBook(thing, pawn)
+        //                                      select thing);
+        //            if (___TmpCandidates.Empty())
+        //            {
+        //                return false;
+        //            }
+        //            foreach (Thing tmpCandidate in ___TmpCandidates)
+        //            {
+        //                Book book2;
+        //                if ((book2 = (tmpCandidate as Book)) != null && book2.ProvidesOutcome(pawn) && book2.def == TorannMagicDefOf.TM_CombatManual)
+        //                {
+        //                    ___TmpOutcomeCandidates.Add(tmpCandidate);
+        //                }
+        //            }
+        //            book = (Book)(___TmpOutcomeCandidates.Any() ? ___TmpOutcomeCandidates.RandomElement() : ___TmpCandidates.RandomElement());
+        //            ___TmpCandidates.Clear();
+        //            ___TmpOutcomeCandidates.Clear();
+        //            if (book != null)
+        //            {
+        //                Log.Message("" + pawn.LabelShort + " is prefering " + book.Label);
+        //            }
+        //            __result = true;
+        //            return false;
+        //        }
+        //        return true;
+        //    }
+
+        //    private static bool IsValidBook(Thing thing, Pawn pawn)
+        //    {
+        //        if (thing is Book && !thing.IsForbiddenHeld(pawn) && pawn.reading.CurrentPolicy.defFilter.Allows(thing) && pawn.reading.CurrentPolicy.effectFilter.Allows(thing) && pawn.CanReserveAndReach(thing, PathEndMode.Touch, Danger.None))
+        //        {
+        //            return thing.IsPoliticallyProper(pawn);
+        //        }
+        //        return false;
         //    }
         //}
 
@@ -2679,7 +2755,7 @@ namespace TorannMagic
         //        if (mat == null) return true;
         //        Log.Message("apparel " + mat.mainTexture + " y=" + loc.y);
         //        if (!ModOptions.Constants.GetCloaks().Contains(mat.mainTexture)) return true;
-                
+
         //        loc.y = ModOptions.Constants.GetCloaksNorth().Contains(mat.mainTexture) ? 8.5375f + ModOptions.Settings.Instance.cloakDepthNorth : 8.535f + ModOptions.Settings.Instance.cloakDepth;
 
         //        //loc.y = Array.IndexOf(ModOptions.Constants.GetCloaksNorth(), mat) != -1 ? 8.95f : 8.37f;
@@ -2695,6 +2771,7 @@ namespace TorannMagic
         //        return true;
         //    }
         //}
+        
 
         //applied
         [HarmonyPatch(typeof(PawnRenderNodeWorker), "AltitudeFor", null), HarmonyPriority(10)] //go last to ensure cloaks draw over everything else
@@ -2704,7 +2781,7 @@ namespace TorannMagic
             {
                 if (node?.apparel != null && ModOptions.Settings.Instance.offSetClothing)
                 {
-                    //Log.Message("for apparel " + node.apparel.def.defName + " the layer is " + ((node.Props.drawData?.LayerForRot(parms.facing, node.Props.baseLayer) ?? node.Props.baseLayer) + node.debugLayerOffset).ToString() + " with altitude of " + __result);
+                    //Log.Message("pawn " + parms.pawn.LabelShort + " for apparel " + node.apparel.def.defName + " the layer is " + ((node.Props.drawData?.LayerForRot(parms.facing, node.Props.baseLayer) ?? node.Props.baseLayer) + node.debugLayerOffset).ToString() + " with altitude of " + __result);
 
                     if (__result >= ModOptions.Settings.Instance.offsetApplyAtValue)
                     {

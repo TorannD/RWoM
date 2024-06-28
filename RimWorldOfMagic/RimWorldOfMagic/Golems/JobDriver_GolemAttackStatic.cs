@@ -14,6 +14,7 @@ namespace TorannMagic.Golems
         private bool startedIncapacitated;
         private int numAttacksMade;
         public Verb attackVerb;
+        public bool succeeded = false;
 
         public override void ExposeData()
         {
@@ -28,11 +29,13 @@ namespace TorannMagic.Golems
         }
 
         protected override IEnumerable<Toil> MakeNewToils()
-        {
+        {            
             yield return Toils_Misc.ThrowColonistAttackingMote(TargetIndex.A);
             Toil init = new Toil();
             init.initAction = delegate
             {
+                this.job.endIfCantShootTargetFromCurPos = true;
+                this.job.endIfCantShootInMelee = true;
                 Pawn pawn2 = base.TargetThingA as Pawn;                
                 if (pawn2 != null)
                 {
@@ -57,6 +60,8 @@ namespace TorannMagic.Golems
                 }
                 else
                 {
+                    TMPawnGolem gp = pawn as TMPawnGolem;
+                    CompGolem cg = gp.Golem;
                     if (base.TargetA.HasThing)
                     {
                         Pawn pawn = base.TargetA.Thing as Pawn;
@@ -70,32 +75,53 @@ namespace TorannMagic.Golems
                     {
                         EndJobWith(JobCondition.Succeeded);
                     }
-                    else if (TryStartAttack(base.pawn, base.TargetA, attackVerb))
+                    if (job.endIfCantShootTargetFromCurPos && (attackVerb == null || !attackVerb.CanHitTargetFrom(base.pawn.Position, base.TargetA)))
                     {
-                        numAttacksMade++;
+                        cg.threatTarget = null; //get a new target
+                        EndJobWith(JobCondition.InterruptForced);
+                        return;
                     }
-                    else if (!base.pawn.stances.FullBodyBusy)
-                    {
-                        if (job.endIfCantShootTargetFromCurPos && (attackVerb == null || !attackVerb.CanHitTargetFrom(base.pawn.Position, base.TargetA)))
+                    else if (job.endIfCantShootInMelee)
+                    {                       
+                        if (attackVerb == null)
                         {
                             EndJobWith(JobCondition.Incompletable);
                         }
-                        else if (job.endIfCantShootInMelee)
+                        else
                         {
-                            if (attackVerb == null)
+                            float num = attackVerb.verbProps.EffectiveMinRange(base.TargetA, base.pawn);
+                            if ((float)base.pawn.Position.DistanceToSquared(base.TargetA.Cell) < num * num && base.pawn.Position.AdjacentTo8WayOrInside(base.TargetA.Cell))
                             {
                                 EndJobWith(JobCondition.Incompletable);
                             }
-                            else
-                            {
-                                float num = attackVerb.verbProps.EffectiveMinRange(base.TargetA, base.pawn);
-                                if ((float)base.pawn.Position.DistanceToSquared(base.TargetA.Cell) < num * num && base.pawn.Position.AdjacentTo8WayOrInside(base.TargetA.Cell))
-                                {
-                                    EndJobWith(JobCondition.Incompletable);
-                                }
-                            }
                         }
                     }
+                    if (TryStartAttack(base.pawn, base.TargetA, attackVerb))
+                    {
+                        numAttacksMade++;
+                    }
+                    //else if (!base.pawn.stances.FullBodyBusy)
+                    //{
+                    //    if (job.endIfCantShootTargetFromCurPos && (attackVerb == null || !attackVerb.CanHitTargetFrom(base.pawn.Position, base.TargetA)))
+                    //    {
+                    //        EndJobWith(JobCondition.Incompletable);
+                    //    }
+                    //    else if (job.endIfCantShootInMelee)
+                    //    {
+                    //        if (attackVerb == null)
+                    //        {
+                    //            EndJobWith(JobCondition.Incompletable);
+                    //        }
+                    //        else
+                    //        {
+                    //            float num = attackVerb.verbProps.EffectiveMinRange(base.TargetA, base.pawn);
+                    //            if ((float)base.pawn.Position.DistanceToSquared(base.TargetA.Cell) < num * num && base.pawn.Position.AdjacentTo8WayOrInside(base.TargetA.Cell))
+                    //            {
+                    //                EndJobWith(JobCondition.Incompletable);
+                    //            }
+                    //        }
+                    //    }                        
+                    //}                    
                 }
             };
             init.defaultCompleteMode = ToilCompleteMode.Never;
@@ -110,15 +136,16 @@ namespace TorannMagic.Golems
                 return false;
             }
             TMPawnGolem pg = pawn as TMPawnGolem;
-            Verb v = verb != null ? verb : pg.GetBestVerb;     
-            if((v.LastShotTick + (v.verbProps.defaultCooldownTime * 60)) >= Find.TickManager.TicksGame)
+            Verb v = verb != null ? verb : pg.GetBestVerb;
+            //Log.Message("consuming energy " + v.LastShotTick + " last shot tick");            
+            //pg.Golem.Energy.SubtractEnergy(pg.activeVerb.verbProps.consumeFuelPerShot);
+            if ((v.LastShotTick + (v.verbProps.defaultCooldownTime * 60)) >= Find.TickManager.TicksGame)
             {
                 v = pg.GetBestVerb;
             }
             if (v != null)
             {               
                 attackVerb = v;                
-                pg.Golem.Energy.SubtractEnergy(v.verbProps.consumeFuelPerShot);
                 pg.drawTickFlag = v.verbProps.consumeFuelPerShot > 0;
                 return v.TryStartCastOn(targ);
             }
