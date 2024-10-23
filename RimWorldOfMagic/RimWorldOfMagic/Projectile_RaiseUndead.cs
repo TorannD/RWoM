@@ -263,7 +263,7 @@ namespace TorannMagic
                                     RemoveHediffsAddictionsAndPermanentInjuries(undeadPawn);
                                     TM_MoteMaker.ThrowPoisonMote(curCell.ToVector3Shifted(), map, .6f);
                                 }
-                                if(corpseThing != pawn && !TM_Calc.IsNecromancer(undeadPawn) && !TM_Calc.IsUndead(undeadPawn))
+                                if(corpseThing != pawn && !TM_Calc.IsNecromancer(undeadPawn) && TM_Calc.IsUndead(undeadPawn))
                                 {
                                     DisruptiveRemoveHediffs(undeadPawn);
                                     TM_MoteMaker.ThrowPoisonMote(curCell.ToVector3Shifted(), map, .6f);

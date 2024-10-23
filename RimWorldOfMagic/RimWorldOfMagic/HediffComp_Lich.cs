@@ -146,7 +146,8 @@ namespace TorannMagic
                                 || rec.def.defName == "BloodRot"
                                 || rec.def.defName == "Scaria" 
                                 || rec.def.defName.Contains("Pregnant")
-                                || rec.def.defName == "GeneticDrugNeed")
+                                || rec.def.defName == "GeneticDrugNeed"
+                                || rec.def.defName == "HeartAttack")
                             {
                                 removeHDList.Add(rec);
                             }

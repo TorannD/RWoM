@@ -1831,17 +1831,20 @@ namespace TorannMagic
 
         public static void AreaManager_AddMagicZonesToStartingAreas(AreaManager __instance, List<Area> ___areas)
         {
-            if(TM_Calc.GetSpriteArea(__instance.map) == null)
+            if (ModOptions.Settings.Instance.autoCreateAreas)
             {
-                ___areas.Add(new Area_TMSprite(__instance));
-            }
-            if(TM_Calc.GetTransmutateArea(__instance.map) == null)
-            {
-                ___areas.Add(new Area_TMTransmutate(__instance));
-            }
-            if(TM_Calc.GetSeedOfRegrowthArea(__instance.map) == null)
-            {
-                ___areas.Add(new Area_TMRegrowth(__instance));
+                if (TM_Calc.GetSpriteArea(__instance.map) == null)
+                {
+                    ___areas.Add(new Area_TMSprite(__instance));
+                }
+                if (TM_Calc.GetTransmutateArea(__instance.map) == null)
+                {
+                    ___areas.Add(new Area_TMTransmutate(__instance));
+                }
+                if (TM_Calc.GetSeedOfRegrowthArea(__instance.map) == null)
+                {
+                    ___areas.Add(new Area_TMRegrowth(__instance));
+                }
             }
         }
 
@@ -3990,7 +3993,7 @@ namespace TorannMagic
                 bool result;
                 if (pawn != null && dinfo.HasValue && hediff != null)
                 {
-                    if(pawn.IsColonistPlayerControlled && pawn.genes != null && pawn.genes.HasActiveGene(DefDatabase<GeneDef>.GetNamed("Deathless", true))) //undead bug with deathless without this
+                    if(pawn.IsColonistPlayerControlled && pawn.genes != null && ModsConfig.BiotechActive && pawn.genes.HasActiveGene(DefDatabase<GeneDef>.GetNamed("Deathless", true))) //undead bug with deathless without this
                     {
                         return true;
                     }

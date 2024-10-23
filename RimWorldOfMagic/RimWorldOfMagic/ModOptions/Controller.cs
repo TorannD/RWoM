@@ -169,7 +169,11 @@ namespace TorannMagic.ModOptions
             num++;
             Rect rowRect13 = UIHelper.GetRowRect(rowRect12, rowHeight, num);
             Widgets.CheckboxLabeled(rowRect13, "TM_UnrestrictedWeaponCopy".Translate(), ref Settings.Instance.unrestrictedWeaponCopy, false);            
-            num++;           
+            num++;
+            Rect rowRect14 = UIHelper.GetRowRect(rowRect13, rowHeight, num);
+            Widgets.CheckboxLabeled(rowRect14, "TM_CreateAreas".Translate(), ref Settings.Instance.autoCreateAreas, false);
+            TooltipHandler.TipRegion(rowRect14, "TM_CreateAreasDesc".Translate());
+            num++;
             //Widgets.CheckboxLabeled(rowRect13, "TM_UnrestrictedWeaponCopy".Translate(), ref Settings.Instance.unrestrictedWeaponCopy, false);
             //Rect rowRect14ShiftRight = UIHelper.GetRowRect(rowRect14, rowHeight, num);
             //rowRect14ShiftRight.x += rowRect13.width + 56f;

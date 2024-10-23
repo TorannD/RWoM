@@ -48,6 +48,7 @@ namespace TorannMagic.ModOptions
         public bool cameraSnap= Settings.Instance.cameraSnap;
         public float cloakDepth = Settings.Instance.cloakDepth;
         public float cloakDepthNorth = Settings.Instance.cloakDepthNorth;
+        public bool autoCreateAreas = Settings.Instance.autoCreateAreas;
 
         //autocast
         public bool autocastEnabled = Settings.Instance.autocastEnabled;

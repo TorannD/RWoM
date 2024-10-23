@@ -587,7 +587,7 @@
 	<defName>TM_HollowGolem_AbsorbFire</defName>
 	<label>absorb fire</label>	
 	<warmupTicks>0</warmupTicks>
-	<cooldownTicks>125</cooldownTicks>
+	<cooldownTicks>151</cooldownTicks>
 	<warmupStuns>false</warmupStuns>
 	<burstCount>1</burstCount>
 	<ticksBetweenBurstShots>0</ticksBetweenBurstShots>
@@ -596,8 +596,8 @@
 	<interruptsJob>false</interruptsJob>
 	<effects>
 	  <li Class="TorannMagic.Golems.CompProperties_GolemAbilityEffect_AbsorbFire">
-        <healthPerFire>7</healthPerFire>
-		<range>3</range>
+        <healthPerFire>10</healthPerFire>
+		<range>4</range>
 		<effectLevelModifier>.25</effectLevelModifier>
       </li>
 	</effects>

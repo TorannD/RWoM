@@ -866,6 +866,7 @@ The Ring of Blood's power depends on the fame of its bearer and will grow with e
 		<hasEnchantment>true</hasEnchantment>
 		<hediff>TM_Artifact_BloodBoostHD</hediff>
 		<hediffSeverity>1</hediffSeverity>
+		<usesStackingHediff>false</usesStackingHediff>
 	  </li>
 	</comps>
   </ThingDef>
@@ -921,6 +922,7 @@ The Ring of Eternal Blue will increase a psionic's energy proportionally with th
 		<hasEnchantment>true</hasEnchantment>
 		<hediff>TM_Artifact_PsionicBoostHD</hediff>
 		<hediffSeverity>1</hediffSeverity>
+		<usesStackingHediff>false</usesStackingHediff>
 	  </li>
 	</comps>
   </ThingDef>
@@ -973,6 +975,7 @@ The Ring of Malice's power depends on the fame of its bearer and will grow with 
 		<hasEnchantment>true</hasEnchantment>
 		<hediff>TM_Artifact_HateBoostHD</hediff>
 		<hediffSeverity>1</hediffSeverity>
+		<usesStackingHediff>false</usesStackingHediff>
 	  </li>
 	</comps>
   </ThingDef>

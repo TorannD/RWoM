@@ -19,7 +19,7 @@ namespace TorannMagic
 
         public override float GetWidth(float maxWidth)
         {
-            return 75f;            
+            return 75f;
         }
 
         public override GizmoResult GizmoOnGUI(Vector2 topLeft, float maxWidth, GizmoRenderParms parms)
@@ -59,11 +59,11 @@ namespace TorannMagic
                             }
                             yShift += (barHeight) + 5f;
                         }
-                        
+
                         Text.Font = GameFont.Small;
                         Text.Anchor = TextAnchor.UpperLeft;
                     }, true, false, 1f);
-                
+
             }
             else
             {
@@ -83,7 +83,7 @@ namespace TorannMagic
                     rect2.y += yShift;
                     fillPercent = 0f;
                     Widgets.FillableBar(rect2, fillPercent, Gizmo_StatusBar.FullTex, Gizmo_StatusBar.EmptyShieldBarTex, false);
-                    Widgets.Label(rect2, "" );
+                    Widgets.Label(rect2, "");
                     yShift += (barHeight) + 5f;
                 }, true, false, 1f);
             }

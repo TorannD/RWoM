@@ -189,7 +189,7 @@ Blunt:	+12%
 Sharp:	+6%
 Heat:	+18%
 Harmony: +10%
-Move Speed +.4c/s
+Move Speed +1c/s
 
 Faded Decay
 Energy Cost:	30
@@ -225,12 +225,14 @@ Movement:	+[0.2c/0.3c/0.35c]
 Heat Armor:	+[30%/50%/60%]
 Ability Cooldown:	-[10%/20%/30%]
 Processing:	+[10%/20%/30%]
+Damage Reduction:	[85%/80%/75%]
 
 Absorb Fire
 Energy Cost:	0
-Cooldown:	4.2s
-Range:	2c
-Health restored per fire: 7</description>
+Cooldown:	2.5s
+Range:	4c
+Health restored per fire: 10
+*Only one Coat of Arms can be used, but may be upgraded multiple times*</description>
 		<maxLevel>3</maxLevel>
 		<recipe>TM_HollowGolem_CoAFire</recipe>
 		<bodypart>Golem_Body</bodypart>
@@ -263,7 +265,8 @@ Health restored per fire: 7</description>
 Armor:		+[5%/10%/15%]
 Cooldown:	-[10%/20%/30%]
 Processing:	+[10%/20%/30%]
-*Only one Coat of Arms can be used*</description>
+Damage Reduction:	[85%/80%/75%]
+*Only one Coat of Arms can be used, but may be upgraded multiple times*</description>
 		<maxLevel>3</maxLevel>
 		<recipe>TM_HollowGolem_CoAIce</recipe>
 		<bodypart>Golem_Body</bodypart>
@@ -295,7 +298,8 @@ Processing:	+[10%/20%/30%]
 Ability Cooldown:	-[12%/24%/36%]
 Ability Damage:		+[10%/20%/30%]
 Processing:		+[15%/30%/45%]
-*Only one Coat of Arms can be used*</description>
+Damage Reduction:	[85%/80%/75%]
+*Only one Coat of Arms can be used, but may be upgraded multiple times*</description>
 		<maxLevel>3</maxLevel>
 		<recipe>TM_HollowGolem_CoAArcane</recipe>
 		<bodypart>Golem_Body</bodypart>
@@ -327,7 +331,8 @@ Armor:		+[5%/10%/15%]
 Ability Cooldown:	-[8%/16%/24%]
 Ability Damage:	+[10%/20%/30%]
 Processing:	+[15%/30%/45%]
-*Only one Coat of Arms can be used*</description>
+Damage Reduction:	[85%/80%/75%]
+*Only one Coat of Arms can be used, but may be upgraded multiple times*</description>
 		<maxLevel>3</maxLevel>
 		<recipe>TM_HollowGolem_CoADeath</recipe>
 		<hediff>TM_HollowGolem_CoAIceHD</hediff>
@@ -499,7 +504,7 @@ Energy Cost:	8 energy per pawn
 	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
 		<defName>TM_Golem_HollowFGFire</defName>
 		<label>Focus Gem: Fire</label>
-		<description>The Fire focus gem allows the golem to concentrate elemental fire into a fierce burst of firebolts. Launches 16 firebolts at enemies within 8 cells of a target.
+		<description>The Fire focus gem allows the golem to concentrate elemental fire into a fierce burst of firebolts. Launches 20 firebolts at enemies within 8 cells of a target.
 
 Energy Cost: 20
 Min Range: 6
@@ -588,7 +593,7 @@ Max Range: 120
 		<label>Focus Gem: Death</label>
 		<description>The Death focus gem surrounds the golem with a field radiating death energy. Periodically strikes nearby enemies. Gains a bonus strike when any pawn dies within 10 cells of the golem.
 
-Energy Cost: 20
+Energy Cost: 10
 Range: 10
 *Only one Focus Gem can be used*</description>
 		<maxLevel>1</maxLevel>

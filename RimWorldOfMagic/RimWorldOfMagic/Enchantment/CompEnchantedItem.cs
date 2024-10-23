@@ -212,11 +212,11 @@ namespace TorannMagic.Enchantment
                 {
                     if (artifact.Wearer != null)
                     {                       
-                        //Log.Message("" + artifact.LabelShort + " has holding owner " + artifact.Wearer.LabelShort);
                         if (artifact.Wearer.health.hediffSet.GetFirstHediffOfDef(hediff, false) != null)
                         {
                             Hediff hd = artifact.Wearer.health.hediffSet.GetFirstHediffOfDef(hediff);
                             float totalSeverity = 0f;
+                            //Log.Message(artifact.LabelShort + " has holding owner " + artifact.Wearer.LabelShort + " has hediff " + hd.Label + " at severity " + hd.Severity);
                             //look for multiple items that provide the same hediff and either add their severities (stacks) or select the largest severity
                             List<Apparel> aList = artifact.Wearer.apparel.WornApparel;
                             foreach(Apparel item in aList)
@@ -224,13 +224,20 @@ namespace TorannMagic.Enchantment
                                 CompEnchantedItem enchantedItem = item.TryGetComp<CompEnchantedItem>();
                                 if(enchantedItem != null && enchantedItem.Props.hediff == this.hediff)
                                 {
-                                    if(enchantedItem.Props.hediffStacks && this.Props.hediffStacks)
+                                    if (enchantedItem.Props.usesStackingHediff)
                                     {
-                                        totalSeverity += enchantedItem.hediffSeverity;
-                                    }             
-                                    else if(enchantedItem.Props.hediffSeverity > this.Props.hediffSeverity)
+                                        if (enchantedItem.Props.hediffStacks && this.Props.hediffStacks)
+                                        {
+                                            totalSeverity += enchantedItem.hediffSeverity;
+                                        }
+                                        else if (enchantedItem.Props.hediffSeverity > this.Props.hediffSeverity)
+                                        {
+                                            totalSeverity = enchantedItem.Props.hediffSeverity;
+                                        }
+                                    }
+                                    else
                                     {
-                                        totalSeverity = enchantedItem.Props.hediffSeverity;
+                                        totalSeverity = hd.Severity;
                                     }
                                 }
                             }

@@ -29,7 +29,8 @@ namespace TorannMagic.ModOptions
         public bool paracyteMagesCount = true;
         public bool unrestrictedWeaponCopy = false;
         public float undeadUpkeepMultiplier = 1f;      
-        public bool cameraSnap = true;        
+        public bool cameraSnap = true;
+        public bool autoCreateAreas = true;
 
         //Draw Options
         public bool AIMarking = true;
@@ -168,6 +169,7 @@ namespace TorannMagic.ModOptions
             Scribe_Values.Look<bool>(ref this.offSetClothing, "offsetClothing", false, false);
             Scribe_Values.Look<float>(ref this.offsetApplyAtValue, "offsetApplyAtValue", .0288f, false);
             Scribe_Values.Look<float>(ref this.offsetMultiLayerClothingAmount, "offsetMultiLayerClothingAmount", -.025387f, false);
+            Scribe_Values.Look<bool>(ref this.autoCreateAreas, "autoCreateAreas", true, false);
 
             Scribe_Values.Look<float>(ref this.deathExplosionRadius, "deathExplosionRadius", 3f, false);
             Scribe_Values.Look<int>(ref this.deathExplosionMin, "deathExplosionMin", 20, false);

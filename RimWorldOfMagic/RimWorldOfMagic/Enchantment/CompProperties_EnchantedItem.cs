@@ -54,6 +54,7 @@ namespace TorannMagic.Enchantment
         public HediffDef hediff = null;
         public float hediffSeverity = 0f;
         public bool hediffStacks = false;
+        public bool usesStackingHediff = true;
 
         //Thoughts
         public ThoughtDef enchantmentThought = null;

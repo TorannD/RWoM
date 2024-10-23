@@ -45,8 +45,8 @@
 <TM_ShieldBlockingPowers>{0} must unequip {1} to use this ability.</TM_ShieldBlockingPowers>
 <TM_OutOfRange>Target location is out of range.</TM_OutOfRange>
 <TM_OutOfLOS>Ability failed, target was not visible to {0}.</TM_OutOfLOS>
-<TM_NothingToRegenerate>No valid target found for Regeneration.</TM_NothingToRegenerate> 
 <TM_CureDiseaseTypeFail>Unable to cure this type of disease.</TM_CureDiseaseTypeFail>
+<TM_NothingToRegenerate>No valid target found for Regeneration.</TM_NothingToRegenerate> 
 <TM_CantSummonSelf>Cannot summon self.</TM_CantSummonSelf>
 <TM_UndeadCollapsed>{0} does not have the mana to sustain {1}. {1} has disintegrated into mana to replenish {0}.</TM_UndeadCollapsed>
 <TM_ResistedSpell>Resisted!</TM_ResistedSpell>
@@ -301,6 +301,8 @@
 <TM_DeathRetaliationIsLethal>Death retaliation always lethal</TM_DeathRetaliationIsLethal>
 <TM_DeathRetaliationChance>Death retaliation chance</TM_DeathRetaliationChance>
 <TM_DeathRetaliationDelay>Death retaliation delay factor</TM_DeathRetaliationDelay>
+<TM_CreateAreas>Create map areas</TM_CreateAreas>
+<TM_CreateAreasDesc>Automatically creates zones for sprites, transmutation, and seed of regrowth. These zones are required for refined functionality of the associated abilities. Will note remove areas that have already been created. The player can manually create these zones at a later time, but they must be named exactly "earth sprites", "transmutate", and "regrowth seed". How they work: earth sprites will always select a new terraforming spot within the "earth sprites" area; when transmutate is set to autocast, an enchanter will only transmutate equipment in the "transmutate" area; a druid will automatically create a new seed of regrowth when the spell is available at the "regrowth seed" area (works best with a stockpile for seeds underneath the zone).</TM_CreateAreasDesc>
 
 <!-- Mod Settings Class options -->
 <supportTraitChance>Supporting Trait Commonality</supportTraitChance>

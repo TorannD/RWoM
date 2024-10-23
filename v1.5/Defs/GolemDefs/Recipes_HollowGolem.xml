@@ -125,11 +125,11 @@
     <jobString>crafting hollow axe</jobString>
  	<researchPrerequisite>TM_HollowGolemEquipmentRD</researchPrerequisite>
 	<skillRequirements>
-<!-- 	  <Crafting>10</Crafting> -->
+	  <Crafting>10</Crafting>
     </skillRequirements>
-	<workAmount>8</workAmount>
+	<workAmount>8000</workAmount>
     <ingredients>
-<!-- 	  <li>
+	  <li>
         <filter>
           <thingDefs>
             <li>Steel</li>
@@ -144,7 +144,7 @@
           </thingDefs>
         </filter>
         <count>1</count>
-      </li> -->
+      </li>
     </ingredients>
   </RecipeDef>
   
@@ -155,12 +155,12 @@
     <jobString>crafting hollow staff</jobString>
  	<researchPrerequisite>TM_HollowGolemArtifactsRD</researchPrerequisite>	
 	<skillRequirements>
-<!-- 	  <Crafting>6</Crafting>
-	  <Intellectual>8</Intellectual> -->
+	  <Crafting>6</Crafting>
+	  <Intellectual>8</Intellectual>
     </skillRequirements>
-	<workAmount>10</workAmount>
+	<workAmount>10000</workAmount>
     <ingredients>
-<!-- 	  <li>
+	  <li>
         <filter>
           <thingDefs>
             <li>TM_BlazingPowerStaff</li>
@@ -168,14 +168,6 @@
         </filter>
         <count>1</count>
       </li> 
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>TM_DefenderStaff</li>
-          </thingDefs>
-        </filter>
-        <count>1</count>
-      </li>  -->
     </ingredients>
   </RecipeDef> 
   
@@ -190,18 +182,18 @@ Hit:	+12%</description>
     <jobString>crafting golem part</jobString>
  	<researchPrerequisite>TM_HollowGolemEquipmentRD</researchPrerequisite>
 	<skillRequirements>
-<!-- 	  <Crafting>10</Crafting> -->
+	  <Crafting>10</Crafting>
     </skillRequirements>
-	<workAmount>12</workAmount>
+	<workAmount>12000</workAmount>
     <ingredients>
-<!-- 	  <li>
+	  <li>
         <filter>
           <thingDefs>
             <li>Plasteel</li>
           </thingDefs>
         </filter>
         <count>180</count>
-      </li>  -->
+      </li> 
     </ingredients>
   </RecipeDef>
   
@@ -216,18 +208,18 @@ Hit:	+15%</description>
     <jobString>crafting golem part</jobString>
  	<researchPrerequisite>TM_HollowGolemEquipmentRD</researchPrerequisite>
 	<skillRequirements>
-<!-- 	  <Crafting>10</Crafting> -->
+	  <Crafting>10</Crafting>
     </skillRequirements>
-	<workAmount>8</workAmount>
+	<workAmount>8000</workAmount>
     <ingredients>
-<!-- 	  <li>
+	  <li>
         <filter>
           <thingDefs>
             <li>Plasteel</li>
           </thingDefs>
         </filter>
         <count>120</count>
-      </li>  -->
+      </li> 
     </ingredients>
   </RecipeDef>
   
@@ -242,18 +234,18 @@ Hit:	+8%</description>
     <jobString>crafting golem part</jobString>
  	<researchPrerequisite>TM_HollowGolemEquipmentRD</researchPrerequisite>
 	<skillRequirements>
-<!-- 	  <Crafting>10</Crafting> -->
+	  <Crafting>10</Crafting>
     </skillRequirements>
-	<workAmount>8</workAmount>
+	<workAmount>8000</workAmount>
     <ingredients>
-<!-- 	  <li>
+	  <li>
         <filter>
           <thingDefs>
             <li>Plasteel</li>
           </thingDefs>
         </filter>
         <count>100</count>
-      </li>  -->
+      </li> 
     </ingredients>
   </RecipeDef>
   
@@ -264,11 +256,11 @@ Hit:	+8%</description>
     <jobString>crafting golem part</jobString>
  	<researchPrerequisite>TM_HollowGolemEquipmentRD</researchPrerequisite>
 	<skillRequirements>
-<!-- 	  <Crafting>12</Crafting> -->
+	  <Crafting>12</Crafting>
     </skillRequirements>
-	<workAmount>15</workAmount>
+	<workAmount>15000</workAmount>
     <ingredients>
-<!-- 	  <li>
+	  <li>
         <filter>
           <thingDefs>
             <li>Plasteel</li>
@@ -291,7 +283,7 @@ Hit:	+8%</description>
           </thingDefs>
         </filter>
         <count>3</count>
-      </li>  -->
+      </li> 
     </ingredients>
   </RecipeDef>
   
@@ -310,11 +302,11 @@ Ability: Fade</description>
     <jobString>crafting golem part</jobString>
  	<researchPrerequisite>TM_HollowGolemArtifactsRD</researchPrerequisite>
 	<skillRequirements>
-<!-- 	  <Crafting>10</Crafting> -->
+	  <Crafting>10</Crafting>
     </skillRequirements>
-	<workAmount>8</workAmount>
+	<workAmount>8000</workAmount>
     <ingredients>
-<!-- 	  <li>
+	  <li>
         <filter>
           <thingDefs>
             <li>DemonLordCloak</li>
@@ -337,7 +329,7 @@ Ability: Fade</description>
           </thingDefs>
         </filter>
         <count>10</count>
-      </li>  -->
+      </li> 
     </ingredients>
   </RecipeDef>
   
@@ -352,12 +344,11 @@ Energy Cost:	50</description>
     <jobString>crafting golem part</jobString>
  	<researchPrerequisite>TM_HollowGolemArtifactsRD</researchPrerequisite>
 	<skillRequirements>
-<!-- 	  <Crafting>8</Crafting> -->
+	  <Crafting>8</Crafting>
     </skillRequirements>
-<!-- 	<workAmount>8000</workAmount> -->
-<workAmount>8</workAmount>
+	<workAmount>8000</workAmount>
     <ingredients>	  
-<!-- 	  <li>
+	  <li>
         <filter>
           <thingDefs>
             <li>RawMagicyte</li>
@@ -372,7 +363,7 @@ Energy Cost:	50</description>
           </thingDefs>
         </filter>
         <count>5</count>
-      </li>  -->
+      </li> 
     </ingredients>
   </RecipeDef>  
   
@@ -383,11 +374,11 @@ Energy Cost:	50</description>
     <jobString>crafting golem part</jobString>
  	<researchPrerequisite>TM_HollowGolemArtifactsRD</researchPrerequisite>
 	<skillRequirements>
-<!-- 	  <Crafting>8</Crafting> -->
+	  <Crafting>8</Crafting>
     </skillRequirements>
-	<workAmount>8</workAmount>
+	<workAmount>8000</workAmount>
     <ingredients>	  
-<!-- 	  <li>
+	  <li>
         <filter>
           <thingDefs>
             <li>RawMagicyte</li>
@@ -402,7 +393,7 @@ Energy Cost:	50</description>
           </thingDefs>
         </filter>
         <count>30</count>
-      </li>  -->
+      </li> 
     </ingredients>
   </RecipeDef>
   
@@ -413,18 +404,18 @@ Energy Cost:	50</description>
     <jobString>crafting golem part</jobString>
  	<researchPrerequisite>TM_HollowGolemArtifactsRD</researchPrerequisite>
 	<skillRequirements>
-<!-- 	  <Intellectual>6</Intellectual> -->
+	  <Intellectual>6</Intellectual>
     </skillRequirements>
-	<workAmount>8</workAmount>
+	<workAmount>8000</workAmount>
     <ingredients>	  
-<!-- 	  <li>
+	  <li>
         <filter>
           <thingDefs>
             <li>RawMagicyte</li>
           </thingDefs>
         </filter>
         <count>210</count>
-      </li>	 -->  
+      </li>	  
     </ingredients>
   </RecipeDef>
   
@@ -435,11 +426,11 @@ Energy Cost:	50</description>
     <jobString>crafting golem part</jobString>
  	<researchPrerequisite>TM_HollowGolemArtifactsRD</researchPrerequisite>
 	<skillRequirements>
-<!-- 	  <Intellectual>6</Intellectual> -->
+	  <Intellectual>6</Intellectual>
     </skillRequirements>
-	<workAmount>8</workAmount>
+	<workAmount>8000</workAmount>
     <ingredients>
-<!-- 	  <li>
+	  <li>
         <filter>
           <thingDefs>
             <li>TM_Artifact_NecroticOrb</li>
@@ -454,7 +445,7 @@ Energy Cost:	50</description>
           </thingDefs>
         </filter>
         <count>40</count>
-      </li> -->
+      </li>
     </ingredients>
   </RecipeDef>
   
@@ -465,11 +456,11 @@ Energy Cost:	50</description>
     <jobString>crafting golem part</jobString>
  	<researchPrerequisite>TM_HollowGolemArtifactsRD</researchPrerequisite>
 	<skillRequirements>
-<!-- 	  <Artistic>5</Artistic> -->
+	  <Artistic>5</Artistic>
     </skillRequirements>
-	<workAmount>10</workAmount>
+	<workAmount>10000</workAmount>
     <ingredients>
-<!-- 	  <li>
+	  <li>
         <filter>
           <thingDefs>
             <li>RawMagicyte</li>
@@ -484,7 +475,7 @@ Energy Cost:	50</description>
           </thingDefs>
         </filter>
         <count>20</count>
-      </li>  -->
+      </li> 
     </ingredients>
   </RecipeDef>
   
@@ -495,11 +486,11 @@ Energy Cost:	50</description>
     <jobString>crafting golem part</jobString>
  	<researchPrerequisite>TM_HollowGolemArtifactsRD</researchPrerequisite>
 	<skillRequirements>
-<!-- 	  <Crafting>8</Crafting> -->
+	  <Crafting>8</Crafting>
     </skillRequirements>
-	<workAmount>10</workAmount>
+	<workAmount>10000</workAmount>
     <ingredients> 
-<!-- 	  <li>
+	  <li>
         <filter>
           <thingDefs>
             <li>TM_EStone_arcaneDmg_major</li>
@@ -514,7 +505,7 @@ Energy Cost:	50</description>
           </thingDefs>
         </filter>
         <count>5</count>
-      </li>  -->
+      </li> 
     </ingredients>
   </RecipeDef>
   
@@ -525,11 +516,11 @@ Energy Cost:	50</description>
     <jobString>crafting golem part</jobString>
  	<researchPrerequisite>TM_HollowGolemArtifactsRD</researchPrerequisite>
 	<skillRequirements>
-<!-- 	  <Crafting>10</Crafting> -->
+	  <Crafting>10</Crafting>
     </skillRequirements>
-	<workAmount>10</workAmount>
+	<workAmount>10000</workAmount>
     <ingredients>
-<!-- 	  <li>
+	  <li>
         <filter>
           <thingDefs>
             <li>TM_EStone_arcaneRes_major</li>
@@ -544,7 +535,7 @@ Energy Cost:	50</description>
           </thingDefs>
         </filter>
         <count>30</count>
-      </li>  -->
+      </li> 
     </ingredients>
   </RecipeDef>
   
@@ -555,11 +546,11 @@ Energy Cost:	50</description>
     <jobString>crafting golem part</jobString>
  	<researchPrerequisite>TM_HollowGolemArtifactsRD</researchPrerequisite>
 	<skillRequirements>
-<!-- 	  <Intellectual>6</Intellectual> -->
+	  <Intellectual>6</Intellectual>
     </skillRequirements>
-	<workAmount>10</workAmount>
+	<workAmount>10000</workAmount>
     <ingredients>
-<!-- 	  <li>
+	  <li>
         <filter>
           <thingDefs>
             <li>TM_EStone_wonder</li>
@@ -574,7 +565,7 @@ Energy Cost:	50</description>
           </thingDefs>
         </filter>
         <count>30</count>
-      </li>  -->
+      </li> 
     </ingredients>
   </RecipeDef>
   
@@ -585,11 +576,11 @@ Energy Cost:	50</description>
     <jobString>crafting golem part</jobString>
  	<researchPrerequisite>TM_HollowGolemArtifactsRD</researchPrerequisite>
 	<skillRequirements>
-<!-- 	  <Intellectual>6</Intellectual> -->
+	  <Intellectual>6</Intellectual>
     </skillRequirements>
-	<workAmount>10</workAmount>
+	<workAmount>10000</workAmount>
     <ingredients>
-<!-- 	  <li>
+	  <li>
         <filter>
           <thingDefs>
             <li>TM_EStone_coolDown_major</li>
@@ -604,7 +595,7 @@ Energy Cost:	50</description>
           </thingDefs>
         </filter>
         <count>30</count>
-      </li>  -->
+      </li> 
     </ingredients>
   </RecipeDef>
   
@@ -616,13 +607,13 @@ Energy Cost:	50</description>
     <jobString>crafting golem part</jobString>
  	<researchPrerequisite>TM_HollowGolemArtifactsRD</researchPrerequisite>
 	<skillRequirements>
-<!-- 	  <Artistic>3</Artistic>
+	  <Artistic>3</Artistic>
 	  <Construction>5</Construction>
-	  <Crafting>6</Crafting> -->
+	  <Crafting>6</Crafting>
     </skillRequirements>
-	<workAmount>15</workAmount>
+	<workAmount>15000</workAmount>
     <ingredients>
-<!-- 	  <li>
+	  <li>
         <filter>
           <thingDefs>
             <li>TM_Artifact_OrbOfConviction</li>
@@ -630,14 +621,6 @@ Energy Cost:	50</description>
         </filter>
         <count>1</count>
       </li> 
-	  <li>
-        <filter>
-          <thingDefs>
-            <li>TM_Artifact_OrbOfSouls</li>
-          </thingDefs>
-        </filter>
-        <count>1</count>
-      </li> -->
     </ingredients>
   </RecipeDef>
   
@@ -648,20 +631,12 @@ Energy Cost:	50</description>
     <jobString>crafting golem part</jobString>
  	<researchPrerequisite>TM_HollowGolemArtifactsRD</researchPrerequisite>
 	<skillRequirements>
-<!-- 	  <Intellectual>3</Intellectual>
+	  <Intellectual>3</Intellectual>
 	  <Construction>6</Construction>
-	  <Crafting>5</Crafting> -->
+	  <Crafting>5</Crafting>
     </skillRequirements>
-	<workAmount>15</workAmount>
+	<workAmount>15000</workAmount>
     <ingredients>
-<!-- 	  <li>
-        <filter>
-          <thingDefs>
-            <li>TM_Artifact_OrbOfEternal</li>
-          </thingDefs>
-        </filter>
-        <count>1</count>
-      </li> 
 	  <li>
         <filter>
           <thingDefs>
@@ -669,7 +644,7 @@ Energy Cost:	50</description>
           </thingDefs>
         </filter>
         <count>1</count>
-      </li> -->
+      </li>
     </ingredients>
   </RecipeDef>
   
@@ -687,11 +662,11 @@ In addition, decay touch deals bonus burn damage and the golem can absorb nearby
     <jobString>crafting golem upgrade</jobString>
  	<researchPrerequisite>TM_HollowGolemEquipmentRD</researchPrerequisite>
 	<skillRequirements>
-<!-- 	  <Crafting>6</Crafting> -->
+	  <Crafting>6</Crafting>
     </skillRequirements>
-	<workAmount>10</workAmount>
+	<workAmount>10000</workAmount>
     <ingredients>
-<!-- 	  <li>
+	  <li>
         <filter>
           <thingDefs>
             <li>Gold</li>
@@ -706,7 +681,7 @@ In addition, decay touch deals bonus burn damage and the golem can absorb nearby
           </thingDefs>
         </filter>
         <count>1</count>
-      </li> -->
+      </li>
     </ingredients>
   </RecipeDef>
   
@@ -723,11 +698,11 @@ In addition, decay touch heals the golem and one friendly pawn within 10 + 3*lev
     <jobString>crafting golem upgrade</jobString>
  	<researchPrerequisite>TM_HollowGolemEquipmentRD</researchPrerequisite>
 	<skillRequirements>
-<!-- 	  <Crafting>6</Crafting> -->
+	  <Crafting>6</Crafting>
     </skillRequirements>
-	<workAmount>10</workAmount>
+	<workAmount>10000</workAmount>
     <ingredients>
-<!-- 	  <li>
+	  <li>
         <filter>
           <thingDefs>
             <li>Silver</li>
@@ -742,7 +717,7 @@ In addition, decay touch heals the golem and one friendly pawn within 10 + 3*lev
           </thingDefs>
         </filter>
         <count>1</count>
-      </li> -->
+      </li>
     </ingredients>
   </RecipeDef>
   
@@ -759,11 +734,11 @@ In addition, decay touch restores 20 + 5*level energy per hit.</description>
     <jobString>crafting golem upgrade</jobString>
  	<researchPrerequisite>TM_HollowGolemEquipmentRD</researchPrerequisite>
 	<skillRequirements>
-<!-- 	  <Crafting>6</Crafting> -->
+	  <Crafting>6</Crafting>
     </skillRequirements>
-	<workAmount>10</workAmount>
+	<workAmount>10000</workAmount>
     <ingredients>
-<!-- 	  <li>
+	  <li>
         <filter>
           <thingDefs>
             <li>RawMagicyte</li>
@@ -778,7 +753,7 @@ In addition, decay touch restores 20 + 5*level energy per hit.</description>
           </thingDefs>
         </filter>
         <count>1</count>
-      </li> -->
+      </li>
     </ingredients>
   </RecipeDef>
   
@@ -796,11 +771,11 @@ In addition, decay touch is 50% more effective and strikes twice.</description>
     <jobString>crafting golem upgrade</jobString>
  	<researchPrerequisite>TM_HollowGolemEquipmentRD</researchPrerequisite>
 	<skillRequirements>
-<!-- 	  <Crafting>6</Crafting> -->
+	  <Crafting>6</Crafting>
     </skillRequirements>
-	<workAmount>10</workAmount>
+	<workAmount>10000</workAmount>
     <ingredients>
-<!-- 	  <li>
+	  <li>
         <filter>
           <thingDefs>
             <li>Jade</li>
@@ -815,7 +790,7 @@ In addition, decay touch is 50% more effective and strikes twice.</description>
           </thingDefs>
         </filter>
         <count>1</count>
-      </li> -->
+      </li>
     </ingredients>
   </RecipeDef>
   
@@ -827,12 +802,12 @@ Movement:	+[25/40/50]%
 Health:	+[40/60/75]%</description>
     <jobString>applying elemental affinity</jobString>
 	<skillRequirements>
-<!-- 	  <Crafting>6</Crafting>
-	  <Intellectual>4</Intellectual> -->
+	  <Crafting>6</Crafting>
+	  <Intellectual>4</Intellectual>
     </skillRequirements>
-	<workAmount>12</workAmount>
+	<workAmount>12000</workAmount>
     <ingredients>
-<!-- 	  <li>
+	  <li>
         <filter>
           <thingDefs>
             <li>Steel</li>
@@ -855,7 +830,7 @@ Health:	+[40/60/75]%</description>
           </thingDefs>
         </filter>
         <count>80</count>
-      </li> -->
+      </li>
     </ingredients>
   </RecipeDef>
   
@@ -867,12 +842,12 @@ Movement:	+[20/30/35]%
 Health:	+[50/75/90]%</description>
     <jobString>applying elemental affinity</jobString>
 	<skillRequirements>
-<!-- 	  <Crafting>6</Crafting>
-	  <Intellectual>4</Intellectual> -->
+	  <Crafting>6</Crafting>
+	  <Intellectual>4</Intellectual>
     </skillRequirements>
-	<workAmount>12</workAmount>
+	<workAmount>12000</workAmount>
     <ingredients>
-<!-- 	  <li>
+	  <li>
         <filter>
           <thingDefs>
             <li>Steel</li>
@@ -895,7 +870,7 @@ Health:	+[50/75/90]%</description>
           </thingDefs>
         </filter>
         <count>20</count>
-      </li> -->
+      </li>
     </ingredients>
   </RecipeDef>
   
@@ -907,12 +882,12 @@ Movement:	+[15/25/30]%
 Health:	+[55/85/100]%</description>
     <jobString>applying elemental affinity</jobString>
 	<skillRequirements>
-<!-- 	  <Crafting>4</Crafting>
-	  <Intellectual>6</Intellectual> -->
+	  <Crafting>4</Crafting>
+	  <Intellectual>6</Intellectual>
     </skillRequirements>
-	<workAmount>12</workAmount>
+	<workAmount>12000</workAmount>
     <ingredients>
-<!-- 	  <li>
+	  <li>
         <filter>
           <thingDefs>
             <li>Steel</li>
@@ -935,7 +910,7 @@ Health:	+[55/85/100]%</description>
           </thingDefs>
         </filter>
         <count>1</count>
-      </li> -->
+      </li>
     </ingredients>
   </RecipeDef>
   
@@ -947,12 +922,12 @@ Movement:	+[10/15/20]%
 Health:	+[65/90/110]%</description>
     <jobString>crafting golem upgrade</jobString>	
 	<skillRequirements>
-<!-- 	  <Crafting>5</Crafting>
-	  <Intellectual>5</Intellectual> -->
+	  <Crafting>5</Crafting>
+	  <Intellectual>5</Intellectual>
     </skillRequirements>
-	<workAmount>12</workAmount>
+	<workAmount>12000</workAmount>
     <ingredients>
-<!-- 	  <li>
+	  <li>
         <filter>
           <thingDefs>
             <li>Steel</li>
@@ -967,7 +942,7 @@ Health:	+[65/90/110]%</description>
           </thingDefs>
         </filter>
         <count>1</count>
-      </li> -->
+      </li>
     </ingredients>
   </RecipeDef>
   

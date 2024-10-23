@@ -94,9 +94,9 @@ namespace TorannMagic
                     if (curCell.InBoundsWithNullCheck(map) && curCell.IsValid)
                     {
                         victim = curCell.GetFirstPawn(map);
-                        if(victim != null && !victim.Dead && victim.RaceProps.IsFlesh)
+                        if(victim != null && !victim.Dead && victim.RaceProps.FleshType.isOrganic)
                         {
-                            if(TM_Calc.IsUndead(victim) || victim.needs.food == null)
+                            if(TM_Calc.IsUndead(victim))
                             {
                                 //heals undead
                                 Hediff_Injury injuryToHeal = victim.health.hediffSet.hediffs

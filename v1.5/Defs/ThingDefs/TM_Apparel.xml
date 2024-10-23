@@ -364,9 +364,9 @@ Arcane Power: +10%</description>
 	<equippedStatOffsets>
 		<PsychicSensitivity>0.25</PsychicSensitivity>
 		<MentalBreakThreshold>0.12</MentalBreakThreshold>
-		<MeditationFocusGain>0.10</MeditationFocusGain>
-		<PsychicEntropyMax>0.10</PsychicEntropyMax>
-		<PsychicEntropyRecoveryRate>0.10</PsychicEntropyRecoveryRate>
+		<MeditationFocusGain MayRequire="Ludeon.RimWorld.Ideology">0.10</MeditationFocusGain>
+		<PsychicEntropyMax MayRequire="Ludeon.RimWorld.Ideology">0.10</PsychicEntropyMax>
+		<PsychicEntropyRecoveryRate MayRequire="Ludeon.RimWorld.Ideology">0.10</PsychicEntropyRecoveryRate>
 	</equippedStatOffsets>
 		<recipeMaker>
       <workAmount>16000</workAmount>
@@ -1587,8 +1587,8 @@ Arcane Power: +10%</description>
 		<WorkSpeedGlobal>0.15</WorkSpeedGlobal>
 		<PsychicSensitivity>0.30</PsychicSensitivity>
 		<MentalBreakThreshold>-0.05</MentalBreakThreshold>
-		<MeditationFocusGain>0.1</MeditationFocusGain>
-		<PsychicEntropyMax>0.15</PsychicEntropyMax>
+		<MeditationFocusGain MayRequire="Ludeon.RimWorld.Ideology">0.1</MeditationFocusGain>
+		<PsychicEntropyMax MayRequire="Ludeon.RimWorld.Ideology">0.15</PsychicEntropyMax>
 	</equippedStatOffsets>
 	<recipeMaker>
       <workAmount>25000</workAmount>

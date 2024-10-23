@@ -240,7 +240,8 @@ namespace TorannMagic
                                     || rec.def.defName == "CatatonicBreakdown"
                                     || rec.def.defName.Contains("Pregnant")
                                     || rec.def.defName == "DrugOverdose"
-                                    || rec.def.defName == "GeneticDrugNeed")
+                                    || rec.def.defName == "GeneticDrugNeed"
+                                    || rec.def.defName == "HeartAttack")
                                 {
                                     removeHDList.Add(rec);
                                 }
