@@ -4053,13 +4053,22 @@ namespace TorannMagic
             //p.equipment.Primary.TryGetQuality(out qc);
             //float qc_m = GetQualityMultiplier(qc);
             const float qc_m = 1f;
-            float result = (
-                qc_m * vp.defaultProjectile.projectile.GetDamageAmount(p.equipment.Primary)
-                - 2 * (vp.warmupTime + vp.defaultCooldownTime)
-                + 3 * vp.defaultProjectile.projectile.stoppingPower
-            ) * strFactor;
-            DamageCache_Ranged.Add(p, result);
-            return result;
+
+            try
+            {
+                float result = (
+                    qc_m * vp.defaultProjectile.projectile.GetDamageAmount(p.equipment.Primary)
+                    - 2 * (vp.warmupTime + vp.defaultCooldownTime)
+                    + 3 * vp.defaultProjectile.projectile.stoppingPower
+                ) * strFactor;
+                DamageCache_Ranged.Add(p, result);
+                return result;
+            }
+            catch
+            {
+                DamageCache_Ranged.Add(p, 0);
+                return 0;
+            }            
         }
 
         public static float GetQualityMultiplier(QualityCategory qc)

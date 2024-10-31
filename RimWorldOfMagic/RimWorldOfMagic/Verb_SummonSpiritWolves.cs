@@ -89,7 +89,7 @@ namespace TorannMagic
                     HealthUtility.AdjustSeverity(animal, TorannMagicDefOf.TM_EnrageHD, .2f + (.1f * pwrVal));
                     for (int j = 0; j < 3; j++)
                     {
-                        FleckMaker.ThrowSmoke(animal.DrawPos, map, Rand.Range(.5f, 1.1f));
+                        FleckMaker.ThrowSmoke(animal.Position.ToVector3Shifted(), map, Rand.Range(.5f, 1.1f));                        
                     }
                     Pawn enemy = TM_Calc.FindNearbyEnemy(animal, 30);
                     if (enemy != null)

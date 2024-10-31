@@ -107,7 +107,7 @@ namespace TorannMagic
                         }
                         for (int i = 0; i < 3; i++)
                         {
-                            Vector3 rndPos = this.spirit.DrawPos;
+                            Vector3 rndPos = this.spirit.Position.ToVector3Shifted();
                             rndPos.x += Rand.Range(-.5f, .5f);
                             rndPos.z += Rand.Range(-.5f, .5f);
                             TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Healing_Small, rndPos, map, Rand.Range(.6f, .8f), .1f, .05f, .05f, 0, 0, 0, Rand.Range(0, 360));

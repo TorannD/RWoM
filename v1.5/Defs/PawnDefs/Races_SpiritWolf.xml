@@ -124,7 +124,7 @@
         <bodyGraphicData>
           <texPath>PawnKind/spiritwolf</texPath>
           <drawSize>1</drawSize>
-		  <shaderType>TransparentPostLight</shaderType>
+<!-- 		  <shaderType>TransparentPostLight</shaderType> -->
           <shadowData>
             <volume>(0.3, 0.4, 0.3)</volume>
             <offset>(0,0,-0.15)</offset>
