@@ -74,9 +74,9 @@ namespace TorannMagic
                         this.shouldRemove = true;
                     }
 
-                    if (this.Pawn.needs != null && this.Pawn.needs.mood != null)
+                    if (this.Pawn.needs != null && this.Pawn.needs?.mood != null)
                     {
-                        if (this.Pawn.needs.mood.CurLevel < .01f)
+                        if (this.Pawn.needs?.mood?.CurLevel < .01f)
                         {
                             this.shouldRemove = true;
                             RemoveHostHediff();

@@ -52,18 +52,18 @@ namespace TorannMagic
             if (friendlyTarget)
             {
                 Pawn pawn = this.currentTarget.Thing as Pawn;
-                if (pawn != null && pawn.RaceProps.Humanlike && pawn.needs != null && pawn.needs.mood.thoughts != null)
+                if (pawn != null && pawn.RaceProps.Humanlike && pawn.needs != null && pawn.needs?.mood?.thoughts != null)
                 {
                     if (Rand.Chance(TM_Calc.GetSpellSuccessChance(this.CasterPawn, pawn, true)))
                     {
-                        List<Thought_Memory> thoughts = pawn.needs.mood.thoughts.memories.Memories;
+                        List<Thought_Memory> thoughts = pawn.needs?.mood?.thoughts.memories.Memories;
                         pawn.mindState.mentalStateHandler.TryStartMentalState(TorannMagicDefOf.WanderConfused, null, false, false, false, null, false);
                         for(int i =0; i< thoughts.Count; i++)
                         {
-                            pawn.needs.mood.thoughts.memories.RemoveMemory(thoughts[i]);                            
+                            pawn.needs?.mood?.thoughts.memories.RemoveMemory(thoughts[i]);                            
                             i--;
                         }
-                        pawn.needs.mood.thoughts.memories.TryGainMemory(TorannMagicDefOf.TM_MemoryWipe, null);
+                        pawn.needs?.mood?.thoughts.memories.TryGainMemory(TorannMagicDefOf.TM_MemoryWipe, null);
                         Effects(pawn.Position);
                     }
                     else

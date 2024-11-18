@@ -17,14 +17,14 @@ namespace TorannMagic.Ideology
                 return;
             }
             Pawn arg = ev.args.GetArg<Pawn>(HistoryEventArgsNames.Doer);
-            if (arg.needs != null && arg.needs.mood != null && (!onlyForNonSlaves || !arg.IsSlave) && (thought.minExpectationForNegativeThought == null || ExpectationsUtility.CurrentExpectationFor(arg).order >= thought.minExpectationForNegativeThought.order))
+            if (arg.needs != null && arg.needs?.mood != null && (!onlyForNonSlaves || !arg.IsSlave) && (thought.minExpectationForNegativeThought == null || ExpectationsUtility.CurrentExpectationFor(arg).order >= thought.minExpectationForNegativeThought.order))
             {
                 Thought_Memory thought_Memory = ThoughtMaker.MakeThought(thought, precept);
                 if (TM_Calc.IsMagicUser(arg))
                 {
                     thought_Memory.SetForcedStage(1);
                 }               
-                arg.needs.mood.thoughts.memories.TryGainMemory(thought_Memory);
+                arg.needs?.mood?.thoughts.memories.TryGainMemory(thought_Memory);
             }
         }
     }

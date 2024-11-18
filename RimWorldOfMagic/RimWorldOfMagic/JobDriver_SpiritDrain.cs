@@ -29,7 +29,7 @@ namespace TorannMagic
             CompAbilityUserMagic comp = this.pawn.GetCompAbilityUserMagic();
             Toil discordance = new Toil();
             Pawn target = this.TargetThingA as Pawn;
-            Need_Spirit spiritNeed = this.pawn.needs.TryGetNeed(TorannMagicDefOf.TM_SpiritND) as Need_Spirit;
+            Need_Spirit spiritNeed = this.pawn.needs?.TryGetNeed(TorannMagicDefOf.TM_SpiritND) as Need_Spirit;
             int effVal = TM_Calc.GetSkillEfficiencyLevel(this.pawn, TorannMagicDefOf.TM_SpiritDrain);
             int pwrVal = TM_Calc.GetSkillPowerLevel(this.pawn, TorannMagicDefOf.TM_SpiritDrain);
             int verVal = TM_Calc.GetSkillVersatilityLevel(this.pawn, TorannMagicDefOf.TM_SpiritDrain);

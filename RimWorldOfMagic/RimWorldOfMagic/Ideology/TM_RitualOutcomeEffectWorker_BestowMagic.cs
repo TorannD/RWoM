@@ -34,7 +34,7 @@ namespace TorannMagic.Ideology
             {
                 if (key.IsSlave)
                 {
-                    Need_Suppression need_Suppression = key.needs.TryGetNeed<Need_Suppression>();
+                    Need_Suppression need_Suppression = key.needs?.TryGetNeed<Need_Suppression>();
                     if (need_Suppression != null)
                     {
                         need_Suppression.CurLevel = 1f;

@@ -275,15 +275,15 @@ namespace TorannMagic
                     xpGain = Mathf.RoundToInt(xpGain * studentComp.xpGain);
                     MoteMaker.ThrowText(student.DrawPos, student.MapHeld, "XP +" + xpGain, -1f);
                     studentComp.MagicUserXP += xpGain;
-                    if (this.pawn.needs.joy != null)
+                    if (this.pawn.needs?.joy != null)
                     {
-                        this.pawn.needs.joy.GainJoy(.4f, TorannMagicDefOf.Gaming_Cerebral);
-                        this.pawn.needs.joy.GainJoy(.2f, TorannMagicDefOf.Social);
+                        this.pawn.needs?.joy.GainJoy(.4f, TorannMagicDefOf.Gaming_Cerebral);
+                        this.pawn.needs?.joy.GainJoy(.2f, TorannMagicDefOf.Social);
                     }
-                    if (student.needs.joy != null)
+                    if (student.needs?.joy != null)
                     {
-                        student.needs.joy.GainJoy(.4f, TorannMagicDefOf.Gaming_Cerebral);
-                        student.needs.joy.GainJoy(.2f, TorannMagicDefOf.Social);
+                        student.needs?.joy.GainJoy(.4f, TorannMagicDefOf.Gaming_Cerebral);
+                        student.needs?.joy.GainJoy(.2f, TorannMagicDefOf.Social);
                     }
                 }
                 catch(NullReferenceException ex)
@@ -317,15 +317,15 @@ namespace TorannMagic
                     xpGain = Mathf.RoundToInt(xpGain * studentComp.xpGain);
                     MoteMaker.ThrowText(student.DrawPos, student.MapHeld, "XP +" + xpGain, -1f);
                     studentComp.MightUserXP += xpGain;
-                    if (this.pawn.needs.joy != null)
+                    if (this.pawn.needs?.joy != null)
                     {
-                        this.pawn.needs.joy.GainJoy(.4f, TorannMagicDefOf.Gaming_Dexterity);
-                        this.pawn.needs.joy.GainJoy(.2f, TorannMagicDefOf.Social);
+                        this.pawn.needs?.joy.GainJoy(.4f, TorannMagicDefOf.Gaming_Dexterity);
+                        this.pawn.needs?.joy.GainJoy(.2f, TorannMagicDefOf.Social);
                     }
-                    if (student.needs.joy != null)
+                    if (student.needs?.joy != null)
                     {
-                        student.needs.joy.GainJoy(.4f, TorannMagicDefOf.Gaming_Dexterity);
-                        student.needs.joy.GainJoy(.2f, TorannMagicDefOf.Social);
+                        student.needs?.joy.GainJoy(.4f, TorannMagicDefOf.Gaming_Dexterity);
+                        student.needs?.joy.GainJoy(.2f, TorannMagicDefOf.Social);
                     }
                 }
                 catch (NullReferenceException ex)

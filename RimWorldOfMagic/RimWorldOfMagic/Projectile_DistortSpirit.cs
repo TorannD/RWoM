@@ -61,7 +61,7 @@ namespace TorannMagic
                     HealthUtility.AdjustSeverity(p, TorannMagicDefOf.TM_SpiritDrainHD, .1f * verVal);
                     if(verVal > 1 && !caster.DestroyedOrNull())
                     {
-                        Need_Spirit ns = caster.needs.TryGetNeed(TorannMagicDefOf.TM_SpiritND) as Need_Spirit;
+                        Need_Spirit ns = caster.needs?.TryGetNeed(TorannMagicDefOf.TM_SpiritND) as Need_Spirit;
                         if(ns != null)
                         {
                             ns.GainNeed(Rand.Range(.12f, .2f) * verVal * comp.arcaneDmg);

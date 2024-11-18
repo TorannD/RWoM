@@ -162,9 +162,9 @@ namespace TorannMagic
                     }
                     if (mightDef.requiredNeed != null)
                     {
-                        if (this.Pawn.needs != null && this.Pawn.needs.AllNeeds != null && this.Pawn.needs.TryGetNeed(this.mightDef.requiredNeed) != null)
+                        if (this.Pawn.needs != null && this.Pawn.needs?.AllNeeds != null && this.Pawn.needs?.TryGetNeed(this.mightDef.requiredNeed) != null)
                         {
-                            Need nd = this.Pawn.needs.TryGetNeed(this.mightDef.requiredNeed);
+                            Need nd = this.Pawn.needs?.TryGetNeed(this.mightDef.requiredNeed);
                             nd.CurLevel -= ActualNeedCost(mightDef, this.MightUser);
                             this.MightUser.MightUserXP += Mathf.Clamp((int)((mightDef.needXPFactor * this.MightUser.xpGain * ModOptions.Settings.Instance.xpMultiplier) * mightDef.needCost), 0, 9999);
                         }
@@ -548,9 +548,9 @@ namespace TorannMagic
                         bool flagNeed = mightDef.requiredNeed != null;
                         if (flagNeed)
                         {
-                            if (this.MightUser.Pawn.needs.TryGetNeed(mightDef.requiredNeed) != null)
+                            if (this.MightUser.Pawn.needs?.TryGetNeed(mightDef.requiredNeed) != null)
                             {
-                                if (this.MightUser.Pawn.needs.TryGetNeed(mightDef.requiredNeed).CurLevel < ActualNeedCost(mightDef, MightUser))
+                                if (this.MightUser.Pawn.needs?.TryGetNeed(mightDef.requiredNeed).CurLevel < ActualNeedCost(mightDef, MightUser))
                                 {
                                     reason = "TM_NotEnoughEnergy".Translate(
                                         base.Pawn.LabelShort,

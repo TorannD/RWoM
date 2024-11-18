@@ -10,7 +10,7 @@ namespace TorannMagic.Thoughts
         {
             if (p.needs != null)
             {
-                Need_Travel tn = p.needs.TryGetNeed(TorannMagicDefOf.TM_Travel) as Need_Travel;
+                Need_Travel tn = p.needs?.TryGetNeed(TorannMagicDefOf.TM_Travel) as Need_Travel;
                 if (tn != null)
                 {
                     switch (tn.CurCategory)

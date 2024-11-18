@@ -25,7 +25,7 @@ namespace TorannMagic.Golems
             if (pg != null && pg.Drafted && !pg.rangedToggle)
             {                
                 CompGolem Golem = pawn.TryGetComp<CompGolem>();
-                Need_GolemEnergy energy = pawn.needs.TryGetNeed(TorannMagicDefOf.TM_GolemEnergy) as Need_GolemEnergy;
+                Need_GolemEnergy energy = pawn.needs?.TryGetNeed(TorannMagicDefOf.TM_GolemEnergy) as Need_GolemEnergy;
                 Thing threat = Golem.ActiveThreat;
                 if (threat != null)
                 {

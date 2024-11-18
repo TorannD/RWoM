@@ -677,11 +677,11 @@ namespace TorannMagic
             }
             if(ability.requiredNeed != null)
             {
-                if(p.needs == null || p.needs.AllNeeds == null)
+                if(p.needs == null || p.needs?.AllNeeds == null)
                 {
                     return false;
                 }
-                Need nd = p.needs.TryGetNeed(ability.requiredNeed);
+                Need nd = p.needs?.TryGetNeed(ability.requiredNeed);
                 if(nd == null)
                 {
                     return false;

@@ -57,22 +57,22 @@ namespace TorannMagic
                 actor.GainComfortFromCellIfPossible();
                 if (!curDriver.asleep)
                 {
-                    if (actor.needs.rest != null && actor.needs.rest.CurLevel < .99f * WakeThreshold(actor))
+                    if (actor.needs?.rest != null && actor.needs?.rest.CurLevel < .99f * WakeThreshold(actor))
                     {
                         curDriver.asleep = true;
                     }
                 }
-                else if ((actor.needs.rest == null || actor.needs.rest.CurLevel >= WakeThreshold(actor)))
+                else if ((actor.needs?.rest == null || actor.needs?.rest.CurLevel >= WakeThreshold(actor)))
                 {
                     actor.mindState.priorityWork.ClearPrioritizedWorkAndJobQueue();
                     this.EndJobWith(JobCondition.Incompletable);
                 }
 
-                if (curDriver.asleep && actor.needs.rest != null)
+                if (curDriver.asleep && actor.needs?.rest != null)
                 {                    
                     num = 0.7f * num + 0.3f * num;  //talk about convoluted calculations...
-                    actor.needs.rest.TickResting(num);
-                    if(actor.needs.rest.CurLevel >= .99f * WakeThreshold(actor))
+                    actor.needs?.rest.TickResting(num);
+                    if(actor.needs?.rest.CurLevel >= .99f * WakeThreshold(actor))
                     {
                         curDriver.asleep = false;
                         actor.mindState.priorityWork.ClearPrioritizedWorkAndJobQueue();
@@ -115,32 +115,32 @@ namespace TorannMagic
 
         private static void ApplyBedThoughts(Pawn actor)
         {
-            if (actor.needs.mood == null)
+            if (actor.needs?.mood == null)
             {
                 return;
             }
             Building_Bed building_Bed = actor.CurrentBed();
-            actor.needs.mood.thoughts.memories.RemoveMemoriesOfDef(ThoughtDefOf.SleptInBedroom);
-            actor.needs.mood.thoughts.memories.RemoveMemoriesOfDef(ThoughtDefOf.SleptInBarracks);
-            actor.needs.mood.thoughts.memories.RemoveMemoriesOfDef(ThoughtDefOf.SleptOutside);
-            actor.needs.mood.thoughts.memories.RemoveMemoriesOfDef(ThoughtDefOf.SleptOnGround);
-            actor.needs.mood.thoughts.memories.RemoveMemoriesOfDef(ThoughtDefOf.SleptInCold);
-            actor.needs.mood.thoughts.memories.RemoveMemoriesOfDef(ThoughtDefOf.SleptInHeat);
+            actor.needs?.mood?.thoughts.memories.RemoveMemoriesOfDef(ThoughtDefOf.SleptInBedroom);
+            actor.needs?.mood?.thoughts.memories.RemoveMemoriesOfDef(ThoughtDefOf.SleptInBarracks);
+            actor.needs?.mood?.thoughts.memories.RemoveMemoriesOfDef(ThoughtDefOf.SleptOutside);
+            actor.needs?.mood?.thoughts.memories.RemoveMemoriesOfDef(ThoughtDefOf.SleptOnGround);
+            actor.needs?.mood?.thoughts.memories.RemoveMemoriesOfDef(ThoughtDefOf.SleptInCold);
+            actor.needs?.mood?.thoughts.memories.RemoveMemoriesOfDef(ThoughtDefOf.SleptInHeat);
             if (actor.GetRoom(RegionType.Set_Passable).PsychologicallyOutdoors)
             {
-                actor.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.SleptOutside, null);
+                actor.needs?.mood?.thoughts.memories.TryGainMemory(ThoughtDefOf.SleptOutside, null);
             }
             if (building_Bed == null || building_Bed.CostListAdjusted().Count == 0)
             {
-                actor.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.SleptOnGround, null);
+                actor.needs?.mood?.thoughts.memories.TryGainMemory(ThoughtDefOf.SleptOnGround, null);
             }
             if (actor.AmbientTemperature < actor.def.GetStatValueAbstract(StatDefOf.ComfyTemperatureMin, null))
             {
-                actor.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.SleptInCold, null);
+                actor.needs?.mood?.thoughts.memories.TryGainMemory(ThoughtDefOf.SleptInCold, null);
             }
             if (actor.AmbientTemperature > actor.def.GetStatValueAbstract(StatDefOf.ComfyTemperatureMax, null))
             {
-                actor.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.SleptInHeat, null);
+                actor.needs?.mood?.thoughts.memories.TryGainMemory(ThoughtDefOf.SleptInHeat, null);
             }
             if (building_Bed != null && building_Bed == actor.ownership.OwnedBed && !building_Bed.ForPrisoners && !actor.story.traits.HasTrait(TraitDefOf.Ascetic))
             {
@@ -158,7 +158,7 @@ namespace TorannMagic
                     int scoreStageIndex = RoomStatDefOf.Impressiveness.GetScoreStageIndex(building_Bed.GetRoom(RegionType.Set_Passable).GetStat(RoomStatDefOf.Impressiveness));
                     if (thoughtDef.stages[scoreStageIndex] != null)
                     {
-                        actor.needs.mood.thoughts.memories.TryGainMemory(ThoughtMaker.MakeThought(thoughtDef, scoreStageIndex), null);
+                        actor.needs?.mood?.thoughts.memories.TryGainMemory(ThoughtMaker.MakeThought(thoughtDef, scoreStageIndex), null);
                     }
                 }
             }

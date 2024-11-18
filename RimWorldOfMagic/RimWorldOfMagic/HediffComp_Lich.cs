@@ -72,7 +72,7 @@ namespace TorannMagic
 
             if (Find.TickManager.TicksGame % 600 == 0)
             {
-                List<Need> needs = base.Pawn.needs.AllNeeds;
+                List<Need> needs = base.Pawn.needs?.AllNeeds;
                 for (int i = 0; i < needs.Count; i++)
                 {
                     if(needs[i].def.defName != "Joy" && 

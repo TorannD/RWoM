@@ -128,9 +128,9 @@ namespace TorannMagic
                     int xpGain = Mathf.RoundToInt(xpBase * comp.xpGain);
                     MoteMaker.ThrowText(pawn.DrawPos, pawn.MapHeld, "XP +" + xpGain, -1f);
                     comp.MightUserXP += xpGain;
-                    if (this.pawn.needs.joy != null)
+                    if (this.pawn.needs?.joy != null)
                     {
-                        this.pawn.needs.joy.GainJoy(.4f, TorannMagicDefOf.Social);
+                        this.pawn.needs?.joy.GainJoy(.4f, TorannMagicDefOf.Social);
                     }
                     if (this.pawn.skills != null)
                     {

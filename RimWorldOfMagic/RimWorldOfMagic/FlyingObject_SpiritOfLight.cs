@@ -788,17 +788,17 @@ namespace TorannMagic
                             p = TM_Calc.FindNearbyPawn(this.pawn, 10);
                             if (p != null && p.needs != null && TM_Calc.HasLoSFromTo(this.pawn.Position, p, this.pawn, 0, 10))
                             {
-                                if ((this.pawn.CurJobDef.joyKind != null || this.pawn.CurJobDef == JobDefOf.Wait_Wander || this.pawn.CurJobDef == JobDefOf.GotoWander) && this.pawn.needs.joy.CurLevelPercentage < .5f)
+                                if ((this.pawn.CurJobDef.joyKind != null || this.pawn.CurJobDef == JobDefOf.Wait_Wander || this.pawn.CurJobDef == JobDefOf.GotoWander) && this.pawn.needs?.joy.CurLevelPercentage < .5f)
                                 {
                                     this.delayCount = 0;
                                     Action_JoyBurst(this.pawn.DrawPos, out destTarget);
                                 }
-                                else if (p.needs.joy != null && (p.CurJobDef.joyKind != null || p.CurJobDef == JobDefOf.Wait_Wander || p.CurJobDef == JobDefOf.GotoWander) && p.needs.joy.CurLevelPercentage < .5f)
+                                else if (p.needs?.joy != null && (p.CurJobDef.joyKind != null || p.CurJobDef == JobDefOf.Wait_Wander || p.CurJobDef == JobDefOf.GotoWander) && p.needs?.joy.CurLevelPercentage < .5f)
                                 {
                                     this.delayCount = 0;
                                     Action_JoyBurst(p.DrawPos, out destTarget);
                                 }
-                                else if (this.delayCount > 3 && p.needs.mood != null && p.needs.mood.thoughts != null && p.needs.mood.thoughts.memories != null && p.needs.mood.thoughts.memories.GetFirstMemoryOfDef(TorannMagicDefOf.TM_BrightDayTD) == null)
+                                else if (this.delayCount > 3 && p.needs?.mood != null && p.needs?.mood?.thoughts != null && p.needs?.mood?.thoughts.memories != null && p.needs?.mood?.thoughts.memories.GetFirstMemoryOfDef(TorannMagicDefOf.TM_BrightDayTD) == null)
                                 {
                                     this.delayCount = 0;
                                     Action_GotoTarget(p.DrawPos, speed_jog, out destTarget);
@@ -841,7 +841,7 @@ namespace TorannMagic
                 if(this.assignedTarget != null && this.assignedTarget is Pawn p)
                 {
                     ActualLightCost(6f);
-                    p.needs.mood.thoughts.memories.TryGainMemory(TorannMagicDefOf.TM_BrightDayTD);
+                    p.needs?.mood?.thoughts.memories.TryGainMemory(TorannMagicDefOf.TM_BrightDayTD);
                     Action_CircleTarget(this.assignedTarget, out destTarget);
                     queuedAction = SoLAction.Returning;
                 }
@@ -958,18 +958,18 @@ namespace TorannMagic
             this.speed = speed_hover;
             this.solAction = SoLAction.Sleeping;
             this.delayCount++;
-            if(delayCount > 10 && EnergyChance && pawn.needs.mood != null && pawn.needs.mood.thoughts != null)
+            if(delayCount > 10 && EnergyChance && pawn.needs?.mood != null && pawn.needs?.mood?.thoughts != null)
             {
                 this.delayCount = 0;
-                if (pawn.needs.mood.thoughts.memories.GetFirstMemoryOfDef(TorannMagicDefOf.TM_PleasantDreamsTD) == null)
+                if (pawn.needs?.mood?.thoughts.memories.GetFirstMemoryOfDef(TorannMagicDefOf.TM_PleasantDreamsTD) == null)
                 {
                     ActualLightCost(5f);
-                    pawn.needs.mood.thoughts.memories.TryGainMemory(TorannMagicDefOf.TM_PleasantDreamsTD);
+                    pawn.needs?.mood?.thoughts.memories.TryGainMemory(TorannMagicDefOf.TM_PleasantDreamsTD);
                 }
-                if(pawn.needs.mood.thoughts.memories.GetFirstMemoryOfDef(ThoughtDefOf.SleepDisturbed) != null)
+                if(pawn.needs?.mood?.thoughts.memories.GetFirstMemoryOfDef(ThoughtDefOf.SleepDisturbed) != null)
                 {
                     ActualLightCost(3f);
-                    pawn.needs.mood.thoughts.memories.RemoveMemoriesOfDef(ThoughtDefOf.SleepDisturbed);
+                    pawn.needs?.mood?.thoughts.memories.RemoveMemoriesOfDef(ThoughtDefOf.SleepDisturbed);
                 }
             }
             destTarget = GetCasterOffset_Rand;
@@ -1024,7 +1024,7 @@ namespace TorannMagic
                 for(int i = 0; i < affectedPawns.Count; i++)
                 {
                     Pawn p = affectedPawns[i];
-                    if(p.needs != null && p.needs.joy != null)
+                    if(p.needs != null && p.needs?.joy != null)
                     {
                         p.needs.joy.CurLevel += Rand.Range(.2f, .4f) * LightPotency;
                     }

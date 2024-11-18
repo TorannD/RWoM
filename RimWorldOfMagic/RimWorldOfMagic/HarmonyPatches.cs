@@ -556,9 +556,9 @@ namespace TorannMagic
             {
                 try
                 {
-                    if (p.needs.energy != null)
+                    if (p.needs?.energy != null)
                     {
-                        __result = p.needs.energy.currentCharger != null;
+                        __result = p.needs?.energy.currentCharger != null;
                     }
                     __result = false;
                 }
@@ -655,7 +655,7 @@ namespace TorannMagic
                     Pawn s = dinfo.Value.Instigator as Pawn;
                     if (s.needs != null)
                     {
-                        Need_Spirit ns = s.needs.TryGetNeed(TorannMagicDefOf.TM_SpiritND) as Need_Spirit;
+                        Need_Spirit ns = s.needs?.TryGetNeed(TorannMagicDefOf.TM_SpiritND) as Need_Spirit;
                         if (ns != null)
                         {
                             TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Ghost, __instance.DrawPos, s.Map, .8f, .25f, 0f, .25f, 0, Rand.Range(2f, 3f), 0, 0);
@@ -680,7 +680,7 @@ namespace TorannMagic
                 {
                     if(TM_Calc.IsPossessedByOrIsSpirit(___pawn))
                     {
-                        Need_Spirit ns = ___pawn.needs.TryGetNeed(TorannMagicDefOf.TM_SpiritND) as Need_Spirit;
+                        Need_Spirit ns = ___pawn.needs?.TryGetNeed(TorannMagicDefOf.TM_SpiritND) as Need_Spirit;
                         if(ns != null)
                         {
                             int verVal = 0;
@@ -1612,7 +1612,7 @@ namespace TorannMagic
                                     {
                                         compListener.Mana.CurLevel += .0075f;
                                     }
-                                    if (p.needs != null && p.needs.joy != null)
+                                    if (p.needs != null && p.needs?.joy != null)
                                     {
                                         p.needs.joy.CurLevel += .01f;
                                     }
@@ -4665,7 +4665,7 @@ namespace TorannMagic
                         if (__instance.def == TorannMagicDefOf.TM_SpiritTD)
                         {
                             float amt = dinfo.Amount * .25f;
-                            Need nd = __instance.needs.TryGetNeed(TorannMagicDefOf.TM_SpiritND);
+                            Need nd = __instance.needs?.TryGetNeed(TorannMagicDefOf.TM_SpiritND);
                             if (nd != null)
                             {
                                 nd.CurLevel -= amt;
@@ -5072,7 +5072,7 @@ namespace TorannMagic
                         //drains spirit energy
                         if(instigator != null && instigator.needs != null && TM_Calc.IsPossessedBySpirit(instigator) && !TM_Calc.IsRobotPawn(___pawn) && TM_Calc.IsUsingMelee(instigator) && (instigator.Position - ___pawn.Position).LengthHorizontal <= 1.8f)
                         {
-                            Need_Spirit ns = instigator.needs.TryGetNeed(TorannMagicDefOf.TM_SpiritND) as Need_Spirit;
+                            Need_Spirit ns = instigator.needs?.TryGetNeed(TorannMagicDefOf.TM_SpiritND) as Need_Spirit;
                             if(ns != null)
                             {
                                 float rnd = Rand.Range(.05f, .08f);

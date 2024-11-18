@@ -66,7 +66,7 @@ namespace TorannMagic
             if (!initialized)
             {
                 hitPawn = hitThing as Pawn;
-                if (hitThing != null && hitPawn.needs.food != null)
+                if (hitThing != null && hitPawn.needs?.food != null)
                 {
                     duration += (verVal * 180);                    
                     Initialize(hitPawn);

@@ -14,12 +14,12 @@ namespace TorannMagic.Ideology
         {
             if (pawn.needs?.mood?.thoughts?.memories != null)
             {
-                Thought_Memory tm_ven = pawn.needs.mood.thoughts.memories.GetFirstMemoryOfDef(TorannMagicDefOf.TM_SeverMagic_ForVeneratedTD);
+                Thought_Memory tm_ven = pawn.needs?.mood?.thoughts.memories.GetFirstMemoryOfDef(TorannMagicDefOf.TM_SeverMagic_ForVeneratedTD);
                 if (tm_ven != null && otherPawn.Ideo.GetRole(otherPawn)?.def == TorannMagicDefOf.TM_IdeoRole_VoidSeeker)
                 {
                     return ThoughtState.ActiveAtStage(1);
                 }
-                Thought_Memory tm_apr = pawn.needs.mood.thoughts.memories.GetFirstMemoryOfDef(TorannMagicDefOf.TM_SeverMagic_ForApproveTD);
+                Thought_Memory tm_apr = pawn.needs?.mood?.thoughts.memories.GetFirstMemoryOfDef(TorannMagicDefOf.TM_SeverMagic_ForApproveTD);
                 if (tm_apr != null && otherPawn.Ideo.GetRole(otherPawn)?.def == TorannMagicDefOf.TM_IdeoRole_VoidSeeker)
                 {
                     return ThoughtState.ActiveAtStage(0);

@@ -86,19 +86,19 @@ namespace TorannMagic
                     float effVal = TM_Calc.GetSkillPowerLevel(symbiote, TorannMagicDefOf.TM_Symbiosis);
                     if(base.Pawn.needs != null)
                     {
-                        if (base.Pawn.needs.mood != null)
+                        if (base.Pawn.needs?.mood != null)
                         {
                             base.Pawn.needs.mood.CurLevel += (.001f * effVal);
                         }
-                        if(base.Pawn.needs.rest != null)
+                        if(base.Pawn.needs?.rest != null)
                         {
                             base.Pawn.needs.rest.CurLevel += (.001f * effVal);
                         }
-                        if(base.Pawn.needs.food != null)
+                        if(base.Pawn.needs?.food != null)
                         {
                             base.Pawn.needs.food.CurLevel += (.001f * effVal);
                         }
-                        if(base.Pawn.needs.joy != null)
+                        if(base.Pawn.needs?.joy != null)
                         {
                             base.Pawn.needs.joy.CurLevel += (.001f * effVal);
                         }

@@ -295,7 +295,7 @@ namespace TorannMagic
             {
                 if (pawn.story?.traits != null && pawn.story.traits.HasTrait(TraitDefOf.Transhumanist))
                 {
-                    pawn.needs.mood.thoughts.memories.TryGainMemory(TorannMagicDefOf.Polymorphed_Transhumanist, this.spawner);
+                    pawn.needs?.mood?.thoughts.memories.TryGainMemory(TorannMagicDefOf.Polymorphed_Transhumanist, this.spawner);
                 }
                 else if(this.spawner == this.original)
                 {
@@ -303,7 +303,7 @@ namespace TorannMagic
                 }
                 else
                 {
-                    pawn.needs.mood.thoughts.memories.TryGainMemory(TorannMagicDefOf.Polymorphed, this.spawner);
+                    pawn.needs?.mood?.thoughts.memories.TryGainMemory(TorannMagicDefOf.Polymorphed, this.spawner);
                 }
             }
             catch(NullReferenceException)

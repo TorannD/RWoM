@@ -949,9 +949,9 @@ namespace TorannMagic.AutoCast
                     {
                         bool tatteredApparel = false;
                         //List<Thought_Memory> targetPawnThoughts = null;
-                        //targetPawn.needs.mood.thoughts.GetDistinctMoodThoughtGroups(targetPawnThoughts);
+                        //targetPawn.needs?.mood?.thoughts.GetDistinctMoodThoughtGroups(targetPawnThoughts);
                         //Log.Message("target pawn is " + targetPawn.LabelShort);
-                        //List<Thought_Memory> targetPawnThoughts = targetPawn.needs.mood.thoughts.memories.Memories;
+                        //List<Thought_Memory> targetPawnThoughts = targetPawn.needs?.mood?.thoughts.memories.Memories;
                         //for (int i = 0; i < targetPawnThoughts.Count; i++)
                         //{
                         

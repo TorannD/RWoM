@@ -30,7 +30,7 @@ namespace TorannMagic
                     {
                         pawn.timetable.SetAssignment(h, TimeAssignmentDefOf.Work);
                     }
-                    pawn.needs.AddOrRemoveNeedsAsAppropriate();
+                    pawn.needs?.AddOrRemoveNeedsAsAppropriate();
                     comp.MagicData.MagicPowersN.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_DeathBolt).learned = true;
                     comp.AddPawnAbility(TorannMagicDefOf.TM_DeathBolt, false);
                     comp.spell_Flight = true;

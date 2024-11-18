@@ -99,7 +99,7 @@ namespace TorannMagic
                                 HealthUtility.AdjustSeverity(p, HediffDef.Named("TM_DisorientedVomit"), 1f);
                             }
                             HealthUtility.AdjustSeverity(p, TorannMagicDefOf.TM_ReversalHD, 2f + (ver.level));
-                            if (targetPawn.HostileTo(this.CasterPawn) && targetPawn.needs.food != null)
+                            if (targetPawn.HostileTo(this.CasterPawn) && targetPawn.needs?.food != null)
                             {
                                 if (Rand.Chance(TM_Calc.GetSpellSuccessChance(this.CasterPawn, targetPawn, true)))
                                 {
@@ -112,7 +112,7 @@ namespace TorannMagic
                             }
                             else
                             {
-                                if (ver.level < 2 && targetPawn.needs.food != null)
+                                if (ver.level < 2 && targetPawn.needs?.food != null)
                                 {
                                     HealthUtility.AdjustSeverity(targetPawn, HediffDef.Named("TM_DisorientedVomit"), 1f);
                                 }

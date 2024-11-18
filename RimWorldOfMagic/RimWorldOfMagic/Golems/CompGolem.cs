@@ -254,7 +254,7 @@ namespace TorannMagic.Golems
 
         public LocalTargetInfo AbilityTarget => abilityTarget;
         public TM_GolemAbility ActiveAbility => activeAbility;
-        public Need_GolemEnergy Energy => Pawn.needs.TryGetNeed(TorannMagicDefOf.TM_GolemEnergy) as Need_GolemEnergy;
+        public Need_GolemEnergy Energy => Pawn.needs?.TryGetNeed(TorannMagicDefOf.TM_GolemEnergy) as Need_GolemEnergy;
         public bool HasEnergyForAbilities => Energy.CurEnergyPercent > minEnergyPctForAbilities;
 
         public ThingOwner GetDirectlyHeldThings()
@@ -399,7 +399,7 @@ namespace TorannMagic.Golems
         {
             if (Pawn.needs != null)
             {
-                Need_GolemEnergy need_ge = Pawn.needs.TryGetNeed(TorannMagicDefOf.TM_GolemEnergy) as Need_GolemEnergy;
+                Need_GolemEnergy need_ge = Pawn.needs?.TryGetNeed(TorannMagicDefOf.TM_GolemEnergy) as Need_GolemEnergy;
                 if (need_ge != null)
                 {
                     CompGolemEnergyHandler cgeh = InnerWorkstation.Energy;
@@ -857,7 +857,7 @@ namespace TorannMagic.Golems
 
         public void DecreaseNeed(NeedDef need, float amount)
         {
-            Need_GolemEnergy n = Pawn.needs.TryGetNeed(need) as Need_GolemEnergy;
+            Need_GolemEnergy n = Pawn.needs?.TryGetNeed(need) as Need_GolemEnergy;
             if(n != null)
             {
                 n.CurLevel -= (n.ActualNeedCost(amount) * EnergyCostModifier);

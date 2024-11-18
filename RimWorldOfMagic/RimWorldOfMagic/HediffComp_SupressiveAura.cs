@@ -72,7 +72,7 @@ namespace TorannMagic
             {
                 if(Find.TickManager.TicksGame % this.burdenFrequency == 0)
                 {
-                    this.Pawn.needs.mood.thoughts.memories.TryGainMemory(TorannMagicDefOf.TM_EmotionalWeightTD);
+                    this.Pawn.needs?.mood?.thoughts.memories.TryGainMemory(TorannMagicDefOf.TM_EmotionalWeightTD);
                 }
                 if (Find.TickManager.TicksGame % this.eventFrequency == 0)
                 {
@@ -90,11 +90,11 @@ namespace TorannMagic
                                     HealthUtility.AdjustSeverity(p, TorannMagicDefOf.TM_EmotionSuppressionHD, .5f + (.1f * pwrVal));
                                     if(p.needs != null)
                                     {
-                                        if (p.needs.joy != null)
+                                        if (p.needs?.joy != null)
                                         {
                                             p.needs.joy.CurLevel += (.01f * verVal);
                                         }
-                                        if(p.needs.comfort != null)
+                                        if(p.needs?.comfort != null)
                                         {
                                             p.needs.comfort.CurLevel += (.01f * verVal);
                                         }

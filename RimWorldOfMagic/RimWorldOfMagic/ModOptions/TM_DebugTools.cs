@@ -303,7 +303,7 @@ namespace TorannMagic.ModOptions
             //Pawn pawn = Find.CurrentMap.thingGrid.ThingsAt(UI.MouseCell()).Where((Thing t) => t is Pawn).Cast<Pawn>().FirstOrDefault();
             if (pawn != null && pawn.needs != null)
             {
-                Need_Spirit ns = pawn.needs.TryGetNeed(TorannMagicDefOf.TM_SpiritND) as Need_Spirit;
+                Need_Spirit ns = pawn.needs?.TryGetNeed(TorannMagicDefOf.TM_SpiritND) as Need_Spirit;
                 if(ns != null)
                 {
                     ns.GainNeed(-20f);
@@ -317,7 +317,7 @@ namespace TorannMagic.ModOptions
             //Pawn pawn = Find.CurrentMap.thingGrid.ThingsAt(UI.MouseCell()).Where((Thing t) => t is Pawn).Cast<Pawn>().FirstOrDefault();
             if (pawn != null && pawn.needs != null)
             {
-                Need_Spirit ns = pawn.needs.TryGetNeed(TorannMagicDefOf.TM_SpiritND) as Need_Spirit;
+                Need_Spirit ns = pawn.needs?.TryGetNeed(TorannMagicDefOf.TM_SpiritND) as Need_Spirit;
                 if (ns != null)
                 {
                     ns.GainNeed(20f);

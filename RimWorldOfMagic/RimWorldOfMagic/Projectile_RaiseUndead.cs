@@ -206,7 +206,7 @@ namespace TorannMagic
                                             RemoveTraits(undeadPawn, undeadPawn.story.traits.allTraits);
                                             undeadPawn.story.traits.GainTrait(new Trait(TraitDef.Named("Undead"), 0, false));
                                             undeadPawn.story.traits.GainTrait(new Trait(TraitDef.Named("Psychopath"), 0, false));
-                                            undeadPawn.needs.AddOrRemoveNeedsAsAppropriate();
+                                            undeadPawn.needs?.AddOrRemoveNeedsAsAppropriate();
                                             RemoveClassHediff(undeadPawn);
                                             if (undeadPawn.health.hediffSet.HasHediff(HediffDef.Named("DeathAcidifier")))
                                             {
