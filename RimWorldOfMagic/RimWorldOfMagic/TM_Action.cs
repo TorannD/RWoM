@@ -999,7 +999,7 @@ namespace TorannMagic
             {
                 newSpirit.story.Adulthood = TorannMagicDefOf.TM_AncientSpiritAdultBS;               
             }
-            newSpirit.needs.SetInitialLevels();
+            newSpirit.needs?.SetInitialLevels();
             if (newSpirit.workSettings != null && newSpirit.Faction != null && newSpirit.Faction.IsPlayer)
             {
                 newSpirit.workSettings.EnableAndInitialize();
@@ -1063,7 +1063,7 @@ namespace TorannMagic
         {
             p.story.traits.GainTrait(new Trait(TorannMagicDefOf.TM_Possessor, 0, true));           
             HealthUtility.AdjustSeverity(p, TorannMagicDefOf.TM_SpiritPossessorHD, .5f);
-            p.needs.AddOrRemoveNeedsAsAppropriate();
+            p.needs?.AddOrRemoveNeedsAsAppropriate();
         }
 
         public static void PossessPawn(Pawn caster, Pawn target, bool wasDead = false, FactionDef previousFactionDef = null)
@@ -1102,7 +1102,7 @@ namespace TorannMagic
                 //caster.GetCompAbilityUserMagic().RemoveAdvancedClass(TM_ClassUtility.GetCustomClassOfTrait(TorannMagicDefOf.TM_Possessor));            
                 Hediff hd = target.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_SpiritPossessionHD);
                 HediffComp_SpiritPossession hdc_sp = hd.TryGetComp<HediffComp_SpiritPossession>() as HediffComp_SpiritPossession;
-                Need_Spirit ns = target.needs.TryGetNeed(TorannMagicDefOf.TM_SpiritND) as Need_Spirit;
+                Need_Spirit ns = target.needs?.TryGetNeed(TorannMagicDefOf.TM_SpiritND) as Need_Spirit;
                 if (ns != null)
                 {
                     ns.CurLevel = caster.needs.TryGetNeed(TorannMagicDefOf.TM_SpiritND).CurLevel;
@@ -1130,7 +1130,7 @@ namespace TorannMagic
             Hediff_Possessor possessorHD = spirit.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_SpiritPossessorHD) as Hediff_Possessor;
             possessorHD.PossessionCompatibility = hd.Severity;
             //Log.Message("remove pos 4");
-            //spirit.needs.TryGetNeed(TorannMagicDefOf.TM_SpiritND).CurLevel = p.needs.TryGetNeed(TorannMagicDefOf.TM_SpiritND).CurLevel;
+            //spirit.needs?.TryGetNeed(TorannMagicDefOf.TM_SpiritND).CurLevel = p.needs?.TryGetNeed(TorannMagicDefOf.TM_SpiritND).CurLevel;
             if (pComp != null)
             {
                 MagicData fromData = pComp.MagicData;
@@ -1562,25 +1562,25 @@ namespace TorannMagic
 
         private static void RecallNeeds(Pawn pawn, CompAbilityUserMagic comp)
         {
-            for (int i = 0; i < pawn.needs.AllNeeds.Count; i++)
+            for (int i = 0; i < pawn.needs?.AllNeeds.Count; i++)
             {
                 bool hasNeed = false;
                 for (int j = 0; j < comp.recallNeedValues.Count; j++)
                 {
-                    if (comp.recallNeedDefnames[j] == pawn.needs.AllNeeds[i].def.defName)
+                    if (comp.recallNeedDefnames[j] == pawn.needs?.AllNeeds[i].def.defName)
                     {
-                        //Log.Message("setting " + pawn.needs.AllNeeds[i].def.defName + " from " + pawn.needs.AllNeeds[i].CurLevel + " to " + comp.recallNeedValues[j]);
+                        //Log.Message("setting " + pawn.needs?.AllNeeds[i].def.defName + " from " + pawn.needs?.AllNeeds[i].CurLevel + " to " + comp.recallNeedValues[j]);
                         pawn.needs.AllNeeds[i].CurLevel = comp.recallNeedValues[j];
                         hasNeed = true;
                     }
                 }
                 if (!hasNeed)
                 {
-                    //Log.Message("removing need " + pawn.needs.AllNeeds[i].def.defName);
-                    pawn.needs.AllNeeds.Remove(pawn.needs.AllNeeds[i]);
+                    //Log.Message("removing need " + pawn.needs?.AllNeeds[i].def.defName);
+                    pawn.needs?.AllNeeds.Remove(pawn.needs?.AllNeeds[i]);
                 }
             }
-            pawn.needs.AddOrRemoveNeedsAsAppropriate();
+            pawn.needs?.AddOrRemoveNeedsAsAppropriate();
             comp.recallNeedDefnames.Clear();
             comp.recallNeedValues.Clear();
         }
@@ -1696,14 +1696,14 @@ namespace TorannMagic
         {
             RemoveTrait(pawn, TorannMagicDefOf.TM_Gifted);
             pawn.story.traits.GainTrait(new Trait(TorannMagicDefOf.TM_Wanderer, 0, false));
-            pawn.needs.AddOrRemoveNeedsAsAppropriate();
+            pawn.needs?.AddOrRemoveNeedsAsAppropriate();
         }
 
         public static void PromoteWayfarer(Pawn pawn)
         {
             RemoveTrait(pawn, TorannMagicDefOf.PhysicalProdigy);
             pawn.story.traits.GainTrait(new Trait(TorannMagicDefOf.TM_Wayfarer, 0, false));
-            pawn.needs.AddOrRemoveNeedsAsAppropriate();
+            pawn.needs?.AddOrRemoveNeedsAsAppropriate();
         }
 
         public static void RemoveTrait(Pawn pawn, TraitDef trait)
@@ -1940,7 +1940,7 @@ namespace TorannMagic
                             {
                                 for (int i = 0; i < allPawns.Count; i++)
                                 {
-                                    if (allPawns[i].needs != null && allPawns[i].needs.food != null)
+                                    if (allPawns[i].needs != null && allPawns[i].needs?.food != null)
                                     {
                                         HealthUtility.AdjustSeverity(allPawns[i], HediffDefOf.FoodPoisoning, Rand.Range(.3f, .7f));
                                     }
@@ -1957,9 +1957,9 @@ namespace TorannMagic
                             {
                                 for (int i = 0; i < allPawns.Count; i++)
                                 {
-                                    if (allPawns[i].needs != null && allPawns[i].needs.rest != null)
+                                    if (allPawns[i].needs != null && allPawns[i].needs?.rest != null)
                                     {
-                                        Need need = allPawns[i].needs.TryGetNeed(NeedDefOf.Rest);
+                                        Need need = allPawns[i].needs?.TryGetNeed(NeedDefOf.Rest);
                                         if (need != null)
                                         {
                                             need.CurLevel = 0;

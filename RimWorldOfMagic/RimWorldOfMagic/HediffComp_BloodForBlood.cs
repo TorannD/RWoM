@@ -96,7 +96,7 @@ namespace TorannMagic
 
                         if (Rand.Chance(.4f) && !this.Pawn.DestroyedOrNull() && !this.Pawn.Dead && !this.linkedPawn.DestroyedOrNull() && !this.linkedPawn.Dead)
                         {
-                            List<Need> needs = linkedPawn.needs.AllNeeds;
+                            List<Need> needs = linkedPawn.needs?.AllNeeds;
                             for (int n = 0; n < needs.Count; n++)
                             {
                                 Need need = needs[n];
@@ -105,7 +105,7 @@ namespace TorannMagic
                                     need.CurLevel++;
                                 }
                             }
-                            needs = this.Pawn.needs.AllNeeds;
+                            needs = this.Pawn.needs?.AllNeeds;
                             for (int n = 0; n < needs.Count; n++)
                             {
                                 Need need = needs[n];

@@ -47,7 +47,7 @@ namespace TorannMagic
                             {
                                 bool flag = true;
                                 LocalTargetInfo target = pawn2;
-                                List<Thought_Memory> pawn2Memories = pawn.needs.mood.thoughts.memories.Memories;
+                                List<Thought_Memory> pawn2Memories = pawn.needs?.mood?.thoughts.memories.Memories;
                                 for(int i = 0; i < pawn2Memories.Count; i++)
                                 {
                                     if (pawn2Memories[i].def.defName == "TM_EntertainedTD" && pawn2Memories[i].MoodOffset() > 11f)
@@ -68,7 +68,7 @@ namespace TorannMagic
                             if (current == pawn2)
                             {
                                 bool flag = true;
-                                List<Thought_Memory> pawn2Memories = pawn.needs.mood.thoughts.memories.Memories;
+                                List<Thought_Memory> pawn2Memories = pawn.needs?.mood?.thoughts.memories.Memories;
                                 for (int i = 0; i < pawn2Memories.Count; i++)
                                 {
                                     if (pawn2Memories[i].def.defName == "TM_EntertainedTD")
@@ -89,7 +89,7 @@ namespace TorannMagic
                             if (current == pawn2)
                             {
                                 bool flag = true;
-                                List<Thought_Memory> pawn2Memories = pawn.needs.mood.thoughts.memories.Memories;
+                                List<Thought_Memory> pawn2Memories = pawn.needs?.mood?.thoughts.memories.Memories;
                                 for (int i = 0; i < pawn2Memories.Count; i++)
                                 {
                                     if (pawn2Memories[i].def.defName == "TM_EntertainedTD")

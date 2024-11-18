@@ -50,7 +50,7 @@ namespace TorannMagic.Golems
 
                     if (spawned)
                     {
-                        Need need = pawn.needs.TryGetNeed(TorannMagicDefOf.TM_GolemEnergy);
+                        Need need = pawn.needs?.TryGetNeed(TorannMagicDefOf.TM_GolemEnergy);
                         if (need == null)
                             return;
                         fillPct = need.CurLevelPercentage;

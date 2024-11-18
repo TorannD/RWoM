@@ -115,8 +115,8 @@ namespace TorannMagic
                                 if (!corpse.IsNotFresh())
                                 {
                                     comp.Mana.CurLevel += (.13f * (1 + (manaRegen.level * .02f) + (ver.level * .07f)) * comp.arcaneDmg);
-                                    if (caster.needs != null && caster.needs.rest != null) { caster.needs.rest.CurLevel += .3f; }
-                                    if (caster.needs != null && caster.needs.mood != null) { caster.needs.mood.CurLevel += .3f; }
+                                    if (caster.needs != null && caster.needs?.rest != null) { caster.needs.rest.CurLevel += .3f; }
+                                    if (caster.needs != null && caster.needs?.mood != null) { caster.needs.mood.CurLevel += .3f; }
                                     ConsumeHumanoid(corpse);
                                     if (ver.level > 0)
                                     {
@@ -135,7 +135,7 @@ namespace TorannMagic
                                 if (!corpse.IsNotFresh())
                                 {
                                     comp.Mana.CurLevel += (.09f * (1 + (manaRegen.level * .02f) + (ver.level * .07f)) * comp.arcaneDmg);
-                                    if (caster.needs != null && caster.needs.food != null) { caster.needs.food.CurLevel += .4f; }
+                                    if (caster.needs != null && caster.needs?.food != null) { caster.needs.food.CurLevel += .4f; }
                                     ConsumeAnimalKind(corpse);
                                     if (ver.level > 0)
                                     {

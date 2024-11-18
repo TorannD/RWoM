@@ -174,22 +174,22 @@ namespace TorannMagic
                         }
                     }
                     
-                    //if (base.Pawn.needs.food != null)
+                    //if (base.Pawn.needs?.food != null)
                     //{
-                    //    base.Pawn.needs.food.CurLevel = base.Pawn.needs.food.MaxLevel;
+                    //    base.Pawn.needs?.food.CurLevel = base.Pawn.needs?.food.MaxLevel;
                     //}
-                    //if (base.Pawn.needs.rest != null)
+                    //if (base.Pawn.needs?.rest != null)
                     //{
-                    //    base.Pawn.needs.rest.CurLevel = base.Pawn.needs.rest.MaxLevel;
+                    //    base.Pawn.needs?.rest.CurLevel = base.Pawn.needs?.rest.MaxLevel;
                     //}
 
                     //if (base.Pawn.IsColonist)
                     //{
-                    //    base.Pawn.needs.beauty.CurLevel = .5f;
-                    //    base.Pawn.needs.comfort.CurLevel = .5f;
-                    //    base.Pawn.needs.joy.CurLevel = .5f;
-                    //    base.Pawn.needs.mood.CurLevel = .5f;
-                    //    base.Pawn.needs.space.CurLevel = .5f;
+                    //    base.Pawn.needs?.beauty.CurLevel = .5f;
+                    //    base.Pawn.needs?.comfort.CurLevel = .5f;
+                    //    base.Pawn.needs?.joy.CurLevel = .5f;
+                    //    base.Pawn.needs?.mood?.CurLevel = .5f;
+                    //    base.Pawn.needs?.space.CurLevel = .5f;
                     //}
 
                     Hediff_Injury injuryToHeal = Pawn.health.hediffSet.hediffs

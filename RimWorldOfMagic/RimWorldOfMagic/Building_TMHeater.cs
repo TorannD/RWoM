@@ -58,9 +58,9 @@ namespace TorannMagic
                         for (int i = 0; i < pList.Count; i++)
                         {
                             Pawn p = pList[i];
-                            if (p.needs != null && p.needs.joy != null)
+                            if (p.needs != null && p.needs?.joy != null)
                             {
-                                Need joy = p.needs.TryGetNeed(TorannMagicDefOf.Joy);
+                                Need joy = p.needs?.TryGetNeed(TorannMagicDefOf.Joy);
                                 if(joy != null)
                                 {
                                     joy.CurLevel += Rand.Range(.01f, .02f);

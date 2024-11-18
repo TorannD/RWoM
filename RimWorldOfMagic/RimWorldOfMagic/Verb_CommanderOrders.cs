@@ -72,7 +72,7 @@ namespace TorannMagic
                         float targetCountFactor = Mathf.Clamp(5f / (float)this.TargetsAoE.Count, .1f, 1f);
                         if (flagSA)
                         {
-                            if(newPawn.needs != null && newPawn.needs.rest != null)
+                            if(newPawn.needs != null && newPawn.needs?.rest != null)
                             {
                                 newPawn.needs.rest.CurLevel += ((0.5f *targetCountFactor) + .05f * pwrVal);
                             }
@@ -102,14 +102,14 @@ namespace TorannMagic
                             }
                         }
 
-                        if (newPawn.needs != null && newPawn.needs.mood != null && newPawn.needs.mood.thoughts != null)
+                        if (newPawn.needs != null && newPawn.needs?.mood != null && newPawn.needs?.mood?.thoughts != null)
                         {
                             if (Rand.Chance(1f - (.2f * socialChance)))
                             {
                                 float moodChance = Mathf.Clamp(TM_Calc.GetRelationsFactor(caster, newPawn), .1f, .9f);
                                 if (Rand.Chance(moodChance))
                                 {
-                                    newPawn.needs.mood.thoughts.memories.TryGainMemory(TorannMagicDefOf.TM_TakingOrdersTD, null);
+                                    newPawn.needs?.mood?.thoughts.memories.TryGainMemory(TorannMagicDefOf.TM_TakingOrdersTD, null);
                                 }
                             }
                         }

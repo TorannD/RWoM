@@ -10,7 +10,7 @@ namespace TorannMagic.Thoughts
         {
             if (p.needs == null) return false;
             if (!p.RaceProps.Humanlike) return false;
-            Need_Spirit nd = p.needs.TryGetNeed(TorannMagicDefOf.TM_SpiritND) as Need_Spirit;
+            Need_Spirit nd = p.needs?.TryGetNeed(TorannMagicDefOf.TM_SpiritND) as Need_Spirit;
             if(nd != null && !nd.wasDead)
             {
                 return true;

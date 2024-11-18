@@ -91,7 +91,7 @@ namespace TorannMagic
                 {
                     return null;
                 }
-                Need_Joy curJoy = pawn.needs.joy;
+                Need_Joy curJoy = pawn.needs?.joy;
                 if(curJoy == null)
                 {
                     return null;

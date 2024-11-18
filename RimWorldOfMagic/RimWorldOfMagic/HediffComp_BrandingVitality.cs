@@ -22,7 +22,7 @@ namespace TorannMagic
                 TM_Action.DoAction_HealPawn(this.Pawn, this.Pawn, healCount, healAmt);
 
                 float restAmt = this.parent.Severity * .01f * healCount;
-                if(this.Pawn.needs != null && this.Pawn.needs.rest != null)
+                if(this.Pawn.needs != null && this.Pawn.needs?.rest != null)
                 {
                     this.Pawn.needs.rest.CurLevel += restAmt;
                 }

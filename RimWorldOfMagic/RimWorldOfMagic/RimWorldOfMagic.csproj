@@ -57,7 +57,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="GiddyUpCore">
-      <HintPath>..\..\..\..\..\..\workshop\content\294100\1216999901\1.3\Assemblies\GiddyUpCore.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\workshop\content\294100\1216999901\1.4\Assemblies\GiddyUpCore.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="HarmonyMod">
@@ -69,7 +69,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="SimpleSidearms">
-      <HintPath>..\..\..\..\..\..\workshop\content\294100\927155256\v1.4\Assemblies\SimpleSidearms.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\workshop\content\294100\927155256\Assemblies\SimpleSidearms.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -101,7 +101,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>..\..\..\..\..\Valheim\unstripped_corlib\UnityEngine.UI.dll</HintPath>
+      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.UI.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>

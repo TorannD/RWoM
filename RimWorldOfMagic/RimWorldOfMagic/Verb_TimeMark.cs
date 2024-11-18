@@ -159,15 +159,15 @@ namespace TorannMagic
             comp.recallNeedValues.Clear();
             //comp.recallNeedValues = new List<Need>();
             //comp.recallNeedValues.Clear();
-            for (int i = 0; i < this.CasterPawn.needs.AllNeeds.Count; i++)
+            for (int i = 0; i < this.CasterPawn.needs?.AllNeeds.Count; i++)
             {
-                //Log.Message("" + this.CasterPawn.needs.AllNeeds[i].def.defName);
-                if (this.CasterPawn.needs.AllNeeds[i].def.defName != "Chemical_Luciferium")
+                //Log.Message("" + this.CasterPawn.needs?.AllNeeds[i].def.defName);
+                if (this.CasterPawn.needs?.AllNeeds[i].def.defName != "Chemical_Luciferium")
                 {                    
-                    comp.recallNeedDefnames.Add(this.CasterPawn.needs.AllNeeds[i].def.defName);
+                    comp.recallNeedDefnames.Add(this.CasterPawn.needs?.AllNeeds[i].def.defName);
                     comp.recallNeedValues.Add(this.CasterPawn.needs.AllNeeds[i].CurLevel);
                 }
-                //comp.recallNeedValues.Add(TM_Calc.Clone<Need>(this.CasterPawn.needs.AllNeeds[i]));
+                //comp.recallNeedValues.Add(TM_Calc.Clone<Need>(this.CasterPawn.needs?.AllNeeds[i]));
             }
             //Log.Message("needs set");
         }

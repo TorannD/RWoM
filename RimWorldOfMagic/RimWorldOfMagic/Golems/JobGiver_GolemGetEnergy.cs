@@ -27,7 +27,7 @@ namespace TorannMagic.Golems
 
         public override float GetPriority(Pawn pawn)
         {
-            Need_GolemEnergy energy = pawn.needs.TryGetNeed(TorannMagicDefOf.TM_GolemEnergy) as Need_GolemEnergy;
+            Need_GolemEnergy energy = pawn.needs?.TryGetNeed(TorannMagicDefOf.TM_GolemEnergy) as Need_GolemEnergy;
             if (energy == null)
             {
                 return 0f;
@@ -66,7 +66,7 @@ namespace TorannMagic.Golems
         protected override Job TryGiveJob(Pawn pawn)
         {
             CompGolem Golem = pawn.TryGetComp<CompGolem>();
-            Need_GolemEnergy energy = pawn.needs.TryGetNeed(TorannMagicDefOf.TM_GolemEnergy) as Need_GolemEnergy;
+            Need_GolemEnergy energy = pawn.needs?.TryGetNeed(TorannMagicDefOf.TM_GolemEnergy) as Need_GolemEnergy;
             if (energy == null || Golem == null || energy.CurLevelPercentage >= Golem.energyPctShouldRest || energy.CurLevelPercentage > maxLevelPercentage)
             {
                 return null;

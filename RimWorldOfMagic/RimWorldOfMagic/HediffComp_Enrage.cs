@@ -86,9 +86,9 @@ namespace TorannMagic
                             lastDamageDealt = currentDamage;
                         }
 
-                        for (int i = 0; i < this.Pawn.needs.AllNeeds.Count; i++)
+                        for (int i = 0; i < this.Pawn.needs?.AllNeeds.Count; i++)
                         {
-                            Need n = this.Pawn.needs.AllNeeds[i];
+                            Need n = this.Pawn.needs?.AllNeeds[i];
                             if(consumeJoy && n.def == TorannMagicDefOf.Joy && n.CurLevel >= tickCost)
                             {
                                 n.CurLevel -= tickCost;
@@ -131,7 +131,7 @@ namespace TorannMagic
 
         public override void CompPostPostRemoved()
         {
-            Need n = this.Pawn.needs.mood;
+            Need n = this.Pawn.needs?.mood;
             if(n != null && n.CurLevel < .4f)
             {
                 n.CurLevel = .4f;

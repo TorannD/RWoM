@@ -48,7 +48,7 @@ namespace TorannMagic
                     if (victim.RaceProps.IsFlesh)
                     {
                         System.Random rnd = new System.Random();
-                        if (verVal > 0 && victim.needs.food != null)
+                        if (verVal > 0 && victim.needs?.food != null)
                         {
                             int randomTranqSev = GenMath.RoundRandom(rnd.Next((int)(verVal * .5f * str.level), (int)((verVal + .5f * str.level) * 3)));
                             LegShot(victim, randomTranqSev, TMDamageDefOf.DamageDefOf.TM_Tranquilizer);

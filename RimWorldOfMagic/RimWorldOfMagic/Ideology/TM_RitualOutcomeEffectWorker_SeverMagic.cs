@@ -34,7 +34,7 @@ namespace TorannMagic.Ideology
             {
                 if (key.IsSlave)
                 {
-                    Need_Suppression need_Suppression = key.needs.TryGetNeed<Need_Suppression>();
+                    Need_Suppression need_Suppression = key.needs?.TryGetNeed<Need_Suppression>();
                     if (need_Suppression != null)
                     {
                         need_Suppression.CurLevel = 1f;
@@ -114,15 +114,15 @@ namespace TorannMagic.Ideology
                 List<Pawn> remainingPawns = colonyPawns.Except(ritualPawns).ToList();
                 foreach (Pawn p in remainingPawns)
                 {
-                    if (p.needs.mood?.thoughts?.memories != null)
+                    if (p.needs?.mood?.thoughts?.memories != null)
                     {
                         if (flagApprove && p.Ideo.HasPrecept(TorannMagicDefOf.TM_Mages_Approve))
                         {
-                            p.needs.mood.thoughts.memories.TryGainMemory(TorannMagicDefOf.TM_SeverMagic_ForApproveTD, null);
+                            p.needs?.mood?.thoughts.memories.TryGainMemory(TorannMagicDefOf.TM_SeverMagic_ForApproveTD, null);
                         }
                         else if (flagVenerated && p.Ideo.HasPrecept(TorannMagicDefOf.TM_Mages_Venerated))
                         {
-                            p.needs.mood.thoughts.memories.TryGainMemory(TorannMagicDefOf.TM_SeverMagic_ForVeneratedTD, null);
+                            p.needs?.mood?.thoughts.memories.TryGainMemory(TorannMagicDefOf.TM_SeverMagic_ForVeneratedTD, null);
                         }
                     }
                 }

@@ -130,16 +130,16 @@ namespace TorannMagic
                         DrawEffects();                            
                         if (Find.TickManager.TicksGame % 48 == 0)
                         {
-                            if (caster.needs.joy != null && caster.needs.joy.CurLevel > .01f)
+                            if (caster.needs?.joy != null && caster.needs?.joy.CurLevel > .01f)
                             {
-                                if (Pawn.needs.joy != null)
+                                if (Pawn.needs?.joy != null)
                                 {
                                     float joyDrainPawn = Rand.Range(.04f, .1f) + (.01f * effVal);
                                     float joyDrainCaster = Rand.Range(.03f, .06f) - (.01f * effVal);
 
-                                    Need np = Pawn.needs.joy;
+                                    Need np = Pawn.needs?.joy;
                                     np.CurLevel = Mathf.Clamp01(np.CurLevel - joyDrainPawn);
-                                    Need nc = caster.needs.joy;
+                                    Need nc = caster.needs?.joy;
                                     nc.CurLevel = Mathf.Clamp01(nc.CurLevel - joyDrainCaster);
                                     if (np.CurLevel <= .01f && Rand.Chance(.25f + (.05f * pwrVal)))
                                     {

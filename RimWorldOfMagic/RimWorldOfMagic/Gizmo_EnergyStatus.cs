@@ -321,7 +321,7 @@ namespace TorannMagic
                         if (isSpirit)
                         {
                             rect2.y = rect.y + yShift;
-                            Need_Spirit nd = pawn.needs.TryGetNeed(TorannMagicDefOf.TM_SpiritND) as Need_Spirit;
+                            Need_Spirit nd = pawn.needs?.TryGetNeed(TorannMagicDefOf.TM_SpiritND) as Need_Spirit;
                             try
                             {
                                 fillPercent = nd.CurLevel / nd.MaxLevel;

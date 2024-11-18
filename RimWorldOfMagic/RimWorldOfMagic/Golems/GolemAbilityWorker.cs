@@ -131,8 +131,8 @@ namespace TorannMagic.Golems
                 float eff = 1f;
                 if (p.needs != null)
                 {
-                    Need n = p.needs.TryGetNeed(ability.requiredNeed);
-                    Need_GolemEnergy n_ge = p.needs.TryGetNeed(ability.requiredNeed) as Need_GolemEnergy;
+                    Need n = p.needs?.TryGetNeed(ability.requiredNeed);
+                    Need_GolemEnergy n_ge = p.needs?.TryGetNeed(ability.requiredNeed) as Need_GolemEnergy;
                     
                     if(n_ge != null)
                     {

@@ -22,7 +22,7 @@ namespace TorannMagic.Enchantment
 
         public override void HediffActionTick()
         {
-            Need rest = this.Pawn.needs.rest;
+            Need rest = this.Pawn.needs?.rest;
             if (rest != null)
             {
                 rest.CurLevel += .0065f;               

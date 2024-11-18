@@ -21,7 +21,7 @@ namespace TorannMagic
                     this.Pawn.MentalState.RecoverFromState();
                 }
 
-                if(this.Pawn.needs != null && this.Pawn.needs.mood != null)
+                if(this.Pawn.needs != null && this.Pawn.needs?.mood != null)
                 {
                     this.Pawn.needs.mood.CurLevel += sev * .025f;
                 }

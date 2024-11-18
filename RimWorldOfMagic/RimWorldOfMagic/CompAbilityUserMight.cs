@@ -796,7 +796,7 @@ namespace TorannMagic
             {
                 if (!base.Pawn.DestroyedOrNull() && base.Pawn.needs != null)
                 {
-                    return base.Pawn.needs.TryGetNeed<Need_Stamina>();
+                    return base.Pawn.needs?.TryGetNeed<Need_Stamina>();
                 }
                 return null;
             }
@@ -4335,13 +4335,13 @@ namespace TorannMagic
                     {
                         this.bondedPet.health.RemoveHediff(this.bondedPet.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_RangerBondHD, false));
                     }
-                    this.Pawn.needs.mood.thoughts.memories.TryGainMemory(TorannMagicDefOf.RangerPetDied, null);
+                    this.Pawn.needs?.mood?.thoughts.memories.TryGainMemory(TorannMagicDefOf.RangerPetDied, null);
                     this.bondedPet = null;
                 }
                 else if (this.bondedPet.Faction != null && this.bondedPet.Faction != this.Pawn.Faction)
                 {
                     //sold? punish evil
-                    this.Pawn.needs.mood.thoughts.memories.TryGainMemory(TorannMagicDefOf.RangerSoldBondedPet, null);
+                    this.Pawn.needs?.mood?.thoughts.memories.TryGainMemory(TorannMagicDefOf.RangerSoldBondedPet, null);
                     this.bondedPet = null;
                 }
                 else if(!this.bondedPet.health.hediffSet.HasHediff(TorannMagicDefOf.TM_RangerBondHD))
@@ -4349,7 +4349,7 @@ namespace TorannMagic
                     HealthUtility.AdjustSeverity(this.bondedPet, TorannMagicDefOf.TM_RangerBondHD, .5f);
                 }
             }
-            if(this.Pawn.needs.mood.thoughts.memories.NumMemoriesOfDef(ThoughtDef.Named("RangerSoldBondedPet")) > 0)
+            if(this.Pawn.needs?.mood?.thoughts.memories.NumMemoriesOfDef(ThoughtDef.Named("RangerSoldBondedPet")) > 0)
             {
                 if(this.animalBondingDisabled == false)
                 {

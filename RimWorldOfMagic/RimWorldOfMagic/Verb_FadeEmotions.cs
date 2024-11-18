@@ -42,14 +42,14 @@ namespace TorannMagic
             Pawn caster = this.CasterPawn;
             Pawn hitPawn = this.currentTarget.Thing as Pawn;
 
-            if(hitPawn != null && hitPawn.RaceProps != null && hitPawn.needs != null && hitPawn.needs.mood != null && hitPawn.needs.mood.thoughts != null && 
+            if(hitPawn != null && hitPawn.RaceProps != null && hitPawn.needs != null && hitPawn.needs?.mood != null && hitPawn.needs?.mood?.thoughts != null && 
                 hitPawn.RaceProps.Humanlike && !TM_Calc.IsUndead(hitPawn) && hitPawn.Faction == caster.Faction)
             {
-                List<Thought_Memory> thoughts = hitPawn.needs.mood.thoughts.memories.Memories;
-                Need n = hitPawn.needs.mood;
+                List<Thought_Memory> thoughts = hitPawn.needs?.mood?.thoughts.memories.Memories;
+                Need n = hitPawn.needs?.mood;
                 for (int i = 0; i < thoughts.Count; i++)
                 {
-                    hitPawn.needs.mood.thoughts.memories.RemoveMemory(thoughts[i]);
+                    hitPawn.needs?.mood?.thoughts.memories.RemoveMemory(thoughts[i]);
                     n.CurLevel -= .3f;
                     i--;
                     if(n.CurLevel < .3f)

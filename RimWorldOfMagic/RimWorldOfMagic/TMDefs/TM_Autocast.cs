@@ -302,7 +302,7 @@ namespace TorannMagic.TMDefs
             if (p != null && p.needs != null)
             {
                 bool hasAnyNeed = false;
-                foreach(Need n in p.needs.AllNeeds)
+                foreach(Need n in p.needs?.AllNeeds)
                 {
                     if(n != null && con.needDefs.Contains(n.def))
                     {                        

@@ -134,7 +134,14 @@ namespace TorannMagic
                         }
                         else if(BreakRiskAlertUtility.PawnsAtRiskMinor.Contains(this.pawn) || BreakRiskAlertUtility.PawnsAtRiskMajor.Contains(this.pawn) || BreakRiskAlertUtility.PawnsAtRiskExtreme.Contains(this.pawn))
                         {
-                            this.pawn.needs.mood.CurLevel += .004f * chiMultiplier * (1 + (.1f * verVal));
+                            try
+                            {
+                                this.pawn.needs.mood.CurLevel += .004f * chiMultiplier * (1 + (.1f * verVal));
+                            }
+                            catch (NullReferenceException ex)
+                            {
+                                //ex
+                            }
                             chiHD.Severity -= 1f;
                             comp.MightUserXP += (int)(2 * chiMultiplier);
                         }

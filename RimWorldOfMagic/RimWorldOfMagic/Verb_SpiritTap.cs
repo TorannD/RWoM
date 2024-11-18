@@ -29,7 +29,7 @@ namespace TorannMagic
             if (target.Pawn != null && !TM_Calc.IsGolem(target.Pawn) && !TM_Calc.IsUndead(target.Pawn) && !TM_Calc.IsRobotPawn(target.Pawn))
             {
                 HealthUtility.AdjustSeverity(target.Pawn, TorannMagicDefOf.TM_SpiritDrainHD, this.tool.power/(damageVal*10f));
-                Need_Spirit nd = this.CasterPawn.needs.TryGetNeed(TorannMagicDefOf.TM_SpiritND) as Need_Spirit;
+                Need_Spirit nd = this.CasterPawn.needs?.TryGetNeed(TorannMagicDefOf.TM_SpiritND) as Need_Spirit;
                 if(nd != null)
                 {
                     nd.GainNeed(damageVal * .03f);

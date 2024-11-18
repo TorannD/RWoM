@@ -72,7 +72,7 @@ namespace TorannMagic
                         Pawn p = pList[i];
                         if(p != caster && p.needs != null)
                         {
-                            if((p.story != null && p.story.traits != null && p.story.traits.HasTrait(TraitDefOf.Psychopath)) || TM_Calc.IsUndeadNotVamp(p) || p.needs.mood == null)
+                            if((p.story != null && p.story.traits != null && p.story.traits.HasTrait(TraitDefOf.Psychopath)) || TM_Calc.IsUndeadNotVamp(p) || p.needs?.mood == null)
                             {
                                 continue;
                             }
@@ -84,7 +84,7 @@ namespace TorannMagic
                             if(Rand.Chance(TM_Calc.GetSpellSuccessChance(caster, p, false) + penChance))
                             {
                                 DrawEffects(caster, p);
-                                Need n = p.needs.mood;
+                                Need n = p.needs?.mood;
                                 float curLvl = Mathf.Clamp(n.CurLevel, 0, maxMoodBurn);
                                 n.CurLevel -= curLvl;
                                 TM_Action.DamageEntities(p, null, n.CurLevel * 20f, DamageDefOf.Stun, caster);

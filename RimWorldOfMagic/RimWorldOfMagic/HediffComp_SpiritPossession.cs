@@ -160,7 +160,7 @@ namespace TorannMagic
         public void UpdateSpiritEnergy()
         {
             Need nds = SpiritPawn_Need;
-            Need ndp = this.Pawn.needs.TryGetNeed(TorannMagicDefOf.TM_SpiritND);
+            Need ndp = this.Pawn.needs?.TryGetNeed(TorannMagicDefOf.TM_SpiritND);
             if (nds != null && ndp != null)
             {
                 nds.CurLevel = ndp.CurLevel;
@@ -168,7 +168,7 @@ namespace TorannMagic
         }
 
         public Hediff_Possessor SpiritPawn_Hediff => SpiritPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_SpiritPossessorHD) as Hediff_Possessor;
-        public Need_Spirit SpiritPawn_Need => SpiritPawn.needs.TryGetNeed(TorannMagicDefOf.TM_SpiritND) as Need_Spirit;
+        public Need_Spirit SpiritPawn_Need => SpiritPawn.needs?.TryGetNeed(TorannMagicDefOf.TM_SpiritND) as Need_Spirit;
 
         public override void CompExposeData()
         {
