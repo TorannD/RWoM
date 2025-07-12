@@ -9,6 +9,7 @@ using UnityEngine;
 using Verse.Sound;
 using TorannMagic.TMDefs;
 using AbilityUser;
+using TorannMagic.Weapon;
 
 namespace TorannMagic.Golems
 {

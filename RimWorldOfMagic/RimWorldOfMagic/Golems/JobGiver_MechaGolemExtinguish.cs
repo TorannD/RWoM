@@ -9,6 +9,7 @@ using Verse.AI;
 using Verse.AI.Group;
 using UnityEngine;
 using TorannMagic.TMDefs;
+using TorannMagic.Weapon;
 
 namespace TorannMagic.Golems
 {
