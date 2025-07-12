@@ -1,0 +1,46 @@
+# Visual Studio files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Bb]in/
+[Oo]bj/
+TestResults/
+*.exe
+*.dll
+*.pdb
+*.app/
+
+# Rider files
+.idea/
+*.sln.iml
+
+# RimWorld specific (mod distribution outputs, auto-generated files)
+About/Preview.png
+About/About.xml~
+Assemblies/ # Usually contains the compiled DLLs
+*.mdb
+*.bak
+
+# NuGet packages
+*.nupkg
+*.snupkg
+.packages/
+**/packages/*
+
+# OS generated
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+*.cache
