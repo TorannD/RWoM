@@ -1114,7 +1114,7 @@ namespace TorannMagic
                         return false;
                     }
                 }
-                if (song.minRoyalTitle != null && !PawnsFinder.AllMapsCaravansAndTravelingTransportPods_Alive_Colonists.Any(delegate (Pawn p)
+                if (song.minRoyalTitle != null && !PawnsFinder.AllMapsCaravansAndTravellingTransporters_Alive_Colonists.Any(delegate (Pawn p)
                 {
                     if (p.royalty != null && p.royalty.AllTitlesForReading.Any() && p.royalty.MostSeniorTitle.def.seniority >= song.minRoyalTitle.seniority)
                     {
