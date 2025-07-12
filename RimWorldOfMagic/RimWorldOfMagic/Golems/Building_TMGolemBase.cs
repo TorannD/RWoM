@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using RimWorld;
 using Verse;
 using Verse.AI;
@@ -10,7 +9,6 @@ using UnityEngine;
 using TorannMagic.TMDefs;
 using AbilityUser;
 using Verse.Sound;
-using HarmonyLib;
 
 namespace TorannMagic.Golems
 {
@@ -415,7 +413,7 @@ namespace TorannMagic.Golems
 
         private int threatOnMapCheckDelay = 0;
         public int pauseFor = 0;
-		public override void Tick()
+		protected override void Tick()
 		{
 			base.Tick();
             if(!initialized && this.Map != null)
