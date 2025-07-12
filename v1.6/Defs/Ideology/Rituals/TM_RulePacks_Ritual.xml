@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RulePackDef>
+    <defName>NamerRitualGifting</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_ritualName->[ritNoun] of [keyDeity]</li>
+        <li>r_ritualName->[ritNoun] of [chosenTheme]</li>
+        <li>r_ritualName->[ritNoun] of [memeConcept]</li>
+        <li>r_ritualName->[memeAdjective] [ritNoun]</li>
+
+        <li>ritNoun->gifting</li>
+        <li>ritNoun->ascending</li>
+        <li>ritNoun->becoming</li>
+        <li>ritNoun->enlightenment</li>
+        <li>ritNoun->bridging</li>
+        <li>ritNoun->linking</li>
+        <li>ritNoun->melding</li>
+        <li>ritNoun->calling</li>
+        <li>ritNoun->clarity</li>
+        <li>ritNoun->ascendence</li>
+		<li>ritNoun->awakening</li>
+		<li>ritNoun->evoking</li>
+
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  
+  <RulePackDef>
+    <defName>NamerRitualMindMutilation</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_ritualName->[ritNoun] of [keyDeity]</li>
+        <li>r_ritualName->[ritNoun] of [chosenTheme]</li>
+        <li>r_ritualName->[ritNoun] of [memeConcept]</li>
+        <li>r_ritualName->[memeAdjective] [ritNoun]</li>
+
+        <li>ritNoun->spirit mutilation</li>
+        <li>ritNoun->soul cutting</li>
+        <li>ritNoun->soul slicing</li>
+        <li>ritNoun->severing</li>
+        <li>ritNoun->mindrip</li>
+        <li>ritNoun->mind ripping</li>
+        <li>ritNoun->soul mangling</li>
+        <li>ritNoun->mind carving</li>
+        <li>ritNoun->spirit gashing</li>
+        <li>ritNoun->soul rending</li>
+		<li>ritNoun->silencing</li>
+		<li>ritNoun->quieting</li>
+		<li>ritNoun->quelling</li>
+
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  
+</Defs>

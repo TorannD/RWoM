@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+
+  <!--            SEVER MAGIC             -->
+  <ThoughtDef>
+    <defName>TM_Botched_SeverMagicTD</defName>
+    <thoughtClass>Thought_AttendedRitual</thoughtClass>
+    <durationDays>6</durationDays>
+    <stackLimit>3</stackLimit>
+    <stages>
+      <li>
+        <label>botched severence ritual</label>
+        <description>The severence ritual was botched and gave the mage a chance to retaliate.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>TM_Lethal_SeverMagicTD</defName>
+    <thoughtClass>Thought_AttendedRitual</thoughtClass>
+    <durationDays>6</durationDays>
+    <stackLimit>3</stackLimit>
+    <stages>
+      <li>
+        <label>lethal severence ritual</label>
+        <description>That ritual lacked order and the technique was terrible, killing the mage.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>TM_Success_SeverMagicTD</defName>
+    <thoughtClass>Thought_AttendedRitual</thoughtClass>
+    <durationDays>6</durationDays>
+    <stackLimit>3</stackLimit>
+    <stages>
+      <li>
+        <label>successful severence ritual</label>
+        <description>The severence ritual was a success, freeing us from the oppression of another mage.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>TM_Flawless_SeverMagicTD</defName>
+    <thoughtClass>Thought_AttendedRitual</thoughtClass>
+    <durationDays>6</durationDays>
+    <stackLimit>3</stackLimit>
+    <stages>
+      <li>
+        <label>flawless severence ritual</label>
+        <description>The chorus of voices, the intensity of the voidbringer, the look of inevitability on the face of the mage - nothing can stop our crusade!</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  
+  <HediffDef ParentName="LongBuffBase">
+    <defName>TM_MagicSeverenceHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+    <label>Magic Severence</label>
+	<description>This pawn has recently lost their connection to magic and will suffer from a loss of direction and purpose until they can fill the void with another purpose.</description>
+	<defaultLabelColor>(0.4,0.4,0.4)</defaultLabelColor>
+    <scenarioCanAdd>false</scenarioCanAdd>
+	<maxSeverity>1.0</maxSeverity>
+	<isBad>false</isBad>
+	<comps>
+	  <li>
+        <compClass>TorannMagic.Ideology.HediffComp_MagicSeverence</compClass>
+      </li>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-.3</severityPerDay>
+      </li>	  
+    </comps>
+    <stages>
+      <li>
+	    <label></label>
+		<minSeverity>.001</minSeverity>
+        <capMods>
+		  <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.1</offset>
+          </li>
+		  <li>
+            <capacity>Talking</capacity>
+            <offset>-0.25</offset>
+          </li>
+		  <li>
+            <capacity>Metabolism</capacity>
+            <offset>-0.2</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  <ThoughtDef>
+    <defName>TM_MagicSeverenceTD</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>TM_MagicSeverenceHD</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>Severed from magic</label>
+        <description>I've lost something that once defined who I was; I feel a mix of dispair and emptiness.</description>
+        <baseMoodEffect>-24</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="TM_Memory">
+    <defName>TM_SeverMagic_ForApproveTD</defName>
+    <durationDays>5</durationDays>
+    <stages>
+      <li>
+        <label>allowed sever magic</label>
+        <!-- generic penalty -->
+        <description>A ritual to sever the magic from a mage was performed in our colony; what a despicable and barbaric act.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+	  </stages>
+  </ThoughtDef>
+  
+    <ThoughtDef ParentName="TM_Memory">
+    <defName>TM_SeverMagic_ForVeneratedTD</defName>
+    <durationDays>8</durationDays>
+    <stages>
+      <li>
+        <label>allowed sever magic</label>
+        <!-- generic penalty -->
+        <description>A ritual to sever the magic from a mage was performed in our colony; this henious act of barbarism is an afront to everything we believe.</description>
+        <baseMoodEffect>-14</baseMoodEffect>
+      </li>
+	  </stages>
+  </ThoughtDef>
+  
+    <!--            BESTOW MAGIC             -->
+  <ThoughtDef>
+    <defName>TM_Botched_BestowMagicTD</defName>
+    <thoughtClass>Thought_AttendedRitual</thoughtClass>
+    <durationDays>6</durationDays>
+    <stackLimit>3</stackLimit>
+    <stages>
+      <li>
+        <label>botched gifting ritual</label>
+        <description>The gifting ritual was botched and no magical spark was granted.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>TM_Success_BestowMagicTD</defName>
+    <thoughtClass>Thought_AttendedRitual</thoughtClass>
+    <durationDays>6</durationDays>
+    <stackLimit>3</stackLimit>
+    <stages>
+      <li>
+        <label>successful gifting ritual</label>
+        <description>The gifting ritual successfully bestowed the magical spark.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>TM_Flawless_BestowMagicTD</defName>
+    <thoughtClass>Thought_AttendedRitual</thoughtClass>
+    <durationDays>6</durationDays>
+    <stackLimit>3</stackLimit>
+    <stages>
+      <li>
+        <label>enlightened gifting ritual</label>
+        <description>It was as if the heavens opened up to bless the ritual and a chorus of voices sang the glory of our cause!</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <HediffDef>
+    <defName>TM_BestowMagicClassHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+    <label>Gift of Magic</label>
+	<description>This pawn was recently granted the spark of magic.</description>
+	<defaultLabelColor>(0.4,0.4,0.4)</defaultLabelColor>
+    <scenarioCanAdd>false</scenarioCanAdd>
+	<maxSeverity>1.0</maxSeverity>
+	<isBad>false</isBad>
+	<comps>
+	  <li>
+        <compClass>TorannMagic.Ideology.HediffComp_BestowMagicClass</compClass>
+      </li>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-.2</severityPerDay>
+      </li>	  
+    </comps>
+    <stages>
+      <li>
+	    <label></label>
+		<minSeverity>.001</minSeverity>
+        <capMods>
+		  <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.1</offset>
+          </li>
+		  <li>
+            <capacity>Talking</capacity>
+            <offset>0.25</offset>
+          </li>
+		  <li>
+            <capacity>Metabolism</capacity>
+            <offset>0.2</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  <!--            BESTOW MAGIC CLASS           -->
+  <ThoughtDef>
+    <defName>TM_Poor_BestowMagicClassTD</defName>
+    <thoughtClass>Thought_AttendedRitual</thoughtClass>
+    <durationDays>6</durationDays>
+    <stackLimit>3</stackLimit>
+    <stages>
+      <li>
+        <label>bland arcane path ritual</label>
+        <description>The ritual guiding a mage towards their arcane path was bland and uninteresting.</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>TM_Moderate_BestowMagicClassTD</defName>
+    <thoughtClass>Thought_AttendedRitual</thoughtClass>
+    <durationDays>6</durationDays>
+    <stackLimit>3</stackLimit>
+    <stages>
+      <li>
+        <label>successful arcane path ritual</label>
+        <description>The arcane path selection ritual was encouraging and interesting.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>TM_Good_BestowMagicClassTD</defName>
+    <thoughtClass>Thought_AttendedRitual</thoughtClass>
+    <durationDays>6</durationDays>
+    <stackLimit>3</stackLimit>
+    <stages>
+      <li>
+        <label>inspiring arcane path ritual</label>
+        <description>The arcane path ritual was fantastic, emotionally and magically charged - it's always wonderful to see someone achieve their dreams!</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>
