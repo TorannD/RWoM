@@ -192,6 +192,7 @@
     <Compile Include="Verb_SpiritRally.cs" />
     <Compile Include="Verb_SpiritDrain.cs" />
     <Compile Include="Verb_SpellMending.cs" />
+    <Compile Include="Weapon\ExplosionHelper.cs" />
     <Compile Include="Weapon\FlyingObject_FreezingWinds.cs" />
     <Compile Include="Skyfaller_Hail.cs" />
     <Compile Include="TMDefs\TM_Branding.cs" />

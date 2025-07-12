@@ -82,7 +82,7 @@ namespace TorannMagic.Golems
                     TM_Action.DamageEntities(enemyCaster, null, 10f, DamageDefOf.Stun, caster);
                     if (manaDamage != 0)
                     {
-                        GenExplosion.DoExplosion(enemyCaster.Position, enemyCaster.Map, expRad, TMDamageDefOf.DamageDefOf.TM_Shadow, caster, Mathf.RoundToInt(manaDamage), damageFalloff: true);
+                        ExplosionHelper.Explode(enemyCaster.Position, enemyCaster.Map, expRad, TMDamageDefOf.DamageDefOf.TM_Shadow, caster, Mathf.RoundToInt(manaDamage), damageFalloff: true);
                     }
 
                 }

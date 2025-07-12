@@ -15,7 +15,7 @@ namespace TorannMagic.Weapon
             Pawn pawn = this.launcher as Pawn;
             try
             {
-                GenExplosion.DoExplosion(base.Position, map, 0.4f, TMDamageDefOf.DamageDefOf.Iceshard, this.launcher, this.def.projectile.GetDamageAmount(1,null), 3, this.def.projectile.soundExplode, def, this.equipmentDef, null, null, 0f, 1, null, false, null, 0f, 1, 0f, false);
+                ExplosionHelper.Explode(base.Position, map, 0.4f, TMDamageDefOf.DamageDefOf.Iceshard, this.launcher, this.def.projectile.GetDamageAmount(1,null), 3, this.def.projectile.soundExplode, def, this.equipmentDef, null, null, 0f, 1, null, false, null, 0f, 1, 0f, false);
             }
             catch
             {

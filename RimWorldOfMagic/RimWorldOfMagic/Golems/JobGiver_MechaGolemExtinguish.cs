@@ -23,7 +23,7 @@ namespace TorannMagic.Golems
             {
                 if(gu.golemUpgradeDef.label.ToLower() == "extinguisher" && gu.currentLevel > 0)
                 {
-                    GenExplosion.DoExplosion(pawn.Position, pawn.Map, Rand.Range(4f, 6f), DamageDefOf.Extinguish, pawn, 500, 0, SoundDefOf.Artillery_ShellLoaded);
+                    ExplosionHelper.Explode(pawn.Position, pawn.Map, Rand.Range(4f, 6f), DamageDefOf.Extinguish, pawn, 500, 0, SoundDefOf.Artillery_ShellLoaded);
                     flag = true;
                 }                
             }

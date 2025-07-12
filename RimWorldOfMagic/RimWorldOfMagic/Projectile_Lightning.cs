@@ -131,7 +131,7 @@ namespace TorannMagic
                         lastStrikeTick = Find.TickManager.TicksGame;
                         DrawBolt(mesh, TM_MatPool.standardLightning, origin, angle, GetFadedBrightness);
                         DamageCell(strikePos, this.launcher);
-                        GenExplosion.DoExplosion(strikePos, this.Map, 2f, TMDamageDefOf.DamageDefOf.TM_Lightning, this.launcher, Mathf.RoundToInt(Rand.Range(3 + pwrVal, 6 + pwrVal) * arcaneDmg), 1.2f, null);
+                        ExplosionHelper.Explode(strikePos, this.Map, 2f, TMDamageDefOf.DamageDefOf.TM_Lightning, this.launcher, Mathf.RoundToInt(Rand.Range(3 + pwrVal, 6 + pwrVal) * arcaneDmg), 1.2f, null);
                         newStrikeLocs.Add(strikePos);
                     }
                     RandomStrikes(base.Position, this.launcher);
@@ -190,7 +190,7 @@ namespace TorannMagic
                     //DamageCell(hitCell, caster);
                     if (hitCell.InBounds(this.Map))
                     {
-                        GenExplosion.DoExplosion(hitCell, this.Map, 1f, TMDamageDefOf.DamageDefOf.TM_Lightning, caster, Mathf.RoundToInt(Rand.Range(3 + pwrVal, 6 + pwrVal) * arcaneDmg), 1.2f, null);
+                        ExplosionHelper.Explode(hitCell, this.Map, 1f, TMDamageDefOf.DamageDefOf.TM_Lightning, caster, Mathf.RoundToInt(Rand.Range(3 + pwrVal, 6 + pwrVal) * arcaneDmg), 1.2f, null);
                         this.Map.weatherManager.eventHandler.AddEvent(new TM_WeatherEvent_MeshGeneric(this.Map, TM_MatPool.thinLightning, from, hitCell, 2f, AltitudeLayer.MoteLow, strikeDelay, strikeDelay, 2));
                     }
                 }

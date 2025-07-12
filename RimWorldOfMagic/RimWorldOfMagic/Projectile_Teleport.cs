@@ -556,7 +556,7 @@ namespace TorannMagic
         //protected void TeleportSelect(IntVec3 pos, Map map, float radius)
         //{
         //    ThingDef def = this.def;
-        //    //GenExplosion.DoExplosion(pos, map, radius, DamageDefOf.Flame, this.launcher, null, def, this.equipmentDef, ThingDefOf.FilthFuel, 0.4f, 1, false, null, 0f, 1);
+        //    //ExplosionHelper.Explode(pos, map, radius, DamageDefOf.Flame, this.launcher, null, def, this.equipmentDef, ThingDefOf.FilthFuel, 0.4f, 1, false, null, 0f, 1);
         //    TeleportAdd(pos, map, radius, DamageDefOf.Flame, this.launcher, null, def, this.equipmentDef, null, 0.4f, 1, false, null, 0f, 1);
 
         //}
