@@ -2,19 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
-using Verse.AI;
 using Verse.AI.Group;
 using System.Diagnostics;
 using UnityEngine;
 using RimWorld;
 using AbilityUser;
-
-
+using TorannMagic.Weapon;
 
 namespace TorannMagic
 {
     [StaticConstructorOnStartup]
-    public class Building_TMElementalRift : Building
+    public class Building_TMElementalRift_Defenders : Building
     {
 
         private float arcaneEnergyCur = 0;
@@ -36,6 +34,9 @@ namespace TorannMagic
         private int rnd = 0;
         private int areaRadius = 1;
         private bool notifier = false;
+
+        public int age = 0;
+        public int duration = 12500;
         IntVec2 centerLocation;
 
         private bool initialized = false;
@@ -54,6 +55,7 @@ namespace TorannMagic
             Scribe_Values.Look<float>(ref this.eventFrequencyMultiplier, "eventFrequencyMultiplier", 1f, false);
             Scribe_Values.Look<bool>(ref this.notifier, "notifier", false, false);
             Scribe_Values.Look<bool>(ref this.initialized, "initialized", false, false);
+            Scribe_Values.Look<int>(ref this.age, "age", 0, false);
         }
         
         public float ArcaneEnergyCur
@@ -67,14 +69,8 @@ namespace TorannMagic
                 arcaneEnergyCur = value;
             }
         }
-
-        public override void SpawnSetup(Map map, bool respawningAfterLoad)
-        {
-            base.SpawnSetup(map, respawningAfterLoad);
-            //LessonAutoActivator.TeachOpportunity(ConceptDef.Named("TM_Portals"), OpportunityType.GoodToKnow);
-        }
                 
-        public override void Tick()
+        protected override void Tick()
         {
             if(!initialized)
             {
@@ -86,7 +82,7 @@ namespace TorannMagic
                 {
                     this.STDMultiplier = (float)(Find.Storyteller.difficulty.threatScale / 20f);
                 }
-                if(settings.riftChallenge < 2f)
+                if(settings.riftChallenge <= 3f)
                 {
                     this.difficultyMultiplier = 1f;
                 }
@@ -99,7 +95,7 @@ namespace TorannMagic
                     this.difficultyMultiplier = .75f;
                 }
                 this.difficultyMultiplier -= this.STDMultiplier;
-                this.ticksTillNextAssault = (int)(Rand.Range(2600, 4000) * this.difficultyMultiplier);
+                this.ticksTillNextAssault = (int)(Rand.Range(2000, 3000) * this.difficultyMultiplier);
                 this.ticksTillNextEvent = (int)(Rand.Range(160, 300) * this.eventFrequencyMultiplier);
                 initialized = true;
             }
@@ -142,17 +138,17 @@ namespace TorannMagic
                 this.eventTimer = 0;
                 this.ticksTillNextEvent = (int)(Rand.Range(160, 300) * this.eventFrequencyMultiplier);
             }
-            if(this.notifier == false && this.assaultTimer > (.9f * this.ticksTillNextAssault))
-            {
-                Messages.Message("TM_AssaultPending".Translate(), MessageTypeDefOf.ThreatSmall);
-                this.notifier = true;
-            }
             if (this.assaultTimer > this.ticksTillNextAssault)
             {
                 SpawnCycle();
                 this.assaultTimer = 0;
                 this.ticksTillNextAssault = Mathf.RoundToInt(Rand.Range(2000, 3500) * this.difficultyMultiplier);
                 this.notifier = false;
+            }
+            age++;
+            if(age >= duration)
+            {
+                this.Destroy(DestroyMode.Vanish);
             }
         }
 
@@ -226,7 +222,7 @@ namespace TorannMagic
             bool flag1 = loc.InBoundsWithNullCheck(base.Map);
             bool flag2 = loc.IsValid;
             bool flag3 = !loc.Fogged(base.Map);
-            bool flag4 = loc.DistanceToEdge(base.Map) > 2;            
+            bool flag4 = loc.DistanceToEdge(base.Map) > 2;
             if(flag1 && flag2 && flag3 && flag4)
             {
                 if(loc.Roofed(base.Map))
@@ -328,11 +324,28 @@ namespace TorannMagic
                 this.eventFrequencyMultiplier = .4f;
                 this.areaRadius = 2;
             }
+
         }
 
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
         {
             //end conditions
+            List<Pawn> elementalPawns = new List<Pawn>();
+            List<Pawn> pList = this.Map.mapPawns.AllPawnsSpawned.ToList();
+            for (int i = 0; i < pList.Count; i++)
+            {
+                if (!pList[i].DestroyedOrNull() && !pList[i].Dead && pList[i].def.defName.Contains("Elemental") && pList[i].Faction == this.Faction)
+                {
+                    elementalPawns.Add(pList[i]);
+                }
+            }
+            while(elementalPawns.Count > 0)
+            {
+                Pawn ele = elementalPawns[0];
+                FleckMaker.ThrowSmoke(elementalPawns[0].DrawPos, this.Map, 1.2f);
+                ele.Destroy(DestroyMode.Vanish);
+                elementalPawns.Remove(ele);                
+            }
             List<GameCondition> currentGameConditions = this.Map.gameConditionManager.ActiveConditions;
             for(int i =0; i < currentGameConditions.Count; i++)
             {
@@ -568,7 +581,7 @@ namespace TorannMagic
             bool flag = spawnables.def != null;
             if (flag)
             {
-                Faction faction = Find.FactionManager.FirstFactionOfDef(FactionDef.Named("TM_ElementalFaction"));
+                Faction faction = this.Faction;
                 TMPawnSummoned newPawn = new TMPawnSummoned();
                 bool flag2 = spawnables.def.race != null;
                 if (flag2)
@@ -584,17 +597,19 @@ namespace TorannMagic
                         newPawn.validSummoning = true;
                         //newPawn.Spawner = this.Caster;
                         newPawn.Temporary = false;
-                        
-                        if (newPawn.Faction == null || !newPawn.Faction.HostileTo(Faction.OfPlayer))
-                        {
-                            Log.Message("elemental faction was null or not hostile - fixing");
-                            newPawn.SetFaction(faction, null);
-                            faction.TryAffectGoodwillWith(Faction.OfPlayer, -200, false, false, null, null);
-                        }
+                        //if (newPawn.Faction == null || !newPawn.Faction.HostileTo(Faction.OfPlayer))
+                        //{
+                        //    Log.Message("elemental faction was null or not hostile - fixing");
+                        //    newPawn.SetFaction(faction, null);
+                        //    faction.TryAffectGoodwillWith(Faction.OfPlayer, -200, false, false, null, null);
+                        //}
                         GenSpawn.Spawn(newPawn, position, this.Map);
                         if (newPawn.Faction != null && newPawn.Faction != Faction.OfPlayer)
                         {
                             Lord lord = null;
+                            //Lord lord = LordMaker.MakeNewLord(parms.faction, MakeLordJob(parms, map, list2, @int), map, list2);
+                            //RaidStrategyDefOf.ImmediateAttackFriendly;
+                            //LordJob_DefendBase
                             if (newPawn.Map.mapPawns.SpawnedPawnsInFaction(faction).Any((Pawn p) => p != newPawn))
                             {
                                 Predicate<Thing> validator = (Thing p) => p != newPawn && ((Pawn)p).GetLord() != null;
@@ -604,7 +619,9 @@ namespace TorannMagic
                             bool flag4 = lord == null;
                             if (flag4)
                             {
-                                LordJob_AssaultColony lordJob = new LordJob_AssaultColony(newPawn.Faction, false, false, false, true, false);
+                                //LordJob_AssaultColony lordJob = new LordJob_AssaultColony(newPawn.Faction, false, false, false, true, false);
+                                LordJob_DefendBase lordJob = new LordJob_DefendBase(newPawn.Faction, this.Position, 0);
+                                
                                 lord = LordMaker.MakeNewLord(faction, lordJob, this.Map, null);
                             }
                             lord.AddPawn(newPawn);                           
@@ -630,15 +647,15 @@ namespace TorannMagic
             matrix.SetTRS(vector, Quaternion.AngleAxis(angle, Vector3.up), s);
             if (matRng == 0)
             {
-                Graphics.DrawMesh(MeshPool.plane10, matrix, Building_TMElementalRift.portalMat_1, 0);
+                Graphics.DrawMesh(MeshPool.plane10, matrix, Building_TMElementalRift_Defenders.portalMat_1, 0);
             }
             else if (matRng == 1)
             {
-                Graphics.DrawMesh(MeshPool.plane10, matrix, Building_TMElementalRift.portalMat_2, 0);
+                Graphics.DrawMesh(MeshPool.plane10, matrix, Building_TMElementalRift_Defenders.portalMat_2, 0);
             }
             else 
             {
-                Graphics.DrawMesh(MeshPool.plane10, matrix, Building_TMElementalRift.portalMat_3, 0);
+                Graphics.DrawMesh(MeshPool.plane10, matrix, Building_TMElementalRift_Defenders.portalMat_3, 0);
             }            
         }
     }

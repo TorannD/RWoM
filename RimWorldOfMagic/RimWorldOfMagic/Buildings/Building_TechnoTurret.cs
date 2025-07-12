@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Text;
 using RimWorld;
-using AbilityUser;
+using TorannMagic.Weapon;
 using Verse;
-using Verse.AI;
 using UnityEngine;
 using Verse.Sound;
 
@@ -68,24 +64,8 @@ namespace TorannMagic
             }
         }
 
-        public override bool ClaimableBy(Faction by, StringBuilder reason = null)
+        public override AcceptanceReport ClaimableBy(Faction by)
         {
-            //if (!base.ClaimableBy(by, reason))
-            //{
-            //    return false;
-            //}
-            //if (mannableComp != null && mannableComp.ManningPawn != null)
-            //{
-            //    return false;
-            //}
-            //if (TT_Active && mannableComp == null)
-            //{
-            //    return false;
-            //}
-            //if (((dormantComp != null && !dormantComp.Awake) || (initiatableComp != null && !initiatableComp.Initiated)) && (powerComp == null || powerComp.PowerOn))
-            //{
-            //    return false;
-            //}
             return false;
         }
 
@@ -107,7 +87,7 @@ namespace TorannMagic
             Scribe_Values.Look<int>(ref this.duration, "duration", 3600);
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
             base.Tick();
             age++;

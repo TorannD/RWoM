@@ -1,10 +1,5 @@
 ﻿using Verse;
 using UnityEngine;
-using RimWorld;
-using System.Collections.Generic;
-using System;
-using System.Linq;
-using System.Threading;
 
 namespace TorannMagic
 {
@@ -20,7 +15,7 @@ namespace TorannMagic
         public float arcanePwr = 1f;
         Pawn target = null;
 
-        public override void Tick()
+        protected override void Tick()
         {
             if(!initialized)
             {

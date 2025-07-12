@@ -4,7 +4,6 @@ using Verse.Sound;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 namespace TorannMagic
 {
     public class Building_ExplosiveProximityTrap : Building_Trap
@@ -36,12 +35,6 @@ namespace TorannMagic
             }
         }
 
-        public override void ExposeData()
-        {
-            base.ExposeData();
-            //Scribe_References.Look<Pawn>(ref this.trapPawn, "trapPawn", false);
-        }
-
         private void CheckPawn(IntVec3 position)
         {
             List<Thing> thingList = position.GetThingList(base.Map);
@@ -58,7 +51,7 @@ namespace TorannMagic
             }
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
             if (this.Armed)
             {
@@ -122,12 +115,6 @@ namespace TorannMagic
         protected override float SpringChance(Pawn p)
         {            
             return Mathf.Clamp01(UnclampedSpringChance(p));
-        }
-
-        public override ushort PathFindCostFor(Pawn p)
-        {
-            if (!this.Armed && this.KnowsOfTrap(p)) return 800;
-            return 0;
         }
 
         public override ushort PathWalkCostFor(Pawn p)

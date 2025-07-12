@@ -358,13 +358,7 @@ namespace TorannMagic
             }
         }
 
-        public override void SpawnSetup(Map map, bool respawningAfterLoad)
-        {
-            base.SpawnSetup(map, respawningAfterLoad);
-            //LessonAutoActivator.TeachOpportunity(ConceptDef.Named("TM_Portals"), OpportunityType.GoodToKnow);
-        }
-
-        public override void Tick()
+        protected override void Tick()
         { 
             bool billsActionable = false;
             if (this.suspendReset)
@@ -885,7 +879,8 @@ namespace TorannMagic
                     {
                         if (ModCheck.Validate.GiddyUp.Core_IsInitialized())
                         {
-                            ModCheck.GiddyUp.ForceDismount(pawn);
+                            //todo: disabled giddyup
+                            // ModCheck.GiddyUp.ForceDismount(pawn);
                         }
                         FlyingObject_TimeDelay flyingObject = (FlyingObject_TimeDelay)GenSpawn.Spawn(TorannMagicDefOf.FlyingObject_TimeDelay, pawn.Position, pawn.Map);
                         flyingObject.speed = 10f;

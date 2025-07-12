@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using RimWorld;
-using AbilityUser;
 using Verse;
 using Verse.AI;
 using UnityEngine;
 using Verse.Sound;
-using HarmonyLib;
-
-
 
 namespace TorannMagic
 {   
@@ -57,7 +50,7 @@ namespace TorannMagic
             mannableComp = GetComp<CompMannable>();
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
             //base.Tick();
 

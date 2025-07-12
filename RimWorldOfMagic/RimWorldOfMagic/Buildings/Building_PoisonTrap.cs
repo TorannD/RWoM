@@ -4,6 +4,7 @@ using Verse;
 using Verse.Sound;
 using System.Collections.Generic;
 using System.Linq;
+using TorannMagic.Weapon;
 using UnityEngine;
 using Verse.AI;
 using Verse.AI.Group;
@@ -56,7 +57,7 @@ namespace TorannMagic
             }
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
             if (this.triggered)
             {

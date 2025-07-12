@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Verse;
 using Verse.AI;
-using System.Diagnostics;
 using UnityEngine;
 using RimWorld;
 
@@ -17,11 +15,6 @@ namespace TorannMagic
         public static float effectRadius = 12f;
         private float arcaneEnergyCur = 0;
         private static List<IntVec3> portableCells = new List<IntVec3>();
-
-        public override void ExposeData()
-        {
-            base.ExposeData();
-        }
 
         public IEnumerable<IntVec3> PortableCells
         {
@@ -115,7 +108,7 @@ namespace TorannMagic
             return Building_TMArcaneCapacitor.portableCells;
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
             base.Tick();
             if (Find.TickManager.TicksGame % 120 == 0 && this.CapacitorIsOn)
