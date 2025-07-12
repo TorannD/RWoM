@@ -21,74 +21,22 @@ namespace TorannMagic.AutoCast
         {
             success = false;
             Pawn caster = casterComp.Pawn;
-            //LocalTargetInfo jobTarget = caster.CurJob.targetA;
             LocalTargetInfo jobTarget = caster.pather.Destination;
             Thing carriedThing = null;
 
-            //if (caster.CurJob.targetA.Thing != null && caster.CurJob.targetA.Thing.Map != caster.Map)
-            //{
-            //    Log.Message("" + caster.LabelShort + " jobdef " + caster.CurJobDef.defName + " checking phase - target a: " + caster.CurJob.targetA + " target b: " + caster.CurJob.targetB + " carrying: " + caster.CurJob.targetA.Thing.stackCount + " " + caster.CurJob.targetA);
-            //}
-            //else
-            //{
-            //    Log.Message("" + caster.LabelShort + " jobdef " + caster.CurJobDef.defName + " checking phase - target a: " + caster.CurJob.targetA + " target b: " + caster.CurJob.targetB + " carrying: none");
-            //}
-            //if (caster.CurJob.targetA.Thing != null) //&& caster.CurJob.def.defName != "Sow")
-            //{
-            //    if (caster.CurJob.targetA.Thing.Map != caster.Map) //carrying TargetA to TargetB
-            //    {
-            //        jobTarget = caster.CurJob.targetB;
-            //        //carriedThing = caster.CurJob.targetA.Thing;                    
-            //    }
-            //    else if (caster.CurJob.targetB != null && caster.CurJob.targetB.Thing != null && caster.CurJob.def != JobDefOf.Rescue) //targetA using targetB for job
-            //    {
-            //        if (caster.CurJob.targetB.Thing.Map != caster.Map) //carrying targetB to targetA
-            //        {
-            //            jobTarget = caster.CurJob.targetA;
-            //            //carriedThing = caster.CurJob.targetB.Thing;
-            //        }
-            //        else if(caster.CurJob.def == JobDefOf.TendPatient || caster.CurJobDef == JobDefOf.Refuel || caster.CurJobDef == JobDefOf.RefuelAtomic || caster.CurJobDef == JobDefOf.RearmTurret || 
-            //            caster.CurJobDef == JobDefOf.RearmTurretAtomic || caster.CurJobDef == JobDefOf.FillFermentingBarrel)// || caster.CurJobDef == JobDefOf.)
-            //        {
-            //            jobTarget = caster.CurJob.targetB;
-            //        }
-            //        else //Getting targetA to carry to TargetB
-            //        {
-            //            jobTarget = caster.CurJob.targetA;
-            //        }
-            //    }
-            //    else
-            //    {
-            //        if (caster.CurJob.targetA.Thing.InteractionCell != null && caster.CurJob.targetA.Cell != caster.CurJob.targetA.Thing.InteractionCell)
-            //        {
-            //            jobTarget = caster.CurJob.targetA.Thing.InteractionCell;
-            //        }
-            //        else
-            //        {
-            //            jobTarget = caster.CurJob.targetA;
-            //        }
-            //    }
-            //}
             if(!jobTarget.Cell.Walkable(caster.Map))
             {
                 jobTarget = TM_Calc.FindWalkableCellNextTo(jobTarget.Cell, caster.Map);
             }
             float distanceToTarget = (jobTarget.Cell - caster.Position).LengthHorizontal;
             Vector3 directionToTarget = TM_Calc.GetVector(caster.Position, jobTarget.Cell);
-            //Log.Message("" + caster.LabelShort + " job def is " + caster.CurJob.def.defName + " targetA " + caster.CurJob.targetA + " targetB " + caster.CurJob.targetB + " jobTarget " + jobTarget + " at distance " + distanceToTarget + " min distance " + minDistance + " at vector " + directionToTarget);
-            //if (caster.carryTracker != null && caster.carryTracker.CarriedThing != null)
-            //{
-            //    carriedThing = caster.carryTracker.CarriedThing;
-            //    //Log.Message("carrying: " + caster.carryTracker.CarriedThing.def.defName + " count " + caster.carryTracker.CarriedThing.stackCount);
-            //}
+            
             if (casterComp.Stamina.CurLevel >= casterComp.ActualStaminaCost(abilitydef) && ability.CooldownTicksLeft <= 0 && distanceToTarget < 200)
             {
                 if (distanceToTarget > minDistance && caster.CurJob.locomotionUrgency >= LocomotionUrgency.Jog)// && caster.CurJob.bill == null)
                 {
                     if (distanceToTarget <= abilitydef.MainVerb.range && jobTarget.Cell != default(IntVec3) && jobTarget.Cell.Walkable(caster.Map))
                     {
-                        //Log.Message("doing blink to thing");
-                        //DoPhase(caster, casterComp, abilitydef, jobTarget.Cell, ability, carriedThing, power);
                         IntVec3 walkableCell = TM_Action.FindNearestWalkableCell(caster, jobTarget.Cell);
                         if (TM_Calc.PawnCanOccupyCell(caster, walkableCell))
                         {
@@ -99,14 +47,11 @@ namespace TorannMagic.AutoCast
                     else
                     {
                         IntVec3 phaseToCell = caster.Position + (directionToTarget * abilitydef.MainVerb.range).ToIntVec3();
-                        //Log.Message("doing partial blink to cell " + blinkToCell);
-                        //FleckMaker.ThrowHeatGlow(blinkToCell, caster.Map, 1f);
                         bool canReach = false;
                         bool isCloser = false;
                         try
                         {
                             canReach = caster.Map.reachability.CanReach(phaseToCell, jobTarget.Cell, PathEndMode.ClosestTouch, TraverseParms.For(TraverseMode.PassDoors));
-                            //Log.Message("future path cost" + );
                         }
                         catch
                         {
@@ -116,12 +61,12 @@ namespace TorannMagic.AutoCast
                         if (canReach && phaseToCell.IsValid && phaseToCell.InBoundsWithNullCheck(caster.Map) && phaseToCell.Walkable(caster.Map) && !phaseToCell.Fogged(caster.Map))// && ((phaseToCell - caster.Position).LengthHorizontal < distanceToTarget))
                         {
 
-                            PawnPath ppc = caster.Map.pathFinder.FindPath(caster.Position, jobTarget.Cell, TraverseParms.For(TraverseMode.PassDoors, Danger.Deadly), PathEndMode.ClosestTouch);
+                            PawnPath ppc = caster.Map.pathFinder.FindPathNow(caster.Position, jobTarget.Cell, TraverseParms.For(TraverseMode.PassDoors, Danger.Deadly), null, PathEndMode.ClosestTouch);
                             float currentCost = ppc.TotalCost;
                             float futureCost = currentCost;
                             ppc.ReleaseToPool();
 
-                            PawnPath ppf = caster.Map.pathFinder.FindPath(phaseToCell, jobTarget.Cell, TraverseParms.For(TraverseMode.PassDoors, Danger.Deadly), PathEndMode.ClosestTouch);
+                            PawnPath ppf = caster.Map.pathFinder.FindPathNow(phaseToCell, jobTarget.Cell, TraverseParms.For(TraverseMode.PassDoors, Danger.Deadly), null, PathEndMode.ClosestTouch);
                             futureCost = ppf.TotalCost;
                             ppf.ReleaseToPool();
                             isCloser = currentCost > futureCost;
@@ -1156,12 +1101,12 @@ namespace TorannMagic.AutoCast
 
                             if (canReach && blinkToCell.IsValid && blinkToCell.InBoundsWithNullCheck(caster.Map) && blinkToCell.Walkable(caster.Map) && !blinkToCell.Fogged(caster.Map))// && ((blinkToCell - caster.Position).LengthHorizontal < distanceToTarget))
                             {
-                                PawnPath ppc = caster.Map.pathFinder.FindPath(caster.Position, jobTarget.Cell, TraverseParms.For(TraverseMode.PassDoors, Danger.Deadly), PathEndMode.ClosestTouch);
+                                PawnPath ppc = caster.Map.pathFinder.FindPathNow(caster.Position, jobTarget.Cell, TraverseParms.For(TraverseMode.PassDoors, Danger.Deadly), null, PathEndMode.ClosestTouch);
                                 float currentCost = ppc.TotalCost;
                                 float futureCost = currentCost;
                                 ppc.ReleaseToPool();
 
-                                PawnPath ppf = caster.Map.pathFinder.FindPath(blinkToCell, jobTarget.Cell, TraverseParms.For(TraverseMode.PassDoors, Danger.Deadly), PathEndMode.ClosestTouch);
+                                PawnPath ppf = caster.Map.pathFinder.FindPathNow(blinkToCell, jobTarget.Cell, TraverseParms.For(TraverseMode.PassDoors, Danger.Deadly), null, PathEndMode.ClosestTouch);
                                 futureCost = ppf.TotalCost;
                                 ppf.ReleaseToPool();
                                 isCloser = currentCost > futureCost;
@@ -1501,12 +1446,12 @@ namespace TorannMagic.AutoCast
 
                         if (canReach && blinkToCell.IsValid && blinkToCell.InBoundsWithNullCheck(caster.Map) && blinkToCell.Walkable(caster.Map) && !blinkToCell.Fogged(caster.Map))
                         {
-                            PawnPath ppc = caster.Map.pathFinder.FindPath(caster.Position, jobTarget.Cell, TraverseParms.For(TraverseMode.PassDoors, Danger.Deadly), PathEndMode.ClosestTouch);
+                            PawnPath ppc = caster.Map.pathFinder.FindPathNow(caster.Position, jobTarget.Cell, TraverseParms.For(TraverseMode.PassDoors, Danger.Deadly), null, PathEndMode.ClosestTouch);
                             float currentCost = ppc.TotalCost;
                             float futureCost = currentCost;
                             ppc.ReleaseToPool();
 
-                            PawnPath ppf = caster.Map.pathFinder.FindPath(blinkToCell, jobTarget.Cell, TraverseParms.For(TraverseMode.PassDoors, Danger.Deadly), PathEndMode.ClosestTouch);
+                            PawnPath ppf = caster.Map.pathFinder.FindPathNow(blinkToCell, jobTarget.Cell, TraverseParms.For(TraverseMode.PassDoors, Danger.Deadly), null, PathEndMode.ClosestTouch);
                             futureCost = ppf.TotalCost;
                             ppf.ReleaseToPool();
                             isCloser = currentCost > futureCost;
