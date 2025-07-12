@@ -1,31 +1,24 @@
 ﻿using RimWorld;
-using System;
-using System.Linq;
-using System.Collections.Generic;
 using UnityEngine;
 using Verse;
-using AbilityUser;
 
 namespace TorannMagic
 {
     [StaticConstructorOnStartup]
-    public class FlyingObject_DragonStrike : Projectile
+    public class FlyingObject_Flight : Projectile
     {
         protected new Vector3 origin;
 
         protected new Vector3 destination;
 
-        protected float speed = 40f;
+        protected float speed = 20f;
         private bool drafted = false;
-        private int verVal = 0;
 
         protected new int ticksToImpact;
 
-        protected Thing assignedTarget = null;
+        protected Thing assignedTarget;
         protected Thing flyingThing;
 
-        private float distanceToTarget = 0;
-        private float damageMultiplier = 1;
         public DamageInfo? impactDamage;
 
         public bool damageLaunched = true;
@@ -35,7 +28,7 @@ namespace TorannMagic
         public int weaponDmg = 0;
 
         Pawn pawn;
-        CompAbilityUserMight comp;
+        CompAbilityUserMagic comp;
 
         protected new int StartingTicksToImpact
         {
@@ -90,9 +83,6 @@ namespace TorannMagic
             Scribe_Values.Look<Vector3>(ref this.origin, "origin", default(Vector3), false);
             Scribe_Values.Look<Vector3>(ref this.destination, "destination", default(Vector3), false);
             Scribe_Values.Look<int>(ref this.ticksToImpact, "ticksToImpact", 0, false);
-            Scribe_Values.Look<int>(ref this.verVal, "verVal", 0, false);
-            Scribe_Values.Look<float>(ref this.distanceToTarget, "distanceToTarget", 0, false);
-            Scribe_Values.Look<float>(ref this.damageMultiplier, "damageMultiplier", 1, false);
             Scribe_Values.Look<bool>(ref this.damageLaunched, "damageLaunched", true, false);
             Scribe_Values.Look<bool>(ref this.explosion, "explosion", false, false);
             Scribe_References.Look<Thing>(ref this.assignedTarget, "assignedTarget", false);
@@ -104,17 +94,9 @@ namespace TorannMagic
         {
             if (pawn != null)
             {
-                FleckMaker.Static(this.origin, this.Map, FleckDefOf.ExplosionFlash, 12f);
+                FleckMaker.Static(this.origin, this.Map, FleckDefOf.ExplosionFlash, 4f);
                 SoundDefOf.Ambient_AltitudeWind.sustainFadeoutTime.Equals(30.0f);
-                FleckMaker.ThrowDustPuff(this.origin, this.Map, Rand.Range(1.2f, 1.8f));
-            }
-            if(distanceToTarget > 12)
-            {
-                damageMultiplier = .5f;
-            }
-            else if(distanceToTarget > 8)
-            {
-                damageMultiplier = .8f;
+                FleckMaker.ThrowDustPuff(this.origin, this.Map, Rand.Range(2.4f, 3.6f));
             }
             //flyingThing.ThingID += Rand.Range(0, 2147).ToString();
         }
@@ -131,18 +113,12 @@ namespace TorannMagic
 
         public void Launch(Thing launcher, Vector3 origin, LocalTargetInfo targ, Thing flyingThing, DamageInfo? newDamageInfo = null)
         {
+
             bool spawned = flyingThing.Spawned;            
             pawn = launcher as Pawn;
             drafted = pawn.Drafted;
-            comp = pawn.GetCompAbilityUserMight();
-            verVal = TM_Calc.GetSkillVersatilityLevel(pawn, TorannMagicDefOf.TM_DragonStrike, true);
-            //verVal = TM_Calc.GetMightSkillLevel(pawn, comp.MightData.MightPowerSkill_DragonStrike, "TM_DragonStrike", "_ver", true);
-            //this.verVal = comp.MightData.MightPowerSkill_DragonStrike.FirstOrDefault((MightPowerSkill x) => x.label == "TM_DragonStrike_ver").level;
-            //if (comp.Pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
-            //{
-            //    MightPowerSkill mver = comp.MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
-            //    verVal = mver.level;
-            //}
+            comp = pawn.GetCompAbilityUserMagic();
+
             if (spawned)
             {               
                 flyingThing.DeSpawn();
@@ -153,18 +129,18 @@ namespace TorannMagic
             this.origin = origin;
             this.impactDamage = newDamageInfo;
             this.flyingThing = flyingThing;
-            this.distanceToTarget = (targ.Cell - origin.ToIntVec3()).LengthHorizontal;
+
             bool flag = targ.Thing != null;
             if (flag)
             {
-                this.assignedTarget = targ.Thing;                
+                this.assignedTarget = targ.Thing;
             }
-            this.destination = targ.Cell.ToVector3();
+            this.destination = targ.Cell.ToVector3Shifted() + new Vector3(Rand.Range(-0.3f, 0.3f), 0f, Rand.Range(-0.3f, 0.3f));
             this.ticksToImpact = this.StartingTicksToImpact;
             this.Initialize();
         }      
 
-        public override void Tick()
+        protected override void Tick()
         {
             //base.Tick();
             Vector3 exactPosition = this.ExactPosition;
@@ -183,14 +159,15 @@ namespace TorannMagic
                 {
                     FleckMaker.ThrowDustPuff(base.Position, base.Map, Rand.Range(0.8f, 1.2f));
                 }               
-         
-                //if(Find.TickManager.TicksGame % 10 == 0 && this.assignedTarget != null)
-                //{
-                //    this.origin = this.ExactPosition;
-                //    this.destination = this.assignedTarget.DrawPos;
-                //    this.ticksToImpact = this.StartingTicksToImpact;
-                //}
-
+                
+                if (Find.TickManager.TicksGame % 3 == 0)
+                {
+                    Vector3 shiftVec = this.ExactPosition;
+                    shiftVec.x += Rand.Range(-.3f, .3f);
+                    shiftVec.z += Rand.Range(-.3f, .3f);
+                    TM_MoteMaker.ThrowArcaneMote(shiftVec, base.Map, Rand.Range(.5f, .6f), .1f, .02f, .2f, 200, .3f);
+                }
+                
                 bool flag2 = this.ticksToImpact <= 0;
                 if (flag2)
                 {
@@ -220,8 +197,7 @@ namespace TorannMagic
                         return;
                     }
                     Pawn pawn = this.flyingThing as Pawn;
-                    pawn.Drawer.renderer.RenderPawnAt(this.DrawPos);
-                    //pawn.Drawer.DrawAt(this.DrawPos);  
+                    pawn.Drawer.renderer.RenderPawnAt(this.DrawPos);  
                     
                 }
                 else
@@ -251,7 +227,7 @@ namespace TorannMagic
             if (flag)
             {
                 Pawn targetPawn = this.assignedTarget as Pawn;
-                bool flag2 = targetPawn != null && targetPawn.GetPosture() != PawnPosture.Standing && (this.origin - this.destination).MagnitudeHorizontalSquared() >= 20.25f && Rand.Value > 0.1f;
+                bool flag2 = targetPawn != null && targetPawn.GetPosture() != PawnPosture.Standing && (this.origin - this.destination).MagnitudeHorizontalSquared() >= 20.25f && Rand.Value > 0.2f;
                 if (flag2)
                 {
                     this.Impact(null);
@@ -279,31 +255,10 @@ namespace TorannMagic
                     hitThing = hitPawn;
                 }
             }
-            bool hasValue = this.impactDamage.HasValue && hitThing != null && hitThing is Pawn;
+            bool hasValue = this.impactDamage.HasValue;
             if (hasValue)
             {
-                Pawn hitPawn = hitThing as Pawn;
-                this.impactDamage.Value.SetAmount(this.impactDamage.Value.Amount * this.damageMultiplier);
-                try
-                {
-                    hitPawn.TakeDamage(this.impactDamage.Value);
-                    if (distanceToTarget <= 6f && hitThing is Pawn)
-                    {
-                        if (!hitPawn.DestroyedOrNull() && !hitPawn.Downed && !hitPawn.Dead)
-                        {
-                            Vector3 launchVector = TM_Calc.GetVector(this.origin, hitThing.Position.ToVector3());
-                            IntVec3 projectedPosition = hitThing.Position + ((10f - distanceToTarget) * (1 + (.15f * verVal)) * launchVector).ToIntVec3();
-                            if (projectedPosition.IsValid && projectedPosition.InBoundsWithNullCheck(hitThing.Map))
-                            {
-                                LaunchFlyingObect(projectedPosition, hitPawn, Mathf.RoundToInt(10f - distanceToTarget));
-                            }
-                        }
-                    }
-                }
-                catch (NullReferenceException ex)
-                {
-
-                }
+                hitThing.TakeDamage(this.impactDamage.Value);
             }
             try
             {
@@ -333,20 +288,6 @@ namespace TorannMagic
                 }
                 this.Destroy(DestroyMode.Vanish);
             }
-        }
-
-        public void LaunchFlyingObect(IntVec3 targetCell, Pawn pawn, int force)
-        {
-            bool flag = targetCell != null && targetCell != default(IntVec3);
-            if (flag)
-            {
-                if (pawn != null && pawn.Position.IsValid && pawn.Spawned && pawn.Map != null && !pawn.Downed && !pawn.Dead)
-                {
-                    FlyingObject_Spinning flyingObject = (FlyingObject_Spinning)GenSpawn.Spawn(ThingDef.Named("FlyingObject_Spinning"), pawn.Position, pawn.Map);
-                    flyingObject.speed = 25 + force;
-                    flyingObject.Launch(pawn, targetCell, pawn);
-                }
-            }
-        }
+        }        
     }
 }

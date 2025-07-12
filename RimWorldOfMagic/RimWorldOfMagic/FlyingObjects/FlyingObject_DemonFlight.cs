@@ -1,27 +1,25 @@
 ﻿using RimWorld;
-using System;
 using System.Linq;
 using System.Collections.Generic;
+using TorannMagic.Weapon;
 using UnityEngine;
 using Verse;
-using AbilityUser;
 
 namespace TorannMagic
 {
     [StaticConstructorOnStartup]
-    public class FlyingObject_ValiantCharge : Projectile
+    public class FlyingObject_DemonFlight : Projectile
     {
-
-        private static readonly Color wingColor = new Color(160f, 160f, 160f);
-        private static readonly Material wingsNS = MaterialPool.MatFrom("Other/angelwings_up", ShaderDatabase.Transparent, FlyingObject_ValiantCharge.wingColor);
-        private static readonly Material wingsE = MaterialPool.MatFrom("Other/angelwings_up_east", ShaderDatabase.Transparent, FlyingObject_ValiantCharge.wingColor);
-        private static readonly Material wingsW = MaterialPool.MatFrom("Other/angelwings_up_west", ShaderDatabase.Transparent, FlyingObject_ValiantCharge.wingColor);
+        private static readonly Color wingColor = new Color(10f, 10f, 10f);
+        private static readonly Material wingsNS = MaterialPool.MatFrom("Other/demonwings_up", ShaderDatabase.Transparent);
+        private static readonly Material wingsE = MaterialPool.MatFrom("Other/demonwings_up_east", ShaderDatabase.Transparent);
+        private static readonly Material wingsW = MaterialPool.MatFrom("Other/demonwings_up_west", ShaderDatabase.Transparent);
 
         protected new Vector3 origin;
 
         protected new Vector3 destination;
 
-        protected float speed = 55f;
+        protected float speed = 40f;
 
         protected new int ticksToImpact;
 
@@ -39,7 +37,6 @@ namespace TorannMagic
 
         public int weaponDmg = 0;
 
-        private bool initialize = true;
         private int wingDelay = 0;
         private bool wingDisplay = true;
 
@@ -54,9 +51,6 @@ namespace TorannMagic
         bool zflag = false;
 
         Pawn pawn;
-        CompAbilityUserMagic comp;
-        MagicPowerSkill pwr;
-        MagicPowerSkill ver;
         private int verVal;
         private int pwrVal;
         private float arcaneDmg = 1;
@@ -122,9 +116,8 @@ namespace TorannMagic
             Scribe_Values.Look<bool>(ref this.damageLaunched, "damageLaunched", true, false);
             Scribe_Values.Look<bool>(ref this.explosion, "explosion", false, false);
             Scribe_References.Look<Thing>(ref this.assignedTarget, "assignedTarget", false);
-            //Scribe_References.Look<Thing>(ref this.launcher, "launcher", false);
-            Scribe_Deep.Look<Thing>(ref this.flyingThing, "flyingThing", new object[0]);
             Scribe_References.Look<Pawn>(ref this.pawn, "pawn", false);
+            Scribe_Deep.Look<Thing>(ref this.flyingThing, "flyingThing", new object[0]);
         }
 
         private void Initialize()
@@ -139,7 +132,6 @@ namespace TorannMagic
                 XProb(this.DestinationCell, this.origin);
             }
             //flyingThing.ThingID += Rand.Range(0, 2147).ToString();
-            this.initialize = false;
         }
 
         public void Launch(Thing launcher, LocalTargetInfo targ, Thing flyingThing, DamageInfo? impactDamage)
@@ -156,32 +148,14 @@ namespace TorannMagic
         {
             Hediff invul = new Hediff();
             invul.def = TorannMagicDefOf.TM_HediffInvulnerable;
-            invul.Severity = .2f;
+            invul.Severity = 5;
             bool spawned = flyingThing.Spawned;
-            this.pawn = launcher as Pawn;
+            pawn = launcher as Pawn;
             pawn.health.AddHediff(invul, null, null);
-            comp = pawn.GetCompAbilityUserMagic();
-            pwrVal = TM_Calc.GetSkillPowerLevel(pawn, TorannMagicDefOf.TM_ValiantCharge);
-            verVal = TM_Calc.GetSkillVersatilityLevel(pawn, TorannMagicDefOf.TM_ValiantCharge);
-            //pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_ValiantCharge.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_ValiantCharge_pwr");
-            //ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_ValiantCharge.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_ValiantCharge_ver");
-            //
-            //pwrVal = pwr.level;
-            //verVal = ver.level;
-            //if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
-            //{
-            //    MightPowerSkill mpwr = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-            //    MightPowerSkill mver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
-            //    pwrVal = mpwr.level;
-            //    verVal = mver.level;
-            //}
-            //if (ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist)
-            //{
-            //    pwrVal = 3;
-            //    verVal = 3;
-            //}
+            pwrVal = 2;
+            verVal = 2;
             if (spawned)
-            {               
+            {
                 flyingThing.DeSpawn();
             }
             //
@@ -198,9 +172,9 @@ namespace TorannMagic
             this.destination = targ.Cell.ToVector3Shifted() + new Vector3(Rand.Range(-0.3f, 0.3f), 0f, Rand.Range(-0.3f, 0.3f));
             this.ticksToImpact = this.StartingTicksToImpact;
             this.Initialize();
-        }
+        }        
 
-        public override void Tick()
+        protected override void Tick()
         {
             //base.Tick();
             Vector3 exactPosition = this.ExactPosition;
@@ -226,7 +200,7 @@ namespace TorannMagic
                     }
                     this.ImpactSomething();
                 }
-                
+
             }
         }
 
@@ -263,7 +237,7 @@ namespace TorannMagic
                             wingDelay = 0;
                             wingDisplay = false;
 
-                        }                        
+                        }
                     }
                     else
                     {
@@ -295,20 +269,20 @@ namespace TorannMagic
                 Vector3 vector = pawnVec;
                 vector.y = Altitudes.AltitudeFor(AltitudeLayer.MoteOverhead);
                 float angle = (float)Rand.Range(0, 360);
-                Vector3 s = new Vector3(3f, 3f, 3f);
+                Vector3 s = new Vector3(5f, 5f, 5f);
                 Matrix4x4 matrix = default(Matrix4x4);
                 matrix.SetTRS(vector, Quaternion.AngleAxis(0f, Vector3.up), s);
                 if (flyingPawn.Rotation == Rot4.South || flyingPawn.Rotation == Rot4.North)
                 {
-                    Graphics.DrawMesh(MeshPool.plane10, matrix, FlyingObject_ValiantCharge.wingsNS, 0);
+                    Graphics.DrawMesh(MeshPool.plane10, matrix, FlyingObject_DemonFlight.wingsNS, 0);
                 }
                 if (flyingPawn.Rotation == Rot4.East)
                 {
-                    Graphics.DrawMesh(MeshPool.plane10, matrix, FlyingObject_ValiantCharge.wingsE, 0);
+                    Graphics.DrawMesh(MeshPool.plane10, matrix, FlyingObject_DemonFlight.wingsE, 0);
                 }
                 if (flyingPawn.Rotation == Rot4.West)
                 {
-                    Graphics.DrawMesh(MeshPool.plane10, matrix, FlyingObject_ValiantCharge.wingsW, 0);
+                    Graphics.DrawMesh(MeshPool.plane10, matrix, FlyingObject_DemonFlight.wingsW, 0);
                 }
             }
         }
@@ -372,10 +346,6 @@ namespace TorannMagic
             {
                 SoundDefOf.Ambient_AltitudeWind.sustainFadeoutTime.Equals(30.0f);
                 this.FireExplosion(pwrVal, verVal, base.Position, base.Map, (1.2f + (float)(verVal * .8f)));
-                if (!pawn.IsColonist)
-                {
-                    this.FireExplosion(3, 3, base.Position, base.Map, (1.2f + (float)(3 * .8f)));
-                }
                 FleckMaker.ThrowSmoke(pawn.Position.ToVector3(), base.Map, (0.8f + (float)(verVal * .8f)));
 
                 for (int i = 0; i < (2 + verVal); i++)
@@ -397,20 +367,9 @@ namespace TorannMagic
                 }
 
                 GenSpawn.Spawn(this.flyingThing, base.Position, base.Map);
-
                 ModOptions.Constants.SetPawnInFlight(false);
                 Pawn p = this.flyingThing as Pawn;
-                TM_Action.SearchAndTaunt(p, 3f, 5, .7f);
-                HealthUtility.AdjustSeverity(p, TorannMagicDefOf.TM_HediffShield, .25f);
                 RemoveInvul(p);
-                if (p.IsColonist)
-                {
-                    p.drafter.Drafted = true;
-                    if (ModOptions.Settings.Instance.cameraSnap)
-                    {
-                        CameraJumper.TryJumpAndSelect(p);
-                    }
-                }
                 this.Destroy(DestroyMode.Vanish);
             }
             catch
@@ -419,10 +378,6 @@ namespace TorannMagic
                 ModOptions.Constants.SetPawnInFlight(false);
                 Pawn p = this.flyingThing as Pawn;
                 RemoveInvul(p);
-                if (p.IsColonist)
-                {
-                    p.drafter.Drafted = true;
-                }
                 this.Destroy(DestroyMode.Vanish);
             }
         }
@@ -430,50 +385,37 @@ namespace TorannMagic
         protected void FireExplosion(int pwr, int ver, IntVec3 pos, Map map, float radius)
         {
             ThingDef def = this.def;
-
-            Explosion(pwr, pos, map, radius, TMDamageDefOf.DamageDefOf.TM_Holy, this.pawn, null, def, ThingDefOf.Explosion, null, 0.3f, 1, false, null, 0f, 1);
-
-            if (ver >= 2)
-            {
-                int stunProb = Rand.Range(1, 10);
-                if (stunProb > (4 + ver))
-                {
-                    Explosion(pwr, pos, map, radius, DamageDefOf.Stun, this.pawn, null, def, ThingDefOf.Explosion, null, 0.3f, 1, false, null, 0f, 1);
-                }
-            }
-            
+            Explosion(pwr, pos, map, radius, DamageDefOf.Burn, this.pawn, null, def, ThingDefOf.Explosion, null, 0.3f, 1, false, null, 0f, 1);
         }
 
         public void Explosion(int pwr, IntVec3 center, Map map, float radius, DamageDef damType, Thing instigator, SoundDef explosionSound = null, ThingDef projectile = null, ThingDef source = null, ThingDef postExplosionSpawnThingDef = null, float postExplosionSpawnChance = 0f, int postExplosionSpawnThingCount = 1, bool applyDamageToExplosionCellsNeighbors = false, ThingDef preExplosionSpawnThingDef = null, float preExplosionSpawnChance = 0f, int preExplosionSpawnThingCount = 1)
         {
-            if (center.InBounds(map))
+
+            System.Random rnd = new System.Random();
+            int modDamAmountRand = GenMath.RoundRandom(rnd.Next(6 + pwr, 13 + (4 * pwr)));
+            modDamAmountRand *= Mathf.RoundToInt(this.arcaneDmg);
+            if (map == null)
             {
-                System.Random rnd = new System.Random();
-                int modDamAmountRand = GenMath.RoundRandom(rnd.Next(8 + pwr, 15 + (4 * pwr)));
-                modDamAmountRand = Mathf.RoundToInt(modDamAmountRand * this.arcaneDmg);
-                if (map == null)
-                {
-                    Log.Warning("Tried to do explosion in a null map.");
-                    return;
-                }
-                Explosion explosion = (Explosion)GenSpawn.Spawn(ThingDefOf.Explosion, center, map);
-                explosion.damageFalloff = false;
-                explosion.chanceToStartFire = 0.0f;
-                explosion.Position = center;
-                explosion.radius = radius;
-                explosion.damType = damType;
-                explosion.instigator = instigator;
-                explosion.damAmount = ((projectile == null) ? GenMath.RoundRandom((float)damType.defaultDamage) : modDamAmountRand);
-                explosion.weapon = source;
-                explosion.preExplosionSpawnThingDef = preExplosionSpawnThingDef;
-                explosion.preExplosionSpawnChance = preExplosionSpawnChance;
-                explosion.preExplosionSpawnThingCount = preExplosionSpawnThingCount;
-                explosion.postExplosionSpawnThingDef = postExplosionSpawnThingDef;
-                explosion.postExplosionSpawnChance = postExplosionSpawnChance;
-                explosion.postExplosionSpawnThingCount = postExplosionSpawnThingCount;
-                explosion.applyDamageToExplosionCellsNeighbors = applyDamageToExplosionCellsNeighbors;
-                explosion.StartExplosion(explosionSound, null);
+                Log.Warning("Tried to do explosion in a null map.");
+                return;
             }
+            Explosion explosion = (Explosion)GenSpawn.Spawn(ThingDefOf.Explosion, center, map);
+            explosion.damageFalloff = false;
+            explosion.chanceToStartFire = 0.0f;
+            explosion.Position = center;
+            explosion.radius = radius;
+            explosion.damType = damType;
+            explosion.instigator = instigator;
+            explosion.damAmount = ((projectile == null) ? GenMath.RoundRandom((float)damType.defaultDamage) : modDamAmountRand);
+            explosion.weapon = source;
+            explosion.preExplosionSpawnThingDef = preExplosionSpawnThingDef;
+            explosion.preExplosionSpawnChance = preExplosionSpawnChance;
+            explosion.preExplosionSpawnThingCount = preExplosionSpawnThingCount;
+            explosion.postExplosionSpawnThingDef = postExplosionSpawnThingDef;
+            explosion.postExplosionSpawnChance = postExplosionSpawnChance;
+            explosion.postExplosionSpawnThingCount = postExplosionSpawnThingCount;
+            explosion.applyDamageToExplosionCellsNeighbors = applyDamageToExplosionCellsNeighbors;
+            explosion.StartExplosion(explosionSound, null);
         }
 
         private void XProb(IntVec3 target, Vector3 origin)

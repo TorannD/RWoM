@@ -1,7 +1,5 @@
 ﻿using Verse;
 using AbilityUser;
-using System.Collections.Generic;
-using RimWorld;
 
 namespace TorannMagic
 {    

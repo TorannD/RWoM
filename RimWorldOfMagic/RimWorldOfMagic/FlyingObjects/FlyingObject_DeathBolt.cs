@@ -1,7 +1,5 @@
 ﻿using RimWorld;
-using System;
-using System.Linq;
-using System.Collections.Generic;
+using TorannMagic.Weapon;
 using UnityEngine;
 using Verse;
 
@@ -211,7 +209,7 @@ namespace TorannMagic
             this.Initialize();
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
             //base.Tick();
             age++;

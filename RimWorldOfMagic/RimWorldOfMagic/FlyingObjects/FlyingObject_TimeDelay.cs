@@ -1,10 +1,6 @@
 ﻿using RimWorld;
-using System;
-using System.Linq;
-using System.Collections.Generic;
 using UnityEngine;
 using Verse;
-using AbilityUser;
 using Verse.Sound;
 
 namespace TorannMagic
@@ -196,7 +192,7 @@ namespace TorannMagic
             this.Initialize();
         }        
 
-        public override void Tick()
+        protected override void Tick()
         {
             this.duration--;
             base.Position = this.origin.ToIntVec3();

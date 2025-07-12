@@ -1,9 +1,7 @@
 ﻿using RimWorld;
-using System;
-using System.Linq;
+using TorannMagic.Weapon;
 using UnityEngine;
 using Verse;
-using AbilityUser;
 
 namespace TorannMagic
 {
@@ -177,7 +175,7 @@ namespace TorannMagic
             this.Initialize();
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
             //base.Tick();
             this.drawTicks--;

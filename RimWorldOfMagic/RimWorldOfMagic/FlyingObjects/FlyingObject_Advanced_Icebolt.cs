@@ -1,10 +1,7 @@
 ﻿using RimWorld;
-using System;
-using System.Linq;
-using System.Collections.Generic;
+using TorannMagic.Weapon;
 using UnityEngine;
 using Verse;
-using AbilityUser;
 
 namespace TorannMagic
 {

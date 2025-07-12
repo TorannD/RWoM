@@ -1,7 +1,5 @@
 ﻿using Verse;
 using AbilityUser;
-using RimWorld;
-using System.Linq;
 using UnityEngine;
 
 namespace TorannMagic
@@ -60,7 +58,8 @@ namespace TorannMagic
                     //this.Ability.PostAbilityAttempt();
                     if (ModCheck.Validate.GiddyUp.Core_IsInitialized())
                     {
-                        ModCheck.GiddyUp.ForceDismount(base.CasterPawn);
+                        //todo: disabled giddyup
+                        // ModCheck.GiddyUp.ForceDismount(base.CasterPawn);
                     }
 
                     LongEventHandler.QueueLongEvent(delegate

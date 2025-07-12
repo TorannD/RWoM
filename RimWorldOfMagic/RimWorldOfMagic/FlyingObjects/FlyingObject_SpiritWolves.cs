@@ -1,10 +1,8 @@
 ﻿using RimWorld;
-using System;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using Verse;
-using Verse.Sound;
 
 namespace TorannMagic
 {
@@ -154,7 +152,7 @@ namespace TorannMagic
             this.Initialize();
         }
 
-        public override void Tick()
+        protected override void Tick()
         {            
             if (this.ticksToImpact >= 0 && Find.TickManager.TicksGame % 3 == 0)
             {

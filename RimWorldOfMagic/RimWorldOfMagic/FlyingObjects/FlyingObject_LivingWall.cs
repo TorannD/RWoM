@@ -1,11 +1,9 @@
 ﻿using RimWorld;
-using System;
 using System.Threading;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using Verse;
-using AbilityUser;
 
 namespace TorannMagic
 {
@@ -535,7 +533,7 @@ namespace TorannMagic
         private int threadLockTick = 0;
         private int searchEnemyTick = 0;
         static List<Thread> activeThreads = new List<Thread>();
-        public override void Tick()
+        protected override void Tick()
         {
             Vector3 exactPosition = this.ExactPosition;
             if (shouldDestroy)

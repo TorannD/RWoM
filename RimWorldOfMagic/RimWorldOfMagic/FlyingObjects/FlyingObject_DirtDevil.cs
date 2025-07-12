@@ -1,14 +1,14 @@
 ﻿using RimWorld;
-using System;
 using System.Linq;
 using System.Collections.Generic;
+using TorannMagic.Weapon;
 using UnityEngine;
 using Verse;
 
 namespace TorannMagic
 {
     [StaticConstructorOnStartup]
-    public class FlyingObject_SpiritStorm : Projectile
+    public class FlyingObject_DirtDevil : Projectile
     {
 
         protected new Vector3 origin;
@@ -16,9 +16,9 @@ namespace TorannMagic
 
         private int searchDelay = 10;
         private int age = -1;
-        private int duration = 1000;
+        private int duration = 12000;
 
-        protected float speed = 6f;
+        protected float speed = 9f;
         protected new int ticksToImpact;
 
         //protected new Thing launcher;
@@ -38,15 +38,7 @@ namespace TorannMagic
 
         private bool initialized = true;
 
-        public float radius = 4;
-        public float spellDamage = 5;
-        public int destinationTick = 0;
-        public int frenzyBonus = 0;
-
-        public Vector3 ManualDestination = default(Vector3);
-        public bool PlayerTargetSet = false;
-
-        protected new int StartingTicksToImpact
+        protected int StartingTicksToImpact
         {
             get
             {
@@ -60,7 +52,7 @@ namespace TorannMagic
             }
         }
 
-        protected new IntVec3 DestinationCell
+        protected IntVec3 DestinationCell
         {
             get
             {
@@ -68,7 +60,7 @@ namespace TorannMagic
             }
         }
 
-        public new Vector3 ExactPosition
+        public override Vector3 ExactPosition
         {
             get
             {
@@ -77,7 +69,7 @@ namespace TorannMagic
             }
         }
 
-        public new Quaternion ExactRotation
+        public override Quaternion ExactRotation
         {
             get
             {
@@ -97,7 +89,7 @@ namespace TorannMagic
         {
             base.ExposeData();
             Scribe_Values.Look<int>(ref this.age, "age", -1, false);
-            Scribe_Values.Look<int>(ref this.duration, "duration", 600, false);
+            Scribe_Values.Look<int>(ref this.duration, "duration", 12000, false);
             Scribe_Values.Look<Vector3>(ref this.origin, "origin", default(Vector3), false);
             Scribe_Values.Look<Vector3>(ref this.destination, "destination", default(Vector3), false);
             Scribe_Values.Look<int>(ref this.ticksToImpact, "ticksToImpact", 0, false);
@@ -110,9 +102,6 @@ namespace TorannMagic
             //Scribe_References.Look<Thing>(ref this.launcher, "launcher", false);
             Scribe_References.Look<Pawn>(ref this.pawn, "pawn", false);
             Scribe_Deep.Look<Thing>(ref this.flyingThing, "flyingThing", new object[0]);
-            Scribe_Values.Look<float>(ref this.radius, "radius", 4);
-            Scribe_Values.Look<float>(ref this.spellDamage, "spellDamage", 5);
-            Scribe_Values.Look<int>(ref this.frenzyBonus, "frenzyBonus", 0);
         }
 
         private void Initialize()
@@ -141,14 +130,19 @@ namespace TorannMagic
         {
             bool spawned = flyingThing.Spawned;
             pawn = launcher as Pawn;
-            if(pawn != null && pawn.story != null && pawn.story.Adulthood != null && pawn.story.Adulthood.identifier == "tm_vengeful_spirit")
-            {
-                frenzyBonus = 8;
-            }
             CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
+            if (comp != null)
+            {
+                if (comp.MagicData.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Cantrips_pwr").level >= 3)
+                {
+                    this.speed = 12;
+                }
+                if (comp.MagicData.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Cantrips_ver").level >= 4)
+                {
+                    this.duration = Mathf.RoundToInt(this.duration * 1.25f);
+                }
+            }
             this.duration = Mathf.RoundToInt(this.duration * comp.arcaneDmg);
-            this.radius = this.def.projectile.explosionRadius + comp.MagicData.GetSkill_Versatility(TorannMagicDefOf.TM_SpiritStorm).level;
-            this.spellDamage = this.def.projectile.GetDamageAmount(1f) * (1f + (.12f * comp.MagicData.GetSkill_Power(TorannMagicDefOf.TM_SpiritStorm).level)) * comp.arcaneDmg;
             if (spawned)
             {
                 flyingThing.DeSpawn();
@@ -162,65 +156,84 @@ namespace TorannMagic
             {
                 this.assignedTarget = targ.Thing;
             }
-            StormEffects();
-            this.destination = FindNearestTarget(this.launcher.DrawPos);
+            CleanFilth();
+            this.destination = FindNearestFilth(this.launcher.DrawPos);
             this.ticksToImpact = this.StartingTicksToImpact;
             this.Initialize();
         }
 
-        public Vector3 FindNearestTarget(Vector3 origin)
+        public Vector3 FindNearestFilth(Vector3 origin)
         {
             Vector3 destination = default(Vector3);
-            if (PlayerTargetSet)
+            List<Thing> filthList = this.Map.listerFilthInHomeArea.FilthInHomeArea;
+            Thing closestDirt = null;
+            float dirtPos = 0;
+            for (int i = 0; i < filthList.Count; i++)
             {
-                if (this.ExactPosition.ToIntVec3() == ManualDestination.ToIntVec3())
+                if (closestDirt != null)
                 {
-                    PlayerTargetSet = false;
-                }
-                destination = ManualDestination;                
-            }
-            else
-            {
-                Pawn nearestEnemey = TM_Calc.FindNearestEnemy(this.Map, this.ExactPosition.ToIntVec3(), this.launcher.Faction, false, false);
-                if(nearestEnemey != null)
-                {
-                    destination = nearestEnemey.DrawPos;
+                    float dirtDistance = (filthList[i].DrawPos - origin).magnitude;
+                    if (dirtDistance < dirtPos)
+                    {
+                        dirtPos = dirtDistance;
+                        closestDirt = filthList[i];
+                    }
                 }
                 else
                 {
-                    Vector3 rndPos = base.Position.ToVector3Shifted();
-                    rndPos.x += Rand.Range(-5f, 5f);
-                    rndPos.z += Rand.Range(-5f, 5f);
-                    destination = rndPos;
+                    closestDirt = filthList[i];
+                    dirtPos = (filthList[i].DrawPos - origin).magnitude;
                 }
+            }
+
+            if (closestDirt != null)
+            {
+                destination = closestDirt.DrawPos;
+            }
+            else
+            {
+                this.age = this.duration;
+                destination = this.destination;
             }
             return destination;
         }
 
-        public void StormEffects()
+        public void CleanFilth()
         {
-            List<Pawn> allPawns = TM_Calc.FindAllPawnsAround(this.Map, this.ExactPosition.ToIntVec3(), radius);
-            if (allPawns != null && allPawns.Count > 0)
+            List<Thing> allThings = new List<Thing>();
+            List<Thing> allFilth = new List<Thing>();
+            allThings.Clear();
+            allFilth.Clear();
+            List<IntVec3> cellsAround = GenRadial.RadialCellsAround(this.Position, 1.4f, true).ToList();
+            if (cellsAround != null)
             {
-                for (int i = 0; i < allPawns.Count; i++)
+                for (int i = 0; i < cellsAround.Count; i++)
                 {
-                    Pawn p = allPawns[i];
-                    if (p != null && !p.Dead)
+                    allThings = cellsAround[i].GetThingList(this.Map);                   
+                    for (int j = 0; j < allThings.Count; j++)
                     {
-                        TM_Action.DamageEntities(p, null, spellDamage, TMDamageDefOf.DamageDefOf.TM_Spirit, this.launcher);
+                        if (allThings[j].def.category == ThingCategory.Filth || allThings[j].def.IsFilth)
+                        {
+                            allFilth.Add(allThings[j]);
+                        }
                     }
-                    StormGraphics(p);
+                }
+                for (int i = 0; i < allFilth.Count; i++)
+                {
+                    CleanGraphics(allFilth[i]);
+                    allFilth[i].Destroy(DestroyMode.Vanish);
                 }
             }
         }
 
-        public void StormGraphics(Thing filth)
+        public void CleanGraphics(Thing filth)
         {
-            float angle = (Quaternion.AngleAxis(90, Vector3.up) * TM_Calc.GetVector(filth.DrawPos, this.ExactPosition)).ToAngleFlat();
-            TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Regen, filth.DrawPos, this.Map, Rand.Range(.2f, .4f), .8f, .2f, .4f, Rand.Range(-400, -100), 1.9f, angle, Rand.Range(0, 360));
+            TM_MoteMaker.ThrowGenericFleck(FleckDefOf.MicroSparks, this.ExactPosition, this.Map, Rand.Range(.3f, .5f), .6f, .2f, .4f, Rand.Range(-400, -100), .3f, Rand.Range(0,360), Rand.Range(0, 360));
+            Vector3 angle = TM_Calc.GetVector(filth.DrawPos, this.ExactPosition);
+            TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_ThickDust, filth.DrawPos, this.Map, Rand.Range(.4f, .6f), .1f, .05f, .25f, -200, 2, (Quaternion.AngleAxis(90, Vector3.up) * angle).ToAngleFlat(), Rand.Range(0,360));
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
             //base.Tick();
 
@@ -238,12 +251,13 @@ namespace TorannMagic
             else
             {
                 base.Position = this.ExactPosition.ToIntVec3();
-                if (this.ticksToImpact <= 0)
+                bool flag2 = this.ticksToImpact <= 0;
+                if (flag2)
                 {
                     if (this.age < this.duration)
                     {
                         this.origin = this.ExactPosition;
-                        this.destination = FindNearestTarget(this.origin);
+                        this.destination = FindNearestFilth(this.origin);
                         this.ticksToImpact = this.StartingTicksToImpact;
                     }
                     else
@@ -256,31 +270,22 @@ namespace TorannMagic
                         this.ImpactSomething();
                     }
                 }
-                if(this.destinationTick < Find.TickManager.TicksGame && this.age < this.duration)
-                {
-                    this.destinationTick = Find.TickManager.TicksGame + 150;
-                    this.origin = this.ExactPosition;
-                    this.destination = FindNearestTarget(this.origin);
-                    this.ticksToImpact = this.StartingTicksToImpact;
-                }
-                if (Find.TickManager.TicksGame % 6 == 0)
+                if (Find.TickManager.TicksGame % 4 == 0)
                 {
                     Vector3 rndVec = this.ExactPosition;
-                    rndVec.x += Rand.Range(-3f, 3f);
-                    rndVec.z += Rand.Range(-3f, 3f);
+                    rndVec.x += Rand.Range(-1f, 1f);
+                    rndVec.z += Rand.Range(-1f, 1f);
                     Vector3 angle = TM_Calc.GetVector(rndVec, this.ExactPosition);
-                    TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_PurpleSmoke, rndVec, this.Map, Rand.Range(.8f, 1.5f), .3f, .1f, .25f, -300, 2, (Quaternion.AngleAxis(90, Vector3.up) * angle).ToAngleFlat(), Rand.Range(0, 360));
-                    Effecter effecter = TorannMagicDefOf.TM_SpiritStormED.Spawn();
-                    effecter.scale *= (radius / 4f);
-                    effecter.Trigger(new TargetInfo(this.ExactPosition.ToIntVec3(), this.Map, false), new TargetInfo(this.ExactPosition.ToIntVec3(), this.Map, false));
-                    effecter.Cleanup();
+                    TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Base_Smoke, rndVec, base.Map, Rand.Range(.8f, 1.5f), .1f, .05f, .15f, -300, 2, (Quaternion.AngleAxis(90, Vector3.up) * angle).ToAngleFlat(), Rand.Range(0, 360));
+                    //TM_MoteMaker.ThrowGenericFleck(FleckDefOf.Smoke, rndVec, base.Map, Rand.Range(.8f, 1.5f), .1f, .05f, .15f, -300, 2, (Quaternion.AngleAxis(90, Vector3.up) * angle).ToAngleFlat(), Rand.Range(0, 360));
+                    
                 }
                 if(this.searchDelay < 0)
                 {
                     if(this.destination != default(Vector3))
                     {
-                        this.searchDelay = Rand.Range(25, 35) - frenzyBonus;
-                        StormEffects();
+                        this.searchDelay = Rand.Range(10, 20);
+                        CleanFilth();
                     }
                 }                
                 

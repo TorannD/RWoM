@@ -1,26 +1,23 @@
 ﻿using RimWorld;
-using System;
-using System.Linq;
-using System.Collections.Generic;
 using UnityEngine;
 using Verse;
-using AbilityUser;
 
 namespace TorannMagic
 {
     [StaticConstructorOnStartup]
-    public class FlyingObject_Flight : Projectile
+    public class FlyingObject_Leap : Projectile
     {
         protected new Vector3 origin;
 
         protected new Vector3 destination;
 
-        protected float speed = 20f;
+        protected float speed = 28f;
         private bool drafted = false;
 
         protected new int ticksToImpact;
 
         protected Thing assignedTarget;
+
         protected Thing flyingThing;
 
         public DamageInfo? impactDamage;
@@ -31,8 +28,12 @@ namespace TorannMagic
 
         public int weaponDmg = 0;
 
+        private bool initialize = true;
+
         Pawn pawn;
         CompAbilityUserMagic comp;
+
+        TMPawnSummoned newPawn = new TMPawnSummoned();
 
         protected new int StartingTicksToImpact
         {
@@ -98,11 +99,12 @@ namespace TorannMagic
         {
             if (pawn != null)
             {
-                FleckMaker.Static(this.origin, this.Map, FleckDefOf.ExplosionFlash, 4f);
-                SoundDefOf.Ambient_AltitudeWind.sustainFadeoutTime.Equals(30.0f);
-                FleckMaker.ThrowDustPuff(this.origin, this.Map, Rand.Range(2.4f, 3.6f));
+                //MoteMaker.MakeStaticMote(pawn.TrueCenter(), pawn.Map, ThingDefOf.Mote_ExplosionFlash, 12f);
+                //SoundDefOf.Ambient_AltitudeWind.sustainFadeoutTime.Equals(30.0f);
+                FleckMaker.ThrowDustPuff(this.origin, this.Map, Rand.Range(1.2f, 1.8f));
             }
             //flyingThing.ThingID += Rand.Range(0, 2147).ToString();
+            this.initialize = false;
         }
 
         public void Launch(Thing launcher, LocalTargetInfo targ, Thing flyingThing, DamageInfo? impactDamage)
@@ -117,19 +119,12 @@ namespace TorannMagic
 
         public void Launch(Thing launcher, Vector3 origin, LocalTargetInfo targ, Thing flyingThing, DamageInfo? newDamageInfo = null)
         {
-
             bool spawned = flyingThing.Spawned;            
             pawn = launcher as Pawn;
-            drafted = pawn.Drafted;
-            comp = pawn.GetCompAbilityUserMagic();
-
             if (spawned)
             {               
                 flyingThing.DeSpawn();
             }
-            //
-            ModOptions.Constants.SetPawnInFlight(true);
-            //
             this.origin = origin;
             this.impactDamage = newDamageInfo;
             this.flyingThing = flyingThing;
@@ -139,12 +134,12 @@ namespace TorannMagic
             {
                 this.assignedTarget = targ.Thing;
             }
-            this.destination = targ.Cell.ToVector3Shifted() + new Vector3(Rand.Range(-0.3f, 0.3f), 0f, Rand.Range(-0.3f, 0.3f));
+            this.destination = targ.Cell.ToVector3Shifted();
             this.ticksToImpact = this.StartingTicksToImpact;
             this.Initialize();
-        }      
+        }        
 
-        public override void Tick()
+        protected override void Tick()
         {
             //base.Tick();
             Vector3 exactPosition = this.ExactPosition;
@@ -161,16 +156,8 @@ namespace TorannMagic
                 base.Position = this.ExactPosition.ToIntVec3();
                 if(Find.TickManager.TicksGame % 2 == 0)
                 {
-                    FleckMaker.ThrowDustPuff(base.Position, base.Map, Rand.Range(0.8f, 1.2f));
+                    FleckMaker.ThrowDustPuff(base.Position, base.Map, Rand.Range(0.6f, .8f));
                 }               
-                
-                if (Find.TickManager.TicksGame % 3 == 0)
-                {
-                    Vector3 shiftVec = this.ExactPosition;
-                    shiftVec.x += Rand.Range(-.3f, .3f);
-                    shiftVec.z += Rand.Range(-.3f, .3f);
-                    TM_MoteMaker.ThrowArcaneMote(shiftVec, base.Map, Rand.Range(.5f, .6f), .1f, .02f, .2f, 200, .3f);
-                }
                 
                 bool flag2 = this.ticksToImpact <= 0;
                 if (flag2)
@@ -181,8 +168,7 @@ namespace TorannMagic
                         base.Position = this.DestinationCell;
                     }
                     this.ImpactSomething();
-                }
-                
+                }                
             }
         }
 
@@ -230,8 +216,8 @@ namespace TorannMagic
             bool flag = this.assignedTarget != null;
             if (flag)
             {
-                Pawn targetPawn = this.assignedTarget as Pawn;
-                bool flag2 = targetPawn != null && targetPawn.GetPosture() != PawnPosture.Standing && (this.origin - this.destination).MagnitudeHorizontalSquared() >= 20.25f && Rand.Value > 0.2f;
+                Pawn pawn = this.assignedTarget as Pawn;
+                bool flag2 = pawn != null && pawn.GetPosture() != PawnPosture.Standing && (this.origin - this.destination).MagnitudeHorizontalSquared() >= 20.25f && Rand.Value > 0.2f;
                 if (flag2)
                 {
                     this.Impact(null);
@@ -252,11 +238,11 @@ namespace TorannMagic
             bool flag = hitThing == null;
             if (flag)
             {
-                Pawn hitPawn;
-                bool flag2 = (hitPawn = (base.Position.GetThingList(base.Map).FirstOrDefault((Thing x) => x == this.assignedTarget) as Pawn)) != null;
+                Pawn pawn;
+                bool flag2 = (pawn = (base.Position.GetThingList(base.Map).FirstOrDefault((Thing x) => x == this.assignedTarget) as Pawn)) != null;
                 if (flag2)
                 {
-                    hitThing = hitPawn;
+                    hitThing = pawn;
                 }
             }
             bool hasValue = this.impactDamage.HasValue;
@@ -268,28 +254,13 @@ namespace TorannMagic
             {
                 SoundDefOf.Ambient_AltitudeWind.sustainFadeoutTime.Equals(30.0f);                
 
-                GenSpawn.Spawn(this.flyingThing, base.Position, base.Map);
-                ModOptions.Constants.SetPawnInFlight(false);
+                //GenSpawn.Spawn(this.flyingThing, base.Position, base.Map);
+                GenPlace.TryPlaceThing(this.flyingThing, base.Position, base.Map, ThingPlaceMode.Near);
                 Pawn p = this.flyingThing as Pawn;
-                if (p.IsColonist)
-                {
-                    if (ModOptions.Settings.Instance.cameraSnap)
-                    {
-                        CameraJumper.TryJumpAndSelect(p);
-                    }
-                    p.drafter.Drafted = this.drafted;
-                }
                 this.Destroy(DestroyMode.Vanish);
             }
             catch
             {
-                GenSpawn.Spawn(this.flyingThing, base.Position, base.Map);
-                ModOptions.Constants.SetPawnInFlight(false);
-                Pawn p = this.flyingThing as Pawn;
-                if (p.IsColonist)
-                {
-                    p.drafter.Drafted =this.drafted;
-                }
                 this.Destroy(DestroyMode.Vanish);
             }
         }        

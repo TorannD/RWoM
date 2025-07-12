@@ -1,11 +1,11 @@
 ﻿using RimWorld;
-using System;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using Verse;
 using Verse.Sound;
 using AbilityUser;
+using TorannMagic.Weapon;
 
 namespace TorannMagic
 {
@@ -219,7 +219,7 @@ namespace TorannMagic
             }
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
             //base.Tick();
             this.ticksToImpact--;

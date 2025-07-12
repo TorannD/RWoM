@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Verse;
 using AbilityUser;
+using TorannMagic.Weapon;
 
 namespace TorannMagic
 {
@@ -158,7 +159,7 @@ namespace TorannMagic
             this.Initialize();
         }        
 
-        public override void Tick()
+        protected override void Tick()
         {
             //base.Tick();
             Vector3 exactPosition = this.ExactPosition;

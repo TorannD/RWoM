@@ -6,14 +6,14 @@ namespace TorannMagic.ModCheck
 {
     public static class GiddyUp
     {
-        // public static void ForceDismount(Pawn pawn)
-        // {
-        //     ExtendedPawnData epd = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn);
-        //     if (epd != null && epd.mount != null)
-        //     {
-        //         epd.mount.jobs.EndCurrentJob(Verse.AI.JobCondition.InterruptForced, true);
-        //     }
-        // }
+        public static void ForceDismount(Pawn pawn)
+        {
+            // ExtendedPawnData epd = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn);
+            // if (epd != null && epd.mount != null)
+            // {
+            //     epd.mount.jobs.EndCurrentJob(Verse.AI.JobCondition.InterruptForced, true);
+            // }
+        }
         //
         // public static bool IsMount(Pawn pawn)
         // {
