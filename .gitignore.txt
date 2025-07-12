@@ -15,7 +15,7 @@ TestResults/
 *.app/
 
 # Rider files
-.idea/
+RimWorldOfMagic/.idea/
 *.sln.iml
 
 # RimWorld specific (mod distribution outputs, auto-generated files)
