@@ -15,24 +15,24 @@ namespace TorannMagic.ModCheck
             // }
         }
         //
-        // public static bool IsMount(Pawn pawn)
-        // {
+        public static bool IsMount(Pawn pawn)
+        {
         //     if (pawn.CurJobDef.defName == "Mounted")
         //     {
         //         return true;
         //     }
-        //     return false;
-        // }
+            return false;
+        }
         //
-        // public static Pawn GetMount(Pawn rider)
-        // {
-        //     Pawn mount = null;
+        public static Pawn GetMount(Pawn rider)
+        {
+            Pawn mount = null;
         //     ExtendedPawnData epd = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(rider);
         //     if (epd != null && epd.mount != null && epd.mount.CurJobDef.defName == "Mounted")
         //     {
         //         mount = epd.mount;
         //     }
-        //     return mount;
-        // }
+            return mount;
+        }
     }
 }
