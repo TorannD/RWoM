@@ -12,6 +12,7 @@ using HarmonyLib;
 using TorannMagic.Enchantment;
 using TorannMagic.TMDefs;
 using TorannMagic.Ideology;
+using TorannMagic.Weapon;
 
 namespace TorannMagic
 {
@@ -868,9 +869,9 @@ namespace TorannMagic
                 {
                     val = spawnables.factionDef;
                 }
-                if (spawnables.kindDef != null && spawnables.kindDef.defaultFactionType != null)
+                if (spawnables.kindDef != null && spawnables.kindDef.defaultFactionDef != null)
                 {
-                    val = spawnables.kindDef.defaultFactionType;
+                    val = spawnables.kindDef.defaultFactionDef;
                 }
                 if (val != null)
                 {
@@ -881,10 +882,7 @@ namespace TorannMagic
                     return Find.FactionManager.RandomEnemyFaction(true, true, true);
                 }
             }
-            if (caster != null && caster.Faction != null)
-            {
-                return caster.Faction;
-            }
+            
             return Find.FactionManager.AllFactionsVisible.RandomElement();
 
         }
@@ -1040,7 +1038,12 @@ namespace TorannMagic
             }
             if (ModsConfig.IdeologyActive)
             {
-                newSpirit.story.favoriteColor = DefDatabase<ColorDef>.AllDefsListForReading.RandomElement().color;
+                Color color = DefDatabase<ColorDef>.AllDefsListForReading.RandomElement().color;
+                ColorDef colorDef = new ColorDef
+                {
+                    color = color
+                };
+                newSpirit.story.favoriteColor = colorDef;
             }
             //PawnBioAndNameGenerator.GiveAppropriateBioAndNameTo(newSpirit, "Spirit", fac.def, false);
             newSpirit.Name = PawnBioAndNameGenerator.GeneratePawnName(newSpirit, NameStyle.Full);

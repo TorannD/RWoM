@@ -123,7 +123,7 @@ namespace TorannMagic
             }
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
             if (Spawned && this.Map != null && this.Position.InBounds(this.Map))
             {
