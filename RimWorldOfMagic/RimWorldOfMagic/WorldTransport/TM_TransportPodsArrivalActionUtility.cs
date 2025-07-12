@@ -9,7 +9,8 @@ namespace TorannMagic.WorldTransport
 {
     public class TM_TransportPodsArrivalActionUtility
     {
-        public static IEnumerable<FloatMenuOption> GetFloatMenuOptions<T>(Func<FloatMenuAcceptanceReport> acceptanceReportGetter, Func<T> arrivalActionGetter, string label, CompLaunchable representative, int destinationTile, Action<Action> uiConfirmationCallback = null) where T : TransportPodsArrivalAction
+        public static IEnumerable<FloatMenuOption> GetFloatMenuOptions<T>(Func<FloatMenuAcceptanceReport> acceptanceReportGetter,
+            Func<T> arrivalActionGetter, string label, CompLaunchable representative, int destinationTile, Action<Action> uiConfirmationCallback = null) where T : TransportersArrivalAction
         {
             FloatMenuAcceptanceReport floatMenuAcceptanceReport = acceptanceReportGetter();
             if (floatMenuAcceptanceReport.Accepted || !floatMenuAcceptanceReport.FailReason.NullOrEmpty() || !floatMenuAcceptanceReport.FailMessage.NullOrEmpty())
@@ -80,7 +81,7 @@ namespace TorannMagic.WorldTransport
             return false;
         }
 
-        public static Thing GetLookTarget(List<ActiveDropPodInfo> pods)
+        public static Thing GetLookTarget(List<ActiveTransporterInfo> pods)
         {
             for (int i = 0; i < pods.Count; i++)
             {
@@ -105,7 +106,7 @@ namespace TorannMagic.WorldTransport
             return null;
         }
 
-        public static void DropTravelingTransportPods(List<ActiveDropPodInfo> dropPods, IntVec3 near, Map map, bool exactCell = false, bool draftFlag = false)
+        public static void DropTravelingTransportPods(List<ActiveTransporterInfo> dropPods, IntVec3 near, Map map, bool exactCell = false, bool draftFlag = false)
         {
             RemovePawnsFromWorldPawns(dropPods);
             for (int i = 0; i < dropPods.Count; i++)
@@ -123,7 +124,7 @@ namespace TorannMagic.WorldTransport
             }
         }
 
-        public static void RemovePawnsFromWorldPawns(List<ActiveDropPodInfo> pods)
+        public static void RemovePawnsFromWorldPawns(List<ActiveTransporterInfo> pods)
         {
             for (int i = 0; i < pods.Count; i++)
             {

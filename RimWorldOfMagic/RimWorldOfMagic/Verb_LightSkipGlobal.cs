@@ -148,7 +148,7 @@ namespace TorannMagic
             {
                 ThingOwner directlyHeldThings = podTList[i].GetDirectlyHeldThings();
                 ActiveDropPod activeDropPod = (ActiveDropPod)ThingMaker.MakeThing(ThingDefOf.ActiveDropPod);
-                activeDropPod.Contents = new ActiveDropPodInfo();
+                activeDropPod.Contents = new ActiveTransporterInfo();
                 activeDropPod.Contents.innerContainer.TryAddRangeOrTransfer(directlyHeldThings, canMergeWithExistingStacks: true, destroyLeftover: true);
                 WorldTransport.TM_DropPodLeaving obj = (WorldTransport.TM_DropPodLeaving)SkyfallerMaker.MakeSkyfaller(TorannMagicDefOf.TM_LightPodLeaving, activeDropPod);
                 obj.groupID = groupID;
@@ -305,7 +305,7 @@ namespace TorannMagic
             {
                 yield return new FloatMenuOption("FormCaravanHere".Translate(), delegate
                 {
-                    LaunchLightPod(target.Tile, default(IntVec3), new TransportPodsArrivalAction_FormCaravan());
+                    LaunchLightPod(target.Tile, default(IntVec3), new TransportersArrivalAction_FormCaravan());
                 });
             }
         }

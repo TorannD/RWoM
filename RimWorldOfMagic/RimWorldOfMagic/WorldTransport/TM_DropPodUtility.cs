@@ -8,7 +8,7 @@ namespace TorannMagic.WorldTransport
 {
     public class TM_DropPodUtility
     {
-        public static void MakeDropPodAt(IntVec3 c, Map map, ActiveDropPodInfo info, ThingDef makePodThing, ThingDef makeSkyfallerThing, bool draftFlag = false)
+        public static void MakeDropPodAt(IntVec3 c, Map map, ActiveTransporterInfo info, ThingDef makePodThing, ThingDef makeSkyfallerThing, bool draftFlag = false)
         {
             TM_ActiveDropPod activeDropPod = (TM_ActiveDropPod)ThingMaker.MakeThing(makePodThing);
             activeDropPod.Contents = info;

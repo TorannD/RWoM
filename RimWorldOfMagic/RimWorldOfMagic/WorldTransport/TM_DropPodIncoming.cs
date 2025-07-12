@@ -8,7 +8,7 @@ using Verse;
 namespace TorannMagic.WorldTransport
 {
     [StaticConstructorOnStartup]
-    public class TM_DropPodIncoming : Skyfaller, IActiveDropPod, IThingHolder
+    public class TM_DropPodIncoming : Skyfaller, IActiveTransporter, IThingHolder
     {
         private int maxTicks = 50;
         private const int beamLength = 200;
@@ -20,7 +20,7 @@ namespace TorannMagic.WorldTransport
         private static readonly Material BombardMat = MaterialPool.MatFrom("Other/Bombardment", ShaderDatabase.MoteGlow, MapMaterialRenderQueues.OrbitalBeam);
         private static readonly MaterialPropertyBlock MatPropertyBlock = new MaterialPropertyBlock();
 
-        public ActiveDropPodInfo Contents
+        public ActiveTransporterInfo Contents
         {
             get
             {

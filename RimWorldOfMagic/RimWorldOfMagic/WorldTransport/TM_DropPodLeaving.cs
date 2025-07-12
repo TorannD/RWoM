@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using RimWorld;
 using RimWorld.Planet;
 using UnityEngine;
@@ -66,7 +62,7 @@ namespace TorannMagic.WorldTransport
                 }
                 Find.WorldObjects.Add(travelingTransportPods);
                 tmpActiveDropPods.Clear();
-                tmpActiveDropPods.AddRange(base.Map.listerThings.ThingsInGroup(ThingRequestGroup.ActiveDropPod));
+                tmpActiveDropPods.AddRange(base.Map.listerThings.ThingsInGroup(ThingRequestGroup.ActiveTransporter));
                 for (int i = 0; i < tmpActiveDropPods.Count; i++)
                 {
                     WorldTransport.TM_DropPodLeaving dropPodLeaving = tmpActiveDropPods[i] as WorldTransport.TM_DropPodLeaving;
@@ -87,7 +83,7 @@ namespace TorannMagic.WorldTransport
             base.SpawnSetup(map, respawningAfterLoad);
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
             if (ticksToImpact == maxTicks)
             {

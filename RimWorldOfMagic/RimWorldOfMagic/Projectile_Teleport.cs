@@ -522,7 +522,7 @@ namespace TorannMagic
         //        dropPodLeaving.arriveMode = arriveMode;
         //        dropPodLeaving.attackOnArrival = attackOnArrival;
         //        ThingOwner directlyHeldThings = compTransporter.GetDirectlyHeldThings();
-        //        dropPodLeaving.Contents = new ActiveDropPodInfo();
+        //        dropPodLeaving.Contents = new ActiveTransporterInfo();
         //        dropPodLeaving.Contents.innerContainer.TryAddRangeOrTransfer(directlyHeldThings, true);
         //        directlyHeldThings.Clear();
         //        compTransporter.CleanUpLoadingVars(map);

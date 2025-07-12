@@ -5,7 +5,7 @@ using Verse;
 
 namespace TorannMagic.WorldTransport
 {
-    public class TM_TransportPodsArrivalAction_LandAtExactCell : TransportPodsArrivalAction
+    public class TM_TransportPodsArrivalAction_LandAtExactCell : TransportersArrivalAction
     {
         private MapParent mapParent;
         private IntVec3 cell;
@@ -30,7 +30,10 @@ namespace TorannMagic.WorldTransport
             Scribe_Values.Look(ref cell, "cell");
         }
 
-        public override FloatMenuAcceptanceReport StillValid(IEnumerable<IThingHolder> pods, int destinationTile)
+        public override bool GeneratesMap { get; }
+
+        public override FloatMenuAcceptanceReport StillValid(IEnumerable<IThingHolder> pods,
+            PlanetTile destinationTile)
         {
             FloatMenuAcceptanceReport floatMenuAcceptanceReport = base.StillValid(pods, destinationTile);
             if (!(bool)floatMenuAcceptanceReport)
@@ -44,7 +47,7 @@ namespace TorannMagic.WorldTransport
             return CanLandInSpecificCell(pods, mapParent);
         }
 
-        public override void Arrived(List<ActiveDropPodInfo> pods, int tile)
+        public override void Arrived(List<ActiveTransporterInfo> pods, PlanetTile tile)
         {
             WorldTransport.TM_TransportPodsArrivalActionUtility.DropTravelingTransportPods(pods, cell, mapParent.Map, true, draftFlag);
         }
