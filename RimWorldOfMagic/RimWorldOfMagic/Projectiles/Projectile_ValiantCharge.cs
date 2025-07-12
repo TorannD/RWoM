@@ -148,7 +148,7 @@ namespace TorannMagic
 
         private void Initialize(IntVec3 target, Pawn pawn)
         {
-            if (target != null && pawn != null)
+            if (target != IntVec3.Invalid && pawn != null)
             {
                 arg_40_0 = target.IsValid;
                 arg_41_0 = target.ToVector3().InBoundsWithNullCheck(pawn.Map);

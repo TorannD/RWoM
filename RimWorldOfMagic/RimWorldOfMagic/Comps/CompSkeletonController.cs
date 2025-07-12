@@ -166,7 +166,7 @@ namespace TorannMagic
                 cellRect.ClipInsideMap(this.Pawn.Map);
                 IntVec3 destination = cellRect.RandomCell;
 
-                if (launchableThing != null && destination != null)
+                if (launchableThing != null && destination != IntVec3.Invalid)
                 {
                     float launchAngle = (Quaternion.AngleAxis(90, Vector3.up) * TM_Calc.GetVector(this.Pawn.Position, destination)).ToAngleFlat();
                     for (int m = 0; m < 4; m++)
@@ -177,7 +177,7 @@ namespace TorannMagic
                     flyingObject.force = 1.4f;
                     flyingObject.Launch(this.Pawn, destination, this.launchableThing.SplitOff(1), Rand.Range(45, 65));
                 }
-                else if (launchableThing == null && destination != null)
+                else if (launchableThing == null && destination != IntVec3.Invalid)
                 {
                     float launchAngle = (Quaternion.AngleAxis(90, Vector3.up) * TM_Calc.GetVector(this.Pawn.Position, destination)).ToAngleFlat();
                     for (int m = 0; m < 4; m++)
@@ -271,7 +271,7 @@ namespace TorannMagic
                     if (knockbackPawn != null && knockbackPawn != this.Pawn)
                     {
                         IntVec3 targetCell = knockbackPawn.Position + (force * force * launchVector).ToIntVec3();
-                        bool flag = targetCell != null && targetCell != default(IntVec3);
+                        bool flag = targetCell != IntVec3.Invalid && targetCell != default(IntVec3);
                         if (flag)
                         {
                             if (knockbackPawn.Spawned && knockbackPawn.Map != null && !knockbackPawn.Dead)

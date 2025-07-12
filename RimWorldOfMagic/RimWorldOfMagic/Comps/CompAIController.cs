@@ -149,7 +149,7 @@ namespace TorannMagic
                     if (knockbackPawn != null && knockbackPawn != this.Pawn)
                     {
                         IntVec3 targetCell = knockbackPawn.Position + (force * force * launchVector).ToIntVec3();
-                        bool flag = targetCell != null && targetCell != default(IntVec3);
+                        bool flag = targetCell != IntVec3.Invalid && targetCell != default(IntVec3);
                         if (flag)
                         {
                             if (knockbackPawn.Spawned && knockbackPawn.Map != null && !knockbackPawn.Dead)

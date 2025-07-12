@@ -1,0 +1,6 @@
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\RWoM\RimWorldOfMagic\RimWorldOfMagic\bin\Release\TorannMagic.dll
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\RWoM\RimWorldOfMagic\RimWorldOfMagic\bin\Release\TorannMagic.pdb
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\RWoM\RimWorldOfMagic\RimWorldOfMagic\obj\Release\RimWorldOfMagic.csproj.AssemblyReference.cache
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\RWoM\RimWorldOfMagic\RimWorldOfMagic\obj\Release\RimWorldOfMagic.csproj.CoreCompileInputs.cache
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\RWoM\RimWorldOfMagic\RimWorldOfMagic\obj\Release\TorannMagic.dll
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\RWoM\RimWorldOfMagic\RimWorldOfMagic\obj\Release\TorannMagic.pdb

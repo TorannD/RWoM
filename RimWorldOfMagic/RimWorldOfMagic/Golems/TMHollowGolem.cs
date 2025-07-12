@@ -1,11 +1,7 @@
 ﻿using RimWorld;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Verse;
-using Verse.AI;
-using TorannMagic.TMDefs;
 
 namespace TorannMagic.Golems
 {
@@ -86,7 +82,7 @@ namespace TorannMagic.Golems
             }
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
             base.Tick();
             if(shouldDrawHoverMote && this.Map != null)

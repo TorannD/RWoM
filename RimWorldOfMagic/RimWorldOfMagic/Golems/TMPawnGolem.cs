@@ -188,7 +188,7 @@ namespace TorannMagic.Golems
 
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
             if (Spawned && this.drafter == null)
             {

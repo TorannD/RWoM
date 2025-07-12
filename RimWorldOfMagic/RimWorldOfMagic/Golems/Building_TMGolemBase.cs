@@ -237,7 +237,7 @@ namespace TorannMagic.Golems
         public bool CanActivate(out String reason)
         {
             reason = "";
-            if(!this.Spawned || this.Map == null || this.Position == null || this.GolemComp == null)
+            if(!this.Spawned || this.Map == null || this.Position == IntVec3.Invalid || this.GolemComp == null)
             {
                 reason = "invalid conditions";
                 return false;

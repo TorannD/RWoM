@@ -1244,7 +1244,7 @@ namespace TorannMagic.AutoCast
                 }
                 else
                 {
-                    if (caster.CurJob.targetA.Thing.InteractionCell != null && caster.CurJob.targetA.Cell != caster.CurJob.targetA.Thing.InteractionCell)
+                    if (caster.CurJob.targetA.Thing.InteractionCell != IntVec3.Invalid && caster.CurJob.targetA.Cell != caster.CurJob.targetA.Thing.InteractionCell)
                     {
                         jobTarget = caster.CurJob.targetA.Thing.InteractionCell;
                     }

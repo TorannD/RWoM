@@ -10,8 +10,8 @@ namespace TorannMagic.ModCheck
 {
     public static class SS
     {
-        // public static void ClearWeaponMemory(Pawn p)
-        // {
+        public static void ClearWeaponMemory(Pawn p)
+        {
         //     CompSidearmMemory csm = p.TryGetComp<CompSidearmMemory>();
         //     if (csm != null && csm.rememberedWeapons != null && csm.RememberedWeapons.Count > 0 && p.equipment != null)
         //     {
@@ -21,6 +21,6 @@ namespace TorannMagic.ModCheck
         //         }
         //         csm.GenerateRememberedWeaponsFromEquipped();
         //     }
-        // }
+        }
     }
 }

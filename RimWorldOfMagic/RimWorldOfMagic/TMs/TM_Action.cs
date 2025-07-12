@@ -1913,7 +1913,7 @@ namespace TorannMagic
                         ModOptions.Constants.SetPawnInFlight(false);
                         break;
                     case 1:
-                        if (target != null && target != p && target.Cell != null && target.Cell.IsValid && target.Cell != default(IntVec3))
+                        if (target != null && target != p && target.Cell != IntVec3.Invalid && target.Cell.IsValid && target.Cell != default(IntVec3))
                         {
                             float angle = (Quaternion.AngleAxis(90, Vector3.up) * TM_Calc.GetVector(p.Position, target.Cell)).ToAngleFlat();
                             for (int i = 0; i < 6; i++)
@@ -1982,7 +1982,7 @@ namespace TorannMagic
 
         public static void DoTimeDelayLaunch(IntVec3 targetCell, Pawn caster, Pawn pawn, int force, int duration)
         {
-            bool flag = targetCell != null && targetCell != default(IntVec3);
+            bool flag = targetCell != IntVec3.Invalid && targetCell != default(IntVec3);
             if (flag)
             {
                 if (pawn != null && pawn.Position.IsValid && pawn.Spawned && pawn.Map != null && !pawn.Downed && !pawn.Dead)
