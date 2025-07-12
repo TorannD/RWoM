@@ -3,9 +3,6 @@ using Verse.AI;
 using RimWorld;
 using Verse;
 using Verse.AI.Group;
-using AbilityUser;
-using System.Linq;
-
 
 namespace TorannMagic
 {
@@ -54,7 +51,7 @@ namespace TorannMagic
                 Pawn actor = layDown.actor;
                 Job curJob = actor.CurJob;
                 JobDriver curDriver = actor.jobs.curDriver;
-                actor.GainComfortFromCellIfPossible();
+                actor.GainComfortFromCellIfPossible(1, false);
                 if (!curDriver.asleep)
                 {
                     if (actor.needs.rest != null && actor.needs.rest.CurLevel < .99f * WakeThreshold(actor))

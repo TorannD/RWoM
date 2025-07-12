@@ -13,12 +13,12 @@ namespace TorannMagic
         {
             if (pawn == null) return null;
             if (pawn.Map == null) return null;
-            if (pawn.Map.areaManager.SnowClear == null) return null;
-            if (pawn.Map.areaManager.SnowClear.ActiveCells == null) return null;
+            if (pawn.Map.areaManager.SnowOrSandClear == null) return null;
+            if (pawn.Map.areaManager.SnowOrSandClear.ActiveCells == null) return null;
 
             List<IntVec3> tmpCellsToClear = new List<IntVec3>();
             tmpCellsToClear.Clear();
-            tmpCellsToClear.AddRange(from c in pawn.Map.areaManager.SnowClear.ActiveCells
+            tmpCellsToClear.AddRange(from c in pawn.Map.areaManager.SnowOrSandClear.ActiveCells
                                         where c.DistanceToSquared(pawn.Position) < 100
                                         select c);
             if (tmpCellsToClear?.Count > 0)
