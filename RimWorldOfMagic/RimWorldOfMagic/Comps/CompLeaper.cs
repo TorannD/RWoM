@@ -1,8 +1,8 @@
-﻿using System;
-using Verse;
+﻿using Verse;
 using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
+using TorannMagic.Weapon;
 using UnityEngine;
 
 namespace TorannMagic
@@ -94,54 +94,6 @@ namespace TorannMagic
                                         }
                                     }
                                 }
-                                //IEnumerable<IntVec3> targets = GenRadial.RadialCellsAround(this.Pawn.Position, this.Props.leapRangeMax, false);
-                                //for (int i = 0; i < targets.Count(); i++)
-                                //{
-                                //    Pawn bounceTarget = null;
-
-                                //    curCell = targets.ToArray<IntVec3>()[i];
-                                //    if (curCell.InBoundsWithNullCheck(this.Pawn.Map) && curCell.IsValid)
-                                //    {
-                                //        bounceTarget = curCell.GetFirstPawn(this.Pawn.Map);
-                                //        if (bounceTarget != null && bounceTarget != target && !bounceTarget.Downed && !bounceTarget.Dead && bounceTarget.RaceProps != null)
-                                //        {
-                                //            if (bounceTarget.Faction != null && bounceTarget.Faction == targetFaction)
-                                //            {
-                                //                if (Rand.Chance(1 - this.Props.leapChance))
-                                //                {
-                                //                    i = targets.Count();
-                                //                }
-                                //                else
-                                //                {
-                                //                    bounceTarget = null;
-                                //                }
-                                //            }
-                                //            else
-                                //            {
-                                //                bounceTarget = null;
-                                //            }
-                                //        }
-                                //        else
-                                //        {
-                                //            bounceTarget = null;
-                                //        }
-                                //    }
-
-                                //    if (bounceTarget != null)
-                                //    {
-
-                                //        if (CanHitTargetFrom(this.Pawn.Position, target))
-                                //        {
-                                //            if (!bounceTarget.Downed && !bounceTarget.Dead)
-                                //            {
-                                //                LeapAttack(bounceTarget);
-                                //            }
-                                //            LeapAttack(bounceTarget);
-                                //            break;
-                                //        }
-                                //    }
-                                //    targets.GetEnumerator().MoveNext();
-                                //}
                             }
                         }
                     }
