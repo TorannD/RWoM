@@ -460,7 +460,7 @@ The claims that pomanasyrrium grant insight and clarity is disregarded by most a
     <hediffClass>Hediff_Addiction</hediffClass>
     <label>syrrium addiction</label>
 	<description>The urge to feel the effects of syrrium have developed into a need.</description>
-    <causesNeed>Chemical_Syrrium</causesNeed>
+	<chemicalNeed>Chemical_Syrrium</chemicalNeed>
     <comps>
       <li Class="HediffCompProperties_SeverityPerDay">
         <severityPerDay>-0.3</severityPerDay>

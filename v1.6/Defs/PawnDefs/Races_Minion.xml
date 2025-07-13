@@ -20,6 +20,7 @@
       <ComfyTemperatureMax>200</ComfyTemperatureMax>
 	  <MeatAmount>6</MeatAmount>
 	  <MarketValue>0</MarketValue>
+	  <Wildness>10</Wildness>
     </statBases>
 	<inspectorTabs>
       <li>ITab_Pawn_Health</li>
@@ -42,7 +43,6 @@
 	  <renderTree>Animal</renderTree>
       <meatLabel>mystery meat</meatLabel>
 	  <herdMigrationAllowed>false</herdMigrationAllowed>
-	  <wildness>10</wildness>
       <baseBodySize>2</baseBodySize>
     </race>
     <comps>

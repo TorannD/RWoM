@@ -26,7 +26,7 @@
     <initialSeverity>1.0</initialSeverity>	
     <label>might user</label>
 	<description>Hediff required for might users.</description>
-    <causesNeed>TM_Stamina</causesNeed>
+	
     <comps>
       <li Class="HediffCompProperties_SeverityPerDay">
         <severityPerDay>-0</severityPerDay>
@@ -36,6 +36,9 @@
         <li>
           <label>hidden</label>
           <becomeVisible>false</becomeVisible>
+		  <enablesNeeds>
+				<li>TM_Stamina</li>
+			</enablesNeeds>
         </li>
     </stages>
   </HediffDef>

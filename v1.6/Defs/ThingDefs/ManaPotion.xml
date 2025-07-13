@@ -193,7 +193,7 @@
     <hediffClass>Hediff_Addiction</hediffClass>
     <label>mana potion addiction</label>
 	<description>The urge to consume mana potions has developed into a need.</description>
-    <causesNeed>Chemical_ManaPotion</causesNeed>
+	<chemicalNeed>Chemical_ManaPotion</chemicalNeed>
     <comps>
       <li Class="HediffCompProperties_SeverityPerDay">
         <severityPerDay>-0.14</severityPerDay>

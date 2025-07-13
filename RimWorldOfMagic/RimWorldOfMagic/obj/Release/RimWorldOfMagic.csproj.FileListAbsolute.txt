@@ -4,3 +4,6 @@ D:\SteamLibrary\steamapps\common\RimWorld\Mods\RWoM\RimWorldOfMagic\RimWorldOfMa
 D:\SteamLibrary\steamapps\common\RimWorld\Mods\RWoM\RimWorldOfMagic\RimWorldOfMagic\obj\Release\RimWorldOfMagic.csproj.CoreCompileInputs.cache
 D:\SteamLibrary\steamapps\common\RimWorld\Mods\RWoM\RimWorldOfMagic\RimWorldOfMagic\obj\Release\TorannMagic.dll
 D:\SteamLibrary\steamapps\common\RimWorld\Mods\RWoM\RimWorldOfMagic\RimWorldOfMagic\obj\Release\TorannMagic.pdb
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\RWoM\RimWorldOfMagic\RimWorldOfMagic\bin\Release\HugsLib.dll
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\RWoM\RimWorldOfMagic\RimWorldOfMagic\bin\Release\HugsLib.xml
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\RWoM\RimWorldOfMagic\RimWorldOfMagic\obj\Release\RimWorld.DC28747A.Up2Date

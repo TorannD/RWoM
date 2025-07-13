@@ -32,7 +32,7 @@
 	<isBad>false</isBad>
 	<initialSeverity>.5</initialSeverity>
 	<preventsLungRot>true</preventsLungRot>
-	<causesNeed>TM_SpiritND</causesNeed>
+	
 	<comps>
 	  <li Class="HediffCompProperties_Invisibility">
         <visibleToPlayer>true</visibleToPlayer>
@@ -41,6 +41,9 @@
     <stages>
 	  <li>
         <label>I</label>
+		<enablesNeeds>
+			<li>TM_SpiritND</li>
+		</enablesNeeds>
         <minSeverity>.01</minSeverity>
 		<becomeVisible>true</becomeVisible>
 		<painFactor>0</painFactor>
@@ -59,6 +62,9 @@
       </li>    	 
 	  <li>
         <label>II</label>
+		<enablesNeeds>
+			<li>TM_SpiritND</li>
+		</enablesNeeds>
         <minSeverity>1</minSeverity>
 		<becomeVisible>true</becomeVisible>
 		<painFactor>0</painFactor>
@@ -81,6 +87,9 @@
       </li>
 	  <li>
         <label>III</label>
+		<enablesNeeds>
+			<li>TM_SpiritND</li>
+		</enablesNeeds>
         <minSeverity>2</minSeverity>
 		<becomeVisible>true</becomeVisible>
 		<painFactor>0</painFactor>
@@ -103,6 +112,9 @@
       </li>	 
 	  <li>
         <label>IV</label>
+		<enablesNeeds>
+			<li>TM_SpiritND</li>
+		</enablesNeeds>
         <minSeverity>3</minSeverity>
 		<becomeVisible>true</becomeVisible>
 		<painFactor>0</painFactor>
@@ -139,16 +151,18 @@
 	<tendable>false</tendable>
     <makesAlert>false</makesAlert>
 	<isBad>false</isBad>
-    <causesNeed>TM_SpiritND</causesNeed>
+    
 	<comps>
 	  <li>
         <compClass>TorannMagic.HediffComp_SpiritPossession</compClass>
       </li> 	  
     </comps>    
     <stages>
-	
 	  <li>
         <label>distorted</label>
+		<enablesNeeds>
+			<li>TM_SpiritND</li>
+		</enablesNeeds>
         <minSeverity>0</minSeverity>
 		<statOffsets>
 		  <MentalBreakThreshold>0.18</MentalBreakThreshold>
@@ -160,6 +174,9 @@
       </li>
 	  <li>
         <label>conflicted</label>
+		<enablesNeeds>
+			<li>TM_SpiritND</li>
+		</enablesNeeds>
         <minSeverity>1</minSeverity>
 		<statOffsets>
 		  <MentalBreakThreshold>0.1</MentalBreakThreshold>
@@ -171,6 +188,9 @@
       </li>    
 	  <li>
         <label>unstable</label>
+		<enablesNeeds>
+			<li>TM_SpiritND</li>
+		</enablesNeeds>
         <minSeverity>3</minSeverity>
 		<statOffsets>
 		  <MentalBreakThreshold>0.03</MentalBreakThreshold>
@@ -182,6 +202,9 @@
       </li> 
 	  <li>
         <label>stable</label>
+		<enablesNeeds>
+			<li>TM_SpiritND</li>
+		</enablesNeeds>
         <minSeverity>5</minSeverity>
 		<statOffsets>
 		  <MentalBreakThreshold>-0.03</MentalBreakThreshold>
@@ -193,6 +216,9 @@
       </li> 
 	  <li>
         <label>cooperative</label>
+		<enablesNeeds>
+			<li>TM_SpiritND</li>
+		</enablesNeeds>
         <minSeverity>7</minSeverity>
 		<capMods>
 			<li>
@@ -210,6 +236,9 @@
       </li> 
 	  <li>
         <label>harmonious</label>
+		<enablesNeeds>
+			<li>TM_SpiritND</li>
+		</enablesNeeds>
         <minSeverity>9</minSeverity>
 		<capMods>
 			<li>

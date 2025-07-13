@@ -152,7 +152,7 @@ Enemies caught in the poison will take 1-8 poison damage every 0.66 seconds. Poi
         <uiIconPath>UI/animalfriend</uiIconPath>
         <description>At home in the wild, the ranger is able to form a bond with creatures of the wild. 
 		
-Rangers are only able to form a single bond and maintaining the bond reduces the ranger's max stamina by 30; making a new bond breaks an existing bond and will cause the animal with a broken bond to leave forever. Failed attempts may cause the animal to turn manhunter. When using animal bond on the bonded animal may allow the animal to remain in the colony - the chance the animal remains is based on its wildness and how long it had a bond with the ranger.
+Rangers are only able to form a single bond and maintaining the bond reduces the ranger's max stamina by 30; making a new bond breaks an existing bond and will cause the animal with a broken bond to leave forever. Failed attempts may cause the animal to turn manhunter. When using animal bond on the bonded animal may allow the animal to remain in the colony - the chance the animal remains is based on its Wildness and how long it had a bond with the ranger.
 
 The increase in physical capability applies to the animal kin only, in return, the bonded animal will assist the ranger in whatever capacity the animal is capable.
 A bond can be removed by using this ability on a bonded creature.</description>

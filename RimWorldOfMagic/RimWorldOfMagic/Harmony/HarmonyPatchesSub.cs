@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using AbilityUser;
+using AbilityUserAI;
 using HarmonyLib;
 using RimWorld;
 using RimWorld.Planet;
@@ -10,6 +12,7 @@ using TorannMagic.Utils;
 using UnityEngine;
 using Verse;
 using Verse.AI;
+using Verse.Sound;
 
 namespace TorannMagic
 {
@@ -1712,6 +1715,741 @@ namespace TorannMagic
                         return false;
                     }
                 }
+                return true;
+            }
+        }
+        
+        [HarmonyPatch(typeof(QualityUtility), "GenerateQualityCreatedByPawn", null)]
+        [HarmonyPatch(new Type[]
+        {
+            typeof(Pawn),
+            typeof(SkillDef)
+        })]
+        public static class ArcaneForge_Quality_Patch
+        {
+            public static void Postfix(Pawn pawn, SkillDef relevantSkill, ref QualityCategory __result)
+            {
+                CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
+                if (comp != null && comp.IsMagicUser && pawn.story.traits != null && !pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless) && comp.ArcaneForging)
+                {
+                    List<IntVec3> cellList = GenRadial.RadialCellsAround(pawn.Position, 2, true).ToList();
+                    bool forgeNearby = false;
+                    for (int i = 0; i < cellList.Count; i++)
+                    {
+                        List<Thing> thingList = cellList[i].GetThingList(pawn.Map);
+                        if (thingList != null && thingList.Count > 0)
+                        {
+                            for (int j = 0; j < thingList.Count; j++)
+                            {
+                                if (thingList[j] != null && thingList[j] is Building)
+                                {
+                                    Building bldg = thingList[j] as Building;
+                                    if (bldg.def == TorannMagicDefOf.TableArcaneForge)
+                                    {
+                                        forgeNearby = true;
+                                        break;
+                                    }
+                                }
+                            }
+                            if (forgeNearby)
+                            {
+                                break;
+                            }
+                        }
+                    }
+                    if (forgeNearby)
+                    {
+                        int mageLevel = Rand.Range(0, Mathf.RoundToInt(comp.MagicUserLevel / 15));
+                        __result = (QualityCategory)Mathf.Min((int)__result + mageLevel, 6);
+                        SoundInfo info = SoundInfo.InMap(new TargetInfo(pawn.Position, pawn.Map, false), MaintenanceType.None);
+                        info.pitchFactor = .6f;
+                        info.volumeFactor = 1.6f;
+                        TorannMagicDefOf.TM_Gong.PlayOneShot(info);
+                        cellList.Clear();
+                        cellList = GenRadial.RadialCellsAround(pawn.Position, (int)__result, false).ToList<IntVec3>();
+                        for (int i = 0; i < cellList.Count; i++)
+                        {
+                            IntVec3 curCell = cellList[i];
+                            Vector3 angle = TM_Calc.GetVector(pawn.Position, curCell);
+                            TM_MoteMaker.ThrowArcaneWaveMote(curCell.ToVector3(), pawn.Map, .4f * (curCell - pawn.Position).LengthHorizontal, .1f, .05f, .1f, 0, 3, (Quaternion.AngleAxis(90, Vector3.up) * angle).ToAngleFlat(), (Quaternion.AngleAxis(90, Vector3.up) * angle).ToAngleFlat());
+                        }
+                    }
+                }
+            }
+        }
+        
+        [HarmonyPatch(typeof(DamageWorker), "ExplosionStart", null)]
+        public static class ExplosionNoShaker_Patch
+        {
+            public static bool Prefix(DamageWorker __instance, Explosion explosion)
+            {
+                if (explosion.damType == TMDamageDefOf.DamageDefOf.TM_BlazingPower ||
+                    explosion.damType == TMDamageDefOf.DamageDefOf.TM_BloodBurn ||
+                    explosion.damType == TMDamageDefOf.DamageDefOf.TM_HailDD)
+                {
+                    float radMod = 6f;
+                    if (explosion.damType == TMDamageDefOf.DamageDefOf.TM_HailDD)
+                    {
+                        radMod = 1f;
+                    }
+
+                    FleckMaker.Static(explosion.Position, explosion.Map, FleckDefOf.ExplosionFlash,
+                        explosion.radius * radMod);
+                    if (explosion.damType.explosionSnowMeltAmount < 0)
+                    {
+                        Projectile_Snowball.AddSnowRadial(explosion.Position, explosion.Map, explosion.radius,
+                            explosion.radius);
+                    }
+
+                    for (int i = 0; i < 4; i++)
+                    {
+                        if (explosion.damType == TMDamageDefOf.DamageDefOf.TM_BloodBurn)
+                        {
+                            if (i < 1)
+                            {
+                                TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_BloodMist,
+                                    explosion.Position.ToVector3Shifted() +
+                                    Gen.RandomHorizontalVector(explosion.radius * 0.7f), explosion.Map,
+                                    Rand.Range(1f, 1.5f), .2f, 0.6f, 2f, Rand.Range(-30, 30),
+                                    Rand.Range(.5f, .7f), Rand.Range(30f, 40f), Rand.Range(0, 360));
+                            }
+                        }
+                        else
+                        {
+                            FleckMaker.ThrowSmoke(
+                                explosion.Position.ToVector3Shifted() +
+                                Gen.RandomHorizontalVector(explosion.radius * 0.7f), explosion.Map,
+                                explosion.radius * 0.6f);
+                        }
+                    }
+
+                    if (__instance.def.explosionInteriorMote != null)
+                    {
+                        int num = Mathf.RoundToInt(3.14159274f * explosion.radius * explosion.radius / 6f);
+                        for (int j = 0; j < num; j++)
+                        {
+                            MoteMaker.ThrowExplosionInteriorMote(
+                                explosion.Position.ToVector3Shifted() +
+                                Gen.RandomHorizontalVector(explosion.radius * 0.7f), explosion.Map,
+                                __instance.def.explosionInteriorMote);
+                        }
+                    }
+
+                    return false;
+                }
+
+                return true;
+            }
+        }
+        
+        [HarmonyPatch(typeof(DamageWorker_AddInjury), "Apply", null)]
+        public static class DamageWorker_ApplyEnchantmentAction_Patch
+        {
+            public static void Postfix(DamageWorker_AddInjury __instance, DamageInfo dinfo, Thing thing,
+                DamageWorker.DamageResult __result)
+            {
+                if (dinfo.Instigator != null && dinfo.Instigator is Pawn && dinfo.Amount != 0 &&
+                    dinfo.Weapon != null &&
+                    dinfo.Weapon.HasComp(typeof(TorannMagic.Enchantment.CompEnchantedItem)))
+                {
+                    Pawn instigator = dinfo.Instigator as Pawn;
+                    if (instigator.equipment != null && instigator.equipment.Primary != null)
+                    {
+                        ThingWithComps eq = instigator.equipment.Primary;
+                        TorannMagic.Enchantment.CompEnchantedItem enchantment =
+                            eq.TryGetComp<TorannMagic.Enchantment.CompEnchantedItem>();
+                        if (enchantment != null && enchantment.enchantmentAction != null)
+                        {
+                            if (enchantment.enchantmentAction.type ==
+                                Enchantment.EnchantmentActionType.ApplyHediff &&
+                                enchantment.enchantmentAction.hediffDef != null)
+                            {
+                                if (Rand.Chance(enchantment.enchantmentAction.hediffChance))
+                                {
+                                    if (enchantment.enchantmentAction.onSelf)
+                                    {
+                                        List<Pawn> plist = TM_Calc.FindPawnsNearTarget(instigator,
+                                            Mathf.RoundToInt(enchantment.enchantmentAction.splashRadius),
+                                            instigator.Position, enchantment.enchantmentAction.friendlyFire);
+                                        if (plist != null && plist.Count > 0)
+                                        {
+                                            for (int i = 0; i < plist.Count; i++)
+                                            {
+                                                HealthUtility.AdjustSeverity(plist[i],
+                                                    enchantment.enchantmentAction.hediffDef,
+                                                    enchantment.enchantmentAction.hediffSeverity);
+                                                if (enchantment.enchantmentAction.hediffDurationTicks != 0)
+                                                {
+                                                    HediffComp_Disappears hdc = plist[i].health.hediffSet
+                                                        .GetFirstHediffOfDef(enchantment.enchantmentAction
+                                                            .hediffDef).TryGetComp<HediffComp_Disappears>();
+                                                    hdc.ticksToDisappear = enchantment.enchantmentAction
+                                                        .hediffDurationTicks;
+                                                }
+                                            }
+                                        }
+
+                                        HealthUtility.AdjustSeverity(instigator,
+                                            enchantment.enchantmentAction.hediffDef,
+                                            enchantment.enchantmentAction.hediffSeverity);
+                                        if (enchantment.enchantmentAction.hediffDurationTicks != 0)
+                                        {
+                                            HediffComp_Disappears hdc = instigator.health.hediffSet
+                                                .GetFirstHediffOfDef(enchantment.enchantmentAction.hediffDef)
+                                                .TryGetComp<HediffComp_Disappears>();
+                                            hdc.ticksToDisappear = enchantment.enchantmentAction
+                                                .hediffDurationTicks;
+                                        }
+                                    }
+                                    else if (thing is Pawn)
+                                    {
+                                        Pawn p = thing as Pawn;
+                                        if (enchantment.enchantmentAction.splashRadius > 0)
+                                        {
+                                            List<Pawn> plist = TM_Calc.FindPawnsNearTarget(p,
+                                                Mathf.RoundToInt(enchantment.enchantmentAction.splashRadius),
+                                                p.Position, enchantment.enchantmentAction.friendlyFire);
+                                            if (plist != null && plist.Count > 0)
+                                            {
+                                                for (int i = 0; i < plist.Count; i++)
+                                                {
+                                                    HealthUtility.AdjustSeverity(plist[i],
+                                                        enchantment.enchantmentAction.hediffDef,
+                                                        enchantment.enchantmentAction.hediffSeverity);
+                                                    if (enchantment.enchantmentAction.hediffDurationTicks !=
+                                                        0)
+                                                    {
+                                                        HediffComp_Disappears hdc = plist[i].health.hediffSet
+                                                            .GetFirstHediffOfDef(enchantment.enchantmentAction
+                                                                .hediffDef)
+                                                            .TryGetComp<HediffComp_Disappears>();
+                                                        hdc.ticksToDisappear = enchantment.enchantmentAction
+                                                            .hediffDurationTicks;
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        HealthUtility.AdjustSeverity(p,
+                                            enchantment.enchantmentAction.hediffDef,
+                                            enchantment.enchantmentAction.hediffSeverity);
+                                        if (enchantment.enchantmentAction.hediffDurationTicks != 0)
+                                        {
+                                            HediffComp_Disappears hdc = instigator.health.hediffSet
+                                                .GetFirstHediffOfDef(enchantment.enchantmentAction.hediffDef)
+                                                .TryGetComp<HediffComp_Disappears>();
+                                            hdc.ticksToDisappear = enchantment.enchantmentAction
+                                                .hediffDurationTicks;
+                                        }
+                                    }
+                                }
+                            }
+
+                            if (enchantment.enchantmentAction.type ==
+                                Enchantment.EnchantmentActionType.ApplyDamage &&
+                                enchantment.enchantmentAction.damageDef != null &&
+                                dinfo.Def != enchantment.enchantmentAction.damageDef)
+                            {
+                                if (Rand.Chance(enchantment.enchantmentAction.damageChance))
+                                {
+                                    DamageInfo dinfo2 = new DamageInfo(
+                                        enchantment.enchantmentAction.damageDef,
+                                        Rand.Range(
+                                            enchantment.enchantmentAction.damageAmount -
+                                            enchantment.enchantmentAction.damageVariation,
+                                            enchantment.enchantmentAction.damageAmount +
+                                            enchantment.enchantmentAction.damageVariation),
+                                        enchantment.enchantmentAction.armorPenetration, -1f, instigator, null,
+                                        dinfo.Weapon, DamageInfo.SourceCategory.ThingOrUnknown);
+
+                                    if (enchantment.enchantmentAction.onSelf)
+                                    {
+                                        List<Pawn> plist = TM_Calc.FindPawnsNearTarget(instigator,
+                                            Mathf.RoundToInt(enchantment.enchantmentAction.splashRadius),
+                                            instigator.Position, enchantment.enchantmentAction.friendlyFire);
+                                        if (plist != null && plist.Count > 0)
+                                        {
+                                            for (int i = 0; i < plist.Count; i++)
+                                            {
+                                                plist[i].TakeDamage(dinfo2);
+                                            }
+                                        }
+
+                                        instigator.TakeDamage(dinfo2);
+                                    }
+                                    else if (thing is Pawn)
+                                    {
+                                        Pawn p = thing as Pawn;
+                                        List<Pawn> plist = TM_Calc.FindPawnsNearTarget(p,
+                                            Mathf.RoundToInt(enchantment.enchantmentAction.splashRadius),
+                                            p.Position, enchantment.enchantmentAction.friendlyFire);
+                                        if (plist != null && plist.Count > 0)
+                                        {
+                                            for (int i = 0; i < plist.Count; i++)
+                                            {
+                                                plist[i].TakeDamage(dinfo2);
+                                            }
+                                        }
+
+                                        p.TakeDamage(dinfo2);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        [HarmonyPatch(typeof(AbilityAIDef), "CanPawnUseThisAbility", null)]
+        public static class CanPawnUseThisAbility_Patch
+        {
+            private static bool Prefix(AbilityAIDef __instance, Pawn caster, LocalTargetInfo target,
+                ref bool __result)
+            {
+                if (__instance.appliedHediffs.Count > 0 &&
+                    __instance.appliedHediffs.Any((HediffDef hediffDef) =>
+                        caster.health.hediffSet.HasHediff(hediffDef, false)))
+                {
+                    __result = false;
+                }
+                else
+                {
+                    if (!__instance.Worker.CanPawnUseThisAbility(__instance, caster, target))
+                    {
+                        __result = false;
+                    }
+                    else
+                    {
+                        if (!__instance.needEnemyTarget)
+                        {
+                            __result = true;
+                        }
+                        else
+                        {
+                            if (!__instance.usedOnCaster && target.IsValid)
+                            {
+                                float num = Math.Abs(caster.Position.DistanceTo(target.Cell));
+                                if (num < __instance.minRange || num > __instance.maxRange)
+                                {
+                                    __result = false;
+                                    return false;
+                                }
+
+                                if (__instance.needSeeingTarget &&
+                                    !AbilityUserAI.AbilityUtility.LineOfSightLocalTarget(caster, target, true,
+                                        null))
+                                {
+                                    __result = false;
+                                    return false;
+                                }
+                            }
+
+                            //Log.Message("caster " + caster.LabelShort + " attempting to case " + __instance.ability.defName + " on target " + target.Thing.LabelShort);
+                            if (__instance.ability.defName == "TM_ArrowStorm" &&
+                                !caster.equipment.Primary.def.weaponTags.Contains("Neolithic"))
+                            {
+                                __result = false;
+                                return false;
+                            }
+
+                            if (__instance.ability.defName == "TM_DisablingShot" ||
+                                __instance.ability.defName == "TM_Headshot" &&
+                                caster.equipment.Primary.def.weaponTags.Contains("Neolithic"))
+                            {
+                                __result = false;
+                                return false;
+                            }
+
+                            if (target.IsValid && !target.Thing.Destroyed && target.Thing.Map == caster.Map &&
+                                target.Thing.Spawned)
+                            {
+                                Pawn targetPawn = target.Thing as Pawn;
+                                if (targetPawn != null && targetPawn.Dead)
+                                {
+                                    __result = false;
+                                    return false;
+                                }
+                                else
+                                {
+                                    __result = true;
+                                }
+                            }
+                            else
+                            {
+                                __result = false;
+                            }
+                        }
+                    }
+                }
+
+                return false;
+            }
+        }
+
+        [HarmonyPatch(typeof(FloatMenuMakerMap), "ChoicesAtFor", null), HarmonyPriority(100)]
+        public static class FloatMenuMakerMap_ROMV_Undead_Patch
+        {
+            public static void Postfix(Vector3 clickPos, Pawn pawn, ref List<FloatMenuOption> __result)
+            {
+                IntVec3 c = IntVec3.FromVector3(clickPos);
+                Pawn target = c.GetFirstPawn(pawn.Map);
+                if (target != null)
+                {
+                    if ((target.health.hediffSet.HasHediff(HediffDef.Named("TM_UndeadHD")) ||
+                         target.health.hediffSet.HasHediff(HediffDef.Named("TM_UndeadAnimalHD")) ||
+                         target.health.hediffSet.HasHediff(HediffDef.Named("TM_LichHD"))))
+                    {
+                        for (int i = 0; i < __result.Count(); i++)
+                        {
+                            string name = target.LabelShort;
+                            if (__result[i].Label.Contains("Feed on") || __result[i].Label.Contains("Sip") ||
+                                __result[i].Label.Contains("Embrace") ||
+                                __result[i].Label.Contains("Give vampirism") ||
+                                __result[i].Label.Contains("Create Ghoul") ||
+                                __result[i].Label.Contains("Give vitae") || __result[i].Label ==
+                                "Embrace " + name + " (Give vampirism)")
+                            {
+                                __result.Remove(__result[i]);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        [HarmonyPatch(typeof(AbilityWorker), "CanPawnUseThisAbility", null)]
+        public static class AbilityWorker_CanPawnUseThisAbility_Patch
+        {
+            public static bool Prefix(AbilityAIDef abilityDef, Pawn pawn, LocalTargetInfo target,
+                ref bool __result)
+            {
+                if (!TM_Calc.HasMightOrMagicTrait(pawn)) return true;
+                if (!ModOptions.Settings.Instance.AICasting)
+                {
+                    __result = false;
+                    return false;
+                }
+
+                if (pawn.IsPrisoner || pawn.Downed)
+                {
+                    __result = false;
+                    return false;
+                }
+
+                bool hasThing = target != null && target.HasThing;
+                if (hasThing)
+                {
+                    if (abilityDef.needSeeingTarget && !TM_Calc.HasLoSFromTo(pawn.Position, target, pawn,
+                            abilityDef.minRange, abilityDef.maxRange))
+                    {
+                        __result = false;
+                        return false;
+                    }
+
+                    Pawn pawn2 = target.Thing as Pawn;
+                    if (pawn2 != null)
+                    {
+                        if (abilityDef.ability == TorannMagicDefOf.TM_Possess && pawn2.RaceProps.Animal)
+                        {
+                            __result = false;
+                            return false;
+                        }
+
+                        bool flag = !abilityDef.canTargetAlly;
+                        if (flag)
+                        {
+                            __result = !pawn2.Downed;
+                            return false;
+                        }
+                    }
+
+                    Building bldg2 = target.Thing as Building;
+                    if (bldg2 != null)
+                    {
+                        if (pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Empath) ||
+                            pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Apothecary) ||
+                            pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Shaman) ||
+                            pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Commander) ||
+                            pawn.story.traits.HasTrait(TorannMagicDefOf.Chronomancer) ||
+                            pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Monk) ||
+                            pawn.story.traits.HasTrait(TorannMagicDefOf.DeathKnight) ||
+                            pawn.story.traits.HasTrait(TorannMagicDefOf.BloodMage) ||
+                            pawn.story.traits.HasTrait(TorannMagicDefOf.Enchanter) ||
+                            pawn.story.traits.HasTrait(TorannMagicDefOf.Necromancer) ||
+                            pawn.story.traits.HasTrait(TorannMagicDefOf.Ranger) ||
+                            pawn.story.traits.HasTrait(TorannMagicDefOf.Priest) ||
+                            pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Bard) ||
+                            pawn.story.traits.HasTrait(TorannMagicDefOf.Geomancer) ||
+                            pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless) ||
+                            pawn.story.traits.HasTrait(TorannMagicDefOf.Gladiator) ||
+                            pawn.story.traits.HasTrait(TorannMagicDefOf.Bladedancer) ||
+                            pawn.story.traits.HasTrait(TorannMagicDefOf.Druid) ||
+                            pawn.story.traits.HasTrait(TorannMagicDefOf.Summoner))
+                        {
+                            __result = false;
+                            return false;
+                        }
+
+                        __result = !bldg2.Destroyed;
+                        return false;
+                    }
+
+                    Corpse corpse2 = target.Thing as Corpse;
+                    if (corpse2 != null)
+                    {
+                        __result = true; //!corpse2.IsNotFresh();
+                        return false;
+                    }
+                }
+
+                __result = true;
+                return false;
+            }
+        }
+        
+        [HarmonyPatch(typeof(FertilityGrid), "CalculateFertilityAt", null)]
+        public static class FertilityGrid_Patch
+        {
+            private static void Postfix(Map ___map, IntVec3 loc, ref float __result)
+            {
+                if (ModOptions.Constants.GetGrowthCells().Count > 0)
+                {
+                    List<IntVec3> growthCells = ModOptions.Constants.GetGrowthCells();
+                    for (int i = 0; i < growthCells.Count; i++)
+                    {
+                        if (loc != growthCells[i]) continue;
+
+                        __result *= 2f;
+                        if (Rand.Chance(.6f) && (ModOptions.Constants.GetLastGrowthMoteTick() + 5) <
+                            Find.TickManager.TicksGame)
+                        {
+                            TM_MoteMaker.ThrowTwinkle(growthCells[i].ToVector3Shifted(), ___map,
+                                Rand.Range(.3f, .7f), Rand.Range(100, 300), Rand.Range(.5f, 1.5f),
+                                Rand.Range(.1f, .5f), .05f, Rand.Range(.8f, 1.8f));
+                            ModOptions.Constants.SetLastGrowthMoteTick(Find.TickManager.TicksGame);
+                        }
+                    }
+                }
+            }
+        }
+
+        [HarmonyPatch(typeof(AbilityWorker), "TargetAbilityFor", null)]
+        public static class AbilityWorker_TargetAbilityFor_Patch
+        {
+            public static bool Prefix(AbilityAIDef abilityDef, Pawn pawn, ref LocalTargetInfo __result)
+            {
+                if (!TM_Calc.HasMightOrMagicTrait(pawn)) return true;
+
+
+                if (abilityDef.usedOnCaster)
+                {
+                    __result = pawn;
+                }
+                else
+                {
+                    bool canTargetAlly = abilityDef.canTargetAlly;
+                    if (canTargetAlly)
+                    {
+                        __result = GenClosest.ClosestThingReachable(pawn.Position, pawn.Map,
+                            ThingRequest.ForGroup(ThingRequestGroup.Pawn), PathEndMode.OnCell,
+                            TraverseParms.For(TraverseMode.NoPassClosedDoors, Danger.Deadly, false),
+                            abilityDef.maxRange,
+                            (Thing thing) => AbilityUserAI.AbilityUtility.AreAllies(pawn, thing), null, 0, -1,
+                            false, RegionType.Set_Passable, false);
+                    }
+                    else
+                    {
+                        Pawn pawn2 = pawn.mindState.enemyTarget as Pawn;
+                        Building bldg = pawn.mindState.enemyTarget as Building;
+                        Corpse corpse = pawn.mindState.enemyTarget as Corpse;
+                        if (pawn.mindState.enemyTarget != null && pawn2 != null)
+                        {
+                            if (!pawn2.Dead)
+                            {
+                                __result = pawn.mindState.enemyTarget;
+                                return false;
+                            }
+                        }
+                        else if (pawn.mindState.enemyTarget != null && bldg != null)
+                        {
+                            if (!bldg.Destroyed)
+                            {
+                                __result = pawn.mindState.enemyTarget;
+                                return false;
+                            }
+                        }
+                        else if (pawn.mindState.enemyTarget != null && corpse != null)
+                        {
+                            if (!corpse.IsNotFresh())
+                            {
+                                __result = pawn.mindState.enemyTarget;
+                                return false;
+                            }
+                        }
+                        else
+                        {
+                            if (pawn.mindState.enemyTarget != null && !(pawn.mindState.enemyTarget is Corpse))
+                            {
+                                __result = pawn.mindState.enemyTarget;
+                                return false;
+                            }
+                        }
+
+                        __result = null;
+                    }
+                }
+
+                return false;
+            }
+        }
+        
+        [HarmonyPatch(typeof(Verb), "TryFindShootLineFromTo", null)]
+        public static class TryFindShootLineFromTo_Base_Patch
+        {
+            public static bool Prefix(Verb __instance, IntVec3 root, LocalTargetInfo targ,
+                out ShootLine resultingLine, ref bool __result)
+            {
+                if (__instance.verbProps.IsMeleeAttack)
+                {
+                    resultingLine = new ShootLine(root, targ.Cell);
+                    __result = ReachabilityImmediate.CanReachImmediate(root, targ, __instance.caster.Map,
+                        PathEndMode.Touch, null);
+                    return false;
+                }
+
+                if (__instance.verbProps.range == 0 && __instance.CasterPawn != null &&
+                    !__instance.CasterPawn.IsColonist) // allows ai to autocast on themselves
+                {
+                    resultingLine = default(ShootLine);
+                    __result = true;
+                    return false;
+                }
+
+                if (__instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_Blink" ||
+                    __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_Summon" ||
+                    __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_PhaseStrike" ||
+                    __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_BLOS" ||
+                    __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_LightSkip" ||
+                    __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_SootheAnimal" ||
+                    __instance.verbProps.verbClass.ToString() == "TorannMagic.Effect_EyeOfTheStorm" ||
+                    __instance.verbProps.verbClass.ToString() == "TorannMagic.Effect_Flight" ||
+                    __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_Regenerate" ||
+                    __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_SpellMending" ||
+                    __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_CauterizeWound" ||
+                    __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_Transpose" ||
+                    __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_Disguise" ||
+                    __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_SoulBond" ||
+                    __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_SummonDemon" ||
+                    __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_EarthSprites" ||
+                    __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_Overdrive" ||
+                    __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_BlankMind" ||
+                    __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_MechaniteReprogramming" ||
+                    __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_ShadowWalk" ||
+                    __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_SoL_CreateLight" ||
+                    __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_Enrage" ||
+                    __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_Hex" ||
+                    __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_Discord" ||
+                    __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_AdvancedHeal" ||
+                    __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_ControlSpiritStorm" ||
+                    __instance.verbProps.verbClass.ToString() == "TorannMagic.Verb_Scorn" ||
+                    !__instance.verbProps.requireLineOfSight)
+                {
+                    //Ignores line of sight
+                    //                    
+                    if (__instance.CasterPawn != null && __instance.CasterPawn.RaceProps.Humanlike)
+                    {
+                        Pawn pawn = __instance.CasterPawn;
+                        CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
+                        if (comp != null && (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless) ||
+                                             TM_ClassUtility.ClassHasAbility(TorannMagicDefOf.TM_Transpose,
+                                                 null, comp)))
+                        {
+                            MightPowerSkill ver =
+                                comp.MightData.MightPowerSkill_Transpose.FirstOrDefault((MightPowerSkill x) =>
+                                    x.label == "TM_Transpose_ver");
+                            if (ver.level < 3)
+                            {
+                                __result = true;
+                                resultingLine = default(ShootLine);
+                                return true;
+                            }
+                        }
+                    }
+
+                    resultingLine = new ShootLine(root, targ.Cell);
+                    __result = true;
+                    return false;
+                }
+
+                resultingLine = default(ShootLine);
+                __result = true;
+                return true;
+            }
+        }
+
+        [HarmonyPatch(typeof(CastPositionFinder), "TryFindCastPosition", null)]
+        public static class TryFindCastPosition_Base_Patch
+        {
+            private static bool Prefix(CastPositionRequest newReq, out IntVec3 dest) //, ref IntVec3 __result)
+            {
+                CastPositionRequest req = newReq;
+                IntVec3 casterLoc = req.caster.Position;
+                Verb verb = req.verb;
+                dest = IntVec3.Invalid;
+                bool isTMAbility = verb.verbProps.verbClass.ToString().Contains("TorannMagic") ||
+                                   verb.verbProps.verbClass.ToString().Contains("AbilityUser");
+
+
+                if (verb.CanHitTargetFrom(casterLoc, req.target) &&
+                    (req.caster.Position - req.target.Position).LengthHorizontal < verb.verbProps.range &&
+                    isTMAbility)
+                {
+                    //If in range and in los, cast immediately
+                    dest = casterLoc;
+                    //__result = dest;
+                    return false;
+                }
+
+                return true;
+            }
+        }
+
+        [HarmonyPatch(typeof(Pawn_SkillTracker), "Learn", null)]
+        public static class Pawn_SkillTracker_Base_Patch
+        {
+            private static bool Prefix(Pawn_SkillTracker __instance, Pawn ___pawn)
+            {
+                if (___pawn != null)
+                {
+                    if (___pawn.story.traits.HasTrait(TorannMagicDefOf.Undead))
+                    {
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+        }
+
+        [HarmonyPatch(typeof(SkillRecord), "Learn", null)]
+        public static class SkillRecord_Patch
+        {
+            private static bool Prefix(SkillRecord __instance, Pawn ___pawn)
+            {
+                if (___pawn != null)
+                {
+                    if (___pawn.story.traits.HasTrait(TorannMagicDefOf.Undead))
+                    {
+                        return false;
+                    }
+
+                    if (___pawn is TMPawnGolem)
+                    {
+                        return false;
+                    }
+                }
+
                 return true;
             }
         }

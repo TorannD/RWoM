@@ -41,7 +41,8 @@
       <ComfyTemperatureMin>-200</ComfyTemperatureMin>
       <ComfyTemperatureMax>200</ComfyTemperatureMax>
 	  <MeatAmount>0</MeatAmount>
-	  <MarketValue>0</MarketValue>	  
+	  <MarketValue>0</MarketValue>	
+	  <Wildness>10</Wildness>	  
     </statBases>
 	<inspectorTabs>
       <li>ITab_Pawn_Health</li>
@@ -68,7 +69,6 @@
       <meatLabel>demon flesh</meatLabel>
       <baseBodySize>2</baseBodySize>
 	  <herdMigrationAllowed>false</herdMigrationAllowed>
-	  <wildness>10</wildness>	  
 	  <packAnimal>false</packAnimal>
 	  <herdAnimal>false</herdAnimal>
     </race>
@@ -89,7 +89,8 @@
       <MoveSpeed>6.66</MoveSpeed>
       <ArmorRating_Blunt>0.86</ArmorRating_Blunt>
       <ArmorRating_Sharp>1.14</ArmorRating_Sharp>
-      <ArmorRating_Heat>1.33</ArmorRating_Heat>      
+      <ArmorRating_Heat>1.33</ArmorRating_Heat>     
+	  <Wildness>10</Wildness>	  
     </statBases>
 	<tools>
       <li>
@@ -195,7 +196,8 @@
       <MoveSpeed>6.66</MoveSpeed>
       <ArmorRating_Blunt>0.76</ArmorRating_Blunt>
       <ArmorRating_Sharp>1</ArmorRating_Sharp>
-      <ArmorRating_Heat>1.27</ArmorRating_Heat>      
+      <ArmorRating_Heat>1.27</ArmorRating_Heat> 
+	  <Wildness>10</Wildness>	  
     </statBases>
 	<tools>
       <li>

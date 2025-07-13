@@ -66,6 +66,7 @@
 	  <ArmorRating_Blunt>0.05</ArmorRating_Blunt>
       <ArmorRating_Sharp>0.05</ArmorRating_Sharp>
       <ArmorRating_Heat>.05</ArmorRating_Heat>  
+	  <Wildness>10</Wildness>
     </statBases>
 	<inspectorTabs>
       <li>ITab_Pawn_Health</li>
@@ -92,7 +93,6 @@
       <baseBodySize>0.2</baseBodySize>
       <baseHealthScale>0.6</baseHealthScale>
 	  <predator>true</predator>
-	  <wildness>10</wildness>
       <foodType>OmnivoreRoughAnimal</foodType>
 <!--       <leatherColor>(255,215,0)</leatherColor>
       <leatherInsulation>1.5</leatherInsulation> -->
@@ -219,6 +219,7 @@
       <MoveSpeed>25</MoveSpeed>
       <ComfyTemperatureMin>-30</ComfyTemperatureMin>
       <MarketValue>130</MarketValue>
+	  <Wildness>10</Wildness>
     </statBases>
     <tools>
       <li>
@@ -240,7 +241,6 @@
       <leatherColor>(255,215,0)</leatherColor>
       <leatherInsulation>1.5</leatherInsulation>
       <executionRange>5</executionRange>
-      <wildness>0.6</wildness>
       <mateMtbHours>4</mateMtbHours>
       <nuzzleMtbHours>40</nuzzleMtbHours>
       <canBePredatorPrey>false</canBePredatorPrey>

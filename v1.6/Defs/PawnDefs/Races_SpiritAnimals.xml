@@ -29,6 +29,7 @@
       <ComfyTemperatureMin>-100</ComfyTemperatureMin>
 	  <ComfyTemperatureMax>100</ComfyTemperatureMax>
 	  <ImmunityGainSpeed>2</ImmunityGainSpeed>
+	  <Wildness>10</Wildness>
     </statBases>
 	<race>
 	  <thinkTreeMain>Animal</thinkTreeMain>
@@ -42,7 +43,6 @@
 	  <nameGenerator>NamerAnimalGenericMale</nameGenerator>
       <nameGeneratorFemale>NamerAnimalGenericFemale</nameGeneratorFemale>
       <trainability>Advanced</trainability>
-      <wildness>10</wildness>
       <manhunterOnTameFailChance>0</manhunterOnTameFailChance>
       <manhunterOnDamageChance>1</manhunterOnDamageChance>
       <lifeExpectancy>100</lifeExpectancy>

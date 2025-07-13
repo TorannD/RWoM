@@ -1377,6 +1377,7 @@
       <MoveSpeed>1.25</MoveSpeed>
     </statFactors>
   </LifeStageDef>
+  
   <LifeStageDef>
     <defName>TM_MechaGolemLS_LS2</defName>
     <label>lightning shard mecha-golem</label>
@@ -1384,10 +1385,12 @@
 	<bodySizeFactor>1.0</bodySizeFactor>
 	<healthScaleFactor>1</healthScaleFactor>
 	<marketValueFactor>1.2</marketValueFactor>
-  </LifeStageDef>
-  <statFactors>
+  
+	<statFactors>
       <MoveSpeed>1.5</MoveSpeed>
     </statFactors>
+  </LifeStageDef>
+  
   <LifeStageDef>
     <defName>TM_MechaGolemLS_LS3</defName>
     <label>lightning shard mecha-golem</label>

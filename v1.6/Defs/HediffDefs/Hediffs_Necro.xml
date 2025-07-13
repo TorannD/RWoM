@@ -14,14 +14,18 @@
 	<minSeverity>0.001</minSeverity>
 	<maxSeverity>4.0</maxSeverity>
 	<preventsLungRot>true</preventsLungRot>
-	<disablesNeeds>
-		<li>Rest</li>		
-		<li>Joy</li>
-		<li>Beauty</li>
-		<li>Comfort</li>
-		<li>Outdoors</li>
-		<li>Indoors</li>
-	</disablesNeeds>
+	<stages>
+		<li>
+			<disablesNeeds>
+				<li>Rest</li>		
+				<li>Joy</li>
+				<li>Beauty</li>
+				<li>Comfort</li>
+				<li>Outdoors</li>
+				<li>Indoors</li>
+			</disablesNeeds>
+		</li>
+	</stages>
 	<initialSeverity>0.95</initialSeverity>
 	<isBad>false</isBad>
 	<comps>
@@ -147,14 +151,18 @@
 	<maxSeverity>4.0</maxSeverity>
 	<initialSeverity>0.95</initialSeverity>
 	<preventsLungRot>true</preventsLungRot>
-	<disablesNeeds>
-		<li>Rest</li>
-		<li>Joy</li>
-		<li>Beauty</li>
-		<li>Comfort</li>
-		<li>Outdoors</li>
-		<li>Indoors</li>
-	</disablesNeeds>
+	<stages>
+		<li>
+			<disablesNeeds>
+				<li>Rest</li>
+				<li>Joy</li>
+				<li>Beauty</li>
+				<li>Comfort</li>
+				<li>Outdoors</li>
+				<li>Indoors</li>
+			</disablesNeeds>
+		</li>
+	</stages>
 	<isBad>false</isBad>
 	<comps>
 	  <li>
@@ -188,9 +196,13 @@
 	<maxSeverity>4.0</maxSeverity>
 	<initialSeverity>0.95</initialSeverity>
 	<preventsLungRot>true</preventsLungRot>
-	<disablesNeeds>
-		<li>Rest</li>
-	</disablesNeeds>
+	<stages>
+		<li>
+			<disablesNeeds>
+				<li>Rest</li>
+			</disablesNeeds>
+		</li>
+	</stages>
 	<isBad>false</isBad>
 	<comps>
 	  <li>

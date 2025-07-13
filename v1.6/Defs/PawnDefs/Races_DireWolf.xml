@@ -16,6 +16,7 @@
 	  <ArmorRating_Sharp>0.65</ArmorRating_Sharp>
       <ArmorRating_Blunt>0.38</ArmorRating_Blunt>
       <ArmorRating_Heat>0.45</ArmorRating_Heat>
+	  <Wildness>0.98</Wildness>
     </statBases>
     <tools>
       <li>
@@ -95,8 +96,7 @@
       <leatherDef>Leather_Wolf</leatherDef>
 	  <meatLabel>wolfmeat</meatLabel>
       <nameOnTameChance>1</nameOnTameChance>
-      <trainability>Advanced</trainability>
-      <wildness>0.98</wildness>
+      <trainability>Advanced</trainability>     
       <nuzzleMtbHours>480</nuzzleMtbHours>
       <manhunterOnTameFailChance>0.40</manhunterOnTameFailChance>
       <manhunterOnDamageChance>0.80</manhunterOnDamageChance>

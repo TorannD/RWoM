@@ -26,7 +26,7 @@
     <initialSeverity>1.0</initialSeverity>	
     <label>magic user</label>
 	<description>Hediff required for magic users.</description>
-    <causesNeed>TM_Mana</causesNeed>
+    
     <comps>
       <li Class="HediffCompProperties_SeverityPerDay">
         <severityPerDay>-0</severityPerDay>
@@ -36,6 +36,9 @@
         <li>
           <label>hidden</label>
           <becomeVisible>false</becomeVisible>
+		  <enablesNeeds>
+				<li>TM_Mana</li>
+		  </enablesNeeds>
         </li>
     </stages>
   </HediffDef>

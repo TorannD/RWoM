@@ -101,7 +101,7 @@ namespace TorannMagic
         {
             public static bool Prefix(Pawn pawn, ref bool __result)
             {
-                if ((pawn is TMPawnGolem || pawn is TMHollowGolem) && pawn.Faction == Faction.OfPlayerSilentFail)
+                if ((pawn is TMPawnGolem) && pawn.Faction == Faction.OfPlayerSilentFail)
                 {
                     __result = true;
                     return false;
@@ -115,7 +115,7 @@ namespace TorannMagic
         {
             public static bool Prefix(Vector3 clickPos, Pawn pawn, List<FloatMenuOption> opts)
             {
-                if(pawn is TMPawnGolem || pawn is TMHollowGolem || TM_Calc.IsPolymorphed(pawn))
+                if(pawn is TMPawnGolem || TM_Calc.IsPolymorphed(pawn))
                 {
                     return false;
                 }
@@ -128,10 +128,10 @@ namespace TorannMagic
         {
             public static bool Prefix(Vector3 clickPos, Pawn pawn, List<FloatMenuOption> opts, bool suppressAutoTakeableGoto = false)
             {
-                if (pawn is TMPawnGolem || pawn is TMHollowGolem || (TM_Calc.IsPossessedBySpirit(pawn) && !pawn.RaceProps.Humanlike) || TM_Calc.IsPolymorphed(pawn))
+                if (pawn is TMPawnGolem || (TM_Calc.IsPossessedBySpirit(pawn) && !pawn.RaceProps.Humanlike) || TM_Calc.IsPolymorphed(pawn))
                 {
                     IntVec3 clickCell = IntVec3.FromVector3(clickPos);
-                    if (pawn is TMPawnGolem || pawn is TMHollowGolem)
+                    if (pawn is TMPawnGolem)
                     {                        
                         foreach (LocalTargetInfo item6 in GenUI.TargetsAt(clickPos, TargetingParameters.ForAttackAny(), thingsOnly: true))
                         {

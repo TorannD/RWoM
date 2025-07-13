@@ -65,8 +65,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="HugsLib">
-      <HintPath>..\..\..\..\..\..\workshop\content\294100\818773962\Assemblies\HugsLib.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\..\..\..\workshop\content\294100\3513789221\Assemblies\HugsLib.dll</HintPath>
     </Reference>
     <Reference Include="SimpleSidearms">
       <HintPath>..\..\..\..\..\..\workshop\content\294100\927155256\v1.4\Assemblies\SimpleSidearms.dll</HintPath>

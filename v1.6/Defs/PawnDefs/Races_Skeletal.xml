@@ -61,7 +61,8 @@
       <ComfyTemperatureMin>-200</ComfyTemperatureMin>
       <ComfyTemperatureMax>200</ComfyTemperatureMax>
 	  <MeatAmount>0</MeatAmount>
-	  <MarketValue>0</MarketValue>	  
+	  <MarketValue>0</MarketValue>	 
+	  <Wildness>10</Wildness>	  
     </statBases>
 	<inspectorTabs>
       <li>ITab_Pawn_Health</li>
@@ -85,8 +86,7 @@
       <thinkTreeConstant>TM_Elemental_AI_Constant</thinkTreeConstant>
       <thinkTreeMain>TM_Elemental_AI</thinkTreeMain>
       <baseBodySize>1</baseBodySize>
-	  <herdMigrationAllowed>false</herdMigrationAllowed>	 
-	  <wildness>10</wildness>		  
+	  <herdMigrationAllowed>false</herdMigrationAllowed>	
 	  <packAnimal>false</packAnimal>
 	  <herdAnimal>false</herdAnimal>
     </race>

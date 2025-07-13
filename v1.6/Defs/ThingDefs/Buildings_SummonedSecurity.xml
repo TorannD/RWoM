@@ -722,7 +722,7 @@
     <castEdgeShadows>false</castEdgeShadows>
     <fillPercent>1</fillPercent>
     <coversFloor>true</coversFloor>
-    <placingDraggableDimensions>1</placingDraggableDimensions>
+    <drawStyleCategory>Default2D</drawStyleCategory>
     <tickerType>Normal</tickerType>
     <rotatable>false</rotatable>
     <selectable>true</selectable>

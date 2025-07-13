@@ -21,6 +21,7 @@
       <ComfyTemperatureMax>200</ComfyTemperatureMax>
 	  <MeatAmount>0</MeatAmount>
 	  <MarketValue>0</MarketValue>
+	  <Wildness>10</Wildness>
     </statBases>
 	<inspectorTabs>
       <li>ITab_Pawn_Health</li>
@@ -37,7 +38,6 @@
       <predator>true</predator>
       <foodType>OmnivoreAnimal</foodType>
       <baseHungerRate>0.01</baseHungerRate>
-	  <wildness>10</wildness>	  
 	  <packAnimal>false</packAnimal>
 	  <herdAnimal>false</herdAnimal>
 <!-- 	  <intelligence>ToolUser</intelligence> -->
