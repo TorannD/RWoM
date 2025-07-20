@@ -159,6 +159,11 @@ namespace TorannMagic
 
         protected override void Tick()
         {
+
+        }
+
+        protected override void TickInterval(int delta)
+        {
             //base.Tick();
             Vector3 exactPosition = this.ExactPosition;
             this.ticksToImpact--;
