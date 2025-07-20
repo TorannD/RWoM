@@ -39,9 +39,11 @@ namespace TorannMagic.Weapon
             age++;
             if(age >= actionTick)
             {
+
                 actionTick = age + Rand.Range(15, 25);                
                 DamageThingsAtPosition();
-                SnowUtility.AddSnowRadial(this.ExactPosition.ToIntVec3(), this.Map, .4f, .2f);                
+                WeatherBuildupUtility.AddSnowRadial(this.ExactPosition.ToIntVec3(), this.Map, .4f, .2f);   
+                
             }           
         }
 
@@ -64,7 +66,7 @@ namespace TorannMagic.Weapon
             {
                 if (hitList[j] is Pawn && hitList[j] != this.launcher)
                 {
-                    DamageInfo dinfo = new DamageInfo(this.def.projectile.damageDef, this.def.projectile.GetDamageAmount(this.weaponDamageMultiplier), 1, -1, this.launcher);                    
+                    DamageInfo dinfo = new DamageInfo(this.def.projectile.damageDef, 6f, 1, -1, this.launcher);                    
                     hitList[j].TakeDamage(dinfo);
                     hitThing = hitList[j];
                 }

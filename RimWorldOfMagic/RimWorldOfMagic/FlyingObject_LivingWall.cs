@@ -535,7 +535,10 @@ namespace TorannMagic
         private int threadLockTick = 0;
         private int searchEnemyTick = 0;
         static List<Thread> activeThreads = new List<Thread>();
-        public override void Tick()
+        protected override void Tick()
+        {
+        }
+        protected override void TickInterval(int delta)
         {
             Vector3 exactPosition = this.ExactPosition;
             if (shouldDestroy)

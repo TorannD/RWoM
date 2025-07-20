@@ -15,7 +15,7 @@ namespace TorannMagic
             Map map = base.Map;
             base.Impact(hitThing);
             ThingDef def = this.def;            
-            GenExplosion.DoExplosion(base.Position, map, this.def.projectile.explosionRadius, this.def.projectile.damageDef, this.launcher, (int)(this.def.projectile.GetDamageAmount(1,null) * comp.arcaneDmg), 0, SoundDefOf.Artillery_ShellLoaded, def, this.equipmentDef, null, null, 0f, 1, null, false, null, 0f, 1, 0f, true);
+            GenExplosion.DoExplosion(base.Position, map, this.def.projectile.explosionRadius, this.def.projectile.damageDef, this.launcher, (int)(this.def.projectile.GetDamageAmount(1,null) * comp.arcaneDmg), 0, SoundDefOf.Artillery_ShellLoaded, def, this.equipmentDef, null, null, 0f, 1, null, null, 0, false, null, 0f, 1, 0f, true);
             if (caster != null && comp != null)
             {
                 if (comp.MagicData?.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Cantrips_ver").level >= 14)

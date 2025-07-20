@@ -246,7 +246,7 @@ namespace TorannMagic
             Graphics.DrawMesh(MeshPool.plane10, matrix2, Projectile_Resurrection.BeamEndMat, 0, null, 0, Projectile_Resurrection.MatPropertyBlock);
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
             base.Tick();
             this.age++;

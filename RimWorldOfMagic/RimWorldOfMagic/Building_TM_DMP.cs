@@ -128,7 +128,7 @@ namespace TorannMagic
             return Building_TM_DMP.portableCells;
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
             base.Tick();
             if(Find.TickManager.TicksGame % this.rotationRate == 0)

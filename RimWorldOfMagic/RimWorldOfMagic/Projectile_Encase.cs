@@ -223,7 +223,7 @@ namespace TorannMagic
 
         public void LaunchFlyingObect(IntVec3 targetCell, Thing thing)
         {
-            bool flag = targetCell != null && targetCell != default(IntVec3);
+            bool flag = targetCell.IsValid && targetCell != default(IntVec3);
             if (flag)
             {
                 if (thing != null && thing.Position.IsValid && !this.Destroyed && thing.Spawned && thing.Map != null)
@@ -263,7 +263,7 @@ namespace TorannMagic
             return direction;
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
             base.Tick();
             this.age++;

@@ -6,13 +6,13 @@ using Verse.Sound;
 
 namespace TorannMagic.WorldTransport
 {
-    public class TM_ActiveDropPod : Thing, IActiveDropPod, IThingHolder
+    public class TM_ActiveDropPod : Thing, IActiveTransporter, IThingHolder
     {
         public int age;
         public bool draftFlag = false;
-        private ActiveDropPodInfo contents;
+        private ActiveTransporterInfo contents;
 
-        public ActiveDropPodInfo Contents
+        public ActiveTransporterInfo Contents
         {
             get
             {
@@ -52,11 +52,11 @@ namespace TorannMagic.WorldTransport
                 outChildren.Add(contents);
             }
         }
-        public override void Tick()
+        protected override void Tick()
         {
             if (contents != null)
             {
-                contents.innerContainer.ThingOwnerTick();
+                contents.innerContainer.DoTick();
                 if (base.Spawned)
                 {
                     age++;

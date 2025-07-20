@@ -364,7 +364,7 @@ namespace TorannMagic
             //LessonAutoActivator.TeachOpportunity(ConceptDef.Named("TM_Portals"), OpportunityType.GoodToKnow);
         }
 
-        public override void Tick()
+        protected override void Tick()
         { 
             bool billsActionable = false;
             if (this.suspendReset)

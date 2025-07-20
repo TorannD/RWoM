@@ -284,7 +284,7 @@ namespace TorannMagic
             return Building_TMPortal.portableCells;
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
             if (Find.TickManager.TicksGame % 10 == 0)
             {

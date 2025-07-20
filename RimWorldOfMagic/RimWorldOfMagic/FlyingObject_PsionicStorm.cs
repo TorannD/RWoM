@@ -219,7 +219,10 @@ namespace TorannMagic
             }
         }
 
-        public override void Tick()
+        protected override void Tick()
+        {
+        }
+        protected override void TickInterval(int delta)
         {
             //base.Tick();
             this.ticksToImpact--;
@@ -442,7 +445,7 @@ namespace TorannMagic
                 bool flag4 = this.explosion;
                 if (flag4)
                 {
-                    GenExplosion.DoExplosion(base.Position, base.Map, 0.9f, DamageDefOf.Stun, this, -1, 0, null, null, null, null, null, 0f, 1, null, false, null, 0f, 1, 0f, false);
+                    GenExplosion.DoExplosion(base.Position, base.Map, 0.9f, DamageDefOf.Stun, this, -1, 0, null, null, null, null, null, 0f, 1, null, null, 0, false, null, 0f, 1, 0f, false);
                 }
             }
             GenSpawn.Spawn(this.flyingThing, base.Position, base.Map);

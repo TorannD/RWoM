@@ -11,8 +11,8 @@ namespace TorannMagic
     [StaticConstructorOnStartup]
     public class FlyingObject_Advanced : Projectile
     {
-        protected new Vector3 origin;        
-        protected new Vector3 destination;
+        //protected new Vector3 origin;        
+        //protected new Vector3 destination;
         protected Vector3 trueOrigin;
         protected Vector3 trueDestination;
 
@@ -54,36 +54,45 @@ namespace TorannMagic
         CompAbilityUserMagic comp;
         TMPawnSummoned newPawn = new TMPawnSummoned();
 
-        protected new int StartingTicksToImpact
+        protected new float StartingTicksToImpact
         {
             get
             {
-                int num = Mathf.RoundToInt((this.origin - this.destination).magnitude / (this.speed / 100f));
-                bool flag = num < 1;
-                if (flag)
+                float num = (this.origin - this.destination).magnitude / (this.speed / 100f);
+                if (num <= 0f)
                 {
-                    num = 1;
+                    num = 0.001f;
                 }
                 return num;
             }
         }
 
-        protected new IntVec3 DestinationCell
-        {
-            get
-            {
-                return new IntVec3(this.destination);
-            }
-        }
+        //protected new IntVec3 DestinationCell
+        //{
+        //    get
+        //    {
+        //        return new IntVec3(this.destination);
+        //    }
+        //}
 
-        public new Vector3 ExactPosition
+        public override Vector3 ExactPosition
         {
             get
             {
+                //Vector3 b = (destination - origin).Yto0() * DistanceCoveredFraction;
+                //return origin.Yto0() + b + Vector3.up * def.Altitude;
                 Vector3 b = (this.destination - this.origin) * (1f - (float)this.ticksToImpact / (float)this.StartingTicksToImpact);
                 return this.origin + b + Vector3.up * this.def.Altitude;
             }
         }
+        //public new Vector3 ExactPosition
+        //{
+        //    get
+        //    {
+        //        Vector3 b = (this.destination - this.origin) * (1f - (float)this.ticksToImpact / (float)this.StartingTicksToImpact);
+        //        return this.origin + b + Vector3.up * this.def.Altitude;
+        //    }
+        //}
 
         public new Quaternion ExactRotation
         {
@@ -167,7 +176,7 @@ namespace TorannMagic
             bool spawned = flyingThing.Spawned;            
             this.pawn = launcher as Pawn;
             if (spawned)
-            {               
+            {
                 flyingThing.DeSpawn();
             }
             this.launcher = launcher;
@@ -192,7 +201,7 @@ namespace TorannMagic
             {
                 this.destination = this.trueDestination;
             }            
-            this.ticksToImpact = this.StartingTicksToImpact;
+            this.ticksToImpact = (int)this.StartingTicksToImpact;
             this.Initialize();
         }        
 
@@ -244,9 +253,14 @@ namespace TorannMagic
 
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
-            PreTick();
+
+        }
+
+        protected override void TickInterval(int delta)
+        {
+            PreTick();            
             Vector3 exactPosition = this.ExactPosition;
             if (this.ticksToImpact >= 0 && this.moteDef != null && Find.TickManager.TicksGame % this.moteFrequency == 0)
             {
@@ -284,7 +298,7 @@ namespace TorannMagic
                             this.origin = curvePoints[destinationCurvePoint];
                             this.destinationCurvePoint++;
                             this.destination = this.curvePoints[this.destinationCurvePoint];
-                            this.ticksToImpact = this.StartingTicksToImpact;
+                            this.ticksToImpact = (int)this.StartingTicksToImpact;
                         }
                         else
                         {
@@ -307,6 +321,7 @@ namespace TorannMagic
                     }
                 }                
             }
+            //base.TickInterval(delta);
             PostTick();
         }
 
@@ -354,8 +369,8 @@ namespace TorannMagic
             TM_MoteMaker.ThrowGenericMote(this.moteDef, effectVec, this.Map, Rand.Range(.4f, .6f), Rand.Range(.05f, .1f), .03f, Rand.Range(.2f, .3f), Rand.Range(-200, 200), Rand.Range(.5f, 2f), Rand.Range(0, 360), Rand.Range(0, 360));
         }
 
-        private void ImpactSomething()
-        {
+        protected override void ImpactSomething()
+        {            
             bool flag = this.assignedTarget != null;
             if (flag)
             {
@@ -376,7 +391,30 @@ namespace TorannMagic
             }
         }
 
-        protected new void Impact(Thing hitThing)
+        //private void ImpactSomething()
+        //{
+        //    Log.Message("impacting");
+        //    bool flag = this.assignedTarget != null;
+        //    if (flag)
+        //    {
+        //        Pawn pawn = this.assignedTarget as Pawn;
+        //        bool flag2 = pawn != null && pawn.GetPosture() != PawnPosture.Standing && (this.origin - this.destination).MagnitudeHorizontalSquared() >= 20.25f && Rand.Value > 0.2f;
+        //        if (flag2)
+        //        {
+        //            this.Impact(null);
+        //        }
+        //        else
+        //        {
+        //            this.Impact(this.assignedTarget);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        this.Impact(null);
+        //    }
+        //}
+
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             bool flag = hitThing == null;
             if (flag)
@@ -400,7 +438,7 @@ namespace TorannMagic
                 {
                     SoundDefOf.Ambient_AltitudeWind.sustainFadeoutTime.Equals(30.0f);
 
-                    GenSpawn.Spawn(this.flyingThing, base.Position, base.Map);                   
+                    GenSpawn.Spawn(this.flyingThing, base.Position, base.Map);
                     if (this.earlyImpact)
                     {
                         damageEntities(p, this.impactForce, DamageDefOf.Blunt);
@@ -416,11 +454,11 @@ namespace TorannMagic
             }
             else
             {
-                if(this.impactRadius > 0)
+                if (this.impactRadius > 0)
                 {
-                    if(this.isExplosive)
+                    if (this.isExplosive)
                     {
-                        GenExplosion.DoExplosion(this.ExactPosition.ToIntVec3(), this.Map, this.impactRadius, this.impactDamageType, this.launcher as Pawn, this.explosionDamage, -1, this.impactDamageType.soundExplosion, def, null, null, null, 0f, 1, null, false, null, 0f, 0, 0.0f, true);
+                        GenExplosion.DoExplosion(this.ExactPosition.ToIntVec3(), this.Map, this.impactRadius, this.impactDamageType, this.launcher as Pawn, this.explosionDamage, -1, this.impactDamageType.soundExplosion, def, null, null, null, 0f, 1, null, null, 0, false, null, 0f, 0, 0.0f, true);
                     }
                     else
                     {
@@ -441,9 +479,81 @@ namespace TorannMagic
                         }
                     }
                 }
-                this.Destroy(DestroyMode.Vanish);
+                if (!Destroyed)
+                {
+                    this.Destroy(DestroyMode.Vanish);
+                }
             }
         }
+
+        //protected new void Impact(Thing hitThing)
+        //{
+        //    bool flag = hitThing == null;
+        //    if (flag)
+        //    {
+        //        Pawn pawn;
+        //        bool flag2 = (pawn = (base.Position.GetThingList(base.Map).FirstOrDefault((Thing x) => x == this.assignedTarget) as Pawn)) != null;
+        //        if (flag2)
+        //        {
+        //            hitThing = pawn;
+        //        }
+        //    }
+        //    bool hasValue = this.impactDamage.HasValue;
+        //    if (hasValue)
+        //    {
+        //        hitThing.TakeDamage(this.impactDamage.Value);
+        //    }
+        //    ImpactOverride();
+        //    if (this.flyingThing is Pawn p)
+        //    {
+        //        try
+        //        {
+        //            SoundDefOf.Ambient_AltitudeWind.sustainFadeoutTime.Equals(30.0f);
+
+        //            GenSpawn.Spawn(this.flyingThing, base.Position, base.Map);                   
+        //            if (this.earlyImpact)
+        //            {
+        //                damageEntities(p, this.impactForce, DamageDefOf.Blunt);
+        //                damageEntities(p, 2 * this.impactForce, DamageDefOf.Stun);
+        //            }
+        //            this.Destroy(DestroyMode.Vanish);
+        //        }
+        //        catch
+        //        {
+        //            GenSpawn.Spawn(this.flyingThing, base.Position, base.Map);
+        //            this.Destroy(DestroyMode.Vanish);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        if(this.impactRadius > 0)
+        //        {
+        //            if(this.isExplosive)
+        //            {
+        //                GenExplosion.DoExplosion(this.ExactPosition.ToIntVec3(), this.Map, this.impactRadius, this.impactDamageType, this.launcher as Pawn, this.explosionDamage, -1, this.impactDamageType.soundExplosion, def, null, null, null, 0f, 1, null, null, 0, false, null, 0f, 0, 0.0f, true);
+        //            }
+        //            else
+        //            {
+        //                int num = GenRadial.NumCellsInRadius(this.impactRadius);
+        //                IntVec3 curCell;
+        //                for (int i = 0; i < num; i++)
+        //                {
+        //                    curCell = this.ExactPosition.ToIntVec3() + GenRadial.RadialPattern[i];
+        //                    List<Thing> hitList = new List<Thing>();
+        //                    hitList = curCell.GetThingList(this.Map);
+        //                    for (int j = 0; j < hitList.Count; j++)
+        //                    {
+        //                        if (hitList[j] is Pawn && hitList[j] != this.pawn)
+        //                        {
+        //                            damageEntities(hitList[j], this.explosionDamage, this.impactDamageType);
+        //                        }
+        //                    }
+        //                }
+        //            }
+        //        }
+        //        this.Destroy(DestroyMode.Vanish);
+        //    }
+        //}
 
         public virtual void ImpactOverride()
         {

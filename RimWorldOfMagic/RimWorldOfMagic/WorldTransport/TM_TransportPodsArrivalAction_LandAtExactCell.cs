@@ -5,7 +5,7 @@ using Verse;
 
 namespace TorannMagic.WorldTransport
 {
-    public class TM_TransportPodsArrivalAction_LandAtExactCell : TransportPodsArrivalAction
+    public class TM_TransportPodsArrivalAction_LandAtExactCell : TransportersArrivalAction_LandInSpecificCell
     {
         private MapParent mapParent;
         private IntVec3 cell;
@@ -30,7 +30,7 @@ namespace TorannMagic.WorldTransport
             Scribe_Values.Look(ref cell, "cell");
         }
 
-        public override FloatMenuAcceptanceReport StillValid(IEnumerable<IThingHolder> pods, int destinationTile)
+        public override FloatMenuAcceptanceReport StillValid(IEnumerable<IThingHolder> pods, PlanetTile destinationTile)
         {
             FloatMenuAcceptanceReport floatMenuAcceptanceReport = base.StillValid(pods, destinationTile);
             if (!(bool)floatMenuAcceptanceReport)
@@ -44,22 +44,22 @@ namespace TorannMagic.WorldTransport
             return CanLandInSpecificCell(pods, mapParent);
         }
 
-        public override void Arrived(List<ActiveDropPodInfo> pods, int tile)
+        public override void Arrived(List<ActiveTransporterInfo> pods, PlanetTile tile)
         {
             WorldTransport.TM_TransportPodsArrivalActionUtility.DropTravelingTransportPods(pods, cell, mapParent.Map, true, draftFlag);
         }
 
-        public static bool CanLandInSpecificCell(IEnumerable<IThingHolder> pods, MapParent mapParent)
-        {
-            if (mapParent == null || !mapParent.Spawned || !mapParent.HasMap)
-            {
-                return false;
-            }
-            if (mapParent.EnterCooldownBlocksEntering())
-            {
-                return FloatMenuAcceptanceReport.WithFailMessage("MessageEnterCooldownBlocksEntering".Translate(mapParent.EnterCooldownDaysLeft().ToString("0.#")));
-            }
-            return true;
-        }
+        //public static bool CanLandInSpecificCell(IEnumerable<IThingHolder> pods, MapParent mapParent)
+        //{
+        //    if (mapParent == null || !mapParent.Spawned || !mapParent.HasMap)
+        //    {
+        //        return false;
+        //    }
+        //    if (mapParent.EnterCooldownBlocksEntering())
+        //    {
+        //        return FloatMenuAcceptanceReport.WithFailMessage("MessageEnterCooldownBlocksEntering".Translate(mapParent.EnterCooldownDaysLeft().ToString("0.#")));
+        //    }
+        //    return true;
+        //}
     }
 }

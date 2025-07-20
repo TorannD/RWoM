@@ -28,7 +28,7 @@ namespace TorannMagic
             }
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
             base.Tick();
             this.age++;
@@ -78,7 +78,7 @@ namespace TorannMagic
 
                 fog.gas.expireSeconds.min = this.duration/60;
                 fog.gas.expireSeconds.max = this.duration/60;
-                GenExplosion.DoExplosion(base.Position, map, this.def.projectile.explosionRadius + verVal, TMDamageDefOf.DamageDefOf.TM_Torment, this.launcher, 0, 0, this.def.projectile.soundExplode, def, this.equipmentDef, null, fog, 1f, 1, null, false, null, 0f, 0, 0.0f, false);
+                GenExplosion.DoExplosion(base.Position, map, this.def.projectile.explosionRadius + verVal, TMDamageDefOf.DamageDefOf.TM_Torment, this.launcher, 0, 0, this.def.projectile.soundExplode, def, this.equipmentDef, null, fog, 1f, 1, null, null, 0, false, null, 0f, 0, 0.0f, false);
                 
                 this.initialized = true;
             }

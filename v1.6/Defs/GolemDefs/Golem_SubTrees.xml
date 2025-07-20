@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThinkTreeDef>
+    <defName>TM_Golem_BehaviorCore</defName>
+    <thinkRoot Class="ThinkNode_Tagger">
+      <tagToGive>Misc</tagToGive> <!-- note that JobGiver_Work will assign its own tag -->
+      <subNodes>
+		<li Class="ThinkNode_ConditionalPawnKind">
+          <pawnKind>TM_MechaGolemK</pawnKind>
+          <subNodes>
+            <li Class="ThinkNode_Subtree">
+              <treeDef>TM_Golem_MechaBehavior</treeDef>
+              <leaveJoinableLordIfIssuesJob>true</leaveJoinableLordIfIssuesJob>
+            </li>
+          </subNodes>
+        </li>
+		<li Class="ThinkNode_ConditionalPawnKind">
+          <pawnKind>TM_FleshGolemK</pawnKind>
+          <subNodes>
+            <li Class="ThinkNode_Subtree">
+              <treeDef>TM_Golem_FleshBehavior</treeDef>
+              <leaveJoinableLordIfIssuesJob>true</leaveJoinableLordIfIssuesJob>
+            </li>
+          </subNodes>
+        </li>
+		<li Class="ThinkNode_ConditionalPawnKind">
+          <pawnKind>TM_HollowGolemK</pawnKind>
+          <subNodes>
+            <li Class="ThinkNode_Subtree">
+              <treeDef>TM_Golem_HollowBehavior</treeDef>
+              <leaveJoinableLordIfIssuesJob>true</leaveJoinableLordIfIssuesJob>
+            </li>
+          </subNodes>
+        </li>
+		<li Class="ThinkNode_ConditionalPawnKind">
+          <pawnKind>TM_StoneGolemK</pawnKind>
+          <subNodes>
+            <li Class="ThinkNode_Subtree">
+              <treeDef>TM_Golem_StoneBehavior</treeDef>
+              <leaveJoinableLordIfIssuesJob>true</leaveJoinableLordIfIssuesJob>
+            </li>
+          </subNodes>
+        </li>
+		<li Class="ThinkNode_ConditionalPawnKind">
+          <pawnKind>TM_SandstoneGolemK</pawnKind>
+          <subNodes>
+            <li Class="ThinkNode_Subtree">
+              <treeDef>TM_Golem_StoneBehavior</treeDef>
+              <leaveJoinableLordIfIssuesJob>true</leaveJoinableLordIfIssuesJob>
+            </li>
+          </subNodes>
+        </li>
+		<li Class="ThinkNode_ConditionalPawnKind">
+          <pawnKind>TM_LimestoneGolemK</pawnKind>
+          <subNodes>
+            <li Class="ThinkNode_Subtree">
+              <treeDef>TM_Golem_StoneBehavior</treeDef>
+              <leaveJoinableLordIfIssuesJob>true</leaveJoinableLordIfIssuesJob>
+            </li>
+          </subNodes>
+        </li>
+		<li Class="ThinkNode_ConditionalPawnKind">
+          <pawnKind>TM_GraniteGolemK</pawnKind>
+          <subNodes>
+            <li Class="ThinkNode_Subtree">
+              <treeDef>TM_Golem_StoneBehavior</treeDef>
+              <leaveJoinableLordIfIssuesJob>true</leaveJoinableLordIfIssuesJob>
+            </li>
+          </subNodes>
+        </li>
+		<li Class="ThinkNode_ConditionalPawnKind">
+          <pawnKind>TM_SlateGolemK</pawnKind>
+          <subNodes>
+            <li Class="ThinkNode_Subtree">
+              <treeDef>TM_Golem_StoneBehavior</treeDef>
+              <leaveJoinableLordIfIssuesJob>true</leaveJoinableLordIfIssuesJob>
+            </li>
+          </subNodes>
+        </li>
+		<li Class="ThinkNode_ConditionalPawnKind">
+          <pawnKind>TM_MarbleGolemK</pawnKind>
+          <subNodes>
+            <li Class="ThinkNode_Subtree">
+              <treeDef>TM_Golem_StoneBehavior</treeDef>
+              <leaveJoinableLordIfIssuesJob>true</leaveJoinableLordIfIssuesJob>
+            </li>
+          </subNodes>
+        </li>
+		<li Class="ThinkNode_ConditionalPawnKind">
+          <pawnKind>TM_MaharalGolemK</pawnKind>
+          <subNodes>
+            <li Class="ThinkNode_Subtree">
+              <treeDef>TM_Golem_MaharalBehavior</treeDef>
+              <leaveJoinableLordIfIssuesJob>true</leaveJoinableLordIfIssuesJob>
+            </li>
+          </subNodes>
+        </li>
+		<li Class="ThinkNode_ConditionalPawnKind">
+          <pawnKind>TM_StrawGolemK</pawnKind>
+          <subNodes>
+            <li Class="ThinkNode_Subtree">
+              <treeDef>TM_Golem_StrawBehavior</treeDef>
+              <leaveJoinableLordIfIssuesJob>true</leaveJoinableLordIfIssuesJob>
+            </li>
+          </subNodes>
+        </li>
+		<li Class="ThinkNode_ConditionalPawnKind">
+          <pawnKind>TM_WoodGolemK</pawnKind>
+          <subNodes>
+            <li Class="ThinkNode_Subtree">
+              <treeDef>TM_Golem_WoodBehavior</treeDef>
+              <leaveJoinableLordIfIssuesJob>true</leaveJoinableLordIfIssuesJob>
+            </li>
+          </subNodes>
+        </li>
+		<li Class="ThinkNode_ConditionalPawnKind">
+          <pawnKind>TM_SilkGolemK</pawnKind>
+          <subNodes>
+            <li Class="ThinkNode_Subtree">
+              <treeDef>TM_Golem_SilkBehavior</treeDef>
+              <leaveJoinableLordIfIssuesJob>true</leaveJoinableLordIfIssuesJob>
+            </li>
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+  
+  <!--============= Main maharal golem behavior ============-->
+  
+  <ThinkTreeDef>
+    <defName>TM_Golem_MaharalBehavior</defName>
+    <thinkRoot Class="ThinkNode_Tagger">
+      <tagToGive>Misc</tagToGive> <!-- note that JobGiver_Work will assign its own tag -->
+      <subNodes>
+		<li Class="TorannMagic.Golems.JobGiver_GolemGetEnergy"/>
+		<li Class="TorannMagic.Golems.JobGiver_GolemJobs"/>
+		<li Class="JobGiver_Haul" />
+		<li Class="TorannMagic.JobGiver_AIClean" />
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+<!--============= Main mecha-golem behavior ============-->
+  
+  <ThinkTreeDef>
+    <defName>TM_Golem_MechaBehavior</defName>
+    <thinkRoot Class="ThinkNode_Tagger">
+      <tagToGive>Misc</tagToGive> <!-- note that JobGiver_Work will assign its own tag -->
+      <subNodes>
+		<li Class="TorannMagic.Golems.JobGiver_GolemGetEnergy"/>
+		<li Class="TorannMagic.Golems.JobGiver_GolemJobs"/>
+		<li Class="JobGiver_Haul" />
+		<li Class="TorannMagic.JobGiver_AIClean" />
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+  
+<!--============= Main flesh golem behavior ============-->
+  
+  <ThinkTreeDef>
+    <defName>TM_Golem_FleshBehavior</defName>
+    <thinkRoot Class="ThinkNode_Tagger">
+      <tagToGive>Misc</tagToGive> <!-- note that JobGiver_Work will assign its own tag -->
+      <subNodes>
+		<li Class="TorannMagic.Golems.JobGiver_GolemGetEnergy"/>
+		<li Class="TorannMagic.Golems.JobGiver_GolemJobs"/>
+		<li Class="JobGiver_Haul" />
+		<li Class="TorannMagic.JobGiver_AIClean" />
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+  
+  
+<!--============= Main hollow golem behavior ============-->
+  
+  <ThinkTreeDef>
+    <defName>TM_Golem_HollowBehavior</defName>
+    <thinkRoot Class="ThinkNode_Tagger">
+      <tagToGive>Misc</tagToGive> <!-- note that JobGiver_Work will assign its own tag -->
+      <subNodes>
+		<li Class="TorannMagic.Golems.JobGiver_GolemGetEnergy"/>
+		<li Class="JobGiver_Haul" />
+		<li Class="TorannMagic.JobGiver_AIClean" />
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+  
+<!--============= Main stone golem behavior ============-->
+  
+  <ThinkTreeDef>
+    <defName>TM_Golem_StoneBehavior</defName>
+    <thinkRoot Class="ThinkNode_Tagger">
+      <tagToGive>Misc</tagToGive> <!-- note that JobGiver_Work will assign its own tag -->
+      <subNodes>
+		<li Class="TorannMagic.Golems.JobGiver_GolemGetEnergy"/>
+		<li Class="TorannMagic.Golems.JobGiver_GolemJobs"/>
+		<li Class="JobGiver_Haul" />
+		<li Class="TorannMagic.JobGiver_AIClean" />
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+  
+  <!--============= Main straw golem behavior ============-->
+  
+  <ThinkTreeDef>
+    <defName>TM_Golem_StrawBehavior</defName>
+    <thinkRoot Class="ThinkNode_Tagger">
+      <tagToGive>Misc</tagToGive> <!-- note that JobGiver_Work will assign its own tag -->
+      <subNodes>
+		<li Class="TorannMagic.Golems.JobGiver_GolemGetEnergy"/>
+		<li Class="TorannMagic.Golems.JobGiver_GolemJobs"/>
+		<li Class="TorannMagic.Golems.JobGiver_Work"/>
+		<li Class="JobGiver_Haul" />
+		<li Class="TorannMagic.JobGiver_AIClean" />
+		<li Class="TorannMagic.JobGiver_AIClearPollution" />
+		<li Class="TorannMagic.JobGiver_AIClearSnow" />
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+  
+    <!--============= Main wood golem behavior ============-->
+  
+  <ThinkTreeDef>
+    <defName>TM_Golem_WoodBehavior</defName>
+    <thinkRoot Class="ThinkNode_Tagger">
+      <tagToGive>Misc</tagToGive> <!-- note that JobGiver_Work will assign its own tag -->
+      <subNodes>
+		<li Class="TorannMagic.Golems.JobGiver_GolemGetEnergy"/>
+		<li Class="TorannMagic.Golems.JobGiver_GolemJobs"/>
+		<li Class="TorannMagic.Golems.JobGiver_Work"/>
+		<li Class="JobGiver_Haul" />
+		<li Class="TorannMagic.JobGiver_AIClean" />
+		<li Class="TorannMagic.JobGiver_AIClearPollution" />
+		<li Class="TorannMagic.JobGiver_AIClearSnow" />
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+  
+      <!--============= Main silk golem behavior ============-->
+  
+  <ThinkTreeDef>
+    <defName>TM_Golem_SilkBehavior</defName>
+    <thinkRoot Class="ThinkNode_Tagger">
+      <tagToGive>Misc</tagToGive> <!-- note that JobGiver_Work will assign its own tag -->
+      <subNodes>
+		<li Class="TorannMagic.Golems.JobGiver_GolemGetEnergy"/>
+		<li Class="TorannMagic.Golems.JobGiver_GolemJobs"/>
+		<li Class="TorannMagic.Golems.JobGiver_Work"/>
+		<li Class="JobGiver_Haul" />
+		<li Class="TorannMagic.JobGiver_AIClean" />
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+  
+  <!--============= Burning ============-->
+  
+  <ThinkTreeDef>
+    <defName>TM_Golem_BurningResponse</defName>
+    <thinkRoot Class="ThinkNode_ConditionalBurning">
+      <subNodes>
+        <li Class="ThinkNode_Priority">
+          <subNodes>
+			<li Class="ThinkNode_ConditionalPawnKind">
+			  <pawnKind>TM_MechaGolemK</pawnKind>
+			  <subNodes>
+			    <li Class="TorannMagic.Golems.JobGiver_MechaGolemExtinguish" />
+			  </subNodes>
+			</li>
+			<li Class="ThinkNode_ConditionalPawnKind">
+			  <pawnKind>TM_FleshGolemK</pawnKind>
+			  <subNodes>
+			    <li Class="TorannMagic.Golems.JobGiver_FleshGolemExtinguish" />
+			  </subNodes>
+			</li>   
+			<li Class="TorannMagic.Golems.JobGiver_GolemExtinguishSelf" /> 
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+  
+  <!--============= Satisfy basic needs and work ============-->
+  
+  <ThinkTreeDef>
+    <defName>TM_Golem_SatisfyBasicNeedsAndWork</defName>
+    <thinkRoot Class="ThinkNode_Tagger">
+      <tagToGive>SatisfyingNeeds</tagToGive> <!-- note that JobGiver_Work will assign its own tag -->
+      <subNodes>
+        <li Class="ThinkNode_PrioritySorter">
+          <subNodes>
+            <li Class="JobGiver_GetRest"/>
+            <li Class="JobGiver_Work"/>
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef> 
+  
+  <!--============= Satisfy very urgent needs ============-->
+  
+  <ThinkTreeDef>
+    <defName>TM_Golem_SatisfyVeryUrgentNeeds</defName>
+    <thinkRoot Class="ThinkNode_Tagger">
+      <tagToGive>SatisfyingNeeds</tagToGive>
+      <subNodes>
+        <li Class="ThinkNode_PrioritySorter">
+          <subNodes>
+            <li Class="JobGiver_GetRest">
+              <minCategory>VeryTired</minCategory>
+            </li>
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef> 
+
+</Defs>

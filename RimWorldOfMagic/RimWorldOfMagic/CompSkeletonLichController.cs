@@ -127,7 +127,7 @@ namespace TorannMagic
                 cellRect.ClipInsideMap(this.Pawn.Map);
                 IntVec3 destination = cellRect.RandomCell;
 
-                if (destination != null)
+                if (destination.IsValid)
                 {
                     Thing launchedThing = new Thing()
                     {
@@ -263,7 +263,7 @@ namespace TorannMagic
         private void StartChargeAttack(IntVec3 t)
         {
             this.nextChargeAttack = this.Props.chargeCooldownTicks + Find.TickManager.TicksGame;
-            bool flag = t != null && t.DistanceToEdge(this.Pawn.Map) > 6;
+            bool flag = t.IsValid && t.DistanceToEdge(this.Pawn.Map) > 6;
             if (flag && t.InBoundsWithNullCheck(this.Pawn.Map) && t.IsValid && t.Walkable(this.Pawn.Map) && Pawn.Position.DistanceTo(t) <= 60)
             {
                 this.castingCompleteTick = Find.TickManager.TicksGame + this.Props.chargeAttackDelay;

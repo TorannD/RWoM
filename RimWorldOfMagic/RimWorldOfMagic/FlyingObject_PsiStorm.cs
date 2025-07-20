@@ -220,7 +220,10 @@ namespace TorannMagic
             //this.orbPosition.z = (int)AltitudeLayer.MoteOverhead;
         }
 
-        public override void Tick()
+        protected override void Tick()
+        {
+        }
+        protected override void TickInterval(int delta)
         {
             //base.Tick();
             age++;

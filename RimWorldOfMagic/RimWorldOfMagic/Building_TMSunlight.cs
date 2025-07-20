@@ -15,8 +15,8 @@ namespace TorannMagic
         private float matMagnitude = 1;
 
         private bool initialized = false;
-                
-        public override void Tick()
+
+        protected override void Tick()
         {
             if(!initialized)
             {

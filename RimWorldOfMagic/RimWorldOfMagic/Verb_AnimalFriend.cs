@@ -50,7 +50,7 @@ namespace TorannMagic
                 if (animal == comp.bondedPet)
                 {
                     Hediff animalBondHD = oldbond.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("TM_RangerBondHD"));
-                    if (animalBondHD != null && Rand.Chance(((1f + animalBondHD.ageTicks / 6000000) - oldbond.RaceProps.wildness)))
+                    if (animalBondHD != null && Rand.Chance(((1f + animalBondHD.ageTicks / 6000000) - oldbond.GetStatValue(StatDefOf.Wildness))))
                     {
                         Messages.Message("TM_BondedAnimalReleaseToColony".Translate(
                                                 oldbond.LabelShort,
@@ -90,9 +90,9 @@ namespace TorannMagic
                 {
                     if (animal.RaceProps.intelligence == Intelligence.Animal) // == TrainableIntelligenceDefOf.Intermediate || animal.RaceProps.TrainableIntelligence == TrainableIntelligenceDefOf.Advanced)
                     {
-                        if ((animal.RaceProps.wildness <= .7f) || (animal.RaceProps.wildness <= .8f && pwr.level == 1) || (animal.RaceProps.wildness <= .9f && pwr.level == 2) || pwr.level == 3)
+                        if ((animal.GetStatValue(StatDefOf.Wildness) <= .7f) || (animal.GetStatValue(StatDefOf.Wildness) <= .8f && pwr.level == 1) || (animal.GetStatValue(StatDefOf.Wildness) <= .9f && pwr.level == 2) || pwr.level == 3)
                         {
-                            if (Rand.Chance(.6f + (.05f *pwr.level)) && Rand.Chance(((.7f + (.1f *pwr.level)) - animal.RaceProps.wildness) * 10))
+                            if (Rand.Chance(.6f + (.05f *pwr.level)) && Rand.Chance(((.7f + (.1f *pwr.level)) - animal.GetStatValue(StatDefOf.Wildness)) * 10))
                             {
                                 if (comp.bondedPet != null && comp.bondedPet != animal)
                                 {                                    
@@ -130,7 +130,7 @@ namespace TorannMagic
                                 Messages.Message("TM_FailedRangerBond".Translate(
                                 animal.LabelShort,
                                 pawn.LabelShort,
-                                (Mathf.Clamp(Mathf.RoundToInt(((.7f + (.1f * pwr.level)) - animal.RaceProps.wildness) * 1000f), 0, 100 - (40 - (5 * pwr.level))))
+                                (Mathf.Clamp(Mathf.RoundToInt(((.7f + (.1f * pwr.level)) - animal.GetStatValue(StatDefOf.Wildness)) * 1000f), 0, 100 - (40 - (5 * pwr.level))))
                                 ), MessageTypeDefOf.NeutralEvent);
                                 if(animal.Faction == null && Rand.Chance(animal.RaceProps.manhunterOnTameFailChance))
                                 {
@@ -143,7 +143,7 @@ namespace TorannMagic
                             Messages.Message("TM_RangerNotExperienced".Translate(
                                 animal.LabelShort,
                                 pawn.LabelShort,
-                                (animal.RaceProps.wildness * 100).ToString("F"),
+                                (animal.GetStatValue(StatDefOf.Wildness) * 100).ToString("F"),
                                 (.7f + .1f*pwr.level) * 100
                             ), MessageTypeDefOf.NeutralEvent);
                         }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RitualAttachableOutcomeEffectDef>
+    <defName>TM_RechargeMana</defName>
+    <label>recharge mana</label>
+    <effectDesc>recharge 50 to 100 mana of all participating mages.</effectDesc>
+    <letterInfoText>All participating mages have recharged {AMOUNT} mana.</letterInfoText>
+    <workerClass>TorannMagic.Ideology.RitualAttachableOutcomeEffectWorker_ManaRecharge</workerClass>
+  </RitualAttachableOutcomeEffectDef>
+
+</Defs>

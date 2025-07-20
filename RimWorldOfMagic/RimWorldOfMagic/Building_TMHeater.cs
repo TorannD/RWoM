@@ -16,7 +16,7 @@ namespace TorannMagic
         public bool boostJoy = false;
 
                 
-        public override void Tick()
+        protected override void Tick()
         {
             if(!initialized)
             {

@@ -57,7 +57,7 @@ namespace TorannMagic
             verVal = TM_Calc.GetSkillVersatilityLevel(caster, TorannMagicDefOf.TM_Totems);
             effVal = TM_Calc.GetSkillEfficiencyLevel(caster, TorannMagicDefOf.TM_Totems);
             IntVec3 shiftPos = TM_Calc.GetEmptyCellForNewBuilding(cell, map, 2f, true, 0, true);
-            if (shiftPos != null && (shiftPos.IsValid && shiftPos.Standable(map)))
+            if (shiftPos.IsValid && (shiftPos.IsValid && shiftPos.Standable(map)))
             {
                 AbilityUser.SpawnThings tempPod = new SpawnThings();               
                 tempPod.def = TorannMagicDefOf.TM_EarthTotem;

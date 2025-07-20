@@ -60,8 +60,7 @@ namespace TorannMagic.Weapon
                     Vector3 launchDirection = TM_Calc.GetVector(CasterPawn.Position, t.Cell);
                     Vector3 launchPosition = CasterPawn.DrawPos + (launchDirection * 1.4f);
                     Weapon.FlyingObject_FreezingWinds flyingObject = (FlyingObject_FreezingWinds)GenSpawn.Spawn(launchedThing.def, this.CasterPawn.Position, this.CasterPawn.Map);
-                    flyingObject.AdvancedLaunch(CasterPawn, TorannMagicDefOf.Mote_WhiteIce, Rand.RangeInclusive(3,8), Rand.RangeInclusive(0,22), true, launchPosition, t, launchedThing, (int)flyingObject.def.projectile.speed, false, 0, 0, flyingObject.def.projectile.damageDef, null, 0, true, .5f);
-                    //}, "LaunchingFlyer", false, null);                    
+                    flyingObject.AdvancedLaunch(CasterPawn, TorannMagicDefOf.Mote_WhiteIce, Rand.RangeInclusive(3,8), Rand.RangeInclusive(0,22), true, launchPosition, t, launchedThing, (int)flyingObject.def.projectile.speed, false, 0, 0, flyingObject.def.projectile.damageDef, null, 0, true, .5f);                 
                 }
                 return true;
             }           

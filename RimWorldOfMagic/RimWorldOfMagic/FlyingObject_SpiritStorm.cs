@@ -148,7 +148,7 @@ namespace TorannMagic
             CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
             this.duration = Mathf.RoundToInt(this.duration * comp.arcaneDmg);
             this.radius = this.def.projectile.explosionRadius + comp.MagicData.GetSkill_Versatility(TorannMagicDefOf.TM_SpiritStorm).level;
-            this.spellDamage = this.def.projectile.GetDamageAmount(1f) * (1f + (.12f * comp.MagicData.GetSkill_Power(TorannMagicDefOf.TM_SpiritStorm).level)) * comp.arcaneDmg;
+            this.spellDamage = this.def.projectile.GetDamageAmount(1f, null) * (1f + (.12f * comp.MagicData.GetSkill_Power(TorannMagicDefOf.TM_SpiritStorm).level)) * comp.arcaneDmg;
             if (spawned)
             {
                 flyingThing.DeSpawn();
@@ -220,7 +220,10 @@ namespace TorannMagic
             TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Regen, filth.DrawPos, this.Map, Rand.Range(.2f, .4f), .8f, .2f, .4f, Rand.Range(-400, -100), 1.9f, angle, Rand.Range(0, 360));
         }
 
-        public override void Tick()
+        protected override void Tick()
+        {
+        }
+        protected override void TickInterval(int delta)
         {
             //base.Tick();
 
@@ -340,7 +343,7 @@ namespace TorannMagic
                 bool flag4 = this.explosion;
                 if (flag4)
                 {
-                    GenExplosion.DoExplosion(base.Position, base.Map, 0.9f, DamageDefOf.Stun, this, -1, 0, null, null, null, null, null, 0f, 1, null, false, null, 0f, 1, 0f, false);
+                    GenExplosion.DoExplosion(base.Position, base.Map, 0.9f, DamageDefOf.Stun, this, -1, 0, null, null, null, null, null, 0f, 1, null, null, 0, false, null, 0f, 1, 0f, false);
                 }
             }
 

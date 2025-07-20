@@ -37,8 +37,8 @@ namespace TorannMagic
             base.SpawnSetup(map, respawningAfterLoad);
             //LessonAutoActivator.TeachOpportunity(ConceptDef.Named("TM_Portals"), OpportunityType.GoodToKnow);
         }
-                
-        public override void Tick()
+
+        protected override void Tick()
         {
             if (this.age > 10)
             {

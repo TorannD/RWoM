@@ -4349,20 +4349,23 @@ namespace TorannMagic
                     HealthUtility.AdjustSeverity(this.bondedPet, TorannMagicDefOf.TM_RangerBondHD, .5f);
                 }
             }
-            if(this.Pawn.needs.mood.thoughts.memories.NumMemoriesOfDef(ThoughtDef.Named("RangerSoldBondedPet")) > 0)
+            if (this.Pawn.needs?.mood?.thoughts?.memories != null)
             {
-                if(this.animalBondingDisabled == false)
+                if (this.Pawn.needs.mood.thoughts.memories.NumMemoriesOfDef(ThoughtDef.Named("RangerSoldBondedPet")) > 0)
                 {
-                    this.RemovePawnAbility(TorannMagicDefOf.TM_AnimalFriend);
-                    this.animalBondingDisabled = true;
+                    if (this.animalBondingDisabled == false)
+                    {
+                        this.RemovePawnAbility(TorannMagicDefOf.TM_AnimalFriend);
+                        this.animalBondingDisabled = true;
+                    }
                 }
-            }
-            else
-            {
-                if(this.animalBondingDisabled == true)
+                else
                 {
-                    this.AddPawnAbility(TorannMagicDefOf.TM_AnimalFriend);
-                    this.animalBondingDisabled = false;
+                    if (this.animalBondingDisabled == true)
+                    {
+                        this.AddPawnAbility(TorannMagicDefOf.TM_AnimalFriend);
+                        this.animalBondingDisabled = false;
+                    }
                 }
             }
 

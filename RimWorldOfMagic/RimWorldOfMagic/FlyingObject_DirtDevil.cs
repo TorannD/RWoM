@@ -233,7 +233,10 @@ namespace TorannMagic
             TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_ThickDust, filth.DrawPos, this.Map, Rand.Range(.4f, .6f), .1f, .05f, .25f, -200, 2, (Quaternion.AngleAxis(90, Vector3.up) * angle).ToAngleFlat(), Rand.Range(0,360));
         }
 
-        public override void Tick()
+        protected override void Tick()
+        {
+        }
+        protected override void TickInterval(int delta)
         {
             //base.Tick();
 
@@ -345,7 +348,7 @@ namespace TorannMagic
                 bool flag4 = this.explosion;
                 if (flag4)
                 {
-                    GenExplosion.DoExplosion(base.Position, base.Map, 0.9f, DamageDefOf.Stun, this, -1, 0, null, null, null, null, null, 0f, 1, null, false, null, 0f, 1, 0f, false);
+                    GenExplosion.DoExplosion(base.Position, base.Map, 0.9f, DamageDefOf.Stun, this, -1, 0, null, null, null, null, null, 0f, 1, null, null, 0, false, null, 0f, 1, 0f, false);
                 }
             }
 

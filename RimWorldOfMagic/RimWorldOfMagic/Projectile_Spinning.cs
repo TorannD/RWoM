@@ -15,7 +15,7 @@ namespace TorannMagic
         private int rotationOffset = 0;
         public int daggerCount = 2;
 
-        public override void Tick()
+        protected override void Tick()
         {
             base.Tick();
             if(Find.TickManager.TicksGame % 2 == 0 && daggerCount > 0 && this.launcher != null && this.launcher is Pawn caster)

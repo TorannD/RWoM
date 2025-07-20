@@ -144,7 +144,7 @@ namespace TorannMagic
             this.DrawDropSpotShadow();
         }
 
-        //public override void Tick()
+        //protected override void Tick()
         //{
         //    Log.Message("going through override tick");
         //    this.innerContainer.ThingOwnerTick(true);

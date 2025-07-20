@@ -73,8 +73,8 @@ namespace TorannMagic
             base.SpawnSetup(map, respawningAfterLoad);
             //LessonAutoActivator.TeachOpportunity(ConceptDef.Named("TM_Portals"), OpportunityType.GoodToKnow);
         }
-                
-        public override void Tick()
+
+        protected override void Tick()
         {
             if(!initialized)
             {
@@ -200,7 +200,7 @@ namespace TorannMagic
             {                
                 FindGoodCenterLocation();
                 Map.weatherManager.eventHandler.AddEvent(new WeatherEvent_LightningStrike(this.Map, this.centerLocation.ToIntVec3));
-                GenExplosion.DoExplosion(this.centerLocation.ToIntVec3, this.Map, this.areaRadius, DamageDefOf.Bomb, null, Rand.Range(6, 16), 0, SoundDefOf.Thunder_OffMap, null, null, null, null, 0f, 1, null, false, null, 0f, 1, 0.1f, true);
+                GenExplosion.DoExplosion(this.centerLocation.ToIntVec3, this.Map, this.areaRadius, DamageDefOf.Bomb, null, Rand.Range(6, 16), 0, SoundDefOf.Thunder_OffMap, null, null, null, null, 0f, 1, null, null, 0, false, null, 0f, 1, 0.1f, true);
 
             }
         }

@@ -54,7 +54,7 @@ namespace TorannMagic
                 Pawn actor = layDown.actor;
                 Job curJob = actor.CurJob;
                 JobDriver curDriver = actor.jobs.curDriver;
-                actor.GainComfortFromCellIfPossible();
+                actor.GainComfortFromCellIfPossible(1);
                 if (!curDriver.asleep)
                 {
                     if (actor.needs.rest != null && actor.needs.rest.CurLevel < .99f * WakeThreshold(actor))

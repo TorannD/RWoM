@@ -164,7 +164,10 @@ namespace TorannMagic
             this.Initialize();
         }      
 
-        public override void Tick()
+        protected override void Tick()
+        {
+        }
+        protected override void TickInterval(int delta)
         {
             //base.Tick();
             Vector3 exactPosition = this.ExactPosition;
@@ -337,7 +340,7 @@ namespace TorannMagic
 
         public void LaunchFlyingObect(IntVec3 targetCell, Pawn pawn, int force)
         {
-            bool flag = targetCell != null && targetCell != default(IntVec3);
+            bool flag = targetCell != default(IntVec3);
             if (flag)
             {
                 if (pawn != null && pawn.Position.IsValid && pawn.Spawned && pawn.Map != null && !pawn.Downed && !pawn.Dead)

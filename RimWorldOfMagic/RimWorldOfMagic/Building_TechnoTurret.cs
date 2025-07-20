@@ -68,7 +68,7 @@ namespace TorannMagic
             }
         }
 
-        public override bool ClaimableBy(Faction by, StringBuilder reason = null)
+        public override AcceptanceReport ClaimableBy(Faction by)
         {
             //if (!base.ClaimableBy(by, reason))
             //{
@@ -107,7 +107,7 @@ namespace TorannMagic
             Scribe_Values.Look<int>(ref this.duration, "duration", 3600);
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
             base.Tick();
             age++;
@@ -266,7 +266,7 @@ namespace TorannMagic
                     rndPos.z += Rand.Range(-.5f, .5f);
                     TM_MoteMaker.ThrowGenericFleck(TorannMagicDefOf.ElectricalSpark, rndPos, this.Map, Rand.Range(.4f, .7f), .2f, .05f, .1f, 0, 0, 0, Rand.Range(0, 360));
                 }
-                GenExplosion.DoExplosion(this.Position, this.Map, 1f, DamageDefOf.EMP, this, 0, 0, SoundDefOf.Crunch, null, null, this, null, 0, 0, null, false, null, 0, 0, 0, false);
+                GenExplosion.DoExplosion(this.Position, this.Map, 1f, DamageDefOf.EMP, this, 0, 0, SoundDefOf.Crunch, null, null, this, null, 0, 0, null, null, 0, false, null, 0, 0, 0, false);
                 this.Destroy(DestroyMode.Vanish);
             }
         }

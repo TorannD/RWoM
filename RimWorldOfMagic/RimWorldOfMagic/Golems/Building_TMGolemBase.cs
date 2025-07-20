@@ -17,7 +17,7 @@ namespace TorannMagic.Golems
     public class Building_TMGolemBase : Building_WorkTable, IThingHolder, IAttackTarget, IAttackTargetSearcher
     {
         int activationAge = 0;
-		public bool activating = false;
+        public bool activating = false;
         private bool initialized = false;
         private int nextEvaluationTick = 0;
         private int nextEffectTick = 0;
@@ -45,7 +45,7 @@ namespace TorannMagic.Golems
 
         public void InitializeGlower(ColorInt glowColor, float glowRadius)
         {
-            this.glower = new CompGlower();          
+            this.glower = new CompGlower();
             glowerProps.glowColor = glowColor;
             glowerProps.glowRadius = glowRadius;
             glower.parent = this;
@@ -62,7 +62,7 @@ namespace TorannMagic.Golems
                 }
                 else
                 {
-                    GlowOn();               
+                    GlowOn();
                 }
             }
         }
@@ -78,7 +78,7 @@ namespace TorannMagic.Golems
             this.Map.mapDrawer.MapMeshDirty(this.Position, MapMeshFlagDefOf.Things);
             this.Map.glowGrid.RegisterGlower(glower);
         }
-        
+
 
         public override void ExposeData()
         {
@@ -129,7 +129,7 @@ namespace TorannMagic.Golems
             {
                 return true;
             }
-            if(!GolemComp.useAbilitiesWhenDormant && GolemComp.threatRange <= 0)
+            if (!GolemComp.useAbilitiesWhenDormant && GolemComp.threatRange <= 0)
             {
                 return true;
             }
@@ -150,7 +150,7 @@ namespace TorannMagic.Golems
         {
             get
             {
-                if(innerContainer != null)
+                if (innerContainer != null)
                 {
                     return GetDirectlyHeldThings().FirstOrDefault() as TMPawnGolem;
                 }
@@ -162,7 +162,7 @@ namespace TorannMagic.Golems
         {
             get
             {
-                if(GolemPawn != null)
+                if (GolemPawn != null)
                 {
                     return GolemPawn.TryGetComp<CompGolem>();
                 }
@@ -213,10 +213,10 @@ namespace TorannMagic.Golems
                         return gu.golemUpgradeDef.maxLevel != 0;
                     }
                 }
-                else if(gu.golemUpgradeDef.recipeList != null && gu.golemUpgradeDef.recipeList.Count > 0)
+                else if (gu.golemUpgradeDef.recipeList != null && gu.golemUpgradeDef.recipeList.Count > 0)
                 {
-                    if(gu.golemUpgradeDef.recipeList.Contains(rec))
-                    {                        
+                    if (gu.golemUpgradeDef.recipeList.Contains(rec))
+                    {
                         return gu.golemUpgradeDef.maxLevel != 0;
                     }
                 }
@@ -239,34 +239,34 @@ namespace TorannMagic.Golems
         public bool CanActivate(out String reason)
         {
             reason = "";
-            if(!this.Spawned || this.Map == null || this.Position == null || this.GolemComp == null)
+            if (!this.Spawned || this.Map == null || !this.Position.IsValid || this.GolemComp == null)
             {
                 reason = "invalid conditions";
                 return false;
             }
             List<Thing> tmpList = this.Position.GetThingList(this.Map);
-            if(tmpList != null && tmpList.Count > 0)
+            if (tmpList != null && tmpList.Count > 0)
             {
                 int num = tmpList.Count;
-                for(int i =0; i < num; i++)
+                for (int i = 0; i < num; i++)
                 {
-                    if(tmpList[i] is TorannMagic.Golems.UnfinishedNoProductThing)
+                    if (tmpList[i] is TorannMagic.Golems.UnfinishedNoProductThing)
                     {
                         reason = "under construction";
                         return false;
                     }
                 }
             }
-            if(GolemComp.remainDormantWhenUpgrading && this.BillStack != null && this.BillStack.Bills != null && this.BillStack.Bills.Count > 0)
+            if (GolemComp.remainDormantWhenUpgrading && this.BillStack != null && this.BillStack.Bills != null && this.BillStack.Bills.Count > 0)
             {
-                foreach(Bill b in this.BillStack)
+                foreach (Bill b in this.BillStack)
                 {
                     if (b.ShouldDoNow())
                     {
                         reason = "pending upgrades";
                         return false;
                     }
-                    
+
                 }
             }
             return true;
@@ -274,9 +274,9 @@ namespace TorannMagic.Golems
 
         public void IncreaseUpgrade_Recipe(RecipeDef rec)
         {
-            foreach(TM_GolemUpgrade gu in Upgrades)
+            foreach (TM_GolemUpgrade gu in Upgrades)
             {
-                if(gu.golemUpgradeDef.recipe == rec)
+                if (gu.golemUpgradeDef.recipe == rec)
                 {
                     if (gu.golemUpgradeDef.bodypart != null)
                     {
@@ -299,11 +299,11 @@ namespace TorannMagic.Golems
                                 }
                             }
                         }
-                        if(gu.golemUpgradeDef.OccupiedPart != null)
+                        if (gu.golemUpgradeDef.OccupiedPart != null)
                         {
-                            foreach(TM_GolemUpgrade guz in Upgrades)
+                            foreach (TM_GolemUpgrade guz in Upgrades)
                             {
-                                if(guz.currentLevel > 0 && guz.golemUpgradeDef.OccupiedPart == gu.golemUpgradeDef.OccupiedPart && guz.golemUpgradeDef != gu.golemUpgradeDef)
+                                if (guz.currentLevel > 0 && guz.golemUpgradeDef.OccupiedPart == gu.golemUpgradeDef.OccupiedPart && guz.golemUpgradeDef != gu.golemUpgradeDef)
                                 {
                                     Messages.Message("TM_GolemPartReplaced".Translate(gu.golemUpgradeDef.label, guz.golemUpgradeDef.label, gu.golemUpgradeDef.OccupiedPart.label), MessageTypeDefOf.NeutralEvent);
                                     guz.currentLevel = 0;
@@ -311,7 +311,7 @@ namespace TorannMagic.Golems
                             }
                         }
                     }
-                    
+
                     UpgradePart(gu);
                 }
             }
@@ -363,7 +363,7 @@ namespace TorannMagic.Golems
                         }
                     }
                 }
-                else if(gu.golemUpgradeDef.recipeList != null && gu.golemUpgradeDef.recipeList.Count > 0)
+                else if (gu.golemUpgradeDef.recipeList != null && gu.golemUpgradeDef.recipeList.Count > 0)
                 {
                     if (gu.golemUpgradeDef.workstationEffects != null && gu.golemUpgradeDef.workstationEffects.Count > 0)
                     {
@@ -400,24 +400,28 @@ namespace TorannMagic.Golems
 
         public Building_TMGolemBase()
         {
-            innerContainer = new ThingOwner<Thing>(this);            
+            innerContainer = new ThingOwner<Thing>(this);
         }
 
         public virtual void Initialize()
         {
-            if(GolemPawn == null)
+            if (GolemPawn == null)
             {
                 innerContainer.Clear();
-                TMPawnSummoned initGolem = SpawnGolem();               
-                innerContainer.TryAddOrTransfer(initGolem.SplitOff(1), false);                
+                TMPawnSummoned initGolem = SpawnGolem();
+                innerContainer.TryAddOrTransfer(initGolem.SplitOff(1), false);
             }
         }
 
         private int threatOnMapCheckDelay = 0;
         public int pauseFor = 0;
-		public override void Tick()
-		{
-			base.Tick();
+        protected override void Tick()
+        {
+            base.Tick();
+        }
+        protected override void TickInterval(int delta)
+        {
+            base.TickInterval(delta);
             if(!initialized && this.Map != null)
             {
                 Initialize();

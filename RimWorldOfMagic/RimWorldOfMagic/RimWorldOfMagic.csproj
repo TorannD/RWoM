@@ -18,7 +18,7 @@
     <DebugSymbols>false</DebugSymbols>
     <DebugType>none</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\v1.5\Assemblies\</OutputPath>
+    <OutputPath>..\..\v1.6\Assemblies\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -37,11 +37,11 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="AbilityUser">
-      <HintPath>..\..\..\..\..\..\workshop\content\294100\932008009\1.5\Assemblies\AbilityUser.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\workshop\content\294100\3312959701\1.6\Assemblies\AbilityUser.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="AbilityUserAI">
-      <HintPath>..\..\..\..\..\..\workshop\content\294100\932008009\1.5\Assemblies\AbilityUserAI.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\workshop\content\294100\3312959701\1.6\Assemblies\AbilityUserAI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="AlienRace">
@@ -53,7 +53,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="CompDeflector">
-      <HintPath>..\..\..\..\..\..\workshop\content\294100\932008009\1.5\Assemblies\CompDeflector.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\workshop\content\294100\3312959701\1.6\Assemblies\CompDeflector.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="GiddyUpCore">
@@ -137,6 +137,7 @@
     <Compile Include="Building_TMTotem_Lightning.cs" />
     <Compile Include="Building_TM_DMP.cs" />
     <Compile Include="Area_TMSprite.cs" />
+    <Compile Include="FloatMenuOptionProvider_ArcaneForge.cs" />
     <Compile Include="ReadingOutcomeDoerGainMightExp.cs" />
     <Compile Include="ReadingOutcomeDoerGainMagicExp.cs" />
     <Compile Include="BookOutcomeProperties_GainMagicExp.cs" />

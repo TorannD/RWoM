@@ -104,7 +104,7 @@ namespace TorannMagic
                     TM_MoteMaker.MakePowerBeamMoteColor(smitePos[j], base.Map, this.radius * 3f, 2f, .5f, .1f, .5f, colorInt.ToColor);
                     this.caster = this.launcher as Pawn;
                     CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
-                    GenExplosion.DoExplosion(smitePos[j], map, 3f, TMDamageDefOf.DamageDefOf.TM_Overwhelm, this.launcher as Pawn, Mathf.RoundToInt((12 + TMDamageDefOf.DamageDefOf.TM_Overwhelm.defaultDamage + 3*pwrVal) * this.arcaneDmg), 0, TorannMagicDefOf.TM_Lightning, def, this.equipmentDef, null, null, 0f, 1, null, false, null, 0f, 1, 0f, false);
+                    GenExplosion.DoExplosion(smitePos[j], map, 3f, TMDamageDefOf.DamageDefOf.TM_Overwhelm, this.launcher as Pawn, Mathf.RoundToInt((12 + TMDamageDefOf.DamageDefOf.TM_Overwhelm.defaultDamage + 3*pwrVal) * this.arcaneDmg), 0, TorannMagicDefOf.TM_Lightning, def, this.equipmentDef, null, null, 0f, 1, null, null, 0, false, null, 0f, 1, 0f, false);
                 }
             }
         }
@@ -219,7 +219,7 @@ namespace TorannMagic
             Graphics.DrawMesh(MeshPool.plane10, matrix3, Projectile_HolyWrath.BombardMat, 0, null, 0, Projectile_HolyWrath.MatPropertyBlock);
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
             base.Tick();
             this.age++;

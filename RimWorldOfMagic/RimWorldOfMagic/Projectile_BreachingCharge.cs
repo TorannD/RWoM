@@ -44,7 +44,7 @@ namespace TorannMagic
         {
             if (explosionCount > 0)
             {
-                GenExplosion.DoExplosion(base.Position, base.Map, this.def.projectile.explosionRadius-explosionCount, this.def.projectile.damageDef, this.launcher as Pawn, Mathf.RoundToInt((this.def.projectile.GetDamageAmount(1f) * (1f + (.15f * verVal))) * mightPwr), this.def.projectile.damageDef.defaultArmorPenetration, this.def.projectile.damageDef.soundExplosion, def, this.equipmentDef, null, null, 0f, 1, null, false, null, 0f, 1, 0f, true);
+                GenExplosion.DoExplosion(base.Position, base.Map, this.def.projectile.explosionRadius-explosionCount, this.def.projectile.damageDef, this.launcher as Pawn, Mathf.RoundToInt((this.def.projectile.GetDamageAmount(null) * (1f + (.15f * verVal))) * mightPwr), this.def.projectile.damageDef.defaultArmorPenetration, this.def.projectile.damageDef.soundExplosion, def, this.equipmentDef, null, null, 0f, 1, null, null, 0, false, null, 0f, 1, 0f, true);
             }
             else
             {
@@ -56,7 +56,7 @@ namespace TorannMagic
             explosionCount--;
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
             base.Tick();
             ticksToDetonation--;

@@ -258,7 +258,7 @@ namespace TorannMagic
             Graphics.DrawMesh(MeshPool.plane10, matrix2, Projectile_BloodMoon.BeamEndMat, 0, null, 0, Projectile_BloodMoon.MatPropertyBlock);
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
             base.Tick();
             this.age++;            

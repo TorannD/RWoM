@@ -28,7 +28,8 @@ namespace TorannMagic.Golems
                 }
                 Action action = delegate
                 {
-                    FloatMenuMakerMap.PawnGotoAction(clickCell, pawn, RCellFinder.BestOrderedGotoDestNear(curLoc, pawn));
+                    FloatMenuOptionProvider_DraftedMove.PawnGotoAction(clickCell, pawn, RCellFinder.BestOrderedGotoDestNear(curLoc, pawn));
+                    //FloatMenuMakerMap.PawnGotoAction(clickCell, pawn, RCellFinder.BestOrderedGotoDestNear(curLoc, pawn));
                 };
                 return new FloatMenuOption("GoHere".Translate(), action, MenuOptionPriority.GoHere)
                 {

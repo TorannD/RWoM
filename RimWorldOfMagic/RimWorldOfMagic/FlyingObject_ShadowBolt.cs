@@ -195,7 +195,10 @@ namespace TorannMagic
             this.Initialize();
         }
 
-        public override void Tick()
+        protected override void Tick()
+        {
+        }
+        protected override void TickInterval(int delta)
         {
             //base.Tick();
             age++;

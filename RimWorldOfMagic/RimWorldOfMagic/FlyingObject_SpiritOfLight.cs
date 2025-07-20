@@ -445,7 +445,7 @@ namespace TorannMagic
                     HashSet<CompGlower> litGlowers = Traverse.Create(root: gg).Field(name: "litGlowers").GetValue<HashSet<CompGlower>>();
                     litGlowers.Add(glower);
                     Traverse.Create(root: gg).Field(name: "litGlowers").SetValue(litGlowers);
-                    gg.DirtyCache(glowCenter);
+                    gg.DirtyCell(glowCenter);
                     if (Current.ProgramState != ProgramState.Playing)
                     {
                         List<IntVec3> locs = Traverse.Create(root: gg).Field(name: "initialGlowerLocs").GetValue<List<IntVec3>>();
@@ -542,7 +542,10 @@ namespace TorannMagic
             this.ticksToImpact = this.StartingTicksToImpact;            
         }
 
-        public override void Tick()
+        protected override void Tick()
+        {
+        }
+        protected override void TickInterval(int delta)
         {
             age++;
             Vector3 exactPosition = this.ExactPosition;

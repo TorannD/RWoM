@@ -43,7 +43,7 @@ namespace TorannMagic
                 CellRect cellRect = CellRect.CenteredOn(base.Position, 1);
                 cellRect.ClipInsideMap(map);
                 int dmg = GetWeaponDmg(pawn);
-                armorPen = pawn.equipment.Primary.def.Verbs.FirstOrDefault().defaultProjectile.projectile.GetArmorPenetration(1f);
+                armorPen = pawn.equipment.Primary.def.Verbs.FirstOrDefault().defaultProjectile.projectile.GetArmorPenetration();
 
                 if (victim != null && Rand.Chance(this.launcher.GetStatValue(StatDefOf.ShootingAccuracyPawn, true)))
                 {

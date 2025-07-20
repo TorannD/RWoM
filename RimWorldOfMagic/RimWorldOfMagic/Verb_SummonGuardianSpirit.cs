@@ -57,7 +57,7 @@ namespace TorannMagic
             verVal = TM_Calc.GetSkillVersatilityLevel(caster, this.Ability.Def as TMAbilityDef);
             effVal = TM_Calc.GetSkillEfficiencyLevel(caster, this.Ability.Def as TMAbilityDef);
 
-            if (cell != null && (cell.IsValid && cell.Walkable(map)))
+            if (cell.IsValid && (cell.IsValid && cell.Walkable(map)))
             {
                 AbilityUser.SpawnThings tempPod = new SpawnThings();
                 IntVec3 shiftPos = cell;

@@ -19,7 +19,7 @@ namespace TorannMagic
         public int verVal = 0;
         Pawn target = null;
 
-        public override void Tick()
+        protected override void Tick()
         {
             if(!initialized)
             {

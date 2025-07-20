@@ -56,7 +56,7 @@ namespace TorannMagic
             }
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
             if (this.triggered)
             {
@@ -190,7 +190,7 @@ namespace TorannMagic
             fog = TorannMagicDefOf.Fog_Poison;
             fog.gas.expireSeconds.min = this.duration / 60;
             fog.gas.expireSeconds.max = this.duration / 60;
-            GenExplosion.DoExplosion(base.Position, base.Map, this.radius, TMDamageDefOf.DamageDefOf.TM_Poison, this, 0, 0, SoundDef.Named("TinyBell"), def, null, null, fog, 1f, 1, null, false, null, 0f, 0, 0.0f, false);
+            GenExplosion.DoExplosion(base.Position, base.Map, this.radius, TMDamageDefOf.DamageDefOf.TM_Poison, this, 0, 0, SoundDef.Named("TinyBell"), def, null, null, fog, 1f, 1, null, null, 0, false, null, 0f, 0, 0.0f, false);
             this.triggered = true;
         }
 

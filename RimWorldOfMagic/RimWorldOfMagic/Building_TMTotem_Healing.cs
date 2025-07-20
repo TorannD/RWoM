@@ -20,7 +20,7 @@ namespace TorannMagic
         public float arcanePwr = 1f;
         Pawn target = null;
 
-        public override void Tick()
+        protected override void Tick()
         {
             if(!initialized)
             {

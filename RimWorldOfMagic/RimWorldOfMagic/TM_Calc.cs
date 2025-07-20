@@ -795,7 +795,7 @@ namespace TorannMagic
             }
             List<Pawn> tmpList = new List<Pawn>();
             tmpList.Clear();
-            foreach (Pawn p in PawnsFinder.AllMapsCaravansAndTravelingTransportPods_Alive_FreeColonists)
+            foreach (Pawn p in PawnsFinder.AllMapsCaravansAndTravellingTransporters_AliveSpawned_FreeColonists)
             {
                 if (IsMagicUser(p))
                 {

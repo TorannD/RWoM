@@ -14,8 +14,8 @@ namespace TorannMagic
         private static readonly Color lightningColor = new Color(160f, 160f, 160f);
         private static readonly Material OrbMat = MaterialPool.MatFrom("Spells/deathbolt", false);
 
-        protected new Vector3 origin;
-        protected new Vector3 destination;
+        //protected new Vector3 origin;
+        //protected new Vector3 destination;
 
         private int age = -1;
         private float arcaneDmg = 1;
@@ -47,11 +47,11 @@ namespace TorannMagic
 
         private bool initialized = true;        
 
-        protected new int StartingTicksToImpact
+        protected new float StartingTicksToImpact
         {
             get
             {
-                int num = Mathf.RoundToInt((this.origin - this.destination).magnitude / (this.speed / 100f));
+                float num = (this.origin - this.destination).magnitude / (this.speed / 100f);
                 bool flag = num < 1;
                 if (flag)
                 {
@@ -183,11 +183,16 @@ namespace TorannMagic
                 this.assignedTarget = targ.Thing;
             }
             this.destination = targ.Cell.ToVector3Shifted();
-            this.ticksToImpact = this.StartingTicksToImpact;
+            this.ticksToImpact = (int)this.StartingTicksToImpact;
             this.Initialize();
         }
 
-        public override void Tick()
+        protected override void Tick()
+        {
+
+        }
+
+        protected override void TickInterval(int delta)
         {
             //base.Tick();
             age++;
@@ -267,7 +272,7 @@ namespace TorannMagic
             }
         }
 
-        private void ImpactSomething()
+        protected override void ImpactSomething()
         {
             bool flag = this.assignedTarget != null;
             if (flag)
@@ -289,9 +294,9 @@ namespace TorannMagic
             }
         }
 
-        protected new void Impact(Thing hitThing)
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             this.Destroy(DestroyMode.Vanish);
-        }        
+        }    
     }
 }

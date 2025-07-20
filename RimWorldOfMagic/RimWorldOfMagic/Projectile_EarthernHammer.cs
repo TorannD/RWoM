@@ -212,7 +212,7 @@ namespace TorannMagic
             cellRect.ClipInsideMap(this.caster.Map);
             IntVec3 destination = cellRect.RandomCell;
 
-            if (launchableThing != null && destination != null)
+            if (launchableThing != null && destination.IsValid)
             {                
                 float launchAngle = (Quaternion.AngleAxis(90, Vector3.up) * TM_Calc.GetVector(origin, destination)).ToAngleFlat();
                 for (int m = 0; m < 4; m++)
@@ -225,7 +225,7 @@ namespace TorannMagic
             }
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
             base.Tick();
             this.age++;

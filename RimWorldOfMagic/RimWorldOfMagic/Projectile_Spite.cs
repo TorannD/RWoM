@@ -56,7 +56,7 @@ namespace TorannMagic
             }
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
 
             TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_SpiritFlame, this.DrawPos, this.Map, Rand.Range(.3f, .4f), .05f, 0.05f, .1f, Rand.Range(-300, 300), Rand.Range(.2f, .6f), Rand.Range(0, 360), Rand.Range(0, 360));

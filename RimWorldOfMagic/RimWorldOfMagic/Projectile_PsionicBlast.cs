@@ -48,7 +48,7 @@ namespace TorannMagic
 
             TM_MoteMaker.MakePowerBeamMotePsionic(base.Position, map, this.def.projectile.explosionRadius * 6f, 2f, .7f, .1f, .6f);
             float angle = (Quaternion.AngleAxis(90, Vector3.up) * GetVector(pawn.Position, base.Position)).ToAngleFlat();
-            GenExplosion.DoExplosion(base.Position, map, this.def.projectile.explosionRadius, TMDamageDefOf.DamageDefOf.TM_PsionicInjury, this.launcher, Mathf.RoundToInt(this.def.projectile.GetDamageAmount(1, null) * pawn.GetStatValue(StatDefOf.PsychicSensitivity, false) * (1 + (0.15f * pwrVal)) * this.arcaneDmg), 0, this.def.projectile.soundExplode, def, this.equipmentDef, this.intendedTarget.Thing, null, 0f, 1, null, false, null, 0f, 1, 0.0f, false);
+            GenExplosion.DoExplosion(base.Position, map, this.def.projectile.explosionRadius, TMDamageDefOf.DamageDefOf.TM_PsionicInjury, this.launcher, Mathf.RoundToInt(this.def.projectile.GetDamageAmount(1, null) * pawn.GetStatValue(StatDefOf.PsychicSensitivity, false) * (1 + (0.15f * pwrVal)) * this.arcaneDmg), 0, this.def.projectile.soundExplode, def, this.equipmentDef, this.intendedTarget.Thing, null, 0f, 1, null, null, 0, false, null, 0f, 1, 0.0f, false);
         }
 
         public Vector3 GetVector(IntVec3 center, IntVec3 objectPos)

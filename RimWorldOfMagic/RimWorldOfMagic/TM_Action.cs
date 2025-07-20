@@ -868,9 +868,9 @@ namespace TorannMagic
                 {
                     val = spawnables.factionDef;
                 }
-                if (spawnables.kindDef != null && spawnables.kindDef.defaultFactionType != null)
+                if (spawnables.kindDef != null && spawnables.kindDef.defaultFactionDef != null)
                 {
-                    val = spawnables.kindDef.defaultFactionType;
+                    val = spawnables.kindDef.defaultFactionDef;
                 }
                 if (val != null)
                 {
@@ -1040,7 +1040,7 @@ namespace TorannMagic
             }
             if (ModsConfig.IdeologyActive)
             {
-                newSpirit.story.favoriteColor = DefDatabase<ColorDef>.AllDefsListForReading.RandomElement().color;
+                newSpirit.story.favoriteColor = DefDatabase<ColorDef>.AllDefsListForReading.RandomElement();
             }
             //PawnBioAndNameGenerator.GiveAppropriateBioAndNameTo(newSpirit, "Spirit", fac.def, false);
             newSpirit.Name = PawnBioAndNameGenerator.GeneratePawnName(newSpirit, NameStyle.Full);
@@ -1811,7 +1811,7 @@ namespace TorannMagic
                 switch (rndBad)
                 {
                     case 0:
-                        GenExplosion.DoExplosion(p.Position, p.Map, 5f, DamageDefOf.Bomb, p, Rand.Range(8, 12), 1f, null, null, null, null, null, 0, 1, null, false, null, 0, 1, 0, true);
+                        GenExplosion.DoExplosion(p.Position, p.Map, 5f, DamageDefOf.Bomb, p, Rand.Range(8, 12), 1f, null, null, null, null, null, 0, 1, null, null, 0, false, null, 0, 1, 0, true);
                         surgeText = "Explosion";
                         break;
                     case 1:
@@ -1910,7 +1910,7 @@ namespace TorannMagic
                         ModOptions.Constants.SetPawnInFlight(false);
                         break;
                     case 1:
-                        if (target != null && target != p && target.Cell != null && target.Cell.IsValid && target.Cell != default(IntVec3))
+                        if (target != null && target != p && target.Cell.IsValid && target.Cell.IsValid && target.Cell != default(IntVec3))
                         {
                             float angle = (Quaternion.AngleAxis(90, Vector3.up) * TM_Calc.GetVector(p.Position, target.Cell)).ToAngleFlat();
                             for (int i = 0; i < 6; i++)
@@ -1979,7 +1979,7 @@ namespace TorannMagic
 
         public static void DoTimeDelayLaunch(IntVec3 targetCell, Pawn caster, Pawn pawn, int force, int duration)
         {
-            bool flag = targetCell != null && targetCell != default(IntVec3);
+            bool flag = targetCell.IsValid && targetCell != default(IntVec3);
             if (flag)
             {
                 if (pawn != null && pawn.Position.IsValid && pawn.Spawned && pawn.Map != null && !pawn.Downed && !pawn.Dead)
@@ -2382,7 +2382,7 @@ namespace TorannMagic
                     Pawn p = new Pawn();
                     p = pawn;
                     Map map = p.Map;
-                    GenExplosion.DoExplosion(p.Position, p.Map, 0f, DamageDefOf.Burn, p as Thing, 0, 0, SoundDefOf.Thunder_OnMap, null, null, null, null, 0f, 0, null, false, null, 0f, 0, 0.0f, false);
+                    GenExplosion.DoExplosion(p.Position, p.Map, 0f, DamageDefOf.Burn, p as Thing, 0, 0, SoundDefOf.Thunder_OnMap, null, null, null, null, 0f, 0, null, null, 0, false, null, 0f, 0, 0.0f, false);
                     Effecter deathEffect = TorannMagicDefOf.TM_DeathExplosion.Spawn();
                     deathEffect.Trigger(new TargetInfo(p.Position, p.Map, false), new TargetInfo(p.Position, p.Map, false));
                     deathEffect.Cleanup();

@@ -33,7 +33,7 @@ namespace TorannMagic
             Scribe_Values.Look<bool>(ref this.destroyed, "destroyed", false, false);
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
             base.Tick();
             this.age++;

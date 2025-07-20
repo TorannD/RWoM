@@ -102,7 +102,7 @@ namespace TorannMagic
                 {
                     if(isExplosion)
                     {
-                        GenExplosion.DoExplosion(curCell, this.Pawn.Map, .4f, damageType, this.Pawn, damageAmount, Rand.Range(0, damageAmount), TorannMagicDefOf.TM_SoftExplosion, null, null, null, null, 0f, 1, null, false, null, 0f, 0, 0.0f, false);
+                        GenExplosion.DoExplosion(curCell, this.Pawn.Map, .4f, damageType, this.Pawn, damageAmount, Rand.Range(0, damageAmount), TorannMagicDefOf.TM_SoftExplosion, null, null, null, null, 0f, 1, null, null, 0, false, null, 0f, 0, 0.0f, false);
                     }
                     else
                     {
@@ -148,7 +148,7 @@ namespace TorannMagic
                     if (knockbackPawn != null && knockbackPawn != this.Pawn)
                     {
                         IntVec3 targetCell = knockbackPawn.Position + (force * force * launchVector).ToIntVec3();
-                        bool flag = targetCell != null && targetCell != default(IntVec3);
+                        bool flag = targetCell != default(IntVec3);
                         if (flag)
                         {
                             if (knockbackPawn.Spawned && knockbackPawn.Map != null && !knockbackPawn.Dead)
@@ -452,7 +452,7 @@ namespace TorannMagic
                         {
                             CellRect cellRect = CellRect.CenteredOn(this.Pawn.Position, 3);
                             cellRect.ClipInsideMap(this.Pawn.Map);
-                            GenExplosion.DoExplosion(cellRect.RandomCell, this.Pawn.Map, 2f, DamageDefOf.Burn, this.Pawn, Rand.Range(6, 12), -1, DamageDefOf.Bomb.soundExplosion, null, null, null, null, 0f, 1, null, false, null, 0f, 0, 0.2f, true);
+                            GenExplosion.DoExplosion(cellRect.RandomCell, this.Pawn.Map, 2f, DamageDefOf.Burn, this.Pawn, Rand.Range(6, 12), -1, DamageDefOf.Bomb.soundExplosion, null, null, null, null, 0f, 1, null, null, 0, false, null, 0f, 0, 0.2f, true);
                             DamageEntities(this.Pawn, 10f, TMDamageDefOf.DamageDefOf.TM_Shadow, this.Pawn);
                             deathOnce = true;
                         }

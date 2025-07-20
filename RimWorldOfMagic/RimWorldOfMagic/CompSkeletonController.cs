@@ -166,7 +166,7 @@ namespace TorannMagic
                 cellRect.ClipInsideMap(this.Pawn.Map);
                 IntVec3 destination = cellRect.RandomCell;
 
-                if (launchableThing != null && destination != null)
+                if (launchableThing != null)
                 {
                     float launchAngle = (Quaternion.AngleAxis(90, Vector3.up) * TM_Calc.GetVector(this.Pawn.Position, destination)).ToAngleFlat();
                     for (int m = 0; m < 4; m++)
@@ -177,7 +177,7 @@ namespace TorannMagic
                     flyingObject.force = 1.4f;
                     flyingObject.Launch(this.Pawn, destination, this.launchableThing.SplitOff(1), Rand.Range(45, 65));
                 }
-                else if (launchableThing == null && destination != null)
+                else if (launchableThing == null)
                 {
                     float launchAngle = (Quaternion.AngleAxis(90, Vector3.up) * TM_Calc.GetVector(this.Pawn.Position, destination)).ToAngleFlat();
                     for (int m = 0; m < 4; m++)
@@ -220,7 +220,7 @@ namespace TorannMagic
                     {
                         if (isExplosion)
                         {
-                            GenExplosion.DoExplosion(curCell, this.Pawn.Map, .4f, damageType, this.Pawn, damageAmount, Rand.Range(0, damageAmount), TorannMagicDefOf.TM_SoftExplosion, null, null, null, null, 0f, 1, null, false, null, 0f, 0, 0.0f, false);
+                            GenExplosion.DoExplosion(curCell, this.Pawn.Map, .4f, damageType, this.Pawn, damageAmount, Rand.Range(0, damageAmount), TorannMagicDefOf.TM_SoftExplosion, null, null, null, null, 0f, 1, null, null, 0, false, null, 0f, 0, 0.0f, false);
                         }
                         else
                         {
@@ -271,7 +271,7 @@ namespace TorannMagic
                     if (knockbackPawn != null && knockbackPawn != this.Pawn)
                     {
                         IntVec3 targetCell = knockbackPawn.Position + (force * force * launchVector).ToIntVec3();
-                        bool flag = targetCell != null && targetCell != default(IntVec3);
+                        bool flag = targetCell != default(IntVec3);
                         if (flag)
                         {
                             if (knockbackPawn.Spawned && knockbackPawn.Map != null && !knockbackPawn.Dead)

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationInsert">
+		<xpath>Defs/ThinkTreeDef/thinkRoot/subNodes/li[@Class = "ThinkNode_QueuedJob"]</xpath>
+		<order>Append</order>
+		<value>
+			<li Class="TorannMagic.ThinkNode_IsPolymorphed">
+				<subNodes>
+					<li Class="JobGiver_MoveToStandable"/>
+					<li Class="JobGiver_Orders"/>
+				</subNodes>
+			</li>
+		</value>
+	</Operation>
+
+</Patch>

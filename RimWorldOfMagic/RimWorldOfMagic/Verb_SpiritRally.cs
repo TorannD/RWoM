@@ -34,7 +34,7 @@ namespace TorannMagic
             {
                 foreach (IntVec3 c in tmpList)
                 {
-                    if (c != null && (c.IsValid && c.InBoundsWithNullCheck(map) && c.Walkable(map)))
+                    if ((c.IsValid && c.InBoundsWithNullCheck(map) && c.Walkable(map)))
                     {
                         foreach(Thing t in c.GetThingList(map))
                         {

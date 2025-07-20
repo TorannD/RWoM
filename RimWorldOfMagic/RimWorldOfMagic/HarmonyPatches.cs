@@ -56,8 +56,17 @@ namespace TorannMagic
                  null, null);
             //harmonyInstance.Patch(AccessTools.Method(typeof(PawnUtility), "IsTravelingInTransportPodWorldObject"), null,
             //     new HarmonyMethod(patchType, nameof(IsTravelingInTeleportPod_Postfix)));
-            harmonyInstance.Patch(AccessTools.Method(typeof(FloatMenuMakerMap), "AddHumanlikeOrders"), null,
-                 new HarmonyMethod(patchType, nameof(AddHumanLikeOrders_RestrictEquipmentPatch)), null);
+
+            //harmonyInstance.Patch(AccessTools.Method(typeof(FloatMenuMakerMap), "AddHumanlikeOrders"), null,
+            //     new HarmonyMethod(patchType, nameof(AddHumanLikeOrders_RestrictEquipmentPatch)), null);
+            harmonyInstance.Patch(AccessTools.Method(typeof(FloatMenuOptionProvider), "SelectedPawnValid"), null,
+                 new HarmonyMethod(patchType, nameof(SelectedPawnValid_RestrictSpiritPatch)), null);
+            harmonyInstance.Patch(AccessTools.Method(typeof(FloatMenuOptionProvider_Equip), "GetSingleOptionFor", new Type[]
+                {
+                    typeof(Thing),
+                    typeof(FloatMenuContext)
+                }, null), new HarmonyMethod(patchType, nameof(FloatMenuOptionProvider_Equip_RestrictEquipmentPatch)), null);
+
             harmonyInstance.Patch(AccessTools.Method(typeof(CompAbilityItem), "PostDrawExtraSelectionOverlays"), new HarmonyMethod(patchType, nameof(CompAbilityItem_Overlay_Prefix)),
                  null, null);
             harmonyInstance.Patch(AccessTools.Method(typeof(Verb), "CanHitCellFromCellIgnoringRange"), new HarmonyMethod(patchType, nameof(RimmuNation_CHCFCIR_Patch)),
@@ -80,6 +89,7 @@ namespace TorannMagic
             harmonyInstance.Patch(AccessTools.Method(typeof(RecipeDef), "get_AvailableNow", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_GolemsRecipeAvailable", null), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(Pawn), "get_ShouldAvoidFences", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_GolemShouldAvoidFences"), null, null);
             harmonyInstance.Patch(AccessTools.Method(typeof(PawnRenderer), "get_CurRotDrawMode", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_RotBodyForUndead"), null, null);
+            harmonyInstance.Patch(AccessTools.Method(typeof(Pawn), "get_IsColonySubhumanPlayerControlled", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_GolemControl"), null, null);
             //harmonyInstance.Patch(AccessTools.Method(typeof(Pawn_HealthTracker), "get_CanBleed", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_Undead_CanBleed"), null, null);
             //harmonyInstance.Patch(AccessTools.Method(typeof(Precept_Relic), "get_RelicInPlayerPossession", null, null),null, new HarmonyMethod(typeof(TorannMagicMod), "Get_DelayRelicLost"), null);
             //harmonyInstance.Patch(AccessTools.Method(typeof(Pawn), "get_InAggroMentalState", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_UndeadAggroMentalState"), null, null);
@@ -418,6 +428,18 @@ namespace TorannMagic
         //        if(__instance.parent)
         //    }
         //}
+
+        /// <summary>
+        /// Fix provided by Glothia
+        /// </summary>
+        [HarmonyPatch(typeof(Targeter), "StopTargeting")]
+        internal static class Targeter_StopTargeting_Patch
+        {
+            private static void Postfix(Targeter __instance)
+            {
+                AccessTools.Field(typeof(Targeter), "caster").SetValue(__instance, null);
+            }
+        }
 
         [HarmonyPatch(typeof(BookUtility), "CanReadBook", null)]
         public static class OnlyClasses_CanReadBook
@@ -823,10 +845,10 @@ namespace TorannMagic
             }
         }
 
-        [HarmonyPatch(typeof(Pawn_IdeoTracker), "IdeoTrackerTick", null)]
+        [HarmonyPatch(typeof(Pawn_IdeoTracker), "IdeoTrackerTickInterval", null)]
         public class NoIdeoForSpirits_Patch
         {
-            private static bool Prefix(Pawn_IdeoTracker __instance, Pawn ___pawn)
+            private static bool Prefix(Pawn_IdeoTracker __instance, int delta, Pawn ___pawn)
             {
                 if (___pawn?.needs?.mood == null)
                 {
@@ -1114,7 +1136,7 @@ namespace TorannMagic
                         return false;
                     }
                 }
-                if (song.minRoyalTitle != null && !PawnsFinder.AllMapsCaravansAndTravelingTransportPods_Alive_Colonists.Any(delegate (Pawn p)
+                if (song.minRoyalTitle != null && !PawnsFinder.AllMapsCaravansAndTravellingTransporters_AliveSpawned_FreeColonists.Any(delegate (Pawn p)
                 {
                     if (p.royalty != null && p.royalty.AllTitlesForReading.Any() && p.royalty.MostSeniorTitle.def.seniority >= song.minRoyalTitle.seniority)
                     {
@@ -1197,12 +1219,79 @@ namespace TorannMagic
         //    }
         //}
 
-        [HarmonyPatch(typeof(FloatMenuMakerMap), "CanTakeOrder", null)]
+        //[HarmonyPatch(typeof(FloatMenuMakerMap), "CanTakeOrder", null)]
+        //public class GolemOrders_Patch
+        //{
+        //    public static bool Prefix(Pawn pawn, ref bool __result)
+        //    {
+        //        if ((pawn is TMPawnGolem || pawn is TMHollowGolem) && pawn.Faction == Faction.OfPlayerSilentFail)
+        //        {
+        //            __result = true;
+        //            return false;
+        //        }
+        //        return true;
+        //    }
+        //}
+
+        //[HarmonyPatch(typeof(FloatMenuMakerMap), "AddUndraftedOrders", null)]
+        //public class GolemUndraftedOrder_Patch
+        //{
+        //    public static bool Prefix(Vector3 clickPos, Pawn pawn, List<FloatMenuOption> opts)
+        //    {
+        //        if (pawn is TMPawnGolem || pawn is TMHollowGolem || TM_Calc.IsPolymorphed(pawn))
+        //        {
+        //            return false;
+        //        }
+        //        return true;
+        //    }
+        //}
+
+        public static bool Get_GolemControl(Pawn __instance, ref bool __result)
+        {
+            if (__instance.Spawned && TM_Calc.IsGolem(__instance))
+            {
+                __result = true;
+                return false;
+            }
+            return true;
+        }
+
+        //[HarmonyPatch(typeof(FloatMenuMakerMap), "GetOptions", null)]
+        //public class Check_FloatMenu_GetOptions
+        //{
+        //    public static bool Prefix(List<Pawn> selectedPawns, Vector3 clickPos, out FloatMenuContext context)
+        //    {
+        //        Log.Message("golem check");
+        //        context = null;
+        //        return true;
+        //    }
+        //}
+
+        //[HarmonyPatch(typeof(FloatMenuMakerMap), "ShouldGenerateFloatMenuForPawn", null)]
+        //public class Check_FloatMenu_GolemAllowed
+        //{
+        //    public static bool Prefix(Pawn pawn, ref AcceptanceReport __result)
+        //    {
+        //        Log.Message("golem acceptance report ");
+        //        return true;
+        //    }
+        //}
+
+        [HarmonyPatch(typeof(FloatMenuOptionProvider), "SelectedPawnValid", null)]
         public class GolemOrders_Patch
         {
-            public static bool Prefix(Pawn pawn, ref bool __result)
+            public static bool Prefix(Pawn pawn, FloatMenuContext context, ref bool __result)
             {
-                if ((pawn is TMPawnGolem || pawn is TMHollowGolem) && pawn.Faction == Faction.OfPlayerSilentFail)
+                Log.Message("1");
+                if(!pawn.Drafted)
+                {
+                    if ((pawn.GetComp<CompPolymorph>() != null && pawn.GetComp<CompPolymorph>().Original != null) || pawn.def == TorannMagicDefOf.TM_SpiritTD)
+                    {
+                        __result = false;
+                        return false;
+                    }
+                }
+                if ((pawn is TMPawnGolem || pawn is TMHollowGolem) && pawn.Faction == Faction.OfPlayerSilentFail && pawn.Drafted)
                 {
                     __result = true;
                     return false;
@@ -1211,240 +1300,595 @@ namespace TorannMagic
             }
         }
 
-        [HarmonyPatch(typeof(FloatMenuMakerMap), "AddUndraftedOrders", null)]
-        public class GolemUndraftedOrder_Patch
+        /// <summary>
+        /// BROKEN - included in GolemOrders_Patch
+        /// </summary>
+        //[HarmonyPatch(typeof(FloatMenuMakerMap), "AddJobGiverWorkOrders", null)]
+        //public class SkipPolymorph_UndraftedOrders_Patch
+        //{
+        //    public static bool Prefix(Vector3 clickPos, Pawn pawn, List<FloatMenuOption> opts, bool drafted)
+        //    {
+        //        if ((pawn.GetComp<CompPolymorph>() != null && pawn.GetComp<CompPolymorph>().Original != null) || pawn.def == TorannMagicDefOf.TM_SpiritTD)
+        //        {
+        //            return false;
+        //        }
+        //        return true;
+        //    }
+        //}
+
+        /// <summary>
+        /// BROKEN - attempt fix
+        /// </summary>
+        //[HarmonyPatch(typeof(FloatMenuMakerMap), "AddDraftedOrders", null)]
+        [HarmonyPatch(typeof(FloatMenuOptionProvider_DraftedAttack), "GetAttackAction", null)]
+        public class GolemMenu_Patch
         {
-            public static bool Prefix(Vector3 clickPos, Pawn pawn, List<FloatMenuOption> opts)
+            public static bool Prefix(Pawn pawn, Thing target, out string label, out string failStr, ref Action __result)
             {
-                if(pawn is TMPawnGolem || pawn is TMHollowGolem || TM_Calc.IsPolymorphed(pawn))
+                label = "";
+                failStr = "";
+                if (pawn is TMPawnGolem || pawn is TMHollowGolem || (TM_Calc.IsPossessedBySpirit(pawn) && !pawn.RaceProps.Humanlike) || TM_Calc.IsPolymorphed(pawn))
                 {
-                    return false;
+                    if (pawn is TMPawnGolem || pawn is TMHollowGolem)
+                    {
+                        if (pawn.VerbTracker.AllVerbs != null && pawn.VerbTracker.AllVerbs.Count > 0)
+                        {
+                            Action rangedAct = TM_GolemUtility.GetGolemRangedAttackAction(pawn as TMPawnGolem, target, out failStr);
+                            label = "FireAt".Translate(target.Label, target);
+
+                            __result = rangedAct;
+                        }
+                        string failStr2;
+                        Action meleeAct = TM_GolemUtility.GetGolemMeleeAttackAction(pawn, target, out failStr2);
+                        Pawn pawn2 = target as Pawn;
+                        label = (pawn2 == null || !pawn2.Downed) ? ((string)"MeleeAttack".Translate(target.Label, target)) : ((string)"MeleeAttackToDeath".Translate(target.Label,target));
+                        __result = meleeAct;                        
+                    }
+                    else if ((TM_Calc.IsPossessedBySpirit(pawn) || TM_Calc.IsPolymorphed(pawn)) && pawn.RaceProps.Animal)
+                    {
+                        Action meleeAct = FloatMenuUtility.GetMeleeAttackAction(pawn, target, out failStr);
+                        Pawn pawn2 = target as Pawn;
+                        label = (pawn2 == null || !pawn2.Downed) ? ((string)"MeleeAttack".Translate(target.Label, target)) : ((string)"MeleeAttackToDeath".Translate(target.Label, target));
+                        __result = meleeAct;
+                    }
                 }
                 return true;
             }
         }
 
-        [HarmonyPatch(typeof(FloatMenuMakerMap), "AddDraftedOrders", null)]
-        public class GolemMenu_Patch
+        //[HarmonyPatch(typeof(FloatMenuMakerMap))]
+        //[HarmonyPatch("CanTakeOrder")]
+        //public static class FloatMenuMakerMap_CanTakeOrder_Patch
+        //{
+        //    [HarmonyPostfix]
+        //    public static void MakePawnControllable(Pawn pawn, ref bool __result)
+
+        //    {
+        //        bool flagIsCreatureMine = pawn.Faction != null && pawn.Faction.IsPlayer;
+        //        bool flagIsCreatureDraftable = (pawn.TryGetComp<CompPolymorph>() != null);
+
+        //        if (flagIsCreatureDraftable && flagIsCreatureMine)
+        //        {
+        //            //Log.Message("You should be controllable now");
+        //            __result = true;
+        //        }
+
+        //    }
+        //}
+
+        [HarmonyPriority(100)] //Go last
+        public static void SelectedPawnValid_RestrictSpiritPatch(Pawn pawn, FloatMenuContext context, ref bool __result)
         {
-            public static bool Prefix(Vector3 clickPos, Pawn pawn, List<FloatMenuOption> opts, bool suppressAutoTakeableGoto = false)
+            if (pawn != null && pawn.def == TorannMagicDefOf.TM_SpiritTD)
             {
-                if (pawn is TMPawnGolem || pawn is TMHollowGolem || (TM_Calc.IsPossessedBySpirit(pawn) && !pawn.RaceProps.Humanlike) || TM_Calc.IsPolymorphed(pawn))
+                if (FloatMenuMakerMap.currentProvider.GetType() != typeof(FloatMenuOptionProvider_DraftedMove))
                 {
-                    IntVec3 clickCell = IntVec3.FromVector3(clickPos);
-                    if (pawn is TMPawnGolem || pawn is TMHollowGolem)
-                    {                        
-                        foreach (LocalTargetInfo item6 in GenUI.TargetsAt(clickPos, TargetingParameters.ForAttackHostile(), thingsOnly: true))
-                        {
-                            LocalTargetInfo attackTarg = item6;
-                            if (pawn.VerbTracker.AllVerbs != null && pawn.VerbTracker.AllVerbs.Count > 0)
-                            {
-                                string failStr;
-                                Action rangedAct = TM_GolemUtility.GetGolemRangedAttackAction(pawn as TMPawnGolem, attackTarg, out failStr);
-                                string text = "FireAt".Translate(attackTarg.Thing.Label, attackTarg.Thing);
-                                FloatMenuOption floatMenuOption = new FloatMenuOption("", null, MenuOptionPriority.High, null, item6.Thing);
-                                if (rangedAct == null)
-                                {
-                                    text = text + ": " + failStr;
-                                }
-                                else
-                                {
-                                    floatMenuOption.autoTakeable = (!attackTarg.HasThing || attackTarg.Thing.HostileTo(Faction.OfPlayer));
-                                    floatMenuOption.autoTakeablePriority = 40f;
-                                    floatMenuOption.action = delegate
-                                    {
-                                        FleckMaker.Static(attackTarg.Thing.DrawPos, attackTarg.Thing.Map, FleckDefOf.FeedbackShoot);
-                                        rangedAct();
-                                    };
-                                }
-                                floatMenuOption.Label = text;
-                                opts.Add(floatMenuOption);
-                            }
-                            string failStr2;
-                            Action meleeAct = TM_GolemUtility.GetGolemMeleeAttackAction(pawn, attackTarg, out failStr2);
-                            Pawn pawn2 = attackTarg.Thing as Pawn;
-                            string text2 = (pawn2 == null || !pawn2.Downed) ? ((string)"MeleeAttack".Translate(attackTarg.Thing.Label, attackTarg.Thing)) : ((string)"MeleeAttackToDeath".Translate(attackTarg.Thing.Label, attackTarg.Thing));
-                            MenuOptionPriority priority = (!attackTarg.HasThing || !pawn.HostileTo(attackTarg.Thing)) ? MenuOptionPriority.VeryLow : MenuOptionPriority.AttackEnemy;
-                            FloatMenuOption floatMenuOption2 = new FloatMenuOption("", null, priority, null, attackTarg.Thing);
-                            if (meleeAct == null)
-                            {
-                                text2 = text2 + ": " + failStr2.CapitalizeFirst();
-                            }
-                            else
-                            {
-                                floatMenuOption2.autoTakeable = (!attackTarg.HasThing || attackTarg.Thing.HostileTo(Faction.OfPlayer));
-                                floatMenuOption2.autoTakeablePriority = 30f;
-                                floatMenuOption2.action = delegate
-                                {
-                                    FleckMaker.Static(attackTarg.Thing.DrawPos, attackTarg.Thing.Map, FleckDefOf.FeedbackMelee);
-                                    meleeAct();
-                                };
-                            }
-                            floatMenuOption2.Label = text2;
-                            opts.Add(floatMenuOption2);
-                        }
-                    }
-                    else if ((TM_Calc.IsPossessedBySpirit(pawn) || TM_Calc.IsPolymorphed(pawn)) && pawn.RaceProps.Animal)
-                    {
-                        foreach (LocalTargetInfo item6 in GenUI.TargetsAt(clickPos, TargetingParameters.ForAttackHostile(), thingsOnly: true))
-                        {
-                            LocalTargetInfo attackTarg = item6;                            
-                            string failStr2;
-                            Action meleeAct = FloatMenuUtility.GetMeleeAttackAction(pawn, attackTarg, out failStr2);
-                            Pawn pawn2 = attackTarg.Thing as Pawn;
-                            string text2 = (pawn2 == null || !pawn2.Downed) ? ((string)"MeleeAttack".Translate(attackTarg.Thing.Label, attackTarg.Thing)) : ((string)"MeleeAttackToDeath".Translate(attackTarg.Thing.Label, attackTarg.Thing));
-                            MenuOptionPriority priority = (!attackTarg.HasThing || !pawn.HostileTo(attackTarg.Thing)) ? MenuOptionPriority.VeryLow : MenuOptionPriority.AttackEnemy;
-                            FloatMenuOption floatMenuOption2 = new FloatMenuOption("", null, priority, null, attackTarg.Thing);
-                            if (meleeAct == null)
-                            {
-                                text2 = text2 + ": " + failStr2.CapitalizeFirst();
-                            }
-                            else
-                            {
-                                floatMenuOption2.autoTakeable = (!attackTarg.HasThing || attackTarg.Thing.HostileTo(Faction.OfPlayer));
-                                floatMenuOption2.autoTakeablePriority = 30f;
-                                floatMenuOption2.action = delegate
-                                {
-                                    FleckMaker.Static(attackTarg.Thing.DrawPos, attackTarg.Thing.Map, FleckDefOf.FeedbackMelee);
-                                    meleeAct();
-                                };
-                            }
-                            floatMenuOption2.Label = text2;
-                            opts.Add(floatMenuOption2);
-                        }
-                    }
-                    if (pawn.health.capacities.CapableOf(PawnCapacityDefOf.Manipulation))
-                    {
-                        foreach (LocalTargetInfo item7 in GenUI.TargetsAt(clickPos, TargetingParameters.ForCarry(pawn), thingsOnly: true))
-                        {
-                            LocalTargetInfo carryTarget = item7;
-                            FloatMenuOption item = pawn.CanReach(carryTarget, PathEndMode.ClosestTouch, Danger.Deadly) ? FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption("Carry".Translate(carryTarget.Thing), delegate
-                            {
-                                carryTarget.Thing.SetForbidden(value: false, warnOnFail: false);
-                                Job job7 = JobMaker.MakeJob(JobDefOf.CarryDownedPawnDrafted, carryTarget);
-                                job7.count = 1;
-                                pawn.jobs.TryTakeOrderedJob(job7, JobTag.Misc);
-                            }), pawn, carryTarget) : new FloatMenuOption("CannotCarry".Translate(carryTarget.Thing) + ": " + "NoPath".Translate().CapitalizeFirst(), null);
-                            opts.Add(item);
-                        }
-                    }
-                    if (pawn.IsCarryingPawn())
-                    {
-                        Pawn carriedPawn = (Pawn)pawn.carryTracker.CarriedThing;
-                        if (!carriedPawn.IsPrisonerOfColony)
-                        {
-                            foreach (LocalTargetInfo item8 in GenUI.TargetsAt(clickPos, TargetingParameters.ForDraftedCarryBed(carriedPawn, pawn, carriedPawn.GuestStatus), thingsOnly: true))
-                            {
-                                LocalTargetInfo destTarget = item8;
-                                FloatMenuOption item2 = pawn.CanReach(destTarget, PathEndMode.ClosestTouch, Danger.Deadly) ? FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption("PlaceIn".Translate(carriedPawn, destTarget.Thing), delegate
-                                {
-                                    destTarget.Thing.SetForbidden(value: false, warnOnFail: false);
-                                    Job job6 = JobMaker.MakeJob(JobDefOf.TakeDownedPawnToBedDrafted, pawn.carryTracker.CarriedThing, destTarget);
-                                    job6.count = 1;
-                                    pawn.jobs.TryTakeOrderedJob(job6, JobTag.Misc);
-                                }), pawn, destTarget) : new FloatMenuOption("CannotPlaceIn".Translate(carriedPawn, destTarget.Thing) + ": " + "NoPath".Translate().CapitalizeFirst(), null);
-                                opts.Add(item2);
-                            }
-                        }
-                        foreach (LocalTargetInfo item9 in GenUI.TargetsAt(clickPos, TargetingParameters.ForDraftedCarryBed(carriedPawn, pawn, GuestStatus.Prisoner), thingsOnly: true))
-                        {
-                            LocalTargetInfo destTarget2 = item9;
-                            FloatMenuOption item3;
-                            if (!pawn.CanReach(destTarget2, PathEndMode.ClosestTouch, Danger.Deadly))
-                            {
-                                item3 = new FloatMenuOption("CannotPlaceIn".Translate(carriedPawn, destTarget2.Thing) + ": " + "NoPath".Translate().CapitalizeFirst(), null);
-                            }
-                            else
-                            {
-                                TaggedString taggedString = "PlaceIn".Translate(carriedPawn, destTarget2.Thing);
-                                if (!carriedPawn.IsPrisonerOfColony)
-                                {
-                                    taggedString += ": " + "ArrestChance".Translate(carriedPawn.GetAcceptArrestChance(pawn).ToStringPercent());
-                                }
-                                item3 = FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption(taggedString, delegate
-                                {
-                                    destTarget2.Thing.SetForbidden(value: false, warnOnFail: false);
-                                    Job job5 = JobMaker.MakeJob(JobDefOf.CarryToPrisonerBedDrafted, pawn.carryTracker.CarriedThing, destTarget2);
-                                    job5.count = 1;
-                                    pawn.jobs.TryTakeOrderedJob(job5, JobTag.Misc);
-                                }), pawn, destTarget2);
-                            }
-                            opts.Add(item3);
-                        }
-                        foreach (LocalTargetInfo item10 in GenUI.TargetsAt(clickPos, TargetingParameters.ForDraftedCarryTransporter(carriedPawn), thingsOnly: true))
-                        {
-                            Thing transporterThing = item10.Thing;
-                            if (transporterThing != null)
-                            {
-                                CompTransporter compTransporter = transporterThing.TryGetComp<CompTransporter>();
-                                if (compTransporter.Shuttle == null || compTransporter.Shuttle.IsAllowedNow(carriedPawn))
-                                {
-                                    if (!pawn.CanReach(transporterThing, PathEndMode.ClosestTouch, Danger.Deadly))
-                                    {
-                                        opts.Add(new FloatMenuOption("CannotPlaceIn".Translate(carriedPawn, transporterThing) + ": " + "NoPath".Translate().CapitalizeFirst(), null));
-                                    }
-                                    else if (compTransporter.Shuttle == null && !compTransporter.LeftToLoadContains(carriedPawn))
-                                    {
-                                        opts.Add(new FloatMenuOption("CannotPlaceIn".Translate(carriedPawn, transporterThing) + ": " + "NotPartOfLaunchGroup".Translate(), null));
-                                    }
-                                    else
-                                    {
-                                        string label = "PlaceIn".Translate(carriedPawn, transporterThing);
-                                        Action action = delegate
-                                        {
-                                            if (!compTransporter.LoadingInProgressOrReadyToLaunch)
-                                            {
-                                                TransporterUtility.InitiateLoading(Gen.YieldSingle(compTransporter));
-                                            }
-                                            Job job4 = JobMaker.MakeJob(JobDefOf.HaulToTransporter, carriedPawn, transporterThing);
-                                            job4.ignoreForbidden = true;
-                                            job4.count = 1;
-                                            pawn.jobs.TryTakeOrderedJob(job4, JobTag.Misc);
-                                        };
-                                        opts.Add(FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption(label, action), pawn, transporterThing));
-                                    }
-                                }
-                            }
-                        }
-                        foreach (LocalTargetInfo item11 in GenUI.TargetsAt(clickPos, TargetingParameters.ForDraftedCarryCryptosleepCasket(pawn), thingsOnly: true))
-                        {
-                            Thing casket = item11.Thing;
-                            TaggedString taggedString2 = "PlaceIn".Translate(carriedPawn, casket);
-                            if (((Building_CryptosleepCasket)casket).HasAnyContents)
-                            {
-                                opts.Add(new FloatMenuOption("CannotPlaceIn".Translate(carriedPawn, casket) + ": " + "CryptosleepCasketOccupied".Translate(), null));
-                            }
-                            else if (carriedPawn.IsQuestLodger())
-                            {
-                                opts.Add(new FloatMenuOption("CannotPlaceIn".Translate(carriedPawn, casket) + ": " + "CryptosleepCasketGuestsNotAllowed".Translate(), null));
-                            }
-                            else if (carriedPawn.GetExtraHostFaction() != null)
-                            {
-                                opts.Add(new FloatMenuOption("CannotPlaceIn".Translate(carriedPawn, casket) + ": " + "CryptosleepCasketGuestPrisonersNotAllowed".Translate(), null));
-                            }
-                            else
-                            {
-                                Action action2 = delegate
-                                {
-                                    Job job3 = JobMaker.MakeJob(JobDefOf.CarryToCryptosleepCasketDrafted, carriedPawn, casket);
-                                    job3.count = 1;
-                                    job3.playerForced = true;
-                                    pawn.jobs.TryTakeOrderedJob(job3, JobTag.Misc);
-                                };
-                                opts.Add(FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption(taggedString2, action2), pawn, casket));
-                            }
-                        }
-                    }
-                    FloatMenuOption floatMenuOption3 = GolemUtility.GotoLocationOption(clickCell, pawn, suppressAutoTakeableGoto);
-                    if (floatMenuOption3 != null)
-                    {
-                        opts.Add(floatMenuOption3);
-                    }
-                    return false;                    
+                    __result = false;
                 }
-                return true;                
             }
         }
+
+        [HarmonyPriority(100)] //Go last
+        public static void FloatMenuOptionProvider_Equip_RestrictEquipmentPatch(Thing clickedThing, FloatMenuContext context, ref FloatMenuOption __result)
+        {
+            if (clickedThing != null && clickedThing.def == TorannMagicDefOf.TM_Artifact_BracersOfThePacifist)
+            {
+                if (context.FirstSelectedPawn != null && context.FirstSelectedPawn.story != null && (context.FirstSelectedPawn.story.traits.HasTrait(TorannMagicDefOf.Priest) || context.FirstSelectedPawn.WorkTagIsDisabled(WorkTags.Violent)))
+                {
+                    string labelShort = clickedThing.LabelShort;
+                    __result = new FloatMenuOption("TM_ViolentCannotEquip".Translate(context.FirstSelectedPawn.LabelShort, labelShort), null);
+                }
+            }
+        }
+
+        //[HarmonyPriority(100)] //Go last
+        //public static void AddHumanLikeOrders_RestrictEquipmentPatch(Vector3 clickPos, Pawn pawn, ref List<FloatMenuOption> opts)
+        //{
+        //    IntVec3 c = IntVec3.FromVector3(clickPos);
+        //    if (pawn.equipment != null)
+        //    {
+        //        if(pawn.def == TorannMagicDefOf.TM_SpiritTD)
+        //        {
+        //            List<FloatMenuOption> remop = new List<FloatMenuOption>();
+        //            remop.Clear();
+        //            foreach(FloatMenuOption op in opts)
+        //            {
+        //                if (op.Label.StartsWith("Pick"))
+        //                {
+        //                    remop.Add(op);
+        //                }
+        //            }
+        //            foreach(FloatMenuOption op in remop)
+        //            {
+        //                opts.Remove(op);
+        //            }
+        //        }
+        //        ThingWithComps equipment = null;
+        //        List<Thing> thingList = c.GetThingList(pawn.Map);
+        //        for (int i = 0; i < thingList.Count; i++)
+        //        {
+        //            if (thingList[i].def == TorannMagicDefOf.TM_Artifact_BracersOfThePacifist)
+        //            {
+        //                equipment = (ThingWithComps)thingList[i];
+        //                break;
+        //            }
+        //        }
+        //        if (equipment != null)
+        //        {
+        //            string labelShort = equipment.LabelShort;
+        //            FloatMenuOption nve_option;
+        //            if (!(pawn.story.traits.HasTrait(TorannMagicDefOf.Priest) || pawn.WorkTagIsDisabled(WorkTags.Violent)))
+        //            {
+        //                for (int j = 0; j < opts.Count; j++)
+        //                {                            
+        //                    if (opts[j].Label.Contains("wear"))
+        //                    {
+        //                        opts.Remove(opts[j]);
+        //                    }
+        //                }
+        //                nve_option = new FloatMenuOption("TM_ViolentCannotEquip".Translate(pawn.LabelShort, labelShort), null);
+        //                opts.Add(nve_option);
+        //            }
+        //        }
+        //    }
+        //    foreach (FloatMenuOption op in opts)
+        //    {
+        //        if (op.Label.StartsWith("TM_Use"))
+        //        {
+        //            op.Label = "TM_Use".Translate(op.revalidateClickTarget.Label);
+        //        }
+        //        else if(op.Label.StartsWith("TM_Learn"))
+        //        {
+        //            op.Label = "TM_Learn".Translate(op.revalidateClickTarget.Label);
+        //        }
+        //        else if (op.Label.StartsWith("TM_Read"))
+        //        {
+        //            op.Label = "TM_Read".Translate(op.revalidateClickTarget.Label);
+        //        }
+        //        else if (op.Label.StartsWith("TM_Inject"))
+        //        {
+        //            op.Label = "TM_Inject".Translate(op.revalidateClickTarget.Label);
+        //        }
+        //    }
+        //}
+
+        //[HarmonyPatch(typeof(FloatMenuMakerMap), "AddHumanlikeOrders", null)]
+        [HarmonyPatch(typeof(FloatMenuMakerMap), "GetProviderOptions", null)]
+        public static class FloatMenuMakerMap_Patch
+        {
+            //public static void Postfix(Vector3 clickPos, Pawn pawn, ref List<FloatMenuOption> opts)
+            public static void Postfix(FloatMenuContext context, ref List<FloatMenuOption> options, Pawn ___makingFor)
+            {
+                Pawn pawn = ___makingFor;
+                if (pawn == null)
+                {
+                    return;
+                }
+                IntVec3 c = IntVec3.FromVector3(context.clickPosition);
+                Enchantment.CompEnchant comp = pawn.TryGetComp<Enchantment.CompEnchant>();
+                CompAbilityUserMagic pawnComp = pawn.GetCompAbilityUserMagic();
+                if (comp != null && pawnComp != null && pawnComp.IsMagicUser && pawn.story != null && pawn.story.traits != null && !pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+                {
+                    if (comp.enchantingContainer == null)
+                    {
+                        Log.Warning($"Enchanting container is null for {pawn}, initializing.");
+                        comp.enchantingContainer = new ThingOwner<Thing>();
+                        //comp.enchantingContainer = new ThingOwner<Thing>(comp);
+                    }
+                    bool emptyGround = true;
+                    foreach (Thing current in c.GetThingList(pawn.Map))
+                    {
+                        if (current != null && current.def.EverHaulable)
+                        {
+                            emptyGround = false;
+                        }
+                    }
+                    if (emptyGround && !pawn.Drafted) //c.GetThingList(pawn.Map).Count == 0 &&
+                    {
+                        if (comp.enchantingContainer?.Count > 0)
+                        {
+                            if (!pawn.CanReach(c, PathEndMode.ClosestTouch, Danger.Deadly, false, false, TraverseMode.ByPawn))
+                            {
+                                options.Add(new FloatMenuOption("TM_CannotDrop".Translate(
+                                    comp.enchantingContainer[0].Label
+                                ) + " (" + "NoPath".Translate() + ")", null, MenuOptionPriority.Default, null, null, 0f, null, null));
+                            }
+                            else
+                            {
+                                options.Add(FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption("TM_DropGem".Translate(
+                                comp.enchantingContainer.ContentsString
+                                ), delegate
+                                {
+                                    Job job = new Job(TorannMagicDefOf.JobDriver_RemoveEnchantingGem, c);
+                                    pawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
+                                }, MenuOptionPriority.High, null, null, 0f, null, null), pawn, c, "ReservedBy"));
+                            }
+                        }
+
+                    }
+                    foreach (Thing current in c.GetThingList(pawn.Map))
+                    {
+                        Thing t = current;
+                        if (t != null && t.def.EverHaulable && t.def.defName.ToString().Contains("TM_EStone_"))
+                        {
+                            if (!pawn.CanReach(t, PathEndMode.ClosestTouch, Danger.Deadly, false, false, TraverseMode.ByPawn))
+                            {
+                                options.Add(new FloatMenuOption("CannotPickUp".Translate(
+                                t.Label
+                                ) + " (" + "NoPath".Translate() + ")", null, MenuOptionPriority.Default, null, null, 0f, null, null));
+                            }
+                            else if (MassUtility.WillBeOverEncumberedAfterPickingUp(pawn, t, 1))
+                            {
+                                options.Add(new FloatMenuOption("CannotPickUp".Translate(
+                                t.Label
+                                ) + " (" + "TooHeavy".Translate() + ")", null, MenuOptionPriority.Default, null, null, 0f, null, null));
+                            }
+                            else// if (item.stackCount == 1)
+                            {
+                                options.Add(FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption("TM_PickupGem".Translate(
+                                t.Label
+                                ), delegate
+                                {
+                                    t.SetForbidden(false, false);
+                                    Job job = new Job(TorannMagicDefOf.JobDriver_AddEnchantingGem, t);
+                                    job.count = 1;
+                                    pawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
+                                }, MenuOptionPriority.High, null, null, 0f, null, null), pawn, t, "ReservedBy"));
+                            }
+                        }
+                        else if ((current.def.IsApparel || current.def.IsWeapon || current.def.IsRangedWeapon) && comp.enchantingContainer?.Count > 0)
+                        {
+                            if (!pawn.CanReach(t, PathEndMode.ClosestTouch, Danger.Deadly, false, false, TraverseMode.ByPawn))
+                            {
+                                options.Add(new FloatMenuOption("TM_CannotReach".Translate(
+                                t.Label
+                                ) + " (" + "NoPath".Translate() + ")", null, MenuOptionPriority.Default, null, null, 0f, null, null));
+                            }
+                            else if (pawnComp.Mana.CurLevel < .5f)
+                            {
+                                options.Add(new FloatMenuOption("TM_NeedManaForEnchant".Translate(
+                                pawnComp.Mana.CurLevel.ToString("0.000")
+                                ), null, MenuOptionPriority.Default, null, null, 0f, null, null));
+                            }
+                            else// if (item.stackCount == 1)
+                            {
+                                if (current.stackCount == 1)
+                                {
+                                    options.Add(FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption("TM_EnchantItem".Translate(
+                                        t.Label
+                                    ), delegate
+                                    {
+                                        t.SetForbidden(true, false);
+                                        Job job = new Job(TorannMagicDefOf.JobDriver_EnchantItem, t);
+                                        job.count = 1;
+                                        pawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
+                                    }, MenuOptionPriority.High, null, null, 0f, null, null), pawn, t, "ReservedBy"));
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Created new FloatMenuOptionProvider_ForgeArcane
+        /// </summary>
+        //[HarmonyPatch(typeof(FloatMenuMakerMap), "AddJobGiverWorkOrders", null)]
+        //public static class FloatMenuMakerMap_MagicJobGiver_Patch
+        //{
+        //    public static void Postfix(Vector3 clickPos, Pawn pawn, List<FloatMenuOption> opts, bool drafted)
+        //    {
+        //        RimWorld.JobGiver_Work jobGiver_Work = pawn.thinker.TryGetMainTreeThinkNode<RimWorld.JobGiver_Work>();
+        //        if (jobGiver_Work != null)
+        //        {
+        //            foreach (Thing item in pawn.Map.thingGrid.ThingsAt(clickPos.ToIntVec3()))
+        //            {
+        //                if (item is Building && (item.def == TorannMagicDefOf.TableArcaneForge))
+        //                {
+        //                    CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
+        //                    if (comp != null && comp.Mana != null && comp.Mana.CurLevel < .5f)
+        //                    {
+        //                        string text = null;
+        //                        Action action = null;
+        //                        text = "TM_InsufficientManaForJob".Translate((comp.Mana.CurLevel * 100).ToString("0.##"));
+        //                        FloatMenuOption menuOption = FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption(text, action), pawn, item);
+        //                        if (!opts.Any((FloatMenuOption op) => op.Label == menuOption.Label))
+        //                        {
+        //                            menuOption.Disabled = true;
+        //                            opts.Add(menuOption);
+        //                        }
+        //                    }
+        //                }
+        //            }
+        //        }
+        //    }
+        //}
+
+        //[HarmonyPatch(typeof(PawnUtility), "IsTravelingInTransportPodWorldObject", null), HarmonyPriority(1000)]
+        //[HarmonyBefore(new string[] { "TheThirdAge.RemoveModernStuffHarmony.IsTravelingInTransportPodWorldObject", "rimworld.PawnUtility.IsTravelingInTransportPodWorldObject" })]        
+        //[HarmonyPatch(typeof(PawnUtility), "IsTravelingInTransportPodWorldObject", null)]
+
+        //[HarmonyPriority(2000)]
+        //public static void IsTravelingInTeleportPod_Postfix(Pawn pawn, ref bool __result)
+        //{
+        //    if (!__result)
+        //    {
+        //        Log.Message("" + pawn.LabelShort + " was not in a transport pod but is in a " + pawn.ParentHolder);
+        //        if (pawn.IsColonist || (pawn.Faction != null && pawn.Faction.IsPlayer))
+        //        {
+
+        //        }
+        //    }
+        //}
+
+
+        //[HarmonyPatch(typeof(PawnAbility), "PostAbilityAttempt", null)]
+        //public class PawnAbility_Patch
+        //{
+        //    public static bool Prefix(PawnAbility __instance)
+        //    {
+        //        if (__instance.Def.defName.Contains("TM_"))
+        //        {
+        //            CompAbilityUserMagic comp = __instance.Pawn.GetCompAbilityUserMagic();
+        //            CompAbilityUserMight mightComp = __instance.Pawn.GetCompAbilityUserMight();
+        //            if (comp.IsMagicUser && !__instance.Pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+        //            {
+        //                __instance.CooldownTicksLeft = Mathf.RoundToInt((float)__instance.MaxCastingTicks * comp.coolDown);
+        //                if (!__instance.Pawn.IsColonist)
+        //                {
+        //                    __instance.CooldownTicksLeft = (int)(__instance.CooldownTicksLeft / 2f);
+        //                }
+        //            }
+        //            else if (mightComp.IsMightUser)
+        //            {
+        //                __instance.CooldownTicksLeft = Mathf.RoundToInt((float)__instance.MaxCastingTicks * mightComp.coolDown);
+        //            }
+        //            return false;
+        //        }
+        //        return true;
+        //    }
+        //}
+        //public class GolemMenu_Patch
+        //{
+        //    public static bool Prefix(Vector3 clickPos, Pawn pawn, List<FloatMenuOption> opts, bool suppressAutoTakeableGoto = false)
+        //    {
+        //        if (pawn is TMPawnGolem || pawn is TMHollowGolem || (TM_Calc.IsPossessedBySpirit(pawn) && !pawn.RaceProps.Humanlike) || TM_Calc.IsPolymorphed(pawn))
+        //        {
+        //            IntVec3 clickCell = IntVec3.FromVector3(clickPos);
+        //            if (pawn is TMPawnGolem || pawn is TMHollowGolem)
+        //            {
+        //                foreach (LocalTargetInfo item6 in GenUI.TargetsAt(clickPos, TargetingParameters.ForAttackAny(), thingsOnly: true))
+        //                {
+        //                    LocalTargetInfo attackTarg = item6;
+        //                    if (pawn.VerbTracker.AllVerbs != null && pawn.VerbTracker.AllVerbs.Count > 0)
+        //                    {
+        //                        string failStr;
+        //                        Action rangedAct = TM_GolemUtility.GetGolemRangedAttackAction(pawn as TMPawnGolem, attackTarg, out failStr);
+        //                        string text = "FireAt".Translate(attackTarg.Thing.Label, attackTarg.Thing);
+        //                        FloatMenuOption floatMenuOption = new FloatMenuOption("", null, MenuOptionPriority.High, null, item6.Thing);
+        //                        if (rangedAct == null)
+        //                        {
+        //                            text = text + ": " + failStr;
+        //                        }
+        //                        else
+        //                        {
+        //                            floatMenuOption.autoTakeable = (!attackTarg.HasThing || attackTarg.Thing.HostileTo(Faction.OfPlayer));
+        //                            floatMenuOption.autoTakeablePriority = 40f;
+        //                            floatMenuOption.action = delegate
+        //                            {
+        //                                FleckMaker.Static(attackTarg.Thing.DrawPos, attackTarg.Thing.Map, FleckDefOf.FeedbackShoot);
+        //                                rangedAct();
+        //                            };
+        //                        }
+        //                        floatMenuOption.Label = text;
+        //                        opts.Add(floatMenuOption);
+        //                    }
+        //                    string failStr2;
+        //                    Action meleeAct = TM_GolemUtility.GetGolemMeleeAttackAction(pawn, attackTarg, out failStr2);
+        //                    Pawn pawn2 = attackTarg.Thing as Pawn;
+        //                    string text2 = (pawn2 == null || !pawn2.Downed) ? ((string)"MeleeAttack".Translate(attackTarg.Thing.Label, attackTarg.Thing)) : ((string)"MeleeAttackToDeath".Translate(attackTarg.Thing.Label, attackTarg.Thing));
+        //                    MenuOptionPriority priority = (!attackTarg.HasThing || !pawn.HostileTo(attackTarg.Thing)) ? MenuOptionPriority.VeryLow : MenuOptionPriority.AttackEnemy;
+        //                    FloatMenuOption floatMenuOption2 = new FloatMenuOption("", null, priority, null, attackTarg.Thing);
+        //                    if (meleeAct == null)
+        //                    {
+        //                        text2 = text2 + ": " + failStr2.CapitalizeFirst();
+        //                    }
+        //                    else
+        //                    {
+        //                        floatMenuOption2.autoTakeable = (!attackTarg.HasThing || attackTarg.Thing.HostileTo(Faction.OfPlayer));
+        //                        floatMenuOption2.autoTakeablePriority = 30f;
+        //                        floatMenuOption2.action = delegate
+        //                        {
+        //                            FleckMaker.Static(attackTarg.Thing.DrawPos, attackTarg.Thing.Map, FleckDefOf.FeedbackMelee);
+        //                            meleeAct();
+        //                        };
+        //                    }
+        //                    floatMenuOption2.Label = text2;
+        //                    opts.Add(floatMenuOption2);
+        //                }
+        //            }
+        //            else if ((TM_Calc.IsPossessedBySpirit(pawn) || TM_Calc.IsPolymorphed(pawn)) && pawn.RaceProps.Animal)
+        //            {
+        //                foreach (LocalTargetInfo item6 in GenUI.TargetsAt(clickPos, TargetingParameters.ForAttackAny(), thingsOnly: true))
+        //                {
+        //                    LocalTargetInfo attackTarg = item6;
+        //                    string failStr2;
+        //                    Action meleeAct = FloatMenuUtility.GetMeleeAttackAction(pawn, attackTarg, out failStr2);
+        //                    Pawn pawn2 = attackTarg.Thing as Pawn;
+        //                    string text2 = (pawn2 == null || !pawn2.Downed) ? ((string)"MeleeAttack".Translate(attackTarg.Thing.Label, attackTarg.Thing)) : ((string)"MeleeAttackToDeath".Translate(attackTarg.Thing.Label, attackTarg.Thing));
+        //                    MenuOptionPriority priority = (!attackTarg.HasThing || !pawn.HostileTo(attackTarg.Thing)) ? MenuOptionPriority.VeryLow : MenuOptionPriority.AttackEnemy;
+        //                    FloatMenuOption floatMenuOption2 = new FloatMenuOption("", null, priority, null, attackTarg.Thing);
+        //                    if (meleeAct == null)
+        //                    {
+        //                        text2 = text2 + ": " + failStr2.CapitalizeFirst();
+        //                    }
+        //                    else
+        //                    {
+        //                        floatMenuOption2.autoTakeable = (!attackTarg.HasThing || attackTarg.Thing.HostileTo(Faction.OfPlayer));
+        //                        floatMenuOption2.autoTakeablePriority = 30f;
+        //                        floatMenuOption2.action = delegate
+        //                        {
+        //                            FleckMaker.Static(attackTarg.Thing.DrawPos, attackTarg.Thing.Map, FleckDefOf.FeedbackMelee);
+        //                            meleeAct();
+        //                        };
+        //                    }
+        //                    floatMenuOption2.Label = text2;
+        //                    opts.Add(floatMenuOption2);
+        //                }
+        //            }
+        //            if (pawn.health.capacities.CapableOf(PawnCapacityDefOf.Manipulation))
+        //            {
+        //                foreach (LocalTargetInfo item7 in GenUI.TargetsAt(clickPos, TargetingParameters.ForPawns(), thingsOnly: true))
+        //                {
+        //                    LocalTargetInfo carryTarget = item7;
+        //                    FloatMenuOption item = pawn.CanReach(carryTarget, PathEndMode.ClosestTouch, Danger.Deadly) ? FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption("Carry".Translate(carryTarget.Thing), delegate
+        //                    {
+        //                        carryTarget.Thing.SetForbidden(value: false, warnOnFail: false);
+        //                        Job job7 = JobMaker.MakeJob(JobDefOf.CarryDownedPawnDrafted, carryTarget);
+        //                        job7.count = 1;
+        //                        pawn.jobs.TryTakeOrderedJob(job7, JobTag.Misc);
+        //                    }), pawn, carryTarget) : new FloatMenuOption("CannotCarry".Translate(carryTarget.Thing) + ": " + "NoPath".Translate().CapitalizeFirst(), null);
+        //                    opts.Add(item);
+        //                }
+        //            }
+        //            if (pawn.IsCarryingPawn())
+        //            {
+        //                Pawn carriedPawn = (Pawn)pawn.carryTracker.CarriedThing;
+        //                if (!carriedPawn.IsPrisonerOfColony)
+        //                {
+        //                    foreach (LocalTargetInfo item8 in GenUI.TargetsAt(clickPos, TargetingParameters.ForDraftedCarryBed(carriedPawn, pawn, carriedPawn.GuestStatus), thingsOnly: true))
+        //                    {
+        //                        LocalTargetInfo destTarget = item8;
+        //                        FloatMenuOption item2 = pawn.CanReach(destTarget, PathEndMode.ClosestTouch, Danger.Deadly) ? FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption("PlaceIn".Translate(carriedPawn, destTarget.Thing), delegate
+        //                        {
+        //                            destTarget.Thing.SetForbidden(value: false, warnOnFail: false);
+        //                            Job job6 = JobMaker.MakeJob(JobDefOf.TakeDownedPawnToBedDrafted, pawn.carryTracker.CarriedThing, destTarget);
+        //                            job6.count = 1;
+        //                            pawn.jobs.TryTakeOrderedJob(job6, JobTag.Misc);
+        //                        }), pawn, destTarget) : new FloatMenuOption("CannotPlaceIn".Translate(carriedPawn, destTarget.Thing) + ": " + "NoPath".Translate().CapitalizeFirst(), null);
+        //                        opts.Add(item2);
+        //                    }
+        //                }
+        //                foreach (LocalTargetInfo item9 in GenUI.TargetsAt(clickPos, TargetingParameters.ForDraftedCarryBed(carriedPawn, pawn, GuestStatus.Prisoner), thingsOnly: true))
+        //                {
+        //                    LocalTargetInfo destTarget2 = item9;
+        //                    FloatMenuOption item3;
+        //                    if (!pawn.CanReach(destTarget2, PathEndMode.ClosestTouch, Danger.Deadly))
+        //                    {
+        //                        item3 = new FloatMenuOption("CannotPlaceIn".Translate(carriedPawn, destTarget2.Thing) + ": " + "NoPath".Translate().CapitalizeFirst(), null);
+        //                    }
+        //                    else
+        //                    {
+        //                        TaggedString taggedString = "PlaceIn".Translate(carriedPawn, destTarget2.Thing);
+        //                        if (!carriedPawn.IsPrisonerOfColony)
+        //                        {
+        //                            taggedString += ": " + "ArrestChance".Translate(carriedPawn.GetAcceptArrestChance(pawn).ToStringPercent());
+        //                        }
+        //                        item3 = FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption(taggedString, delegate
+        //                        {
+        //                            destTarget2.Thing.SetForbidden(value: false, warnOnFail: false);
+        //                            Job job5 = JobMaker.MakeJob(JobDefOf.CarryToPrisonerBedDrafted, pawn.carryTracker.CarriedThing, destTarget2);
+        //                            job5.count = 1;
+        //                            pawn.jobs.TryTakeOrderedJob(job5, JobTag.Misc);
+        //                        }), pawn, destTarget2);
+        //                    }
+        //                    opts.Add(item3);
+        //                }
+        //                foreach (LocalTargetInfo item10 in GenUI.TargetsAt(clickPos, TargetingParameters.ForDraftedCarryTransporter(carriedPawn), thingsOnly: true))
+        //                {
+        //                    Thing transporterThing = item10.Thing;
+        //                    if (transporterThing != null)
+        //                    {
+        //                        CompTransporter compTransporter = transporterThing.TryGetComp<CompTransporter>();
+        //                        if (compTransporter.Shuttle == null || compTransporter.Shuttle.IsAllowedNow(carriedPawn))
+        //                        {
+        //                            if (!pawn.CanReach(transporterThing, PathEndMode.ClosestTouch, Danger.Deadly))
+        //                            {
+        //                                opts.Add(new FloatMenuOption("CannotPlaceIn".Translate(carriedPawn, transporterThing) + ": " + "NoPath".Translate().CapitalizeFirst(), null));
+        //                            }
+        //                            else if (compTransporter.Shuttle == null && !compTransporter.LeftToLoadContains(carriedPawn))
+        //                            {
+        //                                opts.Add(new FloatMenuOption("CannotPlaceIn".Translate(carriedPawn, transporterThing) + ": " + "NotPartOfLaunchGroup".Translate(), null));
+        //                            }
+        //                            else
+        //                            {
+        //                                string label = "PlaceIn".Translate(carriedPawn, transporterThing);
+        //                                Action action = delegate
+        //                                {
+        //                                    if (!compTransporter.LoadingInProgressOrReadyToLaunch)
+        //                                    {
+        //                                        TransporterUtility.InitiateLoading(Gen.YieldSingle(compTransporter));
+        //                                    }
+        //                                    Job job4 = JobMaker.MakeJob(JobDefOf.HaulToTransporter, carriedPawn, transporterThing);
+        //                                    job4.ignoreForbidden = true;
+        //                                    job4.count = 1;
+        //                                    pawn.jobs.TryTakeOrderedJob(job4, JobTag.Misc);
+        //                                };
+        //                                opts.Add(FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption(label, action), pawn, transporterThing));
+        //                            }
+        //                        }
+        //                    }
+        //                }
+        //                foreach (LocalTargetInfo item11 in GenUI.TargetsAt(clickPos, TargetingParameters.ForDraftedCarryCryptosleepCasket(pawn), thingsOnly: true))
+        //                {
+        //                    Thing casket = item11.Thing;
+        //                    TaggedString taggedString2 = "PlaceIn".Translate(carriedPawn, casket);
+        //                    if (((Building_CryptosleepCasket)casket).HasAnyContents)
+        //                    {
+        //                        opts.Add(new FloatMenuOption("CannotPlaceIn".Translate(carriedPawn, casket) + ": " + "CryptosleepCasketOccupied".Translate(), null));
+        //                    }
+        //                    else if (carriedPawn.IsQuestLodger())
+        //                    {
+        //                        opts.Add(new FloatMenuOption("CannotPlaceIn".Translate(carriedPawn, casket) + ": " + "CryptosleepCasketGuestsNotAllowed".Translate(), null));
+        //                    }
+        //                    else if (carriedPawn.GetExtraHostFaction() != null)
+        //                    {
+        //                        opts.Add(new FloatMenuOption("CannotPlaceIn".Translate(carriedPawn, casket) + ": " + "CryptosleepCasketGuestPrisonersNotAllowed".Translate(), null));
+        //                    }
+        //                    else
+        //                    {
+        //                        Action action2 = delegate
+        //                        {
+        //                            Job job3 = JobMaker.MakeJob(JobDefOf.CarryToCryptosleepCasketDrafted, carriedPawn, casket);
+        //                            job3.count = 1;
+        //                            job3.playerForced = true;
+        //                            pawn.jobs.TryTakeOrderedJob(job3, JobTag.Misc);
+        //                        };
+        //                        opts.Add(FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption(taggedString2, action2), pawn, casket));
+        //                    }
+        //                }
+        //            }
+        //            FloatMenuOption floatMenuOption3 = GolemUtility.GotoLocationOption(clickCell, pawn, suppressAutoTakeableGoto);
+        //            if (floatMenuOption3 != null)
+        //            {
+        //                opts.Add(floatMenuOption3);
+        //            }
+        //            return false;
+        //        }
+        //        return true;
+        //    }
+        //}
 
         [HarmonyPatch(typeof(GenRecipe), "MakeRecipeProducts", null)]
         public class GolemRecipe_Action_Patch
@@ -2060,14 +2504,14 @@ namespace TorannMagic
         [HarmonyPatch(typeof(Caravan_PathFollower), "CostToMove", new Type[]
         {
             typeof(Caravan),
-            typeof(int),
-            typeof(int),
+            typeof(PlanetTile),
+            typeof(PlanetTile),
             typeof(int?)
         })]
         public static class CostToMove_Caravan_Patch
         {
             [HarmonyPostfix]
-            public static void CostToMove_Caravan_Postfix(Caravan_PathFollower __instance, Caravan caravan, int start, int end, ref int __result, int? ticksAbs = default(int?))
+            public static void CostToMove_Caravan_Postfix(Caravan_PathFollower __instance, Caravan caravan, PlanetLayer start, PlanetTile end, ref int __result, int? ticksAbs = default(int?))
             {
                 if (caravan != null)
                 {
@@ -2521,7 +2965,7 @@ namespace TorannMagic
                 if (caster != null)
                 {
                     IntVec3 targ = UI.MouseMapPosition().ToIntVec3();
-                    if (targ != null && __instance.targetingSource.GetVerb != null && __instance.targetingSource.GetVerb.EquipmentSource == null && __instance.targetingSource.GetVerb.loadID == null) // && __instance.targetingSource.GetVerb.EquipmentSource == null)
+                    if (targ.IsValid && __instance.targetingSource.GetVerb != null && __instance.targetingSource.GetVerb.EquipmentSource == null && __instance.targetingSource.GetVerb.loadID == null) // && __instance.targetingSource.GetVerb.EquipmentSource == null)
                     {
 
                         if ((caster.Position - targ).LengthHorizontal > __instance.targetingSource.GetVerb.verbProps.range)
@@ -2631,19 +3075,6 @@ namespace TorannMagic
                 }
             }
         }
-
-        [HarmonyPatch(typeof(FloatMenuMakerMap), "AddJobGiverWorkOrders", null)]
-        public class SkipPolymorph_UndraftedOrders_Patch
-        {
-            public static bool Prefix(Vector3 clickPos, Pawn pawn, List<FloatMenuOption> opts, bool drafted)
-            {
-                if ((pawn.GetComp<CompPolymorph>() != null && pawn.GetComp<CompPolymorph>().Original != null) || pawn.def == TorannMagicDefOf.TM_SpiritTD)
-                {
-                    return false;
-                }
-                return true;
-            }
-        }        
 
         [HarmonyPriority(2000)]
         public static bool RimmuNation_CHCFCIR_Patch(Verb __instance, IntVec3 sourceSq, IntVec3 targetLoc, bool includeCorners, ref bool __result)
@@ -2790,7 +3221,7 @@ namespace TorannMagic
                     {
                         __result = __result + ModOptions.Settings.Instance.offsetMultiLayerClothingAmount;
                     }
-                    if (ModOptions.Constants.GetCloaks().Contains(node.Graphic.MatSingle.mainTexture))
+                    if (ModOptions.Constants.GetCloaks().Contains(node.PrimaryGraphic.MatSingle.mainTexture))
                     {
                         //Log.Message("found cloak " + node.Graphic.MatSingle.mainTexture + " north ?:" + (parms.pawn.Rotation == Rot4.North) + " debug offset set to: " + node.debugLayerOffset);
                         //__result += ModOptions.Constants.GetCloaksNorth().Contains(node.Graphic.MatNorth.mainTexture) ? ModOptions.Settings.Instance.cloakDepthNorth : ModOptions.Settings.Instance.cloakDepth;
@@ -5459,7 +5890,7 @@ namespace TorannMagic
                 if (patient.health.hediffSet.HasHediff(HediffDef.Named("TM_UndeadHD")) || patient.health.hediffSet.HasHediff(HediffDef.Named("TM_UndeadAnimalHD")))
                 {
                     Messages.Message("Something went horribly wrong while trying to perform a surgery on " + patient.LabelShort + ", perhaps it's best to leave the bodies of the undead alone.", MessageTypeDefOf.NegativeHealthEvent);
-                    GenExplosion.DoExplosion(surgeon.Position, surgeon.Map, 2f, TMDamageDefOf.DamageDefOf.TM_CorpseExplosion, patient, Rand.Range(6, 12), 10, TMDamageDefOf.DamageDefOf.TM_CorpseExplosion.soundExplosion, null, null, null, null, 0, 0, null, false, null, 0, 0, 0, false);
+                    GenExplosion.DoExplosion(surgeon.Position, surgeon.Map, 2f, TMDamageDefOf.DamageDefOf.TM_CorpseExplosion, patient, Rand.Range(6, 12), 10, TMDamageDefOf.DamageDefOf.TM_CorpseExplosion.soundExplosion, null, null, null, null, 0, 0, null, null, 0, false, null, 0, 0, 0, false);
                     __result = true;
                     return false;
                 }
@@ -6997,288 +7428,7 @@ namespace TorannMagic
         //    }
         //}
 
-        //[HarmonyPatch(typeof(FloatMenuMakerMap))]
-        //[HarmonyPatch("CanTakeOrder")]
-        //public static class FloatMenuMakerMap_CanTakeOrder_Patch
-        //{
-        //    [HarmonyPostfix]
-        //    public static void MakePawnControllable(Pawn pawn, ref bool __result)
-
-        //    {
-        //        bool flagIsCreatureMine = pawn.Faction != null && pawn.Faction.IsPlayer;
-        //        bool flagIsCreatureDraftable = (pawn.TryGetComp<CompPolymorph>() != null);
-
-        //        if (flagIsCreatureDraftable && flagIsCreatureMine)
-        //        {
-        //            //Log.Message("You should be controllable now");
-        //            __result = true;
-        //        }
-
-        //    }
-        //}
-
-        [HarmonyPriority(100)] //Go last
-        public static void AddHumanLikeOrders_RestrictEquipmentPatch(Vector3 clickPos, Pawn pawn, ref List<FloatMenuOption> opts)
-        {
-            IntVec3 c = IntVec3.FromVector3(clickPos);
-            if (pawn.equipment != null)
-            {
-                if(pawn.def == TorannMagicDefOf.TM_SpiritTD)
-                {
-                    List<FloatMenuOption> remop = new List<FloatMenuOption>();
-                    remop.Clear();
-                    foreach(FloatMenuOption op in opts)
-                    {
-                        if (op.Label.StartsWith("Pick"))
-                        {
-                            remop.Add(op);
-                        }
-                    }
-                    foreach(FloatMenuOption op in remop)
-                    {
-                        opts.Remove(op);
-                    }
-                }
-                ThingWithComps equipment = null;
-                List<Thing> thingList = c.GetThingList(pawn.Map);
-                for (int i = 0; i < thingList.Count; i++)
-                {
-                    if (thingList[i].def == TorannMagicDefOf.TM_Artifact_BracersOfThePacifist)
-                    {
-                        equipment = (ThingWithComps)thingList[i];
-                        break;
-                    }
-                }
-                if (equipment != null)
-                {
-                    string labelShort = equipment.LabelShort;
-                    FloatMenuOption nve_option;
-                    if (!(pawn.story.traits.HasTrait(TorannMagicDefOf.Priest) || pawn.WorkTagIsDisabled(WorkTags.Violent)))
-                    {
-                        for (int j = 0; j < opts.Count; j++)
-                        {                            
-                            if (opts[j].Label.Contains("wear"))
-                            {
-                                opts.Remove(opts[j]);
-                            }
-                        }
-                        nve_option = new FloatMenuOption("TM_ViolentCannotEquip".Translate(pawn.LabelShort, labelShort), null);
-                        opts.Add(nve_option);
-                    }
-                }
-            }
-            foreach (FloatMenuOption op in opts)
-            {
-                if (op.Label.StartsWith("TM_Use"))
-                {
-                    op.Label = "TM_Use".Translate(op.revalidateClickTarget.Label);
-                }
-                else if(op.Label.StartsWith("TM_Learn"))
-                {
-                    op.Label = "TM_Learn".Translate(op.revalidateClickTarget.Label);
-                }
-                else if (op.Label.StartsWith("TM_Read"))
-                {
-                    op.Label = "TM_Read".Translate(op.revalidateClickTarget.Label);
-                }
-                else if (op.Label.StartsWith("TM_Inject"))
-                {
-                    op.Label = "TM_Inject".Translate(op.revalidateClickTarget.Label);
-                }
-            }
-        }
-
-        [HarmonyPatch(typeof(FloatMenuMakerMap), "AddHumanlikeOrders", null)]
-        public static class FloatMenuMakerMap_Patch
-        {
-            public static void Postfix(Vector3 clickPos, Pawn pawn, ref List<FloatMenuOption> opts)
-            {
-                if (pawn == null)
-                {
-                    return;
-                }
-                IntVec3 c = IntVec3.FromVector3(clickPos);
-                Enchantment.CompEnchant comp = pawn.TryGetComp<Enchantment.CompEnchant>();
-                CompAbilityUserMagic pawnComp = pawn.GetCompAbilityUserMagic();
-                if (comp != null && pawnComp != null && pawnComp.IsMagicUser && pawn.story != null && pawn.story.traits != null && !pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
-                {
-                    if (comp.enchantingContainer == null)
-                    {
-                        Log.Warning($"Enchanting container is null for {pawn}, initializing.");
-                        comp.enchantingContainer = new ThingOwner<Thing>();
-                        //comp.enchantingContainer = new ThingOwner<Thing>(comp);
-                    }
-                    bool emptyGround = true;
-                    foreach (Thing current in c.GetThingList(pawn.Map))
-                    {
-                        if (current != null && current.def.EverHaulable)
-                        {
-                            emptyGround = false;
-                        }
-                    }
-                    if (emptyGround && !pawn.Drafted) //c.GetThingList(pawn.Map).Count == 0 &&
-                    {
-                        if (comp.enchantingContainer?.Count > 0)
-                        {
-                            if (!pawn.CanReach(c, PathEndMode.ClosestTouch, Danger.Deadly, false, false, TraverseMode.ByPawn))
-                            {
-                                opts.Add(new FloatMenuOption("TM_CannotDrop".Translate(
-                                    comp.enchantingContainer[0].Label
-                                ) + " (" + "NoPath".Translate() + ")", null, MenuOptionPriority.Default, null, null, 0f, null, null));
-                            }
-                            else
-                            {
-                                opts.Add(FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption("TM_DropGem".Translate(
-                                comp.enchantingContainer.ContentsString
-                                ), delegate
-                                {
-                                    Job job = new Job(TorannMagicDefOf.JobDriver_RemoveEnchantingGem, c);
-                                    pawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
-                                }, MenuOptionPriority.High, null, null, 0f, null, null), pawn, c, "ReservedBy"));
-                            }
-                        }
-
-                    }
-                    foreach (Thing current in c.GetThingList(pawn.Map))
-                    {
-                        Thing t = current;
-                        if (t != null && t.def.EverHaulable && t.def.defName.ToString().Contains("TM_EStone_"))
-                        {
-                            if (!pawn.CanReach(t, PathEndMode.ClosestTouch, Danger.Deadly, false, false, TraverseMode.ByPawn))
-                            {
-                                opts.Add(new FloatMenuOption("CannotPickUp".Translate(
-                                t.Label
-                                ) + " (" + "NoPath".Translate() + ")", null, MenuOptionPriority.Default, null, null, 0f, null, null));
-                            }
-                            else if (MassUtility.WillBeOverEncumberedAfterPickingUp(pawn, t, 1))
-                            {
-                                opts.Add(new FloatMenuOption("CannotPickUp".Translate(
-                                t.Label
-                                ) + " (" + "TooHeavy".Translate() + ")", null, MenuOptionPriority.Default, null, null, 0f, null, null));
-                            }
-                            else// if (item.stackCount == 1)
-                            {
-                                opts.Add(FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption("TM_PickupGem".Translate(
-                                t.Label
-                                ), delegate
-                                {
-                                    t.SetForbidden(false, false);
-                                    Job job = new Job(TorannMagicDefOf.JobDriver_AddEnchantingGem, t);
-                                    job.count = 1;
-                                    pawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
-                                }, MenuOptionPriority.High, null, null, 0f, null, null), pawn, t, "ReservedBy"));
-                            }
-                        }
-                        else if ((current.def.IsApparel || current.def.IsWeapon || current.def.IsRangedWeapon) && comp.enchantingContainer?.Count > 0)
-                        {
-                            if (!pawn.CanReach(t, PathEndMode.ClosestTouch, Danger.Deadly, false, false, TraverseMode.ByPawn))
-                            {
-                                opts.Add(new FloatMenuOption("TM_CannotReach".Translate(
-                                t.Label
-                                ) + " (" + "NoPath".Translate() + ")", null, MenuOptionPriority.Default, null, null, 0f, null, null));
-                            }
-                            else if (pawnComp.Mana.CurLevel < .5f)
-                            {
-                                opts.Add(new FloatMenuOption("TM_NeedManaForEnchant".Translate(
-                                pawnComp.Mana.CurLevel.ToString("0.000")
-                                ), null, MenuOptionPriority.Default, null, null, 0f, null, null));
-                            }
-                            else// if (item.stackCount == 1)
-                            {
-                                if (current.stackCount == 1)
-                                {
-                                    opts.Add(FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption("TM_EnchantItem".Translate(
-                                        t.Label
-                                    ), delegate
-                                    {
-                                        t.SetForbidden(true, false);
-                                        Job job = new Job(TorannMagicDefOf.JobDriver_EnchantItem, t);
-                                        job.count = 1;
-                                        pawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
-                                    }, MenuOptionPriority.High, null, null, 0f, null, null), pawn, t, "ReservedBy"));
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        [HarmonyPatch(typeof(FloatMenuMakerMap), "AddJobGiverWorkOrders", null)]
-        public static class FloatMenuMakerMap_MagicJobGiver_Patch
-        {
-            public static void Postfix(Vector3 clickPos, Pawn pawn, List<FloatMenuOption> opts, bool drafted)
-            {
-                RimWorld.JobGiver_Work jobGiver_Work = pawn.thinker.TryGetMainTreeThinkNode<RimWorld.JobGiver_Work>();
-                if (jobGiver_Work != null)
-                {
-                    foreach (Thing item in pawn.Map.thingGrid.ThingsAt(clickPos.ToIntVec3()))
-                    {
-                        if (item is Building && (item.def == TorannMagicDefOf.TableArcaneForge))
-                        {
-                            CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
-                            if (comp != null && comp.Mana != null && comp.Mana.CurLevel < .5f)
-                            {
-                                string text = null;
-                                Action action = null;
-                                text = "TM_InsufficientManaForJob".Translate((comp.Mana.CurLevel * 100).ToString("0.##"));
-                                FloatMenuOption menuOption = FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption(text, action), pawn, item);
-                                if (!opts.Any((FloatMenuOption op) => op.Label == menuOption.Label))
-                                {
-                                    menuOption.Disabled = true;
-                                    opts.Add(menuOption);
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        //[HarmonyPatch(typeof(PawnUtility), "IsTravelingInTransportPodWorldObject", null), HarmonyPriority(1000)]
-        //[HarmonyBefore(new string[] { "TheThirdAge.RemoveModernStuffHarmony.IsTravelingInTransportPodWorldObject", "rimworld.PawnUtility.IsTravelingInTransportPodWorldObject" })]        
-        //[HarmonyPatch(typeof(PawnUtility), "IsTravelingInTransportPodWorldObject", null)]
-
-        //[HarmonyPriority(2000)]
-        //public static void IsTravelingInTeleportPod_Postfix(Pawn pawn, ref bool __result)
-        //{
-        //    if (!__result)
-        //    {
-        //        Log.Message("" + pawn.LabelShort + " was not in a transport pod but is in a " + pawn.ParentHolder);
-        //        if (pawn.IsColonist || (pawn.Faction != null && pawn.Faction.IsPlayer))
-        //        {
-                    
-        //        }
-        //    }
-        //}
-
-
-        //[HarmonyPatch(typeof(PawnAbility), "PostAbilityAttempt", null)]
-        //public class PawnAbility_Patch
-        //{
-        //    public static bool Prefix(PawnAbility __instance)
-        //    {
-        //        if (__instance.Def.defName.Contains("TM_"))
-        //        {
-        //            CompAbilityUserMagic comp = __instance.Pawn.GetCompAbilityUserMagic();
-        //            CompAbilityUserMight mightComp = __instance.Pawn.GetCompAbilityUserMight();
-        //            if (comp.IsMagicUser && !__instance.Pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
-        //            {
-        //                __instance.CooldownTicksLeft = Mathf.RoundToInt((float)__instance.MaxCastingTicks * comp.coolDown);
-        //                if (!__instance.Pawn.IsColonist)
-        //                {
-        //                    __instance.CooldownTicksLeft = (int)(__instance.CooldownTicksLeft / 2f);
-        //                }
-        //            }
-        //            else if (mightComp.IsMightUser)
-        //            {
-        //                __instance.CooldownTicksLeft = Mathf.RoundToInt((float)__instance.MaxCastingTicks * mightComp.coolDown);
-        //            }
-        //            return false;
-        //        }
-        //        return true;
-        //    }
-        //}
+        
 
         [HarmonyPatch(typeof(GenGrid), "Standable", null)]
         public class Standable_Patch
@@ -7561,7 +7711,7 @@ namespace TorannMagic
         [HarmonyPatch(typeof(PlayerPawnsDisplayOrderUtility), "Sort", null)]
         public class GolemColonistBarInjection_Patch
         {
-            public static void Postfix(ref List<Pawn> pawns) 
+            public static void Postfix(ref List<Pawn> pawns)
             {
                 if (ModOptions.Settings.Instance.showGolemsOnColonistBar)
                 {
@@ -7570,12 +7720,12 @@ namespace TorannMagic
                     {
                         List<Pawn> mapPawns = m.mapPawns.AllPawnsSpawned.ToList();
                         foreach (Pawn p in mapPawns)
-                        {                            
+                        {
                             TMPawnGolem pg = p as TMPawnGolem;
                             if (pg != null && pg.Faction.IsPlayer && pawns != null && !pawns.Contains(pg) && pawns.Count > 0 && pawns[0].Map == pg.Map)
                             {
-                                pawns.Add(pg);                               
-                            }                            
+                                pawns.Add(pg);
+                            }
                         }
                     }
                 }
@@ -7591,14 +7741,14 @@ namespace TorannMagic
             {
                 if (colonist.Dead) return;
 
-                
+
                 var traitIconValue = ColonistBarColonistDrawerCache.GetOrCreate(
                     colonist.ThingID,
                     () =>
                     {
                         if (colonist.health.hediffSet.HasHediff(TorannMagicDefOf.TM_UndeadHD))
                         {
-                            return new TraitIconMap.TraitIconValue(TM_RenderQueue.necroMarkMat, TM_MatPool.Icon_Undead, "TM_Icon_Undead");                        
+                            return new TraitIconMap.TraitIconValue(TM_RenderQueue.necroMarkMat, TM_MatPool.Icon_Undead, "TM_Icon_Undead");
                         }
                         // Early exit condition
                         if (!ModOptions.Settings.Instance.showClassIconOnColonistBar || colonist.story == null)
@@ -7612,7 +7762,7 @@ namespace TorannMagic
                             TraitDef trait = colonist.story.traits.allTraits[i].def;
                             if (TraitIconMap.ContainsKey(trait))
                             {
-                                return TraitIconMap.Get(trait);                                
+                                return TraitIconMap.Get(trait);
                             }
                         }
                         return null;
@@ -7631,10 +7781,10 @@ namespace TorannMagic
             }
         }
 
-        [HarmonyPatch(typeof(Pawn_InteractionsTracker), "InteractionsTrackerTick", null)]
+        [HarmonyPatch(typeof(Pawn_InteractionsTracker), "InteractionsTrackerTickInterval", null)]
         public class InteractionsTrackerTick_Patch
         {
-            public static void Postfix(Pawn_InteractionsTracker __instance, Pawn ___pawn, ref bool ___wantsRandomInteract, int ___lastInteractionTime)
+            public static void Postfix(Pawn_InteractionsTracker __instance, int delta, Pawn ___pawn, ref bool ___wantsRandomInteract, int ___lastInteractionTime)
             {
                 if (Find.TickManager.TicksGame % 1200 == 0)
                 {
@@ -7740,29 +7890,52 @@ namespace TorannMagic
             }
         }
 
-        [HarmonyPatch(typeof(FloatMenuMakerMap), "ChoicesAtFor", null), HarmonyPriority(100)]
-        public static class FloatMenuMakerMap_ROMV_Undead_Patch
-        {
-            public static void Postfix(Vector3 clickPos, Pawn pawn, ref List<FloatMenuOption> __result)
-            {
-                IntVec3 c = IntVec3.FromVector3(clickPos);
-                Pawn target = c.GetFirstPawn(pawn.Map);
-                if (target != null)
-                {
-                    if ((target.health.hediffSet.HasHediff(HediffDef.Named("TM_UndeadHD")) || target.health.hediffSet.HasHediff(HediffDef.Named("TM_UndeadAnimalHD")) || target.health.hediffSet.HasHediff(HediffDef.Named("TM_LichHD"))))
-                    {
-                        for (int i = 0; i < __result.Count(); i++)
-                        {
-                            string name = target.LabelShort;
-                            if (__result[i].Label.Contains("Feed on") || __result[i].Label.Contains("Sip") || __result[i].Label.Contains("Embrace") || __result[i].Label.Contains("Give vampirism") || __result[i].Label.Contains("Create Ghoul") || __result[i].Label.Contains("Give vitae") || __result[i].Label == "Embrace " + name + " (Give vampirism)")
-                            {
-                                __result.Remove(__result[i]);
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        //Dont need anymore? Will need to patch a menuoptionprovider for 1.6
+        //[HarmonyPatch(typeof(FloatMenuOptionProvider), "TargetPawnValid", null), HarmonyPriority(100)]
+        //public static class FloatMenuMakerMap_ROMV_Undead_Patch
+        //{
+        //    public static void Postfix(Pawn pawn, FloatMenuContext context, ref bool __result)
+        //    {
+        //        if (pawn != null)
+        //        {
+        //            if ((pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_UndeadHD")) || pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_UndeadAnimalHD")) || pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_LichHD"))))
+        //            {
+        //                for (int i = 0; i < __result.Count(); i++)
+        //                {
+        //                    string name = target.LabelShort;
+        //                    if (__result[i].Label.Contains("Feed on") || __result[i].Label.Contains("Sip") || __result[i].Label.Contains("Embrace") || __result[i].Label.Contains("Give vampirism") || __result[i].Label.Contains("Create Ghoul") || __result[i].Label.Contains("Give vitae") || __result[i].Label == "Embrace " + name + " (Give vampirism)")
+        //                    {
+        //                        __result.Remove(__result[i]);
+        //                    }
+        //                }
+        //            }
+        //        }
+        //    }
+        //}
+
+        //[HarmonyPatch(typeof(FloatMenuMakerMap), "ChoicesAtFor", null), HarmonyPriority(100)]
+        //public static class FloatMenuMakerMap_ROMV_Undead_Patch
+        //{
+        //    public static void Postfix(Vector3 clickPos, Pawn pawn, ref List<FloatMenuOption> __result)
+        //    {
+        //        IntVec3 c = IntVec3.FromVector3(clickPos);
+        //        Pawn target = c.GetFirstPawn(pawn.Map);
+        //        if (target != null)
+        //        {
+        //            if ((target.health.hediffSet.HasHediff(HediffDef.Named("TM_UndeadHD")) || target.health.hediffSet.HasHediff(HediffDef.Named("TM_UndeadAnimalHD")) || target.health.hediffSet.HasHediff(HediffDef.Named("TM_LichHD"))))
+        //            {
+        //                for (int i = 0; i < __result.Count(); i++)
+        //                {
+        //                    string name = target.LabelShort;
+        //                    if (__result[i].Label.Contains("Feed on") || __result[i].Label.Contains("Sip") || __result[i].Label.Contains("Embrace") || __result[i].Label.Contains("Give vampirism") || __result[i].Label.Contains("Create Ghoul") || __result[i].Label.Contains("Give vitae") || __result[i].Label == "Embrace " + name + " (Give vampirism)")
+        //                    {
+        //                        __result.Remove(__result[i]);
+        //                    }
+        //                }
+        //            }
+        //        }
+        //    }
+        //}
 
         [HarmonyPatch(typeof(DamageWorker_AddInjury), "Apply", null)]
         public static class DamageWorker_ApplyEnchantmentAction_Patch
@@ -7894,7 +8067,7 @@ namespace TorannMagic
                         if (explosion.damType == TMDamageDefOf.DamageDefOf.TM_BloodBurn)
                         {
                             if (i < 1)
-                            {                                
+                            {
                                 TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_BloodMist, explosion.Position.ToVector3Shifted() + Gen.RandomHorizontalVector(explosion.radius * 0.7f), explosion.Map, Rand.Range(1f, 1.5f), .2f, 0.6f, 2f, Rand.Range(-30, 30), Rand.Range(.5f, .7f), Rand.Range(30f, 40f), Rand.Range(0, 360));
                             }
                         }
@@ -7921,11 +8094,12 @@ namespace TorannMagic
         [HarmonyPatch(new Type[]
         {
             typeof(Pawn),
-            typeof(SkillDef)
+            typeof(SkillDef),
+            typeof(bool)
         })]
         public static class ArcaneForge_Quality_Patch
         {
-            public static void Postfix(Pawn pawn, SkillDef relevantSkill, ref QualityCategory __result)
+            public static void Postfix(Pawn pawn, SkillDef relevantSkill, bool consumeInspiration, ref QualityCategory __result)
             {
                 CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
                 if (comp != null && comp.IsMagicUser && pawn.story.traits != null && !pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless) && comp.ArcaneForging)
@@ -8155,7 +8329,7 @@ namespace TorannMagic
         public static class GizmoOnGUI_Prefix_Patch
         {
             public static bool Prefix(Command_PawnAbility __instance, Rect butRect, GizmoRenderParms parms, ref GizmoResult __result)
-            {                
+            {
                 if (ModOptions.Settings.Instance.autocastEnabled && __instance.pawnAbility.Def.defName.StartsWith("TM_"))
                 {
                     //Rect rect = new Rect(topLeft.x, topLeft.y, __instance.GetWidth(maxWidth), 75f);
@@ -8169,7 +8343,7 @@ namespace TorannMagic
         [HarmonyPatch(typeof(FloatMenuMap), "StillValid", null)]
         public static class IncitePassion_MenuValid
         {
-            public static bool Prefix(FloatMenuOption opt, List<FloatMenuOption> curOpts, Pawn forPawn, ref bool __result)
+            public static bool Prefix(FloatMenuOption opt, List<FloatMenuOption> curOpts, ref bool __result)
             {
                 if (opt.orderInPriority == 991)
                 {

@@ -46,7 +46,7 @@ namespace TorannMagic
                 initAction = () =>
                 {
                     //pawn.pather.StartPath(portalBldg.InteractionCell, PathEndMode.OnCell);
-                    if (pawn.pather != null && bldg.InteractionCell != null)
+                    if (pawn.pather != null && bldg.InteractionCell.IsValid)
                     {
                         pawn.pather.StartPath(bldg.InteractionCell, PathEndMode.OnCell);
                     }

@@ -1,0 +1,862 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+ 
+<Defs>
+	<!-- Notes
+	Examples are shown in this document - do not use this document to add custom powers, create a unique .xml file for custom powers and 
+	supporting defs to prevent them from being overwritten during mod updates
+	Defs:
+	TM_CustomPowerDef
+	TMAbilityDef (may reference existing ability defs)
+	LanguageData for each Skill (only required when adding upgradeable powers)
+	ThingDef for scrolls (only needed if the ability can or should be learned using a scroll)
+	-->
+
+	<TorannMagic.TM_CustomPowerDef Abstract="True" Name="CustomPower">
+		<!-- abstract with descriptions -->
+		<!-- <defName>TM_Taunt</defName>					Non-Abstract requires defName, can also add common def fields like description and label -->
+		<customPower>	
+			<forMage>false</forMage>						<!-- set true for mage powers -->
+			<forFighter>false</forFighter>					<!-- set true for fighter powers -->
+			<abilityDefs>									<!-- list of abilities for this power, in order -->
+			<!-- example	
+				<li>TM_Taunt</li>							must have a matching TMAbilityDef defined in xml
+				<li>TM_Taunt_I</li>							upgrading the power (clicking on the power icon) upgrades to the next ability
+				<li>TM_Taunt_II</li>						needs to match maxLevel, 0 is counted as the first level
+				<li>TM_Taunt_III</li>						
+			-->
+			</abilityDefs>
+			
+			<skills>										<!-- links the power with a skill line -->
+															<!-- label should match defName exactly followed by "_pwr", "_eff" or "_ver" -->
+															<!-- language translations are still required and must match the label and desc tags -->
+			<!-- example
+				<li>										
+					<label>TM_Taunt_pwr</label>
+					<desc>TM_Taunt_pwr_desc</desc>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_Taunt_eff</label>
+					<description>TM_Taunt_eff_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_Taunt_ver</label>
+					<description>TM_Taunt_ver_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+			-->
+			</skills>										
+			
+			<maxLevel>0</maxLevel>							<!-- must match number of abilityDefs - 1, use 0 if only 1 abilityDef is defined -->				
+			<learnCost>2</learnCost>						<!-- how many points are needed to learn this ability -->
+			<costToLevel>1</costToLevel>					<!-- points required to level the power after being learned -->	
+			<requiresScroll>false</requiresScroll>			<!-- scroll required to learn, if false then the power can be learned using points from leveling -->
+			<chaosMageUseable>false</chaosMageUseable>		<!-- for magic, makes ability appear in chaos mage pool of abilities -->
+			<autocasting>										<!-- limited autocast functionality -->
+				<type>Null</type>							<!-- valid types are: OnTarget, OnCell, OnNearby, OnSelf, Null -->
+				<targetType>Thing</targetType>				<!-- matches the class type valid for the target, options: Thing (default), ThingWithComps, Pawn, Building, Corpse, LocalTargetInfo -->
+				<mightUser>false</mightUser>				<!-- determines if autocast is checked for might users -->
+				<magicUser>false</magicUser>				<!-- determines if autocast is checked for magic users -->
+				<drafted>false</drafted>					<!-- determines if autocasting will be attempted if the pawn is drafted -->
+				<undrafted>false</undrafted>				<!-- determines if autocasting will be attempted if the pawn is not drafted; can be both drafted and undrafted or neither, if neither is selected then only AI would attempt to use this ability, but only if AIUsable is true -->
+															<!-- targets can match any or all criteria but must be valid for at least 1 -->
+				<targetFriendly>false</targetFriendly>		<!-- target is valid if Friendly (same faction) -->
+				<targetNeutral>true</targetNeutral>			<!-- target is valid if Neutral (non-hostile or friendly pawns with another faction) -->
+				<targetNoFaction>true</targetNoFaction>		<!-- targets only pawns without a faction (null faction) -->
+				<targetEnemy>false</targetEnemy>			<!-- target is valid if Enemy (hostile faction) -->
+				<requiresLoS>true</requiresLoS>				<!-- checks LOS -->
+				<AIUsable>false</AIUsable>					<!-- allows AI to use this ability -->
+				<includeSelf>false</includeSelf>			<!-- valid targets can include the caster -->
+				<advancedConditionDefs>						<!-- list of advanced condition checks; entries are the defName of one or more TM_AutocastConditionDef -->
+				</advancedConditionDefs>					<!-- must match all conditions; review TM_AutocastConditionDefs.xml for examples and detailed instructions -->
+															<!-- valid condition classes are: DamageTaken, HasHediff, HasNeed, EnemiesInRange, AlliesInRange, TargetDrafted, Null -->
+			</autocasting>
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+
+	<!-- inherit the abstract parent and create a custom power -->
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_Taunt</defName>	
+		<customPower>	
+			<forFighter>true</forFighter>
+			<maxLevel>3</maxLevel>
+			<abilityDefs>									<!-- only 1 ability so max level is 0 -->
+				<li>TM_Taunt</li>
+			</abilityDefs>
+			<skills>
+				<li>										
+					<label>TM_Taunt_pwr</label>
+					<description>TM_Taunt_pwr_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_Taunt_eff</label>
+					<description>TM_Taunt_eff_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_Taunt_ver</label>
+					<description>TM_Taunt_ver_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+			</skills>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>	
+
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_Explosion</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<abilityDefs>									
+				<li>TM_Explosion</li>							
+			</abilityDefs>
+			<skills>
+				<li>										
+					<label>TM_Explosion_pwr</label>
+					<description>TM_Explosion_pwr_desc</description>
+					<levelMax>30</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_Explosion_eff</label>
+					<description>TM_Explosion_eff_desc</description>
+					<levelMax>30</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_Explosion_ver</label>
+					<description>TM_Explosion_ver_desc</description>
+					<levelMax>30</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+			</skills>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>	
+
+  	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_MedicalSupply</defName>	
+		<customPower>	
+			<forFighter>true</forFighter>
+			<abilityDefs>									
+				<li>TM_MedicalSupply</li>							
+			</abilityDefs>
+			<skills>
+				<li>										
+					<label>TM_MedicalSupply_ver</label>
+					<description>TM_MedicalSupply_ver_desc</description>
+					<levelMax>7</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+			</skills>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>	
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_Medigel</defName>	
+		<customPower>	
+			<forFighter>true</forFighter>
+			<learnCost>1</learnCost>
+			<abilityDefs>									
+				<li>TM_Medigel</li>							
+			</abilityDefs>
+			<skills>
+				<li>										
+					<label>TM_Medigel_eff</label>
+					<description>TM_Medigel_eff_desc</description>
+					<levelMax>7</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+			</skills>			
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_CombatDrugs</defName>	
+		<customPower>	
+			<forFighter>true</forFighter>
+			<learnCost>1</learnCost>
+			<abilityDefs>									
+				<li>TM_CombatDrugs</li>							
+			</abilityDefs>
+			<skills>
+				<li>										
+					<label>TM_CombatDrugs_pwr</label>
+					<description>TM_CombatDrugs_pwr_desc</description>
+					<levelMax>6</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>										
+					<label>TM_CombatDrugs_ver</label>
+					<description>TM_CombatDrugs_ver_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>2</costToLevel>
+				</li>
+			</skills>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_ShieldOther</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<abilityDefs>									
+				<li>TM_ShieldOther</li>							
+			</abilityDefs>		
+			<skills>
+				<li>
+					<label>TM_Shield_eff</label>
+					<description>TM_Shield_eff_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+			</skills>	
+			<autocasting>										<!-- limited autocast functionality -->
+				<type>OnNearby</type>							<!-- valid types are: OnTarget, OnCell, OnNearby, OnSelf, Null -->
+				<targetType>Pawn</targetType>				<!-- matches the class type valid for the target, options: Thing (default), ThingWithComps, Pawn, Building, Corpse, LocalTargetInfo -->
+				<mightUser>false</mightUser>				<!-- determines if autocast is checked for might users -->
+				<magicUser>true</magicUser>				<!-- determines if autocast is checked for magic users -->
+				<drafted>true</drafted>					<!-- determines if autocasting will be attempted if the pawn is drafted -->
+				<undrafted>false</undrafted>				<!-- determines if autocasting will be attempted if the pawn is not drafted (can be both drafted and undrafted) -->
+															<!-- targets can match any or all criteria but must be valid for at least 1 -->
+				<targetFriendly>true</targetFriendly>		<!-- target is valid if Friendly (same faction) -->
+				<targetNeutral>false</targetNeutral>			<!-- target is valid if Neutral (non-hostile) -->
+				<targetEnemy>false</targetEnemy>			<!-- target is valid if Enemy (hostile) -->
+				<requiresLoS>true</requiresLoS>				<!-- checks LOS -->
+				<AIUsable>true</AIUsable>					<!-- WIP - limited functionality for AI casting -->
+				<includeSelf>false</includeSelf>			<!-- valid targets can include the caster -->
+				<advancedConditionDefs>						<!-- list of advanced condition checks; entries are the defName of one or more TM_AutocastConditionDef -->
+					<li>TM_BelowMaxHealth</li>
+					<li>TM_TargetDrafted</li>
+				</advancedConditionDefs>					<!-- must match all conditions; review TM_AutocastConditionDefs.xml for examples and detailed instructions -->
+															<!-- valid condition classes are: DamageTaken, HasHediff, HasNeed, EnemiesInRange, AlliesInRange, TargetDrafted, Null -->
+			</autocasting>			
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>	
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_Discord</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<abilityDefs>									<!-- only 1 ability so max level is 0 -->
+				<li>TM_Discord</li>
+			</abilityDefs>
+			<skills>
+				<li>
+					<label>TM_Discord_eff</label>
+					<description>TM_Discord_eff_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+			</skills>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_SiphonBrand</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<abilityDefs>									<!-- only 1 ability so max level is 0 -->
+				<li>TM_SiphonBrand</li>
+			</abilityDefs>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_EmotionBrand</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<abilityDefs>									<!-- only 1 ability so max level is 0 -->
+				<li>TM_EmotionBrand</li>
+			</abilityDefs>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_VitalityBrand</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<abilityDefs>									<!-- only 1 ability so max level is 0 -->
+				<li>TM_VitalityBrand</li>
+			</abilityDefs>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_ProtectionBrand</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<abilityDefs>									<!-- only 1 ability so max level is 0 -->
+				<li>TM_ProtectionBrand</li>
+			</abilityDefs>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_AwarenessBrand</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<abilityDefs>									<!-- only 1 ability so max level is 0 -->
+				<li>TM_AwarenessBrand</li>
+			</abilityDefs>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_FitnessBrand</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<abilityDefs>									<!-- only 1 ability so max level is 0 -->
+				<li>TM_FitnessBrand</li>
+			</abilityDefs>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>	
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_Empathy</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<abilityDefs>									
+				<li>TM_Empathy</li>
+			</abilityDefs>
+			<skills>
+				<li>
+					<label>TM_Empathy_pwr</label>
+					<description>TM_Empathy_pwr_desc</description>
+					<levelMax>5</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_Empathy_ver</label>
+					<description>TM_Empathy_ver_desc</description>
+					<levelMax>5</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_Empathy_eff</label>
+					<description>TM_Empathy_eff_desc</description>
+					<levelMax>5</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+			</skills>	
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_MindKiller</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<abilityDefs>									
+				<li>TM_MindKiller</li>
+			</abilityDefs>
+			<skills>
+				<li>
+					<label>TM_MindKiller_pwr</label>
+					<description>TM_MindKiller_pwr_desc</description>
+					<levelMax>5</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_MindKiller_ver</label>
+					<description>TM_MindKiller_ver_desc</description>
+					<levelMax>5</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_MindKiller_eff</label>
+					<description>TM_MindKiller_eff_desc</description>
+					<levelMax>5</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+			</skills>
+			<autocasting>									
+				<type>OnNearby</type>							
+				<targetType>Pawn</targetType>				
+				<mightUser>false</mightUser>				
+				<magicUser>true</magicUser>				
+				<drafted>false</drafted>					<!--only AI autocastable since drafted and undrafted are false, but aicasting is true -->
+				<undrafted>false</undrafted>
+				<targetFriendly>false</targetFriendly>		
+				<targetNeutral>false</targetNeutral>		
+				<targetEnemy>true</targetEnemy>				<!--looks for a nearby enemy, then checks to see if there are 3 within 15cells -->
+				<requiresLoS>false</requiresLoS>			
+				<AIUsable>true</AIUsable>					
+				<includeSelf>false</includeSelf>
+				<maxRange>15</maxRange>
+				<advancedConditionDefs>						
+					<li>TM_3EnemiesWithin15Cells</li>
+				</advancedConditionDefs>					
+			</autocasting>				
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_SuppressiveAura</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<abilityDefs>									
+				<li>TM_SuppressiveAura</li>
+			</abilityDefs>
+			<skills>
+				<li>
+					<label>TM_SuppressiveAura_pwr</label>
+					<description>TM_SuppressiveAura_pwr_desc</description>
+					<levelMax>5</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_SuppressiveAura_ver</label>
+					<description>TM_SuppressiveAura_ver_desc</description>
+					<levelMax>5</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_SuppressiveAura_eff</label>
+					<description>TM_SuppressiveAura_eff_desc</description>
+					<levelMax>5</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+			</skills>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_HarvestPassion</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<abilityDefs>									
+				<li>TM_HarvestPassion</li>
+			</abilityDefs>
+			<skills>
+				<li>
+					<label>TM_HarvestPassion_pwr</label>
+					<description>TM_HarvestPassion_pwr_desc</description>
+					<levelMax>5</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_HarvestPassion_ver</label>
+					<description>TM_HarvestPassion_ver_desc</description>
+					<levelMax>5</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_HarvestPassion_eff</label>
+					<description>TM_HarvestPassion_eff_desc</description>
+					<levelMax>5</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+			</skills>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_FadeEmotions</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<abilityDefs>									<!-- only 1 ability so max level is 0 -->
+				<li>TM_FadeEmotions</li>
+			</abilityDefs>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_Symbiosis</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<abilityDefs>									
+				<li>TM_Symbiosis</li>
+			</abilityDefs>
+			<skills>
+				<li>
+					<label>TM_Symbiosis_pwr</label>
+					<description>TM_Symbiosis_pwr_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_Symbiosis_eff</label>
+					<description>TM_Symbiosis_eff_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_Symbiosis_ver</label>
+					<description>TM_Symbiosis_ver_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+			</skills>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_FireSuppressionFlask</defName>	
+		<customPower>	
+			<forFighter>true</forFighter>
+			<maxLevel>3</maxLevel>
+			<abilityDefs>									<!-- 4 abilities so max level is 3 -->
+				<li>TM_FireSuppressionFlask</li>
+				<li>TM_FireSuppressionFlask_I</li>
+				<li>TM_FireSuppressionFlask_II</li>
+				<li>TM_FireSuppressionFlask_III</li>
+			</abilityDefs>
+			<skills>
+				<li>
+					<label>TM_FireSuppressionFlask_eff</label>
+					<description>TM_FireSuppressionFlask_eff_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+			</skills>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_HerbalClarity</defName>	
+		<customPower>	
+			<forFighter>true</forFighter>
+			<abilityDefs>									<!-- only 1 ability so max level is 0 -->
+				<li>TM_HerbalClarity</li>
+			</abilityDefs>
+			<autocasting>									
+				<type>OnNearby</type>							
+				<targetType>Pawn</targetType>				
+				<mightUser>true</mightUser>				
+				<magicUser>true</magicUser>				
+				<drafted>false</drafted>					
+				<undrafted>true</undrafted>
+				<targetFriendly>true</targetFriendly>		
+				<targetNeutral>false</targetNeutral>		
+				<targetEnemy>false</targetEnemy>				
+				<requiresLoS>false</requiresLoS>			
+				<AIUsable>false</AIUsable>					
+				<includeSelf>true</includeSelf>
+				<maxRange>15</maxRange>
+				<advancedConditionDefs>		
+					<li>TM_DoesNotHaveClarityHediff</li>
+					<li>TM_HasManaBelow20</li>
+				</advancedConditionDefs>					
+			</autocasting>
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_HerbalBliss</defName>	
+		<customPower>	
+			<forFighter>true</forFighter>
+			<abilityDefs>									<!-- only 1 ability so max level is 0 -->
+				<li>TM_HerbalBliss</li>
+			</abilityDefs>
+			<autocasting>									
+				<type>OnNearby</type>							
+				<targetType>Pawn</targetType>				
+				<mightUser>true</mightUser>				
+				<magicUser>true</magicUser>				
+				<drafted>false</drafted>					
+				<undrafted>true</undrafted>
+				<targetFriendly>true</targetFriendly>		
+				<targetNeutral>false</targetNeutral>		
+				<targetEnemy>false</targetEnemy>				
+				<requiresLoS>false</requiresLoS>			
+				<AIUsable>false</AIUsable>					
+				<includeSelf>true</includeSelf>
+				<maxRange>15</maxRange>
+				<advancedConditionDefs>			
+					<li>TM_DoesNotHaveBlissHediff</li>
+					<li>TM_HasMoodBelow5Percent</li>
+				</advancedConditionDefs>					
+			</autocasting>
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_MagicWardrobe</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<abilityDefs>									<!-- only 1 ability so max level is 0 -->
+				<li>TM_MagicWardrobe</li>
+			</abilityDefs>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_AlterStorm</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<abilityDefs>									<!-- only 1 ability so max level is 0 -->
+				<li>TM_AlterStorm</li>
+			</abilityDefs>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_SpiritPossession</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<abilityDefs>									
+				<li>TM_SpiritPossession</li>
+			</abilityDefs>
+			<skills>
+				<li>
+					<label>TM_SpiritPossession_pwr</label>
+					<description>TM_SpiritPossession_pwr_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_SpiritPossession_eff</label>
+					<description>TM_SpiritPossession_eff_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_SpiritPossession_ver</label>
+					<description>TM_SpiritPossession_ver_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+			</skills>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_SpiritDrain</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<abilityDefs>									
+				<li>TM_SpiritDrain</li>
+			</abilityDefs>
+			<skills>
+				<li>
+					<label>TM_SpiritDrain_pwr</label>
+					<description>TM_SpiritDrain_pwr_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_SpiritDrain_eff</label>
+					<description>TM_SpiritDrain_eff_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_SpiritDrain_ver</label>
+					<description>TM_SpiritDrain_ver_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+			</skills>
+			<autocasting>									
+				<type>OnNearby</type>							
+				<targetType>Pawn</targetType>				
+				<mightUser>false</mightUser>				
+				<magicUser>true</magicUser>				
+				<drafted>true</drafted>					
+				<undrafted>true</undrafted>
+				<targetFriendly>true</targetFriendly>		
+				<targetNeutral>false</targetNeutral>		
+				<targetEnemy>true</targetEnemy>
+				<targetNoFaction>true</targetNoFaction>				
+				<requiresLoS>true</requiresLoS>			
+				<AIUsable>false</AIUsable>					
+				<includeSelf>false</includeSelf>
+				<maxRange>10</maxRange>
+				<advancedConditionDefs>						
+					<li>TM_DoesNotHaveSpiritDrainHediff</li>
+					<li>TM_SpiritNeedIsBelow50</li>
+				</advancedConditionDefs>					
+			</autocasting>
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_DistortSpirit</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<maxLevel>3</maxLevel>
+			<abilityDefs>									
+				<li>TM_DistortSpirit</li>
+				<li>TM_DistortSpirit_I</li>
+				<li>TM_DistortSpirit_II</li>
+				<li>TM_DistortSpirit_III</li>
+			</abilityDefs>
+			<skills>
+				<li>
+					<label>TM_DistortSpirit_pwr</label>
+					<description>TM_DistortSpirit_pwr_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_DistortSpirit_eff</label>
+					<description>TM_DistortSpirit_eff_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_DistortSpirit_ver</label>
+					<description>TM_DistortSpirit_ver_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>2</costToLevel>
+				</li>
+			</skills>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_SummonSpiritAnimalMass</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<abilityDefs>									
+				<li>TM_SummonSpiritAnimalMass</li>
+			</abilityDefs>
+			<skills>
+				<li>
+					<label>TM_SummonSpiritAnimalMass_pwr</label>
+					<description>TM_SummonSpiritAnimalMass_pwr_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_SummonSpiritAnimalMass_eff</label>
+					<description>TM_SummonSpiritAnimalMass_eff_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_SummonSpiritAnimalMass_ver</label>
+					<description>TM_SummonSpiritAnimalMass_ver_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+			</skills>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_SpiritRally</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<maxLevel>3</maxLevel>
+			<abilityDefs>									
+				<li>TM_SpiritRally</li>
+				<li>TM_SpiritRally_I</li>
+				<li>TM_SpiritRally_II</li>
+				<li>TM_SpiritRally_III</li>
+			</abilityDefs>
+			<skills>
+				<li>
+					<label>TM_SpiritRally_pwr</label>
+					<description>TM_SpiritRally_pwr_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_SpiritRally_eff</label>
+					<description>TM_SpiritRally_eff_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_SpiritRally_ver</label>
+					<description>TM_SpiritRally_ver_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+			</skills>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_SpiritStorm</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<abilityDefs>									
+				<li>TM_SpiritStorm</li>
+			</abilityDefs>
+			<skills>
+				<li>
+					<label>TM_SpiritStorm_pwr</label>
+					<description>TM_SpiritStorm_pwr_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_SpiritStorm_eff</label>
+					<description>TM_SpiritStorm_eff_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_SpiritStorm_ver</label>
+					<description>TM_SpiritStorm_ver_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+			</skills>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_ConsumeCorpse_Mass</defName>	
+		<customPower>	
+			<forMage>true</forMage>
+			<abilityDefs>									
+				<li>TM_ConsumeCorpse_Mass</li>
+			</abilityDefs>
+			<skills>
+				<li>
+					<label>TM_ConsumeCorpse_eff</label>
+					<description>TM_ConsumeCorpse_eff_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_ConsumeCorpse_ver</label>
+					<description>TM_ConsumeCorpse_ver_desc</description>
+					<levelMax>3</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+			</skills>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef>
+	
+<!-- 	<TorannMagic.TM_CustomPowerDef ParentName="CustomPower">
+		<defName>TM_ShadowSlayer</defName>	
+		<customPower>	
+			<forFighter>true</forFighter>
+			<abilityDefs>								
+				<li>TM_ShadowSlayer</li>
+			</abilityDefs>
+			<skills>
+				<li>										
+					<label>TM_ShadowSlayer_pwr</label>
+					<description>TM_ShadowSlayer_pwr_desc</description>
+					<levelMax>5</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_ShadowSlayer_eff</label>
+					<description>TM_ShadowSlayer_eff_desc</description>
+					<levelMax>5</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+				<li>
+					<label>TM_ShadowSlayer_ver</label>
+					<description>TM_ShadowSlayer_ver_desc</description>
+					<levelMax>5</levelMax>
+					<costToLevel>1</costToLevel>
+				</li>
+			</skills>										
+		</customPower>
+	</TorannMagic.TM_CustomPowerDef> -->
+  
+</Defs>

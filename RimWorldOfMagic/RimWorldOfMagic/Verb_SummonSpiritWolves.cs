@@ -61,7 +61,7 @@ namespace TorannMagic
             {
                 foreach (IntVec3 c in tmpList)
                 {
-                    if (c != null && (c.IsValid && c.Standable(map) && c.InBoundsWithNullCheck(map)))
+                    if (c.IsValid && (c.IsValid && c.Standable(map) && c.InBoundsWithNullCheck(map)))
                     {
                         cellList.Add(c);
                     }

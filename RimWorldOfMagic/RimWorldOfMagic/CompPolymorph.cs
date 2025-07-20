@@ -191,10 +191,10 @@ namespace TorannMagic
             this.original = null;            
         }
 
-        public override void PostDeSpawn(Map map)
+        public override void PostDeSpawn(Map map, DestroyMode mode = DestroyMode.Vanish)
         {
             this.effecter?.Cleanup();            
-            base.PostDeSpawn(map);            
+            base.PostDeSpawn(map, mode);            
         }
 
         public override void PostExposeData()

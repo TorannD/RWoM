@@ -9,12 +9,12 @@ using HarmonyLib;
 
 namespace TorannMagic.WorldTransport
 {
-    public class TM_TravelingTransportPods : TravelingTransportPods
+    public class TM_TravelingTransportPods : TravellingTransporters
     {
         public IntVec3 destinationCell = default(IntVec3);
         public bool draftFlag = false;
 
-        private List<ActiveDropPodInfo> pods = new List<ActiveDropPodInfo>();
+        private List<ActiveTransporterInfo> pods = new List<ActiveTransporterInfo>();
         private bool arrived;
         private float traveledPct;
         public float TravelSpeed = 0.00025f;
@@ -24,8 +24,8 @@ namespace TorannMagic.WorldTransport
         {
             get
             {
-                Vector3 start = Find.WorldGrid.GetTileCenter(Traverse.Create(root: this).Field(name: "initialTile").GetValue<int>());
-                Vector3 end = Find.WorldGrid.GetTileCenter(Traverse.Create(root: this).Field(name: "destinationTile").GetValue<int>());
+                Vector3 start = Find.WorldGrid.GetTileCenter(Traverse.Create(root: this).Field(name: "initialTile").GetValue<PlanetTile>());
+                Vector3 end = Find.WorldGrid.GetTileCenter(Traverse.Create(root: this).Field(name: "destinationTile").GetValue<PlanetTile>());
                 if (start == end)
                 {
                     return 1f;
@@ -39,8 +39,10 @@ namespace TorannMagic.WorldTransport
             }
         }
 
-        public override void Tick()
+        protected override void TickInterval(int delta)
         {
+            base.TickInterval(delta);
+
             for (int i = 0; i < this.AllComps.Count; i++)
             {
                 AllComps[i].CompTick();
@@ -72,24 +74,24 @@ namespace TorannMagic.WorldTransport
                                 arrivalAction = new WorldTransport.TM_TransportPodsArrivalAction_LandAtExactCell(maps[i].Parent, destinationCell, draftFlag);
                                 break;
                             }
-                            arrivalAction = new TransportPodsArrivalAction_LandInSpecificCell(maps[i].Parent, DropCellFinder.RandomDropSpot(maps[i]));
+                            arrivalAction = new TransportersArrivalAction_LandInSpecificCell(maps[i].Parent, DropCellFinder.RandomDropSpot(maps[i]));
                             break;
                         }
                     }
                     if (arrivalAction == null)
                     {
-                        if (TransportPodsArrivalAction_FormCaravan.CanFormCaravanAt(pods.Cast<IThingHolder>(), destinationTile))
+                        if (TransportersArrivalAction_FormCaravan.CanFormCaravanAt(pods.Cast<IThingHolder>(), destinationTile))
                         {
-                            arrivalAction = new TransportPodsArrivalAction_FormCaravan();
+                            arrivalAction = new TransportersArrivalAction_FormCaravan();
                         }
                         else
                         {
                             List<Caravan> caravans = Find.WorldObjects.Caravans;
                             for (int j = 0; j < caravans.Count; j++)
                             {
-                                if (caravans[j].Tile == destinationTile && (bool)TransportPodsArrivalAction_GiveToCaravan.CanGiveTo(pods.Cast<IThingHolder>(), caravans[j]))
+                                if (caravans[j].Tile == destinationTile && (bool)TransportersArrivalAction_GiveToCaravan.CanGiveTo(pods.Cast<IThingHolder>(), caravans[j]))
                                 {
-                                    arrivalAction = new TransportPodsArrivalAction_GiveToCaravan(caravans[j]);
+                                    arrivalAction = new TransportersArrivalAction_GiveToCaravan(caravans[j]);
                                     break;
                                 }
                             }
@@ -149,10 +151,13 @@ namespace TorannMagic.WorldTransport
                 Messages.Message("MessageTransportPodsArrivedAndLost".Translate(), new GlobalTargetInfo(destinationTile), MessageTypeDefOf.NegativeEvent);
             }
             pods.Clear();
-            Destroy();
+            if (!Destroyed)
+            {
+                Destroy();
+            }
         }
 
-        public new void AddPod(ActiveDropPodInfo contents, bool justLeftTheMap)
+        public new void AddPod(ActiveTransporterInfo contents, bool justLeftTheMap)
         {
             contents.parent = this;
             pods.Add(contents);

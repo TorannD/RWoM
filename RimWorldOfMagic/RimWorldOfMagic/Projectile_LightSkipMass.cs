@@ -5,6 +5,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System;
 using RimWorld;
+using HarmonyLib;
 using RimWorld.Planet;
 
 namespace TorannMagic
@@ -66,7 +67,7 @@ namespace TorannMagic
             }
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
             base.Tick();
             //this.age++;
@@ -175,7 +176,7 @@ namespace TorannMagic
                     }
                     Thing pod = ThingMaker.MakeThing(TorannMagicDefOf.TM_LightPod, null);
                     CompLaunchable podL = pod.TryGetComp<CompLaunchable>();
-                    CompTransporter podT = podL.Transporter;
+                    CompTransporter podT = podL.parent.TryGetComp<CompTransporter>(); // Traverse.Create(root: podL).Field(name: "Transporter").GetValue<CompTransporter>(); //podL.Transporter;
                     GenPlace.TryPlaceThing(pod, p.Position, p.Map, ThingPlaceMode.Near);
                     //GenSpawn.Spawn(pod, p.Position, this.Map, WipeMode.Vanish);
                     podT.groupID = 12;
@@ -203,8 +204,8 @@ namespace TorannMagic
             Map map = this.Map;
             int groupID = compTransporter.groupID;
             ThingOwner directlyHeldThings = compTransporter.GetDirectlyHeldThings();
-            ActiveDropPod activeDropPod = (ActiveDropPod)ThingMaker.MakeThing(ThingDefOf.ActiveDropPod);
-            activeDropPod.Contents = new ActiveDropPodInfo();
+            ActiveTransporter activeDropPod = (ActiveTransporter)ThingMaker.MakeThing(ThingDefOf.ActiveDropPod);
+            activeDropPod.Contents = new ActiveTransporterInfo();
             activeDropPod.Contents.innerContainer.TryAddRangeOrTransfer(directlyHeldThings, canMergeWithExistingStacks: true, destroyLeftover: true);
             WorldTransport.TM_DropPodLeaving obj = (WorldTransport.TM_DropPodLeaving)SkyfallerMaker.MakeSkyfaller(TorannMagicDefOf.TM_LightPodLeaving, activeDropPod);
             obj.groupID = groupID;

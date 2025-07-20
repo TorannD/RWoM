@@ -45,7 +45,7 @@ namespace TorannMagic
             Scribe_Collections.Look<IntVec3>(ref this.summoningCircle, "summoningCircle", LookMode.Value);
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
             base.Tick();
             if(this.demonPawn != null)

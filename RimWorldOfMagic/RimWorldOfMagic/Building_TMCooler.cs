@@ -39,7 +39,7 @@ namespace TorannMagic
             base.ExposeData();
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
             if(!initialized)
             {

@@ -194,9 +194,13 @@ namespace TorannMagic
             this.variationDestination = base.Position.ToVector3Shifted(); //this.DrawPos //not initialized?
             this.drawPosition = base.Position.ToVector3Shifted(); //this.DrawPos; 
             this.Initialize();
-        }        
+        }
 
-        public override void Tick()
+        protected override void Tick()
+        {
+        }
+
+        protected override void TickInterval(int delta)
         {
             this.duration--;
             base.Position = this.origin.ToIntVec3();

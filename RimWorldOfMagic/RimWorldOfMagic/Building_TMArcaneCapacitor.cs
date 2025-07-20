@@ -115,7 +115,7 @@ namespace TorannMagic
             return Building_TMArcaneCapacitor.portableCells;
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
             base.Tick();
             if (Find.TickManager.TicksGame % 120 == 0 && this.CapacitorIsOn)

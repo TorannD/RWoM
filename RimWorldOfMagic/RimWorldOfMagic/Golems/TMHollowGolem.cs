@@ -86,7 +86,7 @@ namespace TorannMagic.Golems
             }
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
             base.Tick();
             if(shouldDrawHoverMote && this.Map != null)

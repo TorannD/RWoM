@@ -16,7 +16,7 @@ namespace TorannMagic.Golems
 {
     public class Building_TMGolemStraw : Building_TMGolemBase
     {
-        public override void Tick()
+        protected override void Tick()
         {
             base.Tick();
         }
