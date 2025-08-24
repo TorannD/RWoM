@@ -309,6 +309,7 @@ The claims that pomanasyrrium grant insight and clarity is disregarded by most a
 			<addictiveness>0.028</addictiveness>
 			<minToleranceToAddict>0.55</minToleranceToAddict>
 			<existingAddictionSeverityOffset>0.25</existingAddictionSeverityOffset>
+			<overdoseSeverityOffset>0.2~0.35</overdoseSeverityOffset>
 			<needLevelOffset>1</needLevelOffset>
 			<listOrder>1677</listOrder>
 		</li>
@@ -404,6 +405,7 @@ The claims that pomanasyrrium grant insight and clarity is disregarded by most a
     <needClass>Need_Chemical</needClass>
     <label>syrrium</label>
     <description>This person feels like they need syrrium to be the person they want to be; withdrawal is mostly self-inflicted doubt and insecurity, though it can also cause serious brain damage.</description>
+	<fallPerDay>0.25</fallPerDay>
     <listPriority>72</listPriority>
   </NeedDef>
 
@@ -424,22 +426,39 @@ The claims that pomanasyrrium grant insight and clarity is disregarded by most a
 				<hediff>Cirrhosis</hediff>
 				<minSeverity>0.60</minSeverity>
 				<baseMtbDays>120</baseMtbDays>
+				<severityToMtbDaysCurve>
+				  <points>
+					<li>(0.6, 99999)</li>
+					<li>(0.65, 120)</li>
+					<li>(1, 90)</li>
+				  </points>
+				</severityToMtbDaysCurve>
 				<partsToAffect>
 					<li>Liver</li>
 				</partsToAffect>
 			</li>
 			<li Class="HediffGiver_RandomDrugEffect">
 				<hediff>Carcinoma</hediff>
-				<minSeverity>0.70</minSeverity>
-				<baseMtbDays>200</baseMtbDays>
+				<severityToMtbDaysCurve>
+				  <points>
+					<li>(0.65, 99999)</li>
+					<li>(0.7, 200)</li>
+					<li>(1, 120)</li>
+				  </points>
+				</severityToMtbDaysCurve>
 				<partsToAffect>
 					<li>Liver</li>
 				</partsToAffect>
 			</li>
 			<li Class="HediffGiver_RandomDrugEffect">
 				<hediff>ChemicalDamageModerate</hediff>
-				<minSeverity>0.25</minSeverity>
-				<baseMtbDays>50</baseMtbDays>
+				<severityToMtbDaysCurve>
+				  <points>
+					<li>(0.25, 99999)</li>
+					<li>(0.5, 50)</li>
+					<li>(1, 35)</li>
+				  </points>
+				</severityToMtbDaysCurve>
 				<partsToAffect>
 					<li>Brain</li>
 				</partsToAffect>
@@ -448,6 +467,13 @@ The claims that pomanasyrrium grant insight and clarity is disregarded by most a
 				<hediff>ChemicalDamageSevere</hediff>
 				<minSeverity>0.40</minSeverity>
 				<baseMtbDays>90</baseMtbDays>
+				<severityToMtbDaysCurve>
+				  <points>
+					<li>(0.45, 99999)</li>
+					<li>(0.5, 90)</li>
+					<li>(1, 75)</li>
+				  </points>
+				</severityToMtbDaysCurve>
 				<partsToAffect>
 					<li>Brain</li>
 				</partsToAffect>
@@ -460,16 +486,15 @@ The claims that pomanasyrrium grant insight and clarity is disregarded by most a
     <hediffClass>Hediff_Addiction</hediffClass>
     <label>syrrium addiction</label>
 	<description>The urge to feel the effects of syrrium have developed into a need.</description>
+	<chemicalNeed>Chemical_Syrrium</chemicalNeed>
     <comps>
       <li Class="HediffCompProperties_SeverityPerDay">
         <severityPerDay>-0.3</severityPerDay>
+		<showDaysToRecover>true</showDaysToRecover>
       </li>
     </comps>
     <stages>
 		<li>
-		<enablesNeeds>
-			<li>Chemical_Syrrium</li>
-		</enablesNeeds>
 		</li>
       <li>
         <label>withdrawal</label>
@@ -479,9 +504,6 @@ The claims that pomanasyrrium grant insight and clarity is disregarded by most a
             <offset>-0.25</offset>
           </li>
         </capMods>
-		<enablesNeeds>
-			<li>Chemical_Syrrium</li>
-		</enablesNeeds>
 		<statOffsets>
 		  <GlobalLearningFactor>-0.25</GlobalLearningFactor>
 	    </statOffsets>

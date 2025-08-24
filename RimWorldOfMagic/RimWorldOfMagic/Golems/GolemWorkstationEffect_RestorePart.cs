@@ -42,14 +42,19 @@ namespace TorannMagic.Golems
                         if (hd.Part != null && hd is Hediff_MissingPart)
                         {
                             bool partRequiresUpgrade = false;
+                            bool partHasUpgrade = false;
                             foreach (TM_GolemUpgrade gu in golem_building.Upgrades)
                             {
                                 if (gu.golemUpgradeDef.bodypart == hd.Part.def && gu.golemUpgradeDef.partRequiresUpgrade)
                                 {
                                     partRequiresUpgrade = true;
+                                    if(gu.currentLevel > 0)
+                                    {
+                                        partHasUpgrade = true;
+                                    }
                                 }
                             }
-                            if (!partRequiresUpgrade)
+                            if (!partRequiresUpgrade || partHasUpgrade)
                             {
                                 if (hd.Part != null)
                                 {
@@ -74,14 +79,19 @@ namespace TorannMagic.Golems
                     if(hd.Part != null && hd is Hediff_MissingPart)
                     {
                         bool partRequiresUpgrade = false;
+                        bool partHasUpgrade = false;
                         foreach (TM_GolemUpgrade gu in golem_building.Upgrades)
                         {
                             if (gu.golemUpgradeDef.bodypart == hd.Part.def && gu.golemUpgradeDef.partRequiresUpgrade)
                             {
-                                partRequiresUpgrade = true;                                
+                                partRequiresUpgrade = true;
+                                if (gu.currentLevel > 0)
+                                {
+                                    partHasUpgrade = true;
+                                }
                             }                            
                         }
-                        if(!partRequiresUpgrade)
+                        if(!partRequiresUpgrade || partHasUpgrade)
                         {
                             return true;
                         }

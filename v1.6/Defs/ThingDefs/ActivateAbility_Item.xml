@@ -73,7 +73,7 @@
       </li>
       <li Class="CompProperties_Usable">
         <useJob>UseArtifact</useJob>
-        <useLabel>Use</useLabel>
+        <useLabel>Use {0_label}</useLabel>
       </li>
     </comps>
   </ThingDef>
@@ -121,7 +121,7 @@
       </li>
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
-        <useLabel>Use shard of extraction</useLabel>
+        <useLabel>Use {0_label}</useLabel>
         <useDuration>500</useDuration>
       </li>
       <li Class="CompProperties_UseEffectDestroySelf" />
@@ -186,7 +186,7 @@
 	<comps>
 	  <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
-        <useLabel>Use essence of might</useLabel>
+        <useLabel>Use {0_label}</useLabel>
         <useDuration>200</useDuration>
       </li>
 	  <li Class="CompProperties_Forbiddable" />
@@ -224,7 +224,7 @@
 	<comps>
 	  <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
-        <useLabel>Use essence of magic</useLabel>
+        <useLabel>Use {0_label}</useLabel>
         <useDuration>200</useDuration>
       </li>
 	  <li Class="CompProperties_Forbiddable" />

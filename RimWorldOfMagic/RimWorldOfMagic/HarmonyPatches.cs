@@ -90,6 +90,7 @@ namespace TorannMagic
             harmonyInstance.Patch(AccessTools.Method(typeof(Pawn), "get_ShouldAvoidFences", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_GolemShouldAvoidFences"), null, null);
             harmonyInstance.Patch(AccessTools.Method(typeof(PawnRenderer), "get_CurRotDrawMode", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_RotBodyForUndead"), null, null);
             harmonyInstance.Patch(AccessTools.Method(typeof(Pawn), "get_IsColonySubhumanPlayerControlled", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_GolemControl"), null, null);
+            //harmonyInstance.Patch(AccessTools.Method(typeof(Pawn), "get_IsPlayerControlled", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_GolemControlTwo"), null, null);
             //harmonyInstance.Patch(AccessTools.Method(typeof(Pawn_HealthTracker), "get_CanBleed", null, null), null, new HarmonyMethod(typeof(TorannMagicMod), "Get_Undead_CanBleed"), null, null);
             //harmonyInstance.Patch(AccessTools.Method(typeof(Precept_Relic), "get_RelicInPlayerPossession", null, null),null, new HarmonyMethod(typeof(TorannMagicMod), "Get_DelayRelicLost"), null);
             //harmonyInstance.Patch(AccessTools.Method(typeof(Pawn), "get_InAggroMentalState", null, null), new HarmonyMethod(typeof(TorannMagicMod), "Get_UndeadAggroMentalState"), null, null);
@@ -428,6 +429,7 @@ namespace TorannMagic
         //        if(__instance.parent)
         //    }
         //}
+       
 
         /// <summary>
         /// Fix provided by Glothia
@@ -1246,6 +1248,16 @@ namespace TorannMagic
         //    }
         //}
 
+        //public static bool Get_GolemControlTwo(Pawn __instance, ref bool __result)
+        //{
+        //    if (__instance.Spawned && TM_Calc.IsGolem(__instance))
+        //    {
+        //        __result = true;
+        //        return false;
+        //    }
+        //    return true;
+        //}
+
         public static bool Get_GolemControl(Pawn __instance, ref bool __result)
         {
             if (__instance.Spawned && TM_Calc.IsGolem(__instance))
@@ -1282,7 +1294,6 @@ namespace TorannMagic
         {
             public static bool Prefix(Pawn pawn, FloatMenuContext context, ref bool __result)
             {
-                Log.Message("1");
                 if(!pawn.Drafted)
                 {
                     if ((pawn.GetComp<CompPolymorph>() != null && pawn.GetComp<CompPolymorph>().Original != null) || pawn.def == TorannMagicDefOf.TM_SpiritTD)

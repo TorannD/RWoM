@@ -90,10 +90,7 @@
         <needLevelOffset>1</needLevelOffset>
         <isCombatEnhancingDrug>false</isCombatEnhancingDrug>
         <listOrder>200</listOrder>
-        <overdoseSeverityOffset>
-          <min>0.18</min>
-          <max>0.50</max>
-        </overdoseSeverityOffset>
+		<overdoseSeverityOffset>0.18~0.50</overdoseSeverityOffset>
 		<largeOverdoseChance>0.01</largeOverdoseChance>
       </li>
     </comps>
@@ -161,6 +158,7 @@
     <needClass>Need_Chemical</needClass>
     <label>mana potion</label>
     <description>This person has become addicted to the chemicals and affects of mana potions and will suffer severe withdrawal symptoms if they don't continue consuming mana potions.</description>
+	<fallPerDay>0.165</fallPerDay>
     <listPriority>45</listPriority>
   </NeedDef>
 
@@ -193,16 +191,15 @@
     <hediffClass>Hediff_Addiction</hediffClass>
     <label>mana potion addiction</label>
 	<description>The urge to consume mana potions has developed into a need.</description>
+	<chemicalNeed>Chemical_ManaPotion</chemicalNeed>
     <comps>
       <li Class="HediffCompProperties_SeverityPerDay">
         <severityPerDay>-0.14</severityPerDay>
+		<showDaysToRecover>true</showDaysToRecover>
       </li>
     </comps>
     <stages>
       <li>
-		<enablesNeeds>
-			<li>Chemical_ManaPotion</li>
-		</enablesNeeds>
       </li>
       <li>
         <label>withdrawal</label>
@@ -230,18 +227,15 @@
             <offset>-0.20</offset>
           </li>
         </capMods>
-		<enablesNeeds>
-			<li>Chemical_ManaPotion</li>
-		</enablesNeeds>
         <mentalStateGivers>
 					<li>
 						<mentalState>Binging_DrugExtreme</mentalState>
 						<mtbDays>2</mtbDays>
 					</li>
-          <li>
-            <mentalState>Wander_Psychotic</mentalState>
-            <mtbDays>3</mtbDays>
-          </li>
+				  <li>
+					<mentalState>Wander_Psychotic</mentalState>
+					<mtbDays>3</mtbDays>
+				  </li>
         </mentalStateGivers>
       </li>
     </stages>
@@ -252,6 +246,7 @@
     <workerClass>ThoughtWorker_Hediff</workerClass>
     <hediff>ManaPotionAddiction</hediff>
     <validWhileDespawned>true</validWhileDespawned>
+	<developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
     <stages>
       <li>
         <visible>false</visible>

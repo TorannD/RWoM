@@ -293,7 +293,6 @@ namespace TorannMagic.Golems
                                             guz.currentLevel = 0;
                                             TM_Action.RemoveBodypart(GolemPawn, GolemPawn.RaceProps.body.AllParts.FirstOrDefault((BodyPartRecord x) => x.def == guz.golemUpgradeDef.bodypart));
                                             Messages.Message("TM_GolemPartReplaced".Translate(gu.golemUpgradeDef.label, guz.golemUpgradeDef.label, gu.golemUpgradeDef.OccupiedPart.label), MessageTypeDefOf.NeutralEvent);
-                                            break;
                                         }
                                     }
                                 }

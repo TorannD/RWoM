@@ -465,38 +465,38 @@ namespace TorannMagic.Golems
         {
             var gizmoList = base.GetGizmos().ToList();
 
-            if (drafter != null)
-            {
-                Command_Toggle command_Toggle = new Command_Toggle();
-                command_Toggle.hotKey = KeyBindingDefOf.Command_ColonistDraft;
-                command_Toggle.isActive = (() => Drafted);
-                command_Toggle.toggleAction = delegate
-                {
-                    this.drafter.Drafted = !Drafted;
-                    if (verbCommands != null)
-                    {
-                        verbCommands.Clear();
-                    }
-                };
-                command_Toggle.defaultDesc = "CommandToggleDraftDesc".Translate();
-                command_Toggle.icon = TexCommand.Draft;
-                command_Toggle.turnOnSound = SoundDefOf.DraftOn;
-                command_Toggle.turnOffSound = SoundDefOf.DraftOff;
-                command_Toggle.defaultLabel = (Drafted ? "CommandUndraftLabel" : "CommandDraftLabel").Translate();
-                if (this.Downed)
-                {
-                    command_Toggle.Disable("IsIncapped".Translate(this.LabelShort, this));
-                }
-                if (!Drafted)
-                {
-                    command_Toggle.tutorTag = "Draft";
-                }
-                else
-                {
-                    command_Toggle.tutorTag = "Undraft";
-                }
-                gizmoList.Add(command_Toggle);
-            }
+            //if (drafter != null)
+            //{
+            //    Command_Toggle command_Toggle = new Command_Toggle();
+            //    command_Toggle.hotKey = KeyBindingDefOf.Command_ColonistDraft;
+            //    command_Toggle.isActive = (() => Drafted);
+            //    command_Toggle.toggleAction = delegate
+            //    {
+            //        this.drafter.Drafted = !Drafted;
+            //        if (verbCommands != null)
+            //        {
+            //            verbCommands.Clear();
+            //        }
+            //    };
+            //    command_Toggle.defaultDesc = "CommandToggleDraftDesc".Translate();
+            //    command_Toggle.icon = TexCommand.Draft;
+            //    command_Toggle.turnOnSound = SoundDefOf.DraftOn;
+            //    command_Toggle.turnOffSound = SoundDefOf.DraftOff;
+            //    command_Toggle.defaultLabel = (Drafted ? "CommandUndraftLabel" : "CommandDraftLabel").Translate();
+            //    if (this.Downed)
+            //    {
+            //        command_Toggle.Disable("IsIncapped".Translate(this.LabelShort, this));
+            //    }
+            //    if (!Drafted)
+            //    {
+            //        command_Toggle.tutorTag = "Draft";
+            //    }
+            //    else
+            //    {
+            //        command_Toggle.tutorTag = "Undraft";
+            //    }
+            //    gizmoList.Add(command_Toggle);
+            //}
 
             Command_Action command_Despawn = new Command_Action();
             command_Despawn.defaultLabel = "TM_DeActivateGolem".Translate();

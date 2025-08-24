@@ -33,11 +33,16 @@ namespace TorannMagic
             else
             {
                 CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
-                MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_LightningBolt.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_LightningBolt_pwr");
-                MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_LightningBolt.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_LightningBolt_ver");
-                pwrVal = pwr.level;
-                verVal = ver.level;
-                this.arcaneDmg = comp.arcaneDmg;
+                pwrVal = 1;
+                verVal = 1;
+                if (comp != null)
+                {
+                    MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_LightningBolt.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_LightningBolt_pwr");
+                    MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_LightningBolt.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_LightningBolt_ver");
+                    pwrVal = pwr.level;
+                    verVal = ver.level;
+                    this.arcaneDmg = comp.arcaneDmg;
+                }
             }
             
             if (ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist)

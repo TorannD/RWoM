@@ -26,7 +26,7 @@
     <comps>
       <li Class="CompProperties_Usable">
         <useJob>UseArtifact</useJob>
-        <useLabel>TM_Use</useLabel>
+        <useLabel>Use {0_label}</useLabel>
       </li>
       <li Class="CompProperties_UseEffect">
         <compClass>TorannMagic.CompUseEffect_GemOfInsight</compClass>
@@ -59,7 +59,7 @@
     <comps>
       <li Class="CompProperties_Usable">
         <useJob>UseArtifact</useJob>
-        <useLabel>TM_Read</useLabel>
+        <useLabel>Read {0_label}</useLabel>
       </li>
       <li Class="CompProperties_UseEffect">
         <compClass>TorannMagic.CompUseEffect_LearnMagic</compClass>
@@ -93,7 +93,7 @@
     <comps>
       <li Class="CompProperties_Usable">
         <useJob>UseArtifact</useJob>
-        <useLabel>TM_Read</useLabel>
+        <useLabel>Read {0_label}</useLabel>
       </li>
       <li Class="CompProperties_UseEffect">
         <compClass>TorannMagic.CompUseEffect_LearnMagic</compClass>
@@ -127,7 +127,7 @@
     <comps>
       <li Class="CompProperties_Usable">
         <useJob>UseArtifact</useJob>
-        <useLabel>TM_Read</useLabel>
+        <useLabel>Read {0_label}</useLabel>
       </li>
       <li Class="CompProperties_UseEffect">
         <compClass>TorannMagic.CompUseEffect_LearnMight</compClass>
@@ -163,7 +163,7 @@
     <comps>
       <li Class="CompProperties_Usable">
         <useJob>UseArtifact</useJob>
-        <useLabel>TM_Inject</useLabel>
+        <useLabel>Inject {0_label}</useLabel>
       </li>
       <li Class="CompProperties_UseEffect">
         <compClass>TorannMagic.CompUseEffect_LearnMight</compClass>
@@ -198,7 +198,7 @@
     <comps>
       <li Class="CompProperties_Usable">
         <useJob>UseArtifact</useJob>
-        <useLabel>TM_Learn</useLabel>
+        <useLabel>Learn {0_label}</useLabel>
       </li>
       <li Class="CompProperties_UseEffect">
         <compClass>TorannMagic.CompUseEffect_LearnSpell</compClass>
@@ -233,7 +233,7 @@
     <comps>
       <li Class="CompProperties_Usable">
         <useJob>UseArtifact</useJob>
-        <useLabel>TM_Learn</useLabel>
+        <useLabel>Learn {0_label}</useLabel>
       </li>
       <li Class="CompProperties_UseEffect">
         <compClass>TorannMagic.CompUseEffect_LearnSkill</compClass>
