@@ -25,6 +25,7 @@
       <foodType>None</foodType>
       <lifeExpectancy>2500</lifeExpectancy>
 	  <allowedOnCaravan>true</allowedOnCaravan>
+	  <canBeVacuumBurnt>false</canBeVacuumBurnt>
     </race>
     <inspectorTabs>
 	  <li>TorannMagic.Golems.ITab_GolemPawn</li>

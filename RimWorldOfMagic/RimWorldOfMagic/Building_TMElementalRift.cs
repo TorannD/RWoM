@@ -98,7 +98,7 @@ namespace TorannMagic
                 {
                     this.difficultyMultiplier = .75f;
                 }
-                this.difficultyMultiplier -= this.STDMultiplier;
+                //this.difficultyMultiplier -= this.STDMultiplier;
                 this.ticksTillNextAssault = (int)(Rand.Range(2600, 4000) * this.difficultyMultiplier);
                 this.ticksTillNextEvent = (int)(Rand.Range(160, 300) * this.eventFrequencyMultiplier);
                 initialized = true;
@@ -355,29 +355,29 @@ namespace TorannMagic
         {
             float wealthMultiplier = .7f;
             float wealth = this.Map.PlayerWealthForStoryteller;
-            if(wealth > 20000)
+            if(wealth > 50000)
             {
                 wealthMultiplier = .8f;
             }
-            if(wealth > 50000)
+            if(wealth > 100000)
             {
                 wealthMultiplier = 1f;
             }
-            if(wealth > 100000)
+            if(wealth > 250000)
             {
                 wealthMultiplier = 1.25f;
             }
-            if(wealth > 250000)
+            if(wealth > 500000)
             {
                 wealthMultiplier = 1.5f;
             }
-            if(wealth > 500000)
+            if(wealth > 1000000)
+            {
+                wealthMultiplier = 1.75f;
+            }
+            if (wealth > 5000000)
             {
                 wealthMultiplier = 2f;
-            }
-            if (wealth > 1000000)
-            {
-                wealthMultiplier = 2.5f;
             }
             
             float geChance = 0.007f * wealthMultiplier;

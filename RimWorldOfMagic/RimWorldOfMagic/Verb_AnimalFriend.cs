@@ -43,7 +43,6 @@ namespace TorannMagic
             MightPowerSkill ver = base.CasterPawn.GetCompAbilityUserMight().MightData.MightPowerSkill_AnimalFriend.FirstOrDefault((MightPowerSkill x) => x.label == "TM_AnimalFriend_ver");
             Pawn pawn = this.CasterPawn;
             Pawn animal = this.currentTarget.Thing as Pawn;
-
             if(animal !=null && animal.RaceProps.Animal && animal.RaceProps.IsFlesh)
             {
                 Pawn oldbond = comp.bondedPet;
@@ -119,7 +118,7 @@ namespace TorannMagic
                                     }
                                 }
                                 animal.SetFaction(pawn.Faction);
-                                HealthUtility.AdjustSeverity(animal, TorannMagicDefOf.TM_RangerBondHD, -4f);
+                                //HealthUtility.AdjustSeverity(animal, TorannMagicDefOf.TM_RangerBondHD, -4f);
                                 HealthUtility.AdjustSeverity(animal, TorannMagicDefOf.TM_RangerBondHD, .5f + ver.level);
                                 comp.bondedPet = animal;
                                 MoteMaker.MakeInteractionBubble(animal, pawn, InteractionDefOf.Nuzzle.interactionMote, InteractionDefOf.Nuzzle.GetSymbol());

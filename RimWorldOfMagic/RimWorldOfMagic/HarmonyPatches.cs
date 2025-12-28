@@ -38,6 +38,11 @@ namespace TorannMagic
         {
             var harmonyInstance = new Harmony("rimworld.torann.tmagic");
 
+            harmonyInstance.Patch(AccessTools.Method(typeof(Pawn_GuestTracker), "SetGuestStatus", new Type[]
+                {
+                    typeof(Faction),
+                    typeof(GuestStatus)
+                }, null), new HarmonyMethod(typeof(TorannMagicMod), "SetGuestStatusForUndead_Prefix", null), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(IncidentWorker_SelfTame), "Candidates"), null,
                  new HarmonyMethod(patchType, nameof(SelfTame_Candidates_Patch)), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(IncidentWorker_DiseaseHuman), "PotentialVictimCandidates"), null,
@@ -429,7 +434,17 @@ namespace TorannMagic
         //        if(__instance.parent)
         //    }
         //}
-       
+
+        [HarmonyPriority(2000)] //Go first to override other guest checking; do not let undead become guests or dynamically change hediff components
+        private static bool SetGuestStatusForUndead_Prefix(Faction newHost, Pawn ___pawn, GuestStatus guestStatus = GuestStatus.Guest)
+        {
+            if(TM_Calc.IsUndeadNotVamp(___pawn))
+            {
+                return false;
+            }
+            return true;
+        }
+
 
         /// <summary>
         /// Fix provided by Glothia
@@ -6016,7 +6031,7 @@ namespace TorannMagic
         {
             private static bool Prefix(Pawn_SkillTracker __instance, Pawn ___pawn)
             {
-                if (___pawn != null)
+                if (___pawn?.story?.traits != null)
                 {
                     if (___pawn.story.traits.HasTrait(TorannMagicDefOf.Undead))
                     {

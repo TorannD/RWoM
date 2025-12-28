@@ -60,7 +60,7 @@ namespace TorannMagic.Golems
 
         protected override bool TryCastShot()
         {
-            if (GolemPawn?.Golem?.Energy != null)
+            if (GolemPawn?.Golem?.Energy != null && GolemPawn?.activeVerb?.verbProps?.consumeFuelPerShot != null)
             {
                 GolemPawn.drawTickFlag = false;
                 GolemPawn.Golem.Energy.SubtractEnergy(GolemPawn.activeVerb.verbProps.consumeFuelPerShot);

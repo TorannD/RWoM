@@ -17,7 +17,7 @@
 		<defName>TM_Golem_SilkMaxEnergy</defName>
 		<label>energy storage</label>
 		<description>Increases maximum energy by 100 per level. Starting max energy is 300.</description>
-		<recipe>TM_StrawGolem_EnergyMax</recipe>
+		<recipe>TM_SilkGolem_EnergyMax</recipe>
 		<bodypart>Golem_Spine</bodypart>
 		<partRequiresUpgrade>false</partRequiresUpgrade>
 		<maxLevel>3</maxLevel>

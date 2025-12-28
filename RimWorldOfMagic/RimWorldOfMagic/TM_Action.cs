@@ -2679,50 +2679,63 @@ namespace TorannMagic
 
         public static void TrainAnimalFull(Pawn animal, Pawn trainer)
         {
-            if (animal.training.CanBeTrained(TrainableDefOf.Tameness))
+            if (animal != null && animal.training != null)
             {
-                while (!animal.training.HasLearned(TrainableDefOf.Tameness))
+                int brk = 0;
+                if (animal.training.CanBeTrained(TrainableDefOf.Tameness))
                 {
-                    animal.training.Train(TrainableDefOf.Tameness, trainer);
+                    while (!animal.training.HasLearned(TrainableDefOf.Tameness) && brk < 7)
+                    {
+                        animal.training.Train(TrainableDefOf.Tameness, trainer);
+                        brk++;
+                    }
+                }
+
+                if (animal.training.CanBeTrained(TrainableDefOf.Obedience))
+                {
+                    brk = 0;
+                    while (!animal.training.HasLearned(TrainableDefOf.Obedience) && brk < 7)
+                    {
+                        animal.training.Train(TrainableDefOf.Obedience, trainer);
+                        brk++;
+                    }
+                }
+
+                if (animal.training.CanBeTrained(TrainableDefOf.Release))
+                {
+                    brk = 0;
+                    while (!animal.training.HasLearned(TrainableDefOf.Release) && brk < 7)
+                    {
+                        animal.training.Train(TrainableDefOf.Release, trainer);
+                        brk++;
+                    }
+                }
+
+                if (animal.training.CanBeTrained(TorannMagicDefOf.Haul))
+                {
+                    brk = 0;
+                    while (!animal.training.HasLearned(TorannMagicDefOf.Haul) && brk < 7)
+                    {
+                        animal.training.Train(TorannMagicDefOf.Haul, trainer);
+                        brk++;
+                    }
+                }
+
+                if (animal.training.CanBeTrained(TorannMagicDefOf.Rescue))
+                {
+                    brk = 0;
+                    while (!animal.training.HasLearned(TorannMagicDefOf.Rescue) && brk < 7)
+                    {
+                        animal.training.Train(TorannMagicDefOf.Rescue, trainer);
+                        brk++;
+                    }
                 }
             }
-
-            if (animal.training.CanBeTrained(TrainableDefOf.Obedience))
-            {
-                while (!animal.training.HasLearned(TrainableDefOf.Obedience))
-                {
-                    animal.training.Train(TrainableDefOf.Obedience, trainer);
-                }
-            }
-
-            if (animal.training.CanBeTrained(TrainableDefOf.Release))
-            {
-                while (!animal.training.HasLearned(TrainableDefOf.Release))
-                {
-                    animal.training.Train(TrainableDefOf.Release, trainer);
-                }
-            }
-
-            if (animal.training.CanBeTrained(TorannMagicDefOf.Haul))
-            {
-                while (!animal.training.HasLearned(TorannMagicDefOf.Haul))
-                {
-                    animal.training.Train(TorannMagicDefOf.Haul, trainer);
-                }
-            }
-
-            if (animal.training.CanBeTrained(TorannMagicDefOf.Rescue))
-            {
-                while (!animal.training.HasLearned(TorannMagicDefOf.Rescue))
-                {
-                    animal.training.Train(TorannMagicDefOf.Rescue, trainer);
-                }
-            }            
         }
 
         public static void UpdateAnimalTraining(Pawn p)
         {
-            if (p.RaceProps.Animal)
+            if (p.RaceProps.Animal && p.training != null)
             {
                 if (p.training.CanAssignToTrain(TrainableDefOf.Tameness).Accepted)
                 {
