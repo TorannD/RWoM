@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- The hediff defining the installed parts -->
+
+  <!-- These go in natural parts, but don't replace them -->
+  <HediffDef Name="TM_Golem_ImplantHediffBase" Abstract="True">
+    <hediffClass>Hediff_Implant</hediffClass>
+    <defaultLabelColor>(0.6, 0.6, 1.0)</defaultLabelColor>
+    <isBad>false</isBad>
+    <priceImpact>true</priceImpact>
+    <countsAsAddedPartOrImplant>true</countsAsAddedPartOrImplant>
+  </HediffDef>
+  
+   <HediffDef>
+    <defName>TM_GolemHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.6, 0.6, 1)</defaultLabelColor>
+    <label>Golem</label>
+	<description>Health effects applied to all golems.</description>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<tendable>false</tendable>
+	<makesSickThought>false</makesSickThought>
+	<makesAlert>false</makesAlert>
+	<isBad>false</isBad>
+	<maxSeverity>1</maxSeverity>
+	<initialSeverity>1</initialSeverity>
+    <stages>
+      <li>
+        <label></label>
+		<becomeVisible>false</becomeVisible>
+        <minSeverity>0.1</minSeverity>
+		<painFactor>0</painFactor>
+		<statOffsets>
+		  <CarryingCapacity>+75</CarryingCapacity>
+		  <ImmunityGainSpeed>3</ImmunityGainSpeed>
+		</statOffsets>
+      </li>      
+    </stages>
+  </HediffDef>
+
+</Defs>

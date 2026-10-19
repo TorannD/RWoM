@@ -96,11 +96,9 @@ namespace TorannMagic
             this.Spring(p);
             if (p.Faction == Faction.OfPlayer || p.HostFaction == Faction.OfPlayer)
             {
-                Find.LetterStack.ReceiveLetter("LetterFriendlyTrapSprungLabel".Translate(
-                    p.LabelShort
-                ), "LetterFriendlyTrapSprung".Translate(
-                    p.LabelShort
-                ), LetterDefOf.NegativeEvent, new TargetInfo(base.Position, base.Map));
+                Find.LetterStack.ReceiveLetter("LetterFriendlyTrapSprungLabel".Translate(this, p),
+                    "LetterFriendlyTrapSprung".Translate(this, p),
+                    LetterDefOf.NegativeEvent, new TargetInfo(base.Position, base.Map));
             }            
         }
 

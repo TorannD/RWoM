@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Grimoires -->
+
+  <RulePackDef>
+    <defName>TM_Book_Pools</defName>
+    <rulePack>
+      <rulesStrings>
+        <!-- Pools -->       
+		
+		<li>subject_bookType->grimoire</li>
+		<li>subject_bookType->tome</li>
+		<li>subject_bookType->codex</li>
+		<li>subject_bookType->anthology</li>
+		<li>subject_bookType->sheaf</li>
+		<li>subject_bookType->chronicle</li>
+		<li>subject_bookType->guide</li>
+		
+		<li>subject_teachingType->codex</li>
+		<li>subject_teachingType->illustration</li>
+		<li>subject_teachingType->collection</li>
+		<li>subject_teachingType->sheaf</li>
+		<li>subject_teachingType->chronicle</li>
+		<li>subject_teachingType->guide</li>
+		<li>subject_teachingType->technique</li>
+
+        <li>TM_randNoun_Magic->Death</li>
+        <li>TM_randNoun_Magic->Life</li>
+        <li>TM_randNoun_Magic->Love</li>
+        <li>TM_randNoun_Magic->Wisdom</li>
+        <li>TM_randNoun_Magic->Spell</li>
+		<li>TM_randNoun_Magic->Charm</li>
+		<li>TM_randNoun_Magic->Potion</li>
+		<li>TM_randNoun_Magic->Wand</li>
+		<li>TM_randNoun_Magic->Incantation</li>
+		<li>TM_randNoun_Magic->Ritual</li>
+		<li>TM_randNoun_Magic->Alchemy</li>
+		<li>TM_randNoun_Magic->Sorcery</li>
+		<li>TM_randNoun_Magic->Wizard</li>
+		<li>TM_randNoun_Magic->Witch</li>
+		<li>TM_randNoun_Magic->Enchantress</li>
+		<li>TM_randNoun_Magic->Mystic</li>
+		<li>TM_randNoun_Magic->Conjuring</li>
+		<li>TM_randNoun_Magic->Talisman</li>
+		<li>TM_randNoun_Magic->Amulet</li>
+		<li>TM_randNoun_Magic->Sigil</li>
+		<li>TM_randNoun_Magic->Grimoire</li>
+		<li>TM_randNoun_Magic->Arcana</li>
+		<li>TM_randNoun_Magic->Summoning</li>
+		<li>TM_randNoun_Magic->Hex</li>
+		<li>TM_randNoun_Magic->Curse</li>
+		<li>TM_randNoun_Magic->Divination</li>
+		<li>TM_randNoun_Magic->Necromancy</li>
+		<li>TM_randNoun_Magic->Spellbook</li>
+		<li>TM_randNoun_Magic->Familiar</li>
+		<li>TM_randNoun_Magic->Elixir</li>
+		<li>TM_randNoun_Magic->Coven</li>
+		<li>TM_randNoun_Magic->Oracle</li>
+		<li>TM_randNoun_Magic->Seer</li>
+		<li>TM_randNoun_Magic->Runes</li>
+		
+		<li>subject_Magic->Death</li>
+		<li>subject_Magic->Life</li>
+		<li>subject_Magic->Power</li>
+		<li>subject_Magic->Fire</li>
+		<li>subject_Magic->Ice</li>
+		<li>subject_Magic->Lightning</li>
+		<li>subject_Magic->Power</li>
+		<li>subject_Magic->the Arcane</li>
+		<li>subject_Magic->Magic</li>
+		<li>subject_Magic->Wind</li>
+		<li>subject_Magic->Earth</li>
+		<li>subject_Magic->Water</li>
+		<li>subject_Magic->Spirit</li>
+		<li>subject_Magic->Darkness</li>
+		<li>subject_Magic->Light</li>
+		<li>subject_Magic->Time</li>
+		<li>subject_Magic->Illusion</li>
+		<li>subject_Magic->Healing</li>
+		<li>subject_Magic->Transformation</li>
+		<li>subject_Magic->Summoning</li>
+		<li>subject_Magic->Alchemy</li>
+		<li>subject_Magic->Necromancy</li>
+		<li>subject_Magic->Enchantments</li>
+		<li>subject_Magic->Runes</li>
+		<li>subject_Magic->Divination</li>
+		<li>subject_Magic->Mysticism</li>
+		<li>subject_Magic->Astral Projection</li>
+		<li>subject_Magic->Telekinesis</li>
+		<li>subject_Magic->Telepathy</li>
+		<li>subject_Magic->Shapeshifting</li>
+		<li>subject_Magic->Elementals</li>
+		<li>subject_Magic->Portals</li>
+		<li>subject_Magic->Dreamwalking</li>
+		<li>subject_Magic->Sigils</li>
+		<li>subject_Magic->Familiars</li>
+		<li>subject_Magic->Hexes</li>
+		<li>subject_Magic->Curses</li>
+		<li>subject_Magic->Potions</li>
+		<li>subject_Magic->Charms</li>
+
+        <li>TM_randAdjective_Magic->Ancient</li>
+        <li>TM_randAdjective_Magic->Magical</li>
+        <li>TM_randAdjective_Magic->Inspired</li>
+        <li>TM_randAdjective_Magic->Fervent</li>
+        <li>TM_randAdjective_Magic->Nefarious</li>
+        <li>TM_randAdjective_Magic->Chaotic</li>
+		<li>TM_randAdjective_Magic->Mysterious</li>
+		<li>TM_randAdjective_Magic->Enigmatic</li>
+		<li>TM_randAdjective_Magic->Arcane</li>
+		<li>TM_randAdjective_Magic->Powerful</li>
+		<li>TM_randAdjective_Magic->Ethereal</li>
+		<li>TM_randAdjective_Magic->Forbidden</li>
+		<li>TM_randAdjective_Magic->Intricate</li>
+		<li>TM_randAdjective_Magic->Esoteric</li>
+		<li>TM_randAdjective_Magic->Divine</li>
+		<li>TM_randAdjective_Magic->Spectral</li>
+
+        <li>TM_randTheme_Magic->knowledge</li>
+        <li>TM_randTheme_Magic->understanding</li>
+		<li>TM_randTheme_Magic->power</li>
+		<li>TM_randTheme_Magic->transformation</li>
+		<li>TM_randTheme_Magic->mystery</li>
+		<li>TM_randTheme_Magic->enlightenment</li>
+		<li>TM_randTheme_Magic->balance</li>
+		<li>TM_randTheme_Magic->protection</li>
+		<li>TM_randTheme_Magic->healing</li>
+		<li>TM_randTheme_Magic->wisdom</li>
+		<li>TM_randTheme_Magic->discovery</li>
+		<li>TM_randTheme_Magic->creation</li>
+		<li>TM_randTheme_Magic->legacy</li>
+		<li>TM_randTheme_Magic->alchemy</li>
+		<li>TM_randTheme_Magic->destiny</li>
+		<li>TM_randTheme_Magic->harmony</li>
+		<li>TM_randTheme_Magic->nature</li>
+		
+		<li>TM_randNoun_Might->Battle</li>
+		<li>TM_randNoun_Might->War</li>
+		<li>TM_randNoun_Might->Fight</li>
+		<li>TM_randNoun_Might->Struggle</li>
+		<li>TM_randNoun_Might->Conflict</li>
+		<li>TM_randNoun_Might->Conquest</li>
+		<li>TM_randNoun_Might->Victory</li>
+		<li>TM_randNoun_Might->Triumph</li>
+		<li>TM_randNoun_Might->Glory</li>
+		<li>TM_randNoun_Might->Valor</li>
+		<li>TM_randNoun_Might->Heroism</li>
+		<li>TM_randNoun_Might->Weapon</li>
+		<li>TM_randNoun_Might->Shield</li>
+		<li>TM_randNoun_Might->Armor</li>
+		<li>TM_randNoun_Might->Sword</li>
+		<li>TM_randNoun_Might->Axe</li>
+		<li>TM_randNoun_Might->Spear</li>
+		<li>TM_randNoun_Might->Bow</li>
+		<li>TM_randNoun_Might->Arrow</li>
+		<li>TM_randNoun_Might->Challenge</li>
+		<li>TM_randNoun_Might->Combat</li>
+		<li>TM_randNoun_Might->Warrior</li>
+		<li>TM_randNoun_Might->Gladiator</li>
+		<li>TM_randNoun_Might->Mercenary</li>
+		<li>TM_randNoun_Might->Knight</li>
+		<li>TM_randNoun_Might->Champion</li>
+		<li>TM_randNoun_Might->Soldier</li>
+		<li>TM_randNoun_Might->Fighter</li>
+		<li>TM_randNoun_Might->Samurai</li>
+		<li>TM_randNoun_Might->Ninja</li>
+		<li>TM_randNoun_Might->Assassin</li>
+		<li>TM_randNoun_Might->Commando</li>
+		<li>TM_randNoun_Might->Berserker</li>
+		<li>TM_randNoun_Might->Paladin</li>
+
+		<li>subject_Might->Battle</li>
+		<li>subject_Might->War</li>
+		<li>subject_Might->Conflict</li>
+		<li>subject_Might->Combat</li>
+		<li>subject_Might->Fight</li>
+		<li>subject_Might->Struggle</li>
+		<li>subject_Might->Conquest</li>
+		<li>subject_Might->Victory</li>
+		<li>subject_Might->Triumph</li>
+		<li>subject_Might->Glory</li>
+		<li>subject_Might->Valor</li>
+		<li>subject_Might->Heroism</li>
+		<li>subject_Might->Weaponry</li>
+		<li>subject_Might->Tactics</li>
+		<li>subject_Might->Strategy</li>
+		<li>subject_Might->Warfare</li>
+		<li>subject_Might->Skirmish</li>
+		<li>subject_Might->Assault</li>
+		<li>subject_Might->Defense</li>
+		<li>subject_Might->Martial Arts</li>
+		<li>subject_Might->Duel</li>
+		<li>subject_Might->Arena Combat</li>
+		<li>subject_Might->Military</li>
+		<li>subject_Might->Swordplay</li>
+		<li>subject_Might->Archery</li>
+		<li>subject_Might->Melee</li>
+		<li>subject_Might->Close Quarters Combat</li>
+		<li>subject_Might->Warrior's Code</li>
+		<li>subject_Might->Command</li>
+		<li>subject_Might->Ambush</li>
+		<li>subject_Might->Siege</li>
+		<li>subject_Might->Guerrilla Warfare</li>
+		<li>subject_Might->Formation</li>
+		<li>subject_Might->Battlefield</li>
+		<li>subject_Might->Warrior Spirit</li>
+
+		<li>TM_randAdjective_Might->Legendary</li>
+		<li>TM_randAdjective_Might->Heroic</li>
+		<li>TM_randAdjective_Might->Fearless</li>
+		<li>TM_randAdjective_Might->Valiant</li>
+		<li>TM_randAdjective_Might->Skilled</li>
+		<li>TM_randAdjective_Might->Brave</li>
+		<li>TM_randAdjective_Might->Fierce</li>
+		<li>TM_randAdjective_Might->Formidable</li>
+		<li>TM_randAdjective_Might->Mighty</li>
+		<li>TM_randAdjective_Might->Swift</li>
+		<li>TM_randAdjective_Might->Agile</li>
+		<li>TM_randAdjective_Might->Cunning</li>
+		<li>TM_randAdjective_Might->Tenacious</li>
+		<li>TM_randAdjective_Might->Resilient</li>
+		<li>TM_randAdjective_Might->Stalwart</li>
+		<li>TM_randAdjective_Might->Daring</li>
+		<li>TM_randAdjective_Might->Gritty</li>
+		<li>TM_randAdjective_Might->Bold</li>
+		<li>TM_randAdjective_Might->Unyielding</li>
+		<li>TM_randAdjective_Might->Vigilant</li>
+		<li>TM_randAdjective_Might->Unstoppable</li>
+		<li>TM_randAdjective_Might->Relentless</li>
+		<li>TM_randAdjective_Might->Ruthless</li>
+		<li>TM_randAdjective_Might->Tactical</li>
+		<li>TM_randAdjective_Might->Strategic</li>
+		<li>TM_randAdjective_Might->Disciplined</li>
+		<li>TM_randAdjective_Might->Honorable</li>
+		<li>TM_randAdjective_Might->Savage</li>
+		<li>TM_randAdjective_Might->Lethal</li>
+		<li>TM_randAdjective_Might->Noble</li>
+		<li>TM_randAdjective_Might->Merciless</li>
+
+		<li>TM_randTheme_Might->Victory</li>
+		<li>TM_randTheme_Might->Honor</li>
+		<li>TM_randTheme_Might->Valor</li>
+		<li>TM_randTheme_Might->Courage</li>
+		<li>TM_randTheme_Might->Glory</li>
+		<li>TM_randTheme_Might->Strategy</li>
+		<li>TM_randTheme_Might->Tactics</li>
+		<li>TM_randTheme_Might->Leadership</li>
+		<li>TM_randTheme_Might->Brotherhood</li>
+		<li>TM_randTheme_Might->Sacrifice</li>
+		<li>TM_randTheme_Might->Unity</li>
+		<li>TM_randTheme_Might->Bravery</li>
+		<li>TM_randTheme_Might->Resilience</li>
+		<li>TM_randTheme_Might->Duty</li>
+		<li>TM_randTheme_Might->Justice</li>
+		<li>TM_randTheme_Might->Respect</li>
+		<li>TM_randTheme_Might->Camraderie</li>
+		<li>TM_randTheme_Might->Loyalty</li>
+		<li>TM_randTheme_Might->Training</li>
+		<li>TM_randTheme_Might->Preparation</li>
+		<li>TM_randTheme_Might->Combat Readiness</li>
+		<li>TM_randTheme_Might->Conflict Resolution</li>
+		<li>TM_randTheme_Might->Endurance</li>
+		<li>TM_randTheme_Might->Mastery</li>
+		<li>TM_randTheme_Might->Warrior Spirit</li>
+		<li>TM_randTheme_Might->Battlefield</li>
+		<li>TM_randTheme_Might->Command</li>
+		<li>TM_randTheme_Might->Legacy</li>
+		<li>TM_randTheme_Might->Combat Arts</li>
+		<li>TM_randTheme_Might->Weapons Mastery</li>
+		<li>TM_randTheme_Might->Survival</li>
+		<li>TM_randTheme_Might->Training Regimen</li>
+		<li>TM_randTheme_Might->Martial Discipline</li>
+		<li>TM_randTheme_Might->Strength</li>
+		<li>TM_randTheme_Might->Endurance</li>
+		<li>TM_randTheme_Might->Perseverance</li>
+		<li>TM_randTheme_Might->Skill</li>
+		<li>TM_randTheme_Might->Training</li>        
+        
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  
+</Defs>

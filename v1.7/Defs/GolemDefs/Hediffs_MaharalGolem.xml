@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <HediffDef ParentName="TM_Golem_ImplantHediffBase">
+    <defName>TM_MaharalGolem_ArmorHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+	<label>armor</label>
+	<description>Improves physical protection.</description>
+    <scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<maxSeverity>3</maxSeverity>
+	<isBad>false</isBad>
+	<initialSeverity>.1</initialSeverity>
+	<stages>
+      <li>
+        <label>I</label>
+        <minSeverity>0.001</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>
+		  <ArmorRating_Blunt>.09</ArmorRating_Blunt>
+		  <ArmorRating_Sharp>.13</ArmorRating_Sharp>
+		  <ArmorRating_Heat>.08</ArmorRating_Heat>
+		</statOffsets>
+      </li>
+	  <li>
+        <label>II</label>
+        <minSeverity>1</minSeverity>
+		<statOffsets>
+		  <ArmorRating_Blunt>.13</ArmorRating_Blunt>
+		  <ArmorRating_Sharp>.22</ArmorRating_Sharp>
+		  <ArmorRating_Heat>.14</ArmorRating_Heat>
+		</statOffsets>
+      </li>
+	  <li>
+        <label>III</label>
+        <minSeverity>2</minSeverity>
+		<statOffsets>
+		  <ArmorRating_Blunt>.21</ArmorRating_Blunt>
+		  <ArmorRating_Sharp>.29</ArmorRating_Sharp>
+		  <ArmorRating_Heat>.18</ArmorRating_Heat>
+		</statOffsets>
+      </li>
+	</stages>
+  </HediffDef>
+  
+</Defs>

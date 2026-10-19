@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+<!--   <MapGeneratorDef>
+    <defName>MagicianTowerMapGenerator</defName>
+    <parent>BasicMap</parent>
+    <selectionWeight>0</selectionWeight>
+  </MapGeneratorDef> -->
+
+</Defs>

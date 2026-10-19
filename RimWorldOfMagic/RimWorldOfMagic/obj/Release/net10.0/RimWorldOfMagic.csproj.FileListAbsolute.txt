@@ -1,0 +1,10 @@
+C:\Codex\ARoM\mod\RimWorldOfMagic\RimWorldOfMagic\obj\Release\net10.0\RimWorldOfMagic.csproj.AssemblyReference.cache
+C:\Codex\ARoM\mod\RimWorldOfMagic\RimWorldOfMagic\obj\Release\net10.0\RimWorldOfMagic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Codex\ARoM\mod\RimWorldOfMagic\RimWorldOfMagic\obj\Release\net10.0\RimWorldOfMagic.csproj.CoreCompileInputs.cache
+C:\Codex\ARoM\mod\RimWorldOfMagic\RimWorldOfMagic\bin\Release\net10.0\TorannMagic.deps.json
+C:\Codex\ARoM\mod\RimWorldOfMagic\RimWorldOfMagic\bin\Release\net10.0\TorannMagic.dll
+C:\Codex\ARoM\mod\RimWorldOfMagic\RimWorldOfMagic\bin\Release\net10.0\TorannMagic.pdb
+C:\Codex\ARoM\mod\RimWorldOfMagic\RimWorldOfMagic\obj\Release\net10.0\TorannMagic.dll
+C:\Codex\ARoM\mod\RimWorldOfMagic\RimWorldOfMagic\obj\Release\net10.0\refint\TorannMagic.dll
+C:\Codex\ARoM\mod\RimWorldOfMagic\RimWorldOfMagic\obj\Release\net10.0\TorannMagic.pdb
+C:\Codex\ARoM\mod\RimWorldOfMagic\RimWorldOfMagic\obj\Release\net10.0\ref\TorannMagic.dll

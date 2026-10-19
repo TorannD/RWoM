@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+
+  <AbilityGroupDef>
+    <defName>TM_Voidseeker</defName>
+    <cooldownTicks>360000</cooldownTicks>
+  </AbilityGroupDef>
+  
+  <AbilityDef>
+    <defName>TM_Start_ManaStorm</defName>
+    <label>mana storm</label>
+    <description>Creates and almost immediately releases a temporary mana pocket. Mana attempts to fill the pocket but is forced to rapidly disperse, creating a violent mana disturbance. The resulting condition is known as a mana storm. Mana attempts to disperse rapidly during mana storm which can cause severe damage to anyone attempting to draw on mana at the time. Mana is also more readily available, for those who are willing to risk the backlash. The mana storm lasts anywhere from 6 to 40 hours.</description>
+    <groupDef>TM_Voidseeker</groupDef>
+    <iconPath>UI/manavortex</iconPath>
+    <warmupMoteSocialSymbol>UI/manavortex</warmupMoteSocialSymbol>
+    <warmupSound>Ambient_Wind_Desolate</warmupSound>
+    <hotKey>Misc12</hotKey>
+    <!-- <jobDef>CastAbilityOnThing</jobDef> -->
+	<jobDef>TMCastIdeoAbility</jobDef>
+	<targetRequired>False</targetRequired>
+    <stunTargetWhileCasting>True</stunTargetWhileCasting>
+    <showPsycastEffects>False</showPsycastEffects>
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+	<showCastingProgressBar>True</showCastingProgressBar>
+    <uiOrder>1</uiOrder>
+    <comps>
+      <li Class="TorannMagic.Ideology.CompProperties_AbilityStartEvent">
+        <incidentDef>TM_ManaStorm</incidentDef>
+      </li>
+    </comps>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <drawAimPie>False</drawAimPie>
+      <range>-1</range>
+      <warmupTime>5.0</warmupTime>
+	  <requireLineOfSight>False</requireLineOfSight>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>false</canTargetAnimals>
+        <canTargetHumans>false</canTargetHumans>
+        <canTargetMechs>false</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  
+  <AbilityDef>
+    <defName>TM_Start_ElementalDefenders</defName>
+    <label>elemental defenders</label>
+    <description>Creates a connection to another plane of existence and entices the elementals there to defend the colony. Lasts about 4 hours.</description>
+    <groupDef>TM_Voidseeker</groupDef>
+    <iconPath>UI/manavortex_elemental</iconPath>
+    <warmupMoteSocialSymbol>UI/manavortex_elemental</warmupMoteSocialSymbol>
+    <warmupSound>Ambient_Wind_Desolate</warmupSound>
+    <hotKey>Misc12</hotKey>
+	<jobDef>TMCastIdeoAbility</jobDef>
+    <stunTargetWhileCasting>True</stunTargetWhileCasting>
+    <showPsycastEffects>False</showPsycastEffects>
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+	<showCastingProgressBar>True</showCastingProgressBar>
+    <uiOrder>1</uiOrder>
+    <comps>
+      <li Class="TorannMagic.Ideology.CompProperties_AbilitySpawnDetailed">
+        <spawnThingDef>TM_ElementalRift_Defenders</spawnThingDef>
+		<stuff>BlocksMarble</stuff>
+		<assumeCasterFaction>true</assumeCasterFaction>
+		<requiresLineOfSight>true</requiresLineOfSight>
+		<allowOnBuildings>false</allowOnBuildings>
+		<temporary>true</temporary>
+		<durationTicks>10000</durationTicks>
+      </li>
+    </comps>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <drawAimPie>False</drawAimPie>
+      <range>90</range>
+      <warmupTime>8.0</warmupTime>
+	  <requireLineOfSight>True</requireLineOfSight>
+      <targetParams>
+	    <canTargetLocations>true</canTargetLocations>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>false</canTargetAnimals>
+        <canTargetHumans>false</canTargetHumans>
+        <canTargetMechs>false</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+
+</Defs>

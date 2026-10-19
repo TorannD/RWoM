@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+ 
+<Defs>
+
+	<TorannMagic.TM_CustomClassDef Name="CustomClass_List">
+		<defName>TM_CustomClasses</defName>
+		<customClasses>		
+		  <!-- Custom Class - the Shadow -->
+		  <li>		  
+			<classTrait>TM_TheShadow</classTrait>			<!-- Class Trait; if an existing class trait it used, it will OVERWRITE the class - do not disable overwritten classes in mod options -->
+			<traitDegree>0</traitDegree>					<!-- Trait degree, usually 0, but has to match the trait def -->
+			<classHediff></classHediff>						<!-- Class Hediff, used for various checks but usually not necessary if the ability is assigned; only required for "psionic" -->			
+			<showHediffOnGizmo>false</showHediffOnGizmo>	<!-- displays the hediff value on the resource pool gizmo, hediff type MUST BE HediffWithCompsExtra -->
+			<classTexturePath>shadowFlame</classTexturePath><!-- unique class texture; icon appears on the colonist bar; searches the Textures/Other/ClassTextures mod folder -->
+			<classIconPath>CustomFlame</classIconPath>		<!-- assigns a unique class icon; this icon floats next to the class's head; searches the Textures/Other mod folder -->
+			<classIconColor>(.3,0,.6)</classIconColor>		<!-- color of the class mark in(r,g,b) format -->
+			<tornScript></tornScript>						<!-- only applies to mages, randomly assigns abilities based on skill learn chance, not required -->
+			<fullScript>BookOfShadow</fullScript>			<!-- assigns all abilities when read -->
+			
+			<classMageAbilities>							<!-- all mage abilities available to the class -->
+				<li>TM_SoulBond</li>
+				<li>TM_Blink</li>
+				<li>TM_Blink_I</li>
+				<li>TM_Blink_II</li>
+				<li>TM_Blink_III</li>
+				<li>TM_Summon</li>
+				<li>TM_Summon_I</li>
+				<li>TM_Summon_II</li>
+				<li>TM_Summon_III</li>
+				<li>TM_ShadowWalk</li>
+			</classMageAbilities>
+			<learnableSpells>								<!-- learnable magic related skills, allows access to class related cantrips eg briar patch, master spells, etc -->
+			</learnableSpells>								<!-- entries should match the defName of the item used to learn the spell, eg "SpellOf_BriarPatch" -->
+			<canLearnCantrips>true</canLearnCantrips>		<!-- allow the class to learn stand-alone or classless mage abilities and cantrips (blink, dirt devil, heal, etc  -->
+			
+			<classFighterAbilities>							<!-- all fighter abilities available to the class -->
+				<li>TM_ShadowStrike</li>
+				<li>TM_Nightshade</li>
+				<li>TM_VeilOfShadows</li>
+			</classFighterAbilities>
+			<learnableSkills>								<!-- learnable might related skills - currently all learnable might skills are open to every class -->
+			</learnableSkills>
+			<canLearnKnacks>true</canLearnKnacks>			<!-- allow the class to learn stand-alone or classless fighter abilities (gear repair, strong back, sprint, etc  -->
+			
+			<isMage>true</isMage>							<!-- assigns mana need, validation to execute magic related tasks, and determines prerequisite trait to become this type of class -->
+			<isFighter>true</isFighter>						<!-- assigns stamina need, validation to execute might related tasks, and determines prerequisite trait to become this type of class -->
+															<!-- if both mage and fighter are true, then either precursor is valid for promotion -->
+            <!--<maxMageLevel>150</maxMageLevel>-->         <!--Overrides the default maxLevel of 150-->
+            <!--<maxFighterLevel>150</maxFighterLevel>-->         <!--Overrides the default maxLevel of 150-->
+			<isNecromancer>false</isNecromancer>			<!-- not currently used - counts as a necromancer for undead upkeep -->
+			<isUndead>false</isUndead>						<!-- counts as an undead for light magic damage, assign class hediff "TM_Undead" or "TM_LichHD" for undead health benefits; -->
+															<!-- class with undead hediffs will instantly die if no necromancer is available to sustain -->
+			<isAndroid>false</isAndroid>					<!-- class counts as an android for various spell checks -->
+			<isAdvancedClass>false</isAdvancedClass>		<!-- designates the custom class as a secondary or bonus class that can be used along with a base class -->
+			<advancedClassOptions>							<!-- list of options for advanced classes; only checked when isAdvancedClass is true -->
+				<requiresBaseClass>false</requiresBaseClass><!-- must have a base class (any) prior to gaining the advanced class -->
+				<canSpawnWithClass>false</canSpawnWithClass><!-- determines if the advanced class will ever show up on a randomly generated pawn; if false, the class will only be available via the class torn/full scripts -->
+				<removesRequiredTrait>false</removesRequiredTrait> <!-- first matching trait is removed when adv. class is gained -->
+				<requiredTraits>							<!-- pawn must have at least one of the requiredTraits gain the advanced class; an empty list allows any class -->
+				</requiredTraits>							<!-- does not requireBaseClass to be true to restrict the adv. class -->
+				<disallowedTraits>							<!-- the pawn cannot have any of the disallowed traits to gain the advanced class -->
+				</disallowedTraits>							<!-- does not requireBaseClass to be true -->
+			</advancedClassOptions>							<!-- in the event a pawn matches both required traits and disallowed traits, the disallowed trait wins -->
+			<shouldShow>false</shouldShow>					<!-- this should always be true for a mod add-on -->
+		  </li>		  
+		  <!-- Brightmage -->
+		  <li>		  
+			<classTrait>TM_Brightmage</classTrait>			
+			<traitDegree>0</traitDegree>					
+			<classHediff>TM_LightCapacitanceHD</classHediff>
+			<classTexturePath>brightMageMark</classTexturePath> 
+			<classIconPath>PsiMark</classIconPath>		
+			<classIconColor>(1,1,.8)</classIconColor>		
+			<tornScript>Torn_BookOfTheSun</tornScript>			
+			<fullScript>BookOfTheSun</fullScript>			
+			
+			<classMageAbilities>							
+				<li>TM_LightLance</li>
+				<li>TM_Sunfire</li>
+				<li>TM_Sunfire_I</li>
+				<li>TM_Sunfire_II</li>
+				<li>TM_Sunfire_III</li>
+				<li>TM_LightBurst</li>
+				<li>TM_LightSkip</li>
+				<li>TM_Refraction</li>
+				<li>TM_SpiritOfLight</li>
+			</classMageAbilities>
+			<learnableSpells>								
+				<li>SpellOf_SpiritOfLight</li>
+			</learnableSpells>								
+			
+			<classFighterAbilities>							
+			</classFighterAbilities>
+			<learnableSkills>								
+			</learnableSkills>
+			
+			<isMage>true</isMage>							
+			<isFighter>false</isFighter>					 
+			<isNecromancer>false</isNecromancer>			
+			<isUndead>false</isUndead>											
+			<isAndroid>false</isAndroid>					
+			<isAdvancedClass>false</isAdvancedClass>	
+			<shouldShow>false</shouldShow>			
+		  </li>	
+		  <!-- Shaman -->
+		  <li>		  
+			<classTrait>TM_Shaman</classTrait>				
+			<traitDegree>0</traitDegree>					
+			<classHediff></classHediff>								
+			<classTexturePath>shamanMageMark</classTexturePath> 
+			<classIconPath>MageMark</classIconPath>			
+			<classIconColor>(.87,0.9,.4)</classIconColor>		
+			<tornScript>Torn_BookOfShamanism</tornScript>						
+			<fullScript>BookOfShamanism</fullScript>			
+			
+			<classMageAbilities>	
+				<li>TM_Totems</li>
+				<li>TM_Enrage</li>
+				<li>TM_Hex</li>
+				<li>TM_Hex_I</li>
+				<li>TM_Hex_II</li>
+				<li>TM_Hex_III</li>
+				<li>TM_ChainLightning</li>
+				<li>TM_SpiritWolves</li>
+				<li>TM_SpiritWolves_I</li>
+				<li>TM_SpiritWolves_II</li>
+				<li>TM_SpiritWolves_III</li>
+				<li>TM_GuardianSpirit</li>
+			</classMageAbilities>
+			<learnableSpells>		
+				<li>SpellOf_GuardianSpirit</li>			
+			</learnableSpells>								
+			
+			<classFighterAbilities>							
+			</classFighterAbilities>
+			<learnableSkills>								
+			</learnableSkills>
+			
+			<isMage>true</isMage>							
+			<isFighter>false</isFighter>					
+			<isNecromancer>false</isNecromancer>			
+			<isUndead>false</isUndead>										
+			<isAndroid>false</isAndroid>					
+			<isAdvancedClass>false</isAdvancedClass>		
+			<shouldShow>false</shouldShow>
+		  </li>	
+		  <!-- Golemancer -->
+		  <li>		  
+			<classTrait>TM_Golemancer</classTrait>				
+			<traitDegree>0</traitDegree>					
+			<classHediff></classHediff>								
+			<classTexturePath>golemancerMageMark</classTexturePath> 
+			<classIconPath>MageMark</classIconPath>			
+			<classIconColor>(.6,0.4,.2)</classIconColor>		
+			<tornScript>Torn_BookOfGolemancy</tornScript>						
+			<fullScript>BookOfGolemancy</fullScript>			
+			
+			<classMageAbilities>	
+				<li>TM_Golemancy</li>
+				<li>TM_RuneCarving</li>
+				<li>TM_Branding</li>
+				<li>TM_SigilSurge</li>
+				<li>TM_SigilDrain</li>
+				<li>TM_LivingWall</li>
+			</classMageAbilities>
+			<learnableSpells>	
+				<li>SpellOf_BrandAwareness</li>		
+				<li>SpellOf_BrandProtection</li>	
+				<li>SpellOf_BrandVitality</li>	
+				<li>SpellOf_BrandEmotion</li>		
+				<li>SpellOf_BrandFitness</li>	
+				<li>SpellOf_BrandSiphon</li>
+				<li>SpellOf_LivingWall</li>			
+			</learnableSpells>								
+			
+			<classFighterAbilities>							
+			</classFighterAbilities>
+			<learnableSkills>								
+			</learnableSkills>
+			
+			<isMage>true</isMage>							
+			<isFighter>false</isFighter>					
+			<isNecromancer>false</isNecromancer>			
+			<isUndead>false</isUndead>										
+			<isAndroid>false</isAndroid>					
+			<isAdvancedClass>false</isAdvancedClass>		
+			<shouldShow>false</shouldShow>
+		  </li>	
+		  <!-- Apothecary -->
+		  <li>		  
+			<classTrait>TM_Apothecary</classTrait>				
+			<traitDegree>0</traitDegree>					
+			<classHediff>TM_ApothecaryHerbsHD</classHediff>		
+			<showHediffOnGizmo>true</showHediffOnGizmo>
+			<classTexturePath>apothecaryFighterMark</classTexturePath> 	
+			<classIconColor>(.4,0.6,0)</classIconColor>
+			<fullScript>BookOfApothecary</fullScript>			
+			
+			<classFighterAbilities>	
+				<li>TM_Herbalist</li>
+				<li>TM_PoisonFlask</li>
+				<li>TM_Elixir</li>
+				<li>TM_SoothingBalm</li>
+				<li>TM_FireSuppressionFlask</li>
+				<li>TM_FireSuppressionFlask_I</li>
+				<li>TM_FireSuppressionFlask_II</li>
+				<li>TM_FireSuppressionFlask_III</li>
+			</classFighterAbilities>						
+			
+			<classMageAbilities>							
+			</classMageAbilities>
+			<learnableSkills>
+				<li>SkillOf_HerbalClarity</li>
+				<li>SkillOf_HerbalBliss</li>
+			</learnableSkills>
+			
+			<isMage>false</isMage>							
+			<isFighter>true</isFighter>					
+			<isNecromancer>false</isNecromancer>			
+			<isUndead>false</isUndead>										
+			<isAndroid>false</isAndroid>					
+			<isAdvancedClass>false</isAdvancedClass>		
+			<shouldShow>false</shouldShow>
+		  </li>	
+		  <!-- Empath -->
+		  <li>		  
+			<classTrait>TM_Empath</classTrait>				
+			<traitDegree>0</traitDegree>	
+			<classHediff>TM_EmpathHD</classHediff>				
+			<classTexturePath>empathPsiMark</classTexturePath> 
+			<classIconPath>PsiMark</classIconPath>			
+			<classIconColor>(.8,0,1)</classIconColor>		
+			<tornScript></tornScript>						
+			<fullScript></fullScript>		<!--Empath cannot be learned, but the trait has a commonality; an empath is considered a mage immediately -->	
+			
+			<classMageAbilities>	
+				<li>TM_Empathy</li>
+				<li>TM_MindKiller</li>				
+				<li>TM_SuppressiveAura</li>
+				<li>TM_HarvestPassion</li>
+				<li>TM_IncitePassion</li>
+				<li>TM_Symbiosis</li>
+			</classMageAbilities>							
+			
+			<classFighterAbilities>							
+			</classFighterAbilities>
+			<learnableSkills>		
+				<li>SpellOf_FadeEmotions</li>
+			</learnableSkills>
+			
+			<isMage>true</isMage>							
+			<isFighter>false</isFighter>					
+			<isNecromancer>false</isNecromancer>			
+			<isUndead>false</isUndead>										
+			<isAndroid>false</isAndroid>					
+			<isAdvancedClass>false</isAdvancedClass>		
+			<shouldShow>false</shouldShow>
+		  </li>	
+		  <!-- Possessor -->
+		  <li>		  
+			<classTrait>TM_Possessor</classTrait>				
+			<traitDegree>0</traitDegree>					
+			<classHediff></classHediff>								
+			<classTexturePath>spiritMark</classTexturePath> 
+			<classIconPath>SpiritMark</classIconPath>			
+			<classIconColor>(0,0.6,.6)</classIconColor>		
+			<tornScript></tornScript>						
+			<fullScript></fullScript>			
+			<classMageAbilities>	
+				<li>TM_SpiritPossession</li>
+				<li>TM_SpiritDrain</li>
+				<li>TM_DistortSpirit</li>
+				<li>TM_DistortSpirit_I</li>
+				<li>TM_DistortSpirit_II</li>
+				<li>TM_DistortSpirit_III</li>
+				<li>TM_SummonSpiritAnimalMass</li>
+				<li>TM_SpiritRally</li>
+				<li>TM_SpiritRally_I</li>
+				<li>TM_SpiritRally_II</li>
+				<li>TM_SpiritRally_III</li>
+				<li>TM_SpiritStorm</li>
+			</classMageAbilities>
+			<learnableSpells>							
+			</learnableSpells>								
+			
+			<classFighterAbilities>							
+			</classFighterAbilities>
+			<learnableSkills>								
+			</learnableSkills>
+			
+			<isMage>true</isMage>							
+			<isFighter>false</isFighter>					
+			<isNecromancer>false</isNecromancer>			
+			<isUndead>false</isUndead>										
+			<isAndroid>false</isAndroid>					
+			<isAdvancedClass>false</isAdvancedClass>		
+			<shouldShow>false</shouldShow>
+		  </li>
+		  <!-- Possessed (possessor as advanced class) -->
+		  <li>		  
+			<classTrait>TM_Possessed</classTrait>				
+			<traitDegree>0</traitDegree>					
+			<classHediff></classHediff>								
+			<classTexturePath></classTexturePath> 
+			<classIconPath></classIconPath>			
+			<classIconColor>(0,0.6,.6)</classIconColor>		
+			<tornScript></tornScript>						
+			<fullScript></fullScript>			
+			<classMageAbilities>
+				<li>TM_SpiritDrain</li>
+				<li>TM_DistortSpirit</li>
+				<li>TM_DistortSpirit_I</li>
+				<li>TM_DistortSpirit_II</li>
+				<li>TM_DistortSpirit_III</li>
+				<li>TM_SummonSpiritAnimalMass</li>
+				<li>TM_SpiritRally</li>
+				<li>TM_SpiritRally_I</li>
+				<li>TM_SpiritRally_II</li>
+				<li>TM_SpiritRally_III</li>
+				<li>TM_SpiritStorm</li>
+			</classMageAbilities>
+			<learnableSpells>							
+			</learnableSpells>								
+			
+			<classFighterAbilities>							
+			</classFighterAbilities>
+			<learnableSkills>								
+			</learnableSkills>
+			
+			<isMage>true</isMage>							
+			<isFighter>false</isFighter>					
+			<isNecromancer>false</isNecromancer>			
+			<isUndead>false</isUndead>										
+			<isAndroid>false</isAndroid>					
+			<isAdvancedClass>true</isAdvancedClass>	
+			<advancedClassOptions>							
+				<requiresBaseClass>false</requiresBaseClass>	<!-- any possessed pawn gains this class, even if they were not a mage/fighter -->
+				<canSpawnWithClass>false</canSpawnWithClass>	<!-- only gained via possession mechanic -->
+				<removesRequiredTrait>false</removesRequiredTrait>	<!-- does not remove an existing trait -->
+				<requiredTraits>								<!-- does not require any other class or trait -->
+				</requiredTraits>							
+				<disallowedTraits>								<!-- no restrictions -->
+				</disallowedTraits>						
+			</advancedClassOptions>			
+			<shouldShow>false</shouldShow>
+		  </li>
+		</customClasses>			
+	</TorannMagic.TM_CustomClassDef>		
+
+</Defs>
+
+	<!-- ============ Mage Abilities 
+      
+
+	=============-->
+	

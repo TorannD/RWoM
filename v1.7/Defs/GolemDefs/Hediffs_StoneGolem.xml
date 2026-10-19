@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <HediffDef ParentName="TM_Golem_ImplantHediffBase">
+    <defName>TM_StoneGolem_HardeningHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+	<label>hardening</label>
+	<description>Improves physical protection.</description>
+    <scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<maxSeverity>3</maxSeverity>
+	<isBad>false</isBad>
+	<initialSeverity>.1</initialSeverity>
+	<stages>
+      <li>
+        <label>I</label>
+        <minSeverity>0.001</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<statOffsets>
+		  <ArmorRating_Blunt>.04</ArmorRating_Blunt>
+		  <ArmorRating_Sharp>.11</ArmorRating_Sharp>
+		  <ArmorRating_Heat>.06</ArmorRating_Heat>
+		</statOffsets>
+      </li>
+	  <li>
+        <label>II</label>
+        <minSeverity>1</minSeverity>
+		<statOffsets>
+		  <ArmorRating_Blunt>.08</ArmorRating_Blunt>
+		  <ArmorRating_Sharp>.22</ArmorRating_Sharp>
+		  <ArmorRating_Heat>.12</ArmorRating_Heat>
+		</statOffsets>
+      </li>
+	  <li>
+        <label>III</label>
+        <minSeverity>2</minSeverity>
+		<statOffsets>
+		  <ArmorRating_Blunt>.12</ArmorRating_Blunt>
+		  <ArmorRating_Sharp>.33</ArmorRating_Sharp>
+		  <ArmorRating_Heat>.18</ArmorRating_Heat>
+		</statOffsets>
+      </li>
+	</stages>
+  </HediffDef>
+  
+</Defs>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<!-- Golem Needs are added using a harmony patch for matching thing defs -->
+
+  <NeedDef>
+    <defName>TM_GolemEnergy</defName>
+    <needClass>TorannMagic.Golems.Need_GolemEnergy</needClass>
+    <label>energy</label>
+    <description>Golem energy level.</description>
+	<onlyIfCausedByHediff>true</onlyIfCausedByHediff>
+    <showOnNeedList>true</showOnNeedList>
+    <minIntelligence>ToolUser</minIntelligence>
+    <baseLevel>0</baseLevel>
+    <seekerRisePerHour>0</seekerRisePerHour>
+    <seekerFallPerHour>0</seekerFallPerHour>
+    <listPriority>1</listPriority>
+    <major>true</major>
+    <freezeWhileSleeping>false</freezeWhileSleeping>
+    <showForCaravanMembers>true</showForCaravanMembers>
+  </NeedDef>
+  
+  <NeedDef>
+    <defName>TM_GolemRage</defName>
+    <needClass>TorannMagic.Golems.Need_GolemRage</needClass>
+    <label>rage</label>
+    <description>Golem rage level.</description>
+	<onlyIfCausedByHediff>true</onlyIfCausedByHediff>
+    <showOnNeedList>true</showOnNeedList>
+    <minIntelligence>ToolUser</minIntelligence>
+    <baseLevel>0</baseLevel>
+    <seekerRisePerHour>0</seekerRisePerHour>
+    <seekerFallPerHour>0</seekerFallPerHour>
+    <listPriority>1</listPriority>
+    <major>true</major>
+    <freezeWhileSleeping>false</freezeWhileSleeping>
+    <showForCaravanMembers>false</showForCaravanMembers>
+  </NeedDef>
+
+</Defs>

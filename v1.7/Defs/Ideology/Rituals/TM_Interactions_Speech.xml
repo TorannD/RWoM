@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <InteractionDef>
+    <defName>TM_Speech_SeverMagic</defName>
+    <label>sever magic speech</label>
+    <workerClass>InteractionWorker</workerClass>
+    <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+    <symbol>Things/Mote/SpeechSymbols/Speech</symbol>
+    <logRulesInitiator>
+      <include><li MayRequire="Ludeon.RimWorld.Ideology">SpeechUtility</li></include>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] [praised] [doing] [speechtopic].</li>
+        <li>r_logentry(p=0.2)->[INITIATOR_nameDef] [crazy].</li>
+
+        <li>speechtopic->magic</li>
+        <li>speechtopic->peace through power</li>
+        <li>speechtopic->mages</li>
+        <li>speechtopic->chaos</li>
+        <li>speechtopic->the temptation of power</li>
+        <li>speechtopic->magic and mages</li>
+        <li>speechtopic->the seduction of magic</li>
+        <li>speechtopic->an errant bio-genetic cancer</li>
+
+        <li>crazy->screamed maniacally</li>
+        <li>crazy->broke into a chant</li>
+        <li>crazy->chanted towards the heavens</li>
+        <li>crazy->spat in the mage's eye</li>
+        <li>crazy->cackled</li>
+        <li>crazy->brandished a blade</li>
+        <li>crazy->muttered repetitively</li>
+		<li>crazy->screamed in defiance</li>
+		<li>crazy->spasmed uncontrollably</li>
+		
+		<li>doing->controlling</li>
+		<li>doing->balancing</li>
+		<li>doing->sacrificing</li>
+		<li>doing->removing the temptation</li>
+		<li>doing->manipulating</li>
+		<li>doing->freeing</li>
+		<li>doing->standing firm against</li>
+		<li>doing->rejecting</li>
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+  
+  <InteractionDef>
+    <defName>TM_Speech_BestowMagic</defName>
+    <label>bestow magic speech</label>
+    <workerClass>InteractionWorker</workerClass>
+    <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+    <symbol>Things/Mote/SpeechSymbols/Speech</symbol>
+    <logRulesInitiator>
+      <include><li MayRequire="Ludeon.RimWorld.Ideology">SpeechUtility</li></include>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] [praised] [doing] [speechtopic].</li>
+        <li>r_logentry(p=0.2)->[INITIATOR_nameDef] [crazy].</li>
+
+        <li>speechtopic->magic</li>
+        <li>speechtopic->peace through power</li>
+        <li>speechtopic->mages</li>
+        <li>speechtopic->order</li>
+        <li>speechtopic->the power to protect</li>
+        <li>speechtopic->magic and mages</li>
+        <li>speechtopic->the blessings of magic</li>
+        <li>speechtopic->the next stage in human evolution</li>
+
+        <li>crazy->roared in victory</li>
+        <li>crazy->broke into a chant</li>
+        <li>crazy->chanted towards the heavens</li>
+        <li>crazy->placed a hand of assurance on the mage</li>
+        <li>crazy->smiled heroically</li>
+        <li>crazy->brandished a staff</li>
+        <li>crazy->murmured a mantra</li>
+		<li>crazy->offered a benediction</li>
+		<li>crazy->reached towards the heavens</li>
+		
+		<li>doing->achieving</li>
+		<li>doing->learning</li>
+		<li>doing->understanding</li>
+		<li>doing->using</li>
+		<li>doing->protecting</li>
+		<li>doing->releasing</li>
+		<li>doing->supporting</li>
+		<li>doing->gaining</li>
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+  
+</Defs>

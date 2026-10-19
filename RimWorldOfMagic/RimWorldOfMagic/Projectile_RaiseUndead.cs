@@ -653,14 +653,26 @@ namespace TorannMagic
 
         private void SetOutfitRestrictions(Pawn p)
         {
-            if(ModOptions.Constants.GetUndeadApparelPolicy() == null)
+            // Enemy pawns do not have an outfit tracker. Do not create a player
+            // policy tracker for them just because they have been resurrected.
+            var outfits = p?.outfits;
+            var database = Current.Game?.outfitDatabase;
+            if (outfits == null || database == null)
+                return;
+
+            var defaultPolicy = database.DefaultOutfit();
+            if (defaultPolicy == null || outfits.CurrentApparelPolicy != defaultPolicy)
+                return;
+
+            var undeadPolicy = ModOptions.Constants.GetUndeadApparelPolicy();
+            // Constants are static and may still refer to a previously loaded game.
+            if (undeadPolicy == null || !database.AllOutfits.Contains(undeadPolicy))
             {
                 ModOptions.Constants.SetUndeadApparelPolicy();
+                undeadPolicy = ModOptions.Constants.GetUndeadApparelPolicy();
             }
-            if (p.outfits.CurrentApparelPolicy == Current.Game.outfitDatabase.DefaultOutfit())
-            {
-                p.outfits.CurrentApparelPolicy = ModOptions.Constants.GetUndeadApparelPolicy();
-            }
+            if (undeadPolicy != null)
+                outfits.CurrentApparelPolicy = undeadPolicy;
         }
 
         private void RemoveGenes(Pawn p)

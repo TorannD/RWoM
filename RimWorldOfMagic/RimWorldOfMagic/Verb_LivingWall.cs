@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
@@ -84,13 +84,13 @@ namespace TorannMagic
                     if(!wallDetected)
                     {
                         Messages.Message("TM_InvalidTarget".Translate(caster.LabelShort, Ability.Def.label), MessageTypeDefOf.NegativeEvent);
-                        MoteMaker.ThrowText(caster.DrawPos, caster.Map, "Living Wall: " + StringsToTranslate.AU_CastFailure, -1f);
+                        MoteMaker.ThrowText(caster.DrawPos, caster.Map, "Living Wall: " + "AU_CastFailure".Translate(), -1f);
                     }
                 }
                 else
                 {
                     Messages.Message("TM_InvalidTarget".Translate(caster.LabelShort, Ability.Def.label), MessageTypeDefOf.NegativeEvent);
-                    MoteMaker.ThrowText(caster.DrawPos, caster.Map, "Living Wall: " + StringsToTranslate.AU_CastFailure, -1f);
+                    MoteMaker.ThrowText(caster.DrawPos, caster.Map, "Living Wall: " + "AU_CastFailure".Translate(), -1f);
                 }
             }
             
@@ -98,3 +98,4 @@ namespace TorannMagic
         }
     }
 }
+

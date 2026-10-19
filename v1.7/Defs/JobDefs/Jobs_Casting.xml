@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <JobDef>
+	<defName>TMCastAbilityVerb</defName>
+	<driverClass>TorannMagic.TMJobDriver_CastAbilityVerb</driverClass>
+	<reportString>Using an ability</reportString>
+    <alwaysShowWeapon>true</alwaysShowWeapon>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
+  <JobDef>
+	<defName>TMCastAbilitySelf</defName>
+	<driverClass>TorannMagic.TMJobDriver_CastAbilitySelf</driverClass>
+	<reportString>Using an ability</reportString>
+    <alwaysShowWeapon>true</alwaysShowWeapon>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  
+  <JobDef>
+    <defName>TMCastIdeoAbility</defName>
+    <driverClass>TorannMagic.Ideology.JobDriver_CastIdeoAbility</driverClass>
+    <casualInterruptible>false</casualInterruptible>
+    <collideWithPawns>true</collideWithPawns>
+    <neverShowWeapon>true</neverShowWeapon>
+  </JobDef>
+
+</Defs>

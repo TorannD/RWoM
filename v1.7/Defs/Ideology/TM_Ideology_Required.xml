@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <SoundDef>
+    <defName>TM_Speech_Ideoligious_Male</defName>
+    <sustain>True</sustain>
+    <context>MapOnly</context>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Human/Speech/IdeoSpeech_Male</clipFolderPath>
+          </li>
+        </grains>
+        <muteWhenPaused>true</muteWhenPaused>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+        <gameSpeedRange>0~2</gameSpeedRange>
+        <volumeRange>8~10</volumeRange>
+        <distRange>20~40</distRange>
+        <sustainLoop>false</sustainLoop>
+        <sustainIntervalRange>0~0.25</sustainIntervalRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>TM_Speech_Ideoligious_Female</defName>
+    <sustain>True</sustain>
+    <context>MapOnly</context>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Human/Speech/IdeoSpeech_Female</clipFolderPath>
+          </li>
+        </grains>
+        <muteWhenPaused>true</muteWhenPaused>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+        <gameSpeedRange>0~2</gameSpeedRange>
+        <volumeRange>12~14</volumeRange>
+        <distRange>20~40</distRange>
+        <sustainLoop>false</sustainLoop>
+        <sustainIntervalRange>0~0.25</sustainIntervalRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <DutyDef>
+    <defName>TM_SpeakOnCellFacingSpectators</defName>
+    <hook>HighPriority</hook>
+    <socialModeMax>Off</socialModeMax>
+    <ritualSpectateTarget>true</ritualSpectateTarget>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <!-- Goto my spot -->
+        <li Class="JobGiver_GotoTravelDestination">
+          <exactCell>true</exactCell>
+          <locomotionUrgency>Jog</locomotionUrgency>
+          <ritualTagOnArrival>Arrived</ritualTagOnArrival>
+        </li>
+
+        <!-- Arrived -->
+        <li Class="ThinkNode_ConditionalAtDutyLocation">
+          <subNodes>
+            <li Class="JobGiver_GiveSpeechFacingTarget">
+              <showSpeechBubbles>false</showSpeechBubbles>
+              <faceSpectatorsIfPossible>true</faceSpectatorsIfPossible>
+              <soundDefMale>TM_Speech_Ideoligious_Male</soundDefMale>
+              <soundDefFemale>TM_Speech_Ideoligious_Female</soundDefFemale>
+            </li>
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+  
+  <DutyDef>
+    <defName>TM_LayDownAwake</defName>
+    <hook>HighPriority</hook>
+    <socialModeMax>Off</socialModeMax>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="JobGiver_LayDownAwake">
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+  
+  <DutyDef>
+    <defName>TM_ArriveToCell</defName>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        
+        <!-- Goto my spot -->
+        <li Class="JobGiver_GotoTravelDestination">
+          <exactCell>true</exactCell>
+          <locomotionUrgency>Jog</locomotionUrgency>
+          <ritualTagOnArrival>Arrived</ritualTagOnArrival>
+        </li>
+
+        <!-- Stand -->
+        <li Class="JobGiver_Idle">
+          <ticks>60</ticks>
+        </li>
+        
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+  
+</Defs>

@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+ <!-- Herbalist - ability is never used, influences how much hediff is gained while harvesting plants -->
+ 
+ <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
+    <defName>TM_Herbalist</defName>
+    <label>Herbalist</label>
+    <uiIconPath>UI/herbs-bundle</uiIconPath>
+    <description>Training in herbalism allows the apothecary to identify and efficiently harvest the ingredients for their concoctions.</description>
+	<shouldInitialize>false</shouldInitialize>
+    <MainVerb Class="AbilityUser.VerbProperties_Ability">
+        <verbClass>TorannMagic.Verb_SB</verbClass>
+			<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+			<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+			<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+			<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+        <hasStandardCommand>true</hasStandardCommand>
+		<abilityDef>TM_Herbalist</abilityDef>
+		<isViolent>false</isViolent>
+        <defaultProjectile>Projectile_Default</defaultProjectile>
+        <warmupTime>0</warmupTime>
+        <SecondsToRecharge>600</SecondsToRecharge>
+        <range>0</range>
+        <soundCast>Message_PositiveEvent</soundCast>
+        <muzzleFlashScale>0</muzzleFlashScale>
+        <isPrimary>false</isPrimary>
+		<AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+		<targetParams>
+		  <canTargetPawns>false</canTargetPawns>
+		  <canTargetBuildings>false</canTargetBuildings>
+		  <canTargetSelf>false</canTargetSelf>
+		  <canTargetLocations>false</canTargetLocations>
+		</targetParams>
+    </MainVerb>
+  </TorannMagic.TMAbilityDef>
+  
+  
+  <!-- Poison Flask-->	
+    <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
+		<thingClass>TorannMagic.Projectile_PoisonFlask</thingClass>
+	    <defName>Projectile_PoisonFlask</defName>
+        <label>Poison flask</label>
+        <graphicData>
+			<texPath>UI/poison_flask</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+        </graphicData>
+        <projectile>
+			<soundExplode>Explosion_Smoke</soundExplode>
+            <damageDef>TM_Poison</damageDef>
+            <damageAmountBase>4</damageAmountBase>
+            <speed>20</speed>
+			<explosionRadius>4</explosionRadius>
+			<postExplosionSpawnChance>1</postExplosionSpawnChance>
+        </projectile>
+    </ThingDef>
+
+    <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
+        <defName>TM_PoisonFlask</defName>
+        <label>Poison Flask</label>
+        <uiIconPath>UI/poison_flask</uiIconPath>
+        <description>Throw a noxious concoction that bursts into a thick cloud of poisonous gas. The poison gas will remain in proximity for a small time before dispersing. Any person that inhales the fumes will suffer corrosive damage to their throat and lungs.</description>
+        <requiredHediff>TM_ApothecaryHerbsHD</requiredHediff>
+		<hediffCost>25</hediffCost>
+		<hediffXPFactor>2</hediffXPFactor>
+		<efficiencyReductionPercent>.08</efficiencyReductionPercent>
+		<learnChance>1</learnChance>
+		<canCopy>false</canCopy>
+		<MainVerb Class="AbilityUser.VerbProperties_Ability">
+            <verbClass>TorannMagic.Verb_SB</verbClass>
+				<tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+				<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+				<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+				<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+            <hasStandardCommand>true</hasStandardCommand>
+            <defaultProjectile>Projectile_PoisonFlask</defaultProjectile>
+            <abilityDef>TM_PoisonFlask</abilityDef>
+            <warmupTime>1</warmupTime>
+            <SecondsToRecharge>4.0</SecondsToRecharge>
+            <range>20</range>
+            <burstShotCount>1</burstShotCount>
+			<forcedMissRadius>4</forcedMissRadius>
+            <soundCast>ThrowGrenade</soundCast>
+            <muzzleFlashScale>0</muzzleFlashScale>
+		    <AlwaysHits>false</AlwaysHits>
+            <isPrimary>false</isPrimary>
+			<targetParams>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>true</canTargetBuildings>
+                <canTargetSelf>true</canTargetSelf>
+                <canTargetLocations>true</canTargetLocations>
+            </targetParams>
+        </MainVerb>
+    </TorannMagic.TMAbilityDef>
+	
+	<TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
+        <defName>TM_Elixir</defName>
+        <label>Elixir</label>
+        <uiIconPath>UI/elixir</uiIconPath>
+        <description>Herbal elixirs are created through a mixture of potent herbs, herbal extracts, and other organic matter. The potency of the herbal elixir comes from the immediate reaction of ingredients when they are combined. The chemical reaction has a short half-life, which make it impractical and uneconomical for mass production and distribution. When immediately consumed, the elixir's potent health benefits are powerful enough to bring a pawn back from the brink of death. The elixir's effects last for nearly a day.</description>
+        <requiredHediff>TM_ApothecaryHerbsHD</requiredHediff>
+		<hediffCost>20</hediffCost>
+		<hediffXPFactor>2</hediffXPFactor>
+		<efficiencyReductionPercent>.08</efficiencyReductionPercent>
+		<learnChance>1</learnChance>
+		<canCopy>false</canCopy>
+		<MainVerb Class="AbilityUser.VerbProperties_Ability">
+            <verbClass>TorannMagic.Verb_Elixir</verbClass>
+				<tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+				<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+				<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+				<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+            <hasStandardCommand>true</hasStandardCommand>
+			<requiresLineOfSight>false</requiresLineOfSight>
+            <defaultProjectile>Projectile_Default</defaultProjectile>
+            <abilityDef>TM_Elixir</abilityDef>
+            <warmupTime>2</warmupTime>
+            <SecondsToRecharge>4</SecondsToRecharge>
+            <range>1.9</range>
+            <burstShotCount>1</burstShotCount>
+            <soundCast>TM_Powerup</soundCast>
+            <muzzleFlashScale>0</muzzleFlashScale>
+		    <AlwaysHits>true</AlwaysHits>
+            <isPrimary>true</isPrimary>
+			<isViolent>false</isViolent>
+			<targetParams>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetSelf>true</canTargetSelf>
+                <canTargetLocations>false</canTargetLocations>
+            </targetParams>
+        </MainVerb>
+    </TorannMagic.TMAbilityDef>
+	
+	<TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
+        <defName>TM_SoothingBalm</defName>
+        <label>Soothing Balm</label>
+        <uiIconPath>UI/health-capsule</uiIconPath>
+        <description>The apothecary's soothing balm can be applied to open wounds to fight infection, promote blood clotting, and reduce pain. Side effects may include hallucinations, a sense of euphoria, and loss of consciousness.</description>
+        <requiredHediff>TM_ApothecaryHerbsHD</requiredHediff>
+		<hediffCost>12</hediffCost>
+		<hediffXPFactor>2</hediffXPFactor>
+		<efficiencyReductionPercent>.08</efficiencyReductionPercent>
+		<learnChance>1</learnChance>
+		<canCopy>false</canCopy>
+		<MainVerb Class="AbilityUser.VerbProperties_Ability">
+            <verbClass>TorannMagic.Verb_SoothingBalm</verbClass>
+				<tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+				<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+				<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+				<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+            <hasStandardCommand>true</hasStandardCommand>
+			<requiresLineOfSight>false</requiresLineOfSight>
+            <defaultProjectile>Projectile_Default</defaultProjectile>
+            <abilityDef>TM_SoothingBalm</abilityDef>
+            <warmupTime>2</warmupTime>
+            <SecondsToRecharge>4</SecondsToRecharge>
+            <range>1.9</range>
+            <burstShotCount>1</burstShotCount>
+            <soundCast>TM_Powerup</soundCast>
+            <muzzleFlashScale>0</muzzleFlashScale>
+		    <AlwaysHits>true</AlwaysHits>
+            <isPrimary>true</isPrimary>
+			<isViolent>false</isViolent>
+			<targetParams>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetSelf>true</canTargetSelf>
+                <canTargetLocations>false</canTargetLocations>
+            </targetParams>
+        </MainVerb>
+    </TorannMagic.TMAbilityDef>
+	
+	<!-- Fire suppression Flask-->	
+    <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
+	    <defName>Projectile_FireDousingFlask</defName>
+		<thingClass>TorannMagic.Projectile_FireSuppressionFlask</thingClass>
+        <label>Fire dousing flask</label>
+        <graphicData>
+			<texPath>Spells/firesuppressioncanister</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+        </graphicData>
+        <projectile>
+			<soundExplode>Explosion_Smoke</soundExplode>
+            <damageDef>Extinguish</damageDef>
+            <speed>20</speed>
+			<damageAmountBase>500</damageAmountBase>
+			<explosionRadius>6</explosionRadius>
+			<postExplosionSpawnChance>1</postExplosionSpawnChance>
+			<postExplosionSpawnThingDef>Filth_FireFoam</postExplosionSpawnThingDef>
+			<postExplosionSpawnThingCount>1</postExplosionSpawnThingCount>
+        </projectile>
+    </ThingDef>
+
+    <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
+        <defName>TM_FireSuppressionFlask</defName>
+        <label>Fire Suppression Flask</label>
+        <uiIconPath>UI/fire-suppression</uiIconPath>
+        <description>Throw a canister containing fire suppression liquid that quickly smothers flames.
+		
+Range: 20
+Cooldown: 30
+Radius: 6</description>
+        <requiredHediff>TM_ApothecaryHerbsHD</requiredHediff>
+		<hediffCost>10</hediffCost>
+		<hediffXPFactor>2</hediffXPFactor>
+		<efficiencyReductionPercent>.15</efficiencyReductionPercent>
+		<learnChance>1</learnChance>
+		<canCopy>false</canCopy>
+		<MainVerb Class="AbilityUser.VerbProperties_Ability">
+            <verbClass>TorannMagic.Verb_SB</verbClass>
+				<tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+				<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+				<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+				<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+            <hasStandardCommand>true</hasStandardCommand>
+            <defaultProjectile>Projectile_FireDousingFlask</defaultProjectile>
+            <abilityDef>TM_FireSuppressionFlask</abilityDef>
+            <warmupTime>2</warmupTime>
+            <SecondsToRecharge>30.0</SecondsToRecharge>
+            <range>20</range>
+            <burstShotCount>1</burstShotCount>
+			<forcedMissRadius>2</forcedMissRadius>
+            <soundCast>ThrowGrenade</soundCast>
+            <muzzleFlashScale>0</muzzleFlashScale>
+		    <AlwaysHits>false</AlwaysHits>
+            <isPrimary>false</isPrimary>
+			<targetParams>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>true</canTargetBuildings>
+                <canTargetSelf>true</canTargetSelf>
+                <canTargetLocations>true</canTargetLocations>
+            </targetParams>
+        </MainVerb>
+    </TorannMagic.TMAbilityDef>
+	
+	<ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
+	    <defName>Projectile_FireDousingFlask_I</defName>
+		<thingClass>TorannMagic.Projectile_FireSuppressionFlask</thingClass>
+        <label>Fire dousing flask</label>
+        <graphicData>
+			<texPath>Spells/firesuppressioncanister</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+        </graphicData>
+        <projectile>
+			<soundExplode>Explosion_Smoke</soundExplode>
+            <damageDef>Extinguish</damageDef>
+            <speed>25</speed>
+			<damageAmountBase>500</damageAmountBase>
+			<explosionRadius>8</explosionRadius>
+			<postExplosionSpawnChance>1</postExplosionSpawnChance>
+			<postExplosionSpawnThingDef>Filth_FireFoam</postExplosionSpawnThingDef>
+			<postExplosionSpawnThingCount>1</postExplosionSpawnThingCount>
+        </projectile>
+    </ThingDef>
+
+    <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
+        <defName>TM_FireSuppressionFlask_I</defName>
+        <label>Fire Suppression Flask</label>
+        <uiIconPath>UI/fire-suppression</uiIconPath>
+        <description>Throw a canister containing fire suppression liquid that quickly smothers flames.
+		
+Range: 25
+Cooldown: 20
+Radius: 8</description>
+        <requiredHediff>TM_ApothecaryHerbsHD</requiredHediff>
+		<hediffCost>10</hediffCost>
+		<hediffXPFactor>2</hediffXPFactor>
+		<efficiencyReductionPercent>.15</efficiencyReductionPercent>
+		<learnChance>0</learnChance>
+		<canCopy>false</canCopy>
+		<shouldInitialize>false</shouldInitialize>
+		<MainVerb Class="AbilityUser.VerbProperties_Ability">
+            <verbClass>TorannMagic.Verb_SB</verbClass>
+				<tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+				<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+				<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+				<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+            <hasStandardCommand>true</hasStandardCommand>
+            <defaultProjectile>Projectile_FireDousingFlask_I</defaultProjectile>
+            <abilityDef>TM_FireSuppressionFlask_I</abilityDef>
+            <warmupTime>1.6</warmupTime>
+            <SecondsToRecharge>20.0</SecondsToRecharge>
+            <range>25</range>
+            <burstShotCount>1</burstShotCount>
+			<forcedMissRadius>1</forcedMissRadius>
+            <soundCast>ThrowGrenade</soundCast>
+            <muzzleFlashScale>0</muzzleFlashScale>
+		    <AlwaysHits>false</AlwaysHits>
+            <isPrimary>false</isPrimary>
+			<targetParams>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>true</canTargetBuildings>
+                <canTargetSelf>true</canTargetSelf>
+                <canTargetLocations>true</canTargetLocations>
+            </targetParams>
+        </MainVerb>
+    </TorannMagic.TMAbilityDef>
+	
+	<ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
+	    <defName>Projectile_FireDousingFlask_II</defName>
+		<thingClass>TorannMagic.Projectile_FireSuppressionFlask</thingClass>
+        <label>Fire dousing flask</label>
+        <graphicData>
+			<texPath>Spells/firesuppressioncanister</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+        </graphicData>
+        <projectile>
+			<soundExplode>Explosion_Smoke</soundExplode>
+            <damageDef>Extinguish</damageDef>
+            <speed>30</speed>
+			<damageAmountBase>500</damageAmountBase>
+			<explosionRadius>10</explosionRadius>
+			<postExplosionSpawnChance>1</postExplosionSpawnChance>
+			<postExplosionSpawnThingDef>Filth_FireFoam</postExplosionSpawnThingDef>
+			<postExplosionSpawnThingCount>1</postExplosionSpawnThingCount>
+        </projectile>
+    </ThingDef>
+
+    <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
+        <defName>TM_FireSuppressionFlask_II</defName>
+        <label>Fire Suppression Flask</label>
+        <uiIconPath>UI/fire-suppression</uiIconPath>
+        <description>Throw a canister containing fire suppression liquid that quickly smothers flames.
+		
+Range: 30
+Cooldown: 15
+Radius: 10</description>
+        <requiredHediff>TM_ApothecaryHerbsHD</requiredHediff>
+		<hediffCost>10</hediffCost>
+		<hediffXPFactor>2</hediffXPFactor>
+		<efficiencyReductionPercent>.15</efficiencyReductionPercent>
+		<learnChance>0</learnChance>
+		<canCopy>false</canCopy>
+		<shouldInitialize>false</shouldInitialize>
+		<MainVerb Class="AbilityUser.VerbProperties_Ability">
+            <verbClass>TorannMagic.Verb_SB</verbClass>
+				<tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+				<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+				<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+				<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+            <hasStandardCommand>true</hasStandardCommand>
+            <defaultProjectile>Projectile_FireDousingFlask_II</defaultProjectile>
+            <abilityDef>TM_FireSuppressionFlask_II</abilityDef>
+            <warmupTime>1.3</warmupTime>
+            <SecondsToRecharge>15.0</SecondsToRecharge>
+            <range>30</range>
+            <burstShotCount>1</burstShotCount>
+			<forcedMissRadius>0</forcedMissRadius>
+            <soundCast>ThrowGrenade</soundCast>
+            <muzzleFlashScale>0</muzzleFlashScale>
+		    <AlwaysHits>false</AlwaysHits>
+            <isPrimary>false</isPrimary>
+			<targetParams>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>true</canTargetBuildings>
+                <canTargetSelf>true</canTargetSelf>
+                <canTargetLocations>true</canTargetLocations>
+            </targetParams>
+        </MainVerb>
+    </TorannMagic.TMAbilityDef>
+	
+	<ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
+	    <defName>Projectile_FireDousingFlask_III</defName>
+		<thingClass>TorannMagic.Projectile_FireSuppressionFlask</thingClass>
+        <label>Fire dousing flask</label>
+        <graphicData>
+			<texPath>Spells/firesuppressioncanister</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+        </graphicData>
+        <projectile>
+			<soundExplode>Explosion_Smoke</soundExplode>
+            <damageDef>Extinguish</damageDef>
+            <speed>33</speed>
+			<damageAmountBase>500</damageAmountBase>
+			<explosionRadius>11</explosionRadius>
+			<postExplosionSpawnChance>1</postExplosionSpawnChance>
+			<postExplosionSpawnThingDef>Filth_FireFoam</postExplosionSpawnThingDef>
+			<postExplosionSpawnThingCount>1</postExplosionSpawnThingCount>
+        </projectile>
+    </ThingDef>
+
+    <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
+        <defName>TM_FireSuppressionFlask_III</defName>
+        <label>Fire Suppression Flask</label>
+        <uiIconPath>UI/fire-suppression</uiIconPath>
+        <description>Throw a canister containing fire suppression liquid that quickly smothers flames.
+		
+Range: 34
+Cooldown: 10
+Radius: 11</description>
+        <requiredHediff>TM_ApothecaryHerbsHD</requiredHediff>
+		<hediffCost>10</hediffCost>
+		<hediffXPFactor>2</hediffXPFactor>
+		<efficiencyReductionPercent>.15</efficiencyReductionPercent>
+		<learnChance>0</learnChance>
+		<canCopy>false</canCopy>
+		<shouldInitialize>false</shouldInitialize>
+		<MainVerb Class="AbilityUser.VerbProperties_Ability">
+            <verbClass>TorannMagic.Verb_SB</verbClass>
+				<tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+				<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+				<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+				<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+            <hasStandardCommand>true</hasStandardCommand>
+            <defaultProjectile>Projectile_FireDousingFlask_III</defaultProjectile>
+            <abilityDef>TM_FireSuppressionFlask_III</abilityDef>
+            <warmupTime>1</warmupTime>
+            <SecondsToRecharge>10.0</SecondsToRecharge>
+            <range>34</range>
+            <burstShotCount>1</burstShotCount>
+			<forcedMissRadius>0</forcedMissRadius>
+            <soundCast>ThrowGrenade</soundCast>
+            <muzzleFlashScale>0</muzzleFlashScale>
+		    <AlwaysHits>false</AlwaysHits>
+            <isPrimary>false</isPrimary>
+			<targetParams>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>true</canTargetBuildings>
+                <canTargetSelf>true</canTargetSelf>
+                <canTargetLocations>true</canTargetLocations>
+            </targetParams>
+        </MainVerb>
+    </TorannMagic.TMAbilityDef>
+	
+	<!-- Herbal Clarity -->	
+	<TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
+        <defName>TM_HerbalClarity</defName>
+        <label>Clarity</label>
+        <uiIconPath>UI/clarity</uiIconPath>
+        <description>Administers a concoction that helps the consumer open themselves to the arcane. Mana regeneration is increased up to 300% and psychic sensitivity is increased up to 50%. Effects decrease mental stability. Clarity last several days but lose potency over time. Use of this drug can be risky, even fatal to a mage, when combined with a mana drain event - use with caution.
+		
+*Ability may autocast when a nearby mage is below 20 mana.</description>
+        <requiredHediff>TM_ApothecaryHerbsHD</requiredHediff>
+		<hediffCost>30</hediffCost>
+		<hediffXPFactor>2</hediffXPFactor>
+		<efficiencyReductionPercent>.08</efficiencyReductionPercent>
+		<canCopy>false</canCopy>
+		<learnItem>SkillOf_HerbalClarity</learnItem>
+		<MainVerb Class="AbilityUser.VerbProperties_Ability">
+            <verbClass>TorannMagic.Verb_SB</verbClass>
+				<tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+				<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+				<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+				<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+            <hasStandardCommand>true</hasStandardCommand>
+			<requiresLineOfSight>false</requiresLineOfSight>
+            <defaultProjectile>Projectile_Default</defaultProjectile>
+            <abilityDef>TM_HerbalClarity</abilityDef>
+            <warmupTime>.2</warmupTime>
+            <SecondsToRecharge>5.0</SecondsToRecharge>
+            <range>1.9</range>
+            <burstShotCount>1</burstShotCount>
+			<forcedMissRadius>0</forcedMissRadius>
+            <soundCast>TM_Powerup</soundCast>
+            <muzzleFlashScale>0</muzzleFlashScale>
+		    <AlwaysHits>true</AlwaysHits>
+            <isPrimary>true</isPrimary>
+			<targetParams>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>true</canTargetBuildings>
+                <canTargetSelf>true</canTargetSelf>
+                <canTargetLocations>true</canTargetLocations>
+            </targetParams>
+			<hediffsToApply>
+				<li>
+					<hediffDef>TM_HerbalClarityHD</hediffDef>
+					<applyChance>1</applyChance>
+					<severity>3</severity>
+				</li>
+			</hediffsToApply>
+        </MainVerb>
+    </TorannMagic.TMAbilityDef>
+	
+	<!-- Bliss -->	
+	<TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
+        <defName>TM_HerbalBliss</defName>
+        <label>Bliss</label>
+        <uiIconPath>UI/bliss</uiIconPath>
+        <description>Administers one of the most hazardous drugs known in the region, possibly second only to luciferum. Bliss puts the user into a state of bliss, able to mask nearly all emotions and pain. A creative mixture of local plant extract and ingredients can be used to create this drug. True to the saying 'ignorance is bliss, this drug will cause the user to slowly lose their learned skills and skill gain while under the influence of this drug is heavily suppressed.
+		
+*Ability may autocast when a nearby pawn is is below 5% mood.</description>
+        <requiredHediff>TM_ApothecaryHerbsHD</requiredHediff>
+		<hediffCost>30</hediffCost>
+		<hediffXPFactor>2</hediffXPFactor>
+		<efficiencyReductionPercent>.08</efficiencyReductionPercent>
+		<canCopy>false</canCopy>
+		<learnItem>SkillOf_HerbalBliss</learnItem>
+		<MainVerb Class="AbilityUser.VerbProperties_Ability">
+            <verbClass>TorannMagic.Verb_SB</verbClass>
+				<tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+				<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+				<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+				<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+            <hasStandardCommand>true</hasStandardCommand>
+			<requiresLineOfSight>false</requiresLineOfSight>
+            <defaultProjectile>Projectile_Default</defaultProjectile>
+            <abilityDef>TM_HerbalBliss</abilityDef>
+            <warmupTime>.2</warmupTime>
+            <SecondsToRecharge>5.0</SecondsToRecharge>
+            <range>1.9</range>
+            <burstShotCount>1</burstShotCount>
+			<forcedMissRadius>0</forcedMissRadius>
+            <soundCast>TM_Powerup</soundCast>
+            <muzzleFlashScale>0</muzzleFlashScale>
+		    <AlwaysHits>true</AlwaysHits>
+            <isPrimary>true</isPrimary>
+			<isViolent>false</isViolent>
+			<targetParams>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>true</canTargetBuildings>
+                <canTargetSelf>true</canTargetSelf>
+                <canTargetLocations>true</canTargetLocations>
+            </targetParams>
+			<hediffsToApply>
+				<li>
+					<hediffDef>TM_HerbalBlissHD</hediffDef>
+					<applyChance>1</applyChance>
+					<severity>1</severity>
+				</li>
+			</hediffsToApply>
+        </MainVerb>
+    </TorannMagic.TMAbilityDef>
+  
+</Defs>

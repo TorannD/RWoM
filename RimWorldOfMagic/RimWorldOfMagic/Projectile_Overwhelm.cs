@@ -50,59 +50,58 @@ namespace TorannMagic
             //base.Impact(hitThing);
             
             Pawn pawn = this.launcher as Pawn;
-            Map map = pawn.Map;
+            Map map = Map;
+            if (!HasValidCaster(pawn, map))
+            {
+                Destroy();
+                return;
+            }
             if(!initialized)
             {
                 Initialize(pawn);
                 TM_Action.InvulnerableAoEFor(pawn.Position, map, 3 + verVal, Mathf.RoundToInt((90 + (10 * pwrVal)) * arcaneDmg), pawn.Faction);
             }
 
-            if (pawn != null)
+            if (Find.TickManager.TicksGame % 3 == 0)
             {
-                if (Find.TickManager.TicksGame % 3 == 0)
-                {
-                    DoBurstExplosion(pawn, map);
-                    this.strikeNum++;
-                }
-                if(strikeNum > 3 + verVal)
-                {
-                    Destroy();
-                }
+                DoBurstExplosion(pawn, map);
+                this.strikeNum++;
             }
-            else
+            if(strikeNum > 3 + verVal)
             {
-                Log.Warning("failed to cast");
                 Destroy();
             }
 
         }        
 
         private void DoBurstExplosion(Pawn pawn, Map map)
-        {            
-            List<IntVec3> targets;
-            if (strikeNum == 1)
+        {
+            if (!HasValidCaster(pawn, map)) return;
+            foreach (var cell in GetBurstCells(pawn.Position, strikeNum, map))
+                HolyExplosion(pwrVal, verVal, cell, map, 0.4f);
+        }
+
+        private static bool HasValidCaster(Pawn pawn, Map map)
+        {
+            return !pawn.DestroyedOrNull() && pawn.Spawned && !pawn.Dead &&
+                map != null && pawn.Map == map && pawn.Position.InBounds(map);
+        }
+
+        internal static IEnumerable<IntVec3> GetBurstCells(IntVec3 center, int radius, Map map)
+        {
+            if (map == null || !center.InBounds(map) || radius < 1) yield break;
+            // Both circles must follow the same caster position, including when
+            // the caster has moved away from the projectile between strikes.
+            var inner = radius > 1
+                ? new HashSet<IntVec3>(GenRadial.RadialCellsAround(center, radius - 1, false))
+                : null;
+            foreach (var cell in GenRadial.RadialCellsAround(center, radius, false))
             {
-                targets = GenRadial.RadialCellsAround(pawn.Position, this.strikeNum, false).ToList();
+                // Rings crossing the map boundary are normal, not a failure.
+                if (cell.InBounds(map) && (inner == null || !inner.Contains(cell)))
+                    yield return cell;
             }
-            else
-            {
-                IEnumerable<IntVec3> oldTargets = GenRadial.RadialCellsAround(base.Position, this.strikeNum - 1, false);
-                targets = GenRadial.RadialCellsAround(pawn.Position, this.strikeNum, false).Except(oldTargets).ToList();
-            }
-            for (int j = 0; j < targets.Count; j++)
-            {
-                IntVec3 curCell = targets[j];
-                if (map != null && curCell.IsValid && curCell.InBoundsWithNullCheck(map))
-                {
-                    HolyExplosion(pwrVal, verVal, curCell, map, 0.4f);
-                }
-                else
-                {
-                    Log.Message("failed map check");
-                }
-            }                
-            
-        }        
+        }
 
         protected void HolyExplosion(int pwr, int ver, IntVec3 pos, Map map, float radius)
         {
@@ -123,14 +122,15 @@ namespace TorannMagic
 
         public void Explosion(int pwr, IntVec3 center, Map map, float radius, DamageDef damType, Thing instigator, SoundDef explosionSound = null, ThingDef projectile = null, ThingDef source = null, ThingDef postExplosionSpawnThingDef = null, float postExplosionSpawnChance = 0f, int postExplosionSpawnThingCount = 1, bool applyDamageToExplosionCellsNeighbors = false, ThingDef preExplosionSpawnThingDef = null, float preExplosionSpawnChance = 0f, int preExplosionSpawnThingCount = 1)
         {
-            System.Random rnd = new System.Random();
-            int modDamAmountRand = (pwr * 3) + GenMath.RoundRandom(rnd.Next(5, projectile.projectile.GetDamageAmount(1,null)));
-            modDamAmountRand = Mathf.RoundToInt(modDamAmountRand * this.arcaneDmg);
             if (map == null)
             {
                 Log.Warning("Tried to do explosion in a null map.");
                 return;
             }
+            if (!center.InBounds(map)) return;
+            System.Random rnd = new System.Random();
+            int modDamAmountRand = (pwr * 3) + GenMath.RoundRandom(rnd.Next(5, projectile.projectile.GetDamageAmount(1,null)));
+            modDamAmountRand = Mathf.RoundToInt(modDamAmountRand * this.arcaneDmg);
             Explosion explosion = (Explosion)GenSpawn.Spawn(ThingDefOf.Explosion, center, map);
             explosion.damageFalloff = false;
             explosion.chanceToStartFire = 0.0f;

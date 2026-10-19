@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+ 
+<Defs>
+
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_StrawRepair</defName>
+		<label>restore part</label>
+		<recipe>TM_StrawGolem_RepairBlock</recipe>
+		<maxLevel>0</maxLevel>
+		<workstationEffects>
+			<li Class="TorannMagic.Golems.GolemWorkstationEffect_RestorePart" />
+		</workstationEffects>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_StrawMaxEnergy</defName>
+		<label>energy storage</label>
+		<description>Increases maximum energy by 100 per level. Starting max energy is 300.</description>
+		<recipe>TM_StrawGolem_EnergyMax</recipe>
+		<bodypart>Golem_Spine</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<maxLevel>3</maxLevel>
+		<workstationCapacity>EnergyMax</workstationCapacity>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_StrawEnergyEfficiency</defName>
+		<label>energy efficiency</label>
+		<description>Increases energy efficiency by 6% per level. Starting energy efficiency is 30%.</description>
+		<recipe>TM_StrawGolem_EnergyConverter</recipe>
+		<bodypart>Straw_SlotA</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<maxLevel>5</maxLevel>
+		<workstationCapacity>Efficiency</workstationCapacity>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_StrawEnergyRate</defName>
+		<label>energy regeneration</label>
+		<description>Increases energy charge rate by 20% per level. Starting recharge rate is 20 energy/hour.</description>
+		<recipe>TM_StrawGolem_EnergyRegen</recipe>
+		<bodypart>Straw_SlotB</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<maxLevel>5</maxLevel>
+		<workstationCapacity>EnergyRegeneration</workstationCapacity>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>	
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_StrawArmor</defName>
+		<label>armor</label>
+		<description>Increases overall protection:
+Blunt:	+[6,11,15]%
+Sharp:	+[5,9,13]%
+Heat:	+[4,7,10]%</description>
+		<maxLevel>3</maxLevel>
+		<recipe>TM_StrawGolem_Armor</recipe>
+		<bodypart>Golem_Chest</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<hediff>TM_StrawGolem_ArmorHD</hediff>
+		<hediffSeverityPerLevel>.8</hediffSeverityPerLevel>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_StrawScarecrow</defName>
+		<label>Scarecrow</label>
+		<description>Wards away unwanted pests. Increases crop growth rate in a 6 cell radius.</description>
+		<maxLevel>1</maxLevel>
+		<recipe>TM_StrawGolem_Scarecrow</recipe>
+		<bodypart>Straw_Core</bodypart>
+		<occupiedPart>Straw_Core</occupiedPart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<workstationEffects>
+		  <li Class="TorannMagic.Golems.GolemWorkstationEffect_ScarecrowGrow">
+			<ticksTillNextEffect80>300</ticksTillNextEffect80>	
+			<growthPerEffectTick>.0005</growthPerEffectTick>
+		  </li>
+		</workstationEffects>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+	
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_StrawSeed</defName>
+		<label>Farming</label>
+		<description>Increases the Plants skill of the golem by 2 per level. Starts with a planting skill of 0.</description>
+<!-- 		<ability>TM_StrawGolem_PlantSeeds</ability> -->
+		<maxLevel>5</maxLevel>
+		<recipe>TM_StrawGolem_Seed</recipe>
+		<bodypart>Golem_Abdomen</bodypart>
+		<occupiedPart>Golem_Abdomen</occupiedPart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+
+	<TorannMagic.TMDefs.TM_GolemUpgradeDef>
+		<defName>TM_Golem_StrawLifeStage</defName>
+		<label>frame tier</label>
+		<description>Increases stats:
+Movement:	+[20%/30%/40%]
+Health:		+[20%/40%/50%]</description>
+		<maxLevel>3</maxLevel>
+		<recipe>TM_StrawGolem_LifeStage</recipe>
+		<bodypart>Golem_Heart</bodypart>
+		<partRequiresUpgrade>false</partRequiresUpgrade>
+		<occupiedPart>Golem_Heart</occupiedPart>
+		<lifeStages>
+			<li>TM_StrawGolemLS</li>
+			<li>TM_StrawGolemLS1</li>
+			<li>TM_StrawGolemLS2</li>
+			<li>TM_StrawGolemLS3</li>
+		</lifeStages>
+		<drawUndrafted>false</drawUndrafted>
+		<drawOnlyWhenActive>false</drawOnlyWhenActive>
+	</TorannMagic.TMDefs.TM_GolemUpgradeDef>
+
+</Defs>
+
+<!--
+			    <label></label>
+				<maxLevel>1</maxLevel>
+				<recipe>TM_Mecha-Golem_</recipe>
+				<bodypart>Mecha_</bodypart>
+				<partRequiresUpgrade>true</partRequiresUpgrade>
+				<hediff></hediff>
+				<ability></ability>
+				<lifeStages>
+				</lifeStages>
+				<abilityModifier>
+					<damageModifier></damageModifier>
+					<cooldownModifier></cooldownModifier>
+					<energyCostModifier></energyCostModifier>
+					<durationModifier></durationModifier>
+					<healingModifier></healingModifier>
+					<processingModifier></processingModifier>
+				</abilityModifier>				
+				<graphicsPath>Mecha/</graphicsPath>
+				<levelIncrementsGraphics>false</levelIncrementsGraphics>
+				<drawThing></drawThing>
+				<drawUndrafted>true</drawUndrafted>
+				<drawOnlyWhenActive>false</drawOnlyWhenActive>
+				<drawSize>1</drawSize>
+				<shouldRotate>false</shouldRotate>
+				<drawOffsetNorth>(0, 0, 0)</drawOffsetNorth>
+				<drawOffsetSouth>(0, 0, 0)</drawOffsetSouth>
+				<drawOffsetEast>(0, 0, 0)</drawOffsetEast>
+				<drawOffsetWest>(0, 0, 0)</drawOffsetWest>
+				<workstationCapacity>None</workstationCapacity> 
+				<workstationEffects>
+				</workstationEffects>
+-->

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
@@ -93,15 +93,9 @@ namespace TorannMagic.ModCheck
 
             public static bool Core_IsInitialized()
             {
-                bool initialized = false;
-                foreach (ModContentPack p in LoadedModManager.RunningMods)
-                {
-                    if (p.Name == "Giddy-up! Core")
-                    {
-                        initialized = true;
-                    }
-                }
-                return initialized;
+                return LoadedModManager.RunningMods.Any(mod =>
+                    mod.assemblies.loadedAssemblies.Any(assembly =>
+                        assembly.GetType("GiddyUp.ExtendedDataStorage") != null));
             }
 
             public static bool BM_IsInitialized()
@@ -154,15 +148,9 @@ namespace TorannMagic.ModCheck
         {
             public static bool IsInitialized()
             {
-                bool initialized = false;
-                foreach (ModContentPack p in LoadedModManager.RunningMods)
-                {
-                    if (p.Name == "Simple sidearms")
-                    {
-                        initialized = true;
-                    }
-                }
-                return initialized;
+                return LoadedModManager.RunningMods.Any(mod =>
+                    mod.assemblies.loadedAssemblies.Any(assembly =>
+                        assembly.GetType("SimpleSidearms.rimworld.CompSidearmMemory") != null));
             }
         }
 
@@ -199,3 +187,5 @@ namespace TorannMagic.ModCheck
         }
     }
 }
+
+

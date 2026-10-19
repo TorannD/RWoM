@@ -1,4 +1,4 @@
-﻿using Verse;
+using Verse;
 using AbilityUser;
 using UnityEngine;
 using System.Linq;
@@ -46,9 +46,10 @@ namespace TorannMagic
             else
             {
                 Messages.Message("TM_CannotCastUnderRoof".Translate(pawn.LabelShort, Ability.Def.label), MessageTypeDefOf.NegativeEvent);
-                MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Light Skip: " + StringsToTranslate.AU_CastFailure, -1f);
+                MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Light Skip: " + "AU_CastFailure".Translate(), -1f);
             }
             return result;
         }
     }
 }
+

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+  <FleshTypeDef>
+    <defName>TM_Golem_Flesh</defName>
+    <corpseCategory>CorpsesAnimal</corpseCategory>
+    <damageEffecter>Damage_HitFlesh</damageEffecter>    
+  </FleshTypeDef>
+  
+  <FleshTypeDef>
+    <defName>TM_MechaGolemFlesh</defName>
+	<damageEffecter>Damage_HitMechanoid</damageEffecter>
+    <corpseCategory>CorpsesMechanoid</corpseCategory>
+    <genericWounds>
+      <li>
+        <texture>Things/Pawn/Wounds/WoundMechA</texture>
+      </li>
+      <li>
+        <texture>Things/Pawn/Wounds/WoundMechB</texture>
+      </li>
+      <li>
+        <texture>Things/Pawn/Wounds/WoundMechC</texture>
+      </li>
+    </genericWounds>
+  </FleshTypeDef>
+
+</Defs>

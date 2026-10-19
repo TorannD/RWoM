@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- Insertion hook for all abilities. -->
+<!-- 	<ThinkTreeDef>
+		<defName>TM_InsertHookAI</defName>
+		<insertTag>Humanlike_PostMentalState</insertTag>
+		<insertPriority>1001</insertPriority>
+		<thinkRoot Class="ThinkNode_ConditionalColonist">
+			<invert>true</invert>
+			<subNodes>
+				<li Class="TorannMagic.JobGiver_AIAbilityUser"/>
+			</subNodes>
+		</thinkRoot>
+	</ThinkTreeDef> -->
+</Defs>

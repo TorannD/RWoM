@@ -1,6 +1,6 @@
-﻿using RimWorld;
+using RimWorld;
 using System;
-using System.Threading;
+using TorannMagic.Utils;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
@@ -51,7 +51,6 @@ namespace TorannMagic
         private float enemyDamage = 12;
 
         private int idleFor = 0;
-        private Thing targetWall;
         private bool shouldDestroy = false;
 
         Pawn pawn;
@@ -75,47 +74,17 @@ namespace TorannMagic
         CompAbilityUserMagic comp;
         TMPawnSummoned newPawn = new TMPawnSummoned();
 
-        public Building OccupiedWall
-        {
-            get
-            {
-                List<Thing> tmpList = this.Position.GetThingList(this.Map);
-                foreach(Thing t in tmpList)
-                {
-                    if(TM_Calc.IsWall(t))
-                    {
-                        return t as Building;
-                    }
-                }
-                return null;
-            }
-        }
+        public Building OccupiedWall => FindWall(Position, Map);
 
         public Building DestinationWall
         {
             get
             {
-                Building fromWall = null;
-                if (this.curvePoints.Count > 0)
-                {
-                    List<Thing> destList = this.curvePoints[this.curvePoints.Count - 1].ToIntVec3().GetThingList(this.Map);
-
-                    foreach (Thing w in destList)
-                    {
-                        if (TM_Calc.IsWall(w))
-                        {
-                            fromWall = w as Building;
-                        }
-                    }
-                }
-                if (fromWall == null)
-                {
-                    fromWall = this.OccupiedWall;
-                }
-                return fromWall;
+                var last = curvePoints != null && curvePoints.Count > 0
+                    ? FindWall(curvePoints[curvePoints.Count - 1].ToIntVec3(), Map) : null;
+                return last ?? OccupiedWall;
             }
         }
-
         protected new int StartingTicksToImpact
         {
             get
@@ -142,7 +111,7 @@ namespace TorannMagic
         {
             get
             {
-                Vector3 b = (this.destination - this.origin) * (1f - (float)this.ticksToImpact / (float)this.StartingTicksToImpact);
+                Vector3 b = (this.destination - this.origin) * Mathf.Clamp01(1f - (float)this.ticksToImpact / (float)this.StartingTicksToImpact);
                 return this.origin + b + Vector3.up * this.def.Altitude;
             }
         }
@@ -174,9 +143,28 @@ namespace TorannMagic
             Scribe_References.Look<Thing>(ref this.assignedTarget, "assignedTarget", false);
             Scribe_Values.Look<float>(ref this.curveVariance, "curveVariance", 1f, false);
             Scribe_Values.Look<float>(ref this.speed, "speed", 15f, false);
-            Scribe_Collections.Look<Building>(ref this.connectedWalls, "connectedWalls", LookMode.Reference);
+            Scribe_Collections.Look(ref curvePoints, "curvePoints", LookMode.Value);
+            Scribe_Values.Look(ref destinationCurvePoint, "destinationCurvePoint", 0);
+            Scribe_Values.Look(ref idleFor, "idleFor", 0);
             Scribe_Deep.Look<Thing>(ref this.flyingThing, "flyingThing", new object[0]);
             Scribe_References.Look<Pawn>(ref this.pawn, "pawn", false);
+            if (Scribe.mode == LoadSaveMode.PostLoadInit)
+                RestoreRouteAfterLoad();
+        }
+
+        private void RestoreRouteAfterLoad()
+        {
+            // Old saves did not store curve points. Continue their current segment.
+            if (curvePoints == null || curvePoints.Count == 0 || curvePoints.Count > MaxSearchCells ||
+                destinationCurvePoint < 0 || destinationCurvePoint >= curvePoints.Count)
+            {
+                curvePoints = new List<Vector3> { origin, destination };
+                destinationCurvePoint = 1;
+            }
+            updatedPath = new List<Vector3>();
+            CancelPlanning();
+            closestThreat = null;
+            nextThreatUpdate = 0;
         }
 
         private void Initialize()
@@ -301,214 +289,212 @@ namespace TorannMagic
             return direction;
         }
 
-        public static Pawn closestThreat = null;
+        private Pawn closestThreat;
+        private List<Vector3> updatedPath = new List<Vector3>();
+        private LivingWallSearch wallSearch;
+        private Map searchMap;
+        private Building searchStart;
+        private Pawn searchThreat;
+        private Faction searchFaction;
+        private Map plannedMap;
+        private Faction plannedFaction;
+        private int nextPathSearchTick;
+        private int nextThreatUpdate;
+        private const int SearchBudgetPerTick = 64;
+        private const int MaxSearchCells = 4096;
+        private const int PathRetryTicks = 15;
+
+        private static Building FindWall(IntVec3 cell, Map map, Faction faction = null)
+        {
+            if (map == null || !cell.InBounds(map)) return null;
+            var things = cell.GetThingList(map);
+            for (int i = 0; i < things.Count; i++)
+            {
+                if (things[i] is Building wall && !wall.Destroyed && wall.Spawned &&
+                    (faction == null || wall.Faction == faction) && TM_Calc.IsWall(wall))
+                    return wall;
+            }
+            return null;
+        }
+
+        private bool IsValidThreat(Pawn target)
+        {
+            return !target.DestroyedOrNull() && target.Spawned && target.Map == Map &&
+                !target.Dead && !target.Downed && target.HostileTo(pawn);
+        }
+
         public void FindClosestThreat()
-        {            
+        {
+            var previous = closestThreat;
             closestThreat = null;
-            float closest = 999f;
-            foreach(Pawn p in this.Map.mapPawns.AllPawnsSpawned)
+            float closest = 999f * 999f;
+            var candidates = Map.mapPawns.AllPawnsSpawned;
+            for (int i = 0; i < candidates.Count; i++)
             {
-                float pDistance = (p.Position - this.Position).LengthHorizontal;
-                if (!p.Dead && !p.Downed && CasterPawn != null && p.HostileTo(CasterPawn) &&  pDistance < closest)
+                var candidate = candidates[i];
+                float distance = (candidate.Position - Position).LengthHorizontalSquared;
+                if (distance < closest && IsValidThreat(candidate))
                 {
-                    closest = pDistance;
-                    closestThreat = p;
+                    closest = distance;
+                    closestThreat = candidate;
                 }
             }
+            if (previous != closestThreat)
+                CancelPlanning();
         }
 
-        private List<Building> connectedWalls = new List<Building>();        
-        public void FindClosestWallToTarget()
-        {            
-            if(connectedWalls == null)
-            {
-                connectedWalls = new List<Building>();
-            }
-            if(closestThreat != null && connectedWalls != null && connectedWalls.Count > 0)
-            {
-                float closest = (this.Position - closestThreat.Position).LengthHorizontal;
-                Thing closestWall = null;
-                foreach(Thing t in connectedWalls)
-                {
-                    float distance = (t.Position - closestThreat.Position).LengthHorizontal;
-                    if (distance <= closest)
-                    {
-                        closest = distance;
-                        closestWall = t;
-                    }
-                }
-                this.targetWall = closestWall;
-            }
-            
-        }
-
-        public Thing FindClosestWallFromTarget()
+        // Called only from TickInterval: all world reads, RNG and path publication
+        // now happen on the game thread, with a bounded search slice each update.
+        private void UpdateWallActions(int currentTick)
         {
-            Thing tmp = null;
-            float closest = 999;
-            IEnumerable<Building> allThings = from def in this.Map.listerThings.AllThings
-                                              where (def is Building && TM_Calc.IsWall(def))
-                                              select def as Building;
-            foreach(Building b in allThings)
+            if (closestThreat != null && !IsValidThreat(closestThreat))
             {
-                float dist = (b.Position - closestThreat.Position).LengthHorizontal;
-                if (dist < closest)
+                closestThreat = null;
+                CancelPlanning();
+                nextThreatUpdate = 0;
+            }
+            if (currentTick >= nextThreatUpdate)
+            {
+                FindClosestThreat();
+                nextThreatUpdate = currentTick + (closestThreat == null ? Rand.Range(120, 300) : Rand.Range(4, 6));
+            }
+            if (closestThreat == null) return;
+
+            if (wallSearch != null && (searchMap != Map || searchThreat != closestThreat ||
+                searchStart.DestroyedOrNull() || !searchStart.Spawned || searchStart.Map != Map ||
+                searchStart.Faction != searchFaction || searchFaction != pawn.Faction))
+                CancelPlanning();
+
+            if (wallSearch == null && updatedPath.Count == 0 && currentTick >= nextPathSearchTick)
+            {
+                searchStart = DestinationWall;
+                nextPathSearchTick = currentTick + PathRetryTicks;
+                if (searchStart == null || searchStart.Faction != pawn.Faction)
                 {
-                    closest = dist;
-                    tmp = b;
+                    ClearSearch();
+                    return;
+                }
+                searchMap = Map;
+                searchThreat = closestThreat;
+                searchFaction = searchStart.Faction;
+                // Capture this search's context, not mutable state from a later search.
+                var map = searchMap;
+                var faction = searchFaction;
+                wallSearch = new LivingWallSearch(searchStart.Position,
+                    cell => FindWall(cell, map, faction) != null, MaxSearchCells);
+            }
+            if (wallSearch == null) return;
+            wallSearch.Step(SearchBudgetPerTick);
+            if (!wallSearch.Completed) return;
+
+            var start = wallSearch.Start;
+            var best = start;
+            float closest = (start - closestThreat.Position).LengthHorizontalSquared;
+            foreach (var cell in wallSearch.Cells)
+            {
+                float distance = (cell - closestThreat.Position).LengthHorizontalSquared;
+                if (distance < closest && FindWall(cell, searchMap, searchFaction) != null)
+                {
+                    best = cell;
+                    closest = distance;
                 }
             }
-            return tmp;
+            var path = wallSearch.PathTo(best);
+            if (path.Count > 1)
+            {
+                plannedMap = searchMap;
+                plannedFaction = searchFaction;
+                updatedPath = TM_Calc.IntVec3List_To_Vector3List(path);
+            }
+            ClearSearch();
+            nextPathSearchTick = currentTick + PathRetryTicks;
         }
 
-        public bool MoveToClosestWall()
+        private void ClearSearch()
         {
-            if (curvePoints.Count > 1 && destinationCurvePoint > 0)
+            wallSearch = null;
+            searchMap = null;
+            searchStart = null;
+            searchThreat = null;
+            searchFaction = null;
+        }
+
+        private void CancelPlanning()
+        {
+            ClearSearch();
+            updatedPath?.Clear();
+            plannedMap = null;
+            plannedFaction = null;
+            nextPathSearchTick = 0;
+        }
+
+        private bool TryUseQueuedPath()
+        {
+            if (updatedPath == null || updatedPath.Count < 2) return false;
+            bool valid = plannedMap == Map && updatedPath[0].ToIntVec3() == Position &&
+                (pawn == null || plannedFaction == pawn.Faction);
+            for (int i = 0; valid && i < updatedPath.Count; i++)
             {
-                this.origin = curvePoints[destinationCurvePoint];
-                this.destination = curvePoints[destinationCurvePoint - 1];
-                this.ticksToImpact = this.StartingTicksToImpact;
-                this.curvePoints.Clear();
-                updatedPath.Clear();
-                targetWall = null;
+                var cell = updatedPath[i].ToIntVec3();
+                valid = FindWall(cell, Map, plannedFaction) != null;
+                if (i > 0)
+                {
+                    var previous = updatedPath[i - 1].ToIntVec3();
+                    valid &= Math.Abs(cell.x - previous.x) + Math.Abs(cell.z - previous.z) == 1;
+                }
+            }
+            if (!valid)
+            {
+                CancelPlanning();
                 return false;
             }
-            else
-            {
-                if (OccupiedWall == null && CasterPawn != null)
-                {
-                    Building nearestWall = TM_Calc.FindNearestWall(this.Map, this.ExactPosition.ToIntVec3(), CasterPawn.Faction);
-                    if(nearestWall != null)
-                    {
-                        this.Position = nearestWall.Position;
-                        this.origin = nearestWall.DrawPos;
-                        this.destination = nearestWall.DrawPos;
-                        this.ticksToImpact = this.StartingTicksToImpact;
-                        this.curvePoints.Clear();
-                        updatedPath.Clear();
-                        targetWall = null;
-                        return false;
-                    }
-                }
-            }
-            //Log.Message("no nearby wall found - destroying");
+            ChangePath();
             return true;
         }
 
-        List<Vector3> updatedPath = new List<Vector3>();
-        public void CreatePath()
-        {
-            List<IntVec3> tmpList = new List<IntVec3>();
-            if (DestinationWall != null)
-            {
-                tmpList = TM_Calc.FindTPath(DestinationWall, targetWall, OccupiedWall.Faction);
-            }
-            updatedPath = TM_Calc.IntVec3List_To_Vector3List(tmpList);            
-            targetWall = null;
-        }
-
-        private int nextWallUpdate = 0;
-        private int nextWallHealthUpdate = 0;
-        private int nextThreatUpdate = 0;
-        private int nextWallSelectUpdate = 0;
-        private bool pathLocked = false;
-        private bool canAddNewPath = false;
-
-        public void DoPathUpdate()
-        {            
-            CreatePath();
-            pathLocked = false;
-        }
-
-        //never gets used, just repairs occupied wall
-        private List<Building> damagedWallList = new List<Building>();
-        public void DoWallHealthUpdate()
-        {
-            List<Building> rmvList = new List<Building>();
-            rmvList.Clear();
-            if(damagedWallList == null)
-            {
-                damagedWallList = new List<Building>();
-                damagedWallList.Clear();
-            }
-            foreach(Building b in connectedWalls)
-            {
-                if(b.DestroyedOrNull())
-                {
-                    rmvList.Add(b);
-                }
-                else if(b.HitPoints < b.MaxHitPoints)
-                {
-                    damagedWallList.Add(b);
-                }
-            }
-            foreach(Building b in rmvList)
-            {
-                connectedWalls.Remove(b);
-            }
-        }
-
-        private bool wallUpdateLock = false;
-        public void DoConnectedWallUpdate()
-        {
-            //incrementally finds connected walls and queues them for next move;
-            //this should occur while the nurikabe moves, to appear seamless
-            connectedWalls = TM_Calc.FindConnectedWalls(DestinationWall, 1.4f, 20f, true);
-        }
-
-        public void DoThreadedActions()
-        {
-            if (Find.TickManager.TicksGame > this.nextWallUpdate && OccupiedWall != null)
-            {
-                this.nextWallUpdate = Find.TickManager.TicksGame + Rand.Range(10, 20);
-                DoConnectedWallUpdate();
-            }
-
-            if (Find.TickManager.TicksGame > this.nextThreatUpdate)
-            {
-                if (closestThreat != null)
-                {
-                    nextThreatUpdate = Find.TickManager.TicksGame + Rand.Range(4, 6);
-                }
-                else
-                {
-                    nextThreatUpdate = Find.TickManager.TicksGame + Rand.Range(120, 300);
-                }
-                FindClosestThreat();
-            }
-            if (Find.TickManager.TicksGame >= this.nextWallSelectUpdate && closestThreat != null)
-            {
-                nextWallSelectUpdate = Find.TickManager.TicksGame + Rand.Range(10, 20);
-                FindClosestWallToTarget();
-            }
-            if (targetWall != null && targetWall.Position != this.Position && !pathLocked && updatedPath.Count <= 0)
-            {
-                pathLocked = true;
-                DoPathUpdate();
-            }
-            threadLocked = false;
-        }
-
-        private IntVec3 lastGoodPosition = default(IntVec3);
-        public void DoDirectActions()
-        {
-            if (OccupiedWall == null)
-            {
-                shouldDestroy = MoveToClosestWall();
-            }
-        }
-
         public void ChangePath()
-        {            
-            this.curvePoints.Clear();
-            //Log.Message("adding new path");
-            foreach (Vector3 v in this.updatedPath)
+        {
+            if (updatedPath == null || updatedPath.Count < 2) return;
+            curvePoints = updatedPath;
+            updatedPath = new List<Vector3>();
+            destinationCurvePoint = 1;
+            origin = curvePoints[0];
+            destination = curvePoints[1];
+            ticksToImpact = StartingTicksToImpact;
+            idleFor = 0;
+        }
+
+        // Recover only onto a surviving adjacent segment of this route. There is
+        // no map-wide teleport or worker thread left running after a wall is lost.
+        public bool MoveToClosestWall()
+        {
+            if (curvePoints != null && destinationCurvePoint > 0 && destinationCurvePoint < curvePoints.Count)
             {
-                this.curvePoints.Add(v);
+                var previous = curvePoints[destinationCurvePoint - 1].ToIntVec3();
+                if (FindWall(previous, Map, pawn.Faction) != null)
+                {
+                    Position = previous;
+                    CancelPlanning();
+                    IdleFlight();
+                    return false;
+                }
             }
-            updatedPath.Clear();
-            this.destinationCurvePoint = 0;
-            pathLocked = false;            
+            return true;
+        }
+
+        public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
+        {
+            CancelPlanning();
+            closestThreat = null;
+            if (curvePoints != null) IdleFlight();
+            base.DeSpawn(mode);
+        }
+
+        public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
+        {
+            CancelPlanning();
+            closestThreat = null;
+            base.Destroy(mode);
         }
 
         public void UpdateStatus()
@@ -531,161 +517,124 @@ namespace TorannMagic
             }
         }
 
-        private bool threadLocked = false;
-        private int threadLockTick = 0;
-        private int searchEnemyTick = 0;
-        static List<Thread> activeThreads = new List<Thread>();
+        private int searchEnemyTick;
         protected override void Tick()
         {
         }
+
         protected override void TickInterval(int delta)
         {
-            Vector3 exactPosition = this.ExactPosition;
-            if (shouldDestroy)
+            if (!Spawned)
+            {
+                CancelPlanning();
+                closestThreat = null;
+                return;
+            }
+            if (shouldDestroy || pawn.DestroyedOrNull() || !pawn.Spawned || pawn.Dead || pawn.Map != Map)
             {
                 Destroy(DestroyMode.Vanish);
+                return;
             }
-            else
+            if (FindWall(Position, Map, pawn.Faction) == null)
             {
-                if (this.ticksToImpact >= 0 && this.moteDef != null && Find.TickManager.TicksGame % this.moteFrequency == 0)
+                if (MoveToClosestWall()) Destroy(DestroyMode.Vanish);
+                return;
+            }
+
+            int currentTick = Find.TickManager.TicksGame;
+            int elapsed = Math.Max(1, delta);
+            UpdateWallActions(currentTick);
+            if (ticksToImpact >= 0 && moteDef != null && moteFrequency > 0 && currentTick % moteFrequency == 0)
+                DrawEffects(ExactPosition);
+            if (currentTick > searchEnemyTick)
+            {
+                searchEnemyTick = currentTick + Mathf.RoundToInt(Rand.Range(.4f, .6f) * searchEnemySpeed);
+                AttackNearby();
+                RepairOccupiedWall();
+            }
+            if (idleFor > 0)
+            {
+                idleFor = Math.Max(0, idleFor - elapsed);
+                if (!TryUseQueuedPath()) return;
+            }
+
+            AdvanceMovement(elapsed);
+            if (Destroyed) return;
+            if (!ExactPosition.InBoundsWithNullCheck(Map))
+            {
+                Destroy(DestroyMode.Vanish);
+                return;
+            }
+            Position = ExactPosition.ToIntVec3();
+            if (currentTick % 3 == 0 && DestinationCell != Position)
+            {
+                FleckMaker.ThrowDustPuff(Position, Map, Rand.Range(.4f, .6f));
+                float angle = (Quaternion.AngleAxis(90, Vector3.up) * TM_Calc.GetVector(origin, destination)).ToAngleFlat();
+                TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_DirectionalDirtOverhead, DrawPos, Map,
+                    1.2f, .05f, .15f, .38f, 0, 3f, angle, angle);
+            }
+        }
+
+        private void AdvanceMovement(int elapsed)
+        {
+            if (FindWall(DestinationCell, Map, pawn.Faction) == null)
+            {
+                CancelPlanning();
+                if (MoveToClosestWall()) Destroy(DestroyMode.Vanish);
+                return;
+            }
+            ticksToImpact -= elapsed;
+            // Carry excess elapsed time through successive segments. A route has
+            // at most MaxSearchCells points, so even a large interval is bounded.
+            while (ticksToImpact <= 0)
+            {
+                int remainder = -ticksToImpact;
+                if (!DestinationCell.InBoundsWithNullCheck(Map))
                 {
-                    DrawEffects(exactPosition);
+                    Destroy(DestroyMode.Vanish);
+                    return;
                 }
-                if (Find.TickManager.TicksGame > this.searchEnemyTick)
+                Position = DestinationCell;
+                if (curveVariance <= 0)
                 {
-                    this.searchEnemyTick = Mathf.RoundToInt(Rand.Range(.4f, .6f) * this.searchEnemySpeed) + Find.TickManager.TicksGame;
-                    AttackNearby();
-                    RepairOccupiedWall();
-                    if(this.pawn.DestroyedOrNull() || this.pawn.Dead || this.pawn.Map != this.Map)
-                    {
-                        shouldDestroy = true;
-                    }
+                    ImpactSomething();
+                    return;
                 }
-                if (idleFor > 0)
+                if (destinationCurvePoint + 1 < curvePoints.Count)
                 {
-                    idleFor--;
-                    if (closestThreat != null && !threadLocked)
+                    var next = curvePoints[destinationCurvePoint + 1].ToIntVec3();
+                    if (FindWall(next, Map, pawn.Faction) == null)
                     {
-                        threadLocked = true;
-                        threadLockTick = Find.TickManager.TicksGame + 100;
-                        Thread tryDirectPath = new Thread(DirectPath);
-                        tryDirectPath.Start();
+                        CancelPlanning();
+                        IdleFlight();
+                        return;
                     }
+                    origin = destination;
+                    destination = curvePoints[++destinationCurvePoint];
+                    ticksToImpact = StartingTicksToImpact - remainder;
+                }
+                else if (TryUseQueuedPath())
+                {
+                    ticksToImpact -= remainder;
                 }
                 else
                 {
-                    this.ticksToImpact--;
-                    //updates list of connected wall segments
-                    if (!threadLocked)
-                    {
-                        threadLockTick = Find.TickManager.TicksGame + 100;
-                        threadLocked = true;
-                        Thread threadedActions = new Thread(DoThreadedActions);
-                        activeThreads.Add(threadedActions);
-                        threadedActions.Start();
-                    }
-                    if (Find.TickManager.TicksGame > threadLockTick)
-                    {
-                        for (int i = 0; i < activeThreads.Count; i++)
-                        {
-                            activeThreads[i].Abort();
-                        }
-                        activeThreads.Clear();
-                        threadLocked = false;
-                    }
-                    DoDirectActions();
-                    if (!shouldDestroy)
-                    {
-                        bool flag = !this.ExactPosition.InBoundsWithNullCheck(base.Map);
-                        if (flag)
-                        {
-                            this.ticksToImpact++;
-                            base.Position = this.ExactPosition.ToIntVec3();
-                            this.Destroy(DestroyMode.Vanish);
-                        }
-                        else
-                        {
-                            base.Position = this.ExactPosition.ToIntVec3();
-                            if (Find.TickManager.TicksGame % 3 == 0 && this.destination.ToIntVec3() != this.Position)
-                            {
-                                FleckMaker.ThrowDustPuff(base.Position, base.Map, Rand.Range(0.4f, .6f));
-                                float angle = (Quaternion.AngleAxis(90, Vector3.up) * TM_Calc.GetVector(this.origin, this.destination)).ToAngleFlat();
-                                TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_DirectionalDirtOverhead, this.DrawPos, this.Map, 1.2f, .05f, .15f, .38f, 0, 3f, angle, angle);
-                            }
-
-                            bool flag2 = this.ticksToImpact <= 0;
-                            if (flag2)
-                            {
-                                if (this.curveVariance > 0)
-                                {
-                                    if ((this.curvePoints.Count() - 1) > this.destinationCurvePoint)
-                                    {
-                                        this.origin = curvePoints[destinationCurvePoint];
-                                        this.destinationCurvePoint++;
-                                        this.destination = this.curvePoints[this.destinationCurvePoint];
-                                        this.ticksToImpact = this.StartingTicksToImpact;
-                                        canAddNewPath = false;
-                                    }
-                                    else
-                                    {
-                                        bool flag3 = this.DestinationCell.InBoundsWithNullCheck(base.Map);
-                                        if (flag3)
-                                        {
-                                            base.Position = this.DestinationCell;
-                                        }
-                                        canAddNewPath = true;
-                                        this.IdleFlight();
-                                    }
-                                }
-                                else
-                                {
-                                    bool flag3 = this.DestinationCell.InBoundsWithNullCheck(base.Map);
-                                    if (flag3)
-                                    {
-                                        base.Position = this.DestinationCell;
-                                    }
-                                    this.ImpactSomething();
-                                }
-                            }
-                        }
-                    }
+                    IdleFlight();
+                    return;
                 }
             }
         }
 
         public virtual void IdleFlight()
         {
-            if (updatedPath != null && updatedPath.Count > 0 && !pathLocked)
-            {
-                this.idleFor = 5;
-                pathLocked = true;
-                ChangePath();
-            }
-            else
-            {
-                this.idleFor = 60;
-                this.origin = this.ExactPosition;
-                this.destination = this.ExactPosition;
-                this.ticksToImpact = this.StartingTicksToImpact;
-            }
-        }
-
-        public void DirectPath()
-        {
-            Thing cwftWall = FindClosestWallFromTarget();
-            if (cwftWall != null && (cwftWall.Position - closestThreat.Position).LengthHorizontal < (this.Position - closestThreat.Position).LengthHorizontal)
-            {
-                List<IntVec3> tmpList = TM_Calc.FindTPath(OccupiedWall, cwftWall, OccupiedWall.Faction);
-                if (tmpList.Count > 0)
-                {
-                    updatedPath = TM_Calc.IntVec3List_To_Vector3List(tmpList);
-                    ChangePath();
-                }
-            }
-            
-            targetWall = null;
-            idleFor = 0;
-            threadLocked = false;
+            if (TryUseQueuedPath()) return;
+            idleFor = 60;
+            origin = Position.ToVector3Shifted();
+            destination = origin;
+            ticksToImpact = StartingTicksToImpact;
+            curvePoints.Clear();
+            curvePoints.Add(origin);
+            destinationCurvePoint = 0;
         }
 
         public void AttackNearby()
@@ -785,3 +734,5 @@ namespace TorannMagic
         }
     }
 }
+
+

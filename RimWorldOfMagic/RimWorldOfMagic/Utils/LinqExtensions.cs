@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,22 +8,6 @@ namespace TorannMagic.Utils
 {
     public static class LinqExtensions
     {
-        public static IEnumerable<TSource> DistinctBy<TSource, TKey>(
-            this IEnumerable<TSource> source,
-            Func<TSource, TKey> keySelector
-        )
-        // Efficiently get the first elements that are distinct by a property or group (Like injury.Part)
-        {
-            HashSet<TKey> seenKeys = new HashSet<TKey>();
-            foreach (TSource element in source)
-            {
-                if (seenKeys.Contains(keySelector(element))) continue;
-
-                seenKeys.Add(keySelector(element));
-                yield return element;
-            }
-        }
-
         public static IEnumerable<TSource> DistinctBy<TSource, TKey>(
             this IEnumerable<TSource> source,
             Func<TSource, TKey> keySelector,
@@ -43,3 +27,4 @@ namespace TorannMagic.Utils
         }
     }
 }
+

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
@@ -163,17 +163,17 @@ namespace TorannMagic
                     if (success == true)
                     {                        
                         TM_MoteMaker.ThrowRegenMote(pawn.Position.ToVector3(), pawn.Map, 1.5f);
-                        MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Cure Disease" + ": " + StringsToTranslate.AU_CastSuccess, -1f);
+                        MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Cure Disease" + ": " + "AU_CastSuccess".Translate(), -1f);
                     }
                     else
                     {
                         Messages.Message("TM_CureDiseaseTypeFail".Translate(), MessageTypeDefOf.NegativeEvent);
-                        MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Cure Disease" + ": " + StringsToTranslate.AU_CastFailure, -1f);
+                        MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Cure Disease" + ": " + "AU_CastFailure".Translate(), -1f);
                     }
                 }
                 else
                 {
-                    MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Cure Disease" + ": " + StringsToTranslate.AU_CastFailure, -1f);
+                    MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Cure Disease" + ": " + "AU_CastFailure".Translate(), -1f);
                 }
                 
             }
@@ -181,3 +181,4 @@ namespace TorannMagic
         }
     }
 }
+
