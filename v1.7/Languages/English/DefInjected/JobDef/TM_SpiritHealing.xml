@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritHeal.reportString>healing through a spirit host.</TM_SpiritHeal.reportString>
+  <TM_SpiritAdvancedHeal.reportString>casting advanced healing through a spirit host.</TM_SpiritAdvancedHeal.reportString>
+  <TM_SpiritPurify.reportString>purifying through a spirit host.</TM_SpiritPurify.reportString>
+  <TM_SpiritRegenerate.reportString>casting regeneration through a spirit host.</TM_SpiritRegenerate.reportString>
+</LanguageData>

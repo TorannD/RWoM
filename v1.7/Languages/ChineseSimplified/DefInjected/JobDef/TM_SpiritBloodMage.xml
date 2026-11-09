@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritBloodShield.reportString>正在形成鲜血护盾。</TM_SpiritBloodShield.reportString>
+  <TM_SpiritBloodMoon.reportString>正在召唤血月。</TM_SpiritBloodMoon.reportString>
+  <TM_SpiritBloodMoon_I.reportString>正在召唤血月。</TM_SpiritBloodMoon_I.reportString>
+  <TM_SpiritBloodMoon_II.reportString>正在召唤血月。</TM_SpiritBloodMoon_II.reportString>
+  <TM_SpiritBloodMoon_III.reportString>正在召唤血月。</TM_SpiritBloodMoon_III.reportString>
+  <TM_SpiritRend.reportString>正在撕裂目标。</TM_SpiritRend.reportString>
+  <TM_SpiritRend_I.reportString>正在撕裂目标。</TM_SpiritRend_I.reportString>
+  <TM_SpiritRend_II.reportString>正在撕裂目标。</TM_SpiritRend_II.reportString>
+  <TM_SpiritRend_III.reportString>正在撕裂目标。</TM_SpiritRend_III.reportString>
+  <TM_SpiritBloodForBlood.reportString>正在转移鲜血。</TM_SpiritBloodForBlood.reportString>
+  <TM_SpiritIgniteBlood.reportString>正在点燃鲜血。</TM_SpiritIgniteBlood.reportString>
+</LanguageData>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_RangerMasteryHint>Enemigos distintos atrapados {0}/8 · Incendios de almacén extinguidos {1}/12</TM_RangerMasteryHint>
+  <TM_RangerFireHint>Apaga personalmente un incendio en bienes inflamables o junto a ellos, dentro de un almacén de la colonia que los acepte. Cada sector de 12×12 cuenta una vez al día. Los fuegos provocados por tu facción no cuentan.</TM_RangerFireHint>
+  <TM_RangerMasteryClaim>Aprender {0}</TM_RangerMasteryClaim>
+  <TM_RangerAscensionHint>Nivel de guerrero {0}/30 · Retiradas aliadas por la senda segura {1}/8 · Turnos de atención animal {2}/10</TM_RangerAscensionHint>
+  <TM_RangerWoundHint>Como médico, trata una herida real de un animal de la colonia. Cuenta un turno completado al día.</TM_RangerWoundHint>
+  <TM_RangerChooseUltimate>Elegir técnica de ascensión</TM_RangerChooseUltimate>
+  <TM_RangerEarnedUltimate>Técnica de ascensión: {0}</TM_RangerEarnedUltimate>
+</LanguageData>

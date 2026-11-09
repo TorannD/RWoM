@@ -15,7 +15,7 @@ namespace TorannMagic.Golems
     {
         protected override Pawn GetDefendee(Pawn pawn)
         {
-            return pawn.TryGetComp<CompGolem>().pawnMaster;
+            return ClassProgression.GolemancerLifecycle.MasterBody(pawn.TryGetComp<CompGolem>()?.pawnMaster);
         }
 
         protected override float GetFlagRadius(Pawn pawn)

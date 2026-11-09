@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_EtherGate.label>portal etéreo</TM_EtherGate.label>
+  <TM_EtherGate.description>Invoca un sirviente etéreo amistoso por 100 de combustible arcano. Transporta objetos durante un día sin comida, sueño ni aire. El portal recibe combustible arcano mediante balizas de maná y también admite repostaje manual. No necesita electricidad. Al expirar, el sirviente deja su carga y desaparece sin botín. Si muere, deja su carga y 5 de magicita, pero ningún cadáver. Destruir el portal no afecta a los sirvientes ya invocados. También excava con una habilidad inicial de Minería de 10 y construye con una habilidad inicial de Construcción de 5. Prioridad: construcción, minería designada y transporte. Flota por el espacio abierto entre plataformas a velocidad normal, pero no atraviesa paredes.</TM_EtherGate.description>
+  <TM_EtherServant.label>sirviente etéreo</TM_EtherServant.label>
+  <TM_EtherServant.description>Un espíritu amistoso invocado por un portal etéreo para transportar objetos durante un día. No necesita comida, sueño ni aire. Al expirar, deja su carga y desaparece. Si muere, deja su carga y 5 de magicita en vez de un cadáver. También excava con una habilidad inicial de Minería de 10 y construye con una habilidad inicial de Construcción de 5. Prioridad: construcción, minería designada y transporte. Flota por el espacio abierto entre plataformas a velocidad normal, pero no atraviesa paredes.</TM_EtherServant.description>
+</LanguageData>

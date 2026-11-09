@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SniperMasteryHint>Para aprender {0}, complete um dos dois caminhos. Acerte inimigos com Fratura de Armadura ou trabalhe em uma bancada de pesquisa. Cada turno dura uma hora de jogo. O tempo de trabalho se acumula mesmo com interrupções.</TM_SniperMasteryHint>
+  <TM_SniperMasteryHits>Acertos com Fratura de Armadura: {0}/{1}</TM_SniperMasteryHits>
+  <TM_SniperMasteryResearch>Turnos de pesquisa: {0}/{1}</TM_SniperMasteryResearch>
+  <TM_SniperMasteryPartial>Turno atual: {0}%</TM_SniperMasteryPartial>
+  <TM_SniperMasteryClaim>Obter maestria de atirador</TM_SniperMasteryClaim>
+  <TM_SniperMasteryLearned>Técnica de maestria aprendida: {0}.</TM_SniperMasteryLearned>
+</LanguageData>

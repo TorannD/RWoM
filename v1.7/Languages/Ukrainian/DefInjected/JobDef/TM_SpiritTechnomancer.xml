@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritTechnoShield.reportString>створює кінетичний щит через носія духа.</TM_SpiritTechnoShield.reportString>
+  <TM_SpiritSabotage.reportString>виводить техніку з ладу через носія духа.</TM_SpiritSabotage.reportString>
+  <TM_SpiritOverdrive.reportString>перевантажує техніку через носія духа.</TM_SpiritOverdrive.reportString>
+  <TM_SpiritOrbitalStrike.reportString>наводить орбітальний удар через носія духа.</TM_SpiritOrbitalStrike.reportString>
+  <TM_SpiritOrbitalStrike_I.reportString>наводить орбітальний удар через носія духа.</TM_SpiritOrbitalStrike_I.reportString>
+  <TM_SpiritOrbitalStrike_II.reportString>наводить орбітальний удар через носія духа.</TM_SpiritOrbitalStrike_II.reportString>
+  <TM_SpiritOrbitalStrike_III.reportString>наводить орбітальний удар через носія духа.</TM_SpiritOrbitalStrike_III.reportString>
+  <TM_SpiritTechnoTurret.reportString>розгортає турель Mark-IV через носія духа.</TM_SpiritTechnoTurret.reportString>
+  <TM_SpiritTechnoWeapon.reportString>копіює зброю через носія духа.</TM_SpiritTechnoWeapon.reportString>
+  <TM_SpiritNanoStimulant.reportString>активує наностимулятор у тілі носія духа.</TM_SpiritNanoStimulant.reportString>
+</LanguageData>

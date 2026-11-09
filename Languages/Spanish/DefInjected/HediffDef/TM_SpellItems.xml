@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_ItemRegeneration.label>regeneración de un objeto</TM_ItemRegeneration.label>
+  <TM_ItemRegeneration.description>Restaura hasta 5 puntos de salud a una herida natural cada dos segundos durante veinte segundos.</TM_ItemRegeneration.description>
+</LanguageData>

@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +10,11 @@ using Verse.AI.Group;
 
 namespace TorannMagic
 {
-    public class Verb_EnchantWeapon : Verb_UseAbility  
+    public class Verb_EnchantWeapon : ClassProgression.Verb_SpiritTargetable
     {
         
         int pwrVal;
-        CompAbilityUserMagic comp;
+
 
         bool validTarg;
         //Used for non-unique abilities that can be used with shieldbelt
@@ -48,41 +48,27 @@ namespace TorannMagic
             Pawn caster = base.CasterPawn;
             Pawn pawn = this.currentTarget.Thing as Pawn;
 
-            comp = caster.GetCompAbilityUserMagic();
-            pwrVal = TM_Calc.GetSkillPowerLevel(caster, this.Ability.Def as TMAbilityDef);
-            //MagicPowerSkill pwr = comp.MagicData.MagicPowerSkill_EnchantWeapon.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_EnchantWeapon_pwr");
-            //pwrVal = pwr.level;
-            //
-            //if (caster.story.traits.HasTrait(TorannMagicDefOf.Faceless))
-            //{
-            //    pwrVal = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr").level;
-            //}
-            //if (ModOptions.Settings.Instance.AIHardMode && !caster.IsColonist)
-            //{
-            //    pwrVal = 3;
-            //}
-
-            if (pawn != null)
+            var owner = ClassProgression.SpiritRebirthCasting.SkillOwner(caster, Ability);
+            if (owner == null || pawn?.equipment?.Primary?.def.IsMeleeWeapon != true)
             {
-                if (pawn.equipment != null && pawn.equipment.Primary != null && pawn.equipment.Primary.def.IsMeleeWeapon)
-                {
-                    RemoveExistingEnchantment(pawn);
-                    ApplyEnchantment(pawn);
-                }
-                else if(this.CasterPawn.IsColonist)
-                {
-                    Messages.Message("TM_NoMeleeWeaponToEnchant".Translate(
-                    pawn
-                ), MessageTypeDefOf.RejectInput);
-                    return false;
-                }
+                if (pawn != null && caster.IsColonist)
+                    Messages.Message("TM_NoMeleeWeaponToEnchant".Translate(pawn), MessageTypeDefOf.RejectInput);
+                return false;
             }
-            
+            pwrVal = owner == caster ? TM_Calc.GetSkillPowerLevel(owner, Ability.Def as TMAbilityDef) :
+                ClassProgression.SpiritRebirthRuntime.SavedRank(owner.GetCompAbilityUserMagic().ExistingMagicData, Ability.Def as TMAbilityDef, "_pwr");
+            var trial = ClassProgression.EnchanterTrials.CaptureEnchantment(Ability, pawn);
+            RemoveExistingEnchantment(pawn);
+            ApplyEnchantment(pawn);
+            ClassProgression.EnchanterTrials.CompleteEnchantment(trial);
             return true;
-        } 
-        
+        }
+
         public void ApplyEnchantment(Pawn pawn)
         {
+            var owner = ClassProgression.SpiritRebirthCasting.SkillOwner(CasterPawn, Ability);
+            var comp = owner?.GetCompAbilityUserMagic();
+            if (comp == null || pawn?.equipment?.Primary?.def.IsMeleeWeapon != true) return;
             HediffDef hediff = null;
             float rnd = Rand.Range(0, 1f);
             if (rnd < .25f)
@@ -108,50 +94,19 @@ namespace TorannMagic
                 TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Shadow, pawn.DrawPos, pawn.Map, 1f, .2f, .1f, .8f, Rand.Range(-30, 30), .3f, Rand.Range(-30, 30), Rand.Range(0, 360));
             }
             HealthUtility.AdjustSeverity(pawn, hediff, .5f + pwrVal);
-            CompAbilityUserMagic comp = this.CasterPawn.GetCompAbilityUserMagic();            
-            comp.weaponEnchants.Add(pawn);
+            comp.weaponEnchants ??= new List<Pawn>();
+            if (!comp.weaponEnchants.Contains(pawn)) comp.weaponEnchants.Add(pawn);
             Hediff diff = pawn.health.hediffSet.GetFirstHediffOfDef(hediff, false);
             HediffComp_EnchantedWeapon ewComp = diff.TryGetComp<HediffComp_EnchantedWeapon>();
             ewComp.enchantedWeapon = pawn.equipment.Primary;
-            ewComp.enchanterPawn = this.CasterPawn;
+            ewComp.enchanterPawn = owner;
+            comp.SyncEnchantWeaponControl();
 
         }
 
         public void RemoveExistingEnchantment(Pawn pawn)
         {
-            Hediff hediff = null;
-            List<Hediff> allHediffs = new List<Hediff>();
-            allHediffs.Clear();
-            allHediffs = pawn.health.hediffSet.hediffs.ToList();
-            List<Hediff> removeHediffs = new List<Hediff>();
-            removeHediffs.Clear();
-            if (allHediffs != null && allHediffs.Count > 0)
-            {
-                for (int i = 0; i < allHediffs.Count; i++)
-                {
-                    hediff = allHediffs[i];
-                    if(hediff.def.defName.Contains("TM_WeaponEnchantment"))
-                    {
-                        HediffComp_EnchantedWeapon ewComp = hediff.TryGetComp<HediffComp_EnchantedWeapon>();
-                        if (ewComp != null)
-                        {
-                            CompAbilityUserMagic comp = ewComp.enchanterPawn.GetCompAbilityUserMagic();
-                            if (comp != null)
-                            {
-                                comp.weaponEnchants.Remove(pawn);
-                            }
-                        }
-                        removeHediffs.Add(hediff);
-                    }
-                }
-                if(removeHediffs.Count > 0)
-                {
-                    foreach(Hediff hd in removeHediffs)
-                    {
-                        pawn.health.RemoveHediff(hd);
-                    }
-                }
-            }
+            Verb_DispelEnchantWeapon.RemoveExistingEnchantment(pawn);
         }
     }
 }

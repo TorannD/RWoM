@@ -1,0 +1,8 @@
+<LanguageData>
+  <TM_ChooseUnifiedWanderer>Выбрать путь Странника</TM_ChooseUnifiedWanderer>
+  <TM_ConfirmUnifiedWanderer>Стать Воином-Магом и развивать малую магию и полевую подготовку? Это выбор класса. Книга не требуется.</TM_ConfirmUnifiedWanderer>
+  <TM_WandererSurvey>Разметить маршрут</TM_WandererSurvey>
+  <TM_WandererSurveyInfo>Разметьте маршрут длиной от 12 клеток и прочтите полный том любого класса. Для мастерства — маршрут от 24 клеток и мастерский том. Разметка расходует 10% каждого ресурса вашего пути. Каждая книга предлагает шесть навыков, из которых можно взять два.</TM_WandererSurveyInfo>
+  <TM_WandererLessons>Выбрать навык (осталось {0})</TM_WandererLessons>
+  <TM_BestowRecipientUnavailable>У {0} уже есть этот дар или выбран класс.</TM_BestowRecipientUnavailable>
+</LanguageData>

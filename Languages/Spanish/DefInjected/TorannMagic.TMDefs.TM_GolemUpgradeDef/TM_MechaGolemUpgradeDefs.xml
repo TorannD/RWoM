@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_Golem_MechaAxe.label>mecha-hacha</TM_Golem_MechaAxe.label>
+  
+  <TM_Golem_MechaAxe.description>Añade un ataque cortante rápido, útil para abatir masas sin armadura. 16,4 de DPS con 1,15 de penetración de armadura.\n*Esta mejora comparte ranura con la mecha-espada y la eliminará si se instala*</TM_Golem_MechaAxe.description>
+  
+  
+  <TM_Golem_MechaBallisticPlate.label>placa balística</TM_Golem_MechaBallisticPlate.label>
+  
+  <TM_Golem_MechaBallisticPlate.description>Aumenta la armadura, pero reduce el movimiento, por cada nivel:\nContundente: +[24,37,49] %\nCortante: +[35,53,68] %\nCalor: +[40,60,75] %\nMovimiento: -[0,3 c, 0,5 c, 0,6 c]</TM_Golem_MechaBallisticPlate.description>
+  
+  
+  <TM_Golem_MechaEarthCore.label>núcleo de tierra</TM_Golem_MechaEarthCore.label>
+  
+  <TM_Golem_MechaEarthCore.description>Aumenta pasivamente las estadísticas del golem y añade una habilidad que proporciona un escudo.\nArmadura: +[10 %/18 %/25 %]\nTiempo de reutilización de habilidades: +[5 %/10 %/15 %]\nBonificación de curación: +[60 %/120 %/180 %]\nCoste de energía: +[5 %/10 %/15 %]\nProcesamiento: +[15 %/30 %/45 %]\n\nProtocolo de escudo\nTiempo de reutilización: 10 s\nCoste de energía: 10\nCantidad de escudo: 120</TM_Golem_MechaEarthCore.description>
+  
+  
+  <TM_Golem_MechaEarthShard.label>fragmento de tierra</TM_Golem_MechaEarthShard.label>
+  
+  <TM_Golem_MechaEarthShard.description>Aumenta las estadísticas del golem:\nSalud: +[40 %/80 %/120 %]</TM_Golem_MechaEarthShard.description>
+  
+  
+  <TM_Golem_MechaEnergyEfficiency.label>convertidor de energía</TM_Golem_MechaEnergyEfficiency.label>
+  
+  <TM_Golem_MechaEnergyEfficiency.description>Aumenta la eficiencia energética un 10 % por nivel. La eficiencia energética inicial es del 50 %.</TM_Golem_MechaEnergyEfficiency.description>
+  
+  
+  <TM_Golem_MechaEnergyRate.label>neuronúcleo eléctrico</TM_Golem_MechaEnergyRate.label>
+  
+  <TM_Golem_MechaEnergyRate.description>Aumenta la velocidad de carga de energía un 20 % por nivel. La velocidad de recarga inicial es de 50 de energía por hora cuando está desconectado de una red eléctrica. Conectarse a una red eléctrica aumenta la velocidad de recarga.</TM_Golem_MechaEnergyRate.description>
+  
+  
+  <TM_Golem_MechaExtinguisher.label>extintor</TM_Golem_MechaExtinguisher.label>
+  
+  <TM_Golem_MechaExtinguisher.description>Añade la capacidad de sofocar fuegos rápidamente.</TM_Golem_MechaExtinguisher.description>
+  
+  
+  <TM_Golem_MechaFlameCore.label>núcleo de llamas</TM_Golem_MechaFlameCore.label>
+  
+  <TM_Golem_MechaFlameCore.description>Aumenta pasivamente las estadísticas del golem y añade una habilidad que quema la suciedad cercana.\nMovimiento: +[0,5 c/0,9 c/1,2 c]\nProcesamiento: +[10 %/20 %/30 %]\nDaño de habilidades: +[10 %/20 %/30 %]\nCoste de energía: +[10 %/20 %/30 %]\n\nProtocolo de limpieza\nTiempo de reutilización: 6 s\nAlcance: 2 c\nCoste de energía: 4 por suciedad</TM_Golem_MechaFlameCore.description>
+  
+  
+  <TM_Golem_MechaFlameShard.label>fragmento de llamas</TM_Golem_MechaFlameShard.label>
+  
+  <TM_Golem_MechaFlameShard.description>Aumenta las estadísticas del golem:\nMovimiento: +[15 %/30 %/40 %]\nSalud: +[15 %/30 %/40 %]</TM_Golem_MechaFlameShard.description>
+  
+  
+  <TM_Golem_MechaGatlingCannon.label>cañón Gatling</TM_Golem_MechaGatlingCannon.label>
+  
+  <TM_Golem_MechaGatlingCannon.description>Dispara una ráfaga de 12 disparos.\nTiempo de reutilización: 5 s\nCoste de energía: 40\nAlcance: 40</TM_Golem_MechaGatlingCannon.description>
+  
+  
+  <TM_Golem_MechaHammer.label>mecha-martillo</TM_Golem_MechaHammer.label>
+  
+  <TM_Golem_MechaHammer.description>Añade un despiadado ataque contundente, más potente que los puños del golem.</TM_Golem_MechaHammer.description>
+  
+  
+  <TM_Golem_MechaLightningCore.label>núcleo de rayos</TM_Golem_MechaLightningCore.label>
+  
+  <TM_Golem_MechaLightningCore.description>Aumenta pasivamente las estadísticas del golem y añade un recubrimiento reflectante al caparazón del golem que produce una descarga eléctrica que aturde a los atacantes cuerpo a cuerpo.\nMovimiento: +[1,2 c/1,8 c/2,2 c]\nTiempo de reutilización de habilidades: -[15 %/30 %/45 %]\nCoste de energía: +[10 %/20 %/30 %]\nProcesamiento: -[5 %/10 %/15 %]</TM_Golem_MechaLightningCore.description>
+  
+  
+  <TM_Golem_MechaLightningShard.label>fragmento de rayos</TM_Golem_MechaLightningShard.label>
+  
+  <TM_Golem_MechaLightningShard.description>Aumenta las estadísticas del golem:\nMovimiento: +[25 %/50 %/75 %]</TM_Golem_MechaLightningShard.description>
+  
+  
+  <TM_Golem_MechaMaxEnergy.label>célula de energía</TM_Golem_MechaMaxEnergy.label>
+  
+  <TM_Golem_MechaMaxEnergy.description>Aumenta la energía máxima en 500 por nivel. La energía máxima inicial es 1000.</TM_Golem_MechaMaxEnergy.description>
+  
+  
+  <TM_Golem_MechaMiningLaser.label>láser de minería</TM_Golem_MechaMiningLaser.label>
+  
+  <TM_Golem_MechaMiningLaser.description>Permite al golem picar los tramos de pared designados.\nCoste de energía: [20,18,16,14]\nPotencia del láser: [40,50,60,70]</TM_Golem_MechaMiningLaser.description>
+  
+  
+  <TM_Golem_MechaRepair.label>restaurar parte</TM_Golem_MechaRepair.label>
+  
+  
+  <TM_Golem_MechaSword.label>mecha-espada</TM_Golem_MechaSword.label>
+  
+  <TM_Golem_MechaSword.description>Añade un potente ataque cortante, útil para romper defensas y cercenar extremidades. 20 de DPS con 0,5 de penetración de armadura.\n*Esta mejora comparte ranura con la mecha-hacha y la eliminará si se instala*</TM_Golem_MechaSword.description>
+  
+  
+  <TM_Golem_MechaWaterCore.label>núcleo de agua</TM_Golem_MechaWaterCore.label>
+  
+  <TM_Golem_MechaWaterCore.description>Aumenta pasivamente las estadísticas del golem y añade un mecanismo de reparación autónomo.\nArmadura: +[5 %/10 %/15 %]\nTiempo de reutilización de habilidades: -[10 %/20 %/30 %]\nBonificación de curación: +[100 %/200 %/300 %]\nCoste de energía: -[15 %/30 %/45 %]\n\nReparación autónoma\nTiempo de reutilización: 3 s\nCoste de energía: 10 (latente), 30 (activo)\nCantidad de curación: 8</TM_Golem_MechaWaterCore.description>
+  
+  
+  <TM_Golem_MechaWaterShard.label>fragmento de agua</TM_Golem_MechaWaterShard.label>
+  
+  <TM_Golem_MechaWaterShard.description>Aumenta las estadísticas del golem:\nMovimiento: +[10 %/15 %/20 %]\nSalud: +[30 %/50 %/70 %]</TM_Golem_MechaWaterShard.description>
+  
+</LanguageData>

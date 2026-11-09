@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	
 	<ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
@@ -17,9 +16,9 @@
             <damageAmountBase>0</damageAmountBase>
             <speed>999</speed>
         </projectile>
-    </ThingDef>
+</ThingDef>
 	
-	<!-- Stoneskin -->	
+		
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_Stoneskin</defName>
         <label>Stoneskin</label>
@@ -60,7 +59,14 @@ Applying stoneskin to a target that already has stoneskin will remove all charge
                 <canTargetLocations>false</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_stoneskin</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_DispelStoneskin</defName>
@@ -95,9 +101,16 @@ Applying stoneskin to a target that already has stoneskin will remove all charge
 		 <canTargetLocations>false</canTargetLocations>
         </targetParams>
     </MainVerb>
- </TorannMagic.TMAbilityDef>
+ <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_dispelstoneskin</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- Encase -->
+	
 	
 	<ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>TorannMagic.Projectile_Encase</thingClass>
@@ -116,7 +129,7 @@ Applying stoneskin to a target that already has stoneskin will remove all charge
 			<explosionRadius>3</explosionRadius>
 			<postExplosionSpawnChance>1</postExplosionSpawnChance>
         </projectile>
-    </ThingDef>
+</ThingDef>
 	
 	<ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>TorannMagic.Projectile_Encase</thingClass>
@@ -135,7 +148,7 @@ Applying stoneskin to a target that already has stoneskin will remove all charge
 			<explosionRadius>4</explosionRadius>
 			<postExplosionSpawnChance>1</postExplosionSpawnChance>
         </projectile>
-    </ThingDef>
+</ThingDef>
 	
 	<ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>TorannMagic.Projectile_Encase</thingClass>
@@ -154,7 +167,7 @@ Applying stoneskin to a target that already has stoneskin will remove all charge
 			<explosionRadius>5</explosionRadius>
 			<postExplosionSpawnChance>1</postExplosionSpawnChance>
         </projectile>
-    </ThingDef>
+</ThingDef>
 	
 	<ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>TorannMagic.Projectile_Encase</thingClass>
@@ -173,7 +186,7 @@ Applying stoneskin to a target that already has stoneskin will remove all charge
 			<explosionRadius>6</explosionRadius>
 			<postExplosionSpawnChance>1</postExplosionSpawnChance>
         </projectile>
-    </ThingDef>
+</ThingDef>
 
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_Encase</defName>
@@ -215,7 +228,14 @@ Cast time: 1.5s</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_encase</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_Encase_I</defName>
@@ -256,7 +276,14 @@ Cast time: 1.3s</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_encase_i</spellId>
+<domain>Magic</domain>
+<tier>1</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_Encase_II</defName>
@@ -297,7 +324,14 @@ Cast time: 1.1s</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_encase_ii</spellId>
+<domain>Magic</domain>
+<tier>2</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_Encase_III</defName>
@@ -338,9 +372,16 @@ Cast time: 1.0s</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_encase_iii</spellId>
+<domain>Magic</domain>
+<tier>3</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- Earth Sprites-->	
+		
 	
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_EarthSprites</defName>
@@ -382,7 +423,14 @@ In exchange for their efforts, earth sprites expect a steady and substantial sup
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_earthsprites</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_DismissEarthSprites</defName>
@@ -417,9 +465,16 @@ In exchange for their efforts, earth sprites expect a steady and substantial sup
 		 <canTargetLocations>false</canTargetLocations>
         </targetParams>
     </MainVerb>
- </TorannMagic.TMAbilityDef>
+ <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_dismissearthsprites</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
-	<!-- Earthern Hammer -->	
+		
 	
 	<ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>TorannMagic.Projectile_EarthernHammer</thingClass>
@@ -437,7 +492,7 @@ In exchange for their efforts, earth sprites expect a steady and substantial sup
 			<explosionRadius>4</explosionRadius>
 			<postExplosionSpawnChance>1</postExplosionSpawnChance>
         </projectile>
-    </ThingDef>
+</ThingDef>
 	
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_EarthernHammer</defName>
@@ -477,9 +532,16 @@ The first, and every third stone after, will always be subterranean unless there
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_earthernhammer</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- Sentinel -->	
+		
 	
 	<ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>TorannMagic.Projectile_Sentinel</thingClass>
@@ -496,7 +558,7 @@ The first, and every third stone after, will always be subterranean unless there
             <damageAmountBase>0</damageAmountBase>
             <speed>999</speed>
         </projectile>
-    </ThingDef>
+</ThingDef>
 	
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_Sentinel</defName>
@@ -538,7 +600,14 @@ Using this ability on a dormant sentinel will dismiss the sentinel. Each sentine
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_sentinel</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_ShatterSentinel</defName>
@@ -573,9 +642,16 @@ Using this ability on a dormant sentinel will dismiss the sentinel. Each sentine
 		 <canTargetLocations>false</canTargetLocations>
         </targetParams>
     </MainVerb>
- </TorannMagic.TMAbilityDef>
+ <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_shattersentinel</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- Meteor -->	
+		
 
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_Meteor</defName>
@@ -626,7 +702,14 @@ Cast time: 5s</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_meteor</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_Meteor_I</defName>
@@ -678,7 +761,14 @@ Cast time: 4.6s</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_meteor_i</spellId>
+<domain>Magic</domain>
+<tier>1</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_Meteor_II</defName>
@@ -730,7 +820,14 @@ Cast time: 4.2s</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_meteor_ii</spellId>
+<domain>Magic</domain>
+<tier>2</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_Meteor_III</defName>
@@ -782,6 +879,13 @@ Cast time: 3.8s</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_meteor_iii</spellId>
+<domain>Magic</domain>
+<tier>3</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
 </Defs>

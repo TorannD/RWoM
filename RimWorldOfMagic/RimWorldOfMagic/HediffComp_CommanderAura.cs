@@ -23,6 +23,7 @@ namespace TorannMagic
         public override void CompExposeData()
         {
             base.CompExposeData();
+            Scribe_Values.Look(ref nextApplyTick, "nextApplyTick", 0);
         }
 
         public string labelCap
@@ -41,82 +42,34 @@ namespace TorannMagic
             }
         }
 
-        private void Initialize()
-        {
-            bool spawned = base.Pawn.Spawned;
-            CompAbilityUserMight comp = this.Pawn.GetCompAbilityUserMight();
-            if (spawned && comp != null && comp.IsMightUser)
-            {
-                DetermineHediff();
-            }
-            else
-            {
-                this.Pawn.health.RemoveHediff(this.parent);
-            }
-        }        
-
         public override void CompPostTick(ref float severityAdjustment)
         {
             base.CompPostTick(ref severityAdjustment);
-            bool flag = base.Pawn != null;
-            if (flag)
+            var emitter = ClassProgression.SpiritHostedCommander.AuraEmitter(Pawn);
+            var might = Pawn?.GetCompAbilityUserMight();
+            if (emitter == null || might == null || !might.IsMightUser)
             {
-                if (!initialized)
-                {
-                    initialized = true;
-                    this.Initialize();
-                }
-
-                if(base.Pawn.Map != null)
-                {
-                    if (Find.TickManager.TicksGame > this.nextApplyTick)
-                    {
-                        this.nextApplyTick = Find.TickManager.TicksGame + Rand.Range(1000, 1200);
-                        List<Pawn> mapPawns = this.Pawn.Map.mapPawns.AllPawnsSpawned.ToList();
-                        for (int i = 0; i < mapPawns.Count; i++)
-                        {
-                            if (mapPawns[i].RaceProps.Humanlike && mapPawns[i].Faction != null && mapPawns[i].Faction == base.Pawn.Faction && mapPawns[i] != this.Pawn)
-                            {
-                                if (!TM_Calc.IsUndeadNotVamp(mapPawns[i]))
-                                {
-                                    if (base.Pawn.Position.InHorDistOf(mapPawns[i].Position, radius))
-                                    {
-                                        ApplyHediff(mapPawns[i]);
-                                    }
-                                }
-                            }
-                        }
-                        CompAbilityUserMight comp = this.Pawn.GetCompAbilityUserMight();
-                        comp.MightUserXP += Rand.Range(2, 5);                        
-                    }        
-                }
-                else //map null
-                {
-                    if (Find.TickManager.TicksGame >= this.nextApplyTick)
-                    {
-                        this.nextApplyTick = Find.TickManager.TicksGame + Rand.Range(1000, 1200);
-                        if (this.Pawn.ParentHolder != null && this.Pawn.ParentHolder.ToString().Contains("Caravan"))
-                        {
-                            foreach (Pawn current in base.Pawn.holdingOwner)
-                            {
-                                if (current != null)
-                                {
-                                    if (current.RaceProps.Humanlike && current.Faction != null && current.Faction == this.Pawn.Faction && current != this.Pawn)
-                                    {
-                                        ApplyHediff(current);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-
-                if(Find.TickManager.TicksGame % 1200 == 0)
-                {
-                    DetermineHediff();
-                }
+                Pawn?.health?.RemoveHediff(parent);
+                return;
             }
-        }     
+            if (!initialized)
+            {
+                initialized = true;
+                DetermineHediff();
+            }
+            if (Find.TickManager.TicksGame > nextApplyTick)
+            {
+                nextApplyTick = Find.TickManager.TicksGame + Rand.Range(1000, 1200);
+                var recipients = emitter.Map.mapPawns.AllPawnsSpawned.ToList();
+                foreach (var recipient in recipients)
+                    if (recipient != emitter && recipient.RaceProps.Humanlike && recipient.Faction != null &&
+                        recipient.Faction == emitter.Faction && !TM_Calc.IsUndeadNotVamp(recipient) &&
+                        emitter.Position.InHorDistOf(recipient.Position, radius))
+                        ApplyHediff(recipient);
+                might.MightUserXP += Rand.Range(2, 5);
+            }
+            if (Find.TickManager.TicksGame % 1200 == 0) DetermineHediff();
+        }
 
         private void DetermineHediff()
         {           

@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using System;
 using System.Linq;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using AbilityUser;
 namespace TorannMagic
 {
     [StaticConstructorOnStartup]
-    public class FlyingObject_ValiantCharge : Projectile
+    public class FlyingObject_ValiantCharge : Projectile, IThingHolder, ISuspendableThingHolder
     {
 
         private static readonly Color wingColor = new Color(160f, 160f, 160f);
@@ -17,17 +17,28 @@ namespace TorannMagic
         private static readonly Material wingsE = MaterialPool.MatFrom("Other/angelwings_up_east", ShaderDatabase.Transparent, FlyingObject_ValiantCharge.wingColor);
         private static readonly Material wingsW = MaterialPool.MatFrom("Other/angelwings_up_west", ShaderDatabase.Transparent, FlyingObject_ValiantCharge.wingColor);
 
-        protected new Vector3 origin;
-
-        protected new Vector3 destination;
 
         protected float speed = 55f;
 
-        protected new int ticksToImpact;
 
         protected Thing assignedTarget;
 
-        protected Thing flyingThing;
+        private ThingOwner<Thing> passengers;
+        private Thing legacyPassenger;
+        private Thing flyingThing => passengers == null || passengers.Count == 0 ? null : passengers[0];
+        private bool impactStarted, takingOff;
+        internal static bool ProtectsMap(Map map)
+        {
+            var def = TorannMagicDefOf.FlyingObject_ValiantCharge;
+            if (map?.listerThings == null || def == null) return false;
+            foreach (var thing in map.listerThings.ThingsOfDef(def))
+                if (thing is FlyingObject_ValiantCharge flyer && (flyer.takingOff || flyer.flyingThing != null)) return true;
+            return false;
+        }
+        public FlyingObject_ValiantCharge() { passengers = new ThingOwner<Thing>(this, true); }
+        public bool IsContentsSuspended => true;
+        public ThingOwner GetDirectlyHeldThings() => passengers;
+        public void GetChildHolders(List<IThingHolder> children) => ThingOwnerUtility.AppendThingHoldersFromThings(children, passengers);
 
         public DamageInfo? impactDamage;
 
@@ -54,14 +65,12 @@ namespace TorannMagic
         bool zflag = false;
 
         Pawn pawn;
-        CompAbilityUserMagic comp;
-        MagicPowerSkill pwr;
-        MagicPowerSkill ver;
+        private Pawn spellOwner;
         private int verVal;
         private int pwrVal;
         private float arcaneDmg = 1;
 
-        TMPawnSummoned newPawn = new TMPawnSummoned();
+
 
         protected new int StartingTicksToImpact
         {
@@ -113,18 +122,34 @@ namespace TorannMagic
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Values.Look<Vector3>(ref this.origin, "origin", default(Vector3), false);
-            Scribe_Values.Look<Vector3>(ref this.destination, "destination", default(Vector3), false);
-            Scribe_Values.Look<int>(ref this.ticksToImpact, "ticksToImpact", 0, false);
+            Scribe_Values.Look(ref expCell1, "TM_chargeLeftCell");
+            Scribe_Values.Look(ref expCell2, "TM_chargeRightCell");
+            Scribe_Values.Look(ref xProb, "TM_chargeAngle");
+            Scribe_Values.Look(ref arcaneDmg, "TM_chargeScale", 1f);
+            Scribe_Values.Look(ref impactStarted, "TM_chargeImpactStarted");
             Scribe_Values.Look<int>(ref this.timesToDamage, "timesToDamage", 0, false);
             Scribe_Values.Look<int>(ref this.verVal, "verVal", 0, false);
             Scribe_Values.Look<int>(ref this.pwrVal, "pwrVal", 0, false);
             Scribe_Values.Look<bool>(ref this.damageLaunched, "damageLaunched", true, false);
             Scribe_Values.Look<bool>(ref this.explosion, "explosion", false, false);
             Scribe_References.Look<Thing>(ref this.assignedTarget, "assignedTarget", false);
-            //Scribe_References.Look<Thing>(ref this.launcher, "launcher", false);
-            Scribe_Deep.Look<Thing>(ref this.flyingThing, "flyingThing", new object[0]);
+            Scribe_Deep.Look(ref passengers, "TM_chargePassenger", this);
+            if (Scribe.mode != LoadSaveMode.Saving)
+                Scribe_Deep.Look(ref legacyPassenger, "flyingThing");
+            if (Scribe.mode == LoadSaveMode.PostLoadInit)
+            {
+                passengers ??= new ThingOwner<Thing>(this, true);
+                if (legacyPassenger != null)
+                {
+                    if (!legacyPassenger.Spawned && legacyPassenger.holdingOwner == null)
+                        passengers.TryAdd(legacyPassenger, false);
+                    legacyPassenger = null;
+                    expCell1 = expCell2 = DestinationCell;
+                    XProb(DestinationCell, origin);
+                }
+            }
             Scribe_References.Look<Pawn>(ref this.pawn, "pawn", false);
+            Scribe_References.Look(ref spellOwner, "TM_chargeOwner");
         }
 
         private void Initialize()
@@ -154,59 +179,60 @@ namespace TorannMagic
 
         public void Launch(Thing launcher, Vector3 origin, LocalTargetInfo targ, Thing flyingThing, DamageInfo? newDamageInfo = null)
         {
-            Hediff invul = new Hediff();
-            invul.def = TorannMagicDefOf.TM_HediffInvulnerable;
-            invul.Severity = .2f;
-            bool spawned = flyingThing.Spawned;
-            this.pawn = launcher as Pawn;
-            pawn.health.AddHediff(invul, null, null);
-            comp = pawn.GetCompAbilityUserMagic();
-            pwrVal = TM_Calc.GetSkillPowerLevel(pawn, TorannMagicDefOf.TM_ValiantCharge);
-            verVal = TM_Calc.GetSkillVersatilityLevel(pawn, TorannMagicDefOf.TM_ValiantCharge);
-            //pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_ValiantCharge.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_ValiantCharge_pwr");
-            //ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_ValiantCharge.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_ValiantCharge_ver");
-            //
-            //pwrVal = pwr.level;
-            //verVal = ver.level;
-            //if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
-            //{
-            //    MightPowerSkill mpwr = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-            //    MightPowerSkill mver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
-            //    pwrVal = mpwr.level;
-            //    verVal = mver.level;
-            //}
-            //if (ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist)
-            //{
-            //    pwrVal = 3;
-            //    verVal = 3;
-            //}
-            if (spawned)
-            {               
-                flyingThing.DeSpawn();
-            }
-            //
-            ModOptions.Constants.SetPawnInFlight(true);
-            //
-            this.origin = origin;
-            this.impactDamage = newDamageInfo;
-            this.flyingThing = flyingThing;
-            bool flag = targ.Thing != null;
-            if (flag)
-            {
-                this.assignedTarget = targ.Thing;
-            }
-            this.destination = targ.Cell.ToVector3Shifted() + new Vector3(Rand.Range(-0.3f, 0.3f), 0f, Rand.Range(-0.3f, 0.3f));
-            this.ticksToImpact = this.StartingTicksToImpact;
-            this.Initialize();
+            if (launcher is Pawn source && flyingThing is Pawn body)
+                Begin(body, source, origin, targ, newDamageInfo);
         }
+
+        internal bool Begin(Pawn body, Pawn owner, Vector3 start, LocalTargetInfo targ, DamageInfo? newDamageInfo = null)
+        {
+            if (!Spawned || body?.Map != Map || owner == null || passengers.Count != 0 || !targ.IsValid
+                || targ.Cell == body.Position || !targ.Cell.InBounds(Map) || !targ.Cell.Walkable(Map)) return false;
+            pawn = body;
+            spellOwner = owner;
+            origin = start;
+            destination = targ.Cell.ToVector3Shifted() + new Vector3(Rand.Range(-0.3f, 0.3f), 0f, Rand.Range(-0.3f, 0.3f));
+            assignedTarget = targ.Thing;
+            impactDamage = newDamageInfo;
+            ticksToImpact = StartingTicksToImpact;
+            if (owner == body)
+            {
+                pwrVal = TM_Calc.GetSkillPowerLevel(owner, TorannMagicDefOf.TM_ValiantCharge);
+                verVal = TM_Calc.GetSkillVersatilityLevel(owner, TorannMagicDefOf.TM_ValiantCharge);
+            }
+            else
+            {
+                var skills = owner.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_ValiantCharge;
+                pwrVal = ClassProgression.Projectile_SpiritBolt.SpellRank(owner, skills, "TM_ValiantCharge", "_pwr");
+                verVal = ClassProgression.Projectile_SpiritBolt.SpellRank(owner, skills, "TM_ValiantCharge", "_ver");
+            }
+            takingOff = true;
+            try { body.DeSpawn(); }
+            catch (Exception error)
+            {
+                Compatibility.TM_Log.Warning("ValiantCharge", "Takeoff interrupted: " + error);
+            }
+            takingOff = false;
+            if (body.Spawned || body.holdingOwner != null) return false;
+            if (!passengers.TryAdd(body, false))
+            {
+                if (body.holdingOwner == null && !body.Spawned) GenSpawn.Spawn(body, Position, Map);
+                return false;
+            }
+            try
+            {
+                HealthUtility.AdjustSeverity(body,TorannMagicDefOf.TM_HediffInvulnerable,.2f);
+                Initialize();
+            }
+            catch (Exception error) { Compatibility.TM_Log.Warning("ValiantCharge", "Charge launched; takeoff effects interrupted: " + error); }
+            return true;
+        }
+
+        protected override void TickInterval(int delta) { }
 
         protected override void Tick()
         {
-
-        }
-
-        protected override void TickInterval(int delta)
-        {
+            if (flyingThing == null) { Destroy(); return; }
+            if (impactStarted) { FinishLanding(); return; }
 
             //base.Tick();
             Vector3 exactPosition = this.ExactPosition;
@@ -343,6 +369,8 @@ namespace TorannMagic
 
         protected new void Impact(Thing hitThing)
         {
+            if (impactStarted) return;
+            impactStarted = true;
             bool flag = hitThing == null;
             if (flag)
             {
@@ -402,49 +430,58 @@ namespace TorannMagic
                     this.FireExplosion(pwrVal, verVal, randomCell, base.Map, .4f);
                 }
 
-                GenSpawn.Spawn(this.flyingThing, base.Position, base.Map);
+            }
+            finally { FinishLanding(); }
+        }
 
-                ModOptions.Constants.SetPawnInFlight(false);
-                Pawn p = this.flyingThing as Pawn;
-                TM_Action.SearchAndTaunt(p, 3f, 5, .7f);
-                HealthUtility.AdjustSeverity(p, TorannMagicDefOf.TM_HediffShield, .25f);
-                RemoveInvul(p);
-                if (p.IsColonist)
-                {
-                    p.drafter.Drafted = true;
-                    if (ModOptions.Settings.Instance.cameraSnap)
-                    {
-                        CameraJumper.TryJumpAndSelect(p);
-                    }
-                }
-                this.Destroy(DestroyMode.Vanish);
-            }
-            catch
+        private void FinishLanding()
+        {
+            if (!(flyingThing is Pawn passenger) || !TryLand(passenger)) return;
+            try
             {
-                GenSpawn.Spawn(this.flyingThing, base.Position, base.Map);
-                ModOptions.Constants.SetPawnInFlight(false);
-                Pawn p = this.flyingThing as Pawn;
-                RemoveInvul(p);
-                if (p.IsColonist)
-                {
-                    p.drafter.Drafted = true;
-                }
-                this.Destroy(DestroyMode.Vanish);
+                TM_Action.SearchAndTaunt(passenger, 3f, 5, .7f);
+                HealthUtility.AdjustSeverity(passenger, TorannMagicDefOf.TM_HediffShield, .25f);
             }
+            finally
+            {
+                RemoveInvul(passenger);
+                if (passenger.IsColonist && passenger.drafter != null) passenger.drafter.Drafted = true;
+                base.Destroy();
+            }
+        }
+
+        private bool TryLand(Pawn passenger)
+        {
+            if (!Spawned) return false;
+            foreach (var center in new[] { Position, origin.ToIntVec3() })
+                foreach (var cell in GenRadial.RadialCellsAround(center, 3.9f, true))
+                    if (cell.InBounds(Map) && cell.Standable(Map) &&
+                        passengers.TryDrop(passenger, cell, Map, ThingPlaceMode.Direct, out _, playDropSound: false)) return true;
+            return false;
+        }
+
+        public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
+        {
+            if (flyingThing is Pawn passenger)
+            {
+                if (!TryLand(passenger)) return;
+                RemoveInvul(passenger);
+            }
+            base.Destroy(mode);
         }
 
         protected void FireExplosion(int pwr, int ver, IntVec3 pos, Map map, float radius)
         {
             ThingDef def = this.def;
 
-            Explosion(pwr, pos, map, radius, TMDamageDefOf.DamageDefOf.TM_Holy, this.pawn, null, def, ThingDefOf.Explosion, null, 0.3f, 1, false, null, 0f, 1);
+            Explosion(pwr, pos, map, radius, TMDamageDefOf.DamageDefOf.TM_Holy, spellOwner ?? pawn, null, def, ThingDefOf.Explosion, null, 0.3f, 1, false, null, 0f, 1);
 
             if (ver >= 2)
             {
                 int stunProb = Rand.Range(1, 10);
                 if (stunProb > (4 + ver))
                 {
-                    Explosion(pwr, pos, map, radius, DamageDefOf.Stun, this.pawn, null, def, ThingDefOf.Explosion, null, 0.3f, 1, false, null, 0f, 1);
+                    Explosion(pwr, pos, map, radius, DamageDefOf.Stun, spellOwner ?? pawn, null, def, ThingDefOf.Explosion, null, 0.3f, 1, false, null, 0f, 1);
                 }
             }
             

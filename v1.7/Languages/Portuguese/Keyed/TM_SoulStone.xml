@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SoulStoneOccupiedLabel>{0} ({1})</TM_SoulStoneOccupiedLabel>
+  <TM_SoulStoneContainedSpirit>Alma contida: {0}</TM_SoulStoneContainedSpirit>
+  <TM_SoulStoneRecoveryDebt>Após a implantação: sete dias completos de recuperação num hospedeiro vivo antes de sair voluntariamente.</TM_SoulStoneRecoveryDebt>
+  <TM_SoulStoneAbandonWarning>Se deixares as pedras de alma neste mapa, estas almas perder-se-ão para sempre: {0}.</TM_SoulStoneAbandonWarning>
+</LanguageData>

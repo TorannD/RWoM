@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef>
+    <defName>TM_SniperEvacuationDrill</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SniperEvacuationDrill</driverClass>
+    <reportString>practising an evacuation route.</reportString>
+  </JobDef>
+</Defs>

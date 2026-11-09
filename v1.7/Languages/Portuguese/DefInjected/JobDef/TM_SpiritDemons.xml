@@ -1,0 +1,21 @@
+<LanguageData>
+  <TM_SpiritSoulBond.reportString>cria um vínculo entre almas.</TM_SpiritSoulBond.reportString>
+  <TM_SpiritShadowBolt.reportString>lança um raio de sombra.</TM_SpiritShadowBolt.reportString>
+  <TM_SpiritShadowBolt_I.reportString>lança um raio de sombra.</TM_SpiritShadowBolt_I.reportString>
+  <TM_SpiritShadowBolt_II.reportString>lança um raio de sombra.</TM_SpiritShadowBolt_II.reportString>
+  <TM_SpiritShadowBolt_III.reportString>lança um raio de sombra.</TM_SpiritShadowBolt_III.reportString>
+  <TM_SpiritShadowStep.reportString>a deslocar-se até um aliado vinculado.</TM_SpiritShadowStep.reportString>
+  <TM_SpiritShadowCall.reportString>a chamar um aliado vinculado.</TM_SpiritShadowCall.reportString>
+  <TM_SpiritDominate.reportString>a lançar dominação.</TM_SpiritDominate.reportString>
+  <TM_SpiritRepulsion.reportString>a lançar repulsão.</TM_SpiritRepulsion.reportString>
+  <TM_SpiritRepulsion_I.reportString>a lançar repulsão.</TM_SpiritRepulsion_I.reportString>
+  <TM_SpiritRepulsion_II.reportString>a lançar repulsão.</TM_SpiritRepulsion_II.reportString>
+  <TM_SpiritRepulsion_III.reportString>a lançar repulsão.</TM_SpiritRepulsion_III.reportString>
+  <TM_SpiritAttraction.reportString>a lançar atração.</TM_SpiritAttraction.reportString>
+  <TM_SpiritAttraction_I.reportString>a lançar atração.</TM_SpiritAttraction_I.reportString>
+  <TM_SpiritAttraction_II.reportString>a lançar atração.</TM_SpiritAttraction_II.reportString>
+  <TM_SpiritAttraction_III.reportString>a lançar atração.</TM_SpiritAttraction_III.reportString>
+  <TM_SpiritPsychicShock.reportString>a lançar choque psíquico.</TM_SpiritPsychicShock.reportString>
+  <TM_SpiritScorn.reportString>a lançar desprezo.</TM_SpiritScorn.reportString>
+  <TM_SpiritSummonDemon.reportString>a invocar um pacto demoníaco.</TM_SpiritSummonDemon.reportString>
+</LanguageData>

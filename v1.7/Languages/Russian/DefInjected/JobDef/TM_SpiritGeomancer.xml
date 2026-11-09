@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritStoneskin.reportString>накладывает каменную кожу.</TM_SpiritStoneskin.reportString>
+  <TM_SpiritDispelStoneskin.reportString>рассеивает каменную кожу.</TM_SpiritDispelStoneskin.reportString>
+  <TM_SpiritEarthSprites.reportString>призывает духов земли.</TM_SpiritEarthSprites.reportString>
+  <TM_SpiritDismissEarthSprites.reportString>отзывает духов земли.</TM_SpiritDismissEarthSprites.reportString>
+  <TM_SpiritEncase.reportString>возводит каменные стены.</TM_SpiritEncase.reportString>
+  <TM_SpiritEncase_I.reportString>возводит каменные стены.</TM_SpiritEncase_I.reportString>
+  <TM_SpiritEncase_II.reportString>возводит каменные стены.</TM_SpiritEncase_II.reportString>
+  <TM_SpiritEncase_III.reportString>возводит каменные стены.</TM_SpiritEncase_III.reportString>
+  <TM_SpiritEarthernHammer.reportString>обрушивает каменный молот.</TM_SpiritEarthernHammer.reportString>
+  <TM_SpiritSentinel.reportString>создаёт каменного стража.</TM_SpiritSentinel.reportString>
+  <TM_SpiritShatterSentinel.reportString>разбивает каменных стражей.</TM_SpiritShatterSentinel.reportString>
+  <TM_SpiritMeteor.reportString>призывает метеорит.</TM_SpiritMeteor.reportString>
+  <TM_SpiritMeteor_I.reportString>призывает метеорит.</TM_SpiritMeteor_I.reportString>
+  <TM_SpiritMeteor_II.reportString>призывает метеорит.</TM_SpiritMeteor_II.reportString>
+  <TM_SpiritMeteor_III.reportString>призывает метеорит.</TM_SpiritMeteor_III.reportString>
+</LanguageData>

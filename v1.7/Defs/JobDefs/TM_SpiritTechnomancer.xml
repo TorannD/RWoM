@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef>
+    <defName>TM_SpiritTechnoShield</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>projecting a kinetic shield through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritSabotage</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>sabotaging machinery through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritOverdrive</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>overdriving machinery through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritOrbitalStrike</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>calling an orbital strike through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritOrbitalStrike_I</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>calling an orbital strike through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritOrbitalStrike_II</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>calling an orbital strike through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritOrbitalStrike_III</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>calling an orbital strike through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritTechnoTurret</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>deploying a Mark-IV turret through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritTechnoWeapon</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>copying a weapon through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritNanoStimulant</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>activating a nano stimulant in a spirit host.</reportString>
+  </JobDef>
+</Defs>

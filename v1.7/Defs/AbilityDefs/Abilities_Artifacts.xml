@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-	<!-- orb of conviction -->  
+	  
 	
 	  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_Artifact_Conviction</defName>
@@ -38,9 +37,16 @@ Use of Conviction will destroy the orb.</description>
                 <canTargetLocations>false</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_artifact_conviction</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- orb of souls -->  
+	  
 	
 	<AbilityUser.AbilityDef ParentName="BaseArtifactAbility">
         <defName>TM_Artifact_TraitThief</defName>
@@ -73,7 +79,14 @@ Use of Conviction will destroy the orb.</description>
                 <canTargetLocations>false</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </AbilityUser.AbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_artifact_traitthief</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</AbilityUser.AbilityDef>
 	
 	<AbilityUser.AbilityDef ParentName="BaseArtifactAbility">
         <defName>TM_Artifact_TraitInfuse</defName>
@@ -106,9 +119,16 @@ Use of Conviction will destroy the orb.</description>
                 <canTargetLocations>false</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </AbilityUser.AbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_artifact_traitinfuse</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</AbilityUser.AbilityDef>
 	
-	<!-- winter's reign -->
+	
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseArtifactAbility">
         <defName>TM_Weapon_WintersFury</defName>
@@ -137,6 +157,13 @@ Use of Conviction will destroy the orb.</description>
             <muzzleFlashScale>0</muzzleFlashScale>
             <isPrimary>false</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_weapon_wintersfury</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
 </Defs>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="TM_BuildingBase">
+    <defName>TM_ManaSiphon</defName>
+    <label>mana siphon</label>
+    <description>A passive station where fully trained mages assigned to magic work donate mana to magofuel reservoirs connected through mana beacons. By default, keeps 20% personal mana and accepts at most 80% of maximum mana per visit. Both limits are configurable from 0% to 100%. A mage must fully regenerate before donating again. An internal 100-mana buffer catches overflow from a transfer already in progress and automatically empties into connected reservoirs when space becomes available. Mages stop donating when the reservoirs are full. The siphon stores no fuel and needs no electricity.</description>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>Buildings/ManaSiphon</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.8,1.8)</drawSize>
+      <allowFlip>false</allowFlip>
+    </graphicData>
+    <placeWorkers><li>TorannMagic.Odyssey.PlaceWorker_ManaNetwork</li></placeWorkers>
+    <size>(1,1)</size>
+    <rotatable>false</rotatable>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories><li>BuildingsMisc</li></thingCategories>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <fillPercent>1</fillPercent>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>TM_RWoM</designationCategory>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints><WorkToBuild>6000</WorkToBuild><Mass>20</Mass><Flammability>0.2</Flammability>
+    </statBases>
+    <costList><Steel>80</Steel><RawMagicyte>60</RawMagicyte><ComponentIndustrial>2</ComponentIndustrial></costList>
+    <researchPrerequisites><li>TM_MagofuelRefining</li></researchPrerequisites>
+    <comps>
+      <li Class="TorannMagic.Odyssey.CompProperties_CrystalGlow"><state>Service</state><diameter>0.85</diameter><north>(0.5,0.5)</north><east>(0.5,0.5)</east><south>(0.5,0.5)</south><west>(0.5,0.5)</west></li>
+      <li Class="TorannMagic.Odyssey.CompProperties_ManaSiphon" />
+      <li Class="TorannMagic.Odyssey.CompProperties_ManaNetworkEndpoint"><supportsMana>false</supportsMana><supportsFuel>false</supportsFuel></li>
+      <li Class="CompProperties_Flickable" />
+    </comps>
+  </ThingDef>
+  <JobDef>
+    <defName>TM_DonateManaAtSiphon</defName>
+    <driverClass>TorannMagic.Odyssey.JobDriver_DonateManaAtSiphon</driverClass>
+    <reportString>donating mana at the siphon.</reportString>
+  </JobDef>
+  <WorkGiverDef>
+    <defName>TM_DonateManaAtSiphon</defName>
+    <label>donate mana at siphon</label>
+    <giverClass>TorannMagic.Odyssey.WorkGiver_DonateManaAtSiphon</giverClass>
+    <workType>TM_Magic</workType>
+    <priorityInType>100</priorityInType>
+    <verb>donate mana</verb>
+    <gerund>donating mana</gerund>
+    <requiredCapacities><li>MagicManipulation</li></requiredCapacities>
+  </WorkGiverDef>
+</Defs>

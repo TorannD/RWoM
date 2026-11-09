@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritSunfire.reportString>invocando fuego solar a través del huésped del espíritu.</TM_SpiritSunfire.reportString>
+  <TM_SpiritSunfire_I.reportString>invocando fuego solar a través del huésped del espíritu.</TM_SpiritSunfire_I.reportString>
+  <TM_SpiritSunfire_II.reportString>invocando fuego solar a través del huésped del espíritu.</TM_SpiritSunfire_II.reportString>
+  <TM_SpiritSunfire_III.reportString>invocando fuego solar a través del huésped del espíritu.</TM_SpiritSunfire_III.reportString>
+  <TM_SpiritLightBurst.reportString>lanza destellos de luz a través del huésped del espíritu.</TM_SpiritLightBurst.reportString>
+  <TM_SpiritLightLance.reportString>lanza una lanza de luz a través del huésped del espíritu.</TM_SpiritLightLance.reportString>
+  <TM_SpiritRefraction.reportString>crea un muro de refracción a través del huésped del espíritu.</TM_SpiritRefraction.reportString>
+  <TM_SpiritLightSkip.reportString>viaja mediante la luz a través del huésped del espíritu.</TM_SpiritLightSkip.reportString>
+  <TM_SpiritLightSkipMass.reportString>transporta al grupo mediante la luz a través del huésped del espíritu.</TM_SpiritLightSkipMass.reportString>
+  <TM_SpiritLightSkipGlobal.reportString>elige un destino en el mapa para viajar mediante la luz.</TM_SpiritLightSkipGlobal.reportString>
+  <TM_SpiritSoL_CreateLight.reportString>dirige a un espíritu de luz.</TM_SpiritSoL_CreateLight.reportString>
+  <TM_SpiritSoL_Equalize.reportString>comparte luz con un espíritu de luz.</TM_SpiritSoL_Equalize.reportString>
+  <TM_SpiritSpiritOfLight.reportString>invoca un espíritu de luz a través del huésped.</TM_SpiritSpiritOfLight.reportString>
+</LanguageData>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_BirdflightHD.label>volando</TM_BirdflightHD.label>
+  
+  <TM_BirdflightHD.description>Mayor movimiento mientras vuela.</TM_BirdflightHD.description>
+  
+  
+  <TM_CrowInsightHD.label>Visión del cuervo</TM_CrowInsightHD.label>
+  
+  <TM_CrowInsightHD.description>Perspicacia obtenida del cuervo espiritual: mejora la velocidad de investigación y la sensibilidad psíquica.</TM_CrowInsightHD.description>
+  
+  <TM_CrowInsightHD.stages.I.label>I</TM_CrowInsightHD.stages.I.label>
+  
+  <TM_CrowInsightHD.stages.II.label>II</TM_CrowInsightHD.stages.II.label>
+  
+  <TM_CrowInsightHD.stages.III.label>III</TM_CrowInsightHD.stages.III.label>
+  
+  <TM_CrowInsightHD.stages.IV.label>IV</TM_CrowInsightHD.stages.IV.label>
+  
+  
+  <TM_EnrageHD.label>Enfurecer</TM_EnrageHD.label>
+  
+  <TM_EnrageHD.description>Consume todas las emociones positivas como combustible para el poder físico; el hechizo se desvanecerá cuando toda la felicidad se haya consumido. Bajo esta maldición, un personaje no puede ser aturdido y tiene mayor resistencia al dolor, mayor velocidad de ataque y mayor daño cuerpo a cuerpo.</TM_EnrageHD.description>
+  
+  <TM_EnrageHD.stages.I.label>I</TM_EnrageHD.stages.I.label>
+  
+  <TM_EnrageHD.stages.II.label>II</TM_EnrageHD.stages.II.label>
+  
+  <TM_EnrageHD.stages.III.label>III</TM_EnrageHD.stages.III.label>
+  
+  <TM_EnrageHD.stages.IV.label>IV</TM_EnrageHD.stages.IV.label>
+  
+  <TM_EnrageHD.stages.V.label>V</TM_EnrageHD.stages.V.label>
+  
+  
+  <TM_Hex_CriticalFailHD.label>Desafortunado</TM_Hex_CriticalFailHD.label>
+  
+  <TM_Hex_CriticalFailHD.description>Maldecido con una mala suerte peligrosa.</TM_Hex_CriticalFailHD.description>
+  
+  
+  <TM_HexHD.label>Embrujado</TM_HexHD.label>
+  
+  <TM_HexHD.description>Bajo los efectos de un embrujo.</TM_HexHD.description>
+  
+  
+  <TM_PainHD.label>Dolor</TM_PainHD.label>
+  
+  <TM_PainHD.description>Una herida maldecida con dolor extremo.</TM_PainHD.description>
+  
+  <TM_PainHD.comps.HediffComp_TendDuration.labelSolidTendedWell>entablillada</TM_PainHD.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  
+  <TM_PainHD.comps.HediffComp_TendDuration.labelTendedWell>vendada</TM_PainHD.comps.HediffComp_TendDuration.labelTendedWell>
+  
+  <TM_PainHD.comps.HediffComp_TendDuration.labelTendedWellInner>suturada</TM_PainHD.comps.HediffComp_TendDuration.labelTendedWellInner>
+  
+  <TM_PainHD.comps.HediffComp_GetsPermanent.permanentLabel>marchita</TM_PainHD.comps.HediffComp_GetsPermanent.permanentLabel>
+  
+  <TM_PainHD.injuryProps.destroyedLabel>marchitado</TM_PainHD.injuryProps.destroyedLabel>
+  
+  <TM_PainHD.injuryProps.destroyedOutLabel>marchitado</TM_PainHD.injuryProps.destroyedOutLabel>
+  
+  <TM_PainHD.labelNounPretty>{0} en {1}</TM_PainHD.labelNounPretty>
+  
+  
+  <TM_SpiritBondHD.label>Vínculo espiritual</TM_SpiritBondHD.label>
+  
+  <TM_SpiritBondHD.description>Representa el vínculo que este espíritu animal comparte con un chamán. Aumenta los atributos físicos y mejora la curación.</TM_SpiritBondHD.description>
+  
+  <TM_SpiritBondHD.stages.I.label>I</TM_SpiritBondHD.stages.I.label>
+  
+  <TM_SpiritBondHD.stages.II.label>II</TM_SpiritBondHD.stages.II.label>
+  
+  <TM_SpiritBondHD.stages.III.label>III</TM_SpiritBondHD.stages.III.label>
+  
+  <TM_SpiritBondHD.stages.IV.label>IV</TM_SpiritBondHD.stages.IV.label>
+  
+</LanguageData>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_OpportunitySite_ArcaneBandits.questDescriptionRules.rulesStrings.0>questDescription-&gt;[asker_nameFull], [asker_faction_leaderTitle] de [asker_faction_name], nos ha enviado un mensaje. Al parecer, [siteFaction_pawnsPlural] han montado un puesto avanzado cercano y amenazan con atacar la aldea a menos que la aldea de [asker_faction_name] entregue sus artefactos. El campamento está controlado por [siteFaction_name].\n\n[asker_nameDef] nos pide que eliminemos a estos viles rufianes, es decir, que acabemos con ellos o los expulsemos de su puesto avanzado. [asker_label] dice que [sitePart0_description].\n\nSi tenemos éxito, [asker_label] nos enviará algunos de los artefactos; [allRewardsDescriptions]</TM_OpportunitySite_ArcaneBandits.questDescriptionRules.rulesStrings.0>
+  
+  <TM_OpportunitySite_ArcaneBandits.questNameRules.rulesStrings.0>questName-&gt;Los bandidos arcanos de [asker_nameDef]</TM_OpportunitySite_ArcaneBandits.questNameRules.rulesStrings.0>
+  
+  <TM_OpportunitySite_ArcaneBandits.questNameRules.rulesStrings.1>questName-&gt;Campamento de bandidos arcanos de [enemyFaction_pawnsPlural]</TM_OpportunitySite_ArcaneBandits.questNameRules.rulesStrings.1>
+  
+  <TM_OpportunitySite_ArcaneBandits.questNameRules.rulesStrings.2>questName-&gt;El campamento de bandidos arcanos</TM_OpportunitySite_ArcaneBandits.questNameRules.rulesStrings.2>
+  
+  <TM_OpportunitySite_ArcaneBandits.questNameRules.rulesStrings.3>questName-&gt;El campamento de asaltantes arcanos</TM_OpportunitySite_ArcaneBandits.questNameRules.rulesStrings.3>
+  
+  <TM_OpportunitySite_ArcaneBandits.questNameRules.rulesStrings.4>questName-&gt;Destruir a los bandidos arcanos</TM_OpportunitySite_ArcaneBandits.questNameRules.rulesStrings.4>
+  
+  <TM_OpportunitySite_ArcaneBandits.questNameRules.rulesStrings.5>questName-&gt;Ayudar a [asker_nameDef] a proteger artefactos mágicos</TM_OpportunitySite_ArcaneBandits.questNameRules.rulesStrings.5>
+  
+  <TM_OpportunitySite_ArcaneBandits.root.nodes.WorldObjectTimeout.node.nodes.Letter.label.slateRef>Misión expirada: [resolvedQuestName]</TM_OpportunitySite_ArcaneBandits.root.nodes.WorldObjectTimeout.node.nodes.Letter.label.slateRef>
+  
+  <TM_OpportunitySite_ArcaneBandits.root.nodes.WorldObjectTimeout.node.nodes.Letter.text.slateRef>Los bandidos arcanos han robado con éxito los artefactos arcanos de [asker_faction_name]. [asker_label] no está conforme contigo.</TM_OpportunitySite_ArcaneBandits.root.nodes.WorldObjectTimeout.node.nodes.Letter.text.slateRef>
+  
+  <TM_OpportunitySite_ArcaneBandits.root.nodes.siteDestroyed.node.nodes.Letter.label.slateRef>Misión fallida: [resolvedQuestName]</TM_OpportunitySite_ArcaneBandits.root.nodes.siteDestroyed.node.nodes.Letter.label.slateRef>
+  
+  <TM_OpportunitySite_ArcaneBandits.root.nodes.siteDestroyed.node.nodes.Letter.text.slateRef>Tras tu asalto fallido, los bandidos arcanos atacaron inmediatamente y robaron varios artefactos. [asker_label] está decepcionado contigo.</TM_OpportunitySite_ArcaneBandits.root.nodes.siteDestroyed.node.nodes.Letter.text.slateRef>
+  
+  <TM_OpportunitySite_ArcaneBandits.root.nodes.siteAllEnemiesDefeated.node.customLetterLabel.slateRef>Pago recibido</TM_OpportunitySite_ArcaneBandits.root.nodes.siteAllEnemiesDefeated.node.customLetterLabel.slateRef>
+  
+  <TM_OpportunitySite_ArcaneBandits.root.nodes.siteAllEnemiesDefeated.node.customLetterText.slateRef>¡Has derrotado a los bandidos arcanos!\n\nEl pago de [asker_faction_name] ha llegado.</TM_OpportunitySite_ArcaneBandits.root.nodes.siteAllEnemiesDefeated.node.customLetterText.slateRef>
+
+</LanguageData>

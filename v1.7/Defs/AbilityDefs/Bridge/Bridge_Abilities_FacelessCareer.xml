@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_FacelessEcho</defName>
+    <label>Borrowed technique</label>
+    <description>Echo the last imitated technique at a range of 18. Elemental and martial echoes inflict 12 damage. A medical echo heals 4 points of one wound. Costs 20% stamina; 30-second cooldown.</description>
+    <spellId>rwom.tm_facelessecho</spellId>
+    <iconPath>UI/mimic</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.ClassProgression.Verb_FacelessEcho</verbClass>
+      <abilityDef>TM_FacelessEcho</abilityDef>
+      <isViolent>false</isViolent>
+      <hasStandardCommand>true</hasStandardCommand>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <defaultProjectile>Projectile_Default</defaultProjectile>
+      <warmupTime>1</warmupTime>
+      <SecondsToRecharge>30</SecondsToRecharge>
+      <range>18</range>
+      <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+</Defs>

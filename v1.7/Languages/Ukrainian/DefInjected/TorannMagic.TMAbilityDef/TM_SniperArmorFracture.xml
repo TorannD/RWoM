@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_SniperArmorFracture.label>Розкол броні</TM_SniperArmorFracture.label>
+  <TM_SniperArmorFracture.description>Влучання звичайною кулею відкриває всьому загону пробоїну на 6 секунд. Залежно від рангу ефективна броня зменшується на 10, 15 або 20 відсоткових пунктів. Пробоїни додаються, кожна має власну тривалість. Витрата — 20 витривалості, перезаряджання — 30 секунд.</TM_SniperArmorFracture.description>
+</LanguageData>

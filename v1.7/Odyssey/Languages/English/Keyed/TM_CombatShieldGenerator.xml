@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_CombatShieldStatusStandby>Standby: another combat generator is active</TM_CombatShieldStatusStandby>
+  <TM_CombatShieldStatus>Network shield: {0} / {1} HP</TM_CombatShieldStatus>
+  <TM_CombatShieldSourceHP>This source: {0} / {1} shield HP</TM_CombatShieldSourceHP>
+  <TM_CombatShieldReboot>Shield reboot: {0} s</TM_CombatShieldReboot>
+  <TM_CombatShieldNetworkHP>Network shield: {0} / {1}</TM_CombatShieldNetworkHP>
+  <TM_CombatShieldPeace>Peace mode: 10% upkeep (HP repair unchanged)</TM_CombatShieldPeace>
+  <TM_CombatShieldCombat>Combat mode: full upkeep</TM_CombatShieldCombat>
+</LanguageData>

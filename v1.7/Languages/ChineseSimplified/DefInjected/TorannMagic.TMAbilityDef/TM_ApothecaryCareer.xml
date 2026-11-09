@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ApothecaryAntitoxin.label>解毒剂</TM_ApothecaryAntitoxin.label>
+  <TM_ApothecaryGoldenHour.label>黄金急救包</TM_ApothecaryGoldenHour.label>
+  <TM_ApothecaryAntitoxin.description>接触病人，使食物中毒程度降低20%，消耗最大草药储量的20%。每次患病只能使用一次。冷却40秒。</TM_ApothecaryAntitoxin.description>
+  <TM_ApothecaryGoldenHour.description>原地治疗8格内最多四名盟友，持续20秒。每人最多恢复20点新伤，出血量减半。消耗最大草药储量的60%及物品栏或身边的四份草药医药。冷却两天。</TM_ApothecaryGoldenHour.description>
+</LanguageData>

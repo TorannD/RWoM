@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +10,7 @@ using Verse.AI.Group;
 
 namespace TorannMagic
 {
-    public class Verb_Stoneskin : Verb_UseAbility  
+    public class Verb_Stoneskin : ClassProgression.Verb_SpiritTargetable
     {
         
         int pwrVal;
@@ -44,144 +44,82 @@ namespace TorannMagic
             return validTarg;
         }
 
+        protected override bool ApplyHostedEffect()
+        {
+            var body = CasterPawn;
+            var target = currentTarget.Pawn;
+            var owner = ClassProgression.SpiritRebirthCasting.SkillOwner(body,Ability);
+            if (owner == null || target?.Spawned != true || target.Dead || target.Map != body?.Map) return false;
+            comp = owner.GetCompAbilityUserMagic();
+            if (comp?.ExistingMagicData == null) return false;
+            var trial = ClassProgression.GeomancerTrials.CaptureStoneskin(Ability,target);
+            if (owner == body)
+            {
+                pwrVal = TM_Calc.GetSkillPowerLevel(owner, Ability.Def as TMAbilityDef);
+                verVal = TM_Calc.GetSkillVersatilityLevel(owner, Ability.Def as TMAbilityDef);
+            }
+            else
+            {
+                pwrVal = ClassProgression.SpiritRebirthRuntime.SavedRank(comp.ExistingMagicData,"TM_Stoneskin_pwr");
+                verVal = ClassProgression.SpiritRebirthRuntime.SavedRank(comp.ExistingMagicData,"TM_Stoneskin_ver");
+            }
+            var def = TorannMagicDefOf.TM_StoneskinHD;
+            var ward = target.health.hediffSet.GetFirstHediffOfDef(def);
+            var wards = comp.StoneskinPawns;
+            bool dispel = ward != null && ward.Severity >= 4 + pwrVal;
+            if (!dispel && !wards.Contains(target) && wards.Count >= verVal + 2)
+            {
+                if (body.IsColonist) Messages.Message("TM_TooManyStoneskins".Translate(body.LabelShort,verVal + 2,
+                    string.Join(" & ", wards.Select(p => p.LabelShort))), MessageTypeDefOf.RejectInput);
+                return false;
+            }
+            if (ward != null && ward.TryGetComp<HediffComp_Stoneskin>()?.Owner == null)
+                ClearLegacyOwners(target);
+            if (dispel)
+            {
+                target.health.RemoveHediff(ward);
+                wards.RemoveAll(p => p == target);
+            }
+            else ApplyStoneskin(target);
+            ClassProgression.GeomancerTrials.CompleteStoneskin(trial);
+            return true;
+        }
+
+        private static void ClearLegacyOwners(Pawn target)
+        {
+            // Old wards have no back-reference. The saved per-mage lists identify whoever paid their upkeep.
+            foreach (var pawn in target.Map.mapPawns.AllPawnsSpawned)
+            {
+                pawn.GetCompAbilityUserMagic()?.stoneskinPawns?.RemoveAll(p => p == target);
+                if (ClassProgression.SpiritRebirthState.TryGetPossessingSpirit(pawn,out var soul))
+                    soul.GetCompAbilityUserMagic()?.stoneskinPawns?.RemoveAll(p => p == target);
+            }
+        }
+
         protected override bool TryCastShot()
         {
-            Pawn caster = base.CasterPawn;
-            Pawn pawn = this.currentTarget.Thing as Pawn;
-
-            comp = caster.GetCompAbilityUserMagic();
-            //MagicPowerSkill pwr = comp.MagicData.MagicPowerSkill_Stoneskin.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Stoneskin_pwr");
-            //MagicPowerSkill ver = comp.MagicData.MagicPowerSkill_Stoneskin.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Stoneskin_ver");
-            //pwrVal = pwr.level;
-            //verVal = ver.level;
-            //
-            //if (caster.story.traits.HasTrait(TorannMagicDefOf.Faceless))
-            //{
-            //    pwrVal = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr").level;
-            //    verVal = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver").level;
-            //}
-            //if (ModOptions.Settings.Instance.AIHardMode && !caster.IsColonist)
-            //{
-            //    pwrVal = 3;
-            //    verVal = 3;
-            //}
-            pwrVal = TM_Calc.GetSkillPowerLevel(caster, this.Ability.Def as TMAbilityDef);
-            verVal = TM_Calc.GetSkillVersatilityLevel(caster, this.Ability.Def as TMAbilityDef);
-
-            if (pawn != null && pawn.health != null && pawn.health.hediffSet != null)
-            {
-                IEnumerable<Pawn> enumerable = from geomancer in caster.Map.mapPawns.AllPawnsSpawned
-                                                   where (geomancer.RaceProps.Humanlike && geomancer.story.traits.HasTrait(TorannMagicDefOf.Geomancer))
-                                                   select geomancer;
-                List<Pawn> geomancers = enumerable.ToList();
-                for (int i = 0; i < geomancers.Count(); i++)
-                {
-                    CompAbilityUserMagic compGeo = geomancers[i].GetCompAbilityUserMagic();
-                    if(compGeo != null && compGeo.stoneskinPawns.Contains(pawn))
-                    {
-                        compGeo.stoneskinPawns.Remove(pawn);
-                    }
-                }
-                if(pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_StoneskinHD"), false))
-                {
-                    Hediff hediff = new Hediff();
-                    hediff = pawn.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("TM_StoneskinHD"));
-                    if (hediff.Severity < 4 + pwrVal)
-                    {
-                        ApplyStoneskin(pawn);
-                    }
-                    else
-                    {
-                        RemoveHediffs(pawn);
-                        comp.stoneskinPawns.Remove(pawn);
-                        SoundInfo info = SoundInfo.InMap(new TargetInfo(pawn.Position, pawn.Map, false), MaintenanceType.None);
-                        info.pitchFactor = .7f;
-                        TorannMagicDefOf.EnergyShield_Broken.PlayOneShot(info);
-                        FleckMaker.ThrowLightningGlow(pawn.DrawPos, pawn.Map, 1.5f);
-                    }
-                }
-                else
-                {
-                    ApplyStoneskin(pawn);
-                }
-            }
-            
+            ApplyHostedEffect();
             return true;
         }
 
         public void ApplyStoneskin(Pawn pawn)
         {
-            if (comp != null && !pawn.DestroyedOrNull() && !pawn.Dead && pawn.Map != null)
-            {
-                if (comp.StoneskinPawns.Count() < verVal + 2)
-                {
-                    ApplyHediffs(pawn);
-                    if (!comp.StoneskinPawns.Contains(pawn))
-                    {
-                        comp.stoneskinPawns.Add(pawn);
-                    }
-                    SoundInfo info = SoundInfo.InMap(new TargetInfo(pawn.Position, pawn.Map, false), MaintenanceType.None);
-                    info.pitchFactor = .7f;
-                    SoundDefOf.EnergyShield_Reset.PlayOneShot(info);
-                    FleckMaker.ThrowLightningGlow(pawn.DrawPos, pawn.Map, 1.5f);
-                    Effecter stoneskinEffecter = TorannMagicDefOf.TM_Stoneskin_Effecter.Spawn();
-                    stoneskinEffecter.def.offsetTowardsTarget = FloatRange.Zero;
-                    stoneskinEffecter.Trigger(new TargetInfo(pawn.Position, pawn.Map, false), new TargetInfo(pawn.Position, pawn.Map, false));
-                    stoneskinEffecter.Cleanup();
-                }
-                else
-                {
-                    string stoneskinPawns = "";
-                    int count = comp.StoneskinPawns.Count();
-                    for (int i = 0; i < count; i++)
-                    {
-                        if (i + 1 == count) //last name
-                        {
-                            stoneskinPawns += comp.StoneskinPawns[i].LabelShort;
-                        }
-                        else
-                        {
-                            stoneskinPawns += comp.StoneskinPawns[i].LabelShort + " & ";
-                        }
-                    }
-                    if (comp.Pawn.IsColonist)
-                    {
-                        Messages.Message("TM_TooManyStoneskins".Translate(
-                                        caster.LabelShort,
-                                        verVal + 2,
-                                        stoneskinPawns
-                            ), MessageTypeDefOf.RejectInput);
-                    }
-                }
-            }
-        }
-
-        private void ApplyHediffs(Pawn target)
-        {
-            HealthUtility.AdjustSeverity(target, HediffDef.Named("TM_StoneskinHD"), -10);
-            if (pwrVal == 3)
-            {
-                HealthUtility.AdjustSeverity(target, HediffDef.Named("TM_StoneskinHD"), 7);
-            }
-            else if (pwrVal == 2)
-            {
-                HealthUtility.AdjustSeverity(target, HediffDef.Named("TM_StoneskinHD"), 6);
-            }
-            else if(pwrVal == 1)
-            {
-                HealthUtility.AdjustSeverity(target, HediffDef.Named("TM_StoneskinHD"), 5);
-            }
-            else
-            {
-                HealthUtility.AdjustSeverity(target, HediffDef.Named("TM_StoneskinHD"), 4);                
-            }            
-        }
-
-        private void RemoveHediffs(Pawn target)
-        {
-            Hediff hediff = new Hediff();
-            hediff = target.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("TM_StoneskinHD"));
-            target.health.RemoveHediff(hediff);
+            if (comp == null || pawn?.Spawned != true || pawn.Dead) return;
+            var wards = comp.StoneskinPawns;
+            if (!wards.Contains(pawn) && wards.Count >= verVal + 2) return;
+            var def = TorannMagicDefOf.TM_StoneskinHD;
+            var ward = pawn.health.hediffSet.GetFirstHediffOfDef(def) ?? pawn.health.AddHediff(def);
+            int charges = 4 + Mathf.Clamp(pwrVal,0,3);
+            ward.Severity = charges;
+            ward.TryGetComp<HediffComp_Stoneskin>()?.Bind(comp.Pawn,charges);
+            if (!wards.Contains(pawn)) wards.Add(pawn);
+            var info = SoundInfo.InMap(new TargetInfo(pawn.Position,pawn.Map), MaintenanceType.None);
+            info.pitchFactor = .7f;
+            SoundDefOf.EnergyShield_Reset.PlayOneShot(info);
+            FleckMaker.ThrowLightningGlow(pawn.DrawPos,pawn.Map,1.5f);
+            var effecter = TorannMagicDefOf.TM_Stoneskin_Effecter.Spawn();
+            try { effecter.Trigger(new TargetInfo(pawn.Position,pawn.Map),new TargetInfo(pawn.Position,pawn.Map)); }
+            finally { effecter.Cleanup(); }
         }
     }
 }

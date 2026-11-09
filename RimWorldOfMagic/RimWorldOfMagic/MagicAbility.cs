@@ -1,4 +1,4 @@
-﻿using AbilityUser;
+using AbilityUser;
 using RimWorld;
 using System;
 using System.Collections.Generic;
@@ -12,6 +12,11 @@ namespace TorannMagic
 {
     public class MagicAbility : PawnAbility
     {
+        public override Verse.AI.Job UseAbility(AbilityContext context, LocalTargetInfo target)
+            => magicDef == TorannMagicDefOf.TM_Scorn && magicDef != null ? Verb_Scorn.Order(this,context,target) :
+                ClassProgression.DemonBondTravel.Applies(this) ? ClassProgression.DemonBondTravel.Order(this, context, target) :
+                Odyssey.ManualTravelSafety.IsTravel(this) ? Odyssey.ManualTravelSafety.UseAbility(this, context, target) : base.UseAbility(context, target);
+
        
         public CompAbilityUserMagic MagicUser
         {
@@ -89,8 +94,12 @@ namespace TorannMagic
 
         }
 
-        public override void PostAbilityAttempt()  //commented out in CompAbilityUserMagic
+        public override void PostAbilityAttempt() => PayForAttempt(Pawn);
+
+        internal void PayForAttempt(Pawn body)
         {
+            if (body == null || !ReferenceEquals(ClassProgression.SpiritRebirthCasting.SkillOwner(body, this), Pawn)) return;
+            if (!Odyssey.ManualTravelSafety.TakePayment(this)) return;
             //base.PostAbilityAttempt();
             
             
@@ -104,7 +113,7 @@ namespace TorannMagic
             }
             if(Rand.Chance(MagicUser.arcalleumCooldown))
             {
-                this.CooldownTicksLeft = 4;
+                this.CooldownTicksLeft = Compatibility.AbilityTiming.Cooldown(4);
             }
             if (this.magicDef != null)
             {
@@ -162,7 +171,7 @@ namespace TorannMagic
                 }
                 if (this.magicDef.bloodCost != 0)
                 {
-                    HealthUtility.AdjustSeverity(this.Pawn, HediffDef.Named("TM_BloodHD"), -100 * this.ActualBloodCost);
+                    HealthUtility.AdjustSeverity(body, HediffDef.Named("TM_BloodHD"), -100 * this.ActualBloodCost);
                 }
                 if (magicDef.requiredHediff != null)
                 {
@@ -179,10 +188,12 @@ namespace TorannMagic
                 }
                 if (magicDef.requiredNeed != null)
                 {
-                    if (this.Pawn.needs != null && this.Pawn.needs.AllNeeds != null && this.Pawn.needs.TryGetNeed(this.magicDef.requiredNeed) != null)
+                    var nd = body.needs?.TryGetNeed(magicDef.requiredNeed);
+                    if (nd != null)
                     {
-                        Need nd = this.Pawn.needs.TryGetNeed(this.magicDef.requiredNeed);
-                        nd.CurLevel -= ActualNeedCost(magicDef, this.MagicUser);
+                        if (nd is Need_Spirit spirit && ClassProgression.SpiritRebirthEnergy.Marked(this.Pawn))
+                            spirit.SpendSpirit(ActualNeedCost(magicDef, this.MagicUser), deferCollapse: true);
+                        else nd.CurLevel -= ActualNeedCost(magicDef, this.MagicUser);
                         this.MagicUser.MagicUserXP += Mathf.Clamp((int)((magicDef.needXPFactor * this.MagicUser.xpGain * ModOptions.Settings.Instance.xpMultiplier) * magicDef.needCost),0,9999);
                     }
                     else
@@ -192,9 +203,9 @@ namespace TorannMagic
                 }
                 if((magicDef.requiredInspiration != null || magicDef.requiresAnyInspiration) && magicDef.consumesInspiration)
                 {
-                    if (this.Pawn.mindState != null && this.Pawn.mindState.inspirationHandler != null && this.Pawn.Inspiration != null)
+                    if (body.mindState?.inspirationHandler != null && body.Inspiration != null)
                     {
-                        this.Pawn.mindState.inspirationHandler.EndInspiration(this.Pawn.Inspiration);
+                        body.mindState.inspirationHandler.EndInspiration(body.Inspiration);
                     }
                 }
                 if(magicDef.chainedAbility != null)
@@ -227,6 +238,7 @@ namespace TorannMagic
                     }
                 }
             }                       
+            ClassProgression.ChaosDiscipline.RecordUse(this);
         }
 
         private void AddChainedAbility(TMAbilityDef magicDef)
@@ -406,6 +418,21 @@ namespace TorannMagic
 
         public override bool CanCastPowerCheck(AbilityContext context, out string reason)
         {
+            if (!ClassProgression.SpiritRebirthCasting.Allows(Pawn, Def))
+            {
+                reason = "TM_SpiritRebirthCastUnavailable".Translate();
+                return false;
+            }
+            if (ClassProgression.SpiritRebirthEnergy.Marked(Pawn) && magicDef?.requiredNeed == TorannMagicDefOf.TM_SpiritND)
+            {
+                var spirit = ClassProgression.SpiritRebirthEnergy.Need(Pawn);
+                float cost = ActualNeedCost(magicDef, MagicUser);
+                if (spirit == null || float.IsNaN(cost) || float.IsInfinity(cost) || cost < 0f || spirit.CurLevel < cost)
+                {
+                    reason = "TM_SpiritRebirthCastUnavailable".Translate();
+                    return false;
+                }
+            }
             // Independent legacy NPC profiles also enter here, even when their
             // subsequent UseAbility call uses Player context. Manual checks stay unchanged.
             if (!TMDefs.TM_AutocastDefaults.AllowsContext(base.Def as TMAbilityDef, context))

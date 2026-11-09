@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_CastScroll_Fireball.label>火球术施法卷轴</TM_CastScroll_Fireball.label>
+  <TM_CastScroll_Fireball.description>发射火球，在1.9格半径内造成18点火焰伤害。攻击成功发射后即消耗一次使用次数，即使未命中也是如此。 范围：24格；需要视线畅通。施法准备：1秒；冷却：2秒。 从物品栏使用。每次成功施法消耗一张卷轴；同一堆卷轴共享冷却时间。 非施法者也能使用，无需魔力或学习法术。不会使使用者学会该法术，效果强度不随魔法技能提高。</TM_CastScroll_Fireball.description>
+  <TM_CastScroll_Heal.label>圣光术施法卷轴</TM_CastScroll_Heal.label>
+  <TM_CastScroll_Heal.description>治疗最多三个不同身体部位上可自然愈合的伤口，每个伤口恢复最多8点生命值，不会将多余治疗量转移到其他伤口。 范围：12格；需要视线畅通。施法准备：0.3秒；冷却：2秒。 从物品栏使用。每次成功施法消耗一张卷轴；同一堆卷轴共享冷却时间。 非施法者也能使用，无需魔力或学习法术。不会使使用者学会该法术，效果强度不随魔法技能提高。 只能治疗非敌对的有机活体目标，亡灵和机械族除外。</TM_CastScroll_Heal.description>
+  <TM_CastScroll_Blink.label>闪烁施法卷轴</TM_CastScroll_Blink.label>
+  <TM_CastScroll_Blink.description>将使用者传送到施法范围内未被占据且可通行的格子。不能选择当前所在格子。 范围：20格；无需视线畅通。施法准备：1秒；冷却：2秒。 从物品栏使用。每次成功施法消耗一张卷轴；同一堆卷轴共享冷却时间。 非施法者也能使用，无需魔力或学习法术。不会使使用者学会该法术，效果强度不随魔法技能提高。</TM_CastScroll_Blink.description>
+  <TM_SpellStaff_Fireball.label>充能火球术法杖</TM_SpellStaff_Fireball.label>
+  <TM_SpellStaff_Fireball.description>发射火球，在1.9格半径内造成18点火焰伤害。攻击成功发射后即消耗一次使用次数，即使未命中也是如此。 范围：24格；需要视线畅通。施法准备：1秒；冷却：2秒。 必须装备在主武器槽。共10次使用次数，不可充能，最后一次使用后消失。也可作为简单的钝击近战武器。 非施法者也能使用，无需魔力或学习法术。不会使使用者学会该法术，效果强度不随魔法技能提高。</TM_SpellStaff_Fireball.description>
+  <TM_SpellStaff_Fireball.tools.0.label>杖身</TM_SpellStaff_Fireball.tools.0.label>
+  <TM_SpellStaff_Heal.label>充能圣光术法杖</TM_SpellStaff_Heal.label>
+  <TM_SpellStaff_Heal.description>治疗最多三个不同身体部位上可自然愈合的伤口，每个伤口恢复最多8点生命值，不会将多余治疗量转移到其他伤口。 范围：12格；需要视线畅通。施法准备：0.3秒；冷却：2秒。 必须装备在主武器槽。共10次使用次数，不可充能，最后一次使用后消失。也可作为简单的钝击近战武器。 非施法者也能使用，无需魔力或学习法术。不会使使用者学会该法术，效果强度不随魔法技能提高。 只能治疗非敌对的有机活体目标，亡灵和机械族除外。</TM_SpellStaff_Heal.description>
+  <TM_SpellStaff_Heal.tools.0.label>杖身</TM_SpellStaff_Heal.tools.0.label>
+  <TM_SpellStaff_Blink.label>充能闪烁法杖</TM_SpellStaff_Blink.label>
+  <TM_SpellStaff_Blink.description>将使用者传送到施法范围内未被占据且可通行的格子。不能选择当前所在格子。 范围：20格；无需视线畅通。施法准备：1秒；冷却：2秒。 必须装备在主武器槽。共10次使用次数，不可充能，最后一次使用后消失。也可作为简单的钝击近战武器。 非施法者也能使用，无需魔力或学习法术。不会使使用者学会该法术，效果强度不随魔法技能提高。</TM_SpellStaff_Blink.description>
+  <TM_SpellStaff_Blink.tools.0.label>杖身</TM_SpellStaff_Blink.tools.0.label>
+  <TM_CastScroll_Lightning.label>闪电施法卷轴</TM_CastScroll_Lightning.label>
+  <TM_CastScroll_Lightning.description>发射闪电，对首次命中的目标造成18点闪电伤害。攻击成功发射后即消耗一次使用次数，即使未命中也是如此。 范围：24格；需要视线畅通。施法准备：1秒；冷却：2秒。 从物品栏使用。每次成功施法消耗一张卷轴；同一堆卷轴共享冷却时间。 非施法者也能使用，无需魔力或学习法术。不会使使用者学会该法术，效果强度不随魔法技能提高。</TM_CastScroll_Lightning.description>
+  <TM_SpellStaff_Lightning.label>充能闪电法杖</TM_SpellStaff_Lightning.label>
+  <TM_SpellStaff_Lightning.description>发射闪电，对首次命中的目标造成18点闪电伤害。攻击成功发射后即消耗一次使用次数，即使未命中也是如此。 范围：24格；需要视线畅通。施法准备：1秒；冷却：2秒。 必须装备在主武器槽。共10次使用次数，不可充能，最后一次使用后消失。也可作为简单的钝击近战武器。 非施法者也能使用，无需魔力或学习法术。不会使使用者学会该法术，效果强度不随魔法技能提高。</TM_SpellStaff_Lightning.description>
+  <TM_SpellStaff_Lightning.tools.0.label>杖身</TM_SpellStaff_Lightning.tools.0.label>
+  <TM_CastScroll_Regeneration.label>再生术施法卷轴</TM_CastScroll_Regeneration.label>
+  <TM_CastScroll_Regeneration.description>每2秒为一个可自然愈合的伤口恢复最多5点生命值，持续20秒，总量最多50点。不再生缺失的身体部位，不治疗疤痕。效果不可叠加。 范围：12格；需要视线畅通。施法准备：1.5秒；冷却：2秒。 从物品栏使用。每次成功施法消耗一张卷轴；同一堆卷轴共享冷却时间。 非施法者也能使用，无需魔力或学习法术。不会使使用者学会该法术，效果强度不随魔法技能提高。 只能治疗非敌对的有机活体目标，亡灵和机械族除外。</TM_CastScroll_Regeneration.description>
+  <TM_SpellStaff_Regeneration.label>充能再生术法杖</TM_SpellStaff_Regeneration.label>
+  <TM_SpellStaff_Regeneration.description>每2秒为一个可自然愈合的伤口恢复最多5点生命值，持续20秒，总量最多50点。不再生缺失的身体部位，不治疗疤痕。效果不可叠加。 范围：12格；需要视线畅通。施法准备：1.5秒；冷却：2秒。 必须装备在主武器槽。共10次使用次数，不可充能，最后一次使用后消失。也可作为简单的钝击近战武器。 非施法者也能使用，无需魔力或学习法术。不会使使用者学会该法术，效果强度不随魔法技能提高。 只能治疗非敌对的有机活体目标，亡灵和机械族除外。</TM_SpellStaff_Regeneration.description>
+  <TM_SpellStaff_Regeneration.tools.0.label>杖身</TM_SpellStaff_Regeneration.tools.0.label>
+  <TM_CastScroll_CureDisease.label>疾病治疗施法卷轴</TM_CastScroll_CureDisease.label>
+  <TM_CastScroll_CureDisease.description>移除一种适用病症：伤口感染、流感、瘟疫、疟疾、昏睡病、肠道寄生虫、肌肉寄生虫、食物中毒或腐化症。不会移除其他病症。 范围：12格；需要视线畅通。施法准备：2秒；冷却：2秒。 从物品栏使用。每次成功施法消耗一张卷轴；同一堆卷轴共享冷却时间。 非施法者也能使用，无需魔力或学习法术。不会使使用者学会该法术，效果强度不随魔法技能提高。 只能治疗非敌对的有机活体目标，亡灵和机械族除外。</TM_CastScroll_CureDisease.description>
+  <TM_SpellStaff_CureDisease.label>充能疾病治疗法杖</TM_SpellStaff_CureDisease.label>
+  <TM_SpellStaff_CureDisease.description>移除一种适用病症：伤口感染、流感、瘟疫、疟疾、昏睡病、肠道寄生虫、肌肉寄生虫、食物中毒或腐化症。不会移除其他病症。 范围：12格；需要视线畅通。施法准备：2秒；冷却：2秒。 必须装备在主武器槽。共10次使用次数，不可充能，最后一次使用后消失。也可作为简单的钝击近战武器。 非施法者也能使用，无需魔力或学习法术。不会使使用者学会该法术，效果强度不随魔法技能提高。 只能治疗非敌对的有机活体目标，亡灵和机械族除外。</TM_SpellStaff_CureDisease.description>
+  <TM_SpellStaff_CureDisease.tools.0.label>杖身</TM_SpellStaff_CureDisease.tools.0.label>
+  <TM_CastScroll_Purify.label>净化施法卷轴</TM_CastScroll_Purify.label>
+  <TM_CastScroll_Purify.description>移除一处疤痕，或一种哮喘、背部疼痛、虚弱、白内障、听力损失、动脉阻塞或成瘾状态；路西法合剂成瘾除外。不再生身体部位，也不会随意移除其他健康状态。 范围：12格；需要视线畅通。施法准备：3秒；冷却：2秒。 从物品栏使用。每次成功施法消耗一张卷轴；同一堆卷轴共享冷却时间。 非施法者也能使用，无需魔力或学习法术。不会使使用者学会该法术，效果强度不随魔法技能提高。 只能治疗非敌对的有机活体目标，亡灵和机械族除外。</TM_CastScroll_Purify.description>
+  <TM_SpellStaff_Purify.label>充能净化法杖</TM_SpellStaff_Purify.label>
+  <TM_SpellStaff_Purify.description>移除一处疤痕，或一种哮喘、背部疼痛、虚弱、白内障、听力损失、动脉阻塞或成瘾状态；路西法合剂成瘾除外。不再生身体部位，也不会随意移除其他健康状态。 范围：12格；需要视线畅通。施法准备：3秒；冷却：2秒。 必须装备在主武器槽。共10次使用次数，不可充能，最后一次使用后消失。也可作为简单的钝击近战武器。 非施法者也能使用，无需魔力或学习法术。不会使使用者学会该法术，效果强度不随魔法技能提高。 只能治疗非敌对的有机活体目标，亡灵和机械族除外。</TM_SpellStaff_Purify.description>
+  <TM_SpellStaff_Purify.tools.0.label>杖身</TM_SpellStaff_Purify.tools.0.label>
+  <TM_CastScroll_Soothe.label>安抚施法卷轴</TM_CastScroll_Soothe.label>
+  <TM_CastScroll_Soothe.description>提供持续一天的+6心情加成。效果生效期间无法叠加或刷新。目标必须是具有心情需求的友好活体角色。 范围：12格；需要视线畅通。施法准备：1秒；冷却：2秒。 从物品栏使用。每次成功施法消耗一张卷轴；同一堆卷轴共享冷却时间。 非施法者也能使用，无需魔力或学习法术。不会使使用者学会该法术，效果强度不随魔法技能提高。</TM_CastScroll_Soothe.description>
+  <TM_SpellStaff_Soothe.label>充能安抚法杖</TM_SpellStaff_Soothe.label>
+  <TM_SpellStaff_Soothe.description>提供持续一天的+6心情加成。效果生效期间无法叠加或刷新。目标必须是具有心情需求的友好活体角色。 范围：12格；需要视线畅通。施法准备：1秒；冷却：2秒。 必须装备在主武器槽。共10次使用次数，不可充能，最后一次使用后消失。也可作为简单的钝击近战武器。 非施法者也能使用，无需魔力或学习法术。不会使使用者学会该法术，效果强度不随魔法技能提高。</TM_SpellStaff_Soothe.description>
+  <TM_SpellStaff_Soothe.tools.0.label>杖身</TM_SpellStaff_Soothe.tools.0.label>
+  <TM_CastScroll_Portal.label>传送门施法卷轴</TM_CastScroll_Portal.label>
+  <TM_CastScroll_Portal.description>创建一对相互连接的临时传送门，持续一天。依次选择空闲入口、已加载的地图和空闲出口。右键点击任一传送门即可通行，通行时不会自动切换镜头。不能生成新地图；取消选择不会消耗次数。 范围：12格；需要视线畅通。施法准备：3秒；冷却：2秒。 从物品栏使用。每次成功施法消耗一张卷轴；同一堆卷轴共享冷却时间。 非施法者也能使用，无需魔力或学习法术。不会使使用者学会该法术，效果强度不随魔法技能提高。</TM_CastScroll_Portal.description>
+  <TM_SpellStaff_Portal.label>充能传送门法杖</TM_SpellStaff_Portal.label>
+  <TM_SpellStaff_Portal.description>创建一对相互连接的临时传送门，持续一天。依次选择空闲入口、已加载的地图和空闲出口。右键点击任一传送门即可通行，通行时不会自动切换镜头。不能生成新地图；取消选择不会消耗次数。 范围：12格；需要视线畅通。施法准备：3秒；冷却：2秒。 必须装备在主武器槽。共10次使用次数，不可充能，最后一次使用后消失。也可作为简单的钝击近战武器。 非施法者也能使用，无需魔力或学习法术。不会使使用者学会该法术，效果强度不随魔法技能提高。</TM_SpellStaff_Portal.description>
+  <TM_SpellStaff_Portal.tools.0.label>杖身</TM_SpellStaff_Portal.tools.0.label>
+  <TM_CastScroll_Resurrection.label>复活术施法卷轴</TM_CastScroll_Resurrection.label>
+  <TM_CastScroll_Resurrection.description>复活一具新鲜的、非敌对有机生物尸体，并产生游戏原有的复活副作用。需要不中断地完成施法准备。对腐烂尸体、亡灵或机械族无效。仅在确认复活成功后消耗卷轴。 范围：8格；需要视线畅通。施法准备：30秒；冷却：2秒。 从物品栏使用。每次成功施法消耗一张卷轴；同一堆卷轴共享冷却时间。 非施法者也能使用，无需魔力或学习法术。不会使使用者学会该法术，效果强度不随魔法技能提高。</TM_CastScroll_Resurrection.description>
+  <TM_ItemFireballProjectile.label>魔法物品火球</TM_ItemFireballProjectile.label>
+  <TM_ItemLightningProjectile.label>魔法物品闪电</TM_ItemLightningProjectile.label>
+  <TM_ItemPortal.label>临时传送门</TM_ItemPortal.label>
+  <TM_ItemPortal.description>连接另一座传送门的临时通道。右键点击以通行。持续一天。</TM_ItemPortal.description>
+</LanguageData>

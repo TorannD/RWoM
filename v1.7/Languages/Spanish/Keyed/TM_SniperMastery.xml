@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SniperMasteryHint>Completa una de las dos vías para aprender {0}. Acierta con Fractura de armadura contra enemigos o trabaja en una mesa de investigación. Cada turno dura una hora de juego. El tiempo trabajado se conserva tras una interrupción.</TM_SniperMasteryHint>
+  <TM_SniperMasteryHits>Impactos con Fractura de armadura: {0}/{1}</TM_SniperMasteryHits>
+  <TM_SniperMasteryResearch>Turnos de investigación: {0}/{1}</TM_SniperMasteryResearch>
+  <TM_SniperMasteryPartial>Turno actual: {0}%</TM_SniperMasteryPartial>
+  <TM_SniperMasteryClaim>Obtener maestría de francotirador</TM_SniperMasteryClaim>
+  <TM_SniperMasteryLearned>Técnica de maestría aprendida: {0}.</TM_SniperMasteryLearned>
+</LanguageData>

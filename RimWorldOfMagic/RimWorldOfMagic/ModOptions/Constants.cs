@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using HarmonyLib;
 using System.Collections.Generic;
 using Verse;
@@ -338,29 +338,6 @@ namespace TorannMagic.ModOptions
             //Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_Thin_south").mainTexture);
             //Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_Male_east").mainTexture);
             //Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_Male_south").mainTexture);
-            if (ModsConfig.IsActive("ssulunge.BBBodySupport"))
-            {
-                //Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_FemaleBB_east").mainTexture);
-                //Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_FemaleBB_south").mainTexture);
-                //Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/demonlordcloakc_FemaleBB_north").mainTexture);
-                //Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/opencloak_FemaleBB_east").mainTexture);
-                //Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/opencloak_FemaleBB_south").mainTexture);
-                //Constants.cloaks.Add(MaterialPool.MatFrom("Equipment/opencloak_FemaleBB_south").mainTexture);
-                ///
-                //cloaks.AddToArray(MaterialPool.MatFrom("Equipment/demonlordcloakc_FemaleBB_east").mainTexture);
-                cloaks.AddToArray(MaterialPool.MatFrom("Equipment/demonlordcloakc_FemaleBB_south").mainTexture);
-                //cloaks.AddToArray(MaterialPool.MatFrom("Equipment/demonlordcloakc_FemaleBB_north").mainTexture);
-                //cloaks.AddToArray(MaterialPool.MatFrom("Equipment/opencloak_FemaleBB_east").mainTexture);
-                cloaks.AddToArray(MaterialPool.MatFrom("Equipment/opencloak_FemaleBB_south").mainTexture);
-                //cloaks.AddToArray(MaterialPool.MatFrom("Equipment/opencloak_FemaleBB_north").mainTexture);
-                ///
-                //cloaks.AddToArray(MaterialPool.MatFrom("Equipment/demonlordcloakc_FemaleBB_east"));
-                //cloaks.AddToArray(MaterialPool.MatFrom("Equipment/demonlordcloakc_FemaleBB_south"));
-                //cloaks.AddToArray(MaterialPool.MatFrom("Equipment/demonlordcloakc_FemaleBB_north"));
-                //cloaks.AddToArray(MaterialPool.MatFrom("Equipment/opencloak_FemaleBB_east"));
-                //cloaks.AddToArray(MaterialPool.MatFrom("Equipment/opencloak_FemaleBB_south"));
-                //cloaks.AddToArray(MaterialPool.MatFrom("Equipment/opencloak_FemaleBB_south"));
-            }
             //cloaks.AddRangeToArray(cloaksNorth); main graphic only  checks for "south" version of each body type, harmony patch looks at pawn rotation instead of drawn graphic texture now
         }
 

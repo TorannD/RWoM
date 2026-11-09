@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_ShieldManaBuffer>Reserva de maná: {0} / {1}</TM_ShieldManaBuffer>
+  <TM_ThermalFieldStrength>Protección contra el frío: {0}</TM_ThermalFieldStrength>
+  <TM_ThermalStatusStandby>En espera: otro generador térmico está activo</TM_ThermalStatusStandby>
+</LanguageData>

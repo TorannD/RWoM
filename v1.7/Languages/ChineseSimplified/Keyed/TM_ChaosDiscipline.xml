@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ChaosAnchor>混沌之锚：{0}</TM_ChaosAnchor>
+  <TM_ChaosNoAnchor>解除锚定</TM_ChaosNoAnchor>
+  <TM_ChaosProgress>施放两种不同的临时法术（{0}/2）。进阶后，使用两个不同法术组合中的法术（{1}/2）。</TM_ChaosProgress>
+  <TM_ChaosAscensionInfo>献上洞察宝石以飞升。可将一个法术保留至下一次抽取，已投入的点数照常返还。</TM_ChaosAscensionInfo>
+  <TM_ChaosAscensionAction>飞升：混沌之锚</TM_ChaosAscensionAction>
+  <TM_ChaosAscensionNeedsOffering>需要洞察宝石</TM_ChaosAscensionNeedsOffering>
+</LanguageData>

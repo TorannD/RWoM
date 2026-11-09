@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ClassDiscipline.label>职业学派</TM_ClassDiscipline.label>
+  <TM_ClassDiscipline.description>已入门的学派。进度保存在角色数据中；此健康条目仅用于显示。</TM_ClassDiscipline.description>
+</LanguageData>

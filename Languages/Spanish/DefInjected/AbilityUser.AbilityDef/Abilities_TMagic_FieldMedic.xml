@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+<TM_CombatDrugs.label>drogas de combate</TM_CombatDrugs.label>
+
+<TM_CombatDrugs.description>Administra drogas de combate a un aliado.\n\nEl médico de campaña lanza a un aliado una jeringuilla con drogas de combate improvisadas.\nLos efectos siempre son positivos, pero pueden variar.</TM_CombatDrugs.description>
+
+<TM_Emergency.label>emergencia</TM_Emergency.label>
+
+<TM_Emergency.description>El médico de campaña corre en auxilio de sus pacientes.\n\nDurante 30 segundos, el médico de campaña aumenta su velocidad de movimiento base, su velocidad de atención y la calidad de atención, y reduce el dolor que siente.</TM_Emergency.description>
+
+<TM_MedicalSupply.label>reabastecer</TM_MedicalSupply.label>
+
+<TM_MedicalSupply.description>Reabastece los suministros médicos del médico de campaña.\n\nEl médico de campaña utilizará un objeto de la zona de almacenamiento objetivo y lo convertirá en suministros médicos personales que podrá usar para activar sus habilidades.\n\nLa cantidad de suministros obtenidos equivale a 20 veces la potencia médica del objeto al cuadrado:\nmedicina: 20 suministros médicos\nmedicina herbal: 4,9 suministros médicos\nmedicina de mundo brillante: 51,2 suministros médicos\n\nEl médico de campaña puede entrenarse para convertir sus suministros de nuevo en medicina común.</TM_MedicalSupply.description>
+
+<TM_Medigel.label>medigel</TM_Medigel.label>
+
+<TM_Medigel.description>Aplica un gel curativo en las heridas de un objetivo para acelerar su recuperación y combatir las infecciones. Las heridas se curarán lentamente con el tiempo. El medigel reduce ligeramente el dolor causado por las heridas.</TM_Medigel.description>
+</LanguageData>

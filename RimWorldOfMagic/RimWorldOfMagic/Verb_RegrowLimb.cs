@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace TorannMagic
 {
-    public class Verb_RegrowLimb : Verb_UseAbility
+    public class Verb_RegrowLimb : ClassProgression.Verb_SpiritTargetable
     {
 
         public override bool CanHitTargetFrom(IntVec3 root, LocalTargetInfo targ)
@@ -41,43 +41,27 @@ namespace TorannMagic
 
         protected override bool TryCastShot()
         {
-
-            CellRect cellRect = CellRect.CenteredOn(this.currentTarget.Cell, 1);
-            cellRect.ClipInsideMap(this.CasterPawn.Map);
-            IntVec3 centerCell = cellRect.CenterCell;
-            Map map = this.CasterPawn.Map;
-
-            Pawn caster = base.CasterPawn;
-
-            if ((centerCell.IsValid && centerCell.Standable(map)))
-            {
-                AbilityUser.SpawnThings tempThing = new SpawnThings();
-                tempThing.def = ThingDef.Named("SeedofRegrowth");
-                Verb_RegrowLimb.SingleSpawnLoop(tempThing, centerCell, map);
-            }
-            else
-            {
+            if (!ApplyHostedEffect())
                 Messages.Message("InvalidSummon".Translate(), MessageTypeDefOf.RejectInput);
-            }
             return false;
         }
 
-        public static void SingleSpawnLoop(SpawnThings spawnables, IntVec3 position, Map map)
+        protected override bool ApplyHostedEffect()
         {
-            bool flag = spawnables.def != null;
-            if (flag)
-            {
-                ThingDef def = spawnables.def;
-                ThingDef stuff = null;
-                bool madeFromStuff = def.MadeFromStuff;
-                if (madeFromStuff)
-                {
-                    stuff = ThingDefOf.WoodLog;
-                }
-                Thing thing = ThingMaker.MakeThing(def, stuff);
-                GenPlace.TryPlaceThing(thing, position, map, ThingPlaceMode.Near);
-                //GenSpawn.Spawn(thing, position, map, Rot4.North, WipeMode.Vanish, false);                
-            }
+            var map = CasterPawn.Map;
+            if (map == null || !currentTarget.IsValid || !currentTarget.Cell.InBounds(map)) return false;
+            var rect = CellRect.CenteredOn(currentTarget.Cell, 1);
+            rect.ClipInsideMap(map);
+            return rect.CenterCell.Standable(map) && Place(ThingDef.Named("SeedofRegrowth"), rect.CenterCell, map);
+        }
+
+        public static void SingleSpawnLoop(SpawnThings spawnables, IntVec3 position, Map map)
+            => Place(spawnables.def, position, map);
+
+        private static bool Place(ThingDef def, IntVec3 position, Map map)
+        {
+            return def != null && GenPlace.TryPlaceThing(ThingMaker.MakeThing(def, def.MadeFromStuff ? ThingDefOf.WoodLog : null),
+                position, map, ThingPlaceMode.Near);
         }
     }
 }

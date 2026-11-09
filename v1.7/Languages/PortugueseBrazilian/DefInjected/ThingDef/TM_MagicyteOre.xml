@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_MineableMagicyte.label>minério de magicita</TM_MineableMagicyte.label>
+  <TM_MineableMagicyte.description>Rocha atravessada por cristais de magicita. Cada bloco fornece 15–100 unidades de magicita bruta ao ser totalmente minerado e tem 1% de chance de fornecer também uma gema de encantamento. Destruir a rocha não permite recuperar seu conteúdo.</TM_MineableMagicyte.description>
+</LanguageData>

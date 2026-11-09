@@ -899,6 +899,7 @@
   
   <HediffDef>
     <defName>TM_GolemancyVersatilityHD</defName>
+    <comps><li Class="TorannMagic.Golems.HediffCompProperties_GolemBond"/></comps>
 	<hediffClass>HediffWithComps</hediffClass>
     <defaultLabelColor>(1,0.6,0.3)</defaultLabelColor>
     <label>Golem bond</label>

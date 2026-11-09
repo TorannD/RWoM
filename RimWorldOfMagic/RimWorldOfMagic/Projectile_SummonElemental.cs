@@ -48,41 +48,50 @@ namespace TorannMagic
 
         protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
+            if (Destroyed) return;
             Map map = base.Map;
             //base.Impact(hitThing);
             GenClamor.DoClamor(this, 2.1f, ClamorDefOf.Impact);
             if (!initialized)
             {
                 SpawnThings spawnThing = new SpawnThings();
-                pawn = this.launcher as Pawn;
-                MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_SummonElemental.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_SummonElemental_pwr");
-                MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_SummonElemental.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_SummonElemental_ver");
-                
-                pwrVal = pwr.level;
-                verVal = ver.level;
-                if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+                if (!ClassProgression.SpiritHostedSummons.Resolve(this, launcher as Pawn, out pawn, out var source))
+                { this.age = this.duration; Destroy(); return; }
+                if (source == null)
                 {
-                    MightPowerSkill mpwr = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-                    MightPowerSkill mver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
-                    pwrVal = mpwr.level;
-                    verVal = mver.level;
+                    MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_SummonElemental.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_SummonElemental_pwr");
+                    MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_SummonElemental.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_SummonElemental_ver");
+
+                    pwrVal = pwr.level;
+                    verVal = ver.level;
+                    if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+                    {
+                        MightPowerSkill mpwr = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
+                        MightPowerSkill mver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
+                        pwrVal = mpwr.level;
+                        verVal = mver.level;
+                    }
+                    if (ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist)
+                    {
+                        pwrVal = 3;
+                        verVal = 3;
+                    }
                 }
-                if (ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist)
+                else
                 {
-                    pwrVal = 3;
-                    verVal = 3;
+                    pwrVal = source.Power;
+                    verVal = source.Versatility;
                 }
                 CellRect cellRect = CellRect.CenteredOn(this.Position, 1);
                 cellRect.ClipInsideMap(map);
 
                 IntVec3 centerCell = cellRect.CenterCell;
-                System.Random random = new System.Random();
-                random = new System.Random();
+
  
                 duration += (verVal * 900);
-                duration = Mathf.RoundToInt(duration * pawn.GetCompAbilityUserMagic().arcaneDmg);
+                duration = Mathf.RoundToInt(duration * (source?.Scale ?? pawn.GetCompAbilityUserMagic().arcaneDmg));
 
-                int rnd = GenMath.RoundRandom(random.Next(0, 8));
+                int rnd = source?.ElementRoll ?? GenMath.RoundRandom(new System.Random().Next(0, 8));
                 if (rnd < 2)
                 {
                     spawnThing.factionDef = TorannMagicDefOf.TM_ElementalFaction;
@@ -326,9 +335,10 @@ namespace TorannMagic
                     }
                     else
                     {
+                        if (Destroyed) return;
                         newPawn = (TMPawnSummoned)PawnGenerator.GeneratePawn(spawnables.kindDef, faction);
                         newPawn.validSummoning = true;
-                        newPawn.Spawner = this.Caster;
+                        newPawn.Spawner = pawn;
                         newPawn.Temporary = true;
                         newPawn.TicksToDestroy = this.duration;
                         if (newPawn.playerSettings != null)
@@ -342,6 +352,7 @@ namespace TorannMagic
                         try
                         {
                             Pawn p = (Pawn)GenSpawn.Spawn(newPawn, position, map, Rot4.North, WipeMode.Vanish, false);
+                            this.TryGetComp<ClassProgression.CompHostedSummon>()?.NotifySpawned(p);
                             if (newPawn.playerSettings != null)
                             {
                                 p.playerSettings.hostilityResponse = HostilityResponseMode.Attack;
@@ -351,12 +362,14 @@ namespace TorannMagic
                         }
                         catch
                         {
-                            pawn.GetCompAbilityUserMagic().Mana.CurLevel += pawn.GetCompAbilityUserMagic().ActualManaCost(TorannMagicDefOf.TM_SummonElemental);
+                            if (this.TryGetComp<ClassProgression.CompHostedSummon>()?.Projected != true)
+                                pawn.GetCompAbilityUserMagic().Mana.CurLevel += pawn.GetCompAbilityUserMagic().ActualManaCost(TorannMagicDefOf.TM_SummonElemental);
                             Log.Message("TM_Exception".Translate(
                                 pawn.LabelShort,
                                 this.def.defName
                                 ));
                             this.Destroy(DestroyMode.Vanish);
+                            return;
                         }
                         if (newPawn.Faction != null && newPawn.Faction != Faction.OfPlayer)
                         {

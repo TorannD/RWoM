@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <FlyingObject_Advanced.label>objeto volador que hace muchas cosas</FlyingObject_Advanced.label>
+  
+  
+  <FlyingObject_Spinning.label>objeto volador que gira</FlyingObject_Spinning.label>
+  
+  
+  <FlyingObject_SpinningBone.label>objeto volador que gira</FlyingObject_SpinningBone.label>
+  
+  
+  <Projectile_Default.label>predeterminado</Projectile_Default.label>
+  
+</LanguageData>

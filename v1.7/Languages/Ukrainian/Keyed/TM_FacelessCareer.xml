@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ReadFacelessInfiltrator>Розвідник — маскування діє на 20% довше.</TM_ReadFacelessInfiltrator>
+  <TM_ReadFacelessUnderstudy>Дублер — відлуння на 20% сильніше.</TM_ReadFacelessUnderstudy>
+  <TM_FacelessOrigins>Вивчіть три різновиди відлуння: {0}/3.</TM_FacelessOrigins>
+  <TM_FacelessPractice>Пораньте ворога або зціліть союзника відлунням у різні дні: {0}/{1}.</TM_FacelessPractice>
+  <TM_FacelessRescue>Або врятуйте різних поранених союзників: {0}/{1}.</TM_FacelessRescue>
+  <TM_FacelessSample>Зразок для наслідування: {0}</TM_FacelessSample>
+  <TM_FacelessVirtuoso>Віртуоз — посилити відлуння на 50%.</TM_FacelessVirtuoso>
+</LanguageData>

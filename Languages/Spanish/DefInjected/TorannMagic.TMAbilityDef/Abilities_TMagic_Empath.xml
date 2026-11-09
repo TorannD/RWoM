@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Empathy.label>Empatía</TM_Empathy.label>
+  <TM_Empathy.description>Un empático tiene la capacidad de experimentar las emociones de quienes lo rodean y hacerlas resonar para comprender mejor los sentimientos ajenos o transmitir los suyos. Estas habilidades innatas se han potenciado con poder arcano, magnificando los efectos de la empatía. Los peones cercanos al empático experimentarán de vez en cuando las emociones atenuadas de este, tanto buenas como malas. Cuantas más emociones positivas siente el empático, más probable es que los peones cercanos reciban sentimientos empáticos positivos. Dominar las habilidades empáticas puede convertirlo en una eficaz herramienta de gestión del ánimo, pero un empático sin entrenar y estresado puede sumir a toda una colonia en la desesperación.</TM_Empathy.description>
+
+  <TM_MindKiller.label>Asesino de mentes</TM_MindKiller.label>
+  <TM_MindKiller.description>Libera un lamento empático que inunda de emociones a todos los peones cercanos. Las reacciones pueden variar, pero a la mayoría de los organismos vivos les cuesta lidiar con la abrumadora oleada de emociones. Puede hacer que los peones hostiles se vuelvan berserk. Cuanto más alto es el ánimo de un peón afectado, más energía emocional se libera. Si no se ha entrenado, esta habilidad puede afectar a los aliados cercanos.</TM_MindKiller.description>
+
+  <TM_SuppressiveAura.label>Aura supresora</TM_SuppressiveAura.label>
+  <TM_SuppressiveAura.description>Crea un aura alrededor del empático que suprime las emociones de los demás peones, permitiéndoles sentir solo lo que el empático desea que sientan. Con entrenamiento, el empático puede permitir las emociones positivas y suprimir las negativas. Los efectos secundarios del aura pueden provocar la transferencia de las emociones del empático. Los peones con las emociones suprimidas no sufrirán crisis mentales.</TM_SuppressiveAura.description>
+
+  <TM_HarvestPassion.label>Cosechar pasión</TM_HarvestPassion.label>
+  <TM_HarvestPassion.description>Intenta robar una pasión por el trabajo al peón objetivo. El lanzador debe sacrificar una inspiración activa para activar esta habilidad. Una vez que se ha eliminado toda la diversión del peón objetivo, el efecto intenta transferir una pasión al lanzador. La diversión del lanzador también se consume en cada iteración. Si no se transfiere una pasión al lanzador antes de que se agote su diversión, la habilidad termina. Tanto el lanzador como el objetivo sufrirán un trauma impactante mientras el efecto esté activo. La pasión cosechada siempre es aleatoria.</TM_HarvestPassion.description>
+
+  <TM_IncitePassion.label>Incitar pasión</TM_IncitePassion.label>
+  <TM_IncitePassion.description>Transfiere una pasión por el trabajo del lanzador a un objetivo. Esta habilidad siempre tiene éxito. Los esclavos no pueden usarla. La pasión transferida puede seleccionarse haciendo clic derecho en el icono de la habilidad. Si no se especifica ninguna, se transfiere una pasión aleatoria.</TM_IncitePassion.description>
+
+  <TM_Symbiosis.label>Simbiosis</TM_Symbiosis.label>
+  <TM_Symbiosis.description>Entrelaza el destino del empático con el del objetivo. El empático entrará en un estado de vacío mental, incapaz de controlar su propio cuerpo mientras proyecta su voluntad para reforzar la de un peón objetivo. El empático conservará los efectos o auras preexistentes. El objetivo recibirá a cambio fortaleza emocional y fuerza mental. El simbionte puede sufrir secuelas físicas de las heridas que reciba su anfitrión. Si el anfitrión muere mientras el empático es simbionte, el empático también morirá. La simbiosis termina cuando se agota el ánimo del empático y puede finalizarse manualmente si el anfitrión y el simbionte están muy cerca.</TM_Symbiosis.description>
+
+  <TM_FadeEmotions.label>Desvanecer emoción</TM_FadeEmotions.label>
+  <TM_FadeEmotions.description>Reduce el ánimo del empático y del objetivo para librar a este último de recuerdos negativos. Tras el primer recuerdo, cada recuerdo negativo adicional consumirá 30 de ánimo del objetivo para eliminarse. El efecto termina cuando el objetivo tiene menos de 30 de ánimo o no le quedan recuerdos negativos. El primer recuerdo siempre consume 30 de ánimo del objetivo. Esta habilidad no tiene efecto sobre los modificadores de ánimo situacionales.</TM_FadeEmotions.description>
+
+</LanguageData>

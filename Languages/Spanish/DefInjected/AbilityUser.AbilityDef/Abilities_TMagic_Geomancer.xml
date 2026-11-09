@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+<TM_DismissEarthSprites.label>despedir espíritus de tierra</TM_DismissEarthSprites.label>
+
+<TM_DismissEarthSprites.description>Despide a un espíritu de tierra activo.</TM_DismissEarthSprites.description>
+
+<TM_DispelStoneskin.label>disipar piel de piedra</TM_DispelStoneskin.label>
+
+<TM_DispelStoneskin.description>Disipa todas las instancias de piel de piedra mantenidas por este peón.</TM_DispelStoneskin.description>
+
+<TM_EarthernHammer.label>martillo terrenal</TM_EarthernHammer.label>
+
+<TM_EarthernHammer.description>El geomante manipula las leyes de la gravedad para catapultar enormes piedras desde el terreno circundante. La cantidad de energía gravitacional que puede invertir es limitada: las piedras cercanas a la superficie requieren poca energía, mientras que las piedras subterráneas requieren considerablemente más.\n\nLa primera piedra y, posteriormente, una de cada tres procederán siempre del subsuelo. Si no dispone de suficiente energía gravitacional, el geomante intentará utilizar la energía restante para lanzar piedras cercanas. Este cambio extremo de la gravedad lo desorientará temporalmente.</TM_EarthernHammer.description>
+
+<TM_EarthSprites.label>espíritus de tierra</TM_EarthSprites.label>
+
+<TM_EarthSprites.description>Invoca espíritus de tierra para transformar el terreno. Aparecen como pequeñas motas de luz que pueden pasar desapercibidas para quienes no prestan atención, pero son trabajadores diligentes, capaces de descomponer rocas y piedra en sus componentes básicos o de aumentar la riqueza y la fertilidad del suelo.\n\nUna vez invocados, seguirán trabajando en el terreno, incluso desplazándose a zonas cercanas, hasta que el geomante los despida. Los espíritus de tierra solo entienden instrucciones básicas y se desplazarán aleatoriamente a nuevas zonas para continuar su trabajo. Si no hay ninguna zona cercana que necesite trabajo, la invocación terminará. Si se invocan dentro de un área llamada «espíritus de tierra», solo se desplazarán a casillas cercanas dentro de esa área.\n\nA cambio de sus esfuerzos, los espíritus de tierra necesitan un suministro constante y considerable de maná. Si el geomante no puede proporcionárselo, desaparecerán. Cada geomante solo puede solicitar la ayuda de un único espíritu de tierra, independientemente de cuánto maná tenga disponible.</TM_EarthSprites.description>
+
+<TM_Encase.label>encierro pétreo</TM_Encase.label>
+
+<TM_Encase.description>Encierra una zona objetivo en un anillo de piedra, eficaz para aislar partes del campo de batalla.\n\nRadio: 3\nAlcance: 50\nTiempo de preparación: 1,5 s</TM_Encase.description>
+
+<TM_Encase_I.label>encierro pétreo I</TM_Encase_I.label>
+
+<TM_Encase_I.description>Encierra una zona objetivo en un anillo de piedra, eficaz para aislar partes del campo de batalla.\n\nRadio: 4\nAlcance: 55\nTiempo de preparación: 1,3 s</TM_Encase_I.description>
+
+<TM_Encase_II.label>encierro pétreo II</TM_Encase_II.label>
+
+<TM_Encase_II.description>Encierra una zona objetivo en un anillo de piedra, eficaz para aislar partes del campo de batalla.\n\nRadio: 5\nAlcance: 60\nTiempo de preparación: 1,1 s</TM_Encase_II.description>
+
+<TM_Encase_III.label>encierro pétreo III</TM_Encase_III.label>
+
+<TM_Encase_III.description>Encierra una zona objetivo en un anillo de piedra, eficaz para aislar partes del campo de batalla.\n\nRadio: 6\nAlcance: 65\nTiempo de preparación: 1 s</TM_Encase_III.description>
+
+<TM_Meteor.label>meteoro</TM_Meteor.label>
+
+<TM_Meteor.description>Reúne rocas, polvo y escombros de la atmósfera y el espacio para formar un meteorito. El geomante dirige su caída para sepultar una ubicación objetivo.\n\nEl núcleo del meteorito siempre está compuesto de material valioso.\n\nRadio: 2\nTiempo de preparación: 5 s</TM_Meteor.description>
+
+<TM_Meteor_I.label>meteoro I</TM_Meteor_I.label>
+
+<TM_Meteor_I.description>Reúne rocas, polvo y escombros de la atmósfera y el espacio para formar un meteorito. El geomante dirige su caída para sepultar una ubicación objetivo.\n\nEl núcleo del meteorito siempre está compuesto de material valioso.\n\nRadio: 3\nTiempo de preparación: 4,6 s</TM_Meteor_I.description>
+
+<TM_Meteor_II.label>meteoro II</TM_Meteor_II.label>
+
+<TM_Meteor_II.description>Reúne rocas, polvo y escombros de la atmósfera y el espacio para formar un meteorito. El geomante dirige su caída para sepultar una ubicación objetivo.\n\nEl núcleo del meteorito siempre está compuesto de material valioso.\n\nRadio: 4\nTiempo de preparación: 4,2 s</TM_Meteor_II.description>
+
+<TM_Meteor_III.label>meteoro III</TM_Meteor_III.label>
+
+<TM_Meteor_III.description>Reúne rocas, polvo y escombros de la atmósfera y el espacio para formar un meteorito. El geomante dirige su caída para sepultar una ubicación objetivo.\n\nEl núcleo del meteorito siempre está compuesto de material valioso.\n\nRadio: 5\nTiempo de preparación: 3,8 s</TM_Meteor_III.description>
+
+<TM_Sentinel.label>centinela</TM_Sentinel.label>
+
+<TM_Sentinel.description>Crea un centinela de piedra para defender una zona. Los centinelas permanecerán inactivos hasta que un enemigo entre en su alcance; entonces romperán su prisión de piedra para defender el terreno.\n\nUsar esta habilidad sobre un centinela inactivo lo despedirá. Cada centinela reduce en 20 el maná máximo.\n\nNota estética: los centinelas siempre estarán orientados en dirección opuesta al lanzador.</TM_Sentinel.description>
+
+<TM_ShatterSentinel.label>hacer añicos al centinela</TM_ShatterSentinel.label>
+
+<TM_ShatterSentinel.description>Todos los centinelas mantenidos por este peón se hacen añicos en una violenta explosión.</TM_ShatterSentinel.description>
+
+<TM_Stoneskin.label>piel de piedra</TM_Stoneskin.label>
+
+<TM_Stoneskin.description>Aplica piel de piedra al peón objetivo. Cada carga de piel de piedra absorbe un único ataque, independientemente de lo poderoso o débil que sea. La piel de piedra es una defensa intangible: las medidas defensivas que emplea no son físicas y no interfieren con la capacidad de combate del protegido.\n\nLa piel de piedra requiere una reserva constante de maná para mantenerse activa. Cada aplicación reduce en 15 el maná máximo del lanzador. El lanzador solo puede mantener un número limitado de instancias de piel de piedra, independientemente de cuánto maná tenga disponible.\n\nAplicar piel de piedra a un objetivo que ya tenga este efecto elimina todas sus cargas y disipa el hechizo, devolviendo las reservas de maná al lanzador.</TM_Stoneskin.description>
+</LanguageData>

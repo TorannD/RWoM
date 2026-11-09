@@ -295,7 +295,7 @@ namespace TorannMagic
                                                 HealthUtility.AdjustSeverity(newPawn, TorannMagicDefOf.TM_HexHD, 1f);
                                                 if (!comp.HexedPawns.Contains(newPawn))
                                                 {
-                                                    comp.HexedPawns.Add(newPawn);
+                                                    comp.RegisterHexTarget(newPawn);
                                                 }
                                                 addAbilities = true;
                                                 TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Hex, newPawn.DrawPos, newPawn.Map, .6f, .1f, .2f, .2f, 0, 0, 0, 0);

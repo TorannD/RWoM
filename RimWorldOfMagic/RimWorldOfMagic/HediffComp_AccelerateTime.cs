@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using Verse;
 using System;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ namespace TorannMagic
 {
     public class HediffComp_AccelerateTime : HediffComp
     {
-        private bool initialized = true;
+        private bool initialized;
 
         public bool isBad = false;
         public int durationTicks = 6000;
@@ -54,7 +54,7 @@ namespace TorannMagic
                 FleckMaker.ThrowLightningGlow(base.Pawn.TrueCenter(), base.Pawn.Map, 3f);
             }
             this.currentAge = base.Pawn.ageTracker.AgeBiologicalYears;
-            this.tickEffect = Mathf.RoundToInt(this.durationTicks / 25);
+            this.tickEffect = Math.Max(1, this.durationTicks / 25);
         }
 
         public override void CompPostTick(ref float severityAdjustment)
@@ -76,29 +76,8 @@ namespace TorannMagic
                 {
                     maxAge = this.Pawn.RaceProps.lifeExpectancy;
                 }
-                int roundedYearAging = Mathf.RoundToInt(this.Pawn.ageTracker.AgeBiologicalYears / 100);
-                if (isBad)
-                {                    
-                    if (this.Pawn.ageTracker.AgeBiologicalYears >= 100)
-                    {
-                        this.Pawn.ageTracker.AgeBiologicalTicks += roundedYearAging * 3600000;
-                    }
-                    else
-                    {
-                        this.Pawn.ageTracker.AgeBiologicalTicks = Mathf.RoundToInt(this.Pawn.ageTracker.AgeBiologicalTicks * (1.02f + (.002f * this.parent.Severity)));
-                    }                    
-                }
-                else
-                {
-                    if(this.Pawn.ageTracker.AgeBiologicalYears >= 200)
-                    {
-                        this.Pawn.ageTracker.AgeBiologicalTicks += roundedYearAging * 3600000;
-                    }
-                    else
-                    {
-                        this.Pawn.ageTracker.AgeBiologicalTicks = Mathf.RoundToInt(this.Pawn.ageTracker.AgeBiologicalTicks * 1.00001f) + 2500;
-                    }                    
-                }
+                var tracker = Pawn.ageTracker;
+                tracker.AgeBiologicalTicks = NextAge(tracker.AgeBiologicalTicks,tracker.AgeBiologicalYears,parent.Severity,isBad);
                 if(this.Pawn.ageTracker.AgeBiologicalYears > this.currentAge)
                 {
                     this.currentAge = this.Pawn.ageTracker.AgeBiologicalYears;                    
@@ -115,11 +94,19 @@ namespace TorannMagic
                 AccelerateHediff(this.Pawn, 60);
                 this.durationTicks -= 60;
 
-                if(Find.TickManager.TicksGame % this.tickEffect ==0)
+                if(Pawn.Spawned && Find.TickManager.TicksGame % Math.Max(1,tickEffect) == 0)
                 {
                     AccelerateEffects(this.Pawn, 1);
                 }
             }
+        }
+
+        internal static long NextAge(long ticks,int years,float severity,bool harmful)
+        {
+            double next = years >= (harmful ? 100 : 200)
+                ? (double)ticks + (years / 100) * 3600000L
+                : harmful ? ticks * (1.02d + .002d * severity) : ticks * 1.00001d + 2500;
+            return next >= long.MaxValue ? long.MaxValue : (long)Math.Round(next);
         }
 
         private void BirthdayBiological(Pawn pawn, float age)
@@ -187,95 +174,52 @@ namespace TorannMagic
         private void AccelerateHediff(Pawn pawn, int ticks)
         {
             float totalBleedRate = 0;
-            using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.hediffs.GetEnumerator())
+            foreach (var rec in pawn.health.hediffSet.hediffs.ToArray())
             {
-                while (enumerator.MoveNext())
+                HediffComp_Immunizable immuneComp = rec.TryGetComp<HediffComp_Immunizable>();
+                if(immuneComp != null)
                 {
-                    Hediff rec = enumerator.Current;
-                    HediffComp_Immunizable immuneComp = rec.TryGetComp<HediffComp_Immunizable>();
-                    if(immuneComp != null)
+                    if (immuneComp.Def.CompProps<HediffCompProperties_Immunizable>() != null)
                     {
-                        if (immuneComp.Def.CompProps<HediffCompProperties_Immunizable>() != null)
+                        float immuneSevDay = immuneComp.Def.CompProps<HediffCompProperties_Immunizable>().severityPerDayNotImmune;
+                        if (immuneSevDay != 0 && !rec.FullyImmune())
                         {
-                            float immuneSevDay = immuneComp.Def.CompProps<HediffCompProperties_Immunizable>().severityPerDayNotImmune;
-                            if (immuneSevDay != 0 && !rec.FullyImmune())
-                            {
-                                rec.Severity += ((immuneSevDay * ticks * this.parent.Severity)/(24*2500));
-                            }
+                            rec.Severity += ((immuneSevDay * ticks * this.parent.Severity)/(24*2500));
                         }
-                    }
-                    HediffComp_SeverityPerDay sevDayComp = rec.TryGetComp<HediffComp_SeverityPerDay>();
-                    if (sevDayComp != null)
-                    {
-                        if (sevDayComp.Def.CompProps<HediffCompProperties_SeverityPerDay>() != null)
-                        {
-                            float sevDay = sevDayComp.Def.CompProps<HediffCompProperties_SeverityPerDay>().severityPerDay;
-                            if (sevDay != 0)
-                            {
-                                rec.Severity += ((sevDay * ticks * this.parent.Severity)/(24*2500));
-                            }
-                        }
-                    }
-                    HediffComp_Disappears tickComp = rec.TryGetComp<HediffComp_Disappears>();
-                    if (tickComp != null)
-                    {
-                        int ticksToDisappear = Traverse.Create(root: tickComp).Field(name: "ticksToDisappear").GetValue<int>();
-                        if (ticksToDisappear != 0)
-                        {
-                            Traverse.Create(root: tickComp).Field(name: "ticksToDisappear").SetValue(ticksToDisappear - (Mathf.RoundToInt(60 * this.parent.Severity)));                            
-                        }
-                    }
-                    Hediff_Pregnant hdp = this.Pawn.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("Pregnant")) as Hediff_Pregnant;
-                    if(hdp != null)
-                    {
-                        hdp.Severity += (1f / (this.Pawn.RaceProps.gestationPeriodDays * (2500f /this.parent.Severity)));
-                    }
-                    CompEggLayer eggComp = this.Pawn.TryGetComp<CompEggLayer>();
-                    if (eggComp != null)
-                    {
-                        float eggProgress = Traverse.Create(root: eggComp).Field(name: "eggProgress").GetValue<float>();
-                        bool isActive = Active(eggComp);
-                        if (isActive)
-                        {
-                            eggProgress += (1f / (eggComp.Props.eggLayIntervalDays * (2500f / this.parent.Severity)));
-                            Traverse.Create(root: eggComp).Field(name: "eggProgress").SetValue(eggProgress);
-                        }
-                    }
-                    //CompHasGatherableBodyResource gatherComp = this.Pawn.TryGetComp<CompHasGatherableBodyResource>();                    
-                    //if (gatherComp != null)
-                    //{
-                    //    float gatherProgress = gatherComp.Fullness;          
-                        
-                    //    int rate = Traverse.Create(root: gatherComp).Field(name: "GatherResourcesIntervalDays").GetValue<int>();
-                    //    bool isActive = Active();
-                    //    if (isActive)
-                    //    {
-                    //        gatherProgress += (1f / ((float)(rate * (2500f / this.parent.Severity))));
-                    //        Traverse.Create(root: gatherComp).Field(name: "fullness").SetValue(gatherProgress);
-                    //    }
-                    //}
-                    CompMilkable milkComp = this.Pawn.TryGetComp<CompMilkable>();
-                    if (milkComp != null)
-                    {
-                        float milkProgress = milkComp.Fullness;
-                        int rate = milkComp.Props.milkIntervalDays;
-                        bool isActive = Active(milkComp);
-                        if (isActive)
-                        {
-                            milkProgress += (1f / ((float)(rate * (2500f / this.parent.Severity))));
-                            Traverse.Create(root: milkComp).Field(name: "fullness").SetValue(milkProgress);
-                        }
-                    }
-                    if (rec.Bleeding)
-                    {
-                        totalBleedRate += rec.BleedRate;
                     }
                 }
-                if(totalBleedRate != 0)
+                HediffComp_SeverityPerDay sevDayComp = rec.TryGetComp<HediffComp_SeverityPerDay>();
+                if (sevDayComp != null)
                 {
-                    HealthUtility.AdjustSeverity(pawn, HediffDefOf.BloodLoss, (totalBleedRate * 60 * this.parent.Severity) / (24 * 2500));
+                    if (sevDayComp.Def.CompProps<HediffCompProperties_SeverityPerDay>() != null)
+                    {
+                        float sevDay = sevDayComp.Def.CompProps<HediffCompProperties_SeverityPerDay>().severityPerDay;
+                        if (sevDay != 0)
+                        {
+                            rec.Severity += ((sevDay * ticks * this.parent.Severity)/(24*2500));
+                        }
+                    }
                 }
+                HediffComp_Disappears tickComp = rec.TryGetComp<HediffComp_Disappears>();
+                if (tickComp != null && tickComp.ticksToDisappear != 0)
+                    tickComp.ticksToDisappear -= Mathf.RoundToInt(ticks * parent.Severity);
+                if (rec.Bleeding) totalBleedRate += rec.BleedRate;
             }
+            if (totalBleedRate != 0)
+                HealthUtility.AdjustSeverity(pawn,HediffDefOf.BloodLoss,totalBleedRate * ticks * parent.Severity / 60000f);
+
+            var pregnancy = pawn.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("Pregnant")) as Hediff_Pregnant;
+            if (pregnancy != null && pawn.RaceProps.gestationPeriodDays > 0)
+                pregnancy.Severity += parent.Severity / (pawn.RaceProps.gestationPeriodDays * 2500f);
+            var eggs = pawn.TryGetComp<CompEggLayer>();
+            if (eggs != null && Active(eggs) && eggs.Props.eggLayIntervalDays > 0)
+            {
+                var progress = Traverse.Create(eggs).Field("eggProgress");
+                progress.SetValue(progress.GetValue<float>() + parent.Severity / (eggs.Props.eggLayIntervalDays * 2500f));
+            }
+            var milk = pawn.TryGetComp<CompMilkable>();
+            if (milk != null && Active(milk) && milk.Props.milkIntervalDays > 0)
+                Traverse.Create(milk).Field("fullness").SetValue(milk.Fullness + parent.Severity / (milk.Props.milkIntervalDays * 2500f));
         }
 
         public bool Active(CompMilkable comp)

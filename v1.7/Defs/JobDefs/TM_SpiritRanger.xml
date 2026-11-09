@@ -1,0 +1,22 @@
+<Defs>
+  <JobDef>
+    <defName>TM_SpiritCastAnimalFriend</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>bonding with TargetB.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCastPoisonTrap</defName>
+    <driverClass>TorannMagic.JobDriver_PlacePoisonTrap</driverClass>
+    <reportString>placing a poison trap at TargetA.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCastSafeTrail</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>marking a safe trail to TargetB.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritArrowStorm</defName>
+    <driverClass>TorannMagic.JobDriver_RangerVolley</driverClass>
+    <reportString>firing an arrow storm at TargetB.</reportString>
+  </JobDef>
+</Defs>

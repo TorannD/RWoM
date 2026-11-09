@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_Bridge_BladePassage.label>Проход клинка</TM_Bridge_BladePassage.label>
+  <TM_Bridge_BladePassage.description>Рывок по свободной прямой к противнику в радиусе 6/8/10 клеток и один удар на 90% урона оружия ближнего боя. Рядом с целью должна быть свободная клетка. Расход выносливости — 20%, перезарядка — 30 секунд, базовое восстановление — 1 секунда.</TM_Bridge_BladePassage.description>
+</LanguageData>

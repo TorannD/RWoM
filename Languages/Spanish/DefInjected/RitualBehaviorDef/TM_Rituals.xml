@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_ArcanePathway.roles.0.label>buscador del vacío</TM_ArcanePathway.roles.0.label>
+  
+  <TM_ArcanePathway.roles.0.missingDesc>un buscador del vacío</TM_ArcanePathway.roles.0.missingDesc>
+  
+  <TM_ArcanePathway.roles.1.label>dotado inspirado</TM_ArcanePathway.roles.1.label>
+  
+  <TM_ArcanePathway.roles.1.missingDesc>un colono con el rasgo de dotado, inspirado para convertirse en una clase de mago</TM_ArcanePathway.roles.1.missingDesc>
+  
+  <TM_ArcanePathway.roles.2.label>guía</TM_ArcanePathway.roles.2.label>
+  
+  <TM_ArcanePathway.spectatorFilter.description>Los espectadores deben estar dispuestos a presenciar el acontecimiento.</TM_ArcanePathway.spectatorFilter.description>
+  
+  
+  <TM_BestowMagic.roles.0.label>buscador del vacío</TM_BestowMagic.roles.0.label>
+  
+  <TM_BestowMagic.roles.0.missingDesc>un buscador del vacío</TM_BestowMagic.roles.0.missingDesc>
+  
+  <TM_BestowMagic.roles.1.label>sin don</TM_BestowMagic.roles.1.label>
+  
+  <TM_BestowMagic.roles.1.missingDesc>un colono sin el don del poder ni de la magia</TM_BestowMagic.roles.1.missingDesc>
+  
+  <TM_BestowMagic.roles.2.label>guía</TM_BestowMagic.roles.2.label>
+  
+  <TM_BestowMagic.spectatorFilter.description>Los espectadores deben estar dispuestos a presenciar el acontecimiento.</TM_BestowMagic.spectatorFilter.description>
+  
+  
+  <TM_SeverMagic.roles.0.label>buscador del vacío</TM_SeverMagic.roles.0.label>
+  
+  <TM_SeverMagic.roles.0.missingDesc>un buscador del vacío</TM_SeverMagic.roles.0.missingDesc>
+  
+  <TM_SeverMagic.roles.1.label>mago</TM_SeverMagic.roles.1.label>
+  
+  <TM_SeverMagic.roles.1.missingDesc>un mago</TM_SeverMagic.roles.1.missingDesc>
+  
+  <TM_SeverMagic.roles.2.label>guía</TM_SeverMagic.roles.2.label>
+  
+  <TM_SeverMagic.spectatorFilter.description>Los espectadores deben estar dispuestos a presenciar el acontecimiento.</TM_SeverMagic.spectatorFilter.description>
+  
+</LanguageData>

@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Sniperfocus</defName>
+    <label>Sniper Training</label>
+    <description>Training that improves technique and status as sniper. Each level will change the trait of the sniper to reflect their skill level.
+	
+Ranks:
+Sharpshooter: Speed +0.1c/s, Aiming Delay -10%, Shooting Acc. +2%, Research and work speed -10%, tame and train animal -10%
+Sniper: Speed +0.15c/s, Aiming Delay -15%, Shooting Acc. +4%, Research and work speed -13%, tame and train animal -13%
+Master Sniper: Speed +0.2c/s, Aiming Delay -22%, Shooting Acc. +6%, Research and work speed -15%, tame and train animal -15%
+Legendary Sniper: Speed +0.25c/s, Aiming Delay -30%, Shooting Acc. +8%, Research and work speed -16%, tame and train animal -16%</description>
+    <spellId>rwom.tm_sniperfocus</spellId>
+    <iconPath>UI/sniper_training</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SniperFocus</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_SniperFocus</abilityDef>
+      <isViolent>false</isViolent>
+      <defaultProjectile>Projectile_SniperFocus</defaultProjectile>
+      <warmupTime>0.1</warmupTime>
+      <SecondsToRecharge>10.0</SecondsToRecharge>
+      <range>0</range>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>10</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Headshot</defName>
+    <label>Headshot</label>
+    <description>A lethal shot that targets a vital bodypart like the head or heart. Effective on non-humanoids and humanoids alike. Headshot success chance is reduced against targets with thick armor protecting their vital organs.</description>
+    <spellId>rwom.tm_headshot</spellId>
+    <iconPath>UI/headshot</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SniperShot</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_Headshot</abilityDef>
+      <isViolent>true</isViolent>
+      <defaultProjectile>Projectile_Headshot</defaultProjectile>
+      <warmupTime>.1</warmupTime>
+      <SecondsToRecharge>45</SecondsToRecharge>
+      <range>40</range>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Disablingshot</defName>
+    <label>Disabling Shot</label>
+    <description>A shot that aims to disable the opponent rather than kill. The sniper fires non-lethal rounds that release a jolt of electricity, briefly paralyzing the target for several seconds. Armored targets are unaffected.
+	
+Range: 20
+Firing Delay: 2.5s
+Recharge 45s</description>
+    <spellId>rwom.tm_disablingshot</spellId>
+    <iconPath>UI/disablingshot</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SniperShot</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_DisablingShot</abilityDef>
+      <isViolent>true</isViolent>
+      <defaultProjectile>Projectile_DisablingShot</defaultProjectile>
+      <warmupTime>2.5</warmupTime>
+      <SecondsToRecharge>45</SecondsToRecharge>
+      <range>20</range>
+      <muzzleFlashScale>5</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_DisablingshotI</defName>
+    <label>Disabling Shot (I)</label>
+    <description>A shot that aims to disable the opponent rather than kill. The sniper fires non-lethal rounds that release a jolt of electricity, briefly paralyzing the target for several seconds. Armored targets are unaffected.
+	
+Range: 22
+Firing Delay: 2.3s
+Recharge 43s</description>
+    <spellId>rwom.tm_disablingshot_i</spellId>
+    <iconPath>UI/disablingshot</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SniperShot</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_DisablingShot_I</abilityDef>
+      <isViolent>true</isViolent>
+      <defaultProjectile>Projectile_DisablingShot</defaultProjectile>
+      <warmupTime>2.3</warmupTime>
+      <SecondsToRecharge>43</SecondsToRecharge>
+      <range>22</range>
+      <muzzleFlashScale>5</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_DisablingshotII</defName>
+    <label>Disabling Shot (II)</label>
+    <description>A shot that aims to disable the opponent rather than kill. The sniper fires non-lethal rounds that release a jolt of electricity, briefly paralyzing the target for several seconds. Armored targets are unaffected.
+	
+Range: 25
+Firing Delay: 2.1s
+Recharge 41s</description>
+    <spellId>rwom.tm_disablingshot_ii</spellId>
+    <iconPath>UI/disablingshot</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SniperShot</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_DisablingShot_II</abilityDef>
+      <isViolent>true</isViolent>
+      <defaultProjectile>Projectile_DisablingShot</defaultProjectile>
+      <warmupTime>2.1</warmupTime>
+      <SecondsToRecharge>41</SecondsToRecharge>
+      <range>25</range>
+      <muzzleFlashScale>5</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_DisablingshotIII</defName>
+    <label>Disabling Shot (III)</label>
+    <description>A shot that aims to disable the opponent rather than kill. The sniper fires non-lethal rounds that release a jolt of electricity, briefly paralyzing the target for several seconds. Armored targets are unaffected.
+	
+Range: 27
+Firing Delay: 2s
+Recharge 40s</description>
+    <spellId>rwom.tm_disablingshot_iii</spellId>
+    <iconPath>UI/disablingshot</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SniperShot</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_DisablingShot_III</abilityDef>
+      <isViolent>true</isViolent>
+      <defaultProjectile>Projectile_DisablingShot</defaultProjectile>
+      <warmupTime>1.0</warmupTime>
+      <SecondsToRecharge>40</SecondsToRecharge>
+      <range>27</range>
+      <muzzleFlashScale>5</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Antiarmor</defName>
+    <label>Anti-Armor</label>
+    <description>The sniper carries anti armor rounds for those special occasions. When this ammunition shatters, it releases nanites that will shred any armor they make contact with. Relatively ineffective against soft targets but does extra damage to armored targets, as long as the resistance on impact activates the nanites. Armored targets may be any mechanoid or a target with a Sharp armor rating above 100%.</description>
+    <spellId>rwom.tm_antiarmor</spellId>
+    <iconPath>Spells/InfernoCannonShot</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SniperShot</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>true</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>true</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_AntiArmor</defaultProjectile>
+      <abilityDef>TM_AntiArmor</abilityDef>
+      <warmupTime>1</warmupTime>
+      <SecondsToRecharge>10</SecondsToRecharge>
+      <range>45</range>
+      <muzzleFlashScale>25</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <burstShotCount>1</burstShotCount>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Shadowslayer</defName>
+    <label>Shadow Slayer</label>
+    <description>A trained sniper is an expert at stealth and positioning, and knows the right time and place to strike. 
+
+The shadow slayer cloaking field is a long duration form of invisibility. Unlike normal cloaking technology, this stealth field relies heavily on a form of predictive cloaking that rapidly wears off when the user performs rapid or violent actions (such as firing a weapon).</description>
+    <spellId>rwom.tm_shadowslayer</spellId>
+    <iconPath>UI/shadowslayer</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_ShadowSlayerCloak</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_ShadowSlayer</abilityDef>
+      <isViolent>false</isViolent>
+      <defaultProjectile>Projectile_SniperFocus</defaultProjectile>
+      <warmupTime>0.5</warmupTime>
+      <SecondsToRecharge>120.0</SecondsToRecharge>
+      <range>0</range>
+      <soundCast>TM_FastReleaseSD</soundCast>
+      <muzzleFlashScale>0</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+</Defs>

@@ -1,0 +1,13 @@
+<LanguageData>
+  <TM_ReadSuperSoldierCloseQuarters>Close quarters training</TM_ReadSuperSoldierCloseQuarters>
+  <TM_ReadSuperSoldierFieldAid>Field medicine</TM_ReadSuperSoldierFieldAid>
+  <TM_SoldierMaintenance>Service worn weapons ({0}/20) or dress allied wounds with medicine ({1}/10).</TM_SoldierMaintenance>
+  <TM_SoldierTraining>Hit different enemies with the chosen weapon ({0}/10) or dress allied wounds ({1}/20).</TM_SoldierTraining>
+  <TM_SoldierShifts>Complete eight combat or treatment days ({0}/8). Warrior level {1}/30.</TM_SoldierShifts>
+  <TM_SoldierSurgeon>Field surgeon (+15% tending quality)</TM_SoldierSurgeon>
+  <TM_SoldierMarksman>Marksman (+7% accuracy with chosen weapon)</TM_SoldierMarksman>
+  <TM_SoldierChooseSchool>Choose a permanent weapon specialization</TM_SoldierChooseSchool>
+  <TM_SoldierAdvance>Claim training milestone</TM_SoldierAdvance>
+  <TM_SoldierService>Service a worn weapon</TM_SoldierService>
+  <TM_SoldierNeedsMedicine>Needs a fresh, treatable wound and medicine in personal inventory.</TM_SoldierNeedsMedicine>
+</LanguageData>

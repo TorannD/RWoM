@@ -47,7 +47,7 @@
 	  <trainability>None</trainability>
       <thinkTreeConstant>TM_Elemental_AI_Constant</thinkTreeConstant>
       <thinkTreeMain>TM_Elemental_AI</thinkTreeMain>
-	  <renderTree>Animal</renderTree>
+	  <renderTree>TM_Elemental</renderTree>
       <meatLabel>elemental dust</meatLabel>
       <baseBodySize>2</baseBodySize>
     </race>
@@ -138,11 +138,11 @@
 	    <label>lesser earth elemental</label>
         <labelPlural>earth elementals</labelPlural>
         <bodyGraphicData>
-          <texPath>PawnKind/Elemental</texPath>
+          <texPath>PawnKind/Elementals/Earth/Elemental</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
 		  <shaderType>TransparentPostLight</shaderType>
           <drawSize>2</drawSize>
-		  <color>(108, 94, 88)</color>
+		  <color>(1, 1, 1)</color>
           <shadowData>
             <volume>(0.5, 0.35, 0.35)</volume>
             <offset>(0,0,-0.2)</offset>
@@ -229,11 +229,11 @@
 	    <label>earth elemental</label>
         <labelPlural>earth elementals</labelPlural>
         <bodyGraphicData>
-          <texPath>PawnKind/Elemental</texPath>
+          <texPath>PawnKind/Elementals/Earth/Elemental</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
 		  <shaderType>TransparentPostLight</shaderType>
           <drawSize>3.6</drawSize>
-		  <color>(108, 94, 88)</color>
+		  <color>(1, 1, 1)</color>
           <shadowData>
             <volume>(0.6, 0.45, 0.45)</volume>
             <offset>(0,0,-0.2)</offset>
@@ -319,11 +319,11 @@
 	    <label>greater earth elemental</label>
         <labelPlural>greater earth elementals</labelPlural>
         <bodyGraphicData>
-          <texPath>PawnKind/Elemental</texPath>
+          <texPath>PawnKind/Elementals/Earth/Elemental</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
 		  <shaderType>TransparentPostLight</shaderType>
           <drawSize>5</drawSize>
-		  <color>(108, 94, 88)</color>
+		  <color>(1, 1, 1)</color>
           <shadowData>
             <volume>(0.6, 0.45, 0.45)</volume>
             <offset>(0,0,-0.2)</offset>
@@ -411,11 +411,11 @@
 	    <label>lesser fire elemental</label>
         <labelPlural>lesser fire elementals</labelPlural>
         <bodyGraphicData>
-          <texPath>PawnKind/Elemental</texPath>
+          <texPath>PawnKind/Elementals/Fire/Elemental</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
 		  <shaderType>TransparentPostLight</shaderType>
           <drawSize>1.5</drawSize>
-		  <color>(243,78,34)</color>
+		  <color>(1, 1, 1)</color>
           <shadowData>
             <volume>(0.5, 0.35, 0.35)</volume>
             <offset>(0,0,-0.2)</offset>
@@ -502,11 +502,11 @@
 	    <label>fire elemental</label>
         <labelPlural>fire elementals</labelPlural>
         <bodyGraphicData>
-          <texPath>PawnKind/Elemental</texPath>
+          <texPath>PawnKind/Elementals/Fire/Elemental</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
 		  <shaderType>TransparentPostLight</shaderType>
           <drawSize>3</drawSize>
-		  <color>(243,78,34)</color>
+		  <color>(1, 1, 1)</color>
           <shadowData>
             <volume>(0.6, 0.45, 0.45)</volume>
             <offset>(0,0,-0.2)</offset>
@@ -592,11 +592,11 @@
 	    <label>greater fire elemental</label>
         <labelPlural>greater fire elementals</labelPlural>
         <bodyGraphicData>
-          <texPath>PawnKind/Elemental</texPath>
+          <texPath>PawnKind/Elementals/Fire/Elemental</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
 		  <shaderType>TransparentPostLight</shaderType>
           <drawSize>4</drawSize>
-		  <color>(243,78,34)</color>
+		  <color>(1, 1, 1)</color>
           <shadowData>
             <volume>(0.6, 0.45, 0.45)</volume>
             <offset>(0,0,-0.2)</offset>
@@ -684,11 +684,11 @@
 	    <label>lesser water elemental</label>
         <labelPlural>lesser water elementals</labelPlural>
         <bodyGraphicData>
-          <texPath>PawnKind/Elemental</texPath>
+          <texPath>PawnKind/Elementals/Water/Elemental</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
 		  <shaderType>TransparentPostLight</shaderType>
           <drawSize>1.6</drawSize>
-          <color>(16, 64, 200)</color>
+          <color>(1, 1, 1)</color>
           <shadowData>
             <volume>(0.4, 0.3, 0.3)</volume>
             <offset>(0,0,-0.2)</offset>
@@ -775,11 +775,11 @@
 	    <label>water elemental</label>
         <labelPlural>water elementals</labelPlural>
         <bodyGraphicData>
-          <texPath>PawnKind/Elemental</texPath>
+          <texPath>PawnKind/Elementals/Water/Elemental</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
 		  <shaderType>TransparentPostLight</shaderType>
           <drawSize>3.6</drawSize>
-          <color>(16, 64, 200)</color>
+          <color>(1, 1, 1)</color>
           <shadowData>
             <volume>(0.4, 0.3, 0.3)</volume>
             <offset>(0,0,-0.2)</offset>
@@ -866,11 +866,11 @@
 	    <label>greater water elemental</label>
         <labelPlural>greater water elementals</labelPlural>
         <bodyGraphicData>
-          <texPath>PawnKind/Elemental</texPath>
+          <texPath>PawnKind/Elementals/Water/Elemental</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
 		  <shaderType>TransparentPostLight</shaderType>
           <drawSize>4.8</drawSize>
-		  <color>(16, 64, 200)</color>
+		  <color>(1, 1, 1)</color>
           <shadowData>
             <volume>(0.4, 0.3, 0.3)</volume>
             <offset>(0,0,-0.2)</offset>
@@ -959,11 +959,11 @@
 	    <label>lesser wind elemental</label>
         <labelPlural>wisps</labelPlural>
         <bodyGraphicData>
-          <texPath>PawnKind/Elemental</texPath>
+          <texPath>PawnKind/Elementals/Wind/Elemental</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
 		  <shaderType>TransparentPostLight</shaderType>
           <drawSize>1.6</drawSize>
-          <color>(187, 227, 239)</color>
+          <color>(1, 1, 1)</color>
           <shadowData>
             <volume>(0.5, 0.35, 0.35)</volume>
             <offset>(0,0,-0.2)</offset>
@@ -1051,11 +1051,11 @@
 	    <label>wind elemental</label>
         <labelPlural>wind elementals</labelPlural>
         <bodyGraphicData>
-          <texPath>PawnKind/Elemental</texPath>
+          <texPath>PawnKind/Elementals/Wind/Elemental</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
 		  <shaderType>TransparentPostLight</shaderType>
           <drawSize>3</drawSize>
-          <color>(187, 227, 239)</color>
+          <color>(1, 1, 1)</color>
           <shadowData>
             <volume>(0.6, 0.45, 0.45)</volume>
             <offset>(0,0,-0.2)</offset>
@@ -1142,11 +1142,11 @@
 	    <label>greater wind elemental</label>
         <labelPlural>wind elementals</labelPlural>
         <bodyGraphicData>
-          <texPath>PawnKind/Elemental</texPath>
+          <texPath>PawnKind/Elementals/Wind/Elemental</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
 		  <shaderType>TransparentPostLight</shaderType>
           <drawSize>4</drawSize>
-          <color>(187, 227, 239)</color>
+          <color>(1, 1, 1)</color>
           <shadowData>
             <volume>(0.6, 0.45, 0.45)</volume>
             <offset>(0,0,-0.2)</offset>

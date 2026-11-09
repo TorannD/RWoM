@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_SpiritDrainTD.stages.spirit_drain.label>drenaje de espíritu</TM_SpiritDrainTD.stages.spirit_drain.label>
+  
+  <TM_SpiritDrainTD.stages.spirit_drain.description>Drenado de espíritu.</TM_SpiritDrainTD.stages.spirit_drain.description>
+  
+  
+  <TM_SpiritPossessedTD.stages.possessed.label>poseído</TM_SpiritPossessedTD.stages.possessed.label>
+  
+  <TM_SpiritPossessedTD.stages.possessed.description>Mi cuerpo está poseído por otro espíritu.</TM_SpiritPossessedTD.stages.possessed.description>
+  
+</LanguageData>

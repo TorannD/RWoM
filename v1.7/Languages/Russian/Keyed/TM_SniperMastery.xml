@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SniperMasteryHint>Чтобы освоить «{0}», пройдите один из двух путей. Попадайте «Расколом брони» по враждебным пешкам или ведите исследования за столом. Смена длится один игровой час. Перерывы сохраняют накопленное время.</TM_SniperMasteryHint>
+  <TM_SniperMasteryHits>Попадания «Расколом брони»: {0}/{1}</TM_SniperMasteryHits>
+  <TM_SniperMasteryResearch>Исследовательские смены: {0}/{1}</TM_SniperMasteryResearch>
+  <TM_SniperMasteryPartial>Текущая смена: {0}%</TM_SniperMasteryPartial>
+  <TM_SniperMasteryClaim>Получить мастерство снайпера</TM_SniperMasteryClaim>
+  <TM_SniperMasteryLearned>Освоена техника мастера: «{0}».</TM_SniperMasteryLearned>
+</LanguageData>

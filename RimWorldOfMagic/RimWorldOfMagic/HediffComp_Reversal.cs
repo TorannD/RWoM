@@ -5,11 +5,12 @@ using UnityEngine;
 namespace TorannMagic
 {
     [StaticConstructorOnStartup]
-    class HediffComp_Reversal : HediffComp
+    class HediffComp_Reversal : ClassProgression.HediffComp_SpiritCastOrigin
     {
 
         private bool initialized = false;
         private int age;
+        internal Pawn SkillOwner => BoundOwner;
 
         public string labelCap
         {
@@ -34,6 +35,13 @@ namespace TorannMagic
             {
                 this.age = 60;
             }
+        }
+
+        public override void CompExposeData()
+        {
+            base.CompExposeData();
+            Scribe_Values.Look(ref initialized, "reversalInitialized");
+            Scribe_Values.Look(ref age, "reversalDecayTicks");
         }
 
         public override void CompPostTick(ref float severityAdjustment)

@@ -176,8 +176,7 @@ internal static class FleshGameplayTests
         });
         yield return new("FleshGameplay.OwnRageRecoveryHeldAboveTwentyPercentOnly", _ =>
         {
-            RuntimeHelpers.RunClassConstructor(typeof(MentalStateDefOf).TypeHandle);
-            RuntimeLog.AcceptHeadlessDefOfInitialization("MentalStateDefOf");
+            RuntimeLog.EnsureHeadlessDefOfInitialized(typeof(MentalStateDefOf));
             MentalStateDefOf.Berserk = new MentalStateDef { defName = "Berserk" };
             var pawn = ActionPawn(); var p = FleshRepository.Ensure(pawn);
             var rage = new MentalState_Berserk { pawn = pawn, def = MentalStateDefOf.Berserk };

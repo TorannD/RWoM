@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ReadShadowWalkerStrike>Засада — начните с Теневого удара.</TM_ReadShadowWalkerStrike>
+  <TM_ReadShadowWalkerPoison>Отравитель — начните с Паслёна.</TM_ReadShadowWalkerPoison>
+  <TM_ShadowWalkerHits>Примените изученный удар или яд к разным врагам: {0}/{1}.</TM_ShadowWalkerHits>
+  <TM_ShadowWalkerCombo>Поразите отравленную цель Теневым ударом или примените удар либо яд под покровом: {0}/{1} разных врагов.</TM_ShadowWalkerCombo>
+  <TM_ShadowWalkerStrongStrike>Смертоносная тень — Теневой удар наносит на 20% больше урона.</TM_ShadowWalkerStrongStrike>
+  <TM_ShadowWalkerLongVeil>Долгий покров — Завеса теней длится на 50% дольше.</TM_ShadowWalkerLongVeil>
+</LanguageData>

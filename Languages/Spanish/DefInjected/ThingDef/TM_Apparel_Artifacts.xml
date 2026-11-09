@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_Artifact_BracersOfDefense.label>Brazales de defensa</TM_Artifact_BracersOfDefense.label>
+  
+  <TM_Artifact_BracersOfDefense.description>Brazales fabricados con material endurecido que permiten a quien los lleva bloquear ataques físicos. 40 % de probabilidad de bloqueo.\n\nEncantamientos:\nResistencia arcana 10 %</TM_Artifact_BracersOfDefense.description>
+  
+  
+  <TM_Artifact_BracersOfDeflection.label>Brazales de desvío</TM_Artifact_BracersOfDeflection.label>
+  
+  <TM_Artifact_BracersOfDeflection.description>Brazales fabricados con material reactivo que permiten a quien los lleva bloquear ataques y desviar proyectiles. 30 % de probabilidad de bloqueo; todos los ataques bloqueados se devuelven contra enemigos a menos de 8 casillas.\n\nEncantamientos:\nResistencia arcana 10 %</TM_Artifact_BracersOfDeflection.description>
+  
+  
+  <TM_Artifact_BracersOfThePacifist.label>Brazales del pacifista</TM_Artifact_BracersOfThePacifist.label>
+  
+  <TM_Artifact_BracersOfThePacifist.description>Estos brazales parecen poco más que tela fina envuelta en cuero, pero su aspecto corriente oculta un poder extraordinario. Este objeto solo puede llevarlo un personaje que haya rechazado la violencia.\n\nEncantamientos:\nEnergía máx. +40 %\nRegen. de energía +40 %\nResistencia arcana +50 %\nRecuperación arcana: reduce el tiempo de recuperación de la debilidad arcana</TM_Artifact_BracersOfThePacifist.description>
+  
+  
+  <TM_Artifact_Gold.label>Anillo de autoridad</TM_Artifact_Gold.label>
+  
+  <TM_Artifact_Gold.description>Un anillo encantado con la esencia del oro. Este anillo aumenta la capacidad de negociación de quien lo lleva.</TM_Artifact_Gold.description>
+  
+  
+  <TM_Artifact_Granite.label>Anillo de labor</TM_Artifact_Granite.label>
+  
+  <TM_Artifact_Granite.description>Un anillo encantado con la esencia del granito. Este anillo concede a quien lo porta mayor capacidad de carga y manipulación.</TM_Artifact_Granite.description>
+  
+  
+  <TM_Artifact_Iron.label>Amuleto de protección menor</TM_Artifact_Iron.label>
+  
+  <TM_Artifact_Iron.description>Un colgante encantado con la esencia del hierro. Este colgante mejora mágicamente las defensas de quien lo lleva.</TM_Artifact_Iron.description>
+  
+  
+  <TM_Artifact_Jade.label>Anillo de recuperación arcana</TM_Artifact_Jade.label>
+  
+  <TM_Artifact_Jade.description>Un anillo encantado con la esencia del jade. Este anillo aumenta la velocidad con la que quien lo lleva se recupera de la debilidad arcana.</TM_Artifact_Jade.description>
+  
+  
+  <TM_Artifact_Limestone.label>Colgante de ojo de gato</TM_Artifact_Limestone.label>
+  
+  <TM_Artifact_Limestone.description>Un colgante encantado con la esencia de la caliza. Quien lo lleva mejora su vista y puede ver en la oscuridad. Este colgante emite un suave resplandor.</TM_Artifact_Limestone.description>
+  
+  
+  <TM_Artifact_Magicyte.label>Anillo de conocimiento</TM_Artifact_Magicyte.label>
+  
+  <TM_Artifact_Magicyte.description>Un anillo encantado con la esencia de la magicita. Este anillo mejora la velocidad de aprendizaje.</TM_Artifact_Magicyte.description>
+  
+  
+  <TM_Artifact_Marble.label>Colgante de protección mental</TM_Artifact_Marble.label>
+  
+  <TM_Artifact_Marble.description>Un colgante encantado con la esencia del mármol. Este colgante mejora el estado mental de quien lo porta y le proporciona un ancla mental. De vez en cuando permite a su portador salir de un estado mental.</TM_Artifact_Marble.description>
+  
+  
+  <TM_Artifact_Medicine.label>Amuleto de salud</TM_Artifact_Medicine.label>
+  
+  <TM_Artifact_Medicine.description>Este amuleto mejora la salud de quien lo porta, concediéndole mayor inmunidad a las enfermedades y ayudando a que las heridas curen más rápido.</TM_Artifact_Medicine.description>
+  
+  
+  <TM_Artifact_NecroticOrb.label>Orbe necrótico</TM_Artifact_NecroticOrb.label>
+  
+  <TM_Artifact_NecroticOrb.description>Un artefacto que potencia la energía necrótica necesaria para sostener a los no muertos. El Orbe necrótico funciona como una batería: cuando lo equipa un personaje que sostiene no muertos, absorbe energía de un nigromante como si fuera un no muerto, pero además reduce un 25 % el coste total de mantenimiento de los no muertos. Cuando no hay energía disponible de un nigromante, liberará energía para sostener a los no muertos.\n\nUn personaje solo puede equipar un orbe. Los orbes solo hacen efecto cuando los equipa un personaje que sostiene no muertos.</TM_Artifact_NecroticOrb.description>
+  
+  
+  <TM_Artifact_OrbOfConviction.label>Orbe de convicción</TM_Artifact_OrbOfConviction.label>
+  
+  <TM_Artifact_OrbOfConviction.description>También conocido como Baratija del traidor, Orbe de la locura y Ladrón de mentes, el Orbe de convicción es un artefacto poderoso y peligroso. Cuando se llena con la convicción y la magia de un lanzador, puede usarse para imponer esa convicción a otro.\n\nSi tiene éxito, el objetivo se unirá de inmediato a la facción del lanzador, pero sufrirá un choque psíquico.\n\nSolo los magos más poderosos pueden dirigir el poder de este artefacto; incluso así, exigirá un alto precio. El orbe implosionará una vez lanzado el hechizo y solo puede usarse una vez.</TM_Artifact_OrbOfConviction.description>
+  
+  
+  <TM_Artifact_OrbOfEternal.label>Orbe del eterno</TM_Artifact_OrbOfEternal.label>
+  
+  <TM_Artifact_OrbOfEternal.description>Una infusión de un solo uso de energía mágica preparada para curar heridas, restaurar miembros y curar enfermedades. La energía curativa se dirigirá a la peor afección de salud que sufra alguien en cada momento y la curará.\n\nMagos, gobernantes y la élite han usado los Orbes del eterno para prolongar la vida. Estos orbes son valiosos y raros, sobre todo por el secretismo que rodea el proceso de fabricarlos.</TM_Artifact_OrbOfEternal.description>
+  
+  <TM_Artifact_OrbOfEternal.comps.CompUsable.useLabel>Usar orbe de lo eterno</TM_Artifact_OrbOfEternal.comps.CompUsable.useLabel>
+
+  
+  
+  <TM_Artifact_OrbOfSouls.label>Orbe de almas (vacío)</TM_Artifact_OrbOfSouls.label>
+  
+  <TM_Artifact_OrbOfSouls.description>El Orbe de almas es un artefacto poderoso y peligroso. No requiere energía externa y puede extraer el alma de un personaje que posea rasgos.\n\nSi tiene éxito, el Orbe de almas absorberá todos los rasgos del objetivo; el objetivo perderá los rasgos absorbidos. El proceso es casi siempre letal.\n\nUna vez lleno, el Orbe de almas puede usarse para transferir los rasgos absorbidos a otro personaje de aspecto humano.</TM_Artifact_OrbOfSouls.description>
+  
+  
+  <TM_Artifact_OrbOfSouls_Full.label>Orbe de almas (lleno)</TM_Artifact_OrbOfSouls_Full.label>
+  
+  <TM_Artifact_OrbOfSouls_Full.description>El Orbe de almas es un artefacto poderoso y peligroso. Este orbe ha absorbido rasgos y puede usarse para infundirlos en un personaje de aspecto humano.\n\nLos rasgos en conflicto nunca se transferirán al personaje objetivo. Si el personaje posee más de 7 rasgos, hay un 75 % de probabilidad de que un rasgo existente al azar sea reemplazado por el rasgo que se infunde.\n\nEl orbe implosionará y se destruirá una vez liberados los rasgos.</TM_Artifact_OrbOfSouls_Full.description>
+  
+  
+  <TM_Artifact_RingOfBlood.label>Anillo de sangre</TM_Artifact_RingOfBlood.label>
+  
+  <TM_Artifact_RingOfBlood.description>Un anillo engastado con una piedra oscura; corrientes de rojo profundo y negro giran bajo su superficie. Este tipo de anillo fue creado por primera vez por un antiguo vampiro para aumentar las reservas de sangre, y un mago de sangre puede usarlo para almacenar magia de sangre.\n\nEl poder del Anillo de sangre depende de la fama de su portador y crecerá con cada humano derribado o muerto.</TM_Artifact_RingOfBlood.description>
+  
+  
+  <TM_Artifact_RingOfEternalBlue.label>Anillo del azul eterno</TM_Artifact_RingOfEternalBlue.label>
+  
+  <TM_Artifact_RingOfEternalBlue.description>Un anillo que parece pulsar con una suave luz azul. Este anillo aumenta la sensibilidad psíquica y corresponde a la sensibilidad psíquica de su portador.\n\nEl Anillo del azul eterno aumentará la energía de un psiónico en proporción a su sensibilidad psíquica.</TM_Artifact_RingOfEternalBlue.description>
+  
+  
+  <TM_Artifact_RingOfKeenIntellect.label>Anillo de intelecto agudo</TM_Artifact_RingOfKeenIntellect.label>
+  
+  <TM_Artifact_RingOfKeenIntellect.description>Un anillo que expande la mente y agudiza la capacidad mental, pero aumenta el estrés mental.\n\nEncantamientos:\nGanancia de XP +25 %</TM_Artifact_RingOfKeenIntellect.description>
+  
+  
+  <TM_Artifact_RingOfMalice.label>Anillo de malicia</TM_Artifact_RingOfMalice.label>
+  
+  <TM_Artifact_RingOfMalice.description>Este anillo desprende un aura oscura y está perpetuamente frío al tacto. El Anillo de malicia aumenta los niveles de odio en reposo y máximo de un caballero de la muerte.\n\nEl poder del Anillo de malicia depende de la fama de su portador y crecerá con cada herida recibida o infligida.</TM_Artifact_RingOfMalice.description>
+  
+  
+  <TM_Artifact_Sandstone.label>Amuleto de descanso</TM_Artifact_Sandstone.label>
+  
+  <TM_Artifact_Sandstone.description>Un colgante encantado con la esencia de la arenisca. Este colgante mejora la calidad del descanso de quien lo lleva e impide que un transeúnte perturbe su sueño.</TM_Artifact_Sandstone.description>
+  
+  
+  <TM_Artifact_Silver.label>Colgante de azogue</TM_Artifact_Silver.label>
+  
+  <TM_Artifact_Silver.description>Un colgante encantado con esencia de plata. Conocido como colgante de azogue, se dice que este costoso artefacto concede mayor agilidad a quien lo lleva.</TM_Artifact_Silver.description>
+  
+  
+  <TM_Artifact_Slate.label>Colgante de reparación</TM_Artifact_Slate.label>
+  
+  <TM_Artifact_Slate.description>Un colgante encantado con la esencia de la pizarra. El colgante de pizarra de reparación recupera lentamente la durabilidad de todo el equipo que se lleva puesto.</TM_Artifact_Slate.description>
+  
+  
+  <TM_Artifact_Steel.label>Amuleto de protección</TM_Artifact_Steel.label>
+  
+  <TM_Artifact_Steel.description>Un colgante encantado con la esencia del acero. Este colgante mejora mágicamente las defensas de quien lo lleva.</TM_Artifact_Steel.description>
+  
+  
+  <TM_Artifact_Wood.label>Anillo del explorador</TM_Artifact_Wood.label>
+  
+  <TM_Artifact_Wood.description>Un anillo encantado con la esencia de la madera. Quien lleva este anillo no se verá ralentizado por el terreno y recolecta mejor mientras viaja en una caravana.</TM_Artifact_Wood.description>
+  
+</LanguageData>

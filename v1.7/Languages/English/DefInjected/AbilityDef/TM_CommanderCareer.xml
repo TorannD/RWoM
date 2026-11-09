@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_Bridge_CommanderWorkCrew.label>Work Crew</TM_Bridge_CommanderWorkCrew.label>
+  <TM_Bridge_CommanderWorkCrew.description>Give a work order to up to three nearby allies. Accepted orders grant 10/15/20% work speed for 10 seconds while they continue their job. Costs 20% stamina. Cooldown 45 seconds.</TM_Bridge_CommanderWorkCrew.description>
+  <TM_Bridge_CommanderRally.label>Rally Point</TM_Bridge_CommanderRally.label>
+  <TM_Bridge_CommanderRally.description>Set a point within 12 cells. Up to 2/3/4 accepting allies inside its three-cell radius receive 15 protection for eight seconds. Costs 25% stamina. Cooldown 40 seconds.</TM_Bridge_CommanderRally.description>
+  <TM_Bridge_CommanderOperationEvac.label>Everyone Home: evacuation</TM_Bridge_CommanderOperationEvac.label>
+  <TM_Bridge_CommanderOperationEvac.description>After five seconds of preparation, up to four accepting allies gain 20% speed and 25 protection for 20 seconds. The commander must maintain position and sight. Costs 60% stamina. Both operation modes share a two-day cooldown.</TM_Bridge_CommanderOperationEvac.description>
+  <TM_Bridge_CommanderOperationAid.label>Everyone Home: emergency work</TM_Bridge_CommanderOperationAid.label>
+  <TM_Bridge_CommanderOperationAid.description>After five seconds of preparation, boost up to four accepting rescue, tending or repair workers for 20 seconds. All materials are consumed normally. Both modes impose command fatigue and share a two-day cooldown.</TM_Bridge_CommanderOperationAid.description>
+</LanguageData>

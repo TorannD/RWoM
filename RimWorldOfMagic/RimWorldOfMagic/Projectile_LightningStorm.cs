@@ -1,4 +1,4 @@
-﻿using AbilityUser;
+using AbilityUser;
 using RimWorld;
 using System.Linq;
 using Verse;
@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace TorannMagic
 {
-	public class Projectile_LightningStorm : Projectile_AbilityBase
+	public class Projectile_LightningStorm : ClassProgression.Projectile_SpiritBolt
 	{
 
 		private IntVec3 strikeLoc = IntVec3.Invalid;
@@ -23,9 +23,15 @@ namespace TorannMagic
 
 		private int strikeInt = 0;
 
-        private int verVal;
-        private int pwrVal;
-        private float arcaneDmg = 1;
+        protected override string SkillStem => "TM_LightningStorm";
+        protected override System.Collections.Generic.List<MagicPowerSkill> Skills(MagicData data) => data.MagicPowerSkill_LightningStorm;
+        internal override void PrepareProjection(MagicAbility owner)
+        {
+            base.PrepareProjection(owner);
+            if (owner.Pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+                arcaneDmg = owner.Pawn.GetCompAbilityUserMight().mightPwr;
+        }
+
 
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
 		{
@@ -42,32 +48,32 @@ namespace TorannMagic
             GenClamor.DoClamor(this, 2.1f, ClamorDefOf.Ability);
             Destroy();
 
-            Pawn pawn = this.launcher as Pawn;
-            
-            
-            
-            if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+            var pawn = SpellInstigator as Pawn;
+            if (!projected)
             {
-                MightPowerSkill mpwr = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-                MightPowerSkill mver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
-                pwrVal = mpwr.level;
-                verVal = mver.level;
-                this.arcaneDmg = pawn.GetCompAbilityUserMight().mightPwr;
-            }
-            else
-            {
-                CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
-                MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_LightningStorm.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_LightningStorm_pwr");
-                MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_LightningStorm.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_LightningStorm_ver");
-                pwrVal = pwr.level;
-                verVal = ver.level;
-                this.arcaneDmg = comp.arcaneDmg;
-            }
-            
-            if (ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist)
-            {
-                pwrVal = 3;
-                verVal = 3;
+                if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+                {
+                    MightPowerSkill mpwr = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
+                    MightPowerSkill mver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
+                    pwrVal = mpwr.level;
+                    verVal = mver.level;
+                    this.arcaneDmg = pawn.GetCompAbilityUserMight().mightPwr;
+                }
+                else
+                {
+                    CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
+                    MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_LightningStorm.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_LightningStorm_pwr");
+                    MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_LightningStorm.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_LightningStorm_ver");
+                    pwrVal = pwr.level;
+                    verVal = ver.level;
+                    this.arcaneDmg = comp.arcaneDmg;
+                }
+    
+                if (ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist)
+                {
+                    pwrVal = 3;
+                    verVal = 3;
+                }
             }
 
             duration = 480 + (verVal * 60);
@@ -82,7 +88,7 @@ namespace TorannMagic
                     if (randomCell.IsValid && randomCell.InBoundsWithNullCheck(base.Map))
                     {
                         //Map.weatherManager.eventHandler.AddEvent(new WeatherEvent_LightningStrike(map, randomCell));
-                        Map.weatherManager.eventHandler.AddEvent(new TM_WeatherEvent_MeshFlash(map, randomCell, TM_MatPool.standardLightning, DamageDefOf.Flame, this.launcher, -1, 1.9f, 1f, 1.5f));
+                        Map.weatherManager.eventHandler.AddEvent(new TM_WeatherEvent_MeshFlash(map, randomCell, TM_MatPool.standardLightning, DamageDefOf.Flame, SpellInstigator, -1, 1.9f, 1f, 1.5f));
                         this.LightningBlast(pwrVal, randomCell, map, 2.2f);
                         strikeInt++;
                         this.lastStrike = this.age;
@@ -104,9 +110,9 @@ namespace TorannMagic
 		{
 			ThingDef def = this.def;
             SoundDef exp = TorannMagicDefOf.TM_FireBombSD;
-            Explosion(pwr, pos, map, radius, DamageDefOf.EMP, this.launcher, exp, def, this.equipmentDef, ThingDefOf.Spark, 4.4f, 1, false, null, 0f, 1);
-            Explosion(pwr, pos, map, radius, DamageDefOf.Stun, this.launcher, exp, def, this.equipmentDef, ThingDefOf.Mote_Stun, 1.4f, 1, false, null, 0f, 1);
-            Explosion(pwr, pos, map, radius, DamageDefOf.Bomb, this.launcher, exp, def, this.equipmentDef, TorannMagicDefOf.Mote_Base_Smoke, 0.4f, 1, false, null, 0f, 1);
+            Explosion(pwr, pos, map, radius, DamageDefOf.EMP, SpellInstigator, exp, def, this.equipmentDef, ThingDefOf.Spark, 4.4f, 1, false, null, 0f, 1);
+            Explosion(pwr, pos, map, radius, DamageDefOf.Stun, SpellInstigator, exp, def, this.equipmentDef, ThingDefOf.Mote_Stun, 1.4f, 1, false, null, 0f, 1);
+            Explosion(pwr, pos, map, radius, DamageDefOf.Bomb, SpellInstigator, exp, def, this.equipmentDef, TorannMagicDefOf.Mote_Base_Smoke, 0.4f, 1, false, null, 0f, 1);
         }
 
 		public void Explosion(int pwr, IntVec3 center, Map map, float radius, DamageDef damType, Thing instigator, SoundDef explosionSound = null, ThingDef projectile = null, ThingDef source = null, ThingDef postExplosionSpawnThingDef = null, float postExplosionSpawnChance = 0f, int postExplosionSpawnThingCount = 1, bool applyDamageToExplosionCellsNeighbors = false, ThingDef preExplosionSpawnThingDef = null, float preExplosionSpawnChance = 0f, int preExplosionSpawnThingCount = 1)

@@ -1,0 +1,6 @@
+<LanguageData>
+  <TM_SmallMagicalThruster.label>小型魔法推进器</TM_SmallMagicalThruster.label>
+  <TM_SmallMagicalThruster.description>使用魔法燃料来增加重力飞船航程的推进器。通过相连的法力信标，从同一艘飞船上的储罐获取魔法燃料。没有内置储罐，不能使用法力、化合燃料或星际燃料。需要连接重力引擎，建于基底上，且排气口朝向室外、排气区域无障碍物。燃料在飞船起飞时消耗。</TM_SmallMagicalThruster.description>
+  <TM_LargeMagicalThruster.label>大型魔法推进器</TM_LargeMagicalThruster.label>
+  <TM_LargeMagicalThruster.description>使用魔法燃料来增加重力飞船航程的推进器。通过相连的法力信标，从同一艘飞船上的储罐获取魔法燃料。没有内置储罐，不能使用法力、化合燃料或星际燃料。需要连接重力引擎，建于基底上，且排气口朝向室外、排气区域无障碍物。燃料在飞船起飞时消耗。</TM_LargeMagicalThruster.description>
+</LanguageData>

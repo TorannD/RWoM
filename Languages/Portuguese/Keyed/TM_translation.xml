@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <TM_NotEnoughMana>Se não houver maná suficiente.</TM_NotEnoughMana>
   <TM_NotEnoughBlood>O sangue não foi doado o suficiente.</TM_NotEnoughBlood>
@@ -278,6 +278,8 @@
   <supportTraitChance>Sinais auxiliares</supportTraitChance>
   <TM_ClassWarning>* * Altere as opções de classe apenas quando iniciar um novo jogo * *</TM_ClassWarning>
   <TM_RequiresRestart>* * Qualquer alteração requer reiniciar o jogo * *</TM_RequiresRestart>
+<TM_NewProgressionBeta>Nova progressão de classe (beta)</TM_NewProgressionBeta>
+  <TM_NewProgressionBetaDesc>Ativa o novo sistema experimental de progressão de classe. Só é lido quando o jogo inicia: alterar esta opção exige reiniciar. Quando desativada, o mod usa o sistema de classes clássico.</TM_NewProgressionBetaDesc>
   <TM_ClassOptions>Classes incluídas:</TM_ClassOptions>
   <TM_EnabledMages>Magos</TM_EnabledMages>
   <TM_EnabledFighters>Combatentes</TM_EnabledFighters>
@@ -2208,4 +2210,22 @@ Nível 3: 14s, 24s</TM_SpiritRally_ver_desc>
   <TM_GolemOptionsDesc>Configura a apresentação dos golens: estruturas adormecidas, entradas na barra de colonos e tremor do ecrã.</TM_GolemOptionsDesc>
   <TM_DisplayOptionsDesc>Configura ícones, câmara, posição do Grimório, aparência dos mortos-vivos e representação da roupa.</TM_DisplayOptionsDesc>
   <TM_Grimoire>Grimório</TM_Grimoire>
+
+  <!-- Grimoire classic-mode strings. -->
+  <TM_GrimoireClassicRequirements>Regras clássicas: os feitiços são aprendidos com pontos de classe no Grimório; alguns feitiços também exigem ler o pergaminho ou livro correspondente.</TM_GrimoireClassicRequirements>
+  <TM_GrimoireClassicRules>Regras clássicas</TM_GrimoireClassicRules>
+  <TM_GrimoireLearningItems>Itens de aprendizagem necessários:</TM_GrimoireLearningItems>
+  <TM_GrimoireNoLearningItems>Nenhum item de aprendizagem necessário.</TM_GrimoireNoLearningItems>
+  <TM_GrimoireLearned>Aprendido</TM_GrimoireLearned>
+  <TM_GrimoireRankMax>Posto máx.</TM_GrimoireRankMax>
+  <TM_GrimoireRank>Posto</TM_GrimoireRank>
+  <TM_GrimoireScrollUnspecified>Pergaminho não especificado</TM_GrimoireScrollUnspecified>
+
+  <!-- Magofuel synthesizer UI strings. -->
+  <TM_SynthToggleLabel>Autossíntese: mana + chemfuel</TM_SynthToggleLabel>
+  <TM_SynthToggleDesc>Converte lentamente mana armazenada e chemfuel em magofuel neste tanque (~50 por dia). Pausa quando o tanque atinge a meta ou faltam insumos.</TM_SynthToggleDesc>
+  <TM_SynthLoad>Carregar chemfuel ({0})</TM_SynthLoad>
+  <TM_SynthLoadDesc>Pega chemfuel de pilhas perto do reservatório para o funil.</TM_SynthLoadDesc>
+  <TM_SynthInspect>Funil de chemfuel: {0} — sintetizando 50 magofuel/dia</TM_SynthInspect>
+  <TM_PoolInspect>Rede de faróis: mana {0}/{1}, magofuel {2}/{3} ({4} tanques)</TM_PoolInspect>
 </LanguageData>

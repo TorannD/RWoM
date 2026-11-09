@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using System;
 using System.Linq;
 using System.Collections.Generic;
@@ -20,7 +20,6 @@ namespace TorannMagic
         protected Vector3 direction;
         private float directionAngle;
 
-        private int age = -1;
         private float arcaneDmg = 1;
         public Matrix4x4 drawingMatrix = default(Matrix4x4);
         public Vector3 drawingScale;
@@ -39,6 +38,7 @@ namespace TorannMagic
         protected Thing assignedTarget;
         protected Thing flyingThing;
         Pawn pawn;
+        private Pawn skillOwner;
 
         public DamageInfo? impactDamage;
 
@@ -83,7 +83,8 @@ namespace TorannMagic
         {
             get
             {
-                return Quaternion.LookRotation(this.destination - this.origin);
+                var heading = destination - origin;
+                return heading.sqrMagnitude > .000001f ? Quaternion.LookRotation(heading) : Quaternion.identity;
             }
         }
 
@@ -113,6 +114,9 @@ namespace TorannMagic
             Scribe_Values.Look<bool>(ref this.initialized, "initialized", false, false);
             Scribe_References.Look<Thing>(ref this.assignedTarget, "assignedTarget", false);
             Scribe_References.Look<Pawn>(ref this.pawn, "pawn", false);
+            Scribe_References.Look(ref skillOwner,"TM_shadowBoltOwner");
+            Scribe_Values.Look(ref arcaneDmg,"TM_shadowBoltScale",1f);
+            Scribe_Values.Look(ref speed,"TM_shadowBoltSpeed",def?.projectile?.speed ?? 30f);
             Scribe_Deep.Look<Thing>(ref this.flyingThing, "flyingThing", new object[0]);
         }
 
@@ -124,7 +128,7 @@ namespace TorannMagic
                 FleckMaker.ThrowDustPuff(this.origin, this.Map, Rand.Range(1.2f, 1.8f));
             }
             GetVector();
-            flyingThing.ThingID += Rand.Range(0, 214).ToString();
+            if (flyingThing != null && flyingThing.thingIDNumber < 0) ThingIDMaker.GiveIDTo(flyingThing);
             this.initialized = false;
         }
 
@@ -132,7 +136,7 @@ namespace TorannMagic
         {
             Vector3 heading = (this.destination - this.ExactPosition);
             float distance = heading.magnitude;
-            this.direction = heading / distance;
+            this.direction = distance > .0001f ? heading / distance : Vector3.zero;
             this.directionAngle = (Quaternion.AngleAxis(90, Vector3.up) * this.direction).ToAngleFlat();
         }
 
@@ -148,32 +152,26 @@ namespace TorannMagic
 
         public void Launch(Thing launcher, Vector3 origin, LocalTargetInfo targ, Thing flyingThing, DamageInfo? newDamageInfo = null)
         {
-            bool spawned = flyingThing.Spawned;
-            pawn = launcher as Pawn;
-            CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
+            LaunchCore(launcher as Pawn, launcher as Pawn, origin, targ, flyingThing, newDamageInfo);
+        }
 
-            
+        internal void LaunchFromCaster(Pawn body, Pawn owner, LocalTargetInfo target)
+        {
+            LaunchCore(body,owner,body.Position.ToVector3Shifted(),target.Cell,null,null);
+        }
 
-            this.arcaneDmg = comp.arcaneDmg;
-            pwrVal = TM_Calc.GetSkillPowerLevel(pawn, TorannMagicDefOf.TM_ShadowBolt, true);
-            verVal = TM_Calc.GetSkillVersatilityLevel(pawn, TorannMagicDefOf.TM_ShadowBolt, true);
-            //MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_ShadowBolt.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_ShadowBolt_pwr");
-            //MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_ShadowBolt.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_ShadowBolt_ver");
-            //verVal = ver.level;
-            //pwrVal = pwr.level;
-            
-            //if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
-            //{
-            //    MightPowerSkill mpwr = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-            //    MightPowerSkill mver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
-            //    pwrVal = mpwr.level;
-            //    verVal = mver.level;
-            //}
-            //if (ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist)
-            //{
-            //    pwrVal = 3;
-            //    verVal = 3;
-            //}
+        private void LaunchCore(Pawn body, Pawn owner, Vector3 origin, LocalTargetInfo targ, Thing flyingThing, DamageInfo? newDamageInfo)
+        {
+            bool spawned = flyingThing?.Spawned == true;
+            pawn = body;
+            skillOwner = owner != body ? owner : null;
+            var comp = owner?.GetCompAbilityUserMagic();
+            arcaneDmg = comp?.arcaneDmg ?? 1f;
+            if (comp != null)
+            {
+                pwrVal = TM_Calc.GetSkillPowerLevel(owner, TorannMagicDefOf.TM_ShadowBolt, true);
+                verVal = TM_Calc.GetSkillVersatilityLevel(owner, TorannMagicDefOf.TM_ShadowBolt, true);
+            }
             if (spawned)
             {
                 flyingThing.DeSpawn();
@@ -182,32 +180,28 @@ namespace TorannMagic
             this.impactDamage = newDamageInfo;
             this.speed = this.def.projectile.speed;
             this.proximityRadius += (.4f * verVal);
-            this.proximityFrequency -= verVal;
+            this.proximityFrequency = Math.Max(1, 6 - verVal);
             this.flyingThing = flyingThing;
             bool flag = targ.Thing != null;
             if (flag)
             {
                 this.assignedTarget = targ.Thing;
             }
-            float distanceAccuracyModifier = (targ.Cell.ToVector3Shifted() - this.pawn.Position.ToVector3Shifted()).MagnitudeHorizontal() *.1f;
             this.destination = targ.Cell.ToVector3Shifted();
             this.ticksToImpact = this.StartingTicksToImpact;
             this.Initialize();
         }
 
+        // Advance the custom flight once per game tick regardless of the camera distance.
+        protected override void TickInterval(int delta) { }
+
         protected override void Tick()
         {
-        }
-        protected override void TickInterval(int delta)
-        {
-            //base.Tick();
-            age++;
             if (this.ticksToImpact >= 0)
             {
                 DrawEffects(this.ExactPosition, base.Map);
             }
             this.ticksToImpact--;
-            base.Position = this.ExactPosition.ToIntVec3();
             bool flag = !this.ExactPosition.InBoundsWithNullCheck(base.Map);
             if (flag)
             {
@@ -216,7 +210,8 @@ namespace TorannMagic
             }
             else
             {
-                if(Find.TickManager.TicksGame % this.proximityFrequency ==0)
+                base.Position = this.ExactPosition.ToIntVec3();
+                if(Find.TickManager.TicksGame % Math.Max(1, this.proximityFrequency) == 0)
                 {
                     DamageThingsAtPosition();
                 }                
@@ -243,12 +238,8 @@ namespace TorannMagic
 
         protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
-            bool flag = this.flyingThing != null;
-            if (flag)
-            {
-                Graphics.DrawMesh(MeshPool.plane10, this.DrawPos, this.ExactRotation, this.flyingThing.def.DrawMatSingle, 0);
-                base.Comps_PostDraw();
-            }
+            Graphics.DrawMesh(MeshPool.plane10, DrawPos, ExactRotation, (flyingThing?.def ?? def).DrawMatSingle, 0);
+            base.Comps_PostDraw();
         }
 
         private void ImpactSomething()
@@ -290,7 +281,7 @@ namespace TorannMagic
                 damageEntities(hitThing, Mathf.RoundToInt(Rand.Range(this.def.projectile.GetDamageAmount(1,null) * .8f, this.def.projectile.GetDamageAmount(1,null) * 1.4f) * this.arcaneDmg));
             }
             TM_MoteMaker.ThrowShadowCleaveMote(this.ExactPosition, this.Map, 2f + (.4f * pwrVal), .05f, .1f, .3f, 0, (5f+ pwrVal), this.directionAngle);
-            TorannMagicDefOf.TM_SoftExplosion.PlayOneShot(new TargetInfo(this.ExactPosition.ToIntVec3(), this.pawn.Map, false));
+            TorannMagicDefOf.TM_SoftExplosion.PlayOneShot(new TargetInfo(this.ExactPosition.ToIntVec3(), Map, false));
             int num = GenRadial.NumCellsInRadius(1+(.4f* pwrVal));
 
             Vector3 cleaveVector;
@@ -307,7 +298,7 @@ namespace TorannMagic
                     hitList = intVec.GetThingList(base.Map);
                     for (int j = 0; j < hitList.Count; j++)
                     {
-                        if (hitList[j] is Pawn && hitList[j] != this.pawn)
+                        if (hitList[j] is Pawn && hitList[j] != pawn && hitList[j] != skillOwner)
                         {
                             damageEntities(hitList[j], Mathf.RoundToInt((Rand.Range(this.def.projectile.GetDamageAmount(1,null) * .6f, this.def.projectile.GetDamageAmount(1,null) * .8f) * (float)(1f + .1 * pwrVal) * this.arcaneDmg)));
                         }
@@ -323,7 +314,7 @@ namespace TorannMagic
                     hitList = intVec.GetThingList(base.Map);
                     for (int j = 0; j < hitList.Count; j++)
                     {
-                        if (hitList[j] is Pawn && hitList[j] != this.pawn)
+                        if (hitList[j] is Pawn && hitList[j] != pawn && hitList[j] != skillOwner)
                         {
                             damageEntities(hitList[j], Mathf.RoundToInt((Rand.Range(this.def.projectile.GetDamageAmount(1,null) * .5f, this.def.projectile.GetDamageAmount(1,null) * .7f) * (float)(1f + .1 * pwrVal) * this.arcaneDmg)));
                         }
@@ -339,7 +330,7 @@ namespace TorannMagic
                     hitList = intVec.GetThingList(base.Map);
                     for (int j = 0; j < hitList.Count; j++)
                     {
-                        if (hitList[j] is Pawn && hitList[j] != this.pawn)
+                        if (hitList[j] is Pawn && hitList[j] != pawn && hitList[j] != skillOwner)
                         {
                             damageEntities(hitList[j], Mathf.RoundToInt((Rand.Range(this.def.projectile.GetDamageAmount(1,null) * .5f, this.def.projectile.GetDamageAmount(1,null) * .7f) * (float)(1f + .1 * pwrVal) * this.arcaneDmg)));
 
@@ -359,14 +350,15 @@ namespace TorannMagic
             {
                 curCell = this.ExactPosition.ToIntVec3() + GenRadial.RadialPattern[i];
                 List<Thing> hitList = new List<Thing>();
+                if (!curCell.InBounds(Map)) continue;
                 hitList = curCell.GetThingList(base.Map);
                 for (int j = 0; j < hitList.Count; j++)
                 {
-                    if (hitList[j] is Pawn && hitList[j] != this.pawn && hitList[j].Faction != this.pawn.Faction)
+                    if (hitList[j] is Pawn && hitList[j] != pawn && hitList[j] != skillOwner && hitList[j].Faction != pawn?.Faction)
                     {
                         damageEntities(hitList[j], Mathf.RoundToInt((Rand.Range(this.def.projectile.GetDamageAmount(1,null) * .4f, this.def.projectile.GetDamageAmount(1,null) * .6f)) * this.arcaneDmg));
                         TM_MoteMaker.ThrowShadowCleaveMote(this.ExactPosition, this.Map, Rand.Range(.2f, .4f), .01f, .2f, .4f, 500, 0, 0);
-                        TorannMagicDefOf.TM_Vibration.PlayOneShot(new TargetInfo(this.ExactPosition.ToIntVec3(), pawn.Map, false));
+                        TorannMagicDefOf.TM_Vibration.PlayOneShot(new TargetInfo(this.ExactPosition.ToIntVec3(), Map, false));
                     }
                 }
             }
@@ -374,7 +366,7 @@ namespace TorannMagic
 
         public void damageEntities(Thing e, int amt)
         {
-            TM_Action.DamageEntities(e, null, amt, 2, TMDamageDefOf.DamageDefOf.TM_Shadow, this.pawn);
+            TM_Action.DamageEntities(e, null, amt, 2, TMDamageDefOf.DamageDefOf.TM_Shadow, skillOwner ?? pawn);
             //DamageInfo dinfo = new DamageInfo(TMDamageDefOf.DamageDefOf.TM_Shadow, amt, 2, (float)(1f - this.directionAngle/360f), this.pawn, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
             //bool flag = e != null;
             //if (flag)

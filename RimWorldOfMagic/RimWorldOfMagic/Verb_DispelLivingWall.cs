@@ -1,31 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using RimWorld;
-using AbilityUser;
+using TorannMagic.ClassProgression;
 using Verse;
-
 
 namespace TorannMagic
 {
-    public class Verb_DispelLivingWall : Verb_UseAbility
+    public class Verb_DispelLivingWall : Verb_SpiritTargetable
     {
         protected override bool TryCastShot()
         {
-            bool flag = false;
-            CompAbilityUserMagic comp = this.CasterPawn.GetCompAbilityUserMagic();
+            ApplyHostedEffect();
+            bool result = false;
+            PostCastShot(result,out result);
+            return result;
+        }
 
-            if (comp.IsMagicUser)
-            {
-                if (comp.livingWall != null && comp.livingWall.Spawned)
-                {
-                    comp.livingWall.Destroy(DestroyMode.Vanish);
-                    comp.livingWall = null;
-                }
-            }
-
-            this.PostCastShot(flag, out flag);
-            return flag;
+        protected override bool ApplyHostedEffect()
+        {
+            var owner = SpiritRebirthCasting.SkillOwner(CasterPawn, Ability);
+            var wall = owner?.GetCompAbilityUserMagic()?.livingWall;
+            if (currentTarget.Pawn != CasterPawn || wall?.Spawned != true || wall.CasterPawn != owner) return false;
+            wall.Destroy(DestroyMode.Vanish);
+            return true;
         }
     }
 }

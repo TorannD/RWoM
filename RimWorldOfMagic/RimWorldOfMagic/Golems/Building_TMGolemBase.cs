@@ -690,15 +690,19 @@ namespace TorannMagic.Golems
                 if(cg != null)
                 {
                     cg.dormantThing = this;
+                    // A dormant state bound to a destroyed map (gravship flight
+                    // destroys the old ship map) cannot survive the trip: re-point
+                    // the rest place to this building's position on the live map.
+                    if (cg.dormantMap == null || !Find.Maps.Contains(cg.dormantMap))
+                    {
+                        cg.dormantMap = this.Map;
+                        cg.dormantPosition = this.Position;
+                    }
                     if (cg.dormantPosition == IntVec3.Zero)
                     {
                         cg.dormantPosition = this.Position;
                     }
                     cg.dormantRotation = this.Rotation;
-                    if (cg.dormantMap == null)
-                    {
-                        cg.dormantMap = this.Map;
-                    }
                     if (!cg.GolemName.ToString().Contains("Blank"))
                     {
                         spawnedThing.Name = cg.GolemName;

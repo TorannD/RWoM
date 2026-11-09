@@ -1,0 +1,22 @@
+<Defs>
+  <JobDef>
+    <defName>TM_SpiritCastBladeSpin</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>spinning the blade.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCastSeismicSlash</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>striking towards TargetB.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCastBladePassage</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>passing the blade towards TargetB.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCastPhaseStrike</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>making a phase strike at TargetB.</reportString>
+  </JobDef>
+</Defs>

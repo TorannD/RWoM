@@ -14,44 +14,16 @@ namespace TorannMagic
     {
 		public override IEnumerable<BodyPartRecord> GetPartsToApplyOn(Pawn pawn, RecipeDef recipe)
 		{
-			IEnumerable<BodyPartRecord> runeCarvedParts = from rch in pawn.health.hediffSet.hediffs
-															where rch != null && rch.Part != null && (rch.def == TorannMagicDefOf.TM_RuneCarvedPartHD || rch.def == TorannMagicDefOf.TM_ArcaneTatooPartHD)
-															select rch.Part;
-			IEnumerable<BodyPartRecord> notMissingParts = from nmp in pawn.health.hediffSet.GetNotMissingParts()
-														  where nmp.coverageAbsWithChildren > nmp.coverageAbs && !nmp.IsCorePart && nmp.parent != null && nmp.depth == BodyPartDepth.Outside
-														  select nmp;
-            IEnumerable<BodyPartRecord> coreParts = from cp in pawn.health.hediffSet.GetNotMissingParts()
-                                                          where cp.IsCorePart && cp.depth == BodyPartDepth.Outside
-                                                          select cp;
-            //foreach(BodyPartRecord bpr in coreParts)
-            //{
-            //    Log.Message("core part " + bpr.Label);
-            //}
-            //foreach (BodyPartRecord bpr in notMissingParts)
-            //{
-            //    Log.Message("normal rune carve part " + bpr.Label);
-            //}
-            
-            IEnumerable<BodyPartRecord> hediffParts = notMissingParts.Concat(coreParts).Except(runeCarvedParts);
-
-			if (TM_Calc.HasRuneCarverOnMap(pawn.Faction, pawn.Map, true))
-			{
-				foreach (BodyPartRecord part in hediffParts)
-				{
-                    if(coreParts.Contains(part))
-                    {
-                        yield return part;
-                    }
-					if (part != pawn.RaceProps.body.corePart && part.def.canSuggestAmputation && part.depth == BodyPartDepth.Outside)
-					{
-						yield return part;
-					}
-					else if (part.def.forceAlwaysRemovable)
-					{
-						yield return part;
-					}
-				}
-			}
+            if (!TM_Calc.HasRuneCarverOnMap(pawn.HostFaction ?? pawn.Faction, pawn.Map, true)) yield break;
+            var existing = pawn.health.hediffSet.hediffs.Where(h => h.Part != null &&
+                (h.def == TorannMagicDefOf.TM_RuneCarvedPartHD || h.def == TorannMagicDefOf.TM_ArcaneTatooPartHD))
+                .Select(h => h.Part).ToHashSet();
+            foreach (var part in pawn.health.hediffSet.GetNotMissingParts())
+            {
+                if (part.depth != BodyPartDepth.Outside || existing.Contains(part)) continue;
+                if (part.IsCorePart || (part.coverageAbsWithChildren > part.coverageAbs && part.parent != null &&
+                    (part.def.canSuggestAmputation || part.def.forceAlwaysRemovable))) yield return part;
+            }
 		}
 
 		public override bool IsViolationOnPawn(Pawn pawn, BodyPartRecord part, Faction billDoerFaction)
@@ -69,37 +41,32 @@ namespace TorannMagic
 
 		public override void ApplyOnPawn(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
 		{
-			if (billDoer != null)
-			{
-				if (this.CheckRuneCarvingFail(billDoer, pawn, ingredients, part, bill))
-				{
-					return;
-				}
-				TaleRecorder.RecordTale(TaleDefOf.DidSurgery, new object[]
-				{
-					billDoer,
-					pawn
-				});
-			}
+			if (billDoer == null || bill?.recipe == null || part == null || pawn?.health?.hediffSet == null) return;
+            var trial = ClassProgression.GolemancerTrials.CaptureRune(this, billDoer, pawn, part, bill);
+            if (CheckRuneCarvingFail(billDoer, pawn, ingredients, part, bill, trial)) return;
+            TaleRecorder.RecordTale(TaleDefOf.DidSurgery, billDoer, pawn);
 			RunePart(pawn, billDoer, part);
+			ClassProgression.GolemancerTrials.CompleteRune(trial);
 		}
 
 		public bool CheckRuneCarvingFail(Pawn surgeon, Pawn patient, List<Thing> ingredients, BodyPartRecord part, Bill bill)
 		{
-			CompAbilityUserMagic comp = surgeon.GetCompAbilityUserMagic();
+            return CheckRuneCarvingFail(surgeon, patient, ingredients, part, bill, null);
+        }
+
+        private bool CheckRuneCarvingFail(Pawn surgeon, Pawn patient, List<Thing> ingredients, BodyPartRecord part, Bill bill, ClassProgression.GolemancerTrials.RuneSnapshot trial)
+        {
+			var owner = ClassProgression.GolemancerLifecycle.RuneOwner(surgeon);
+			var comp = owner ?? surgeon?.GetCompAbilityUserMagic();
 			if (bill.recipe.surgerySuccessChanceFactor >= 1f)
 			{
 				return false;
 			}
 						
 			string reason;
-			if (comp.IsMagicUser)
-			{
-				bool canRuneCarve = false;
-				if (comp.customClass != null && comp.MagicData.MagicPowersGolemancer.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_RuneCarving).learned)
-				{
-					canRuneCarve = true;
-				}
+            if (comp?.Mana != null)
+            {
+                bool canRuneCarve = owner != null;
                 if(surgeon.skills.GetSkill(SkillDefOf.Artistic).TotallyDisabled)
                 {
                     canRuneCarve = false;
@@ -110,9 +77,8 @@ namespace TorannMagic
                 }
 				if (canRuneCarve)
 				{
-					MagicPowerSkill eff = surgeon.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_RuneCarving.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_RuneCarving_eff");
-					float manaNeeded = TorannMagicDefOf.TM_RuneCarving.manaCost - ((eff.level * TorannMagicDefOf.TM_RuneCarving.efficiencyReductionPercent) * TorannMagicDefOf.TM_RuneCarving.manaCost);
-					if (comp.Mana.CurLevel < manaNeeded)
+                    float manaNeeded = ClassProgression.GolemancerLifecycle.RuneCost(comp);
+                    if (comp.Mana.CurLevel < manaNeeded)
 					{
 						comp.Mana.CurLevel = comp.Mana.CurLevel / 2;
 
@@ -135,13 +101,15 @@ namespace TorannMagic
 					{						
 						float runeChance = surgeon.GetStatValue(TorannMagicDefOf.TM_RuneCarvingEfficiency);
 						float num = bill.recipe.surgerySuccessChanceFactor * runeChance;
-						int pwrVal = surgeon.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_RuneCarving.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_RuneCarving_pwr").level;
-						int verVal = surgeon.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_RuneCarving.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_RuneCarving_ver").level;
+						int pwrVal = comp.MagicData.MagicPowerSkill_RuneCarving.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_RuneCarving_pwr").level;
+						int verVal = comp.MagicData.MagicPowerSkill_RuneCarving.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_RuneCarving_ver").level;
 						float successChance = num + (pwrVal * -.05f) + (verVal * .1f);
-						comp.Mana.CurLevel -= manaNeeded;
+						float trialManaBefore = comp.Mana.CurLevel;
+                        comp.Mana.CurLevel -= manaNeeded;
+                        ClassProgression.GolemancerTrials.RecordRunePayment(trial, trialManaBefore, comp.Mana.CurLevel, manaNeeded);
 						int xpGain = Mathf.RoundToInt(TorannMagicDefOf.TM_RuneCarving.manaCost * 180 * comp.xpGain);
 						comp.MagicUserXP += xpGain;
-						MoteMaker.ThrowText(surgeon.DrawPos, surgeon.MapHeld, "XP +" + num, -1f);
+						MoteMaker.ThrowText(surgeon.DrawPos, surgeon.MapHeld, "XP +" + xpGain, -1f);
 						if (Rand.Chance(successChance))
 						{
 							//successful
@@ -195,7 +163,9 @@ namespace TorannMagic
 
 		public virtual void RunePart(Pawn pawn, Pawn carver, BodyPartRecord part)
 		{
-			int pwrVal = carver.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_RuneCarving.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_RuneCarving_pwr").level;
+			var magic = ClassProgression.GolemancerLifecycle.RuneOwner(carver) ?? carver?.GetCompAbilityUserMagic();
+            if (magic == null) return;
+            int pwrVal = magic.MagicData.MagicPowerSkill_RuneCarving.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_RuneCarving_pwr").level;
             Hediff hd = null;
             if (part.IsCorePart)
             {

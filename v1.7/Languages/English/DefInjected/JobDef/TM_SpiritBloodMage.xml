@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritBloodShield.reportString>forming a blood shield.</TM_SpiritBloodShield.reportString>
+  <TM_SpiritBloodMoon.reportString>calling a blood moon.</TM_SpiritBloodMoon.reportString>
+  <TM_SpiritBloodMoon_I.reportString>calling a blood moon.</TM_SpiritBloodMoon_I.reportString>
+  <TM_SpiritBloodMoon_II.reportString>calling a blood moon.</TM_SpiritBloodMoon_II.reportString>
+  <TM_SpiritBloodMoon_III.reportString>calling a blood moon.</TM_SpiritBloodMoon_III.reportString>
+  <TM_SpiritRend.reportString>rending targets.</TM_SpiritRend.reportString>
+  <TM_SpiritRend_I.reportString>rending targets.</TM_SpiritRend_I.reportString>
+  <TM_SpiritRend_II.reportString>rending targets.</TM_SpiritRend_II.reportString>
+  <TM_SpiritRend_III.reportString>rending targets.</TM_SpiritRend_III.reportString>
+  <TM_SpiritBloodForBlood.reportString>transferring blood.</TM_SpiritBloodForBlood.reportString>
+  <TM_SpiritIgniteBlood.reportString>igniting blood.</TM_SpiritIgniteBlood.reportString>
+</LanguageData>

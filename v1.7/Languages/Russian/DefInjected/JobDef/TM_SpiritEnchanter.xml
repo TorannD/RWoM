@@ -1,0 +1,15 @@
+<LanguageData>
+  <TM_SpiritTransmutate.reportString>трансмутирует материал.</TM_SpiritTransmutate.reportString>
+  <TM_SpiritEnchantedBody.reportString>зачаровывает тело.</TM_SpiritEnchantedBody.reportString>
+  <TM_SpiritEnchantedAura.reportString>зачаровывает ауру.</TM_SpiritEnchantedAura.reportString>
+  <TM_SpiritEnchanterStone.reportString>создаёт зачарованный камень.</TM_SpiritEnchanterStone.reportString>
+  <TM_SpiritDismissEnchanterStones.reportString>развеивает зачарованный камень.</TM_SpiritDismissEnchanterStones.reportString>
+  <TM_SpiritEnchantWeapon.reportString>зачаровывает оружие.</TM_SpiritEnchantWeapon.reportString>
+  <TM_SpiritDispelEnchantWeapon.reportString>снимает чары с оружия.</TM_SpiritDispelEnchantWeapon.reportString>
+  <TM_SpiritPolymorph.reportString>накладывает полиморф.</TM_SpiritPolymorph.reportString>
+  <TM_SpiritPolymorph_I.reportString>накладывает полиморф.</TM_SpiritPolymorph_I.reportString>
+  <TM_SpiritPolymorph_II.reportString>накладывает полиморф.</TM_SpiritPolymorph_II.reportString>
+  <TM_SpiritPolymorph_III.reportString>накладывает полиморф.</TM_SpiritPolymorph_III.reportString>
+  <TM_SpiritShapeshift.reportString>меняет облик.</TM_SpiritShapeshift.reportString>
+  <TM_SpiritShapeshiftDW.reportString>принимает облик лютоволка.</TM_SpiritShapeshiftDW.reportString>
+</LanguageData>

@@ -11,6 +11,12 @@ internal sealed class RuntimeLog : ILoggerProvider, ILogger
 
     public static void Initialize() => LogSystem.Initialize(builder => builder.AddProvider(new RuntimeLog()));
     public static void Clear() => Problems.Clear();
+    public static void EnsureHeadlessDefOfInitialized(Type type)
+    {
+        AssertClean();
+        System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(type.TypeHandle);
+        if (Problems.Count != 0) AcceptHeadlessDefOfInitialization(type.Name);
+    }
     public static void AcceptHeadlessNeedInitialization()
     {
         string[] expected =

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_TravelSafety_Warning>{0} pode sofrer danos no destino: {1}. Continuar o deslocamento?</TM_TravelSafety_Warning>
+  <TM_TravelSafety_Vacuum>vácuo</TM_TravelSafety_Vacuum>
+  <TM_TravelSafety_Cold>frio perigoso</TM_TravelSafety_Cold>
+  <TM_TravelSafety_Heat>calor perigoso</TM_TravelSafety_Heat>
+  <TM_TravelSafety_ShellExpiring>o invólucro etéreo está prestes a desaparecer</TM_TravelSafety_ShellExpiring>
+  <TM_TravelSafety_Changed>O destino não é mais seguro. Dê uma nova ordem de deslocamento para confirmar o risco.</TM_TravelSafety_Changed>
+</LanguageData>

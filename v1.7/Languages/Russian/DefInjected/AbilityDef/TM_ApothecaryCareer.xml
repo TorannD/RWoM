@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_Bridge_ApothecaryAntitoxin.label>Антидот</TM_Bridge_ApothecaryAntitoxin.label>
+  <TM_Bridge_ApothecaryGoldenHour.label>Набор золотого часа</TM_Bridge_ApothecaryGoldenHour.label>
+  <TM_Bridge_ApothecaryAntitoxin.description>При касании уменьшает пищевое отравление на 20%. Раз на эпизод. Расход — 20% запаса трав. Перезарядка 40 секунд.</TM_Bridge_ApothecaryAntitoxin.description>
+  <TM_Bridge_ApothecaryGoldenHour.description>Стоя на месте, аптекарь 20 секунд помогает четырём союзникам в радиусе восьми клеток. У каждого заживает до 20 единиц свежих ран, кровотечение уменьшается вдвое. Требуются 60% запаса трав и четыре растительных лекарства в инвентаре или под рукой. Перезарядка двое суток.</TM_Bridge_ApothecaryGoldenHour.description>
+</LanguageData>

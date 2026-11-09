@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  
+  <TM_PistolSpec.label>Especialización en pistolas</TM_PistolSpec.label>
+  <TM_PistolSpec.description>Especialización de arma: pistola\n\nEsta especialización mejora todos los aspectos de las pistolas: precisión, daño, retardo entre disparos, número de disparos, alcance y más.\nLas especializaciones de arma se aplican automáticamente cuando un supersoldado equipa un arma de su categoría de especialización. Las armas especializadas se identifican con un «++» tras el nombre del objeto.\n\nLos supersoldados con una pistola especializada equipada obtienen un talento único de «doble toque» que, de vez en cuando, ignora el tiempo de reutilización y comienza de inmediato otra ráfaga de disparos; este talento consume aguante cuando se produce.</TM_PistolSpec.description>
+
+  
+  <TM_PistolWhip.label>Golpe con pistola</TM_PistolWhip.label>
+  <TM_PistolWhip.description>Un ataque repentino que usa la culata de la pistola como arma contundente; los ataques que impactan aturden al objetivo y lo dejan atontado durante un breve periodo, y además pueden desarmarlo.</TM_PistolWhip.description>
+
+  
+  <TM_RifleSpec.label>Especialización en rifles</TM_RifleSpec.label>
+  <TM_RifleSpec.description>Especialización de arma: rifle\n\nEsta especialización mejora todos los aspectos de los rifles: precisión, daño, retardo entre disparos, número de disparos, alcance y más.\nLas especializaciones de arma se aplican automáticamente cuando un supersoldado equipa un arma de su categoría de especialización. Las armas especializadas se identifican con un «++» tras el nombre del objeto.</TM_RifleSpec.description>
+
+  
+  <TM_SuppressingFire.label>Fuego de supresión</TM_SuppressingFire.label>
+  <TM_SuppressingFire.description>Suprime las posiciones enemigas con una tormenta de balas.</TM_SuppressingFire.description>
+
+  
+  <TM_Mk203GL.label>Lanzagranadas Mk203</TM_Mk203GL.label>
+  <TM_Mk203GL.description>Dispara una granada con el lanzagranadas subcañón Mk203.</TM_Mk203GL.description>
+
+  
+  <TM_ShotgunSpec.label>Especialización en escopetas</TM_ShotgunSpec.label>
+  <TM_ShotgunSpec.description>Especialización de arma: escopeta\n\nEsta especialización mejora todos los aspectos de las escopetas: precisión, daño, retardo entre disparos, número de disparos, alcance y más.\nLas especializaciones de arma se aplican automáticamente cuando un supersoldado equipa un arma de su categoría de especialización. Las armas especializadas se identifican con un «++» tras el nombre del objeto.</TM_ShotgunSpec.description>
+
+  
+  <TM_Buckshot.label>Perdigonada</TM_Buckshot.label>
+  <TM_Buckshot.description>Un cartucho de escopeta que dispara múltiples perdigones. El enorme volumen de proyectiles descargados puede ser devastador a corta distancia, pero se dispersa con rapidez.</TM_Buckshot.description>
+
+  
+  <TM_BreachingCharge.label>Carga de brecha</TM_BreachingCharge.label>
+  <TM_BreachingCharge.description>Lanza un explosivo especializado que destaca por destruir estructuras o detener a grupos de enemigos. Inflige x30 de daño a las estructuras.</TM_BreachingCharge.description>
+
+  
+  <TM_CQC.label>CQC</TM_CQC.label>
+  <TM_CQC.description>El combate cercano (CQC, por sus siglas en inglés) es un entrenamiento habitual de los soldados que les permite ejecutar con fluidez un brutal ataque combinado contra un enemigo al alcance del cuerpo a cuerpo.</TM_CQC.description>
+
+  
+  <TM_FirstAid.label>Autoauxilio</TM_FirstAid.label>
+  <TM_FirstAid.description>El autoauxilio es posible para los supersoldados gracias a las mejoras genéticas que adquieren con el suero. Esta habilidad les permite concentrar energía de forma consciente para atender rápidamente sus heridas. El autoauxilio no puede tratar heridas graves, como la pérdida de partes del cuerpo.</TM_FirstAid.description>
+
+  
+  <TM_60mmMortar.label>Mortero de 60 mm</TM_60mmMortar.label>
+  <TM_60mmMortar.description>Ablanda a los objetivos enemigos antes incluso de que empiece el combate con un sistema de mortero personal. Un supersoldado puede transportar con facilidad el mortero de 60 mm y desplegarlo rápidamente para lanzar 3 proyectiles de fuego indirecto.</TM_60mmMortar.description>
+
+</LanguageData>

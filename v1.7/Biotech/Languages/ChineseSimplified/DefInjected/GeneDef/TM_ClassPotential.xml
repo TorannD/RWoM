@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ManaGene.label>法力</TM_ManaGene.label>
+  <TM_StaminaGene.label>耐力</TM_StaminaGene.label>
+  <TM_ManaGene.description>没有职业的携带者会获得魔法潜能，并可学习法师职业。对于已有职业的角色，此基因仅作为其魔法能力的标记，不会赋予另一个职业或额外潜能。携带者的子女可能天生拥有潜藏法师基因。</TM_ManaGene.description>
+  <TM_StaminaGene.description>没有职业的携带者会获得体能潜力，并可学习战士职业。对于已有职业的角色，此基因仅作为其武力的标记，不会赋予另一个职业或额外潜能。携带者的子女可能天生拥有沉睡战士基因。</TM_StaminaGene.description>
+</LanguageData>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ReadDeathKnightDread>Жах — почніть із Хвилі страху.</TM_ReadDeathKnightDread>
+  <TM_ReadDeathKnightSpite>Помста — почніть зі Злоби.</TM_ReadDeathKnightSpite>
+  <TM_DKTrial>Дні, коли ворог поранив вас біля союзника: {0}/{1}. Або врятуйте різних союзників: {2}/{3}.</TM_DKTrial>
+  <TM_DKLevel>Рівень воїна {0}/30.</TM_DKLevel>
+  <TM_DKClaim>Відкрити щабель</TM_DKClaim>
+  <TM_DKOath>Клятва вартового — раз на 10 секунд поглинайте до 25 шкоди за сусіднього союзника ціною 10 ненависті.</TM_DKOath>
+</LanguageData>

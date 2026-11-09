@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_EtherShell_eff>Eficiencia</TM_EtherShell_eff>
+  <TM_EtherShell_eff_desc>Reduce el coste de maná un 10% por nivel, hasta tres niveles.</TM_EtherShell_eff_desc>
+  <TM_EtherShell_AlreadyProtected>Este peón ya tiene una envoltura etérea.</TM_EtherShell_AlreadyProtected>
+  <TM_EtherShell_Unavailable>Envoltura etérea no está disponible.</TM_EtherShell_Unavailable>
+  <TM_EtherShell_ver>Duración</TM_EtherShell_ver>
+  <TM_EtherShell_ver_desc>Añade un 25% de la duración base por nivel: 30, 36 o 42 horas. Los pergaminos y bastones duran 24 horas.</TM_EtherShell_ver_desc>
+</LanguageData>

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_ReservoirCharge>Запас мани: {0} / {1}</TM_ReservoirCharge>
+  <TM_ReservoirReserve>Особистий резерв мани: {0}</TM_ReservoirReserve>
+  <TM_ReservoirConvert>Перетворити магопаливо</TM_ReservoirConvert>
+  <TM_ReservoirConvertDesc>Перетворити магопаливо на заряд до {0} одиниць мани. Паливо витрачається лише на прийнятий заряд.</TM_ReservoirConvertDesc>
+  <TM_ReservoirReserveLabel>Резерв мани: {0}</TM_ReservoirReserveLabel>
+  <TM_ReservoirReserveDesc>Виберіть мінімальний відсоток особистої мани, який маг зберігає під час заряджання цього бака.</TM_ReservoirReserveDesc>
+  <TM_ReservoirChargeJob>Зарядити бак маною</TM_ReservoirChargeJob>
+  <TM_ReservoirUnavailable>Потрібен доступний дружній маг із запасом мани понад особистий резерв.</TM_ReservoirUnavailable>
+  <TM_ReservoirFuelReserveLabel>Захищене магопаливо: {0}</TM_ReservoirFuelReserveLabel>
+  <TM_ReservoirFuelReserveDesc>Захистити вказану кількість палива від звичайних споживачів, перетворення та ритуалів. Політ і життєзабезпечення можуть його витрачати. Життєзабезпечення може вичерпати резерв: паливо для повернення не гарантоване. Мана, отримана під час дозволеного перетворення для життєзабезпечення, розподіляється за звичайними правилами.</TM_ReservoirFuelReserveDesc>
+  <TM_ReservoirFuelReserveInspect>Захищене магопаливо: {0}; доступно звичайним споживачам: {1}\nПоліт і життєзабезпечення можуть витрачати резерв; паливо для повернення не гарантоване.</TM_ReservoirFuelReserveInspect>
+</LanguageData>

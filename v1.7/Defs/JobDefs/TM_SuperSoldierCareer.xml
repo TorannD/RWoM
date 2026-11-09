@@ -1,0 +1,12 @@
+<Defs>
+  <JobDef>
+    <defName>TM_ReadSuperSoldierCloseQuarters</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_GladiatorInitiation</driverClass>
+    <reportString>studying close quarters training.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_ReadSuperSoldierFieldAid</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_GladiatorInitiation</driverClass>
+    <reportString>studying field medicine.</reportString>
+  </JobDef>
+</Defs>

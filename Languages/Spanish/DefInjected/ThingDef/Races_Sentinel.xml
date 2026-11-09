@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_Greater_SentinelR.label>centinela mayor</TM_Greater_SentinelR.label>
+  
+  <TM_Greater_SentinelR.description>Esta piedra, antes inanimada, defiende ahora ferozmente su territorio. Las extremidades que antes parecían fundidas en la misma piedra se mueven... y desgarran por igual tierra y carne.</TM_Greater_SentinelR.description>
+  
+  <TM_Greater_SentinelR.race.meatLabel>piedra</TM_Greater_SentinelR.race.meatLabel>
+  
+  <TM_Greater_SentinelR.tools.claws.label>garras</TM_Greater_SentinelR.tools.claws.label>
+  
+  <TM_Greater_SentinelR.tools.teeth.label>dientes</TM_Greater_SentinelR.tools.teeth.label>
+  
+  
+  <TM_Lesser_SentinelR.label>centinela menor</TM_Lesser_SentinelR.label>
+  
+  <TM_Lesser_SentinelR.description>Esta piedra, antes inanimada, defiende ahora ferozmente su territorio. Las extremidades que antes parecían fundidas en la misma piedra se mueven... y desgarran por igual tierra y carne.</TM_Lesser_SentinelR.description>
+  
+  <TM_Lesser_SentinelR.race.meatLabel>piedra</TM_Lesser_SentinelR.race.meatLabel>
+  
+  <TM_Lesser_SentinelR.tools.claws.label>garras</TM_Lesser_SentinelR.tools.claws.label>
+  
+  <TM_Lesser_SentinelR.tools.teeth.label>dientes</TM_Lesser_SentinelR.tools.teeth.label>
+  
+  
+  <TM_SentinelR.label>centinela</TM_SentinelR.label>
+  
+  <TM_SentinelR.description>Esta piedra, antes inanimada, defiende ahora ferozmente su territorio. Las extremidades que antes parecían fundidas en la misma piedra se mueven... y desgarran por igual tierra y carne.</TM_SentinelR.description>
+  
+  <TM_SentinelR.race.meatLabel>piedra</TM_SentinelR.race.meatLabel>
+  
+  <TM_SentinelR.tools.claws.label>garras</TM_SentinelR.tools.claws.label>
+  
+  <TM_SentinelR.tools.teeth.label>dientes</TM_SentinelR.tools.teeth.label>
+  
+</LanguageData>

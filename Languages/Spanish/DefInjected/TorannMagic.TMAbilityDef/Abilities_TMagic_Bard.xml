@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_BardTraining.label>Formación de bardo</TM_BardTraining.label>
+  <TM_BardTraining.description>Perfecciona las habilidades de un bardo mediante formación en artes escénicas, comedia, trato social e inspiración. Cada nivel cambia el rasgo del bardo para reflejar su nivel de habilidad.
+
+Rangos:
+Animador: Impacto social +10 %, Negociación +20 %, Comercio +10 %,
+Umbral de dolor -10 %, capacidad de carga -10, velocidad de trabajo -10 %
+
+Intérprete: Impacto social +20 %, Negociación +30 %, Comercio +15 %,
+Umbral de dolor -12 %, capacidad de carga -15, velocidad de trabajo -12 %
+
+Juglar: Impacto social +30 %, Negociación +35 %, Comercio +20 %,
+Umbral de dolor -14 %, capacidad de carga -18, velocidad de trabajo -14 %
+
+Bardo: Impacto social +35 %, Negociación +40 %, Comercio +25 %,
+Umbral de dolor -15 %, capacidad de carga -20, velocidad de trabajo -15 %</TM_BardTraining.description>
+
+  <TM_Entertain.label>Entretener</TM_Entertain.label>
+  <TM_Entertain.description>Entretén a tus compañeros colonos de diversas maneras. Esta habilidad tiene dos componentes: uno pasivo y otro activo. El pasivo permite al bardo entretener a otros colonos en conversaciones casuales.
+
+Este comando activa o desactiva el componente activo.
+
+Al activar la habilidad, se extiende una red sobre la colonia que permite al bardo detectar a peones angustiados e intentar entretenerlos. El bardo gana puntos de experiencia como mago cuando el entretenimiento activo tiene éxito. Mantener esta habilidad activa reduce el maná máximo en 30. El bardo realiza el entretenimiento como un tipo de trabajo, según la prioridad del tipo de trabajo «Carcelero».</TM_Entertain.description>
+
+  <TM_Inspire.label>Inspirar</TM_Inspire.label>
+  <TM_Inspire.description>El bardo inspira a otros peones cercanos. Esta habilidad siempre está activa.</TM_Inspire.description>
+
+  <TM_Lullaby.label>Canción de cuna</TM_Lullaby.label>
+  <TM_Lullaby.description>Proyecta una onda emocionalmente relajante que disipa las preocupaciones y la consciencia, y puede dormir a cualquier criatura en la zona objetivo. No funciona con mecanoides.</TM_Lullaby.description>
+
+  <TM_Lullaby_I.label>Canción de cuna (I)</TM_Lullaby_I.label>
+  <TM_Lullaby_I.description>Proyecta una onda emocionalmente relajante que disipa las preocupaciones y la consciencia, y puede dormir a cualquier criatura en la zona objetivo.</TM_Lullaby_I.description>
+
+  <TM_Lullaby_II.label>Canción de cuna (II)</TM_Lullaby_II.label>
+  <TM_Lullaby_II.description>Proyecta una onda emocionalmente relajante que disipa las preocupaciones y la consciencia, y puede dormir a cualquier criatura en la zona objetivo.</TM_Lullaby_II.description>
+
+  <TM_Lullaby_III.label>Canción de cuna</TM_Lullaby_III.label>
+  <TM_Lullaby_III.description>Proyecta una onda emocionalmente relajante que disipa las preocupaciones y la consciencia, y puede dormir a cualquier criatura en la zona objetivo.</TM_Lullaby_III.description>
+
+  <TM_BattleHymn.label>Himno de batalla</TM_BattleHymn.label>
+  <TM_BattleHymn.description>Interpreta un himno de batalla enardecedor para motivar y fortalecer a los aliados cercanos. Cada verso del himno suma efecto y refuerza aún más el poder de combate de los aliados. Cada verso consume un 9 % adicional de maná (se reduce con el entrenamiento).
+
+El Himno de batalla tiene una pequeña probabilidad de provocar inspiraciones que potencian aún más las capacidades de combate.
+
+Usa la habilidad para activarla o desactivarla.</TM_BattleHymn.description>
+
+</LanguageData>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritSunfire.reportString>прикликає сонячний вогонь через носія духа.</TM_SpiritSunfire.reportString>
+  <TM_SpiritSunfire_I.reportString>прикликає сонячний вогонь через носія духа.</TM_SpiritSunfire_I.reportString>
+  <TM_SpiritSunfire_II.reportString>прикликає сонячний вогонь через носія духа.</TM_SpiritSunfire_II.reportString>
+  <TM_SpiritSunfire_III.reportString>прикликає сонячний вогонь через носія духа.</TM_SpiritSunfire_III.reportString>
+  <TM_SpiritLightBurst.reportString>викликає спалахи світла через носія духа.</TM_SpiritLightBurst.reportString>
+  <TM_SpiritLightLance.reportString>спрямовує світловий спис через носія духа.</TM_SpiritLightLance.reportString>
+  <TM_SpiritRefraction.reportString>створює стіну заломлення через носія духа.</TM_SpiritRefraction.reportString>
+  <TM_SpiritLightSkip.reportString>переміщується світлом через носія духа.</TM_SpiritLightSkip.reportString>
+  <TM_SpiritLightSkipMass.reportString>переносить групу світлом через носія духа.</TM_SpiritLightSkipMass.reportString>
+  <TM_SpiritLightSkipGlobal.reportString>обирає місце світлового переходу на карті світу.</TM_SpiritLightSkipGlobal.reportString>
+  <TM_SpiritSoL_CreateLight.reportString>вказує духові світла місце для освітлення.</TM_SpiritSoL_CreateLight.reportString>
+  <TM_SpiritSoL_Equalize.reportString>ділиться світлом із духом світла.</TM_SpiritSoL_Equalize.reportString>
+  <TM_SpiritSpiritOfLight.reportString>закликає духа світла через носія.</TM_SpiritSpiritOfLight.reportString>
+</LanguageData>

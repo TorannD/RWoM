@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_BreachSeal.label>破口封印</TM_BreachSeal.label>
+  <TM_BreachSeal.description>在选定的3×3区域远离飞船核心的一侧生成最多三面气密魔法墙。需要己方飞船平台及完好的地板。每面墙有300点生命值，持续一天。保留友方已有的气密墙，不能刷新生效中的封印。不修复地板或屋顶，也不提供氧气。 射程：15格。准备：1秒。冷却：60秒。效率修正前消耗30%法力。</TM_BreachSeal.description>
+</LanguageData>

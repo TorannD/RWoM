@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef>
+    <defName>TM_MasterTomeRift</defName>
+    <label>unstable elemental rift</label>
+    <description>A finite band of elemental guardians is gathering beyond this opening.</description>
+    <thingClass>Thing</thingClass>
+    <category>Ethereal</category>
+    <drawerType>RealtimeOnly</drawerType>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <selectable>true</selectable>
+    <useHitPoints>false</useHitPoints>
+    <rotatable>false</rotatable>
+    <graphicData><texPath>Other/riftbldg</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(1.6,1.6)</drawSize></graphicData>
+  </ThingDef>
+</Defs>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_GuideTitle>Guia de magia</TM_GuideTitle>
+  <TM_GuideRead>Ler guia</TM_GuideRead>
+  <TM_GuideReadDesc>Veja como usar este dispositivo, mesmo antes de pesquisar sua construção.</TM_GuideReadDesc>
+  <TM_GuideStart>Sua nave mágica chegou à superfície do planeta. O núcleo, dois propulsores e sinalizadores permitem viajar pelo planeta; o cenário fornece uma reserva limitada de combustível. Use o console de pilotagem quando estiver pronto. Você terá de pesquisar e construir oficinas, suporte de vida e melhorias.</TM_GuideStart>
+  <TM_GuideResearch>Novas possibilidades mágicas estão disponíveis. As notas abaixo explicam as pesquisas e os dispositivos correspondentes.</TM_GuideResearch>
+  <TM_GuideNetwork>Combustível mágico e mana são recursos diferentes. Os propulsores consomem combustível mágico; mana não o substitui. Sinalizadores conectam dispositivos próximos. Configure o envio e o recebimento de cada recurso separadamente. Construir sinalizadores exige refino de combustível mágico e eletricidade.</TM_GuideNetwork>
+  <TM_GuideOwnership>A pesquisa libera produção e progressão. Dispositivos já obtidos e feitiços já aprendidos continuam disponíveis para uso.</TM_GuideOwnership>
+  <TM_GuideReread>Selecione um dispositivo mágico e escolha Ler guia para consultar suas instruções.</TM_GuideReread>
+</LanguageData>

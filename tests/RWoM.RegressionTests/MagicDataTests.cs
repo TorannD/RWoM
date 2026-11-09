@@ -10,6 +10,7 @@ internal static class MagicDataTests
 {
     public static IEnumerable<TestCase> Cases()
     {
+        yield return new("MagicData.UnresolvedCustomOwnerDoesNotBreakLookup", UnresolvedOwner);
         yield return new("MagicData.EmpathyLevel4SurvivesScribe", EmpathyLevel4SurvivesScribe);
         yield return new("MagicData.FreshEmpathyUsesXmlMaximum", FreshEmpathyUsesXmlMaximum);
         yield return new("MagicData.DistortSpiritUsesXmlCost", DistortSpiritUsesXmlCost);
@@ -30,6 +31,42 @@ internal static class MagicDataTests
         yield return new("MagicData.SameCountReplacementKeepsLookupAttachedToSave", SameCountReplacementKeepsLookupAttachedToSave);
         yield return new("MagicData.SameCountDuplicateIsNormalizedBeforeSave", SameCountDuplicateIsNormalizedBeforeSave);
         yield return new("MagicData.RepeatedMissReusesDiscoveryUntilGenerationChanges", RepeatedMissReusesDiscoveryUntilGenerationChanges);
+    }
+
+    private static void UnresolvedOwner(RuntimeFixture fixture)
+    {
+        var baseDef=fixture.Ability("TM_Empathy");
+        var upper=fixture.Ability("TM_DistortSpirit");
+        var magic=new MagicPower { TMabilityDefs=[], level=4, ticksUntilNextCast=82 };
+        var might=new MightPower { TMabilityDefs=null, level=3, ticksUntilNextCast=76 };
+        var data=new MagicData { magicPowerCustom=[magic,null!] };
+        var active=data.MagicPowersCustom;
+        Check.Equal(true,active.Contains(magic),"saved record remains owned");
+        Check.Equal(1,active.Count(p=>p?.GetAbilityDef(0)==baseDef),"live custom ability initialized once");
+        foreach(var field in typeof(MagicData).GetFields())
+            if(field.FieldType==typeof(List<MagicPower>)&&!field.Name.Contains("Custom"))field.SetValue(data,new List<MagicPower>());
+        data.magicPowerP.AddRange(Enumerable.Range(0,6).Select(_=>new MagicPower()));
+        data.GetHediffAbility(new Verse.Hediff { def=new Verse.HediffDef { defName="UnrelatedEffect" } });
+        Check.Equal(true,data.AllMagicPowers.All(p=>p!=magic && p!=null),"orphan excluded from active aggregate");
+        Check.Equal(true,magic.GetAbilityDef(0)==null && magic.nextLevelAbilityDef==null && magic.Icon==null,"missing magic rank has no display ability");
+        Check.Equal(true,might.GetAbilityDef(0)==null && might.nextLevelAbilityDef==null && might.Icon==null,"missing might rank has no display ability");
+        Check.Equal(4,magic.level,"lookup preserves saved magic level");
+        Check.Equal(82,magic.ticksUntilNextCast,"lookup preserves cooldown");
+        Check.Equal(3,might.level,"lookup preserves saved might level");
+        magic.TMabilityDefs=[baseDef,upper];might.TMabilityDefs=[baseDef,upper];
+        Check.Same(baseDef,magic.GetAbilityDef(8),"out-of-range magic rank keeps original first-rank fallback");
+        Check.Same(baseDef,might.GetAbilityDef(-1),"out-of-range might rank keeps original first-rank fallback");
+        Check.Same(upper,might.GetAbilityDef(1),"valid rank remains accessible");
+        var orphan=new MagicPower {TMabilityDefs=[],ticksUntilNextCast=82};
+        var neighbor=new MagicPower {TMabilityDefs=[baseDef,upper],level=1,maxLevel=1,learned=true,autocast=true,ticksUntilNextCast=293};
+        var loaded=fixture.Load(fixture.Save(new MagicData {magicPowerCustom=[orphan,neighbor]}));
+        var raw=loaded.MagicPowersCustom;
+        var unavailable=raw.Single(p=>p.TMabilityDefs?.Count==0 && p.ticksUntilNextCast==82);
+        Check.Equal(false,loaded.AllMagicPowers.Contains(unavailable),"reloaded orphan remains dormant");
+        var valid=raw.Single(p=>p.TMabilityDefs?.Contains(baseDef)==true);
+        Check.Equal(1,valid.level,"neighboring learned ability keeps its rank through Scribe");
+        Check.Equal(true,valid.learned&&valid.autocast,"neighboring learned and autocast flags survive");
+        Check.Equal(293,valid.ticksUntilNextCast,"neighboring cooldown survives");
     }
 
     private static void EmpathyLevel4SurvivesScribe(RuntimeFixture fixture)

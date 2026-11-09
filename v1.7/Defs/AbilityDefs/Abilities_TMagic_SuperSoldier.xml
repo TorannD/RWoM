@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
- <!-- Pistol Spec - ability is never used -->
+ 
  
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_PistolSpec</defName>
@@ -40,10 +39,17 @@ Super Soldiers with a specialized pistol equipped gain a unique "double tap" tal
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_pistolspec</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
   
-  <!-- Pistol Whip -->
+  
   
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_PistolWhip</defName>
@@ -78,10 +84,17 @@ Super Soldiers with a specialized pistol equipped gain a unique "double tap" tal
 			<canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_pistolwhip</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
   
- <!-- Rifle Spec - ability is never used -->
+ 
  
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_RifleSpec</defName>
@@ -117,9 +130,16 @@ Weapon specializations apply automatically when a Super Soldier equips a weapon 
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_riflespec</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
-   <!-- Suppressing Fire-->
+   
   
 	<TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_SuppressingFire</defName>
@@ -151,10 +171,17 @@ Weapon specializations apply automatically when a Super Soldier equips a weapon 
             <muzzleFlashScale>10</muzzleFlashScale>
             <isPrimary>true</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_suppressingfire</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	
-	<!-- mk203 gl -->
+	
 	<ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
         <thingClass>TorannMagic.Projectile_Mk203GL</thingClass>
 		<defName>Projectile_Mk203GL</defName>
@@ -171,7 +198,7 @@ Weapon specializations apply automatically when a Super Soldier equips a weapon 
 			<postExplosionSpawnChance>1</postExplosionSpawnChance>
             <speed>35</speed>
         </projectile>
-    </ThingDef>
+</ThingDef>
 	
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
@@ -204,10 +231,17 @@ Weapon specializations apply automatically when a Super Soldier equips a weapon 
             <muzzleFlashScale>20</muzzleFlashScale>
             <isPrimary>false</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>	
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_mk203gl</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>	
   
   
- <!-- Shotgun Spec - ability is never used -->
+ 
  
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_ShotgunSpec</defName>
@@ -243,9 +277,16 @@ Weapon specializations apply automatically when a Super Soldier equips a weapon 
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_shotgunspec</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
-   <!-- Buckshot -->
+   
    
    <ThingDef ParentName="BaseBullet">
     <defName>Projectile_Buckshot</defName>
@@ -260,7 +301,7 @@ Weapon specializations apply automatically when a Super Soldier equips a weapon 
       <damageAmountBase>6</damageAmountBase>
       <speed>50</speed>
     </projectile>
-  </ThingDef>
+</ThingDef>
   
   <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_Buckshot</defName>
@@ -292,9 +333,16 @@ Weapon specializations apply automatically when a Super Soldier equips a weapon 
             <muzzleFlashScale>12</muzzleFlashScale>
             <isPrimary>true</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_buckshot</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	   <!-- Breaching Charge -->
+	   
 	   
 	<ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
         <thingClass>TorannMagic.Projectile_BreachingCharge</thingClass>
@@ -314,7 +362,7 @@ Weapon specializations apply automatically when a Super Soldier equips a weapon 
 			<postExplosionSpawnChance>1</postExplosionSpawnChance>
             <speed>20</speed>
         </projectile>
-    </ThingDef>
+</ThingDef>
 	
 	  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_BreachingCharge</defName>
@@ -346,9 +394,16 @@ Weapon specializations apply automatically when a Super Soldier equips a weapon 
             <muzzleFlashScale>30</muzzleFlashScale>
             <isPrimary>true</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_breachingcharge</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-   <!-- CQC -->
+   
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_CQC</defName>
@@ -381,9 +436,16 @@ Weapon specializations apply automatically when a Super Soldier equips a weapon 
             <muzzleFlashScale>6</muzzleFlashScale>
             <isPrimary>false</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_cqc</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-   <!-- First Aid -->
+   
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_FirstAid</defName>
@@ -415,9 +477,16 @@ Weapon specializations apply automatically when a Super Soldier equips a weapon 
             <muzzleFlashScale>6</muzzleFlashScale>
             <isPrimary>false</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_firstaid</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	   <!-- 60mm Mortar -->
+	   
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_60mmMortar</defName>
@@ -449,7 +518,14 @@ Weapon specializations apply automatically when a Super Soldier equips a weapon 
             <muzzleFlashScale>6</muzzleFlashScale>
             <isPrimary>true</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_60mmmortar</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
   
   <ThingDef Name="TM_PistolSpec_Base" ParentName="BaseGunWithQuality">
@@ -468,7 +544,7 @@ Weapon specializations apply automatically when a Super Soldier equips a weapon 
       <Mass>1</Mass>
     </statBases>
 	<destroyOnDrop>true</destroyOnDrop>
-<!-- 	<menuHidden>true</menuHidden> -->
+
 	<tradeability>None</tradeability>
 	<equipmentType>None</equipmentType>
     <verbs>
@@ -490,83 +566,83 @@ Weapon specializations apply automatically when a Super Soldier equips a weapon 
         <cooldownTime>1</cooldownTime>
       </li>
     </tools>
-  </ThingDef>
+</ThingDef>
   
   <ThingDef ParentName="TM_PistolSpec_Base">
     <defName>TM_PistolSpec_Base1</defName>
-  </ThingDef>
+</ThingDef>
   
     <ThingDef ParentName="TM_PistolSpec_Base">
     <defName>TM_PistolSpec_Base2</defName>
-  </ThingDef>
+</ThingDef>
   
     <ThingDef ParentName="TM_PistolSpec_Base">
     <defName>TM_PistolSpec_Base3</defName>
-  </ThingDef>
+</ThingDef>
   
     <ThingDef ParentName="TM_PistolSpec_Base">
     <defName>TM_PistolSpec_Base4</defName>
-  </ThingDef>
+</ThingDef>
   
     <ThingDef ParentName="TM_PistolSpec_Base">
     <defName>TM_PistolSpec_Base5</defName>
-  </ThingDef>
+</ThingDef>
   
   <ThingDef ParentName="TM_PistolSpec_Base">
     <defName>TM_PistolSpec_Base6</defName>
-  </ThingDef>
+</ThingDef>
   
   <ThingDef ParentName="TM_PistolSpec_Base">
     <defName>TM_PistolSpec_Base7</defName>
-  </ThingDef>
+</ThingDef>
   
   <ThingDef ParentName="TM_PistolSpec_Base">
     <defName>TM_PistolSpec_Base8</defName>
-  </ThingDef>
+</ThingDef>
   
   <ThingDef ParentName="TM_PistolSpec_Base">
     <defName>TM_PistolSpec_Base9</defName>
-  </ThingDef>
+</ThingDef>
   
   <ThingDef ParentName="TM_PistolSpec_Base">
     <defName>TM_PistolSpec_Base10</defName>
-  </ThingDef>
+</ThingDef>
   
   <ThingDef ParentName="TM_PistolSpec_Base">
     <defName>TM_PistolSpec_Base11</defName>
-  </ThingDef>
+</ThingDef>
   
     <ThingDef ParentName="TM_PistolSpec_Base">
     <defName>TM_PistolSpec_Base12</defName>
-  </ThingDef>
+</ThingDef>
   
     <ThingDef ParentName="TM_PistolSpec_Base">
     <defName>TM_PistolSpec_Base13</defName>
-  </ThingDef>
+</ThingDef>
   
     <ThingDef ParentName="TM_PistolSpec_Base">
     <defName>TM_PistolSpec_Base14</defName>
-  </ThingDef>
+</ThingDef>
   
     <ThingDef ParentName="TM_PistolSpec_Base">
     <defName>TM_PistolSpec_Base15</defName>
-  </ThingDef>
+</ThingDef>
   
   <ThingDef ParentName="TM_PistolSpec_Base">
     <defName>TM_PistolSpec_Base16</defName>
-  </ThingDef>
+</ThingDef>
   
   <ThingDef ParentName="TM_PistolSpec_Base">
     <defName>TM_PistolSpec_Base17</defName>
-  </ThingDef>
+</ThingDef>
   
   <ThingDef ParentName="TM_PistolSpec_Base">
     <defName>TM_PistolSpec_Base18</defName>
-  </ThingDef>
+</ThingDef>
   
   <ThingDef ParentName="TM_PistolSpec_Base">
     <defName>TM_PistolSpec_Base19</defName>
-  </ThingDef>
+</ThingDef>
   
   
   <ThingDef Name="TM_RifleSpec_Base" ParentName="BaseGunWithQuality">
@@ -585,7 +661,7 @@ Weapon specializations apply automatically when a Super Soldier equips a weapon 
       <Mass>1</Mass>
     </statBases>
 	<destroyOnDrop>true</destroyOnDrop>
-	<!-- <menuHidden>true</menuHidden> -->
+	
 	<tradeability>None</tradeability>
 	<equipmentType>None</equipmentType>
     <verbs>
@@ -607,83 +683,83 @@ Weapon specializations apply automatically when a Super Soldier equips a weapon 
         <cooldownTime>1</cooldownTime>
       </li>
     </tools>
-  </ThingDef>
+</ThingDef>
   
   <ThingDef ParentName="TM_RifleSpec_Base">
     <defName>TM_RifleSpec_Base1</defName>
-  </ThingDef>
+</ThingDef>
   
     <ThingDef ParentName="TM_RifleSpec_Base">
     <defName>TM_RifleSpec_Base2</defName>
-  </ThingDef>
+</ThingDef>
   
     <ThingDef ParentName="TM_RifleSpec_Base">
     <defName>TM_RifleSpec_Base3</defName>
-  </ThingDef>
+</ThingDef>
   
     <ThingDef ParentName="TM_RifleSpec_Base">
     <defName>TM_RifleSpec_Base4</defName>
-  </ThingDef>
+</ThingDef>
   
     <ThingDef ParentName="TM_RifleSpec_Base">
     <defName>TM_RifleSpec_Base5</defName>
-  </ThingDef>
+</ThingDef>
   
   <ThingDef ParentName="TM_RifleSpec_Base">
     <defName>TM_RifleSpec_Base6</defName>
-  </ThingDef>
+</ThingDef>
   
   <ThingDef ParentName="TM_RifleSpec_Base">
     <defName>TM_RifleSpec_Base7</defName>
-  </ThingDef>
+</ThingDef>
   
   <ThingDef ParentName="TM_RifleSpec_Base">
     <defName>TM_RifleSpec_Base8</defName>
-  </ThingDef>
+</ThingDef>
   
   <ThingDef ParentName="TM_RifleSpec_Base">
     <defName>TM_RifleSpec_Base9</defName>
-  </ThingDef>
+</ThingDef>
   
   <ThingDef ParentName="TM_RifleSpec_Base">
     <defName>TM_RifleSpec_Base10</defName>
-  </ThingDef>
+</ThingDef>
   
   <ThingDef ParentName="TM_RifleSpec_Base">
     <defName>TM_RifleSpec_Base11</defName>
-  </ThingDef>
+</ThingDef>
   
     <ThingDef ParentName="TM_RifleSpec_Base">
     <defName>TM_RifleSpec_Base12</defName>
-  </ThingDef>
+</ThingDef>
   
     <ThingDef ParentName="TM_RifleSpec_Base">
     <defName>TM_RifleSpec_Base13</defName>
-  </ThingDef>
+</ThingDef>
   
     <ThingDef ParentName="TM_RifleSpec_Base">
     <defName>TM_RifleSpec_Base14</defName>
-  </ThingDef>
+</ThingDef>
   
     <ThingDef ParentName="TM_RifleSpec_Base">
     <defName>TM_RifleSpec_Base15</defName>
-  </ThingDef>
+</ThingDef>
   
   <ThingDef ParentName="TM_RifleSpec_Base">
     <defName>TM_RifleSpec_Base16</defName>
-  </ThingDef>
+</ThingDef>
   
   <ThingDef ParentName="TM_RifleSpec_Base">
     <defName>TM_RifleSpec_Base17</defName>
-  </ThingDef>
+</ThingDef>
   
   <ThingDef ParentName="TM_RifleSpec_Base">
     <defName>TM_RifleSpec_Base18</defName>
-  </ThingDef>
+</ThingDef>
   
   <ThingDef ParentName="TM_RifleSpec_Base">
     <defName>TM_RifleSpec_Base19</defName>
-  </ThingDef>
+</ThingDef>
   
   
   <ThingDef Name="TM_ShotgunSpec_Base" ParentName="BaseGunWithQuality">
@@ -702,7 +778,7 @@ Weapon specializations apply automatically when a Super Soldier equips a weapon 
       <Mass>1</Mass>
     </statBases>
 	<destroyOnDrop>true</destroyOnDrop>
-	<!-- <menuHidden>true</menuHidden> -->
+	
 	<tradeability>None</tradeability>
 	<equipmentType>None</equipmentType>
     <verbs>
@@ -724,82 +800,82 @@ Weapon specializations apply automatically when a Super Soldier equips a weapon 
         <cooldownTime>1</cooldownTime>
       </li>
     </tools>
-  </ThingDef>
+</ThingDef>
   
   <ThingDef ParentName="TM_ShotgunSpec_Base">
     <defName>TM_ShotgunSpec_Base1</defName>
-  </ThingDef>
+</ThingDef>
   
     <ThingDef ParentName="TM_ShotgunSpec_Base">
     <defName>TM_ShotgunSpec_Base2</defName>
-  </ThingDef>
+</ThingDef>
   
     <ThingDef ParentName="TM_ShotgunSpec_Base">
     <defName>TM_ShotgunSpec_Base3</defName>
-  </ThingDef>
+</ThingDef>
   
     <ThingDef ParentName="TM_ShotgunSpec_Base">
     <defName>TM_ShotgunSpec_Base4</defName>
-  </ThingDef>
+</ThingDef>
   
     <ThingDef ParentName="TM_ShotgunSpec_Base">
     <defName>TM_ShotgunSpec_Base5</defName>
-  </ThingDef>
+</ThingDef>
   
   <ThingDef ParentName="TM_ShotgunSpec_Base">
     <defName>TM_ShotgunSpec_Base6</defName>
-  </ThingDef>
+</ThingDef>
   
   <ThingDef ParentName="TM_ShotgunSpec_Base">
     <defName>TM_ShotgunSpec_Base7</defName>
-  </ThingDef>
+</ThingDef>
   
   <ThingDef ParentName="TM_ShotgunSpec_Base">
     <defName>TM_ShotgunSpec_Base8</defName>
-  </ThingDef>
+</ThingDef>
   
   <ThingDef ParentName="TM_ShotgunSpec_Base">
     <defName>TM_ShotgunSpec_Base9</defName>
-  </ThingDef>
+</ThingDef>
   
   <ThingDef ParentName="TM_ShotgunSpec_Base">
     <defName>TM_ShotgunSpec_Base10</defName>
-  </ThingDef>
+</ThingDef>
   
   <ThingDef ParentName="TM_ShotgunSpec_Base">
     <defName>TM_ShotgunSpec_Base11</defName>
-  </ThingDef>
+</ThingDef>
   
     <ThingDef ParentName="TM_ShotgunSpec_Base">
     <defName>TM_ShotgunSpec_Base12</defName>
-  </ThingDef>
+</ThingDef>
   
     <ThingDef ParentName="TM_ShotgunSpec_Base">
     <defName>TM_ShotgunSpec_Base13</defName>
-  </ThingDef>
+</ThingDef>
   
     <ThingDef ParentName="TM_ShotgunSpec_Base">
     <defName>TM_ShotgunSpec_Base14</defName>
-  </ThingDef>
+</ThingDef>
   
     <ThingDef ParentName="TM_ShotgunSpec_Base">
     <defName>TM_ShotgunSpec_Base15</defName>
-  </ThingDef>
+</ThingDef>
   
   <ThingDef ParentName="TM_ShotgunSpec_Base">
     <defName>TM_ShotgunSpec_Base16</defName>
-  </ThingDef>
+</ThingDef>
   
   <ThingDef ParentName="TM_ShotgunSpec_Base">
     <defName>TM_ShotgunSpec_Base17</defName>
-  </ThingDef>
+</ThingDef>
   
   <ThingDef ParentName="TM_ShotgunSpec_Base">
     <defName>TM_ShotgunSpec_Base18</defName>
-  </ThingDef>
+</ThingDef>
   
   <ThingDef ParentName="TM_ShotgunSpec_Base">
     <defName>TM_ShotgunSpec_Base19</defName>
-  </ThingDef>
+</ThingDef>
   
 </Defs>

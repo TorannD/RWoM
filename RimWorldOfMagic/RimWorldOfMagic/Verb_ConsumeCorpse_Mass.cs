@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace TorannMagic
 {
-    class Verb_ConsumeCorpse_Mass : Verb_UseAbility
+    class Verb_ConsumeCorpse_Mass : ClassProgression.Verb_SpiritTargetable, ISpiritCorpseConsumer
     {
 
         bool validTarg;
@@ -34,39 +34,37 @@ namespace TorannMagic
             return validTarg;
         }
 
+        public bool HasConsumableTarget(LocalTargetInfo target)
+            => InRange(target).Any(t => Verb_ConsumeCorpse.Consumable(t, CasterPawn));
+
+        private IEnumerable<Thing> InRange(LocalTargetInfo target)
+        {
+            float radius = verbProps.defaultProjectile.projectile.explosionRadius;
+            return GenRadial.RadialCellsAround(target.Cell, radius, true)
+                .Where(c => c.InBounds(CasterPawn.Map)).SelectMany(c => c.GetThingList(CasterPawn.Map))
+                .Where(t => t.Position.InHorDistOf(target.Cell, radius)).Distinct();
+        }
         protected override bool TryCastShot()
+        {
+            ApplyHostedEffect();
+            return false; // Native direct effect emits no projectile.
+        }
+
+        protected override bool ApplyHostedEffect()
         {
 
             Pawn caster = this.CasterPawn;
-            CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
-            MagicPowerSkill eff = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_ConsumeCorpse.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_ConsumeCorpse_eff");
-            MagicPowerSkill ver = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_ConsumeCorpse.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_ConsumeCorpse_ver");
-            MagicPowerSkill manaRegen = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_global_regen.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_global_regen_pwr");
+            Pawn owner = ClassProgression.SpiritRebirthCasting.SkillOwner(caster, Ability);
+            var comp = owner?.GetCompAbilityUserMagic();
+            if (comp?.Mana == null) return false;
+            MagicPowerSkill eff = comp.MagicData.MagicPowerSkill_ConsumeCorpse.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_ConsumeCorpse_eff");
+            MagicPowerSkill ver = comp.MagicData.MagicPowerSkill_ConsumeCorpse.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_ConsumeCorpse_ver");
+            MagicPowerSkill manaRegen = comp.MagicData.MagicPowerSkill_global_regen.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_global_regen_pwr");
 
-            float radius = this.verbProps.defaultProjectile.projectile.explosionRadius;
-            List<Thing> rangeThings = this.caster.Map.listerThings.AllThings.Where((Thing x) => (x.Position - currentTarget.Cell).LengthHorizontal <= radius).ToList();
-            List<Thing> consumeThings = new List<Thing>();
-            foreach(Thing t in rangeThings)
-            {
-                if (t is Pawn undead)
-                {
-                    if (!undead.Dead)
-                    {
-                        if (TM_Calc.IsUndead(undead))
-                        {
-                            consumeThings.Add(t);                            
-                        }                        
-                    }
-                }
-                else if(t is Corpse corpse)
-                {
-                    Pawn undeadPawn = corpse.InnerPawn;
-                    if ((undeadPawn.RaceProps.IsFlesh || TM_Calc.IsUndead(undeadPawn)) && (!TM_Calc.IsRobotPawn(undeadPawn)))
-                    {
-                        consumeThings.Add(t);                        
-                    }
-                }
-            }
+            float radius = verbProps.defaultProjectile.projectile.explosionRadius;
+            var consumeThings = caster.Map.listerThings.AllThings
+                .Where(t => t.Position.InHorDistOf(currentTarget.Cell, radius)
+                    && Verb_ConsumeCorpse.Consumable(t, owner == caster ? null : caster)).ToList();
 
             float num = 0;
             float dmgBonus = 1f + (ver.level * .15f);
@@ -157,7 +155,7 @@ namespace TorannMagic
                 }
                 num++;
             }
-            return false;
+            return num > 0;
         }
 
         public void ConsumeHumanoid(Pawn undead)

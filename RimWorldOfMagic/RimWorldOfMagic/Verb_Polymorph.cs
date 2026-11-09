@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace TorannMagic
 {
-    public class Verb_Polymorph : Verb_UseAbility
+    public class Verb_Polymorph : ClassProgression.Verb_SpiritTargetable
     {
 
         private int verVal;
@@ -22,7 +22,7 @@ namespace TorannMagic
         int min = 20;
         int max = 100;
 
-        private bool drafted = false;
+
 
         public override bool CanHitTargetFrom(IntVec3 root, LocalTargetInfo targ)
         {
@@ -47,30 +47,36 @@ namespace TorannMagic
 
         protected override bool TryCastShot()
         {
-            bool flag = false;
-            this.TargetsAoE.Clear();
-            this.UpdateTargets();
-            MagicPowerSkill pwr = base.CasterPawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Polymorph.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Polymorph_pwr");
-            MagicPowerSkill ver = base.CasterPawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Polymorph.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Polymorph_ver");
-            verVal = ver.level;
-            pwrVal = pwr.level;
-            CompAbilityUserMagic comp = base.CasterPawn.GetCompAbilityUserMagic();
-            this.arcaneDmg = base.CasterPawn.GetCompAbilityUserMagic().arcaneDmg;
-            this.duration += Mathf.RoundToInt(600 * verVal * this.arcaneDmg); 
+            ApplyHostedEffect();
+            bool result = false;
+            PostCastShot(result, out result);
+            return result;
+        }
 
-            if (base.CasterPawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+        protected override bool ApplyHostedEffect()
+        {
+            var owner = ClassProgression.SpiritRebirthCasting.SkillOwner(CasterPawn, Ability);
+            if (owner == null) return false;
+            TargetsAoE.Clear();
+            UpdateTargets();
+            var magic = owner.GetCompAbilityUserMagic();
+            var skills = magic.MagicData.MagicPowerSkill_Polymorph;
+            verVal = skills.First(x => x.label == "TM_Polymorph_ver").level;
+            pwrVal = skills.First(x => x.label == "TM_Polymorph_pwr").level;
+            arcaneDmg = magic.arcaneDmg;
+            if (owner.story?.traits?.HasTrait(TorannMagicDefOf.Faceless) == true)
             {
-                MightPowerSkill mpwr = base.CasterPawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-                MightPowerSkill mver = base.CasterPawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
-                pwrVal = mpwr.level;
-                verVal = mver.level;
+                var mimic = owner.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic;
+                pwrVal = mimic.First(x => x.label == "TM_Mimic_pwr").level;
+                verVal = mimic.First(x => x.label == "TM_Mimic_ver").level;
             }
-            
-            if (ModOptions.Settings.Instance.AIHardMode && !this.CasterPawn.IsColonist)
+            if (ModOptions.Settings.Instance.AIHardMode && !CasterPawn.IsColonist)
             {
                 verVal = 2;
                 pwrVal = 3;
             }
+            duration = 1800 + Mathf.RoundToInt(600 * verVal * arcaneDmg);
+            bool attempted = false;
             bool flag2 = this.UseAbilityProps.AbilityTargetCategory != AbilityTargetCategory.TargetAoE && this.TargetsAoE.Count > 1;
             if (flag2)
             {
@@ -79,31 +85,29 @@ namespace TorannMagic
             for (int i = 0; i < this.TargetsAoE.Count; i++)
             {
                 Pawn newPawn = this.TargetsAoE[i].Thing as Pawn;
-                if (newPawn != this.CasterPawn)
+                if (newPawn?.Spawned == true && !newPawn.Dead && newPawn.Map == CasterPawn.Map && newPawn != CasterPawn)
                 {
                     CompPolymorph compPoly = newPawn.GetComp<CompPolymorph>();
-                    if (compPoly != null && compPoly.Original != null && compPoly.TicksLeft > 0)
+                    if (compPoly == null) continue;
+                    attempted = true;
+                    if (compPoly.Original != null)
                     {
-                        compPoly.Temporary = true;
-                        compPoly.TicksLeft = 0;
+                        compPoly.CancelPolymorph();
                     }
                     else
                     {
                         float enchantChance = .5f;
                         if (!TM_Calc.IsRobotPawn(newPawn))
                         {
-                            enchantChance = (.5f + (.1f * pwrVal) * TM_Calc.GetSpellSuccessChance(this.CasterPawn, newPawn));
+                            enchantChance = (.5f + (.1f * pwrVal) * TM_Calc.GetSpellSuccessChance(owner, newPawn));
                         }
                         else
                         {
-                            enchantChance = (.0f + (.2f * pwrVal) * TM_Calc.GetSpellSuccessChance(this.CasterPawn, newPawn));
+                            enchantChance = (.0f + (.2f * pwrVal) * TM_Calc.GetSpellSuccessChance(owner, newPawn));
                         }
                         if (Rand.Chance(enchantChance) && newPawn.GetComp<CompPolymorph>() != null)
                         { 
-                            if(newPawn.drafter != null)
-                            {
-                                drafted = newPawn.Drafted;
-                            }
+                            bool drafted = newPawn.Drafted;
                             FactionDef fDef = null;
                             if (newPawn.Faction != null)
                             {
@@ -124,8 +128,9 @@ namespace TorannMagic
                                 Log.Message("random creature was null");
                             }
 
-                            Pawn polymorphedPawn = TM_Action.PolymorphPawn(this.CasterPawn, newPawn, newPawn, spawnThing, newPawn.Position, true, duration, newPawn.Faction);
+                            Pawn polymorphedPawn = TM_Action.PolymorphPawn(owner, newPawn, newPawn, spawnThing, newPawn.Position, true, duration, newPawn.Faction);
 
+                            if (polymorphedPawn == null) continue;
                             if (polymorphedPawn.Faction != this.CasterPawn.Faction && polymorphedPawn.mindState != null && Rand.Chance(Mathf.Clamp((.2f * this.pwrVal), 0f, .5f)))
                             {
                                 polymorphedPawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Berserk, "wild beast!", true, false, false, null, true);
@@ -159,8 +164,7 @@ namespace TorannMagic
                                         
                 }
             }
-            this.PostCastShot(flag, out flag);
-            return flag;
+            return attempted;
         }   
         
         private void GetPolyMinMax(Pawn pawn)

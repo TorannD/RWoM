@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_TomeRaidChoice>Invasores</TM_TomeRaidChoice>
+  <TM_TomeRiftChoice>Fenda elemental de uma onda</TM_TomeRiftChoice>
+  <TM_TomeRiftLocked>A ameaça é insuficiente ou não há uma facção elemental hostil</TM_TomeRiftLocked>
+  <TM_TomeRiftDescription>Uma fenda se abrirá perto de {0}. Após uma hora de jogo, sairão {1} guardiões elementais (cerca de {2} pontos de ameaça). A fenda se fechará. Repila o grupo em dois dias para receber {3}.</TM_TomeRiftDescription>
+</LanguageData>

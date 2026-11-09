@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-<!-- bard projectile -->
+
   
   <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
    <defName>TM_Projectile_Bard</defName>
@@ -18,10 +17,10 @@
 		<damageAmountBase>0</damageAmountBase>
 		<speed>999</speed>
    </projectile>
- </ThingDef>
+</ThingDef>
  
  
-<!-- Bard Training -->
+
  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_BardTraining</defName>
     <label>Bard Training</label>
@@ -66,9 +65,16 @@ Pain threshold -15%, carrying capacity -20, work speed -15%</description>
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_bardtraining</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
-  <!-- Entertain -->
+  
   <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_Entertain</defName>
     <label>Entertain</label>
@@ -106,9 +112,16 @@ Activating the ability casts a net over the colony and allows the bard to detect
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_entertain</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
-   <!-- Inspire -->
+   
   
   <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_Inspire</defName>
@@ -142,9 +155,16 @@ Activating the ability casts a net over the colony and allows the bard to detect
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_inspire</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
-   <!-- Lullaby -->
+   
    
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_Lullaby</defName>
@@ -189,7 +209,14 @@ Activating the ability casts a net over the colony and allows the bard to detect
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_lullaby</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_Lullaby_I</defName>
@@ -233,7 +260,14 @@ Activating the ability casts a net over the colony and allows the bard to detect
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_lullaby_i</spellId>
+<domain>Magic</domain>
+<tier>1</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_Lullaby_II</defName>
@@ -277,7 +311,14 @@ Activating the ability casts a net over the colony and allows the bard to detect
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_lullaby_ii</spellId>
+<domain>Magic</domain>
+<tier>2</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_Lullaby_III</defName>
@@ -321,9 +362,16 @@ Activating the ability casts a net over the colony and allows the bard to detect
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_lullaby_iii</spellId>
+<domain>Magic</domain>
+<tier>3</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
-     <!-- Battle Hymn -->
+     
 	 
  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_BattleHymn</defName>
@@ -363,6 +411,13 @@ Use the skill to activate or deactivate the ability.</description>
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_battlehymn</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	 
 </Defs>

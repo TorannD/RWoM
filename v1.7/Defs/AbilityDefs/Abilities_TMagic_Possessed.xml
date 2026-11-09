@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-<!-- Spirit Possession -->
+
 
   <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>TorannMagic.Projectile_SpiritPossession</thingClass>
@@ -19,7 +18,7 @@
             <damageAmountBase>0</damageAmountBase>
             <speed>999</speed>
         </projectile>
-    </ThingDef>
+</ThingDef>
 	
  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_SpiritPossession</defName>
@@ -35,7 +34,7 @@
 	<efficiencyReductionPercent>.15</efficiencyReductionPercent>
 	<canCopy>false</canCopy>
     <MainVerb Class="AbilityUser.VerbProperties_Ability">
-        <verbClass>TorannMagic.Verb_SB</verbClass>
+        <verbClass>TorannMagic.Verb_TargetSpiritHost</verbClass>
 			<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
 			<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
 			<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
@@ -57,9 +56,16 @@
 		  <canTargetLocations>true</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_spiritpossession</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
-  <!-- Spirit Drain -->
+  
  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_SpiritDrain</defName>
     <label>Spirit Drain</label>
@@ -96,9 +102,16 @@
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_spiritdrain</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
-  <!-- Distort Spirit -->
+  
   
   <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>TorannMagic.Projectile_DistortSpirit</thingClass>
@@ -117,7 +130,7 @@
 			<explosionRadius>6</explosionRadius>
 			<postExplosionSpawnChance>1</postExplosionSpawnChance>
         </projectile>
-    </ThingDef>
+</ThingDef>
 	
  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_DistortSpirit</defName>
@@ -158,7 +171,14 @@ Recharge: 60s</description>
 		  <canTargetLocations>true</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_distortspirit</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
   <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_DistortSpirit_I</defName>
@@ -200,7 +220,14 @@ Recharge: 45s</description>
 		  <canTargetLocations>true</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_distortspirit_i</spellId>
+<domain>Magic</domain>
+<tier>1</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
   <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_DistortSpirit_II</defName>
@@ -242,7 +269,14 @@ Recharge: 30s</description>
 		  <canTargetLocations>true</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_distortspirit_ii</spellId>
+<domain>Magic</domain>
+<tier>2</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
   <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_DistortSpirit_III</defName>
@@ -284,9 +318,16 @@ Recharge: 20s</description>
 		  <canTargetLocations>true</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_distortspirit_iii</spellId>
+<domain>Magic</domain>
+<tier>3</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
-  <!-- Summon Spirit Animal -->
+  
   
   <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>TorannMagic.Projectile_SummonSpiritAnimals</thingClass>
@@ -305,7 +346,7 @@ Recharge: 20s</description>
 			<explosionRadius>5</explosionRadius>
 			<postExplosionSpawnChance>1</postExplosionSpawnChance>
         </projectile>
-    </ThingDef>
+</ThingDef>
 	
  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_SummonSpiritAnimalMass</defName>
@@ -342,9 +383,16 @@ Recharge: 20s</description>
 		  <canTargetLocations>true</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_summonspiritanimalmass</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
-  <!-- Spirit Rally -->
+  
  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_SpiritRally</defName>
     <label>Spirit Rally (I)</label>
@@ -384,7 +432,14 @@ Cooldown: 45s</description>
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_spiritrally</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
   <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_SpiritRally_I</defName>
@@ -426,7 +481,14 @@ Cooldown: 30s</description>
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_spiritrally_i</spellId>
+<domain>Magic</domain>
+<tier>1</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
   <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_SpiritRally_II</defName>
@@ -468,7 +530,14 @@ Cooldown: 20s</description>
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_spiritrally_ii</spellId>
+<domain>Magic</domain>
+<tier>2</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
   <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_SpiritRally_III</defName>
@@ -510,9 +579,16 @@ Cooldown: 15s</description>
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_spiritrally_iii</spellId>
+<domain>Magic</domain>
+<tier>3</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
-  <!-- Spirit Storm -->
+  
   
   <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>AbilityUser.Projectile_Ability</thingClass>
@@ -531,7 +607,7 @@ Cooldown: 15s</description>
 			<explosionRadius>4</explosionRadius>
 			<postExplosionSpawnChance>1</postExplosionSpawnChance>
         </projectile>
-    </ThingDef>
+</ThingDef>
 	
 	<ThingDef ParentName="BaseBullet" Name="FlyingObject_SpiritStorm">
 	   <defName>FlyingObject_SpiritStorm</defName>
@@ -548,7 +624,7 @@ Cooldown: 15s</description>
 			<speed>8</speed>
 			<explosionRadius>4</explosionRadius>
 	   </projectile>
-	</ThingDef>
+</ThingDef>
 	
  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_SpiritStorm</defName>
@@ -562,13 +638,13 @@ Cooldown: 15s</description>
 	<learnChance>0</learnChance>
 	<efficiencyReductionPercent>.1</efficiencyReductionPercent>
 	<canCopy>false</canCopy>
-	<chainedAbility>TM_ControlSpiritStorm</chainedAbility>	<!--after spirit storm is used, adds storm control to allow the pawn to direct the storm -->
-	<chainedAbilityExpiresAfterTicks>600</chainedAbilityExpiresAfterTicks> <!-- alternate to 'cooldown' that manually determines duration ability is available -->
-																		   <!-- -1 is default and used to mark this field as unused; 60 ticks = 1 second -->
-	<chainedAbilityExpiresAfterCooldown>false</chainedAbilityExpiresAfterCooldown> <!-- chained ability not tied to cooldown -->
-	<removeAbilityAfterUse>false</removeAbilityAfterUse> 	<!-- ability can be used multiple times; default: false; can be set to true for single use abilities -->
-	<abilitiesRemovedWhenUsed>								<!-- removes all listed abilities when this ability is used -->
-	</abilitiesRemovedWhenUsed>								<!-- can be used to reset an ability chain or clear temporary abilities -->
+	<chainedAbility>TM_ControlSpiritStorm</chainedAbility>	
+	<chainedAbilityExpiresAfterTicks>600</chainedAbilityExpiresAfterTicks> 
+																		   
+	<chainedAbilityExpiresAfterCooldown>false</chainedAbilityExpiresAfterCooldown> 
+	<removeAbilityAfterUse>false</removeAbilityAfterUse> 	
+	<abilitiesRemovedWhenUsed>								
+	</abilitiesRemovedWhenUsed>								
 	<chainedAbilityTraitRequirements>
 		<li>TM_Possessed</li>
 		<li>TM_Possessor</li>
@@ -596,7 +672,14 @@ Cooldown: 15s</description>
 		  <canTargetLocations>true</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_spiritstorm</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
   <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_ControlSpiritStorm</defName>
@@ -634,6 +717,13 @@ Cooldown: 15s</description>
 		  <canTargetLocations>true</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_controlspiritstorm</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
 </Defs>

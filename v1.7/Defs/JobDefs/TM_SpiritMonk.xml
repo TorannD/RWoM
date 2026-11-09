@@ -1,0 +1,32 @@
+<Defs>
+  <JobDef>
+    <defName>TM_SpiritChiBurst</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>releasing a chi burst.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritDragonStrike</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>performing a dragon strike.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritTigerStrike</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritTigerStrike</driverClass>
+    <reportString>striking TargetB with tiger strikes.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritMonkMeridian</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_MonkMeridian</driverClass>
+    <reportString>channeling the silent meridian.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritPalmSeal</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>striking TargetB with a palm seal.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritMeditate</defName>
+    <driverClass>TorannMagic.JobDriver_Meditate</driverClass>
+    <reportString>meditating with the spirit's guidance.</reportString>
+  </JobDef>
+</Defs>

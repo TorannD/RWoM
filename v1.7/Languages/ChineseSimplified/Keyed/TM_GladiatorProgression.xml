@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_ReadGladiatorSprint>冲刺：持续加速，预留30耐力（冷却30秒） · 不可更改</TM_ReadGladiatorSprint>
+  <TM_ReadGladiatorManeuver>机动：移动速度提高8%，持续8秒，消耗12%耐力（冷却25秒） · 不可更改</TM_ReadGladiatorManeuver>
+  <TM_GladiatorReliefDrill>训练：从至少8格外赶到盟友身边</TM_GladiatorReliefDrill>
+  <TM_GladiatorDefenseChoice>选择防御技巧</TM_GladiatorDefenseChoice>
+  <TM_GladiatorChooseFortitude>坚韧：被动保护自身（永久选择）</TM_GladiatorChooseFortitude>
+  <TM_GladiatorChooseCover>掩护：6秒内为盟友承受最多20点射击伤害（永久选择）</TM_GladiatorChooseCover>
+  <TM_GladiatorUseCover>掩护盟友：消耗20%耐力，冷却30秒</TM_GladiatorUseCover>
+  <TM_GladiatorAttackChoice>选择近战技巧</TM_GladiatorAttackChoice>
+  <TM_GladiatorHoldDrill>坚守阵线：抵挡攻击或与盟友进行演练</TM_GladiatorHoldDrill>
+  <TM_GladiatorChooseCleave>顺劈：自动触发（永久选择）</TM_GladiatorChooseCleave>
+  <TM_GladiatorChooseSweep>横扫：手动攻击至多两个敌人（永久选择）</TM_GladiatorChooseSweep>
+  <TM_GladiatorLevelGate>飞升需要武技等级30。</TM_GladiatorLevelGate>
+  <TM_GladiatorEvacTrial>最终试炼：战斗中营救伤员，或完成撤离演练。</TM_GladiatorEvacTrial>
+  <TM_GladiatorUltimateChoice>选择终极技</TM_GladiatorUltimateChoice>
+  <TM_GladiatorPickWhirlwind>旋风：经典技巧（永久）</TM_GladiatorPickWhirlwind>
+  <TM_GladiatorPickLastCircle>最后防线：守住半径4格的区域20秒（永久）</TM_GladiatorPickLastCircle>
+  <TM_GladiatorCastCircle>最后防线：消耗60%耐力，准备5秒，冷却2天</TM_GladiatorCastCircle>
+  <TM_LastCircleDetails>需要近战武器。最近的四名盟友各可在20秒内吸收25点伤害。三次挥击每次最多命中三个敌人。移动速度降低30%。离开区域会结束架势。爆炸无视此防护。准备中断会消耗6%耐力，并锁定技巧6000刻。</TM_LastCircleDetails>
+</LanguageData>

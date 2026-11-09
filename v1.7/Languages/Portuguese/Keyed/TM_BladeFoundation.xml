@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_ReadBladeFocus>Estudar concentração da lâmina: melhor combate corpo a corpo, menor pontaria e velocidade de trabalho (permanente)</TM_ReadBladeFocus>
+  <TM_ReadBladeMemory>Estudar memória do gume: dano adicional ao mudar de inimigo (permanente)</TM_ReadBladeMemory>
+  <TM_BladeMemoryName>Memória do gume</TM_BladeMemoryName>
+  <TM_BladeMemoryTraining>Ao mudar para outro inimigo adjacente, o golpe com uma arma corpo a corpo causa mais 2% de dano principal. Cada grau acrescenta 2 pontos percentuais, até 10%. Ativa-se uma vez a cada 6 segundos.</TM_BladeMemoryTraining>
+</LanguageData>

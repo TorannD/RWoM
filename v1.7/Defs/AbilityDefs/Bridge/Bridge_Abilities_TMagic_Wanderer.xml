@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Wanderercraft</defName>
+    <label>The Wanderer</label>
+    <description>Increase attributes through hard work and creativity. See skills for more details.</description>
+    <spellId>rwom.tm_wanderercraft</spellId>
+    <iconPath>UI/wanderer</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SB</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_WandererCraft</abilityDef>
+      <isViolent>false</isViolent>
+      <defaultProjectile>Projectile_Default</defaultProjectile>
+      <warmupTime>0</warmupTime>
+      <SecondsToRecharge>10</SecondsToRecharge>
+      <range>0</range>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>0</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Cantrips</defName>
+    <label>Cantrips</label>
+    <description>Wandering mages do not have class specific abilities, instead, they excel at general spells or cantrips. 
+	
+Cantrips are discarded by most mages as mere conveniences which require no additional skill training, but the wanderer takes another approach. By investing time and effort into understanding cantrips, the wanderer is able to improve almost all general abilities in utility, power, and efficiency. 
+
+See skills for more details.</description>
+    <spellId>rwom.tm_cantrips</spellId>
+    <iconPath>UI/cantrips</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SB</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_Cantrips</abilityDef>
+      <isViolent>false</isViolent>
+      <defaultProjectile>Projectile_Default</defaultProjectile>
+      <warmupTime>0</warmupTime>
+      <SecondsToRecharge>60</SecondsToRecharge>
+      <range>0</range>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>30</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+</Defs>

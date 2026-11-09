@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_CoreReturnMark.label>метка возвращения</TM_CoreReturnMark.label>
+  <TM_CoreReturnMark.description>Привязка к магическому ядру. Возврат стоит 10 манатоплива; содержание — 1 манатопливо в сутки.</TM_CoreReturnMark.description>
+</LanguageData>

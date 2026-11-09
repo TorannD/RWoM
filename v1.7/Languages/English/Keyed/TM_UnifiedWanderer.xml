@@ -1,0 +1,8 @@
+<LanguageData>
+  <TM_ChooseUnifiedWanderer>Choose the Wanderer</TM_ChooseUnifiedWanderer>
+  <TM_ConfirmUnifiedWanderer>Become a warrior-mage and train both cantrips and field skills? This takes your class choice. No book is required.</TM_ConfirmUnifiedWanderer>
+  <TM_WandererSurvey>Survey a waypoint</TM_WandererSurvey>
+  <TM_WandererSurveyInfo>Survey a waypoint 12 cells away, then study any full class book. For mastery, travel 24 cells and study a master tome. Each survey costs 10% of each resource your path uses. Each book offers six skills. Choose two.</TM_WandererSurveyInfo>
+  <TM_WandererLessons>Choose a skill ({0} left)</TM_WandererLessons>
+  <TM_BestowRecipientUnavailable>{0} already has this gift or has chosen a class.</TM_BestowRecipientUnavailable>
+</LanguageData>

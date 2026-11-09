@@ -1,0 +1,10 @@
+﻿<LanguageData><!-- v1.7\Defs\SpecialThingFilterDefs\TM_UndeadCorpseFilter.xml-->
+	<!--           EN: allow undead corpses-->
+	<TM_AllowUndeadCorpse.label>разрешить трупы нежити</TM_AllowUndeadCorpse.label>
+	<!--                 EN: Allow corpses of pawns raised as undead by necromancers. Such corpses carry the "Undead" status, visible on the corpse's health tab; the colonist/stranger corpse toggles do not apply to them. When unchecked, undead corpses are excluded from hauling and butcher bills.-->
+	<TM_AllowUndeadCorpse.description>Разрешить трупы пешек, поднятых некромантами. У таких трупов на вкладке здоровья стоит пометка «Нежить»; флажки трупов поселенцев и чужаков на них не действуют. Если флажок снят, трупы нежити не переносятся на склады и не попадают в рецепты разделки.</TM_AllowUndeadCorpse.description>
+	<!--           EN: allow undead animal corpses-->
+	<TM_AllowUndeadAnimalCorpse.label>разрешить трупы нежити (животные)</TM_AllowUndeadAnimalCorpse.label>
+	<!--                 EN: Allow corpses of animals raised as undead by necromancers. Such corpses carry the "Undead" status, visible on the corpse's health tab. When unchecked, undead animal corpses are excluded from hauling and butcher bills.-->
+	<TM_AllowUndeadAnimalCorpse.description>Разрешить трупы животных, поднятых некромантами. У таких трупов на вкладке здоровья стоит пометка «Нежить». Если флажок снят, трупы нежити не переносятся на склады и не попадают в рецепты разделки.</TM_AllowUndeadAnimalCorpse.description>
+</LanguageData>

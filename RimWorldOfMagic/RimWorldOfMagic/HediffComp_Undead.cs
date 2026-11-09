@@ -46,6 +46,21 @@ namespace TorannMagic
         }
 
         public Pawn linkedPawn = null;
+        public override void Notify_Spawned()
+        {
+            base.Notify_Spawned();
+            ClassProgression.NecromancerControlTrial.ServantLifecycle(linkedPawn, Pawn, false);
+        }
+        public override void CompPostPostRemoved()
+        {
+            base.CompPostPostRemoved();
+            ClassProgression.NecromancerControlTrial.ServantLifecycle(linkedPawn, Pawn, true);
+        }
+        public override void Notify_PawnDied(DamageInfo? dinfo, Hediff culprit = null)
+        {
+            base.Notify_PawnDied(dinfo, culprit);
+            ClassProgression.NecromancerControlTrial.ServantLifecycle(linkedPawn, Pawn, true);
+        }
         private static readonly string[] nonStandardNeedsToAutoFulfill = new[] {
             "Mood",
             "Suppression",

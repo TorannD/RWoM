@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritBeginRitual>Перерождение {0} в Духа (300 магицита, 50 серебра, 4 часа)</TM_SpiritBeginRitual>
+  <TM_SpiritFinishRitual>Завершить прерванное перерождение {0}</TM_SpiritFinishRitual>
+  <TM_SpiritRitualUnreachable>Некроманту нужны доступные тело, большой круг, 300 магицита и 50 серебра.</TM_SpiritRitualUnreachable>
+  <TM_SpiritRitualUnsafeEffect>{0} — невозможно отделить от тела состояние «{1}»</TM_SpiritRitualUnsafeEffect>
+  <TM_GrimoireRebirthCircle>У большого магического круга можно заказать перерождение погибшего колониста-человека в Духа. Для ритуала нужны магицит ({0}) и серебро ({1}). Длительность — {2}.</TM_GrimoireRebirthCircle>
+  <TM_GrimoireSpiritStone>При истощении Дух возвращается в камень души. Используйте камень на живом носителе. Дух сможет добровольно выйти через {0} в этом теле. Потеря носителя обнуляет срок.</TM_GrimoireSpiritStone>
+  <TM_SpiritRitualRenounceNecromancy>{0} вернётся Духом и навсегда откажется от класса некроманта или лича и его заклинаний. Общий уровень, опыт, свободные очки и обычные навыки сохранятся. Начать ритуал?</TM_SpiritRitualRenounceNecromancy>
+</LanguageData>

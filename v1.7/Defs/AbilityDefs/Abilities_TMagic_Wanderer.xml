@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
+<?xml version="1.0" encoding="utf-8"?>
 <Defs> 
  
-  <!-- Wanderer -->
+  
   <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_WandererCraft</defName>
     <label>The Wanderer</label>
@@ -34,9 +33,16 @@
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_wanderercraft</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
-    <!-- Cantrips -->
+    
   <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_Cantrips</defName>
     <label>Cantrips</label>
@@ -72,6 +78,13 @@ See skills for more details.</description>
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_cantrips</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
 </Defs>

@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using Verse;
 
 namespace TorannMagic
@@ -8,10 +8,14 @@ namespace TorannMagic
         private bool initializing = true;
         private bool shouldRemove = false;
         public Pawn symbiosisHost = null;
+        internal int originalId;
+        internal Pawn SkillOwner => originalId == 0 ? Pawn :
+            ClassProgression.SpiritRebirthState.TryGetPossessingSpirit(Pawn,out var soul) && soul.thingIDNumber == originalId ? soul : null;
 
         public override void CompExposeData()
         {
             base.CompExposeData();
+            Scribe_Values.Look(ref originalId,"symbiosisOriginalId",0);
             Scribe_References.Look<Pawn>(ref this.symbiosisHost, "symbiosisHost");
         }
 
@@ -63,9 +67,12 @@ namespace TorannMagic
                 }
                 if(Find.TickManager.TicksGame % 200 == 0)
                 {
-                    if(symbiosisHost.DestroyedOrNull())
+                    var partner = symbiosisHost?.health?.hediffSet?.GetFirstHediffOfDef(TorannMagicDefOf.TM_SymbiosisHD)?.TryGetComp<HediffComp_SymbiosisHost>();
+                    if (SkillOwner == null || symbiosisHost.DestroyedOrNull() || partner?.symbiote != Pawn)
                     {
                         this.shouldRemove = true;
+                        RemoveHostHediff();
+                        return;
                     }
                     else if(symbiosisHost.Dead)
                     {
@@ -97,7 +104,7 @@ namespace TorannMagic
             if(this.symbiosisHost != null && this.symbiosisHost.health != null && this.symbiosisHost.health.hediffSet != null)
             {
                 Hediff hd = this.symbiosisHost.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_SymbiosisHD);
-                if(hd != null)
+                if(hd?.TryGetComp<HediffComp_SymbiosisHost>()?.symbiote == Pawn)
                 {
                     this.symbiosisHost.health.RemoveHediff(hd);
                 }

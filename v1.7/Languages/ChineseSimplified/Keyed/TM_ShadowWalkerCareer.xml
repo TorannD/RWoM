@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ReadShadowWalkerStrike>伏击者：初始习得暗影突袭。</TM_ReadShadowWalkerStrike>
+  <TM_ReadShadowWalkerPoison>施毒者：初始习得夜影毒。</TM_ReadShadowWalkerPoison>
+  <TM_ShadowWalkerHits>用已学招式打击或毒伤不同的敌人：{0}/{1}。</TM_ShadowWalkerHits>
+  <TM_ShadowWalkerCombo>突袭已中毒的敌人，或在隐身时施展招式：{0}/{1}名不同敌人。</TM_ShadowWalkerCombo>
+  <TM_ShadowWalkerStrongStrike>致命暗影：暗影突袭的伤害提高20%。</TM_ShadowWalkerStrongStrike>
+  <TM_ShadowWalkerLongVeil>长久帷幕：暗影帷幕持续时间延长50%。</TM_ShadowWalkerLongVeil>
+</LanguageData>

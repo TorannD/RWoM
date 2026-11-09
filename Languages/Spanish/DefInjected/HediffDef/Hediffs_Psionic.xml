@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_PsionicHD.label>Energía psiónica</TM_PsionicHD.label>
+  
+  <TM_PsionicHD.description>Representa la energía única de un psiónico.</TM_PsionicHD.description>
+  
+  
+  <TM_PsionicInjuryHD.label>Psiónico</TM_PsionicInjuryHD.label>
+  
+  <TM_PsionicInjuryHD.description>Herida causada por poder psiónico.</TM_PsionicInjuryHD.description>
+  
+  <TM_PsionicInjuryHD.comps.HediffComp_TendDuration.labelSolidTendedWell>entablillada</TM_PsionicInjuryHD.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  
+  <TM_PsionicInjuryHD.comps.HediffComp_TendDuration.labelTendedWell>vendada</TM_PsionicInjuryHD.comps.HediffComp_TendDuration.labelTendedWell>
+  
+  <TM_PsionicInjuryHD.comps.HediffComp_TendDuration.labelTendedWellInner>suturada</TM_PsionicInjuryHD.comps.HediffComp_TendDuration.labelTendedWellInner>
+  
+  <TM_PsionicInjuryHD.comps.HediffComp_GetsPermanent.permanentLabel>destruida por poder psiónico</TM_PsionicInjuryHD.comps.HediffComp_GetsPermanent.permanentLabel>
+  
+  <TM_PsionicInjuryHD.injuryProps.destroyedLabel>volado</TM_PsionicInjuryHD.injuryProps.destroyedLabel>
+  
+  <TM_PsionicInjuryHD.injuryProps.destroyedOutLabel>volado</TM_PsionicInjuryHD.injuryProps.destroyedOutLabel>
+  
+  <TM_PsionicInjuryHD.labelNounPretty>{0} en {1}</TM_PsionicInjuryHD.labelNounPretty>
+  
+  
+  <TM_PsionicManipulationHD.label>manipulación psiónica</TM_PsionicManipulationHD.label>
+  
+  <TM_PsionicManipulationHD.description>Destreza mejorada mediante aumento psiónico.</TM_PsionicManipulationHD.description>
+  
+  <TM_PsionicManipulationHD.stages.I.label>I</TM_PsionicManipulationHD.stages.I.label>
+  
+  
+  <TM_PsionicManipulationHD_I.label>manipulación psiónica</TM_PsionicManipulationHD_I.label>
+  
+  <TM_PsionicManipulationHD_I.description>Destreza mejorada mediante aumento psiónico.</TM_PsionicManipulationHD_I.description>
+  
+  <TM_PsionicManipulationHD_I.stages.II.label>II</TM_PsionicManipulationHD_I.stages.II.label>
+  
+  
+  <TM_PsionicManipulationHD_II.label>manipulación psiónica</TM_PsionicManipulationHD_II.label>
+  
+  <TM_PsionicManipulationHD_II.description>Destreza mejorada mediante aumento psiónico.</TM_PsionicManipulationHD_II.description>
+  
+  <TM_PsionicManipulationHD_II.stages.III.label>III</TM_PsionicManipulationHD_II.stages.III.label>
+  
+  
+  <TM_PsionicManipulationHD_III.label>manipulación psiónica</TM_PsionicManipulationHD_III.label>
+  
+  <TM_PsionicManipulationHD_III.description>Destreza mejorada mediante aumento psiónico.</TM_PsionicManipulationHD_III.description>
+  
+  <TM_PsionicManipulationHD_III.stages.IV.label>IV</TM_PsionicManipulationHD_III.stages.IV.label>
+  
+  
+  <TM_PsionicSpeedHD.label>velocidad psiónica</TM_PsionicSpeedHD.label>
+  
+  <TM_PsionicSpeedHD.description>Velocidad mejorada mediante aumento psiónico.</TM_PsionicSpeedHD.description>
+  
+  <TM_PsionicSpeedHD.stages.I.label>I</TM_PsionicSpeedHD.stages.I.label>
+  
+  
+  <TM_PsionicSpeedHD_I.label>velocidad psiónica</TM_PsionicSpeedHD_I.label>
+  
+  <TM_PsionicSpeedHD_I.description>Velocidad mejorada mediante aumento psiónico.</TM_PsionicSpeedHD_I.description>
+  
+  <TM_PsionicSpeedHD_I.stages.II.label>II</TM_PsionicSpeedHD_I.stages.II.label>
+  
+  
+  <TM_PsionicSpeedHD_II.label>velocidad psiónica</TM_PsionicSpeedHD_II.label>
+  
+  <TM_PsionicSpeedHD_II.description>Velocidad mejorada mediante aumento psiónico.</TM_PsionicSpeedHD_II.description>
+  
+  <TM_PsionicSpeedHD_II.stages.III.label>III</TM_PsionicSpeedHD_II.stages.III.label>
+  
+  
+  <TM_PsionicSpeedHD_III.label>velocidad psiónica</TM_PsionicSpeedHD_III.label>
+  
+  <TM_PsionicSpeedHD_III.description>Velocidad mejorada mediante aumento psiónico.</TM_PsionicSpeedHD_III.description>
+  
+  <TM_PsionicSpeedHD_III.stages.IV.label>IV</TM_PsionicSpeedHD_III.stages.IV.label>
+  
+</LanguageData>

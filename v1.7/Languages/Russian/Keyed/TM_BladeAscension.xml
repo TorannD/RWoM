@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_BladeAscensionProgress>Уровень воина: {0}/30 · Боевые маршруты: {1}/6 · Доставки лекарств: {2}/10</TM_BladeAscensionProgress>
+  <TM_BladeRouteHint>Попадите «Проходом» по одному врагу, затем в течение десяти секунд нанесите урон другому врагу обычной атакой ближнего боя.</TM_BladeRouteHint>
+  <TM_BladeSupplyHint>Включите работу врача. Пешка должна принести лекарство с расстояния от шести клеток и использовать его для лечения союзника на больничной кровати колонии. Засчитывается фактический расход лекарства, один раз в сутки.</TM_BladeSupplyHint>
+  <TM_BladeAscend>Выбрать технику Вознесения</TM_BladeAscend>
+  <TM_BladeUltimateOption>{0} (окончательный выбор)</TM_BladeUltimateOption>
+  <TM_BladeUltimateLearned>Техника Вознесения: «{0}»</TM_BladeUltimateLearned>
+  <TM_BladeFormUnavailable>Нужны «Форма семи шагов», оружие ближнего боя, 60% выносливости и завершённая перезарядка.</TM_BladeFormUnavailable>
+</LanguageData>

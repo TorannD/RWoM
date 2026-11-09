@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_TomeRaidChoice>Отряд налётчиков</TM_TomeRaidChoice>
+  <TM_TomeRiftChoice>Конечный разлом элементалей</TM_TomeRiftChoice>
+  <TM_TomeRiftLocked>Для разлома недостаточно угрозы или отсутствует враждебная фракция элементалей</TM_TomeRiftLocked>
+  <TM_TomeRiftDescription>Рядом с {0} откроется разлом. Через один игровой час из него выйдут стражи-элементали: {1} (около {2} очков угрозы). После этого разлом закроется. Отразите эту группу за двое суток, чтобы получить {3}.</TM_TomeRiftDescription>
+</LanguageData>

@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Bladefocus</defName>
+    <label>Blade training</label>
+    <description>Training that improves technique and skill with melee weapons and raises the status of the bladedancer. Each level will change the trait of the bladedancer to reflect their skill level.
+
+Ranks:
+Bladesman: Speed +0.15c/s, MBT -3%, Hit chance +3%, Dodge +5%, Shooting Acc. -20%, Global Workspeed -10%
+Blademaster: Speed +0.2c/s, MBT -5%, Hit chance +6%, Dodge +10%, Shooting Acc. -25%, Global Workspeed -8%
+Bladedancer: Speed +0.3c/s, MBT -8%, Hit chance +10%, Dodge +15%, Shooting Acc. -28%, Global Workspeed -6%, Pain threshold +5%
+Legendary Bladedancer: Speed +0.4c/s, MBT -10%, Hit chance +15%, Dodge +20%, Shooting Acc. -30%, Global Workspeed -5%, Pain threshold +10%</description>
+    <spellId>rwom.tm_bladefocus</spellId>
+    <iconPath>UI/bladeart</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_BladeFocus</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_BladeFocus</abilityDef>
+      <isViolent>false</isViolent>
+      <defaultProjectile>Projectile_BladeFocus</defaultProjectile>
+      <warmupTime>0.1</warmupTime>
+      <SecondsToRecharge>10.0</SecondsToRecharge>
+      <range>0</range>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>10</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Bladeart</defName>
+    <label>Body Training</label>
+    <description>Training that enhances physical capabilities.
+
+Level 0: Moving +10%, Manipulation +10%
+Level 1: Moving +15%, Manipulation +15%
+Level 2: Moving +20%, Manipulation +20%, Breathing +10%
+Level 3: Moving +25%, Manipulation +25%, Breathing +15%, Blood pumping +10%, Blood filtration +10%</description>
+    <spellId>rwom.tm_bladeart</spellId>
+    <iconPath>UI/bodytraining</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_BladeArt</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_BladeArt</abilityDef>
+      <isViolent>false</isViolent>
+      <defaultProjectile>Projectile_BladeArt</defaultProjectile>
+      <warmupTime>0.1</warmupTime>
+      <SecondsToRecharge>60</SecondsToRecharge>
+      <range>0</range>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Bladespin</defName>
+    <label>Blade Spin</label>
+    <description>The blademaster seems to blur for a split second, striking all nearby targets in a flurry of steel.</description>
+    <spellId>rwom.tm_bladespin</spellId>
+    <iconPath>UI/bladespin</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_BladeSpin</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_BladeSpin</defaultProjectile>
+      <abilityDef>TM_BladeSpin</abilityDef>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+      <warmupTime>0.0</warmupTime>
+      <SecondsToRecharge>30.0</SecondsToRecharge>
+      <range>0</range>
+      <isViolent>true</isViolent>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <soundCast>MeleeHit_Metal_Sharp</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Seismicslash</defName>
+    <label>Seismic Slash</label>
+    <description>Harnessing the emotionless soul of the blade, the bladedancer unleashes a strike that rends the fabric of space along a line.</description>
+    <spellId>rwom.tm_seismicslash</spellId>
+    <iconPath>UI/seismicslash</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SeismicSlash</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_SeismicSlash</defaultProjectile>
+      <abilityDef>TM_SeismicSlash</abilityDef>
+      <AbilityTargetCategory>TargetLocation</AbilityTargetCategory>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetSelf>false</canTargetSelf>
+      </targetParams>
+      <warmupTime>0.3</warmupTime>
+      <SecondsToRecharge>30.0</SecondsToRecharge>
+      <range>12</range>
+      <isViolent>true</isViolent>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <soundCast>MeleeHit_Metal_Sharp</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Phasestrike</defName>
+    <label>Phase Strike</label>
+    <description>Melds the bladedancer's razor focus with the edge of a blade to slip between reality, appearing at a chosen location to execute a vicious strike on unsuspecting enemies.
+
+Warmup: .3s
+Cooldown: 25s
+Range: 30</description>
+    <spellId>rwom.tm_phasestrike</spellId>
+    <iconPath>UI/phased</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_PhaseStrike</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <requiresLineOfSight>false</requiresLineOfSight>
+      <defaultProjectile>Projectile_PhaseStrike</defaultProjectile>
+      <abilityDef>TM_PhaseStrike</abilityDef>
+      <AbilityTargetCategory>TargetLocation</AbilityTargetCategory>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetSelf>false</canTargetSelf>
+      </targetParams>
+      <warmupTime>0.3</warmupTime>
+      <SecondsToRecharge>25.0</SecondsToRecharge>
+      <range>30</range>
+      <isViolent>true</isViolent>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <soundCast>MeleeHit_Metal_Sharp</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_PhasestrikeI</defName>
+    <label>Phase Strike (I)</label>
+    <description>Melds the bladedancer's razor focus with the edge of a blade to slip between reality, appearing at a chosen location to execute a vicious strike on unsuspecting enemies.
+	
+Warmup: .2s
+Cooldown: 23s
+Range: 35</description>
+    <spellId>rwom.tm_phasestrike_i</spellId>
+    <iconPath>UI/phased</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_PhaseStrike</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <requiresLineOfSight>false</requiresLineOfSight>
+      <defaultProjectile>Projectile_PhaseStrike</defaultProjectile>
+      <AbilityTargetCategory>TargetLocation</AbilityTargetCategory>
+      <abilityDef>TM_PhaseStrike_I</abilityDef>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetSelf>false</canTargetSelf>
+      </targetParams>
+      <warmupTime>0.2</warmupTime>
+      <SecondsToRecharge>23.0</SecondsToRecharge>
+      <range>35</range>
+      <isViolent>true</isViolent>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <soundCast>MeleeHit_Metal_Sharp</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_PhasestrikeII</defName>
+    <label>Phase Strike (II)</label>
+    <description>Melds the bladedancer's razor focus with the edge of a blade to slip between reality, appearing at a chosen location to execute a vicious strike on unsuspecting enemies.
+		
+Warmup: .1s
+Cooldown: 21s
+Range: 40</description>
+    <spellId>rwom.tm_phasestrike_ii</spellId>
+    <iconPath>UI/phased</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_PhaseStrike</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <requiresLineOfSight>false</requiresLineOfSight>
+      <defaultProjectile>Projectile_PhaseStrike</defaultProjectile>
+      <AbilityTargetCategory>TargetLocation</AbilityTargetCategory>
+      <abilityDef>TM_PhaseStrike_II</abilityDef>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetSelf>false</canTargetSelf>
+      </targetParams>
+      <warmupTime>0.1</warmupTime>
+      <SecondsToRecharge>21.0</SecondsToRecharge>
+      <range>40</range>
+      <isViolent>true</isViolent>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <soundCast>MeleeHit_Metal_Sharp</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_PhasestrikeIII</defName>
+    <label>Phase Strike (III)</label>
+    <description>Melds the bladedancer's razor focus with the edge of a blade to slip between reality, appearing at a chosen location to execute a vicious strike on unsuspecting enemies.
+
+Warmup: 0s
+Cooldown: 20s
+Range: 45</description>
+    <spellId>rwom.tm_phasestrike_iii</spellId>
+    <iconPath>UI/phased</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_PhaseStrike</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <requiresLineOfSight>false</requiresLineOfSight>
+      <defaultProjectile>Projectile_PhaseStrike</defaultProjectile>
+      <AbilityTargetCategory>TargetLocation</AbilityTargetCategory>
+      <abilityDef>TM_PhaseStrike_III</abilityDef>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetSelf>false</canTargetSelf>
+      </targetParams>
+      <warmupTime>0.0</warmupTime>
+      <SecondsToRecharge>20.0</SecondsToRecharge>
+      <range>45</range>
+      <isViolent>true</isViolent>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <soundCast>MeleeHit_Metal_Sharp</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+    </verbProperties>
+  </AbilityDef>
+</Defs>

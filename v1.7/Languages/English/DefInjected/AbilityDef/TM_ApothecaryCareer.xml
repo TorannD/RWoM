@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_Bridge_ApothecaryAntitoxin.label>Antitoxin</TM_Bridge_ApothecaryAntitoxin.label>
+  <TM_Bridge_ApothecaryGoldenHour.label>Golden Hour kit</TM_Bridge_ApothecaryGoldenHour.label>
+  <TM_Bridge_ApothecaryAntitoxin.description>Reduce food poisoning by 20% on contact. Once per illness. Costs 20% of maximum herbs. Cooldown 40 seconds.</TM_Bridge_ApothecaryAntitoxin.description>
+  <TM_Bridge_ApothecaryGoldenHour.description>Stand still and treat up to four allies within eight cells for 20 seconds. Heal up to 20 points of recent wounds per ally and halve bleeding. Costs 60% herbs and four herbal medicines carried or within reach. Cooldown two days.</TM_Bridge_ApothecaryGoldenHour.description>
+</LanguageData>

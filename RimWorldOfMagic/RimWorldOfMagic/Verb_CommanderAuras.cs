@@ -11,6 +11,15 @@ namespace TorannMagic
 {
     public class Verb_CommanderAuras : Verb_UseAbility
     {
+        internal const string ProvisionerOrder="TM_SpiritCommanderProvisionerAura", TaskMasterOrder="TM_SpiritCommanderTaskMasterAura", CommanderOrder="TM_SpiritCommanderCommanderAura";
+        internal static TMAbilityDef Definition(string job) => job==ProvisionerOrder ? TorannMagicDefOf.TM_ProvisionerAura :
+            job==TaskMasterOrder ? TorannMagicDefOf.TM_TaskMasterAura : job==CommanderOrder ? TorannMagicDefOf.TM_CommanderAura : null;
+        internal static bool Handles(string job) => job==ProvisionerOrder || job==TaskMasterOrder || job==CommanderOrder;
+        internal static bool CastFromHost(Pawn body,MightAbility ability)
+        {
+            if (ability==null || ClassProgression.SpiritHostedCommander.AuraEmitter(ability.Pawn)!=body) return false;
+            return new Verb_CommanderAuras{caster=ability.Pawn,Ability=ability,verbProps=ability.Def.MainVerb}.TryCastShot();
+        }
         protected override bool TryCastShot()
         {
             bool removedAura = RemoveAura();

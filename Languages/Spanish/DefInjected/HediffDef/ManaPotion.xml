@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <ManaPotionAddiction.label>adicción a la poción de maná</ManaPotionAddiction.label>
+  
+  <ManaPotionAddiction.description>El impulso de consumir pociones de maná se ha convertido en una necesidad.</ManaPotionAddiction.description>
+  
+  <ManaPotionAddiction.stages.withdrawal.label>abstinencia</ManaPotionAddiction.stages.withdrawal.label>
+  
+  
+  <ManaPotionHigh.label>euforia arcana</ManaPotionHigh.label>
+  
+  <ManaPotionHigh.description>La consciencia se eleva al consumir maná líquido.</ManaPotionHigh.description>
+  
+  
+  <ManaPotionTolerance.label>tolerancia a la poción de maná</ManaPotionTolerance.label>
+  
+  <ManaPotionTolerance.description>Ajuste natural para normalizar los efectos de consumir maná líquido.</ManaPotionTolerance.description>
+  
+  <ManaPotionTolerance.stages.small.label>pequeña</ManaPotionTolerance.stages.small.label>
+  
+  <ManaPotionTolerance.stages.large.label>grande</ManaPotionTolerance.stages.large.label>
+  
+  <ManaPotionTolerance.stages.massive.label>severa</ManaPotionTolerance.stages.massive.label>
+
+  
+</LanguageData>

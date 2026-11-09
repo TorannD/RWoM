@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_CommanderTD.stages.Charismatic_pawn.label>peón carismático</TM_CommanderTD.stages.Charismatic_pawn.label>
+  
+  <TM_CommanderTD.stages.Charismatic_pawn.description>¡Me siento cargado de emoción! No sé muy bien por qué, pero seguro que pasan cosas buenas cerca de un comandante tan carismático.</TM_CommanderTD.stages.Charismatic_pawn.description>
+  
+  
+  <TM_CommanderTD_I.stages.Charismatic_commander.label>comandante carismático</TM_CommanderTD_I.stages.Charismatic_commander.label>
+  
+  <TM_CommanderTD_I.stages.Charismatic_commander.description>¡Me siento cargado de emoción! Seguro que pasan cosas buenas cerca de un comandante tan carismático, aunque no está del todo claro cómo.</TM_CommanderTD_I.stages.Charismatic_commander.description>
+  
+  
+  <TM_CommanderTD_II.stages.Charismatic_leader.label>líder carismático</TM_CommanderTD_II.stages.Charismatic_leader.label>
+  
+  <TM_CommanderTD_II.stages.Charismatic_leader.description>¡Me siento cargado de emoción! Seguro que pasan cosas buenas cerca de un líder tan carismático.</TM_CommanderTD_II.stages.Charismatic_leader.description>
+  
+  
+  <TM_CommanderTD_III.stages.Charismatic_visionary.label>visionario carismático</TM_CommanderTD_III.stages.Charismatic_visionary.label>
+  
+  <TM_CommanderTD_III.stages.Charismatic_visionary.description>¡Me siento cargado de emoción! Seguro que pasan cosas buenas cerca de un visionario tan carismático.</TM_CommanderTD_III.stages.Charismatic_visionary.description>
+  
+  
+  <TM_TaskMasterTD.stages.Task_master.label>capataz</TM_TaskMasterTD.stages.Task_master.label>
+  
+  <TM_TaskMasterTD.stages.Task_master.description>Cada aspecto de mi vida está controlado al detalle; apenas tengo tiempo para comer algo decente.</TM_TaskMasterTD.stages.Task_master.description>
+  
+</LanguageData>

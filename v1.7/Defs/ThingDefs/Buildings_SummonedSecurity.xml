@@ -797,6 +797,7 @@ Due to its weight, the Mark-IV cannot be moved while deployed.</description>
     </statBases>
     <tickerType>Normal</tickerType>
     <comps>
+      <li Class="TorannMagic.CompProperties_MarkIVStats" />
 	  <!-- <li Class="CompProperties_Mannable">
         <manWorkType>Violent</manWorkType>
       </li> -->
@@ -893,6 +894,7 @@ Due to its weight, the Mark-IV cannot be moved while deployed.</description>
     <tradeability>None</tradeability>
     <destroyOnDrop>true</destroyOnDrop>
 	<useHitPoints>false</useHitPoints>
+    <comps><li Class="TorannMagic.CompProperties_MarkIVStats" /></comps>
     <statBases>
       <AccuracyTouch>0.80</AccuracyTouch>
       <AccuracyShort>0.75</AccuracyShort>

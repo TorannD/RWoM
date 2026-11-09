@@ -1,0 +1,10 @@
+<LanguageData>
+  <TM_SpiritCommanderCrew.reportString>coordinando un equipo de trabajo.</TM_SpiritCommanderCrew.reportString>
+  <TM_SpiritCommanderRally.reportString>reagrupando a los aliados.</TM_SpiritCommanderRally.reportString>
+  <TM_SpiritCommanderMove.reportString>ordenando a los aliados avanzar.</TM_SpiritCommanderMove.reportString>
+  <TM_SpiritCommanderAlert.reportString>ordenando a los aliados mantenerse alerta.</TM_SpiritCommanderAlert.reportString>
+  <TM_SpiritCommanderHold.reportString>ordenando a los aliados mantener la posición.</TM_SpiritCommanderHold.reportString>
+  <TM_SpiritCommanderProvisionerAura.reportString>ajustando un aura de mando.</TM_SpiritCommanderProvisionerAura.reportString>
+  <TM_SpiritCommanderTaskMasterAura.reportString>ajustando un aura de mando.</TM_SpiritCommanderTaskMasterAura.reportString>
+  <TM_SpiritCommanderCommanderAura.reportString>ajustando un aura de mando.</TM_SpiritCommanderCommanderAura.reportString>
+</LanguageData>

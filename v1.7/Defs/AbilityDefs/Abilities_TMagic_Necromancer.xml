@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	
-	<!-- Raise Undead  -->	
+		
     <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>TorannMagic.Projectile_RaiseUndead</thingClass>
 	    <defName>Projectile_RaiseUndead</defName>
@@ -20,7 +19,7 @@
 			<explosionRadius>4</explosionRadius>
 			<postExplosionSpawnChance>1</postExplosionSpawnChance>
         </projectile>
-    </ThingDef>
+</ThingDef>
 
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_RaiseUndead</defName>
@@ -61,7 +60,14 @@ There is no limit to the number of undead a necromancer may control, however, wh
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_raiseundead</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
    <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_DismissUndead</defName>
@@ -104,11 +110,18 @@ There is no limit to the number of undead a necromancer may control, however, wh
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
     </MainVerb>
- </TorannMagic.TMAbilityDef>
+ <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_dismissundead</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
-    <!-- raise undead end-->
+    
 	
-		<!-- death mark  -->	
+			
     <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>AbilityUser.Projectile_AbilityBase</thingClass>
 	    <defName>Projectile_DeathMark</defName>
@@ -124,7 +137,7 @@ There is no limit to the number of undead a necromancer may control, however, wh
             <damageAmountBase>0</damageAmountBase>
             <speed>999</speed>
         </projectile>
-    </ThingDef>
+</ThingDef>
 
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_DeathMark</defName>
@@ -175,7 +188,14 @@ Range: 34</description>
                 <range>3</range>
             </TargetAoEProperties>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_deathmark</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_DeathMark_I</defName>
@@ -226,7 +246,14 @@ Range: 38</description>
             </TargetAoEProperties>
 
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_deathmark_i</spellId>
+<domain>Magic</domain>
+<tier>1</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_DeathMark_II</defName>
@@ -276,7 +303,14 @@ Range: 42</description>
                 <range>5</range>
             </TargetAoEProperties>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_deathmark_ii</spellId>
+<domain>Magic</domain>
+<tier>2</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_DeathMark_III</defName>
@@ -326,11 +360,18 @@ Range: 46</description>
                 <range>5</range>
             </TargetAoEProperties>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_deathmark_iii</spellId>
+<domain>Magic</domain>
+<tier>3</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
-    <!-- death mark end-->
+    
 	
-		<!-- fog of torment -->	
+			
     <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>TorannMagic.Projectile_FogOfTorment</thingClass>
 	    <defName>Projectile_FogOfTorment</defName>
@@ -348,7 +389,7 @@ Range: 46</description>
 			<explosionRadius>6</explosionRadius>
 			<postExplosionSpawnChance>1</postExplosionSpawnChance>
         </projectile>
-    </ThingDef>
+</ThingDef>
 
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_FogOfTorment</defName>
@@ -385,11 +426,18 @@ Range: 46</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_fogoftorment</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
-    <!-- fog of torment end-->
+    
 	
-		<!--consume corpse  -->	
+			
     <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>AbilityUser.Projectile_AbilityBase</thingClass>
 	    <defName>Projectile_ConsumeCorpse</defName>
@@ -405,7 +453,7 @@ Range: 46</description>
             <damageAmountBase>0</damageAmountBase>
             <speed>999</speed>
         </projectile>
-    </ThingDef>
+</ThingDef>
 
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_ConsumeCorpse</defName>
@@ -445,7 +493,14 @@ Cast Time: 2s</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_consumecorpse</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_ConsumeCorpse_I</defName>
@@ -485,7 +540,14 @@ Cast Time: 1.8s</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_consumecorpse_i</spellId>
+<domain>Magic</domain>
+<tier>1</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_ConsumeCorpse_II</defName>
@@ -525,7 +587,14 @@ Cast Time: 1.5s</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_consumecorpse_ii</spellId>
+<domain>Magic</domain>
+<tier>2</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_ConsumeCorpse_III</defName>
@@ -565,7 +634,14 @@ Cast Time: 1.2s</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_consumecorpse_iii</spellId>
+<domain>Magic</domain>
+<tier>3</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>AbilityUser.Projectile_AbilityBase</thingClass>
@@ -584,7 +660,7 @@ Cast Time: 1.2s</description>
 			<postExplosionSpawnChance>1</postExplosionSpawnChance>
             <speed>999</speed>
         </projectile>
-    </ThingDef>
+</ThingDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_ConsumeCorpse_Mass</defName>
@@ -621,11 +697,18 @@ Cast Time: 1.2s</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_consumecorpse_mass</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
-    <!-- consume corpse end-->
+    
 	
-		<!-- corpse explosion -->	
+			
     <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>TorannMagic.Projectile_CorpseExplosion</thingClass>
 	    <defName>Projectile_CorpseExplosion</defName>
@@ -641,7 +724,7 @@ Cast Time: 1.2s</description>
             <damageAmountBase>0</damageAmountBase>
             <speed>999</speed>
         </projectile>
-    </ThingDef>
+</ThingDef>
 
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_CorpseExplosion</defName>
@@ -684,7 +767,14 @@ Cast time: 2s</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_corpseexplosion</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_CorpseExplosion_I</defName>
@@ -726,7 +816,14 @@ Cast time: 1.5s</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_corpseexplosion_i</spellId>
+<domain>Magic</domain>
+<tier>1</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_CorpseExplosion_II</defName>
@@ -768,7 +865,14 @@ Cast time: 1s</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_corpseexplosion_ii</spellId>
+<domain>Magic</domain>
+<tier>2</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_CorpseExplosion_III</defName>
@@ -810,11 +914,18 @@ Cast time: .5s</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_corpseexplosion_iii</spellId>
+<domain>Magic</domain>
+<tier>3</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
-    <!-- corpse explosion end-->
+    
 	
-	<!-- Lich Form -->
+	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_LichForm</defName>
         <label>Lich Form</label>
@@ -863,12 +974,19 @@ Movement speed: -2.0 c/s</description>
                 <canTargetLocations>false</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_lichform</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	
-    <!-- Death Bolt-->	
+    	
     <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
-		<thingClass>AbilityUser.Projectile_Ability</thingClass>
+		<thingClass>TorannMagic.ClassProgression.Projectile_HostedDeathBolt</thingClass>
 	    <defName>Projectile_DeathBolt</defName>
         <label>deathbolt</label>
         <graphicData>
@@ -883,10 +1001,10 @@ Movement speed: -2.0 c/s</description>
 			<explosionRadius>1.4</explosionRadius>
 			<postExplosionSpawnChance>1</postExplosionSpawnChance>
         </projectile>
-    </ThingDef>
+</ThingDef>
 	
 	<ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
-		<thingClass>AbilityUser.Projectile_Ability</thingClass>
+		<thingClass>TorannMagic.ClassProgression.Projectile_HostedDeathBolt</thingClass>
 	    <defName>Projectile_DeathBolt_I</defName>
         <label>deathbolt</label>
         <graphicData>
@@ -901,10 +1019,10 @@ Movement speed: -2.0 c/s</description>
 			<explosionRadius>2</explosionRadius>
 			<postExplosionSpawnChance>1</postExplosionSpawnChance>
         </projectile>
-    </ThingDef>
+</ThingDef>
 	
 	<ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
-		<thingClass>AbilityUser.Projectile_Ability</thingClass>
+		<thingClass>TorannMagic.ClassProgression.Projectile_HostedDeathBolt</thingClass>
 	    <defName>Projectile_DeathBolt_II</defName>
         <label>deathbolt</label>
         <graphicData>
@@ -919,10 +1037,10 @@ Movement speed: -2.0 c/s</description>
 			<explosionRadius>2</explosionRadius>
 			<postExplosionSpawnChance>1</postExplosionSpawnChance>
         </projectile>
-    </ThingDef>
+</ThingDef>
 	
 	<ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
-		<thingClass>AbilityUser.Projectile_Ability</thingClass>
+		<thingClass>TorannMagic.ClassProgression.Projectile_HostedDeathBolt</thingClass>
 	    <defName>Projectile_DeathBolt_III</defName>
         <label>deathbolt</label>
         <graphicData>
@@ -937,7 +1055,7 @@ Movement speed: -2.0 c/s</description>
 			<explosionRadius>2.4</explosionRadius>
 			<postExplosionSpawnChance>1</postExplosionSpawnChance>
         </projectile>
-    </ThingDef>	
+</ThingDef>	
 	
 	<ThingDef ParentName="BaseBullet" Name="FlyingObject_DeathBolt">
 	   <defName>FlyingObject_DeathBolt</defName>
@@ -955,7 +1073,7 @@ Movement speed: -2.0 c/s</description>
 			<explosionRadius>1.4</explosionRadius>
 			<postExplosionSpawnChance>1</postExplosionSpawnChance>
 	   </projectile>
-	</ThingDef>
+</ThingDef>
 
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_DeathBolt</defName>
@@ -998,7 +1116,14 @@ Range: 40</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_deathbolt</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_DeathBolt_I</defName>
@@ -1041,7 +1166,14 @@ Range 40</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_deathbolt_i</spellId>
+<domain>Magic</domain>
+<tier>1</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	    <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_DeathBolt_II</defName>
@@ -1084,7 +1216,14 @@ Range 40</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_deathbolt_ii</spellId>
+<domain>Magic</domain>
+<tier>2</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	    <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_DeathBolt_III</defName>
@@ -1127,8 +1266,15 @@ Range: 50</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_deathbolt_iii</spellId>
+<domain>Magic</domain>
+<tier>3</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
-    <!-- deathbolt end-->
+    
 
 </Defs>

@@ -1,0 +1,42 @@
+<Defs>
+  <JobDef>
+    <defName>TM_SpiritCommanderCrew</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>coordinating a work crew.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCommanderRally</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>rallying allies.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCommanderMove</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>ordering allies to move out.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCommanderAlert</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>ordering allies to stay alert.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCommanderHold</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>ordering allies to hold the line.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCommanderProvisionerAura</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>adjusting a command aura.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCommanderTaskMasterAura</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>adjusting a command aura.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCommanderCommanderAura</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>adjusting a command aura.</reportString>
+  </JobDef>
+</Defs>

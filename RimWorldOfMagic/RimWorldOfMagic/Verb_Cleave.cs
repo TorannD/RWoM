@@ -90,6 +90,7 @@ namespace TorannMagic
             for (int i =0; i < 8; i ++)
             {
                 IntVec3 searchCell = base.CasterPawn.Position + GenAdj.AdjacentCells8WayRandomized()[i];
+                if (!searchCell.InBounds(map)) continue;
                 Pawn victim = searchCell.GetFirstPawn(map);
                 if (victim != null && base.CasterPawn != null & dmgNum != 0 && victim.Faction != base.CasterPawn.Faction)
                 {
@@ -130,8 +131,8 @@ namespace TorannMagic
                         for (int i = 0; i < 8; i++)
                         {
                             IntVec3 intVec = target.PositionHeld + GenAdj.AdjacentCells[i];
-                            Pawn cleaveVictim = new Pawn();
-                            cleaveVictim = intVec.GetFirstPawn(map);
+                            if (!intVec.InBounds(map)) continue;
+                            Pawn cleaveVictim = intVec.GetFirstPawn(map);
                             if (cleaveVictim != null && cleaveVictim.Faction != caster.Faction && cleaveVictim.HostileTo(caster.Faction))
                             {
                                 cleaveVictim.TakeDamage(dinfo);

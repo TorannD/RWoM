@@ -31,6 +31,8 @@ namespace TorannMagic
 
         protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
+            if (Destroyed) return;
+            if (primed || age >= duration) { age = duration; Destroy(); return; }
             Map map = base.Map;
             Destroy();
             //base.Impact(hitThing);
@@ -39,24 +41,35 @@ namespace TorannMagic
             Thing item = hitThing as Thing;
             IntVec3 arg_pos_1;
             GenClamor.DoClamor(this, 2.1f, ClamorDefOf.Impact);
-            Pawn pawn = this.launcher as Pawn;
+            if (!ClassProgression.SpiritHostedSummons.Resolve(this, launcher as Pawn, out Pawn pawn, out var source))
+            { this.age = this.duration; Destroy(); return; }
+            if (source != null && !ClassProgression.SpiritHostedSummons.CanPlace(TorannMagicDefOf.TM_SummonExplosive, map, Position))
+            { this.age = this.duration; Destroy(); return; }
             CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
-            MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_SummonExplosive.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_SummonExplosive_pwr");
-            MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_SummonExplosive.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_SummonExplosive_ver");
-            
-            pwrVal = pwr.level;
-            verVal = ver.level;
-            if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+            if (source == null)
             {
-                MightPowerSkill mpwr = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-                MightPowerSkill mver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
-                pwrVal = mpwr.level;
-                verVal = mver.level;
+                MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_SummonExplosive.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_SummonExplosive_pwr");
+                MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_SummonExplosive.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_SummonExplosive_ver");
+
+                pwrVal = pwr.level;
+                verVal = ver.level;
+                if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+                {
+                    MightPowerSkill mpwr = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
+                    MightPowerSkill mver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
+                    pwrVal = mpwr.level;
+                    verVal = mver.level;
+                }
+                if (ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist)
+                {
+                    pwrVal = 3;
+                    verVal = 3;
+                }
             }
-            if (ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist)
+            else
             {
-                pwrVal = 3;
-                verVal = 3;
+                pwrVal = source.Power;
+                verVal = source.Versatility;
             }
             CellRect cellRect = CellRect.CenteredOn(base.Position, 1);
             cellRect.ClipInsideMap(map);
@@ -65,7 +78,7 @@ namespace TorannMagic
             if (!this.primed)
             {
                 duration += (verVal * 7200);
-                duration = (int)(duration * comp.arcaneDmg);
+                duration = (int)(duration * (source?.Scale ?? comp.arcaneDmg));
                 arg_pos_1 = centerCell;
 
                 if ((arg_pos_1.IsValid && arg_pos_1.Standable(map)))
@@ -93,14 +106,14 @@ namespace TorannMagic
                     tempPod.spawnCount = 1;
                     try
                     {
-                        Projectile_SummonExplosive.SingleSpawnLoop(tempPod, shiftPos, map, this.launcher, this.duration);
+                        Projectile_SummonExplosive.SingleSpawnLoop(tempPod, shiftPos, map, pawn, this.duration, this);
                     }
                     catch
                     {
                         Log.Message("Attempted to create an explosive but threw an unknown exception - recovering and ending attempt");
                         if (pawn != null)
                         {
-                            comp.Mana.CurLevel += comp.ActualManaCost(TorannMagicDefOf.TM_SummonExplosive);
+                            if (source == null) comp.Mana.CurLevel += comp.ActualManaCost(TorannMagicDefOf.TM_SummonExplosive);
                         }
                         this.age = this.duration;
                         return;
@@ -113,7 +126,7 @@ namespace TorannMagic
                     Messages.Message("InvalidSummon".Translate(), MessageTypeDefOf.RejectInput);
                     if (comp.Mana != null)
                     {
-                        comp.Mana.CurLevel += comp.ActualManaCost(TorannMagicDefOf.TM_SummonExplosive);
+                        if (source == null) comp.Mana.CurLevel += comp.ActualManaCost(TorannMagicDefOf.TM_SummonExplosive);
                     }
                     this.duration = 0;
                 }
@@ -122,7 +135,7 @@ namespace TorannMagic
             this.age = this.duration;           
         }
 
-        public static void SingleSpawnLoop(SpawnThings spawnables, IntVec3 position, Map map, Thing launcher, int duration)
+        public static void SingleSpawnLoop(SpawnThings spawnables, IntVec3 position, Map map, Thing launcher, int duration, Projectile_SummonExplosive trialSource = null)
         {
             bool flag = spawnables.def != null;
             if (flag)
@@ -157,8 +170,11 @@ namespace TorannMagic
                     }
                     CompSummoned bldgComp = thing.TryGetComp<CompSummoned>();
                     bldgComp.Temporary = true;
+                    bldgComp.Spawner = launcher as Pawn;
                     bldgComp.TicksToDestroy = duration;
                     GenSpawn.Spawn(thing, position, map, Rot4.North, WipeMode.Vanish, false);
+                    trialSource?.TryGetComp<ClassProgression.CompHostedSummon>()?.NotifySpawned(thing);
+                    ClassProgression.SummonerTrials.Spawned(trialSource, thing, ClassProgression.SummonerTrials.Spell.Explosive);
                 }
             }
         }

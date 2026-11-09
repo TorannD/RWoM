@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritTechnoShield.reportString>projecting a kinetic shield through a spirit host.</TM_SpiritTechnoShield.reportString>
+  <TM_SpiritSabotage.reportString>sabotaging machinery through a spirit host.</TM_SpiritSabotage.reportString>
+  <TM_SpiritOverdrive.reportString>overdriving machinery through a spirit host.</TM_SpiritOverdrive.reportString>
+  <TM_SpiritOrbitalStrike.reportString>calling an orbital strike through a spirit host.</TM_SpiritOrbitalStrike.reportString>
+  <TM_SpiritOrbitalStrike_I.reportString>calling an orbital strike through a spirit host.</TM_SpiritOrbitalStrike_I.reportString>
+  <TM_SpiritOrbitalStrike_II.reportString>calling an orbital strike through a spirit host.</TM_SpiritOrbitalStrike_II.reportString>
+  <TM_SpiritOrbitalStrike_III.reportString>calling an orbital strike through a spirit host.</TM_SpiritOrbitalStrike_III.reportString>
+  <TM_SpiritTechnoTurret.reportString>deploying a Mark-IV turret through a spirit host.</TM_SpiritTechnoTurret.reportString>
+  <TM_SpiritTechnoWeapon.reportString>copying a weapon through a spirit host.</TM_SpiritTechnoWeapon.reportString>
+  <TM_SpiritNanoStimulant.reportString>activating a nano stimulant in a spirit host.</TM_SpiritNanoStimulant.reportString>
+</LanguageData>

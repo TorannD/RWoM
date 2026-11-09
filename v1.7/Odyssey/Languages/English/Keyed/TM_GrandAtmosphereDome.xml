@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_GrandDomeRitual>Activate atmosphere dome (ritual)</TM_GrandDomeRitual>
+  <TM_GrandDomeUnavailable>Requires an operational, fuelled dome and a mage with enough mana to spend 10% and retain 20%.</TM_GrandDomeUnavailable>
+  <TM_GrandDomeUnarmed>Inactive: activation ritual required</TM_GrandDomeUnarmed>
+  <TM_GrandDomeStandby>Standby: another dome protects this map</TM_GrandDomeStandby>
+  <TM_GrandDomeActive>Active: atmosphere across the entire local map</TM_GrandDomeActive>
+  <TM_GrandDomeLowFuel>Atmosphere dome fuel is low: {0} days remaining.</TM_GrandDomeLowFuel>
+  <TM_GrandDomeExhausted>Atmosphere dome exhausted its fuel. Refuel it and perform a new activation ritual.</TM_GrandDomeExhausted>
+</LanguageData>

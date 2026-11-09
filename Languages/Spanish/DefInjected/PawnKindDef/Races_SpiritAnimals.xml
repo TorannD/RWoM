@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_SpiritBear.label>oso espiritual</TM_SpiritBear.label>
+  
+  <TM_SpiritBear.labelPlural>osos espirituales</TM_SpiritBear.labelPlural>
+  
+  
+  <TM_SpiritCrow.label>cuervo espiritual</TM_SpiritCrow.label>
+  
+  <TM_SpiritCrow.labelPlural>cuervos espirituales</TM_SpiritCrow.labelPlural>
+  
+  <TM_SpiritCrow.lifeStages.flight1.label>vuelo ascendente</TM_SpiritCrow.lifeStages.flight1.label>
+  
+  <TM_SpiritCrow.lifeStages.flight2.label>vuelo descendente</TM_SpiritCrow.lifeStages.flight2.label>
+  
+  <TM_SpiritCrow.lifeStages.crow_chick.label>cría de cuervo</TM_SpiritCrow.lifeStages.crow_chick.label>
+  
+  <TM_SpiritCrow.lifeStages.crow_fledgling.label>cuervo volantón</TM_SpiritCrow.lifeStages.crow_fledgling.label>
+  
+  
+  <TM_SpiritMongoose.label>mangosta espiritual</TM_SpiritMongoose.label>
+  
+  <TM_SpiritMongoose.labelPlural>mangostas espirituales</TM_SpiritMongoose.labelPlural>
+  
+</LanguageData>

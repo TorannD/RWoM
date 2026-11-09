@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_GrandAtmosphereDome.label>great atmosphere dome</TM_GrandAtmosphereDome.label>
+  <TM_GrandAtmosphereDome.description>Maintains breathable atmosphere across the entire local map, including open vacuum. A mage must perform a 60-second activation ritual, spending 10% of personal maximum mana on completion while retaining at least 20%. Uses 100 magofuel per day regardless of map area, with a local capacity of 200. Refuel by hauling or through connected mana beacons. Only one dome operates per map; other activated domes remain on standby without consuming fuel. Switching off, breakdown, ownership loss or fuel exhaustion requires a new ritual. Supports breathing, plants and fire in vacuum. Provides no heat, combat protection or terrain.</TM_GrandAtmosphereDome.description>
+</LanguageData>

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
@@ -16,9 +15,9 @@
 		<damageAmountBase>0</damageAmountBase>
 		<speed>100</speed>
    </projectile>
- </ThingDef>
+</ThingDef>
 
-<!-- Gear Repair -->
+
 
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_GearRepair</defName>
@@ -53,9 +52,16 @@
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_gearrepair</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
-  <!-- Inner Healing -->
+  
 
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_InnerHealing</defName>
@@ -90,9 +96,16 @@
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_innerhealing</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
-    <!-- Heavy Blow -->
+    
 
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_HeavyBlow</defName>
@@ -127,9 +140,16 @@
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_heavyblow</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
-        <!-- Strong Back -->
+        
 
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_StrongBack</defName>
@@ -164,9 +184,16 @@
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_strongback</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
-      <!-- Thick Skin -->
+      
 
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_ThickSkin</defName>
@@ -202,9 +229,16 @@
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_thickskin</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
-        <!-- Fighters Focus -->
+        
 
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_FightersFocus</defName>
@@ -239,9 +273,16 @@
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_fightersfocus</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
- <!-- Burning Fury -->
+ 
 
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_BurningFury</defName>
@@ -288,7 +329,14 @@ This ability actively consumes stamina, and will automatically cancel once the c
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_burningfury</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
   
 

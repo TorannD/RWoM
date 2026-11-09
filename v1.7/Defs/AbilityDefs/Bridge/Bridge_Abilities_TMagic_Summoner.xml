@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Summonminion</defName>
+    <label>Summon Minion</label>
+    <description>Summons minions to assist in daily tasks.</description>
+    <spellId>rwom.tm_summonminion</spellId>
+    <iconPath>PawnKind/minion_south</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SB</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_SummonMinion</defaultProjectile>
+      <abilityDef>TM_SummonMinion</abilityDef>
+      <warmupTime>1</warmupTime>
+      <SecondsToRecharge>10</SecondsToRecharge>
+      <burstShotCount>1</burstShotCount>
+      <range>25</range>
+      <isViolent>false</isViolent>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <targetParams>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Dismissminion</defName>
+    <label>Dismiss Minion</label>
+    <description>Dismisses a summoned minion.</description>
+    <spellId>rwom.tm_dismissminion</spellId>
+    <iconPath>UI/dismissminion</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_DismissMinion</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>TM_Paladin_Heal</defaultProjectile>
+      <abilityDef>TM_DismissMinion</abilityDef>
+      <warmupTime>1</warmupTime>
+      <SecondsToRecharge>4</SecondsToRecharge>
+      <burstShotCount>1</burstShotCount>
+      <range>0</range>
+      <isViolent>false</isViolent>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Summonpylon</defName>
+    <label>Summon defense pylon</label>
+    <description>Summons and manifests magical energy to form an automated defense turret that is tethered to a physical location.  The turret channels arcane current into a focal point that emits bursts of raw energy.  When the tether holding the turret to the physical world dissipates, the turret will harmlessly dissolve back into magical energy.  If the turret is destroyed, this event can be more destructive.</description>
+    <spellId>rwom.tm_summonpylon</spellId>
+    <iconPath>UI/defense_pylon</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SB</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_SummonPylon</defaultProjectile>
+      <abilityDef>TM_SummonPylon</abilityDef>
+      <warmupTime>2</warmupTime>
+      <SecondsToRecharge>20</SecondsToRecharge>
+      <burstShotCount>1</burstShotCount>
+      <range>70</range>
+      <isViolent>false</isViolent>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <targetParams>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Summonexplosive</defName>
+    <label>Summon explosive</label>
+    <description>Creates a mine out of compressed, raw mana and tethers it to a physical location.  The mine will harmlessly dissolve if the tether runs out of energy that is holding the mine.</description>
+    <spellId>rwom.tm_summonexplosive</spellId>
+    <iconPath>UI/ManaMine</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SB</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_SummonExplosive</defaultProjectile>
+      <abilityDef>TM_SummonExplosive</abilityDef>
+      <warmupTime>2</warmupTime>
+      <SecondsToRecharge>20</SecondsToRecharge>
+      <burstShotCount>1</burstShotCount>
+      <range>60</range>
+      <isViolent>false</isViolent>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>10</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <targetParams>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Summonelemental</defName>
+    <label>Summon Elemental</label>
+    <description>Calls forth a monstrous elemental from a plane of power to crush your foes.  These beings will defend a location and immediately engage an enemy if one is nearby.  However, if there are no enemies, they tend to get bored rather quickly and will wander from their summoned position.  They will not do such menial tasks as "hauling" or "cleaning," as these are the jobs of lesser beings.  Due to the power of the summoning, the elemental can only exist in this realm for a short time.  The type of elemental is random.</description>
+    <spellId>rwom.tm_summonelemental</spellId>
+    <iconPath>UI/Elemental</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SB</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_SummonElemental</defaultProjectile>
+      <abilityDef>TM_SummonElemental</abilityDef>
+      <warmupTime>1</warmupTime>
+      <SecondsToRecharge>150</SecondsToRecharge>
+      <burstShotCount>1</burstShotCount>
+      <range>50</range>
+      <isViolent>false</isViolent>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <targetParams>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Summonpoppi</defName>
+    <label>Summon Poppi</label>
+    <description>Summon a pack of vicious poppi straight from the gates of insanity. This pack of poppi are rabid and will eagerly tear into enemy formations.</description>
+    <spellId>rwom.tm_summonpoppi</spellId>
+    <iconPath>UI/poppihorde</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SB</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_SummonPoppi</defaultProjectile>
+      <abilityDef>TM_SummonPoppi</abilityDef>
+      <warmupTime>3</warmupTime>
+      <SecondsToRecharge>120</SecondsToRecharge>
+      <burstShotCount>1</burstShotCount>
+      <range>45</range>
+      <isViolent>false</isViolent>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <targetParams>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+</Defs>

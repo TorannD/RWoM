@@ -21,6 +21,54 @@ namespace TorannMagic
         bool isMageTeaching = false;
         bool isFighterTeaching = false;
         bool success = true;
+        bool activationPaid;
+        bool rewardGranted;
+        int studentWaitJobId = -1;
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look(ref age, "teachAge", -1);
+            Scribe_Values.Look(ref lastEffect, "teachLastEffect");
+            Scribe_Values.Look(ref isMageTeaching, "teachMagic");
+            Scribe_Values.Look(ref isFighterTeaching, "teachMight");
+            Scribe_Values.Look(ref success, "teachSuccess", true);
+            Scribe_Values.Look(ref activationPaid, "teachPaid");
+            Scribe_Values.Look(ref rewardGranted, "teachRewardGranted");
+            Scribe_Values.Look(ref studentWaitJobId, "teachStudentWaitJobId", -1);
+            if (Scribe.mode == LoadSaveMode.PostLoadInit && age < 0 && CurToilIndex == 1)
+            {
+                // Old drivers saved the native toil timer, but no lesson-local age.
+                age = Math.Max(0, duration - ticksLeftThisToil);
+                lastEffect = age;
+            }
+        }
+
+        private bool BeginTeaching(Pawn student)
+        {
+            if (!success || rewardGranted || age > duration) return false;
+            if (student == null || student == pawn || student.DeadOrDowned || pawn.DeadOrDowned
+                || !pawn.Spawned || !student.Spawned || student.Map != pawn.Map
+                || student.story == null || pawn.relations.OpinionOf(student) < 0) return false;
+            // Old jobs predate the explicit domain. Resolve once, without rerolling.
+            if (!isMageTeaching && !isFighterTeaching)
+            {
+                isMageTeaching = job.count == 1 || job.count != 2 && TM_Calc.IsMagicUser(pawn) && TM_Calc.IsMagicUser(student);
+                isFighterTeaching = !isMageTeaching;
+            }
+            bool magic = isMageTeaching;
+            if (magic ? !TM_Calc.IsMagicUser(pawn) || !TM_Calc.IsMagicUser(student)
+                : !TM_Calc.IsMightUser(pawn) || !TM_Calc.IsMightUser(student)) return false;
+            if (TM_Calc.IsCrossClass(pawn, magic) || TM_Calc.IsCrossClass(student, magic)) return false;
+            if (activationPaid) return true;
+            var def = magic ? TorannMagicDefOf.TM_TeachMagic : TorannMagicDefOf.TM_TeachMight;
+            CompAbilityUser comp = magic ? (CompAbilityUser)pawn.GetCompAbilityUserMagic() : pawn.GetCompAbilityUserMight();
+            var power = comp?.AbilityData.Powers.FirstOrDefault(a => a.Def == def);
+            if (power == null || power.CooldownTicksLeft > 0 || !power.CanCastPowerCheck(AbilityContext.Player, out _)) return false;
+            activationPaid = true;
+            power.PostAbilityAttempt();
+            return true;
+        }
 
 
         public override bool TryMakePreToilReservations(bool errorOnFailed)
@@ -47,40 +95,24 @@ namespace TorannMagic
             Toil doTeaching = new Toil();
             doTeaching.initAction = delegate
             {
-                CompAbilityUserMagic compMagic = student.GetCompAbilityUserMagic();
-                CompAbilityUserMight compMight = student.GetCompAbilityUserMight();
-                if(compMagic != null && compMagic.IsMagicUser && !student.story.traits.HasTrait(TorannMagicDefOf.Faceless))
-                {
-                    this.isMageTeaching = true;
-                    if(compMight != null && compMight.IsMightUser)
-                    {
-                        if(Rand.Chance(.5f))
-                        {
-                            this.isMageTeaching = false;
-                            this.isFighterTeaching = true;
-                        }
-                    }
-                }
-                else if(compMight.IsMightUser)
-                {
-                    this.isFighterTeaching = true;
-                }
-                else
+                if (!BeginTeaching(student))
                 {
                     success = false;
-                    Log.Message("ending teaching job due to undetected class - should never occur unless initializing verb is faulty");
                     this.EndJobWith(JobCondition.Incompletable);
+                    return;
                 }
                     
                 if (age > duration)
                 {
                     success = false;
                     this.EndJobWith(JobCondition.Succeeded);
+                    return;
                 }
                 if (student.DestroyedOrNull() || student.Dead)
                 {
                     success = false;
                     this.EndJobWith(JobCondition.Incompletable);
+                    return;
                 }
 
                 this.pawn.rotationTracker.FaceTarget(TargetA);
@@ -91,10 +123,19 @@ namespace TorannMagic
             };
             doTeaching.tickAction = delegate
             {
+                // A loaded running toil does not execute initAction again.
+                // Settle legacy unpaid lessons on their first actual resumed tick.
+                if (!activationPaid && !BeginTeaching(student))
+                {
+                    success = false;
+                    this.EndJobWith(JobCondition.Incompletable);
+                    return;
+                }
                 if (student.DestroyedOrNull() || student.Dead)
                 {
                     success = false;
                     this.EndJobWith(JobCondition.Incompletable);
+                    return;
                 }
                 if (age > (lastEffect + ticksTillEffects))
                 {
@@ -107,12 +148,14 @@ namespace TorannMagic
                     {
                         Job job = new Job(JobDefOf.Wait, student);
                         student.jobs.TryTakeOrderedJob(job, JobTag.Misc);
+                        if (student.CurJob == job) studentWaitJobId = job.loadID;
                     }
                 }
                 if(student.Drafted && student.CurJobDef != JobDefOf.Wait_Combat)
                 {
                     success = false;
                     this.EndJobWith(JobCondition.InterruptForced);
+                    return;
                 }
                 age++;
                 ticksLeftThisToil = duration - age;
@@ -139,8 +182,9 @@ namespace TorannMagic
             }, false, 0f);
             doTeaching.AddFinishAction(delegate
             {
-                if (success && age >= (int)(duration * .9f))
+                if (!rewardGranted && activationPaid && success && age >= (int)(duration * .9f))
                 {
+                    rewardGranted = true;
                     if (this.isMageTeaching)
                     {
                         AssignMagicXP(student);
@@ -150,7 +194,13 @@ namespace TorannMagic
                         AssignMightXP(student);
                     }
                 }
-                student.jobs.EndCurrentJob(JobCondition.Succeeded, false);
+                // Only release the wait this lesson owns. A new player order or
+                // another job must survive cleanup of the mentor's old lesson.
+                if (studentWaitJobId >= 0 && student?.CurJob?.loadID == studentWaitJobId)
+                {
+                    studentWaitJobId = -1;
+                    student.jobs.EndCurrentJob(JobCondition.Succeeded, false);
+                }
             });
             yield return doTeaching;
         }

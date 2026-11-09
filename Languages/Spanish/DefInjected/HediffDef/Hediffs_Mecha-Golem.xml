@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_Mecha-Golem_BallisticPlateHD.label>placa balística</TM_Mecha-Golem_BallisticPlateHD.label>
+  
+  <TM_Mecha-Golem_BallisticPlateHD.description>Mejora la armadura, pero reduce la velocidad de movimiento.</TM_Mecha-Golem_BallisticPlateHD.description>
+  
+  
+  <TM_Mecha-Golem_EarthCoreHD.label>núcleo de tierra</TM_Mecha-Golem_EarthCoreHD.label>
+  
+  <TM_Mecha-Golem_EarthCoreHD.description>Las mejoras del procesador del núcleo de tierra aumentan la armadura y la protección.</TM_Mecha-Golem_EarthCoreHD.description>
+  
+  <TM_Mecha-Golem_EarthCoreHD.stages.Mk1.label>Mk. 1</TM_Mecha-Golem_EarthCoreHD.stages.Mk1.label>
+  
+  <TM_Mecha-Golem_EarthCoreHD.stages.Mk2.label>Mk. 2</TM_Mecha-Golem_EarthCoreHD.stages.Mk2.label>
+  
+  <TM_Mecha-Golem_EarthCoreHD.stages.Mk3.label>Mk. 3</TM_Mecha-Golem_EarthCoreHD.stages.Mk3.label>
+  
+  
+  <TM_Mecha-Golem_FlameCoreHD.label>núcleo de llamas</TM_Mecha-Golem_FlameCoreHD.label>
+  
+  <TM_Mecha-Golem_FlameCoreHD.description>Las mejoras del núcleo de llamas aumentan la velocidad de movimiento y reducen el tiempo de reutilización de los ataques y las habilidades.</TM_Mecha-Golem_FlameCoreHD.description>
+  
+  <TM_Mecha-Golem_FlameCoreHD.stages.Mk1.label>Mk. 1</TM_Mecha-Golem_FlameCoreHD.stages.Mk1.label>
+  
+  <TM_Mecha-Golem_FlameCoreHD.stages.Mk2.label>Mk. 2</TM_Mecha-Golem_FlameCoreHD.stages.Mk2.label>
+  
+  <TM_Mecha-Golem_FlameCoreHD.stages.Mk3.label>Mk. 3</TM_Mecha-Golem_FlameCoreHD.stages.Mk3.label>
+  
+  
+  <TM_Mecha-Golem_GatlingCannonHD.label>cañón Gatling</TM_Mecha-Golem_GatlingCannonHD.label>
+  
+  <TM_Mecha-Golem_GatlingCannonHD.description>Un cañón Gatling montado en el hombro derecho.</TM_Mecha-Golem_GatlingCannonHD.description>
+  
+  
+  <TM_Mecha-Golem_LightningCoreHD.label>núcleo de rayos</TM_Mecha-Golem_LightningCoreHD.label>
+  
+  <TM_Mecha-Golem_LightningCoreHD.description>Las mejoras del núcleo de rayos aumentan la velocidad de movimiento y de procesamiento.</TM_Mecha-Golem_LightningCoreHD.description>
+  
+  <TM_Mecha-Golem_LightningCoreHD.stages.Mk1.label>Mk. 1</TM_Mecha-Golem_LightningCoreHD.stages.Mk1.label>
+  
+  <TM_Mecha-Golem_LightningCoreHD.stages.Mk2.label>Mk. 2</TM_Mecha-Golem_LightningCoreHD.stages.Mk2.label>
+  
+  <TM_Mecha-Golem_LightningCoreHD.stages.Mk3.label>Mk. 3</TM_Mecha-Golem_LightningCoreHD.stages.Mk3.label>
+  
+  
+  <TM_Mecha-Golem_WaterCoreHD.label>núcleo de agua</TM_Mecha-Golem_WaterCoreHD.label>
+  
+  <TM_Mecha-Golem_WaterCoreHD.description>Las mejoras del procesador del núcleo de agua aumentan la armadura y la regeneración, y mejoran el ahorro de energía.</TM_Mecha-Golem_WaterCoreHD.description>
+  
+  <TM_Mecha-Golem_WaterCoreHD.stages.Mk1.label>Mk. 1</TM_Mecha-Golem_WaterCoreHD.stages.Mk1.label>
+  
+  <TM_Mecha-Golem_WaterCoreHD.stages.Mk2.label>Mk. 2</TM_Mecha-Golem_WaterCoreHD.stages.Mk2.label>
+  
+  <TM_Mecha-Golem_WaterCoreHD.stages.Mk3.label>Mk. 3</TM_Mecha-Golem_WaterCoreHD.stages.Mk3.label>
+  
+</LanguageData>

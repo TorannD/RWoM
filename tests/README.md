@@ -111,3 +111,19 @@ FleshCasting checks real UI dispatch to an ordered-job boundary, then run the ac
 FleshStat checks exercise the registered stat hooks, explanations and cache invalidation, including dependent crafting stats. The Health entries describe progression and active effects without applying a second set of stat bonuses. FleshBite checks exercise conversion to vanilla Bite damage and combat-log rules, critical bites, toxicity, Feast body-part consumption and eligible wound infection. Controlled fixtures isolate hit orchestration, damage-worker and anatomy/death side effects; they do not prove full battle-log rendering or manual Devour behavior in a live battle.
 
 UndeadRelease checks request collapse on the first normal/interval callback after confirmed owner death, preserve living/unresolved links and skeleton exclusions, and verify re-entry protection. Guest reset runs the real engine method with the production prefix. Recording Pawn overrides isolate Kill and SetFaction for other cases; injected failures before/after faction assignment verify one release attempt and preservation of the real exception stack. They do not establish full corpse creation, all third-party faction callbacks or actual world scheduling. The original reported NullReferenceException's exact source remains unproven because the old handler discarded its stack.
+# Focused ordering checks
+
+`run-regression-tests.ps1 -Filter 'ClassState,LegacyDataRefresh,Teleport'` selects
+the union of comma-separated name substrings. A single substring keeps its existing
+meaning. Add `-Reverse` to run the selected cases in reverse registration order in
+one process. Always pass an `-ArtifactsDir` outside the repository.
+
+## Odyssey magical thrusters
+
+Use `-Filter 'Odyssey.MagicalThruster,Odyssey.Thruster'` for the flight-fuel and definition checks. The runner builds the optional `TorannMagic.Integrations/Source/TorannMagic.VGE` adapter into the external artifacts directory when the installed VGE assembly is available. `-VgeDir` selects that read-only dependency directory; the core assembly has no mandatory VGE reference.
+
+The launch fixture executes the installed `Building_GravEngine.ConsumeFuel` with production Harmony hooks and real `CompRefuelable` payments. It supplies native floor/room caches and a cached route cost, so this verifies payment and rollback, not world-map generation or pathfinding. VGE cases use its real provider enumeration, payment and refund APIs. Definition cases resolve native XML inheritance and apply the shipping patches. Sprite checks verify directional files and alpha-capable PNGs; visual alignment, exhaust animations, the world target UI and an actual departure/landing still require an in-game check.
+
+### Integration extraction candidates
+
+The runner builds matching Core sources and `TorannMagic.Integrations` into the selected external ArtifactsDir, alongside conditional `TorannMagic.VGE`. `-CoreAssembly` selects an explicit matching Core binary; `-WithoutCore` keeps Core unloaded in the harness while retaining build references. Core-required VPE cases then report capability skips. Use `Core.CastOwnership,VpeAutocast,PridestalkerCompatibility,DebugClassRoster,IntegrationPackage` for the migration contracts and `GrimoireKure` for class data coverage. The shipped Core example accepts `-p:CoreAssemblyPath=...` for candidate validation. These commands do not update repository/install DLLs.

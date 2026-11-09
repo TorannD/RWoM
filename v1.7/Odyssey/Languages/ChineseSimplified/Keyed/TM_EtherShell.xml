@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_EtherShell_eff>效率</TM_EtherShell_eff>
+  <TM_EtherShell_eff_desc>每级降低10%法力消耗，最多三级。</TM_EtherShell_eff_desc>
+  <TM_EtherShell_AlreadyProtected>该角色已有以太护膜。</TM_EtherShell_AlreadyProtected>
+  <TM_EtherShell_Unavailable>以太护膜不可用。</TM_EtherShell_Unavailable>
+  <TM_EtherShell_ver>持续时间</TM_EtherShell_ver>
+  <TM_EtherShell_ver_desc>每级增加基础持续时间的25%：30、36或42小时。卷轴和法杖仍持续24小时。</TM_EtherShell_ver_desc>
+</LanguageData>

@@ -10,6 +10,26 @@ namespace TorannMagic
     {
         bool validTarg;
 
+        internal Pawn SkillOwner()
+        {
+            var body = CasterPawn;
+            var owner = Ability?.Pawn ?? body;
+            if (owner == body) return body;
+            return ClassProgression.SpiritRebirthState.TryGetPossessingSpirit(body, out var held) && held == owner &&
+                ClassProgression.SpiritRebirthState.TryGet(owner, out var state) && !state.DepletionPending ? owner : null;
+        }
+
+        internal DamageInfo? PrepareImpact()
+        {
+            var owner = SkillOwner();
+            var comp = owner?.GetCompAbilityUserMight();
+            if (comp == null) return null;
+            int power = TM_Calc.GetSkillPowerLevel(owner, Ability.Def as TMAbilityDef, false);
+            int strength = comp.MightData.MightPowerSkill_global_strength.FirstOrDefault(x => x.label == "TM_global_strength_pwr")?.level ?? 0;
+            return new DamageInfo(TMDamageDefOf.DamageDefOf.TM_DragonStrike,
+                Mathf.RoundToInt(Rand.Range(8f, 15f) * (1 + .1f * power + .05f * strength)), 0, -1, CasterPawn);
+        }
+
         public override bool CanHitTargetFrom(IntVec3 root, LocalTargetInfo targ)
         {
             if (targ.Thing != null && targ.Thing == this.caster)
@@ -47,13 +67,11 @@ namespace TorannMagic
             //    MightPowerSkill mpwr = comp.MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
             //    pwrVal = mpwr.level;
             //}
-            Pawn casterPawn = base.CasterPawn;
-            CompAbilityUserMight comp = this.CasterPawn.GetCompAbilityUserMight();
-            int pwrVal = TM_Calc.GetSkillPowerLevel(casterPawn, this.Ability.Def as TMAbilityDef, false);
-            if (comp != null)
+            var owner = SkillOwner();
+            var prepared = PrepareImpact();
+            if (prepared.HasValue)
             {
-                MightPowerSkill str = comp.MightData.MightPowerSkill_global_strength.FirstOrDefault((MightPowerSkill x) => x.label == "TM_global_strength_pwr");
-                DamageInfo dinfo2 = new DamageInfo(TMDamageDefOf.DamageDefOf.TM_DragonStrike, Mathf.RoundToInt(Rand.Range(8f, 15f) * (1 + (.1f * pwrVal) + (.05f * str.level))), 0, (float)-1, this.CasterPawn, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
+                DamageInfo dinfo2 = prepared.Value;
                 bool flag = t.Cell != default(IntVec3);
                 if (flag)
                 {
@@ -65,7 +83,9 @@ namespace TorannMagic
 
                     LongEventHandler.QueueLongEvent(delegate
                     {
+                        if (CasterPawn?.Spawned != true || SkillOwner() != owner) return;
                         FlyingObject_DragonStrike flyingObject = (FlyingObject_DragonStrike)GenSpawn.Spawn(ThingDef.Named("FlyingObject_DragonStrike"), this.CasterPawn.Position, this.CasterPawn.Map);
+                    flyingObject.SetSkillOwner(owner);
                     flyingObject.Launch(this.CasterPawn, t, this.CasterPawn, dinfo2);
                     }, "LaunchingFlyer", false, null);
                 }

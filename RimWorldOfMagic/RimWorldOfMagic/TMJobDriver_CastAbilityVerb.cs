@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -148,11 +148,11 @@ namespace TorannMagic
 
                         try
                         {
-                            this.duration = (int)((this.verb.verbProps.warmupTime * 60) * this.pawn.GetStatValue(StatDefOf.AimingDelayFactor, false));
+                            this.duration = (int)((this.verb.verbProps.warmupTime * Compatibility.AbilityTiming.WarmupFor(this.verb) * 60) * this.pawn.GetStatValue(StatDefOf.AimingDelayFactor, false));
                         }
                         catch
                         {
-                            this.duration = (int)(this.verb.verbProps.warmupTime * 60);
+                            this.duration = (int)(this.verb.verbProps.warmupTime * Compatibility.AbilityTiming.WarmupFor(this.verb) * 60);
                         }
 
                         if (this.pawn.RaceProps.Humanlike)
@@ -167,7 +167,9 @@ namespace TorannMagic
                                 PsionicEnergyCost(verb);
                             }
 
-                            if (this.pawn.story.traits.HasTrait(TorannMagicDefOf.DeathKnight) && !validCastFlag)
+                            // Staged Spite pays when the projectile is successfully fired.
+                            if (!validCastFlag && this.pawn.story.traits.HasTrait(TorannMagicDefOf.DeathKnight) &&
+                                ClassProgression.DeathKnightMartialPath.Path(this.pawn) == null)
                             {
                                 HateCost(verb);
                             }
@@ -207,7 +209,18 @@ namespace TorannMagic
                 {
                     if(this.pawn.Downed) EndJobWith(JobCondition.InterruptForced);
                     if (combatToil.actor.jobs.curJob.verbToUse == null) this.EndJobWith(JobCondition.Errored);
-
+#if RW17
+                    // A target destroyed or despawned mid-warmup leaves the vanilla
+                    // warmup stance aiming at nothing (Stance_Warmup.AimDir NRE spam)
+                    // and a cast job that never completes. End both immediately.
+                    LocalTargetInfo warmupTarget = combatToil.actor.jobs.curJob.GetTarget(TargetIndex.A);
+                    if (castStarted && warmupTarget.HasThing && (warmupTarget.Thing.Destroyed || !warmupTarget.Thing.Spawned))
+                    {
+                        this.pawn.stances?.SetStance(new Stance_Mobile());
+                        this.EndJobWith(JobCondition.Incompletable);
+                        return;
+                    }
+#endif
                     if (Find.TickManager.TicksGame % 12 == 0)
                     {
                         if (verb.Ability.Def == TorannMagicDefOf.TM_Artifact_TraitThief || verb.Ability.Def == TorannMagicDefOf.TM_Artifact_TraitInfuse)
@@ -220,18 +233,28 @@ namespace TorannMagic
                             TM_MoteMaker.ThrowCastingMote(pawn.DrawPos, pawn.Map, Rand.Range(1.2f, 2f));
                         }
                     }
-                    
+
                     this.duration--;
                     if (!wildCheck && this.duration <= 6)
                     {
                         wildCheck = true;
-                        if (this.pawn.story != null && this.pawn.story.traits != null && this.pawn.story.traits.HasTrait(TorannMagicDefOf.ChaosMage) && Rand.Chance(.1f))
+                        if (this.pawn.story != null && this.pawn.story.traits != null && TorannMagic.ClassProgression.ClassIdentity.IsChaosMage(this.pawn) && Rand.Chance(.1f))
                         {
                             verb.Ability.PostAbilityAttempt();
                             TM_Action.DoWildSurge(this.pawn, this.pawn.GetCompAbilityUserMagic(), (MagicAbility)verb.Ability, (TMAbilityDef)verb.Ability.Def, TargetA);
                             EndJobWith(JobCondition.InterruptForced);
                         }
                     }
+#if RW17
+                    // Watchdog: a cast still running 30 in-game seconds past its
+                    // intended duration is stuck (verb jammed, target unreachable).
+                    // Free the pawn instead of freezing it in the casting stance.
+                    if (castStarted && this.duration <= -1800)
+                    {
+                        this.pawn.stances?.SetStance(new Stance_Mobile());
+                        this.EndJobWith(JobCondition.Incompletable);
+                    }
+#endif
                 };
                 combatToil.AddFinishAction(delegate
                 {
@@ -309,11 +332,11 @@ namespace TorannMagic
                             //yield return toil2;
                             try
                             {
-                                this.duration = (int)((this.verb.verbProps.warmupTime * 60) * this.pawn.GetStatValue(StatDefOf.AimingDelayFactor, false));
+                                this.duration = (int)((this.verb.verbProps.warmupTime * Compatibility.AbilityTiming.WarmupFor(this.verb) * 60) * this.pawn.GetStatValue(StatDefOf.AimingDelayFactor, false));
                             }
                             catch
                             {
-                                this.duration = (int)(this.verb.verbProps.warmupTime * 60);
+                                this.duration = (int)(this.verb.verbProps.warmupTime * Compatibility.AbilityTiming.WarmupFor(this.verb) * 60);
                             }
                             LocalTargetInfo target = base.TargetLocA;
                             Toil toil = new Toil();
@@ -371,6 +394,16 @@ namespace TorannMagic
                             {
 
                                 if (toil.actor.jobs.curJob.verbToUse == null) this.EndJobWith(JobCondition.Errored);
+#if RW17
+                                // Same mid-warmup target guard as the pawn-target branch:
+                                // dead focus means AimDir NRE spam and a never-ending job.
+                                if (castStarted && target.HasThing && (target.Thing.Destroyed || !target.Thing.Spawned))
+                                {
+                                    this.pawn.stances?.SetStance(new Stance_Mobile());
+                                    this.EndJobWith(JobCondition.Incompletable);
+                                    return;
+                                }
+#endif
                                 if (Find.TickManager.TicksGame % 12 == 0)
                                 {
                                     TM_MoteMaker.ThrowCastingMote(pawn.DrawPos, pawn.Map, Rand.Range(1.2f, 2f));
@@ -379,8 +412,8 @@ namespace TorannMagic
                                 if (!wildCheck && this.duration <= 6)
                                 {
                                     wildCheck = true;
-                                    if (this.pawn.story != null && this.pawn.story.traits != null && this.pawn.story.traits.HasTrait(TorannMagicDefOf.ChaosMage) && Rand.Chance(.1f))
-                                    {                                        
+                                    if (this.pawn.story != null && this.pawn.story.traits != null && TorannMagic.ClassProgression.ClassIdentity.IsChaosMage(this.pawn) && Rand.Chance(.1f))
+                                    {
                                         bool completeJob = TM_Action.DoWildSurge(this.pawn, this.pawn.GetCompAbilityUserMagic(), (MagicAbility)verb.Ability, (TMAbilityDef)verb.Ability.Def, TargetA);
                                         if (!completeJob)
                                         {
@@ -389,6 +422,15 @@ namespace TorannMagic
                                         }
                                     }
                                 }
+#if RW17
+                                // Watchdog for the stuck-cast case, matching the
+                                // pawn-target branch above.
+                                if (castStarted && this.duration <= -1800)
+                                {
+                                    this.pawn.stances?.SetStance(new Stance_Mobile());
+                                    this.EndJobWith(JobCondition.Incompletable);
+                                }
+#endif
                             };
                             toil.AddFinishAction(delegate
                             {                                
@@ -448,13 +490,13 @@ namespace TorannMagic
             }
             else if (verbCast.AbilityProjectileDef.defName == "Projectile_PsionicDash")
             {
-                float sevReduct = 8f - this.pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_PsionicDash.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PsionicDash_eff").level;
+                float sevReduct = ClassProgression.PsionicDashCast.PsiCost(this.pawn, TorannMagicDefOf.TM_PsionicDash);
                 HealthUtility.AdjustSeverity(this.pawn, HediffDef.Named("TM_PsionicHD"), -sevReduct);
             }
             else if(verbCast.AbilityProjectileDef.defName == "Projectile_PsionicStorm")
             {
-                //float sevReduct = 65 - (5 * this.pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_PsionicStorm.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PsionicStorm_eff").level);
-                HealthUtility.AdjustSeverity(this.pawn, HediffDef.Named("TM_PsionicHD"), -100);
+                float sevReduct = ClassProgression.PsionicDashCast.PsiCost(this.pawn, TorannMagicDefOf.TM_PsionicStorm);
+                HealthUtility.AdjustSeverity(this.pawn, HediffDef.Named("TM_PsionicHD"), -sevReduct);
             }
         }
 
@@ -468,7 +510,7 @@ namespace TorannMagic
                     hediff = this.pawn.health.hediffSet.hediffs[h];
                 }
             }
-            if (hediff != null && verbCast.AbilityProjectileDef.defName == "Projectile_Spite")
+            if (hediff != null && verbCast.AbilityProjectileDef?.defName == "Projectile_Spite")
             {
                 HealthUtility.AdjustSeverity(this.pawn, hediff.def, -20f);
             }            

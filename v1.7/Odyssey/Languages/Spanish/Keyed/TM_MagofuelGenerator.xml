@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_MagofuelGeneratorStatus>Potencia: {0} W; consumo en marcha: {1}/día\nCombustible en el núcleo: {2}\nAutonomía en marcha: {3} días</TM_MagofuelGeneratorStatus>
+</LanguageData>

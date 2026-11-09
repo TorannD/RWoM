@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritCastPistolWhip.reportString>завдає удару пістолетом по TargetB.</TM_SpiritCastPistolWhip.reportString>
+  <TM_SpiritCastMk203GL.reportString>стріляє гранатою по TargetB.</TM_SpiritCastMk203GL.reportString>
+  <TM_SpiritCastBreachingCharge.reportString>кидає підривний заряд у TargetB.</TM_SpiritCastBreachingCharge.reportString>
+  <TM_SpiritCastSuperSoldierFieldDressing.reportString>накладає польову пов’язку.</TM_SpiritCastSuperSoldierFieldDressing.reportString>
+  <TM_SpiritCastBuckshot.reportString>стріляє картеччю по TargetB.</TM_SpiritCastBuckshot.reportString>
+  <TM_SpiritCastSuppressingFire.reportString>веде вогонь на придушення по TargetB.</TM_SpiritCastSuppressingFire.reportString>
+  <TM_SpiritCast60mmMortar.reportString>розгортає 60-мм міномет.</TM_SpiritCast60mmMortar.reportString>
+</LanguageData>

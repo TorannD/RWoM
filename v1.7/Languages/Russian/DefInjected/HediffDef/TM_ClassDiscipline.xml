@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ClassDiscipline.label>классовое направление</TM_ClassDiscipline.label>
+  <TM_ClassDiscipline.description>Направление, в котором пройдено посвящение. Его прогресс хранится в данных персонажа; эта запись в разделе здоровья лишь отображает его.</TM_ClassDiscipline.description>
+</LanguageData>

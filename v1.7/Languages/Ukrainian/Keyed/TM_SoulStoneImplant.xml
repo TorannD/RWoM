@@ -1,0 +1,7 @@
+<LanguageData>
+  <TM_SoulStoneChooseHost>Вибрати носія для {0}</TM_SoulStoneChooseHost>
+  <TM_SoulStoneCannotImplant>Потрібен живий доступний колоніст, тварина колонії, полонений або гість.</TM_SoulStoneCannotImplant>
+  <TM_SoulStoneHarmful>Вселити {0} в {1}? Захоплення тіла полоненого або гостя — ворожа дія. Після успіху його фракція може стати ворожою.</TM_SoulStoneHarmful>
+  <TM_SoulStoneRecoveryRemaining>Дух зможе покинути це тіло через {0}.</TM_SoulStoneRecoveryRemaining>
+  <TM_SoulStoneNoExitCell>Поряд із носієм немає вільного місця для виходу духа.</TM_SoulStoneNoExitCell>
+</LanguageData>

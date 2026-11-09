@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-	<!-- Explosion! --> 
+	 
   <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
    <defName>Projectile_Explosion</defName>
    <thingClass>TorannMagic.Projectile_Explosion</thingClass>
@@ -19,7 +18,7 @@
 		<postExplosionSpawnChance>1</postExplosionSpawnChance>
 		<speed>999</speed>
    </projectile>
- </ThingDef>
+</ThingDef>
 	
   <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_Explosion</defName>
@@ -42,7 +41,7 @@
         <warmupTime>5</warmupTime>
         <SecondsToRecharge>1000</SecondsToRecharge>
         <range>100</range>
-        <soundCast></soundCast>
+        <soundCast />
         <muzzleFlashScale>20</muzzleFlashScale>
         <isPrimary>false</isPrimary>
 		<targetParams>
@@ -52,9 +51,16 @@
 		  <canTargetLocations>true</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_explosion</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
-  <!-- Taunt --> 
+   
 
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_Taunt</defName>
@@ -78,7 +84,7 @@
         <warmupTime>.3</warmupTime>
         <SecondsToRecharge>30</SecondsToRecharge>
         <range>0</range>
-        <soundCast></soundCast>
+        <soundCast />
         <muzzleFlashScale>20</muzzleFlashScale>
         <isPrimary>false</isPrimary>
    	    <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
@@ -89,10 +95,17 @@
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_taunt</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
   
-	   <!-- Shield Other --> 
+	    
   
   <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_ShieldOther</defName>
@@ -128,6 +141,13 @@ The shield absorbs an additional .5 damage for each level of the caster.</descri
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_shieldother</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
 </Defs>

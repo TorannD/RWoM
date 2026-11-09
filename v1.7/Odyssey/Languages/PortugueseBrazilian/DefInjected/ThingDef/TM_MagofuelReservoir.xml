@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_MagofuelReservoir.label>reservatório de combustível mágico</TM_MagofuelReservoir.label>
+  <TM_MagofuelReservoir.description>Armazena combustível mágico e uma carga de mana independente. O combustível pode ser convertido em mana; um mago também pode carregar o reservatório, mantendo uma reserva pessoal configurável. Não produz eletricidade nem converte mana em combustível.</TM_MagofuelReservoir.description>
+</LanguageData>

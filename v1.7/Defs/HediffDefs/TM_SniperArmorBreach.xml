@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <HediffDef>
+    <defName>TM_SniperArmorBreach</defName>
+    <label>armor breach</label>
+    <description>Allied attacks exploit this opening in the target’s armor. Each hit adds a separate six-second opening for the shooter's faction.</description>
+    <hediffClass>TorannMagic.ClassProgression.SniperArmorBreach</hediffClass>
+    <isBad>true</isBad>
+    <tendable>false</tendable>
+    <initialSeverity>1</initialSeverity>
+  </HediffDef>
+</Defs>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_StrawGolem_ArmorHD.label>armadura</TM_StrawGolem_ArmorHD.label>
+  
+  <TM_StrawGolem_ArmorHD.description>Mejora la protección física.</TM_StrawGolem_ArmorHD.description>
+  
+  <TM_StrawGolem_ArmorHD.stages.I.label>I</TM_StrawGolem_ArmorHD.stages.I.label>
+  
+  <TM_StrawGolem_ArmorHD.stages.II.label>II</TM_StrawGolem_ArmorHD.stages.II.label>
+  
+  <TM_StrawGolem_ArmorHD.stages.III.label>III</TM_StrawGolem_ArmorHD.stages.III.label>
+  
+</LanguageData>

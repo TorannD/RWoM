@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ChaosAnchor>Ancla del caos: {0}</TM_ChaosAnchor>
+  <TM_ChaosNoAnchor>Quitar el ancla</TM_ChaosNoAnchor>
+  <TM_ChaosProgress>Lanza dos hechizos prestados distintos ({0}/2). Como adepto, lanza hechizos de dos tiradas distintas ({1}/2).</TM_ChaosProgress>
+  <TM_ChaosAscensionInfo>Ofrece una gema de perspicacia para ascender. Conserva un hechizo hasta la siguiente tirada y recupera sus puntos.</TM_ChaosAscensionInfo>
+  <TM_ChaosAscensionAction>Ascensión: ancla del caos</TM_ChaosAscensionAction>
+  <TM_ChaosAscensionNeedsOffering>Requiere una gema de perspicacia</TM_ChaosAscensionNeedsOffering>
+</LanguageData>

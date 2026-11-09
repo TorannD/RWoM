@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <AMP_I.label>AMP</AMP_I.label>
+  
+  <AMP_I.description>Una ráfaga de energía que amplifica los atributos físicos.</AMP_I.description>
+  
+  <AMP_I.stages.I.label>I</AMP_I.stages.I.label>
+  
+  
+  <AMP_II.label>AMP</AMP_II.label>
+  
+  <AMP_II.description>Una ráfaga de energía que amplifica los atributos físicos.</AMP_II.description>
+  
+  <AMP_II.stages.II.label>II</AMP_II.stages.II.label>
+  
+  
+  <AMP_III.label>AMP</AMP_III.label>
+  
+  <AMP_III.description>Una ráfaga de energía que amplifica los atributos físicos.</AMP_III.description>
+  
+  <AMP_III.stages.III.label>III</AMP_III.stages.III.label>
+  
+  
+  <BestowMightHD.label>Conceder poderío</BestowMightHD.label>
+  
+  <BestowMightHD.description>Una poderosa ventaja de combate.</BestowMightHD.description>
+  
+  <BestowMightHD.stages.I.label>I</BestowMightHD.stages.I.label>
+  
+  
+  <BestowMightHD_I.label>Conceder poderío</BestowMightHD_I.label>
+  
+  <BestowMightHD_I.description>Una poderosa ventaja de combate.</BestowMightHD_I.description>
+  
+  <BestowMightHD_I.stages.II.label>II</BestowMightHD_I.stages.II.label>
+  
+  
+  <BestowMightHD_II.label>Conceder poderío</BestowMightHD_II.label>
+  
+  <BestowMightHD_II.description>Una poderosa ventaja de combate.</BestowMightHD_II.description>
+  
+  <BestowMightHD_II.stages.III.label>III</BestowMightHD_II.stages.III.label>
+  
+  
+  <BestowMightHD_III.label>Conceder poderío</BestowMightHD_III.label>
+  
+  <BestowMightHD_III.description>Una poderosa ventaja de combate.</BestowMightHD_III.description>
+  
+  <BestowMightHD_III.stages.IV.label>IV</BestowMightHD_III.stages.IV.label>
+  
+  
+  <InnerFire_IHD.label>Fuego interior</InnerFire_IHD.label>
+  
+  <InnerFire_IHD.description>Fortalece el espíritu, otorgando al personaje mayor aguante y resistencias.</InnerFire_IHD.description>
+  
+  <InnerFire_IHD.stages.II.label>II</InnerFire_IHD.stages.II.label>
+  
+  
+  <InnerFire_IIHD.label>Fuego interior</InnerFire_IIHD.label>
+  
+  <InnerFire_IIHD.description>Fortalece el espíritu, otorgando al personaje mayor aguante y resistencias.</InnerFire_IIHD.description>
+  
+  <InnerFire_IIHD.stages.III.label>III</InnerFire_IIHD.stages.III.label>
+  
+  
+  <InnerFire_IIIHD.label>Fuego interior</InnerFire_IIIHD.label>
+  
+  <InnerFire_IIIHD.description>Fortalece el espíritu, otorgando al personaje mayor aguante y resistencias.</InnerFire_IIIHD.description>
+  
+  <InnerFire_IIIHD.stages.IV.label>IV</InnerFire_IIIHD.stages.IV.label>
+  
+  
+  <InnerFireHD.label>Fuego interior</InnerFireHD.label>
+  
+  <InnerFireHD.description>Fortalece el espíritu, otorgando al personaje mayor aguante y resistencias.</InnerFireHD.description>
+  
+  <InnerFireHD.stages.I.label>I</InnerFireHD.stages.I.label>
+  
+  
+  <RayofHope.label>Rayo de esperanza</RayofHope.label>
+  
+  <RayofHope.description>Una presencia reconfortante que aviva el espíritu.</RayofHope.description>
+  
+  <RayofHope.stages.I.label>I</RayofHope.stages.I.label>
+  
+  
+  <RayofHope_I.label>Rayo de esperanza</RayofHope_I.label>
+  
+  <RayofHope_I.description>Una presencia reconfortante que aviva el espíritu.</RayofHope_I.description>
+  
+  <RayofHope_I.stages.II.label>II</RayofHope_I.stages.II.label>
+  
+  
+  <RayofHope_II.label>Rayo de esperanza</RayofHope_II.label>
+  
+  <RayofHope_II.description>Una presencia reconfortante que aviva el espíritu.</RayofHope_II.description>
+  
+  <RayofHope_II.stages.III.label>III</RayofHope_II.stages.III.label>
+  
+  
+  <RayofHope_III.label>Rayo de esperanza</RayofHope_III.label>
+  
+  <RayofHope_III.description>Una presencia reconfortante que aviva el espíritu.</RayofHope_III.description>
+  
+  <RayofHope_III.stages.IV.label>IV</RayofHope_III.stages.IV.label>
+  
+  
+  <Shadow.label>Sombra arcana</Shadow.label>
+  
+  <Shadow.description>Una presencia sombría que precipita la acción.</Shadow.description>
+  
+  
+  <Shadow_I.label>Sombra arcana</Shadow_I.label>
+  
+  <Shadow_I.description>Una presencia sombría que precipita la acción.</Shadow_I.description>
+  
+  <Shadow_I.stages.I.label>I</Shadow_I.stages.I.label>
+  
+  
+  <Shadow_II.label>Sombra arcana</Shadow_II.label>
+  
+  <Shadow_II.description>Una presencia sombría que precipita la acción.</Shadow_II.description>
+  
+  <Shadow_II.stages.II.label>II</Shadow_II.stages.II.label>
+  
+  
+  <Shadow_III.label>Sombra arcana</Shadow_III.label>
+  
+  <Shadow_III.description>Una presencia sombría que precipita la acción.</Shadow_III.description>
+  
+  <Shadow_III.stages.III.label>III</Shadow_III.stages.III.label>
+  
+  
+  <SoothingBreeze.label>Brisa calmante</SoothingBreeze.label>
+  
+  <SoothingBreeze.description>Una presencia calmante que serena el espíritu.</SoothingBreeze.description>
+  
+  <SoothingBreeze.stages.I.label>I</SoothingBreeze.stages.I.label>
+  
+  
+  <SoothingBreeze_I.label>Brisa calmante</SoothingBreeze_I.label>
+  
+  <SoothingBreeze_I.description>Una presencia calmante que serena el espíritu.</SoothingBreeze_I.description>
+  
+  <SoothingBreeze_I.stages.II.label>II</SoothingBreeze_I.stages.II.label>
+  
+  
+  <SoothingBreeze_II.label>Brisa calmante</SoothingBreeze_II.label>
+  
+  <SoothingBreeze_II.description>Una presencia calmante que serena el espíritu.</SoothingBreeze_II.description>
+  
+  <SoothingBreeze_II.stages.III.label>III</SoothingBreeze_II.stages.III.label>
+  
+  
+  <SoothingBreeze_III.label>Brisa calmante</SoothingBreeze_III.label>
+  
+  <SoothingBreeze_III.description>Una presencia calmante que serena el espíritu.</SoothingBreeze_III.description>
+  
+  <SoothingBreeze_III.stages.IV.label>IV</SoothingBreeze_III.stages.IV.label>
+  
+  
+  <SpellMendingHD.label>Reparación mágica</SpellMendingHD.label>
+  
+  <SpellMendingHD.description>Repara rápidamente la ropa y las armas equipadas.</SpellMendingHD.description>
+  
+  <SpellMendingHD.stages.active.label>activa</SpellMendingHD.stages.active.label>
+  
+  <SpellMendingHD.stages.enhanced.label>potenciada</SpellMendingHD.stages.enhanced.label>
+  
+  
+  <TM_AdrenalineHD.label>Adrenalina</TM_AdrenalineHD.label>
+  
+  <TM_AdrenalineHD.description>Una descarga de adrenalina que mejora el rendimiento físico.</TM_AdrenalineHD.description>
+  
+  
+  <TM_BladeArtHD.label>Danzante de espadas</TM_BladeArtHD.label>
+  
+  <TM_BladeArtHD.description>Bonificación de atributos del danzante de espadas.</TM_BladeArtHD.description>
+  
+  <TM_BladeArtHD.stages.I.label>I</TM_BladeArtHD.stages.I.label>
+  
+  <TM_BladeArtHD.stages.II.label>II</TM_BladeArtHD.stages.II.label>
+  
+  <TM_BladeArtHD.stages.III.label>III</TM_BladeArtHD.stages.III.label>
+  
+  <TM_BladeArtHD.stages.IV.label>IV</TM_BladeArtHD.stages.IV.label>
+  
+  
+  <TM_Blind.label>Cegado</TM_Blind.label>
+  
+  <TM_Blind.description>Reduce la vista.</TM_Blind.description>
+  
+  <TM_Blind.stages.I.label>I</TM_Blind.stages.I.label>
+  
+  <TM_Blind.stages.II.label>II</TM_Blind.stages.II.label>
+  
+  <TM_Blind.stages.III.label>III</TM_Blind.stages.III.label>
+  
+  
+  <TM_BlurHD.label>Desenfoque</TM_BlurHD.label>
+  
+  <TM_BlurHD.description>Manipula la probabilidad para evitar daño.</TM_BlurHD.description>
+  
+  
+  <TM_BowTrainingHD.label>Maestría con el arco</TM_BowTrainingHD.label>
+  
+  <TM_BowTrainingHD.description>Bonificación de atributos del guardabosques y mejora del arco.</TM_BowTrainingHD.description>
+  
+  <TM_BowTrainingHD.stages.I.label>I</TM_BowTrainingHD.stages.I.label>
+  
+  <TM_BowTrainingHD.stages.II.label>II</TM_BowTrainingHD.stages.II.label>
+  
+  <TM_BowTrainingHD.stages.III.label>III</TM_BowTrainingHD.stages.III.label>
+  
+  <TM_BowTrainingHD.stages.IV.label>IV</TM_BowTrainingHD.stages.IV.label>
+  
+  
+  <TM_CoolHD.label>Protección contra el calor</TM_CoolHD.label>
+  
+  <TM_CoolHD.description>Una pequeña bendición que refresca y aumenta la resistencia a las altas temperaturas.</TM_CoolHD.description>
+  
+  <TM_CoolHD.stages.Cooler.label>Más fresco</TM_CoolHD.stages.Cooler.label>
+  
+  
+  <TM_DeathReversalHD.label>Regresado de la muerte</TM_DeathReversalHD.label>
+  
+  <TM_DeathReversalHD.description>La reacción adversa provocada por revertir la muerte.</TM_DeathReversalHD.description>
+  
+  <TM_DeathReversalHD.stages.I.label>I</TM_DeathReversalHD.stages.I.label>
+  
+  <TM_DeathReversalHD.stages.II.label>II</TM_DeathReversalHD.stages.II.label>
+  
+  <TM_DeathReversalHD.stages.III.label>III</TM_DeathReversalHD.stages.III.label>
+  
+  
+  <TM_DiseaseImmunity2HD.label>Inmunidad a enfermedades</TM_DiseaseImmunity2HD.label>
+  
+  <TM_DiseaseImmunity2HD.description>Aumenta la velocidad natural de inmunidad a las enfermedades.</TM_DiseaseImmunity2HD.description>
+  
+  <TM_DiseaseImmunity2HD.stages.II.label>II</TM_DiseaseImmunity2HD.stages.II.label>
+  
+  
+  <TM_DiseaseImmunityHD.label>Inmunidad a enfermedades</TM_DiseaseImmunityHD.label>
+  
+  <TM_DiseaseImmunityHD.description>Aumenta la velocidad natural de inmunidad a las enfermedades.</TM_DiseaseImmunityHD.description>
+  
+  <TM_DiseaseImmunityHD.stages.I.label>I</TM_DiseaseImmunityHD.stages.I.label>
+  
+  
+  <TM_EnergyRegenHD.label>Regeneración de energía</TM_EnergyRegenHD.label>
+  
+  <TM_EnergyRegenHD.description>Aumenta la velocidad de regeneración de energía como múltiplo de la severidad de la bonificación.</TM_EnergyRegenHD.description>
+  
+  
+  <TM_EvasionHD.label>Evasión</TM_EvasionHD.label>
+  
+  <TM_EvasionHD.description>Permite al personaje esquivar cualquier ataque no explosivo. La probabilidad de esquivar corresponde a la severidad de la bonificación.</TM_EvasionHD.description>
+  
+  
+  <TM_FrostSlowHD.label>Lentitud</TM_FrostSlowHD.label>
+  
+  <TM_FrostSlowHD.description>Extremidades ralentizadas por la escarcha.</TM_FrostSlowHD.description>
+  
+  <TM_FrostSlowHD.stages.frost.label>escarcha</TM_FrostSlowHD.stages.frost.label>
+  
+  
+  <TM_HeatShieldHD.label>Escudo térmico</TM_HeatShieldHD.label>
+  
+  <TM_HeatShieldHD.description>Aumenta la resistencia al calor y evita que el personaje se incendie.</TM_HeatShieldHD.description>
+  
+  
+  <TM_HediffFortitude.label>Entereza</TM_HediffFortitude.label>
+  
+  <TM_HediffFortitude.description>Mitiga todo el daño en una cantidad fija.</TM_HediffFortitude.description>
+  
+  
+  <TM_HediffInvulnerable.label>Invulnerable</TM_HediffInvulnerable.label>
+  
+  <TM_HediffInvulnerable.description>Impide el daño mientras está activo.</TM_HediffInvulnerable.description>
+  
+  
+  <TM_HediffShield.label>Escudo</TM_HediffShield.label>
+  
+  <TM_HediffShield.description>Absorbe daño.</TM_HediffShield.description>
+  
+  
+  <TM_HediffSprint_I.label>Carrera (I)</TM_HediffSprint_I.label>
+  
+  <TM_HediffSprint_I.description>Aumenta el movimiento.</TM_HediffSprint_I.description>
+  
+  
+  <TM_HediffSprint_II.label>Carrera (II)</TM_HediffSprint_II.label>
+  
+  <TM_HediffSprint_II.description>Aumenta el movimiento.</TM_HediffSprint_II.description>
+  
+  
+  <TM_HediffSprint_III.label>Carrera (III)</TM_HediffSprint_III.label>
+  
+  <TM_HediffSprint_III.description>Aumenta el movimiento.</TM_HediffSprint_III.description>
+  
+  
+  <TM_HediffTimedInvulnerable.label>Invulnerable</TM_HediffTimedInvulnerable.label>
+  
+  <TM_HediffTimedInvulnerable.description>Impide el daño mientras está activo.</TM_HediffTimedInvulnerable.description>
+  
+  
+  <TM_InnerFire_AuraHD.label>Aura de calidez</TM_InnerFire_AuraHD.label>
+  
+  <TM_InnerFire_AuraHD.description>Un aura que genera y otorga calidez y confianza.</TM_InnerFire_AuraHD.description>
+  
+  <TM_InnerFire_AuraHD.stages.I.label>I</TM_InnerFire_AuraHD.stages.I.label>
+  
+  <TM_InnerFire_AuraHD.stages.II.label>II</TM_InnerFire_AuraHD.stages.II.label>
+  
+  <TM_InnerFire_AuraHD.stages.III.label>III</TM_InnerFire_AuraHD.stages.III.label>
+  
+  <TM_InnerFire_AuraHD.stages.IV.label>IV</TM_InnerFire_AuraHD.stages.IV.label>
+  
+  
+  <TM_InvisibilityHD.label>Invisibilidad</TM_InvisibilityHD.label>
+  
+  <TM_InvisibilityHD.description>Hace que el personaje afectado se vuelva invisible y no pueda ser objetivo de los enemigos cercanos.</TM_InvisibilityHD.description>
+  
+  <TM_InvisibilityHD.stages.I.label>I</TM_InvisibilityHD.stages.I.label>
+  
+  
+  <TM_JoltHD.label>Sacudida</TM_JoltHD.label>
+  
+  <TM_JoltHD.description>Una pequeña bendición que aumenta la energía física.</TM_JoltHD.description>
+  
+  <TM_JoltHD.stages.I.label>I</TM_JoltHD.stages.I.label>
+  
+  <TM_JoltHD.stages.II.label>II</TM_JoltHD.stages.II.label>
+  
+  <TM_JoltHD.stages.III.label>III</TM_JoltHD.stages.III.label>
+  
+  
+  <TM_MageLightHD.label>Luz mágica</TM_MageLightHD.label>
+  
+  <TM_MageLightHD.description>Una pequeña luz sostenida por magia.</TM_MageLightHD.description>
+  
+  
+  <TM_MagicShieldHD.label>Escudo</TM_MagicShieldHD.label>
+  
+  <TM_MagicShieldHD.description>Absorbe daño.</TM_MagicShieldHD.description>
+  
+  
+  <TM_ManaShieldHD.label>Escudo de maná</TM_ManaShieldHD.label>
+  
+  <TM_ManaShieldHD.description>Sacrifica energía mágica para absorber daño.</TM_ManaShieldHD.description>
+  
+  
+  <TM_RangerBondHD.label>Vínculo del guardabosques</TM_RangerBondHD.label>
+  
+  <TM_RangerBondHD.description>Representa el vínculo que este animal comparte con un guardabosques. Aumenta los atributos físicos y mejora la curación.</TM_RangerBondHD.description>
+  
+  <TM_RangerBondHD.stages.I.label>I</TM_RangerBondHD.stages.I.label>
+  
+  <TM_RangerBondHD.stages.II.label>II</TM_RangerBondHD.stages.II.label>
+  
+  <TM_RangerBondHD.stages.III.label>III</TM_RangerBondHD.stages.III.label>
+  
+  <TM_RangerBondHD.stages.IV.label>IV</TM_RangerBondHD.stages.IV.label>
+  
+  
+  <TM_RayOfHope_AuraHD.label>Aura de esperanza</TM_RayOfHope_AuraHD.label>
+  
+  <TM_RayOfHope_AuraHD.description>Un aura que genera y otorga una presencia reconfortante.</TM_RayOfHope_AuraHD.description>
+  
+  <TM_RayOfHope_AuraHD.stages.I.label>I</TM_RayOfHope_AuraHD.stages.I.label>
+  
+  <TM_RayOfHope_AuraHD.stages.II.label>II</TM_RayOfHope_AuraHD.stages.II.label>
+  
+  <TM_RayOfHope_AuraHD.stages.III.label>III</TM_RayOfHope_AuraHD.stages.III.label>
+  
+  <TM_RayOfHope_AuraHD.stages.IV.label>IV</TM_RayOfHope_AuraHD.stages.IV.label>
+  
+  
+  <TM_RefreshedHD.label>Refrescado</TM_RefreshedHD.label>
+  
+  <TM_RefreshedHD.description>Refresca a un personaje y reduce su cansancio.</TM_RefreshedHD.description>
+  
+  <TM_RefreshedHD.stages.Cooler.label>Más fresco</TM_RefreshedHD.stages.Cooler.label>
+  
+  
+  <TM_Regeneration.label>Regeneración</TM_Regeneration.label>
+  
+  <TM_Regeneration.description>Regenera la salud y cura heridas con el tiempo. Cada tick restaura salud a una lesión hasta que se cura.</TM_Regeneration.description>
+  
+  
+  <TM_Regeneration_I.label>Regeneración (I)</TM_Regeneration_I.label>
+  
+  <TM_Regeneration_I.description>Regenera la salud y cura heridas con el tiempo. Cada tick restaura salud a una lesión hasta que se cura.</TM_Regeneration_I.description>
+  
+  
+  <TM_Regeneration_II.label>Regeneración (II)</TM_Regeneration_II.label>
+  
+  <TM_Regeneration_II.description>Regenera la salud y cura heridas con el tiempo. Cada tick restaura salud a una lesión hasta que se cura.</TM_Regeneration_II.description>
+  
+  
+  <TM_Regeneration_III.label>Regeneración (III)</TM_Regeneration_III.label>
+  
+  <TM_Regeneration_III.description>Regenera la salud y cura heridas con el tiempo. Cada tick restaura salud a una lesión hasta que se cura.</TM_Regeneration_III.description>
+  
+  
+  <TM_ResurrectionHD.label>Debilidad por resurrección</TM_ResurrectionHD.label>
+  
+  <TM_ResurrectionHD.description>Resultado de haber sido resucitado mediante magia.</TM_ResurrectionHD.description>
+  
+  <TM_ResurrectionHD.stages.I.label>I</TM_ResurrectionHD.stages.I.label>
+  
+  <TM_ResurrectionHD.stages.II.label>II</TM_ResurrectionHD.stages.II.label>
+  
+  <TM_ResurrectionHD.stages.III.label>III</TM_ResurrectionHD.stages.III.label>
+  
+  
+  <TM_SeverityHasteHD.label>Celeridad</TM_SeverityHasteHD.label>
+  
+  <TM_SeverityHasteHD.description>La velocidad de ataque se duplica.</TM_SeverityHasteHD.description>
+  
+  
+  <TM_Shadow_AuraHD.label>Aura de sombra</TM_Shadow_AuraHD.label>
+  
+  <TM_Shadow_AuraHD.description>Un aura que genera y otorga una presencia sombría.</TM_Shadow_AuraHD.description>
+  
+  <TM_Shadow_AuraHD.stages.I.label>I</TM_Shadow_AuraHD.stages.I.label>
+  
+  <TM_Shadow_AuraHD.stages.II.label>II</TM_Shadow_AuraHD.stages.II.label>
+  
+  <TM_Shadow_AuraHD.stages.III.label>III</TM_Shadow_AuraHD.stages.III.label>
+  
+  <TM_Shadow_AuraHD.stages.IV.label>IV</TM_Shadow_AuraHD.stages.IV.label>
+  
+  
+  <TM_ShadowSlayerCloakHD.label>Manto del asesino de sombras</TM_ShadowSlayerCloakHD.label>
+  
+  <TM_ShadowSlayerCloakHD.description>El campo de camuflaje del asesino de sombras está activo; realizar acciones que el motor predictivo no pueda rastrear erosionará rápidamente el campo.</TM_ShadowSlayerCloakHD.description>
+  
+  
+  <TM_ShockTherapyHD.label>Terapia de choque</TM_ShockTherapyHD.label>
+  
+  <TM_ShockTherapyHD.description>Entrena la mente para mejorar el comportamiento.</TM_ShockTherapyHD.description>
+  
+  <TM_ShockTherapyHD.stages.Power_Node.label>Nodo de energía</TM_ShockTherapyHD.stages.Power_Node.label>
+  
+  
+  <TM_SoothingBreeze_AuraHD.label>Aura calmante</TM_SoothingBreeze_AuraHD.label>
+  
+  <TM_SoothingBreeze_AuraHD.description>Un aura que genera y otorga una presencia calmante a los personajes cercanos.</TM_SoothingBreeze_AuraHD.description>
+  
+  <TM_SoothingBreeze_AuraHD.stages.I.label>I</TM_SoothingBreeze_AuraHD.stages.I.label>
+  
+  <TM_SoothingBreeze_AuraHD.stages.II.label>II</TM_SoothingBreeze_AuraHD.stages.II.label>
+  
+  <TM_SoothingBreeze_AuraHD.stages.III.label>III</TM_SoothingBreeze_AuraHD.stages.III.label>
+  
+  <TM_SoothingBreeze_AuraHD.stages.IV.label>IV</TM_SoothingBreeze_AuraHD.stages.IV.label>
+  
+  
+  <TM_SS_SerumHD.label>Suero SS</TM_SS_SerumHD.label>
+  
+  <TM_SS_SerumHD.description>Un químico que mejora las capacidades físicas y la resistencia mágica, pero reduce el poder mágico y la regeneración de energía. La potencia del químico aumenta en 3 fases y tarda 100 días en madurar por completo. Los personajes recuperarán la consciencia 2 días después de tomar el suero.</TM_SS_SerumHD.description>
+  
+  <TM_SS_SerumHD.stages.Stage_0.label>Fase 0</TM_SS_SerumHD.stages.Stage_0.label>
+  
+  <TM_SS_SerumHD.stages.Stage_1.label>Fase 1</TM_SS_SerumHD.stages.Stage_1.label>
+  
+  <TM_SS_SerumHD.stages.Stage_2.label>Fase 2</TM_SS_SerumHD.stages.Stage_2.label>
+  
+  <TM_SS_SerumHD.stages.Stage_3.label>Fase 3</TM_SS_SerumHD.stages.Stage_3.label>
+  
+  
+  <TM_Uncertainty.label>Futuro incierto</TM_Uncertainty.label>
+  
+  <TM_Uncertainty.description>Se usa para controlar las promociones de magos.</TM_Uncertainty.description>
+  
+  
+  <TM_UndeadShroudHD.label>Sudario de no muerte</TM_UndeadShroudHD.label>
+  
+  <TM_UndeadShroudHD.description>Las fuerzas de la no muerte se aferran a este personaje.</TM_UndeadShroudHD.description>
+  
+  
+  <TM_WarmHD.label>Protección contra el frío</TM_WarmHD.label>
+  
+  <TM_WarmHD.description>Una pequeña bendición que calienta y aumenta la resistencia a las bajas temperaturas.</TM_WarmHD.description>
+  
+  <TM_WarmHD.stages.Heater.label>Calefactor</TM_WarmHD.stages.Heater.label>
+  
+</LanguageData>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <Projectile_SummonElemental.label>invocar elemental</Projectile_SummonElemental.label>
+  
+  
+  <Projectile_SummonExplosive.label>invocar trampa explosiva</Projectile_SummonExplosive.label>
+  
+  
+  <Projectile_SummonMinion.label>invocar esbirro</Projectile_SummonMinion.label>
+  
+  
+  <Projectile_SummonPoppi.label>invocar poppi</Projectile_SummonPoppi.label>
+  
+  
+  <Projectile_SummonPylon.label>invocar pilón de defensa</Projectile_SummonPylon.label>
+  
+</LanguageData>

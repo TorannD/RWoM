@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
@@ -16,9 +15,9 @@
 		<damageAmountBase>0</damageAmountBase>
 		<speed>100</speed>
    </projectile>
- </ThingDef>
+</ThingDef>
  
- <!-- Ranger training -->
+ 
 
  
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
@@ -65,9 +64,16 @@ Tame and train animal +12%, butchering speed +20%, smelting and construction spe
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_rangertraining</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
    
-     <!-- Bow Training -->
+     
   
  
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
@@ -106,10 +112,17 @@ Level 3: Hearing and Sight +80%, Breathing +25%, Blood filtration +10%, +80% bow
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_bowtraining</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
   
-  <!-- Poison Trap -->
+  
 
 	<TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_PoisonTrap</defName>
@@ -142,9 +155,16 @@ Enemies caught in the poison will take 1-8 poison damage every 0.66 seconds. Poi
             <muzzleFlashScale>20</muzzleFlashScale>
             <isPrimary>false</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_poisontrap</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- Animal Friend -->
+	
 
 	<TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_AnimalFriend</defName>
@@ -182,9 +202,16 @@ A bond can be removed by using this ability on a bonded creature.</description>
             <muzzleFlashScale>20</muzzleFlashScale>
             <isPrimary>false</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_animalfriend</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- Arrow storm -->
+	
     <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
         <thingClass>TorannMagic.Projectile_ArrowStorm</thingClass>
 		<defName>Projectile_ArrowStorm</defName>
@@ -200,7 +227,7 @@ A bond can be removed by using this ability on a bonded creature.</description>
             <damageAmountBase>12</damageAmountBase>
             <speed>40</speed>
         </projectile>
-    </ThingDef>
+</ThingDef>
 
 	<TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_ArrowStorm</defName>
@@ -234,7 +261,14 @@ Range: 32</description>
             <muzzleFlashScale>20</muzzleFlashScale>
             <isPrimary>true</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_arrowstorm</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_ArrowStorm_I</defName>
@@ -268,7 +302,14 @@ Range: 34</description>
             <muzzleFlashScale>20</muzzleFlashScale>
             <isPrimary>true</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_arrowstorm_i</spellId>
+<domain>Might</domain>
+<tier>1</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_ArrowStorm_II</defName>
@@ -302,7 +343,14 @@ Range: 36</description>
             <muzzleFlashScale>20</muzzleFlashScale>
             <isPrimary>true</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_arrowstorm_ii</spellId>
+<domain>Might</domain>
+<tier>2</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_ArrowStorm_III</defName>
@@ -336,7 +384,14 @@ Range: 38</description>
             <muzzleFlashScale>20</muzzleFlashScale>
             <isPrimary>true</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_arrowstorm_iii</spellId>
+<domain>Might</domain>
+<tier>3</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 
 </Defs>

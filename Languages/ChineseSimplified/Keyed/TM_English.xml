@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
 
@@ -699,6 +699,8 @@
   <!--<TM_功能性增强>闪电风暴功能性增强</TM_功能性增强>-->
 
   <AU_DISABLED>已禁用</AU_DISABLED>
+<TM_NewProgressionBeta>新职业进阶（测试版）</TM_NewProgressionBeta>
+  <TM_NewProgressionBetaDesc>启用实验性的新职业进阶系统。仅在游戏启动时读取：更改此选项需要重启游戏。关闭时，模组使用经典职业系统。</TM_NewProgressionBetaDesc>
   <TM_GrimoireTabMode>能力栏中的魔典</TM_GrimoireTabMode>
   <TM_GrimoireTabModeDesc>启用时在能力栏显示魔典按钮；禁用时通过检视面板中的魔典标签打开同一个窗口。</TM_GrimoireTabModeDesc>
   <TM_GrimoireOpen>打开魔典</TM_GrimoireOpen>
@@ -734,4 +736,22 @@
   <TM_GrimoireDesc>打开此角色的魔典，查看职业等级、资源和能力。</TM_GrimoireDesc>
   <TM_GrimoireIsekaiHint>Jelly Creative 制作的 Isekai Leveling 原生联动提供法力与体力上限、恢复速度、能力冷却和资源消耗加成。</TM_GrimoireIsekaiHint>
   <TM_Grimoire>魔典</TM_Grimoire>
+
+  <!-- Grimoire classic-mode strings. -->
+  <TM_GrimoireClassicRequirements>经典规则：法术在魔导书中用职业点数学习；部分法术还需先阅读对应的卷轴或书籍。</TM_GrimoireClassicRequirements>
+  <TM_GrimoireClassicRules>经典规则</TM_GrimoireClassicRules>
+  <TM_GrimoireLearningItems>所需学习物品：</TM_GrimoireLearningItems>
+  <TM_GrimoireNoLearningItems>无需学习物品。</TM_GrimoireNoLearningItems>
+  <TM_GrimoireLearned>已学习</TM_GrimoireLearned>
+  <TM_GrimoireRankMax>最高等级</TM_GrimoireRankMax>
+  <TM_GrimoireRank>等级</TM_GrimoireRank>
+  <TM_GrimoireScrollUnspecified>未指定卷轴</TM_GrimoireScrollUnspecified>
+
+  <!-- Magofuel synthesizer UI strings. -->
+  <TM_SynthToggleLabel>自动合成：魔力 + 化学燃料</TM_SynthToggleLabel>
+  <TM_SynthToggleDesc>缓慢地将储存的魔力和化学燃料转化为魔燃料（约每天50个）。当油罐达到目标或缺少原料时暂停。</TM_SynthToggleDesc>
+  <TM_SynthLoad>装载化学燃料 ({0})</TM_SynthLoad>
+  <TM_SynthLoadDesc>从储液罐附近的堆栈中获取化学燃料装入料斗。</TM_SynthLoadDesc>
+  <TM_SynthInspect>化学燃料料斗：{0} — 每天合成50个魔燃料</TM_SynthInspect>
+  <TM_PoolInspect>信标网络池：法力 {0}/{1}，魔燃料 {2}/{3}（{4} 个储罐）</TM_PoolInspect>
 </LanguageData>

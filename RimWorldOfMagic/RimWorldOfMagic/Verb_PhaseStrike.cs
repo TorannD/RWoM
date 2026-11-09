@@ -1,10 +1,11 @@
-﻿using RimWorld;
+using RimWorld;
 using System;
 using Verse;
 using AbilityUser;
 using UnityEngine;
 using System.Linq;
 using System.Collections.Generic;
+using TorannMagic.Compatibility;
 
 
 namespace TorannMagic
@@ -12,41 +13,17 @@ namespace TorannMagic
     [StaticConstructorOnStartup]
     class Verb_PhaseStrike : Verb_UseAbility  
     {
-        bool arg_41_0;
-        bool arg_42_0;
-        MightPowerSkill pwr;
-        MightPowerSkill ver;
-        MightPowerSkill str;
-
         private int verVal;
         private int pwrVal;
         private int dmgNum = 0;
-
-        bool validTarg;
-        IntVec3 arg_29_0;
 
         private static readonly Color bladeColor = new Color(160f, 160f, 160f);
         private static readonly Material bladeMat = MaterialPool.MatFrom("Spells/cleave", false);
 
         public override bool CanHitTargetFrom(IntVec3 root, LocalTargetInfo targ)
         {
-            if (targ.IsValid && targ.CenterVector3.InBoundsWithNullCheck(base.CasterPawn.Map) && !targ.Cell.Fogged(base.CasterPawn.Map) && targ.Cell.Walkable(base.CasterPawn.Map))
-            {
-                if ((root - targ.Cell).LengthHorizontal < this.verbProps.range)
-                {
-                    //out of range
-                    validTarg = true;
-                }
-                else
-                {
-                    validTarg = false;
-                }
-            }
-            else
-            {
-                validTarg = false;
-            }
-            return validTarg;
+            return targ.IsValid && targ.Cell != root && TM_Teleport.CanMove(CasterPawn, targ.Cell)
+                && !targ.Cell.Fogged(CasterPawn.Map) && (root - targ.Cell).LengthHorizontal < verbProps.range;
         }
 
         public static int GetWeaponDmg(Pawn pawn)
@@ -62,116 +39,61 @@ namespace TorannMagic
         }
 
         protected override bool TryCastShot()
+            => Execute(currentTarget);
+
+        internal bool Execute(LocalTargetInfo target)
         {
-            bool result = false;
-            bool arg_40_0;
-
-            CompAbilityUserMight comp = this.CasterPawn.GetCompAbilityUserMight();
-            verVal = TM_Calc.GetSkillVersatilityLevel(CasterPawn, this.Ability.Def as TMAbilityDef);
-            pwrVal = TM_Calc.GetSkillPowerLevel(CasterPawn, this.Ability.Def as TMAbilityDef);
-            //pwr = comp.MightData.MightPowerSkill_PhaseStrike.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PhaseStrike_pwr");
-            //ver = comp.MightData.MightPowerSkill_PhaseStrike.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PhaseStrike_ver");
-            //verVal = ver.level;
-            //pwrVal = pwr.level;
-            //if (base.CasterPawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
-            //{
-            //    MightPowerSkill mver = comp.MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
-            //    MightPowerSkill mpwr = comp.MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-            //    verVal = mver.level;
-            //    pwrVal = mpwr.level;
-            //}
-            if (this.CasterPawn.equipment.Primary != null && !this.CasterPawn.equipment.Primary.def.IsRangedWeapon)
+            currentTarget=target;
+            Odyssey.ManualTravelSafety.BeginAttempt(Ability);
+            burstShotsLeft = 0;
+            Pawn pawn = CasterPawn;
+            bool canPay=Ability is MightAbility source && source.Pawn!=null && source.Pawn!=pawn
+                ? ClassProgression.SpiritHostedMartial.Find(pawn,source.Pawn,ClassProgression.BladeMartialCast.Phase)==source &&
+                    ClassProgression.SpiritHostedMartial.Ready(pawn,source,ClassProgression.BladeMartialCast.Phase)
+                : Odyssey.ManualTravelSafety.CanPay(Ability);
+            if (!canPay || pawn?.Spawned!=true || !CanHitTargetFrom(pawn.Position,currentTarget) || !Odyssey.ManualTravelSafety.CanComplete(pawn, pawn.Map, currentTarget.Cell))
             {
-                TMAbilityDef ad = (TMAbilityDef)this.Ability.Def;
-                this.dmgNum = Mathf.RoundToInt(comp.weaponDamage * ad.weaponDamageFactor);
-                
-                if (!this.CasterPawn.IsColonist && ModOptions.Settings.Instance.AIHardMode)
-                {
-                    this.dmgNum += 10;
-                }
-
-                if (this.currentTarget != null && base.CasterPawn != null)
-                {
-                    arg_29_0 = this.currentTarget.Cell;
-                    Vector3 vector = this.currentTarget.CenterVector3;
-                    arg_40_0 = this.currentTarget.Cell.IsValid;
-                    arg_41_0 = vector.InBoundsWithNullCheck(base.CasterPawn.Map);
-                    arg_42_0 = true; // vector.ToIntVec3().Standable(base.CasterPawn.Map);
-                }
-                else
-                {
-                    arg_40_0 = false;
-                }
-                bool flag = arg_40_0;
-                bool flag2 = arg_41_0;
-                bool flag3 = arg_42_0;
-                if (flag)
-                {
-                    if (flag2 & flag3)
-                    {
-                        Pawn p = this.CasterPawn;
-                        Map map = this.CasterPawn.Map;
-                        IntVec3 pLoc = this.CasterPawn.Position;
-                        bool drafted = p.Drafted;
-                        if (p.IsColonist)
-                        {
-                            try
-                            {
-                                ThingSelectionUtility.SelectNextColonist();
-                                this.CasterPawn.DeSpawn();
-                                //p.SetPositionDirect(this.currentTarget.Cell);
-                                SearchForTargets(arg_29_0, (2f + (float)(.5f * verVal)), map, p);
-                                GenSpawn.Spawn(p, this.currentTarget.Cell, map);
-                                DrawBlade(p.Position.ToVector3Shifted(), 4f + (float)(verVal));
-                                p.drafter.Drafted = drafted;
-                                if (ModOptions.Settings.Instance.cameraSnap)
-                                {
-                                    CameraJumper.TryJumpAndSelect(p);
-                                }
-                                TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_BladeSweep, this.CasterPawn.DrawPos, this.CasterPawn.Map, 1.4f + .4f * ver.level, .04f, 0f, .18f, 1000, 0, 0, Rand.Range(0, 360));
-                            }
-                            catch
-                            {
-                                if(!CasterPawn.Spawned)
-                                {
-                                    GenSpawn.Spawn(p, pLoc, map);
-                                    p.drafter.Drafted = true;
-                                    Log.Message("Phase strike threw exception - despawned pawn has been recovered at casting location");
-                                }
-                            }
-
-                        }
-                        else
-                        {
-                            this.CasterPawn.DeSpawn();
-                            SearchForTargets(arg_29_0, (2f + (float)(.5f * verVal)), map, p);
-                            GenSpawn.Spawn(p, this.currentTarget.Cell, map);
-                            DrawBlade(p.Position.ToVector3Shifted(), 4f + (float)(verVal));
-                        }
-                    
-                        //this.CasterPawn.SetPositionDirect(this.currentTarget.Cell);
-                        //base.CasterPawn.SetPositionDirect(this.currentTarget.Cell);
-                        //this.CasterPawn.pather.ResetToCurrentPosition();
-                        result = true;
-                    }
-                    else
-                    {
-                    
-                        Messages.Message("InvalidTargetLocation".Translate(), MessageTypeDefOf.RejectInput);
-                    }
-                }
+                Messages.Message("InvalidTargetLocation".Translate(), MessageTypeDefOf.RejectInput);
+                return false;
             }
-            else
+            if (pawn.equipment?.Primary == null || pawn.equipment.Primary.def.IsRangedWeapon)
             {
-                Messages.Message("MustHaveMeleeWeapon".Translate(
-                    this.CasterPawn.LabelCap
-                ), MessageTypeDefOf.RejectInput);
+                Messages.Message("MustHaveMeleeWeapon".Translate(pawn.LabelCap), MessageTypeDefOf.RejectInput);
                 return false;
             }
 
-            this.burstShotsLeft = 0;
-            //this.ability.TicksUntilCasting = (int)base.UseAbilityProps.SecondsToRecharge * 60;
-            return result;
+            CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
+            TMAbilityDef ability = Ability?.Def as TMAbilityDef;
+            if (comp == null || ability == null) return false;
+            Pawn owner=Ability.Pawn ?? pawn;
+            verVal = TM_Calc.GetSkillVersatilityLevel(owner, ability);
+            pwrVal = TM_Calc.GetSkillPowerLevel(owner, ability);
+            dmgNum = Mathf.RoundToInt(ClassProgression.BladeMartialCast.StrikeDamage(pawn,owner) * ability.weaponDamageFactor);
+            if (!pawn.IsColonist && ModOptions.Settings.Instance.AIHardMode) dmgNum += 10;
+
+            Map map = pawn.Map;
+            IntVec3 destination = currentTarget.Cell;
+            // Revalidate and move before any damage or rendering. The caster stays
+            // spawned, retaining selection, draft state and the running ability job.
+            if (!TM_Teleport.Move(pawn, destination)) return false;
+            Odyssey.ManualTravelSafety.Settle(Ability);
+            try
+            {
+                SearchForTargets(destination, 2f + .5f * verVal, map, pawn);
+                DrawBlade(pawn.Position.ToVector3Shifted(), 4f + verVal);
+                if (pawn.IsColonist)
+                {
+                    TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_BladeSweep, pawn.DrawPos, map,
+                        1.4f + .4f * verVal, .04f, 0f, .18f, 1000, 0, 0, Rand.Range(0, 360));
+                }
+            }
+            catch (Exception exception)
+            {
+                // The pawn already moved; preserve the completed cast if a
+                // secondary effect fails instead of allowing a free teleport.
+                TM_Log.Warning("Teleport", "Phase Strike completed, but its secondary effect failed: " + exception);
+            }
+            return true;
         }
 
         public void SearchForTargets(IntVec3 center, float radius, Map map, Pawn pawn)
@@ -179,19 +101,22 @@ namespace TorannMagic
             IEnumerable<IntVec3> targets = GenRadial.RadialCellsAround(center, radius, true);
             foreach (IntVec3 curCell in targets)
             {
-                FleckMaker.ThrowDustPuff(curCell, map, .2f);
                 if (curCell.InBoundsWithNullCheck(map) && curCell.IsValid)
                 {
-                    Pawn victim = curCell.GetFirstPawn(map);
+                    FleckMaker.ThrowDustPuff(curCell, map, .2f);
+                    // The old cast temporarily despawned its caster. Exclude only
+                    // that pawn so its new position cannot hide a destination victim.
+                    Pawn victim = curCell.GetThingList(map).OfType<Pawn>().FirstOrDefault(candidate => candidate != pawn);
                     if (victim != null && victim.Faction != pawn.Faction)
                     {
+                        int damage=dmgNum;
                         if (Rand.Chance(.1f + .15f * pwrVal))
                         {
-                            this.dmgNum *= 3;
+                            damage *= 3;
                             MoteMaker.ThrowText(victim.DrawPos, victim.Map, "Critical Hit", -1f);
                         }
                         DrawStrike(center, victim.Position.ToVector3(), map);
-                        damageEntities(victim, null, this.dmgNum, TMDamageDefOf.DamageDefOf.TM_PhaseStrike);                        
+                        damageEntities(victim, null, damage, TMDamageDefOf.DamageDefOf.TM_PhaseStrike);
                     }
                 }
             }

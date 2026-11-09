@@ -1,4 +1,4 @@
-﻿using Verse;
+using Verse;
 using AbilityUser;
 using UnityEngine;
 using RimWorld;
@@ -12,7 +12,6 @@ namespace TorannMagic
     public class Verb_BladeSpin : Verb_UseAbility
     {
 
-        bool flag10;
         private int verVal = 0;
         private int pwrVal = 0;
 
@@ -45,100 +44,45 @@ namespace TorannMagic
             return validTarg;
         }
 
-        public static int GetWeaponDmg(Pawn pawn)
-        {
-            CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
-            MightPowerSkill str = comp.MightData.MightPowerSkill_global_strength.FirstOrDefault((MightPowerSkill x) => x.label == "TM_global_strength_pwr");
-            int dmgNum = 0;
-            ThingWithComps weaponComp = pawn.equipment.Primary;
-            float weaponDPS = weaponComp.GetStatValue(StatDefOf.MeleeWeapon_AverageDPS, false) * .7f;
-            float dmgMultiplier = weaponComp.GetStatValue(StatDefOf.MeleeWeapon_DamageMultiplier, false);
-            float pawnDPS = pawn.GetStatValue(StatDefOf.MeleeDPS, false);
-            float skillMultiplier = (.6f ) * comp.mightPwr;
-            return dmgNum = Mathf.RoundToInt(skillMultiplier * dmgMultiplier * (pawnDPS + weaponDPS));
-        }
+        public static int GetWeaponDmg(Pawn pawn) => ClassProgression.BladeMartialCast.WeaponDamage(pawn,pawn,.6f);
 
         protected override bool TryCastShot()
-        {            
-            if (this.CasterPawn.equipment.Primary != null && !this.CasterPawn.equipment.Primary.def.IsRangedWeapon)
-            {
-                CompAbilityUserMight comp = this.CasterPawn.GetCompAbilityUserMight();
-                //MightPowerSkill ver = comp.MightData.MightPowerSkill_SeismicSlash.FirstOrDefault((MightPowerSkill x) => x.label == "TM_SeismicSlash_ver");
-                //MightPowerSkill pwr = comp.MightData.MightPowerSkill_SeismicSlash.FirstOrDefault((MightPowerSkill x) => x.label == "TM_SeismicSlash_pwr");
-                //verVal = TM_Calc.GetMightSkillLevel(this.CasterPawn, comp.MightData.MightPowerSkill_BladeSpin, "TM_BladeSpin", "_ver", true);
-                //pwrVal = TM_Calc.GetMightSkillLevel(this.CasterPawn, comp.MightData.MightPowerSkill_BladeSpin, "TM_BladeSpin", "_pwr", true);
-                verVal = TM_Calc.GetSkillVersatilityLevel(CasterPawn, this.Ability.Def as TMAbilityDef);
-                pwrVal = TM_Calc.GetSkillPowerLevel(CasterPawn, this.Ability.Def as TMAbilityDef);
-                //verVal = ver.level;
-                //pwrVal = pwr.level;
-                //if (base.CasterPawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
-                //{
-                //    MightPowerSkill mver = comp.MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
-                //    MightPowerSkill mpwr = comp.MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-                //    verVal = mver.level;
-                //    pwrVal = mpwr.level;
-                //}
-                CellRect cellRect = CellRect.CenteredOn(base.CasterPawn.Position, 1);
-                Map map = base.CasterPawn.Map;
-                cellRect.ClipInsideMap(map);
-
-                IntVec3 centerCell = cellRect.CenterCell;                
-                TMAbilityDef ad = (TMAbilityDef)this.Ability.Def;
-                int dmgNum = Mathf.RoundToInt(comp.weaponDamage * ad.weaponDamageFactor);
-                
-                if (!this.CasterPawn.IsColonist && ModOptions.Settings.Instance.AIHardMode)
-                {
-                    dmgNum += 10;
-                }
-
-                SearchForTargets(base.CasterPawn.Position, (2f + (float)(.5f * verVal)), map);
-                TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_BladeSweep, this.CasterPawn.DrawPos, this.CasterPawn.Map, 1.6f + .4f * verVal, .04f, 0f, .18f, 1000, 0, 0, Rand.Range(0, 360));
-            }
-            else
-            {
-                Messages.Message("MustHaveMeleeWeapon".Translate(
-                    this.CasterPawn.LabelCap
-                ), MessageTypeDefOf.RejectInput);
-                return false;
-            }
-
-            this.burstShotsLeft = 0;
-            this.PostCastShot(flag10, out flag10);
-            return flag10;
-
+        {
+            burstShotsLeft=0;
+            PostCastShot(Spin(),out bool success);
+            return success;
         }
 
-        public void SearchForTargets(IntVec3 center, float radius, Map map)
+        internal bool Spin()
         {
-            Pawn victim = null;
-            IntVec3 curCell;            
-            DrawBlade(base.CasterPawn.Position.ToVector3Shifted(), 4f + (float)(verVal));
-            IEnumerable<IntVec3> targets = GenRadial.RadialCellsAround(center, radius, true);
-            for (int i = 0; i < targets.Count(); i++)
-            {
-                curCell = targets.ToArray<IntVec3>()[i];
-                if (curCell.InBoundsWithNullCheck(base.CasterPawn.Map) && curCell.IsValid)
-                {
-                    victim = curCell.GetFirstPawn(map);
-                }
+            var body=CasterPawn;
+            var owner=Ability?.Pawn ?? body;
+            if (!ClassProgression.BladeMartialCast.HasWeapon(body)) return false;
+            var def=Ability?.Def as TMAbilityDef ?? TorannMagicDefOf.TM_BladeSpin;
+            verVal=TM_Calc.GetSkillVersatilityLevel(owner,def);
+            pwrVal=TM_Calc.GetSkillPowerLevel(owner,def);
+            SearchForTargets(body.Position,2f+.5f*verVal,body.Map);
+            TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_BladeSweep,body.DrawPos,body.Map,1.6f+.4f*verVal,.04f,0f,.18f,1000,0,0,Rand.Range(0,360));
+            return true;
+        }
 
-                if (victim != null && victim != base.CasterPawn && victim.Faction != base.CasterPawn.Faction)
+        public void SearchForTargets(IntVec3 center,float radius,Map map)
+        {
+            var body=CasterPawn;
+            DrawBlade(body.Position.ToVector3Shifted(),4f+verVal);
+            int damage=ClassProgression.BladeMartialCast.WeaponDamage(body,Ability?.Pawn ?? body,.6f);
+            foreach(var cell in GenRadial.RadialCellsAround(center,radius,true))
+            {
+                if(!cell.InBounds(map))continue;
+                var victim=cell.GetFirstPawn(map);
+                if(victim==null || victim==body || victim.Faction==body.Faction)continue;
+                for(int j=0;j<2+pwrVal;j++)
                 {
-                    for (int j = 0; j < 2+pwrVal; j++)
-                    {
-                        bool newTarg = false;
-                        if (Rand.Chance(.5f + .04f*(pwrVal+verVal)))
-                        {
-                            newTarg = true;
-                        }
-                        if (newTarg)
-                        {
-                            DrawStrike(center, victim.Position.ToVector3(), map);
-                            damageEntities(victim, null, GetWeaponDmg(this.CasterPawn), DamageDefOf.Cut);
-                        }
-                    }                    
+                    if(victim.Dead || !victim.Spawned)break;
+                    if(!Rand.Chance(.5f+.04f*(pwrVal+verVal)))continue;
+                    DrawStrike(center,victim.Position.ToVector3(),map);
+                    damageEntities(victim,null,damage,DamageDefOf.Cut);
                 }
-                targets.GetEnumerator().MoveNext();
             }
         }
 

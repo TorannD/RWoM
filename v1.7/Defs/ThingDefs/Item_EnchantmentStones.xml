@@ -441,6 +441,7 @@
   
   <ThingDef ParentName="MagicResourceBase_Magicyte">
     <defName>RawMagicyte</defName>
+	<stackLimit>1000</stackLimit>
 	<thingCategories>
       <li>TM_MagicItems</li>
     </thingCategories>

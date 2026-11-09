@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_MagofuelReservoir.label>бак магопалива</TM_MagofuelReservoir.label>
+  <TM_MagofuelReservoir.description>Зберігає магопаливо й окремий заряд мани. Магопаливо можна перетворити на ману; маг також може зарядити бак, зберігаючи заданий особистий резерв. Не виробляє електрику й не повертає паливо з мани.</TM_MagofuelReservoir.description>
+</LanguageData>

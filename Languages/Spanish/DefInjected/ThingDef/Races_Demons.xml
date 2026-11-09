@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_DemonR.label>demonio</TM_DemonR.label>
+  
+  <TM_DemonR.description>Liberado de los pozos del infierno, este demonio desatará su malicia desenfrenada contra todos los seres que se crucen en su camino. No hay forma de razonar con él ni de someterlo: o lo destruyes o te destruye.</TM_DemonR.description>
+  
+  <TM_DemonR.race.meatLabel>carne de demonio</TM_DemonR.race.meatLabel>
+  
+  <TM_DemonR.tools.left_claw.label>garra izquierda</TM_DemonR.tools.left_claw.label>
+  
+  <TM_DemonR.tools.right_claw.label>garra derecha</TM_DemonR.tools.right_claw.label>
+  
+  <TM_DemonR.tools.hoof.label>pezuña</TM_DemonR.tools.hoof.label>
+  
+  
+  <TM_LesserDemonR.label>demonio menor</TM_LesserDemonR.label>
+  
+  <TM_LesserDemonR.description>Liberado de los pozos del infierno, este demonio menor desatará su malicia desenfrenada contra todos los seres que se crucen en su camino. No hay forma de razonar con él ni de someterlo: o lo destruyes o te destruye.</TM_LesserDemonR.description>
+  
+  <TM_LesserDemonR.race.meatLabel>carne de demonio</TM_LesserDemonR.race.meatLabel>
+  
+  <TM_LesserDemonR.tools.left_claw.label>garra izquierda</TM_LesserDemonR.tools.left_claw.label>
+  
+  <TM_LesserDemonR.tools.right_claw.label>garra derecha</TM_LesserDemonR.tools.right_claw.label>
+  
+  <TM_LesserDemonR.tools.hoof.label>pezuña</TM_LesserDemonR.tools.hoof.label>
+  
+</LanguageData>

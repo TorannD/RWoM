@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ArcaneBolt_pwr>Damage</TM_ArcaneBolt_pwr>
+  <TM_ArcaneBolt_eff>Mana efficiency</TM_ArcaneBolt_eff>
+  <TM_ArcaneBolt_ver>Casting capacity</TM_ArcaneBolt_ver>
+  <TM_MageLight_pwr>Light radius</TM_MageLight_pwr>
+  <TM_MageLight_eff>Mana efficiency</TM_MageLight_eff>
+  <TM_MageLight_ver>Duration</TM_MageLight_ver>
+  <TM_Extinguish_pwr>Area</TM_Extinguish_pwr>
+  <TM_Extinguish_eff>Mana efficiency</TM_Extinguish_eff>
+  <TM_Extinguish_ver>Extinguishing power</TM_Extinguish_ver>
+  <TM_Heater_pwr>Heating power</TM_Heater_pwr>
+  <TM_Heater_eff>Mana efficiency</TM_Heater_eff>
+  <TM_Heater_ver>Duration</TM_Heater_ver>
+  <TM_Cooler_pwr>Cooling power</TM_Cooler_pwr>
+  <TM_Cooler_eff>Mana efficiency</TM_Cooler_eff>
+  <TM_Cooler_ver>Duration</TM_Cooler_ver>
+  <TM_SmokeCloud_pwr>Cloud size</TM_SmokeCloud_pwr>
+  <TM_SmokeCloud_eff>Mana efficiency</TM_SmokeCloud_eff>
+  <TM_SmokeCloud_ver>Duration</TM_SmokeCloud_ver>
+</LanguageData>

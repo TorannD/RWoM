@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_Earth_Elemental.label>elemental de tierra</TM_Earth_Elemental.label>
+  
+  <TM_Earth_Elemental.lifeStages.earth_elemental.label>elemental de tierra</TM_Earth_Elemental.lifeStages.earth_elemental.label>
+  
+  <TM_Earth_Elemental.lifeStages.earth_elemental.labelPlural>elementales de tierra</TM_Earth_Elemental.lifeStages.earth_elemental.labelPlural>
+  
+  
+  <TM_Fire_Elemental.label>elemental de fuego</TM_Fire_Elemental.label>
+  
+  <TM_Fire_Elemental.lifeStages.fire_elemental.label>elemental de fuego</TM_Fire_Elemental.lifeStages.fire_elemental.label>
+  
+  <TM_Fire_Elemental.lifeStages.fire_elemental.labelPlural>elementales de fuego</TM_Fire_Elemental.lifeStages.fire_elemental.labelPlural>
+  
+  
+  <TM_GreaterEarth_Elemental.label>elemental mayor de tierra</TM_GreaterEarth_Elemental.label>
+  
+  <TM_GreaterEarth_Elemental.lifeStages.greater_earth_elemental.label>elemental mayor de tierra</TM_GreaterEarth_Elemental.lifeStages.greater_earth_elemental.label>
+  
+  <TM_GreaterEarth_Elemental.lifeStages.greater_earth_elemental.labelPlural>elementales mayores de tierra</TM_GreaterEarth_Elemental.lifeStages.greater_earth_elemental.labelPlural>
+  
+  
+  <TM_GreaterFire_Elemental.label>elemental mayor de fuego</TM_GreaterFire_Elemental.label>
+  
+  <TM_GreaterFire_Elemental.lifeStages.greater_fire_elemental.label>elemental mayor de fuego</TM_GreaterFire_Elemental.lifeStages.greater_fire_elemental.label>
+  
+  <TM_GreaterFire_Elemental.lifeStages.greater_fire_elemental.labelPlural>elementales mayores de fuego</TM_GreaterFire_Elemental.lifeStages.greater_fire_elemental.labelPlural>
+  
+  
+  <TM_GreaterWater_Elemental.label>elemental mayor de agua</TM_GreaterWater_Elemental.label>
+  
+  <TM_GreaterWater_Elemental.lifeStages.greater_water_elemental.label>elemental mayor de agua</TM_GreaterWater_Elemental.lifeStages.greater_water_elemental.label>
+  
+  <TM_GreaterWater_Elemental.lifeStages.greater_water_elemental.labelPlural>elementales mayores de agua</TM_GreaterWater_Elemental.lifeStages.greater_water_elemental.labelPlural>
+  
+  
+  <TM_GreaterWind_Elemental.label>elemental mayor de viento</TM_GreaterWind_Elemental.label>
+  
+  <TM_GreaterWind_Elemental.lifeStages.greater_wind_elemental.label>elemental mayor de viento</TM_GreaterWind_Elemental.lifeStages.greater_wind_elemental.label>
+  
+  <TM_GreaterWind_Elemental.lifeStages.greater_wind_elemental.labelPlural>elementales de viento</TM_GreaterWind_Elemental.lifeStages.greater_wind_elemental.labelPlural>
+  
+  
+  <TM_LesserEarth_Elemental.label>elemental menor de tierra</TM_LesserEarth_Elemental.label>
+  
+  <TM_LesserEarth_Elemental.lifeStages.lesser_earth_elemental.label>elemental menor de tierra</TM_LesserEarth_Elemental.lifeStages.lesser_earth_elemental.label>
+  
+  <TM_LesserEarth_Elemental.lifeStages.lesser_earth_elemental.labelPlural>elementales de tierra</TM_LesserEarth_Elemental.lifeStages.lesser_earth_elemental.labelPlural>
+  
+  
+  <TM_LesserFire_Elemental.label>elemental menor de fuego</TM_LesserFire_Elemental.label>
+  
+  <TM_LesserFire_Elemental.lifeStages.lesser_fire_elemental.label>elemental menor de fuego</TM_LesserFire_Elemental.lifeStages.lesser_fire_elemental.label>
+  
+  <TM_LesserFire_Elemental.lifeStages.lesser_fire_elemental.labelPlural>elementales menores de fuego</TM_LesserFire_Elemental.lifeStages.lesser_fire_elemental.labelPlural>
+  
+  
+  <TM_LesserWater_Elemental.label>elemental menor de agua</TM_LesserWater_Elemental.label>
+  
+  <TM_LesserWater_Elemental.lifeStages.lesser_water_elemental.label>elemental menor de agua</TM_LesserWater_Elemental.lifeStages.lesser_water_elemental.label>
+  
+  <TM_LesserWater_Elemental.lifeStages.lesser_water_elemental.labelPlural>elementales menores de agua</TM_LesserWater_Elemental.lifeStages.lesser_water_elemental.labelPlural>
+  
+  
+  <TM_LesserWind_Elemental.label>elemental menor de viento</TM_LesserWind_Elemental.label>
+  
+  <TM_LesserWind_Elemental.lifeStages.lesser_wind_elemental.label>elemental menor de viento</TM_LesserWind_Elemental.lifeStages.lesser_wind_elemental.label>
+  
+  <TM_LesserWind_Elemental.lifeStages.lesser_wind_elemental.labelPlural>volutas</TM_LesserWind_Elemental.lifeStages.lesser_wind_elemental.labelPlural>
+  
+  
+  <TM_Water_Elemental.label>elemental de agua</TM_Water_Elemental.label>
+  
+  <TM_Water_Elemental.lifeStages.water_elemental.label>elemental de agua</TM_Water_Elemental.lifeStages.water_elemental.label>
+  
+  <TM_Water_Elemental.lifeStages.water_elemental.labelPlural>elementales de agua</TM_Water_Elemental.lifeStages.water_elemental.labelPlural>
+  
+  
+  <TM_Wind_Elemental.label>elemental de viento</TM_Wind_Elemental.label>
+  
+  <TM_Wind_Elemental.lifeStages.wind_elemental.label>elemental de viento</TM_Wind_Elemental.lifeStages.wind_elemental.label>
+  
+  <TM_Wind_Elemental.lifeStages.wind_elemental.labelPlural>elementales de viento</TM_Wind_Elemental.lifeStages.wind_elemental.labelPlural>
+  
+</LanguageData>

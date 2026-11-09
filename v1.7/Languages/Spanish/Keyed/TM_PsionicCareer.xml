@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_ReadPsionicProjector>Estudiar proyección cinética</TM_ReadPsionicProjector>
+  <TM_ReadPsionicAccelerator>Estudiar aceleración cinética</TM_ReadPsionicAccelerator>
+  <TM_PsionicFoundationTrial>Absorbe o inflige {0}/200 de daño cinético hostil, o repara {1}/20 edificios distintos dañados por desastres.</TM_PsionicFoundationTrial>
+  <TM_PsionicAdeptTrial>Rescata a {0}/10 aliados heridos distintos o entrega {1}/30 suministros de emergencia mientras haya un aliado caído (uno por hora).</TM_PsionicAdeptTrial>
+  <TM_PsionicMasterTrial>Completa {0}/12 días de servicio psiónico. Nivel de poder físico {1}/30.</TM_PsionicMasterTrial>
+  <TM_PsionicAdvance>Avanzar de etapa</TM_PsionicAdvance>
+  <TM_PsionicCrucibleUnavailable>Requiere un 60% de energía psiónica y un 30% de aguante.</TM_PsionicCrucibleUnavailable>
+  <TM_PsionicProjectorInfo>La proyección gasta un 10% menos de energía por proyectil. La ráfaga inflige un 10% menos de daño.</TM_PsionicProjectorInfo>
+  <TM_PsionicAcceleratorInfo>La ráfaga inflige un 8% más de daño. La energía psiónica deja de regenerarse mientras se canaliza la barrera.</TM_PsionicAcceleratorInfo>
+</LanguageData>

@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_HollowGolem_AffinityArcane.label>Afinidad: arcana</TM_HollowGolem_AffinityArcane.label>
+  
+  <TM_HollowGolem_AffinityArcane.description>Mejora la alineación arcana del gólem; color de ojos magenta. La afinidad arcana proporciona los siguientes beneficios por nivel de mejora [1/2/3]\nMovimiento:	+[15/25/30]%\nSalud:	+[55/85/100]%</TM_HollowGolem_AffinityArcane.description>
+  
+  <TM_HollowGolem_AffinityArcane.jobString>aplicando afinidad elemental</TM_HollowGolem_AffinityArcane.jobString>
+  
+  
+  <TM_HollowGolem_AffinityDeath.label>Afinidad: muerte</TM_HollowGolem_AffinityDeath.label>
+  
+  <TM_HollowGolem_AffinityDeath.description>Refuerza los lazos del gólem con la magia de la muerte; color de ojos verde. La afinidad a la muerte proporciona los siguientes beneficios por nivel de mejora [1/2/3]\nMovimiento:	+[10/15/20]%\nSalud:	+[65/90/110]%</TM_HollowGolem_AffinityDeath.description>
+  
+  <TM_HollowGolem_AffinityDeath.jobString>fabricando mejora de gólem</TM_HollowGolem_AffinityDeath.jobString>
+  
+  
+  <TM_HollowGolem_AffinityFire.label>Afinidad: fuego</TM_HollowGolem_AffinityFire.label>
+  
+  <TM_HollowGolem_AffinityFire.description>Refuerza los lazos del gólem con el fuego elemental; color de ojos naranja. La afinidad al fuego proporciona los siguientes beneficios por nivel de mejora [1/2/3]:\nMovimiento:	+[25/40/50]%\nSalud:	+[40/60/75]%</TM_HollowGolem_AffinityFire.description>
+  
+  <TM_HollowGolem_AffinityFire.jobString>aplicando afinidad elemental</TM_HollowGolem_AffinityFire.jobString>
+
+  
+  
+  <TM_HollowGolem_AffinityIce.label>Afinidad: agua</TM_HollowGolem_AffinityIce.label>
+  
+  <TM_HollowGolem_AffinityIce.description>Refuerza los lazos del gólem con el agua elemental; color de ojos azul claro. La afinidad al agua proporciona los siguientes beneficios por nivel de mejora [1/2/3]\nMovimiento:	+[20/30/35]%\nSalud:	+[50/75/90]%</TM_HollowGolem_AffinityIce.description>
+  
+  <TM_HollowGolem_AffinityIce.jobString>aplicando afinidad elemental</TM_HollowGolem_AffinityIce.jobString>
+  
+  
+  <TM_HollowGolem_Armor.label>Coraza vacía</TM_HollowGolem_Armor.label>
+  
+  <TM_HollowGolem_Armor.description>Mejora la armadura del gólem:\nContundente:	+24%\nCortante:	+36%\nTérmico:	+16%\nGolpe:	+12%</TM_HollowGolem_Armor.description>
+  
+  <TM_HollowGolem_Armor.jobString>fabricando pieza de gólem</TM_HollowGolem_Armor.jobString>
+  
+  
+  <TM_HollowGolem_Axe.label>Hacha vacía</TM_HollowGolem_Axe.label>
+  
+  <TM_HollowGolem_Axe.description>Fusiona un hacha de thrumbo a las extremidades arcanas del gólem vacío. Al blandirse, esta hacha libera una onda de energía arcana capaz de tajar a múltiples enemigos y penetrar casi cualquier armadura.</TM_HollowGolem_Axe.description>
+  
+  <TM_HollowGolem_Axe.jobString>fabricando hacha vacía</TM_HollowGolem_Axe.jobString>
+  
+  
+  <TM_HollowGolem_Cloak.label>Capa de desvanecimiento</TM_HollowGolem_Cloak.label>
+  
+  <TM_HollowGolem_Cloak.description>Equipa al gólem vacío con la capa de desvanecimiento, lo que le permite moverse instantáneamente a otra ubicación.\n	\nContundente:	+12%\nCortante:	+6%\nTérmico:	+18%\nArmonía: +10%\nVel. movimiento: +1 casillas/s\n\nHabilidad: Desvanecerse</TM_HollowGolem_Cloak.description>
+  
+  <TM_HollowGolem_Cloak.jobString>fabricando pieza de gólem</TM_HollowGolem_Cloak.jobString>
+  
+  
+  <TM_HollowGolem_CoAArcane.label>Blasón: arcano</TM_HollowGolem_CoAArcane.label>
+  
+  <TM_HollowGolem_CoAArcane.description>Equipa al gólem vacío con un blasón sintonizado con lo arcano que proporciona los siguientes beneficios por nivel de mejora [1/2/3]:\nEnfriamiento de hab.:	-[12%/24%/36%]\nDaño de habilidad:	+[10%/20%/30%]\nProcesamiento: 	+[15%/30%/45%]\nReducción de daño:	[85%/80%/75%]\n\nAdemás, el toque de descomposición restaura 20 + 5*nivel de energía por golpe.</TM_HollowGolem_CoAArcane.description>
+  
+  <TM_HollowGolem_CoAArcane.jobString>fabricando mejora de gólem</TM_HollowGolem_CoAArcane.jobString>
+  
+  
+  <TM_HollowGolem_CoADeath.label>Blasón: muerte</TM_HollowGolem_CoADeath.label>
+  
+  <TM_HollowGolem_CoADeath.description>Equipa al gólem vacío con un blasón sintonizado con la muerte que proporciona los siguientes beneficios por nivel de mejora [1/2/3]:\nArmadura:	+[5%/10%/15%]\nEnfriamiento de hab.:	-[8%/16%/24%]\nDaño de habilidad:	+[10%/20%/30%]\nProcesamiento:	-[5%/10%/15%]\nReducción de daño:	[85%/80%/75%]\n\nAdemás, el toque de descomposición es un 50% más efectivo y golpea dos veces.</TM_HollowGolem_CoADeath.description>
+  
+  <TM_HollowGolem_CoADeath.jobString>fabricando mejora de gólem</TM_HollowGolem_CoADeath.jobString>
+
+  
+  
+  <TM_HollowGolem_CoAFire.label>Blasón: fuego</TM_HollowGolem_CoAFire.label>
+  
+  <TM_HollowGolem_CoAFire.description>Equipa al gólem vacío con un blasón sintonizado con el fuego que proporciona los siguientes beneficios por nivel de mejora [1/2/3]:\nMovimiento:	+[0.2 casillas/0.3 casillas/0.35 casillas]\nArmadura térmica:	+[30%/50%/60%]\nProcesamiento:	+[10%/20%/30%]\nEnfriamiento: 	-[10%/20%/30%]\nReducción de daño:	[85%/80%/75%]\n\nAdemás, el toque de descomposición inflige daño por quemadura adicional y el gólem puede absorber el fuego cercano para restaurar salud.</TM_HollowGolem_CoAFire.description>
+  
+  <TM_HollowGolem_CoAFire.jobString>fabricando mejora de gólem</TM_HollowGolem_CoAFire.jobString>
+  
+  
+  <TM_HollowGolem_CoAIce.label>Blasón: agua</TM_HollowGolem_CoAIce.label>
+  
+  <TM_HollowGolem_CoAIce.description>Equipa al gólem vacío con un blasón sintonizado con el agua que proporciona los siguientes beneficios por nivel de mejora [1/2/3]:\nArmadura:		+[5%/10%/15%]\nEnfriamiento de hab.:	-[10%/20%/30%]\nProcesamiento:	+[10%/20%/30%]\nReducción de daño:	[85%/80%/75%]\n\nAdemás, el toque de descomposición cura al gólem y a un peón aliado a menos de 10 + 3*nivel casillas por un valor de 10 + 4*nivel de salud.</TM_HollowGolem_CoAIce.description>
+  
+  <TM_HollowGolem_CoAIce.jobString>fabricando mejora de gólem</TM_HollowGolem_CoAIce.jobString>
+  
+  
+  <TM_HollowGolem_Crown.label>Corona del despertar</TM_HollowGolem_Crown.label>
+  
+  <TM_HollowGolem_Crown.description>Equipa al gólem vacío con la corona del despertar, la cual le permite detectar y anular la magia de los peones enemigos.</TM_HollowGolem_Crown.description>
+  
+  <TM_HollowGolem_Crown.jobString>fabricando pieza de gólem</TM_HollowGolem_Crown.jobString>
+  
+  
+  <TM_HollowGolem_EnergyCell.label>célula de maná</TM_HollowGolem_EnergyCell.label>
+  
+  <TM_HollowGolem_EnergyCell.description>Crea una bolsa de maná para almacenar maná adicional.</TM_HollowGolem_EnergyCell.description>
+  
+  <TM_HollowGolem_EnergyCell.jobString>creando bolsa de maná</TM_HollowGolem_EnergyCell.jobString>
+  
+  
+  <TM_HollowGolem_EnergyCharge.label>polaridad de maná</TM_HollowGolem_EnergyCharge.label>
+  
+  <TM_HollowGolem_EnergyCharge.description>Aumenta la tasa de regeneración de maná del gólem en 6 por hora.</TM_HollowGolem_EnergyCharge.description>
+  
+  <TM_HollowGolem_EnergyCharge.jobString>alineando polaridades de maná</TM_HollowGolem_EnergyCharge.jobString>
+  
+  
+  <TM_HollowGolem_EnergyConverter.label>convertidor de maná</TM_HollowGolem_EnergyConverter.label>
+  
+  <TM_HollowGolem_EnergyConverter.description>Aumenta la eficiencia del maná absorbido y utilizado por el gólem en un 10%.</TM_HollowGolem_EnergyConverter.description>
+  
+  <TM_HollowGolem_EnergyConverter.jobString>fabricando filtro de maná</TM_HollowGolem_EnergyConverter.jobString>
+
+  
+  
+  <TM_HollowGolem_FGArcane.label>Gema de enfoque: arcana</TM_HollowGolem_FGArcane.label>
+  
+  <TM_HollowGolem_FGArcane.description>Adorna al gólem vacío con una gema que contiene energía arcana condensada, lo que le permite crear una descarga concentrada de energía oscura. La descarga oscura apunta a enemigos hasta a 120 casillas de distancia. Cuesta 50 de energía. Las descargas oscuras se mueven lentamente pero crean una explosión masiva de energía oscura. Solo se puede acoplar una gema de enfoque a un gólem.</TM_HollowGolem_FGArcane.description>
+  
+  <TM_HollowGolem_FGArcane.jobString>fabricando pieza de gólem</TM_HollowGolem_FGArcane.jobString>
+  
+  
+  <TM_HollowGolem_FGDeath.label>Gema de enfoque: muerte</TM_HollowGolem_FGDeath.label>
+  
+  <TM_HollowGolem_FGDeath.description>Adorna al gólem vacío con una gema que contiene la esencia de la muerte, rodeando al gólem con un campo que irradia muerte. El campo de muerte golpea periódicamente a los enemigos cercanos. Esta habilidad es la única gema de enfoque que no requiere canalización. Apunta a los enemigos a menos de 10 casillas del gólem y cuesta 10 de energía por golpe. Solo se puede acoplar una gema de enfoque a un gólem.</TM_HollowGolem_FGDeath.description>
+  
+  <TM_HollowGolem_FGDeath.jobString>fabricando pieza de gólem</TM_HollowGolem_FGDeath.jobString>
+  
+  
+  <TM_HollowGolem_FGFire.label>Gema de enfoque: fuego</TM_HollowGolem_FGFire.label>
+  
+  <TM_HollowGolem_FGFire.description>Adorna al gólem vacío con una gema de enfoque del elemento fuego, lo que le permite usar la habilidad de flor de fuego. La flor de fuego crea 25 descargas de fuego explosivas y apunta a un grupo de enemigos de 6 a 70 casillas de distancia. Consume 20 de energía. Solo se puede acoplar una gema de enfoque.</TM_HollowGolem_FGFire.description>
+  
+  <TM_HollowGolem_FGFire.jobString>fabricando pieza de gólem</TM_HollowGolem_FGFire.jobString>
+  
+  
+  <TM_HollowGolem_FGIce.label>Gema de enfoque: hielo</TM_HollowGolem_FGIce.label>
+  
+  <TM_HollowGolem_FGIce.description>Adorna al gólem vacío con una gema que contiene agua elemental, lo que le permite usar la habilidad de flor de hielo. La flor de hielo crea una ráfaga de 20 fragmentos de hielo y apunta a un grupo de enemigos de 8 a 80 casillas de distancia. Cuesta 30 de energía. Los fragmentos de hielo infligen grandes cantidades de sangrado y funcionan mejor en objetivos concentrados y con armadura ligera. Solo se puede acoplar una gema de enfoque a un gólem.</TM_HollowGolem_FGIce.description>
+  
+  <TM_HollowGolem_FGIce.jobString>fabricando pieza de gólem</TM_HollowGolem_FGIce.jobString>
+  
+  
+  <TM_HollowGolem_FlamesOfDevouringApathy.label>Llamas de la apatía devoradora</TM_HollowGolem_FlamesOfDevouringApathy.label>
+  
+  <TM_HollowGolem_FlamesOfDevouringApathy.description>Las llamas de la apatía devoradora le otorgan a un gólem vacío la capacidad de regular la temperatura. Las llamas también consumirán cualquier suciedad a menos de 25 casillas y emitirán una tenue luz mística. Estos efectos solo están activos mientras el gólem vacío está inactivo. Las llamas de la apatía devoradora y el orbe de llamas extintoras no se pueden usar juntos, ya que estas dos mejoras comparten la misma ranura de componentes.</TM_HollowGolem_FlamesOfDevouringApathy.description>
+  
+  <TM_HollowGolem_FlamesOfDevouringApathy.jobString>fabricando pieza de gólem</TM_HollowGolem_FlamesOfDevouringApathy.jobString>
+
+  
+  
+  <TM_HollowGolem_Helm.label>Casco vacío</TM_HollowGolem_Helm.label>
+  
+  <TM_HollowGolem_Helm.description>Aumenta la armadura del gólem al proteger la cabeza:\nContundente:	+26%\nCortante:	+9%\nTérmico:	+11%\nGolpe:	+15%</TM_HollowGolem_Helm.description>
+  
+  <TM_HollowGolem_Helm.jobString>fabricando pieza de gólem</TM_HollowGolem_Helm.jobString>
+  
+  
+  <TM_HollowGolem_OrbOfExtinguishedFlames.label>Orbe de las llamas extintas</TM_HollowGolem_OrbOfExtinguishedFlames.label>
+  
+  <TM_HollowGolem_OrbOfExtinguishedFlames.description>Equipar al gólem vacío con el orbe de las llamas extintas le permite mirar detrás del velo de la muerte para extraer conocimiento. Los puntos de la tecnología de investigación activa aumentarán por cada peón muerto en el mapa. El orbe también se puede alternar para detectar y consumir cualquier fuego a menos de 25 casillas y emite una tenue luz plateada. Estos efectos solo están activos mientras el gólem vacío está inactivo. Las llamas de la apatía devoradora y el orbe de las llamas extintas no se pueden usar juntos, ya que estas dos mejoras comparten la misma ranura de componentes.</TM_HollowGolem_OrbOfExtinguishedFlames.description>
+  
+  <TM_HollowGolem_OrbOfExtinguishedFlames.jobString>fabricando pieza de gólem</TM_HollowGolem_OrbOfExtinguishedFlames.jobString>
+  
+  
+  <TM_HollowGolem_PGArcane.label>Gema de protección: arcana</TM_HollowGolem_PGArcane.label>
+  
+  <TM_HollowGolem_PGArcane.description>Equipa al gólem con un amuleto arcano que habilita la habilidad Pozo de la Desesperación. El Pozo de la Desesperación encierra un área en un escudo inverso que permite la entrada de proyectiles pero bloquea su salida.</TM_HollowGolem_PGArcane.description>
+  
+  <TM_HollowGolem_PGArcane.jobString>fabricando pieza de gólem</TM_HollowGolem_PGArcane.jobString>
+  
+  
+  <TM_HollowGolem_PGDeath.label>Gema de protección: muerte</TM_HollowGolem_PGDeath.label>
+  
+  <TM_HollowGolem_PGDeath.description>Equipa al gólem con un amuleto de muerte que lo rodea con un aura de muerte. Los enemigos cercanos pueden ser afectados por una maldición que reduce su fuerza de voluntad y su capacidad para luchar.</TM_HollowGolem_PGDeath.description>
+  
+  <TM_HollowGolem_PGDeath.jobString>fabricando pieza de gólem</TM_HollowGolem_PGDeath.jobString>
+  
+  
+  <TM_HollowGolem_PGDoom.label>Gema de protección: abismo de la muerte</TM_HollowGolem_PGDoom.label>
+  
+  <TM_HollowGolem_PGDoom.description>Equipa al gólem con un amuleto del abismo de la muerte que ralentiza a los enemigos cercanos en un campo debilitador de movimiento. Este efecto puede activarse cada 15 segundos y afecta a los enemigos a menos de 30 casillas.</TM_HollowGolem_PGDoom.description>
+  
+  <TM_HollowGolem_PGDoom.jobString>fabricando pieza de gólem</TM_HollowGolem_PGDoom.jobString>
+
+  
+  
+  <TM_HollowGolem_PGFire.label>Gema de protección: fuego</TM_HollowGolem_PGFire.label>
+  
+  <TM_HollowGolem_PGFire.description>Equipa al gólem con un amuleto de fuego que le proporciona una barrera protectora ígnea. Furia Ardiente proporciona una reducción de daño del 35 % para todos los ataques, cauteriza heridas, evita el aturdimiento y quema a los enemigos cercanos. Solo se puede llevar una gema de protección.\n	\nEnfriamiento:	1200s\nDuración:	100s\nCoste de energía:	50</TM_HollowGolem_PGFire.description>
+  
+  <TM_HollowGolem_PGFire.jobString>fabricando pieza de gólem</TM_HollowGolem_PGFire.jobString>
+  
+  
+  <TM_HollowGolem_PGWater.label>Gema de protección: agua</TM_HollowGolem_PGWater.label>
+  
+  <TM_HollowGolem_PGWater.description>Equipa al gólem con un amuleto de agua que le permite evadir ataques. La probabilidad de evadir un ataque es proporcional al porcentaje de energía del gólem y reduce su energía en 5 por cada evasión.</TM_HollowGolem_PGWater.description>
+  
+  <TM_HollowGolem_PGWater.jobString>fabricando pieza de gólem</TM_HollowGolem_PGWater.jobString>
+  
+  
+  <TM_HollowGolem_RepairComponent.label>Restauración de piezas</TM_HollowGolem_RepairComponent.label>
+  
+  <TM_HollowGolem_RepairComponent.description>Reemplaza las piezas faltantes del gólem que no requieren una mejora.</TM_HollowGolem_RepairComponent.description>
+  
+  <TM_HollowGolem_RepairComponent.jobString>fabricando pieza de gólem</TM_HollowGolem_RepairComponent.jobString>
+  
+  
+  <TM_HollowGolem_Shoulder.label>Hombreras vacías</TM_HollowGolem_Shoulder.label>
+  
+  <TM_HollowGolem_Shoulder.description>Aumenta la armadura del gólem con protecciones que resguardan los hombros y el cuello:\nContundente:	+10%\nCortante:	+23%\nTérmico:	+7%\nGolpe:	+8%</TM_HollowGolem_Shoulder.description>
+  
+  <TM_HollowGolem_Shoulder.jobString>fabricando pieza de gólem</TM_HollowGolem_Shoulder.jobString>
+  
+  
+  <TM_HollowGolem_Staff.label>Bastón vacío</TM_HollowGolem_Staff.label>
+  
+  <TM_HollowGolem_Staff.description>Fusiona un bastón de poder ardiente y un bastón del defensor al gólem vacío, creando el bastón vacío. El gólem vacío puede usar este bastón para lanzar proyectiles mágicos sin consumir energía.</TM_HollowGolem_Staff.description>
+  
+  <TM_HollowGolem_Staff.jobString>fabricando bastón vacío</TM_HollowGolem_Staff.jobString>
+
+  
+</LanguageData>

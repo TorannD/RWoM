@@ -1,0 +1,21 @@
+<LanguageData>
+  <TM_SpiritSoulBond.reportString>створює зв’язок душ.</TM_SpiritSoulBond.reportString>
+  <TM_SpiritShadowBolt.reportString>випускає стрілу тіні.</TM_SpiritShadowBolt.reportString>
+  <TM_SpiritShadowBolt_I.reportString>випускає стрілу тіні.</TM_SpiritShadowBolt_I.reportString>
+  <TM_SpiritShadowBolt_II.reportString>випускає стрілу тіні.</TM_SpiritShadowBolt_II.reportString>
+  <TM_SpiritShadowBolt_III.reportString>випускає стрілу тіні.</TM_SpiritShadowBolt_III.reportString>
+  <TM_SpiritShadowStep.reportString>переходить до пов’язаного союзника.</TM_SpiritShadowStep.reportString>
+  <TM_SpiritShadowCall.reportString>прикликає пов’язаного союзника.</TM_SpiritShadowCall.reportString>
+  <TM_SpiritDominate.reportString>застосовує підкорення.</TM_SpiritDominate.reportString>
+  <TM_SpiritRepulsion.reportString>застосовує відштовхування.</TM_SpiritRepulsion.reportString>
+  <TM_SpiritRepulsion_I.reportString>застосовує відштовхування.</TM_SpiritRepulsion_I.reportString>
+  <TM_SpiritRepulsion_II.reportString>застосовує відштовхування.</TM_SpiritRepulsion_II.reportString>
+  <TM_SpiritRepulsion_III.reportString>застосовує відштовхування.</TM_SpiritRepulsion_III.reportString>
+  <TM_SpiritAttraction.reportString>застосовує притягання.</TM_SpiritAttraction.reportString>
+  <TM_SpiritAttraction_I.reportString>застосовує притягання.</TM_SpiritAttraction_I.reportString>
+  <TM_SpiritAttraction_II.reportString>застосовує притягання.</TM_SpiritAttraction_II.reportString>
+  <TM_SpiritAttraction_III.reportString>застосовує притягання.</TM_SpiritAttraction_III.reportString>
+  <TM_SpiritPsychicShock.reportString>застосовує психічний шок.</TM_SpiritPsychicShock.reportString>
+  <TM_SpiritScorn.reportString>застосовує презирство.</TM_SpiritScorn.reportString>
+  <TM_SpiritSummonDemon.reportString>укладає демонічний договір.</TM_SpiritSummonDemon.reportString>
+</LanguageData>

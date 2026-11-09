@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_ItemRegeneration.label>регенерація з предмета</TM_ItemRegeneration.label>
+  <TM_ItemRegeneration.description>Протягом двадцяти секунд відновлює до 5 одиниць здоров’я одній природній рані кожні дві секунди.</TM_ItemRegeneration.description>
+</LanguageData>

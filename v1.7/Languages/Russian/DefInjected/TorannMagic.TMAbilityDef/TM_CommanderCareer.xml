@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_CommanderWorkCrew.label>Рабочая команда</TM_CommanderWorkCrew.label>
+  <TM_CommanderWorkCrew.description>До трёх ближайших союзников могут принять приказ. Их текущая работа ускоряется на 10/15/20% на десять секунд. Расход — 20% выносливости, перезарядка — 45 секунд.</TM_CommanderWorkCrew.description>
+  <TM_CommanderRally.label>Точка сбора</TM_CommanderRally.label>
+  <TM_CommanderRally.description>Отметьте точку в пределах 12 клеток. До 2/3/4 принявших приказ союзников в радиусе трёх клеток получают по 15 защиты на восемь секунд. Расход — 25% выносливости, перезарядка — 40 секунд.</TM_CommanderRally.description>
+  <TM_CommanderOperationEvac.label>Все домой: эвакуация</TM_CommanderOperationEvac.label>
+  <TM_CommanderOperationEvac.description>После пяти секунд подготовки до четырёх союзников получают +20% скорости и по 25 защиты на 20 секунд. Командир удерживает позицию и видимость. Расход — 60% выносливости. Оба режима перезаряжаются двое суток.</TM_CommanderOperationEvac.description>
+  <TM_CommanderOperationAid.label>Все домой: экстренная работа</TM_CommanderOperationAid.label>
+  <TM_CommanderOperationAid.description>После пяти секунд подготовки до четырёх союзников быстрее спасают, лечат или ремонтируют в течение 20 секунд. Материалы расходуются как обычно. Оба режима вызывают усталость и перезаряжаются двое суток.</TM_CommanderOperationAid.description>
+</LanguageData>

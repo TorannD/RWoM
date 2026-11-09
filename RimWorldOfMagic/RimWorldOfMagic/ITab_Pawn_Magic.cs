@@ -79,7 +79,7 @@ namespace TorannMagic
             {
                 open.Close();
             }
-            Find.WindowStack.Add(new Window_TMGrimoire(pawn));
+            Window_TMGrimoire.OpenFor(pawn);
         }
     }
 }

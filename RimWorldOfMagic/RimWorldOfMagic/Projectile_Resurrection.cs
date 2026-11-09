@@ -1,4 +1,4 @@
-﻿using Verse;
+using Verse;
 using Verse.Sound;
 using RimWorld;
 using AbilityUser;
@@ -10,12 +10,20 @@ using System;
 namespace TorannMagic
 {
     [StaticConstructorOnStartup]
-    public class Projectile_Resurrection : Projectile_AbilityBase
+    public class Projectile_Resurrection : ClassProgression.Projectile_SpiritBolt
     {
         private bool initialized = false;
         private bool validTarget = false;
-        private int verVal = 0;
-        private int pwrVal = 0;
+        protected override List<MagicPowerSkill> Skills(MagicData data) => data.MagicPowerSkill_Resurrection;
+        protected override string SkillStem => "TM_Resurrection";
+        internal override void PrepareProjection(MagicAbility owner)
+        {
+            base.PrepareProjection(owner);
+            // Resurrection uses efficiency for the returned pawn's skill penalty.
+            var skills = Skills(owner.MagicUser.MagicData);
+            pwrVal = skills.FirstOrDefault(s => s.label == "TM_Resurrection_eff")?.level ?? 0;
+            verVal = skills.FirstOrDefault(s => s.label == "TM_Resurrection_ver")?.level ?? 0;
+        }
         private int timeToRaise = 1200;
         private int age = -1;
         IntVec3 deadPawnPosition = default(IntVec3);
@@ -63,11 +71,11 @@ namespace TorannMagic
             base.Impact(hitThing);
             ThingDef def = this.def;
 
+            caster = SpellInstigator as Pawn;
             if (!this.initialized)
             {
-                if (this.launcher is Pawn)
+                if (!projected && caster != null)
                 {
-                    this.caster = this.launcher as Pawn;
                     CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
                     if (comp != null && comp.MagicData != null)
                     {
@@ -128,7 +136,7 @@ namespace TorannMagic
                 this.initialized = true;
             }
 
-            if (validTarget && corpseThing != null && (corpseThing.Position != this.deadPawnPosition || corpseThing.Map == null) && deadPawn.Dead)
+            if (validTarget && corpseThing != null && (corpseThing.Position != this.deadPawnPosition || corpseThing.Map == null) && deadPawn?.Dead == true)
             {
                 Log.Message("Corpse was moved or destroyed during resurrection process.");
                 this.age = this.timeToRaise;
@@ -166,11 +174,11 @@ namespace TorannMagic
                         {
                             if(deadPawn.RaceProps.Humanlike)
                             {
-                                GenExplosion.DoExplosion(base.Position, this.Map, Rand.Range(10, 16), TMDamageDefOf.DamageDefOf.TM_Holy, this.launcher, Mathf.RoundToInt(Rand.Range(20, 32)), 6, TMDamageDefOf.DamageDefOf.TM_Holy.soundExplosion);
+                                GenExplosion.DoExplosion(base.Position, this.Map, Rand.Range(10, 16), TMDamageDefOf.DamageDefOf.TM_Holy, SpellInstigator, Mathf.RoundToInt(Rand.Range(20, 32)), 6, TMDamageDefOf.DamageDefOf.TM_Holy.soundExplosion);
                             }
                             else
                             {
-                                GenExplosion.DoExplosion(base.Position, this.Map, Rand.Range(10, 16), TMDamageDefOf.DamageDefOf.TM_Holy, this.launcher, Mathf.RoundToInt(Rand.Range(16, 24)), 3, TMDamageDefOf.DamageDefOf.TM_Holy.soundExplosion);
+                                GenExplosion.DoExplosion(base.Position, this.Map, Rand.Range(10, 16), TMDamageDefOf.DamageDefOf.TM_Holy, SpellInstigator, Mathf.RoundToInt(Rand.Range(16, 24)), 3, TMDamageDefOf.DamageDefOf.TM_Holy.soundExplosion);
                             }
                         }
                         else
@@ -210,7 +218,7 @@ namespace TorannMagic
             else
             {
                 Messages.Message("TM_InvalidResurrection".Translate(
-                    caster.LabelShort
+                    caster?.LabelShort ?? LabelShort
                 ), MessageTypeDefOf.RejectInput);
                 this.age = this.timeToRaise;
             }

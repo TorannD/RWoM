@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_SniperObserve>Спостереження: загрози {0}/10, сектори {1}/10</TM_SniperObserve>
+  <TM_SniperChooseShot>Обрати бойовий постріл</TM_SniperChooseShot>
+  <TM_SniperPickHeadshot>Постріл у голову — класичне ураження життєво важливої частини (остаточно)</TM_SniperPickHeadshot>
+  <TM_SniperPickAimed>Прицільний постріл — одна звичайна куля, 110/125/140% шкоди (остаточно)</TM_SniperPickAimed>
+  <TM_SniperReconHint>Спостерігайте 3 секунди з однієї позиції. Потрібно 10 різних ворожих пішаків або 10 видимих секторів на відстані 12–35 клітин.</TM_SniperReconHint>
+  <TM_SniperTrainRank>Витратити 1 очко воїна на наступний ранг.</TM_SniperTrainRank>
+</LanguageData>

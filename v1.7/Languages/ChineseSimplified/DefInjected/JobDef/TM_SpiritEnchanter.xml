@@ -1,0 +1,15 @@
+<LanguageData>
+  <TM_SpiritTransmutate.reportString>正在嬗变材料。</TM_SpiritTransmutate.reportString>
+  <TM_SpiritEnchantedBody.reportString>正在附魔身体。</TM_SpiritEnchantedBody.reportString>
+  <TM_SpiritEnchantedAura.reportString>正在附魔灵气。</TM_SpiritEnchantedAura.reportString>
+  <TM_SpiritEnchanterStone.reportString>正在制造附魔石。</TM_SpiritEnchanterStone.reportString>
+  <TM_SpiritDismissEnchanterStones.reportString>正在消解附魔石。</TM_SpiritDismissEnchanterStones.reportString>
+  <TM_SpiritEnchantWeapon.reportString>正在附魔武器。</TM_SpiritEnchantWeapon.reportString>
+  <TM_SpiritDispelEnchantWeapon.reportString>正在驱散武器附魔。</TM_SpiritDispelEnchantWeapon.reportString>
+  <TM_SpiritPolymorph.reportString>正在施放变形术。</TM_SpiritPolymorph.reportString>
+  <TM_SpiritPolymorph_I.reportString>正在施放变形术。</TM_SpiritPolymorph_I.reportString>
+  <TM_SpiritPolymorph_II.reportString>正在施放变形术。</TM_SpiritPolymorph_II.reportString>
+  <TM_SpiritPolymorph_III.reportString>正在施放变形术。</TM_SpiritPolymorph_III.reportString>
+  <TM_SpiritShapeshift.reportString>正在变形。</TM_SpiritShapeshift.reportString>
+  <TM_SpiritShapeshiftDW.reportString>正在变为恐狼。</TM_SpiritShapeshiftDW.reportString>
+</LanguageData>

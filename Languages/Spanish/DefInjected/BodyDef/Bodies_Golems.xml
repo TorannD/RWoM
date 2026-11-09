@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_FleshGolem.label>golem de carne</TM_FleshGolem.label>
+  
+  <TM_FleshGolem.corePart.parts.Flesh_Chest.parts.Flesh_Ribcage.parts.left_lung.customLabel>pulmón izquierdo</TM_FleshGolem.corePart.parts.Flesh_Chest.parts.Flesh_Ribcage.parts.left_lung.customLabel>
+  
+  <TM_FleshGolem.corePart.parts.Flesh_Chest.parts.Flesh_Ribcage.parts.right_lung.customLabel>pulmón derecho</TM_FleshGolem.corePart.parts.Flesh_Chest.parts.Flesh_Ribcage.parts.right_lung.customLabel>
+  
+  <TM_FleshGolem.corePart.parts.Flesh_Neck.parts.Flesh_Head.parts.Flesh_Face.parts.left_eye.customLabel>ojo izquierdo</TM_FleshGolem.corePart.parts.Flesh_Neck.parts.Flesh_Head.parts.Flesh_Face.parts.left_eye.customLabel>
+  
+  <TM_FleshGolem.corePart.parts.Flesh_Neck.parts.Flesh_Head.parts.Flesh_Face.parts.right_eye.customLabel>ojo derecho</TM_FleshGolem.corePart.parts.Flesh_Neck.parts.Flesh_Head.parts.Flesh_Face.parts.right_eye.customLabel>
+  
+  <TM_FleshGolem.corePart.parts.Flesh_Neck.parts.Flesh_Head.parts.Flesh_Face.parts.lower_left_eye.customLabel>ojo inferior izquierdo</TM_FleshGolem.corePart.parts.Flesh_Neck.parts.Flesh_Head.parts.Flesh_Face.parts.lower_left_eye.customLabel>
+  
+  <TM_FleshGolem.corePart.parts.Flesh_Neck.parts.Flesh_Head.parts.Flesh_Face.parts.lower_right_eye.customLabel>ojo inferior derecho</TM_FleshGolem.corePart.parts.Flesh_Neck.parts.Flesh_Head.parts.Flesh_Face.parts.lower_right_eye.customLabel>
+  
+  <TM_FleshGolem.corePart.parts.Flesh_Neck.parts.Flesh_Head.parts.Flesh_Face.parts.evil_eye.customLabel>mal de ojo</TM_FleshGolem.corePart.parts.Flesh_Neck.parts.Flesh_Head.parts.Flesh_Face.parts.evil_eye.customLabel>
+  
+  <TM_FleshGolem.corePart.parts.Flesh_Neck.parts.Flesh_Head.parts.Flesh_Face.parts.left_ear.customLabel>oreja izquierda</TM_FleshGolem.corePart.parts.Flesh_Neck.parts.Flesh_Head.parts.Flesh_Face.parts.left_ear.customLabel>
+  
+  <TM_FleshGolem.corePart.parts.Flesh_Neck.parts.Flesh_Head.parts.Flesh_Face.parts.right_ear.customLabel>oreja derecha</TM_FleshGolem.corePart.parts.Flesh_Neck.parts.Flesh_Head.parts.Flesh_Face.parts.right_ear.customLabel>
+  
+  <TM_FleshGolem.corePart.parts.left_shoulder.customLabel>hombro izquierdo</TM_FleshGolem.corePart.parts.left_shoulder.customLabel>
+  
+  <TM_FleshGolem.corePart.parts.left_shoulder.parts.left_arm.customLabel>brazo izquierdo</TM_FleshGolem.corePart.parts.left_shoulder.parts.left_arm.customLabel>
+  
+  <TM_FleshGolem.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.customLabel>mano izquierda</TM_FleshGolem.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.customLabel>
+  
+  <TM_FleshGolem.corePart.parts.right_shoulder.customLabel>hombro derecho</TM_FleshGolem.corePart.parts.right_shoulder.customLabel>
+  
+  <TM_FleshGolem.corePart.parts.right_shoulder.parts.right_arm.customLabel>brazo derecho</TM_FleshGolem.corePart.parts.right_shoulder.parts.right_arm.customLabel>
+  
+  <TM_FleshGolem.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.customLabel>mano derecha</TM_FleshGolem.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.customLabel>
+  
+  <TM_FleshGolem.corePart.parts.Flesh_Waist.parts.left_leg.customLabel>pierna izquierda</TM_FleshGolem.corePart.parts.Flesh_Waist.parts.left_leg.customLabel>
+  
+  <TM_FleshGolem.corePart.parts.Flesh_Waist.parts.left_leg.parts.left_femur.customLabel>fémur izquierdo</TM_FleshGolem.corePart.parts.Flesh_Waist.parts.left_leg.parts.left_femur.customLabel>
+  
+  <TM_FleshGolem.corePart.parts.Flesh_Waist.parts.left_leg.parts.left_tibia.customLabel>tibia izquierda</TM_FleshGolem.corePart.parts.Flesh_Waist.parts.left_leg.parts.left_tibia.customLabel>
+  
+  <TM_FleshGolem.corePart.parts.Flesh_Waist.parts.left_leg.parts.left_foot.customLabel>pie izquierdo</TM_FleshGolem.corePart.parts.Flesh_Waist.parts.left_leg.parts.left_foot.customLabel>
+  
+  <TM_FleshGolem.corePart.parts.Flesh_Waist.parts.right_leg.customLabel>pierna derecha</TM_FleshGolem.corePart.parts.Flesh_Waist.parts.right_leg.customLabel>
+  
+  <TM_FleshGolem.corePart.parts.Flesh_Waist.parts.right_leg.parts.right_femur.customLabel>fémur derecho</TM_FleshGolem.corePart.parts.Flesh_Waist.parts.right_leg.parts.right_femur.customLabel>
+  
+  <TM_FleshGolem.corePart.parts.Flesh_Waist.parts.right_leg.parts.right_tibia.customLabel>tibia derecha</TM_FleshGolem.corePart.parts.Flesh_Waist.parts.right_leg.parts.right_tibia.customLabel>
+  
+  <TM_FleshGolem.corePart.parts.Flesh_Waist.parts.right_leg.parts.right_foot.customLabel>pie derecho</TM_FleshGolem.corePart.parts.Flesh_Waist.parts.right_leg.parts.right_foot.customLabel>
+  
+  
+  <TM_HollowGolem.label>golem hueco</TM_HollowGolem.label>
+  
+  <TM_HollowGolem.corePart.parts.Golem_Chest.parts.Golem_Ribcage.parts.left_lung.customLabel>pulmón izquierdo</TM_HollowGolem.corePart.parts.Golem_Chest.parts.Golem_Ribcage.parts.left_lung.customLabel>
+  
+  <TM_HollowGolem.corePart.parts.Golem_Chest.parts.Golem_Ribcage.parts.right_lung.customLabel>pulmón derecho</TM_HollowGolem.corePart.parts.Golem_Chest.parts.Golem_Ribcage.parts.right_lung.customLabel>
+  
+  <TM_HollowGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.Golem_Face.parts.left_eye.customLabel>ojo izquierdo</TM_HollowGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.Golem_Face.parts.left_eye.customLabel>
+  
+  <TM_HollowGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.Golem_Face.parts.right_eye.customLabel>ojo derecho</TM_HollowGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.Golem_Face.parts.right_eye.customLabel>
+  
+  <TM_HollowGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.Golem_Face.parts.left_ear.customLabel>oreja izquierda</TM_HollowGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.Golem_Face.parts.left_ear.customLabel>
+  
+  <TM_HollowGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.Golem_Face.parts.right_ear.customLabel>oreja derecha</TM_HollowGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.Golem_Face.parts.right_ear.customLabel>
+  
+  <TM_HollowGolem.corePart.parts.left_shoulder.customLabel>hombro izquierdo</TM_HollowGolem.corePart.parts.left_shoulder.customLabel>
+  
+  <TM_HollowGolem.corePart.parts.left_shoulder.parts.left_arm.customLabel>brazo izquierdo</TM_HollowGolem.corePart.parts.left_shoulder.parts.left_arm.customLabel>
+  
+  <TM_HollowGolem.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.customLabel>mano izquierda</TM_HollowGolem.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.customLabel>
+  
+  <TM_HollowGolem.corePart.parts.right_shoulder.customLabel>hombro derecho</TM_HollowGolem.corePart.parts.right_shoulder.customLabel>
+  
+  <TM_HollowGolem.corePart.parts.right_shoulder.parts.right_arm.customLabel>brazo derecho</TM_HollowGolem.corePart.parts.right_shoulder.parts.right_arm.customLabel>
+  
+  <TM_HollowGolem.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.customLabel>mano derecha</TM_HollowGolem.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.customLabel>
+  
+  <TM_HollowGolem.corePart.parts.Golem_Waist.parts.left_leg.customLabel>pierna izquierda</TM_HollowGolem.corePart.parts.Golem_Waist.parts.left_leg.customLabel>
+  
+  <TM_HollowGolem.corePart.parts.Golem_Waist.parts.left_leg.parts.left_femur.customLabel>fémur izquierdo</TM_HollowGolem.corePart.parts.Golem_Waist.parts.left_leg.parts.left_femur.customLabel>
+  
+  <TM_HollowGolem.corePart.parts.Golem_Waist.parts.left_leg.parts.left_tibia.customLabel>tibia izquierda</TM_HollowGolem.corePart.parts.Golem_Waist.parts.left_leg.parts.left_tibia.customLabel>
+  
+  <TM_HollowGolem.corePart.parts.Golem_Waist.parts.left_leg.parts.left_foot.customLabel>pie izquierdo</TM_HollowGolem.corePart.parts.Golem_Waist.parts.left_leg.parts.left_foot.customLabel>
+  
+  <TM_HollowGolem.corePart.parts.Golem_Waist.parts.right_leg.customLabel>pierna derecha</TM_HollowGolem.corePart.parts.Golem_Waist.parts.right_leg.customLabel>
+  
+  <TM_HollowGolem.corePart.parts.Golem_Waist.parts.right_leg.parts.right_femur.customLabel>fémur derecho</TM_HollowGolem.corePart.parts.Golem_Waist.parts.right_leg.parts.right_femur.customLabel>
+  
+  <TM_HollowGolem.corePart.parts.Golem_Waist.parts.right_leg.parts.right_tibia.customLabel>tibia derecha</TM_HollowGolem.corePart.parts.Golem_Waist.parts.right_leg.parts.right_tibia.customLabel>
+  
+  <TM_HollowGolem.corePart.parts.Golem_Waist.parts.right_leg.parts.right_foot.customLabel>pie derecho</TM_HollowGolem.corePart.parts.Golem_Waist.parts.right_leg.parts.right_foot.customLabel>
+  
+  
+  <TM_MaharalGolem.label>golem de Maharal</TM_MaharalGolem.label>
+  
+  <TM_MaharalGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.Golem_Face.parts.left_eye.customLabel>ojo izquierdo</TM_MaharalGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.Golem_Face.parts.left_eye.customLabel>
+  
+  <TM_MaharalGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.Golem_Face.parts.right_eye.customLabel>ojo derecho</TM_MaharalGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.Golem_Face.parts.right_eye.customLabel>
+  
+  <TM_MaharalGolem.corePart.parts.left_shoulder.customLabel>hombro izquierdo</TM_MaharalGolem.corePart.parts.left_shoulder.customLabel>
+  
+  <TM_MaharalGolem.corePart.parts.left_shoulder.parts.left_arm.customLabel>brazo izquierdo</TM_MaharalGolem.corePart.parts.left_shoulder.parts.left_arm.customLabel>
+  
+  <TM_MaharalGolem.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.customLabel>mano izquierda</TM_MaharalGolem.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.customLabel>
+  
+  <TM_MaharalGolem.corePart.parts.right_shoulder.customLabel>hombro derecho</TM_MaharalGolem.corePart.parts.right_shoulder.customLabel>
+  
+  <TM_MaharalGolem.corePart.parts.right_shoulder.parts.right_arm.customLabel>brazo derecho</TM_MaharalGolem.corePart.parts.right_shoulder.parts.right_arm.customLabel>
+  
+  <TM_MaharalGolem.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.customLabel>mano derecha</TM_MaharalGolem.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.customLabel>
+  
+  <TM_MaharalGolem.corePart.parts.Golem_Waist.parts.left_leg.customLabel>pierna izquierda</TM_MaharalGolem.corePart.parts.Golem_Waist.parts.left_leg.customLabel>
+  
+  <TM_MaharalGolem.corePart.parts.Golem_Waist.parts.left_leg.parts.left_foot.customLabel>pie izquierdo</TM_MaharalGolem.corePart.parts.Golem_Waist.parts.left_leg.parts.left_foot.customLabel>
+  
+  <TM_MaharalGolem.corePart.parts.Golem_Waist.parts.right_leg.customLabel>pierna derecha</TM_MaharalGolem.corePart.parts.Golem_Waist.parts.right_leg.customLabel>
+  
+  <TM_MaharalGolem.corePart.parts.Golem_Waist.parts.right_leg.parts.right_foot.customLabel>pie derecho</TM_MaharalGolem.corePart.parts.Golem_Waist.parts.right_leg.parts.right_foot.customLabel>
+  
+  
+  <TM_Mecha-Golem.label>mecagolem</TM_Mecha-Golem.label>
+  
+  
+  <TM_SilkGolem.label>golem de seda</TM_SilkGolem.label>
+  
+  <TM_SilkGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.left_eye.customLabel>ojo izquierdo</TM_SilkGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.left_eye.customLabel>
+  
+  <TM_SilkGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.right_eye.customLabel>ojo derecho</TM_SilkGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.right_eye.customLabel>
+  
+  <TM_SilkGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.left_ear.customLabel>oreja izquierda</TM_SilkGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.left_ear.customLabel>
+  
+  <TM_SilkGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.right_ear.customLabel>oreja derecha</TM_SilkGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.right_ear.customLabel>
+  
+  <TM_SilkGolem.corePart.parts.left_shoulder.customLabel>hombro izquierdo</TM_SilkGolem.corePart.parts.left_shoulder.customLabel>
+  
+  <TM_SilkGolem.corePart.parts.left_shoulder.parts.left_arm.customLabel>brazo izquierdo</TM_SilkGolem.corePart.parts.left_shoulder.parts.left_arm.customLabel>
+  
+  <TM_SilkGolem.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.customLabel>mano izquierda</TM_SilkGolem.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.customLabel>
+  
+  <TM_SilkGolem.corePart.parts.right_shoulder.customLabel>hombro derecho</TM_SilkGolem.corePart.parts.right_shoulder.customLabel>
+  
+  <TM_SilkGolem.corePart.parts.right_shoulder.parts.right_arm.customLabel>brazo derecho</TM_SilkGolem.corePart.parts.right_shoulder.parts.right_arm.customLabel>
+  
+  <TM_SilkGolem.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.customLabel>mano derecha</TM_SilkGolem.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.customLabel>
+  
+  <TM_SilkGolem.corePart.parts.Golem_Waist.parts.left_leg.customLabel>pierna izquierda</TM_SilkGolem.corePart.parts.Golem_Waist.parts.left_leg.customLabel>
+  
+  <TM_SilkGolem.corePart.parts.Golem_Waist.parts.left_leg.parts.left_foot.customLabel>pie izquierdo</TM_SilkGolem.corePart.parts.Golem_Waist.parts.left_leg.parts.left_foot.customLabel>
+  
+  <TM_SilkGolem.corePart.parts.Golem_Waist.parts.right_leg.customLabel>pierna derecha</TM_SilkGolem.corePart.parts.Golem_Waist.parts.right_leg.customLabel>
+  
+  <TM_SilkGolem.corePart.parts.Golem_Waist.parts.right_leg.parts.right_foot.customLabel>pie derecho</TM_SilkGolem.corePart.parts.Golem_Waist.parts.right_leg.parts.right_foot.customLabel>
+  
+  
+  <TM_StoneGolem.label>golem de piedra</TM_StoneGolem.label>
+  
+  <TM_StoneGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.Golem_Face.parts.left_eye.customLabel>ojo izquierdo</TM_StoneGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.Golem_Face.parts.left_eye.customLabel>
+  
+  <TM_StoneGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.Golem_Face.parts.right_eye.customLabel>ojo derecho</TM_StoneGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.Golem_Face.parts.right_eye.customLabel>
+  
+  <TM_StoneGolem.corePart.parts.left_shoulder.customLabel>hombro izquierdo</TM_StoneGolem.corePart.parts.left_shoulder.customLabel>
+  
+  <TM_StoneGolem.corePart.parts.left_shoulder.parts.left_arm.customLabel>brazo izquierdo</TM_StoneGolem.corePart.parts.left_shoulder.parts.left_arm.customLabel>
+  
+  <TM_StoneGolem.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.customLabel>mano izquierda</TM_StoneGolem.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.customLabel>
+  
+  <TM_StoneGolem.corePart.parts.right_shoulder.customLabel>hombro derecho</TM_StoneGolem.corePart.parts.right_shoulder.customLabel>
+  
+  <TM_StoneGolem.corePart.parts.right_shoulder.parts.right_arm.customLabel>brazo derecho</TM_StoneGolem.corePart.parts.right_shoulder.parts.right_arm.customLabel>
+  
+  <TM_StoneGolem.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.customLabel>mano derecha</TM_StoneGolem.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.customLabel>
+  
+  <TM_StoneGolem.corePart.parts.Golem_Waist.parts.left_leg.customLabel>pierna izquierda</TM_StoneGolem.corePart.parts.Golem_Waist.parts.left_leg.customLabel>
+  
+  <TM_StoneGolem.corePart.parts.Golem_Waist.parts.left_leg.parts.left_foot.customLabel>pie izquierdo</TM_StoneGolem.corePart.parts.Golem_Waist.parts.left_leg.parts.left_foot.customLabel>
+  
+  <TM_StoneGolem.corePart.parts.Golem_Waist.parts.right_leg.customLabel>pierna derecha</TM_StoneGolem.corePart.parts.Golem_Waist.parts.right_leg.customLabel>
+  
+  <TM_StoneGolem.corePart.parts.Golem_Waist.parts.right_leg.parts.right_foot.customLabel>pie derecho</TM_StoneGolem.corePart.parts.Golem_Waist.parts.right_leg.parts.right_foot.customLabel>
+  
+  
+  <TM_StrawGolem.label>golem de paja</TM_StrawGolem.label>
+  
+  <TM_StrawGolem.corePart.parts.left_shoulder.customLabel>hombro izquierdo</TM_StrawGolem.corePart.parts.left_shoulder.customLabel>
+  
+  <TM_StrawGolem.corePart.parts.left_shoulder.parts.left_arm.customLabel>brazo izquierdo</TM_StrawGolem.corePart.parts.left_shoulder.parts.left_arm.customLabel>
+  
+  <TM_StrawGolem.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.customLabel>mano izquierda</TM_StrawGolem.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.customLabel>
+  
+  <TM_StrawGolem.corePart.parts.right_shoulder.customLabel>hombro derecho</TM_StrawGolem.corePart.parts.right_shoulder.customLabel>
+  
+  <TM_StrawGolem.corePart.parts.right_shoulder.parts.right_arm.customLabel>brazo derecho</TM_StrawGolem.corePart.parts.right_shoulder.parts.right_arm.customLabel>
+  
+  <TM_StrawGolem.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.customLabel>mano derecha</TM_StrawGolem.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.customLabel>
+  
+  <TM_StrawGolem.corePart.parts.Golem_Waist.parts.left_leg.customLabel>pierna izquierda</TM_StrawGolem.corePart.parts.Golem_Waist.parts.left_leg.customLabel>
+  
+  <TM_StrawGolem.corePart.parts.Golem_Waist.parts.left_leg.parts.left_foot.customLabel>pie izquierdo</TM_StrawGolem.corePart.parts.Golem_Waist.parts.left_leg.parts.left_foot.customLabel>
+  
+  <TM_StrawGolem.corePart.parts.Golem_Waist.parts.right_leg.customLabel>pierna derecha</TM_StrawGolem.corePart.parts.Golem_Waist.parts.right_leg.customLabel>
+  
+  <TM_StrawGolem.corePart.parts.Golem_Waist.parts.right_leg.parts.right_foot.customLabel>pie derecho</TM_StrawGolem.corePart.parts.Golem_Waist.parts.right_leg.parts.right_foot.customLabel>
+  
+  
+  <TM_WoodGolem.label>golem de madera</TM_WoodGolem.label>
+  
+</LanguageData>

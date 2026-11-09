@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <SeerBowman.label>arquero vidente</SeerBowman.label>
+  
+  <SeerBowman.labelPlural>arqueros videntes</SeerBowman.labelPlural>
+  
+  
+  <SeerDefender.label>protector mágico</SeerDefender.label>
+  
+  <SeerDefender.labelPlural>protectores mágicos</SeerDefender.labelPlural>
+  
+  
+  <SeerElite.label>vidente de élite</SeerElite.label>
+  
+  <SeerElite.labelPlural>videntes de élite</SeerElite.labelPlural>
+  
+  
+  <SeerSpearman.label>guardia</SeerSpearman.label>
+  
+  <SeerSpearman.labelPlural>guardias</SeerSpearman.labelPlural>
+  
+</LanguageData>

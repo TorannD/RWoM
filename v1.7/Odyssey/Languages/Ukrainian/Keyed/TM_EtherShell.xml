@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_EtherShell_eff>Ефективність</TM_EtherShell_eff>
+  <TM_EtherShell_eff_desc>Знижує витрати мани на 10% за рівень, до трьох рівнів.</TM_EtherShell_eff_desc>
+  <TM_EtherShell_AlreadyProtected>Ця істота вже захищена ефірною оболонкою.</TM_EtherShell_AlreadyProtected>
+  <TM_EtherShell_Unavailable>Ефірна оболонка недоступна.</TM_EtherShell_Unavailable>
+  <TM_EtherShell_ver>Тривалість</TM_EtherShell_ver>
+  <TM_EtherShell_ver_desc>Додає 25% базової тривалості за рівень: 30, 36 або 42 години. Сувої та посохи діють 24 години.</TM_EtherShell_ver_desc>
+</LanguageData>

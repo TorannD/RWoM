@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Gearrepair</defName>
+    <label>Gear Repair</label>
+    <description>Activates or deactivates the sustained combat skill Gear Repair - slowly repairs equipped apparel and weapons. Requires 20 Stamina to sustain.</description>
+    <spellId>rwom.tm_gearrepair</spellId>
+    <iconPath>UI/gearrepair</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_GearRepair</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_GearRepair</abilityDef>
+      <isViolent>false</isViolent>
+      <defaultProjectile>Projectile_Sustained</defaultProjectile>
+      <warmupTime>0</warmupTime>
+      <SecondsToRecharge>15</SecondsToRecharge>
+      <range>0</range>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Innerhealing</defName>
+    <label>Inner Healing</label>
+    <description>Activates or deactivates the sustained combat skill Inner Healing - sacrifices physical energy to increase healing rate and disease immunity. Requires 10 Stamina to sustain.</description>
+    <spellId>rwom.tm_innerhealing</spellId>
+    <iconPath>UI/innerhealing</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_InnerHealing</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_InnerHealing</abilityDef>
+      <isViolent>false</isViolent>
+      <defaultProjectile>Projectile_Sustained</defaultProjectile>
+      <warmupTime>0</warmupTime>
+      <SecondsToRecharge>15</SecondsToRecharge>
+      <range>0</range>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Heavyblow</defName>
+    <label>Heavy Blow</label>
+    <description>Activates or deactivates the sustained combat skill Heavy Blow - increases damage of all attacks by 20%. Requires 30 Stamina to sustain.</description>
+    <spellId>rwom.tm_heavyblow</spellId>
+    <iconPath>UI/heavyblow</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_HeavyBlow</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_HeavyBlow</abilityDef>
+      <isViolent>false</isViolent>
+      <defaultProjectile>Projectile_Sustained</defaultProjectile>
+      <warmupTime>0</warmupTime>
+      <SecondsToRecharge>15</SecondsToRecharge>
+      <range>0</range>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Strongback</defName>
+    <label>Strong Back</label>
+    <description>Activates or deactivates the sustained combat skill Strong Back - increases carry capacity by 40 and inventory capacity by 50% but causes a 10% increase in exhaustion rate. Requires 20 Stamina to sustain.</description>
+    <spellId>rwom.tm_strongback</spellId>
+    <iconPath>UI/strongback</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_StrongBack</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_StrongBack</abilityDef>
+      <isViolent>false</isViolent>
+      <defaultProjectile>Projectile_Sustained</defaultProjectile>
+      <warmupTime>0</warmupTime>
+      <SecondsToRecharge>15</SecondsToRecharge>
+      <range>0</range>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Thickskin</defName>
+    <label>Thick Skin</label>
+    <description>Activates or deactivates the sustained combat skill Thick Skin - increases all armor values by 10% and improves temperature thresholds slightly. Requires 30 Stamina to sustain and reduces stamina regeneration by 15%.</description>
+    <spellId>rwom.tm_thickskin</spellId>
+    <iconPath>UI/thickskin</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_ThickSkin</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_ThickSkin</abilityDef>
+      <isViolent>false</isViolent>
+      <defaultProjectile>Projectile_Sustained</defaultProjectile>
+      <warmupTime>0</warmupTime>
+      <SecondsToRecharge>15</SecondsToRecharge>
+      <range>0</range>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Fightersfocus</defName>
+    <label>Fighters Focus</label>
+    <description>Activates or deactivates the sustained combat skill Fighters Focus - increases mental break threshold by 5% and pain threshold by 20%. Requires 15 Stamina to sustain.</description>
+    <spellId>rwom.tm_fightersfocus</spellId>
+    <iconPath>UI/fightersfocus</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_FightersFocus</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_FightersFocus</abilityDef>
+      <isViolent>false</isViolent>
+      <defaultProjectile>Projectile_Sustained</defaultProjectile>
+      <warmupTime>0</warmupTime>
+      <SecondsToRecharge>15</SecondsToRecharge>
+      <range>0</range>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Burningfury</defName>
+    <label>Burning Fury</label>
+    <description>Activates or deactivates the sustained combat skill Burning Fury.
+	
+Burning Fury causes periodic burning damage to nearby enemies as well as the caster. It also cauterizes bleeding wounds and applies a combat enhancement on the caster.
+
+Burning Fury:
+Movement +10%
+Breathing +40%
+Blood pumping +40%
+Pain threshold +40%
+Armor (Heat) +100%
+
+While active, the caster cannot be staggered and will reduce all incoming damage by 35%.
+
+This ability actively consumes stamina, and will automatically cancel once the caster's stamina reaches 0.</description>
+    <spellId>rwom.tm_burningfury</spellId>
+    <iconPath>UI/burningfury</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_BurningFury</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_BurningFury</abilityDef>
+      <isViolent>false</isViolent>
+      <defaultProjectile>Projectile_Sustained</defaultProjectile>
+      <warmupTime>0</warmupTime>
+      <SecondsToRecharge>10</SecondsToRecharge>
+      <range>0</range>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+</Defs>

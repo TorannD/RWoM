@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritFirebolt.reportString>випускає вогняну стрілу з тіла носія.</TM_SpiritFirebolt.reportString>
+  <TM_SpiritIcebolt.reportString>випускає крижану стрілу з тіла носія.</TM_SpiritIcebolt.reportString>
+  <TM_SpiritFireball.reportString>випускає вогняну кулю з тіла носія.</TM_SpiritFireball.reportString>
+  <TM_SpiritSnowball.reportString>випускає снігову кулю з тіла носія.</TM_SpiritSnowball.reportString>
+  <TM_SpiritFireclaw.reportString>застосовує вогняний кіготь через тіло носія.</TM_SpiritFireclaw.reportString>
+  <TM_SpiritBlizzard.reportString>викликає хуртовину через носія духа.</TM_SpiritBlizzard.reportString>
+  <TM_SpiritFrostRay.reportString>випускає морозний промінь через носія духа.</TM_SpiritFrostRay.reportString>
+  <TM_SpiritFrostRay_I.reportString>випускає морозний промінь через носія духа.</TM_SpiritFrostRay_I.reportString>
+  <TM_SpiritFrostRay_II.reportString>випускає морозний промінь через носія духа.</TM_SpiritFrostRay_II.reportString>
+  <TM_SpiritFrostRay_III.reportString>випускає морозний промінь через носія духа.</TM_SpiritFrostRay_III.reportString>
+  <TM_SpiritFirestorm.reportString>викликає вогняну бурю через носія духа.</TM_SpiritFirestorm.reportString>
+</LanguageData>

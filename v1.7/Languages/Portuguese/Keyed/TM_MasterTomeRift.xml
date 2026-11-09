@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_TomeRaidChoice>Assaltantes</TM_TomeRaidChoice>
+  <TM_TomeRiftChoice>Fenda elemental de uma vaga</TM_TomeRiftChoice>
+  <TM_TomeRiftLocked>A ameaça é insuficiente ou não há uma fação elemental hostil</TM_TomeRiftLocked>
+  <TM_TomeRiftDescription>Uma fenda abrir-se-á perto de {0}. Após uma hora de jogo, sairão {1} guardiões elementais (cerca de {2} pontos de ameaça). A fenda fechar-se-á. Repele o grupo em dois dias para obter {3}.</TM_TomeRiftDescription>
+</LanguageData>

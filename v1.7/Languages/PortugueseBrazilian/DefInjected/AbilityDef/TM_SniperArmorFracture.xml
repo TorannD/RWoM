@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_Bridge_SniperArmorFracture.label>fratura de armadura</TM_Bridge_SniperArmorFracture.label>
+  <TM_Bridge_SniperArmorFracture.description>Dispara uma bala comum. Ao atingir o alvo, abre uma brecha por 6 segundos para todo o esquadrão. A armadura efetiva diminui em 10, 15 ou 20 pontos percentuais conforme o nível. As brechas se acumulam e expiram individualmente. Custa 20 de vigor. Recarga: 30 segundos.</TM_Bridge_SniperArmorFracture.description>
+</LanguageData>

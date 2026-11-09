@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritChainLightning.reportString>a lançar um relâmpago em cadeia.</TM_SpiritChainLightning.reportString>
+  <TM_SpiritSummonTotemEarth.reportString>a invocar um totem de terra.</TM_SpiritSummonTotemEarth.reportString>
+  <TM_SpiritSummonTotemLightning.reportString>a invocar um totem de relâmpagos.</TM_SpiritSummonTotemLightning.reportString>
+  <TM_SpiritSummonTotemHealing.reportString>a invocar um totem de cura.</TM_SpiritSummonTotemHealing.reportString>
+  <TM_SpiritEnrage.reportString>a provocar fúria.</TM_SpiritEnrage.reportString>
+  <TM_SpiritHex.reportString>a lançar uma maldição.</TM_SpiritHex.reportString>
+  <TM_SpiritHex_I.reportString>a lançar uma maldição.</TM_SpiritHex_I.reportString>
+  <TM_SpiritHex_II.reportString>a lançar uma maldição.</TM_SpiritHex_II.reportString>
+  <TM_SpiritHex_III.reportString>a lançar uma maldição.</TM_SpiritHex_III.reportString>
+  <TM_SpiritHex_Pain.reportString>a infligir dor.</TM_SpiritHex_Pain.reportString>
+  <TM_SpiritHex_CriticalFail.reportString>a invocar o infortúnio.</TM_SpiritHex_CriticalFail.reportString>
+  <TM_SpiritHex_MentalAssault.reportString>a atacar a mente.</TM_SpiritHex_MentalAssault.reportString>
+  <TM_SpiritGuardianSpirit.reportString>a invocar um espírito guardião.</TM_SpiritGuardianSpirit.reportString>
+  <TM_SpiritDismissGuardianSpirit.reportString>a dispensar um espírito guardião.</TM_SpiritDismissGuardianSpirit.reportString>
+</LanguageData>

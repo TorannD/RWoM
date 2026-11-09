@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_Chi.label>chi</TM_Chi.label>
+  
+  <TM_Chi.description>El chi, o espíritu, es la fuerza vital que reside en todos los seres vivos. Los monjes cultivan y canalizan esta fuerza para dominar su arte. Equilibrar el ritmo y el flujo del chi requiere tiempo y suele lograrse mediante la meditación constante.</TM_Chi.description>
+  
+  
+  <TM_ChiBurst.label>explosión de chi</TM_ChiBurst.label>
+  
+  <TM_ChiBurst.description>Proyecta una enorme cantidad de chi sobre una zona objetivo, sobrecargando y alterando la energía de todos los peones dentro del área de efecto.\n\nLa explosión de chi interrumpe las habilidades de los luchadores y los magos, y causa daño en función de la cantidad de energía alterada. Afecta al chi, el maná, la magia de sangre, la resistencia, el odio y la energía psiónica.\n\nTiene una probabilidad baja de alterar el estado mental de los peones afectados. Este efecto se puede resistir.</TM_ChiBurst.description>
+  
+  
+  <TM_DragonStrike.label>golpe del dragón</TM_DragonStrike.label>
+  
+  <TM_DragonStrike.description>Un ataque de salto que permite al monje acortar rápidamente la distancia con un oponente.\n\nHabilidad activa (8 de chi): el monje salta por el aire y asesta una potente patada voladora contra un oponente lejano. Cuanto más cerca esté el oponente, más daño inflige el golpe del dragón. Si el oponente está a 5 casillas o menos, el ataque también lo empuja hacia atrás.\n\nHabilidad pasiva (10 de resistencia): el monje ejecuta una patada giratoria que golpea a varios oponentes. El golpe del dragón tiene una probabilidad de activarse con cualquier ataque normal cuando hay varios enemigos cerca del objetivo.</TM_DragonStrike.description>
+  
+  
+  <TM_Meditate.label>meditar</TM_Meditate.label>
+  
+  <TM_Meditate.description>La meditación restaura la fuerza vital del monje y es esencial para mantener un nivel elevado de chi.\n\nAntes de que la meditación pueda generar chi, es necesario purgar cualquier dolencia física o mental. Si el monje padece algún mal (heridas, enfermedades, mal estado de ánimo o adicción a las drogas), concentrará el chi durante la meditación para eliminarlo. Estas dolencias solo pueden purgarse mientras el monje está meditando.</TM_Meditate.description>
+  
+  
+  <TM_MindOverBody.label>mente sobre cuerpo</TM_MindOverBody.label>
+  
+  <TM_MindOverBody.description>Entrenamiento mental que mejora el control del monje sobre sus capacidades físicas y aumenta su resistencia al estrés físico y mental. La mitigación del daño disminuye en función del peso, en kg, de la armadura que lleva equipada.\n\nMente sobre cuerpo es una mejora pasiva que aumenta la consciencia, el movimiento, la manipulación, la probabilidad de acertar en combate cuerpo a cuerpo, la probabilidad de esquivar, la penetración de armadura y los umbrales de crisis mental y de dolor.</TM_MindOverBody.description>
+  
+  
+  <TM_ThunderStrike.label>golpe del trueno</TM_ThunderStrike.label>
+  
+  <TM_ThunderStrike.description>Imbuye un ataque con suficiente chi para generar rayos.</TM_ThunderStrike.description>
+  
+  
+  <TM_TigerStrike.label>golpe del tigre</TM_TigerStrike.label>
+  
+  <TM_TigerStrike.description>Un ataque cuerpo a cuerpo que asesta varios golpes rápidos contra un único oponente. Para ejecutarlo, el monje debe estar al alcance del combate cuerpo a cuerpo y no llevar armas.\n\nHabilidad activa (12 de chi): asesta 4 ataques en rápida sucesión. El golpe del tigre se puede entrenar para añadir ataques que aturden, drenan energía o ejecutan un golpe de precisión capaz de destruir órganos vitales.\n\nHabilidad pasiva (8 de resistencia): asesta varios golpes contra un oponente. Los ataques pueden ser de cualquiera de los tipos entrenados: daño físico, aturdimiento, drenaje de energía o daño vital. El golpe del tigre tiene una probabilidad de activarse con cualquier ataque normal, incluido otro golpe del tigre.</TM_TigerStrike.description>
+  
+</LanguageData>

@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <AssemblyName>TorannMagic.AbilityAI</AssemblyName>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <DefaultItemExcludes>$(DefaultItemExcludes);obj/**;bin/**</DefaultItemExcludes>
+    <GameDir Condition="'$(GameDir)' == ''">C:/Program Files (x86)/Steam/steamapps/common/RimWorld</GameDir>
+    <HarmonyDir Condition="'$(HarmonyDir)' == ''">C:/Program Files (x86)/Steam/steamapps/workshop/content/294100/2009463077/1.7/Assemblies</HarmonyDir>
+    <JecsDir Condition="'$(JecsDir)' == ''">C:/Program Files (x86)/Steam/steamapps/workshop/content/294100/3312959701/1.7/Assemblies</JecsDir>
+    <!-- Compile reference to the Ability AI assembly. Never copied: the
+         installed Ability AI mod owns the runtime copy. -->
+    <AbilityAIDir Condition="'$(AbilityAIDir)' == ''">$(MSBuildThisFileDirectory)..\..\..\..\ext\AbilityAI</AbilityAIDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony"><HintPath>$(HarmonyDir)/0Harmony.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="TorannMagic"><HintPath>$(ModAssemblyPath)</HintPath><Private>false</Private></Reference>
+    <Reference Include="TorannMagic.Core"><HintPath>$(CoreAssemblyPath)</HintPath><Private>false</Private></Reference>
+    <Reference Include="AbilityUser"><HintPath>$(JecsDir)/AbilityUser.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="AbilityAI"><HintPath>$(AbilityAIDir)/AbilityAI.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Assembly-CSharp"><HintPath>$(GameDir)/Assembly-CSharp.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine"><HintPath>$(GameDir)/UnityStubs.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+</Project>

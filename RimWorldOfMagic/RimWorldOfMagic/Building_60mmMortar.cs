@@ -29,7 +29,9 @@ namespace TorannMagic
         private int effVal = 0;
 
         public LocalTargetInfo setTarget = null;
-        private TargetingParameters targetingParameters = new TargetingParameters();
+        private TargetingParameters targetingParameters = new TargetingParameters {
+            canTargetBuildings=true,canTargetPawns=true,canTargetLocations=true
+        };
 
         protected CompMannable mannableComp;
 
@@ -38,6 +40,38 @@ namespace TorannMagic
         private bool PlayerControlled => (base.Faction == Faction.OfPlayer || MannedByColonist) && !MannedByNonColonist;
         private bool Manned => MannedByColonist || MannedByNonColonist;
         private bool initialized = false;
+        private bool hostedTraining;
+        private bool operationStarted;
+        private int resumeOperatorUntil = -1;
+        private Pawn trainingBody, trainingSoul;
+
+        internal bool CaptureTraining(Pawn body, Pawn soul)
+        {
+            if (initialized || body == null || soul == null || body == soul ||
+                ClassProgression.SuperSoldierMartialPath.Owner(body) != soul) return false;
+            InitializeTraining(soul);
+            trainingBody = body;
+            trainingSoul = soul;
+            hostedTraining = true;
+            return true;
+        }
+
+        internal bool CanOperate(Pawn actor) => !hostedTraining || actor == trainingBody && trainingSoul != null &&
+            ClassProgression.SuperSoldierMartialPath.Owner(actor) == trainingSoul;
+
+        private void InitializeTraining(Pawn source)
+        {
+            comp = source.GetCompAbilityUserMight();
+            verVal = comp.MightData.MightPowerSkill_60mmMortar.First(x => x.label == "TM_60mmMortar_ver").level;
+            pwrVal = comp.MightData.MightPowerSkill_60mmMortar.First(x => x.label == "TM_60mmMortar_pwr").level;
+            effVal = comp.MightData.MightPowerSkill_60mmMortar.First(x => x.label == "TM_60mmMortar_eff").level;
+            mortarTicksToFire = Find.TickManager.TicksGame + 300;
+            mortarMaxRange = 80 + verVal * 10;
+            mortarCount = verVal >= 3 ? 4 : 3;
+            mortarAccuracy = 4f - .7f * effVal;
+            setTarget = null;
+            initialized = true;
+        }
 
         CompAbilityUserMight comp;
 
@@ -49,6 +83,19 @@ namespace TorannMagic
             Scribe_Values.Look<int>(ref this.effVal, "effVal", 0, false);
             Scribe_Values.Look<int>(ref this.mortarMaxRange, "mortarMaxRange", 80, false);
             Scribe_Values.Look<int>(ref this.mortarTicksToFire, "mortarTicksToFire", 50, false);
+            Scribe_Values.Look(ref initialized,"initialized",false);
+            Scribe_Values.Look(ref mortarCount,"mortarCount",3);
+            Scribe_Values.Look(ref mortarAccuracy,"mortarAccuracy",4f);
+            Scribe_TargetInfo.Look(ref setTarget,"setTarget");
+            Scribe_Values.Look(ref hostedTraining, "TM_hostedTraining");
+            Scribe_Values.Look(ref operationStarted, "TM_operationStarted");
+            Scribe_References.Look(ref trainingBody, "TM_trainingBody");
+            Scribe_References.Look(ref trainingSoul, "TM_trainingSoul");
+            // CompMannable's per-tick heartbeat is deliberately not serialized.
+            // Allow the saved operator's job to tick once before treating the
+            // restored emplacement as abandoned. This never authorizes firing.
+            if (Scribe.mode == LoadSaveMode.PostLoadInit && hostedTraining && operationStarted)
+                resumeOperatorUntil = Find.TickManager.TicksGame + 1;
         }
 
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
@@ -63,25 +110,20 @@ namespace TorannMagic
 
             if (Manned)
             {
+                resumeOperatorUntil = -1;
+                operationStarted = true;
+                if (!CanOperate(mannableComp.ManningPawn))
+                {
+                    mannableComp.ManningPawn.jobs.EndCurrentJob(JobCondition.Incompletable);
+                    Destroy(DestroyMode.Vanish);
+                    return;
+                }
 
                 if (!initialized)
                 {
-                    comp = mannableComp.ManningPawn.GetCompAbilityUserMight();
-                    this.verVal = mannableComp.ManningPawn.GetCompAbilityUserMight().MightData.MightPowerSkill_60mmMortar.FirstOrDefault((MightPowerSkill x) => x.label == "TM_60mmMortar_ver").level;
-                    this.pwrVal = mannableComp.ManningPawn.GetCompAbilityUserMight().MightData.MightPowerSkill_60mmMortar.FirstOrDefault((MightPowerSkill x) => x.label == "TM_60mmMortar_pwr").level;
-                    this.effVal = mannableComp.ManningPawn.GetCompAbilityUserMight().MightData.MightPowerSkill_60mmMortar.FirstOrDefault((MightPowerSkill x) => x.label == "TM_60mmMortar_eff").level;
-                    this.mortarTicksToFire = Find.TickManager.TicksGame + (300);
-                    this.mortarMaxRange += (verVal * 10);
-                    if(verVal >= 3)
-                    {
-                        this.mortarCount++;
-                    }
-                    this.mortarAccuracy = mortarAccuracy - (.7f * effVal);
-                    this.setTarget = null;
-                    this.targetingParameters.canTargetBuildings = true;
-                    this.targetingParameters.canTargetPawns = true;
-                    this.targetingParameters.canTargetLocations = true;
-                    this.initialized = true;
+                    var actor = mannableComp.ManningPawn;
+                    var source = ClassProgression.SuperSoldierMartialPath.Owner(actor);
+                    if (source == null || source == actor || !CaptureTraining(actor, source)) InitializeTraining(actor);
                 }
 
                 if (!mannableComp.ManningPawn.DestroyedOrNull() && !mannableComp.ManningPawn.Dead && !mannableComp.ManningPawn.Downed)
@@ -134,7 +176,18 @@ namespace TorannMagic
                 }
             }
             else
-            {                
+            {
+                if (hostedTraining && operationStarted && Find.TickManager.TicksGame <= resumeOperatorUntil &&
+                    trainingBody?.Spawned == true && trainingBody.Map == Map && !trainingBody.Dead &&
+                    !trainingBody.Downed && CanOperate(trainingBody) &&
+                    trainingBody.CurJob != null && trainingBody.CurJob.def == JobDefOf.ManTurret && trainingBody.CurJob.targetA.Thing == this)
+                    return;
+                // Deployment queues ManTurret; the carrier still needs to reach
+                // the interaction cell. Reuse the initial setup deadline, never
+                // extend it on reload or after an operator abandons the mortar.
+                if (hostedTraining && !operationStarted && Find.TickManager.TicksGame <= mortarTicksToFire &&
+                    trainingBody?.Spawned == true && trainingBody.Map == Map && !trainingBody.Dead &&
+                    !trainingBody.Downed && CanOperate(trainingBody)) return;
                 this.Destroy(DestroyMode.Vanish);
             }
         }

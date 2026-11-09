@@ -1,4 +1,4 @@
-﻿using AbilityUser;
+using AbilityUser;
 using RimWorld;
 using Verse;
 using System.Linq;
@@ -15,11 +15,33 @@ namespace TorannMagic
     //    propagationSpeed:, excludeRadius:, doSoundEffects:, postExplosionSpawnThingDefWater:, screenShakeFactor:
     //    );
 
-    public class Projectile_Fireball : Projectile_AbilityBase
+    public class Projectile_Fireball : ClassProgression.Projectile_SpiritBolt
 	{
-        private int verVal;
-        private int pwrVal;
-        private float arcaneDmg = 1;
+        private string mastery;
+        internal void RecordMastery(Pawn caster, AbilityUser.AbilityDef def)
+        {
+            if (def == TorannMagicDefOf.TM_Fireball && caster?.CurJob?.verbToUse is Verb_UseAbility verb
+                && verb.caster == caster && verb.Ability?.Def == def)
+                mastery = ClassProgression.SpellMastery.Active(caster, verb.Ability);
+        }
+
+        internal float PrimaryRadius(float radius) => mastery == "reach" ? radius * 1.25f : radius;
+        internal float PrimaryDamage(float damage) => mastery == "focus" ? damage * 1.25f : damage;
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look(ref mastery, "spellMastery");
+        }
+
+        protected override string SkillStem => "TM_Fireball";
+        protected override System.Collections.Generic.List<MagicPowerSkill> Skills(MagicData data) => data.MagicPowerSkill_Fireball;
+
+        internal override void PrepareProjection(MagicAbility owner)
+        {
+            base.PrepareProjection(owner);
+            mastery = ClassProgression.SpellMastery.Active(owner.Pawn, owner);
+        }
 
         protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
@@ -27,33 +49,38 @@ namespace TorannMagic
 			base.Impact(hitThing);
 			ThingDef def = this.def;
 
-            //GenExplosion.DoExplosion(base.Position, map, this.def.projectile.explosionRadius, DamageDefOf.Bomb, this.launcher, SoundDefOf.PlanetkillerImpact, def, this.equipmentDef, null, 0f, 1, false, null, 0f, 1);
-            GenExplosion.DoExplosion(base.Position, map, this.def.projectile.explosionRadius, DamageDefOf.Bomb, this.launcher, Mathf.RoundToInt(Rand.Range(this.def.projectile.GetDamageAmount(1,null)/2, this.def.projectile.GetDamageAmount(1,null)) * this.arcaneDmg), 0, TorannMagicDefOf.TM_SoftExplosion, def, this.equipmentDef, null, null, 0f, 1, null, null, 0, false, null, 0f, 1, 0.1f, true);
+            //GenExplosion.DoExplosion(base.Position, map, this.def.projectile.explosionRadius, DamageDefOf.Bomb, SpellInstigator, SoundDefOf.PlanetkillerImpact, def, this.equipmentDef, null, 0f, 1, false, null, 0f, 1);
+            GenExplosion.DoExplosion(base.Position, map, PrimaryRadius(this.def.projectile.explosionRadius), DamageDefOf.Bomb, SpellInstigator, Mathf.RoundToInt(PrimaryDamage(Rand.Range(this.def.projectile.GetDamageAmount(1,null)/2, this.def.projectile.GetDamageAmount(1,null)) * (projected ? 1f : this.arcaneDmg))), 0, TorannMagicDefOf.TM_SoftExplosion, def, this.equipmentDef, null, null, 0f, 1, null, null, 0, false, null, 0f, 1, 0.1f, true);
 
             //GenExplosion.DoExplosion(Position, Map,this.def.projectile.explosionRadius, DamageDefOf.Bomb, Launcher, Mathf.RoundToInt(Rand.Range(this.def.projectile.GetDamageAmount(1, null) / 2, this.def.projectile.GetDamageAmount(1, null)) * this.arcaneDmg), 0f, TorannMagicDefOf.TM_SoftExplosion)
                 
             CellRect cellRect = CellRect.CenteredOn(base.Position, 5);
 			cellRect.ClipInsideMap(map);
             
-            Pawn pawn = this.launcher as Pawn;
-            CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
-            MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Fireball.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Fireball_pwr");
-            MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Fireball.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Fireball_ver");
-            pwrVal = pwr.level;
-            verVal = ver.level;
-            if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+            MagicPowerSkill ver = null;
+            if (!projected)
             {
-                MightPowerSkill mpwr = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-                MightPowerSkill mver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
-                pwrVal = mpwr.level;
-                verVal = mver.level;
+                Pawn pawn = this.launcher as Pawn;
+                CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
+                MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Fireball.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Fireball_pwr");
+                ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Fireball.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Fireball_ver");
+                pwrVal = pwr.level;
+                verVal = ver.level;
+                if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+                {
+                    MightPowerSkill mpwr = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
+                    MightPowerSkill mver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
+                    pwrVal = mpwr.level;
+                    verVal = mver.level;
+                }
+                this.arcaneDmg = comp.arcaneDmg;
+                if(ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist)
+                {
+                    pwrVal = 3;
+                    verVal = 3;
+                }
             }
-            this.arcaneDmg = comp.arcaneDmg;
-            if(ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist)
-            {
-                pwrVal = 3;
-                verVal = 3;
-            }
+            if (pwrVal > 0 && !cellRect.Any(c => !c.Fogged(map))) return;
             for (int i = 0; i < (pwrVal * 3); i++)
 			{
 				IntVec3 randomCell = cellRect.RandomCell;
@@ -74,19 +101,19 @@ namespace TorannMagic
             ThingDef def = this.def;
             if (verVal == 0)
             {
-                Explosion(pos, map, radius, DamageDefOf.Flame, this.launcher, null, def, this.equipmentDef, null, 0.3f, 1, false, null, 0f, 1);
+                Explosion(pos, map, radius, DamageDefOf.Flame, SpellInstigator, null, def, this.equipmentDef, null, 0.3f, 1, false, null, 0f, 1);
             }
             else if (verVal == 1)
             {
-                Explosion(pos, map, radius, TMDamageDefOf.DamageDefOf.TM_Fireball_I, this.launcher, null, def, this.equipmentDef, null, 0.5f, 1, false, null, 0f, 1);
+                Explosion(pos, map, radius, TMDamageDefOf.DamageDefOf.TM_Fireball_I, SpellInstigator, null, def, this.equipmentDef, null, 0.5f, 1, false, null, 0f, 1);
             }
             else if (verVal == 2)
             {
-                Explosion(pos, map, radius, TMDamageDefOf.DamageDefOf.TM_Fireball_II, this.launcher, null, def, this.equipmentDef, null, 0.8f, 1, false, null, 0f, 1);
+                Explosion(pos, map, radius, TMDamageDefOf.DamageDefOf.TM_Fireball_II, SpellInstigator, null, def, this.equipmentDef, null, 0.8f, 1, false, null, 0f, 1);
             }
             else if (verVal == 3)
             {
-                Explosion(pos, map, radius, TMDamageDefOf.DamageDefOf.TM_Fireball_III, this.launcher, null, def, this.equipmentDef, null, 1.1f, 1, false, null, 0f, 1);
+                Explosion(pos, map, radius, TMDamageDefOf.DamageDefOf.TM_Fireball_III, SpellInstigator, null, def, this.equipmentDef, null, 1.1f, 1, false, null, 0f, 1);
             }
             else
             {

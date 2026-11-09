@@ -6,11 +6,10 @@ using UnityEngine;
 
 namespace TorannMagic
 {
-	class Projectile_Icebolt : Projectile_AbilityBase
+	class Projectile_Icebolt : ClassProgression.Projectile_SpiritBolt
 	{
-        private int verVal;
-        private int pwrVal;
-        private float arcaneDmg = 1;
+        protected override string SkillStem => "TM_Icebolt";
+        protected override System.Collections.Generic.List<MagicPowerSkill> Skills(MagicData data) => data.MagicPowerSkill_Icebolt;
 
         protected override void Tick()
         {
@@ -22,7 +21,17 @@ namespace TorannMagic
             base.Impact(hitThing);
             ThingDef def = this.def;
             
-            Pawn pawn = this.launcher as Pawn;
+            if (!projected) ReadCasterStats((Pawn)launcher);
+            using (ClassProgression.IceTrials.Creating(this.localAbilityDef == TorannMagicDefOf.TM_Icebolt && this.def.defName == "Projectile_Icebolt" ? SpellInstigator as Pawn : null, ClassProgression.IceTrials.Spell.Icebolt))
+                GenExplosion.DoExplosion(base.Position, map, 0.4f, TMDamageDefOf.DamageDefOf.Iceshard, SpellInstigator, Mathf.RoundToInt(this.def.projectile.GetDamageAmount(1,null) * this.arcaneDmg), 0, this.def.projectile.soundExplode, def, this.equipmentDef, null, null, 0f, 1, null, null, 0, false, null, 0f, 1, 0f, false);
+            CellRect cellRect = CellRect.CenteredOn(base.Position, 3);
+            cellRect.ClipInsideMap(map);
+            for (int i = 0; i < Rand.Range((2 + verVal), (3 + 4*verVal)); i++)
+                Shrapnel(Mathf.Max(1,pwrVal), cellRect.RandomCell, map, 0.4f);
+        }
+
+        private void ReadCasterStats(Pawn pawn)
+        {
             CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
             MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Icebolt.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Icebolt_pwr");
             MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Icebolt.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Icebolt_ver");
@@ -41,28 +50,12 @@ namespace TorannMagic
                 pwrVal = 3;
                 verVal = 3;
             }
-            GenExplosion.DoExplosion(base.Position, map, 0.4f, TMDamageDefOf.DamageDefOf.Iceshard, this.launcher, Mathf.RoundToInt(this.def.projectile.GetDamageAmount(1,null) * this.arcaneDmg), 0, this.def.projectile.soundExplode, def, this.equipmentDef, null, null, 0f, 1, null, null, 0, false, null, 0f, 1, 0f, false);
-            CellRect cellRect = CellRect.CenteredOn(base.Position, 3);
-            cellRect.ClipInsideMap(map);
-            for (int i = 0; i < Rand.Range((2 + verVal), (3 + 4*verVal)); i++)
-            {
-                IntVec3 randomCell = cellRect.RandomCell;
-                if (pwrVal > 0)
-                {
-                    this.Shrapnel(pwrVal, randomCell, map, 0.4f);
-                }
-                else
-                {
-                    this.Shrapnel(1, randomCell, map, 0.4f);
-                }
-                
-            }
         }
 
         protected void Shrapnel(int pwr, IntVec3 pos, Map map, float radius)
         {
             ThingDef def = this.def;
-            Explosion(pwr, pos, map, radius, TMDamageDefOf.DamageDefOf.Iceshard, this.launcher, null, def, this.equipmentDef, TorannMagicDefOf.Mote_Base_Smoke, 0.4f, 1, false, null, 0f, 1);
+            Explosion(pwr, pos, map, radius, TMDamageDefOf.DamageDefOf.Iceshard, SpellInstigator, null, def, this.equipmentDef, TorannMagicDefOf.Mote_Base_Smoke, 0.4f, 1, false, null, 0f, 1);
 
         }
 
@@ -92,6 +85,8 @@ namespace TorannMagic
             explosion.postExplosionSpawnChance = postExplosionSpawnChance;
             explosion.postExplosionSpawnThingCount = postExplosionSpawnThingCount;
             explosion.applyDamageToExplosionCellsNeighbors = applyDamageToExplosionCellsNeighbors;
+            if (this.localAbilityDef == TorannMagicDefOf.TM_Icebolt && this.def.defName == "Projectile_Icebolt" && damType == TMDamageDefOf.DamageDefOf.Iceshard)
+                ClassProgression.IceTrials.Stamp(explosion, instigator as Pawn, ClassProgression.IceTrials.Spell.Icebolt);
             explosion.StartExplosion(explosionSound, null);
         }
     }

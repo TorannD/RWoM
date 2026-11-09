@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritCastPistolWhip.reportString>a atingir TargetB com uma pistola.</TM_SpiritCastPistolWhip.reportString>
+  <TM_SpiritCastMk203GL.reportString>a lançar uma granada contra TargetB.</TM_SpiritCastMk203GL.reportString>
+  <TM_SpiritCastBreachingCharge.reportString>a lançar uma carga de demolição contra TargetB.</TM_SpiritCastBreachingCharge.reportString>
+  <TM_SpiritCastSuperSoldierFieldDressing.reportString>a aplicar um curativo de campo.</TM_SpiritCastSuperSoldierFieldDressing.reportString>
+  <TM_SpiritCastBuckshot.reportString>a disparar chumbo contra TargetB.</TM_SpiritCastBuckshot.reportString>
+  <TM_SpiritCastSuppressingFire.reportString>a fazer fogo de supressão contra TargetB.</TM_SpiritCastSuppressingFire.reportString>
+  <TM_SpiritCast60mmMortar.reportString>a posicionar um morteiro de 60 mm.</TM_SpiritCast60mmMortar.reportString>
+</LanguageData>

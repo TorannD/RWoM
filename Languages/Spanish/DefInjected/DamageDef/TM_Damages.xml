@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <AMP.label>Aumento mágico</AMP.label>
+  
+  <AMP.deathMessage>{0} desapareció misteriosamente.</AMP.deathMessage>
+  
+  
+  <Firebolt.label>Descarga de fuego</Firebolt.label>
+  
+  <Firebolt.deathMessage>El fuego consumió a {0}.</Firebolt.deathMessage>
+  
+  
+  <FrostRay.label>rayo de escarcha</FrostRay.label>
+  
+  <FrostRay.deathMessage>El frío acabó con {0}.</FrostRay.deathMessage>
+  
+  
+  <Iceshard.label>Esquirla de hielo</Iceshard.label>
+  
+  <Iceshard.deathMessage>Las esquirlas de hielo despedazaron a {0}.</Iceshard.deathMessage>
+  
+  
+  <RayofHope.label>Aumento mágico</RayofHope.label>
+  
+  <RayofHope.deathMessage>{0} desapareció misteriosamente.</RayofHope.deathMessage>
+  
+  
+  <Shadow.label>Aumento mágico</Shadow.label>
+  
+  <Shadow.deathMessage>{0} desapareció misteriosamente.</Shadow.deathMessage>
+  
+  
+  <Snowball.label>bola de nieve</Snowball.label>
+  
+  <Snowball.deathMessage>El frío acabó con {0}.</Snowball.deathMessage>
+  
+  
+  <SoothingBreeze.label>Aumento mágico</SoothingBreeze.label>
+  
+  <SoothingBreeze.deathMessage>{0} desapareció misteriosamente.</SoothingBreeze.deathMessage>
+  
+  
+  <TM_Arcane.label>Arcano</TM_Arcane.label>
+  
+  <TM_Arcane.deathMessage>{0} sucumbió al poder arcano.</TM_Arcane.deathMessage>
+  
+  
+  <TM_ArcaneSpectre.label>espectro arcano</TM_ArcaneSpectre.label>
+  
+  <TM_ArcaneSpectre.deathMessage>Un espíritu maligno destruyó a {0}.</TM_ArcaneSpectre.deathMessage>
+  
+  
+  <TM_Arrow.label>tormenta de flechas</TM_Arrow.label>
+  
+  <TM_Arrow.deathMessage>Las flechas acabaron con {0}.</TM_Arrow.deathMessage>
+  
+  
+  <TM_BlazingPower.label>Poder ardiente</TM_BlazingPower.label>
+  
+  <TM_BlazingPower.deathMessage>{0} sucumbió a un poder ardiente.</TM_BlazingPower.deathMessage>
+  
+  
+  <TM_Blizzard_Large.label>Magia de hielo</TM_Blizzard_Large.label>
+  
+  <TM_Blizzard_Large.deathMessage>El frío de una ventisca acabó con {0}.</TM_Blizzard_Large.deathMessage>
+  
+  
+  <TM_Blizzard_Small.label>Magia de hielo</TM_Blizzard_Small.label>
+  
+  <TM_Blizzard_Small.deathMessage>El frío de una ventisca acabó con {0}.</TM_Blizzard_Small.deathMessage>
+  
+  
+  <TM_BloodBurn.label>quemadura de sangre</TM_BloodBurn.label>
+  
+  <TM_BloodBurn.deathMessage>{0} murió por quemaduras.</TM_BloodBurn.deathMessage>
+  
+  
+  <TM_BloodyCut.label>corte sangriento</TM_BloodyCut.label>
+  
+  <TM_BloodyCut.deathMessage>{0} murió por pérdida de sangre.</TM_BloodyCut.deathMessage>
+  
+  
+  <TM_BreachingCharge.label>carga de brecha</TM_BreachingCharge.label>
+  
+  <TM_BreachingCharge.deathMessage>{0} murió en una explosión.</TM_BreachingCharge.deathMessage>
+  
+  
+  <TM_BurningLight.label>Luz ardiente</TM_BurningLight.label>
+  
+  <TM_BurningLight.deathMessage>La luz ardiente venció a {0}.</TM_BurningLight.deathMessage>
+  
+  
+  <TM_ChiBurn.label>Quemadura de chi</TM_ChiBurn.label>
+  
+  <TM_ChiBurn.deathMessage>La energía espiritual abrumó a {0}.</TM_ChiBurn.deathMessage>
+  
+  
+  <TM_ChiFist.label>golpe</TM_ChiFist.label>
+  
+  <TM_ChiFist.deathMessage>Las artes marciales derribaron a {0}.</TM_ChiFist.deathMessage>
+  
+  
+  <TM_Cleave.label>Hendidura</TM_Cleave.label>
+  
+  <TM_Cleave.deathMessage>Un golpe enorme partió en dos a {0}.</TM_Cleave.deathMessage>
+  
+  
+  <TM_CorpseExplosion.label>explosión de cadáver</TM_CorpseExplosion.label>
+  
+  <TM_CorpseExplosion.deathMessage>Un cadáver explosivo destruyó a {0}.</TM_CorpseExplosion.deathMessage>
+  
+  
+  <TM_CQC.label>CQC</TM_CQC.label>
+  
+  <TM_CQC.deathMessage>{0} no sobrevivió al combate cercano.</TM_CQC.deathMessage>
+  
+  
+  <TM_Death.label>Muerte</TM_Death.label>
+  
+  <TM_Death.deathMessage>La muerte se llevó a {0}.</TM_Death.deathMessage>
+  
+  
+  <TM_DeathBolt.label>descarga de muerte</TM_DeathBolt.label>
+  
+  <TM_DeathBolt.deathMessage>La agonía consumió a {0}.</TM_DeathBolt.deathMessage>
+  
+  
+  <TM_DecayDD.label>Descomposición</TM_DecayDD.label>
+  
+  <TM_DecayDD.deathMessage>El cuerpo de {0} se descompuso.</TM_DecayDD.deathMessage>
+  
+  
+  <TM_DisablingBlow.label>golpe incapacitante</TM_DisablingBlow.label>
+  
+  <TM_DisablingBlow.deathMessage>{0} murió por un traumatismo contundente...</TM_DisablingBlow.deathMessage>
+  
+  
+  <TM_DisablingShot.label>Disparo incapacitante</TM_DisablingShot.label>
+  
+  <TM_DisablingShot.deathMessage>{0} murió por un disparo incapacitante...</TM_DisablingShot.deathMessage>
+  
+  
+  <TM_Dismember.label>desgarro</TM_Dismember.label>
+  
+  <TM_Dismember.deathMessage>Despedazaron a {0}.</TM_Dismember.deathMessage>
+  
+  
+  <TM_DistortionDD.label>distorsión</TM_DistortionDD.label>
+  
+  <TM_DistortionDD.deathMessage>La distorsión aniquiló a {0}.</TM_DistortionDD.deathMessage>
+  
+  
+  <TM_DragonStrike.label>golpe del dragón</TM_DragonStrike.label>
+  
+  <TM_DragonStrike.deathMessage>{0} cayó víctima de las artes marciales: golpe del dragón.</TM_DragonStrike.deathMessage>
+  
+  
+  <TM_ElectricalBurn.label>quemadura eléctrica</TM_ElectricalBurn.label>
+  
+  <TM_ElectricalBurn.deathMessage>{0} murió por electrocución.</TM_ElectricalBurn.deathMessage>
+  
+  
+  <TM_Enchanted_Fire.label>encantamiento de fuego</TM_Enchanted_Fire.label>
+  
+  <TM_Enchanted_Fire.deathMessage>{0} murió por quemaduras.</TM_Enchanted_Fire.deathMessage>
+  
+  
+  <TM_Enchanted_Ice.label>encantamiento de hielo</TM_Enchanted_Ice.label>
+  
+  <TM_Enchanted_Ice.deathMessage>El frío acabó con {0}.</TM_Enchanted_Ice.deathMessage>
+  
+  
+  <TM_Fireball_I.label>Magia de fuego</TM_Fireball_I.label>
+  
+  <TM_Fireball_I.deathMessage>El fuego elemental destruyó a {0}.</TM_Fireball_I.deathMessage>
+  
+  
+  <TM_Fireball_II.label>Magia de fuego</TM_Fireball_II.label>
+  
+  <TM_Fireball_II.deathMessage>El fuego elemental destruyó a {0}.</TM_Fireball_II.deathMessage>
+  
+  
+  <TM_Fireball_III.label>Magia de fuego</TM_Fireball_III.label>
+  
+  <TM_Fireball_III.deathMessage>El fuego elemental destruyó a {0}.</TM_Fireball_III.deathMessage>
+  
+  
+  <TM_Firestorm_Large.label>Magia de fuego</TM_Firestorm_Large.label>
+  
+  <TM_Firestorm_Large.deathMessage>El fuego elemental destruyó a {0}.</TM_Firestorm_Large.deathMessage>
+  
+  
+  <TM_Firestorm_Small.label>Magia de fuego</TM_Firestorm_Small.label>
+  
+  <TM_Firestorm_Small.deathMessage>El fuego elemental destruyó a {0}.</TM_Firestorm_Small.deathMessage>
+  
+  
+  <TM_Firestorm_Tiny.label>Magia de fuego</TM_Firestorm_Tiny.label>
+  
+  <TM_Firestorm_Tiny.deathMessage>El fuego elemental destruyó a {0}.</TM_Firestorm_Tiny.deathMessage>
+  
+ 
+ <TM_FreezingWindsDD.deathMessage>{0} ha muerto.</TM_FreezingWindsDD.deathMessage>
+  
+  
+  <TM_GrapplingHook.label>Gancho de agarre</TM_GrapplingHook.label>
+  
+  <TM_GrapplingHook.deathMessage>{0} no sobrevivió al desgarro.</TM_GrapplingHook.deathMessage>
+  
+  
+  <TM_HailDD.label>Granizo</TM_HailDD.label>
+  
+  <TM_HailDD.deathMessage>{0} murió a golpes de granizo.</TM_HailDD.deathMessage>
+  
+  
+  <TM_Headshot.label>Disparo a la cabeza</TM_Headshot.label>
+  
+  <TM_Headshot.deathMessage>Un disparo en la cabeza acabó con {0}.</TM_Headshot.deathMessage>
+  
+  
+  <TM_Heal_I.label>Curación (I)</TM_Heal_I.label>
+ 
+ <TM_Heal_I.deathMessage>{0} ha muerto.</TM_Heal_I.deathMessage>
+  
+  
+  <TM_Holy.label>Sagrado</TM_Holy.label>
+  
+  <TM_Holy.deathMessage>{0} sucumbió al poder sagrado.</TM_Holy.deathMessage>
+  
+  
+  <TM_Lightning.label>Magia de rayo</TM_Lightning.label>
+  
+  <TM_Lightning.deathMessage>El rayo elemental destruyó a {0}.</TM_Lightning.deathMessage>
+  
+  
+  <TM_LightningCloud.label>Magia de rayo</TM_LightningCloud.label>
+  
+  <TM_LightningCloud.deathMessage>El rayo elemental destruyó a {0}.</TM_LightningCloud.deathMessage>
+  
+  
+  <TM_MagicMissile.label>Proyectil mágico</TM_MagicMissile.label>
+  
+  <TM_MagicMissile.deathMessage>La magia arcana destruyó a {0}.</TM_MagicMissile.deathMessage>
+  
+  
+  <TM_MagicMissile_Weak.label>energía mágica</TM_MagicMissile_Weak.label>
+  
+  <TM_MagicMissile_Weak.deathMessage>La magia arcana destruyó a {0}.</TM_MagicMissile_Weak.deathMessage>
+  
+  
+  <TM_ManaMine.label>Mina de maná</TM_ManaMine.label>
+  
+  <TM_ManaMine.deathMessage>La magia arcana destruyó a {0}.</TM_ManaMine.deathMessage>
+  
+  
+  <TM_Overwhelm.label>luz abrumadora</TM_Overwhelm.label>
+  
+  <TM_Overwhelm.deathMessage>{0} sucumbió al poder sagrado.</TM_Overwhelm.deathMessage>
+  
+  
+  <TM_PainDD.label>Dolor</TM_PainDD.label>
+  
+  <TM_PainDD.deathMessage>{0} murió por un dolor abrumador.</TM_PainDD.deathMessage>
+  
+  
+  <TM_PartRemoval.label>extirpado</TM_PartRemoval.label>
+  
+  <TM_PartRemoval.deathMessage>{0} dejó de existir.</TM_PartRemoval.deathMessage>
+  
+  
+  <TM_PersonnelBombDD.label>bomba antipersona</TM_PersonnelBombDD.label>
+  
+  <TM_PersonnelBombDD.deathMessage>{0} murió en una explosión.</TM_PersonnelBombDD.deathMessage>
+  
+  
+  <TM_PhaseStrike.label>golpe de fase</TM_PhaseStrike.label>
+  
+  <TM_PhaseStrike.deathMessage>{0} no sobrevivió a una lluvia de cortes.</TM_PhaseStrike.deathMessage>
+  
+  
+  <TM_Poison.label>Veneno</TM_Poison.label>
+  
+  <TM_Poison.deathMessage>{0} sucumbió al veneno.</TM_Poison.deathMessage>
+  
+  
+  <TM_PsionicInjury.label>Psiónico</TM_PsionicInjury.label>
+  
+  <TM_PsionicInjury.deathMessage>El poder psiónico destruyó a {0}.</TM_PsionicInjury.deathMessage>
+  
+  
+  <TM_Shadow.label>Sombra</TM_Shadow.label>
+  
+  <TM_Shadow.deathMessage>La sombra consumió a {0}.</TM_Shadow.deathMessage>
+  
+  
+  <TM_Shrapnel.label>daño extra de guardabosques</TM_Shrapnel.label>
+  
+  <TM_Shrapnel.deathMessage>Los disparos acabaron con {0}.</TM_Shrapnel.deathMessage>
+  
+  
+  <TM_Spirit.label>Espíritu</TM_Spirit.label>
+  
+  <TM_Spirit.deathMessage>El espíritu de {0} fue drenado.</TM_Spirit.deathMessage>
+  
+  
+  <TM_SymbiosisDD.label>Simbiosis</TM_SymbiosisDD.label>
+  
+  <TM_SymbiosisDD.deathMessage>{0} murió junto con su huésped simbiótico.</TM_SymbiosisDD.deathMessage>
+  
+  
+  <TM_TigerStrike.label>golpe del tigre</TM_TigerStrike.label>
+  
+  <TM_TigerStrike.deathMessage>{0} cayó víctima de las artes marciales: golpe del tigre.</TM_TigerStrike.deathMessage>
+  
+  
+  <TM_Torment.label>Tormento</TM_Torment.label>
+  
+  <TM_Torment.deathMessage>El dolor consumió a {0}.</TM_Torment.deathMessage>
+  
+  
+  <TM_Toxin.label>toxina</TM_Toxin.label>
+  
+  <TM_Toxin.deathMessage>{0} murió por toxina.</TM_Toxin.deathMessage>
+  
+  
+  <TM_Tranquilizer.label>Disparo incapacitante</TM_Tranquilizer.label>
+  
+  <TM_Tranquilizer.deathMessage>{0} murió por un disparo incapacitante...</TM_Tranquilizer.deathMessage>
+  
+  
+  <TM_Whirlwind.label>Torbellino</TM_Whirlwind.label>
+  
+  <TM_Whirlwind.deathMessage>El torbellino de acero segó la vida de {0}.</TM_Whirlwind.deathMessage>
+  
+</LanguageData>

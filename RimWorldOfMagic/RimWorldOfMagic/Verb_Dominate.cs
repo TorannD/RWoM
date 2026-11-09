@@ -1,155 +1,67 @@
-﻿using RimWorld;
+using RimWorld;
+using TorannMagic.ClassProgression;
 using Verse;
-using AbilityUser;
-using UnityEngine;
-using System.Linq;
 
 namespace TorannMagic
 {
-    [StaticConstructorOnStartup]
-    class Verb_Dominate : Verb_UseAbility  
+    class Verb_Dominate : Verb_SpiritTargetable
     {
-
-        private int verVal;
-        private int pwrVal;
-        private int effVal;
-
-        bool validTarg;
-
-        public override bool CanHitTargetFrom(IntVec3 root, LocalTargetInfo targ)
+        public override bool CanHitTargetFrom(IntVec3 root, LocalTargetInfo target)
         {
-            if (targ.IsValid && targ.CenterVector3.InBoundsWithNullCheck(base.CasterPawn.Map) && !targ.Cell.Fogged(base.CasterPawn.Map) && targ.Cell.Walkable(base.CasterPawn.Map))
-            {
-                if ((root - targ.Cell).LengthHorizontal < this.verbProps.range)
-                {
-                    //out of range
-                    validTarg = true;
-                }
-                else
-                {
-                    validTarg = false;
-                }
-            }
-            else
-            {
-                validTarg = false;
-            }
-            return validTarg;
+            var map = CasterPawn?.Map;
+            return map != null && target.Pawn is Pawn victim && victim.Spawned && !victim.Dead &&
+                victim.Map == map && !victim.Position.Fogged(map) && victim.Position.Walkable(map) &&
+                (root - victim.Position).LengthHorizontal < verbProps.range;
         }
 
         protected override bool TryCastShot()
         {
-            bool result = false;
-            Pawn p = this.CasterPawn;
-            Pawn hitPawn = this.currentTarget.Thing as Pawn;
-            CompAbilityUserMagic comp = this.CasterPawn.GetCompAbilityUserMagic();
-            verVal = TM_Calc.GetSkillVersatilityLevel(p, this.Ability.Def as TMAbilityDef, true);
-            pwrVal = TM_Calc.GetSkillPowerLevel(p, this.Ability.Def as TMAbilityDef);
-            effVal = TM_Calc.GetSkillEfficiencyLevel(p, this.Ability.Def as TMAbilityDef);
-            //MagicPowerSkill pwr = comp.MagicData.MagicPowerSkill_Dominate.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Dominate_pwr");
-            //MagicPowerSkill ver = comp.MagicData.MagicPowerSkill_Dominate.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Dominate_ver");
-            //MagicPowerSkill eff = comp.MagicData.MagicPowerSkill_Dominate.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Dominate_eff");
-            //verVal = ver.level;
-            //pwrVal = pwr.level;
-            //effVal = eff.level;
-            //
-            //if(ModOptions.Settings.Instance.AIHardMode && !p.IsColonist)
-            //{
-            //    verVal = 3;
-            //    pwrVal = 3;
-            //    effVal = 3;
-            //}
-            //if (p.story.traits.HasTrait(TorannMagicDefOf.Faceless))
-            //{
-            //    MightPowerSkill mpwr = p.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-            //    MightPowerSkill mver = p.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
-            //    MightPowerSkill meff = p.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_eff");
-            //    pwrVal = mpwr.level;
-            //    verVal = mver.level;
-            //    effVal = meff.level;
-            //}
-
-            if (this.currentTarget != null && p != null)
-            {                
-                Map map = this.CasterPawn.Map;
-                
-                if (hitPawn != null && hitPawn is Pawn && !hitPawn.Dead)
-                {
-                    if (Rand.Chance(TM_Calc.GetSpellSuccessChance(p, hitPawn, true)))
-                    {
-                        Hediff hediff = new Hediff();
-                        if (p.gender == Gender.Female || p.story.traits.HasTrait(TorannMagicDefOf.Succubus))
-                        {
-                            if (pwrVal == 3)
-                            {
-                                HealthUtility.AdjustSeverity(hitPawn, TorannMagicDefOf.TM_SDDominateHD_III, Rand.Range(1.5f + verVal, 3f + verVal));
-                                hediff = hitPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_SDDominateHD_III);
-                            }
-                            else if (pwrVal == 2)
-                            {
-                                HealthUtility.AdjustSeverity(hitPawn, TorannMagicDefOf.TM_SDDominateHD_II, Rand.Range(1.5f + verVal, 3f + verVal));
-                                hediff = hitPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_SDDominateHD_II);
-                            }
-                            else if (pwrVal == 1)
-                            {
-                                HealthUtility.AdjustSeverity(hitPawn, TorannMagicDefOf.TM_SDDominateHD_I, Rand.Range(1.5f + verVal, 3f + verVal));
-                                hediff = hitPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_SDDominateHD_I);
-                            }
-                            else
-                            {
-                                HealthUtility.AdjustSeverity(hitPawn, TorannMagicDefOf.TM_SDDominateHD, Rand.Range(1.5f + verVal, 3f + verVal));
-                                hediff = hitPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_SDDominateHD);
-                            }
-                            for (int i = 0; i < 4; i++)
-                            {
-                                TM_MoteMaker.ThrowShadowMote(hitPawn.Position.ToVector3(), map, Rand.Range(.6f, 1f));
-                            }
-                        }
-                        if (p.gender == Gender.Male || p.story.traits.HasTrait(TorannMagicDefOf.Warlock))
-                        {
-                            if (pwrVal == 3)
-                            {
-                                HealthUtility.AdjustSeverity(hitPawn, TorannMagicDefOf.TM_WDDominateHD_III, Rand.Range(1.5f + verVal, 3f + verVal));
-                                hediff = hitPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_WDDominateHD_III);
-                            }
-                            else if (pwrVal == 2)
-                            {
-                                HealthUtility.AdjustSeverity(hitPawn, TorannMagicDefOf.TM_WDDominateHD_II, Rand.Range(1.5f + verVal, 3f + verVal));
-                                hediff = hitPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_WDDominateHD_II);
-                            }
-                            else if (pwrVal == 1)
-                            {
-                                HealthUtility.AdjustSeverity(hitPawn, TorannMagicDefOf.TM_WDDominateHD_I, Rand.Range(1.5f + verVal, 3f + verVal));
-                                hediff = hitPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_WDDominateHD_I);
-                            }
-                            else
-                            {
-                                HealthUtility.AdjustSeverity(hitPawn, TorannMagicDefOf.TM_WDDominateHD, Rand.Range(1.5f + verVal, 3f + verVal));
-                                hediff = hitPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_WDDominateHD);
-                            }
-                        }
-                        HediffComp_Dominate hediffComp = hediff.TryGetComp<HediffComp_Dominate>();
-                        hediffComp.EffVal = effVal;
-                        hediffComp.VerVal = verVal;
-                        if (hitPawn.IsColonist && !p.IsColonist)
-                        {
-                            TM_Action.SpellAffectedPlayerWarning(hitPawn);
-                        }
-                    }
-                    else
-                    {
-                        MoteMaker.ThrowText(hitPawn.DrawPos, hitPawn.Map, "TM_ResistedSpell".Translate(), -1);
-                    }
-                }
-                else
-                {
-                    Messages.Message("TM_NothingToDominate".Translate(), MessageTypeDefOf.NeutralEvent);
-                }
-                result = true;
+            burstShotsLeft = 0;
+            var body = CasterPawn;
+            var owner = SpiritRebirthCasting.SkillOwner(body, Ability);
+            if (owner == null || !CanHitTargetFrom(body.Position,currentTarget)) return false;
+            var victim = currentTarget.Pawn;
+            bool physical = ClassIdentity.DemonEffect(owner,false,owner.gender == Gender.Female || owner.story?.traits?.HasTrait(TorannMagicDefOf.Succubus) == true);
+            bool mental = ClassIdentity.DemonEffect(owner,true,owner.gender == Gender.Male || owner.story?.traits?.HasTrait(TorannMagicDefOf.Warlock) == true);
+            if (!physical && !mental) return false;
+            if (!Rand.Chance(TM_Calc.GetSpellSuccessChance(owner,victim,true)))
+            {
+                MoteMaker.ThrowText(victim.DrawPos,victim.Map,"TM_ResistedSpell".Translate(),-1);
+                return true;
             }
 
-            this.burstShotsLeft = 0;
-            return result;
-        }        
+            var spell = (TMAbilityDef)Ability.Def;
+            int power = TM_Calc.GetSkillPowerLevel(owner,spell);
+            int versatility = TM_Calc.GetSkillVersatilityLevel(owner,spell,true);
+            int efficiency = TM_Calc.GetSkillEfficiencyLevel(owner,spell);
+            if (physical)
+            {
+                Apply(victim,Effect(false,power),versatility,efficiency);
+                for (int i = 0; i < 4; i++)
+                    TM_MoteMaker.ThrowShadowMote(victim.Position.ToVector3(),body.Map,Rand.Range(.6f,1f));
+            }
+            if (mental) Apply(victim,Effect(true,power),versatility,efficiency);
+            if (victim.IsColonist && !body.IsColonist) TM_Action.SpellAffectedPlayerWarning(victim);
+            return true;
+        }
+
+        private static HediffDef Effect(bool mental,int power) => power switch
+        {
+            3 => mental ? TorannMagicDefOf.TM_WDDominateHD_III : TorannMagicDefOf.TM_SDDominateHD_III,
+            2 => mental ? TorannMagicDefOf.TM_WDDominateHD_II : TorannMagicDefOf.TM_SDDominateHD_II,
+            1 => mental ? TorannMagicDefOf.TM_WDDominateHD_I : TorannMagicDefOf.TM_SDDominateHD_I,
+            _ => mental ? TorannMagicDefOf.TM_WDDominateHD : TorannMagicDefOf.TM_SDDominateHD
+        };
+
+        private static void Apply(Pawn victim,HediffDef def,int versatility,int efficiency)
+        {
+            HealthUtility.AdjustSeverity(victim,def,Rand.Range(1.5f + versatility,3f + versatility));
+            var effect = victim.health.hediffSet.GetFirstHediffOfDef(def)?.TryGetComp<HediffComp_Dominate>();
+            if (effect != null)
+            {
+                effect.EffVal = efficiency;
+                effect.VerVal = versatility;
+            }
+        }
     }
 }

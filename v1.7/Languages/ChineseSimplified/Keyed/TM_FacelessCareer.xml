@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ReadFacelessInfiltrator>潜入者：伪装持续时间延长20%。</TM_ReadFacelessInfiltrator>
+  <TM_ReadFacelessUnderstudy>替身：回响效果增强20%。</TM_ReadFacelessUnderstudy>
+  <TM_FacelessOrigins>学习三种不同的回响：{0}/3。</TM_FacelessOrigins>
+  <TM_FacelessPractice>在不同日期用回响伤敌或治疗盟友：{0}/{1}。</TM_FacelessPractice>
+  <TM_FacelessRescue>或救援不同的受伤盟友：{0}/{1}。</TM_FacelessRescue>
+  <TM_FacelessSample>模仿的招式：{0}</TM_FacelessSample>
+  <TM_FacelessVirtuoso>技艺大师：回响效果增强50%。</TM_FacelessVirtuoso>
+</LanguageData>

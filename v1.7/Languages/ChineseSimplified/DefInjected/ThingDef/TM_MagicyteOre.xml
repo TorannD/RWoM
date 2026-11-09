@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_MineableMagicyte.label>魔晶矿石</TM_MineableMagicyte.label>
+  <TM_MineableMagicyte.description>蕴含魔晶结晶的岩石。每块矿石开采完成后产出15–100份原始魔晶，并有1%的几率额外产出一颗附魔宝石。直接摧毁岩石无法获得其中的资源。</TM_MineableMagicyte.description>
+</LanguageData>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_WoodGolem_Armor.label>endurecimiento</TM_WoodGolem_Armor.label>
+  
+  <TM_WoodGolem_Armor.description>Cada mejora aumenta la armadura del golem:\nContundente: +[9,17,23] %\nCortante: +[8,15,21] %\nCalor: +[4,7,10] %</TM_WoodGolem_Armor.description>
+  
+  <TM_WoodGolem_Armor.jobString>Fabricando pieza de golem.</TM_WoodGolem_Armor.jobString>
+  
+  
+  <TM_WoodGolem_EnergyConverter.label>convertidor de energía</TM_WoodGolem_EnergyConverter.label>
+  
+  <TM_WoodGolem_EnergyConverter.description>Aumenta un 5 % la eficiencia con la que el golem absorbe y utiliza la energía.</TM_WoodGolem_EnergyConverter.description>
+  
+  <TM_WoodGolem_EnergyConverter.jobString>Construyendo convertidor de energía.</TM_WoodGolem_EnergyConverter.jobString>
+  
+  
+  <TM_WoodGolem_EnergyMax.label>célula de energía</TM_WoodGolem_EnergyMax.label>
+  
+  <TM_WoodGolem_EnergyMax.description>Crea una célula de energía que aumenta la energía máxima en 100 por célula.</TM_WoodGolem_EnergyMax.description>
+  
+  <TM_WoodGolem_EnergyMax.jobString>Creando célula de energía.</TM_WoodGolem_EnergyMax.jobString>
+  
+  
+  <TM_WoodGolem_EnergyRegen.label>generador de energía</TM_WoodGolem_EnergyRegen.label>
+  
+  <TM_WoodGolem_EnergyRegen.description>Aumenta un 15 % por hora la regeneración de energía del golem.</TM_WoodGolem_EnergyRegen.description>
+  
+  <TM_WoodGolem_EnergyRegen.jobString>Construyendo generador de energía.</TM_WoodGolem_EnergyRegen.jobString>
+  
+  
+  <TM_WoodGolem_LifeStage.label>nivel de armazón</TM_WoodGolem_LifeStage.label>
+  
+  <TM_WoodGolem_LifeStage.description>Mejora y refina el armazón del golem en cada nivel [1,2,3]:\nMovimiento: +[20/30/40] %\nSalud: +[20/40/60] %</TM_WoodGolem_LifeStage.description>
+  
+  <TM_WoodGolem_LifeStage.jobString>Mejorando el armazón del golem.</TM_WoodGolem_LifeStage.jobString>
+  
+  
+  <TM_WoodGolem_RepairBlock.label>restauración de piezas</TM_WoodGolem_RepairBlock.label>
+  
+  <TM_WoodGolem_RepairBlock.description>Sustituye las partes ausentes del golem que no requieren una mejora.</TM_WoodGolem_RepairBlock.description>
+  
+  <TM_WoodGolem_RepairBlock.jobString>Fabricando pieza de golem.</TM_WoodGolem_RepairBlock.jobString>
+  
+  
+  <TM_WoodGolem_Skills.label>habilidades</TM_WoodGolem_Skills.label>
+  
+  <TM_WoodGolem_Skills.description>El golem de madera mejora la calidad de la cocina, la construcción y el manejo de animales en 2 puntos de habilidad.</TM_WoodGolem_Skills.description>
+  
+  <TM_WoodGolem_Skills.jobString>Fabricando mejora de golem.</TM_WoodGolem_Skills.jobString>
+  
+</LanguageData>

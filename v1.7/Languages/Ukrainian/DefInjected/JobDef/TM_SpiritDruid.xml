@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritCureDisease.reportString>лікує хворобу через тіло носія.</TM_SpiritCureDisease.reportString>
+  <TM_SpiritSootheAnimal.reportString>заспокоює тварин через тіло носія.</TM_SpiritSootheAnimal.reportString>
+  <TM_SpiritSootheAnimal_I.reportString>заспокоює тварин через тіло носія.</TM_SpiritSootheAnimal_I.reportString>
+  <TM_SpiritSootheAnimal_II.reportString>заспокоює тварин через тіло носія.</TM_SpiritSootheAnimal_II.reportString>
+  <TM_SpiritSootheAnimal_III.reportString>заспокоює тварин через тіло носія.</TM_SpiritSootheAnimal_III.reportString>
+  <TM_SpiritRainmaker.reportString>змінює погоду через тіло носія.</TM_SpiritRainmaker.reportString>
+  <TM_SpiritRegrowLimb.reportString>створює насінину відновлення через носія духа.</TM_SpiritRegrowLimb.reportString>
+  <TM_SpiritPoison.reportString>отруює ціль через носія духа.</TM_SpiritPoison.reportString>
+</LanguageData>

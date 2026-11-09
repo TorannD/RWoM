@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritBeginRitual>将{0}重生为灵体（300魔晶、50白银、4小时）</TM_SpiritBeginRitual>
+  <TM_SpiritFinishRitual>完成{0}中断的重生仪式</TM_SpiritFinishRitual>
+  <TM_SpiritRitualUnreachable>死灵法师必须能到达遗体、大型法阵、300魔晶和50白银。</TM_SpiritRitualUnreachable>
+  <TM_SpiritRitualUnsafeEffect>{0} — 无法将「{1}」与肉身分离</TM_SpiritRitualUnsafeEffect>
+  <TM_GrimoireRebirthCircle>在大型魔法阵上，可命令死去的人类殖民者重生为灵体。仪式需要 {0} 单位魔晶和 {1} 单位白银，耗时 {2}。</TM_GrimoireRebirthCircle>
+  <TM_GrimoireSpiritStone>灵体耗尽力量后，灵魂石会保存原来的殖民者。将石头用于活着的宿主，灵体在其体内恢复 {0} 后才能主动离开。失去宿主将重置恢复时间。</TM_GrimoireSpiritStone>
+  <TM_SpiritRitualRenounceNecromancy>{0} 将以灵体重生，永久放弃死灵法师或巫妖职业及其法术。总等级、经验、未用点数和普通技能将保留。开始仪式吗？</TM_SpiritRitualRenounceNecromancy>
+</LanguageData>

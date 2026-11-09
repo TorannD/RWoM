@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
- <!-- blade focus -->
+ 
   <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
    <defName>Projectile_BladeFocus</defName>
    <thingClass>AbilityUser.Projectile_Ability</thingClass>
@@ -17,7 +16,7 @@
 		<damageAmountBase>0</damageAmountBase>
 		<speed>100</speed>
    </projectile>
- </ThingDef>
+</ThingDef>
  
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_BladeFocus</defName>
@@ -56,9 +55,16 @@ Legendary Bladedancer: Speed +0.4c/s, MBT -10%, Hit chance +15%, Dodge +20%, Sho
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_bladefocus</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
    
-     <!-- blade art start-->
+     
   
     <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
    <defName>Projectile_BladeArt</defName>
@@ -74,7 +80,7 @@ Legendary Bladedancer: Speed +0.4c/s, MBT -10%, Hit chance +15%, Dodge +20%, Sho
 		<damageAmountBase>0</damageAmountBase>
 		<speed>100</speed>
    </projectile>
- </ThingDef>
+</ThingDef>
  
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_BladeArt</defName>
@@ -113,10 +119,17 @@ Level 3: Moving +25%, Manipulation +25%, Breathing +15%, Blood pumping +10%, Blo
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_bladeart</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
   
-  <!-- BladeSpin Start -->
+  
     <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_AbilityLaser">
         <thingClass>AbilityUser.Projectile_AbilityLaser</thingClass>
 		<defName>Projectile_BladeSpin</defName>
@@ -138,7 +151,7 @@ Level 3: Moving +25%, Manipulation +25%, Breathing +15%, Blood pumping +10%, Blo
         <postFiringFinalIntensity>0</postFiringFinalIntensity>
         <preFiringDuration>20</preFiringDuration>
         <postFiringDuration>80</postFiringDuration>
-    </ThingDef>
+</ThingDef>
 
 	<TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_BladeSpin</defName>
@@ -171,9 +184,16 @@ Level 3: Moving +25%, Manipulation +25%, Breathing +15%, Blood pumping +10%, Blo
             <muzzleFlashScale>20</muzzleFlashScale>
             <isPrimary>false</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_bladespin</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- Seismic Slash Start -->
+	
     <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_AbilityLaser">
         <thingClass>AbilityUser.Projectile_AbilityLaser</thingClass>
 		<defName>Projectile_SeismicSlash</defName>
@@ -195,7 +215,7 @@ Level 3: Moving +25%, Manipulation +25%, Breathing +15%, Blood pumping +10%, Blo
         <postFiringFinalIntensity>0</postFiringFinalIntensity>
         <preFiringDuration>20</preFiringDuration>
         <postFiringDuration>80</postFiringDuration>
-    </ThingDef>
+</ThingDef>
 
 	<TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_SeismicSlash</defName>
@@ -228,9 +248,16 @@ Level 3: Moving +25%, Manipulation +25%, Breathing +15%, Blood pumping +10%, Blo
             <muzzleFlashScale>20</muzzleFlashScale>
             <isPrimary>false</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_seismicslash</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- Phase Strike Start -->
+	
     <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
         <thingClass>AbilityUser.Projectile_Ability</thingClass>
 		<defName>Projectile_PhaseStrike</defName>
@@ -246,7 +273,7 @@ Level 3: Moving +25%, Manipulation +25%, Breathing +15%, Blood pumping +10%, Blo
             <damageAmountBase>0</damageAmountBase>
             <speed>400</speed>
         </projectile>
-    </ThingDef>
+</ThingDef>
 
 	<TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_PhaseStrike</defName>
@@ -284,7 +311,14 @@ Range: 30</description>
             <muzzleFlashScale>20</muzzleFlashScale>
             <isPrimary>false</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_phasestrike</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_PhaseStrike_I</defName>
@@ -322,7 +356,14 @@ Range: 35</description>
             <muzzleFlashScale>20</muzzleFlashScale>
             <isPrimary>false</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_phasestrike_i</spellId>
+<domain>Might</domain>
+<tier>1</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_PhaseStrike_II</defName>
@@ -360,7 +401,14 @@ Range: 40</description>
             <muzzleFlashScale>20</muzzleFlashScale>
             <isPrimary>false</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_phasestrike_ii</spellId>
+<domain>Might</domain>
+<tier>2</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_PhaseStrike_III</defName>
@@ -398,7 +446,14 @@ Range: 45</description>
             <muzzleFlashScale>20</muzzleFlashScale>
             <isPrimary>false</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_phasestrike_iii</spellId>
+<domain>Might</domain>
+<tier>3</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 
 </Defs>

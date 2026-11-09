@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_PomanaSenseHD.label>sentidos de pomana</TM_PomanaSenseHD.label>
+  
+  <TM_PomanaSenseHD.description>Relajación y sentidos agudizados por consumir fruto de pomana crudo.</TM_PomanaSenseHD.description>
+  
+  
+  <TM_SyrriumAddiction.label>adicción al sirrio</TM_SyrriumAddiction.label>
+  
+  <TM_SyrriumAddiction.description>El impulso de sentir los efectos del sirrio se ha convertido en una necesidad.</TM_SyrriumAddiction.description>
+  
+  <TM_SyrriumAddiction.stages.withdrawal.label>abstinencia</TM_SyrriumAddiction.stages.withdrawal.label>
+  
+  
+  <TM_SyrriumSenseHD.label>sentidos de sirrio</TM_SyrriumSenseHD.label>
+  
+  <TM_SyrriumSenseHD.description>Sentidos agudizados por consumir pomanasirrio condensado.</TM_SyrriumSenseHD.description>
+  
+  
+  <TM_SyrriumTolerance.label>tolerancia al sirrio</TM_SyrriumTolerance.label>
+  
+  <TM_SyrriumTolerance.description>Ajuste natural para normalizar los efectos de consumir pomanasirrio condensado.</TM_SyrriumTolerance.description>
+  
+  <TM_SyrriumTolerance.stages.small.label>pequeña</TM_SyrriumTolerance.stages.small.label>
+  
+  <TM_SyrriumTolerance.stages.large.label>grande</TM_SyrriumTolerance.stages.large.label>
+  
+  <TM_SyrriumTolerance.stages.massive.label>severa</TM_SyrriumTolerance.stages.massive.label>
+
+  
+</LanguageData>

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
@@ -32,7 +32,7 @@ namespace TorannMagic
                 HediffComp_Disappears hdComp = caster.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_ShadowCloakHD).TryGetComp<HediffComp_Disappears>();
                 if(hdComp != null)
                 {
-                    hdComp.ticksToDisappear = 600 + (60 * pwrVal);
+                    hdComp.ticksToDisappear = ClassProgression.ShadowWalkerMartialPath.VeilTicks(caster, 600 + (60 * pwrVal));
                 }
 
                 ThingDef fog = TorannMagicDefOf.Fog_Shadows;

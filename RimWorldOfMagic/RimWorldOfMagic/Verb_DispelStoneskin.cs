@@ -1,36 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using RimWorld;
-using AbilityUser;
+using TorannMagic.ClassProgression;
 using Verse;
-
 
 namespace TorannMagic
 {
-    public class Verb_DispelStoneskin : Verb_UseAbility
+    public class Verb_DispelStoneskin : Verb_SpiritTargetable
     {
+        protected override bool ApplyHostedEffect()
+        {
+            var owner = SpiritRebirthCasting.SkillOwner(CasterPawn,Ability);
+            var comp = owner?.GetCompAbilityUserMagic();
+            if (comp == null) return false;
+            var recipients = comp.StoneskinPawns;
+            bool dispelled = false;
+            foreach (var recipient in recipients.ToArray())
+            {
+                var ward = recipient.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_StoneskinHD);
+                var actualOwner = ward?.TryGetComp<HediffComp_Stoneskin>()?.Owner;
+                if (ward != null && (actualOwner == null || actualOwner == owner))
+                {
+                    recipient.health.RemoveHediff(ward);
+                    dispelled = true;
+                }
+                recipients.RemoveAll(p => p == recipient);
+            }
+            return dispelled;
+        }
+
         protected override bool TryCastShot()
         {
-            bool flag = false;
-            CompAbilityUserMagic comp = this.CasterPawn.GetCompAbilityUserMagic();
-
-            if (comp.IsMagicUser)
-            {
-                if (comp.stoneskinPawns.Count > 0)
-                {
-                    for(int i =0; i < comp.stoneskinPawns.Count; i++)
-                    {
-                        Pawn dispellingPawn = comp.stoneskinPawns[i];
-                        Hediff stoneskin = dispellingPawn.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("TM_StoneskinHD"), false);
-                        dispellingPawn.health.RemoveHediff(stoneskin);
-                    }
-                    
-                }
-            }
-
-            this.PostCastShot(flag, out flag);
-            return flag;
+            ApplyHostedEffect();
+            PostCastShot(false,out bool fired);
+            return fired;
         }
     }
 }

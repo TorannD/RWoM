@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritMonkMeridian.reportString>спрямовує енергію тихого меридіана.</TM_SpiritMonkMeridian.reportString>
+  <TM_SpiritPalmSeal.reportString>завдає TargetB удару печаткою долоні.</TM_SpiritPalmSeal.reportString>
+  <TM_SpiritMeditate.reportString>медитує під керівництвом духа.</TM_SpiritMeditate.reportString>
+  <TM_SpiritTigerStrike.reportString>атакує TargetB ударами тигра.</TM_SpiritTigerStrike.reportString>
+  <TM_SpiritDragonStrike.reportString>виконує удар дракона.</TM_SpiritDragonStrike.reportString>
+  <TM_SpiritChiBurst.reportString>вивільняє вибух ци.</TM_SpiritChiBurst.reportString>
+</LanguageData>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+<TM_AncientSpiritAdultBS.description>[PAWN_nameDef] lleva existiendo incontables eras y ya no recuerda su propósito. Los espíritus ancestrales persiguen sus propios fines y se han vuelto maestros en el control de la energía espiritual. La energía espiritual máxima aumenta en 50.</TM_AncientSpiritAdultBS.description>
+
+<TM_AncientSpiritAdultBS.baseDesc>[PAWN_nameDef] lleva existiendo incontables eras y ya no recuerda su propósito. Los espíritus ancestrales persiguen sus propios fines y se han vuelto maestros en el control de la energía espiritual. La energía espiritual máxima aumenta en 50.</TM_AncientSpiritAdultBS.baseDesc>
+
+<TM_AncientSpiritAdultBS.title>Espíritu ancestral</TM_AncientSpiritAdultBS.title>
+
+<TM_AncientSpiritAdultBS.titleShort>Espíritu ancestral</TM_AncientSpiritAdultBS.titleShort>
+
+<TM_GolemAdultBS.description>[PAWN_nameDef] es un golem, fabricado con materia prima y animado con magia.</TM_GolemAdultBS.description>
+
+<TM_GolemAdultBS.baseDesc>[PAWN_nameDef] es un golem, fabricado con materia prima y animado con magia.</TM_GolemAdultBS.baseDesc>
+
+<TM_GolemAdultBS.title>Golem</TM_GolemAdultBS.title>
+
+<TM_GolemAdultBS.titleShort>Golem</TM_GolemAdultBS.titleShort>
+
+<TM_GolemChildBS.description>[PAWN_nameDef] es un golem, fabricado con materia prima y animado con magia.</TM_GolemChildBS.description>
+
+<TM_GolemChildBS.baseDesc>[PAWN_nameDef] es un golem, fabricado con materia prima y animado con magia.</TM_GolemChildBS.baseDesc>
+
+<TM_GolemChildBS.title>Golem</TM_GolemChildBS.title>
+
+<TM_GolemChildBS.titleShort>Golem</TM_GolemChildBS.titleShort>
+
+<TM_LostSpiritAdultBS.description>Los espíritus perdidos vagan por el plano en un constante estado de angustia existencial, incapaces de percibir su propósito. Los perdidos se unen con facilidad a la causa de otro y armonizan mejor con espíritus afines. También pueden reforzar el poder de la habilidad Reunir espíritus. Aumenta en un 10 % la duración, el radio, el máximo de objetivos y las bonificaciones de Reunir espíritus. Aumenta la compatibilidad en 2.</TM_LostSpiritAdultBS.description>
+
+<TM_LostSpiritAdultBS.baseDesc>Los espíritus perdidos vagan por el plano en un constante estado de angustia existencial, incapaces de percibir su propósito. Los perdidos se unen con facilidad a la causa de otro y armonizan mejor con espíritus afines. También pueden reforzar el poder de la habilidad de reunir espíritus. Aumenta en un 10 % la duración, el radio, el máximo de objetivos y las bonificaciones de Reunir espíritus. Aumenta la compatibilidad en 2.</TM_LostSpiritAdultBS.baseDesc>
+
+<TM_LostSpiritAdultBS.title>Espíritu perdido</TM_LostSpiritAdultBS.title>
+
+<TM_LostSpiritAdultBS.titleShort>Espíritu perdido</TM_LostSpiritAdultBS.titleShort>
+
+<TM_RegretSpiritAdultBS.description>El espíritu del arrepentimiento aún recuerda su propósito como espíritu, pero no pudo enmendar sus errores antes de que fuera demasiado tarde. Ahora vaga por el mundo como espíritu, lleno de tristeza y arrepentimiento, buscando todavía la forma de cumplir su propósito. Los espíritus del arrepentimiento potencian en un 20 % la habilidad Drenar espíritu.</TM_RegretSpiritAdultBS.description>
+
+<TM_RegretSpiritAdultBS.baseDesc>El espíritu del arrepentimiento aún recuerda su propósito como espíritu, pero no pudo enmendar sus errores antes de que fuera demasiado tarde. Ahora vaga por el mundo como espíritu, lleno de tristeza y arrepentimiento, buscando todavía la forma de cumplir su propósito. Los espíritus del arrepentimiento potencian en un 20 % la habilidad de drenar espíritu.</TM_RegretSpiritAdultBS.baseDesc>
+
+<TM_RegretSpiritAdultBS.title>Espíritu del arrepentimiento</TM_RegretSpiritAdultBS.title>
+
+<TM_RegretSpiritAdultBS.titleShort>Espíritu del arrepentimiento</TM_RegretSpiritAdultBS.titleShort>
+
+<TM_SpiritChildBS.description>[PAWN_nameDef] es un espíritu errante, anclado a este plano por una fuerza desconocida. Se ignoran los sucesos que rodean su origen, pero fueron lo bastante poderosos como para llevarle a buscar respuestas, justicia o redención entre los vivos.</TM_SpiritChildBS.description>
+
+<TM_SpiritChildBS.baseDesc>[PAWN_nameDef] es un espíritu errante, anclado a este plano por una fuerza desconocida. Se ignoran los sucesos que rodean su origen, pero fueron lo bastante poderosos como para llevarle a buscar respuestas, justicia o redención entre los vivos.</TM_SpiritChildBS.baseDesc>
+
+<TM_SpiritChildBS.title>Espíritu</TM_SpiritChildBS.title>
+
+<TM_SpiritChildBS.titleShort>Espíritu</TM_SpiritChildBS.titleShort>
+
+<TM_UndeadAdultBS.description>[PAWN_nameDef] es un no muerto básico, sin ninguna anomalía.</TM_UndeadAdultBS.description>
+
+<TM_UndeadAdultBS.baseDesc>[PAWN_nameDef] es un no muerto básico, sin ninguna anomalía.</TM_UndeadAdultBS.baseDesc>
+
+<TM_UndeadAdultBS.title>No muerto</TM_UndeadAdultBS.title>
+
+<TM_UndeadAdultBS.titleShort>No muerto</TM_UndeadAdultBS.titleShort>
+
+<TM_UndeadAdultBS_Brute.description>El bruto no muerto es una variante única de no muerto con mayor habilidad en combate cuerpo a cuerpo y minería, pero es tan torpe de manos que las tareas de artesanía y cocina le resultan casi imposibles.</TM_UndeadAdultBS_Brute.description>
+
+<TM_UndeadAdultBS_Brute.baseDesc>El bruto no muerto es una variante única de no muerto con mayor habilidad en combate cuerpo a cuerpo y minería, pero tan torpe de manos que las tareas de artesanía y cocina le resultan casi imposibles.</TM_UndeadAdultBS_Brute.baseDesc>
+
+<TM_UndeadAdultBS_Brute.title>Bruto no muerto</TM_UndeadAdultBS_Brute.title>
+
+<TM_UndeadAdultBS_Brute.titleShort>Bruto no muerto</TM_UndeadAdultBS_Brute.titleShort>
+
+<TM_UndeadAdultBS_GhostEye.description>El ojo fantasma es una variante única de no muerto con cierta habilidad para el disparo, pero con una penalización en combate cuerpo a cuerpo y minería.</TM_UndeadAdultBS_GhostEye.description>
+
+<TM_UndeadAdultBS_GhostEye.baseDesc>El ojo fantasma es una variante única de no muerto con cierta habilidad para el disparo, pero con una penalización en combate cuerpo a cuerpo y minería.</TM_UndeadAdultBS_GhostEye.baseDesc>
+
+<TM_UndeadAdultBS_GhostEye.title>Ojo fantasma</TM_UndeadAdultBS_GhostEye.title>
+
+<TM_UndeadAdultBS_GhostEye.titleShort>Ojo fantasma</TM_UndeadAdultBS_GhostEye.titleShort>
+
+<TM_UndeadAdultBS_GhostMind.description>La mente fantasma es una variante única de no muerto con mayor habilidad de artesanía y cocina, pero con una penalización en combate cuerpo a cuerpo y minería.</TM_UndeadAdultBS_GhostMind.description>
+
+<TM_UndeadAdultBS_GhostMind.baseDesc>La mente fantasma es una variante única de no muerto con mayor habilidad de artesanía y cocina, pero con una penalización en combate cuerpo a cuerpo y minería.</TM_UndeadAdultBS_GhostMind.baseDesc>
+
+<TM_UndeadAdultBS_GhostMind.title>Mente fantasma</TM_UndeadAdultBS_GhostMind.title>
+
+<TM_UndeadAdultBS_GhostMind.titleShort>Mente fantasma</TM_UndeadAdultBS_GhostMind.titleShort>
+
+<TM_UndeadAdultBS_Servant.description>El sirviente no muerto es una variante única de no muerto especialmente adaptada al trabajo, con una grave desventaja en combate.</TM_UndeadAdultBS_Servant.description>
+
+<TM_UndeadAdultBS_Servant.baseDesc>El sirviente no muerto es una variante única de no muerto especialmente adaptada al trabajo, con una grave desventaja en el combate.</TM_UndeadAdultBS_Servant.baseDesc>
+
+<TM_UndeadAdultBS_Servant.title>Sirviente no muerto</TM_UndeadAdultBS_Servant.title>
+
+<TM_UndeadAdultBS_Servant.titleShort>Sirviente no muerto</TM_UndeadAdultBS_Servant.titleShort>
+
+<TM_UndeadChildBS.description>[PAWN_nameDef] es ahora un no muerto: la historia del personaje que habitaba antes este cuerpo ha sido borrada y reemplazada por la voluntad de un nigromante.</TM_UndeadChildBS.description>
+
+<TM_UndeadChildBS.baseDesc>[PAWN_nameDef] es ahora un no muerto: la historia del personaje que habitaba antes este cuerpo ha sido borrada y reemplazada por la voluntad de un nigromante.</TM_UndeadChildBS.baseDesc>
+
+<TM_UndeadChildBS.title>No muerto</TM_UndeadChildBS.title>
+
+<TM_UndeadChildBS.titleShort>No muerto</TM_UndeadChildBS.titleShort>
+
+<TM_VengefulSpiritAdultBS.description>[PAWN_nameDef] es un espíritu vengativo, lleno de rencor y odio, que solo desea infligir su desdicha a los vivos. Los espíritus vengativos pueden ejercer más poder durante Distorsión espiritual y Tormenta espiritual, pero les cuesta más armonizar al poseer un cuerpo vivo. Aumenta la tasa de ataque de Tormenta espiritual en un 25 % y la bonificación de daño de Distorsionar espíritu en un 6 %. Reduce la compatibilidad en 1.</TM_VengefulSpiritAdultBS.description>
+
+<TM_VengefulSpiritAdultBS.baseDesc>[PAWN_nameDef] es un espíritu vengativo, lleno de rencor y odio, que solo desea infligir su desdicha a los vivos. Los espíritus vengativos pueden ejercer más poder durante la distorsión espiritual y la tormenta espiritual, pero les cuesta más armonizar al poseer un cuerpo vivo. Aumenta la tasa de ataque de la tormenta espiritual en un 25 % y la bonificación de daño de distorsionar espíritu en un 6 %. Reduce la compatibilidad en 1.</TM_VengefulSpiritAdultBS.baseDesc>
+
+<TM_VengefulSpiritAdultBS.title>Espíritu vengativo</TM_VengefulSpiritAdultBS.title>
+
+<TM_VengefulSpiritAdultBS.titleShort>Espíritu vengativo</TM_VengefulSpiritAdultBS.titleShort>
+</LanguageData>

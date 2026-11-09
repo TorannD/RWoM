@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_WoodGolem_ArmorHD.label>armadura</TM_WoodGolem_ArmorHD.label>
+  
+  <TM_WoodGolem_ArmorHD.description>Mejora la protección física.</TM_WoodGolem_ArmorHD.description>
+  
+  <TM_WoodGolem_ArmorHD.stages.I.label>I</TM_WoodGolem_ArmorHD.stages.I.label>
+  
+  <TM_WoodGolem_ArmorHD.stages.II.label>II</TM_WoodGolem_ArmorHD.stages.II.label>
+  
+  <TM_WoodGolem_ArmorHD.stages.III.label>III</TM_WoodGolem_ArmorHD.stages.III.label>
+  
+</LanguageData>

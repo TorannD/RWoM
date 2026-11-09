@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_MagicalOxygen.label>gerador mágico de oxigénio</TM_MagicalOxygen.label>
+  <TM_MagicalOxygen.description>Cria uma atmosfera respirável num raio de 5 células à sua volta e dos sinalizadores de mana ligados, mesmo no vácuo aberto. Usa mana ou magicita sem eletricidade nem mudança automática de recurso. Cada gerador abastece 250 células consumindo 0,1 de mana por segundo; uma magicita dura 100 segundos à potência máxima. Campos maiores recebem pressão parcial até que mais geradores abasteçam a rede. Armazena 100 de mana e 50 de magicita. Não fornece calor nem proteção térmica. O ar mantém-se após uma verificação de abastecimento falhada, feita a cada segundo; duas falhas consecutivas fazem regressar o vácuo. Em planetas sem vácuo, o modo de atmosfera fica inativo: não consome recursos, não solicita mana à rede nem inicia a conversão automática de combustível. A saída para a rede de tubos do VGE continua a consumir recursos nos planetas.</TM_MagicalOxygen.description>
+  <TM_MagicalOxygen.comps.0.fuelLabel>Magicita</TM_MagicalOxygen.comps.0.fuelLabel>
+  <TM_MagicalOxygen.comps.0.fuelGizmoLabel>Magicita</TM_MagicalOxygen.comps.0.fuelGizmoLabel>
+</LanguageData>

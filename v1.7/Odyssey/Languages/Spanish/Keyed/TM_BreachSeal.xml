@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_BreachSeal_eff>Eficiencia</TM_BreachSeal_eff>
+  <TM_BreachSeal_eff_desc>Reduce el coste de maná un 10% por nivel, hasta tres niveles.</TM_BreachSeal_eff_desc>
+  <TM_BreachSeal_Unavailable>Sello de brecha no está disponible.</TM_BreachSeal_Unavailable>
+  <TM_BreachSeal_NoCore>Selecciona una plataforma de tu núcleo de nave.</TM_BreachSeal_NoCore>
+  <TM_BreachSeal_AmbiguousCore>Varios núcleos comparten esta plataforma.</TM_BreachSeal_AmbiguousCore>
+  <TM_BreachSeal_CoreOverlap>El objetivo se superpone al núcleo.</TM_BreachSeal_CoreOverlap>
+  <TM_BreachSeal_InvalidFloor>El centro y el borde lejano requieren suelo intacto de nave.</TM_BreachSeal_InvalidFloor>
+  <TM_BreachSeal_Blocked>El borde lejano está bloqueado.</TM_BreachSeal_Blocked>
+  <TM_BreachSeal_AlreadySealed>Este borde ya está sellado.</TM_BreachSeal_AlreadySealed>
+  <TM_BreachSeal_ver>Duración</TM_BreachSeal_ver>
+  <TM_BreachSeal_ver_desc>Añade un 25% de la duración base por nivel: 30, 36 o 42 horas. Los pergaminos y bastones duran 24 horas.</TM_BreachSeal_ver_desc>
+</LanguageData>

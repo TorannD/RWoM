@@ -1,58 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
-using AbilityUser;
+using TorannMagic.ClassProgression;
 using Verse;
-using UnityEngine;
-
 
 namespace TorannMagic
 {
-    public class Verb_Entertain : Verb_UseAbility
+    public class Verb_Entertain : Verb_SpiritTargetable
     {
+        protected override bool ApplyHostedEffect()
+        {
+            var body = CasterPawn;
+            var owner = Ability?.Pawn ?? body;
+            var comp = owner?.GetCompAbilityUserMagic();
+            var def = TorannMagicDefOf.TM_Entertain;
+            if (currentTarget.Thing != body || body?.Spawned != true || body.Dead || comp == null) return false;
+            var song = def.abilityHediff;
+            var active = owner.health.hediffSet.GetFirstHediffOfDef(song);
+            var power = comp.MagicData.MagicPowersB.FirstOrDefault(p => p.abilityDef == def);
+            if (active != null)
+            {
+                owner.health.RemoveHediff(active);
+                AutoCast.AutocastPolicy.SetAutocast(comp, power, false);
+                return true;
+            }
+            if (comp.maxMP < def.upkeepEnergyCost)
+            {
+                Messages.Message("TM_NotEnoughManaToSustain".Translate(body.LabelShort, def.label), MessageTypeDefOf.RejectInput);
+                return false;
+            }
+            HealthUtility.AdjustSeverity(owner, song, .95f);
+            TM_MoteMaker.ThrowNoteMote(body.DrawPos, body.Map, .8f);
+            AutoCast.AutocastPolicy.SetAutocast(comp, power, true);
+            return true;
+        }
+
         protected override bool TryCastShot()
         {
-            Pawn caster = base.CasterPawn;
-            Pawn pawn = this.currentTarget.Thing as Pawn;
-            CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
-            MagicPower magicPower = comp.MagicData.MagicPowersB.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Entertain);
-            bool flag = pawn != null && !pawn.Dead;
-            if (flag)
-            {
-                if (pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_EntertainingHD")))
-                {
-                    using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.hediffs.GetEnumerator())
-                    {
-                        while (enumerator.MoveNext())
-                        {
-                            Hediff rec = enumerator.Current;
-                            if (rec.def.defName.Contains("TM_EntertainingHD"))
-                            {
-                                pawn.health.RemoveHediff(rec);
-                            }
-                        }
-                    }
-                    
-                    magicPower.AutoCast = false;
-                }
-                else
-                {
-                    if (comp.maxMP >= TorannMagicDefOf.TM_Entertain.upkeepEnergyCost)
-                    {
-                        HealthUtility.AdjustSeverity(pawn, HediffDef.Named("TM_EntertainingHD"), .95f);
-                        TM_MoteMaker.ThrowNoteMote(pawn.DrawPos, pawn.Map, .8f);
-                        magicPower.AutoCast = true;
-                    }
-                    else
-                    {
-                        Messages.Message("TM_NotEnoughManaToSustain".Translate(
-                                            pawn.LabelShort,
-                                            TorannMagicDefOf.TM_Entertain.label
-                                        ), MessageTypeDefOf.RejectInput);
-                    }
-                }
-            }
+            ApplyHostedEffect();
             return true;
         }
     }

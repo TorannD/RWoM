@@ -1,0 +1,7 @@
+<LanguageData>
+  <TM_SoulStoneChooseHost>Elegir huésped para {0}</TM_SoulStoneChooseHost>
+  <TM_SoulStoneCannotImplant>Se necesita un colono, un animal de la colonia, un prisionero o un visitante vivo y accesible.</TM_SoulStoneCannotImplant>
+  <TM_SoulStoneHarmful>¿Implantar a {0} en {1}? Poseer a un prisionero o visitante es un acto hostil. Su facción podría volverse enemiga si la transferencia tiene éxito.</TM_SoulStoneHarmful>
+  <TM_SoulStoneRecoveryRemaining>El espíritu podrá abandonar este cuerpo dentro de {0}.</TM_SoulStoneRecoveryRemaining>
+  <TM_SoulStoneNoExitCell>No hay espacio libre cerca del huésped para que el espíritu salga.</TM_SoulStoneNoExitCell>
+</LanguageData>

@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_CoreReturnUnavailable>绑定的核心不可用、已关闭或不再属于你。</TM_CoreReturnUnavailable>
+  <TM_CoreReturnUnpaid>返回印记已停用：核心需要魔法燃料维持印记。</TM_CoreReturnUnpaid>
+  <TM_CoreReturnRebindConfirm>是否在 {0} 到达此核心后替换其返回印记？</TM_CoreReturnRebindConfirm>
+  <TM_CoreReturnNoCandidates>此地图上没有可绑定到该核心的合适殖民者。</TM_CoreReturnNoCandidates>
+  <TM_CoreReturnConfirm>消耗 {1} 魔法燃料，将 {0} 名成员召回 {2}？装备和携带物品会一同返回。</TM_CoreReturnConfirm>
+  <TM_CoreReturnStranding>警告：商队中将留下动物或俘虏，且没有能够行动的殖民者。</TM_CoreReturnStranding>
+  <TM_CoreReturnMarkedOnly>仅召回有印记者</TM_CoreReturnMarkedOnly>
+  <TM_CoreReturnIncludeCaravans>连同其整个商队召回</TM_CoreReturnIncludeCaravans>
+  <TM_CoreReturnStatus>返回印记：{0}
+维持消耗：{1} 魔法燃料/天
+可用魔法燃料：{2}</TM_CoreReturnStatus>
+  <TM_CoreReturnMark>赋予印记</TM_CoreReturnMark>
+  <TM_CoreReturnMarkDesc>选择一名殖民者，让其前往核心接受返回印记。每个印记每天消耗 1 魔法燃料。</TM_CoreReturnMarkDesc>
+  <TM_CoreReturnAll>召回所有人</TM_CoreReturnAll>
+  <TM_CoreReturnAllDesc>从地图或商队召回已绑定的成员。确认前请检查成员名单和费用。</TM_CoreReturnAllDesc>
+  <TM_CoreReturnSingle>返回核心</TM_CoreReturnSingle>
+  <TM_CoreReturnSingleDesc>携带自身库存和手持物品返回核心。消耗：{0} 魔法燃料。</TM_CoreReturnSingleDesc>
+  <TM_CoreReturnUnbind>移除印记</TM_CoreReturnUnbind>
+  <TM_CoreReturnUnbindDesc>解除此成员的绑定并停止相应维持消耗。</TM_CoreReturnUnbindDesc>
+  <TM_CoreReturnUnbindConfirm>是否移除 {0} 的返回印记？</TM_CoreReturnUnbindConfirm>
+  <TM_CoreReturnCaravan>召回整个商队</TM_CoreReturnCaravan>
+  <TM_CoreReturnCaravanDesc>召回所有成员、动物和俘虏，以及全部货物。每名成员消耗 {0} 魔法燃料。</TM_CoreReturnCaravanDesc>
+  <TM_CoreReturnChanged>成员名单已变化，请重新检查召回。</TM_CoreReturnChanged>
+  <TM_CoreReturnBlockDowned>当前无法标记：倒地中。</TM_CoreReturnBlockDowned>
+  <TM_CoreReturnBlockMental>当前无法标记：精神崩溃。</TM_CoreReturnBlockMental>
+  <TM_CoreReturnBlockCapacity>当前无法标记：无法移动。</TM_CoreReturnBlockCapacity>
+  <TM_CoreReturn_InvalidSelection>所选成员中有人已不满足此次召回条件。</TM_CoreReturn_InvalidSelection>
+  <TM_CoreReturn_AlreadyNear>所选成员已经在核心附近。</TM_CoreReturn_AlreadyNear>
+  <TM_CoreReturn_NoLanding>核心附近没有足够的安全空地。</TM_CoreReturn_NoLanding>
+  <TM_CoreReturn_NoFuel>连接的燃料来源不足以支付整个召回。</TM_CoreReturn_NoFuel>
+  <TM_CoreReturn_Busy>另一次召回或燃料支付正在进行中。</TM_CoreReturn_Busy>
+  <TM_CoreReturn_Failed>召回失败。请查看日志中的恢复详情。</TM_CoreReturn_Failed>
+  <TM_CoreReturn_UnsupportedTransport>携带穿梭机的商队无法使用核心召回。</TM_CoreReturn_UnsupportedTransport>
+  <TM_CoreReturn_CarriedPawn>请先放下正在搬运的人员；乘客必须单独计费。</TM_CoreReturn_CarriedPawn>
+</LanguageData>

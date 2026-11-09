@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_ChiHD.label>Chi</TM_ChiHD.label>
+  
+  <TM_ChiHD.description>Representa la energía única que utiliza un monje.</TM_ChiHD.description>
+  
+  
+  <TM_MindOverBodyHD.label>La mente sobre el cuerpo</TM_MindOverBodyHD.label>
+  
+  <TM_MindOverBodyHD.description>Refuerza el poder físico superando las limitaciones del cuerpo.</TM_MindOverBodyHD.description>
+  
+  <TM_MindOverBodyHD.stages.I.label>I</TM_MindOverBodyHD.stages.I.label>
+  
+  <TM_MindOverBodyHD.stages.II.label>II</TM_MindOverBodyHD.stages.II.label>
+  
+  <TM_MindOverBodyHD.stages.III.label>III</TM_MindOverBodyHD.stages.III.label>
+  
+  <TM_MindOverBodyHD.stages.IV.label>IV</TM_MindOverBodyHD.stages.IV.label>
+  
+</LanguageData>

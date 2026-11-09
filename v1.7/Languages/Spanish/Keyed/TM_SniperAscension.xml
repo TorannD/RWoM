@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_SniperAscensionRequirements>Nivel marcial {0}/30. Completa una de las pruebas: cubre {1}/6 rescates o realiza {2}/8 simulacros de evacuación.</TM_SniperAscensionRequirements>
+  <TM_SniperAscensionDrillHint>Elige dos camas de la colonia separadas por al menos 12 casillas. El francotirador practica en ambas. Cuenta un simulacro completado por día.</TM_SniperAscensionDrillHint>
+  <TM_SniperAscensionLearned>Técnica de ascensión: {0}.</TM_SniperAscensionLearned>
+  <TM_SniperAscend>Elegir técnica de ascensión</TM_SniperAscend>
+  <TM_SniperChooseCloak>{0} — ocultación (elección permanente)</TM_SniperChooseCloak>
+  <TM_SniperChooseOpening>{0} — serie de disparos (elección permanente)</TM_SniperChooseOpening>
+  <TM_SniperBeginDrill>Simular una evacuación</TM_SniperBeginDrill>
+  <TM_SniperDrillFirst>Elige la primera cama de la colonia.</TM_SniperDrillFirst>
+  <TM_SniperDrillSecond>Elige otra cama al menos a 12 casillas de la primera.</TM_SniperDrillSecond>
+  <TM_SniperAscensionRescueHint>Durante una amenaza activa, recluta al francotirador con un arma a distancia. Mantén la cama a la vista y a un máximo de 35 casillas mientras otro colono lleva allí a un aliado herido. Cada aliado rescatado cuenta una vez.</TM_SniperAscensionRescueHint>
+  <TM_SniperOpeningUnavailable>Requiere Única oportunidad, 60% de aguante y haber completado la recarga.</TM_SniperOpeningUnavailable>
+</LanguageData>

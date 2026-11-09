@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_SniperAscensionRequirements>Nível marcial {0}/30. Completa uma das provas: cobre {1}/6 resgates ou conclui {2}/8 exercícios de evacuação.</TM_SniperAscensionRequirements>
+  <TM_SniperAscensionDrillHint>Escolhe duas camas da colónia separadas por pelo menos 12 células. O atirador pratica junto de cada uma. Conta um exercício concluído por dia.</TM_SniperAscensionDrillHint>
+  <TM_SniperAscensionLearned>Técnica de ascensão: {0}.</TM_SniperAscensionLearned>
+  <TM_SniperAscend>Escolher técnica de ascensão</TM_SniperAscend>
+  <TM_SniperChooseCloak>{0} — camuflagem (escolha permanente)</TM_SniperChooseCloak>
+  <TM_SniperChooseOpening>{0} — série de disparos (escolha permanente)</TM_SniperChooseOpening>
+  <TM_SniperBeginDrill>Treinar uma evacuação</TM_SniperBeginDrill>
+  <TM_SniperDrillFirst>Escolhe a primeira cama da colónia.</TM_SniperDrillFirst>
+  <TM_SniperDrillSecond>Escolhe outra cama a pelo menos 12 células da primeira.</TM_SniperDrillSecond>
+  <TM_SniperAscensionRescueHint>Durante uma ameaça, mobiliza o atirador com uma arma de longo alcance. Mantém a cama à vista e a não mais de 35 células enquanto outro colono leva para lá um aliado ferido. Cada aliado resgatado conta uma vez.</TM_SniperAscensionRescueHint>
+  <TM_SniperOpeningUnavailable>Requer Uma única oportunidade, 60% de vigor e a recarga concluída.</TM_SniperOpeningUnavailable>
+</LanguageData>

@@ -1,4 +1,4 @@
-﻿using Verse;
+using Verse;
 using AbilityUser;
 using System.Collections.Generic;
 using RimWorld;
@@ -47,21 +47,14 @@ namespace TorannMagic
 
         public virtual void Effect()
         {
-            LocalTargetInfo t = this.TargetsAoE[0];
-            bool flag = t.Cell != default(IntVec3);
-            if (flag)
-            {
-                Thing launchedThing = new Thing()
-                {
-                    def = TorannMagicDefOf.FlyingObject_DeathBolt
-                };
-                Pawn casterPawn = base.CasterPawn;
-                //LongEventHandler.QueueLongEvent(delegate
-                //{
-                    FlyingObject_DeathBolt flyingObject = (FlyingObject_DeathBolt)GenSpawn.Spawn(ThingDef.Named("FlyingObject_DeathBolt"), this.CasterPawn.Position, this.CasterPawn.Map);
-                    flyingObject.Launch(this.CasterPawn, t.Cell, launchedThing);
-                //}, "LaunchingFlyer", false, null);
-            }
+            if (TargetsAoE.Count > 0) SpawnOrb(CasterPawn, CasterPawn, TargetsAoE[0]);
+        }
+
+        internal static void SpawnOrb(Pawn body, Pawn owner, LocalTargetInfo target)
+        {
+            if (!target.IsValid) return;
+            var orb = (FlyingObject_DeathBolt)GenSpawn.Spawn(TorannMagicDefOf.FlyingObject_DeathBolt, body.Position, body.Map);
+            orb.LaunchFromCaster(body, owner, target);
         }
 
         public override void PostCastShot(bool inResult, out bool outResult)

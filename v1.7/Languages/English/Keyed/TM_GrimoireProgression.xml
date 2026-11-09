@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_GrimoireClassicRules>Classic progression: learn and improve abilities under the existing class rules.</TM_GrimoireClassicRules>
+  <TM_GrimoireClassicRequirements>This class has no initiation-stage requirements. Existing skill points and scroll-learning rules apply.</TM_GrimoireClassicRequirements>
+  <TM_GrimoireLearningItems>Scrolls for unlearned abilities</TM_GrimoireLearningItems>
+  <TM_GrimoireNoLearningItems>No scroll-linked unlearned abilities are shown.</TM_GrimoireNoLearningItems>
+  <TM_GrimoireScrollUnspecified>A spell scroll is required; its item is not specified by this ability.</TM_GrimoireScrollUnspecified>
+  <TM_ProgressionVocation_Mage>Mage</TM_ProgressionVocation_Mage>
+  <TM_ProgressionVocation_Warrior>Warrior</TM_ProgressionVocation_Warrior>
+  <TM_ProgressionVocation_WarriorMage>Warrior-mage</TM_ProgressionVocation_WarriorMage>
+  <TM_ProgressionStage_Foundation>Foundation</TM_ProgressionStage_Foundation>
+  <TM_ProgressionStage_Adept>Adept</TM_ProgressionStage_Adept>
+  <TM_ProgressionStage_Master>Master</TM_ProgressionStage_Master>
+  <TM_ProgressionStage_Ascended>Ascended</TM_ProgressionStage_Ascended>
+  <TM_ProgressionSharedLearning>Class directions share the existing skill-point pool.</TM_ProgressionSharedLearning>
+  <TM_ProgressionStageLocked>Requires a later initiation stage</TM_ProgressionStageLocked>
+  <TM_ProgressionBookUnavailable>This book cannot advance this initiation path yet.</TM_ProgressionBookUnavailable>
+  <TM_ProgressionNoviceChoices>Novice spells chosen: {0}/{1}. Choose carefully.</TM_ProgressionNoviceChoices>
+  <TM_ProgressionOpenGrimoire>Grimoire</TM_ProgressionOpenGrimoire>
+  <TM_ProgressionOpenGrimoireDesc>View class initiation, spells and resources.</TM_ProgressionOpenGrimoireDesc>
+  <TM_ProgressionEnrollMage>Become a mage</TM_ProgressionEnrollMage>
+  <TM_ProgressionEnrollMageDesc>Begin the path of a mage and choose two basic spells in the grimoire. Class disciplines are learned through books. This replaces magical potential with the Mage vocation.</TM_ProgressionEnrollMageDesc>
+  <TM_ProgressionFoundationBook>To begin {0}, read {1}.</TM_ProgressionFoundationBook>
+  <TM_ProgressionPriestHealingTrial>Healing trial: use your Advanced Heal spell to heal another friendly, living humanlike pawn. Before the cast, their injuries must total at least 20 severity; a single cast must remove at least 10.</TM_ProgressionPriestHealingTrial>
+  <TM_ProgressionTrialDone>Trial completed</TM_ProgressionTrialDone>
+  <TM_ProgressionTrialPending>Trial not yet completed</TM_ProgressionTrialPending>
+  <TM_ProgressionNextBook>After completing the trial, read {0} to advance.</TM_ProgressionNextBook>
+  <TM_ProgressionPriestVow>Priest's vow: incapable of violent work. Improved movement speed, immunity gain, medical speed, tending quality and surgery success; reduced pain shock threshold.</TM_ProgressionPriestVow>
+  <TM_ProgressionPriestPurificationTrial>Purification trial: use your own Purify spell to completely remove a pre-existing permanent injury or scar from another friendly, living humanlike pawn. Partial treatment, self-treatment and item casts do not complete the trial.</TM_ProgressionPriestPurificationTrial>
+  <TM_ProgressionAscensionAction>Ascend as priest</TM_ProgressionAscensionAction>
+  <TM_ProgressionAscensionNeedsOffering>A Resurrection learning scroll must be reachable on the ground or already carried.</TM_ProgressionAscensionNeedsOffering>
+  <TM_ProgressionAscensionUnavailable>Ascension requirements or the magic circle are unavailable.</TM_ProgressionAscensionUnavailable>
+  <TM_ProgressionAscensionRequirements>Requires a Master priest, a large magic circle and a Resurrection learning scroll. The ritual takes one game hour. The scroll is offered only when the ritual completes; interruption preserves it.</TM_ProgressionAscensionRequirements>
+  <TM_ProgressionNecromancerControlTrial>Control trial: maintain the same owned undead servant for one day. Time counts only while you and the servant are on the same map. Leaving the map or travelling in a caravan pauses progress; losing or replacing the servant resets it.</TM_ProgressionNecromancerControlTrial>
+  <TM_ProgressionServantTime>Control maintained: {0} / 24 hours</TM_ProgressionServantTime>
+  <TM_ProgressionNecromancerDeathMarkTrial>Death Mark trial: defeat a hostile enemy while your own Death Mark is active on them. An ally may deliver the final blow. Allies and prisoners do not count.</TM_ProgressionNecromancerDeathMarkTrial>
+  <TM_ProgressionNecromancerAscensionAction>Ascend as necromancer</TM_ProgressionNecromancerAscensionAction>
+  <TM_ProgressionNecromancerAscensionNeedsOffering>A Lich Form learning scroll must be reachable on the ground or already carried.</TM_ProgressionNecromancerAscensionNeedsOffering>
+  <TM_ProgressionNecromancerAscensionRequirements>Requires a Master necromancer, a large magic circle and a Lich Form learning scroll. The ritual takes one game hour. The scroll is consumed only at completion; interruption preserves it. Ascension unlocks the Lich Form transformation. Passions and timetable are retained.</TM_ProgressionNecromancerAscensionRequirements>
+  <TM_ProgressionFireboltTrial>Firebolt trial: deal 100 actual Firebolt damage to hostile creatures. Allies, prisoners and buildings do not count.</TM_ProgressionFireboltTrial>
+  <TM_ProgressionFireboltDamage>Firebolt damage: {0} / 100</TM_ProgressionFireboltDamage>
+  <TM_ProgressionFireclawTrial>Deal damage to two different hostile creatures with a single Fireclaw. Allies, prisoners and buildings do not count.</TM_ProgressionFireclawTrial>
+  <TM_ProgressionFireAscensionAction>Ascend as fire mage</TM_ProgressionFireAscensionAction>
+  <TM_ProgressionFireAscensionNeedsOffering>A Firestorm learning scroll must be reachable on the ground or already carried.</TM_ProgressionFireAscensionNeedsOffering>
+  <TM_ProgressionFireAscensionRequirements>Requires a Master fire mage, a large magic circle and a Firestorm learning scroll. The ritual takes one game hour. The scroll is consumed only at completion; interruption preserves it. Ascension unlocks Firestorm.</TM_ProgressionFireAscensionRequirements>
+  <TM_TomeQuestRequest>Seek a mastery tome</TM_TomeQuestRequest>
+  <TM_TomeQuestView>View tome quest</TM_TomeQuestView>
+  <TM_TomeQuestRequestDesc>Request an optional raid quest for your mastery tome. No attackers arrive until you accept. Victory awards the book; class trials are still required to study it. Traders remain an alternative.</TM_TomeQuestRequestDesc>
+  <TM_TomeQuestUnavailable>No suitable tome quest is available here. Try again at a home settlement; traders also sell mastery tomes.</TM_TomeQuestUnavailable>
+  <TM_TomeQuestPeaceful>Combat quests are disabled by storyteller settings. Mastery tomes remain available from traders.</TM_TomeQuestPeaceful>
+  <TM_TomeQuestCooldown>Wait one game day after your last tome quest before requesting another.</TM_TomeQuestCooldown>
+  <TM_TomeQuestBusy>A tome quest is already outstanding for this mage or settlement.</TM_TomeQuestBusy>
+  <TM_TomeQuestTitle>The contested manuscript: {0}</TM_TomeQuestTitle>
+  <TM_TomeQuestDescription>{0} is threatened by {1} humanoid raiders (approximately {2} threat points). Accept to begin one game hour of preparation, then they walk in from the map edge. Repel this fixed group within two days: dead, downed, captured or retreated attackers count. Allies may do the fighting. Victory awards one {3}; select a colonist and use Claim mastery tome to choose a home map for delivery. Losing or abandoning the encounter map before victory fails the quest. Failure does not reset class progress. You may request another quest one day after failure or collecting the reward. The tome does not bypass class trials.</TM_TomeQuestDescription>
+  <TM_ClassTomeClaim>Claim mastery tome</TM_ClassTomeClaim>
+  <TM_ClassTomeClaimDesc>Choose a home settlement to receive the earned book. The same reward can only be claimed once.</TM_ClassTomeClaimDesc>
+  <TM_ClassTomePendingDesc>Your mastery tome is ready. Select any colonist and use Claim mastery tome to choose a home settlement for delivery. The reward remains available until claimed.</TM_ClassTomePendingDesc>
+  <TM_ClassTomeDelivered>Mastery tome delivered.</TM_ClassTomeDelivered>
+  <TM_ProgressionIceFoundationTrial>Deal 20 actual Icebolt damage to hostile creatures, or apply your Soothe aura to an ally other than yourself.</TM_ProgressionIceFoundationTrial>
+  <TM_ProgressionIceMasteryTrial>Damage two different hostile creatures with Snowball, or successfully change the weather with your Rainmaker. Separate casts may count.</TM_ProgressionIceMasteryTrial>
+  <TM_ProgressionIceTrialProgress>Icebolt damage: {0}/20. Snowball targets: {1}/2.</TM_ProgressionIceTrialProgress>
+  <TM_ProgressionIceAttunementHint>Peaceful alternative: at a large magic circle, complete an attunement exercise for 100 silver and one game hour. It completes the current trial, not the book or stage.</TM_ProgressionIceAttunementHint>
+  <TM_ProgressionIceAscensionAction>Ascend as ice mage</TM_ProgressionIceAscensionAction>
+  <TM_ProgressionIceAscensionNeedsOffering>A Blizzard learning scroll must be reachable on the ground or already carried.</TM_ProgressionIceAscensionNeedsOffering>
+  <TM_ProgressionIceAscensionRequirements>Requires a Master ice mage, a large magic circle and a Blizzard learning scroll. The ritual takes one game hour; only completion consumes the scroll and unlocks Blizzard.</TM_ProgressionIceAscensionRequirements>
+  <TM_ProgressionIceAttunementAction>Cold attunement: 100 silver, 1 hour (peaceful trial)</TM_ProgressionIceAttunementAction>
+  <TM_ProgressionIceAttunementNeedsOffering>Requires a reachable stack of at least 100 silver, or 100 silver already carried.</TM_ProgressionIceAttunementNeedsOffering>
+  <TM_ProgressionLightningFoundationTrial>Deal 20 actual LightningBolt damage to hostile creatures, or apply or strengthen AMP on an ally other than yourself.</TM_ProgressionLightningFoundationTrial>
+  <TM_ProgressionLightningMasteryTrial>Damage two different hostile creatures with LightningCloud. Separate casts may count; stuns alone do not count.</TM_ProgressionLightningMasteryTrial>
+  <TM_ProgressionLightningTrialProgress>LightningBolt damage: {0}/20. LightningCloud targets: {1}/2.</TM_ProgressionLightningTrialProgress>
+  <TM_ProgressionLightningAttunementHint>Peaceful alternative: complete an attunement exercise at a large magic circle for 100 silver and one game hour. Only the current trial is completed; the book is still required.</TM_ProgressionLightningAttunementHint>
+  <TM_ProgressionLightningAscensionAction>Ascend as lightning mage</TM_ProgressionLightningAscensionAction>
+  <TM_ProgressionLightningAscensionNeedsOffering>An Eye of the Storm learning scroll must be reachable or already carried.</TM_ProgressionLightningAscensionNeedsOffering>
+  <TM_ProgressionLightningAscensionRequirements>Requires a Master lightning mage, a large magic circle and an Eye of the Storm learning scroll. One game hour; the scroll is consumed and the ultimate unlocked only at completion.</TM_ProgressionLightningAscensionRequirements>
+  <TM_ProgressionLightningAttunementAction>Storm attunement: 100 silver, 1 hour (peaceful trial)</TM_ProgressionLightningAttunementAction>
+  <TM_ProgressionLightningAttunementNeedsOffering>Requires a reachable stack of at least 100 silver, or 100 silver already carried.</TM_ProgressionLightningAttunementNeedsOffering>
+  <TM_ProgressionArcanistFoundationTrial>Deal 20 actual MagicMissile damage to hostile creatures, or successfully Blink at least 8 cells.</TM_ProgressionArcanistFoundationTrial>
+  <TM_ProgressionArcanistMasteryTrial>Apply your Shadow aura to another free ally, or successfully retrieve an item from at least 8 cells away with Summon. Failed or stationary casts do not count.</TM_ProgressionArcanistMasteryTrial>
+  <TM_ProgressionArcanistTrialProgress>MagicMissile damage: {0}/20.</TM_ProgressionArcanistTrialProgress>
+  <TM_ProgressionArcanistAscensionAction>Ascend as arcanist</TM_ProgressionArcanistAscensionAction>
+  <TM_ProgressionArcanistAscensionNeedsOffering>A Fold Reality learning scroll must be reachable or already carried.</TM_ProgressionArcanistAscensionNeedsOffering>
+  <TM_ProgressionArcanistAscensionRequirements>Requires a Master arcanist, a large magic circle and a Fold Reality learning scroll. One game hour; the scroll is consumed and the ultimate unlocked only at completion.</TM_ProgressionArcanistAscensionRequirements>
+  <TM_ProgressionArcanistAttunementAction>Arcane attunement: 100 silver, 1 hour (peaceful trial)</TM_ProgressionArcanistAttunementAction>
+  <TM_ProgressionArcanistAttunementHint>Peaceful alternative: at a large magic circle, complete an attunement exercise for 100 silver and one game hour. It completes the current trial, not the book or stage.</TM_ProgressionArcanistAttunementHint>
+  <TM_ProgressionArcanistAttunementNeedsOffering>Requires a reachable stack of at least 100 silver, or 100 silver already carried.</TM_ProgressionArcanistAttunementNeedsOffering>
+  <TM_ProgressionPaladin>paladin</TM_ProgressionPaladin>
+  <TM_ProgressionPaladinFoundationTrial>With one Heal, restore at least 8 actual injury severity on another free ally.</TM_ProgressionPaladinFoundationTrial>
+  <TM_ProgressionPaladinMasteryTrial>Newly apply your Ray of Hope buff to another free ally.</TM_ProgressionPaladinMasteryTrial>
+  <TM_ProgressionPaladinAttunementHint>Peaceful alternative: at a large magic circle, complete an attunement exercise for 100 silver and one game hour. It completes the current trial, not the book or stage.</TM_ProgressionPaladinAttunementHint>
+  <TM_ProgressionPaladinAscensionAction>Ascend as paladin</TM_ProgressionPaladinAscensionAction>
+  <TM_ProgressionPaladinAscensionNeedsOffering>A Holy Wrath learning scroll must be reachable or already carried.</TM_ProgressionPaladinAscensionNeedsOffering>
+  <TM_ProgressionPaladinAscensionRequirements>Requires a Master paladin, a large magic circle and a Holy Wrath learning scroll. The ritual takes one game hour; only completion consumes the scroll and unlocks the ultimate.</TM_ProgressionPaladinAscensionRequirements>
+  <TM_ProgressionPaladinAttunementAction>paladin attunement: 100 silver, 1 hour (peaceful trial)</TM_ProgressionPaladinAttunementAction>
+  <TM_ProgressionPaladinAttunementNeedsOffering>Requires a reachable stack of at least 100 silver, or 100 silver already carried.</TM_ProgressionPaladinAttunementNeedsOffering>
+  <TM_ProgressionSummoner>summoner</TM_ProgressionSummoner>
+  <TM_ProgressionSummonerFoundationTrial>Maintain the same living minion and active pylon, both your own summons on your map, for 600 observed ticks (10 seconds at normal speed).</TM_ProgressionSummonerFoundationTrial>
+  <TM_ProgressionSummonerMasteryTrial>Have a hostile creature spring your summoned mine and start its fuse.</TM_ProgressionSummonerMasteryTrial>
+  <TM_ProgressionSummonerAttunementHint>Peaceful alternative: at a large magic circle, complete an attunement exercise for 100 silver and one game hour. It completes the current trial, not the book or stage.</TM_ProgressionSummonerAttunementHint>
+  <TM_ProgressionSummonerAscensionAction>Ascend as summoner</TM_ProgressionSummonerAscensionAction>
+  <TM_ProgressionSummonerAscensionNeedsOffering>A Summon Poppi learning scroll must be reachable or already carried.</TM_ProgressionSummonerAscensionNeedsOffering>
+  <TM_ProgressionSummonerAscensionRequirements>Requires a Master summoner, a large magic circle and a Summon Poppi learning scroll. The ritual takes one game hour; only completion consumes the scroll and unlocks the ultimate.</TM_ProgressionSummonerAscensionRequirements>
+  <TM_ProgressionSummonerAttunementAction>summoner attunement: 100 silver, 1 hour (peaceful trial)</TM_ProgressionSummonerAttunementAction>
+  <TM_ProgressionSummonerAttunementNeedsOffering>Requires a reachable stack of at least 100 silver, or 100 silver already carried.</TM_ProgressionSummonerAttunementNeedsOffering>
+  <TM_ProgressionSummonerTrialProgress>Summons maintained: {0}/600 ticks.</TM_ProgressionSummonerTrialProgress>
+  <TM_ProgressionDruid>druid</TM_ProgressionDruid>
+  <TM_ProgressionDruidFoundationTrial>Calm a living manhunter animal outside your faction with your Soothe Animal.</TM_ProgressionDruidFoundationTrial>
+  <TM_ProgressionDruidMasteryTrial>Apply or strengthen Regenerate on another free living human ally with at least 8 injury severity.</TM_ProgressionDruidMasteryTrial>
+  <TM_ProgressionDruidAttunementHint>Peaceful alternative: at a large magic circle, complete an attunement exercise for 100 silver and one game hour. It completes the current trial, not the book or stage.</TM_ProgressionDruidAttunementHint>
+  <TM_ProgressionDruidAscensionAction>Ascend as druid</TM_ProgressionDruidAscensionAction>
+  <TM_ProgressionDruidAscensionNeedsOffering>A Regrow Limb learning scroll must be reachable or already carried.</TM_ProgressionDruidAscensionNeedsOffering>
+  <TM_ProgressionDruidAscensionRequirements>Requires a Master druid, a large magic circle and a Regrow Limb learning scroll. The ritual takes one game hour; only completion consumes the scroll and unlocks the ultimate.</TM_ProgressionDruidAscensionRequirements>
+  <TM_ProgressionDruidAttunementAction>druid attunement: 100 silver, 1 hour (peaceful trial)</TM_ProgressionDruidAttunementAction>
+  <TM_ProgressionDruidAttunementNeedsOffering>Requires a reachable stack of at least 100 silver, or 100 silver already carried.</TM_ProgressionDruidAttunementNeedsOffering>
+  <TM_ProgressionBard>bard</TM_ProgressionBard>
+  <TM_ProgressionBardFoundationTrial>Entertain another free living human ally, creating or refreshing their memory of your performance.</TM_ProgressionBardFoundationTrial>
+  <TM_ProgressionBardMasteryTrial>Use your Inspire aura to start a new inspiration on another free living human ally.</TM_ProgressionBardMasteryTrial>
+  <TM_ProgressionBardAttunementHint>Peaceful alternative: at a large magic circle, complete an attunement exercise for 100 silver and one game hour. It completes the current trial, not the book or stage.</TM_ProgressionBardAttunementHint>
+  <TM_ProgressionBardAscensionAction>Ascend as bard</TM_ProgressionBardAscensionAction>
+  <TM_ProgressionBardAscensionNeedsOffering>A Battle Hymn learning scroll must be reachable or already carried.</TM_ProgressionBardAscensionNeedsOffering>
+  <TM_ProgressionBardAscensionRequirements>Requires a Master bard, a large magic circle and a Battle Hymn learning scroll. The ritual takes one game hour; only completion consumes the scroll and unlocks the ultimate.</TM_ProgressionBardAscensionRequirements>
+  <TM_ProgressionBardAttunementAction>bard attunement: 100 silver, 1 hour (peaceful trial)</TM_ProgressionBardAttunementAction>
+  <TM_ProgressionBardAttunementNeedsOffering>Requires a reachable stack of at least 100 silver, or 100 silver already carried.</TM_ProgressionBardAttunementNeedsOffering>
+  <TM_ProgressionChooseDemonBranch>Choose {0} — read {1} (consumes one book)</TM_ProgressionChooseDemonBranch>
+  <TM_ProgressionWarlockFoundationTrial>Establish a new reciprocal Soul Bond with another free living human in your faction.</TM_ProgressionWarlockFoundationTrial>
+  <TM_ProgressionWarlockMasteryTrial>Launch a living hostile pawn with your native Repulsion.</TM_ProgressionWarlockMasteryTrial>
+  <TM_ProgressionWarlockAttunementHint>Peaceful alternative: at a large magic circle, complete an attunement exercise for 100 silver and one game hour. It completes the current trial, not the book or stage.</TM_ProgressionWarlockAttunementHint>
+  <TM_ProgressionWarlockAscensionRequirements>Requires a Master warlock, a large magic circle and a Psychic Shock learning scroll. The ritual takes one game hour; only completion consumes the scroll and unlocks the ultimate.</TM_ProgressionWarlockAscensionRequirements>
+  <TM_ProgressionSuccubusFoundationTrial>Establish a new reciprocal Soul Bond with another free living human in your faction.</TM_ProgressionSuccubusFoundationTrial>
+  <TM_ProgressionSuccubusMasteryTrial>Increase Gravity Slow on a living hostile pawn with your native Attraction.</TM_ProgressionSuccubusMasteryTrial>
+  <TM_ProgressionSuccubusAttunementHint>Peaceful alternative: at a large magic circle, complete an attunement exercise for 100 silver and one game hour. It completes the current trial, not the book or stage.</TM_ProgressionSuccubusAttunementHint>
+  <TM_ProgressionSuccubusAscensionRequirements>Requires a Master succubus, a large magic circle and a Scorn learning scroll. The ritual takes one game hour; only completion consumes the scroll and unlocks the ultimate.</TM_ProgressionSuccubusAscensionRequirements>
+  <TM_ProgressionWarlock>warlock</TM_ProgressionWarlock>
+  <TM_ProgressionWarlockAscensionAction>Ascend as warlock</TM_ProgressionWarlockAscensionAction>
+  <TM_ProgressionWarlockAscensionNeedsOffering>A Psychic Shock learning scroll must be reachable or already carried.</TM_ProgressionWarlockAscensionNeedsOffering>
+  <TM_ProgressionWarlockAttunementAction>warlock attunement: 100 silver, 1 hour (peaceful trial)</TM_ProgressionWarlockAttunementAction>
+  <TM_ProgressionWarlockAttunementNeedsOffering>Requires a reachable stack of at least 100 silver, or 100 silver already carried.</TM_ProgressionWarlockAttunementNeedsOffering>
+  <TM_ProgressionSuccubus>succubus</TM_ProgressionSuccubus>
+  <TM_ProgressionSuccubusAscensionAction>Ascend as succubus</TM_ProgressionSuccubusAscensionAction>
+  <TM_ProgressionSuccubusAscensionNeedsOffering>A Scorn learning scroll must be reachable or already carried.</TM_ProgressionSuccubusAscensionNeedsOffering>
+  <TM_ProgressionSuccubusAttunementAction>succubus attunement: 100 silver, 1 hour (peaceful trial)</TM_ProgressionSuccubusAttunementAction>
+  <TM_ProgressionSuccubusAttunementNeedsOffering>Requires a reachable stack of at least 100 silver, or 100 silver already carried.</TM_ProgressionSuccubusAttunementNeedsOffering>
+  <TM_ProgressionGeomancer>geomancer</TM_ProgressionGeomancer>
+  <TM_ProgressionGeomancerFoundationTrial>Freshly apply your owned Stoneskin ward to another free, living allied human.</TM_ProgressionGeomancerFoundationTrial>
+  <TM_ProgressionGeomancerMasteryTrial>Create at least 3 distinct new stone wall cells with one owned Encase cast.</TM_ProgressionGeomancerMasteryTrial>
+  <TM_ProgressionGeomancerAttunementHint>Peaceful alternative: at a large magic circle, complete an attunement exercise for 100 silver and one game hour. It completes the current trial, not the book or stage.</TM_ProgressionGeomancerAttunementHint>
+  <TM_ProgressionGeomancerAscensionAction>Ascend as geomancer</TM_ProgressionGeomancerAscensionAction>
+  <TM_ProgressionGeomancerAscensionNeedsOffering>A Meteor learning scroll must be reachable or already carried.</TM_ProgressionGeomancerAscensionNeedsOffering>
+  <TM_ProgressionGeomancerAscensionRequirements>Requires a Master geomancer, a large magic circle and a Meteor learning scroll. The ritual takes one game hour; only completion consumes the scroll and unlocks Meteor.</TM_ProgressionGeomancerAscensionRequirements>
+  <TM_ProgressionGeomancerAttunementAction>geomancer attunement: 100 silver, 1 hour (peaceful trial)</TM_ProgressionGeomancerAttunementAction>
+  <TM_ProgressionGeomancerAttunementNeedsOffering>Requires a reachable stack of at least 100 silver, or 100 silver already carried.</TM_ProgressionGeomancerAttunementNeedsOffering>
+  <TM_ProgressionTechnomancer>technomancer</TM_ProgressionTechnomancer>
+  <TM_ProgressionTechnomancerFoundationTrial>Have your owned TechnoBit actually repair a damaged building of your faction.</TM_ProgressionTechnomancerFoundationTrial>
+  <TM_ProgressionTechnomancerMasteryTrial>Apply or strengthen your owned TechnoShield on another free, living allied human.</TM_ProgressionTechnomancerMasteryTrial>
+  <TM_ProgressionTechnomancerAttunementHint>Peaceful alternative: at a large magic circle, complete an attunement exercise for 100 silver and one game hour. It completes the current trial, not the book or stage.</TM_ProgressionTechnomancerAttunementHint>
+  <TM_ProgressionTechnomancerAscensionAction>Ascend as technomancer</TM_ProgressionTechnomancerAscensionAction>
+  <TM_ProgressionTechnomancerAscensionNeedsOffering>An Orbital Strike learning scroll must be reachable or already carried.</TM_ProgressionTechnomancerAscensionNeedsOffering>
+  <TM_ProgressionTechnomancerAscensionRequirements>Requires a Master technomancer, a large magic circle and an Orbital Strike learning scroll. The ritual takes one game hour; only completion consumes the scroll and unlocks Orbital Strike.</TM_ProgressionTechnomancerAscensionRequirements>
+  <TM_ProgressionTechnomancerAttunementAction>technomancer attunement: 100 silver, 1 hour (peaceful trial)</TM_ProgressionTechnomancerAttunementAction>
+  <TM_ProgressionTechnomancerAttunementNeedsOffering>Requires a reachable stack of at least 100 silver, or 100 silver already carried.</TM_ProgressionTechnomancerAttunementNeedsOffering>
+  <TM_ProgressionBloodMage>blood mage</TM_ProgressionBloodMage>
+  <TM_ProgressionBloodMageFoundationTrial>Apply or strengthen your owned Blood Shield on another free living allied human with an existing injury.</TM_ProgressionBloodMageFoundationTrial>
+  <TM_ProgressionBloodMageMasteryTrial>Deal 20 actual damage to living hostile pawns with your owned Ignite Blood.</TM_ProgressionBloodMageMasteryTrial>
+  <TM_ProgressionBloodMageAttunementHint>Peaceful alternative: at a large magic circle, complete an attunement exercise for 100 silver and one game hour. It completes the current trial, not the book or stage.</TM_ProgressionBloodMageAttunementHint>
+  <TM_ProgressionBloodMageAscensionAction>Ascend as blood mage</TM_ProgressionBloodMageAscensionAction>
+  <TM_ProgressionBloodMageAscensionNeedsOffering>A Blood Moon learning scroll must be reachable or already carried.</TM_ProgressionBloodMageAscensionNeedsOffering>
+  <TM_ProgressionBloodMageAscensionRequirements>Requires a Master blood mage, a large magic circle and a Blood Moon learning scroll. The ritual takes one game hour; only completion consumes the scroll and unlocks Blood Moon.</TM_ProgressionBloodMageAscensionRequirements>
+  <TM_ProgressionBloodMageAttunementAction>blood mage attunement: 100 silver, 1 hour (peaceful trial)</TM_ProgressionBloodMageAttunementAction>
+  <TM_ProgressionBloodMageAttunementNeedsOffering>Requires a reachable stack of at least 100 silver, or 100 silver already carried.</TM_ProgressionBloodMageAttunementNeedsOffering>
+  <TM_ProgressionBloodMageTrialProgress>Ignite Blood damage: {0}/20.</TM_ProgressionBloodMageTrialProgress>
+  <TM_ProgressionEnchanter>enchanter</TM_ProgressionEnchanter>
+  <TM_ProgressionEnchanterFoundationTrial>Use your owned Transmutate to consume part or all of a raw-resource stack and successfully place a positive amount of a different resource.</TM_ProgressionEnchanterFoundationTrial>
+  <TM_ProgressionEnchanterMasteryTrial>Apply a new enchantment with your owned Enchant Weapon to the equipped melee weapon of another free, living allied human.</TM_ProgressionEnchanterMasteryTrial>
+  <TM_ProgressionEnchanterAscensionAction>Ascend as enchanter</TM_ProgressionEnchanterAscensionAction>
+  <TM_ProgressionEnchanterAscensionNeedsOffering>A Shapeshift learning scroll must be reachable or already carried.</TM_ProgressionEnchanterAscensionNeedsOffering>
+  <TM_ProgressionEnchanterAscensionRequirements>Requires a Master enchanter, a large magic circle and a Shapeshift learning scroll. The ritual takes one game hour; only completion consumes the scroll and unlocks Shapeshift.</TM_ProgressionEnchanterAscensionRequirements>
+  <TM_ProgressionEnchanterAttunementAction>enchanter attunement: 100 silver, 1 hour (peaceful trial)</TM_ProgressionEnchanterAttunementAction>
+  <TM_ProgressionEnchanterAttunementHint>Peaceful alternative: at a large magic circle, complete an attunement exercise for 100 silver and one game hour. It completes the current trial, not the book or stage.</TM_ProgressionEnchanterAttunementHint>
+  <TM_ProgressionEnchanterAttunementNeedsOffering>Requires a reachable stack of at least 100 silver, or 100 silver already carried.</TM_ProgressionEnchanterAttunementNeedsOffering>
+  <TM_ProgressionChronomancer>chronomancer</TM_ProgressionChronomancer>
+  <TM_ProgressionChronomancerFoundationTrial>With your owned Prediction active, successfully foresee a native event and place it in the incident queue. Activating Prediction alone does not complete the trial.</TM_ProgressionChronomancerFoundationTrial>
+  <TM_ProgressionChronomancerMasteryTrial>Use your owned Reverse Time to restore hit points or reduce food rot on a non-hostile item on your map.</TM_ProgressionChronomancerMasteryTrial>
+  <TM_ProgressionChronomancerAscensionAction>Ascend as chronomancer</TM_ProgressionChronomancerAscensionAction>
+  <TM_ProgressionChronomancerAscensionNeedsOffering>A Recall learning scroll must be reachable or already carried.</TM_ProgressionChronomancerAscensionNeedsOffering>
+  <TM_ProgressionChronomancerAscensionRequirements>Requires a Master chronomancer, a large magic circle and a Recall learning scroll. The ritual takes one game hour; only completion consumes the scroll and unlocks Recall through Time Mark.</TM_ProgressionChronomancerAscensionRequirements>
+  <TM_ProgressionChronomancerAttunementAction>chronomancer attunement: 100 silver, 1 hour (peaceful trial)</TM_ProgressionChronomancerAttunementAction>
+  <TM_ProgressionChronomancerAttunementHint>Peaceful alternative: at a large magic circle, complete an attunement exercise for 100 silver and one game hour. It completes the current trial, not the book or stage.</TM_ProgressionChronomancerAttunementHint>
+  <TM_ProgressionChronomancerAttunementNeedsOffering>Requires a reachable stack of at least 100 silver, or 100 silver already carried.</TM_ProgressionChronomancerAttunementNeedsOffering>
+  <TM_ProgressionBrightmage>brightmage</TM_ProgressionBrightmage>
+  <TM_ProgressionBrightmageFoundationTrial>Deal 20 actual damage to living hostile pawns with your owned Light Lance.</TM_ProgressionBrightmageFoundationTrial>
+  <TM_ProgressionBrightmageMasteryTrial>Apply or strengthen actual blindness on a living hostile pawn with your owned Light Burst.</TM_ProgressionBrightmageMasteryTrial>
+  <TM_ProgressionBrightmageAscensionAction>Ascend as brightmage</TM_ProgressionBrightmageAscensionAction>
+  <TM_ProgressionBrightmageAscensionNeedsOffering>A Spirit of Light learning scroll must be reachable or already carried.</TM_ProgressionBrightmageAscensionNeedsOffering>
+  <TM_ProgressionBrightmageAscensionRequirements>Requires a Master brightmage, a large magic circle and a Spirit of Light learning scroll. The ritual takes one game hour; only completion consumes the scroll and unlocks Spirit of Light.</TM_ProgressionBrightmageAscensionRequirements>
+  <TM_ProgressionBrightmageAttunementAction>brightmage attunement: 100 silver, 1 hour (peaceful trial)</TM_ProgressionBrightmageAttunementAction>
+  <TM_ProgressionBrightmageTrialProgress>Light Lance damage: {0}/20.</TM_ProgressionBrightmageTrialProgress>
+  <TM_ProgressionBrightmageAttunementHint>Peaceful alternative: at a large magic circle, complete an attunement exercise for 100 silver and one game hour. It completes the current trial, not the book or stage.</TM_ProgressionBrightmageAttunementHint>
+  <TM_ProgressionBrightmageAttunementNeedsOffering>Requires a reachable stack of at least 100 silver, or 100 silver already carried.</TM_ProgressionBrightmageAttunementNeedsOffering>
+  <TM_ProgressionShaman>shaman</TM_ProgressionShaman>
+  <TM_ProgressionShamanFoundationTrial>Have your personally summoned Healing Totem restore 8 total actual injury severity to free living allies.</TM_ProgressionShamanFoundationTrial>
+  <TM_ProgressionShamanMasteryTrial>Apply a new Hex to a living hostile flesh pawn with your owned Hex spell.</TM_ProgressionShamanMasteryTrial>
+  <TM_ProgressionShamanAscensionAction>Ascend as shaman</TM_ProgressionShamanAscensionAction>
+  <TM_ProgressionShamanAscensionNeedsOffering>A Guardian Spirit learning scroll must be reachable or already carried.</TM_ProgressionShamanAscensionNeedsOffering>
+  <TM_ProgressionShamanAscensionRequirements>Requires a Master shaman, a large magic circle and a Guardian Spirit learning scroll. The ritual takes one game hour; only completion consumes the scroll and unlocks Guardian Spirit.</TM_ProgressionShamanAscensionRequirements>
+  <TM_ProgressionShamanAttunementAction>shaman attunement: 100 silver, 1 hour (peaceful trial)</TM_ProgressionShamanAttunementAction>
+  <TM_ProgressionShamanTrialProgress>Healing Totem healing: {0}/8.</TM_ProgressionShamanTrialProgress>
+  <TM_ProgressionShamanAttunementHint>Peaceful alternative: at a large magic circle, complete an attunement exercise for 100 silver and one game hour. It completes the current trial, not the book or stage.</TM_ProgressionShamanAttunementHint>
+  <TM_ProgressionShamanAttunementNeedsOffering>Requires a reachable stack of at least 100 silver, or 100 silver already carried.</TM_ProgressionShamanAttunementNeedsOffering>
+  <TM_ProgressionGolemancer>golemancer</TM_ProgressionGolemancer>
+  <TM_ProgressionGolemancerFoundationTrial>Complete native rune carving that spends mana and adds a new rune or arcane tattoo to a living ally.</TM_ProgressionGolemancerFoundationTrial>
+  <TM_ProgressionGolemancerMasteryTrial>Personally apply a new Awareness, Emotion, Fitness, Protection or Vitality brand to another free living ally. Refreshing or taking over an existing brand does not count.</TM_ProgressionGolemancerMasteryTrial>
+  <TM_ProgressionGolemancerAscensionAction>Ascend as golemancer</TM_ProgressionGolemancerAscensionAction>
+  <TM_ProgressionGolemancerAscensionNeedsOffering>A Living Wall learning scroll must be reachable or already carried.</TM_ProgressionGolemancerAscensionNeedsOffering>
+  <TM_ProgressionGolemancerAscensionRequirements>Requires a Master golemancer, a large magic circle and a Living Wall learning scroll. The ritual takes one game hour; only completion consumes the scroll and unlocks Living Wall.</TM_ProgressionGolemancerAscensionRequirements>
+  <TM_ProgressionGolemancerAttunementAction>golemancer attunement: 100 silver, 1 hour (peaceful trial)</TM_ProgressionGolemancerAttunementAction>
+  <TM_ProgressionGolemancerAttunementHint>Peaceful alternative: at a large magic circle, complete an attunement exercise for 100 silver and one game hour. It completes the current trial, not the book or stage.</TM_ProgressionGolemancerAttunementHint>
+  <TM_ProgressionGolemancerAttunementNeedsOffering>Requires a reachable stack of at least 100 silver, or 100 silver already carried.</TM_ProgressionGolemancerAttunementNeedsOffering>
+  <TM_ProgressionEmpath>empath</TM_ProgressionEmpath>
+  <TM_ProgressionEmpathFoundationTrial>Use your permanently learned Mind Killer to actually drain a hostile target&apos;s mood.</TM_ProgressionEmpathFoundationTrial>
+  <TM_ProgressionEmpathMasteryTrial>Use your own Suppressive Aura to grant new emotional protection to another free living ally. Refreshing existing protection does not count.</TM_ProgressionEmpathMasteryTrial>
+  <TM_ProgressionEmpathAttunementHint>Peaceful alternative: at a large magic circle, complete an attunement exercise for 100 silver and one game hour. It completes the current trial, not the book or stage.</TM_ProgressionEmpathAttunementHint>
+  <TM_ProgressionEmpathAscensionAction>Ascend as empath</TM_ProgressionEmpathAscensionAction>
+  <TM_ProgressionEmpathAscensionNeedsOffering>A Gem of Arcane Insight must be reachable or already carried.</TM_ProgressionEmpathAscensionNeedsOffering>
+  <TM_ProgressionEmpathAscensionRequirements>Requires a Master empath, a large magic circle and one Gem of Arcane Insight. The ritual takes one game hour; only completion consumes the gem and unlocks Symbiosis. It does not create a host or a Symbiosis link.</TM_ProgressionEmpathAscensionRequirements>
+  <TM_ProgressionEmpathAttunementAction>empath attunement: 100 silver, 1 hour (peaceful trial)</TM_ProgressionEmpathAttunementAction>
+  <TM_ProgressionEmpathAttunementNeedsOffering>Requires a reachable stack of at least 100 silver, or 100 silver already carried.</TM_ProgressionEmpathAttunementNeedsOffering>
+  <TM_SpiritRebirthCastUnavailable>This ability is unavailable in the spirit's current form.</TM_SpiritRebirthCastUnavailable>
+</LanguageData>

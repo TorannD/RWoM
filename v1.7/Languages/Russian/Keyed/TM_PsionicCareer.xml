@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_ReadPsionicProjector>Изучать кинетическую проекцию</TM_ReadPsionicProjector>
+  <TM_ReadPsionicAccelerator>Изучать кинетическое ускорение</TM_ReadPsionicAccelerator>
+  <TM_PsionicFoundationTrial>Поглотите или нанесите врагам {0}/200 ед. кинетического урона либо восстановите {1}/20 разных построек после бедствий.</TM_PsionicFoundationTrial>
+  <TM_PsionicAdeptTrial>Спасите {0}/10 разных раненых союзников или доставьте {1}/30 экстренных грузов, пока союзник лежит без сил (раз в час).</TM_PsionicAdeptTrial>
+  <TM_PsionicMasterTrial>Отслужите {0}/12 дней псиоником. Уровень бойца {1}/30.</TM_PsionicMasterTrial>
+  <TM_PsionicAdvance>Перейти на следующую ступень</TM_PsionicAdvance>
+  <TM_PsionicCrucibleUnavailable>Требуется 60% пси-энергии и 30% выносливости.</TM_PsionicCrucibleUnavailable>
+  <TM_PsionicProjectorInfo>Проекция тратит на 10% меньше пси-энергии за перехват. Урон импульса снижен на 10%.</TM_PsionicProjectorInfo>
+  <TM_PsionicAcceleratorInfo>Импульс наносит на 8% больше урона. Во время поддержания барьера пси-энергия не восстанавливается.</TM_PsionicAcceleratorInfo>
+</LanguageData>

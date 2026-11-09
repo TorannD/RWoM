@@ -12,6 +12,13 @@ namespace TorannMagic
         private bool initializing = true;
         public Pawn bonderPawn = null;
 
+        internal static void ApplyPetBond(Pawn owner,Pawn pet,float severity)
+        {
+            HealthUtility.AdjustSeverity(pet,TorannMagicDefOf.TM_RangerBondHD,severity);
+            var marker=pet.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_RangerBondHD)?.TryGetComp<HediffComp_RangerBond>();
+            if (marker!=null) marker.bonderPawn=owner;
+        }
+
         public override string CompLabelInBracketsExtra => bonderPawn != null ? bonderPawn.LabelShort + base.CompLabelInBracketsExtra : base.CompLabelInBracketsExtra;
 
         public override void CompExposeData()
@@ -45,13 +52,26 @@ namespace TorannMagic
                 {
                     FleckMaker.ThrowHeatGlow(base.Pawn.DrawPos.ToIntVec3(), base.Pawn.Map, 2f);
                 }
+                var owner = Pawn.TryGetComp<CompAnimalController>()?.summonerPawn;
+                if (owner?.GetCompAbilityUserMagic()?.bondedSpirit == Pawn)
+                {
+                    bonderPawn = owner;
+                    return;
+                }
+                if (!spawned) return;
                 List<Pawn> mapPawns = this.Pawn.Map.mapPawns.AllPawnsSpawned.ToList();
                 for (int i = 0; i < mapPawns.Count(); i++)
                 {
+                    if (ClassProgression.SpiritRebirthState.TryGetPossessingSpirit(mapPawns[i],out var soul) &&
+                        soul.GetCompAbilityUserMight()?.bondedPet==this.Pawn)
+                    {
+                        this.bonderPawn=soul;
+                        return;
+                    }
                     if (!mapPawns[i].DestroyedOrNull() && mapPawns[i].Spawned && !mapPawns[i].Downed && mapPawns[i].RaceProps.Humanlike)
                     {
                         CompAbilityUserMight comp = mapPawns[i].GetCompAbilityUserMight();
-                        if (comp.IsMightUser && comp.bondedPet != null)
+                        if (comp?.IsMightUser == true && comp.bondedPet != null)
                         {
                             if (comp.bondedPet == this.Pawn)
                             {
@@ -60,7 +80,7 @@ namespace TorannMagic
                             }
                         }
                         CompAbilityUserMagic compMagic = mapPawns[i].GetCompAbilityUserMagic();
-                        if(compMagic.IsMagicUser && compMagic.bondedSpirit != null)
+                        if(compMagic?.IsMagicUser == true && compMagic.bondedSpirit != null)
                         {
                             if(compMagic.bondedSpirit == this.Pawn)
                             {
@@ -122,12 +142,12 @@ namespace TorannMagic
             CompAbilityUserMight comp = this.bonderPawn.GetCompAbilityUserMight();
             if (comp != null && comp.IsMightUser)
             {
-                verVal = comp.MightData.MightPowerSkill_AnimalFriend.FirstOrDefault((MightPowerSkill x) => x.label == "TM_AnimalFriend_ver").level;
+                verVal = comp.MightData.MightPowerSkill_AnimalFriend.FirstOrDefault(x => x.label == "TM_AnimalFriend_ver")?.level ?? 0;
             }
             CompAbilityUserMagic compMagic = this.bonderPawn.GetCompAbilityUserMagic();
-            if(compMagic != null && compMagic.IsMagicUser)
+            if(comp?.bondedPet != Pawn && compMagic != null && compMagic.IsMagicUser)
             {
-                verVal = compMagic.MagicData.MagicPowerSkill_GuardianSpirit.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_GuardianSpirit_ver").level;
+                verVal = compMagic.MagicData.MagicPowerSkill_GuardianSpirit.FirstOrDefault(x => x.label == "TM_GuardianSpirit_ver")?.level ?? 0;
             }
             this.parent.Severity = .5f + verVal;
         }

@@ -1,0 +1,8 @@
+<LanguageData>
+  <TM_ChooseUnifiedWanderer>选择流浪者之路</TM_ChooseUnifiedWanderer>
+  <TM_ConfirmUnifiedWanderer>要选择战斗法师职业以同时训练戏法和野外技能吗？无需书籍。</TM_ConfirmUnifiedWanderer>
+  <TM_WandererSurvey>标记路点</TM_WandererSurvey>
+  <TM_WandererSurveyInfo>标记至少12格外的路点，再阅读任意职业的完整典籍。精通需要24格的路线和大师典籍。标记消耗本路径各项资源上限的10%。每本书从六项技能中选两项。</TM_WandererSurveyInfo>
+  <TM_WandererLessons>选择技能（还可选 {0} 个）</TM_WandererLessons>
+  <TM_BestowRecipientUnavailable>{0} 已有此天赋或已选定职业。</TM_BestowRecipientUnavailable>
+</LanguageData>

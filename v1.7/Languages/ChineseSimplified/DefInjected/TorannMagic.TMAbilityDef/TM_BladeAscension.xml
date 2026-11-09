@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_BladeSevenSteps.label>七步式</TM_BladeSevenSteps.label>
+  <TM_BladeSevenSteps.description>选择一条最长12格、可通行的直线路线。准备五秒后，角色沿路线行进，最长持续14秒。最多发动七次攻击，每次造成武器伤害的55%，最多命中三名敌人，每名敌人最多承受三击。施展期间所受伤害提高15%。结束后移动速度降低20%，持续六秒。消耗60%耐力，冷却两天。打断准备会消耗6%耐力并进入短暂冷却。</TM_BladeSevenSteps.description>
+</LanguageData>

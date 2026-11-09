@@ -152,7 +152,7 @@ Rect sRect = new Rect(rect.x, rect.y, rect.width - 36f, rect.height + 56f + size
                 Rect grimoireBtn = new Rect(rect.width - 104f, rect2.y - 2f, 100f, MightCardUtility.HeaderSize - 2f);
                 if (Widgets.ButtonText(grimoireBtn, "TM_Grimoire".Translate()))
                 {
-                    Find.WindowStack.Add(new Window_TMGrimoire(pawn));
+                    Window_TMGrimoire.OpenFor(pawn);
                 }
                 Widgets.DrawLineHorizontal(rect.x - 10f, rect2.yMax, rect.width - 15f);
                 Rect rect9 = new Rect(rect.x, rect2.yMax + MightCardUtility.Padding, rect2.width, MightCardUtility.SkillsColumnHeight);

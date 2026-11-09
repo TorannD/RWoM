@@ -1,23 +1,23 @@
-﻿using Verse;
-using AbilityUser;
+using Verse;
+using RimWorld;
 using UnityEngine;
 using System.Linq;
 using System.Collections.Generic;
-using System;
+
 
 namespace TorannMagic
 {
-    class Projectile_FogOfTorment : Projectile_AbilityBase
+    class Projectile_FogOfTorment : ClassProgression.Projectile_SpiritImpact
     {
         int age = -1;
         int duration = 1440;
-        int verVal = 0;
-        int pwrVal = 0;
-        float arcaneDmg = 1;
+        protected override string SkillStem => "TM_FogOfTorment";
+        protected override List<MagicPowerSkill> Skills(MagicData data) => data.MagicPowerSkill_FogOfTorment;
+        internal static int Duration(int versatility) => 1440 + 180 * versatility;
         int strikeDelay = 120;
         int lastStrike = 0;
         bool initialized = false;
-        ThingDef fog;
+
 
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
         {
@@ -37,63 +37,44 @@ namespace TorannMagic
         protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             Map map = base.Map;
-            base.Impact(hitThing);
-            ThingDef def = this.def;
-
-            Pawn pawn = this.launcher as Pawn;
-            Pawn victim = null;
-            CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
-            if (comp != null)
+            base.Impact(hitThing, blockedByShield);
+            if (Destroyed || map == null) return;
+            Pawn pawn = SourcePawn;
+            if (pawn == null) { age = duration; Destroy(); return; }
+            if (!projected)
             {
-                MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_FogOfTorment.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_FogOfTorment_pwr");
-                MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_FogOfTorment.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_FogOfTorment_ver");
-                
-                pwrVal = pwr.level;
-                verVal = ver.level;
-                if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+                var magic = pawn.GetCompAbilityUserMagic();
+                if (magic?.MagicData != null)
                 {
-                    MightPowerSkill mpwr = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-                    MightPowerSkill mver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
-                    pwrVal = mpwr.level;
-                    verVal = mver.level;
+                    var skills = Skills(magic.MagicData);
+                    pwrVal = SpellRank(pawn, skills, SkillStem, "_pwr");
+                    verVal = SpellRank(pawn, skills, SkillStem, "_ver");
+                    arcaneDmg = magic.arcaneDmg;
+                    if (ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist) pwrVal = verVal = 3;
                 }
-                this.arcaneDmg = comp.arcaneDmg;
-                if (ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist)
+                else if (pawn.def == TorannMagicDefOf.TM_SkeletonLichR && !initialized)
                 {
-                    pwrVal = 3;
-                    verVal = 3;
+                    pwrVal = Rand.RangeInclusive(0, 3);
+                    verVal = Rand.RangeInclusive(0, 3);
                 }
             }
-            else if(pawn.def == TorannMagicDefOf.TM_SkeletonLichR)
-            {
-                pwrVal = Rand.RangeInclusive(0,3);
-                verVal = Rand.RangeInclusive(0,3);
-            }
 
-            if (!this.initialized)
+            if (!initialized)
             {
-                fog = TorannMagicDefOf.Fog_Torment;
-                this.duration = this.duration + (180 * verVal);
-                this.strikeDelay = this.strikeDelay - (18 * verVal);
-
-                fog.gas.expireSeconds.min = this.duration/60;
-                fog.gas.expireSeconds.max = this.duration/60;
-                GenExplosion.DoExplosion(base.Position, map, this.def.projectile.explosionRadius + verVal, TMDamageDefOf.DamageDefOf.TM_Torment, this.launcher, 0, 0, this.def.projectile.soundExplode, def, this.equipmentDef, null, fog, 1f, 1, null, null, 0, false, null, 0f, 0, 0.0f, false);
-                
-                this.initialized = true;
+                duration = Duration(verVal);
+                strikeDelay = 120 - 18 * verVal;
+                initialized = true;
+                GenExplosion.DoExplosion(Position, map, def.projectile.explosionRadius + verVal,
+                    TMDamageDefOf.DamageDefOf.TM_Torment, SpellInstigator, 0, 0, def.projectile.soundExplode, def, equipmentDef);
             }
 
             if (this.age > this.lastStrike + this.strikeDelay)
             {
-                IntVec3 curCell;
-                IEnumerable<IntVec3> targets = GenRadial.RadialCellsAround(base.Position, this.def.projectile.explosionRadius + verVal, true);
-                for (int i = 0; i < targets.Count(); i++)
+                foreach (var curCell in GenRadial.RadialCellsAround(Position, def.projectile.explosionRadius + verVal, true))
                 {
-                    curCell = targets.ToArray<IntVec3>()[i];
-
                     if (curCell.InBoundsWithNullCheck(map) && curCell.IsValid)
                     {
-                        victim = curCell.GetFirstPawn(map);
+                        var victim = curCell.GetFirstPawn(map);
                         if(victim != null && !victim.Dead && victim.RaceProps.FleshType.isOrganic)
                         {
                             if(TM_Calc.IsUndead(victim))
@@ -110,7 +91,7 @@ namespace TorannMagic
                                 //kills living
                                 if (Rand.Chance(TM_Calc.GetSpellSuccessChance(pawn, victim) - .4f))
                                 {
-                                    float targetMassFactor = victim.def.BaseMass != 0 ? 50f/victim.def.BaseMass : 1f;                                    
+                                    float targetMassFactor = victim.def.BaseMass != 0 ? 50f/victim.def.BaseMass : 1f;
                                     damageEntities(victim, Mathf.RoundToInt(Rand.Range(2f + (1f * pwrVal), 4f + (1f * pwrVal)) * this.arcaneDmg * targetMassFactor), TMDamageDefOf.DamageDefOf.TM_Torment);
                                 }
                             }
@@ -119,7 +100,7 @@ namespace TorannMagic
                 }
                 this.lastStrike = this.age;
             }
-        }            
+        }
 
         public override void ExposeData()
         {
@@ -131,25 +112,30 @@ namespace TorannMagic
             Scribe_Values.Look<int>(ref this.lastStrike, "lastStrike", 0, false);
             Scribe_Values.Look<int>(ref this.verVal, "verVal", 0, false);
             Scribe_Values.Look<int>(ref this.pwrVal, "pwrVal", 0, false);
-            Scribe_Defs.Look<ThingDef>(ref this.fog, "fog");
+            Scribe_Values.Look(ref arcaneDmg, "TM_fogScale", 1f);
         }
 
         public void damageEntities(Pawn e, float d, DamageDef type)
         {
             int amt = Mathf.RoundToInt(Rand.Range(.5f, 1.5f) * d);
-            DamageInfo dinfo = new DamageInfo(type, amt, 0, (float)-1, null, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
-            if (this.launcher != null && this.launcher is Pawn caster)
-            {
-                dinfo = new DamageInfo(type, amt, 0, (float)-1, caster, null, null, DamageInfo.SourceCategory.ThingOrUnknown);                
-            }
-            bool flag = e != null;
-            if (flag)
-            {
-                e.TakeDamage(dinfo);
-            }
-            
+            e?.TakeDamage(new DamageInfo(type, amt, 0, -1f, SpellInstigator));
         }
-    }    
+    }
+
+    public sealed class DamageWorker_Torment : DamageWorker_AddInjury
+    {
+        public override void ExplosionAffectCell(Explosion explosion, IntVec3 cell, List<Thing> damagedThings,
+            List<Thing> ignoredThings, bool canThrowMotes)
+        {
+            base.ExplosionAffectCell(explosion, cell, damagedThings, ignoredThings, canThrowMotes);
+            // Old in-flight explosions still use their saved native post-spawn instruction.
+            if (!canThrowMotes || explosion.weapon != TorannMagicDefOf.Projectile_FogOfTorment ||
+                explosion.postExplosionSpawnThingDef != null || !cell.Walkable(explosion.Map)) return;
+            if (GenSpawn.TrySpawn(TorannMagicDefOf.Fog_Torment, cell, explosion.Map, out var spawned) && spawned is Gas gas)
+            {
+                int rank = Mathf.RoundToInt(explosion.radius - explosion.weapon.projectile.explosionRadius);
+                gas.destroyTick = Find.TickManager.TicksGame + Projectile_FogOfTorment.Duration(rank);
+            }
+        }
+    }
 }
-
-

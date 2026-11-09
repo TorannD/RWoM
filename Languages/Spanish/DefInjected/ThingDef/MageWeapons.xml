@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <FlyingObject_FreezingWinds.label>vientos helados</FlyingObject_FreezingWinds.label>
+  
+  
+  <Laser_SeerRing_Lightning.label>rayo elemental</Laser_SeerRing_Lightning.label>
+  
+  
+  <Projectile_BlazingPower.label>poder abrasador</Projectile_BlazingPower.label>
+  
+  
+  <Projectile_ElephantBow.label>virote del arco de elefante</Projectile_ElephantBow.label>
+  
+  
+  <Projectile_FireWand.label>varita de fuego</Projectile_FireWand.label>
+  
+  
+  <Projectile_FreezingWinds.label>vientos helados</Projectile_FreezingWinds.label>
+  
+  
+  <Projectile_IceWand.label>varita de hielo</Projectile_IceWand.label>
+  
+  
+  <Projectile_LightningWand.label>varita de rayo</Projectile_LightningWand.label>
+  
+  
+  <Projectile_SeerRing_Fire.label>fuego elemental</Projectile_SeerRing_Fire.label>
+  
+  
+  <Projectile_SeerRing_Ice.label>hielo elemental</Projectile_SeerRing_Ice.label>
+  
+  
+  <Projectile_ThrumArrow.label>virote del arco thrum</Projectile_ThrumArrow.label>
+  
+  
+  <Seer_FireRing.label>Anillo de fuego elemental</Seer_FireRing.label>
+  
+  <Seer_FireRing.description>Un artefacto antiguo vinculado a su portador que permite que corrientes elementales fluyan a través del anfitrión. Si el anfitrión se separa del anillo, el contrato que lo ata a este reino queda anulado y el artefacto se destruye.</Seer_FireRing.description>
+  
+  <Seer_FireRing.tools.elemental_fist.label>puño elemental</Seer_FireRing.tools.elemental_fist.label>
+  
+  <Seer_FireRing.verbs.Verb_Shoot.label>disparo de anillo de fuego elemental</Seer_FireRing.verbs.Verb_Shoot.label>
+
+  
+  
+  <Seer_IceRing.label>Anillo de hielo elemental</Seer_IceRing.label>
+  
+  <Seer_IceRing.description>Un artefacto antiguo vinculado a su portador que permite que corrientes elementales fluyan a través del anfitrión. Si el anfitrión se separa del anillo, el contrato que lo ata a este reino queda anulado y el artefacto se destruye.</Seer_IceRing.description>
+  
+  <Seer_IceRing.tools.elemental_fist.label>puño elemental</Seer_IceRing.tools.elemental_fist.label>
+  
+  <Seer_IceRing.verbs.Verb_Shoot.label>disparo de anillo de hielo elemental</Seer_IceRing.verbs.Verb_Shoot.label>
+  
+  
+  <Seer_LightningRing.label>Anillo de rayo elemental</Seer_LightningRing.label>
+  
+  <Seer_LightningRing.description>Un artefacto antiguo vinculado a su portador que permite que corrientes elementales fluyan a través del anfitrión. Si el anfitrión se separa del anillo, el contrato que lo ata a este reino queda anulado y el artefacto se destruye.</Seer_LightningRing.description>
+  
+  <Seer_LightningRing.tools.elemental_fist.label>puño elemental</Seer_LightningRing.tools.elemental_fist.label>
+  
+  <Seer_LightningRing.verbs.Verb_Shoot.label>disparo de anillo de relámpagos elemental</Seer_LightningRing.verbs.Verb_Shoot.label>
+
+  
+  
+  <TM_BlazingPowerStaff.label>Bastón de poder abrasador</TM_BlazingPowerStaff.label>
+  
+  <TM_BlazingPowerStaff.description>Un bastón que crea un vínculo mental con quien lo porta para canalizar energía concentrada, que puede usarse para lanzar un torrente de proyectiles abrasadores o para crear una barrera endurecida alrededor del portador que desvía proyectiles. Los magos obtienen enormes mejoras en sus hechizos al empuñarlo, pero para un personaje corriente no es más que un arma contundente.\n\nEsta arma está encantada y otorga ventajas adicionales a magos y luchadores entrenados:\nEnergía máx.: +20\nRegen. de energía: +10 %\nBonificación de daño: +40 %</TM_BlazingPowerStaff.description>
+  
+  <TM_BlazingPowerStaff.tools.rod.label>vara</TM_BlazingPowerStaff.tools.rod.label>
+  
+  <TM_BlazingPowerStaff.tools.staff_head.label>cabeza del bastón</TM_BlazingPowerStaff.tools.staff_head.label>
+  
+  <TM_BlazingPowerStaff.verbs.Verb_BlazingPower.label>disparo de bastón de poder ardiente</TM_BlazingPowerStaff.verbs.Verb_BlazingPower.label>
+
+  
+  
+  <TM_Decimation.label>Diezmación</TM_Decimation.label>
+  
+  <TM_Decimation.description>Una maza a dos manos tan intensamente encantada que desgarra la cohesión de cualquier material que golpea. Parece forjada de una sola pieza de metal y se empuña por un mango envuelto en cuero sencillo. Runas finamente grabadas cubren la superficie de la maza y la hacen parecer casi delicada. Al sostenerla se aprecia la calidad del diseño, con un equilibrio perfecto y un manejo sólido pese a la autoridad definitiva de su peso. Cada golpe tiene probabilidad de infligir fragilidad al objetivo, haciendo que reciba más daño de los ataques siguientes.\n\nEsta arma está encantada y otorga ventajas adicionales a magos y luchadores entrenados:\nEnergía máx.: +40\nResistencia arcana: +40 %\nBonificación de daño: +30 %\nFragilidad al golpear (50 %)</TM_Decimation.description>
+  
+  <TM_Decimation.tools.handle.label>mango</TM_Decimation.tools.handle.label>
+  
+  <TM_Decimation.tools.crush.label>aplastamiento</TM_Decimation.tools.crush.label>
+  
+  
+  <TM_DefenderStaff.label>Bastón del defensor</TM_DefenderStaff.label>
+  
+  <TM_DefenderStaff.description>Un bastón fabricado según un diseño antiguo que desprende un aura palpable de sabiduría. Este bastón es capaz de acceder al reino espiritual y permite a quien lo porta comunicarse con sus espíritus ancestrales, que pueden manifestar su poder en forma de barrera física. La energía para realizar esta acción procede de los propios espíritus y no consume la del usuario, aunque los espíritus necesitan tiempo de descanso entre peticiones.\n\nEsta arma está encantada y otorga ventajas adicionales a magos y luchadores entrenados:\nEnergía máx.: +30\nRegen. de energía: +20 %\nResistencia arcana: +20 %\n\nHabilidad: Barrera arcana</TM_DefenderStaff.description>
+  
+  <TM_DefenderStaff.tools.rod.label>vara</TM_DefenderStaff.tools.rod.label>
+  
+  <TM_DefenderStaff.tools.staff_head.label>cabeza del bastón</TM_DefenderStaff.tools.staff_head.label>
+  
+  <TM_DefenderStaff.verbs.Verb_BlazingPower.label>disparo de bastón del defensor</TM_DefenderStaff.verbs.Verb_BlazingPower.label>
+
+  
+  
+  <TM_DemonFang.label>colmillo de demonio</TM_DemonFang.label>
+  
+  <TM_DemonFang.description>Una hoja corta y mortífera capaz de infligir toxina de belladona. El Colmillo de demonio es ligero, de ataques rápidos, y se beneficia del tipo de material usado en su fabricación. Sin embargo, el daño bruto de esta arma es menor que el de otras de alto nivel. Por la naturaleza de su fabricación, sí se beneficia de varios encantamientos considerables que aumentan las habilidades de su usuario.\n\nEsta arma está encantada y otorga ventajas adicionales a magos y luchadores entrenados:\nCostes de energía: -10 %\nReutilización de habilidades: -15 %\nBonificación de daño: +25 %\nToxina de belladona al golpear (20 %)</TM_DemonFang.description>
+  
+  <TM_DemonFang.tools.stab.label>estocada</TM_DemonFang.tools.stab.label>
+  
+  <TM_DemonFang.tools.edge.label>filo</TM_DemonFang.tools.edge.label>
+  
+  
+  <TM_ElephantBow.label>Arco de elefante</TM_ElephantBow.label>
+  
+  <TM_ElephantBow.description>Un arco moldeado con colmillos de elefante. Los colmillos se vacían para reducir la rigidez y el peso, y se ablandan sumergiéndolos en un compuesto de magicita que aumenta su flexibilidad. El arco de elefante ofrece mejoras significativas de alcance y precisión contra objetivos lejanos respecto al gran arco, aunque es algo más difícil de manejar.\n\nEl arco de elefante está grabado con encantamientos menores y es el arma preferida de muchos guardabosques y cazadores experimentados.\n\nEsta arma está encantada y otorga ventajas adicionales a magos y luchadores entrenados:\nEnergía máx.: +5\nRegen. de energía: +5 %\nBonificación de daño: +10 %\nReutilización de habilidades: -10 %</TM_ElephantBow.description>
+  
+  <TM_ElephantBow.tools.limb.label>extremo</TM_ElephantBow.tools.limb.label>
+  
+  <TM_ElephantBow.verbs.Verb_Shoot.label>disparo de arco de elefante</TM_ElephantBow.verbs.Verb_Shoot.label>
+
+  
+  
+  <TM_ElephantSpear.label>lanza de elefante</TM_ElephantSpear.label>
+  
+  <TM_ElephantSpear.description>La lanza de elefante se fabrica con los colmillos de un elefante y suele ser un símbolo de estatus reservado a cazadores de cabezas o líderes de una tribu. El asta está grabada con encantamientos menores que potencian aún más las capacidades de combate de quien la empuña.\n\nEsta arma está encantada y otorga ventajas adicionales a magos y luchadores entrenados:\nEnergía máx.: +10\nBonificación de daño: +10 %\nResistencia arcana: +20 %</TM_ElephantSpear.description>
+  
+  <TM_ElephantSpear.tools.shaft.label>asta</TM_ElephantSpear.tools.shaft.label>
+  
+  <TM_ElephantSpear.tools.point.label>punta</TM_ElephantSpear.tools.point.label>
+  
+  <TM_ElephantSpear.tools.slash.label>tajo</TM_ElephantSpear.tools.slash.label>
+  
+  
+  <TM_ElephantTusk.label>colmillo de elefante</TM_ElephantTusk.label>
+  
+  <TM_ElephantTusk.description>Este colmillo de elefante se ha convertido en un cuchillo largo, útil en combate cuerpo a cuerpo tanto para perforar como para cortar. La empuñadura está envuelta en cuero y tiene un pequeño contrapeso para mejorar el manejo, y la ligereza de la hoja permite ataques rápidos. Sin embargo, su poco peso y su hoja más blanda lo hacen una mala opción contra un oponente muy blindado.</TM_ElephantTusk.description>
+  
+  <TM_ElephantTusk.tools.handle.label>mango</TM_ElephantTusk.tools.handle.label>
+  
+  <TM_ElephantTusk.tools.point.label>punta</TM_ElephantTusk.tools.point.label>
+  
+  <TM_ElephantTusk.tools.edge.label>filo</TM_ElephantTusk.tools.edge.label>
+  
+  
+  <TM_FireWand.label>Varita de fuego</TM_FireWand.label>
+  
+  <TM_FireWand.description>Una varita capaz de convertir lentamente la energía arcana cercana en fuego elemental. Las varitas se usan como herramientas de enfoque para canalizar el poder innato más que como arma en sí.\n\nEsta arma está encantada y otorga ventajas adicionales a magos y luchadores entrenados:\nEnergía máx.: +5\nRegen. de energía: +5 %\nBonificación de daño: +15 %</TM_FireWand.description>
+  
+  <TM_FireWand.tools.wand.label>varita</TM_FireWand.tools.wand.label>
+  
+  <TM_FireWand.verbs.Verb_Shoot.label>disparo de varita de fuego</TM_FireWand.verbs.Verb_Shoot.label>
+  
+  
+  <TM_GloryMaul.label>Maza de gloria</TM_GloryMaul.label>
+  
+  <TM_GloryMaul.description>Una maza a una mano diseñada para ser eficaz contra una gran variedad de enemigos. La cabeza de la Maza de gloria tiene un extremo contundente con una forma dentada que concentra el peso del golpe en varios puntos, y está equilibrada en el otro extremo por una púa en forma de garra para perforar armaduras gruesas. La Maza de gloria debe su nombre a su encantamiento, que puede conceder a quien la empuña una poderosa bendición de poderío.\n\nEsta arma está encantada y otorga ventajas adicionales a magos y luchadores entrenados:\nEnergía máx.: +20\nResistencia arcana: +20 %\nBonificación de daño: +10 %\nConceder poderío al golpear (15 %)</TM_GloryMaul.description>
+  
+  <TM_GloryMaul.comps.CompEnchantedItem.enchantedAction.actionLabel>Conceder poderío</TM_GloryMaul.comps.CompEnchantedItem.enchantedAction.actionLabel>
+  
+  <TM_GloryMaul.tools.talon_spike.label>púa de garra</TM_GloryMaul.tools.talon_spike.label>
+  
+  <TM_GloryMaul.tools.crush.label>aplastamiento</TM_GloryMaul.tools.crush.label>
+  
+  
+  <TM_IceWand.label>Varita de hielo</TM_IceWand.label>
+  
+  <TM_IceWand.description>Una varita capaz de convertir lentamente la energía arcana cercana en hielo elemental. Las varitas se usan como herramientas de enfoque para canalizar el poder innato más que como arma en sí.\n\nEsta arma está encantada y otorga ventajas adicionales a magos y luchadores entrenados:\nEnergía máx.: +5\nRegen. de energía: +5 %\nBonificación de daño: +15 %</TM_IceWand.description>
+  
+  <TM_IceWand.tools.wand.label>varita</TM_IceWand.tools.wand.label>
+  
+  <TM_IceWand.verbs.Verb_Shoot.label>disparo de varita de hielo</TM_IceWand.verbs.Verb_Shoot.label>
+
+  
+  
+  <TM_LightningWand.label>Varita de rayo</TM_LightningWand.label>
+  
+  <TM_LightningWand.description>Una varita capaz de convertir lentamente la energía arcana cercana en rayo elemental. Las varitas se usan como herramientas de enfoque para canalizar el poder innato más que como arma en sí.\n\nEsta arma está encantada y otorga ventajas adicionales a magos y luchadores entrenados:\nEnergía máx.: +5\nRegen. de energía: +5 %\nBonificación de daño: +15 %</TM_LightningWand.description>
+  
+  <TM_LightningWand.tools.wand.label>varita</TM_LightningWand.tools.wand.label>
+  
+  <TM_LightningWand.verbs.Verb_Shoot.label>disparo de varita de relámpagos</TM_LightningWand.verbs.Verb_Shoot.label>
+
+  
+  
+  <TM_Ruunbled.label>Ruunbled</TM_Ruunbled.label>
+  
+  <TM_Ruunbled.description>Esta enorme hoja está grabada con intrincadas runas de la empuñadura a la punta. Está forjada con un material que desconoces, con un filo afilado como una navaja y un peso que es solo una fracción de lo que su tamaño sugiere. A pesar de su tamaño, el arma es fácil de manejar y prácticamente vibra de poder. Solo puedes imaginar su origen: quizá fue creada con tecnologías antiguas perdidas en el tiempo o fabricada con algún poder misterioso. La única pista es una pequeña palabra escrita con letra elegante e impresa en la empuñadura con el nombre "Ruunbled". No sabes si es una empresa fabricante, el nombre de su artífice o el nombre de la propia hoja. Sea lo que sea, no hay duda de que esta arma representa la cumbre de su clase.\n\nEsta arma está encantada y otorga ventajas adicionales a magos y luchadores entrenados:\nReutilización de habilidades: -20 %\nCostes de energía: -20 %\nBonificación de daño: +25 %\nResistencia arcana: +25 %\nCeleridad al golpear (20 %)\nDesvío (30 %)\nGolpe tajante</TM_Ruunbled.description>
+  
+  <TM_Ruunbled.tools.pommel.label>pomo</TM_Ruunbled.tools.pommel.label>
+  
+  <TM_Ruunbled.tools.stab.label>estocada</TM_Ruunbled.tools.stab.label>
+  
+  <TM_Ruunbled.tools.edge.label>filo</TM_Ruunbled.tools.edge.label>
+  
+  
+  <TM_ThrumboAxe.label>hacha de thrumbo</TM_ThrumboAxe.label>
+  
+  <TM_ThrumboAxe.description>Un hacha fabricada con cuernos de thrumbo unidos mediante un broche de magicita. Este broche almacena potencial arcano y lo transfiere como fuerza física al blandir el hacha, permitiéndole asestar golpes poderosos capaces de atravesar a varios oponentes. El asta también está grabada con runas mágicas que aumentan el poder de quien la empuña.\n\nEsta arma está encantada y otorga ventajas adicionales a magos y luchadores entrenados:\nEnergía máx.: +10\nBonificación de daño: +20 %\nResistencia arcana: +30 %\nGolpe tajante</TM_ThrumboAxe.description>
+  
+  <TM_ThrumboAxe.tools.handle.label>mango</TM_ThrumboAxe.tools.handle.label>
+  
+  <TM_ThrumboAxe.tools.cleave.label>tajo</TM_ThrumboAxe.tools.cleave.label>
+  
+  <TM_ThrumboAxe.tools.horns.label>cuernos</TM_ThrumboAxe.tools.horns.label>
+  
+  
+  <TM_ThrumboSaber.label>sable de thrumbo</TM_ThrumboSaber.label>
+  
+  <TM_ThrumboSaber.description>Una hoja afilada como una navaja, forjada con el cuerno de un thrumbo e imbuida de energía arcana. El sable de thrumbo es más ligero que las hojas de metal y su filo corta todo salvo las armaduras más gruesas. Muchos maestros de la espada prefieren esta arma por estar diseñada para la velocidad y la letalidad. Otros encantamientos también pueden acelerar a quien la usa, duplicando su velocidad de ataque durante un breve periodo.\n\nEsta arma está encantada y otorga ventajas adicionales a magos y luchadores entrenados:\nReutilización de habilidades: -10 %\nBonificación de daño: +10 %\nCeleridad al golpear (25 %)</TM_ThrumboSaber.description>
+  
+  <TM_ThrumboSaber.tools.pommel.label>pomo</TM_ThrumboSaber.tools.pommel.label>
+  
+  <TM_ThrumboSaber.tools.stab.label>estocada</TM_ThrumboSaber.tools.stab.label>
+  
+  <TM_ThrumboSaber.tools.edge.label>filo</TM_ThrumboSaber.tools.edge.label>
+  
+  
+  <TM_ThrumBow.label>Arco thrum</TM_ThrumBow.label>
+  
+  <TM_ThrumBow.description>Un arco moldeado con el cuerno de un thrumbo. El cuerno se vacía para reducir el peso y se ablanda sumergiéndolo en un compuesto de magicita que le aporta una flexibilidad sorprendente. El arco se refuerza además con encantamientos incrustados y grabados arcanos que recorren toda su longitud. Se dice que el arco es casi sensible: es capaz de determinar el objetivo deseado mediante un vínculo mental con quien lo empuña. Las flechas disparadas con este arco casi siempre aciertan en su objetivo. Este efecto, sin embargo, tiende a mermar la propia capacidad del usuario.\n\nEsta arma está encantada y otorga ventajas adicionales a magos y luchadores entrenados:\nEnergía máx.: +20\nRegen. de energía: +10 %\nBonificación de daño: +20 %\nReutilización de habilidades: -10 %\nGanancia de XP de clase: -20 %</TM_ThrumBow.description>
+  
+  <TM_ThrumBow.tools.limb.label>extremo</TM_ThrumBow.tools.limb.label>
+  
+  <TM_ThrumBow.verbs.Verb_Shoot.label>disparo de arco de thrumbo</TM_ThrumBow.verbs.Verb_Shoot.label>
+  
+  
+  <TM_WinterStaff.label>Reinado del invierno</TM_WinterStaff.label>
+  
+  <TM_WinterStaff.description>Una vara de acero azul adornada con una corona de fragmentos de cristal. El contacto de este bastón nunca calienta... [Puedes encontrar la descripción completa en los datos originales proporcionados].</TM_WinterStaff.description>
+  
+  <TM_WinterStaff.tools.rod.label>vara</TM_WinterStaff.tools.rod.label>
+  
+  <TM_WinterStaff.tools.staff_head.label>cabeza del bastón</TM_WinterStaff.tools.staff_head.label>
+  
+  <TM_WinterStaff.verbs.Verb_FreezingWinds.label>vientos gélidos de reinado del invierno</TM_WinterStaff.verbs.Verb_FreezingWinds.label>
+
+  
+</LanguageData>

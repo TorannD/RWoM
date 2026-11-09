@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_SniperAscensionRequirements>Рівень воїна {0}/30. Виконайте одне з випробувань: прикрити порятунок союзників ({1}/6) або провести навчання з евакуації ({2}/8).</TM_SniperAscensionRequirements>
+  <TM_SniperAscensionDrillHint>Виберіть два ліжка колонії на відстані щонайменше 12 клітин одне від одного. Снайпер відпрацює дії біля кожного. Зараховується одне завершене навчання на добу.</TM_SniperAscensionDrillHint>
+  <TM_SniperAscensionLearned>Техніка Вознесіння: «{0}».</TM_SniperAscensionLearned>
+  <TM_SniperAscend>Вибрати техніку Вознесіння</TM_SniperAscend>
+  <TM_SniperChooseCloak>{0} — маскування (остаточний вибір)</TM_SniperChooseCloak>
+  <TM_SniperChooseOpening>{0} — серія пострілів (остаточний вибір)</TM_SniperChooseOpening>
+  <TM_SniperBeginDrill>Провести навчання з евакуації</TM_SniperBeginDrill>
+  <TM_SniperDrillFirst>Виберіть перше ліжко колонії.</TM_SniperDrillFirst>
+  <TM_SniperDrillSecond>Виберіть друге ліжко за 12 або більше клітин від першого.</TM_SniperDrillSecond>
+  <TM_SniperAscensionRescueHint>Під час загрози мобілізуйте снайпера з далекобійною зброєю. Поки інший колоніст несе пораненого, тримайте його ліжко в полі зору на відстані до 35 клітин. Кожен врятований союзник зараховується один раз.</TM_SniperAscensionRescueHint>
+  <TM_SniperOpeningUnavailable>Потрібні «Єдиний просвіт», 60% витривалості та завершене перезарядження.</TM_SniperOpeningUnavailable>
+</LanguageData>

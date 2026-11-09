@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_BreachSeal.label>Selo de brecha</TM_BreachSeal.label>
+  <TM_BreachSeal.description>Cria até três paredes mágicas estanques na margem de uma área de 3×3 mais afastada do núcleo da nave. Requer uma plataforma própria e chão intacto. Cada parede tem 300 pontos de vida e dura um dia. Preserva paredes estanques aliadas; não renova selos ativos. Não repara chão nem tetos e não fornece oxigénio. Alcance: 15 células. Preparação: 1 segundo. Recarga: 60 segundos. Custo antes da eficiência: 30% de mana.</TM_BreachSeal.description>
+</LanguageData>

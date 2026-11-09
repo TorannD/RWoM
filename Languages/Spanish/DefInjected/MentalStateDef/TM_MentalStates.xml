@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_Berserk.label>frenesí</TM_Berserk.label>
+  
+  <TM_Berserk.baseInspectLine>Estado mental: Frenesí</TM_Berserk.baseInspectLine>
+  
+  <TM_Berserk.recoveryMessage>La furia de {0} ha llegado a su fin.</TM_Berserk.recoveryMessage>
+  
+  
+  <TM_PanicFlee.label>huida en pánico</TM_PanicFlee.label>
+  
+  <TM_PanicFlee.baseInspectLine>Estado mental: Huyendo presa del pánico</TM_PanicFlee.baseInspectLine>
+  
+  
+  <TM_WanderConfused.label>vagando con confusión</TM_WanderConfused.label>
+  
+  <TM_WanderConfused.baseInspectLine>Estado mental: Vagando con confusión</TM_WanderConfused.baseInspectLine>
+  
+  <TM_WanderConfused.recoveryMessage>A {0} se le ha pasado la confusión.</TM_WanderConfused.recoveryMessage>
+  
+  
+  <TM_WanderPsychotic.label>vagando en psicosis</TM_WanderPsychotic.label>
+  
+  <TM_WanderPsychotic.baseInspectLine>Estado mental: Vagabundeo psicótico</TM_WanderPsychotic.baseInspectLine>
+  
+  <TM_WanderPsychotic.recoveryMessage>{0} ya no vaga en estado psicótico.</TM_WanderPsychotic.recoveryMessage>
+  
+  
+  <TM_WanderSad.label>vagando con tristeza</TM_WanderSad.label>
+  
+  <TM_WanderSad.baseInspectLine>Estado mental: Vagabundeo triste</TM_WanderSad.baseInspectLine>
+  
+  <TM_WanderSad.recoveryMessage>{0} ya no vaga con tristeza.</TM_WanderSad.recoveryMessage>
+  
+</LanguageData>

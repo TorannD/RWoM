@@ -61,6 +61,7 @@
 	<description>Enhanced speed through psionic augmentation.</description>
 	<isBad>false</isBad>
 	<comps>
+      <li><compClass>TorannMagic.ClassProgression.HediffComp_SpiritCastOrigin</compClass></li>
       <li Class="HediffCompProperties_SeverityPerDay">
         <severityPerDay>-100</severityPerDay>
       </li>
@@ -87,6 +88,7 @@
 	<description>Enhanced speed through psionic augmentation.</description>
 	<isBad>false</isBad>
 	<comps>
+      <li><compClass>TorannMagic.ClassProgression.HediffComp_SpiritCastOrigin</compClass></li>
       <li Class="HediffCompProperties_SeverityPerDay">
         <severityPerDay>-100</severityPerDay>
       </li>
@@ -113,6 +115,7 @@
 	<description>Enhanced speed through psionic augmentation.</description>
 	<isBad>false</isBad>
 	<comps>
+      <li><compClass>TorannMagic.ClassProgression.HediffComp_SpiritCastOrigin</compClass></li>
       <li Class="HediffCompProperties_SeverityPerDay">
         <severityPerDay>-100</severityPerDay>
       </li>
@@ -139,6 +142,7 @@
 	<description>Enhanced speed through psionic augmentation.</description>
 	<isBad>false</isBad>
 	<comps>
+      <li><compClass>TorannMagic.ClassProgression.HediffComp_SpiritCastOrigin</compClass></li>
       <li Class="HediffCompProperties_SeverityPerDay">
         <severityPerDay>-100</severityPerDay>
       </li>
@@ -165,6 +169,7 @@
 	<description>Enhanced dexterity through psionic augmentation.</description>
 	<isBad>false</isBad>
 	<comps>
+      <li><compClass>TorannMagic.ClassProgression.HediffComp_SpiritCastOrigin</compClass></li>
       <li Class="HediffCompProperties_SeverityPerDay">
         <severityPerDay>-50</severityPerDay>
       </li>
@@ -191,6 +196,7 @@
 	<description>Enhanced dexterity through psionic augmentation.</description>
 	<isBad>false</isBad>
 	<comps>
+      <li><compClass>TorannMagic.ClassProgression.HediffComp_SpiritCastOrigin</compClass></li>
       <li Class="HediffCompProperties_SeverityPerDay">
         <severityPerDay>-50</severityPerDay>
       </li>
@@ -217,6 +223,7 @@
 	<description>Enhanced dexterity through psionic augmentation.</description>
 	<isBad>false</isBad>
 	<comps>
+      <li><compClass>TorannMagic.ClassProgression.HediffComp_SpiritCastOrigin</compClass></li>
       <li Class="HediffCompProperties_SeverityPerDay">
         <severityPerDay>-50</severityPerDay>
       </li>
@@ -243,6 +250,7 @@
 	<description>Enhanced dexterity through psionic augmentation.</description>
 	<isBad>false</isBad>
 	<comps>
+      <li><compClass>TorannMagic.ClassProgression.HediffComp_SpiritCastOrigin</compClass></li>
       <li Class="HediffCompProperties_SeverityPerDay">
         <severityPerDay>-50</severityPerDay>
       </li>

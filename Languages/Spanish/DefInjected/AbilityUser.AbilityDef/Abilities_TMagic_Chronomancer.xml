@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_AccelerateTime.label>acelerar el tiempo</TM_AccelerateTime.label>
+  
+  <TM_AccelerateTime.description>Acelerar el tiempo crea un campo alrededor del objetivo que hace que toda la materia física envejezca rápidamente.\n\nCuando se aplica a objetos inanimados, el efecto es instantáneo y los deteriora considerablemente. Incluso puede descomponerlos en sus componentes básicos. Esta habilidad no tiene área de efecto: solo afecta al objeto seleccionado.\n\nLos tejidos vivos resisten los cambios instantáneos, por lo que requieren un enfoque más gradual. Los peones vivos afectados se moverán y manipularán objetos más rápido. Los elementos neutrales, como las plantas, crecerán rápidamente.\n\nSi se utiliza sobre una casilla o un enemigo hostil, todos los enemigos de la zona sufrirán una maldición de envejecimiento acelerado. Esto agotará el descanso y la energía de los objetivos, acelerará otras afecciones de salud y podrá provocar dolencias propias de la edad.\n\nSi se utiliza sobre un peón aliado, no habrá área de efecto: solo se verá afectado el objetivo principal. El envejecimiento de los peones aliados será mucho más gradual y podrá detenerse con Revertir el tiempo.</TM_AccelerateTime.description>
+  
+  
+  <TM_AlterFate.label>alterar el destino</TM_AlterFate.label>
+  
+  <TM_AlterFate.description>Altera el flujo del tiempo para evitar desastres previstos. Esta habilidad depende de Predicción para moldear el futuro. Los cronomantes más hábiles pueden revertir las condiciones ambientales incluso después de que se hayan producido.\n\nAlterar el destino es más eficaz contra las condiciones ambientales. Sin embargo, esta habilidad puede salir mal: el acontecimiento podría cambiar, agravarse o desencadenar el infame «efecto mariposa».</TM_AlterFate.description>
+  
+  
+  <TM_ChronostaticField.label>campo cronostático</TM_ChronostaticField.label>
+  
+  <TM_ChronostaticField.description>El campo cronostático, también conocido como burbuja temporal, desfasa a todas las criaturas vivas del área afectada con respecto al flujo del tiempo. Es imposible interactuar con las criaturas afectadas hasta que vuelvan a sincronizarse con el flujo natural del tiempo.\n\nRadio: 3\nAlcance: 40\nTiempo de lanzamiento: 1 s</TM_ChronostaticField.description>
+  
+  
+  <TM_ChronostaticField_I.label>campo cronostático (I)</TM_ChronostaticField_I.label>
+  
+  <TM_ChronostaticField_I.description>El campo cronostático, también conocido como burbuja temporal, desfasa a todas las criaturas vivas del área afectada con respecto al flujo del tiempo. Es imposible interactuar con las criaturas afectadas hasta que vuelvan a sincronizarse con el flujo natural del tiempo.\n\nRadio: 3,5\nAlcance: 44\nTiempo de lanzamiento: 0,8 s</TM_ChronostaticField_I.description>
+  
+  
+  <TM_ChronostaticField_II.label>campo cronostático (II)</TM_ChronostaticField_II.label>
+  
+  <TM_ChronostaticField_II.description>El campo cronostático, también conocido como burbuja temporal, desfasa a todas las criaturas vivas del área afectada con respecto al flujo del tiempo. Es imposible interactuar con las criaturas afectadas hasta que vuelvan a sincronizarse con el flujo natural del tiempo.\n\nRadio: 4\nAlcance: 48\nTiempo de lanzamiento: 0,6 s</TM_ChronostaticField_II.description>
+  
+  
+  <TM_ChronostaticField_III.label>campo cronostático (III)</TM_ChronostaticField_III.label>
+  
+  <TM_ChronostaticField_III.description>El campo cronostático, también conocido como burbuja temporal, desfasa a todas las criaturas vivas del área afectada con respecto al flujo del tiempo. Es imposible interactuar con las criaturas afectadas hasta que vuelvan a sincronizarse con el flujo natural del tiempo.\n\nRadio: 4,5\nAlcance: 50\nTiempo de lanzamiento: 0,5 s</TM_ChronostaticField_III.description>
+  
+  
+  <TM_Prediction.label>predicción</TM_Prediction.label>
+  
+  <TM_Prediction.description>Activa Predicción, un esfuerzo consciente destinado a descifrar los acontecimientos futuros. Esta habilidad tiene dos componentes.\n\nEl primero consiste en una autoconciencia y una intuición que hacen que el cronomante sea asombrosamente difícil de herir. Sin embargo, esto divide su atención y reduce su agudeza física y su velocidad.\n\nEl segundo se centra en predecir acontecimientos importantes. Indicios como el vuelo de las aves, una nube de polvo o un sonido transportado por el viento destacan ante el cronomante y se entretejen en un tapiz que revela un posible futuro.\n\nNingún método es infalible, pero la práctica puede aumentar la precisión de las predicciones y reducir la concentración necesaria para mantenerlas.\n\nEsta habilidad reduce la regeneración de maná un 50 %.</TM_Prediction.description>
+  
+  
+  <TM_Recall.label>regresión</TM_Recall.label>
+  
+  <TM_Recall.description>Devuelve al lanzador a un momento anterior en el tiempo. No se puede utilizar sin una marca temporal activa.</TM_Recall.description>
+  
+  
+  <TM_ReverseTime.label>revertir el tiempo</TM_ReverseTime.label>
+  
+  <TM_ReverseTime.description>Revertir el tiempo crea un campo alrededor del objetivo en el que toda la materia física recupera su estado anterior al deterioro natural. Revertir los efectos del tiempo es más difícil que acelerarlo: requiere más energía y solo puede aplicarse a un objetivo a la vez.\n\nCuando se aplica a objetos inanimados, el efecto es instantáneo: los restaura y devuelve los materiales a un estado anterior. Puede utilizarse para recuperar alimentos podridos, equipo deteriorado y materiales contaminados.\n\nLos tejidos vivos resisten los cambios instantáneos, por lo que requieren un enfoque más gradual. Los peones vivos afectados se moverán y manipularán objetos más despacio, y su envejecimiento biológico se invertirá. Esto puede eliminar muchas dolencias recientes, ya que los tejidos recuperan su estado anterior a la aparición de la dolencia. Entre ellas se incluyen heridas, enfermedades y dolencias propias de la edad que se hayan producido dentro del intervalo temporal revertido.\n\nAdvertencia: si se utiliza para revertir una muerte, tanto el cronomante como el peón resucitado sufrirán pérdidas de memoria y habilidades.\n\nRevertir el tiempo puede disiparse o contrarrestarse con Acelerar el tiempo.</TM_ReverseTime.description>
+  
+  
+  <TM_TimeMark.label>marca temporal</TM_TimeMark.label>
+  
+  <TM_TimeMark.description>El cronomante puede registrar su estado en un momento concreto y regresar a ese punto. Esta habilidad no altera el tiempo ni afecta a nada que no sea el propio cronomante. Conservará los recuerdos que tenga al activar Regresión; sin embargo, si esta se activa automáticamente al recibir un golpe mortal, puede sufrir una crisis mental, ya que recordará su propia muerte.\n\nLa marca temporal tiene una duración limitada de aproximadamente un día, tras el cual caduca y debe volver a aplicarse. Mientras esté activa, el maná máximo se reduce en 40 y la regeneración de maná disminuye un 30 %.\n\nSi se configura para lanzarse automáticamente, el cronomante intentará mantener una marca temporal activa en todo momento. Esto no afecta a los activadores de derribo o muerte, que siempre se activarán si se ha aprendido la habilidad y hay una marca temporal activa.\n\nPara mantener la cohesión física durante la regresión, el lanzador conservará todas sus condiciones permanentes, incluidas las partes del cuerpo perdidas o añadidas y las lesiones permanentes. Todos los hechizos de cronomante se reinician después de una Regresión, excepto la propia Regresión.</TM_TimeMark.description>
+  
+</LanguageData>

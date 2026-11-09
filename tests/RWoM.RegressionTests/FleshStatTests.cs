@@ -12,8 +12,8 @@ internal static class FleshStatTests
     {
         yield return new("FleshStats.ActualRegisteredPatchChangesGameStatPath", _ => InGame(() =>
         {
-            using var patches = new ProductionPatches();
-            patches.Add(typeof(FleshStatPatches));
+            // FleshStatPatches are installed once at harness startup (production
+            // parity); per-test installation misses already-JIT-compiled stat paths.
             var pawn = Pawn(); var p = FleshRepository.Ensure(pawn);
             p.Thirst = 0; p.SkillPoints = 100;
             for (int i = 0; i < 10; i++) p.TryUpgrade(FleshSkill.Mobility);
@@ -28,7 +28,6 @@ internal static class FleshStatTests
         }));
         yield return new("FleshStats.CachedValuesRefreshWhenFleshStateChanges", _ => InGame(() =>
         {
-            using var patches = new ProductionPatches(); patches.Add(typeof(FleshStatPatches));
             var pawn = Pawn(); var p = FleshRepository.Ensure(pawn); p.Thirst = 0; p.SkillPoints = 5;
             var work = Stat("WorkSpeedGlobal", 1f); DefDatabase<StatDef>.Add(work);
             var craft = Stat("FleshTestCraftSpeed", 2f); craft.postProcessStatFactors = [work]; DefDatabase<StatDef>.Add(craft);
@@ -48,7 +47,6 @@ internal static class FleshStatTests
         yield return new("FleshStats.PawnInfoExplanationAndOtherStatBonuses", f => InGame(() =>
         {
             using var language = new LanguageScope(f.Repository);
-            using var patches = new ProductionPatches(); patches.Add(typeof(FleshStatPatches)); patches.Add(typeof(FleshStatPatches.ExplanationPatch));
             var pawn = Pawn(); var p = FleshRepository.Ensure(pawn); p.SkillPoints = 10; p.Thirst = 0;
             p.TryUpgrade(FleshSkill.Strength); p.TryUpgrade(FleshSkill.Harden);
             var melee = Stat("MeleeDamageFactor", 1f); var armor = Stat("ArmorRating_Sharp", .1f);

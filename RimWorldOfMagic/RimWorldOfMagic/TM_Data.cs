@@ -50,6 +50,26 @@ namespace TorannMagic
             CacheTimers.Clear();
         }
 
+        public static void ResetDefinitionCaches()
+        {
+            _SpellList = null; _MasterSpellList = null;
+            _RestrictedAbilities = null; _RestrictedAbilitiesXML = null;
+            _StandardSpellList = null; _StandardSkillList = null;
+            _FighterBookList = null; _MageBookList = null; _AllBooksList = null; _MageTornScriptList = null;
+            ResetClassCaches();
+            _BrandList = null; _MagicFociList = null;
+            _BowList = null; _PistolList = null; _RifleList = null; _ShotgunList = null;
+            _AilmentList = null; _AddictionList = null; _MechaniteList = null; _DiseaseList = null;
+            _CustomFighterPowerDefs = null; _CustomMagePowerDefs = null;
+            ResetCaches();
+        }
+
+        public static void ResetClassCaches()
+        {
+            _MagicTraits = null; _MightTraits = null; _EnabledMagicTraits = null;
+            _AllClassTraits = null; _AllClassConflictTraits = null;
+        }
+
         public static List<ThingDef> SpellList()
         {
             if (_SpellList == null)

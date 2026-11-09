@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_ReservoirCharge>Stored mana: {0} / {1}</TM_ReservoirCharge>
+  <TM_ReservoirReserve>Personal mana reserve: {0}</TM_ReservoirReserve>
+  <TM_ReservoirConvert>Convert magofuel</TM_ReservoirConvert>
+  <TM_ReservoirConvertDesc>Convert up to {0} stored mana from magofuel. Fuel is consumed only for accepted charge.</TM_ReservoirConvertDesc>
+  <TM_ReservoirReserveLabel>Mana reserve: {0}</TM_ReservoirReserveLabel>
+  <TM_ReservoirReserveDesc>Choose the minimum personal mana percentage a mage keeps while charging this reservoir.</TM_ReservoirReserveDesc>
+  <TM_ReservoirChargeJob>Charge reservoir with mana</TM_ReservoirChargeJob>
+  <TM_ReservoirUnavailable>Requires an available allied mage with mana above the personal reserve.</TM_ReservoirUnavailable>
+  <TM_ReservoirFuelReserveLabel>Protected magofuel: {0}</TM_ReservoirFuelReserveLabel>
+  <TM_ReservoirFuelReserveDesc>Protect a fixed quantity of fuel from ordinary consumers, conversion and rituals. Flight and life support may spend it. Life support can empty this reserve, so it does not guarantee a return trip. Mana produced by permitted life-support conversion is shared normally.</TM_ReservoirFuelReserveDesc>
+  <TM_ReservoirFuelReserveInspect>Protected magofuel: {0}; ordinary spending: {1}\nFlight and life support can use the reserve; return fuel is not guaranteed.</TM_ReservoirFuelReserveInspect>
+</LanguageData>

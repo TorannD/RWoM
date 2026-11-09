@@ -1,121 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <ModMetaData>
-	<name>A RimWorld of Magic — 1.7 (Unofficial)</name>
+	<name>A RimWorld of Magic (Continued)</name>
 	<author>HUGINN (Original author: Torann)</author>
 	<supportedVersions>
-		<li>1.0</li>
-		<li>1.1</li>
-		<li>1.2</li>
-		<li>1.3</li>
-		<li>1.4</li>
-		<li>1.5</li>
 		<li>1.6</li>
 		<li>1.7</li>
 	</supportedVersions>
 	<packageId>Torann.ARimworldOfMagic</packageId>
+	<modVersion>3.0</modVersion>
 	<url>https://ludeon.com/forums/index.php?topic=37161.0</url>
 	<modDependenciesByVersion>
-		<v1.1>
-		  <li>
-			<packageId>brrainz.harmony</packageId>
-			<displayName>Harmony</displayName>
-			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077</steamWorkshopUrl>
-			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
-		  </li>
-		  <li>
-			<packageId>UnlimitedHugs.HugsLib</packageId>
-			<displayName>HugsLib</displayName>
-			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=818773962</steamWorkshopUrl>
-			<downloadUrl>https://ludeon.com/forums/index.php?topic=28066.0</downloadUrl>
-		  </li>
-		  <li>
-			<packageId>jecrell.jecstools</packageId>
-			<displayName>JecsTools</displayName>
-			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=932008009</steamWorkshopUrl>
-			<downloadUrl>https://discord.gg/AaVFA7V</downloadUrl>
-		  </li>
-		</v1.1>
-		<v1.2>
-		  <li>
-			<packageId>brrainz.harmony</packageId>
-			<displayName>Harmony</displayName>
-			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077</steamWorkshopUrl>
-			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
-		  </li>
-		  <li>
-			<packageId>UnlimitedHugs.HugsLib</packageId>
-			<displayName>HugsLib</displayName>
-			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=818773962</steamWorkshopUrl>
-			<downloadUrl>https://ludeon.com/forums/index.php?topic=28066.0</downloadUrl>
-		  </li>
-		  <li>
-			<packageId>jecrell.jecstools</packageId>
-			<displayName>JecsTools</displayName>
-			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2195729899</steamWorkshopUrl>
-			<downloadUrl>https://discord.gg/AaVFA7V</downloadUrl>
-		  </li>
-		</v1.2>
-		<v1.3>
-		  <li>
-			<packageId>brrainz.harmony</packageId>
-			<displayName>Harmony</displayName>
-			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077</steamWorkshopUrl>
-			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
-		  </li>
-		  <li>
-			<packageId>UnlimitedHugs.HugsLib</packageId>
-			<displayName>HugsLib</displayName>
-			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=818773962</steamWorkshopUrl>
-			<downloadUrl>https://ludeon.com/forums/index.php?topic=28066.0</downloadUrl>
-		  </li>
-		  <li>
-			<packageId>jecrell.jecstools</packageId>
-			<displayName>JecsTools</displayName>
-			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=932008009</steamWorkshopUrl>
-			<downloadUrl>https://discord.gg/AaVFA7V</downloadUrl>
-		  </li>
-		</v1.3>
-		<v1.4>
-		  <li>
-			<packageId>brrainz.harmony</packageId>
-			<displayName>Harmony</displayName>
-			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077</steamWorkshopUrl>
-			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
-		  </li>
-		  <li>
-			<packageId>UnlimitedHugs.HugsLib</packageId>
-			<displayName>HugsLib</displayName>
-			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=818773962</steamWorkshopUrl>
-			<downloadUrl>https://ludeon.com/forums/index.php?topic=28066.0</downloadUrl>
-		  </li>
-		  <li>
-			<packageId>jecrell.jecstools</packageId>
-			<displayName>JecsTools</displayName>
-			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=932008009</steamWorkshopUrl>
-			<downloadUrl>https://discord.gg/AaVFA7V</downloadUrl>
-		  </li>
-		</v1.4>
-		<v1.5>
-		  <li>
-			<packageId>brrainz.harmony</packageId>
-			<displayName>Harmony</displayName>
-			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077</steamWorkshopUrl>
-			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
-		  </li>
-		  <li>
-			<packageId>UnlimitedHugs.HugsLib</packageId>
-			<displayName>HugsLib</displayName>
-			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=818773962</steamWorkshopUrl>
-			<downloadUrl>https://ludeon.com/forums/index.php?topic=28066.0</downloadUrl>
-		  </li>
-		  <li>
-			<packageId>jecrell.jecstools</packageId>
-			<displayName>JecsTools</displayName>
-			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=932008009</steamWorkshopUrl>
-			<downloadUrl>https://discord.gg/AaVFA7V</downloadUrl>
-		  </li>
-		</v1.5>
 		<v1.6>
 		  <li>
 			<packageId>brrainz.harmony</packageId>
@@ -145,6 +40,10 @@
 		</v1.7>
     </modDependenciesByVersion>
 	<loadAfter>
+		<li>VanillaExpanded.VPsycastsE</li>
+		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
+		<li>vanillaexpanded.gravship</li>
+		<li>vanillaexpanded.gravship2</li>
 		<li>brrainz.harmony</li>
 		<li>Ludeon.RimWorld</li>
 		<li>Ludeon.RimWorld.Royalty</li>
@@ -161,54 +60,75 @@
 		<li>Poupun.IsekaiCreaturesAddon</li>
 		<li>Poupun.IsekaiDungeonsAddon</li>
 		<li>Poupun.GuildFactionAddon</li>
-		<li>jk.rmt.soulchronicle</li>
+			<li>jk.rmt.soulchronicle</li>
+			<li>RimWorks.RimLogging</li>
 	</loadAfter>
 	<loadBefore>
 		<li>rwmt.MultiplayerCompatibility</li>
 	</loadBefore>
-	<description>[h1]Unofficial RimWorld 1.7 update of "A RimWorld of Magic"[/h1]
+	<description><![CDATA[[img]https://images.steamusercontent.com/ugc/10172696784972477713/0CF87253012F99C7FB2AF528749B60D513BFECEC/[/img]
 
-[b][ENGLISH][/b]
-Unofficial continuation of TorannD's "A RimWorld of Magic" for RimWorld 1.7. All credit for the original goes to [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1201382956]TorannD[/url] — port of [url=https://github.com/TorannD/RWoM]the original code[/url], continued as [url=https://github.com/kelnmaari/RWoM]a fork[/url].
-[i]If the original author wants this item removed from the Workshop, contact me via DM or comments — it will be taken down.[/i]
+[b]Magic for your colony[/b]
+Mages, warriors, summons, scrolls, staves and enchanted equipment. Odyssey adds magical ships, mana networks, life support and shields.
 
-[olist]
-[*]HugsLib dependency removed — its duties (147 Harmony patches, update notes) are handled by the mod itself.
-[*]The JecsTools-family libraries (AbilityUser, AbilityUserAI, CompDeflector, etc.) are no longer bundled — the mod now depends on Zaljerem's [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3312959701]JecsLite - A RimWorld of Magic[/url] (rebuilt for 1.7).
-[*]Fixed 1.7 regressions: LineOfSight default flip (autocast, Blink/Summon through walls, missing cooldowns), greyed-out ability icons, broken reflected shots, attribute patches (117 classes / 153 methods).
-[*][b]Multiplayer support[/b] built in — needs the 1.7 MP fork: [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3820003322](1.7)Multiplayer-temp[/url]. Ability casts, cooldowns and gizmos are synced.
-[*][b]Isekai family compatibility[/b] (optional; see the Leveling limitation below):
-[olist]
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3657580708]ISEKAI RPG LEVELING[/url] — native integration by Jelly Creative. [b]Known limitation:[/b] the tested XML gate requires the exact name "A RimWorld of Magic" and does not recognize this fork's display name, so its RoM bonuses do not activate. Once recognition is fixed and verified, native bonuses cover mana/stamina capacity and regeneration, cooldowns and resource costs. No duplicate bonus layer is added here.
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3813394602]ISEKAI DUNGEONS ADD-ON[/url] — 4 magic gates: Flame Rift, Tide Rift, Bone Crypt, Demon Gate (C–S) with RWoM creatures; auto-join gate spawns, guild contracts and scrolls.
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3757560461]CREATURES[/url] and [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3718568958]GUILD FACTION[/url] add-ons — coexist; RWoM creatures appear in dungeons and guild contracts.
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3800773705]RIM ISEKAI — Complete Integrated[/url] — clean coexistence verified.
-[/olist]
-[*]New character window (Grimoire): class levels, XP/mana/stamina bars with real regen rates, full spell list with descriptions and per-skill upgrade explanations, resources panel.
-[*]Debug menu: "T: Give Class..." grants any class to a selected pawn.
-[*]Bundled translations: [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2882739907]Russian, Ukrainian, Portuguese (based on Nevelian's translation)[/url].
-[/olist]
+[img]https://images.steamusercontent.com/ugc/15284087167230911780/B4EDF06D1C3DCFE3CBFF2ED7C82AEF12BC7A76C8/[/img]
 
-[i]Load order: Harmony → this mod; the MP fork goes before it. Requires [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3312959701]JecsLite - A RimWorld of Magic[/url]; do NOT enable the original JecsTools alongside.[/i]
+[b]Classes & skills[/b]
+36 base progression paths and 200+ spell/skill families, grouping ranks. Addon classes are extra. Spirit rebirth is a separate ritual path.
 
-[b]CAUTION! This port and its integrations were made with AI assistance — I'm not a C# developer and can't judge how well the AI handled it. If you don't use AI mods, please pass this one by.[/b] I fixed this mod for myself and decided to share it. If you have a problem, create a Discussion here — the code is on [url=https://github.com/kelnmaari/RWoM]GitHub[/url].
+[img]https://images.steamusercontent.com/ugc/13924547871489888852/C358ED5524C6DA83EF3F6C3E6EEB0315F262554E/[/img]
 
-[b][РУССКИЙ][/b]
-Неофициальное продолжение мода TorannD "A RimWorld of Magic" для RimWorld 1.7. Заслуга оригинала — [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1201382956]TorannD[/url]; перенос [url=https://github.com/TorannD/RWoM]его кода[/url], продолжено как [url=https://github.com/kelnmaari/RWoM]форк[/url].
-[i]Если автор захочет удалить этот итем из Мастерской — напишите в ЛС или в комментариях, удалю.[/i]
+[b]New progression · optional beta[/b]
+Books unlock class stages; practical trials lead to mastery and ascension. The Grimoire shows resources and requirements. Existing progression is retained; class addons stay classic.
 
-[olist]
-[*]Убрана зависимость от HugsLib — его задачи (147 Harmony-патчей, уведомления) мод делает сам.
-[*]Библиотеки семейства JecsTools (AbilityUser, AbilityUserAI, CompDeflector и др.) больше не вшиты — теперь нужна зависимость: [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3312959701]JecsLite - A RimWorld of Magic[/url] от Zaljerem (пересобран под 1.7).
-[*]Исправлены поломки 1.7: проверка прямой видимости (автокаст, Blink/Summon сквозь стены, пропавшие кулдауны), серые иконки при нехватке маны, отражённые выстрелы, атрибутные патчи (117/153).
-[*][b]Мультиплеер[/b] встроен — нужен форк 1.7: [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3820003322](1.7)Multiplayer-temp[/url]. Кастануть, кулдауны и гизмо синхронизируются.
-[*][b]Интеграция с ISEKAI[/b] (опционально): нативная поддержка Leveling от Jelly Creative. [b]Ограничение:[/b] проверенный XML-патч ищет точное имя "A RimWorld of Magic", не распознаёт имя форка и не подключает бонусы RoM. После исправления и проверки распознавания доступны нативные бонусы запаса/восстановления маны и стамины, КД и стоимости способностей. Второй слой бонусов не добавляется. Для [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3813394602]Dungeons[/url] предусмотрены 4 врата с существами RWoM (C–S); [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3757560461]Creatures[/url], [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3718568958]Guild Faction[/url] и [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3800773705]RIM ISEKAI[/url] — отдельные опциональные дополнения.
-[*]Гримуар: уровни, XP/мана/выносливость с реальным реген, заклинания с описаниями, прокачка скиллов с пояснениями, панель ресурсов.
-[*]Отладка: "T: Give Class..." выдаёт класс выбранной пешке.
-[*]Вшиты переводы: [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2882739907]русский, украинский, португальский (по переводу Nevelian)[/url].
-[/olist]
+[img]https://images.steamusercontent.com/ugc/16867629445839424729/09D218B0FFC71EC75B5B04C06C230C25AA19A7B7/[/img]
 
-[i]Порядок: Harmony → этот мод; форк MP перед ним. Нужен [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3312959701]JecsLite - A RimWorld of Magic[/url]; оригинальный JecsTools вместе с модом не включать.[/i]
+[b]Spirit gameplay[/b]
+An ascended Necromancer can return a deceased colonist as a Spirit. Keep identity and progression; use former class skills through a host. Soul Stones allow recovery: one week in a new host.
 
-[b]ОСТОРОЖНО! Перенос и интеграции сделаны с помощью ИИ — я не C# разработчик и не знаю, насколько хорошо ИИ справился. Кто не пользуется ИИ-модами — проходите мимо.[/b] Мод исправлял для себя, решил поделиться. Проблема — создайте Обсуждение, код на [url=https://github.com/kelnmaari/RWoM]GitHub[/url].</description>
+[img]https://images.steamusercontent.com/ugc/15915068878910789735/FAA567AAB25035E0E225B07F1F583E15EB2B680C/[/img]
+
+[b]Optional integrations[/b]
+VGE 1/2, VPE/VEF, Kure, HAR, Pawnmorpher, Giddy-Up, Simple Sidearms, Multiplayer, MedPod, Hellsing, Isekai Dungeons and Logging Framework.
+
+[h2]Important · RimWorld 1.7[/h2]
+Requires: [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077]Harmony[/url] · [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3312959701]JecsLite[/url] · [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3833946439]RWoM Core[/url]
+Optional adapters: [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3833946677]RWoM Integrations[/url]. Install matching package releases; load Integrations after Content and its target mods. Do not combine JecsLite with original JecsTools.
+
+Beta progression is off by default; changing it requires a restart. Keep save backups. DLC is only needed for its features; space content requires Odyssey. Keep Integrations enabled on VGE saves that use its components.
+
+[b]Compatibility:[/b] Multiplayer coverage varies by ability/mod setup. Full CE compatibility is unverified, including Techno Weapon and Super Soldier specializations. ISEKAI RPG LEVELING's tested name gate does not recognize this fork.
+
+Report bugs in Discussions with versions, class, progression mode, steps and Player.log. Saves help with load-related issues. [url=https://github.com/kelnmaari/RWoM]GitHub[/url]
+
+Prefer RWoM 1.7 closer to the original, without my reworks? [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3828893021]Use this alternative fork[/url].
+
+[h2]Credits[/h2]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1201382956]TorannD[/url] — original creator
+HUGINN — continuation
+Zaljerem — JecsLite
+Nevelian and contributors — translations.
+
+Developed with Torann's permission and support. AI assists development and some artwork.
+
+[b]Original contributors[/b]
+[list]
+[*]KuanKuan — Chinese translation.
+[*]Caferino — Spanish translation.
+[*]Felinoel — Wiki.
+[*]DrMrEd — Elemental art.
+[*]SihvMan — Writable scrolls and books.
+[*]Draegon — Wand art.
+[*]Diannetea — Poppi art.
+[*]Angry Wizard — UI icons.
+[*]Trisscar — Gemcutting workbench and Succubus wings.
+[*]Crustypeanut — Raw magicyte, class icons and world icon art.
+[*][url=https://www.patreon.com/Rebelrot]Rebelrot(AvP)[/url] — Staff of the Defender, Staff of Blazing Power and magic wand art.
+[*]ZE — Testing.
+[*]Bendigeidfran — Various sound effects.
+[*]Kasmex Forever — Royal Armor, world icons, books and scrolls, Thrumbo weapons and various spell effects.
+[*]Control Assuming Director — Minion art.
+[*]Kolton — Optimization.
+[/list]
+]]></description>
 </ModMetaData>

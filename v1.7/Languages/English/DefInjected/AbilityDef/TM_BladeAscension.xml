@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_Bridge_BladeSevenSteps.label>Form of Seven Steps</TM_Bridge_BladeSevenSteps.label>
+  <TM_Bridge_BladeSevenSteps.description>Choose a straight walkable route up to 12 cells long. After five seconds of preparation, traverse it for up to 14 seconds. Deal up to seven melee hits at 55% weapon damage to at most three enemies, up to three hits per enemy. Incoming damage rises by 15% during the form. Movement speed drops by 20% for six seconds afterward. Costs 60% stamina and recharges in two days. Interrupting preparation costs 6% and triggers a short cooldown.</TM_Bridge_BladeSevenSteps.description>
+</LanguageData>

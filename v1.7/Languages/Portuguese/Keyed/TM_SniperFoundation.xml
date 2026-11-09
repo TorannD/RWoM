@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_ReadSniperFocus>Concentração — melhor pontaria, trabalho mais lento (permanente)</TM_ReadSniperFocus>
+  <TM_ReadSniperPatientAim>Mira paciente — pontaria mais rápida após 3 s imóvel (permanente)</TM_ReadSniperPatientAim>
+  <TM_PatientAimName>Mira paciente</TM_PatientAimName>
+  <TM_PatientAimDescription>Após 3 segundos imóvel, o tempo de pontaria diminui 2%. Mover-se cancela o efeito.</TM_PatientAimDescription>
+  <TM_PatientAimTraining>Cada nível reduz o tempo de pontaria em mais 2 pontos percentuais, até 10%.</TM_PatientAimTraining>
+</LanguageData>

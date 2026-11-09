@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_Mecha-Golem_Axe.label>mecha-hacha</TM_Mecha-Golem_Axe.label>
+  
+  <TM_Mecha-Golem_Axe.description>Forja un hacha y la monta en el acople del brazo izquierdo.</TM_Mecha-Golem_Axe.description>
+  
+  <TM_Mecha-Golem_Axe.jobString>Fabricando pieza de golem.</TM_Mecha-Golem_Axe.jobString>
+  
+  
+  <TM_Mecha-Golem_BallisticPlate.label>placa balística</TM_Mecha-Golem_BallisticPlate.label>
+  
+  <TM_Mecha-Golem_BallisticPlate.description>Mejora la armadura corporal del golem con una placa balística; penaliza el movimiento.</TM_Mecha-Golem_BallisticPlate.description>
+  
+  <TM_Mecha-Golem_BallisticPlate.jobString>Fabricando pieza de golem.</TM_Mecha-Golem_BallisticPlate.jobString>
+  
+  
+  <TM_Mecha-Golem_EarthCore.label>procesador de núcleo de tierra</TM_Mecha-Golem_EarthCore.label>
+  
+  <TM_Mecha-Golem_EarthCore.description>El procesador de núcleo de tierra proporciona los siguientes beneficios por nivel de mejora [1/2/3]:\nArmadura: +[10 %/18 %/25 %]\nTiempo de reutilización de habilidades: +[5 %/10 %/15 %]\nBonificación de curación: +[60 %/120 %/180 %]\nCoste de energía: +[5 %/10 %/15 %]\nProcesamiento: +[15 %/30 %/45 %]\n\nAdemás, el núcleo de tierra permite al golem protegerse del daño con un escudo.</TM_Mecha-Golem_EarthCore.description>
+  
+  <TM_Mecha-Golem_EarthCore.jobString>Fabricando mejora de golem.</TM_Mecha-Golem_EarthCore.jobString>
+  
+  
+  <TM_Mecha-Golem_EarthShard.label>base de fragmento de tierra</TM_Mecha-Golem_EarthShard.label>
+  
+  <TM_Mecha-Golem_EarthShard.description>La base autómata de fragmento de tierra proporciona los siguientes beneficios por nivel de mejora [1/2/3]:\nSalud: +[40 %/80 %/120 %]</TM_Mecha-Golem_EarthShard.description>
+  
+  <TM_Mecha-Golem_EarthShard.jobString>Fabricando mejora de golem.</TM_Mecha-Golem_EarthShard.jobString>
+  
+  
+  <TM_Mecha-Golem_EnergyCell.label>célula de energía</TM_Mecha-Golem_EnergyCell.label>
+  
+  <TM_Mecha-Golem_EnergyCell.description>Crea una célula de energía y la instala en un mecha-golem.</TM_Mecha-Golem_EnergyCell.description>
+  
+  <TM_Mecha-Golem_EnergyCell.jobString>Fabricando célula de energía.</TM_Mecha-Golem_EnergyCell.jobString>
+  
+  
+  <TM_Mecha-Golem_EnergyCharge.label>neuronúcleo eléctrico</TM_Mecha-Golem_EnergyCharge.label>
+  
+  <TM_Mecha-Golem_EnergyCharge.description>Aumenta la velocidad de carga de energía del golem en 10 por hora.</TM_Mecha-Golem_EnergyCharge.description>
+  
+  <TM_Mecha-Golem_EnergyCharge.jobString>Mejorando la neurología eléctrica.</TM_Mecha-Golem_EnergyCharge.jobString>
+  
+  
+  <TM_Mecha-Golem_EnergyConverter.label>convertidor de energía</TM_Mecha-Golem_EnergyConverter.label>
+  
+  <TM_Mecha-Golem_EnergyConverter.description>Aumenta un 10 % la eficiencia con la que el golem absorbe y utiliza la energía.</TM_Mecha-Golem_EnergyConverter.description>
+  
+  <TM_Mecha-Golem_EnergyConverter.jobString>Fabricando ciclador de energía.</TM_Mecha-Golem_EnergyConverter.jobString>
+  
+  
+  <TM_Mecha-Golem_Extinguisher.label>extintor</TM_Mecha-Golem_Extinguisher.label>
+  
+  <TM_Mecha-Golem_Extinguisher.description>Añade salidas de escape de vapor integradas que sirven para sofocar rápidamente los fuegos sobre el golem y a su alrededor.</TM_Mecha-Golem_Extinguisher.description>
+  
+  <TM_Mecha-Golem_Extinguisher.jobString>Fabricando pieza de golem.</TM_Mecha-Golem_Extinguisher.jobString>
+  
+  
+  <TM_Mecha-Golem_FlameCore.label>procesador de núcleo de llamas</TM_Mecha-Golem_FlameCore.label>
+  
+  <TM_Mecha-Golem_FlameCore.description>El procesador de núcleo de llamas proporciona los siguientes beneficios por nivel de mejora [1/2/3]:\nMovimiento: +[0,5 c/0,9 c/1,2 c]\nProcesamiento: +[10 %/20 %/30 %]\nDaño de habilidades: +[10 %/20 %/30 %]\nCoste de energía: +[10 %/20 %/30 %]\n\nAdemás, el núcleo de llamas permite al golem atraer y quemar la suciedad cercana, obteniendo energía en el proceso.</TM_Mecha-Golem_FlameCore.description>
+  
+  <TM_Mecha-Golem_FlameCore.jobString>Fabricando mejora de golem.</TM_Mecha-Golem_FlameCore.jobString>
+  
+  
+  <TM_Mecha-Golem_FlameShard.label>base de fragmento de llamas</TM_Mecha-Golem_FlameShard.label>
+  
+  <TM_Mecha-Golem_FlameShard.description>La base autómata de fragmento de llamas proporciona los siguientes beneficios por nivel de mejora [1/2/3]:\nMovimiento: +[15 %/30 %/40 %]\nSalud: +[15 %/30 %/40 %]</TM_Mecha-Golem_FlameShard.description>
+  
+  <TM_Mecha-Golem_FlameShard.jobString>Fabricando mejora de golem.</TM_Mecha-Golem_FlameShard.jobString>
+  
+  
+  <TM_Mecha-Golem_GatlingCannon.label>cañón Gatling</TM_Mecha-Golem_GatlingCannon.label>
+  
+  <TM_Mecha-Golem_GatlingCannon.description>Acopla un minigun al soporte del hombro derecho de un mecha-golem.</TM_Mecha-Golem_GatlingCannon.description>
+  
+  <TM_Mecha-Golem_GatlingCannon.jobString>Fabricando pieza de golem.</TM_Mecha-Golem_GatlingCannon.jobString>
+  
+  
+  <TM_Mecha-Golem_Hammer.label>mecha-martillo</TM_Mecha-Golem_Hammer.label>
+  
+  <TM_Mecha-Golem_Hammer.description>Forja un martillo y lo monta en el acople del brazo derecho.</TM_Mecha-Golem_Hammer.description>
+  
+  <TM_Mecha-Golem_Hammer.jobString>Fabricando pieza de golem.</TM_Mecha-Golem_Hammer.jobString>
+  
+  
+  <TM_Mecha-Golem_LightningCore.label>procesador de núcleo de rayos</TM_Mecha-Golem_LightningCore.label>
+  
+  <TM_Mecha-Golem_LightningCore.description>El procesador de núcleo de rayos proporciona los siguientes beneficios por nivel de mejora [1/2/3]:\nMovimiento: +[1,2 c/1,8 c/2,2 c]\nTiempo de reutilización de habilidades: -[15 %/30 %/45 %]\nCoste de energía: +[10 %/20 %/30 %]\nProcesamiento: -[5 %/10 %/15 %]\n\nAdemás, el núcleo de rayos permite al golem responder a los atacantes cuerpo a cuerpo con una descarga de energía que los aturde brevemente.</TM_Mecha-Golem_LightningCore.description>
+  
+  <TM_Mecha-Golem_LightningCore.jobString>Fabricando mejora de golem.</TM_Mecha-Golem_LightningCore.jobString>
+  
+  
+  <TM_Mecha-Golem_LightningShard.label>base de fragmento de rayos</TM_Mecha-Golem_LightningShard.label>
+  
+  <TM_Mecha-Golem_LightningShard.description>La base autómata de fragmento de rayos proporciona los siguientes beneficios por nivel de mejora [1/2/3]:\nMovimiento: +[25 %/50 %/75 %]</TM_Mecha-Golem_LightningShard.description>
+  
+  <TM_Mecha-Golem_LightningShard.jobString>Fabricando mejora de golem.</TM_Mecha-Golem_LightningShard.jobString>
+  
+  
+  <TM_Mecha-Golem_MiningLaser.label>láser de minería</TM_Mecha-Golem_MiningLaser.label>
+  
+  <TM_Mecha-Golem_MiningLaser.description>Crea un láser de minería para acoplarlo al soporte del hombro izquierdo.</TM_Mecha-Golem_MiningLaser.description>
+  
+  <TM_Mecha-Golem_MiningLaser.jobString>Fabricando pieza de golem.</TM_Mecha-Golem_MiningLaser.jobString>
+  
+  
+  <TM_Mecha-Golem_RepairComponent.label>componente de reparación</TM_Mecha-Golem_RepairComponent.label>
+  
+  <TM_Mecha-Golem_RepairComponent.description>Sustituye las partes ausentes del golem que no requieren una mejora específica.</TM_Mecha-Golem_RepairComponent.description>
+  
+  <TM_Mecha-Golem_RepairComponent.jobString>Fabricando pieza de golem.</TM_Mecha-Golem_RepairComponent.jobString>
+  
+  
+  <TM_Mecha-Golem_Sword.label>mecha-espada</TM_Mecha-Golem_Sword.label>
+  
+  <TM_Mecha-Golem_Sword.description>Forja una espada y la monta en el acople del brazo izquierdo.</TM_Mecha-Golem_Sword.description>
+  
+  <TM_Mecha-Golem_Sword.jobString>Fabricando pieza de golem.</TM_Mecha-Golem_Sword.jobString>
+  
+  
+  <TM_Mecha-Golem_WaterCore.label>procesador de núcleo de agua</TM_Mecha-Golem_WaterCore.label>
+  
+  <TM_Mecha-Golem_WaterCore.description>El procesador de núcleo de agua proporciona los siguientes beneficios por nivel de mejora [1/2/3]:\nArmadura: +[5 %/10 %/15 %]\nTiempo de reutilización de habilidades: -[10 %/20 %/30 %]\nBonificación de curación: +[100 %/200 %/300 %]\nCoste de energía: -[15 %/30 %/45 %]\n\nAdemás, el núcleo de agua permite al golem regenerar salud rápidamente mientras está activo y regenerar la salud de su armazón latente.</TM_Mecha-Golem_WaterCore.description>
+  
+  <TM_Mecha-Golem_WaterCore.jobString>Fabricando mejora de golem.</TM_Mecha-Golem_WaterCore.jobString>
+  
+  
+  <TM_Mecha-Golem_WaterShard.label>base de fragmento de agua</TM_Mecha-Golem_WaterShard.label>
+  
+  <TM_Mecha-Golem_WaterShard.description>La base autómata de fragmento de agua proporciona los siguientes beneficios por nivel de mejora [1/2/3]:\nMovimiento: +[10 %/15 %/20 %]\nSalud: +[30 %/50 %/70 %]</TM_Mecha-Golem_WaterShard.description>
+  
+  <TM_Mecha-Golem_WaterShard.jobString>Fabricando mejora de golem.</TM_Mecha-Golem_WaterShard.jobString>
+  
+</LanguageData>

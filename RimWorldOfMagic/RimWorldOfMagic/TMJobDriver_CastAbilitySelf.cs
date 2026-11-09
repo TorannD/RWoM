@@ -89,11 +89,11 @@ namespace TorannMagic
                 {
                     try
                     {
-                        this.duration = (int)((this.verb.verbProps.warmupTime * 60) * this.pawn.GetStatValue(StatDefOf.AimingDelayFactor, false));
+                        this.duration = (int)((this.verb.verbProps.warmupTime * Compatibility.AbilityTiming.WarmupFor(this.verb) * 60) * this.pawn.GetStatValue(StatDefOf.AimingDelayFactor, false));
                     }
                     catch
                     {
-                        this.duration = (int)(this.verb.verbProps.warmupTime * 60);
+                        this.duration = (int)(this.verb.verbProps.warmupTime * Compatibility.AbilityTiming.WarmupFor(this.verb) * 60);
                     }
                     LocalTargetInfo target = combatToil.actor.jobs.curJob.GetTarget(TargetIndex.A);
                     // The engine must initialize currentTarget before WarmupComplete.
@@ -127,7 +127,7 @@ namespace TorannMagic
                 if (!wildCheck && this.duration <= 6)
                 {
                     wildCheck = true;
-                    if (this.pawn.story != null && this.pawn.story.traits != null && this.pawn.story.traits.HasTrait(TorannMagicDefOf.ChaosMage) && Rand.Chance(.1f))
+                    if (this.pawn.story != null && this.pawn.story.traits != null && TorannMagic.ClassProgression.ClassIdentity.IsChaosMage(this.pawn) && Rand.Chance(.1f))
                     {
                         verb.Ability.PostAbilityAttempt();
                         TM_Action.DoWildSurge(this.pawn, this.pawn.GetCompAbilityUserMagic(), (MagicAbility)verb.Ability, (TMAbilityDef)verb.Ability.Def, TargetA);

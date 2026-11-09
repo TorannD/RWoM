@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ScenPartDef>
+    <defName>TM_MagicalSurfaceStart</defName>
+    <label>planet surface start</label>
+    <category>Fixed</category>
+    <scenPartClass>TorannMagic.Odyssey.ScenPart_MagicalSurfaceStart</scenPartClass>
+    <canBeRandomlyAdded>false</canBeRandomlyAdded>
+    <canBePlayerAddedRemoved>false</canBePlayerAddedRemoved>
+  </ScenPartDef>
+  <ScenPartDef>
+    <defName>TM_MagicalShipArrival</defName>
+    <label>magical ship arrival</label>
+    <category>Fixed</category>
+    <scenPartClass>TorannMagic.Odyssey.ScenPart_MagicalShipArrival</scenPartClass>
+    <summaryPriority>470</summaryPriority>
+    <canBeRandomlyAdded>false</canBeRandomlyAdded>
+    <canBePlayerAddedRemoved>false</canBePlayerAddedRemoved>
+  </ScenPartDef>
+  <ScenPartDef>
+    <defName>TM_MagicalCrew</defName>
+    <label>magical crew</label>
+    <category>Fixed</category>
+    <scenPartClass>TorannMagic.ScenPart_MagicalCrew</scenPartClass>
+    <canBeRandomlyAdded>false</canBeRandomlyAdded>
+    <canBePlayerAddedRemoved>false</canBePlayerAddedRemoved>
+  </ScenPartDef>
+  <SketchResolverDef>
+    <defName>TM_MagicalStarterShip</defName>
+    <isRoot>true</isRoot>
+    <resolver Class="TorannMagic.Odyssey.SketchResolver_MagicalStarterShip" />
+  </SketchResolverDef>
+  <ScenarioDef ParentName="ScenarioBase">
+    <defName>TM_MagicalVoyagers</defName>
+    <label>Worlds Collide</label>
+    <description>A catastrophe tore open your magical world and merged it with this one. Three mages and their small ship were carried through the rupture. You have reached the surface of an unfamiliar planet, with only enough equipment for travel between its lands. To survive and discover what lies beyond, you must build, study and master this changed world.</description>
+    <scenario>
+      <summary>Three mages, a small magical ship and a new world to explore. Begin on the planet's surface and research your way forward.</summary>
+      <parts>
+        <li Class="TorannMagic.Odyssey.ScenPart_MagicalSurfaceStart">
+          <def>TM_MagicalSurfaceStart</def>
+        </li>
+        <li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
+          <def>ConfigPage_ConfigureStartingPawns</def>
+          <pawnCount>3</pawnCount>
+          <pawnChoiceCount>8</pawnChoiceCount>
+        </li>
+        <li Class="TorannMagic.Odyssey.ScenPart_MagicalShipArrival">
+          <def>TM_MagicalShipArrival</def>
+          <method>Gravship</method>
+          <includeReservoir>false</includeReservoir>
+        </li>
+        <li Class="TorannMagic.ScenPart_MagicalCrew">
+          <def>TM_MagicalCrew</def>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def><thingDef>MealSurvivalPack</thingDef><count>45</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def><thingDef>MedicineIndustrial</thingDef><count>15</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def><thingDef>WoodLog</thingDef><count>150</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def><thingDef>Steel</thingDef><count>200</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def><thingDef>RawMagicyte</thingDef><count>100</count>
+        </li>
+        <li Class="ScenPart_GameStartDialog">
+          <def>GameStartDialog</def>
+          <textKey>TM_MagicalVoyagersStartDialog</textKey>
+          <closeSound>GameStartSting</closeSound>
+        </li>
+      </parts>
+    </scenario>
+  </ScenarioDef>
+</Defs>

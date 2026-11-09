@@ -1,0 +1,8 @@
+<LanguageData>
+  <TM_ChooseUnifiedWanderer>Elegir el camino del errante</TM_ChooseUnifiedWanderer>
+  <TM_ConfirmUnifiedWanderer>¿Elegir la clase de guerrero mago para entrenar trucos y destrezas de campo? No requiere libro.</TM_ConfirmUnifiedWanderer>
+  <TM_WandererSurvey>Marcar un punto de ruta</TM_WandererSurvey>
+  <TM_WandererSurveyInfo>Marca una ruta de 12 casillas y lee un tomo completo de cualquier clase. Para la maestría recorre 24 casillas y lee un tomo de maestro. Marcar cuesta un 10% de cada recurso de la senda. Elige dos de seis habilidades por libro.</TM_WandererSurveyInfo>
+  <TM_WandererLessons>Elegir habilidad (quedan {0})</TM_WandererLessons>
+  <TM_BestowRecipientUnavailable>{0} ya posee este don o ha elegido una clase.</TM_BestowRecipientUnavailable>
+</LanguageData>

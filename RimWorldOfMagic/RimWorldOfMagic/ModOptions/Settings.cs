@@ -10,12 +10,15 @@ namespace TorannMagic.ModOptions
     public class Settings : Verse.ModSettings
     {
         public float xpMultiplier = 1f;
+        public float abilityCooldownMultiplier = 1f;
+        public float abilityWarmupMultiplier = 1f;
         public float needMultiplier = 1f;        
         public bool AICasting = true;
         public bool AIAggressiveCasting = true;
         public bool AIHardMode = false;        
         public bool SlavesCanScribe = false;   // allow slaves to write class tomes
         public bool grimoireOnAbilityBar = true;  // false = Grimoire becomes an inspect-pane tab instead of a gizmo
+        public bool newProgressionBeta = false;   // beta class progression; only read at startup, changing it requires a restart
         public float baseMageChance = 1f;
         public float baseFighterChance = 1f;
         public float advMageChance = 0.5f;
@@ -135,12 +138,15 @@ namespace TorannMagic.ModOptions
         public override void ExposeData()
         {
             Scribe_Values.Look<float>(ref this.xpMultiplier, "xpMultiplier", 1f, false);
+            Scribe_Values.Look(ref abilityCooldownMultiplier, "abilityCooldownMultiplier", 1f);
+            Scribe_Values.Look(ref abilityWarmupMultiplier, "abilityWarmupMultiplier", 1f);
             Scribe_Values.Look<float>(ref this.needMultiplier, "needMultiplier", 1f, false);            
             Scribe_Values.Look<bool>(ref this.AICasting, "AICasting", true, false);
             Scribe_Values.Look<bool>(ref this.AIAggressiveCasting, "AIAggressiveCasting", true, false);
             Scribe_Values.Look<bool>(ref this.AIHardMode, "AIHardMode", false, false);
             Scribe_Values.Look<bool>(ref this.SlavesCanScribe, "SlavesCanScribe", false, false);
             Scribe_Values.Look<bool>(ref this.grimoireOnAbilityBar, "grimoireOnAbilityBar", true, false);
+            Scribe_Values.Look<bool>(ref this.newProgressionBeta, "newProgressionBeta", false, false);
             Scribe_Values.Look<bool>(ref this.AIMarking, "AIMarking", false, false);
             Scribe_Values.Look<bool>(ref this.AIFighterMarking, "AIFighterMarking", false, false);
             Scribe_Values.Look<bool>(ref this.AIFriendlyMarking, "AIFriendlyMarking", false, false);

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
@@ -8,12 +8,12 @@ using Verse;
 
 namespace TorannMagic
 {
-    public class Verb_Regenerate : Verb_UseAbility
+    public class Verb_Regenerate : ClassProgression.Verb_SpiritTargetable
     {
         bool validTarg;
         private int verVal =0;
         private int pwrVal =0;
-        private float arcaneDmg = 1;
+
         //Used specifically for non-unique verbs that ignore LOS (can be used with shield belt)
         public override bool CanHitTargetFrom(IntVec3 root, LocalTargetInfo targ)
         {
@@ -38,70 +38,35 @@ namespace TorannMagic
 
         protected override bool TryCastShot()
         {
-            bool flag = false;
+            ApplyHostedEffect();
+            PostCastShot(false, out bool result);
+            return result;
+        }
 
-            Map map = this.CasterPawn.Map;
-
-            Pawn hitPawn = this.currentTarget.Thing as Pawn;
-            Pawn caster = this.CasterPawn;
-
-            try
+        protected override bool ApplyHostedEffect()
+        {
+            var patient = currentTarget.Thing as Pawn;
+            var owner = ClassProgression.SpiritRebirthCasting.SkillOwner(CasterPawn, Ability);
+            if (owner == null || patient == null || patient.Dead || !patient.Spawned || patient.Map != CasterPawn.Map)
             {
-                //MagicPowerSkill pwr = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Regenerate.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Regenerate_pwr");
-                //MagicPowerSkill ver = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Regenerate.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Regenerate_ver");
-                //verVal = ver.level;
-                //pwrVal = pwr.level;
-                //arcaneDmg = caster.GetCompAbilityUserMagic().arcaneDmg;
-                //if (this.caster != null && caster.story != null && caster.story.traits != null && caster.story.traits.HasTrait(TorannMagicDefOf.Faceless))
-                //{
-                //    MightPowerSkill mpwr = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-                //    MightPowerSkill mver = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
-                //    pwrVal = mpwr.level;
-                //    verVal = mver.level;
-                //}
-                verVal = TM_Calc.GetSkillVersatilityLevel(caster, this.Ability.Def as TMAbilityDef);
-                pwrVal = TM_Calc.GetSkillPowerLevel(caster, this.Ability.Def as TMAbilityDef);
+                Messages.Message("TM_NothingToRegenerate".Translate(), MessageTypeDefOf.NeutralEvent);
+                return false;
             }
-            catch(NullReferenceException ex)
+            verVal = TM_Calc.GetSkillVersatilityLevel(owner, Ability.Def as TMAbilityDef);
+            pwrVal = TM_Calc.GetSkillPowerLevel(owner, Ability.Def as TMAbilityDef);
+            HediffDef effect;
+            switch (pwrVal)
             {
-                //ex
+                case 3: effect = TorannMagicDefOf.TM_Regeneration_III; break;
+                case 2: effect = TorannMagicDefOf.TM_Regeneration_II; break;
+                case 1: effect = TorannMagicDefOf.TM_Regeneration_I; break;
+                default: effect = TorannMagicDefOf.TM_Regeneration; break;
             }
-            try
-            {
-                if (!hitPawn.DestroyedOrNull() & !hitPawn.Dead && hitPawn.Spawned && map != null)
-                {
-                    if (pwrVal == 3)
-                    {
-                        HealthUtility.AdjustSeverity(hitPawn, TorannMagicDefOf.TM_Regeneration_III, Rand.Range(1f + verVal, 3f + (verVal * 3)) * this.arcaneDmg);
-                        TM_MoteMaker.ThrowRegenMote(hitPawn.DrawPos, map, 1f + (.2f * (verVal + pwrVal)));
-                    }
-                    else if (pwrVal == 2)
-                    {
-                        HealthUtility.AdjustSeverity(hitPawn, TorannMagicDefOf.TM_Regeneration_II, Rand.Range(1f + verVal, 3f + (verVal * 3)) * this.arcaneDmg);
-                        TM_MoteMaker.ThrowRegenMote(hitPawn.DrawPos, map, 1f + (.2f * (verVal + pwrVal)));
-                    }
-                    else if (pwrVal == 1)
-                    {
-                        HealthUtility.AdjustSeverity(hitPawn, TorannMagicDefOf.TM_Regeneration_I, Rand.Range(1f + verVal, 3f + (verVal * 3)) * this.arcaneDmg);
-                        TM_MoteMaker.ThrowRegenMote(hitPawn.DrawPos, map, 1f + (.2f * (verVal + pwrVal)));
-                    }
-                    else
-                    {
-                        HealthUtility.AdjustSeverity(hitPawn, TorannMagicDefOf.TM_Regeneration, Rand.Range(1f + verVal, 3f + (verVal * 3)) * this.arcaneDmg);
-                        TM_MoteMaker.ThrowRegenMote(hitPawn.DrawPos, map, 1f + (.2f * (verVal + pwrVal)));
-                    }
-                }
-                else
-                {
-                    Messages.Message("TM_NothingToRegenerate".Translate(), MessageTypeDefOf.NeutralEvent);
-                }
-            }
-            catch (NullReferenceException ex)
-            {
-                //ex
-            }
-            this.PostCastShot(flag, out flag);
-            return flag;
+            var trial = ClassProgression.DruidTrials.CaptureRegeneration(Ability, patient);
+            HealthUtility.AdjustSeverity(patient, effect, Rand.Range(1f + verVal, 3f + verVal * 3));
+            ClassProgression.DruidTrials.Complete(trial);
+            TM_MoteMaker.ThrowRegenMote(patient.DrawPos, patient.Map, 1f + .2f * (verVal + pwrVal));
+            return true;
         }
     }
 }

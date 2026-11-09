@@ -11,7 +11,7 @@ using TorannMagic.Utils;
 
 namespace TorannMagic
 {
-    public class Verb_SoothingBalm : Verb_UseAbility
+    public class Verb_SoothingBalm : ClassProgression.Verb_SpiritTargetable
     {
         bool validTarg;
         //Used specifically for non-unique verbs that ignore LOS (can be used with shield belt)
@@ -38,14 +38,24 @@ namespace TorannMagic
 
         protected override bool TryCastShot()
         {
+            ApplyEffect();
+            return false; // Legacy direct effect does not launch a projectile.
+        }
+
+        protected override bool ApplyHostedEffect() => ApplyEffect();
+
+        private bool ApplyEffect()
+        {
+            if (CasterPawn?.Spawned != true || currentTarget.Pawn?.Spawned != true ||
+                currentTarget.Pawn.Map != CasterPawn.Map || currentTarget.Pawn.Dead) return false;
             Map map = this.CasterPawn.Map;
 
             Pawn pawn = this.currentTarget.Thing as Pawn;
             Pawn caster = this.CasterPawn;
-            CompAbilityUserMight comp = caster.GetCompAbilityUserMight();
+            Pawn source = Ability?.Pawn ?? caster;
 
-            int verVal = TM_Calc.GetSkillVersatilityLevel(caster, TorannMagicDefOf.TM_SoothingBalm, false);
-            int pwrVal = TM_Calc.GetSkillPowerLevel(caster, TorannMagicDefOf.TM_SoothingBalm, false);
+            int verVal = TM_Calc.GetSkillVersatilityLevel(source, TorannMagicDefOf.TM_SoothingBalm, false);
+            int pwrVal = TM_Calc.GetSkillPowerLevel(source, TorannMagicDefOf.TM_SoothingBalm, false);
 
             try
             {
@@ -82,6 +92,7 @@ namespace TorannMagic
                         pawn.records.Increment(RecordDefOf.TimesTendedTo);
                         caster.records.Increment(RecordDefOf.TimesTendedOther);
                     }
+                    return true;
                 }
                 else
                 {
@@ -90,7 +101,7 @@ namespace TorannMagic
             }
             catch (NullReferenceException ex)
             {
-
+                Compatibility.TM_Log.Error("Soothing Balm failed: " + ex);
             }
             
             return false;

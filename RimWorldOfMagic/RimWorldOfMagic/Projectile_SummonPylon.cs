@@ -50,6 +50,8 @@ namespace TorannMagic
 
         protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
+            if (Destroyed) return;
+            if (primed || age >= duration) { age = duration; Destroy(); return; }
             Map map = base.Map;
             GenClamor.DoClamor(this, 2.1f, ClamorDefOf.Impact);
             Destroy();
@@ -59,18 +61,29 @@ namespace TorannMagic
             Thing item = hitThing as Thing;
             IntVec3 arg_pos_1;
 
-            Pawn pawn = this.launcher as Pawn;
+            if (!ClassProgression.SpiritHostedSummons.Resolve(this, launcher as Pawn, out Pawn pawn, out var source))
+            { this.age = this.duration; Destroy(); return; }
+            if (source != null && !ClassProgression.SpiritHostedSummons.CanPlace(TorannMagicDefOf.TM_SummonPylon, map, Position))
+            { this.age = this.duration; Destroy(); return; }
             CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
-            MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_SummonPylon.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_SummonPylon_pwr");
-            MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_SummonPylon.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_SummonPylon_ver");
-            verVal = ver.level;
-            pwrVal = pwr.level;
-            if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+            if (source == null)
             {
-                MightPowerSkill mpwr = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-                MightPowerSkill mver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
-                pwrVal = mpwr.level;
-                verVal = mver.level;
+                MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_SummonPylon.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_SummonPylon_pwr");
+                MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_SummonPylon.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_SummonPylon_ver");
+                verVal = ver.level;
+                pwrVal = pwr.level;
+                if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+                {
+                    MightPowerSkill mpwr = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
+                    MightPowerSkill mver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
+                    pwrVal = mpwr.level;
+                    verVal = mver.level;
+                }
+            }
+            else
+            {
+                pwrVal = source.Power;
+                verVal = source.Versatility;
             }
             CellRect cellRect = CellRect.CenteredOn(base.Position, 1);
             cellRect.ClipInsideMap(map);
@@ -79,7 +92,7 @@ namespace TorannMagic
             if (!this.primed)
             {
                 duration += (verVal * 7200);
-                duration = (int)(duration * comp.arcaneDmg);
+                duration = (int)(duration * (source?.Scale ?? comp.arcaneDmg));
                 arg_pos_1 = centerCell;
 
                 if ((arg_pos_1.IsValid && arg_pos_1.Standable(map)))
@@ -108,11 +121,11 @@ namespace TorannMagic
                     tempPod.spawnCount = 1;
                     try
                     {
-                        this.SingleSpawnLoop(tempPod, shiftPos, map);
+                        SpawnOwned(tempPod, shiftPos, map, pawn);
                     }
                     catch
                     {
-                        comp.Mana.CurLevel += comp.ActualManaCost(TorannMagicDefOf.TM_SummonPylon);
+                        if (source == null) comp.Mana.CurLevel += comp.ActualManaCost(TorannMagicDefOf.TM_SummonPylon);
                         this.age = this.duration;
                         Log.Message("TM_Exception".Translate(
                                 pawn.LabelShort,
@@ -125,7 +138,7 @@ namespace TorannMagic
                 else
                 {
                     Messages.Message("InvalidSummon".Translate(), MessageTypeDefOf.RejectInput);
-                    comp.Mana.GainNeed(comp.ActualManaCost(TorannMagicDefOf.TM_SummonExplosive));
+                    if (source == null) comp.Mana.GainNeed(comp.ActualManaCost(TorannMagicDefOf.TM_SummonExplosive));
                     this.duration = 0;
                 }
             }
@@ -133,11 +146,14 @@ namespace TorannMagic
         }
 
         public void SingleSpawnLoop(SpawnThings spawnables, IntVec3 position, Map map)
+            => SpawnOwned(spawnables, position, map, launcher as Pawn);
+
+        private void SpawnOwned(SpawnThings spawnables, IntVec3 position, Map map, Pawn owner)
         {
             bool flag = spawnables.def != null;
             if (flag)
             {
-                Faction faction = TM_Action.ResolveFaction(this.launcher as Pawn, spawnables, this.launcher.Faction);
+                Faction faction = TM_Action.ResolveFaction(owner, spawnables, owner.Faction);
                 bool flag2 = spawnables.def.race != null;
                 if (flag2)
                 {
@@ -148,7 +164,7 @@ namespace TorannMagic
                     }
                     else
                     {
-                        TM_Action.SpawnPawn(this.launcher as Pawn, spawnables, faction, position, 0, map);
+                        TM_Action.SpawnPawn(owner, spawnables, faction, position, 0, map);
                     }
                 }
                 else
@@ -169,7 +185,10 @@ namespace TorannMagic
                     CompSummoned bldgComp = thing.TryGetComp<CompSummoned>();
                     bldgComp.TicksToDestroy = this.duration;
                     bldgComp.Temporary = true;
+                    bldgComp.Spawner = owner;
                     GenSpawn.Spawn(thing, position, map, Rot4.North, WipeMode.Vanish, false);
+                    this.TryGetComp<ClassProgression.CompHostedSummon>()?.NotifySpawned(thing);
+                    ClassProgression.SummonerTrials.Spawned(this, thing, ClassProgression.SummonerTrials.Spell.Pylon);
                 }
             }
         }

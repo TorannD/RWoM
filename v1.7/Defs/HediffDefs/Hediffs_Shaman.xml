@@ -346,6 +346,9 @@
 	<maxSeverity>4.0</maxSeverity>
 	<initialSeverity>0.95</initialSeverity>
 	<isBad>false</isBad>
+    <comps>
+      <li><compClass>TorannMagic.ClassProgression.HediffComp_CrowInsight</compClass></li>
+    </comps>
 	<stages>
       <li>
 	    <label>I</label>

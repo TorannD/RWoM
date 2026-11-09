@@ -96,6 +96,7 @@ namespace TorannMagic
         {
             get
             {
+                if (ClassProgression.SpiritRebirthHealthForm.TryCapacity(pawn, out float capacity)) return capacity;
                 float maxBase = 100f;
                 if(this.pawn.story != null && this.pawn.story.Adulthood != null && this.pawn.story.Adulthood.identifier == "tm_ancient_spirit")
                 {
@@ -202,7 +203,12 @@ namespace TorannMagic
         }
 
         public void GainNeed(float amount)
-        {            
+        {
+            if (ClassProgression.SpiritRebirthEnergy.Marked(this.pawn))
+            {
+                ChangeMarkedEnergy(amount);
+                return;
+            }
             Pawn pawn = base.pawn;                
             
             CompAbilityUserMagic comp = this.pawn.GetCompAbilityUserMagic();
@@ -278,11 +284,46 @@ namespace TorannMagic
 
         public void UseMightPower(float amount)
         {
+            if (ClassProgression.SpiritRebirthEnergy.Marked(this.pawn))
+            {
+                SpendSpirit(amount);
+                return;
+            }
             this.curLevelInt = Mathf.Clamp(this.curLevelInt - amount, 0f, this.pawn.GetCompAbilityUserMight().maxSP); //change for max sp
+        }
+
+        internal void SpendSpirit(float amount, bool deferCollapse = false)
+        {
+            if (amount < 0f || float.IsNaN(amount) || float.IsInfinity(amount)) return;
+            ChangeMarkedEnergy(-amount, deferCollapse);
+        }
+
+        private void ChangeMarkedEnergy(float amount, bool deferCollapse = false)
+        {
+            if (float.IsNaN(amount) || float.IsInfinity(amount)) return;
+            float efficiency = 1f;
+            if (amount > 0f)
+            {
+                var skill = this.pawn.GetCompAbilityUserMagic()?.ExistingMagicData?.GetSkill_Efficiency(TorannMagicDefOf.TM_SpiritDrain);
+                efficiency += .1f * Mathf.Max(0, skill?.level ?? 0);
+            }
+            float before = CurLevel;
+            ClassProgression.SpiritRebirthEnergy.Change(this.pawn, this, amount * efficiency, deferCollapse);
+            float actual = CurLevel - before;
+            baseSpiritGain = actual / efficiency;
+            modifiedSpiritGain = actual - baseSpiritGain;
+            lastGainPct = MaxLevel > 0f ? actual / MaxLevel : 0f;
+            lastGainTick = actual > 0f ? Find.TickManager.TicksGame : Find.TickManager.TicksGame - 10;
+            AdjustThresh();
         }
 
         public override void NeedInterval()
         {
+            if (ClassProgression.SpiritRebirthEnergy.Marked(this.pawn))
+            {
+                ChangeMarkedEnergy(Rand.Range(-0.015f, -0.04f) * 2f);
+                return;
+            }
             float lossModifier = 1f;
 
             //Hediff hd = this.pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_SpiritPossessionHD);

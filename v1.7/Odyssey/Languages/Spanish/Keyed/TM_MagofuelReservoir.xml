@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_ReservoirCharge>Maná almacenado: {0} / {1}</TM_ReservoirCharge>
+  <TM_ReservoirReserve>Reserva personal de maná: {0}</TM_ReservoirReserve>
+  <TM_ReservoirConvert>Convertir combustible mágico</TM_ReservoirConvert>
+  <TM_ReservoirConvertDesc>Convertir combustible mágico en hasta {0} unidades de maná almacenado. Solo se consume combustible por la carga aceptada.</TM_ReservoirConvertDesc>
+  <TM_ReservoirReserveLabel>Reserva de maná: {0}</TM_ReservoirReserveLabel>
+  <TM_ReservoirReserveDesc>Elige el porcentaje mínimo de maná personal que conserva un mago al cargar este depósito.</TM_ReservoirReserveDesc>
+  <TM_ReservoirChargeJob>Cargar depósito con maná</TM_ReservoirChargeJob>
+  <TM_ReservoirUnavailable>Requiere un mago aliado disponible con maná por encima de su reserva personal.</TM_ReservoirUnavailable>
+  <TM_ReservoirFuelReserveLabel>Magocombustible protegido: {0}</TM_ReservoirFuelReserveLabel>
+  <TM_ReservoirFuelReserveDesc>Protege una cantidad fija de combustible del consumo ordinario, la conversión y los rituales. El vuelo y el soporte vital pueden gastarla. El soporte vital puede agotar la reserva, por lo que no garantiza el viaje de regreso. El maná producido por una conversión permitida para el soporte vital se comparte normalmente.</TM_ReservoirFuelReserveDesc>
+  <TM_ReservoirFuelReserveInspect>Magocombustible protegido: {0}; consumo ordinario disponible: {1}\nEl vuelo y el soporte vital pueden usar la reserva; el combustible de regreso no está garantizado.</TM_ReservoirFuelReserveInspect>
+</LanguageData>

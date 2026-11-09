@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_RangerCareHint>Ухаживайте за одним связанным животным 12 дней ({0}/12). Навещайте его на одной карте раз в сутки. Смена спутника обнуляет незаконченное испытание. «Друг животных» при разрыве или замене связи может навсегда удалить прежнее животное.</TM_RangerCareHint>
+  <TM_RangerCareOrder>Позаботиться о {0}</TM_RangerCareOrder>
+  <TM_RangerClaimTrap>Изучить ядовитую ловушку</TM_RangerClaimTrap>
+</LanguageData>

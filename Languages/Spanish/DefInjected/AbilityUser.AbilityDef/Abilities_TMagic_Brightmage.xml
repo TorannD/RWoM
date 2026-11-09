@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_LightBurst.label>estallido de luz</TM_LightBurst.label>
+  
+  <TM_LightBurst.description>Crea destellos de luz que ciegan y desorientan a los peones atrapados en la explosión. Los peones desorientados no distinguen entre aliados y enemigos y pueden disparar a los peones aliados cercanos. Esta habilidad se potencia con la luz almacenada.</TM_LightBurst.description>
+  
+  
+  <TM_LightLance.label>lanza de luz</TM_LightLance.label>
+  
+  <TM_LightLance.description>Concentra la luz en un haz intenso que quema todo a su paso. Esta habilidad se potencia con la luz almacenada.</TM_LightLance.description>
+  
+  
+  <TM_LightSkip.label>salto de luz</TM_LightSkip.label>
+  
+  <TM_LightSkip.description>El lanzador cabalga una ola de luz para desplazarse casi al instante. Ni el lanzador ni el objetivo pueden encontrarse bajo techo.</TM_LightSkip.description>
+  
+  
+  <TM_LightSkipGlobal.label>salto de luz global</TM_LightSkipGlobal.label>
+  
+  <TM_LightSkipGlobal.description>El lanzador y todos los aliados en un radio de 5 casillas cabalgan olas de luz para desplazarse casi al instante. Los peones que estén bajo techo no serán transportados.</TM_LightSkipGlobal.description>
+  
+  
+  <TM_LightSkipMass.label>salto de luz masivo</TM_LightSkipMass.label>
+  
+  <TM_LightSkipMass.description>El lanzador y todos los aliados en un radio de 5 casillas cabalgan olas de luz para desplazarse casi al instante. Los peones que estén bajo techo no serán transportados.</TM_LightSkipMass.description>
+  
+  
+  <TM_Refraction.label>refracción</TM_Refraction.label>
+  
+  <TM_Refraction.description>Crea un muro de luz que afecta a los proyectiles que lo atraviesan. Los proyectiles enemigos pueden desviarse de su trayectoria y no alcanzar su objetivo. Los proyectiles aliados pueden aprovechar parte de la energía lumínica para generar una copia especular del proyectil. El muro dura unos 25 segundos o hasta que se agota su energía. Esta habilidad se potencia con la luz almacenada.</TM_Refraction.description>
+  
+  
+  <TM_SoL_CreateLight.label>crear luz</TM_SoL_CreateLight.label>
+  
+  <TM_SoL_CreateLight.description>Ordena al Espíritu de luz que genere luz en una zona. Esto reduce un 70 % su regeneración de luz. Vuelve a utilizar esta habilidad en cualquier ubicación para disipar la luz.</TM_SoL_CreateLight.description>
+  
+  
+  <TM_SoL_Equalize.label>igualar</TM_SoL_Equalize.label>
+  
+  <TM_SoL_Equalize.description>Iguala la energía lumínica del Espíritu de luz y la del lanzador.</TM_SoL_Equalize.description>
+  
+  
+  <TM_SpiritOfLight.label>espíritu de luz</TM_SpiritOfLight.label>
+  
+  <TM_SpiritOfLight.description>Invoca a un Espíritu de luz que ayuda y protege al lanzador. Esta habilidad requiere 60 de maná para mantenerse activa y reduce la regeneración de maná un 75 %. Vuelve a utilizarla para despedir al espíritu. El Espíritu de luz (EdL) puede almacenar energía lumínica y utilizarla para realizar distintas acciones.\n\nEl Espíritu de luz actúa de forma autónoma para ayudar al lanzador y puede realizar las siguientes acciones:\n- Desviar ataques\n- Cauterizar las heridas de los peones abatidos\n- Atacar a los enemigos (solo cuando está reclutado)\n- Mejorar el ánimo de los aliados cercanos\n- Crear un estallido de alegría\n- Proteger los sueños del lanzador</TM_SpiritOfLight.description>
+  
+  
+  <TM_Sunfire.label>fuego solar</TM_Sunfire.label>
+  
+  <TM_Sunfire.description>La zona objetivo se llena de tajos ardientes de luz. Esta habilidad se potencia con la luz almacenada.\n\nTiempo de lanzamiento: 3 s\nAlcance: 50\nEnfriamiento: 60 s\nRadio: 5\nCantidad: 13</TM_Sunfire.description>
+  
+  
+  <TM_Sunfire_I.label>fuego solar (I)</TM_Sunfire_I.label>
+  
+  <TM_Sunfire_I.description>La zona objetivo se llena de tajos ardientes de luz. Esta habilidad se potencia con la luz almacenada.\n\nTiempo de lanzamiento: 2,7 s\nAlcance: 55\nEnfriamiento: 55 s\nRadio: 6\nCantidad: 14</TM_Sunfire_I.description>
+  
+  
+  <TM_Sunfire_II.label>fuego solar (II)</TM_Sunfire_II.label>
+  
+  <TM_Sunfire_II.description>La zona objetivo se llena de tajos ardientes de luz. Esta habilidad se potencia con la luz almacenada.\n\nTiempo de lanzamiento: 2,4 s\nAlcance: 60\nEnfriamiento: 50 s\nRadio: 7\nCantidad: 15</TM_Sunfire_II.description>
+  
+  
+  <TM_Sunfire_III.label>fuego solar (III)</TM_Sunfire_III.label>
+  
+  <TM_Sunfire_III.description>La zona objetivo se llena de tajos ardientes de luz. Esta habilidad se potencia con la luz almacenada.\n\nTiempo de lanzamiento: 2,2 s\nAlcance: 65\nEnfriamiento: 45 s\nRadio: 8\nCantidad: 16</TM_Sunfire_III.description>
+  
+</LanguageData>

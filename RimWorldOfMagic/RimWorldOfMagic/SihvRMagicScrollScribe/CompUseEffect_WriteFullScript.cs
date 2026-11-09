@@ -29,82 +29,82 @@ namespace TorannMagic.SihvRMagicScrollScribe
                         tempPod = comp.customClass.fullScript;
                         this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                     }
-                    else if (parent.def != null && user.story.traits.HasTrait(TorannMagicDefOf.InnerFire))
+                    else if (parent.def != null && ClassProgression.ClassIdentity.IsFireMage(user))
                     {
                         tempPod = ThingDef.Named("BookOfInnerFire");
                         this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                     }
-                    else if (parent.def != null && user.story.traits.HasTrait(TorannMagicDefOf.HeartOfFrost))
+                    else if (parent.def != null && ClassProgression.ClassIdentity.IsIceMage(user))
                     {
                         tempPod = ThingDef.Named("BookOfHeartOfFrost");
                         this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                     }
-                    else if (parent.def != null && user.story.traits.HasTrait(TorannMagicDefOf.StormBorn))
+                    else if (parent.def != null && ClassProgression.ClassIdentity.IsLightningMage(user))
                     {
                         tempPod = ThingDef.Named("BookOfStormBorn");
                         this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                     }
-                    else if (parent.def != null && user.story.traits.HasTrait(TorannMagicDefOf.Arcanist))
+                    else if (parent.def != null && ClassProgression.ClassIdentity.IsArcanist(user))
                     {
                         tempPod = ThingDef.Named("BookOfArcanist");
                         this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                     }
-                    else if (parent.def != null && user.story.traits.HasTrait(TorannMagicDefOf.Paladin))
+                    else if (parent.def != null && ClassProgression.ClassIdentity.IsPaladin(user))
                     {
                         tempPod = ThingDef.Named("BookOfValiant");
                         this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                     }
-                    else if (parent.def != null && user.story.traits.HasTrait(TorannMagicDefOf.Summoner))
+                    else if (parent.def != null && ClassProgression.ClassIdentity.IsSummoner(user))
                     {
                         tempPod = ThingDef.Named("BookOfSummoner");
                         this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                     }
-                    else if (parent.def != null && user.story.traits.HasTrait(TorannMagicDefOf.Druid))
+                    else if (parent.def != null && ClassProgression.ClassIdentity.IsDruid(user))
                     {
                         tempPod = ThingDef.Named("BookOfDruid");
                         this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                     }
-                    else if (parent.def != null && (user.story.traits.HasTrait(TorannMagicDefOf.Necromancer) || user.story.traits.HasTrait(TorannMagicDefOf.Lich)))
+                    else if (parent.def != null && (ClassProgression.ClassIdentity.IsBaseNecromancer(user) || ClassProgression.ClassIdentity.IsLich(user)))
                     {
                         tempPod = ThingDef.Named("BookOfNecromancer");
                         this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                     }
-                    else if (parent.def != null && user.story.traits.HasTrait(TorannMagicDefOf.Priest))
+                    else if (parent.def != null && ClassProgression.ClassIdentity.IsPriest(user))
                     {
                         tempPod = ThingDef.Named("BookOfPriest");
                         this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                     }
-                    else if (parent.def != null && user.story.traits.HasTrait(TorannMagicDefOf.TM_Bard))
+                    else if (parent.def != null && ClassProgression.ClassIdentity.IsBard(user))
                     {
                         tempPod = ThingDef.Named("BookOfBard");
                         this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                     }
-                    else if (parent.def != null && (user.story.traits.HasTrait(TorannMagicDefOf.Succubus) || user.story.traits.HasTrait(TorannMagicDefOf.Warlock)))
+                    else if (parent.def != null && (TorannMagic.ClassProgression.ClassIdentity.IsSuccubus(user) || TorannMagic.ClassProgression.ClassIdentity.IsWarlock(user)))
                     {
                         tempPod = ThingDef.Named("BookOfDemons");
                         this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                     }
-                    else if (parent.def != null && (user.story.traits.HasTrait(TorannMagicDefOf.Geomancer)))
+                    else if (parent.def != null && (ClassProgression.ClassIdentity.IsGeomancer(user)))
                     {
                         tempPod = TorannMagicDefOf.BookOfEarth;
                         this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                     }
-                    else if (parent.def != null && (user.story.traits.HasTrait(TorannMagicDefOf.Technomancer)))
+                    else if (parent.def != null && ((user.story.traits.HasTrait(TorannMagicDefOf.Technomancer) || ClassProgression.ClassIdentity.IsTechnomancer(user))))
                     {
                         tempPod = TorannMagicDefOf.BookOfMagitech;
                         this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                     }
-                    else if (parent.def != null && (user.story.traits.HasTrait(TorannMagicDefOf.BloodMage)))
+                    else if (parent.def != null && (ClassProgression.ClassIdentity.IsBloodMage(user)))
                     {
                         tempPod = TorannMagicDefOf.BookOfHemomancy;
                         this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                     }
-                    else if (parent.def != null && (user.story.traits.HasTrait(TorannMagicDefOf.Enchanter)))
+                    else if (parent.def != null && (ClassProgression.ClassIdentity.IsEnchanter(user)))
                     {
                         tempPod = TorannMagicDefOf.BookOfEnchanter;
                         this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                     }
-                    else if (parent.def != null && (user.story.traits.HasTrait(TorannMagicDefOf.Chronomancer)))
+                    else if (parent.def != null && (ClassProgression.ClassIdentity.IsChronomancer(user)))
                     {
                         tempPod = TorannMagicDefOf.BookOfChronomancer;
                         this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
@@ -114,12 +114,12 @@ namespace TorannMagic.SihvRMagicScrollScribe
                         tempPod = TorannMagicDefOf.BookOfChaos;
                         this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                     }
-                    else if (parent.def != null && (user.story.traits.HasTrait(TorannMagicDefOf.TM_Brightmage)))
+                    else if (parent.def != null && (ClassProgression.ClassIdentity.IsBrightmage(user)))
                     {
                         tempPod = TorannMagicDefOf.BookOfTheSun;
                         this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                     }
-                    else if (parent.def != null && (user.story.traits.HasTrait(TorannMagicDefOf.TM_Shaman)))
+                    else if (parent.def != null && (ClassProgression.ClassIdentity.IsShaman(user)))
                     {
                         tempPod = TorannMagicDefOf.BookOfShamanism;
                         this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);

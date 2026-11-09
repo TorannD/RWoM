@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  
+  <TM_Blink.label>Parpadeo</TM_Blink.label>
+  <TM_Blink.description>Mueve al instante al lanzador a la ubicación objetivo.\n\nTiempo de lanzamiento: 0,5 s\nTiempo de recarga: 10 s\nAlcance: 30</TM_Blink.description>
+
+  <TM_Blink_I.label>Parpadeo (I)</TM_Blink_I.label>
+  <TM_Blink_I.description>Mueve al instante al lanzador a la ubicación objetivo.\n\nTiempo de lanzamiento: 0,3 s\nTiempo de recarga: 8 s\nAlcance: 50</TM_Blink_I.description>
+
+  <TM_Blink_II.label>Parpadeo (II)</TM_Blink_II.label>
+  <TM_Blink_II.description>Mueve al instante al lanzador a la ubicación objetivo.\n\nTiempo de lanzamiento: 0,1 s\nTiempo de recarga: 6 s\nAlcance: 70</TM_Blink_II.description>
+
+  <TM_Blink_III.label>Parpadeo (III)</TM_Blink_III.label>
+  <TM_Blink_III.description>Mueve al instante al lanzador a la ubicación objetivo.\n\nTiempo de lanzamiento: 0 s\nTiempo de recarga: 5 s\nAlcance: 90</TM_Blink_III.description>
+
+  
+  <TM_FoldReality.label>Portal</TM_FoldReality.label>
+  <TM_FoldReality.description>Pliega la realidad para abrir un portal a otra ubicación controlada por el jugador y mueve al instante hasta el lanzador a todos los peones y objetos situados en un radio de 7 casillas alrededor de la casilla objetivo.</TM_FoldReality.description>
+
+  
+  <TM_MagicMissile.label>Proyectil mágico</TM_MagicMissile.label>
+  <TM_MagicMissile.description>Dispara una oleada de proyectiles mágicos contra los enemigos.\n\nProbabilidad de confundir: 3 %\nTiempo de lanzamiento: 2,5 s\nAlcance: 24\nProyectiles: 14 en 2,8 s\nDaño: 4</TM_MagicMissile.description>
+
+  <TM_MagicMissile_I.label>Proyectil mágico (I)</TM_MagicMissile_I.label>
+  <TM_MagicMissile_I.description>Dispara una oleada de proyectiles mágicos contra los enemigos.\n\nProbabilidad de confundir: 5 %\nTiempo de lanzamiento: 2 s\nAlcance: 28\nProyectiles: 17 en 2,83 s\nDaño: 5</TM_MagicMissile_I.description>
+
+  <TM_MagicMissile_II.label>Proyectil mágico (II)</TM_MagicMissile_II.label>
+  <TM_MagicMissile_II.description>Dispara una oleada de proyectiles mágicos contra los enemigos.\n\nProbabilidad de confundir: 7 %\nTiempo de lanzamiento: 1,5 s\nAlcance: 32\nProyectiles: 20 en 2,67 s\nDaño: 6</TM_MagicMissile_II.description>
+
+  <TM_MagicMissile_III.label>Proyectil mágico (III)</TM_MagicMissile_III.label>
+  <TM_MagicMissile_III.description>Dispara una oleada de proyectiles mágicos contra los enemigos.\n\nProbabilidad de confundir: 9 %\nTiempo de lanzamiento: 1 s\nAlcance: 36\nProyectiles: 24 en 2,4 s\nDaño: 7</TM_MagicMissile_III.description>
+
+  
+  <TM_Shadow.label>Sombra</TM_Shadow.label>
+  <TM_Shadow.description>Crea un aura de sombra alrededor del lanzador que potencia periódicamente a un aliado.\n\nSombra: aumento arcano que ayuda al trabajador a mejorar su capacidad física, pero reduce su ánimo.\n\nFrecuencia de aplicación: 80-90 s\nDuración: 500-600 s\nManipulación, vista, oído, filtración de sangre: +10 %\nMovimiento, consciencia: +5 %\nReducción de ánimo: -3\n\nRequiere 40 de maná para mantenerse y reduce la regeneración de maná un 30 %; vuelve a lanzarla para desactivarla. El lanzador gana experiencia cada vez que potencia a un aliado.</TM_Shadow.description>
+
+  <TM_Shadow_I.label>Sombra (I)</TM_Shadow_I.label>
+  <TM_Shadow_I.description>Crea un aura de sombra alrededor del lanzador que potencia periódicamente a un aliado.\n\nSombra: aumento arcano que ayuda al trabajador a mejorar su capacidad física, pero reduce su ánimo.\n\nFrecuencia de aplicación: 80-90 s\nDuración: 500-600 s\nManipulación, vista, oído, habla: +20 %\nMovimiento, consciencia, metabolismo, filtración de sangre: +10 %\nReducción de ánimo: -4\n\nRequiere 40 de maná para mantenerse y reduce la regeneración de maná un 30 %; vuelve a lanzarla para desactivarla. El lanzador gana experiencia cada vez que potencia a un aliado.</TM_Shadow_I.description>
+
+  <TM_Shadow_II.label>Sombra (II)</TM_Shadow_II.label>
+  <TM_Shadow_II.description>Crea un aura de sombra alrededor del lanzador que potencia periódicamente a un aliado.\n\nSombra: aumento arcano que ayuda al trabajador a mejorar su capacidad física, pero reduce su ánimo.\n\nFrecuencia de aplicación: 80-90 s\nDuración: 1100-1250 s\nManipulación, vista, oído, habla: +25 %\nMovimiento, metabolismo, filtración de sangre: +15 %\nConsciencia: +10 %\nReducción de ánimo: -6\n\nRequiere 40 de maná para mantenerse y reduce la regeneración de maná un 30 %; vuelve a lanzarla para desactivarla. El lanzador gana experiencia cada vez que potencia a un aliado.</TM_Shadow_II.description>
+
+  <TM_Shadow_III.label>Sombra (III)</TM_Shadow_III.label>
+  <TM_Shadow_III.description>Crea un aura de sombra alrededor del lanzador que potencia periódicamente a un aliado.\n\nSombra: aumento arcano que ayuda al trabajador a mejorar su capacidad física, pero reduce su ánimo.\n\nFrecuencia de aplicación: 80-90 s\nDuración: 1100-1250 s\nManipulación, vista, oído, habla: +25 %\nMovimiento, metabolismo, filtración de sangre: +20 %\nConsciencia: +15 %\nReducción de ánimo: -8\n\nRequiere 40 de maná para mantenerse y reduce la regeneración de maná un 30 %; vuelve a lanzarla para desactivarla. El lanzador gana experiencia cada vez que potencia a un aliado.</TM_Shadow_III.description>
+
+  
+  <TM_Summon.label>Invocación</TM_Summon.label>
+  <TM_Summon.description>Invoca objetos en la ubicación del lanzador.\n\nTiempo de lanzamiento: 3 s\nTiempo de recarga: 20 s\nAlcance: 70</TM_Summon.description>
+
+  <TM_Summon_I.label>Invocación (I)</TM_Summon_I.label>
+  <TM_Summon_I.description>Invoca objetos en la ubicación del lanzador.\n\nTiempo de lanzamiento: 2,7 s\nTiempo de recarga: 18 s\nAlcance: 80</TM_Summon_I.description>
+
+  <TM_Summon_II.label>Invocación (II)</TM_Summon_II.label>
+  <TM_Summon_II.description>Invoca objetos en la ubicación del lanzador.\n\nTiempo de lanzamiento: 2,5 s\nTiempo de recarga: 16 s\nAlcance: 90</TM_Summon_II.description>
+
+  <TM_Summon_III.label>Invocación (III)</TM_Summon_III.label>
+  <TM_Summon_III.description>Invoca objetos en la ubicación del lanzador.\n\nTiempo de lanzamiento: 2,4 s\nTiempo de recarga: 15 s\nAlcance: 100</TM_Summon_III.description>
+
+  
+  <TM_Teleport.label>Teletransporte</TM_Teleport.label>
+  <TM_Teleport.description>Hechizo de teletransporte masivo. Crea un medio temporal de transporte de largo alcance; ten cuidado: el portal se desmorona tras un breve periodo y provoca una explosión de retroalimentación en el punto donde se creó.</TM_Teleport.description>
+
+</LanguageData>

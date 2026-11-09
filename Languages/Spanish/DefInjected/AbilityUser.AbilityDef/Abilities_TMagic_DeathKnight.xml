@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_GraveBlade.label>hoja sepulcral</TM_GraveBlade.label>
+  
+  <TM_GraveBlade.description>Hojas espirituales golpean desde la tumba.\n\nAlcance: 35\nTiempo de lanzamiento: 1,6 s\nRadio: 3,0</TM_GraveBlade.description>
+  
+  
+  <TM_GraveBlade_I.label>hoja sepulcral I</TM_GraveBlade_I.label>
+  
+  <TM_GraveBlade_I.description>Hojas espirituales golpean desde la tumba.\n\nAlcance: 38\nTiempo de lanzamiento: 1,4 s\nRadio: 3,4</TM_GraveBlade_I.description>
+  
+  
+  <TM_GraveBlade_II.label>hoja sepulcral II</TM_GraveBlade_II.label>
+  
+  <TM_GraveBlade_II.description>Hojas espirituales golpean desde la tumba.\n\nAlcance: 41\nTiempo de lanzamiento: 1,2 s\nRadio: 3,8</TM_GraveBlade_II.description>
+  
+  
+  <TM_GraveBlade_III.label>hoja sepulcral III</TM_GraveBlade_III.label>
+  
+  <TM_GraveBlade_III.description>Hojas espirituales golpean desde la tumba.\n\nAlcance: 44\nTiempo de lanzamiento: 1 s\nRadio: 4,2</TM_GraveBlade_III.description>
+  
+  
+  <TM_LifeSteal.label>robo de vida</TM_LifeSteal.label>
+  
+  <TM_LifeSteal.description>Absorbe espíritu de los enemigos golpeados en combate cuerpo a cuerpo para restaurar vida y energía al caballero de la muerte.</TM_LifeSteal.description>
+  
+  
+  <TM_Shroud.label>sudario de oscuridad</TM_Shroud.label>
+  
+  <TM_Shroud.description>El Sudario de oscuridad es una capa de malicia y miedo tangibles que consume la energía cercana.\n\nEl Sudario tiene muchas funciones distintas y es un componente fundamental del entrenamiento del caballero de la muerte. Ante todo, la capa otorga una bonificación defensiva contra todos los tipos de daño y aumenta ligeramente el daño de las armas.\n\nTambién puede solidificarse y tomar represalias contra un ataque usando daño espiritual.\n\nPor último, pero no menos importante, el Sudario puede anular los proyectiles cercanos al caballero de la muerte consumiéndolos en un vacío. Los proyectiles lanzados desde menos de 6 casillas de distancia nunca serán anulados.\n\nTodas estas funciones se potencian a medida que crece el nivel de odio y necesitan un nivel suficiente de odio para funcionar.</TM_Shroud.description>
+  
+  
+  <TM_Spite.label>rencor</TM_Spite.label>
+  
+  <TM_Spite.description>Libera el odio acumulado y proyecta una ola de rencor contra un objetivo. El Rencor necesita odio para poder usarse.\n\nTiempo de lanzamiento: 1 s\nEnfriamiento: 5 s\nAlcance: 21</TM_Spite.description>
+  
+  
+  <TM_Spite_I.label>rencor I</TM_Spite_I.label>
+  
+  <TM_Spite_I.description>Libera el odio acumulado y proyecta una ola de rencor contra un objetivo. El Rencor necesita odio para poder usarse.\n\nTiempo de lanzamiento: 0,8 s\nEnfriamiento: 4 s\nAlcance: 24</TM_Spite_I.description>
+  
+  
+  <TM_Spite_II.label>rencor II</TM_Spite_II.label>
+  
+  <TM_Spite_II.description>Libera el odio acumulado y proyecta una ola de rencor contra un objetivo. El Rencor necesita odio para poder usarse.\n\nTiempo de lanzamiento: 0,6 s\nEnfriamiento: 3 s\nAlcance: 27</TM_Spite_II.description>
+  
+  
+  <TM_Spite_III.label>rencor III</TM_Spite_III.label>
+  
+  <TM_Spite_III.description>Libera el odio acumulado y proyecta una ola de rencor contra un objetivo. El Rencor necesita odio para poder usarse.\n\nTiempo de lanzamiento: 0,4 s\nEnfriamiento: 2 s\nAlcance: 30</TM_Spite_III.description>
+  
+  
+  <TM_WaveOfFear.label>ola de miedo</TM_WaveOfFear.label>
+  
+  <TM_WaveOfFear.description>Libera una ola de miedo que hace que los enemigos se encojan aterrorizados. La Ola de miedo también aplica un penalizador considerable a la defensa oscura/luminosa y al movimiento, y reduce la velocidad de ataque.\n\nNo se necesita odio para usar esta habilidad, pero su alcance aumenta enormemente con los niveles de odio.</TM_WaveOfFear.description>
+  
+</LanguageData>

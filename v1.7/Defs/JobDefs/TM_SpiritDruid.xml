@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef>
+    <defName>TM_SpiritCureDisease</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>curing disease through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritSootheAnimal</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>soothing animals through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritSootheAnimal_I</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>soothing animals through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritSootheAnimal_II</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>soothing animals through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritSootheAnimal_III</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>soothing animals through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritRainmaker</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>changing the weather through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritRegrowLimb</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>creating a seed of regrowth through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritPoison</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>casting poison through a spirit host.</reportString>
+  </JobDef>
+</Defs>

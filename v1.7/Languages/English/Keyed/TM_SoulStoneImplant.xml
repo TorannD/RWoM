@@ -1,0 +1,7 @@
+<LanguageData>
+  <TM_SoulStoneChooseHost>Choose a host for {0}</TM_SoulStoneChooseHost>
+  <TM_SoulStoneCannotImplant>A living, reachable colonist, colony animal, prisoner or visitor is required.</TM_SoulStoneCannotImplant>
+  <TM_SoulStoneHarmful>Implant {0} in {1}? Taking over a prisoner or guest is a hostile act. Their faction may become hostile after the transfer succeeds.</TM_SoulStoneHarmful>
+  <TM_SoulStoneRecoveryRemaining>The spirit must recover in this body for another {0}.</TM_SoulStoneRecoveryRemaining>
+  <TM_SoulStoneNoExitCell>There is no clear space near the host for the spirit to emerge.</TM_SoulStoneNoExitCell>
+</LanguageData>

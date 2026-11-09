@@ -126,7 +126,9 @@ namespace TorannMagic
                     Hediff hediff = pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_ChiHD);
                     PawnAbility ability = pawn.GetCompAbilityUserMight().AbilityData.Powers.FirstOrDefault((PawnAbility x) => x.Def == TorannMagicDefOf.TM_Meditate);
 
-                    if (ability.CooldownTicksLeft > 0 || hediff.Severity >= 70)
+                    // Ф4: knowledge-store gate + quiet skip while the chi hediff or
+                    // runtime ability has not been granted yet (60-tick cadence).
+                    if (!TM_Calc.MonkMeditateJobGate(pawn, mightPower, ability, hediff))
                     {
                         return null;
                     }

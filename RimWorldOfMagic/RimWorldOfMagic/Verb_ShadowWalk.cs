@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using System;
 using Verse;
 using AbilityUser;
@@ -36,6 +36,25 @@ namespace TorannMagic
             return validTarg;
         }
 
+        internal static bool CompleteCrossing(PawnAbility ability, Pawn target, Map map, IntVec3 origin)
+        {
+            var pawn = ability?.Pawn;
+            if (pawn == null || target == null || pawn == target || map == null || !target.Spawned
+                || !pawn.Spawned || pawn.Map != map || target.Map != map || pawn.Position != target.Position
+                || origin == pawn.Position || ability.Def != TorannMagicDefOf.TM_ShadowWalk
+                || !ClassProgression.ClassIdentity.TryGetState(pawn, out var state)) return false;
+            var path = state.Find("rwom.shadow");
+            if (path == null || !(ability.AbilityUser is CompAbilityUserMagic owner)
+                || owner.Pawn != pawn || !owner.AbilityData.Powers.Any(a => ReferenceEquals(a, ability))) return false;
+            if (path.Stage == ClassProgression.InitiationStage.Foundation && (pawn.Position - origin).LengthHorizontal >= 8)
+            {
+                const string trial = "rwom.shadow.crossing";
+                path.RecordCompletedTrial(trial);
+                state.TryAdvanceAfterTrial(path.ClassId, ClassProgression.InitiationStage.Foundation, trial);
+            }
+            return path.Stage == ClassProgression.InitiationStage.Adept;
+        }
+
         protected override bool TryCastShot()
         {
             bool result = false;
@@ -69,10 +88,6 @@ namespace TorannMagic
                         this.CasterPawn.DeSpawn();
                         GenSpawn.Spawn(p, this.currentTarget.Cell, map);
                         p.drafter.Drafted = draftFlag;
-                        if (ModOptions.Settings.Instance.cameraSnap)
-                        {
-                            CameraJumper.TryJumpAndSelect(p);
-                        }
                         ModOptions.Constants.SetPawnInFlight(false);                        
                     }
                     else
@@ -82,13 +97,14 @@ namespace TorannMagic
                         GenSpawn.Spawn(p, this.currentTarget.Cell, map);
                         ModOptions.Constants.SetPawnInFlight(false);
                     }
-                    if (pwrVal > 0)
+                    bool practiced = CompleteCrossing(Ability, targetPawn, map, cell);
+                    if (practiced || pwrVal > 0)
                     {
                         HealthUtility.AdjustSeverity(p, TorannMagicDefOf.TM_ShadowCloakHD, .5f);
                         HediffComp_Disappears hdComp = p.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_ShadowCloakHD).TryGetComp<HediffComp_Disappears>();
                         if (hdComp != null)
                         {
-                            hdComp.ticksToDisappear = 60 + (60 * pwrVal);
+                            hdComp.ticksToDisappear = 60 + (60 * pwrVal) + (practiced ? 60 : 0);
                         }
                     }
                     if (verVal > 0)

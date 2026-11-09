@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritRaiseUndead.reportString>піднімає нежить через тіло носія.</TM_SpiritRaiseUndead.reportString>
+  <TM_SpiritDeathMark.reportString>накладає мітку смерті через носія духа.</TM_SpiritDeathMark.reportString>
+  <TM_SpiritDeathMark_I.reportString>накладає мітку смерті через носія духа.</TM_SpiritDeathMark_I.reportString>
+  <TM_SpiritDeathMark_II.reportString>накладає мітку смерті через носія духа.</TM_SpiritDeathMark_II.reportString>
+  <TM_SpiritDeathMark_III.reportString>накладає мітку смерті через носія духа.</TM_SpiritDeathMark_III.reportString>
+  <TM_SpiritConsumeCorpse.reportString>поглинає останки через носія Духа.</TM_SpiritConsumeCorpse.reportString>
+  <TM_SpiritConsumeCorpse_I.reportString>поглинає останки через носія Духа.</TM_SpiritConsumeCorpse_I.reportString>
+  <TM_SpiritConsumeCorpse_II.reportString>поглинає останки через носія Духа.</TM_SpiritConsumeCorpse_II.reportString>
+  <TM_SpiritConsumeCorpse_III.reportString>поглинає останки через носія Духа.</TM_SpiritConsumeCorpse_III.reportString>
+  <TM_SpiritConsumeCorpse_Mass.reportString>поглинає останки через носія Духа.</TM_SpiritConsumeCorpse_Mass.reportString>
+  <TM_SpiritCorpseExplosion.reportString>готує вибух останків через носія Духа.</TM_SpiritCorpseExplosion.reportString>
+  <TM_SpiritCorpseExplosion_I.reportString>готує вибух останків через носія Духа.</TM_SpiritCorpseExplosion_I.reportString>
+  <TM_SpiritCorpseExplosion_II.reportString>готує вибух останків через носія Духа.</TM_SpiritCorpseExplosion_II.reportString>
+  <TM_SpiritCorpseExplosion_III.reportString>готує вибух останків через носія Духа.</TM_SpiritCorpseExplosion_III.reportString>
+  <TM_SpiritFogOfTorment.reportString>викликає туман мук через носія Духа.</TM_SpiritFogOfTorment.reportString>
+  <TM_SpiritDeathBolt.reportString>випускає стріли смерті через носія Духа.</TM_SpiritDeathBolt.reportString>
+  <TM_SpiritDeathBolt_I.reportString>випускає стріли смерті через носія Духа.</TM_SpiritDeathBolt_I.reportString>
+  <TM_SpiritDeathBolt_II.reportString>випускає стріли смерті через носія Духа.</TM_SpiritDeathBolt_II.reportString>
+  <TM_SpiritDeathBolt_III.reportString>випускає стріли смерті через носія Духа.</TM_SpiritDeathBolt_III.reportString>
+</LanguageData>

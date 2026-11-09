@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="TM_BuildingBase">
+    <defName>TM_EtherGate</defName>
+    <label>ether gate</label>
+    <description>Summons a friendly ether servant for 100 magofuel. Each servant hauls goods for one day without food, sleep or air. The gate receives magofuel through mana beacons and can also be refueled by hand. It needs no electricity. When a servant expires, its cargo is dropped safely and it vanishes without loot. If killed, it leaves 5 magicyte and its cargo, but no corpse. Existing servants remain active if the gate is destroyed. Also mines with a starting Mining skill of 10 and builds with a starting Construction skill of 5. Work priority: construction, designated mining, then hauling. It floats across open space between platforms at normal speed, but cannot pass through walls.</description>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>Buildings/EtherGate</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2.4,2.4)</drawSize>
+      <drawRotated>false</drawRotated>
+      <allowFlip>false</allowFlip>
+    </graphicData>
+    <placeWorkers><li>TorannMagic.Odyssey.PlaceWorker_ManaNetwork</li></placeWorkers>
+    <size>(2,2)</size>
+    <rotatable>true</rotatable>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories><li>BuildingsMisc</li></thingCategories>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <fillPercent>1</fillPercent>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>TM_RWoM</designationCategory>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints><WorkToBuild>8000</WorkToBuild><Mass>40</Mass><Flammability>0.2</Flammability>
+    </statBases>
+    <costList><Steel>150</Steel><RawMagicyte>100</RawMagicyte><ComponentIndustrial>4</ComponentIndustrial></costList>
+    <researchPrerequisites><li>TM_MagofuelRefining</li></researchPrerequisites>
+    <comps>
+      <li Class="TorannMagic.Odyssey.CompProperties_EtherGate" />
+      <li Class="CompProperties_Refuelable">
+        <fuelCapacity>100</fuelCapacity>
+        <initialFuelPercent>0</initialFuelPercent>
+        <fuelConsumptionRate>0</fuelConsumptionRate>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <functionsInVacuum>true</functionsInVacuum>
+        <fuelMultiplier>1</fuelMultiplier>
+        <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+        <initialConfigurableTargetFuelLevel>100</initialConfigurableTargetFuelLevel>
+        <initialAllowAutoRefuel>true</initialAllowAutoRefuel>
+        <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+        <showFuelGizmo>true</showFuelGizmo>
+        <drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+        <fuelFilter><thingDefs><li>TM_Magofuel</li></thingDefs></fuelFilter>
+      </li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="TorannMagic.Odyssey.CompProperties_ManaNetworkEndpoint">
+        <supportsMana>false</supportsMana>
+        <defaultManaMode>Off</defaultManaMode>
+        <defaultFuelMode>Receive</defaultFuelMode>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- Independent lifecycle: do not inherit TMPawnSummoned or its reset-on-load timer. -->
+  <ThingDef>
+    <defName>TM_EtherServant</defName>
+    <label>ether servant</label>
+    <description>A friendly spirit summoned by an ether gate to haul goods for one day. It needs no food, sleep or air. On expiry it drops its cargo and vanishes. If killed, it drops its cargo and 5 magicyte instead of leaving a corpse. Also mines with a starting Mining skill of 10 and builds with a starting Construction skill of 5. Work priority: construction, designated mining, then hauling. It floats across open space between platforms at normal speed, but cannot pass through walls.</description>
+    <thingClass>TorannMagic.Odyssey.Pawn_EtherServant</thingClass>
+    <category>Pawn</category>
+    <selectable>true</selectable>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Pawn</altitudeLayer>
+    <useHitPoints>false</useHitPoints>
+    <hasTooltip>true</hasTooltip>
+    <tradeability>None</tradeability>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <statBases>
+      <MoveSpeed>4.6</MoveSpeed><CarryingCapacity>75</CarryingCapacity><Mass>20</Mass>
+      <MarketValue>0</MarketValue><MeatAmount>0</MeatAmount><LeatherAmount>0</LeatherAmount>
+      <Flammability>0</Flammability><PsychicSensitivity>0</PsychicSensitivity>
+      <VacuumResistance>1</VacuumResistance><ToxicResistance>1</ToxicResistance>
+      <ComfyTemperatureMin>-200</ComfyTemperatureMin><ComfyTemperatureMax>200</ComfyTemperatureMax>
+    </statBases>
+    <inspectorTabs><li>ITab_Pawn_Health</li><li>ITab_Pawn_Gear</li><li>ITab_Pawn_Log</li></inspectorTabs>
+    <race>
+      <body>Elemental</body>
+      <fleshType>TM_StoneFlesh</fleshType>
+      <intelligence>ToolUser</intelligence>
+      <renderTree>Animal</renderTree>
+      <needsRest>false</needsRest>
+      <hasGenders>false</hasGenders>
+      <foodType>None</foodType>
+      <baseHungerRate>0</baseHungerRate>
+      <canBeVacuumBurnt>false</canBeVacuumBurnt>
+      <trainability>None</trainability>
+      <herdMigrationAllowed>false</herdMigrationAllowed>
+      <predator>false</predator>
+      <allowedOnCaravan>true</allowedOnCaravan>
+      <baseBodySize>1</baseBodySize>
+      <baseHealthScale>1</baseHealthScale>
+      <lifeExpectancy>3000</lifeExpectancy>
+      <thinkTreeMain>TM_EtherServantThinkTree</thinkTreeMain>
+      <lifeStageAges><li><def>TM_EtherServantAdult</def><minAge>0</minAge></li></lifeStageAges>
+    </race>
+    <comps><li><compClass>CompAttachBase</compClass></li></comps>
+  </ThingDef>
+
+  <LifeStageDef>
+    <defName>TM_EtherServantAdult</defName>
+    <label>manifested</label>
+    <bodySizeFactor>1</bodySizeFactor>
+    <healthScaleFactor>1</healthScaleFactor>
+  </LifeStageDef>
+
+  <PawnKindDef>
+    <defName>TM_EtherServantKind</defName>
+    <label>ether servant</label>
+    <race>TM_EtherServant</race>
+    <combatPower>0</combatPower>
+    <ecoSystemWeight>0</ecoSystemWeight>
+    <canArriveManhunter>false</canArriveManhunter>
+    <lifeStages>
+      <li>
+        <label>ether servant</label><labelPlural>ether servants</labelPlural>
+        <bodyGraphicData>
+          <texPath>Pawns/EtherServant/EtherServant</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <shaderType>Cutout</shaderType>
+          <drawSize>1.4</drawSize>
+          <allowFlip>false</allowFlip>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <ThinkTreeDef>
+    <defName>TM_EtherServantThinkTree</defName>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="ThinkNode_Subtree"><treeDef>Downed</treeDef></li>
+        <li Class="TorannMagic.Odyssey.JobGiver_EtherHaul" />
+        <li Class="JobGiver_WanderColony"><maxDanger>None</maxDanger><ticksBetweenWandersRange>120~240</ticksBetweenWandersRange></li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+</Defs>

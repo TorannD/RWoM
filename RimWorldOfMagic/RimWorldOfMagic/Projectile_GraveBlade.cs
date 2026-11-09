@@ -24,12 +24,24 @@ namespace TorannMagic
         List<IntVec3> ringCellList;
         List<IntVec3> innerCellList;
         Pawn caster;
+        bool shotBound;
+
+        internal void BindShot(Pawn owner)
+        {
+            if (shotBound) return;
+            shotBound = true;
+            arcaneDmg = owner?.GetCompAbilityUserMight()?.mightPwr ?? 1f;
+            if (owner == null) return;
+            verVal = TM_Calc.GetSkillVersatilityLevel(owner, TorannMagicDefOf.TM_GraveBlade);
+            pwrVal = TM_Calc.GetSkillPowerLevel(owner, TorannMagicDefOf.TM_GraveBlade);
+        }
 
         int effectDelay = 1;
 
         public override void ExposeData()
         {
             base.ExposeData();
+            Scribe_Values.Look(ref shotBound, "TM_fieldBound");
             Scribe_Values.Look<bool>(ref this.initialized, "initialized", true, false);
             Scribe_Values.Look<int>(ref this.age, "age", -1, false);
             Scribe_Values.Look<int>(ref this.duration, "duration", 65, false);
@@ -38,6 +50,8 @@ namespace TorannMagic
             Scribe_Values.Look<int>(ref this.effectIndex2, "effectIndex2", 0, false);
             Scribe_Values.Look<int>(ref this.verVal, "verVal", 0, false);
             Scribe_Values.Look<int>(ref this.pwrVal, "pwrVal", 0, false);
+            Scribe_Values.Look(ref arcaneDmg, "arcaneDmg", 1f);
+            Scribe_Values.Look(ref radius, "radius", 3f);
             Scribe_References.Look<Pawn>(ref this.caster, "caster", false);
             Scribe_Collections.Look<IntVec3>(ref this.innerCellList, "innerCellList", LookMode.Value);
             Scribe_Collections.Look<IntVec3>(ref this.ringCellList, "ringCellList", LookMode.Value);
@@ -56,6 +70,7 @@ namespace TorannMagic
         {
             base.Tick();
             this.age++;
+            if (initialized && !Destroyed && age < duration) UpdateField();
         }
 
         protected override void Impact(Thing hitThing, bool blockedByShield = false)
@@ -73,14 +88,12 @@ namespace TorannMagic
                 //verVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_GraveBlade, "TM_GraveBlade", "_ver", true);
                 //pwrVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_GraveBlade, "TM_GraveBlade", "_pwr", true);
                 //
-                this.arcaneDmg = comp.mightPwr;
+                if (!shotBound) BindShot(caster);
                 //if (ModOptions.Settings.Instance.AIHardMode && !caster.IsColonist)
                 //{
                 //    pwrVal = 3;
                 //    verVal = 3;
                 //}
-                verVal = TM_Calc.GetSkillVersatilityLevel(caster, TorannMagicDefOf.TM_GraveBlade);
-                pwrVal = TM_Calc.GetSkillPowerLevel(caster, TorannMagicDefOf.TM_GraveBlade);
                 this.radius = this.def.projectile.explosionRadius;
                 this.duration = 10 + (int)(this.radius * 20);
                 this.innerCellList = GenRadial.RadialCellsAround(base.Position, this.radius, true).ToList();
@@ -89,6 +102,11 @@ namespace TorannMagic
                 this.initialized = true;
             }
 
+        }
+
+        // Persistent effects run every game tick; projectile impacts use TickInterval in 1.7.
+        private void UpdateField()
+        {
             if (this.Map != null)
             {
                 if (Find.TickManager.TicksGame % this.effectDelay == 0)
@@ -119,11 +137,12 @@ namespace TorannMagic
                     for (int i = 0; i < targetCells.Count; i++)
                     {
                         IntVec3 curCell = targetCells[i];
+                        if (!curCell.InBounds(this.Map)) continue;
                         Pawn victim = curCell.GetFirstPawn(this.Map);
                         if (victim != null && !victim.Destroyed && !victim.Dead && victim != this.caster)
                         {
                             TM_Action.DamageEntities(victim, null, (Rand.Range(10, 16) + (2 * pwrVal)) * this.arcaneDmg, TMDamageDefOf.DamageDefOf.TM_Spirit, this.launcher);
-                            if (!this.caster.DestroyedOrNull() && !this.caster.Dead && Rand.Chance(verVal))
+                            if (!this.caster.DestroyedOrNull() && !this.caster.Dead && this.caster.Spawned && this.caster.Map == this.Map && Rand.Chance(verVal))
                             {
                                 TM_Action.DoAction_HealPawn(this.caster, this.caster, 1, (Rand.Range(6, 10) + (2 * verVal)) * this.arcaneDmg);
                                 TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_SpiritRetaliation, this.caster.DrawPos, this.caster.Map, Rand.Range(1f, 1.2f), Rand.Range(.1f, .15f), 0, Rand.Range(.1f, .2f), -600, 0, 0, Rand.Range(0, 360));

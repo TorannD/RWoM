@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  
+  <TM_CureDisease.label>Curar enfermedad</TM_CureDisease.label>
+  <TM_CureDisease.description>Puede curar la mayoría de las enfermedades e infecciones.</TM_CureDisease.description>
+
+  
+  <TM_Poison.label>Veneno</TM_Poison.label>
+  <TM_Poison.description>Toxina de acción rápida que se abre paso hasta el torrente sanguíneo del objetivo. Cuanto más se mueve el objetivo, más letal se vuelve el veneno. El veneno es ineficaz contra los mecanoides.</TM_Poison.description>
+
+  
+  <TM_Regenerate.label>Regeneración</TM_Regenerate.label>
+  <TM_Regenerate.description>La regeneración actúa como un curativo natural con el paso del tiempo y restaura incluso heridas graves si se aplica de forma continuada. La regeneración base restaura 4 puntos de salud a 1 herida cada 5 segundos. Solo cura lesiones físicas y no restaura ni cura partes del cuerpo destruidas.</TM_Regenerate.description>
+
+  
+  <TM_RegrowLimb.label>Rebrote</TM_RegrowLimb.label>
+  <TM_RegrowLimb.description>Crea la Semilla de vida necesaria para hacer rebrotar partes del cuerpo. Las cirugías de rebrote solo aparecerán como opción cuando todos los componentes estén en zonas de almacenamiento: 1 Semilla de vida, pociones de maná y medicina; después selecciona la parte del cuerpo que quieres regenerar en la pestaña de cirugía del paciente. Asegúrate de que este druida (u otro con este hechizo) realice la cirugía y de que tenga 90 de maná o más en el momento de operar.</TM_RegrowLimb.description>
+
+  
+  <TM_SootheAnimal.label>Hechizar animal</TM_SootheAnimal.label>
+  <TM_SootheAnimal.description>Gracias a su dominio de la naturaleza, el druida puede abrumar el estado emocional de los animales. Esta habilidad tiene doble propósito: si el animal está tranquilo, incitará a la bestia a una furia cazahombres; si ya está enfurecido, la apaciguará. No funciona con animales que pertenezcan a una facción.\n\nAlcance: 65\nTiempo de recarga: 80 s\nObjetivos máx.: 4\nTamaño del área: 7</TM_SootheAnimal.description>
+
+  <TM_SootheAnimal_I.label>Hechizar animal (I)</TM_SootheAnimal_I.label>
+  <TM_SootheAnimal_I.description>Gracias a su dominio de la naturaleza, el druida puede abrumar el estado emocional de los animales. Esta habilidad tiene doble propósito: si el animal está tranquilo, incitará a la bestia a una furia cazahombres; si ya está enfurecido, la apaciguará. No funciona con animales que pertenezcan a una facción.\n\nAlcance: 70\nTiempo de recarga: 75 s\nObjetivos máx.: 6\nTamaño del área: 8</TM_SootheAnimal_I.description>
+
+  <TM_SootheAnimal_II.label>Hechizar animal (II)</TM_SootheAnimal_II.label>
+  <TM_SootheAnimal_II.description>Gracias a su dominio de la naturaleza, el druida puede abrumar el estado emocional de los animales. Esta habilidad tiene doble propósito: si el animal está tranquilo, incitará a la bestia a una furia cazahombres; si ya está enfurecido, la apaciguará. No funciona con animales que pertenezcan a una facción.\n\nAlcance: 75\nTiempo de recarga: 68 s\nObjetivos máx.: 7\nTamaño del área: 9</TM_SootheAnimal_II.description>
+
+  <TM_SootheAnimal_III.label>Hechizar animal (III)</TM_SootheAnimal_III.label>
+  <TM_SootheAnimal_III.description>Gracias a su dominio de la naturaleza, el druida puede abrumar el estado emocional de los animales. Esta habilidad tiene doble propósito: si el animal está tranquilo, incitará a la bestia a una furia cazahombres; si ya está enfurecido, la apaciguará. No funciona con animales que pertenezcan a una facción.\n\nAlcance: 80\nTiempo de recarga: 60 s\nObjetivos máx.: 7\nTamaño del área: 10</TM_SootheAnimal_III.description>
+
+</LanguageData>

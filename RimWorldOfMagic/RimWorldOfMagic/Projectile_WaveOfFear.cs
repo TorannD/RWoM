@@ -27,6 +27,20 @@ namespace TorannMagic
         int waveRange = 1;
         Pawn caster;
         List<Pawn> affectedPawns;
+        bool shotBound;
+        Pawn skillOwner;
+
+        internal void BindShot(Pawn owner)
+        {
+            if (shotBound) return;
+            shotBound = true;
+            skillOwner = owner;
+            arcaneDmg = owner?.GetCompAbilityUserMight()?.mightPwr ?? 1f;
+            if (owner == null) return;
+            pwrVal = TM_Calc.GetSkillPowerLevel(owner, TorannMagicDefOf.TM_WaveOfFear);
+            verVal = TM_Calc.GetSkillVersatilityLevel(owner, TorannMagicDefOf.TM_WaveOfFear);
+            effVal = TM_Calc.GetSkillEfficiencyLevel(owner, TorannMagicDefOf.TM_WaveOfFear);
+        }
 
         //if (!victim.IsWildMan() && victim.RaceProps.Humanlike && victim.mindState != null && !victim.InMentalState)
         //                        {
@@ -43,6 +57,8 @@ namespace TorannMagic
         public override void ExposeData()
         {
             base.ExposeData();
+            Scribe_Values.Look(ref shotBound, "TM_fieldBound");
+            Scribe_References.Look(ref skillOwner, "TM_fieldOwner");
             Scribe_Values.Look<bool>(ref this.initialized, "initialized", true, false);
             Scribe_Values.Look<int>(ref this.age, "age", -1, false);
             Scribe_Values.Look<int>(ref this.duration, "duration", 40, false);
@@ -50,6 +66,10 @@ namespace TorannMagic
             Scribe_Values.Look<float>(ref this.radius, "radius", 4, false);
             Scribe_Values.Look<int>(ref this.verVal, "verVal", 0, false);
             Scribe_Values.Look<int>(ref this.pwrVal, "pwrVal", 0, false);
+            Scribe_Values.Look(ref effVal, "effVal");
+            Scribe_Values.Look(ref arcaneDmg, "arcaneDmg", 1f);
+            Scribe_Collections.Look(ref affectedPawns, "affectedPawns", LookMode.Reference);
+            if (Scribe.mode == LoadSaveMode.PostLoadInit) affectedPawns ??= new List<Pawn>();
             Scribe_References.Look<Pawn>(ref this.caster, "caster", false);
             Scribe_Values.Look<int>(ref this.waveDelay, "waveDelay", 10, false);
         }
@@ -68,6 +88,7 @@ namespace TorannMagic
             base.Impact(hitThing);
             ThingDef def = this.def;
             this.caster = this.launcher as Pawn;
+            if (caster == null || !caster.Spawned || map != null && caster.Map != map) return;
 
             if(!this.initialized)
             {
@@ -84,27 +105,25 @@ namespace TorannMagic
                 //    pwrVal = mpwr.level;
                 //    verVal = mver.level;
                 //}
-                pwrVal = TM_Calc.GetSkillPowerLevel(caster, TorannMagicDefOf.TM_WaveOfFear);
-                verVal = TM_Calc.GetSkillVersatilityLevel(caster, TorannMagicDefOf.TM_WaveOfFear);
-                effVal = TM_Calc.GetSkillEfficiencyLevel(caster, TorannMagicDefOf.TM_WaveOfFear);
-                this.arcaneDmg = comp.mightPwr;
+                if (!shotBound) BindShot(caster);
+                Pawn resourceOwner = skillOwner ?? caster;
                 
                 //if (!caster.IsColonist && ModOptions.Settings.Instance.AIHardMode)
                 //{
                 //    pwrVal = 3;
                 //    verVal = 3;
                 //}                
-                for (int h = 0; h < caster.health.hediffSet.hediffs.Count; h++)
+                for (int h = 0; h < resourceOwner.health.hediffSet.hediffs.Count; h++)
                 {
-                    if (caster.health.hediffSet.hediffs[h].def.defName.Contains("TM_HateHD"))
+                    if (resourceOwner.health.hediffSet.hediffs[h].def.defName.Contains("TM_HateHD"))
                     {
-                        hediff = caster.health.hediffSet.hediffs[h];
+                        hediff = resourceOwner.health.hediffSet.hediffs[h];
                     }
                 }
                 if (hediff != null)
                 {
                     this.radius = 4 + (.8f * verVal) + (.07f * hediff.Severity);
-                    HealthUtility.AdjustSeverity(caster, hediff.def, -(25f * (1 - .1f * this.effVal)));
+                    HealthUtility.AdjustSeverity(resourceOwner, hediff.def, -(25f * (1 - .1f * this.effVal)));
                 }
                 else
                 {
@@ -125,15 +144,12 @@ namespace TorannMagic
                 this.initialized = true;
             }  
 
-            if(Find.TickManager.TicksGame % this.waveDelay == 0 && !this.caster.DeadOrDowned && this.caster.Map != null)
-            {
-                SearchAndFear();
-                this.waveRange++;
-            }
         }
 
         public void SearchAndFear()
         {
+            // The persistent wave belongs to its original map, not to a carrier that left it.
+            if (caster == null || !caster.Spawned || caster.DeadOrDowned || Map == null || caster.Map != Map) return;
             List<Pawn> mapPawns = this.caster.Map.mapPawns.AllPawnsSpawned.ToList();
             if (mapPawns != null && mapPawns.Count > 0)
             {
@@ -144,7 +160,7 @@ namespace TorannMagic
                     {
                         if (victim.Faction != null && victim.Faction != caster.Faction && (victim.Position - caster.Position).LengthHorizontal < this.waveRange)
                         {
-                            if (Rand.Chance(TM_Calc.GetSpellSuccessChance(caster, victim, true)))
+                            if (Rand.Chance(TM_Calc.GetSpellSuccessChance(skillOwner ?? caster, victim, true)))
                             {
                                 LocalTargetInfo t = new LocalTargetInfo(victim.Position + (6 * this.arcaneDmg * TM_Calc.GetVector(caster.DrawPos, victim.DrawPos)).ToIntVec3());
                                 if (victim.jobs != null)
@@ -162,7 +178,7 @@ namespace TorannMagic
                         }
                         else if(victim.Faction == null && (victim.Position - caster.Position).LengthHorizontal < this.waveRange)
                         {
-                            if (Rand.Chance(TM_Calc.GetSpellSuccessChance(caster, victim, true)))
+                            if (Rand.Chance(TM_Calc.GetSpellSuccessChance(skillOwner ?? caster, victim, true)))
                             {
                                 LocalTargetInfo t = new LocalTargetInfo(victim.Position + (6 * this.arcaneDmg * TM_Calc.GetVector(caster.DrawPos, victim.DrawPos)).ToIntVec3());
                                 if (victim.jobs != null)
@@ -187,6 +203,14 @@ namespace TorannMagic
         {
             base.Tick();
             this.age++;
+            // Projectile impacts run on TickInterval in 1.7. The persistent field needs
+            // its own cadence rather than relying on another impact at a matching tick.
+            if (initialized && !Destroyed && age <= duration && Find.TickManager.TicksGame % waveDelay == 0 &&
+                caster?.Spawned == true && !caster.DeadOrDowned && caster.Map == Map)
+            {
+                SearchAndFear();
+                waveRange++;
+            }
         }
 
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)

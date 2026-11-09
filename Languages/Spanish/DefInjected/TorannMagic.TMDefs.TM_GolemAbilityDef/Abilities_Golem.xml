@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_FleshGolem_BullCharge.label>embestida de toro</TM_FleshGolem_BullCharge.label>
+  
+  
+  <TM_FleshGolem_Dismember.label>desmembrar</TM_FleshGolem_Dismember.label>
+  
+  
+  <TM_FleshGolem_EyeCurse.label>debilitar</TM_FleshGolem_EyeCurse.label>
+  
+  
+  <TM_FleshGolem_LeftCleave.label>hendidura</TM_FleshGolem_LeftCleave.label>
+  
+  
+  <TM_FleshGolem_RightCleave.label>hendidura</TM_FleshGolem_RightCleave.label>
+  
+  
+  <TM_FleshGolem_WingHaste.label>prisa</TM_FleshGolem_WingHaste.label>
+  
+  
+  <TM_HollowGolem_AbsorbFire.label>absorber fuego</TM_HollowGolem_AbsorbFire.label>
+  
+  
+  <TM_HollowGolem_Awakening.label>despertar</TM_HollowGolem_Awakening.label>
+  
+  
+  <TM_HollowGolem_BurningFury.label>furia ardiente</TM_HollowGolem_BurningFury.label>
+  
+  
+  <TM_HollowGolem_Fade.label>desvanecer</TM_HollowGolem_Fade.label>
+  
+  
+  <TM_HollowGolem_WellOfDespair.label>pozo de desesperación</TM_HollowGolem_WellOfDespair.label>
+  
+  
+  <TM_Mecha-Golem_AbsorbFilth.label>conversión de residuos</TM_Mecha-Golem_AbsorbFilth.label>
+  
+  
+  <TM_Mecha-Golem_GatlingCannon.label>Cañón gatling montado en el hombro del mecagolem</TM_Mecha-Golem_GatlingCannon.label>
+  
+  
+  <TM_Mecha-Golem_HealSelf.label>módulo de autorreparación</TM_Mecha-Golem_HealSelf.label>
+  
+  
+  <TM_Mecha-Golem_MiningLaser.label>Láser minero montado en el hombro del mecagolem</TM_Mecha-Golem_MiningLaser.label>
+  
+  
+  <TM_Mecha-Golem_ShieldSelf.label>módulo de escudo de energía</TM_Mecha-Golem_ShieldSelf.label>
+  
+</LanguageData>

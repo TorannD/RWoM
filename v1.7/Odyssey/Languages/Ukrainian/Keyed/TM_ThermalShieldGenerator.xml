@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_ShieldManaBuffer>Буфер мани: {0} / {1}</TM_ShieldManaBuffer>
+  <TM_ThermalFieldStrength>Захист від холоду: {0}</TM_ThermalFieldStrength>
+  <TM_ThermalStatusStandby>Резерв: працює інший тепловий генератор</TM_ThermalStatusStandby>
+</LanguageData>

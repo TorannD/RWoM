@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_Empathy.label>empatía</TM_Empathy.label>
+  
+  <TM_Empathy.description>Un empático puede experimentar las emociones de quienes lo rodean y hacerlas resonar para comprender mejor sus sentimientos o transmitir los propios. Estas habilidades innatas se han potenciado mediante el poder arcano, amplificando los efectos de la empatía. Los peones cercanos experimentarán ocasionalmente versiones atenuadas de las emociones del empático, tanto positivas como negativas. Cuantas más emociones positivas sienta el empático, más probable será que los peones cercanos reciban emociones positivas. Dominar estas habilidades puede convertir la empatía en una herramienta eficaz para gestionar el ánimo de la colonia, pero un empático estresado y sin entrenar puede sumir a toda la colonia en la desesperación.</TM_Empathy.description>
+  
+  
+  <TM_FadeEmotions.label>desvanecer emociones</TM_FadeEmotions.label>
+  
+  <TM_FadeEmotions.description>Reduce el ánimo del empático y del objetivo para liberar al objetivo de sus recuerdos negativos. El primer recuerdo eliminado siempre consume 30 puntos de ánimo del objetivo. Cada recuerdo negativo adicional también consume 30 puntos de ánimo para ser eliminado. El efecto termina cuando el objetivo tiene menos de 30 puntos de ánimo o ya no le quedan recuerdos negativos. Esta habilidad no afecta a los modificadores situacionales del ánimo.</TM_FadeEmotions.description>
+  
+  
+  <TM_HarvestPassion.label>cosechar pasión</TM_HarvestPassion.label>
+  
+  <TM_HarvestPassion.description>Intenta robar una pasión por el trabajo al peón objetivo. Para activar esta habilidad, el lanzador debe sacrificar una inspiración activa. Cuando se agota toda la diversión del objetivo, el efecto intenta transferir una pasión por el trabajo al lanzador. La diversión del lanzador también se consume con cada intento. Si no se transfiere ninguna pasión antes de que se agote la diversión del lanzador, la habilidad termina. Mientras el efecto esté activo, tanto el lanzador como el objetivo sufrirán un trauma impactante. La pasión por el trabajo obtenida siempre es aleatoria.</TM_HarvestPassion.description>
+  
+  
+  <TM_IncitePassion.label>incitar pasión</TM_IncitePassion.label>
+  
+  <TM_IncitePassion.description>Transfiere una pasión por el trabajo del lanzador al peón objetivo. Esta habilidad siempre tiene éxito, pero los esclavos no pueden utilizarla. La pasión por el trabajo que se transferirá puede seleccionarse haciendo clic derecho en el icono de la habilidad. Si no se selecciona ninguna, se transferirá una pasión aleatoria.</TM_IncitePassion.description>
+  
+  
+  <TM_MindKiller.label>asesino de mentes</TM_MindKiller.label>
+  
+  <TM_MindKiller.description>Libera un lamento empático que inunda de emociones a todos los peones cercanos. Las reacciones pueden variar, pero a la mayoría de los organismos vivos les resulta difícil soportar una oleada emocional tan abrumadora. Puede hacer que los peones hostiles entren en frenesí. Cuanto más alto sea el ánimo de un peón afectado, más energía emocional se liberará. Sin el entrenamiento adecuado, esta habilidad también puede afectar a los peones aliados cercanos.</TM_MindKiller.description>
+  
+  
+  <TM_SuppressiveAura.label>aura supresora</TM_SuppressiveAura.label>
+  
+  <TM_SuppressiveAura.description>Crea un aura alrededor del empático que suprime las emociones de los demás peones y les permite sentir únicamente lo que el empático desea. Con entrenamiento, el empático puede permitir las emociones positivas y suprimir las negativas. Como efecto secundario, el aura puede transferir las emociones del propio empático. Los peones cuyas emociones estén suprimidas no sufrirán crisis mentales.</TM_SuppressiveAura.description>
+  
+  
+  <TM_Symbiosis.label>simbiosis</TM_Symbiosis.label>
+  
+  <TM_Symbiosis.description>Entrelaza el destino del empático con el del peón objetivo. El empático entra en un estado de vacío mental y pierde el control de su propio cuerpo mientras proyecta su voluntad para reforzar la del objetivo. El empático conserva los efectos y las auras que ya tuviera activos, mientras que el objetivo obtiene fortaleza emocional y fuerza mental. El simbionte puede sufrir secuelas físicas de las heridas que reciba su anfitrión. Si el anfitrión muere mientras el empático está vinculado a él como simbionte, el empático también morirá. La simbiosis termina cuando se agota el ánimo del empático y puede finalizarse manualmente si el anfitrión y el simbionte están muy cerca.</TM_Symbiosis.description>
+  
+</LanguageData>

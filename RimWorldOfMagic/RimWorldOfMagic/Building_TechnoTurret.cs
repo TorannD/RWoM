@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,6 +29,10 @@ namespace TorannMagic
         private int verVal = 0;
         private int pwrVal = 0;
         private int effVal = 0;
+
+        private float capturedScale = 1f;
+        internal int SkillPower => pwrVal;
+        internal int SkillEfficiency => effVal;
 
         public int age = 0;
         public int duration = 3600;
@@ -92,6 +96,11 @@ namespace TorannMagic
         public override void ExposeData()
         {
             base.ExposeData();
+            ExposeTechnoTurretData();
+        }
+
+        internal void ExposeTechnoTurretData()
+        {
             Scribe_Values.Look<int>(ref this.verVal, "verVal", 0, false);
             Scribe_Values.Look<int>(ref this.pwrVal, "pwrVal", 0, false);
             Scribe_Values.Look<int>(ref this.mortarMaxRange, "mortarMaxRange", 80, false);
@@ -101,11 +110,83 @@ namespace TorannMagic
             Scribe_Values.Look<float>(ref this.rocketManaCost, "rocketManaCost", 0.05f, false);
             Scribe_Values.Look<float>(ref this.mortarManaCost, "mortarManaCost", 0.1f, false);
             Scribe_Values.Look(ref burstActivated, "burstActivated", false);
-            Scribe_Values.Look<Pawn>(ref this.manPawn, "manPawn");
+            // Legacy manPawn was value-scribed, not a recoverable pawn reference.
+            Scribe_References.Look(ref this.manPawn, "manPawnReference");
             Scribe_Values.Look<IntVec3>(ref this.iCell, "iCell");
             Scribe_Values.Look<int>(ref this.age, "age", 0);
             Scribe_Values.Look<int>(ref this.duration, "duration", 3600);
+            Scribe_Values.Look(ref this.initialized, "technoTurretInitialized", this.age > 0);
+            Scribe_Values.Look(ref this.effVal, "effVal", 0);
+            Scribe_Values.Look(ref this.nextRocketFireTick, "nextRocketFireTick", 0);
+            Scribe_Values.Look(ref capturedScale, "TM_turretScale", -1f);
+            if (Scribe.mode == LoadSaveMode.PostLoadInit)
+            {
+                comp = null;
+                if (capturedScale < 0f) capturedScale = manPawn?.GetCompAbilityUserMagic()?.arcaneDmg ?? 1f;
+            }
         }
+
+        internal void InitializeTechnoTurret()
+        {
+            if (manPawn.DestroyedOrNull()) { comp = null; return; }
+            comp = manPawn.GetCompAbilityUserMagic();
+            if (initialized || comp == null) return;
+            var skills = comp.MagicData.MagicPowerSkill_TechnoTurret;
+            var versatility = skills.FirstOrDefault(x => x.label == "TM_TechnoTurret_ver");
+            var power = skills.FirstOrDefault(x => x.label == "TM_TechnoTurret_pwr");
+            var efficiency = skills.FirstOrDefault(x => x.label == "TM_TechnoTurret_eff");
+            if (versatility == null || power == null || efficiency == null) return;
+            Configure(power.level, versatility.level, efficiency.level, comp.arcaneDmg);
+        }
+
+        private void Configure(int power, int versatility, int efficiency, float scale)
+        {
+            pwrVal = power;
+            verVal = versatility;
+            effVal = efficiency;
+            capturedScale = scale;
+            duration = 3600 + (300 * effVal);
+            if (verVal >= 5)
+            {
+                rocketTicksToFire = 600 - ((verVal - 5) * 20);
+                rocketCount = verVal / 5;
+                rocketManaCost = .04f - (.001f * effVal);
+            }
+            if (verVal >= 10)
+            {
+                mortarTicksToFire = 900 - ((verVal - 10) * 40);
+                mortarMaxRange += ((verVal - 10) * 5);
+                mortarManaCost = .08f - (.002f * effVal);
+            }
+            initialized = true;
+        }
+
+        internal void Deploy(Pawn owner, IntVec3 interaction, int power, int versatility, int efficiency, float scale)
+        {
+            manPawn = owner;
+            iCell = interaction;
+            Configure(power, versatility, efficiency, scale);
+            var summoned = this.TryGetComp<CompSummoned>();
+            summoned.Temporary = true;
+            summoned.TicksToDestroy = duration;
+            StatDefOf.MaxHitPoints.Worker.ClearCacheForThing(this);
+            HitPoints = MaxHitPoints;
+        }
+
+        public override void SpawnSetup(Map map, bool respawningAfterLoad)
+        {
+            base.SpawnSetup(map, respawningAfterLoad);
+            InitializeTechnoTurret();
+            if (!initialized || gun == null) return;
+            var verb = AttackVerb;
+            var props = verb.verbProps.MemberwiseClone();
+            props.burstShotCount = Mathf.RoundToInt((6 + .4f * pwrVal) * capturedScale);
+            props.warmupTime = 1.5f - .03f * pwrVal;
+            props.range = Mathf.RoundToInt((35 + verVal) * capturedScale);
+            verb.verbProps = props;
+        }
+
+        protected override float BurstCooldownTime() => initialized ? 4.5f - .1f * pwrVal : base.BurstCooldownTime();
 
         protected override void Tick()
         {
@@ -114,27 +195,7 @@ namespace TorannMagic
             //if (!manPawn.DestroyedOrNull() && !manPawn.Dead && !manPawn.Downed && manPawn.Position == this.InteractionCell)
             if (this.age <= this.duration)
             {
-                if (!initialized)
-                {
-                    comp = manPawn.GetCompAbilityUserMagic();
-                    this.verVal = comp.MagicData.MagicPowerSkill_TechnoTurret.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_TechnoTurret_ver").level;
-                    this.pwrVal = comp.MagicData.MagicPowerSkill_TechnoTurret.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_TechnoTurret_pwr").level;
-                    this.effVal = comp.MagicData.MagicPowerSkill_TechnoTurret.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_TechnoTurret_eff").level;
-                    this.duration = 3600 + (300 * effVal);
-                    if (this.verVal >= 5)
-                    {
-                        this.rocketTicksToFire = 600 - ((verVal - 5) * 20);
-                        this.rocketCount = verVal / 5;
-                        this.rocketManaCost = .04f - (.001f * this.effVal);
-                    }
-                    if (this.verVal >= 10)
-                    {
-                        this.mortarTicksToFire = 900 - ((verVal - 10) * 40);
-                        this.mortarMaxRange += ((verVal - 10) * 5);
-                        this.mortarManaCost = .08f - (.002f * effVal);
-                    }
-                    this.initialized = true;
-                }
+                InitializeTechnoTurret();
 
                 if (!manPawn.DestroyedOrNull() && !manPawn.Dead && !manPawn.Downed && comp != null && comp.Mana != null)
                 {
@@ -312,12 +373,15 @@ namespace TorannMagic
 
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
         {
-            if (this.HitPoints < 1 && manPawn != null && !manPawn.Dead)
+            var feedbackTarget = manPawn;
+            if (ClassProgression.SpiritRebirthState.TryGet(manPawn, out var state))
+                feedbackTarget = state.HasValidHost(manPawn) ? state.Host : null;
+            if (this.HitPoints < 1 && feedbackTarget != null && !feedbackTarget.Dead)
             {
                 int rnd = Mathf.RoundToInt(Rand.Range(3, 5) - (.2f * this.effVal));
                 for (int i = 0; i < rnd; i++)
                 {
-                    TM_Action.DamageEntities(manPawn, null, Rand.Range(4f, 8f), DamageDefOf.Burn, this);
+                    TM_Action.DamageEntities(feedbackTarget, null, Rand.Range(4f, 8f), DamageDefOf.Burn, this);
                 }
             }
             base.Destroy(mode);            

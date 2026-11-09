@@ -1,0 +1,6 @@
+<LanguageData>
+  <TM_MagicalGravEngine.label>魔法引力引擎</TM_MagicalGravEngine.label>
+  <TM_MagicalGravEngine.description>可建造的奥术引力引擎，升力与标准引力引擎相同。仅连接魔法引力场扩展器，同时兼容普通引力飞船设备和魔法推进器。可储存100魔能燃料与500法力，初始为空，并通过法力信标供应两种资源。法师可以补充法力，也可将魔能燃料转化为法力。不会收取额外起飞费用。 殖民者可以前往核心接受返回印记。每个印记每天消耗 1 魔法燃料。每名成员返回消耗 10 魔法燃料；可以连同动物、俘虏和货物召回整个商队。</TM_MagicalGravEngine.description>
+  <TM_MagicalGravExtender.label>魔法引力场扩展器</TM_MagicalGravExtender.label>
+  <TM_MagicalGravExtender.description>扩大魔法引力引擎的覆盖范围并增加底层结构支撑能力。支撑能力、范围与扩展器数量上限遵循当前安装的引力飞船规则。不能连接普通引力引擎。</TM_MagicalGravExtender.description>
+</LanguageData>

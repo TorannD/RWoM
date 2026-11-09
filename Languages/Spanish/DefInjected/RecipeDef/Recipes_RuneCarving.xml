@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_RuneCarveBodyPart.label>grabado de runas</TM_RuneCarveBodyPart.label>
+  
+  <TM_RuneCarveBodyPart.description>Graba una runa en una parte del cuerpo.</TM_RuneCarveBodyPart.description>
+  
+  <TM_RuneCarveBodyPart.jobString>Grabando runa.</TM_RuneCarveBodyPart.jobString>
+  
+</LanguageData>

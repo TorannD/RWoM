@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_EtherGate.label>以太之门</TM_EtherGate.label>
+  <TM_EtherGate.description>消耗100魔能燃料召唤友善的以太仆从。仆从搬运物品一天，无需食物、睡眠或空气。以太之门通过法力信标接收魔能燃料，也可手动补充，无需电力。期限结束时，仆从安全放下货物并消失，不掉落战利品。被杀死时会留下货物和5魔晶，不留下尸体。摧毁以太之门不会影响已召唤的仆从。 还可采矿和建造，初始采矿技能为10级，建造技能为5级。工作优先级：建造、指定采矿、搬运。 可按正常速度漂浮穿过平台之间的太空，但不能穿墙。</TM_EtherGate.description>
+  <TM_EtherServant.label>以太仆从</TM_EtherServant.label>
+  <TM_EtherServant.description>由以太之门召唤的友善灵体，负责搬运物品一天。无需食物、睡眠或空气。期限结束时放下货物并消失；被杀死时留下货物和5魔晶，而非尸体。 还可采矿和建造，初始采矿技能为10级，建造技能为5级。工作优先级：建造、指定采矿、搬运。 可按正常速度漂浮穿过平台之间的太空，但不能穿墙。</TM_EtherServant.description>
+</LanguageData>

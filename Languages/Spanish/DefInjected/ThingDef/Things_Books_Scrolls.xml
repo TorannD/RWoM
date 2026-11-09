@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  
+  <BookOfQuestion.label>Escrito arcano: ???</BookOfQuestion.label>
+  <BookOfQuestion.description>Enseña a un personaje dotado a canalizar poderes mágicos...</BookOfQuestion.description>
+
+  <Torn_BookOfInnerFire.label>Escrito rasgado: Fuego</Torn_BookOfInnerFire.label>
+  <Torn_BookOfInnerFire.description>Enseña a un personaje dotado a dominar los elementos del fuego.\nEste escrito arcano está incompleto y puede que el lector no pueda aprender algunos, o ninguno, de los hechizos de fuego.</Torn_BookOfInnerFire.description>
+
+  <Torn_BookOfHeartOfFrost.label>Escrito rasgado: Hielo</Torn_BookOfHeartOfFrost.label>
+  <Torn_BookOfHeartOfFrost.description>Enseña a un personaje dotado a dominar el hielo y el agua elementales.\nEste escrito arcano está incompleto y puede que el lector no pueda aprender algunos, o ninguno, de los hechizos de mago de hielo.</Torn_BookOfHeartOfFrost.description>
+
+  <Torn_BookOfStormBorn.label>Escrito rasgado: Rayo</Torn_BookOfStormBorn.label>
+  <Torn_BookOfStormBorn.description>Enseña a un personaje dotado a dominar los elementos del rayo.\nEste escrito arcano está incompleto y puede que el lector no pueda aprender algunos, o ninguno, de los hechizos de rayo.</Torn_BookOfStormBorn.description>
+
+  <Torn_BookOfArcanist.label>Escrito rasgado: Poder</Torn_BookOfArcanist.label>
+  <Torn_BookOfArcanist.description>Enseña a un personaje dotado a dominar los poderes arcanos.\nEste escrito arcano está incompleto y puede que el lector no pueda aprender algunos, o ninguno, de los hechizos arcanos.</Torn_BookOfArcanist.description>
+
+  <Torn_BookOfValiant.label>Escrito rasgado: Paladín</Torn_BookOfValiant.label>
+  <Torn_BookOfValiant.description>Enseña a un personaje dotado a dominar los poderes sagrados.\nEste escrito arcano está incompleto y puede que el lector no pueda aprender algunos, o ninguno, de los hechizos sagrados.</Torn_BookOfValiant.description>
+
+  <Torn_BookOfSummoner.label>Escrito rasgado: Invocación</Torn_BookOfSummoner.label>
+  <Torn_BookOfSummoner.description>Enseña a un personaje dotado a invocar elementos de otras dimensiones e interactuar con ellos.\nEste escrito arcano está incompleto y puede que el lector no pueda aprender algunos, o ninguno, de los hechizos de invocación.</Torn_BookOfSummoner.description>
+
+  <Torn_BookOfNature.label>Escrito rasgado: Naturaleza</Torn_BookOfNature.label>
+  <Torn_BookOfNature.description>Enseña a un personaje dotado a dominar los elementos de la naturaleza.\nEste escrito arcano está incompleto y puede que el lector no pueda aprender algunos, o ninguno, de los hechizos de druida.</Torn_BookOfNature.description>
+
+  <Torn_BookOfUndead.label>Escrito rasgado: Nigromancia</Torn_BookOfUndead.label>
+  <Torn_BookOfUndead.description>Enseña a un personaje dotado a manipular las fuerzas de la vida y la muerte. *Nota: el nigromante puede convertirse en lich más adelante; los lich son incapaces de toda actividad salvo luchar e investigar. Muchas otras clases mágicas detestan a los nigromantes. Elige con cuidado.\nEste escrito arcano está incompleto y puede que el lector no pueda aprender algunos, o ninguno, de los hechizos de nigromante.</Torn_BookOfUndead.description>
+
+  <Torn_BookOfPriest.label>Escrito rasgado: Sacerdote</Torn_BookOfPriest.label>
+  <Torn_BookOfPriest.description>Enseña a un personaje dotado a conferir poderes de vida y curación. Los sacerdotes son incapaces de violencia y esas habilidades quedarán desactivadas.\nEste escrito arcano está incompleto y puede que el lector no pueda aprender algunos, o ninguno, de los hechizos de sacerdote.</Torn_BookOfPriest.description>
+
+  <Torn_BookOfBard.label>Escrito rasgado: Bardo</Torn_BookOfBard.label>
+  <Torn_BookOfBard.description>Enseña a un personaje dotado a convertirse en bardo profesional. Los bardos son incapaces de realizar trabajo pesado y ese tipo de trabajo quedará desactivado.\nEste escrito arcano está incompleto y puede que el lector no pueda aprender algunas, o ninguna, de las habilidades de bardo.</Torn_BookOfBard.description>
+
+  <Torn_BookOfDemons.label>Escrito rasgado: Demonología</Torn_BookOfDemons.label>
+  <Torn_BookOfDemons.description>Detalla el proceso para pactar con un demonio y obtener poder. Este contrato une al patrón, en sentido literal, con una esencia demoníaca que afecta a su composición genética. Esta unión afecta de forma distinta a hombres y mujeres. Los demonios solo aceptan el contrato si el usuario tiene el don de la magia.\n\n*Nota garabateada al pie de la primera página* Este escrito no aclara qué obtiene exactamente el demonio del trato... úsese con cautela.\n\nEste escrito arcano está incompleto y no explica el proceso completo del contrato; puede que el resultado no dé acceso inmediato a todas las habilidades.</Torn_BookOfDemons.description>
+
+  <Torn_BookOfEarth.label>Escrito rasgado: Geomancia</Torn_BookOfEarth.label>
+  <Torn_BookOfEarth.description>Enseña a un personaje dotado a combinar la ley física, los elementos y lo arcano.\nEste escrito arcano está incompleto y puede que el lector no pueda aprender algunas, o ninguna, de las habilidades de geomante.</Torn_BookOfEarth.description>
+
+  <Torn_BookOfMagitech.label>Escrito rasgado: Tecnomancia</Torn_BookOfMagitech.label>
+  <Torn_BookOfMagitech.description>Enseña a un personaje dotado los caminos del tecnomante, capaz de ver la conexión entre la ciencia y la magia.\nEste escrito arcano está incompleto: el lector no aprenderá ninguna habilidad de apoyo del tecnomante, pero aún podrá elegir su senda principal de tecnomancia.</Torn_BookOfMagitech.description>
+
+  <Torn_BookOfHemomancy.label>Escrito rasgado: Hemomancia</Torn_BookOfHemomancy.label>
+  <Torn_BookOfHemomancy.description>Enseña a un personaje dotado a convertirse en hemomante, o mago de sangre, y a usar el poder de la sangre para alimentar su magia.\nEste escrito arcano está incompleto y puede que el lector no pueda aprender algunas, o ninguna, de las habilidades de mago de sangre.</Torn_BookOfHemomancy.description>
+
+  <Torn_BookOfEnchanter.label>Escrito rasgado: Encantador</Torn_BookOfEnchanter.label>
+  <Torn_BookOfEnchanter.description>Enseña a un personaje dotado a convertirse en encantador, capaz de manipular la materia y los materiales para servir a sus fines.\nEste escrito arcano está incompleto y puede que el lector no pueda aprender algunas, o ninguna, de las habilidades de encantador.</Torn_BookOfEnchanter.description>
+
+  <Torn_BookOfChronomancer.label>Escrito rasgado: Cronomancia</Torn_BookOfChronomancer.label>
+  <Torn_BookOfChronomancer.description>Enseña a un personaje dotado a convertirse en cronomante, capaz de ver y manipular realidades a través del tiempo.\nEste escrito arcano está incompleto y puede que el lector no pueda aprender algunas, o ninguna, de las habilidades de cronomante.</Torn_BookOfChronomancer.description>
+
+  <Torn_BookOfChaos.label>Escrito rasgado: Caos</Torn_BookOfChaos.label>
+  <Torn_BookOfChaos.description>Enseña a un personaje dotado la tradición del caos.</Torn_BookOfChaos.description>
+
+  <Torn_BookOfTheSun.label>Escrito rasgado: Mago luminoso</Torn_BookOfTheSun.label>
+  <Torn_BookOfTheSun.description>Enseña a un personaje dotado a convertirse en mago luminoso. Los magos luminosos manipulan el poder de la luz solar para crear magia intensa y destructiva.</Torn_BookOfTheSun.description>
+
+  <Torn_BookOfShamanism.label>Escrito rasgado: Chamán</Torn_BookOfShamanism.label>
+  <Torn_BookOfShamanism.description>Enseña a un personaje dotado a convertirse en chamán: un líder tribal centrado en la magia ritual para crear maldiciones y encantamientos poderosos, que extiende su influencia mediante tótems.</Torn_BookOfShamanism.description>
+
+  <Torn_BookOfGolemancy.label>Escrito rasgado: Golemante</Torn_BookOfGolemancy.label>
+  <Torn_BookOfGolemancy.description>Enseña a un personaje dotado a convertirse en golemante: un mago solitario que canaliza energía arcana en objetos corrientes mediante sigilos y runas.</Torn_BookOfGolemancy.description>
+
+  
+  <BookOfInnerFire.label>Tomo arcano: Fuego</BookOfInnerFire.label>
+  <BookOfInnerFire.description>Enseña a un personaje dotado a dominar los elementos del fuego.</BookOfInnerFire.description>
+
+  <BookOfHeartOfFrost.label>Tomo arcano: Hielo</BookOfHeartOfFrost.label>
+  <BookOfHeartOfFrost.description>Enseña a un personaje dotado a dominar el hielo y el agua elementales.</BookOfHeartOfFrost.description>
+
+  <BookOfStormBorn.label>Tomo arcano: Rayo</BookOfStormBorn.label>
+  <BookOfStormBorn.description>Enseña a un personaje dotado a dominar los elementos del rayo.</BookOfStormBorn.description>
+
+  <BookOfArcanist.label>Tomo arcano: Poder</BookOfArcanist.label>
+  <BookOfArcanist.description>Enseña a un personaje dotado a dominar los poderes arcanos.</BookOfArcanist.description>
+
+  <BookOfValiant.label>Tomo divino: Paladín</BookOfValiant.label>
+  <BookOfValiant.description>Enseña a un personaje dotado a convertirse en paladín.</BookOfValiant.description>
+
+  <BookOfSummoner.label>Tomo arcano: Invocación</BookOfSummoner.label>
+  <BookOfSummoner.description>Enseña a un personaje dotado a convertirse en invocador.</BookOfSummoner.description>
+
+  <BookOfDruid.label>Tomo arcano: Naturaleza</BookOfDruid.label>
+  <BookOfDruid.description>Enseña a un personaje dotado a convertirse en druida.</BookOfDruid.description>
+
+  <BookOfNecromancer.label>Tomo arcano: Nigromante</BookOfNecromancer.label>
+  <BookOfNecromancer.description>Enseña a un personaje dotado a convertirse en nigromante. *Nota: el nigromante puede convertirse en lich más adelante; los lich son incapaces de toda actividad salvo luchar e investigar. Muchas otras clases mágicas detestan a los nigromantes. Elige con cuidado.</BookOfNecromancer.description>
+
+  <BookOfPriest.label>Tomo arcano: Sacerdote</BookOfPriest.label>
+  <BookOfPriest.description>Enseña a un personaje dotado a convertirse en sacerdote. Los sacerdotes son incapaces de violencia y esas habilidades quedarán desactivadas.</BookOfPriest.description>
+
+  <BookOfBard.label>Tomo arcano: Bardo</BookOfBard.label>
+  <BookOfBard.description>Enseña a un personaje dotado a convertirse en bardo. Los bardos son incapaces de realizar trabajo pesado y ese tipo de trabajo quedará desactivado.</BookOfBard.description>
+
+  <BookOfDemons.label>Tomo arcano: Demonología</BookOfDemons.label>
+  <BookOfDemons.description>Detalla el proceso para pactar con un demonio y obtener poder. Este contrato une al patrón, en sentido literal, con una esencia demoníaca que afecta a su composición genética. Esta unión afecta de forma distinta a hombres y mujeres. Los demonios solo aceptan el contrato si el usuario tiene el don de la magia.\n\n*Nota garabateada al pie de la primera página* Este escrito no aclara qué obtiene exactamente el demonio del trato... úsese con cautela.</BookOfDemons.description>
+
+  <BookOfEarth.label>Tomo arcano: Tierra</BookOfEarth.label>
+  <BookOfEarth.description>Enseña a un personaje dotado el dominio de la tierra, combinando y alterando las leyes físicas y sus elementos con lo arcano.</BookOfEarth.description>
+
+  <BookOfMagitech.label>Tomo arcano: Tecnomancia</BookOfMagitech.label>
+  <BookOfMagitech.description>Enseña a un personaje dotado los caminos del tecnomante, capaz de ver la conexión entre la ciencia y la magia.</BookOfMagitech.description>
+
+  <BookOfHemomancy.label>Tomo arcano: Hemomancia</BookOfHemomancy.label>
+  <BookOfHemomancy.description>Enseña a un personaje dotado a convertirse en hemomante, o mago de sangre, y a usar el poder de la sangre para alimentar su magia.</BookOfHemomancy.description>
+
+  <BookOfEnchanter.label>Tomo arcano: Encantador</BookOfEnchanter.label>
+  <BookOfEnchanter.description>Enseña a un personaje dotado a convertirse en encantador, capaz de manipular la materia y los materiales para servir a sus fines.</BookOfEnchanter.description>
+
+  <BookOfChronomancer.label>Tomo arcano: Cronomante</BookOfChronomancer.label>
+  <BookOfChronomancer.description>Enseña a un personaje dotado a convertirse en cronomante, capaz de ver y manipular realidades a través del tiempo.</BookOfChronomancer.description>
+
+  <BookOfChaos.label>Tomo arcano: Mago del caos</BookOfChaos.label>
+  <BookOfChaos.description>Enseña a un personaje dotado a convertirse en mago del caos, adaptable a todas y cada una de las clases de magia.</BookOfChaos.description>
+
+  <BookOfTheSun.label>Tomo arcano: Mago luminoso</BookOfTheSun.label>
+  <BookOfTheSun.description>Enseña a un personaje dotado a convertirse en mago luminoso. Los magos luminosos manipulan el poder de la luz solar para crear magia intensa y destructiva.</BookOfTheSun.description>
+
+  <BookOfShamanism.label>Tomo arcano: Chamán</BookOfShamanism.label>
+  <BookOfShamanism.description>Enseña a un personaje dotado a convertirse en chamán: un líder tribal centrado en la magia ritual para crear maldiciones y encantamientos poderosos, que extiende su influencia mediante tótems.</BookOfShamanism.description>
+
+  <BookOfGolemancy.label>Tomo arcano: Golemante</BookOfGolemancy.label>
+  <BookOfGolemancy.description>Enseña a un personaje dotado a convertirse en golemante: un mago solitario que canaliza energía arcana en objetos corrientes mediante sigilos y runas.</BookOfGolemancy.description>
+
+  
+  <BookOfGladiator.label>Forma de combate: Gladiador</BookOfGladiator.label>
+  <BookOfGladiator.description>Enseña a un personaje en buena forma física a entrenarse en la forma de combate del gladiador.</BookOfGladiator.description>
+
+  <BookOfPsionic.label>Poder de combate: Psiónico</BookOfPsionic.label>
+  <BookOfPsionic.description>Enseña a un personaje en buena forma física a canalizar el poder psiónico.\n\n*Hay una nota al pie de la página, grabada con carbón: "parece que solo quienes tienen una alta sensibilidad psíquica pueden aprender a manipular la energía psiónica... o eso, o encontrar la forma de activar la actividad psíquica"</BookOfPsionic.description>
+
+  <BookOfFaceless.label>Forma de combate: Sin rostro</BookOfFaceless.label>
+  <BookOfFaceless.description>Enseña a un personaje en buena forma física a adaptar su forma y su estilo de lucha a cualquier situación.</BookOfFaceless.description>
+
+  <BookOfSniper.label>Estilo de combate: Francotirador</BookOfSniper.label>
+  <BookOfSniper.description>Enseña a un personaje en buena forma física a entrenarse como francotirador.</BookOfSniper.description>
+
+  <BookOfBladedancer.label>Estilo de combate: Danzante de espadas</BookOfBladedancer.label>
+  <BookOfBladedancer.description>Enseña a un personaje en buena forma física a entrenarse como danzante de espadas.</BookOfBladedancer.description>
+
+  <BookOfRanger.label>Estilo de combate: Guardabosques</BookOfRanger.label>
+  <BookOfRanger.description>Enseña a un personaje en buena forma física a entrenarse como guardabosques.</BookOfRanger.description>
+
+  <BookOfDeathKnight.label>Estilo de combate: Caballero de la muerte</BookOfDeathKnight.label>
+  <BookOfDeathKnight.description>Enseña a un personaje en buena forma física a abrazar lo inevitable y convertirse en caballero de la muerte.</BookOfDeathKnight.description>
+
+  <BookOfMonk.label>Estilo de combate: Monje</BookOfMonk.label>
+  <BookOfMonk.description>Enseña a un personaje en buena forma física a pulir su mente y su cuerpo hasta convertirlos en un arma letal.</BookOfMonk.description>
+
+  <BookOfCommander.label>Estilo de combate: Comandante</BookOfCommander.label>
+  <BookOfCommander.description>Enseña a un personaje en buena forma física a convertirse en un líder carismático.</BookOfCommander.description>
+
+  <BookOfSuperSoldier.label>Suero: Supersoldado</BookOfSuperSoldier.label>
+  <BookOfSuperSoldier.description>Inyecta a un personaje un suero que mejora sus capacidades físicas. Deja incapacitado al personaje durante un par de días mientras el suero hace efecto, y se desarrolla en varias fases. El suero tarda unos 100 días en desarrollarse por completo. Cualquier personaje puede tomar el suero SS, pero solo los personajes en buena forma física pueden adquirir el rasgo de supersoldado. Este suero reducirá la potencia y el potencial mágicos.</BookOfSuperSoldier.description>
+
+  
+  <BookOfShadow.label>Tomo arcano: Sombra</BookOfShadow.label>
+  <BookOfShadow.description>En lo más profundo de la noche, el miedo se revela en el reflejo de la hoja: la sombra despierta.</BookOfShadow.description>
+
+  <BookOfApothecary.label>Estilo de combate: Apotecario</BookOfApothecary.label>
+  <BookOfApothecary.description>Enseña a un personaje en buena forma física a convertirse en apotecario.</BookOfApothecary.description>
+
+  
+  <SpellOf_ArcaneBolt.label>Hechizo de mago: Descarga arcana</SpellOf_ArcaneBolt.label>
+  <SpellOf_ArcaneBolt.description>Enseña a un usuario de magia a proyectar energía arcana con fuerza.</SpellOf_ArcaneBolt.description>
+
+  <SpellOf_Blink.label>Hechizo de mago: Parpadeo</SpellOf_Blink.label>
+  <SpellOf_Blink.description>Enseña a un usuario de magia cómo se interconectan las fuerzas arcanas, permitiendo al mago desplazarse rápidamente a distancias cortas.</SpellOf_Blink.description>
+
+  <SpellOf_Blur.label>Hechizo de mago: Desenfoque</SpellOf_Blur.label>
+  <SpellOf_Blur.description>Enseña a un usuario de magia a distorsionar la luz alrededor de su cuerpo.</SpellOf_Blur.description>
+
+  <SpellOf_Cooler.label>Hechizo de mago: Enfriador mágico</SpellOf_Cooler.label>
+  <SpellOf_Cooler.description>Enseña a un usuario de magia arcana a crear una ventana temporal al plano del hielo, generando una fuente de frío temporal.</SpellOf_Cooler.description>
+
+  <SpellOf_DirtDevil.label>Hechizo de mago: Torbellino limpiador</SpellOf_DirtDevil.label>
+  <SpellOf_DirtDevil.description>Enseña a un usuario de magia a crear un torbellino que busca y limpia la suciedad dentro de la zona del hogar.</SpellOf_DirtDevil.description>
+
+  <SpellOf_EMP.label>Hechizo de mago: EMP</SpellOf_EMP.label>
+  <SpellOf_EMP.description>Enseña a un usuario de magia a generar una ráfaga de EMP en un lugar objetivo.</SpellOf_EMP.description>
+
+  <SpellOf_Extinguish.label>Hechizo de mago: Extinguir</SpellOf_Extinguish.label>
+  <SpellOf_Extinguish.description>Enseña a un usuario de magia a eliminar el elemento del fuego en un lugar objetivo, dispersando los incendios.</SpellOf_Extinguish.description>
+
+  <SpellOf_Heal.label>Hechizo de mago: Curar</SpellOf_Heal.label>
+  <SpellOf_Heal.description>Enseña a un usuario de magia a manipular con delicadeza las fuerzas arcanas para curar heridas.</SpellOf_Heal.description>
+
+  <SpellOf_HeatShield.label>Hechizo de fuego: Escudo térmico</SpellOf_HeatShield.label>
+  <SpellOf_HeatShield.description>Enseña a un mago de fuego a crear una barrera protectora contra el calor y el fuego.</SpellOf_HeatShield.description>
+
+  <SpellOf_Heater.label>Hechizo de mago: Calefactor mágico</SpellOf_Heater.label>
+  <SpellOf_Heater.description>Enseña a un usuario de magia a crear una ventana temporal al plano del fuego, generando una fuente de calor temporal.</SpellOf_Heater.description>
+
+  <SpellOf_Ignite.label>Hechizo de mago: Prender</SpellOf_Ignite.label>
+  <SpellOf_Ignite.description>Enseña a un usuario de magia a concentrar calor en un lugar objetivo.</SpellOf_Ignite.description>
+
+  <SpellOf_MageLight.label>Hechizo de mago: Luz mágica</SpellOf_MageLight.label>
+  <SpellOf_MageLight.description>Enseña a un usuario de magia a crear una pequeña esfera de luz.</SpellOf_MageLight.description>
+
+  <SpellOf_PowerNode.label>Hechizo de mago: Nodo de energía</SpellOf_PowerNode.label>
+  <SpellOf_PowerNode.description>Enseña a un usuario de magia a crear un nodo de energía contenido que convierte energía arcana en electricidad. Colócalo junto a una red eléctrica existente. Suministra 600 de energía.</SpellOf_PowerNode.description>
+
+  <SpellOf_Rain.label>Hechizo de mago: Lluvia</SpellOf_Rain.label>
+  <SpellOf_Rain.description>Enseña a un usuario de magia a aprovechar la energía de la atmósfera para provocar una lluvia breve.</SpellOf_Rain.description>
+
+  <SpellOf_SnapFreeze.label>Hechizo de mago: Congelación instantánea</SpellOf_SnapFreeze.label>
+  <SpellOf_SnapFreeze.description>Enseña a un usuario de magia a eliminar todo el calor en un lugar objetivo.</SpellOf_SnapFreeze.description>
+
+  <SpellOf_SmokeCloud.label>Hechizo de mago: Nube de humo</SpellOf_SmokeCloud.label>
+  <SpellOf_SmokeCloud.description>Enseña a un usuario de magia a prender partículas en el aire para crear una cortina de humo que oculta temporalmente una zona objetivo.</SpellOf_SmokeCloud.description>
+
+  <SpellOf_Sunlight.label>Hechizo de mago: Luz solar</SpellOf_Sunlight.label>
+  <SpellOf_Sunlight.description>Enseña a un usuario de magia a crear una bolsa dimensional que emite un flujo constante de luz solar lo bastante fuerte como para cultivar plantas. La luz solar debe ser mantenida por el mago que la crea y reducirá su maná máximo y su velocidad de regeneración de maná.</SpellOf_Sunlight.description>
+
+  <SpellOf_BrandSiphon.label>Hechizo de golemante: Marca de succión</SpellOf_BrandSiphon.label>
+  <SpellOf_BrandSiphon.description>Enseña a un golemante el sigilo para crear una marca de succión.</SpellOf_BrandSiphon.description>
+
+  <SpellOf_BrandFitness.label>Hechizo de golemante: Marca de forma física</SpellOf_BrandFitness.label>
+  <SpellOf_BrandFitness.description>Enseña a un golemante el sigilo para crear una marca de forma física.</SpellOf_BrandFitness.description>
+
+  <SpellOf_BrandEmotion.label>Hechizo de golemante: Marca de emoción</SpellOf_BrandEmotion.label>
+  <SpellOf_BrandEmotion.description>Enseña a un golemante el sigilo para crear una marca de emoción.</SpellOf_BrandEmotion.description>
+
+  <SpellOf_BrandVitality.label>Hechizo de golemante: Marca de vitalidad</SpellOf_BrandVitality.label>
+  <SpellOf_BrandVitality.description>Enseña a un golemante el sigilo para crear una marca de vitalidad.</SpellOf_BrandVitality.description>
+
+  <SpellOf_BrandProtection.label>Hechizo de golemante: Marca de protección</SpellOf_BrandProtection.label>
+  <SpellOf_BrandProtection.description>Enseña a un golemante el sigilo para crear una marca de protección.</SpellOf_BrandProtection.description>
+
+  <SpellOf_BrandAwareness.label>Hechizo de golemante: Marca de percepción</SpellOf_BrandAwareness.label>
+  <SpellOf_BrandAwareness.description>Enseña a un golemante el sigilo para crear una marca de percepción.</SpellOf_BrandAwareness.description>
+
+  <SpellOf_ChargeBattery.label>Hechizo de rayo: Cargar batería</SpellOf_ChargeBattery.label>
+  <SpellOf_ChargeBattery.description>Enseña a un mago del rayo a cargar una batería infundiéndole energía mágica.\nProduce 400 Wd, ajustados según el poder de la habilidad.</SpellOf_ChargeBattery.description>
+
+  <SpellOf_CauterizeWound.label>Hechizo de fuego: Cauterizar herida</SpellOf_CauterizeWound.label>
+  <SpellOf_CauterizeWound.description>Enseña a un mago de fuego a usar fuego elemental para limpiar y cerrar heridas al instante; puede dejar cicatrices de quemadura.</SpellOf_CauterizeWound.description>
+
+  <SpellOf_ConsumeCorpse_Mass.label>Hechizo de nigromante: Consumir cadáveres en masa</SpellOf_ConsumeCorpse_Mass.label>
+  <SpellOf_ConsumeCorpse_Mass.description>Enseña a un nigromante a ampliar consumir cadáver para afectar a varios cadáveres dentro de un área.</SpellOf_ConsumeCorpse_Mass.description>
+
+  <SpellOf_Discord.label>Hechizo de bardo: Discordia</SpellOf_Discord.label>
+  <SpellOf_Discord.description>Enseña a un bardo a distorsionar la armonía mental de un personaje objetivo.</SpellOf_Discord.description>
+
+  <SpellOf_DryGround.label>Hechizo de fuego: Secar suelo</SpellOf_DryGround.label>
+  <SpellOf_DryGround.description>Enseña a un mago de fuego a infundir calor en la tierra, evaporando la mayor parte del agua de una pequeña porción de suelo.</SpellOf_DryGround.description>
+
+  <SpellOf_WetGround.label>Hechizo de hielo: Humedecer suelo</SpellOf_WetGround.label>
+  <SpellOf_WetGround.description>Enseña a un mago de hielo a infundir humedad y nutrientes en la tierra, transformando la arena en suelo aprovechable.</SpellOf_WetGround.description>
+
+  <SpellOf_MagicWardrobe.label>Hechizo de mago: Armario mágico</SpellOf_MagicWardrobe.label>
+  <SpellOf_MagicWardrobe.description>Enseña a un usuario de magia a crear una bolsa dimensional para guardar un conjunto de equipo de reserva.</SpellOf_MagicWardrobe.description>
+
+  <SpellOf_Invisibility.label>Hechizo de mago: Invisibilidad</SpellOf_Invisibility.label>
+  <SpellOf_Invisibility.description>Enseña a un usuario de magia a manipular la luz y volverse invisible.</SpellOf_Invisibility.description>
+
+  <SpellOf_LightningTrap.label>Hechizo de mago: Trampa de rayos</SpellOf_LightningTrap.label>
+  <SpellOf_LightningTrap.description>Enseña a un usuario de magia a crear una trampa que descarga rayos.</SpellOf_LightningTrap.description>
+
+  <SpellOf_ManaShield.label>Hechizo de mago: Escudo de maná</SpellOf_ManaShield.label>
+  <SpellOf_ManaShield.description>Enseña a un usuario de magia a formar una barrera protectora de maná para evitar el daño físico.</SpellOf_ManaShield.description>
+
+  <SpellOf_ShieldOther.label>Hechizo de lanzador sagrado: Escudar a otro</SpellOf_ShieldOther.label>
+  <SpellOf_ShieldOther.description>Enseña a un lanzador sagrado (paladín, sacerdote, etc.) a proteger a otro del daño.</SpellOf_ShieldOther.description>
+
+  <SpellOf_SpellMending.label>Hechizo de mago: Reparación mágica</SpellOf_SpellMending.label>
+  <SpellOf_SpellMending.description>Enseña a un usuario de magia a reconstruir y reparar el equipo desgastado que lleva puesto un personaje.</SpellOf_SpellMending.description>
+
+  <SpellOf_SiphonMana.label>Hechizo de mago: Succionar maná</SpellOf_SiphonMana.label>
+  <SpellOf_SiphonMana.description>Enseña a un usuario de magia a succionar maná de otro mago. Si se usa sobre un ser sin maná, se drenarán sus rasgos físicos (no se obtendrá maná). El efecto es potencialmente letal en casos extremos.</SpellOf_SiphonMana.description>
+
+  <SpellOf_SummonMinion.label>Hechizo de mago: Invocar esbirro</SpellOf_SummonMinion.label>
+  <SpellOf_SummonMinion.description>Enseña a un usuario de magia a invocar a un esbirro de otro mundo que ayude en tareas básicas.</SpellOf_SummonMinion.description>
+
+  <SpellOf_Teleport.label>Hechizo de mago: Teletransporte</SpellOf_Teleport.label>
+  <SpellOf_Teleport.description>Enseña a un usuario de magia a manipular la energía mediante las dimensiones arcanas, permitiéndole crear un portal para un transporte rápido.</SpellOf_Teleport.description>
+
+  <SpellOf_TransferMana.label>Hechizo de mago: Transferir maná</SpellOf_TransferMana.label>
+  <SpellOf_TransferMana.description>Enseña a un usuario de magia a transferir maná a otro mago. Si se infunde maná en bruto a un receptor que no sea mago, sus rasgos físicos se verán aumentados temporalmente.</SpellOf_TransferMana.description>
+
+  <SpellOf_FadeEmotions.label>Habilidad de empata: Desvanecer emociones</SpellOf_FadeEmotions.label>
+  <SpellOf_FadeEmotions.description>Este pergamino describe cómo un empata puede usar sus habilidades para concentrar las emociones de un recuerdo negativo, de modo que el personaje objetivo pueda soltarlas y seguir adelante.</SpellOf_FadeEmotions.description>
+
+  <SpellOf_BlankMind.label>Hechizo de encantador: Mente en blanco</SpellOf_BlankMind.label>
+  <SpellOf_BlankMind.description>Enseña a un encantador a borrar recuerdos y sacar a un personaje de un estado mental, o a causar un aturdimiento de larga duración a los enemigos.</SpellOf_BlankMind.description>
+
+  <SpellOf_BriarPatch.label>Hechizo de druida: Zarzal</SpellOf_BriarPatch.label>
+  <SpellOf_BriarPatch.description>Enseña a un druida a hacer crecer rápidamente un obstáculo de enredaderas espinosas.</SpellOf_BriarPatch.description>
+
+  <SpellOf_FertileLands.label>Hechizo de druida: Tierras fértiles</SpellOf_FertileLands.label>
+  <SpellOf_FertileLands.description>Enseña a un druida a bendecir un área de tierra con un crecimiento fértil.</SpellOf_FertileLands.description>
+
+  <SpellOf_AlterStorm.label>Hechizo de hielo: Alterar tormenta</SpellOf_AlterStorm.label>
+  <SpellOf_AlterStorm.description>Enseña a un mago de hielo a alterar las condiciones de una tormenta para producir diversos efectos.</SpellOf_AlterStorm.description>
+
+  <SpellOf_MechaniteReprogramming.label>Hechizo de tecnomante: Reprogramación de mecanitos</SpellOf_MechaniteReprogramming.label>
+  <SpellOf_MechaniteReprogramming.description>Enseña a un tecnomante a reprogramar mecanitos fibrosos o sensoriales de un modo que mejore los atributos del huésped.</SpellOf_MechaniteReprogramming.description>
+
+  <SpellOf_Overdrive.label>Hechizo de tecnomante: Sobrecarga</SpellOf_Overdrive.label>
+  <SpellOf_Overdrive.description>Enseña a un tecnomante a sobreexcitar o eludir los sistemas de seguridad de dispositivos mecánicos, eléctricos y robóticos, haciendo que funcionen a un ritmo drásticamente mayor durante un breve periodo.</SpellOf_Overdrive.description>
+
+  <SpellOf_Sabotage.label>Hechizo de tecnomante: Sabotaje</SpellOf_Sabotage.label>
+  <SpellOf_Sabotage.description>Enseña a un tecnomante a crear un bucle de retroalimentación en casi cualquier sistema mecánico, provocando que falle de forma catastrófica.</SpellOf_Sabotage.description>
+
+  <SpellOf_TechnoShield.label>Hechizo de tecnomante: Escudo cinético</SpellOf_TechnoShield.label>
+  <SpellOf_TechnoShield.description>Enseña a un tecnomante a crear un campo de fuerza unidireccional alrededor de un objetivo, capaz de repeler proyectiles entrantes o de aumentar la velocidad de los proyectiles salientes.</SpellOf_TechnoShield.description>
+
+  <SpellOf_BattleHymn.label>Hechizo de bardo: Himno de batalla</SpellOf_BattleHymn.label>
+  <SpellOf_BattleHymn.description>Enseña a un bardo a interpretar el Himno de batalla.</SpellOf_BattleHymn.description>
+
+  <SpellOf_Blizzard.label>Hechizo de hielo: Ventisca</SpellOf_Blizzard.label>
+  <SpellOf_Blizzard.description>Enseña a un mago de hielo a invocar una ventisca para sepultar a tus enemigos bajo una lluvia de hielo y nieve.</SpellOf_Blizzard.description>
+
+  <SpellOf_BloodMoon.label>Hechizo de mago de sangre: Luna de sangre</SpellOf_BloodMoon.label>
+  <SpellOf_BloodMoon.description>Enseña a un mago de sangre a invocar una manada feroz de demonios de sangre.</SpellOf_BloodMoon.description>
+
+  <SpellOf_EyeOfTheStorm.label>Hechizo de rayo: Ojo de la tormenta</SpellOf_EyeOfTheStorm.label>
+  <SpellOf_EyeOfTheStorm.description>Enseña a un mago del rayo a contener la furia pura de una tormenta eléctrica en una pequeña esfera y proyectarla a lo largo de una trayectoria fija.</SpellOf_EyeOfTheStorm.description>
+
+  <SpellOf_Firestorm.label>Hechizo de fuego: Tormenta de fuego</SpellOf_Firestorm.label>
+  <SpellOf_Firestorm.description>Enseña a un mago de fuego a emplear toda la furia del elemento fuego para abrasar la tierra con una tormenta de fuego.</SpellOf_Firestorm.description>
+
+  <SpellOf_FoldReality.label>Hechizo arcano: Portal</SpellOf_FoldReality.label>
+  <SpellOf_FoldReality.description>Enseña a un mago arcano a plegar la realidad para abrir una ventana temporal entre colonias.</SpellOf_FoldReality.description>
+
+  <SpellOf_GuardianSpirit.label>Hechizo de chamán: Espíritu guardián</SpellOf_GuardianSpirit.label>
+  <SpellOf_GuardianSpirit.description>Enseña a un chamán a invocar a su espíritu guardián.</SpellOf_GuardianSpirit.description>
+
+  <SpellOf_HolyWrath.label>Hechizo de paladín: Ira sagrada</SpellOf_HolyWrath.label>
+  <SpellOf_HolyWrath.description>Enseña a un paladín a invocar la ira de los dioses.</SpellOf_HolyWrath.description>
+
+  <SpellOf_LichForm.label>Hechizo de nigromante: Forma de lich</SpellOf_LichForm.label>
+  <SpellOf_LichForm.description>Enseña a un nigromante a transformarse en lich.</SpellOf_LichForm.description>
+
+  <SpellOf_LivingWall.label>Hechizo de golemante: Muro viviente</SpellOf_LivingWall.label>
+  <SpellOf_LivingWall.description>Enseña a un golemante a dotar de voluntad propia a un muro.</SpellOf_LivingWall.description>
+
+  <SpellOf_Meteor.label>Hechizo de geomante: Meteoro</SpellOf_Meteor.label>
+  <SpellOf_Meteor.description>Enseña a un geomante a invocar un meteoro enorme que entierra un área bajo roca y escombros.</SpellOf_Meteor.description>
+
+  <SpellOf_OrbitalStrike.label>Hechizo de tecnomante: Ataque orbital</SpellOf_OrbitalStrike.label>
+  <SpellOf_OrbitalStrike.description>Enseña a un tecnomante a acceder a antiguos satélites y sistemas orbitales y usarlos para lanzar un ataque orbital.</SpellOf_OrbitalStrike.description>
+
+  <SpellOf_PsychicShock.label>Hechizo de brujo: Choque psíquico</SpellOf_PsychicShock.label>
+  <SpellOf_PsychicShock.description>Enseña a un brujo a usar sus poderes psíquicos para emitir un potente choque psíquico que abruma y reverbera en los personajes cercanos.</SpellOf_PsychicShock.description>
+
+  <SpellOf_Recall.label>Hechizo de cronomante: Retroceso</SpellOf_Recall.label>
+  <SpellOf_Recall.description>Enseña a un cronomante a hacer regresar su ser físico a una condición pasada.</SpellOf_Recall.description>
+
+  <SpellOf_RegrowLimb.label>Hechizo de druida: Regenerar miembro</SpellOf_RegrowLimb.label>
+  <SpellOf_RegrowLimb.description>Enseña a un druida a regenerar miembros combinando naturaleza, poderes arcanos y ciencia médica.</SpellOf_RegrowLimb.description>
+
+  <SpellOf_Resurrection.label>Hechizo de sacerdote: Resurrección</SpellOf_Resurrection.label>
+  <SpellOf_Resurrection.description>Enseña a un sacerdote a devolver la chispa de la vida a los recién fallecidos.</SpellOf_Resurrection.description>
+
+  <SpellOf_Scorn.label>Hechizo de súcubo: Desprecio</SpellOf_Scorn.label>
+  <SpellOf_Scorn.description>Enseña a un súcubo a desatar toda la malicia que alberga su corazón demoníaco.</SpellOf_Scorn.description>
+
+  <SpellOf_Shapeshift.label>Hechizo de encantador: Cambiar de forma</SpellOf_Shapeshift.label>
+  <SpellOf_Shapeshift.description>Enseña a un encantador a cambiar su propia forma sin perder su identidad.</SpellOf_Shapeshift.description>
+
+  <SpellOf_SummonPoppi.label>Hechizo de invocador: Invocar poppi</SpellOf_SummonPoppi.label>
+  <SpellOf_SummonPoppi.description>Enseña a un invocador a invocar a una banda de adorables y achuchables poppi.</SpellOf_SummonPoppi.description>
+
+  <SpellOf_SpiritOfLight.label>Hechizo de mago luminoso: Espíritu de luz</SpellOf_SpiritOfLight.label>
+  <SpellOf_SpiritOfLight.description>Enseña a un mago luminoso a invocar a un Espíritu de luz.</SpellOf_SpiritOfLight.description>
+
+  
+  <SkillOf_ThrowingKnife.label>Habilidad de luchador: Cuchillo arrojadizo</SkillOf_ThrowingKnife.label>
+  <SkillOf_ThrowingKnife.description>Enseña a un luchador la habilidad de cuchillo arrojadizo. Los personajes no violentos no pueden aprender esta habilidad.</SkillOf_ThrowingKnife.description>
+
+  <SkillOf_BurningFury.label>Habilidad de luchador: Furia ardiente</SkillOf_BurningFury.label>
+  <SkillOf_BurningFury.description>Enseña a un luchador a activar el aura de Furia ardiente. Los personajes no violentos no pueden aprender esta habilidad.</SkillOf_BurningFury.description>
+
+  <SkillOf_FightersFocus.label>Habilidad de luchador: Concentración del luchador</SkillOf_FightersFocus.label>
+  <SkillOf_FightersFocus.description>Enseña a un luchador a dedicar una parte de su aguante para soportar mayor estrés mental y físico.</SkillOf_FightersFocus.description>
+
+  <SkillOf_GearRepair.label>Habilidad de luchador: Reparación de equipo</SkillOf_GearRepair.label>
+  <SkillOf_GearRepair.description>Enseña a un luchador a dedicar una parte de su aguante a mantener y reparar el equipo desgastado.</SkillOf_GearRepair.description>
+
+  <SkillOf_HeavyBlow.label>Habilidad de luchador: Golpe pesado</SkillOf_HeavyBlow.label>
+  <SkillOf_HeavyBlow.description>Enseña a un luchador a dedicar una parte de su aguante a aumentar la potencia de cada ataque.</SkillOf_HeavyBlow.description>
+
+  <SkillOf_InnerHealing.label>Habilidad de luchador: Curación interior</SkillOf_InnerHealing.label>
+  <SkillOf_InnerHealing.description>Enseña a un luchador a dedicar una parte de su aguante y energía física a aumentar la velocidad de curación y mejorar la inmunidad a las enfermedades.</SkillOf_InnerHealing.description>
+
+  <SkillOf_Legion.label>Habilidad de luchador: Legión</SkillOf_Legion.label>
+  <SkillOf_Legion.description>Enseña a un luchador a replicar las habilidades de combate de otra clase de luchador.</SkillOf_Legion.description>
+
+  <SkillOf_PommelStrike.label>Habilidad de luchador: Golpe de pomo</SkillOf_PommelStrike.label>
+  <SkillOf_PommelStrike.description>Enseña a un luchador a asestar un golpe no letal para aturdir o noquear a un objetivo.</SkillOf_PommelStrike.description>
+
+  <SkillOf_Sprint.label>Habilidad de luchador: Carrera</SkillOf_Sprint.label>
+  <SkillOf_Sprint.description>Enseña a un luchador a dedicar una parte de su aguante a mantener una mayor velocidad de movimiento.</SkillOf_Sprint.description>
+
+  <SkillOf_StrongBack.label>Habilidad de luchador: Espalda fuerte</SkillOf_StrongBack.label>
+  <SkillOf_StrongBack.description>Enseña a un luchador a dedicar una parte de su aguante a aumentar su capacidad de carga y de inventario.</SkillOf_StrongBack.description>
+
+  <SkillOf_Taunt.label>Habilidad de luchador: Provocar</SkillOf_Taunt.label>
+  <SkillOf_Taunt.description>Enseña a un luchador a provocar a los enemigos cercanos.</SkillOf_Taunt.description>
+
+  <SkillOf_TempestStrike.label>Habilidad de luchador: Golpe tempestad</SkillOf_TempestStrike.label>
+  <SkillOf_TempestStrike.description>Enseña a un luchador una técnica para golpear en rápida sucesión con su arma.</SkillOf_TempestStrike.description>
+
+  <SkillOf_ThickSkin.label>Habilidad de luchador: Piel gruesa</SkillOf_ThickSkin.label>
+  <SkillOf_ThickSkin.description>Enseña a un luchador a dedicar una parte de su aguante a aumentar sus valores de armadura y su umbral de temperatura.</SkillOf_ThickSkin.description>
+
+  <SkillOf_HerbalBliss.label>Receta de apotecario: Dicha</SkillOf_HerbalBliss.label>
+  <SkillOf_HerbalBliss.description>Enseña a un apotecario a crear Dicha: una droga que induce un estado de felicidad capaz de enmascarar casi por completo las emociones y el dolor. Esta droga también causa pérdida de habilidades y ralentiza drásticamente su aprendizaje.</SkillOf_HerbalBliss.description>
+
+  <SkillOf_HerbalClarity.label>Receta de apotecario: Claridad</SkillOf_HerbalClarity.label>
+  <SkillOf_HerbalClarity.description>Enseña a un apotecario a crear Claridad: una droga que reduce la resistencia a lo arcano, dando a los magos un gran impulso de regeneración de maná y aumentando la sensibilidad psíquica. También puede provocar un deterioro de la estabilidad mental.</SkillOf_HerbalClarity.description>
+
+  
+  <GemstoneOfInsight_Magic.label>Gema de visión arcana</GemstoneOfInsight_Magic.label>
+  <GemstoneOfInsight_Magic.description>Imbuye al usuario de un espíritu arcano, concediéndole el rasgo "dotado de magia".\n\n**Nota: usar este objeto reemplazará un rasgo aleatorio si el usuario tiene más de 7 rasgos, y no puede ser usado por un personaje que ya tenga rasgos mágicos o de luchador**</GemstoneOfInsight_Magic.description>
+
+  <GemstoneOfInsight_Might.label>Gema de visión física</GemstoneOfInsight_Might.label>
+  <GemstoneOfInsight_Might.description>Imbuye al usuario del espíritu de un guerrero, concediéndole el rasgo "en buena forma física".\n\n**Nota: usar este objeto reemplazará un rasgo aleatorio si el usuario tiene más de 7 rasgos, y no puede ser usado por un personaje que ya tenga rasgos mágicos o de luchador**</GemstoneOfInsight_Might.description>
+
+</LanguageData>

@@ -224,7 +224,13 @@ namespace TorannMagic
                     list.Add(new FloatMenuOption("TM_UsePortal".Translate(), delegate
                     {
                         Job job = new Job(TorannMagicDefOf.UsePortal, this);
-                        myPawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
+                        Map destinationMap = this.PortalDestinationMap;
+                        IntVec3 destinationCell = this.PortalDestinationPosition;
+                        Odyssey.ManualTravelSafety.Submit(myPawn, job, destinationMap, destinationCell, true,
+                            () => this.Spawned && this.IsPaired && this.arcaneEnergyCur >= .05f && myPawn.Spawned
+                                && myPawn.Map == this.Map && this.PortalDestinationMap == destinationMap
+                                && this.PortalDestinationPosition == destinationCell,
+                            () => myPawn.jobs.TryTakeOrderedJob(job, JobTag.Misc));
                     }, MenuOptionPriority.Default, null, null, 0f, null, null));
                 }
                 if (isPaired && comp.IsMagicUser)
@@ -303,12 +309,13 @@ namespace TorannMagic
                         Pawn interactingPawn = curCell.GetFirstPawn(this.Map);
                         if (interactingPawn != null)
                         {
-                            if (interactingPawn.jobs.curJob.def == TorannMagicDefOf.UsePortal)
+                            if (interactingPawn.CurJob?.def == TorannMagicDefOf.UsePortal
+                                && interactingPawn.CurJob.targetA.Thing == this && this.IsPaired && this.arcaneEnergyCur >= .05f)
                             {
                                 try
                                 {
-                                    PortalPawn(interactingPawn);
-                                    this.arcaneEnergyCur -= .05f;
+                                    if (PortalPawn(interactingPawn)) this.arcaneEnergyCur -= .05f;
+                                    else interactingPawn.jobs.EndCurrentJob(JobCondition.Incompletable);
                                 }
                                 catch
                                 {
@@ -365,14 +372,56 @@ namespace TorannMagic
             }
         }
 
-        private void PortalPawn(Pawn pawn)
+        private bool PortalPawn(Pawn pawn)
         {
-            FleckMaker.ThrowLightningGlow(pawn.DrawPos, pawn.Map, 1f);
-            TM_MoteMaker.ThrowCastingMote(pawn.DrawPos, pawn.Map, Rand.Range(1.2f, 2f));
-            pawn.DeSpawn();
-            GenSpawn.Spawn(pawn, this.PortalDestinationPosition, this.PortalDestinationMap);
-            TM_MoteMaker.ThrowCastingMote(pawn.DrawPos, pawn.Map, Rand.Range(1.2f, 2f));
-            FleckMaker.ThrowHeatGlow(pawn.Position, pawn.Map, 1.6f);
+            if (!Odyssey.ManualTravelSafety.CanComplete(pawn, this.PortalDestinationMap, this.PortalDestinationPosition)) return false;
+            Map destinationMap = this.PortalDestinationMap;
+            IntVec3 destinationCell = this.PortalDestinationPosition;
+            try
+            {
+                pawn.DeSpawn();
+                GenSpawn.Spawn(pawn, destinationCell, destinationMap);
+            }
+            catch
+            {
+                if (!pawn.Spawned || pawn.Map != destinationMap || pawn.Position != destinationCell) throw;
+            }
+            bool moved = pawn.Spawned && pawn.Map == destinationMap && pawn.Position == destinationCell;
+            if (moved)
+            {
+                // A presentation failure must never prevent the successful travel's native payment.
+                try
+                {
+                    this.GetComp<Visuals.CompLegacyBuildingEffects>()?.NotifyTeleport(Find.TickManager.TicksGame);
+                    NotifyDestinationPortal(destinationMap, destinationCell);
+                }
+                catch (Exception exception) { Compatibility.TM_Log.Warning("Teleport", "Portal travel completed; rune effect failed: " + exception); }
+                try
+                {
+                    TM_MoteMaker.ThrowCastingMote(pawn.DrawPos, pawn.Map, Rand.Range(1.2f, 2f));
+                    FleckMaker.ThrowHeatGlow(pawn.Position, pawn.Map, 1.6f);
+                }
+                catch (Exception exception) { Compatibility.TM_Log.Warning("Teleport", "Portal travel completed; visual effect failed: " + exception); }
+            }
+            return moved;
+        }
+
+        private void NotifyDestinationPortal(Map destinationMap, IntVec3 destinationCell)
+        {
+            // Native portals store a destination cell, not a partner reference. Resolve only at
+            // the successful event, and only a reciprocal portal at this exact interaction cell.
+            for (int x = -2; x <= 2; x++)
+                for (int z = -2; z <= 2; z++)
+                {
+                    IntVec3 cell = destinationCell + new IntVec3(x, 0, z);
+                    if (!cell.InBounds(destinationMap)) continue;
+                    var candidate = cell.GetEdifice(destinationMap) as Building_TMPortal;
+                    if (candidate == null || candidate == this || candidate.InteractionCell != destinationCell
+                        || !candidate.IsPaired || candidate.PortalDestinationMap != Map
+                        || candidate.PortalDestinationPosition != InteractionCell) continue;
+                    candidate.GetComp<Visuals.CompLegacyBuildingEffects>()?.NotifyTeleport(Find.TickManager.TicksGame);
+                    return;
+                }
         }
     }
 }

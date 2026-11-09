@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <TorannMagic.ClassProgression.ClassDisciplineDef>
+    <defName>TM_DisciplinePsionic</defName>
+    <label>Psionic</label>
+    <profileId>rwom.psionic</profileId>
+    <domain>Might</domain>
+  </TorannMagic.ClassProgression.ClassDisciplineDef>
+</Defs>

@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <OrderedTakeGroupDef>
+    <defName>TM_SpellItems</defName>
+    <label>spell items</label>
+    <!-- Vanilla requires a positive integer cap for home-map pickup.
+         No gameplay count cap: normal carrying-mass checks still apply. -->
+    <max>2147483647</max>
+  </OrderedTakeGroupDef>
+  <!-- Casting items are not learning scrolls. All effects are fixed, with no mana cost or rank scaling. -->
+  <ThingDef Name="TM_CastScrollBase" Abstract="True">
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <altitudeLayer>Item</altitudeLayer>
+    <tickerType>Never</tickerType>
+    <alwaysHaulable>true</alwaysHaulable>
+    <selectable>true</selectable>
+    <rotatable>false</rotatable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <useHitPoints>true</useHitPoints>
+    <stackLimit>25</stackLimit>
+    <orderedTakeGroup>TM_SpellItems</orderedTakeGroup>
+    <pathCost>10</pathCost>
+    <techLevel>Medieval</techLevel>
+    <tradeability>All</tradeability>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>60</MaxHitPoints>
+      <Mass>0.1</Mass>
+      <MarketValue>90</MarketValue>
+      <Flammability>1</Flammability>
+      <DeteriorationRate>2</DeteriorationRate>
+    </statBases>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="TM_CastScrollBase">
+    <defName>TM_CastScroll_Fireball</defName>
+    <label>fireball cast scroll</label>
+    <description>A single-use casting scroll. Use it from a pawn's inventory to launch a fixed fireball: 18 flame damage in a 1.9-cell radius, up to 24 cells away. Takes 1 second to cast and has a 2-second cooldown shared by the stack. Consumes one scroll on a successful cast. Anyone can use it; no mana or learned spell is needed. Does not teach Fireball or scale with magical skill.</description>
+    <graphicData>
+      <texPath>Items/SpellItems/Scroll_Fireball</texPath>
+    </graphicData>
+    <comps>
+      <li Class="TorannMagic.SpellItems.CompProperties_SpellItem">
+        <spell>Fireball</spell>
+        <maxUses>1</maxUses>
+        <requiresEquipped>false</requiresEquipped>
+        <range>24</range>
+        <warmupTicks>60</warmupTicks>
+        <cooldownTicks>120</cooldownTicks>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="TM_CastScrollBase">
+    <defName>TM_CastScroll_Heal</defName>
+    <label>healing cast scroll</label>
+    <description>A single-use casting scroll. Use it from a pawn's inventory to heal up to three naturally healing wounds on different body parts, restoring 8 health to each wound. Range: 12 cells. Takes 0.3 seconds to cast and has a 2-second cooldown shared by the stack. Cannot heal hostile targets, undead or mechanoids. Consumes one scroll on a successful cast. Anyone can use it; no mana or learned spell is needed. Does not teach Heal or scale with magical skill.</description>
+    <graphicData>
+      <texPath>Items/SpellItems/Scroll_Heal</texPath>
+    </graphicData>
+    <comps>
+      <li Class="TorannMagic.SpellItems.CompProperties_SpellItem">
+        <spell>Heal</spell>
+        <maxUses>1</maxUses>
+        <requiresEquipped>false</requiresEquipped>
+        <range>12</range>
+        <warmupTicks>18</warmupTicks>
+        <cooldownTicks>120</cooldownTicks>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="TM_CastScrollBase">
+    <defName>TM_CastScroll_Blink</defName>
+    <label>blink cast scroll</label>
+    <description>A single-use casting scroll. Use it from a pawn's inventory to teleport the user to an unoccupied walkable cell up to 20 cells away, without requiring line of sight. Takes 1 second to cast and has a 2-second cooldown shared by the stack. Consumes one scroll on a successful cast. Anyone can use it; no mana or learned spell is needed. Does not teach Blink or scale with magical skill.</description>
+    <graphicData>
+      <texPath>Items/SpellItems/Scroll_Blink</texPath>
+    </graphicData>
+    <comps>
+      <li Class="TorannMagic.SpellItems.CompProperties_SpellItem">
+        <spell>Blink</spell>
+        <maxUses>1</maxUses>
+        <requiresEquipped>false</requiresEquipped>
+        <range>20</range>
+        <warmupTicks>60</warmupTicks>
+        <cooldownTicks>120</cooldownTicks>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef Name="TM_SpellStaffBase" Abstract="True" ParentName="BaseMeleeWeapon">
+    <orderedTakeGroup>TM_SpellItems</orderedTakeGroup>
+    <!-- Suppress the inherited smithy recipeMaker: these items have only the gated recipes below. -->
+    <recipeMaker IsNull="True"/>
+    <inspectorTabs Inherit="False"/>
+    <relicChance>0</relicChance>
+    <techLevel>Medieval</techLevel>
+    <smeltable>false</smeltable>
+    <stackLimit>1</stackLimit>
+    <tradeability>All</tradeability>
+    <equippedAngleOffset>40</equippedAngleOffset>
+    <thingCategories Inherit="False">
+      <li>WeaponsMelee</li>
+    </thingCategories>
+    <!-- No quality, art, learning, enchantment or ranged-default comp/verb. -->
+    <comps Inherit="False">
+      <li Class="CompProperties_Forbiddable"/>
+      <li>
+        <compClass>CompEquippable</compClass>
+      </li>
+    </comps>
+    <statBases>
+      <Mass>1.5</Mass>
+      <MarketValue>720</MarketValue>
+    </statBases>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.2</drawSize>
+    </graphicData>
+    <tools>
+      <li>
+        <label>shaft</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <ThingDef ParentName="TM_SpellStaffBase">
+    <defName>TM_SpellStaff_Fireball</defName>
+    <label>charged fireball staff</label>
+    <description>A staff holding 10 fixed Fireball casts. Equip it to launch a fireball dealing 18 flame damage in a 1.9-cell radius, up to 24 cells away. Takes 1 second to cast; cooldown: 2 seconds. Anyone can use it; no mana or learned spell is needed. Its magic does not scale with magical skill. Cannot be recharged and is destroyed after its final use. Also serves as a simple blunt melee weapon.</description>
+    <graphicData>
+      <texPath>Items/SpellItems/Staff_Fireball</texPath>
+    </graphicData>
+    <comps>
+      <li Class="TorannMagic.SpellItems.CompProperties_SpellItem">
+        <spell>Fireball</spell>
+        <maxUses>10</maxUses>
+        <requiresEquipped>true</requiresEquipped>
+        <range>24</range>
+        <warmupTicks>60</warmupTicks>
+        <cooldownTicks>120</cooldownTicks>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="TM_SpellStaffBase">
+    <defName>TM_SpellStaff_Heal</defName>
+    <label>charged healing staff</label>
+    <description>A staff holding 10 fixed Heal casts. Equip it to heal up to three naturally healing wounds on different body parts, restoring 8 health to each wound. Range: 12 cells. Takes 0.3 seconds to cast; cooldown: 2 seconds. Cannot heal hostile targets, undead or mechanoids. Anyone can use it; no mana or learned spell is needed. Its magic does not scale with magical skill. Cannot be recharged and is destroyed after its final use. Also serves as a simple blunt melee weapon.</description>
+    <graphicData>
+      <texPath>Items/SpellItems/Staff_Heal</texPath>
+    </graphicData>
+    <comps>
+      <li Class="TorannMagic.SpellItems.CompProperties_SpellItem">
+        <spell>Heal</spell>
+        <maxUses>10</maxUses>
+        <requiresEquipped>true</requiresEquipped>
+        <range>12</range>
+        <warmupTicks>18</warmupTicks>
+        <cooldownTicks>120</cooldownTicks>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="TM_SpellStaffBase">
+    <defName>TM_SpellStaff_Blink</defName>
+    <label>charged blink staff</label>
+    <description>A staff holding 10 fixed Blink casts. Equip it to teleport the user to an unoccupied walkable cell up to 20 cells away, without requiring line of sight. Takes 1 second to cast; cooldown: 2 seconds. Anyone can use it; no mana or learned spell is needed. Its magic does not scale with magical skill. Cannot be recharged and is destroyed after its final use. Also serves as a simple blunt melee weapon.</description>
+    <graphicData>
+      <texPath>Items/SpellItems/Staff_Blink</texPath>
+    </graphicData>
+    <comps>
+      <li Class="TorannMagic.SpellItems.CompProperties_SpellItem">
+        <spell>Blink</spell>
+        <maxUses>10</maxUses>
+        <requiresEquipped>true</requiresEquipped>
+        <range>20</range>
+        <warmupTicks>60</warmupTicks>
+        <cooldownTicks>120</cooldownTicks>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>TM_ItemFireballProjectile</defName>
+    <label>item fireball</label>
+    <thingClass>TorannMagic.SpellItems.Projectile_SpellItemFireball</thingClass>
+    <graphicData>
+      <texPath>Spells/fireball4</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <projectile>
+      <damageDef>Flame</damageDef>
+      <damageAmountBase>18</damageAmountBase>
+      <explosionRadius>1.9</explosionRadius>
+      <speed>20</speed>
+    </projectile>
+  </ThingDef>
+
+  <JobDef>
+    <defName>TM_SpellItemCast</defName>
+    <driverClass>TorannMagic.SpellItems.JobDriver_SpellItemCast</driverClass>
+    <reportString>casting an item spell.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
+  <!-- Standard scribing-table bills; spell knowledge is rechecked before recipe completion. -->
+  <RecipeDef Name="TM_SpellItemRecipeBase" Abstract="True">
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <workSkill>Crafting</workSkill>
+    <effectWorking>Tailor</effectWorking>
+    <soundWorking>Recipe_Tailor</soundWorking>
+    <researchPrerequisite>TM_MagicScribing</researchPrerequisite>
+    <recipeUsers>
+      <li>TableMagicPrinter</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <!-- Scroll ingredients: 12*5 + 8*1.5 = 72 silver; market value 90. -->
+  <RecipeDef Name="TM_CastScrollRecipeBase" Abstract="True" ParentName="TM_SpellItemRecipeBase">
+    <workAmount>800</workAmount>
+    <ingredients>
+      <li>
+        <filter><thingDefs><li>RawMagicyte</li></thingDefs></filter>
+        <count>12</count>
+      </li>
+      <li>
+        <filter><thingDefs><li>Cloth</li></thingDefs></filter>
+        <count>8</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs><li>RawMagicyte</li><li>Cloth</li></thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+  <RecipeDef ParentName="TM_CastScrollRecipeBase">
+    <defName>TM_MakeCastScroll_Fireball</defName>
+    <label>scribe fireball cast scroll</label>
+    <description>Scribe a single-use Fireball casting scroll. Requires a mage who has learned Fireball at any rank.</description>
+    <jobString>scribing a fireball cast scroll.</jobString>
+    <products><TM_CastScroll_Fireball>1</TM_CastScroll_Fireball></products>
+    <modExtensions>
+      <li Class="TorannMagic.SpellItems.SpellItemRecipeRequirement"><requiredSpell>TM_Fireball</requiredSpell></li>
+    </modExtensions>
+  </RecipeDef>
+
+  <RecipeDef ParentName="TM_CastScrollRecipeBase">
+    <defName>TM_MakeCastScroll_Heal</defName>
+    <label>scribe healing cast scroll</label>
+    <description>Scribe a single-use Heal casting scroll. Requires a mage who has learned Heal at any rank.</description>
+    <jobString>scribing a healing cast scroll.</jobString>
+    <products><TM_CastScroll_Heal>1</TM_CastScroll_Heal></products>
+    <modExtensions>
+      <li Class="TorannMagic.SpellItems.SpellItemRecipeRequirement"><requiredSpell>TM_Heal</requiredSpell></li>
+    </modExtensions>
+  </RecipeDef>
+
+  <RecipeDef ParentName="TM_CastScrollRecipeBase">
+    <defName>TM_MakeCastScroll_Blink</defName>
+    <label>scribe blink cast scroll</label>
+    <description>Scribe a single-use Blink casting scroll. Requires a mage who has learned Blink at any rank.</description>
+    <jobString>scribing a blink cast scroll.</jobString>
+    <products><TM_CastScroll_Blink>1</TM_CastScroll_Blink></products>
+    <modExtensions>
+      <li Class="TorannMagic.SpellItems.SpellItemRecipeRequirement"><requiredSpell>TM_Blink</requiredSpell></li>
+    </modExtensions>
+  </RecipeDef>
+
+  <!-- Staff ingredients at item market value: scroll 90 + magicyte 350 + wood 36 + metal/stone 100 = 576.
+       Counting the scroll's own raw ingredients instead gives 558, about eight scrolls (8*72=576).
+       Each staff stores ten casts and has market value 720; it cannot be recharged. -->
+  <RecipeDef ParentName="TM_SpellItemRecipeBase">
+    <defName>TM_MakeSpellStaff_Fireball</defName>
+    <label>craft charged fireball staff</label>
+    <description>Bind a Fireball casting scroll into a staff with 10 uses. Requires a mage who has learned Fireball at any rank.</description>
+    <jobString>crafting a charged fireball staff.</jobString>
+    <workAmount>4000</workAmount>
+    <ingredients>
+      <li><filter><thingDefs><li>TM_CastScroll_Fireball</li></thingDefs></filter><count>1</count></li>
+      <li><filter><thingDefs><li>RawMagicyte</li></thingDefs></filter><count>70</count></li>
+      <li><filter><thingDefs><li>WoodLog</li></thingDefs></filter><count>30</count></li>
+      <li><filter><thingDefs><li>Gold</li></thingDefs></filter><count>10</count></li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs><li>TM_CastScroll_Fireball</li><li>RawMagicyte</li><li>WoodLog</li><li>Gold</li></thingDefs>
+    </fixedIngredientFilter>
+    <products><TM_SpellStaff_Fireball>1</TM_SpellStaff_Fireball></products>
+    <modExtensions>
+      <li Class="TorannMagic.SpellItems.SpellItemRecipeRequirement"><requiredSpell>TM_Fireball</requiredSpell></li>
+    </modExtensions>
+  </RecipeDef>
+
+  <RecipeDef ParentName="TM_SpellItemRecipeBase">
+    <defName>TM_MakeSpellStaff_Heal</defName>
+    <label>craft charged healing staff</label>
+    <description>Bind a Heal casting scroll into a staff with 10 uses. Requires a mage who has learned Heal at any rank.</description>
+    <jobString>crafting a charged healing staff.</jobString>
+    <workAmount>4000</workAmount>
+    <ingredients>
+      <li><filter><thingDefs><li>TM_CastScroll_Heal</li></thingDefs></filter><count>1</count></li>
+      <li><filter><thingDefs><li>RawMagicyte</li></thingDefs></filter><count>70</count></li>
+      <li><filter><thingDefs><li>WoodLog</li></thingDefs></filter><count>30</count></li>
+      <li><filter><thingDefs><li>Jade</li></thingDefs></filter><count>20</count></li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs><li>TM_CastScroll_Heal</li><li>RawMagicyte</li><li>WoodLog</li><li>Jade</li></thingDefs>
+    </fixedIngredientFilter>
+    <products><TM_SpellStaff_Heal>1</TM_SpellStaff_Heal></products>
+    <modExtensions>
+      <li Class="TorannMagic.SpellItems.SpellItemRecipeRequirement"><requiredSpell>TM_Heal</requiredSpell></li>
+    </modExtensions>
+  </RecipeDef>
+
+  <RecipeDef ParentName="TM_SpellItemRecipeBase">
+    <defName>TM_MakeSpellStaff_Blink</defName>
+    <label>craft charged blink staff</label>
+    <description>Bind a Blink casting scroll into a staff with 10 uses. Requires a mage who has learned Blink at any rank.</description>
+    <jobString>crafting a charged blink staff.</jobString>
+    <workAmount>4000</workAmount>
+    <ingredients>
+      <li><filter><thingDefs><li>TM_CastScroll_Blink</li></thingDefs></filter><count>1</count></li>
+      <li><filter><thingDefs><li>RawMagicyte</li></thingDefs></filter><count>70</count></li>
+      <li><filter><thingDefs><li>WoodLog</li></thingDefs></filter><count>30</count></li>
+      <li><filter><thingDefs><li>Jade</li></thingDefs></filter><count>20</count></li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs><li>TM_CastScroll_Blink</li><li>RawMagicyte</li><li>WoodLog</li><li>Jade</li></thingDefs>
+    </fixedIngredientFilter>
+    <products><TM_SpellStaff_Blink>1</TM_SpellStaff_Blink></products>
+    <modExtensions>
+      <li Class="TorannMagic.SpellItems.SpellItemRecipeRequirement"><requiredSpell>TM_Blink</requiredSpell></li>
+    </modExtensions>
+  </RecipeDef>
+<ThingDef ParentName="TM_CastScrollBase">
+ <defName>TM_CastScroll_Lightning</defName><label>lightning cast scroll</label><description>Launches a bolt dealing 18 lightning damage to its first hit. A launched attack spends a use even if it misses. Range: 24 cells; line of sight required. Preparation: 1 seconds; cooldown: 2 seconds. Use from inventory. One scroll per successful cast. Anyone can use it without mana or learning. Fixed power.</description>
+ <statBases><MarketValue>90</MarketValue></statBases>
+ <graphicData><texPath>Items/SpellItems/Scroll_Lightning</texPath></graphicData>
+ <comps><li Class="TorannMagic.SpellItems.CompProperties_SpellItem"><spell>Lightning</spell><maxUses>1</maxUses><requiresEquipped>false</requiresEquipped><range>24</range><warmupTicks>60</warmupTicks><cooldownTicks>120</cooldownTicks></li></comps>
+</ThingDef>
+<RecipeDef ParentName="TM_SpellItemRecipeBase"><defName>TM_MakeCastScroll_Lightning</defName><label>make lightning cast scroll</label><description>Requires a mage who knows LightningBolt at any rank. Launches a bolt dealing 18 lightning damage to its first hit. A launched attack spends a use even if it misses. Range: 24 cells; line of sight required. Preparation: 1 seconds; cooldown: 2 seconds. Use from inventory. One scroll per successful cast. Anyone can use it without mana or learning. Fixed power.</description><jobString>making lightning cast scroll.</jobString><researchPrerequisite>TM_MagicScribing</researchPrerequisite><workAmount>800</workAmount><ingredients Inherit="False"><li><filter><thingDefs><li>RawMagicyte</li></thingDefs></filter><count>12</count></li><li><filter><thingDefs><li>Cloth</li></thingDefs></filter><count>8</count></li></ingredients><fixedIngredientFilter Inherit="False"><thingDefs><li>RawMagicyte</li><li>Cloth</li></thingDefs></fixedIngredientFilter><products><TM_CastScroll_Lightning>1</TM_CastScroll_Lightning></products><modExtensions><li Class="TorannMagic.SpellItems.SpellItemRecipeRequirement"><requiredSpell>TM_LightningBolt</requiredSpell></li></modExtensions></RecipeDef>
+<ThingDef ParentName="TM_SpellStaffBase">
+ <defName>TM_SpellStaff_Lightning</defName><label>charged lightning staff</label><description>Launches a bolt dealing 18 lightning damage to its first hit. A launched attack spends a use even if it misses. Range: 24 cells; line of sight required. Preparation: 1 seconds; cooldown: 2 seconds. Equip in the primary weapon slot. Holds 10 uses; cannot recharge and disappears after its last use. Anyone can use it without mana or learning. Fixed power.</description>
+ <statBases><MarketValue>720</MarketValue></statBases>
+ <graphicData><texPath>Items/SpellItems/Staff_Lightning</texPath></graphicData>
+ <comps><li Class="TorannMagic.SpellItems.CompProperties_SpellItem"><spell>Lightning</spell><maxUses>10</maxUses><requiresEquipped>true</requiresEquipped><range>24</range><warmupTicks>60</warmupTicks><cooldownTicks>120</cooldownTicks></li></comps>
+</ThingDef>
+<RecipeDef ParentName="TM_SpellItemRecipeBase"><defName>TM_MakeSpellStaff_Lightning</defName><label>make charged lightning staff</label><description>Requires a mage who knows LightningBolt at any rank. Launches a bolt dealing 18 lightning damage to its first hit. A launched attack spends a use even if it misses. Range: 24 cells; line of sight required. Preparation: 1 seconds; cooldown: 2 seconds. Equip in the primary weapon slot. Holds 10 uses; cannot recharge and disappears after its last use. Anyone can use it without mana or learning. Fixed power.</description><jobString>making charged lightning staff.</jobString><researchPrerequisite>TM_MagicScribing</researchPrerequisite><workAmount>4000</workAmount><ingredients Inherit="False"><li><filter><thingDefs><li>TM_CastScroll_Lightning</li></thingDefs></filter><count>1</count></li><li><filter><thingDefs><li>RawMagicyte</li></thingDefs></filter><count>70</count></li><li><filter><thingDefs><li>WoodLog</li></thingDefs></filter><count>30</count></li><li><filter><thingDefs><li>Gold</li></thingDefs></filter><count>10</count></li></ingredients><fixedIngredientFilter Inherit="False"><thingDefs><li>TM_CastScroll_Lightning</li><li>RawMagicyte</li><li>WoodLog</li><li>Gold</li></thingDefs></fixedIngredientFilter><products><TM_SpellStaff_Lightning>1</TM_SpellStaff_Lightning></products><modExtensions><li Class="TorannMagic.SpellItems.SpellItemRecipeRequirement"><requiredSpell>TM_LightningBolt</requiredSpell></li></modExtensions></RecipeDef>
+<ThingDef ParentName="TM_CastScrollBase">
+ <defName>TM_CastScroll_Regeneration</defName><label>regeneration cast scroll</label><description>Heals one natural wound by up to 5 health every 2 seconds for 20 seconds (at most 50 total). Does not regrow missing parts or heal scars. Does not stack. Range: 12 cells; line of sight required. Preparation: 1.5 seconds; cooldown: 2 seconds. Use from inventory. One scroll per successful cast. Anyone can use it without mana or learning. Fixed power.</description>
+ <statBases><MarketValue>180</MarketValue></statBases>
+ <graphicData><texPath>Items/SpellItems/Scroll_Regeneration</texPath></graphicData>
+ <comps><li Class="TorannMagic.SpellItems.CompProperties_SpellItem"><spell>Regeneration</spell><maxUses>1</maxUses><requiresEquipped>false</requiresEquipped><range>12</range><warmupTicks>90</warmupTicks><cooldownTicks>120</cooldownTicks></li></comps>
+</ThingDef>
+<RecipeDef ParentName="TM_SpellItemRecipeBase"><defName>TM_MakeCastScroll_Regeneration</defName><label>make regeneration cast scroll</label><description>Requires a mage who knows Regenerate at any rank. Heals one natural wound by up to 5 health every 2 seconds for 20 seconds (at most 50 total). Does not regrow missing parts or heal scars. Does not stack. Range: 12 cells; line of sight required. Preparation: 1.5 seconds; cooldown: 2 seconds. Use from inventory. One scroll per successful cast. Anyone can use it without mana or learning. Fixed power.</description><jobString>making regeneration cast scroll.</jobString><researchPrerequisite>TM_AdvancedScribing</researchPrerequisite><workAmount>1800</workAmount><ingredients Inherit="False"><li><filter><thingDefs><li>RawMagicyte</li></thingDefs></filter><count>24</count></li><li><filter><thingDefs><li>Cloth</li></thingDefs></filter><count>16</count></li></ingredients><fixedIngredientFilter Inherit="False"><thingDefs><li>RawMagicyte</li><li>Cloth</li></thingDefs></fixedIngredientFilter><products><TM_CastScroll_Regeneration>1</TM_CastScroll_Regeneration></products><modExtensions><li Class="TorannMagic.SpellItems.SpellItemRecipeRequirement"><requiredSpell>TM_Regenerate</requiredSpell></li></modExtensions></RecipeDef>
+<ThingDef ParentName="TM_SpellStaffBase">
+ <defName>TM_SpellStaff_Regeneration</defName><label>charged regeneration staff</label><description>Heals one natural wound by up to 5 health every 2 seconds for 20 seconds (at most 50 total). Does not regrow missing parts or heal scars. Does not stack. Range: 12 cells; line of sight required. Preparation: 1.5 seconds; cooldown: 2 seconds. Equip in the primary weapon slot. Holds 10 uses; cannot recharge and disappears after its last use. Anyone can use it without mana or learning. Fixed power.</description>
+ <statBases><MarketValue>1440</MarketValue></statBases>
+ <graphicData><texPath>Items/SpellItems/Staff_Regeneration</texPath></graphicData>
+ <comps><li Class="TorannMagic.SpellItems.CompProperties_SpellItem"><spell>Regeneration</spell><maxUses>10</maxUses><requiresEquipped>true</requiresEquipped><range>12</range><warmupTicks>90</warmupTicks><cooldownTicks>120</cooldownTicks></li></comps>
+</ThingDef>
+<RecipeDef ParentName="TM_SpellItemRecipeBase"><defName>TM_MakeSpellStaff_Regeneration</defName><label>make charged regeneration staff</label><description>Requires a mage who knows Regenerate at any rank. Heals one natural wound by up to 5 health every 2 seconds for 20 seconds (at most 50 total). Does not regrow missing parts or heal scars. Does not stack. Range: 12 cells; line of sight required. Preparation: 1.5 seconds; cooldown: 2 seconds. Equip in the primary weapon slot. Holds 10 uses; cannot recharge and disappears after its last use. Anyone can use it without mana or learning. Fixed power.</description><jobString>making charged regeneration staff.</jobString><researchPrerequisite>TM_AdvancedScribing</researchPrerequisite><workAmount>8000</workAmount><ingredients Inherit="False"><li><filter><thingDefs><li>TM_CastScroll_Regeneration</li></thingDefs></filter><count>1</count></li><li><filter><thingDefs><li>RawMagicyte</li></thingDefs></filter><count>174</count></li><li><filter><thingDefs><li>WoodLog</li></thingDefs></filter><count>30</count></li><li><filter><thingDefs><li>Jade</li></thingDefs></filter><count>20</count></li></ingredients><fixedIngredientFilter Inherit="False"><thingDefs><li>TM_CastScroll_Regeneration</li><li>RawMagicyte</li><li>WoodLog</li><li>Jade</li></thingDefs></fixedIngredientFilter><products><TM_SpellStaff_Regeneration>1</TM_SpellStaff_Regeneration></products><modExtensions><li Class="TorannMagic.SpellItems.SpellItemRecipeRequirement"><requiredSpell>TM_Regenerate</requiredSpell></li></modExtensions></RecipeDef>
+<ThingDef ParentName="TM_CastScrollBase">
+ <defName>TM_CastScroll_CureDisease</defName><label>disease cure cast scroll</label><description>Removes one infection, flu, plague, malaria, sleeping sickness, gut worms, muscle parasites, food poisoning or scaria. Other conditions are unaffected. Range: 12 cells; line of sight required. Preparation: 2 seconds; cooldown: 2 seconds. Use from inventory. One scroll per successful cast. Anyone can use it without mana or learning. Fixed power.</description>
+ <statBases><MarketValue>300</MarketValue></statBases>
+ <graphicData><texPath>Items/SpellItems/Scroll_CureDisease</texPath></graphicData>
+ <comps><li Class="TorannMagic.SpellItems.CompProperties_SpellItem"><spell>CureDisease</spell><maxUses>1</maxUses><requiresEquipped>false</requiresEquipped><range>12</range><warmupTicks>120</warmupTicks><cooldownTicks>120</cooldownTicks></li></comps>
+</ThingDef>
+<RecipeDef ParentName="TM_SpellItemRecipeBase"><defName>TM_MakeCastScroll_CureDisease</defName><label>make disease cure cast scroll</label><description>Requires a mage who knows CureDisease at any rank. Removes one infection, flu, plague, malaria, sleeping sickness, gut worms, muscle parasites, food poisoning or scaria. Other conditions are unaffected. Range: 12 cells; line of sight required. Preparation: 2 seconds; cooldown: 2 seconds. Use from inventory. One scroll per successful cast. Anyone can use it without mana or learning. Fixed power.</description><jobString>making disease cure cast scroll.</jobString><researchPrerequisite>TM_AdvancedScribing</researchPrerequisite><workAmount>1800</workAmount><ingredients Inherit="False"><li><filter><thingDefs><li>RawMagicyte</li></thingDefs></filter><count>40</count></li><li><filter><thingDefs><li>Cloth</li></thingDefs></filter><count>20</count></li></ingredients><fixedIngredientFilter Inherit="False"><thingDefs><li>RawMagicyte</li><li>Cloth</li></thingDefs></fixedIngredientFilter><products><TM_CastScroll_CureDisease>1</TM_CastScroll_CureDisease></products><modExtensions><li Class="TorannMagic.SpellItems.SpellItemRecipeRequirement"><requiredSpell>TM_CureDisease</requiredSpell></li></modExtensions></RecipeDef>
+<ThingDef ParentName="TM_SpellStaffBase">
+ <defName>TM_SpellStaff_CureDisease</defName><label>charged disease cure staff</label><description>Removes one infection, flu, plague, malaria, sleeping sickness, gut worms, muscle parasites, food poisoning or scaria. Other conditions are unaffected. Range: 12 cells; line of sight required. Preparation: 2 seconds; cooldown: 2 seconds. Equip in the primary weapon slot. Holds 10 uses; cannot recharge and disappears after its last use. Anyone can use it without mana or learning. Fixed power.</description>
+ <statBases><MarketValue>2400</MarketValue></statBases>
+ <graphicData><texPath>Items/SpellItems/Staff_CureDisease</texPath></graphicData>
+ <comps><li Class="TorannMagic.SpellItems.CompProperties_SpellItem"><spell>CureDisease</spell><maxUses>10</maxUses><requiresEquipped>true</requiresEquipped><range>12</range><warmupTicks>120</warmupTicks><cooldownTicks>120</cooldownTicks></li></comps>
+</ThingDef>
+<RecipeDef ParentName="TM_SpellItemRecipeBase"><defName>TM_MakeSpellStaff_CureDisease</defName><label>make charged disease cure staff</label><description>Requires a mage who knows CureDisease at any rank. Removes one infection, flu, plague, malaria, sleeping sickness, gut worms, muscle parasites, food poisoning or scaria. Other conditions are unaffected. Range: 12 cells; line of sight required. Preparation: 2 seconds; cooldown: 2 seconds. Equip in the primary weapon slot. Holds 10 uses; cannot recharge and disappears after its last use. Anyone can use it without mana or learning. Fixed power.</description><jobString>making charged disease cure staff.</jobString><researchPrerequisite>TM_AdvancedScribing</researchPrerequisite><workAmount>8000</workAmount><ingredients Inherit="False"><li><filter><thingDefs><li>TM_CastScroll_CureDisease</li></thingDefs></filter><count>1</count></li><li><filter><thingDefs><li>RawMagicyte</li></thingDefs></filter><count>295</count></li><li><filter><thingDefs><li>WoodLog</li></thingDefs></filter><count>30</count></li><li><filter><thingDefs><li>Jade</li></thingDefs></filter><count>20</count></li></ingredients><fixedIngredientFilter Inherit="False"><thingDefs><li>TM_CastScroll_CureDisease</li><li>RawMagicyte</li><li>WoodLog</li><li>Jade</li></thingDefs></fixedIngredientFilter><products><TM_SpellStaff_CureDisease>1</TM_SpellStaff_CureDisease></products><modExtensions><li Class="TorannMagic.SpellItems.SpellItemRecipeRequirement"><requiredSpell>TM_CureDisease</requiredSpell></li></modExtensions></RecipeDef>
+<ThingDef ParentName="TM_CastScrollBase">
+ <defName>TM_CastScroll_Purify</defName><label>purification cast scroll</label><description>Removes one scar, asthma, bad back, frailty, cataract, hearing loss, artery blockage or addiction other than luciferium. Does not regrow parts or cure arbitrary conditions. Range: 12 cells; line of sight required. Preparation: 3 seconds; cooldown: 2 seconds. Use from inventory. One scroll per successful cast. Anyone can use it without mana or learning. Fixed power.</description>
+ <statBases><MarketValue>450</MarketValue></statBases>
+ <graphicData><texPath>Items/SpellItems/Scroll_Purify</texPath></graphicData>
+ <comps><li Class="TorannMagic.SpellItems.CompProperties_SpellItem"><spell>Purify</spell><maxUses>1</maxUses><requiresEquipped>false</requiresEquipped><range>12</range><warmupTicks>180</warmupTicks><cooldownTicks>120</cooldownTicks></li></comps>
+</ThingDef>
+<RecipeDef ParentName="TM_SpellItemRecipeBase"><defName>TM_MakeCastScroll_Purify</defName><label>make purification cast scroll</label><description>Requires a mage who knows Purify at any rank. Removes one scar, asthma, bad back, frailty, cataract, hearing loss, artery blockage or addiction other than luciferium. Does not regrow parts or cure arbitrary conditions. Range: 12 cells; line of sight required. Preparation: 3 seconds; cooldown: 2 seconds. Use from inventory. One scroll per successful cast. Anyone can use it without mana or learning. Fixed power.</description><jobString>making purification cast scroll.</jobString><researchPrerequisite>TM_AdvancedScribing</researchPrerequisite><workAmount>1800</workAmount><ingredients Inherit="False"><li><filter><thingDefs><li>RawMagicyte</li></thingDefs></filter><count>60</count></li><li><filter><thingDefs><li>Cloth</li></thingDefs></filter><count>20</count></li></ingredients><fixedIngredientFilter Inherit="False"><thingDefs><li>RawMagicyte</li><li>Cloth</li></thingDefs></fixedIngredientFilter><products><TM_CastScroll_Purify>1</TM_CastScroll_Purify></products><modExtensions><li Class="TorannMagic.SpellItems.SpellItemRecipeRequirement"><requiredSpell>TM_Purify</requiredSpell></li></modExtensions></RecipeDef>
+<ThingDef ParentName="TM_SpellStaffBase">
+ <defName>TM_SpellStaff_Purify</defName><label>charged purification staff</label><description>Removes one scar, asthma, bad back, frailty, cataract, hearing loss, artery blockage or addiction other than luciferium. Does not regrow parts or cure arbitrary conditions. Range: 12 cells; line of sight required. Preparation: 3 seconds; cooldown: 2 seconds. Equip in the primary weapon slot. Holds 10 uses; cannot recharge and disappears after its last use. Anyone can use it without mana or learning. Fixed power.</description>
+ <statBases><MarketValue>3600</MarketValue></statBases>
+ <graphicData><texPath>Items/SpellItems/Staff_Purify</texPath></graphicData>
+ <comps><li Class="TorannMagic.SpellItems.CompProperties_SpellItem"><spell>Purify</spell><maxUses>10</maxUses><requiresEquipped>true</requiresEquipped><range>12</range><warmupTicks>180</warmupTicks><cooldownTicks>120</cooldownTicks></li></comps>
+</ThingDef>
+<RecipeDef ParentName="TM_SpellItemRecipeBase"><defName>TM_MakeSpellStaff_Purify</defName><label>make charged purification staff</label><description>Requires a mage who knows Purify at any rank. Removes one scar, asthma, bad back, frailty, cataract, hearing loss, artery blockage or addiction other than luciferium. Does not regrow parts or cure arbitrary conditions. Range: 12 cells; line of sight required. Preparation: 3 seconds; cooldown: 2 seconds. Equip in the primary weapon slot. Holds 10 uses; cannot recharge and disappears after its last use. Anyone can use it without mana or learning. Fixed power.</description><jobString>making charged purification staff.</jobString><researchPrerequisite>TM_AdvancedScribing</researchPrerequisite><workAmount>8000</workAmount><ingredients Inherit="False"><li><filter><thingDefs><li>TM_CastScroll_Purify</li></thingDefs></filter><count>1</count></li><li><filter><thingDefs><li>RawMagicyte</li></thingDefs></filter><count>435</count></li><li><filter><thingDefs><li>WoodLog</li></thingDefs></filter><count>30</count></li><li><filter><thingDefs><li>Jade</li></thingDefs></filter><count>20</count></li></ingredients><fixedIngredientFilter Inherit="False"><thingDefs><li>TM_CastScroll_Purify</li><li>RawMagicyte</li><li>WoodLog</li><li>Jade</li></thingDefs></fixedIngredientFilter><products><TM_SpellStaff_Purify>1</TM_SpellStaff_Purify></products><modExtensions><li Class="TorannMagic.SpellItems.SpellItemRecipeRequirement"><requiredSpell>TM_Purify</requiredSpell></li></modExtensions></RecipeDef>
+<ThingDef ParentName="TM_CastScrollBase">
+ <defName>TM_CastScroll_Soothe</defName><label>soothing cast scroll</label><description>Grants +6 mood for one day. Cannot stack or refresh while active. Requires a living friendly pawn with a mood need. Range: 12 cells; line of sight required. Preparation: 1 seconds; cooldown: 2 seconds. Use from inventory. One scroll per successful cast. Anyone can use it without mana or learning. Fixed power.</description>
+ <statBases><MarketValue>90</MarketValue></statBases>
+ <graphicData><texPath>Items/SpellItems/Scroll_Soothe</texPath></graphicData>
+ <comps><li Class="TorannMagic.SpellItems.CompProperties_SpellItem"><spell>Soothe</spell><maxUses>1</maxUses><requiresEquipped>false</requiresEquipped><range>12</range><warmupTicks>60</warmupTicks><cooldownTicks>120</cooldownTicks></li></comps>
+</ThingDef>
+<RecipeDef ParentName="TM_SpellItemRecipeBase"><defName>TM_MakeCastScroll_Soothe</defName><label>make soothing cast scroll</label><description>Requires a mage who knows Soothe at any rank. Grants +6 mood for one day. Cannot stack or refresh while active. Requires a living friendly pawn with a mood need. Range: 12 cells; line of sight required. Preparation: 1 seconds; cooldown: 2 seconds. Use from inventory. One scroll per successful cast. Anyone can use it without mana or learning. Fixed power.</description><jobString>making soothing cast scroll.</jobString><researchPrerequisite>TM_MagicScribing</researchPrerequisite><workAmount>800</workAmount><ingredients Inherit="False"><li><filter><thingDefs><li>RawMagicyte</li></thingDefs></filter><count>12</count></li><li><filter><thingDefs><li>Cloth</li></thingDefs></filter><count>8</count></li></ingredients><fixedIngredientFilter Inherit="False"><thingDefs><li>RawMagicyte</li><li>Cloth</li></thingDefs></fixedIngredientFilter><products><TM_CastScroll_Soothe>1</TM_CastScroll_Soothe></products><modExtensions><li Class="TorannMagic.SpellItems.SpellItemRecipeRequirement"><requiredSpell>TM_Soothe</requiredSpell></li></modExtensions></RecipeDef>
+<ThingDef ParentName="TM_SpellStaffBase">
+ <defName>TM_SpellStaff_Soothe</defName><label>charged soothing staff</label><description>Grants +6 mood for one day. Cannot stack or refresh while active. Requires a living friendly pawn with a mood need. Range: 12 cells; line of sight required. Preparation: 1 seconds; cooldown: 2 seconds. Equip in the primary weapon slot. Holds 10 uses; cannot recharge and disappears after its last use. Anyone can use it without mana or learning. Fixed power.</description>
+ <statBases><MarketValue>720</MarketValue></statBases>
+ <graphicData><texPath>Items/SpellItems/Staff_Soothe</texPath></graphicData>
+ <comps><li Class="TorannMagic.SpellItems.CompProperties_SpellItem"><spell>Soothe</spell><maxUses>10</maxUses><requiresEquipped>true</requiresEquipped><range>12</range><warmupTicks>60</warmupTicks><cooldownTicks>120</cooldownTicks></li></comps>
+</ThingDef>
+<RecipeDef ParentName="TM_SpellItemRecipeBase"><defName>TM_MakeSpellStaff_Soothe</defName><label>make charged soothing staff</label><description>Requires a mage who knows Soothe at any rank. Grants +6 mood for one day. Cannot stack or refresh while active. Requires a living friendly pawn with a mood need. Range: 12 cells; line of sight required. Preparation: 1 seconds; cooldown: 2 seconds. Equip in the primary weapon slot. Holds 10 uses; cannot recharge and disappears after its last use. Anyone can use it without mana or learning. Fixed power.</description><jobString>making charged soothing staff.</jobString><researchPrerequisite>TM_MagicScribing</researchPrerequisite><workAmount>4000</workAmount><ingredients Inherit="False"><li><filter><thingDefs><li>TM_CastScroll_Soothe</li></thingDefs></filter><count>1</count></li><li><filter><thingDefs><li>RawMagicyte</li></thingDefs></filter><count>70</count></li><li><filter><thingDefs><li>WoodLog</li></thingDefs></filter><count>30</count></li><li><filter><thingDefs><li>Jade</li></thingDefs></filter><count>20</count></li></ingredients><fixedIngredientFilter Inherit="False"><thingDefs><li>TM_CastScroll_Soothe</li><li>RawMagicyte</li><li>WoodLog</li><li>Jade</li></thingDefs></fixedIngredientFilter><products><TM_SpellStaff_Soothe>1</TM_SpellStaff_Soothe></products><modExtensions><li Class="TorannMagic.SpellItems.SpellItemRecipeRequirement"><requiredSpell>TM_Soothe</requiredSpell></li></modExtensions></RecipeDef>
+<ThingDef ParentName="TM_CastScrollBase">
+ <defName>TM_CastScroll_Portal</defName><label>portal cast scroll</label><description>Creates a linked pair of temporary portals lasting one day. Select an empty entrance, a loaded map and an empty exit. Right-click either portal to travel. No automatic camera switching. Cannot generate maps; cancellation spends nothing. Range: 12 cells; line of sight required. Preparation: 3 seconds; cooldown: 2 seconds. Use from inventory. One scroll per successful cast. Anyone can use it without mana or learning. Fixed power.</description>
+ <statBases><MarketValue>1450</MarketValue></statBases>
+ <graphicData><texPath>Items/SpellItems/Scroll_Portal</texPath></graphicData>
+ <comps><li Class="TorannMagic.SpellItems.CompProperties_SpellItem"><spell>Portal</spell><maxUses>1</maxUses><requiresEquipped>false</requiresEquipped><range>12</range><warmupTicks>180</warmupTicks><cooldownTicks>120</cooldownTicks></li></comps>
+</ThingDef>
+<RecipeDef ParentName="TM_SpellItemRecipeBase"><defName>TM_MakeCastScroll_Portal</defName><label>make portal cast scroll</label><description>Requires a mage who knows FoldReality at any rank. Creates a linked pair of temporary portals lasting one day. Select an empty entrance, a loaded map and an empty exit. Right-click either portal to travel. No automatic camera switching. Cannot generate maps; cancellation spends nothing. Range: 12 cells; line of sight required. Preparation: 3 seconds; cooldown: 2 seconds. Use from inventory. One scroll per successful cast. Anyone can use it without mana or learning. Fixed power.</description><jobString>making portal cast scroll.</jobString><researchPrerequisite>TM_MasterScribing</researchPrerequisite><workAmount>8000</workAmount><ingredients Inherit="False"><li><filter><thingDefs><li>RawMagicyte</li></thingDefs></filter><count>180</count></li><li><filter><thingDefs><li>Cloth</li></thingDefs></filter><count>40</count></li><li><filter><thingDefs><li>Jade</li></thingDefs></filter><count>40</count></li></ingredients><fixedIngredientFilter Inherit="False"><thingDefs><li>RawMagicyte</li><li>Cloth</li><li>Jade</li></thingDefs></fixedIngredientFilter><products><TM_CastScroll_Portal>1</TM_CastScroll_Portal></products><modExtensions><li Class="TorannMagic.SpellItems.SpellItemRecipeRequirement"><requiredSpell>TM_FoldReality</requiredSpell></li></modExtensions></RecipeDef>
+<ThingDef ParentName="TM_SpellStaffBase">
+ <defName>TM_SpellStaff_Portal</defName><label>charged portal staff</label><description>Creates a linked pair of temporary portals lasting one day. Select an empty entrance, a loaded map and an empty exit. Right-click either portal to travel. No automatic camera switching. Cannot generate maps; cancellation spends nothing. Range: 12 cells; line of sight required. Preparation: 3 seconds; cooldown: 2 seconds. Equip in the primary weapon slot. Holds 10 uses; cannot recharge and disappears after its last use. Anyone can use it without mana or learning. Fixed power.</description>
+ <statBases><MarketValue>11600</MarketValue></statBases>
+ <graphicData><texPath>Items/SpellItems/Staff_Portal</texPath></graphicData>
+ <comps><li Class="TorannMagic.SpellItems.CompProperties_SpellItem"><spell>Portal</spell><maxUses>10</maxUses><requiresEquipped>true</requiresEquipped><range>12</range><warmupTicks>180</warmupTicks><cooldownTicks>120</cooldownTicks></li></comps>
+</ThingDef>
+<RecipeDef ParentName="TM_SpellItemRecipeBase"><defName>TM_MakeSpellStaff_Portal</defName><label>make charged portal staff</label><description>Requires a mage who knows FoldReality at any rank. Creates a linked pair of temporary portals lasting one day. Select an empty entrance, a loaded map and an empty exit. Right-click either portal to travel. No automatic camera switching. Cannot generate maps; cancellation spends nothing. Range: 12 cells; line of sight required. Preparation: 3 seconds; cooldown: 2 seconds. Equip in the primary weapon slot. Holds 10 uses; cannot recharge and disappears after its last use. Anyone can use it without mana or learning. Fixed power.</description><jobString>making charged portal staff.</jobString><researchPrerequisite>TM_MasterScribing</researchPrerequisite><workAmount>20000</workAmount><ingredients Inherit="False"><li><filter><thingDefs><li>TM_CastScroll_Portal</li></thingDefs></filter><count>1</count></li><li><filter><thingDefs><li>RawMagicyte</li></thingDefs></filter><count>1400</count></li><li><filter><thingDefs><li>WoodLog</li></thingDefs></filter><count>30</count></li><li><filter><thingDefs><li>Jade</li></thingDefs></filter><count>200</count></li></ingredients><fixedIngredientFilter Inherit="False"><thingDefs><li>TM_CastScroll_Portal</li><li>RawMagicyte</li><li>WoodLog</li><li>Jade</li></thingDefs></fixedIngredientFilter><products><TM_SpellStaff_Portal>1</TM_SpellStaff_Portal></products><modExtensions><li Class="TorannMagic.SpellItems.SpellItemRecipeRequirement"><requiredSpell>TM_FoldReality</requiredSpell></li></modExtensions></RecipeDef>
+<ThingDef ParentName="TM_CastScrollBase">
+ <defName>TM_CastScroll_Resurrection</defName><label>resurrection cast scroll</label><description>Revives one fresh non-hostile organic corpse after 30 seconds of uninterrupted preparation, with native resurrection side effects. Does not work on rotten corpses, undead or mechanoids. Spends the scroll only after confirmed revival. Range: 8 cells; line of sight required. Preparation: 30 seconds; cooldown: 2 seconds. Use from inventory. One scroll per successful cast. Anyone can use it without mana or learning. Fixed power.</description>
+ <statBases><MarketValue>3000</MarketValue></statBases>
+ <graphicData><texPath>Items/SpellItems/Scroll_Resurrection</texPath></graphicData>
+ <comps><li Class="TorannMagic.SpellItems.CompProperties_SpellItem"><spell>Resurrection</spell><maxUses>1</maxUses><requiresEquipped>false</requiresEquipped><range>8</range><warmupTicks>1800</warmupTicks><cooldownTicks>120</cooldownTicks></li></comps>
+</ThingDef>
+<RecipeDef ParentName="TM_SpellItemRecipeBase"><defName>TM_MakeCastScroll_Resurrection</defName><label>make resurrection cast scroll</label><description>Requires a mage who knows Resurrection at any rank. Revives one fresh non-hostile organic corpse after 30 seconds of uninterrupted preparation, with native resurrection side effects. Does not work on rotten corpses, undead or mechanoids. Spends the scroll only after confirmed revival. Range: 8 cells; line of sight required. Preparation: 30 seconds; cooldown: 2 seconds. Use from inventory. One scroll per successful cast. Anyone can use it without mana or learning. Fixed power.</description><jobString>making resurrection cast scroll.</jobString><researchPrerequisite>TM_MasterScribing</researchPrerequisite><workAmount>8000</workAmount><ingredients Inherit="False"><li><filter><thingDefs><li>RawMagicyte</li></thingDefs></filter><count>400</count></li><li><filter><thingDefs><li>Cloth</li></thingDefs></filter><count>40</count></li><li><filter><thingDefs><li>Gold</li></thingDefs></filter><count>40</count></li></ingredients><fixedIngredientFilter Inherit="False"><thingDefs><li>RawMagicyte</li><li>Cloth</li><li>Gold</li></thingDefs></fixedIngredientFilter><products><TM_CastScroll_Resurrection>1</TM_CastScroll_Resurrection></products><modExtensions><li Class="TorannMagic.SpellItems.SpellItemRecipeRequirement"><requiredSpell>TM_Resurrection</requiredSpell></li></modExtensions></RecipeDef>
+<ThingDef ParentName="BaseBullet"><defName>TM_ItemLightningProjectile</defName><label>item lightning bolt</label><thingClass>Bullet</thingClass><graphicData><texPath>Spells/LightningBolt</texPath><graphicClass>Graphic_Single</graphicClass><shaderType>TransparentPostLight</shaderType></graphicData><projectile><damageDef>TM_Lightning</damageDef><damageAmountBase>18</damageAmountBase><armorPenetrationBase>0.15</armorPenetrationBase><speed>50</speed></projectile></ThingDef>
+<HediffDef><defName>TM_ItemRegeneration</defName><label>item regeneration</label><description>Restores up to 5 health to one natural wound every two seconds for twenty seconds.</description><hediffClass>TorannMagic.SpellItems.Hediff_SpellItemRegeneration</hediffClass><isBad>false</isBad><initialSeverity>1</initialSeverity></HediffDef>
+<ThoughtDef><defName>TM_ItemSoothed</defName><thoughtClass>Thought_Memory</thoughtClass><durationDays>1</durationDays><stackLimit>1</stackLimit><stages><li><label>magically soothed</label><description>A gentle spell has quieted my worries.</description><baseMoodEffect>6</baseMoodEffect></li></stages></ThoughtDef>
+<ThingDef><defName>TM_ItemPortal</defName><label>temporary portal</label><description>A temporary passage linked to another portal. Right-click to travel. Lasts one day.</description><thingClass>TorannMagic.SpellItems.Building_SpellItemPortal</thingClass><category>Building</category><tickerType>Normal</tickerType><altitudeLayer>Building</altitudeLayer><passability>Standable</passability><selectable>true</selectable><useHitPoints>false</useHitPoints><rotatable>false</rotatable><size>(1,1)</size><graphicData><texPath>Other/PortalBldg2</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>1.5</drawSize></graphicData><building><isEdifice>false</isEdifice></building></ThingDef>
+<JobDef><defName>TM_ItemPortalTravel</defName><driverClass>TorannMagic.SpellItems.JobDriver_SpellItemPortalTravel</driverClass><reportString>entering a portal.</reportString></JobDef>
+</Defs>

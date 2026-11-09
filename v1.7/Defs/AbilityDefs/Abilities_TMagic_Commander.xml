@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
- <!-- Provisioner Aura -->
+ 
  
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_ProvisionerAura</defName>
@@ -39,9 +38,16 @@
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_provisioneraura</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
-   <!-- Task Master Aura -->
+   
  
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_TaskMasterAura</defName>
@@ -78,9 +84,16 @@
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_taskmasteraura</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
-   <!-- Commander Aura -->
+   
  
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_CommanderAura</defName>
@@ -117,9 +130,16 @@
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_commanderaura</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
    
-     <!-- Stay Alert -->
+     
  
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_StayAlert</defName>
@@ -169,7 +189,14 @@ Commands do not affect the commander.</description>
 			<canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_stayalert</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_StayAlert_I</defName>
@@ -219,7 +246,14 @@ Commands do not affect the commander.</description>
 			<canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_stayalert_i</spellId>
+<domain>Might</domain>
+<tier>1</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
    <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_StayAlert_II</defName>
@@ -269,7 +303,14 @@ Commands do not affect the commander.</description>
 			<canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_stayalert_ii</spellId>
+<domain>Might</domain>
+<tier>2</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
    <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_StayAlert_III</defName>
@@ -319,9 +360,16 @@ Commands do not affect the commander.</description>
 			<canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_stayalert_iii</spellId>
+<domain>Might</domain>
+<tier>3</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
-  <!-- Move Out -->
+  
  
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_MoveOut</defName>
@@ -371,7 +419,14 @@ Commands do not affect the commander.</description>
 			<canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_moveout</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_MoveOut_I</defName>
@@ -421,7 +476,14 @@ Commands do not affect the commander.</description>
 			<canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_moveout_i</spellId>
+<domain>Might</domain>
+<tier>1</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
    <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_MoveOut_II</defName>
@@ -471,7 +533,14 @@ Commands do not affect the commander.</description>
 			<canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_moveout_ii</spellId>
+<domain>Might</domain>
+<tier>2</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
    <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_MoveOut_III</defName>
@@ -521,10 +590,17 @@ Commands do not affect the commander.</description>
 			<canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_moveout_iii</spellId>
+<domain>Might</domain>
+<tier>3</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 
-<!-- Hold The Line -->
+
  
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_HoldTheLine</defName>
@@ -574,7 +650,14 @@ Commands do not affect the commander.</description>
 			<canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_holdtheline</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_HoldTheLine_I</defName>
@@ -624,7 +707,14 @@ Commands do not affect the commander.</description>
 			<canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_holdtheline_i</spellId>
+<domain>Might</domain>
+<tier>1</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
    <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_HoldTheLine_II</defName>
@@ -674,7 +764,14 @@ Commands do not affect the commander.</description>
 			<canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_holdtheline_ii</spellId>
+<domain>Might</domain>
+<tier>2</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
    <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_HoldTheLine_III</defName>
@@ -724,6 +821,13 @@ Commands do not affect the commander.</description>
 			<canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_holdtheline_iii</spellId>
+<domain>Might</domain>
+<tier>3</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
 </Defs>

@@ -361,6 +361,7 @@
       <li Class="HediffCompProperties_SeverityPerDay">
         <severityPerDay>-48</severityPerDay>
       </li>	  
+      <li Class="TorannMagic.ClassProgression.HediffCompProperties_DeathMarkTrial" />
     </comps>	
 	<stages>
 	  <li>

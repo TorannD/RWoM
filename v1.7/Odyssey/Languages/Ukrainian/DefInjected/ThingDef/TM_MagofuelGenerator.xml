@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_MagofuelGenerator.label>магопаливний генератор</TM_MagofuelGenerator.label>
+  <TM_MagofuelGenerator.description>Спалює магопаливо та подає 3000 Вт до електромережі, витрачаючи 3 одиниці палива на день і виділяючи 6 одиниць тепла за секунду під час генерації. Працює у вакуумі. Зупиняється при вимкненні, поломці, від’єднанні від мережі або нестачі палива. Невитрачене паливо в осерді зберігається при зупинці та переміщенні.</TM_MagofuelGenerator.description>
+</LanguageData>
+

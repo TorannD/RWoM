@@ -1,0 +1,7 @@
+<modExtensions>
+  <li Class="TorannMagic.Core.SpellIdentityExtension">
+    <spellId>myaddon.glassward</spellId>
+    <domain>Magic</domain>
+    <tier>0</tier>
+  </li>
+</modExtensions>

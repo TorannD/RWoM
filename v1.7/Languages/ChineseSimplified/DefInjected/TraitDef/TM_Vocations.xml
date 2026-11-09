@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_VocationMage.degreeDatas.0.label>法师</TM_VocationMage.degreeDatas.0.label>
+  <TM_VocationMage.degreeDatas.0.description>[PAWN_nameDef]已觉醒魔法天赋。学派通过魔法书和入门书籍学习。</TM_VocationMage.degreeDatas.0.description>
+  <TM_VocationWarrior.degreeDatas.0.label>战士</TM_VocationWarrior.degreeDatas.0.label>
+  <TM_VocationWarrior.degreeDatas.0.description>[PAWN_nameDef]遵循武者之道。</TM_VocationWarrior.degreeDatas.0.description>
+  <TM_VocationWarriorMage.degreeDatas.0.label>魔武士</TM_VocationWarriorMage.degreeDatas.0.label>
+  <TM_VocationWarriorMage.degreeDatas.0.description>[PAWN_nameDef]兼修魔法与武艺。</TM_VocationWarriorMage.degreeDatas.0.description>
+</LanguageData>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <UnfinishedAdvArcane.label>Libro arcano sin terminar</UnfinishedAdvArcane.label>
+  
+  <UnfinishedAdvArcane.description>Un tomo arcano listo para llenarse con los secretos para desbloquear poderes mágicos...\n\nUsa a un mago entrenado para registrar sus secretos arcanos en el libro. El libro podrá usarse después para enseñar a otro personaje dotado a convertirse en la misma clase. Los tomos arcanos ascienden a un personaje dotado a una clase mágica y le otorgan todas las habilidades de clase salvo la habilidad maestra.\n\nLos personajes dotados pueden anotar en este libro sus teorías y experimentos y aprender a convertirse en una clase mágica aleatoria.</UnfinishedAdvArcane.description>
+  
+  <UnfinishedAdvArcane.comps.CompUsable.useLabel>Escribir</UnfinishedAdvArcane.comps.CompUsable.useLabel>
+  
+  
+  <UnfinishedArcane.label>Escrito rasgado sin terminar</UnfinishedArcane.label>
+  
+  <UnfinishedArcane.description>Un escrito arcano listo para llenarse con los secretos para desbloquear poderes mágicos...\n\nUsa a un mago entrenado para registrar sus secretos arcanos en el libro. El libro podrá usarse después para enseñar a otro personaje dotado a convertirse en la misma clase. Los escritos rasgados ascienden a un personaje dotado a una clase mágica, pero empezará con un conjunto aleatorio de habilidades de clase.\n\nLos personajes dotados de magia pueden anotar en este libro sus teorías y experimentos y aprender a convertirse en una clase mágica aleatoria.</UnfinishedArcane.description>
+  
+  <UnfinishedArcane.comps.CompUsable.useLabel>Escribir</UnfinishedArcane.comps.CompUsable.useLabel>
+  
+  
+  <UnfinishedMartial.label>Libro marcial sin terminar</UnfinishedMartial.label>
+  
+  <UnfinishedMartial.description>Un libro listo para llenarse con los secretos para desbloquear poderes marciales...\n\nUsa a un luchador entrenado para registrar sus técnicas de combate en el libro. El libro podrá usarse después para enseñar esa técnica de combate a otro personaje.\n\nLos personajes en buena forma física pueden anotar en este libro su investigación y entrenamiento para desarrollar los conceptos de una clase de luchador aleatoria.</UnfinishedMartial.description>
+  
+  <UnfinishedMartial.comps.CompUsable.useLabel>Escribir</UnfinishedMartial.comps.CompUsable.useLabel>
+  
+</LanguageData>

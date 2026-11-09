@@ -32,6 +32,7 @@
   
   <HediffDef >
     <defName>TM_EnchantedBodyHD</defName>
+    <comps><li Class="TorannMagic.HediffCompProperties_EnchanterAspect" /></comps>
 	<hediffClass>HediffWithComps</hediffClass>
 	<label>Enchanted Body</label>
 	<description>Creation of enchanted body parts to enhance physical capability.</description>
@@ -130,6 +131,7 @@
   
   <HediffDef >
     <defName>TM_EnchantedAuraHD</defName>
+    <comps><li Class="TorannMagic.HediffCompProperties_EnchanterAspect" /></comps>
 	<hediffClass>HediffWithComps</hediffClass>
 	<label>Enchanted Aura</label>
 	<description>An enchanted aspect surrounds the pawn enhancing qualities considered for beauty, endearment, and attraction.</description>

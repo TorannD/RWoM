@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
@@ -7,11 +7,12 @@ using Verse;
 using Verse.AI;
 using UnityEngine;
 using HarmonyLib;
+using TorannMagic.ClassProgression;
 
 
 namespace TorannMagic
 {
-    public class Verb_AlterFate : Verb_UseAbility
+    public class Verb_AlterFate : Verb_SpiritTargetable
     {        
         private int pwrVal = 0;
         private float arcaneDmg = 1f;
@@ -23,68 +24,59 @@ namespace TorannMagic
 
         protected override bool TryCastShot()
         {
-            bool flag = false;
-            Pawn caster = base.CasterPawn;
+            bool applied = ApplyHostedEffect();
+            PostCastShot(applied,out bool fired);
+            return fired;
+        }
 
-            CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
-            //pwrVal = comp.MagicData.MagicPowerSkill_AlterFate.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_AlterFate_pwr").level;
-            pwrVal = TM_Calc.GetSkillPowerLevel(caster, this.Ability.Def as TMAbilityDef);
+        internal static bool Available(Pawn body, MagicAbility power)
+        {
+            if (body?.Map == null || power?.MagicUser == null) return false;
+            var comp = power.MagicUser;
+            if (comp.predictionIncidentDef != null)
+            {
+                var entry = ChronomancerPrediction.ResolveOwned(comp,Find.Storyteller?.incidentQueue);
+                return entry != null && !entry.TriedToFire && entry.FiringIncident.parms.target == body.Map;
+            }
+            int rank = PowerRank(body,comp,power.magicDef);
+            return rank >= 3 && RecentCondition(body.Map,rank) != null;
+        }
+
+        private static int PowerRank(Pawn body, CompAbilityUserMagic comp, TMAbilityDef def) =>
+            body == comp.Pawn ? TM_Calc.GetSkillPowerLevel(body,def) :
+            SpiritRebirthRuntime.SavedRank(comp.ExistingMagicData,"TM_AlterFate_pwr");
+
+        private static GameCondition RecentCondition(Map map,int rank) => map.GameConditionManager.ActiveConditions
+            .FirstOrDefault(c => c.def.natural && c.conditionCauser == null && c.quest == null && c.TicksPassed < 2500 + 250 * rank);
+
+        protected override bool ApplyHostedEffect()
+        {
+            var caster = CasterPawn;
+            var owner = SpiritRebirthCasting.SkillOwner(caster,Ability);
+            if (Ability is not MagicAbility power || owner != power.Pawn || !Available(caster,power)) return false;
+            var comp = power.MagicUser;
+            pwrVal = PowerRank(caster,comp,power.magicDef);
             arcaneDmg = comp.arcaneDmg;
-
-            if(comp.predictionIncidentDef != null)
+            confident = unsure = uneasy = terrified = false;
+            var ownedPrediction = ChronomancerPrediction.ResolveOwned(comp,Find.Storyteller.incidentQueue);
+            string predictionLabel = ownedPrediction?.FiringIncident.def.label;
+            if (ownedPrediction != null)
             {
                 if (Rand.Chance((.25f + (.05f * pwrVal))*this.arcaneDmg)) //success end
                 {
-                    //Log.Message("remove event");
-                    List<QueuedIncident> iQue = Traverse.Create(root: Find.Storyteller.incidentQueue).Field(name: "queuedIncidents").GetValue<List<QueuedIncident>>();
-                    if(iQue != null && iQue.Count > 0)
+                    if (ChronomancerPrediction.CancelOwned(comp, Find.Storyteller.incidentQueue))
                     {
-                        for(int i = 0; i < iQue.Count; i++)
-                        {
-                            //Log.Message("checking ique " + iQue[i].FiringIncident.def.defName + " against " + comp.predictionIncidentDef.defName);
-                            if (iQue[i].FiringIncident.def == comp.predictionIncidentDef)
-                            {
-                                //Log.Message("Removing incident " + iQue[i].FiringIncident.def.defName);
-                                iQue.Remove(iQue[i]);
-                                if (Rand.Chance(.6f + (.1f * pwrVal)))
-                                {
-                                    this.confident = true;
-                                }
-                                else if (Rand.Chance(.1f))
-                                {
-                                    this.uneasy = true;
-                                }
-                                else
-                                {
-                                    this.unsure = true;
-                                }
-                                break;
-                            }
-                        }
+                        if (Rand.Chance(.6f + (.1f * pwrVal))) this.confident = true;
+                        else if (Rand.Chance(.1f)) this.uneasy = true;
+                        else this.unsure = true;
                     }
                 }
                 else if (Rand.Chance(.2f - (.02f * pwrVal))) //shifting incident
                 {
-                    //Log.Message("shift event");
-                    List<QueuedIncident> iQue = Traverse.Create(root: Find.Storyteller.incidentQueue).Field(name: "queuedIncidents").GetValue<List<QueuedIncident>>();
-                    if (iQue != null && iQue.Count > 0)
-                    {
-                        for (int i = 0; i < iQue.Count; i++)
-                        {
-                            //Log.Message("checking ique " + iQue[i].FiringIncident.def.defName + " against " + comp.predictionIncidentDef.defName);
-                            if (iQue[i].FiringIncident.def == comp.predictionIncidentDef)
-                            {
-                                //Log.Message("replacing incident " + iQue[i].FiringIncident.def.defName);
-                                iQue.Remove(iQue[i]);
-                            }
-                        }
-                    }
-
                     IEnumerable<IncidentDef> enumerable = from def in DefDatabase<IncidentDef>.AllDefs
                                                           where (def != comp.predictionIncidentDef && def.TargetAllowed(this.CasterPawn.Map))
-                                                          orderby Rand.ValueSeeded(Find.TickManager.TicksGame)
                                                           select def;
-                    foreach(IncidentDef item in enumerable)
+                    foreach(IncidentDef item in enumerable.InRandomOrder())
                     {
                         //Log.Message("checking incident " + item.defName);
                         IncidentDef localDef = item;
@@ -92,7 +84,7 @@ namespace TorannMagic
                         if(localDef.Worker.CanFireNow(parms))
                         {
                             QueuedIncident iq = new QueuedIncident(new FiringIncident(localDef, null, parms), comp.predictionTick);
-                            Find.Storyteller.incidentQueue.Add(iq);
+                            if (!ChronomancerPrediction.ReplaceOwned(comp, Find.Storyteller.incidentQueue, ownedPrediction, iq)) break;
                             //Log.Message("queueing incident " + localDef.defName + " in " + comp.predictionTick + " ticks");
                             //localDef.Worker.TryExecute(parms);
                             if (Rand.Chance(.6f + (.1f * pwrVal)))
@@ -116,9 +108,8 @@ namespace TorannMagic
                     //Log.Message("add event");
                     IEnumerable<IncidentDef> enumerable = from def in DefDatabase<IncidentDef>.AllDefs
                                                           where (def != comp.predictionIncidentDef && def.TargetAllowed(this.CasterPawn.Map))
-                                                          orderby Rand.ValueSeeded(Find.TickManager.TicksGame)
                                                           select def;
-                    foreach (IncidentDef item in enumerable)
+                    foreach (IncidentDef item in enumerable.InRandomOrder())
                     {
                         //Log.Message("checking incident " + item.defName);
                         IncidentDef localDef = item;
@@ -127,7 +118,7 @@ namespace TorannMagic
                         {
                             QueuedIncident iq = new QueuedIncident(new FiringIncident(localDef, null, parms), comp.predictionTick + Rand.Range(-500, 10000));
 
-                            Find.Storyteller.incidentQueue.Add(iq);
+                            if (!Find.Storyteller.incidentQueue.Add(iq)) continue;
                             //Log.Message("queueing incident " + localDef.defName + " in " + comp.predictionTick + " ticks");
                             //localDef.Worker.TryExecute(parms);
                             if (Rand.Chance(.4f + (.1f * pwrVal)))
@@ -153,9 +144,8 @@ namespace TorannMagic
                     //Log.Message("butteryfly event");
                     IEnumerable<IncidentDef> enumerable = from def in DefDatabase<IncidentDef>.AllDefs
                                                           where (def.TargetAllowed(this.CasterPawn.Map))
-                                                          orderby Rand.ValueSeeded(Find.TickManager.TicksGame)
                                                           select def;
-                    foreach (IncidentDef item in enumerable)
+                    foreach (IncidentDef item in enumerable.InRandomOrder())
                     {                        
                         //Log.Message("checking incident " + item.defName);
                         IncidentDef localDef = item;
@@ -164,7 +154,7 @@ namespace TorannMagic
                         {
                             int eventTick = Find.TickManager.TicksGame + Rand.Range(0, 3600);
                             QueuedIncident iq = new QueuedIncident(new FiringIncident(localDef, null, parms), eventTick);
-                            Find.Storyteller.incidentQueue.Add(iq);
+                            if (!Find.Storyteller.incidentQueue.Add(iq)) continue;
                             //Log.Message("queueing incident " + localDef.defName + " in " + eventTick + " ticks");
                             //localDef.Worker.TryExecute(parms);
                             butterflyCount++;
@@ -204,63 +194,56 @@ namespace TorannMagic
                     }
                     //Messages.Message("TM_AlterGameConditionFailed".Translate(this.CasterPawn.LabelShort, localGC.Label), MessageTypeDefOf.NeutralEvent);
                 }
-                DisplayConfidence(comp.predictionIncidentDef.label);
+                DisplayConfidence(predictionLabel);
             }
-            else if(pwrVal >= 3)
+            else
             {
-                if(this.CasterPawn.Map.GameConditionManager.ActiveConditions.Count > 0)
+                var condition = RecentCondition(caster.Map,pwrVal);
+                if (condition == null) return false;
+                if (Rand.Chance(.25f + .05f * pwrVal))
                 {
-                    GameCondition localGC = null;
-                    foreach(GameCondition activeCondition in this.CasterPawn.Map.GameConditionManager.ActiveConditions)
+                    Messages.Message("TM_EndingGameCondition".Translate(caster.LabelShort, condition.Label), MessageTypeDefOf.PositiveEvent);
+                    condition.End();
+                }
+                else if (Rand.Chance(.2f - .02f * pwrVal))
+                {
+                    var added = AddNaturalCondition(caster.Map);
+                    if (added != null)
                     {
-                        localGC = activeCondition;
-                        if(activeCondition.TicksPassed < (2500 + (250 * pwrVal)))
-                        {
-                            if(Rand.Chance(.25f + (.05f * pwrVal))) //success
-                            {
-                                Messages.Message("TM_EndingGameCondition".Translate(this.CasterPawn.LabelShort, localGC.Label), MessageTypeDefOf.PositiveEvent);
-                                localGC.End();                                
-                            }
-                            else if(Rand.Chance(.2f - (.02f * pwrVal))) //shifting game condition
-                            {
-                                IEnumerable<GameConditionDef> enumerable = from def in DefDatabase<GameConditionDef>.AllDefs
-                                                                   where (def != localGC.def)
-                                                                   select def;
-
-                                GameConditionDef newGCdef = enumerable.RandomElement();
-                                GameConditionMaker.MakeCondition(newGCdef);
-                                Messages.Message("TM_GameConditionChanged".Translate(this.CasterPawn.LabelShort, localGC.Label, newGCdef.label), MessageTypeDefOf.NeutralEvent);
-                                localGC.End();
-                            }
-                            else if(Rand.Chance(.02f)) //permanent
-                            {
-                                Messages.Message("TM_GameConditionMadePermanent".Translate(localGC.Label), MessageTypeDefOf.NeutralEvent);
-                                localGC.Permanent = true;
-                            }
-                            else if(Rand.Chance(.15f - (.015f * pwrVal))) //add another event
-                            {
-                                IEnumerable<GameConditionDef> enumerable = from def in DefDatabase<GameConditionDef>.AllDefs
-                                                                           where (def != localGC.def)
-                                                                           select def;
-                                GameConditionDef newGCdef = enumerable.RandomElement();
-                                GameConditionMaker.MakeCondition(newGCdef);
-                                Messages.Message("TM_GameConditionAdded".Translate(this.CasterPawn.LabelShort, newGCdef.label, localGC.Label), MessageTypeDefOf.NeutralEvent);
-                            }
-                            else
-                            {
-                                Messages.Message("TM_AlterGameConditionFailed".Translate(this.CasterPawn.LabelShort, localGC.Label), MessageTypeDefOf.NeutralEvent);
-                            }
-                            break;
-                        }
+                        Messages.Message("TM_GameConditionChanged".Translate(caster.LabelShort,condition.Label,added.Label), MessageTypeDefOf.NeutralEvent);
+                        condition.End();
                     }
                 }
+                else if (condition.def.canBePermanent && Rand.Chance(.02f))
+                {
+                    condition.Permanent = true;
+                    Messages.Message("TM_GameConditionMadePermanent".Translate(condition.Label), MessageTypeDefOf.NeutralEvent);
+                }
+                else if (Rand.Chance(.15f - .015f * pwrVal))
+                {
+                    var added = AddNaturalCondition(caster.Map);
+                    if (added != null) Messages.Message("TM_GameConditionAdded".Translate(caster.LabelShort,added.Label,condition.Label),MessageTypeDefOf.NeutralEvent);
+                }
+                else Messages.Message("TM_AlterGameConditionFailed".Translate(caster.LabelShort,condition.Label),MessageTypeDefOf.NeutralEvent);
             }
             TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_AlterFate, CasterPawn.DrawPos, this.CasterPawn.Map, 1f, .2f, 0, 1f, Rand.Range(-500, 500), 0, 0, Rand.Range(0, 360));
             TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_AlterFate, CasterPawn.DrawPos, this.CasterPawn.Map, 2.5f, .2f, .1f, .8f, Rand.Range(-500, 500), 0, 0, Rand.Range(0, 360));
             TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_AlterFate, CasterPawn.DrawPos, this.CasterPawn.Map, 6f, 0f, .2f, .6f, Rand.Range(-500, 500), 0, 0, Rand.Range(0, 360));
-            this.PostCastShot(flag, out flag);
-            return flag;
+            return true;
         } 
+
+        private static GameCondition AddNaturalCondition(Map map)
+        {
+            // Use conditions that the storyteller can create unaided on this particular map.
+            var eligible = DefDatabase<IncidentDef>.AllDefsListForReading.Where(d =>
+                d.workerClass == typeof(IncidentWorker_MakeGameCondition) && d.gameCondition?.natural == true &&
+                d.durationDays.max > 0 && d.TargetAllowed(map) && d.Worker.CanFireNow(StorytellerUtility.DefaultParmsNow(d.category,map)));
+            if (!eligible.TryRandomElement(out var incident)) return null;
+            var condition = GameConditionMaker.MakeCondition(incident.gameCondition,
+                Mathf.Max(1,Mathf.RoundToInt(incident.durationDays.RandomInRange * 60000f)));
+            map.GameConditionManager.RegisterCondition(condition);
+            return condition;
+        }
 
         private void DisplayConfidence(string incidentName)
         {
@@ -288,3 +271,4 @@ namespace TorannMagic
 
     }
 }
+

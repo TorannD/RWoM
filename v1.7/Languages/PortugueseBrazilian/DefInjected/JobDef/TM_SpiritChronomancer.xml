@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritPrediction.reportString>prevendo o futuro.</TM_SpiritPrediction.reportString>
+  <TM_SpiritAlterFate.reportString>alterando o destino.</TM_SpiritAlterFate.reportString>
+  <TM_SpiritAccelerateTime.reportString>acelerando o tempo.</TM_SpiritAccelerateTime.reportString>
+  <TM_SpiritReverseTime.reportString>revertendo o tempo.</TM_SpiritReverseTime.reportString>
+  <TM_SpiritChronostaticField.reportString>criando um campo de estase temporal.</TM_SpiritChronostaticField.reportString>
+  <TM_SpiritChronostaticField_I.reportString>criando um campo de estase temporal.</TM_SpiritChronostaticField_I.reportString>
+  <TM_SpiritChronostaticField_II.reportString>criando um campo de estase temporal.</TM_SpiritChronostaticField_II.reportString>
+  <TM_SpiritChronostaticField_III.reportString>criando um campo de estase temporal.</TM_SpiritChronostaticField_III.reportString>
+  <TM_SpiritTimeMark.reportString>criando uma marca temporal.</TM_SpiritTimeMark.reportString>
+  <TM_SpiritRecall.reportString>voltando à marca temporal.</TM_SpiritRecall.reportString>
+</LanguageData>

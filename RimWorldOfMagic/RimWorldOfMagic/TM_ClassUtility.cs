@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using Verse;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,61 +18,80 @@ namespace TorannMagic
 {
     public static class TM_ClassUtility
     {
-        public static List<TM_CustomClass> CustomClasses;
+        // Initialize before deferred definition loading so registry consumers can
+        // safely observe an empty list during partial startup.
+        public static List<TM_CustomClass> CustomClasses = new List<TM_CustomClass>();
         public static readonly List<TM_CustomClass> CustomBaseClasses = new List<TM_CustomClass>();
         public static readonly List<TM_CustomClass> CustomMageClasses = new List<TM_CustomClass>();
         public static readonly List<TM_CustomClass> CustomFighterClasses = new List<TM_CustomClass>();
         public static readonly List<TM_CustomClass> CustomAdvancedClasses = new List<TM_CustomClass>();
 
-        public static HashSet<ushort> NonCustomMagicAndMightTraitIndexes = new HashSet<ushort>()
+        // TraitDef references, not database indexes: mods that mutate the trait
+        // database during pawn generation (RimTraits removes and re-adds talent
+        // defs inside PawnGenerator.GenerateTraits) shift every stored index,
+        // which silently hid the grimoire button from trait-based classes.
+        // References survive re-indexing, so this set needs no refresh hooks.
+        public static HashSet<TraitDef> NonCustomMagicAndMightTraitIndexes = new HashSet<TraitDef>()
         {
-            TorannMagicDefOf.Enchanter.index,
-            TorannMagicDefOf.BloodMage.index,
-            TorannMagicDefOf.Technomancer.index,
-            TorannMagicDefOf.Geomancer.index,
-            TorannMagicDefOf.Warlock.index,
-            TorannMagicDefOf.Succubus.index,
-            TorannMagicDefOf.Faceless.index,
-            TorannMagicDefOf.InnerFire.index,
-            TorannMagicDefOf.HeartOfFrost.index,
-            TorannMagicDefOf.StormBorn.index,
-            TorannMagicDefOf.Arcanist.index,
-            TorannMagicDefOf.Paladin.index,
-            TorannMagicDefOf.Summoner.index,
-            TorannMagicDefOf.Druid.index,
-            TorannMagicDefOf.Necromancer.index,
-            TorannMagicDefOf.Lich.index,
-            TorannMagicDefOf.Priest.index,
-            TorannMagicDefOf.TM_Bard.index,
-            TorannMagicDefOf.Chronomancer.index,
-            TorannMagicDefOf.ChaosMage.index,
-            TorannMagicDefOf.TM_Wanderer.index,
-            TorannMagicDefOf.TM_Monk.index,
-            TorannMagicDefOf.DeathKnight.index,
-            TorannMagicDefOf.TM_Psionic.index,
-            TorannMagicDefOf.Gladiator.index,
-            TorannMagicDefOf.TM_Sniper.index,
-            TorannMagicDefOf.Bladedancer.index,
-            TorannMagicDefOf.Ranger.index,
-            TorannMagicDefOf.Faceless.index,
-            TorannMagicDefOf.TM_Commander.index,
-            TorannMagicDefOf.TM_SuperSoldier.index,
-            TorannMagicDefOf.TM_Wayfarer.index
+            TorannMagicDefOf.Enchanter,
+            TorannMagicDefOf.BloodMage,
+            TorannMagicDefOf.Technomancer,
+            TorannMagicDefOf.Geomancer,
+            TorannMagicDefOf.Warlock,
+            TorannMagicDefOf.Succubus,
+            TorannMagicDefOf.Faceless,
+            TorannMagicDefOf.InnerFire,
+            TorannMagicDefOf.HeartOfFrost,
+            TorannMagicDefOf.StormBorn,
+            TorannMagicDefOf.Arcanist,
+            TorannMagicDefOf.Paladin,
+            TorannMagicDefOf.Summoner,
+            TorannMagicDefOf.Druid,
+            TorannMagicDefOf.Necromancer,
+            TorannMagicDefOf.Lich,
+            TorannMagicDefOf.Priest,
+            TorannMagicDefOf.TM_Bard,
+            TorannMagicDefOf.Chronomancer,
+            TorannMagicDefOf.ChaosMage,
+            TorannMagicDefOf.TM_Wanderer,
+            TorannMagicDefOf.TM_Monk,
+            TorannMagicDefOf.DeathKnight,
+            TorannMagicDefOf.TM_Psionic,
+            TorannMagicDefOf.Gladiator,
+            TorannMagicDefOf.TM_Sniper,
+            TorannMagicDefOf.Bladedancer,
+            TorannMagicDefOf.Ranger,
+            TorannMagicDefOf.TM_Commander,
+            TorannMagicDefOf.TM_SuperSoldier,
+            TorannMagicDefOf.TM_Wayfarer
         };
 
         //public static TM_CustomClass[] CustomClasses;
-        //public static readonly Dictionary<ushort, TM_CustomClass> CustomAdvancedClassTraitIndexMap = new Dictionary<ushort, TM_CustomClass>();
         //public static TM_CustomClass[] CustomBaseClasses;
         //public static TM_CustomClass[] CustomMageClasses;
         //public static TM_CustomClass[] CustomFighterClasses;
         //public static TM_CustomClass[] CustomAdvancedClasses;
 
+        public static void RefreshBuiltinClassIndexes()
+        {
+            NonCustomMagicAndMightTraitIndexes.Clear();
+            foreach (string name in TM_ClassGroups.MagicEntriesField.Select(entry => entry.trait)
+                .Concat(TM_ClassGroups.MightEntriesField.Select(entry => entry.trait)).Distinct())
+            {
+                TraitDef trait = DefDatabase<TraitDef>.GetNamedSilentFail(name);
+                if (trait != null) NonCustomMagicAndMightTraitIndexes.Add(trait);
+            }
+        }
+
         public static void LoadCustomClasses()
         {
-            TM_CustomClassDef named = TM_CustomClassDef.Named("TM_CustomClasses");
-            if (named == null) return;
+            // A mod-settings file without the CustomClass key deserializes the
+            // dictionary as null; LoadCustomClasses runs before the callback that
+            // initializes it, so initialize it here before building the category caches.
+            Settings.Instance.CustomClass ??= new Dictionary<string, bool>();
 
-            CustomClasses = named.customClasses;
+            TM_CustomClassDef named = TM_CustomClassDef.Named("TM_CustomClasses");
+            CustomClasses = named?.customClasses ?? new List<TM_CustomClass>();
             //CustomAdvancedClassTraitIndexMap.Clear();
             //var CustomBaseClassesList = new List<TM_CustomClass>();
             //var CustomMageClassesList = new List<TM_CustomClass>();
@@ -83,8 +102,11 @@ namespace TorannMagic
             CustomFighterClasses.Clear();
             CustomAdvancedClasses.Clear();
 
+            // A broken XML row or an unresolved cross-reference must not kill the
+            // whole registry: skip incomplete entries instead of throwing here.
             IEnumerable<TM_CustomClass> enabledCustomClasses = CustomClasses.Where(cc =>
-                Settings.Instance.CustomClass.TryGetValue(cc.classTrait.ToString(), true));
+                cc != null && cc.classTrait != null
+                && Settings.Instance.CustomClass.TryGetValue(cc.classTrait.ToString(), true));
 
             foreach (TM_CustomClass cc in enabledCustomClasses)
             {
@@ -128,21 +150,26 @@ namespace TorannMagic
                 //CustomAdvancedClasses = CustomAdvancedClassesList.ToArray();
             }
             LoadClassIndexes();
+            // Deferred startup/settings reload can replace classes after the UI
+            // has already cached its trait lists. Rebuild only registry-derived lists.
+            TM_Data.ResetClassCaches();
             
         }
 
         public static void LoadClassIndexes()
         {
             CustomClassTraitIndexes = new Dictionary<ushort, int>();
+            if (CustomClasses == null) return;
             for (int i = 0; i < CustomClasses.Count; i++)
             {
+                if (CustomClasses[i]?.classTrait == null) continue;
                 CustomClassTraitIndexes[CustomClasses[i].classTrait.index] = i;
             }
         }
 
         public static List<TraitDef> CustomClassTraitDefs
         {
-            get => CustomClasses.Select(t => t.classTrait).ToList();           
+            get => CustomClasses.Where(t => t?.classTrait != null).Select(t => t.classTrait).ToList();
         }
 
         private static Dictionary<ushort, int> CustomClassTraitIndexes;  // Dictionary to more quickly determine trait's CustomClasses index
@@ -170,6 +197,7 @@ namespace TorannMagic
         {
             for (int i = 0; i < CustomClasses.Count; i++)
             {
+                if (CustomClasses[i]?.classTrait == null || trait == null) continue;
                 if (CustomClasses[i].classTrait.defName == trait.defName)
                 {
                     return i;
@@ -363,3 +391,4 @@ namespace TorannMagic
         }
     }
 }
+

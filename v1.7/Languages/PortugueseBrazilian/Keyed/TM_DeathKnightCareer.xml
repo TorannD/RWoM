@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ReadDeathKnightDread>Pavor — comece com Onda de medo.</TM_ReadDeathKnightDread>
+  <TM_ReadDeathKnightSpite>Vingança — comece com Rancor.</TM_ReadDeathKnightSpite>
+  <TM_DKTrial>Dias em que um inimigo feriu você ao lado de um aliado: {0}/{1}, ou aliados diferentes resgatados: {2}/{3}.</TM_DKTrial>
+  <TM_DKLevel>Nível marcial {0}/30.</TM_DKLevel>
+  <TM_DKClaim>Desbloquear etapa</TM_DKClaim>
+  <TM_DKOath>Juramento do guardião — absorve até 25 de dano por um aliado adjacente ao custo de 10 de ódio, uma vez a cada 10 segundos.</TM_DKOath>
+</LanguageData>

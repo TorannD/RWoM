@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ChaosAnchor>Якір Хаосу: {0}</TM_ChaosAnchor>
+  <TM_ChaosNoAnchor>Зняти якір</TM_ChaosNoAnchor>
+  <TM_ChaosProgress>Застосуйте два різні тимчасові закляття ({0}/2). Як адепт, застосуйте закляття з двох різних наборів ({1}/2).</TM_ChaosProgress>
+  <TM_ChaosAscensionInfo>Для Вознесіння потрібен самоцвіт прозріння. Одне закляття можна залишити на наступну зміну набору; вкладені очки повертаються.</TM_ChaosAscensionInfo>
+  <TM_ChaosAscensionAction>Вознесіння: якір Хаосу</TM_ChaosAscensionAction>
+  <TM_ChaosAscensionNeedsOffering>Потрібен самоцвіт прозріння</TM_ChaosAscensionNeedsOffering>
+</LanguageData>

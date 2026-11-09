@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_ReservoirCharge>Запас маны: {0} / {1}</TM_ReservoirCharge>
+  <TM_ReservoirReserve>Личный резерв маны: {0}</TM_ReservoirReserve>
+  <TM_ReservoirConvert>Преобразовать маготопливо</TM_ReservoirConvert>
+  <TM_ReservoirConvertDesc>Преобразовать маготопливо в заряд до {0} единиц маны. Топливо расходуется только на принятый заряд.</TM_ReservoirConvertDesc>
+  <TM_ReservoirReserveLabel>Резерв маны: {0}</TM_ReservoirReserveLabel>
+  <TM_ReservoirReserveDesc>Выберите минимальный процент личной маны, который маг сохраняет при зарядке этого бака.</TM_ReservoirReserveDesc>
+  <TM_ReservoirChargeJob>Зарядить бак маной</TM_ReservoirChargeJob>
+  <TM_ReservoirUnavailable>Нужен доступный дружественный маг с запасом маны выше личного резерва.</TM_ReservoirUnavailable>
+  <TM_ReservoirFuelReserveLabel>Защищённое маготопливо: {0}</TM_ReservoirFuelReserveLabel>
+  <TM_ReservoirFuelReserveDesc>Сохранить указанное количество топлива от обычных потребителей, преобразования и ритуалов. Полёт и жизнеобеспечение могут его расходовать. Жизнеобеспечение может исчерпать резерв: топливо для возвращения не гарантировано. Мана, полученная при разрешённом преобразовании для жизнеобеспечения, распределяется по обычным правилам.</TM_ReservoirFuelReserveDesc>
+  <TM_ReservoirFuelReserveInspect>Защищённое маготопливо: {0}; доступно обычным потребителям: {1}\nПолёт и жизнеобеспечение могут расходовать резерв; топливо для возвращения не гарантировано.</TM_ReservoirFuelReserveInspect>
+</LanguageData>

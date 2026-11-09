@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_ReadSniperFocus>Фокус снайпера — бонуси до стрільби, повільніша робота (остаточно)</TM_ReadSniperFocus>
+  <TM_ReadSniperPatientAim>Терплячий погляд — швидше прицілювання після 3 с нерухомості (остаточно)</TM_ReadSniperPatientAim>
+  <TM_PatientAimName>Терплячий погляд</TM_PatientAimName>
+  <TM_PatientAimDescription>Після трьох секунд нерухомості час прицілювання зменшується на 2%. Рух скасовує бонус.</TM_PatientAimDescription>
+  <TM_PatientAimTraining>Кожен ранг скорочує час прицілювання ще на 2 відсоткові пункти, до 10%.</TM_PatientAimTraining>
+</LanguageData>

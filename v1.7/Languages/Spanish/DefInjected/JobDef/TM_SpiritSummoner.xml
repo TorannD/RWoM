@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritSummonMinion.reportString>invoca a un esbirro a través del cuerpo poseído.</TM_SpiritSummonMinion.reportString>
+  <TM_SpiritSummonElemental.reportString>invoca a un elemental a través del cuerpo poseído.</TM_SpiritSummonElemental.reportString>
+  <TM_SpiritSummonPylon.reportString>invoca un pilón defensivo a través del cuerpo poseído.</TM_SpiritSummonPylon.reportString>
+  <TM_SpiritSummonExplosive.reportString>invoca una mina de maná a través del cuerpo poseído.</TM_SpiritSummonExplosive.reportString>
+  <TM_SpiritSummonPoppi.reportString>invoca poppis a través del cuerpo poseído.</TM_SpiritSummonPoppi.reportString>
+  <TM_SpiritPack.reportString>invoca lobos espirituales a través del cuerpo poseído.</TM_SpiritPack.reportString>
+  <TM_SpiritPack_I.reportString>invoca lobos espirituales a través del cuerpo poseído.</TM_SpiritPack_I.reportString>
+  <TM_SpiritPack_II.reportString>invoca lobos espirituales a través del cuerpo poseído.</TM_SpiritPack_II.reportString>
+  <TM_SpiritPack_III.reportString>invoca lobos espirituales a través del cuerpo poseído.</TM_SpiritPack_III.reportString>
+  <TM_SpiritDismissMinion.reportString>despide a un esbirro a través del cuerpo poseído.</TM_SpiritDismissMinion.reportString>
+</LanguageData>

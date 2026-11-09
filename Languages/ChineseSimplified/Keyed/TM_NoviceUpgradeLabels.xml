@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ArcaneBolt_pwr>伤害</TM_ArcaneBolt_pwr>
+  <TM_ArcaneBolt_eff>法力效率</TM_ArcaneBolt_eff>
+  <TM_ArcaneBolt_ver>施法次数</TM_ArcaneBolt_ver>
+  <TM_MageLight_pwr>照明范围</TM_MageLight_pwr>
+  <TM_MageLight_eff>法力效率</TM_MageLight_eff>
+  <TM_MageLight_ver>持续时间</TM_MageLight_ver>
+  <TM_Extinguish_pwr>作用范围</TM_Extinguish_pwr>
+  <TM_Extinguish_eff>法力效率</TM_Extinguish_eff>
+  <TM_Extinguish_ver>灭火强度</TM_Extinguish_ver>
+  <TM_Heater_pwr>加热强度</TM_Heater_pwr>
+  <TM_Heater_eff>法力效率</TM_Heater_eff>
+  <TM_Heater_ver>持续时间</TM_Heater_ver>
+  <TM_Cooler_pwr>冷却强度</TM_Cooler_pwr>
+  <TM_Cooler_eff>法力效率</TM_Cooler_eff>
+  <TM_Cooler_ver>持续时间</TM_Cooler_ver>
+  <TM_SmokeCloud_pwr>烟雾范围</TM_SmokeCloud_pwr>
+  <TM_SmokeCloud_eff>法力效率</TM_SmokeCloud_eff>
+  <TM_SmokeCloud_ver>持续时间</TM_SmokeCloud_ver>
+</LanguageData>

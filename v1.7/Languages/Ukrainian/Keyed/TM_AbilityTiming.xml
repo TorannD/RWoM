@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+<TM_GlobalCooldown>Відновлення здібностей</TM_GlobalCooldown>
+<TM_GlobalWarmup>Підготовка здібностей</TM_GlobalWarmup>
+<TM_GlobalTimingDesc>Для всіх здібностей RWoM, включно з ворогами та доповненнями класів. 100% — звичайна швидкість; нижче — швидше. Поточне відновлення не перераховується.</TM_GlobalTimingDesc>
+</LanguageData>

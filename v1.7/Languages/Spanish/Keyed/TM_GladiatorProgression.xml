@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_ReadGladiatorSprint>Esprint — reserva 30 de aguante (30 s) · Elección permanente</TM_ReadGladiatorSprint>
+  <TM_ReadGladiatorManeuver>Maniobra — velocidad +8% durante 8 s, 12% de aguante (25 s) · Elección permanente</TM_ReadGladiatorManeuver>
+  <TM_GladiatorReliefDrill>Ejercicio: alcanza a un aliado desde 8 casillas</TM_GladiatorReliefDrill>
+  <TM_GladiatorDefenseChoice>Elegir técnica defensiva</TM_GladiatorDefenseChoice>
+  <TM_GladiatorChooseFortitude>Fortaleza — defensa personal pasiva (elección permanente)</TM_GladiatorChooseFortitude>
+  <TM_GladiatorChooseCover>Cubrir — recibe hasta 20 de daño por disparos al aliado durante 6 s (elección permanente)</TM_GladiatorChooseCover>
+  <TM_GladiatorUseCover>Cubrir a un aliado — 20% de aguante, recarga de 30 s</TM_GladiatorUseCover>
+  <TM_GladiatorAttackChoice>Elegir técnica de combate</TM_GladiatorAttackChoice>
+  <TM_GladiatorHoldDrill>Mantener la línea: interceptar un golpe o entrenar con un aliado</TM_GladiatorHoldDrill>
+  <TM_GladiatorChooseCleave>Tajo — automático (permanente)</TM_GladiatorChooseCleave>
+  <TM_GladiatorChooseSweep>Barrido — hasta dos enemigos (permanente)</TM_GladiatorChooseSweep>
+  <TM_GladiatorLevelGate>La ascensión requiere nivel marcial 30.</TM_GladiatorLevelGate>
+  <TM_GladiatorEvacTrial>Prueba final: rescata a un herido en combate o practica una evacuación.</TM_GladiatorEvacTrial>
+  <TM_GladiatorUltimateChoice>Elegir técnica definitiva</TM_GladiatorUltimateChoice>
+  <TM_GladiatorPickWhirlwind>Torbellino — técnica clásica (permanente)</TM_GladiatorPickWhirlwind>
+  <TM_GladiatorPickLastCircle>Último círculo — protege un radio de 4 casillas durante 20 s (permanente)</TM_GladiatorPickLastCircle>
+  <TM_GladiatorCastCircle>Último círculo — 60% de aguante, preparación de 5 s, recarga de 2 días</TM_GladiatorCastCircle>
+  <TM_LastCircleDetails>Requiere un arma cuerpo a cuerpo. Los cuatro aliados más cercanos absorben hasta 25 de daño cada uno durante 20 s. Tres barridos alcanzan hasta tres enemigos cada uno. Velocidad −30%. Salir del círculo termina la postura. Las explosiones atraviesan la protección. Interrumpir la preparación cuesta un 6% de aguante y bloquea la técnica durante 6000 ticks.</TM_LastCircleDetails>
+</LanguageData>

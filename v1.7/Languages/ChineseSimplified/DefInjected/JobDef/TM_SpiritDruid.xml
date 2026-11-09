@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritCureDisease.reportString>正通过宿主治疗疾病。</TM_SpiritCureDisease.reportString>
+  <TM_SpiritSootheAnimal.reportString>正通过宿主安抚动物。</TM_SpiritSootheAnimal.reportString>
+  <TM_SpiritSootheAnimal_I.reportString>正通过宿主安抚动物。</TM_SpiritSootheAnimal_I.reportString>
+  <TM_SpiritSootheAnimal_II.reportString>正通过宿主安抚动物。</TM_SpiritSootheAnimal_II.reportString>
+  <TM_SpiritSootheAnimal_III.reportString>正通过宿主安抚动物。</TM_SpiritSootheAnimal_III.reportString>
+  <TM_SpiritRainmaker.reportString>正通过宿主改变天气。</TM_SpiritRainmaker.reportString>
+  <TM_SpiritRegrowLimb.reportString>正通过灵体宿主创造再生种子。</TM_SpiritRegrowLimb.reportString>
+  <TM_SpiritPoison.reportString>正通过灵体宿主向目标施放剧毒。</TM_SpiritPoison.reportString>
+</LanguageData>

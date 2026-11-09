@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="RockBase">
+    <defName>TM_MineableMagicyte</defName>
+    <label>magicyte ore</label>
+    <description>Rock threaded with magicyte crystals. Each deposit yields 15–100 raw magicyte when fully mined and has a 1% chance to also yield an enchantment gem. Destroying the rock does not recover its contents.</description>
+    <thingClass>TorannMagic.Resources.MineableMagicyte</thingClass>
+    <!-- Individual contents must survive saves; RockBase normally compresses rocks. -->
+    <saveCompressible>false</saveCompressible>
+    <graphicData Inherit="False">
+      <texPath>Things/Building/MagicyteOre</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>Cutout</shaderType>
+      <linkType>None</linkType>
+    </graphicData>
+    <statBases><MaxHitPoints>1800</MaxHitPoints></statBases>
+    <building>
+      <isResourceRock>true</isResourceRock>
+      <mineableThing>RawMagicyte</mineableThing>
+      <!-- The mineable class pays its saved deposit instead of this fallback. -->
+      <mineableYield>1</mineableYield>
+      <mineableYieldWasteable>false</mineableYieldWasteable>
+      <mineableScatterCommonality>0</mineableScatterCommonality>
+      <mineablePreventMeteorite>true</mineablePreventMeteorite>
+      <mineableScatterLumpSizeRange>3~8</mineableScatterLumpSizeRange>
+      <veinMineable>true</veinMineable>
+    </building>
+  </ThingDef>
+  <GenStepDef>
+    <defName>TM_MagicyteVeins</defName>
+    <order>1800</order>
+    <genStep Class="TorannMagic.Resources.GenStep_MagicyteVeins"/>
+  </GenStepDef>
+</Defs>

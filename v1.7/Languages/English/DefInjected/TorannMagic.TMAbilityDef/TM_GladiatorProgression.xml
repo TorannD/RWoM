@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_GladiatorManeuver.label>maneuver</TM_GladiatorManeuver.label>
+  <TM_GladiatorManeuver.description>Increases movement speed by 8% for 8 seconds.</TM_GladiatorManeuver.description>
+  <TM_GladiatorSweep.label>sweeping blow</TM_GladiatorSweep.label>
+  <TM_GladiatorSweep.description>Strike a chosen adjacent enemy and up to one enemy beside them for 65% weapon damage each.</TM_GladiatorSweep.description>
+</LanguageData>

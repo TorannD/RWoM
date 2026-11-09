@@ -8,10 +8,11 @@ using System.Linq;
 
 namespace TorannMagic
 {
-    class Verb_Meteor : Verb_UseAbility
+    class Verb_Meteor : ClassProgression.Verb_SpiritTargetable
     {
 
-        int pwrVal = 0;
+        private static readonly string[] rocks = { "Sandstone","Granite","Limestone","Slate","Marble" };
+        private static readonly string[] ores = { "MineableSilver","MineableGold","MineableUranium","MineablePlasteel","MineableJade","MineableComponentsIndustrial" };
         int verVal = 0;
 
         public override bool CanHitTargetFrom(IntVec3 casterPos, LocalTargetInfo targ)
@@ -47,127 +48,41 @@ namespace TorannMagic
 
         protected override bool TryCastShot()
         {
-            Map map = base.CasterPawn.Map;
-            IntVec3 centerCell = this.currentTarget.Cell;
+            ApplyHostedEffect();
+            burstShotsLeft = 0;
+            return false;
+        }
 
-            verVal = this.CasterPawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Meteor.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Meteor_ver").level;
-            pwrVal = this.UseAbilityProps.TargetAoEProperties.range;
-
-            bool result = false;
-            bool arg_40_0;
-            if (this.currentTarget != null && base.CasterPawn != null)
-            {
-                IntVec3 arg_29_0 = this.currentTarget.Cell;
-                arg_40_0 = this.currentTarget.Cell.IsValid;
-            }
-            else
-            {
-                arg_40_0 = false;
-            }
-            bool flag = arg_40_0;
-            if (flag)
-            {
-                if(pwrVal == 5)
-                {
-                    List<Thing> list = GenerateMeteoriteComposition(pwrVal);
-                    SkyfallerMaker.SpawnSkyfaller(ThingDef.Named("TM_Meteorite_III"), list, centerCell, map);
-                }
-                else if(pwrVal == 4)
-                {
-                    List<Thing> list = GenerateMeteoriteComposition(pwrVal);
-                    SkyfallerMaker.SpawnSkyfaller(ThingDef.Named("TM_Meteorite_II"), list, centerCell, map);
-                }
-                else if(pwrVal == 3)
-                {
-                    List<Thing> list = GenerateMeteoriteComposition(pwrVal);
-                    SkyfallerMaker.SpawnSkyfaller(ThingDef.Named("TM_Meteorite_I"), list, centerCell, map);
-                }
-                else
-                {
-                    List<Thing> list = GenerateMeteoriteComposition(pwrVal);
-                    SkyfallerMaker.SpawnSkyfaller(ThingDef.Named("TM_Meteorite"), list, centerCell, map);
-                }
-                
-            }
-            else
-            {
-                Log.Warning("failed to TryCastShot");
-            }
-            this.burstShotsLeft = 0;
-            return result;
+        protected override bool ApplyHostedEffect()
+        {
+            var body = CasterPawn;
+            var map = body?.Map;
+            var cell = currentTarget.Cell;
+            var owner = ClassProgression.SpiritRebirthCasting.SkillOwner(body,Ability);
+            if (owner == null || map == null || !currentTarget.IsValid || !cell.InBounds(map)) return false;
+            var data = owner.GetCompAbilityUserMagic()?.MagicData;
+            if (data == null) return false;
+            verVal = ClassProgression.SpiritRebirthRuntime.SavedRank(data,"TM_Meteor_ver");
+            int radius = UseAbilityProps.TargetAoEProperties.range;
+            string suffix = radius switch { 5 => "_III", 4 => "_II", 3 => "_I", _ => "" };
+            var falling = DefDatabase<ThingDef>.GetNamedSilentFail("TM_Meteorite" + suffix);
+            if (falling == null) return false;
+            var contents = GenerateMeteoriteComposition(radius);
+            if (contents.Count == 0) return false;
+            return SkyfallerMaker.SpawnSkyfaller(falling, contents, cell, map) != null;
         }
 
         public List<Thing> GenerateMeteoriteComposition(int radius)
         {
-            List<Thing> meteoriteComposition = new List<Thing>();
-            meteoriteComposition.Clear();
-            int compositionCount = GenRadial.RadialCellsAround(caster.Position, radius, false).ToList().Count;
-            int rnd = Rand.RangeInclusive(0, 4);
-            ThingDef thingDef = null;
-            try
-            {
-                switch (rnd)
-                {
-                    case 0:
-                        thingDef = ThingDef.Named("Sandstone");
-                        break;
-                    case 1:
-                        thingDef = ThingDef.Named("Granite");
-                        break;
-                    case 2:
-                        thingDef = ThingDef.Named("Limestone");
-                        break;
-                    case 3:
-                        thingDef = ThingDef.Named("Slate");
-                        break;
-                    case 4:
-                        thingDef = ThingDef.Named("Marble");
-                        break;
-                }
-            }
-            catch
-            {
-                //if someone took these out...
-                IEnumerable<ThingDef> enumerable = from def in DefDatabase<ThingDef>.AllDefs
-                                                   where (def.thingCategories != null && def.thingCategories.Contains(ThingCategoryDefOf.StoneChunks))
-                                                   select def;
-                thingDef = enumerable.RandomElement();
-            }
-
-            ThingDef preciousThingDef = null;
-            try
-            {
-                rnd = Rand.RangeInclusive(0, 5);
-                switch (rnd)
-                {
-                    case 0:
-                        preciousThingDef = ThingDef.Named("MineableSilver");
-                        break;
-                    case 1:
-                        preciousThingDef = ThingDef.Named("MineableGold");
-                        break;
-                    case 2:
-                        preciousThingDef = ThingDef.Named("MineableUranium");
-                        break;
-                    case 3:
-                        preciousThingDef = ThingDef.Named("MineablePlasteel");
-                        break;
-                    case 4:
-                        preciousThingDef = ThingDef.Named("MineableJade");
-                        break;
-                    case 5:
-                        preciousThingDef = ThingDef.Named("MineableComponentsIndustrial");
-                        break;
-                }
-            }
-            catch
-            {
-                //if someone took these out...
-                IEnumerable<ThingDef> enumerable = from def in DefDatabase<ThingDef>.AllDefs
-                                                   where (def.mineable)
-                                                   select def;
-                thingDef = enumerable.RandomElement();
-            }
+            var meteoriteComposition = new List<Thing>();
+            int compositionCount = GenRadial.NumCellsInRadius(radius) - 1;
+            ThingDef thingDef = DefDatabase<ThingDef>.GetNamedSilentFail(rocks.RandomElement());
+            ThingDef preciousThingDef = DefDatabase<ThingDef>.GetNamedSilentFail(ores.RandomElement());
+            if (thingDef == null && !DefDatabase<ThingDef>.AllDefsListForReading.Where(d =>
+                d.building?.isNaturalRock == true && d.mineable).TryRandomElement(out thingDef)) return meteoriteComposition;
+            if (preciousThingDef == null && !DefDatabase<ThingDef>.AllDefsListForReading.Where(d =>
+                d.mineable && d.building?.mineableThing != null).TryRandomElement(out preciousThingDef)) return meteoriteComposition;
+            var steel = DefDatabase<ThingDef>.GetNamedSilentFail("MineableSteel") ?? thingDef;
 
             for (int i =0; i < compositionCount; i++)
             {
@@ -191,7 +106,7 @@ namespace TorannMagic
                 {
                     if (Rand.Chance(.05f))
                     {
-                        tmpThing = ThingMaker.MakeThing(ThingDef.Named("MineableSteel"), null);
+                        tmpThing = ThingMaker.MakeThing(steel, null);
                     }
                     else
                     {

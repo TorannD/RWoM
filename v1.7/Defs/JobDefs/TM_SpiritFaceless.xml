@@ -1,0 +1,27 @@
+<Defs>
+  <JobDef>
+    <defName>TM_SpiritStudyFaceless</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>studying TargetB.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCastFacelessEcho</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>using a borrowed technique on TargetB.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCastReversal</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>entering reversal stance.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCastTranspose</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>exchanging places with TargetB.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCastFacelessControl</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>taking control of TargetB.</reportString>
+  </JobDef>
+</Defs>

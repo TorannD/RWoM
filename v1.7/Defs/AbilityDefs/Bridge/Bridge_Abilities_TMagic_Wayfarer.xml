@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Wayfarercraft</defName>
+    <label>The Wayfarer</label>
+    <description>Increase attributes through training and hard work. See skills for more details.</description>
+    <spellId>rwom.tm_wayfarercraft</spellId>
+    <iconPath>UI/wayfarer</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SB</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_WayfarerCraft</abilityDef>
+      <isViolent>false</isViolent>
+      <defaultProjectile>Projectile_Default</defaultProjectile>
+      <warmupTime>0</warmupTime>
+      <SecondsToRecharge>10</SecondsToRecharge>
+      <range>0</range>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>0</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Fieldtraining</defName>
+    <label>Combat Training</label>
+    <description>Wayfarers do not have class specific abilities, instead, they excel at general combat. 
+
+General combat techniques are discarded by most fighters as supplementary skills which require no additional skill training. The wayfarer takes another approach; by investing time and effort into understanding these combat skills, the wayfarer is able to improve almost all general abilities in utility, power, and efficiency. 
+
+See skills for more details.</description>
+    <spellId>rwom.tm_fieldtraining</spellId>
+    <iconPath>UI/combattraining</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SB</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_FieldTraining</abilityDef>
+      <isViolent>false</isViolent>
+      <defaultProjectile>Projectile_Default</defaultProjectile>
+      <warmupTime>0</warmupTime>
+      <SecondsToRecharge>60</SecondsToRecharge>
+      <range>0</range>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>30</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+</Defs>

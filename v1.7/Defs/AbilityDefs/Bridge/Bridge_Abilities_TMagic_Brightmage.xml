@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Lightlance</defName>
+    <label>Light Lance</label>
+    <description>Focus light into an intense beam that burns everything along its path. This ability is empowered by stored light.</description>
+    <spellId>rwom.tm_lightlance</spellId>
+    <iconPath>UI/lightlance</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Effect_LightLance</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_LightLance</defaultProjectile>
+      <abilityDef>TM_LightLance</abilityDef>
+      <warmupTime>3</warmupTime>
+      <SecondsToRecharge>120</SecondsToRecharge>
+      <range>50</range>
+      <burstShotCount>12</burstShotCount>
+      <ticksBetweenBurstShots>22</ticksBetweenBurstShots>
+      <soundCast>TM_FireBurn</soundCast>
+      <soundCastTail>TM_Vibration</soundCastTail>
+      <muzzleFlashScale>2</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Sunfire</defName>
+    <label>Sunfire</label>
+    <description>The target area is laced with burning slashes of light. This ability is empowered by stored light.
+
+Cast time: 3s
+Range: 50
+Cooldown: 60s
+Radius: 5
+Count: 13</description>
+    <spellId>rwom.tm_sunfire</spellId>
+    <iconPath>UI/sunfire</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_BLOS</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Sunfire</defaultProjectile>
+      <abilityDef>TM_Sunfire</abilityDef>
+      <warmupTime>3</warmupTime>
+      <SecondsToRecharge>60</SecondsToRecharge>
+      <range>50</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Vibration</soundCast>
+      <soundCastTail>TM_VibrationLow</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_SunfireI</defName>
+    <label>Sunfire (I)</label>
+    <description>The target area is laced with burning slashes of light. This ability is empowered by stored light.
+
+Cast time: 2.7s
+Range: 55
+Cooldown: 55s
+Radius: 6
+Count: 14</description>
+    <spellId>rwom.tm_sunfire_i</spellId>
+    <iconPath>UI/sunfire</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_BLOS</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Sunfire_I</defaultProjectile>
+      <abilityDef>TM_Sunfire_I</abilityDef>
+      <warmupTime>2.7</warmupTime>
+      <SecondsToRecharge>55</SecondsToRecharge>
+      <range>55</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Vibration</soundCast>
+      <soundCastTail>TM_VibrationLow</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_SunfireII</defName>
+    <label>Sunfire (II)</label>
+    <description>The target area is laced with burning slashes of light. This ability is empowered by stored light.
+
+Cast time: 2.4s
+Range: 60
+Cooldown: 50s
+Radius: 7
+Count: 15</description>
+    <spellId>rwom.tm_sunfire_ii</spellId>
+    <iconPath>UI/sunfire</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_BLOS</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Sunfire_II</defaultProjectile>
+      <abilityDef>TM_Sunfire_II</abilityDef>
+      <warmupTime>2.4</warmupTime>
+      <SecondsToRecharge>50</SecondsToRecharge>
+      <range>60</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Vibration</soundCast>
+      <soundCastTail>TM_VibrationLow</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_SunfireIII</defName>
+    <label>Sunfire (III)</label>
+    <description>The target area is laced with burning slashes of light. This ability is empowered by stored light.
+
+Cast time: 2.2s
+Range: 65
+Cooldown: 45s
+Radius: 8
+Count: 16</description>
+    <spellId>rwom.tm_sunfire_iii</spellId>
+    <iconPath>UI/sunfire</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_BLOS</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Sunfire_III</defaultProjectile>
+      <abilityDef>TM_Sunfire_III</abilityDef>
+      <warmupTime>2.2</warmupTime>
+      <SecondsToRecharge>45</SecondsToRecharge>
+      <range>65</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Vibration</soundCast>
+      <soundCastTail>TM_VibrationLow</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Lightburst</defName>
+    <label>Light Burst</label>
+    <description>Creates flashes of light that blind and disorient pawns caught in the blast. Disoriented pawns will be unable to distinguish between friend and foe and may fire on nearby friendly pawns. This ability is empowered by stored light.</description>
+    <spellId>rwom.tm_lightburst</spellId>
+    <iconPath>UI/lightburst</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_LightBurst</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Default</defaultProjectile>
+      <abilityDef>TM_LightBurst</abilityDef>
+      <warmupTime>1</warmupTime>
+      <SecondsToRecharge>60</SecondsToRecharge>
+      <range>50</range>
+      <burstShotCount>4</burstShotCount>
+      <ticksBetweenBurstShots>12</ticksBetweenBurstShots>
+      <soundCast>TM_SoftExplosion</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <AbilityTargetCategory>TargetAoE</AbilityTargetCategory>
+      <TargetAoEProperties>
+        <targetClass>Pawn</targetClass>
+        <showRangeOnSelect>true</showRangeOnSelect>
+        <friendlyFire>true</friendlyFire>
+        <startsFromCaster>false</startsFromCaster>
+        <maxTargets>5</maxTargets>
+        <range>6</range>
+      </TargetAoEProperties>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Lightskip</defName>
+    <label>Light Skip</label>
+    <description>The caster rides a wave of light for near-instant travel. Neither the caster's position or target's position can be roofed.</description>
+    <spellId>rwom.tm_lightskip</spellId>
+    <iconPath>UI/lightskip</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_LightSkip</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <requiresLineOfSight>false</requiresLineOfSight>
+      <defaultProjectile>Projectile_LightSkip</defaultProjectile>
+      <abilityDef>TM_LightSkip</abilityDef>
+      <warmupTime>1</warmupTime>
+      <SecondsToRecharge>30</SecondsToRecharge>
+      <range>300</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_LightZip</soundCast>
+      <soundCastTail>TM_LightZip</soundCastTail>
+      <muzzleFlashScale>10</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Lightskipmass</defName>
+    <label>Mass Light Skip</label>
+    <description>The caster and all allies in a 5 cell radius rides waves of light for near-instant travel. Pawns under a roof will not be transported.</description>
+    <spellId>rwom.tm_lightskipmass</spellId>
+    <iconPath>UI/masslightskip</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_LightSkip</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <requiresLineOfSight>false</requiresLineOfSight>
+      <defaultProjectile>Projectile_LightSkipMass</defaultProjectile>
+      <abilityDef>TM_LightSkipMass</abilityDef>
+      <warmupTime>2</warmupTime>
+      <SecondsToRecharge>60</SecondsToRecharge>
+      <range>300</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_LightZip</soundCast>
+      <soundCastTail>TM_LightZip</soundCastTail>
+      <muzzleFlashScale>10</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <targetParams>
+        <canTargetItems>true</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Lightskipglobal</defName>
+    <label>Global Light Skip</label>
+    <description>The caster and all allies in a 5 cell radius rides waves of light for near-instant travel. Pawns under a roof will not be transported.</description>
+    <spellId>rwom.tm_lightskipglobal</spellId>
+    <iconPath>UI/globallightskip</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_LightSkipGlobal</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <requiresLineOfSight>false</requiresLineOfSight>
+      <defaultProjectile>Projectile_Default</defaultProjectile>
+      <abilityDef>TM_LightSkipGlobal</abilityDef>
+      <warmupTime>3</warmupTime>
+      <SecondsToRecharge>600</SecondsToRecharge>
+      <range>300</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_LightZip</soundCast>
+      <soundCastTail>TM_LightZip</soundCastTail>
+      <muzzleFlashScale>10</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Refraction</defName>
+    <label>Refraction</label>
+    <description>Creates a wall of light that affects projectiles as they pass through the wall. Enemy projectiles may be offset from their intended targets. Friendly projectiles may use a portion of the light energy to create a mirrored reflection of the projectile. The wall will last about 25 seconds or until it runs out of energy. This ability is empowered by stored light.</description>
+    <spellId>rwom.tm_refraction</spellId>
+    <iconPath>UI/refraction</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SB</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Refraction</defaultProjectile>
+      <abilityDef>TM_Refraction</abilityDef>
+      <warmupTime>1</warmupTime>
+      <SecondsToRecharge>120</SecondsToRecharge>
+      <range>45</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Vibration</soundCast>
+      <soundCastTail>TM_VibrationLow</soundCastTail>
+      <muzzleFlashScale>2</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <targetParams>
+        <canTargetItems>true</canTargetItems>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Spiritoflight</defName>
+    <label>Spirit Of Light</label>
+    <description>Summons a Spirit of Light that aids and protects the caster. This ability requires 60 mana to sustain and reduces mana regeneration by 75%. Use this ability again to dismiss the spirit. The SoL is able to store light energy and uses light energy to perform actions.
+		
+The Spirit of Light works autonomously to aid the caster and will perform the following actions:
+o Deflects attacks
+o Cauterizes wounds of downed pawns
+o Attacks enemies (only when drafted)
+o Improve mood of nearby allies
+o Create a burst of joy
+o Protects the caster's dreams</description>
+    <spellId>rwom.tm_spiritoflight</spellId>
+    <iconPath>UI/sol</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Effect_SpiritOfLight</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_SpiritOfLight</defaultProjectile>
+      <abilityDef>TM_SpiritOfLight</abilityDef>
+      <warmupTime>5</warmupTime>
+      <SecondsToRecharge>30</SecondsToRecharge>
+      <range>0</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Vibration</soundCast>
+      <soundCastTail>TM_VibrationLow</soundCastTail>
+      <muzzleFlashScale>2</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_SolCreatelight</defName>
+    <label>Create Light</label>
+    <description>Directs the Spirit of Light to create light at an area. This reduces the Spirit's light regeneration by 70%. Use this ability again at any location to dismiss the light.</description>
+    <spellId>rwom.tm_sol_createlight</spellId>
+    <iconPath>UI/createlight</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SoL_CreateLight</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <requiresLineOfSight>false</requiresLineOfSight>
+      <defaultProjectile>Projectile_Default</defaultProjectile>
+      <abilityDef>TM_SoL_CreateLight</abilityDef>
+      <warmupTime>.5</warmupTime>
+      <SecondsToRecharge>30</SecondsToRecharge>
+      <range>150</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Vibration</soundCast>
+      <soundCastTail>TM_VibrationLow</soundCastTail>
+      <muzzleFlashScale>10</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <AbilityTargetCategory>TargetAoE</AbilityTargetCategory>
+      <TargetAoEProperties>
+        <targetClass>Pawn</targetClass>
+        <showRangeOnSelect>true</showRangeOnSelect>
+        <friendlyFire>true</friendlyFire>
+        <startsFromCaster>false</startsFromCaster>
+        <maxTargets>5</maxTargets>
+        <range>9</range>
+      </TargetAoEProperties>
+      <targetParams>
+        <canTargetItems>true</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_SolEqualize</defName>
+    <label>Equalize</label>
+    <description>Equalizes the light energy between the Spirit of Light and caster.</description>
+    <spellId>rwom.tm_sol_equalize</spellId>
+    <iconPath>UI/equalize</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SoL_Equalize</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <requiresLineOfSight>false</requiresLineOfSight>
+      <defaultProjectile>Projectile_Default</defaultProjectile>
+      <abilityDef>TM_SoL_Equalize</abilityDef>
+      <warmupTime>1</warmupTime>
+      <SecondsToRecharge>120</SecondsToRecharge>
+      <range>0</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Vibration</soundCast>
+      <soundCastTail>TM_VibrationLow</soundCastTail>
+      <muzzleFlashScale>10</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+</Defs>

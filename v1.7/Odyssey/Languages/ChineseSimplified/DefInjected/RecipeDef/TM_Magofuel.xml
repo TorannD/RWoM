@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_RefineMagofuel.label>精炼魔能燃料 x50</TM_RefineMagofuel.label>
+  <TM_RefineMagofuel.description>消耗50份化合燃料和200份魔晶，生产50份魔能燃料。需要奥术熔炉，并遵循熔炉通常的魔法工作条件及魔力消耗规则。</TM_RefineMagofuel.description>
+  <TM_RefineMagofuel.jobString>正在精炼魔能燃料。</TM_RefineMagofuel.jobString>
+</LanguageData>

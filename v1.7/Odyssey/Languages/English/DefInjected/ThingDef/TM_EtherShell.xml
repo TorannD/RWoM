@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <SpellOf_EtherShell.label>Ether Shell</SpellOf_EtherShell.label>
+  <SpellOf_EtherShell.description>Teaches Ether Shell to a mage able to learn general spells. Protects the caster or an allied pawn from vacuum and extreme cold for one day. Grants full vacuum resistance, prevents vacuum burns and lowers minimum comfortable temperature by 300 C. Does not protect from bullets, fire or heat, and does not heal injuries. Cannot stack or refresh while active.</SpellOf_EtherShell.description>
+  <TM_CastScroll_EtherShell.label>ether shell cast scroll</TM_CastScroll_EtherShell.label>
+  <TM_CastScroll_EtherShell.description>Protects the caster or an allied pawn from vacuum and extreme cold for one day. Grants full vacuum resistance, prevents vacuum burns and lowers minimum comfortable temperature by 300 C. Does not protect from bullets, fire or heat, and does not heal injuries. Cannot stack or refresh while active. Use from inventory. Consumes one scroll after a successful cast. Anyone can use it without mana or learned magic. Fixed one-day duration. Range: 12 cells. Preparation: 1 second. Cooldown: 60 seconds.</TM_CastScroll_EtherShell.description>
+  <TM_SpellStaff_EtherShell.label>charged ether shell staff</TM_SpellStaff_EtherShell.label>
+  <TM_SpellStaff_EtherShell.description>Protects the caster or an allied pawn from vacuum and extreme cold for one day. Grants full vacuum resistance, prevents vacuum burns and lowers minimum comfortable temperature by 300 C. Does not protect from bullets, fire or heat, and does not heal injuries. Cannot stack or refresh while active. Equip as the primary weapon. Holds 10 uses; cannot recharge and disappears after its last use. Anyone can use it without mana or learned magic. Fixed one-day duration. Range: 12 cells. Preparation: 1 second. Cooldown: 60 seconds.</TM_SpellStaff_EtherShell.description>
+</LanguageData>

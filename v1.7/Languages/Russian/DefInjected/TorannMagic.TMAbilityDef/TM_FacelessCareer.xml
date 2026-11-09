@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_FacelessEcho.label>Заимствованный приём</TM_FacelessEcho.label>
+  <TM_FacelessEcho.description>Повторите последний скопированный приём на расстоянии до 18 клеток. Боевое и стихийное эхо наносят 12 урона; лечебное восстанавливает 4 здоровья одной раны. Расход 20% выносливости, перезарядка 30 секунд.</TM_FacelessEcho.description>
+</LanguageData>

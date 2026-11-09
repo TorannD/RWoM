@@ -154,7 +154,7 @@
 
 	<TorannMagic.TMDefs.TM_GolemDef Name="TM_StoneGolem" Abstract="True">
 		<golemWorkstationDef>TM_StoneGolem_Workstation</golemWorkstationDef>
-		<golemFramePath>Golems/Stone/Stone_Workstation_Frame</golemFramePath>
+		<golemFramePath>Golems/Stone/Stone_Workstation_frame</golemFramePath>
 		<activationTicks>450</activationTicks>
 		<processorEvaluationTicks>400</processorEvaluationTicks>
 		<needs>

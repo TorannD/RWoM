@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_RangerCareHint>照料同一只缔结羁绊的动物12天（{0}/12）。每天在同一地图上探望一次。更换伙伴会重置尚未完成的试炼。解除或更换羁绊时，原来的动物可能会永久消失。</TM_RangerCareHint>
+  <TM_RangerCareOrder>照料{0}</TM_RangerCareOrder>
+  <TM_RangerClaimTrap>学习毒素陷阱</TM_RangerClaimTrap>
+</LanguageData>

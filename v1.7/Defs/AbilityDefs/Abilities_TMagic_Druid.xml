@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	
-	<!-- poison  -->	
+		
     <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>TorannMagic.Projectile_Poison</thingClass>
 	    <defName>Projectile_Poison</defName>
@@ -18,7 +17,7 @@
             <damageAmountBase>0</damageAmountBase>
             <speed>999</speed>
         </projectile>
-    </ThingDef>
+</ThingDef>
 
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_Poison</defName>
@@ -55,11 +54,18 @@
                 <canTargetLocations>false</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_poison</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
-    <!-- poison end-->
+    
 	
-		<!-- soothe animal  -->	
+			
     <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>AbilityUser.Projectile_AbilityBase</thingClass>
 	    <defName>Projectile_SootheAnimal</defName>
@@ -75,7 +81,7 @@
             <damageAmountBase>0</damageAmountBase>
             <speed>999</speed>
         </projectile>
-    </ThingDef>
+</ThingDef>
 
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_SootheAnimal</defName>
@@ -127,7 +133,14 @@ AoE Size: 7</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_sootheanimal</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_SootheAnimal_I</defName>
@@ -178,7 +191,14 @@ AoE Size: 8</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_sootheanimal_i</spellId>
+<domain>Magic</domain>
+<tier>1</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_SootheAnimal_II</defName>
@@ -229,7 +249,14 @@ AoE Size: 9</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_sootheanimal_ii</spellId>
+<domain>Magic</domain>
+<tier>2</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_SootheAnimal_III</defName>
@@ -280,11 +307,18 @@ AoE Size: 10</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_sootheanimal_iii</spellId>
+<domain>Magic</domain>
+<tier>3</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
-    <!-- soothe animal end-->
+    
 	
-		<!-- regenerate  -->	
+			
     <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>AbilityUser.Projectile_AbilityBase</thingClass>
 	    <defName>Projectile_Regenerate</defName>
@@ -300,7 +334,7 @@ AoE Size: 10</description>
             <damageAmountBase>0</damageAmountBase>
             <speed>999</speed>
         </projectile>
-    </ThingDef>
+</ThingDef>
 
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_Regenerate</defName>
@@ -338,11 +372,18 @@ AoE Size: 10</description>
                 <canTargetLocations>false</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_regenerate</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
-    <!-- Regenerate end-->
+    
 	
-		<!-- cure disease  -->	
+			
     <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>AbilityUser.Projectile_AbilityBase</thingClass>
 	    <defName>Projectile_CureDisease</defName>
@@ -358,7 +399,7 @@ AoE Size: 10</description>
             <damageAmountBase>0</damageAmountBase>
             <speed>999</speed>
         </projectile>
-    </ThingDef>
+</ThingDef>
 
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_CureDisease</defName>
@@ -395,11 +436,18 @@ AoE Size: 10</description>
                 <canTargetLocations>false</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_curedisease</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
-    <!-- cure disease end-->
+    
 	
-		<!-- regrow limb -->	
+			
     <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>AbilityUser.Projectile_AbilityBase</thingClass>
 	    <defName>Projectile_RegrowLimb</defName>
@@ -415,7 +463,7 @@ AoE Size: 10</description>
             <damageAmountBase>0</damageAmountBase>
             <speed>999</speed>
         </projectile>
-    </ThingDef>
+</ThingDef>
 
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_RegrowLimb</defName>
@@ -452,8 +500,15 @@ AoE Size: 10</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_regrowlimb</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
-    <!-- Regrow limb end-->
+    
 
 </Defs>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritHeal.reportString>зцілює через тіло носія.</TM_SpiritHeal.reportString>
+  <TM_SpiritAdvancedHeal.reportString>застосовує посилене зцілення через тіло носія.</TM_SpiritAdvancedHeal.reportString>
+  <TM_SpiritPurify.reportString>очищує через тіло носія.</TM_SpiritPurify.reportString>
+  <TM_SpiritRegenerate.reportString>застосовує регенерацію через тіло носія.</TM_SpiritRegenerate.reportString>
+</LanguageData>

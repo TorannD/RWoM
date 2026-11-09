@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritCastPistolWhip.reportString>golpeando a TargetB con una pistola.</TM_SpiritCastPistolWhip.reportString>
+  <TM_SpiritCastMk203GL.reportString>lanzando una granada a TargetB.</TM_SpiritCastMk203GL.reportString>
+  <TM_SpiritCastBreachingCharge.reportString>lanzando una carga de demolición a TargetB.</TM_SpiritCastBreachingCharge.reportString>
+  <TM_SpiritCastSuperSoldierFieldDressing.reportString>aplicando un vendaje de campo.</TM_SpiritCastSuperSoldierFieldDressing.reportString>
+  <TM_SpiritCastBuckshot.reportString>disparando perdigones a TargetB.</TM_SpiritCastBuckshot.reportString>
+  <TM_SpiritCastSuppressingFire.reportString>disparando fuego de supresión a TargetB.</TM_SpiritCastSuppressingFire.reportString>
+  <TM_SpiritCast60mmMortar.reportString>desplegando un mortero de 60 mm.</TM_SpiritCast60mmMortar.reportString>
+</LanguageData>

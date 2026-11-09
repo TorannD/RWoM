@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritCastPistolWhip.reportString>用手枪击打TargetB。</TM_SpiritCastPistolWhip.reportString>
+  <TM_SpiritCastMk203GL.reportString>向TargetB发射榴弹。</TM_SpiritCastMk203GL.reportString>
+  <TM_SpiritCastBreachingCharge.reportString>向TargetB投掷破门炸药。</TM_SpiritCastBreachingCharge.reportString>
+  <TM_SpiritCastSuperSoldierFieldDressing.reportString>进行战地包扎。</TM_SpiritCastSuperSoldierFieldDressing.reportString>
+  <TM_SpiritCastBuckshot.reportString>向TargetB发射霰弹。</TM_SpiritCastBuckshot.reportString>
+  <TM_SpiritCastSuppressingFire.reportString>向TargetB进行压制射击。</TM_SpiritCastSuppressingFire.reportString>
+  <TM_SpiritCast60mmMortar.reportString>部署60毫米迫击炮。</TM_SpiritCast60mmMortar.reportString>
+</LanguageData>

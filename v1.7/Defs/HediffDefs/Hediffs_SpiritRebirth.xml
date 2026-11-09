@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <HediffDef>
+    <defName>TM_SpiritRebirthForm</defName>
+    <hediffClass>TorannMagic.ClassProgression.Hediff_SpiritRebirthForm</hediffClass>
+    <label>ethereal form</label>
+    <description>Ethereal Spirit form. Cannot manipulate or carry physical objects.</description>
+    <initialSeverity>0.5</initialSeverity>
+    <maxSeverity>4</maxSeverity>
+    <isBad>false</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <makesSickThought>false</makesSickThought>
+    <tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+    <preventsLungRot>true</preventsLungRot>
+    <forceRenderTreeRecache>true</forceRenderTreeRecache>
+    <comps>
+      <li Class="HediffCompProperties_Invisibility" MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Anomaly">
+        <visibleToPlayer>true</visibleToPlayer>
+      </li>
+    </comps>
+  </HediffDef>
+</Defs>

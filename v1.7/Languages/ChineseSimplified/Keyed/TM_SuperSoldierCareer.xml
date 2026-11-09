@@ -1,0 +1,13 @@
+<LanguageData>
+  <TM_ReadSuperSoldierCloseQuarters>近身格斗</TM_ReadSuperSoldierCloseQuarters>
+  <TM_ReadSuperSoldierFieldAid>战地医疗</TM_ReadSuperSoldierFieldAid>
+  <TM_SoldierMaintenance>维护磨损武器（{0}/20）或用药品包扎盟友的伤口（{1}/10）。</TM_SoldierMaintenance>
+  <TM_SoldierTraining>用专精武器击中不同敌人（{0}/10）或包扎盟友伤口（{1}/20）。</TM_SoldierTraining>
+  <TM_SoldierShifts>完成八天实战或医疗勤务（{0}/8）。战士等级 {1}/30。</TM_SoldierShifts>
+  <TM_SoldierSurgeon>战地外科医生（治疗质量 +15%）</TM_SoldierSurgeon>
+  <TM_SoldierMarksman>神射手（专精武器命中率 +7%）</TM_SoldierMarksman>
+  <TM_SoldierChooseSchool>选择永久武器专精</TM_SoldierChooseSchool>
+  <TM_SoldierAdvance>完成训练阶段</TM_SoldierAdvance>
+  <TM_SoldierService>维护磨损武器</TM_SoldierService>
+  <TM_SoldierNeedsMedicine>需要可治疗的新伤和个人物品栏中的药品。</TM_SoldierNeedsMedicine>
+</LanguageData>

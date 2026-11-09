@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Torn_BookOfEmpathy.label>manuscrito rasgado: émpata</Torn_BookOfEmpathy.label>
+  <Torn_BookOfEmpathy.description>Enseña Empatía y Asesino mental a un nuevo mago. Su lectura completa la iniciación básica y consume el manuscrito.</Torn_BookOfEmpathy.description>
+  <Torn_BookOfEmpathy.comps.1.useLabel>Leer {0_label}</Torn_BookOfEmpathy.comps.1.useLabel>
+  <BookOfEmpathy.label>tomo arcano: émpata</BookOfEmpathy.label>
+  <BookOfEmpathy.description>Enseña Aura supresora a un émpata que haya superado la prueba básica. Su lectura completa la iniciación como adepto y consume el tomo.</BookOfEmpathy.description>
+  <BookOfEmpathy.comps.1.useLabel>Leer {0_label}</BookOfEmpathy.comps.1.useLabel>
+  <TM_MasterTomeEmpath.label>tomo de maestro: émpata</TM_MasterTomeEmpath.label>
+  <TM_MasterTomeEmpath.description>Enseña Cosechar pasión y su habilidad asociada Incitar pasión a un émpata que haya superado la prueba de maestría. Su lectura completa la iniciación como maestro y consume el tomo. Se obtiene de comerciantes y como recompensa de misiones; no se puede fabricar.</TM_MasterTomeEmpath.description>
+  <TM_MasterTomeEmpath.comps.1.useLabel>Leer {0_label}</TM_MasterTomeEmpath.comps.1.useLabel>
+</LanguageData>

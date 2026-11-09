@@ -25,14 +25,27 @@ namespace TorannMagic
         private float lastSeverity = 0;
 
         public Pawn linkedPawn = null;
+        private Pawn projectedOwner;
+        internal void Link(Pawn body, Pawn owner)
+        {
+            if (linkedPawn != body || projectedOwner != (owner == body ? null : owner)) initialized = false;
+            linkedPawn = body;
+            projectedOwner = owner == body ? null : owner;
+        }
         Vector3 directionToLinkedPawn = default(Vector3);
 
         public override void CompExposeData()
         {
             base.CompExposeData();
             Scribe_References.Look<Pawn>(ref linkedPawn, "linkedPawn", false);
+            Scribe_References.Look(ref projectedOwner, "TM_bloodShieldSoul");
             Scribe_Values.Look<int>(ref this.bloodshieldVer, "bloodshieldVer", 0, false);
             Scribe_Values.Look<bool>(ref this.initialized, "initialized", false, false);
+            Scribe_Values.Look(ref lastSeverity, "TM_bloodShieldLastSeverity", -1f);
+            Scribe_Values.Look(ref initializeDelay, "TM_bloodShieldDelay");
+            Scribe_Values.Look(ref removeNow, "TM_bloodShieldEnding");
+            if (Scribe.mode == LoadSaveMode.PostLoadInit && lastSeverity < 0f)
+                lastSeverity = parent.Severity;
         }
 
         public string labelCap
@@ -55,10 +68,10 @@ namespace TorannMagic
         {
             bool spawned = base.Pawn.Spawned;
             this.lastSeverity = this.parent.Severity;
-            CompAbilityUserMagic comp = this.linkedPawn.GetCompAbilityUserMagic();
-            if (spawned && comp != null && comp.IsMagicUser)
+            CompAbilityUserMagic comp = (projectedOwner ?? linkedPawn)?.GetCompAbilityUserMagic();
+            if (spawned && comp != null && (projectedOwner != null || comp.IsMagicUser))
             {
-                bloodshieldVer = comp.MagicData.MagicPowerSkill_BloodShield.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_BloodShield_ver").level;
+                bloodshieldVer = comp.MagicData.MagicPowerSkill_BloodShield.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_BloodShield_ver")?.level ?? 0;
                 //directionToLinkedPawn = TM_Calc.GetVector(this.Pawn.DrawPos, linkedPawn.DrawPos);
             }
             else
@@ -70,6 +83,14 @@ namespace TorannMagic
         public override void CompPostTick(ref float severityAdjustment)
         {
             base.CompPostTick(ref severityAdjustment);
+            if (projectedOwner != null && (!ClassProgression.SpiritRebirthState.TryGet(projectedOwner, out var state) ||
+                !state.HasValidHost(projectedOwner) || state.Host != linkedPawn || state.DepletionPending))
+            {
+                removeNow = true;
+                return;
+            }
+            if (linkedPawn != null && !linkedPawn.Dead && !linkedPawn.Destroyed && (linkedPawn.Map == null || linkedPawn.Map != Pawn.Map))
+                return;
             bool flag = base.Pawn != null && base.Pawn.Map != null && this.initializeDelay > 1;
             if (flag)
             {

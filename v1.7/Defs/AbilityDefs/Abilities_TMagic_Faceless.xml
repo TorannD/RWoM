@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
 
@@ -18,9 +17,9 @@
 		<damageAmountBase>0</damageAmountBase>
 		<speed>999</speed>
    </projectile>
- </ThingDef>
+</ThingDef>
  
- <!-- Disguise start-->
+ 
  
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_Disguise</defName>
@@ -57,18 +56,25 @@ Disguise will not fool any pawn that already sees the faceless as a threat.</des
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_disguise</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
  
-   <!-- Disguise end-->
    
-     <!-- Mimic start-->
+   
+     
  
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_Mimic</defName>
     <label>Mimic</label>
     <uiIconPath>UI/mimic</uiIconPath>
     <description>The faceless copies a random ability from a mage or fighter. Only one ability may be stored at a time. The ability is retained after use; reusing Mimic will replace the stored ability.</description>
-<!--    <thingClass>ThingWithComps</thingClass> -->
+
     <staminaCost>0.4</staminaCost>
 	<efficiencyReductionPercent>.08</efficiencyReductionPercent>
     <MainVerb Class="AbilityUser.VerbProperties_Ability">
@@ -95,17 +101,24 @@ Disguise will not fool any pawn that already sees the faceless as a threat.</des
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_mimic</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
 
-  <!-- Reversal Start -->
+  
   
    <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_Reversal</defName>
     <label>Reversal</label>
     <uiIconPath>UI/reversal</uiIconPath>
     <description>Reverses the kinetic energy of all melee and projectile attacks for a brief period. The faceless will take no damage from these attacks. Direct application and explosive attacks cannot be reversed.</description>
-<!--    <thingClass>ThingWithComps</thingClass> -->
+
     <staminaCost>0.40</staminaCost>
 	<efficiencyReductionPercent>.10</efficiencyReductionPercent>
 	<canCopy>true</canCopy>
@@ -133,10 +146,17 @@ Disguise will not fool any pawn that already sees the faceless as a threat.</des
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_reversal</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
 	
-	<!-- Transpose Start -->
+	
 
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_Transpose</defName>
@@ -172,7 +192,14 @@ Cooldown: 15</description>
             <muzzleFlashScale>20</muzzleFlashScale>
             <isPrimary>false</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_transpose</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	 <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_Transpose_I</defName>
@@ -208,7 +235,14 @@ Cooldown: 13</description>
             <muzzleFlashScale>20</muzzleFlashScale>
             <isPrimary>false</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_transpose_i</spellId>
+<domain>Might</domain>
+<tier>1</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	 <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_Transpose_II</defName>
@@ -244,7 +278,14 @@ Cooldown: 11</description>
             <muzzleFlashScale>20</muzzleFlashScale>
             <isPrimary>false</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_transpose_ii</spellId>
+<domain>Might</domain>
+<tier>2</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	 <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_Transpose_III</defName>
@@ -281,11 +322,18 @@ Cooldown: 9</description>
             <muzzleFlashScale>20</muzzleFlashScale>
             <isPrimary>false</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_transpose_iii</spellId>
+<domain>Might</domain>
+<tier>3</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	  <!-- Transpose End -->
+	  
 	
-	 	    <!-- Possess -->
+	 	    
 			
   <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
    <defName>Projectile_Possess</defName>
@@ -301,7 +349,7 @@ Cooldown: 9</description>
 		<damageAmountBase>0</damageAmountBase>
 		<speed>999</speed>
    </projectile>
- </ThingDef>
+</ThingDef>
 
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_Possess</defName>
@@ -336,6 +384,13 @@ Only creatures with a human-like mind capable of self-doubt can be possessed.</d
             <muzzleFlashScale>20</muzzleFlashScale>
             <isPrimary>false</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_possess</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
 </Defs>

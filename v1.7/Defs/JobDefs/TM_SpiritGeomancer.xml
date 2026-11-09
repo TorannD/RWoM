@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef><defName>TM_SpiritStoneskin</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>casting stoneskin.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritDispelStoneskin</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>dispelling stoneskin.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritEarthSprites</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>summoning earth sprites.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritDismissEarthSprites</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>dismissing earth sprites.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritEncase</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>casting encase.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritEncase_I</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>casting encase.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritEncase_II</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>casting encase.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritEncase_III</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>casting encase.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritEarthernHammer</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>casting earthen hammer.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritSentinel</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>summoning a stone sentinel.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritShatterSentinel</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>shattering stone sentinels.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritMeteor</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>calling down a meteorite.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritMeteor_I</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>calling down a meteorite.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritMeteor_II</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>calling down a meteorite.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritMeteor_III</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>calling down a meteorite.</reportString></JobDef>
+</Defs>

@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_Book_Pools.rulePack.rulesStrings.0>subject_bookType-&gt;grimorio</TM_Book_Pools.rulePack.rulesStrings.0>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.1>subject_bookType-&gt;tomo</TM_Book_Pools.rulePack.rulesStrings.1>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.2>subject_bookType-&gt;códice</TM_Book_Pools.rulePack.rulesStrings.2>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.3>subject_bookType-&gt;florilegio</TM_Book_Pools.rulePack.rulesStrings.3>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.4>subject_bookType-&gt;fajo</TM_Book_Pools.rulePack.rulesStrings.4>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.5>subject_bookType-&gt;cronicón</TM_Book_Pools.rulePack.rulesStrings.5>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.6>subject_bookType-&gt;vademécum</TM_Book_Pools.rulePack.rulesStrings.6>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.7>subject_teachingType-&gt;códice</TM_Book_Pools.rulePack.rulesStrings.7>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.8>subject_teachingType-&gt;grabado</TM_Book_Pools.rulePack.rulesStrings.8>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.9>subject_teachingType-&gt;recopilatorio</TM_Book_Pools.rulePack.rulesStrings.9>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.10>subject_teachingType-&gt;fajo</TM_Book_Pools.rulePack.rulesStrings.10>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.11>subject_teachingType-&gt;cronicón</TM_Book_Pools.rulePack.rulesStrings.11>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.12>subject_teachingType-&gt;vademécum</TM_Book_Pools.rulePack.rulesStrings.12>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.13>subject_teachingType-&gt;método</TM_Book_Pools.rulePack.rulesStrings.13>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.14>TM_randNoun_Magic-&gt;Muerte</TM_Book_Pools.rulePack.rulesStrings.14>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.15>TM_randNoun_Magic-&gt;Vida</TM_Book_Pools.rulePack.rulesStrings.15>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.16>TM_randNoun_Magic-&gt;Amor</TM_Book_Pools.rulePack.rulesStrings.16>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.17>TM_randNoun_Magic-&gt;Sabiduría</TM_Book_Pools.rulePack.rulesStrings.17>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.18>TM_randNoun_Magic-&gt;Hechizo</TM_Book_Pools.rulePack.rulesStrings.18>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.19>TM_randNoun_Magic-&gt;Encanto</TM_Book_Pools.rulePack.rulesStrings.19>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.20>TM_randNoun_Magic-&gt;Poción</TM_Book_Pools.rulePack.rulesStrings.20>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.21>TM_randNoun_Magic-&gt;Varita</TM_Book_Pools.rulePack.rulesStrings.21>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.22>TM_randNoun_Magic-&gt;Conjuro</TM_Book_Pools.rulePack.rulesStrings.22>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.23>TM_randNoun_Magic-&gt;Ritual</TM_Book_Pools.rulePack.rulesStrings.23>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.24>TM_randNoun_Magic-&gt;Alquimia</TM_Book_Pools.rulePack.rulesStrings.24>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.25>TM_randNoun_Magic-&gt;Hechicería</TM_Book_Pools.rulePack.rulesStrings.25>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.26>TM_randNoun_Magic-&gt;Mago</TM_Book_Pools.rulePack.rulesStrings.26>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.27>TM_randNoun_Magic-&gt;Bruja</TM_Book_Pools.rulePack.rulesStrings.27>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.28>TM_randNoun_Magic-&gt;Encantadora</TM_Book_Pools.rulePack.rulesStrings.28>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.29>TM_randNoun_Magic-&gt;Místico</TM_Book_Pools.rulePack.rulesStrings.29>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.30>TM_randNoun_Magic-&gt;Conjuración</TM_Book_Pools.rulePack.rulesStrings.30>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.31>TM_randNoun_Magic-&gt;Talismán</TM_Book_Pools.rulePack.rulesStrings.31>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.32>TM_randNoun_Magic-&gt;Amuleto</TM_Book_Pools.rulePack.rulesStrings.32>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.33>TM_randNoun_Magic-&gt;Sello</TM_Book_Pools.rulePack.rulesStrings.33>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.34>TM_randNoun_Magic-&gt;Grimorio</TM_Book_Pools.rulePack.rulesStrings.34>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.35>TM_randNoun_Magic-&gt;Arcanos</TM_Book_Pools.rulePack.rulesStrings.35>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.36>TM_randNoun_Magic-&gt;Invocación</TM_Book_Pools.rulePack.rulesStrings.36>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.37>TM_randNoun_Magic-&gt;Maleficio</TM_Book_Pools.rulePack.rulesStrings.37>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.38>TM_randNoun_Magic-&gt;Maldición</TM_Book_Pools.rulePack.rulesStrings.38>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.39>TM_randNoun_Magic-&gt;Adivinación</TM_Book_Pools.rulePack.rulesStrings.39>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.40>TM_randNoun_Magic-&gt;Nigromancia</TM_Book_Pools.rulePack.rulesStrings.40>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.41>TM_randNoun_Magic-&gt;Libro de hechizos</TM_Book_Pools.rulePack.rulesStrings.41>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.42>TM_randNoun_Magic-&gt;Familiar</TM_Book_Pools.rulePack.rulesStrings.42>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.43>TM_randNoun_Magic-&gt;Elixir</TM_Book_Pools.rulePack.rulesStrings.43>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.44>TM_randNoun_Magic-&gt;Aquelarre</TM_Book_Pools.rulePack.rulesStrings.44>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.45>TM_randNoun_Magic-&gt;Oráculo</TM_Book_Pools.rulePack.rulesStrings.45>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.46>TM_randNoun_Magic-&gt;Vidente</TM_Book_Pools.rulePack.rulesStrings.46>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.47>TM_randNoun_Magic-&gt;Runas</TM_Book_Pools.rulePack.rulesStrings.47>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.48>subject_Magic-&gt;la muerte</TM_Book_Pools.rulePack.rulesStrings.48>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.49>subject_Magic-&gt;la vida</TM_Book_Pools.rulePack.rulesStrings.49>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.50>subject_Magic-&gt;el poder</TM_Book_Pools.rulePack.rulesStrings.50>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.51>subject_Magic-&gt;el fuego</TM_Book_Pools.rulePack.rulesStrings.51>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.52>subject_Magic-&gt;el hielo</TM_Book_Pools.rulePack.rulesStrings.52>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.53>subject_Magic-&gt;el relámpago</TM_Book_Pools.rulePack.rulesStrings.53>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.54>subject_Magic-&gt;el poder</TM_Book_Pools.rulePack.rulesStrings.54>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.55>subject_Magic-&gt;lo arcano</TM_Book_Pools.rulePack.rulesStrings.55>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.56>subject_Magic-&gt;la magia</TM_Book_Pools.rulePack.rulesStrings.56>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.57>subject_Magic-&gt;el viento</TM_Book_Pools.rulePack.rulesStrings.57>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.58>subject_Magic-&gt;la tierra</TM_Book_Pools.rulePack.rulesStrings.58>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.59>subject_Magic-&gt;el agua</TM_Book_Pools.rulePack.rulesStrings.59>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.60>subject_Magic-&gt;el espíritu</TM_Book_Pools.rulePack.rulesStrings.60>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.61>subject_Magic-&gt;la oscuridad</TM_Book_Pools.rulePack.rulesStrings.61>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.62>subject_Magic-&gt;la luz</TM_Book_Pools.rulePack.rulesStrings.62>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.63>subject_Magic-&gt;el tiempo</TM_Book_Pools.rulePack.rulesStrings.63>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.64>subject_Magic-&gt;la ilusión</TM_Book_Pools.rulePack.rulesStrings.64>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.65>subject_Magic-&gt;la curación</TM_Book_Pools.rulePack.rulesStrings.65>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.66>subject_Magic-&gt;la transformación</TM_Book_Pools.rulePack.rulesStrings.66>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.67>subject_Magic-&gt;la invocación</TM_Book_Pools.rulePack.rulesStrings.67>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.68>subject_Magic-&gt;la alquimia</TM_Book_Pools.rulePack.rulesStrings.68>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.69>subject_Magic-&gt;la nigromancia</TM_Book_Pools.rulePack.rulesStrings.69>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.70>subject_Magic-&gt;los encantamientos</TM_Book_Pools.rulePack.rulesStrings.70>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.71>subject_Magic-&gt;las runas</TM_Book_Pools.rulePack.rulesStrings.71>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.72>subject_Magic-&gt;la adivinación</TM_Book_Pools.rulePack.rulesStrings.72>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.73>subject_Magic-&gt;el misticismo</TM_Book_Pools.rulePack.rulesStrings.73>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.74>subject_Magic-&gt;la proyección astral</TM_Book_Pools.rulePack.rulesStrings.74>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.75>subject_Magic-&gt;la telequinesia</TM_Book_Pools.rulePack.rulesStrings.75>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.76>subject_Magic-&gt;la telepatía</TM_Book_Pools.rulePack.rulesStrings.76>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.77>subject_Magic-&gt;el cambio de forma</TM_Book_Pools.rulePack.rulesStrings.77>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.78>subject_Magic-&gt;los elementales</TM_Book_Pools.rulePack.rulesStrings.78>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.79>subject_Magic-&gt;los portales</TM_Book_Pools.rulePack.rulesStrings.79>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.80>subject_Magic-&gt;la caminata onírica</TM_Book_Pools.rulePack.rulesStrings.80>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.81>subject_Magic-&gt;los sellos</TM_Book_Pools.rulePack.rulesStrings.81>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.82>subject_Magic-&gt;los familiares</TM_Book_Pools.rulePack.rulesStrings.82>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.83>subject_Magic-&gt;los maleficios</TM_Book_Pools.rulePack.rulesStrings.83>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.84>subject_Magic-&gt;las maldiciones</TM_Book_Pools.rulePack.rulesStrings.84>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.85>subject_Magic-&gt;las pociones</TM_Book_Pools.rulePack.rulesStrings.85>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.86>subject_Magic-&gt;los encantos</TM_Book_Pools.rulePack.rulesStrings.86>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.87>TM_randAdjective_Magic-&gt;Antiguo</TM_Book_Pools.rulePack.rulesStrings.87>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.88>TM_randAdjective_Magic-&gt;Mágico</TM_Book_Pools.rulePack.rulesStrings.88>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.89>TM_randAdjective_Magic-&gt;Inspirado</TM_Book_Pools.rulePack.rulesStrings.89>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.90>TM_randAdjective_Magic-&gt;Ferviente</TM_Book_Pools.rulePack.rulesStrings.90>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.91>TM_randAdjective_Magic-&gt;Nefasto</TM_Book_Pools.rulePack.rulesStrings.91>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.92>TM_randAdjective_Magic-&gt;Caótico</TM_Book_Pools.rulePack.rulesStrings.92>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.93>TM_randAdjective_Magic-&gt;Misterioso</TM_Book_Pools.rulePack.rulesStrings.93>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.94>TM_randAdjective_Magic-&gt;Enigmático</TM_Book_Pools.rulePack.rulesStrings.94>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.95>TM_randAdjective_Magic-&gt;Arcano</TM_Book_Pools.rulePack.rulesStrings.95>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.96>TM_randAdjective_Magic-&gt;Poderoso</TM_Book_Pools.rulePack.rulesStrings.96>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.97>TM_randAdjective_Magic-&gt;Etéreo</TM_Book_Pools.rulePack.rulesStrings.97>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.98>TM_randAdjective_Magic-&gt;Prohibido</TM_Book_Pools.rulePack.rulesStrings.98>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.99>TM_randAdjective_Magic-&gt;Intrincado</TM_Book_Pools.rulePack.rulesStrings.99>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.100>TM_randAdjective_Magic-&gt;Esotérico</TM_Book_Pools.rulePack.rulesStrings.100>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.101>TM_randAdjective_Magic-&gt;Divino</TM_Book_Pools.rulePack.rulesStrings.101>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.102>TM_randAdjective_Magic-&gt;Espectral</TM_Book_Pools.rulePack.rulesStrings.102>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.103>TM_randTheme_Magic-&gt;conocimiento</TM_Book_Pools.rulePack.rulesStrings.103>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.104>TM_randTheme_Magic-&gt;comprensión</TM_Book_Pools.rulePack.rulesStrings.104>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.105>TM_randTheme_Magic-&gt;poder</TM_Book_Pools.rulePack.rulesStrings.105>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.106>TM_randTheme_Magic-&gt;transformación</TM_Book_Pools.rulePack.rulesStrings.106>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.107>TM_randTheme_Magic-&gt;misterio</TM_Book_Pools.rulePack.rulesStrings.107>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.108>TM_randTheme_Magic-&gt;iluminación</TM_Book_Pools.rulePack.rulesStrings.108>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.109>TM_randTheme_Magic-&gt;equilibrio</TM_Book_Pools.rulePack.rulesStrings.109>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.110>TM_randTheme_Magic-&gt;protección</TM_Book_Pools.rulePack.rulesStrings.110>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.111>TM_randTheme_Magic-&gt;curación</TM_Book_Pools.rulePack.rulesStrings.111>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.112>TM_randTheme_Magic-&gt;sabiduría</TM_Book_Pools.rulePack.rulesStrings.112>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.113>TM_randTheme_Magic-&gt;descubrimiento</TM_Book_Pools.rulePack.rulesStrings.113>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.114>TM_randTheme_Magic-&gt;creación</TM_Book_Pools.rulePack.rulesStrings.114>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.115>TM_randTheme_Magic-&gt;legado</TM_Book_Pools.rulePack.rulesStrings.115>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.116>TM_randTheme_Magic-&gt;alquimia</TM_Book_Pools.rulePack.rulesStrings.116>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.117>TM_randTheme_Magic-&gt;destino</TM_Book_Pools.rulePack.rulesStrings.117>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.118>TM_randTheme_Magic-&gt;armonía</TM_Book_Pools.rulePack.rulesStrings.118>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.119>TM_randTheme_Magic-&gt;naturaleza</TM_Book_Pools.rulePack.rulesStrings.119>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.120>TM_randNoun_Might-&gt;Batalla</TM_Book_Pools.rulePack.rulesStrings.120>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.121>TM_randNoun_Might-&gt;Guerra</TM_Book_Pools.rulePack.rulesStrings.121>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.122>TM_randNoun_Might-&gt;Pelea</TM_Book_Pools.rulePack.rulesStrings.122>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.123>TM_randNoun_Might-&gt;Lucha</TM_Book_Pools.rulePack.rulesStrings.123>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.124>TM_randNoun_Might-&gt;Conflicto</TM_Book_Pools.rulePack.rulesStrings.124>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.125>TM_randNoun_Might-&gt;Conquista</TM_Book_Pools.rulePack.rulesStrings.125>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.126>TM_randNoun_Might-&gt;Victoria</TM_Book_Pools.rulePack.rulesStrings.126>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.127>TM_randNoun_Might-&gt;Triunfo</TM_Book_Pools.rulePack.rulesStrings.127>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.128>TM_randNoun_Might-&gt;Gloria</TM_Book_Pools.rulePack.rulesStrings.128>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.129>TM_randNoun_Might-&gt;Valor</TM_Book_Pools.rulePack.rulesStrings.129>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.130>TM_randNoun_Might-&gt;Heroísmo</TM_Book_Pools.rulePack.rulesStrings.130>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.131>TM_randNoun_Might-&gt;Arma</TM_Book_Pools.rulePack.rulesStrings.131>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.132>TM_randNoun_Might-&gt;Escudo</TM_Book_Pools.rulePack.rulesStrings.132>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.133>TM_randNoun_Might-&gt;Armadura</TM_Book_Pools.rulePack.rulesStrings.133>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.134>TM_randNoun_Might-&gt;Espada</TM_Book_Pools.rulePack.rulesStrings.134>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.135>TM_randNoun_Might-&gt;Hacha</TM_Book_Pools.rulePack.rulesStrings.135>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.136>TM_randNoun_Might-&gt;Lanza</TM_Book_Pools.rulePack.rulesStrings.136>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.137>TM_randNoun_Might-&gt;Arco</TM_Book_Pools.rulePack.rulesStrings.137>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.138>TM_randNoun_Might-&gt;Flecha</TM_Book_Pools.rulePack.rulesStrings.138>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.139>TM_randNoun_Might-&gt;Desafío</TM_Book_Pools.rulePack.rulesStrings.139>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.140>TM_randNoun_Might-&gt;Combate</TM_Book_Pools.rulePack.rulesStrings.140>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.141>TM_randNoun_Might-&gt;Guerrero</TM_Book_Pools.rulePack.rulesStrings.141>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.142>TM_randNoun_Might-&gt;Gladiador</TM_Book_Pools.rulePack.rulesStrings.142>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.143>TM_randNoun_Might-&gt;Mercenario</TM_Book_Pools.rulePack.rulesStrings.143>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.144>TM_randNoun_Might-&gt;Caballero</TM_Book_Pools.rulePack.rulesStrings.144>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.145>TM_randNoun_Might-&gt;Campeón</TM_Book_Pools.rulePack.rulesStrings.145>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.146>TM_randNoun_Might-&gt;Soldado</TM_Book_Pools.rulePack.rulesStrings.146>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.147>TM_randNoun_Might-&gt;Luchador</TM_Book_Pools.rulePack.rulesStrings.147>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.148>TM_randNoun_Might-&gt;Samurái</TM_Book_Pools.rulePack.rulesStrings.148>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.149>TM_randNoun_Might-&gt;Ninja</TM_Book_Pools.rulePack.rulesStrings.149>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.150>TM_randNoun_Might-&gt;Asesino</TM_Book_Pools.rulePack.rulesStrings.150>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.151>TM_randNoun_Might-&gt;Comando</TM_Book_Pools.rulePack.rulesStrings.151>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.152>TM_randNoun_Might-&gt;Berserker</TM_Book_Pools.rulePack.rulesStrings.152>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.153>TM_randNoun_Might-&gt;Paladín</TM_Book_Pools.rulePack.rulesStrings.153>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.154>subject_Might-&gt;la batalla</TM_Book_Pools.rulePack.rulesStrings.154>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.155>subject_Might-&gt;la guerra</TM_Book_Pools.rulePack.rulesStrings.155>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.156>subject_Might-&gt;el conflicto</TM_Book_Pools.rulePack.rulesStrings.156>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.157>subject_Might-&gt;el combate</TM_Book_Pools.rulePack.rulesStrings.157>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.158>subject_Might-&gt;la pelea</TM_Book_Pools.rulePack.rulesStrings.158>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.159>subject_Might-&gt;la lucha</TM_Book_Pools.rulePack.rulesStrings.159>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.160>subject_Might-&gt;la conquista</TM_Book_Pools.rulePack.rulesStrings.160>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.161>subject_Might-&gt;la victoria</TM_Book_Pools.rulePack.rulesStrings.161>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.162>subject_Might-&gt;el triunfo</TM_Book_Pools.rulePack.rulesStrings.162>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.163>subject_Might-&gt;la gloria</TM_Book_Pools.rulePack.rulesStrings.163>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.164>subject_Might-&gt;el valor</TM_Book_Pools.rulePack.rulesStrings.164>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.165>subject_Might-&gt;el heroísmo</TM_Book_Pools.rulePack.rulesStrings.165>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.166>subject_Might-&gt;el armamento</TM_Book_Pools.rulePack.rulesStrings.166>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.167>subject_Might-&gt;la táctica</TM_Book_Pools.rulePack.rulesStrings.167>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.168>subject_Might-&gt;la estrategia</TM_Book_Pools.rulePack.rulesStrings.168>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.169>subject_Might-&gt;el arte de la guerra</TM_Book_Pools.rulePack.rulesStrings.169>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.170>subject_Might-&gt;la escaramuza</TM_Book_Pools.rulePack.rulesStrings.170>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.171>subject_Might-&gt;el asalto</TM_Book_Pools.rulePack.rulesStrings.171>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.172>subject_Might-&gt;la defensa</TM_Book_Pools.rulePack.rulesStrings.172>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.173>subject_Might-&gt;las artes marciales</TM_Book_Pools.rulePack.rulesStrings.173>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.174>subject_Might-&gt;el duelo</TM_Book_Pools.rulePack.rulesStrings.174>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.175>subject_Might-&gt;el combate en la arena</TM_Book_Pools.rulePack.rulesStrings.175>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.176>subject_Might-&gt;lo militar</TM_Book_Pools.rulePack.rulesStrings.176>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.177>subject_Might-&gt;el manejo de la espada</TM_Book_Pools.rulePack.rulesStrings.177>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.178>subject_Might-&gt;el tiro con arco</TM_Book_Pools.rulePack.rulesStrings.178>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.179>subject_Might-&gt;el cuerpo a cuerpo</TM_Book_Pools.rulePack.rulesStrings.179>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.180>subject_Might-&gt;el combate en espacios cerrados</TM_Book_Pools.rulePack.rulesStrings.180>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.181>subject_Might-&gt;el código del guerrero</TM_Book_Pools.rulePack.rulesStrings.181>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.182>subject_Might-&gt;el mando</TM_Book_Pools.rulePack.rulesStrings.182>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.183>subject_Might-&gt;la emboscada</TM_Book_Pools.rulePack.rulesStrings.183>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.184>subject_Might-&gt;el asedio</TM_Book_Pools.rulePack.rulesStrings.184>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.185>subject_Might-&gt;la guerra de guerrillas</TM_Book_Pools.rulePack.rulesStrings.185>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.186>subject_Might-&gt;la formación</TM_Book_Pools.rulePack.rulesStrings.186>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.187>subject_Might-&gt;el campo de batalla</TM_Book_Pools.rulePack.rulesStrings.187>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.188>subject_Might-&gt;el espíritu guerrero</TM_Book_Pools.rulePack.rulesStrings.188>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.189>TM_randAdjective_Might-&gt;Legendario</TM_Book_Pools.rulePack.rulesStrings.189>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.190>TM_randAdjective_Might-&gt;Heroico</TM_Book_Pools.rulePack.rulesStrings.190>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.191>TM_randAdjective_Might-&gt;Intrépido</TM_Book_Pools.rulePack.rulesStrings.191>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.192>TM_randAdjective_Might-&gt;Valeroso</TM_Book_Pools.rulePack.rulesStrings.192>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.193>TM_randAdjective_Might-&gt;Hábil</TM_Book_Pools.rulePack.rulesStrings.193>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.194>TM_randAdjective_Might-&gt;Valiente</TM_Book_Pools.rulePack.rulesStrings.194>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.195>TM_randAdjective_Might-&gt;Feroz</TM_Book_Pools.rulePack.rulesStrings.195>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.196>TM_randAdjective_Might-&gt;Formidable</TM_Book_Pools.rulePack.rulesStrings.196>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.197>TM_randAdjective_Might-&gt;Poderoso</TM_Book_Pools.rulePack.rulesStrings.197>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.198>TM_randAdjective_Might-&gt;Veloz</TM_Book_Pools.rulePack.rulesStrings.198>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.199>TM_randAdjective_Might-&gt;Ágil</TM_Book_Pools.rulePack.rulesStrings.199>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.200>TM_randAdjective_Might-&gt;Astuto</TM_Book_Pools.rulePack.rulesStrings.200>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.201>TM_randAdjective_Might-&gt;Tenaz</TM_Book_Pools.rulePack.rulesStrings.201>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.202>TM_randAdjective_Might-&gt;Resistente</TM_Book_Pools.rulePack.rulesStrings.202>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.203>TM_randAdjective_Might-&gt;Firme</TM_Book_Pools.rulePack.rulesStrings.203>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.204>TM_randAdjective_Might-&gt;Audaz</TM_Book_Pools.rulePack.rulesStrings.204>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.205>TM_randAdjective_Might-&gt;Aguerrido</TM_Book_Pools.rulePack.rulesStrings.205>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.206>TM_randAdjective_Might-&gt;Osado</TM_Book_Pools.rulePack.rulesStrings.206>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.207>TM_randAdjective_Might-&gt;Inflexible</TM_Book_Pools.rulePack.rulesStrings.207>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.208>TM_randAdjective_Might-&gt;Vigilante</TM_Book_Pools.rulePack.rulesStrings.208>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.209>TM_randAdjective_Might-&gt;Imparable</TM_Book_Pools.rulePack.rulesStrings.209>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.210>TM_randAdjective_Might-&gt;Implacable</TM_Book_Pools.rulePack.rulesStrings.210>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.211>TM_randAdjective_Might-&gt;Despiadado</TM_Book_Pools.rulePack.rulesStrings.211>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.212>TM_randAdjective_Might-&gt;Táctico</TM_Book_Pools.rulePack.rulesStrings.212>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.213>TM_randAdjective_Might-&gt;Estratégico</TM_Book_Pools.rulePack.rulesStrings.213>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.214>TM_randAdjective_Might-&gt;Disciplinado</TM_Book_Pools.rulePack.rulesStrings.214>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.215>TM_randAdjective_Might-&gt;Honorable</TM_Book_Pools.rulePack.rulesStrings.215>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.216>TM_randAdjective_Might-&gt;Salvaje</TM_Book_Pools.rulePack.rulesStrings.216>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.217>TM_randAdjective_Might-&gt;Letal</TM_Book_Pools.rulePack.rulesStrings.217>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.218>TM_randAdjective_Might-&gt;Noble</TM_Book_Pools.rulePack.rulesStrings.218>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.219>TM_randAdjective_Might-&gt;Inclemente</TM_Book_Pools.rulePack.rulesStrings.219>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.220>TM_randTheme_Might-&gt;Victoria</TM_Book_Pools.rulePack.rulesStrings.220>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.221>TM_randTheme_Might-&gt;Honor</TM_Book_Pools.rulePack.rulesStrings.221>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.222>TM_randTheme_Might-&gt;Valor</TM_Book_Pools.rulePack.rulesStrings.222>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.223>TM_randTheme_Might-&gt;Coraje</TM_Book_Pools.rulePack.rulesStrings.223>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.224>TM_randTheme_Might-&gt;Gloria</TM_Book_Pools.rulePack.rulesStrings.224>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.225>TM_randTheme_Might-&gt;Estrategia</TM_Book_Pools.rulePack.rulesStrings.225>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.226>TM_randTheme_Might-&gt;Táctica</TM_Book_Pools.rulePack.rulesStrings.226>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.227>TM_randTheme_Might-&gt;Liderazgo</TM_Book_Pools.rulePack.rulesStrings.227>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.228>TM_randTheme_Might-&gt;Hermandad</TM_Book_Pools.rulePack.rulesStrings.228>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.229>TM_randTheme_Might-&gt;Sacrificio</TM_Book_Pools.rulePack.rulesStrings.229>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.230>TM_randTheme_Might-&gt;Unidad</TM_Book_Pools.rulePack.rulesStrings.230>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.231>TM_randTheme_Might-&gt;Bravura</TM_Book_Pools.rulePack.rulesStrings.231>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.232>TM_randTheme_Might-&gt;Resiliencia</TM_Book_Pools.rulePack.rulesStrings.232>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.233>TM_randTheme_Might-&gt;Deber</TM_Book_Pools.rulePack.rulesStrings.233>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.234>TM_randTheme_Might-&gt;Justicia</TM_Book_Pools.rulePack.rulesStrings.234>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.235>TM_randTheme_Might-&gt;Respeto</TM_Book_Pools.rulePack.rulesStrings.235>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.236>TM_randTheme_Might-&gt;Camaradería</TM_Book_Pools.rulePack.rulesStrings.236>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.237>TM_randTheme_Might-&gt;Lealtad</TM_Book_Pools.rulePack.rulesStrings.237>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.238>TM_randTheme_Might-&gt;Entrenamiento</TM_Book_Pools.rulePack.rulesStrings.238>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.239>TM_randTheme_Might-&gt;Preparación</TM_Book_Pools.rulePack.rulesStrings.239>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.240>TM_randTheme_Might-&gt;Preparación para el combate</TM_Book_Pools.rulePack.rulesStrings.240>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.241>TM_randTheme_Might-&gt;Resolución de conflictos</TM_Book_Pools.rulePack.rulesStrings.241>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.242>TM_randTheme_Might-&gt;Aguante</TM_Book_Pools.rulePack.rulesStrings.242>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.243>TM_randTheme_Might-&gt;Maestría</TM_Book_Pools.rulePack.rulesStrings.243>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.244>TM_randTheme_Might-&gt;Espíritu guerrero</TM_Book_Pools.rulePack.rulesStrings.244>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.245>TM_randTheme_Might-&gt;Campo de batalla</TM_Book_Pools.rulePack.rulesStrings.245>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.246>TM_randTheme_Might-&gt;Mando</TM_Book_Pools.rulePack.rulesStrings.246>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.247>TM_randTheme_Might-&gt;Legado</TM_Book_Pools.rulePack.rulesStrings.247>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.248>TM_randTheme_Might-&gt;Artes de combate</TM_Book_Pools.rulePack.rulesStrings.248>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.249>TM_randTheme_Might-&gt;Maestría con las armas</TM_Book_Pools.rulePack.rulesStrings.249>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.250>TM_randTheme_Might-&gt;Supervivencia</TM_Book_Pools.rulePack.rulesStrings.250>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.251>TM_randTheme_Might-&gt;Régimen de entrenamiento</TM_Book_Pools.rulePack.rulesStrings.251>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.252>TM_randTheme_Might-&gt;Disciplina marcial</TM_Book_Pools.rulePack.rulesStrings.252>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.253>TM_randTheme_Might-&gt;Fuerza</TM_Book_Pools.rulePack.rulesStrings.253>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.254>TM_randTheme_Might-&gt;Resistencia</TM_Book_Pools.rulePack.rulesStrings.254>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.255>TM_randTheme_Might-&gt;Perseverancia</TM_Book_Pools.rulePack.rulesStrings.255>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.256>TM_randTheme_Might-&gt;Destreza</TM_Book_Pools.rulePack.rulesStrings.256>
+  
+  <TM_Book_Pools.rulePack.rulesStrings.257>TM_randTheme_Might-&gt;Instrucción</TM_Book_Pools.rulePack.rulesStrings.257>
+  
+</LanguageData>

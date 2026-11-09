@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <FlyingObject_PsionicDash.label>arremetida psiónica</FlyingObject_PsionicDash.label>
+  
+  
+  <FlyingObject_PsionicLeap.label>salto psiónico</FlyingObject_PsionicLeap.label>
+  
+  
+  <FlyingObject_PsionicStorm.label>tormenta psi</FlyingObject_PsionicStorm.label>
+  
+  
+  <FlyingObject_PsiStorm.label>tormenta psi</FlyingObject_PsiStorm.label>
+  
+  
+  <Projectile_PsionicDash.label>arremetida psiónica</Projectile_PsionicDash.label>
+  
+  
+  <Projectile_PsionicStorm.label>tormenta psi</Projectile_PsionicStorm.label>
+  
+  
+  <TM_Projectile_PsionicBarrier.label>barrera psiónica</TM_Projectile_PsionicBarrier.label>
+  
+  
+  <TM_Projectile_PsionicBlast.label>explosión psiónica</TM_Projectile_PsionicBlast.label>
+  
+  
+  <TM_Psionic_Projectile.label>proyectil psiónico</TM_Psionic_Projectile.label>
+  
+</LanguageData>

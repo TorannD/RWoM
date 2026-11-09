@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ChaosAnchor>Якорь Хаоса: {0}</TM_ChaosAnchor>
+  <TM_ChaosNoAnchor>Снять якорь</TM_ChaosNoAnchor>
+  <TM_ChaosProgress>Примените два разных временных заклинания ({0}/2). На ступени адепта примените заклинания из двух разных наборов ({1}/2).</TM_ChaosProgress>
+  <TM_ChaosAscensionInfo>Для Вознесения нужен самоцвет прозрения. Одно заклинание можно оставить на следующую смену набора. Вложенные очки возвращаются.</TM_ChaosAscensionInfo>
+  <TM_ChaosAscensionAction>Вознесение: якорь Хаоса</TM_ChaosAscensionAction>
+  <TM_ChaosAscensionNeedsOffering>Нужен самоцвет прозрения</TM_ChaosAscensionNeedsOffering>
+</LanguageData>

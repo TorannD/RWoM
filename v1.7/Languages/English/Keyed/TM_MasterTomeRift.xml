@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_TomeRaidChoice>Raiders</TM_TomeRaidChoice>
+  <TM_TomeRiftChoice>Finite elemental rift</TM_TomeRiftChoice>
+  <TM_TomeRiftLocked>Elemental rift unavailable at this threat level or without a hostile elemental faction</TM_TomeRiftLocked>
+  <TM_TomeRiftDescription>An elemental rift will open near {0}. After one game hour, {1} elemental guardians (about {2} threat points) will emerge together. The rift then closes. Repel this group within two days to claim {3}.</TM_TomeRiftDescription>
+</LanguageData>

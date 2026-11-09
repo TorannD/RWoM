@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Disguise</defName>
+    <label>Deception</label>
+    <description>The faceless manipulates light and motion to make their form appear meaningless to any observer; on a subconscious level, any observer will cognitively dismiss the faceless as an unimportant, harmless object, essentially making the faceless invisible.
+	
+Disguise will not fool any pawn that already sees the faceless as a threat.</description>
+    <spellId>rwom.tm_disguise</spellId>
+    <iconPath>UI/disguise</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_Disguise</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_Disguise</abilityDef>
+      <isViolent>false</isViolent>
+      <AlwaysHits>true</AlwaysHits>
+      <defaultProjectile>TM_Faceless_Projectile</defaultProjectile>
+      <warmupTime>1</warmupTime>
+      <SecondsToRecharge>240</SecondsToRecharge>
+      <range>0</range>
+      <soundCast>TM_VibrationLow</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Mimic</defName>
+    <label>Mimic</label>
+    <description>The faceless copies a random ability from a mage or fighter. Only one ability may be stored at a time. The ability is retained after use; reusing Mimic will replace the stored ability.</description>
+    <spellId>rwom.tm_mimic</spellId>
+    <iconPath>UI/mimic</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_Mimic</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_Mimic</abilityDef>
+      <isViolent>false</isViolent>
+      <AlwaysHits>true</AlwaysHits>
+      <defaultProjectile>TM_Faceless_Projectile</defaultProjectile>
+      <warmupTime>1</warmupTime>
+      <SecondsToRecharge>120</SecondsToRecharge>
+      <range>50</range>
+      <soundCast>TM_Gong</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Reversal</defName>
+    <label>Reversal</label>
+    <description>Reverses the kinetic energy of all melee and projectile attacks for a brief period. The faceless will take no damage from these attacks. Direct application and explosive attacks cannot be reversed.</description>
+    <spellId>rwom.tm_reversal</spellId>
+    <iconPath>UI/reversal</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_Reversal</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_Reversal</abilityDef>
+      <isViolent>true</isViolent>
+      <defaultProjectile>TM_Faceless_Projectile</defaultProjectile>
+      <warmupTime>0.1</warmupTime>
+      <SecondsToRecharge>120</SecondsToRecharge>
+      <range>0</range>
+      <soundCast>TM_Vibration</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Transpose</defName>
+    <label>Transpose</label>
+    <description>Swap places with a target pawn. The faceless and the target will be disoriented following transposition. The faceless will gain reversal for a short period.
+Cast time: .8s
+Range: 40
+Cooldown: 15</description>
+    <spellId>rwom.tm_transpose</spellId>
+    <iconPath>UI/transpose</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_Transpose</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <requiresLineOfSight>false</requiresLineOfSight>
+      <defaultProjectile>TM_Faceless_Projectile</defaultProjectile>
+      <abilityDef>TM_Transpose</abilityDef>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetSelf>false</canTargetSelf>
+      </targetParams>
+      <warmupTime>.8</warmupTime>
+      <SecondsToRecharge>15</SecondsToRecharge>
+      <range>40</range>
+      <isViolent>false</isViolent>
+      <AlwaysHits>true</AlwaysHits>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <soundCast>TM_AirWoosh</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_TransposeI</defName>
+    <label>Transpose I</label>
+    <description>Swap places with a target pawn. The faceless and the target will be disoriented following transposition. The faceless will gain reversal for a short period.
+Cast time: .6s
+Range: 44
+Cooldown: 13</description>
+    <spellId>rwom.tm_transpose_i</spellId>
+    <iconPath>UI/transpose</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_Transpose</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <requiresLineOfSight>false</requiresLineOfSight>
+      <defaultProjectile>TM_Faceless_Projectile</defaultProjectile>
+      <abilityDef>TM_Transpose_I</abilityDef>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetSelf>false</canTargetSelf>
+      </targetParams>
+      <warmupTime>.6</warmupTime>
+      <SecondsToRecharge>13</SecondsToRecharge>
+      <range>44</range>
+      <isViolent>false</isViolent>
+      <AlwaysHits>true</AlwaysHits>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <soundCast>TM_AirWoosh</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_TransposeII</defName>
+    <label>Transpose II</label>
+    <description>Swap places with a target pawn. The faceless and the target will be disoriented following transposition. The faceless will gain reversal for a short period.
+Cast time: .4s
+Range: 47
+Cooldown: 11</description>
+    <spellId>rwom.tm_transpose_ii</spellId>
+    <iconPath>UI/transpose</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_Transpose</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <requiresLineOfSight>false</requiresLineOfSight>
+      <defaultProjectile>TM_Faceless_Projectile</defaultProjectile>
+      <abilityDef>TM_Transpose_II</abilityDef>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetSelf>false</canTargetSelf>
+      </targetParams>
+      <warmupTime>.4</warmupTime>
+      <SecondsToRecharge>11</SecondsToRecharge>
+      <range>47</range>
+      <isViolent>false</isViolent>
+      <AlwaysHits>true</AlwaysHits>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <soundCast>TM_AirWoosh</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_TransposeIII</defName>
+    <label>Transpose III</label>
+    <description>Swap places with a target pawn. The faceless and the target will be disoriented following transposition. The faceless will gain reversal for a short period.
+Cast time: .2s
+Range: 50
+Cooldown: 9</description>
+    <spellId>rwom.tm_transpose_iii</spellId>
+    <iconPath>UI/transpose</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_Transpose</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <requiresLineOfSight>false</requiresLineOfSight>
+      <defaultProjectile>TM_Faceless_Projectile</defaultProjectile>
+      <abilityDef>TM_Transpose_III</abilityDef>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetSelf>false</canTargetSelf>
+      </targetParams>
+      <warmupTime>0.2</warmupTime>
+      <SecondsToRecharge>9</SecondsToRecharge>
+      <range>50</range>
+      <isViolent>false</isViolent>
+      <AlwaysHits>true</AlwaysHits>
+      <canCastInMelee>true</canCastInMelee>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <soundCast>TM_AirWoosh</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Possess</defName>
+    <label>Possess</label>
+    <description>Like a puppet master, the faceless applies of the mind and body to cause extreme self-doubt on a target pawn - allowing them to control their target through mental suggestion and coercion. 
+		
+Nearby enemies are unlikely to immediately detect the possession unless they see suspicious activity. If detected, neutral and friendly factions will consider aggressive actions from a possessed pawn as an act of hostility.
+
+Only creatures with a human-like mind capable of self-doubt can be possessed.</description>
+    <spellId>rwom.tm_possess</spellId>
+    <iconPath>UI/possess</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>AbilityUser.Verb_UseAbility</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Possess</defaultProjectile>
+      <abilityDef>TM_Possess</abilityDef>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+      </targetParams>
+      <warmupTime>1</warmupTime>
+      <SecondsToRecharge>360</SecondsToRecharge>
+      <range>16</range>
+      <isViolent>false</isViolent>
+      <AlwaysHits>true</AlwaysHits>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <soundCast>TM_Vibration</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+    </verbProperties>
+  </AbilityDef>
+</Defs>

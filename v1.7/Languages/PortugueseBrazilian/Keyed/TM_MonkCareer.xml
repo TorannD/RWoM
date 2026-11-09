@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ReadMonkRestorative>Meditação restauradora — Meditação curativa clássica.</TM_ReadMonkRestorative>
+  <TM_ReadMonkCultivation>Cultivo concentrado — Ganhe 6/8/10 de chi após 600 tiques seguidos de meditação, conforme o grau do Selo.</TM_ReadMonkCultivation>
+  <TM_MonkFoundationTrial>Preparações inimigas interrompidas: {0}/8 ou feridas distintas tratadas: {1}/20.</TM_MonkFoundationTrial>
+  <TM_MonkAdeptTrial>Combine cultivo e assistência médica em 24 horas: {0}/10 dias.</TM_MonkAdeptTrial>
+  <TM_MonkMasterTrial>Aliados resgatados sem armas: {0}/8 ou dias a apagar incêndios na colônia: {1}/10. Nível marcial {2}/30.</TM_MonkMasterTrial>
+  <TM_MonkSealRank>Selo da palma: grau {0}/3</TM_MonkSealRank>
+  <TM_MonkAdvance>Avançar de etapa</TM_MonkAdvance>
+  <TM_MonkMeridianUnavailable>Requer ascensão, mãos livres, 60% de chi e recarga concluída.</TM_MonkMeridianUnavailable>
+</LanguageData>

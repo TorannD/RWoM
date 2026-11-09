@@ -1,0 +1,24 @@
+<Defs>
+  <ThingDef ParentName="CombatFormBase">
+    <defName>TM_SuperSoldierFieldManual</defName>
+    <label>super soldier field manual</label>
+    <description>A training manual covering armed combat and field medicine. Physically gifted readers can choose a school in their grimoire. The separate injectable super soldier serum retains its medical effects.</description>
+    <graphicData><texPath>Books/commander</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
+  </ThingDef>
+  <RecipeDef>
+    <defName>TM_WriteSuperSoldierFieldManual</defName>
+    <label>copy super soldier field manual</label>
+    <jobString>Copying a super soldier field manual.</jobString>
+    <workAmount>12000</workAmount>
+    <researchPrerequisite>TM_MagicScribing</researchPrerequisite><workSkill>Crafting</workSkill><workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Tailor</effectWorking>
+    <ingredients>
+      <li><filter><thingDefs><li>Cloth</li></thingDefs></filter><count>25</count></li>
+      <li><filter><thingDefs><li>RawMagicyte</li></thingDefs></filter><count>100</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>Cloth</li><li>RawMagicyte</li></thingDefs></fixedIngredientFilter>
+    <products><TM_SuperSoldierFieldManual>1</TM_SuperSoldierFieldManual></products>
+    <recipeUsers><li>TableMagicPrinter</li></recipeUsers>
+  </RecipeDef>
+</Defs>
+

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SoulStoneOccupiedLabel>{0} ({1})</TM_SoulStoneOccupiedLabel>
+  <TM_SoulStoneContainedSpirit>Contained soul: {0}</TM_SoulStoneContainedSpirit>
+  <TM_SoulStoneRecoveryDebt>After implantation: seven full days of recovery in a living host before voluntary departure.</TM_SoulStoneRecoveryDebt>
+  <TM_SoulStoneAbandonWarning>The following souls will be lost permanently if their soul stones are left on this map: {0}.</TM_SoulStoneAbandonWarning>
+</LanguageData>

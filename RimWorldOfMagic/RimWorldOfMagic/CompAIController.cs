@@ -329,7 +329,8 @@ namespace TorannMagic
                                 }
                             }
 
-                            Thing currentTargetThing = this.Pawn.CurJob.targetA.Thing;
+                            var job = this.Pawn.CurJob;
+                            Thing currentTargetThing = job?.targetA.Thing;
                             if (currentTargetThing != null && this.Pawn.TargetCurrentlyAimingAt == null)
                             {
                                 if ((currentTargetThing.Position - this.Pawn.Position).LengthHorizontal > (this.Props.maxRangeForCloseThreat * 2))
@@ -353,9 +354,9 @@ namespace TorannMagic
                                     DoAoEAttack(this.Pawn.Position, true, 2f, DamageDefOf.Stun, Rand.Range(4, 8));
                                 }
 
-                                if (Rand.Chance(.2f) && this.farThreats.Count() > (5 * this.closeThreats.Count()))
+                                if (job != null && Rand.Chance(.2f) && this.farThreats.Count() > (5 * this.closeThreats.Count()))
                                 {
-                                    this.Pawn.CurJob.targetA = this.farThreats.RandomElement();
+                                    job.targetA = this.farThreats.RandomElement();
                                 }
                             }                            
 
@@ -406,8 +407,8 @@ namespace TorannMagic
                                     Thing tempTarget = this.closeThreats.RandomElement();
                                     if (TargetIsValid(tempTarget))
                                     {
-                                        this.Pawn.CurJob.targetA = tempTarget;
-                                        this.Pawn.TryStartAttack(this.Pawn.CurJob.targetA);
+                                        if (job != null) job.targetA = tempTarget;
+                                        this.Pawn.TryStartAttack(tempTarget);
                                     }
                                 }
                                 else if (this.farThreats.Count() > 0)
@@ -415,8 +416,8 @@ namespace TorannMagic
                                     Thing tempTarget = this.farThreats.RandomElement();
                                     if (TargetIsValid(tempTarget))
                                     {
-                                        this.Pawn.CurJob.targetA = tempTarget;
-                                        this.Pawn.TryStartAttack(this.Pawn.CurJob.targetA);
+                                        if (job != null) job.targetA = tempTarget;
+                                        this.Pawn.TryStartAttack(tempTarget);
                                     }
                                 }
                                 else if (this.buildingThreats.Count() > 0)
@@ -424,8 +425,8 @@ namespace TorannMagic
                                     Thing tempTarget = this.buildingThreats.RandomElement();
                                     if (TargetIsValid(tempTarget))
                                     {
-                                        this.Pawn.CurJob.targetA = tempTarget;
-                                        this.Pawn.TryStartAttack(this.Pawn.CurJob.targetA);
+                                        if (job != null) job.targetA = tempTarget;
+                                        this.Pawn.TryStartAttack(tempTarget);
                                     }
                                 }
                             }

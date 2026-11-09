@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using Verse;
 using AbilityUser;
 using UnityEngine;
@@ -8,23 +8,44 @@ namespace TorannMagic
 {
     class Projectile_ES_Fire : Projectile_AbilityBase
     {
+        private Pawn source;
+        private int versatility;
+        private float scale=1f;
+        private bool captured;
 
-        private int verVal = 0;
-        protected override void Impact(Thing hitThing, bool blockedByShield = false)
+        internal void Capture(CompAbilityUserMagic magic, int rank)
         {
-            Map map = base.Map;
-            base.Impact(hitThing);
-            ThingDef def = this.def;
-
-            Pawn pawn = this.launcher as Pawn;
-            CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
-            MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_TechnoWeapon.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_TechnoWeapon_ver");
-            verVal = ver.level;
-
-            GenExplosion.DoExplosion(base.Position, map, 1f + (verVal * .05f), DamageDefOf.Burn, this.launcher, Mathf.RoundToInt(this.def.projectile.GetDamageAmount(1,null) * comp.arcaneDmg * (1f + .02f * verVal)), 0, this.def.projectile.soundExplode, def, this.equipmentDef, this.intendedTarget.Thing, null, 0f, 1, null, null, 0, false, null, 0f, 1, 0.0f, false);
-
+            source=magic.Pawn;
+            versatility=rank;
+            scale=magic.arcaneDmg;
+            captured=true;
         }
-    }    
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_References.Look(ref source,"TM_elementalAmmoSource");
+            Scribe_Values.Look(ref versatility,"TM_elementalAmmoRank");
+            Scribe_Values.Look(ref scale,"TM_elementalAmmoScale",1f);
+            Scribe_Values.Look(ref captured,"TM_elementalAmmoCaptured");
+        }
+
+        protected override void Impact(Thing hitThing, bool blockedByShield=false)
+        {
+            var map=Map;
+            var cell=Position;
+            var physical=launcher;
+            if (!captured && physical is Pawn old && old.GetCompAbilityUserMagic() is CompAbilityUserMagic magic)
+                Capture(magic,magic.MagicData.MagicPowerSkill_TechnoWeapon.FirstOrDefault(s=>s.label=="TM_TechnoWeapon_ver")?.level ?? 0);
+            try
+            {
+                if(source!=null) launcher=source;
+                base.Impact(hitThing,blockedByShield);
+                GenExplosion.DoExplosion(cell,map,1f + versatility*.05f,DamageDefOf.Burn,launcher,
+                    Mathf.RoundToInt(def.projectile.GetDamageAmount(1,null)*scale*(1f+.02f*versatility)),0,
+                    def.projectile.soundExplode,def,equipmentDef,intendedTarget.Thing);
+            }
+            finally { launcher=physical; }
+        }
+    }
 }
-
-

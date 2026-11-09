@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_BladeAscensionProgress>Nível de guerreiro {0}/30 · Percursos de combate {1}/6 · Entregas de medicamentos {2}/10</TM_BladeAscensionProgress>
+  <TM_BladeRouteHint>Atinge um inimigo com Passagem e causa dano a outro com um ataque corpo a corpo normal nos dez segundos seguintes.</TM_BladeRouteHint>
+  <TM_BladeSupplyHint>Ativa o trabalho de médico. Vai buscar medicamentos a pelo menos seis células de uma cama médica da colónia e usa-os para tratar o aliado que lá está. Só conta a dose consumida, uma vez por dia.</TM_BladeSupplyHint>
+  <TM_BladeAscend>Escolher técnica de ascensão</TM_BladeAscend>
+  <TM_BladeUltimateOption>{0} (escolha permanente)</TM_BladeUltimateOption>
+  <TM_BladeUltimateLearned>Técnica de ascensão: {0}</TM_BladeUltimateLearned>
+  <TM_BladeFormUnavailable>Requer a Forma dos sete passos, uma arma corpo a corpo, 60% de vigor e uma recarga concluída.</TM_BladeFormUnavailable>
+</LanguageData>

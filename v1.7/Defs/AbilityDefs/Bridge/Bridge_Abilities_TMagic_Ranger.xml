@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Rangertraining</defName>
+    <label>Ranger Training</label>
+    <description>Training that the ranger's professional skills. Each level will increase the ranger trait to reflect the skill of the ranger.
+	
+Ranks:
+Woodsman: Speed +0.15c/s, Aiming Delay -15%, Immunity Gain +20%, Comf. Temperature +-10C., Toxic Sensitivity -10%
+Tame and train animal +5%, butchering speed +5%, smelting and construction speed -10%
+
+Hunter: Speed +0.2c/s, Aiming Delay -20%, Immunity Gain +25%, Comf. Temperature +-15C., Toxic Sensitivity -15%
+Tame and train animal +8%, butchering speed +10%, smelting and construction speed -15%
+
+Scout: Speed +0.25c/s, Aiming Delay -30%, Immunity Gain +30%, Comf. Temperature +-18C., Toxic Sensitivity -20%
+Tame and train animal +10%, butchering speed +15%, smelting and construction speed -18%
+
+Ranger: Speed +0.3c/s, Aiming Delay -40%, Immunity Gain +35%, Comf. Temperature +-25C., Toxic Sensitivity -25%
+Tame and train animal +12%, butchering speed +20%, smelting and construction speed -20%</description>
+    <spellId>rwom.tm_rangertraining</spellId>
+    <iconPath>UI/rangertraining</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_RangerTraining</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_RangerTraining</abilityDef>
+      <isViolent>false</isViolent>
+      <defaultProjectile>Projectile_Ranger</defaultProjectile>
+      <warmupTime>0.1</warmupTime>
+      <SecondsToRecharge>60.0</SecondsToRecharge>
+      <range>0</range>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>10</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Bowtraining</defName>
+    <label>Bow Training</label>
+    <description>Training that increases damage and accuracy when using a bow.
+	
+Level 0: Hearing and Sight +20%, +20% bow damage
+Level 1: Hearing and Sight +40%, +40% bow damage
+Level 2: Hearing and Sight +60%, Breathing +15%, +60% bow damage
+Level 3: Hearing and Sight +80%, Breathing +25%, Blood filtration +10%, +80% bow damage</description>
+    <spellId>rwom.tm_bowtraining</spellId>
+    <iconPath>UI/bowtraining</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_BowTraining</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_BowTraining</abilityDef>
+      <isViolent>false</isViolent>
+      <defaultProjectile>Projectile_Ranger</defaultProjectile>
+      <warmupTime>0.1</warmupTime>
+      <SecondsToRecharge>60</SecondsToRecharge>
+      <range>0</range>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Poisontrap</defName>
+    <label>Poison Trap</label>
+    <description>The ranger uses a dose of druidic poison to arm a wooden trap. Traps last indefinitely, but a ranger is only able to deploy a limited number at a time.
+
+Enemies caught in the poison will take 1-8 poison damage every 0.66 seconds. Poison damage also applies a slowing effect. Traps will never be triggered by animals.</description>
+    <spellId>rwom.tm_poisontrap</spellId>
+    <iconPath>UI/trap</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_PoisonTrap</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Ranger</defaultProjectile>
+      <abilityDef>TM_PoisonTrap</abilityDef>
+      <AbilityTargetCategory>TargetLocation</AbilityTargetCategory>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetSelf>false</canTargetSelf>
+      </targetParams>
+      <warmupTime>0.0</warmupTime>
+      <SecondsToRecharge>3.0</SecondsToRecharge>
+      <range>50</range>
+      <isViolent>true</isViolent>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <soundCast>MeleeHit_Metal_Sharp</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Animalfriend</defName>
+    <label>Animal Bond</label>
+    <description>At home in the wild, the ranger is able to form a bond with creatures of the wild. 
+		
+Rangers are only able to form a single bond and maintaining the bond reduces the ranger's max stamina by 30; making a new bond breaks an existing bond and will cause the animal with a broken bond to leave forever. Failed attempts may cause the animal to turn manhunter. When using animal bond on the bonded animal may allow the animal to remain in the colony - the chance the animal remains is based on its wildness and how long it had a bond with the ranger.
+
+The increase in physical capability applies to the animal kin only, in return, the bonded animal will assist the ranger in whatever capacity the animal is capable.
+A bond can be removed by using this ability on a bonded creature.</description>
+    <spellId>rwom.tm_animalfriend</spellId>
+    <iconPath>UI/animalfriend</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_AnimalFriend</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Ranger</defaultProjectile>
+      <abilityDef>TM_AnimalFriend</abilityDef>
+      <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetSelf>false</canTargetSelf>
+      </targetParams>
+      <warmupTime>4</warmupTime>
+      <SecondsToRecharge>60.0</SecondsToRecharge>
+      <range>10</range>
+      <isViolent>false</isViolent>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <soundCast>MeleeHit_Metal_Sharp</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Arrowstorm</defName>
+    <label>Arrow Storm</label>
+    <description>Fire a volley of 5 arrows at a target.
+Range: 32</description>
+    <spellId>rwom.tm_arrowstorm</spellId>
+    <iconPath>UI/arrowstorm</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_RangerShot</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_ArrowStorm</defaultProjectile>
+      <abilityDef>TM_ArrowStorm</abilityDef>
+      <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetSelf>false</canTargetSelf>
+      </targetParams>
+      <warmupTime>2</warmupTime>
+      <SecondsToRecharge>20.0</SecondsToRecharge>
+      <range>32</range>
+      <isViolent>true</isViolent>
+      <burstShotCount>5</burstShotCount>
+      <ticksBetweenBurstShots>15</ticksBetweenBurstShots>
+      <soundCast>Bow_Large</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_ArrowstormI</defName>
+    <label>Arrow Storm (I)</label>
+    <description>Fire a volley of 6 arrows at a target.
+Range: 34</description>
+    <spellId>rwom.tm_arrowstorm_i</spellId>
+    <iconPath>UI/arrowstorm</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_RangerShot</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_ArrowStorm</defaultProjectile>
+      <abilityDef>TM_ArrowStorm_I</abilityDef>
+      <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetSelf>false</canTargetSelf>
+      </targetParams>
+      <warmupTime>2</warmupTime>
+      <SecondsToRecharge>20.0</SecondsToRecharge>
+      <range>34</range>
+      <isViolent>true</isViolent>
+      <burstShotCount>6</burstShotCount>
+      <ticksBetweenBurstShots>14</ticksBetweenBurstShots>
+      <soundCast>Bow_Large</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_ArrowstormII</defName>
+    <label>Arrow Storm (II)</label>
+    <description>Fire a rapid volley of 7 arrows at a target.
+Range: 36</description>
+    <spellId>rwom.tm_arrowstorm_ii</spellId>
+    <iconPath>UI/arrowstorm</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_RangerShot</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_ArrowStorm</defaultProjectile>
+      <abilityDef>TM_ArrowStorm_II</abilityDef>
+      <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetSelf>false</canTargetSelf>
+      </targetParams>
+      <warmupTime>2</warmupTime>
+      <SecondsToRecharge>20.0</SecondsToRecharge>
+      <range>36</range>
+      <isViolent>true</isViolent>
+      <burstShotCount>7</burstShotCount>
+      <ticksBetweenBurstShots>13</ticksBetweenBurstShots>
+      <soundCast>Bow_Large</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_ArrowstormIII</defName>
+    <label>Arrow Storm (III)</label>
+    <description>Fire a rapid volley of 8 arrows at a target.
+Range: 38</description>
+    <spellId>rwom.tm_arrowstorm_iii</spellId>
+    <iconPath>UI/arrowstorm</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_RangerShot</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_ArrowStorm</defaultProjectile>
+      <abilityDef>TM_ArrowStorm_III</abilityDef>
+      <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetSelf>false</canTargetSelf>
+      </targetParams>
+      <warmupTime>2</warmupTime>
+      <SecondsToRecharge>20.0</SecondsToRecharge>
+      <range>38</range>
+      <isViolent>true</isViolent>
+      <burstShotCount>8</burstShotCount>
+      <ticksBetweenBurstShots>12</ticksBetweenBurstShots>
+      <soundCast>Bow_Large</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+    </verbProperties>
+  </AbilityDef>
+</Defs>

@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ManaBeacon.label>baliza de maná</TM_ManaBeacon.label>
+  <TM_ManaBeacon.description>Transfiere maná y magocombustible entre tus edificios conectados en un radio de 5 casillas, incluso a través de las paredes. Las balizas cercanas amplían la red. Cada red transfiere hasta 10 de maná y 5 de magocombustible por segundo sin consumir electricidad. Elige enviar, recibir o desactivar cada recurso de forma independiente en los edificios conectados. Los receptores respetan sus objetivos configurados.</TM_ManaBeacon.description>
+</LanguageData>

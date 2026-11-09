@@ -5,6 +5,7 @@ using RimWorld;
 using Verse;
 using AbilityUser;
 using Verse.Sound;
+using UnityEngine;
 
 namespace TorannMagic.Weapon
 {
@@ -15,11 +16,15 @@ namespace TorannMagic.Weapon
         public override void Impact_Override(Thing hitThing)
         {
             Map map = base.Map;
+            if (map == null) return;
+            // Misses have no hitThing; damage may also destroy a hit target.
+            // Capture the impact cell before invoking either effect path.
+            IntVec3 impactCell = hitThing != null ? hitThing.Position : this.ExactPosition.ToIntVec3();
             base.Impact_Override(hitThing);
             Pawn pawn = this.launcher as Pawn;
 
 
-            bool flag = hitThing != null;
+            bool flag = hitThing != null && hitThing.Spawned && hitThing.Map == map;
             if (flag)
             {
                 int DamageAmount = this.def.projectile.GetDamageAmount(1,null);
@@ -36,27 +41,28 @@ namespace TorannMagic.Weapon
                 if (flag3)
                 {
                     this.PostImpactEffects(this.launcher as Pawn, hitTarget);
-                    FleckMaker.Static(this.destination, base.Map, FleckDefOf.MicroSparks);
-                    FleckMaker.Static(this.destination, base.Map, FleckDefOf.ShotHit_Dirt);
                 }
             }
-            else
-            {
-                FleckMaker.Static(this.ExactPosition, base.Map, FleckDefOf.ShotHit_Dirt);
-                FleckMaker.Static(this.ExactPosition, base.Map, FleckDefOf.MicroSparks);
-            }
-            for (int i = 0; i <= 1; i++)
-            {
-                SoundInfo info = SoundInfo.InMap(new TargetInfo(base.Position, base.Map, false), MaintenanceType.None);
-                SoundDefOf.Thunder_OnMap.PlayOneShot(info);
-            }
-            CellRect cellRect = CellRect.CenteredOn(hitThing.Position, 2);
+            EmitImpactVisuals(impactCell, map, hitThing == null || hitThing is Pawn);
+            CellRect cellRect = CellRect.CenteredOn(impactCell, 2);
             cellRect.ClipInsideMap(map);
             for (int i = 0; i < Rand.Range(1, 8); i++)
             {
                 IntVec3 randomCell = cellRect.RandomCell;
                 this.StaticExplosion(randomCell, map, 0.4f);
             }
+        }
+
+        // Cosmetic boundary kept separate from the hit and scatter effects.
+        public static void EmitImpactVisuals(IntVec3 cell, Map map, bool sparks)
+        {
+            if (sparks)
+            {
+                FleckMaker.Static(cell.ToVector3Shifted(), map, FleckDefOf.MicroSparks);
+                FleckMaker.Static(cell.ToVector3Shifted(), map, FleckDefOf.ShotHit_Dirt);
+            }
+            for (int i = 0; i < 2; i++)
+                SoundDefOf.Thunder_OnMap.PlayOneShot(SoundInfo.InMap(new TargetInfo(cell, map, false), MaintenanceType.None));
         }
 
         protected void StaticExplosion(IntVec3 pos, Map map, float radius)

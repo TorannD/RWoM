@@ -1,0 +1,37 @@
+<Defs>
+  <JobDef>
+    <defName>TM_SpiritCastHerbalClarity</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>administering clarity to TargetB.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCastHerbalBliss</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>administering bliss to TargetB.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCastPoisonFlask</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>throwing a poison flask.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCastFireSuppressionFlask</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>throwing a fire suppression flask.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCastBalm</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>applying soothing balm to TargetB.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCastElixir</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>giving an herbal elixir to TargetB.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCastAntitoxin</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>administering an antidote to TargetB.</reportString>
+  </JobDef>
+</Defs>

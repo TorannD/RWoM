@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_MineableMagicyte.label>magicyte ore</TM_MineableMagicyte.label>
+  <TM_MineableMagicyte.description>Rock threaded with magicyte crystals. Each deposit yields 15–100 raw magicyte when fully mined and has a 1% chance to also yield an enchantment gem. Destroying the rock does not recover its contents.</TM_MineableMagicyte.description>
+</LanguageData>

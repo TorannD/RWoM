@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_Bridge_RangerSafeTrail.label>安全小径</TM_Bridge_RangerSafeTrail.label>
+  <TM_Bridge_RangerSafeTrail.description>在可见且可通行的地面上标出一条最长8格的小径，持续8秒。最先踏入的两名友军在小径上移动时速度提高15%。关门或出现障碍物会中断小径。基础消耗20%耐力，冷却40秒。</TM_Bridge_RangerSafeTrail.description>
+</LanguageData>

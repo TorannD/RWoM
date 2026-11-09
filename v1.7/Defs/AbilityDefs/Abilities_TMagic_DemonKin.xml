@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	
 	<ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
@@ -17,9 +16,9 @@
             <damageAmountBase>0</damageAmountBase>
             <speed>999</speed>
         </projectile>
-    </ThingDef>
+</ThingDef>
 	
-	<!-- SoulBond  -->	
+		
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_SoulBond</defName>
         <label>SoulBond</label>
@@ -60,9 +59,16 @@ Succubi and Warlocks form distinct types of soul bonds - warlocks bonds are ment
                 <canTargetLocations>false</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_soulbond</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
-	<!-- ShadowCall  -->	
+		
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_ShadowCall</defName>
         <label>Shadow Call</label>
@@ -99,9 +105,16 @@ Succubi and Warlocks form distinct types of soul bonds - warlocks bonds are ment
                 <canTargetLocations>false</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_shadowcall</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- ShadowStep  -->	
+		
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_ShadowStep</defName>
         <label>Shadow Step</label>
@@ -124,8 +137,7 @@ Succubi and Warlocks form distinct types of soul bonds - warlocks bonds are ment
             <SecondsToRecharge>60</SecondsToRecharge>
             <range>0</range>
             <burstShotCount>1</burstShotCount>
-<!--             <soundCast>TM_Vibration</soundCast>
-			<soundCastTail>TM_VibrationLow</soundCastTail> -->
+
             <muzzleFlashScale>0</muzzleFlashScale>
 		    <AlwaysHits>true</AlwaysHits>
             <isPrimary>true</isPrimary>
@@ -138,12 +150,19 @@ Succubi and Warlocks form distinct types of soul bonds - warlocks bonds are ment
                 <canTargetLocations>false</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_shadowstep</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- ShadowBolt  -->	
+		
 	
 	<ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
-		<thingClass>AbilityUser.Projectile_Ability</thingClass>
+		<thingClass>TorannMagic.ClassProgression.Projectile_HostedShadowBolt</thingClass>
 	    <defName>Projectile_ShadowBolt</defName>
         <label>shadow bolt</label>
         <graphicData>
@@ -158,7 +177,7 @@ Succubi and Warlocks form distinct types of soul bonds - warlocks bonds are ment
 			<explosionRadius>2</explosionRadius>
 			<postExplosionSpawnChance>1</postExplosionSpawnChance>
         </projectile>
-    </ThingDef>
+</ThingDef>
 	
 	<ThingDef ParentName="BaseBullet" Name="FlyingObject_ShadowBolt">
 	   <defName>FlyingObject_ShadowBolt</defName>
@@ -176,7 +195,7 @@ Succubi and Warlocks form distinct types of soul bonds - warlocks bonds are ment
 			<explosionRadius>2</explosionRadius>
 			<postExplosionSpawnChance>1</postExplosionSpawnChance>
 	   </projectile>
-	</ThingDef>
+</ThingDef>
 	
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_ShadowBolt</defName>
@@ -218,9 +237,16 @@ Range: 40</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_shadowbolt</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- ShadowBolt_I  -->	
+		
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_ShadowBolt_I</defName>
         <label>Shadow Bolt</label>
@@ -260,9 +286,16 @@ Range: 45</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_shadowbolt_i</spellId>
+<domain>Magic</domain>
+<tier>1</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- ShadowBolt_II  -->	
+		
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_ShadowBolt_II</defName>
         <label>Shadow Bolt</label>
@@ -302,9 +335,16 @@ Range: 50</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_shadowbolt_ii</spellId>
+<domain>Magic</domain>
+<tier>2</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- ShadowBolt_III  -->	
+		
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_ShadowBolt_III</defName>
         <label>Shadow Bolt</label>
@@ -344,9 +384,16 @@ Range: 55</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_shadowbolt_iii</spellId>
+<domain>Magic</domain>
+<tier>3</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- Dominate  -->	
+		
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_Dominate</defName>
         <label>Dominate</label>
@@ -385,9 +432,16 @@ Warlocks and Succubi dominate their foes in different ways. Warlocks will attemp
                 <canTargetLocations>false</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_dominate</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- Attraction  -->	
+		
 	
 	<ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>TorannMagic.Projectile_Attraction</thingClass>
@@ -405,7 +459,7 @@ Warlocks and Succubi dominate their foes in different ways. Warlocks will attemp
 			<explosionRadius>5</explosionRadius>
 			<postExplosionSpawnChance>1</postExplosionSpawnChance>
         </projectile>
-    </ThingDef>
+</ThingDef>
 	
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_Attraction</defName>
@@ -446,9 +500,16 @@ Cooldown: 60</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_attraction</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- Attraction_I  -->	
+		
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_Attraction_I</defName>
         <label>Attraction</label>
@@ -487,9 +548,16 @@ Cooldown: 55</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_attraction_i</spellId>
+<domain>Magic</domain>
+<tier>1</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- Attraction_II  -->	
+		
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_Attraction_II</defName>
         <label>Attraction</label>
@@ -528,9 +596,16 @@ Cooldown: 50</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_attraction_ii</spellId>
+<domain>Magic</domain>
+<tier>2</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- Attraction_III  -->	
+		
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_Attraction_III</defName>
         <label>Attraction</label>
@@ -569,9 +644,16 @@ Cooldown: 45</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_attraction_iii</spellId>
+<domain>Magic</domain>
+<tier>3</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- Repulsion  -->	
+		
 	
 	<ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>TorannMagic.Projectile_Repulsion</thingClass>
@@ -589,7 +671,7 @@ Cooldown: 45</description>
 			<explosionRadius>5</explosionRadius>
 			<postExplosionSpawnChance>1</postExplosionSpawnChance>
         </projectile>
-    </ThingDef>
+</ThingDef>
 	
 	<ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>TorannMagic.Projectile_Repulsion</thingClass>
@@ -607,7 +689,7 @@ Cooldown: 45</description>
 			<explosionRadius>6</explosionRadius>
 			<postExplosionSpawnChance>1</postExplosionSpawnChance>
         </projectile>
-    </ThingDef>
+</ThingDef>
 	
 	<ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>TorannMagic.Projectile_Repulsion</thingClass>
@@ -625,7 +707,7 @@ Cooldown: 45</description>
 			<explosionRadius>7</explosionRadius>
 			<postExplosionSpawnChance>1</postExplosionSpawnChance>
         </projectile>
-    </ThingDef>
+</ThingDef>
 	
 	<ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>TorannMagic.Projectile_Repulsion</thingClass>
@@ -643,7 +725,7 @@ Cooldown: 45</description>
 			<explosionRadius>8</explosionRadius>
 			<postExplosionSpawnChance>1</postExplosionSpawnChance>
         </projectile>
-    </ThingDef>
+</ThingDef>
 	
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_Repulsion</defName>
@@ -686,9 +768,16 @@ Radius: 5</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_repulsion</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- Repulsion_I  -->	
+		
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_Repulsion_I</defName>
         <label>Repulsion</label>
@@ -729,9 +818,16 @@ Radius: 6</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_repulsion_i</spellId>
+<domain>Magic</domain>
+<tier>1</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- Repulsion_II  -->	
+		
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_Repulsion_II</defName>
         <label>Repulsion</label>
@@ -772,9 +868,16 @@ Radius: 7</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_repulsion_ii</spellId>
+<domain>Magic</domain>
+<tier>2</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- Repulsion_III  -->	
+		
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_Repulsion_III</defName>
         <label>Repulsion</label>
@@ -815,9 +918,16 @@ Radius: 8</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_repulsion_iii</spellId>
+<domain>Magic</domain>
+<tier>3</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- Scorn  -->	
+		
 	
 	<ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>TorannMagic.Projectile_Scorn</thingClass>
@@ -835,7 +945,7 @@ Radius: 8</description>
 			<explosionRadius>5</explosionRadius>
 			<postExplosionSpawnChance>1</postExplosionSpawnChance>
         </projectile>
-    </ThingDef>
+</ThingDef>
 	
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_Scorn</defName>
@@ -876,9 +986,16 @@ A succubus will retain her partial demon form for a short period after using thi
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_scorn</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- PsychicShock  -->	
+		
 	<ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>TorannMagic.Projectile_PsychicShock</thingClass>
 	    <defName>Projectile_PsychicShock</defName>
@@ -895,7 +1012,7 @@ A succubus will retain her partial demon form for a short period after using thi
 			<explosionRadius>5</explosionRadius>
 			<postExplosionSpawnChance>1</postExplosionSpawnChance>
         </projectile>
-    </ThingDef>
+</ThingDef>
 	
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_PsychicShock</defName>
@@ -936,9 +1053,16 @@ The Warlock who will use the minds of others to propagate the psychic wave. The 
                 <canTargetLocations>false</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_psychicshock</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- SummonDemon  -->	
+		
 	
 	<ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>TorannMagic.Projectile_SummonDemon</thingClass>
@@ -954,7 +1078,7 @@ The Warlock who will use the minds of others to propagate the psychic wave. The 
             <damageAmountBase>0</damageAmountBase>
             <speed>999</speed>
         </projectile>
-    </ThingDef>
+</ThingDef>
 	
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_SummonDemon</defName>
@@ -993,7 +1117,14 @@ The summoning is initiated when a Succubus anchors the physical offering and is 
                 <canTargetLocations>false</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_summondemon</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<ThingDef ParentName="BaseBullet" Name="FlyingObject_DemonFlight">
 	   <defName>FlyingObject_DemonFlight</defName>
@@ -1009,7 +1140,7 @@ The summoning is initiated when a Succubus anchors the physical offering and is 
 			<damageAmountBase>0</damageAmountBase>
 			<speed>40</speed>
 	   </projectile>
-	</ThingDef>
+</ThingDef>
 	
 	<ThingDef ParentName="FlyingObject_Advanced">
 	   <defName>FlyingObject_DemonBolt</defName>
@@ -1018,6 +1149,6 @@ The summoning is initiated when a Succubus anchors the physical offering and is 
 			<texPath>Spells/meteor2</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
-	</ThingDef>
+</ThingDef>
 
 </Defs>

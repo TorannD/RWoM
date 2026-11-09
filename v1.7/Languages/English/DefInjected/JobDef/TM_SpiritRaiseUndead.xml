@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritRaiseUndead.reportString>raising undead through a spirit host.</TM_SpiritRaiseUndead.reportString>
+  <TM_SpiritDeathMark.reportString>placing a death mark through a spirit host.</TM_SpiritDeathMark.reportString>
+  <TM_SpiritDeathMark_I.reportString>placing a death mark through a spirit host.</TM_SpiritDeathMark_I.reportString>
+  <TM_SpiritDeathMark_II.reportString>placing a death mark through a spirit host.</TM_SpiritDeathMark_II.reportString>
+  <TM_SpiritDeathMark_III.reportString>placing a death mark through a spirit host.</TM_SpiritDeathMark_III.reportString>
+  <TM_SpiritConsumeCorpse.reportString>consuming corpses through a spirit host.</TM_SpiritConsumeCorpse.reportString>
+  <TM_SpiritConsumeCorpse_I.reportString>consuming corpses through a spirit host.</TM_SpiritConsumeCorpse_I.reportString>
+  <TM_SpiritConsumeCorpse_II.reportString>consuming corpses through a spirit host.</TM_SpiritConsumeCorpse_II.reportString>
+  <TM_SpiritConsumeCorpse_III.reportString>consuming corpses through a spirit host.</TM_SpiritConsumeCorpse_III.reportString>
+  <TM_SpiritConsumeCorpse_Mass.reportString>consuming corpses through a spirit host.</TM_SpiritConsumeCorpse_Mass.reportString>
+  <TM_SpiritCorpseExplosion.reportString>arming a corpse explosion through a spirit host.</TM_SpiritCorpseExplosion.reportString>
+  <TM_SpiritCorpseExplosion_I.reportString>arming a corpse explosion through a spirit host.</TM_SpiritCorpseExplosion_I.reportString>
+  <TM_SpiritCorpseExplosion_II.reportString>arming a corpse explosion through a spirit host.</TM_SpiritCorpseExplosion_II.reportString>
+  <TM_SpiritCorpseExplosion_III.reportString>arming a corpse explosion through a spirit host.</TM_SpiritCorpseExplosion_III.reportString>
+  <TM_SpiritFogOfTorment.reportString>casting fog of torment through a spirit host.</TM_SpiritFogOfTorment.reportString>
+  <TM_SpiritDeathBolt.reportString>casting death bolts through a spirit host.</TM_SpiritDeathBolt.reportString>
+  <TM_SpiritDeathBolt_I.reportString>casting death bolts through a spirit host.</TM_SpiritDeathBolt_I.reportString>
+  <TM_SpiritDeathBolt_II.reportString>casting death bolts through a spirit host.</TM_SpiritDeathBolt_II.reportString>
+  <TM_SpiritDeathBolt_III.reportString>casting death bolts through a spirit host.</TM_SpiritDeathBolt_III.reportString>
+</LanguageData>

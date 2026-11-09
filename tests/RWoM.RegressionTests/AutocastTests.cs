@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Globalization;
 using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -60,8 +60,25 @@ internal static class AutocastTests
         DefDatabase<HediffDef>.Add(new HediffDef { defName = "TM_SyrriumSenseHD" });
     }
 
+    private static void AreaSelection(RuntimeFixture fixture)
+    {
+        var area = new Area_Allowed();
+        var grid = new BoolGrid(4, 4);
+        typeof(Area).GetField("innerGrid", BindingFlags.Instance | BindingFlags.NonPublic)!.SetValue(area, grid);
+        var origin = new IntVec3(0, 0, 0);
+        Check.Equal(false, TM_Calc.TryPickAutocastAreaCell(null, out _), "missing area skips cast");
+        Check.Equal(false, TM_Calc.TryPickAutocastAreaCell(area, out var empty), "empty area skips cast");
+        Check.Equal(IntVec3.Invalid, empty, "empty zone must never target map origin");
+        grid[origin] = true;
+        Check.Equal(true, TM_Calc.TryPickAutocastAreaCell(area, out var picked), "painted origin is valid");
+        Check.Equal(origin, picked, "selects a designated cell");
+        grid[origin] = false;
+        Check.Equal(false, TM_Calc.TryPickAutocastAreaCell(area, out empty), "erased zone skips cast");
+    }
+
     public static IEnumerable<TestCase> Cases()
     {
+        yield return new("Autocast.AreaSelection", AreaSelection);
         foreach (string family in new[] { "TM_Meteor", "TM_OrbitalStrike", "TM_Blink" })
             foreach (string suffix in new[] { "", "_I", "_II", "_III" })
             {
@@ -88,6 +105,7 @@ internal static class AutocastTests
         yield return new("Autocast.FailedUndraftedHealStandaloneConsumedOnce", f => FailedDedicatedOnce(f, true, false, drafted: false));
         yield return new("Autocast.FailedSummonMinionCustomConsumedOnce", f => FailedDedicatedOnce(f, false, true, drafted: false, summon: true));
         yield return new("Autocast.FailedSummonMinionStandaloneConsumedOnce", f => FailedDedicatedOnce(f, false, false, drafted: false, summon: true));
+        yield return new("Autocast.DedicatedFamilyHonorsKnowledgeGate", f => DedicatedKnowledgeGate(f, drafted: false));
         yield return new("Autocast.ChaosMageUnlearnedSummonMinionKeepsLearnedGate", f => FailedDedicatedOnce(f, false, false, drafted: false, chaos: true, summon: true));
         yield return new("Autocast.CustomOwnersCoverAllReservedFamilies", ReservedOwners);
         yield return new("Autocast.CureDiseaseRejectsInjury", f => CureTarget(f, "Cut", 0, false, injury: true));
@@ -102,6 +120,57 @@ internal static class AutocastTests
         yield return new("Autocast.SharedMightPathRejectsWrongMechaniteTarget", SharedMightRejectsFlu);
         yield return new("Autocast.StandaloneAndLeveledPowersKeepSavedOwners", FullCollections);
         yield return new("Autocast.HerbalClarityAndBlissKeepXmlConditions", HerbalConditions);
+        yield return new("Autocast.CommanderAurasStayManualToggles", CommanderAurasManual);
+        yield return new("Autocast.BrandsStayTargetedManualCasts", BrandsManual);
+    }
+
+    // Brands are semi-permanent upkeep links between two chosen pawns; autocasting
+    // one onto whoever walks past (prisoners, allies, colonists — player report)
+    // drains the caster and misplaces a permanent effect. They must stay targeted
+    // manual casts with no autocast affordance and no candidate.
+    private static void BrandsManual(RuntimeFixture fixture)
+    {
+        var might = EmptyMight();
+        var magic = EmptyMagic();
+        foreach (string family in new[] { "TM_Branding", "TM_SiphonBrand", "TM_FitnessBrand", "TM_EmotionBrand",
+                 "TM_VitalityBrand", "TM_ProtectionBrand", "TM_AwarenessBrand", "TM_DispelBranding" })
+        {
+            var def = fixture.AddAbility(family);
+            var policy = TM_AutocastDefaults.For(def, false);
+            Check.Equal(AutocastType.Null, policy.type, family + " stays a targeted manual cast");
+            Check.Equal(true, TM_AutocastDefaults.IsManualOnly(def), family + " is manual only");
+            Check.Same(null, MagicToggle(magic, def), family + " offers no AC affordance");
+            var mp = new MagicPower { TMabilityDefs = [def], learned = true, autocast = true };
+            magic.magicPowerIF.Add(mp);
+        }
+        Check.Equal(0, MagicCandidates(magic).Count(), "toggled-on brands are never autocast candidates");
+    }
+
+    // The commander auras are toggles: casting the active aura dispels it (player
+    // report — a drafted commander's aura switched itself off every time its icon
+    // cooldown expired, because the toggle verb enables autocast and the generic
+    // loop recast the toggle). They must stay manual-only like the other
+    // MaintainedNoAutocast powers, with no autocast affordance and no candidate.
+    private static void CommanderAurasManual(RuntimeFixture fixture)
+    {
+        var might = EmptyMight();
+        var magic = EmptyMagic();
+        foreach (string family in new[] { "TM_CommanderAura", "TM_ProvisionerAura", "TM_TaskMasterAura" })
+            foreach (string suffix in new[] { "", "_I", "_II", "_III" })
+            {
+                var def = fixture.AddAbility(family + suffix);
+                var policy = TM_AutocastDefaults.For(def, true);
+                Check.Equal(AutocastType.Null, policy.type, family + suffix + " stays a manual toggle");
+                Check.Equal(true, TM_AutocastDefaults.NeverAutocast(def), family + suffix + " never autocasts");
+                Check.Same(null, MagicToggle(magic, def), family + suffix + " offers no AC affordance");
+                Check.Same(null, MightToggle(might, def), family + suffix + " offers no might AC affordance");
+                var mp = new MightPower { TMabilityDefs = [def], learned = true, autocast = true };
+                might.mightPowerG.Add(mp);
+                var gp = new MagicPower { TMabilityDefs = [def], learned = true, autocast = true };
+                magic.magicPowerIF.Add(gp);
+            }
+        Check.Equal(0, MightCandidates(might).Count(), "toggled-on commander auras are never might autocast candidates");
+        Check.Equal(0, MagicCandidates(magic).Count(), "toggled-on commander auras are never magic autocast candidates");
     }
 
     private static void DefaultPolicy(RuntimeFixture fixture, string name, bool blink)
@@ -369,8 +438,72 @@ internal static class AutocastTests
         }
     }
 
+    private static void InvokeRoute(System.Reflection.MethodInfo route, CompAbilityUserMagic comp)
+    {
+        try { route.Invoke(comp, null); }
+        catch (System.Reflection.TargetInvocationException ex)
+        {
+            throw new InvalidOperationException("Scheduler failure: " + ex.InnerException, ex.InnerException);
+        }
+    }
+
     private static int dedicatedAttempts;
     private static void ObserveDedicated() => dedicatedAttempts++;
+    // Ф4 remainder: the dedicated class evaluators (heal/purify/summon/...)
+    // gate through the knowledge store like the generic loops — the store
+    // overrides the legacy learned/autocast flags in both directions.
+    private static void DedicatedKnowledgeGate(RuntimeFixture fixture, bool drafted)
+    {
+        var caster = NewPawn();
+        var comp = MagicComp(caster);
+        var def = fixture.AddAbility("TM_Heal");
+        def.manaCost = 2f; // reject inside the real evaluator, before target lookup
+        TorannMagicDefOf.TM_Heal = def;
+        var saved = new MagicPower([def]) { learned = true, autocast = true };
+        comp.spell_Heal = true; // non-Paladin standalone compatibility route
+        comp.MagicData.magicPowerP.Add(saved);
+        var knowledge = new AbilityKnowledgeComp { parent = caster };
+        caster.AllComps.Add(knowledge);
+        var entry = knowledge.GetOrCreate(TorannMagic.SpellIds.Of(def), 0);
+        entry.learned = true;
+        entry.autocast = false;
+        caster.drafter = new Pawn_DraftController(caster);
+        SetField(caster.drafter, "draftedInt", drafted);
+        caster.drafter.FireAtWill = true;
+        caster.equipment = new Pawn_EquipmentTracker(caster);
+        SetField(caster.jobs, "curJob", new Job { def = new JobDef { defName = "Regression_Work" } });
+        var ability = BoundaryAbility(comp, def);
+        comp.AbilityData.Powers.Add(ability);
+        var route = typeof(CompAbilityUserMagic).GetMethod("ResolvePlayerAutocastPowers", BindingFlags.Instance | BindingFlags.NonPublic)!;
+        var harmonyAssembly = Assembly.Load("0Harmony");
+        var harmonyType = harmonyAssembly.GetType("HarmonyLib.Harmony")!;
+        var harmonyMethod = harmonyAssembly.GetType("HarmonyLib.HarmonyMethod")!;
+        var harmony = Activator.CreateInstance(harmonyType, "rwom.regression.knowledge")!;
+        var evaluator = typeof(HealSpell).GetMethod("Evaluate")!;
+        var observer = Activator.CreateInstance(harmonyMethod, typeof(AutocastTests).GetMethod(nameof(ObserveDedicated), BindingFlags.Static | BindingFlags.NonPublic)!)!;
+        var patch = harmonyType.GetMethods().Single(m => m.Name == "Patch" && m.GetParameters().Length == 5);
+        patch.Invoke(harmony, [evaluator, observer, null, null, null]);
+        try
+        {
+            // The store says OFF while legacy says ON — the store wins.
+            dedicatedAttempts = 0;
+            InvokeRoute(route, comp);
+            Check.Equal(0, dedicatedAttempts, "knowledge autocast=false suppresses the dedicated family");
+
+            // The store says ON while legacy says OFF — the store wins.
+            saved.autocast = false;
+            entry.autocast = true;
+            dedicatedAttempts = 0;
+            InvokeRoute(route, comp);
+            Check.Equal(1, dedicatedAttempts, "knowledge autocast=true enables the dedicated family");
+            Check.Equal(0, ability.JobRequests, "failed evaluator never creates a job or falls back");
+        }
+        finally
+        {
+            harmonyType.GetMethod("UnpatchAll")!.Invoke(harmony, ["rwom.regression.knowledge"]);
+        }
+    }
+
 
     private static void CustomRegenerate(RuntimeFixture fixture)
     {
@@ -579,8 +712,8 @@ internal static class AutocastTests
         {
             var def = LoadHerbal(fixture, name);
             var ac = def.customPower.autocasting;
-            LoadConditions(fixture, ac.advancedConditionDefs);
             var target = NewPawn();
+            LoadConditions(fixture, ac.advancedConditionDefs);
             Need need = name == "TM_HerbalClarity" ? NewNeed<Need_Mana>(target, TorannMagicDefOf.TM_Mana) : NewNeed<Need_Mood>(target, MoodDef);
             need.CurLevel = .01f;
             Check.Equal(true, ac.ValidConditions(target, target), name + " accepts low need without buff");
@@ -603,13 +736,13 @@ internal static class AutocastTests
 
     private static IEnumerable<MagicPower> MagicCandidates(MagicData data)
     {
-        var method = typeof(AutoCastContext).Assembly.GetType("TorannMagic.AutoCast.AutocastPolicy")?.GetMethod("MagicPowers");
+        var method = typeof(AutoCastContext).Assembly.GetType("TorannMagic.AutoCast.AutocastPolicy")?.GetMethod("MagicPowers", [typeof(MagicData)]);
         return method != null ? (IEnumerable<MagicPower>)method.Invoke(null, [data])! : data.AllMagicPowersWithSkills.Where(power => power.learned);
     }
 
     private static IEnumerable<MightPower> MightCandidates(MightData data)
     {
-        var method = typeof(AutoCastContext).Assembly.GetType("TorannMagic.AutoCast.AutocastPolicy")?.GetMethod("MightPowers");
+        var method = typeof(AutoCastContext).Assembly.GetType("TorannMagic.AutoCast.AutocastPolicy")?.GetMethod("MightPowers", [typeof(MightData)]);
         return method != null ? (IEnumerable<MightPower>)method.Invoke(null, [data])! : data.AllMightPowersWithSkills.Where(power => power.learned);
     }
 

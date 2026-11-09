@@ -1,48 +1,43 @@
-﻿using System;
-using System.Collections.Generic;
+using AbilityUser;
 using System.Linq;
 using RimWorld;
-using AbilityUser;
-using Verse;
+using TorannMagic.ClassProgression;
 using UnityEngine;
-
+using Verse;
 
 namespace TorannMagic
 {
     public class Verb_ShadowSlayerCloak : Verb_UseAbility
     {
-        private int verVal = 0;
-        private int pwrVal = 0;
+        protected override bool TryCastShot() => Activate(CasterPawn, CasterPawn);
 
-        protected override bool TryCastShot()
+        internal static bool CanProject(Pawn body)
         {
-            Pawn caster = base.CasterPawn;
+            var def = TorannMagicDefOf.TM_ShadowSlayerCloakHD;
+            if (def?.comps?.Any(c => c.compClass == typeof(HediffComp_SpiritCastOrigin)) != true) return false;
+            var existing = body.health.hediffSet.GetFirstHediffOfDef(def);
+            return existing == null || existing.TryGetComp<HediffComp_SpiritCastOrigin>() is { Projected: true, Valid: true };
+        }
 
-            bool flag = caster != null && !caster.Dead;
-            if (flag)
+        internal static bool Activate(Pawn body, Pawn source)
+        {
+            if (body?.Spawned != true || body.Dead || source?.GetCompAbilityUserMight() is not CompAbilityUserMight might ||
+                (body != source && !CanProject(body))) return false;
+            var versatility = TM_Calc.GetSkillVersatilityLevel(source, TorannMagicDefOf.TM_ShadowSlayer);
+            float severity = 40 + might.mightPwr * 3 * versatility;
+            var def = TorannMagicDefOf.TM_ShadowSlayerCloakHD;
+            HealthUtility.AdjustSeverity(body, def, severity);
+            var cloak = body.health.hediffSet.GetFirstHediffOfDef(def);
+            if (cloak == null) return false;
+            if (body != source) cloak.TryGetComp<HediffComp_SpiritCastOrigin>().Bind(source);
+            var timer = cloak.TryGetComp<HediffComp_Disappears>();
+            if (timer != null) timer.ticksToDisappear = Mathf.RoundToInt(60 * severity);
+            for (int i = 0; i < 3; i++)
             {
-                CompAbilityUserMight comp = caster.GetCompAbilityUserMight();
-                //verVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_ShadowSlayer, "TM_ShadowSlayer", "_ver", true);
-                //pwrVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_ShadowSlayer, "TM_ShadowSlayer", "_pwr", true);
-                verVal = TM_Calc.GetSkillVersatilityLevel(caster, TorannMagicDefOf.TM_ShadowSlayer);
-                pwrVal = TM_Calc.GetSkillPowerLevel(caster, TorannMagicDefOf.TM_ShadowSlayer);
-
-                float sev = 40 + (comp.mightPwr * (3 * verVal));
-                HealthUtility.AdjustSeverity(caster, TorannMagicDefOf.TM_ShadowSlayerCloakHD, sev);
-
-                HediffComp_Disappears hdComp = caster.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_ShadowSlayerCloakHD).TryGetComp<HediffComp_Disappears>();
-                if (hdComp != null)
-                {
-                    hdComp.ticksToDisappear = Mathf.RoundToInt(60 * sev);
-                }
-
-                for (int i = 0; i < 3; i++)
-                {
-                    Vector3 rndPos = caster.DrawPos;
-                    rndPos.x += Rand.Range(-.5f, .5f);
-                    rndPos.z += Rand.Range(-.5f, .5f);
-                    FleckMaker.ThrowSmoke(rndPos, caster.Map, Rand.Range(.6f, 1.2f));
-                }
+                Vector3 pos = body.DrawPos;
+                pos.x += Rand.Range(-.5f,.5f);
+                pos.z += Rand.Range(-.5f,.5f);
+                FleckMaker.ThrowSmoke(pos, body.Map, Rand.Range(.6f,1.2f));
             }
             return true;
         }

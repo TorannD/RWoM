@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <Projectile_AntiArmor.label>Antiblindaje</Projectile_AntiArmor.label>
+  
+  
+  <Projectile_DisablingShot.label>Disparo incapacitante</Projectile_DisablingShot.label>
+  
+  
+  <Projectile_Headshot.label>Disparo a la cabeza</Projectile_Headshot.label>
+  
+  
+  <Projectile_SniperFocus.label>Enfoque de francotirador</Projectile_SniperFocus.label>
+  
+</LanguageData>

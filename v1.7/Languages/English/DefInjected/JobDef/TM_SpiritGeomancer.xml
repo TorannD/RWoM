@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritStoneskin.reportString>casting stoneskin.</TM_SpiritStoneskin.reportString>
+  <TM_SpiritDispelStoneskin.reportString>dispelling stoneskin.</TM_SpiritDispelStoneskin.reportString>
+  <TM_SpiritEarthSprites.reportString>summoning earth sprites.</TM_SpiritEarthSprites.reportString>
+  <TM_SpiritDismissEarthSprites.reportString>dismissing earth sprites.</TM_SpiritDismissEarthSprites.reportString>
+  <TM_SpiritEncase.reportString>casting encase.</TM_SpiritEncase.reportString>
+  <TM_SpiritEncase_I.reportString>casting encase.</TM_SpiritEncase_I.reportString>
+  <TM_SpiritEncase_II.reportString>casting encase.</TM_SpiritEncase_II.reportString>
+  <TM_SpiritEncase_III.reportString>casting encase.</TM_SpiritEncase_III.reportString>
+  <TM_SpiritEarthernHammer.reportString>casting earthen hammer.</TM_SpiritEarthernHammer.reportString>
+  <TM_SpiritSentinel.reportString>summoning a stone sentinel.</TM_SpiritSentinel.reportString>
+  <TM_SpiritShatterSentinel.reportString>shattering stone sentinels.</TM_SpiritShatterSentinel.reportString>
+  <TM_SpiritMeteor.reportString>calling down a meteorite.</TM_SpiritMeteor.reportString>
+  <TM_SpiritMeteor_I.reportString>calling down a meteorite.</TM_SpiritMeteor_I.reportString>
+  <TM_SpiritMeteor_II.reportString>calling down a meteorite.</TM_SpiritMeteor_II.reportString>
+  <TM_SpiritMeteor_III.reportString>calling down a meteorite.</TM_SpiritMeteor_III.reportString>
+</LanguageData>

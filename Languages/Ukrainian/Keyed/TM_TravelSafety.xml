@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_TravelSafety_Warning>Пішаку {0} загрожує небезпека в точці призначення: {1}. Продовжити переміщення?</TM_TravelSafety_Warning>
+  <TM_TravelSafety_Vacuum>вакуум</TM_TravelSafety_Vacuum>
+  <TM_TravelSafety_Cold>небезпечний холод</TM_TravelSafety_Cold>
+  <TM_TravelSafety_Heat>небезпечна спека</TM_TravelSafety_Heat>
+  <TM_TravelSafety_ShellExpiring>ефірна оболонка скоро зникне</TM_TravelSafety_ShellExpiring>
+  <TM_TravelSafety_Changed>Точка призначення більше не безпечна. Віддайте новий наказ на переміщення, щоб підтвердити ризик.</TM_TravelSafety_Changed>
+</LanguageData>

@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using Verse;
 using UnityEngine;
 using System.Collections.Generic;
@@ -16,9 +16,7 @@ namespace TorannMagic
 
         private int eventFrequency = 60;
 
-        private int bloodPwr = 0;  //increased amount blood levels affect ability power
         private int bloodVer = 0;  //increased blood per bleed rate and blood gift use
-        private int bloodEff = 0;  //reduces ability blood costs
         private float arcaneDmg = 1f;
 
         public override void CompExposeData()
@@ -44,23 +42,23 @@ namespace TorannMagic
 
         private void Initialize()
         {
-            bool spawned = base.Pawn.Spawned;
-            CompAbilityUserMagic comp = this.Pawn.GetCompAbilityUserMagic();
-            if (spawned && comp != null && comp.IsMagicUser)
+            var body = Pawn;
+            var comp = body.GetCompAbilityUserMagic();
+            if (ClassProgression.SpiritRebirthState.TryGetPossessingSpirit(body, out var soul))
             {
-                //bloodPwr = comp.MagicData.MagicPowerSkill_BloodGift.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_BloodGift_pwr").level;
-                //bloodVer = comp.MagicData.MagicPowerSkill_BloodGift.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_BloodGift_ver").level;
-                //bloodEff = comp.MagicData.MagicPowerSkill_BloodGift.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_BloodGift_eff").level;
-                bloodPwr = TM_Calc.GetSkillPowerLevel(Pawn, TorannMagicDefOf.TM_BloodGift, false);
-                bloodVer = TM_Calc.GetSkillVersatilityLevel(Pawn, TorannMagicDefOf.TM_BloodGift, false);
-                bloodEff = TM_Calc.GetSkillEfficiencyLevel(Pawn, TorannMagicDefOf.TM_BloodGift, false);
-                this.arcaneDmg = comp.arcaneDmg;
+                var borrowed = ClassProgression.SpiritBloodSacrifice.Find(body, soul);
+                if (borrowed != null) comp = borrowed.MagicUser;
             }
-            else
+            if (!body.Spawned || comp == null || (comp.Pawn == body && !comp.IsMagicUser))
             {
-                this.removeNow = true;
+                removeNow = true;
+                return;
             }
-        }        
+            removeNow = false;
+            bloodVer = comp.Pawn == body ? TM_Calc.GetSkillVersatilityLevel(body, TorannMagicDefOf.TM_BloodGift, false)
+                : ClassProgression.SpiritRebirthRuntime.SavedRank(comp.ExistingMagicData, "TM_BloodGift_ver");
+            arcaneDmg = comp.arcaneDmg;
+        }
 
         public override void CompPostTick(ref float severityAdjustment)
         {
@@ -68,7 +66,7 @@ namespace TorannMagic
             bool flag = base.Pawn != null && base.Pawn.Map != null;
             if (flag)
             {
-                if (!initialized)
+                if (!initialized || Find.TickManager.TicksGame % eventFrequency == 0)
                 {
                     initialized = true;
                     this.Initialize();

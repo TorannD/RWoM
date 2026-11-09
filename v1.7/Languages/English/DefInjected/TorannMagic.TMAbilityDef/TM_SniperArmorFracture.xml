@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_SniperArmorFracture.label>armor fracture</TM_SniperArmorFracture.label>
+  <TM_SniperArmorFracture.description>Fire one ordinary bullet. A hit opens a breach for your squad for six seconds, reducing effective armor by 10, 15 or 20 percentage points by rank. Each hit stacks and expires separately. Costs 20 stamina. Cooldown: 30 seconds.</TM_SniperArmorFracture.description>
+</LanguageData>

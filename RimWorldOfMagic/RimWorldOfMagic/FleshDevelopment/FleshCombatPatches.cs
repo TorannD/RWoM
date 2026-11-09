@@ -18,25 +18,36 @@ namespace TorannMagic.FleshDevelopment
             public Pawn Attacker, Victim;
             public float Damage;
             public bool Completed;
+            internal ThingDef TrialWeapon;
+            internal bool TrialDamageDealt;
         }
         [ThreadStatic] private static Hit current;
         public static void Prefix(Verb_MeleeAttackDamage __instance, LocalTargetInfo target, out Hit __state)
         {
             __state = new Hit { Previous = current, Attacker = __instance.CasterPawn, Victim = target.Pawn };
+            __state.TrialWeapon = ClassProgression.BladeRiposteTrial.Weapon(__instance, __state.Attacker, __state.Victim);
             current = __state;
         }
         public static void Record(Thing victim, DamageInfo damage, DamageWorker.DamageResult result)
         {
             FleshBiteAttacks.Record(victim, damage, result);
             if (current != null && victim == current.Victim && damage.Instigator == current.Attacker && result != null)
+            {
                 current.Damage += Math.Max(0f, result.totalDamageDealt);
+                if (current.TrialWeapon != null && damage.Weapon == current.TrialWeapon && damage.Def?.isRanged == false && result.totalDamageDealt > 0f)
+                    current.TrialDamageDealt = true;
+            }
         }
         public static void Postfix(Verb_MeleeAttackDamage __instance, Hit __state, ref DamageWorker.DamageResult __result)
         {
             if (__state.Completed) return;
             current = null;
             __state.Completed = true;
-            try { FleshBiteAttacks.Finish(__instance, ref __result); }
+            try
+            {
+                if (__state.TrialDamageDealt) ClassProgression.BladeRiposteTrial.Struck(__state.Attacker, __state.Victim);
+                FleshBiteAttacks.Finish(__instance, ref __result);
+            }
             finally { current = __state.Previous; }
         }
         public static Exception Finalizer(Exception __exception, Hit __state)

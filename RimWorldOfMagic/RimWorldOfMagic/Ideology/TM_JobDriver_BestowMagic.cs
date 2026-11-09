@@ -27,6 +27,7 @@ namespace TorannMagic.Ideology
 
         public static void BestowMagic(Pawn pawn, Pawn doer)
         {
+            if (!ClassProgression.ClassEnrollment.CanBestow(pawn, true)) return;
             pawn.story.traits.GainTrait(new Trait(TorannMagicDefOf.TM_Gifted, 0, true));
         }
 
@@ -121,7 +122,7 @@ namespace TorannMagic.Ideology
             }, false, 0f);
             doFor.AddFinishAction(delegate
             {
-                if (age >= (int)(durationTicks * .95f))
+                if (age >= (int)(durationTicks * .95f) && ClassProgression.ClassEnrollment.CanBestow(target, true))
                 {
                     BestowMagic(target, pawn);
                     CreateHistoryEventDef(target);

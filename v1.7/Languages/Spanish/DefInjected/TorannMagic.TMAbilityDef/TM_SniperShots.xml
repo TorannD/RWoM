@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_SniperAimedShot.label>disparo apuntado</TM_SniperAimedShot.label>
+  <TM_SniperAimedShot.description>Una bala normal con el alcance y precisión del arma y las reglas de cobertura. Daño 110/125/140%, coste base 25 de aguante, recarga de 30 s.</TM_SniperAimedShot.description>
+</LanguageData>

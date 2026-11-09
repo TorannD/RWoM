@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_Dire_WolfR.label>lobo terrible</TM_Dire_WolfR.label>
+  
+  <TM_Dire_WolfR.description>Los lobos terribles recorren el norte en grandes manadas y no temen ni al hombre ni al megaperezoso. Depredadores salvajes armados con dientes afilados como cuchillas y un pelaje como hilo de acero, son tan feroces como cualquier criatura conocida. A menudo aparecen ligados a leyendas míticas y se dice que poseen un vínculo único con los poderes arcanos.</TM_Dire_WolfR.description>
+  
+  <TM_Dire_WolfR.race.meatLabel>carne de lobo</TM_Dire_WolfR.race.meatLabel>
+  
+  <TM_Dire_WolfR.tools.left_claw.label>garra izquierda</TM_Dire_WolfR.tools.left_claw.label>
+  
+  <TM_Dire_WolfR.tools.right_claw.label>garra derecha</TM_Dire_WolfR.tools.right_claw.label>
+  
+  <TM_Dire_WolfR.tools.head.label>cabeza</TM_Dire_WolfR.tools.head.label>
+  
+</LanguageData>

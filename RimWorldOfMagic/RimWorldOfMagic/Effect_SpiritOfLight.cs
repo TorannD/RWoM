@@ -5,37 +5,30 @@ using RimWorld;
 
 namespace TorannMagic
 {    
-    public class Effect_SpiritOfLight : Verb_UseAbility
+    public class Effect_SpiritOfLight : ClassProgression.Verb_SpiritTargetable
     {
-        bool validTarg;
-
-        public virtual void Effect()
+        protected override bool ApplyHostedEffect()
         {
-            CompAbilityUserMagic comp = CasterPawn.GetCompAbilityUserMagic();
-            if (comp.SoL != null)
+            var owner = Ability?.Pawn ?? CasterPawn;
+            var comp = owner?.GetCompAbilityUserMagic();
+            if (comp == null || CasterPawn?.Spawned != true) return false;
+            if (comp.SoL != null && !comp.SoL.Destroyed)
             {
                 comp.SoL.shouldDismiss = true;
+                return true;
             }
-            else
+            var spirit = (FlyingObject_SpiritOfLight)GenSpawn.Spawn(TorannMagicDefOf.FlyingObject_SpiritOfLight,CasterPawn.Position,CasterPawn.Map);
+            try
             {
-                LocalTargetInfo t = this.TargetsAoE[0];
-                bool flag = t.Cell != default(IntVec3);
-                if (flag)
-                {
-                    Thing sol = new Thing();
-                    sol.def = TorannMagicDefOf.FlyingObject_SpiritOfLight;
-
-                    LongEventHandler.QueueLongEvent(delegate
-                    {
-                        FlyingObject_SpiritOfLight flyingObject = (FlyingObject_SpiritOfLight)GenSpawn.Spawn(ThingDef.Named("FlyingObject_SpiritOfLight"), this.CasterPawn.Position, this.CasterPawn.Map);
-                        flyingObject.Launch(this.CasterPawn, t.Cell, sol);
-                        flyingObject.shouldDismiss = false;
-                        comp.SoL = flyingObject;
-                    }, "LaunchingFlyer", false, null);
-                }
+                spirit.Launch(owner,CasterPawn.Position,null);
+                comp.SoL = spirit;
             }
+            catch { if (!spirit.Destroyed) spirit.Destroy(); throw; }
+            ClassProgression.BrightmageLifecycle.SynchronizeControl(comp);
+            return true;
         }
 
+        public virtual void Effect() => ApplyHostedEffect();
         public override void PostCastShot(bool inResult, out bool outResult)
         {
             if (inResult)

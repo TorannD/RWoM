@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_SniperSingleOpening</defName>
+    <label>single opening</label>
+    <description>Aim for five seconds, then fire three ordinary bullets at one enemy over nine seconds. Each deals 120% weapon damage. Moving, changing weapon or losing sight ends the sequence. Range is capped at 45 cells. The shooter takes 20% more incoming damage while aiming.</description>
+    <spellId>rwom.tm_snipersingleopening</spellId>
+    <iconPath>UI/headshot</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.ClassProgression.Verb_SniperSingleOpening</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_SniperSingleOpening</abilityDef>
+      <isViolent>true</isViolent>
+      <defaultProjectile>TM_SniperOpeningRound</defaultProjectile>
+      <warmupTime>5</warmupTime>
+      <SecondsToRecharge>2000</SecondsToRecharge>
+      <range>45</range>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+</Defs>

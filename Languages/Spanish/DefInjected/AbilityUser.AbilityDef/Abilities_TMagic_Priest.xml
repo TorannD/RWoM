@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  
+  <TM_AdvancedHeal.label>curación avanzada</TM_AdvancedHeal.label>
+  
+  <TM_AdvancedHeal.description>Invoca poder sagrado para curar en gran medida las heridas de un objetivo. La curación base restaura 14 de salud en hasta 3 heridas. Sella de inmediato la hemorragia de las heridas de partes del cuerpo ausentes.</TM_AdvancedHeal.description>
+
+  
+  <TM_BestowMight.label>otorgar poderío</TM_BestowMight.label>
+  
+  <TM_BestowMight.description>Bendice a un único objetivo con un gran aumento de poder físico.\n\nDuración: 30-40 s\nCapacidad física: +40 %\nDemanda física: +50 %\nDolor: -40 %</TM_BestowMight.description>
+
+  
+  <TM_BestowMight_I.label>otorgar poderío I</TM_BestowMight_I.label>
+  
+  <TM_BestowMight_I.description>Bendice a un único objetivo con un gran aumento de poder físico.\n\nDuración: 50-60 s\nCapacidad física: +60 %\nDemanda física: +60 %\nDolor: -50 %</TM_BestowMight_I.description>
+
+  
+  <TM_BestowMight_II.label>otorgar poderío II</TM_BestowMight_II.label>
+  
+  <TM_BestowMight_II.description>Bendice a un único objetivo con un gran aumento de poder físico.\n\nDuración: 50-60 s\nCapacidad física: +80 %\nDemanda física: +70 %\nDolor: -60 %</TM_BestowMight_II.description>
+
+  
+  <TM_BestowMight_III.label>otorgar poderío III</TM_BestowMight_III.label>
+  
+  <TM_BestowMight_III.description>Bendice a un único objetivo con un gran aumento de poder físico.\n\nDuración: 100-115 s\nCapacidad física: ~+100 %\nDemanda física: +100 %\nDolor: -70 %</TM_BestowMight_III.description>
+
+  
+  <TM_HealingCircle.label>círculo de curación</TM_HealingCircle.label>
+  
+  <TM_HealingCircle.description>Crea un campo de luz que cura a los peones aliados que se encuentren en su interior. La habilidad base cura 1 herida en 10 de salud por cada peón curado. No puede curar lesiones de partes del cuerpo ausentes.\n\nRadio del círculo: 3\nAlcance: 30</TM_HealingCircle.description>
+
+  
+  <TM_HealingCircle_I.label>círculo de curación I</TM_HealingCircle_I.label>
+  
+  <TM_HealingCircle_I.description>Crea un campo de luz que cura a los peones aliados que se encuentren en su interior. La habilidad base cura 1 herida en 10 de salud por cada peón curado. No puede curar lesiones de partes del cuerpo ausentes.\n\nRadio del círculo: 4\nAlcance: 35</TM_HealingCircle_I.description>
+
+  
+  <TM_HealingCircle_II.label>círculo de curación II</TM_HealingCircle_II.label>
+  
+  <TM_HealingCircle_II.description>Crea un campo de luz que cura a los peones aliados que se encuentren en su interior. La habilidad base cura 1 herida en 10 de salud por cada peón curado. No puede curar lesiones de partes del cuerpo ausentes.\n\nRadio del círculo: 5,5\nAlcance: 40</TM_HealingCircle_II.description>
+
+  
+  <TM_HealingCircle_III.label>círculo de curación III</TM_HealingCircle_III.label>
+  
+  <TM_HealingCircle_III.description>Crea un campo de luz que cura a los peones aliados que se encuentren en su interior. La habilidad base cura 1 herida en 10 de salud por cada peón curado. No puede curar lesiones de partes del cuerpo ausentes.\n\nRadio del círculo: 7\nAlcance: 45</TM_HealingCircle_III.description>
+
+  
+  <TM_Purify.label>purificar</TM_Purify.label>
+  
+  <TM_Purify.description>Invoca poder sagrado para purificar las cicatrices del cuerpo, la mente y el alma.</TM_Purify.description>
+
+  
+  <TM_Resurrection.label>resurrección</TM_Resurrection.label>
+  
+  <TM_Resurrection.description>La resurrección devuelve la vida a un peón fallecido recientemente. Esto supone una enorme exigencia para el sacerdote y para el peón resucitado, y ambos estarán débiles durante varios días mientras recuperan sus fuerzas. La resurrección tiene un precio: el peón resucitado perderá hasta un 35 % de sus habilidades y puede desarrollar problemas de salud perjudiciales.</TM_Resurrection.description>
+
+</LanguageData>

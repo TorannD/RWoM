@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_ApothecaryAntitoxin</defName><label>Antitoxin</label><description>Reduce food poisoning by 20% on contact. Once per illness. Costs 20% of maximum herbs. Cooldown 40 seconds.</description>
+    <spellId>rwom.tm_apothecaryantitoxin</spellId><iconPath>UI/health-capsule</iconPath><displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.ClassProgression.Verb_ApothecaryAntitoxin</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_ApothecaryAntitoxin</abilityDef>
+      <isViolent>false</isViolent>
+      <defaultProjectile>Projectile_Default</defaultProjectile>
+      <warmupTime>1</warmupTime>
+      <SecondsToRecharge>40</SecondsToRecharge>
+      <range>1.9</range>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+      <targetParams><canTargetPawns>true</canTargetPawns><canTargetSelf>true</canTargetSelf><canTargetBuildings>false</canTargetBuildings><canTargetLocations>false</canTargetLocations></targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_ApothecaryGoldenHour</defName><label>Golden Hour kit</label><description>Stand still and treat up to four allies within eight cells for 20 seconds. Heal up to 20 points of recent wounds per ally and halve bleeding. Costs 60% herbs and four herbal medicines carried or within reach. Cooldown two days.</description>
+    <spellId>rwom.tm_apothecarygoldenhour</spellId><iconPath>UI/health-capsule</iconPath><displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.ClassProgression.Verb_ApothecaryKit</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_ApothecaryGoldenHour</abilityDef>
+      <isViolent>false</isViolent>
+      <defaultProjectile>Projectile_Default</defaultProjectile>
+      <warmupTime>5</warmupTime>
+      <SecondsToRecharge>2000</SecondsToRecharge>
+      <range>8</range>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+      <targetParams><canTargetPawns>true</canTargetPawns><canTargetSelf>true</canTargetSelf><canTargetBuildings>false</canTargetBuildings><canTargetLocations>false</canTargetLocations></targetParams>
+    </verbProperties>
+  </AbilityDef>
+</Defs>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ChaosAnchor>Chaos anchor: {0}</TM_ChaosAnchor>
+  <TM_ChaosNoAnchor>Clear the anchor</TM_ChaosNoAnchor>
+  <TM_ChaosProgress>Use two different borrowed spells ({0}/2). As an adept, cast from two different draws ({1}/2).</TM_ChaosProgress>
+  <TM_ChaosAscensionInfo>Offer a gemstone of insight to ascend. One spell can be anchored for the next draw; its invested points are refunded.</TM_ChaosAscensionInfo>
+  <TM_ChaosAscensionAction>Ascend: chaos anchor</TM_ChaosAscensionAction>
+  <TM_ChaosAscensionNeedsOffering>Requires a gemstone of insight</TM_ChaosAscensionNeedsOffering>
+</LanguageData>

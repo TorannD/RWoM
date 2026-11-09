@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_EnchantedAuraHD.label>Aura encantada</TM_EnchantedAuraHD.label>
+  
+  <TM_EnchantedAuraHD.description>Un aura encantada rodea al personaje y realza las cualidades asociadas con la belleza, el carisma y la atracción.</TM_EnchantedAuraHD.description>
+  
+  <TM_EnchantedAuraHD.stages.I.label>I</TM_EnchantedAuraHD.stages.I.label>
+  
+  <TM_EnchantedAuraHD.stages.II.label>II</TM_EnchantedAuraHD.stages.II.label>
+  
+  <TM_EnchantedAuraHD.stages.III.label>III</TM_EnchantedAuraHD.stages.III.label>
+  
+  <TM_EnchantedAuraHD.stages.IV.label>IV</TM_EnchantedAuraHD.stages.IV.label>
+  
+  
+  <TM_EnchantedBodyHD.label>Cuerpo encantado</TM_EnchantedBodyHD.label>
+  
+  <TM_EnchantedBodyHD.description>Creación de partes corporales encantadas para mejorar la capacidad física.</TM_EnchantedBodyHD.description>
+  
+  <TM_EnchantedBodyHD.stages.Arm.label>Brazo</TM_EnchantedBodyHD.stages.Arm.label>
+  
+  <TM_EnchantedBodyHD.stages.Two_Arms.label>Dos brazos</TM_EnchantedBodyHD.stages.Two_Arms.label>
+  
+  <TM_EnchantedBodyHD.stages.Arms_and_Eye-0.label>Brazos y ojo</TM_EnchantedBodyHD.stages.Arms_and_Eye-0.label>
+  
+  <TM_EnchantedBodyHD.stages.Arms_and_Eye-1.label>Brazos y ojo ++</TM_EnchantedBodyHD.stages.Arms_and_Eye-1.label>
+  
+  
+  <TM_ShapeshiftHD.label>Cambiaformas</TM_ShapeshiftHD.label>
+  
+  <TM_ShapeshiftHD.description>Mejora el poder de cualquier forma animal adoptada por un cambiaformas.</TM_ShapeshiftHD.description>
+  
+  <TM_ShapeshiftHD.stages.I.label>I</TM_ShapeshiftHD.stages.I.label>
+  
+  <TM_ShapeshiftHD.stages.II.label>II</TM_ShapeshiftHD.stages.II.label>
+  
+  <TM_ShapeshiftHD.stages.III.label>III</TM_ShapeshiftHD.stages.III.label>
+  
+  <TM_ShapeshiftHD.stages.IV.label>IV</TM_ShapeshiftHD.stages.IV.label>
+  
+  
+  <TM_WeaponEnchantment_DarkHD.label>Arma encantada</TM_WeaponEnchantment_DarkHD.label>
+  
+  <TM_WeaponEnchantment_DarkHD.description>Encanta el arma equipada con un toque de oscuridad que causa ceguera. Este encantamiento termina si el arma se desequipa o se cambia.</TM_WeaponEnchantment_DarkHD.description>
+  
+  <TM_WeaponEnchantment_DarkHD.stages.Dark_I.label>Oscuridad (I)</TM_WeaponEnchantment_DarkHD.stages.Dark_I.label>
+  
+  <TM_WeaponEnchantment_DarkHD.stages.Dark_II.label>Oscuridad (II)</TM_WeaponEnchantment_DarkHD.stages.Dark_II.label>
+  
+  <TM_WeaponEnchantment_DarkHD.stages.Dark_III.label>Oscuridad (III)</TM_WeaponEnchantment_DarkHD.stages.Dark_III.label>
+  
+  <TM_WeaponEnchantment_DarkHD.stages.Dark_IV.label>Oscuridad (IV)</TM_WeaponEnchantment_DarkHD.stages.Dark_IV.label>
+  
+  
+  <TM_WeaponEnchantment_FireHD.label>Arma encantada</TM_WeaponEnchantment_FireHD.label>
+  
+  <TM_WeaponEnchantment_FireHD.description>Encanta el arma equipada con fuego elemental que puede quemar o incendiar un objetivo. Este encantamiento termina si el arma se desequipa o se cambia.</TM_WeaponEnchantment_FireHD.description>
+  
+  <TM_WeaponEnchantment_FireHD.stages.Fire_I.label>Fuego (I)</TM_WeaponEnchantment_FireHD.stages.Fire_I.label>
+  
+  <TM_WeaponEnchantment_FireHD.stages.Fire_II.label>Fuego (II)</TM_WeaponEnchantment_FireHD.stages.Fire_II.label>
+  
+  <TM_WeaponEnchantment_FireHD.stages.Fire_III.label>Fuego (III)</TM_WeaponEnchantment_FireHD.stages.Fire_III.label>
+  
+  <TM_WeaponEnchantment_FireHD.stages.Fire_IV.label>Fuego (IV)</TM_WeaponEnchantment_FireHD.stages.Fire_IV.label>
+  
+  
+  <TM_WeaponEnchantment_IceHD.label>Arma encantada</TM_WeaponEnchantment_IceHD.label>
+  
+  <TM_WeaponEnchantment_IceHD.description>Encanta el arma equipada con hielo elemental que provoca congelación. Este encantamiento termina si el arma se desequipa o se cambia.</TM_WeaponEnchantment_IceHD.description>
+  
+  <TM_WeaponEnchantment_IceHD.stages.Ice_I.label>Hielo (I)</TM_WeaponEnchantment_IceHD.stages.Ice_I.label>
+  
+  <TM_WeaponEnchantment_IceHD.stages.Ice_II.label>Hielo (II)</TM_WeaponEnchantment_IceHD.stages.Ice_II.label>
+  
+  <TM_WeaponEnchantment_IceHD.stages.Ice_III.label>Hielo (III)</TM_WeaponEnchantment_IceHD.stages.Ice_III.label>
+  
+  <TM_WeaponEnchantment_IceHD.stages.Ice_IV.label>Hielo (IV)</TM_WeaponEnchantment_IceHD.stages.Ice_IV.label>
+  
+  
+  <TM_WeaponEnchantment_LitHD.label>Arma encantada</TM_WeaponEnchantment_LitHD.label>
+  
+  <TM_WeaponEnchantment_LitHD.description>Encanta el arma equipada con relámpagos elementales que envían ondas de choque aturdidoras a través de un objetivo. Este encantamiento termina si el arma se desequipa o se cambia.</TM_WeaponEnchantment_LitHD.description>
+  
+  <TM_WeaponEnchantment_LitHD.stages.Stun_I.label>Aturdimiento (I)</TM_WeaponEnchantment_LitHD.stages.Stun_I.label>
+  
+  <TM_WeaponEnchantment_LitHD.stages.Stun_II.label>Aturdimiento (II)</TM_WeaponEnchantment_LitHD.stages.Stun_II.label>
+  
+  <TM_WeaponEnchantment_LitHD.stages.Stun_III.label>Aturdimiento (III)</TM_WeaponEnchantment_LitHD.stages.Stun_III.label>
+  
+  <TM_WeaponEnchantment_LitHD.stages.Stun_IV.label>Aturdimiento (IV)</TM_WeaponEnchantment_LitHD.stages.Stun_IV.label>
+  
+</LanguageData>

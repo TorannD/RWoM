@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_MonkPalmSeal.label>Печать ладони</TM_MonkPalmSeal.label>
+  <TM_MonkPalmSeal.description>Ударьте соседнего врага без оружия: 16/22/28 духовного урона и прерывание на секунду. Базовая цена — 20 ци, перезарядка — 30 секунд.</TM_MonkPalmSeal.description>
+  <TM_MonkSilentMeridian.label>Безмолвный меридиан</TM_MonkSilentMeridian.label>
+  <TM_MonkSilentMeridian.description>Стойте на месте без оружия. После пяти секунд подготовки три импульса за двенадцать секунд наносят по 12 духовного урона четырём видимым врагам в радиусе пяти клеток. Первый оглушает на две секунды и снимает до 15% одного ресурса. Цена — 60% ци, перезарядка — двое суток.</TM_MonkSilentMeridian.description>
+</LanguageData>

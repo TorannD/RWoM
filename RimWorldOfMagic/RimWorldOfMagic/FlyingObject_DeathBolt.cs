@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using System;
 using System.Linq;
 using System.Collections.Generic;
@@ -14,8 +14,6 @@ namespace TorannMagic
         private static readonly Color lightningColor = new Color(160f, 160f, 160f);
         private static readonly Material OrbMat = MaterialPool.MatFrom("Spells/deathbolt", false);
 
-        protected new Vector3 origin;
-        protected new Vector3 destination;
 
         private int age = -1;
         private float arcaneDmg = 1;
@@ -30,7 +28,6 @@ namespace TorannMagic
         float radius = 1.4f;
 
         protected float speed = 30f;
-        protected new int ticksToImpact;
         private bool impacted = false;
         protected int ticksFollowingImpact =0;
 
@@ -96,9 +93,10 @@ namespace TorannMagic
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Values.Look<Vector3>(ref this.origin, "origin", default(Vector3), false);
-            Scribe_Values.Look<Vector3>(ref this.destination, "destination", default(Vector3), false);
-            Scribe_Values.Look<int>(ref this.ticksToImpact, "ticksToImpact", 0, false);
+            Scribe_Values.Look(ref arcaneDmg, "TM_deathBoltScale", 1f);
+            Scribe_Values.Look(ref reverseDirection, "TM_deathBoltReturning");
+            Scribe_Values.Look(ref ticksFollowingImpact, "TM_deathBoltAfterImpact");
+            Scribe_Values.Look(ref speed, "TM_deathBoltSpeed", def.projectile.speed);
             Scribe_Values.Look<int>(ref this.pwrVal, "pwrVal", 0, false);
             Scribe_Values.Look<int>(ref this.verVal, "verVal", 0, false);
             Scribe_Values.Look<float>(ref this.radius, "radius", 1.4f, false);
@@ -128,7 +126,7 @@ namespace TorannMagic
                     this.powered = true;
                 }
             }            
-            flyingThing.ThingID += Rand.Range(0, 214).ToString();
+
             this.initialized = false;
         }
 
@@ -144,7 +142,17 @@ namespace TorannMagic
 
         public void Launch(Thing launcher, Vector3 origin, LocalTargetInfo targ, Thing flyingThing, DamageInfo? newDamageInfo = null)
         {
-            bool spawned = flyingThing.Spawned;
+            LaunchCore(launcher, origin, targ, flyingThing, newDamageInfo, false);
+        }
+
+        internal void LaunchFromCaster(Pawn body, Pawn owner, LocalTargetInfo target)
+        {
+            LaunchCore(owner, body.Position.ToVector3Shifted(), target.Cell, null, null, body != owner);
+        }
+
+        private void LaunchCore(Thing launcher, Vector3 origin, LocalTargetInfo targ, Thing flyingThing, DamageInfo? newDamageInfo, bool hosted)
+        {
+            bool spawned = flyingThing?.Spawned == true;
             this.pawn = launcher as Pawn;
             CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
             if (comp != null)
@@ -172,19 +180,18 @@ namespace TorannMagic
                     }
                 }
                 this.arcaneDmg = comp.arcaneDmg;
-                pwrVal = TM_Calc.GetSkillPowerLevel(pawn, TorannMagicDefOf.TM_DeathBolt, true);
-                verVal = TM_Calc.GetSkillVersatilityLevel(pawn, TorannMagicDefOf.TM_DeathBolt, true);
-                //MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_DeathBolt.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_DeathBolt_pwr");
-                //MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_DeathBolt.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_DeathBolt_ver");
-                //verVal = ver.level;
-                //pwrVal = pwr.level;
-                //
-                //if (ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist)
-                //{
-                //    pwrVal = 1;
-                //    verVal = 1;
-                //}                
-            }      
+                if (hosted)
+                {
+                    var skills = comp.MagicData.MagicPowerSkill_DeathBolt;
+                    pwrVal = ClassProgression.Projectile_SpiritBolt.SpellRank(pawn, skills, "TM_DeathBolt", "_pwr");
+                    verVal = ClassProgression.Projectile_SpiritBolt.SpellRank(pawn, skills, "TM_DeathBolt", "_ver");
+                }
+                else
+                {
+                    pwrVal = TM_Calc.GetSkillPowerLevel(pawn, TorannMagicDefOf.TM_DeathBolt, true);
+                    verVal = TM_Calc.GetSkillVersatilityLevel(pawn, TorannMagicDefOf.TM_DeathBolt, true);
+                }
+            }
             else if (this.pawn.def == TorannMagicDefOf.TM_SkeletonLichR)
             {
                 pwrVal = Rand.RangeInclusive(0, 3);
@@ -199,27 +206,23 @@ namespace TorannMagic
             this.origin = origin;
             this.impactDamage = newDamageInfo;
             this.speed = this.def.projectile.speed;
-            this.flyingThing = flyingThing;
+            this.flyingThing = flyingThing?.GetType() == typeof(Thing) && flyingThing.def == def ? null : flyingThing;
             bool flag = targ.Thing != null;
             if (flag)
             {
                 this.assignedTarget = targ.Thing;
             }
-            float distanceAccuracyModifier = (targ.Cell.ToVector3Shifted() - this.pawn.Position.ToVector3Shifted()).MagnitudeHorizontal() *.1f;
+            float distanceAccuracyModifier = (targ.Cell.ToVector3Shifted() - origin).MagnitudeHorizontal() *.1f;
             this.destination = targ.Cell.ToVector3Shifted() + new Vector3(Rand.Range(-distanceAccuracyModifier, distanceAccuracyModifier), 0f, Rand.Range(-distanceAccuracyModifier, distanceAccuracyModifier));
             this.ticksToImpact = this.StartingTicksToImpact;
             this.Initialize();
         }
 
+        // The orb has its own flight and impact simulation; its speed must not depend on camera distance.
+        protected override void TickInterval(int delta) { }
+
         protected override void Tick()
         {
-
-        }
-
-        protected override void TickInterval(int delta)
-        {
-
-            //base.Tick();
             age++;
             if (this.ticksToImpact >= 0)
             {
@@ -234,18 +237,20 @@ namespace TorannMagic
                 this.ticksToImpact--;
             }
             this.ticksFollowingImpact--;
-            base.Position = this.ExactPosition.ToIntVec3();
             bool flag = !this.ExactPosition.InBoundsWithNullCheck(base.Map);
             if (flag)
             {
                 this.ticksToImpact++;
                 this.Destroy(DestroyMode.Vanish);
+                return;
             }
-            else if (!this.ExactPosition.ToIntVec3().Walkable(base.Map) && !this.ExactPosition.ToIntVec3().CanBeSeenOverFast(this.Map))
+            base.Position = this.ExactPosition.ToIntVec3();
+            if (!this.ExactPosition.ToIntVec3().Walkable(base.Map) && !this.ExactPosition.ToIntVec3().CanBeSeenOverFast(this.Map))
             {
                 if (this.reverseDirection)
                 {
                     this.Destroy(DestroyMode.Vanish);
+                    return;
                 }
                 else
                 {
@@ -274,7 +279,7 @@ namespace TorannMagic
                     CellRect cellRect = CellRect.CenteredOn(base.Position, 2);
                     cellRect.ClipInsideMap(base.Map);
                     IntVec3 spreadingDarknessCell;
-                    if(!(cellRect.CenterCell.GetTerrain(base.Map).passability == Traversability.Impassable) && !cellRect.CenterCell.IsValid || !cellRect.CenterCell.InBoundsWithNullCheck(base.Map))
+                    if (!cellRect.CenterCell.IsValid || !cellRect.CenterCell.InBoundsWithNullCheck(base.Map))
                     {
                         this.ticksFollowingImpact = -1;
                     }
@@ -309,10 +314,10 @@ namespace TorannMagic
 
         protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
-            bool flag = this.flyingThing != null && !this.impacted;
+            bool flag = !this.impacted;
             if (flag)
             {
-                Graphics.DrawMesh(MeshPool.plane10, this.DrawPos, this.ExactRotation, this.flyingThing.def.DrawMatSingle, 0);
+                Graphics.DrawMesh(MeshPool.plane10, this.DrawPos, this.ExactRotation, (this.flyingThing?.def ?? def).DrawMatSingle, 0);
                 base.Comps_PostDraw();
             }
         }

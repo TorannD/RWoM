@@ -44,11 +44,12 @@
     <interactionCellOffset>(0,0,-2)</interactionCellOffset>
     <hasInteractionCell>true</hasInteractionCell>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
-    <designationCategory>Misc</designationCategory>
+    <designationCategory>TM_RWoM</designationCategory>
 		<building>
 			<ai_chillDestination>false</ai_chillDestination>
 		</building>
     <comps>
+      <li Class="TorannMagic.Visuals.CompProperties_LegacyBuildingEffects"><effect>Portal</effect></li>
 		<li Class="CompProperties_Explosive">
         <explosiveRadius>9.9</explosiveRadius>
         <explosiveDamageType>TM_ManaMine</explosiveDamageType>

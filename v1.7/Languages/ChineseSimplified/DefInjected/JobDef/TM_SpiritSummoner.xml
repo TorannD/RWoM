@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritSummonMinion.reportString>正通过宿主的身体召唤仆从。</TM_SpiritSummonMinion.reportString>
+  <TM_SpiritSummonElemental.reportString>正通过宿主的身体召唤元素生物。</TM_SpiritSummonElemental.reportString>
+  <TM_SpiritSummonPylon.reportString>正通过宿主的身体召唤防御塔。</TM_SpiritSummonPylon.reportString>
+  <TM_SpiritSummonExplosive.reportString>正通过宿主的身体召唤法力地雷。</TM_SpiritSummonExplosive.reportString>
+  <TM_SpiritSummonPoppi.reportString>正通过宿主的身体召唤波比。</TM_SpiritSummonPoppi.reportString>
+  <TM_SpiritPack.reportString>正通过宿主的身体召唤灵狼。</TM_SpiritPack.reportString>
+  <TM_SpiritPack_I.reportString>正通过宿主的身体召唤灵狼。</TM_SpiritPack_I.reportString>
+  <TM_SpiritPack_II.reportString>正通过宿主的身体召唤灵狼。</TM_SpiritPack_II.reportString>
+  <TM_SpiritPack_III.reportString>正通过宿主的身体召唤灵狼。</TM_SpiritPack_III.reportString>
+  <TM_SpiritDismissMinion.reportString>正通过宿主的身体遣散仆从。</TM_SpiritDismissMinion.reportString>
+</LanguageData>

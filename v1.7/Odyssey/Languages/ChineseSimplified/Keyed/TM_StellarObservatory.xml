@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_StellarRitual>开始占星（仪式）</TM_StellarRitual>
+  <TM_StellarIdle>空闲：需要占星仪式</TM_StellarIdle>
+  <TM_StellarSearching>搜索中：剩余{0}</TM_StellarSearching>
+  <TM_StellarWaiting>搜索完成：等待符合条件的轨道目的地</TM_StellarWaiting>
+  <TM_StellarCooldown>魔法搜索共用冷却：{0}</TM_StellarCooldown>
+  <TM_StellarUnavailable>需要可运行的天文台、一名法师、网络中的100魔力和50魔能燃料、符合条件的轨道目的地，且共用冷却已结束。</TM_StellarUnavailable>
+  <TM_StellarDiscovery>占星揭示了</TM_StellarDiscovery>
+</LanguageData>

@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <NuGetAudit>false</NuGetAudit>
+    <DefaultItemExcludes>$(DefaultItemExcludes);obj/**;bin/**</DefaultItemExcludes>
+    <CoreAssemblyPath Condition="'$(CoreAssemblyPath)' == ''">$(RWoMCoreDir)/Assemblies/TorannMagic.Core.dll</CoreAssemblyPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp" HintPath="$(GameDir)/Assembly-CSharp.dll" Private="false" />
+    <Reference Include="UnityStubs" HintPath="$(GameDir)/UnityStubs.dll" Private="false" />
+    <Reference Include="TorannMagic.Core" HintPath="$(CoreAssemblyPath)" Private="false" />
+  </ItemGroup>
+</Project>

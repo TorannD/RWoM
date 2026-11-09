@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ManaNetworkModeOff>Desligado</TM_ManaNetworkModeOff>
+  <TM_ManaNetworkModeSend>Enviar</TM_ManaNetworkModeSend>
+  <TM_ManaNetworkModeReceive>Receber</TM_ManaNetworkModeReceive>
+  <TM_ManaNetworkManaMode>Mana: {0}</TM_ManaNetworkManaMode>
+  <TM_ManaNetworkFuelMode>Magocombustível: {0}</TM_ManaNetworkFuelMode>
+  <TM_ManaNetworkModeDesc>Escolha se este edifício envia, recebe ou ignora este recurso através dos sinalizadores de mana próximos.</TM_ManaNetworkModeDesc>
+  <TM_ManaNetworkTarget>Meta de mana: {0}</TM_ManaNetworkTarget>
+  <TM_ManaNetworkTargetDesc>Defina a reserva de mana pretendida entre 10% e 100% da capacidade.</TM_ManaNetworkTargetDesc>
+  <TM_ManaNetworkConnected>Rede de sinalizadores: ligada</TM_ManaNetworkConnected>
+  <TM_ManaNetworkDisconnected>Rede de sinalizadores: desligada</TM_ManaNetworkDisconnected>
+  <TM_ManaBeaconInspect>Sinalizadores ligados: {0}\nAlcance: 5 células\nTransferência da rede: 10 de mana e 5 de magocombustível por segundo</TM_ManaBeaconInspect>
+  <TM_ManaNetworkUnsupportedFuel>Transferência de magocombustível indisponível: definições de combustível incompatíveis.</TM_ManaNetworkUnsupportedFuel>
+  <TM_ManaNetworkManaPriority>Prioridade de mana: {0}</TM_ManaNetworkManaPriority>
+  <TM_ManaNetworkFuelPriority>Prioridade de magocombustível: {0}</TM_ManaNetworkFuelPriority>
+  <TM_ManaNetworkPriorityDesc>As transferências automáticas dos sinalizadores abastecem primeiro as prioridades altas. As prioridades iguais alternam-se. Mana e magocombustível são independentes. As alterações aplicam-se a partir do próximo pulso.</TM_ManaNetworkPriorityDesc>
+  <TM_ManaNetworkPriority1>1: Normal</TM_ManaNetworkPriority1>
+  <TM_ManaNetworkPriority2>2: Média</TM_ManaNetworkPriority2>
+  <TM_ManaNetworkPriority3>3: Alta</TM_ManaNetworkPriority3>
+</LanguageData>

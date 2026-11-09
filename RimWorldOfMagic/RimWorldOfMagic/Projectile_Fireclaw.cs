@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using Verse;
 using AbilityUser;
 using UnityEngine;
@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace TorannMagic
 {
-	class Projectile_Fireclaw : Projectile_AbilityBase
+	class Projectile_Fireclaw : ClassProgression.Projectile_SpiritBolt
 	{
 		private IntVec3 strikeLoc = IntVec3.Invalid;
 
@@ -29,9 +29,8 @@ namespace TorannMagic
         float angleDeg = 0;
         float xProb = 0;
 
-        private int verVal;
-        private int pwrVal;
-        private float arcaneDmg = 1;
+        protected override System.Collections.Generic.List<MagicPowerSkill> Skills(MagicData data) => data.MagicPowerSkill_Fireclaw;
+        protected override string SkillStem => "TM_Fireclaw";
 
         //private List<IntVec3> currentPos = new List<IntVec3>();
         //private List<int> posAge =  new List<int>();
@@ -98,6 +97,49 @@ namespace TorannMagic
         private float posx5weight = (float)Rand.Range(-100, 100) / 300;
         private float posz5weight = (float)Rand.Range(-100, 100) / 300;
 
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            if (!projected) return;
+            Scribe_Values.Look(ref age, "age", -1);
+            Scribe_Values.Look(ref duration, "duration", 60);
+            Scribe_Values.Look(ref lastStrike, "lastStrike");
+            Scribe_Values.Look(ref cflag, "calculateDirection", true);
+            Scribe_Values.Look(ref oflag, "startPath", true);
+            Scribe_Values.Look(ref primed, "primed", true);
+            Scribe_Values.Look(ref xProb, "directionWeight");
+            ExposeTendril("root", ref currentPos, ref posFlag, ref posFlagw, ref posAge);
+            ExposeTendril("1", ref currentPos1, ref pos1Flag, ref pos1Flagw, ref pos1Age);
+            ExposeTendril("11", ref currentPos11, ref pos11Flag, ref pos11Flagw, ref pos11Age);
+            ExposeTendril("12", ref currentPos12, ref pos12Flag, ref pos12Flagw, ref pos12Age);
+            ExposeTendril("2", ref currentPos2, ref pos2Flag, ref pos2Flagw, ref pos2Age);
+            ExposeTendril("21", ref currentPos21, ref pos21Flag, ref pos21Flagw, ref pos21Age);
+            ExposeTendril("22", ref currentPos22, ref pos22Flag, ref pos22Flagw, ref pos22Age);
+            ExposeTendril("3", ref currentPos3, ref pos3Flag, ref pos3Flagw, ref pos3Age);
+            ExposeTendril("31", ref currentPos31, ref pos31Flag, ref pos31Flagw, ref pos31Age);
+            ExposeTendril("4", ref currentPos4, ref pos4Flag, ref pos4Flagw, ref pos4Age);
+            ExposeTendril("5", ref currentPos5, ref pos5Flag, ref pos5Flagw, ref pos5Age);
+            ExposeWeight("1", ref posx1weight, ref posz1weight);
+            ExposeWeight("2", ref posx2weight, ref posz2weight);
+            ExposeWeight("3", ref posx3weight, ref posz3weight);
+            ExposeWeight("4", ref posx4weight, ref posz4weight);
+            ExposeWeight("5", ref posx5weight, ref posz5weight);
+        }
+
+        private static void ExposeTendril(string key, ref IntVec3 cell, ref bool active, ref bool growing, ref int start)
+        {
+            Scribe_Values.Look(ref cell, "cell" + key, IntVec3.Invalid);
+            Scribe_Values.Look(ref active, "active" + key);
+            Scribe_Values.Look(ref growing, "growing" + key, true);
+            Scribe_Values.Look(ref start, "start" + key);
+        }
+
+        private static void ExposeWeight(string key, ref float x, ref float z)
+        {
+            Scribe_Values.Look(ref x, "weightX" + key);
+            Scribe_Values.Look(ref z, "weightZ" + key);
+        }
+
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
 		{
 			bool flag = this.age < duration;
@@ -113,23 +155,25 @@ namespace TorannMagic
             Map map = base.Map;
             base.Impact(hitThing);
             
-            Pawn pawn = this.launcher as Pawn;
-            CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
-            MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Fireclaw.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Fireclaw_pwr");
-            MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Fireclaw.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Fireclaw_ver");
-            pwrVal = pwr.level;
-            verVal = ver.level;
-            if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+            if (!projected)
             {
-                MightPowerSkill mpwr = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-                MightPowerSkill mver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
-                pwrVal = mpwr.level;
-                verVal = mver.level;
-            }
-            if (ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist)
-            {
-                pwrVal = 3;
-                verVal = 3;
+                Pawn pawn = this.launcher as Pawn;
+                MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Fireclaw.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Fireclaw_pwr");
+                MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Fireclaw.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Fireclaw_ver");
+                pwrVal = pwr.level;
+                verVal = ver.level;
+                if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+                {
+                    MightPowerSkill mpwr = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
+                    MightPowerSkill mver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
+                    pwrVal = mpwr.level;
+                    verVal = mver.level;
+                }
+                if (ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist)
+                {
+                    pwrVal = 3;
+                    verVal = 3;
+                }
             }
             IntVec3 target = base.Position;
             IntVec3 origin = this.origin.ToIntVec3();
@@ -578,7 +622,7 @@ namespace TorannMagic
 			ThingDef def = this.def;
             try
             {
-                Explosion(pwr, pos, map, radius, DamageDefOf.Burn, this.launcher, null, def, this.equipmentDef, ThingDefOf.Filth_Ash, 0.4f, 1, false, null, 0f, 1);
+                Explosion(pwr, pos, map, radius, DamageDefOf.Burn, SpellInstigator, null, def, this.equipmentDef, ThingDefOf.Filth_Ash, 0.4f, 1, false, null, 0f, 1);
             }
             catch
             {
@@ -689,6 +733,7 @@ namespace TorannMagic
 			explosion.postExplosionSpawnChance = postExplosionSpawnChance;
 			explosion.postExplosionSpawnThingCount = postExplosionSpawnThingCount;
 			explosion.applyDamageToExplosionCellsNeighbors = applyDamageToExplosionCellsNeighbors;
+            ClassProgression.FireclawTrial.Stamp(explosion, this.thingIDNumber);
             explosion.StartExplosion(explosionSound, null);
 		}
 

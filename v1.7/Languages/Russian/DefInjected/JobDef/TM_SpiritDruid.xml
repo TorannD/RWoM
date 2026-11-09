@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritCureDisease.reportString>излечивает болезнь через тело носителя.</TM_SpiritCureDisease.reportString>
+  <TM_SpiritSootheAnimal.reportString>успокаивает животных через тело носителя.</TM_SpiritSootheAnimal.reportString>
+  <TM_SpiritSootheAnimal_I.reportString>успокаивает животных через тело носителя.</TM_SpiritSootheAnimal_I.reportString>
+  <TM_SpiritSootheAnimal_II.reportString>успокаивает животных через тело носителя.</TM_SpiritSootheAnimal_II.reportString>
+  <TM_SpiritSootheAnimal_III.reportString>успокаивает животных через тело носителя.</TM_SpiritSootheAnimal_III.reportString>
+  <TM_SpiritRainmaker.reportString>меняет погоду через тело носителя.</TM_SpiritRainmaker.reportString>
+  <TM_SpiritRegrowLimb.reportString>создаёт семя регенерации через носителя духа.</TM_SpiritRegrowLimb.reportString>
+  <TM_SpiritPoison.reportString>накладывает яд через носителя духа.</TM_SpiritPoison.reportString>
+</LanguageData>

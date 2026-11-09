@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritSunfire.reportString>calling down sunfire through a spirit host.</TM_SpiritSunfire.reportString>
+  <TM_SpiritSunfire_I.reportString>calling down sunfire through a spirit host.</TM_SpiritSunfire_I.reportString>
+  <TM_SpiritSunfire_II.reportString>calling down sunfire through a spirit host.</TM_SpiritSunfire_II.reportString>
+  <TM_SpiritSunfire_III.reportString>calling down sunfire through a spirit host.</TM_SpiritSunfire_III.reportString>
+  <TM_SpiritLightBurst.reportString>casting light burst through a spirit host.</TM_SpiritLightBurst.reportString>
+  <TM_SpiritLightLance.reportString>casting light lance through a spirit host.</TM_SpiritLightLance.reportString>
+  <TM_SpiritRefraction.reportString>casting refraction through a spirit host.</TM_SpiritRefraction.reportString>
+  <TM_SpiritLightSkip.reportString>traveling by light through a spirit host.</TM_SpiritLightSkip.reportString>
+  <TM_SpiritLightSkipMass.reportString>transporting a group by light through a spirit host.</TM_SpiritLightSkipMass.reportString>
+  <TM_SpiritLightSkipGlobal.reportString>choosing a world destination for light travel.</TM_SpiritLightSkipGlobal.reportString>
+  <TM_SpiritSoL_CreateLight.reportString>directing a spirit of light.</TM_SpiritSoL_CreateLight.reportString>
+  <TM_SpiritSoL_Equalize.reportString>sharing light with a spirit of light.</TM_SpiritSoL_Equalize.reportString>
+  <TM_SpiritSpiritOfLight.reportString>summoning a spirit of light through a host.</TM_SpiritSpiritOfLight.reportString>
+</LanguageData>

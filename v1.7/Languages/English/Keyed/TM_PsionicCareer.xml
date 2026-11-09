@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_ReadPsionicProjector>Study kinetic projection</TM_ReadPsionicProjector>
+  <TM_ReadPsionicAccelerator>Study kinetic acceleration</TM_ReadPsionicAccelerator>
+  <TM_PsionicFoundationTrial>Absorb or deal {0}/200 hostile kinetic damage, or finish {1}/20 disaster repairs on different buildings.</TM_PsionicFoundationTrial>
+  <TM_PsionicAdeptTrial>Rescue {0}/10 different injured allies or deliver {1}/30 emergency supplies while an ally is downed (one per hour).</TM_PsionicAdeptTrial>
+  <TM_PsionicMasterTrial>Complete {0}/12 days of kinetic service. Might level {1}/30.</TM_PsionicMasterTrial>
+  <TM_PsionicAdvance>Claim next stage</TM_PsionicAdvance>
+  <TM_PsionicCrucibleUnavailable>Requires 60% psi energy and 30% stamina.</TM_PsionicCrucibleUnavailable>
+  <TM_PsionicProjectorInfo>Projection saves 10% psi on intercepted shots. Blast deals 10% less damage.</TM_PsionicProjectorInfo>
+  <TM_PsionicAcceleratorInfo>Blast deals 8% more damage. Psi regeneration pauses while channeling a barrier.</TM_PsionicAcceleratorInfo>
+</LanguageData>

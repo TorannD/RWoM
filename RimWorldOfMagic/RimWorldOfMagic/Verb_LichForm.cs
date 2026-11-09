@@ -13,6 +13,11 @@ namespace TorannMagic
 
         protected override bool TryCastShot()
         {
+            if (ClassProgression.ClassIdentity.TryGetState(base.CasterPawn, out _))
+            {
+                this.burstShotsLeft = 0;
+                return ClassProgression.LichTransformation.TryTransform(base.CasterPawn, this.Ability);
+            }
             Map map = base.CasterPawn.Map;
             Pawn pawn = base.CasterPawn;
             CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();

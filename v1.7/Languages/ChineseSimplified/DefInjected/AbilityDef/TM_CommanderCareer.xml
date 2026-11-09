@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_Bridge_CommanderWorkCrew.label>工作队</TM_Bridge_CommanderWorkCrew.label>
+  <TM_Bridge_CommanderWorkCrew.description>最多三名接受命令的盟友在10秒内工作速度提高10/15/20%。消耗20%耐力，冷却45秒。</TM_Bridge_CommanderWorkCrew.description>
+  <TM_Bridge_CommanderRally.label>集合点</TM_Bridge_CommanderRally.label>
+  <TM_Bridge_CommanderRally.description>范围12格。半径3格内最多2/3/4名接受命令的盟友在8秒内获得15点防护。消耗25%耐力，冷却40秒。</TM_Bridge_CommanderRally.description>
+  <TM_Bridge_CommanderOperationEvac.label>全员归队：撤离</TM_Bridge_CommanderOperationEvac.label>
+  <TM_Bridge_CommanderOperationEvac.description>准备5秒后，最多四名盟友移动速度提高20%并获25点防护，持续20秒。需要视野。消耗60%耐力，两种行动共享两天冷却。</TM_Bridge_CommanderOperationEvac.description>
+  <TM_Bridge_CommanderOperationAid.label>全员归队：紧急工作</TM_Bridge_CommanderOperationAid.label>
+  <TM_Bridge_CommanderOperationAid.description>准备5秒后，最多四名盟友在20秒内加快救援、治疗或维修。材料正常消耗，两种行动共享两天冷却。</TM_Bridge_CommanderOperationAid.description>
+</LanguageData>

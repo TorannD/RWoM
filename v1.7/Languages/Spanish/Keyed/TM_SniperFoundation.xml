@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_ReadSniperFocus>Concentración — mejor puntería, trabajo más lento (permanente)</TM_ReadSniperFocus>
+  <TM_ReadSniperPatientAim>Mira paciente — apunta más rápido tras 3 s sin moverse (permanente)</TM_ReadSniperPatientAim>
+  <TM_PatientAimName>Mira paciente</TM_PatientAimName>
+  <TM_PatientAimDescription>Tras 3 segundos sin moverse, el tiempo de apuntado baja un 2%. Moverse anula el efecto.</TM_PatientAimDescription>
+  <TM_PatientAimTraining>Cada rango reduce el tiempo de apuntado otros 2 puntos porcentuales, hasta el 10%.</TM_PatientAimTraining>
+</LanguageData>

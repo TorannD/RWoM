@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_Greater_Sentinel.label>centinela mayor</TM_Greater_Sentinel.label>
+  
+  <TM_Greater_Sentinel.lifeStages.greater_sentinel.label>centinela mayor</TM_Greater_Sentinel.lifeStages.greater_sentinel.label>
+  
+  <TM_Greater_Sentinel.lifeStages.greater_sentinel.labelPlural>centinelas de piedra</TM_Greater_Sentinel.lifeStages.greater_sentinel.labelPlural>
+  
+  
+  <TM_Lesser_Sentinel.label>centinela menor</TM_Lesser_Sentinel.label>
+  
+  <TM_Lesser_Sentinel.lifeStages.lesser_sentinel.label>centinela menor</TM_Lesser_Sentinel.lifeStages.lesser_sentinel.label>
+  
+  <TM_Lesser_Sentinel.lifeStages.lesser_sentinel.labelPlural>centinelas de piedra</TM_Lesser_Sentinel.lifeStages.lesser_sentinel.labelPlural>
+  
+  
+  <TM_Sentinel.label>centinela</TM_Sentinel.label>
+  
+  <TM_Sentinel.lifeStages.sentinel.label>centinela</TM_Sentinel.lifeStages.sentinel.label>
+  
+  <TM_Sentinel.lifeStages.sentinel.labelPlural>centinelas de piedra</TM_Sentinel.lifeStages.sentinel.labelPlural>
+  
+</LanguageData>

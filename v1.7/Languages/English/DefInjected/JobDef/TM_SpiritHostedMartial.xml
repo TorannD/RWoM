@@ -1,0 +1,16 @@
+<LanguageData>
+  <TM_SpiritCastManeuver.reportString>performing a gladiator maneuver.</TM_SpiritCastManeuver.reportString>
+  <TM_SpiritCastFirstAid.reportString>tending wounds.</TM_SpiritCastFirstAid.reportString>
+  <TM_SpiritCastPommelStrike.reportString>striking TargetB with a pommel blow.</TM_SpiritCastPommelStrike.reportString>
+  <TM_SpiritCastSprint.reportString>changing sprint stance.</TM_SpiritCastSprint.reportString>
+  <TM_SpiritCastStrongBack.reportString>bracing to carry a load.</TM_SpiritCastStrongBack.reportString>
+  <TM_SpiritCastHeavyBlow.reportString>adjusting heavy blow stance.</TM_SpiritCastHeavyBlow.reportString>
+  <TM_SpiritCastThickSkin.reportString>bracing for impact.</TM_SpiritCastThickSkin.reportString>
+  <TM_SpiritCastFightersFocus.reportString>focusing on melee combat.</TM_SpiritCastFightersFocus.reportString>
+  <TM_SpiritCastGearRepair.reportString>maintaining worn equipment.</TM_SpiritCastGearRepair.reportString>
+  <TM_SpiritCastInnerHealing.reportString>focusing on recovery.</TM_SpiritCastInnerHealing.reportString>
+  <TM_SpiritCastHeadshot.reportString>aiming a headshot at TargetB.</TM_SpiritCastHeadshot.reportString>
+  <TM_SpiritCastDisablingShot.reportString>firing a disabling shot at TargetB.</TM_SpiritCastDisablingShot.reportString>
+  <TM_SpiritCastAntiArmor.reportString>firing an anti-armor shot at TargetB.</TM_SpiritCastAntiArmor.reportString>
+  <TM_SpiritCastShadowSlayer.reportString>activating the shadow slayer cloak.</TM_SpiritCastShadowSlayer.reportString>
+</LanguageData>

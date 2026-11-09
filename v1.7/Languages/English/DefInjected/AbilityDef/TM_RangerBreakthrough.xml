@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_Bridge_RangerBreakthrough.label>Breakthrough Hunt</TM_Bridge_RangerBreakthrough.label>
+  <TM_Bridge_RangerBreakthrough.description>With your bonded animal within 12 cells, mark an enemy and up to two nearby foes within bow range (maximum 30 cells). Aim for 5 seconds and fire 6 arrows over 20 seconds at 70% bow damage. The animal covers two hostile weapon hits, absorbing up to 25 damage each. Move speed falls by 20% during the volley. Base cost: 60% stamina, cooldown: two days. Interrupted preparation costs 6% stamina.</TM_Bridge_RangerBreakthrough.description>
+</LanguageData>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ReadMonkRestorative>疗愈冥想 — 保留传统疗愈冥想。</TM_ReadMonkRestorative>
+  <TM_ReadMonkCultivation>专注修炼 — 连续冥想600刻，按掌印等级获得6/8/10点气。</TM_ReadMonkCultivation>
+  <TM_MonkFoundationTrial>打断敌人准备动作：{0}/8，或包扎不同伤口：{1}/20。</TM_MonkFoundationTrial>
+  <TM_MonkAdeptTrial>在24小时内完成修炼和医疗救助：{0}/10天。</TM_MonkAdeptTrial>
+  <TM_MonkMasterTrial>徒手救援盟友：{0}/8，或徒手扑灭家园火灾：{1}/10天。武者等级{2}/30。</TM_MonkMasterTrial>
+  <TM_MonkSealRank>掌印等级 {0}/3</TM_MonkSealRank>
+  <TM_MonkAdvance>晋升</TM_MonkAdvance>
+  <TM_MonkMeridianUnavailable>需要飞升、徒手、60%的气，且技能已冷却。</TM_MonkMeridianUnavailable>
+</LanguageData>

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
@@ -9,12 +9,13 @@ using UnityEngine;
 
 namespace TorannMagic
 {
-    public class Verb_ToggleHediff : Verb_UseAbility
+    public class Verb_ToggleHediff : ClassProgression.Verb_SpiritTargetable
     {
         protected override bool TryCastShot()
         {
             Pawn caster = base.CasterPawn;
-            Pawn pawn = this.currentTarget.Thing as Pawn;
+            var owner = ClassProgression.SpiritRebirthCasting.SkillOwner(caster, Ability);
+            if (owner == null) return false;
 
             bool flag = caster != null && !caster.Dead;
             if (flag)
@@ -26,11 +27,19 @@ namespace TorannMagic
                     if (caster.health.hediffSet.HasHediff(hdDef))
                     {
                         Hediff hd = caster.health.hediffSet.GetFirstHediffOfDef(hdDef);
+                        if (owner != caster && hd.TryGetComp<HediffComp_SuppressiveAura>()?.SourceId != owner.thingIDNumber) return false;
                         caster.health.RemoveHediff(hd);
                     }
                     else
                     {
+                        var empathTrial = ClassProgression.EmpathTrials.CaptureAura(this.Ability, caster);
                         HealthUtility.AdjustSeverity(caster, hdDef, hdDef.initialSeverity);
+                        if (owner != caster)
+                        {
+                            var emitter = caster.health.hediffSet.GetFirstHediffOfDef(hdDef)?.TryGetComp<HediffComp_SuppressiveAura>();
+                            if (emitter != null) emitter.SourceId = owner.thingIDNumber;
+                        }
+                        ClassProgression.EmpathTrials.CompleteAura(empathTrial);
                         if (caster.Map != null)
                         {
                             FleckMaker.ThrowLightningGlow(caster.DrawPos, caster.Map, 1f);
@@ -38,7 +47,7 @@ namespace TorannMagic
                         }
                     }
 
-                    CompAbilityUserMagic magicComp = caster.GetCompAbilityUserMagic();
+                    CompAbilityUserMagic magicComp = owner.GetCompAbilityUserMagic();
                     if(magicComp != null && magicComp.MagicData != null)
                     {
                         MagicPower mp = magicComp.MagicData.ReturnMatchingMagicPower(ability);
@@ -47,7 +56,7 @@ namespace TorannMagic
                             mp.autocast = caster.health.hediffSet.HasHediff(hdDef);
                         }
                     }
-                    CompAbilityUserMight mightComp = caster.GetCompAbilityUserMight();
+                    CompAbilityUserMight mightComp = owner.GetCompAbilityUserMight();
                     if (mightComp != null && mightComp.MightData != null)
                     {
                         MightPower mp = mightComp.MightData.ReturnMatchingMightPower(ability);

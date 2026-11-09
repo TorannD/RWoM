@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-<!-- Summon Minion Start-->
+
    <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>TorannMagic.Projectile_SummonMinion</thingClass>
+        <comps><li><compClass>TorannMagic.ClassProgression.CompHostedSummon</compClass></li></comps>
 	    <defName>Projectile_SummonMinion</defName>
         <label>summon minion</label>
         <graphicData>
@@ -18,7 +18,7 @@
             <damageAmountBase>0</damageAmountBase>
             <speed>200</speed>
         </projectile>
-    </ThingDef>
+</ThingDef>
 	
   <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_SummonMinion</defName>
@@ -54,7 +54,14 @@
 		 <canTargetLocations>true</canTargetLocations>
         </targetParams>
     </MainVerb>
- </TorannMagic.TMAbilityDef>
+ <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_summonminion</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
  
    <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_DismissMinion</defName>
@@ -89,13 +96,21 @@
 		 <canTargetLocations>false</canTargetLocations>
         </targetParams>
     </MainVerb>
- </TorannMagic.TMAbilityDef>
+ <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_dismissminion</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
  
-<!-- Summon minion end-->
 
-<!-- Summon pylon Start-->
+
+
    <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>TorannMagic.Projectile_SummonPylon</thingClass>
+        <comps><li><compClass>TorannMagic.ClassProgression.CompHostedSummon</compClass></li></comps>
 	    <defName>Projectile_SummonPylon</defName>
         <label>summon defense pylon</label>
         <graphicData>
@@ -109,7 +124,7 @@
             <damageAmountBase>0</damageAmountBase>
             <speed>200</speed>
         </projectile>
-    </ThingDef>
+</ThingDef>
 	
   <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_SummonPylon</defName>
@@ -145,13 +160,21 @@
 		 <canTargetLocations>true</canTargetLocations>
         </targetParams>
     </MainVerb>
- </TorannMagic.TMAbilityDef>
+ <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_summonpylon</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
  
-<!-- Summon pylon end-->
 
-<!-- Summon explosive Start-->
+
+
    <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>TorannMagic.Projectile_SummonExplosive</thingClass>
+        <comps><li><compClass>TorannMagic.ClassProgression.CompHostedSummon</compClass></li></comps>
 	    <defName>Projectile_SummonExplosive</defName>
         <label>summon explosive trap</label>
         <graphicData>
@@ -165,7 +188,7 @@
             <damageAmountBase>0</damageAmountBase>
             <speed>200</speed>
         </projectile>
-    </ThingDef>
+</ThingDef>
 	
   <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_SummonExplosive</defName>
@@ -201,13 +224,21 @@
 		 <canTargetLocations>true</canTargetLocations>
         </targetParams>
     </MainVerb>
- </TorannMagic.TMAbilityDef>
+ <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_summonexplosive</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
  
-<!-- Summon explosive end-->
 
-<!-- Summon Elemental Start-->
+
+
    <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>TorannMagic.Projectile_SummonElemental</thingClass>
+        <comps><li><compClass>TorannMagic.ClassProgression.CompHostedSummon</compClass></li></comps>
 	    <defName>Projectile_SummonElemental</defName>
         <label>summon elemental</label>
         <graphicData>
@@ -221,7 +252,7 @@
             <damageAmountBase>0</damageAmountBase>
             <speed>200</speed>
         </projectile>
-    </ThingDef>
+</ThingDef>
 	
   <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_SummonElemental</defName>
@@ -257,13 +288,21 @@
 		 <canTargetLocations>true</canTargetLocations>
         </targetParams>
     </MainVerb>
- </TorannMagic.TMAbilityDef>
+ <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_summonelemental</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
  
-<!-- Summon elemental end-->
 
-<!-- Summon Poppi Start-->
+
+
    <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>TorannMagic.Projectile_SummonPoppi</thingClass>
+        <comps><li><compClass>TorannMagic.ClassProgression.CompHostedSummon</compClass></li></comps>
 	    <defName>Projectile_SummonPoppi</defName>
         <label>summon poppi</label>
         <graphicData>
@@ -279,7 +318,7 @@
 			<explosionRadius>4</explosionRadius>
 			<postExplosionSpawnChance>1</postExplosionSpawnChance>
         </projectile>
-    </ThingDef>
+</ThingDef>
 	
   <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_SummonPoppi</defName>
@@ -315,7 +354,14 @@
 		 <canTargetLocations>true</canTargetLocations>
         </targetParams>
     </MainVerb>
- </TorannMagic.TMAbilityDef>
+ <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_summonpoppi</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
  
 
 </Defs>

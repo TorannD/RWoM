@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_RangerSafeTrail.label>Безопасная тропа</TM_RangerSafeTrail.label>
+  <TM_RangerSafeTrail.description>Отмечает на 8 секунд видимый проходимый маршрут длиной до 8 клеток. Первые два союзника, вступившие на тропу, движутся по ней на 15% быстрее. Закрытая дверь или препятствие обрывают тропу. Базовая стоимость — 20% выносливости, перезарядка — 40 секунд.</TM_RangerSafeTrail.description>
+</LanguageData>

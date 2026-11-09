@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_Demon.label>demonio</TM_Demon.label>
+  
+  <TM_Demon.lifeStages.demon.label>demonio</TM_Demon.lifeStages.demon.label>
+  
+  <TM_Demon.lifeStages.demon.labelPlural>demonios</TM_Demon.lifeStages.demon.labelPlural>
+  
+  
+  <TM_LesserDemon.label>demonio menor</TM_LesserDemon.label>
+  
+  <TM_LesserDemon.lifeStages.demon.label>demonio</TM_LesserDemon.lifeStages.demon.label>
+  
+  <TM_LesserDemon.lifeStages.demon.labelPlural>demonios</TM_LesserDemon.lifeStages.demon.labelPlural>
+  
+</LanguageData>

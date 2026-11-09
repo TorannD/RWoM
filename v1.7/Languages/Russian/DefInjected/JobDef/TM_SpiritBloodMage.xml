@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritBloodShield.reportString>создаёт кровавый щит.</TM_SpiritBloodShield.reportString>
+  <TM_SpiritBloodMoon.reportString>призывает кровавую луну.</TM_SpiritBloodMoon.reportString>
+  <TM_SpiritBloodMoon_I.reportString>призывает кровавую луну.</TM_SpiritBloodMoon_I.reportString>
+  <TM_SpiritBloodMoon_II.reportString>призывает кровавую луну.</TM_SpiritBloodMoon_II.reportString>
+  <TM_SpiritBloodMoon_III.reportString>призывает кровавую луну.</TM_SpiritBloodMoon_III.reportString>
+  <TM_SpiritRend.reportString>разрывает цели магией крови.</TM_SpiritRend.reportString>
+  <TM_SpiritRend_I.reportString>разрывает цели магией крови.</TM_SpiritRend_I.reportString>
+  <TM_SpiritRend_II.reportString>разрывает цели магией крови.</TM_SpiritRend_II.reportString>
+  <TM_SpiritRend_III.reportString>разрывает цели магией крови.</TM_SpiritRend_III.reportString>
+  <TM_SpiritBloodForBlood.reportString>переливает кровь.</TM_SpiritBloodForBlood.reportString>
+  <TM_SpiritIgniteBlood.reportString>поджигает кровь.</TM_SpiritIgniteBlood.reportString>
+</LanguageData>

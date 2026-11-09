@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-	<!-- Medic supply -->
+	
   
     <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_MedicalSupply</defName>
@@ -33,7 +32,7 @@ The Field Medic can train to convert his equipment back into common medicine</de
             <abilityDef>TM_MedicalSupply</abilityDef>
             <isViolent>false</isViolent>
             <defaultProjectile>Projectile_Default</defaultProjectile>
-            <warmupTime>8</warmupTime><!--8,5,3,2-->
+            <warmupTime>8</warmupTime>
             <SecondsToRecharge>1.0</SecondsToRecharge>
             <range>2</range>
             <soundCast>TM_VibrationLow</soundCast>
@@ -46,7 +45,14 @@ The Field Medic can train to convert his equipment back into common medicine</de
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_medicalsupply</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	 <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_Emergency</defName>
@@ -91,7 +97,14 @@ The Field Medic gains increased base movement speed, tending speed and tending q
                 </li>
             </hediffsToApply>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_emergency</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_Medigel</defName>
@@ -120,7 +133,7 @@ The Field Medic gains increased base movement speed, tending speed and tending q
             <SecondsToRecharge>10</SecondsToRecharge>
             <range>1</range>
             <AlwaysHits>true</AlwaysHits>
-<!--            <soundCast>TM_VibrationLow</soundCast>-->
+
             <muzzleFlashScale>1</muzzleFlashScale>
             <isPrimary>false</isPrimary>
             <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
@@ -137,12 +150,19 @@ The Field Medic gains increased base movement speed, tending speed and tending q
                 </li>
             </hediffsToApply>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_medigel</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_CombatDrugs</defName>
         <label>Combat Drugs</label>
-        <uiIconPath>UI/bloodgift</uiIconPath> <!--TODO: custom icon, a syringe maybe?-->
+        <uiIconPath>UI/bloodgift</uiIconPath> 
         <description>Gives combat drugs to an ally
 
 The Field Medic throws a syringe of improvised combat drugs to an ally.
@@ -155,19 +175,19 @@ The effects are always positive but may vary.</description>
         <canCopy>false</canCopy>
         <MainVerb Class="TorannMagic.Verb_ApplyRandomHediffFromList_Properties">
             <verbClass>TorannMagic.Verb_ApplyRandomHediffFromList</verbClass>
-            <hediffDefs> <!--The list of Hediffs to choose from. Required-->
+            <hediffDefs> 
                 <li>TM_CombatDrugsPain_HD</li>
                 <li>TM_CombatDrugsMoving_HD</li>
                 <li>TM_CombatDrugsAwareness_HD</li>
                 <li>TM_CombatDrugsAccuracy_HD</li>
             </hediffDefs>
-            <baseCount>1</baseCount> <!--The base amount of hediff applied per cast. Defaults to 1-->
-            <countUpgrade>TM_CombatDrugs_ver</countUpgrade> <!--The upgradeId of the upgrade to increase the amount of applications. Optional-->
-            <baseSeverity>0.12</baseSeverity> <!--The severity of each hediff applied. Stacks if the same hediff is applied multiple times. Defaults to 0.5-->
-                                              <!--At -1 severity per day each 0.001 point lasts for 1 second.-->
-            <severityUpgrade>TM_CombatDrugs_pwr</severityUpgrade> <!--The upgradeId of the upgrade to increase the severity applied. Optional-->
-            <severityIncreasePerUpgrade>0.02</severityIncreasePerUpgrade> <!--The increase of severity applied per upgrade. Defaults to 0.1-->
-            <useEachOnceMax>true</useEachOnceMax> <!--Specifies if each hediff can be applied more than once. Defaults to false-->
+            <baseCount>1</baseCount> 
+            <countUpgrade>TM_CombatDrugs_ver</countUpgrade> 
+            <baseSeverity>0.12</baseSeverity> 
+                                              
+            <severityUpgrade>TM_CombatDrugs_pwr</severityUpgrade> 
+            <severityIncreasePerUpgrade>0.02</severityIncreasePerUpgrade> 
+            <useEachOnceMax>true</useEachOnceMax> 
                 <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
                 <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
                 <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
@@ -180,7 +200,7 @@ The effects are always positive but may vary.</description>
             <SecondsToRecharge>1.0</SecondsToRecharge>
             <range>10</range>
             <AlwaysHits>true</AlwaysHits>
-<!--            <soundCast>TM_VibrationLow</soundCast>-->
+
             <muzzleFlashScale>20</muzzleFlashScale>
             <isPrimary>false</isPrimary>
             <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
@@ -191,6 +211,13 @@ The effects are always positive but may vary.</description>
               <canTargetLocations>false</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_combatdrugs</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
 </Defs>

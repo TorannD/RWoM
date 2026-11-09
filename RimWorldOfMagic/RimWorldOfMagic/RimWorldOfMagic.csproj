@@ -27,8 +27,6 @@
   <ItemGroup>
     <!-- RimWorld 1.7 reference assemblies (Assembly-CSharp + UnityStubs as UnityEngine) -->
     <PackageReference Include="Krafs.Rimworld.Ref" Version="1.7.4982-unstable" />
-    <!-- Multiplayer compatibility API; runtime comes from the Multiplayer mod itself -->
-    <PackageReference Include="RimWorld.MultiplayerAPI" Version="0.6.0" ExcludeAssets="runtime" />
   </ItemGroup>
 
   <ItemGroup>
@@ -48,13 +46,6 @@
     </Reference>
     <Reference Include="CompDeflector">
       <HintPath>$(MSBuildThisFileDirectory)..\..\..\refs\out\CompDeflector.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
-    <!-- Soft dependencies: compile-time stub assemblies matching the live mods' public API.
-         Giddy-Up and Simple Sidearms are resolved via reflection in ModCheck, so they need
-         no compile-time reference. -->
-    <Reference Include="AlienRace">
-      <HintPath>$(MSBuildThisFileDirectory)..\..\..\refs\out\AlienRace.dll</HintPath>
       <Private>false</Private>
     </Reference>
   </ItemGroup>

@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_SniperArmorFracture</defName>
+    <label>armor fracture</label>
+    <description>Fire one ordinary bullet. A hit opens a breach for your squad for six seconds, reducing effective armor by 10, 15 or 20 percentage points by rank. Each hit stacks and expires separately. Costs 20 stamina. Cooldown: 30 seconds.</description>
+    <spellId>rwom.tm_sniperarmorfracture</spellId>
+    <iconPath>Spells/InfernoCannonShot</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.ClassProgression.Verb_SniperArmorFracture</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_SniperArmorFracture</abilityDef>
+      <isViolent>true</isViolent>
+      <defaultProjectile>TM_SniperFractureRound</defaultProjectile>
+      <warmupTime>1</warmupTime>
+      <SecondsToRecharge>30</SecondsToRecharge>
+      <range>100</range>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+</Defs>

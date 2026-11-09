@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_ReadGladiatorSprint>Sprint — sustained speed, reserves 30 stamina (30s cooldown) · Permanent choice</TM_ReadGladiatorSprint>
+  <TM_ReadGladiatorManeuver>Maneuver — +8% speed for 8s, 12% stamina (25s cooldown) · Permanent choice</TM_ReadGladiatorManeuver>
+  <TM_GladiatorReliefDrill>Drill: reach an ally from 8 cells away</TM_GladiatorReliefDrill>
+  <TM_GladiatorDefenseChoice>Choose a defensive technique</TM_GladiatorDefenseChoice>
+  <TM_GladiatorChooseFortitude>Fortitude — passive personal defense (permanent choice)</TM_GladiatorChooseFortitude>
+  <TM_GladiatorChooseCover>Cover — take up to 20 damage from shots aimed at an ally over 6s (permanent choice)</TM_GladiatorChooseCover>
+  <TM_GladiatorUseCover>Cover an ally — 20% stamina, 30s cooldown</TM_GladiatorUseCover>
+  <TM_GladiatorAttackChoice>Choose a melee technique</TM_GladiatorAttackChoice>
+  <TM_GladiatorHoldDrill>Hold the line: intercept a hit or practise with an ally</TM_GladiatorHoldDrill>
+  <TM_GladiatorChooseCleave>Cleave — automatic follow-up (permanent choice)</TM_GladiatorChooseCleave>
+  <TM_GladiatorChooseSweep>Sweeping blow — aim at up to two foes (permanent choice)</TM_GladiatorChooseSweep>
+  <TM_GladiatorLevelGate>Ascension requires martial level 30.</TM_GladiatorLevelGate>
+  <TM_GladiatorEvacTrial>Final trial: rescue a wounded ally during combat or practise an evacuation.</TM_GladiatorEvacTrial>
+  <TM_GladiatorUltimateChoice>Choose an ultimate</TM_GladiatorUltimateChoice>
+  <TM_GladiatorPickWhirlwind>Whirlwind — classic technique (permanent)</TM_GladiatorPickWhirlwind>
+  <TM_GladiatorPickLastCircle>Last Circle — hold a 4-cell radius for 20s (permanent)</TM_GladiatorPickLastCircle>
+  <TM_GladiatorCastCircle>Last Circle — 60% stamina, 5s preparation, 2-day cooldown</TM_GladiatorCastCircle>
+  <TM_LastCircleDetails>Requires a melee weapon. The four nearest allies each absorb up to 25 damage over 20s. Three sweeps hit up to three enemies each. Movement speed −30%. Leaving the circle ends the stance. Explosions bypass protection. Interrupted preparation costs 6% stamina and locks the technique for 6000 ticks.</TM_LastCircleDetails>
+</LanguageData>

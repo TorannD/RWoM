@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_FleshGolem_Workstation.label>gólem de carne inactivo</TM_FleshGolem_Workstation.label>
+  
+  <TM_FleshGolem_Workstation.description>Un gólem de carne inactivo. Los gólems de carne son una masa de materia orgánica de aspecto bípedo, compuesta en su mayoría por partes del cuerpo de criaturas fallecidas. El gólem de carne es un combatiente temible con una variedad de ataques y habilidades que aumentan aún más su letalidad. Además de tareas básicas como el transporte y la limpieza, el gólem de carne es capaz de utilizar las cuchillas que lleva incorporadas para talar árboles o cosechar plantas.\n\nMientras está inactivo, el gólem puede ser modificado o mejorado. El gólem de carne recarga su energía lentamente por sí mismo, pero suministrarle carne fresca aumentará la velocidad de recarga.</TM_FleshGolem_Workstation.description>
+  
+  
+  <TM_HollowGolem_Workstation.label>gólem hueco inactivo</TM_HollowGolem_Workstation.label>
+  
+  <TM_HollowGolem_Workstation.description>Un gólem hueco inactivo. Los gólems huecos son una combinación de maná condensado vinculado y protegido por varias piezas de armadura. En su forma inactiva, el gólem hueco aparece como una armadura vacía. Este gólem se nutre del maná ambiental para alimentarse, lo que puede causar una reducción general, e incluso negativa, en las tasas de regeneración de maná de los magos. Esta reducción se combina con los magos existentes y los arbustos de espinas parásitas. Además de tareas básicas como el transporte y la limpieza, el gólem hueco puede equiparse para proporcionar luz, aumentar la investigación y actuar como un sistema de mortero. Al ser una criatura de maná animado, es capaz de aprovechar múltiples formas de energía mágica sin sufrir las fragilidades humanas.\n\nMientras está inactivo, el gólem puede ser modificado o mejorado. El gólem hueco recarga su energía lentamente por sí mismo, pero puede configurarse para recibir maná de los magos cercanos.</TM_HollowGolem_Workstation.description>
+  
+  
+  <TM_MaharalGolem_Workstation.label>gólem maharal inactivo</TM_MaharalGolem_Workstation.label>
+  
+  <TM_MaharalGolem_Workstation.description>Los gólems maharal aplican los principios básicos de la golemancia y son simples constructos de arcilla envueltos en cuero. El gólem maharal es capaz de realizar tareas básicas y defender la colonia. En su forma inactiva, el gólem maharal puede mejorarse para proporcionar pequeñas cantidades de calor y energía.\n\nMientras está inactivo, el gólem puede ser modificado o mejorado. El gólem maharal recarga su energía lentamente por sí mismo. Este gólem tarda hasta 5 segundos en activarse.</TM_MaharalGolem_Workstation.description>
+  
+  
+  <TM_MechaGolem_Workstation.label>meca-gólem inactivo</TM_MechaGolem_Workstation.label>
+  
+  <TM_MechaGolem_Workstation.description>Un meca-gólem inactivo. El diseño de los meca-gólems combina la ingeniería industrial con atributos mágicos para dar vida a un constructo robótico. Este gólem puede conectarse a las redes eléctricas existentes para acelerar su velocidad de carga. Además de tareas básicas como el transporte y la limpieza, el meca-gólem puede equiparse con un láser de minería para perforar rápidamente rocas explotables. Los meca-gólems combinan tanto armamento y armaduras industriales como simples en su arsenal.\n\nMientras está inactivo, el gólem puede ser modificado o mejorado. El meca-gólem recarga su energía lentamente por sí mismo, pero el acceso a fuentes de energía aumentará la velocidad de recarga. El gólem también puede suministrar energía a una red eléctrica cuando haya un déficit de electricidad.</TM_MechaGolem_Workstation.description>
+  
+  
+  <TM_SilkGolem_Workstation.label>gólem de seda inactivo</TM_SilkGolem_Workstation.label>
+  
+  <TM_SilkGolem_Workstation.description>Los gólems de seda aplican los principios básicos de la golemancia y son constructos simples de tela y seda que hacen que su forma sea indefinida pero flexible. La función principal del gólem de seda son las tareas de alcaidía y relaciones sociales, pero su forma desprotegida lo convierte en una mala opción para el trabajo pesado o el combate.\n\nMientras está inactivo, el gólem puede ser modificado o mejorado. El gólem de seda recarga su energía lentamente por sí mismo. Este gólem tarda hasta 2 segundos en activarse.</TM_SilkGolem_Workstation.description>
+
+  
+  
+  <TM_StoneGolem_Workstation.label>gólem de piedra inactivo</TM_StoneGolem_Workstation.label>
+  
+  <TM_StoneGolem_Workstation.description>Un gólem de piedra inactivo. Los gólems de piedra aplican los principios básicos de la golemancia y son constructos simples de roca y piedra moldeados con forma humanoide. Aunque es simple y económico, el gólem de piedra es tosco y depende en gran medida de runas mágicas para su movilidad. El peso del material y la dependencia del poder mágico para su animación hacen que el gólem de piedra sea lento, pero difícil de destruir. En su forma inactiva, el gólem de piedra se puede mejorar con un compactador de roca, el cual es un proceso automatizado que tritura la roca y le da forma de ladrillos. Este proceso requiere energía y que los trozos de roca se depositen dentro del gólem.\n\nMientras está inactivo, el gólem puede ser modificado o mejorado. El gólem de piedra recarga su energía lentamente por sí mismo. Este gólem tarda hasta 10 segundos en activarse.</TM_StoneGolem_Workstation.description>
+  
+  
+  <TM_StrawGolem_Workstation.label>gólem de paja inactivo</TM_StrawGolem_Workstation.label>
+  
+  <TM_StrawGolem_Workstation.description>Un gólem de paja inactivo. Los gólems de paja aplican los principios básicos de la golemancia y son constructos simples de madera y heno moldeados con forma humanoide. Simple y económico, el gólem de paja se siente como en casa en los campos de cultivo, siendo capaz de sembrar nuevas plantas. Su peso ligero y material de construcción flexible lo convierten en un gólem excelente para mantener la colonia libre de escombros, pero es extremadamente inflamable. El gólem de paja aumenta el crecimiento de las plantas cercanas tanto en su forma activa como inactiva.\n\nMientras está inactivo, el gólem puede ser modificado o mejorado. El gólem de paja recarga su energía lentamente por sí mismo. Este gólem tarda hasta 3 segundos en activarse.</TM_StrawGolem_Workstation.description>
+  
+  
+  <TM_UnfinishedFleshGolem.label>gólem de carne sin terminar</TM_UnfinishedFleshGolem.label>
+  
+  <TM_UnfinishedFleshGolem.description>Un gólem de carne sin terminar.</TM_UnfinishedFleshGolem.description>
+  
+  
+  <TM_UnfinishedFleshGolemUpgrade.label>mejora de gólem de carne sin terminar</TM_UnfinishedFleshGolemUpgrade.label>
+  
+  <TM_UnfinishedFleshGolemUpgrade.description>Una mejora de gólem de carne sin terminar.</TM_UnfinishedFleshGolemUpgrade.description>
+  
+  
+  <TM_UnfinishedHollowGolem.label>gólem hueco sin terminar</TM_UnfinishedHollowGolem.label>
+  
+  <TM_UnfinishedHollowGolem.description>Un gólem hueco sin terminar.</TM_UnfinishedHollowGolem.description>
+  
+  
+  <TM_UnfinishedHollowGolemUpgrade.label>mejora de gólem de hueco sin terminar</TM_UnfinishedHollowGolemUpgrade.label>
+  
+  <TM_UnfinishedHollowGolemUpgrade.description>Una mejora de gólem hueco sin terminar.</TM_UnfinishedHollowGolemUpgrade.description>
+  
+  
+  <TM_UnfinishedMaharalGolem.label>gólem maharal sin terminar</TM_UnfinishedMaharalGolem.label>
+  
+  <TM_UnfinishedMaharalGolem.description>Un gólem maharal sin terminar.</TM_UnfinishedMaharalGolem.description>
+  
+  
+  <TM_UnfinishedMaharalGolemUpgrade.label>mejora de gólem maharal sin terminar</TM_UnfinishedMaharalGolemUpgrade.label>
+  
+  <TM_UnfinishedMaharalGolemUpgrade.description>Una mejora de gólem maharal sin terminar.</TM_UnfinishedMaharalGolemUpgrade.description>
+  
+  
+  <TM_UnfinishedMechaGolem.label>meca-gólem sin terminar</TM_UnfinishedMechaGolem.label>
+  
+  <TM_UnfinishedMechaGolem.description>Un meca-gólem sin terminar.</TM_UnfinishedMechaGolem.description>
+
+  
+  
+  <TM_UnfinishedMechaGolemUpgrade.label>mejora de meca-gólem sin terminar</TM_UnfinishedMechaGolemUpgrade.label>
+  
+  <TM_UnfinishedMechaGolemUpgrade.description>Una mejora de meca-gólem sin terminar.</TM_UnfinishedMechaGolemUpgrade.description>
+  
+  
+  <TM_UnfinishedSilkGolem.label>gólem de seda sin terminar</TM_UnfinishedSilkGolem.label>
+  
+  <TM_UnfinishedSilkGolem.description>Un gólem de seda sin terminar.</TM_UnfinishedSilkGolem.description>
+  
+  
+  <TM_UnfinishedSilkGolemUpgrade.label>mejora de gólem de seda sin terminar</TM_UnfinishedSilkGolemUpgrade.label>
+  
+  <TM_UnfinishedSilkGolemUpgrade.description>Una mejora de gólem de seda sin terminar.</TM_UnfinishedSilkGolemUpgrade.description>
+  
+  
+  <TM_UnfinishedStoneGolem.label>gólem de piedra sin terminar</TM_UnfinishedStoneGolem.label>
+  
+  <TM_UnfinishedStoneGolem.description>Un gólem de piedra sin terminar.</TM_UnfinishedStoneGolem.description>
+  
+  
+  <TM_UnfinishedStoneGolemUpgrade.label>mejora de gólem de piedra sin terminar</TM_UnfinishedStoneGolemUpgrade.label>
+  
+  <TM_UnfinishedStoneGolemUpgrade.description>Una mejora de gólem de piedra sin terminar.</TM_UnfinishedStoneGolemUpgrade.description>
+  
+  
+  <TM_UnfinishedStrawGolem.label>gólem de paja sin terminar</TM_UnfinishedStrawGolem.label>
+  
+  <TM_UnfinishedStrawGolem.description>Un gólem de paja sin terminar.</TM_UnfinishedStrawGolem.description>
+  
+  
+  <TM_UnfinishedStrawGolemUpgrade.label>mejora de gólem de paja sin terminar</TM_UnfinishedStrawGolemUpgrade.label>
+  
+  <TM_UnfinishedStrawGolemUpgrade.description>Una mejora de gólem de paja sin terminar.</TM_UnfinishedStrawGolemUpgrade.description>
+  
+  
+  <TM_UnfinishedWoodGolem.label>gólem de madera sin terminar</TM_UnfinishedWoodGolem.label>
+  
+  <TM_UnfinishedWoodGolem.description>Un gólem de madera sin terminar.</TM_UnfinishedWoodGolem.description>
+  
+  
+  <TM_UnfinishedWoodGolemUpgrade.label>mejora de gólem de madera sin terminar</TM_UnfinishedWoodGolemUpgrade.label>
+  
+  <TM_UnfinishedWoodGolemUpgrade.description>Una mejora de gólem de madera sin terminar.</TM_UnfinishedWoodGolemUpgrade.description>
+  
+  
+  <TM_WoodGolem_Workstation.label>gólem de madera inactivo</TM_WoodGolem_Workstation.label>
+  
+  <TM_WoodGolem_Workstation.description>Un gólem de madera inactivo. Los gólems de madera aplican los principios básicos de la golemancia y son constructos simples de madera, piedra y acero moldeados con una forma esférica hueca. El armazón del gólem de madera encierra un núcleo mágico. El gólem de madera es capaz de realizar tareas básicas de fabricación, cuidado de animales, cocina y síntesis de drogas. Su construcción simple y económica le permite cumplir muchos roles en las primeras etapas de una colonia, pero es ineficiente y se destruye fácilmente.\n\nMientras está inactivo, el gólem puede ser modificado o mejorado. El gólem de madera recarga su energía lentamente por sí mismo. Este gólem tarda hasta 4 segundos en activarse.</TM_WoodGolem_Workstation.description>
+
+  
+</LanguageData>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ReadCommanderProvisioner>Iniciação: intendência</TM_ReadCommanderProvisioner>
+  <TM_ReadCommanderSignals>Iniciação: sinais claros</TM_ReadCommanderSignals>
+  <TM_CommanderSupplyTrial>Entregas coordenadas: {0}/12. Ordena a um aliado que conclua o transporte antes de a ordem terminar.</TM_CommanderSupplyTrial>
+  <TM_CommanderEvacTrial>Aliados retirados do perigo: {0}/8 ou reparações coordenadas: {1}/16. Atribui a equipa durante a reparação de um edifício danificado por um inimigo ou por um incêndio não iniciado pela colónia.</TM_CommanderEvacTrial>
+  <TM_CommanderServiceTrial>Dias de serviço: {0}/10 ou ordens de emergência úteis: {1}/10. Nível de guerreiro: {2}/30.</TM_CommanderServiceTrial>
+  <TM_CommanderAdvance>Avançar de grau</TM_CommanderAdvance>
+  <TM_CommanderEveryoneHome>Operação: todos para casa</TM_CommanderEveryoneHome>
+  <TM_CommanderChoseOperation>Ascensão: todos para casa.</TM_CommanderChoseOperation>
+  <TM_CommanderChoseAura>Ascensão: aura de comando.</TM_CommanderChoseAura>
+  <TM_CommanderOperationUnavailable>Requer a operação, 60% de vigor e recarga completa.</TM_CommanderOperationUnavailable>
+  <TM_CommanderDoctrineSupply>A intendência concede a aura original de abastecimento. A equipa só acelera a tarefa atribuída.</TM_CommanderDoctrineSupply>
+  <TM_CommanderDoctrineSignals>Os sinais claros aumentam a aceitação das ordens em 2/4/6/8/10 pontos percentuais, até 95%.</TM_CommanderDoctrineSignals>
+</LanguageData>

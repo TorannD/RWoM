@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ArcaneBolt_pwr>Шкода</TM_ArcaneBolt_pwr>
+  <TM_ArcaneBolt_eff>Економія мани</TM_ArcaneBolt_eff>
+  <TM_ArcaneBolt_ver>Кількість застосувань</TM_ArcaneBolt_ver>
+  <TM_MageLight_pwr>Радіус світла</TM_MageLight_pwr>
+  <TM_MageLight_eff>Економія мани</TM_MageLight_eff>
+  <TM_MageLight_ver>Тривалість</TM_MageLight_ver>
+  <TM_Extinguish_pwr>Область дії</TM_Extinguish_pwr>
+  <TM_Extinguish_eff>Економія мани</TM_Extinguish_eff>
+  <TM_Extinguish_ver>Сила гасіння</TM_Extinguish_ver>
+  <TM_Heater_pwr>Сила обігріву</TM_Heater_pwr>
+  <TM_Heater_eff>Економія мани</TM_Heater_eff>
+  <TM_Heater_ver>Тривалість</TM_Heater_ver>
+  <TM_Cooler_pwr>Сила охолодження</TM_Cooler_pwr>
+  <TM_Cooler_eff>Економія мани</TM_Cooler_eff>
+  <TM_Cooler_ver>Тривалість</TM_Cooler_ver>
+  <TM_SmokeCloud_pwr>Розмір хмари</TM_SmokeCloud_pwr>
+  <TM_SmokeCloud_eff>Економія мани</TM_SmokeCloud_eff>
+  <TM_SmokeCloud_ver>Тривалість</TM_SmokeCloud_ver>
+</LanguageData>

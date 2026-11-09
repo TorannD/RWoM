@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef>
+    <defName>TM_SpiritBlink</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>blinking through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritBlink_I</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>blinking through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritBlink_II</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>blinking through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritBlink_III</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>blinking through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritSummon</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>summoning a target through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritSummon_I</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>summoning a target through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritSummon_II</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>summoning a target through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritSummon_III</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>summoning a target through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritMagicMissile</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>casting magic missiles through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritMagicMissile_I</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>casting magic missiles through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritMagicMissile_II</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>casting magic missiles through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritMagicMissile_III</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>casting magic missiles through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritTeleport</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>opening a transport portal through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritFoldReality</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>folding reality through a spirit host.</reportString>
+  </JobDef>
+</Defs>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_EtherGate.label>ether gate</TM_EtherGate.label>
+  <TM_EtherGate.description>Summons a friendly ether servant for 100 magofuel. Each servant hauls goods for one day without food, sleep or air. The gate receives magofuel through mana beacons and can also be refueled by hand. It needs no electricity. When a servant expires, its cargo is dropped safely and it vanishes without loot. If killed, it leaves 5 magicyte and its cargo, but no corpse. Existing servants remain active if the gate is destroyed. Also mines with a starting Mining skill of 10 and builds with a starting Construction skill of 5. Work priority: construction, designated mining, then hauling. It floats across open space between platforms at normal speed, but cannot pass through walls.</TM_EtherGate.description>
+  <TM_EtherServant.label>ether servant</TM_EtherServant.label>
+  <TM_EtherServant.description>A friendly spirit summoned by an ether gate to haul goods for one day. It needs no food, sleep or air. On expiry it drops its cargo and vanishes. If killed, it drops its cargo and 5 magicyte instead of leaving a corpse. Also mines with a starting Mining skill of 10 and builds with a starting Construction skill of 5. Work priority: construction, designated mining, then hauling. It floats across open space between platforms at normal speed, but cannot pass through walls.</TM_EtherServant.description>
+</LanguageData>

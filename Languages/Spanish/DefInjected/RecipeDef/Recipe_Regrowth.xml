@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <Regrowth.label>regenerar parte del cuerpo (solo druida, requiere 90 % de maná)</Regrowth.label>
+  
+  <Regrowth.description>Usa poderes druídicos para regenerar partes del cuerpo.</Regrowth.description>
+  
+  <Regrowth.jobString>Regenerando parte del cuerpo.</Regrowth.jobString>
+  
+  
+  <UniversalRegrowth.label>regenerar parte del cuerpo (solo druida, requiere 90 % de maná)</UniversalRegrowth.label>
+  
+  <UniversalRegrowth.description>Usa poderes druídicos para regenerar partes del cuerpo.</UniversalRegrowth.description>
+  
+  <UniversalRegrowth.jobString>Regenerando parte del cuerpo.</UniversalRegrowth.jobString>
+  
+</LanguageData>

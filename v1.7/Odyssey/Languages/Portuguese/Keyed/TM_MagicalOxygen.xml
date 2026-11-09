@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_OxygenMode>Alimentação: {0}</TM_OxygenMode>
+  <TM_OxygenModeMana>Mana</TM_OxygenModeMana>
+  <TM_OxygenModeMagicyte>Magicita</TM_OxygenModeMagicyte>
+  <TM_OxygenModeDesc>Escolha mana da reserva local ou magicita do armazenamento local. Não muda automaticamente para o outro recurso.</TM_OxygenModeDesc>
+  <TM_OxygenBuffer>Mana: {0} / {1}</TM_OxygenBuffer>
+  <TM_OxygenPaidMagicyte>Carga restante do cristal: {0} de mana</TM_OxygenPaidMagicyte>
+  <TM_OxygenStatusRunning>Campo atmosférico ativo</TM_OxygenStatusRunning>
+  <TM_OxygenStatusIdle>Campo atmosférico inativo</TM_OxygenStatusIdle>
+  <TM_OxygenStatusEmpty>Recurso selecionado esgotado</TM_OxygenStatusEmpty>
+  <TM_OxygenStatusOff>Desligado ou avariado</TM_OxygenStatusOff>
+  <TM_OxygenCapacity>Área abastecida: {0} células; mana por segundo: {1}</TM_OxygenCapacity>
+  <TM_OxygenPressure>Intensidade do campo atmosférico: {0}</TM_OxygenPressure>
+  <TM_OxygenOutput>Saída: {0}</TM_OxygenOutput>
+  <TM_OxygenOutputDesc>Escolha entre criar atmosfera através de sinalizadores de mana ou fornecer oxigénio aos depósitos VGE ligados. Os modos funcionam separadamente. A saída requer um depósito ligado por tubos VGE; depósitos cheios ou desligados interrompem o consumo. A mana ou a magicita são selecionadas separadamente.</TM_OxygenOutputDesc>
+  <TM_OxygenOutputAtmosphere>Atmosfera</TM_OxygenOutputAtmosphere>
+  <TM_OxygenOutputPipe>Rede de oxigénio VGE</TM_OxygenOutputPipe>
+  <TM_OxygenPipeInfo>Saída para tubos: até 1 de oxigénio/s por 0,1 de mana/s. Ligue um depósito de oxigénio VGE; as bombas usam o oxigénio armazenado.</TM_OxygenPipeInfo>
+  <TM_OxygenPipePending>Oxigénio pago à espera de entrega: {0}</TM_OxygenPipePending>
+</LanguageData>

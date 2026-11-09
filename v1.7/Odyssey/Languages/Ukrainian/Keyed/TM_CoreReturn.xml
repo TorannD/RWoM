@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_CoreReturnUnavailable>Прив’язане ядро недоступне, вимкнене або більше не належить вам.</TM_CoreReturnUnavailable>
+  <TM_CoreReturnUnpaid>Мітки неактивні: ядру потрібне магопаливо для утримання.</TM_CoreReturnUnpaid>
+  <TM_CoreReturnRebindConfirm>Замінити мітку повернення у {0} після підходу до цього ядра?</TM_CoreReturnRebindConfirm>
+  <TM_CoreReturnNoCandidates>На цій мапі немає придатних колоністів без прив’язки до цього ядра.</TM_CoreReturnNoCandidates>
+  <TM_CoreReturnConfirm>Повернути {0} пішаків до {2} за {1} магопалива? Спорядження та речі повернуться разом із ними.</TM_CoreReturnConfirm>
+  <TM_CoreReturnStranding>Увага: у каравані залишаться тварини або полонені без дієздатного колоніста.</TM_CoreReturnStranding>
+  <TM_CoreReturnMarkedOnly>Повернути лише позначених</TM_CoreReturnMarkedOnly>
+  <TM_CoreReturnIncludeCaravans>Включити їхні каравани повністю</TM_CoreReturnIncludeCaravans>
+  <TM_CoreReturnStatus>Мітки повернення: {0}
+Утримання: {1} магопалива/добу
+Доступне магопаливо: {2}</TM_CoreReturnStatus>
+  <TM_CoreReturnMark>Позначити</TM_CoreReturnMark>
+  <TM_CoreReturnMarkDesc>Виберіть колоніста: він підійде до ядра й отримає мітку повернення. Утримання кожної мітки — 1 магопаливо на добу.</TM_CoreReturnMarkDesc>
+  <TM_CoreReturnAll>Повернути всіх</TM_CoreReturnAll>
+  <TM_CoreReturnAllDesc>Повернути прив’язаних пішаків із мап і караванів. Перевірте склад і вартість перед підтвердженням.</TM_CoreReturnAllDesc>
+  <TM_CoreReturnSingle>Повернутися до ядра</TM_CoreReturnSingle>
+  <TM_CoreReturnSingleDesc>Повернути цього пішака з його інвентарем і речами, які він несе. Вартість: {0} магопалива.</TM_CoreReturnSingleDesc>
+  <TM_CoreReturnUnbind>Зняти мітку</TM_CoreReturnUnbind>
+  <TM_CoreReturnUnbindDesc>Видалити прив’язку цього пішака й припинити витрати на її утримання.</TM_CoreReturnUnbindDesc>
+  <TM_CoreReturnUnbindConfirm>Зняти мітку повернення з {0}?</TM_CoreReturnUnbindConfirm>
+  <TM_CoreReturnCaravan>Повернути весь караван</TM_CoreReturnCaravan>
+  <TM_CoreReturnCaravanDesc>Повернути всіх учасників, тварин і полонених з усім вантажем. Вартість: {0} магопалива за учасника.</TM_CoreReturnCaravanDesc>
+  <TM_CoreReturnChanged>Склад змінився. Перевірте повернення знову.</TM_CoreReturnChanged>
+  <TM_CoreReturnBlockDowned>Зараз не можна позначити: у нокдауні.</TM_CoreReturnBlockDowned>
+  <TM_CoreReturnBlockMental>Зараз не можна позначити: психічний зрив.</TM_CoreReturnBlockMental>
+  <TM_CoreReturnBlockCapacity>Зараз не можна позначити: не може рухатися.</TM_CoreReturnBlockCapacity>
+  <TM_CoreReturn_InvalidSelection>Один із вибраних пішаків більше не придатний для цього повернення.</TM_CoreReturn_InvalidSelection>
+  <TM_CoreReturn_AlreadyNear>Вибрані пішаки вже перебувають поруч із ядром.</TM_CoreReturn_AlreadyNear>
+  <TM_CoreReturn_NoLanding>Біля ядра недостатньо вільних безпечних клітин.</TM_CoreReturn_NoLanding>
+  <TM_CoreReturn_NoFuel>У підключених джерелах недостатньо магопалива для всього повернення.</TM_CoreReturn_NoFuel>
+  <TM_CoreReturn_Busy>Уже виконується інше повернення або списання палива.</TM_CoreReturn_Busy>
+  <TM_CoreReturn_Failed>Повернення не виконано. Подробиці відновлення — у журналі.</TM_CoreReturn_Failed>
+  <TM_CoreReturn_UnsupportedTransport>Каравани з шатлом не можуть повертатися до ядра.</TM_CoreReturn_UnsupportedTransport>
+  <TM_CoreReturn_CarriedPawn>Перед поверненням покладіть пішака, якого несете: пасажирів слід враховувати окремо.</TM_CoreReturn_CarriedPawn>
+</LanguageData>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_SoulBond.label>Vínculo de alma</TM_SoulBond.label>
+  <TM_SoulBond.description>Los demonios, o quienes poseen el poder de un demonio, pueden crear un vínculo de alma (contrato de alma) con otro peón que sostendrá (o hospedará) el vínculo. El vínculo transfiere energía del alma del anfitrión a la criatura demoníaca y, a cambio, las emociones del anfitrión se disuelven en la dicha. El vínculo de alma también crea un enlace que permite a la criatura demoníaca viajar hasta el anfitrión o invocarlo.
+
+La criatura demoníaca puede cancelar el contrato de vínculo de alma en cualquier momento volviendo a usar la habilidad sobre el anfitrión actual. Crear un vínculo con otro anfitrión cancelará cualquier contrato anterior. El contrato también termina si cualquiera de las partes muere o es destruida.
+
+Las súcubos y los brujos forman tipos de vínculo distintos: los vínculos de los brujos son mentales y recíprocos, mientras que los de las súcubos son de naturaleza física. Una criatura demoníaca solo puede sostener un vínculo; los anfitriones solo pueden sostener un vínculo de cada tipo (mental/físico).</TM_SoulBond.description>
+
+  <TM_ShadowCall.label>Llamada de sombra</TM_ShadowCall.label>
+  <TM_ShadowCall.description>Ordena al alma de un anfitrión vinculado que viaje hasta tu ubicación.</TM_ShadowCall.description>
+
+  <TM_ShadowStep.label>Paso de sombra</TM_ShadowStep.label>
+  <TM_ShadowStep.description>Atraviesa la sombra hasta la ubicación de tu anfitrión vinculado por el alma.</TM_ShadowStep.description>
+
+  <TM_ShadowBolt.label>Rayo de sombra</TM_ShadowBolt.label>
+  <TM_ShadowBolt.description>Lanza un Rayo de sombra. Cualquier criatura atrapada en su trayectoria queda tocada por la sombra. Al impactar, la energía de sombra se libera en una violenta ola de oscuridad.
+
+Tiempo de lanzamiento: 2 s
+Enfriamiento: 20 s
+Alcance: 40</TM_ShadowBolt.description>
+
+  <TM_ShadowBolt_I.label>Rayo de sombra</TM_ShadowBolt_I.label>
+  <TM_ShadowBolt_I.description>Lanza un Rayo de sombra. Cualquier criatura atrapada en su trayectoria queda tocada por la sombra. Al impactar, la energía de sombra se libera en una violenta ola de oscuridad.
+
+Tiempo de lanzamiento: 1,8 s
+Enfriamiento: 18 s
+Alcance: 45</TM_ShadowBolt_I.description>
+
+  <TM_ShadowBolt_II.label>Rayo de sombra</TM_ShadowBolt_II.label>
+  <TM_ShadowBolt_II.description>Lanza un Rayo de sombra. Cualquier criatura atrapada en su trayectoria queda tocada por la sombra. Al impactar, la energía de sombra se libera en una violenta ola de oscuridad.
+
+Tiempo de lanzamiento: 1,6 s
+Enfriamiento: 16 s
+Alcance: 50</TM_ShadowBolt_II.description>
+
+  <TM_ShadowBolt_III.label>Rayo de sombra</TM_ShadowBolt_III.label>
+  <TM_ShadowBolt_III.description>Lanza un Rayo de sombra. Cualquier criatura atrapada en su trayectoria queda tocada por la sombra. Al impactar, la energía de sombra se libera en una violenta ola de oscuridad.
+
+Tiempo de lanzamiento: 1,5 s
+Enfriamiento: 15 s
+Alcance: 55</TM_ShadowBolt_III.description>
+
+  <TM_Dominate.label>Dominar</TM_Dominate.label>
+  <TM_Dominate.description>Ordena a la sombra que envuelva a tus enemigos en una pesadilla viviente que los rodea con sus mayores miedos. Los enemigos cercanos que estén lo bastante cerca para presenciar el miedo de un peón dominado también pueden sucumbir al pavor y permitir que la sombra domine su propia mente.
+
+Los brujos y las súcubos dominan a sus enemigos de maneras distintas. Los brujos intentan quebrar la mente de sus enemigos, mientras que las súcubos reducen la capacidad física de sus víctimas.</TM_Dominate.description>
+
+  <TM_Attraction.label>Atracción</TM_Attraction.label>
+  <TM_Attraction.description>Crea un gran pozo de sombra que atrae a todos los peones cercanos hacia su centro. Las sombras se adhieren a cualquier criatura afectada por la Atracción y reducen drásticamente su velocidad de movimiento durante un breve tiempo.
+
+Tiempo de lanzamiento: 3 s
+Alcance: 40
+Enfriamiento: 60</TM_Attraction.description>
+
+  <TM_Attraction_I.label>Atracción</TM_Attraction_I.label>
+  <TM_Attraction_I.description>Crea un gran pozo de sombra que atrae a todos los peones cercanos hacia su centro. Las sombras se adhieren a cualquier criatura afectada por la Atracción y reducen drásticamente su velocidad de movimiento durante un breve tiempo.
+
+Tiempo de lanzamiento: 2,6 s
+Alcance: 45
+Enfriamiento: 55</TM_Attraction_I.description>
+
+  <TM_Attraction_II.label>Atracción</TM_Attraction_II.label>
+  <TM_Attraction_II.description>Crea un gran pozo de sombra que atrae a todos los peones cercanos hacia su centro. Las sombras se adhieren a cualquier criatura afectada por la Atracción y reducen drásticamente su velocidad de movimiento durante un breve tiempo.
+
+Tiempo de lanzamiento: 2,3 s
+Alcance: 50
+Enfriamiento: 50</TM_Attraction_II.description>
+
+  <TM_Attraction_III.label>Atracción</TM_Attraction_III.label>
+  <TM_Attraction_III.description>Crea un gran pozo de sombra que atrae a todos los peones cercanos hacia su centro. Las sombras se adhieren a cualquier criatura afectada por la Atracción y reducen drásticamente su velocidad de movimiento durante un breve tiempo.
+
+Tiempo de lanzamiento: 2 s
+Alcance: 55
+Enfriamiento: 45</TM_Attraction_III.description>
+
+  <TM_Repulsion.label>Repulsión</TM_Repulsion.label>
+  <TM_Repulsion.description>El Brujo genera una explosión de energía en una casilla objetivo con fuerza suficiente para lanzar lejos del centro a las criaturas cercanas.
+
+Tiempo de lanzamiento: 1 s
+Alcance: 40
+Enfriamiento: 30 s
+Radio: 5</TM_Repulsion.description>
+
+  <TM_Repulsion_I.label>Repulsión</TM_Repulsion_I.label>
+  <TM_Repulsion_I.description>El Brujo genera una explosión de energía en una casilla objetivo con fuerza suficiente para lanzar lejos del centro a las criaturas cercanas.
+
+Tiempo de lanzamiento: 0,8 s
+Alcance: 47
+Enfriamiento: 25 s
+Radio: 6</TM_Repulsion_I.description>
+
+  <TM_Repulsion_II.label>Repulsión</TM_Repulsion_II.label>
+  <TM_Repulsion_II.description>El Brujo genera una explosión de energía en una casilla objetivo con fuerza suficiente para lanzar lejos del centro a las criaturas cercanas.
+
+Tiempo de lanzamiento: 0,6 s
+Alcance: 54
+Enfriamiento: 20 s
+Radio: 7</TM_Repulsion_II.description>
+
+  <TM_Repulsion_III.label>Repulsión</TM_Repulsion_III.label>
+  <TM_Repulsion_III.description>El Brujo genera una explosión de energía en una casilla objetivo con fuerza suficiente para lanzar lejos del centro a las criaturas cercanas.
+
+Tiempo de lanzamiento: 0,5 s
+Alcance: 60
+Enfriamiento: 15 s
+Radio: 8</TM_Repulsion_III.description>
+
+  <TM_Scorn.label>Desdén</TM_Scorn.label>
+  <TM_Scorn.description>La súcubo usa sus poderes demoníacos para transformarse parcialmente en un demonio alado y lanzarse hacia un lugar lejano para aplastar a sus enemigos en un torrente de furia oscura.
+
+Tras usar esta habilidad, la súcubo conservará su forma demoníaca parcial durante un breve periodo, lo que le otorga mejores capacidades físicas y un escudo contra el daño.</TM_Scorn.description>
+
+  <TM_PsychicShock.label>Choque psíquico</TM_PsychicShock.label>
+  <TM_PsychicShock.description>El Brujo elimina todas sus barreras mentales y proyecta una poderosa ola de energía psíquica. Los peones atrapados en la ola serán bombardeados por poder psíquico y quedarán brevemente sometidos a la voluntad del Brujo.
+
+El Brujo usa las mentes de otros para propagar la ola psíquica e intenta destruir la mente de cualquier enemigo tocado por la energía psíquica. Sufrir este asalto mental desorienta a los peones durante un breve periodo e incluso puede desorientar al brujo si le afecta la energía psíquica reflejada. El Choque psíquico recibe una bonificación según la sensibilidad psíquica del brujo y puede fallar contra peones con sensibilidad psíquica reducida.</TM_PsychicShock.description>
+
+  <TM_SummonDemon.label>Invocar demonio</TM_SummonDemon.label>
+  <TM_SummonDemon.description>Manifiesta un verdadero poder demoníaco mediante la manipulación de los vínculos de alma, tanto físicos como mentales. Este oscuro poder exige un alto precio y solo debe considerarse en circunstancias desesperadas.
+
+La invocación la inicia una Súcubo al anclar la ofrenda física y la completa un Brujo al ultimar los términos del contrato demoníaco.</TM_SummonDemon.description>
+
+</LanguageData>

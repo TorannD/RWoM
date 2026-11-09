@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
+    <defName>TM_BladePassage</defName>
+    <label>blade passage</label>
+    <uiIconPath>UI/phased</uiIconPath>
+    <description>Cross a clear path toward an enemy within 6/8/10 cells and strike once for 90% melee weapon damage. Requires an empty landing cell beside the target. Base stamina cost: 20%. Cooldown: 30 seconds. Base recovery: 1 second.</description>
+    <staminaCost>0.20</staminaCost>
+    <MainVerb Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.ClassProgression.Verb_BladePassage</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_BladePassage</abilityDef>
+      <isViolent>true</isViolent>
+      <defaultProjectile>Projectile_PhaseStrike</defaultProjectile>
+      <warmupTime>0.5</warmupTime>
+      <defaultCooldownTime>1</defaultCooldownTime>
+      <SecondsToRecharge>30</SecondsToRecharge>
+      <range>10</range>
+      <muzzleFlashScale>0</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </MainVerb>
+    <modExtensions>
+      <li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+        <spellId>rwom.tm_bladepassage</spellId>
+        <domain>Might</domain>
+        <tier>0</tier>
+      </li>
+    </modExtensions>
+  </TorannMagic.TMAbilityDef>
+</Defs>
+

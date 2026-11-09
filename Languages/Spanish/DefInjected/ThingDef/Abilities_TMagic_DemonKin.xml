@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <FlyingObject_DemonBolt.label>llamas demoníacas</FlyingObject_DemonBolt.label>
+  
+  
+  <FlyingObject_DemonFlight.label>objeto volador</FlyingObject_DemonFlight.label>
+  
+  
+  <FlyingObject_ShadowBolt.label>descarga de sombra</FlyingObject_ShadowBolt.label>
+  
+  
+  <Projectile_Attraction.label>atracción</Projectile_Attraction.label>
+  
+  
+  <Projectile_PsychicShock.label>choque psíquico</Projectile_PsychicShock.label>
+  
+  
+  <Projectile_Repulsion.label>repulsión</Projectile_Repulsion.label>
+  
+  
+  <Projectile_Repulsion_I.label>repulsión I</Projectile_Repulsion_I.label>
+  
+  
+  <Projectile_Repulsion_II.label>repulsión II</Projectile_Repulsion_II.label>
+  
+  
+  <Projectile_Repulsion_III.label>repulsión III</Projectile_Repulsion_III.label>
+  
+  
+  <Projectile_Scorn.label>desdén</Projectile_Scorn.label>
+  
+  
+  <Projectile_ShadowBolt.label>descarga de sombra</Projectile_ShadowBolt.label>
+  
+  
+  <Projectile_SummonDemon.label>invocar demonio</Projectile_SummonDemon.label>
+  
+  
+  <Projectile_Warlock.label>proyectil predeterminado</Projectile_Warlock.label>
+  
+</LanguageData>

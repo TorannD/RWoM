@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_BloodForBloodHD.label>drenaje de sangre</TM_BloodForBloodHD.label>
+  
+  <TM_BloodForBloodHD.description>Transfiere sangre de este objetivo a un mago de sangre. Cura heridas en el proceso.</TM_BloodForBloodHD.description>
+  
+  
+  <TM_BloodHD.label>magia de sangre</TM_BloodHD.label>
+  
+  <TM_BloodHD.description>Representa el poder de sangre de un mago de sangre.</TM_BloodHD.description>
+  
+  
+  <TM_BloodShieldHD.label>escudo de sangre</TM_BloodShieldHD.label>
+  
+  <TM_BloodShieldHD.description>Envuelto en una burbuja protectora de energía vital; la energía de cada golpe contra el escudo de sangre restaura salud al peón protegido.</TM_BloodShieldHD.description>
+  
+  
+  <TM_RendHD.label>hemorragia</TM_RendHD.label>
+  
+  <TM_RendHD.description>Una herida horrenda que provoca una hemorragia masiva.</TM_RendHD.description>
+  
+</LanguageData>

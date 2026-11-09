@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ManaBeacon.label>sinalizador de mana</TM_ManaBeacon.label>
+  <TM_ManaBeacon.description>Transfere mana e magocombustível entre suas construções conectadas num raio de 5 células, mesmo através de paredes. Sinalizadores próximos expandem a rede. Cada rede transfere até 10 de mana e 5 de magocombustível por segundo sem consumir eletricidade. Escolha enviar, receber ou desligar cada recurso de forma independente nas construções conectadas. Os receptores respeitam as metas configuradas.</TM_ManaBeacon.description>
+</LanguageData>

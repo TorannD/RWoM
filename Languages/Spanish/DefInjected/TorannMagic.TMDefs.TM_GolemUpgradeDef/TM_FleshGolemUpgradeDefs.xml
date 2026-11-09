@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_Golem_Flesh_ChestCage.label>jaula torácica</TM_Golem_Flesh_ChestCage.label>
+  
+  <TM_Golem_Flesh_ChestCage.description>Aumenta la armadura:\nContundente: 28 %\nCortante: 10 %\nCalor: 5 %</TM_Golem_Flesh_ChestCage.description>
+  
+  
+  <TM_Golem_Flesh_EyesT1.label>visión cuádruple</TM_Golem_Flesh_EyesT1.label>
+  
+  <TM_Golem_Flesh_EyesT1.description>Aumenta la vista un 100 %.</TM_Golem_Flesh_EyesT1.description>
+  
+  
+  <TM_Golem_Flesh_EyesT2.label>ojo maligno</TM_Golem_Flesh_EyesT2.label>
+  
+  <TM_Golem_Flesh_EyesT2.description>Habilita una habilidad que aterroriza y ralentiza a los enemigos.\n\nOjo maligno\nCoste de ira: 10\nTiempo de reutilización: 2,2 s\nAlcance: 40</TM_Golem_Flesh_EyesT2.description>
+  
+  
+  <TM_Golem_Flesh_Horns.label>cuernos</TM_Golem_Flesh_Horns.label>
+  
+  <TM_Golem_Flesh_Horns.description>Añade un ataque perforante y una habilidad de carga.\n\nEmbestida de toro\nCoste de ira: 5\nTiempo de reutilización: 10 s</TM_Golem_Flesh_Horns.description>
+  
+  
+  <TM_Golem_Flesh_LeftArmBrace.label>brazal del brazo izquierdo</TM_Golem_Flesh_LeftArmBrace.label>
+  
+  <TM_Golem_Flesh_LeftArmBrace.description>Aumenta un 20 % la probabilidad de bloqueo; se acumula con el brazal derecho.</TM_Golem_Flesh_LeftArmBrace.description>
+  
+  
+  <TM_Golem_Flesh_LeftArmCleaver.label>cuchilla del brazo izquierdo (cosecha)</TM_Golem_Flesh_LeftArmCleaver.label>
+  
+  <TM_Golem_Flesh_LeftArmCleaver.description>Cosecha plantas.\n\nTajo en área\nCoste de ira: 15\nDaño: 15\nÁrea de impacto: 2 c</TM_Golem_Flesh_LeftArmCleaver.description>
+  
+  
+  <TM_Golem_Flesh_LegPlates.label>placas de pierna</TM_Golem_Flesh_LegPlates.label>
+  
+  <TM_Golem_Flesh_LegPlates.description>Aumenta la armadura:\nContundente: 10 %\nCortante: 15 %\nCalor: 8 %</TM_Golem_Flesh_LegPlates.description>
+  
+  
+  <TM_Golem_Flesh_RightArmBrace.label>brazal del brazo derecho</TM_Golem_Flesh_RightArmBrace.label>
+  
+  <TM_Golem_Flesh_RightArmBrace.description>Aumenta un 20 % la probabilidad de bloqueo; se acumula con el brazal izquierdo.</TM_Golem_Flesh_RightArmBrace.description>
+  
+  
+  <TM_Golem_Flesh_RightArmCleaver.label>cuchilla del brazo derecho (tala)</TM_Golem_Flesh_RightArmCleaver.label>
+  
+  <TM_Golem_Flesh_RightArmCleaver.description>Tala árboles.\n\nTajo en área\nCoste de ira: 15\nDaño: 15\nÁrea de impacto: 2 c</TM_Golem_Flesh_RightArmCleaver.description>
+  
+  
+  <TM_Golem_Flesh_ShoulderPlates.label>hombreras</TM_Golem_Flesh_ShoulderPlates.label>
+  
+  <TM_Golem_Flesh_ShoulderPlates.description>Aumenta la armadura:\nContundente: 14 %\nCortante: 12 %\nCalor: 10 %</TM_Golem_Flesh_ShoulderPlates.description>
+  
+  
+  <TM_Golem_Flesh_SkullPlate.label>placa craneal</TM_Golem_Flesh_SkullPlate.label>
+  
+  <TM_Golem_Flesh_SkullPlate.description>Aumenta la armadura:\nContundente: 12 %\nCortante: 18 %\nCalor: 8 %</TM_Golem_Flesh_SkullPlate.description>
+  
+  
+  <TM_Golem_Flesh_SpineGuard.label>protector de columna</TM_Golem_Flesh_SpineGuard.label>
+  
+  <TM_Golem_Flesh_SpineGuard.description>Aumenta la armadura:\nContundente: 12 %\nCortante: 14 %\nCalor: 5 %</TM_Golem_Flesh_SpineGuard.description>
+  
+  
+  <TM_Golem_Flesh_Tusks.label>colmillos</TM_Golem_Flesh_Tusks.label>
+  
+  <TM_Golem_Flesh_Tusks.description>Añade un potente ataque de mordisco.</TM_Golem_Flesh_Tusks.description>
+  
+  
+  <TM_Golem_Flesh_Wings.label>alas</TM_Golem_Flesh_Wings.label>
+  
+  <TM_Golem_Flesh_Wings.description>Añade una habilidad que puede dar presteza al golem.\n\nPresteza\nCoste de ira: 15\nTiempo de reutilización: 6 s\nDuplica la velocidad de ataque y de movimiento.</TM_Golem_Flesh_Wings.description>
+  
+  
+  <TM_Golem_FleshEnergyEfficiency.label>eficiencia muscular</TM_Golem_FleshEnergyEfficiency.label>
+  
+  <TM_Golem_FleshEnergyEfficiency.description>Aumenta la eficiencia energética un 10 % por nivel. La eficiencia energética inicial es del 50 %.</TM_Golem_FleshEnergyEfficiency.description>
+  
+  
+  <TM_Golem_FleshEnergyRate.label>síntesis de energía</TM_Golem_FleshEnergyRate.label>
+  
+  <TM_Golem_FleshEnergyRate.description>Aumenta la velocidad de carga de energía un 20 % por nivel. La velocidad de recarga inicial es de 100 de energía por hora.</TM_Golem_FleshEnergyRate.description>
+  
+  
+  <TM_Golem_FleshLifeStage.label>poder autómata</TM_Golem_FleshLifeStage.label>
+  
+  <TM_Golem_FleshLifeStage.description>Aumenta las estadísticas y añade la habilidad de desmembrar.\nMovimiento: +[20 %/35 %/50 %]\nSalud: +[30 %/50 %/70 %]\n\nDesmembrar\nCoste de ira: 25\nTiempo de reutilización: 13 s\nAlcance: 1 c</TM_Golem_FleshLifeStage.description>
+  
+  
+  <TM_Golem_FleshMaxEnergy.label>resistencia muscular</TM_Golem_FleshMaxEnergy.label>
+  
+  <TM_Golem_FleshMaxEnergy.description>Aumenta la energía máxima en 400 por nivel. La energía máxima inicial es 800.</TM_Golem_FleshMaxEnergy.description>
+  
+  
+  <TM_Golem_FleshRestore.label>restaurar parte</TM_Golem_FleshRestore.label>
+  
+</LanguageData>

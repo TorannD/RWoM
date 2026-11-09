@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_Start_ElementalDefenders.label>defensores elementales</TM_Start_ElementalDefenders.label>
+  
+  <TM_Start_ElementalDefenders.description>Crea una conexión con otro plano de existencia y atrae a los elementales de allí para que defiendan la colonia. Dura unas 4 horas.</TM_Start_ElementalDefenders.description>
+  
+  
+  <TM_Start_ManaStorm.label>tormenta de maná</TM_Start_ManaStorm.label>
+  
+  <TM_Start_ManaStorm.description>Crea y libera casi de inmediato una bolsa de maná temporal. El maná intenta llenar la bolsa, pero se ve obligado a dispersarse con rapidez, lo que provoca una violenta perturbación de maná. La condición resultante se conoce como tormenta de maná. Durante la tormenta, el maná intenta dispersarse rápidamente, lo que puede causar daños graves a cualquiera que intente canalizar maná en ese momento. Además, el maná está más disponible para quienes estén dispuestos a arriesgarse al retroceso. La tormenta de maná dura entre 6 y 40 horas.</TM_Start_ManaStorm.description>
+  
+</LanguageData>

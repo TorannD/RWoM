@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="TM_BuildingBase">
+    <defName>TM_StellarObservatory</defName>
+    <label>magical observatory</label>
+    <description>A mage can perform a 60-second divination ritual to seek a random orbital expedition. Each successful ritual consumes 100 mana and 50 magofuel directly from the connected mana network, with no personal mana cost. Searching takes 8–10 active days and pauses while the observatory is off, broken or uninstalled. All magical observatories share an 18-day interval between ritual starts, independent of ordinary orbital scanners. If no eligible destination is available, the paid search waits and retries. Moving the observatory preserves its search. Research is required only for construction.</description>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>Things/Building/StellarObservatory/StellarObservatory</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2.4,2.4)</drawSize>
+      <allowFlip>false</allowFlip>
+    </graphicData>
+    <size>(2,2)</size>
+    <rotatable>false</rotatable>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories><li>BuildingsMisc</li></thingCategories>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <fillPercent>1</fillPercent>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>TM_RWoM</designationCategory>
+    <placeWorkers><li>TorannMagic.Odyssey.PlaceWorker_ManaNetwork</li></placeWorkers>
+    <statBases><MaxHitPoints>300</MaxHitPoints><WorkToBuild>12000</WorkToBuild><Mass>40</Mass><Flammability>0.2</Flammability></statBases>
+    <costList><Steel>200</Steel><RawMagicyte>200</RawMagicyte><ComponentIndustrial>4</ComponentIndustrial></costList>
+    <researchPrerequisites><li>TM_MagofuelRefining</li><li>OrbitalTech</li></researchPrerequisites>
+    <comps>
+      <li Class="TorannMagic.Odyssey.CompProperties_StellarObservatory"><ritualTicks>3600</ritualTicks></li>
+      <li Class="TorannMagic.Visuals.CompProperties_StellarObservatoryEffects" />
+      <li Class="TorannMagic.Odyssey.CompProperties_ManaNetworkEndpoint"><directConsumer>true</directConsumer><supportsMana>true</supportsMana><supportsFuel>true</supportsFuel><defaultManaMode>Receive</defaultManaMode><defaultFuelMode>Receive</defaultFuelMode></li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Breakdownable" />
+    </comps>
+  </ThingDef>
+  <JobDef>
+    <defName>TM_ActivateStellarObservatory</defName>
+    <driverClass>TorannMagic.Odyssey.JobDriver_ActivateStellarObservatory</driverClass>
+    <reportString>performing a stellar divination ritual.</reportString>
+  </JobDef>
+</Defs>

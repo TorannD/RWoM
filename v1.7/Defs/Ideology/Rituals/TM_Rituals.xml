@@ -803,6 +803,7 @@
         <countsAsParticipant>True</countsAsParticipant>
       </li>
       <li Class="TorannMagic.Ideology.TM_RitualRoleNonMage">
+        <grantsMight>true</grantsMight>
         <label>untrained</label>
         <missingDesc>a colonist without the gift of might or magic</missingDesc>
         <id>mageId</id>

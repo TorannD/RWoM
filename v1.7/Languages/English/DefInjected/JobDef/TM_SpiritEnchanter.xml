@@ -1,0 +1,15 @@
+<LanguageData>
+  <TM_SpiritTransmutate.reportString>transmuting a material.</TM_SpiritTransmutate.reportString>
+  <TM_SpiritEnchantedBody.reportString>enchanting the body.</TM_SpiritEnchantedBody.reportString>
+  <TM_SpiritEnchantedAura.reportString>enchanting the aura.</TM_SpiritEnchantedAura.reportString>
+  <TM_SpiritEnchanterStone.reportString>creating an enchanted stone.</TM_SpiritEnchanterStone.reportString>
+  <TM_SpiritDismissEnchanterStones.reportString>dismissing an enchanted stone.</TM_SpiritDismissEnchanterStones.reportString>
+  <TM_SpiritEnchantWeapon.reportString>enchanting a weapon.</TM_SpiritEnchantWeapon.reportString>
+  <TM_SpiritDispelEnchantWeapon.reportString>dispelling weapon enchantments.</TM_SpiritDispelEnchantWeapon.reportString>
+  <TM_SpiritPolymorph.reportString>casting polymorph.</TM_SpiritPolymorph.reportString>
+  <TM_SpiritPolymorph_I.reportString>casting polymorph.</TM_SpiritPolymorph_I.reportString>
+  <TM_SpiritPolymorph_II.reportString>casting polymorph.</TM_SpiritPolymorph_II.reportString>
+  <TM_SpiritPolymorph_III.reportString>casting polymorph.</TM_SpiritPolymorph_III.reportString>
+  <TM_SpiritShapeshift.reportString>shapeshifting.</TM_SpiritShapeshift.reportString>
+  <TM_SpiritShapeshiftDW.reportString>shifting into a dire wolf.</TM_SpiritShapeshiftDW.reportString>
+</LanguageData>

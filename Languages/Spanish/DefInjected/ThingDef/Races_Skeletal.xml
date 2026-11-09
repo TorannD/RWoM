@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_GiantSkeletonR.label>esqueleto gigante</TM_GiantSkeletonR.label>
+  
+  <TM_GiantSkeletonR.description>Un esqueleto enorme. Esta abominación fue creada con los huesos de una criatura gigante o uniendo los de criaturas menores. Está animado por la nigromancia y encarnado por un espíritu vengativo que ha vagado por el mundo durante eras, el tiempo suficiente para desarrollar un odio simple y obcecado hacia la vida.</TM_GiantSkeletonR.description>
+  
+  <TM_GiantSkeletonR.tools.left_fist.label>puño izquierdo</TM_GiantSkeletonR.tools.left_fist.label>
+  
+  <TM_GiantSkeletonR.tools.right_fist.label>puño derecho</TM_GiantSkeletonR.tools.right_fist.label>
+  
+  <TM_GiantSkeletonR.tools.teeth.label>dientes</TM_GiantSkeletonR.tools.teeth.label>
+  
+  
+  <TM_SkeletonLichR.label>lich esquelético</TM_SkeletonLichR.label>
+  
+  <TM_SkeletonLichR.description>Los huesos marchitos y desvaídos de un antiguo lich, encarnados por un espíritu de malevolencia y odio. Quienquiera o lo que fuera este ser ya no existe; su único propósito es destruir toda vida y sustituirla por la no muerte.</TM_SkeletonLichR.description>
+  
+  <TM_SkeletonLichR.tools.left_hand.label>mano izquierda</TM_SkeletonLichR.tools.left_hand.label>
+  
+  <TM_SkeletonLichR.tools.right_hand.label>mano derecha</TM_SkeletonLichR.tools.right_hand.label>
+  
+  <TM_SkeletonLichR.tools.death_stare.label>mirada mortal</TM_SkeletonLichR.tools.death_stare.label>
+  
+  
+  <TM_SkeletonR.label>esqueleto</TM_SkeletonR.label>
+  
+  <TM_SkeletonR.description>Cascarones físicos de criaturas alzadas mediante el poder de la nigromancia. Su único instinto es obedecer a su amo y destruir toda vida.</TM_SkeletonR.description>
+  
+  <TM_SkeletonR.tools.left_fist.label>puño izquierdo</TM_SkeletonR.tools.left_fist.label>
+  
+  <TM_SkeletonR.tools.right_fist.label>puño derecho</TM_SkeletonR.tools.right_fist.label>
+  
+  <TM_SkeletonR.tools.teeth.label>dientes</TM_SkeletonR.tools.teeth.label>
+  
+</LanguageData>

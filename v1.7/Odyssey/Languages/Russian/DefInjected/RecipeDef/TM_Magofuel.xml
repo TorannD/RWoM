@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_RefineMagofuel.label>изготовить маготопливо x50</TM_RefineMagofuel.label>
+  <TM_RefineMagofuel.description>Соединить 50 единиц химтоплива и 200 единиц магицита, чтобы получить 50 единиц маготоплива. Требует арканной кузницы; действуют обычные правила магической работы и расхода маны кузницы.</TM_RefineMagofuel.description>
+  <TM_RefineMagofuel.jobString>изготавливает маготопливо.</TM_RefineMagofuel.jobString>
+</LanguageData>

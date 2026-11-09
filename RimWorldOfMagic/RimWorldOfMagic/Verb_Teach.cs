@@ -48,6 +48,7 @@ namespace TorannMagic
                             if (mentor.relations.OpinionOf(student) >= 0)
                             {
                                 Job job = new Job(TorannMagicDefOf.JobDriver_TM_Teach, student);
+                                job.count = 1; // Persist the requested lesson, including hybrid students.
                                 student.jobs.EndCurrentJob(JobCondition.InterruptForced);
                                 mentor.jobs.TryTakeOrderedJob(job, JobTag.Misc);
                             }
@@ -81,6 +82,7 @@ namespace TorannMagic
                             if (mentor.relations.OpinionOf(student) >= 0)
                             {
                                 Job job = new Job(TorannMagicDefOf.JobDriver_TM_Teach, student);
+                                job.count = 2;
                                 student.jobs.EndCurrentJob(JobCondition.InterruptForced);
                                 mentor.jobs.TryTakeOrderedJob(job, JobTag.Misc);
                             }

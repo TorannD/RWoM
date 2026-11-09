@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Sprint</defName>
+    <label>Sprint</label>
+    <description>Activates or deactivates the sustained combat skill Sprint - greatly increases movement speed but causes exhaustion. Requires 30 Stamina to sustain and reduces stamina regen by 20%.</description>
+    <spellId>rwom.tm_sprint</spellId>
+    <iconPath>UI/sprint2</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_Sprint</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_Sprint</abilityDef>
+      <isViolent>false</isViolent>
+      <defaultProjectile>TM_Gladiator_Sprint</defaultProjectile>
+      <warmupTime>.5</warmupTime>
+      <SecondsToRecharge>30</SecondsToRecharge>
+      <range>0</range>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_SprintI</defName>
+    <label>Sprint</label>
+    <description>Activates or deactivates the sustained combat skill Sprint - greatly increases movement speed but causes exhaustion. Requires 30 Stamina to sustain and reduces stamina regen by 20%.
+
+Activating sprint grants the user 10s of evasion (25% dodge chance) and 5s of adrenaline.
+Deactivating sprint instantly returns 20 stamina and applies 5s of +20% energy regeneration.</description>
+    <spellId>rwom.tm_sprint_i</spellId>
+    <iconPath>UI/sprint2</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_Sprint</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_Sprint_I</abilityDef>
+      <isViolent>false</isViolent>
+      <defaultProjectile>TM_Gladiator_Sprint</defaultProjectile>
+      <warmupTime>.4</warmupTime>
+      <SecondsToRecharge>25</SecondsToRecharge>
+      <range>0</range>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_SprintII</defName>
+    <label>Sprint</label>
+    <description>Activates or deactivates the sustained combat skill Sprint - greatly increases movement speed but causes exhaustion. Requires 30 Stamina to sustain and reduces stamina regen by 20%.
+	
+Activating sprint grants the user 10s of 35% evasion, 8s of adrenaline, and all friendly pawns within 5 cells 10s of 25% evasion.
+Deactivating sprint instantly returns 35 stamina and applies 8s of +30% energy regeneration.</description>
+    <spellId>rwom.tm_sprint_ii</spellId>
+    <iconPath>UI/sprint2</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_Sprint</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_Sprint_II</abilityDef>
+      <isViolent>false</isViolent>
+      <defaultProjectile>TM_Gladiator_Sprint</defaultProjectile>
+      <warmupTime>.3</warmupTime>
+      <SecondsToRecharge>20</SecondsToRecharge>
+      <range>0</range>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_SprintIII</defName>
+    <label>Sprint</label>
+    <description>Activates or deactivates the sustained combat skill Sprint - greatly increases movement speed but causes exhaustion. Requires 30 Stamina to sustain and reduces stamina regen by 20%.
+	
+Activating sprint grants the user 10s of 40% evasion, 10s of adrenaline, and all friendly pawns within 10 cells 10s of 30% evasion.
+Deactivating sprint instantly returns 40 stamina and applies 10s of +40% energy regeneration.</description>
+    <spellId>rwom.tm_sprint_iii</spellId>
+    <iconPath>UI/sprint2</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_Sprint</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_Sprint_III</abilityDef>
+      <isViolent>false</isViolent>
+      <defaultProjectile>TM_Gladiator_Sprint</defaultProjectile>
+      <warmupTime>.2</warmupTime>
+      <SecondsToRecharge>15</SecondsToRecharge>
+      <range>0</range>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Fortitude</defName>
+    <label>Fortitude</label>
+    <description>Mitigates a set amount of damage each hit.
+Base mitigation: 5</description>
+    <spellId>rwom.tm_fortitude</spellId>
+    <iconPath>UI/fortitude</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>AbilityUser.Verb_UseAbility</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_Fortitude</abilityDef>
+      <isViolent>false</isViolent>
+      <defaultProjectile>TM_Gladiator_Fortitude</defaultProjectile>
+      <warmupTime>1.0</warmupTime>
+      <SecondsToRecharge>60.0</SecondsToRecharge>
+      <range>0</range>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+      <hediffsToApply>
+        <li>
+          <hediffDef>TM_HediffFortitude</hediffDef>
+          <applyChance>1.0</applyChance>
+          <severity>1.0</severity>
+        </li>
+      </hediffsToApply>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Grapple</defName>
+    <label>Grapple</label>
+    <description>Forcefully hooks and yanks an opponent to the Gladiator, followed by a violent leg sweep, knocking the opponent down.
+		
+Casting time: 1s
+Range: 15</description>
+    <spellId>rwom.tm_grapple</spellId>
+    <iconPath>UI/grapplinghook</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_Grapple</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Grapple</defaultProjectile>
+      <abilityDef>TM_Grapple</abilityDef>
+      <AbilityTargetCategory>TargetLocation</AbilityTargetCategory>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+      <warmupTime>1.0</warmupTime>
+      <SecondsToRecharge>6.0</SecondsToRecharge>
+      <range>15</range>
+      <isViolent>true</isViolent>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_GrappleI</defName>
+    <label>Grapple</label>
+    <description>Forcefully hooks and yanks an opponent to the Gladiator, followed by a violent leg sweep, knocking the opponent down.
+Casting time: .6s
+Range: 17</description>
+    <spellId>rwom.tm_grapple_i</spellId>
+    <iconPath>UI/grapplinghook</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_Grapple</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Grapple</defaultProjectile>
+      <abilityDef>TM_Grapple_I</abilityDef>
+      <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+      <warmupTime>0.6</warmupTime>
+      <SecondsToRecharge>5.0</SecondsToRecharge>
+      <range>17</range>
+      <isViolent>true</isViolent>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_GrappleII</defName>
+    <label>Grapple</label>
+    <description>Forcefully hooks and yanks an opponent to the Gladiator, followed by a violent leg sweep, knocking the opponent down.
+		
+Casting time: .4s
+Range: 20</description>
+    <spellId>rwom.tm_grapple_ii</spellId>
+    <iconPath>UI/grapplinghook</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_Grapple</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Grapple</defaultProjectile>
+      <abilityDef>TM_Grapple_II</abilityDef>
+      <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+      <warmupTime>0.4</warmupTime>
+      <SecondsToRecharge>4.0</SecondsToRecharge>
+      <range>20</range>
+      <isViolent>true</isViolent>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_GrappleIII</defName>
+    <label>Grapple</label>
+    <description>Forcefully hooks and yanks an opponent to the Gladiator, followed by a violent leg sweep, knocking the opponent down.
+		
+Casting time: .2s
+Range: 23</description>
+    <spellId>rwom.tm_grapple_iii</spellId>
+    <iconPath>UI/grapplinghook</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_Grapple</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Grapple</defaultProjectile>
+      <abilityDef>TM_Grapple_III</abilityDef>
+      <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+      <warmupTime>0.2</warmupTime>
+      <SecondsToRecharge>3.0</SecondsToRecharge>
+      <range>23</range>
+      <isViolent>true</isViolent>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Cleave</defName>
+    <label>Cleave</label>
+    <description>Executes a powerful, sweeping blow that can strike multiple enemies adjacent to the target. As long as the gladiator has enough stamina, this ability works automatically whenever the gladiator performs a melee attack. Cleave chance is calculated from weapon mass - heavier weapons are more likely to cleave.</description>
+    <spellId>rwom.tm_cleave</spellId>
+    <iconPath>UI/cleave</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_Cleave</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Cleave</defaultProjectile>
+      <abilityDef>TM_Cleave</abilityDef>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+      <warmupTime>0.0</warmupTime>
+      <SecondsToRecharge>6.0</SecondsToRecharge>
+      <range>0</range>
+      <isViolent>true</isViolent>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <soundCast>MeleeHit_Metal_Sharp</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Whirlwind</defName>
+    <label>Whirlwind</label>
+    <description>The Gladiator launches into a frenzied attack, dancing forward in a furious whirlwind of steel and death.</description>
+    <spellId>rwom.tm_whirlwind</spellId>
+    <iconPath>UI/whirlwind</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Effect_Whirlwind</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Whirlwind</defaultProjectile>
+      <abilityDef>TM_Whirlwind</abilityDef>
+      <AbilityTargetCategory>TargetLocation</AbilityTargetCategory>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+      <warmupTime>0.2</warmupTime>
+      <SecondsToRecharge>20.0</SecondsToRecharge>
+      <range>16</range>
+      <isViolent>true</isViolent>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <soundCast>DropPod_Leaving</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+    </verbProperties>
+  </AbilityDef>
+</Defs>

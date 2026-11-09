@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <FlyingObject_DirtDevil.label>objeto volador</FlyingObject_DirtDevil.label>
+  
+  
+  <FlyingObject_Flight.label>objeto volador</FlyingObject_Flight.label>
+  
+  
+  <FlyingObject_LightningTrap.label>relámpago</FlyingObject_LightningTrap.label>
+  
+  
+  <Projectile_ArcaneBolt.label>descarga arcana</Projectile_ArcaneBolt.label>
+  
+  
+  <Projectile_BriarPatch.label>matorral de espinas</Projectile_BriarPatch.label>
+  
+  
+  <Projectile_ChargeBattery.label>cargar batería</Projectile_ChargeBattery.label>
+  
+  
+  <Projectile_Cooler.label>generar enfriador mágico</Projectile_Cooler.label>
+  
+  
+  <Projectile_DirtDevil.label>remolino de polvo</Projectile_DirtDevil.label>
+  
+  
+  <Projectile_DryGround.label>secar terreno</Projectile_DryGround.label>
+  
+  
+  <Projectile_EMP.label>EMP</Projectile_EMP.label>
+
+  
+  
+  <Projectile_Extinguish.label>extinguir</Projectile_Extinguish.label>
+  
+  
+  <Projectile_FertileLands.label>tierras fértiles</Projectile_FertileLands.label>
+  
+  
+  <Projectile_Flight.label>vuelo</Projectile_Flight.label>
+  
+  
+  <Projectile_Heater.label>generar calentador mágico</Projectile_Heater.label>
+  
+  
+  <Projectile_PowerNode.label>generar nodo de energía arcana</Projectile_PowerNode.label>
+  
+  
+  <Projectile_SiphonMana.label>sifonar maná</Projectile_SiphonMana.label>
+  
+  
+  <Projectile_SmokeCloud.label>nube de humo</Projectile_SmokeCloud.label>
+  
+  
+  <Projectile_Sunlight.label>generar luz mágica</Projectile_Sunlight.label>
+  
+  
+  <Projectile_TempestStrike.label>Golpe de tempestad</Projectile_TempestStrike.label>
+  
+  
+  <Projectile_ThrowingKnife.label>Cuchillo arrojadizo</Projectile_ThrowingKnife.label>
+  
+  
+  <Projectile_TM_SpawnThing.label>generar objeto mágico</Projectile_TM_SpawnThing.label>
+  
+  
+  <Projectile_TransferMana.label>transferir maná</Projectile_TransferMana.label>
+  
+  
+  <Projectile_WetGround.label>humedecer terreno</Projectile_WetGround.label>
+
+  
+</LanguageData>

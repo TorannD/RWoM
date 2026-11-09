@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ReadMonkRestorative>Відновлювальна медитація — Класична лікувальна медитація.</TM_ReadMonkRestorative>
+  <TM_ReadMonkCultivation>Зосереджена культивація — За 600 тіків безперервної медитації дає 6/8/10 ці за рангом Печатки долоні.</TM_ReadMonkCultivation>
+  <TM_MonkFoundationTrial>Перервано ворожих підготовок: {0}/8 або оброблено різних ран: {1}/20.</TM_MonkFoundationTrial>
+  <TM_MonkAdeptTrial>Завершуйте культивацію та медичну роботу впродовж доби: {0}/10 днів.</TM_MonkAdeptTrial>
+  <TM_MonkMasterTrial>Врятовано союзників без зброї: {0}/8 або днів гасіння пожеж удома: {1}/10. Рівень воїна {2}/30.</TM_MonkMasterTrial>
+  <TM_MonkSealRank>Печатка долоні: ранг {0}/3</TM_MonkSealRank>
+  <TM_MonkAdvance>Опанувати наступний етап</TM_MonkAdvance>
+  <TM_MonkMeridianUnavailable>Потрібні Вознесіння, вільні руки, 60% ці й завершена перезарядка.</TM_MonkMeridianUnavailable>
+</LanguageData>

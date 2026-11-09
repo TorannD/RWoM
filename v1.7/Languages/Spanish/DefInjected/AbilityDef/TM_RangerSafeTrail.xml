@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_Bridge_RangerSafeTrail.label>Senda segura</TM_Bridge_RangerSafeTrail.label>
+  <TM_Bridge_RangerSafeTrail.description>Marca durante 8 segundos una ruta visible y transitable de hasta 8 casillas. Los dos primeros aliados que entren se mueven un 15% más rápido mientras permanezcan en ella. Una puerta cerrada o un obstáculo corta la senda. Coste base: 20% de aguante. Recarga: 40 segundos.</TM_Bridge_RangerSafeTrail.description>
+</LanguageData>

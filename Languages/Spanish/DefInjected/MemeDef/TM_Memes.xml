@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_Transcendent.label>trascendente</TM_Transcendent.label>
+  
+  <TM_Transcendent.description>A quienes tienen la capacidad de cambiar su propio destino hay que temerlos y respetarlos: destrúyelos, sigue sus pasos o cae ante ellos.</TM_Transcendent.description>
+  
+  <TM_Transcendent.descriptionMaker.rules.rulesStrings.0>creation(tag=meme_TM_Transcendent)-&gt;A la deriva en una eternidad de magia, [deity0_name] contempló los mundos físicos y vio angustia y conflicto, donde unos pocos usaban el poder de las máquinas y los archotecnológicos para abusar de la mayoría. Deseando restaurar el equilibrio, [deity0_name] tejió hilos de [deity0_possessive] poder en la esencia de toda la humanidad, concediéndole la capacidad de tocar la magia y la voluntad de usarla.</TM_Transcendent.descriptionMaker.rules.rulesStrings.0>
+  
+  <TM_Transcendent.descriptionMaker.rules.rulesStrings.1>episode(uses=1,tag=meme_TM_Transcendent)-&gt;La magia, concedida tanto a buenos como a malvados, se usó sin cuidado y amenazó con partir la tierra en dos, causando dolor y caos a todos. [deity0_name], viendo que la humanidad aún no tenía la madurez para controlarse, redujo el flujo de maná a un hilo y borró de la mente de quienes la manejaban el conocimiento de su uso. Así, la magia se volvió una rareza, y su uso exigía la dedicación y la energía de sus custodios.</TM_Transcendent.descriptionMaker.rules.rulesStrings.1>
+  
+  <TM_Transcendent.descriptionMaker.rules.rulesStrings.2>intro(tag=meme_TM_Transcendent)-&gt;En [place_summary] [place_name], el ritual del verdadero nacimiento comenzó en [altarRoomLabel], el recinto [deity0_type] de [deity0_name], donde [founderName], aterrado pero desesperado, se esforzó con intensidad y fervor por abrir un camino con pura fuerza de voluntad. [deity0_name], al presenciar esta fuerza de espíritu insondable, concedió a [founderName] una conexión con la magia.</TM_Transcendent.descriptionMaker.rules.rulesStrings.2>
+  
+  <TM_Transcendent.descriptionMaker.rules.rulesStrings.3>conflict(tag=meme_TM_Transcendent)-&gt;Un violento [foeLeader] intentó apoderarse de este poder y mató a muchos para llegar a [place_name].</TM_Transcendent.descriptionMaker.rules.rulesStrings.3>
+  
+  <TM_Transcendent.descriptionMaker.rules.rulesStrings.4>founderJoin(tag=meme_TM_Transcendent)-&gt;[deity0_name] ordenó a [founderName] aprender los caminos de la magia y defender a su tribu. [founderName] pasó cada hora de vigilia en comunión con [deity0_name] en [altarRoomLabel].</TM_Transcendent.descriptionMaker.rules.rulesStrings.4>
+  
+  <TM_Transcendent.descriptionMaker.rules.rulesStrings.5>victory(tag=meme_TM_Transcendent)-&gt;Consumido por un océano de malicia, [foeLeader] marchó con sus ejércitos sobre [place_name] para matar a [founderName]. Pero, el día del ajuste de cuentas, [founderName] emergió de su comunión con [deity0_name] e invocó una tormenta de [TM_stormType] y [TM_stormType], destruyendo por completo a los ejércitos de [foeLeader]. Así, el linaje de la magia echó raíces y comenzó a extenderse por [place_summary].</TM_Transcendent.descriptionMaker.rules.rulesStrings.5>
+  
+  <TM_Transcendent.descriptionMaker.rules.rulesStrings.6>setup(tag=meme_TM_Transcendent)-&gt;[founderName] luchó en muchas batallas para sus amos de la urbmundo y vio mucho dolor, desesperación y muerte. Agotado por lo absurdo de todo ello, arrojó sus armas y juró ante [deity0_name] moldear su futuro en pos de la paz y la prosperidad en lugar de la violencia.</TM_Transcendent.descriptionMaker.rules.rulesStrings.6>
+  
+  <TM_Transcendent.descriptionMaker.rules.rulesStrings.7>story(uses=1,tag=meme_TM_Transcendent)-&gt;[founderName] predicó el camino pacífico como el verdadero camino hacia la vida eterna y recibió de su deidad patrona [deity0_name] un poderoso don de magia [deity0_type].</TM_Transcendent.descriptionMaker.rules.rulesStrings.7>
+  
+  <TM_Transcendent.descriptionMaker.rules.rulesStrings.8>lessonIntro(tag=meme_TM_Transcendent)-&gt;Para fortalecernos, primero debemos renunciar a las tecnologías y artefactos que frenan nuestro crecimiento. Solo entonces la lucha por sobrevivir podrá cambiarnos.</TM_Transcendent.descriptionMaker.rules.rulesStrings.8>
+  
+  <TM_Transcendent.descriptionMaker.rules.rulesStrings.9>lesson(tag=meme_TM_Transcendent)-&gt;Crecemos y nos adaptamos superando desafíos.</TM_Transcendent.descriptionMaker.rules.rulesStrings.9>
+  
+  <TM_Transcendent.descriptionMaker.rules.rulesStrings.10>lessonReinforcement(tag=meme_TM_Transcendent)-&gt;Para alcanzar el verdadero poder, debemos renunciar a los objetos que nos dan estabilidad y nos permiten seguir siendo débiles.</TM_Transcendent.descriptionMaker.rules.rulesStrings.10>
+  
+  <TM_Transcendent.descriptionMaker.rules.rulesStrings.11>archistBasis(tag=meme_TM_Transcendent)-&gt;Cuando aparecieron los archotecnológicos, nunca les preocuparon las apariencias; nos mostraron que la mente está por encima de la forma física.</TM_Transcendent.descriptionMaker.rules.rulesStrings.11>
+  
+  <TM_Transcendent.descriptionMaker.rules.rulesStrings.12>archistFact(tag=meme_TM_Transcendent)-&gt;Los archotecnológicos no previeron la semilla de magia dentro de la humanidad, y sus instrucciones para alcanzar la iluminación tomaron un giro imprevisto.</TM_Transcendent.descriptionMaker.rules.rulesStrings.12>
+  
+  <TM_Transcendent.descriptionMaker.rules.rulesStrings.13>archistProphecy(tag=meme_TM_Transcendent)-&gt;[inTheEnd], la humanidad logró una nueva forma de iluminación mediante la revelación y la conexión con la magia.</TM_Transcendent.descriptionMaker.rules.rulesStrings.13>
+  
+  <TM_Transcendent.descriptionMaker.rules.rulesStrings.14>animistFact(tag=meme_TM_Transcendent)-&gt;El reino espiritual se acerca cada vez más con la expansión de la magia; el velo de los espíritus puede abrirse por un instante para quienes dominan la magia, e incluso cruzarse si se paga el precio.</TM_Transcendent.descriptionMaker.rules.rulesStrings.14>
+  
+  <TM_Transcendent.generalRules.rulesStrings.0>memeAdjective-&gt;trascendente</TM_Transcendent.generalRules.rulesStrings.0>
+  
+  <TM_Transcendent.generalRules.rulesStrings.1>memeAdjective-&gt;campeón</TM_Transcendent.generalRules.rulesStrings.1>
+  
+  <TM_Transcendent.generalRules.rulesStrings.2>memeAdjective-&gt;héroe</TM_Transcendent.generalRules.rulesStrings.2>
+  
+  <TM_Transcendent.generalRules.rulesStrings.3>memeAdjective-&gt;mago</TM_Transcendent.generalRules.rulesStrings.3>
+  
+  <TM_Transcendent.generalRules.rulesStrings.4>memeAdjective-&gt;superior</TM_Transcendent.generalRules.rulesStrings.4>
+  
+  <TM_Transcendent.generalRules.rulesStrings.5>memeAdjective-&gt;hechicero</TM_Transcendent.generalRules.rulesStrings.5>
+  
+  <TM_Transcendent.generalRules.rulesStrings.6>memeAdjective-&gt;lanzador de hechizos</TM_Transcendent.generalRules.rulesStrings.6>
+  
+  <TM_Transcendent.generalRules.rulesStrings.7>memeCreed-&gt;hermandad</TM_Transcendent.generalRules.rulesStrings.7>
+  
+  <TM_Transcendent.generalRules.rulesStrings.8>memeCreed-&gt;redil</TM_Transcendent.generalRules.rulesStrings.8>
+  
+  <TM_Transcendent.generalRules.rulesStrings.9>memeCreed-&gt;gremio</TM_Transcendent.generalRules.rulesStrings.9>
+  
+  <TM_Transcendent.generalRules.rulesStrings.10>memeCreed-&gt;elegidos</TM_Transcendent.generalRules.rulesStrings.10>
+  
+  <TM_Transcendent.generalRules.rulesStrings.11>memeCreed-&gt;maestros</TM_Transcendent.generalRules.rulesStrings.11>
+  
+  <TM_Transcendent.generalRules.rulesStrings.12>memeConcept-&gt;magia</TM_Transcendent.generalRules.rulesStrings.12>
+  
+  <TM_Transcendent.generalRules.rulesStrings.13>memeConcept-&gt;don</TM_Transcendent.generalRules.rulesStrings.13>
+  
+  <TM_Transcendent.generalRules.rulesStrings.14>memeConcept-&gt;elegido</TM_Transcendent.generalRules.rulesStrings.14>
+  
+  <TM_Transcendent.generalRules.rulesStrings.15>memeConcept-&gt;maldición</TM_Transcendent.generalRules.rulesStrings.15>
+  
+  <TM_Transcendent.generalRules.rulesStrings.16>memeConcept-&gt;plaga</TM_Transcendent.generalRules.rulesStrings.16>
+  
+  <TM_Transcendent.generalRules.rulesStrings.17>memeLeaderNoun-&gt;archimago</TM_Transcendent.generalRules.rulesStrings.17>
+  
+  <TM_Transcendent.generalRules.rulesStrings.18>memeLeaderNoun-&gt;maestro</TM_Transcendent.generalRules.rulesStrings.18>
+  
+  <TM_Transcendent.generalRules.rulesStrings.19>memeLeaderNoun-&gt;mago</TM_Transcendent.generalRules.rulesStrings.19>
+  
+  <TM_Transcendent.generalRules.rulesStrings.20>memeLeaderNoun-&gt;hechicero</TM_Transcendent.generalRules.rulesStrings.20>
+  
+  <TM_Transcendent.generalRules.rulesStrings.21>memeLeaderNoun-&gt;emperador</TM_Transcendent.generalRules.rulesStrings.21>
+  
+  <TM_Transcendent.generalRules.rulesStrings.22>memeLeaderAdjective-&gt;elegido</TM_Transcendent.generalRules.rulesStrings.22>
+  
+  <TM_Transcendent.generalRules.rulesStrings.23>memeLeaderAdjective-&gt;trascendente</TM_Transcendent.generalRules.rulesStrings.23>
+  
+  <TM_Transcendent.generalRules.rulesStrings.24>memeLeaderAdjective-&gt;sagrado</TM_Transcendent.generalRules.rulesStrings.24>
+  
+  <TM_Transcendent.generalRules.rulesStrings.25>memeLeaderAdjective-&gt;arcano</TM_Transcendent.generalRules.rulesStrings.25>
+  
+  <TM_Transcendent.generalRules.rulesStrings.26>memeMoralist-&gt;adivino</TM_Transcendent.generalRules.rulesStrings.26>
+  
+  <TM_Transcendent.generalRules.rulesStrings.27>memeMoralist-&gt;portavoz</TM_Transcendent.generalRules.rulesStrings.27>
+  
+  <TM_Transcendent.generalRules.rulesStrings.28>memeMoralist-&gt;maestro del saber</TM_Transcendent.generalRules.rulesStrings.28>
+  
+  <TM_Transcendent.generalRules.rulesStrings.29>memeMoralist-&gt;senescal</TM_Transcendent.generalRules.rulesStrings.29>
+  
+  <TM_Transcendent.generalRules.rulesStrings.30>memeMoralist-&gt;mayordomo</TM_Transcendent.generalRules.rulesStrings.30>
+  
+  <TM_Transcendent.generalRules.rulesStrings.31>TM_stormType-&gt;fuego</TM_Transcendent.generalRules.rulesStrings.31>
+  
+  <TM_Transcendent.generalRules.rulesStrings.32>TM_stormType-&gt;hielo</TM_Transcendent.generalRules.rulesStrings.32>
+  
+  <TM_Transcendent.generalRules.rulesStrings.33>TM_stormType-&gt;viento</TM_Transcendent.generalRules.rulesStrings.33>
+  
+  <TM_Transcendent.generalRules.rulesStrings.34>TM_stormType-&gt;grava</TM_Transcendent.generalRules.rulesStrings.34>
+  
+  <TM_Transcendent.generalRules.rulesStrings.35>TM_stormType-&gt;relámpagos</TM_Transcendent.generalRules.rulesStrings.35>
+  
+  <TM_Transcendent.generalRules.rulesStrings.36>TM_stormType-&gt;caos</TM_Transcendent.generalRules.rulesStrings.36>
+  
+  <TM_Transcendent.generalRules.rulesStrings.37>TM_stormType-&gt;roca</TM_Transcendent.generalRules.rulesStrings.37>
+  
+  <TM_Transcendent.generalRules.rulesStrings.38>TM_stormType-&gt;emoción</TM_Transcendent.generalRules.rulesStrings.38>
+  
+  <TM_Transcendent.generalRules.rulesStrings.39>TM_stormType-&gt;energía arcana pura</TM_Transcendent.generalRules.rulesStrings.39>
+  
+  <TM_Transcendent.generalRules.rulesStrings.40>TM_stormType-&gt;furia</TM_Transcendent.generalRules.rulesStrings.40>
+  
+  <TM_Transcendent.generalRules.rulesStrings.41>TM_stormType-&gt;espíritus</TM_Transcendent.generalRules.rulesStrings.41>
+  
+  <TM_Transcendent.generalRules.rulesStrings.42>TM_stormType-&gt;agua</TM_Transcendent.generalRules.rulesStrings.42>
+  
+</LanguageData>

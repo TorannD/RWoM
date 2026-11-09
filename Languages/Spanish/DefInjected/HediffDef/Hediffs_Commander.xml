@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_CommanderAuraHD.label>aura de comandante</TM_CommanderAuraHD.label>
+  
+  <TM_CommanderAuraHD.description>Inspira a los peones cercanos con carisma y liderazgo.</TM_CommanderAuraHD.description>
+  
+  
+  <TM_CommanderHD.label>inspirado emocionalmente (I)</TM_CommanderHD.label>
+  
+  <TM_CommanderHD.description>Inspirado por un comandante.</TM_CommanderHD.description>
+  
+  <TM_CommanderHD.stages.Commander.label>comandante</TM_CommanderHD.stages.Commander.label>
+  
+  
+  <TM_CommanderHD_I.label>inspirado emocionalmente (II)</TM_CommanderHD_I.label>
+  
+  <TM_CommanderHD_I.description>Inspirado por un comandante.</TM_CommanderHD_I.description>
+  
+  
+  <TM_CommanderHD_II.label>inspirado emocionalmente (III)</TM_CommanderHD_II.label>
+  
+  <TM_CommanderHD_II.description>Inspirado por un comandante.</TM_CommanderHD_II.description>
+  
+  
+  <TM_CommanderHD_III.label>inspirado emocionalmente (IV)</TM_CommanderHD_III.label>
+  
+  <TM_CommanderHD_III.description>Inspirado por un comandante.</TM_CommanderHD_III.description>
+  
+  
+  <TM_HoldTheLineHD.label>postura defensiva</TM_HoldTheLineHD.label>
+  
+  <TM_HoldTheLineHD.description>Ha recibido la orden de mantener la posición y luchar con valentía.</TM_HoldTheLineHD.description>
+  
+  
+  <TM_HTLShieldHD.label>escudo de mantener la línea</TM_HTLShieldHD.label>
+  
+  <TM_HTLShieldHD.description>Mayor entereza por haber recibido la orden de mantener la línea.</TM_HTLShieldHD.description>
+  
+  
+  <TM_MoveOutHD.label>paso redoblado</TM_MoveOutHD.label>
+  
+  <TM_MoveOutHD.description>Ha recibido la orden de moverse con rapidez.</TM_MoveOutHD.description>
+  
+  <TM_MoveOutHD.stages.Recovering.label>recuperándose</TM_MoveOutHD.stages.Recovering.label>
+  
+  
+  <TM_ProvisionerAuraHD.label>aura de proveedor</TM_ProvisionerAuraHD.label>
+  
+  <TM_ProvisionerAuraHD.description>Mejora la disponibilidad de provisiones para los peones cercanos.</TM_ProvisionerAuraHD.description>
+  
+  
+  <TM_ProvisionerHD.label>provisiones</TM_ProvisionerHD.label>
+  
+  <TM_ProvisionerHD.description>Ha obtenido suministros e información de un comandante.</TM_ProvisionerHD.description>
+  
+  <TM_ProvisionerHD.stages.I.label>I</TM_ProvisionerHD.stages.I.label>
+  
+  <TM_ProvisionerHD.stages.II.label>II</TM_ProvisionerHD.stages.II.label>
+  
+  <TM_ProvisionerHD.stages.III.label>III</TM_ProvisionerHD.stages.III.label>
+  
+  <TM_ProvisionerHD.stages.IV.label>IV</TM_ProvisionerHD.stages.IV.label>
+  
+  
+  <TM_StayAlertHD.label>alerta</TM_StayAlertHD.label>
+  
+  <TM_StayAlertHD.description>Ha recibido la orden de reforzar sus niveles de alerta.</TM_StayAlertHD.description>
+  
+  
+  <TM_TaskMasterAuraHD.label>aura de capataz</TM_TaskMasterAuraHD.label>
+  
+  <TM_TaskMasterAuraHD.description>Gestiona las tareas y prioridades de los peones cercanos, lo que aumenta su diligencia pero reduce su estado de ánimo.</TM_TaskMasterAuraHD.description>
+  
+  
+  <TM_TaskMasterHD.label>capataz</TM_TaskMasterHD.label>
+  
+  <TM_TaskMasterHD.description>Un comandante está controlando sus tareas y prioridades.</TM_TaskMasterHD.description>
+  
+  <TM_TaskMasterHD.stages.I.label>I</TM_TaskMasterHD.stages.I.label>
+  
+  <TM_TaskMasterHD.stages.II.label>II</TM_TaskMasterHD.stages.II.label>
+  
+  <TM_TaskMasterHD.stages.III.label>III</TM_TaskMasterHD.stages.III.label>
+  
+  <TM_TaskMasterHD.stages.IV.label>IV</TM_TaskMasterHD.stages.IV.label>
+  
+</LanguageData>

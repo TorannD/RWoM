@@ -203,7 +203,6 @@ internal static class FleshBiteTests
         return true;
     }
     static bool DrawPosition(ref UnityEngine.Vector3 __result) { __result = UnityEngine.Vector3.zero; return false; }
-    static bool HealthScale(ref float __result) { __result = 1; return false; }
     static int Seed(bool succeeds, float chance = .1f)
     {
         for (int seed = 1; seed < 1000; seed++)
@@ -246,7 +245,6 @@ internal static class FleshBiteTests
             patches.Prefix(typeof(ImmunityHandler).GetMethod("DiseaseContractChanceFactor", [typeof(HediffDef), typeof(BodyPartRecord)])!, nameof(DiseaseBoundary));
             patches.Prefix(typeof(Rand).GetMethod("Chance")!, nameof(ChanceBoundary));
             patches.Prefix(typeof(Pawn).GetProperty("DrawPos")!.GetMethod!, nameof(DrawPosition));
-            patches.Prefix(typeof(Pawn).GetProperty("HealthScale")!.GetMethod!, nameof(HealthScale));
             body(actor, victim, verb, patches);
         }
         finally
@@ -255,6 +253,14 @@ internal static class FleshBiteTests
     static Pawn MakePawn()
     {
         var pawn = FleshStatTests.Pawn();
+        // Use the native getter: a late getter patch can be bypassed by callers
+        // already compiled during earlier tests in the same process.
+        pawn.def.race.baseHealthScale = 1f;
+        pawn.def.race.lifeStageAges = [new LifeStageAge { minAge = 13, def = new LifeStageDef { developmentalStage = DevelopmentalStage.Adult, healthScaleFactor = 1f } }];
+        pawn.ageTracker = new Pawn_AgeTracker(pawn);
+        FleshStatTests.Set(pawn.ageTracker, "ageBiologicalTicksInt", 25L * 3600000L);
+        FleshStatTests.Set(pawn.ageTracker, "cachedLifeStageIndex", 0);
+        Check.Equal(1f, pawn.HealthScale, "bite fixture uses native adult health scale");
         pawn.def.race.meatDef = (ThingDef)RuntimeHelpers.GetUninitializedObject(typeof(ThingDef));
         FleshStatTests.Set(pawn.def.race, "fleshType", new FleshTypeDef { isOrganic = true });
         pawn.def.race.body = new BodyDef { corePart = new BodyPartRecord { def = new BodyPartDef { defName = "TestFlesh", hitPoints = 50 } } };

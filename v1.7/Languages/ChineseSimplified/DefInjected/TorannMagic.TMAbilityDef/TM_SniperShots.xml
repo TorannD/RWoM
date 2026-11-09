@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_SniperAimedShot.label>瞄准射击</TM_SniperAimedShot.label>
+  <TM_SniperAimedShot.description>以武器的原有射程和精度发射一枚普通子弹，掩体照常生效。伤害110/125/140%，基础耐力消耗25，冷却30秒。</TM_SniperAimedShot.description>
+</LanguageData>

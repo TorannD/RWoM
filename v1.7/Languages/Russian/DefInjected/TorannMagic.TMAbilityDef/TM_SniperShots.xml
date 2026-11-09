@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_SniperAimedShot.label>Прицельный выстрел</TM_SniperAimedShot.label>
+  <TM_SniperAimedShot.description>Один выстрел по противнику из обычного пулевого оружия с его дальностью, точностью и укрытиями. Урон пули 110/125/140%, базовый расход 25 выносливости, перезарядка 30 секунд.</TM_SniperAimedShot.description>
+</LanguageData>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_MagofuelGenerator.label>魔能燃料发电机</TM_MagofuelGenerator.label>
+  <TM_MagofuelGenerator.description>燃烧魔能燃料，为电网提供3000瓦电力。发电时每天消耗3单位燃料，每秒释放6单位热量。可在真空中运行。关闭、故障、断开电网或燃料耗尽时停止运行。发电机停止或搬运时，核心中尚未燃烧的燃料会保留。</TM_MagofuelGenerator.description>
+</LanguageData>
+

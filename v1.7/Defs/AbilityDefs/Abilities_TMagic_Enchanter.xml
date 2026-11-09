@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-<!-- Enchanted Body -->
+
  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_EnchantedBody</defName>
     <label>Enchanted Body</label>
@@ -42,9 +41,16 @@ Using this ability while the enchantment is active will dispel the enchantment. 
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_enchantedbody</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
-  <!-- Enchanted aura -->
+  
  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_EnchantedAura</defName>
     <label>Enchanted Aura</label>
@@ -58,7 +64,7 @@ Using this ability while the enchantment is active will dispel the enchantment. 
 	<upkeepRegenCost>.4</upkeepRegenCost>
 	<upkeepEfficiencyPercent>.2</upkeepEfficiencyPercent>
 	<abilityHediff>TM_EnchantedAuraHD</abilityHediff>
-<!-- 	<shouldInitialize>false</shouldInitialize> -->
+
     <MainVerb Class="AbilityUser.VerbProperties_Ability">
         <verbClass>TorannMagic.Verb_EnchantedAura</verbClass>
 			<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
@@ -83,9 +89,16 @@ Using this ability while the enchantment is active will dispel the enchantment. 
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_enchantedaura</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
-  <!-- Transmutate -->	
+  	
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_Transmutate</defName>
         <label>Transmutate</label>
@@ -125,9 +138,16 @@ Check skill descriptions for additional details.</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_transmutate</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- Enchanter Stone -->	
+		
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_EnchanterStone</defName>
         <label>Enchanter's Stone</label>
@@ -169,7 +189,14 @@ This ability is used on raw resources such as stone chunks, steel, or silver - s
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_enchanterstone</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
    <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_DismissEnchanterStones</defName>
@@ -204,9 +231,16 @@ This ability is used on raw resources such as stone chunks, steel, or silver - s
 		 <canTargetLocations>false</canTargetLocations>
         </targetParams>
     </MainVerb>
- </TorannMagic.TMAbilityDef>
+ <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_dismissenchanterstones</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- Enchant Weapon -->	
+		
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_EnchantWeapon</defName>
         <label>Enchant Weapon</label>
@@ -251,7 +285,14 @@ The enchantment will only remain active as long as the pawn holds the enchanted 
                 <canTargetLocations>false</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_enchantweapon</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_DispelEnchantWeapon</defName>
@@ -288,10 +329,17 @@ The enchantment will only remain active as long as the pawn holds the enchanted 
                 <canTargetLocations>false</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_dispelenchantweapon</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	
-   <!-- Polymorph -->
+   
    
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_Polymorph</defName>
@@ -347,7 +395,14 @@ Cast time: 3s</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_polymorph</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_Polymorph_I</defName>
@@ -402,7 +457,14 @@ Cast time: 2.8s</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_polymorph_i</spellId>
+<domain>Magic</domain>
+<tier>1</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_Polymorph_II</defName>
@@ -457,7 +519,14 @@ Cast time: 2.6s</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_polymorph_ii</spellId>
+<domain>Magic</domain>
+<tier>2</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_Polymorph_III</defName>
@@ -512,9 +581,16 @@ Cast time: 2.4s</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_polymorph_iii</spellId>
+<domain>Magic</domain>
+<tier>3</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- Shapeshift -->
+	
  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_Shapeshift</defName>
     <label>Shapeshift</label>
@@ -550,9 +626,16 @@ Shapeshifting is not without minor side effects; shapeshifting into an animal wi
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_shapeshift</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
-  <!-- Enchanted aura -->
+  
  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_ShapeshiftDW</defName>
     <label>Shapeshift: Dire Wolf</label>
@@ -590,6 +673,13 @@ Dire wolves are unique animals with a special connection to magic. While in dire
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_shapeshiftdw</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
 </Defs>

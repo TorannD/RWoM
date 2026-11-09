@@ -1,42 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using RimWorld;
-using AbilityUser;
+using TorannMagic.ClassProgression;
 using Verse;
 using Verse.Sound;
-using UnityEngine;
-
 
 namespace TorannMagic
 {
-    public class Verb_BattleHymn : Verb_UseAbility
+    public class Verb_BattleHymn : Verb_SpiritTargetable
     {
-        protected override bool TryCastShot()
+        protected override bool ApplyHostedEffect()
         {
-            Pawn caster = base.CasterPawn;
-            Pawn pawn = this.currentTarget.Thing as Pawn;
-
-
-            bool flag = pawn != null && !pawn.Dead;
-            if (flag)
+            var body = CasterPawn;
+            var owner = Ability?.Pawn ?? body;
+            if (body?.Spawned != true || body.Dead || currentTarget.Pawn != body || owner?.health == null) return false;
+            var def = HediffDef.Named("TM_SingBattleHymnHD");
+            var song = owner.health.hediffSet.GetFirstHediffOfDef(def);
+            if (song != null)
             {
-                if (pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_SingBattleHymnHD")))
-                {
-                    pawn.health.RemoveHediff(pawn.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("TM_SingBattleHymnHD")));
-                    TM_MoteMaker.ThrowSiphonMote(pawn.DrawPos, pawn.Map, 1f);
-                }
-                else
-                {
-                    SoundDef sound = TorannMagicDefOf.TM_BattleHymnSD;
-                    sound.PlayOneShotOnCamera(caster.Map);
-                    HealthUtility.AdjustSeverity(pawn, HediffDef.Named("TM_SingBattleHymnHD"), .95f);
-                    TM_MoteMaker.ThrowNoteMote(pawn.DrawPos, pawn.Map, .8f);
-                    TM_MoteMaker.ThrowNoteMote(pawn.DrawPos, pawn.Map, .6f);
-                    TM_MoteMaker.ThrowNoteMote(pawn.DrawPos, pawn.Map, .4f);
-                }
+                owner.health.RemoveHediff(song);
+                TM_MoteMaker.ThrowSiphonMote(body.DrawPos, body.Map, 1f);
+            }
+            else
+            {
+                TorannMagicDefOf.TM_BattleHymnSD.PlayOneShotOnCamera(body.Map);
+                HealthUtility.AdjustSeverity(owner, def, .95f);
+                TM_MoteMaker.ThrowNoteMote(body.DrawPos, body.Map, .8f);
+                TM_MoteMaker.ThrowNoteMote(body.DrawPos, body.Map, .6f);
+                TM_MoteMaker.ThrowNoteMote(body.DrawPos, body.Map, .4f);
             }
             return true;
         }
+
+        protected override bool TryCastShot() => ApplyHostedEffect();
     }
 }

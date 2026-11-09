@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritLightningCloud.reportString>casting lightning cloud through a spirit host.</TM_SpiritLightningCloud.reportString>
+  <TM_SpiritLightningStorm.reportString>casting lightning storm through a spirit host.</TM_SpiritLightningStorm.reportString>
+  <TM_SpiritLightningBolt.reportString>casting lightning bolt through a spirit host.</TM_SpiritLightningBolt.reportString>
+  <TM_SpiritAMP.reportString>casting AMP through a spirit host.</TM_SpiritAMP.reportString>
+  <TM_SpiritAMP_I.reportString>casting AMP through a spirit host.</TM_SpiritAMP_I.reportString>
+  <TM_SpiritAMP_II.reportString>casting AMP through a spirit host.</TM_SpiritAMP_II.reportString>
+  <TM_SpiritAMP_III.reportString>casting AMP through a spirit host.</TM_SpiritAMP_III.reportString>
+</LanguageData>

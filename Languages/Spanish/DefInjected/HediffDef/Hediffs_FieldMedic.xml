@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_CombatDrugsAccuracy_HD.label>Drogas de combate (puntería)</TM_CombatDrugsAccuracy_HD.label>
+  
+  <TM_CombatDrugsAccuracy_HD.description>Drogas de combate que mejoran la puntería.</TM_CombatDrugsAccuracy_HD.description>
+  
+  
+  <TM_CombatDrugsAwareness_HD.label>Drogas de combate (percepción)</TM_CombatDrugsAwareness_HD.label>
+  
+  <TM_CombatDrugsAwareness_HD.description>Drogas de combate que mejoran la percepción.</TM_CombatDrugsAwareness_HD.description>
+  
+  
+  <TM_CombatDrugsMoving_HD.label>Drogas de combate (movimiento)</TM_CombatDrugsMoving_HD.label>
+  
+  <TM_CombatDrugsMoving_HD.description>Drogas de combate que mejoran el movimiento.</TM_CombatDrugsMoving_HD.description>
+  
+  
+  <TM_CombatDrugsPain_HD.label>Drogas de combate (analgésico)</TM_CombatDrugsPain_HD.label>
+  
+  <TM_CombatDrugsPain_HD.description>Drogas de combate que reducen el dolor.</TM_CombatDrugsPain_HD.description>
+  
+  
+  <TM_EmergencyHD.label>Emergencia</TM_EmergencyHD.label>
+  
+  <TM_EmergencyHD.description>Haré lo que pueda.</TM_EmergencyHD.description>
+  
+  <TM_EmergencyHD.stages.I.label>I</TM_EmergencyHD.stages.I.label>
+  
+  
+  <TM_MedicalSupplyHD.label>Suministros médicos</TM_MedicalSupplyHD.label>
+  
+  <TM_MedicalSupplyHD.description>Representa los suministros médicos que lleva equipados un médico de campo.</TM_MedicalSupplyHD.description>
+  
+  <TM_MedicalSupplyHD.comps.HediffComp_AbilityResource.regenPerTickUpgradeName>Los suministros médicos no están destinados a regenerarse</TM_MedicalSupplyHD.comps.HediffComp_AbilityResource.regenPerTickUpgradeName>
+  
+  
+  <TM_MedigelHD.label>Medigel</TM_MedigelHD.label>
+  
+  <TM_MedigelHD.description>El medigel acelera la curación y combate las infecciones.</TM_MedigelHD.description>
+  
+  <TM_MedigelHD.stages.I.label>I</TM_MedigelHD.stages.I.label>
+  
+</LanguageData>

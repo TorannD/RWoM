@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using Verse;
 using System.Collections.Generic;
 using HarmonyLib;
@@ -58,14 +58,18 @@ namespace TorannMagic
 
         public void TickAction()
         {
-            List<Apparel> gear = this.Pawn.apparel.WornApparel;
-            for(int i = 0; i < gear.Count; i++)
+            var origin = parent.TryGetComp<ClassProgression.HediffComp_HostedStance>();
+            if (origin?.Projected == true && !origin.BeginPulse()) return;
+            var comp = origin?.Projected == true ? origin.TrainingOwner : Pawn.GetCompAbilityUserMight();
+            List<Apparel> gear = this.Pawn.apparel?.WornApparel;
+            if (gear == null) return;
+            for(int i = 0; i < (gear?.Count ?? 0); i++)
             {
                 if(Rand.Chance(.2f) && gear[i].HitPoints < gear[i].MaxHitPoints)
                 {
                     gear[i].HitPoints++;
                 }
-                CompAbilityUserMight comp = this.Pawn.GetCompAbilityUserMight();
+
                 if (comp != null && comp.MightData.MightPowerSkill_FieldTraining.FirstOrDefault((MightPowerSkill x) => x.label == "TM_FieldTraining_ver").level >= 5)
                 {
                     if (gear[i].HitPoints >= gear[i].MaxHitPoints && gear[i].WornByCorpse)
@@ -74,7 +78,7 @@ namespace TorannMagic
                     }
                 }
             }
-            Thing weapon = this.Pawn.equipment.Primary;
+            Thing weapon = this.Pawn.equipment?.Primary;
             if (weapon != null && (weapon.def.IsRangedWeapon || weapon.def.IsMeleeWeapon))
             {
                 if(Rand.Chance(.2f) && weapon.HitPoints < weapon.MaxHitPoints)

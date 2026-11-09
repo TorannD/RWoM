@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ReadMonkRestorative>Восстанавливающая медитация — Классическая лечебная медитация.</TM_ReadMonkRestorative>
+  <TM_ReadMonkCultivation>Сосредоточенная культивация — За 600 тиков непрерывной медитации даёт 6/8/10 ци по рангу Печати ладони.</TM_ReadMonkCultivation>
+  <TM_MonkFoundationTrial>Прервано вражеских подготовок: {0}/8, или обработано разных ран: {1}/20.</TM_MonkFoundationTrial>
+  <TM_MonkAdeptTrial>Завершайте культивацию и медицинскую работу в течение суток: {0}/10 дней.</TM_MonkAdeptTrial>
+  <TM_MonkMasterTrial>Спасено союзников без оружия: {0}/8 или дней тушения пожаров дома: {1}/10. Уровень воина {2}/30.</TM_MonkMasterTrial>
+  <TM_MonkSealRank>Печать ладони: ранг {0}/3</TM_MonkSealRank>
+  <TM_MonkAdvance>Освоить следующую ступень</TM_MonkAdvance>
+  <TM_MonkMeridianUnavailable>Нужны Вознесение, свободные руки, 60% ци и завершённая перезарядка.</TM_MonkMeridianUnavailable>
+</LanguageData>

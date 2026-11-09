@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ReadDeathKnightDread>恐惧：初始习得恐惧之波。</TM_ReadDeathKnightDread>
+  <TM_ReadDeathKnightSpite>复仇：初始习得怨击。</TM_ReadDeathKnightSpite>
+  <TM_DKTrial>在相邻盟友身旁被敌人击伤的天数：{0}/{1}，或救援不同盟友：{2}/{3}。</TM_DKTrial>
+  <TM_DKLevel>武技等级 {0}/30。</TM_DKLevel>
+  <TM_DKClaim>晋升</TM_DKClaim>
+  <TM_DKOath>守护誓约：每10秒可消耗10点憎恨，为相邻盟友抵挡最多25点伤害。</TM_DKOath>
+</LanguageData>

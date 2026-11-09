@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  
+  <TM_TechnoBit.label>Tecnobit</TM_TechnoBit.label>
+  <TM_TechnoBit.description>El tecnobit es un pequeño orbe autónomo que asiste al tecnomante en muchas tareas y le proporciona capacidades de apoyo adicionales. La asistencia del tecnobit puede activarse y desactivarse, y no realizará ninguna tarea mientras esté desactivada.\n\nSin reclutar: el tecnobit ayuda en tareas de fabricación, minería y construcción. También reparará edificios, androides y mecanoides cercanos.\n\nReclutado: usa un LED de enfoque interno para disparar microláseres al objetivo del tecnomante. Realiza reparaciones aceleradas en personajes robóticos o edificios cercanos.</TM_TechnoBit.description>
+
+  
+  <TM_TechnoTurret.label>Torreta Mark-IV</TM_TechnoTurret.label>
+  <TM_TechnoTurret.description>Despliega la torreta Mark-IV y establece un enlace neuronal con ella. El lanzador controla la Mark-IV a distancia. Los cohetes y los morteros consumen maná por disparo.\n\nLa Mark-IV se miniaturizará automáticamente cuando sufra daños críticos y puede causar una reacción neuronal inversa en el tecnomante que controla el sistema.</TM_TechnoTurret.description>
+
+  
+  <TM_TechnoWeapon.label>Arma de ingeniero</TM_TechnoWeapon.label>
+  <TM_TechnoWeapon.description>El tecnomante aplica sus conocimientos de ingeniería y magia para crear una versión modificada de un arma existente. Esta arma se moldea a partir de maná en bruto y queda anclada físicamente al tecnomante como una extensión de su cuerpo.\nPor ello, el arma se desintegrará si se separa del tecnomante. El tecnomante equipará esta arma automáticamente una vez creada.\n\nLos especialistas en armas también tienen acceso a munición modificada y nanoestimulantes para mejorar sus capacidades de combate.\n\nPara crear un arma tecno: selecciona como objetivo un arma en el suelo. El arma elegida debe ser a distancia, de nivel tecnológico industrial o superior, y usar la acción de disparo estándar.</TM_TechnoWeapon.description>
+
+  
+  <TM_NanoStimulant.label>Nanoestimulante</TM_NanoStimulant.label>
+  <TM_NanoStimulant.description>Una inyección de nanitos que mejora temporalmente las capacidades de combate de quien la recibe. Este estimulante lo sintetiza el tecnomante específicamente para su propia constitución biológica y genética. No es adictivo químicamente, pero resulta dañino para cualquier otro personaje.\n\nLos nanitos se alimentan del maná y la energía del cuerpo y provocarán fatiga rápidamente.\n\nCuando los nanitos se agotan, forman plaquetas que cauterizan y detienen las hemorragias e incluso curan heridas pequeñas. El uso de nanoestimulantes acelerará cualquier enfermedad o infección activa.</TM_NanoStimulant.description>
+
+  
+  <TM_TechnoShield.label>Escudo cinético</TM_TechnoShield.label>
+  <TM_TechnoShield.description>Rodea al objetivo con un campo cinético que repele los proyectiles entrantes. El escudo cinético puede desviar proyectiles en función de su energía cinética: los proyectiles más pesados son más difíciles de desviar y atravesarán los escudos de baja potencia.\n\nLa cantidad de energía cinética implicada en una desviación se determina por el daño que causaría el proyectil.</TM_TechnoShield.description>
+
+  
+  <TM_Sabotage.label>Sabotaje</TM_Sabotage.label>
+  <TM_Sabotage.description>El sabotaje anula los mecanismos de seguridad, las funciones lógicas y cualquier otro sistema explotable del objetivo dentro de un área pequeña. Sus efectos pueden ir desde un rendimiento mecánico reducido, un apagado temporal, la autodestrucción o un fallo catastrófico, hasta la pérdida de la capacidad de distinguir amigos de enemigos.\n\nSe puede aplicar a: baterías, generadores de energía, torretas, robots, androides y mecanoides.</TM_Sabotage.description>
+
+  
+  <TM_Overdrive.label>Sobrecarga</TM_Overdrive.label>
+  <TM_Overdrive.description>Sobrecarga el sistema mecánico, eléctrico o de IA objetivo con nanitos fabricados que lo llevan más allá de sus límites. La sobrecarga dañará el sistema periódicamente.\n\nSe puede aplicar a: generadores de energía, torretas, robots, androides y mecanoides.</TM_Overdrive.description>
+
+  
+  <TM_OrbitalStrike.label>Ataque orbital</TM_OrbitalStrike.label>
+  <TM_OrbitalStrike.description>Se infiltra en una red de satélites de bombardeo orbital e introduce una designación de objetivo. Al usar firmas arcanas aleatorias para enmascarar su actividad, los tecnomantes pueden manipular de forma continua sistemas avanzados sin ser identificados con certeza ni bloqueados.\n\nAlcance: 70\nPreparación: 3 s\nRadio: 2,5</TM_OrbitalStrike.description>
+
+  <TM_OrbitalStrike_I.label>Ataque orbital I</TM_OrbitalStrike_I.label>
+  <TM_OrbitalStrike_I.description>Se infiltra en una red de satélites de bombardeo orbital e introduce una designación de objetivo. Al usar firmas arcanas aleatorias para enmascarar su actividad, los tecnomantes pueden manipular de forma continua sistemas avanzados sin ser identificados con certeza ni bloqueados.\n\nAlcance: 80\nPreparación: 2,1 s\nRadio: 4,2</TM_OrbitalStrike_I.description>
+
+  <TM_OrbitalStrike_II.label>Ataque orbital II</TM_OrbitalStrike_II.label>
+  <TM_OrbitalStrike_II.description>Se infiltra en una red de satélites de bombardeo orbital e introduce una designación de objetivo. Al usar firmas arcanas aleatorias para enmascarar su actividad, los tecnomantes pueden manipular de forma continua sistemas avanzados sin ser identificados con certeza ni bloqueados.\n\nAlcance: 90\nPreparación: 1,8 s\nRadio: 5,0</TM_OrbitalStrike_II.description>
+
+  <TM_OrbitalStrike_III.label>Ataque orbital III</TM_OrbitalStrike_III.label>
+  <TM_OrbitalStrike_III.description>Se infiltra en una red de satélites de bombardeo orbital e introduce una designación de objetivo. Al usar firmas arcanas aleatorias para enmascarar su actividad, los tecnomantes pueden manipular de forma continua sistemas avanzados sin ser identificados con certeza ni bloqueados.\n\nAlcance: 100\nPreparación: 1,6 s\nRadio: 5,6</TM_OrbitalStrike_III.description>
+
+</LanguageData>

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_ReadBladeFocus>Изучить концентрацию клинка — лучше ближний бой, хуже стрельба и работа (выбор окончательный)</TM_ReadBladeFocus>
+  <TM_ReadBladeMemory>Изучить память лезвия — больше урона при смене противника (выбор окончательный)</TM_ReadBladeMemory>
+  <TM_BladeMemoryName>Память лезвия</TM_BladeMemoryName>
+  <TM_BladeMemoryTraining>При смене соседнего противника основной урон удара оружием ближнего боя возрастает на 2%. Каждый ранг добавляет 2 процентных пункта, до 10%. Срабатывает раз в 6 секунд.</TM_BladeMemoryTraining>
+</LanguageData>

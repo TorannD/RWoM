@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_Blizzard.label>ventisca</TM_Blizzard.label>
+  
+  <TM_Blizzard.description>Invoca una ventisca mortal para sepultar a tus enemigos bajo el hielo.</TM_Blizzard.description>
+  
+  
+  <TM_FrostRay.label>rayo de escarcha</TM_FrostRay.label>
+  
+  <TM_FrostRay.description>Un rayo de partículas sobreenfriadas que se propaga rápidamente, daña y congela a los objetivos.\n\nTiempo de recarga: 12 s\nAlcance: 28\nDisparos: 1</TM_FrostRay.description>
+  
+  
+  <TM_FrostRay_I.label>rayo de escarcha</TM_FrostRay_I.label>
+  
+  <TM_FrostRay_I.description>Un rayo de partículas sobreenfriadas que se propaga rápidamente, daña y congela a los objetivos.\n\nTiempo de recarga: 10 s\nAlcance: 30\nDisparos: 1</TM_FrostRay_I.description>
+  
+  
+  <TM_FrostRay_II.label>rayo de escarcha</TM_FrostRay_II.label>
+  
+  <TM_FrostRay_II.description>Un rayo de partículas sobreenfriadas que se propaga rápidamente, daña y congela a los objetivos.\n\nTiempo de recarga: 8 s\nAlcance: 32\nDisparos: 2</TM_FrostRay_II.description>
+  
+  
+  <TM_FrostRay_III.label>rayo de escarcha</TM_FrostRay_III.label>
+  
+  <TM_FrostRay_III.description>Un rayo de partículas sobreenfriadas que se propaga rápidamente, daña y congela a los objetivos.\n\nTiempo de recarga: 8 s\nAlcance: 34\nDisparos: 3</TM_FrostRay_III.description>
+  
+  
+  <TM_Icebolt.label>rayo de hielo</TM_Icebolt.label>
+  
+  <TM_Icebolt.description>Lanza un rayo de hielo diseñado para hacerse añicos en fragmentos similares al cristal al impactar, lo que inflige daño y provoca hemorragias graves.</TM_Icebolt.description>
+  
+  
+  <TM_Rainmaker.label>hacedor de lluvia</TM_Rainmaker.label>
+  
+  <TM_Rainmaker.description>Altera las condiciones atmosféricas para provocar lluvia. Si ya está lloviendo, esta habilidad la detendrá.</TM_Rainmaker.description>
+  
+  
+  <TM_Snowball.label>bola de nieve</TM_Snowball.label>
+  
+  <TM_Snowball.description>Lanza una enorme bola de hielo y nieve que, al impactar, inflige daño y congela una amplia zona.</TM_Snowball.description>
+  
+  
+  <TM_Soothe.label>brisa calmante</TM_Soothe.label>
+  
+  <TM_Soothe.description>Crea un aura calmante alrededor del lanzador que potencia periódicamente a un aliado.\n\nBrisa calmante: mejora arcana que ayuda al peón a trabajar al reducir el dolor y la fatiga y aumentar la concentración.\n\nFrecuencia de aplicación: 80-90 s\nDuración: 200-223 s\nConsciencia: +10 %\nÁnimo: +2\nDescanso y dolor: -10 %\n\nRequiere 40 de maná para mantenerse y reduce la regeneración de maná un 30 %. Vuelve a lanzarla para desactivarla. El lanzador gana experiencia cada vez que potencia a un aliado.</TM_Soothe.description>
+  
+  
+  <TM_Soothe_I.label>brisa calmante</TM_Soothe_I.label>
+  
+  <TM_Soothe_I.description>Crea un aura calmante alrededor del lanzador que potencia periódicamente a un aliado.\n\nBrisa calmante: mejora arcana que ayuda al peón a trabajar al reducir el dolor y la fatiga y aumentar la concentración.\n\nFrecuencia de aplicación: 80-90 s\nDuración: 200-223 s\nConsciencia: +12 %\nÁnimo: +3\nDescanso y dolor: -12 %\n\nRequiere 40 de maná para mantenerse y reduce la regeneración de maná un 30 %. Vuelve a lanzarla para desactivarla. El lanzador gana experiencia cada vez que potencia a un aliado.</TM_Soothe_I.description>
+  
+  
+  <TM_Soothe_II.label>brisa calmante</TM_Soothe_II.label>
+  
+  <TM_Soothe_II.description>Crea un aura calmante alrededor del lanzador que potencia periódicamente a un aliado.\n\nBrisa calmante: mejora arcana que ayuda al peón a trabajar al reducir el dolor y la fatiga y aumentar la concentración.\n\nFrecuencia de aplicación: 80-90 s\nDuración: 500-600 s\nConsciencia: +14 %\nÁnimo: +4\nDescanso y dolor: -14 %\n\nRequiere 40 de maná para mantenerse y reduce la regeneración de maná un 30 %. Vuelve a lanzarla para desactivarla. El lanzador gana experiencia cada vez que potencia a un aliado.</TM_Soothe_II.description>
+  
+  
+  <TM_Soothe_III.label>brisa calmante</TM_Soothe_III.label>
+  
+  <TM_Soothe_III.description>Crea un aura calmante alrededor del lanzador que potencia periódicamente a un aliado.\n\nBrisa calmante: mejora arcana que ayuda al peón a trabajar al reducir el dolor y la fatiga y aumentar la concentración.\n\nFrecuencia de aplicación: 80-90 s\nDuración: 500-600 s\nConsciencia: +15 %\nÁnimo: +5\nDescanso y dolor: -15 %\n\nRequiere 40 de maná para mantenerse y reduce la regeneración de maná un 30 %. Vuelve a lanzarla para desactivarla. El lanzador gana experiencia cada vez que potencia a un aliado.</TM_Soothe_III.description>
+  
+</LanguageData>

@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using Verse;
 using UnityEngine;
 using System.Collections.Generic;
@@ -17,9 +17,66 @@ namespace TorannMagic
 
         private HediffDef hediffDef = null;
 
+        private Pawn projectedHost;
+        private TMAbilityDef projectedSpell;
+        private bool projected;
+        private bool originalAutocast;
+        internal bool Projected => projected;
+        internal Pawn ProjectedHost => projectedHost;
+        internal void BindHost(Pawn host, TMAbilityDef spell)
+        {
+            projected = true;
+            projectedHost = host;
+            projectedSpell = spell;
+            originalAutocast = ProjectedPower()?.autocast ?? false;
+        }
+
+        private MagicPower ProjectedPower()
+        {
+            var data = Pawn?.GetCompAbilityUserMagic()?.ExistingMagicData;
+            if (projectedSpell == null || data == null) return null;
+            var aura = projectedSpell.abilityHediff;
+            var powers = aura == TorannMagicDefOf.TM_RayOfHope_AuraHD ? data.magicPowerP
+                : aura == TorannMagicDefOf.TM_InnerFire_AuraHD ? data.magicPowerIF
+                : aura == TorannMagicDefOf.TM_Shadow_AuraHD ? data.magicPowerA
+                : aura == TorannMagicDefOf.TM_SoothingBreeze_AuraHD ? data.magicPowerHoF : null;
+            return powers?.FirstOrDefault(power => power?.TMabilityDefs?.Contains(projectedSpell) == true);
+        }
+
+        internal void EndProjection()
+        {
+            // A forced release ends the toggle just like recasting it. A player can also change autocast while the aura runs.
+            var power = ProjectedPower();
+            if (power != null && power.autocast != originalAutocast) power.autocast = originalAutocast;
+            Pawn.health.RemoveHediff(parent);
+        }
+
+        internal void TickHosted()
+        {
+            if (!Projected) return;
+            int now = Find.TickManager.TicksGame;
+            if (initialized && now <= nextApplyTick && now % 60 != 0) return;
+            if (!ClassProgression.SpiritHostedAura.CanMaintain(projectedHost, Pawn, projectedSpell))
+            {
+                EndProjection();
+                return;
+            }
+            if (projectedHost.Spawned) TickAura(projectedHost);
+        }
+
         public override void CompExposeData()
         {
             base.CompExposeData();
+            Scribe_Values.Look(ref projected, "TM_hostedAura");
+            if (Projected)
+            {
+                Scribe_Values.Look(ref originalAutocast, "TM_hostedAuraOriginalAutocast");
+                Scribe_Defs.Look(ref projectedSpell, "TM_hostedAuraSpell");
+                Scribe_References.Look(ref projectedHost, "TM_hostedAuraBody");
+                Scribe_Values.Look(ref nextApplyTick, "TM_hostedAuraNextPulse");
+            }
+            ClassProgression.ArcanistTrials.ExposeAura(parent);
+            ClassProgression.PaladinTrials.ExposeAura(parent);
         }
 
         public string labelCap
@@ -38,9 +95,9 @@ namespace TorannMagic
             }
         }
 
-        private void Initialize()
+        private void Initialize(Pawn emitter)
         {
-            bool spawned = base.Pawn.Spawned;
+            bool spawned = emitter.Spawned;
             CompAbilityUserMagic comp = this.Pawn.GetCompAbilityUserMagic();
             if (spawned && comp != null && comp.IsMagicUser)
             {
@@ -55,27 +112,33 @@ namespace TorannMagic
         public override void CompPostTick(ref float severityAdjustment)
         {
             base.CompPostTick(ref severityAdjustment);
-            bool flag = base.Pawn != null && base.Pawn.Map != null;
+            if (!Projected) TickAura(Pawn);
+        }
+
+        private void TickAura(Pawn emitter)
+        {
+            bool flag = emitter?.Map != null;
             if (flag)
             {
                 if (!initialized)
                 {
                     initialized = true;
-                    this.Initialize();
+                    this.Initialize(emitter);
                 }
 
                 if (Find.TickManager.TicksGame > this.nextApplyTick && this.hediffDef != null)
                 {
-                    Pawn pawn = TM_Calc.FindNearbyFactionPawn(this.Pawn, this.Pawn.Faction, 100);
+                    Pawn pawn = TM_Calc.FindNearbyFactionPawn(emitter, emitter.Faction, 100);
+                    if (Projected && pawn == null) nextApplyTick = Find.TickManager.TicksGame + 80;
                     if (pawn != null && pawn.health != null)
                     {
-                        if (pawn.health.hediffSet.HasHediff(this.hediffDef, false) || pawn.Faction != this.Pawn.Faction || pawn.RaceProps.Animal)
+                        if (pawn.health.hediffSet.HasHediff(this.hediffDef, false) || pawn.Faction != emitter.Faction || pawn.RaceProps.Animal)
                         {
                             this.nextApplyTick = Find.TickManager.TicksGame + Rand.Range(80, 150);
                         }
                         else
                         {
-                            HealthUtility.AdjustSeverity(pawn, this.hediffDef, 1f);
+                            ClassProgression.PaladinTrials.ApplyAura(this.parent, pawn, this.hediffDef);
                             this.nextApplyTick = Find.TickManager.TicksGame + Rand.Range(4800, 5600);
                             FleckMaker.ThrowSmoke(pawn.DrawPos, pawn.Map, 1f);
                             FleckMaker.ThrowLightningGlow(pawn.DrawPos, pawn.Map, .8f);

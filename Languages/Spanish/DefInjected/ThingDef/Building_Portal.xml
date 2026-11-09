@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_ElementalRift.label>Falla elemental</TM_ElementalRift.label>
+  
+  <TM_ElementalRift.description>Una falla provocada por elementales renegados.</TM_ElementalRift.description>
+  
+  
+  <TM_ElementalRift_Defenders.label>Falla elemental</TM_ElementalRift_Defenders.label>
+  
+  <TM_ElementalRift_Defenders.description>Una falla creada por un buscador del vacío.</TM_ElementalRift_Defenders.description>
+  
+  
+  <TM_Portal.label>Portal</TM_Portal.label>
+  
+  <TM_Portal.description>Viaje instantáneo entre dos portales.</TM_Portal.description>
+  
+</LanguageData>

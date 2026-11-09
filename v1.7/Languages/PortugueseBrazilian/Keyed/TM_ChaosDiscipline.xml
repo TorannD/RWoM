@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ChaosAnchor>Âncora do caos: {0}</TM_ChaosAnchor>
+  <TM_ChaosNoAnchor>Remover a âncora</TM_ChaosNoAnchor>
+  <TM_ChaosProgress>Lance dois feitiços temporários diferentes ({0}/2). Como adepto, use feitiços de dois sorteios diferentes ({1}/2).</TM_ChaosProgress>
+  <TM_ChaosAscensionInfo>Ofereça uma gema de discernimento para ascender. Um feitiço pode ser mantido no próximo sorteio e os pontos são devolvidos.</TM_ChaosAscensionInfo>
+  <TM_ChaosAscensionAction>Ascensão: âncora do caos</TM_ChaosAscensionAction>
+  <TM_ChaosAscensionNeedsOffering>Requer uma gema de discernimento</TM_ChaosAscensionNeedsOffering>
+</LanguageData>

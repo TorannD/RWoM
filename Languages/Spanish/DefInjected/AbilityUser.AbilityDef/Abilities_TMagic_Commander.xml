@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_CommanderAura.label>aura de comandante</TM_CommanderAura.label>
+  
+  <TM_CommanderAura.description>Usa la habilidad para activar o desactivar el aura de Comandante: mejora el ánimo de todos los peones cercanos, pero reduce su productividad. Mientras el aura está activa, el Comandante buscará a los peones que hayan sufrido una crisis mental por estrés y les dará un discurso motivador para superarla. Los peones que superen una crisis mental de este modo no obtendrán Catarsis. Esta aura requiere 80 de aguante para mantenerse.</TM_CommanderAura.description>
+  
+  
+  <TM_HoldTheLine.label>¡mantengan la línea!</TM_HoldTheLine.label>
+  
+  <TM_HoldTheLine.description>Da la orden a todos los peones cercanos de mantener la línea. Los peones afectados ganan resistencia al daño, tolerancia al dolor, estabilidad mental y mayor cadencia de disparo, pero tienen un movimiento reducido.\n\nEnfriamiento: 200 s\nObjetivos máx.: 7\nAlcance: 10\n\nLos peones pueden rechazar las órdenes si la habilidad social del comandante es inferior a 10; con una habilidad social de 5, cada peón en el alcance tendría un 50 % de probabilidad de rechazarla.\nLas órdenes causan un penalizador de ánimo; cada orden aumenta la gravedad del penalizador.\nLas órdenes no afectan al comandante.</TM_HoldTheLine.description>
+  
+  
+  <TM_HoldTheLine_I.label>¡mantengan la línea! I</TM_HoldTheLine_I.label>
+  
+  <TM_HoldTheLine_I.description>Da la orden a todos los peones cercanos de mantener la línea. Los peones afectados ganan resistencia al daño, tolerancia al dolor, estabilidad mental y mayor cadencia de disparo, pero tienen un movimiento reducido.\n\nEnfriamiento: 180 s\nObjetivos máx.: 8\nAlcance: 12\n\nLos peones pueden rechazar las órdenes si la habilidad social del comandante es inferior a 10; con una habilidad social de 5, cada peón en el alcance tendría un 50 % de probabilidad de rechazarla.\nLas órdenes causan un penalizador de ánimo; cada orden aumenta la gravedad del penalizador.\nLas órdenes no afectan al comandante.</TM_HoldTheLine_I.description>
+  
+  
+  <TM_HoldTheLine_II.label>¡mantengan la línea! II</TM_HoldTheLine_II.label>
+  
+  <TM_HoldTheLine_II.description>Da la orden a todos los peones cercanos de mantener la línea. Los peones afectados ganan resistencia al daño, tolerancia al dolor, estabilidad mental y mayor cadencia de disparo, pero tienen un movimiento reducido.\n\nEnfriamiento: 160 s\nObjetivos máx.: 9\nAlcance: 14\n\nLos peones pueden rechazar las órdenes si la habilidad social del comandante es inferior a 10; con una habilidad social de 5, cada peón en el alcance tendría un 50 % de probabilidad de rechazarla.\nLas órdenes causan un penalizador de ánimo; cada orden aumenta la gravedad del penalizador.\nLas órdenes no afectan al comandante.</TM_HoldTheLine_II.description>
+  
+  
+  <TM_HoldTheLine_III.label>¡mantengan la línea! III</TM_HoldTheLine_III.label>
+  
+  <TM_HoldTheLine_III.description>Da la orden a todos los peones cercanos de mantener la línea. Los peones afectados ganan resistencia al daño, tolerancia al dolor, estabilidad mental y mayor cadencia de disparo, pero tienen un movimiento reducido.\n\nEnfriamiento: 150 s\nObjetivos máx.: 10\nAlcance: 15\n\nLos peones pueden rechazar las órdenes si la habilidad social del comandante es inferior a 10; con una habilidad social de 5, cada peón en el alcance tendría un 50 % de probabilidad de rechazarla.\nLas órdenes causan un penalizador de ánimo; cada orden aumenta la gravedad del penalizador.\nLas órdenes no afectan al comandante.</TM_HoldTheLine_III.description>
+  
+  
+  <TM_MoveOut.label>¡adelante!</TM_MoveOut.label>
+  
+  <TM_MoveOut.description>Da la orden a todos los peones cercanos de avanzar. Los peones afectados aumentan al instante su movimiento y no pueden ser aturdidos ni desequilibrados. Al terminar la orden, los peones tienen un movimiento reducido mientras recuperan su energía.\n\nEnfriamiento: 120 s\nObjetivos máx.: 10\nAlcance: 14\n\nLos peones pueden rechazar las órdenes si la habilidad social del comandante es inferior a 10; con una habilidad social de 5, cada peón en el alcance tendría un 50 % de probabilidad de rechazarla.\nLas órdenes causan un penalizador de ánimo; cada orden aumenta la gravedad del penalizador.\nLas órdenes no afectan al comandante.</TM_MoveOut.description>
+  
+  
+  <TM_MoveOut_I.label>¡adelante! I</TM_MoveOut_I.label>
+  
+  <TM_MoveOut_I.description>Da la orden a todos los peones cercanos de avanzar. Los peones afectados aumentan al instante su movimiento y no pueden ser aturdidos ni desequilibrados. Al terminar la orden, los peones sufren un movimiento reducido mientras recuperan su energía.\n\nEnfriamiento: 110 s\nObjetivos máx.: 12\nAlcance: 16\n\nLos peones pueden rechazar las órdenes si la habilidad social del comandante es inferior a 10; con una habilidad social de 5, cada peón en el alcance tendría un 50 % de probabilidad de rechazarla.\nLas órdenes causan un penalizador de ánimo; cada orden aumenta la gravedad del penalizador.\nLas órdenes no afectan al comandante.</TM_MoveOut_I.description>
+  
+  
+  <TM_MoveOut_II.label>¡adelante! II</TM_MoveOut_II.label>
+
+  
+  
+  
+  <TM_MoveOut_III.label>¡adelante! III</TM_MoveOut_III.label>
+  
+  <TM_MoveOut_III.description>Da la orden a todos los peones cercanos de avanzar. Los peones afectados aumentan al instante su movimiento y no pueden ser aturdidos ni desequilibrados. Al terminar la orden, los peones sufren un movimiento reducido mientras recuperan su energía.\n\nEnfriamiento: 90 s\nObjetivos máx.: 15\nAlcance: 20\n\nLos peones pueden rechazar las órdenes si la habilidad social del comandante es inferior a 10; con una habilidad social de 5, cada peón en el alcance tendría un 50 % de probabilidad de rechazarla.\nLas órdenes causan un penalizador de ánimo; cada orden aumenta la gravedad del penalizador.\nLas órdenes no afectan al comandante.</TM_MoveOut_III.description>
+  
+  
+  <TM_ProvisionerAura.label>aura de proveedor</TM_ProvisionerAura.label>
+  
+  <TM_ProvisionerAura.description>Usa la habilidad para activar o desactivar el aura de Proveedor: mejora el descanso y reduce el hambre de los peones cercanos. Puede mejorarse para reparar equipo, aumentar la velocidad de curación natural y potenciar la regeneración de energía. Esta aura requiere 60 de aguante para mantenerse.</TM_ProvisionerAura.description>
+  
+  
+  <TM_StayAlert.label>¡alerta!</TM_StayAlert.label>
+  
+  <TM_StayAlert.description>Da la orden a todos los peones cercanos de mantenerse en alerta máxima. Los peones afectados recuperan descanso al instante y aumentan su vista.\n\nEnfriamiento: 120 s\nObjetivos máx.: 10\nAlcance: 14\n\nLos peones pueden rechazar las órdenes si la habilidad social del comandante es inferior a 10; con una habilidad social de 5, cada peón en el alcance tendría un 50 % de probabilidad de rechazarla.\nLas órdenes causan un penalizador de ánimo; cada orden aumenta la gravedad del penalizador.\nLas órdenes no afectan al comandante.</TM_StayAlert.description>
+  
+  
+  <TM_StayAlert_I.label>¡alerta! I</TM_StayAlert_I.label>
+  
+  <TM_StayAlert_I.description>Da la orden a todos los peones cercanos de mantenerse en alerta máxima. Los peones afectados recuperan descanso al instante y aumentan su vista.\n\nEnfriamiento: 110 s\nObjetivos máx.: 12\nAlcance: 16\n\nLos peones pueden rechazar las órdenes si la habilidad social del comandante es inferior a 10; con una habilidad social de 5, cada peón en el alcance tendría un 50 % de probabilidad de rechazarla.\nLas órdenes causan un penalizador de ánimo; cada orden aumenta la gravedad del penalizador.\nLas órdenes no afectan al comandante.</TM_StayAlert_I.description>
+  
+  
+  <TM_StayAlert_II.label>¡alerta! II</TM_StayAlert_II.label>
+  
+  <TM_StayAlert_II.description>Da la orden a todos los peones cercanos de mantenerse en alerta máxima. Los peones afectados recuperan descanso al instante y aumentan su vista.\n\nEnfriamiento: 100 s\nObjetivos máx.: 14\nAlcance: 18\n\nLos peones pueden rechazar las órdenes si la habilidad social del comandante es inferior a 10; con una habilidad social de 5, cada peón en el alcance tendría un 50 % de probabilidad de rechazarla.\nLas órdenes causan un penalizador de ánimo; cada orden aumenta la gravedad del penalizador.\nLas órdenes no afectan al comandante.</TM_StayAlert_II.description>
+  
+  
+  <TM_StayAlert_III.label>¡alerta! III</TM_StayAlert_III.label>
+  
+  <TM_StayAlert_III.description>Da la orden a todos los peones cercanos de mantenerse en alerta máxima. Los peones afectados recuperan descanso al instante y aumentan su vista.\n\nEnfriamiento: 90 s\nObjetivos máx.: 15\nAlcance: 20\n\nLos peones pueden rechazar las órdenes si la habilidad social del comandante es inferior a 10; con una habilidad social de 5, cada peón en el alcance tendría un 50 % de probabilidad de rechazarla.\nLas órdenes causan un penalizador de ánimo; cada orden aumenta la gravedad del penalizador.\nLas órdenes no afectan al comandante.</TM_StayAlert_III.description>
+  
+  
+  <TM_TaskMasterAura.label>aura de capataz</TM_TaskMasterAura.label>
+  
+  <TM_TaskMasterAura.description>Usa la habilidad para activar o desactivar el aura de Capataz: aumenta la velocidad de trabajo, la velocidad al comer y la capacidad de carga, pero vuelve a los peones menos sociables. Los peones bajo la vigilancia de un Capataz sufrirán una penalización de ánimo. Esta aura requiere 70 de aguante para mantenerse.</TM_TaskMasterAura.description>
+  
+</LanguageData>

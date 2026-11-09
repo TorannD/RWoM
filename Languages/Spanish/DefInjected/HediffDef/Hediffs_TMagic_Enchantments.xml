@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_HediffEnchantment_arcalleumCooldown.label>Reutilización de arcaleo</TM_HediffEnchantment_arcalleumCooldown.label>
+  
+  <TM_HediffEnchantment_arcalleumCooldown.description>Un encantamiento que puede reiniciar al instante el tiempo de reutilización de una habilidad.</TM_HediffEnchantment_arcalleumCooldown.description>
+  
+  
+  <TM_HediffEnchantment_arcaneDmg.label>Bonificación mágica:</TM_HediffEnchantment_arcaneDmg.label>
+  
+  <TM_HediffEnchantment_arcaneDmg.description>Aumenta los efectos de las habilidades mágicas.</TM_HediffEnchantment_arcaneDmg.description>
+  
+  
+  <TM_HediffEnchantment_arcaneRes.label>Resistencia arcana:</TM_HediffEnchantment_arcaneRes.label>
+  
+  <TM_HediffEnchantment_arcaneRes.description>Capacidad de resistir efectos mágicos y reducir el daño de ataques mágicos.</TM_HediffEnchantment_arcaneRes.description>
+  
+  
+  <TM_HediffEnchantment_arcaneSpectre.label>Espectro arcano</TM_HediffEnchantment_arcaneSpectre.label>
+  
+  <TM_HediffEnchantment_arcaneSpectre.description>Un encantamiento que puede añadir daño espiritual adicional a cualquier ataque.</TM_HediffEnchantment_arcaneSpectre.description>
+  
+  
+  <TM_HediffEnchantment_combatDmg.label>Bonificación de combate:</TM_HediffEnchantment_combatDmg.label>
+  
+  <TM_HediffEnchantment_combatDmg.description>Aumenta los efectos de las habilidades de combate.</TM_HediffEnchantment_combatDmg.description>
+  
+  
+  <TM_HediffEnchantment_coolDown.label>Reutilización:</TM_HediffEnchantment_coolDown.label>
+  
+  <TM_HediffEnchantment_coolDown.description>Encantamiento que reduce el tiempo para volver a usar una habilidad.</TM_HediffEnchantment_coolDown.description>
+  
+  
+  <TM_HediffEnchantment_dmgBonus.label>Poder de habilidades:</TM_HediffEnchantment_dmgBonus.label>
+  
+  <TM_HediffEnchantment_dmgBonus.description>Aumenta los efectos de las habilidades.</TM_HediffEnchantment_dmgBonus.description>
+  
+  
+  <TM_HediffEnchantment_dmgResistance.label>Resistencia de habilidades:</TM_HediffEnchantment_dmgResistance.label>
+  
+  <TM_HediffEnchantment_dmgResistance.description>Capacidad de resistir efectos mágicos y reducir el daño de ataques mágicos.</TM_HediffEnchantment_dmgResistance.description>
+  
+  
+  <TM_HediffEnchantment_energyCost.label>Coste de energía:</TM_HediffEnchantment_energyCost.label>
+  
+  <TM_HediffEnchantment_energyCost.description>Encantamiento que reduce el coste de energía para usar habilidades.</TM_HediffEnchantment_energyCost.description>
+  
+  
+  <TM_HediffEnchantment_energyRegen.label>Regen. de energía:</TM_HediffEnchantment_energyRegen.label>
+  
+  <TM_HediffEnchantment_energyRegen.description>Encantamiento que aumenta la regeneración de energía.</TM_HediffEnchantment_energyRegen.description>
+  
+  
+  <TM_HediffEnchantment_fireImmunity.label>Inmunidad al fuego</TM_HediffEnchantment_fireImmunity.label>
+  
+  <TM_HediffEnchantment_fireImmunity.description>Aún puede sufrir daño de fuego, pero ya no puede incendiarse.</TM_HediffEnchantment_fireImmunity.description>
+  
+  
+  <TM_HediffEnchantment_maxEnergy.label>Energía máx.:</TM_HediffEnchantment_maxEnergy.label>
+  
+  <TM_HediffEnchantment_maxEnergy.description>Encantamiento de capacidad de energía.</TM_HediffEnchantment_maxEnergy.description>
+  
+  
+  <TM_HediffEnchantment_maxMP.label>Maná máx.:</TM_HediffEnchantment_maxMP.label>
+  
+  <TM_HediffEnchantment_maxMP.description>Encantamiento de capacidad de maná.</TM_HediffEnchantment_maxMP.description>
+  
+  
+  <TM_HediffEnchantment_maxSP.label>Aguante máx.:</TM_HediffEnchantment_maxSP.label>
+  
+  <TM_HediffEnchantment_maxSP.description>Encantamiento de capacidad de aguante.</TM_HediffEnchantment_maxSP.description>
+  
+  
+  <TM_HediffEnchantment_mpCost.label>Coste de maná:</TM_HediffEnchantment_mpCost.label>
+  
+  <TM_HediffEnchantment_mpCost.description>Encantamiento que modifica el coste de maná de las habilidades.</TM_HediffEnchantment_mpCost.description>
+  
+  
+  <TM_HediffEnchantment_mpRegenRate.label>Regen. de maná:</TM_HediffEnchantment_mpRegenRate.label>
+  
+  <TM_HediffEnchantment_mpRegenRate.description>Encantamiento de regeneración de maná.</TM_HediffEnchantment_mpRegenRate.description>
+  
+  
+  <TM_HediffEnchantment_phantomShift.label>Cambio fantasmal</TM_HediffEnchantment_phantomShift.label>
+  
+  <TM_HediffEnchantment_phantomShift.description>Un encantamiento que desvía todo el daño de un ataque al plano abisal.</TM_HediffEnchantment_phantomShift.description>
+  
+  
+  <TM_HediffEnchantment_spCoolDown.label>Reutilización de habilidades:</TM_HediffEnchantment_spCoolDown.label>
+  
+  <TM_HediffEnchantment_spCoolDown.description>Encantamiento que reduce el tiempo de reutilización de las habilidades de combate.</TM_HediffEnchantment_spCoolDown.description>
+  
+  
+  <TM_HediffEnchantment_spCost.label>Coste de aguante:</TM_HediffEnchantment_spCost.label>
+  
+  <TM_HediffEnchantment_spCost.description>Encantamiento que modifica el coste de aguante de las habilidades.</TM_HediffEnchantment_spCost.description>
+  
+  
+  <TM_HediffEnchantment_spRegenRate.label>Regen. de aguante:</TM_HediffEnchantment_spRegenRate.label>
+  
+  <TM_HediffEnchantment_spRegenRate.description>Encantamiento de regeneración de aguante.</TM_HediffEnchantment_spRegenRate.description>
+  
+  
+  <TM_HediffEnchantment_xpGain.label>Ganancia de XP:</TM_HediffEnchantment_xpGain.label>
+  
+  <TM_HediffEnchantment_xpGain.description>Encantamiento que mejora la ganancia de experiencia.</TM_HediffEnchantment_xpGain.description>
+  
+</LanguageData>

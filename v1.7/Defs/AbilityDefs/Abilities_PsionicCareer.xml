@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
+    <defName>TM_PsionicKineticCrucible</defName>
+    <label>Kinetic crucible</label>
+    <description>Channel for 16 seconds. Four kinetic pulses strike up to three enemies and a shared 60-point barrier guards up to three allies. Costs 60% psi energy and 30% stamina.</description>
+    <uiIconPath>UI/psionicstorm</uiIconPath>
+    <abilityClass>TorannMagic.ClassProgression.PsionicCrucibleAbility</abilityClass>
+    <staminaCost>0.30</staminaCost>
+    <requiredHediff>TM_PsionicHD</requiredHediff>
+    <hediffCost>60</hediffCost>
+    <MainVerb Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.ClassProgression.Verb_PsionicCrucible</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_PsionicKineticCrucible</abilityDef>
+      <isViolent>true</isViolent>
+      <defaultProjectile>Projectile_Default</defaultProjectile>
+      <warmupTime>5</warmupTime>
+      <SecondsToRecharge>2000</SecondsToRecharge>
+      <range>12</range>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <AbilityTargetCategory>TargetLocation</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </MainVerb>
+    <modExtensions>
+      <li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+        <spellId>rwom.tm_psionickineticcrucible</spellId>
+        <domain>Might</domain>
+        <tier>0</tier>
+      </li>
+    </modExtensions>
+  </TorannMagic.TMAbilityDef>
+</Defs>

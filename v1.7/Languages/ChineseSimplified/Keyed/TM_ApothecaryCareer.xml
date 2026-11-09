@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ReadApothecaryHerbalist>学习野外采收</TM_ReadApothecaryHerbalist>
+  <TM_ReadApothecaryFreshStock>学习草药保鲜</TM_ReadApothecaryFreshStock>
+  <TM_ApothecaryGatherInfo>采收时额外获得5%草药。</TM_ApothecaryGatherInfo>
+  <TM_ApothecaryFreshInfo>草药腐败速度降低10%。</TM_ApothecaryFreshInfo>
+  <TM_ApothecaryStock>草药：{0}/{1}</TM_ApothecaryStock>
+  <TM_ApothecaryTrialGather>从30株不同的健康成熟植物中实际收获产物并增加草药储备（{0}/30）。</TM_ApothecaryTrialGather>
+  <TM_ApothecaryTrialTreat>处理20处不同的新伤（{0}/20），或用解毒剂缓解12次食物中毒（{1}/12）。</TM_ApothecaryTrialTreat>
+  <TM_ApothecaryTrialShift>完成12天医疗勤务（{0}/12）。晋升需要武力等级30（{1}/30）。</TM_ApothecaryTrialShift>
+  <TM_ApothecaryClaim>领取下一阶技能</TM_ApothecaryClaim>
+  <TM_ApothecaryKitUnavailable>需要身边有四份草药医药及60%草药储备。</TM_ApothecaryKitUnavailable>
+  <TM_ApothecaryAntitoxinLow>需要20%草药储备。</TM_ApothecaryAntitoxinLow>
+</LanguageData>

@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_BreachSeal.label>Selo de brecha</TM_BreachSeal.label>
+  <TM_BreachSeal.description>Cria até três paredes mágicas herméticas na borda de uma área de 3×3 mais distante do núcleo da nave. Requer uma plataforma própria e piso intacto. Cada parede tem 300 pontos de vida e dura um dia. Preserva paredes herméticas aliadas; não renova selos ativos. Não repara pisos nem tetos e não fornece oxigênio. Alcance: 15 células. Preparação: 1 segundo. Recarga: 60 segundos. Custo antes da eficiência: 30% de mana.</TM_BreachSeal.description>
+</LanguageData>

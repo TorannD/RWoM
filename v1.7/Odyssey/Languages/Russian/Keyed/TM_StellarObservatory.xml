@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_StellarRitual>Начать звёздное прорицание (ритуал)</TM_StellarRitual>
+  <TM_StellarIdle>Ожидание: требуется ритуал прорицания</TM_StellarIdle>
+  <TM_StellarSearching>Поиск: осталось {0}</TM_StellarSearching>
+  <TM_StellarWaiting>Поиск завершён: ожидание подходящей орбитальной цели</TM_StellarWaiting>
+  <TM_StellarCooldown>Общий интервал магических поисков: {0}</TM_StellarCooldown>
+  <TM_StellarUnavailable>Нужны исправная включённая обсерватория, маг, 100 маны и 50 маготоплива в сети, подходящая орбитальная цель и завершённый общий интервал между ритуалами.</TM_StellarUnavailable>
+  <TM_StellarDiscovery>Звёздное прорицание раскрыло</TM_StellarDiscovery>
+</LanguageData>

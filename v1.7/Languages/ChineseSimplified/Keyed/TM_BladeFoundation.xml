@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_ReadBladeFocus>学习利刃专注：提高近战能力，降低射击精度和工作速度（永久选择）</TM_ReadBladeFocus>
+  <TM_ReadBladeMemory>学习刀锋记忆：切换敌人时造成额外伤害（永久选择）</TM_ReadBladeMemory>
+  <TM_BladeMemoryName>刀锋记忆</TM_BladeMemoryName>
+  <TM_BladeMemoryTraining>转而攻击另一名相邻敌人时，近战武器的主要伤害提高2%。每次升级增加2个百分点，上限为10%。每6秒最多触发一次。</TM_BladeMemoryTraining>
+</LanguageData>

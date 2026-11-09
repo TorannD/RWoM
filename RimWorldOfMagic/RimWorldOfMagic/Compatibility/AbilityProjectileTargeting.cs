@@ -29,7 +29,7 @@ namespace TorannMagic.Compatibility
                 return false;
 
             // Match the native target/map/cover restrictions. The enclosing original
-            // impact method still owns thick roofs and its downed-target miss roll.
+            // impact method still owns roof policy and its downed-target miss roll.
             return target is Pawn && target != ability.Caster && target.Spawned && !target.Destroyed
                 && target.Map == projectile.Map && target == projectile.usedTarget.Thing
                 && target == projectile.intendedTarget.Thing
@@ -47,6 +47,36 @@ namespace TorannMagic.Compatibility
                 && projectile.intendedTarget.HasThing && projectile.intendedTarget.Thing != caster)
                 return;
             projectile.ApplyHediffsAndMentalStates(victim, caster, mentalStates, abilityDef);
+        }
+
+        public static bool RoofBlocksImpact(RoofDef roof, Projectile_AbilityBase projectile)
+        {
+            // Audited local carriers create their effect at the selected cell;
+            // they are not artillery arriving through the roof. Keep flight/LOS and
+            // every other spell's native thick-roof interception unchanged.
+            return roof.isThickRoof && !AbilityImpactRoofPolicy.IsIndoorEffect(projectile);
+        }
+
+        internal static IEnumerable<CodeInstruction> ReplaceRoofCheck(IEnumerable<CodeInstruction> instructions)
+        {
+            var field = AccessTools.Field(typeof(RoofDef), nameof(RoofDef.isThickRoof));
+            var predicate = AccessTools.Method(typeof(AbilityProjectileTargeting), nameof(RoofBlocksImpact));
+            int count = 0;
+            foreach (var instruction in instructions)
+            {
+                if (instruction.opcode == OpCodes.Ldfld && Equals(instruction.operand, field))
+                {
+                    var instance = new CodeInstruction(OpCodes.Ldarg_0);
+                    instance.labels.AddRange(instruction.labels); instruction.labels.Clear();
+                    instance.blocks.AddRange(instruction.blocks); instruction.blocks.Clear();
+                    yield return instance;
+                    instruction.opcode = OpCodes.Call;
+                    instruction.operand = predicate;
+                    count++;
+                }
+                yield return instruction;
+            }
+            if (count != 1) throw new InvalidOperationException("Ability projectile roof check changed: expected one predicate, got " + count);
         }
 
         internal static IEnumerable<CodeInstruction> ReplaceCalls(IEnumerable<CodeInstruction> instructions,
@@ -75,7 +105,7 @@ namespace TorannMagic.Compatibility
     {
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            return AbilityProjectileTargeting.ReplaceCalls(instructions, AbilityProjectileTargeting.NativeCanHit,
+            return AbilityProjectileTargeting.ReplaceCalls(AbilityProjectileTargeting.ReplaceRoofCheck(instructions), AbilityProjectileTargeting.NativeCanHit,
                 AccessTools.Method(typeof(AbilityProjectileTargeting), nameof(AbilityProjectileTargeting.CanHitAtDestination)));
         }
     }

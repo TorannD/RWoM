@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ReadCommanderProvisioner>就职：军需官</TM_ReadCommanderProvisioner>
+  <TM_ReadCommanderSignals>就职：清晰号令</TM_ReadCommanderSignals>
+  <TM_CommanderSupplyTrial>已协调物资运输 {0}/12。向盟友发布工作命令，让其在命令结束前完成搬运。</TM_CommanderSupplyTrial>
+  <TM_CommanderEvacTrial>从危险中撤出的不同盟友 {0}/8，或已完成的指挥维修 {1}/16。 盟友维修遭敌袭或非殖民者引发的火灾破坏的建筑时，下达工作队命令。</TM_CommanderEvacTrial>
+  <TM_CommanderServiceTrial>服役天数 {0}/10，或有效紧急命令 {1}/10。战士等级 {2}/30。</TM_CommanderServiceTrial>
+  <TM_CommanderAdvance>晋升指挥等级</TM_CommanderAdvance>
+  <TM_CommanderEveryoneHome>行动：全员归队</TM_CommanderEveryoneHome>
+  <TM_CommanderChoseOperation>飞升：全员归队。</TM_CommanderChoseOperation>
+  <TM_CommanderChoseAura>飞升：指挥光环。</TM_CommanderChoseAura>
+  <TM_CommanderOperationUnavailable>需要飞升行动、60%耐力且冷却完毕。</TM_CommanderOperationUnavailable>
+  <TM_CommanderDoctrineSupply>军需官获得原版补给光环。工作队仅加快当前指派的工作。</TM_CommanderDoctrineSupply>
+  <TM_CommanderDoctrineSignals>清晰号令提高2/4/6/8/10个百分点的命令接受率，最高95%。</TM_CommanderDoctrineSignals>
+</LanguageData>

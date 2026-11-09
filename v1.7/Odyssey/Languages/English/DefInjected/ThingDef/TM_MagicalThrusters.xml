@@ -1,0 +1,6 @@
+<LanguageData>
+  <TM_SmallMagicalThruster.label>small magical thruster</TM_SmallMagicalThruster.label>
+  <TM_SmallMagicalThruster.description>A magofuel thruster that increases gravship range. Draws magofuel through connected mana beacons from reservoirs carried on the same gravship. Has no built-in tank and cannot use mana, chemfuel or astrofuel. Requires a linked grav engine, substructure and an unobstructed exhaust facing outdoors. Fuel is spent when the gravship launches.</TM_SmallMagicalThruster.description>
+  <TM_LargeMagicalThruster.label>large magical thruster</TM_LargeMagicalThruster.label>
+  <TM_LargeMagicalThruster.description>A magofuel thruster that increases gravship range. Draws magofuel through connected mana beacons from reservoirs carried on the same gravship. Has no built-in tank and cannot use mana, chemfuel or astrofuel. Requires a linked grav engine, substructure and an unobstructed exhaust facing outdoors. Fuel is spent when the gravship launches.</TM_LargeMagicalThruster.description>
+</LanguageData>

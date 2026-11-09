@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using Verse;
 using AbilityUser;
 using UnityEngine;
@@ -58,7 +58,7 @@ namespace TorannMagic
                 TargetInfo ti = new TargetInfo(this.currentTarget.Cell, map, false);
                 TM_MoteMaker.MakeOverlay(ti, TorannMagicDefOf.TM_Mote_PsycastAreaEffect, map, Vector3.zero, 3f, 0f, .1f, .4f, 1.2f, -3f);
                 float classBonus = 1f;
-                if (p.story != null && p.story.traits != null && p.story.traits.HasTrait(TorannMagicDefOf.HeartOfFrost))
+                if (ClassProgression.ClassIdentity.IsIceMage(p))
                 {
                     classBonus = 1.5f;
                 }

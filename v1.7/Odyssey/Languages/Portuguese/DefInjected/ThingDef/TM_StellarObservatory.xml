@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_StellarObservatory.label>observatório mágico</TM_StellarObservatory.label>
+  <TM_StellarObservatory.description>Um mago pode realizar um ritual de adivinhação de 60 segundos para procurar uma expedição orbital aleatória. Cada ritual concluído consome 100 de mana e 50 de magocombustível diretamente da rede de mana ligada, sem gastar mana pessoal. A procura demora entre 8 e 10 dias de atividade e fica suspensa se o observatório estiver desligado, avariado ou desinstalado. Todos os observatórios mágicos partilham um intervalo de 18 dias entre inícios de rituais, independente dos scanners orbitais normais. Se não houver um destino elegível, a procura já paga aguarda e tenta novamente. Mover o observatório preserva o progresso. A investigação só é necessária para a construção.</TM_StellarObservatory.description>
+</LanguageData>

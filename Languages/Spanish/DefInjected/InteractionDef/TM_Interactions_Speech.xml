@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_Speech_BestowMagic.label>discurso de concesión de magia</TM_Speech_BestowMagic.label>
+  
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.0>r_logentry-&gt;[INITIATOR_nameDef] [praised] [doing] [speechtopic].</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.0>
+  
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.1>r_logentry(p=0.2)-&gt;[INITIATOR_nameDef] [crazy].</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.1>
+  
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.2>speechtopic-&gt;la magia</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.2>
+  
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.3>speechtopic-&gt;la paz mediante el poder</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.3>
+  
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.4>speechtopic-&gt;los magos</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.4>
+  
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.5>speechtopic-&gt;el orden</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.5>
+  
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.6>speechtopic-&gt;el poder de proteger</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.6>
+  
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.7>speechtopic-&gt;la magia y los magos</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.7>
+  
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.8>speechtopic-&gt;las bendiciones de la magia</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.8>
+  
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.9>speechtopic-&gt;la siguiente etapa de la evolución humana</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.9>
+  
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.10>crazy-&gt;rugió de victoria</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.10>
+  
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.11>crazy-&gt;rompió a entonar un cántico</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.11>
+  
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.12>crazy-&gt;cantó hacia los cielos</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.12>
+  
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.13>crazy-&gt;puso una mano tranquilizadora sobre el mago</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.13>
+  
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.14>crazy-&gt;sonrió con heroísmo</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.14>
+  
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.15>crazy-&gt;blandió un bastón</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.15>
+  
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.16>crazy-&gt;murmuró un mantra</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.16>
+  
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.17>crazy-&gt;ofreció una bendición</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.17>
+  
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.18>crazy-&gt;alzó la mano hacia los cielos</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.18>
+  
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.19>doing-&gt;alcanzar</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.19>
+  
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.20>doing-&gt;aprender</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.20>
+  
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.21>doing-&gt;comprender</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.21>
+  
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.22>doing-&gt;usar</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.22>
+  
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.23>doing-&gt;proteger</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.23>
+  
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.24>doing-&gt;liberar</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.24>
+  
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.25>doing-&gt;apoyar</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.25>
+  
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.26>doing-&gt;obtener</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.26>
+  
+  
+  <TM_Speech_SeverMagic.label>discurso de separación de la magia</TM_Speech_SeverMagic.label>
+  
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.0>r_logentry-&gt;[INITIATOR_nameDef] [praised] [doing] [speechtopic].</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.0>
+  
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.1>r_logentry(p=0.2)-&gt;[INITIATOR_nameDef] [crazy].</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.1>
+  
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.2>speechtopic-&gt;la magia</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.2>
+  
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.3>speechtopic-&gt;la paz mediante el poder</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.3>
+  
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.4>speechtopic-&gt;los magos</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.4>
+  
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.5>speechtopic-&gt;el caos</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.5>
+  
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.6>speechtopic-&gt;la tentación del poder</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.6>
+  
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.7>speechtopic-&gt;la magia y los magos</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.7>
+  
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.8>speechtopic-&gt;la seducción de la magia</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.8>
+  
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.9>speechtopic-&gt;un cáncer biogenético errante</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.9>
+  
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.10>crazy-&gt;gritó como un maníaco</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.10>
+  
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.11>crazy-&gt;rompió a entonar un cántico</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.11>
+  
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.12>crazy-&gt;cantó hacia los cielos</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.12>
+  
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.13>crazy-&gt;escupió en el ojo del mago</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.13>
+  
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.14>crazy-&gt;soltó una carcajada</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.14>
+  
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.15>crazy-&gt;blandió una espada</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.15>
+  
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.16>crazy-&gt;murmuró de forma repetitiva</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.16>
+  
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.17>crazy-&gt;gritó con desafío</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.17>
+  
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.18>crazy-&gt;tuvo espasmos incontrolables</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.18>
+  
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.19>doing-&gt;controlar</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.19>
+  
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.20>doing-&gt;equilibrar</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.20>
+  
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.21>doing-&gt;sacrificar</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.21>
+  
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.22>doing-&gt;eliminar la tentación de</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.22>
+  
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.23>doing-&gt;manipular</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.23>
+  
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.24>doing-&gt;liberar</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.24>
+  
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.25>doing-&gt;mantenerse firme ante</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.25>
+  
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.26>doing-&gt;rechazar</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.26>
+  
+</LanguageData>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_MaharalGolem_ArmorHD.label>armadura</TM_MaharalGolem_ArmorHD.label>
+  
+  <TM_MaharalGolem_ArmorHD.description>Mejora la protección física.</TM_MaharalGolem_ArmorHD.description>
+  
+  <TM_MaharalGolem_ArmorHD.stages.I.label>I</TM_MaharalGolem_ArmorHD.stages.I.label>
+  
+  <TM_MaharalGolem_ArmorHD.stages.II.label>II</TM_MaharalGolem_ArmorHD.stages.II.label>
+  
+  <TM_MaharalGolem_ArmorHD.stages.III.label>III</TM_MaharalGolem_ArmorHD.stages.III.label>
+  
+</LanguageData>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <TM_NotEnoughMana>{0} не хватает маны, чтобы сотворить это заклинание.</TM_NotEnoughMana>
   <TM_NotEnoughBlood>{0} пожертвовал(а) недостаточно крови для сотворения этого заклинания.</TM_NotEnoughBlood>
@@ -317,6 +317,8 @@
   <supportTraitChance>Вспомогательные признаки</supportTraitChance>
   <TM_ClassWarning>**Изменяйте параметры классов только при запуске новой игры**</TM_ClassWarning>
   <TM_RequiresRestart>**Любое изменение требует перезапуска игры**</TM_RequiresRestart>
+<TM_NewProgressionBeta>Новая прогрессия классов (бета)</TM_NewProgressionBeta>
+  <TM_NewProgressionBetaDesc>Включает экспериментальную систему новой прогрессии классов. Учитывается только при запуске игры: для смены настройки требуется перезапуск. Когда выключено, мод использует классическую систему классов.</TM_NewProgressionBetaDesc>
   <TM_ClassOptions>Включённые классы:</TM_ClassOptions>
   <TM_EnabledClasses>Доступные классы</TM_EnabledClasses>
   <TM_EnabledMages>Маги</TM_EnabledMages>
@@ -2246,4 +2248,210 @@ DR: [5, 9, 13, 17, 20]%</TM_Golemancy_pwr_desc>
   <TM_DisplayOptionsDesc>Настроить значки, камеру, расположение гримуара, внешний вид нежити и отрисовку одежды.</TM_DisplayOptionsDesc>
   <TM_Grimoire>Гримуар</TM_Grimoire>
   <TM_Learn>Изучить</TM_Learn>
+
+  <TM_GrimoireClassicRequirements>Классические правила: заклинания изучаются очками класса в гримуаре; часть заклинаний дополнительно требует прочтения своего свитка или книги.</TM_GrimoireClassicRequirements>
+  <TM_GrimoireClassicRules>Классические правила</TM_GrimoireClassicRules>
+  <TM_GrimoireLearningItems>Требуемые обучающие предметы:</TM_GrimoireLearningItems>
+  <TM_GrimoireNoLearningItems>Обучающие предметы не требуются.</TM_GrimoireNoLearningItems>
+  <TM_GrimoireLearned>Изучено</TM_GrimoireLearned>
+  <TM_GrimoireRankMax>Макс. ранг</TM_GrimoireRankMax>
+  <TM_GrimoireRank>Ранг</TM_GrimoireRank>
+  <TM_GrimoireScrollUnspecified>Свиток не указан</TM_GrimoireScrollUnspecified>
+  <TM_ProgressionOpenGrimoire>Открыть гримуар</TM_ProgressionOpenGrimoire>
+  <TM_ProgressionOpenGrimoireDesc>Открывает гримуар класса.</TM_ProgressionOpenGrimoireDesc>
+  <TM_ProgressionEnrollMage>Стать магом (новая прогрессия)</TM_ProgressionEnrollMage>
+  <TM_ProgressionEnrollMageDesc>Зачисление в экспериментальную новую систему прогрессии учеником мага.</TM_ProgressionEnrollMageDesc>
+  <TM_SleepingSpells>Неопределившиеся заклинания</TM_SleepingSpells>
+  <TM_SleepingSpellsDesc>Изученное заклинание, определение которого отсутствует в текущей версии. Пропускается автокастом и снова станет доступным, если заклинание вернётся.</TM_SleepingSpellsDesc>
+  <TM_ProgressionBookUnavailable>Эта книга относится к новой системе прогрессии и не может быть использована без зачисления.</TM_ProgressionBookUnavailable>
+  <TM_ProgressionStageLocked>Это заклинание закрыто ещё не достигнутой ступенью прогрессии.</TM_ProgressionStageLocked>
+  <TM_ProgressionTrialDone>Испытание пройдено.</TM_ProgressionTrialDone>
+  <TM_ProgressionTrialPending>Испытание ещё не пройдено.</TM_ProgressionTrialPending>
+  <TM_ProgressionSharedLearning>Совместное изучение</TM_ProgressionSharedLearning>
+
+
+  <!-- Строки интерфейса бета-прогрессии. -->
+  <TM_ProgressionArcanistAscension>Ритуал вознесения: Арканист</TM_ProgressionArcanistAscension>
+  <TM_ProgressionArcanistAscensionRequirements>Требования вознесения (Арканист):</TM_ProgressionArcanistAscensionRequirements>
+  <TM_ProgressionArcanistAttunement>Ритуал настройки: Арканист</TM_ProgressionArcanistAttunement>
+  <TM_ProgressionArcanistAttunementHint>Проведите настройку на магическом круге, держа в инвентаре требуемое подношение.</TM_ProgressionArcanistAttunementHint>
+  <TM_ProgressionArcanistFoundationTrial>Испытание ученичества: Арканист</TM_ProgressionArcanistFoundationTrial>
+  <TM_ProgressionArcanistMasteryTrial>Испытание мастерства: Арканист</TM_ProgressionArcanistMasteryTrial>
+  <TM_ProgressionBardAscension>Ритуал вознесения: Бард</TM_ProgressionBardAscension>
+  <TM_ProgressionBardAscensionRequirements>Требования вознесения (Бард):</TM_ProgressionBardAscensionRequirements>
+  <TM_ProgressionBardAttunement>Ритуал настройки: Бард</TM_ProgressionBardAttunement>
+  <TM_ProgressionBardAttunementHint>Проведите настройку на магическом круге, держа в инвентаре требуемое подношение.</TM_ProgressionBardAttunementHint>
+  <TM_ProgressionBardFoundationTrial>Испытание ученичества: Бард</TM_ProgressionBardFoundationTrial>
+  <TM_ProgressionBardMasteryTrial>Испытание мастерства: Бард</TM_ProgressionBardMasteryTrial>
+  <TM_ProgressionBloodMageAscension>Ритуал вознесения: Маг крови</TM_ProgressionBloodMageAscension>
+  <TM_ProgressionBloodMageAscensionRequirements>Требования вознесения (Маг крови):</TM_ProgressionBloodMageAscensionRequirements>
+  <TM_ProgressionBloodMageAttunement>Ритуал настройки: Маг крови</TM_ProgressionBloodMageAttunement>
+  <TM_ProgressionBloodMageAttunementHint>Проведите настройку на магическом круге, держа в инвентаре требуемое подношение.</TM_ProgressionBloodMageAttunementHint>
+  <TM_ProgressionBloodMageFoundationTrial>Испытание ученичества: Маг крови</TM_ProgressionBloodMageFoundationTrial>
+  <TM_ProgressionBloodMageMasteryTrial>Испытание мастерства: Маг крови</TM_ProgressionBloodMageMasteryTrial>
+  <TM_ProgressionBrightmageAscension>Ритуал вознесения: Ясный маг</TM_ProgressionBrightmageAscension>
+  <TM_ProgressionBrightmageAscensionRequirements>Требования вознесения (Ясный маг):</TM_ProgressionBrightmageAscensionRequirements>
+  <TM_ProgressionBrightmageAttunement>Ритуал настройки: Ясный маг</TM_ProgressionBrightmageAttunement>
+  <TM_ProgressionBrightmageAttunementHint>Проведите настройку на магическом круге, держа в инвентаре требуемое подношение.</TM_ProgressionBrightmageAttunementHint>
+  <TM_ProgressionBrightmageFoundationTrial>Испытание ученичества: Ясный маг</TM_ProgressionBrightmageFoundationTrial>
+  <TM_ProgressionBrightmageMasteryTrial>Испытание мастерства: Ясный маг</TM_ProgressionBrightmageMasteryTrial>
+  <TM_ProgressionChronomancerAscension>Ритуал вознесения: Хрономант</TM_ProgressionChronomancerAscension>
+  <TM_ProgressionChronomancerAscensionRequirements>Требования вознесения (Хрономант):</TM_ProgressionChronomancerAscensionRequirements>
+  <TM_ProgressionChronomancerAttunement>Ритуал настройки: Хрономант</TM_ProgressionChronomancerAttunement>
+  <TM_ProgressionChronomancerAttunementHint>Проведите настройку на магическом круге, держа в инвентаре требуемое подношение.</TM_ProgressionChronomancerAttunementHint>
+  <TM_ProgressionChronomancerFoundationTrial>Испытание ученичества: Хрономант</TM_ProgressionChronomancerFoundationTrial>
+  <TM_ProgressionChronomancerMasteryTrial>Испытание мастерства: Хрономант</TM_ProgressionChronomancerMasteryTrial>
+  <TM_ProgressionDruidAscension>Ритуал вознесения: Друид</TM_ProgressionDruidAscension>
+  <TM_ProgressionDruidAscensionRequirements>Требования вознесения (Друид):</TM_ProgressionDruidAscensionRequirements>
+  <TM_ProgressionDruidAttunement>Ритуал настройки: Друид</TM_ProgressionDruidAttunement>
+  <TM_ProgressionDruidAttunementHint>Проведите настройку на магическом круге, держа в инвентаре требуемое подношение.</TM_ProgressionDruidAttunementHint>
+  <TM_ProgressionDruidFoundationTrial>Испытание ученичества: Друид</TM_ProgressionDruidFoundationTrial>
+  <TM_ProgressionDruidMasteryTrial>Испытание мастерства: Друид</TM_ProgressionDruidMasteryTrial>
+  <TM_ProgressionEmpathAscension>Ритуал вознесения: Эмпат</TM_ProgressionEmpathAscension>
+  <TM_ProgressionEmpathAscensionRequirements>Требования вознесения (Эмпат):</TM_ProgressionEmpathAscensionRequirements>
+  <TM_ProgressionEmpathAttunement>Ритуал настройки: Эмпат</TM_ProgressionEmpathAttunement>
+  <TM_ProgressionEmpathAttunementHint>Проведите настройку на магическом круге, держа в инвентаре требуемое подношение.</TM_ProgressionEmpathAttunementHint>
+  <TM_ProgressionEmpathFoundationTrial>Испытание ученичества: Эмпат</TM_ProgressionEmpathFoundationTrial>
+  <TM_ProgressionEmpathMasteryTrial>Испытание мастерства: Эмпат</TM_ProgressionEmpathMasteryTrial>
+  <TM_ProgressionEnchanterAscension>Ритуал вознесения: Чародей</TM_ProgressionEnchanterAscension>
+  <TM_ProgressionEnchanterAscensionRequirements>Требования вознесения (Чародей):</TM_ProgressionEnchanterAscensionRequirements>
+  <TM_ProgressionEnchanterAttunement>Ритуал настройки: Чародей</TM_ProgressionEnchanterAttunement>
+  <TM_ProgressionEnchanterAttunementHint>Проведите настройку на магическом круге, держа в инвентаре требуемое подношение.</TM_ProgressionEnchanterAttunementHint>
+  <TM_ProgressionEnchanterFoundationTrial>Испытание ученичества: Чародей</TM_ProgressionEnchanterFoundationTrial>
+  <TM_ProgressionEnchanterMasteryTrial>Испытание мастерства: Чародей</TM_ProgressionEnchanterMasteryTrial>
+  <TM_ProgressionFireAscension>Ритуал вознесения: Маг огня</TM_ProgressionFireAscension>
+  <TM_ProgressionFireAscensionRequirements>Требования вознесения (Маг огня):</TM_ProgressionFireAscensionRequirements>
+  <TM_ProgressionFireAttunement>Ритуал настройки: Маг огня</TM_ProgressionFireAttunement>
+  <TM_ProgressionFireAttunementHint>Проведите настройку на магическом круге, держа в инвентаре требуемое подношение.</TM_ProgressionFireAttunementHint>
+  <TM_ProgressionFireFoundationTrial>Испытание ученичества: Маг огня</TM_ProgressionFireFoundationTrial>
+  <TM_ProgressionFireMasteryTrial>Испытание мастерства: Маг огня</TM_ProgressionFireMasteryTrial>
+  <TM_ProgressionGeomancerAscension>Ритуал вознесения: Геомант</TM_ProgressionGeomancerAscension>
+  <TM_ProgressionGeomancerAscensionRequirements>Требования вознесения (Геомант):</TM_ProgressionGeomancerAscensionRequirements>
+  <TM_ProgressionGeomancerAttunement>Ритуал настройки: Геомант</TM_ProgressionGeomancerAttunement>
+  <TM_ProgressionGeomancerAttunementHint>Проведите настройку на магическом круге, держа в инвентаре требуемое подношение.</TM_ProgressionGeomancerAttunementHint>
+  <TM_ProgressionGeomancerFoundationTrial>Испытание ученичества: Геомант</TM_ProgressionGeomancerFoundationTrial>
+  <TM_ProgressionGeomancerMasteryTrial>Испытание мастерства: Геомант</TM_ProgressionGeomancerMasteryTrial>
+  <TM_ProgressionGolemancerAscension>Ритуал вознесения: Големщик</TM_ProgressionGolemancerAscension>
+  <TM_ProgressionGolemancerAscensionRequirements>Требования вознесения (Големщик):</TM_ProgressionGolemancerAscensionRequirements>
+  <TM_ProgressionGolemancerAttunement>Ритуал настройки: Големщик</TM_ProgressionGolemancerAttunement>
+  <TM_ProgressionGolemancerAttunementHint>Проведите настройку на магическом круге, держа в инвентаре требуемое подношение.</TM_ProgressionGolemancerAttunementHint>
+  <TM_ProgressionGolemancerFoundationTrial>Испытание ученичества: Големщик</TM_ProgressionGolemancerFoundationTrial>
+  <TM_ProgressionGolemancerMasteryTrial>Испытание мастерства: Големщик</TM_ProgressionGolemancerMasteryTrial>
+  <TM_ProgressionIceAscension>Ритуал вознесения: Маг льда</TM_ProgressionIceAscension>
+  <TM_ProgressionIceAscensionRequirements>Требования вознесения (Маг льда):</TM_ProgressionIceAscensionRequirements>
+  <TM_ProgressionIceAttunement>Ритуал настройки: Маг льда</TM_ProgressionIceAttunement>
+  <TM_ProgressionIceAttunementHint>Проведите настройку на магическом круге, держа в инвентаре требуемое подношение.</TM_ProgressionIceAttunementHint>
+  <TM_ProgressionIceFoundationTrial>Испытание ученичества: Маг льда</TM_ProgressionIceFoundationTrial>
+  <TM_ProgressionIceMasteryTrial>Испытание мастерства: Маг льда</TM_ProgressionIceMasteryTrial>
+  <TM_ProgressionLightningAscension>Ритуал вознесения: Повелитель бурь</TM_ProgressionLightningAscension>
+  <TM_ProgressionLightningAscensionRequirements>Требования вознесения (Повелитель бурь):</TM_ProgressionLightningAscensionRequirements>
+  <TM_ProgressionLightningAttunement>Ритуал настройки: Повелитель бурь</TM_ProgressionLightningAttunement>
+  <TM_ProgressionLightningAttunementHint>Проведите настройку на магическом круге, держа в инвентаре требуемое подношение.</TM_ProgressionLightningAttunementHint>
+  <TM_ProgressionLightningFoundationTrial>Испытание ученичества: Повелитель бурь</TM_ProgressionLightningFoundationTrial>
+  <TM_ProgressionLightningMasteryTrial>Испытание мастерства: Повелитель бурь</TM_ProgressionLightningMasteryTrial>
+  <TM_ProgressionNecromancerAscension>Ритуал вознесения: Некромант</TM_ProgressionNecromancerAscension>
+  <TM_ProgressionNecromancerAscensionRequirements>Требования вознесения (Некромант):</TM_ProgressionNecromancerAscensionRequirements>
+  <TM_ProgressionNecromancerAttunement>Ритуал настройки: Некромант</TM_ProgressionNecromancerAttunement>
+  <TM_ProgressionNecromancerAttunementHint>Проведите настройку на магическом круге, держа в инвентаре требуемое подношение.</TM_ProgressionNecromancerAttunementHint>
+  <TM_ProgressionNecromancerFoundationTrial>Испытание ученичества: Некромант</TM_ProgressionNecromancerFoundationTrial>
+  <TM_ProgressionNecromancerMasteryTrial>Испытание мастерства: Некромант</TM_ProgressionNecromancerMasteryTrial>
+  <TM_ProgressionPaladinAscension>Ритуал вознесения: Паладин</TM_ProgressionPaladinAscension>
+  <TM_ProgressionPaladinAscensionRequirements>Требования вознесения (Паладин):</TM_ProgressionPaladinAscensionRequirements>
+  <TM_ProgressionPaladinAttunement>Ритуал настройки: Паладин</TM_ProgressionPaladinAttunement>
+  <TM_ProgressionPaladinAttunementHint>Проведите настройку на магическом круге, держа в инвентаре требуемое подношение.</TM_ProgressionPaladinAttunementHint>
+  <TM_ProgressionPaladinFoundationTrial>Испытание ученичества: Паладин</TM_ProgressionPaladinFoundationTrial>
+  <TM_ProgressionPaladinMasteryTrial>Испытание мастерства: Паладин</TM_ProgressionPaladinMasteryTrial>
+  <TM_ProgressionPriestAscension>Ритуал вознесения: Жрец</TM_ProgressionPriestAscension>
+  <TM_ProgressionPriestAscensionRequirements>Требования вознесения (Жрец):</TM_ProgressionPriestAscensionRequirements>
+  <TM_ProgressionPriestAttunement>Ритуал настройки: Жрец</TM_ProgressionPriestAttunement>
+  <TM_ProgressionPriestAttunementHint>Проведите настройку на магическом круге, держа в инвентаре требуемое подношение.</TM_ProgressionPriestAttunementHint>
+  <TM_ProgressionPriestFoundationTrial>Испытание ученичества: Жрец</TM_ProgressionPriestFoundationTrial>
+  <TM_ProgressionPriestMasteryTrial>Испытание мастерства: Жрец</TM_ProgressionPriestMasteryTrial>
+  <TM_ProgressionShamanAscension>Ритуал вознесения: Шаман</TM_ProgressionShamanAscension>
+  <TM_ProgressionShamanAscensionRequirements>Требования вознесения (Шаман):</TM_ProgressionShamanAscensionRequirements>
+  <TM_ProgressionShamanAttunement>Ритуал настройки: Шаман</TM_ProgressionShamanAttunement>
+  <TM_ProgressionShamanAttunementHint>Проведите настройку на магическом круге, держа в инвентаре требуемое подношение.</TM_ProgressionShamanAttunementHint>
+  <TM_ProgressionShamanFoundationTrial>Испытание ученичества: Шаман</TM_ProgressionShamanFoundationTrial>
+  <TM_ProgressionShamanMasteryTrial>Испытание мастерства: Шаман</TM_ProgressionShamanMasteryTrial>
+  <TM_ProgressionSummonerAscension>Ритуал вознесения: Призыватель</TM_ProgressionSummonerAscension>
+  <TM_ProgressionSummonerAscensionRequirements>Требования вознесения (Призыватель):</TM_ProgressionSummonerAscensionRequirements>
+  <TM_ProgressionSummonerAttunement>Ритуал настройки: Призыватель</TM_ProgressionSummonerAttunement>
+  <TM_ProgressionSummonerAttunementHint>Проведите настройку на магическом круге, держа в инвентаре требуемое подношение.</TM_ProgressionSummonerAttunementHint>
+  <TM_ProgressionSummonerFoundationTrial>Испытание ученичества: Призыватель</TM_ProgressionSummonerFoundationTrial>
+  <TM_ProgressionSummonerMasteryTrial>Испытание мастерства: Призыватель</TM_ProgressionSummonerMasteryTrial>
+  <TM_ProgressionSuccubusAscension>Ритуал вознесения: Суккуб</TM_ProgressionSuccubusAscension>
+  <TM_ProgressionSuccubusAscensionRequirements>Требования вознесения (Суккуб):</TM_ProgressionSuccubusAscensionRequirements>
+  <TM_ProgressionSuccubusAttunement>Ритуал настройки: Суккуб</TM_ProgressionSuccubusAttunement>
+  <TM_ProgressionSuccubusAttunementHint>Проведите настройку на магическом круге, держа в инвентаре требуемое подношение.</TM_ProgressionSuccubusAttunementHint>
+  <TM_ProgressionSuccubusFoundationTrial>Испытание ученичества: Суккуб</TM_ProgressionSuccubusFoundationTrial>
+  <TM_ProgressionSuccubusMasteryTrial>Испытание мастерства: Суккуб</TM_ProgressionSuccubusMasteryTrial>
+  <TM_ProgressionTechnomancerAscension>Ритуал вознесения: Техномант</TM_ProgressionTechnomancerAscension>
+  <TM_ProgressionTechnomancerAscensionRequirements>Требования вознесения (Техномант):</TM_ProgressionTechnomancerAscensionRequirements>
+  <TM_ProgressionTechnomancerAttunement>Ритуал настройки: Техномант</TM_ProgressionTechnomancerAttunement>
+  <TM_ProgressionTechnomancerAttunementHint>Проведите настройку на магическом круге, держа в инвентаре требуемое подношение.</TM_ProgressionTechnomancerAttunementHint>
+  <TM_ProgressionTechnomancerFoundationTrial>Испытание ученичества: Техномант</TM_ProgressionTechnomancerFoundationTrial>
+  <TM_ProgressionTechnomancerMasteryTrial>Испытание мастерства: Техномант</TM_ProgressionTechnomancerMasteryTrial>
+  <TM_ProgressionWarlockAscension>Ритуал вознесения: Чернокнижник</TM_ProgressionWarlockAscension>
+  <TM_ProgressionWarlockAscensionRequirements>Требования вознесения (Чернокнижник):</TM_ProgressionWarlockAscensionRequirements>
+  <TM_ProgressionWarlockAttunement>Ритуал настройки: Чернокнижник</TM_ProgressionWarlockAttunement>
+  <TM_ProgressionWarlockAttunementHint>Проведите настройку на магическом круге, держа в инвентаре требуемое подношение.</TM_ProgressionWarlockAttunementHint>
+  <TM_ProgressionWarlockFoundationTrial>Испытание ученичества: Чернокнижник</TM_ProgressionWarlockFoundationTrial>
+  <TM_ProgressionWarlockMasteryTrial>Испытание мастерства: Чернокнижник</TM_ProgressionWarlockMasteryTrial>
+  <TM_ProgressionArcanistTrialProgress>Прогресс испытания: урон магическими снарядами {0}</TM_ProgressionArcanistTrialProgress>
+  <TM_ProgressionBloodMageTrialProgress>Прогресс испытания: урон воспламенением {0}</TM_ProgressionBloodMageTrialProgress>
+  <TM_ProgressionBrightmageTrialProgress>Прогресс испытания: урон копий света {0}</TM_ProgressionBrightmageTrialProgress>
+  <TM_ProgressionShamanTrialProgress>Прогресс испытания: восстановлено {0} здоровья</TM_ProgressionShamanTrialProgress>
+  <TM_ProgressionSummonerTrialProgress>Время контроля призванных: {0} игровых часов</TM_ProgressionSummonerTrialProgress>
+  <TM_ProgressionIceTrialProgress>Разных охлаждённых жертв: {0}</TM_ProgressionIceTrialProgress>
+  <TM_ProgressionGeomancerTrialProgress>Возведено стен: {0}</TM_ProgressionGeomancerTrialProgress>
+  <TM_ProgressionDruidTrialProgress>Умиротворено животных: {0}</TM_ProgressionDruidTrialProgress>
+  <TM_ProgressionAscension>Вознесение</TM_ProgressionAscension>
+  <TM_ProgressionAscensionRequirements>Требования вознесения:</TM_ProgressionAscensionRequirements>
+  <TM_ProgressionAscensionUnavailable>требования не выполнены</TM_ProgressionAscensionUnavailable>
+  <TM_ProgressionNextBook>Далее: прочтите {0}</TM_ProgressionNextBook>
+  <TM_ProgressionNoviceChoices>Выбор заклинаний ученика: {0} / {1}</TM_ProgressionNoviceChoices>
+  <TM_ProgressionPriestVow>Обет жреца: исцеление верующих. Вред союзникам ослабляет дар исцеления.</TM_ProgressionPriestVow>
+  <TM_ProgressionServantTime>Осталось контроля слуги: {0} ч</TM_ProgressionServantTime>
+  <TM_ProgressionChooseDemonBranch>Прочтите {1}, чтобы выбрать ветвь: {0}</TM_ProgressionChooseDemonBranch>
+  <TM_ProgressionFireboltDamage>Прогресс испытания: урон огненными стрелами {0}</TM_ProgressionFireboltDamage>
+  <TM_ProgressionFireboltTrial>Испытание огненных стрел</TM_ProgressionFireboltTrial>
+  <TM_ProgressionFireclawTrial>Испытание огненных когтей</TM_ProgressionFireclawTrial>
+  <TM_ProgressionFoundationBook>Ученичество: прочтите {1}, чтобы начать путь {0}</TM_ProgressionFoundationBook>
+  <TM_ProgressionNecromancerControlTrial>Испытание контроля слуг (некромант)</TM_ProgressionNecromancerControlTrial>
+  <TM_ProgressionNecromancerDeathMarkTrial>Испытание печати смерти (некромант)</TM_ProgressionNecromancerDeathMarkTrial>
+  <TM_ProgressionPriestHealingTrial>Испытание исцеления (жрец)</TM_ProgressionPriestHealingTrial>
+  <TM_ProgressionPriestPurificationTrial>Испытание очищения (жрец): навсегда снимите шрам</TM_ProgressionPriestPurificationTrial>
+  <TM_ProgressionPaladinAttunementHint>Проведите настройку на магическом круге, держа в инвентаре требуемое подношение.</TM_ProgressionPaladinAttunementHint>
+  <TM_ProgressionVocation_Mage>Маг</TM_ProgressionVocation_Mage>
+  <TM_ProgressionVocation_Warrior>Воин</TM_ProgressionVocation_Warrior>
+  <TM_ProgressionVocation_WarriorMage>Маг-воин</TM_ProgressionVocation_WarriorMage>
+  <TM_ProgressionStage_Foundation>Ученик</TM_ProgressionStage_Foundation>
+  <TM_ProgressionStage_Adept>Адепт</TM_ProgressionStage_Adept>
+  <TM_ProgressionStage_Master>Мастер</TM_ProgressionStage_Master>
+  <TM_ProgressionStage_Ascended>Вознесённый</TM_ProgressionStage_Ascended>
+  <TM_ProgressionLightningTrialProgress>Прогресс испытания: урон молниями {0}, разных жертв бурь {1}</TM_ProgressionLightningTrialProgress>
+  <TM_ArcaneBolt_pwr_desc>Увеличивает урон Магического болта.</TM_ArcaneBolt_pwr_desc>
+  <TM_ArcaneBolt_eff_desc>Уменьшает затраты маны на Магический болт.</TM_ArcaneBolt_eff_desc>
+  <TM_ArcaneBolt_ver_desc>Увеличивает эффективность применений Магического болта.</TM_ArcaneBolt_ver_desc>
+  <TM_MageLight_pwr_desc>Увеличивает радиус и яркость Магического света.</TM_MageLight_pwr_desc>
+  <TM_MageLight_eff_desc>Уменьшает поддержание маны Магического света.</TM_MageLight_eff_desc>
+  <TM_MageLight_ver_desc>Продлевает длительность Магического света.</TM_MageLight_ver_desc>
+  <TM_Extinguish_pwr_desc>Увеличивает область тушения.</TM_Extinguish_pwr_desc>
+  <TM_Extinguish_eff_desc>Уменьшает затраты маны на Тушение.</TM_Extinguish_eff_desc>
+  <TM_Extinguish_ver_desc>Повышает эффективность Тушения.</TM_Extinguish_ver_desc>
+  <TM_Heater_pwr_desc>Увеличивает тепло обогревателя.</TM_Heater_pwr_desc>
+  <TM_Heater_eff_desc>Уменьшает поддержание маны обогревателя.</TM_Heater_eff_desc>
+  <TM_Heater_ver_desc>Продлевает длительность обогревателя.</TM_Heater_ver_desc>
+  <TM_Cooler_pwr_desc>Увеличивает охлаждение охладителя.</TM_Cooler_pwr_desc>
+  <TM_Cooler_eff_desc>Уменьшает поддержание маны охладителя.</TM_Cooler_eff_desc>
+  <TM_Cooler_ver_desc>Продлевает длительность охладителя.</TM_Cooler_ver_desc>
+  <TM_SmokeCloud_pwr_desc>Увеличивает размер Облака дыма.</TM_SmokeCloud_pwr_desc>
+  <TM_SmokeCloud_eff_desc>Уменьшает затраты маны на Облако дыма.</TM_SmokeCloud_eff_desc>
+  <TM_SmokeCloud_ver_desc>Продлевает длительность Облака дыма.</TM_SmokeCloud_ver_desc>
+  <TM_SynthToggleLabel>Автосинтез: мана + химтопливо</TM_SynthToggleLabel>
+  <TM_SynthToggleDesc>Медленно превращает запасённую ману и химтопливо в манатопливо в этом баке (~50 в день). Пауза, пока бак не достигнет цели или не хватает входов.</TM_SynthToggleDesc>
+  <TM_SynthLoad>Загрузить химтопливо ({0})</TM_SynthLoad>
+  <TM_SynthLoadDesc>Забрать химтопливо со стаков возле резервуара в приёмный бункер.</TM_SynthLoadDesc>
+  <TM_SynthInspect>Бункер химтоплива: {0} — синтез 50 манатоплива в день</TM_SynthInspect>
+  <TM_PoolInspect>Пул сети маяков: мана {0}/{1}, манатопливо {2}/{3} ({4} бака)</TM_PoolInspect>
 </LanguageData>

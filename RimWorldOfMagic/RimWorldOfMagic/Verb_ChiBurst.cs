@@ -5,6 +5,7 @@ using System.Linq;
 using System;
 using System.Collections.Generic;
 using RimWorld;
+using Verse.AI;
 
 namespace TorannMagic
 {
@@ -13,6 +14,55 @@ namespace TorannMagic
 
         bool validTarg;
         private int pwrVal;
+        internal const string HostedOrder = "TM_SpiritChiBurst";
+        internal static Verb_ChiBurst For(Pawn body, MightAbility ability) => new Verb_ChiBurst
+            { caster = body, Ability = ability, verbProps = ability.mightDef.MainVerb };
+
+        internal static bool Valid(Pawn body, MightAbility ability, LocalTargetInfo target) =>
+            ClassProgression.SpiritHostedMartial.Ready(body, ability, HostedOrder) &&
+            target.IsValid && target.Cell.InBounds(body.Map) && For(body, ability).CanHitTargetFrom(body.Position, target);
+
+        internal static void Choose(Pawn body, Pawn soul, MightAbility ability)
+        {
+            var map = body.Map;
+            bool Available(LocalTargetInfo target) => body.Spawned && body.Map == map &&
+                ClassProgression.SpiritHostedMartial.Find(body, soul, HostedOrder) == ability && Valid(body, ability, target);
+            Find.Targeter.BeginTargeting(ability.mightDef.MainVerb.targetParams, target => {
+                if (!Available(target)) return;
+                var job = JobMaker.MakeJob(DefDatabase<JobDef>.GetNamed(HostedOrder), soul, target);
+                job.playerForced = true;
+                body.jobs.TryTakeOrderedJob(job, JobTag.Misc);
+            }, highlightAction: target => {
+                GenDraw.DrawRadiusRing(body.Position, ability.mightDef.MainVerb.range);
+                if (target.IsValid) GenDraw.DrawRadiusRing(target.Cell, ability.mightDef.MainVerb.TargetAoEProperties.range);
+            }, targetValidator: Available, caster: body);
+        }
+
+        internal bool CastFromHost(LocalTargetInfo target)
+        {
+            if (!Valid(CasterPawn, Ability as MightAbility, target)) return false;
+            currentTarget = target;
+            return TryCastShot();
+        }
+
+        internal bool PreparePower()
+        {
+            var body = CasterPawn;
+            var owner = Ability?.Pawn ?? body;
+            if (owner != body && !(ClassProgression.SpiritRebirthState.TryGetPossessingSpirit(body, out var held) &&
+                held == owner && ClassProgression.SpiritRebirthState.TryGet(owner, out var state) && !state.DepletionPending))
+                return false;
+            var comp = owner?.GetCompAbilityUserMight();
+            if (comp == null) return false;
+            pwrVal = comp.MightData.MightPowerSkill_Chi.FirstOrDefault(x => x.label == "TM_Chi_pwr")?.level ?? 0;
+            if (!body.IsColonist && ModOptions.Settings.Instance.AIHardMode) pwrVal = 3;
+            return true;
+        }
+
+        internal float Penetration() => TM_Calc.GetSpellPenetrationFrom(Ability?.Pawn ?? CasterPawn, CasterPawn);
+
+        private float SuccessChance(Pawn target, bool psychic) =>
+            1f + Penetration() - TM_Calc.GetArcaneResistance(target, psychic);
 
         public override bool CanHitTargetFrom(IntVec3 root, LocalTargetInfo targ)
         {
@@ -41,14 +91,8 @@ namespace TorannMagic
 
         protected override bool TryCastShot()
         {
-            bool result = false;
             Pawn caster = this.CasterPawn;
-            this.pwrVal = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Chi.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Chi_pwr").level;
-            
-            if (!caster.IsColonist && ModOptions.Settings.Instance.AIHardMode)
-            {
-                pwrVal = 3;
-            }
+            if (!PreparePower()) return false;
             Map map = this.CasterPawn.Map;
 
             Effecter SabotageEffect = TorannMagicDefOf.TM_ChiBurstED.Spawn();
@@ -64,7 +108,7 @@ namespace TorannMagic
                     {
                         if (classPawns[i].health != null && classPawns[i].Faction != null && classPawns[i].health.hediffSet != null && classPawns[i].story != null && !classPawns[i].NonHumanlikeOrWildMan())
                         {
-                            float successChance = TM_Calc.GetSpellSuccessChance(this.CasterPawn, classPawns[i], false);
+                            float successChance = SuccessChance(classPawns[i], false);
                             if (Rand.Chance(successChance))
                             {
                                 DisruptClassPawn(classPawns[i]);
@@ -78,7 +122,7 @@ namespace TorannMagic
                 }
             }
          
-            return result;
+            return true;
         }
 
         public List<Pawn> GetMapClassPawnsAround(Map map, IntVec3 centerPos, float radius)
@@ -90,7 +134,7 @@ namespace TorannMagic
             mapPawns = map.mapPawns.AllPawnsSpawned.ToList();
             for(int i =0; i < mapPawns.Count; i++)
             {
-                if((mapPawns[i].Position - centerPos).LengthHorizontal <= radius)
+                if(mapPawns[i] != CasterPawn && (mapPawns[i].Position - centerPos).LengthHorizontal <= radius)
                 {
                     if(TM_Calc.IsMagicUser(mapPawns[i]) || TM_Calc.IsMightUser(mapPawns[i]))
                     {
@@ -144,8 +188,7 @@ namespace TorannMagic
 
         private void DisruptMentalState_NonClass(Pawn pawn)
         {
-            float successChance = TM_Calc.GetSpellSuccessChance(this.CasterPawn, pawn, false);
-            if (Rand.Chance(TM_Calc.GetSpellSuccessChance(this.CasterPawn, pawn, true)))
+            if (Rand.Chance(SuccessChance(pawn, true)))
             {
                 if (pawn.RaceProps.Humanlike && Rand.Chance(.08f))
                 {

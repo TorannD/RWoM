@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_HateHD.label>odio</TM_HateHD.label>
+  
+  <TM_HateHD.description>Representa la energía y las habilidades únicas que utiliza un caballero de la muerte.</TM_HateHD.description>
+  
+  
+  <TM_HateHD_I.label>odio</TM_HateHD_I.label>
+  
+  <TM_HateHD_I.description>Representa la energía y las habilidades únicas que utiliza un caballero de la muerte.</TM_HateHD_I.description>
+  
+  
+  <TM_HateHD_II.label>odio</TM_HateHD_II.label>
+  
+  <TM_HateHD_II.description>Representa la energía y las habilidades únicas que utiliza un caballero de la muerte.</TM_HateHD_II.description>
+  
+  
+  <TM_HateHD_III.label>odio</TM_HateHD_III.label>
+  
+  <TM_HateHD_III.description>Representa la energía y las habilidades únicas que utiliza un caballero de la muerte.</TM_HateHD_III.description>
+  
+  
+  <TM_HateHD_IV.label>odio</TM_HateHD_IV.label>
+  
+  <TM_HateHD_IV.description>Representa la energía y las habilidades únicas que utiliza un caballero de la muerte.</TM_HateHD_IV.description>
+  
+  
+  <TM_HateHD_V.label>odio</TM_HateHD_V.label>
+  
+  <TM_HateHD_V.description>Representa la energía y las habilidades únicas que utiliza un caballero de la muerte.</TM_HateHD_V.description>
+  
+  
+  <TM_WaveOfFearHD.label>oleada de miedo</TM_WaveOfFearHD.label>
+  
+  <TM_WaveOfFearHD.description>Afectado por un miedo terrible e incapacitante.</TM_WaveOfFearHD.description>
+  
+  <TM_WaveOfFearHD.stages.I.label>I</TM_WaveOfFearHD.stages.I.label>
+  
+  <TM_WaveOfFearHD.stages.II.label>II</TM_WaveOfFearHD.stages.II.label>
+  
+  <TM_WaveOfFearHD.stages.III.label>III</TM_WaveOfFearHD.stages.III.label>
+  
+  <TM_WaveOfFearHD.stages.IV.label>IV</TM_WaveOfFearHD.stages.IV.label>
+  
+</LanguageData>

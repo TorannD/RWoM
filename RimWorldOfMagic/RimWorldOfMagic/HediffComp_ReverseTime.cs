@@ -10,7 +10,7 @@ namespace TorannMagic
 {
     public class HediffComp_ReverseTime : HediffComp
     {
-        private bool initialized = true;
+        private bool initialized;
 
         public bool isBad = false;
         public int durationTicks = 6000;
@@ -74,7 +74,7 @@ namespace TorannMagic
                 FleckMaker.ThrowLightningGlow(base.Pawn.TrueCenter(), base.Pawn.Map, 3f);
             }
             this.currentAge = base.Pawn.ageTracker.AgeBiologicalTicks;
-            this.tickEffect = Mathf.RoundToInt(this.durationTicks / 500);
+            this.tickEffect = Math.Max(1, this.durationTicks / 500);
         }
 
         public override void CompPostPostRemoved()
@@ -116,7 +116,7 @@ namespace TorannMagic
                 }
             }
 
-            if (Find.TickManager.TicksGame % this.tickEffect == 0)
+            if (Pawn.Spawned && Find.TickManager.TicksGame % Math.Max(1,tickEffect) == 0)
             {
                 ReverseEffects(this.Pawn, 1);
             }
@@ -126,76 +126,70 @@ namespace TorannMagic
         {
             float totalBleedRate = 0;
             int totalHDremoved = 0;
-            using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.hediffs.GetEnumerator())
+            foreach (var rec in pawn.health.hediffSet.hediffs.ToArray())
             {
-                while (enumerator.MoveNext())
-                {                    
-                    Hediff rec = enumerator.Current;
-                    if (rec != null)
+                if (rec != null)
+                {
+                    HediffComp_Immunizable immuneComp = rec.TryGetComp<HediffComp_Immunizable>();
+                    if (immuneComp != null)
                     {
-                        HediffComp_Immunizable immuneComp = rec.TryGetComp<HediffComp_Immunizable>();
-                        if (immuneComp != null)
+                        if (immuneComp.Def.CompProps<HediffCompProperties_Immunizable>() != null)
                         {
-                            if (immuneComp.Def.CompProps<HediffCompProperties_Immunizable>() != null)
+                            float immuneSevDay = immuneComp.Def.CompProps<HediffCompProperties_Immunizable>().severityPerDayNotImmune;
+                            if (immuneSevDay != 0 && !rec.FullyImmune())
                             {
-                                float immuneSevDay = immuneComp.Def.CompProps<HediffCompProperties_Immunizable>().severityPerDayNotImmune;
-                                if (immuneSevDay != 0 && !rec.FullyImmune())
-                                {
-                                    rec.Severity -= ((immuneSevDay * ticks * this.parent.Severity) / (2000));
-                                }
+                                rec.Severity -= ((immuneSevDay * ticks * this.parent.Severity) / (2000));
                             }
-                        }
-                        HediffComp_SeverityPerDay sevDayComp = rec.TryGetComp<HediffComp_SeverityPerDay>();
-                        if (sevDayComp != null)
-                        {
-                            if (sevDayComp.Def.CompProps<HediffCompProperties_SeverityPerDay>() != null)
-                            {
-                                float sevDay = sevDayComp.Def.CompProps<HediffCompProperties_SeverityPerDay>().severityPerDay;
-                                if (sevDay != 0)
-                                {
-                                    bool drugTolerance = false;
-                                    HediffComp_DrugEffectFactor drugEffectComp = rec.TryGetComp<HediffComp_DrugEffectFactor>();
-                                    if (drugEffectComp != null)
-                                    {
-                                        if (drugEffectComp.Def.CompProps < HediffCompProperties_DrugEffectFactor>().chemical != null)
-                                        {
-                                            drugTolerance = true;
-                                        }
-                                    }
-                                    if (!drugTolerance)
-                                    {
-                                        rec.Severity -= ((sevDay * ticks * this.parent.Severity) / (800));
-                                    }
-                                }
-                            }
-                        }
-                        HediffComp_Disappears tickComp = rec.TryGetComp<HediffComp_Disappears>();
-                        if (tickComp != null)
-                        {
-                            int ticksToDisappear = Traverse.Create(root: tickComp).Field(name: "ticksToDisappear").GetValue<int>();
-                            if (ticksToDisappear != 0)
-                            {
-                                Traverse.Create(root: tickComp).Field(name: "ticksToDisappear").SetValue(ticksToDisappear + (Mathf.RoundToInt(ticks * this.parent.Severity)));
-                            }
-                        }
-                        if (rec.Bleeding)
-                        {
-                            totalBleedRate += rec.BleedRate;
                         }
                     }
-                }
-                if (totalBleedRate != 0)
-                {
-                    HealthUtility.AdjustSeverity(pawn, HediffDefOf.BloodLoss, -(totalBleedRate * ticks * this.parent.Severity) / (24 * 2500));
+                    HediffComp_SeverityPerDay sevDayComp = rec.TryGetComp<HediffComp_SeverityPerDay>();
+                    if (sevDayComp != null)
+                    {
+                        if (sevDayComp.Def.CompProps<HediffCompProperties_SeverityPerDay>() != null)
+                        {
+                            float sevDay = sevDayComp.Def.CompProps<HediffCompProperties_SeverityPerDay>().severityPerDay;
+                            if (sevDay != 0)
+                            {
+                                bool drugTolerance = false;
+                                HediffComp_DrugEffectFactor drugEffectComp = rec.TryGetComp<HediffComp_DrugEffectFactor>();
+                                if (drugEffectComp != null)
+                                {
+                                    if (drugEffectComp.Def.CompProps < HediffCompProperties_DrugEffectFactor>().chemical != null)
+                                    {
+                                        drugTolerance = true;
+                                    }
+                                }
+                                if (!drugTolerance)
+                                {
+                                    rec.Severity -= ((sevDay * ticks * this.parent.Severity) / (800));
+                                }
+                            }
+                        }
+                    }
+                    HediffComp_Disappears tickComp = rec.TryGetComp<HediffComp_Disappears>();
+                    if (tickComp != null)
+                    {
+                        int ticksToDisappear = Traverse.Create(root: tickComp).Field(name: "ticksToDisappear").GetValue<int>();
+                        if (ticksToDisappear != 0)
+                        {
+                            Traverse.Create(root: tickComp).Field(name: "ticksToDisappear").SetValue(ticksToDisappear + (Mathf.RoundToInt(ticks * this.parent.Severity)));
+                        }
+                    }
+                    if (rec.Bleeding)
+                    {
+                        totalBleedRate += rec.BleedRate;
+                    }
                 }
             }
+            if (totalBleedRate != 0)
+                HealthUtility.AdjustSeverity(pawn, HediffDefOf.BloodLoss, -(totalBleedRate * ticks * parent.Severity) / 60000f);
             List<Hediff> hediffList = pawn.health.hediffSet.hediffs.ToList();
             if (hediffList != null && hediffList.Count > 0)
             {
                 for (int i = 0; i < hediffList.Count; i++)
                 {
                     Hediff rec = hediffList[i];
-                    if (rec != null && rec != this.parent)
+                    if (rec != null && rec != this.parent && rec is not ClassProgression.Hediff_ClassDiscipline && rec is not ClassProgression.Hediff_SpiritRebirthForm)
                     {
                         if (rec.def.scenarioCanAdd || rec.def.isBad)
                         {

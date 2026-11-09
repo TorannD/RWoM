@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritResurrection.reportString>воскрешає через тіло носія.</TM_SpiritResurrection.reportString>
+  <TM_SpiritHealingCircle.reportString>створює коло зцілення через тіло носія.</TM_SpiritHealingCircle.reportString>
+  <TM_SpiritHealingCircle_I.reportString>створює коло зцілення через тіло носія.</TM_SpiritHealingCircle_I.reportString>
+  <TM_SpiritHealingCircle_II.reportString>створює коло зцілення через тіло носія.</TM_SpiritHealingCircle_II.reportString>
+  <TM_SpiritHealingCircle_III.reportString>створює коло зцілення через тіло носія.</TM_SpiritHealingCircle_III.reportString>
+  <TM_SpiritBestowMight.reportString>дарує фізичну міць через носія Духа.</TM_SpiritBestowMight.reportString>
+  <TM_SpiritBestowMight_I.reportString>дарує фізичну міць через носія Духа.</TM_SpiritBestowMight_I.reportString>
+  <TM_SpiritBestowMight_II.reportString>дарує фізичну міць через носія Духа.</TM_SpiritBestowMight_II.reportString>
+  <TM_SpiritBestowMight_III.reportString>дарує фізичну міць через носія Духа.</TM_SpiritBestowMight_III.reportString>
+</LanguageData>

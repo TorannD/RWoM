@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using Verse;
 using System.Collections.Generic;
 using System.Linq;
@@ -188,114 +188,50 @@ namespace TorannMagic
             }
         }
 
+        internal static bool CanCopyTechnoWeapon(ThingDef def)
+        {
+            if (def?.IsRangedWeapon != true || def.Verbs.FirstOrDefault()?.verbClass == null ||
+                def.HasComp(typeof(CompTechnoWeaponCopy))) return false;
+            return ModOptions.Settings.Instance.unrestrictedWeaponCopy ||
+                (def.techLevel >= TechLevel.Industrial && def.Verbs[0].verbClass == typeof(Verb_Shoot));
+        }
+
         public static void DoAction_TechnoWeaponCopy(Pawn caster, Thing thing, ThingDef td = null, QualityCategory _qc = QualityCategory.Normal)
         {
-            CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
-            
-            bool destroyThingAtEnd = false;
-            if (thing != null && comp != null)
+            if (thing != null) { TryCopyTechnoWeapon(caster,caster,thing); return; }
+            if (!CanCopyTechnoWeapon(td)) return;
+            var temporary = ThingMaker.MakeThing(td, td.MadeFromStuff ? GenStuff.DefaultStuffFor(td) : null);
+            try
             {
-                comp.technoWeaponThingDef = thing.def;
-                CompQuality cq = thing.TryGetComp<CompQuality>();
-                if (cq != null)
-                {
-                    comp.technoWeaponQC = cq.Quality;
-                }
+                temporary.TryGetComp<CompQuality>()?.SetQuality(_qc, ArtGenerationContext.Colony);
+                TryCopyTechnoWeapon(caster,caster,temporary);
             }
+            finally { temporary.Destroy(); }
+        }
 
-            if (thing == null && td != null)
+        internal static int TechnoWeaponRank(CompAbilityUserMagic magic) => magic.MagicData.MagicPowerSkill_TechnoWeapon
+            .FirstOrDefault(skill => skill.label == "TM_TechnoWeapon_pwr")?.level ?? 0;
+
+        internal static bool TryCopyTechnoWeapon(Pawn body, Pawn owner, Thing source)
+        {
+            var magic = owner?.GetCompAbilityUserMagic();
+            if (body?.Spawned != true || body.equipment == null || magic == null || !CanCopyTechnoWeapon(source?.def)) return false;
+            var weapon = (ThingWithComps)ThingMaker.MakeThing(ThingDef.Named("TM_TechnoWeapon_Base0"));
+            bool accepted = false;
+            try
             {
-                destroyThingAtEnd = true;
-                thing = ThingMaker.MakeThing(td);
-                CompQuality cq = thing.TryGetComp<CompQuality>();
-                if (cq != null)
-                {
-                    cq.SetQuality(_qc, ArtGenerationContext.Colony);
-                }
+                var quality = source.TryGetComp<CompQuality>()?.Quality ?? QualityCategory.Normal;
+                weapon.TryGetComp<CompQuality>()?.SetQuality(quality, ArtGenerationContext.Colony);
+                weapon.TryGetComp<CompTechnoWeaponCopy>().Capture(source, TechnoWeaponRank(magic));
+                if (!GenPlace.TryPlaceThing(weapon,body.Position,body.Map,ThingPlaceMode.Near) ||
+                    !body.jobs.TryTakeOrderedJob(JobMaker.MakeJob(JobDefOf.Equip,weapon), JobTag.ChangingApparel)) return false;
+                accepted = true;
+                magic.technoWeaponThing = source.Spawned ? source : null;
+                magic.technoWeaponThingDef = source.def;
+                magic.technoWeaponQC = quality;
+                return true;
             }
-
-
-            if (thing != null && thing.def != null && thing.def.IsRangedWeapon && (thing.def.techLevel >= TechLevel.Industrial || ModOptions.Settings.Instance.unrestrictedWeaponCopy) && (thing.def.Verbs.FirstOrDefault().verbClass.ToString() == "Verse.Verb_Shoot" || ModOptions.Settings.Instance.unrestrictedWeaponCopy))
-            {
-                int verVal = comp.MagicData.MagicPowerSkill_TechnoWeapon.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_TechnoWeapon_ver").level;
-                int pwrVal = comp.MagicData.MagicPowerSkill_TechnoWeapon.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_TechnoWeapon_pwr").level;
-                ThingDef newThingDef = new ThingDef();
-                ThingDef newProjectileDef = new ThingDef();
-                if (comp.technoWeaponDefNum != -1)
-                {
-                    newThingDef = ThingDef.Named("TM_TechnoWeapon_Base" + comp.technoWeaponDefNum.ToString());
-                }
-                else
-                {
-                    int highNum = 0;
-                    List<Pawn> mapPawns = caster.Map.mapPawns.AllPawns.ToList();
-                    for (int i = 0; i < mapPawns.Count; i++)
-                    {
-                        if (!mapPawns[i].DestroyedOrNull() && mapPawns[i].RaceProps.Humanlike)
-                        {
-                            if (comp.IsMagicUser)
-                            {
-                                if (comp.technoWeaponDefNum > highNum)
-                                {
-                                    highNum = comp.technoWeaponDefNum;
-                                }
-                            }
-                        }
-                    }
-                    if (ModOptions.Constants.GetTechnoWeaponCount() > highNum)
-                    {
-                        highNum = ModOptions.Constants.GetTechnoWeaponCount();
-                    }
-                    highNum++;
-                    newThingDef = ThingDef.Named("TM_TechnoWeapon_Base" + highNum.ToString());
-                    comp.technoWeaponDefNum = highNum;
-                    ModOptions.Constants.SetTechnoWeaponCount(highNum);
-                }
-                comp.technoWeaponThing = thing;
-                comp.technoWeaponThingDef = thing.def;
-                newThingDef.label = thing.def.label + " (modified)";
-                newThingDef.description = thing.def.description + "\n\nThis weapon has been modified by a Technomancer.";
-                newThingDef.graphicData.texPath = thing.def.graphicData.texPath;
-                newThingDef.soundInteract = thing.def.soundInteract;
-
-                newThingDef.SetStatBaseValue(StatDefOf.RangedWeapon_DamageMultiplier, 1f + (.02f * pwrVal));
-                newThingDef.SetStatBaseValue(StatDefOf.RangedWeapon_Cooldown, thing.GetStatValue(StatDefOf.RangedWeapon_Cooldown) * (1 - .02f * pwrVal));
-                newThingDef.SetStatBaseValue(StatDefOf.AccuracyTouch, thing.GetStatValue(StatDefOf.AccuracyTouch) * (1 + .01f * pwrVal));
-                newThingDef.SetStatBaseValue(StatDefOf.AccuracyShort, thing.GetStatValue(StatDefOf.AccuracyShort) * (1 + .01f * pwrVal));
-                newThingDef.SetStatBaseValue(StatDefOf.AccuracyMedium, thing.GetStatValue(StatDefOf.AccuracyMedium) * (1 + .01f * pwrVal));
-                newThingDef.SetStatBaseValue(StatDefOf.AccuracyLong, thing.GetStatValue(StatDefOf.AccuracyLong) * (1 + .01f * pwrVal));
-
-                newThingDef.Verbs.FirstOrDefault().defaultProjectile = thing.def.Verbs.FirstOrDefault().defaultProjectile;
-                newThingDef.Verbs.FirstOrDefault().range = thing.def.Verbs.FirstOrDefault().range * (1f + .02f * pwrVal);
-                newThingDef.Verbs.FirstOrDefault().warmupTime = thing.def.Verbs.FirstOrDefault().warmupTime * (1f - .02f * pwrVal);
-                newThingDef.Verbs.FirstOrDefault().burstShotCount = Mathf.RoundToInt(thing.def.Verbs.FirstOrDefault().burstShotCount * (1f + .02f * pwrVal));
-                newThingDef.Verbs.FirstOrDefault().ticksBetweenBurstShots = Mathf.RoundToInt(thing.def.Verbs.FirstOrDefault().ticksBetweenBurstShots * (1f - .02f * pwrVal));
-                newThingDef.Verbs.FirstOrDefault().soundCast = thing.def.Verbs.FirstOrDefault().soundCast;
-                Thing technoWeapon = ThingMaker.MakeThing(newThingDef, null);
-
-                try
-                {
-                    CompQuality twcq = technoWeapon.TryGetComp<CompQuality>();
-                    QualityCategory qc = thing.TryGetComp<CompQuality>().Quality;
-                    twcq.SetQuality(qc, ArtGenerationContext.Colony);
-                }
-                catch (NullReferenceException ex)
-                {
-                    //ignore
-                }
-
-                GenPlace.TryPlaceThing(technoWeapon, caster.Position, caster.Map, ThingPlaceMode.Direct, null, null);
-                Job job = new Job(JobDefOf.Equip, technoWeapon);
-                caster.jobs.TryTakeOrderedJob(job, JobTag.ChangingApparel);
-            }
-            else
-            {
-                Log.Message("cannot copy target thing or unable to restore techno weapon");
-            }
-            if (destroyThingAtEnd)
-            {
-                thing.Destroy(DestroyMode.Vanish);
-            }
+            finally { if (!accepted && !weapon.Destroyed) weapon.Destroy(); }
         }
 
         public static void DoAction_PistolSpecCopy(Pawn caster, ThingWithComps thing)
@@ -388,6 +324,7 @@ namespace TorannMagic
                 //    caster.equipment.Primary.Destroy(DestroyMode.Vanish);
                 //}
                 caster.equipment.AddEquipment(specWeapon);
+                comp.specializedWeapon.Bind(thing, specWeapon);
                 //GenPlace.TryPlaceThing(technoWeapon, caster.Position, caster.Map, ThingPlaceMode.Direct, null, null);
                 //Job job = new Job(JobDefOf.Equip, technoWeapon);
                 //caster.jobs.TryTakeOrderedJob(job, JobTag.ChangingApparel);
@@ -488,6 +425,7 @@ namespace TorannMagic
                 //    caster.equipment.Primary.Destroy(DestroyMode.Vanish);
                 //}
                 caster.equipment.AddEquipment(specWeapon);
+                comp.specializedWeapon.Bind(thing, specWeapon);
                 //GenPlace.TryPlaceThing(technoWeapon, caster.Position, caster.Map, ThingPlaceMode.Direct, null, null);
                 //Job job = new Job(JobDefOf.Equip, technoWeapon);
                 //caster.jobs.TryTakeOrderedJob(job, JobTag.ChangingApparel);
@@ -597,6 +535,7 @@ namespace TorannMagic
                 //    caster.equipment.Primary.Destroy(DestroyMode.Vanish);
                 //}
                 caster.equipment.AddEquipment(specWeapon);
+                comp.specializedWeapon.Bind(thing, specWeapon);
                 //GenPlace.TryPlaceThing(technoWeapon, caster.Position, caster.Map, ThingPlaceMode.Direct, null, null);
                 //Job job = new Job(JobDefOf.Equip, technoWeapon);
                 //caster.jobs.TryTakeOrderedJob(job, JobTag.ChangingApparel);
@@ -736,7 +675,7 @@ namespace TorannMagic
             // Order is not guaranteed (.OrderBy(injury => injury.Part) if needed for both enumerables)
             IEnumerable<Hediff_Injury> bleedingInjuries = pawn.health.hediffSet.hediffs
                 .OfType<Hediff_Injury>()
-                .Where(injury => injury.Bleeding);
+                .Where(injury => injury.Bleeding).ToList();
 
             int healedInjuries = 0;
             HashSet<BodyPartRecord> bleedingBodyParts = new HashSet<BodyPartRecord>();
@@ -751,7 +690,7 @@ namespace TorannMagic
 
             IEnumerable<Hediff_Injury> injuriesFromNonBleedingParts = pawn.health.hediffSet.hediffs
                 .OfType<Hediff_Injury>()
-                .Where(injury => !bleedingBodyParts.Contains(injury.Part));
+                .Where(injury => !bleedingBodyParts.Contains(injury.Part)).ToList();
 
             foreach (Hediff_Injury injury in injuriesFromNonBleedingParts)
             {
@@ -927,30 +866,14 @@ namespace TorannMagic
 
             if (newPawn.Faction != null && newPawn.Faction != Faction.OfPlayer)
             {
-                Lord lord = null;
-                if (newPawn.Map.mapPawns.SpawnedPawnsInFaction(faction).Any((Pawn p) => p != newPawn))
-                {
-                    Predicate<Thing> validator = (Thing p) => p != newPawn && ((Pawn)p).GetLord() != null;
-                    Pawn p2 = (Pawn)GenClosest.ClosestThing_Global(newPawn.Position, newPawn.Map.mapPawns.SpawnedPawnsInFaction(faction), 99999f, validator, null);
-                    lord = p2.GetLord();
-                }
-                bool flag4 = lord == null;
-                if (flag4)
-                {
-                    LordJob_DefendPoint lordJob = new LordJob_DefendPoint(newPawn.Position);
-                    lord = LordMaker.MakeNewLord(faction, lordJob, newPawn.Map, null);
-                }
+                var members = newPawn.Map.mapPawns.SpawnedPawnsInFaction(faction);
+                var leader = (Pawn)GenClosest.ClosestThing_Global(newPawn.Position, members, 99999f,
+                    candidate => candidate is Pawn pawn && pawn != newPawn && pawn.GetLord() != null);
+                var lord = leader?.GetLord();
+                if (lord == null)
+                    lord = LordMaker.MakeNewLord(faction,new LordJob_DefendPoint(newPawn.Position),newPawn.Map);
                 else
-                {
-                    try
-                    {
-                        newPawn.mindState.duty = new PawnDuty(DutyDefOf.Defend);
-                    }
-                    catch
-                    {
-                        Log.Message("error attempting to assign a duty to summoned object");
-                    }
-                }
+                    newPawn.mindState.duty = new PawnDuty(DutyDefOf.Defend);
                 lord.AddPawn(newPawn);
             }
             return newPawn;
@@ -1068,6 +991,7 @@ namespace TorannMagic
 
         public static void PossessPawn(Pawn caster, Pawn target, bool wasDead = false, FactionDef previousFactionDef = null)
         {
+            if (ClassProgression.SpiritSummonedHost.IsSummoned(target)) return;
             //LongEventHandler.QueueLongEvent(delegate
             //{
                 Hediff_Possessor possessorHD = caster.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_SpiritPossessorHD) as Hediff_Possessor;
@@ -1115,9 +1039,23 @@ namespace TorannMagic
 
         public static void RemovePossession(Pawn p, IntVec3 loc, bool destroySpirit = false, bool hostKilled = false)
         {            
+            if (!ClassProgression.ClassProgressionFeature.Enabled &&
+                ClassProgression.SpiritRebirthState.IsPaused(Compatibility.TM_SpiritCommands.Possession(p)?.SpiritPawn)) return;
+            if (ClassProgression.SpiritHostLoss.IsMarkedHost(p))
+            {
+                // The Kill prefix is only a notification of intent. Wait for native death.
+                if (!hostKilled && p.Spawned && ClassProgression.SpiritHostLoss.Secure(p, true))
+                {
+                    var empty = p.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_SpiritPossessionHD);
+                    if (empty?.TryGetComp<HediffComp_SpiritPossession>()?.SpiritPawn == null && empty != null)
+                        p.health.RemoveHediff(empty);
+                }
+                return;
+            }
             Hediff hd = p.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_SpiritPossessionHD);
-            HediffComp_SpiritPossession hdc_sp = hd.TryGetComp<HediffComp_SpiritPossession>() as HediffComp_SpiritPossession;
-            Pawn spirit = hdc_sp.SpiritPawn;
+            var hdc_sp = hd?.TryGetComp<HediffComp_SpiritPossession>();
+            Pawn spirit = hdc_sp?.SpiritPawn;
+            if (spirit == null) return;
             CompAbilityUserMagic pComp = p.GetCompAbilityUserMagic();
             Map spawnMap = p.Map;
             if (p.Map == null && p.Corpse != null)
@@ -1125,9 +1063,10 @@ namespace TorannMagic
                 spawnMap = p.Corpse.Map;
                 loc = p.Corpse.Position;
             }
-            TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Ghost, loc.ToVector3Shifted(), spawnMap, 1.2f, .4f, 0f, .25f, 0, Rand.Range(2f, 3f), 0, 0);
-            GenPlace.TryPlaceThing(spirit.SplitOff(1), loc, spawnMap, ThingPlaceMode.Near, null, null, p.Rotation);
             Hediff_Possessor possessorHD = spirit.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_SpiritPossessorHD) as Hediff_Possessor;
+            if (possessorHD == null || spawnMap == null || !hdc_sp.GetDirectlyHeldThings().TryDrop(spirit, loc, spawnMap,
+                ThingPlaceMode.Near, out var _, playDropSound: false)) return;
+            TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Ghost, loc.ToVector3Shifted(), spawnMap, 1.2f, .4f, 0f, .25f, 0, Rand.Range(2f, 3f), 0, 0);
             possessorHD.PossessionCompatibility = hd.Severity;
             //Log.Message("remove pos 4");
             //spirit.needs.TryGetNeed(TorannMagicDefOf.TM_SpiritND).CurLevel = p.needs.TryGetNeed(TorannMagicDefOf.TM_SpiritND).CurLevel;
@@ -1208,7 +1147,7 @@ namespace TorannMagic
             if (p.story != null && p.story.traits != null)
             {
                 Trait t = p.story.traits.GetTrait(TorannMagicDefOf.TM_Possessed);
-                p.story.traits.RemoveTrait(t);
+                if (t != null) p.story.traits.RemoveTrait(t);
             }
             if (possessorHD.previousFaction != null)
             {
@@ -1315,72 +1254,36 @@ namespace TorannMagic
             }
             if (polymorphPawn.Faction != null && polymorphPawn.Faction != Faction.OfPlayer)
             {
-                Lord lord = null;
-                if (polymorphPawn.Map.mapPawns.SpawnedPawnsInFaction(faction).Any(p => p != polymorphPawn))
-                {
-                    Predicate<Thing> validator = t => t != polymorphPawn && ((Pawn)t).GetLord() != null;
-                    Pawn p2 = (Pawn)GenClosest.ClosestThing_Global(polymorphPawn.Position, polymorphPawn.Map.mapPawns.SpawnedPawnsInFaction(faction), 99999f, validator);
-                    lord = p2.GetLord();
-                }
+                var lord = original.GetLord();
                 if (lord == null)
                 {
-                    LordJob_DefendPoint lordJob = new LordJob_DefendPoint(polymorphPawn.Position);
-                    lord = LordMaker.MakeNewLord(faction, lordJob, original.Map);
+                    var neighbour = (Pawn)GenClosest.ClosestThing_Global(position,
+                        polymorphPawn.Map.mapPawns.SpawnedPawnsInFaction(faction), 99999f,
+                        t => t != polymorphPawn && ((Pawn)t).GetLord() != null);
+                    lord = neighbour?.GetLord() ?? LordMaker.MakeNewLord(faction, new LordJob_DefendPoint(position), original.Map);
                 }
-                try
-                {
-                    lord.AddPawn(polymorphPawn);
-                }
-                catch (NullReferenceException)
-                {
-                    if (lord != null)
-                    {
-                        LordJob_AssaultColony lordJob = new LordJob_AssaultColony(faction, false, false);
-                        LordMaker.MakeNewLord(faction, lordJob, original.Map);
-                    }
-                }
+                lord.AddPawn(polymorphPawn);
             }
             return polymorphPawn;
         }
 
         public static void TransferSoulBond(Pawn bondedPawn, Pawn polymorphedPawn)
         {
-            Hediff bondHediff = null;
-            bondHediff = bondedPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_SDSoulBondPhysicalHD, false);
-            if (bondHediff != null)
+            foreach (var effect in bondedPawn.health.hediffSet.hediffs)
             {
-                HediffComp_SoulBondHost comp = bondHediff.TryGetComp<HediffComp_SoulBondHost>();
-                if (comp != null)
-                {
-                    comp.polyHost = polymorphedPawn;
-                }
-            }
-            bondHediff = null;
-
-            bondHediff = bondedPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_WDSoulBondMentalHD, false);
-            if (bondHediff != null)
-            {
-                HediffComp_SoulBondHost comp = bondHediff.TryGetComp<HediffComp_SoulBondHost>();
-                if (comp != null)
-                {
-                    comp.polyHost = polymorphedPawn;
-                }
+                var link = effect.TryGetComp<HediffComp_SoulBondHost>();
+                if (link?.BonderPawn != null && link.BonderPawn.GetCompAbilityUserMagic()?.soulBondPawn == bondedPawn)
+                    link.polyHost = polymorphedPawn;
             }
         }
 
         public static SpawnThings AssignRandomCreatureDef(SpawnThings spawnthing, int combatPowerMin, int combatPowerMax)
         {
-            IEnumerable<PawnKindDef> enumerable = from def in DefDatabase<PawnKindDef>.AllDefs
-                                                  where (def.combatPower >= combatPowerMin && def.combatPower <= combatPowerMax && def.race != null && def.race.race != null && def.race.race.thinkTreeMain.ToString() == "Animal")
-                                                  select def;
-
-            foreach (PawnKindDef current in enumerable)
-            {
-                //Log.Message("random creature includes " + current.defName + " race of " + current.race.defName);
-            }
-            PawnKindDef assignDef = enumerable.RandomElement();
-            spawnthing.kindDef = assignDef;
-            spawnthing.def = assignDef.race;
+            var kinds = DefDatabase<PawnKindDef>.AllDefs.Where(def => def.combatPower >= combatPowerMin &&
+                def.combatPower <= combatPowerMax && def.race?.race?.thinkTreeMain?.defName == "Animal");
+            if (!kinds.TryRandomElement(out var kind)) kind = PawnKindDef.Named("Rat");
+            spawnthing.kindDef = kind;
+            spawnthing.def = kind.race;
             return spawnthing;
         }
 
@@ -1406,12 +1309,15 @@ namespace TorannMagic
         }
 
         public static void DamageEntities(Thing victim, BodyPartRecord hitPart, float amt, float armorPenetration, DamageDef type, Thing instigator)
+            => DamageEntitiesResult(victim, hitPart, amt, armorPenetration, type, instigator);
+
+        internal static DamageWorker.DamageResult DamageEntitiesResult(Thing victim, BodyPartRecord hitPart, float amt, float armorPenetration, DamageDef type, Thing instigator)
         {
             DamageInfo dinfo;
             amt = Rand.Range(amt * .75f, amt * 1.25f);
             dinfo = new DamageInfo(type, amt, armorPenetration, (float)-1, instigator, hitPart, null, DamageInfo.SourceCategory.ThingOrUnknown);
             dinfo.SetAllowDamagePropagation(false);
-            victim.TakeDamage(dinfo);
+            return victim.TakeDamage(dinfo);
         }
 
         public static void DamageUndead(Pawn undead, float amt, Thing instigator)
@@ -1465,7 +1371,30 @@ namespace TorannMagic
         /// <param name="comp"></param>
         /// <param name="deathTrigger"></param>
         public static void DoRecall(Pawn pawn, CompAbilityUserMagic comp, bool deathTrigger)
+            => TryRecall(pawn, comp, deathTrigger);
+
+        internal static CompAbilityUserMagic RecallOwner(Pawn body, CompAbilityUserMagic local)
         {
+            bool Active(CompAbilityUserMagic candidate) => RecallMatches(body,candidate) && candidate.IsMagicUser &&
+                candidate.recallExpiration > Find.TickManager.TicksGame;
+            if (Active(local)) return local;
+            if (!ClassProgression.SpiritRebirthState.TryGetPossessingSpirit(body,out var soul)) return null;
+            var hosted = soul.GetCompAbilityUserMagic();
+            return Active(hosted) ? hosted : null;
+        }
+
+        internal static bool RecallMatches(Pawn body, CompAbilityUserMagic comp)
+        {
+            if (body == null || comp?.Pawn == null || !comp.recallSet) return false;
+            if (comp.recallBodyId == 0) return comp.Pawn == body; // Marks written before host casting existed.
+            return comp.recallBodyId == body.thingIDNumber && (comp.Pawn == body ||
+                ClassProgression.SpiritRebirthState.TryGetPossessingSpirit(body, out var soul) && soul == comp.Pawn);
+        }
+
+        internal static bool TryRecall(Pawn pawn, CompAbilityUserMagic comp, bool deathTrigger)
+        {
+            if (pawn?.Spawned != true || !RecallMatches(pawn,comp) || comp.recallExpiration <= Find.TickManager.TicksGame ||
+                !TryRecallCell(pawn, comp, out var destination)) return false;
             try
             {
                 if (ModCheck.Validate.GiddyUp.Core_IsInitialized())
@@ -1482,12 +1411,15 @@ namespace TorannMagic
             Effecter RecallFromEffect = TorannMagicDefOf.TM_RecallFromED.Spawn();
             RecallFromEffect.Trigger(new TargetInfo(pawn), new TargetInfo(pawn));
             RecallFromEffect.Cleanup();
-            RecallHediffs(pawn, comp);
-            RecallNeeds(pawn, comp);
-            RecallPosition(pawn, comp);
-            ResetPowers(pawn, comp);
+            if (!RecallPosition(pawn, comp.recallMap, destination)) return false;
+            // Health callbacks may re-enter the death/downing patch during restoration.
             comp.recallSet = false;
             comp.recallSpell = false;
+            comp.recallBodyId = 0;
+            comp.recallPosition = default;
+            RecallHediffs(pawn, comp);
+            RecallNeeds(pawn, comp);
+            ResetPowers(pawn, comp);
             comp.RemovePawnAbility(TorannMagicDefOf.TM_Recall);
             TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_AlterFate, pawn.DrawPos, pawn.Map, 1.6f, .2f, .1f, .8f, 500, 0, 0, Rand.Range(0, 360));
             Effecter RecallToEffect = TorannMagicDefOf.TM_RecallToED.Spawn();
@@ -1503,15 +1435,20 @@ namespace TorannMagic
             {
                 pawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Wander_Psychotic);
             }
+            return true;
         }
 
         private static void RecallHediffs(Pawn pawn, CompAbilityUserMagic comp)
         {
             if (comp.recallInjuriesList != null && comp.recallHediffList != null)
             {
+                // A partial legacy snapshot cannot replace the body's current health safely.
+                if (comp.recallHediffList.Count > (comp.recallHediffDefSeverityList?.Count ?? 0) ||
+                    comp.recallHediffList.Any(effect => effect?.def == null) ||
+                    comp.recallInjuriesList.Any(injury => injury?.def == null)) return;
                 for (int i = 0; i < pawn.health.hediffSet.hediffs.Count; i++)
                 {
-                    if (!pawn.health.hediffSet.hediffs[i].IsPermanent() && pawn.health.hediffSet.hediffs[i].def != TorannMagicDefOf.TM_MagicUserHD && !pawn.health.hediffSet.hediffs[i].def.defName.Contains("TM_HediffEnchantment") &&
+                    if (!Verb_TimeMark.PreservesHealthEffect(pawn.health.hediffSet.hediffs[i]) && !pawn.health.hediffSet.hediffs[i].IsPermanent() && pawn.health.hediffSet.hediffs[i].def != TorannMagicDefOf.TM_MagicUserHD && !pawn.health.hediffSet.hediffs[i].def.defName.Contains("TM_HediffEnchantment") &&
                         !pawn.health.hediffSet.hediffs[i].def.defName.Contains("TM_Artifact") && pawn.health.hediffSet.hediffs[i].def.defName != "PsychicAmplifier" && pawn.health.hediffSet.hediffs[i].def != TorannMagicDefOf.TM_MightUserHD &&
                         pawn.health.hediffSet.hediffs[i].def != TorannMagicDefOf.TM_BloodHD && pawn.health.hediffSet.hediffs[i].def != TorannMagicDefOf.TM_ChiHD && pawn.health.hediffSet.hediffs[i].def != TorannMagicDefOf.TM_PsionicHD &&
                         pawn.health.hediffSet.hediffs[i].def != TorannMagicDefOf.TM_SpiritPossessionHD)
@@ -1529,12 +1466,12 @@ namespace TorannMagic
                 {
                     //Log.Message("adding " + comp.recallHediffList[i].Label + " at severity " + comp.recallHediffList[i].Severity);
                     Hediff hdwc = comp.recallHediffList[i];
-                    pawn.health.AddHediff(hdwc.def, hdwc.Part, null, null);
-                    //Log.Message("adding hediff of " + hdwc.def.defName + " + with severity " + comp.recallHediffDefSeverityList[i]);
-                    Hediff hd = pawn.health.hediffSet.GetFirstHediffOfDef(hdwc.def);
+                    if (Verb_TimeMark.PreservesHealthEffect(hdwc)) continue;
+                    Hediff hd = pawn.health.AddHediff(hdwc.def, hdwc.Part);
+                    if (hd == null) continue;
                     hd.Severity = comp.recallHediffDefSeverityList[i];
                     //Log.Message("verifying hd severity is " + hd.Severity);
-                    if(comp.recallHediffDefTicksRemainingList[i] > 0)
+                    if(comp.recallHediffDefTicksRemainingList != null && i < comp.recallHediffDefTicksRemainingList.Count && comp.recallHediffDefTicksRemainingList[i] > 0)
                     {
                         HediffComp_Disappears hdc_d = hd.TryGetComp<HediffComp_Disappears>();
                         if(hdc_d != null)
@@ -1562,41 +1499,63 @@ namespace TorannMagic
 
         private static void RecallNeeds(Pawn pawn, CompAbilityUserMagic comp)
         {
-            for (int i = 0; i < pawn.needs.AllNeeds.Count; i++)
+            var names = comp.recallNeedDefnames;
+            var values = comp.recallNeedValues;
+            int count = Math.Min(names?.Count ?? 0, values?.Count ?? 0);
+            void Restore(Need need)
             {
-                bool hasNeed = false;
-                for (int j = 0; j < comp.recallNeedValues.Count; j++)
+                if (need == null || need.def.defName == "Chemical_Luciferium") return;
+                for (int i = 0; i < count; i++)
                 {
-                    if (comp.recallNeedDefnames[j] == pawn.needs.AllNeeds[i].def.defName)
-                    {
-                        //Log.Message("setting " + pawn.needs.AllNeeds[i].def.defName + " from " + pawn.needs.AllNeeds[i].CurLevel + " to " + comp.recallNeedValues[j]);
-                        pawn.needs.AllNeeds[i].CurLevel = comp.recallNeedValues[j];
-                        hasNeed = true;
-                    }
-                }
-                if (!hasNeed)
-                {
-                    //Log.Message("removing need " + pawn.needs.AllNeeds[i].def.defName);
-                    pawn.needs.AllNeeds.Remove(pawn.needs.AllNeeds[i]);
+                    if (names[i] != need.def.defName || float.IsNaN(values[i]) || float.IsInfinity(values[i])) continue;
+                    need.CurLevel = values[i];
+                    break;
                 }
             }
-            pawn.needs.AddOrRemoveNeedsAsAppropriate();
-            comp.recallNeedDefnames.Clear();
-            comp.recallNeedValues.Clear();
+            foreach (var need in pawn.needs.AllNeeds)
+                if (pawn == comp.Pawn || need is not Need_Mana) Restore(need);
+            if (pawn != comp.Pawn) Restore(comp.Mana);
+            names?.Clear();
+            values?.Clear();
         }
 
-        private static void RecallPosition(Pawn pawn, CompAbilityUserMagic comp)
+        private static bool TryRecallCell(Pawn pawn, CompAbilityUserMagic comp, out IntVec3 destination)
         {
-            bool draftFlag = pawn.Drafted;
-            bool selectFlag = Find.Selector.IsSelected(pawn);
-            pawn.DeSpawn();
-            GenPlace.TryPlaceThing(pawn, comp.recallPosition, comp.recallMap, ThingPlaceMode.Near);
-            pawn.drafter.Drafted = draftFlag;
-            if (selectFlag && ModOptions.Settings.Instance.cameraSnap)
+            destination = IntVec3.Invalid;
+            var map = comp.recallMap;
+            if (map == null || !Find.Maps.Contains(map) || !comp.recallPosition.InBounds(map)) return false;
+            foreach (var cell in GenRadial.RadialCellsAround(comp.recallPosition, 6.9f, true))
             {
-                CameraJumper.TryJumpAndSelect(pawn);
+                if (!cell.InBounds(map) || !cell.Standable(map)) continue;
+                var occupant = cell.GetFirstPawn(map);
+                if (occupant != null && occupant != pawn) continue;
+                destination = cell;
+                return true;
             }
-            comp.recallPosition = default(IntVec3);
+            return false;
+        }
+
+        private static bool RecallPosition(Pawn pawn, Map destinationMap, IntVec3 cell)
+        {
+            var sourceMap = pawn.Map;
+            var sourceCell = pawn.Position;
+            if (sourceMap == destinationMap)
+                return sourceCell == cell || Compatibility.TM_Teleport.Move(pawn, cell);
+
+            var rotation = pawn.Rotation;
+            bool drafted = pawn.Drafted;
+            try
+            {
+                pawn.DeSpawn();
+                GenSpawn.Spawn(pawn, cell, destinationMap, rotation);
+                return pawn.Spawned && pawn.Map == destinationMap && pawn.Position == cell;
+            }
+            finally
+            {
+                if (!pawn.Destroyed && !pawn.Spawned && pawn.holdingOwner == null)
+                    GenSpawn.Spawn(pawn, sourceCell, sourceMap, rotation);
+                if (pawn.Spawned && pawn.drafter != null) pawn.drafter.Drafted = drafted;
+            }
         }
 
         private static void ResetPowers(Pawn pawn, CompAbilityUserMagic comp)
@@ -1901,10 +1860,6 @@ namespace TorannMagic
                         if (p.IsColonist)
                         {
                             p.drafter.Drafted = true;
-                            if (ModOptions.Settings.Instance.cameraSnap)
-                            {
-                                CameraJumper.TryJumpAndSelect(p);
-                            }
                         }
                         surgeText = "Teleportation";
                         ModOptions.Constants.SetPawnInFlight(false);
@@ -2072,7 +2027,12 @@ namespace TorannMagic
 
         public static void DoTransmutate(Pawn caster, Thing transmutateThing, bool flagNoStuffItem, bool flagRawResource, bool flagStuffItem, bool flagNutrition, bool flagCorpse)
         {
-            CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
+            TransmutateFrom(caster, caster, transmutateThing, flagNoStuffItem, flagRawResource, flagStuffItem, flagNutrition, flagCorpse);
+        }
+
+        internal static bool TransmutateFrom(Pawn caster, Pawn owner, Thing transmutateThing, bool flagNoStuffItem, bool flagRawResource, bool flagStuffItem, bool flagNutrition, bool flagCorpse)
+        {
+            CompAbilityUserMagic comp = owner.GetCompAbilityUserMagic();
             int pwrVal = comp.MagicData.MagicPowerSkill_Transmutate.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Transmutate_pwr").level;
             int verVal = comp.MagicData.MagicPowerSkill_Transmutate.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Transmutate_ver").level;
 
@@ -2118,56 +2078,26 @@ namespace TorannMagic
                 //    }
                 //}
 
-                int transStackCount = 0;
-                if (transmutateThing.stackCount > 250)
-                {
-                    transStackCount = 250;
-                }
-                else
-                {
-                    transStackCount = transmutateThing.stackCount;
-                }
-                int transStackValue = Mathf.RoundToInt(transStackCount * transmutateThing.def.BaseMarketValue);
-                float newMatCount = 0;
-                IEnumerable<ThingDef> enumerable = from def in DefDatabase<ThingDef>.AllDefs.InRandomOrder()
-                                                   where (def.BaseMarketValue >= 1f && def.BaseMarketValue <= 200 && def != transmutateThing.def && ((def.stuffProps != null && def.stuffProps.categories != null && def.stuffProps.categories.Count > 0) || def.defName == "RawMagicyte") || def.IsWithinCategory(ThingCategoryDefOf.ResourcesRaw) || def.IsWithinCategory(ThingCategoryDefOf.Leathers))
-                                                   select def;
-                ThingDef newThingDef = null;
-                foreach (ThingDef current in enumerable)
-                {
-                    if (current != null && current.defName != null)
-                    {
-                        float newThingValue = current.BaseMarketValue < 1f ? 1f : current.BaseMarketValue;
-                        newMatCount = transStackValue / newThingValue;
-                        newThingDef = current;
-                        break;
-                        //Log.Message("transumtation resource " + current.defName + " base value " + current.BaseMarketValue + " value count converts to " + newMatCount);
-                    }
-                }
-                if (!transmutateThing.DestroyedOrNull() && transStackCount <= 0)
-                {
-                    transmutateThing.Destroy(DestroyMode.Vanish);
-                }
-                else
-                {
-                    transmutateThing.SplitOff(transStackCount).Destroy(DestroyMode.Vanish);
-                }
-                Thing thing = null;
-                if (newThingDef != null)
-                {
-                    thing = ThingMaker.MakeThing(newThingDef);
-                    thing.stackCount = Mathf.RoundToInt((.7f + (.05f * pwrVal)) * newMatCount);
-                    if (newMatCount < 1)
-                    {
-                        newMatCount = 1;
-                    }
-                }
-
-                if (thing != null)
-                {
-                    GenPlace.TryPlaceThing(thing, transmutateThing.Position, caster.Map, ThingPlaceMode.Near, null);
-                    TM_Action.TransmutateEffects(transmutateThing.Position, caster);
-                }
+                var trial = ClassProgression.EnchanterTrials.CaptureRawConversion(owner, transmutateThing);
+                var position = transmutateThing.Position;
+                int count = Math.Min(250, transmutateThing.stackCount);
+                if (count <= 0) return false;
+                int value = Mathf.RoundToInt(count * transmutateThing.def.BaseMarketValue);
+                float budget = (.7f + .05f * pwrVal) * value;
+                var output = DefDatabase<ThingDef>.AllDefs.InRandomOrder().FirstOrDefault(def =>
+                    def != transmutateThing.def && def.BaseMarketValue >= 1f && def.BaseMarketValue <= 200f && Mathf.RoundToInt(budget / def.BaseMarketValue) > 0 &&
+                    (def.stuffProps?.categories?.Count > 0 || def.defName == "RawMagicyte" ||
+                     def.IsWithinCategory(ThingCategoryDefOf.ResourcesRaw) || def.IsWithinCategory(ThingCategoryDefOf.Leathers)));
+                if (output == null) return false;
+                var product = ThingMaker.MakeThing(output);
+                int produced = Mathf.RoundToInt(budget / output.BaseMarketValue);
+                product.stackCount = produced;
+                if (!GenPlace.TryPlaceThing(product, position, caster.Map, ThingPlaceMode.Near, null)) return false;
+                var payment = transmutateThing.SplitOff(count);
+                payment.Destroy(DestroyMode.Vanish);
+                ClassProgression.EnchanterTrials.RawResourceConsumed(trial, count, payment.Destroyed);
+                ClassProgression.EnchanterTrials.CompleteRawConversion(trial, output, produced, true);
+                TM_Action.TransmutateEffects(position, caster);
             }
             else if (flagStuffItem)
             {
@@ -2346,7 +2276,9 @@ namespace TorannMagic
                     caster.LabelShort,
                     transmutateThing.LabelShort
                 ), MessageTypeDefOf.RejectInput);
+                return false;
             }
+            return true;
         }
 
         public static void CreateMagicDeathEffect(Pawn pawn, IntVec3 pos, bool canCauseDeath = true, bool friendlyFire = false)
@@ -2863,11 +2795,10 @@ namespace TorannMagic
 
         public static void RemoveSymbiosisCommand(Pawn symbiote)
         {
-            Hediff symbioteHD = symbiote.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_OutOfBodyHD);
-            Pawn host = symbioteHD.TryGetComp<HediffComp_SymbiosisCaster>().symbiosisHost;
-
-            Hediff hostHD = host.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_SymbiosisHD);
-            if (hostHD != null)
+            Hediff symbioteHD = symbiote?.health?.hediffSet?.GetFirstHediffOfDef(TorannMagicDefOf.TM_OutOfBodyHD);
+            Pawn host = symbioteHD?.TryGetComp<HediffComp_SymbiosisCaster>()?.symbiosisHost;
+            Hediff hostHD = host?.health?.hediffSet?.GetFirstHediffOfDef(TorannMagicDefOf.TM_SymbiosisHD);
+            if (hostHD?.TryGetComp<HediffComp_SymbiosisHost>()?.symbiote == symbiote && hostHD != null)
             {
                 host.health.RemoveHediff(hostHD);
             }
@@ -3026,7 +2957,7 @@ namespace TorannMagic
 
                         if (magicPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect)) //__result.State == GizmoState.Mouseover)
                         {
-                            magicPower.AutoCast = !magicPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(comp, magicPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                         }
                     }
@@ -3034,9 +2965,9 @@ namespace TorannMagic
                     {
                         magicPower = comp.MagicData.MagicPowersA.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == tmAbilityDef);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (magicPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            magicPower.AutoCast = !magicPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(comp, magicPower);
                             return new GizmoResult(GizmoState.Mouseover, null);                            
                         }
                     }
@@ -3044,9 +2975,9 @@ namespace TorannMagic
                     {
                         magicPower = comp.MagicData.MagicPowersIF.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == tmAbilityDef);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (magicPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            magicPower.AutoCast = !magicPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(comp, magicPower);
                             return new GizmoResult(GizmoState.Mouseover, null);                            
                         }
                     }
@@ -3054,9 +2985,9 @@ namespace TorannMagic
                     {
                         magicPower = comp.MagicData.MagicPowersHoF.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == tmAbilityDef);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (magicPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            magicPower.AutoCast = !magicPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(comp, magicPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3065,9 +2996,9 @@ namespace TorannMagic
                     {
                         magicPower = comp.MagicData.MagicPowersSB.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == tmAbilityDef);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (magicPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            magicPower.AutoCast = !magicPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(comp, magicPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3076,9 +3007,9 @@ namespace TorannMagic
                     {
                         magicPower = comp.MagicData.MagicPowersHoF.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == tmAbilityDef);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (magicPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            magicPower.AutoCast = !magicPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(comp, magicPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3087,9 +3018,9 @@ namespace TorannMagic
                     {
                         magicPower = comp.MagicData.MagicPowersA.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == tmAbilityDef);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (magicPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            magicPower.AutoCast = !magicPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(comp, magicPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3130,9 +3061,9 @@ namespace TorannMagic
                     {
                         magicPower = comp.MagicData.MagicPowersD.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Poison);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (magicPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            magicPower.AutoCast = !magicPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(comp, magicPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3141,9 +3072,9 @@ namespace TorannMagic
                     {
                         magicPower = comp.MagicData.MagicPowersD.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Regenerate);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (magicPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            magicPower.AutoCast = !magicPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(comp, magicPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3152,9 +3083,9 @@ namespace TorannMagic
                     {
                         magicPower = comp.MagicData.MagicPowersD.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_CureDisease);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (magicPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            magicPower.AutoCast = !magicPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(comp, magicPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3163,9 +3094,9 @@ namespace TorannMagic
                     {
                         magicPower = comp.MagicData.MagicPowersP.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Heal);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (magicPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            magicPower.AutoCast = !magicPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(comp, magicPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3174,9 +3105,9 @@ namespace TorannMagic
                     {
                         magicPower = comp.MagicData.MagicPowersP.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == tmAbilityDef);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (magicPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            magicPower.AutoCast = !magicPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(comp, magicPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3185,9 +3116,9 @@ namespace TorannMagic
                     {
                         magicPower = comp.MagicData.MagicPowersPR.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_AdvancedHeal);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (magicPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            magicPower.AutoCast = !magicPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(comp, magicPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3196,9 +3127,9 @@ namespace TorannMagic
                     {
                         magicPower = comp.MagicData.MagicPowersStandalone.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_TransferMana);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (magicPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            magicPower.AutoCast = !magicPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(comp, magicPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3207,9 +3138,9 @@ namespace TorannMagic
                     {
                         magicPower = comp.MagicData.MagicPowersStandalone.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_SiphonMana);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (magicPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            magicPower.AutoCast = !magicPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(comp, magicPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3218,9 +3149,9 @@ namespace TorannMagic
                     {
                         magicPower = comp.MagicData.MagicPowersStandalone.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_CauterizeWound);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (magicPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            magicPower.AutoCast = !magicPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(comp, magicPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3229,9 +3160,9 @@ namespace TorannMagic
                     {
                         magicPower = comp.MagicData.MagicPowersStandalone.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_SpellMending);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (magicPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            magicPower.AutoCast = !magicPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(comp, magicPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3240,9 +3171,9 @@ namespace TorannMagic
                     {
                         magicPower = comp.MagicData.MagicPowersStandalone.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_TeachMagic);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (magicPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            magicPower.AutoCast = !magicPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(comp, magicPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3258,9 +3189,9 @@ namespace TorannMagic
                             magicPower = comp.MagicData.MagicPowersSD.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == tmAbilityDef);
                         }
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (magicPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            magicPower.AutoCast = !magicPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(comp, magicPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3269,9 +3200,9 @@ namespace TorannMagic
                     {
                         magicPower = comp.MagicData.MagicPowersPR.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Purify);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (magicPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            magicPower.AutoCast = !magicPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(comp, magicPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3280,9 +3211,9 @@ namespace TorannMagic
                     {
                         magicPower = comp.MagicData.MagicPowersS.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_SummonMinion);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (magicPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            magicPower.AutoCast = !magicPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(comp, magicPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3291,9 +3222,9 @@ namespace TorannMagic
                     {
                         magicPower = comp.MagicData.MagicPowersStandalone.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_MechaniteReprogramming);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (magicPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            magicPower.AutoCast = !magicPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(comp, magicPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3302,9 +3233,9 @@ namespace TorannMagic
                     {
                         magicPower = comp.MagicData.MagicPowersStandalone.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_DirtDevil);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (magicPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            magicPower.AutoCast = !magicPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(comp, magicPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3313,9 +3244,9 @@ namespace TorannMagic
                     {
                         magicPower = comp.MagicData.MagicPowersStandalone.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_ArcaneBolt);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (magicPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            magicPower.AutoCast = !magicPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(comp, magicPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3324,9 +3255,9 @@ namespace TorannMagic
                     {
                         magicPower = comp.MagicData.MagicPowersStandalone.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_TimeMark);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (magicPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            magicPower.AutoCast = !magicPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(comp, magicPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3335,9 +3266,9 @@ namespace TorannMagic
                     {
                         magicPower = comp.MagicData.MagicPowersE.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Transmutate);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (magicPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            magicPower.AutoCast = !magicPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(comp, magicPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3346,9 +3277,9 @@ namespace TorannMagic
                     {
                         magicPower = comp.MagicData.MagicPowersD.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_RegrowLimb);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (magicPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            magicPower.AutoCast = !magicPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(comp, magicPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3361,9 +3292,9 @@ namespace TorannMagic
                     if (genericPower != null)
                     {
                         magicPower = genericPower;
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (magicPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            magicPower.AutoCast = !magicPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(comp, magicPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                         }
                     }
@@ -3375,9 +3306,9 @@ namespace TorannMagic
                     if (genericPower != null)
                     {
                         mightPower = genericPower;
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (mightPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            mightPower.AutoCast = !mightPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(mightComp, mightPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                         }
                     }
@@ -3385,9 +3316,9 @@ namespace TorannMagic
                     {
                         mightPower = mightComp.MightData.MightPowersG.FirstOrDefault<MightPower>((MightPower x) => x.abilityDef == tmAbilityDef);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (mightPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            mightPower.AutoCast = !mightPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(mightComp, mightPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3396,9 +3327,9 @@ namespace TorannMagic
                     {
                         mightPower = mightComp.MightData.MightPowersB.FirstOrDefault<MightPower>((MightPower x) => x.abilityDef == TorannMagicDefOf.TM_BladeSpin);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (mightPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            mightPower.AutoCast = !mightPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(mightComp, mightPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3407,9 +3338,9 @@ namespace TorannMagic
                     {
                         mightPower = mightComp.MightData.MightPowersB.FirstOrDefault<MightPower>((MightPower x) => x.abilityDef == tmAbilityDef);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (mightPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            mightPower.AutoCast = !mightPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(mightComp, mightPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3418,9 +3349,9 @@ namespace TorannMagic
                     {
                         mightPower = mightComp.MightData.MightPowersR.FirstOrDefault<MightPower>((MightPower x) => x.abilityDef == tmAbilityDef);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (mightPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            mightPower.AutoCast = !mightPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(mightComp, mightPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3429,9 +3360,9 @@ namespace TorannMagic
                     {
                         mightPower = mightComp.MightData.MightPowersS.FirstOrDefault<MightPower>((MightPower x) => x.abilityDef == tmAbilityDef);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (mightPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            mightPower.AutoCast = !mightPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(mightComp, mightPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3440,9 +3371,9 @@ namespace TorannMagic
                     {
                         mightPower = mightComp.MightData.MightPowersDK.FirstOrDefault<MightPower>((MightPower x) => x.abilityDef == tmAbilityDef);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (mightPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            mightPower.AutoCast = !mightPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(mightComp, mightPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3451,9 +3382,9 @@ namespace TorannMagic
                     {
                         mightPower = mightComp.MightData.MightPowersS.FirstOrDefault<MightPower>((MightPower x) => x.abilityDef == TorannMagicDefOf.TM_Headshot);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (mightPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            mightPower.AutoCast = !mightPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(mightComp, mightPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3462,9 +3393,9 @@ namespace TorannMagic
                     {
                         mightPower = mightComp.MightData.MightPowersS.FirstOrDefault<MightPower>((MightPower x) => x.abilityDef == TorannMagicDefOf.TM_AntiArmor);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (mightPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            mightPower.AutoCast = !mightPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(mightComp, mightPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3473,9 +3404,9 @@ namespace TorannMagic
                     {
                         mightPower = mightComp.MightData.MightPowersStandalone.FirstOrDefault<MightPower>((MightPower x) => x.abilityDef == TorannMagicDefOf.TM_ThrowingKnife);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (mightPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            mightPower.AutoCast = !mightPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(mightComp, mightPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3484,9 +3415,9 @@ namespace TorannMagic
                     {
                         mightPower = mightComp.MightData.MightPowersStandalone.FirstOrDefault<MightPower>((MightPower x) => x.abilityDef == TorannMagicDefOf.TM_PommelStrike);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (mightPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            mightPower.AutoCast = !mightPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(mightComp, mightPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3495,9 +3426,9 @@ namespace TorannMagic
                     {
                         mightPower = mightComp.MightData.MightPowersStandalone.FirstOrDefault<MightPower>((MightPower x) => x.abilityDef == TorannMagicDefOf.TM_TempestStrike);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (mightPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            mightPower.AutoCast = !mightPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(mightComp, mightPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3506,9 +3437,9 @@ namespace TorannMagic
                     {
                         mightPower = mightComp.MightData.MightPowersM.FirstOrDefault<MightPower>((MightPower x) => x.abilityDef == TorannMagicDefOf.TM_TigerStrike);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (mightPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            mightPower.AutoCast = !mightPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(mightComp, mightPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3517,9 +3448,9 @@ namespace TorannMagic
                     {
                         mightPower = mightComp.MightData.MightPowersM.FirstOrDefault<MightPower>((MightPower x) => x.abilityDef == TorannMagicDefOf.TM_ThunderStrike);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (mightPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            mightPower.AutoCast = !mightPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(mightComp, mightPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3540,9 +3471,9 @@ namespace TorannMagic
                     {
                         mightPower = mightComp.MightData.MightPowersSS.FirstOrDefault<MightPower>((MightPower x) => x.abilityDef == TorannMagicDefOf.TM_PistolWhip);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (mightPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            mightPower.AutoCast = !mightPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(mightComp, mightPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3551,9 +3482,9 @@ namespace TorannMagic
                     {
                         mightPower = mightComp.MightData.MightPowersSS.FirstOrDefault<MightPower>((MightPower x) => x.abilityDef == TorannMagicDefOf.TM_SuppressingFire);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (mightPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            mightPower.AutoCast = !mightPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(mightComp, mightPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3562,9 +3493,9 @@ namespace TorannMagic
                     {
                         mightPower = mightComp.MightData.MightPowersSS.FirstOrDefault<MightPower>((MightPower x) => x.abilityDef == TorannMagicDefOf.TM_Buckshot);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (mightPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            mightPower.AutoCast = !mightPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(mightComp, mightPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3573,9 +3504,9 @@ namespace TorannMagic
                     {
                         mightPower = mightComp.MightData.MightPowersSS.FirstOrDefault<MightPower>((MightPower x) => x.abilityDef == TorannMagicDefOf.TM_FirstAid);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (mightPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            mightPower.AutoCast = !mightPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(mightComp, mightPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3584,9 +3515,9 @@ namespace TorannMagic
                     {
                         mightPower = mightComp.MightData.MightPowersM.FirstOrDefault<MightPower>((MightPower x) => x.abilityDef == TorannMagicDefOf.TM_Meditate);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (mightPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            mightPower.AutoCast = !mightPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(mightComp, mightPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3598,9 +3529,9 @@ namespace TorannMagic
                     if (com.pawnAbility.Def == TorannMagicDefOf.TM_Elixir)
                     {
                         mightPower = mightComp.MightData.MightPowersApothecary.FirstOrDefault<MightPower>((MightPower x) => x.abilityDef == TorannMagicDefOf.TM_Elixir);
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (mightPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            mightPower.AutoCast = !mightPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(mightComp, mightPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
 
                         }
@@ -3609,9 +3540,9 @@ namespace TorannMagic
                     {
                         mightPower = mightComp.MightData.MightPowersStandalone.FirstOrDefault<MightPower>((MightPower x) => x.abilityDef == TorannMagicDefOf.TM_TeachMight);
 
-                        if (Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
+                        if (mightPower != null && Input.GetMouseButtonDown(1) && Mouse.IsOver(rect))
                         {
-                            mightPower.AutoCast = !mightPower.AutoCast;
+                            AutoCast.AutocastPolicy.ToggleAutocast(mightComp, mightPower);
                             return new GizmoResult(GizmoState.Mouseover, null);
                             
                         }
@@ -3702,46 +3633,15 @@ namespace TorannMagic
 
         public static void UpdateBrand(Pawn hitPawn, Pawn caster, CompAbilityUserMagic casterComp, HediffDef brandDef)
         {
-            if (hitPawn.health.hediffSet.HasHediff(brandDef))
-            {
-                ClearExistingBrander(hitPawn, brandDef);
-            }
-            else
-            {
-                HealthUtility.AdjustSeverity(hitPawn, brandDef, .05f);
-            }
-
-            if (casterComp.BrandPawns != null && casterComp.BrandDefs != null)
-            {
-                casterComp.BrandPawns.Add(hitPawn);
-                casterComp.BrandDefs.Add(brandDef);
-            }
-        }
-
-        private static void ClearExistingBrander(Pawn hitPawn, HediffDef brandDef)
-        {
-            Hediff hd_br = hitPawn.health.hediffSet.GetFirstHediffOfDef(brandDef);
-            if (hd_br != null)
-            {
-                HediffComp_BrandingBase hdc = hd_br.TryGetComp<HediffComp_BrandingBase>();
-                if (hdc != null && hdc.BranderPawn != null)
-                {
-                    CompAbilityUserMagic branderComp = hdc.BranderPawn.GetCompAbilityUserMagic();
-                    if (branderComp != null)
-                    {
-                        TMDefs.TM_Branding tmpBranding = null;
-                        for(int i = 0; i < branderComp.BrandPawns.Count; i++)
-                        {
-                            if(branderComp.BrandPawns[i] == hitPawn && branderComp.BrandDefs[i] == brandDef)
-                            {
-                                branderComp.BrandPawns.Remove(branderComp.BrandPawns[i]);
-                                branderComp.BrandDefs.Remove(branderComp.BrandDefs[i]);
-                                break;
-                            }
-                        }
-                    }
-                }
-            }
+            if (casterComp == null || casterComp.Pawn != caster || hitPawn?.health?.hediffSet == null || brandDef == null) return;
+            var effect = hitPawn.health.hediffSet.GetFirstHediffOfDef(brandDef);
+            var previous = effect?.TryGetComp<HediffComp_BrandingBase>()?.BranderPawn;
+            if (previous != null && previous != caster)
+                ClassProgression.GolemancerLifecycle.RemoveBrandPair(previous.GetCompAbilityUserMagic(), hitPawn, brandDef);
+            if (effect == null) HealthUtility.AdjustSeverity(hitPawn, brandDef, .05f);
+            ClassProgression.GolemancerLifecycle.RemoveBrandPair(casterComp, hitPawn, brandDef);
+            casterComp.BrandPawns.Add(hitPawn);
+            casterComp.BrandDefs.Add(brandDef);
         }
     }
 }

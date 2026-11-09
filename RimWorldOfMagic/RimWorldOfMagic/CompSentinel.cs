@@ -31,6 +31,8 @@ namespace TorannMagic
             Scribe_Values.Look<int>(ref this.age, "age", -1, false);
             Scribe_Values.Look<Rot4>(ref this.rotation, "rotation", Rot4.South, false);
             Scribe_Values.Look<IntVec3>(ref this.sentinelLoc, "sentinelLoc", default(IntVec3), false);
+            Scribe_Values.Look(ref shouldDespawn, "TM_returning");
+            Scribe_TargetInfo.Look(ref target, "TM_sentinelTarget");
             Scribe_References.Look<Pawn>(ref this.sustainerPawn, "sustainerPawn", false);
         }
 
@@ -123,8 +125,11 @@ namespace TorannMagic
 
                     if(this.ShouldDespawn && this.Pawn.Position == this.sentinelLoc)
                     {
-                        SingleSpawnLoop();
-                        this.Pawn.Destroy(DestroyMode.Vanish);
+                        if (sentinelLoc.InBounds(Pawn.Map) && sentinelLoc.GetFirstBuilding(Pawn.Map) == null && sustainerPawn?.GetCompAbilityUserMagic() != null)
+                        {
+                            SingleSpawnLoop();
+                            this.Pawn.Destroy(DestroyMode.Vanish);
+                        }
                     }
                     
                 }                
@@ -270,13 +275,15 @@ namespace TorannMagic
                     stuff = ThingDef.Named("BlocksGranite");
                 }
                 spawnedThing = ThingMaker.MakeThing(def, stuff);
+                var comp = sustainerPawn.GetCompAbilityUserMagic();
+                ((Building_TMSentinel)spawnedThing).Bind(sustainerPawn,
+                    ClassProgression.SpiritRebirthRuntime.SavedRank(comp.MagicData,"TM_Sentinel_pwr"));
                 GenSpawn.Spawn(spawnedThing, this.sentinelLoc, this.Pawn.Map, this.rotation, WipeMode.Vanish, false);
 
                 float healthDeficit = this.Pawn.health.hediffSet.hediffs
                     .OfType<Hediff_Injury>()
                     .Sum(injury => injury.Severity);
 
-                CompAbilityUserMagic comp = this.sustainerPawn.GetCompAbilityUserMagic();
                 comp.summonedSentinels.Remove(this.Pawn);
                 comp.summonedSentinels.Add(spawnedThing);
                 DamageInfo dinfo = new DamageInfo(DamageDefOf.Blunt, 10*healthDeficit, 0, (float)-1, this.Pawn, null, null, DamageInfo.SourceCategory.ThingOrUnknown);

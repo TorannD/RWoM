@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_BloodForBlood.label>sangre por sangre</TM_BloodForBlood.label>
+  
+  <TM_BloodForBlood.description>Maldice la sangre de un objetivo, haciendo que se caliente y circule cada vez más rápido hasta brotar por todos los poros de su cuerpo. Esta maldición tiene varios efectos.\n\nLa sangre que expulsa el objetivo se convierte en una bruma que el lanzador absorbe como energía restauradora. Esta energía sirve para curar heridas y reponer las reservas de sangre del lanzador. Además, la habilidad cura gradualmente sus cicatrices y otras lesiones permanentes.\n\nLas heridas y lesiones del objetivo también se curan a medida que la sangre abandona su cuerpo. La víctima pierde parte de su sangre con cada pulso y, como sucede con cualquier hemorragia, puede quedar incapacitada o morir si pierde demasiada.\n\nLa velocidad de transferencia de sangre y de curación aumenta tanto para el lanzador como para la víctima en función de la cantidad de sangre que esta última pierda. Los efectos son los mismos sobre peones aliados y enemigos, pero utilizar la habilidad para abatir o matar a un peón aliado o neutral provocará indignación.</TM_BloodForBlood.description>
+  
+  
+  <TM_BloodGift.label>sacrificio de sangre</TM_BloodGift.label>
+  
+  <TM_BloodGift.description>Combina sangre y maná para crear una forma híbrida de poder utilizada en la práctica de la magia de sangre. El sacrificio de sangre provoca varios cortes profundos para obtener sangre de inmediato y la combina con maná para generar instantáneamente una cantidad de poder de magia de sangre.\n\nLos magos de sangre pueden generar gradualmente poder de magia de sangre a partir de heridas abiertas que sangran, sin gastar maná. También pueden entrenarse para utilizar la sangre fresca expuesta que haya cerca como fuente de energía para su magia.\n\nUn mago de sangre perderá gradualmente su poder de magia de sangre cuando deje de sangrar.</TM_BloodGift.description>
+  
+  
+  <TM_BloodMoon.label>luna de sangre</TM_BloodMoon.label>
+  
+  <TM_BloodMoon.description>Envuelve una zona en magia de sangre e invoca demonios de la ira y el terror que acechan a los enemigos que se encuentren en ella.</TM_BloodMoon.description>
+  
+  
+  <TM_BloodMoon_I.label>luna de sangre I</TM_BloodMoon_I.label>
+  
+  <TM_BloodMoon_I.description>Envuelve una zona en magia de sangre e invoca demonios de la ira y el terror que acechan a los enemigos que se encuentren en ella.</TM_BloodMoon_I.description>
+  
+  
+  <TM_BloodMoon_II.label>luna de sangre II</TM_BloodMoon_II.label>
+  
+  <TM_BloodMoon_II.description>Envuelve una zona en magia de sangre e invoca demonios de la ira y el terror que acechan a los enemigos que se encuentren en ella.</TM_BloodMoon_II.description>
+  
+  
+  <TM_BloodMoon_III.label>luna de sangre III</TM_BloodMoon_III.label>
+  
+  <TM_BloodMoon_III.description>Envuelve una zona en magia de sangre e invoca demonios de la ira y el terror que acechan a los enemigos que se encuentren en ella.</TM_BloodMoon_III.description>
+  
+  
+  <TM_BloodShield.label>escudo de sangre</TM_BloodShield.label>
+  
+  <TM_BloodShield.description>Rodea a un objetivo con una barrera formada por la energía sanguínea del lanzador. La energía del escudo regenera gradualmente al peón protegido. Cada vez que el escudo recibe daño, parte de esa energía se dispersa, pero también provoca una ráfaga de curación en el peón protegido.\n\nDebido al vínculo de sangre, una parte del daño absorbido por el escudo se transfiere al lanzador, incluida la curación gradual. Mientras el mago de sangre que mantiene el escudo disponga de poder de magia de sangre, el daño transferido consumirá dicho poder. Si se queda sin él, el daño transferido le causará daño físico.\n\nLos magos de sangre no pueden crear un escudo de sangre sobre sí mismos.</TM_BloodShield.description>
+  
+  
+  <TM_IgniteBlood.label>prender sangre</TM_IgniteBlood.label>
+  
+  <TM_IgniteBlood.description>Inflama toda la sangre expuesta en un intenso fogonazo. El fuego seguirá propagándose a la sangre cercana.</TM_IgniteBlood.description>
+  
+  
+  <TM_Rend.label>desgarrar</TM_Rend.label>
+  
+  <TM_Rend.description>Hace que la sangre de la víctima rechace violentamente su propio cuerpo y brote a través de múltiples heridas, provocando una hemorragia masiva.\n\nAlcance: 35\nRadio: 3\nObjetivos máx.: 3\nEnfriamiento: 40\nTiempo de lanzamiento: 1,5 s</TM_Rend.description>
+  
+  
+  <TM_Rend_I.label>desgarrar I</TM_Rend_I.label>
+  
+  <TM_Rend_I.description>Hace que la sangre de la víctima rechace violentamente su propio cuerpo y brote a través de múltiples heridas, provocando una hemorragia masiva.\n\nAlcance: 38\nRadio: 4\nObjetivos máx.: 4\nEnfriamiento: 30\nTiempo de lanzamiento: 1,3 s</TM_Rend_I.description>
+  
+  
+  <TM_Rend_II.label>desgarrar (II)</TM_Rend_II.label>
+  
+  <TM_Rend_II.description>Hace que la sangre de la víctima rechace violentamente su propio cuerpo y brote a través de múltiples heridas, provocando una hemorragia masiva.\n\nAlcance: 41\nRadio: 4\nObjetivos máx.: 5\nEnfriamiento: 20\nTiempo de lanzamiento: 1,1 s</TM_Rend_II.description>
+  
+  
+  <TM_Rend_III.label>desgarrar III</TM_Rend_III.label>
+  
+  <TM_Rend_III.description>Hace que la sangre de la víctima rechace violentamente su propio cuerpo y brote a través de múltiples heridas, provocando una hemorragia masiva.\n\nAlcance: 44\nRadio: 5\nObjetivos máx.: 5\nEnfriamiento: 10\nTiempo de lanzamiento: 1 s</TM_Rend_III.description>
+  
+</LanguageData>

@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_MineableMagicyte.label>магіцитова руда</TM_MineableMagicyte.label>
+  <TM_MineableMagicyte.description>Порода з кристалами магіциту. Повний видобуток кожного блока дає 15–100 необробленого магіциту та з імовірністю 1% — додатковий камінь зачарування. При руйнуванні породи її вміст втрачається.</TM_MineableMagicyte.description>
+</LanguageData>

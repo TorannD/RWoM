@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <TorannMagic.ClassProgression.ClassDisciplineDef><defName>TM_DisciplineApothecary</defName><label>Apothecary</label><profileId>rwom.apothecary</profileId><domain>Might</domain></TorannMagic.ClassProgression.ClassDisciplineDef>
+</Defs>

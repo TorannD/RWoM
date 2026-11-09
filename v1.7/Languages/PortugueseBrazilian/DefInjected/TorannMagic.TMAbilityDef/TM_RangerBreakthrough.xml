@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_RangerBreakthrough.label>Caçada de ruptura</TM_RangerBreakthrough.label>
+  <TM_RangerBreakthrough.description>Com um animal vinculado a até 12 células, marca o inimigo escolhido e até dois inimigos próximos no alcance do arco (máximo de 30 células). Após 5 segundos de preparação, dispara 6 flechas em 20 segundos, cada uma com 70% do dano do arco. Durante a sequência, o animal absorve até 25 de dano de cada um de dois golpes de arma inimigos e a velocidade do patrulheiro cai em 20%. Custo básico: 60% de vigor. Recarga: dois dias. Interromper a preparação consome 6% de vigor.</TM_RangerBreakthrough.description>
+</LanguageData>

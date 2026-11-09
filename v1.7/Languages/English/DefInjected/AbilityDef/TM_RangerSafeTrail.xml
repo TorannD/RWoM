@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_Bridge_RangerSafeTrail.label>Safe Trail</TM_Bridge_RangerSafeTrail.label>
+  <TM_Bridge_RangerSafeTrail.description>Mark a visible, walkable route up to eight cells long for eight seconds. The first two allies to enter gain 15% movement speed while on the route. A closed door or obstruction breaks the trail. Base cost: 20% stamina. Cooldown: 40 seconds.</TM_Bridge_RangerSafeTrail.description>
+</LanguageData>

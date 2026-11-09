@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_GladiatorManeuverHD.label>正在机动</TM_GladiatorManeuverHD.label>
+  <TM_LastCircleStance.label>坚守最后防线</TM_LastCircleStance.label>
+  <TM_GladiatorManeuverHD.description>角斗士的移动速度暂时提高。</TM_GladiatorManeuverHD.description>
+  <TM_LastCircleStance.description>角斗士坚守最后的战圈时，移动速度会降低。</TM_LastCircleStance.description>
+</LanguageData>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_CombatShieldStatusStandby>Резерв: інший генератор бойового щита активний</TM_CombatShieldStatusStandby>
+  <TM_CombatShieldStatus>Щит мережі: {0} / {1}</TM_CombatShieldStatus>
+  <TM_CombatShieldSourceHP>Це джерело: {0} / {1} міцності щита</TM_CombatShieldSourceHP>
+  <TM_CombatShieldReboot>Перезапуск щита: {0} с</TM_CombatShieldReboot>
+  <TM_CombatShieldNetworkHP>Міцність щита мережі: {0} / {1}</TM_CombatShieldNetworkHP>
+  <TM_CombatShieldPeace>Мирний режим: 10% утримання (ремонт без знижки)</TM_CombatShieldPeace>
+  <TM_CombatShieldCombat>Бойовий режим: повне утримання</TM_CombatShieldCombat>
+</LanguageData>

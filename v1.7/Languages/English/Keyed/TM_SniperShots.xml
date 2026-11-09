@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_SniperObserve>Observe: threats {0}/10, sectors {1}/10</TM_SniperObserve>
+  <TM_SniperChooseShot>Choose a combat shot</TM_SniperChooseShot>
+  <TM_SniperPickHeadshot>Headshot — classic vital-part shot (permanent)</TM_SniperPickHeadshot>
+  <TM_SniperPickAimed>Aimed shot — one ordinary bullet, 110/125/140% weapon damage (permanent)</TM_SniperPickAimed>
+  <TM_SniperReconHint>Observe from one position for 3 seconds. Identify 10 different hostile pawns or survey 10 visible sectors. Choose a target 12–35 cells away.</TM_SniperReconHint>
+  <TM_SniperTrainRank>Spend 1 might point to train the next rank.</TM_SniperTrainRank>
+</LanguageData>

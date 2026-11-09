@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-   <!-- Golemancy -->
+   
 	
   <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_Golemancy</defName>
@@ -43,10 +42,17 @@ Golems may be crafted from their respective workbenches after the appropriate re
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
- </TorannMagic.TMAbilityDef>
+ <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_golemancy</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
  
  
-<!-- Rune Carving -->
+
 	
   <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_RuneCarving</defName>
@@ -87,9 +93,16 @@ To apply runes, select the pawn you wish to inscribe and create the rune carving
 		 <canTargetLocations>false</canTargetLocations>
         </targetParams>
     </MainVerb>
- </TorannMagic.TMAbilityDef>
+ <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_runecarving</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
  
- <!-- Branding -->
+ 
 	
   <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_Branding</defName>
@@ -128,7 +141,14 @@ To apply runes, select the pawn you wish to inscribe and create the rune carving
 		 <canTargetLocations>false</canTargetLocations>
         </targetParams>
     </MainVerb>
- </TorannMagic.TMAbilityDef>
+ <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_branding</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
  
  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_SiphonBrand</defName>
@@ -168,7 +188,14 @@ Brands are a semi-permanent form of magic typically created using some form of m
                 <canTargetLocations>false</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_siphonbrand</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_FitnessBrand</defName>
@@ -208,7 +235,14 @@ Brands are a semi-permanent form of magic typically created using some form of m
                 <canTargetLocations>false</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_fitnessbrand</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_EmotionBrand</defName>
@@ -248,7 +282,14 @@ Brands are a semi-permanent form of magic typically created using some form of m
                 <canTargetLocations>false</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_emotionbrand</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_VitalityBrand</defName>
@@ -288,7 +329,14 @@ Brands are a semi-permanent form of magic typically created using some form of m
                 <canTargetLocations>false</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_vitalitybrand</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_ProtectionBrand</defName>
@@ -328,7 +376,14 @@ Brands are a semi-permanent form of magic typically created using some form of m
                 <canTargetLocations>false</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_protectionbrand</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_AwarenessBrand</defName>
@@ -368,7 +423,14 @@ Brands are a semi-permanent form of magic typically created using some form of m
                 <canTargetLocations>false</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_awarenessbrand</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
  
    <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_DispelBranding</defName>
@@ -403,9 +465,16 @@ Brands are a semi-permanent form of magic typically created using some form of m
 		 <canTargetLocations>false</canTargetLocations>
         </targetParams>
     </MainVerb>
- </TorannMagic.TMAbilityDef>
+ <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_dispelbranding</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
  
- <!-- Sigil surge -->
+ 
 	
   <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_SigilSurge</defName>
@@ -444,9 +513,16 @@ Brands are a semi-permanent form of magic typically created using some form of m
 		 <canTargetLocations>false</canTargetLocations>
         </targetParams>
     </MainVerb>
- </TorannMagic.TMAbilityDef>
+ <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_sigilsurge</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
  
-  <!-- Sigil drain -->
+  
 	
   <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_SigilDrain</defName>
@@ -485,9 +561,16 @@ Brands are a semi-permanent form of magic typically created using some form of m
 		 <canTargetLocations>false</canTargetLocations>
         </targetParams>
     </MainVerb>
- </TorannMagic.TMAbilityDef>
+ <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_sigildrain</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- Living Wall -->
+	
 	
 	<ThingDef ParentName="BaseBullet" Name="FlyingObject_LivingWall">
 	   <defName>FlyingObject_LivingWall</defName>
@@ -501,7 +584,7 @@ Brands are a semi-permanent form of magic typically created using some form of m
 			<flyOverhead>true</flyOverhead>
 			<speed>30</speed>
 	   </projectile>
-	</ThingDef>
+</ThingDef>
    
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_LivingWall</defName>
@@ -541,7 +624,14 @@ Brands are a semi-permanent form of magic typically created using some form of m
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_livingwall</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
   <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_DispelLivingWall</defName>
@@ -576,6 +666,13 @@ Brands are a semi-permanent form of magic typically created using some form of m
 		 <canTargetLocations>false</canTargetLocations>
         </targetParams>
     </MainVerb>
- </TorannMagic.TMAbilityDef>
+ <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_dispellivingwall</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
 </Defs>

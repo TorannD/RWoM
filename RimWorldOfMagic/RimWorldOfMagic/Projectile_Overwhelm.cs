@@ -7,39 +7,27 @@ using System.Collections.Generic;
 
 namespace TorannMagic
 {
-    class Projectile_Overwhelm : Projectile_AbilityBase
+    class Projectile_Overwhelm : ClassProgression.Projectile_SpiritBolt
     {
 
         IntVec3 pos;
-        MagicPowerSkill pwr;
-        MagicPowerSkill ver;
-        private int verVal;
-        private int pwrVal;
-        private float arcaneDmg = 1;
+        protected override string SkillStem => "TM_Overwhelm";
+        protected override List<MagicPowerSkill> Skills(MagicData data) => data.MagicPowerSkill_Overwhelm;
+        private int lastStrikeTick = -1;
         private int strikeNum = 1;
         private bool initialized = false;
 
         private void Initialize(Pawn pawn)
         {
             GenClamor.DoClamor(this.launcher, 5f, ClamorDefOf.Impact);
-            CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
-            pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Overwhelm.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Overwhelm_pwr");
-            ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Overwhelm.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Overwhelm_ver");
-            
-            pwrVal = pwr.level;
-            verVal = ver.level;
-            if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+            if (!projected)
             {
-                MightPowerSkill mpwr = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-                MightPowerSkill mver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
-                pwrVal = mpwr.level;
-                verVal = mver.level;
-            }
-            this.arcaneDmg = comp.arcaneDmg;
-            if (ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist)
-            {
-                pwrVal = 3;
-                verVal = 3;
+                var comp = pawn.GetCompAbilityUserMagic();
+                var skills = Skills(comp.MagicData);
+                pwrVal = SpellRank(pawn, skills, SkillStem, "_pwr");
+                verVal = SpellRank(pawn, skills, SkillStem, "_ver");
+                arcaneDmg = comp.arcaneDmg;
+                if (ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist) pwrVal = verVal = 3;
             }
             this.strikeNum = 1;
             initialized = true;
@@ -62,8 +50,10 @@ namespace TorannMagic
                 TM_Action.InvulnerableAoEFor(pawn.Position, map, 3 + verVal, Mathf.RoundToInt((90 + (10 * pwrVal)) * arcaneDmg), pawn.Faction);
             }
 
-            if (Find.TickManager.TicksGame % 3 == 0)
+            int now = Find.TickManager.TicksGame;
+            if (now != lastStrikeTick && now % 3 == 0)
             {
+                lastStrikeTick = now;
                 DoBurstExplosion(pawn, map);
                 this.strikeNum++;
             }
@@ -73,6 +63,18 @@ namespace TorannMagic
             }
 
         }        
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look(ref initialized, "TM_overwhelmInitialized");
+            Scribe_Values.Look(ref strikeNum, "TM_overwhelmRing", 1);
+            Scribe_Values.Look(ref lastStrikeTick, "TM_overwhelmLastTick", -1);
+            if (projected) return; // base saves the projected ranks and damage scale.
+            Scribe_Values.Look(ref pwrVal, "TM_overwhelmPower");
+            Scribe_Values.Look(ref verVal, "TM_overwhelmVersatility");
+            Scribe_Values.Look(ref arcaneDmg, "TM_overwhelmScale", 1f);
+        }
 
         private void DoBurstExplosion(Pawn pawn, Map map)
         {
@@ -106,14 +108,14 @@ namespace TorannMagic
         protected void HolyExplosion(int pwr, int ver, IntVec3 pos, Map map, float radius)
         {
             ThingDef def = this.def;
-            Explosion(pwr, pos, map, radius, TMDamageDefOf.DamageDefOf.TM_Overwhelm, this.launcher, null, def, this.equipmentDef, null, 0.4f, 1, false, null, 0f, 1);
+            Explosion(pwr, pos, map, radius, TMDamageDefOf.DamageDefOf.TM_Overwhelm, SpellInstigator, null, def, this.equipmentDef, null, 0.4f, 1, false, null, 0f, 1);
             
             if (ver >= 2)
             {
                 int rnd = Rand.Range(3, 12);
                 if (rnd >= 5)
                 {
-                    Explosion(pwr, pos, map, radius, DamageDefOf.Stun, this.launcher, null, def, this.equipmentDef, null, 0.0f, 1, false, null, 0f, 1);
+                    Explosion(pwr, pos, map, radius, DamageDefOf.Stun, SpellInstigator, null, def, this.equipmentDef, null, 0.0f, 1, false, null, 0f, 1);
                 }
             }
             //MoteMaker.MakeStaticMote(pos, map, ThingDefOf.Mote_HeatGlow, 2f);

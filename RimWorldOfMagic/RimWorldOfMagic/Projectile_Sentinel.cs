@@ -14,6 +14,21 @@ namespace TorannMagic
 
         private int verVal;
         Pawn caster;
+        private Pawn projectedOwner;
+        private int powerRank;
+        internal void PrepareHosted(MagicAbility ability)
+        {
+            projectedOwner = ability.Pawn;
+            powerRank = ClassProgression.SpiritRebirthRuntime.SavedRank(ability.MagicUser.ExistingMagicData,"TM_Sentinel_pwr");
+            verVal = ClassProgression.SpiritRebirthRuntime.SavedRank(ability.MagicUser.ExistingMagicData,"TM_Sentinel_ver");
+        }
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_References.Look(ref projectedOwner,"TM_sentinelOwner");
+            Scribe_Values.Look(ref powerRank,"TM_sentinelPower");
+            Scribe_Values.Look(ref verVal,"TM_sentinelVersatility");
+        }
         Thing spawnedThing = null;
 
         //non-saved vars
@@ -22,16 +37,26 @@ namespace TorannMagic
         {
             GenClamor.DoClamor(this, 2.1f, ClamorDefOf.Impact);
             caster = this.launcher as Pawn;
-            Building existingSentinel = base.Position.GetFirstBuilding(caster.Map);
+            var owner = projectedOwner ?? caster;
+            var comp = owner?.GetCompAbilityUserMagic();
+            if (comp == null || caster?.Spawned != true || caster.Map != Map ||
+                projectedOwner != null && (!ClassProgression.SpiritRebirthState.TryGetPossessingSpirit(caster,out var held) || held != owner))
+            {
+                Destroy();
+                return;
+            }
+            comp.PruneSentinels();
+            Building existingSentinel = base.Position.GetFirstBuilding(Map);
             if (existingSentinel != null)
             {
-                if (existingSentinel.def.defName == "TM_Sentinel")
+                if (existingSentinel is Building_TMSentinel && comp.summonedSentinels.Contains(existingSentinel))
                 {
                     for (int m = 0; m < 5; m++)
                     {
                         TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_ThickDust, base.Position.ToVector3Shifted(), caster.Map, Rand.Range(.4f, .7f), Rand.Range(.2f, .3f), .05f, Rand.Range(.4f, .6f), Rand.Range(-20, 20), Rand.Range(.5f, 1f), Rand.Range(0, 360), Rand.Range(0, 360));
                     }
                     existingSentinel.Destroy(DestroyMode.Vanish);
+                    comp.summonedSentinels.Remove(existingSentinel);
                 }
                 else
                 {
@@ -42,21 +67,10 @@ namespace TorannMagic
             }
             else
             {
-                CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
-                verVal = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Sentinel.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Sentinel_ver").level;
-
-                if (comp.summonedSentinels.Count > verVal + 1)
+                if (projectedOwner == null)
                 {
-                    Messages.Message("TM_TooManySentinels".Translate(
-                                caster.LabelShort,
-                                verVal + 2
-                    ), MessageTypeDefOf.NeutralEvent);
-                    Thing tempThing = comp.summonedSentinels[0];
-                    comp.summonedSentinels.Remove(tempThing);
-                    if (tempThing != null && !tempThing.Destroyed)
-                    {
-                        tempThing.Destroy();
-                    }
+                    powerRank = ClassProgression.SpiritRebirthRuntime.SavedRank(comp.MagicData, "TM_Sentinel_pwr");
+                    verVal = ClassProgression.SpiritRebirthRuntime.SavedRank(comp.MagicData, "TM_Sentinel_ver");
                 }
 
                 AbilityUser.SpawnThings tempPod = new SpawnThings();
@@ -74,6 +88,14 @@ namespace TorannMagic
 
                 if (this.spawnedThing != null)
                 {
+                    int limit = verVal + 2;
+                    while (comp.summonedSentinels.Count >= limit)
+                    {
+                        var oldest = comp.summonedSentinels[0];
+                        comp.summonedSentinels.RemoveAt(0);
+                        if (!oldest.DestroyedOrNull()) oldest.Destroy();
+                    }
+                    ((Building_TMSentinel)spawnedThing).Bind(owner,powerRank);
                     comp.summonedSentinels.Add(spawnedThing);
                 }
             }

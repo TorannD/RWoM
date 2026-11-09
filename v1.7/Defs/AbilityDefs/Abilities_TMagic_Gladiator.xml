@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-<!-- Sprint start-->
+
   
     <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
    <defName>TM_Gladiator_Sprint</defName>
@@ -18,7 +17,7 @@
 		<damageAmountBase>0</damageAmountBase>
 		<speed>100</speed>
    </projectile>
- </ThingDef>
+</ThingDef>
  
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_Sprint</defName>
@@ -54,15 +53,16 @@
 		  <canTargetSelf>true</canTargetSelf>
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
-<!-- 		<hediffsToApply>
-	      <li>
-	        <hediffDef>TM_HediffSprint</hediffDef>
-	        <applyChance>1.0</applyChance>
-			<severity>0.2</severity>
-	      </li>
-        </hediffsToApply> -->
+
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_sprint</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
   <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_Sprint_I</defName>
@@ -101,15 +101,16 @@ Deactivating sprint instantly returns 20 stamina and applies 5s of +20% energy r
 		  <canTargetSelf>true</canTargetSelf>
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
-<!-- 		<hediffsToApply>
-	      <li>
-	        <hediffDef>TM_HediffSprint_I</hediffDef>
-	        <applyChance>1.0</applyChance>
-			<severity>0.2</severity>
-	      </li>
-        </hediffsToApply> -->
+
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_sprint_i</spellId>
+<domain>Magic</domain>
+<tier>1</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
   <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_Sprint_II</defName>
@@ -148,15 +149,16 @@ Deactivating sprint instantly returns 35 stamina and applies 8s of +30% energy r
 		  <canTargetSelf>true</canTargetSelf>
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
-<!-- 		<hediffsToApply>
-	      <li>
-	        <hediffDef>TM_HediffSprint_II</hediffDef>
-	        <applyChance>1.0</applyChance>
-			<severity>0.25</severity>
-	      </li>
-        </hediffsToApply> -->
+
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_sprint_ii</spellId>
+<domain>Magic</domain>
+<tier>2</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
   <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_Sprint_III</defName>
@@ -195,20 +197,21 @@ Deactivating sprint instantly returns 40 stamina and applies 10s of +40% energy 
 		  <canTargetSelf>true</canTargetSelf>
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
-<!-- 		<hediffsToApply>
-	      <li>
-	        <hediffDef>TM_HediffSprint_III</hediffDef>
-	        <applyChance>1.0</applyChance>
-			<severity>0.3</severity>
-	      </li>
-        </hediffsToApply> -->
+
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_sprint_iii</spellId>
+<domain>Magic</domain>
+<tier>3</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
  
-   <!-- Sprint end-->
    
-     <!-- Fortitude start-->
+   
+     
   
     <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
    <defName>TM_Gladiator_Fortitude</defName>
@@ -224,7 +227,7 @@ Deactivating sprint instantly returns 40 stamina and applies 10s of +40% energy 
 		<damageAmountBase>0</damageAmountBase>
 		<speed>100</speed>
    </projectile>
- </ThingDef>
+</ThingDef>
  
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_Fortitude</defName>
@@ -232,7 +235,7 @@ Deactivating sprint instantly returns 40 stamina and applies 10s of +40% energy 
     <uiIconPath>UI/fortitude</uiIconPath>
     <description>Mitigates a set amount of damage each hit.
 Base mitigation: 5</description>
-<!--    <thingClass>ThingWithComps</thingClass> -->
+
     <staminaCost>0.0</staminaCost>
 	<shouldInitialize>false</shouldInitialize>
     <MainVerb Class="AbilityUser.VerbProperties_Ability">
@@ -266,10 +269,17 @@ Base mitigation: 5</description>
 	      </li>
         </hediffsToApply>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_fortitude</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
 
-  <!-- Grapple Start -->
+  
     <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_AbilityLaser">
         <thingClass>AbilityUser.Projectile_AbilityLaser</thingClass>
 		<defName>Projectile_Grapple</defName>
@@ -290,7 +300,7 @@ Base mitigation: 5</description>
         <postFiringFinalIntensity>10</postFiringFinalIntensity>
         <preFiringDuration>30</preFiringDuration>
         <postFiringDuration>10</postFiringDuration>
-    </ThingDef>
+</ThingDef>
 
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_Grapple</defName>
@@ -305,7 +315,7 @@ Range: 15</description>
 		<canCopy>true</canCopy>
 		<MainVerb Class="AbilityUser.VerbProperties_Ability">
             <verbClass>TorannMagic.Verb_Grapple</verbClass>
-			<!-- <verbClass>AbilityUser.Verb_UseAbility_TrueBurst</verbClass> -->
+			
             <hasStandardCommand>true</hasStandardCommand>
             <defaultProjectile>Projectile_Grapple</defaultProjectile>
             <abilityDef>TM_Grapple</abilityDef>
@@ -325,7 +335,14 @@ Range: 15</description>
             <muzzleFlashScale>20</muzzleFlashScale>
             <isPrimary>false</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_grapple</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	 <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_Grapple_I</defName>
@@ -358,7 +375,14 @@ Range: 17</description>
             <muzzleFlashScale>20</muzzleFlashScale>
             <isPrimary>false</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_grapple_i</spellId>
+<domain>Magic</domain>
+<tier>1</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	 <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_Grapple_II</defName>
@@ -392,7 +416,14 @@ Range: 20</description>
             <muzzleFlashScale>20</muzzleFlashScale>
             <isPrimary>false</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_grapple_ii</spellId>
+<domain>Magic</domain>
+<tier>2</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	 <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_Grapple_III</defName>
@@ -426,11 +457,18 @@ Range: 23</description>
             <muzzleFlashScale>20</muzzleFlashScale>
             <isPrimary>false</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_grapple_iii</spellId>
+<domain>Magic</domain>
+<tier>3</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	  <!-- Grapple End -->
 	  
-	  <!-- Cleave Start -->
+	  
+	  
     <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_AbilityLaser">
         <thingClass>AbilityUser.Projectile_AbilityLaser</thingClass>
 		<defName>Projectile_Cleave</defName>
@@ -452,7 +490,7 @@ Range: 23</description>
         <postFiringFinalIntensity>0</postFiringFinalIntensity>
         <preFiringDuration>20</preFiringDuration>
         <postFiringDuration>80</postFiringDuration>
-    </ThingDef>
+</ThingDef>
 
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_Cleave</defName>
@@ -485,11 +523,18 @@ Range: 23</description>
             <muzzleFlashScale>20</muzzleFlashScale>
             <isPrimary>false</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_cleave</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	 <!-- Cleave End -->
+	 
 	
-	 	    <!-- Whirlwind -->
+	 	    
 			
 	<ThingDef ParentName="BaseBullet" Name="FlyingObject_Whirlwind">
 	   <defName>FlyingObject_Whirlwind</defName>
@@ -505,7 +550,7 @@ Range: 23</description>
 			<damageAmountBase>0</damageAmountBase>
 			<speed>250</speed>
 	   </projectile>
-	</ThingDef>
+</ThingDef>
 			
 	<ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
         <thingClass>AbilityUser.Projectile_Ability</thingClass>
@@ -522,7 +567,7 @@ Range: 23</description>
             <damageAmountBase>0</damageAmountBase>
             <speed>50</speed>
         </projectile>
-    </ThingDef>
+</ThingDef>
 
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_Whirlwind</defName>
@@ -551,55 +596,15 @@ Range: 23</description>
             <muzzleFlashScale>20</muzzleFlashScale>
             <isPrimary>false</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_whirlwind</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-    <!-- <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
-        <thingClass>TorannMagic.Projectile_Whirlwind</thingClass>
-		<defName>Projectile_Whirlwind</defName>
-        <label>Whirlwind</label>
-        <graphicData>
-			<texPath>Spells/invis</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-			<shaderType>TransparentPostLight</shaderType>
-        </graphicData>
-        <projectile>
-            <flyOverhead>true</flyOverhead>
-            <damageDef>Cut</damageDef>
-            <damageAmountBase>10</damageAmountBase>
-            <speed>250</speed>
-        </projectile>
-    </ThingDef>
-
- <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
-        <defName>TM_Whirlwind</defName>
-        <label>Whirlwind</label>
-        <uiIconPath>UI/whirlwind</uiIconPath>
-        <description>The Gladiator launches into a frenzied attack, dancing forward in a furious whirlwind of steel and death.</description>
-        <staminaCost>0.25</staminaCost>
-		<MainVerb Class="AbilityUser.VerbProperties_Ability">
-            <verbClass>AbilityUser.Verb_UseAbility</verbClass>
-				<tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
-				<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
-				<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
-				<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
-            <hasStandardCommand>true</hasStandardCommand>
-            <defaultProjectile>Projectile_Whirlwind</defaultProjectile>
-            <abilityDef>TM_Whirlwind</abilityDef>
-            <AbilityTargetCategory>TargetLocation</AbilityTargetCategory>
-			<targetParams>
-                <canTargetPawns>true</canTargetPawns>
-                <canTargetBuildings>false</canTargetBuildings>
-                <canTargetSelf>false</canTargetSelf>
-                <canTargetLocations>true</canTargetLocations>
-            </targetParams>
-            <warmupTime>0.2</warmupTime>
-            <SecondsToRecharge>20.0</SecondsToRecharge>
-            <range>16</range>
-			<isViolent>true</isViolent>
-            <soundCast>DropPodLeaving</soundCast>
-            <muzzleFlashScale>20</muzzleFlashScale>
-            <isPrimary>false</isPrimary>
-        </MainVerb>
-    </TorannMagic.TMAbilityDef> -->
+    
 
 </Defs>

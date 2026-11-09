@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SniperMasteryHint>Щоб опанувати «{0}», пройдіть один із двох шляхів. Влучайте «Розколом броні» у ворожих пішаків або працюйте за дослідницьким столом. Зміна триває одну ігрову годину. Перерви не скидають поступ.</TM_SniperMasteryHint>
+  <TM_SniperMasteryHits>Влучання «Розколом броні»: {0}/{1}</TM_SniperMasteryHits>
+  <TM_SniperMasteryResearch>Дослідницькі зміни: {0}/{1}</TM_SniperMasteryResearch>
+  <TM_SniperMasteryPartial>Поточна зміна: {0}%</TM_SniperMasteryPartial>
+  <TM_SniperMasteryClaim>Здобути майстерність снайпера</TM_SniperMasteryClaim>
+  <TM_SniperMasteryLearned>Опановано техніку майстра: «{0}».</TM_SniperMasteryLearned>
+</LanguageData>

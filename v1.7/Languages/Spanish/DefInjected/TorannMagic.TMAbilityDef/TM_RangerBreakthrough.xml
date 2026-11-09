@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_RangerBreakthrough.label>Caza de ruptura</TM_RangerBreakthrough.label>
+  <TM_RangerBreakthrough.description>Con el animal vinculado a 12 casillas o menos, marca al enemigo elegido y hasta dos enemigos cercanos dentro del alcance del arco (máximo 30 casillas). Tras apuntar 5 segundos, dispara 6 flechas en 20 segundos al 70% del daño del arco. Durante la andanada, el animal bloquea hasta 25 de daño en cada uno de dos impactos de arma enemigos y la velocidad del guardabosques baja un 20%. Coste base: 60% de aguante. Recarga: dos días. Interrumpir la preparación consume un 6% de aguante.</TM_RangerBreakthrough.description>
+</LanguageData>

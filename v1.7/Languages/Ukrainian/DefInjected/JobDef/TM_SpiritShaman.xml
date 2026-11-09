@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritChainLightning.reportString>випускає ланцюгову блискавку.</TM_SpiritChainLightning.reportString>
+  <TM_SpiritSummonTotemEarth.reportString>прикликає тотем землі.</TM_SpiritSummonTotemEarth.reportString>
+  <TM_SpiritSummonTotemLightning.reportString>прикликає тотем блискавки.</TM_SpiritSummonTotemLightning.reportString>
+  <TM_SpiritSummonTotemHealing.reportString>прикликає тотем зцілення.</TM_SpiritSummonTotemHealing.reportString>
+  <TM_SpiritEnrage.reportString>викликає лють.</TM_SpiritEnrage.reportString>
+  <TM_SpiritHex.reportString>накладає прокляття.</TM_SpiritHex.reportString>
+  <TM_SpiritHex_I.reportString>накладає прокляття.</TM_SpiritHex_I.reportString>
+  <TM_SpiritHex_II.reportString>накладає прокляття.</TM_SpiritHex_II.reportString>
+  <TM_SpiritHex_III.reportString>накладає прокляття.</TM_SpiritHex_III.reportString>
+  <TM_SpiritHex_Pain.reportString>завдає болю.</TM_SpiritHex_Pain.reportString>
+  <TM_SpiritHex_CriticalFail.reportString>накликає невдачу.</TM_SpiritHex_CriticalFail.reportString>
+  <TM_SpiritHex_MentalAssault.reportString>атакує розум.</TM_SpiritHex_MentalAssault.reportString>
+  <TM_SpiritGuardianSpirit.reportString>прикликає духа-охоронця.</TM_SpiritGuardianSpirit.reportString>
+  <TM_SpiritDismissGuardianSpirit.reportString>відкликає духа-охоронця.</TM_SpiritDismissGuardianSpirit.reportString>
+</LanguageData>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ClassDiscipline.label>class discipline</TM_ClassDiscipline.label>
+  <TM_ClassDiscipline.description>An initiated discipline. Its progression is stored with the pawn; this health entry displays it.</TM_ClassDiscipline.description>
+</LanguageData>

@@ -1,0 +1,6 @@
+<LanguageData>
+  <TM_SmallMagicalThruster.label>propulsor mágico pequeno</TM_SmallMagicalThruster.label>
+  <TM_SmallMagicalThruster.description>Um propulsor a magocombustível que aumenta o alcance da gravinave. Recebe magocombustível dos reservatórios da mesma nave por meio de faróis de mana conectados. Não tem tanque próprio e não pode usar mana, combustível químico ou astrocombustível. Requer um motor gravitacional conectado, subestrutura e uma área de escape desobstruída voltada para o exterior. O combustível é consumido na decolagem.</TM_SmallMagicalThruster.description>
+  <TM_LargeMagicalThruster.label>propulsor mágico grande</TM_LargeMagicalThruster.label>
+  <TM_LargeMagicalThruster.description>Um propulsor a magocombustível que aumenta o alcance da gravinave. Recebe magocombustível dos reservatórios da mesma nave por meio de faróis de mana conectados. Não tem tanque próprio e não pode usar mana, combustível químico ou astrocombustível. Requer um motor gravitacional conectado, subestrutura e uma área de escape desobstruída voltada para o exterior. O combustível é consumido na decolagem.</TM_LargeMagicalThruster.description>
+</LanguageData>

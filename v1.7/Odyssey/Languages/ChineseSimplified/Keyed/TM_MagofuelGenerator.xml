@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_MagofuelGeneratorStatus>输出功率：{0}瓦；运行消耗：{1}/天\n核心中的燃料：{2}\n持续发电时间：{3}天</TM_MagofuelGeneratorStatus>
+</LanguageData>

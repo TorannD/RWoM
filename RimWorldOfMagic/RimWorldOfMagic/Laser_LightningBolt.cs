@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using Verse;
 using Verse.Sound;
 using AbilityUser;
@@ -7,21 +7,61 @@ using UnityEngine;
 
 namespace TorannMagic
 {
-    class Laser_LightningBolt : Projectile_AbilityLaser 
+    // Keep the native beam attached to the physical caster until impact.
+    public class Projectile_SpiritRay : Projectile_AbilityLaser
+    {
+        protected bool projected;
+        private Pawn source;
+
+        internal virtual void PrepareProjection(MagicAbility power)
+        {
+            projected = true;
+            source = power.Pawn;
+        }
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look(ref projected, "TM_projectedLightning");
+            if (!projected) return;
+            Scribe_References.Look(ref source, "TM_lightningSoul");
+        }
+
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
+        {
+            if (!projected) { base.Impact(hitThing, blockedByShield); return; }
+            // The beam animates from the body. Its real damage and native battle log
+            // resolve on the soul even after the body releases it.
+            var physical = launcher;
+            launcher = source;
+            try { base.Impact(hitThing, blockedByShield); }
+            finally { launcher = physical; }
+        }
+    }
+
+    class Laser_LightningBolt : Projectile_SpiritRay
     {
         private int verVal;
         private int pwrVal;
         private float arcaneDmg = 1;
 
-        public override void Impact_Override(Thing hitThing)
+        internal override void PrepareProjection(MagicAbility power)
         {
-            Map map = base.Map;
-            base.Impact_Override(hitThing);
+            base.PrepareProjection(power);
+            ReadRanks(power.Pawn);
+        }
 
-            Pawn pawn = this.launcher as Pawn;
-                       
-            
-            
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            if (!projected) return;
+            Scribe_Values.Look(ref pwrVal, "TM_lightningPower");
+            Scribe_Values.Look(ref verVal, "TM_lightningVersatility");
+            Scribe_Values.Look(ref arcaneDmg, "TM_lightningScale", 1f);
+        }
+
+        private void ReadRanks(Pawn pawn)
+        {
             if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
             {
                 MightPowerSkill mpwr = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
@@ -50,12 +90,23 @@ namespace TorannMagic
                 pwrVal = 3;
                 verVal = 3;
             }
+        }
+
+        public override void Impact_Override(Thing hitThing)
+        {
+            Map map = Map;
+            base.Impact_Override(hitThing);
+            if (!projected)
+            {
+                if (!(launcher is Pawn pawn) || pawn.story?.traits == null) return;
+                ReadRanks(pawn);
+            }
             bool flag = hitThing != null;
             if (flag)
             {
                 int DamageAmount = Mathf.RoundToInt(this.def.projectile.GetDamageAmount(1,null) + (pwrVal * 6)* this.arcaneDmg);
                 DamageInfo dinfo = new DamageInfo(this.def.projectile.damageDef, DamageAmount, 1, this.ExactRotation.eulerAngles.y, this.launcher, null, this.equipmentDef, DamageInfo.SourceCategory.ThingOrUnknown);
-                hitThing.TakeDamage(dinfo);
+                ClassProgression.LightningTrials.Damage(this, hitThing, dinfo, ClassProgression.LightningTrials.Spell.Bolt);
                 if(Rand.Chance(.6f))
                 {
                     DamageInfo dinfo2 = new DamageInfo(DamageDefOf.Stun, DamageAmount/4, 1, this.ExactRotation.eulerAngles.y, this.launcher, null, this.equipmentDef, DamageInfo.SourceCategory.ThingOrUnknown);
@@ -86,7 +137,7 @@ namespace TorannMagic
                 SoundInfo info = SoundInfo.InMap(new TargetInfo(base.Position, base.Map, false), MaintenanceType.None);
                 SoundDefOf.Thunder_OnMap.PlayOneShot(info);
             }
-            CellRect cellRect = CellRect.CenteredOn(hitThing.Position, 2);
+            CellRect cellRect = CellRect.CenteredOn(hitThing?.Position ?? this.Position, 2);
             cellRect.ClipInsideMap(map);
             for (int i = 0; i < Rand.Range(verVal, verVal * 4); i++)
             {
@@ -129,6 +180,7 @@ namespace TorannMagic
             explosion.postExplosionSpawnChance = postExplosionSpawnChance;
             explosion.postExplosionSpawnThingCount = postExplosionSpawnThingCount;
             explosion.applyDamageToExplosionCellsNeighbors = applyDamageToExplosionCellsNeighbors;
+            if (damType == TMDamageDefOf.DamageDefOf.TM_Lightning) ClassProgression.LightningTrials.StampBoltExplosion(explosion, this);
             explosion.StartExplosion(explosionSound, null);
         }
     }

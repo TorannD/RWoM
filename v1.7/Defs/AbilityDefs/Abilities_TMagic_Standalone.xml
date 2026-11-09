@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
 <ThingDef Class="AbilityUser.ProjectileDef_Ability" ParentName="BaseBullet">
@@ -17,9 +16,9 @@
 		<damageAmountBase>0</damageAmountBase>
 		<speed>1000</speed>
    </projectile>   
- </ThingDef>
+</ThingDef>
  
-<!--  Heater -->
+
 
 <ThingDef Class="AbilityUser.ProjectileDef_Ability" ParentName="BaseBullet">
    <thingClass>TorannMagic.Projectile_Heater</thingClass>
@@ -36,7 +35,7 @@
 		<damageAmountBase>0</damageAmountBase>
 		<speed>999</speed>
    </projectile>   
- </ThingDef>
+</ThingDef>
 
  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_Heater</defName>
@@ -71,7 +70,14 @@
 		 <canTargetLocations>true</canTargetLocations>
         </targetParams>		
     </MainVerb>
- </TorannMagic.TMAbilityDef>
+ <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_heater</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
  
  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_DismissHeater</defName>
@@ -105,9 +111,16 @@
 		 <canTargetLocations>false</canTargetLocations>
         </targetParams>
     </MainVerb>
- </TorannMagic.TMAbilityDef>
+ <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_dismissheater</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
  
- <!--  Cooler -->
+ 
  
  <ThingDef Class="AbilityUser.ProjectileDef_Ability" ParentName="BaseBullet">
    <thingClass>TorannMagic.Projectile_Cooler</thingClass>
@@ -124,7 +137,7 @@
 		<damageAmountBase>0</damageAmountBase>
 		<speed>999</speed>
    </projectile>   
- </ThingDef>
+</ThingDef>
  
   <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_Cooler</defName>
@@ -159,7 +172,14 @@
 		 <canTargetLocations>true</canTargetLocations>
         </targetParams>
     </MainVerb>
- </TorannMagic.TMAbilityDef>
+ <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_cooler</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
  
  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_DismissCooler</defName>
@@ -193,9 +213,16 @@
 		 <canTargetLocations>false</canTargetLocations>
         </targetParams>
     </MainVerb>
- </TorannMagic.TMAbilityDef>
+ <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_dismisscooler</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
  
-  <!--  Power Node --> 
+   
   
   <ThingDef Class="AbilityUser.ProjectileDef_Ability" ParentName="BaseBullet">
    <thingClass>TorannMagic.Projectile_PowerNode</thingClass>
@@ -212,7 +239,7 @@
 		<damageAmountBase>0</damageAmountBase>
 		<speed>999</speed>
    </projectile>   
- </ThingDef>
+</ThingDef>
  
   <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_PowerNode</defName>
@@ -248,7 +275,14 @@
 		 <canTargetLocations>true</canTargetLocations>
         </targetParams>
     </MainVerb>
- </TorannMagic.TMAbilityDef>
+ <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_powernode</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
  
  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_DismissPowerNode</defName>
@@ -282,9 +316,16 @@
 		 <canTargetLocations>false</canTargetLocations>
         </targetParams>
     </MainVerb>
- </TorannMagic.TMAbilityDef>
+ <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_dismisspowernode</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
  
-<!--  Light Node -->
+
 
 <ThingDef Class="AbilityUser.ProjectileDef_Ability" ParentName="BaseBullet">
    <thingClass>TorannMagic.Projectile_Sunlight</thingClass>
@@ -303,7 +344,7 @@
 		<explosionRadius>5.8</explosionRadius>
 		<postExplosionSpawnChance>1</postExplosionSpawnChance>
    </projectile>   
- </ThingDef>
+</ThingDef>
  
  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_Sunlight</defName>
@@ -339,7 +380,14 @@
 		 <canTargetLocations>true</canTargetLocations>
         </targetParams>		
     </MainVerb>
- </TorannMagic.TMAbilityDef>
+ <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_sunlight</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
  
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_DismissSunlight</defName>
@@ -373,9 +421,16 @@
 		 <canTargetLocations>false</canTargetLocations>
         </targetParams>
     </MainVerb>
- </TorannMagic.TMAbilityDef>
+ <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_dismisssunlight</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
  
- <!--  Remove Moisture  -->
+ 
  <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>TorannMagic.Projectile_DryGround</thingClass>
 	    <defName>Projectile_DryGround</defName>
@@ -393,7 +448,7 @@
 			<explosionRadius>1.5</explosionRadius>
 			<postExplosionSpawnChance>0</postExplosionSpawnChance>
         </projectile>
-    </ThingDef>
+</ThingDef>
  
  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_DryGround</defName>
@@ -427,9 +482,16 @@
 		 <canTargetLocations>true</canTargetLocations>
         </targetParams>
     </MainVerb>
- </TorannMagic.TMAbilityDef>
+ <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_dryground</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
  
-  <!--  Add Moisture  -->
+  
  <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>TorannMagic.Projectile_WetGround</thingClass>
 	    <defName>Projectile_WetGround</defName>
@@ -447,7 +509,7 @@
 			<explosionRadius>1.5</explosionRadius>
 			<postExplosionSpawnChance>0</postExplosionSpawnChance>
         </projectile>
-    </ThingDef>
+</ThingDef>
  
  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_WetGround</defName>
@@ -481,9 +543,16 @@
 		 <canTargetLocations>true</canTargetLocations>
         </targetParams>
     </MainVerb>
- </TorannMagic.TMAbilityDef>
+ <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_wetground</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
  
-  <!--  Charge Battery  -->
+  
  <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>TorannMagic.Projectile_ChargeBattery</thingClass>
 	    <defName>Projectile_ChargeBattery</defName>
@@ -499,7 +568,7 @@
             <damageAmountBase>0</damageAmountBase>
             <speed>200</speed>
         </projectile>
-    </ThingDef>
+</ThingDef>
  
  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_ChargeBattery</defName>
@@ -533,9 +602,16 @@
 		 <canTargetLocations>true</canTargetLocations>
         </targetParams>
     </MainVerb>
- </TorannMagic.TMAbilityDef>
+ <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_chargebattery</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
  
- <!-- Smoke Cloud -->	
+ 	
     <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>TorannMagic.Projectile_SmokeCloud</thingClass>
 	    <defName>Projectile_SmokeCloud</defName>
@@ -553,7 +629,7 @@
 			<explosionRadius>5</explosionRadius>
 			<postExplosionSpawnChance>1</postExplosionSpawnChance>
         </projectile>
-    </ThingDef>
+</ThingDef>
 
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_SmokeCloud</defName>
@@ -589,11 +665,18 @@
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_smokecloud</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
-    <!-- smoke cloud end-->
+    
 	
-	<!-- Extinguish -->	
+		
     <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>TorannMagic.Projectile_Extinguish</thingClass>
 	    <defName>Projectile_Extinguish</defName>
@@ -611,7 +694,7 @@
 			<explosionRadius>5</explosionRadius>
 			<postExplosionSpawnChance>1</postExplosionSpawnChance>
         </projectile>
-    </ThingDef>
+</ThingDef>
 
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_Extinguish</defName>
@@ -647,11 +730,18 @@
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_extinguish</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
-    <!-- extinguish end-->
+    
 	
-		<!-- EMP -->	
+			
     <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>TorannMagic.Projectile_EMP</thingClass>
 	    <defName>Projectile_EMP</defName>
@@ -669,7 +759,7 @@
 			<explosionRadius>7</explosionRadius>
 			<postExplosionSpawnChance>1</postExplosionSpawnChance>
         </projectile>
-    </ThingDef>
+</ThingDef>
 
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_EMP</defName>
@@ -705,11 +795,18 @@
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_emp</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
-    <!-- emp end-->
+    
 	
-			<!-- Transfer mana -->	
+				
     <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>TorannMagic.Projectile_TransferMana</thingClass>
 	    <defName>Projectile_TransferMana</defName>
@@ -725,7 +822,7 @@
             <damageAmountBase>0</damageAmountBase>
             <speed>999</speed>
         </projectile>
-    </ThingDef>
+</ThingDef>
 
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_TransferMana</defName>
@@ -761,11 +858,18 @@
                 <canTargetLocations>false</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_transfermana</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
-    <!-- transfer mana end-->
+    
 	
-				<!-- siphon mana -->	
+					
     <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>TorannMagic.Projectile_SiphonMana</thingClass>
 	    <defName>Projectile_SiphonMana</defName>
@@ -781,7 +885,7 @@
             <damageAmountBase>0</damageAmountBase>
             <speed>999</speed>
         </projectile>
-    </ThingDef>
+</ThingDef>
 
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_SiphonMana</defName>
@@ -817,11 +921,18 @@
                 <canTargetLocations>false</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_siphonmana</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
-    <!-- siphon mana end-->
+    
 	
-	<!-- mana shield -->	
+		
 
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_ManaShield</defName>
@@ -859,11 +970,18 @@ Casting the spell when a barrier is active will remove the barrier. Can be used 
                 <canTargetLocations>false</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_manashield</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
-    <!-- mana shield end-->
+    
 	
-	<!-- summoned wall -->
+	
 	
  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_ArcaneBarrier</defName>
@@ -896,9 +1014,16 @@ Casting the spell when a barrier is active will remove the barrier. Can be used 
 		 <canTargetLocations>true</canTargetLocations>
         </targetParams>		
     </MainVerb>
- </TorannMagic.TMAbilityDef>
+ <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_arcanebarrier</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
  
-   	    <!-- Flight -->
+   	    
 		
 	<ThingDef ParentName="BaseBullet" Name="FlyingObject_Flight">
 	   <defName>FlyingObject_Flight</defName>
@@ -914,7 +1039,7 @@ Casting the spell when a barrier is active will remove the barrier. Can be used 
 			<damageAmountBase>0</damageAmountBase>
 			<speed>250</speed>
 	   </projectile>
-	</ThingDef>
+</ThingDef>
 			
 	<ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
         <thingClass>AbilityUser.Projectile_Ability</thingClass>
@@ -931,7 +1056,7 @@ Casting the spell when a barrier is active will remove the barrier. Can be used 
             <damageAmountBase>0</damageAmountBase>
             <speed>70</speed>
         </projectile>
-    </ThingDef>
+</ThingDef>
 
  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_Flight</defName>
@@ -962,9 +1087,16 @@ Casting the spell when a barrier is active will remove the barrier. Can be used 
             <muzzleFlashScale>0</muzzleFlashScale>
             <isPrimary>false</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_flight</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- Fertile land -->	
+		
 	
 	<ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
         <thingClass>TorannMagic.Projectile_FertileLands</thingClass>
@@ -983,7 +1115,7 @@ Casting the spell when a barrier is active will remove the barrier. Can be used 
 			<explosionRadius>6</explosionRadius>
 			<postExplosionSpawnChance>1</postExplosionSpawnChance>
         </projectile>
-    </ThingDef>
+</ThingDef>
 
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_FertileLands</defName>
@@ -1020,7 +1152,14 @@ Casting the spell when a barrier is active will remove the barrier. Can be used 
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_fertilelands</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_DismissFertileLands</defName>
@@ -1055,9 +1194,16 @@ Casting the spell when a barrier is active will remove the barrier. Can be used 
                 <canTargetLocations>false</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_dismissfertilelands</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- Spell Mending -->	
+		
 
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_SpellMending</defName>
@@ -1094,9 +1240,16 @@ Casting the spell when a barrier is active will remove the barrier. Can be used 
                 <canTargetLocations>false</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_spellmending</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-		<!-- Cauterize Wound -->	
+			
 
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_CauterizeWound</defName>
@@ -1133,9 +1286,16 @@ Casting the spell when a barrier is active will remove the barrier. Can be used 
                 <canTargetLocations>false</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_cauterizewound</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- Teach Magic & Might -->	
+		
 
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_TeachMagic</defName>
@@ -1170,7 +1330,14 @@ Mentored mages will gain class XP.  The amount of XP gained depends on the socia
                 <canTargetLocations>false</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_teachmagic</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
   <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_TeachMight</defName>
@@ -1204,9 +1371,16 @@ Trained fighters will gain class XP.  The amount of XP gained depends on the soc
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_teachmight</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
-  <!-- blur -->	
+  	
 
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_Blur</defName>
@@ -1245,9 +1419,16 @@ Trained fighters will gain class XP.  The amount of XP gained depends on the soc
                 <canTargetLocations>false</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_blur</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	  <!-- blank mind -->	
+	  	
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_BlankMind</defName>
@@ -1293,9 +1474,16 @@ AoE effects are only applied when the primary target is not a friendly pawn. Fri
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_blankmind</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-  <!-- dirt devil -->	
+  	
 	
 	<ThingDef ParentName="TM_FlyingObjectBase" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>AbilityUser.Projectile_Ability</thingClass>
@@ -1312,7 +1500,7 @@ AoE effects are only applied when the primary target is not a friendly pawn. Fri
             <damageAmountBase>0</damageAmountBase>
             <speed>30</speed>
         </projectile>
-    </ThingDef>	
+</ThingDef>	
 	
 	<ThingDef ParentName="TM_FlyingObjectBase" Name="FlyingObject_DirtDevil">
 	   <defName>FlyingObject_DirtDevil</defName>
@@ -1328,7 +1516,7 @@ AoE effects are only applied when the primary target is not a friendly pawn. Fri
 			<damageAmountBase>0</damageAmountBase>
 			<speed>30</speed>
 	   </projectile>
-	</ThingDef>
+</ThingDef>
 
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_DirtDevil</defName>
@@ -1359,7 +1547,14 @@ AoE effects are only applied when the primary target is not a friendly pawn. Fri
             <muzzleFlashScale>0</muzzleFlashScale>
             <isPrimary>false</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_dirtdevil</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_MechaniteReprogramming</defName>
@@ -1390,9 +1585,16 @@ AoE effects are only applied when the primary target is not a friendly pawn. Fri
             <muzzleFlashScale>0</muzzleFlashScale>
             <isPrimary>false</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_mechanitereprogramming</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- Arcane Bolt -->
+	
 	
   <ThingDef Class="AbilityUser.ProjectileDef_Ability" ParentName="BaseBullet">
     <defName>Projectile_ArcaneBolt</defName>
@@ -1411,7 +1613,7 @@ AoE effects are only applied when the primary target is not a friendly pawn. Fri
 	  <explosionRadius>1</explosionRadius>
 	  <postExplosionSpawnChance>1</postExplosionSpawnChance>
     </projectile>
-  </ThingDef>
+</ThingDef>
   
  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_ArcaneBolt</defName>
@@ -1448,9 +1650,16 @@ Arcane Bolt is inefficient because of the unrefined nature of the spell, but it 
 			<canTargetLocations>true</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_arcanebolt</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
-  <!-- Throwing Knife -->
+  
   
     <ThingDef Class="AbilityUser.ProjectileDef_Ability" ParentName="BaseBullet">
     <defName>Projectile_ThrowingKnife</defName>
@@ -1466,7 +1675,7 @@ Arcane Bolt is inefficient because of the unrefined nature of the spell, but it 
       <damageAmountBase>14</damageAmountBase>
       <speed>40</speed>
     </projectile>
-  </ThingDef>
+</ThingDef>
   
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_ThrowingKnife</defName>
@@ -1500,9 +1709,16 @@ Arcane Bolt is inefficient because of the unrefined nature of the spell, but it 
 			<canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_throwingknife</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
-  <!-- Pommel Strike -->
+  
   
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_PommelStrike</defName>
@@ -1539,9 +1755,16 @@ Autocast only triggers when the target has 80% or greater chance of being downed
 			<canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_pommelstrike</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
-  <!-- Lightning Trap -->
+  
   <ThingDef ParentName="BaseBullet" Name="FlyingObject_LightningTrap">
 	   <defName>FlyingObject_LightningTrap</defName>
 	   <thingClass>TorannMagic.FlyingObject_LightningTrap</thingClass>
@@ -1558,7 +1781,7 @@ Autocast only triggers when the target has 80% or greater chance of being downed
             <damageAmountBase>0</damageAmountBase>
             <speed>10</speed>
         </projectile>
-	</ThingDef>
+</ThingDef>
   
  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_LightningTrap</defName>
@@ -1592,7 +1815,14 @@ Autocast only triggers when the target has 80% or greater chance of being downed
 			<canTargetLocations>true</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_lightningtrap</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
   <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_DismissLightningTrap</defName>
@@ -1626,9 +1856,16 @@ Autocast only triggers when the target has 80% or greater chance of being downed
 		 <canTargetLocations>false</canTargetLocations>
         </targetParams>
     </MainVerb>
- </TorannMagic.TMAbilityDef>
+ <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_dismisslightningtrap</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
  
- <!-- invisibility -->	
+ 	
 
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_Invisibility</defName>
@@ -1664,9 +1901,16 @@ Autocast only triggers when the target has 80% or greater chance of being downed
                 <canTargetLocations>false</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_invisibility</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- briar patch -->
+	
 	
   <ThingDef Class="AbilityUser.ProjectileDef_Ability" ParentName="BaseBullet">
     <defName>Projectile_BriarPatch</defName>
@@ -1684,7 +1928,7 @@ Autocast only triggers when the target has 80% or greater chance of being downed
 	  <explosionRadius>6</explosionRadius>
 	  <postExplosionSpawnChance>1</postExplosionSpawnChance>
     </projectile>
-  </ThingDef>
+</ThingDef>
   
  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_BriarPatch</defName>
@@ -1718,9 +1962,16 @@ Autocast only triggers when the target has 80% or greater chance of being downed
 			<canTargetLocations>true</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_briarpatch</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
-  	<!-- Magelight -->
+  	
   
    <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_MageLight</defName>
@@ -1762,16 +2013,23 @@ Magelight can be dispelled by using this ability on the caster.</description>
 		 <canTargetLocations>true</canTargetLocations>
         </targetParams>		
     </MainVerb>
- </TorannMagic.TMAbilityDef>
+ <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_magelight</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
  
- <!-- Legion start-->
+ 
  
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_Legion</defName>
     <label>Legion</label>
     <uiIconPath>UI/legion</uiIconPath>
     <description>Copy an ability from another fighter. All bonuses and restrictions of the copied ability apply. Only one ability may be stored at a time.</description>
-<!--    <thingClass>ThingWithComps</thingClass> -->
+
     <staminaCost>0.3</staminaCost>
 	<learnItem>SkillOf_Legion</learnItem>
     <MainVerb Class="AbilityUser.VerbProperties_Ability">
@@ -1798,9 +2056,16 @@ Magelight can be dispelled by using this ability on the caster.</description>
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_legion</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
-   <!-- Tempest Strike -->
+   
    
  <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
    <defName>Projectile_TempestStrike</defName>
@@ -1816,7 +2081,7 @@ Magelight can be dispelled by using this ability on the caster.</description>
 		<damageAmountBase>8</damageAmountBase>
 		<speed>50</speed>
    </projectile>
- </ThingDef>
+</ThingDef>
  
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_TempestStrike</defName>
@@ -1827,7 +2092,7 @@ Magelight can be dispelled by using this ability on the caster.</description>
 Melee weapons generate blades of energy.
 	
 This attack only works when the weapon equipped is not normally consumed after use.</description>
-<!--    <thingClass>ThingWithComps</thingClass> -->
+
     <staminaCost>0.2</staminaCost>
 	<learnItem>SkillOf_TempestStrike</learnItem>
 	<weaponDamageFactor>.40</weaponDamageFactor>
@@ -1857,9 +2122,16 @@ This attack only works when the weapon equipped is not normally consumed after u
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_tempeststrike</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
-  <!-- ignite-->	
+  	
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_Ignite</defName>
@@ -1903,9 +2175,16 @@ This attack only works when the weapon equipped is not normally consumed after u
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_ignite</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	  <!-- snap freeze -->	
+	  	
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_SnapFreeze</defName>
@@ -1949,10 +2228,17 @@ This attack only works when the weapon equipped is not normally consumed after u
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_snapfreeze</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	
-	  <!-- discord -->	
+	  	
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_Discord</defName>
@@ -1989,9 +2275,16 @@ Effects include dizziness, nausea, vision and hearing loss, vomiting, inability 
                 <canTargetLocations>false</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_discord</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- magic warddrobe -->	
+		
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_MagicWardrobe</defName>
@@ -2027,9 +2320,16 @@ Effects include dizziness, nausea, vision and hearing loss, vomiting, inability 
                 <canTargetLocations>false</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_magicwardrobe</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- heat shield -->	
+		
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_HeatShield</defName>
@@ -2072,9 +2372,16 @@ Effects include dizziness, nausea, vision and hearing loss, vomiting, inability 
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>			
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_heatshield</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- alter storm -->	
+		
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_AlterStorm</defName>
@@ -2109,6 +2416,13 @@ Effects include dizziness, nausea, vision and hearing loss, vomiting, inability 
             <muzzleFlashScale>20</muzzleFlashScale>
             <isPrimary>false</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_alterstorm</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
 </Defs>

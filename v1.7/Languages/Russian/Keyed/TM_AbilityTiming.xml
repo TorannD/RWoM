@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+<TM_GlobalCooldown>Перезарядка способностей</TM_GlobalCooldown>
+<TM_GlobalWarmup>Подготовка способностей</TM_GlobalWarmup>
+<TM_GlobalTimingDesc>Для всех способностей RWoM, включая врагов и классовые дополнения. 100% — обычная скорость; ниже — быстрее. Текущие перезарядки не пересчитываются.</TM_GlobalTimingDesc>
+</LanguageData>

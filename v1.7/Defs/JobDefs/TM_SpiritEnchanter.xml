@@ -1,0 +1,15 @@
+<Defs>
+  <JobDef><defName>TM_SpiritTransmutate</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>transmuting a material.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritEnchantedBody</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>enchanting the body.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritEnchantedAura</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>enchanting the aura.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritEnchanterStone</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>creating an enchanted stone.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritDismissEnchanterStones</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>dismissing an enchanted stone.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritEnchantWeapon</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>enchanting a weapon.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritDispelEnchantWeapon</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>dispelling weapon enchantments.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritPolymorph</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>casting polymorph.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritPolymorph_I</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>casting polymorph.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritPolymorph_II</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>casting polymorph.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritPolymorph_III</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>casting polymorph.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritShapeshift</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>shapeshifting.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritShapeshiftDW</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>shifting into a dire wolf.</reportString></JobDef>
+</Defs>

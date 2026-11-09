@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_SniperAscensionRequirements>武技等级 {0}/30。完成任一试炼：掩护救援 {1}/6 次，或完成疏散演习 {2}/8 次。</TM_SniperAscensionRequirements>
+  <TM_SniperAscensionDrillHint>选择两张相距至少12格的殖民地病床或普通床。狙击手会在两处演练。每天最多计入一次已完成的演习。</TM_SniperAscensionDrillHint>
+  <TM_SniperAscensionLearned>已习得的飞升技能：{0}。</TM_SniperAscensionLearned>
+  <TM_SniperAscend>选择飞升技能</TM_SniperAscend>
+  <TM_SniperChooseCloak>{0}——隐蔽（永久选择）</TM_SniperChooseCloak>
+  <TM_SniperChooseOpening>{0}——连续射击（永久选择）</TM_SniperChooseOpening>
+  <TM_SniperBeginDrill>进行疏散演习</TM_SniperBeginDrill>
+  <TM_SniperDrillFirst>请选择殖民地的第一张床。</TM_SniperDrillFirst>
+  <TM_SniperDrillSecond>请选择距离第一张床至少12格的第二张床。</TM_SniperDrillSecond>
+  <TM_SniperAscensionRescueHint>出现威胁时，征召持远程武器的狙击手。在另一名殖民者将受伤盟友送到床上时，狙击手需能看到该床位，距离不能超过35格。每名获救盟友只计算一次。</TM_SniperAscensionRescueHint>
+  <TM_SniperOpeningUnavailable>需要习得一线战机，至少有60%耐力，且冷却完毕。</TM_SniperOpeningUnavailable>
+</LanguageData>

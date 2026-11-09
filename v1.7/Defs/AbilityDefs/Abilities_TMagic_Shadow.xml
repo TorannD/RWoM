@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-	    <!-- Shadow Walk -->
+	    
 
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_ShadowWalk</defName>
@@ -18,7 +17,7 @@
             <hasStandardCommand>true</hasStandardCommand>
             <defaultProjectile>Projectile_Default</defaultProjectile>
             <abilityDef>TM_ShadowWalk</abilityDef>
-            <!-- <AbilityTargetCategory>TargetLocation</AbilityTargetCategory> -->
+            
             <targetParams>
                 <canTargetItems>false</canTargetItems>
 				<canTargetPawns>true</canTargetPawns>
@@ -37,11 +36,18 @@
             <muzzleFlashScale>0</muzzleFlashScale>
             <isPrimary>false</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_shadowwalk</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-    <!-- Shadow Walk End-->
+    
 	
-	<!-- Shadow Strike -->
+	
 	<ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
         <thingClass>TorannMagic.Projectile_ShadowStrike</thingClass>
 		<defName>Projectile_ShadowStrike</defName>
@@ -57,7 +63,7 @@
             <damageAmountBase>0</damageAmountBase>
             <speed>999</speed>
         </projectile>
-    </ThingDef>
+</ThingDef>
 
 	<TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_ShadowStrike</defName>
@@ -90,9 +96,16 @@
             <muzzleFlashScale>20</muzzleFlashScale>
             <isPrimary>false</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_shadowstrike</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- Nightshade -->
+	
 
 	<TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_Nightshade</defName>
@@ -131,9 +144,16 @@ This ability requires 30 stamina to maintain and reduces stamina regeneration by
 			<soundCast>TM_VibrationLow</soundCast>
             <isPrimary>true</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_nightshade</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- Veil of Shadows -->
+	
 
 	<TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_VeilOfShadows</defName>
@@ -167,6 +187,13 @@ This ability requires 30 stamina to maintain and reduces stamina regeneration by
             <muzzleFlashScale>0</muzzleFlashScale>
             <isPrimary>true</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_veilofshadows</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
 </Defs>

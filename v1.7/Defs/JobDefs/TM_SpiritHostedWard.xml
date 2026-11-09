@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef>
+    <defName>TM_SpiritCastPaladinShield</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedWard</driverClass>
+    <reportString>projecting a paladin shield.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCastDisguise</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedWard</driverClass>
+    <reportString>projecting a disguise.</reportString>
+  </JobDef>
+</Defs>

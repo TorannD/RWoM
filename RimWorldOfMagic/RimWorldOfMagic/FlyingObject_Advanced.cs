@@ -122,6 +122,30 @@ namespace TorannMagic
             //Scribe_References.Look<Thing>(ref this.launcher, "launcher", false);
             Scribe_Deep.Look<Thing>(ref this.flyingThing, "flyingThing", new object[0]);
             Scribe_References.Look<Pawn>(ref this.pawn, "pawn", false);
+            // AdvancedLaunch snapshots trajectory and explosive payload. Re-reading
+            // the caster after loading would change an already launched shell.
+            Scribe_Values.Look(ref trueOrigin, "TM_trueOrigin");
+            Scribe_Values.Look(ref trueDestination, "TM_trueDestination");
+            Scribe_Values.Look(ref speed, "TM_flightSpeed", 30f);
+            Scribe_Values.Look(ref force, "TM_flightForce", 1f);
+            Scribe_Values.Look(ref travelVector, "TM_travelVector");
+            Scribe_Values.Look(ref spinning, "TM_spinning");
+            Scribe_Values.Look(ref curveVariance, "TM_curveVariance");
+            Scribe_Collections.Look(ref curvePoints, "TM_curvePoints", LookMode.Value);
+            Scribe_Values.Look(ref destinationCurvePoint, "TM_curvePoint");
+            Scribe_Values.Look(ref doublesidedVariance, "TM_doubleVariance");
+            Scribe_Values.Look(ref impactRadius, "TM_impactRadius");
+            Scribe_Values.Look(ref explosionDamage, "TM_explosionDamage");
+            Scribe_Values.Look(ref isExplosive, "TM_isExplosive");
+            Scribe_Defs.Look(ref impactDamageType, "TM_impactDamageType");
+            Scribe_Values.Look(ref fliesOverhead, "TM_fliesOverhead");
+            Scribe_Values.Look(ref earlyImpact, "TM_earlyImpact");
+            Scribe_Values.Look(ref impactForce, "TM_impactForce");
+            Scribe_Values.Look(ref weaponDmg, "TM_weaponDmg");
+            Scribe_Defs.Look(ref moteDef, "TM_moteDef");
+            Scribe_Values.Look(ref moteFrequency, "TM_moteFrequency");
+            Scribe_Values.Look(ref moteSize, "TM_moteSize", 1f);
+            if (Scribe.mode == LoadSaveMode.PostLoadInit) curvePoints ??= new List<Vector3>();
         }
 
         public virtual void PreInitialize()
@@ -238,6 +262,9 @@ namespace TorannMagic
                 this.curvePoints.Add(this.curvePoints[i - 1] + ((Quaternion.AngleAxis(curveAngle, Vector3.up) * initialVector) * incrementalDistance)); //(Quaternion.AngleAxis(curveAngle, Vector3.up) *
                 curveAngle -= incrementalAngle;
             }
+            // The sampled ellipse is approximate; its last sample must still be
+            // the chosen target, rather than a neighbouring cell.
+            this.curvePoints[this.curvePoints.Count - 1] = end;
         }
 
         public Vector3 GetVector(Vector3 center, Vector3 objectPos)
@@ -302,6 +329,8 @@ namespace TorannMagic
                         }
                         else
                         {
+                            this.destination = this.trueDestination;
+                            this.ticksToImpact = 0;
                             bool flag3 = this.DestinationCell.InBoundsWithNullCheck(base.Map);
                             if (flag3)
                             {
@@ -312,6 +341,7 @@ namespace TorannMagic
                     }
                     else
                     {
+                        this.ticksToImpact = 0;
                         bool flag3 = this.DestinationCell.InBoundsWithNullCheck(base.Map);
                         if (flag3)
                         {

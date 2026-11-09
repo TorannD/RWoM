@@ -120,7 +120,7 @@ internal static class FleshCastingTests
             var wait = Toils(driver)[0];
             Check.Equal(ToilCompleteMode.Delay, wait.defaultCompleteMode, "vanilla delayed toil");
             Check.Equal(true, wait.preTickActions?.Count > 0 || wait.preTickIntervalActions?.Count > 0, "standard progress effect installed");
-            Check.Equal(true, Calls(typeof(FleshMultiplayer).GetMethod("Register")!, "TryStart"), "new request synchronized in MP registration");
+            Check.Equal(true, Calls(Assembly.LoadFrom(Environment.GetEnvironmentVariable("RWOM_MULTIPLAYER_ADAPTER")!).GetType("TorannMagic.Integrations.FleshMultiplayerRegistration", true)!.GetMethod("Register")!, "TryStart"), "new request synchronized in MP registration");
         }));
         yield return new("FleshCasting.PreparationPulsesAreBoundedAndSeparateFromSuccess", f => InWorld(f, pawn =>
         {

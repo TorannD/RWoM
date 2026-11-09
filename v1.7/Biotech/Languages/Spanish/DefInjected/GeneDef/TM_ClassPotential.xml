@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ManaGene.label>maná</TM_ManaGene.label>
+  <TM_StaminaGene.label>aguante</TM_StaminaGene.label>
+  <TM_ManaGene.description>Un portador sin clase obtiene potencial mágico y puede aprender una clase de mago. Si ya tiene una clase, este gen representa su magia y no concede otra clase ni potencial adicional. Los hijos de los portadores pueden nacer con el gen de mago oculto.</TM_ManaGene.description>
+  <TM_StaminaGene.description>Un portador sin clase obtiene potencial físico y puede aprender una clase de guerrero. Si ya tiene una clase, este gen representa su poder físico y no concede otra clase ni potencial adicional. Los hijos de los portadores pueden nacer con el gen de guerrero durmiente.</TM_StaminaGene.description>
+</LanguageData>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_TravelSafety_Warning>{0}在目的地可能受到伤害：{1}。是否继续移动？</TM_TravelSafety_Warning>
+  <TM_TravelSafety_Vacuum>真空</TM_TravelSafety_Vacuum>
+  <TM_TravelSafety_Cold>危险的低温</TM_TravelSafety_Cold>
+  <TM_TravelSafety_Heat>危险的高温</TM_TravelSafety_Heat>
+  <TM_TravelSafety_ShellExpiring>以太护罩即将消失</TM_TravelSafety_ShellExpiring>
+  <TM_TravelSafety_Changed>目的地已不再安全。请重新下达移动命令以确认风险。</TM_TravelSafety_Changed>
+</LanguageData>

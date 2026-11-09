@@ -1,4 +1,4 @@
-﻿using Verse;
+using Verse;
 using RimWorld;
 using AbilityUser;
 using System.Linq;
@@ -9,11 +9,10 @@ using UnityEngine;
 namespace TorannMagic
 {
     [StaticConstructorOnStartup]
-    public class Projectile_HealingCircle : Projectile_AbilityBase
+    public class Projectile_HealingCircle : ClassProgression.Projectile_SpiritBolt
     {
-        int pwrVal = 0;
-        int verVal = 0;
-        private float arcaneDmg = 1;
+        protected override List<MagicPowerSkill> Skills(MagicData data) => data.MagicPowerSkill_HealingCircle;
+        protected override string SkillStem => "TM_HealingCircle";
         int age = -1;
         int duration = 1200;
         float radius = 6;
@@ -48,6 +47,9 @@ namespace TorannMagic
             Scribe_Values.Look<int>(ref this.verVal, "verVal", 0, false);
             Scribe_Values.Look<int>(ref this.pwrVal, "pwrVal", 0, false);
             Scribe_References.Look<Pawn>(ref this.caster, "caster", false);
+            Scribe_Values.Look(ref ringFrac, "TM_ringPhase");
+            Scribe_Values.Look(ref innerRing, "TM_innerRing");
+            Scribe_Values.Look(ref outerRing, "TM_outerRing");
         }
 
         private int TicksLeft
@@ -63,28 +65,31 @@ namespace TorannMagic
             Map map = base.Map;
             base.Impact(hitThing);
             ThingDef def = this.def;
-            this.caster = this.launcher as Pawn;
+            this.caster = SpellInstigator as Pawn;
 
             if(!this.initialized)
             {
-                CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
-                MagicPowerSkill pwr = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_HealingCircle.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_HealingCircle_pwr");
-                MagicPowerSkill ver = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_HealingCircle.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_HealingCircle_ver");
-                pwrVal = pwr.level;
-                verVal = ver.level;
-                if (caster.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+                if (!projected)
                 {
-                    MightPowerSkill mpwr = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-                    MightPowerSkill mver = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
-                    pwrVal = mpwr.level;
-                    verVal = mver.level;
-                }
-                this.arcaneDmg = comp.arcaneDmg;
-                
-                if (!caster.IsColonist && ModOptions.Settings.Instance.AIHardMode)
-                {
-                    pwrVal = 3;
-                    verVal = 3;
+                    CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
+                    MagicPowerSkill pwr = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_HealingCircle.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_HealingCircle_pwr");
+                    MagicPowerSkill ver = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_HealingCircle.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_HealingCircle_ver");
+                    pwrVal = pwr.level;
+                    verVal = ver.level;
+                    if (caster.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+                    {
+                        MightPowerSkill mpwr = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
+                        MightPowerSkill mver = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
+                        pwrVal = mpwr.level;
+                        verVal = mver.level;
+                    }
+                    this.arcaneDmg = comp.arcaneDmg;
+
+                    if (!caster.IsColonist && ModOptions.Settings.Instance.AIHardMode)
+                    {
+                        pwrVal = 3;
+                        verVal = 3;
+                    }
                 }
                 this.radius = this.def.projectile.explosionRadius;
                 this.angle = Rand.Range(-12, 12);
@@ -140,25 +145,29 @@ namespace TorannMagic
         public void Search(Map map)
         {
             IntVec3 curCell;
-            IEnumerable<IntVec3> targets = GenRadial.RadialCellsAround(base.Position, this.radius, true);
+            var targets = GenRadial.RadialCellsAround(base.Position, this.radius, true).ToArray();
             IEnumerable<IntVec3> innerCircle = GenRadial.RadialCellsAround(base.Position, this.innerRing, true);
             IEnumerable<IntVec3> outerCircle = GenRadial.RadialCellsAround(base.Position, this.outerRing, true);
 
-            for (int i = innerCircle.Count(); i < outerCircle.Count(); i++)
+            // A radius of zero already contains the origin. Include it in the first
+            // pulse, then start each following pulse after its completed inner ring.
+            int first = innerRing == 0f ? 0 : innerCircle.Count();
+            int end = Math.Min(targets.Length, outerCircle.Count());
+            for (int i = first; i < end; i++)
             {                
                 Pawn pawn = null;                
-                curCell = targets.ToArray<IntVec3>()[i];
+                curCell = targets[i];
                 if (curCell.InBoundsWithNullCheck(map) && curCell.IsValid)
                 {
                     pawn = curCell.GetFirstPawn(map);
                 }
-                if (pawn != null && (pawn.Faction == caster.Faction || pawn.IsPrisoner || pawn.Faction == null || (pawn.Faction != null && !pawn.Faction.HostileTo(caster.Faction))) && !TM_Calc.IsUndead(pawn))
+                if (pawn != null && (pawn.Faction == caster?.Faction || pawn.IsPrisoner || pawn.Faction == null || (pawn.Faction != null && caster?.Faction != null && !pawn.Faction.HostileTo(caster.Faction))) && !TM_Calc.IsUndead(pawn))
                 {
                     Heal(pawn);
                 }
                 if(pawn != null && TM_Calc.IsUndead(pawn))
                 {
-                    TM_Action.DamageUndead(pawn, (10.0f + (float)pwrVal * 3f) * this.arcaneDmg, this.launcher);
+                    TM_Action.DamageUndead(pawn, (10.0f + (float)pwrVal * 3f) * this.arcaneDmg, SpellInstigator);
                 }
             }
         }
@@ -170,7 +179,7 @@ namespace TorannMagic
             IEnumerable<Hediff_Injury> injuries = pawn.health.hediffSet.hediffs
                 .OfType<Hediff_Injury>()
                 .Where(injury => injury.CanHealNaturally())
-                .Take(1 + verVal);
+                .Take(1 + verVal).ToList();
 
             float healAmount = (10.0f + pwrVal * 2f) * arcaneDmg;
             foreach (Hediff_Injury injury in injuries)

@@ -1,0 +1,13 @@
+<LanguageData>
+  <TM_ReadSuperSoldierCloseQuarters>Combate próximo</TM_ReadSuperSoldierCloseQuarters>
+  <TM_ReadSuperSoldierFieldAid>Medicina de campanha</TM_ReadSuperSoldierFieldAid>
+  <TM_SoldierMaintenance>Repara armas gastas ({0}/20) ou trata feridas de aliados com medicamentos ({1}/10).</TM_SoldierMaintenance>
+  <TM_SoldierTraining>Atinge inimigos diferentes com a arma escolhida ({0}/10) ou trata feridas de aliados ({1}/20).</TM_SoldierTraining>
+  <TM_SoldierShifts>Completa oito dias de combate ou de cuidados médicos ({0}/8). Nível de guerreiro {1}/30.</TM_SoldierShifts>
+  <TM_SoldierSurgeon>Cirurgião de campanha (+15% à qualidade dos cuidados)</TM_SoldierSurgeon>
+  <TM_SoldierMarksman>Atirador (+7% à precisão da arma escolhida)</TM_SoldierMarksman>
+  <TM_SoldierChooseSchool>Escolher uma especialização permanente de arma</TM_SoldierChooseSchool>
+  <TM_SoldierAdvance>Concluir etapa de treino</TM_SoldierAdvance>
+  <TM_SoldierService>Reparar uma arma gasta</TM_SoldierService>
+  <TM_SoldierNeedsMedicine>Requer uma ferida tratável e medicamentos no inventário pessoal.</TM_SoldierNeedsMedicine>
+</LanguageData>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Compverb</defName>
+    <label>secondary targeter</label>
+    <description>verb used in secondary targeting</description>
+    <spellId>rwom.tm_compverb</spellId>
+    <iconPath>Spells/invis</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>AbilityUser.Verb_UseAbility</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Default</defaultProjectile>
+      <abilityDef>TM_CompVerb</abilityDef>
+      <isViolent>false</isViolent>
+      <warmupTime>0</warmupTime>
+      <SecondsToRecharge>0</SecondsToRecharge>
+      <range>100</range>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_VibrationLow</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>2</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+</Defs>

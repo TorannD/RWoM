@@ -18,6 +18,13 @@ namespace TorannMagic
     {
         private bool initialized = false;
         Pawn sustainerPawn = null;
+        internal Pawn Owner => sustainerPawn;
+        internal void Bind(Pawn owner, int power)
+        {
+            sustainerPawn = owner;
+            pwrVal = power;
+        }
+
         Pawn hostilePawn = null;
         TMPawnSummoned newPawn = new TMPawnSummoned();
         private int age = -1;
@@ -44,31 +51,13 @@ namespace TorannMagic
             {
                 if (!initialized)
                 {
-                    List<Pawn> mapPawns = this.Map.mapPawns.AllPawnsSpawned.ToList();
-                    for(int i = 0; i < mapPawns.Count(); i++)
-                    {
-                        if (!mapPawns[i].DestroyedOrNull() && mapPawns[i].Spawned && !mapPawns[i].Downed && mapPawns[i].RaceProps.Humanlike)
+                    // Old statues may only have a reference in the caster's saved list.
+                    if (sustainerPawn == null)
+                        foreach (var body in Map.mapPawns.AllPawnsSpawned)
                         {
-                            CompAbilityUserMagic comp = mapPawns[i].GetCompAbilityUserMagic();
-                            if (comp.IsMagicUser && comp.summonedSentinels.Count > 0)
-                            {
-                                for (int j = 0; j < comp.summonedSentinels.Count(); j++)
-                                {
-                                    if(comp.summonedSentinels[j] == this)
-                                    {
-                                        this.sustainerPawn = comp.Pawn;
-                                        pwrVal = comp.MagicData.MagicPowerSkill_Sentinel.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Sentinel_pwr").level;
-                                        break;
-                                    }                                        
-                                }
-                            }
+                            if (TryRestoreOwner(body)) break;
+                            if (ClassProgression.SpiritRebirthState.TryGetPossessingSpirit(body,out var soul) && TryRestoreOwner(soul)) break;
                         }
-                        if(this.sustainerPawn != null)
-                        {
-                            break;
-                        }
-                    }
-
                     for (int m = 0; m < 5; m++)
                     {
                         TM_MoteMaker.ThrowGenericFleck(FleckDefOf.Smoke, base.Position.ToVector3Shifted(), this.Map, Rand.Range(.5f, .8f), Rand.Range(.8f, 1.3f), .05f, Rand.Range(1f, 1.5f), Rand.Range(-20, 20), Rand.Range(1f, 2f), Rand.Range(0, 360), Rand.Range(0, 360));
@@ -108,6 +97,7 @@ namespace TorannMagic
                             {
                                 SpawnSentinel();
                                 CompAbilityUserMagic comp = this.sustainerPawn.GetCompAbilityUserMagic();
+                                if (newPawn?.Spawned != true) return;
                                 comp.summonedSentinels.Remove(this);
                                 comp.summonedSentinels.Add(this.newPawn as Thing);
                                 this.Destroy(DestroyMode.Vanish);
@@ -117,6 +107,14 @@ namespace TorannMagic
                 }
             }
             age++;
+        }
+
+        private bool TryRestoreOwner(Pawn pawn)
+        {
+            var comp = pawn?.GetCompAbilityUserMagic();
+            if (comp?.summonedSentinels?.Contains(this) != true) return false;
+            Bind(pawn, ClassProgression.SpiritRebirthRuntime.SavedRank(comp.MagicData,"TM_Sentinel_pwr"));
+            return true;
         }
 
         public Pawn SearchForTargets()
@@ -236,7 +234,7 @@ namespace TorannMagic
                                 {
                                     Predicate<Thing> validator = (Thing p) => p != newPawn && ((Pawn)p).GetLord() != null;
                                     Pawn p2 = (Pawn)GenClosest.ClosestThing_Global(newPawn.Position, newPawn.Map.mapPawns.SpawnedPawnsInFaction(faction), 99999f, validator, null);
-                                    lord = p2.GetLord();
+                                    lord = p2?.GetLord();
                                 }
                                 bool flag4 = lord == null;
                                 if (flag4)

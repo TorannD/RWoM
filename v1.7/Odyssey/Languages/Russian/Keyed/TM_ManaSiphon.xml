@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SiphonReserveDesc>Минимальный запас маны, остающийся у мага. Настраивается от 0% до 100%.</TM_SiphonReserveDesc>
+  <TM_SiphonDonationDesc>Максимальная доля запаса маны мага, передаваемая за одно посещение. Настраивается от 0% до 100%. Перед следующим посещением нужно полностью восстановить ману.</TM_SiphonDonationDesc>
+  <TM_SiphonNeedsFullMana>Перед следующей передачей нужно полностью восстановить ману.</TM_SiphonNeedsFullMana>
+  <TM_SiphonReserveLabel>Личный резерв маны</TM_SiphonReserveLabel>
+  <TM_SiphonNoTanks>Нет подключённого резервуара, способного принять ману.</TM_SiphonNoTanks>
+  <TM_SiphonDonationLabel>Максимальная передача за посещение</TM_SiphonDonationLabel>
+  <TM_SiphonInspect>Личный резерв: {0}; передача за посещение: до {1}</TM_SiphonInspect>
+</LanguageData>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_EmotionalWeightTD.stages.Emotional_baggage.label>equipaje emocional</TM_EmotionalWeightTD.stages.Emotional_baggage.label>
+  
+  <TM_EmotionalWeightTD.stages.Emotional_baggage.description>Cargando con el peso de las emociones de todos.</TM_EmotionalWeightTD.stages.Emotional_baggage.description>
+  
+  
+  <TM_NegativeEmpathyTD.stages.negative_vibes.label>malas vibraciones</TM_NegativeEmpathyTD.stages.negative_vibes.label>
+  
+  <TM_NegativeEmpathyTD.stages.negative_vibes.description>Emociones obtenidas mediante la empatía.</TM_NegativeEmpathyTD.stages.negative_vibes.description>
+  
+  
+  <TM_OutOfBodyThought.stages.out_of_body.label>fuera del cuerpo</TM_OutOfBodyThought.stages.out_of_body.label>
+  
+  <TM_OutOfBodyThought.stages.out_of_body.description>La energía emocional se está usando para potenciar a otro peón.</TM_OutOfBodyThought.stages.out_of_body.description>
+  
+  
+  <TM_PositiveEmpathyTD.stages.positive_vibes.label>buenas vibraciones</TM_PositiveEmpathyTD.stages.positive_vibes.label>
+  
+  <TM_PositiveEmpathyTD.stages.positive_vibes.description>Emociones obtenidas mediante la empatía.</TM_PositiveEmpathyTD.stages.positive_vibes.description>
+  
+  
+  <TM_SuppressiveAuraTD.stages.Emotion_thief.label>ladrón de emociones</TM_SuppressiveAuraTD.stages.Emotion_thief.label>
+  
+  <TM_SuppressiveAuraTD.stages.Emotion_thief.description>Siento una profunda tristeza y una sensación de pérdida al privar a otros de su capacidad de sentir.</TM_SuppressiveAuraTD.stages.Emotion_thief.description>
+  
+  
+  <TM_SymbiosisThought.stages.symbiosis.label>simbiosis</TM_SymbiosisThought.stages.symbiosis.label>
+  
+  <TM_SymbiosisThought.stages.symbiosis.description>Entereza emocional proporcionada por una conexión simbiótica con un empático.</TM_SymbiosisThought.stages.symbiosis.description>
+  
+</LanguageData>

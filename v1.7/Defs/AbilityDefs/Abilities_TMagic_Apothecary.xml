@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
- <!-- Herbalist - ability is never used, influences how much hediff is gained while harvesting plants -->
+ 
  
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_Herbalist</defName>
@@ -34,10 +33,17 @@
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_herbalist</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
   
-  <!-- Poison Flask-->	
+  	
     <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>TorannMagic.Projectile_PoisonFlask</thingClass>
 	    <defName>Projectile_PoisonFlask</defName>
@@ -55,7 +61,7 @@
 			<explosionRadius>4</explosionRadius>
 			<postExplosionSpawnChance>1</postExplosionSpawnChance>
         </projectile>
-    </ThingDef>
+</ThingDef>
 
     <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_PoisonFlask</defName>
@@ -93,7 +99,14 @@
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_poisonflask</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_Elixir</defName>
@@ -132,7 +145,14 @@
                 <canTargetLocations>false</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_elixir</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_SoothingBalm</defName>
@@ -171,9 +191,16 @@
                 <canTargetLocations>false</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_soothingbalm</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- Fire suppression Flask-->	
+		
     <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 	    <defName>Projectile_FireDousingFlask</defName>
 		<thingClass>TorannMagic.Projectile_FireSuppressionFlask</thingClass>
@@ -193,7 +220,7 @@
 			<postExplosionSpawnThingDef>Filth_FireFoam</postExplosionSpawnThingDef>
 			<postExplosionSpawnThingCount>1</postExplosionSpawnThingCount>
         </projectile>
-    </ThingDef>
+</ThingDef>
 
     <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_FireSuppressionFlask</defName>
@@ -235,7 +262,14 @@ Radius: 6</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_firesuppressionflask</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 	    <defName>Projectile_FireDousingFlask_I</defName>
@@ -256,7 +290,7 @@ Radius: 6</description>
 			<postExplosionSpawnThingDef>Filth_FireFoam</postExplosionSpawnThingDef>
 			<postExplosionSpawnThingCount>1</postExplosionSpawnThingCount>
         </projectile>
-    </ThingDef>
+</ThingDef>
 
     <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_FireSuppressionFlask_I</defName>
@@ -299,7 +333,14 @@ Radius: 8</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_firesuppressionflask_i</spellId>
+<domain>Might</domain>
+<tier>1</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 	    <defName>Projectile_FireDousingFlask_II</defName>
@@ -320,7 +361,7 @@ Radius: 8</description>
 			<postExplosionSpawnThingDef>Filth_FireFoam</postExplosionSpawnThingDef>
 			<postExplosionSpawnThingCount>1</postExplosionSpawnThingCount>
         </projectile>
-    </ThingDef>
+</ThingDef>
 
     <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_FireSuppressionFlask_II</defName>
@@ -363,7 +404,14 @@ Radius: 10</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_firesuppressionflask_ii</spellId>
+<domain>Might</domain>
+<tier>2</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 	    <defName>Projectile_FireDousingFlask_III</defName>
@@ -384,7 +432,7 @@ Radius: 10</description>
 			<postExplosionSpawnThingDef>Filth_FireFoam</postExplosionSpawnThingDef>
 			<postExplosionSpawnThingCount>1</postExplosionSpawnThingCount>
         </projectile>
-    </ThingDef>
+</ThingDef>
 
     <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_FireSuppressionFlask_III</defName>
@@ -427,9 +475,16 @@ Radius: 11</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_firesuppressionflask_iii</spellId>
+<domain>Might</domain>
+<tier>3</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- Herbal Clarity -->	
+		
 	<TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_HerbalClarity</defName>
         <label>Clarity</label>
@@ -476,9 +531,16 @@ Radius: 11</description>
 				</li>
 			</hediffsToApply>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_herbalclarity</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- Bliss -->	
+		
 	<TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_HerbalBliss</defName>
         <label>Bliss</label>
@@ -526,6 +588,13 @@ Radius: 11</description>
 				</li>
 			</hediffsToApply>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_herbalbliss</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
 </Defs>

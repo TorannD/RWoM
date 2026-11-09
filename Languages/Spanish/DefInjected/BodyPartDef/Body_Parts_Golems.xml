@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <Flesh_Abdomen.label>abdomen</Flesh_Abdomen.label>
+  
+  
+  <Flesh_Back.label>espalda</Flesh_Back.label>
+  
+  
+  <Flesh_Body.label>torso</Flesh_Body.label>
+  
+  
+  <Flesh_Brain.label>cerebro</Flesh_Brain.label>
+  
+  
+  <Flesh_Chest.label>pecho</Flesh_Chest.label>
+  
+  
+  <Flesh_Ear.label>oreja</Flesh_Ear.label>
+  
+  
+  <Flesh_EvilEye.label>mal de ojo</Flesh_EvilEye.label>
+  
+  
+  <Flesh_Eye.label>ojo</Flesh_Eye.label>
+  
+  
+  <Flesh_Face.label>cara</Flesh_Face.label>
+  
+  
+  <Flesh_Femur.label>fémur</Flesh_Femur.label>
+  
+  
+  <Flesh_Foot.label>pie</Flesh_Foot.label>
+  
+  
+  <Flesh_Guts.label>tripas</Flesh_Guts.label>
+  
+  
+  <Flesh_Hand.label>mano</Flesh_Hand.label>
+  
+  
+  <Flesh_Head.label>cabeza</Flesh_Head.label>
+  
+  
+  <Flesh_Heart.label>corazón</Flesh_Heart.label>
+  
+  
+  <Flesh_Horns.label>cuernos</Flesh_Horns.label>
+  
+  
+  <Flesh_Jaw.label>mandíbula</Flesh_Jaw.label>
+  
+  
+  <Flesh_LeftArm.label>brazo izquierdo</Flesh_LeftArm.label>
+  
+  
+  <Flesh_LeftArm_Brace.label>brazal izquierdo</Flesh_LeftArm_Brace.label>
+  
+  
+  <Flesh_LeftArm_Cleaver.label>cuchilla izquierda</Flesh_LeftArm_Cleaver.label>
+  
+  
+  <Flesh_Leg.label>pierna</Flesh_Leg.label>
+  
+  
+  <Flesh_LowerEye.label>ojo</Flesh_LowerEye.label>
+  
+  
+  <Flesh_Lung.label>pulmón</Flesh_Lung.label>
+  
+  
+  <Flesh_Neck.label>cuello</Flesh_Neck.label>
+  
+  
+  <Flesh_Nose.label>nariz</Flesh_Nose.label>
+  
+  
+  <Flesh_Ribcage.label>caja torácica</Flesh_Ribcage.label>
+  
+  
+  <Flesh_RightArm.label>brazo derecho</Flesh_RightArm.label>
+  
+  
+  <Flesh_RightArm_Brace.label>brazal derecho</Flesh_RightArm_Brace.label>
+  
+  
+  <Flesh_RightArm_Cleaver.label>cuchilla derecha</Flesh_RightArm_Cleaver.label>
+  
+  
+  <Flesh_Shoulder.label>hombro</Flesh_Shoulder.label>
+  
+  
+  <Flesh_Skull.label>cráneo</Flesh_Skull.label>
+  
+  
+  <Flesh_Spine.label>columna vertebral</Flesh_Spine.label>
+  
+  
+  <Flesh_Tibia.label>tibia</Flesh_Tibia.label>
+  
+  
+  <Flesh_Tongue.label>lengua</Flesh_Tongue.label>
+  
+  
+  <Flesh_Tusks.label>colmillos</Flesh_Tusks.label>
+  
+  
+  <Flesh_Waist.label>cintura</Flesh_Waist.label>
+  
+  
+  <Flesh_Wings.label>alas</Flesh_Wings.label>
+  
+  
+  <Golem_Abdomen.label>abdomen</Golem_Abdomen.label>
+  
+  
+  <Golem_Back.label>espalda</Golem_Back.label>
+  
+  
+  <Golem_Body.label>torso</Golem_Body.label>
+  
+  
+  <Golem_Brain.label>cerebro</Golem_Brain.label>
+  
+  
+  <Golem_Chest.label>pecho</Golem_Chest.label>
+  
+  
+  <Golem_Ear.label>oreja</Golem_Ear.label>
+  
+  
+  <Golem_Eye.label>ojo</Golem_Eye.label>
+  
+  
+  <Golem_Face.label>cara</Golem_Face.label>
+  
+  
+  <Golem_Femur.label>fémur</Golem_Femur.label>
+  
+  
+  <Golem_Foot.label>pie</Golem_Foot.label>
+  
+  
+  <Golem_Guts.label>tripas</Golem_Guts.label>
+  
+  
+  <Golem_Hand.label>mano</Golem_Hand.label>
+  
+  
+  <Golem_Head.label>cabeza</Golem_Head.label>
+  
+  
+  <Golem_Heart.label>corazón</Golem_Heart.label>
+  
+  
+  <Golem_Jaw.label>mandíbula</Golem_Jaw.label>
+  
+  
+  <Golem_LeftArm.label>brazo izquierdo</Golem_LeftArm.label>
+  
+  
+  <Golem_Leg.label>pierna</Golem_Leg.label>
+  
+  
+  <Golem_Lung.label>pulmón</Golem_Lung.label>
+  
+  
+  <Golem_Neck.label>cuello</Golem_Neck.label>
+  
+  
+  <Golem_Nose.label>nariz</Golem_Nose.label>
+  
+  
+  <Golem_Ribcage.label>caja torácica</Golem_Ribcage.label>
+  
+  
+  <Golem_RightArm.label>brazo derecho</Golem_RightArm.label>
+  
+  
+  <Golem_Shoulder.label>hombro</Golem_Shoulder.label>
+  
+  
+  <Golem_Skull.label>cráneo</Golem_Skull.label>
+  
+  
+  <Golem_Spine.label>columna vertebral</Golem_Spine.label>
+  
+  
+  <Golem_Tibia.label>tibia</Golem_Tibia.label>
+  
+  
+  <Golem_Tongue.label>lengua</Golem_Tongue.label>
+  
+  
+  <Golem_Waist.label>cintura</Golem_Waist.label>
+  
+  
+  <Hollow_Axe.label>hacha hueca</Hollow_Axe.label>
+  
+  
+  <Hollow_Core.label>núcleo hueco</Hollow_Core.label>
+  
+  
+  <Hollow_CoreSlotA.label>núcleo hueco</Hollow_CoreSlotA.label>
+  
+  
+  <Hollow_CoreSlotB.label>núcleo hueco</Hollow_CoreSlotB.label>
+  
+  
+  <Hollow_Staff.label>bastón hueco</Hollow_Staff.label>
+  
+  
+  <Hollow_Weapon.label>ranura de arma hueca</Hollow_Weapon.label>
+  
+  
+  <Maharal_Core.label>núcleo de Maharal</Maharal_Core.label>
+  
+  
+  <Maharal_SlotA.label>núcleo de Maharal (a)</Maharal_SlotA.label>
+  
+  
+  <Maharal_SlotB.label>núcleo de Maharal (b)</Maharal_SlotB.label>
+  
+  
+  <Mecha_Abdomen.label>abdomen</Mecha_Abdomen.label>
+  
+  
+  <Mecha_AI.label>núcleo de IA</Mecha_AI.label>
+  
+  
+  <Mecha_Back.label>placa dorsal</Mecha_Back.label>
+  
+  
+  <Mecha_Base.label>base de movimiento autómata</Mecha_Base.label>
+  
+  
+  <Mecha_Body.label>cuerpo</Mecha_Body.label>
+  
+  
+  <Mecha_Chest.label>placa pectoral</Mecha_Chest.label>
+  
+  
+  <Mecha_Core.label>CPU</Mecha_Core.label>
+  
+  
+  <Mecha_CoreProcessor.label>núcleo procesador</Mecha_CoreProcessor.label>
+  
+  
+  <Mecha_EnergyCompactor.label>compactador de energía</Mecha_EnergyCompactor.label>
+  
+  
+  <Mecha_Head.label>armazón de la cabeza</Mecha_Head.label>
+  
+  
+  <Mecha_LeftArm.label>brazo izquierdo</Mecha_LeftArm.label>
+  
+  
+  <Mecha_LeftArm_Axe.label>hacha mecánica</Mecha_LeftArm_Axe.label>
+  
+  
+  <Mecha_LeftArm_Sword.label>espada mecánica</Mecha_LeftArm_Sword.label>
+  
+  
+  <Mecha_LeftShoulder.label>hombro izquierdo</Mecha_LeftShoulder.label>
+  
+  
+  <Mecha_Neck.label>gorjal</Mecha_Neck.label>
+  
+  
+  <Mecha_Optics.label>óptica</Mecha_Optics.label>
+  
+  
+  <Mecha_RightArm.label>brazo derecho</Mecha_RightArm.label>
+  
+  
+  <Mecha_RightArm_Hammer.label>martillo mecánico</Mecha_RightArm_Hammer.label>
+  
+  
+  <Mecha_RightShoulder.label>hombro derecho</Mecha_RightShoulder.label>
+  
+  
+  <Mecha_Sensors.label>sensores</Mecha_Sensors.label>
+  
+  
+  <Mecha_SkullPlate.label>placa craneal</Mecha_SkullPlate.label>
+  
+  
+  <Mecha_Spine.label>vía espinal</Mecha_Spine.label>
+  
+  
+  <Mecha_Transmitter.label>transmisores</Mecha_Transmitter.label>
+  
+  
+  <Silk_SlotA.label>núcleo de seda (a)</Silk_SlotA.label>
+  
+  
+  <Silk_SlotB.label>núcleo de seda (b)</Silk_SlotB.label>
+  
+  
+  <Stone_Core.label>núcleo de piedra</Stone_Core.label>
+  
+  
+  <Stone_SlotA.label>núcleo de piedra (a)</Stone_SlotA.label>
+  
+  
+  <Stone_SlotB.label>núcleo de piedra (b)</Stone_SlotB.label>
+  
+  
+  <Straw_Core.label>núcleo del golem de paja</Straw_Core.label>
+  
+  
+  <Straw_Face.label>cara</Straw_Face.label>
+  
+  
+  <Straw_SlotA.label>núcleo de paja (a)</Straw_SlotA.label>
+  
+  
+  <Straw_SlotB.label>núcleo de paja (b)</Straw_SlotB.label>
+  
+  
+  <TM_Silk_Core.label>núcleo mágico</TM_Silk_Core.label>
+  
+  
+  <TM_Wood_Back.label>placa dorsal</TM_Wood_Back.label>
+  
+  
+  <TM_Wood_Base.label>base de movimiento</TM_Wood_Base.label>
+  
+  
+  <TM_Wood_Body.label>cuerpo</TM_Wood_Body.label>
+  
+  
+  <TM_Wood_Chest.label>placa pectoral</TM_Wood_Chest.label>
+  
+  
+  <TM_Wood_Core.label>núcleo mágico</TM_Wood_Core.label>
+  
+  
+  <TM_Wood_Focus.label>fuente de percepción</TM_Wood_Focus.label>
+  
+  
+  <TM_Wood_Manipulator.label>proyector de fuerza</TM_Wood_Manipulator.label>
+  
+  
+  <TM_Wood_Reserves.label>reservas de energía</TM_Wood_Reserves.label>
+  
+  
+  <Wood_SlotA.label>núcleo de madera (a)</Wood_SlotA.label>
+  
+  
+  <Wood_SlotB.label>núcleo de madera (b)</Wood_SlotB.label>
+  
+</LanguageData>

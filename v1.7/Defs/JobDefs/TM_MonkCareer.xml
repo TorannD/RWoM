@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef>
+    <defName>TM_ReadMonkRestorative</defName><driverClass>TorannMagic.ClassProgression.JobDriver_GladiatorInitiation</driverClass><reportString>studying the monk combat form.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_ReadMonkCultivation</defName><driverClass>TorannMagic.ClassProgression.JobDriver_GladiatorInitiation</driverClass><reportString>studying the monk combat form.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_MonkMeridianCast</defName><driverClass>TorannMagic.ClassProgression.JobDriver_MonkMeridian</driverClass><reportString>channeling a silent meridian.</reportString>
+  </JobDef>
+</Defs>

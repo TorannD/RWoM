@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <FlyingObject_TimeDelay.label>burbuja de tiempo</FlyingObject_TimeDelay.label>
+  
+  
+  <Projectile_AccelerateTime.label>acelerar tiempo</Projectile_AccelerateTime.label>
+  
+  
+  <Projectile_ChronostaticField.label>burbuja de tiempo</Projectile_ChronostaticField.label>
+  
+  
+  <Projectile_ChronostaticField_I.label>burbuja de tiempo I</Projectile_ChronostaticField_I.label>
+  
+  
+  <Projectile_ChronostaticField_II.label>burbuja de tiempo II</Projectile_ChronostaticField_II.label>
+  
+  
+  <Projectile_ChronostaticField_III.label>burbuja de tiempo III</Projectile_ChronostaticField_III.label>
+  
+</LanguageData>

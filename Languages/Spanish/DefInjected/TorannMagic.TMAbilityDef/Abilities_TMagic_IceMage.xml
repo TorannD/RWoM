@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Soothe.label>Brisa calmante</TM_Soothe.label>
+  <TM_Soothe.description>Crea un aura calmante alrededor del lanzador que potencia periódicamente a un aliado.
+
+Brisa calmante: aumento arcano que ayuda al trabajador, reduciendo el dolor y la fatiga y aumentando la concentración.
+
+Frecuencia de aplicación: 80-90 s
+Duración: 200-223 s
+Consciencia: +10 %
+Aumento de ánimo: +2
+Descanso y dolor: -10 %
+
+Requiere 40 de maná para mantenerse y reduce la regeneración de maná un 30 %; vuelve a lanzarla para desactivarla. El lanzador gana experiencia cada vez que potencia a un aliado.</TM_Soothe.description>
+
+  <TM_Soothe_I.label>Brisa calmante</TM_Soothe_I.label>
+  <TM_Soothe_I.description>Crea un aura calmante alrededor del lanzador que potencia periódicamente a un aliado.
+
+Brisa calmante: aumento arcano que ayuda al trabajador, reduciendo el dolor y la fatiga y aumentando la concentración.
+
+Frecuencia de aplicación: 80-90 s
+Duración: 200-223 s
+Consciencia: +12 %
+Aumento de ánimo: +3
+Descanso y dolor: -12 %
+
+Requiere 40 de maná para mantenerse y reduce la regeneración de maná un 30 %; vuelve a lanzarla para desactivarla. El lanzador gana experiencia cada vez que potencia a un aliado.</TM_Soothe_I.description>
+
+  <TM_Soothe_II.label>Brisa calmante</TM_Soothe_II.label>
+  <TM_Soothe_II.description>Crea un aura calmante alrededor del lanzador que potencia periódicamente a un aliado.
+
+Brisa calmante: aumento arcano que ayuda al trabajador, reduciendo el dolor y la fatiga y aumentando la concentración.
+
+Frecuencia de aplicación: 80-90 s
+Duración: 500-600 s
+Consciencia: +14 %
+Aumento de ánimo: +4
+Descanso y dolor: -14 %
+
+Requiere 40 de maná para mantenerse y reduce la regeneración de maná un 30 %; vuelve a lanzarla para desactivarla. El lanzador gana experiencia cada vez que potencia a un aliado.</TM_Soothe_II.description>
+
+  <TM_Soothe_III.label>Brisa calmante</TM_Soothe_III.label>
+  <TM_Soothe_III.description>Crea un aura calmante alrededor del lanzador que potencia periódicamente a un aliado.
+
+Brisa calmante: aumento arcano que ayuda al trabajador, reduciendo el dolor y la fatiga y aumentando la concentración.
+
+Frecuencia de aplicación: 80-90 s
+Duración: 500-600 s
+Consciencia: +15 %
+Aumento de ánimo: +5
+Descanso y dolor: -15 %
+
+Requiere 40 de maná para mantenerse y reduce la regeneración de maná un 30 %; vuelve a lanzarla para desactivarla. El lanzador gana experiencia cada vez que potencia a un aliado.</TM_Soothe_III.description>
+
+  <TM_FrostRay.label>Rayo de escarcha</TM_FrostRay.label>
+  <TM_FrostRay.description>Rayo de partículas sobreenfriadas que se extiende con rapidez, daña y congela a los objetivos.
+
+Tiempo de recarga: 12 s
+Alcance: 28
+Disparos: 1</TM_FrostRay.description>
+
+  <TM_FrostRay_I.label>Rayo de escarcha</TM_FrostRay_I.label>
+  <TM_FrostRay_I.description>Rayo de partículas sobreenfriadas que se extiende con rapidez, daña y congela a los objetivos.
+
+Tiempo de recarga: 10 s
+Alcance: 30
+Disparos: 1</TM_FrostRay_I.description>
+
+  <TM_FrostRay_II.label>Rayo de escarcha</TM_FrostRay_II.label>
+  <TM_FrostRay_II.description>Rayo de partículas sobreenfriadas que se extiende con rapidez, daña y congela a los objetivos.
+
+Tiempo de recarga: 8 s
+Alcance: 32
+Disparos: 2</TM_FrostRay_II.description>
+
+  <TM_FrostRay_III.label>Rayo de escarcha</TM_FrostRay_III.label>
+  <TM_FrostRay_III.description>Rayo de partículas sobreenfriadas que se extiende con rapidez, daña y congela a los objetivos.
+
+Tiempo de recarga: 8 s
+Alcance: 34
+Disparos: 3</TM_FrostRay_III.description>
+
+  <TM_Snowball.label>Bola de nieve</TM_Snowball.label>
+  <TM_Snowball.description>Lanza una enorme bola de hielo y nieve que daña y congela una gran área al impactar.</TM_Snowball.description>
+
+  <TM_Icebolt.label>Rayo de hielo</TM_Icebolt.label>
+  <TM_Icebolt.description>Lanza un rayo de hielo creado especialmente para romperse en esquirlas similares al cristal al impactar, causando daño y hemorragias graves.</TM_Icebolt.description>
+
+  <TM_Rainmaker.label>Hacedor de lluvia</TM_Rainmaker.label>
+  <TM_Rainmaker.description>Altera las condiciones de la atmósfera para que llueva. Si ya está lloviendo, esta habilidad detendrá la lluvia.</TM_Rainmaker.description>
+
+  <TM_Blizzard.label>Ventisca</TM_Blizzard.label>
+  <TM_Blizzard.description>Invoca una ventisca mortal para sepultar a tus enemigos bajo el hielo.</TM_Blizzard.description>
+
+</LanguageData>

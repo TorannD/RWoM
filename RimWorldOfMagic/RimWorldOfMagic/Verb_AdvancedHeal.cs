@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using HarmonyLib;
 using System.Linq;
@@ -9,7 +9,7 @@ using TorannMagic.Utils;
 
 namespace TorannMagic
 {
-    class Verb_AdvancedHeal : Verb_UseAbility
+    class Verb_AdvancedHeal : ClassProgression.Verb_SpiritTargetable
     {
 
         bool validTarg;
@@ -41,7 +41,8 @@ namespace TorannMagic
         protected override bool TryCastShot()
         {
 
-            Pawn caster = this.CasterPawn;
+            Pawn caster = ClassProgression.SpiritRebirthCasting.SkillOwner(CasterPawn, Ability);
+            if (caster == null) return false;
             CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
             pwrVal = TM_Calc.GetSkillPowerLevel(caster, this.Ability.Def as TMAbilityDef);
             verVal = TM_Calc.GetSkillVersatilityLevel(caster, this.Ability.Def as TMAbilityDef);
@@ -54,15 +55,15 @@ namespace TorannMagic
             {
                 int injuriesToHeal = 3 + verVal;
                 
-                int injuriesPerBodyPart = !CasterPawn.IsColonist && ModOptions.Settings.Instance.AIHardMode ? 5 : 1 + verVal;
+                int injuriesPerBodyPart = !caster.IsColonist && ModOptions.Settings.Instance.AIHardMode ? 5 : 1 + verVal;
 
                 IEnumerable<Hediff_Injury> injuries = pawn.health.hediffSet.hediffs
                     .OfType<Hediff_Injury>()
                     .Where(injury => injury.CanHealNaturally())
-                    .DistinctBy(injury => injury.Part, injuriesPerBodyPart);
+                    .DistinctBy(injury => injury.Part, injuriesPerBodyPart).ToList();
 
                 int timesHealed = 0;
-                float baseHealAmount = CasterPawn.IsColonist ? 30.0f : 14.0f;
+                float baseHealAmount = caster.IsColonist ? 30.0f : 14.0f;
                 float healAmount = baseHealAmount + pwrVal * 3f;
 
                 // First go through any naturally healing injuries

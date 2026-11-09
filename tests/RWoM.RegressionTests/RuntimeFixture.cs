@@ -124,6 +124,9 @@ internal sealed class RuntimeFixture(string repo, string directory)
 
     public MagicData Load(string path)
     {
+        // Save recovery now fills missing builtin lists as well as custom ones.
+        // The game loads these defs before Scribe; isolated payload tests must too.
+        GrimoireProgressionTests.LoadBaseDefinitions(this);
         MagicData data = null!;
         try
         {

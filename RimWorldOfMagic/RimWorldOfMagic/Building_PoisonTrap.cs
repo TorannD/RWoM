@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using RimWorld;
 using Verse;
 using Verse.Sound;
@@ -10,7 +10,6 @@ using Verse.AI.Group;
 
 namespace TorannMagic
 {
-    [StaticConstructorOnStartup]
     public class Building_PoisonTrap : Building_ExplosiveProximityTrap
     {
         int age = -1;
@@ -22,16 +21,44 @@ namespace TorannMagic
         int ticksTillReArm = 15000;
         bool rearming = false;
         ThingDef fog;
+        private Pawn planter;
+        private bool ownerChecked;
 
         public bool destroyAfterUse = false;
 
-        private static readonly Material trap_rearming = MaterialPool.MatFrom("Other/PoisonTrap_rearming");
-        private static readonly MaterialPropertyBlock MatPropertyBlock = new MaterialPropertyBlock();
-
+        [StaticConstructorOnStartup]
+        private static class RearmingGraphic
+        {
+            internal static readonly Material Material = MaterialPool.MatFrom("Other/PoisonTrap_rearming");
+            internal static readonly MaterialPropertyBlock Properties = new MaterialPropertyBlock();
+        }
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Collections.Look<Pawn>(ref this.touchingPawns, "testees", LookMode.Reference, new object[0]);
+            Scribe_References.Look(ref planter, "TM_poisonTrapPlanter");
+            Scribe_Values.Look(ref ownerChecked, "TM_poisonTrapOwnerChecked");
+            const string contacts="TM_poisonTrapContacts";
+            if (Scribe.mode==LoadSaveMode.LoadingVars)
+            {
+                // The first legacy entry belongs to Building_Trap; the second was written by this class.
+                var record=Scribe.loader.curXmlParent;
+                var old=record.SelectNodes("testees");
+                if (record[contacts]==null && old.Count>1)
+                {
+                    var copy=record.OwnerDocument.CreateElement(contacts);
+                    var last=old[old.Count-1];
+                    foreach (System.Xml.XmlAttribute attribute in last.Attributes)
+                        copy.SetAttribute(attribute.Name,attribute.Value);
+                    copy.InnerXml=last.InnerXml;
+                    record.AppendChild(copy);
+                }
+            }
+            Scribe_Collections.Look(ref touchingPawns,contacts,LookMode.Reference);
+            if (Scribe.mode==LoadSaveMode.PostLoadInit)
+            {
+                touchingPawns ??= new List<Pawn>();
+                touchingPawns.RemoveAll(p=>p==null);
+            }
             Scribe_Values.Look<bool>(ref this.triggered, "triggered", false, false);
             Scribe_Values.Look<bool>(ref this.rearming, "rearming", false, false);
             Scribe_Values.Look<bool>(ref this.destroyAfterUse, "destroyAfterUse", false, false);
@@ -48,7 +75,7 @@ namespace TorannMagic
             {
                 Matrix4x4 matrix = default(Matrix4x4);
                 matrix.SetTRS(this.DrawPos, Quaternion.identity, new Vector3(1f, 1f, 1f));   //drawer for beam
-                Graphics.DrawMesh(MeshPool.plane10, matrix, Building_PoisonTrap.trap_rearming, 0, null, 0, Building_PoisonTrap.MatPropertyBlock);
+                Graphics.DrawMesh(MeshPool.plane10, matrix, RearmingGraphic.Material, 0, null, 0, RearmingGraphic.Properties);
             }
             else
             {
@@ -121,6 +148,7 @@ namespace TorannMagic
                         IEnumerable<IntVec3> targets = GenRadial.RadialCellsAround(base.Position, 2, true);
                         foreach (IntVec3 curCell in targets)
                         {
+                            if (!curCell.InBounds(Map)) continue;
                             List<Thing> thingList = curCell.GetThingList(base.Map);
                             for (int j = 0; j < thingList.Count; j++)
                             {
@@ -159,28 +187,62 @@ namespace TorannMagic
 
         private void CheckForAgent()
         {
-            this.destroyAfterUse = true;
-            List<Pawn> pList = this.Map.mapPawns.AllPawnsSpawned.ToList();
-            if (pList == null || pList.Count <= 0) return;
+            destroyAfterUse = KeeperBody()==null;
+        }
 
-            for (int i = 0; i < pList.Count; i++)
+        private Pawn KeeperBody()
+        {
+            if (Map==null || Faction==null) return null;
+            if (!ownerChecked)
             {
-                Pawn p = pList[i];
-                CompAbilityUserMight comp = p.GetCompAbilityUserMight();
-                if (comp?.combatItems == null || comp.combatItems.Count <= 0) continue;
-
-                if (comp.combatItems.Contains(this))
+                foreach(var p in Map.mapPawns.SpawnedPawnsInFaction(Faction))
                 {
-                    this.destroyAfterUse = false;
-                }                
+                    if (ListsTrap(p)) { SetPlanter(p); break; }
+                    var soul=HeldRanger(p);
+                    if (ListsTrap(soul)) { SetPlanter(soul); break; }
+                }
             }            
+            if (planter==null || planter.Dead || planter.Destroyed || planter.Faction!=Faction || !ListsTrap(planter)) return null;
+            if (planter.Spawned) return planter.Map==Map?planter:null;
+            if (!ClassProgression.SpiritRebirthState.TryGetStored(planter,out var state) || state.Host?.Map!=Map ||
+                HeldRanger(state.Host)!=planter) return null;
+            return state.Host;
+        }
+
+        private bool ListsTrap(Pawn pawn) => pawn?.GetCompAbilityUserMight()?.combatItems?.Contains(this)==true;
+        private static Pawn HeldRanger(Pawn body)
+        {
+            var soul=body?.health?.hediffSet?.GetFirstHediffOfDef(TorannMagicDefOf.TM_SpiritPossessionHD)
+                ?.TryGetComp<HediffComp_SpiritPossession>()?.SpiritPawn;
+            return soul!=null && ClassProgression.SpiritRebirthState.TryGetStored(soul,out var state) &&
+                state.Form==ClassProgression.SpiritRebirthForm.Possessed && state.Host==body ? soul : null;
+        }
+
+        internal void SetPlanter(Pawn pawn)
+        {
+            planter = pawn;
+            ownerChecked = true;
+        }
+
+        internal void CreditSpring(Pawn victim)
+        {
+            if (!ClassProgression.ClassProgressionFeature.Enabled || victim?.Spawned != true || victim.Map != Map ||
+                victim.Dead || victim.Downed || victim.IsPrisoner || victim.RaceProps.Animal || victim.Faction == null ||
+                Faction == null || !victim.HostileTo(Faction)) return;
+            var body=KeeperBody();
+            if (body!=null && AutoCast.TM_AutocastCombat.IsActiveOpponent(body,victim) &&
+                (body==planter || ClassProgression.SpiritRebirthState.TryGetPossessingSpirit(body,out var active) && active==planter &&
+                    ClassProgression.SpiritRebirthState.TryGet(planter,out var state) && !state.DepletionPending))
+                ClassProgression.RangerMastery.Trapped(planter, victim);
         }
 
         protected override void CheckSpring(Pawn p)
         {
             if (Rand.Value < this.SpringChance(p))
             {
+                bool newlySprung = !triggered && !rearming;
                 this.Spring(p);
+                if (newlySprung && triggered) CreditSpring(p);
             }
         }
 

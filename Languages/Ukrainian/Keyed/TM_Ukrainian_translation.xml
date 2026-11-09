@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <TM_NotEnoughMana>{0} недостатньо мани.</TM_NotEnoughMana>
   <TM_NotEnoughBlood>{0} пожертвувано недостатньо крові.</TM_NotEnoughBlood>
@@ -278,6 +278,8 @@
   <supportTraitChance>Допоміжні ознаки</supportTraitChance>
   <TM_ClassWarning>* * Змінюйте параметри класів тільки при запуску нової гри * *</TM_ClassWarning>
   <TM_RequiresRestart>* * Будь-яка зміна вимагає перезавантаження гри * *</TM_RequiresRestart>
+<TM_NewProgressionBeta>Нова прогресія класів (бета)</TM_NewProgressionBeta>
+  <TM_NewProgressionBetaDesc>Увімкнує експериментальну систему нової прогресії класів. Враховується лише під час запуску гри: для зміни налаштування потрібен перезапуск. Коли вимкнено, мод використовує класичну систему класів.</TM_NewProgressionBetaDesc>
   <TM_ClassOptions>Включені класи:</TM_ClassOptions>
   <TM_EnabledMages>Маги</TM_EnabledMages>
   <TM_EnabledFighters>Бійці</TM_EnabledFighters>
@@ -2204,4 +2206,22 @@ DR: [5, 9, 13, 17, 20]%</TM_Golemancy_pwr_desc>
   <TM_GrimoireDesc>Відкрити гримуар персонажа: рівні класів, ресурси та здібності.</TM_GrimoireDesc>
   <TM_GrimoireIsekaiHint>Вбудована інтеграція Isekai Leveling від Jelly Creative дає бонуси до запасу й відновлення мани та витривалості, перезаряджання здібностей і витрат ресурсів.</TM_GrimoireIsekaiHint>
   <TM_Grimoire>Гримуар</TM_Grimoire>
+
+  <!-- Grimoire classic-mode strings. -->
+  <TM_GrimoireClassicRequirements>Класичні правила: заклинання вивчаються очками класу в гримуарі; частині заклинань додатково потрібне прочитання свого сувою чи книги.</TM_GrimoireClassicRequirements>
+  <TM_GrimoireClassicRules>Класичні правила</TM_GrimoireClassicRules>
+  <TM_GrimoireLearningItems>Потрібні навчальні предмети:</TM_GrimoireLearningItems>
+  <TM_GrimoireNoLearningItems>Навчальні предмети не потрібні.</TM_GrimoireNoLearningItems>
+  <TM_GrimoireLearned>Вивчено</TM_GrimoireLearned>
+  <TM_GrimoireRankMax>Макс. ранг</TM_GrimoireRankMax>
+  <TM_GrimoireRank>Ранг</TM_GrimoireRank>
+  <TM_GrimoireScrollUnspecified>Сувій не вказано</TM_GrimoireScrollUnspecified>
+
+  <!-- Magofuel synthesizer UI strings. -->
+  <TM_SynthToggleLabel>Автосинтез: мана + хімічне паливо</TM_SynthToggleLabel>
+  <TM_SynthToggleDesc>Повільно перетворює накопичену ману та хімічне паливо на манапаливо в цьому баку (~50 на день). Пауза, поки бак не досягне цілі або не вистачає входів.</TM_SynthToggleDesc>
+  <TM_SynthLoad>Завантажити хімічне паливо ({0})</TM_SynthLoad>
+  <TM_SynthLoadDesc>Забрати хімічне паливо зі стаків біля резервуара в прийомний бункер.</TM_SynthLoadDesc>
+  <TM_SynthInspect>Бункер хімічного палива: {0} — синтез 50 манапалива на день</TM_SynthInspect>
+  <TM_PoolInspect>Пул мережі маяків: мана {0}/{1}, манапаливо {2}/{3} ({4} баки)</TM_PoolInspect>
 </LanguageData>

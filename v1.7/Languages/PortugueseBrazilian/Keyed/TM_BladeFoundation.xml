@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_ReadBladeFocus>Estudar foco da lâmina: melhora o combate corpo a corpo, mas reduz a pontaria e a velocidade de trabalho (permanente)</TM_ReadBladeFocus>
+  <TM_ReadBladeMemory>Estudar memória do fio: dano adicional ao trocar de inimigo (permanente)</TM_ReadBladeMemory>
+  <TM_BladeMemoryName>Memória do fio</TM_BladeMemoryName>
+  <TM_BladeMemoryTraining>Ao trocar para outro inimigo adjacente, o golpe com uma arma corpo a corpo causa 2% a mais de dano principal. Cada nível acrescenta 2 pontos percentuais, até 10%. Pode ser ativado uma vez a cada 6 segundos.</TM_BladeMemoryTraining>
+</LanguageData>

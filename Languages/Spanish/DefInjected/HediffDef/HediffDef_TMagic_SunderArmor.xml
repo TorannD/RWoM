@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_FrailtyHD.label>fragilidad</TM_FrailtyHD.label>
+  
+  <TM_FrailtyHD.description>El objetivo recibe más daño de todas las fuentes.</TM_FrailtyHD.description>
+  
+  
+  <TM_SunderArmorHD.label>armadura quebrada</TM_SunderArmorHD.label>
+  
+  <TM_SunderArmorHD.description>Reduce la clasificación de armadura.</TM_SunderArmorHD.description>
+  
+  <TM_SunderArmorHD.stages.I.label>I</TM_SunderArmorHD.stages.I.label>
+  
+  <TM_SunderArmorHD.stages.II.label>II</TM_SunderArmorHD.stages.II.label>
+  
+  <TM_SunderArmorHD.stages.III.label>III</TM_SunderArmorHD.stages.III.label>
+  
+  <TM_SunderArmorHD.stages.IV.label>IV</TM_SunderArmorHD.stages.IV.label>
+  
+  <TM_SunderArmorHD.stages.V.label>V</TM_SunderArmorHD.stages.V.label>
+  
+  <TM_SunderArmorHD.stages.VI.label>VI</TM_SunderArmorHD.stages.VI.label>
+  
+  <TM_SunderArmorHD.stages.VII.label>VII</TM_SunderArmorHD.stages.VII.label>
+  
+</LanguageData>

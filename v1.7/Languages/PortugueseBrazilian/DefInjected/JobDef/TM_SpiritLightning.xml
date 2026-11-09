@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritLightningCloud.reportString>cria uma nuvem de tempestade através do corpo do hospedeiro.</TM_SpiritLightningCloud.reportString>
+  <TM_SpiritLightningStorm.reportString>invoca uma tempestade elétrica através do corpo do hospedeiro.</TM_SpiritLightningStorm.reportString>
+  <TM_SpiritLightningBolt.reportString>lança um raio através do corpo do hospedeiro.</TM_SpiritLightningBolt.reportString>
+  <TM_SpiritAMP.reportString>lança amplificação através do corpo do hospedeiro.</TM_SpiritAMP.reportString>
+  <TM_SpiritAMP_I.reportString>lança amplificação através do corpo do hospedeiro.</TM_SpiritAMP_I.reportString>
+  <TM_SpiritAMP_II.reportString>lança amplificação através do corpo do hospedeiro.</TM_SpiritAMP_II.reportString>
+  <TM_SpiritAMP_III.reportString>lança amplificação através do corpo do hospedeiro.</TM_SpiritAMP_III.reportString>
+</LanguageData>

@@ -16,6 +16,25 @@ namespace TorannMagic
         private int ticksToDetonation = 210;
         private int explosionCount = 5;
         Pawn caster;
+        private bool trainingCaptured;
+
+        internal void CaptureTraining(Pawn source)
+        {
+            if(trainingCaptured) return;
+            verVal=TM_Calc.GetSkillVersatilityLevel(source,TorannMagicDefOf.TM_ShotgunSpec);
+            trainingCaptured=true;
+        }
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look(ref trainingCaptured,"trainingCaptured",false);
+            Scribe_Values.Look(ref initialized,"initialized",false);
+            Scribe_Values.Look(ref verVal,"verVal",0);
+            Scribe_Values.Look(ref mightPwr,"mightPwr",1f);
+            Scribe_Values.Look(ref ticksToDetonation,"ticksToDetonation",210);
+            Scribe_Values.Look(ref explosionCount,"explosionCount",5);
+        }
 
         protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
@@ -24,9 +43,8 @@ namespace TorannMagic
             if (!this.initialized)
             {
                 caster = this.launcher as Pawn;
-                CompAbilityUserMight comp = caster.GetCompAbilityUserMight();
                 //verVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_ShotgunSpec, "TM_ShotgunSpec", "_ver", true); 
-                verVal = TM_Calc.GetSkillVersatilityLevel(caster, TorannMagicDefOf.TM_ShotgunSpec);
+                if(!trainingCaptured) verVal = TM_Calc.GetSkillVersatilityLevel(caster, TorannMagicDefOf.TM_ShotgunSpec);
                 this.explosionCount = 5;
                 if(verVal >= 3)
                 {

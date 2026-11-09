@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_Slow_HD.label>ralentizado</TM_Slow_HD.label>
+  
+  <TM_Slow_HD.description>Efectos de una habilidad que reduce la agilidad física y mental.</TM_Slow_HD.description>
+  
+  <TM_Slow_HD.stages.minor.label>leve</TM_Slow_HD.stages.minor.label>
+  
+  <TM_Slow_HD.stages.major.label>importante</TM_Slow_HD.stages.major.label>
+  
+  <TM_Slow_HD.stages.extreme.label>extrema</TM_Slow_HD.stages.extreme.label>
+  
+  
+  <TM_Tranquilizer_HD.label>sedado</TM_Tranquilizer_HD.label>
+  
+  <TM_Tranquilizer_HD.description>Efectos de un tranquilizante.</TM_Tranquilizer_HD.description>
+  
+  <TM_Tranquilizer_HD.stages.Slowed.label>ralentizado</TM_Tranquilizer_HD.stages.Slowed.label>
+  
+  <TM_Tranquilizer_HD.stages.Sedated.label>sedado</TM_Tranquilizer_HD.stages.Sedated.label>
+  
+  <TM_Tranquilizer_HD.stages.Paralytic.label>paralizado</TM_Tranquilizer_HD.stages.Paralytic.label>
+  
+</LanguageData>

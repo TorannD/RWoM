@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_CombatShieldStatusStandby>Em espera: outro gerador de combate está ativo</TM_CombatShieldStatusStandby>
+  <TM_CombatShieldStatus>Escudo da rede: {0} / {1} pontos</TM_CombatShieldStatus>
+  <TM_CombatShieldSourceHP>Esta fonte: {0} / {1} pontos de escudo</TM_CombatShieldSourceHP>
+  <TM_CombatShieldReboot>Reinício do escudo: {0} s</TM_CombatShieldReboot>
+  <TM_CombatShieldNetworkHP>Escudo da rede: {0} / {1}</TM_CombatShieldNetworkHP>
+  <TM_CombatShieldPeace>Modo de paz: 10% de manutenção (reparação sem desconto)</TM_CombatShieldPeace>
+  <TM_CombatShieldCombat>Modo de combate: manutenção total</TM_CombatShieldCombat>
+</LanguageData>

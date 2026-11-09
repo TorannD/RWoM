@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <HediffDef><defName>TM_ApothecaryDressing</defName><label>field dressings</label><description>Temporarily halves bleeding.</description><hediffClass>TorannMagic.ClassProgression.Hediff_ApothecaryDressing</hediffClass><isBad>false</isBad><tendable>false</tendable><stages><li><totalBleedFactor>0.5</totalBleedFactor></li></stages></HediffDef>
+</Defs>

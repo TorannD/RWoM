@@ -25,11 +25,26 @@ namespace TorannMagic
         private float bleedRate = 0;
 
         public Pawn linkedPawn = null;
+        private Pawn projectedOwner;
+        internal void Link(Pawn body, Pawn owner)
+        {
+            if (linkedPawn != body || projectedOwner != (owner == body ? null : owner))
+            {
+                initialized = false;
+                removeNow = false;
+            }
+            linkedPawn = body;
+            projectedOwner = body == owner ? null : owner;
+        }
+
         Vector3 directionToLinkedPawn = default(Vector3);
 
         public override void CompExposeData()
         {
             base.CompExposeData();
+            Scribe_References.Look(ref projectedOwner,"TM_transferSoul");
+            Scribe_Values.Look(ref initializeDelay,"TM_transferDelay");
+            Scribe_Values.Look(ref removeNow,"TM_transferEnding");
             Scribe_References.Look<Pawn>(ref linkedPawn, "linkedPawn", false);
             Scribe_Values.Look<int>(ref this.bfbVer, "bfbVer", 0, false);
             Scribe_Values.Look<float>(ref this.arcaneDmg, "arcaneDmg", 1f, false);
@@ -55,14 +70,14 @@ namespace TorannMagic
         private void Initialize()
         {
             bool spawned = base.Pawn.Spawned;
-            CompAbilityUserMagic comp = this.linkedPawn.GetCompAbilityUserMagic();
+            CompAbilityUserMagic comp = (projectedOwner ?? linkedPawn)?.GetCompAbilityUserMagic();
             if(TM_Calc.GetBloodLossTypeDef(this.Pawn.health.hediffSet.hediffs) == null)
             {
                 HealthUtility.AdjustSeverity(this.Pawn, HediffDefOf.BloodLoss, .05f);
             }
-            if (spawned && comp != null && comp.IsMagicUser)
+            if (spawned && comp != null && (projectedOwner != null || comp.IsMagicUser))
             {
-                bfbVer = comp.MagicData.MagicPowerSkill_BloodForBlood.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_BloodForBlood_ver").level;
+                bfbVer = comp.MagicData.MagicPowerSkill_BloodForBlood.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_BloodForBlood_ver")?.level ?? 0;
                 this.arcaneDmg = comp.arcaneDmg;
                 directionToLinkedPawn = TM_Calc.GetVector(this.Pawn.DrawPos, linkedPawn.DrawPos);
             }
@@ -75,6 +90,14 @@ namespace TorannMagic
         public override void CompPostTick(ref float severityAdjustment)
         {
             base.CompPostTick(ref severityAdjustment);
+            if (linkedPawn.DestroyedOrNull() || linkedPawn.Dead || projectedOwner != null &&
+                (!ClassProgression.SpiritRebirthState.TryGet(projectedOwner,out var state) ||
+                !state.HasValidHost(projectedOwner) || state.Host != linkedPawn || state.DepletionPending))
+            {
+                removeNow = true;
+                return;
+            }
+            if (removeNow || linkedPawn.Map == null || linkedPawn.Map != Pawn.Map) return;
             bool flag = base.Pawn != null && base.Pawn.Map != null && this.initializeDelay > 5;
             if (flag)
             {
@@ -159,6 +182,7 @@ namespace TorannMagic
             List<IntVec3> cellList = GenRadial.RadialCellsAround(this.linkedPawn.Position, .4f + this.bfbVer, true).ToList();
             for (int i =0; i< cellList.Count; i++)
             {
+                if (!cellList[i].InBounds(linkedPawn.Map)) continue;
                 Pawn healedPawn = cellList[i].GetFirstPawn(this.linkedPawn.Map);
                 if(healedPawn != null && healedPawn.Faction != null && healedPawn.Faction == linkedPawn.Faction)
                 {
@@ -178,7 +202,7 @@ namespace TorannMagic
             }
 
             int num = 1;
-            using (IEnumerator<BodyPartRecord> enumerator =linkedPawn.health.hediffSet.GetInjuredParts().GetEnumerator())
+            using (IEnumerator<BodyPartRecord> enumerator =linkedPawn.health.hediffSet.GetInjuredParts().ToList().GetEnumerator())
             {
                 while (enumerator.MoveNext())
                 {
@@ -193,7 +217,7 @@ namespace TorannMagic
 
                         arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
 
-                        foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1))
+                        foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1).ToList())
                         {
                             bool flag4 = num2 > 0;
                             if (flag4)

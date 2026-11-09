@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
+    <defName>TM_SniperArmorFracture</defName>
+    <label>armor fracture</label>
+    <uiIconPath>Spells/InfernoCannonShot</uiIconPath>
+    <description>Fire one ordinary bullet. A hit opens a breach for your squad for six seconds, reducing effective armor by 10, 15 or 20 percentage points by rank. Each hit stacks and expires separately. Costs 20 stamina. Cooldown: 30 seconds.</description>
+    <staminaCost>0.20</staminaCost>
+    <MainVerb Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.ClassProgression.Verb_SniperArmorFracture</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_SniperArmorFracture</abilityDef>
+      <isViolent>true</isViolent>
+      <defaultProjectile>TM_SniperFractureRound</defaultProjectile>
+      <warmupTime>1</warmupTime>
+      <SecondsToRecharge>30</SecondsToRecharge>
+      <range>100</range>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </MainVerb>
+    <modExtensions>
+      <li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+        <spellId>rwom.tm_sniperarmorfracture</spellId>
+        <domain>Might</domain>
+        <tier>0</tier>
+      </li>
+    </modExtensions>
+  </TorannMagic.TMAbilityDef>
+  <ThingDef ParentName="BaseBullet">
+    <defName>TM_SniperFractureRound</defName>
+    <label>fracture bullet</label>
+    <thingClass>TorannMagic.ClassProgression.SniperFractureBullet</thingClass>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>1</damageAmountBase>
+      <speed>55</speed>
+    </projectile>
+  </ThingDef>
+</Defs>

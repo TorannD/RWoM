@@ -7,7 +7,7 @@ using Verse;
 
 namespace RWoM.RegressionTests;
 
-internal static class AbilityProjectileTests
+internal static partial class AbilityProjectileTests
 {
     private static readonly List<Pawn> EffectRecipients = [];
 
@@ -206,3 +206,4 @@ internal static class AbilityProjectileTests
     private static T Blank<T>() => (T)RuntimeHelpers.GetUninitializedObject(typeof(T));
     private static void Set(object target, string name, object value) => FleshStatTests.Set(target, name, value);
 }
+

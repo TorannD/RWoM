@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_ArmRegrowth.label>brazo regenerado</TM_ArmRegrowth.label>
+  
+  <TM_ArmRegrowth.description>El entrelazamiento mágico de la naturaleza y la carne regenerará esta parte del cuerpo a lo largo de varios días.</TM_ArmRegrowth.description>
+  
+  <TM_ArmRegrowth.comps.HediffComp_VerbGiver.tools.regrown_arm.label>brazo regenerado</TM_ArmRegrowth.comps.HediffComp_VerbGiver.tools.regrown_arm.label>
+  
+  <TM_ArmRegrowth.stages.stub.label>muñón</TM_ArmRegrowth.stages.stub.label>
+  
+  <TM_ArmRegrowth.stages.fledgling.label>incipiente</TM_ArmRegrowth.stages.fledgling.label>
+  
+  <TM_ArmRegrowth.stages.regrown.label>regenerado</TM_ArmRegrowth.stages.regrown.label>
+  
+  <TM_ArmRegrowth.stages.wild.label>salvaje</TM_ArmRegrowth.stages.wild.label>
+  
+  
+  <TM_EarRegrowth.label>oreja regenerada</TM_EarRegrowth.label>
+  
+  <TM_EarRegrowth.description>El entrelazamiento mágico de la naturaleza y la carne regenerará esta parte del cuerpo a lo largo de varios días.</TM_EarRegrowth.description>
+  
+  <TM_EarRegrowth.stages.forming.label>en formación</TM_EarRegrowth.stages.forming.label>
+  
+  <TM_EarRegrowth.stages.developing.label>en desarrollo</TM_EarRegrowth.stages.developing.label>
+  
+  <TM_EarRegrowth.stages.regrown.label>regenerada</TM_EarRegrowth.stages.regrown.label>
+  
+  <TM_EarRegrowth.stages.enhanced.label>mejorada</TM_EarRegrowth.stages.enhanced.label>
+  
+  
+  <TM_EyeRegrowth.label>ojo regenerado</TM_EyeRegrowth.label>
+  
+  <TM_EyeRegrowth.description>El entrelazamiento mágico de la naturaleza y la carne regenerará este ojo a lo largo de varios días.</TM_EyeRegrowth.description>
+  
+  <TM_EyeRegrowth.stages.milky.label>lechoso</TM_EyeRegrowth.stages.milky.label>
+  
+  <TM_EyeRegrowth.stages.hazy.label>nublado</TM_EyeRegrowth.stages.hazy.label>
+  
+  <TM_EyeRegrowth.stages.regrown.label>regenerado</TM_EyeRegrowth.stages.regrown.label>
+  
+  <TM_EyeRegrowth.stages.enhanced.label>mejorado</TM_EyeRegrowth.stages.enhanced.label>
+  
+  
+  <TM_FingerRegrowth.label>dedo regenerado</TM_FingerRegrowth.label>
+  
+  <TM_FingerRegrowth.description>El entrelazamiento mágico de la naturaleza y la carne regenerará esta parte del cuerpo a lo largo de varios días.</TM_FingerRegrowth.description>
+  
+  <TM_FingerRegrowth.stages.finger_stub.label>muñón de dedo</TM_FingerRegrowth.stages.finger_stub.label>
+  
+  <TM_FingerRegrowth.stages.regrown.label>regenerado</TM_FingerRegrowth.stages.regrown.label>
+  
+  
+  <TM_FootRegrowth.label>pie regenerado</TM_FootRegrowth.label>
+  
+  <TM_FootRegrowth.description>El entrelazamiento mágico de la naturaleza y la carne regenerará esta parte del cuerpo a lo largo de varios días.</TM_FootRegrowth.description>
+  
+  <TM_FootRegrowth.stages.stub.label>muñón</TM_FootRegrowth.stages.stub.label>
+  
+  <TM_FootRegrowth.stages.fledgling.label>incipiente</TM_FootRegrowth.stages.fledgling.label>
+  
+  <TM_FootRegrowth.stages.regrown.label>regenerado</TM_FootRegrowth.stages.regrown.label>
+  
+  <TM_FootRegrowth.stages.wild.label>salvaje</TM_FootRegrowth.stages.wild.label>
+  
+  
+  <TM_HandRegrowth.label>mano regenerada</TM_HandRegrowth.label>
+  
+  <TM_HandRegrowth.description>El entrelazamiento mágico de la naturaleza y la carne regenerará esta parte del cuerpo a lo largo de varios días.</TM_HandRegrowth.description>
+  
+  <TM_HandRegrowth.comps.HediffComp_VerbGiver.tools.regrown_hand.label>mano regenerada</TM_HandRegrowth.comps.HediffComp_VerbGiver.tools.regrown_hand.label>
+  
+  <TM_HandRegrowth.stages.stub.label>muñón</TM_HandRegrowth.stages.stub.label>
+  
+  <TM_HandRegrowth.stages.fledgling.label>incipiente</TM_HandRegrowth.stages.fledgling.label>
+  
+  <TM_HandRegrowth.stages.regrown.label>regenerada</TM_HandRegrowth.stages.regrown.label>
+  
+  <TM_HandRegrowth.stages.wild.label>salvaje</TM_HandRegrowth.stages.wild.label>
+  
+  
+  <TM_HeartRegrowth.label>corazón de lo salvaje</TM_HeartRegrowth.label>
+  
+  <TM_HeartRegrowth.description>El entrelazamiento mágico de la naturaleza y la carne regenerará o potenciará un corazón a lo largo de varios días.</TM_HeartRegrowth.description>
+  
+  <TM_HeartRegrowth.stages.reforming.label>en reformación</TM_HeartRegrowth.stages.reforming.label>
+  
+  <TM_HeartRegrowth.stages.new_development.label>nuevo desarrollo</TM_HeartRegrowth.stages.new_development.label>
+  
+  <TM_HeartRegrowth.stages.melding.label>fusionándose</TM_HeartRegrowth.stages.melding.label>
+  
+  <TM_HeartRegrowth.stages.entwined.label>entrelazado</TM_HeartRegrowth.stages.entwined.label>
+  
+  <TM_HeartRegrowth.stages.heart_of_the_wild.label>corazón de lo salvaje</TM_HeartRegrowth.stages.heart_of_the_wild.label>
+  
+  
+  <TM_JawRegrowth.label>mandíbula regenerada</TM_JawRegrowth.label>
+  
+  <TM_JawRegrowth.description>El entrelazamiento mágico de la naturaleza y la carne regenerará esta parte del cuerpo a lo largo de varios días.</TM_JawRegrowth.description>
+  
+  <TM_JawRegrowth.stages.forming.label>en formación</TM_JawRegrowth.stages.forming.label>
+  
+  <TM_JawRegrowth.stages.developing.label>en desarrollo</TM_JawRegrowth.stages.developing.label>
+  
+  <TM_JawRegrowth.stages.regrown.label>regenerada</TM_JawRegrowth.stages.regrown.label>
+  
+  <TM_JawRegrowth.stages.enhanced.label>mejorada</TM_JawRegrowth.stages.enhanced.label>
+  
+  
+  <TM_KidneyRegrowth.label>riñón regenerado</TM_KidneyRegrowth.label>
+  
+  <TM_KidneyRegrowth.description>El entrelazamiento mágico de la naturaleza y la carne regenerará esta parte del cuerpo a lo largo de varios días.</TM_KidneyRegrowth.description>
+  
+  <TM_KidneyRegrowth.stages.forming.label>en formación</TM_KidneyRegrowth.stages.forming.label>
+  
+  <TM_KidneyRegrowth.stages.developing.label>en desarrollo</TM_KidneyRegrowth.stages.developing.label>
+  
+  <TM_KidneyRegrowth.stages.regrown.label>regenerado</TM_KidneyRegrowth.stages.regrown.label>
+  
+  <TM_KidneyRegrowth.stages.enhanced.label>mejorado</TM_KidneyRegrowth.stages.enhanced.label>
+  
+  
+  <TM_LegRegrowth.label>pierna regenerada</TM_LegRegrowth.label>
+  
+  <TM_LegRegrowth.description>El entrelazamiento mágico de la naturaleza y la carne regenerará esta parte del cuerpo a lo largo de varios días.</TM_LegRegrowth.description>
+  
+  <TM_LegRegrowth.stages.stub.label>muñón</TM_LegRegrowth.stages.stub.label>
+  
+  <TM_LegRegrowth.stages.fledgling.label>incipiente</TM_LegRegrowth.stages.fledgling.label>
+  
+  <TM_LegRegrowth.stages.regrown.label>regenerada</TM_LegRegrowth.stages.regrown.label>
+  
+  <TM_LegRegrowth.stages.wild.label>salvaje</TM_LegRegrowth.stages.wild.label>
+  
+  
+  <TM_LiverRegrowth.label>hígado regenerado</TM_LiverRegrowth.label>
+  
+  <TM_LiverRegrowth.description>El entrelazamiento mágico de la naturaleza y la carne regenerará esta parte del cuerpo a lo largo de varios días.</TM_LiverRegrowth.description>
+  
+  <TM_LiverRegrowth.stages.forming.label>en formación</TM_LiverRegrowth.stages.forming.label>
+  
+  <TM_LiverRegrowth.stages.developing.label>en desarrollo</TM_LiverRegrowth.stages.developing.label>
+  
+  <TM_LiverRegrowth.stages.regrown.label>regenerado</TM_LiverRegrowth.stages.regrown.label>
+  
+  <TM_LiverRegrowth.stages.enhanced.label>mejorado</TM_LiverRegrowth.stages.enhanced.label>
+  
+  
+  <TM_LungRegrowth.label>pulmón regenerado</TM_LungRegrowth.label>
+  
+  <TM_LungRegrowth.description>El entrelazamiento mágico de la naturaleza y la carne regenerará esta parte del cuerpo a lo largo de varios días.</TM_LungRegrowth.description>
+  
+  <TM_LungRegrowth.stages.forming.label>en formación</TM_LungRegrowth.stages.forming.label>
+  
+  <TM_LungRegrowth.stages.developing.label>en desarrollo</TM_LungRegrowth.stages.developing.label>
+  
+  <TM_LungRegrowth.stages.regrown.label>regenerado</TM_LungRegrowth.stages.regrown.label>
+  
+  <TM_LungRegrowth.stages.enhanced.label>mejorado</TM_LungRegrowth.stages.enhanced.label>
+  
+  
+  <TM_SpineRegrowth.label>fusión de columna</TM_SpineRegrowth.label>
+  
+  <TM_SpineRegrowth.description>El entrelazamiento mágico de la naturaleza y la carne se fusionará para formar una columna poderosa en varios días.</TM_SpineRegrowth.description>
+  
+  <TM_SpineRegrowth.stages.forming.label>en formación</TM_SpineRegrowth.stages.forming.label>
+  
+  <TM_SpineRegrowth.stages.new_growth.label>crecimiento nuevo</TM_SpineRegrowth.stages.new_growth.label>
+  
+  <TM_SpineRegrowth.stages.melding.label>fusionándose</TM_SpineRegrowth.stages.melding.label>
+  
+  <TM_SpineRegrowth.stages.entwined.label>entrelazada</TM_SpineRegrowth.stages.entwined.label>
+  
+  
+  <TM_StandardRegrowth.label>parte regenerada</TM_StandardRegrowth.label>
+  
+  <TM_StandardRegrowth.description>El entrelazamiento mágico de la naturaleza y la carne regenerará esta parte del cuerpo a lo largo de varios días.</TM_StandardRegrowth.description>
+  
+  <TM_StandardRegrowth.stages.regrown.label>regenerada</TM_StandardRegrowth.stages.regrown.label>
+  
+  <TM_StandardRegrowth.stages.forming.label>en formación</TM_StandardRegrowth.stages.forming.label>
+  
+  <TM_StandardRegrowth.stages.stub.label>muñón</TM_StandardRegrowth.stages.stub.label>
+  
+  
+  <TM_StomachRegrowth.label>estómago regenerado</TM_StomachRegrowth.label>
+  
+  <TM_StomachRegrowth.description>El entrelazamiento mágico de la naturaleza y la carne regenerará esta parte del cuerpo a lo largo de varios días.</TM_StomachRegrowth.description>
+  
+  <TM_StomachRegrowth.stages.forming.label>en formación</TM_StomachRegrowth.stages.forming.label>
+  
+  <TM_StomachRegrowth.stages.developing.label>en desarrollo</TM_StomachRegrowth.stages.developing.label>
+  
+  <TM_StomachRegrowth.stages.regrown.label>regenerado</TM_StomachRegrowth.stages.regrown.label>
+  
+  
+  <TM_ToeRegrowth.label>dedo del pie regenerado</TM_ToeRegrowth.label>
+  
+  <TM_ToeRegrowth.description>El entrelazamiento mágico de la naturaleza y la carne regenerará esta parte del cuerpo a lo largo de varios días.</TM_ToeRegrowth.description>
+  
+  <TM_ToeRegrowth.stages.toe_stub.label>muñón de dedo del pie</TM_ToeRegrowth.stages.toe_stub.label>
+  
+  <TM_ToeRegrowth.stages.regrown.label>regenerado</TM_ToeRegrowth.stages.regrown.label>
+  
+</LanguageData>

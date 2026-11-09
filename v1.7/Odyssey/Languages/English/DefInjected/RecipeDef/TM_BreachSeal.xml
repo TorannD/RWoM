@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_MakeCastScroll_BreachSeal.label>make Breach Seal — cast scroll</TM_MakeCastScroll_BreachSeal.label>
+  <TM_MakeCastScroll_BreachSeal.description>Requires a mage who knows Breach Seal. Creates up to three airtight magical walls on the far edge of a selected 3×3 area, away from the ship core. Requires an owned ship platform and intact floor. Each wall has 300 hit points and lasts one day. Existing allied airtight walls are preserved; active seals cannot be refreshed. Does not repair floors or roofs and supplies no oxygen. Use from inventory. Consumes one scroll only on success. Anyone can use it without mana or learned magic.</TM_MakeCastScroll_BreachSeal.description>
+  <TM_MakeCastScroll_BreachSeal.jobString>making Breach Seal.</TM_MakeCastScroll_BreachSeal.jobString>
+  <TM_MakeSpellStaff_BreachSeal.label>make Breach Seal — charged staff</TM_MakeSpellStaff_BreachSeal.label>
+  <TM_MakeSpellStaff_BreachSeal.description>Requires a mage who knows Breach Seal. Creates up to three airtight magical walls on the far edge of a selected 3×3 area, away from the ship core. Requires an owned ship platform and intact floor. Each wall has 300 hit points and lasts one day. Existing allied airtight walls are preserved; active seals cannot be refreshed. Does not repair floors or roofs and supplies no oxygen. Equip as the primary weapon. Holds 10 uses, cannot recharge and disappears after its last use. Anyone can use it without mana or learned magic.</TM_MakeSpellStaff_BreachSeal.description>
+  <TM_MakeSpellStaff_BreachSeal.jobString>making Breach Seal.</TM_MakeSpellStaff_BreachSeal.jobString>
+</LanguageData>

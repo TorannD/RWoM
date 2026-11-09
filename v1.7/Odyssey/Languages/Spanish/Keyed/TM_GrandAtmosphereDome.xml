@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_GrandDomeRitual>Activar cúpula atmosférica (ritual)</TM_GrandDomeRitual>
+  <TM_GrandDomeUnavailable>Requiere una cúpula operativa con combustible y un mago que pueda gastar un 10% de maná y conservar un 20%.</TM_GrandDomeUnavailable>
+  <TM_GrandDomeUnarmed>Inactiva: requiere un ritual de activación</TM_GrandDomeUnarmed>
+  <TM_GrandDomeStandby>En espera: otra cúpula protege este mapa</TM_GrandDomeStandby>
+  <TM_GrandDomeActive>Activa: atmósfera en todo el mapa local</TM_GrandDomeActive>
+  <TM_GrandDomeLowFuel>La cúpula tiene poco combustible: quedan {0} días.</TM_GrandDomeLowFuel>
+  <TM_GrandDomeExhausted>La cúpula atmosférica agotó su combustible. Reabastécela y realiza otro ritual de activación.</TM_GrandDomeExhausted>
+</LanguageData>

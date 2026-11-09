@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritStoneskin.reportString>накладає кам’яну шкіру.</TM_SpiritStoneskin.reportString>
+  <TM_SpiritDispelStoneskin.reportString>розсіює кам’яну шкіру.</TM_SpiritDispelStoneskin.reportString>
+  <TM_SpiritEarthSprites.reportString>прикликає духів землі.</TM_SpiritEarthSprites.reportString>
+  <TM_SpiritDismissEarthSprites.reportString>відкликає духів землі.</TM_SpiritDismissEarthSprites.reportString>
+  <TM_SpiritEncase.reportString>зводить кам’яні стіни.</TM_SpiritEncase.reportString>
+  <TM_SpiritEncase_I.reportString>зводить кам’яні стіни.</TM_SpiritEncase_I.reportString>
+  <TM_SpiritEncase_II.reportString>зводить кам’яні стіни.</TM_SpiritEncase_II.reportString>
+  <TM_SpiritEncase_III.reportString>зводить кам’яні стіни.</TM_SpiritEncase_III.reportString>
+  <TM_SpiritEarthernHammer.reportString>прикликає кам’яний молот.</TM_SpiritEarthernHammer.reportString>
+  <TM_SpiritSentinel.reportString>прикликає кам’яного вартового.</TM_SpiritSentinel.reportString>
+  <TM_SpiritShatterSentinel.reportString>розбиває кам’яних вартових.</TM_SpiritShatterSentinel.reportString>
+  <TM_SpiritMeteor.reportString>прикликає метеорит.</TM_SpiritMeteor.reportString>
+  <TM_SpiritMeteor_I.reportString>прикликає метеорит.</TM_SpiritMeteor_I.reportString>
+  <TM_SpiritMeteor_II.reportString>прикликає метеорит.</TM_SpiritMeteor_II.reportString>
+  <TM_SpiritMeteor_III.reportString>прикликає метеорит.</TM_SpiritMeteor_III.reportString>
+</LanguageData>

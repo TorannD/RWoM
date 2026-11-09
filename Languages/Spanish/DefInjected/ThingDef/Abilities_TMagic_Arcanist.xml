@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <Buff_Shadow.label>Sombra</Buff_Shadow.label>
+  
+  
+  <MovingObject.label>objeto en movimiento</MovingObject.label>
+  
+  
+  <Projectile_Blink.label>Parpadeo</Projectile_Blink.label>
+  
+  
+  <Projectile_FoldReality.label>plegar realidad</Projectile_FoldReality.label>
+  
+  
+  <Projectile_MagicMissile.label>Misil mágico</Projectile_MagicMissile.label>
+  
+  
+  <Projectile_Summon.label>Invocación</Projectile_Summon.label>
+  
+  
+  <Projectile_Teleport.label>Teletransporte</Projectile_Teleport.label>
+  
+  
+  <TM_SummonedPawn.label>objeto volador</TM_SummonedPawn.label>
+  
+</LanguageData>

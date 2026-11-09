@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_Golem_HollowAffinityArcane.label>afinidad arcana</TM_Golem_HollowAffinityArcane.label>
+  
+  <TM_Golem_HollowAffinityArcane.description>La energía arcana dentro del gólem hueco se potencia aún más. Esta afinidad hace que los ojos del gólem brillen de color magenta. La afinidad arcana otorga al gólem estadísticas adicionales:\nMovilidad: +[15/25/30]%\nSalud:	+[55/85/100]%\n*Solo se permite un tipo de afinidad por gólem*</TM_Golem_HollowAffinityArcane.description>
+  
+  
+  <TM_Golem_HollowAffinityDeath.label>afinidad de muerte</TM_Golem_HollowAffinityDeath.label>
+  
+  <TM_Golem_HollowAffinityDeath.description>La energía arcana dentro del gólem hueco se entrelaza con magia de muerte. Esta afinidad hace que los ojos del gólem brillen de color verde. La afinidad de muerte otorga al gólem estadísticas adicionales:\nMovilidad: +[10/15/20]%\nSalud:	+[65/90/110]%\n*Solo se permite un tipo de afinidad por gólem*</TM_Golem_HollowAffinityDeath.description>
+  
+  
+  <TM_Golem_HollowAffinityFire.label>afinidad de fuego</TM_Golem_HollowAffinityFire.label>
+  
+  <TM_Golem_HollowAffinityFire.description>La energía arcana dentro del gólem hueco se entrelaza con fuego elemental. Esta afinidad hace que los ojos del gólem brillen de color naranja rojizo. La afinidad de fuego otorga al gólem estadísticas adicionales:\nMovilidad: +[25/40/50]%\nSalud:	+[40/60/75]%\n*Solo se permite un tipo de afinidad por gólem*</TM_Golem_HollowAffinityFire.description>
+  
+  
+  <TM_Golem_HollowAffinityIce.label>afinidad de agua</TM_Golem_HollowAffinityIce.label>
+  
+  <TM_Golem_HollowAffinityIce.description>La energía arcana dentro del gólem hueco se entrelaza con agua elemental. Esta afinidad hace que los ojos del gólem brillen de color azul claro. La afinidad de agua otorga al gólem estadísticas adicionales:\nMovilidad: +[20/30/35]%\nSalud:	+[50/75/90]%\n*Solo se permite un tipo de afinidad por gólem*</TM_Golem_HollowAffinityIce.description>
+  
+  
+  <TM_Golem_HollowAxe.label>hacha hueca</TM_Golem_HollowAxe.label>
+  
+  <TM_Golem_HollowAxe.description>Añade un hacha de batalla masiva que corta a múltiples oponentes con cada oscilación. El hacha hueca ocupa la ranura de arma; solo se puede equipar una sola arma.</TM_Golem_HollowAxe.description>
+  
+  
+  <TM_Golem_HollowBreastPlate.label>coraza</TM_Golem_HollowBreastPlate.label>
+  
+  <TM_Golem_HollowBreastPlate.description>Aumenta la protección de la armadura para el pecho y el torso:\nContundente:	+24%\nPunzo-cortante:	+36%\nTérmica:	+16%\nImpacto:	+12%</TM_Golem_HollowBreastPlate.description>
+  
+  
+  <TM_Golem_HollowCloak.label>Capa de desvanecimiento</TM_Golem_HollowCloak.label>
+  
+  <TM_Golem_HollowCloak.description>La capa de desvanecimiento aumenta pasivamente la velocidad de movimiento básica del portador a la vez que proporciona una pequeña cantidad de protección. También le permite moverse instantáneamente a otra ubicación en el mapa gastando energía. Si el portador se desvanece a una ubicación cercana a enemigos, una ráfaga de descomposición golpeará a cada enemigo cerca del destino.\n\nContundente:	+12%\nPunzo-cortante:	+6%\nTérmica:	+18%\nArmonía:	+10%\nVel. movimiento:	+1 c/s\n\nDescomposición desvanecida\nCoste de energía:	30\nReutilización:	10 s\nRango mín.:	10 c\nRango máx.:	200 c\nRadio de desc.:	4 c\nProb. de impacto:	80%</TM_Golem_HollowCloak.description>
+
+  
+  
+  <TM_Golem_HollowCrown.label>Corona del despertar</TM_Golem_HollowCrown.label>
+  
+  <TM_Golem_HollowCrown.description>Fortalece pasivamente la voluntad del portador para protegerlo contra ataques mágicos y ofrece una protección física menor. La habilidad activa detecta y anula la magia de otros hechizos.\n\nReflejo de hechizos\nCoste de energía:	50\nReutilización:	6.6 s\nRango:	100 c\nEl daño y el radio varían según el coste de maná del hechizo reflejado.</TM_Golem_HollowCrown.description>
+  
+  
+  <TM_Golem_HollowEnergyEfficiency.label>convertidor de maná</TM_Golem_HollowEnergyEfficiency.label>
+  
+  <TM_Golem_HollowEnergyEfficiency.description>Aumenta la eficiencia energética en un 10 % por nivel. La eficiencia energética inicial es del 50 %.</TM_Golem_HollowEnergyEfficiency.description>
+  
+  
+  <TM_Golem_HollowEnergyRate.label>atractor de maná</TM_Golem_HollowEnergyRate.label>
+  
+  <TM_Golem_HollowEnergyRate.description>Aumenta la velocidad de carga de energía en un 20 % por nivel. La velocidad de recarga inicial es de 30 de energía por hora.</TM_Golem_HollowEnergyRate.description>
+  
+  
+  <TM_Golem_HollowFGArcane.label>Gema de enfoque: Arcana</TM_Golem_HollowFGArcane.label>
+  
+  <TM_Golem_HollowFGArcane.description>La gema de enfoque arcana permite al gólem concentrar energía oscura en una descarga de sombra masiva. Lanza una única descarga de sombra explosiva al objetivo. Alcance extremo.\n\nCoste de energía: 50\nRango mín.: 10\nRango máx.: 120\n*Solo se puede usar una gema de enfoque*</TM_Golem_HollowFGArcane.description>
+  
+  
+  <TM_Golem_HollowFGDeath.label>Gema de enfoque: Muerte</TM_Golem_HollowFGDeath.label>
+  
+  <TM_Golem_HollowFGDeath.description>La gema de enfoque de muerte rodea al gólem con un campo que irradia energía de muerte. Golpea periódicamente a los enemigos cercanos. Obtiene un golpe de bonificación cuando cualquier peón muere dentro de las 10 casillas de distancia del gólem.\n\nCoste de energía: 10\nRango: 10\n*Solo se puede usar una gema de enfoque*</TM_Golem_HollowFGDeath.description>
+  
+  
+  <TM_Golem_HollowFGFire.label>Gema de enfoque: Fuego</TM_Golem_HollowFGFire.label>
+  
+  <TM_Golem_HollowFGFire.description>La gema de enfoque de fuego permite al gólem concentrar fuego elemental en una feroz ráfaga de descargas de fuego. Lanza 20 descargas de fuego a los enemigos que se encuentren dentro de las 8 casillas de distancia de un objetivo.\n\nCoste de energía: 20\nRango mín.: 6\nRango máx.: 80\n*Solo se puede usar una gema de enfoque*</TM_Golem_HollowFGFire.description>
+  
+  
+  <TM_Golem_HollowFGIce.label>Gema de enfoque: Hielo</TM_Golem_HollowFGIce.label>
+  
+  <TM_Golem_HollowFGIce.description>La gema de enfoque de hielo permite al gólem concentrar hielo elemental en un flujo rápido de descargas de hielo. Lanza 20 descargas de hielo a los enemigos que se encuentren dentro de las 12 casillas de distancia de un objetivo.\n\nCoste de energía: 30\nRango mín.: 8\nRango máx.: 80\n*Solo se puede usar una gema de enfoque*</TM_Golem_HollowFGIce.description>
+  
+  
+  <TM_Golem_HollowFlamesOfDevouringApathy.label>Llamas de la apatía devoradora</TM_Golem_HollowFlamesOfDevouringApathy.label>
+  
+  <TM_Golem_HollowFlamesOfDevouringApathy.description>Regula activamente la temperatura y destruye cualquier tipo de suciedad en un radio de 25 casillas. Emite una tenue luz mística. Estos efectos solo están activos mientras el gólem hueco está inactivo.\n		*Esta mejora comparte la misma ranura que el Orbe de llamas extinguidas y lo reemplazará si está instalado*</TM_Golem_HollowFlamesOfDevouringApathy.description>
+  
+  
+  <TM_Golem_HollowHelm.label>casco</TM_Golem_HollowHelm.label>
+  
+  <TM_Golem_HollowHelm.description>Protege la cabeza y el cráneo:\nContundente:	+26%\nPunzo-cortante:	+9%\nTérmica:	+11%\nImpacto:	+15%</TM_Golem_HollowHelm.description>
+  
+  
+  <TM_Golem_HollowMaxEnergy.label>célula de maná</TM_Golem_HollowMaxEnergy.label>
+  
+  <TM_Golem_HollowMaxEnergy.description>Aumenta la energía máxima en 500 por nivel. La energía máxima inicial es de 2500.</TM_Golem_HollowMaxEnergy.description>
+
+  
+  
+  <TM_Golem_HollowOrbOfExtinguishedFlames.label>Orbe de llamas extinguidas</TM_Golem_HollowOrbOfExtinguishedFlames.label>
+  
+  <TM_Golem_HollowOrbOfExtinguishedFlames.description>Aumenta la ganancia de puntos para la tecnología de investigación activa por cada peón que muera en el mapa. El orbe también se puede configurar para detectar y extinguir cualquier fuego en un radio de 25 casillas y emite una tenue luz plateada. Estos efectos solo están activos mientras el gólem hueco está inactivo.\n\n*Esta mejora comparte la misma ranura que las Llamas de la apatía devoradora y las eliminará si se instala*</TM_Golem_HollowOrbOfExtinguishedFlames.description>
+  
+  
+  <TM_Golem_HollowPGArcane.label>Gema de protección: Arcana</TM_Golem_HollowPGArcane.label>
+  
+  <TM_Golem_HollowPGArcane.description>La gema de protección arcana permite al gólem envolver a los atacantes a distancia enemigos con un escudo inverso llamado Pozo de la desesperación. El Pozo de la desesperación permite la entrada de proyectiles, pero bloquea cualquier proyectil saliente.\n\nCoste de energía:	40\nReutilización:	360\nRango:		60\nDuración:	20 s\n*Solo se puede usar una gema de protección*</TM_Golem_HollowPGArcane.description>
+  
+  
+  <TM_Golem_HollowPGDeath.label>Gema de protección: Muerte</TM_Golem_HollowPGDeath.label>
+  
+  <TM_Golem_HollowPGDeath.description>La gema de protección de muerte rodea al gólem con un aura maldita. Los enemigos en un radio de 15 casillas pueden ser golpeados con una maldición que degrada su fuerza de voluntad y sus capacidades de combate. El coste de energía siempre es 10, independientemente de cuántos enemigos se vean afectados.\n\nRadio del aura:	15 casillas\nFrecuencia de pulso:	12 s\nCoste de energía:	10 de energía por pulso\n*Solo se puede usar una gema de protección*</TM_Golem_HollowPGDeath.description>
+  
+  
+  <TM_Golem_HollowPGDoom.label>Gema de protección: Abismo de la muerte</TM_Golem_HollowPGDoom.label>
+  
+  <TM_Golem_HollowPGDoom.description>La gema de protección del abismo de la muerte maldice a los enemigos con el peso de su propia mortalidad. Los enemigos en un radio de 36 casillas pueden ser golpeados con una maldición que ralentiza su movimiento.\n\nRadio del aura:	36 casillas\nFrecuencia de pulso:	10 s\nCoste de energía:	8 de energía por peón\n*Solo se puede usar una gema de protección*</TM_Golem_HollowPGDoom.description>
+  
+  
+  <TM_Golem_HollowPGFire.label>Gema de protección: Fuego</TM_Golem_HollowPGFire.label>
+  
+  <TM_Golem_HollowPGFire.description>La gema de protección de fuego permite al gólem envolverse en llamas con el escudo de Furia ardiente. Furia ardiente otorga una reducción de daño del 35 % contra todos los ataques, cauteriza heridas, evita que el gólem se tambalee y quema a los enemigos cercanos.\n\nCoste de energía: 120\nReutilización: 1200 s\nDuración: 100 s\n*Solo se puede usar una gema de protección*</TM_Golem_HollowPGFire.description>
+  
+  
+  <TM_Golem_HollowPGIce.label>Gema de protección: Agua</TM_Golem_HollowPGIce.label>
+  
+  <TM_Golem_HollowPGIce.description>La gema de protección de agua permite al gólem evadir los ataques entrantes. La probabilidad de esquivar un ataque es proporcional al porcentaje de energía del gólem. Cada evasión reduce la energía del gólem en 5. Esta habilidad es persistente mientras el umbral de energía del gólem se mantenga por encima del mínimo requerido para usar habilidades.\n\n*Solo se puede usar una gema de protección*</TM_Golem_HollowPGIce.description>
+  
+  
+  <TM_Golem_HollowRestore.label>restaurar parte</TM_Golem_HollowRestore.label>
+
+  
+  
+  <TM_Golem_HollowShoulders.label>hombreras</TM_Golem_HollowShoulders.label>
+  
+  <TM_Golem_HollowShoulders.description>Protege los hombros, la clavícula y el cuello:\nContundente:	+10%\nPunzo-cortante:	+23%\nTérmica:	+7%\nImpacto:	+8%</TM_Golem_HollowShoulders.description>
+  
+  
+  <TM_Golem_HollowStaff.label>Bastón hueco</TM_Golem_HollowStaff.label>
+  
+  <TM_Golem_HollowStaff.description>Habilita un ataque mágico a distancia. El bastón hueco ocupa la ranura de arma; solo se puede equipar una sola arma.</TM_Golem_HollowStaff.description>
+  
+  
+  <TM_HollowGolem_CoAArcane.label>Blasón: Arcano</TM_HollowGolem_CoAArcane.label>
+  
+  <TM_HollowGolem_CoAArcane.description>Aumenta pasivamente las estadísticas y mejora el toque de descomposición para restaurar 20 + 5*nivel de energía por golpe.\nReutilización de hab.:	-[12%/24%/36%]\nDaño de habilidades:	+[10%/20%/30%]\nProcesamiento:		+[15%/30%/45%]\nReducción de daño:	[85%/80%/75%]\n*Solo se puede usar un blasón, pero puede mejorarse varias veces*</TM_HollowGolem_CoAArcane.description>
+  
+  
+  <TM_HollowGolem_CoADeath.label>Blasón: Muerte</TM_HollowGolem_CoADeath.label>
+  
+  <TM_HollowGolem_CoADeath.description>Aumenta pasivamente las estadísticas y mejora el toque de descomposición para que sea un 50 % más efectivo y golpee dos veces.\nArmadura:		+[5%/10%/15%]\nReutilización de hab.:	-[8%/16%/24%]\nDaño de habilidades:	+[10%/20%/30%]\nProcesamiento:		+[15%/30%/45%]\nReducción de daño:	[85%/80%/75%]\n*Solo se puede usar un blasón, pero puede mejorarse varias veces*</TM_HollowGolem_CoADeath.description>
+  
+  
+  <TM_HollowGolem_CoAFire.label>Blasón: Fuego</TM_HollowGolem_CoAFire.label>
+  
+  <TM_HollowGolem_CoAFire.description>Aumenta pasivamente las estadísticas y mejora el toque de descomposición para infligir 10 + 5*nivel de daño por quemadura adicional:\nMovilidad:		+[0.2 c/0.3 c/0.35 c]\nArmadura térmica:	+[30%/50%/60%]\nReutilización de hab.:	-[10%/20%/30%]\nProcesamiento:		+[10%/20%/30%]\nReducción de daño:	[85%/80%/75%]\n\nAbsorber fuego\nCoste de energía:	0\nReutilización:	2.5 s\nRango:		4 c\nSalud restaurada por fuego: 10\n*Solo se puede usar un blasón, pero puede mejorarse varias veces*</TM_HollowGolem_CoAFire.description>
+  
+  
+  <TM_HollowGolem_CoAIce.label>Blasón: Agua</TM_HollowGolem_CoAIce.label>
+  
+  <TM_HollowGolem_CoAIce.description>Aumenta pasivamente las estadísticas y mejora el toque de descomposición para sanar al gólem por 8 + 4*nivel y a otro peón cercano por la misma cantidad.\nArmadura:		+[5%/10%/15%]\nReutilización:		-[10%/20%/30%]\nProcesamiento:		+[10%/20%/30%]\nReducción de daño:	[85%/80%/75%]\n*Solo se puede usar un blasón, pero puede mejorarse varias veces*</TM_HollowGolem_CoAIce.description>
+
+  
+</LanguageData>

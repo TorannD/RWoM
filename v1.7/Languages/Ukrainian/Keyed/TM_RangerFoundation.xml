@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ReadRangerTraining>Вивчити підготовку слідопита — класичні польові вміння зі штрафами до роботи (остаточно)</TM_ReadRangerTraining>
+  <TM_ReadRangerTrailLore>Вивчити «Знання стежок» — швидше переносити вантажі просто неба (остаточно)</TM_ReadRangerTrailLore>
+  <TM_TrailLoreName>Знання стежок</TM_TrailLoreName>
+  <TM_TrailLoreTraining>Під час перенесення вантажу просто неба швидкість руху зростає на 2%. Кожен ранг додає 2 відсоткові пункти, до 10%.</TM_TrailLoreTraining>
+</LanguageData>

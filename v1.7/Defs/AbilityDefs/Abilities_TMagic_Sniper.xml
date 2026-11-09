@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   
-    <!-- Sniper focus -->
+    
   <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
    <defName>Projectile_SniperFocus</defName>
    <thingClass>AbilityUser.Projectile_Ability</thingClass>
@@ -17,7 +16,7 @@
 		<damageAmountBase>0</damageAmountBase>
 		<speed>100</speed>
    </projectile>
- </ThingDef>
+</ThingDef>
  
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_SniperFocus</defName>
@@ -56,9 +55,16 @@ Legendary Sniper: Speed +0.25c/s, Aiming Delay -30%, Shooting Acc. +8%, Research
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_sniperfocus</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
-<!-- Headshot start-->
+
   
   <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
    <defName>Projectile_Headshot</defName>
@@ -74,7 +80,7 @@ Legendary Sniper: Speed +0.25c/s, Aiming Delay -30%, Shooting Acc. +8%, Research
 		<damageAmountBase>5</damageAmountBase>
 		<speed>60</speed>
    </projectile>
- </ThingDef>
+</ThingDef>
  
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_Headshot</defName>
@@ -98,8 +104,7 @@ Legendary Sniper: Speed +0.25c/s, Aiming Delay -30%, Shooting Acc. +8%, Research
         <warmupTime>.1</warmupTime>
         <SecondsToRecharge>45</SecondsToRecharge>
         <range>40</range>
-<!--         <soundCast>Shot_SniperRifle</soundCast>
-		<soundCastTail>GunTail_Heavy</soundCastTail> -->
+
         <muzzleFlashScale>20</muzzleFlashScale>
         <isPrimary>true</isPrimary>
    	    <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
@@ -110,9 +115,16 @@ Legendary Sniper: Speed +0.25c/s, Aiming Delay -30%, Shooting Acc. +8%, Research
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_headshot</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	 
-	 <!-- Disabling shot start-->
+	 
   
   <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
    <defName>Projectile_DisablingShot</defName>
@@ -128,7 +140,7 @@ Legendary Sniper: Speed +0.25c/s, Aiming Delay -30%, Shooting Acc. +8%, Research
 		<damageAmountBase>6</damageAmountBase>
 		<speed>65</speed>
    </projectile>
- </ThingDef>
+</ThingDef>
  
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_DisablingShot</defName>
@@ -155,8 +167,7 @@ Recharge 45s</description>
         <warmupTime>2.5</warmupTime>
         <SecondsToRecharge>45</SecondsToRecharge>
         <range>20</range>
-<!--         <soundCast>InfernoCannon_Fire</soundCast>
-		<soundCastTail>GunTail_Heavy</soundCastTail> -->
+
         <muzzleFlashScale>5</muzzleFlashScale>
         <isPrimary>true</isPrimary>
    	    <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
@@ -167,7 +178,14 @@ Recharge 45s</description>
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_disablingshot</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_DisablingShot_I</defName>
@@ -194,8 +212,7 @@ Recharge 43s</description>
         <warmupTime>2.3</warmupTime>
         <SecondsToRecharge>43</SecondsToRecharge>
         <range>22</range>
-<!--         <soundCast>InfernoCannon_Fire</soundCast>
-		<soundCastTail>GunTail_Heavy</soundCastTail> -->
+
         <muzzleFlashScale>5</muzzleFlashScale>
         <isPrimary>true</isPrimary>
    	    <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
@@ -206,7 +223,14 @@ Recharge 43s</description>
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_disablingshot_i</spellId>
+<domain>Magic</domain>
+<tier>1</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_DisablingShot_II</defName>
@@ -233,8 +257,7 @@ Recharge 41s</description>
         <warmupTime>2.1</warmupTime>
         <SecondsToRecharge>41</SecondsToRecharge>
         <range>25</range>
-<!--         <soundCast>InfernoCannon_Fire</soundCast>
-		<soundCastTail>GunTail_Heavy</soundCastTail> -->
+
         <muzzleFlashScale>5</muzzleFlashScale>
         <isPrimary>true</isPrimary>
    	    <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
@@ -245,7 +268,14 @@ Recharge 41s</description>
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_disablingshot_ii</spellId>
+<domain>Magic</domain>
+<tier>2</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_DisablingShot_III</defName>
@@ -272,8 +302,7 @@ Recharge 40s</description>
         <warmupTime>1.0</warmupTime>
         <SecondsToRecharge>40</SecondsToRecharge>
         <range>27</range>
-<!--         <soundCast>InfernoCannon_Fire</soundCast>
-		<soundCastTail>GunTail_Heavy</soundCastTail> -->
+
         <muzzleFlashScale>5</muzzleFlashScale>
         <isPrimary>true</isPrimary>
    	    <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
@@ -284,9 +313,16 @@ Recharge 40s</description>
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>  
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_disablingshot_iii</spellId>
+<domain>Magic</domain>
+<tier>3</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>  
 
-  <!-- Anti Armor -->
+  
     <ThingDef Class="AbilityUser.ProjectileDef_Ability" ParentName="BaseBullet">
     <defName>Projectile_AntiArmor</defName>
 	<thingClass>TorannMagic.Projectile_AntiArmor</thingClass>
@@ -301,7 +337,7 @@ Recharge 40s</description>
       <damageAmountBase>6</damageAmountBase>
       <speed>50</speed>
     </projectile>
-  </ThingDef>
+</ThingDef>
   
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_AntiArmor</defName>
@@ -324,8 +360,7 @@ Recharge 40s</description>
         <warmupTime>1</warmupTime>
         <SecondsToRecharge>10</SecondsToRecharge>
         <range>45</range>
-<!--         <soundCast>Shot_Revolver</soundCast>
-		<soundCastTail>GunTail_Heavy</soundCastTail> -->
+
         <muzzleFlashScale>25</muzzleFlashScale>
         <isPrimary>true</isPrimary>
 		<isViolent>true</isViolent>
@@ -337,9 +372,16 @@ Recharge 40s</description>
 			<canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_antiarmor</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
-    <!-- Shadow slayer -->
+    
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_ShadowSlayer</defName>
     <label>Shadow Slayer</label>
@@ -374,6 +416,13 @@ The shadow slayer cloaking field is a long duration form of invisibility. Unlike
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_shadowslayer</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
 </Defs>

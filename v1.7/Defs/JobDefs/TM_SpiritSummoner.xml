@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef>
+    <defName>TM_SpiritSummonMinion</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>summoning a minion through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritSummonElemental</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>summoning an elemental through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritSummonPylon</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>summoning a defense pylon through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritSummonExplosive</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>summoning a mana mine through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritSummonPoppi</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>summoning poppi through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritPack</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>summoning spirit wolves through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritPack_I</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>summoning spirit wolves through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritPack_II</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>summoning spirit wolves through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritPack_III</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>summoning spirit wolves through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritDismissMinion</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>dismissing a minion through a spirit host.</reportString>
+  </JobDef>
+</Defs>

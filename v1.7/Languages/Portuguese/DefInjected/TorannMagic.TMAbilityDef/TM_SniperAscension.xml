@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_SniperSingleOpening.label>uma única oportunidade</TM_SniperSingleOpening.label>
+  <TM_SniperSingleOpening.description>Mantém a posição e a linha de visão sobre um inimigo. Após 5 segundos de preparação, dispara três balas em 9 segundos. Cada bala causa 120% do dano da arma. O alcance é limitado pelo da arma e por um máximo de 45 células. Enquanto aponta, o atirador recebe mais 20% de dano. Custo base: 60% de vigor. Recarga: dois dias. Interromper a preparação consome 6% de vigor e inicia uma recarga mais curta.</TM_SniperSingleOpening.description>
+</LanguageData>

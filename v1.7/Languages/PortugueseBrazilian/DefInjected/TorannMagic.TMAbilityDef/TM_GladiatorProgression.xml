@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_GladiatorManeuver.label>manobra</TM_GladiatorManeuver.label>
+  <TM_GladiatorManeuver.description>Aumenta a velocidade de movimento em 8% por 8 segundos.</TM_GladiatorManeuver.description>
+  <TM_GladiatorSweep.label>varredura</TM_GladiatorSweep.label>
+  <TM_GladiatorSweep.description>Acerte um inimigo adjacente e até outro ao lado dele, causando 65% do dano da arma a cada um.</TM_GladiatorSweep.description>
+</LanguageData>

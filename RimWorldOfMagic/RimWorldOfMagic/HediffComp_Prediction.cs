@@ -15,6 +15,19 @@ namespace TorannMagic
         public bool removeNow = false;
 
         public int blurTick = 0;
+        public bool ownPredictionTrialSource;
+        internal Pawn projectedOwner;
+        internal Pawn Owner => projectedOwner == null ? Pawn :
+            ClassProgression.ChronomancerPrediction.CastingBody(projectedOwner) == Pawn ? projectedOwner : null;
+
+        public override void CompExposeData()
+        {
+            base.CompExposeData();
+            Scribe_References.Look(ref projectedOwner,"TM_predictionOwner");
+            Scribe_Values.Look(ref blurTick,"TM_lastPredictedDodge");
+            Scribe_Values.Look(ref removeNow,"TM_predictionEnding");
+            Scribe_Values.Look(ref ownPredictionTrialSource, "rwomOwnPredictionTrialSource", false);
+        }
         private int predictionFrequency = 120;
 
         public string labelCap
@@ -39,11 +52,11 @@ namespace TorannMagic
             if (spawned && base.Pawn.Map != null && this.Pawn.story != null)
             {
                 //FleckMaker.ThrowLightningGlow(base.Pawn.TrueCenter(), base.Pawn.Map, 3f);
-                Pawn caster = this.Pawn;
-                CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
+                Pawn caster = Owner;
+                CompAbilityUserMagic comp = caster?.GetCompAbilityUserMagic();
                 if (comp != null)
                 {
-                    pwrVal = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Prediction.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Prediction_pwr").level;
+                    pwrVal = ClassProgression.SpiritRebirthRuntime.SavedRank(comp.MagicData,"TM_Prediction_pwr");
                     this.parent.Severity = .5f + pwrVal;
                 }
             }
@@ -85,20 +98,20 @@ namespace TorannMagic
         {
             get
             {
-                return base.CompShouldRemove || this.removeNow;
+                return base.CompShouldRemove || this.removeNow || (projectedOwner != null && Owner == null);
             }
         }
 
         public void UpdateSeverity()
         {
             float sev = this.parent.Severity;
-            Pawn caster = this.Pawn;
-            CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
+            Pawn caster = Owner;
+            CompAbilityUserMagic comp = caster?.GetCompAbilityUserMagic();
             
 
             if (comp != null)
             {
-                pwrVal = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Prediction.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Prediction_pwr").level;
+                pwrVal = ClassProgression.SpiritRebirthRuntime.SavedRank(comp.MagicData,"TM_Prediction_pwr");
                 if (sev <= 0)
                 {
                     this.removeNow = true;

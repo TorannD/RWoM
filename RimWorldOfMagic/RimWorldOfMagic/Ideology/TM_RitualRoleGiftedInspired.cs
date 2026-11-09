@@ -29,6 +29,11 @@ namespace TorannMagic.Ideology
                 }
                 return false;
             }
+            if (ClassProgression.ClassEnrollment.HasChosenClass(p))
+            {
+                if (!skipReason) reason = "TM_BestowRecipientUnavailable".Translate(p.LabelShort);
+                return false;
+            }
             if(!p.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted))
             {
                 if (!skipReason)

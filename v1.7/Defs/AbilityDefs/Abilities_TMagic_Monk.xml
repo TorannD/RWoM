@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
- <!-- Chi -->
+ 
  
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_Chi</defName>
@@ -39,9 +38,16 @@
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_chi</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
    
-     <!-- Chi Burst -->
+     
  
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_ChiBurst</defName>
@@ -85,9 +91,16 @@ Has a low chance to disrupt the mental state of any pawn. Can be resisted.</desc
 			<canTargetLocations>true</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_chiburst</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
-     <!-- Mind Over Body -->
+     
   
   <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_MindOverBody</defName>
@@ -123,9 +136,16 @@ Mind Over Body is a passive buff that improves consciousness, moving, manipulati
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_mindoverbody</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	 <!-- Meditate -->
+	 
  
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_Meditate</defName>
@@ -159,9 +179,16 @@ Any physical or mental ailments must be purged before meditation can generate Ch
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_meditate</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
-  <!-- Tiger Strike -->
+  
   
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_TigerStrike</defName>
@@ -200,9 +227,16 @@ Passive ability (8 stamina): deliver multiple hits against an opponent; attacks 
 			<canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_tigerstrike</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
-  <!-- Dragon Strike -->
+  
 	 
 	 <ThingDef ParentName="BaseBullet" Name="FlyingObject_DragonStrike">
 	   <defName>FlyingObject_DragonStrike</defName>
@@ -218,7 +252,7 @@ Passive ability (8 stamina): deliver multiple hits against an opponent; attacks 
 			<damageAmountBase>0</damageAmountBase>
 			<speed>40</speed>
 	   </projectile>
-	</ThingDef>
+</ThingDef>
 	 
   <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
    <defName>Projectile_DragonStrike</defName>
@@ -234,7 +268,7 @@ Passive ability (8 stamina): deliver multiple hits against an opponent; attacks 
 		<damageAmountBase>0</damageAmountBase>
 		<speed>40</speed>
    </projectile>
- </ThingDef>
+</ThingDef>
  
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_DragonStrike</defName>
@@ -245,7 +279,7 @@ Passive ability (8 stamina): deliver multiple hits against an opponent; attacks 
 Activated ability (8 chi): leap through the air and deliver a powerful flying kick against an distant opponent. The closer an opponent is, the more damage Dragon Strike deals. If an opponent is within 5 cells, this attack will also knock the target back. 
 
 Passive ability (10 stamina): performs a round-house kick that strikes multiple opponents. Dragon Strike has a chance to trigger on any normal attack when multiple enemies are near the target.</description>
-<!--    <thingClass>ThingWithComps</thingClass> -->
+
     <chiCost>0.08</chiCost>
 	<efficiencyReductionPercent>.1</efficiencyReductionPercent>
 	<canCopy>true</canCopy>
@@ -273,9 +307,16 @@ Passive ability (10 stamina): performs a round-house kick that strikes multiple 
 		  <canTargetLocations>true</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_dragonstrike</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
-  <!-- Thunder Strike -->
+  
     <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
         <thingClass>TorannMagic.Projectile_ThunderStrike</thingClass>
 		<defName>Projectile_ThunderStrike</defName>
@@ -291,7 +332,7 @@ Passive ability (10 stamina): performs a round-house kick that strikes multiple 
             <damageAmountBase>0</damageAmountBase>
             <speed>999</speed>
         </projectile>
-    </ThingDef>
+</ThingDef>
 
 	<TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_ThunderStrike</defName>
@@ -324,6 +365,13 @@ Passive ability (10 stamina): performs a round-house kick that strikes multiple 
             <muzzleFlashScale>20</muzzleFlashScale>
             <isPrimary>false</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_thunderstrike</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
 </Defs>

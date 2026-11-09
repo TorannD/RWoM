@@ -13,6 +13,7 @@ namespace TorannMagic
 
         private bool initialized = false;
         private bool removeNow = false;
+        private int lastProcessedTick = -1;
 
         private int eventFrequency = 120;
         private int chiFrequency = 4;
@@ -28,6 +29,7 @@ namespace TorannMagic
         public override void CompExposeData()
         {
             base.CompExposeData();
+            Scribe_Values.Look(ref lastProcessedTick, "chiProcessedTick", -1);
         }
 
         public string labelCap
@@ -51,11 +53,11 @@ namespace TorannMagic
             bool spawned = base.Pawn.Spawned;
             CompAbilityUserMight comp = this.Pawn.GetCompAbilityUserMight();
 
-            if (comp != null && comp.IsMightUser)
+            if (comp != null && (comp.IsMightUser || ClassProgression.MonkMartialPath.IsMonk(Pawn)))
             {
-                pwrVal = comp.MightData.MightPowerSkill_Chi.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Chi_pwr").level;
-                verVal = comp.MightData.MightPowerSkill_Chi.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Chi_ver").level;
-                effVal = comp.MightData.MightPowerSkill_Chi.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Chi_eff").level;
+                pwrVal = comp.MightData.MightPowerSkill_Chi.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Chi_pwr")?.level ?? 0;
+                verVal = comp.MightData.MightPowerSkill_Chi.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Chi_ver")?.level ?? 0;
+                effVal = comp.MightData.MightPowerSkill_Chi.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Chi_eff")?.level ?? 0;
             }
             else
             {
@@ -66,7 +68,12 @@ namespace TorannMagic
         public override void CompPostTick(ref float severityAdjustment)
         {
             base.CompPostTick(ref severityAdjustment);
-            bool flag = base.Pawn != null && base.Pawn.Map != null;
+            var body = PhysicalBody();
+            if (body == null) return;
+            int now = Find.TickManager.TicksGame;
+            if (now <= lastProcessedTick) return;
+            lastProcessedTick = now;
+            bool flag = body.Map != null;
             if (flag)
             {
                 if (!initialized)
@@ -77,11 +84,11 @@ namespace TorannMagic
             }
             if(initialized && Find.TickManager.TicksGame % this.eventFrequency == 0)
             {
-                if (this.Pawn.IsColonist)
+                if (body.IsColonist)
                 {
                     severityAdjustment -= (Rand.Range(.03f, .05f) - (.008f * verVal));
                 }
-                else if(this.Pawn.IsPrisoner)
+                else if(body.IsPrisoner)
                 {
                     severityAdjustment -= (Rand.Range(.25f, .5f) - (.00375f * verVal));
                 }
@@ -91,6 +98,25 @@ namespace TorannMagic
                 }
             }
             this.parent.Severity = Mathf.Clamp(this.parent.Severity, 0, this.maxSev);
+        }
+
+        private Pawn PhysicalBody()
+        {
+            if (!ClassProgression.SpiritRebirthEnergy.Marked(Pawn)) return Pawn;
+            if (!ClassProgression.SpiritRebirthState.TryGet(Pawn, out var state) || state.DepletionPending ||
+                state.Host is not Pawn body || !state.HasValidHost(Pawn) ||
+                ClassProgression.MonkMartialPath.Owner(body) != Pawn) return null;
+            return body;
+        }
+
+        internal static void TickHosted(Pawn soul)
+        {
+            var chi = ClassProgression.MonkMartialPath.Chi(soul);
+            var tracker = chi?.TryGetComp<HediffComp_Chi>();
+            if (tracker == null) return;
+            float adjustment = 0;
+            tracker.CompPostTick(ref adjustment);
+            if (adjustment != 0) chi.Severity += adjustment;
         }
 
         public override bool CompShouldRemove

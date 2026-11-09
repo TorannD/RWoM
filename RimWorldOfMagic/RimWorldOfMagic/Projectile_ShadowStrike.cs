@@ -1,4 +1,4 @@
-﻿using Verse;
+using Verse;
 using Verse.AI;
 using AbilityUser;
 using UnityEngine;
@@ -112,6 +112,7 @@ namespace TorannMagic
                 return false;
             }
             bool draftFlag = caster.Drafted;
+            bool previousFlight = ModOptions.Constants.GetPawnInFlight();
             try
             {
                 if (caster.IsColonist)
@@ -120,10 +121,6 @@ namespace TorannMagic
                     caster.DeSpawn();
                     GenSpawn.Spawn(caster, targetPos, map);
                     caster.drafter.Drafted = draftFlag;
-                    if (ModOptions.Settings.Instance.cameraSnap)
-                    {
-                        CameraJumper.TryJumpAndSelect(caster);
-                    }
                     ModOptions.Constants.SetPawnInFlight(false);
                     return true;
                 }
@@ -134,9 +131,16 @@ namespace TorannMagic
                     return true;
                 }
             }
-            catch
+            catch (Exception exception)
             {
+                Compatibility.TM_Log.Warning("ShadowStrike", "Move failed before strike; caster=" + caster.ThingID
+                    + "; target=" + target.ThingID + "; origin=" + startPos + "; destination=" + targetPos
+                    + "; casterSpawned=" + caster.Spawned + "; " + exception);
                 return false;
+            }
+            finally
+            {
+                ModOptions.Constants.SetPawnInFlight(previousFlight);
             }
         }
 
@@ -166,7 +170,12 @@ namespace TorannMagic
                                 dmg *= 3;
                             }
                             BodyPartRecord bpr = t.health.hediffSet.GetRandomNotMissingPart(DamageDefOf.Stab, BodyPartHeight.Undefined, BodyPartDepth.Outside);
-                            TM_Action.DamageEntities(target, bpr, dmg, Rand.Range(0f, .5f), DamageDefOf.Stab, this.caster);
+                            bool trial = ClassProgression.ShadowWalkerMartialPath.Path(caster) != null && ClassProgression.ShadowWalkerMartialPath.Enemy(caster,t);
+                            bool combined = trial && (t.health.hediffSet.HasHediff(TorannMagicDefOf.TM_NightshadeToxinHD) ||
+                                caster.health.hediffSet.HasHediff(TorannMagicDefOf.TM_ShadowCloakHD));
+                            dmg = ClassProgression.ShadowWalkerMartialPath.StrikeDamage(caster,dmg);
+                            var hit = TM_Action.DamageEntitiesResult(target, bpr, dmg, Rand.Range(0f, .5f), DamageDefOf.Stab, this.caster);
+                            if (trial && hit.totalDamageDealt > 0) ClassProgression.ShadowWalkerMartialPath.Hit(caster,t.thingIDNumber,false,combined);
                             Vector3 rndPos = t.DrawPos;
                             rndPos.x += Rand.Range(-.2f, .2f);
                             rndPos.z += Rand.Range(-.2f, .2f);
@@ -251,13 +260,6 @@ namespace TorannMagic
                     GenSpawn.Spawn(caster, startPos, map);
                     caster.drafter.Drafted = draftFlag;
                     ModOptions.Constants.SetPawnInFlight(false);
-                    if(selectedFlag)
-                    {
-                        if (ModOptions.Settings.Instance.cameraSnap)
-                        {
-                            CameraJumper.TryJumpAndSelect(caster);
-                        }
-                    }
                 }
                 else
                 {

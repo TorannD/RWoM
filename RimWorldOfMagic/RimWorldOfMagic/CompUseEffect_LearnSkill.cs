@@ -7,8 +7,29 @@ namespace TorannMagic
 {
     public class CompUseEffect_LearnSkill : CompUseEffect
     {
+        private bool AlreadyKnowsGladiatorSprint(Pawn pawn)
+            => parent?.def?.defName == "SkillOf_Sprint" && ClassProgression.ClassIdentity.TryGetState(pawn, out var state)
+                && state.Find(ClassProgression.JobDriver_GladiatorInitiation.ClassId) != null
+                && pawn.GetCompAbilityUserMight()?.MightData?.MightPowersG.Any(p =>
+                    p.learned && p.TMabilityDefs.Contains(TorannMagicDefOf.TM_Sprint)) == true;
+
+        public override AcceptanceReport CanBeUsedBy(Pawn pawn) => AlreadyKnowsGladiatorSprint(pawn)
+            ? (AcceptanceReport)"TM_ProgressionBookUnavailable".Translate() : base.CanBeUsedBy(pawn);
+
         public override void DoEffect(Pawn user)
         {
+            if (parent.def?.defName == "SkillOf_Sprint" && ClassProgression.ClassIdentity.TryGetState(user, out var state)
+                && state.Find(ClassProgression.JobDriver_GladiatorInitiation.ClassId) != null)
+            {
+                var might = user.GetCompAbilityUserMight();
+                var owner = might?.MightData?.MightPowersG.FirstOrDefault(p => p.TMabilityDefs.Contains(TorannMagicDefOf.TM_Sprint));
+                if (owner == null || owner.learned || parent.Destroyed) return;
+                parent.SplitOff(1).Destroy(DestroyMode.Vanish);
+                owner.learned = true;
+                might.skill_Sprint = true;
+                TM_ClassState.AddRuntimeAbility(might, owner.abilityDef);
+                return;
+            }
             CompAbilityUserMight comp = user.GetCompAbilityUserMight();
 
             if (parent.def != null && (TM_Calc.IsMightUser(user) || TM_Calc.IsWayfarer(user)))

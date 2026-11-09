@@ -34,6 +34,7 @@
     <label>gemcrafting table</label>
     <thingClass>Building_WorkTable</thingClass>
     <description>A workbench used for refining enchanting stones</description>
+    <drawerType>MapMeshAndRealTime</drawerType>
     <graphicData>
       <texPath>Items/TableGemcutting</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
@@ -64,7 +65,7 @@
       <Cleanliness>-5</Cleanliness>      
     </statBases>
     <size>(3,1)</size>
-    <designationCategory>Production</designationCategory>
+    <designationCategory>TM_RWoM</designationCategory>
     <passability>PassThroughOnly</passability>
     <pathCost>70</pathCost>
     <hasInteractionCell>True</hasInteractionCell>
@@ -86,6 +87,7 @@
       <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
     </building>
     <comps>
+      <li Class="TorannMagic.Visuals.CompProperties_ProductionBuildingEffects"><effect>Gemcutting</effect></li>
       <li Class="CompProperties_AffectedByFacilities">
         <linkableFacilities>
           <li>ToolCabinet</li>
@@ -106,6 +108,7 @@
     <label>scribing table</label>
     <thingClass>Building_WorkTable</thingClass>
     <description>A printing press used to make books and scrolls.</description>
+    <drawerType>MapMeshAndRealTime</drawerType>
     <graphicData>
       <texPath>Items/TableMagicPrinter</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
@@ -137,7 +140,7 @@
 	  <WorkTableWorkSpeedFactor>1</WorkTableWorkSpeedFactor>
     </statBases>
     <size>(1,1)</size>
-    <designationCategory>Production</designationCategory>
+    <designationCategory>TM_RWoM</designationCategory>
     <passability>PassThroughOnly</passability>
     <pathCost>70</pathCost>
     <hasInteractionCell>True</hasInteractionCell>
@@ -153,6 +156,7 @@
       <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
     </building>
     <comps>
+      <li Class="TorannMagic.Visuals.CompProperties_ProductionBuildingEffects"><effect>Scribing</effect></li>
       <li Class="CompProperties_AffectedByFacilities">
         <linkableFacilities>
           <li>ToolCabinet</li>
@@ -178,6 +182,7 @@
 Scientifically, the arcane forge might be described as a matter fabricator, though the exact mechanics have yet to be determined.  Only those possessing the ability to manipulate arcane power are able to use the arcane forge.
 
 Using the arcane forge dramatically increases crafting speed but consumes mana.  Items of quality are determined by the mage's intelligence skill and class level.</description>
+    <drawerType>MapMeshAndRealTime</drawerType>
     <graphicData>
       <texPath>Items/anvil</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
@@ -210,7 +215,7 @@ Using the arcane forge dramatically increases crafting speed but consumes mana. 
 	  <WorkTableWorkSpeedFactor>25</WorkTableWorkSpeedFactor>
     </statBases>
     <size>(3,1)</size>
-    <designationCategory>Production</designationCategory>
+    <designationCategory>TM_RWoM</designationCategory>
     <passability>PassThroughOnly</passability>
     <pathCost>100</pathCost>
     <hasInteractionCell>True</hasInteractionCell>
@@ -227,6 +232,7 @@ Using the arcane forge dramatically increases crafting speed but consumes mana. 
       <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
     </building>
     <comps>
+      <li Class="TorannMagic.Visuals.CompProperties_ProductionBuildingEffects"><effect>Forge</effect></li>
       <li Class="CompProperties_AffectedByFacilities">
         <linkableFacilities>
           <li>ToolCabinet</li>
@@ -332,7 +338,7 @@ Arcalleum: success chance +15%, refunds 25% of mana cost
 	  <WorkTableWorkSpeedFactor>1</WorkTableWorkSpeedFactor>
     </statBases>
     <size>(5,5)</size>
-    <designationCategory>Production</designationCategory>
+    <designationCategory>TM_RWoM</designationCategory>
     <passability>Standable</passability>
     <pathCost>20</pathCost>
     <hasInteractionCell>True</hasInteractionCell>
@@ -353,6 +359,7 @@ Arcalleum: success chance +15%, refunds 25% of mana cost
       </buildingTags>
     </building>
     <comps>
+      <li Class="TorannMagic.Visuals.CompProperties_ProductionBuildingEffects"><effect>MagicCircle</effect></li>
 	  <li Class="CompProperties_Refuelable">
         <fuelCapacity>1</fuelCapacity>
         <targetFuelLevelConfigurable>false</targetFuelLevelConfigurable>
@@ -429,7 +436,7 @@ Arcalleum: success chance +10%, refunds 10% of mana cost
 	  <WorkTableWorkSpeedFactor>1</WorkTableWorkSpeedFactor>
     </statBases>
     <size>(3,5)</size>
-    <designationCategory>Production</designationCategory>
+    <designationCategory>TM_RWoM</designationCategory>
     <passability>Standable</passability>
     <pathCost>10</pathCost>
     <hasInteractionCell>True</hasInteractionCell>
@@ -447,6 +454,7 @@ Arcalleum: success chance +10%, refunds 10% of mana cost
       <hasFuelingPort>false</hasFuelingPort>
     </building>
     <comps>
+      <li Class="TorannMagic.Visuals.CompProperties_ProductionBuildingEffects"><effect>SmallMagicCircle</effect></li>
 	  <li Class="CompProperties_Refuelable">
         <fuelCapacity>1</fuelCapacity>
         <targetFuelLevelConfigurable>false</targetFuelLevelConfigurable>

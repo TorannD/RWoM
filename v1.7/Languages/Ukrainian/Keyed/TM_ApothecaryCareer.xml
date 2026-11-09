@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ReadApothecaryHerbalist>Вивчити польовий збір</TM_ReadApothecaryHerbalist>
+  <TM_ReadApothecaryFreshStock>Вивчити зберігання трав</TM_ReadApothecaryFreshStock>
+  <TM_ApothecaryGatherInfo>Збір дає на 5% більше трав.</TM_ApothecaryGatherInfo>
+  <TM_ApothecaryFreshInfo>Трави псуються на 10% повільніше.</TM_ApothecaryFreshInfo>
+  <TM_ApothecaryStock>Трави: {0}/{1}</TM_ApothecaryStock>
+  <TM_ApothecaryTrialGather>Зберіть трави з 30 різних зрілих здорових рослин ({0}/30). Запас трав має зрости.</TM_ApothecaryTrialGather>
+  <TM_ApothecaryTrialTreat>Обробіть 20 різних свіжих ран ({0}/20) або полегшіть антидотом 12 харчових отруєнь ({1}/12).</TM_ApothecaryTrialTreat>
+  <TM_ApothecaryTrialShift>Завершіть 12 медичних змін ({0}/12). Для Вознесіння потрібен 30-й рівень воїна ({1}/30).</TM_ApothecaryTrialShift>
+  <TM_ApothecaryClaim>Здобути наступний ступінь</TM_ApothecaryClaim>
+  <TM_ApothecaryKitUnavailable>Потрібні чотири рослинні ліки поруч і 60% трав.</TM_ApothecaryKitUnavailable>
+  <TM_ApothecaryAntitoxinLow>Потрібно 20% трав.</TM_ApothecaryAntitoxinLow>
+</LanguageData>

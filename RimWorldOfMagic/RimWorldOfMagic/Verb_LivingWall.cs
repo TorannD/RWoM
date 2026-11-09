@@ -1,101 +1,59 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using RimWorld;
-using AbilityUser;
-using Verse;
+using TorannMagic.ClassProgression;
 using UnityEngine;
-
+using Verse;
 
 namespace TorannMagic
 {
-    public class Verb_LivingWall : Verb_UseAbility
+    public class Verb_LivingWall : Verb_SpiritTargetable
     {
-        private int verVal;
-        private int pwrVal;
-        float arcaneDmg = 1f;
-
-        bool validTarg;
-        //Used for non-unique abilities that can be used with shieldbelt
-        public override bool CanHitTargetFrom(IntVec3 root, LocalTargetInfo targ)
+        internal static Thing Segment(Pawn body, LocalTargetInfo target)
         {
-            if (targ.Thing != null && targ.Thing == this.caster)
-            {
-                return this.verbProps.targetParams.canTargetSelf;
-            }
-            if (targ.IsValid && targ.CenterVector3.InBoundsWithNullCheck(base.CasterPawn.Map) && !targ.Cell.Fogged(base.CasterPawn.Map))
-            {
-                if ((root - targ.Cell).LengthHorizontal < this.verbProps.range)
-                {
-                    return true;
-                }
-                else
-                {
-                    validTarg = false;
-                }
-            }
-            else
-            {
-                validTarg = false;
-            }
-            return validTarg;
+            if (body?.Spawned != true || !target.IsValid || !target.Cell.InBounds(body.Map)) return null;
+            if (target.HasThing) return target.Thing.Map == body.Map && target.Thing.Faction == body.Faction &&
+                TM_Calc.IsWall(target.Thing) ? target.Thing : null;
+            return target.Cell.GetThingList(body.Map).Find(t => t.Faction == body.Faction && TM_Calc.IsWall(t));
         }
+
+        public override bool CanHitTargetFrom(IntVec3 root, LocalTargetInfo target)
+            => target.IsValid && target.Cell.InBounds(CasterPawn.Map) && !target.Cell.Fogged(CasterPawn.Map)
+                && (root-target.Cell).LengthHorizontal < verbProps.range;
 
         protected override bool TryCastShot()
         {
-            Pawn caster = this.CasterPawn;
-            //Pawn pawn = this.currentTarget.Thing as Pawn;
-            CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
-            verVal = TM_Calc.GetSkillVersatilityLevel(caster, this.Ability.Def as TMAbilityDef);
-            pwrVal = TM_Calc.GetSkillPowerLevel(caster, this.Ability.Def as TMAbilityDef);
-            //verVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_LivingWall, "TM_LivingWall", "_ver", true);
-            //pwrVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_LivingWall, "TM_LivingWall", "_pwr", true);
-            if(comp != null)
+            bool applied = ApplyHostedEffect();
+            if (!applied) Messages.Message("TM_InvalidTarget".Translate(CasterPawn.LabelShort, Ability.Def.label), MessageTypeDefOf.NegativeEvent);
+            return applied;
+        }
+
+        protected override bool ApplyHostedEffect()
+        {
+            var body = CasterPawn;
+            var owner = SpiritRebirthCasting.SkillOwner(body, Ability);
+            var magic = owner?.GetCompAbilityUserMagic();
+            var segment = Segment(body, currentTarget);
+            if (magic == null || segment == null) return false;
+            int versatility = TM_Calc.GetSkillVersatilityLevel(owner, TorannMagicDefOf.TM_LivingWall);
+            var position = segment.Position.ToVector3Shifted();
+            var old = magic.livingWall;
+            var wall = (FlyingObject_LivingWall)GenSpawn.Spawn(TorannMagicDefOf.FlyingObject_LivingWall,segment.Position,body.Map);
+            try
             {
-                List<Thing> tList = this.currentTarget.Cell.GetThingList(caster.Map);
-                if(tList != null && tList.Count > 0)
-                {
-                    bool wallDetected = false;
-                    foreach(Thing t in tList)
-                    {
-                        if(t.Faction == caster.Faction && TM_Calc.IsWall(t))
-                        {
-                            if(comp.livingWall != null && !comp.livingWall.DestroyedOrNull())
-                            {
-                                comp.livingWall.Destroy(DestroyMode.Vanish);
-                            }
-                            FleckMaker.ThrowLightningGlow(t.DrawPos, caster.Map, 1f);
-                            Thing launchedThing = new Thing()
-                            {
-                                def = TorannMagicDefOf.FlyingObject_LivingWall
-                            };
-                            Pawn casterPawn = base.CasterPawn;                            
-                            FlyingObject_LivingWall flyingObject = (FlyingObject_LivingWall)GenSpawn.Spawn(TorannMagicDefOf.FlyingObject_LivingWall, t.Position, this.CasterPawn.Map);
-                            List<Vector3> path = new List<Vector3>();
-                            Vector3 newVec = t.Position.ToVector3Shifted();
-                            path.Add(newVec);
-                            path.Add(newVec);
-                            flyingObject.ExactLaunch(null, 0, false, path, caster, newVec, t, launchedThing, 15+(3*verVal), 0);
-                            comp.livingWall = flyingObject;
-                            wallDetected = true;
-                            break;
-                        }
-                    }
-                    if(!wallDetected)
-                    {
-                        Messages.Message("TM_InvalidTarget".Translate(caster.LabelShort, Ability.Def.label), MessageTypeDefOf.NegativeEvent);
-                        MoteMaker.ThrowText(caster.DrawPos, caster.Map, "Living Wall: " + "AU_CastFailure".Translate(), -1f);
-                    }
-                }
-                else
-                {
-                    Messages.Message("TM_InvalidTarget".Translate(caster.LabelShort, Ability.Def.label), MessageTypeDefOf.NegativeEvent);
-                    MoteMaker.ThrowText(caster.DrawPos, caster.Map, "Living Wall: " + "AU_CastFailure".Translate(), -1f);
-                }
+                wall.ExactLaunch(null,0,false,new List<Vector3> {position,position},owner,position,segment,
+                    new Thing { def = TorannMagicDefOf.FlyingObject_LivingWall },15+3*versatility,0);
+                wall.BindToCasterBody(body);
             }
-            
+            catch
+            {
+                if (!wall.Destroyed) wall.Destroy(DestroyMode.Vanish);
+                throw;
+            }
+            magic.livingWall = wall;
+            if (!old.DestroyedOrNull() && old.CasterPawn == owner) old.Destroy(DestroyMode.Vanish);
+            GolemancerLifecycle.SyncWallControl(magic);
+            FleckMaker.ThrowLightningGlow(segment.DrawPos, body.Map, 1f);
             return true;
         }
     }
 }
-

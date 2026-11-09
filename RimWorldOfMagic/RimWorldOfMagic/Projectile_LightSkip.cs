@@ -1,4 +1,4 @@
-﻿using Verse;
+using Verse;
 using AbilityUser;
 using UnityEngine;
 using System.Linq;
@@ -10,13 +10,12 @@ using RimWorld.Planet;
 
 namespace TorannMagic
 {
-    class Projectile_LightSkip : Projectile_AbilityBase
+    class Projectile_LightSkip : ClassProgression.Projectile_SpiritBolt
     {
+        protected override List<MagicPowerSkill> Skills(MagicData data) => data.MagicPowerSkill_LightSkip;
+        protected override string SkillStem => "TM_LightSkip";
         int age = -1;
         int duration = 45;
-        int verVal = 0;
-        int pwrVal = 0;
-        float arcaneDmg = 1;
         int strikeDelay = 4;
         int strikeNum = 1;
         float radius = 5;
@@ -68,18 +67,10 @@ namespace TorannMagic
             ThingDef def = this.def;
             if (!this.initialized)
             {
-                this.pawn = this.launcher as Pawn;
-                this.map = this.pawn.Map;
-                CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
-                MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_LightSkip.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_LightSkip_pwr");
-                
-                pwrVal = pwr.level;
-                this.arcaneDmg = comp.arcaneDmg;
-                if (ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist)
-                {
-                    pwrVal = 1;
-                    verVal = 1;
-                }
+                pawn = launcher as Pawn;
+                if (!Verb_LightSkip.ValidLanding(pawn, Map, Position) ||
+                    projected && (!ClassProgression.SpiritRebirthState.TryGetPossessingSpirit(pawn, out var held) || held != SourcePawn))
+                { age = duration; Destroy(); return; }
                 this.draftFlag = this.pawn.drafter != null ? this.pawn.Drafted : false;
                 this.initialized = true;
             }
@@ -87,33 +78,16 @@ namespace TorannMagic
             if (!launchedFlag)
             {
                 Pawn pawnToSkip = this.pawn;
-                Pawn mount = null;
                 ModOptions.Constants.SetPawnInFlight(true);
-                if (ModCheck.Validate.GiddyUp.Core_IsInitialized())
-                {
-                    mount = ModCheck.GiddyUp.GetMount(this.pawn);
-                    ModCheck.GiddyUp.ForceDismount(pawn);                    
-                }
                 if(pawnToSkip.carryTracker != null && pawnToSkip.carryTracker.CarriedThing != null)
                 {
                     pawnToSkip.carryTracker.TryDropCarriedThing(pawnToSkip.Position, ThingPlaceMode.Near, out Thing _);
                 }
-                Thing pod = ThingMaker.MakeThing(TorannMagicDefOf.TM_LightPod, null);
-                CompLaunchable podL = pod.TryGetComp<CompLaunchable>();
-                CompTransporter podT = podL.parent.GetComp<CompTransporter>(); // Traverse.Create(root: podL).Field(name: "Transporter").GetValue<CompTransporter>();
-                GenPlace.TryPlaceThing(pod, pawn.Position, pawn.Map, ThingPlaceMode.Near);
-                podT.groupID = 11;
-                pawnToSkip.DeSpawn();
-                pawn.teleporting = true;
-                if(mount != null)
-                {
-                    mount.DeSpawn();
-                    podT.innerContainer.TryAddOrTransfer(mount);
-                }
-                podT.innerContainer.TryAddOrTransfer(pawnToSkip);                
+                var podT = pawnToSkip.holdingOwner?.Owner as CompTransporter ?? Verb_LightSkip.PreparePod(pawnToSkip);
+                if (podT == null) { age = duration; Destroy(); return; }
+
                 GlobalTargetInfo gti = new GlobalTargetInfo(base.Position, base.Map, false);
-                LaunchLightPod(pod, podT, gti.Tile, gti.Cell);
-                launchedFlag = true;
+                launchedFlag = Verb_LightSkip.DispatchPod(podT, gti.Tile, gti.Cell, draftFlag);
             }
             
             if (launchedFlag)
@@ -124,23 +98,7 @@ namespace TorannMagic
         }
 
         public void LaunchLightPod(Thing pod, CompTransporter compTransporter, int destinationTile, IntVec3 destinationCell)
-        {
-            Map map = pod.Map;
-            int groupID = compTransporter.groupID;
-            ThingOwner directlyHeldThings = compTransporter.GetDirectlyHeldThings();
-            ActiveTransporter activeDropPod = (ActiveTransporter)ThingMaker.MakeThing(ThingDefOf.ActiveDropPod);
-            activeDropPod.Contents = new ActiveTransporterInfo();
-            activeDropPod.Contents.innerContainer.TryAddRangeOrTransfer(directlyHeldThings, canMergeWithExistingStacks: true, destroyLeftover: true);          
-            WorldTransport.TM_DropPodLeaving obj = (WorldTransport.TM_DropPodLeaving)SkyfallerMaker.MakeSkyfaller(TorannMagicDefOf.TM_LightPodLeaving, activeDropPod);
-            obj.groupID = groupID;
-            obj.destinationTile = destinationTile;
-            obj.arrivalAction = null;
-            obj.arrivalCell = destinationCell;
-            obj.draftFlag = this.draftFlag;
-            compTransporter.CleanUpLoadingVars(map);
-            compTransporter.parent.Destroy();
-            GenSpawn.Spawn(obj, compTransporter.parent.Position, map);
-        }
+            => Verb_LightSkip.DispatchPod(compTransporter, destinationTile, destinationCell, draftFlag);
 
     }    
 }

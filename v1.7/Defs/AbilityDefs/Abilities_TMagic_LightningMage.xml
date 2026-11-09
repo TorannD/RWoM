@@ -1,10 +1,9 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-	    <!-- AMP start -->	
+	    	
     <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
-		<thingClass>AbilityUser.Projectile_AbilityBase</thingClass>
+		<thingClass>TorannMagic.ClassProgression.Projectile_SpiritAmp</thingClass>
 	    <defName>Buff_AMP</defName>
         <label>AMP</label>
         <graphicData>
@@ -20,9 +19,9 @@
 			<explosionRadius>18</explosionRadius>
 			<postExplosionSpawnChance>1</postExplosionSpawnChance>
         </projectile>
-    </ThingDef>
+</ThingDef>
 
-<!--     <ThingDef Class="TorannMagic.TMAbilityDef" ParentName="BaseAbility"> -->
+
 	 <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_AMP</defName>
         <label>AMP</label>
@@ -79,7 +78,14 @@ Pain:		-20%</description>
 				</li>
 			</hediffsToApply>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_amp</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_AMP_I</defName>
@@ -136,7 +142,14 @@ Pain:		-20%</description>
 				</li>
 			</hediffsToApply>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_amp_i</spellId>
+<domain>Magic</domain>
+<tier>1</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_AMP_II</defName>
@@ -193,7 +206,14 @@ Pain:		-30%</description>
 				</li>
 			</hediffsToApply>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_amp_ii</spellId>
+<domain>Magic</domain>
+<tier>2</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_AMP_III</defName>
@@ -250,10 +270,17 @@ Pain:		-40%</description>
 				</li>
 			</hediffsToApply>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
-    <!-- AMP End -->
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_amp_iii</spellId>
+<domain>Magic</domain>
+<tier>3</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
+    
 	
-	    <!-- Lightning Cloud -->	
+	    	
     <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>TorannMagic.Projectile_LightningCloud</thingClass>
 	    <defName>Projectile_LightningCloud</defName>
@@ -271,7 +298,7 @@ Pain:		-40%</description>
 			<explosionRadius>8</explosionRadius>
 			<postExplosionSpawnChance>1</postExplosionSpawnChance>
         </projectile>
-    </ThingDef>
+</ThingDef>
 
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_LightningCloud</defName>
@@ -308,11 +335,18 @@ Pain:		-40%</description>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
-   </TorannMagic.TMAbilityDef>
+   <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_lightningcloud</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
-    <!-- Lightning Cloud End -->
+    
 
-	<!-- Lightning Bolt -->	
+		
 	
     <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_AbilityLaser">
 		<thingClass>TorannMagic.Laser_LightningBolt</thingClass> 
@@ -335,7 +369,7 @@ Pain:		-40%</description>
         <preFiringDuration>20</preFiringDuration>
         <postFiringDuration>40</postFiringDuration>
         <StartFireChance>0</StartFireChance>
-    </ThingDef>
+</ThingDef>
 
     <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_LightningBolt</defName>
@@ -371,12 +405,19 @@ Pain:		-40%</description>
                 <canTargetLocations>false</canTargetLocations>
             </targetParams>					
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_lightningbolt</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
-    <!-- Lightning Bolt end-->
+    
 	
 	
-	<!-- Lightning Storm  -->
+	
 	
   <ThingDef Class="AbilityUser.ProjectileDef_Ability" ParentName="BaseBullet">
    <thingClass>TorannMagic.Projectile_LightningStorm</thingClass>
@@ -395,7 +436,7 @@ Pain:		-40%</description>
 		<speed>1000</speed>
 		<postExplosionSpawnChance>1</postExplosionSpawnChance>
    </projectile>
- </ThingDef>
+</ThingDef>
 
  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_LightningStorm</defName>
@@ -431,11 +472,18 @@ Pain:		-40%</description>
 		 <canTargetLocations>true</canTargetLocations>
         </targetParams>
     </MainVerb>
- </TorannMagic.TMAbilityDef>
+ <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_lightningstorm</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
  
- 	<!-- LightningStorm end -->
+ 	
 	
-		    <!-- Eye of the Storm -->
+		    
 		
 	<ThingDef ParentName="BaseBullet" Name="FlyingObject_EyeOfTheStorm">
 	   <defName>FlyingObject_EyeOfTheStorm</defName>
@@ -451,7 +499,7 @@ Pain:		-40%</description>
 			<damageAmountBase>0</damageAmountBase>
 			<speed>250</speed>
 	   </projectile>
-	</ThingDef>
+</ThingDef>
 			
 	<ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
         <thingClass>AbilityUser.Projectile_Ability</thingClass>
@@ -468,7 +516,7 @@ Pain:		-40%</description>
             <damageAmountBase>0</damageAmountBase>
             <speed>70</speed>
         </projectile>
-    </ThingDef>
+</ThingDef>
 
  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
         <defName>TM_EyeOfTheStorm</defName>
@@ -502,6 +550,13 @@ Pain:		-40%</description>
             <muzzleFlashScale>4</muzzleFlashScale>
             <isPrimary>true</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_eyeofthestorm</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 </Defs>

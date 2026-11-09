@@ -6,6 +6,8 @@ namespace TorannMagic.Ideology
 {
     public class TM_RitualRoleNonMage : RitualRole
     {
+        public bool grantsMight;
+
         public override bool AppliesToPawn(Pawn p, out string reason, TargetInfo selectedTarget, LordJob_Ritual ritual = null, RitualRoleAssignments assignments = null, Precept_Ritual precept = null, bool skipReason = false)
         {
             reason = null;
@@ -37,36 +39,9 @@ namespace TorannMagic.Ideology
                 }
                 return false;
             }
-            if(TM_Calc.IsMagicUser(p))
+            if (!ClassProgression.ClassEnrollment.CanBestow(p, !grantsMight))
             {
-                if (!skipReason)
-                {
-                    reason = "TM_MessageRitualRoleMustNotBeMage".Translate(p.LabelShort);
-                }
-                return false;
-            }
-            if (TM_Calc.IsMightUser(p))
-            {
-                if (!skipReason)
-                {
-                    reason = "TM_MessageRitualRoleMustNotBeFighter".Translate(p.LabelShort);
-                }
-                return false;
-            }
-            if(p.story.traits.HasTrait(TorannMagicDefOf.TM_Gifted))
-            {
-                if (!skipReason)
-                {
-                    reason = "TM_MessageRitualRoleCannotHaveTrait".Translate(p.LabelShort, TorannMagicDefOf.TM_Gifted.degreeDatas[0].label);
-                }
-                return false;
-            }
-            if (p.story.traits.HasTrait(TorannMagicDefOf.PhysicalProdigy))
-            {
-                if (!skipReason)
-                {
-                    reason = "TM_MessageRitualRoleCannotHaveTrait".Translate(p.LabelShort, TorannMagicDefOf.PhysicalProdigy.degreeDatas[0].label);
-                }
+                if (!skipReason) reason = "TM_BestowRecipientUnavailable".Translate(p.LabelShort);
                 return false;
             }
             return true;

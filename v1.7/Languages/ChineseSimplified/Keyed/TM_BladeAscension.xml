@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_BladeAscensionProgress>战士等级 {0}/30 · 战斗路线 {1}/6 · 医疗运送 {2}/10</TM_BladeAscensionProgress>
+  <TM_BladeRouteHint>用穿行击中一名敌人，并在十秒内用普通近战攻击对另一名敌人造成伤害。</TM_BladeRouteHint>
+  <TM_BladeSupplyHint>启用医生工作。从距离殖民地医用床至少六格的地方取药，用它治疗床上的友方病人。必须实际消耗药品，每天最多计入一次。</TM_BladeSupplyHint>
+  <TM_BladeAscend>选择飞升招式</TM_BladeAscend>
+  <TM_BladeUltimateOption>{0}（永久选择）</TM_BladeUltimateOption>
+  <TM_BladeUltimateLearned>飞升招式：{0}</TM_BladeUltimateLearned>
+  <TM_BladeFormUnavailable>需要习得七步式，装备近战武器，拥有60%耐力且冷却完毕。</TM_BladeFormUnavailable>
+</LanguageData>

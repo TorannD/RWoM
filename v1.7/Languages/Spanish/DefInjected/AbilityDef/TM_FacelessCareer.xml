@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_Bridge_FacelessEcho.label>Técnica prestada</TM_Bridge_FacelessEcho.label>
+  <TM_Bridge_FacelessEcho.description>Repite la última técnica imitada a 18 casillas. Los ecos elementales y marciales infligen 12 de daño. El eco médico cura 4 puntos de una herida. Consume un 20% de aguante; recarga de 30 segundos.</TM_Bridge_FacelessEcho.description>
+</LanguageData>

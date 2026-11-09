@@ -1,0 +1,15 @@
+<LanguageData>
+  <TM_SpiritTransmutate.reportString>transmutando un material.</TM_SpiritTransmutate.reportString>
+  <TM_SpiritEnchantedBody.reportString>encantando el cuerpo.</TM_SpiritEnchantedBody.reportString>
+  <TM_SpiritEnchantedAura.reportString>encantando el aura.</TM_SpiritEnchantedAura.reportString>
+  <TM_SpiritEnchanterStone.reportString>creando una piedra encantada.</TM_SpiritEnchanterStone.reportString>
+  <TM_SpiritDismissEnchanterStones.reportString>disipando una piedra encantada.</TM_SpiritDismissEnchanterStones.reportString>
+  <TM_SpiritEnchantWeapon.reportString>encantando un arma.</TM_SpiritEnchantWeapon.reportString>
+  <TM_SpiritDispelEnchantWeapon.reportString>disipando encantamientos de armas.</TM_SpiritDispelEnchantWeapon.reportString>
+  <TM_SpiritPolymorph.reportString>lanzando polimorfia.</TM_SpiritPolymorph.reportString>
+  <TM_SpiritPolymorph_I.reportString>lanzando polimorfia.</TM_SpiritPolymorph_I.reportString>
+  <TM_SpiritPolymorph_II.reportString>lanzando polimorfia.</TM_SpiritPolymorph_II.reportString>
+  <TM_SpiritPolymorph_III.reportString>lanzando polimorfia.</TM_SpiritPolymorph_III.reportString>
+  <TM_SpiritShapeshift.reportString>cambiando de forma.</TM_SpiritShapeshift.reportString>
+  <TM_SpiritShapeshiftDW.reportString>transformándose en lobo terrible.</TM_SpiritShapeshiftDW.reportString>
+</LanguageData>

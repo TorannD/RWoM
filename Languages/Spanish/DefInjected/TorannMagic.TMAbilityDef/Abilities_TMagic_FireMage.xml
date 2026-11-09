@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_RayofHope.label>Fuego interior</TM_RayofHope.label>
+  <TM_RayofHope.description>Crea un aura de calidez alrededor del lanzador que refuerza periódicamente el espíritu de un aliado.
+
+Fuego interior: aumento arcano que enciende un fuego interno y mejora la resistencia y las defensas de un peón.
+
+Frecuencia de aplicación: 80-90 s
+Duración: 200-223 s
+Necesidades de descanso y hambre: -10 %
+Curación natural: +20 %
+Resistencia a crisis mentales: +3 %
+Resistencia al frío: +6 °C
+
+Requiere 40 de maná para mantenerse y reduce la regeneración de maná un 30 %; vuelve a lanzarla para desactivarla. El lanzador gana experiencia cada vez que potencia a un aliado.</TM_RayofHope.description>
+
+  <TM_RayofHope_I.label>Fuego interior</TM_RayofHope_I.label>
+  <TM_RayofHope_I.description>Crea un aura de calidez alrededor del lanzador que refuerza periódicamente el espíritu de un aliado.
+
+Fuego interior: aumento arcano que enciende un fuego interno y mejora la resistencia y las defensas de un peón.
+
+Frecuencia de aplicación: 80-90 s
+Duración: 200-223 s
+Necesidades de descanso y hambre: -14 %
+Curación natural: +25 %
+Resistencia a crisis mentales: +4 %
+Resistencia al frío: +8 °C
+
+Requiere 40 de maná para mantenerse y reduce la regeneración de maná un 30 %; vuelve a lanzarla para desactivarla. El lanzador gana experiencia cada vez que potencia a un aliado.</TM_RayofHope_I.description>
+
+  <TM_RayofHope_II.label>Fuego interior</TM_RayofHope_II.label>
+  <TM_RayofHope_II.description>Crea un aura de calidez alrededor del lanzador que refuerza periódicamente el espíritu de un aliado.
+
+Fuego interior: aumento arcano que enciende un fuego interno y mejora la resistencia y las defensas de un peón.
+
+Frecuencia de aplicación: 80-90 s
+Duración: 500-600 s
+Necesidades de descanso y hambre: -17 %
+Curación natural: +28 %
+Resistencia a crisis mentales: +4 %
+Resistencia al frío: +9 °C
+
+Requiere 40 de maná para mantenerse y reduce la regeneración de maná un 30 %; vuelve a lanzarla para desactivarla. El lanzador gana experiencia cada vez que potencia a un aliado.</TM_RayofHope_II.description>
+
+  <TM_RayofHope_III.label>Fuego interior</TM_RayofHope_III.label>
+  <TM_RayofHope_III.description>Crea un aura de calidez alrededor del lanzador que refuerza periódicamente el espíritu de un aliado.
+
+Fuego interior: aumento arcano que enciende un fuego interno y mejora la resistencia y las defensas de un peón.
+
+Frecuencia de aplicación: 80-90 s
+Duración: 500-600 s
+Necesidades de descanso y hambre: -20 %
+Curación natural: +30 %
+Resistencia a crisis mentales: +5 %
+Resistencia al frío: +10 °C
+
+Requiere 40 de maná para mantenerse y reduce la regeneración de maná un 30 %; vuelve a lanzarla para desactivarla. El lanzador gana experiencia cada vez que potencia a un aliado.</TM_RayofHope_III.description>
+
+  <TM_Firebolt.label>Rayo de fuego</TM_Firebolt.label>
+  <TM_Firebolt.description>Lanza un rayo de magma sobrecalentado que daña al objetivo y puede prenderle fuego.</TM_Firebolt.description>
+
+  <TM_Fireball.label>Bola de fuego</TM_Fireball.label>
+  <TM_Fireball.description>Lanza una enorme bola de fuego de movimiento lento. Causa estragos y crea una explosión ardiente en la zona objetivo.</TM_Fireball.description>
+
+  <TM_Fireclaw.label>Garra de fuego</TM_Fireclaw.label>
+  <TM_Fireclaw.description>Crea zarcillos de fuego que desgarran a tus enemigos y dejan destrucción y llamas a su paso.</TM_Fireclaw.description>
+
+  <TM_Firestorm.label>Tormenta de fuego</TM_Firestorm.label>
+  <TM_Firestorm.description>Invoca toda la furia del fuego elemental en una tormenta de meteoros de muerte y destrucción.</TM_Firestorm.description>
+
+</LanguageData>

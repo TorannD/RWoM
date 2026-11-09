@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_Bridge_FacelessEcho.label>Borrowed technique</TM_Bridge_FacelessEcho.label>
+  <TM_Bridge_FacelessEcho.description>Echo the last imitated technique at a range of 18. Elemental and martial echoes inflict 12 damage. A medical echo heals 4 points of one wound. Costs 20% stamina; 30-second cooldown.</TM_Bridge_FacelessEcho.description>
+</LanguageData>

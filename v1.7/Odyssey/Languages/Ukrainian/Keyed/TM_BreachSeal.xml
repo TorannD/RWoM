@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_BreachSeal_eff>Ефективність</TM_BreachSeal_eff>
+  <TM_BreachSeal_eff_desc>Знижує витрати мани на 10% за рівень, до трьох рівнів.</TM_BreachSeal_eff_desc>
+  <TM_BreachSeal_Unavailable>Печатка герметизації недоступна.</TM_BreachSeal_Unavailable>
+  <TM_BreachSeal_NoCore>Виберіть платформу власного ядра корабля.</TM_BreachSeal_NoCore>
+  <TM_BreachSeal_AmbiguousCore>Ця платформа належить кільком ядрам.</TM_BreachSeal_AmbiguousCore>
+  <TM_BreachSeal_CoreOverlap>Ціль перекриває ядро корабля.</TM_BreachSeal_CoreOverlap>
+  <TM_BreachSeal_InvalidFloor>У центрі й на дальньому краї потрібна ціла підлога корабля.</TM_BreachSeal_InvalidFloor>
+  <TM_BreachSeal_Blocked>Дальній край зайнятий.</TM_BreachSeal_Blocked>
+  <TM_BreachSeal_AlreadySealed>Цей край уже герметичний.</TM_BreachSeal_AlreadySealed>
+  <TM_BreachSeal_ver>Тривалість</TM_BreachSeal_ver>
+  <TM_BreachSeal_ver_desc>Додає 25% базової тривалості за рівень: 30, 36 або 42 години. Сувої та посохи діють 24 години.</TM_BreachSeal_ver_desc>
+</LanguageData>

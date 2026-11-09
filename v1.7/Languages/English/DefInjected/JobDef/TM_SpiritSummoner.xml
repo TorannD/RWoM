@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritSummonMinion.reportString>summoning a minion through a spirit host.</TM_SpiritSummonMinion.reportString>
+  <TM_SpiritSummonElemental.reportString>summoning an elemental through a spirit host.</TM_SpiritSummonElemental.reportString>
+  <TM_SpiritSummonPylon.reportString>summoning a defense pylon through a spirit host.</TM_SpiritSummonPylon.reportString>
+  <TM_SpiritSummonExplosive.reportString>summoning a mana mine through a spirit host.</TM_SpiritSummonExplosive.reportString>
+  <TM_SpiritSummonPoppi.reportString>summoning poppi through a spirit host.</TM_SpiritSummonPoppi.reportString>
+  <TM_SpiritPack.reportString>summoning spirit wolves through a spirit host.</TM_SpiritPack.reportString>
+  <TM_SpiritPack_I.reportString>summoning spirit wolves through a spirit host.</TM_SpiritPack_I.reportString>
+  <TM_SpiritPack_II.reportString>summoning spirit wolves through a spirit host.</TM_SpiritPack_II.reportString>
+  <TM_SpiritPack_III.reportString>summoning spirit wolves through a spirit host.</TM_SpiritPack_III.reportString>
+  <TM_SpiritDismissMinion.reportString>dismissing a minion through a spirit host.</TM_SpiritDismissMinion.reportString>
+</LanguageData>

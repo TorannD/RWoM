@@ -36,7 +36,7 @@ namespace TorannMagic.TMDefs
             "TM_TechnoBit", "TM_ChargeBattery", "TM_NanoStimulant", "TM_ChaosTradition", "TM_AMP",
             "TM_Prediction", "TM_BardTraining", "TM_BowTraining", "TM_BladeArt", "TM_BladeFocus",
             "TM_FightersFocus", "TM_Fortitude", "TM_ThickSkin", "TM_CQC", "TM_BurningFury",
-            "TM_CommanderAura", "TM_HoldTheLine", "TM_StayAlert", "TM_Sprint", "TM_MindOverBody",
+            "TM_HoldTheLine", "TM_StayAlert", "TM_Sprint", "TM_MindOverBody",
             "TM_PsionicAugmentation", "TM_Shroud", "TM_SniperFocus", "TM_Legion", "TM_TigerStrike",
             "TM_VeilOfShadows", "TM_SpiritOfLight", "TM_TimeMark", "TM_Totems", "TM_Whirlwind",
             "TM_SeismicSlash", "TM_TempestStrike", "TM_SigilSurge", "TM_ValiantCharge", "TM_PhaseStrike",
@@ -76,22 +76,52 @@ namespace TorannMagic.TMDefs
             "TM_TeachMagic", "TM_TeachMight", "TM_WandererCraft", "TM_WayfarerCraft", "TM_Soothe",
             "TM_SootheAnimal", "TM_TransferMana", "TM_ChronostaticField", "TM_Mimic", "TM_Possess",
             "TM_Disguise", "TM_Transpose", "TM_MoveOut", "TM_StrongBack", "TM_FieldTraining",
-            "TM_RangerTraining", "TM_ShadowSlayer", "TM_ProvisionerAura", "TM_TaskMasterAura",
+            "TM_RangerTraining", "TM_ShadowSlayer",
             "TM_Meditate", "TM_BriarPatch", "TM_FoldReality", "TM_AnimalFriend", "TM_BestowMight",
             "TM_Inspire", "TM_Dominate"
         };
 
         // Destructive location spells have no safe automatic target policy. Summon
-        // requires a designated thing, not a generic self target. Saved AC settings
-        // cannot override this admission rule.
+        // requires a designated thing, not a generic self target. Brands are
+        // semi-permanent upkeep links between two specific pawns — autocasting one
+        // onto a random passerby (prisoner, ally, colonist) drains the caster's
+        // mana and misplaces a permanent effect, so they are cast on purpose only.
+        // Saved AC settings cannot override this admission rule.
         private static readonly HashSet<string> NoAutocast = new HashSet<string>
         {
-            "TM_Summon", "TM_Meteor", "TM_OrbitalStrike"
+            "TM_Summon", "TM_Meteor", "TM_OrbitalStrike",
+            "TM_Branding", "TM_SiphonBrand", "TM_FitnessBrand", "TM_EmotionBrand",
+            "TM_VitalityBrand", "TM_ProtectionBrand", "TM_AwarenessBrand", "TM_DispelBranding"
+        };
+
+        // Maintained/toggle powers: casting an active one dispels it, so a pawn
+        // autocasting them would switch its own buffs off mid-fight (player report:
+        // Enchanted Body, Arcanist's Shadow, and the commander auras which flipped
+        // themselves off as soon as their icon cooldown expired — the toggle verb
+        // enables autocast, the generic loop recast the toggle and dispelled the
+        // aura). Per the autocast policy these stay manual only — autocast belongs
+        // on instant abilities without an off state. Never autocast them even if a
+        // legacy XML config appears.
+        private static readonly HashSet<string> MaintainedNoAutocast = new HashSet<string>
+        {
+            "TM_AnimalFriend", "TM_Shadow", "TM_RayofHope", "TM_Soothe", "TM_P_RayofHope",
+            "TM_BattleHymn", "TM_BladeFocus", "TM_Blur", "TM_BurningFury", "TM_ChaosTradition",
+            "TM_CommanderAura", "TM_ProvisionerAura", "TM_TaskMasterAura",
+            "TM_EnchantedAura", "TM_EnchantedBody", "TM_Entertain", "TM_FightersFocus",
+            "TM_GearRepair", "TM_HeatShield", "TM_HeavyBlow", "TM_InnerHealing", "TM_Invisibility",
+            "TM_MageLight", "TM_ManaShield", "TM_Prediction", "TM_ReverseTime", "TM_SniperFocus",
+            "TM_SoulBond", "TM_Sprint", "TM_Stoneskin", "TM_StrongBack", "TM_ThickSkin",
+            "TM_SuppressiveAura", "TM_Nightshade"
         };
 
         public static bool IsManualOnly(TMAbilityDef def)
         {
             return def != null && NoAutocast.Contains(BaseName(def.defName));
+        }
+
+        public static bool NeverAutocast(TMAbilityDef def)
+        {
+            return def != null && MaintainedNoAutocast.Contains(BaseName(def.defName));
         }
 
         public static bool AllowsContext(TMAbilityDef def, AbilityContext context)
@@ -118,7 +148,7 @@ namespace TorannMagic.TMDefs
         }
 
         // Powers are classified by their base def: level variants share the tree.
-        private static string BaseName(string defName)
+        internal static string BaseName(string defName)
         {
             if (defName.EndsWith("_III")) return defName.Substring(0, defName.Length - 4);
             if (defName.EndsWith("_II")) return defName.Substring(0, defName.Length - 3);
@@ -136,7 +166,7 @@ namespace TorannMagic.TMDefs
                 includeSelf = false
             };
 
-            if (NoAutocast.Contains(baseName))
+            if (NoAutocast.Contains(baseName) || MaintainedNoAutocast.Contains(baseName))
             {
                 // type Null: the autocast toggle is not offered and every
                 // autocast loop skips the power

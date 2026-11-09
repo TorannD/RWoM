@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ReadDeathKnightDread>Terror — comienza con Ola de miedo.</TM_ReadDeathKnightDread>
+  <TM_ReadDeathKnightSpite>Venganza — comienza con Rencor.</TM_ReadDeathKnightSpite>
+  <TM_DKTrial>Días herido por un enemigo junto a un aliado: {0}/{1}, o aliados distintos rescatados: {2}/{3}.</TM_DKTrial>
+  <TM_DKLevel>Nivel marcial {0}/30.</TM_DKLevel>
+  <TM_DKClaim>Desbloquear etapa</TM_DKClaim>
+  <TM_DKOath>Juramento del guardián — absorbe hasta 25 de daño por un aliado adyacente a cambio de 10 de odio, una vez cada 10 segundos.</TM_DKOath>
+</LanguageData>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <AteMysteryMeatAsIngredient.stages.ate_cooked_minion_meat.label>comí carne de esbirro cocinada</AteMysteryMeatAsIngredient.stages.ate_cooked_minion_meat.label>
+  
+  <AteMysteryMeatAsIngredient.stages.ate_cooked_minion_meat.description>Comí una comida cocinada con carne de esbirro. Ninguna cantidad de condimentos o especias pudo evitar la impresión de estar comiendo algo asqueroso.</AteMysteryMeatAsIngredient.stages.ate_cooked_minion_meat.description>
+  
+  
+  <AteMysteryMeatDirect.stages.ate_minion_meat.label>comí carne de esbirro</AteMysteryMeatDirect.stages.ate_minion_meat.label>
+  
+  <AteMysteryMeatDirect.stages.ate_minion_meat.description>Comí una carne misteriosa y asquerosa de un esbirro muerto. Estaba triturada con fango y otras cosas en descomposición que no pude identificar. ¿Eso era una uña? Qué asco.</AteMysteryMeatDirect.stages.ate_minion_meat.description>
+  
+  
+  <Polymorphed.stages.polymorphed_against_will.label>polimorfado contra mi voluntad</Polymorphed.stages.polymorphed_against_will.label>
+  
+  <Polymorphed.stages.polymorphed_against_will.description>Me polimorfaron y me obligaron a existir en el cuerpo de un animal, qué deshumanizante.</Polymorphed.stages.polymorphed_against_will.description>
+  
+  
+  <Polymorphed_Transhumanist.stages.polymorphed.label>¡polimorfado!</Polymorphed_Transhumanist.stages.polymorphed.label>
+  
+  <Polymorphed_Transhumanist.stages.polymorphed.description>Me polimorfaron en un animal salvaje, ¡y fue INCREÍBLE!</Polymorphed_Transhumanist.stages.polymorphed.description>
+  
+  
+  <PsychicEmpathy.stages.Empathy.label>Empatía</PsychicEmpathy.stages.Empathy.label>
+  
+  <PsychicEmpathy.stages.Empathy.description>No sé explicar por qué siento estas emociones tan intensas.</PsychicEmpathy.stages.Empathy.description>
+  
+  
+  <RangerPetDied.stages.bonded_animal_died.label>animal vinculado muerto</RangerPetDied.stages.bonded_animal_died.label>
+  
+  <RangerPetDied.stages.bonded_animal_died.description>Mi fiel compañero animal murió. Siento que he perdido una parte de mí.</RangerPetDied.stages.bonded_animal_died.description>
+  
+  
+  <RangerSoldBondedPet.stages.sold_bonded_animal.label>animal vinculado vendido</RangerSoldBondedPet.stages.sold_bonded_animal.label>
+  
+  <RangerSoldBondedPet.stages.sold_bonded_animal.description>Permití que vendieran como esclavo a mi compañero animal. El reino animal no me perdonará pronto. (el vínculo con animales está desactivado mientras dure este efecto de ánimo)</RangerSoldBondedPet.stages.sold_bonded_animal.description>
+  
+  
+  <TM_BrightDayTD.stages.brightened_day.label>día iluminado</TM_BrightDayTD.stages.brightened_day.label>
+  
+  <TM_BrightDayTD.stages.brightened_day.description>Un Espíritu de luz iluminó mi día.</TM_BrightDayTD.stages.brightened_day.description>
+  
+  
+  <TM_MemoryWipe.stages.clean_slate.label>borrón y cuenta nueva</TM_MemoryWipe.stages.clean_slate.label>
+  
+  <TM_MemoryWipe.stages.clean_slate.description>No recuerdo los últimos días, quizá sea lo mejor.</TM_MemoryWipe.stages.clean_slate.description>
+  
+  
+  <TM_PhantomLimb.stages.phantom_limb.label>miembro fantasma</TM_PhantomLimb.stages.phantom_limb.label>
+  
+  <TM_PhantomLimb.stages.phantom_limb.description>¿De verdad son mías estas partes del cuerpo? Me siento como un invitado en mi propio cuerpo.</TM_PhantomLimb.stages.phantom_limb.description>
+  
+  
+  <TM_PleasantDreamsTD.stages.pleasant_dreams.label>sueños agradables</TM_PleasantDreamsTD.stages.pleasant_dreams.label>
+  
+  <TM_PleasantDreamsTD.stages.pleasant_dreams.description>Mis sueños están llenos de recuerdos y sucesos que me hacen feliz.</TM_PleasantDreamsTD.stages.pleasant_dreams.description>
+  
+  
+  <TM_TakingOrdersTD.stages.taking_orders.label>recibiendo órdenes</TM_TakingOrdersTD.stages.taking_orders.label>
+  
+  <TM_TakingOrdersTD.stages.taking_orders.description>Otro personaje me dio órdenes. Esto podría llegar a molestarme.</TM_TakingOrdersTD.stages.taking_orders.description>
+  
+  
+  <WarlockEmpathy.stages.Empathy.label>Empatía</WarlockEmpathy.stages.Empathy.label>
+  
+  <WarlockEmpathy.stages.Empathy.description>Puedo sentir las emociones de quienes me rodean.</WarlockEmpathy.stages.Empathy.description>
+  
+</LanguageData>

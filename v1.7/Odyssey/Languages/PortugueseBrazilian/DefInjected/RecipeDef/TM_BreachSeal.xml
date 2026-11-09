@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_MakeCastScroll_BreachSeal.label>criar Selo de brecha — pergaminho de lançamento</TM_MakeCastScroll_BreachSeal.label>
+  <TM_MakeCastScroll_BreachSeal.description>Requer um mago que conheça Selo de brecha. Cria até três paredes mágicas herméticas na borda de uma área de 3×3 mais distante do núcleo da nave. Requer uma plataforma própria e piso intacto. Cada parede tem 300 pontos de vida e dura um dia. Preserva paredes herméticas aliadas; não renova selos ativos. Não repara pisos nem tetos e não fornece oxigênio. Use pelo inventário. Consome um pergaminho somente em caso de sucesso. Qualquer pessoa pode usar sem mana nem magia aprendida.</TM_MakeCastScroll_BreachSeal.description>
+  <TM_MakeCastScroll_BreachSeal.jobString>criando Selo de brecha.</TM_MakeCastScroll_BreachSeal.jobString>
+  <TM_MakeSpellStaff_BreachSeal.label>criar Selo de brecha — bastão carregado</TM_MakeSpellStaff_BreachSeal.label>
+  <TM_MakeSpellStaff_BreachSeal.description>Requer um mago que conheça Selo de brecha. Cria até três paredes mágicas herméticas na borda de uma área de 3×3 mais distante do núcleo da nave. Requer uma plataforma própria e piso intacto. Cada parede tem 300 pontos de vida e dura um dia. Preserva paredes herméticas aliadas; não renova selos ativos. Não repara pisos nem tetos e não fornece oxigênio. Equipe como arma principal. Tem 10 usos, não pode ser recarregado e desaparece após o último. Qualquer pessoa pode usar sem mana nem magia aprendida.</TM_MakeSpellStaff_BreachSeal.description>
+  <TM_MakeSpellStaff_BreachSeal.jobString>criando Selo de brecha.</TM_MakeSpellStaff_BreachSeal.jobString>
+</LanguageData>

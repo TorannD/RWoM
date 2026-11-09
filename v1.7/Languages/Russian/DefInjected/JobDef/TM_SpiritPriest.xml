@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritResurrection.reportString>воскрешает через тело носителя.</TM_SpiritResurrection.reportString>
+  <TM_SpiritHealingCircle.reportString>создаёт круг исцеления через тело носителя.</TM_SpiritHealingCircle.reportString>
+  <TM_SpiritHealingCircle_I.reportString>создаёт круг исцеления через тело носителя.</TM_SpiritHealingCircle_I.reportString>
+  <TM_SpiritHealingCircle_II.reportString>создаёт круг исцеления через тело носителя.</TM_SpiritHealingCircle_II.reportString>
+  <TM_SpiritHealingCircle_III.reportString>создаёт круг исцеления через тело носителя.</TM_SpiritHealingCircle_III.reportString>
+  <TM_SpiritBestowMight.reportString>дарует физическую мощь через носителя Духа.</TM_SpiritBestowMight.reportString>
+  <TM_SpiritBestowMight_I.reportString>дарует физическую мощь через носителя Духа.</TM_SpiritBestowMight_I.reportString>
+  <TM_SpiritBestowMight_II.reportString>дарует физическую мощь через носителя Духа.</TM_SpiritBestowMight_II.reportString>
+  <TM_SpiritBestowMight_III.reportString>дарует физическую мощь через носителя Духа.</TM_SpiritBestowMight_III.reportString>
+</LanguageData>

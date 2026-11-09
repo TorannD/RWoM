@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_BreachSeal_eff>Efficiency</TM_BreachSeal_eff>
+  <TM_BreachSeal_eff_desc>Reduces mana cost by 10% per level, up to three levels.</TM_BreachSeal_eff_desc>
+  <TM_BreachSeal_Unavailable>Breach Seal is unavailable.</TM_BreachSeal_Unavailable>
+  <TM_BreachSeal_NoCore>Select a platform belonging to your ship core.</TM_BreachSeal_NoCore>
+  <TM_BreachSeal_AmbiguousCore>More than one ship core owns this platform.</TM_BreachSeal_AmbiguousCore>
+  <TM_BreachSeal_CoreOverlap>The target overlaps the ship core.</TM_BreachSeal_CoreOverlap>
+  <TM_BreachSeal_InvalidFloor>The center and far edge require intact ship floor.</TM_BreachSeal_InvalidFloor>
+  <TM_BreachSeal_Blocked>The far edge is blocked.</TM_BreachSeal_Blocked>
+  <TM_BreachSeal_AlreadySealed>This edge is already sealed.</TM_BreachSeal_AlreadySealed>
+  <TM_BreachSeal_ver>Duration</TM_BreachSeal_ver>
+  <TM_BreachSeal_ver_desc>Adds 25% of the base duration per level: 30, 36 or 42 hours. Scrolls and staves remain at 24 hours.</TM_BreachSeal_ver_desc>
+</LanguageData>

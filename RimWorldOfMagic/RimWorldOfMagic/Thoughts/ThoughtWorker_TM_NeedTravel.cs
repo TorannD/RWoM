@@ -20,7 +20,10 @@ namespace TorannMagic.Thoughts
                         case TravelCategory.Adventuring:
                             return ThoughtState.ActiveAtStage(1);
                         default:
-                            throw new NotImplementedException();
+                            // Complacent: the satisfied middle band has no mood effect.
+                            // This default used to throw, spamming red errors for every
+                            // traveller in the neutral range.
+                            return ThoughtState.Inactive;
                     }
                 }
             }

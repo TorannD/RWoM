@@ -1,0 +1,56 @@
+<Defs>
+  <JobDef>
+    <defName>TM_SpiritCastManeuver</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>performing a gladiator maneuver.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCastFirstAid</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>tending wounds.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCastPommelStrike</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>striking TargetB with a pommel blow.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCastSprint</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>changing sprint stance.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCastStrongBack</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>bracing to carry a load.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCastHeavyBlow</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>adjusting heavy blow stance.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCastThickSkin</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>bracing for impact.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCastFightersFocus</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>focusing on melee combat.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCastGearRepair</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>maintaining worn equipment.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCastInnerHealing</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>focusing on recovery.</reportString>
+  </JobDef>
+  <JobDef><defName>TM_SpiritCastHeadshot</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass><reportString>aiming a headshot at TargetB.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritCastDisablingShot</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass><reportString>firing a disabling shot at TargetB.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritCastAntiArmor</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass><reportString>firing an anti-armor shot at TargetB.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritCastShadowSlayer</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass><reportString>activating the shadow slayer cloak.</reportString></JobDef>
+</Defs>

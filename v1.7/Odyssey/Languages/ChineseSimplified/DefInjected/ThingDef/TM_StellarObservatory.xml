@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_StellarObservatory.label>魔法天文台</TM_StellarObservatory.label>
+  <TM_StellarObservatory.description>法师可进行60秒的占星仪式，寻找随机的轨道远征。每次成功的仪式会直接从相连的魔力网络消耗100魔力和50魔能燃料，不消耗法师的个人魔力。搜索需要8至10个运行日；天文台关闭、损坏或被卸载时会暂停。所有魔法天文台共用18天的仪式启动间隔，与普通轨道扫描仪的周期无关。若没有符合条件的目的地，已支付费用的搜索会等待并重试。搬迁天文台会保留搜索进度。研究仅是建造条件。</TM_StellarObservatory.description>
+</LanguageData>

@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-   <!-- Empathy -->
+   
 	
   <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_Empathy</defName>
@@ -39,10 +38,17 @@
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
- </TorannMagic.TMAbilityDef>
+ <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_empathy</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
  
  
-   <!-- MindKiller -->
+   
  
    <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_MindKiller</defName>
@@ -83,9 +89,16 @@
 		 <canTargetLocations>false</canTargetLocations>
         </targetParams>
     </MainVerb>
- </TorannMagic.TMAbilityDef>
+ <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_mindkiller</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
  
- <!-- Suppressive Aura -->
+ 
 	
   <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_SuppressiveAura</defName>
@@ -126,9 +139,16 @@
 		 <canTargetLocations>false</canTargetLocations>
         </targetParams>
     </MainVerb>
- </TorannMagic.TMAbilityDef>
+ <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_suppressiveaura</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
  
-  <!-- Harvest Passion -->
+  
 	
   <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_HarvestPassion</defName>
@@ -172,9 +192,16 @@
 		 <canTargetLocations>false</canTargetLocations>
         </targetParams>
     </MainVerb>
- </TorannMagic.TMAbilityDef>
+ <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_harvestpassion</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	<!-- Incite Passion -->
+	
 
   <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_IncitePassion</defName>
@@ -213,9 +240,16 @@
 		 <canTargetLocations>false</canTargetLocations>
         </targetParams>
     </MainVerb>
- </TorannMagic.TMAbilityDef>
+ <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_incitepassion</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
  
-  <!-- Symbiosis -->
+  
 
   <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_Symbiosis</defName>
@@ -256,9 +290,16 @@
 		 <canTargetLocations>false</canTargetLocations>
         </targetParams>
     </MainVerb>
- </TorannMagic.TMAbilityDef>
+ <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_symbiosis</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
  
- <!-- Faded Emotions -->
+ 
 
   <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
     <defName>TM_FadeEmotions</defName>
@@ -299,6 +340,13 @@
 		 <canTargetLocations>false</canTargetLocations>
         </targetParams>
     </MainVerb>
- </TorannMagic.TMAbilityDef>
+ <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_fadeemotions</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
 </Defs>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritFirebolt.reportString>выпускает огненную стрелу из тела носителя.</TM_SpiritFirebolt.reportString>
+  <TM_SpiritIcebolt.reportString>выпускает ледяную стрелу из тела носителя.</TM_SpiritIcebolt.reportString>
+  <TM_SpiritFireball.reportString>выпускает огненный шар из тела носителя.</TM_SpiritFireball.reportString>
+  <TM_SpiritSnowball.reportString>выпускает снежный шар из тела носителя.</TM_SpiritSnowball.reportString>
+  <TM_SpiritFireclaw.reportString>применяет огненный коготь через тело носителя.</TM_SpiritFireclaw.reportString>
+  <TM_SpiritBlizzard.reportString>вызывает метель через носителя духа.</TM_SpiritBlizzard.reportString>
+  <TM_SpiritFrostRay.reportString>выпускает морозный луч через носителя духа.</TM_SpiritFrostRay.reportString>
+  <TM_SpiritFrostRay_I.reportString>выпускает морозный луч через носителя духа.</TM_SpiritFrostRay_I.reportString>
+  <TM_SpiritFrostRay_II.reportString>выпускает морозный луч через носителя духа.</TM_SpiritFrostRay_II.reportString>
+  <TM_SpiritFrostRay_III.reportString>выпускает морозный луч через носителя духа.</TM_SpiritFrostRay_III.reportString>
+  <TM_SpiritFirestorm.reportString>вызывает огненный шторм через носителя духа.</TM_SpiritFirestorm.reportString>
+</LanguageData>

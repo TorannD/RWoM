@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef><defName>TM_SpiritChainLightning</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>casting chain lightning.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritSummonTotemEarth</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>summoning an earth totem.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritSummonTotemLightning</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>summoning a lightning totem.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritSummonTotemHealing</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>summoning a healing totem.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritEnrage</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>casting enrage.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritHex</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>casting hex.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritHex_I</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>casting hex.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritHex_II</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>casting hex.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritHex_III</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>casting hex.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritHex_Pain</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>inflicting pain.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritHex_CriticalFail</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>invoking misfortune.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritHex_MentalAssault</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>assaulting the mind.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritGuardianSpirit</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>summoning a guardian spirit.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritDismissGuardianSpirit</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>dismissing a guardian spirit.</reportString></JobDef>
+</Defs>

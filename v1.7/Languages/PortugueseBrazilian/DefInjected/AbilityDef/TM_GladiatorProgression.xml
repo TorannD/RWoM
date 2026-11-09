@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_Bridge_GladiatorManeuver.label>manobra</TM_Bridge_GladiatorManeuver.label>
+  <TM_Bridge_GladiatorManeuver.description>Aumenta a velocidade de movimento em 8% por 8 segundos.</TM_Bridge_GladiatorManeuver.description>
+  <TM_Bridge_GladiatorSweep.label>varredura</TM_Bridge_GladiatorSweep.label>
+  <TM_Bridge_GladiatorSweep.description>Acerte um inimigo adjacente e até outro ao lado dele, causando 65% do dano da arma a cada um.</TM_Bridge_GladiatorSweep.description>
+</LanguageData>

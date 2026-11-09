@@ -1,167 +1,243 @@
-using Verse;
-using AbilityUser;
-using UnityEngine;
-using System.Linq;
-using System.Collections.Generic;
 using System;
-using RimWorld;
-using RimWorld.Planet;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using HarmonyLib;
+using RimWorld;
+using RimWorld.Planet;
+using TorannMagic.ClassProgression;
+using TorannMagic.Odyssey;
+using UnityEngine;
+using Verse;
 
 namespace TorannMagic
 {
     [StaticConstructorOnStartup]
-    public class Verb_LightSkipGlobal : Verb_UseAbility  
+    public class Verb_LightSkipGlobal : Verb_SpiritTargetable
     {
-        int pwrVal = 0;
-        float arcaneDmg = 1;
-        Pawn pawn;
-        IntVec3 launcherPosition = default(IntVec3);
-        List<Thing> pods = new List<Thing>();
-        List<Pawn> pawnList = new List<Pawn>();
-        List<IntVec3> unroofedCells = new List<IntVec3>();
-        List<CompTransporter> podTList = new List<CompTransporter>();
-        IntVec3 safePos = default(IntVec3);
-        private int gi = 0;
-        private int MaxLaunchDistance = 300;
-
-        IntVec3 destCell = default(IntVec3);
-        int destTile = 0;
-        bool draftFlag = false;
-
+        private const int MaxLaunchDistance = 300;
         private static readonly Texture2D TargeterMouseAttachment = ContentFinder<Texture2D>.Get("Other/PortalBldg", true);
-        bool validTarg;
-        CompLaunchable cl = null;
-        //Used specifically for non-unique verbs that ignore LOS (can be used with shield belt), Light Skip requires unroofed destination
+        private static readonly AccessTools.FieldRef<WorldTargeter, Func<GlobalTargetInfo, bool>> CurrentWorldAction =
+            AccessTools.FieldRefAccess<WorldTargeter, Func<GlobalTargetInfo, bool>>("action");
+        private static readonly AccessTools.FieldRef<Targeter, Action<LocalTargetInfo>> CurrentCellAction =
+            AccessTools.FieldRefAccess<Targeter, Action<LocalTargetInfo>>("action");
+        private Func<GlobalTargetInfo,bool> worldAction;
+        private Map origin;
+        private IntVec3 start;
+        private int generation;
+        private bool selecting;
+        private List<Pawn> boarding;
+        private readonly List<CompTransporter> pods = new List<CompTransporter>();
 
-        public override bool CanHitTargetFrom(IntVec3 root, LocalTargetInfo targ)
+        public override bool CanHitTargetFrom(IntVec3 root, LocalTargetInfo target) =>
+            CasterPawn?.Spawned == true && target.Pawn == CasterPawn && !CasterPawn.Position.Roofed(CasterPawn.Map);
+
+        protected override bool TryCastShot() => ApplyHostedEffect();
+
+        protected override bool ApplyHostedEffect()
         {
-            if (targ.IsValid && targ.CenterVector3.InBoundsWithNullCheck(base.CasterPawn.Map) && !targ.Cell.Fogged(base.CasterPawn.Map) && targ.Cell.Walkable(base.CasterPawn.Map))
-            {
-                if ((root - targ.Cell).LengthHorizontal < this.verbProps.range)
-                {
-                    validTarg = !targ.Cell.Roofed(base.CasterPawn.Map);
-                }
-                else
-                {
-                    //out of range
-                    validTarg = false;
-                }
-            }
-            else
-            {
-                validTarg = false;
-            }
-            return validTarg;
+            generation++;
+            origin = CasterPawn?.Map;
+            start = CasterPawn?.Position ?? IntVec3.Invalid;
+            selecting = true;
+            if (!Ready()) { selecting = false; return false; }
+            ManualTravelSafety.BeginAttempt(Ability);
+            StartChoosingDestination();
+            return true;
         }
 
-        protected override bool TryCastShot()
+        private bool Ready()
         {
-            bool result = false;
-            Pawn pawn = this.CasterPawn;
-            Map map = this.CasterPawn.Map;
-            if (map != null && !pawn.Position.Roofed(map))
+            var body = CasterPawn;
+            if (!selecting || body?.Spawned != true || body.Dead || body.Downed || body.InMentalState ||
+                body.Map != origin || body.Position != start || start.Roofed(origin) || !(Ability is MagicAbility power)) return false;
+            if (power.Pawn != body) return ReferenceEquals(SpiritHostedBolt.Find(body,power.Pawn,power.magicDef),power)
+                && SpiritHostedBolt.Ready(body,power);
+            return power.MagicUser.AbilityData.AllPowers.Contains(power) && power.CooldownTicksLeft <= 0
+                && power.MagicUser.Mana != null && power.MagicUser.Mana.CurLevel >= power.MagicUser.ActualManaCost(power.magicDef);
+        }
+
+        private bool InRange(PlanetTile tile)
+        {
+            if (!tile.Valid || tile.Layer != origin.Tile.Layer) return false;
+            int distance = Find.WorldGrid.TraversalDistanceBetween(origin.Tile,tile);
+            return distance >= 0 && distance <= MaxLaunchDistance;
+        }
+
+        private bool OwnsWorldSelection(int request) => request == generation && Ready() &&
+            ReferenceEquals(CurrentWorldAction(Find.WorldTargeter),worldAction);
+
+        private void StartChoosingDestination()
+        {
+            CameraJumper.TryJump(CameraJumper.GetWorldTarget(origin.Parent));
+            Find.WorldSelector.ClearSelection();
+            int request = generation;
+            worldAction = target => OwnsWorldSelection(request) && ChooseWorldTarget(target);
+            Find.WorldTargeter.BeginTargeting(worldAction,true,TargeterMouseAttachment,true,
+                () => GenDraw.DrawWorldRadiusRing(origin.Tile,MaxLaunchDistance),
+                target => target.IsValid && !InRange(target.Tile) ? "TM_UnableToTravel".Translate() : (TaggedString)null);
+        }
+
+        private bool ChooseWorldTarget(GlobalTargetInfo target)
+        {
+            if (!target.IsValid || !InRange(target.Tile))
             {
+                Messages.Message("TM_UnableToTravel".Translate(),MessageTypeDefOf.RejectInput,false);
+                return false;
+            }
+            var options = GetTransportPodsFloatMenuOptionsAt(target.Tile,target).ToList();
+            if (options.Count == 1) options[0].action();
+            else if (options.Count > 1) Find.WindowStack.Add(new FloatMenu(options));
+            else Messages.Message("TM_UnableToTravel".Translate(),MessageTypeDefOf.RejectInput,false);
+            return false;
+        }
 
-                this.pawn = this.CasterPawn;
-                launcherPosition = this.CasterPawn.Position;
-                CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
-                //pwrVal = TM_Calc.GetMagicSkillLevel(this.pawn, comp.MagicData.MagicPowerSkill_LightSkip, "TM_LightSkip", "_pwr", false);
-                pwrVal = TM_Calc.GetSkillPowerLevel(pawn, TorannMagicDefOf.TM_LightSkip, false);
-                this.arcaneDmg = comp.arcaneDmg;
-                this.draftFlag = this.pawn.drafter != null ? this.pawn.Drafted : false;
-                this.gi = 0;
-                podTList.Clear();
-                pawnList.Clear();
-                pods.Clear();
-
-                List<Pawn> tmpList = TM_Calc.FindAllPawnsAround(this.CasterPawn.Map, launcherPosition, 5f, this.pawn.Faction, true);
-                for(int i = 0; i < tmpList.Count; i++)
+        public IEnumerable<FloatMenuOption> GetTransportPodsFloatMenuOptionsAt(int tile, GlobalTargetInfo target)
+        {
+            int request = generation;
+            if (target.WorldObject is MapParent parent && parent.HasMap)
+                yield return new FloatMenuOption("TM_SelectTargetOnMap".Translate(parent.LabelCap), () =>
                 {
-                    if(!tmpList[i].Position.Roofed(map) )
-                    {                        
-                        if (ModCheck.Validate.GiddyUp.Core_IsInitialized())
-                        {
-                            if (ModCheck.GiddyUp.IsMount(tmpList[i]))
-                            {
-                                continue;
-                            }
-                        }
-                        if (tmpList[i].carryTracker != null && tmpList[i].carryTracker.CarriedThing != null)
-                        {
-                            tmpList[i].carryTracker.TryDropCarriedThing(tmpList[i].Position, ThingPlaceMode.Near, out Thing _);
-                        }
-                        pawnList.Add(tmpList[i]);
+                    if (!OwnsWorldSelection(request) || !parent.HasMap || parent.Tile != target.Tile) return;
+                    Find.WorldTargeter.StopTargeting();
+                    Map map = parent.Map;
+                    Current.Game.CurrentMap = map;
+                    bool picked = false;
+                    Action<LocalTargetInfo> choose = null;
+                    bool Valid(LocalTargetInfo t) => !picked && generation == request && Ready() &&
+                        ReferenceEquals(CurrentCellAction(Find.Targeter),choose) && Current.Game.CurrentMap == map &&
+                        parent.Map == map && t.IsValid && ValidCell(map,t.Cell) && (map != origin || t.Cell != start);
+                    choose = t =>
+                    {
+                        if (!Valid(t)) return;
+                        picked = true;
+                        RequestDeparture(target.Tile,map,t.Cell,null);
+                    };
+                    Find.Targeter.BeginTargeting(TargetingParameters.ForDropPodsDestination(), choose, highlightAction: null, targetValidator: Valid, actionWhenFinished: () =>
+                    {
+                        if (!picked && request == generation) selecting = false;
+                        if (Find.Maps.Contains(origin)) Current.Game.CurrentMap = origin;
+                    });
+                });
+            if (!Find.World.Impassable(target.Tile))
+                yield return new FloatMenuOption("FormCaravanHere".Translate(), () =>
+                {
+                    if (!OwnsWorldSelection(request)) return;
+                    Find.WorldTargeter.StopTargeting();
+                    RequestDeparture(target.Tile,null,IntVec3.Invalid,new TransportersArrivalAction_FormCaravan());
+                });
+        }
+
+        private static bool ValidCell(Map map, IntVec3 c) => map != null && Find.Maps.Contains(map) &&
+            c.InBounds(map) && c.Walkable(map) && !c.Fogged(map) && !c.Roofed(map);
+
+        private bool Eligible(Pawn pawn) => pawn?.Spawned == true && !pawn.Dead && pawn.Map == origin &&
+            pawn.Faction == CasterPawn.Faction && pawn.Position.InHorDistOf(start,5f) && !pawn.Position.Roofed(origin) &&
+            !(ModCheck.Validate.GiddyUp.Core_IsInitialized() && ModCheck.GiddyUp.IsMount(pawn));
+
+        public void LaunchLightPod(int destinationTile, IntVec3 destinationCell, TransportersArrivalAction action)
+        {
+            if (!Ready()) return;
+            PlanetTile tile = new PlanetTile(destinationTile,origin.Tile.Layer);
+            var map = Find.Maps.Find(m=>m.Tile==tile);
+            RequestDeparture(tile,map,destinationCell,action);
+        }
+
+        private void RequestDeparture(PlanetTile tile, Map map, IntVec3 cell, TransportersArrivalAction action)
+        {
+            if (!Ready() || !InRange(tile) || (action == null ? !ValidCell(map,cell) || map == origin && cell == start : Find.World.Impassable(tile))) return;
+            int request = ++generation;
+            var group = TM_Calc.FindAllPawnsAround(origin,start,5f,CasterPawn.Faction,true).Where(Eligible).Distinct().ToList();
+            if (!group.Contains(CasterPawn)) return;
+            var risks = new Dictionary<Pawn,TravelEnvironmentResult>();
+            var warnings = new List<string>();
+            if (action == null)
+                foreach (var p in group)
+                {
+                    var risk = TravelEnvironmentSafety.Evaluate(p,map,cell);
+                    if ((risk.Hazards & TravelEnvironmentHazard.InvalidDestination) != 0) return;
+                    risks[p] = risk;
+                    if (!risk.IsSafe) warnings.Add(ManualTravelSafety.Warning(p,risk));
+                }
+            void Commit()
+            {
+                if (request != generation || !Ready() || !InRange(tile) ||
+                    (action == null ? !ValidCell(map,cell) || map.Tile != tile : Find.World.Impassable(tile))) return;
+                boarding = group.Where(Eligible).ToList();
+                if (!boarding.Contains(CasterPawn)) return;
+                if (action == null && boarding.Any(p => {
+                    var risk = TravelEnvironmentSafety.Evaluate(p,map,cell);
+                    return (risk.Hazards & ~risks[p].Hazards) != 0 || risk.ShellExpiring && !risks[p].ShellExpiring;
+                })) return;
+                selecting = false;
+                var body = CasterPawn;
+                bool drafted = body.Drafted;
+                bool sent = false;
+                try
+                {
+                    CreatePodGroup();
+                    foreach (var pod in pods)
+                    {
+                        if (Verb_LightSkip.DispatchPod(pod,tile,cell,drafted,action)) sent = true;
+                        else if (!sent) break;
                     }
                 }
-                StartChoosingDestination();         
+                finally
+                {
+                    boarding = null;
+                    foreach (var pod in pods.Where(p=>p.parent.Spawned))
+                    {
+                        foreach (var passenger in pod.innerContainer.OfType<Pawn>()) passenger.teleporting = false;
+                        pod.innerContainer.TryDropAll(pod.parent.Position,origin,ThingPlaceMode.Near);
+                        if (pod.innerContainer.Count == 0) pod.parent.Destroy();
+                    }
+                    pods.Clear();
+                    if (sent)
+                    {
+                        // The off-map cooldown still ticks, but its completed selection verb is not a saved object.
+                        if (body.stances?.curStance is Stance_Cooldown cooldown && ReferenceEquals(cooldown.verb, this))
+                            cooldown.verb = null;
+                        ManualTravelSafety.SettleHosted((MagicAbility)Ability,body);
+                    }
+                }
+                if (sent) CheckAbandoned(origin);
             }
-            else
-            {
-                Messages.Message("TM_CannotCastUnderRoof".Translate(pawn.LabelShort, Ability.Def.label), MessageTypeDefOf.NegativeEvent);
-                MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Light Skip: " + "AU_CastFailure".Translate(), -1f);
-            }
-            return result;
+            if (warnings.Count == 0) Commit();
+            else ManualTravelSafety.Confirm(string.Join("\n",warnings),Commit);
         }
 
         public void CreatePodGroup()
         {
-            if (pawnList != null && pawnList.Count > 0)
+            if (boarding == null) return;
+            int id = Find.UniqueIDsManager.GetNextTransporterGroupID();
+            var leader = CasterPawn;
+            foreach (var pawn in boarding.OrderBy(p => p != leader))
             {
-                for (int i = 0; i < pawnList.Count; i++)
+                if (pawn.carryTracker?.CarriedThing != null)
+                    pawn.carryTracker.TryDropCarriedThing(pawn.Position,ThingPlaceMode.Near,out _);
+                var pod = Verb_LightSkip.PreparePod(pawn);
+                if (pod == null)
                 {
-                    Pawn p = pawnList[i];
-                    Pawn mount = null;
-                    if (ModCheck.Validate.GiddyUp.Core_IsInitialized())
-                    {
-                        mount = ModCheck.GiddyUp.GetMount(p);
-                        ModCheck.GiddyUp.ForceDismount(p);
-                    }
-                    Thing pod = ThingMaker.MakeThing(TorannMagicDefOf.TM_LightPod, null);
-                    CompLaunchable podL = pod.TryGetComp<CompLaunchable>();
-                    CompTransporter podT = podL.parent.TryGetComp<CompTransporter>(); // Traverse.Create(root: podL).Field(name: "Transporter").GetValue<CompTransporter>();  //podL.Transporter;
-                    GenPlace.TryPlaceThing(pod, p.Position, p.Map, ThingPlaceMode.Near);
-                    //GenSpawn.Spawn(pod, p.Position, p.Map, WipeMode.Vanish);
-                    podT.groupID = 12;
-                    p.DeSpawn();
-                    p.teleporting = true;
-                    if(mount != null)
-                    {
-                        mount.DeSpawn();
-                        mount.teleporting = true;
-                        podT.innerContainer.TryAddOrTransfer(mount);
-                    }
-                    podT.innerContainer.TryAddOrTransfer(p);
-                    podTList.Add(podT);
-                    pods.Add(pod);
+                    if (pawn == leader) break;
+                    continue;
                 }
+                pod.groupID = id;
+                pods.Add(pod);
             }
         }
 
-        public void LaunchLightPod(int destinationTile, IntVec3 destinationCell, TransportersArrivalAction arrivalAction)
+        public IntVec3 GetRelativePositionOffset(IntVec3 targetCell, IntVec3 relativePosition, IntVec3 offsetPosition)
         {
-            Map map = this.CasterPawn.Map;
-            CreatePodGroup();
-            podTList[0].TryRemoveLord(map);
-            int groupID = podTList[0].groupID;
-            for (int i = 0; i < podTList.Count; i++)
-            {
-                ThingOwner directlyHeldThings = podTList[i].GetDirectlyHeldThings();
-                ActiveTransporter activeDropPod = (ActiveTransporter)ThingMaker.MakeThing(ThingDefOf.ActiveDropPod);
-                activeDropPod.Contents = new ActiveTransporterInfo();
-                activeDropPod.Contents.innerContainer.TryAddRangeOrTransfer(directlyHeldThings, canMergeWithExistingStacks: true, destroyLeftover: true);
-                WorldTransport.TM_DropPodLeaving obj = (WorldTransport.TM_DropPodLeaving)SkyfallerMaker.MakeSkyfaller(TorannMagicDefOf.TM_LightPodLeaving, activeDropPod);
-                obj.groupID = groupID;
-                obj.destinationTile = destinationTile;
-                obj.arrivalAction = arrivalAction;
-                obj.arrivalCell = destinationCell;
-                obj.draftFlag = this.draftFlag;
-                podTList[i].CleanUpLoadingVars(map);
-                podTList[i].parent.Destroy();
-                GenSpawn.Spawn(obj, podTList[i].parent.Position, map);
-            }
-            CameraJumper.TryHideWorld();
+            var cell = targetCell + (offsetPosition-relativePosition);
+            if (ValidCell(origin,cell)) return cell;
+            return GetUnroofedCellsAround(targetCell,5f).TryRandomElement(out var near) ? near : IntVec3.Invalid;
+        }
+
+        public List<IntVec3> GetUnroofedCellsAround(IntVec3 center,float radius) =>
+            GenRadial.RadialCellsAround(center,radius,true).Where(c=>ValidCell(origin,c)).ToList();
+
+        private static void CheckAbandoned(Map map)
+        {
             if (!map.mapPawns.AnyColonistSpawned && !map.IsPlayerHome)
             {
                 // Only settlement sites can be abandoned — on encounter/quest maps
@@ -182,138 +258,5 @@ namespace TorannMagic
             }
         }
 
-        public IntVec3 GetRelativePositionOffset(IntVec3 targetCell, IntVec3 relativePosition, IntVec3 offsetPosition)
-        {
-            IntVec3 cell = targetCell + (offsetPosition - relativePosition);
-            if (cell.Roofed(this.CasterPawn.Map))
-            {
-                cell = unroofedCells.RandomElement();
-            }
-            return cell;
-        }
-
-        public List<IntVec3> GetUnroofedCellsAround(IntVec3 center, float r)
-        {
-            List<IntVec3> cellList = new List<IntVec3>();
-            cellList.Clear();
-            IEnumerable<IntVec3> allCells = GenRadial.RadialCellsAround(center, r, true);
-            foreach (IntVec3 item in allCells)
-            {
-                if (!item.Roofed(this.CasterPawn.Map))
-                {
-                    cellList.Add(item);
-                }
-            }
-            return cellList;
-        }
-
-        private void StartChoosingDestination()
-        {
-            CameraJumper.TryJump(CameraJumper.GetWorldTarget(CasterPawn.Map.Parent));
-            Find.WorldSelector.ClearSelection();
-            int tile = CasterPawn.Map.Tile;
-            Find.WorldTargeter.BeginTargeting(new Func<GlobalTargetInfo, bool>(this.ChooseWorldTarget), true, Verb_LightSkipGlobal.TargeterMouseAttachment, true, delegate
-            {
-                GenDraw.DrawWorldRadiusRing(tile, 300);
-            }, delegate (GlobalTargetInfo target)
-            {
-                if (!target.IsValid)
-                {
-                    return null;
-                }
-                int num = Find.WorldGrid.TraversalDistanceBetween(tile, target.Tile);
-                if (num > MaxLaunchDistance)
-                {
-                    GUI.color = ColorLibrary.RedReadable;
-                    return "TM_UnableToTravel".Translate();
-                }
-                IEnumerable<FloatMenuOption> transportPodsFloatMenuOptionsAt = GetTransportPodsFloatMenuOptionsAt(target.Tile, target);
-                if (!transportPodsFloatMenuOptionsAt.Any())
-                {
-                    return "";
-                }
-                if (transportPodsFloatMenuOptionsAt.Count() == 1)
-                {
-                    if (transportPodsFloatMenuOptionsAt.First().Disabled)
-                    {
-                        GUI.color = ColorLibrary.RedReadable;
-                    }
-                    return transportPodsFloatMenuOptionsAt.First().Label;
-                }
-                MapParent mapParent = target.WorldObject as MapParent;
-                if (mapParent != null)
-                {
-                    return "ClickToSeeAvailableOrders_WorldObject".Translate(mapParent.LabelCap);
-                }
-                return "ClickToSeeAvailableOrders_Empty".Translate();
-            });
-        }
-
-        private bool ChooseWorldTarget(GlobalTargetInfo target)
-        {
-            if (!target.IsValid)
-            {
-                Messages.Message("TM_UnableToTravel".Translate(), MessageTypeDefOf.RejectInput, historical: false);
-                return false;
-            }
-            int num = Find.WorldGrid.TraversalDistanceBetween(this.CasterPawn.Map.Tile, target.Tile);
-            if (num > MaxLaunchDistance)
-            {
-                Messages.Message("TM_UnableToTravel".Translate(), MessageTypeDefOf.RejectInput, historical: false);
-                return false;
-            }
-            IEnumerable<FloatMenuOption> transportPodsFloatMenuOptionsAt = GetTransportPodsFloatMenuOptionsAt(target.Tile, target);
-            if (!transportPodsFloatMenuOptionsAt.Any())
-            {
-                if (Find.World.Impassable(target.Tile))
-                {
-                    Messages.Message("TM_UnableToTravel".Translate(), MessageTypeDefOf.RejectInput, historical: false);
-                    return false;
-                }
-                LaunchLightPod(target.Tile, default(IntVec3), null);
-                return true;
-            }
-
-            if (transportPodsFloatMenuOptionsAt.Count() == 1)
-            {
-                if (!transportPodsFloatMenuOptionsAt.First().Disabled)
-                {
-                    transportPodsFloatMenuOptionsAt.First().action();
-                }
-                return false;
-            }
-            Find.WindowStack.Add(new FloatMenu(transportPodsFloatMenuOptionsAt.ToList()));
-            return false;
-        }
-
-        public IEnumerable<FloatMenuOption> GetTransportPodsFloatMenuOptionsAt(int tile, GlobalTargetInfo target)
-        {
-            bool anything = false;
-            MapParent mapParent = target.WorldObject as MapParent;
-            if (mapParent != null && mapParent.HasMap)
-            {
-                yield return new FloatMenuOption("TM_SelectTargetOnMap".Translate(mapParent.LabelCap), delegate
-                {                  
-                    Map map = mapParent.Map;
-                    Current.Game.CurrentMap = map;
-                    CameraJumper.TryHideWorld();
-                    Find.Targeter.BeginTargeting(TargetingParameters.ForDropPodsDestination(), delegate (LocalTargetInfo x)
-                    {
-                        destCell = x.Cell;
-                        destTile = map.Tile;
-                        LaunchLightPod(destTile, destCell, null);
-
-                    }, null);
-                });
-            }
-
-            if (!Find.World.Impassable(tile))
-            {
-                yield return new FloatMenuOption("FormCaravanHere".Translate(), delegate
-                {
-                    LaunchLightPod(target.Tile, default(IntVec3), new TransportersArrivalAction_FormCaravan());
-                });
-            }
-        }
     }
 }

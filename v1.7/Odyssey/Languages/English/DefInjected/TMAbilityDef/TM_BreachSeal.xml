@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_BreachSeal.label>Breach Seal</TM_BreachSeal.label>
+  <TM_BreachSeal.description>Creates up to three airtight magical walls on the far edge of a selected 3×3 area, away from the ship core. Requires an owned ship platform and intact floor. Each wall has 300 hit points and lasts one day. Existing allied airtight walls are preserved; active seals cannot be refreshed. Does not repair floors or roofs and supplies no oxygen. Range: 15 cells. Preparation: 1 second. Cooldown: 60 seconds. Costs 30% mana before efficiency modifiers.</TM_BreachSeal.description>
+</LanguageData>

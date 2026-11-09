@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef><defName>TM_ReadApothecaryHerbalist</defName><driverClass>TorannMagic.ClassProgression.JobDriver_GladiatorInitiation</driverClass><reportString>studying the apothecary manual.</reportString></JobDef>
+  <JobDef><defName>TM_ReadApothecaryFreshStock</defName><driverClass>TorannMagic.ClassProgression.JobDriver_GladiatorInitiation</driverClass><reportString>studying the apothecary manual.</reportString></JobDef>
+  <JobDef><defName>TM_ApothecaryGoldenHourCast</defName><driverClass>TorannMagic.ClassProgression.JobDriver_ApothecaryKit</driverClass><reportString>providing emergency care.</reportString></JobDef>
+</Defs>

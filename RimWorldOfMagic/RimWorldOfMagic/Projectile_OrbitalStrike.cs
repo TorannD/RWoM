@@ -1,4 +1,4 @@
-﻿using Verse;
+using Verse;
 using Verse.Sound;
 using RimWorld;
 using AbilityUser;
@@ -10,25 +10,24 @@ using UnityEngine;
 namespace TorannMagic
 {
     [StaticConstructorOnStartup]
-    public class Projectile_OrbitalStrike : Projectile_AbilityBase
+    public class Projectile_OrbitalStrike : ClassProgression.Projectile_SpiritBolt
     {
         private bool initialized = false;
-        private int verVal = 0;
-        private int pwrVal = 0;
-        private float arcaneDmg = 1f;
-        private int beamAge = 0;
-        private int strikeNum;
+        protected override string SkillStem => "TM_OrbitalStrike";
+        protected override List<MagicPowerSkill> Skills(MagicData data) => data.MagicPowerSkill_OrbitalStrike;
+        private int beamAge;
+        private bool detonated;
         private int age = -1;
-        private int beamDuration = 120;
+        private int beamDuration => 120 - 10 * verVal;
         private int targettingAge = 300;
         IntVec3 strikePos = default(IntVec3);
-        Pawn caster;
+
 
         ColorInt colorInt = new ColorInt(153, 0, 0);
         private Sustainer sustainer;
 
         private float angle = 0;
-        private float radius = 5;
+        private float radius => def.projectile.explosionRadius;
 
         private static readonly Material BeamMat = MaterialPool.MatFrom("Other/OrbitalBeam", ShaderDatabase.MoteGlow, MapMaterialRenderQueues.OrbitalBeam);
         private static readonly Material BeamEndMat = MaterialPool.MatFrom("Other/OrbitalBeamEnd", ShaderDatabase.MoteGlow, MapMaterialRenderQueues.OrbitalBeam);
@@ -45,6 +44,8 @@ namespace TorannMagic
             Scribe_Values.Look<int>(ref this.pwrVal, "pwrVal", 0, false);
             Scribe_Values.Look<float>(ref this.arcaneDmg, "arcaneDmg", 1f, false);
             Scribe_Values.Look<int>(ref this.targettingAge, "targettingAge", 300, false);
+            Scribe_Values.Look(ref angle, "TM_orbitalBeamAngle");
+            Scribe_Values.Look(ref detonated, "TM_orbitalDetonated");
             Scribe_Values.Look<IntVec3>(ref this.strikePos, "strikePos", default(IntVec3), false);
         }
 
@@ -60,35 +61,31 @@ namespace TorannMagic
         {
             Map map = base.Map;
             base.Impact(hitThing);
+            if (Destroyed || map == null) return;
             ThingDef def = this.def;
             if (!this.initialized)
             {
-                caster = this.launcher as Pawn;
-                CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
-                MagicPowerSkill pwr = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_OrbitalStrike.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_OrbitalStrike_pwr");
-                MagicPowerSkill ver = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_OrbitalStrike.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_OrbitalStrike_ver");
-                verVal = ver.level;
-                pwrVal = pwr.level;
-                this.arcaneDmg = comp.arcaneDmg;
-                
-                if (ModOptions.Settings.Instance.AIHardMode && !caster.IsColonist)
+                if (!projected)
                 {
-                    pwrVal = 3;
-                    verVal = 3;
+                    var caster = SourcePawn;
+                    var comp = caster?.GetCompAbilityUserMagic();
+                    if (comp == null) { base.Destroy(); return; }
+                    var skills = Skills(comp.MagicData);
+                    pwrVal = skills.FirstOrDefault(x => x.label == "TM_OrbitalStrike_pwr")?.level ?? 0;
+                    verVal = skills.FirstOrDefault(x => x.label == "TM_OrbitalStrike_ver")?.level ?? 0;
+                    arcaneDmg = comp.arcaneDmg;
+                    if (ModOptions.Settings.Instance.AIHardMode && !caster.IsColonist) pwrVal = verVal = 3;
                 }
                 this.angle = Rand.Range(-3f, 3f);
-                this.strikeNum = 1;
                 this.CheckSpawnSustainer();
                 this.strikePos = base.Position;
                 this.targettingAge = 300 - (50 * verVal);
-                this.beamDuration = 120 - (10 * verVal);
-                this.radius = this.def.projectile.explosionRadius;
                 this.initialized = true;
             }
 
             if (this.sustainer != null)
             {
-                this.sustainer.info.volumeFactor = (this.age) / (this.beamDuration + this.targettingAge);
+                this.sustainer.info.volumeFactor = (float)this.age / (this.beamDuration + this.targettingAge);
                 this.sustainer.Maintain();
                 if (this.TicksLeft <= 0)
                 {
@@ -97,10 +94,11 @@ namespace TorannMagic
                 }
             }
 
-            if (this.age == (this.targettingAge + this.beamDuration))
+            if (!detonated && this.age == (this.targettingAge + this.beamDuration))
             {
+                detonated = true;
                 TM_MoteMaker.MakePowerBeamMoteColor(this.strikePos, base.Map, this.radius * 4f, 2f, .5f, .1f, .5f, colorInt.ToColor);                
-                GenExplosion.DoExplosion(this.strikePos, map, this.def.projectile.explosionRadius, DamageDefOf.Bomb, this.launcher as Pawn, Mathf.RoundToInt((25 + 5*pwrVal) * this.arcaneDmg), 0, null, def, this.equipmentDef, null, null, 0f, 1, null, null, 0, false, null, 0f, 1, 0f, false);
+                GenExplosion.DoExplosion(this.strikePos, map, this.def.projectile.explosionRadius, DamageDefOf.Bomb, SpellInstigator, Mathf.RoundToInt((25 + 5*pwrVal) * this.arcaneDmg), 0, null, def, this.equipmentDef, null, null, 0f, 1, null, null, 0, false, null, 0f, 1, 0f, false);
                 Effecter OSEffect = TorannMagicDefOf.TM_OSExplosion.Spawn();
                 OSEffect.Trigger(new TargetInfo(this.strikePos, this.Map, false), new TargetInfo(this.strikePos, this.Map, false));
                 OSEffect.Cleanup();
@@ -151,12 +149,12 @@ namespace TorannMagic
             Matrix4x4 matrix2 = default(Matrix4x4);
             matrix2.SetTRS(vectorPos, Quaternion.Euler(0f, this.angle, 0f), new Vector3(this.radius, 1f, this.radius));                 //drawer for beam end
             Graphics.DrawMesh(MeshPool.plane10, matrix2, Projectile_OrbitalStrike.BeamEndMat, 0, null, 0, Projectile_OrbitalStrike.MatPropertyBlock);
-            num = num - (num * ((float)wrathAge/(float)(this.beamDuration/this.strikeNum)));
+            num = num - (num * ((float)wrathAge/(float)this.beamDuration));
             Vector3 a3 = a * num;
             Vector3 vectorOrb = drawPos + a3;
             vectorOrb.y = Altitudes.AltitudeFor(AltitudeLayer.MetaOverlays);
             Matrix4x4 matrix3 = default(Matrix4x4);
-            matrix3.SetTRS(vectorOrb, Quaternion.Euler(0f, this.angle, 0f), new Vector3(this.radius*((5*(float)wrathAge)/((float)this.beamDuration/this.strikeNum)), 1f, this.radius * ((5 * (float)wrathAge) / ((float)this.beamDuration/this.strikeNum))));                 //drawer for beam end
+            matrix3.SetTRS(vectorOrb, Quaternion.Euler(0f, this.angle, 0f), new Vector3(this.radius*((5*(float)wrathAge)/((float)this.beamDuration)), 1f, this.radius * ((5 * (float)wrathAge) / ((float)this.beamDuration))));                 //drawer for beam end
             Graphics.DrawMesh(MeshPool.plane10, matrix3, Projectile_OrbitalStrike.BombardMat, 0, null, 0, Projectile_OrbitalStrike.MatPropertyBlock);
         }
 
@@ -185,6 +183,7 @@ namespace TorannMagic
             {
                 LongEventHandler.ExecuteWhenFinished(delegate
                 {
+                    if (!Spawned || Destroyed || TicksLeft <= 0 || sustainer != null) return;
                     this.sustainer = SoundDef.Named("OrbitalBeam").TrySpawnSustainer(SoundInfo.InMap(this.selectedTarget, MaintenanceType.PerTick));
                 });
             }

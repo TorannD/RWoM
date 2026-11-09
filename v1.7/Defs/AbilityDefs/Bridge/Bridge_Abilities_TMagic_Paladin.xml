@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_PRayofhope</defName>
+    <label>Ray of Hope</label>
+    <description>Creates an aura of hope around the caster that periodically buffs an ally.
+		
+Ray of Hope: Arcane augmentation that assists the worker, improving their physical capacities and mood
+	
+Application Frequency: 	80-90s	
+Duration:  200-223s
+Manipulation, Moving:  +15%
+Mood increase:	+3
+
+Requires 40 mana to maintain and reduces mana regeneration by 30%; cast again to deactivate. The caster gains xp each time an ally is buffed.</description>
+    <spellId>rwom.tm_p_rayofhope</spellId>
+    <iconPath>UI/rayofhope</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_ApplyAura</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>true</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <requiresLineOfSight>false</requiresLineOfSight>
+      <defaultProjectile>Projectile_Default</defaultProjectile>
+      <abilityDef>TM_P_RayofHope</abilityDef>
+      <warmupTime>6</warmupTime>
+      <SecondsToRecharge>10.0</SecondsToRecharge>
+      <range>0</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_PRayofhopeI</defName>
+    <label>Ray of Hope</label>
+    <description>Creates an aura of hope around the caster that periodically buffs an ally.
+		
+Ray of Hope: Arcane augmentation that assists the worker, improving their physical capacities and mood
+	
+Application Frequency: 	80-90s	
+Duration: 200-223s
+Manipulation, Moving: +18%
+Mood increase:	+4
+
+Requires 40 mana to maintain and reduces mana regeneration by 30%; cast again to deactivate. The caster gains xp each time an ally is buffed.</description>
+    <spellId>rwom.tm_p_rayofhope_i</spellId>
+    <iconPath>UI/rayofhope</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_ApplyAura</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>true</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <requiresLineOfSight>false</requiresLineOfSight>
+      <defaultProjectile>Buff_RayofHope</defaultProjectile>
+      <abilityDef>TM_P_RayofHope_I</abilityDef>
+      <warmupTime>5</warmupTime>
+      <SecondsToRecharge>10.0</SecondsToRecharge>
+      <range>0</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_PRayofhopeII</defName>
+    <label>Ray of Hope</label>
+    <description>Creates an aura of hope around the caster that periodically buffs an ally.
+		
+Ray of Hope: Arcane augmentation that assists the worker, improving their physical capacities and mood
+	
+Application Frequency: 80-90s	
+Duration: 500-600s
+Manipulation, Moving: +20%
+Mood increase:	+5
+
+Requires 40 mana to maintain and reduces mana regeneration by 30%; cast again to deactivate. The caster gains xp each time an ally is buffed.</description>
+    <spellId>rwom.tm_p_rayofhope_ii</spellId>
+    <iconPath>UI/rayofhope</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_ApplyAura</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>true</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <requiresLineOfSight>false</requiresLineOfSight>
+      <defaultProjectile>Projectile_Default</defaultProjectile>
+      <abilityDef>TM_P_RayofHope_II</abilityDef>
+      <warmupTime>4</warmupTime>
+      <SecondsToRecharge>10.0</SecondsToRecharge>
+      <range>0</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_PRayofhopeIII</defName>
+    <label>Ray of Hope</label>
+    <description>Creates an aura of hope around the caster that periodically buffs an ally.
+		
+Ray of Hope: Arcane augmentation that assists the worker, improving their physical capacities and mood
+	
+Application Frequency: 	80-90s	
+Duration:	500-600s
+Manipulation, Moving:  +22%
+Mood increase:	+5
+
+Requires 40 mana to maintain and reduces mana regeneration by 30%; cast again to deactivate. The caster gains xp each time an ally is buffed.</description>
+    <spellId>rwom.tm_p_rayofhope_iii</spellId>
+    <iconPath>UI/rayofhope</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_ApplyAura</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>true</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <requiresLineOfSight>false</requiresLineOfSight>
+      <defaultProjectile>Buff_RayofHope</defaultProjectile>
+      <abilityDef>TM_P_RayofHope_III</abilityDef>
+      <warmupTime>3</warmupTime>
+      <SecondsToRecharge>10.0</SecondsToRecharge>
+      <range>0</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Heal</defName>
+    <label>Heal</label>
+    <description>Invokes holy power to heal the wounds of a target. Base heal restores 8 health for up to 3 wounds. Cannot heal injuries of missing bodyparts.</description>
+    <spellId>rwom.tm_heal</spellId>
+    <iconPath>UI/Heal</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_Heal</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_Heal</abilityDef>
+      <isViolent>false</isViolent>
+      <defaultProjectile>TM_Paladin_Heal</defaultProjectile>
+      <warmupTime>.3</warmupTime>
+      <SecondsToRecharge>15.0</SecondsToRecharge>
+      <range>12</range>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>30</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Shield</defName>
+    <label>Shield</label>
+    <description>Protects the paladin from damage for 50s or until the shield is broken.
+Absorbs up to 100 damage.</description>
+    <spellId>rwom.tm_shield</spellId>
+    <iconPath>UI/Shield</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>AbilityUser.Verb_UseAbility</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_Shield</abilityDef>
+      <isViolent>false</isViolent>
+      <defaultProjectile>TM_Paladin_Shield</defaultProjectile>
+      <warmupTime>.2</warmupTime>
+      <SecondsToRecharge>35.0</SecondsToRecharge>
+      <range>0</range>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+      <hediffsToApply>
+        <li>
+          <hediffDef>TM_HediffShield</hediffDef>
+          <applyChance>1.0</applyChance>
+          <severity>0.4</severity>
+        </li>
+      </hediffsToApply>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_ShieldI</defName>
+    <label>Shield</label>
+    <description>Protects the paladin from damage for 50s or until the shield is broken.
+Absorbs up to 125 damage.
+Reduces recharge to 30s.</description>
+    <spellId>rwom.tm_shield_i</spellId>
+    <iconPath>UI/Shield</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>AbilityUser.Verb_UseAbility</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_Shield_I</abilityDef>
+      <isViolent>false</isViolent>
+      <defaultProjectile>TM_Paladin_Shield</defaultProjectile>
+      <warmupTime>.2</warmupTime>
+      <SecondsToRecharge>30.0</SecondsToRecharge>
+      <range>0</range>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+      <hediffsToApply>
+        <li>
+          <hediffDef>TM_HediffShield</hediffDef>
+          <applyChance>1.0</applyChance>
+          <severity>0.5</severity>
+        </li>
+      </hediffsToApply>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_ShieldII</defName>
+    <label>Shield</label>
+    <description>Protects the paladin from damage for 50s or until the shield is broken.
+Absorbs up to 135 damage.
+Reduces recharge to 27s.</description>
+    <spellId>rwom.tm_shield_ii</spellId>
+    <iconPath>UI/Shield</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>AbilityUser.Verb_UseAbility</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_Shield_II</abilityDef>
+      <isViolent>false</isViolent>
+      <defaultProjectile>TM_Paladin_Shield</defaultProjectile>
+      <warmupTime>.2</warmupTime>
+      <SecondsToRecharge>27.0</SecondsToRecharge>
+      <range>0</range>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+      <hediffsToApply>
+        <li>
+          <hediffDef>TM_HediffShield</hediffDef>
+          <applyChance>1.0</applyChance>
+          <severity>0.54</severity>
+        </li>
+      </hediffsToApply>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_ShieldIII</defName>
+    <label>Shield</label>
+    <description>Protects the paladin from damage for 50s or until the shield is broken.
+Absorbs up to 150 damage.
+Reduces recharge to 25s.</description>
+    <spellId>rwom.tm_shield_iii</spellId>
+    <iconPath>UI/Shield</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>AbilityUser.Verb_UseAbility</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_Shield_III</abilityDef>
+      <isViolent>false</isViolent>
+      <defaultProjectile>TM_Paladin_Shield</defaultProjectile>
+      <warmupTime>.2</warmupTime>
+      <SecondsToRecharge>25.0</SecondsToRecharge>
+      <range>0</range>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+      <hediffsToApply>
+        <li>
+          <hediffDef>TM_HediffShield</hediffDef>
+          <applyChance>1.0</applyChance>
+          <severity>.6</severity>
+        </li>
+      </hediffsToApply>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Valiantcharge</defName>
+    <label>Valiant Charge</label>
+    <description>The Paladin is flies with the wings of an angel to fly to a distant location, shattering the ground with holy power upon landing.</description>
+    <spellId>rwom.tm_valiantcharge</spellId>
+    <iconPath>UI/valiantcharge</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Effect_ValiantCharge</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_ValiantCharge</defaultProjectile>
+      <abilityDef>TM_ValiantCharge</abilityDef>
+      <AbilityTargetCategory>TargetLocation</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+      <warmupTime>0.4</warmupTime>
+      <SecondsToRecharge>6.0</SecondsToRecharge>
+      <range>36</range>
+      <isViolent>true</isViolent>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <soundCast>DropPod_Leaving</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Overwhelm</defName>
+    <label>Overwhelm</label>
+    <description>Holy power is unleashed from the paladin, overwhelming the physical and mental senses of any nearby creatures.</description>
+    <spellId>rwom.tm_overwhelm</spellId>
+    <iconPath>UI/overwhelm</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>AbilityUser.Verb_UseAbility</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_Overwhelm</abilityDef>
+      <isViolent>true</isViolent>
+      <defaultProjectile>TM_Paladin_Overwhelm</defaultProjectile>
+      <warmupTime>.2</warmupTime>
+      <SecondsToRecharge>8.0</SecondsToRecharge>
+      <range>0</range>
+      <soundCast>InfernoCannon_Fire</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Holywrath</defName>
+    <label>Holy Wrath</label>
+    <description>Calls forth holy wrath upon the land.</description>
+    <spellId>rwom.tm_holywrath</spellId>
+    <iconPath>UI/rayoflight</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SB</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_HolyWrath</defaultProjectile>
+      <abilityDef>TM_HolyWrath</abilityDef>
+      <AbilityTargetCategory>TargetLocation</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+      <warmupTime>2.5</warmupTime>
+      <SecondsToRecharge>45.0</SecondsToRecharge>
+      <range>45</range>
+      <isViolent>true</isViolent>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <soundCast>TM_Gong</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+    </verbProperties>
+  </AbilityDef>
+</Defs>

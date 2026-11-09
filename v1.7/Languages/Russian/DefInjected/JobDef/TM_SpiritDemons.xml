@@ -1,0 +1,21 @@
+<LanguageData>
+  <TM_SpiritSoulBond.reportString>связывает души.</TM_SpiritSoulBond.reportString>
+  <TM_SpiritShadowBolt.reportString>выпускает стрелу тени.</TM_SpiritShadowBolt.reportString>
+  <TM_SpiritShadowBolt_I.reportString>выпускает стрелу тени.</TM_SpiritShadowBolt_I.reportString>
+  <TM_SpiritShadowBolt_II.reportString>выпускает стрелу тени.</TM_SpiritShadowBolt_II.reportString>
+  <TM_SpiritShadowBolt_III.reportString>выпускает стрелу тени.</TM_SpiritShadowBolt_III.reportString>
+  <TM_SpiritShadowStep.reportString>переходит к связанному союзнику.</TM_SpiritShadowStep.reportString>
+  <TM_SpiritShadowCall.reportString>призывает связанного союзника.</TM_SpiritShadowCall.reportString>
+  <TM_SpiritDominate.reportString>применяет подчинение.</TM_SpiritDominate.reportString>
+  <TM_SpiritRepulsion.reportString>применяет отталкивание.</TM_SpiritRepulsion.reportString>
+  <TM_SpiritRepulsion_I.reportString>применяет отталкивание.</TM_SpiritRepulsion_I.reportString>
+  <TM_SpiritRepulsion_II.reportString>применяет отталкивание.</TM_SpiritRepulsion_II.reportString>
+  <TM_SpiritRepulsion_III.reportString>применяет отталкивание.</TM_SpiritRepulsion_III.reportString>
+  <TM_SpiritAttraction.reportString>применяет притяжение.</TM_SpiritAttraction.reportString>
+  <TM_SpiritAttraction_I.reportString>применяет притяжение.</TM_SpiritAttraction_I.reportString>
+  <TM_SpiritAttraction_II.reportString>применяет притяжение.</TM_SpiritAttraction_II.reportString>
+  <TM_SpiritAttraction_III.reportString>применяет притяжение.</TM_SpiritAttraction_III.reportString>
+  <TM_SpiritPsychicShock.reportString>применяет психический шок.</TM_SpiritPsychicShock.reportString>
+  <TM_SpiritScorn.reportString>применяет презрение.</TM_SpiritScorn.reportString>
+  <TM_SpiritSummonDemon.reportString>заключает демонический договор.</TM_SpiritSummonDemon.reportString>
+</LanguageData>

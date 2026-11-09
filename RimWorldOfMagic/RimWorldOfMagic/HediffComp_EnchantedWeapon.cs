@@ -44,79 +44,39 @@ namespace TorannMagic
             }
         }
 
+        internal static Hediff ActiveOnHit(Pawn wielder, HediffDef def, ThingDef usedWeapon)
+        {
+            var weapon = wielder?.equipment?.Primary;
+            if (weapon == null || weapon.def != usedWeapon) return null;
+            var effect = wielder.health.hediffSet.GetFirstHediffOfDef(def);
+            return effect?.TryGetComp<HediffComp_EnchantedWeapon>()?.enchantedWeapon == weapon ? effect : null;
+        }
+
         private void Initialize()
         {
-            bool spawned = base.Pawn.Spawned;
-            CompAbilityUserMagic comp = this.enchanterPawn.GetCompAbilityUserMagic();
-            if (!spawned || this.enchanterPawn == null)
-            {
-                this.removeNow = true;
-            }
-        }        
+            if (!Pawn.Spawned || enchanterPawn == null) removeNow = true;
+        }
 
         public override void CompPostTick(ref float severityAdjustment)
         {
             base.CompPostTick(ref severityAdjustment);
-            bool flag = base.Pawn != null && base.Pawn.Map != null;
-            if (flag)
+            if (Pawn?.Map == null) return;
+            if (!initialized)
             {
-                if (!initialized)
-                {
-                    initialized = true;
-                    this.Initialize();
-                }
-
-                if (Find.TickManager.TicksGame % this.eventFrequency == 0)
-                {
-                    if(!this.enchanterPawn.DestroyedOrNull() && !this.enchanterPawn.Dead)
-                    {
-                        CompAbilityUserMagic comp = this.enchanterPawn.GetCompAbilityUserMagic();
-                        if(comp != null && comp.weaponEnchants != null && comp.weaponEnchants.Count >0)
-                        {
-                            bool isRegistered = false;
-                            for(int i =0; i < comp.weaponEnchants.Count; i++)
-                            {
-                                if(comp.weaponEnchants[i] == this.Pawn)
-                                {
-                                    isRegistered = true;
-                                }
-                            }
-                            if(!isRegistered)
-                            {
-                                this.removeNow = true;
-                            }
-                        }
-                    }
-                    else
-                    {
-                        this.removeNow = true;
-                    }
-                    
-                    if(!this.enchantedWeapon.DestroyedOrNull() && this.Pawn.equipment.Primary != null && this.Pawn.equipment.Primary == this.enchantedWeapon)
-                    {
-
-                    }
-                    else
-                    {
-                        this.removeNow = true;
-                    }
-                }
+                initialized = true;
+                Initialize();
             }
+            if (Find.TickManager.TicksGame % eventFrequency != 0) return;
+            if (enchanterPawn.DestroyedOrNull() || enchanterPawn.Dead ||
+                enchanterPawn.GetCompAbilityUserMagic()?.weaponEnchants?.Contains(Pawn) != true ||
+                enchantedWeapon.DestroyedOrNull() || Pawn.equipment?.Primary != enchantedWeapon)
+                removeNow = true;
         }
 
         public override void CompPostPostRemoved()
         {
-            if(this.enchanterPawn != null)
-            {
-                CompAbilityUserMagic comp = enchanterPawn.GetCompAbilityUserMagic();
-                if(comp != null && comp.weaponEnchants != null && comp.weaponEnchants.Count > 0)
-                {
-                    if(comp.weaponEnchants.Contains(this.Pawn))
-                    {
-                        comp.weaponEnchants.Remove(this.Pawn);
-                    }
-                }
-            }
+            if (enchanterPawn != null)
+                enchanterPawn.GetCompAbilityUserMagic()?.weaponEnchants?.RemoveAll(p => p == Pawn);
             base.CompPostPostRemoved();
         }
 

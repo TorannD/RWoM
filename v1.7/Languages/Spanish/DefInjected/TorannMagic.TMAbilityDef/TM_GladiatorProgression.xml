@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_GladiatorManeuver.label>maniobra</TM_GladiatorManeuver.label>
+  <TM_GladiatorManeuver.description>Aumenta la velocidad de movimiento un 8% durante 8 segundos.</TM_GladiatorManeuver.description>
+  <TM_GladiatorSweep.label>barrido</TM_GladiatorSweep.label>
+  <TM_GladiatorSweep.description>Golpea a un enemigo adyacente y hasta a otro a su lado con un 65% del daño del arma.</TM_GladiatorSweep.description>
+</LanguageData>

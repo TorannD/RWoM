@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_CommanderWorkCrew.label>Робоча команда</TM_CommanderWorkCrew.label>
+  <TM_CommanderWorkCrew.description>До трьох союзників, які прийняли наказ, працюють на 10/15/20% швидше протягом 10 секунд. Вартість 20%, перезарядка 45 секунд.</TM_CommanderWorkCrew.description>
+  <TM_CommanderRally.label>Точка збору</TM_CommanderRally.label>
+  <TM_CommanderRally.description>У межах 12 клітин. До 2/3/4 союзників у радіусі трьох клітин отримують по 15 захисту на 8 секунд. Вартість 25%, перезарядка 40 секунд.</TM_CommanderRally.description>
+  <TM_CommanderOperationEvac.label>Усі додому: евакуація</TM_CommanderOperationEvac.label>
+  <TM_CommanderOperationEvac.description>Після 5 секунд підготовки до чотирьох союзників отримують +20% швидкості та по 25 захисту на 20 секунд. Потрібна видимість. Вартість 60%, спільна перезарядка дві доби.</TM_CommanderOperationEvac.description>
+  <TM_CommanderOperationAid.label>Усі додому: аварійні роботи</TM_CommanderOperationAid.label>
+  <TM_CommanderOperationAid.description>Після 5 секунд підготовки до чотирьох союзників працюють швидше під час порятунку, лікування або ремонту протягом 20 секунд. Матеріали витрачаються. Спільна перезарядка дві доби.</TM_CommanderOperationAid.description>
+</LanguageData>

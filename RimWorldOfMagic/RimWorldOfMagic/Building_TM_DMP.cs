@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
@@ -182,7 +182,9 @@ namespace TorannMagic
         private void TransferMana(CompAbilityUserMagic comp)
         {
             this.ArcaneEnergyCur -= 20;
+            float manaBefore = comp.Mana.CurLevel;
             comp.Mana.CurLevel += .16f;
+            this.GetComp<Visuals.CompLegacyBuildingEffects>()?.NotifyTransfer(comp.Mana.CurLevel - manaBefore, Find.TickManager.TicksGame);
             for (int i = 0; i < 4; i++)
             {
                 TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Casting, this.DrawPos, this.Map,  .4f + .5f * i, 0.2f, .02f + (.15f * i), .4f - (.06f * i), Rand.Range(-300, 300), 0, 0, Rand.Range(0, 360));                           

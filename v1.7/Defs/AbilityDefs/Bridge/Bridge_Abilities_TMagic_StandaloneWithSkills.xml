@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Explosion</defName>
+    <label>Explosion!</label>
+    <description>Blackness shrouded in light, frenzied blaze clad in night, in the name of the crimson demons, let the collapse of thine origin manifest. Summon before me the root of thy power, hidden within the blossoming kingdom of demise. Explosion!</description>
+    <spellId>rwom.tm_explosion</spellId>
+    <iconPath>UI/explosion</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SB</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_Explosion</abilityDef>
+      <isViolent>true</isViolent>
+      <defaultProjectile>Projectile_Explosion</defaultProjectile>
+      <warmupTime>5</warmupTime>
+      <SecondsToRecharge>1000</SecondsToRecharge>
+      <range>100</range>
+      <soundCast />
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Taunt</defName>
+    <label>Taunt</label>
+    <description>Taunts nearby targets to attack this pawn.</description>
+    <spellId>rwom.tm_taunt</spellId>
+    <iconPath>UI/taunt</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_Taunt</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_Taunt</abilityDef>
+      <isViolent>false</isViolent>
+      <defaultProjectile>Projectile_Default</defaultProjectile>
+      <warmupTime>.3</warmupTime>
+      <SecondsToRecharge>30</SecondsToRecharge>
+      <range>0</range>
+      <soundCast />
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Shieldother</defName>
+    <label>Shield Other</label>
+    <description>Protects the target from damage for 60s or until the shield is broken.
+Absorbs up to 80 damage.
+The shield absorbs an additional .5 damage for each level of the caster.</description>
+    <spellId>rwom.tm_shieldother</spellId>
+    <iconPath>UI/shieldother</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_ShieldOther</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_ShieldOther</abilityDef>
+      <isViolent>false</isViolent>
+      <defaultProjectile>TM_Paladin_Shield</defaultProjectile>
+      <warmupTime>.2</warmupTime>
+      <SecondsToRecharge>20.0</SecondsToRecharge>
+      <range>30</range>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+</Defs>

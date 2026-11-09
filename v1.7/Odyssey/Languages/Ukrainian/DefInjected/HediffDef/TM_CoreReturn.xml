@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_CoreReturnMark.label>мітка повернення</TM_CoreReturnMark.label>
+  <TM_CoreReturnMark.description>Прив’язка до магічного ядра. Повернення коштує 10 магопалива; утримання — 1 магопаливо на добу.</TM_CoreReturnMark.description>
+</LanguageData>

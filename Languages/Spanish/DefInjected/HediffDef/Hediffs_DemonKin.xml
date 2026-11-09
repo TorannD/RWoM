@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_DemonHD.label>llamas demoníacas</TM_DemonHD.label>
+  
+  <TM_DemonHD.description>Llamas demoníacas que se arremolinan y se retuercen alrededor de la forma de un demonio.</TM_DemonHD.description>
+  
+  
+  <TM_DemonicPriceHD.label>consunción del alma</TM_DemonicPriceHD.label>
+  
+  <TM_DemonicPriceHD.description>Llamas de destrucción que no cesarán hasta consumir el alma de este peón.</TM_DemonicPriceHD.description>
+  
+  
+  <TM_DemonScornHD.label>desdén del demonio</TM_DemonScornHD.label>
+  
+  <TM_DemonScornHD.description>La transformación parcial de un súcubo en demonio; otorga mayores poderes físicos y absorbe daño.</TM_DemonScornHD.description>
+  
+  <TM_DemonScornHD.stages.I.label>I</TM_DemonScornHD.stages.I.label>
+  
+  
+  <TM_DemonScornHD_I.label>desdén del demonio</TM_DemonScornHD_I.label>
+  
+  <TM_DemonScornHD_I.description>La transformación parcial de un súcubo en demonio; otorga mayores poderes físicos y absorbe daño.</TM_DemonScornHD_I.description>
+  
+  <TM_DemonScornHD_I.stages.II.label>II</TM_DemonScornHD_I.stages.II.label>
+  
+  
+  <TM_DemonScornHD_II.label>desdén del demonio</TM_DemonScornHD_II.label>
+  
+  <TM_DemonScornHD_II.description>La transformación parcial de un súcubo en demonio; otorga mayores poderes físicos y absorbe daño.</TM_DemonScornHD_II.description>
+  
+  <TM_DemonScornHD_II.stages.III.label>III</TM_DemonScornHD_II.stages.III.label>
+  
+  
+  <TM_DemonScornHD_III.label>desdén del demonio</TM_DemonScornHD_III.label>
+  
+  <TM_DemonScornHD_III.description>La transformación parcial de un súcubo en demonio; otorga mayores poderes físicos y absorbe daño.</TM_DemonScornHD_III.description>
+  
+  <TM_DemonScornHD_III.stages.IV.label>IV</TM_DemonScornHD_III.stages.IV.label>
+  
+  
+  <TM_GravitySlowHD.label>pozo gravitatorio</TM_GravitySlowHD.label>
+  
+  <TM_GravitySlowHD.description>Ralentizado por una atracción gravitatoria antinatural.</TM_GravitySlowHD.description>
+  
+  <TM_GravitySlowHD.stages.slowed.label>ralentizado</TM_GravitySlowHD.stages.slowed.label>
+  
+  
+  <TM_SDDominateHD.label>dominación I</TM_SDDominateHD.label>
+  
+  <TM_SDDominateHD.description>Bajo los efectos de un súcubo dominatriz: entorpece todas las acciones físicas.</TM_SDDominateHD.description>
+  
+  <TM_SDDominateHD.stages.fading.label>desvaneciéndose</TM_SDDominateHD.stages.fading.label>
+  
+  <TM_SDDominateHD.stages.withdrawing.label>retirándose</TM_SDDominateHD.stages.withdrawing.label>
+  
+  <TM_SDDominateHD.stages.enveloping.label>envolvente</TM_SDDominateHD.stages.enveloping.label>
+  
+  <TM_SDDominateHD.stages.overwhelming.label>abrumador</TM_SDDominateHD.stages.overwhelming.label>
+  
+  
+  <TM_SDDominateHD_I.label>dominación II</TM_SDDominateHD_I.label>
+  
+  <TM_SDDominateHD_I.description>Bajo los efectos de un súcubo dominatriz: entorpece todas las acciones físicas.</TM_SDDominateHD_I.description>
+  
+  <TM_SDDominateHD_I.stages.fading.label>desvaneciéndose</TM_SDDominateHD_I.stages.fading.label>
+  
+  <TM_SDDominateHD_I.stages.withdrawing.label>retirándose</TM_SDDominateHD_I.stages.withdrawing.label>
+  
+  <TM_SDDominateHD_I.stages.enveloping.label>envolvente</TM_SDDominateHD_I.stages.enveloping.label>
+  
+  <TM_SDDominateHD_I.stages.overwhelming.label>abrumador</TM_SDDominateHD_I.stages.overwhelming.label>
+  
+  
+  <TM_SDDominateHD_II.label>dominación III</TM_SDDominateHD_II.label>
+  
+  <TM_SDDominateHD_II.description>Bajo los efectos de un súcubo dominatriz: entorpece todas las acciones físicas.</TM_SDDominateHD_II.description>
+  
+  <TM_SDDominateHD_II.stages.fading.label>desvaneciéndose</TM_SDDominateHD_II.stages.fading.label>
+  
+  <TM_SDDominateHD_II.stages.withdrawing.label>retirándose</TM_SDDominateHD_II.stages.withdrawing.label>
+  
+  <TM_SDDominateHD_II.stages.enveloping.label>envolvente</TM_SDDominateHD_II.stages.enveloping.label>
+  
+  <TM_SDDominateHD_II.stages.overwhelming.label>abrumador</TM_SDDominateHD_II.stages.overwhelming.label>
+  
+  
+  <TM_SDDominateHD_III.label>dominación IV</TM_SDDominateHD_III.label>
+  
+  <TM_SDDominateHD_III.description>Bajo los efectos de un súcubo dominatriz: entorpece todas las acciones físicas.</TM_SDDominateHD_III.description>
+  
+  <TM_SDDominateHD_III.stages.fading.label>desvaneciéndose</TM_SDDominateHD_III.stages.fading.label>
+  
+  <TM_SDDominateHD_III.stages.withdrawing.label>retirándose</TM_SDDominateHD_III.stages.withdrawing.label>
+  
+  <TM_SDDominateHD_III.stages.enveloping.label>envolvente</TM_SDDominateHD_III.stages.enveloping.label>
+  
+  <TM_SDDominateHD_III.stages.overwhelming.label>abrumador</TM_SDDominateHD_III.stages.overwhelming.label>
+  
+  
+  <TM_SDSoulBondPhysicalHD.label>vínculo de alma</TM_SDSoulBondPhysicalHD.label>
+  
+  <TM_SDSoulBondPhysicalHD.description>Mantiene un contrato de vínculo de alma con otro peón.</TM_SDSoulBondPhysicalHD.description>
+  
+  <TM_SDSoulBondPhysicalHD.stages.I.label>I</TM_SDSoulBondPhysicalHD.stages.I.label>
+  
+  <TM_SDSoulBondPhysicalHD.stages.II.label>II</TM_SDSoulBondPhysicalHD.stages.II.label>
+  
+  <TM_SDSoulBondPhysicalHD.stages.III.label>III</TM_SDSoulBondPhysicalHD.stages.III.label>
+  
+  <TM_SDSoulBondPhysicalHD.stages.IV.label>IV</TM_SDSoulBondPhysicalHD.stages.IV.label>
+  
+  
+  <TM_ShadowHD.label>sombra</TM_ShadowHD.label>
+  
+  <TM_ShadowHD.description>Daño de sombra.</TM_ShadowHD.description>
+  
+  <TM_ShadowHD.comps.HediffComp_TendDuration.labelSolidTendedWell>entablillada</TM_ShadowHD.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  
+  <TM_ShadowHD.comps.HediffComp_TendDuration.labelTendedWell>vendada</TM_ShadowHD.comps.HediffComp_TendDuration.labelTendedWell>
+  
+  <TM_ShadowHD.comps.HediffComp_TendDuration.labelTendedWellInner>suturada</TM_ShadowHD.comps.HediffComp_TendDuration.labelTendedWellInner>
+  
+  <TM_ShadowHD.comps.HediffComp_GetsPermanent.permanentLabel>tocada por la sombra</TM_ShadowHD.comps.HediffComp_GetsPermanent.permanentLabel>
+  
+  <TM_ShadowHD.injuryProps.destroyedLabel>marchita</TM_ShadowHD.injuryProps.destroyedLabel>
+  
+  <TM_ShadowHD.injuryProps.destroyedOutLabel>desintegrada</TM_ShadowHD.injuryProps.destroyedOutLabel>
+  
+  <TM_ShadowHD.labelNounPretty>TODO</TM_ShadowHD.labelNounPretty>
+  
+  
+  <TM_SoulBondMentalHD.label>vínculo de alma</TM_SoulBondMentalHD.label>
+  
+  <TM_SoulBondMentalHD.description>Vinculado por el alma a un brujo.</TM_SoulBondMentalHD.description>
+  
+  <TM_SoulBondMentalHD.stages.I.label>I</TM_SoulBondMentalHD.stages.I.label>
+  
+  <TM_SoulBondMentalHD.stages.II.label>II</TM_SoulBondMentalHD.stages.II.label>
+  
+  <TM_SoulBondMentalHD.stages.III.label>III</TM_SoulBondMentalHD.stages.III.label>
+  
+  <TM_SoulBondMentalHD.stages.IV.label>IV</TM_SoulBondMentalHD.stages.IV.label>
+  
+  
+  <TM_SoulBondPhysicalHD.label>vínculo de alma</TM_SoulBondPhysicalHD.label>
+  
+  <TM_SoulBondPhysicalHD.description>Vinculado por el alma a un súcubo.</TM_SoulBondPhysicalHD.description>
+  
+  <TM_SoulBondPhysicalHD.stages.I.label>I</TM_SoulBondPhysicalHD.stages.I.label>
+  
+  <TM_SoulBondPhysicalHD.stages.II.label>II</TM_SoulBondPhysicalHD.stages.II.label>
+  
+  <TM_SoulBondPhysicalHD.stages.III.label>III</TM_SoulBondPhysicalHD.stages.III.label>
+  
+  <TM_SoulBondPhysicalHD.stages.IV.label>IV</TM_SoulBondPhysicalHD.stages.IV.label>
+  
+  
+  <TM_VitalityBoostHD.label>aumento de vitalidad</TM_VitalityBoostHD.label>
+  
+  <TM_VitalityBoostHD.description>Mejora física obtenida al drenar la energía de un peón durante la intimidad.</TM_VitalityBoostHD.description>
+  
+  
+  <TM_VitalityDrainHD.label>drenaje de vitalidad</TM_VitalityDrainHD.label>
+  
+  <TM_VitalityDrainHD.description>Agotado físicamente pero relajado mentalmente tras la intimidad con un súcubo.</TM_VitalityDrainHD.description>
+  
+  <TM_VitalityDrainHD.stages.Succubus.label>súcubo</TM_VitalityDrainHD.stages.Succubus.label>
+  
+  
+  <TM_WDDominateHD.label>dominación I</TM_WDDominateHD.label>
+  
+  <TM_WDDominateHD.description>Dominado mentalmente por un brujo: reduce el estado mental y puede provocar diversas crisis mentales.</TM_WDDominateHD.description>
+  
+  <TM_WDDominateHD.stages.fading.label>desvaneciéndose</TM_WDDominateHD.stages.fading.label>
+  
+  <TM_WDDominateHD.stages.withdrawing.label>retirándose</TM_WDDominateHD.stages.withdrawing.label>
+  
+  <TM_WDDominateHD.stages.enveloping.label>envolvente</TM_WDDominateHD.stages.enveloping.label>
+  
+  <TM_WDDominateHD.stages.overwhelming.label>abrumador</TM_WDDominateHD.stages.overwhelming.label>
+  
+  
+  <TM_WDDominateHD_I.label>dominación II</TM_WDDominateHD_I.label>
+  
+  <TM_WDDominateHD_I.description>Dominado mentalmente por un brujo: reduce el estado mental y puede provocar diversas crisis mentales.</TM_WDDominateHD_I.description>
+  
+  <TM_WDDominateHD_I.stages.fading.label>desvaneciéndose</TM_WDDominateHD_I.stages.fading.label>
+  
+  <TM_WDDominateHD_I.stages.withdrawing.label>retirándose</TM_WDDominateHD_I.stages.withdrawing.label>
+  
+  <TM_WDDominateHD_I.stages.enveloping.label>envolvente</TM_WDDominateHD_I.stages.enveloping.label>
+  
+  <TM_WDDominateHD_I.stages.overwhelming.label>abrumador</TM_WDDominateHD_I.stages.overwhelming.label>
+  
+  
+  <TM_WDDominateHD_II.label>dominación III</TM_WDDominateHD_II.label>
+  
+  <TM_WDDominateHD_II.description>Dominado mentalmente por un brujo: reduce el estado mental y puede provocar diversas crisis mentales.</TM_WDDominateHD_II.description>
+  
+  <TM_WDDominateHD_II.stages.fading.label>desvaneciéndose</TM_WDDominateHD_II.stages.fading.label>
+  
+  <TM_WDDominateHD_II.stages.withdrawing.label>retirándose</TM_WDDominateHD_II.stages.withdrawing.label>
+  
+  <TM_WDDominateHD_II.stages.enveloping.label>envolvente</TM_WDDominateHD_II.stages.enveloping.label>
+  
+  <TM_WDDominateHD_II.stages.overwhelming.label>abrumador</TM_WDDominateHD_II.stages.overwhelming.label>
+  
+  
+  <TM_WDDominateHD_III.label>dominación IV</TM_WDDominateHD_III.label>
+  
+  <TM_WDDominateHD_III.description>Dominado mentalmente por un brujo: reduce el estado mental y puede provocar diversas crisis mentales.</TM_WDDominateHD_III.description>
+  
+  <TM_WDDominateHD_III.stages.fading.label>desvaneciéndose</TM_WDDominateHD_III.stages.fading.label>
+  
+  <TM_WDDominateHD_III.stages.withdrawing.label>retirándose</TM_WDDominateHD_III.stages.withdrawing.label>
+  
+  <TM_WDDominateHD_III.stages.enveloping.label>envolvente</TM_WDDominateHD_III.stages.enveloping.label>
+  
+  <TM_WDDominateHD_III.stages.overwhelming.label>abrumador</TM_WDDominateHD_III.stages.overwhelming.label>
+  
+  
+  <TM_WDSoulBondMentalHD.label>vínculo de alma</TM_WDSoulBondMentalHD.label>
+  
+  <TM_WDSoulBondMentalHD.description>Mantiene un contrato con otro peón que une su alma con la mía.</TM_WDSoulBondMentalHD.description>
+  
+  <TM_WDSoulBondMentalHD.stages.I.label>I</TM_WDSoulBondMentalHD.stages.I.label>
+  
+  <TM_WDSoulBondMentalHD.stages.II.label>II</TM_WDSoulBondMentalHD.stages.II.label>
+  
+  <TM_WDSoulBondMentalHD.stages.III.label>III</TM_WDSoulBondMentalHD.stages.III.label>
+  
+  <TM_WDSoulBondMentalHD.stages.IV.label>IV</TM_WDSoulBondMentalHD.stages.IV.label>
+  
+</LanguageData>

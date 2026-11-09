@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_RosterPreferred>全部职业（优先使用新入门阶段）</TM_RosterPreferred>
+  <TM_RosterFoundations>仅使用新入门阶段</TM_RosterFoundations>
+  <TM_RosterClassicNative>原版职业（保留经典成长）</TM_RosterClassicNative>
+  <TM_RosterMigration>原版职业（允许读档时转换）</TM_RosterMigration>
+  <TM_RosterAddons>扩展模组的经典职业（包括 Kure）</TM_RosterAddons>
+  <TM_RosterReport>已生成 {0}/{1} 名殖民者。各职业的结果已记录在日志中。</TM_RosterReport>
+</LanguageData>

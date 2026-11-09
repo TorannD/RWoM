@@ -1,0 +1,7 @@
+<LanguageData>
+  <TM_SoulStoneChooseHost>Выбрать носителя для {0}</TM_SoulStoneChooseHost>
+  <TM_SoulStoneCannotImplant>Нужен живой доступный колонист, животное колонии, пленник или гость.</TM_SoulStoneCannotImplant>
+  <TM_SoulStoneHarmful>Вселить {0} в {1}? Захват тела пленника или гостя — враждебное действие. После успешного вселения его фракция может стать врагом.</TM_SoulStoneHarmful>
+  <TM_SoulStoneRecoveryRemaining>Дух сможет покинуть это тело через {0}.</TM_SoulStoneRecoveryRemaining>
+  <TM_SoulStoneNoExitCell>Рядом с носителем нет свободного места для выхода духа.</TM_SoulStoneNoExitCell>
+</LanguageData>

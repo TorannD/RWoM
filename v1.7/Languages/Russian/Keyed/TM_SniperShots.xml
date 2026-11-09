@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_SniperObserve>Наблюдение: угрозы {0}/10, секторы {1}/10</TM_SniperObserve>
+  <TM_SniperChooseShot>Выбрать боевой выстрел</TM_SniperChooseShot>
+  <TM_SniperPickHeadshot>Выстрел в голову — классическое поражение жизненно важной части (окончательно)</TM_SniperPickHeadshot>
+  <TM_SniperPickAimed>Прицельный выстрел — одна обычная пуля, 110/125/140% урона оружия (окончательно)</TM_SniperPickAimed>
+  <TM_SniperReconHint>Наблюдайте 3 секунды с одной позиции. Нужны 10 разных враждебных пешек или 10 видимых секторов. Выбирайте цель на расстоянии 12–35 клеток.</TM_SniperReconHint>
+  <TM_SniperTrainRank>Потратить 1 очко воина на следующий ранг.</TM_SniperTrainRank>
+</LanguageData>

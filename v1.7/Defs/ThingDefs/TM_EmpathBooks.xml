@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ResourceBase">
+    <defName>Torn_BookOfEmpathy</defName>
+    <label>torn script: empath</label>
+    <description>Introduces a new mage to Empathy and Mind Killer. Reading completes Foundation initiation and consumes the script.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>true</alwaysHaulable>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <tradeNeverStack>true</tradeNeverStack>
+    <useHitPoints>true</useHitPoints>
+    <rotatable>false</rotatable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <thingCategories><li>TM_SkillBooks</li></thingCategories>
+    <tradeTags><li>ArcaneSkillBooks</li></tradeTags>
+    <tradeability>All</tradeability>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <statBases>
+      <!-- Native standard quest rewards cap the special-item budget at 5500. -->
+      <MarketValue>1750</MarketValue>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <Mass>0.2</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>0.0001</DeteriorationRate>
+      <Beauty>10</Beauty>
+      <SellPriceFactor>0.8</SellPriceFactor>
+    </statBases>
+    <stackLimit>1</stackLimit>
+    <techLevel>Neolithic</techLevel>
+    <comps Inherit="False">
+      <li Class="CompProperties_Forbiddable" />
+      <li Class="CompProperties_Usable">
+        <useJob>UseArtifact</useJob>
+        <useLabel>Read {0_label}</useLabel>
+      </li>
+      <li Class="CompProperties_UseEffect">
+        <compClass>TorannMagic.ClassProgression.CompUseEffect_EmpathBook</compClass>
+      </li>
+    </comps>
+    <graphicData>
+      <texPath>Books/blankscript_magic</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+  <ThingDef ParentName="ResourceBase">
+    <defName>BookOfEmpathy</defName>
+    <label>arcane tome: empath</label>
+    <description>Teaches Suppressive Aura to an empath who has completed the Foundation trial. Reading completes Adept initiation and consumes the tome.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>true</alwaysHaulable>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <tradeNeverStack>true</tradeNeverStack>
+    <useHitPoints>true</useHitPoints>
+    <rotatable>false</rotatable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <thingCategories><li>TM_SkillBooks</li></thingCategories>
+    <tradeTags><li>ArcaneSkillBooks</li></tradeTags>
+    <tradeability>All</tradeability>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <statBases>
+      <!-- Native standard quest rewards cap the special-item budget at 5500. -->
+      <MarketValue>3300</MarketValue>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <Mass>0.2</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>0.0001</DeteriorationRate>
+      <Beauty>10</Beauty>
+      <SellPriceFactor>0.8</SellPriceFactor>
+    </statBases>
+    <stackLimit>1</stackLimit>
+    <techLevel>Neolithic</techLevel>
+    <comps Inherit="False">
+      <li Class="CompProperties_Forbiddable" />
+      <li Class="CompProperties_Usable">
+        <useJob>UseArtifact</useJob>
+        <useLabel>Read {0_label}</useLabel>
+      </li>
+      <li Class="CompProperties_UseEffect">
+        <compClass>TorannMagic.ClassProgression.CompUseEffect_EmpathBook</compClass>
+      </li>
+    </comps>
+    <graphicData>
+      <texPath>Books/psionic</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+  <ThingDef ParentName="ResourceBase">
+    <defName>TM_MasterTomeEmpath</defName>
+    <label>master tome: empath</label>
+    <description>Teaches Harvest Passion and its Incite Passion child to an empath who has completed the mastery trial. Reading completes Master initiation and consumes the tome. Available from traders and quest rewards; it cannot be crafted.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>true</alwaysHaulable>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <tradeNeverStack>true</tradeNeverStack>
+    <useHitPoints>true</useHitPoints>
+    <rotatable>false</rotatable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <thingCategories><li>TM_SkillBooks</li></thingCategories>
+    <tradeTags><li>ArcaneSkillBooks</li></tradeTags>
+    <tradeability>All</tradeability>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <statBases>
+      <!-- Native standard quest rewards cap the special-item budget at 5500. -->
+      <MarketValue>5000</MarketValue>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <Mass>0.2</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>0.0001</DeteriorationRate>
+      <Beauty>10</Beauty>
+      <SellPriceFactor>0.8</SellPriceFactor>
+    </statBases>
+    <stackLimit>1</stackLimit>
+    <techLevel>Neolithic</techLevel>
+    <comps Inherit="False">
+      <li Class="CompProperties_Forbiddable" />
+      <li Class="CompProperties_Usable">
+        <useJob>UseArtifact</useJob>
+        <useLabel>Read {0_label}</useLabel>
+      </li>
+      <li Class="CompProperties_UseEffect">
+        <compClass>TorannMagic.ClassProgression.CompUseEffect_MasterTome</compClass>
+      </li>
+    </comps>
+    <graphicData>
+      <texPath>Books/tome</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+</Defs>

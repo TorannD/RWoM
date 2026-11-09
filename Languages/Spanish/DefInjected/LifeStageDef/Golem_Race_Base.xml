@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_FleshGolemLS.label>golem de carne</TM_FleshGolemLS.label>
+  
+  
+  <TM_FleshGolemLS1.label>golem de carne</TM_FleshGolemLS1.label>
+  
+  
+  <TM_FleshGolemLS2.label>golem de carne</TM_FleshGolemLS2.label>
+  
+  
+  <TM_FleshGolemLS3.label>golem de carne</TM_FleshGolemLS3.label>
+  
+  
+  <TM_HollowGolemLS.label>golem hueco</TM_HollowGolemLS.label>
+  
+  
+  <TM_HollowGolemLS_AA1.label>afinidad arcana I</TM_HollowGolemLS_AA1.label>
+  
+  
+  <TM_HollowGolemLS_AA2.label>afinidad arcana II</TM_HollowGolemLS_AA2.label>
+  
+  
+  <TM_HollowGolemLS_AA3.label>afinidad arcana III</TM_HollowGolemLS_AA3.label>
+  
+  
+  <TM_HollowGolemLS_DA1.label>afinidad con la muerte I</TM_HollowGolemLS_DA1.label>
+  
+  
+  <TM_HollowGolemLS_DA2.label>afinidad con la muerte II</TM_HollowGolemLS_DA2.label>
+  
+  
+  <TM_HollowGolemLS_DA3.label>afinidad con la muerte III</TM_HollowGolemLS_DA3.label>
+  
+  
+  <TM_HollowGolemLS_FA1.label>afinidad con el fuego I</TM_HollowGolemLS_FA1.label>
+  
+  
+  <TM_HollowGolemLS_FA2.label>afinidad con el fuego II</TM_HollowGolemLS_FA2.label>
+  
+  
+  <TM_HollowGolemLS_FA3.label>afinidad con el fuego III</TM_HollowGolemLS_FA3.label>
+  
+  
+  <TM_HollowGolemLS_IA1.label>afinidad con el agua I</TM_HollowGolemLS_IA1.label>
+  
+  
+  <TM_HollowGolemLS_IA2.label>afinidad con el agua II</TM_HollowGolemLS_IA2.label>
+  
+  
+  <TM_HollowGolemLS_IA3.label>afinidad con el agua III</TM_HollowGolemLS_IA3.label>
+  
+  
+  <TM_MaharalGolemLS.label>golem de Maharal</TM_MaharalGolemLS.label>
+  
+  
+  <TM_MaharalGolemLS1.label>golem de Maharal</TM_MaharalGolemLS1.label>
+  
+  
+  <TM_MaharalGolemLS2.label>golem de Maharal</TM_MaharalGolemLS2.label>
+  
+  
+  <TM_MaharalGolemLS3.label>golem de Maharal</TM_MaharalGolemLS3.label>
+  
+  
+  <TM_MechaGolemLS.label>mecagolem</TM_MechaGolemLS.label>
+  
+  
+  <TM_MechaGolemLS_ES1.label>mecagolem de fragmento de tierra</TM_MechaGolemLS_ES1.label>
+  
+  
+  <TM_MechaGolemLS_ES2.label>mecagolem de fragmento de tierra</TM_MechaGolemLS_ES2.label>
+  
+  
+  <TM_MechaGolemLS_ES3.label>mecagolem de fragmento de tierra</TM_MechaGolemLS_ES3.label>
+  
+  
+  <TM_MechaGolemLS_FS1.label>mecagolem de fragmento de llama</TM_MechaGolemLS_FS1.label>
+  
+  
+  <TM_MechaGolemLS_FS2.label>mecagolem de fragmento de llama</TM_MechaGolemLS_FS2.label>
+  
+  
+  <TM_MechaGolemLS_FS3.label>mecagolem de fragmento de llama</TM_MechaGolemLS_FS3.label>
+  
+  
+  <TM_MechaGolemLS_LS1.label>mecagolem de fragmento de rayo</TM_MechaGolemLS_LS1.label>
+  
+  
+  <TM_MechaGolemLS_LS2.label>mecagolem de fragmento de rayo</TM_MechaGolemLS_LS2.label>
+  
+  
+  <TM_MechaGolemLS_LS3.label>mecagolem de fragmento de rayo</TM_MechaGolemLS_LS3.label>
+  
+  
+  <TM_MechaGolemLS_WS1.label>mecagolem de fragmento de agua</TM_MechaGolemLS_WS1.label>
+  
+  
+  <TM_MechaGolemLS_WS2.label>mecagolem de fragmento de agua</TM_MechaGolemLS_WS2.label>
+  
+  
+  <TM_MechaGolemLS_WS3.label>mecagolem de fragmento de agua</TM_MechaGolemLS_WS3.label>
+  
+  
+  <TM_SilkGolemLS.label>golem de seda</TM_SilkGolemLS.label>
+  
+  
+  <TM_SilkGolemLS1.label>golem de seda</TM_SilkGolemLS1.label>
+  
+  
+  <TM_SilkGolemLS2.label>golem de seda</TM_SilkGolemLS2.label>
+  
+  
+  <TM_SilkGolemLS3.label>golem de seda</TM_SilkGolemLS3.label>
+  
+  
+  <TM_StoneGolemLS.label>golem de piedra</TM_StoneGolemLS.label>
+  
+  
+  <TM_StoneGolemLS1.label>golem de piedra</TM_StoneGolemLS1.label>
+  
+  
+  <TM_StoneGolemLS2.label>golem de piedra</TM_StoneGolemLS2.label>
+  
+  
+  <TM_StoneGolemLS3.label>golem de piedra</TM_StoneGolemLS3.label>
+  
+  
+  <TM_StrawGolemLS.label>golem de paja</TM_StrawGolemLS.label>
+  
+  
+  <TM_StrawGolemLS1.label>golem de paja</TM_StrawGolemLS1.label>
+  
+  
+  <TM_StrawGolemLS2.label>golem de paja</TM_StrawGolemLS2.label>
+  
+  
+  <TM_StrawGolemLS3.label>golem de paja</TM_StrawGolemLS3.label>
+  
+  
+  <TM_WoodGolemLS.label>golem de madera</TM_WoodGolemLS.label>
+  
+  
+  <TM_WoodGolemLS1.label>golem de madera</TM_WoodGolemLS1.label>
+  
+  
+  <TM_WoodGolemLS2.label>golem de madera</TM_WoodGolemLS2.label>
+  
+  
+  <TM_WoodGolemLS3.label>golem de madera</TM_WoodGolemLS3.label>
+  
+</LanguageData>

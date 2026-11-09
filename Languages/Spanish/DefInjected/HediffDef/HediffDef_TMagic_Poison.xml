@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_Poison_HD.label>envenenamiento</TM_Poison_HD.label>
+  
+  <TM_Poison_HD.description>Daño causado por veneno.</TM_Poison_HD.description>
+  
+  <TM_Poison_HD.comps.HediffComp_TendDuration.labelSolidTendedWell>entablillado</TM_Poison_HD.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  
+  <TM_Poison_HD.comps.HediffComp_TendDuration.labelTendedWell>vendado</TM_Poison_HD.comps.HediffComp_TendDuration.labelTendedWell>
+  
+  <TM_Poison_HD.comps.HediffComp_TendDuration.labelTendedWellInner>suturado</TM_Poison_HD.comps.HediffComp_TendDuration.labelTendedWellInner>
+  
+  <TM_Poison_HD.comps.HediffComp_GetsPermanent.permanentLabel>marchitado</TM_Poison_HD.comps.HediffComp_GetsPermanent.permanentLabel>
+  
+  <TM_Poison_HD.injuryProps.destroyedLabel>marchitado</TM_Poison_HD.injuryProps.destroyedLabel>
+  
+  <TM_Poison_HD.injuryProps.destroyedOutLabel>marchitado</TM_Poison_HD.injuryProps.destroyedOutLabel>
+ 
+  <TM_Poison_HD.labelNounPretty>{0} en {1}</TM_Poison_HD.labelNounPretty>
+  
+  
+  <TM_Poisoned_HD.label>envenenado</TM_Poisoned_HD.label>
+  
+  <TM_Poisoned_HD.description>Efectos secundarios del veneno.</TM_Poisoned_HD.description>
+  
+  <TM_Poisoned_HD.stages.minor.label>leve</TM_Poisoned_HD.stages.minor.label>
+  
+  <TM_Poisoned_HD.stages.moderate.label>moderado</TM_Poisoned_HD.stages.moderate.label>
+  
+  <TM_Poisoned_HD.stages.major.label>grave</TM_Poisoned_HD.stages.major.label>
+  
+</LanguageData>

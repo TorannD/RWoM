@@ -1,0 +1,17 @@
+<Defs>
+  <JobDef>
+    <defName>TM_SpiritCastSpite</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>casting spite at TargetB.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCastWaveOfFear</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>unleashing a wave of fear.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCastGraveBlade</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>casting grave blade at TargetB.</reportString>
+  </JobDef>
+</Defs>

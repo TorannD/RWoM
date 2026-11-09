@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_Arcalleum.label>arcalleum</TM_Arcalleum.label>
+  
+  <TM_Arcalleum.description>Una aleación metálica compuesta de acero, jade, plata y magicita. Su composición única le otorga propiedades místicas: una mayor elasticidad y la capacidad de crear reverberaciones de cualquier energía mágica que pase a través de ella. La elasticidad de la aleación la hace una excelente opción para protegerse de golpes contundentes, pero es mediocre para armas cortantes. El arcalleum es difícil de crear y requiere una forja capaz de licuar y combinar todos los ingredientes de la aleación.\n\nAunque se busca por sus mejores propiedades defensivas, luchadores y magos la aprecian también por su poder de anular el tiempo de reutilización de cualquier habilidad. Cada kg de arcalleum que se lleve puesto aumenta un 1 % la probabilidad de anular el tiempo de reutilización de una habilidad tras usarla (máx. 50 %).</TM_Arcalleum.description>
+  
+  
+  <TM_Demonhide.label>piel de demonio</TM_Demonhide.label>
+  
+  <TM_Demonhide.description>La piel de un demonio. Este material es increíblemente resistente, con una malla microporosa capaz de difundir rápidamente el calor y amortiguar los impactos mejor que la mayoría de los materiales no metálicos. La sangre de un demonio resiste la magia, y el cuero hecho con su piel absorbe parte de esa resistencia. Cualquier encantamiento grabado en la piel de demonio se potencia de forma natural. Solo tiene dos inconvenientes: el primero, que únicamente puede obtenerse del cadáver de un demonio, lo que la hace rara y costosa; el segundo, que es un aislante terrible.</TM_Demonhide.description>
+  
+  
+  <TM_Demonscale.label>escama de demonio</TM_Demonscale.label>
+  
+  <TM_Demonscale.description>Arrancadas del cuerpo de un demonio, estas escamas ofrecen una defensa ligera y versátil contra todo tipo de ataques. La escama de demonio destaca como barrera natural contra la magia y es un excelente inhibidor del calor y el fuego; un guerrero con suficiente armadura de escama de demonio podría volverse inmune a todo salvo el fuego más intenso. La escama de demonio puede fundirse, y las armas forjadas con este metal refinado son excelentes armas cortantes. Los encantamientos grabados en equipo de escama de demonio se potencian de forma natural.</TM_Demonscale.description>
+  
+  
+  <TM_Manaweave.label>tejido de maná</TM_Manaweave.label>
+  
+  <TM_Manaweave.description>El tejido de maná es tela fusionada con magicita e imbuida meticulosamente con símbolos arcanos. Hereda muchas de las propiedades físicas de la tela, pero adquiere además una respuesta reactiva a la fuerza física. Lo que hace única a esta tela es su capacidad de actuar como conductor de maná que potencia los efectos de los encantamientos y concede de forma natural protección contra la magia de luz y oscuridad.\n\nExtremadamente difícil y agotador de crear, solo un mago con talento y conocimientos puede fabricar este material.</TM_Manaweave.description>
+  
+</LanguageData>

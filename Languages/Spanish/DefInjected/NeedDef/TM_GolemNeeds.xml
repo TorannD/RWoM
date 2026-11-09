@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_GolemEnergy.label>energía</TM_GolemEnergy.label>
+  
+  <TM_GolemEnergy.description>Nivel de energía del golem.</TM_GolemEnergy.description>
+  
+  
+  <TM_GolemRage.label>ira</TM_GolemRage.label>
+  
+  <TM_GolemRage.description>Nivel de ira del golem.</TM_GolemRage.description>
+  
+</LanguageData>

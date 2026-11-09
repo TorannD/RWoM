@@ -9,11 +9,9 @@ using Verse.AI;
 
 namespace TorannMagic
 {
-    public class Verb_Rend : Verb_UseAbility
+    public class Verb_Rend : ClassProgression.Verb_SpiritTargetable
     {
 
-        private int verVal;
-        private float arcaneDmg = 1f;
 
         bool validTarg;
         //can be used with shieldbelt
@@ -42,15 +40,15 @@ namespace TorannMagic
             return validTarg;
         }
 
-        protected override bool TryCastShot()
+        protected override bool ApplyHostedEffect()
         {
-            bool flag = false;
-            this.TargetsAoE.Clear();
-            //this.UpdateTargets();
-            this.FindTargets();
-            MagicPowerSkill ver = base.CasterPawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Rend.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Rend_ver");
-            this.arcaneDmg = base.CasterPawn.GetCompAbilityUserMagic().arcaneDmg;
-            verVal = ver.level;
+            var owner = ClassProgression.SpiritRebirthCasting.SkillOwner(CasterPawn, Ability);
+            var magic = owner?.GetCompAbilityUserMagic();
+            if (magic == null || CasterPawn?.Spawned != true) return false;
+            TargetsAoE.Clear();
+            FindTargets();
+            int versatility = magic.MagicData.MagicPowerSkill_Rend.FirstOrDefault(x => x.label == "TM_Rend_ver")?.level ?? 0;
+            bool attempted = false;
             bool flag2 = this.UseAbilityProps.AbilityTargetCategory != AbilityTargetCategory.TargetAoE && this.TargetsAoE.Count > 1;
             if (flag2)
             {
@@ -59,11 +57,15 @@ namespace TorannMagic
             for (int i = 0; i < this.TargetsAoE.Count; i++)
             {
                 Pawn newPawn = this.TargetsAoE[i].Thing as Pawn;
+                if (newPawn?.Spawned != true || newPawn.Dead || newPawn.Map != CasterPawn.Map) continue;
+                attempted = true;
                 if(newPawn.RaceProps.IsFlesh)
                 {
-                    if (Rand.Chance(TM_Calc.GetSpellSuccessChance(this.CasterPawn, newPawn, true)))
+                    if (Rand.Chance(TM_Calc.GetSpellSuccessChance(owner, newPawn, true)))
                     {
-                        HealthUtility.AdjustSeverity(newPawn, HediffDef.Named("TM_RendHD"), (3f + (.6f * ver.level)) * this.arcaneDmg);
+                        var effect = HediffDef.Named("TM_RendHD");
+                        HealthUtility.AdjustSeverity(newPawn, effect, (3f + .6f * versatility) * magic.arcaneDmg);
+                        newPawn.health.hediffSet.GetFirstHediffOfDef(effect)?.TryGetComp<HediffComp_Rend>()?.SetSource(owner);
                         if (newPawn.Faction != null && !newPawn.Faction.HostileTo(base.CasterPawn.Faction))
                         {
                             newPawn.Faction.TryAffectGoodwillWith(base.CasterPawn.Faction, -20, true, false, null, null);
@@ -84,11 +86,17 @@ namespace TorannMagic
                 }
                 else
                 {
-                    TM_Action.DamageEntities(newPawn, null, (4f), DamageDefOf.Cut, this.CasterPawn);
+                    TM_Action.DamageEntities(newPawn, null, (4f), DamageDefOf.Cut, owner);
                 }
             }
-            this.PostCastShot(flag, out flag);
-            return flag;
+            return attempted;
+        }
+
+        protected override bool TryCastShot()
+        {
+            ApplyHostedEffect();
+            PostCastShot(false, out bool fired);
+            return fired;
         }
 
         private void FindTargets()
@@ -112,7 +120,7 @@ namespace TorannMagic
                 if (flag4)
                 {
                     list = (from x in this.caster.Map.listerThings.AllThings
-                            where x.Position.InHorDistOf(aoeStartPosition, (float)this.UseAbilityProps.TargetAoEProperties.range) && this.UseAbilityProps.TargetAoEProperties.targetClass.IsAssignableFrom(x.GetType()) && x.Faction != Faction.OfPlayer
+                            where x.Position.InHorDistOf(aoeStartPosition, (float)this.UseAbilityProps.TargetAoEProperties.range) && this.UseAbilityProps.TargetAoEProperties.targetClass.IsAssignableFrom(x.GetType()) && x.Faction != CasterPawn.Faction
                             select x).ToList<Thing>();
                 }
                 else
@@ -132,7 +140,7 @@ namespace TorannMagic
                     }
                     list.Clear();
                     list = (from x in this.caster.Map.listerThings.AllThings
-                            where x.Position.InHorDistOf(aoeStartPosition, (float)this.UseAbilityProps.TargetAoEProperties.range) && this.UseAbilityProps.TargetAoEProperties.targetClass.IsAssignableFrom(x.GetType()) && (x.HostileTo(Faction.OfPlayer) || this.UseAbilityProps.TargetAoEProperties.friendlyFire)
+                            where x.Position.InHorDistOf(aoeStartPosition, (float)this.UseAbilityProps.TargetAoEProperties.range) && this.UseAbilityProps.TargetAoEProperties.targetClass.IsAssignableFrom(x.GetType()) && (x.HostileTo(CasterPawn.Faction) || this.UseAbilityProps.TargetAoEProperties.friendlyFire)
                             select x).ToList<Thing>();
                 }
                 int maxTargets = this.UseAbilityProps.abilityDef.MainVerb.TargetAoEProperties.maxTargets;

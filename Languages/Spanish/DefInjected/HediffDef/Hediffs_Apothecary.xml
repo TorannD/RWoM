@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_ApothecaryHerbsHD.label>hierbas de boticario</TM_ApothecaryHerbsHD.label>
+  
+  <TM_ApothecaryHerbsHD.description>Hierbas, semillas y otros ingredientes que usa un boticario para elaborar una variedad de objetos.</TM_ApothecaryHerbsHD.description>
+  
+  
+  <TM_HerbalBlissHD.label>dicha</TM_HerbalBlissHD.label>
+  
+  <TM_HerbalBlissHD.description>Sume al usuario en un estado de dicha que enmascara casi por completo las emociones y el dolor. Esta droga hace que el consumidor pierda habilidades poco a poco, y la ganancia de habilidades bajo su influencia está muy reducida.</TM_HerbalBlissHD.description>
+  
+  
+  <TM_HerbalClarityHD.label>claridad</TM_HerbalClarityHD.label>
+  
+  <TM_HerbalClarityHD.description>Una poción que ayuda a quien la consume a abrirse a lo arcano. La regeneración de maná aumenta hasta un 300 % y la sensibilidad psíquica hasta un 50 %. Sus efectos también reducen la estabilidad mental. Los efectos de esta droga duran varios días, pero pierden potencia con el tiempo.</TM_HerbalClarityHD.description>
+  
+  <TM_HerbalClarityHD.stages.fading.label>desvaneciéndose</TM_HerbalClarityHD.stages.fading.label>
+  
+  <TM_HerbalClarityHD.stages.active.label>activa</TM_HerbalClarityHD.stages.active.label>
+  
+  <TM_HerbalClarityHD.stages.vibrant.label>vibrante</TM_HerbalClarityHD.stages.vibrant.label>
+  
+  
+  <TM_HerbalElixirHD.label>elixir de hierbas</TM_HerbalElixirHD.label>
+  
+  <TM_HerbalElixirHD.description>Un elixir de hierbas que aumenta la regeneración de salud y combate las enfermedades; también mejora la salud mental y reduce el cansancio.</TM_HerbalElixirHD.description>
+  
+  <TM_HerbalElixirHD.stages.fading.label>desvaneciéndose</TM_HerbalElixirHD.stages.fading.label>
+  
+  <TM_HerbalElixirHD.stages.active.label>activo</TM_HerbalElixirHD.stages.active.label>
+  
+  <TM_HerbalElixirHD.stages.strong.label>fuerte</TM_HerbalElixirHD.stages.strong.label>
+  
+  
+  <TM_SoothingBalmHD.label>bálsamo calmante</TM_SoothingBalmHD.label>
+  
+  <TM_SoothingBalmHD.description>Un bálsamo tópico que se usa para detener las hemorragias, curar heridas y reducir el dolor. El bálsamo calmante actúa como un anestésico leve y reduce la consciencia del paciente.</TM_SoothingBalmHD.description>
+  
+</LanguageData>

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using RimWorld;
 using Verse;
 using AbilityUser;
@@ -431,6 +431,7 @@ namespace TorannMagic
         public static TMAbilityDef TM_ConsumeCorpse_I;
         public static TMAbilityDef TM_ConsumeCorpse_II;
         public static TMAbilityDef TM_ConsumeCorpse_III;
+        public static TMAbilityDef TM_ConsumeCorpse_Mass;
         public static TMAbilityDef TM_CorpseExplosion;
         public static TMAbilityDef TM_CorpseExplosion_I;
         public static TMAbilityDef TM_CorpseExplosion_II;
@@ -442,6 +443,7 @@ namespace TorannMagic
         public static TMAbilityDef TM_DeathBolt_III;
         public static TMAbilityDef TM_LichForm;
         public static HediffDef TM_LichHD;
+        public static ThingDef FlyingObject_ValiantCharge;
         public static ThingDef FlyingObject_DeathBolt;
         public static TMAbilityDef TM_Flight;
         public static ThingDef FlyingObject_Flight;

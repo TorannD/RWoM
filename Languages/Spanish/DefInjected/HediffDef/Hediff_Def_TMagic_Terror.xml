@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_Terror.label>terror</TM_Terror.label>
+  
+  <TM_Terror.description>Una exhibición descarnada de poder mágico está infundiendo miedo en este peón.</TM_Terror.description>
+  
+  <TM_Terror.stages.Uneasy.label>inquieto</TM_Terror.stages.Uneasy.label>
+  
+  <TM_Terror.stages.Panicked.label>presa del pánico</TM_Terror.stages.Panicked.label>
+  
+  <TM_Terror.stages.Terrified.label>aterrorizado</TM_Terror.stages.Terrified.label>
+  
+</LanguageData>

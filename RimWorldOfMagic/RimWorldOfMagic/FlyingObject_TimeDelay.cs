@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using System;
 using System.Linq;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ using Verse.Sound;
 namespace TorannMagic
 {
     [StaticConstructorOnStartup]
-    public class FlyingObject_TimeDelay : Projectile
+    public class FlyingObject_TimeDelay : Projectile, IThingHolder, ISuspendableThingHolder
     {
         protected new Vector3 origin;
         protected new Vector3 destination;
@@ -26,7 +26,22 @@ namespace TorannMagic
         protected new int ticksToImpact;
         //protected new Thing launcher;
         protected Thing assignedTarget;
-        protected Thing flyingThing;
+        private ThingOwner<Thing> contents;
+        private Thing legacyPayload;
+        private Thing flyingThing => contents?.Count > 0 ? contents[0] : null;
+        private bool takingOff, endCostPaid;
+        public FlyingObject_TimeDelay() { contents = new ThingOwner<Thing>(this,true); }
+        public bool IsContentsSuspended => true;
+        public ThingOwner GetDirectlyHeldThings() => contents;
+        public void GetChildHolders(List<IThingHolder> children) => ThingOwnerUtility.AppendThingHoldersFromThings(children,contents);
+        internal static bool ProtectsMap(Map map)
+        {
+            var def = TorannMagicDefOf.FlyingObject_TimeDelay;
+            if (map?.listerThings == null || def == null) return false;
+            foreach (var thing in map.listerThings.ThingsOfDef(def))
+                if (thing is FlyingObject_TimeDelay field && (field.takingOff || field.flyingThing is Pawn p && p.Faction?.IsPlayer == true)) return true;
+            return false;
+        }
         private bool drafted = false;
         public float destroyPctAtEnd = 0f;
 
@@ -114,7 +129,18 @@ namespace TorannMagic
             Scribe_Values.Look<bool>(ref this.explosion, "explosion", false, false);
             Scribe_References.Look<Thing>(ref this.assignedTarget, "assignedTarget", false);
             //Scribe_References.Look<Thing>(ref this.launcher, "launcher", false);
-            Scribe_Deep.Look<Thing>(ref this.flyingThing, "flyingThing", new object[0]);
+            Scribe_Deep.Look(ref contents,"TM_suspendedPayload",this);
+            if (Scribe.mode != LoadSaveMode.Saving) Scribe_Deep.Look(ref legacyPayload,"flyingThing");
+            if (Scribe.mode == LoadSaveMode.PostLoadInit)
+            {
+                contents ??= new ThingOwner<Thing>(this,true);
+                if (legacyPayload != null && !legacyPayload.Spawned && legacyPayload.holdingOwner == null)
+                    contents.TryAdd(legacyPayload,false);
+                legacyPayload = null;
+                drawPosition = variationDestination = origin;
+            }
+            Scribe_Values.Look(ref endCostPaid,"TM_stasisCostPaid");
+            Scribe_Values.Look(ref spinRate,"TM_stasisSpin");
             Scribe_Values.Look<bool>(ref this.drafted, "drafted", false, false);
             Scribe_Values.Look<float>(ref this.xVariation, "xVariation", 0, false);
             Scribe_Values.Look<float>(ref this.zVariation, "zVariation", 0, false);
@@ -168,21 +194,30 @@ namespace TorannMagic
 
         public void Launch(Thing launcher, Vector3 origin, LocalTargetInfo targ, Thing flyingThing, DamageInfo? newDamageInfo = null)
         {            
-            bool spawned = flyingThing.Spawned;            
+            if (flyingThing == null || flyingThing.Destroyed || contents.Count != 0 || flyingThing.Spawned && flyingThing.Map != Map) return;
+            bool spawned = flyingThing.Spawned;
+            var returnCell = spawned ? flyingThing.Position : Position;
             pawn = launcher as Pawn;
-            if (pawn != null && pawn.Drafted)
+            if (flyingThing is Pawn passenger && passenger.Drafted)
             {
                 this.drafted = true;
             }
-            if (spawned)
+            takingOff = flyingThing is Pawn taking && taking.Faction?.IsPlayer == true;
+            try
             {
-                flyingThing.DeSpawn();
+                if (spawned) flyingThing.DeSpawn();
+                if (!contents.TryAddOrTransfer(flyingThing,false))
+                {
+                    if (spawned && !flyingThing.Spawned && flyingThing.holdingOwner == null) GenSpawn.Spawn(flyingThing,returnCell,Map);
+                    Destroy();
+                    return;
+                }
             }
+            finally { takingOff = false; }
             this.speed = this.speed * this.force;
             this.launcher = launcher;
             this.origin = origin;
             this.impactDamage = newDamageInfo;
-            this.flyingThing = flyingThing;
 
             bool flag = targ.Thing != null;
             if (flag)
@@ -202,7 +237,7 @@ namespace TorannMagic
 
         protected override void TickInterval(int delta)
         {
-            this.duration--;
+            this.duration -= delta;
             base.Position = this.origin.ToIntVec3();
             bool flag2 = this.duration <= 0;
             if(this.moteDef != null && this.Map != null && this.moteFrequency > 0 && Find.TickManager.TicksGame % this.moteFrequency == 0)
@@ -333,61 +368,65 @@ namespace TorannMagic
 
         protected new void Impact(Thing hitThing)
         {
-            if (this.Map != null && this.flyingThing != null)
+            Finish(true);
+        }
+
+        private void Finish(bool naturalExpiry)
+        {
+            var payload = flyingThing;
+            if (payload == null || payload.Destroyed)
             {
-                // The payload was despawned at launch; losing it here would orphan
-                // the thing (for Chronostasis that is the caster pawn). Direct
-                // placement may fail on a blocked cell, so fall back to Near and
-                // only apply the end effects once the payload is back on the map.
-                if (!GenPlace.TryPlaceThing(this.flyingThing, base.Position, base.Map, ThingPlaceMode.Direct))
+                base.Destroy();
+                return;
+            }
+            if (Map == null) return;
+            if (naturalExpiry && !endCostPaid)
+            {
+                endCostPaid = true;
+                if (destroyPctAtEnd > 0f)
                 {
-                    GenPlace.TryPlaceThing(this.flyingThing, base.Position, base.Map, ThingPlaceMode.Near);
-                }
-                if (this.flyingThing.Spawned)
-                {
-                    if (this.flyingThing is Pawn p)
+                    int cost = Mathf.Clamp(Mathf.RoundToInt(payload.stackCount * destroyPctAtEnd),0,payload.stackCount);
+                    bool fullyConsumed = cost == payload.stackCount;
+                    if (fullyConsumed) payload.Destroy(DestroyMode.Vanish);
+                    else if (cost > 0) payload.SplitOff(cost).Destroy(DestroyMode.Vanish);
+                    for (int i = 0; i < 10; i++)
                     {
-                        if (p.IsColonist && this.drafted && p.drafter != null)
-                        {
-                            p.drafter.Drafted = true;
-                        }
+                        var pos = DrawPos;
+                        pos.x += Rand.Range(-.3f,.3f);
+                        pos.z += Rand.Range(-.3f,.3f);
+                        pos.y += Rand.Range(0,1.2f);
+                        TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Shadow,pos,Map,Rand.Range(.5f,1f),.4f,
+                            Rand.Range(.1f,.4f),Rand.Range(.2f,1.2f),Rand.Range(-200,200),Rand.Range(1.2f,2f),Rand.Range(0,360),0);
                     }
-
-                    if (this.destroyPctAtEnd != 0)
+                    var info = SoundInfo.InMap(new TargetInfo(Position,Map));
+                    info.pitchFactor = .8f;
+                    info.volumeFactor = 1.2f;
+                    TorannMagicDefOf.TM_Vibration.PlayOneShot(info);
+                    if (fullyConsumed)
                     {
-                        int rangeMax = 10;
-                        for (int i = 0; i < rangeMax; i++)
-                        {
-                            float direction = Rand.Range(0, 360);
-                            Vector3 rndPos = this.flyingThing.DrawPos;
-                            rndPos.x += Rand.Range(-.3f, .3f);
-                            rndPos.z += Rand.Range(-.3f, .3f);
-                            ThingDef mote = TorannMagicDefOf.Mote_Shadow;
-                            TM_MoteMaker.ThrowGenericMote(mote, rndPos, this.Map, Rand.Range(.5f, 1f), 0.4f, Rand.Range(.1f, .4f), Rand.Range(1.2f, 2f), Rand.Range(-200, 200), Rand.Range(1.2f, 2f), direction, direction);
-
-                        }
-                        SoundInfo info = SoundInfo.InMap(new TargetInfo(base.Position, this.Map, false), MaintenanceType.None);
-                        info.pitchFactor = .8f;
-                        info.volumeFactor = 1.2f;
-                        TorannMagicDefOf.TM_Vibration.PlayOneShot(info);
+                        base.Destroy();
+                        return;
                     }
-
-                    if (this.destroyPctAtEnd >= 1f)
-                    {
-                        this.flyingThing.Destroy(DestroyMode.Vanish);
-                    }
-                    else if (this.destroyPctAtEnd != 0)
-                    {
-                        this.flyingThing.SplitOff(Mathf.RoundToInt(this.flyingThing.stackCount * this.destroyPctAtEnd)).Destroy(DestroyMode.Vanish);
-                    }
-                }
-                else
-                {
-                    Log.Warning("TM TimeDelay: could not re-place payload " + this.flyingThing.ToString() + " on impact; it remains despawned.");
                 }
             }
+            foreach (var cell in GenRadial.RadialCellsAround(Position,6.9f,true))
+            {
+                if (!cell.InBounds(Map) || !cell.Standable(Map)) continue;
+                if (payload is Pawn && cell.GetFirstPawn(Map) != null) continue;
+                if (contents.TryDrop(payload,cell,Map,ThingPlaceMode.Direct,out var landed,playDropSound:false))
+                {
+                    if (landed is Pawn p && p.IsColonist && drafted && p.drafter != null) p.drafter.Drafted = true;
+                    base.Destroy();
+                    return;
+                }
+            }
+            duration = 60;
+        }
 
-            this.Destroy(DestroyMode.Vanish);
+        public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
+        {
+            if (flyingThing != null) Finish(false);
+            else base.Destroy(mode);
         }
     }
 }

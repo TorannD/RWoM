@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <TorannMagic.ClassProgression.ClassDisciplineDef>
+    <defName>TM_DisciplineFaceless</defName>
+    <label>faceless</label>
+    <profileId>rwom.faceless</profileId>
+    <domain>Might</domain>
+  </TorannMagic.ClassProgression.ClassDisciplineDef>
+</Defs>

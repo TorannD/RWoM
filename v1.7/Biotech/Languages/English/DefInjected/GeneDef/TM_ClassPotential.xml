@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ManaGene.label>mana</TM_ManaGene.label>
+  <TM_StaminaGene.label>stamina</TM_StaminaGene.label>
+  <TM_ManaGene.description>A classless carrier gains magical potential and can learn a magic class. For a pawn who already has a class, this gene marks their magic and does not grant another class or potential. Children of carriers may be born with the hidden mage gene.</TM_ManaGene.description>
+  <TM_StaminaGene.description>A classless carrier gains physical potential and can learn a warrior class. For a pawn who already has a class, this gene marks their might and does not grant another class or potential. Children of carriers may be born with the sleeping warrior gene.</TM_StaminaGene.description>
+</LanguageData>

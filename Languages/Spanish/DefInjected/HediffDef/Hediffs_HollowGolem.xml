@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_DeathFieldHD.label>campo de muerte</TM_DeathFieldHD.label>
+  
+  <TM_DeathFieldHD.description>Golpea periódicamente a los objetivos cercanos con magia de la muerte.</TM_DeathFieldHD.description>
+  
+  
+  <TM_DecayHD.label>descomposición</TM_DecayHD.label>
+  
+  <TM_DecayHD.description>Se pudre, se corroe y disuelve rápidamente la materia y los tejidos.</TM_DecayHD.description>
+  
+  
+  <TM_DoomFieldHD.label>abismo de la muerte</TM_DoomFieldHD.label>
+  
+  <TM_DoomFieldHD.description>Ralentiza periódicamente a los objetivos cercanos con su perdición inminente.</TM_DoomFieldHD.description>
+  
+  
+  <TM_HollowGolem_BreastPlateHD.label>coraza</TM_HollowGolem_BreastPlateHD.label>
+  
+  <TM_HollowGolem_BreastPlateHD.description>Protege el torso y el pecho de los ataques.</TM_HollowGolem_BreastPlateHD.description>
+  
+  
+  <TM_HollowGolem_CloakHD.label>capa de desvanecimiento</TM_HollowGolem_CloakHD.label>
+  
+  <TM_HollowGolem_CloakHD.description>Aumenta la velocidad de movimiento y proporciona una pequeña protección.</TM_HollowGolem_CloakHD.description>
+  
+  
+  <TM_HollowGolem_CoAFireHD.label>escudo de armas: fuego</TM_HollowGolem_CoAFireHD.label>
+  
+  <TM_HollowGolem_CoAFireHD.description>Aumenta la velocidad de movimiento y la resistencia al calor.</TM_HollowGolem_CoAFireHD.description>
+  
+  <TM_HollowGolem_CoAFireHD.stages.I.label>I</TM_HollowGolem_CoAFireHD.stages.I.label>
+  
+  <TM_HollowGolem_CoAFireHD.stages.II.label>II</TM_HollowGolem_CoAFireHD.stages.II.label>
+  
+  <TM_HollowGolem_CoAFireHD.stages.III.label>III</TM_HollowGolem_CoAFireHD.stages.III.label>
+  
+  
+  <TM_HollowGolem_CoAIceHD.label>escudo de armas</TM_HollowGolem_CoAIceHD.label>
+  
+  <TM_HollowGolem_CoAIceHD.description>Aumenta la armadura.</TM_HollowGolem_CoAIceHD.description>
+  
+  <TM_HollowGolem_CoAIceHD.stages.I.label>I</TM_HollowGolem_CoAIceHD.stages.I.label>
+  
+  <TM_HollowGolem_CoAIceHD.stages.II.label>II</TM_HollowGolem_CoAIceHD.stages.II.label>
+  
+  <TM_HollowGolem_CoAIceHD.stages.III.label>III</TM_HollowGolem_CoAIceHD.stages.III.label>
+  
+  
+  <TM_HollowGolem_CrownHD.label>corona del despertar</TM_HollowGolem_CrownHD.label>
+  
+  <TM_HollowGolem_CrownHD.description>Fortalece la fuerza de voluntad y ofrece una protección menor contra los ataques físicos.</TM_HollowGolem_CrownHD.description>
+  
+  
+  <TM_HollowGolem_HelmHD.label>yelmo</TM_HollowGolem_HelmHD.label>
+  
+  <TM_HollowGolem_HelmHD.description>Protege la cabeza y el cráneo.</TM_HollowGolem_HelmHD.description>
+  
+  
+  <TM_HollowGolem_ShoulderHD.label>hombreras</TM_HollowGolem_ShoulderHD.label>
+  
+  <TM_HollowGolem_ShoulderHD.description>Protege los hombros, la clavícula y el cuello.</TM_HollowGolem_ShoulderHD.description>
+  
+</LanguageData>

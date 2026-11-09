@@ -1583,6 +1583,7 @@
     <maxSeverity>3.0</maxSeverity>	
 	<isBad>false</isBad>
 	<comps>
+      <li><compClass>TorannMagic.ClassProgression.HediffComp_SpiritCastOrigin</compClass></li>
       <li>
         <compClass>TorannMagic.HediffComp_Shield</compClass>
       </li>
@@ -2699,6 +2700,7 @@
 	<isBad>false</isBad>
 	<makesSickThought>false</makesSickThought>
 	<comps>
+      <li><compClass>TorannMagic.ClassProgression.HediffComp_HostedStance</compClass></li>
 	  <li Class="TorannMagic.HediffCompProperties_SetDuration">
 		<compClass>TorannMagic.HediffComp_SetDuration</compClass>
 		<duration>10</duration>		
@@ -2874,6 +2876,9 @@
 	<comps>
 	  <li>
         <compClass>TorannMagic.HediffComp_ShadowSlayerCloak</compClass>
+      </li>
+      <li>
+        <compClass>TorannMagic.ClassProgression.HediffComp_SpiritCastOrigin</compClass>
       </li>	
       <li Class="HediffCompProperties_Disappears">
         <showRemainingTime>True</showRemainingTime>
@@ -2967,6 +2972,7 @@
 	<isBad>false</isBad>
 	<makesSickThought>false</makesSickThought>
 	<comps>
+      <li><compClass>TorannMagic.ClassProgression.HediffComp_HostedStance</compClass></li>
 	  <li Class="TorannMagic.HediffCompProperties_SetDuration">
 		<compClass>TorannMagic.HediffComp_SetDuration</compClass>
 		<duration>10</duration>		
@@ -2992,6 +2998,7 @@
 	<isBad>false</isBad>
 	<makesSickThought>false</makesSickThought>
 	<comps>
+      <li><compClass>TorannMagic.ClassProgression.HediffComp_HostedStance</compClass></li>
 	  <li Class="TorannMagic.HediffCompProperties_SetDuration">
 		<compClass>TorannMagic.HediffComp_SetDuration</compClass>
 		<duration>10</duration>		

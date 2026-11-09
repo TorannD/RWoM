@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_EnchantedBody.label>Cuerpo encantado</TM_EnchantedBody.label>
+  <TM_EnchantedBody.description>Hace crecer extremidades adicionales para mejorar la manipulación y aumenta la velocidad de combate. Este encantamiento suele hacer que el encantador tenga un aspecto bastante horrible y puede alarmar a otros peones. Este hechizo es sostenido y reduce el maná máximo en 20 y la regeneración de maná un 30 %.
+
+Usar esta habilidad mientras el encantamiento está activo lo disipará. Solo puede haber un tipo de encantamiento activo a la vez.
+
+*Todas las habilidades de Cuerpo encantado se aplican también a Aura encantada.</TM_EnchantedBody.description>
+
+  <TM_EnchantedAura.label>Aura encantada</TM_EnchantedAura.label>
+  <TM_EnchantedAura.description>Irradia un aura encantadora que derriba las barreras sociales y mejora la interacción social y las opiniones. Este hechizo es sostenido y reduce el maná máximo en 20 y la regeneración de maná un 30 %.
+
+Usar esta habilidad mientras el encantamiento está activo lo disipará. Solo puede haber un tipo de encantamiento activo a la vez.</TM_EnchantedAura.description>
+
+  <TM_Transmutate.label>Transmutar</TM_Transmutate.label>
+  <TM_Transmutate.description>Transmuta un material en otro de valor igual o mayor. La cantidad de material nuevo creado a partir del antiguo depende del valor de este último; parte del material se consumirá durante el proceso de conversión.
+
+Por defecto, esta habilidad solo funciona con recursos en bruto (plata, acero, pieles, tela, etc.) y ladrillos, pero puede mejorarse para transmutar otros materiales.
+
+Consulta las descripciones de las habilidades para más detalles.</TM_Transmutate.description>
+
+  <TM_EnchanterStone.label>Piedra del encantador</TM_EnchanterStone.label>
+  <TM_EnchanterStone.description>Crea un artefacto a partir de material en bruto y lo imbuye de propiedades mágicas. Un encantador puede tener tantos artefactos como quiera, pero cada artefacto reduce el maná máximo en 20.
+
+Los beneficios del artefacto se otorgan al peón que lo lleve equipado. Los artefactos tienen ranuras de equipo propias.
+
+Esta habilidad se usa sobre recursos en bruto como bloques de piedra, acero o plata; consulta las descripciones de las habilidades para ver la lista completa de recursos que se pueden usar para crear una piedra del encantador.</TM_EnchanterStone.description>
+
+  <TM_DismissEnchanterStones.label>Descartar piedra del encantador</TM_DismissEnchanterStones.label>
+  <TM_DismissEnchanterStones.description>Destruye la piedra del encantador más antigua.</TM_DismissEnchanterStones.description>
+
+  <TM_EnchantWeapon.label>Encantar arma</TM_EnchantWeapon.label>
+  <TM_EnchantWeapon.description>Encanta un arma cuerpo a cuerpo equipada por un peón objetivo. Las armas encantadas adquieren propiedades elementales.
+
+El encantamiento de fuego causa daño adicional por quemadura y puede prender fuego al objetivo.
+El encantamiento de hielo reduce la eficiencia de la parte del cuerpo golpeada.
+El encantamiento de rayo puede aturdir al enemigo.
+El encantamiento oscuro puede cegar al enemigo.
+
+Las armas encantadas requieren una cantidad de maná igual al coste de lanzamiento para mantenerse. El número de encantamientos de armas solo está limitado por la capacidad de maná del encantador.
+
+El encantamiento solo permanecerá activo mientras el peón sostenga el arma encantada. Si la suelta o la cambia por otra arma, el encantamiento se disipará. Los encantamientos de armas solo afectan a las armas cuerpo a cuerpo.</TM_EnchantWeapon.description>
+
+  <TM_DispelEnchantWeapon.label>Disipar encantamiento de arma</TM_DispelEnchantWeapon.label>
+  <TM_DispelEnchantWeapon.description>Elimina todos los encantamientos de armas mantenidos por este encantador.</TM_DispelEnchantWeapon.description>
+
+  <TM_Polymorph.label>Polimorfia</TM_Polymorph.label>
+  <TM_Polymorph.description>Transforma a los peones de la zona objetivo en bestias aleatorias. La criatura polimorfizada conservará lo bastante de su ser original para reconocer su situación y enfurecerse por ella. Los aliados pueden controlarse (reclutarse), pero pueden seguir mostrando un comportamiento «animal» si no tienen una tarea concreta.
+
+Se puede polimorfizar a los aliados, pero la mayoría se molestará por el altercado. Los encantadores no pueden usar este método para polimorfizarse a sí mismos.
+
+Usar la polimorfia sobre una criatura que ya está polimorfizada pondrá fin al encantamiento de polimorfia existente. El encantamiento también se rompe si la criatura polimorfizada muere. Si muere un polimorfo, el peón encantado volverá a la normalidad, pero si muere un enemigo polimorfizado, el encantamiento se vuelve permanente.
+
+El encantamiento de polimorfia oculta todas las heridas hasta que termina el efecto. Todas las heridas recibidas durante la polimorfia desaparecen cuando acaba el encantamiento.
+
+Objetivos máx.: 4
+Radio: 3
+Alcance: 36
+Tiempo de lanzamiento: 3 s</TM_Polymorph.description>
+
+  <TM_Polymorph_I.label>Polimorfia (I)</TM_Polymorph_I.label>
+  <TM_Polymorph_I.description>Transforma a los peones de la zona objetivo en bestias aleatorias. La criatura polimorfizada conservará lo bastante de su ser original para reconocer su situación y enfurecerse por ella. Los aliados pueden controlarse (reclutarse), pero seguirán mostrando un comportamiento «animal» si no tienen una tarea concreta.
+
+Se puede polimorfizar a los aliados, pero la mayoría se molestará por el altercado. Los encantadores no pueden usar este método para polimorfizarse a sí mismos.
+
+Usar la polimorfia sobre una criatura que ya está polimorfizada pondrá fin al encantamiento de polimorfia existente. El encantamiento también se rompe si la criatura polimorfizada muere. Si muere un polimorfo, el peón encantado volverá a la normalidad, pero si muere un enemigo polimorfizado, el encantamiento se vuelve permanente.
+
+El encantamiento de polimorfia oculta todas las heridas hasta que termina el efecto. Todas las heridas recibidas durante la polimorfia desaparecen cuando acaba el encantamiento.
+
+Objetivos máx.: 5
+Radio: 3
+Alcance: 38
+Tiempo de lanzamiento: 2,8 s</TM_Polymorph_I.description>
+
+  <TM_Polymorph_II.label>Polimorfia (II)</TM_Polymorph_II.label>
+  <TM_Polymorph_II.description>Transforma a los peones de la zona objetivo en bestias aleatorias. La criatura polimorfizada conservará lo bastante de su ser original para reconocer su situación y enfurecerse por ella. Los aliados pueden controlarse (reclutarse), pero seguirán mostrando un comportamiento «animal» si no tienen una tarea concreta.
+
+Se puede polimorfizar a los aliados, pero la mayoría se molestará por el altercado. Los encantadores no pueden usar este método para polimorfizarse a sí mismos.
+
+Usar la polimorfia sobre una criatura que ya está polimorfizada pondrá fin al encantamiento de polimorfia existente. El encantamiento también se rompe si la criatura polimorfizada muere. Si muere un polimorfo, el peón encantado volverá a la normalidad, pero si muere un enemigo polimorfizado, el encantamiento se vuelve permanente.
+
+El encantamiento de polimorfia oculta todas las heridas hasta que termina el efecto. Todas las heridas recibidas durante la polimorfia desaparecen cuando acaba el encantamiento.
+
+Objetivos máx.: 5
+Radio: 4
+Alcance: 40
+Tiempo de lanzamiento: 2,6 s</TM_Polymorph_II.description>
+
+  <TM_Polymorph_III.label>Polimorfia</TM_Polymorph_III.label>
+  <TM_Polymorph_III.description>Transforma a los peones de la zona objetivo en bestias aleatorias. La criatura polimorfizada conservará lo bastante de su ser original para reconocer su situación y enfurecerse por ella. Los aliados pueden controlarse (reclutarse), pero seguirán mostrando un comportamiento «animal» si no tienen una tarea concreta.
+
+Se puede polimorfizar a los aliados, pero la mayoría se molestará por el altercado. Los encantadores no pueden usar este método para polimorfizarse a sí mismos.
+
+Usar la polimorfia sobre una criatura que ya está polimorfizada pondrá fin al encantamiento de polimorfia existente. El encantamiento también se rompe si la criatura polimorfizada muere. Si muere un polimorfo, el peón encantado volverá a la normalidad, pero si muere un enemigo polimorfizado, el encantamiento se vuelve permanente.
+
+El encantamiento de polimorfia oculta todas las heridas hasta que termina el efecto. Todas las heridas recibidas durante la polimorfia desaparecen cuando acaba el encantamiento.
+
+Objetivos máx.: 6
+Radio: 4
+Alcance: 42
+Tiempo de lanzamiento: 2,4 s</TM_Polymorph_III.description>
+
+  <TM_Shapeshift.label>Cambioforma</TM_Shapeshift.label>
+  <TM_Shapeshift.description>Te transformas en una criatura aleatoria. El encantador conservará su identidad y el control de sus acciones. El daño sufrido mientras está transformado desaparece cuando termina el encantamiento de polimorfia. El encantamiento también terminará si se mata al polimorfo, pero el encantador no sufrirá daño.
+
+Cambiar de forma no está exento de efectos secundarios leves: al transformarse en un animal, el encantador heredará los instintos y el comportamiento del animal; si no se le dan instrucciones concretas, deambulará o hará otras tareas aleatorias propias de un animal.</TM_Shapeshift.description>
+
+  <TM_ShapeshiftDW.label>Cambioforma: lobo terrible</TM_ShapeshiftDW.label>
+  <TM_ShapeshiftDW.description>Te transformas en un lobo terrible. El encantador conservará su identidad y el control de la mayoría de sus acciones. El daño sufrido mientras está transformado desaparece cuando termina el encantamiento de polimorfia. El encantamiento también terminará si se mata al polimorfo, pero el encantador no sufrirá daño.
+
+Cambiar de forma no está exento de efectos secundarios leves: al transformarse en un animal, el encantador heredará los instintos y el comportamiento del animal; si no se le dan instrucciones concretas, deambulará o hará otras tareas aleatorias propias de un animal.
+
+Los lobos terribles son animales únicos con una conexión especial con la magia. En forma de lobo terrible, los encantadores pueden ejercer pequeñas cantidades de magia para que el lobo entre y salga brevemente de la realidad.</TM_ShapeshiftDW.description>
+
+</LanguageData>

@@ -53,11 +53,12 @@ Efficiency: 71%</description>
     <interactionCellOffset>(0,0,-1)</interactionCellOffset>
     <hasInteractionCell>true</hasInteractionCell>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <designationCategory>Misc</designationCategory>
+    <designationCategory>TM_RWoM</designationCategory>
 		<building>
 			<ai_chillDestination>false</ai_chillDestination>
 		</building>
     <comps>
+      <li Class="TorannMagic.Visuals.CompProperties_LegacyBuildingEffects"><effect>Capacitor</effect></li>
 	  <li Class="CompProperties_Explosive">
         <explosiveRadius>2.2</explosiveRadius>
         <explosiveDamageType>TM_ManaMine</explosiveDamageType>
@@ -144,11 +145,12 @@ Efficiency: 80%</description>
     <interactionCellOffset>(0,0,-1)</interactionCellOffset>
     <hasInteractionCell>true</hasInteractionCell>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <designationCategory>Misc</designationCategory>
+    <designationCategory>TM_RWoM</designationCategory>
 		<building>
 			<ai_chillDestination>false</ai_chillDestination>
 		</building>
     <comps>
+      <li Class="TorannMagic.Visuals.CompProperties_LegacyBuildingEffects"><effect>Pocket</effect></li>
 	  <li Class="CompProperties_Explosive">
         <explosiveRadius>7.7</explosiveRadius>
         <explosiveDamageType>TM_ManaMine</explosiveDamageType>

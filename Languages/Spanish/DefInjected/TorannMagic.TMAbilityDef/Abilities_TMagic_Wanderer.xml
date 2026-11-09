@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  
+  <TM_WandererCraft.label>El Vagabundo</TM_WandererCraft.label>
+  <TM_WandererCraft.description>Aumenta los atributos mediante el trabajo duro y la creatividad. Consulta las habilidades para más detalles.</TM_WandererCraft.description>
+
+  
+  <TM_Cantrips.label>Trucos</TM_Cantrips.label>
+  <TM_Cantrips.description>Los magos errantes no tienen habilidades específicas de clase; en cambio, destacan en los hechizos generales o trucos.\n\nLa mayoría de los magos desdeñan los trucos por considerarlos meras comodidades que no requieren entrenamiento adicional, pero el vagabundo adopta otro enfoque. Al invertir tiempo y esfuerzo en comprender los trucos, el vagabundo es capaz de mejorar casi todas las habilidades generales en utilidad, poder y eficiencia.\n\nConsulta las habilidades para más detalles.</TM_Cantrips.description>
+
+</LanguageData>

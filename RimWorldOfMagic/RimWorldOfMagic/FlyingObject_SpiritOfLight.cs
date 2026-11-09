@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using System;
 using System.Linq;
 using System.Collections.Generic;
@@ -16,8 +16,7 @@ namespace TorannMagic
         protected new Vector3 origin;
         protected new Vector3 destination;
 
-        CompProperties_Glower gProps = new CompProperties_Glower();
-        CompGlower glower = new CompGlower();
+        private int? glowHandle;
         public IntVec3 glowCenter = default(IntVec3);
 
         private static readonly Material sol_up = MaterialPool.MatFrom("PawnKind/sol_up", ShaderDatabase.Transparent, Color.white);
@@ -42,6 +41,9 @@ namespace TorannMagic
         protected Thing assignedTarget;
         protected Thing flyingThing;
         Pawn pawn;
+        internal Pawn OwnerPawn => pawn;
+        private Pawn FollowPawn => ClassProgression.SpiritRebirthState.TryGet(pawn, out var state) && state.HasValidHost(pawn)
+            ? state.Host : pawn;
 
         public DamageInfo? impactDamage;
 
@@ -154,16 +156,17 @@ namespace TorannMagic
         {
             get
             {
+                var body = FollowPawn;
                 float val = .012f * (1f + (.03f*verVal));
-                if (pawn.Map != null)
+                if (body?.Map != null)
                 {
-                    if(pawn.Map.weatherManager?.curWeather?.defName != "Clear")
+                    if(body.Map.weatherManager?.curWeather?.defName != "Clear")
                     {
                         val *= .8f;
                     }
-                    if(pawn.Map.GameConditionManager?.ActiveConditions?.Count > 0)
+                    if(body.Map.GameConditionManager?.ActiveConditions?.Count > 0)
                     {
-                        List<GameCondition> gcList = pawn.Map.GameConditionManager.ActiveConditions;
+                        List<GameCondition> gcList = body.Map.GameConditionManager.ActiveConditions;
                         for(int i =0; i < gcList.Count;i++)
                         {
                             if(gcList[i].def == GameConditionDefOf.Aurora)
@@ -192,11 +195,11 @@ namespace TorannMagic
                             }
                         }
                     }
-                    if (pawn.Position.Roofed(pawn.Map))
+                    if (body.Position.Roofed(body.Map))
                     {
                         val -= .006f;
                     }
-                    int mapTime = GenLocalDate.HourOfDay(pawn.Map);
+                    int mapTime = GenLocalDate.HourOfDay(body.Map);
                     if (mapTime < 20 && mapTime > 5)
                     {
                         float amt = 0;
@@ -279,7 +282,8 @@ namespace TorannMagic
         {
             get
             {
-                Vector3 casterPos = this.pawn.DrawPos;
+                var body = FollowPawn;
+                Vector3 casterPos = body?.Map == Map && body?.Spawned == true ? body.DrawPos : Position.ToVector3Shifted();
                 if(solAction == SoLAction.Sleeping)
                 {
                     return casterPos;
@@ -327,11 +331,25 @@ namespace TorannMagic
             Scribe_Values.Look<float>(ref this.lightEnergy, "lightEnergy", 0f, false);
             Scribe_Values.Look<IntVec3>(ref this.glowCenter, "glowCenter", default(IntVec3), false);
             Scribe_Values.Look<bool>(ref this.glowing, "glowing", false, false);
+            Scribe_Values.Look(ref shouldGlow, "TM_solWantsGlow", false, true);
+            Scribe_Values.Look(ref shouldDismiss, "TM_solWantsDismiss");
+            Scribe_Values.Look(ref speed, "TM_solSpeed", 9f);
+            Scribe_Values.Look(ref delayCount, "TM_solActionDelay");
+            Scribe_Values.Look(ref spinning, "TM_solSpin");
+            Scribe_Values.Look(ref curveVariance, "TM_solCurveVariance");
+            Scribe_Values.Look(ref destinationCurvePoint, "TM_solCurveIndex");
+            Scribe_Collections.Look(ref curvePoints, "TM_solCurvePoints", LookMode.Value);
+            if (Scribe.mode == LoadSaveMode.PostLoadInit)
+            {
+                if (curvePoints == null) curvePoints = new List<Vector3>();
+                if (curvePoints.Count == 0) curveVariance = 0f;
+                destinationCurvePoint = Mathf.Clamp(destinationCurvePoint, 0, Mathf.Max(0,curvePoints.Count - 1));
+            }
         }
 
         protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
-            bool flag = this.flyingThing != null;
+            bool flag = pawn != null;
             if (flag && solAction != SoLAction.Sleeping && solAction != SoLAction.Limbo)
             {
                 Material mat = FlyingObject_SpiritOfLight.sol_down;
@@ -352,7 +370,7 @@ namespace TorannMagic
 
                 Vector3 vector = this.DrawPos;
                 vector.y = Altitudes.AltitudeFor(AltitudeLayer.MoteOverhead);
-                Vector3 s = new Vector3(.4f, pawn.DrawPos.y, .4f);
+                Vector3 s = new Vector3(.4f, DrawPos.y, .4f);
                 Matrix4x4 matrix = default(Matrix4x4);
                 Quaternion q = Quaternion.AngleAxis(0f, Vector3.up);
                 if (this.solAction == SoLAction.Attacking || this.solAction == SoLAction.Returning || this.solAction == SoLAction.ChargeAttacking || solAction == SoLAction.Goto || solAction == SoLAction.Circling)
@@ -363,7 +381,7 @@ namespace TorannMagic
                 {
                     Matrix4x4 matrix2 = default(Matrix4x4);
                     float bScale = Mathf.Clamp(.6f + (5f / (float)this.ticksToImpact), .6f, 2.5f);
-                    Vector3 s2 = new Vector3(bScale, pawn.DrawPos.y, bScale);
+                    Vector3 s2 = new Vector3(bScale, DrawPos.y, bScale);
                     matrix2.SetTRS(vector, q, s2);
                     Graphics.DrawMesh(MeshPool.plane10, matrix2, FlyingObject_SpiritOfLight.sol_blade, 0);
                 }
@@ -373,7 +391,7 @@ namespace TorannMagic
                     Quaternion barrierRot = Quaternion.AngleAxis(Rand.Range(0, 360), Vector3.up);
                     Matrix4x4 matrix2 = default(Matrix4x4);
                     float bScale = 1.4f;
-                    Vector3 s2 = new Vector3(bScale, pawn.DrawPos.y, bScale);
+                    Vector3 s2 = new Vector3(bScale, DrawPos.y, bScale);
                     matrix2.SetTRS(barrierPos, barrierRot, s2);
                     Graphics.DrawMesh(MeshPool.plane10, matrix2, FlyingObject_SpiritOfLight.sol_barrier, 0);
 
@@ -421,49 +439,33 @@ namespace TorannMagic
 
         public void StopGlow()
         {
-            if (this.glower != null && glower.parent != null && this.Map != null)
-            {
-                if (this.glowing)
-                {
-                    //this.Map.mapDrawer.MapMeshDirty(glowCenter, MapMeshFlag.Things);
-                    this.Map.glowGrid.DeRegisterGlower(glower);
-                    this.glowing = false;
-                    this.glowCenter = default(IntVec3);
-                }
-            }
+            if (glowHandle.HasValue && Map != null)
+                Map.glowGrid.DeregisterCustomGlower(glowHandle.Value);
+            glowHandle = null;
+            glowing = false;
+            glowCenter = default;
         }
 
         public void DoGlow()
         {
-            if (this.glower != null && glower.parent != null && this.Map != null)
-            {
-                //Log.Message("glower not null, glow center " + glowCenter);
-                if (this.glowCenter != default(IntVec3) && this.pawn.Spawned)
-                {
-                    this.Map.mapDrawer.MapMeshDirty(glowCenter, MapMeshFlagDefOf.Things);
-                    GlowGrid gg = this.Map.glowGrid;
-                    HashSet<CompGlower> litGlowers = Traverse.Create(root: gg).Field(name: "litGlowers").GetValue<HashSet<CompGlower>>();
-                    litGlowers.Add(glower);
-                    Traverse.Create(root: gg).Field(name: "litGlowers").SetValue(litGlowers);
-                    gg.DirtyCell(glowCenter);
-                    if (Current.ProgramState != ProgramState.Playing)
-                    {
-                        List<IntVec3> locs = Traverse.Create(root: gg).Field(name: "initialGlowerLocs").GetValue<List<IntVec3>>();
-                        locs.Add(glowCenter);
-                        Traverse.Create(root: gg).Field(name: "initialGlowerLocs").SetValue(locs);
-                    }
-                    //this.Map.glowGrid.RegisterGlower(glower);
-                    this.glowing = true;
-                }                
-            }
+            if (glowHandle.HasValue || Map == null || !glowCenter.InBounds(Map) || FollowPawn?.Map != Map) return;
+            glowHandle = Map.glowGrid.RegisterCustomGlower(glowCenter, 14f, new ColorInt(255, 255, 180, 1), 12f);
+            glowing = true;
+        }
+
+        public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
+        {
+            StopGlow();
+            base.DeSpawn(mode);
         }
 
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
         {
+            StopGlow();
             if (!pawn.DestroyedOrNull())
             {
                 CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
-                comp.SoL = null;
+                if (comp?.SoL == this) comp.SoL = null;
             }
             base.Destroy(mode);
         }
@@ -476,24 +478,18 @@ namespace TorannMagic
                 SoundDefOf.Ambient_AltitudeWind.sustainFadeoutTime.Equals(30.0f);
                 FleckMaker.ThrowDustPuff(this.origin, this.Map, Rand.Range(1.2f, 1.8f));
                 UpdateSoLPower();
-                this.glower = new CompGlower();
-                gProps.glowColor = new ColorInt(255, 255, 180, 1);
-                gProps.glowRadius = 14f;
-                gProps.overlightRadius = 12f;
-                glower.parent = this;
-                glower.Initialize(gProps);
-                this.Map.mapDrawer.MapMeshDirty(base.Position, MapMeshFlagDefOf.Things);
-                this.Map.glowGrid.DeRegisterGlower(glower);
-                this.glowing = false;
-                //this.shouldGlow = false;
-                this.initialized = true;
-                //Log.Message("initializing sol, glowing: " + glowing + " glow center: " + glowCenter);
+                if (glowing)
+                {
+                    glowing = false;
+                    DoGlow();
+                }
+                initialized = true;
             }            
         }
 
         private void UpdateSoLPower()
         {
-            if(!pawn.DestroyedOrNull() && pawn.Spawned)
+            if(!pawn.DestroyedOrNull() && FollowPawn?.Spawned == true)
             {
                 CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
                 if(comp != null && comp.IsMagicUser)
@@ -521,18 +517,18 @@ namespace TorannMagic
 
         public void Launch(Thing launcher, Vector3 origin, LocalTargetInfo targ, Thing flyingThing, DamageInfo? newDamageInfo = null)
         {
-            bool spawned = flyingThing.Spawned;
+            bool spawned = flyingThing?.Spawned == true;
             pawn = launcher as Pawn;
             if (spawned)
             {
                 flyingThing.DeSpawn();
             }
             this.launcher = launcher;
-            this.Initialize();
             this.origin = origin;
+            this.Initialize();
             this.impactDamage = newDamageInfo;
             this.flyingThing = flyingThing;
-            flyingThing.ThingID += Rand.Range(0, 2147).ToString();
+
             bool flag = targ.Thing != null;
             if (flag)
             {
@@ -554,10 +550,6 @@ namespace TorannMagic
             if(!initialized)
             {
                 Initialize();
-                if(this.glowing && this.glowCenter != default(IntVec3))
-                {
-                    this.shouldGlow = true;
-                }
             }
 
             if(Find.TickManager.TicksGame % this.chargeFrequency == 0)
@@ -565,18 +557,19 @@ namespace TorannMagic
                 LightEnergy += ChargeAmount;
             }
 
+            var body = FollowPawn;
             bool dFlag = false;
             if(this.pawn.DestroyedOrNull())
             {
                 dFlag = true;
                 this.Destroy(DestroyMode.Vanish);
             }
-            else if (!this.pawn.Spawned || this.pawn.Map != this.Map || this.pawn.Map == null)
+            else if (body?.Spawned != true || body.Map != Map)
             {
                 solAction = SoLAction.Limbo;
                 dFlag = true;
                 this.delayCount++;
-                if (delayCount >= 300)
+                if (shouldDismiss || delayCount >= 300 && !ClassProgression.SpiritRebirthState.TryGet(pawn,out _))
                 {
                     StopGlow();
                     this.shouldGlow = false;
@@ -593,9 +586,9 @@ namespace TorannMagic
             {
                 if(this.glowing)
                 {
-                    this.glowCenter = default(IntVec3);
                     StopGlow();
                     this.Destroy(DestroyMode.Vanish);
+                    return;
                 }
             }
 
@@ -604,9 +597,9 @@ namespace TorannMagic
                 bool flag = !this.ExactPosition.InBoundsWithNullCheck(base.Map);
                 if (flag)
                 {
-                    if (!this.pawn.DestroyedOrNull() && this.pawn.Spawned)
+                    if (body?.Spawned == true)
                     {
-                        base.Position = pawn.Position;
+                        base.Position = body.Position;
                         this.destination = GetCasterOffset_Exact;
                         this.speed = speed_dash;
                         this.ticksToImpact = this.StartingTicksToImpact;
@@ -669,7 +662,7 @@ namespace TorannMagic
                                 {
                                     base.Position = this.DestinationCell;
                                 }
-                                if (this.solAction == SoLAction.ChargeAttacking)
+                                if (this.solAction == SoLAction.ChargeAttacking && assignedTarget?.Spawned == true && assignedTarget.Map == Map)
                                 {
                                     ActualLightCost(5f);
                                     int moteAngle = Mathf.RoundToInt(Vector3Utility.ToAngleFlat(this.origin - this.destination) - 90f);
@@ -706,6 +699,8 @@ namespace TorannMagic
 
         public void UpdateAction(SoLAction withAction = SoLAction.Pending)
         {
+            var body = FollowPawn;
+            if (body?.Spawned != true || body.Map != Map) return;
             SoLAction inAction = this.solAction;
             Vector3 destTarget = this.ExactPosition;
             this.curveVariance = 0;
@@ -717,21 +712,21 @@ namespace TorannMagic
             }
             if (solAction == SoLAction.Pending || solAction == SoLAction.Goto)
             {
-                if (this.pawn.GetPosture() == PawnPosture.LayingInBed || this.pawn.CurJobDef == JobDefOf.LayDown)
+                if (body.GetPosture() == PawnPosture.LayingInBed || body.CurJobDef == JobDefOf.LayDown)
                 {
-                    if (!pawn.Awake() && LightEnergy > 5f)
+                    if (!body.Awake() && LightEnergy > 5f)
                     {
                         Action_Sleeping(out destTarget);
                     }
-                    //pawn injured?
+                    //body injured?
                 }                
-                else if (this.pawn.Drafted)
+                else if (body.Drafted)
                 {
                     this.delayCount++;
                     if (LightEnergy > 20 && EnergyChance && this.delayCount > 2)
                     {
-                        Pawn p = TM_Calc.FindNearbyEnemy(this.pawn, (int)AttackTarget_ShortRange);
-                        if (p != null && TM_Calc.HasLoSFromTo(pawn.Position, p, pawn, 0, AttackTarget_ShortRange))
+                        Pawn p = TM_Calc.FindNearbyEnemy(body, (int)AttackTarget_ShortRange);
+                        if (p != null && TM_Calc.HasLoSFromTo(body.Position, p, body, 0, AttackTarget_ShortRange))
                         {
                             Action_AttackCharge(p, out destTarget);
                             queuedAction = SoLAction.Limbo;
@@ -740,8 +735,8 @@ namespace TorannMagic
                         {
                             if (LightEnergy > 30 && this.delayCount > 6)
                             {
-                                p = TM_Calc.FindNearbyEnemy(this.pawn.Position, this.pawn.Map, this.pawn.Faction, AttackTarget_MaxRange, AttackTarget_ShortRange);
-                                if (p != null && TM_Calc.HasLoSFromTo(pawn.Position, p, pawn, 0, AttackTarget_MaxRange))
+                                p = TM_Calc.FindNearbyEnemy(body.Position, body.Map, body.Faction, AttackTarget_MaxRange, AttackTarget_ShortRange);
+                                if (p != null && TM_Calc.HasLoSFromTo(body.Position, p, body, 0, AttackTarget_MaxRange))
                                 {
                                     Action_Attack(p, out destTarget);
                                     queuedAction = SoLAction.Returning;
@@ -762,10 +757,10 @@ namespace TorannMagic
                         Action_Hover(out destTarget);
                     }
                 }                
-                else if (this.pawn.Downed && this.pawn.health.hediffSet.GetHediffsTendable().Count() > 0 && LightEnergy > 10)
+                else if (body.Downed && body.health.hediffSet.GetHediffsTendable().Count() > 0 && LightEnergy > 10)
                 {
-                    Action_GotoTarget(this.pawn.DrawPos, speed_jog, out destTarget);
-                    this.assignedTarget = this.pawn;
+                    Action_GotoTarget(body.DrawPos, speed_jog, out destTarget);
+                    this.assignedTarget = body;
                     queuedAction = SoLAction.Guarding;
                 }
                 else if (this.shouldGlow)
@@ -776,9 +771,9 @@ namespace TorannMagic
                 }
                 else if(LightEnergy > 20 && EnergyChance)
                 {
-                    Pawn p = TM_Calc.FindNearbyInjuredPawnOther(this.pawn, 10, 10f);
+                    Pawn p = TM_Calc.FindNearbyInjuredPawnOther(body, 10, 10f);
                     this.delayCount++;
-                    if (this.delayCount > 1 && p != null && p.Downed && TM_Calc.HasLoSFromTo(this.pawn.Position, p, this.pawn, 0, 10) && p.health.hediffSet.GetHediffsTendable().Count() > 0)
+                    if (this.delayCount > 1 && p != null && p.Downed && TM_Calc.HasLoSFromTo(body.Position, p, body, 0, 10) && p.health.hediffSet.GetHediffsTendable().Count() > 0)
                     {
                         Action_GotoTarget(p.DrawPos, speed_dash, out destTarget);
                         queuedAction = SoLAction.Guarding;
@@ -788,15 +783,15 @@ namespace TorannMagic
                     {                        
                         if (this.delayCount > 2)
                         {
-                            p = TM_Calc.FindNearbyPawn(this.pawn, 10);
-                            if (p != null && p.needs != null && TM_Calc.HasLoSFromTo(this.pawn.Position, p, this.pawn, 0, 10))
+                            p = TM_Calc.FindNearbyPawn(body, 10);
+                            if (p != null && p.needs != null && TM_Calc.HasLoSFromTo(body.Position, p, body, 0, 10))
                             {
-                                if ((this.pawn.CurJobDef.joyKind != null || this.pawn.CurJobDef == JobDefOf.Wait_Wander || this.pawn.CurJobDef == JobDefOf.GotoWander) && this.pawn.needs.joy.CurLevelPercentage < .5f)
+                                if ((body.CurJobDef?.joyKind != null || body.CurJobDef == JobDefOf.Wait_Wander || body.CurJobDef == JobDefOf.GotoWander) && body.needs?.joy?.CurLevelPercentage < .5f)
                                 {
                                     this.delayCount = 0;
-                                    Action_JoyBurst(this.pawn.DrawPos, out destTarget);
+                                    Action_JoyBurst(body.DrawPos, out destTarget);
                                 }
-                                else if (p.needs.joy != null && (p.CurJobDef.joyKind != null || p.CurJobDef == JobDefOf.Wait_Wander || p.CurJobDef == JobDefOf.GotoWander) && p.needs.joy.CurLevelPercentage < .5f)
+                                else if (p.needs.joy != null && (p.CurJobDef?.joyKind != null || p.CurJobDef == JobDefOf.Wait_Wander || p.CurJobDef == JobDefOf.GotoWander) && p.needs.joy.CurLevelPercentage < .5f)
                                 {
                                     this.delayCount = 0;
                                     Action_JoyBurst(p.DrawPos, out destTarget);
@@ -958,21 +953,22 @@ namespace TorannMagic
 
         public void Action_Sleeping(out Vector3 destTarget)
         {
+            var body = FollowPawn;
             this.speed = speed_hover;
             this.solAction = SoLAction.Sleeping;
             this.delayCount++;
-            if(delayCount > 10 && EnergyChance && pawn.needs.mood != null && pawn.needs.mood.thoughts != null)
+            if(delayCount > 10 && EnergyChance && body?.needs?.mood != null && body.needs.mood.thoughts != null)
             {
                 this.delayCount = 0;
-                if (pawn.needs.mood.thoughts.memories.GetFirstMemoryOfDef(TorannMagicDefOf.TM_PleasantDreamsTD) == null)
+                if (body.needs.mood.thoughts.memories.GetFirstMemoryOfDef(TorannMagicDefOf.TM_PleasantDreamsTD) == null)
                 {
                     ActualLightCost(5f);
-                    pawn.needs.mood.thoughts.memories.TryGainMemory(TorannMagicDefOf.TM_PleasantDreamsTD);
+                    body.needs.mood.thoughts.memories.TryGainMemory(TorannMagicDefOf.TM_PleasantDreamsTD);
                 }
-                if(pawn.needs.mood.thoughts.memories.GetFirstMemoryOfDef(ThoughtDefOf.SleepDisturbed) != null)
+                if(body.needs.mood.thoughts.memories.GetFirstMemoryOfDef(ThoughtDefOf.SleepDisturbed) != null)
                 {
                     ActualLightCost(3f);
-                    pawn.needs.mood.thoughts.memories.RemoveMemoriesOfDef(ThoughtDefOf.SleepDisturbed);
+                    body.needs.mood.thoughts.memories.RemoveMemoriesOfDef(ThoughtDefOf.SleepDisturbed);
                 }
             }
             destTarget = GetCasterOffset_Rand;
@@ -980,11 +976,12 @@ namespace TorannMagic
 
         public void Action_FromLimbo(out Vector3 destTarget)
         {
+            var body = FollowPawn;
             this.delayCount = 0;
-            base.Position = pawn.Position;
+            base.Position = body.Position;
             this.origin = GetCasterOffset_Exact;
             Action_Hover(out destTarget);
-            FleckMaker.ThrowLightningGlow(GetCasterOffset_Exact, pawn.Map, .7f);
+            FleckMaker.ThrowLightningGlow(GetCasterOffset_Exact, body.Map, .7f);
             FleckMaker.ThrowLightningGlow(this.ExactPosition, this.Map, 1f);
             FleckMaker.ThrowLightningGlow(this.ExactPosition, this.Map, .4f);
         }

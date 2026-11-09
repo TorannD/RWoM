@@ -13,7 +13,9 @@ namespace TorannMagic
 
         public static TM_CustomClassDef Named(string defName)
         {
-            return DefDatabase<TM_CustomClassDef>.GetNamed(defName);
+            // GetNamed(errorOnFail: true) logs an error for a missing def; callers
+            // treat a missing registry as "no custom classes", so stay silent here.
+            return DefDatabase<TM_CustomClassDef>.GetNamedSilentFail(defName);
         }
     }
 }

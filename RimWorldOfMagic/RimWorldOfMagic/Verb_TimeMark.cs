@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using System;
 using Verse;
 using AbilityUser;
@@ -9,38 +9,47 @@ using HarmonyLib;
 
 namespace TorannMagic
 {
-    public class Verb_TimeMark : Verb_UseAbility  
+    public class Verb_TimeMark : ClassProgression.Verb_SpiritTargetable
     {
 
         private int pwrVal = 0;
         CompAbilityUserMagic comp;
-        Map map;
-
         protected override bool TryCastShot()
         {
-            bool result = false;
-            map = this.CasterPawn.Map;
-            comp = this.CasterPawn.GetCompAbilityUserMagic();
-            MagicPowerSkill pwr = comp.MagicData.MagicPowerSkill_Recall.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Recall_pwr");
-            pwrVal = pwr.level;
-
-            if (this.CasterPawn != null && !this.CasterPawn.Downed && comp != null)
+            var body = CasterPawn;
+            var owner = ClassProgression.SpiritRebirthCasting.SkillOwner(body, Ability);
+            comp = owner?.GetCompAbilityUserMagic();
+            burstShotsLeft = 0;
+            if (body?.Spawned != true || body.Downed || comp == null) return false;
+            pwrVal = ClassProgression.SpiritRebirthRuntime.SavedRank(comp.MagicData,"TM_Recall_pwr");
+            SetRecallHediffs();
+            SetRecallNeeds();
+            SetRecallPosition();
+            comp.recallBodyId = body.thingIDNumber;
+            comp.recallSet = true;
+            comp.recallExpiration = Find.TickManager.TicksGame + Mathf.RoundToInt(50000 * (1 + .2f * pwrVal));
+            if (owner != body)
             {
-                SetRecallHediffs();
-                SetRecallNeeds();
-                SetRecallPosition();
-                comp.recallSet = true;
-                comp.recallExpiration = Mathf.RoundToInt(Find.TickManager.TicksGame + (20 * 2500 * (1 + (.2f * pwrVal))));
-                TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_AlterFate, CasterPawn.DrawPos, this.CasterPawn.Map, 1f, .2f, 0, 1f, Rand.Range(-500, 500), 0, 0, Rand.Range(0, 360));
-                FleckMaker.ThrowHeatGlow(this.CasterPawn.Position, this.CasterPawn.Map, 1.4f);
+                TM_ClassState.AddRuntimeAbility(comp, TorannMagicDefOf.TM_Recall);
+                comp.recallSpell = true;
             }
-            else
-            {
-                Log.Warning("failed to TryCastShot");
-            }
+            TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_AlterFate, body.DrawPos, body.Map, 1f, .2f, 0, 1f, Rand.Range(-500, 500), 0, 0, Rand.Range(0, 360));
+            FleckMaker.ThrowHeatGlow(body.Position, body.Map, 1.4f);
+            return true;
+        }
 
-            this.burstShotsLeft = 0;
-            return result;
+        // Old marks may contain plain Hediff snapshots of stateful effects. Check
+        // the definition as well as the live instance before restoring or removing one.
+        internal static bool PreservesHealthEffect(Hediff effect)
+        {
+            var def = effect?.def;
+            if (def?.defName == null) return true;
+            var kind = def.hediffClass;
+            return effect is ClassProgression.Hediff_ClassDiscipline or ClassProgression.Hediff_SpiritRebirthForm or Hediff_Addiction
+                || kind == typeof(ClassProgression.Hediff_ClassDiscipline) || kind == typeof(ClassProgression.Hediff_SpiritRebirthForm)
+                || kind != null && typeof(Hediff_Addiction).IsAssignableFrom(kind)
+                || def.defName == "LuciferiumHigh" || def == TorannMagicDefOf.TM_SpiritPossessionHD
+                || def.comps?.Any(c => c?.compClass != null && typeof(IThingHolder).IsAssignableFrom(c.compClass)) == true;
         }
 
         private void SetRecallHediffs()
@@ -55,7 +64,7 @@ namespace TorannMagic
             comp.recallInjuriesList.Clear();
             for (int i = 0; i < this.CasterPawn.health.hediffSet.hediffs.Count; i++)
             {
-                if (!this.CasterPawn.health.hediffSet.hediffs[i].IsPermanent() && this.CasterPawn.health.hediffSet.hediffs[i].def != TorannMagicDefOf.TM_MagicUserHD && 
+                if (!PreservesHealthEffect(this.CasterPawn.health.hediffSet.hediffs[i]) && !this.CasterPawn.health.hediffSet.hediffs[i].IsPermanent() && this.CasterPawn.health.hediffSet.hediffs[i].def != TorannMagicDefOf.TM_MagicUserHD &&
                     !this.CasterPawn.health.hediffSet.hediffs[i].def.defName.Contains("TM_HediffEnchantment") && !this.CasterPawn.health.hediffSet.hediffs[i].def.defName.Contains("TM_Artifact") &&
                     this.CasterPawn.health.hediffSet.hediffs[i].def != TorannMagicDefOf.TM_MightUserHD && this.CasterPawn.health.hediffSet.hediffs[i].def != TorannMagicDefOf.TM_BloodHD && 
                     this.CasterPawn.health.hediffSet.hediffs[i].def != TorannMagicDefOf.TM_ChiHD && this.CasterPawn.health.hediffSet.hediffs[i].def != TorannMagicDefOf.TM_PsionicHD &&
@@ -154,22 +163,18 @@ namespace TorannMagic
         private void SetRecallNeeds()
         {
             comp.recallNeedDefnames = new List<string>();
-            comp.recallNeedDefnames.Clear();
             comp.recallNeedValues = new List<float>();
-            comp.recallNeedValues.Clear();
-            //comp.recallNeedValues = new List<Need>();
-            //comp.recallNeedValues.Clear();
-            for (int i = 0; i < this.CasterPawn.needs.AllNeeds.Count; i++)
+            foreach (var need in CasterPawn.needs.AllNeeds)
             {
-                //Log.Message("" + this.CasterPawn.needs.AllNeeds[i].def.defName);
-                if (this.CasterPawn.needs.AllNeeds[i].def.defName != "Chemical_Luciferium")
-                {                    
-                    comp.recallNeedDefnames.Add(this.CasterPawn.needs.AllNeeds[i].def.defName);
-                    comp.recallNeedValues.Add(this.CasterPawn.needs.AllNeeds[i].CurLevel);
-                }
-                //comp.recallNeedValues.Add(TM_Calc.Clone<Need>(this.CasterPawn.needs.AllNeeds[i]));
+                if (need.def.defName == "Chemical_Luciferium" || (comp.Pawn != CasterPawn && need is Need_Mana)) continue;
+                comp.recallNeedDefnames.Add(need.def.defName);
+                comp.recallNeedValues.Add(need.CurLevel);
             }
-            //Log.Message("needs set");
+            if (comp.Pawn != CasterPawn && comp.Mana != null)
+            {
+                comp.recallNeedDefnames.Add(comp.Mana.def.defName);
+                comp.recallNeedValues.Add(comp.Mana.CurLevel);
+            }
         }
 
         private void SetRecallPosition()

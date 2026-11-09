@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritSummonMinion.reportString>invoca um lacaio através do corpo possuído.</TM_SpiritSummonMinion.reportString>
+  <TM_SpiritSummonElemental.reportString>invoca um elemental através do corpo possuído.</TM_SpiritSummonElemental.reportString>
+  <TM_SpiritSummonPylon.reportString>invoca um pilone defensivo através do corpo possuído.</TM_SpiritSummonPylon.reportString>
+  <TM_SpiritSummonExplosive.reportString>invoca uma mina de mana através do corpo possuído.</TM_SpiritSummonExplosive.reportString>
+  <TM_SpiritSummonPoppi.reportString>invoca poppis através do corpo possuído.</TM_SpiritSummonPoppi.reportString>
+  <TM_SpiritPack.reportString>invoca lobos espirituais através do corpo possuído.</TM_SpiritPack.reportString>
+  <TM_SpiritPack_I.reportString>invoca lobos espirituais através do corpo possuído.</TM_SpiritPack_I.reportString>
+  <TM_SpiritPack_II.reportString>invoca lobos espirituais através do corpo possuído.</TM_SpiritPack_II.reportString>
+  <TM_SpiritPack_III.reportString>invoca lobos espirituais através do corpo possuído.</TM_SpiritPack_III.reportString>
+  <TM_SpiritDismissMinion.reportString>dispensa um lacaio através do corpo possuído.</TM_SpiritDismissMinion.reportString>
+</LanguageData>

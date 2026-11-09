@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_Bridge_GladiatorManeuver.label>маневр</TM_Bridge_GladiatorManeuver.label>
+  <TM_Bridge_GladiatorManeuver.description>Збільшує швидкість руху на 8% на 8 секунд.</TM_Bridge_GladiatorManeuver.description>
+  <TM_Bridge_GladiatorSweep.label>помах</TM_Bridge_GladiatorSweep.label>
+  <TM_Bridge_GladiatorSweep.description>Удар по сусідньому ворогу та ще одному поруч із ним. Кожен отримує 65% шкоди зброї.</TM_Bridge_GladiatorSweep.description>
+</LanguageData>

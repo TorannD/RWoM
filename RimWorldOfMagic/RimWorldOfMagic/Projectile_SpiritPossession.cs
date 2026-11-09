@@ -7,6 +7,12 @@ using System.Collections.Generic;
 
 namespace TorannMagic
 {
+    public class Verb_TargetSpiritHost : Verb_SB
+    {
+        public override bool CanHitTargetFrom(IntVec3 root, LocalTargetInfo target)
+            => !ClassProgression.SpiritSummonedHost.BlocksTarget(target, caster?.Map) && base.CanHitTargetFrom(root, target);
+    }
+
 	public class Projectile_SpiritPossession : Projectile_AbilityBase
 	{
         private int verVal;
@@ -21,6 +27,7 @@ namespace TorannMagic
             Pawn hitPawn = hitThing as Pawn;
             bool validTarget = false;
             verVal = TM_Calc.GetSkillVersatilityLevel(caster, TorannMagicDefOf.TM_SpiritPossession, false);
+            if (ClassProgression.SpiritSummonedHost.IsSummoned(hitPawn)) return;
             if (hitPawn != null && !hitPawn.Dead && Possess(caster, hitPawn))
             {
                 validTarget = true;
@@ -68,9 +75,23 @@ namespace TorannMagic
 
         public bool Possess(Pawn caster, Pawn pawn)
         {
+            if (pawn == null || ClassProgression.SpiritSummonedHost.IsSummoned(pawn)) return false;
+            if (ClassProgression.SpiritRebirthEnergy.Marked(caster))
+            {
+                if (!ClassProgression.SpiritRebirthEnergy.CanCast(caster) || caster == pawn ||
+                    pawn == null || (pawn.Dead ? pawn.Corpse?.Map : pawn.Map) != caster.Map || pawn.RaceProps?.IsFlesh != true ||
+                    TM_Calc.IsUndeadNotVamp(pawn) ||
+                    TM_Calc.IsPossessedByOrIsSpirit(pawn) || ClassProgression.SpiritRebirthEnergy.Marked(pawn)) return false;
+                if (!Rand.Chance(TM_Calc.GetSpellSuccessChance(caster,pawn,true) - .4f + .2f * verVal))
+                {
+                    MoteMaker.ThrowText(caster.DrawPos,caster.Map,"TM_ResistedSpell".Translate(),-1);
+                    return true;
+                }
+                return ClassProgression.SoulStoneImplant.EnterFromMap(caster,pawn);
+            }
             bool wasDead = false;
             FactionDef previousFaction = caster.Faction.def;
-            if (!TM_Calc.IsPossessedByOrIsSpirit(pawn) && pawn.RaceProps != null && pawn.RaceProps.IsFlesh && !(pawn is TMPawnSummoned) && !(pawn is Golems.TMPawnGolem) && !TM_Calc.IsUndeadNotVamp(pawn))
+            if (!TM_Calc.IsPossessedByOrIsSpirit(pawn) && pawn.RaceProps != null && pawn.RaceProps.IsFlesh && !TM_Calc.IsUndeadNotVamp(pawn))
             {
                 if (Rand.Chance(TM_Calc.GetSpellSuccessChance(caster, pawn, true) - .4f + (.2f * verVal)))
                 {

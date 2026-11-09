@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_MasteryRitual>Especializar {0}: {1} ({2} de magicita{3})</TM_MasteryRitual>
+  <TM_Mastery_focus>Foco (+25% de daño de la explosión principal)</TM_Mastery_focus>
+  <TM_Mastery_reach>Alcance (+25% de radio de la explosión principal)</TM_Mastery_reach>
+  <TM_Mastery_depth>Curación profunda (+25% por herida)</TM_Mastery_depth>
+  <TM_Mastery_breadth>Curación amplia (una herida más)</TM_Mastery_breadth>
+  <TM_MasteryCurrent>Maestría de {0}: {1}</TM_MasteryCurrent>
+  <TM_MasteryHint>Elige o cambia de especialización por el mismo coste en el círculo mágico mayor. Lleva las ofrendas o déjalas a cinco casillas o menos del centro.</TM_MasteryHint>
+</LanguageData>

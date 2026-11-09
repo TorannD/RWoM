@@ -167,6 +167,7 @@
 	
 	<DamageDef ParentName="TM_LocalInjuryBase">
 		<defName>TM_Torment</defName>
+        <workerClass>TorannMagic.DamageWorker_Torment</workerClass>
 		<label>Torment</label>
 		<externalViolence>true</externalViolence>
 		<deathMessage>{0} was consumed by pain.</deathMessage>
@@ -792,6 +793,7 @@
 	
 	<DamageDef ParentName="TM_LocalInjuryBase">
 		<defName>TM_Poison</defName>
+		<workerClass>TorannMagic.DamageWorker_PoisonFlask</workerClass>
 		<label>Poison</label>
 		<externalViolence>true</externalViolence>
 		<canInterruptJobs>false</canInterruptJobs>

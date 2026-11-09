@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
@@ -12,6 +12,16 @@ namespace TorannMagic
 {
     public class Verb_CommanderOrders : Verb_UseAbility
     {
+        internal const string MoveOrder="TM_SpiritCommanderMove", AlertOrder="TM_SpiritCommanderAlert", HoldOrder="TM_SpiritCommanderHold";
+        internal static TMAbilityDef Definition(string job) => job==MoveOrder?TorannMagicDefOf.TM_MoveOut:
+            job==AlertOrder?TorannMagicDefOf.TM_StayAlert:job==HoldOrder?TorannMagicDefOf.TM_HoldTheLine:null;
+        internal static bool Handles(string job)=>job==MoveOrder || job==AlertOrder || job==HoldOrder;
+        internal static bool Matches(string job,TMAbilityDef def) => def!=null && (job==MoveOrder &&
+            (def==TorannMagicDefOf.TM_MoveOut || def==TorannMagicDefOf.TM_MoveOut_I || def==TorannMagicDefOf.TM_MoveOut_II || def==TorannMagicDefOf.TM_MoveOut_III) || job==AlertOrder &&
+            (def==TorannMagicDefOf.TM_StayAlert || def==TorannMagicDefOf.TM_StayAlert_I || def==TorannMagicDefOf.TM_StayAlert_II || def==TorannMagicDefOf.TM_StayAlert_III) || job==HoldOrder &&
+            (def==TorannMagicDefOf.TM_HoldTheLine || def==TorannMagicDefOf.TM_HoldTheLine_I || def==TorannMagicDefOf.TM_HoldTheLine_II || def==TorannMagicDefOf.TM_HoldTheLine_III));
+        internal static bool CastFromHost(Pawn body,MightAbility power) =>
+            new Verb_CommanderOrders{caster=body,Ability=power,verbProps=power.mightDef.MainVerb}.TryCastShot();
 
         private int pwrVal;
 
@@ -23,14 +33,17 @@ namespace TorannMagic
 
         protected override bool TryCastShot()
         {
-            bool flag = false;
+            bool flag = true;
             
             Pawn caster = base.CasterPawn;
+            Pawn source=Ability?.Pawn??caster;
+            if(caster?.Spawned!=true || caster.Dead || caster.Downed ||
+                source!=caster && ClassProgression.CommanderMartialPath.Owner(caster)!=source) return false;
+            flagHTL=flagSA=flagMO=false;
             this.TargetsAoE.Clear();
             //this.UpdateTargets();
             FindTargets();
-            CompAbilityUserMight comp = caster.GetCompAbilityUserMight();
-            pwrVal = TM_Calc.GetSkillPowerLevel(caster, this.Ability.Def as TMAbilityDef, true);
+            pwrVal = TM_Calc.GetSkillPowerLevel(source, this.Ability.Def as TMAbilityDef, true);
             if (this.Ability.Def == TorannMagicDefOf.TM_StayAlert || this.Ability.Def == TorannMagicDefOf.TM_StayAlert_I || this.Ability.Def == TorannMagicDefOf.TM_StayAlert_II || this.Ability.Def == TorannMagicDefOf.TM_StayAlert_III)
             {
                 //pwrVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_StayAlert, "TM_StayAlert", "_pwr", true);
@@ -56,7 +69,7 @@ namespace TorannMagic
                 Pawn newPawn = this.TargetsAoE[i].Thing as Pawn;
                 if(newPawn.RaceProps.Humanlike && newPawn != caster)
                 {
-                    float socialChance = (float)(caster.skills.GetSkill(SkillDefOf.Social).Level / 20f);
+                    float socialChance = (float)((source.skills?.GetSkill(SkillDefOf.Social)?.Level??0) / 20f);
                     float rChance = Mathf.Clamp(socialChance * 2f, .1f, 1f);
                     if (!caster.IsColonist)
                     {
@@ -67,7 +80,7 @@ namespace TorannMagic
                             socialChance = 1f;
                         }
                     }
-                    if (Rand.Chance(rChance))
+                    if (Rand.Chance(ClassProgression.CommanderMartialPath.Acceptance(source,rChance)))
                     {
                         float targetCountFactor = Mathf.Clamp(5f / (float)this.TargetsAoE.Count, .1f, 1f);
                         if (flagSA)
@@ -87,6 +100,7 @@ namespace TorannMagic
                             if(newPawn.health != null && newPawn.health.hediffSet != null)
                             {
                                 HealthUtility.AdjustSeverity(newPawn, TorannMagicDefOf.TM_MoveOutHD, Mathf.Clamp(.6f * targetCountFactor, .25f, .6f) + (.13f * pwrVal));
+                                ClassProgression.CommanderOrders.AcceptedMove(caster,newPawn);
                             }
                             TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_PowerWave, newPawn.DrawPos, newPawn.Map, .8f, .2f, .1f, .1f, 0, 1f, 0, Rand.Chance(.5f) ? 0 : 180);
                         }
@@ -98,7 +112,7 @@ namespace TorannMagic
                                 HealthUtility.AdjustSeverity(newPawn, TorannMagicDefOf.TM_HoldTheLineHD, Mathf.Clamp(.7f *targetCountFactor, .3f, .7f) + (.1f * pwrVal));
                                 Effecter HTLShieldED = TorannMagicDefOf.TM_HTL_EffecterED.Spawn();
                                 HTLShieldED.Trigger(new TargetInfo(newPawn.Position, newPawn.Map, false), new TargetInfo(newPawn.Position, newPawn.Map, false));
-                                OrderED.Cleanup();
+                                HTLShieldED.Cleanup();
                             }
                         }
 
@@ -106,7 +120,7 @@ namespace TorannMagic
                         {
                             if (Rand.Chance(1f - (.2f * socialChance)))
                             {
-                                float moodChance = Mathf.Clamp(TM_Calc.GetRelationsFactor(caster, newPawn), .1f, .9f);
+                                float moodChance = Mathf.Clamp(TM_Calc.GetRelationsFactor(source, newPawn), .1f, .9f);
                                 if (Rand.Chance(moodChance))
                                 {
                                     newPawn.needs.mood.thoughts.memories.TryGainMemory(TorannMagicDefOf.TM_TakingOrdersTD, null);

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <ThingDef ParentName="BaseBullet" Name="FlyingObject_PsionicLeap">
@@ -16,7 +15,7 @@
 			<damageAmountBase>0</damageAmountBase>
 			<speed>75</speed>
 	   </projectile>
-	</ThingDef>
+</ThingDef>
   
   <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
    <defName>TM_Psionic_Projectile</defName>
@@ -32,9 +31,9 @@
 		<damageAmountBase>0</damageAmountBase>
 		<speed>999</speed>
    </projectile>
- </ThingDef>
+</ThingDef>
  
- <!-- Psionic Augmentation -->
+ 
   <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_PsionicAugmentation</defName>
     <label>Psionic Augmentation</label>
@@ -69,9 +68,16 @@ A well trained psionic is able to achieve incredible physical feats using a blen
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_psionicaugmentation</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
  
- <!-- Psionic Barrier start-->
+ 
  
  <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
    <defName>TM_Projectile_PsionicBarrier</defName>
@@ -89,7 +95,7 @@ A well trained psionic is able to achieve incredible physical feats using a blen
 		<explosionRadius>2.8</explosionRadius>
 		<postExplosionSpawnChance>1</postExplosionSpawnChance>
    </projectile>
- </ThingDef>
+</ThingDef>
  
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_PsionicBarrier</defName>
@@ -124,7 +130,14 @@ This ability requires 2 points to level.</description>
 		  <canTargetLocations>false</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_psionicbarrier</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
   
   <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_PsionicBarrier_Projected</defName>
@@ -158,12 +171,19 @@ This barrier can be projected to a designation location.</description>
 		  <canTargetLocations>true</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_psionicbarrier_projected</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
  
-   <!-- Psionic Barrier end-->
    
    
-	<!-- Psionic Blast Start -->
+   
+	
 	
   <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
    <defName>TM_Projectile_PsionicBlast</defName>
@@ -181,7 +201,7 @@ This barrier can be projected to a designation location.</description>
 		<explosionRadius>2</explosionRadius>
 		<postExplosionSpawnChance>1</postExplosionSpawnChance>
    </projectile>
- </ThingDef>
+</ThingDef>
 
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_PsionicBlast</defName>
@@ -217,7 +237,14 @@ Range:		28</description>
             <muzzleFlashScale>10</muzzleFlashScale>
             <isPrimary>true</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_psionicblast</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	 <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_PsionicBlast_I</defName>
@@ -253,7 +280,14 @@ Range:		34</description>
             <muzzleFlashScale>12</muzzleFlashScale>
             <isPrimary>true</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_psionicblast_i</spellId>
+<domain>Might</domain>
+<tier>1</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	 <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_PsionicBlast_II</defName>
@@ -289,7 +323,14 @@ Range:		40</description>
             <muzzleFlashScale>14</muzzleFlashScale>
             <isPrimary>true</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_psionicblast_ii</spellId>
+<domain>Might</domain>
+<tier>2</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	 <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_PsionicBlast_III</defName>
@@ -325,11 +366,18 @@ Range:		46</description>
             <muzzleFlashScale>15</muzzleFlashScale>
             <isPrimary>true</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_psionicblast_iii</spellId>
+<domain>Might</domain>
+<tier>3</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
-	  <!-- Psionic Blast End -->
+	  
    
-     <!-- Psionic Dash start-->
+     
 	 
 	 <ThingDef ParentName="BaseBullet" Name="FlyingObject_PsionicDash">
 	   <defName>FlyingObject_PsionicDash</defName>
@@ -345,7 +393,7 @@ Range:		46</description>
 			<damageAmountBase>8</damageAmountBase>
 			<speed>25</speed>
 	   </projectile>
-	</ThingDef>
+</ThingDef>
 	 
   <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
    <defName>Projectile_PsionicDash</defName>
@@ -361,14 +409,14 @@ Range:		46</description>
 		<damageAmountBase>8</damageAmountBase>
 		<speed>25</speed>
    </projectile>
- </ThingDef>
+</ThingDef>
  
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
     <defName>TM_PsionicDash</defName>
     <label>Psionic Dash</label>
     <uiIconPath>UI/psionicdash</uiIconPath>
     <description>The Psionic infuses their body with an overwhelming amount of energy and uses it to propel themselves in a rapid burst of movement. Each step emits shockwaves of energy.</description>
-<!--    <thingClass>ThingWithComps</thingClass> -->
+
     <staminaCost>0.25</staminaCost>
 	<efficiencyReductionPercent>.1</efficiencyReductionPercent>
 	<canCopy>true</canCopy>
@@ -395,10 +443,17 @@ Range:		46</description>
 		  <canTargetLocations>true</canTargetLocations>
 		</targetParams>
     </MainVerb>
-  </TorannMagic.TMAbilityDef>
+  <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_psionicdash</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 
 
-	 	    <!-- PsionicStorm -->
+	 	    
 			
 	<ThingDef ParentName="BaseBullet" Name="FlyingObject_PsionicStorm">
 	   <defName>FlyingObject_PsionicStorm</defName>
@@ -416,7 +471,7 @@ Range:		46</description>
 			<explosionRadius>7</explosionRadius>
 			<postExplosionSpawnChance>1</postExplosionSpawnChance>
 	   </projectile>
-	</ThingDef>
+</ThingDef>
 			
 	<ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
         <thingClass>AbilityUser.Projectile_Ability</thingClass>
@@ -435,7 +490,7 @@ Range:		46</description>
 			<explosionRadius>7</explosionRadius>
 			<postExplosionSpawnChance>1</postExplosionSpawnChance>
         </projectile>
-    </ThingDef>
+</ThingDef>
 
  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
         <defName>TM_PsionicStorm</defName>
@@ -463,7 +518,14 @@ Range:		46</description>
             <muzzleFlashScale>20</muzzleFlashScale>
             <isPrimary>false</isPrimary>
         </MainVerb>
-    </TorannMagic.TMAbilityDef>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_psionicstorm</spellId>
+<domain>Might</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
 	
 	<ThingDef ParentName="BaseBullet" Name="FlyingObject_PsiStorm">
 	   <defName>FlyingObject_PsiStorm</defName>
@@ -481,6 +543,6 @@ Range:		46</description>
 			<explosionRadius>7</explosionRadius>
 			<postExplosionSpawnChance>1</postExplosionSpawnChance>
 	   </projectile>
-	</ThingDef>
+</ThingDef>
 
 </Defs>

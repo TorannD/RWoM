@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Pistolspec</defName>
+    <label>Pistol Specialization</label>
+    <description>Weapon Specialization: Pistol
+
+This specialization improves all aspects of pistols: accuracy, damage, shot delay, shot count, range, and more.
+Weapon specializations apply automatically when a Super Soldier equips a weapon in their specialization category. Specialized weapons are denoted by a "++" after the item name.
+
+Super Soldiers with a specialized pistol equipped gain a unique "double tap" talent which will occasionally ignore cooldown and immediately begin another shot burst; this talent consumes stamina when it occurs.</description>
+    <spellId>rwom.tm_pistolspec</spellId>
+    <iconPath>UI/PistolSpec</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SB</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_PistolSpec</abilityDef>
+      <isViolent>true</isViolent>
+      <defaultProjectile>Projectile_Default</defaultProjectile>
+      <warmupTime>0</warmupTime>
+      <SecondsToRecharge>600</SecondsToRecharge>
+      <range>0</range>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>0</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Pistolwhip</defName>
+    <label>Pistol Whip</label>
+    <description>A sudden attack using the pistol stock as a blunt weapon; successful attacks will stun a target, leaving them dazed for a short period, and may also disarm them.</description>
+    <spellId>rwom.tm_pistolwhip</spellId>
+    <iconPath>UI/pistolwhip</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_PistolWhip</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>true</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>true</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Default</defaultProjectile>
+      <abilityDef>TM_PistolWhip</abilityDef>
+      <warmupTime>.25</warmupTime>
+      <SecondsToRecharge>30</SecondsToRecharge>
+      <range>1.42</range>
+      <soundCast>MeleeHit_Wood</soundCast>
+      <muzzleFlashScale>0</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <burstShotCount>1</burstShotCount>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Riflespec</defName>
+    <label>Rifle Specialization</label>
+    <description>Weapon Specialization: Rifle 
+
+This specialization improves all aspects of rifles: accuracy, damage, shot delay, shot count, range, and more.
+Weapon specializations apply automatically when a Super Soldier equips a weapon in their specialization category. Specialized weapons are denoted by a "++" after the item name.</description>
+    <spellId>rwom.tm_riflespec</spellId>
+    <iconPath>UI/RifleSpec</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SB</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_RifleSpec</abilityDef>
+      <isViolent>true</isViolent>
+      <defaultProjectile>Projectile_Default</defaultProjectile>
+      <warmupTime>0</warmupTime>
+      <SecondsToRecharge>600</SecondsToRecharge>
+      <range>0</range>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>0</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Suppressingfire</defName>
+    <label>Suppressing Fire</label>
+    <description>Suppress enemy positions with a storm of bullets.</description>
+    <spellId>rwom.tm_suppressingfire</spellId>
+    <iconPath>UI/suppressingfire</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SuppressingFire</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Default</defaultProjectile>
+      <abilityDef>TM_SuppressingFire</abilityDef>
+      <AbilityTargetCategory>TargetLocation</AbilityTargetCategory>
+      <targetParams>
+        <canTargetItems>true</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetSelf>false</canTargetSelf>
+      </targetParams>
+      <warmupTime>1</warmupTime>
+      <SecondsToRecharge>20.0</SecondsToRecharge>
+      <range>40</range>
+      <isViolent>true</isViolent>
+      <burstShotCount>30</burstShotCount>
+      <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+      <soundCast>Shot_HeavySMG</soundCast>
+      <muzzleFlashScale>10</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Mk203gl</defName>
+    <label>Mk203_GL</label>
+    <description>Fires a grenade using the Mk203 under-barrel grenade launcher.</description>
+    <spellId>rwom.tm_mk203gl</spellId>
+    <iconPath>UI/mk203gl</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>AbilityUser.Verb_UseAbility</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Mk203GL</defaultProjectile>
+      <abilityDef>TM_Mk203GL</abilityDef>
+      <AbilityTargetCategory>TargetLocation</AbilityTargetCategory>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetSelf>false</canTargetSelf>
+      </targetParams>
+      <warmupTime>.6</warmupTime>
+      <SecondsToRecharge>60.0</SecondsToRecharge>
+      <range>42</range>
+      <isViolent>true</isViolent>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <soundCast>Shot_IncendiaryLauncher</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Shotgunspec</defName>
+    <label>Shotgun Specialization</label>
+    <description>Weapon Specialization: Shotgun 
+
+This specialization improves all aspects of shotguns: accuracy, damage, shot delay, shot count, range, and more.
+Weapon specializations apply automatically when a Super Soldier equips a weapon in their specialization category. Specialized weapons are denoted by a "++" after the item name.</description>
+    <spellId>rwom.tm_shotgunspec</spellId>
+    <iconPath>UI/ShotgunSpec</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SB</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_ShotgunSpec</abilityDef>
+      <isViolent>true</isViolent>
+      <defaultProjectile>Projectile_Default</defaultProjectile>
+      <warmupTime>0</warmupTime>
+      <SecondsToRecharge>600</SecondsToRecharge>
+      <range>0</range>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>0</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Buckshot</defName>
+    <label>Buckshot</label>
+    <description>A shotgun shell that fires multiple pellets. The sheer volume of rounds discharged can be devastating at short range, but disperses rapidly.</description>
+    <spellId>rwom.tm_buckshot</spellId>
+    <iconPath>UI/buckshot</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_Buckshot</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Buckshot</defaultProjectile>
+      <abilityDef>TM_Buckshot</abilityDef>
+      <AbilityTargetCategory>TargetLocation</AbilityTargetCategory>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetSelf>false</canTargetSelf>
+      </targetParams>
+      <warmupTime>0.7</warmupTime>
+      <SecondsToRecharge>15.0</SecondsToRecharge>
+      <range>20</range>
+      <isViolent>true</isViolent>
+      <burstShotCount>3</burstShotCount>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <soundCast>Shot_Shotgun</soundCast>
+      <muzzleFlashScale>12</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Breachingcharge</defName>
+    <label>Breaching charge</label>
+    <description>Throws a specialized explosive that excels at destroying structures or stopping enemy clusters. Deals 30x damage to structures.</description>
+    <spellId>rwom.tm_breachingcharge</spellId>
+    <iconPath>UI/breachingcharge_exp</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>AbilityUser.Verb_UseAbility</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_BreachingCharge</defaultProjectile>
+      <abilityDef>TM_BreachingCharge</abilityDef>
+      <AbilityTargetCategory>TargetLocation</AbilityTargetCategory>
+      <targetParams>
+        <canTargetItems>true</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetSelf>false</canTargetSelf>
+      </targetParams>
+      <warmupTime>0</warmupTime>
+      <SecondsToRecharge>60.0</SecondsToRecharge>
+      <range>6</range>
+      <isViolent>true</isViolent>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <soundCast>ThrowGrenade</soundCast>
+      <muzzleFlashScale>30</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Cqc</defName>
+    <label>CQC</label>
+    <description>Close Quarters Combat (CQC) is common training for Soldiers that allows them to smoothly execute a vicious combo attack against an enemy in melee range.</description>
+    <spellId>rwom.tm_cqc</spellId>
+    <iconPath>UI/cqc</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_BLOS</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Default</defaultProjectile>
+      <abilityDef>TM_CQC</abilityDef>
+      <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetSelf>false</canTargetSelf>
+      </targetParams>
+      <warmupTime>0.0</warmupTime>
+      <SecondsToRecharge>20.0</SecondsToRecharge>
+      <range>0</range>
+      <isViolent>true</isViolent>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <soundCast>MeleeHit_Metal_Sharp</soundCast>
+      <muzzleFlashScale>6</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Firstaid</defName>
+    <label>Self Aid</label>
+    <description>Self Aid is possible for Super Soldiers as a result of the genetic enhancements they acquire from the serum. This ability allows them to consciously focus energy to rapid tend wounds. Self Aid is unable to tend grievous wounds, such as missing body parts.</description>
+    <spellId>rwom.tm_firstaid</spellId>
+    <iconPath>UI/firstaid</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_FirstAid</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Default</defaultProjectile>
+      <abilityDef>TM_FirstAid</abilityDef>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+      <warmupTime>2.0</warmupTime>
+      <SecondsToRecharge>120.0</SecondsToRecharge>
+      <range>0</range>
+      <isViolent>false</isViolent>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <soundCast>MeleeHit_Metal_Sharp</soundCast>
+      <muzzleFlashScale>6</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_60mmmortar</defName>
+    <label>60mm Mortar</label>
+    <description>Soften up enemy targets before a fight even begins with a personal mortar system. The 60mm Mortar can easily be transported by a Super Soldier and quickly deployed to launch 3-rounds of indirect fire.</description>
+    <spellId>rwom.tm_60mmmortar</spellId>
+    <iconPath>UI/60mmMortar</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_60mmMortar</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Default</defaultProjectile>
+      <abilityDef>TM_60mmMortar</abilityDef>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+      <warmupTime>5.0</warmupTime>
+      <SecondsToRecharge>300.0</SecondsToRecharge>
+      <range>0</range>
+      <isViolent>true</isViolent>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <soundCast>MeleeHit_Metal_Sharp</soundCast>
+      <muzzleFlashScale>6</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+    </verbProperties>
+  </AbilityDef>
+</Defs>

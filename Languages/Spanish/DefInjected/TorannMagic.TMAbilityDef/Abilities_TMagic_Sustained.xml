@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  
+  <TM_GearRepair.label>Reparación de equipo</TM_GearRepair.label>
+  <TM_GearRepair.description>Activa o desactiva la habilidad de combate sostenida Reparación de equipo: repara lentamente la ropa y las armas equipadas. Requiere 20 de aguante para mantenerse.</TM_GearRepair.description>
+
+  
+  <TM_InnerHealing.label>Curación interior</TM_InnerHealing.label>
+  <TM_InnerHealing.description>Activa o desactiva la habilidad de combate sostenida Curación interior: sacrifica energía física para aumentar la velocidad de curación y la inmunidad a enfermedades. Requiere 10 de aguante para mantenerse.</TM_InnerHealing.description>
+
+  
+  <TM_HeavyBlow.label>Golpe contundente</TM_HeavyBlow.label>
+  <TM_HeavyBlow.description>Activa o desactiva la habilidad de combate sostenida Golpe contundente: aumenta el daño de todos los ataques en un 20 %. Requiere 30 de aguante para mantenerse.</TM_HeavyBlow.description>
+
+  
+  <TM_StrongBack.label>Espalda fuerte</TM_StrongBack.label>
+  <TM_StrongBack.description>Activa o desactiva la habilidad de combate sostenida Espalda fuerte: aumenta la capacidad de carga en 40 y la capacidad de inventario en un 50 %, pero provoca un aumento del 10 % en la velocidad de agotamiento. Requiere 20 de aguante para mantenerse.</TM_StrongBack.description>
+
+  
+  <TM_ThickSkin.label>Piel gruesa</TM_ThickSkin.label>
+  <TM_ThickSkin.description>Activa o desactiva la habilidad de combate sostenida Piel gruesa: aumenta todos los valores de armadura en un 10 % y mejora ligeramente los umbrales de temperatura. Requiere 30 de aguante para mantenerse y reduce la regeneración de aguante en un 15 %.</TM_ThickSkin.description>
+
+  
+  <TM_FightersFocus.label>Concentración del luchador</TM_FightersFocus.label>
+  <TM_FightersFocus.description>Activa o desactiva la habilidad de combate sostenida Concentración del luchador: aumenta el umbral de crisis mental en un 5 % y el umbral de dolor en un 20 %. Requiere 15 de aguante para mantenerse.</TM_FightersFocus.description>
+
+  
+  <TM_BurningFury.label>Furia ardiente</TM_BurningFury.label>
+  <TM_BurningFury.description>Activa o desactiva la habilidad de combate sostenida Furia ardiente.\n\nLa furia ardiente causa daño por quemadura periódico a los enemigos cercanos y también al lanzador. Además, cauteriza las heridas sangrantes y aplica una mejora de combate al lanzador.\n\nFuria ardiente:\nMovimiento +10 %\nRespiración +40 %\nBombeo de sangre +40 %\nUmbral de dolor +40 %\nArmadura (calor) +100 %\n\nMientras está activa, el lanzador no puede tambalearse y reduce en un 35 % todo el daño recibido.\n\nEsta habilidad consume aguante de forma continua y se cancelará automáticamente cuando el aguante del lanzador llegue a 0.</TM_BurningFury.description>
+
+</LanguageData>

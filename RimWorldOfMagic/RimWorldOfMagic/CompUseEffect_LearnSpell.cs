@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using Verse;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,10 +7,238 @@ namespace TorannMagic
 {
     public class CompUseEffect_LearnSpell : CompUseEffect
     {
+        private static readonly HashSet<MagicPower> sharedLearning = new HashSet<MagicPower>();
+
+        // Called only after the original noncustom mage and required-trait checks.
+        // Native DoEffect is the completed reading job's payment boundary.
+        private bool TryCompleteEnrolledSharedScroll(Pawn user, CompAbilityUserMagic comp)
+        {
+            if (comp.customClass != null || !ClassProgression.ClassIdentity.TryGetState(user, out _)) return false;
+            var owner = ClassProgression.ClassSpellAccess.SharedScrollOwner(comp.MagicData, parent.def);
+            if (owner == null) return false;
+            if (!ClassProgression.ClassSpellAccess.CanLearnFromScroll(user, owner, parent.def)) return false;
+            if (!sharedLearning.Add(owner)) return true;
+            try
+            {
+                if (owner.learned) return true;
+                bool flagOwned = parent.def.defName == "SpellOf_Rain" ? comp.spell_Rain
+                    : parent.def.defName == "SpellOf_Blink" ? comp.spell_Blink
+                    : parent.def.defName == "SpellOf_Teleport" ? comp.spell_Teleport
+                    : parent.def.defName == "SpellOf_Heal" ? comp.spell_Heal : comp.spell_SummonMinion;
+                if (!flagOwned)
+                {
+                    if (parent.Destroyed || parent.stackCount < 1 || !parent.def.destroyable) return true;
+                    var originalHolder = parent.holdingOwner;
+                    var payment = parent.SplitOff(1);
+                    if (payment == null) return true;
+                    try { payment.Destroy(DestroyMode.Vanish); }
+                    catch
+                    {
+                        // A callback may throw after destruction already committed payment.
+                        if (!payment.Destroyed)
+                        {
+                            RestoreUnpaidScroll(user, payment, originalHolder);
+                            throw;
+                        }
+                    }
+                    if (!payment.Destroyed)
+                    {
+                        RestoreUnpaidScroll(user, payment, originalHolder);
+                        return true;
+                    }
+                }
+                // Persistent ownership is committed after payment, before runtime callbacks.
+                // Legacy flag-only grants are repaired without charging a second time.
+                owner.learned = true;
+                switch (parent.def.defName)
+                {
+                    case "SpellOf_Rain": comp.spell_Rain = true; break;
+                    case "SpellOf_Blink": comp.spell_Blink = true; break;
+                    case "SpellOf_Teleport": comp.spell_Teleport = true; break;
+                    case "SpellOf_Heal": comp.spell_Heal = true; break;
+                    case "SpellOf_SummonMinion": comp.spell_SummonMinion = true; break;
+                }
+                ClassProgression.ClassSpellAccess.RestoreLearned(comp);
+                return true;
+            }
+            finally { sharedLearning.Remove(owner); }
+        }
+
+        private void RestoreUnpaidScroll(Pawn user, Thing payment, ThingOwner originalHolder)
+        {
+            if (payment.Destroyed || payment.Spawned || payment.holdingOwner != null) return;
+            // Keep the actual split unit, without invoking the failing Destroy callback
+            // again through stack absorption. A real holder supplies save ownership.
+            if (originalHolder != null)
+            {
+                try { originalHolder.TryAdd(payment, false); }
+                catch { if (payment.holdingOwner != null || payment.Spawned) return; }
+                if (payment.holdingOwner != null || payment.Spawned) return;
+            }
+            if (user.inventory == null) user.inventory = new Pawn_InventoryTracker(user);
+            user.inventory.innerContainer.TryAdd(payment, false);
+            if (payment.holdingOwner == null)
+                throw new System.InvalidOperationException("Could not retain the unpaid shared scroll in its reader's inventory.");
+        }
+
+        private bool TryCompleteEnrolledBrightmageScroll(Pawn user, CompAbilityUserMagic comp)
+        {
+            if (parent.def?.defName != "SpellOf_SpiritOfLight" || !ClassProgression.ClassIdentity.TryGetState(user, out _)) return false;
+            var owner = comp?.MagicData?.MagicPowersBrightmage.FirstOrDefault(p => p.TMabilityDefs.Contains(TorannMagicDefOf.TM_SpiritOfLight));
+            if (owner == null || owner.learned) return true;
+            if (!ClassProgression.ClassIdentity.IsBrightmage(user)
+                || !ClassProgression.ClassSpellAccess.CanLearnFromScroll(user, owner, parent.def)) return true;
+            var required = parent.def.GetModExtension<DefModExtension_LearnAbilityRequiredTraits>()?.traits;
+            if (required != null && required.Count > 0 && !required.Any(t => user.story?.traits?.HasTrait(t) == true
+                || (t == TorannMagicDefOf.TM_Brightmage && ClassProgression.ClassIdentity.IsBrightmage(user)))) return true;
+            if (!sharedLearning.Add(owner)) return true;
+            try
+            {
+                if (parent.Destroyed || parent.stackCount < 1 || !parent.def.destroyable) return true;
+                var holder = parent.holdingOwner;
+                var payment = parent.SplitOff(1);
+                if (payment == null) return true;
+                try { payment.Destroy(DestroyMode.Vanish); }
+                catch
+                {
+                    if (!payment.Destroyed) { RestoreUnpaidScroll(user, payment, holder); throw; }
+                }
+                if (!payment.Destroyed) { RestoreUnpaidScroll(user, payment, holder); return true; }
+                owner.learned = true;
+                ClassProgression.ClassSpellAccess.RestoreLearned(comp);
+                return true;
+            }
+            finally { sharedLearning.Remove(owner); }
+        }
+
+        private bool TryCompleteEnrolledShamanScroll(Pawn user, CompAbilityUserMagic comp)
+        {
+            if (parent.def?.defName != "SpellOf_GuardianSpirit" || !ClassProgression.ClassIdentity.TryGetState(user, out _)) return false;
+            var owner = comp?.MagicData?.MagicPowersShaman.FirstOrDefault(p => p.TMabilityDefs.Contains(TorannMagicDefOf.TM_GuardianSpirit));
+            if (owner == null || owner.learned) return true;
+            if (!ClassProgression.ClassIdentity.IsShaman(user)
+                || !ClassProgression.ClassSpellAccess.CanLearnFromScroll(user, owner, parent.def)) return true;
+            var required = parent.def.GetModExtension<DefModExtension_LearnAbilityRequiredTraits>()?.traits;
+            if (required != null && required.Count > 0 && !required.Any(t => user.story?.traits?.HasTrait(t) == true
+                || (t == TorannMagicDefOf.TM_Shaman && ClassProgression.ClassIdentity.IsShaman(user)))) return true;
+            if (!sharedLearning.Add(owner)) return true;
+            try
+            {
+                if (parent.Destroyed || parent.stackCount < 1 || !parent.def.destroyable) return true;
+                var holder = parent.holdingOwner;
+                var payment = parent.SplitOff(1);
+                if (payment == null) return true;
+                try { payment.Destroy(DestroyMode.Vanish); }
+                catch
+                {
+                    if (!payment.Destroyed) { RestoreUnpaidScroll(user, payment, holder); throw; }
+                }
+                if (!payment.Destroyed) { RestoreUnpaidScroll(user, payment, holder); return true; }
+                owner.learned = true;
+                ClassProgression.ClassSpellAccess.RestoreLearned(comp);
+                return true;
+            }
+            finally { sharedLearning.Remove(owner); }
+        }
+
+        private bool TryCompleteEnrolledEmpathScroll(Pawn user, CompAbilityUserMagic comp)
+        {
+            if (parent.def?.defName != "SpellOf_FadeEmotions" || !ClassProgression.ClassIdentity.TryGetState(user, out _)) return false;
+            var owner = ClassProgression.EmpathOwners.FadeOwner(comp?.MagicData);
+            if (owner == null || owner.learned) return true;
+            if (!ClassProgression.ClassIdentity.IsEmpath(user)
+                || !ClassProgression.ClassSpellAccess.CanLearnFromScroll(user, owner, parent.def)) return true;
+            var required = parent.def.GetModExtension<DefModExtension_LearnAbilityRequiredTraits>()?.traits;
+            if (required != null && required.Count > 0 && !required.Any(t => user.story?.traits?.HasTrait(t) == true
+                || (t == TorannMagicDefOf.TM_Empath && ClassProgression.ClassIdentity.IsEmpath(user)))) return true;
+            if (!sharedLearning.Add(owner)) return true;
+            try
+            {
+                if (parent.Destroyed || parent.stackCount < 1 || !parent.def.destroyable) return true;
+                var holder = parent.holdingOwner;
+                var payment = parent.SplitOff(1);
+                if (payment == null) return true;
+                try { payment.Destroy(DestroyMode.Vanish); }
+                catch
+                {
+                    if (!payment.Destroyed) { RestoreUnpaidScroll(user, payment, holder); throw; }
+                }
+                if (!payment.Destroyed) { RestoreUnpaidScroll(user, payment, holder); return true; }
+                owner.learned = true;
+                ClassProgression.ClassSpellAccess.RestoreLearned(comp);
+                return true;
+            }
+            finally { sharedLearning.Remove(owner); }
+        }
+
+        private bool TryCompleteEnrolledGolemancerScroll(Pawn user, CompAbilityUserMagic comp)
+        {
+            bool brand = ClassProgression.GolemancerBrands.IsBrandScroll(parent.def);
+            if ((!brand && parent.def?.defName != "SpellOf_LivingWall") || !ClassProgression.ClassIdentity.TryGetState(user, out _)) return false;
+            var owner = brand ? ClassProgression.GolemancerBrands.ScrollOwner(comp?.MagicData, parent.def)
+                : comp?.MagicData?.MagicPowersGolemancer.FirstOrDefault(p => p.TMabilityDefs.Contains(TorannMagicDefOf.TM_LivingWall));
+            if (owner == null || owner.learned) return true;
+            if (!ClassProgression.ClassIdentity.IsGolemancer(user)
+                || !ClassProgression.ClassSpellAccess.CanLearnFromScroll(user, owner, parent.def)) return true;
+            var required = parent.def.GetModExtension<DefModExtension_LearnAbilityRequiredTraits>()?.traits;
+            if (required != null && required.Count > 0 && !required.Any(t => user.story?.traits?.HasTrait(t) == true
+                || (t == TorannMagicDefOf.TM_Golemancer && ClassProgression.ClassIdentity.IsGolemancer(user)))) return true;
+            if (!sharedLearning.Add(owner)) return true;
+            try
+            {
+                if (parent.Destroyed || parent.stackCount < 1 || !parent.def.destroyable) return true;
+                var holder = parent.holdingOwner;
+                var payment = parent.SplitOff(1);
+                if (payment == null) return true;
+                try { payment.Destroy(DestroyMode.Vanish); }
+                catch
+                {
+                    if (!payment.Destroyed) { RestoreUnpaidScroll(user, payment, holder); throw; }
+                }
+                if (!payment.Destroyed) { RestoreUnpaidScroll(user, payment, holder); return true; }
+                owner.learned = true;
+                ClassProgression.ClassSpellAccess.RestoreLearned(comp);
+                return true;
+            }
+            finally { sharedLearning.Remove(owner); }
+        }
+
         public override void DoEffect(Pawn user)
         {
             CompAbilityUserMagic comp = user.GetCompAbilityUserMagic();
             MagicPower magicPower;
+            if (ClassProgression.ClassIdentity.TryGetState(user, out _))
+            {
+                TM_ClassState.RestoreSharedMagicProgression(comp);
+                var target = comp?.MagicData?.AllMagicPowersWithSkills.FirstOrDefault(p =>
+                    p.TMabilityDefs.OfType<TMAbilityDef>().Any(a => a.learnItem == parent.def)
+                    || (parent.def.defName == "SpellOf_Resurrection" && p.TMabilityDefs.Contains(TorannMagicDefOf.TM_Resurrection)));
+                if (parent.def.defName == "SpellOf_FadeEmotions") target = ClassProgression.EmpathOwners.FadeOwner(comp?.MagicData);
+                if (parent.def.defName == "SpellOf_GuardianSpirit")
+                    target = comp?.MagicData?.MagicPowersShaman.FirstOrDefault(p => p.TMabilityDefs.Contains(TorannMagicDefOf.TM_GuardianSpirit));
+                if (ClassProgression.GolemancerBrands.IsBrandScroll(parent.def))
+                    target = ClassProgression.GolemancerBrands.ScrollOwner(comp?.MagicData, parent.def);
+                if (parent.def.defName == "SpellOf_LivingWall")
+                    target = comp?.MagicData?.MagicPowersGolemancer.FirstOrDefault(p => p.TMabilityDefs.Contains(TorannMagicDefOf.TM_LivingWall));
+                if (parent.def.defName == "SpellOf_SpiritOfLight")
+                    target = comp?.MagicData?.MagicPowersBrightmage.FirstOrDefault(p => p.TMabilityDefs.Contains(TorannMagicDefOf.TM_SpiritOfLight));
+                if (parent.def.defName == "SpellOf_Recall")
+                    target = comp?.MagicData?.MagicPowersC.FirstOrDefault(p => p.TMabilityDefs.Contains(TorannMagicDefOf.TM_Recall));
+                if (parent.def.defName == "SpellOf_Shapeshift")
+                    target = comp?.MagicData?.MagicPowersE.FirstOrDefault(p => p.TMabilityDefs.Contains(TorannMagicDefOf.TM_Shapeshift));
+                if (parent.def.defName == "SpellOf_BloodMoon")
+                    target = comp?.MagicData?.MagicPowersBM.FirstOrDefault(p => p.TMabilityDefs.Contains(TorannMagicDefOf.TM_BloodMoon));
+                if (target != null && parent.def.defName != "SpellOf_FadeEmotions" && !ClassProgression.GolemancerBrands.IsBrandScroll(parent.def) && parent.def.defName != "SpellOf_SpiritOfLight" && parent.def.defName != "SpellOf_GuardianSpirit" && parent.def.defName != "SpellOf_LivingWall") target = TM_ClassState.PreferredMagicOwner(comp, target.TMabilityDefs[0]) ?? target;
+                if (target != null && !ClassProgression.ClassSpellAccess.CanLearnFromScroll(user, target, parent.def))
+                {
+                    Messages.Message("TM_ProgressionStageLocked".Translate(), user, MessageTypeDefOf.RejectInput, false);
+                    return;
+                }
+            }
+            if (TryCompleteEnrolledBrightmageScroll(user, comp)) return;
+            if (TryCompleteEnrolledGolemancerScroll(user, comp)) return;
+            if (TryCompleteEnrolledShamanScroll(user, comp)) return;
+            if (TryCompleteEnrolledEmpathScroll(user, comp)) return;
             if (parent.def != null && (TM_Calc.IsMagicUser(user) || TM_Calc.IsWanderer(user)))
             {                
                 List<TraitDef> restrictedTraits = null;
@@ -118,6 +346,7 @@ namespace TorannMagic
                     }
                     if (hasRequiredTrait)
                     {
+                        if (TryCompleteEnrolledSharedScroll(user, comp)) return;
                         if (parent.def.defName == "SpellOf_Rain" && comp.spell_Rain == false)
                         {
                             comp.spell_Rain = true;
@@ -132,7 +361,7 @@ namespace TorannMagic
                             comp.spell_Blink = true;
                             magicPower = comp.MagicData.MagicPowersA.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Blink);
                             comp.AddPawnAbility(TorannMagicDefOf.TM_Blink);
-                            if (!user.story.traits.HasTrait(TorannMagicDefOf.ChaosMage))
+                            if (!TorannMagic.ClassProgression.ClassIdentity.IsChaosMage(user))
                             {
                                 magicPower.learned = true;
                             }
@@ -144,7 +373,7 @@ namespace TorannMagic
                             comp.spell_Teleport = true;
                             magicPower = comp.MagicData.MagicPowersA.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Teleport);
                             comp.AddPawnAbility(TorannMagicDefOf.TM_Teleport);
-                            if (!user.story.traits.HasTrait(TorannMagicDefOf.ChaosMage))
+                            if (!TorannMagic.ClassProgression.ClassIdentity.IsChaosMage(user))
                             {
                                 magicPower.learned = true;
                             }
@@ -156,7 +385,7 @@ namespace TorannMagic
                             comp.spell_Heal = true;
                             magicPower = comp.MagicData.MagicPowersP.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Heal);
                             comp.AddPawnAbility(TorannMagicDefOf.TM_Heal);
-                            if (!user.story.traits.HasTrait(TorannMagicDefOf.ChaosMage))
+                            if (!TorannMagic.ClassProgression.ClassIdentity.IsChaosMage(user))
                             {
                                 magicPower.learned = true;
                             }
@@ -191,35 +420,35 @@ namespace TorannMagic
                             comp.InitializeSpell();
                             this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                         }
-                        else if (parent.def.defName == "SpellOf_DryGround" && comp.spell_DryGround == false && user.story.traits.HasTrait(TorannMagicDefOf.InnerFire))
+                        else if (parent.def.defName == "SpellOf_DryGround" && comp.spell_DryGround == false && ClassProgression.ClassIdentity.IsFireMage(user))
                         {
                             comp.spell_DryGround = true;
                             comp.MagicData.ReturnMatchingMagicPower(TorannMagicDefOf.TM_DryGround).learned = true;
                             comp.InitializeSpell();
                             this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                         }
-                        else if (parent.def.defName == "SpellOf_Firestorm" && comp.spell_Firestorm == false && user.story.traits.HasTrait(TorannMagicDefOf.InnerFire))
+                        else if (parent.def.defName == "SpellOf_Firestorm" && comp.spell_Firestorm == false && ClassProgression.ClassIdentity.IsFireMage(user))
                         {
                             comp.spell_Firestorm = true;
                             comp.MagicData.ReturnMatchingMagicPower(TorannMagicDefOf.TM_Firestorm).learned = true;
                             comp.InitializeSpell();
                             this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                         }
-                        else if (parent.def.defName == "SpellOf_WetGround" && comp.spell_WetGround == false && user.story.traits.HasTrait(TorannMagicDefOf.HeartOfFrost))
+                        else if (parent.def.defName == "SpellOf_WetGround" && comp.spell_WetGround == false && ClassProgression.ClassIdentity.IsIceMage(user))
                         {
                             comp.spell_WetGround = true;
                             comp.MagicData.ReturnMatchingMagicPower(TorannMagicDefOf.TM_WetGround).learned = true;
                             comp.InitializeSpell();
                             this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                         }
-                        else if (parent.def.defName == "SpellOf_Blizzard" && comp.spell_Blizzard == false && user.story.traits.HasTrait(TorannMagicDefOf.HeartOfFrost))
+                        else if (parent.def.defName == "SpellOf_Blizzard" && comp.spell_Blizzard == false && ClassProgression.ClassIdentity.IsIceMage(user))
                         {
                             comp.spell_Blizzard = true;
                             comp.MagicData.ReturnMatchingMagicPower(TorannMagicDefOf.TM_Blizzard).learned = true;
                             comp.InitializeSpell();
                             this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                         }
-                        else if (parent.def.defName == "SpellOf_ChargeBattery" && comp.spell_ChargeBattery == false && user.story.traits.HasTrait(TorannMagicDefOf.StormBorn))
+                        else if (parent.def.defName == "SpellOf_ChargeBattery" && comp.spell_ChargeBattery == false && ClassProgression.ClassIdentity.IsLightningMage(user))
                         {
                             comp.spell_ChargeBattery = true;
                             comp.MagicData.ReturnMatchingMagicPower(TorannMagicDefOf.TM_ChargeBattery).learned = true;
@@ -251,7 +480,7 @@ namespace TorannMagic
                             comp.spell_SummonMinion = true;
                             magicPower = comp.MagicData.MagicPowersS.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_SummonMinion);
                             comp.AddPawnAbility(TorannMagicDefOf.TM_SummonMinion);
-                            if (!user.story.traits.HasTrait(TorannMagicDefOf.ChaosMage))
+                            if (!TorannMagic.ClassProgression.ClassIdentity.IsChaosMage(user))
                             {
                                 magicPower.learned = true;
                             }
@@ -272,7 +501,7 @@ namespace TorannMagic
                             comp.InitializeSpell();
                             this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                         }
-                        else if (parent.def.defName == "SpellOf_RegrowLimb" && comp.spell_RegrowLimb == false && user.story.traits.HasTrait(TorannMagicDefOf.Druid))
+                        else if (parent.def.defName == "SpellOf_RegrowLimb" && comp.spell_RegrowLimb == false && ClassProgression.ClassIdentity.IsDruid(user))
                         {
                             comp.spell_RegrowLimb = true;
                             comp.InitializeSpell();
@@ -280,7 +509,7 @@ namespace TorannMagic
                             magicPower.learned = true;
                             this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                         }
-                        else if (parent.def.defName == "SpellOf_EyeOfTheStorm" && comp.spell_EyeOfTheStorm == false && user.story.traits.HasTrait(TorannMagicDefOf.StormBorn))
+                        else if (parent.def.defName == "SpellOf_EyeOfTheStorm" && comp.spell_EyeOfTheStorm == false && ClassProgression.ClassIdentity.IsLightningMage(user))
                         {
                             comp.spell_EyeOfTheStorm = true;
                             magicPower = comp.MagicData.MagicPowersSB.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_EyeOfTheStorm);
@@ -295,28 +524,28 @@ namespace TorannMagic
                             comp.InitializeSpell();
                             this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                         }
-                        else if (parent.def.defName == "SpellOf_FoldReality" && comp.spell_FoldReality == false && user.story.traits.HasTrait(TorannMagicDefOf.Arcanist))
+                        else if (parent.def.defName == "SpellOf_FoldReality" && comp.spell_FoldReality == false && ClassProgression.ClassIdentity.IsArcanist(user))
                         {
                             comp.spell_FoldReality = true;
                             comp.MagicData.ReturnMatchingMagicPower(TorannMagicDefOf.TM_FoldReality).learned = true;
                             comp.InitializeSpell();
                             this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                         }
-                        else if (parent.def.defName == "SpellOf_Resurrection" && comp.spell_Resurrection == false && user.story.traits.HasTrait(TorannMagicDefOf.Priest))
+                        else if (parent.def.defName == "SpellOf_Resurrection" && comp.spell_Resurrection == false && ClassProgression.ClassIdentity.IsPriest(user))
                         {
                             comp.spell_Resurrection = true;
                             comp.MagicData.ReturnMatchingMagicPower(TorannMagicDefOf.TM_Resurrection).learned = true;
                             comp.InitializeSpell();
                             this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                         }
-                        else if (parent.def.defName == "SpellOf_BattleHymn" && comp.spell_BattleHymn == false && user.story.traits.HasTrait(TorannMagicDefOf.TM_Bard))
+                        else if (parent.def.defName == "SpellOf_BattleHymn" && comp.spell_BattleHymn == false && ClassProgression.ClassIdentity.IsBard(user))
                         {
                             comp.spell_BattleHymn = true;
                             comp.MagicData.ReturnMatchingMagicPower(TorannMagicDefOf.TM_BattleHymn).learned = true;
                             comp.InitializeSpell();
                             this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                         }
-                        else if (parent.def.defName == "SpellOf_HolyWrath" && comp.spell_HolyWrath == false && user.story.traits.HasTrait(TorannMagicDefOf.Paladin))
+                        else if (parent.def.defName == "SpellOf_HolyWrath" && comp.spell_HolyWrath == false && ClassProgression.ClassIdentity.IsPaladin(user))
                         {
                             comp.spell_HolyWrath = true;
                             comp.MagicData.ReturnMatchingMagicPower(TorannMagicDefOf.TM_HolyWrath).learned = true;
@@ -330,49 +559,49 @@ namespace TorannMagic
                             comp.InitializeSpell();
                             this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                         }
-                        else if (parent.def.defName == "SpellOf_SummonPoppi" && comp.spell_SummonPoppi == false && user.story.traits.HasTrait(TorannMagicDefOf.Summoner))
+                        else if (parent.def.defName == "SpellOf_SummonPoppi" && comp.spell_SummonPoppi == false && ClassProgression.ClassIdentity.IsSummoner(user))
                         {
                             comp.spell_SummonPoppi = true;
                             comp.MagicData.ReturnMatchingMagicPower(TorannMagicDefOf.TM_SummonPoppi).learned = true;
                             comp.InitializeSpell();
                             this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                         }
-                        else if (parent.def.defName == "SpellOf_Scorn" && comp.spell_Scorn == false && user.story.traits.HasTrait(TorannMagicDefOf.Succubus))
+                        else if (parent.def.defName == "SpellOf_Scorn" && comp.spell_Scorn == false && ClassProgression.ClassIdentity.IsSuccubus(user))
                         {
                             comp.spell_Scorn = true;
                             comp.MagicData.ReturnMatchingMagicPower(TorannMagicDefOf.TM_Scorn).learned = true;
                             comp.InitializeSpell();
                             this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                         }
-                        else if (parent.def.defName == "SpellOf_PsychicShock" && comp.spell_PsychicShock == false && user.story.traits.HasTrait(TorannMagicDefOf.Warlock))
+                        else if (parent.def.defName == "SpellOf_PsychicShock" && comp.spell_PsychicShock == false && ClassProgression.ClassIdentity.IsWarlock(user))
                         {
                             comp.spell_PsychicShock = true;
                             comp.MagicData.ReturnMatchingMagicPower(TorannMagicDefOf.TM_PsychicShock).learned = true;
                             comp.InitializeSpell();
                             this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                         }
-                        else if (parent.def.defName == "SpellOf_Meteor" && comp.spell_Meteor == false && user.story.traits.HasTrait(TorannMagicDefOf.Geomancer))
+                        else if (parent.def.defName == "SpellOf_Meteor" && comp.spell_Meteor == false && ClassProgression.ClassIdentity.IsGeomancer(user))
                         {
                             comp.spell_Meteor = true;
                             comp.MagicData.ReturnMatchingMagicPower(TorannMagicDefOf.TM_Meteor).learned = true;
                             comp.InitializeSpell();
                             this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                         }
-                        else if (parent.def.defName == "SpellOf_OrbitalStrike" && comp.spell_OrbitalStrike == false && user.story.traits.HasTrait(TorannMagicDefOf.Technomancer))
+                        else if (parent.def.defName == "SpellOf_OrbitalStrike" && comp.spell_OrbitalStrike == false && (user.story.traits.HasTrait(TorannMagicDefOf.Technomancer) || ClassProgression.ClassIdentity.IsTechnomancer(user)))
                         {
                             comp.spell_OrbitalStrike = true;
                             comp.MagicData.ReturnMatchingMagicPower(TorannMagicDefOf.TM_OrbitalStrike).learned = true;
                             comp.InitializeSpell();
                             this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                         }
-                        else if (parent.def.defName == "SpellOf_CauterizeWound" && comp.spell_CauterizeWound == false && user.story.traits.HasTrait(TorannMagicDefOf.InnerFire))
+                        else if (parent.def.defName == "SpellOf_CauterizeWound" && comp.spell_CauterizeWound == false && ClassProgression.ClassIdentity.IsFireMage(user))
                         {
                             comp.spell_CauterizeWound = true;
                             comp.MagicData.ReturnMatchingMagicPower(TorannMagicDefOf.TM_CauterizeWound).learned = true;
                             comp.InitializeSpell();
                             this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                         }
-                        else if (parent.def.defName == "SpellOf_FertileLands" && comp.spell_FertileLands == false && user.story.traits.HasTrait(TorannMagicDefOf.Druid))
+                        else if (parent.def.defName == "SpellOf_FertileLands" && comp.spell_FertileLands == false && ClassProgression.ClassIdentity.IsDruid(user))
                         {
                             comp.spell_FertileLands = true;
                             comp.MagicData.ReturnMatchingMagicPower(TorannMagicDefOf.TM_FertileLands).learned = true;
@@ -386,35 +615,35 @@ namespace TorannMagic
                             comp.InitializeSpell();
                             this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                         }
-                        else if (parent.def.defName == "SpellOf_TechnoShield" && comp.MagicData.MagicPowersT.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_TechnoShield).learned == false && user.story.traits.HasTrait(TorannMagicDefOf.Technomancer))
+                        else if (parent.def.defName == "SpellOf_TechnoShield" && comp.MagicData.MagicPowersT.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_TechnoShield).learned == false && (user.story.traits.HasTrait(TorannMagicDefOf.Technomancer) || ClassProgression.ClassIdentity.IsTechnomancer(user)))
                         {
                             comp.MagicData.MagicPowersT.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_TechnoShield).learned = true;
                             comp.AddPawnAbility(TorannMagicDefOf.TM_TechnoShield);
                             this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                         }
-                        else if (parent.def.defName == "SpellOf_Sabotage" && comp.MagicData.MagicPowersT.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Sabotage).learned == false && user.story.traits.HasTrait(TorannMagicDefOf.Technomancer))
+                        else if (parent.def.defName == "SpellOf_Sabotage" && comp.MagicData.MagicPowersT.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Sabotage).learned == false && (user.story.traits.HasTrait(TorannMagicDefOf.Technomancer) || ClassProgression.ClassIdentity.IsTechnomancer(user)))
                         {
                             comp.MagicData.MagicPowersT.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Sabotage).learned = true;
                             comp.AddPawnAbility(TorannMagicDefOf.TM_Sabotage);
                             this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                         }
-                        else if (parent.def.defName == "SpellOf_Overdrive" && comp.MagicData.MagicPowersT.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Overdrive).learned == false && user.story.traits.HasTrait(TorannMagicDefOf.Technomancer))
+                        else if (parent.def.defName == "SpellOf_Overdrive" && comp.MagicData.MagicPowersT.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Overdrive).learned == false && (user.story.traits.HasTrait(TorannMagicDefOf.Technomancer) || ClassProgression.ClassIdentity.IsTechnomancer(user)))
                         {
                             comp.MagicData.MagicPowersT.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Overdrive).learned = true;
                             comp.AddPawnAbility(TorannMagicDefOf.TM_Overdrive);
                             this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                         }
-                        else if (parent.def.defName == "SpellOf_BloodMoon" && comp.spell_BloodMoon == false && user.story.traits.HasTrait(TorannMagicDefOf.BloodMage))
+                        else if (parent.def.defName == "SpellOf_BloodMoon" && comp.spell_BloodMoon == false && ClassProgression.ClassIdentity.IsBloodMage(user))
                         {
                             comp.spell_BloodMoon = true;
-                            comp.MagicData.ReturnMatchingMagicPower(TorannMagicDefOf.TM_BloodMoon).learned = true;
+                            comp.MagicData.MagicPowersBM.First(p => p.TMabilityDefs.Contains(TorannMagicDefOf.TM_BloodMoon)).learned = true;
                             comp.InitializeSpell();
                             this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                         }
-                        else if (parent.def == TorannMagicDefOf.SpellOf_Shapeshift && comp.spell_Shapeshift == false && user.story.traits.HasTrait(TorannMagicDefOf.Enchanter))
+                        else if (parent.def == TorannMagicDefOf.SpellOf_Shapeshift && comp.spell_Shapeshift == false && ClassProgression.ClassIdentity.IsEnchanter(user))
                         {
                             comp.spell_Shapeshift = true;
-                            comp.MagicData.ReturnMatchingMagicPower(TorannMagicDefOf.TM_Shapeshift).learned = true;
+                            comp.MagicData.MagicPowersE.First(p => p.TMabilityDefs.Contains(TorannMagicDefOf.TM_Shapeshift)).learned = true;
                             comp.InitializeSpell();
                             this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                         }
@@ -425,7 +654,7 @@ namespace TorannMagic
                             comp.InitializeSpell();
                             this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                         }
-                        else if (parent.def == TorannMagicDefOf.SpellOf_BlankMind && comp.spell_BlankMind == false && user.story.traits.HasTrait(TorannMagicDefOf.Enchanter))
+                        else if (parent.def == TorannMagicDefOf.SpellOf_BlankMind && comp.spell_BlankMind == false && ClassProgression.ClassIdentity.IsEnchanter(user))
                         {
                             comp.spell_BlankMind = true;
                             comp.MagicData.ReturnMatchingMagicPower(TorannMagicDefOf.TM_BlankMind).learned = true;
@@ -439,7 +668,7 @@ namespace TorannMagic
                             comp.InitializeSpell();
                             this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                         }
-                        else if (parent.def == TorannMagicDefOf.SpellOf_MechaniteReprogramming && comp.spell_MechaniteReprogramming == false && user.story.traits.HasTrait(TorannMagicDefOf.Technomancer))
+                        else if (parent.def == TorannMagicDefOf.SpellOf_MechaniteReprogramming && comp.spell_MechaniteReprogramming == false && (user.story.traits.HasTrait(TorannMagicDefOf.Technomancer) || ClassProgression.ClassIdentity.IsTechnomancer(user)))
                         {
                             comp.spell_MechaniteReprogramming = true;
                             comp.MagicData.ReturnMatchingMagicPower(TorannMagicDefOf.TM_MechaniteReprogramming).learned = true;
@@ -467,22 +696,22 @@ namespace TorannMagic
                             comp.InitializeSpell();
                             this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                         }
-                        else if (parent.def == TorannMagicDefOf.SpellOf_BriarPatch && comp.spell_BriarPatch == false && user.story.traits.HasTrait(TorannMagicDefOf.Druid))
+                        else if (parent.def == TorannMagicDefOf.SpellOf_BriarPatch && comp.spell_BriarPatch == false && ClassProgression.ClassIdentity.IsDruid(user))
                         {
                             comp.spell_BriarPatch = true;
                             comp.MagicData.ReturnMatchingMagicPower(TorannMagicDefOf.TM_BriarPatch).learned = true;
                             comp.InitializeSpell();
                             this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                         }
-                        else if (parent.def == TorannMagicDefOf.SpellOf_Recall && comp.spell_Recall == false && user.story.traits.HasTrait(TorannMagicDefOf.Chronomancer))
+                        else if (parent.def == TorannMagicDefOf.SpellOf_Recall && comp.spell_Recall == false && ClassProgression.ClassIdentity.IsChronomancer(user))
                         {
                             comp.spell_Recall = true;
-                            comp.MagicData.ReturnMatchingMagicPower(TorannMagicDefOf.TM_Recall).learned = true;
+                            comp.MagicData.MagicPowersC.First(p => p.TMabilityDefs.Contains(TorannMagicDefOf.TM_Recall)).learned = true;
                             comp.MagicData.MagicPowersStandalone.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_TimeMark).learned = true;
                             comp.InitializeSpell();
                             this.parent.SplitOff(1).Destroy(DestroyMode.Vanish);
                         }
-                        else if (parent.def == TorannMagicDefOf.SpellOf_HeatShield && comp.spell_HeatShield == false && user.story.traits.HasTrait(TorannMagicDefOf.InnerFire))
+                        else if (parent.def == TorannMagicDefOf.SpellOf_HeatShield && comp.spell_HeatShield == false && ClassProgression.ClassIdentity.IsFireMage(user))
                         {
                             comp.spell_HeatShield = true;
                             comp.MagicData.ReturnMatchingMagicPower(TorannMagicDefOf.TM_HeatShield).learned = true;

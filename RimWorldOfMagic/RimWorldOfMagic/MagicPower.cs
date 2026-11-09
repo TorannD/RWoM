@@ -41,7 +41,7 @@ namespace TorannMagic
 
         private void SetMaxLevel()
         {
-            this.maxLevel = this.TMabilityDefs.Count - 1;
+            this.maxLevel = (this.TMabilityDefs?.Count ?? 0) - 1;
         }
 
         public AbilityDef abilityDescDef
@@ -64,9 +64,9 @@ namespace TorannMagic
         {
             get
             {
-                SetMaxLevel();
                 if (TMabilityDefs != null && TMabilityDefs.Count > 0)
                 {
+                    SetMaxLevel();
                     if (level <= 0)
                     {
                         return this.TMabilityDefs[0];
@@ -85,15 +85,9 @@ namespace TorannMagic
         {
             get
             {
+                if (TMabilityDefs == null || TMabilityDefs.Count == 0) return null;
                 SetMaxLevel();
-                if ((this.level + 1) >= this.maxLevel)
-                {
-                    return this.TMabilityDefs[maxLevel];
-                }
-                else
-                {
-                    return this.TMabilityDefs[level + 1];
-                }               
+                return GetAbilityDef(level >= maxLevel ? maxLevel : level + 1);
             }
         }
 
@@ -101,25 +95,19 @@ namespace TorannMagic
         {
             get
             {
-                return this.abilityDef.uiIcon;
+                return this.abilityDef?.uiIcon;
             }
         }
 
         public AbilityDef GetAbilityDef(int index)
         {
-            try
-            {
-                return this.TMabilityDefs[index];
-            }
-            catch
-            {
-                return this.TMabilityDefs[0];
-            }            
+            if (TMabilityDefs == null || TMabilityDefs.Count == 0) return null;
+            return TMabilityDefs[index >= 0 && index < TMabilityDefs.Count ? index : 0];
         }
 
         public AbilityDef HasAbilityDef(AbilityDef defToFind)
         {
-            return this.TMabilityDefs.FirstOrDefault((AbilityDef x) => x == defToFind);
+            return this.TMabilityDefs?.FirstOrDefault(x => x == defToFind);
         }
 
         public MagicPower()
@@ -158,7 +146,7 @@ namespace TorannMagic
             }
 
             LoadLegacyClassAutocast();
-            if (this.autocasting == null)
+            if (this.autocasting == null || TMDefs.TM_AutocastDefaults.NeverAutocast(this.abilityDef as TMAbilityDef))
             {
                 this.autocasting = TMDefs.TM_AutocastDefaults.For(this.abilityDef as TMAbilityDef, false);
             }
@@ -176,10 +164,11 @@ namespace TorannMagic
             Scribe_Values.Look<int>(ref this.ticksUntilNextCast, "ticksUntilNextCast", -1, false);
             Scribe_Collections.Look<AbilityDef>(ref this.TMabilityDefs, "TMabilityDefs", LookMode.Def, null);
             Scribe_Deep.Look<TMDefs.TM_Autocast>(ref this.autocasting, "autocasting", new object[0]);
-            if (Scribe.mode == LoadSaveMode.PostLoadInit && this.autocasting == null)
+            if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
-                // old saves stored null for powers without legacy entries
-                this.autocasting = TMDefs.TM_AutocastDefaults.For(this.abilityDef as TMAbilityDef, false);
+                SpellSanitizer.Sanitize(this);
+                if (autocasting == null)
+                    autocasting = TMDefs.TM_AutocastDefaults.For(abilityDef as TMAbilityDef, false);
             }
         }
 

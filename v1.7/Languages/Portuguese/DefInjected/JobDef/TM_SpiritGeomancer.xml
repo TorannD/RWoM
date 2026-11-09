@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritStoneskin.reportString>conjurando pele de pedra.</TM_SpiritStoneskin.reportString>
+  <TM_SpiritDispelStoneskin.reportString>dissipando pele de pedra.</TM_SpiritDispelStoneskin.reportString>
+  <TM_SpiritEarthSprites.reportString>a invocar espíritos da terra.</TM_SpiritEarthSprites.reportString>
+  <TM_SpiritDismissEarthSprites.reportString>a dispensar espíritos da terra.</TM_SpiritDismissEarthSprites.reportString>
+  <TM_SpiritEncase.reportString>a erguer paredes de pedra.</TM_SpiritEncase.reportString>
+  <TM_SpiritEncase_I.reportString>a erguer paredes de pedra.</TM_SpiritEncase_I.reportString>
+  <TM_SpiritEncase_II.reportString>a erguer paredes de pedra.</TM_SpiritEncase_II.reportString>
+  <TM_SpiritEncase_III.reportString>a erguer paredes de pedra.</TM_SpiritEncase_III.reportString>
+  <TM_SpiritEarthernHammer.reportString>a invocar o martelo de terra.</TM_SpiritEarthernHammer.reportString>
+  <TM_SpiritSentinel.reportString>a invocar uma sentinela de pedra.</TM_SpiritSentinel.reportString>
+  <TM_SpiritShatterSentinel.reportString>a despedaçar as sentinelas de pedra.</TM_SpiritShatterSentinel.reportString>
+  <TM_SpiritMeteor.reportString>a invocar um meteorito.</TM_SpiritMeteor.reportString>
+  <TM_SpiritMeteor_I.reportString>a invocar um meteorito.</TM_SpiritMeteor_I.reportString>
+  <TM_SpiritMeteor_II.reportString>a invocar um meteorito.</TM_SpiritMeteor_II.reportString>
+  <TM_SpiritMeteor_III.reportString>a invocar um meteorito.</TM_SpiritMeteor_III.reportString>
+</LanguageData>

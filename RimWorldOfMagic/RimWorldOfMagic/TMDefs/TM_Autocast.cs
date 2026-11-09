@@ -31,6 +31,13 @@ namespace TorannMagic.TMDefs
 
         public List<string> advancedConditionDefs = null;
         private List<TM_AutocastCondition> accList = null;
+        internal TM_Autocast CopyForOwner()
+        {
+            var copy = (TM_Autocast)MemberwiseClone();
+            copy.advancedConditionDefs = advancedConditionDefs == null ? null : new List<string>(advancedConditionDefs);
+            copy.accList = null;
+            return copy;
+        }
         public bool ValidConditions(Pawn caster, LocalTargetInfo target)
         {
             if (advancedConditionDefs != null)

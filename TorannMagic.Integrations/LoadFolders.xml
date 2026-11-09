@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<loadFolders>
+  <v1.7>
+    <li>v1.7</li>
+    <li IfModActive="vanillaexpanded.gravship">v1.7/VGECompat</li>
+    <li IfModActive="zetrith.multiplayer,rwmt.multiplayer">v1.7/MultiplayerCompat</li>
+    <li IfModActive="Poupun.IsekaiDungeonsAddon">v1.7/IsekaiCompat</li>
+    <li IfModActive="saintwacko.AbilityAI">v1.7/AbilityAICompat</li>
+    <li IfModActive="void.charactereditor">v1.7/CECompat</li>
+  </v1.7>
+</loadFolders>

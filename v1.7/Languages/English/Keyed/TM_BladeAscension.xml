@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_BladeAscensionProgress>Warrior level {0}/30 · Combat routes {1}/6 · Medical deliveries {2}/10</TM_BladeAscensionProgress>
+  <TM_BladeRouteHint>Hit one enemy with Passage, then deal ordinary melee damage to a different enemy within ten seconds.</TM_BladeRouteHint>
+  <TM_BladeSupplyHint>With Doctor work enabled, fetch medicine from at least six cells away and use it to tend an ally in a colony medical bed. Only medicine actually consumed counts, once per day.</TM_BladeSupplyHint>
+  <TM_BladeAscend>Choose ascension technique</TM_BladeAscend>
+  <TM_BladeUltimateOption>{0} (permanent choice)</TM_BladeUltimateOption>
+  <TM_BladeUltimateLearned>Ascension technique: {0}</TM_BladeUltimateLearned>
+  <TM_BladeFormUnavailable>Requires Form of Seven Steps, a melee weapon, 60% stamina and a completed cooldown.</TM_BladeFormUnavailable>
+</LanguageData>

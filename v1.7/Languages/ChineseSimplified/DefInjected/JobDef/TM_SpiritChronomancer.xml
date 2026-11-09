@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritPrediction.reportString>正在预知未来。</TM_SpiritPrediction.reportString>
+  <TM_SpiritAlterFate.reportString>正在改变命运。</TM_SpiritAlterFate.reportString>
+  <TM_SpiritAccelerateTime.reportString>正在加速时间。</TM_SpiritAccelerateTime.reportString>
+  <TM_SpiritReverseTime.reportString>正在逆转时间。</TM_SpiritReverseTime.reportString>
+  <TM_SpiritChronostaticField.reportString>正在生成时间静止力场。</TM_SpiritChronostaticField.reportString>
+  <TM_SpiritChronostaticField_I.reportString>正在生成时间静止力场。</TM_SpiritChronostaticField_I.reportString>
+  <TM_SpiritChronostaticField_II.reportString>正在生成时间静止力场。</TM_SpiritChronostaticField_II.reportString>
+  <TM_SpiritChronostaticField_III.reportString>正在生成时间静止力场。</TM_SpiritChronostaticField_III.reportString>
+  <TM_SpiritTimeMark.reportString>正在设置时间标记。</TM_SpiritTimeMark.reportString>
+  <TM_SpiritRecall.reportString>正在返回时间标记。</TM_SpiritRecall.reportString>
+</LanguageData>

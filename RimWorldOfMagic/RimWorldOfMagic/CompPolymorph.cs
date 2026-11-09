@@ -82,19 +82,20 @@ namespace TorannMagic
 
         private void SpawnSetup()
         {
-            this.ticksLeft = this.ticksToDestroy;
-            TransmutateEffects(ParentPawn.Position);
-            if (this.original != null && this.spawner == this.original && this.original.Spawned)
-            {
-                bool drafter = this.original.Drafted;
-                this.original.DeSpawn();
-                if(drafter)
-                {
-                    this.ParentPawn.drafter.Drafted = true;
-                }
-                Find.Selector.Select(this.ParentPawn, false, true);
-                
-            }
+            if (ticksLeft <= 0) ticksLeft = ticksToDestroy;
+            TransmutateEffects(ParentPawn.Position, ParentPawn.Map);
+            // Older casts transferred their original on the first tick.
+            if (spawner == original && original?.Spawned == true) EnterSelfForm();
+        }
+
+        internal void EnterSelfForm()
+        {
+            if (original?.Spawned != true || original.Map != ParentPawn.Map) return;
+            bool selected = Find.Selector.IsSelected(original);
+            bool drafted = original.Drafted;
+            original.DeSpawn();
+            if (drafted) ParentPawn.drafter.Drafted = true;
+            if (selected) Find.Selector.Select(ParentPawn, false, true);
         }
 
         private void CheckPawnState()
@@ -115,6 +116,14 @@ namespace TorannMagic
         {
             if (this.original == null) return;
             base.CompTick();
+            if (!parent.Spawned) return;
+            if (!original.Spawned && ClassProgression.SpiritRebirthState.TryGetPossessingSpirit(original, out var soul))
+            {
+                soul.GetCompAbilityUserMagic()?.CompTick();
+                soul.GetCompAbilityUserMight()?.CompTick();
+                if (ClassProgression.SpiritRebirthState.TryGet(soul, out var state))
+                    state.TickRecovery(soul, original, Find.TickManager.TicksGame);
+            }
             if (Find.TickManager.TicksGame % 4 != 0) return;
             if (!initialized)
             {
@@ -129,6 +138,7 @@ namespace TorannMagic
                 {
                     PreDestroy();
                     ParentPawn.Destroy();
+                    return;
                 }
                 CheckPawnState();
                 if (parent.Spawned)
@@ -195,7 +205,8 @@ namespace TorannMagic
 
         public override void PostDeSpawn(Map map, DestroyMode mode = DestroyMode.Vanish)
         {
-            this.effecter?.Cleanup();            
+            this.effecter?.Cleanup();
+            this.effecter = null;
             base.PostDeSpawn(map, mode);            
         }
 
@@ -224,10 +235,10 @@ namespace TorannMagic
 
         public override void PostDestroy(DestroyMode mode, Map previousMap)
         {
-            if (this.ticksLeft > 0 && (this.parent.DestroyedOrNull() || ParentPawn.Dead))
+            if (original != null && (this.parent.DestroyedOrNull() || ParentPawn.Dead) && (previousMap ?? activeMap) is Map map)
             {
-                DestroyParentCorpse(this.activeMap);
-                SpawnOriginal(this.activeMap);
+                DestroyParentCorpse(map);
+                SpawnOriginal(map);
                 original.Kill(null, null);
                 this.Original = null;
             }            
@@ -254,18 +265,9 @@ namespace TorannMagic
         {
             bool drafter = this.ParentPawn.Drafted;
             bool selected = Find.Selector.IsSelected(this.ParentPawn);
-            if (map != null)
-            {
-                GenSpawn.Spawn(this.original, ParentPawn.Position, map, WipeMode.Vanish);
-                TransmutateEffects(ParentPawn.Position);
-            }
-            else
-            {
-                map = this.spawner.Map;
-                GenSpawn.Spawn(this.original, ParentPawn.Position, map, WipeMode.Vanish);
-                TransmutateEffects(ParentPawn.Position);
-            }  
-            if(drafter)
+            GenSpawn.Spawn(original, ParentPawn.Position, map, WipeMode.Vanish);
+            TransmutateEffects(ParentPawn.Position, map);
+            if(drafter && this.original.drafter != null)
             {
                 this.original.drafter.Drafted = true;
             }
@@ -299,7 +301,7 @@ namespace TorannMagic
                 {
                     pawn.needs.mood.thoughts.memories.TryGainMemory(TorannMagicDefOf.Polymorphed_Transhumanist, this.spawner);
                 }
-                else if(this.spawner == this.original)
+                else if(this.spawner == this.original || (ClassProgression.SpiritRebirthState.TryGetPossessingSpirit(original, out var spirit) && spirit == spawner))
                 {
                     //do not give bad thoughts
                 }
@@ -314,17 +316,17 @@ namespace TorannMagic
             }
         }
 
-        private void TransmutateEffects(IntVec3 position)
+        private void TransmutateEffects(IntVec3 position, Map map)
         {
             Vector3 rndPos = position.ToVector3Shifted();
-            FleckMaker.ThrowHeatGlow(position, this.ParentPawn.Map, 1f);
+            FleckMaker.ThrowHeatGlow(position, map, 1f);
             for (int i = 0; i < 6; i++)
             {
                 rndPos.x += Rand.Range(-.5f, .5f);
                 rndPos.z += Rand.Range(-.5f, .5f);
                 rndPos.y += Rand.Range(.3f, 1.3f);
-                FleckMaker.ThrowSmoke(rndPos, this.ParentPawn.Map, Rand.Range(.7f, 1.1f));
-                FleckMaker.ThrowLightningGlow(position.ToVector3Shifted(), this.ParentPawn.Map, 1.4f);
+                FleckMaker.ThrowSmoke(rndPos, map, Rand.Range(.7f, 1.1f));
+                FleckMaker.ThrowLightningGlow(position.ToVector3Shifted(), map, 1.4f);
             }
         }
     }

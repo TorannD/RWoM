@@ -14,7 +14,6 @@ namespace TorannMagic
         private int lastDamageDealt = 0;
         private bool initialized = false;
 
-        //unsaved
         float reductionAmount = .04f;
         bool shouldRemove = false;
 
@@ -22,6 +21,9 @@ namespace TorannMagic
         {
             Scribe_Values.Look<bool>(ref this.consumeJoy, "consumeJoy", false);
             Scribe_Values.Look<float>(ref this.reductionFactor, "reductionFactor", 1f);
+            Scribe_Values.Look(ref lastDamageDealt,"TM_enrageDamageBaseline");
+            Scribe_Values.Look(ref initialized,"TM_enrageStarted");
+            Scribe_Values.Look(ref shouldRemove,"TM_enrageEnding");
             base.CompExposeData();
         }
         public string labelCap
@@ -86,28 +88,17 @@ namespace TorannMagic
                             lastDamageDealt = currentDamage;
                         }
 
-                        for (int i = 0; i < this.Pawn.needs.AllNeeds.Count; i++)
+                        var mood = Pawn.needs.mood;
+                        if (mood != null) mood.CurLevel += moodGain;
+                        if (mood != null && mood.CurLevel >= tickCost)
                         {
-                            Need n = this.Pawn.needs.AllNeeds[i];
-                            if(consumeJoy && n.def == TorannMagicDefOf.Joy && n.CurLevel >= tickCost)
-                            {
-                                n.CurLevel -= tickCost;
-                                usedEmotions = true;
-                                break;
-                            }
-                            if(n.def.defName == "Mood")
-                            {
-                                if(moodGain != 0f)
-                                {
-                                    n.CurLevel += moodGain;
-                                }
-                                if (n.CurLevel >= tickCost)
-                                {
-                                    n.CurLevel -= tickCost;
-                                    usedEmotions = true;
-                                    break;
-                                }
-                            }
+                            mood.CurLevel -= tickCost;
+                            usedEmotions = true;
+                        }
+                        else if (consumeJoy && Pawn.needs.joy is Need_Joy joy && joy.CurLevel >= tickCost)
+                        {
+                            joy.CurLevel -= tickCost;
+                            usedEmotions = true;
                         }
                         if (!usedEmotions)
                         {
@@ -131,7 +122,7 @@ namespace TorannMagic
 
         public override void CompPostPostRemoved()
         {
-            Need n = this.Pawn.needs.mood;
+            Need n = Pawn.needs?.mood;
             if(n != null && n.CurLevel < .4f)
             {
                 n.CurLevel = .4f;

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <AdministerOrbOfTheEternal.label>administrar orbe del eterno</AdministerOrbOfTheEternal.label>
+  
+  <AdministerOrbOfTheEternal.description>Aplica el poder del Orbe del eterno. Es una infusión de un solo uso de energía mágica que curará heridas, restaurará miembros y curará enfermedades. La energía curativa se dirigirá a la peor afección de salud que sufra alguien en cada momento y la curará.</AdministerOrbOfTheEternal.description>
+  
+  <AdministerOrbOfTheEternal.jobString>Usando orbe del eterno.</AdministerOrbOfTheEternal.jobString>
+  
+</LanguageData>

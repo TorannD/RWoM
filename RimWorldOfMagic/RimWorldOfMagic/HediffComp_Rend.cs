@@ -29,6 +29,8 @@ namespace TorannMagic
         public override void CompExposeData()
         {
             base.CompExposeData();
+            Scribe_Values.Look(ref initializeDelay,"TM_rendDelay");
+            Scribe_Values.Look(ref removeNow,"TM_rendEnding");
             Scribe_References.Look<Pawn>(ref linkedPawn, "linkedPawn", false);
             Scribe_Values.Look<int>(ref this.rendVer, "rendVer", 0, false);
             Scribe_Values.Look<int>(ref this.rendPwr, "rendPwr", 0, false);
@@ -52,23 +54,18 @@ namespace TorannMagic
             }
         }
 
-        private void Initialize()
+        internal void SetSource(Pawn source)
         {
-            bool spawned = base.Pawn.Spawned;
-            CompAbilityUserMagic comp = this.linkedPawn.GetCompAbilityUserMagic();
-            if (spawned && comp != null && comp.IsMagicUser)
-            {
-                MagicPowerSkill bpwr = comp.MagicData.MagicPowerSkill_BloodGift.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_BloodGift_pwr");
-                rendPwr = comp.MagicData.MagicPowerSkill_Rend.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Rend_pwr").level;
-                rendVer = comp.MagicData.MagicPowerSkill_Rend.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Rend_ver").level;
-                arcaneDmg = comp.arcaneDmg;
-                arcaneDmg *= (1 + .1f * bpwr.level);
-            }
-            else
-            {
-                this.removeNow = true;
-            }
-        }        
+            linkedPawn = source;
+            var magic = source?.GetCompAbilityUserMagic();
+            if (magic == null) return;
+            var skills = magic.MagicData.MagicPowerSkill_Rend;
+            rendPwr = skills.FirstOrDefault(x => x.label == "TM_Rend_pwr")?.level ?? 0;
+            rendVer = skills.FirstOrDefault(x => x.label == "TM_Rend_ver")?.level ?? 0;
+            int gift = magic.MagicData.MagicPowerSkill_BloodGift.FirstOrDefault(x => x.label == "TM_BloodGift_pwr")?.level ?? 0;
+            arcaneDmg = magic.arcaneDmg * (1f + .1f * gift);
+            initialized = true;
+        }
 
         public override void CompPostTick(ref float severityAdjustment)
         {
@@ -78,8 +75,7 @@ namespace TorannMagic
             {
                 if (!initialized && this.linkedPawn != null)
                 {
-                    initialized = true;
-                    this.Initialize();
+                    SetSource(linkedPawn);
                 }
 
                 if(this.Pawn.DestroyedOrNull() || this.Pawn.Dead || this.Pawn.Map == null || this.Pawn.RaceProps.BloodDef == null)
@@ -113,6 +109,7 @@ namespace TorannMagic
                     rndPos.z += Mathf.RoundToInt(Rand.Range(-2f, 2f));
                     if (this.Pawn.RaceProps != null && this.Pawn.RaceProps.BloodDef != null && this.Pawn.Map != null)
                     {
+                        if (!rndPos.InBounds(Pawn.Map)) continue;
                         FilthMaker.TryMakeFilth(rndPos, this.Pawn.Map, this.Pawn.RaceProps.BloodDef, 1);
                         TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_BloodSquirt, this.Pawn.DrawPos, this.Pawn.Map, Rand.Range(.6f, 1.0f), .15f, .05f, .66f, Rand.Range(-100, 100), Rand.Range(1, 2), Rand.Range(0, 360), Rand.Range(0f, 360f));
                     }                    

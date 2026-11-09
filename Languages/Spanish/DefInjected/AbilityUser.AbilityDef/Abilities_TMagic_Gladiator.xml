@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_Cleave.label>tajo</TM_Cleave.label>
+  
+  <TM_Cleave.description>Ejecuta un poderoso golpe en barrido capaz de alcanzar a varios enemigos adyacentes al objetivo. Mientras el gladiador tenga suficiente resistencia, esta habilidad se activa automáticamente cada vez que realiza un ataque cuerpo a cuerpo. La probabilidad de asestar un tajo depende de la masa del arma: cuanto más pesada sea, mayor será la probabilidad.</TM_Cleave.description>
+  
+  
+  <TM_Fortitude.label>fortaleza</TM_Fortitude.label>
+  
+  <TM_Fortitude.description>Reduce una cantidad fija del daño recibido con cada impacto.\n\nMitigación base: 5</TM_Fortitude.description>
+  
+  
+  <TM_Grapple.label>garfio</TM_Grapple.label>
+  
+  <TM_Grapple.description>Engancha por la fuerza a un oponente y lo arrastra hacia el gladiador, seguido de un violento barrido de piernas que derriba al adversario.\n\nTiempo de preparación: 1 s\nAlcance: 15</TM_Grapple.description>
+  
+  
+  <TM_Grapple_I.label>garfio</TM_Grapple_I.label>
+  
+  <TM_Grapple_I.description>Engancha por la fuerza a un oponente y lo arrastra hacia el gladiador, seguido de un violento barrido de piernas que derriba al adversario.\n\nTiempo de preparación: 0,6 s\nAlcance: 17</TM_Grapple_I.description>
+  
+  
+  <TM_Grapple_II.label>garfio</TM_Grapple_II.label>
+  
+  <TM_Grapple_II.description>Engancha por la fuerza a un oponente y lo arrastra hacia el gladiador, seguido de un violento barrido de piernas que derriba al adversario.\n\nTiempo de preparación: 0,4 s\nAlcance: 20</TM_Grapple_II.description>
+  
+  
+  <TM_Grapple_III.label>garfio</TM_Grapple_III.label>
+  
+  <TM_Grapple_III.description>Engancha por la fuerza a un oponente y lo arrastra hacia el gladiador, seguido de un violento barrido de piernas que derriba al adversario.\n\nTiempo de preparación: 0,2 s\nAlcance: 23</TM_Grapple_III.description>
+  
+  
+  <TM_Sprint.label>esprint</TM_Sprint.label>
+  
+  <TM_Sprint.description>Activa o desactiva la habilidad de combate sostenida Esprint, que aumenta enormemente la velocidad de movimiento, pero provoca agotamiento. Requiere 30 puntos de resistencia para mantenerse activa y reduce la regeneración de resistencia en un 20 %.</TM_Sprint.description>
+  
+  
+  <TM_Sprint_I.label>esprint</TM_Sprint_I.label>
+  
+  <TM_Sprint_I.description>Activa o desactiva la habilidad de combate sostenida Esprint, que aumenta enormemente la velocidad de movimiento, pero provoca agotamiento. Requiere 30 puntos de resistencia para mantenerse activa y reduce la regeneración de resistencia en un 20 %.\n\nAl activar Esprint, el usuario obtiene 10 segundos de evasión (25 % de probabilidad de esquivar) y 5 segundos de adrenalina.\nAl desactivar Esprint, recupera instantáneamente 20 puntos de resistencia y obtiene un aumento del 20 % a la regeneración de energía durante 5 segundos.</TM_Sprint_I.description>
+  
+  
+  <TM_Sprint_II.label>esprint</TM_Sprint_II.label>
+  
+  <TM_Sprint_II.description>Activa o desactiva la habilidad de combate sostenida Esprint, que aumenta enormemente la velocidad de movimiento, pero provoca agotamiento. Requiere 30 puntos de resistencia para mantenerse activa y reduce la regeneración de resistencia en un 20 %.\n\nAl activar Esprint, el usuario obtiene 10 segundos de evasión (35 % de probabilidad de esquivar) y 8 segundos de adrenalina. Además, todos los peones aliados situados a un máximo de 5 casillas obtienen 10 segundos de evasión (25 % de probabilidad de esquivar).\nAl desactivar Esprint, recupera instantáneamente 35 puntos de resistencia y obtiene un aumento del 30 % a la regeneración de energía durante 8 segundos.</TM_Sprint_II.description>
+  
+  
+  <TM_Sprint_III.label>esprint</TM_Sprint_III.label>
+  
+  <TM_Sprint_III.description>Activa o desactiva la habilidad de combate sostenida Esprint, que aumenta enormemente la velocidad de movimiento, pero provoca agotamiento. Requiere 30 puntos de resistencia para mantenerse activa y reduce la regeneración de resistencia en un 20 %.\n\nAl activar Esprint, el usuario obtiene 10 segundos de evasión (40 % de probabilidad de esquivar) y 10 segundos de adrenalina. Además, todos los peones aliados situados a un máximo de 10 casillas obtienen 10 segundos de evasión (30 % de probabilidad de esquivar).\nAl desactivar Esprint, recupera instantáneamente 40 puntos de resistencia y obtiene un aumento del 40 % a la regeneración de energía durante 10 segundos.</TM_Sprint_III.description>
+  
+  
+  <TM_Whirlwind.label>torbellino</TM_Whirlwind.label>
+  
+  <TM_Whirlwind.description>El gladiador inicia un ataque frenético y avanza danzando en un furioso torbellino de acero y muerte.</TM_Whirlwind.description>
+  
+</LanguageData>

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
@@ -18,7 +18,8 @@ namespace TorannMagic
 
             if (caster == null || caster.Dead) return true;
 
-            if (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_HediffGearRepair))
+            ClassProgression.SpiritHostedStance.DiscardProjection(pawn, TorannMagicDefOf.TM_HediffGearRepair);
+                if(pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_HediffGearRepair))
             {
                 Hediff hd = pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_HediffGearRepair);
                 pawn.health.RemoveHediff(hd);

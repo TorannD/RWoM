@@ -1,0 +1,9 @@
+<LanguageData>
+  <TM_SpiritCastAntitoxin.reportString>administrando un antídoto a TargetB.</TM_SpiritCastAntitoxin.reportString>
+  <TM_SpiritCastBalm.reportString>aplicando bálsamo calmante a TargetB.</TM_SpiritCastBalm.reportString>
+  <TM_SpiritCastElixir.reportString>dando un elixir de hierbas a TargetB.</TM_SpiritCastElixir.reportString>
+  <TM_SpiritCastHerbalClarity.reportString>administrando claridad a TargetB.</TM_SpiritCastHerbalClarity.reportString>
+  <TM_SpiritCastHerbalBliss.reportString>administrando dicha a TargetB.</TM_SpiritCastHerbalBliss.reportString>
+  <TM_SpiritCastPoisonFlask.reportString>lanzando un frasco de veneno.</TM_SpiritCastPoisonFlask.reportString>
+  <TM_SpiritCastFireSuppressionFlask.reportString>lanzando un frasco extintor.</TM_SpiritCastFireSuppressionFlask.reportString>
+</LanguageData>

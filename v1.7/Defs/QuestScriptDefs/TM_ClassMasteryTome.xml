@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <QuestScriptDef>
+    <defName>TM_ClassMasteryTome</defName>
+    <root Class="TorannMagic.ClassProgression.QuestNode_ClassMasteryTome" />
+    <randomlySelectable>false</randomlySelectable>
+    <sendAvailableLetter>false</sendAvailableLetter>
+    <autoAccept>false</autoAccept>
+    <expireDaysRange>5</expireDaysRange>
+    <endOnColonyMove>false</endOnColonyMove>
+  </QuestScriptDef>
+</Defs>

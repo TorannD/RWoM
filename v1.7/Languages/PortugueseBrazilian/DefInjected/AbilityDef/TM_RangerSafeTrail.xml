@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_Bridge_RangerSafeTrail.label>Trilha segura</TM_Bridge_RangerSafeTrail.label>
+  <TM_Bridge_RangerSafeTrail.description>Marca por 8 segundos um caminho visível e transitável de até 8 células. Os dois primeiros aliados a entrar se movem 15% mais rápido enquanto estão na trilha. Uma porta fechada ou um obstáculo interrompe a trilha. Custo base: 20% de vigor. Recarga: 40 segundos.</TM_Bridge_RangerSafeTrail.description>
+</LanguageData>

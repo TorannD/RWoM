@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <Projectile_EarthernHammer.label>martillo de tierra</Projectile_EarthernHammer.label>
+  
+  
+  <Projectile_Encase.label>proyectil de confinamiento</Projectile_Encase.label>
+  
+  
+  <Projectile_Encase_I.label>proyectil de confinamiento I</Projectile_Encase_I.label>
+  
+  
+  <Projectile_Encase_II.label>proyectil de confinamiento II</Projectile_Encase_II.label>
+  
+  
+  <Projectile_Encase_III.label>proyectil de confinamiento III</Projectile_Encase_III.label>
+  
+  
+  <Projectile_Geomancer.label>proyectil predeterminado</Projectile_Geomancer.label>
+  
+  
+  <Projectile_Sentinel.label>proyectil de centinela</Projectile_Sentinel.label>
+  
+</LanguageData>

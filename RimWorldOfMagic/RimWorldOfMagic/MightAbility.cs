@@ -1,4 +1,4 @@
-﻿using AbilityUser;
+using AbilityUser;
 using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +10,41 @@ using TorannMagic.Ideology;
 namespace TorannMagic
 {
     public class MightAbility : PawnAbility
-    {        
+    {
+        public override Verse.AI.Job UseAbility(AbilityContext context, LocalTargetInfo target)
+            => Odyssey.ManualTravelSafety.IsTravel(this) ? Odyssey.ManualTravelSafety.UseAbility(this, context, target) : base.UseAbility(context, target);
+
+        public override Verse.AI.Job GetJob(AbilityContext context, LocalTargetInfo target)
+        {
+            if (Verb_RangerShot.Family(mightDef))
+            {
+                var volley=Verb_RangerShot.MakeOrder(Pawn,Pawn,target);
+                volley.playerForced=context==AbilityContext.Player;
+                return volley;
+            }
+            if (mightDef!=null && mightDef==TorannMagicDefOf.TM_PoisonTrap)
+            {
+                var trap=Verb_PoisonTrap.MakeOrder(Pawn,target);
+                trap.playerForced=context==AbilityContext.Player;
+                return trap;
+            }
+            string order;
+            if(mightDef!=null && (mightDef==TorannMagicDefOf.TM_PsionicDash || mightDef==TorannMagicDefOf.TM_PsionicStorm)) order=ClassProgression.PsionicDashCast.OrderFor(this);
+            else if (mightDef?.MainVerb?.verbClass == typeof(ClassProgression.Verb_GladiatorSweep)) order=ClassProgression.SpiritHostedMartial.Sweep;
+            else if (ClassProgression.SpiritHostedMartial.GrappleRank(mightDef)) order=ClassProgression.SpiritHostedMartial.Grapple;
+            else if (mightDef == TorannMagicDefOf.TM_Whirlwind && mightDef != null) order=ClassProgression.GladiatorWhirlwind.JobName;
+            else if (mightDef != null && mightDef==TorannMagicDefOf.TM_BladeSpin) order=ClassProgression.BladeMartialCast.Spin;
+            else if (mightDef != null && mightDef==TorannMagicDefOf.TM_SeismicSlash) order=ClassProgression.BladeMartialCast.Slash;
+            else if (mightDef?.defName=="TM_BladePassage") order=ClassProgression.BladeMartialCast.Passage;
+            else if (mightDef?.defName=="TM_RangerSafeTrail") order=ClassProgression.Verb_RangerSafeTrail.Order;
+            else if (mightDef!=null && mightDef==TorannMagicDefOf.TM_AnimalFriend) order=Verb_AnimalFriend.Order;
+            else if (ClassProgression.BladeMartialCast.PhaseRank(mightDef)) order=ClassProgression.BladeMartialCast.Phase;
+            else return base.GetJob(context,target);
+            var job = JobMaker.MakeJob(DefDatabase<JobDef>.GetNamed(order), Pawn, target);
+            job.playerForced = context == AbilityContext.Player;
+            return job;
+        }
+        
 
         public int CastingTicks
         {
@@ -91,6 +125,7 @@ namespace TorannMagic
 
         public override void PostAbilityAttempt()  
         {
+            if (!Odyssey.ManualTravelSafety.TakePayment(this)) return;
             //base.PostAbilityAttempt();
             
             if (!this.Pawn.IsColonist && ModOptions.Settings.Instance.AIAggressiveCasting)// for AI
@@ -103,7 +138,7 @@ namespace TorannMagic
             }
             if (Rand.Chance(MightUser.arcalleumCooldown))
             {
-                this.CooldownTicksLeft = 4;
+                this.CooldownTicksLeft = Compatibility.AbilityTiming.Cooldown(4);
             }
             bool flag = this.mightDef != null;
             if (flag)
@@ -400,7 +435,7 @@ namespace TorannMagic
                     }
                     if (mightAbilityDef == TorannMagicDefOf.TM_PsionicDash)
                     {
-                        num2 = 8 - (mightUser.MightData.MightPowerSkill_PsionicDash.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PsionicDash_eff").level);
+                        num2 = ClassProgression.PsionicDashCast.PsiCost(mightUser.Pawn, TorannMagicDefOf.TM_PsionicDash);
                         text2 = "TM_PsionicInitialCost".Translate(
                             num2
                         );
@@ -416,7 +451,7 @@ namespace TorannMagic
                     }
                     if (mightAbilityDef == TorannMagicDefOf.TM_PsionicStorm)
                     {
-                        num2 = 65 - (5 * (mightUser.MightData.MightPowerSkill_PsionicStorm.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PsionicStorm_eff").level));
+                        num2 = ClassProgression.PsionicDashCast.PsiCost(mightUser.Pawn, TorannMagicDefOf.TM_PsionicStorm);
                         text2 = "TM_PsionicInitialCost".Translate(
                             num2
                         );
@@ -497,6 +532,11 @@ namespace TorannMagic
 
         public override bool CanCastPowerCheck(AbilityContext context, out string reason)
         {
+            if (!ClassProgression.SpiritRebirthCasting.Allows(Pawn, Def))
+            {
+                reason = "TM_SpiritRebirthCastUnavailable".Translate();
+                return false;
+            }
             bool flag = base.CanCastPowerCheck(context, out reason);
             bool result;
             if (flag)
@@ -632,7 +672,7 @@ namespace TorannMagic
                         
                     }
                 }
-                if(MightUser.specWpnRegNum == -1 && 
+                if(!ClassProgression.SuperSoldierWeaponProfile.ReadyWeapon(MightUser.Pawn) &&
                     (this.mightDef == TorannMagicDefOf.TM_PistolWhip || this.mightDef == TorannMagicDefOf.TM_SuppressingFire || this.mightDef == TorannMagicDefOf.TM_Mk203GL ||
                     this.mightDef == TorannMagicDefOf.TM_Buckshot || this.mightDef == TorannMagicDefOf.TM_BreachingCharge))
                 {
@@ -672,7 +712,7 @@ namespace TorannMagic
                         return false;
                     }
                 }
-                if(TM_Calc.HasHateHediff(this.MightUser.Pawn) && this.MightUser.Pawn.story.traits.HasTrait(TorannMagicDefOf.DeathKnight))
+                if(TM_Calc.HasHateHediff(this.MightUser.Pawn) && ClassProgression.DeathKnightMartialPath.IsKnight(this.MightUser.Pawn))
                 {
                     Hediff hediff = null;
                     for (int h = 0; h < this.MightUser.Pawn.health.hediffSet.hediffs.Count; h++)
@@ -709,7 +749,7 @@ namespace TorannMagic
                         );
                         return false;
                     }
-                    if ((this.mightDef == TorannMagicDefOf.TM_PsionicDash && psiEnergy < 8f))
+                    if ((this.mightDef == TorannMagicDefOf.TM_PsionicDash && psiEnergy < ClassProgression.PsionicDashCast.PsiCost(Pawn, mightDef)))
                     {
                         reason = "TM_NotEnoughPsionicEnergy".Translate(
                         base.Pawn.Label,
@@ -717,7 +757,7 @@ namespace TorannMagic
                         );
                         return false;
                     }
-                    int stormCost = 65 - (5 * (this.MightUser.MightData.MightPowerSkill_PsionicStorm.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PsionicStorm_eff").level));
+                    float stormCost = ClassProgression.PsionicDashCast.PsiCost(Pawn, TorannMagicDefOf.TM_PsionicStorm);
                     if ((this.mightDef == TorannMagicDefOf.TM_PsionicStorm && psiEnergy < stormCost))
                     {
                         reason = "TM_NotEnoughPsionicEnergy".Translate(

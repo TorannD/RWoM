@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="TM_BuildingBase">
+    <defName>TM_MagofuelReservoir</defName>
+    <label>magofuel reservoir</label>
+    <description>Stores magofuel and a separate mana charge. Magofuel can be converted into mana; a mage can also charge the reservoir while keeping a configurable personal reserve. Does not generate electricity or convert mana back into fuel.</description>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>Buildings/MagofuelReservoir</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <!-- Source PNGs include transparent margins; visible body fits the 2x2 footprint. -->
+      <drawSize>(2.6,2.6)</drawSize>
+      <allowFlip>false</allowFlip>
+    </graphicData>
+    <placeWorkers>
+      <li>TorannMagic.Odyssey.PlaceWorker_ManaNetwork</li>
+    </placeWorkers>
+    <size>(2,2)</size>
+    <rotatable>true</rotatable>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <fillPercent>1</fillPercent>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>TM_RWoM</designationCategory>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <WorkToBuild>8000</WorkToBuild>
+      <Mass>40</Mass>
+      <Flammability>0.2</Flammability>
+    </statBases>
+    <costList>
+      <Steel>150</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+      <RawMagicyte>80</RawMagicyte>
+    </costList>
+    <researchPrerequisites>
+      <li>TM_MagofuelRefining</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="TorannMagic.Odyssey.CompProperties_CrystalGlow"><state>Reservoir</state><diameter>0.48</diameter><north>(0.49,0.225)</north><east>(0.49,0.225)</east><south>(0.49,0.225)</south><west>(0.49,0.225)</west></li>
+      <li Class="CompProperties_Refuelable">
+        <fuelCapacity>500</fuelCapacity>
+        <initialFuelPercent>0</initialFuelPercent>
+        <fuelConsumptionRate>0</fuelConsumptionRate>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <functionsInVacuum>true</functionsInVacuum>
+        <fuelMultiplier>1</fuelMultiplier>
+        <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+        <initialConfigurableTargetFuelLevel>500</initialConfigurableTargetFuelLevel>
+        <initialAllowAutoRefuel>true</initialAllowAutoRefuel>
+        <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+        <showFuelGizmo>true</showFuelGizmo>
+        <drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+        <fuelFilter>
+          <thingDefs>
+            <li>TM_Magofuel</li>
+          </thingDefs>
+        </fuelFilter>
+      </li>
+      <li Class="TorannMagic.Odyssey.CompProperties_MagofuelReservoir" />
+      <li Class="TorannMagic.Odyssey.CompProperties_ManaNetworkEndpoint" />
+    </comps>
+  </ThingDef>
+  <JobDef>
+    <defName>TM_ChargeMagofuelReservoir</defName>
+    <driverClass>TorannMagic.Odyssey.JobDriver_ChargeMagofuelReservoir</driverClass>
+    <reportString>charging the magofuel reservoir with mana.</reportString>
+  </JobDef>
+</Defs>
+
+

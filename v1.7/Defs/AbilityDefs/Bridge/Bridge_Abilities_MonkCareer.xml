@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_MonkPalmSeal</defName>
+    <label>Palm seal</label>
+    <description>Strike an adjacent enemy unarmed for 16/22/28 spiritual damage and interrupt for one second. Base cost 20 chi; cooldown 30 seconds.</description>
+    <spellId>rwom.tm_monkpalmseal</spellId>
+    <iconPath>UI/tigerstrike</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.ClassProgression.Verb_MonkPalmSeal</verbClass>
+      <abilityDef>TM_MonkPalmSeal</abilityDef>
+      <isViolent>true</isViolent>
+      <hasStandardCommand>true</hasStandardCommand>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <defaultProjectile>Projectile_Default</defaultProjectile>
+      <warmupTime>1</warmupTime>
+      <SecondsToRecharge>30</SecondsToRecharge>
+      <range>1.42</range>
+      <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetSelf>false</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_MonkSilentMeridian</defName>
+    <label>Silent meridian</label>
+    <description>Remain unarmed and stationary. After five seconds three pulses over twelve seconds deal 12 spiritual damage each to up to four enemies in sight within five cells. The first stuns for two seconds and drains up to 15% of one resource. Costs 60% chi; cooldown two days.</description>
+    <spellId>rwom.tm_monksilentmeridian</spellId>
+    <iconPath>UI/ChiBurst</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.ClassProgression.Verb_MonkMeridian</verbClass>
+      <abilityDef>TM_MonkSilentMeridian</abilityDef>
+      <isViolent>true</isViolent>
+      <hasStandardCommand>true</hasStandardCommand>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <defaultProjectile>Projectile_Default</defaultProjectile>
+      <warmupTime>5</warmupTime>
+      <SecondsToRecharge>2000</SecondsToRecharge>
+      <range>0</range>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+</Defs>

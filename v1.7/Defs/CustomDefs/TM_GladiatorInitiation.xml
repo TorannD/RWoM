@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <HediffDef>
+    <defName>TM_GladiatorManeuverHD</defName>
+    <label>maneuvering</label>
+    <description>The gladiator moves faster for a short time.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <comps>
+      <li><compClass>TorannMagic.ClassProgression.HediffComp_SpiritCastOrigin</compClass></li>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>480</disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statFactors>
+          <MoveSpeed>1.08</MoveSpeed>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+  <JobDef>
+    <defName>TM_ReadGladiatorSprint</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_GladiatorInitiation</driverClass>
+    <reportString>studying the gladiator combat form.</reportString>
+    <casualInterruptible>true</casualInterruptible>
+  </JobDef>
+  <JobDef>
+    <defName>TM_ReadGladiatorManeuver</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_GladiatorInitiation</driverClass>
+    <reportString>studying the gladiator combat form.</reportString>
+    <casualInterruptible>true</casualInterruptible>
+  </JobDef>
+  <JobDef>
+    <defName>TM_GladiatorReliefDrill</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_GladiatorDefense</driverClass>
+    <reportString>relieving an ally.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_GladiatorCoverAlly</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_GladiatorDefense</driverClass>
+    <reportString>covering an ally.</reportString>
+  </JobDef>
+  <JobDef><defName>TM_GladiatorEvacuationDrill</defName><driverClass>TorannMagic.ClassProgression.JobDriver_GladiatorDefense</driverClass><reportString>practising an evacuation.</reportString></JobDef>
+  <JobDef><defName>TM_GladiatorLastCircle</defName><driverClass>TorannMagic.ClassProgression.JobDriver_LastCircle</driverClass><reportString>preparing the last circle.</reportString></JobDef>
+  <HediffDef><defName>TM_LastCircleStance</defName><label>holding the last circle</label><description>The gladiator moves more slowly while holding the last circle.</description><hediffClass>HediffWithComps</hediffClass><isBad>false</isBad><comps><li Class="HediffCompProperties_Disappears"><disappearsAfterTicks>1200</disappearsAfterTicks></li></comps><stages><li><statFactors><MoveSpeed>0.7</MoveSpeed></statFactors></li></stages></HediffDef>
+</Defs>

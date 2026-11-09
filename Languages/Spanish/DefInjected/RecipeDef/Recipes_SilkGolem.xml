@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_SilkGolem_EnergyConverter.label>convertidor de energía</TM_SilkGolem_EnergyConverter.label>
+  
+  <TM_SilkGolem_EnergyConverter.description>Aumenta un 8 % la eficiencia con la que el golem absorbe y utiliza la energía.</TM_SilkGolem_EnergyConverter.description>
+  
+  <TM_SilkGolem_EnergyConverter.jobString>Construyendo convertidor de energía.</TM_SilkGolem_EnergyConverter.jobString>
+  
+  
+  <TM_SilkGolem_EnergyMax.label>célula de energía</TM_SilkGolem_EnergyMax.label>
+  
+  <TM_SilkGolem_EnergyMax.description>Crea una célula de energía que aumenta la energía máxima en 100 por célula.</TM_SilkGolem_EnergyMax.description>
+  
+  <TM_SilkGolem_EnergyMax.jobString>Creando célula de energía.</TM_SilkGolem_EnergyMax.jobString>
+  
+  
+  <TM_SilkGolem_EnergyRegen.label>generador de energía</TM_SilkGolem_EnergyRegen.label>
+  
+  <TM_SilkGolem_EnergyRegen.description>Aumenta un 10 % la regeneración de energía del golem.</TM_SilkGolem_EnergyRegen.description>
+  
+  <TM_SilkGolem_EnergyRegen.jobString>Construyendo generador de energía.</TM_SilkGolem_EnergyRegen.jobString>
+  
+  
+  <TM_SilkGolem_LifeStage.label>nivel de armazón</TM_SilkGolem_LifeStage.label>
+  
+  <TM_SilkGolem_LifeStage.description>Mejora y refina el armazón del golem en cada nivel [1,2,3]:\nMovimiento: +[20/30/40] %\nSalud: +[20/40/60] %</TM_SilkGolem_LifeStage.description>
+  
+  <TM_SilkGolem_LifeStage.jobString>Mejorando el armazón del golem.</TM_SilkGolem_LifeStage.jobString>
+  
+  
+  <TM_SilkGolem_RepairBlock.label>restauración de piezas</TM_SilkGolem_RepairBlock.label>
+  
+  <TM_SilkGolem_RepairBlock.description>Sustituye las partes ausentes del golem que no requieren una mejora.</TM_SilkGolem_RepairBlock.description>
+  
+  <TM_SilkGolem_RepairBlock.jobString>Fabricando pieza de golem.</TM_SilkGolem_RepairBlock.jobString>
+  
+  
+  <TM_SilkGolem_Skills.label>habilidades</TM_SilkGolem_Skills.label>
+  
+  <TM_SilkGolem_Skills.description>El golem de seda mejora la calidad de la vigilancia en 1 punto de habilidad.</TM_SilkGolem_Skills.description>
+  
+  <TM_SilkGolem_Skills.jobString>Fabricando mejora de golem.</TM_SilkGolem_Skills.jobString>
+  
+</LanguageData>

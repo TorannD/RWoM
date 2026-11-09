@@ -10,28 +10,31 @@ using TorannMagic.TMDefs;
 
 namespace TorannMagic
 {
-    class Projectile_RaiseUndead : Projectile_AbilityBase
+    partial class Projectile_RaiseUndead : ClassProgression.Projectile_SpiritBolt
     {
-        MagicPowerSkill pwr;
-        MagicPowerSkill ver;
-
         protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
+            if (Destroyed) return;
+            Pawn pawn = SpellInstigator as Pawn;
+            if (pawn == null || pawn.Destroyed || pawn.Discarded || (projected && pawn.Dead))
+            {
+                Destroy();
+                return;
+            }
             Map map = base.Map;
+            var center = Position;
             base.Impact(hitThing);
             ThingDef def = this.def;
             int raisedPawns = 0;
 
-            Pawn pawn = this.launcher as Pawn;
-            Pawn victim = hitThing as Pawn;
             CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
-            pwr = comp.MagicData.MagicPowerSkill_RaiseUndead.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_RaiseUndead_pwr");
-            ver = comp.MagicData.MagicPowerSkill_RaiseUndead.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_RaiseUndead_ver");
+            if (comp == null) return;
+            if (!projected) ReadRaiseRanks(comp.MagicData);
 
             Thing corpseThing = null;
             
             IntVec3 curCell;
-            IEnumerable<IntVec3> targets = GenRadial.RadialCellsAround(base.Position, this.def.projectile.explosionRadius, true);
+            IEnumerable<IntVec3> targets = GenRadial.RadialCellsAround(center, this.def.projectile.explosionRadius, true);
             for (int i = 0; i < targets.Count(); i++)
             {
                 curCell = targets.ToArray<IntVec3>()[i];
@@ -52,6 +55,7 @@ namespace TorannMagic
                             {
                                 corpse = corpseThing as Corpse;
                                 Pawn undeadPawn = corpse.InnerPawn;
+                                if (projected && !CanRaiseCorpse(corpse)) { z++; continue; }
                                 CompRottable compRottable = corpse.GetComp<CompRottable>();
                                 float rotStage = 0;
                                 if (compRottable != null && compRottable.Stage == RotStage.Dessicated)
@@ -92,6 +96,8 @@ namespace TorannMagic
 
                                     if (!wasVampire)
                                     {                                        
+                                        var previousOwner = undeadPawn.health.hediffSet.hediffs
+                                            .Select(h => h.TryGetComp<HediffComp_Undead>()?.linkedPawn).FirstOrDefault(p => p != null);
                                         if (undeadPawn.Faction != pawn.Faction)
                                         {
                                             undeadPawn.SetFaction(pawn.Faction);
@@ -108,16 +114,15 @@ namespace TorannMagic
                                             //        priorities[item] = tmppriorities[item];
                                             //    }                                                    
                                             //}
-                                            ResurrectionUtility.TryResurrect(undeadPawn);
+                                            if (!ResurrectionUtility.TryResurrect(undeadPawn)) { z++; continue; }
                                         }
                                         raisedPawns++;
-                                        comp.supportedUndead.Add(undeadPawn);
                                         if (undeadPawn.kindDef != null && undeadPawn.kindDef.RaceProps != null && undeadPawn.kindDef.RaceProps.Animal)
                                         {
                                             RemoveHediffsAddictionsAndPermanentInjuries(undeadPawn);
                                             HealthUtility.AdjustSeverity(undeadPawn, TorannMagicDefOf.TM_UndeadAnimalHD, -4f);
-                                            HealthUtility.AdjustSeverity(undeadPawn, TorannMagicDefOf.TM_UndeadAnimalHD, .5f + ver.level);
-                                            undeadPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_UndeadAnimalHD).TryGetComp<HediffComp_Undead>().linkedPawn = pawn;
+                                            HealthUtility.AdjustSeverity(undeadPawn, TorannMagicDefOf.TM_UndeadAnimalHD, .5f + verVal);
+                                            BindServant(comp, previousOwner, undeadPawn, TorannMagicDefOf.TM_UndeadAnimalHD);
                                             HealthUtility.AdjustSeverity(undeadPawn, HediffDef.Named("TM_UndeadStageHD"), -2f);
                                             HealthUtility.AdjustSeverity(undeadPawn, HediffDef.Named("TM_UndeadStageHD"), rotStage);
 
@@ -190,13 +195,13 @@ namespace TorannMagic
                                             RemoveGenes(undeadPawn);
                                             TM_Action.TryCopyIdeo(pawn, undeadPawn);
                                             HealthUtility.AdjustSeverity(undeadPawn, TorannMagicDefOf.TM_UndeadHD, -4f);
-                                            HealthUtility.AdjustSeverity(undeadPawn, TorannMagicDefOf.TM_UndeadHD, .5f + ver.level);
-                                            undeadPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_UndeadHD).TryGetComp<HediffComp_Undead>().linkedPawn = pawn;
+                                            HealthUtility.AdjustSeverity(undeadPawn, TorannMagicDefOf.TM_UndeadHD, .5f + verVal);
+                                            BindServant(comp, previousOwner, undeadPawn, TorannMagicDefOf.TM_UndeadHD);
                                             HealthUtility.AdjustSeverity(undeadPawn, HediffDef.Named("TM_UndeadStageHD"), -2f);
                                             HealthUtility.AdjustSeverity(undeadPawn, HediffDef.Named("TM_UndeadStageHD"), rotStage);
                                             if (!undeadPawn.story.traits.HasTrait(TorannMagicDefOf.Undead))
                                             {
-                                                RedoSkills(undeadPawn, pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_LichHD")));
+                                                RedoSkills(undeadPawn, projected ? projectedLich : pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_LichHD")));
                                             }
                                             SetOutfitRestrictions(undeadPawn);
                                             if (undeadPawn.story.traits.HasTrait(TorannMagicDefOf.ChaosMage))
@@ -263,7 +268,7 @@ namespace TorannMagic
                                     RemoveHediffsAddictionsAndPermanentInjuries(undeadPawn);
                                     TM_MoteMaker.ThrowPoisonMote(curCell.ToVector3Shifted(), map, .6f);
                                 }
-                                if(corpseThing != pawn && !TM_Calc.IsNecromancer(undeadPawn) && TM_Calc.IsUndead(undeadPawn))
+                                if(corpseThing != pawn && corpseThing != launcher && !TM_Calc.IsNecromancer(undeadPawn) && TM_Calc.IsUndead(undeadPawn))
                                 {
                                     DisruptiveRemoveHediffs(undeadPawn);
                                     TM_MoteMaker.ThrowPoisonMote(curCell.ToVector3Shifted(), map, .6f);
@@ -273,7 +278,7 @@ namespace TorannMagic
                         z++;
                     }
                 }
-                if (raisedPawns > pwr.level + 1)
+                if (raisedPawns > pwrVal + 1)
                 {
                     i = targets.Count();
                 }
@@ -285,7 +290,7 @@ namespace TorannMagic
 
             //undeadPawn.story.Childhood = null;
             //undeadPawn.story.Adulthood = null;
-            float bonusSkill = 1f + (.1f * pwr.level);
+            float bonusSkill = 1f + (.1f * pwrVal);
             if(lichBonus)
             {
                 bonusSkill *= 1.2f;

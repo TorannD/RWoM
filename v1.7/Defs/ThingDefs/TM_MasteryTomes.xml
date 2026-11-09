@@ -1,0 +1,950 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Separate use effect: never inherit the legacy random class-book grant. -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>TM_MasterTomePriest</defName>
+    <label>master tome: priest</label>
+    <description>A rare tome for a priest who has met the requirements for mastery. Reading it completes the corresponding initiation and consumes the tome. Available from traders and quest rewards; it cannot be crafted.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>true</alwaysHaulable>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <tradeNeverStack>true</tradeNeverStack>
+    <useHitPoints>true</useHitPoints>
+    <rotatable>false</rotatable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <thingCategories><li>TM_SkillBooks</li></thingCategories>
+    <tradeTags><li>ArcaneSkillBooks</li></tradeTags>
+    <tradeability>All</tradeability>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <statBases>
+      <!-- Native standard quest rewards cap the special-item budget at 5500. -->
+      <MarketValue>5000</MarketValue>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <Mass>0.2</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>0.0001</DeteriorationRate>
+      <Beauty>10</Beauty>
+      <SellPriceFactor>0.8</SellPriceFactor>
+    </statBases>
+    <stackLimit>1</stackLimit>
+    <techLevel>Neolithic</techLevel>
+    <comps Inherit="False">
+      <li Class="CompProperties_Forbiddable" />
+      <li Class="CompProperties_Usable">
+        <useJob>UseArtifact</useJob>
+        <useLabel>Read {0_label}</useLabel>
+      </li>
+      <li Class="CompProperties_UseEffect">
+        <compClass>TorannMagic.ClassProgression.CompUseEffect_MasterTome</compClass>
+      </li>
+    </comps>
+    <graphicData>
+      <texPath>Books/priest</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+  <ThingDef ParentName="ResourceBase">
+    <defName>TM_MasterTomeNecromancer</defName>
+    <label>master tome: necromancer</label>
+    <description>A rare tome for a necromancer who has met the requirements for mastery. Reading it completes the corresponding initiation and consumes the tome. Available from traders and quest rewards; it cannot be crafted.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>true</alwaysHaulable>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <tradeNeverStack>true</tradeNeverStack>
+    <useHitPoints>true</useHitPoints>
+    <rotatable>false</rotatable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <thingCategories><li>TM_SkillBooks</li></thingCategories>
+    <tradeTags><li>ArcaneSkillBooks</li></tradeTags>
+    <tradeability>All</tradeability>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <statBases>
+      <!-- Native standard quest rewards cap the special-item budget at 5500. -->
+      <MarketValue>5000</MarketValue>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <Mass>0.2</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>0.0001</DeteriorationRate>
+      <Beauty>10</Beauty>
+      <SellPriceFactor>0.8</SellPriceFactor>
+    </statBases>
+    <stackLimit>1</stackLimit>
+    <techLevel>Neolithic</techLevel>
+    <comps Inherit="False">
+      <li Class="CompProperties_Forbiddable" />
+      <li Class="CompProperties_Usable">
+        <useJob>UseArtifact</useJob>
+        <useLabel>Read {0_label}</useLabel>
+      </li>
+      <li Class="CompProperties_UseEffect">
+        <compClass>TorannMagic.ClassProgression.CompUseEffect_MasterTome</compClass>
+      </li>
+    </comps>
+    <graphicData>
+      <texPath>Books/necromancer</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+  <ThingDef ParentName="ResourceBase">
+    <defName>TM_MasterTomeFire</defName>
+    <label>master tome: fire mage</label>
+    <description>A rare tome for a fire mage who has met the requirements for mastery. Reading it completes the corresponding initiation and consumes the tome. Available from traders and quest rewards; it cannot be crafted.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>true</alwaysHaulable>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <tradeNeverStack>true</tradeNeverStack>
+    <useHitPoints>true</useHitPoints>
+    <rotatable>false</rotatable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <thingCategories><li>TM_SkillBooks</li></thingCategories>
+    <tradeTags><li>ArcaneSkillBooks</li></tradeTags>
+    <tradeability>All</tradeability>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <statBases>
+      <!-- Native standard quest rewards cap the special-item budget at 5500. -->
+      <MarketValue>5000</MarketValue>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <Mass>0.2</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>0.0001</DeteriorationRate>
+      <Beauty>10</Beauty>
+      <SellPriceFactor>0.8</SellPriceFactor>
+    </statBases>
+    <stackLimit>1</stackLimit>
+    <techLevel>Neolithic</techLevel>
+    <comps Inherit="False">
+      <li Class="CompProperties_Forbiddable" />
+      <li Class="CompProperties_Usable">
+        <useJob>UseArtifact</useJob>
+        <useLabel>Read {0_label}</useLabel>
+      </li>
+      <li Class="CompProperties_UseEffect">
+        <compClass>TorannMagic.ClassProgression.CompUseEffect_MasterTome</compClass>
+      </li>
+    </comps>
+    <graphicData>
+      <texPath>Books/fire</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+  <ThingDef ParentName="ResourceBase">
+    <defName>TM_MasterTomeIce</defName>
+    <label>master tome: ice mage</label>
+    <description>A rare tome for an ice mage who has met the requirements for mastery. Reading it completes the corresponding initiation and consumes the tome. Available from traders and quest rewards; it cannot be crafted.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>true</alwaysHaulable>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <tradeNeverStack>true</tradeNeverStack>
+    <useHitPoints>true</useHitPoints>
+    <rotatable>false</rotatable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <thingCategories><li>TM_SkillBooks</li></thingCategories>
+    <tradeTags><li>ArcaneSkillBooks</li></tradeTags>
+    <tradeability>All</tradeability>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <statBases>
+      <!-- Native standard quest rewards cap the special-item budget at 5500. -->
+      <MarketValue>5000</MarketValue>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <Mass>0.2</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>0.0001</DeteriorationRate>
+      <Beauty>10</Beauty>
+      <SellPriceFactor>0.8</SellPriceFactor>
+    </statBases>
+    <stackLimit>1</stackLimit>
+    <techLevel>Neolithic</techLevel>
+    <comps Inherit="False">
+      <li Class="CompProperties_Forbiddable" />
+      <li Class="CompProperties_Usable">
+        <useJob>UseArtifact</useJob>
+        <useLabel>Read {0_label}</useLabel>
+      </li>
+      <li Class="CompProperties_UseEffect">
+        <compClass>TorannMagic.ClassProgression.CompUseEffect_MasterTome</compClass>
+      </li>
+    </comps>
+    <graphicData>
+      <texPath>Books/ice</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+  <ThingDef ParentName="ResourceBase">
+    <defName>TM_MasterTomeLightning</defName>
+    <label>master tome: lightning mage</label>
+    <description>A rare tome for a lightning mage who has met the requirements for mastery. Reading it completes the corresponding initiation and consumes the tome. Available from traders and quest rewards; it cannot be crafted.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>true</alwaysHaulable>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <tradeNeverStack>true</tradeNeverStack>
+    <useHitPoints>true</useHitPoints>
+    <rotatable>false</rotatable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <thingCategories><li>TM_SkillBooks</li></thingCategories>
+    <tradeTags><li>ArcaneSkillBooks</li></tradeTags>
+    <tradeability>All</tradeability>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <statBases>
+      <!-- Native standard quest rewards cap the special-item budget at 5500. -->
+      <MarketValue>5000</MarketValue>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <Mass>0.2</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>0.0001</DeteriorationRate>
+      <Beauty>10</Beauty>
+      <SellPriceFactor>0.8</SellPriceFactor>
+    </statBases>
+    <stackLimit>1</stackLimit>
+    <techLevel>Neolithic</techLevel>
+    <comps Inherit="False">
+      <li Class="CompProperties_Forbiddable" />
+      <li Class="CompProperties_Usable">
+        <useJob>UseArtifact</useJob>
+        <useLabel>Read {0_label}</useLabel>
+      </li>
+      <li Class="CompProperties_UseEffect">
+        <compClass>TorannMagic.ClassProgression.CompUseEffect_MasterTome</compClass>
+      </li>
+    </comps>
+    <graphicData>
+      <texPath>Books/lightning</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+  <ThingDef ParentName="ResourceBase">
+    <defName>TM_MasterTomeArcanist</defName>
+    <label>master tome: arcanist</label>
+    <description>A rare tome for an arcanist who has met the requirements for mastery. Reading it completes the corresponding initiation and consumes the tome. Available from traders and quest rewards; it cannot be crafted.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>true</alwaysHaulable>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <tradeNeverStack>true</tradeNeverStack>
+    <useHitPoints>true</useHitPoints>
+    <rotatable>false</rotatable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <thingCategories><li>TM_SkillBooks</li></thingCategories>
+    <tradeTags><li>ArcaneSkillBooks</li></tradeTags>
+    <tradeability>All</tradeability>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <statBases>
+      <!-- Native standard quest rewards cap the special-item budget at 5500. -->
+      <MarketValue>5000</MarketValue>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <Mass>0.2</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>0.0001</DeteriorationRate>
+      <Beauty>10</Beauty>
+      <SellPriceFactor>0.8</SellPriceFactor>
+    </statBases>
+    <stackLimit>1</stackLimit>
+    <techLevel>Neolithic</techLevel>
+    <comps Inherit="False">
+      <li Class="CompProperties_Forbiddable" />
+      <li Class="CompProperties_Usable">
+        <useJob>UseArtifact</useJob>
+        <useLabel>Read {0_label}</useLabel>
+      </li>
+      <li Class="CompProperties_UseEffect">
+        <compClass>TorannMagic.ClassProgression.CompUseEffect_MasterTome</compClass>
+      </li>
+    </comps>
+    <graphicData>
+      <texPath>Books/arcane</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+  <ThingDef ParentName="ResourceBase">
+    <defName>TM_MasterTomePaladin</defName>
+    <label>master tome: paladin</label>
+    <description>A rare tome for a paladin who has met the requirements for mastery. Reading it completes the corresponding initiation and consumes the tome. Available from traders and quest rewards; it cannot be crafted.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>true</alwaysHaulable>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <tradeNeverStack>true</tradeNeverStack>
+    <useHitPoints>true</useHitPoints>
+    <rotatable>false</rotatable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <thingCategories><li>TM_SkillBooks</li></thingCategories>
+    <tradeTags><li>ArcaneSkillBooks</li></tradeTags>
+    <tradeability>All</tradeability>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <statBases>
+      <!-- Native standard quest rewards cap the special-item budget at 5500. -->
+      <MarketValue>5000</MarketValue>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <Mass>0.2</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>0.0001</DeteriorationRate>
+      <Beauty>10</Beauty>
+      <SellPriceFactor>0.8</SellPriceFactor>
+    </statBases>
+    <stackLimit>1</stackLimit>
+    <techLevel>Neolithic</techLevel>
+    <comps Inherit="False">
+      <li Class="CompProperties_Forbiddable" />
+      <li Class="CompProperties_Usable">
+        <useJob>UseArtifact</useJob>
+        <useLabel>Read {0_label}</useLabel>
+      </li>
+      <li Class="CompProperties_UseEffect">
+        <compClass>TorannMagic.ClassProgression.CompUseEffect_MasterTome</compClass>
+      </li>
+    </comps>
+    <graphicData>
+      <texPath>Books/paladin</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+  <ThingDef ParentName="ResourceBase">
+    <defName>TM_MasterTomeSummoner</defName>
+    <label>master tome: summoner</label>
+    <description>A rare tome for a summoner who has met the requirements for mastery. Reading it completes the corresponding initiation and consumes the tome. Available from traders and quest rewards; it cannot be crafted.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>true</alwaysHaulable>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <tradeNeverStack>true</tradeNeverStack>
+    <useHitPoints>true</useHitPoints>
+    <rotatable>false</rotatable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <thingCategories><li>TM_SkillBooks</li></thingCategories>
+    <tradeTags><li>ArcaneSkillBooks</li></tradeTags>
+    <tradeability>All</tradeability>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <statBases>
+      <!-- Native standard quest rewards cap the special-item budget at 5500. -->
+      <MarketValue>5000</MarketValue>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <Mass>0.2</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>0.0001</DeteriorationRate>
+      <Beauty>10</Beauty>
+      <SellPriceFactor>0.8</SellPriceFactor>
+    </statBases>
+    <stackLimit>1</stackLimit>
+    <techLevel>Neolithic</techLevel>
+    <comps Inherit="False">
+      <li Class="CompProperties_Forbiddable" />
+      <li Class="CompProperties_Usable">
+        <useJob>UseArtifact</useJob>
+        <useLabel>Read {0_label}</useLabel>
+      </li>
+      <li Class="CompProperties_UseEffect">
+        <compClass>TorannMagic.ClassProgression.CompUseEffect_MasterTome</compClass>
+      </li>
+    </comps>
+    <graphicData>
+      <texPath>Books/summoner</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+  <ThingDef ParentName="ResourceBase">
+    <defName>TM_MasterTomeDruid</defName>
+    <label>master tome: druid</label>
+    <description>A rare tome for a druid who has met the requirements for mastery. Reading it completes the corresponding initiation and consumes the tome. Available from traders and quest rewards; it cannot be crafted.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>true</alwaysHaulable>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <tradeNeverStack>true</tradeNeverStack>
+    <useHitPoints>true</useHitPoints>
+    <rotatable>false</rotatable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <thingCategories><li>TM_SkillBooks</li></thingCategories>
+    <tradeTags><li>ArcaneSkillBooks</li></tradeTags>
+    <tradeability>All</tradeability>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <statBases>
+      <!-- Native standard quest rewards cap the special-item budget at 5500. -->
+      <MarketValue>5000</MarketValue>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <Mass>0.2</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>0.0001</DeteriorationRate>
+      <Beauty>10</Beauty>
+      <SellPriceFactor>0.8</SellPriceFactor>
+    </statBases>
+    <stackLimit>1</stackLimit>
+    <techLevel>Neolithic</techLevel>
+    <comps Inherit="False">
+      <li Class="CompProperties_Forbiddable" />
+      <li Class="CompProperties_Usable">
+        <useJob>UseArtifact</useJob>
+        <useLabel>Read {0_label}</useLabel>
+      </li>
+      <li Class="CompProperties_UseEffect">
+        <compClass>TorannMagic.ClassProgression.CompUseEffect_MasterTome</compClass>
+      </li>
+    </comps>
+    <graphicData>
+      <texPath>Books/druid</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+  <ThingDef ParentName="ResourceBase">
+    <defName>TM_MasterTomeGeomancer</defName>
+    <label>master tome: geomancer</label>
+    <description>A rare tome for a geomancer who has met the requirements for mastery. Reading it completes the corresponding initiation and consumes the tome. Available from traders and quest rewards; it cannot be crafted.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>true</alwaysHaulable>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <tradeNeverStack>true</tradeNeverStack>
+    <useHitPoints>true</useHitPoints>
+    <rotatable>false</rotatable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <thingCategories><li>TM_SkillBooks</li></thingCategories>
+    <tradeTags><li>ArcaneSkillBooks</li></tradeTags>
+    <tradeability>All</tradeability>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <statBases>
+      <!-- Native standard quest rewards cap the special-item budget at 5500. -->
+      <MarketValue>5000</MarketValue>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <Mass>0.2</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>0.0001</DeteriorationRate>
+      <Beauty>10</Beauty>
+      <SellPriceFactor>0.8</SellPriceFactor>
+    </statBases>
+    <stackLimit>1</stackLimit>
+    <techLevel>Neolithic</techLevel>
+    <comps Inherit="False">
+      <li Class="CompProperties_Forbiddable" />
+      <li Class="CompProperties_Usable">
+        <useJob>UseArtifact</useJob>
+        <useLabel>Read {0_label}</useLabel>
+      </li>
+      <li Class="CompProperties_UseEffect">
+        <compClass>TorannMagic.ClassProgression.CompUseEffect_MasterTome</compClass>
+      </li>
+    </comps>
+    <graphicData>
+      <texPath>Books/earth</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+  <ThingDef ParentName="ResourceBase">
+    <defName>TM_MasterTomeBard</defName>
+    <label>master tome: bard</label>
+    <description>A rare tome for a bard who has met the requirements for mastery. Reading it completes the corresponding initiation and consumes the tome. Available from traders and quest rewards; it cannot be crafted.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>true</alwaysHaulable>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <tradeNeverStack>true</tradeNeverStack>
+    <useHitPoints>true</useHitPoints>
+    <rotatable>false</rotatable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <thingCategories><li>TM_SkillBooks</li></thingCategories>
+    <tradeTags><li>ArcaneSkillBooks</li></tradeTags>
+    <tradeability>All</tradeability>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <statBases>
+      <!-- Native standard quest rewards cap the special-item budget at 5500. -->
+      <MarketValue>5000</MarketValue>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <Mass>0.2</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>0.0001</DeteriorationRate>
+      <Beauty>10</Beauty>
+      <SellPriceFactor>0.8</SellPriceFactor>
+    </statBases>
+    <stackLimit>1</stackLimit>
+    <techLevel>Neolithic</techLevel>
+    <comps Inherit="False">
+      <li Class="CompProperties_Forbiddable" />
+      <li Class="CompProperties_Usable">
+        <useJob>UseArtifact</useJob>
+        <useLabel>Read {0_label}</useLabel>
+      </li>
+      <li Class="CompProperties_UseEffect">
+        <compClass>TorannMagic.ClassProgression.CompUseEffect_MasterTome</compClass>
+      </li>
+    </comps>
+    <graphicData>
+      <texPath>Books/bard</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+  <ThingDef ParentName="ResourceBase">
+    <defName>TM_MasterTomeWarlock</defName>
+    <label>master tome: warlock</label>
+    <description>A rare tome for a warlock who has met the requirements for mastery. Reading it completes the corresponding initiation and consumes the tome. Available from traders and quest rewards; it cannot be crafted.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>true</alwaysHaulable>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <tradeNeverStack>true</tradeNeverStack>
+    <useHitPoints>true</useHitPoints>
+    <rotatable>false</rotatable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <thingCategories><li>TM_SkillBooks</li></thingCategories>
+    <tradeTags><li>ArcaneSkillBooks</li></tradeTags>
+    <tradeability>All</tradeability>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <statBases>
+      <!-- Native standard quest rewards cap the special-item budget at 5500. -->
+      <MarketValue>5000</MarketValue>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <Mass>0.2</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>0.0001</DeteriorationRate>
+      <Beauty>10</Beauty>
+      <SellPriceFactor>0.8</SellPriceFactor>
+    </statBases>
+    <stackLimit>1</stackLimit>
+    <techLevel>Neolithic</techLevel>
+    <comps Inherit="False">
+      <li Class="CompProperties_Forbiddable" />
+      <li Class="CompProperties_Usable">
+        <useJob>UseArtifact</useJob>
+        <useLabel>Read {0_label}</useLabel>
+      </li>
+      <li Class="CompProperties_UseEffect">
+        <compClass>TorannMagic.ClassProgression.CompUseEffect_MasterTome</compClass>
+      </li>
+    </comps>
+    <graphicData>
+      <texPath>Books/warlock</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+  <ThingDef ParentName="ResourceBase">
+    <defName>TM_MasterTomeSuccubus</defName>
+    <label>master tome: succubus</label>
+    <description>A rare tome for a succubus who has met the requirements for mastery. Reading it completes the corresponding initiation and consumes the tome. Available from traders and quest rewards; it cannot be crafted.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>true</alwaysHaulable>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <tradeNeverStack>true</tradeNeverStack>
+    <useHitPoints>true</useHitPoints>
+    <rotatable>false</rotatable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <thingCategories><li>TM_SkillBooks</li></thingCategories>
+    <tradeTags><li>ArcaneSkillBooks</li></tradeTags>
+    <tradeability>All</tradeability>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <statBases>
+      <!-- Native standard quest rewards cap the special-item budget at 5500. -->
+      <MarketValue>5000</MarketValue>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <Mass>0.2</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>0.0001</DeteriorationRate>
+      <Beauty>10</Beauty>
+      <SellPriceFactor>0.8</SellPriceFactor>
+    </statBases>
+    <stackLimit>1</stackLimit>
+    <techLevel>Neolithic</techLevel>
+    <comps Inherit="False">
+      <li Class="CompProperties_Forbiddable" />
+      <li Class="CompProperties_Usable">
+        <useJob>UseArtifact</useJob>
+        <useLabel>Read {0_label}</useLabel>
+      </li>
+      <li Class="CompProperties_UseEffect">
+        <compClass>TorannMagic.ClassProgression.CompUseEffect_MasterTome</compClass>
+      </li>
+    </comps>
+    <graphicData>
+      <texPath>Books/warlock</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+  <ThingDef ParentName="ResourceBase">
+    <defName>TM_MasterTomeTechnomancer</defName>
+    <label>master tome: technomancer</label>
+    <description>A rare tome for a technomancer who has met the requirements for mastery. Reading it completes the corresponding initiation and consumes the tome. Available from traders and quest rewards; it cannot be crafted.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>true</alwaysHaulable>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <tradeNeverStack>true</tradeNeverStack>
+    <useHitPoints>true</useHitPoints>
+    <rotatable>false</rotatable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <thingCategories><li>TM_SkillBooks</li></thingCategories>
+    <tradeTags><li>ArcaneSkillBooks</li></tradeTags>
+    <tradeability>All</tradeability>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <statBases>
+      <!-- Native standard quest rewards cap the special-item budget at 5500. -->
+      <MarketValue>5000</MarketValue>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <Mass>0.2</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>0.0001</DeteriorationRate>
+      <Beauty>10</Beauty>
+      <SellPriceFactor>0.8</SellPriceFactor>
+    </statBases>
+    <stackLimit>1</stackLimit>
+    <techLevel>Neolithic</techLevel>
+    <comps Inherit="False">
+      <li Class="CompProperties_Forbiddable" />
+      <li Class="CompProperties_Usable">
+        <useJob>UseArtifact</useJob>
+        <useLabel>Read {0_label}</useLabel>
+      </li>
+      <li Class="CompProperties_UseEffect">
+        <compClass>TorannMagic.ClassProgression.CompUseEffect_MasterTome</compClass>
+      </li>
+    </comps>
+    <graphicData>
+      <texPath>Books/technomancer</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+  <ThingDef ParentName="ResourceBase">
+    <defName>TM_MasterTomeBloodMage</defName>
+    <label>master tome: bloodmage</label>
+    <description>A rare tome for a bloodmage who has met the requirements for mastery. Reading it completes the corresponding initiation and consumes the tome. Available from traders and quest rewards; it cannot be crafted.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>true</alwaysHaulable>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <tradeNeverStack>true</tradeNeverStack>
+    <useHitPoints>true</useHitPoints>
+    <rotatable>false</rotatable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <thingCategories><li>TM_SkillBooks</li></thingCategories>
+    <tradeTags><li>ArcaneSkillBooks</li></tradeTags>
+    <tradeability>All</tradeability>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <statBases>
+      <!-- Native standard quest rewards cap the special-item budget at 5500. -->
+      <MarketValue>5000</MarketValue>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <Mass>0.2</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>0.0001</DeteriorationRate>
+      <Beauty>10</Beauty>
+      <SellPriceFactor>0.8</SellPriceFactor>
+    </statBases>
+    <stackLimit>1</stackLimit>
+    <techLevel>Neolithic</techLevel>
+    <comps Inherit="False">
+      <li Class="CompProperties_Forbiddable" />
+      <li Class="CompProperties_Usable">
+        <useJob>UseArtifact</useJob>
+        <useLabel>Read {0_label}</useLabel>
+      </li>
+      <li Class="CompProperties_UseEffect">
+        <compClass>TorannMagic.ClassProgression.CompUseEffect_MasterTome</compClass>
+      </li>
+    </comps>
+    <graphicData>
+      <texPath>Books/bloodmage</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+  <ThingDef ParentName="ResourceBase">
+    <defName>TM_MasterTomeEnchanter</defName>
+    <label>master tome: enchanter</label>
+    <description>A rare tome for a enchanter who has met the requirements for mastery. Reading it completes the corresponding initiation and consumes the tome. Available from traders and quest rewards; it cannot be crafted.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>true</alwaysHaulable>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <tradeNeverStack>true</tradeNeverStack>
+    <useHitPoints>true</useHitPoints>
+    <rotatable>false</rotatable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <thingCategories><li>TM_SkillBooks</li></thingCategories>
+    <tradeTags><li>ArcaneSkillBooks</li></tradeTags>
+    <tradeability>All</tradeability>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <statBases>
+      <!-- Native standard quest rewards cap the special-item budget at 5500. -->
+      <MarketValue>5000</MarketValue>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <Mass>0.2</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>0.0001</DeteriorationRate>
+      <Beauty>10</Beauty>
+      <SellPriceFactor>0.8</SellPriceFactor>
+    </statBases>
+    <stackLimit>1</stackLimit>
+    <techLevel>Neolithic</techLevel>
+    <comps Inherit="False">
+      <li Class="CompProperties_Forbiddable" />
+      <li Class="CompProperties_Usable">
+        <useJob>UseArtifact</useJob>
+        <useLabel>Read {0_label}</useLabel>
+      </li>
+      <li Class="CompProperties_UseEffect">
+        <compClass>TorannMagic.ClassProgression.CompUseEffect_MasterTome</compClass>
+      </li>
+    </comps>
+    <graphicData>
+      <texPath>Books/enchanter</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+  <ThingDef ParentName="ResourceBase">
+    <defName>TM_MasterTomeChronomancer</defName>
+    <label>master tome: chronomancer</label>
+    <description>A rare tome for a chronomancer who has met the requirements for mastery. Reading it completes the corresponding initiation and consumes the tome. Available from traders and quest rewards; it cannot be crafted.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>true</alwaysHaulable>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <tradeNeverStack>true</tradeNeverStack>
+    <useHitPoints>true</useHitPoints>
+    <rotatable>false</rotatable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <thingCategories><li>TM_SkillBooks</li></thingCategories>
+    <tradeTags><li>ArcaneSkillBooks</li></tradeTags>
+    <tradeability>All</tradeability>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <statBases>
+      <!-- Native standard quest rewards cap the special-item budget at 5500. -->
+      <MarketValue>5000</MarketValue>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <Mass>0.2</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>0.0001</DeteriorationRate>
+      <Beauty>10</Beauty>
+      <SellPriceFactor>0.8</SellPriceFactor>
+    </statBases>
+    <stackLimit>1</stackLimit>
+    <techLevel>Neolithic</techLevel>
+    <comps Inherit="False">
+      <li Class="CompProperties_Forbiddable" />
+      <li Class="CompProperties_Usable">
+        <useJob>UseArtifact</useJob>
+        <useLabel>Read {0_label}</useLabel>
+      </li>
+      <li Class="CompProperties_UseEffect">
+        <compClass>TorannMagic.ClassProgression.CompUseEffect_MasterTome</compClass>
+      </li>
+    </comps>
+    <graphicData>
+      <texPath>Books/chronomancer</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+  <ThingDef ParentName="ResourceBase">
+    <defName>TM_MasterTomeBrightmage</defName>
+    <label>master tome: brightmage</label>
+    <description>A rare tome for a brightmage who has met the requirements for mastery. Reading it completes the corresponding initiation and consumes the tome. Available from traders and quest rewards; it cannot be crafted.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>true</alwaysHaulable>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <tradeNeverStack>true</tradeNeverStack>
+    <useHitPoints>true</useHitPoints>
+    <rotatable>false</rotatable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <thingCategories><li>TM_SkillBooks</li></thingCategories>
+    <tradeTags><li>ArcaneSkillBooks</li></tradeTags>
+    <tradeability>All</tradeability>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <statBases>
+      <!-- Native standard quest rewards cap the special-item budget at 5500. -->
+      <MarketValue>5000</MarketValue>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <Mass>0.2</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>0.0001</DeteriorationRate>
+      <Beauty>10</Beauty>
+      <SellPriceFactor>0.8</SellPriceFactor>
+    </statBases>
+    <stackLimit>1</stackLimit>
+    <techLevel>Neolithic</techLevel>
+    <comps Inherit="False">
+      <li Class="CompProperties_Forbiddable" />
+      <li Class="CompProperties_Usable">
+        <useJob>UseArtifact</useJob>
+        <useLabel>Read {0_label}</useLabel>
+      </li>
+      <li Class="CompProperties_UseEffect">
+        <compClass>TorannMagic.ClassProgression.CompUseEffect_MasterTome</compClass>
+      </li>
+    </comps>
+    <graphicData>
+      <texPath>Books/brightmage</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+  <ThingDef ParentName="ResourceBase">
+    <defName>TM_MasterTomeShaman</defName>
+    <label>master tome: shaman</label>
+    <description>A rare tome for a shaman who has met the requirements for mastery. Reading it completes the corresponding initiation and consumes the tome. Available from traders and quest rewards; it cannot be crafted.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>true</alwaysHaulable>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <tradeNeverStack>true</tradeNeverStack>
+    <useHitPoints>true</useHitPoints>
+    <rotatable>false</rotatable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <thingCategories><li>TM_SkillBooks</li></thingCategories>
+    <tradeTags><li>ArcaneSkillBooks</li></tradeTags>
+    <tradeability>All</tradeability>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <statBases>
+      <!-- Native standard quest rewards cap the special-item budget at 5500. -->
+      <MarketValue>5000</MarketValue>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <Mass>0.2</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>0.0001</DeteriorationRate>
+      <Beauty>10</Beauty>
+      <SellPriceFactor>0.8</SellPriceFactor>
+    </statBases>
+    <stackLimit>1</stackLimit>
+    <techLevel>Neolithic</techLevel>
+    <comps Inherit="False">
+      <li Class="CompProperties_Forbiddable" />
+      <li Class="CompProperties_Usable">
+        <useJob>UseArtifact</useJob>
+        <useLabel>Read {0_label}</useLabel>
+      </li>
+      <li Class="CompProperties_UseEffect">
+        <compClass>TorannMagic.ClassProgression.CompUseEffect_MasterTome</compClass>
+      </li>
+    </comps>
+    <graphicData>
+      <texPath>Books/shaman2</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+  <ThingDef ParentName="ResourceBase">
+    <defName>TM_MasterTomeGolemancer</defName>
+    <label>master tome: golemancer</label>
+    <description>A rare tome for a golemancer who has met the requirements for mastery. Reading it completes the corresponding initiation and consumes the tome. Available from traders and quest rewards; it cannot be crafted.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>true</alwaysHaulable>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <tradeNeverStack>true</tradeNeverStack>
+    <useHitPoints>true</useHitPoints>
+    <rotatable>false</rotatable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <thingCategories><li>TM_SkillBooks</li></thingCategories>
+    <tradeTags><li>ArcaneSkillBooks</li></tradeTags>
+    <tradeability>All</tradeability>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <statBases>
+      <!-- Native standard quest rewards cap the special-item budget at 5500. -->
+      <MarketValue>5000</MarketValue>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <Mass>0.2</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>0.0001</DeteriorationRate>
+      <Beauty>10</Beauty>
+      <SellPriceFactor>0.8</SellPriceFactor>
+    </statBases>
+    <stackLimit>1</stackLimit>
+    <techLevel>Neolithic</techLevel>
+    <comps Inherit="False">
+      <li Class="CompProperties_Forbiddable" />
+      <li Class="CompProperties_Usable">
+        <useJob>UseArtifact</useJob>
+        <useLabel>Read {0_label}</useLabel>
+      </li>
+      <li Class="CompProperties_UseEffect">
+        <compClass>TorannMagic.ClassProgression.CompUseEffect_MasterTome</compClass>
+      </li>
+    </comps>
+    <graphicData>
+      <texPath>Books/golemancer</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+  <ThingDef ParentName="ResourceBase">
+    <defName>TM_MasterTomeChaos</defName>
+    <label>master tome: chaos mage</label>
+    <description>A rare tome for a chaos mage who has met the requirements for mastery. Reading it completes the corresponding initiation and consumes the tome. Available from traders and quest rewards; it cannot be crafted.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>true</alwaysHaulable>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <tradeNeverStack>true</tradeNeverStack>
+    <useHitPoints>true</useHitPoints>
+    <rotatable>false</rotatable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <thingCategories><li>TM_SkillBooks</li></thingCategories>
+    <tradeTags><li>ArcaneSkillBooks</li></tradeTags>
+    <tradeability>All</tradeability>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <statBases>
+      <!-- Native standard quest rewards cap the special-item budget at 5500. -->
+      <MarketValue>5000</MarketValue>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <Mass>0.2</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>0.0001</DeteriorationRate>
+      <Beauty>10</Beauty>
+      <SellPriceFactor>0.8</SellPriceFactor>
+    </statBases>
+    <stackLimit>1</stackLimit>
+    <techLevel>Neolithic</techLevel>
+    <comps Inherit="False">
+      <li Class="CompProperties_Forbiddable" />
+      <li Class="CompProperties_Usable">
+        <useJob>UseArtifact</useJob>
+        <useLabel>Read {0_label}</useLabel>
+      </li>
+      <li Class="CompProperties_UseEffect">
+        <compClass>TorannMagic.ClassProgression.CompUseEffect_MasterTome</compClass>
+      </li>
+    </comps>
+    <graphicData>
+      <texPath>Books/chaos</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+</Defs>
+

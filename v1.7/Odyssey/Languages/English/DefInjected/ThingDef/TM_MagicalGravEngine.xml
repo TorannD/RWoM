@@ -1,0 +1,6 @@
+<LanguageData>
+  <TM_MagicalGravEngine.label>magical grav engine</TM_MagicalGravEngine.label>
+  <TM_MagicalGravEngine.description>A buildable arcane grav engine with the lifting capacity of a standard grav engine. Uses only magical grav field extenders and supports ordinary gravship equipment and magical thrusters. Stores 100 magofuel and 500 mana, starts empty, and supplies both through mana beacons. Mages can charge its mana reserve; magofuel can also be converted into mana. Does not consume an additional launch fee. Colonists can approach the core to receive return marks. Maintaining each mark costs 1 magofuel per day. Returning costs 10 magofuel per pawn; an entire caravan can return with its animals, prisoners and cargo.</TM_MagicalGravEngine.description>
+  <TM_MagicalGravExtender.label>magical grav field extender</TM_MagicalGravExtender.label>
+  <TM_MagicalGravExtender.description>Extends the field and substructure support of a magical grav engine. Uses the support, range and extender limit of the installed gravship rules. Cannot link to ordinary grav engines.</TM_MagicalGravExtender.description>
+</LanguageData>

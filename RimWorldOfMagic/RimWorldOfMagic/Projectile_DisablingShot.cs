@@ -10,7 +10,7 @@ using Verse.AI.Group;
 
 namespace TorannMagic
 {
-    public class Projectile_DisablingShot : Projectile_AbilityBase
+    public class Projectile_DisablingShot : Projectile_SniperRound
     {
 
         BodyPartRecord vitalPart = null;
@@ -18,59 +18,33 @@ namespace TorannMagic
 
         protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
-            Map map = base.Map;
-            base.Impact(hitThing);
-            ThingDef def = this.def;
-
-            Pawn pawn = this.launcher as Pawn;
-            Pawn victim = hitThing as Pawn;
-            try
+            var body = launcher as Pawn;
+            base.Impact(hitThing,blockedByShield);
+            if (blockedByShield || !(hitThing is Pawn victim) || victim.Dead || (!shotBound && body==null)) return;
+            var comp = body?.GetCompAbilityUserMight();
+            if (!shotBound && comp?.MightData == null) return;
+            verVal = shotBound ? versatility : TM_Calc.GetSkillVersatilityLevel(body,TorannMagicDefOf.TM_DisablingShot);
+            int globalStrength = shotBound ? strength : comp.MightData.MightPowerSkill_global_strength.FirstOrDefault(x=>x.label=="TM_global_strength_pwr")?.level ?? 0;
+            if (Rand.Chance(shotBound ? accuracy : body.GetStatValue(StatDefOf.ShootingAccuracyPawn)))
             {
-                CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
-                //MightPowerSkill ver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_DisablingShot.FirstOrDefault((MightPowerSkill x) => x.label == "TM_DisablingShot_ver");
-                //verVal = TM_Calc.GetMightSkillLevel(pawn, comp.MightData.MightPowerSkill_DisablingShot, "TM_DisablingShot", "_ver", true);
-                verVal = TM_Calc.GetSkillVersatilityLevel(pawn, TorannMagicDefOf.TM_DisablingShot);
-                MightPowerSkill str = comp.MightData.MightPowerSkill_global_strength.FirstOrDefault((MightPowerSkill x) => x.label == "TM_global_strength_pwr");
-                
-                //verVal = ver.level;
-                //if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
-                //{
-                //    MightPowerSkill mver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
-                //    verVal = mver.level;
-                //}
-                //if (ModOptions.Settings.Instance.AICasting && !pawn.IsColonist)
-                //{
-                //    verVal = 3;
-                //}
-                if (victim != null && !victim.Dead && Rand.Chance(this.launcher.GetStatValue(StatDefOf.ShootingAccuracyPawn, true)))
+                int dmg = (this.def.projectile.GetDamageAmount(1, null));
+                if (victim.RaceProps.IsFlesh)
                 {
-                    int dmg = (this.def.projectile.GetDamageAmount(1, null));
-                    if (victim.RaceProps.IsFlesh)
+                    System.Random rnd = new System.Random();
+                    if (verVal > 0 && victim.needs?.food != null)
                     {
-                        System.Random rnd = new System.Random();
-                        if (verVal > 0 && victim.needs.food != null)
-                        {
-                            int randomTranqSev = GenMath.RoundRandom(rnd.Next((int)(verVal * .5f * str.level), (int)((verVal + .5f * str.level) * 3)));
-                            LegShot(victim, randomTranqSev, TMDamageDefOf.DamageDefOf.TM_Tranquilizer);
-                        }
-                        else
-                        {
-                            LegShot(victim, dmg, TMDamageDefOf.DamageDefOf.TM_DisablingShot);
-                        }
+                        int randomTranqSev = GenMath.RoundRandom(rnd.Next((int)(verVal * .5f * globalStrength), (int)((verVal + .5f * globalStrength) * 3)));
+                        LegShot(victim, randomTranqSev, TMDamageDefOf.DamageDefOf.TM_Tranquilizer);
                     }
                     else
                     {
-                        damageEntities(victim, null, dmg, this.def.projectile.damageDef);
+                        LegShot(victim, dmg, TMDamageDefOf.DamageDefOf.TM_DisablingShot);
                     }
                 }
                 else
                 {
-                    Log.Message("No valid target for Disabling Shot");
+                    damageEntities(victim, null, dmg, this.def.projectile.damageDef);
                 }
-            }
-            catch(NullReferenceException ex)
-            {
-
             }
         }
 
@@ -95,7 +69,7 @@ namespace TorannMagic
                     }
                     else
                     {
-                        this.damageEntities(victim, vitalPart, dmg, null);
+                        this.damageEntities(victim, vitalPart, dmg, dmgType);
                     }
                 }
             }
@@ -106,19 +80,15 @@ namespace TorannMagic
             DamageInfo dinfo;
             if (victim != null && hitPart != null)
             {
-                dinfo = new DamageInfo(type, amt, 0, (float)-1, this.launcher as Pawn, hitPart, null, DamageInfo.SourceCategory.ThingOrUnknown);             
+                dinfo = new DamageInfo(type, amt, 0, (float)-1, EffectOwner, hitPart, null, DamageInfo.SourceCategory.ThingOrUnknown);
             }
             else
             {
-                dinfo = new DamageInfo(type, amt, 0, (float)-1, this.launcher as Pawn, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
+                dinfo = new DamageInfo(type, amt, 0, (float)-1, EffectOwner, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
             }
             victim.TakeDamage(dinfo);
 
-            if (!victim.IsColonist && !victim.IsPrisoner && !victim.Faction.HostileTo(this.launcher.Faction) && victim.Faction != null && victim.Faction != this.launcher.Faction)
-            {
-                Faction faction = victim.Faction;
-                faction.TryAffectGoodwillWith(this.launcher.Faction, -40, true, false, TorannMagicDefOf.TM_OffensiveMagic, null);
-            }           
+            ApplyFriendlyFireGoodwill(victim,-40);
 
         }
     }

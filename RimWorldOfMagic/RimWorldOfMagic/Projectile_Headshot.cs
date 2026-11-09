@@ -10,71 +10,43 @@ using Verse.AI.Group;
 
 namespace TorannMagic
 {
-    public class Projectile_Headshot : Projectile_AbilityBase
+    public class Projectile_Headshot : Projectile_SniperRound
     {
 
         public float destroyParentPartPctTo = 0.50f;
         Pawn pawn;
 
-        private static int pwrVal;
-        private int verVal;
-        private float armorPen = 0f;
+        protected override void CaptureWeaponDamage(Pawn body) => shotDamage = WeaponDamage(skillOwner,PhysicalWeaponDamage(body),powerRank);
 
         protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
-            Map map = base.Map;
-            base.Impact(hitThing);
-            ThingDef def = this.def;
-            pawn = this.launcher as Pawn;
-            Pawn victim = hitThing as Pawn;
-            
-            try
+            pawn = launcher as Pawn;
+            base.Impact(hitThing,blockedByShield);
+            if (blockedByShield || (!shotBound && pawn == null) || !(hitThing is Pawn victim) || victim.Dead) return;
+            if (!shotBound)
             {
-                CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
-                //verVal = TM_Calc.GetMightSkillLevel(pawn, comp.MightData.MightPowerSkill_Headshot, "TM_Headshot", "_ver", true);
-                //MightPowerSkill ver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Headshot.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Headshot_ver");
-                //verVal = ver.level;
-                //if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
-                //{
-                //    MightPowerSkill mver = comp.MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
-                //    verVal = mver.level;
-                //}
-                verVal = TM_Calc.GetSkillVersatilityLevel(pawn, TorannMagicDefOf.TM_Headshot);
-                CellRect cellRect = CellRect.CenteredOn(base.Position, 1);
-                cellRect.ClipInsideMap(map);
-                int dmg = GetWeaponDmg(pawn);
-                armorPen = pawn.equipment.Primary.def.Verbs.FirstOrDefault().defaultProjectile.projectile.GetArmorPenetration();
-
-                if (victim != null && Rand.Chance(this.launcher.GetStatValue(StatDefOf.ShootingAccuracyPawn, true)))
-                {
-                    this.PenetratingShot(victim, dmg, this.def.projectile.damageDef);
-                    if (victim.Dead)
-                    {
-                        comp.Stamina.CurLevel += (.1f * verVal);
-                    }
-                }
+                var weapon = pawn.equipment?.Primary;
+                var projectile = weapon?.TryGetComp<CompEquippable>()?.PrimaryVerb?.GetProjectile()?.projectile;
+                if (projectile == null || pawn.GetCompAbilityUserMight() == null) return;
+                firedWeapon = weapon.def;
+                armorPen = projectile.GetArmorPenetration();
+                accuracy = pawn.GetStatValue(StatDefOf.ShootingAccuracyPawn);
+                versatility = TM_Calc.GetSkillVersatilityLevel(pawn,TorannMagicDefOf.TM_Headshot);
+                shotDamage = GetWeaponDmg(pawn);
             }
-            catch(NullReferenceException ex)
-            {
-                //Log.Message("null error " + ex);
-            }
+            if (!Rand.Chance(accuracy)) return;
+            PenetratingShot(victim,shotDamage,def.projectile.damageDef);
+            var owner = shotBound ? skillOwner : pawn;
+            if (victim.Dead && owner?.Dead == false && owner.GetCompAbilityUserMight()?.Stamina is Need_Stamina stamina)
+                stamina.CurLevel += .1f * versatility;
         }
 
-        public static int GetWeaponDmg(Pawn pawn)
+        public static int GetWeaponDmg(Pawn pawn) => WeaponDamage(pawn,pawn.GetCompAbilityUserMight().weaponDamage,TM_Calc.GetSkillPowerLevel(pawn,TorannMagicDefOf.TM_Headshot));
+
+        internal static int WeaponDamage(Pawn owner,float damage,int rank)
         {
-            CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
-            //pwrVal = TM_Calc.GetMightSkillLevel(pawn, comp.MightData.MightPowerSkill_Headshot, "TM_Headshot", "_pwr", true);
-            pwrVal = TM_Calc.GetSkillPowerLevel(pawn, TorannMagicDefOf.TM_Headshot);
-
-            float dmg = comp.weaponDamage;
-            
-            if (!pawn.IsColonist && ModOptions.Settings.Instance.AIHardMode)
-            {
-                dmg += 8;
-            }
-
-            dmg = Mathf.RoundToInt(dmg * (1f + (.1f * pwrVal)) * TorannMagicDefOf.TM_Headshot.weaponDamageFactor);
-            return (int)Mathf.Clamp(dmg, 0, 100);
+            if (!owner.IsColonist && ModOptions.Settings.Instance.AIHardMode) damage += 8f;
+            return Mathf.Clamp(Mathf.RoundToInt(damage * (1f + .1f * rank) * TorannMagicDefOf.TM_Headshot.weaponDamageFactor),0,100);
         }
 
         public void PenetratingShot(Pawn victim, int dmg, DamageDef dmgType)
@@ -165,22 +137,18 @@ namespace TorannMagic
             if (hitPart.def.GetMaxHealth(victim) > amt)
             {
                 //Very large animals or creatures
-                dinfo = new DamageInfo(type, amt, armorPen, (float)-1, pawn, hitPart, pawn.equipment.Primary.def, DamageInfo.SourceCategory.ThingOrUnknown);
+                dinfo = new DamageInfo(type, amt, armorPen, (float)-1, EffectOwner, hitPart, firedWeapon ?? pawn?.equipment?.Primary?.def, DamageInfo.SourceCategory.ThingOrUnknown);
             }
             else
             {
                 amt = (int)(amt / (1 + penetratedParts));
-                dinfo = new DamageInfo(type, amt, armorPen, (float)-1, pawn, hitPart, pawn.equipment.Primary.def, DamageInfo.SourceCategory.ThingOrUnknown);
+                dinfo = new DamageInfo(type, amt, armorPen, (float)-1, EffectOwner, hitPart, firedWeapon ?? pawn?.equipment?.Primary?.def, DamageInfo.SourceCategory.ThingOrUnknown);
             }
             dinfo.SetAllowDamagePropagation(false);
             //DamageWorker_AddInjury inj = new DamageWorker_AddInjury();
             //inj.Apply(dinfo, victim);
             victim.TakeDamage(dinfo);
-            if (!victim.IsColonist && !victim.IsPrisoner && victim.Faction != null && !victim.Faction.HostileTo(pawn.Faction) && victim.Faction != this.launcher.Faction)
-            {
-                Faction faction = victim.Faction;
-                faction.TryAffectGoodwillWith(pawn.Faction, -100, true, false, TorannMagicDefOf.TM_OffensiveMagic, null);
-            }
+            ApplyFriendlyFireGoodwill(victim,-100);
         }
     }
 }

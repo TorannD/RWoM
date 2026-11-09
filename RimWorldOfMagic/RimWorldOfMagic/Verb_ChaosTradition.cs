@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using System;
 using Verse;
 using AbilityUser;
@@ -11,32 +11,23 @@ namespace TorannMagic
 {
     public class Verb_ChaosTradition : Verb_UseAbility  
     {
-        private int verVal;
-        private int pwrVal;
         private int effVal;
-
-        private int gRegen;
-        private int gEff;
-        private int gSpirit;
 
         protected override bool TryCastShot()
         {
             bool result = false;
-            Map map = this.CasterPawn.Map;
             CompAbilityUserMagic comp = this.CasterPawn.GetCompAbilityUserMagic();            
 
             if (this.CasterPawn != null && !this.CasterPawn.Downed && comp != null && comp.MagicData != null)
             {                
-                pwrVal = comp.MagicData.MagicPowerSkill_ChaosTradition.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_ChaosTradition_pwr").level;
-                verVal = comp.MagicData.MagicPowerSkill_ChaosTradition.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_ChaosTradition_ver").level;
                 effVal = comp.MagicData.MagicPowerSkill_ChaosTradition.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_ChaosTradition_eff").level;
 
-                gRegen = comp.MagicData.MagicPowerSkill_global_regen.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_global_regen_pwr").level;
-                gEff = comp.MagicData.MagicPowerSkill_global_eff.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_global_eff_pwr").level;
-                gSpirit = comp.MagicData.MagicPowerSkill_global_spirit.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_global_spirit_pwr").level;
 
-                TM_Action.ClearSustainedMagicHediffs(comp);                
-                TM_Calc.AssignChaosMagicPowers(comp);
+                if (ClassProgression.ChaosDiscipline.Path(comp.Pawn) is ClassProgression.DisciplineProgress path)
+                {
+                    if (!ClassProgression.ChaosDiscipline.Deal(comp, path)) return false;
+                }
+                else { TM_Action.ClearSustainedMagicHediffs(comp); TM_Calc.AssignChaosMagicPowers(comp); }
 
                 if(effVal >= 3)
                 {
@@ -56,22 +47,9 @@ namespace TorannMagic
                     HealthUtility.AdjustSeverity(this.CasterPawn, TorannMagicDefOf.TM_ChaoticMindHD, 24f);
                 }
 
-                comp.MagicData.MagicAbilityPoints -= ((2*(pwrVal + verVal + effVal)) + gSpirit + gRegen + gEff);
-                comp.MagicData.MagicPowerSkill_ChaosTradition.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_ChaosTradition_pwr").level = pwrVal;
-                comp.MagicData.MagicPowerSkill_ChaosTradition.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_ChaosTradition_ver").level = verVal;
-                comp.MagicData.MagicPowerSkill_ChaosTradition.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_ChaosTradition_eff").level = effVal;
-
-                comp.MagicData.MagicPowerSkill_global_regen.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_global_regen_pwr").level = gRegen;
-                comp.MagicData.MagicPowerSkill_global_eff.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_global_eff_pwr").level = gEff;
-                comp.MagicData.MagicPowerSkill_global_spirit.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_global_spirit_pwr").level = gSpirit;
-
-                if(comp.MagicData.MagicAbilityPoints < 0)
-                {
-                    comp.MagicData.MagicAbilityPoints = 0;
-                }
-
                 ClearSpellRemnants(comp);
                 comp.lastChaosTraditionTick = Find.TickManager.TicksGame;
+                result = true;
             }
             else
             {
@@ -131,12 +109,7 @@ namespace TorannMagic
 
                 if(comp.weaponEnchants != null && comp.weaponEnchants.Count > 0)
                 {
-                    for(int i = 0; i < comp.weaponEnchants.Count; i++)
-                    {
-                        Verb_DispelEnchantWeapon.RemoveExistingEnchantment(comp.weaponEnchants[i]);
-                    }
-                    comp.weaponEnchants.Clear();
-                    comp.RemovePawnAbility(TorannMagicDefOf.TM_DispelEnchantWeapon);
+                    Verb_DispelEnchantWeapon.DispelOwned(comp);
                 }
 
                 if (comp.enchanterStones != null && comp.enchanterStones.Count > 0)

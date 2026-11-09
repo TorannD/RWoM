@@ -73,78 +73,7 @@ namespace TorannMagic
         }
 
         public bool CheckDruidSurgeryFail(Pawn surgeon, Pawn patient, List<Thing> ingredients, BodyPartRecord part, Bill bill)
-        {
-
-            CompAbilityUserMagic comp = surgeon.GetCompAbilityUserMagic();
-
-            string reason;
-            if (comp.IsMagicUser)
-            {
-                bool canRegrow = false;
-                if(comp.spell_RegrowLimb)
-                {
-                    canRegrow = true;
-                }
-                if(comp.customClass != null && comp.MagicData.MagicPowersD.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_RegrowLimb).learned)
-                {
-                    canRegrow = true;
-                }
-                if (canRegrow)
-                {
-                    MagicPowerSkill eff = surgeon.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_RegrowLimb.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_RegrowLimb_eff");
-                    if (comp.Mana.CurLevel < (.9f - ((eff.level * .08f) * .9f)))
-                    {
-                        comp.Mana.CurLevel = comp.Mana.CurLevel / 2;
-
-                        //TM_MedicalRecipesUtility.RestorePartAndSpawnAllPreviousParts(patient, part, patient.Position, patient.Map);
-                        reason = "TM_InsufficientManaForSurgery".Translate();
-                        Find.LetterStack.ReceiveLetter("LetterLabelRegrowthSurgeryFail".Translate(), "LetterRegrowthSurgeryFail".Translate(
-                            surgeon.LabelCap,
-                            this.recipe.defName,
-                            patient.Label,
-                            reason,
-                            surgeon.LabelShort
-                        ), LetterDefOf.NegativeEvent, null, null);
-                        return true;
-                    }
-                    else // regrowth surgery success
-                    {
-                        comp.Mana.CurLevel -= ((.9f - ((eff.level * .08f) * .9f)) / comp.arcaneDmg);
-                        int num = Mathf.RoundToInt(Rand.Range(160, 280) * comp.xpGain);
-                        comp.MagicUserXP += num;
-                        MoteMaker.ThrowText(surgeon.DrawPos, surgeon.MapHeld, "XP +" + num, -1f);
-                        TM_MoteMaker.ThrowRegenMote(patient.Position.ToVector3(), patient.Map, 1.2f);
-                        TM_MoteMaker.ThrowRegenMote(patient.Position.ToVector3(), patient.Map, .8f);
-                        TM_MoteMaker.ThrowRegenMote(patient.Position.ToVector3(), patient.Map, .8f);
-                        return false;
-                    }
-                }
-                else
-                {
-                    comp.Mana.CurLevel = comp.Mana.CurLevel / 2;
-                    //TM_MedicalRecipesUtility.RestorePartAndSpawnAllPreviousParts(patient, part, patient.Position, patient.Map);
-                    reason = "TM_NoRegrowthSpell".Translate();
-                    Find.LetterStack.ReceiveLetter("LetterLabelRegrowthSurgeryFail".Translate(), "LetterRegrowthSurgeryFail".Translate(
-                        surgeon.LabelCap,
-                        this.recipe.defName,
-                        patient.Label,
-                        reason,
-                        surgeon.LabelShort
-                    ), LetterDefOf.NegativeEvent, null, null);
-                    return true;
-                }
-            }
-            reason = "TM_NotMagicUser".Translate();
-            Find.LetterStack.ReceiveLetter("LetterLabelRegrowthSurgeryFail".Translate(), "LetterRegrowthSurgeryFail".Translate(
-                        surgeon.LabelCap,
-                        this.recipe.defName,
-                        patient.Label,
-                        reason,
-                        surgeon.LabelShort
-                ), LetterDefOf.NegativeEvent, null, null);
-            return true;
-
-        }
+            => ClassProgression.RegrowthSurgery.Fails(surgeon, patient, recipe, .08f);
 
         public void ApplyHediff(Pawn patient, BodyPartRecord part, Pawn billdoer)
         {

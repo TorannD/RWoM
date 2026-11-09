@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_GrimoireClassicRules>Progresión clásica: aprende y mejora habilidades según las reglas actuales de la clase.</TM_GrimoireClassicRules>
+  <TM_GrimoireClassicRequirements>Esta clase no exige etapas de iniciación. Se mantienen las reglas de puntos de habilidad y aprendizaje con pergaminos.</TM_GrimoireClassicRequirements>
+  <TM_GrimoireLearningItems>Pergaminos para habilidades sin aprender</TM_GrimoireLearningItems>
+  <TM_GrimoireNoLearningItems>No se muestran habilidades sin aprender vinculadas a pergaminos.</TM_GrimoireNoLearningItems>
+  <TM_GrimoireScrollUnspecified>Se requiere un pergamino; la habilidad no especifica el objeto.</TM_GrimoireScrollUnspecified>
+  <TM_ProgressionVocation_Mage>Mago</TM_ProgressionVocation_Mage>
+  <TM_ProgressionVocation_Warrior>Guerrero</TM_ProgressionVocation_Warrior>
+  <TM_ProgressionVocation_WarriorMage>Guerrero mago</TM_ProgressionVocation_WarriorMage>
+  <TM_ProgressionStage_Foundation>Fundamentos</TM_ProgressionStage_Foundation>
+  <TM_ProgressionStage_Adept>Adepto</TM_ProgressionStage_Adept>
+  <TM_ProgressionStage_Master>Maestro</TM_ProgressionStage_Master>
+  <TM_ProgressionStage_Ascended>Ascendido</TM_ProgressionStage_Ascended>
+  <TM_ProgressionSharedLearning>Las disciplinas comparten los puntos de habilidad existentes.</TM_ProgressionSharedLearning>
+  <TM_ProgressionStageLocked>Requiere una etapa de iniciación posterior</TM_ProgressionStageLocked>
+  <TM_ProgressionBookUnavailable>Este libro aún no permite avanzar en esta senda de iniciación.</TM_ProgressionBookUnavailable>
+  <TM_ProgressionNoviceChoices>Hechizos iniciales elegidos: {0}/{1}. Elige con cuidado.</TM_ProgressionNoviceChoices>
+  <TM_ProgressionOpenGrimoire>Grimorio</TM_ProgressionOpenGrimoire>
+  <TM_ProgressionOpenGrimoireDesc>Consulta la iniciación de clase, los hechizos y los recursos.</TM_ProgressionOpenGrimoireDesc>
+  <TM_ProgressionEnrollMage>Convertirse en mago</TM_ProgressionEnrollMage>
+  <TM_ProgressionEnrollMageDesc>Comienza el camino del mago y elige dos hechizos básicos en el grimorio. Las disciplinas de clase se aprenden mediante libros. Esto sustituye el potencial mágico por la vocación de mago.</TM_ProgressionEnrollMageDesc>
+  <TM_ProgressionFoundationBook>Para iniciar el camino de {0}, lee {1}.</TM_ProgressionFoundationBook>
+  <TM_ProgressionPriestHealingTrial>Prueba de curación: usa tu hechizo de Curación avanzada para sanar a otro humanoide vivo y amistoso. Antes de lanzarlo, sus lesiones deben sumar al menos 20 de gravedad; un solo lanzamiento debe reducir esa suma en al menos 10.</TM_ProgressionPriestHealingTrial>
+  <TM_ProgressionTrialDone>Prueba completada</TM_ProgressionTrialDone>
+  <TM_ProgressionTrialPending>Prueba aún pendiente</TM_ProgressionTrialPending>
+  <TM_ProgressionNextBook>Tras completar la prueba, lee {0} para avanzar.</TM_ProgressionNextBook>
+  <TM_ProgressionPriestVow>Voto del sacerdote: incapaz de realizar trabajos violentos. Mejora la velocidad de movimiento, el desarrollo de inmunidad, la velocidad médica, la calidad de los cuidados y el éxito quirúrgico; reduce el umbral de choque por dolor.</TM_ProgressionPriestVow>
+  <TM_ProgressionPriestPurificationTrial>Prueba de purificación: usa tu propio hechizo de Purificar para eliminar por completo una lesión permanente o cicatriz preexistente de otro humanoide vivo y amistoso. El tratamiento parcial, el tratamiento propio y los lanzamientos mediante objetos no completan la prueba.</TM_ProgressionPriestPurificationTrial>
+  <TM_ProgressionAscensionAction>Ascender como sacerdote</TM_ProgressionAscensionAction>
+  <TM_ProgressionAscensionNeedsOffering>Se necesita un pergamino de aprendizaje de Resurrección accesible en el suelo o que el personaje ya lleve consigo.</TM_ProgressionAscensionNeedsOffering>
+  <TM_ProgressionAscensionUnavailable>No se cumplen los requisitos de ascensión o el círculo mágico no está disponible.</TM_ProgressionAscensionUnavailable>
+  <TM_ProgressionAscensionRequirements>Requiere un sacerdote de grado Maestro, un círculo mágico grande y un pergamino de aprendizaje de Resurrección. El ritual dura una hora del juego. El pergamino se ofrece solo al completarlo; si se interrumpe, se conserva.</TM_ProgressionAscensionRequirements>
+  <TM_ProgressionNecromancerControlTrial>Prueba de control: mantén al mismo sirviente no muerto bajo tu control durante un día. El tiempo solo cuenta mientras ambos estéis en el mismo mapa. Salir del mapa o viajar en caravana pausa el progreso; perder o sustituir al sirviente lo reinicia.</TM_ProgressionNecromancerControlTrial>
+  <TM_ProgressionServantTime>Control mantenido: {0} / 24 horas</TM_ProgressionServantTime>
+  <TM_ProgressionNecromancerDeathMarkTrial>Prueba de la Marca de la muerte: derrota a un enemigo hostil mientras tu propia Marca de la muerte siga activa sobre él. Un aliado puede asestar el golpe final. Los aliados y los prisioneros no cuentan.</TM_ProgressionNecromancerDeathMarkTrial>
+  <TM_ProgressionNecromancerAscensionAction>Ascender como nigromante</TM_ProgressionNecromancerAscensionAction>
+  <TM_ProgressionNecromancerAscensionNeedsOffering>Debe haber un pergamino de aprendizaje de Forma de liche accesible en el suelo o ya transportado.</TM_ProgressionNecromancerAscensionNeedsOffering>
+  <TM_ProgressionNecromancerAscensionRequirements>Requiere un nigromante de rango Maestro, un círculo mágico grande y un pergamino de aprendizaje de Forma de liche. El ritual dura una hora de juego. El pergamino solo se consume al terminar; se conserva si se interrumpe. La ascensión desbloquea la transformación en liche. Se conservan las pasiones y el horario.</TM_ProgressionNecromancerAscensionRequirements>
+  <TM_ProgressionFireboltTrial>Prueba del proyectil de fuego: inflige 100 puntos de daño efectivo con el proyectil de fuego a criaturas hostiles. No cuentan los aliados, los prisioneros ni los edificios.</TM_ProgressionFireboltTrial>
+  <TM_ProgressionFireboltDamage>Daño con proyectil de fuego: {0} / 100</TM_ProgressionFireboltDamage>
+  <TM_ProgressionFireclawTrial>Inflige daño a dos criaturas hostiles distintas con una sola garra de fuego. No cuentan los aliados, los prisioneros ni los edificios.</TM_ProgressionFireclawTrial>
+  <TM_ProgressionFireAscensionAction>Ascender como mago de fuego</TM_ProgressionFireAscensionAction>
+  <TM_ProgressionFireAscensionNeedsOffering>Debe haber un pergamino de aprendizaje de Tormenta de fuego accesible en el suelo o ya transportado.</TM_ProgressionFireAscensionNeedsOffering>
+  <TM_ProgressionFireAscensionRequirements>Requiere un mago de fuego de rango Maestro, un círculo mágico grande y un pergamino de aprendizaje de Tormenta de fuego. El ritual dura una hora de juego. El pergamino solo se consume al terminar; se conserva si se interrumpe. La ascensión desbloquea Tormenta de fuego.</TM_ProgressionFireAscensionRequirements>
+  <TM_TomeQuestRequest>Buscar un tomo de maestría</TM_TomeQuestRequest>
+  <TM_TomeQuestView>Ver misión del tomo</TM_TomeQuestView>
+  <TM_TomeQuestRequestDesc>Solicita una misión de incursión opcional para conseguir tu tomo de maestría. Los atacantes no llegarán hasta que la aceptes. La victoria otorga el libro; las pruebas de clase siguen siendo necesarias para estudiarlo. Los comerciantes siguen siendo una alternativa.</TM_TomeQuestRequestDesc>
+  <TM_TomeQuestUnavailable>Aquí no hay ninguna misión de tomo adecuada. Inténtalo de nuevo en un asentamiento propio; los comerciantes también venden tomos de maestría.</TM_TomeQuestUnavailable>
+  <TM_TomeQuestPeaceful>Las misiones de combate están desactivadas en los ajustes del narrador. Los comerciantes siguen vendiendo tomos de maestría.</TM_TomeQuestPeaceful>
+  <TM_TomeQuestCooldown>Espera un día de juego después de tu última misión de tomo antes de solicitar otra.</TM_TomeQuestCooldown>
+  <TM_TomeQuestBusy>Este mago o asentamiento ya tiene una misión de tomo pendiente.</TM_TomeQuestBusy>
+  <TM_TomeQuestTitle>El manuscrito disputado: {0}</TM_TomeQuestTitle>
+  <TM_TomeQuestDescription>{0} está bajo la amenaza de {1} asaltantes humanoides (aproximadamente {2} puntos de amenaza). Acepta para disponer de una hora de juego de preparación; después entrarán a pie desde el borde del mapa. Repele a este grupo fijo en un plazo de dos días: cuentan los atacantes muertos, abatidos, capturados o retirados. Los aliados pueden combatir. La victoria otorga un ejemplar de {3}; selecciona un colono y usa «Reclamar tomo de maestría» para elegir un mapa propio para la entrega. Perder o abandonar el mapa del encuentro antes de la victoria hace fracasar la misión. El fracaso no reinicia el progreso de clase. Puedes solicitar otra misión un día después de fracasar o recoger la recompensa. El tomo no permite omitir las pruebas de clase.</TM_TomeQuestDescription>
+  <TM_ClassTomeClaim>Reclamar tomo de maestría</TM_ClassTomeClaim>
+  <TM_ClassTomeClaimDesc>Elige un asentamiento propio para recibir el libro ganado. La misma recompensa solo se puede reclamar una vez.</TM_ClassTomeClaimDesc>
+  <TM_ClassTomePendingDesc>Tu tomo de maestría está listo. Selecciona cualquier colono y usa «Reclamar tomo de maestría» para elegir un asentamiento propio para la entrega. La recompensa seguirá disponible hasta que la reclames.</TM_ClassTomePendingDesc>
+  <TM_ClassTomeDelivered>Tomo de maestría entregado.</TM_ClassTomeDelivered>
+  <TM_ProgressionIceFoundationTrial>Inflige 20 puntos de daño real con Icebolt a criaturas hostiles, o aplica tu aura Soothe a un aliado distinto de ti.</TM_ProgressionIceFoundationTrial>
+  <TM_ProgressionIceMasteryTrial>Daña a dos criaturas hostiles diferentes con Snowball, o cambia el clima con éxito usando tu Rainmaker. Pueden ser lanzamientos distintos.</TM_ProgressionIceMasteryTrial>
+  <TM_ProgressionIceTrialProgress>Daño de Icebolt: {0}/20. Objetivos de Snowball: {1}/2.</TM_ProgressionIceTrialProgress>
+  <TM_ProgressionIceAttunementHint>Alternativa pacífica: realiza un ejercicio de sintonización en un círculo mágico grande por 100 de plata y una hora de juego. Completa la prueba actual, pero no sustituye el libro ni avanza la etapa.</TM_ProgressionIceAttunementHint>
+  <TM_ProgressionIceAscensionAction>Ascender como mago de hielo</TM_ProgressionIceAscensionAction>
+  <TM_ProgressionIceAscensionNeedsOffering>Debe haber un pergamino de aprendizaje de Blizzard accesible en el suelo o ya transportado.</TM_ProgressionIceAscensionNeedsOffering>
+  <TM_ProgressionIceAscensionRequirements>Requiere un mago de hielo Maestro, un círculo mágico grande y un pergamino de aprendizaje de Blizzard. El ritual dura una hora de juego; solo al completarlo se consume el pergamino y se desbloquea Blizzard.</TM_ProgressionIceAscensionRequirements>
+  <TM_ProgressionIceAttunementAction>Sintonización del frío: 100 de plata, 1 hora (prueba pacífica)</TM_ProgressionIceAttunementAction>
+  <TM_ProgressionIceAttunementNeedsOffering>Requiere una pila accesible de al menos 100 de plata o 100 de plata ya transportadas.</TM_ProgressionIceAttunementNeedsOffering>
+  <TM_ProgressionLightningFoundationTrial>Inflige 20 puntos de daño real con LightningBolt a criaturas hostiles, o aplica o refuerza AMP en un aliado distinto de ti.</TM_ProgressionLightningFoundationTrial>
+  <TM_ProgressionLightningMasteryTrial>Daña a dos criaturas hostiles diferentes con LightningCloud. Pueden ser lanzamientos separados; aturdir sin daño no cuenta.</TM_ProgressionLightningMasteryTrial>
+  <TM_ProgressionLightningTrialProgress>Daño de LightningBolt: {0}/20. Objetivos de LightningCloud: {1}/2.</TM_ProgressionLightningTrialProgress>
+  <TM_ProgressionLightningAttunementHint>Alternativa pacífica: ejercicio en un círculo mágico grande por 100 de plata y una hora de juego. Solo completa la prueba actual; el libro sigue siendo necesario.</TM_ProgressionLightningAttunementHint>
+  <TM_ProgressionLightningAscensionAction>Ascender como mago del rayo</TM_ProgressionLightningAscensionAction>
+  <TM_ProgressionLightningAscensionNeedsOffering>Se requiere un pergamino de aprendizaje de Ojo de la tormenta accesible o ya transportado.</TM_ProgressionLightningAscensionNeedsOffering>
+  <TM_ProgressionLightningAscensionRequirements>Requiere un maestro del rayo, un círculo mágico grande y un pergamino de Ojo de la tormenta. Una hora de juego; solo al finalizar se consume el pergamino y se desbloquea la habilidad definitiva.</TM_ProgressionLightningAscensionRequirements>
+  <TM_ProgressionLightningAttunementAction>Sintonía de tormenta: 100 de plata, 1 hora (prueba pacífica)</TM_ProgressionLightningAttunementAction>
+  <TM_ProgressionLightningAttunementNeedsOffering>Requiere una pila accesible de al menos 100 de plata, o 100 de plata ya transportada.</TM_ProgressionLightningAttunementNeedsOffering>
+  <TM_ProgressionArcanistFoundationTrial>Inflige 20 puntos de daño real con MagicMissile a criaturas hostiles, o usa Blink para desplazarte al menos 8 casillas.</TM_ProgressionArcanistFoundationTrial>
+  <TM_ProgressionArcanistMasteryTrial>Aplica tu aura Shadow a otro aliado libre, o recupera con Summon un objeto situado al menos a 8 casillas. Los intentos fallidos o sin desplazamiento no cuentan.</TM_ProgressionArcanistMasteryTrial>
+  <TM_ProgressionArcanistTrialProgress>Daño de MagicMissile: {0}/20.</TM_ProgressionArcanistTrialProgress>
+  <TM_ProgressionArcanistAscensionAction>Ascender como arcanista</TM_ProgressionArcanistAscensionAction>
+  <TM_ProgressionArcanistAscensionNeedsOffering>Se requiere un pergamino de aprendizaje de Fold Reality accesible o ya transportado.</TM_ProgressionArcanistAscensionNeedsOffering>
+  <TM_ProgressionArcanistAscensionRequirements>Requiere un maestro arcanista, un círculo mágico grande y un pergamino de Fold Reality. Una hora de juego; solo al finalizar se consume el pergamino y se desbloquea la habilidad definitiva.</TM_ProgressionArcanistAscensionRequirements>
+  <TM_ProgressionArcanistAttunementAction>Sintonía arcana: 100 de plata, 1 hora (prueba pacífica)</TM_ProgressionArcanistAttunementAction>
+  <TM_ProgressionArcanistAttunementHint>Alternativa pacífica: realiza un ejercicio de sintonización en un círculo mágico grande por 100 de plata y una hora de juego. Completa la prueba actual, pero no sustituye el libro ni avanza la etapa.</TM_ProgressionArcanistAttunementHint>
+  <TM_ProgressionArcanistAttunementNeedsOffering>Requiere una pila accesible de al menos 100 de plata o 100 de plata ya transportadas.</TM_ProgressionArcanistAttunementNeedsOffering>
+  <TM_ProgressionPaladin>paladín</TM_ProgressionPaladin>
+  <TM_ProgressionPaladinFoundationTrial>Con un solo Heal, cura al menos 8 puntos reales de gravedad de heridas de otro aliado libre.</TM_ProgressionPaladinFoundationTrial>
+  <TM_ProgressionPaladinMasteryTrial>Aplica tu mejora Ray of Hope a otro aliado libre que aún no tenga esa mejora.</TM_ProgressionPaladinMasteryTrial>
+  <TM_ProgressionPaladinAttunementHint>Alternativa pacífica: realiza un ejercicio de sintonización en un círculo mágico grande por 100 de plata y una hora de juego. Completa la prueba actual, pero no sustituye el libro ni avanza la etapa.</TM_ProgressionPaladinAttunementHint>
+  <TM_ProgressionPaladinAscensionAction>Ascender como paladín</TM_ProgressionPaladinAscensionAction>
+  <TM_ProgressionPaladinAscensionNeedsOffering>Un pergamino de aprendizaje de Holy Wrath debe estar accesible o ya transportado.</TM_ProgressionPaladinAscensionNeedsOffering>
+  <TM_ProgressionPaladinAscensionRequirements>Requiere un paladín de rango Maestro, un gran círculo mágico y un pergamino de aprendizaje de Holy Wrath. El ritual dura una hora de juego; solo al completarse consume el pergamino y desbloquea la habilidad definitiva.</TM_ProgressionPaladinAscensionRequirements>
+  <TM_ProgressionPaladinAttunementAction>Sintonización de paladín: 100 de plata, 1 hora (prueba pacífica)</TM_ProgressionPaladinAttunementAction>
+  <TM_ProgressionPaladinAttunementNeedsOffering>Requiere una pila accesible de al menos 100 de plata o 100 de plata ya transportadas.</TM_ProgressionPaladinAttunementNeedsOffering>
+  <TM_ProgressionSummoner>invocador</TM_ProgressionSummoner>
+  <TM_ProgressionSummonerFoundationTrial>Mantén al mismo esbirro vivo y al mismo pilón activo, ambos invocados por ti en tu mapa, durante 600 ticks observados (10 segundos a velocidad normal).</TM_ProgressionSummonerFoundationTrial>
+  <TM_ProgressionSummonerMasteryTrial>Una criatura hostil debe activar tu mina invocada e iniciar su mecha.</TM_ProgressionSummonerMasteryTrial>
+  <TM_ProgressionSummonerAttunementHint>Alternativa pacífica: realiza un ejercicio de sintonización en un círculo mágico grande por 100 de plata y una hora de juego. Completa la prueba actual, pero no sustituye el libro ni avanza la etapa.</TM_ProgressionSummonerAttunementHint>
+  <TM_ProgressionSummonerAscensionAction>Ascender como invocador</TM_ProgressionSummonerAscensionAction>
+  <TM_ProgressionSummonerAscensionNeedsOffering>Un pergamino de aprendizaje de Summon Poppi debe estar accesible o ya transportado.</TM_ProgressionSummonerAscensionNeedsOffering>
+  <TM_ProgressionSummonerAscensionRequirements>Requiere un invocador de rango Maestro, un gran círculo mágico y un pergamino de aprendizaje de Summon Poppi. El ritual dura una hora de juego; solo al completarse consume el pergamino y desbloquea la habilidad definitiva.</TM_ProgressionSummonerAscensionRequirements>
+  <TM_ProgressionSummonerAttunementAction>Sintonización de invocador: 100 de plata, 1 hora (prueba pacífica)</TM_ProgressionSummonerAttunementAction>
+  <TM_ProgressionSummonerAttunementNeedsOffering>Requiere una pila accesible de al menos 100 de plata o 100 de plata ya transportadas.</TM_ProgressionSummonerAttunementNeedsOffering>
+  <TM_ProgressionSummonerTrialProgress>Invocaciones mantenidas: {0}/600 ticks.</TM_ProgressionSummonerTrialProgress>
+  <TM_ProgressionDruid>druida</TM_ProgressionDruid>
+  <TM_ProgressionDruidFoundationTrial>Calma con tu Calmar animal a un animal vivo cazador de humanos ajeno a tu facción.</TM_ProgressionDruidFoundationTrial>
+  <TM_ProgressionDruidMasteryTrial>Aplica o refuerza Regeneración en otro aliado humano libre y vivo con al menos 8 de gravedad total de heridas.</TM_ProgressionDruidMasteryTrial>
+  <TM_ProgressionDruidAttunementHint>Alternativa pacífica: realiza un ejercicio de sintonización en un círculo mágico grande por 100 de plata y una hora de juego. Completa la prueba actual, pero no sustituye el libro ni avanza la etapa.</TM_ProgressionDruidAttunementHint>
+  <TM_ProgressionDruidAscensionAction>Ascender como druida</TM_ProgressionDruidAscensionAction>
+  <TM_ProgressionDruidAscensionNeedsOffering>Un pergamino de aprendizaje de Regenerar miembro debe estar accesible o ya transportado.</TM_ProgressionDruidAscensionNeedsOffering>
+  <TM_ProgressionDruidAscensionRequirements>Requiere un druida de rango Maestro, un gran círculo mágico y un pergamino de aprendizaje de Regenerar miembro. El ritual dura una hora de juego; solo al completarse consume el pergamino y desbloquea la habilidad definitiva.</TM_ProgressionDruidAscensionRequirements>
+  <TM_ProgressionDruidAttunementAction>Sintonización de druida: 100 de plata, 1 hora (prueba pacífica)</TM_ProgressionDruidAttunementAction>
+  <TM_ProgressionDruidAttunementNeedsOffering>Requiere una pila accesible de al menos 100 de plata o 100 de plata ya transportadas.</TM_ProgressionDruidAttunementNeedsOffering>
+  <TM_ProgressionBard>bardo</TM_ProgressionBard>
+  <TM_ProgressionBardFoundationTrial>Entretén a otro aliado humano libre y vivo, creando o renovando su recuerdo de tu actuación.</TM_ProgressionBardFoundationTrial>
+  <TM_ProgressionBardMasteryTrial>Inicia una nueva inspiración en otro aliado humano libre y vivo con tu aura Inspirar.</TM_ProgressionBardMasteryTrial>
+  <TM_ProgressionBardAttunementHint>Alternativa pacífica: realiza un ejercicio de sintonización en un círculo mágico grande por 100 de plata y una hora de juego. Completa la prueba actual, pero no sustituye el libro ni avanza la etapa.</TM_ProgressionBardAttunementHint>
+  <TM_ProgressionBardAscensionAction>Ascender como bardo</TM_ProgressionBardAscensionAction>
+  <TM_ProgressionBardAscensionNeedsOffering>Un pergamino de aprendizaje de Himno de batalla debe estar accesible o ya transportado.</TM_ProgressionBardAscensionNeedsOffering>
+  <TM_ProgressionBardAscensionRequirements>Requiere un bardo de rango Maestro, un gran círculo mágico y un pergamino de aprendizaje de Himno de batalla. El ritual dura una hora de juego; solo al completarse consume el pergamino y desbloquea la habilidad definitiva.</TM_ProgressionBardAscensionRequirements>
+  <TM_ProgressionBardAttunementAction>Sintonización de bardo: 100 de plata, 1 hora (prueba pacífica)</TM_ProgressionBardAttunementAction>
+  <TM_ProgressionBardAttunementNeedsOffering>Requiere una pila accesible de al menos 100 de plata o 100 de plata ya transportadas.</TM_ProgressionBardAttunementNeedsOffering>
+  <TM_ProgressionChooseDemonBranch>Elegir {0}: leer {1} (consume un libro)</TM_ProgressionChooseDemonBranch>
+  <TM_ProgressionWarlockFoundationTrial>Establece un nuevo vínculo de almas recíproco con otro humano libre y vivo de tu facción.</TM_ProgressionWarlockFoundationTrial>
+  <TM_ProgressionWarlockMasteryTrial>Lanza a un peón hostil vivo con tu Repulsión nativa.</TM_ProgressionWarlockMasteryTrial>
+  <TM_ProgressionWarlockAttunementHint>Alternativa pacífica: realiza un ejercicio de sintonización en un círculo mágico grande por 100 de plata y una hora de juego. Completa la prueba actual, pero no sustituye el libro ni avanza la etapa.</TM_ProgressionWarlockAttunementHint>
+  <TM_ProgressionWarlockAscensionRequirements>Requiere un brujo de rango Maestro, un gran círculo mágico y un pergamino de aprendizaje de Choque psíquico. El ritual dura una hora de juego; solo al completarse consume el pergamino y desbloquea la habilidad definitiva.</TM_ProgressionWarlockAscensionRequirements>
+  <TM_ProgressionSuccubusFoundationTrial>Establece un nuevo vínculo de almas recíproco con otro humano libre y vivo de tu facción.</TM_ProgressionSuccubusFoundationTrial>
+  <TM_ProgressionSuccubusMasteryTrial>Aumenta la ralentización gravitatoria de un peón hostil vivo con tu Atracción nativa.</TM_ProgressionSuccubusMasteryTrial>
+  <TM_ProgressionSuccubusAttunementHint>Alternativa pacífica: realiza un ejercicio de sintonización en un círculo mágico grande por 100 de plata y una hora de juego. Completa la prueba actual, pero no sustituye el libro ni avanza la etapa.</TM_ProgressionSuccubusAttunementHint>
+  <TM_ProgressionSuccubusAscensionRequirements>Requiere un súcubo de rango Maestro, un gran círculo mágico y un pergamino de aprendizaje de Desprecio. El ritual dura una hora de juego; solo al completarse consume el pergamino y desbloquea la habilidad definitiva.</TM_ProgressionSuccubusAscensionRequirements>
+  <TM_ProgressionWarlock>brujo</TM_ProgressionWarlock>
+  <TM_ProgressionWarlockAscensionAction>Ascender como brujo</TM_ProgressionWarlockAscensionAction>
+  <TM_ProgressionWarlockAscensionNeedsOffering>Un pergamino de aprendizaje de Choque psíquico debe estar accesible o ya transportado.</TM_ProgressionWarlockAscensionNeedsOffering>
+  <TM_ProgressionWarlockAttunementAction>Sintonización de brujo: 100 de plata, 1 hora (prueba pacífica)</TM_ProgressionWarlockAttunementAction>
+  <TM_ProgressionWarlockAttunementNeedsOffering>Requiere una pila accesible de al menos 100 de plata o 100 de plata ya transportadas.</TM_ProgressionWarlockAttunementNeedsOffering>
+  <TM_ProgressionSuccubus>súcubo</TM_ProgressionSuccubus>
+  <TM_ProgressionSuccubusAscensionAction>Ascender como súcubo</TM_ProgressionSuccubusAscensionAction>
+  <TM_ProgressionSuccubusAscensionNeedsOffering>Un pergamino de aprendizaje de Desprecio debe estar accesible o ya transportado.</TM_ProgressionSuccubusAscensionNeedsOffering>
+  <TM_ProgressionSuccubusAttunementAction>Sintonización de súcubo: 100 de plata, 1 hora (prueba pacífica)</TM_ProgressionSuccubusAttunementAction>
+  <TM_ProgressionSuccubusAttunementNeedsOffering>Requiere una pila accesible de al menos 100 de plata o 100 de plata ya transportadas.</TM_ProgressionSuccubusAttunementNeedsOffering>
+  <TM_ProgressionGeomancer>geomante</TM_ProgressionGeomancer>
+  <TM_ProgressionGeomancerFoundationTrial>Aplica por primera vez tu Piel de piedra a otro humano aliado libre y vivo.</TM_ProgressionGeomancerFoundationTrial>
+  <TM_ProgressionGeomancerMasteryTrial>Crea al menos 3 celdas nuevas y distintas de muro de piedra con un solo lanzamiento propio de Encerrar.</TM_ProgressionGeomancerMasteryTrial>
+  <TM_ProgressionGeomancerAttunementHint>Alternativa pacífica: realiza un ejercicio de sintonización en un círculo mágico grande por 100 de plata y una hora de juego. Completa la prueba actual, pero no sustituye el libro ni avanza la etapa.</TM_ProgressionGeomancerAttunementHint>
+  <TM_ProgressionGeomancerAscensionAction>Ascender como geomante</TM_ProgressionGeomancerAscensionAction>
+  <TM_ProgressionGeomancerAscensionNeedsOffering>Debe haber un pergamino de aprendizaje de Meteoro accesible o ya transportado.</TM_ProgressionGeomancerAscensionNeedsOffering>
+  <TM_ProgressionGeomancerAscensionRequirements>Requiere un geomante Maestro, un círculo mágico grande y un pergamino de Meteoro. El ritual dura una hora de juego; solo al completarlo se consume el pergamino y se desbloquea Meteoro.</TM_ProgressionGeomancerAscensionRequirements>
+  <TM_ProgressionGeomancerAttunementAction>Sintonización de geomante: 100 de plata, 1 hora (prueba pacífica)</TM_ProgressionGeomancerAttunementAction>
+  <TM_ProgressionGeomancerAttunementNeedsOffering>Requiere una pila accesible de al menos 100 de plata o 100 de plata ya transportadas.</TM_ProgressionGeomancerAttunementNeedsOffering>
+  <TM_ProgressionTechnomancer>tecnomante</TM_ProgressionTechnomancer>
+  <TM_ProgressionTechnomancerFoundationTrial>Haz que tu tecnobit repare realmente un edificio dañado de tu facción.</TM_ProgressionTechnomancerFoundationTrial>
+  <TM_ProgressionTechnomancerMasteryTrial>Aplica o refuerza tu tecnoescudo sobre otro humano aliado, libre y vivo.</TM_ProgressionTechnomancerMasteryTrial>
+  <TM_ProgressionTechnomancerAttunementHint>Alternativa pacífica: realiza un ejercicio de sintonización en un círculo mágico grande por 100 de plata y una hora de juego. Completa la prueba actual, pero no sustituye el libro ni avanza la etapa.</TM_ProgressionTechnomancerAttunementHint>
+  <TM_ProgressionTechnomancerAscensionAction>Ascender como tecnomante</TM_ProgressionTechnomancerAscensionAction>
+  <TM_ProgressionTechnomancerAscensionNeedsOffering>Debe haber un pergamino de aprendizaje de Ataque orbital accesible o ya transportado.</TM_ProgressionTechnomancerAscensionNeedsOffering>
+  <TM_ProgressionTechnomancerAscensionRequirements>Requiere un tecnomante Maestro, un círculo mágico grande y un pergamino de Ataque orbital. El ritual dura una hora de juego; solo al completarlo se consume el pergamino y se desbloquea Ataque orbital.</TM_ProgressionTechnomancerAscensionRequirements>
+  <TM_ProgressionTechnomancerAttunementAction>Sintonización de tecnomante: 100 de plata, 1 hora (prueba pacífica)</TM_ProgressionTechnomancerAttunementAction>
+  <TM_ProgressionTechnomancerAttunementNeedsOffering>Requiere una pila accesible de al menos 100 de plata o 100 de plata ya transportadas.</TM_ProgressionTechnomancerAttunementNeedsOffering>
+  <TM_ProgressionBloodMage>mago de sangre</TM_ProgressionBloodMage>
+  <TM_ProgressionBloodMageFoundationTrial>Aplica o refuerza tu propio Escudo de sangre sobre otro humano aliado, libre y vivo, con una herida existente.</TM_ProgressionBloodMageFoundationTrial>
+  <TM_ProgressionBloodMageMasteryTrial>Inflige 20 puntos de daño real a enemigos vivos con tu propio Encender sangre.</TM_ProgressionBloodMageMasteryTrial>
+  <TM_ProgressionBloodMageAttunementHint>Alternativa pacífica: realiza un ejercicio de sintonización en un círculo mágico grande por 100 de plata y una hora de juego. Completa la prueba actual, pero no sustituye el libro ni avanza la etapa.</TM_ProgressionBloodMageAttunementHint>
+  <TM_ProgressionBloodMageAscensionAction>Ascender como mago de sangre</TM_ProgressionBloodMageAscensionAction>
+  <TM_ProgressionBloodMageAscensionNeedsOffering>Debe haber un pergamino de aprendizaje de Luna de sangre accesible o ya transportado.</TM_ProgressionBloodMageAscensionNeedsOffering>
+  <TM_ProgressionBloodMageAscensionRequirements>Requiere un mago de sangre Maestro, un círculo mágico grande y un pergamino de Luna de sangre. El ritual dura una hora de juego; solo al completarlo se consume el pergamino y se desbloquea Luna de sangre.</TM_ProgressionBloodMageAscensionRequirements>
+  <TM_ProgressionBloodMageAttunementAction>Sintonización de mago de sangre: 100 de plata, 1 hora (prueba pacífica)</TM_ProgressionBloodMageAttunementAction>
+  <TM_ProgressionBloodMageAttunementNeedsOffering>Requiere una pila accesible de al menos 100 de plata o 100 de plata ya transportadas.</TM_ProgressionBloodMageAttunementNeedsOffering>
+  <TM_ProgressionBloodMageTrialProgress>Daño de Encender sangre: {0}/20.</TM_ProgressionBloodMageTrialProgress>
+  <TM_ProgressionEnchanter>encantador</TM_ProgressionEnchanter>
+  <TM_ProgressionEnchanterFoundationTrial>Usa tu propia Transmutación para consumir parte o toda una pila de materias primas y colocar con éxito una cantidad positiva de un recurso diferente.</TM_ProgressionEnchanterFoundationTrial>
+  <TM_ProgressionEnchanterMasteryTrial>Aplica un nuevo encantamiento con tu propio Encantar arma al arma cuerpo a cuerpo equipada de otro humano aliado, libre y vivo.</TM_ProgressionEnchanterMasteryTrial>
+  <TM_ProgressionEnchanterAscensionAction>Ascender como encantador</TM_ProgressionEnchanterAscensionAction>
+  <TM_ProgressionEnchanterAscensionNeedsOffering>Debe haber un pergamino de aprendizaje de Cambio de forma accesible o ya transportado.</TM_ProgressionEnchanterAscensionNeedsOffering>
+  <TM_ProgressionEnchanterAscensionRequirements>Requiere un encantador Maestro, un gran círculo mágico y un pergamino de aprendizaje de Cambio de forma. El ritual dura una hora de juego; solo al completarlo se consume el pergamino y se desbloquea Cambio de forma.</TM_ProgressionEnchanterAscensionRequirements>
+  <TM_ProgressionEnchanterAttunementAction>sintonización de encantador: 100 de plata, 1 hora (prueba pacífica)</TM_ProgressionEnchanterAttunementAction>
+  <TM_ProgressionEnchanterAttunementHint>Alternativa pacífica: realiza un ejercicio de sintonización en un círculo mágico grande por 100 de plata y una hora de juego. Completa la prueba actual, pero no sustituye el libro ni avanza la etapa.</TM_ProgressionEnchanterAttunementHint>
+  <TM_ProgressionEnchanterAttunementNeedsOffering>Requiere una pila accesible de al menos 100 de plata o 100 de plata ya transportadas.</TM_ProgressionEnchanterAttunementNeedsOffering>
+  <TM_ProgressionChronomancer>cronomante</TM_ProgressionChronomancer>
+  <TM_ProgressionChronomancerFoundationTrial>Con tu propia Predicción activa, prevé con éxito un evento del juego y añádelo a la cola de incidentes. Activar Predicción por sí solo no completa la prueba.</TM_ProgressionChronomancerFoundationTrial>
+  <TM_ProgressionChronomancerMasteryTrial>Usa tu propio Retroceder el tiempo para reparar un objeto no hostil o reducir la descomposición de comida en tu mapa.</TM_ProgressionChronomancerMasteryTrial>
+  <TM_ProgressionChronomancerAscensionAction>Ascender como cronomante</TM_ProgressionChronomancerAscensionAction>
+  <TM_ProgressionChronomancerAscensionNeedsOffering>Debe haber un pergamino de aprendizaje de Retorno accesible o ya transportado.</TM_ProgressionChronomancerAscensionNeedsOffering>
+  <TM_ProgressionChronomancerAscensionRequirements>Requiere un cronomante Maestro, un gran círculo mágico y un pergamino de aprendizaje de Retorno. El ritual dura una hora de juego; solo al completarlo se consume el pergamino y se desbloquea Retorno mediante Marca temporal.</TM_ProgressionChronomancerAscensionRequirements>
+  <TM_ProgressionChronomancerAttunementAction>sintonización de cronomante: 100 de plata, 1 hora (prueba pacífica)</TM_ProgressionChronomancerAttunementAction>
+  <TM_ProgressionChronomancerAttunementHint>Alternativa pacífica: realiza un ejercicio de sintonización en un círculo mágico grande por 100 de plata y una hora de juego. Completa la prueba actual, pero no sustituye el libro ni avanza la etapa.</TM_ProgressionChronomancerAttunementHint>
+  <TM_ProgressionChronomancerAttunementNeedsOffering>Requiere una pila accesible de al menos 100 de plata o 100 de plata ya transportadas.</TM_ProgressionChronomancerAttunementNeedsOffering>
+  <TM_ProgressionBrightmage>mago de luz</TM_ProgressionBrightmage>
+  <TM_ProgressionBrightmageFoundationTrial>Inflige 20 puntos de daño real a peones hostiles vivos con tu propia Lanza de luz.</TM_ProgressionBrightmageFoundationTrial>
+  <TM_ProgressionBrightmageMasteryTrial>Aplica o refuerza la ceguera real de un peón hostil vivo con tu propio Destello de luz.</TM_ProgressionBrightmageMasteryTrial>
+  <TM_ProgressionBrightmageAscensionAction>Ascender como mago de luz</TM_ProgressionBrightmageAscensionAction>
+  <TM_ProgressionBrightmageAscensionNeedsOffering>Debe haber un pergamino de aprendizaje de Espíritu de luz accesible o ya transportado.</TM_ProgressionBrightmageAscensionNeedsOffering>
+  <TM_ProgressionBrightmageAscensionRequirements>Requiere un mago de luz Maestro, un gran círculo mágico y un pergamino de aprendizaje de Espíritu de luz. El ritual dura una hora de juego; solo al completarlo se consume el pergamino y se desbloquea Espíritu de luz.</TM_ProgressionBrightmageAscensionRequirements>
+  <TM_ProgressionBrightmageAttunementAction>sintonización de mago de luz: 100 de plata, 1 hora (prueba pacífica)</TM_ProgressionBrightmageAttunementAction>
+  <TM_ProgressionBrightmageTrialProgress>Daño de Lanza de luz: {0}/20.</TM_ProgressionBrightmageTrialProgress>
+  <TM_ProgressionBrightmageAttunementHint>Alternativa pacífica: realiza un ejercicio de sintonización en un círculo mágico grande por 100 de plata y una hora de juego. Completa la prueba actual, pero no sustituye el libro ni avanza la etapa.</TM_ProgressionBrightmageAttunementHint>
+  <TM_ProgressionBrightmageAttunementNeedsOffering>Requiere una pila accesible de al menos 100 de plata o 100 de plata ya transportadas.</TM_ProgressionBrightmageAttunementNeedsOffering>
+  <TM_ProgressionShaman>chamán</TM_ProgressionShaman>
+  <TM_ProgressionShamanFoundationTrial>Haz que un Tótem de curación invocado personalmente por ti restaure 8 puntos totales de gravedad real de heridas a aliados libres y vivos.</TM_ProgressionShamanFoundationTrial>
+  <TM_ProgressionShamanMasteryTrial>Aplica una nueva maldición a un peón orgánico hostil vivo con tu propio hechizo Maleficio.</TM_ProgressionShamanMasteryTrial>
+  <TM_ProgressionShamanAscensionAction>Ascender como chamán</TM_ProgressionShamanAscensionAction>
+  <TM_ProgressionShamanAscensionNeedsOffering>Debe haber un pergamino de aprendizaje de Espíritu guardián accesible o ya transportado.</TM_ProgressionShamanAscensionNeedsOffering>
+  <TM_ProgressionShamanAscensionRequirements>Requiere un chamán Maestro, un gran círculo mágico y un pergamino de aprendizaje de Espíritu guardián. El ritual dura una hora de juego; solo al completarlo se consume el pergamino y se desbloquea Espíritu guardián.</TM_ProgressionShamanAscensionRequirements>
+  <TM_ProgressionShamanAttunementAction>sintonización de chamán: 100 de plata, 1 hora (prueba pacífica)</TM_ProgressionShamanAttunementAction>
+  <TM_ProgressionShamanTrialProgress>Curación del Tótem de curación: {0}/8.</TM_ProgressionShamanTrialProgress>
+  <TM_ProgressionShamanAttunementHint>Alternativa pacífica: realiza un ejercicio de sintonización en un círculo mágico grande por 100 de plata y una hora de juego. Completa la prueba actual, pero no sustituye el libro ni avanza la etapa.</TM_ProgressionShamanAttunementHint>
+  <TM_ProgressionShamanAttunementNeedsOffering>Requiere una pila accesible de al menos 100 de plata o 100 de plata ya transportadas.</TM_ProgressionShamanAttunementNeedsOffering>
+  <TM_ProgressionGolemancer>golemante</TM_ProgressionGolemancer>
+  <TM_ProgressionGolemancerFoundationTrial>Completa una talla de runas que gaste maná y añada una nueva runa o tatuaje arcano a un aliado vivo.</TM_ProgressionGolemancerFoundationTrial>
+  <TM_ProgressionGolemancerMasteryTrial>Aplica personalmente una nueva marca de Conciencia, Emoción, Aptitud, Protección o Vitalidad a otro aliado libre y vivo. Renovar o apropiarse de una marca existente no cuenta.</TM_ProgressionGolemancerMasteryTrial>
+  <TM_ProgressionGolemancerAscensionAction>Ascender como golemante</TM_ProgressionGolemancerAscensionAction>
+  <TM_ProgressionGolemancerAscensionNeedsOffering>Debe haber un pergamino de aprendizaje de Muro viviente accesible o ya transportado.</TM_ProgressionGolemancerAscensionNeedsOffering>
+  <TM_ProgressionGolemancerAscensionRequirements>Requiere un golemante Maestro, un gran círculo mágico y un pergamino de aprendizaje de Muro viviente. El ritual dura una hora de juego; solo al completarlo se consume el pergamino y se desbloquea Muro viviente.</TM_ProgressionGolemancerAscensionRequirements>
+  <TM_ProgressionGolemancerAttunementAction>sintonización de golemante: 100 de plata, 1 hora (prueba pacífica)</TM_ProgressionGolemancerAttunementAction>
+  <TM_ProgressionGolemancerAttunementHint>Alternativa pacífica: realiza un ejercicio de sintonización en un círculo mágico grande por 100 de plata y una hora de juego. Completa la prueba actual, pero no sustituye el libro ni avanza la etapa.</TM_ProgressionGolemancerAttunementHint>
+  <TM_ProgressionGolemancerAttunementNeedsOffering>Requiere una pila accesible de al menos 100 de plata o 100 de plata ya transportadas.</TM_ProgressionGolemancerAttunementNeedsOffering>
+  <TM_ProgressionEmpath>émpata</TM_ProgressionEmpath>
+  <TM_ProgressionEmpathFoundationTrial>Usa tu habilidad Asesino mental aprendida permanentemente para reducir de verdad el ánimo de un objetivo hostil.</TM_ProgressionEmpathFoundationTrial>
+  <TM_ProgressionEmpathMasteryTrial>Usa tu propia Aura supresora para otorgar una nueva protección emocional a otro aliado vivo y libre. Renovar una protección existente no cuenta.</TM_ProgressionEmpathMasteryTrial>
+  <TM_ProgressionEmpathAttunementHint>Alternativa pacífica: completa un ejercicio de sintonización en un círculo mágico grande por 100 de plata y una hora de juego. Completa la prueba actual, pero no sustituye el libro ni permite avanzar de etapa.</TM_ProgressionEmpathAttunementHint>
+  <TM_ProgressionEmpathAscensionAction>Ascender como émpata</TM_ProgressionEmpathAscensionAction>
+  <TM_ProgressionEmpathAscensionNeedsOffering>Debe haber una Gema de Perspicacia Arcana accesible o ya en posesión del personaje.</TM_ProgressionEmpathAscensionNeedsOffering>
+  <TM_ProgressionEmpathAscensionRequirements>Requiere un émpata de rango maestro, un círculo mágico grande y una Gema de Perspicacia Arcana. El ritual dura una hora de juego; solo al completarlo se consume la gema y se desbloquea Simbiosis. No crea un huésped ni un vínculo de simbiosis.</TM_ProgressionEmpathAscensionRequirements>
+  <TM_ProgressionEmpathAttunementAction>Sintonización del émpata: 100 de plata, 1 hora (prueba pacífica)</TM_ProgressionEmpathAttunementAction>
+  <TM_ProgressionEmpathAttunementNeedsOffering>Requiere una pila accesible de al menos 100 de plata, o que el personaje ya lleve 100 de plata.</TM_ProgressionEmpathAttunementNeedsOffering>
+  <TM_SpiritRebirthCastUnavailable>Esta habilidad no está disponible en la forma actual del espíritu.</TM_SpiritRebirthCastUnavailable>
+</LanguageData>

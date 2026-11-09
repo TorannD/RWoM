@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ReadFacelessInfiltrator>Infiltrator — disguises last 20% longer.</TM_ReadFacelessInfiltrator>
+  <TM_ReadFacelessUnderstudy>Understudy — echoes are 20% stronger.</TM_ReadFacelessUnderstudy>
+  <TM_FacelessOrigins>Study three distinct echo styles: {0}/3.</TM_FacelessOrigins>
+  <TM_FacelessPractice>Use an echo to injure an enemy or heal an ally on different days: {0}/{1}.</TM_FacelessPractice>
+  <TM_FacelessRescue>Or rescue different wounded allies: {0}/{1}.</TM_FacelessRescue>
+  <TM_FacelessSample>Imitated technique: {0}</TM_FacelessSample>
+  <TM_FacelessVirtuoso>Virtuoso — strengthen the retained echo by 50%.</TM_FacelessVirtuoso>
+</LanguageData>

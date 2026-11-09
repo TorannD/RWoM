@@ -7,11 +7,27 @@ using RimWorld;
 
 namespace TorannMagic
 {
-    public class Verb_SuppressingFire : Verb_UseAbility  
+    public class Verb_SuppressingFire : ClassProgression.Verb_SoldierBurst
     {
         private bool initialized = false;
         private int effVal;
         private int shotcount = 0;
+
+        public override void WarmupComplete()
+        {
+            // A new cast owns a fresh quota even when the previous native burst hit its
+            // configured shot limit before consuming the skill-derived quota.
+            initialized = false;
+            shotcount = 0;
+            base.WarmupComplete();
+        }
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look(ref initialized, "TM_suppressingInitialized");
+            Scribe_Values.Look(ref shotcount, "TM_suppressingShotsLeft");
+        }
 
         protected override bool TryCastShot()
         {
@@ -48,10 +64,11 @@ namespace TorannMagic
         public static int GetShotCount(Pawn pawn)
         {
             int shots = 0;
+            var source=ClassProgression.SuperSoldierMartialPath.Owner(pawn) ?? pawn;
             float weaponDamage = pawn.equipment.Primary.def.Verbs.FirstOrDefault().defaultProjectile.projectile.GetDamageAmount(pawn.equipment.Primary, null);
             float burstShots = pawn.equipment.Primary.def.Verbs.FirstOrDefault().burstShotCount;
-            int effVal = TM_Calc.GetSkillEfficiencyLevel(pawn, TorannMagicDefOf.TM_RifleSpec);
-            shots = Mathf.RoundToInt(((50f / weaponDamage) + (2 * burstShots)) * (1.2f + .15f * effVal) * pawn.GetCompAbilityUserMight().mightPwr);
+            int effVal = TM_Calc.GetSkillEfficiencyLevel(source, TorannMagicDefOf.TM_RifleSpec);
+            shots = Mathf.RoundToInt(((50f / weaponDamage) + (2 * burstShots)) * (1.2f + .15f * effVal) * source.GetCompAbilityUserMight().mightPwr);
             return shots;
         }
     }

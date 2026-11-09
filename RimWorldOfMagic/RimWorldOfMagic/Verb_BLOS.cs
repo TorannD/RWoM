@@ -3,7 +3,7 @@ using AbilityUser;
 
 namespace TorannMagic
 {
-    public class Verb_BLOS : Verb_UseAbility
+    public class Verb_BLOS : ClassProgression.Verb_SpiritTargetable
     {
         bool validTarg;
         //Used specifically for non-unique verbs that ignore LOS (can be used with shield belt)

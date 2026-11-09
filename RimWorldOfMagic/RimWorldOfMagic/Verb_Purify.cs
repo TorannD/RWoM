@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
@@ -10,7 +10,7 @@ using TorannMagic.Utils;
 
 namespace TorannMagic
 {
-    public class Verb_Purify : Verb_UseAbility
+    public class Verb_Purify : ClassProgression.Verb_SpiritTargetable
     {
         private int verVal;
         private int pwrVal;
@@ -45,7 +45,8 @@ namespace TorannMagic
 
         protected override bool TryCastShot()
         {
-            Pawn caster = this.CasterPawn;
+            Pawn caster = ClassProgression.SpiritRebirthCasting.SkillOwner(CasterPawn, Ability);
+            if (caster == null) return false;
             Pawn pawn = this.currentTarget.Thing as Pawn;
             CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
             arcaneDmg = comp.arcaneDmg;
@@ -55,56 +56,52 @@ namespace TorannMagic
             if (pawn == null || pawn.Dead) return true;
 
             int num = Mathf.RoundToInt(1f + (.4f * verVal));
-            using (IEnumerator<BodyPartRecord> enumerator = pawn.health.hediffSet.GetInjuredParts().GetEnumerator())
+            // Vanilla GetInjuredParts only yields parts that are actively bleeding, so
+            // permanent injuries (scars, lost parts) never entered the heal loop even
+            // though the ability description promises scar healing (player report:
+            // Purify removed toxic buildup but did nothing to scars or a lost arm).
+            // Iterate the injuries directly; fresh natural wounds stay excluded.
+            foreach (Hediff_Injury current in pawn.health.hediffSet.hediffs.OfType<Hediff_Injury>().ToList())
             {
-                while (enumerator.MoveNext())
                 {
-                    BodyPartRecord rec = enumerator.Current;
+                    BodyPartRecord rec = current.Part;
                     bool flag2 = num > 0;
                     if (flag2)
                     {
-                        int num2 = 1 + verVal;
-                        IEnumerable<Hediff_Injury> arg_BB_0 = pawn.health.hediffSet.hediffs.OfType<Hediff_Injury>();
-                        Func<Hediff_Injury, bool> arg_BB_1;
-
-                        arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
-
-                        foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1))
+                        bool flag5 = !current.CanHealNaturally();
+                        if (flag5)
                         {
-                            bool flag4 = num2 > 0;
-                            if (flag4)
+                            if (current is Hediff_MissingPart)
                             {
-                                bool flag5 = !current.CanHealNaturally();
-                                if (flag5)
+                                // A lost part has no injury severity to heal down; vanilla
+                                // restores it as a whole, matching the multi-use expectation.
+                                pawn.health.RestorePart(rec, null, false);
+                                num--;
+                            }
+                            else if (rec?.def?.tags?.Contains(BodyPartTagDefOf.ConsciousnessSource) == true)
+                            {
+                                if (pwrVal >= 1)
                                 {
-                                    if (rec.def.tags.Contains(BodyPartTagDefOf.ConsciousnessSource))
-                                    {
-                                        if (pwrVal >= 1)
-                                        {
-                                            current.Heal(pwrVal * arcaneDmg);
-                                            num--;
-                                            num2--;
-                                        }
-                                    }
-                                    else
-                                    {
-                                        current.Heal((2f + pwrVal * 2) * arcaneDmg);
-                                        //current.Heal(5.0f + (float)pwrVal * 3f); // power affects how much to heal
-                                        num--;
-                                        num2--;
-                                    }
-                                    TM_MoteMaker.ThrowRegenMote(pawn.Position.ToVector3Shifted(), pawn.Map, .6f);
-                                    TM_MoteMaker.ThrowRegenMote(pawn.Position.ToVector3Shifted(), pawn.Map, .4f);
-                                        
+                                    current.Heal(pwrVal * arcaneDmg);
+                                    num--;
                                 }
                             }
+                            else
+                            {
+                                current.Heal((2f + pwrVal * 2) * arcaneDmg);
+                                //current.Heal(5.0f + (float)pwrVal * 3f); // power affects how much to heal
+                                num--;
+                            }
+                            TM_MoteMaker.ThrowRegenMote(pawn.Position.ToVector3Shifted(), pawn.Map, .6f);
+                            TM_MoteMaker.ThrowRegenMote(pawn.Position.ToVector3Shifted(), pawn.Map, .4f);
+
                         }
                     }
                 }
             }
             //if (pawn.RaceProps.Humanlike)
             //{
-            using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.hediffs.GetEnumerator())
+            using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.hediffs.ToList().GetEnumerator())
             {
                 while (enumerator.MoveNext())
                 {
@@ -198,7 +195,7 @@ namespace TorannMagic
                 }
             }
             //}
-            using (IEnumerator<Hediff_Addiction> enumerator = pawn.health.hediffSet.hediffs.OfType<Hediff_Addiction>().GetEnumerator())
+            using (IEnumerator<Hediff_Addiction> enumerator = pawn.health.hediffSet.hediffs.OfType<Hediff_Addiction>().ToList().GetEnumerator())
             {
                 while (enumerator.MoveNext())
                 {
@@ -236,7 +233,7 @@ namespace TorannMagic
                                         }
                                         else
                                         {
-                                            if (rec.Chemical.defName == "Luciferium" && ((rec.Severity - (chd.severityReduction + (chd.powerSkillAdjustment * pwrVal)) * arcaneDmg <= 0)))
+                                            if (rec.Chemical?.defName == "Luciferium" && ((rec.Severity - (chd.severityReduction + (chd.powerSkillAdjustment * pwrVal)) * arcaneDmg <= 0)))
                                             {
                                                 Hediff luciHigh = pawn.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("LuciferiumHigh"), false);
                                                 pawn.health.RemoveHediff(luciHigh);
@@ -250,24 +247,24 @@ namespace TorannMagic
                         }
                         else
                         {
-                            if (rec.Chemical.defName == "Alcohol" || rec.Chemical.defName == "Smokeleaf")
+                            if (rec.Chemical?.defName == "Alcohol" || rec.Chemical?.defName == "Smokeleaf")
                             {
                                 rec.Severity -= ((.3f + .3f * pwrVal) * arcaneDmg);
                                 num--;
                             }
-                            if ((rec.Chemical.defName == "GoJuice" || rec.Chemical.defName == "WakeUp") && verVal >= 1)
+                            if ((rec.Chemical?.defName == "GoJuice" || rec.Chemical?.defName == "WakeUp") && verVal >= 1)
                             {
                                 rec.Severity -= ((.25f + .25f * pwrVal) * arcaneDmg);
                                 num--;
                             }
-                            if (rec.Chemical.defName == "Psychite" && verVal >= 2)
+                            if (rec.Chemical?.defName == "Psychite" && verVal >= 2)
                             {
                                 rec.Severity -= ((.25f + .25f * pwrVal) * arcaneDmg);
                                 num--;
                             }
                             if (verVal >= 3)
                             {
-                                if (rec.Chemical.defName == "Luciferium" && (rec.Severity - ((.15f + .15f * pwrVal) * arcaneDmg) < 0))
+                                if (rec.Chemical?.defName == "Luciferium" && (rec.Severity - ((.15f + .15f * pwrVal) * arcaneDmg) < 0))
                                 {
                                     Hediff luciHigh = pawn.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("LuciferiumHigh"), false);
                                     pawn.health.RemoveHediff(luciHigh);

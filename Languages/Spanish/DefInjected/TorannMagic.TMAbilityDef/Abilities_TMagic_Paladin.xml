@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  
+  <TM_P_RayofHope.label>rayo de esperanza</TM_P_RayofHope.label>
+  <TM_P_RayofHope.description>Crea un aura de esperanza alrededor del lanzador que potencia periódicamente a un aliado.\n\nRayo de esperanza: aumento arcano que asiste al trabajador y mejora sus capacidades físicas y su estado de ánimo.\n\nFrecuencia de aplicación: 80-90 s\nDuración: 200-223 s\nManipulación, movimiento: +15 %\nAumento de ánimo: +3\n\nRequiere 40 de maná para mantenerse y reduce la regeneración de maná un 30 %; vuelve a lanzarlo para desactivarlo. El lanzador gana experiencia cada vez que se potencia a un aliado.</TM_P_RayofHope.description>
+
+  <TM_P_RayofHope_I.label>rayo de esperanza</TM_P_RayofHope_I.label>
+  <TM_P_RayofHope_I.description>Crea un aura de esperanza alrededor del lanzador que potencia periódicamente a un aliado.\n\nRayo de esperanza: aumento arcano que asiste al trabajador y mejora sus capacidades físicas y su estado de ánimo.\n\nFrecuencia de aplicación: 80-90 s\nDuración: 200-223 s\nManipulación, movimiento: +18 %\nAumento de ánimo: +4\n\nRequiere 40 de maná para mantenerse y reduce la regeneración de maná un 30 %; vuelve a lanzarlo para desactivarlo. El lanzador gana experiencia cada vez que se potencia a un aliado.</TM_P_RayofHope_I.description>
+
+  <TM_P_RayofHope_II.label>rayo de esperanza</TM_P_RayofHope_II.label>
+  <TM_P_RayofHope_II.description>Crea un aura de esperanza alrededor del lanzador que potencia periódicamente a un aliado.\n\nRayo de esperanza: aumento arcano que asiste al trabajador y mejora sus capacidades físicas y su estado de ánimo.\n\nFrecuencia de aplicación: 80-90 s\nDuración: 500-600 s\nManipulación, movimiento: +20 %\nAumento de ánimo: +5\n\nRequiere 40 de maná para mantenerse y reduce la regeneración de maná un 30 %; vuelve a lanzarlo para desactivarlo. El lanzador gana experiencia cada vez que se potencia a un aliado.</TM_P_RayofHope_II.description>
+
+  <TM_P_RayofHope_III.label>rayo de esperanza</TM_P_RayofHope_III.label>
+  <TM_P_RayofHope_III.description>Crea un aura de esperanza alrededor del lanzador que potencia periódicamente a un aliado.\n\nRayo de esperanza: aumento arcano que asiste al trabajador y mejora sus capacidades físicas y su estado de ánimo.\n\nFrecuencia de aplicación: 80-90 s\nDuración: 500-600 s\nManipulación, movimiento: +22 %\nAumento de ánimo: +5\n\nRequiere 40 de maná para mantenerse y reduce la regeneración de maná un 30 %; vuelve a lanzarlo para desactivarlo. El lanzador gana experiencia cada vez que se potencia a un aliado.</TM_P_RayofHope_III.description>
+
+  
+  <TM_Heal.label>curar</TM_Heal.label>
+  <TM_Heal.description>Invoca poder sagrado para curar las heridas de un objetivo. La curación base restaura 8 de salud en hasta 3 heridas. No puede curar lesiones de partes del cuerpo ausentes.</TM_Heal.description>
+
+  
+  <TM_Shield.label>escudo</TM_Shield.label>
+  <TM_Shield.description>Protege al paladín del daño durante 50 s o hasta que el escudo se rompa.\nAbsorbe hasta 100 de daño.</TM_Shield.description>
+
+  <TM_Shield_I.label>escudo</TM_Shield_I.label>
+  <TM_Shield_I.description>Protege al paladín del daño durante 50 s o hasta que el escudo se rompa.\nAbsorbe hasta 125 de daño.\nReduce la recarga a 30 s.</TM_Shield_I.description>
+
+  <TM_Shield_II.label>escudo</TM_Shield_II.label>
+  <TM_Shield_II.description>Protege al paladín del daño durante 50 s o hasta que el escudo se rompa.\nAbsorbe hasta 135 de daño.\nReduce la recarga a 27 s.</TM_Shield_II.description>
+
+  <TM_Shield_III.label>escudo</TM_Shield_III.label>
+  <TM_Shield_III.description>Protege al paladín del daño durante 50 s o hasta que el escudo se rompa.\nAbsorbe hasta 150 de daño.\nReduce la recarga a 25 s.</TM_Shield_III.description>
+
+  
+  <TM_ValiantCharge.label>carga valerosa</TM_ValiantCharge.label>
+  <TM_ValiantCharge.description>El paladín vuela con alas de ángel hasta un lugar lejano y, al aterrizar, destroza el suelo con poder sagrado.</TM_ValiantCharge.description>
+
+  
+  <TM_Overwhelm.label>abrumar</TM_Overwhelm.label>
+  <TM_Overwhelm.description>El paladín libera poder sagrado que abruma los sentidos físicos y mentales de las criaturas cercanas.</TM_Overwhelm.description>
+
+  
+  <TM_HolyWrath.label>ira sagrada</TM_HolyWrath.label>
+  <TM_HolyWrath.description>Invoca la ira sagrada sobre la tierra.</TM_HolyWrath.description>
+
+</LanguageData>

@@ -39,7 +39,7 @@ namespace TorannMagic.ModOptions
         {
             int num = 0;
             float rowHeight = 28f;
-            Rect sRect = new Rect(canvas.x, canvas.y, canvas.width - 36f, canvas.height + 560f);
+            Rect sRect = new Rect(canvas.x, canvas.y, canvas.width - 36f, canvas.height + 672f);
             scrollPosition = GUI.BeginScrollView(canvas, scrollPosition, sRect, false, true);
 
             Rect rect1 = new Rect(canvas);
@@ -96,6 +96,24 @@ namespace TorannMagic.ModOptions
             row = UIHelper.GetRowRect(rect1, rowHeight, num);
             Settings.Instance.needMultiplier = Widgets.HorizontalSlider(row, Settings.Instance.needMultiplier, 0f, 10f, false, "NeedMultiplier".Translate() + " " + Settings.Instance.needMultiplier, "0", "10", .1f);
             TooltipHandler.TipRegion(row, "NeedMultiplierDesc".Translate());
+            num++;
+            row = UIHelper.GetRowRect(rect1, rowHeight, num);
+            Settings.Instance.abilityCooldownMultiplier = Widgets.HorizontalSlider(row, Compatibility.AbilityTiming.SafeMultiplier(Settings.Instance.abilityCooldownMultiplier), .1f, 5f, false, "TM_GlobalCooldown".Translate() + " " + Settings.Instance.abilityCooldownMultiplier.ToString("P0"), "10%", "500%", .1f);
+            TooltipHandler.TipRegion(row, "TM_GlobalTimingDesc".Translate());
+            num++;
+            row = UIHelper.GetRowRect(rect1, rowHeight, num);
+            Settings.Instance.abilityWarmupMultiplier = Widgets.HorizontalSlider(row, Compatibility.AbilityTiming.SafeMultiplier(Settings.Instance.abilityWarmupMultiplier), .1f, 5f, false, "TM_GlobalWarmup".Translate() + " " + Settings.Instance.abilityWarmupMultiplier.ToString("P0"), "10%", "500%", .1f);
+            TooltipHandler.TipRegion(row, "TM_GlobalTimingDesc".Translate());
+            num++;
+            num++;
+            row = UIHelper.GetRowRect(rect1, rowHeight, num);
+            Widgets.CheckboxLabeled(row, "TM_NewProgressionBeta".Translate(), ref Settings.Instance.newProgressionBeta, false);
+            TooltipHandler.TipRegion(row, "TM_NewProgressionBetaDesc".Translate());
+            num++;
+            row = UIHelper.GetRowRect(rect1, rowHeight, num);
+            GUI.color = Color.yellow;
+            Widgets.Label(row, "TM_RequiresRestart".Translate());
+            GUI.color = Color.white;
             num++;
             row = UIHelper.GetRowRect(rect1, rowHeight, num);
             Settings.Instance.magicyteChance = Widgets.HorizontalSlider(row, Settings.Instance.magicyteChance, 0, .05f, false, "MagicyteChance".Translate() + " " + Settings.Instance.magicyteChance, "0%", "5%", .001f);
@@ -195,6 +213,7 @@ namespace TorannMagic.ModOptions
             if (reset)
             {
                 Settings.Instance.xpMultiplier = 1f;
+                Settings.Instance.abilityCooldownMultiplier = Settings.Instance.abilityWarmupMultiplier = 1f;
                 Settings.Instance.needMultiplier = 1f;
                 Settings.Instance.deathExplosionRadius = 3f;
                 Settings.Instance.deathExplosionMin = 20;

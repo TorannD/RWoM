@@ -1,0 +1,37 @@
+<Defs>
+  <JobDef>
+    <defName>TM_SpiritCastPistolWhip</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>striking TargetB with a pistol.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCastMk203GL</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>launching a grenade at TargetB.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCastBreachingCharge</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>throwing a breaching charge at TargetB.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCastSuperSoldierFieldDressing</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>applying a field dressing.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCastBuckshot</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritSoldierBurst</driverClass>
+    <reportString>firing buckshot at TargetB.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCastSuppressingFire</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritSoldierBurst</driverClass>
+    <reportString>laying suppressing fire on TargetB.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCast60mmMortar</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>deploying a 60mm mortar.</reportString>
+  </JobDef>
+</Defs>

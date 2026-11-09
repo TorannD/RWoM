@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_VocationMage.degreeDatas.0.label>mago</TM_VocationMage.degreeDatas.0.label>
+  <TM_VocationMage.degreeDatas.0.description>[PAWN_nameDef] despertou para a magia. As disciplinas são aprendidas por meio do grimório e de livros de iniciação.</TM_VocationMage.degreeDatas.0.description>
+  <TM_VocationWarrior.degreeDatas.0.label>guerreiro</TM_VocationWarrior.degreeDatas.0.label>
+  <TM_VocationWarrior.degreeDatas.0.description>[PAWN_nameDef] segue a vocação marcial.</TM_VocationWarrior.degreeDatas.0.description>
+  <TM_VocationWarriorMage.degreeDatas.0.label>guerreiro-mago</TM_VocationWarriorMage.degreeDatas.0.label>
+  <TM_VocationWarriorMage.degreeDatas.0.description>[PAWN_nameDef] segue tanto a vocação mágica quanto a marcial.</TM_VocationWarriorMage.degreeDatas.0.description>
+</LanguageData>

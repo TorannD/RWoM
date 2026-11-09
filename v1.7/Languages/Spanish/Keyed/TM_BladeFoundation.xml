@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_ReadBladeFocus>Aprender concentración de la espada: mejora el combate cuerpo a cuerpo a costa de puntería y velocidad de trabajo (permanente)</TM_ReadBladeFocus>
+  <TM_ReadBladeMemory>Aprender memoria del filo: daño adicional al cambiar de enemigo (permanente)</TM_ReadBladeMemory>
+  <TM_BladeMemoryName>Memoria del filo</TM_BladeMemoryName>
+  <TM_BladeMemoryTraining>Al cambiar a otro enemigo adyacente, el golpe con un arma cuerpo a cuerpo inflige un 2% más de daño principal. Cada rango añade 2 puntos porcentuales, hasta un 10%. Se activa una vez cada 6 segundos.</TM_BladeMemoryTraining>
+</LanguageData>

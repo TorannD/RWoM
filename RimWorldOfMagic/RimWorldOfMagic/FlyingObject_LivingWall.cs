@@ -1,4 +1,4 @@
-using RimWorld;
+﻿using RimWorld;
 using System;
 using TorannMagic.Utils;
 using System.Linq;
@@ -54,6 +54,8 @@ namespace TorannMagic
         private bool shouldDestroy = false;
 
         Pawn pawn;
+        private Pawn projectedBody;
+        private bool refreshRanks;
         public Pawn CasterPawn
         {
             get
@@ -70,9 +72,6 @@ namespace TorannMagic
             }
         }
 
-        //Magic related
-        CompAbilityUserMagic comp;
-        TMPawnSummoned newPawn = new TMPawnSummoned();
 
         public Building OccupiedWall => FindWall(Position, Map);
 
@@ -148,8 +147,12 @@ namespace TorannMagic
             Scribe_Values.Look(ref idleFor, "idleFor", 0);
             Scribe_Deep.Look<Thing>(ref this.flyingThing, "flyingThing", new object[0]);
             Scribe_References.Look<Pawn>(ref this.pawn, "pawn", false);
+            Scribe_References.Look(ref projectedBody, "projectedBody");
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
+            {
                 RestoreRouteAfterLoad();
+                refreshRanks = true;
+            }
         }
 
         private void RestoreRouteAfterLoad()
@@ -173,7 +176,7 @@ namespace TorannMagic
             {
                 FleckMaker.ThrowDustPuff(this.origin, this.Map, Rand.Range(1.2f, 1.8f));
             }
-            flyingThing.ThingID += Rand.Range(0, 214).ToString();
+            if (flyingThing.thingIDNumber < 0) ThingIDMaker.GiveIDTo(flyingThing);
         }
 
         public void Launch(Thing launcher, LocalTargetInfo targ, Thing flyingThing, DamageInfo? impactDamage)
@@ -495,15 +498,20 @@ namespace TorannMagic
             CancelPlanning();
             closestThreat = null;
             base.Destroy(mode);
+            var magic = pawn?.GetCompAbilityUserMagic();
+            if (magic?.livingWall == this) ClassProgression.GolemancerLifecycle.SyncWallControl(magic);
+        }
+
+        internal void BindToCasterBody(Pawn body)
+        {
+            projectedBody = body == pawn ? null : body;
+            UpdateStatus();
         }
 
         public void UpdateStatus()
         {
             if (!CasterPawn.DestroyedOrNull() && !CasterPawn.Dead)
             {
-                CompAbilityUserMagic comp = CasterPawn.GetCompAbilityUserMagic();
-                //int verVal = TM_Calc.GetMagicSkillLevel(CasterPawn, comp.MagicData.MagicPowerSkill_LivingWall, "TM_LivingWall", "_ver", true);
-                //int pwrVal = TM_Calc.GetMagicSkillLevel(CasterPawn, comp.MagicData.MagicPowerSkill_LivingWall, "TM_LivingWall", "_pwr", true);
                 int verVal = TM_Calc.GetSkillVersatilityLevel(CasterPawn, TorannMagicDefOf.TM_LivingWall, true);
                 int pwrVal = TM_Calc.GetSkillPowerLevel(CasterPawn, TorannMagicDefOf.TM_LivingWall, true);
                 this.speed = 15 + (3 * verVal);
@@ -530,10 +538,17 @@ namespace TorannMagic
                 closestThreat = null;
                 return;
             }
-            if (shouldDestroy || pawn.DestroyedOrNull() || !pawn.Spawned || pawn.Dead || pawn.Map != Map)
+            var body = ClassProgression.GolemancerLifecycle.MasterBody(pawn);
+            if (shouldDestroy || body?.Spawned != true || body.Map != Map ||
+                (projectedBody != null && projectedBody != body))
             {
                 Destroy(DestroyMode.Vanish);
                 return;
+            }
+            if (refreshRanks)
+            {
+                UpdateStatus();
+                refreshRanks = false;
             }
             if (FindWall(Position, Map, pawn.Faction) == null)
             {

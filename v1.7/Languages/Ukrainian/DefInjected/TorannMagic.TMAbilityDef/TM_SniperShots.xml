@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_SniperAimedShot.label>Прицільний постріл</TM_SniperAimedShot.label>
+  <TM_SniperAimedShot.description>Одна куля зі звичайної вогнепальної зброї з її дальністю, точністю та впливом укриття. Шкода 110/125/140%, базова ціна 25 витривалості, відновлення 30 секунд.</TM_SniperAimedShot.description>
+</LanguageData>

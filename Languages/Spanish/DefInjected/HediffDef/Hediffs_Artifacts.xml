@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_Artifact_BloodBoostHD.label>impulso de sangre</TM_Artifact_BloodBoostHD.label>
+  
+  <TM_Artifact_BloodBoostHD.description>Aumenta la magia de sangre máxima disponible para un mago de sangre.</TM_Artifact_BloodBoostHD.description>
+  
+  
+  <TM_Artifact_HateBoostHD.label>impulso de odio</TM_Artifact_HateBoostHD.label>
+  
+  <TM_Artifact_HateBoostHD.description>Aumenta el odio máximo disponible para un caballero de la muerte.</TM_Artifact_HateBoostHD.description>
+  
+  
+  <TM_Artifact_PsionicBoostHD.label>impulso psiónico</TM_Artifact_PsionicBoostHD.label>
+  
+  <TM_Artifact_PsionicBoostHD.description>Aumenta la energía psiónica máxima disponible para un psiónico.</TM_Artifact_PsionicBoostHD.description>
+  
+  
+  <TM_ArtifactArcaneRecoveryHD.label>recuperación arcana</TM_ArtifactArcaneRecoveryHD.label>
+  
+  <TM_ArtifactArcaneRecoveryHD.description>Aumenta la velocidad de recuperación de la debilidad arcana; no reduce la cantidad de debilidad arcana que se adquiere.</TM_ArtifactArcaneRecoveryHD.description>
+  
+  
+  <TM_ArtifactBlockHD.label>bloqueo</TM_ArtifactBlockHD.label>
+  
+  <TM_ArtifactBlockHD.description>Bloquea ataques físicos; evita el daño de los ataques bloqueados con éxito.</TM_ArtifactBlockHD.description>
+  
+  
+  <TM_ArtifactCatEyesHD.label>visión en la oscuridad</TM_ArtifactCatEyesHD.label>
+  
+  <TM_ArtifactCatEyesHD.description>Mejora la vista y otorga una ligera visión nocturna.</TM_ArtifactCatEyesHD.description>
+  
+  
+  <TM_ArtifactDeflectHD.label>bloqueo desviador</TM_ArtifactDeflectHD.label>
+  
+  <TM_ArtifactDeflectHD.description>Bloquea ataques y puede desviar proyectiles hacia enemigos cercanos; evita el daño de un ataque desviado con éxito.</TM_ArtifactDeflectHD.description>
+  
+  
+  <TM_ArtifactHealthHD.label>salud mejorada</TM_ArtifactHealthHD.label>
+  
+  <TM_ArtifactHealthHD.description>Aumenta la curación natural.</TM_ArtifactHealthHD.description>
+  
+  
+  <TM_ArtifactMendingHD.label>reparación</TM_ArtifactMendingHD.label>
+  
+  <TM_ArtifactMendingHD.description>Repara la ropa y las armas equipadas.</TM_ArtifactMendingHD.description>
+  
+  
+  <TM_ArtifactMindHD.label>protección mental</TM_ArtifactMindHD.label>
+  
+  <TM_ArtifactMindHD.description>Un talismán único que ayuda al peón a compartimentar sus emociones para recuperarse rápidamente de una crisis mental.</TM_ArtifactMindHD.description>
+  
+  
+  <TM_ArtifactPathfindingHD.label>buscacaminos</TM_ArtifactPathfindingHD.label>
+  
+  <TM_ArtifactPathfindingHD.description>Un talismán que descubre de forma asombrosa un camino fácil a través de cualquier obstáculo; evita la penalización de movimiento por obstáculos y terreno.</TM_ArtifactPathfindingHD.description>
+  
+  
+  <TM_ArtifactRenewalHD.label>renovación</TM_ArtifactRenewalHD.label>
+  
+  <TM_ArtifactRenewalHD.description>Mejora la calidad del sueño.</TM_ArtifactRenewalHD.description>
+  
+  
+  <TM_ArtifactStrengthHD.label>fuerza de la piedra</TM_ArtifactStrengthHD.label>
+  
+  <TM_ArtifactStrengthHD.description>Un encantamiento que aumenta la manipulación.</TM_ArtifactStrengthHD.description>
+  
+  
+  <TM_ShroudOfUndeathHD.label>mortaja de no muerte</TM_ShroudOfUndeathHD.label>
+  
+  <TM_ShroudOfUndeathHD.description>Reduce el mantenimiento de no muertos de este nigromante y aumenta el movimiento y el poder de ataque de los no muertos cercanos.</TM_ShroudOfUndeathHD.description>
+  
+  
+  <TM_TraitInfusionHD.label>infusión de rasgos</TM_TraitInfusionHD.label>
+  
+  <TM_TraitInfusionHD.description>Un peón ha obtenido rasgos mediante una infusión mágica; esto afectará a la percepción que tiene de sí mismo.</TM_TraitInfusionHD.description>
+  
+  
+  <TM_WinterStaffHD.label>frío invernal</TM_WinterStaffHD.label>
+  
+  <TM_WinterStaffHD.description>Drena calor y energía del cuerpo; evita los golpes de calor. Solo para magos: reduce la temperatura de la habitación.</TM_WinterStaffHD.description>
+  
+</LanguageData>

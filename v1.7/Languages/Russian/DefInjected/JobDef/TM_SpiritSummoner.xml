@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritSummonMinion.reportString>призывает миньона через тело носителя.</TM_SpiritSummonMinion.reportString>
+  <TM_SpiritSummonElemental.reportString>призывает элементаля через тело носителя.</TM_SpiritSummonElemental.reportString>
+  <TM_SpiritSummonPylon.reportString>призывает защитный пилон через тело носителя.</TM_SpiritSummonPylon.reportString>
+  <TM_SpiritSummonExplosive.reportString>призывает мановую мину через тело носителя.</TM_SpiritSummonExplosive.reportString>
+  <TM_SpiritSummonPoppi.reportString>призывает поппи через тело носителя.</TM_SpiritSummonPoppi.reportString>
+  <TM_SpiritPack.reportString>призывает духовных волков через тело носителя.</TM_SpiritPack.reportString>
+  <TM_SpiritPack_I.reportString>призывает духовных волков через тело носителя.</TM_SpiritPack_I.reportString>
+  <TM_SpiritPack_II.reportString>призывает духовных волков через тело носителя.</TM_SpiritPack_II.reportString>
+  <TM_SpiritPack_III.reportString>призывает духовных волков через тело носителя.</TM_SpiritPack_III.reportString>
+  <TM_SpiritDismissMinion.reportString>отпускает миньона через тело носителя.</TM_SpiritDismissMinion.reportString>
+</LanguageData>

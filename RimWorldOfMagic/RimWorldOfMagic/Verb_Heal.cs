@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
@@ -9,7 +9,7 @@ using TorannMagic.Utils;
 
 namespace TorannMagic
 {
-    class Verb_Heal : Verb_UseAbility
+    class Verb_Heal : ClassProgression.Verb_SpiritTargetable
     {
         private int verVal;
         private int pwrVal;
@@ -41,13 +41,14 @@ namespace TorannMagic
         {
             // power affects enumerator
             //DamageWorker.DamageResult result = DamageWorker.DamageResult.MakeNew();
-            Pawn caster = this.CasterPawn;
+            Pawn caster = ClassProgression.SpiritRebirthCasting.SkillOwner(CasterPawn, Ability);
+            if (caster == null) return false;
             CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
             //pwrVal = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Heal.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Heal_pwr").level;
             //verVal = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Heal.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Heal_ver").level;
             pwrVal = TM_Calc.GetSkillPowerLevel(caster, this.Ability.Def as TMAbilityDef);
             verVal = TM_Calc.GetSkillVersatilityLevel(caster, this.Ability.Def as TMAbilityDef);
-            if(caster.story.traits.HasTrait(TorannMagicDefOf.Priest))
+            if(ClassProgression.ClassIdentity.IsPriest(caster))
             {
                 pwrVal = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_AdvancedHeal.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_AdvancedHeal_pwr").level;
                 verVal = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_AdvancedHeal.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_AdvancedHeal_ver").level;
@@ -73,15 +74,17 @@ namespace TorannMagic
             if (!TM_Calc.IsUndead(pawn))
             {
                 
-                int injuriesPerBodyPart = !CasterPawn.IsColonist && ModOptions.Settings.Instance.AIHardMode ? 5 : 1 + verVal;
+                int injuriesPerBodyPart = !caster.IsColonist && ModOptions.Settings.Instance.AIHardMode ? 5 : 1 + verVal;
 
+                var mastery = ClassProgression.SpellMastery.Active(caster, Ability);
                 IEnumerable<Hediff_Injury> injuries = pawn.health.hediffSet.hediffs
                     .OfType<Hediff_Injury>()
                     .Where(injury => injury.CanHealNaturally())
                     .DistinctBy(injury => injury.Part, injuriesPerBodyPart)
-                    .Take(3 + verVal);
+                    .Take(3 + verVal + (mastery == "breadth" ? 1 : 0)).ToList();
 
-                float healAmount = CasterPawn.IsColonist ? (8.0f + pwrVal * 2f) * comp.arcaneDmg : 20.0f + pwrVal * 3f;
+                float healAmount = caster.IsColonist ? (8.0f + pwrVal * 2f) * comp.arcaneDmg : 20.0f + pwrVal * 3f;
+                if (mastery == "depth") healAmount *= 1.25f;
                 foreach (Hediff_Injury injury in injuries)
                 {
                     injury.Heal(healAmount);

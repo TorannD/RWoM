@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ManaSiphon.label>法力虹吸器</TM_ManaSiphon.label>
+  <TM_ManaSiphon.description>被动工作站。被分配魔法工作的正式法师可在此通过法力信标网络向魔法燃料储罐捐献法力。默认每次保留20%的个人法力，最多捐献法力上限的80%。两项限制均可在0%至100%之间设置。再次捐献前，法师必须完全恢复法力。内部100点法力缓冲区可暂存已开始传输的溢出法力，并在已连接储罐有空位时自动送出。储罐装满时，法师会停止捐献。虹吸器不储存燃料，也不需要电力。</TM_ManaSiphon.description>
+</LanguageData>

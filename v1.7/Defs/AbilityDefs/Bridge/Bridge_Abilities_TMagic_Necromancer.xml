@@ -1,0 +1,872 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Raiseundead</defName>
+    <label>Raise Undead</label>
+    <description>Raise undead from corpses. Only works on biological creatures that were once living. 
+
+Undead will remain under the Necromancers control indefinitely. The necromancer will incur a mana upkeep cost of 30% of base mana regeneration for each undead, humanlike pawn. Undead animals incur an upkeep cost of 15% for every 100 combat power.
+
+There is no limit to the number of undead a necromancer may control, however, when the necromancer no longer has mana to maintain undead, they will automatically be consumed until the number of active undead is reduced to a manageable amount.</description>
+    <spellId>rwom.tm_raiseundead</spellId>
+    <iconPath>UI/raiseundead</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SB</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_RaiseUndead</defaultProjectile>
+      <abilityDef>TM_RaiseUndead</abilityDef>
+      <warmupTime>1</warmupTime>
+      <SecondsToRecharge>3</SecondsToRecharge>
+      <range>25</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>ThrowMolotovCocktail</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Dismissundead</defName>
+    <label>Dismiss Undead</label>
+    <description>Dismisses an undead.</description>
+    <spellId>rwom.tm_dismissundead</spellId>
+    <iconPath>UI/dismissundead</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_DismissUndead</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>TM_Paladin_Heal</defaultProjectile>
+      <abilityDef>TM_DismissUndead</abilityDef>
+      <warmupTime>1</warmupTime>
+      <SecondsToRecharge>4</SecondsToRecharge>
+      <burstShotCount>1</burstShotCount>
+      <range>25</range>
+      <isViolent>false</isViolent>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetAoE</AbilityTargetCategory>
+      <TargetAoEProperties>
+        <targetClass>Pawn</targetClass>
+        <showRangeOnSelect>true</showRangeOnSelect>
+        <friendlyFire>true</friendlyFire>
+        <startsFromCaster>false</startsFromCaster>
+        <maxTargets>12</maxTargets>
+        <range>3</range>
+      </TargetAoEProperties>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Deathmark</defName>
+    <label>Death Mark</label>
+    <description>Mark a victim with a curse that causes their life to flash before their eyes. Cursed victims will lose focus and the will to fight, reducing the attack rate. Marking targets for death empowers Death Bolt. Does not work on mechanoids.
+		
+Max Targets: 4
+Cast Time: 3s
+Cooldown: 120s
+Range: 34</description>
+    <spellId>rwom.tm_deathmark</spellId>
+    <iconPath>UI/deathmark</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_DeathMark</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_DeathMark</defaultProjectile>
+      <abilityDef>TM_DeathMark</abilityDef>
+      <warmupTime>3</warmupTime>
+      <SecondsToRecharge>120</SecondsToRecharge>
+      <range>34</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Vibration</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+      <AbilityTargetCategory>TargetAoE</AbilityTargetCategory>
+      <TargetAoEProperties>
+        <targetClass>Pawn</targetClass>
+        <showRangeOnSelect>true</showRangeOnSelect>
+        <friendlyFire>false</friendlyFire>
+        <startsFromCaster>false</startsFromCaster>
+        <maxTargets>4</maxTargets>
+        <range>3</range>
+      </TargetAoEProperties>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_DeathmarkI</defName>
+    <label>Death Mark (I)</label>
+    <description>Mark a victim with a curse that causes their life to flash before their eyes. Cursed victims will lose focus and the will to fight, reducing the attack rate. Marking targets for death empowers Death Bolt. Does not work on mechanoids.
+		
+Max Targets: 5
+Cast Time: 2.5s
+Cooldown: 90s
+Range: 38</description>
+    <spellId>rwom.tm_deathmark_i</spellId>
+    <iconPath>UI/deathmark</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_DeathMark</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_DeathMark</defaultProjectile>
+      <abilityDef>TM_DeathMark_I</abilityDef>
+      <warmupTime>2.5</warmupTime>
+      <SecondsToRecharge>90</SecondsToRecharge>
+      <range>38</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Vibration</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+      <AbilityTargetCategory>TargetAoE</AbilityTargetCategory>
+      <TargetAoEProperties>
+        <targetClass>Pawn</targetClass>
+        <showRangeOnSelect>true</showRangeOnSelect>
+        <friendlyFire>false</friendlyFire>
+        <startsFromCaster>false</startsFromCaster>
+        <maxTargets>5</maxTargets>
+        <range>4</range>
+      </TargetAoEProperties>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_DeathmarkII</defName>
+    <label>Death Mark (II)</label>
+    <description>Mark a victim with a curse that causes their life to flash before their eyes. Cursed victims will lose focus and the will to fight, reducing the attack rate. Marking targets for death empowers Death Bolt. Does not work on mechanoids.
+		
+Max Targets: 6
+Cast Time: 2s
+Cooldown: 60s
+Range: 42</description>
+    <spellId>rwom.tm_deathmark_ii</spellId>
+    <iconPath>UI/deathmark</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_DeathMark</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_DeathMark</defaultProjectile>
+      <abilityDef>TM_DeathMark_II</abilityDef>
+      <warmupTime>2</warmupTime>
+      <SecondsToRecharge>60</SecondsToRecharge>
+      <range>42</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Vibration</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+      <AbilityTargetCategory>TargetAoE</AbilityTargetCategory>
+      <TargetAoEProperties>
+        <targetClass>Pawn</targetClass>
+        <showRangeOnSelect>true</showRangeOnSelect>
+        <friendlyFire>false</friendlyFire>
+        <startsFromCaster>false</startsFromCaster>
+        <maxTargets>6</maxTargets>
+        <range>5</range>
+      </TargetAoEProperties>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_DeathmarkIII</defName>
+    <label>Death Mark (III)</label>
+    <description>Mark a victim with a curse that causes their life to flash before their eyes. Cursed victims will lose focus and the will to fight, reducing the attack rate. Marking targets for death empowers Death Bolt. Does not work on mechanoids.
+		
+Max Targets: 7
+Cast Time: 1.8s
+Cooldown: 45s
+Range: 46</description>
+    <spellId>rwom.tm_deathmark_iii</spellId>
+    <iconPath>UI/deathmark</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_DeathMark</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_DeathMark</defaultProjectile>
+      <abilityDef>TM_DeathMark_III</abilityDef>
+      <warmupTime>1.8</warmupTime>
+      <SecondsToRecharge>45</SecondsToRecharge>
+      <range>46</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Vibration</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+      <AbilityTargetCategory>TargetAoE</AbilityTargetCategory>
+      <TargetAoEProperties>
+        <targetClass>Pawn</targetClass>
+        <showRangeOnSelect>true</showRangeOnSelect>
+        <friendlyFire>false</friendlyFire>
+        <startsFromCaster>false</startsFromCaster>
+        <maxTargets>7</maxTargets>
+        <range>5</range>
+      </TargetAoEProperties>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Fogoftorment</defName>
+    <label>Fog of Torment</label>
+    <description>Creates a fog that causes pain and suffering to every living creature within. Undead within the fog are slowly healed and suffer no penalties from the fog.</description>
+    <spellId>rwom.tm_fogoftorment</spellId>
+    <iconPath>UI/fogoftorment</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_FogOfTorment</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_FogOfTorment</defaultProjectile>
+      <abilityDef>TM_FogOfTorment</abilityDef>
+      <warmupTime>3</warmupTime>
+      <SecondsToRecharge>30</SecondsToRecharge>
+      <range>50</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>ThrowMolotovCocktail</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Consumecorpse</defName>
+    <label>Consume Corpse</label>
+    <description>Consume a corpse or undead to replenish mana. Apparel, items, and equipment remain behind but all material belonging to the corpse is consumed (meat/leather)
+		
+Mana Cost: 3
+Range: 50
+Cooldown: 20s
+Cast Time: 2s</description>
+    <spellId>rwom.tm_consumecorpse</spellId>
+    <iconPath>UI/consumecorpse</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_ConsumeCorpse</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_ConsumeCorpse</defaultProjectile>
+      <abilityDef>TM_ConsumeCorpse</abilityDef>
+      <warmupTime>2</warmupTime>
+      <SecondsToRecharge>20</SecondsToRecharge>
+      <range>50</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>ThrowMolotovCocktail</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_ConsumecorpseI</defName>
+    <label>Consume Corpse (I)</label>
+    <description>Consume a corpse or undead to replenish mana. Apparel, items, and equipment remain behind but all material belonging to the corpse is consumed (meat/leather)
+		
+Mana Cost: 2.5
+Range: 60
+Cooldown: 18s
+Cast Time: 1.8s</description>
+    <spellId>rwom.tm_consumecorpse_i</spellId>
+    <iconPath>UI/consumecorpse</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_ConsumeCorpse</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_ConsumeCorpse</defaultProjectile>
+      <abilityDef>TM_ConsumeCorpse_I</abilityDef>
+      <warmupTime>1.8</warmupTime>
+      <SecondsToRecharge>18</SecondsToRecharge>
+      <range>60</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>ThrowMolotovCocktail</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_ConsumecorpseII</defName>
+    <label>Consume Corpse (II)</label>
+    <description>Consume a corpse or undead to replenish mana. Apparel, items, and equipment remain behind but all material belonging to the corpse is consumed (meat/leather)
+		
+Mana Cost: 2
+Range: 70
+Cooldown: 16s
+Cast Time: 1.5s</description>
+    <spellId>rwom.tm_consumecorpse_ii</spellId>
+    <iconPath>UI/consumecorpse</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_ConsumeCorpse</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_ConsumeCorpse</defaultProjectile>
+      <abilityDef>TM_ConsumeCorpse_II</abilityDef>
+      <warmupTime>1.5</warmupTime>
+      <SecondsToRecharge>16</SecondsToRecharge>
+      <range>70</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>ThrowMolotovCocktail</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_ConsumecorpseIII</defName>
+    <label>Consume Corpse (III)</label>
+    <description>Consume a corpse or undead to replenish mana. Apparel, items, and equipment remain behind but all material belonging to the corpse is consumed (meat/leather)
+		
+Mana Cost: 1.5
+Range: 80
+Cooldown: 15s
+Cast Time: 1.2s</description>
+    <spellId>rwom.tm_consumecorpse_iii</spellId>
+    <iconPath>UI/consumecorpse</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_ConsumeCorpse</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_ConsumeCorpse</defaultProjectile>
+      <abilityDef>TM_ConsumeCorpse_III</abilityDef>
+      <warmupTime>1.2</warmupTime>
+      <SecondsToRecharge>15</SecondsToRecharge>
+      <range>80</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>ThrowMolotovCocktail</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_ConsumecorpseMass</defName>
+    <label>Consume Corpse: Mass</label>
+    <description>Consume a group of corpses or undead to replenish mana. Apparel, items, and equipment remain behind but all material belonging to the corpse is consumed (meat/leather).</description>
+    <spellId>rwom.tm_consumecorpse_mass</spellId>
+    <iconPath>UI/consumecorpse_mass</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_ConsumeCorpse_Mass</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_ConsumeCorpse_Mass</defaultProjectile>
+      <abilityDef>TM_ConsumeCorpse_Mass</abilityDef>
+      <warmupTime>2</warmupTime>
+      <SecondsToRecharge>30</SecondsToRecharge>
+      <range>30</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>ThrowMolotovCocktail</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Corpseexplosion</defName>
+    <label>Corpse Explosion</label>
+    <description>Mixes arcane energy with chemicals inside a corpse or undead to cause the body to explode after a short delay. Equipment will not automatically be consumed by the explosion, but may be destroyed in the explosion.
+		
+Mana Cost: 20%
+Range: 40
+Cooldown: 10s
+Cast time: 2s</description>
+    <spellId>rwom.tm_corpseexplosion</spellId>
+    <iconPath>UI/corpseexplosion</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_BLOS</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <requiresLineOfSight>false</requiresLineOfSight>
+      <defaultProjectile>Projectile_CorpseExplosion</defaultProjectile>
+      <abilityDef>TM_CorpseExplosion</abilityDef>
+      <warmupTime>2</warmupTime>
+      <SecondsToRecharge>10</SecondsToRecharge>
+      <range>40</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>ThrowMolotovCocktail</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_CorpseexplosionI</defName>
+    <label>Corpse Explosion (I)</label>
+    <description>Mixes arcane energy with chemicals inside a corpse or undead to cause the body to explode after a short delay. Equipment will not automatically be consumed by the explosion, but may be destroyed in the explosion.
+		
+Mana Cost: 22%
+Range: 50
+Cooldown: 7s
+Cast time: 1.5s</description>
+    <spellId>rwom.tm_corpseexplosion_i</spellId>
+    <iconPath>UI/corpseexplosion</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_BLOS</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <requiresLineOfSight>false</requiresLineOfSight>
+      <defaultProjectile>Projectile_CorpseExplosion</defaultProjectile>
+      <abilityDef>TM_CorpseExplosion_I</abilityDef>
+      <warmupTime>1.5</warmupTime>
+      <SecondsToRecharge>7</SecondsToRecharge>
+      <range>50</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>ThrowMolotovCocktail</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_CorpseexplosionII</defName>
+    <label>Corpse Explosion (II)</label>
+    <description>Mixes arcane energy with chemicals inside a corpse or undead to cause the body to explode after a short delay. Equipment will not automatically be consumed by the explosion, but may be destroyed in the explosion.
+		
+Mana Cost: 24%
+Range: 60
+Cooldown: 5s
+Cast time: 1s</description>
+    <spellId>rwom.tm_corpseexplosion_ii</spellId>
+    <iconPath>UI/corpseexplosion</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_BLOS</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <requiresLineOfSight>false</requiresLineOfSight>
+      <defaultProjectile>Projectile_CorpseExplosion</defaultProjectile>
+      <abilityDef>TM_CorpseExplosion_II</abilityDef>
+      <warmupTime>1</warmupTime>
+      <SecondsToRecharge>5</SecondsToRecharge>
+      <range>60</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>ThrowMolotovCocktail</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_CorpseexplosionIII</defName>
+    <label>Corpse Explosion (III)</label>
+    <description>Mixes arcane energy with chemicals inside a corpse or undead to cause the body to explode after a short delay. Equipment will not automatically be consumed by the explosion, but may be destroyed in the explosion.
+		
+Mana Cost: 25%
+Range: 70
+Cooldown: 4s
+Cast time: .5s</description>
+    <spellId>rwom.tm_corpseexplosion_iii</spellId>
+    <iconPath>UI/corpseexplosion</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_BLOS</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <requiresLineOfSight>false</requiresLineOfSight>
+      <defaultProjectile>Projectile_CorpseExplosion</defaultProjectile>
+      <abilityDef>TM_CorpseExplosion_III</abilityDef>
+      <warmupTime>.5</warmupTime>
+      <SecondsToRecharge>4</SecondsToRecharge>
+      <range>70</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>ThrowMolotovCocktail</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Lichform</defName>
+    <label>Lich Form</label>
+    <description>Transforms the necromancer into an undead lich gaining an immortal existence and arcane power. Once used, there is no return.
+		
+Benefits: 
+Maximum Mana: +50
+Mana Regeneration: +50%
+Gains unnatural immunities to diseases, resistances to damage, health regeneration, and is sustained by mana (no longer required to sleep or eat)
+Gains ability: Flight
+Gains ability: Death Bolt
+
+Penalties:
+Can no longer perform work involving Caring, Social, Animals, Firefighting, Artistic, or Dumb Labor.
+Loses all passion for work except fighting and research.
+Reduced learning speed by 40% and global work speed by 75%
+Movement speed: -2.0 c/s</description>
+    <spellId>rwom.tm_lichform</spellId>
+    <iconPath>UI/lich</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_LichForm</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_ConsumeCorpse</defaultProjectile>
+      <abilityDef>TM_LichForm</abilityDef>
+      <warmupTime>10</warmupTime>
+      <SecondsToRecharge>2</SecondsToRecharge>
+      <range>0</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Gong</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Deathbolt</defName>
+    <label>Death Bolt</label>
+    <description>Launches bolts of power carrying the anguish of the dead; causes intense pain to any living creatures caught in the blast.
+
+Explosion Radius: 1.6m
+Cooldown: 15s
+Bolts: 2
+Range: 40</description>
+    <spellId>rwom.tm_deathbolt</spellId>
+    <iconPath>Spells/deathbolt</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Effect_DeathBolt</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_DeathBolt</defaultProjectile>
+      <abilityDef>TM_DeathBolt</abilityDef>
+      <isViolent>true</isViolent>
+      <warmupTime>2</warmupTime>
+      <SecondsToRecharge>15.0</SecondsToRecharge>
+      <forcedMissRadius>6</forcedMissRadius>
+      <range>40</range>
+      <ticksBetweenBurstShots>4</ticksBetweenBurstShots>
+      <burstShotCount>2</burstShotCount>
+      <soundCast>TM_Launch</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>2</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_DeathboltI</defName>
+    <label>Death Bolt (I)</label>
+    <description>Launches bolts of power carrying the anguish of the dead; causes intense pain to any living creatures caught in the blast.
+
+Explosion Radius: 2m
+Cooldown: 14s
+Bolts: 2
+Range 40</description>
+    <spellId>rwom.tm_deathbolt_i</spellId>
+    <iconPath>Spells/deathbolt</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Effect_DeathBolt</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_DeathBolt_I</defaultProjectile>
+      <abilityDef>TM_DeathBolt_I</abilityDef>
+      <isViolent>true</isViolent>
+      <warmupTime>2</warmupTime>
+      <SecondsToRecharge>14.0</SecondsToRecharge>
+      <forcedMissRadius>6</forcedMissRadius>
+      <range>40</range>
+      <burstShotCount>2</burstShotCount>
+      <ticksBetweenBurstShots>4</ticksBetweenBurstShots>
+      <soundCast>TM_Launch</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>2</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_DeathboltII</defName>
+    <label>Death Bolt (II)</label>
+    <description>Launches bolts of power carrying the anguish of the dead; causes intense pain to any living creatures caught in the blast.
+
+Explosion Radius: 2m
+Cooldown: 13s
+Bolts: 3
+Range 40</description>
+    <spellId>rwom.tm_deathbolt_ii</spellId>
+    <iconPath>Spells/deathbolt</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Effect_DeathBolt</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_DeathBolt_II</defaultProjectile>
+      <abilityDef>TM_DeathBolt_II</abilityDef>
+      <isViolent>true</isViolent>
+      <warmupTime>2</warmupTime>
+      <SecondsToRecharge>13.0</SecondsToRecharge>
+      <forcedMissRadius>6</forcedMissRadius>
+      <range>40</range>
+      <burstShotCount>3</burstShotCount>
+      <ticksBetweenBurstShots>4</ticksBetweenBurstShots>
+      <soundCast>TM_Launch</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_DeathboltIII</defName>
+    <label>Death Bolt (III)</label>
+    <description>Launches bolts of power carrying the anguish of the dead; causes intense pain to any living creatures caught in the blast.
+
+Explosion Radius: 2.4m
+Cooldown: 12s
+Bolts: 3
+Range: 50</description>
+    <spellId>rwom.tm_deathbolt_iii</spellId>
+    <iconPath>Spells/deathbolt</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Effect_DeathBolt</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_DeathBolt_III</defaultProjectile>
+      <abilityDef>TM_DeathBolt_III</abilityDef>
+      <isViolent>true</isViolent>
+      <warmupTime>2</warmupTime>
+      <SecondsToRecharge>12.0</SecondsToRecharge>
+      <forcedMissRadius>6</forcedMissRadius>
+      <range>50</range>
+      <burstShotCount>3</burstShotCount>
+      <ticksBetweenBurstShots>4</ticksBetweenBurstShots>
+      <soundCast>TM_Launch</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+</Defs>

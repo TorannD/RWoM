@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritBeginRitual>Spirit rebirth for {0} (300 magicyte, 50 silver, 4 hours)</TM_SpiritBeginRitual>
+  <TM_SpiritFinishRitual>Complete the interrupted rebirth of {0}</TM_SpiritFinishRitual>
+  <TM_SpiritRitualUnreachable>The necromancer needs a reachable corpse, large circle, 300 magicyte and 50 silver.</TM_SpiritRitualUnreachable>
+  <TM_SpiritRitualUnsafeEffect>{0} — cannot separate {1} from the body</TM_SpiritRitualUnsafeEffect>
+  <TM_GrimoireRebirthCircle>At a large magic circle, order spirit rebirth for a dead human colonist. Bring {0} magicyte and {1} silver. The ritual takes {2}.</TM_GrimoireRebirthCircle>
+  <TM_GrimoireSpiritStone>When the spirit is exhausted, its soul stone holds the original pawn. Use the stone on a living host. Voluntary exit unlocks after {0} in that body. Losing the host resets recovery.</TM_GrimoireSpiritStone>
+  <TM_SpiritRitualRenounceNecromancy>{0} will return as a Spirit and permanently give up the Necromancer or Lich class and its spells. Their overall level, XP, unspent points and ordinary skills will be preserved. Proceed with the ritual?</TM_SpiritRitualRenounceNecromancy>
+</LanguageData>

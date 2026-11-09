@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <JobDef>
+    <defName>TM_ReadRangerTraining</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_GladiatorInitiation</driverClass>
+    <reportString>studying the Ranger combat form.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_ReadRangerTrailLore</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_GladiatorInitiation</driverClass>
+    <reportString>studying the Ranger combat form.</reportString>
+  </JobDef>
+</Defs>
+

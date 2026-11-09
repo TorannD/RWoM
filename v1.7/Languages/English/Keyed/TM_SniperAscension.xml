@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_SniperAscensionRequirements>Might level {0}/30. Complete either trial: cover {1}/6 rescues or finish {2}/8 evacuation drills.</TM_SniperAscensionRequirements>
+  <TM_SniperAscensionDrillHint>Select two colony beds at least 12 cells apart. The sniper rehearses at each station. One completed drill counts per day.</TM_SniperAscensionDrillHint>
+  <TM_SniperAscensionLearned>Ascension technique: {0}.</TM_SniperAscensionLearned>
+  <TM_SniperAscend>Choose ascension technique</TM_SniperAscend>
+  <TM_SniperChooseCloak>{0} — concealment (permanent choice)</TM_SniperChooseCloak>
+  <TM_SniperChooseOpening>{0} — sustained fire (permanent choice)</TM_SniperChooseOpening>
+  <TM_SniperBeginDrill>Rehearse an evacuation</TM_SniperBeginDrill>
+  <TM_SniperDrillFirst>Select the first colony bed.</TM_SniperDrillFirst>
+  <TM_SniperDrillSecond>Select a second colony bed at least 12 cells from the first.</TM_SniperDrillSecond>
+  <TM_SniperAscensionRescueHint>During an active threat, draft the sniper with a ranged weapon. Keep the rescue bed in sight within 35 cells while another colonist delivers a wounded ally. Each rescued ally counts once.</TM_SniperAscensionRescueHint>
+  <TM_SniperOpeningUnavailable>Requires Single Opening, 60% stamina, and a completed cooldown.</TM_SniperOpeningUnavailable>
+</LanguageData>

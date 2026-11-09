@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_ArcaneTatooPartHD.label>cuerpo rúnico</TM_ArcaneTatooPartHD.label>
+  
+  <TM_ArcaneTatooPartHD.description>Graba el cuerpo con símbolos y marcas arcanas.</TM_ArcaneTatooPartHD.description>
+  
+  <TM_ArcaneTatooPartHD.stages.I.label>I</TM_ArcaneTatooPartHD.stages.I.label>
+  
+  <TM_ArcaneTatooPartHD.stages.II.label>II</TM_ArcaneTatooPartHD.stages.II.label>
+  
+  <TM_ArcaneTatooPartHD.stages.III.label>III</TM_ArcaneTatooPartHD.stages.III.label>
+  
+  <TM_ArcaneTatooPartHD.stages.IV.label>IV</TM_ArcaneTatooPartHD.stages.IV.label>
+  
+  
+  <TM_AwarenessBrandHD.label>Marca de percepción</TM_AwarenessBrandHD.label>
+  
+  <TM_AwarenessBrandHD.description>Aumenta los sentidos y la percepción.</TM_AwarenessBrandHD.description>
+  
+  <TM_AwarenessBrandHD.stages.dormant.label>latente</TM_AwarenessBrandHD.stages.dormant.label>
+  
+  <TM_AwarenessBrandHD.stages.I.label>I</TM_AwarenessBrandHD.stages.I.label>
+  
+  <TM_AwarenessBrandHD.stages.II.label>II</TM_AwarenessBrandHD.stages.II.label>
+  
+  <TM_AwarenessBrandHD.stages.III.label>III</TM_AwarenessBrandHD.stages.III.label>
+  
+  <TM_AwarenessBrandHD.stages.IV.label>IV</TM_AwarenessBrandHD.stages.IV.label>
+  
+  <TM_AwarenessBrandHD.stages.surging_I.label>desbordante I</TM_AwarenessBrandHD.stages.surging_I.label>
+  
+  <TM_AwarenessBrandHD.stages.surging_II.label>desbordante II</TM_AwarenessBrandHD.stages.surging_II.label>
+  
+  <TM_AwarenessBrandHD.stages.surging_III.label>desbordante III</TM_AwarenessBrandHD.stages.surging_III.label>
+  
+  <TM_AwarenessBrandHD.stages.surging_IV.label>desbordante IV</TM_AwarenessBrandHD.stages.surging_IV.label>
+  
+  <TM_AwarenessBrandHD.stages.surging_V.label>desbordante V</TM_AwarenessBrandHD.stages.surging_V.label>
+  
+  <TM_AwarenessBrandHD.stages.surging_VI.label>desbordante VI</TM_AwarenessBrandHD.stages.surging_VI.label>
+  
+  
+  <TM_EmotionBrandHD.label>Marca de emoción</TM_EmotionBrandHD.label>
+  
+  <TM_EmotionBrandHD.description>Hace que el ánimo suba más rápido y baje más despacio; cuando está desbordante, tiene probabilidad de sacar a un personaje de una crisis mental.</TM_EmotionBrandHD.description>
+  
+  <TM_EmotionBrandHD.stages.dormant.label>latente</TM_EmotionBrandHD.stages.dormant.label>
+  
+  <TM_EmotionBrandHD.stages.surging.label>desbordante</TM_EmotionBrandHD.stages.surging.label>
+  
+  
+  <TM_FitnessBrandHD.label>Marca de forma física</TM_FitnessBrandHD.label>
+  
+  <TM_FitnessBrandHD.description>Aumenta el movimiento y la manipulación.</TM_FitnessBrandHD.description>
+  
+  <TM_FitnessBrandHD.stages.dormant.label>latente</TM_FitnessBrandHD.stages.dormant.label>
+  
+  <TM_FitnessBrandHD.stages.I.label>I</TM_FitnessBrandHD.stages.I.label>
+  
+  <TM_FitnessBrandHD.stages.II.label>II</TM_FitnessBrandHD.stages.II.label>
+  
+  <TM_FitnessBrandHD.stages.III.label>III</TM_FitnessBrandHD.stages.III.label>
+  
+  <TM_FitnessBrandHD.stages.IV.label>IV</TM_FitnessBrandHD.stages.IV.label>
+  
+  <TM_FitnessBrandHD.stages.surging_I.label>desbordante I</TM_FitnessBrandHD.stages.surging_I.label>
+  
+  <TM_FitnessBrandHD.stages.surging_II.label>desbordante II</TM_FitnessBrandHD.stages.surging_II.label>
+  
+  <TM_FitnessBrandHD.stages.surging_III.label>desbordante III</TM_FitnessBrandHD.stages.surging_III.label>
+  
+  <TM_FitnessBrandHD.stages.surging_IV.label>desbordante IV</TM_FitnessBrandHD.stages.surging_IV.label>
+  
+  <TM_FitnessBrandHD.stages.surging_V.label>desbordante V</TM_FitnessBrandHD.stages.surging_V.label>
+  
+  <TM_FitnessBrandHD.stages.surging_VI.label>desbordante VI</TM_FitnessBrandHD.stages.surging_VI.label>
+  
+  
+  <TM_GolemancyEfficiencyHD.label>Enlace mental</TM_GolemancyEfficiencyHD.label>
+  
+  <TM_GolemancyEfficiencyHD.description>El gólem está vinculado a un golemante y ha alcanzado un estado superior de consciencia.</TM_GolemancyEfficiencyHD.description>
+  
+  <TM_GolemancyEfficiencyHD.stages.I.label>I</TM_GolemancyEfficiencyHD.stages.I.label>
+  
+  <TM_GolemancyEfficiencyHD.stages.II.label>II</TM_GolemancyEfficiencyHD.stages.II.label>
+  
+  <TM_GolemancyEfficiencyHD.stages.III.label>III</TM_GolemancyEfficiencyHD.stages.III.label>
+  
+  <TM_GolemancyEfficiencyHD.stages.IV.label>IV</TM_GolemancyEfficiencyHD.stages.IV.label>
+  
+  <TM_GolemancyEfficiencyHD.stages.V.label>V</TM_GolemancyEfficiencyHD.stages.V.label>
+  
+  
+  <TM_GolemancyPowerHD.label>Aumento del gólem</TM_GolemancyPowerHD.label>
+  
+  <TM_GolemancyPowerHD.description>El gólem está vinculado a un golemante capaz de aumentar la potencia y la resistencia del gólem.</TM_GolemancyPowerHD.description>
+  
+  <TM_GolemancyPowerHD.stages.I.label>I</TM_GolemancyPowerHD.stages.I.label>
+  
+  <TM_GolemancyPowerHD.stages.II.label>II</TM_GolemancyPowerHD.stages.II.label>
+  
+  <TM_GolemancyPowerHD.stages.III.label>III</TM_GolemancyPowerHD.stages.III.label>
+  
+  <TM_GolemancyPowerHD.stages.IV.label>IV</TM_GolemancyPowerHD.stages.IV.label>
+  
+  <TM_GolemancyPowerHD.stages.V.label>V</TM_GolemancyPowerHD.stages.V.label>
+  
+  
+  <TM_GolemancyVersatilityHD.label>Vínculo con el gólem</TM_GolemancyVersatilityHD.label>
+  
+  <TM_GolemancyVersatilityHD.description>El golemante está vinculado a un gólem y puede extraer parte de su energía para uso personal.</TM_GolemancyVersatilityHD.description>
+  
+  <TM_GolemancyVersatilityHD.stages.I.label>I</TM_GolemancyVersatilityHD.stages.I.label>
+  
+  <TM_GolemancyVersatilityHD.stages.II.label>II</TM_GolemancyVersatilityHD.stages.II.label>
+  
+  <TM_GolemancyVersatilityHD.stages.III.label>III</TM_GolemancyVersatilityHD.stages.III.label>
+  
+  <TM_GolemancyVersatilityHD.stages.IV.label>IV</TM_GolemancyVersatilityHD.stages.IV.label>
+  
+  <TM_GolemancyVersatilityHD.stages.V.label>V</TM_GolemancyVersatilityHD.stages.V.label>
+  
+  
+  <TM_ProtectionBrandHD.label>Marca de protección</TM_ProtectionBrandHD.label>
+  
+  <TM_ProtectionBrandHD.description>La runa de protección puede evitar que el portador reciba daño, pero consume parte o toda su carga al hacerlo; esta runa se recarga con el tiempo.</TM_ProtectionBrandHD.description>
+  
+  <TM_ProtectionBrandHD.stages.dormant.label>latente</TM_ProtectionBrandHD.stages.dormant.label>
+  
+  <TM_ProtectionBrandHD.stages.surging.label>desbordante</TM_ProtectionBrandHD.stages.surging.label>
+  
+  
+  <TM_RuneCarvedPartHD.label>Grabado rúnico</TM_RuneCarvedPartHD.label>
+  
+  <TM_RuneCarvedPartHD.description>Potencia una parte del cuerpo con energía rúnica.</TM_RuneCarvedPartHD.description>
+  
+  <TM_RuneCarvedPartHD.stages.Runic_I.label>Rúnico (I)</TM_RuneCarvedPartHD.stages.Runic_I.label>
+  
+  <TM_RuneCarvedPartHD.stages.Runic_II.label>Rúnico (II)</TM_RuneCarvedPartHD.stages.Runic_II.label>
+  
+  <TM_RuneCarvedPartHD.stages.Runic_III.label>Rúnico (III)</TM_RuneCarvedPartHD.stages.Runic_III.label>
+  
+  <TM_RuneCarvedPartHD.stages.Runic_IV.label>Rúnico (IV)</TM_RuneCarvedPartHD.stages.Runic_IV.label>
+  
+  
+  <TM_SigilPainHD.label>tensión de sigilos</TM_SigilPainHD.label>
+  
+  <TM_SigilPainHD.description>Mantener sigilos más allá de su capacidad normal tensa al lanzador y le causa dolor.</TM_SigilPainHD.description>
+  
+  <TM_SigilPainHD.stages.negligible.label>insignificante</TM_SigilPainHD.stages.negligible.label>
+  
+  <TM_SigilPainHD.stages.I.label>I</TM_SigilPainHD.stages.I.label>
+  
+  <TM_SigilPainHD.stages.II.label>II</TM_SigilPainHD.stages.II.label>
+  
+  <TM_SigilPainHD.stages.III.label>III</TM_SigilPainHD.stages.III.label>
+  
+  <TM_SigilPainHD.stages.IV.label>IV</TM_SigilPainHD.stages.IV.label>
+  
+  <TM_SigilPainHD.stages.V.label>V</TM_SigilPainHD.stages.V.label>
+  
+  <TM_SigilPainHD.stages.VI.label>VI</TM_SigilPainHD.stages.VI.label>
+  
+  <TM_SigilPainHD.stages.VII.label>VII</TM_SigilPainHD.stages.VII.label>
+  
+  
+  <TM_SiphonBrandHD.label>Marca de succión</TM_SiphonBrandHD.label>
+  
+  <TM_SiphonBrandHD.description>Transfiere lentamente maná al receptor de la marca.</TM_SiphonBrandHD.description>
+  
+  <TM_SiphonBrandHD.stages.dormant.label>latente</TM_SiphonBrandHD.stages.dormant.label>
+  
+  <TM_SiphonBrandHD.stages.surging.label>desbordante</TM_SiphonBrandHD.stages.surging.label>
+  
+  
+  <TM_VitalityBrandHD.label>Marca de vitalidad</TM_VitalityBrandHD.label>
+  
+  <TM_VitalityBrandHD.description>Aumenta la vitalidad y la recuperación.</TM_VitalityBrandHD.description>
+  
+  <TM_VitalityBrandHD.stages.dormant.label>latente</TM_VitalityBrandHD.stages.dormant.label>
+  
+  <TM_VitalityBrandHD.stages.I.label>I</TM_VitalityBrandHD.stages.I.label>
+  
+  <TM_VitalityBrandHD.stages.II.label>II</TM_VitalityBrandHD.stages.II.label>
+  
+  <TM_VitalityBrandHD.stages.III.label>III</TM_VitalityBrandHD.stages.III.label>
+  
+  <TM_VitalityBrandHD.stages.IV.label>IV</TM_VitalityBrandHD.stages.IV.label>
+  
+  <TM_VitalityBrandHD.stages.surging_I.label>desbordante I</TM_VitalityBrandHD.stages.surging_I.label>
+  
+  <TM_VitalityBrandHD.stages.surging_II.label>desbordante II</TM_VitalityBrandHD.stages.surging_II.label>
+  
+  <TM_VitalityBrandHD.stages.surging_III.label>desbordante III</TM_VitalityBrandHD.stages.surging_III.label>
+  
+  <TM_VitalityBrandHD.stages.surging_IV.label>desbordante IV</TM_VitalityBrandHD.stages.surging_IV.label>
+  
+  <TM_VitalityBrandHD.stages.surging_V.label>desbordante V</TM_VitalityBrandHD.stages.surging_V.label>
+  
+  <TM_VitalityBrandHD.stages.surging_VI.label>desbordante VI</TM_VitalityBrandHD.stages.surging_VI.label>
+  
+</LanguageData>

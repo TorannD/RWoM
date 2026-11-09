@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_RosterPreferred>Все классы (приоритет новых посвящений)</TM_RosterPreferred>
+  <TM_RosterFoundations>Только новые посвящения</TM_RosterFoundations>
+  <TM_RosterClassicNative>Штатные классы (сохранить классическую систему)</TM_RosterClassicNative>
+  <TM_RosterMigration>Штатные классы (разрешить перенос при загрузке)</TM_RosterMigration>
+  <TM_RosterAddons>Классические классы дополнений, включая Kure</TM_RosterAddons>
+  <TM_RosterReport>Создано колонистов: {0} из {1}. Результат для каждого класса записан в журнал.</TM_RosterReport>
+</LanguageData>

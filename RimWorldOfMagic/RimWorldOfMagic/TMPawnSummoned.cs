@@ -83,7 +83,7 @@ namespace TorannMagic
 
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
-            this.ticksLeft = this.ticksToDestroy;
+            if (!respawningAfterLoad && ticksLeft == 0) ticksLeft = ticksToDestroy;
             base.SpawnSetup(map, respawningAfterLoad);
         }
 
@@ -142,11 +142,13 @@ namespace TorannMagic
                         bool flag3 = this.ticksLeft <= 0;
                         if (flag3)
                         {
+                            if (!ClassProgression.SpiritSummonedHost.CanDismiss(this)) return;
                             this.PreDestroy();
                             if (!this.Destroyed)
                             {
                                 this.Destroy(DestroyMode.Vanish);
                             }
+                            if (Destroyed) return;
                         }
                         CheckPawnState();
 

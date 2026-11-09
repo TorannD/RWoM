@@ -36,6 +36,7 @@ namespace TorannMagic.WorldTransport
         {
             base.ExposeData();
             Scribe_Values.Look(ref age, "age", 0);
+            Scribe_Values.Look(ref draftFlag, "TM_lightDrafted");
             Scribe_Deep.Look(ref contents, "contents", this);
         }
 

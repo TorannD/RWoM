@@ -1,120 +1,88 @@
-﻿using System.Collections.Generic;
-using Verse.AI;
-using RimWorld;
-using Verse;
-using AbilityUser;
+using System.Collections.Generic;
 using System.Linq;
-
-
+using AbilityUser;
+using RimWorld;
+using TorannMagic.ClassProgression;
+using Verse;
+using Verse.AI;
 
 namespace TorannMagic
 {
-    internal class JobDriver_PlacePoisonTrap: JobDriver
+    internal class JobDriver_PlacePoisonTrap : JobDriver
     {
+        private bool paid;
+        private bool NewOrder => job.def.defName==Verb_PoisonTrap.Order;
+        private Pawn Owner => NewOrder ? job.targetB.Pawn : pawn;
 
-        public override bool TryMakePreToilReservations(bool errorOnFailed)
+        internal static bool OpenCell(Map map,IntVec3 cell)
         {
-            return true;
+            if (map==null || !cell.InBounds(map) || cell.Fogged(map) || !cell.Standable(map) || cell.GetEdifice(map)!=null) return false;
+            var def=ThingDef.Named("TM_PoisonTrap");
+            return !cell.GetThingList(map).Any(t=>GenSpawn.SpawningWipes(def,t.def));
+        }
+        private MightAbility OrderedPower() => SpiritHostedMartial.Find(pawn,Owner,Verb_PoisonTrap.Order);
+        public override bool TryMakePreToilReservations(bool errorOnFailed) =>
+            OpenCell(pawn.Map,TargetLocA) && (!NewOrder || OrderedPower()!=null) &&
+            pawn.Reserve(job.targetA,job,1,-1,null,errorOnFailed);
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look(ref paid,"rwomRangerTrapPaid");
         }
 
         protected override IEnumerable<Toil> MakeNewToils()
         {
-
-            Toil gotoSpot = new Toil()
-            {
-                initAction = () =>
+            this.FailOn(()=>!OpenCell(pawn.Map,TargetLocA) || (NewOrder && OrderedPower()==null));
+            // Retain the original two toil indices so old, paid walks resume at the same step.
+            var go=new Toil { defaultCompleteMode=ToilCompleteMode.PatherArrival };
+            go.initAction=()=>{
+                if (NewOrder && !paid)
                 {
-                    pawn.pather.StartPath(TargetLocA, PathEndMode.Touch);
-                },
-                defaultCompleteMode = ToilCompleteMode.PatherArrival
-            };
-            yield return gotoSpot;
-
-            Toil placeTrap = new Toil()
-            {
-                initAction = () =>
-                {
-                    SpawnThings tempPod = new SpawnThings();
-                    tempPod.def = ThingDef.Named("TM_PoisonTrap");
-                    CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
-                    int verVal = 0;
-                    try
+                    var power=OrderedPower();
+                    if (!SpiritHostedMartial.Ready(pawn,power,Verb_PoisonTrap.Order) || !Verb_PoisonTrap.Valid(pawn,power,job.targetA))
                     {
-                        //verVal = TM_Calc.GetMightSkillLevel(pawn, comp.MightData.MightPowerSkill_PoisonTrap, "TM_PoisonTrap", "_ver", true);
-                        verVal = TM_Calc.GetSkillVersatilityLevel(pawn, TorannMagicDefOf.TM_PoisonTrap);
-                        MightPowerSkill ver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_PoisonTrap.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PoisonTrap_ver");
-                        //verVal = ver.level;
-                        //if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
-                        //{
-                        //    MightPowerSkill mver = comp.MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
-                        //    verVal = mver.level;
-                        //}
-                        for (int i = 0; i < comp.combatItems.Count; i++)
-                        {
-                            if(comp.combatItems[i].Destroyed)
-                            {
-                                comp.combatItems.Remove(comp.combatItems[i]);
-                                i--;
-                            }                            
-                        }
-                        if (comp.combatItems.Count > verVal+1)
-                        {
-                            Messages.Message("TM_TooManyTraps".Translate(
-                                pawn.LabelShort,
-                                ver.level + 2
-                            ), MessageTypeDefOf.NeutralEvent);
-                            Thing tempThing = comp.combatItems[0];
-                            comp.combatItems.Remove(tempThing);
-                            if (tempThing != null && !tempThing.Destroyed)
-                            {
-                                tempThing.Destroy();
-                            }
-                        }
-                        this.SingleSpawnLoop(tempPod, pawn, TargetLocA, pawn.Map);                                              
-                    }
-                    catch
-                    {
-                        Log.Message("Attempted to place a poison trap but threw an unknown exception - recovering and ending attempt");
-                        comp.combatItems.Clear();
-                        Log.Message("Resetting Ranger poison trap count - this may result in unassigned poison traps.");
+                        EndJobWith(JobCondition.Incompletable);
                         return;
                     }
-                },
-                defaultCompleteMode = ToilCompleteMode.Instant
+                    paid=true;
+                    power.PostAbilityAttempt();
+                }
+                pawn.pather.StartPath(TargetLocA,PathEndMode.Touch);
             };
-            yield return placeTrap;         
+            yield return go;
+            yield return Toils_General.Do(()=>{
+                if ((NewOrder && (!paid || OrderedPower()==null)) || !OpenCell(pawn.Map,TargetLocA) ||
+                    !pawn.CanReachImmediate(TargetLocA,PathEndMode.Touch))
+                {
+                    EndJobWith(JobCondition.Incompletable);
+                    return;
+                }
+                SingleSpawnLoop(new SpawnThings {def=ThingDef.Named("TM_PoisonTrap")},Owner,TargetLocA,pawn.Map);
+            });
         }
 
-        public void SingleSpawnLoop(SpawnThings spawnables, Pawn pawn, IntVec3 position, Map map)
+        public void SingleSpawnLoop(SpawnThings spawnables,Pawn pawn,IntVec3 position,Map map)
         {
-            bool flag = spawnables.def != null;
-            if (flag)
+            var def=spawnables?.def;
+            var comp=pawn?.GetCompAbilityUserMight();
+            if (def?.thingClass==null || !typeof(Building_PoisonTrap).IsAssignableFrom(def.thingClass) || comp==null || !OpenCell(map,position)) return;
+            var trap=(Building_PoisonTrap)ThingMaker.MakeThing(def,def.MadeFromStuff ? ThingDefOf.WoodLog : null);
+            int capacity=System.Math.Max(1,2+TM_Calc.GetSkillVersatilityLevel(pawn,TorannMagicDefOf.TM_PoisonTrap));
+            trap.SetFaction(pawn.Faction);
+            trap.SetPlanter(pawn);
+            GenSpawn.Spawn(trap,position,map,Rot4.North,WipeMode.Vanish,false);
+            comp.combatItems ??= new List<Thing>();
+            comp.combatItems.RemoveAll(t=>t==null || t.Destroyed);
+            comp.combatItems.Add(trap);
+            var excess=comp.combatItems.OfType<Building_PoisonTrap>().ToList();
+            if (excess.Count<=capacity) return;
+            Messages.Message("TM_TooManyTraps".Translate(pawn.LabelShort,capacity),MessageTypeDefOf.NeutralEvent);
+            for(int i=0;i<excess.Count-capacity;i++)
             {
-                Faction faction = pawn.Faction;
-                bool flag2 = spawnables.def.race != null;
-                if (flag2)
-                {
-                    Log.Error("Trying to spawn a pawn instead of a building.");
-                }
-                else
-                {
-                    ThingDef def = spawnables.def;
-                    ThingDef stuff = null;
-                    bool madeFromStuff = def.MadeFromStuff;
-                    if (madeFromStuff)
-                    {
-                        stuff = ThingDefOf.WoodLog;
-                    }
-                    Thing thing = ThingMaker.MakeThing(def, stuff);
-                    thing.SetFaction(faction, null);
-                    CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
-                    GenSpawn.Spawn(thing, position, map, Rot4.North, WipeMode.Vanish, false);
-                    comp.combatItems.Add(thing);
-                }
-            }
-            else
-            {
-                Log.Message("Failed to spawn poison trap - spawnable not defined.");
+                var oldest=excess[i];
+                comp.combatItems.Remove(oldest);
+                oldest.Destroy();
             }
         }
     }

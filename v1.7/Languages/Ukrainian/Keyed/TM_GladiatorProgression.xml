@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_ReadGladiatorSprint>Спринт — тривале прискорення, резерв 30 витривалості (30 с) · Остаточний вибір</TM_ReadGladiatorSprint>
+  <TM_ReadGladiatorManeuver>Маневр — швидкість +8% на 8 с, 12% витривалості (25 с) · Остаточний вибір</TM_ReadGladiatorManeuver>
+  <TM_GladiatorReliefDrill>Вишкіл: підійти до союзника з 8 клітин</TM_GladiatorReliefDrill>
+  <TM_GladiatorDefenseChoice>Обрати захисну техніку</TM_GladiatorDefenseChoice>
+  <TM_GladiatorChooseFortitude>Стійкість — постійний захист себе (остаточний вибір)</TM_GladiatorChooseFortitude>
+  <TM_GladiatorChooseCover>Прикрити — прийняти до 20 шкоди від пострілів у союзника за 6 с (остаточний вибір)</TM_GladiatorChooseCover>
+  <TM_GladiatorUseCover>Прикрити союзника — 20% витривалості, відновлення 30 с</TM_GladiatorUseCover>
+  <TM_GladiatorAttackChoice>Обрати прийом ближнього бою</TM_GladiatorAttackChoice>
+  <TM_GladiatorHoldDrill>Втримати стрій: прийняти удар або тренуватися із союзником</TM_GladiatorHoldDrill>
+  <TM_GladiatorChooseCleave>Розсічення — автоматично (остаточно)</TM_GladiatorChooseCleave>
+  <TM_GladiatorChooseSweep>Помах — вручну до двох цілей (остаточно)</TM_GladiatorChooseSweep>
+  <TM_GladiatorLevelGate>Для Вознесіння потрібен 30-й рівень воїна.</TM_GladiatorLevelGate>
+  <TM_GladiatorEvacTrial>Випускне випробування: врятувати пораненого в бою або провести евакуаційне навчання.</TM_GladiatorEvacTrial>
+  <TM_GladiatorUltimateChoice>Обрати найвищу техніку</TM_GladiatorUltimateChoice>
+  <TM_GladiatorPickWhirlwind>Вихор — класична техніка (остаточно)</TM_GladiatorPickWhirlwind>
+  <TM_GladiatorPickLastCircle>Останнє коло — тримати зону радіусом 4 клітини 20 с (остаточно)</TM_GladiatorPickLastCircle>
+  <TM_GladiatorCastCircle>Останнє коло — 60% витривалості, підготовка 5 с, відновлення 2 доби</TM_GladiatorCastCircle>
+  <TM_LastCircleDetails>Потрібна зброя ближнього бою. Чотири найближчі союзники поглинають до 25 шкоди кожен за 20 с. Три помахи вражають до трьох ворогів кожен. Швидкість −30%. Вихід із кола завершує дію. Вибухи проходять крізь захист. Перервана підготовка коштує 6% витривалості та блокує техніку на 6000 тиків.</TM_LastCircleDetails>
+</LanguageData>

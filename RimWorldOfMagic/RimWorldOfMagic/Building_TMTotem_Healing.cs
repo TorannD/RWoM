@@ -13,19 +13,21 @@ namespace TorannMagic
     {
 
         private int nextSearch = 0;
-        private float range = 40;
+        private float range => 20 + pwrVal;
         private bool initialized = false;
         public int pwrVal = 0;
         public int verVal = 0;
         public float arcanePwr = 1f;
         Pawn target = null;
+        public Pawn trialCaster;
+        public string trialAbilityId;
+        internal MagicPower trialOwner;
 
         protected override void Tick()
         {
             if(!initialized)
             {
                 this.nextSearch = Find.TickManager.TicksGame + Rand.Range(30, 40);
-                this.range = 20 + pwrVal;
                 initialized = true;
             }
             else if(Find.TickManager.TicksGame >= this.nextSearch)
@@ -35,7 +37,9 @@ namespace TorannMagic
                 target = TM_Calc.FindNearbyInjuredPawn(this.Position, this.Map, this.Faction, (int)range, 0f, true);
                 if (target != null)
                 {
+                    var trial = ClassProgression.ShamanTrials.CaptureHealing(this, target);
                     TM_Action.DoAction_HealPawn(null, target, 1, Rand.Range(1f, 3f) * arcanePwr * (1f + (.04f * pwrVal)));
+                    ClassProgression.ShamanTrials.CompleteHealing(trial);
                     Vector3 totemPos = this.DrawPos;
                     totemPos.z += 1.3f;
                     TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Healing_Small, totemPos, this.Map, 1.5f, .6f, .1f, 1f, 0, 0, 0, 0);
@@ -57,6 +61,10 @@ namespace TorannMagic
             Scribe_Values.Look<int>(ref this.verVal, "verVal", 0, false);
             Scribe_Values.Look<float>(ref this.arcanePwr, "arcanePwr", 1f, false);
             base.ExposeData();
+            Scribe_Values.Look(ref nextSearch,"TM_totemNextPulse");
+            Scribe_Values.Look(ref initialized,"TM_totemPulseStarted");
+            Scribe_References.Look(ref trialCaster, "rwomShamanTrialCaster");
+            Scribe_Values.Look(ref trialAbilityId, "rwomShamanTrialAbility");
         }
     }
 }

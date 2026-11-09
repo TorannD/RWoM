@@ -1,0 +1,10 @@
+<LanguageData>
+  <TM_SpiritCommanderCrew.reportString>coordinating a work crew.</TM_SpiritCommanderCrew.reportString>
+  <TM_SpiritCommanderRally.reportString>rallying allies.</TM_SpiritCommanderRally.reportString>
+  <TM_SpiritCommanderMove.reportString>ordering allies to move out.</TM_SpiritCommanderMove.reportString>
+  <TM_SpiritCommanderAlert.reportString>ordering allies to stay alert.</TM_SpiritCommanderAlert.reportString>
+  <TM_SpiritCommanderHold.reportString>ordering allies to hold the line.</TM_SpiritCommanderHold.reportString>
+  <TM_SpiritCommanderProvisionerAura.reportString>adjusting a command aura.</TM_SpiritCommanderProvisionerAura.reportString>
+  <TM_SpiritCommanderTaskMasterAura.reportString>adjusting a command aura.</TM_SpiritCommanderTaskMasterAura.reportString>
+  <TM_SpiritCommanderCommanderAura.reportString>adjusting a command aura.</TM_SpiritCommanderCommanderAura.reportString>
+</LanguageData>

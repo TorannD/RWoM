@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_OxygenMode>Supply: {0}</TM_OxygenMode>
+  <TM_OxygenModeMana>Mana</TM_OxygenModeMana>
+  <TM_OxygenModeMagicyte>Magicyte</TM_OxygenModeMagicyte>
+  <TM_OxygenModeDesc>Choose mana from the local buffer or magicyte from local storage. No automatic fallback to the other resource.</TM_OxygenModeDesc>
+  <TM_OxygenBuffer>Mana: {0} / {1}</TM_OxygenBuffer>
+  <TM_OxygenPaidMagicyte>Remaining crystal charge: {0} mana</TM_OxygenPaidMagicyte>
+  <TM_OxygenStatusRunning>Atmosphere field active</TM_OxygenStatusRunning>
+  <TM_OxygenStatusIdle>Atmosphere field inactive</TM_OxygenStatusIdle>
+  <TM_OxygenStatusEmpty>Selected resource depleted</TM_OxygenStatusEmpty>
+  <TM_OxygenStatusOff>Switched off or broken</TM_OxygenStatusOff>
+  <TM_OxygenCapacity>Supported area: {0} cells; mana per second: {1}</TM_OxygenCapacity>
+  <TM_OxygenPressure>Atmosphere field strength: {0}</TM_OxygenPressure>
+  <TM_OxygenOutput>Output: {0}</TM_OxygenOutput>
+  <TM_OxygenOutputDesc>Choose atmosphere through mana beacons or oxygen supply to connected VGE tanks. The modes are separate. Pipe output needs an oxygen tank connected by VGE pipes; full or disconnected tanks stop consumption. Mana or magicyte is selected separately.</TM_OxygenOutputDesc>
+  <TM_OxygenOutputAtmosphere>Atmosphere</TM_OxygenOutputAtmosphere>
+  <TM_OxygenOutputPipe>VGE oxygen network</TM_OxygenOutputPipe>
+  <TM_OxygenPipeInfo>Pipe output: up to 1 oxygen/s for 0.1 mana/s. Connect a VGE oxygen tank; native pumps use the stored oxygen.</TM_OxygenPipeInfo>
+  <TM_OxygenPipePending>Paid oxygen awaiting delivery: {0}</TM_OxygenPipePending>
+</LanguageData>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_AccelerateTimeHD.label>envejecimiento</TM_AccelerateTimeHD.label>
+  
+  <TM_AccelerateTimeHD.description>Envejece rápidamente a un peón. Cualquier otra afección que afecte al peón también acelerará sus tendencias naturales. Los peones envejecidos más allá de su esperanza de vida habitual suelen verse aquejados por enfermedades o afecciones relacionadas con la edad.</TM_AccelerateTimeHD.description>
+  
+  <TM_AccelerateTimeHD.stages.I.label>I</TM_AccelerateTimeHD.stages.I.label>
+  
+  <TM_AccelerateTimeHD.stages.II.label>II</TM_AccelerateTimeHD.stages.II.label>
+  
+  <TM_AccelerateTimeHD.stages.III.label>III</TM_AccelerateTimeHD.stages.III.label>
+  
+  <TM_AccelerateTimeHD.stages.IV.label>IV</TM_AccelerateTimeHD.stages.IV.label>
+  
+  
+  <TM_PredictionHD.label>predicción</TM_PredictionHD.label>
+  
+  <TM_PredictionHD.description>Permite predecir eventos o acciones futuros.\n\nNota para administradores: esta habilidad predice y retrasa cualquier evento. Algunos mods usan este tipo de eventos como desencadenantes de efectos o resultados; esto puede provocar errores si la situación cambia y ciertos objetos, elementos o condiciones dejan de ser válidos cuando ocurre un evento predicho.</TM_PredictionHD.description>
+  
+  <TM_PredictionHD.stages.I.label>I</TM_PredictionHD.stages.I.label>
+  
+  <TM_PredictionHD.stages.II.label>II</TM_PredictionHD.stages.II.label>
+  
+  <TM_PredictionHD.stages.III.label>III</TM_PredictionHD.stages.III.label>
+  
+  <TM_PredictionHD.stages.IV.label>IV</TM_PredictionHD.stages.IV.label>
+  
+  <TM_PredictionHD.stages.V.label>V</TM_PredictionHD.stages.V.label>
+  
+  <TM_PredictionHD.stages.VI.label>VI</TM_PredictionHD.stages.VI.label>
+  
+  
+  <TM_ReverseTimeBadHD.label>envejecimiento inverso</TM_ReverseTimeBadHD.label>
+  
+  <TM_ReverseTimeBadHD.description>Revierte rápidamente la edad de un peón. Cualquier otra afección que afecte al peón también revertirá sus tendencias naturales. Las afecciones revertidas más allá del momento en que se adquirieron dejarán de existir. Los peones revertidos más allá del momento en que aparecieron también dejarán de existir.</TM_ReverseTimeBadHD.description>
+  
+  <TM_ReverseTimeBadHD.stages.I.label>I</TM_ReverseTimeBadHD.stages.I.label>
+  
+  <TM_ReverseTimeBadHD.stages.II.label>II</TM_ReverseTimeBadHD.stages.II.label>
+  
+  <TM_ReverseTimeBadHD.stages.III.label>III</TM_ReverseTimeBadHD.stages.III.label>
+  
+  <TM_ReverseTimeBadHD.stages.IV.label>IV</TM_ReverseTimeBadHD.stages.IV.label>
+  
+  
+  <TM_ReverseTimeHD.label>envejecimiento inverso</TM_ReverseTimeHD.label>
+  
+  <TM_ReverseTimeHD.description>Revierte rápidamente la edad de un peón. Cualquier otra afección que afecte al peón también revertirá sus tendencias naturales. Las afecciones revertidas más allá del momento en que se adquirieron dejarán de existir. Los peones revertidos más allá del momento en que aparecieron también dejarán de existir.</TM_ReverseTimeHD.description>
+  
+  <TM_ReverseTimeHD.stages.I.label>I</TM_ReverseTimeHD.stages.I.label>
+  
+  <TM_ReverseTimeHD.stages.II.label>II</TM_ReverseTimeHD.stages.II.label>
+  
+  <TM_ReverseTimeHD.stages.III.label>III</TM_ReverseTimeHD.stages.III.label>
+  
+  <TM_ReverseTimeHD.stages.IV.label>IV</TM_ReverseTimeHD.stages.IV.label>
+  
+</LanguageData>

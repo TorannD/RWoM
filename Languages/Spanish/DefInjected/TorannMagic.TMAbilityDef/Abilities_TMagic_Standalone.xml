@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  
+  <TM_Heater.label>Calentador mágico</TM_Heater.label>
+  <TM_Heater.description>Crea una bolsa dimensional que se conecta con el Plano del Fuego y genera calor constante en un área reducida. El calentador debe ser mantenido por el mago: reduce el maná máximo en 25 mientras esté activo.</TM_Heater.description>
+  <TM_DismissHeater.label>Disipar calentador</TM_DismissHeater.label>
+  <TM_DismissHeater.description>Disipa un calentador mágico.</TM_DismissHeater.description>
+
+  
+  <TM_Cooler.label>Enfriador mágico</TM_Cooler.label>
+  <TM_Cooler.description>Crea una bolsa dimensional que se conecta con el Plano del Hielo y reduce el calor en un área reducida. El enfriador debe ser mantenido por el mago: reduce el maná máximo en 25 mientras esté activo.</TM_Cooler.description>
+  <TM_DismissCooler.label>Disipar enfriador</TM_DismissCooler.label>
+  <TM_DismissCooler.description>Disipa un enfriador mágico.</TM_DismissCooler.description>
+
+  
+  <TM_PowerNode.label>Nodo de energía arcana</TM_PowerNode.label>
+  <TM_PowerNode.description>Crea un nodo de energía que libera lentamente energía arcana en forma de electricidad. Puede usarse como fuente de energía. El nodo debe ser mantenido por el mago: reduce el maná máximo en 25 y la regeneración de maná en un 25 % mientras esté activo.</TM_PowerNode.description>
+  <TM_DismissPowerNode.label>Disipar nodo de energía</TM_DismissPowerNode.label>
+  <TM_DismissPowerNode.description>Disipa un nodo de energía arcana.</TM_DismissPowerNode.description>
+
+  
+  <TM_Sunlight.label>Luz solar</TM_Sunlight.label>
+  <TM_Sunlight.description>Crea un haz de luz solar lo bastante intenso para hacer crecer plantas. El haz debe ser mantenido por el mago: reduce el maná máximo en 40 y la regeneración de maná en un 40 % mientras esté activo.</TM_Sunlight.description>
+  <TM_DismissSunlight.label>Disipar luz solar</TM_DismissSunlight.label>
+  <TM_DismissSunlight.description>Disipa una luz solar.</TM_DismissSunlight.description>
+
+  
+  <TM_DryGround.label>Secar terreno</TM_DryGround.label>
+  <TM_DryGround.description>Infunde calor en el suelo y evapora la mayor parte de la humedad de una porción de terreno. Solo funciona en terreno fangoso.</TM_DryGround.description>
+  <TM_WetGround.label>Humedecer terreno</TM_WetGround.label>
+  <TM_WetGround.description>Infunde agua en la arena y crea suelo cultivable.</TM_WetGround.description>
+
+  
+  <TM_ChargeBattery.label>Cargar batería</TM_ChargeBattery.label>
+  <TM_ChargeBattery.description>Convierte poder mágico en bruto en energía eléctrica. Este hechizo solo puede usarse sobre baterías o golems. Genera 400 Wd.</TM_ChargeBattery.description>
+
+  
+  <TM_SmokeCloud.label>Nube de humo</TM_SmokeCloud.label>
+  <TM_SmokeCloud.description>Atrae e incendia partículas de agua y tierra del aire para crear una cortina de humo que oculta temporalmente la zona.</TM_SmokeCloud.description>
+
+  
+  <TM_Extinguish.label>Extinguir</TM_Extinguish.label>
+  <TM_Extinguish.description>Elimina el elemento fuego del lugar objetivo y apaga al instante los incendios no deseados.</TM_Extinguish.description>
+
+  
+  <TM_EMP.label>PEM</TM_EMP.label>
+  <TM_EMP.description>Genera una ráfaga de radiación electromagnética en el lugar objetivo que inutiliza a los mecanoides durante un breve periodo.</TM_EMP.description>
+
+  
+  <TM_TransferMana.label>Transferir maná</TM_TransferMana.label>
+  <TM_TransferMana.description>Transfiere energía mágica de un lanzador a otro. Los receptores que no sean usuarios de magia recibirán una potenciación física considerable, aunque aleatoria, durante un breve periodo. Puede ser dañino, incluso letal, en niveles extremos.</TM_TransferMana.description>
+  <TM_SiphonMana.label>Absorber maná</TM_SiphonMana.label>
+  <TM_SiphonMana.description>Absorbe energía mágica de otro lanzador. Los objetivos que no sean usuarios de magia sufrirán en su lugar un drenaje de sus capacidades físicas. Puede ser letal si se drena demasiada fuerza vital.</TM_SiphonMana.description>
+
+  
+  <TM_ManaShield.label>Escudo de maná</TM_ManaShield.label>
+  <TM_ManaShield.description>Invoca una barrera protectora que obtiene su poder del maná del lanzador. La tasa de absorción de daño es de 1 de daño por 1 de maná. La barrera se rompe cuando el lanzador no tiene maná suficiente para absorber un ataque.\n\nSi se lanza el hechizo mientras hay una barrera activa, esta se eliminará. Puede usarse junto con cinturones de escudo. No impide lanzar hechizos de ningún tipo.</TM_ManaShield.description>
+
+  
+  <TM_ArcaneBarrier.label>Barrera arcana</TM_ArcaneBarrier.label>
+  <TM_ArcaneBarrier.description>Crea una barrera arcana en el lugar objetivo, en horizontal respecto al lanzador. La barrera dura 60 segundos.</TM_ArcaneBarrier.description>
+
+  
+  <TM_Flight.label>Vuelo</TM_Flight.label>
+  <TM_Flight.description>Vuela rápidamente hasta un lugar objetivo.</TM_Flight.description>
+
+  
+  <TM_FertileLands.label>Tierras fértiles</TM_FertileLands.label>
+  <TM_FertileLands.description>Infunde un área de terreno con el poder del druida y aumenta su fertilidad. Esta habilidad debe mantenerse y reduce la regeneración de maná en un 40 %. El druida está limitado a una sola área.</TM_FertileLands.description>
+  <TM_DismissFertileLands.label>Terminar tierras fértiles</TM_DismissFertileLands.label>
+  <TM_DismissFertileLands.description>Libera el poder del druida que infunde fertilidad a la tierra.</TM_DismissFertileLands.description>
+
+  
+  <TM_SpellMending.label>Reparación mágica</TM_SpellMending.label>
+  <TM_SpellMending.description>Lanza un encantamiento sobre una persona que reconstruye lentamente su equipo a nivel molecular. La reparación mágica requiere que el equipo esté puesto para extraer «recuerdos» de quien lo lleva y realizar la reconstrucción. Esto supone un esfuerzo físico para el personaje afectado y ralentiza sus actividades físicas. El efecto se disipa tras varias horas.</TM_SpellMending.description>
+
+  
+  <TM_CauterizeWound.label>Cauterizar heridas</TM_CauterizeWound.label>
+  <TM_CauterizeWound.description>El mago de fuego invoca fuego elemental para cauterizar al instante las heridas de un paciente. Sin embargo, este proceso probablemente deje cicatrices de quemadura.</TM_CauterizeWound.description>
+
+  
+  <TM_TeachMagic.label>Instruir en magia</TM_TeachMagic.label>
+  <TM_TeachMagic.description>Instruye a un mago de menor nivel para aumentar su habilidad mágica.\n\nLos magos instruidos ganarán experiencia de clase. La cantidad de experiencia depende del estatus social y de la diferencia de niveles entre ambos magos.</TM_TeachMagic.description>
+  <TM_TeachMight.label>Entrenamiento de combate</TM_TeachMight.label>
+  <TM_TeachMight.description>Entrena a un luchador de menor nivel para aumentar su habilidad de combate.\n\nLos luchadores entrenados ganarán experiencia de clase. La cantidad de experiencia depende del estatus social y de la diferencia de niveles entre ambos luchadores.</TM_TeachMight.description>
+
+  
+  <TM_Blur.label>Difuminar</TM_Blur.label>
+  <TM_Blur.description>Otorga un 20 % adicional de probabilidad de evitar todos los ataques al distorsionar la luz alrededor del lanzador. Requiere 20 de maná para mantenerse y reduce la regeneración de maná en un 10 %. Vuelve a usar la habilidad para desactivar el difuminado.</TM_Blur.description>
+
+  
+  <TM_BlankMind.label>Mente en blanco</TM_BlankMind.label>
+  <TM_BlankMind.description>Borra los recuerdos de un personaje y lo saca de cualquier estado mental, pero le provoca un breve periodo de confusión mientras recupera la compostura. Si se usa contra enemigos, aplica una parálisis mental que los aturde durante un breve periodo.\n\nLos efectos de área solo se aplican cuando el objetivo principal no es un personaje aliado. Los personajes aliados perderán tanto los recuerdos buenos como los malos.</TM_BlankMind.description>
+
+  
+  <TM_DirtDevil.label>Torbellino de polvo</TM_DirtDevil.label>
+  <TM_DirtDevil.description>Crea un pequeño vacío de aire elemental que busca y vaporiza la suciedad y los escombros.</TM_DirtDevil.description>
+
+  
+  <TM_MechaniteReprogramming.label>Reprogramar mecanitas</TM_MechaniteReprogramming.label>
+  <TM_MechaniteReprogramming.description>Reprograma las mecanitas fibrosas o sensoriales para que armonicen con los sistemas biológicos del huésped. Como resultado, se reduce de forma significativa la tensión sobre el huésped mientras las mecanitas están activas.</TM_MechaniteReprogramming.description>
+
+  
+  <TM_ArcaneBolt.label>Proyectil arcano</TM_ArcaneBolt.label>
+  <TM_ArcaneBolt.description>Lanza un proyectil de energía arcana en bruto. Esta habilidad aumentará lentamente su poder según el nivel mágico del lanzador.\n\nEl proyectil arcano es ineficiente por la naturaleza poco refinada del hechizo, pero puede aprenderlo y lanzarlo cualquier mago capaz de violencia.</TM_ArcaneBolt.description>
+
+  
+  <TM_ThrowingKnife.label>Cuchillo arrojadizo</TM_ThrowingKnife.label>
+  <TM_ThrowingKnife.description>Un ataque a distancia con un cuchillo arrojadizo oculto, diseñado para complementar cualquier sistema de armas equipado.</TM_ThrowingKnife.description>
+
+  
+  <TM_PommelStrike.label>Golpe de pomo</TM_PommelStrike.label>
+  <TM_PommelStrike.description>Un ataque cuerpo a cuerpo que asesta un golpe no letal, inflige un daño menor y aturde al objetivo durante un breve periodo.\n\nEsta habilidad puede derribar al instante a un personaje objetivo: cuanto más dolor sufra, más probable es que el golpe lo derribe en lugar de aturdirlo.\n\nEl lanzamiento automático solo se activa cuando el objetivo tiene un 80 % o más de probabilidad de ser derribado por este ataque.</TM_PommelStrike.description>
+
+  
+  <TM_LightningTrap.label>Trampa de rayos</TM_LightningTrap.label>
+  <TM_LightningTrap.description>Se carga un rayo elemental dentro de una cáscara arcana endurecida y se coloca como trampa. Se extienden hebras arcanas alrededor de la trampa que activan el hechizo al ser perturbadas por enemigos. Las trampas duran indefinidamente, pero un mago solo puede mantener una única trampa.</TM_LightningTrap.description>
+  <TM_DismissLightningTrap.label>Disipar trampa de rayos</TM_DismissLightningTrap.label>
+  <TM_DismissLightningTrap.description>Disipa una trampa de rayos.</TM_DismissLightningTrap.description>
+
+  
+  <TM_Invisibility.label>Invisibilidad</TM_Invisibility.label>
+  <TM_Invisibility.description>Te vuelves invisible durante 20 segundos. Cualquier interacción abierta romperá el hechizo al instante. Elimina al lanzador de todo objetivo hostil.</TM_Invisibility.description>
+
+  
+  <TM_BriarPatch.label>Zarzal</TM_BriarPatch.label>
+  <TM_BriarPatch.description>Crea un peligro formado por enredaderas espinosas. Cualquier movimiento sobre el área afectada se ralentizará, y las criaturas que atraviesen el zarzal pueden sufrir un daño menor.</TM_BriarPatch.description>
+
+  
+  <TM_MageLight.label>Luz mágica</TM_MageLight.label>
+  <TM_MageLight.description>Crea un pequeño orbe de luz que ahuyenta la oscuridad. La luz mágica permanecerá cerca del mago que la lanzó. Este hechizo tiene un coste de mantenimiento de 10 de maná y un 5 % de regeneración de maná.\n\nLa luz mágica otorga un 20 % de bonificación de visión; solo se beneficia el lanzador.\n\nLa luz mágica puede disiparse usando esta habilidad sobre el lanzador.</TM_MageLight.description>
+
+  
+  <TM_Legion.label>Legión</TM_Legion.label>
+  <TM_Legion.description>Copia una habilidad de otro luchador. Se aplican todas las bonificaciones y restricciones de la habilidad copiada. Solo se puede almacenar una habilidad a la vez.</TM_Legion.description>
+
+  
+  <TM_TempestStrike.label>Golpe tempestuoso</TM_TempestStrike.label>
+  <TM_TempestStrike.description>Lanza múltiples ataques en rápida sucesión. Cada ataque consume 20 de aguante. El golpe tempestuoso termina cuando el luchador no tiene aguante suficiente o tras 5 ataques.\n\nLas armas cuerpo a cuerpo generan hojas de energía.\n\nEste ataque solo funciona cuando el arma equipada no se consume normalmente tras su uso.</TM_TempestStrike.description>
+
+  
+  <TM_Ignite.label>Prender</TM_Ignite.label>
+  <TM_Ignite.description>Concentra una enorme cantidad de calor en un punto focal y luego lo libera. El calor liberado puede prender fuego a las criaturas cercanas y siempre incendiará los cadáveres. También aumentará drásticamente la temperatura de cualquier área cerrada.</TM_Ignite.description>
+
+  
+  <TM_SnapFreeze.label>Congelación instantánea</TM_SnapFreeze.label>
+  <TM_SnapFreeze.description>Elimina casi todo el calor en un punto focal y provoca la congelación instantánea de cualquier objeto vivo. Las criaturas pueden sufrir congelación y la mayoría de las plantas morirán. La eliminación del calor también reducirá drásticamente la temperatura de cualquier área cerrada.</TM_SnapFreeze.description>
+
+  
+  <TM_Discord.label>Discordia</TM_Discord.label>
+  <TM_Discord.description>Una habilidad canalizada que asalta continuamente los sentidos de la víctima con señales aleatorias y estridentes. Esta sobrecarga sensorial debilitará poco a poco la estabilidad mental y, finalmente, la armonía mental del objetivo colapsará por completo. Los resultados de esta habilidad varían, pero se intensifican con cada iteración.\n\nLos efectos incluyen mareos, náuseas, pérdida de visión y oído, vómitos, incapacidad para distinguir amigos de enemigos, ya no saber hacer mates, aversión hacia otros personajes, pérdida de la motricidad, pérdida de la razón, ganas de hablar de política, paroxismo, hemorragia cerebral y detonación craneal. Los resultados pueden variar al usarla sobre personajes aliados. Consulta con tu canal de terapia antes de usarla.</TM_Discord.description>
+
+  
+  <TM_MagicWardrobe.label>Armario mágico</TM_MagicWardrobe.label>
+  <TM_MagicWardrobe.description>Una habilidad sencilla que guarda toda la ropa equipada en una bolsa dimensional. Al usarla de nuevo, la ropa guardada se equipa y la que se llevaba puesta pasa a guardarse. Funciona con todas las prendas, pero no con armas ni objetos sostenidos. Útil para guardar equipo o para cambiar rápidamente entre conjuntos.</TM_MagicWardrobe.description>
+
+  
+  <TM_HeatShield.label>Escudo térmico</TM_HeatShield.label>
+  <TM_HeatShield.description>Coloca una barrera térmica sobre los aliados que otorga un 75 % de protección adicional contra el daño por calor e impide prenderse fuego. Afecta a un máximo de 6 objetivos y dura unos 30 segundos.</TM_HeatShield.description>
+
+  
+  <TM_AlterStorm.label>Alterar tormenta</TM_AlterStorm.label>
+  <TM_AlterStorm.description>Altera el clima para crear nuevas condiciones. Las tormentas de lluvia se transformarán en lluvia curativa. La nieve se transformará en una granizada. La granizada puede controlarse parcialmente dirigiendo el granizo hacia los enemigos del mapa, pero una vez iniciado este evento climático debe seguir su curso y no puede ser influido por el hacedor de lluvia.</TM_AlterStorm.description>
+
+</LanguageData>

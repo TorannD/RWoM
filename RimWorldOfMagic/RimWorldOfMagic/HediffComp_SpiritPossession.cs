@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using Verse;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +15,39 @@ namespace TorannMagic
         private int failCheck = 0;
 
         ThingOwner innerContainer = null;
+        private bool borrowedAllegiance;
+        internal bool ReanimatedHost;
+        private Faction formerFaction, formerHost;
+        private GuestStatus formerStatus;
+
+        internal ThingOwner PrepareSoulHolder()
+            => innerContainer ??= new ThingOwner<Thing>(this, true);
+
+        internal void BorrowAllegiance(Faction player)
+        {
+            if (borrowedAllegiance || (Pawn.Faction == player && Pawn.HostFaction == null)) return;
+            formerFaction = Pawn.Faction;
+            formerHost = Pawn.HostFaction;
+            formerStatus = Pawn.guest?.GuestStatus ?? GuestStatus.Guest;
+            borrowedAllegiance = true;
+            if (formerHost != null) Pawn.guest.SetGuestStatus(null);
+            if (Pawn.Faction != player) Pawn.SetFaction(player);
+        }
+
+        public override void CompPostPostRemoved()
+        {
+            base.CompPostPostRemoved();
+            if (borrowedAllegiance)
+            {
+                borrowedAllegiance = false;
+                if (!Pawn.Destroyed && Pawn.Faction != formerFaction) Pawn.SetFaction(formerFaction);
+                // Vanilla ends a visit when the two factions become enemies.
+                if (!Pawn.Dead && !Pawn.Destroyed && formerHost != null &&
+                    (formerStatus != GuestStatus.Guest || formerFaction?.HostileTo(formerHost) != true))
+                    Pawn.guest?.SetGuestStatus(formerHost, formerStatus);
+            }
+            if (ReanimatedHost && !Pawn.Destroyed && !Pawn.Dead) Pawn.Kill(null);
+        }
 
         //public IThingHolder ParentHolder => ((IThingHolder)SpiritPawn).ParentHolder;
         public IThingHolder ParentHolder => ((IThingHolder)Pawn);
@@ -175,6 +208,14 @@ namespace TorannMagic
             base.CompExposeData();
             Scribe_Values.Look<float>(ref this.compatibilityRatio, "compatibilityRatio", -5f);
             Scribe_Deep.Look(ref innerContainer, "innerContainer", this);
+            Scribe_Values.Look(ref borrowedAllegiance, "spiritBorrowedAllegiance");
+            Scribe_Values.Look(ref ReanimatedHost, "spiritReanimatedHost");
+            if (borrowedAllegiance || Scribe.mode != LoadSaveMode.Saving)
+            {
+                Scribe_References.Look(ref formerFaction,"spiritFormerFaction");
+                Scribe_References.Look(ref formerHost,"spiritFormerHost");
+                Scribe_Values.Look(ref formerStatus,"spiritFormerGuestStatus",GuestStatus.Guest);
+            }
             Scribe_Values.Look<int>(ref this.conversionAttempts, "conversionAttempts", 0);
         }
 
@@ -216,6 +257,21 @@ namespace TorannMagic
 
         public override void CompPostTick(ref float severityAdjustment)
         {
+            var original = SpiritPawn;
+            if (ClassProgression.SpiritRebirthState.IsPaused(original)) return;
+            if (ClassProgression.SpiritRebirthEnergy.Marked(original))
+            {
+                if (ClassProgression.SpiritRebirthState.TryGet(original, out var state)
+                    && state.HasValidHost(original) && ReferenceEquals(state.Host, Pawn))
+                {
+                    ClassProgression.SpiritRebirthHealthForm.TryRefreshPending(original);
+                    ClassProgression.SpiritHostedStance.TransferActive(original, Pawn);
+                    original.GetCompAbilityUserMagic()?.CompTick();
+                    original.GetCompAbilityUserMight()?.CompTick();
+                    state.TickRecovery(original, Pawn, Find.TickManager.TicksGame);
+                }
+                return;
+            }
             base.CompPostTick(ref severityAdjustment);
             bool flag = base.Pawn != null && SpiritPawn != null;
             if (flag)

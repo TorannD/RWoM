@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Torn_BookOfEmpathy.label>残破手稿：共情师</Torn_BookOfEmpathy.label>
+  <Torn_BookOfEmpathy.description>向新法师传授共情与心灵杀手。阅读后完成基础阶段的入门，并消耗手稿。</Torn_BookOfEmpathy.description>
+  <Torn_BookOfEmpathy.comps.1.useLabel>阅读{0_label}</Torn_BookOfEmpathy.comps.1.useLabel>
+  <BookOfEmpathy.label>奥术典籍：共情师</BookOfEmpathy.label>
+  <BookOfEmpathy.description>向已通过基础试炼的共情师传授压制光环。阅读后完成进阶阶段的入门，并消耗典籍。</BookOfEmpathy.description>
+  <BookOfEmpathy.comps.1.useLabel>阅读{0_label}</BookOfEmpathy.comps.1.useLabel>
+  <TM_MasterTomeEmpath.label>大师典籍：共情师</TM_MasterTomeEmpath.label>
+  <TM_MasterTomeEmpath.description>向已通过精通试炼的共情师传授收获热情及其附属能力激发热情。阅读后完成大师阶段的入门，并消耗典籍。仅可通过商人和任务奖励获取，无法制作。</TM_MasterTomeEmpath.description>
+  <TM_MasterTomeEmpath.comps.1.useLabel>阅读{0_label}</TM_MasterTomeEmpath.comps.1.useLabel>
+</LanguageData>

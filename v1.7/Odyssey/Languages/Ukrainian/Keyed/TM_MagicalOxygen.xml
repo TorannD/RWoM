@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_OxygenMode>Живлення: {0}</TM_OxygenMode>
+  <TM_OxygenModeMana>Мана</TM_OxygenModeMana>
+  <TM_OxygenModeMagicyte>Магіцит</TM_OxygenModeMagicyte>
+  <TM_OxygenModeDesc>Виберіть ману з місцевого накопичувача або магіцит із місцевого запасу. Автоматичного переходу на інший ресурс немає.</TM_OxygenModeDesc>
+  <TM_OxygenBuffer>Мана: {0} / {1}</TM_OxygenBuffer>
+  <TM_OxygenPaidMagicyte>Залишок заряду кристала: {0} мани</TM_OxygenPaidMagicyte>
+  <TM_OxygenStatusRunning>Атмосферне поле активне</TM_OxygenStatusRunning>
+  <TM_OxygenStatusIdle>Атмосферне поле неактивне</TM_OxygenStatusIdle>
+  <TM_OxygenStatusEmpty>Вибраний ресурс вичерпано</TM_OxygenStatusEmpty>
+  <TM_OxygenStatusOff>Вимкнено або зламано</TM_OxygenStatusOff>
+  <TM_OxygenCapacity>Забезпечувана площа: {0} клітин; мана за секунду: {1}</TM_OxygenCapacity>
+  <TM_OxygenPressure>Сила атмосферного поля: {0}</TM_OxygenPressure>
+  <TM_OxygenOutput>Вихід: {0}</TM_OxygenOutput>
+  <TM_OxygenOutputDesc>Виберіть атмосферу через магомаяки або подачу кисню в підключені баки VGE. Режими працюють окремо. Для подачі потрібен кисневий бак, з'єднаний трубами VGE; коли баки заповнені або від'єднані, витрата припиняється. Мана або магіцит вибираються окремо.</TM_OxygenOutputDesc>
+  <TM_OxygenOutputAtmosphere>Атмосфера</TM_OxygenOutputAtmosphere>
+  <TM_OxygenOutputPipe>Киснева мережа VGE</TM_OxygenOutputPipe>
+  <TM_OxygenPipeInfo>Подача в труби: до 1 кисню/с за 0,1 мани/с. Підключіть кисневий бак VGE; штатні насоси використовують кисень із бака.</TM_OxygenPipeInfo>
+  <TM_OxygenPipePending>Оплачений кисень очікує передачі: {0}</TM_OxygenPipePending>
+</LanguageData>

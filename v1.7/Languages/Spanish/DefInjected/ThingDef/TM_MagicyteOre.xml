@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_MineableMagicyte.label>mineral de magicita</TM_MineableMagicyte.label>
+  <TM_MineableMagicyte.description>Roca atravesada por cristales de magicita. Cada bloque proporciona entre 15 y 100 unidades de magicita en bruto al terminar de extraerlo y tiene un 1% de probabilidad de proporcionar también una gema de encantamiento. Destruir la roca no permite recuperar su contenido.</TM_MineableMagicyte.description>
+</LanguageData>

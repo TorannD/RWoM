@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ReadFacelessInfiltrator>Infiltrado — el disfraz dura un 20% más.</TM_ReadFacelessInfiltrator>
+  <TM_ReadFacelessUnderstudy>Suplente — los ecos son un 20% más fuertes.</TM_ReadFacelessUnderstudy>
+  <TM_FacelessOrigins>Estudia tres tipos de eco: {0}/3.</TM_FacelessOrigins>
+  <TM_FacelessPractice>Hiere a un enemigo o cura a un aliado con un eco en días distintos: {0}/{1}.</TM_FacelessPractice>
+  <TM_FacelessRescue>O rescata a distintos aliados heridos: {0}/{1}.</TM_FacelessRescue>
+  <TM_FacelessSample>Técnica imitada: {0}</TM_FacelessSample>
+  <TM_FacelessVirtuoso>Virtuoso — aumenta un 50% la potencia del eco.</TM_FacelessVirtuoso>
+</LanguageData>

@@ -9,7 +9,7 @@ using Verse.AI;
 
 namespace RWoM.RegressionTests;
 
-internal static class CastSafetyTests
+internal static partial class CastSafetyTests
 {
     private static int MessagesSeen;
     public static void Initialize()
@@ -17,8 +17,64 @@ internal static class CastSafetyTests
         RuntimeHelpers.RunClassConstructor(typeof(MessageTypeDefOf).TypeHandle);
         RuntimeLog.AcceptHeadlessDefOfInitialization("MessageTypeDefOf");
     }
+    private sealed class AdmissionAbility : MagicAbility
+    {
+        public override bool CanCastPowerCheck(AbilityContext context, out string reason) { reason = ""; return true; }
+    }
+
+    internal static void SdkAdmission(RuntimeFixture f) => World(f, w =>
+    {
+        Check.Equal(true, CoreBridge.Available, "provider installed");
+        var assembly = Assembly.Load("TorannMagic.Core");
+        var api = assembly.GetType("TorannMagic.Core.AbilityCasting", true)!.GetMethod("Check")!;
+        object mode = Enum.Parse(assembly.GetType("TorannMagic.Core.CastMode", true)!, "Manual");
+        string Query(Verb verb) => api.Invoke(null, [verb, (LocalTargetInfo)w.Target, mode])!.ToString()!;
+        Check.Equal("Busy", Query(w.Verb), "existing cast job respected");
+        Set(w.Caster.jobs, "curJob", null);
+        w.Verb.Ability = new AdmissionAbility { Def = w.Def };
+        Check.Equal("Allowed", Query(w.Verb), "valid manual cast");
+        Set(Current.Game, "questManager", new QuestManager());
+        var pacifist = new Trait(new TraitDef { defName = "SdkPacifism", disabledWorkTags = WorkTags.Violent, degreeDatas = [new TraitDegreeData()] }, 0);
+        w.Caster.story.traits.allTraits.Add(pacifist);
+        w.Def.MainVerb.isViolent = true;
+        Check.Equal("ViolenceDisabled", Query(w.Verb), "pacifist cannot use violent ability");
+        w.Def.MainVerb.isViolent = false;
+        Check.Equal("Allowed", Query(w.Verb), "pacifist may cast peaceful spell");
+        Check.Equal("UnsupportedAbility", Query(new Verb_Shoot()), "foreign ability delegated");
+        mode = Enum.Parse(mode.GetType(), "Automatic");
+        Check.Equal("Allowed", Query(w.Verb), "valid automatic cast");
+        w.Wall(); w.Def.MainVerb.requireLineOfSight = true;
+        Check.Equal("AutomaticCastDenied", Query(w.Verb), "blocked line of sight");
+        Set(w.Caster, "mapIndexOrState", (sbyte)-1);
+        Check.Equal("OffMap", Query(w.Verb), "caravan cannot cast");
+        Check.Equal(0, w.Verb.Shots, "query never executes");
+        Check.Equal(true, w.Caster.CurJob == null, "query never schedules");
+    });
     public static IEnumerable<TestCase> Cases()
     {
+        foreach (var test in EtherShellJobCases()) yield return test;
+        yield return new("CastSafety.DestroyedTargetEndsWarmupStance", f => World(f, DestroyedTargetEndsWarmupStance));
+        yield return new("CastSafety.StuckCastWatchdogFreesPawn", f => World(f, StuckCastWatchdog));
+        foreach (var context in new[] { AbilityContext.Player, AbilityContext.AI })
+            yield return new("CastSafety.OffMap." + context, f => World(f, w =>
+            {
+                Set(w.Caster, "mapIndexOrState", (sbyte)-1);
+                w.Job.count = context == AbilityContext.Player ? 1 : 0;
+                var ability = w.Verb.Ability;
+                Set(ability, "verb", w.Verb);
+                ability.CooldownTicksLeft = 17;
+                Check.Equal(false, ability.TryCastAbility(context, w.Target), "Off-map cast rejected before resource and target checks");
+                Check.Equal(true, ability.UseAbility(context, w.Target) == null, "No caravan ability job is created");
+                Check.Equal(false, w.Verb.TryStartCastOn(w.Target), "Direct start is also rejected");
+                Check.Equal(false, w.Verb.PreCastShotCheck(w.Target, LocalTargetInfo.Invalid), "Direct pre-cast is rejected");
+                Check.Equal(false, w.Verb.TryLaunchProjectileCheck(Blank<ThingDef>(), w.Target), "Queued projectile is rejected");
+                w.Verb.state = VerbState.Bursting;
+                typeof(Verb).GetMethod("TryCastNextBurstShot", BindingFlags.NonPublic | BindingFlags.Instance)!.Invoke(w.Verb, null);
+                Check.Equal(VerbState.Idle, w.Verb.state, "Off-map burst is stopped");
+                Check.Equal(0, w.Verb.Shots, "No off-map effects execute");
+                Check.Equal(17, ability.CooldownTicksLeft, "Rejection does not charge cooldown");
+                Check.Equal(0, SpecialCostsSeen, "Rejection does not charge special resources");
+            }));
         foreach (bool manual in new[] { false, true })
             yield return new("CastSafety.ForbiddenSelf." + (manual ? "Player" : "AI"), f => World(f, w =>
             {
@@ -135,6 +191,46 @@ internal static class CastSafetyTests
             : (LocalTargetInfo)method.Invoke(null, [w.Caster, config, target, w.Def, w.Verb])!;
     }
 
+    // The cast driver's warmup guards (native equivalents of the community
+    // Work-Safe AutoCast band-aids): a target destroyed mid-warmup must not leave
+    // the vanilla warmup stance aiming at nothing, and a cast that outlives its
+    // intended duration by 30 in-game seconds must free the pawn.
+    private static void DestroyedTargetEndsWarmupStance(WorldState w)
+    {
+        using var jobEndGuard = new JobEndGuard();
+        var driver = new Driver { pawn = w.Caster, job = w.Job };
+        var combat = driver.Toils().Last();
+        combat.actor = w.Caster;
+        // Pawn_StanceTracker's ctor probes comps through 1.7 GetComp, which throws
+        // on an empty list — give the caster one inert comp first.
+        Set(w.Caster, "comps", new List<ThingComp> { new StanceDummyComp() });
+        Set(driver, "castStarted", true);
+        Set(driver, "duration", 100);
+        w.Caster.stances = new Pawn_StanceTracker(w.Caster);
+        w.Caster.stances.SetStance(new Stance_Warmup(100, w.Target, w.Verb));
+        Set(w.Target, "mapIndexOrState", (sbyte)-1); // despawned mid-warmup
+        combat.tickAction();
+        Check.Equal(true, w.Caster.stances.curStance is Stance_Mobile,
+            "a despawned warmup target ends the casting stance instead of spamming AimDir NREs");
+    }
+
+    private static void StuckCastWatchdog(WorldState w)
+    {
+        using var jobEndGuard = new JobEndGuard();
+        var driver = new Driver { pawn = w.Caster, job = w.Job };
+        var combat = driver.Toils().Last();
+        combat.actor = w.Caster;
+        Set(w.Caster, "comps", new List<ThingComp> { new StanceDummyComp() });
+        Set(driver, "castStarted", true);
+        Set(driver, "duration", -1801); // 30 in-game seconds past the intended cast
+        w.Caster.stances = new Pawn_StanceTracker(w.Caster);
+        w.Caster.stances.SetStance(new Stance_Warmup(100, w.Target, w.Verb));
+        Set(Find.TickManager, "ticksGameInt", 1); // skip the %12 mote branch
+        combat.tickAction();
+        Check.Equal(true, w.Caster.stances.curStance is Stance_Mobile,
+            "a stuck cast job frees the pawn from the casting stance");
+    }
+
     private static void World(RuntimeFixture fixture, Action<WorldState> body)
     {
         var old = Current.Game;
@@ -152,7 +248,7 @@ internal static class CastSafetyTests
         try
         {
             MessagesSeen = SpecialCostsSeen = 0; patches.RecordMessages(); patches.RecordSpecialCosts();
-            foreach (string name in new[] { "AbilityCastStartPatch", "AbilityPreCastStartPatch", "AbilityProjectileLaunchSafetyPatch" })
+            foreach (string name in new[] { "AbilityCastStartPatch", "AbilityPreCastStartPatch", "AbilityProjectileLaunchSafetyPatch", "AbilityAutomaticJobAdmissionPatch", "AbilityOffMapCastPatch", "AbilityOffMapBurstPatch" })
                 if (typeof(MagicAbility).Assembly.GetType("TorannMagic.Compatibility." + name) is Type type) patches.Add(type);
             body(new WorldState(fixture, game));
         }
@@ -166,7 +262,7 @@ internal static class CastSafetyTests
         public readonly TMAbilityDef Def;
         public readonly RecordingVerb Verb;
         public readonly Job Job;
-        private readonly Faction faction = new() { def = new FactionDef() };
+        private readonly Faction faction = new() { def = new FactionDef { isPlayer = true } };
         public WorldState(RuntimeFixture fixture, Game game)
         {
             Map = Blank<Map>(); Map.info = new MapInfo { Size = new IntVec3(20, 1, 20) };
@@ -261,5 +357,27 @@ internal static class CastSafetyTests
         public void Dispose() => harmony.GetType().GetMethod("UnpatchAll")!.Invoke(harmony, [id]);
     }
     private static T Blank<T>() => (T)RuntimeHelpers.GetUninitializedObject(typeof(T));
+
+    private sealed class StanceDummyComp : ThingComp { }
+
+    // The guards under test call EndJobWith; the headless caster has no thinker,
+    // so vanilla job-end plumbing would log a one-time error. The stance reset is
+    // the behavior under test — skip the tracker entirely.
+    private sealed class JobEndGuard : IDisposable
+    {
+        private static readonly string Id = "rwom.cast-safety.jobend." + Guid.NewGuid();
+        private readonly object harmony;
+        public JobEndGuard()
+        {
+            var assembly = Assembly.Load("0Harmony");
+            harmony = Activator.CreateInstance(assembly.GetType("HarmonyLib.Harmony")!, Id)!;
+            var hook = Activator.CreateInstance(assembly.GetType("HarmonyLib.HarmonyMethod")!,
+                typeof(CastSafetyTests).GetMethod(nameof(SkipJobEnd), BindingFlags.NonPublic | BindingFlags.Static)!)!;
+            var method = typeof(Pawn_JobTracker).GetMethods().Single(m => m.Name == "EndCurrentJob" && m.GetParameters().Length == 3);
+            harmony.GetType().GetMethod("Patch")!.Invoke(harmony, [method, hook, null, null, null]);
+        }
+        public void Dispose() => harmony.GetType().GetMethod("UnpatchAll")!.Invoke(harmony, [Id]);
+    }
+    private static bool SkipJobEnd() => false;
     private static void Set(object target, string name, object value) => FleshStatTests.Set(target, name, value);
 }
